@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{TITLE}}</title>
+  <meta name="description" content="{{DESC}}" />
+  <meta name="theme-color" content="#191222" />
+  <link rel="icon" href="{{P}}img/logo.svg" type="image/svg+xml" />
+  <link rel="preload" href="{{P}}fonts/spline-variable.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="{{P}}fonts/fraunces-variable.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="{{P}}css/style.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  {{NAV}}
+
+  <main id="main">
+{{BODY}}
+  </main>
+
+  {{FOOTER}}
+
+  <div class="mascot-fab" aria-live="polite">
+    <div class="mascot-fab__bubble"></div>
+    <button class="mascot-fab__btn" aria-label="Back to top">
+      <img src="{{P}}img/mascot-trim.png" alt="" />
+    </button>
+  </div>
+
+  <script src="{{P}}js/main.js"></script>
+</body>
+</html>

@@ -1,204 +1,359 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Description | NKU iGEM 2026</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../css/style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Description · NKU iGEM 2026</title>
+  <meta name="description" content="NKU iGEM 2026 — a synthetic-biology biosensor for early detection of plant-parasitic nematodes." />
+  <meta name="theme-color" content="#191222" />
+  <link rel="icon" href="../img/logo.svg" type="image/svg+xml" />
+  <link rel="preload" href="../fonts/spline-variable.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="../fonts/fraunces-variable.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
 
-<!-- 
-  ═══════════════════════════════════════════════════════════
-  NAV SNIPPET — copy into every subpage
-  Note: href paths are relative to /pages/ folder
-  ═══════════════════════════════════════════════════════════
--->
-<nav>
-    <div class="nav-inner">
-        <a href="../index.html" class="nav-logo">NKU iGEM 2026</a>
-        <ul class="nav-links">
+  <nav class="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-brand" aria-label="NKU iGEM 2026 home">
+      <img src="../img/logo.svg" alt="" width="34" height="34" />
+      <span><b>SUBSURFACE</b><span>NKU iGEM 2026</span></span>
+    </a>
 
-            <li class="nav-item">
-                <a href="../index.html" class="nav-link">Home</a>
-            </li>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span></button>
 
-            <!-- Project -->
-            <li class="nav-item">
-                <span class="nav-link">Project
-                    <svg viewBox="0 0 10 6"><path d="M0 0l5 6 5-6z"/></svg>
-                </span>
-                <div class="mega-menu">
-                    <div class="mega-col">
-                        <p class="mega-col-title">Overview</p>
-                        <a href="description.html" class="big">Description</a>
-                        <a href="background.html" class="big">Background</a>
-                        <a href="design.html" class="big">Design</a>
-                        <a href="results.html" class="big">Results</a>
-                    </div>
-                    <div class="mega-col">
-                        <p class="mega-col-title">Engineering</p>
-                        <a href="engineering-cycle.html" class="big">Engineering Cycle</a>
-                        <a href="proof-of-concept.html" class="big">Proof of Concept</a>
-                        <a href="implementation.html" class="big">Implementation</a>
-                    </div>
-                    <div class="mega-col">
-                        <p class="mega-col-title">More</p>
-                        <a href="contribution.html" class="big">Contribution</a>
-                        <a href="parts.html" class="big">Parts</a>
-                        <a href="safety.html" class="big">Safety</a>
-                    </div>
-                </div>
-            </li>
+    <ul class="nav-links">
+      <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
 
-            <!-- Lab -->
-            <li class="nav-item">
-                <span class="nav-link">Lab
-                    <svg viewBox="0 0 10 6"><path d="M0 0l5 6 5-6z"/></svg>
-                </span>
-                <div class="mega-menu">
-                    <div class="mega-col">
-                        <p class="mega-col-title">Wet Lab</p>
-                        <a href="wet-lab.html" class="big">Experiments</a>
-                        <a href="protocols.html" class="big">Protocols</a>
-                        <a href="notebook.html" class="big">Notebook</a>
-                    </div>
-                    <div class="mega-col">
-                        <p class="mega-col-title">Dry Lab</p>
-                        <a href="modeling.html" class="big">Modeling</a>
-                        <a href="software.html" class="big">Software</a>
-                        <a href="hardware.html" class="big">Hardware</a>
-                    </div>
-                    <div class="mega-col">
-                        <p class="mega-col-title">Resources</p>
-                        <a href="safety.html" class="big">Safety</a>
-                        <a href="attribution.html" class="big">Attribution</a>
-                    </div>
-                </div>
-            </li>
+      <li class="nav-item">
+        <span class="nav-link" role="button" tabindex="0" aria-haspopup="true">Project
+          <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0l5 6 5-6z"/></svg></span>
+        <div class="mega">
+          <div class="mega-col">
+            <h4>The Investigation</h4>
+            <a href="../pages/description.html"><span class="dot"></span>Description</a>
+            <a href="../pages/background.html"><span class="dot"></span>Background</a>
+            <a href="../pages/design.html"><span class="dot"></span>Design</a>
+          </div>
+          <div class="mega-col">
+            <h4>Evidence</h4>
+            <a href="../pages/engineering-cycle.html"><span class="dot"></span>Engineering</a>
+            <a href="../pages/results.html"><span class="dot"></span>Results</a>
+            <a href="../pages/proof-of-concept.html"><span class="dot"></span>Proof of Concept</a>
+            <a href="../pages/implementation.html"><span class="dot"></span>Implementation</a>
+          </div>
+          <div class="mega-col">
+            <h4>Registry</h4>
+            <a href="../pages/parts.html"><span class="dot"></span>Parts</a>
+            <a href="../pages/contribution.html"><span class="dot"></span>Contribution</a>
+            <a href="../pages/safety.html"><span class="dot"></span>Safety</a>
+          </div>
+          <a class="mega-feature" href="../pages/description.html">
+            <span class="tag">Case file</span>
+            <p>Two nematodes are eating the harvest. We built the detector.</p>
+            <small>Read the project &rarr;</small>
+            <img class="mascot-mini" src="../img/mascot-trim.png" alt="" />
+          </a>
+        </div>
+      </li>
 
-            <!-- HP -->
-            <li class="nav-item">
-                <span class="nav-link">HP
-                    <svg viewBox="0 0 10 6"><path d="M0 0l5 6 5-6z"/></svg>
-                </span>
-                <div class="mega-menu">
-                    <div class="mega-col">
-                        <p class="mega-col-title">Human Practices</p>
-                        <a href="human-practices.html" class="big">Overview</a>
-                        <a href="integrated-hp.html" class="big">Integrated HP</a>
-                    </div>
-                    <div class="mega-col">
-                        <p class="mega-col-title">Engagement</p>
-                        <a href="education.html" class="big">Education</a>
-                        <a href="communication.html" class="big">Communication</a>
-                        <a href="entrepreneurship.html" class="big">Entrepreneurship</a>
-                    </div>
-                    <div class="mega-col">
-                        <p class="mega-col-title">Impact</p>
-                        <a href="sustainability.html" class="big">Sustainability</a>
-                        <a href="diversity-inclusion.html" class="big">Diversity &amp; Inclusion</a>
-                    </div>
-                </div>
-            </li>
+      <li class="nav-item">
+        <span class="nav-link" role="button" tabindex="0" aria-haspopup="true">Lab
+          <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0l5 6 5-6z"/></svg></span>
+        <div class="mega">
+          <div class="mega-col">
+            <h4>Wet Lab</h4>
+            <a href="../pages/wet-lab.html"><span class="dot"></span>Experiments</a>
+            <a href="../pages/protocols.html"><span class="dot"></span>Protocols</a>
+            <a href="../pages/notebook.html"><span class="dot"></span>Notebook</a>
+          </div>
+          <div class="mega-col">
+            <h4>Dry Lab</h4>
+            <a href="../pages/modeling.html"><span class="dot"></span>Modeling</a>
+            <a href="../pages/software.html"><span class="dot"></span>Software</a>
+            <a href="../pages/hardware.html"><span class="dot"></span>Hardware</a>
+          </div>
+          <div class="mega-col">
+            <h4>Output</h4>
+            <a href="../pages/results.html"><span class="dot"></span>Results</a>
+            <a href="../pages/safety.html"><span class="dot"></span>Safety</a>
+          </div>
+          <a class="mega-feature" href="../pages/notebook.html">
+            <span class="tag">Field notebook</span>
+            <p>Every experiment, dated and logged like a detective's casebook.</p>
+            <small>Open the notebook &rarr;</small>
+            <img class="mascot-mini" src="../img/mascot-trim.png" alt="" />
+          </a>
+        </div>
+      </li>
 
-            <!-- Team -->
-            <li class="nav-item">
-                <span class="nav-link">Team
-                    <svg viewBox="0 0 10 6"><path d="M0 0l5 6 5-6z"/></svg>
-                </span>
-                <div class="mega-menu">
-                    <div class="mega-col">
-                        <p class="mega-col-title">Members</p>
-                        <a href="team-members.html" class="big">Team Members</a>
-                        <a href="advisors.html" class="big">Advisors</a>
-                        <a href="instructors.html" class="big">Instructors</a>
-                    </div>
-                    <div class="mega-col">
-                        <p class="mega-col-title">About NKU</p>
-                        <a href="https://www.nankai.edu.cn/" class="big">Nankai University</a>
-                        <a href="https://sky.nankai.edu.cn/" class="big">Our Institution</a>
-                    </div>
-                    <div class="mega-col">
-                        <p class="mega-col-title">Contact</p>
-                        <a href="collaborations.html" class="big">Collaborations</a>
-                        <a href="partnerships.html" class="big">Partnerships</a>
-                    </div>
-                </div>
-            </li>
+      <li class="nav-item">
+        <span class="nav-link" role="button" tabindex="0" aria-haspopup="true">Human Practices
+          <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0l5 6 5-6z"/></svg></span>
+        <div class="mega">
+          <div class="mega-col">
+            <h4>Practices</h4>
+            <a href="../pages/human-practices.html"><span class="dot"></span>Overview</a>
+            <a href="../pages/integrated-hp.html"><span class="dot"></span>Integrated HP</a>
+          </div>
+          <div class="mega-col">
+            <h4>Engagement</h4>
+            <a href="../pages/education.html"><span class="dot"></span>Education</a>
+            <a href="../pages/communication.html"><span class="dot"></span>Communication</a>
+            <a href="../pages/entrepreneurship.html"><span class="dot"></span>Entrepreneurship</a>
+          </div>
+          <div class="mega-col">
+            <h4>Impact</h4>
+            <a href="../pages/sustainability.html"><span class="dot"></span>Sustainability</a>
+            <a href="../pages/diversity-inclusion.html"><span class="dot"></span>Inclusion</a>
+          </div>
+          <a class="mega-feature" href="../pages/human-practices.html">
+            <span class="tag">In the field</span>
+            <p>We asked the people who actually fight nematodes what they need.</p>
+            <small>See who we met &rarr;</small>
+            <img class="mascot-mini" src="../img/mascot-trim.png" alt="" />
+          </a>
+        </div>
+      </li>
 
-        </ul>
-    </div>
+      <li class="nav-item">
+        <span class="nav-link" role="button" tabindex="0" aria-haspopup="true">Team
+          <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0l5 6 5-6z"/></svg></span>
+        <div class="mega">
+          <div class="mega-col">
+            <h4>People</h4>
+            <a href="../pages/team-members.html"><span class="dot"></span>Members</a>
+            <a href="../pages/advisors.html"><span class="dot"></span>Advisors</a>
+            <a href="../pages/instructors.html"><span class="dot"></span>Instructors</a>
+          </div>
+          <div class="mega-col">
+            <h4>Friends</h4>
+            <a href="../pages/collaborations.html"><span class="dot"></span>Collaborations</a>
+            <a href="../pages/partnerships.html"><span class="dot"></span>Partnerships</a>
+          </div>
+          <div class="mega-col">
+            <h4>About</h4>
+            <a href="../pages/attribution.html"><span class="dot"></span>Attributions</a>
+            <a href="https://www.nankai.edu.cn/" rel="noopener"><span class="dot"></span>Nankai University</a>
+            <a href="https://sky.nankai.edu.cn/" rel="noopener"><span class="dot"></span>School of Life Sciences</a>
+          </div>
+          <a class="mega-feature" href="../pages/team-members.html">
+            <span class="tag">The crew</span>
+            <p>Students of Nankai University, on the trail of a hidden pest.</p>
+            <small>Meet everyone &rarr;</small>
+            <img class="mascot-mini" src="../img/mascot-trim.png" alt="" />
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
 </nav>
 
 
-    <!-- ─── BANNER ─────────────────────────────────────────────────────── -->
-    <header class="page-banner">
-        <p class="banner-eyebrow">NKU iGEM 2026 · Project</p>
-        <h1 class="banner-title">DESCRIPTION</h1>
-        <p class="banner-sub">What problem are we solving — and why it matters</p>
-    </header>
-
-    <div class="divider"></div>
-    <section class="section">
-        <div class="reveal">
-            <p class="section-label">01 — Background</p>
-            <h2 class="section-title">Problem Statement</h2>
-            
-                <div class="content-card">
-                    <h3>The Problem</h3>
-                    <p>占位符：描述你们想解决的核心问题，微塑料污染的危害、现有方案的不足等。</p>
-                    <span class="placeholder-tag">📝 待填写内容 · To be filled</span>
-                </div>
-                <div class="content-card">
-                    <h3>Our Solution</h3>
-                    <p>占位符：一句话概括你们的合成生物学解决方案。</p>
-                    <span class="placeholder-tag">📝 待填写内容 · To be filled</span>
-                </div>
+  <main id="main">
+<header class="phero">
+    <div class="phero__bg" aria-hidden="true"><svg viewBox="0 0 1440 460" preserveAspectRatio="xMidYMid slice"><circle cx="1320" cy="120" r="70" fill="none" stroke="#9b7fe0" stroke-opacity="0.160" stroke-width="1.2"/><circle cx="1320" cy="120" r="130" fill="none" stroke="#9b7fe0" stroke-opacity="0.135" stroke-width="1.2"/><circle cx="1320" cy="120" r="200" fill="none" stroke="#9b7fe0" stroke-opacity="0.110" stroke-width="1.2"/><circle cx="1320" cy="120" r="280" fill="none" stroke="#9b7fe0" stroke-opacity="0.085" stroke-width="1.2"/><circle cx="1320" cy="120" r="370" fill="none" stroke="#9b7fe0" stroke-opacity="0.060" stroke-width="1.2"/><path d="M-40,140 C300,118 900,166 1480,128" fill="none" stroke="#f4ecdd" stroke-opacity="0.050" stroke-width="1"/><path d="M-40,210 C300,188 900,236 1480,198" fill="none" stroke="#f4ecdd" stroke-opacity="0.044" stroke-width="1"/><path d="M-40,280 C300,258 900,306 1480,268" fill="none" stroke="#f4ecdd" stroke-opacity="0.038" stroke-width="1"/><path d="M-40,350 C300,328 900,376 1480,338" fill="none" stroke="#f4ecdd" stroke-opacity="0.032" stroke-width="1"/><path d="M-40,420 C300,398 900,446 1480,408" fill="none" stroke="#f4ecdd" stroke-opacity="0.026" stroke-width="1"/></svg></div>
+    <div class="phero__inner">
+      <nav class="phero__crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>/</span>Project<span>/</span><span>Description</span></nav>
+      <p class="eyebrow" style="margin-bottom:14px">Project · Case file 01</p>
+      <h1>What we are <span class="ink-accent">solving</span></h1>
+      <p class="phero__sub">Two nematodes, billions in damage, and almost no way to catch them early. This is the problem — and the idea that answers it.</p>
+      <div class="phero__meta"><span>Track<b>Diagnostics / Agriculture</b></span><span>Reading<b>6 min</b></span><span>Status<b>Living document</b></span></div>
+    </div>
+  </header>
+  <div class="strata strata--down" aria-hidden="true"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><rect width="1440" height="120" fill="#191222"/><path fill="#241830" d="M0,60 C240,18 420,96 720,64 C1020,32 1230,92 1440,52 L1440,120 L0,120 Z"/><path fill="#f7f2e8" d="M0,86 C260,52 470,110 720,86 C1010,58 1240,108 1440,82 L1440,120 L0,120 Z"/></svg></div>
+  <div class="layout">
+    <aside class="toc" aria-label="On this page">
+      <div class="toc__top">
+        <div class="toc__badge"><img src="../img/logo.svg" alt="" width="24" height="24"/></div>
+        <div class="toc__titles"><div class="toc__kicker">On this page</div><div class="toc__title">Description</div></div>
+        <button class="toc__collapse" aria-label="Collapse outline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 5 7 12 13 19"/><polyline points="18 5 12 12 18 19"/></svg></button>
+      </div>
+      <div class="toc__progress" aria-hidden="true"><i></i></div>
+      <ul class="toc__list">
+        <span class="toc__rail" aria-hidden="true"></span>
+        <li class="lvl-1"><a href="#problem">The problem</a></li>
+        <li class="lvl-2"><a href="#suspect-glycines">Suspect — H. glycines</a></li>
+        <li class="lvl-2"><a href="#suspect-incognita">Suspect — M. incognita</a></li>
+        <li class="lvl-1"><a href="#gap">Why current tests fail</a></li>
+        <li class="lvl-1"><a href="#idea">Our idea</a></li>
+        <li class="lvl-1"><a href="#why-synbio">Why synthetic biology</a></li>
+        <li class="lvl-1"><a href="#goals">Project goals</a></li>
+        <li class="lvl-1"><a href="#refs">References</a></li>
+      </ul>
+      <div class="toc__foot"><a href="#main"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="6 11 12 5 18 11"/></svg>Back to top</a></div>
+    </aside>
+    <div class="content">
+      <div class="toc-mini" aria-label="On this page (mobile)">
+        <div class="toc-mini__bar" role="button" tabindex="0">
+          <div class="toc__badge"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#f4ecdd" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><line x1="20" y1="20" x2="15.5" y2="15.5"/></svg></div>
+          <b>Description</b><span class="now"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
         </div>
-    </section>
-    <div class="divider"></div>
-    <section class="section">
-        <div class="reveal">
-            <p class="section-label">02 — Approach</p>
-            <h2 class="section-title">Our Strategy</h2>
-            
-                <div class="content-card">
-                    <h3>Mechanism</h3>
-                    <p>占位符：描述生物学机制，比如用什么微生物、基因回路如何工作。</p>
-                    <span class="placeholder-tag">📝 待填写内容 · To be filled</span>
-                </div>
-                <div class="content-card">
-                    <h3>Innovation</h3>
-                    <p>占位符：你们的方案有何创新点，与已有研究的区别。</p>
-                    <span class="placeholder-tag">📝 待填写内容 · To be filled</span>
-                </div>
-        </div>
-    </section>
+        <div class="toc-mini__panel"><ul>
+          <li class="lvl-1"><a href="#problem">The problem</a></li>
+        <li class="lvl-2"><a href="#suspect-glycines">Suspect — H. glycines</a></li>
+        <li class="lvl-2"><a href="#suspect-incognita">Suspect — M. incognita</a></li>
+        <li class="lvl-1"><a href="#gap">Why current tests fail</a></li>
+        <li class="lvl-1"><a href="#idea">Our idea</a></li>
+        <li class="lvl-1"><a href="#why-synbio">Why synthetic biology</a></li>
+        <li class="lvl-1"><a href="#goals">Project goals</a></li>
+        <li class="lvl-1"><a href="#refs">References</a></li>
+        </ul></div>
+      </div>
+<section id="problem" data-toc="The problem">
+  <p class="eyebrow sec-label">01 — Background</p>
+  <h2 class="section-title">A threat that works underground</h2>
+  <div class="prose">
+    <p>Plant-parasitic nematodes are microscopic roundworms that feed on plant roots. They are everywhere agriculture happens, they are invisible to the naked eye, and they are astonishingly destructive. Because the damage begins below the soil line, infestations are usually discovered only after yields have already collapsed.</p>
+    <p>Our project focuses on the two species that matter most to the crops grown around us — and to growers worldwide.</p>
+  </div>
 
-    <footer>
-        <div class="footer-inner">
-            <div class="footer-logo">NKU iGEM 2026</div>
-            <p class="footer-text">© 2026 NKU iGEM Team | <a href="https://igem.org" target="_blank">iGEM Foundation</a></p>
-        </div>
-    </footer>
+  <div class="grid grid-2" data-stagger style="margin-top:30px">
+    <div class="card card--num">
+      <h3 id="suspect-glycines" data-toc-sub="Suspect — H. glycines"><em class="serif-italic">Heterodera glycines</em></h3>
+      <p><strong>The soybean cyst nematode.</strong> The single most damaging pathogen of soybean. Females swell into protective cysts packed with eggs that survive in soil for years, making it nearly impossible to eradicate once established.</p>
+      <p class="placeholder-tag">Add your local incidence data &amp; a field photo</p>
+    </div>
+    <div class="card card--num">
+      <h3 id="suspect-incognita" data-toc-sub="Suspect — M. incognita"><em class="serif-italic">Meloidogyne incognita</em></h3>
+      <p><strong>The southern root-knot nematode.</strong> A generalist that attacks thousands of plant species, forming the characteristic "knots" (galls) on roots that choke off water and nutrient flow.</p>
+      <p class="placeholder-tag">Add host range &amp; a gall photo</p>
+    </div>
+  </div>
 
-    <script>
-        const reveals = document.querySelectorAll('.reveal');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(e => {
-                if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
-            });
-        }, { threshold: 0.15 });
-        reveals.forEach(r => observer.observe(r));
-        document.addEventListener('click', e => {
-            if (!e.target.closest('.nav-item'))
-                document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
-        });
-    </script>
-    <script src="../js/main.js"></script>
+  <div class="callout callout--note" style="margin-top:26px">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="13"/><circle cx="12" cy="16.5" r=".6" fill="currentColor"/></svg>
+    <div><b>Why these two?</b><p>Together they represent the two dominant strategies of plant-parasitic nematodes — sedentary cyst-formers and root-knot gall-formers. A detector that handles both covers the vast majority of field cases.</p></div>
+  </div>
+</section>
+
+<section id="gap" data-toc="Why current tests fail">
+  <p class="eyebrow sec-label">02 — The gap</p>
+  <h2 class="section-title">Diagnosis today is slow, costly, and late</h2>
+  <div class="prose">
+    <p>Conventional nematode diagnosis depends on extracting worms from soil and identifying them under a microscope — a process that demands trained specialists, days of turnaround, and central laboratory infrastructure. For a smallholder farmer, that is rarely an option.</p>
+  </div>
+  <div class="grid grid-3" data-stagger style="margin-top:26px">
+    <div class="card"><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 16 14"/></svg></div><h3>Too slow</h3><p>Days to weeks between sampling and an answer — long after the planting decision has been made.</p></div>
+    <div class="card"><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><h3>Too costly</h3><p>Specialist labour and equipment put routine testing out of reach for most growers.</p></div>
+    <div class="card"><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.7" y2="16.7"/><line x1="11" y1="8" x2="11" y2="11.5"/></svg></div><h3>Too specialised</h3><p>Reliable identification still hinges on scarce taxonomic expertise.</p></div>
+  </div>
+</section>
+
+<section id="idea" data-toc="Our idea">
+  <p class="eyebrow sec-label">03 — The idea</p>
+  <h2 class="section-title">Put the diagnosis in the grower's hand</h2>
+  <div class="prose">
+    <p>We are designing a <strong>field-deployable biosensor</strong> that detects the molecular signatures of <em class="serif-italic">H. glycines</em> and <em class="serif-italic">M. incognita</em> directly from a soil sample, and reports the result as a simple visual readout. No microscope, no shipping samples to a lab, no waiting.</p>
+    <blockquote>See the pest before you see the symptom.</blockquote>
+    <p>The remainder of this wiki documents how that sensor was conceived, engineered, tested, and shaped by the people who will ultimately use it.</p>
+  </div>
+  <figure class="figure" style="margin-top:26px">
+    <div class="figure__media"><svg viewBox="0 0 760 240" style="max-width:680px" aria-hidden="true">
+      <g font-family="'Space Mono',monospace" font-size="13" fill="#7b7280">
+        <rect x="20" y="86" width="150" height="68" rx="12" fill="#efe6d6" stroke="#6e4fb8" stroke-width="1.5"/><text x="95" y="124" text-anchor="middle" fill="#241c2b">Soil sample</text>
+        <rect x="300" y="86" width="160" height="68" rx="12" fill="#efe6d6" stroke="#6e4fb8" stroke-width="1.5"/><text x="380" y="118" text-anchor="middle" fill="#241c2b">Recognition</text><text x="380" y="134" text-anchor="middle">+ amplify</text>
+        <rect x="590" y="86" width="150" height="68" rx="12" fill="#efe6d6" stroke="#e2a23c" stroke-width="1.5"/><text x="665" y="124" text-anchor="middle" fill="#241c2b">Readout</text>
+        <g stroke="#6e4fb8" stroke-width="2" marker-end="url(#ah)"><line x1="172" y1="120" x2="296" y2="120"/><line x1="462" y1="120" x2="586" y2="120"/></g>
+      </g>
+      <defs><marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#6e4fb8"/></marker></defs>
+    </svg></div>
+    <figcaption><b>Fig 1</b> The detection pipeline at a glance — replace with your final assay schematic.</figcaption>
+  </figure>
+</section>
+
+<section id="why-synbio" data-toc="Why synthetic biology">
+  <p class="eyebrow sec-label">04 — Approach</p>
+  <h2 class="section-title">Why this is a synthetic-biology problem</h2>
+  <div class="prose">
+    <p>Specificity is the hard part. Soil is a noisy molecular environment, and the two target species must be told apart from each other and from harmless relatives. Engineered biological recognition — programmable, sequence-specific, and self-amplifying — is uniquely suited to that job, and it can be manufactured cheaply and deployed without a cold chain.</p>
+    <ul>
+      <li><strong>Programmable specificity</strong> — recognition elements can be retargeted to new species by changing a single sequence.</li>
+      <li><strong>Built-in amplification</strong> — biological circuits turn a few molecules into a visible signal.</li>
+      <li><strong>Low-cost, field-ready</strong> — reagents that travel and store without specialist infrastructure.</li>
+    </ul>
+    <p class="placeholder-tag">Cite the specific chassis, recognition system &amp; reporter you adopt</p>
+  </div>
+</section>
+
+<section id="goals" data-toc="Project goals">
+  <p class="eyebrow sec-label">05 — Scope</p>
+  <h2 class="section-title">What we set out to achieve this season</h2>
+  <ul class="timeline" style="margin-top:24px">
+    <li><span class="when">Goal 01</span><h4>Design a species-specific recognition module</h4><p>Identify and validate sequences that uniquely distinguish each target nematode.</p></li>
+    <li><span class="when">Goal 02</span><h4>Build an amplifying reporter circuit</h4><p>Couple recognition to a robust, naked-eye readout.</p></li>
+    <li><span class="when">Goal 03</span><h4>Demonstrate detection from a soil-like matrix</h4><p>Show the sensor works outside clean buffer, toward real-world use.</p></li>
+    <li><span class="when">Goal 04</span><h4>Ground the design in real needs</h4><p>Let growers, agronomists, and regulators shape what "useful" means.</p></li>
+  </ul>
+</section>
+
+<section id="refs" data-toc="References">
+  <p class="eyebrow sec-label">06 — Sources</p>
+  <h2 class="section-title">References</h2>
+  <ol class="refs">
+    <li>Author, A. <em>et al.</em> Title of the global nematode crop-loss study. <em>Journal</em> (Year). <span class="placeholder-tag">replace</span></li>
+    <li>Author, B. <em>et al.</em> Biology and management of <em>Heterodera glycines</em>. <em>Journal</em> (Year). <span class="placeholder-tag">replace</span></li>
+    <li>Author, C. <em>et al.</em> <em>Meloidogyne incognita</em> host range and impact. <em>Journal</em> (Year). <span class="placeholder-tag">replace</span></li>
+  </ol>
+  <div class="callout callout--tip" style="margin-top:24px">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10c.7.7 1 1.3 1 2h6c0-.7.3-1.3 1-2a6 6 0 0 0-4-10z"/></svg>
+    <div><b>Editor's note</b><p>This page is a fully-styled scaffold. Replace the placeholder tags with your real figures, citations, and data — the layout, animations and outline are already wired up.</p></div>
+  </div>
+</section>
+    </div>
+  </div>
+  <div class="strata strata--down" aria-hidden="true"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><rect width="1440" height="120" fill="#f7f2e8"/><path fill="#241830" d="M0,60 C240,18 420,96 720,64 C1020,32 1230,92 1440,52 L1440,120 L0,120 Z"/><path fill="#180f1e" d="M0,86 C260,52 470,110 720,86 C1010,58 1240,108 1440,82 L1440,120 L0,120 Z"/></svg></div>
+  </main>
+
+  <footer class="footer">
+  <div class="footer__seal" aria-hidden="true"><img src="../img/nankai-seal.gif" alt="" loading="lazy" /></div>
+  <div class="footer__inner">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <b>NKU iGEM 2026</b>
+        <p>A synthetic-biology biosensor for the early detection of plant-parasitic nematodes. Built by students at Nankai University.</p>
+      </div>
+      <div class="footer__col">
+        <h5>Project</h5>
+        <a href="../pages/description.html">Description</a>
+        <a href="../pages/design.html">Design</a>
+        <a href="../pages/engineering-cycle.html">Engineering</a>
+        <a href="../pages/parts.html">Parts</a>
+        <a href="../pages/results.html">Results</a>
+      </div>
+      <div class="footer__col">
+        <h5>People &amp; Practice</h5>
+        <a href="../pages/human-practices.html">Human Practices</a>
+        <a href="../pages/education.html">Education</a>
+        <a href="../pages/team-members.html">Team</a>
+        <a href="../pages/safety.html">Safety</a>
+        <a href="../pages/attribution.html">Attributions</a>
+      </div>
+      <div class="footer__col">
+        <h5>Elsewhere</h5>
+        <a href="https://igem.org" rel="noopener">iGEM Foundation</a>
+        <a href="https://competition.igem.org" rel="noopener">Competition Hub</a>
+        <a href="https://www.nankai.edu.cn/" rel="noopener">Nankai University</a>
+        <a href="https://gitlab.igem.org" rel="noopener">iGEM GitLab</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 NKU iGEM Team &middot; Content under <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a></span>
+      <span>Built static &middot; self-hosted fonts &middot; no external trackers</span>
+    </div>
+  </div>
+</footer>
+
+
+  <div class="mascot-fab" aria-live="polite">
+    <div class="mascot-fab__bubble"></div>
+    <button class="mascot-fab__btn" aria-label="Back to top">
+      <img src="../img/mascot-trim.png" alt="" />
+    </button>
+  </div>
+
+  <script src="../js/main.js"></script>
 </body>
 </html>

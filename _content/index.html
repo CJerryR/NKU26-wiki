@@ -1,0 +1,201 @@
+<!--META
+layout: home
+title: NKU iGEM 2026
+desc: NKU iGEM 2026 — a synthetic-biology biosensor that detects soybean cyst and root-knot nematodes in soil before crop damage appears.
+-->
+<header class="hero">
+  <!-- soil + detection-ring atmosphere -->
+  <div class="hero__soil" aria-hidden="true">
+    <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <radialGradient id="glow" cx="62%" cy="40%" r="60%">
+          <stop offset="0" stop-color="#2c1d3c"/><stop offset="100%" stop-color="#191222"/>
+        </radialGradient>
+      </defs>
+      <rect width="1440" height="900" fill="url(#glow)"/>
+      <g stroke="#9b7fe0" fill="none" stroke-opacity=".10">
+        <circle cx="980" cy="360" r="120"/><circle cx="980" cy="360" r="220"/>
+        <circle cx="980" cy="360" r="330"/><circle cx="980" cy="360" r="450"/>
+      </g>
+      <g stroke="#f4ecdd" fill="none" stroke-opacity=".045" stroke-width="1">
+        <path d="M-40,640 C320,600 760,690 1480,610"/>
+        <path d="M-40,720 C300,680 820,770 1480,690"/>
+        <path d="M-40,800 C360,760 780,840 1480,770"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- faint hidden nematodes (always dim) -->
+  <div class="hero__field" aria-hidden="true">
+    <svg width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+      <defs><pattern id="wormsA" width="150" height="118" patternUnits="userSpaceOnUse" patternTransform="rotate(-9)">
+        <path d="M14,58 q18,-26 36,0 t36,0" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/>
+        <circle cx="120" cy="26" r="3.4" fill="currentColor"/>
+        <path d="M86,92 q12,-18 24,0 t24,0" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" opacity=".7"/>
+      </pattern></defs>
+      <rect width="100%" height="100%" fill="url(#wormsA)"/>
+    </svg>
+  </div>
+  <!-- the same field, bright, revealed only inside the lens mask -->
+  <div class="hero__field--lit" aria-hidden="true">
+    <svg width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+      <defs><pattern id="wormsB" width="150" height="118" patternUnits="userSpaceOnUse" patternTransform="rotate(-9)">
+        <path d="M14,58 q18,-26 36,0 t36,0" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/>
+        <circle cx="120" cy="26" r="3.4" fill="currentColor"/>
+        <path d="M86,92 q12,-18 24,0 t24,0" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" opacity=".7"/>
+      </pattern></defs>
+      <rect width="100%" height="100%" fill="url(#wormsB)"/>
+    </svg>
+  </div>
+
+  <!-- swimming nematodes injected here by JS -->
+  <div class="hero__worm" aria-hidden="true"></div>
+  <div class="hero__lens" aria-hidden="true"></div>
+  <div class="hero__grain" aria-hidden="true"></div>
+
+  <div class="hero__inner">
+    <p class="hero__eyebrow eyebrow">Nankai University &middot; iGEM 2026</p>
+    <h1 class="hero__title">
+      <span class="row"><span>The soil is</span></span>
+      <span class="row"><span><em>hiding</em>&nbsp;something.</span></span>
+    </h1>
+    <p class="hero__sub">Two microscopic nematodes quietly destroy billions of dollars of crops every year — underground, invisible, until it is too late. We are engineering a biosensor that names them <strong style="color:var(--cream)">before</strong> the damage shows.</p>
+    <div class="hero__species">
+      <span class="chip"><i></i>Heterodera glycines &middot; soybean cyst</span>
+      <span class="chip"><i></i>Meloidogyne incognita &middot; root-knot</span>
+    </div>
+    <div class="hero__cta">
+      <a href="pages/description.html" class="btn btn--primary">Read the investigation
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <a href="#how" class="btn btn--ghost">How detection works</a>
+    </div>
+  </div>
+
+  <p class="hero__hint">Move your cursor across the soil — <b>something is down there.</b></p>
+  <div class="hero__scroll" aria-hidden="true"><span class="mouse"></span>Scroll</div>
+</header>
+
+<!-- THE CASE (loam) -->
+<section class="band band--loam" style="padding-block:clamp(64px,8vw,110px)">
+  <div class="wrap">
+    <div class="band-head reveal">
+      <p class="eyebrow">01 — The case</p>
+      <h2 class="section-title">A pest you never see, on a bill you always pay.</h2>
+      <p class="lead">Plant-parasitic nematodes are among the most damaging — and most overlooked — pathogens in agriculture. They live in the soil, feed on roots, and spread before any symptom reaches the surface. By the time a field looks sick, the harvest is already lost.</p>
+    </div>
+    <div class="stat-grid reveal" data-stagger>
+      <div class="stat"><div class="stat__num"><span data-count="157">0</span><span class="unit">B$</span></div><div class="stat__label">Est. annual global loss · cite</div></div>
+      <div class="stat"><div class="stat__num"><span data-count="12.3" data-decimals="1">0</span><span class="unit">%</span></div><div class="stat__label">Of world crop yield · cite</div></div>
+      <div class="stat"><div class="stat__num">&lt;<span data-count="2">0</span><span class="unit">mm</span></div><div class="stat__label">Length of each suspect</div></div>
+      <div class="stat"><div class="stat__num"><span data-count="4100">0</span><span class="unit">+</span></div><div class="stat__label">Known nematode species</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker" style="background:var(--loam)" aria-hidden="true">
+  <div class="ticker__track">
+    <span>biosensing</span><i class="dot"></i><span>root-knot</span><i class="dot"></i><span>soybean cyst</span><i class="dot"></i><span>early detection</span><i class="dot"></i><span>synthetic biology</span><i class="dot"></i>
+    <span>biosensing</span><i class="dot"></i><span>root-knot</span><i class="dot"></i><span>soybean cyst</span><i class="dot"></i><span>early detection</span><i class="dot"></i><span>synthetic biology</span><i class="dot"></i>
+  </div>
+</div>
+
+<div class="strata strata--down" aria-hidden="true">
+  <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+    <rect width="1440" height="120" fill="#191222"/>
+    <path fill="#241830" d="M0,60 C240,18 420,96 720,64 C1020,32 1230,92 1440,52 L1440,120 L0,120 Z"/>
+    <path fill="#f7f2e8" d="M0,86 C260,52 470,110 720,86 C1010,58 1240,108 1440,82 L1440,120 L0,120 Z"/>
+  </svg>
+</div>
+
+<!-- HOW IT WORKS (paper) -->
+<section class="band band--paper" id="how">
+  <div class="wrap">
+    <div class="band-head reveal">
+      <p class="eyebrow">02 — How detection works</p>
+      <h2 class="section-title">Three moves from a clod of soil to a clear answer.</h2>
+      <p class="lead">Our detector reads the molecular fingerprints these nematodes leave in soil and turns them into a signal anyone can interpret in the field — no lab, no microscope, no PhD required.</p>
+    </div>
+    <div class="feature-list reveal" data-stagger>
+      <div class="feature">
+        <span class="feature__idx">01</span>
+        <div><h3>Sample</h3><p>A pinch of field soil goes into a tube. Target nucleic acids are released and concentrated on the spot.</p></div>
+        <a class="feature__go" href="pages/design.html" aria-label="Design"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+      </div>
+      <div class="feature">
+        <span class="feature__idx">02</span>
+        <div><h3>Amplify &amp; recognise</h3><p>An engineered recognition module locks onto sequences unique to each species and triggers an amplifying biological circuit.</p></div>
+        <a class="feature__go" href="pages/engineering-cycle.html" aria-label="Engineering"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+      </div>
+      <div class="feature">
+        <span class="feature__idx">03</span>
+        <div><h3>Read the verdict</h3><p>A colour or fluorescence readout reports which nematode is present — and roughly how much — within the hour.</p></div>
+        <a class="feature__go" href="pages/results.html" aria-label="Results"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+      </div>
+    </div>
+    <p class="placeholder-tag">Swap in your real assay chemistry &amp; circuit once finalised</p>
+  </div>
+</section>
+
+<!-- EXPLORE (paper-2) -->
+<section class="band band--paper-2">
+  <div class="wrap">
+    <div class="band-head reveal">
+      <p class="eyebrow">03 — The casebook</p>
+      <h2 class="section-title">Open the wiki.</h2>
+      <p class="lead">Everything we did, evidenced and cross-referenced. Start anywhere.</p>
+    </div>
+    <div class="grid grid-3 reveal" data-stagger>
+      <a class="card" href="pages/description.html"><span class="card__ring"></span>
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.7" y2="16.7"/></svg></div>
+        <h3>Description</h3><p>The problem, the suspects, and the idea that catches them.</p></a>
+      <a class="card" href="pages/design.html"><span class="card__ring"></span>
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v4l-5 9a3 3 0 0 0 3 4h10a3 3 0 0 0 3-4l-5-9V3"/><line x1="8" y1="3" x2="16" y2="3"/></svg></div>
+        <h3>Design</h3><p>How the biological circuit was architected and built.</p></a>
+      <a class="card" href="pages/engineering-cycle.html"><span class="card__ring"></span>
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><polyline points="21 4 21 9 16 9"/></svg></div>
+        <h3>Engineering</h3><p>Design–build–test–learn, cycle by documented cycle.</p></a>
+      <a class="card" href="pages/parts.html"><span class="card__ring"></span>
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M5 8l-2 4 2 4M19 8l2 4-2 4M9 22h6"/><circle cx="12" cy="13" r="3"/></svg></div>
+        <h3>Parts</h3><p>The composite and basic parts we contributed to the Registry.</p></a>
+      <a class="card" href="pages/human-practices.html"><span class="card__ring"></span>
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M17 5a3 3 0 0 1 0 6M16 20a6 6 0 0 0-2-4.5"/></svg></div>
+        <h3>Human Practices</h3><p>Listening to farmers, agronomists, and regulators.</p></a>
+      <a class="card" href="pages/results.html"><span class="card__ring"></span>
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="20" x2="20" y2="20"/><rect x="6" y="11" width="3" height="6"/><rect x="11" y="7" width="3" height="10"/><rect x="16" y="13" width="3" height="4"/></svg></div>
+        <h3>Results</h3><p>What the detector actually did at the bench.</p></a>
+    </div>
+  </div>
+</section>
+
+<div class="strata strata--down" aria-hidden="true">
+  <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+    <rect width="1440" height="120" fill="#efe6d6"/>
+    <path fill="#241830" d="M0,64 C240,30 470,100 720,66 C1010,28 1240,96 1440,56 L1440,120 L0,120 Z"/>
+    <path fill="#191222" d="M0,90 C260,58 470,112 720,90 C1010,62 1240,110 1440,84 L1440,120 L0,120 Z"/>
+  </svg>
+</div>
+
+<!-- MEET THE DETECTIVE (loam) -->
+<section class="band band--loam" style="padding-block:clamp(70px,9vw,120px)">
+  <div class="wrap">
+    <div class="split split--media-first">
+      <div class="split__media reveal-l" style="position:relative;display:grid;place-items:center;min-height:320px">
+        <svg viewBox="0 0 400 400" style="position:absolute;width:min(100%,420px)" aria-hidden="true">
+          <g fill="none" stroke="#9b7fe0" stroke-opacity=".25"><circle cx="200" cy="200" r="120"/><circle cx="200" cy="200" r="160"/><circle cx="200" cy="200" r="195"/></g>
+        </svg>
+        <img src="img/mascot.png" alt="The NKU iGEM mascot — a round detective with a deerstalker hat and magnifying glass" style="position:relative;width:min(78%,300px);filter:drop-shadow(0 22px 40px rgba(0,0,0,.45));animation:bob 4s var(--ease) infinite" />
+      </div>
+      <div class="split__body reveal-r flow">
+        <p class="eyebrow">04 — The investigator</p>
+        <h2 class="section-title">Meet our detective.</h2>
+        <p class="lead">Every good case needs a sharp eye. Ours wears a deerstalker, carries a magnifying glass, and never lets a nematode slip past unnoticed — the face of a project about seeing the unseen.</p>
+        <p style="color:var(--cream-2)">Behind the mascot is a team of Nankai University students from the life sciences and beyond, who spent a year turning a soil problem into a piece of synthetic biology.</p>
+        <div class="hero__cta" style="opacity:1;transform:none;margin-top:28px">
+          <a href="pages/team-members.html" class="btn btn--iris">Meet the team
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          <a href="pages/human-practices.html" class="btn btn--ghost">Our human practices</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

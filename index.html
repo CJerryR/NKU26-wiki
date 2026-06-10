@@ -1,852 +1,403 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NKU iGEM 2026</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@400;500&display=swap"
-        rel="stylesheet" />
-
-    <style>
-        /* ─── CSS Variables ─────────────────────────────────────────────── */
-        :root {
-            --purple: #7E0C6E;
-            --purple-dark: #5a0850;
-            --purple-deep: #1a0318;
-            --purple-mid: #2d0828;
-            --yellow: #F0C040;
-            --yellow-bright: #FFD93D;
-            --white: #FFFFFF;
-            --off-white: #f5f0f4;
-            --text-light: #d4b8d0;
-            --text-muted: #9a7a96;
-            --nav-height: 56px;
-            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        /* ─── Reset ─────────────────────────────────────────────────────── */
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'DM Sans', sans-serif;
-            background: var(--purple-deep);
-            color: var(--white);
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        /* ─── Noise texture overlay ──────────────────────────────────────── */
-        body::before {
-            content: '';
-            position: fixed;
-            inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        /* ─── NAV ────────────────────────────────────────────────────────── */
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            height: var(--nav-height);
-            background: rgba(26, 3, 24, 0.85);
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
-            border-bottom: 1px solid rgba(126, 12, 110, 0.3);
-        }
-
-        .nav-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            padding: 0 24px;
-        }
-
-        .nav-logo {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 22px;
-            letter-spacing: 0.08em;
-            color: var(--yellow-bright);
-            text-decoration: none;
-            white-space: nowrap;
-            flex-shrink: 0;
-            margin-right: 40px;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 4px;
-            align-items: center;
-            margin-left: auto;
-        }
-
-        /* ─── Nav items & dropdowns ──────────────────────────────────────── */
-        .nav-item {
-            position: static;
-            /* use nav as relative for mega menu */
-        }
-
-        .nav-link {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            padding: 8px 14px;
-            font-size: 13px;
-            font-weight: 500;
-            color: var(--text-light);
-            text-decoration: none;
-            border-radius: 8px;
-            transition: color var(--transition), background var(--transition);
-            letter-spacing: 0.02em;
-            cursor: pointer;
-            white-space: nowrap;
-            user-select: none;
-        }
-
-        .nav-link svg {
-            width: 10px;
-            height: 10px;
-            transition: transform var(--transition);
-            fill: currentColor;
-        }
-
-        .nav-item:hover>.nav-link,
-        .nav-item.active>.nav-link {
-            color: var(--yellow-bright);
-        }
-
-        .nav-item:hover>.nav-link svg {
-            transform: rotate(180deg);
-        }
-
-        /* ─── Mega dropdown ──────────────────────────────────────────────── */
-        .mega-menu {
-            position: absolute;
-            top: var(--nav-height);
-            left: 0;
-            right: 0;
-            background: rgba(26, 3, 24, 0.97);
-            backdrop-filter: blur(30px);
-            -webkit-backdrop-filter: blur(30px);
-            border-bottom: 1px solid rgba(126, 12, 110, 0.4);
-            padding: 36px 0 40px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-8px);
-            transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
-            pointer-events: none;
-        }
-
-        .nav-item:hover .mega-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-            pointer-events: all;
-        }
-
-        .mega-col {
-            padding: 0 48px;
-            border-right: 1px solid rgba(126, 12, 110, 0.2);
-        }
-
-        .mega-col:last-child {
-            border-right: none;
-        }
-
-        .mega-col-title {
-            font-size: 10px;
-            font-weight: 600;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            margin-bottom: 16px;
-        }
-
-        .mega-col a {
-            display: block;
-            font-size: 15px;
-            font-weight: 500;
-            color: var(--text-light);
-            text-decoration: none;
-            padding: 6px 0;
-            transition: color var(--transition), padding-left var(--transition);
-            line-height: 1.4;
-        }
-
-        .mega-col a:hover {
-            color: var(--yellow-bright);
-            padding-left: 6px;
-        }
-
-        .mega-col a.big {
-            font-size: 22px;
-            font-family: 'Bebas Neue', sans-serif;
-            letter-spacing: 0.05em;
-            padding: 4px 0;
-        }
-
-        /* ─── Hero ───────────────────────────────────────────────────────── */
-        .hero {
-            position: relative;
-            z-index: 1;
-            min-height: 72vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 80px 24px 100px;
-            overflow: hidden;
-        }
-
-        /* Background rings */
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 700px;
-            height: 700px;
-            border-radius: 50%;
-            border: 1px solid rgba(126, 12, 110, 0.25);
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            animation: pulse-ring 4s ease-in-out infinite;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            border-radius: 50%;
-            background: radial-gradient(ellipse at center, rgba(126, 12, 110, 0.18) 0%, transparent 70%);
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        @keyframes pulse-ring {
-
-            0%,
-            100% {
-                transform: translate(-50%, -50%) scale(1);
-                opacity: 0.6;
-            }
-
-            50% {
-                transform: translate(-50%, -50%) scale(1.04);
-                opacity: 1;
-            }
-        }
-
-        .hero-eyebrow {
-            font-family: 'DM Mono', monospace;
-            font-size: 11px;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--yellow);
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
-            opacity: 0;
-            animation: fade-up 0.8s ease 0.1s forwards;
-        }
-
-        .hero-title {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(72px, 12vw, 140px);
-            line-height: 0.9;
-            letter-spacing: 0.04em;
-            position: relative;
-            z-index: 1;
-            background: linear-gradient(135deg, var(--white) 0%, var(--yellow-bright) 50%, var(--purple) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            opacity: 0;
-            animation: fade-up 0.8s ease 0.25s forwards;
-        }
-
-        .hero-sub {
-            font-size: 16px;
-            font-weight: 300;
-            color: var(--text-light);
-            margin-top: 24px;
-            letter-spacing: 0.05em;
-            position: relative;
-            z-index: 1;
-            opacity: 0;
-            animation: fade-up 0.8s ease 0.4s forwards;
-        }
-
-        .hero-sub span {
-            color: var(--yellow);
-            font-weight: 500;
-        }
-
-        .hero-cta {
-            display: flex;
-            gap: 16px;
-            margin-top: 48px;
-            position: relative;
-            z-index: 1;
-            opacity: 0;
-            animation: fade-up 0.8s ease 0.55s forwards;
-        }
-
-        .btn {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            text-decoration: none;
-            padding: 14px 32px;
-            border-radius: 50px;
-            transition: all var(--transition);
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn-primary {
-            background: var(--yellow-bright);
-            color: var(--purple-deep);
-        }
-
-        .btn-primary:hover {
-            background: #ffe066;
-            transform: translateY(-2px);
-            box-shadow: 0 12px 40px rgba(255, 217, 61, 0.35);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--white);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-        }
-
-        .btn-outline:hover {
-            border-color: var(--yellow-bright);
-            color: var(--yellow-bright);
-            transform: translateY(-2px);
-        }
-
-        @keyframes fade-up {
-            from {
-                opacity: 0;
-                transform: translateY(24px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* ─── Divider line ───────────────────────────────────────────────── */
-        .divider {
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(126, 12, 110, 0.6), rgba(240, 192, 64, 0.4), transparent);
-            margin: 0;
-        }
-
-        /* ─── Section ────────────────────────────────────────────────────── */
-        .section {
-            position: relative;
-            z-index: 1;
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 80px 32px;
-        }
-
-        .section-label {
-            font-family: 'DM Mono', monospace;
-            font-size: 10px;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            color: var(--yellow);
-            margin-bottom: 8px;
-        }
-
-        .section-title {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(40px, 6vw, 64px);
-            letter-spacing: 0.04em;
-            line-height: 1;
-            margin-bottom: 40px;
-            background: linear-gradient(120deg, var(--white) 60%, var(--purple) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* ─── Project card (placeholder) ────────────────────────────────── */
-        .project-card {
-            background: rgba(126, 12, 110, 0.08);
-            border: 1px solid rgba(126, 12, 110, 0.3);
-            border-radius: 20px;
-            padding: 60px 48px;
-            text-align: center;
-            transition: border-color var(--transition), background var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(126, 12, 110, 0.12) 0%, transparent 60%);
-            pointer-events: none;
-        }
-
-        .project-card:hover {
-            border-color: rgba(126, 12, 110, 0.6);
-            background: rgba(126, 12, 110, 0.13);
-        }
-
-        .card-icon {
-            font-size: 36px;
-            margin-bottom: 16px;
-            display: block;
-        }
-
-        .card-placeholder {
-            font-size: 15px;
-            color: var(--text-muted);
-            font-style: italic;
-            font-weight: 300;
-        }
-
-        /* ─── Quick Links grid ───────────────────────────────────────────── */
-        .links-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 16px;
-            margin-top: 8px;
-        }
-
-        .link-card {
-            background: rgba(126, 12, 110, 0.07);
-            border: 1px solid rgba(126, 12, 110, 0.25);
-            border-radius: 14px;
-            padding: 28px 24px;
-            text-align: center;
-            text-decoration: none;
-            color: var(--text-light);
-            transition: all var(--transition);
-            font-size: 14px;
-            font-weight: 500;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .link-card::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: var(--yellow-bright);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform var(--transition);
-        }
-
-        .link-card:hover {
-            color: var(--white);
-            border-color: rgba(126, 12, 110, 0.6);
-            background: rgba(126, 12, 110, 0.18);
-            transform: translateY(-4px);
-            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
-        }
-
-        .link-card:hover::after {
-            transform: scaleX(1);
-        }
-
-        .link-card-icon {
-            font-size: 28px;
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        /* ─── Stats row ──────────────────────────────────────────────────── */
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1px;
-            background: rgba(126, 12, 110, 0.2);
-            border: 1px solid rgba(126, 12, 110, 0.2);
-            border-radius: 20px;
-            overflow: hidden;
-            margin-top: 64px;
-        }
-
-        .stat-item {
-            background: rgba(26, 3, 24, 0.9);
-            padding: 36px 24px;
-            text-align: center;
-        }
-
-        .stat-num {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 52px;
-            letter-spacing: 0.04em;
-            color: var(--yellow-bright);
-            line-height: 1;
-        }
-
-        .stat-label {
-            font-size: 12px;
-            font-weight: 400;
-            color: var(--text-muted);
-            margin-top: 6px;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-        }
-
-        /* ─── Footer ─────────────────────────────────────────────────────── */
-        footer {
-            position: relative;
-            z-index: 1;
-            background: rgba(10, 1, 9, 0.95);
-            border-top: 1px solid rgba(126, 12, 110, 0.3);
-            padding: 32px 24px;
-            text-align: center;
-        }
-
-        .footer-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .footer-logo {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 18px;
-            letter-spacing: 0.1em;
-            color: var(--yellow);
-        }
-
-        .footer-text {
-            font-size: 12px;
-            color: var(--text-muted);
-        }
-
-        .footer-text a {
-            color: var(--yellow);
-            text-decoration: none;
-            transition: color var(--transition);
-        }
-
-        .footer-text a:hover {
-            color: var(--yellow-bright);
-        }
-
-        /* ─── Scroll reveal ──────────────────────────────────────────────── */
-        .reveal {
-            opacity: 0;
-            transform: translateY(32px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: none;
-        }
-
-        /* ─── Mobile ─────────────────────────────────────────────────────── */
-        @media (max-width: 768px) {
-            .mega-menu {
-                grid-template-columns: 1fr;
-            }
-
-            .mega-col {
-                border-right: none;
-                border-bottom: 1px solid rgba(126, 12, 110, 0.2);
-                padding: 20px 28px;
-            }
-
-            .stats {
-                grid-template-columns: 1fr;
-            }
-
-            .links-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NKU iGEM 2026</title>
+  <meta name="description" content="NKU iGEM 2026 — a synthetic-biology biosensor that detects soybean cyst and root-knot nematodes in soil before crop damage appears." />
+  <meta name="theme-color" content="#191222" />
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml" />
+  <link rel="preload" href="fonts/spline-variable.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/fraunces-variable.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
-
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
 
-    <!-- ─── NAV ──────────────────────────────────────────────────────────── -->
-    <nav>
-        <div class="nav-inner">
-            <a href="#" class="nav-logo">NKU iGEM 2026</a>
+  <nav class="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand" aria-label="NKU iGEM 2026 home">
+      <img src="img/logo.svg" alt="" width="34" height="34" />
+      <span><b>SUBSURFACE</b><span>NKU iGEM 2026</span></span>
+    </a>
 
-            <ul class="nav-links">
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span></button>
 
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Home</a>
-                </li>
+    <ul class="nav-links">
+      <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
 
-                <!-- Project dropdown -->
-                <li class="nav-item">
-                    <span class="nav-link">
-                        Project
-                        <svg viewBox="0 0 10 6">
-                            <path d="M0 0l5 6 5-6z" />
-                        </svg>
-                    </span>
-                    <div class="mega-menu">
-                        <div class="mega-col">
-                            <p class="mega-col-title">Overview</p>
-                            <a href="pages/description.html" class="big">Description</a>
-                            <a href="pages/background.html" class="big">Background</a>
-                            <a href="pages/design.html" class="big">Design</a>
-                            <a href="pages/results.html" class="big">Results</a>
-                        </div>
-                        <div class="mega-col">
-                            <p class="mega-col-title">Engineering</p>
-                            <a href="pages/engineering-cycle.html" class="big">Engineering Cycle</a>
-                            <a href="pages/proof-of-concept.html" class="big">Proof of Concept</a>
-                            <a href="pages/implementation.html" class="big">Implementation</a>
-                        </div>
-                        <div class="mega-col">
-                            <p class="mega-col-title">More</p>
-                            <a href="pages/contribution.html" class="big">Contribution</a>
-                            <a href="pages/parts.html" class="big">Parts</a>
-                            <a href="pages/safety.html" class="big">Safety</a>
-                        </div>
-                    </div>
-                </li>
-
-                <!-- Lab dropdown -->
-                <li class="nav-item">
-                    <span class="nav-link">
-                        Lab
-                        <svg viewBox="0 0 10 6">
-                            <path d="M0 0l5 6 5-6z" />
-                        </svg>
-                    </span>
-                    <div class="mega-menu">
-                        <div class="mega-col">
-                            <p class="mega-col-title">Wet Lab</p>
-                            <a href="pages/wet-lab.html" class="big">Experiments</a>
-                            <a href="pages/protocols.html" class="big">Protocols</a>
-                            <a href="pages/notebook.html" class="big">Notebook</a>
-                        </div>
-                        <div class="mega-col">
-                            <p class="mega-col-title">Dry Lab</p>
-                            <a href="pages/modeling.html" class="big">Modeling</a>
-                            <a href="pages/software.html" class="big">Software</a>
-                            <a href="pages/hardware.html" class="big">Hardware</a>
-                        </div>
-                        <div class="mega-col">
-                            <p class="mega-col-title">Resources</p>
-                            <a href="pages/safety.html" class="big">Safety</a>
-                            <a href="pages/attribution.html" class="big">Attribution</a>
-                        </div>
-                    </div>
-                </li>
-
-                <!-- HP dropdown -->
-                <li class="nav-item">
-                    <span class="nav-link">
-                        HP
-                        <svg viewBox="0 0 10 6">
-                            <path d="M0 0l5 6 5-6z" />
-                        </svg>
-                    </span>
-                    <div class="mega-menu">
-                        <div class="mega-col">
-                            <p class="mega-col-title">Human Practices</p>
-                            <a href="pages/human-practices.html" class="big">Overview</a>
-                            <a href="pages/integrated-hp.html" class="big">Integrated HP</a>
-                        </div>
-                        <div class="mega-col">
-                            <p class="mega-col-title">Engagement</p>
-                            <a href="pages/education.html" class="big">Education</a>
-                            <a href="pages/communication.html" class="big">Communication</a>
-                            <a href="pages/entrepreneurship.html" class="big">Entrepreneurship</a>
-                        </div>
-                        <div class="mega-col">
-                            <p class="mega-col-title">Impact</p>
-                            <a href="pages/sustainability.html" class="big">Sustainability</a>
-                            <a href="pages/diversity-inclusion.html" class="big">Diversity & Inclusion</a>
-                        </div>
-                    </div>
-                </li>
-
-                <!-- Team dropdown -->
-                <li class="nav-item">
-                    <span class="nav-link">
-                        Team
-                        <svg viewBox="0 0 10 6">
-                            <path d="M0 0l5 6 5-6z" />
-                        </svg>
-                    </span>
-                    <div class="mega-menu">
-                        <div class="mega-col">
-                            <p class="mega-col-title">Members</p>
-                            <a href="pages/team-members.html" class="big">Team Members</a>
-                            <a href="pages/advisors.html" class="big">Advisors</a>
-                            <a href="pages/instructors.html" class="big">Instructors</a>
-                        </div>
-                        <div class="mega-col">
-                            <p class="mega-col-title">About NKU</p>
-                            <a href="https://www.nankai.edu.cn/" class="big">Nankai University</a>
-                            <a href="https://sky.nankai.edu.cn/" class="big">Our Institution</a>
-                        </div>
-                        <div class="mega-col">
-                            <p class="mega-col-title">Contact</p>
-                            <a href="pages/collaborations.html" class="big">Collaborations</a>
-                            <a href="pages/partnerships.html" class="big">Partnerships</a>
-                        </div>
-                    </div>
-                </li>
-
-            </ul>
+      <li class="nav-item">
+        <span class="nav-link" role="button" tabindex="0" aria-haspopup="true">Project
+          <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0l5 6 5-6z"/></svg></span>
+        <div class="mega">
+          <div class="mega-col">
+            <h4>The Investigation</h4>
+            <a href="pages/description.html"><span class="dot"></span>Description</a>
+            <a href="pages/background.html"><span class="dot"></span>Background</a>
+            <a href="pages/design.html"><span class="dot"></span>Design</a>
+          </div>
+          <div class="mega-col">
+            <h4>Evidence</h4>
+            <a href="pages/engineering-cycle.html"><span class="dot"></span>Engineering</a>
+            <a href="pages/results.html"><span class="dot"></span>Results</a>
+            <a href="pages/proof-of-concept.html"><span class="dot"></span>Proof of Concept</a>
+            <a href="pages/implementation.html"><span class="dot"></span>Implementation</a>
+          </div>
+          <div class="mega-col">
+            <h4>Registry</h4>
+            <a href="pages/parts.html"><span class="dot"></span>Parts</a>
+            <a href="pages/contribution.html"><span class="dot"></span>Contribution</a>
+            <a href="pages/safety.html"><span class="dot"></span>Safety</a>
+          </div>
+          <a class="mega-feature" href="pages/description.html">
+            <span class="tag">Case file</span>
+            <p>Two nematodes are eating the harvest. We built the detector.</p>
+            <small>Read the project &rarr;</small>
+            <img class="mascot-mini" src="img/mascot-trim.png" alt="" />
+          </a>
         </div>
-    </nav>
+      </li>
 
-    <!-- ─── HERO ──────────────────────────────────────────────────────────── -->
-    <header class="hero">
-        <p class="hero-eyebrow">Nankai University · iGEM 2026 · Team Wiki</p>
-        <h1 class="hero-title">NKU<br />iGEM</h1>
-        <p class="hero-sub">Synthetic Biology for a Better World &mdash; <span>Coming Soon</span></p>
-        <div class="hero-cta">
-            <a href="#about" class="btn btn-primary">Explore Project</a>
-            <a href="#links" class="btn btn-outline">Quick Links</a>
+      <li class="nav-item">
+        <span class="nav-link" role="button" tabindex="0" aria-haspopup="true">Lab
+          <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0l5 6 5-6z"/></svg></span>
+        <div class="mega">
+          <div class="mega-col">
+            <h4>Wet Lab</h4>
+            <a href="pages/wet-lab.html"><span class="dot"></span>Experiments</a>
+            <a href="pages/protocols.html"><span class="dot"></span>Protocols</a>
+            <a href="pages/notebook.html"><span class="dot"></span>Notebook</a>
+          </div>
+          <div class="mega-col">
+            <h4>Dry Lab</h4>
+            <a href="pages/modeling.html"><span class="dot"></span>Modeling</a>
+            <a href="pages/software.html"><span class="dot"></span>Software</a>
+            <a href="pages/hardware.html"><span class="dot"></span>Hardware</a>
+          </div>
+          <div class="mega-col">
+            <h4>Output</h4>
+            <a href="pages/results.html"><span class="dot"></span>Results</a>
+            <a href="pages/safety.html"><span class="dot"></span>Safety</a>
+          </div>
+          <a class="mega-feature" href="pages/notebook.html">
+            <span class="tag">Field notebook</span>
+            <p>Every experiment, dated and logged like a detective's casebook.</p>
+            <small>Open the notebook &rarr;</small>
+            <img class="mascot-mini" src="img/mascot-trim.png" alt="" />
+          </a>
         </div>
-    </header>
+      </li>
 
-    <div class="divider"></div>
-
-    <!-- ─── ABOUT ─────────────────────────────────────────────────────────── -->
-    <section class="section" id="about">
-        <div class="reveal">
-            <p class="section-label">01 — About</p>
-            <h2 class="section-title">Our Project</h2>
-            <div class="project-card">
-                <span class="card-icon">🧬</span>
-                <p class="card-placeholder">项目简介占位符 — 之后填入真实内容</p>
-            </div>
-
-            <div class="stats">
-                <div class="stat-item">
-                    <div class="stat-num">2026</div>
-                    <div class="stat-label">iGEM Competition</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-num">NKU</div>
-                    <div class="stat-label">Nankai University</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-num">×∞</div>
-                    <div class="stat-label">Scientific Impact</div>
-                </div>
-            </div>
+      <li class="nav-item">
+        <span class="nav-link" role="button" tabindex="0" aria-haspopup="true">Human Practices
+          <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0l5 6 5-6z"/></svg></span>
+        <div class="mega">
+          <div class="mega-col">
+            <h4>Practices</h4>
+            <a href="pages/human-practices.html"><span class="dot"></span>Overview</a>
+            <a href="pages/integrated-hp.html"><span class="dot"></span>Integrated HP</a>
+          </div>
+          <div class="mega-col">
+            <h4>Engagement</h4>
+            <a href="pages/education.html"><span class="dot"></span>Education</a>
+            <a href="pages/communication.html"><span class="dot"></span>Communication</a>
+            <a href="pages/entrepreneurship.html"><span class="dot"></span>Entrepreneurship</a>
+          </div>
+          <div class="mega-col">
+            <h4>Impact</h4>
+            <a href="pages/sustainability.html"><span class="dot"></span>Sustainability</a>
+            <a href="pages/diversity-inclusion.html"><span class="dot"></span>Inclusion</a>
+          </div>
+          <a class="mega-feature" href="pages/human-practices.html">
+            <span class="tag">In the field</span>
+            <p>We asked the people who actually fight nematodes what they need.</p>
+            <small>See who we met &rarr;</small>
+            <img class="mascot-mini" src="img/mascot-trim.png" alt="" />
+          </a>
         </div>
-    </section>
+      </li>
 
-    <div class="divider"></div>
-
-    <!-- ─── QUICK LINKS ───────────────────────────────────────────────────── -->
-    <section class="section" id="links">
-        <div class="reveal">
-            <p class="section-label">02 — Navigate</p>
-            <h2 class="section-title">Quick Links</h2>
-            <div class="links-grid">
-                <a href="#" class="link-card">
-                    <span class="link-card-icon">📋</span>
-                    Project Description
-                </a>
-                <a href="#" class="link-card">
-                    <span class="link-card-icon">⚗️</span>
-                    Wet Lab Protocols
-                </a>
-                <a href="#" class="link-card">
-                    <span class="link-card-icon">💻</span>
-                    Dry Lab Modeling
-                </a>
-                <a href="#" class="link-card">
-                    <span class="link-card-icon">🌍</span>
-                    Human Practices
-                </a>
-                <a href="#" class="link-card">
-                    <span class="link-card-icon">🧑‍🔬</span>
-                    Team Members
-                </a>
-                <a href="#" class="link-card">
-                    <span class="link-card-icon">📌</span>
-                    Attributions
-                </a>
-            </div>
+      <li class="nav-item">
+        <span class="nav-link" role="button" tabindex="0" aria-haspopup="true">Team
+          <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0l5 6 5-6z"/></svg></span>
+        <div class="mega">
+          <div class="mega-col">
+            <h4>People</h4>
+            <a href="pages/team-members.html"><span class="dot"></span>Members</a>
+            <a href="pages/advisors.html"><span class="dot"></span>Advisors</a>
+            <a href="pages/instructors.html"><span class="dot"></span>Instructors</a>
+          </div>
+          <div class="mega-col">
+            <h4>Friends</h4>
+            <a href="pages/collaborations.html"><span class="dot"></span>Collaborations</a>
+            <a href="pages/partnerships.html"><span class="dot"></span>Partnerships</a>
+          </div>
+          <div class="mega-col">
+            <h4>About</h4>
+            <a href="pages/attribution.html"><span class="dot"></span>Attributions</a>
+            <a href="https://www.nankai.edu.cn/" rel="noopener"><span class="dot"></span>Nankai University</a>
+            <a href="https://sky.nankai.edu.cn/" rel="noopener"><span class="dot"></span>School of Life Sciences</a>
+          </div>
+          <a class="mega-feature" href="pages/team-members.html">
+            <span class="tag">The crew</span>
+            <p>Students of Nankai University, on the trail of a hidden pest.</p>
+            <small>Meet everyone &rarr;</small>
+            <img class="mascot-mini" src="img/mascot-trim.png" alt="" />
+          </a>
         </div>
-    </section>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-    <!-- ─── FOOTER ────────────────────────────────────────────────────────── -->
-    <footer>
-        <div class="footer-inner">
-            <div class="footer-logo">NKU iGEM 2026</div>
-            <p class="footer-text">© 2026 NKU iGEM Team | <a href="https://igem.org" target="_blank">iGEM Foundation</a>
-            </p>
+
+  <main id="main">
+<header class="hero">
+  <!-- soil + detection-ring atmosphere -->
+  <div class="hero__soil" aria-hidden="true">
+    <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <radialGradient id="glow" cx="62%" cy="40%" r="60%">
+          <stop offset="0" stop-color="#2c1d3c"/><stop offset="100%" stop-color="#191222"/>
+        </radialGradient>
+      </defs>
+      <rect width="1440" height="900" fill="url(#glow)"/>
+      <g stroke="#9b7fe0" fill="none" stroke-opacity=".10">
+        <circle cx="980" cy="360" r="120"/><circle cx="980" cy="360" r="220"/>
+        <circle cx="980" cy="360" r="330"/><circle cx="980" cy="360" r="450"/>
+      </g>
+      <g stroke="#f4ecdd" fill="none" stroke-opacity=".045" stroke-width="1">
+        <path d="M-40,640 C320,600 760,690 1480,610"/>
+        <path d="M-40,720 C300,680 820,770 1480,690"/>
+        <path d="M-40,800 C360,760 780,840 1480,770"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- faint hidden nematodes (always dim) -->
+  <div class="hero__field" aria-hidden="true">
+    <svg width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+      <defs><pattern id="wormsA" width="150" height="118" patternUnits="userSpaceOnUse" patternTransform="rotate(-9)">
+        <path d="M14,58 q18,-26 36,0 t36,0" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/>
+        <circle cx="120" cy="26" r="3.4" fill="currentColor"/>
+        <path d="M86,92 q12,-18 24,0 t24,0" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" opacity=".7"/>
+      </pattern></defs>
+      <rect width="100%" height="100%" fill="url(#wormsA)"/>
+    </svg>
+  </div>
+  <!-- the same field, bright, revealed only inside the lens mask -->
+  <div class="hero__field--lit" aria-hidden="true">
+    <svg width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+      <defs><pattern id="wormsB" width="150" height="118" patternUnits="userSpaceOnUse" patternTransform="rotate(-9)">
+        <path d="M14,58 q18,-26 36,0 t36,0" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/>
+        <circle cx="120" cy="26" r="3.4" fill="currentColor"/>
+        <path d="M86,92 q12,-18 24,0 t24,0" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" opacity=".7"/>
+      </pattern></defs>
+      <rect width="100%" height="100%" fill="url(#wormsB)"/>
+    </svg>
+  </div>
+
+  <!-- swimming nematodes injected here by JS -->
+  <div class="hero__worm" aria-hidden="true"></div>
+  <div class="hero__lens" aria-hidden="true"></div>
+  <div class="hero__grain" aria-hidden="true"></div>
+
+  <div class="hero__inner">
+    <p class="hero__eyebrow eyebrow">Nankai University &middot; iGEM 2026</p>
+    <h1 class="hero__title">
+      <span class="row"><span>The soil is</span></span>
+      <span class="row"><span><em>hiding</em>&nbsp;something.</span></span>
+    </h1>
+    <p class="hero__sub">Two microscopic nematodes quietly destroy billions of dollars of crops every year — underground, invisible, until it is too late. We are engineering a biosensor that names them <strong style="color:var(--cream)">before</strong> the damage shows.</p>
+    <div class="hero__species">
+      <span class="chip"><i></i>Heterodera glycines &middot; soybean cyst</span>
+      <span class="chip"><i></i>Meloidogyne incognita &middot; root-knot</span>
+    </div>
+    <div class="hero__cta">
+      <a href="pages/description.html" class="btn btn--primary">Read the investigation
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <a href="#how" class="btn btn--ghost">How detection works</a>
+    </div>
+  </div>
+
+  <p class="hero__hint">Move your cursor across the soil — <b>something is down there.</b></p>
+  <div class="hero__scroll" aria-hidden="true"><span class="mouse"></span>Scroll</div>
+</header>
+
+<!-- THE CASE (loam) -->
+<section class="band band--loam" style="padding-block:clamp(64px,8vw,110px)">
+  <div class="wrap">
+    <div class="band-head reveal">
+      <p class="eyebrow">01 — The case</p>
+      <h2 class="section-title">A pest you never see, on a bill you always pay.</h2>
+      <p class="lead">Plant-parasitic nematodes are among the most damaging — and most overlooked — pathogens in agriculture. They live in the soil, feed on roots, and spread before any symptom reaches the surface. By the time a field looks sick, the harvest is already lost.</p>
+    </div>
+    <div class="stat-grid reveal" data-stagger>
+      <div class="stat"><div class="stat__num"><span data-count="157">0</span><span class="unit">B$</span></div><div class="stat__label">Est. annual global loss · cite</div></div>
+      <div class="stat"><div class="stat__num"><span data-count="12.3" data-decimals="1">0</span><span class="unit">%</span></div><div class="stat__label">Of world crop yield · cite</div></div>
+      <div class="stat"><div class="stat__num">&lt;<span data-count="2">0</span><span class="unit">mm</span></div><div class="stat__label">Length of each suspect</div></div>
+      <div class="stat"><div class="stat__num"><span data-count="4100">0</span><span class="unit">+</span></div><div class="stat__label">Known nematode species</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker" style="background:var(--loam)" aria-hidden="true">
+  <div class="ticker__track">
+    <span>biosensing</span><i class="dot"></i><span>root-knot</span><i class="dot"></i><span>soybean cyst</span><i class="dot"></i><span>early detection</span><i class="dot"></i><span>synthetic biology</span><i class="dot"></i>
+    <span>biosensing</span><i class="dot"></i><span>root-knot</span><i class="dot"></i><span>soybean cyst</span><i class="dot"></i><span>early detection</span><i class="dot"></i><span>synthetic biology</span><i class="dot"></i>
+  </div>
+</div>
+
+<div class="strata strata--down" aria-hidden="true">
+  <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+    <rect width="1440" height="120" fill="#191222"/>
+    <path fill="#241830" d="M0,60 C240,18 420,96 720,64 C1020,32 1230,92 1440,52 L1440,120 L0,120 Z"/>
+    <path fill="#f7f2e8" d="M0,86 C260,52 470,110 720,86 C1010,58 1240,108 1440,82 L1440,120 L0,120 Z"/>
+  </svg>
+</div>
+
+<!-- HOW IT WORKS (paper) -->
+<section class="band band--paper" id="how">
+  <div class="wrap">
+    <div class="band-head reveal">
+      <p class="eyebrow">02 — How detection works</p>
+      <h2 class="section-title">Three moves from a clod of soil to a clear answer.</h2>
+      <p class="lead">Our detector reads the molecular fingerprints these nematodes leave in soil and turns them into a signal anyone can interpret in the field — no lab, no microscope, no PhD required.</p>
+    </div>
+    <div class="feature-list reveal" data-stagger>
+      <div class="feature">
+        <span class="feature__idx">01</span>
+        <div><h3>Sample</h3><p>A pinch of field soil goes into a tube. Target nucleic acids are released and concentrated on the spot.</p></div>
+        <a class="feature__go" href="pages/design.html" aria-label="Design"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+      </div>
+      <div class="feature">
+        <span class="feature__idx">02</span>
+        <div><h3>Amplify &amp; recognise</h3><p>An engineered recognition module locks onto sequences unique to each species and triggers an amplifying biological circuit.</p></div>
+        <a class="feature__go" href="pages/engineering-cycle.html" aria-label="Engineering"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+      </div>
+      <div class="feature">
+        <span class="feature__idx">03</span>
+        <div><h3>Read the verdict</h3><p>A colour or fluorescence readout reports which nematode is present — and roughly how much — within the hour.</p></div>
+        <a class="feature__go" href="pages/results.html" aria-label="Results"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+      </div>
+    </div>
+    <p class="placeholder-tag">Swap in your real assay chemistry &amp; circuit once finalised</p>
+  </div>
+</section>
+
+<!-- EXPLORE (paper-2) -->
+<section class="band band--paper-2">
+  <div class="wrap">
+    <div class="band-head reveal">
+      <p class="eyebrow">03 — The casebook</p>
+      <h2 class="section-title">Open the wiki.</h2>
+      <p class="lead">Everything we did, evidenced and cross-referenced. Start anywhere.</p>
+    </div>
+    <div class="grid grid-3 reveal" data-stagger>
+      <a class="card" href="pages/description.html"><span class="card__ring"></span>
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.7" y2="16.7"/></svg></div>
+        <h3>Description</h3><p>The problem, the suspects, and the idea that catches them.</p></a>
+      <a class="card" href="pages/design.html"><span class="card__ring"></span>
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v4l-5 9a3 3 0 0 0 3 4h10a3 3 0 0 0 3-4l-5-9V3"/><line x1="8" y1="3" x2="16" y2="3"/></svg></div>
+        <h3>Design</h3><p>How the biological circuit was architected and built.</p></a>
+      <a class="card" href="pages/engineering-cycle.html"><span class="card__ring"></span>
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><polyline points="21 4 21 9 16 9"/></svg></div>
+        <h3>Engineering</h3><p>Design–build–test–learn, cycle by documented cycle.</p></a>
+      <a class="card" href="pages/parts.html"><span class="card__ring"></span>
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M5 8l-2 4 2 4M19 8l2 4-2 4M9 22h6"/><circle cx="12" cy="13" r="3"/></svg></div>
+        <h3>Parts</h3><p>The composite and basic parts we contributed to the Registry.</p></a>
+      <a class="card" href="pages/human-practices.html"><span class="card__ring"></span>
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M17 5a3 3 0 0 1 0 6M16 20a6 6 0 0 0-2-4.5"/></svg></div>
+        <h3>Human Practices</h3><p>Listening to farmers, agronomists, and regulators.</p></a>
+      <a class="card" href="pages/results.html"><span class="card__ring"></span>
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="20" x2="20" y2="20"/><rect x="6" y="11" width="3" height="6"/><rect x="11" y="7" width="3" height="10"/><rect x="16" y="13" width="3" height="4"/></svg></div>
+        <h3>Results</h3><p>What the detector actually did at the bench.</p></a>
+    </div>
+  </div>
+</section>
+
+<div class="strata strata--down" aria-hidden="true">
+  <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+    <rect width="1440" height="120" fill="#efe6d6"/>
+    <path fill="#241830" d="M0,64 C240,30 470,100 720,66 C1010,28 1240,96 1440,56 L1440,120 L0,120 Z"/>
+    <path fill="#191222" d="M0,90 C260,58 470,112 720,90 C1010,62 1240,110 1440,84 L1440,120 L0,120 Z"/>
+  </svg>
+</div>
+
+<!-- MEET THE DETECTIVE (loam) -->
+<section class="band band--loam" style="padding-block:clamp(70px,9vw,120px)">
+  <div class="wrap">
+    <div class="split split--media-first">
+      <div class="split__media reveal-l" style="position:relative;display:grid;place-items:center;min-height:320px">
+        <svg viewBox="0 0 400 400" style="position:absolute;width:min(100%,420px)" aria-hidden="true">
+          <g fill="none" stroke="#9b7fe0" stroke-opacity=".25"><circle cx="200" cy="200" r="120"/><circle cx="200" cy="200" r="160"/><circle cx="200" cy="200" r="195"/></g>
+        </svg>
+        <img src="img/mascot.png" alt="The NKU iGEM mascot — a round detective with a deerstalker hat and magnifying glass" style="position:relative;width:min(78%,300px);filter:drop-shadow(0 22px 40px rgba(0,0,0,.45));animation:bob 4s var(--ease) infinite" />
+      </div>
+      <div class="split__body reveal-r flow">
+        <p class="eyebrow">04 — The investigator</p>
+        <h2 class="section-title">Meet our detective.</h2>
+        <p class="lead">Every good case needs a sharp eye. Ours wears a deerstalker, carries a magnifying glass, and never lets a nematode slip past unnoticed — the face of a project about seeing the unseen.</p>
+        <p style="color:var(--cream-2)">Behind the mascot is a team of Nankai University students from the life sciences and beyond, who spent a year turning a soil problem into a piece of synthetic biology.</p>
+        <div class="hero__cta" style="opacity:1;transform:none;margin-top:28px">
+          <a href="pages/team-members.html" class="btn btn--iris">Meet the team
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          <a href="pages/human-practices.html" class="btn btn--ghost">Our human practices</a>
         </div>
-    </footer>
+      </div>
+    </div>
+  </div>
+</section>
+  </main>
 
-    <script>
-        // Scroll reveal
-        const reveals = document.querySelectorAll('.reveal');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(e => {
-                if (e.isIntersecting) {
-                    e.target.classList.add('visible');
-                    observer.unobserve(e.target);
-                }
-            });
-        }, { threshold: 0.15 });
-        reveals.forEach(r => observer.observe(r));
+  <footer class="footer">
+  <div class="footer__seal" aria-hidden="true"><img src="img/nankai-seal.gif" alt="" loading="lazy" /></div>
+  <div class="footer__inner">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <b>NKU iGEM 2026</b>
+        <p>A synthetic-biology biosensor for the early detection of plant-parasitic nematodes. Built by students at Nankai University.</p>
+      </div>
+      <div class="footer__col">
+        <h5>Project</h5>
+        <a href="pages/description.html">Description</a>
+        <a href="pages/design.html">Design</a>
+        <a href="pages/engineering-cycle.html">Engineering</a>
+        <a href="pages/parts.html">Parts</a>
+        <a href="pages/results.html">Results</a>
+      </div>
+      <div class="footer__col">
+        <h5>People &amp; Practice</h5>
+        <a href="pages/human-practices.html">Human Practices</a>
+        <a href="pages/education.html">Education</a>
+        <a href="pages/team-members.html">Team</a>
+        <a href="pages/safety.html">Safety</a>
+        <a href="pages/attribution.html">Attributions</a>
+      </div>
+      <div class="footer__col">
+        <h5>Elsewhere</h5>
+        <a href="https://igem.org" rel="noopener">iGEM Foundation</a>
+        <a href="https://competition.igem.org" rel="noopener">Competition Hub</a>
+        <a href="https://www.nankai.edu.cn/" rel="noopener">Nankai University</a>
+        <a href="https://gitlab.igem.org" rel="noopener">iGEM GitLab</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 NKU iGEM Team &middot; Content under <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a></span>
+      <span>Built static &middot; self-hosted fonts &middot; no external trackers</span>
+    </div>
+  </div>
+</footer>
 
-        // Close mega menu on outside click
-        document.addEventListener('click', e => {
-            if (!e.target.closest('.nav-item')) {
-                document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
-            }
-        });
 
-    </script>
+  <div class="mascot-fab" aria-live="polite">
+    <div class="mascot-fab__bubble"></div>
+    <button class="mascot-fab__btn" aria-label="Back to top">
+      <img src="img/mascot-trim.png" alt="" />
+    </button>
+  </div>
 
-    <script src="js/main.js"></script>
-
+  <script src="js/main.js"></script>
 </body>
-
 </html>

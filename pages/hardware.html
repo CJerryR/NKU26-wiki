@@ -1,204 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hardware | NKU iGEM 2026</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../css/style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hardware · NKU iGEM 2026</title>
+  <meta name="description" content="NKU iGEM 2026 — a synthetic-biology biosensor for early detection of plant-parasitic nematodes." />
+  <meta name="theme-color" content="#191222" />
+  <link rel="icon" href="../img/logo.svg" type="image/svg+xml" />
+  <link rel="preload" href="../fonts/spline-variable.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="../fonts/fraunces-variable.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
 
-<!-- 
-  ═══════════════════════════════════════════════════════════
-  NAV SNIPPET — copy into every subpage
-  Note: href paths are relative to /pages/ folder
-  ═══════════════════════════════════════════════════════════
--->
-<nav>
-    <div class="nav-inner">
-        <a href="../index.html" class="nav-logo">NKU iGEM 2026</a>
-        <ul class="nav-links">
+  <nav class="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-brand" aria-label="NKU iGEM 2026 home">
+      <img src="../img/logo.svg" alt="" width="34" height="34" />
+      <span><b>SUBSURFACE</b><span>NKU iGEM 2026</span></span>
+    </a>
 
-            <li class="nav-item">
-                <a href="../index.html" class="nav-link">Home</a>
-            </li>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span></button>
 
-            <!-- Project -->
-            <li class="nav-item">
-                <span class="nav-link">Project
-                    <svg viewBox="0 0 10 6"><path d="M0 0l5 6 5-6z"/></svg>
-                </span>
-                <div class="mega-menu">
-                    <div class="mega-col">
-                        <p class="mega-col-title">Overview</p>
-                        <a href="description.html" class="big">Description</a>
-                        <a href="background.html" class="big">Background</a>
-                        <a href="design.html" class="big">Design</a>
-                        <a href="results.html" class="big">Results</a>
-                    </div>
-                    <div class="mega-col">
-                        <p class="mega-col-title">Engineering</p>
-                        <a href="engineering-cycle.html" class="big">Engineering Cycle</a>
-                        <a href="proof-of-concept.html" class="big">Proof of Concept</a>
-                        <a href="implementation.html" class="big">Implementation</a>
-                    </div>
-                    <div class="mega-col">
-                        <p class="mega-col-title">More</p>
-                        <a href="contribution.html" class="big">Contribution</a>
-                        <a href="parts.html" class="big">Parts</a>
-                        <a href="safety.html" class="big">Safety</a>
-                    </div>
-                </div>
-            </li>
+    <ul class="nav-links">
+      <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
 
-            <!-- Lab -->
-            <li class="nav-item">
-                <span class="nav-link">Lab
-                    <svg viewBox="0 0 10 6"><path d="M0 0l5 6 5-6z"/></svg>
-                </span>
-                <div class="mega-menu">
-                    <div class="mega-col">
-                        <p class="mega-col-title">Wet Lab</p>
-                        <a href="wet-lab.html" class="big">Experiments</a>
-                        <a href="protocols.html" class="big">Protocols</a>
-                        <a href="notebook.html" class="big">Notebook</a>
-                    </div>
-                    <div class="mega-col">
-                        <p class="mega-col-title">Dry Lab</p>
-                        <a href="modeling.html" class="big">Modeling</a>
-                        <a href="software.html" class="big">Software</a>
-                        <a href="hardware.html" class="big">Hardware</a>
-                    </div>
-                    <div class="mega-col">
-                        <p class="mega-col-title">Resources</p>
-                        <a href="safety.html" class="big">Safety</a>
-                        <a href="attribution.html" class="big">Attribution</a>
-                    </div>
-                </div>
-            </li>
+      <li class="nav-item">
+        <span class="nav-link" role="button" tabindex="0" aria-haspopup="true">Project
+          <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0l5 6 5-6z"/></svg></span>
+        <div class="mega">
+          <div class="mega-col">
+            <h4>The Investigation</h4>
+            <a href="../pages/description.html"><span class="dot"></span>Description</a>
+            <a href="../pages/background.html"><span class="dot"></span>Background</a>
+            <a href="../pages/design.html"><span class="dot"></span>Design</a>
+          </div>
+          <div class="mega-col">
+            <h4>Evidence</h4>
+            <a href="../pages/engineering-cycle.html"><span class="dot"></span>Engineering</a>
+            <a href="../pages/results.html"><span class="dot"></span>Results</a>
+            <a href="../pages/proof-of-concept.html"><span class="dot"></span>Proof of Concept</a>
+            <a href="../pages/implementation.html"><span class="dot"></span>Implementation</a>
+          </div>
+          <div class="mega-col">
+            <h4>Registry</h4>
+            <a href="../pages/parts.html"><span class="dot"></span>Parts</a>
+            <a href="../pages/contribution.html"><span class="dot"></span>Contribution</a>
+            <a href="../pages/safety.html"><span class="dot"></span>Safety</a>
+          </div>
+          <a class="mega-feature" href="../pages/description.html">
+            <span class="tag">Case file</span>
+            <p>Two nematodes are eating the harvest. We built the detector.</p>
+            <small>Read the project &rarr;</small>
+            <img class="mascot-mini" src="../img/mascot-trim.png" alt="" />
+          </a>
+        </div>
+      </li>
 
-            <!-- HP -->
-            <li class="nav-item">
-                <span class="nav-link">HP
-                    <svg viewBox="0 0 10 6"><path d="M0 0l5 6 5-6z"/></svg>
-                </span>
-                <div class="mega-menu">
-                    <div class="mega-col">
-                        <p class="mega-col-title">Human Practices</p>
-                        <a href="human-practices.html" class="big">Overview</a>
-                        <a href="integrated-hp.html" class="big">Integrated HP</a>
-                    </div>
-                    <div class="mega-col">
-                        <p class="mega-col-title">Engagement</p>
-                        <a href="education.html" class="big">Education</a>
-                        <a href="communication.html" class="big">Communication</a>
-                        <a href="entrepreneurship.html" class="big">Entrepreneurship</a>
-                    </div>
-                    <div class="mega-col">
-                        <p class="mega-col-title">Impact</p>
-                        <a href="sustainability.html" class="big">Sustainability</a>
-                        <a href="diversity-inclusion.html" class="big">Diversity &amp; Inclusion</a>
-                    </div>
-                </div>
-            </li>
+      <li class="nav-item">
+        <span class="nav-link" role="button" tabindex="0" aria-haspopup="true">Lab
+          <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0l5 6 5-6z"/></svg></span>
+        <div class="mega">
+          <div class="mega-col">
+            <h4>Wet Lab</h4>
+            <a href="../pages/wet-lab.html"><span class="dot"></span>Experiments</a>
+            <a href="../pages/protocols.html"><span class="dot"></span>Protocols</a>
+            <a href="../pages/notebook.html"><span class="dot"></span>Notebook</a>
+          </div>
+          <div class="mega-col">
+            <h4>Dry Lab</h4>
+            <a href="../pages/modeling.html"><span class="dot"></span>Modeling</a>
+            <a href="../pages/software.html"><span class="dot"></span>Software</a>
+            <a href="../pages/hardware.html"><span class="dot"></span>Hardware</a>
+          </div>
+          <div class="mega-col">
+            <h4>Output</h4>
+            <a href="../pages/results.html"><span class="dot"></span>Results</a>
+            <a href="../pages/safety.html"><span class="dot"></span>Safety</a>
+          </div>
+          <a class="mega-feature" href="../pages/notebook.html">
+            <span class="tag">Field notebook</span>
+            <p>Every experiment, dated and logged like a detective's casebook.</p>
+            <small>Open the notebook &rarr;</small>
+            <img class="mascot-mini" src="../img/mascot-trim.png" alt="" />
+          </a>
+        </div>
+      </li>
 
-            <!-- Team -->
-            <li class="nav-item">
-                <span class="nav-link">Team
-                    <svg viewBox="0 0 10 6"><path d="M0 0l5 6 5-6z"/></svg>
-                </span>
-                <div class="mega-menu">
-                    <div class="mega-col">
-                        <p class="mega-col-title">Members</p>
-                        <a href="team-members.html" class="big">Team Members</a>
-                        <a href="advisors.html" class="big">Advisors</a>
-                        <a href="instructors.html" class="big">Instructors</a>
-                    </div>
-                    <div class="mega-col">
-                        <p class="mega-col-title">About NKU</p>
-                        <a href="https://www.nankai.edu.cn/" class="big">Nankai University</a>
-                        <a href="https://sky.nankai.edu.cn/" class="big">Our Institution</a>
-                    </div>
-                    <div class="mega-col">
-                        <p class="mega-col-title">Contact</p>
-                        <a href="collaborations.html" class="big">Collaborations</a>
-                        <a href="partnerships.html" class="big">Partnerships</a>
-                    </div>
-                </div>
-            </li>
+      <li class="nav-item">
+        <span class="nav-link" role="button" tabindex="0" aria-haspopup="true">Human Practices
+          <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0l5 6 5-6z"/></svg></span>
+        <div class="mega">
+          <div class="mega-col">
+            <h4>Practices</h4>
+            <a href="../pages/human-practices.html"><span class="dot"></span>Overview</a>
+            <a href="../pages/integrated-hp.html"><span class="dot"></span>Integrated HP</a>
+          </div>
+          <div class="mega-col">
+            <h4>Engagement</h4>
+            <a href="../pages/education.html"><span class="dot"></span>Education</a>
+            <a href="../pages/communication.html"><span class="dot"></span>Communication</a>
+            <a href="../pages/entrepreneurship.html"><span class="dot"></span>Entrepreneurship</a>
+          </div>
+          <div class="mega-col">
+            <h4>Impact</h4>
+            <a href="../pages/sustainability.html"><span class="dot"></span>Sustainability</a>
+            <a href="../pages/diversity-inclusion.html"><span class="dot"></span>Inclusion</a>
+          </div>
+          <a class="mega-feature" href="../pages/human-practices.html">
+            <span class="tag">In the field</span>
+            <p>We asked the people who actually fight nematodes what they need.</p>
+            <small>See who we met &rarr;</small>
+            <img class="mascot-mini" src="../img/mascot-trim.png" alt="" />
+          </a>
+        </div>
+      </li>
 
-        </ul>
-    </div>
+      <li class="nav-item">
+        <span class="nav-link" role="button" tabindex="0" aria-haspopup="true">Team
+          <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0l5 6 5-6z"/></svg></span>
+        <div class="mega">
+          <div class="mega-col">
+            <h4>People</h4>
+            <a href="../pages/team-members.html"><span class="dot"></span>Members</a>
+            <a href="../pages/advisors.html"><span class="dot"></span>Advisors</a>
+            <a href="../pages/instructors.html"><span class="dot"></span>Instructors</a>
+          </div>
+          <div class="mega-col">
+            <h4>Friends</h4>
+            <a href="../pages/collaborations.html"><span class="dot"></span>Collaborations</a>
+            <a href="../pages/partnerships.html"><span class="dot"></span>Partnerships</a>
+          </div>
+          <div class="mega-col">
+            <h4>About</h4>
+            <a href="../pages/attribution.html"><span class="dot"></span>Attributions</a>
+            <a href="https://www.nankai.edu.cn/" rel="noopener"><span class="dot"></span>Nankai University</a>
+            <a href="https://sky.nankai.edu.cn/" rel="noopener"><span class="dot"></span>School of Life Sciences</a>
+          </div>
+          <a class="mega-feature" href="../pages/team-members.html">
+            <span class="tag">The crew</span>
+            <p>Students of Nankai University, on the trail of a hidden pest.</p>
+            <small>Meet everyone &rarr;</small>
+            <img class="mascot-mini" src="../img/mascot-trim.png" alt="" />
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
 </nav>
 
 
-    <!-- ─── BANNER ─────────────────────────────────────────────────────── -->
-    <header class="page-banner">
-        <p class="banner-eyebrow">NKU iGEM 2026 · Lab</p>
-        <h1 class="banner-title">HARDWARE</h1>
-        <p class="banner-sub">Custom devices and instrumentation</p>
-    </header>
-
-    <div class="divider"></div>
-    <section class="section">
-        <div class="reveal">
-            <p class="section-label">01 — Device</p>
-            <h2 class="section-title">Hardware Design</h2>
-            
-                <div class="content-card">
-                    <h3>Design Overview</h3>
-                    <p>占位符：硬件设备的设计原理和用途。</p>
-                    <span class="placeholder-tag">📝 待填写内容 · To be filled</span>
-                </div>
-                <div class="content-card">
-                    <h3>Components</h3>
-                    <p>占位符：主要元器件列表和成本估算。</p>
-                    <span class="placeholder-tag">📝 待填写内容 · To be filled</span>
-                </div>
+  <main id="main">
+<header class="phero">
+    <div class="phero__bg" aria-hidden="true"><svg viewBox="0 0 1440 460" preserveAspectRatio="xMidYMid slice"><circle cx="1320" cy="120" r="70" fill="none" stroke="#9b7fe0" stroke-opacity="0.160" stroke-width="1.2"/><circle cx="1320" cy="120" r="130" fill="none" stroke="#9b7fe0" stroke-opacity="0.135" stroke-width="1.2"/><circle cx="1320" cy="120" r="200" fill="none" stroke="#9b7fe0" stroke-opacity="0.110" stroke-width="1.2"/><circle cx="1320" cy="120" r="280" fill="none" stroke="#9b7fe0" stroke-opacity="0.085" stroke-width="1.2"/><circle cx="1320" cy="120" r="370" fill="none" stroke="#9b7fe0" stroke-opacity="0.060" stroke-width="1.2"/><path d="M-40,140 C300,118 900,166 1480,128" fill="none" stroke="#f4ecdd" stroke-opacity="0.050" stroke-width="1"/><path d="M-40,210 C300,188 900,236 1480,198" fill="none" stroke="#f4ecdd" stroke-opacity="0.044" stroke-width="1"/><path d="M-40,280 C300,258 900,306 1480,268" fill="none" stroke="#f4ecdd" stroke-opacity="0.038" stroke-width="1"/><path d="M-40,350 C300,328 900,376 1480,338" fill="none" stroke="#f4ecdd" stroke-opacity="0.032" stroke-width="1"/><path d="M-40,420 C300,398 900,446 1480,408" fill="none" stroke="#f4ecdd" stroke-opacity="0.026" stroke-width="1"/></svg></div>
+    <div class="phero__inner">
+      <nav class="phero__crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>/</span>Lab<span>/</span><span>Hardware</span></nav>
+      <p class="eyebrow" style="margin-bottom:14px">Dry lab · Hardware</p>
+      <h1>The <span class='ink-accent'>device</span></h1>
+      <p class="phero__sub">Physical hardware that takes the detector out of the lab and into the field.</p>
+      <div class="phero__meta"><span>Reading<b>4 min</b></span><span>Status<b>Prototype</b></span></div>
+    </div>
+  </header>
+  <div class="strata strata--down" aria-hidden="true"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><rect width="1440" height="120" fill="#191222"/><path fill="#241830" d="M0,60 C240,18 420,96 720,64 C1020,32 1230,92 1440,52 L1440,120 L0,120 Z"/><path fill="#f7f2e8" d="M0,86 C260,52 470,110 720,86 C1010,58 1240,108 1440,82 L1440,120 L0,120 Z"/></svg></div>
+  <div class="layout">
+    <aside class="toc" aria-label="On this page">
+      <div class="toc__top">
+        <div class="toc__badge"><img src="../img/logo.svg" alt="" width="24" height="24"/></div>
+        <div class="toc__titles"><div class="toc__kicker">On this page</div><div class="toc__title">Hardware</div></div>
+        <button class="toc__collapse" aria-label="Collapse outline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 5 7 12 13 19"/><polyline points="18 5 12 12 18 19"/></svg></button>
+      </div>
+      <div class="toc__progress" aria-hidden="true"><i></i></div>
+      <ul class="toc__list">
+        <span class="toc__rail" aria-hidden="true"></span>
+        <li class="lvl-1"><a href="#need">The need</a></li>
+        <li class="lvl-1"><a href="#design">Design</a></li>
+        <li class="lvl-1"><a href="#build">Build & test</a></li>
+      </ul>
+      <div class="toc__foot"><a href="#main"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="6 11 12 5 18 11"/></svg>Back to top</a></div>
+    </aside>
+    <div class="content">
+      <div class="toc-mini" aria-label="On this page (mobile)">
+        <div class="toc-mini__bar" role="button" tabindex="0">
+          <div class="toc__badge"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#f4ecdd" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><line x1="20" y1="20" x2="15.5" y2="15.5"/></svg></div>
+          <b>Hardware</b><span class="now"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
         </div>
-    </section>
-    <div class="divider"></div>
-    <section class="section">
-        <div class="reveal">
-            <p class="section-label">02 — Results</p>
-            <h2 class="section-title">Testing & Validation</h2>
-            
-                <div class="content-card">
-                    <h3>Performance</h3>
-                    <p>占位符：设备测试结果和性能指标。</p>
-                    <span class="placeholder-tag">📝 待填写内容 · To be filled</span>
-                </div>
-                <div class="content-card">
-                    <h3>Improvements</h3>
-                    <p>占位符：迭代改进记录。</p>
-                    <span class="placeholder-tag">📝 待填写内容 · To be filled</span>
-                </div>
-        </div>
-    </section>
+        <div class="toc-mini__panel"><ul>
+          <li class="lvl-1"><a href="#need">The need</a></li>
+        <li class="lvl-1"><a href="#design">Design</a></li>
+        <li class="lvl-1"><a href="#build">Build & test</a></li>
+        </ul></div>
+      </div>
+<section id="need" data-toc="The need"><p class="eyebrow sec-label">01 — Need</p><h2 class="section-title">Why hardware</h2><div class="prose"><p>Explain why a hardware component is necessary — what the biology alone cannot do in a field setting.</p></div></section>
+<section id="design" data-toc="Design"><p class="eyebrow sec-label">02 — Design</p><h2 class="section-title">How it's built</h2><div class="grid grid-3 reveal" data-stagger style="margin-top:26px"><div class="card"><span class="card__ring"></span><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M19 12a7 7 0 0 0-.1-1.3l2-1.5-2-3.4-2.3 1a7 7 0 0 0-2.3-1.3L13.7 2h-3.4l-.4 2.5a7 7 0 0 0-2.3 1.3l-2.3-1-2 3.4 2 1.5A7 7 0 0 0 5 12c0 .4 0 .9.1 1.3l-2 1.5 2 3.4 2.3-1a7 7 0 0 0 2.3 1.3l.4 2.5h3.4l.4-2.5a7 7 0 0 0 2.3-1.3l2.3 1 2-3.4-2-1.5c.1-.4.1-.9.1-1.3z"/></svg></div><h3>Mechanical</h3><p>Enclosure, sample handling, and ergonomics.</p></div><div class="card"><span class="card__ring"></span><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg></div><h3>Readout</h3><p>How the signal is captured and reported.</p></div><div class="card"><span class="card__ring"></span><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 4 13c0-6 7-9 16-9 0 9-3 16-9 16z"/><line x1="6" y1="18" x2="13" y2="11"/></svg></div><h3>Field use</h3><p>Power, robustness, and cost.</p></div></div><figure class="figure" style="margin-top:26px"><div class="figure__media"><svg viewBox="0 0 600 200" style="max-width:560px" aria-hidden="true"><rect x="20" y="30" width="560" height="140" rx="14" fill="none" stroke="#9a7a6b" stroke-dasharray="6 7"/><text x="300" y="105" text-anchor="middle" font-family="Space Mono,monospace" font-size="13" fill="#9a7a6b">figure placeholder</text></svg></div><figcaption><b>Fig 1</b> Hardware concept / CAD render.</figcaption></figure><p class="placeholder-tag">Insert CAD / photos / BOM</p></section>
+<section id="build" data-toc="Build & test"><p class="eyebrow sec-label">03 — Build</p><h2 class="section-title">Prototype results</h2><div class="prose"><p>Document the prototype, how it was built, and how it performed.</p></div><div class="callout callout--tip" style="margin-top:24px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10c.7.7 1 1.3 1 2h6c0-.7.3-1.3 1-2a6 6 0 0 0-4-10z"/></svg><div><b>Open hardware</b><p>Share your design files so other teams can reproduce the build.</p></div></div></section>
+    </div>
+  </div>
+  <div class="strata strata--down" aria-hidden="true"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><rect width="1440" height="120" fill="#f7f2e8"/><path fill="#241830" d="M0,60 C240,18 420,96 720,64 C1020,32 1230,92 1440,52 L1440,120 L0,120 Z"/><path fill="#180f1e" d="M0,86 C260,52 470,110 720,86 C1010,58 1240,108 1440,82 L1440,120 L0,120 Z"/></svg></div>
+  </main>
 
-    <footer>
-        <div class="footer-inner">
-            <div class="footer-logo">NKU iGEM 2026</div>
-            <p class="footer-text">© 2026 NKU iGEM Team | <a href="https://igem.org" target="_blank">iGEM Foundation</a></p>
-        </div>
-    </footer>
+  <footer class="footer">
+  <div class="footer__seal" aria-hidden="true"><img src="../img/nankai-seal.gif" alt="" loading="lazy" /></div>
+  <div class="footer__inner">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <b>NKU iGEM 2026</b>
+        <p>A synthetic-biology biosensor for the early detection of plant-parasitic nematodes. Built by students at Nankai University.</p>
+      </div>
+      <div class="footer__col">
+        <h5>Project</h5>
+        <a href="../pages/description.html">Description</a>
+        <a href="../pages/design.html">Design</a>
+        <a href="../pages/engineering-cycle.html">Engineering</a>
+        <a href="../pages/parts.html">Parts</a>
+        <a href="../pages/results.html">Results</a>
+      </div>
+      <div class="footer__col">
+        <h5>People &amp; Practice</h5>
+        <a href="../pages/human-practices.html">Human Practices</a>
+        <a href="../pages/education.html">Education</a>
+        <a href="../pages/team-members.html">Team</a>
+        <a href="../pages/safety.html">Safety</a>
+        <a href="../pages/attribution.html">Attributions</a>
+      </div>
+      <div class="footer__col">
+        <h5>Elsewhere</h5>
+        <a href="https://igem.org" rel="noopener">iGEM Foundation</a>
+        <a href="https://competition.igem.org" rel="noopener">Competition Hub</a>
+        <a href="https://www.nankai.edu.cn/" rel="noopener">Nankai University</a>
+        <a href="https://gitlab.igem.org" rel="noopener">iGEM GitLab</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 NKU iGEM Team &middot; Content under <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a></span>
+      <span>Built static &middot; self-hosted fonts &middot; no external trackers</span>
+    </div>
+  </div>
+</footer>
 
-    <script>
-        const reveals = document.querySelectorAll('.reveal');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(e => {
-                if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
-            });
-        }, { threshold: 0.15 });
-        reveals.forEach(r => observer.observe(r));
-        document.addEventListener('click', e => {
-            if (!e.target.closest('.nav-item'))
-                document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
-        });
-    </script>
-    <script src="../js/main.js"></script>
+
+  <div class="mascot-fab" aria-live="polite">
+    <div class="mascot-fab__bubble"></div>
+    <button class="mascot-fab__btn" aria-label="Back to top">
+      <img src="../img/mascot-trim.png" alt="" />
+    </button>
+  </div>
+
+  <script src="../js/main.js"></script>
 </body>
 </html>
