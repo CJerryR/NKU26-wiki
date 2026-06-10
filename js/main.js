@@ -71,6 +71,35 @@
       });
     });
 
+    // desktop: hover bridge — 220ms close delay so cursor can cross
+    // the ~30px gap between nav-link and mega dropdown without losing the menu
+    if (window.innerWidth > 920) {
+      var hoverTimer = null;
+      $$('.nav-item').forEach(function (item) {
+        var mega = $('.mega', item);
+        if (!mega) return;
+
+        item.addEventListener('mouseenter', function () {
+          clearTimeout(hoverTimer);
+          item.classList.add('is-open');
+        });
+
+        item.addEventListener('mouseleave', function () {
+          hoverTimer = setTimeout(function () {
+            item.classList.remove('is-open');
+          }, 220);
+        });
+
+        mega.addEventListener('mouseenter', function () {
+          clearTimeout(hoverTimer);
+        });
+
+        mega.addEventListener('mouseleave', function () {
+          item.classList.remove('is-open');
+        });
+      });
+    }
+
     // close menus on outside click / escape
     document.addEventListener('click', function (e) {
       if (!e.target.closest('.nav-item')) $$('.nav-item').forEach(function (i){ i.classList.remove('is-open'); });

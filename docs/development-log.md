@@ -5,6 +5,33 @@
 
 ---
 
+## 🚧 进行中 · Ongoing — June 2026
+
+### 2026-06-10 — 首屏标题 'g' 下降部裁切修复 + 导航悬停桥接
+
+**Hero 标题裁切**
+- 问题：Fraunces 字体在 140px+ 字号下 "hiding" 和 "something" 的 'g' 底部被 `overflow: hidden` 裁切（§6 曾修过一次但 padding 仍不够）。
+- 修复：`css/style.css` — `.hero__title .row` 的 `padding-bottom` 从 `.16em` 加大到 `.28em`，`margin-bottom` 相应从 `-.10em` 调为 `-.18em`。
+- 文件：`css/style.css:141`
+
+**导航下拉菜单**
+- 问题：桌面端纯 CSS `:hover` 触发 mega 菜单，导航按钮与下拉面板之间有约 30px 空隙，鼠标移入菜单前 `:hover` 断开导致菜单消失。
+- 修复：`js/main.js` — `nav()` 函数中新增 hover 桥接逻辑：用 220ms 关闭延迟 + `.mega` 上的 `mouseenter` 取消计时器。利用了已有的 `.nav-item.is-open .mega` CSS 规则。
+- 文件：`js/main.js:74-97`
+
+**开发日志**
+- 建立本「进行中」章节，用于持续记录后续修改。
+
+### 后续工作日志模板
+```
+### YYYY-MM-DD — 简短摘要
+- **问题**：描述
+- **修复**：做了什么、为什么
+- **文件**：改动的文件路径
+```
+
+---
+
 ## 0. 背景与目标
 
 - **项目主题**：检测两种植物寄生线虫的合成生物学生物传感器
