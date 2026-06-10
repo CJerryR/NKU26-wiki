@@ -24,6 +24,8 @@
     detectionLens();
     swimmingNematode();
     parallax();
+    magnetic();
+    cardSpotlight();
     mascot();
   }
 
@@ -70,35 +72,6 @@
         }
       });
     });
-
-    // desktop: hover bridge — 220ms close delay so cursor can cross
-    // the ~30px gap between nav-link and mega dropdown without losing the menu
-    if (window.innerWidth > 920) {
-      var hoverTimer = null;
-      $$('.nav-item').forEach(function (item) {
-        var mega = $('.mega', item);
-        if (!mega) return;
-
-        item.addEventListener('mouseenter', function () {
-          clearTimeout(hoverTimer);
-          item.classList.add('is-open');
-        });
-
-        item.addEventListener('mouseleave', function () {
-          hoverTimer = setTimeout(function () {
-            item.classList.remove('is-open');
-          }, 220);
-        });
-
-        mega.addEventListener('mouseenter', function () {
-          clearTimeout(hoverTimer);
-        });
-
-        mega.addEventListener('mouseleave', function () {
-          item.classList.remove('is-open');
-        });
-      });
-    }
 
     // close menus on outside click / escape
     document.addEventListener('click', function (e) {
@@ -289,7 +262,42 @@
   /* ── Hero load sequence ────────────────────────────────────────────── */
   function heroSequence() {
     var hero = $('.hero'); if (!hero) return;
+    if (REDUCED) { hero.classList.add('loaded', 'title-done'); return; }
     raf(function () { raf(function () { hero.classList.add('loaded'); }); });
+    // once the title slide-up finishes, let descenders overflow freely
+    setTimeout(function () { hero.classList.add('title-done'); }, 1650);
+  }
+
+  /* ── Magnetic buttons (subtle pull toward cursor) ──────────────────── */
+  function magnetic() {
+    if (REDUCED || !window.matchMedia('(pointer:fine)').matches) return;
+    $$('.btn--primary, .btn--iris, .mascot-fab__btn').forEach(function (el) {
+      var strength = el.classList.contains('mascot-fab__btn') ? 0.4 : 0.28;
+      el.addEventListener('pointermove', function (e) {
+        var r = el.getBoundingClientRect();
+        var mx = e.clientX - (r.left + r.width / 2);
+        var my = e.clientY - (r.top + r.height / 2);
+        el.style.transform = 'translate(' + (mx * strength).toFixed(1) + 'px,' + (my * strength).toFixed(1) + 'px)';
+      });
+      el.addEventListener('pointerleave', function () { el.style.transform = ''; });
+    });
+  }
+
+  /* ── Card cursor-spotlight (sets --mx/--my for the radial glow) ─────── */
+  function cardSpotlight() {
+    if (REDUCED) return;
+    var ticking = false;
+    document.addEventListener('pointermove', function (e) {
+      var card = e.target.closest && e.target.closest('.card');
+      if (!card || ticking) return;
+      ticking = true;
+      raf(function () {
+        var r = card.getBoundingClientRect();
+        card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+        card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+        ticking = false;
+      });
+    }, { passive: true });
   }
 
   /* ── Hero "detection lens" (cursor-follow reveal of hidden nematodes) ─ */
@@ -349,17 +357,17 @@
     svg.innerHTML =
       '<defs>' +
       '<linearGradient id="wg" x1="0" y1="0" x2="1" y2="0">' +
-      '<stop offset="0" stop-color="#9b7fe0"/><stop offset="1" stop-color="#e2a23c"/>' +
+      '<stop offset="0" stop-color="#6e4fb8"/><stop offset="0.7" stop-color="#9b7fe0"/><stop offset="1" stop-color="#c9a96a"/>' +
       '</linearGradient>' +
       '<filter id="wglow" x="-40%" y="-40%" width="180%" height="180%">' +
-      '<feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>' +
+      '<feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>' +
       '</filter></defs>';
     host.appendChild(svg);
 
-    // two worms at different depths/speeds
+    // two worms at different depths/speeds — kept subtle & ambient
     var worms = [
-      makeWorm({ baseY: 0.74, len: 0.42, amp: 26, k: 0.016, speed: 0.9, w: 11, op: 0.5 }),
-      makeWorm({ baseY: 0.86, len: 0.30, amp: 18, k: 0.022, speed: 1.35, w: 8, op: 0.32 })
+      makeWorm({ baseY: 0.72, len: 0.40, amp: 22, k: 0.016, speed: 0.85, w: 10, op: 0.3 }),
+      makeWorm({ baseY: 0.88, len: 0.28, amp: 15, k: 0.022, speed: 1.3, w: 7, op: 0.16 })
     ];
 
     function makeWorm(cfg) {

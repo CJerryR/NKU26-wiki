@@ -5,30 +5,27 @@
 
 ---
 
-## 🚧 进行中 · Ongoing — June 2026
+## 🚧 Session Log — 逐轮对话记录
 
-### 2026-06-10 — 首屏标题 'g' 下降部裁切修复 + 导航悬停桥接
+> 格式：`[S编号] 日期 — 标题`，每条含意图、改动、决策、结果、遗留。
+> 截图放 `docs/screenshots/`。
 
-**Hero 标题裁切**
-- 问题：Fraunces 字体在 140px+ 字号下 "hiding" 和 "something" 的 'g' 底部被 `overflow: hidden` 裁切（§6 曾修过一次但 padding 仍不够）。
-- 修复：`css/style.css` — `.hero__title .row` 的 `padding-bottom` 从 `.16em` 加大到 `.28em`，`margin-bottom` 相应从 `-.10em` 调为 `-.18em`。
-- 文件：`css/style.css:141`
+### [S001] 2026-06-10 — 建立文件管理体系 + 发现两个待修 bug
 
-**导航下拉菜单**
-- 问题：桌面端纯 CSS `:hover` 触发 mega 菜单，导航按钮与下拉面板之间有约 30px 空隙，鼠标移入菜单前 `:hover` 断开导致菜单消失。
-- 修复：`js/main.js` — `nav()` 函数中新增 hover 桥接逻辑：用 220ms 关闭延迟 + `.mega` 上的 `mouseenter` 取消计时器。利用了已有的 `.nav-item.is-open .mega` CSS 规则。
-- 文件：`js/main.js:74-97`
+| 字段 | 内容 |
+|------|------|
+| **意图** | 建立 workspace / inbox / outbox / repo 四层文件管理体系，规范本地 Claude Code ↔ 网页 Claude 的协作流程 |
+| **改动** | 创建工作区目录结构：`workspace/`（从 v2.1 复制）、`_inbox/`（含 README + code/ + screenshots/）、`_outbox/`（含 README + template.md + 两个 bug 报告）、更新根 `CLAUDE.md` 为总导航 |
+| **决策** | workspace 作为主力开发区，repo 只做 git 同步；_inbox/_outbox 解耦本地和网页两端 Claude 的文件传输 |
+| **结果** | ✅ 文件管理体系建立完成 |
+| **遗留** | hero g-clip 和 nav dropdown 两个 bug 已在 _outbox 写好 prompt，待发给网页 Claude 修复 |
 
-**开发日志**
-- 建立本「进行中」章节，用于持续记录后续修改。
+### 待处理 Outbox
 
-### 后续工作日志模板
-```
-### YYYY-MM-DD — 简短摘要
-- **问题**：描述
-- **修复**：做了什么、为什么
-- **文件**：改动的文件路径
-```
+| 编号 | 问题 | 位置 |
+|------|------|------|
+| 🐛 | 首屏标题 "g" 下降部裁切 | `_outbox/2026-06-10-hero-g-clip/prompt.md` |
+| 🐛 | 导航下拉菜单鼠标无法进入 | `_outbox/2026-06-10-nav-dropdown/prompt.md` |
 
 ---
 
