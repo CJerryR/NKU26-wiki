@@ -1,8 +1,8 @@
 /* ============================================================================
-   NKU iGEM 2026 — interaction & animation engine  (vanilla JS, no dependencies)
+   NKU iGEM 2026  -  interaction & animation engine  (vanilla JS, no dependencies)
    All effects degrade gracefully and honour prefers-reduced-motion.
-   Modules: nav · scroll-progress · reveal · counters · TOC scrollspy ·
-            hero detection-lens · swimming nematode · parallax · mascot helper
+   Modules: nav  /  scroll-progress  /  reveal  /  counters  /  TOC scrollspy  /
+            hero detection-lens  /  swimming nematode  /  parallax  /  mascot helper
 ============================================================================ */
 (function () {
   'use strict';
@@ -29,7 +29,7 @@
     mascot();
   }
 
-  /* ── Navigation ────────────────────────────────────────────────────── */
+  /* -- Navigation ------------------------------------------------------ */
   function nav() {
     var bar = $('.nav'); if (!bar) return;
     var toggle = $('.nav-toggle');
@@ -59,29 +59,58 @@
       });
     }
 
-    // dropdown items: hover handled by CSS; click toggles on touch / small screens
+    function closeDropdowns(except) {
+      $$('.nav-item').forEach(function (i) {
+        if (except && i === except) return;
+        i.classList.remove('is-open');
+        var trigger = $('.nav-link[aria-haspopup="true"]', i);
+        if (trigger) trigger.setAttribute('aria-expanded', 'false');
+      });
+    }
+
+    function setDropdown(item, open) {
+      var trigger = $('.nav-link[aria-haspopup="true"]', item);
+      if (open) closeDropdowns(item);
+      item.classList.toggle('is-open', open);
+      if (trigger) trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+
+    // dropdown items: click and keyboard toggles; CSS hover remains a visual affordance
     $$('.nav-item').forEach(function (item) {
       var link = $('.nav-link', item);
       if (!link || !$('.mega', item)) return;
       link.addEventListener('click', function (e) {
-        if (window.innerWidth <= 920) {
+        e.preventDefault();
+        setDropdown(item, !item.classList.contains('is-open'));
+      });
+      link.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
-          var was = item.classList.contains('is-open');
-          $$('.nav-item').forEach(function (i) { i.classList.remove('is-open'); });
-          item.classList.toggle('is-open', !was);
+          setDropdown(item, true);
+          var first = $('.mega a', item);
+          if (first) first.focus();
+        } else if (e.key === 'Escape') {
+          setDropdown(item, false);
+          link.focus();
         }
+      });
+      item.addEventListener('focusout', function () {
+        setTimeout(function () {
+          if (!item.contains(document.activeElement)) setDropdown(item, false);
+        }, 0);
       });
     });
 
     // close menus on outside click / escape
     document.addEventListener('click', function (e) {
-      if (!e.target.closest('.nav-item')) $$('.nav-item').forEach(function (i){ i.classList.remove('is-open'); });
+      if (!e.target.closest('.nav-item')) closeDropdowns();
       if (!e.target.closest('.nav')) closeMobile();
     });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMobile(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { closeDropdowns(); closeMobile(); } });
     function closeMobile() {
       bar.classList.remove('menu-open');
       if (toggle) { toggle.classList.remove('is-open'); toggle.setAttribute('aria-expanded', 'false'); }
+      closeDropdowns();
     }
 
     // highlight current page in mega menu + top links
@@ -96,7 +125,7 @@
     });
   }
 
-  /* ── Scroll progress bar ───────────────────────────────────────────── */
+  /* -- Scroll progress bar --------------------------------------------- */
   function scrollProgress() {
     var bar = $('.scroll-progress'); if (!bar) return;
     var ticking = false;
@@ -110,7 +139,7 @@
     upd();
   }
 
-  /* ── Scroll reveal (+ staggered groups) ────────────────────────────── */
+  /* -- Scroll reveal (+ staggered groups) ------------------------------ */
   function reveal() {
     var els = $$('.reveal, .reveal-l, .reveal-r, .reveal-scale, [data-stagger]');
     if (!els.length) return;
@@ -126,7 +155,7 @@
     els.forEach(function (el) { io.observe(el); });
   }
 
-  /* ── Animated number counters ──────────────────────────────────────── */
+  /* -- Animated number counters ---------------------------------------- */
   function counters() {
     var nums = $$('[data-count]'); if (!nums.length) return;
     function run(el) {
@@ -157,7 +186,7 @@
     nums.forEach(function (n) { io.observe(n); });
   }
 
-  /* ── Floating TOC island + scrollspy ───────────────────────────────── */
+  /* -- Floating TOC island + scrollspy --------------------------------- */
   function toc() {
     var box = $('.toc'); if (!box) return;
     var list = $('.toc__list', box);
@@ -255,11 +284,14 @@
     // mobile mini toggle
     if (mini) {
       var bar = $('.toc-mini__bar', mini);
-      bar && bar.addEventListener('click', function () { mini.classList.toggle('open'); });
+      bar && bar.addEventListener('click', function () {
+        var open = mini.classList.toggle('open');
+        bar.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
     }
   }
 
-  /* ── Hero load sequence ────────────────────────────────────────────── */
+  /* -- Hero load sequence ---------------------------------------------- */
   function heroSequence() {
     var hero = $('.hero'); if (!hero) return;
     if (REDUCED) { hero.classList.add('loaded', 'title-done'); return; }
@@ -268,7 +300,7 @@
     setTimeout(function () { hero.classList.add('title-done'); }, 1650);
   }
 
-  /* ── Magnetic buttons (subtle pull toward cursor) ──────────────────── */
+  /* -- Magnetic buttons (subtle pull toward cursor) -------------------- */
   function magnetic() {
     if (REDUCED || !window.matchMedia('(pointer:fine)').matches) return;
     $$('.btn--primary, .btn--iris, .mascot-fab__btn').forEach(function (el) {
@@ -283,7 +315,7 @@
     });
   }
 
-  /* ── Card cursor-spotlight (sets --mx/--my for the radial glow) ─────── */
+  /* -- Card cursor-spotlight (sets --mx/--my for the radial glow) ------- */
   function cardSpotlight() {
     if (REDUCED) return;
     var ticking = false;
@@ -300,7 +332,7 @@
     }, { passive: true });
   }
 
-  /* ── Hero "detection lens" (cursor-follow reveal of hidden nematodes) ─ */
+  /* -- Hero "detection lens" (cursor-follow reveal of hidden nematodes) - */
   function detectionLens() {
     var hero = $('.hero'); if (!hero) return;
     var lit = $('.hero__field--lit', hero);
@@ -315,15 +347,16 @@
 
     var fine = window.matchMedia('(pointer:fine)').matches;
     if (fine && !REDUCED) {
-      hero.classList.add('lens-on');
-      var tx = 0, ty = 0, cx = innerWidth / 2, cy = innerHeight * 0.42, raf_on = false;
+      // start parked over the radar on the right; only reveal once the cursor moves in
+      var tx = innerWidth * 0.8, ty = innerHeight * 0.46, cx = tx, cy = ty, raf_on = false, woke = false;
       hero.addEventListener('pointermove', function (e) {
         var rect = hero.getBoundingClientRect();
         tx = e.clientX - rect.left; ty = e.clientY - rect.top;
+        if (!woke) { woke = true; hero.classList.add('lens-on'); }
         if (!raf_on) { raf_on = true; raf(loop); }
       });
       hero.addEventListener('pointerleave', function () { hero.classList.remove('lens-on'); });
-      hero.addEventListener('pointerenter', function () { hero.classList.add('lens-on'); });
+      hero.addEventListener('pointerenter', function () { if (woke) hero.classList.add('lens-on'); });
       function loop() {
         cx += (tx - cx) * 0.16; cy += (ty - cy) * 0.16;
         setLens(Math.round(cx), Math.round(cy), 150);
@@ -344,7 +377,7 @@
     }
   }
 
-  /* ── Swimming nematode (rAF-driven undulating SVG ribbon) ───────────── */
+  /* -- Swimming nematode (rAF-driven undulating SVG ribbon) ------------- */
   function swimmingNematode() {
     var host = $('.hero__worm'); if (!host || REDUCED) return;
     var svgNS = 'http://www.w3.org/2000/svg';
@@ -364,7 +397,7 @@
       '</filter></defs>';
     host.appendChild(svg);
 
-    // two worms at different depths/speeds — kept subtle & ambient
+    // two worms at different depths/speeds  -  kept subtle & ambient
     var worms = [
       makeWorm({ baseY: 0.72, len: 0.40, amp: 22, k: 0.016, speed: 0.85, w: 10, op: 0.3 }),
       makeWorm({ baseY: 0.88, len: 0.28, amp: 15, k: 0.022, speed: 1.3, w: 7, op: 0.16 })
@@ -385,7 +418,7 @@
     function build(worm, t) {
       var cfg = worm.cfg, N = 26;
       var span = W * cfg.len;
-      var travel = (t * 0.05 * cfg.speed) % (W + span) - span; // moves left→right then wraps
+      var travel = (t * 0.05 * cfg.speed) % (W + span) - span; // moves left -> right then wraps
       var baseY = H * cfg.baseY;
       var top = [], bot = [], hx = 0, hy = 0;
       for (var i = 0; i <= N; i++) {
@@ -429,7 +462,7 @@
     }
   }
 
-  /* ── Generic parallax for [data-parallax] (depth via translateY) ───── */
+  /* -- Generic parallax for [data-parallax] (depth via translateY) ----- */
   function parallax() {
     if (REDUCED) return;
     var items = $$('[data-parallax]'); if (!items.length) return;
@@ -448,15 +481,15 @@
     upd();
   }
 
-  /* ── Mascot helper (scroll-to-top + rotating field-notes) ──────────── */
+  /* -- Mascot helper (scroll-to-top + rotating field-notes) ------------ */
   function mascot() {
     var fab = $('.mascot-fab'); if (!fab) return;
     var btn = $('.mascot-fab__btn', fab);
     var bubble = $('.mascot-fab__bubble', fab);
     var tips = [
-      'Tip — tap the outline on the left to jump between sections.',
+      'Tip  -  tap the outline on the left to jump between sections.',
       'Every figure here is hosted on iGEM servers. No outside trackers.',
-      'Looking for our parts? They live under <b>Project → Parts</b>.',
+      'Looking for our parts? They live under <b>Project  ->  Parts</b>.',
       'Back to the top? Just tap me.',
       'Two suspects: <b>H. glycines</b> &amp; <b>M. incognita</b>. We catch both.'
     ];

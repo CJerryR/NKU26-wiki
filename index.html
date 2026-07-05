@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NKU iGEM 2026</title>
-  <meta name="description" content="NKU iGEM 2026 — a synthetic-biology biosensor that detects soybean cyst and root-knot nematodes in soil before crop damage appears." />
+  <meta name="description" content="NKU iGEM 2026  -  a synthetic-biology biosensor that detects soybean cyst and root-knot nematodes in soil before crop damage appears." />
   <meta name="theme-color" content="#191222" />
   <link rel="icon" href="img/logo.svg" type="image/svg+xml" />
   <link rel="preload" href="fonts/spline-variable.woff2" as="font" type="font/woff2" crossorigin />
@@ -28,8 +28,8 @@
       <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
 
       <li class="nav-item">
-        <span class="nav-link" role="button" tabindex="0" aria-haspopup="true">Project
-          <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0l5 6 5-6z"/></svg></span>
+        <button type="button" class="nav-link" aria-haspopup="true" aria-expanded="false">Project
+          <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0l5 6 5-6z"/></svg></button>
         <div class="mega">
           <div class="mega-col">
             <h4>The Investigation</h4>
@@ -60,8 +60,8 @@
       </li>
 
       <li class="nav-item">
-        <span class="nav-link" role="button" tabindex="0" aria-haspopup="true">Lab
-          <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0l5 6 5-6z"/></svg></span>
+        <button type="button" class="nav-link" aria-haspopup="true" aria-expanded="false">Lab
+          <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0l5 6 5-6z"/></svg></button>
         <div class="mega">
           <div class="mega-col">
             <h4>Wet Lab</h4>
@@ -90,8 +90,8 @@
       </li>
 
       <li class="nav-item">
-        <span class="nav-link" role="button" tabindex="0" aria-haspopup="true">Human Practices
-          <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0l5 6 5-6z"/></svg></span>
+        <button type="button" class="nav-link" aria-haspopup="true" aria-expanded="false">Human Practices
+          <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0l5 6 5-6z"/></svg></button>
         <div class="mega">
           <div class="mega-col">
             <h4>Practices</h4>
@@ -119,8 +119,8 @@
       </li>
 
       <li class="nav-item">
-        <span class="nav-link" role="button" tabindex="0" aria-haspopup="true">Team
-          <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0l5 6 5-6z"/></svg></span>
+        <button type="button" class="nav-link" aria-haspopup="true" aria-expanded="false">Team
+          <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0l5 6 5-6z"/></svg></button>
         <div class="mega">
           <div class="mega-col">
             <h4>People</h4>
@@ -136,8 +136,8 @@
           <div class="mega-col">
             <h4>About</h4>
             <a href="pages/attribution.html"><span class="dot"></span>Attributions</a>
-            <a href="https://www.nankai.edu.cn/" rel="noopener"><span class="dot"></span>Nankai University</a>
-            <a href="https://sky.nankai.edu.cn/" rel="noopener"><span class="dot"></span>School of Life Sciences</a>
+            <a href="pages/team-members.html#affiliation"><span class="dot"></span>Nankai University</a>
+            <a href="pages/team-members.html#affiliation"><span class="dot"></span>School of Life Sciences</a>
           </div>
           <a class="mega-feature" href="pages/team-members.html">
             <span class="tag">The crew</span>
@@ -154,24 +154,27 @@
 
   <main id="main">
 <header class="hero">
-  <!-- soil + detection-ring atmosphere -->
-  <div class="hero__soil" aria-hidden="true">
-    <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
-      <defs>
-        <radialGradient id="glow" cx="62%" cy="40%" r="60%">
-          <stop offset="0" stop-color="#2c1d3c"/><stop offset="100%" stop-color="#191222"/>
-        </radialGradient>
-      </defs>
-      <rect width="1440" height="900" fill="url(#glow)"/>
-      <g class="rings" stroke="#9b7fe0" fill="none" stroke-opacity=".10">
-        <circle cx="980" cy="360" r="120"/><circle cx="980" cy="360" r="220"/>
-        <circle cx="980" cy="360" r="330"/><circle cx="980" cy="360" r="450"/>
+  <!-- clean deep-soil backdrop -->
+  <div class="hero__bg" aria-hidden="true"></div>
+
+  <!-- detection radar, contained on the right (clear of the headline) -->
+  <div class="hero__rings" aria-hidden="true">
+    <svg viewBox="0 0 600 600">
+      <defs><radialGradient id="sweepg" cx="50%" cy="50%" r="50%">
+        <stop offset="0" stop-color="#9b7fe0" stop-opacity=".34"/>
+        <stop offset="1" stop-color="#9b7fe0" stop-opacity="0"/>
+      </radialGradient></defs>
+      <g fill="none" stroke="#9b7fe0">
+        <circle cx="300" cy="300" r="92" stroke-opacity=".16"/>
+        <circle cx="300" cy="300" r="152" stroke-opacity=".13"/>
+        <circle cx="300" cy="300" r="216" stroke-opacity=".10"/>
+        <circle cx="300" cy="300" r="286" stroke-opacity=".06"/>
       </g>
-      <g stroke="#f4ecdd" fill="none" stroke-opacity=".045" stroke-width="1">
-        <path d="M-40,640 C320,600 760,690 1480,610"/>
-        <path d="M-40,720 C300,680 820,770 1480,690"/>
-        <path d="M-40,800 C360,760 780,840 1480,770"/>
+      <g class="sweep">
+        <path d="M300,300 L300,14 A286,286 0 0 1 547,158 Z" fill="url(#sweepg)"/>
+        <path d="M300,300 L300,14" stroke="#b59be8" stroke-opacity=".55" stroke-width="1.4"/>
       </g>
+      <circle cx="300" cy="300" r="4" fill="#e2a23c"/>
     </svg>
   </div>
 
@@ -208,9 +211,10 @@
     <p class="hero__eyebrow eyebrow">Nankai University &middot; iGEM 2026</p>
     <h1 class="hero__title">
       <span class="row"><span>The soil is</span></span>
-      <span class="row"><span><em>hiding</em>&nbsp;something.</span></span>
+      <span class="row"><span class="is-italic"><em>hiding</em></span></span>
+      <span class="row"><span class="is-grad">something.</span></span>
     </h1>
-    <p class="hero__sub">Two microscopic nematodes quietly destroy billions of dollars of crops every year — underground, invisible, until it is too late. We are engineering a biosensor that names them <strong style="color:var(--cream)">before</strong> the damage shows.</p>
+    <p class="hero__sub">Two microscopic nematodes can damage crops underground, invisibly, and often before the field shows symptoms. We are engineering a biosensor that names them <strong style="color:var(--cream)">before</strong> the damage shows.</p>
     <div class="hero__species">
       <span class="chip"><i></i>Heterodera glycines &middot; soybean cyst</span>
       <span class="chip"><i></i>Meloidogyne incognita &middot; root-knot</span>
@@ -222,7 +226,7 @@
     </div>
   </div>
 
-  <p class="hero__hint">Move your cursor across the soil — <b>something is down there.</b></p>
+  <p class="hero__hint">Move your cursor across the soil  -  <b>something is down there.</b></p>
   <div class="hero__scroll" aria-hidden="true"><span class="mouse"></span>Scroll</div>
 </header>
 
@@ -230,15 +234,15 @@
 <section class="band band--loam" style="padding-block:clamp(64px,8vw,110px)">
   <div class="wrap">
     <div class="band-head reveal">
-      <p class="eyebrow">01 — The case</p>
+      <p class="eyebrow">01  -  The case</p>
       <h2 class="section-title">A pest you never see, on a bill you always pay.</h2>
-      <p class="lead">Plant-parasitic nematodes are among the most damaging — and most overlooked — pathogens in agriculture. They live in the soil, feed on roots, and spread before any symptom reaches the surface. By the time a field looks sick, the harvest is already lost.</p>
+      <p class="lead">Plant-parasitic nematodes are among the most overlooked threats in agriculture. They live in the soil, feed on roots, and can spread before symptoms reach the surface. This section frames the project case and leaves a clear slot for final burden-of-disease evidence and regional context.</p>
     </div>
     <div class="stat-grid reveal" data-stagger>
-      <div class="stat"><div class="stat__num"><span data-count="157">0</span><span class="unit">B$</span></div><div class="stat__label">Est. annual global loss · cite</div></div>
-      <div class="stat"><div class="stat__num"><span data-count="12.3" data-decimals="1">0</span><span class="unit">%</span></div><div class="stat__label">Of world crop yield · cite</div></div>
-      <div class="stat"><div class="stat__num">&lt;<span data-count="2">0</span><span class="unit">mm</span></div><div class="stat__label">Length of each suspect</div></div>
-      <div class="stat"><div class="stat__num"><span data-count="4100">0</span><span class="unit">+</span></div><div class="stat__label">Known nematode species</div></div>
+      <div class="stat stat--pending"><div class="stat__num">Data</div><div class="stat__label">Global crop-loss figure and source</div></div>
+      <div class="stat stat--pending"><div class="stat__num">Local</div><div class="stat__label">Regional crop and field relevance</div></div>
+      <div class="stat"><div class="stat__num">2</div><div class="stat__label">Target species: soybean cyst and root-knot nematodes</div></div>
+      <div class="stat stat--pending"><div class="stat__num">Test</div><div class="stat__label">Final assay format, time-to-result, and detection limit</div></div>
     </div>
   </div>
 </section>
@@ -262,9 +266,9 @@
 <section class="band band--paper" id="how">
   <div class="wrap">
     <div class="band-head reveal">
-      <p class="eyebrow">02 — How detection works</p>
+      <p class="eyebrow">02  -  How detection works</p>
       <h2 class="section-title">Three moves from a clod of soil to a clear answer.</h2>
-      <p class="lead">Our detector reads the molecular fingerprints these nematodes leave in soil and turns them into a signal anyone can interpret in the field — no lab, no microscope, no PhD required.</p>
+      <p class="lead">Our detector reads the molecular fingerprints these nematodes leave in soil and turns them into a signal anyone can interpret in the field  -  no lab, no microscope, no PhD required.</p>
     </div>
     <div class="feature-list reveal" data-stagger>
       <div class="feature">
@@ -279,11 +283,11 @@
       </div>
       <div class="feature">
         <span class="feature__idx">03</span>
-        <div><h3>Read the verdict</h3><p>A colour or fluorescence readout reports which nematode is present — and roughly how much — within the hour.</p></div>
+        <div><h3>Read the verdict</h3><p>A colour or fluorescence readout reports which nematode is present  -  and roughly how much  -  within the hour.</p></div>
         <a class="feature__go" href="pages/results.html" aria-label="Results"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
       </div>
     </div>
-    <p class="placeholder-tag">Swap in your real assay chemistry &amp; circuit once finalised</p>
+    <aside class="content-slot" role="note"><span>Content slot</span><p>Final assay chemistry &amp; circuit once finalized</p></aside>
   </div>
 </section>
 
@@ -291,7 +295,7 @@
 <section class="band band--paper-2">
   <div class="wrap">
     <div class="band-head reveal">
-      <p class="eyebrow">03 — The casebook</p>
+      <p class="eyebrow">03  -  The casebook</p>
       <h2 class="section-title">Open the wiki.</h2>
       <p class="lead">Everything we did, evidenced and cross-referenced. Start anywhere.</p>
     </div>
@@ -304,13 +308,13 @@
         <h3>Design</h3><p>How the biological circuit was architected and built.</p></a>
       <a class="card" href="pages/engineering-cycle.html"><span class="card__ring"></span>
         <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><polyline points="21 4 21 9 16 9"/></svg></div>
-        <h3>Engineering</h3><p>Design–build–test–learn, cycle by documented cycle.</p></a>
+        <h3>Engineering</h3><p>Design-build-test-learn, cycle by documented cycle.</p></a>
       <a class="card" href="pages/parts.html"><span class="card__ring"></span>
         <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M5 8l-2 4 2 4M19 8l2 4-2 4M9 22h6"/><circle cx="12" cy="13" r="3"/></svg></div>
         <h3>Parts</h3><p>The composite and basic parts we contributed to the Registry.</p></a>
       <a class="card" href="pages/human-practices.html"><span class="card__ring"></span>
         <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M17 5a3 3 0 0 1 0 6M16 20a6 6 0 0 0-2-4.5"/></svg></div>
-        <h3>Human Practices</h3><p>Listening to farmers, agronomists, and regulators.</p></a>
+        <h3>Human Practices</h3><aside class="content-slot" role="note"><span>Content slot</span><p>Listening to farmers, agronomists, and regulators.</p></aside></a>
       <a class="card" href="pages/results.html"><span class="card__ring"></span>
         <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="20" x2="20" y2="20"/><rect x="6" y="11" width="3" height="6"/><rect x="11" y="7" width="3" height="10"/><rect x="16" y="13" width="3" height="4"/></svg></div>
         <h3>Results</h3><p>What the detector actually did at the bench.</p></a>
@@ -334,12 +338,12 @@
         <svg viewBox="0 0 400 400" style="position:absolute;width:min(100%,420px)" aria-hidden="true">
           <g fill="none" stroke="#9b7fe0" stroke-opacity=".25"><circle cx="200" cy="200" r="120"/><circle cx="200" cy="200" r="160"/><circle cx="200" cy="200" r="195"/></g>
         </svg>
-        <img src="img/mascot.png" alt="The NKU iGEM mascot — a round detective with a deerstalker hat and magnifying glass" style="position:relative;width:min(78%,300px);filter:drop-shadow(0 22px 40px rgba(0,0,0,.45));animation:bob 4s var(--ease) infinite" />
+        <img src="img/mascot.png" alt="The NKU iGEM mascot  -  a round detective with a deerstalker hat and magnifying glass" style="position:relative;width:min(78%,300px);filter:drop-shadow(0 22px 40px rgba(0,0,0,.45));animation:bob 4s var(--ease) infinite" />
       </div>
       <div class="split__body reveal-r flow">
-        <p class="eyebrow">04 — The investigator</p>
+        <p class="eyebrow">04  -  The investigator</p>
         <h2 class="section-title">Meet our detective.</h2>
-        <p class="lead">Every good case needs a sharp eye. Ours wears a deerstalker, carries a magnifying glass, and never lets a nematode slip past unnoticed — the face of a project about seeing the unseen.</p>
+        <p class="lead">Every good case needs a sharp eye. Ours wears a deerstalker, carries a magnifying glass, and never lets a nematode slip past unnoticed  -  the face of a project about seeing the unseen.</p>
         <p style="color:var(--cream-2)">Behind the mascot is a team of Nankai University students from the life sciences and beyond, who spent a year turning a soil problem into a piece of synthetic biology.</p>
         <div class="hero__cta" style="opacity:1;transform:none;margin-top:28px">
           <a href="pages/team-members.html" class="btn btn--iris">Meet the team
@@ -377,16 +381,16 @@
         <a href="pages/attribution.html">Attributions</a>
       </div>
       <div class="footer__col">
-        <h5>Elsewhere</h5>
-        <a href="https://igem.org" rel="noopener">iGEM Foundation</a>
-        <a href="https://competition.igem.org" rel="noopener">Competition Hub</a>
-        <a href="https://www.nankai.edu.cn/" rel="noopener">Nankai University</a>
-        <a href="https://gitlab.igem.org" rel="noopener">iGEM GitLab</a>
+        <h5>Readiness</h5>
+        <a href="pages/attribution.html">Attribution status</a>
+        <a href="pages/safety.html">Safety documentation</a>
+        <a href="pages/team-members.html#affiliation">Affiliation note</a>
+        <a href="pages/contribution.html">Registry contribution</a>
       </div>
     </div>
     <div class="footer__bottom">
-      <span>&copy; 2026 NKU iGEM Team &middot; Content under <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a></span>
-      <span>Built static &middot; self-hosted fonts &middot; no external trackers</span>
+      <span>&copy; 2026 NKU iGEM Team &middot; Static wiki build</span>
+      <span>Built static &middot; self-hosted fonts &middot; no external trackers or runtime links</span>
     </div>
   </div>
 </footer>
