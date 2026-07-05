@@ -7,27 +7,6 @@ desc: NKU iGEM 2026  -  a synthetic-biology biosensor that detects soybean cyst 
   <!-- clean deep-soil backdrop -->
   <div class="hero__bg" aria-hidden="true"></div>
 
-  <!-- detection radar, contained on the right (clear of the headline) -->
-  <div class="hero__rings" aria-hidden="true">
-    <svg viewBox="0 0 600 600">
-      <defs><radialGradient id="sweepg" cx="50%" cy="50%" r="50%">
-        <stop offset="0" stop-color="#9b7fe0" stop-opacity=".34"/>
-        <stop offset="1" stop-color="#9b7fe0" stop-opacity="0"/>
-      </radialGradient></defs>
-      <g fill="none" stroke="#9b7fe0">
-        <circle cx="300" cy="300" r="92" stroke-opacity=".16"/>
-        <circle cx="300" cy="300" r="152" stroke-opacity=".13"/>
-        <circle cx="300" cy="300" r="216" stroke-opacity=".10"/>
-        <circle cx="300" cy="300" r="286" stroke-opacity=".06"/>
-      </g>
-      <g class="sweep">
-        <path d="M300,300 L300,14 A286,286 0 0 1 547,158 Z" fill="url(#sweepg)"/>
-        <path d="M300,300 L300,14" stroke="#b59be8" stroke-opacity=".55" stroke-width="1.4"/>
-      </g>
-      <circle cx="300" cy="300" r="4" fill="#e2a23c"/>
-    </svg>
-  </div>
-
   <!-- faint hidden nematodes (always dim) -->
   <div class="hero__field" aria-hidden="true">
     <svg width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
@@ -76,12 +55,31 @@ desc: NKU iGEM 2026  -  a synthetic-biology biosensor that detects soybean cyst 
     </div>
   </div>
 
+  <aside class="hero-map" aria-label="Subsurface evidence map">
+    <div class="hero-map__head">
+      <span><i></i>Subsurface Evidence Map</span>
+      <b>scan 03</b>
+    </div>
+    <div class="soil-core">
+      <svg class="soil-core__waves" viewBox="0 0 620 520" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 86 C116 44 204 124 318 88 C434 52 524 128 620 74 L620 138 C500 172 426 118 312 150 C186 184 96 124 0 162 Z"/>
+        <path d="M0 218 C122 182 220 260 346 226 C466 194 534 250 620 214 L620 286 C494 318 404 260 286 302 C160 344 88 270 0 312 Z"/>
+        <path d="M0 390 C106 360 188 424 306 392 C426 360 500 414 620 380 L620 520 L0 520 Z"/>
+      </svg>
+      <div class="detection-route" aria-hidden="true"><span class="route__glow"></span></div>
+      <span class="evidence-pin evidence-pin--sample is-lit" data-evidence-pin data-route-y="18%" style="--pin-x:58%;--pin-y:22%"><span></span><b>Soil sample</b></span>
+      <span class="evidence-pin evidence-pin--target" data-evidence-pin data-route-y="52%" style="--pin-x:46%;--pin-y:54%"><span></span><b>Target sequence</b></span>
+      <span class="evidence-pin evidence-pin--readout" data-evidence-pin data-route-y="78%" style="--pin-x:62%;--pin-y:78%"><span></span><b>Field readout</b></span>
+      <div class="assay-strip" aria-hidden="true"><i></i></div>
+    </div>
+  </aside>
+
   <p class="hero__hint">Move your cursor across the soil  -  <b>something is down there.</b></p>
   <div class="hero__scroll" aria-hidden="true"><span class="mouse"></span>Scroll</div>
 </header>
 
 <!-- THE CASE (loam) -->
-<section class="band band--loam" style="padding-block:clamp(64px,8vw,110px)">
+<section class="band band--paper home-casebook" style="padding-block:clamp(72px,9vw,118px)">
   <div class="wrap">
     <div class="band-head reveal">
       <p class="eyebrow">01  -  The case</p>

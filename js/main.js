@@ -2,7 +2,7 @@
    NKU iGEM 2026  -  interaction & animation engine  (vanilla JS, no dependencies)
    All effects degrade gracefully and honour prefers-reduced-motion.
    Modules: nav  /  scroll-progress  /  reveal  /  counters  /  TOC scrollspy  /
-            hero detection-lens  /  swimming nematode  /  parallax  /  mascot helper
+            hero detection-lens  /  evidence map  /  parallax  /  mascot helper
 ============================================================================ */
 (function () {
   'use strict';
@@ -22,6 +22,8 @@
     toc();
     heroSequence();
     detectionLens();
+    evidenceMap();
+    heroScrollTransition();
     swimmingNematode();
     parallax();
     magnetic();
@@ -34,6 +36,8 @@
     var bar = $('.nav'); if (!bar) return;
     var toggle = $('.nav-toggle');
     var last = window.scrollY, ticking = false;
+    var hoverQuery = window.matchMedia('(hover: hover) and (pointer: fine) and (min-width: 981px)');
+    var hoverCloseTimer = null;
 
     function onScroll() {
       var y = window.scrollY;
@@ -60,33 +64,62 @@
     }
 
     function closeDropdowns(except) {
+      if (hoverCloseTimer) {
+        clearTimeout(hoverCloseTimer);
+        hoverCloseTimer = null;
+      }
       $$('.nav-item').forEach(function (i) {
         if (except && i === except) return;
         i.classList.remove('is-open');
+        delete i.dataset.openMode;
         var trigger = $('.nav-link[aria-haspopup="true"]', i);
         if (trigger) trigger.setAttribute('aria-expanded', 'false');
       });
     }
 
-    function setDropdown(item, open) {
+    function setDropdown(item, open, mode) {
       var trigger = $('.nav-link[aria-haspopup="true"]', item);
       if (open) closeDropdowns(item);
       item.classList.toggle('is-open', open);
+      if (open) item.dataset.openMode = mode || 'click';
+      else delete item.dataset.openMode;
       if (trigger) trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
     }
 
-    // dropdown items: click and keyboard toggles; CSS hover remains a visual affordance
+    function scheduleHoverClose(item) {
+      if (item.dataset.openMode !== 'hover') return;
+      if (hoverCloseTimer) clearTimeout(hoverCloseTimer);
+      hoverCloseTimer = setTimeout(function () {
+        setDropdown(item, false);
+        hoverCloseTimer = null;
+      }, 180);
+    }
+
+    // dropdown items: hover, click and keyboard all use the same open state
     $$('.nav-item').forEach(function (item) {
       var link = $('.nav-link', item);
       if (!link || !$('.mega', item)) return;
       link.addEventListener('click', function (e) {
         e.preventDefault();
-        setDropdown(item, !item.classList.contains('is-open'));
+        var stickyOpen = item.classList.contains('is-open') && item.dataset.openMode === 'click';
+        setDropdown(item, !stickyOpen, 'click');
+      });
+      item.addEventListener('pointerenter', function () {
+        if (!hoverQuery.matches) return;
+        if (hoverCloseTimer) {
+          clearTimeout(hoverCloseTimer);
+          hoverCloseTimer = null;
+        }
+        if (item.dataset.openMode !== 'click') setDropdown(item, true, 'hover');
+      });
+      item.addEventListener('pointerleave', function () {
+        if (!hoverQuery.matches) return;
+        scheduleHoverClose(item);
       });
       link.addEventListener('keydown', function (e) {
         if (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
-          setDropdown(item, true);
+          setDropdown(item, true, 'focus');
           var first = $('.mega a', item);
           if (first) first.focus();
         } else if (e.key === 'Escape') {
@@ -377,9 +410,101 @@
     }
   }
 
+  /* -- Hero evidence map (pin highlight + route progress) ------------- */
+  function evidenceMap() {
+    var map = $('.hero-map'); if (!map) return;
+    var core = $('.soil-core', map);
+    var pins = $$('[data-evidence-pin]', map);
+    if (!core || !pins.length) return;
+
+    function setActive(pin) {
+      pins.forEach(function (p) { p.classList.toggle('is-lit', p === pin); });
+      if (!pin) return;
+      map.dataset.activePin = pin.className.indexOf('target') > -1 ? 'target' :
+        pin.className.indexOf('readout') > -1 ? 'readout' : 'sample';
+      map.style.setProperty('--route-glow-y', pin.getAttribute('data-route-y') || '18%');
+    }
+
+    var sample = pins[0];
+    var target = pins[1] || sample;
+    var fine = window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+
+    if (REDUCED || !fine) {
+      map.classList.add('is-static');
+      pins.forEach(function (pin) { pin.classList.add('is-lit'); });
+      map.dataset.activePin = 'readout';
+      map.style.setProperty('--route-glow-y', (pins[pins.length - 1] || target).getAttribute('data-route-y') || '78%');
+      return;
+    }
+
+    setActive(sample);
+    var ticking = false;
+    var pointer = { x: 0, y: 0 };
+
+    function nearestPin() {
+      var best = sample, bestDist = Infinity;
+      pins.forEach(function (pin) {
+        var r = pin.getBoundingClientRect();
+        var cx = r.left + r.width / 2;
+        var cy = r.top + r.height / 2;
+        var dx = pointer.x - cx;
+        var dy = pointer.y - cy;
+        var d = Math.sqrt(dx * dx + dy * dy);
+        if (d < bestDist) { bestDist = d; best = pin; }
+      });
+      setActive(best);
+      ticking = false;
+    }
+
+    function onMove(e) {
+      pointer.x = e.clientX;
+      pointer.y = e.clientY;
+      if (!ticking) { ticking = true; raf(nearestPin); }
+    }
+
+    function onLeave() {
+      setActive(sample);
+    }
+
+    core.addEventListener('pointermove', onMove, { passive: true });
+    core.addEventListener('mousemove', onMove, { passive: true });
+    core.addEventListener('pointerleave', onLeave, { passive: true });
+    core.addEventListener('mouseleave', onLeave, { passive: true });
+  }
+
+  /* -- Hero scroll transition (dark soil -> pale case file) ------------ */
+  function heroScrollTransition() {
+    var hero = $('.hero'); if (!hero) return;
+    if (REDUCED) {
+      hero.style.setProperty('--hero-scroll', '0');
+      hero.style.setProperty('--hero-map-y', '0px');
+      hero.style.setProperty('--hero-map-opacity', '1');
+      return;
+    }
+
+    var ticking = false;
+    function update() {
+      var r = hero.getBoundingClientRect();
+      var p = clamp((-r.top) / Math.max(r.height * 0.58, 1), 0, 1);
+      hero.style.setProperty('--hero-scroll', p.toFixed(3));
+      hero.style.setProperty('--hero-map-y', (-p * 18).toFixed(1) + 'px');
+      hero.style.setProperty('--hero-map-opacity', (1 - p * 0.18).toFixed(3));
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; raf(update); }
+    }, { passive: true });
+    window.addEventListener('resize', function () {
+      if (!ticking) { ticking = true; raf(update); }
+    });
+    update();
+  }
+
   /* -- Swimming nematode (rAF-driven undulating SVG ribbon) ------------- */
   function swimmingNematode() {
     var host = $('.hero__worm'); if (!host || REDUCED) return;
+    if ($('.hero-map')) return;
     var svgNS = 'http://www.w3.org/2000/svg';
     var W = host.clientWidth, H = host.clientHeight;
     var svg = document.createElementNS(svgNS, 'svg');

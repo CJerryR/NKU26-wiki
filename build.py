@@ -132,7 +132,7 @@ SCAFFOLD_REPLACEMENTS = {
     "Editor's note": "Content status",
     "This page is a styled, ready-to-fill scaffold  -  the layout, outline and animations are wired up. Replace the placeholder tags with your real content.": "This page is structurally complete; final team evidence will be added in the content slots before wiki freeze.",
     "This page is a fully-styled scaffold. Replace the placeholder tags with your real figures, citations, and data  -  the layout, animations and outline are already wired up.": "This page is structurally complete; final figures, citations, and data will be added in the content slots before wiki freeze.",
-    "figure placeholder": "figure pending",
+    "figure placeholder": "figure evidence slot",
     "  -  replace with your final assay schematic.": " - final assay schematic pending.",
     "  -  replace with your annotated diagram.": " - annotated diagram pending.",
     "  /  cite": " / source pending",
@@ -251,7 +251,7 @@ def prepare_body(body):
         label = slot_text(match.group("text"))
         return (
             '<aside class="content-slot" role="note">'
-            '<span>Content slot</span>'
+            '<span>Evidence slot</span>'
             f'<p>{label}</p>'
             '</aside>'
         )
