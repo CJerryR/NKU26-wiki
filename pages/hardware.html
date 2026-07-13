@@ -11,7 +11,7 @@
   <link rel="preload" href="../fonts/fraunces-variable.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="../css/style.css" />
 </head>
-<body>
+<body data-path-prefix="../">
   <a class="skip" href="#main">Skip to content</a>
   <div class="scroll-progress" aria-hidden="true"></div>
 
@@ -26,126 +26,39 @@
 
     <ul class="nav-links">
       <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
-
-      <li class="nav-item">
-        <button type="button" class="nav-link" aria-haspopup="true" aria-expanded="false">Project
-          <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0l5 6 5-6z"/></svg></button>
-        <div class="mega">
-          <div class="mega-col">
-            <h4>The Investigation</h4>
-            <a href="../pages/description.html"><span class="dot"></span>Description</a>
-            <a href="../pages/background.html"><span class="dot"></span>Background</a>
-            <a href="../pages/design.html"><span class="dot"></span>Design</a>
-          </div>
-          <div class="mega-col">
-            <h4>Evidence</h4>
-            <a href="../pages/engineering-cycle.html"><span class="dot"></span>Engineering</a>
-            <a href="../pages/results.html"><span class="dot"></span>Results</a>
-            <a href="../pages/proof-of-concept.html"><span class="dot"></span>Proof of Concept</a>
-            <a href="../pages/implementation.html"><span class="dot"></span>Implementation</a>
-          </div>
-          <div class="mega-col">
-            <h4>Registry</h4>
-            <a href="../pages/parts.html"><span class="dot"></span>Parts</a>
-            <a href="../pages/contribution.html"><span class="dot"></span>Contribution</a>
-            <a href="../pages/safety.html"><span class="dot"></span>Safety</a>
-          </div>
-          <a class="mega-feature" href="../pages/description.html">
-            <span class="tag">Case file</span>
-            <p>Two nematodes are eating the harvest. We built the detector.</p>
-            <small>Read the project &rarr;</small>
-            <img class="mascot-mini" src="../img/mascot-trim.png" alt="" />
-          </a>
-        </div>
-      </li>
-
-      <li class="nav-item">
-        <button type="button" class="nav-link" aria-haspopup="true" aria-expanded="false">Lab
-          <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0l5 6 5-6z"/></svg></button>
-        <div class="mega">
-          <div class="mega-col">
-            <h4>Wet Lab</h4>
-            <a href="../pages/wet-lab.html"><span class="dot"></span>Experiments</a>
-            <a href="../pages/protocols.html"><span class="dot"></span>Protocols</a>
-            <a href="../pages/notebook.html"><span class="dot"></span>Notebook</a>
-          </div>
-          <div class="mega-col">
-            <h4>Dry Lab</h4>
-            <a href="../pages/modeling.html"><span class="dot"></span>Modeling</a>
-            <a href="../pages/software.html"><span class="dot"></span>Software</a>
-            <a href="../pages/hardware.html"><span class="dot"></span>Hardware</a>
-          </div>
-          <div class="mega-col">
-            <h4>Output</h4>
-            <a href="../pages/results.html"><span class="dot"></span>Results</a>
-            <a href="../pages/safety.html"><span class="dot"></span>Safety</a>
-          </div>
-          <a class="mega-feature" href="../pages/notebook.html">
-            <span class="tag">Field notebook</span>
-            <p>Every experiment, dated and logged like a detective's casebook.</p>
-            <small>Open the notebook &rarr;</small>
-            <img class="mascot-mini" src="../img/mascot-trim.png" alt="" />
-          </a>
-        </div>
-      </li>
-
-      <li class="nav-item">
-        <button type="button" class="nav-link" aria-haspopup="true" aria-expanded="false">Human Practices
-          <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0l5 6 5-6z"/></svg></button>
-        <div class="mega">
-          <div class="mega-col">
-            <h4>Practices</h4>
-            <a href="../pages/human-practices.html"><span class="dot"></span>Overview</a>
-            <a href="../pages/integrated-hp.html"><span class="dot"></span>Integrated HP</a>
-          </div>
-          <div class="mega-col">
-            <h4>Engagement</h4>
-            <a href="../pages/education.html"><span class="dot"></span>Education</a>
-            <a href="../pages/communication.html"><span class="dot"></span>Communication</a>
-            <a href="../pages/entrepreneurship.html"><span class="dot"></span>Entrepreneurship</a>
-          </div>
-          <div class="mega-col">
-            <h4>Impact</h4>
-            <a href="../pages/sustainability.html"><span class="dot"></span>Sustainability</a>
-            <a href="../pages/diversity-inclusion.html"><span class="dot"></span>Inclusion</a>
-          </div>
-          <a class="mega-feature" href="../pages/human-practices.html">
-            <span class="tag">In the field</span>
-            <p>We asked the people who actually fight nematodes what they need.</p>
-            <small>See who we met &rarr;</small>
-            <img class="mascot-mini" src="../img/mascot-trim.png" alt="" />
-          </a>
-        </div>
-      </li>
+      <li class="nav-item"><a href="../pages/description.html" class="nav-link">Description</a></li>
+      <li class="nav-item"><a href="../contribution/" class="nav-link">Contribution</a></li>
+      <li class="nav-item"><a href="../engineering/" class="nav-link">Engineering</a></li>
+      <li class="nav-item"><a href="../human-practices/" class="nav-link">Human Practices</a></li>
+      <li class="nav-item"><a href="../education/" class="nav-link">Education</a></li>
+      <li class="nav-item"><a href="../model/" class="nav-link">Model</a></li>
+      <li class="nav-item"><a href="../software/" class="nav-link">Software</a></li>
+      <li class="nav-item"><a href="../safety-and-security/" class="nav-link">Safety</a></li>
 
       <li class="nav-item">
         <button type="button" class="nav-link" aria-haspopup="true" aria-expanded="false">Team
           <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0l5 6 5-6z"/></svg></button>
         <div class="mega">
           <div class="mega-col">
-            <h4>People</h4>
-            <a href="../pages/team-members.html"><span class="dot"></span>Members</a>
-            <a href="../pages/advisors.html"><span class="dot"></span>Advisors</a>
-            <a href="../pages/instructors.html"><span class="dot"></span>Instructors</a>
-          </div>
-          <div class="mega-col">
-            <h4>Friends</h4>
-            <a href="../pages/collaborations.html"><span class="dot"></span>Collaborations</a>
-            <a href="../pages/partnerships.html"><span class="dot"></span>Partnerships</a>
-          </div>
-          <div class="mega-col">
-            <h4>About</h4>
+            <h4>People & credit</h4>
+            <a href="../pages/team-members.html"><span class="dot"></span>Team</a>
             <a href="../pages/attribution.html"><span class="dot"></span>Attributions</a>
             <a href="../pages/team-members.html#affiliation"><span class="dot"></span>Nankai University</a>
-            <a href="../pages/team-members.html#affiliation"><span class="dot"></span>School of Life Sciences</a>
           </div>
-          <a class="mega-feature" href="../pages/team-members.html">
-            <span class="tag">The crew</span>
-            <p>Students of Nankai University, on the trail of a hidden pest.</p>
-            <small>Meet everyone &rarr;</small>
+          <a class="mega-feature" href="../pages/attribution.html">
+            <span class="tag">Transparency</span>
+            <p>Team roles, support, and acknowledgements are kept visible.</p>
+            <small>Read attributions &rarr;</small>
             <img class="mascot-mini" src="../img/mascot-trim.png" alt="" />
           </a>
         </div>
+      </li>
+
+      <li class="nav-item nav-item--search">
+        <button type="button" class="nav-link nav-search-trigger" data-search-open aria-haspopup="dialog">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.5" y2="16.5"/></svg>
+          <span class="sr-only">Search</span>
+        </button>
       </li>
     </ul>
   </div>
@@ -192,9 +105,9 @@
         <li class="lvl-1"><a href="#build">Build & test</a></li>
         </ul></div>
       </div>
-<section id="need" data-toc="The need"><p class="eyebrow sec-label">01  -  Need</p><h2 class="section-title">Why hardware</h2><div class="prose"><aside class="content-slot" role="note"><span>Evidence slot</span><p>Why a hardware component is necessary - what the biology alone cannot do in a field setting.</p></aside></div></section>
-<section id="design" data-toc="Design"><p class="eyebrow sec-label">02  -  Design</p><h2 class="section-title">How it's built</h2><div class="grid grid-3 reveal" data-stagger style="margin-top:26px"><div class="card"><span class="card__ring"></span><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M19 12a7 7 0 0 0-.1-1.3l2-1.5-2-3.4-2.3 1a7 7 0 0 0-2.3-1.3L13.7 2h-3.4l-.4 2.5a7 7 0 0 0-2.3 1.3l-2.3-1-2 3.4 2 1.5A7 7 0 0 0 5 12c0 .4 0 .9.1 1.3l-2 1.5 2 3.4 2.3-1a7 7 0 0 0 2.3 1.3l.4 2.5h3.4l.4-2.5a7 7 0 0 0 2.3-1.3l2.3 1 2-3.4-2-1.5c.1-.4.1-.9.1-1.3z"/></svg></div><h3>Mechanical</h3><p>Enclosure, sample handling, and ergonomics.</p></div><div class="card"><span class="card__ring"></span><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg></div><h3>Readout</h3><p>How the signal is captured and reported.</p></div><div class="card"><span class="card__ring"></span><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 4 13c0-6 7-9 16-9 0 9-3 16-9 16z"/><line x1="6" y1="18" x2="13" y2="11"/></svg></div><h3>Field use</h3><p>Power, robustness, and cost.</p></div></div><figure class="figure" style="margin-top:26px"><div class="figure__media"><svg viewBox="0 0 600 200" style="max-width:560px" aria-hidden="true"><rect x="20" y="30" width="560" height="140" rx="14" fill="none" stroke="#9a7a6b" stroke-dasharray="6 7"/><text x="300" y="105" text-anchor="middle" font-family="Space Mono,monospace" font-size="13" fill="#9a7a6b">figure evidence slot</text></svg></div><figcaption><b>Fig 1</b> Hardware concept / CAD render.</figcaption></figure><aside class="content-slot" role="note"><span>Evidence slot</span><p>CAD / photos / BOM</p></aside></section>
-<section id="build" data-toc="Build & test"><p class="eyebrow sec-label">03  -  Build</p><h2 class="section-title">Prototype results</h2><div class="prose"><aside class="content-slot" role="note"><span>Evidence slot</span><p>The prototype, how it was built, and how it performed.</p></aside></div><div class="callout callout--tip" style="margin-top:24px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10c.7.7 1 1.3 1 2h6c0-.7.3-1.3 1-2a6 6 0 0 0-4-10z"/></svg><div><b>Open hardware</b><p>Share design files so other teams can reproduce the build.</p></div></div></section>
+<section id="need" data-toc="The need"><p class="eyebrow sec-label">01  -  Need</p><h2 class="section-title">Why hardware</h2><div class="prose"><aside class="content-slot" role="note"><span>Pending documentation</span><p>Why a hardware component is necessary - what the biology alone cannot do in a field setting.</p></aside></div></section>
+<section id="design" data-toc="Design"><p class="eyebrow sec-label">02  -  Design</p><h2 class="section-title">How it's built</h2><div class="grid grid-3 reveal" data-stagger style="margin-top:26px"><div class="card"><span class="card__ring"></span><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M19 12a7 7 0 0 0-.1-1.3l2-1.5-2-3.4-2.3 1a7 7 0 0 0-2.3-1.3L13.7 2h-3.4l-.4 2.5a7 7 0 0 0-2.3 1.3l-2.3-1-2 3.4 2 1.5A7 7 0 0 0 5 12c0 .4 0 .9.1 1.3l-2 1.5 2 3.4 2.3-1a7 7 0 0 0 2.3 1.3l.4 2.5h3.4l.4-2.5a7 7 0 0 0 2.3-1.3l2.3 1 2-3.4-2-1.5c.1-.4.1-.9.1-1.3z"/></svg></div><h3>Mechanical</h3><p>Enclosure, sample handling, and ergonomics.</p></div><div class="card"><span class="card__ring"></span><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg></div><h3>Readout</h3><p>How the signal is captured and reported.</p></div><div class="card"><span class="card__ring"></span><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 4 13c0-6 7-9 16-9 0 9-3 16-9 16z"/><line x1="6" y1="18" x2="13" y2="11"/></svg></div><h3>Field use</h3><p>Power, robustness, and cost.</p></div></div><figure class="figure" style="margin-top:26px"><div class="figure__media"><svg viewBox="0 0 600 200" style="max-width:560px" aria-hidden="true"><rect x="20" y="30" width="560" height="140" rx="14" fill="none" stroke="#9a7a6b" stroke-dasharray="6 7"/><text x="300" y="105" text-anchor="middle" font-family="Space Mono,monospace" font-size="13" fill="#9a7a6b">figure pending</text></svg></div><figcaption><b>Fig 1</b> Hardware concept / CAD render.</figcaption></figure><aside class="content-slot" role="note"><span>Pending documentation</span><p>CAD / photos / BOM</p></aside></section>
+<section id="build" data-toc="Build & test"><p class="eyebrow sec-label">03  -  Build</p><h2 class="section-title">Prototype results</h2><div class="prose"><aside class="content-slot" role="note"><span>Pending documentation</span><p>The prototype, how it was built, and how it performed.</p></aside></div><div class="callout callout--tip" style="margin-top:24px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10c.7.7 1 1.3 1 2h6c0-.7.3-1.3 1-2a6 6 0 0 0-4-10z"/></svg><div><b>Open hardware</b><p>Share design files so other teams can reproduce the build.</p></div></div></section>
     </div>
   </div>
   <div class="strata strata--down" aria-hidden="true"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><rect width="1440" height="120" fill="#f7f2e8"/><path fill="#241830" d="M0,60 C240,18 420,96 720,64 C1020,32 1230,92 1440,52 L1440,120 L0,120 Z"/><path fill="#180f1e" d="M0,86 C260,52 470,110 720,86 C1010,58 1240,108 1440,82 L1440,120 L0,120 Z"/></svg></div>
@@ -202,7 +115,9 @@
 
   <footer class="footer">
   <div class="footer__seal" aria-hidden="true"><img src="../img/nankai-seal.gif" alt="" loading="lazy" /></div>
+  <section class="sponsor-strip" aria-label="Sponsors"><span class="sr-only">Sponsors</span><div class="sponsor-strip__marquee"><div class="sponsor-strip__track"><div class="sponsor-strip__set"><span class="sponsor-badge"><span class="sponsor-badge__name">Sponsor slot</span><i class="sponsor-badge__dot" aria-hidden="true"></i></span></div><div class="sponsor-strip__set" aria-hidden="true"><span class="sponsor-badge"><span class="sponsor-badge__name">Sponsor slot</span><i class="sponsor-badge__dot" aria-hidden="true"></i></span></div></div></div></section>
   <div class="footer__inner">
+    <div class="footer-features" aria-label="Sponsors and friend teams"><section class="friend-links" aria-label="Friend teams"><div class="friend-links__head"><b>Friend links</b><p>Collaboration teams and partner pages can be linked here after confirmation.</p></div><div class="friend-links__grid"><span class="friend-link"><span class="friend-link__name">Friend link slot</span><span class="friend-link__note">Awaiting the confirmed friend-team list before public wiki freeze.</span></span></div></section></div>
     <div class="footer__top">
       <div class="footer__brand">
         <b>NKU-iGEM 2026 Team</b>
@@ -211,34 +126,56 @@
       <div class="footer__col">
         <h5>Project</h5>
         <a href="../pages/description.html">Description</a>
-        <a href="../pages/design.html">Design</a>
-        <a href="../pages/engineering-cycle.html">Engineering</a>
-        <a href="../pages/parts.html">Parts</a>
+        <a href="../contribution/">Contribution</a>
+        <a href="../engineering/">Engineering</a>
         <a href="../pages/results.html">Results</a>
       </div>
       <div class="footer__col">
         <h5>People &amp; Practice</h5>
-        <a href="../pages/human-practices.html">Human Practices</a>
-        <a href="../pages/education.html">Education</a>
+        <a href="../human-practices/">Human Practices</a>
+        <a href="../education/">Education</a>
         <a href="../pages/team-members.html">Team</a>
-        <a href="../pages/safety.html">Safety</a>
+        <a href="../safety-and-security/">Safety</a>
         <a href="../pages/attribution.html">Attributions</a>
       </div>
       <div class="footer__col">
-        <h5>Readiness</h5>
+        <h5>Open work</h5>
+        <a href="../model/">Model</a>
+        <a href="../software/">Software</a>
         <a href="../pages/attribution.html">Attribution status</a>
-        <a href="../pages/safety.html">Safety documentation</a>
-        <a href="../pages/team-members.html#affiliation">Affiliation note</a>
-        <a href="../pages/contribution.html">Registry contribution</a>
+        <a href="https://gitlab.igem.org/2026/nku-china">GitLab source</a>
+        <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC-BY 4.0 license</a>
       </div>
     </div>
     <div class="footer__bottom">
-      <span>&copy; 2026 NKU iGEM Team &middot; Static wiki build</span>
-      <span>Built static &middot; self-hosted fonts &middot; no external trackers or runtime links</span>
+      <span>&copy; 2026 NKU iGEM Team &middot; Static wiki build &middot; <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC-BY 4.0</a></span>
+      <span><a href="https://gitlab.igem.org/2026/nku-china">GitLab source</a> &middot; self-hosted fonts &middot; no external scripts or trackers</span>
     </div>
   </div>
 </footer>
 
+
+  <div class="site-search" id="site-search" role="dialog" aria-modal="true" aria-labelledby="site-search-title" hidden>
+    <div class="site-search__backdrop" data-search-close></div>
+    <section class="site-search__panel" role="document">
+      <div class="site-search__head">
+        <div>
+          <p class="eyebrow">Search the wiki</p>
+          <h2 id="site-search-title">Find articles, sections, and evidence.</h2>
+        </div>
+        <button class="site-search__close" type="button" data-search-close aria-label="Close search">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+        </button>
+      </div>
+      <label class="site-search__box">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.5" y2="16.5"/></svg>
+        <span class="sr-only">Search query</span>
+        <input type="search" data-search-input autocomplete="off" spellcheck="false" placeholder="Search project content..." />
+      </label>
+      <div class="site-search__meta" data-search-meta>Type to search the full wiki.</div>
+      <div class="site-search__results" data-search-results></div>
+    </section>
+  </div>
 
   <div class="mascot-fab" aria-live="polite">
     <div class="mascot-fab__bubble"></div>
@@ -247,6 +184,7 @@
     </button>
   </div>
 
+  <script src="../js/search-data.js"></script>
   <script src="../js/main.js"></script>
 </body>
 </html>

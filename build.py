@@ -15,13 +15,18 @@ automatically from markers in the content:
 No need to maintain the outline by hand  -  add a marker, rebuild, done.
 """
 import html
+import json
 import re, sys, pathlib
+from html.parser import HTMLParser
 
 ROOT = pathlib.Path(__file__).resolve().parent
 CONTENT = ROOT / "_content"
+DATA = ROOT / "_data"
 PARTIALS = ROOT / "_partials"
 TPL = ROOT / "_templates"
 PAGES_DIR = ROOT / "pages"
+JS_DIR = ROOT / "js"
+SEARCH_DATA = JS_DIR / "search-data.js"
 
 def read(p): return (ROOT / p).read_text(encoding="utf-8")
 
@@ -76,12 +81,73 @@ def parse(src):
         body = src[m.end():]
     return meta, body.strip()
 
+TRUE_VALUES = {"true", "yes", "1", "on"}
+FALSE_VALUES = {"false", "no", "0", "off"}
+
+def meta_bool(meta, key, default=False):
+    if key not in meta:
+        return default
+    value = str(meta.get(key, "")).strip().lower()
+    if value in TRUE_VALUES:
+        return True
+    if value in FALSE_VALUES:
+        return False
+    return default
+
+def is_home_page(name, meta):
+    return meta.get("layout", "page") == "home" or name == "index"
+
+def normalize_route(meta):
+    raw = str(meta.get("route", "")).strip()
+    if not raw:
+        return ""
+    route = raw.replace("\\", "/").strip("/")
+    parts = [part for part in route.split("/") if part]
+    if not parts or any(part in (".", "..") for part in parts) or any(":" in part for part in parts):
+        raise ValueError(f"Invalid route value: {raw!r}")
+    return "/".join(parts)
+
+def output_path_for(name, meta):
+    if is_home_page(name, meta):
+        return ROOT / "index.html"
+    route = normalize_route(meta)
+    if route:
+        return ROOT.joinpath(*route.split("/")) / "index.html"
+    return PAGES_DIR / f"{name}.html"
+
+def page_url_for(name, meta):
+    if is_home_page(name, meta):
+        return "index.html"
+    route = normalize_route(meta)
+    if route:
+        return f"{route}/"
+    return f"pages/{name}.html"
+
+def path_prefix_for(out):
+    rel = out.relative_to(ROOT)
+    depth = max(len(rel.parts) - 1, 0)
+    return "../" * depth
+
+def is_draft(meta):
+    return meta_bool(meta, "draft")
+
+def is_hidden(meta):
+    return meta_bool(meta, "hidden")
+
+def is_searchable(meta):
+    return (not is_draft(meta)) and (not is_hidden(meta)) and meta_bool(meta, "search", True)
+
+def read_meta(path):
+    return parse(path.read_text(encoding="utf-8"))[0]
+
 # -- TOC generation ---------------------------------------------------------
 TOC_RE = re.compile(r'<[a-zA-Z][^>]*\bdata-toc(?P<sub>-sub)?="(?P<label>[^"]*)"[^>]*>')
 PLACEHOLDER_P_RE = re.compile(r'<p class="placeholder-tag">(?P<text>.*?)</p>', re.S)
 PLACEHOLDER_SPAN_RE = re.compile(r'<span class="placeholder-tag">(?P<text>.*?)</span>', re.S)
 INSTRUCTION_P_RE = re.compile(r'<p>(?P<text>.*?)</p>', re.S)
 TAG_RE = re.compile(r"<[^>]+>")
+ATTR_RE = re.compile(r'([\w:-]+)\s*=\s*(["\'])(.*?)\2', re.S)
+SECTION_RE = re.compile(r'<section\b(?P<attrs>[^>]*)>(?P<body>.*?)</section>', re.S | re.I)
 
 INSTRUCTION_STARTERS = (
     "add", "insert", "replace", "paste", "list", "link", "map", "confirm",
@@ -129,10 +195,10 @@ INSTRUCTION_MARKERS = (
 )
 
 SCAFFOLD_REPLACEMENTS = {
-    "Editor's note": "Content status",
-    "This page is a styled, ready-to-fill scaffold  -  the layout, outline and animations are wired up. Replace the placeholder tags with your real content.": "This page is structurally complete; final team evidence will be added in the content slots before wiki freeze.",
-    "This page is a fully-styled scaffold. Replace the placeholder tags with your real figures, citations, and data  -  the layout, animations and outline are already wired up.": "This page is structurally complete; final figures, citations, and data will be added in the content slots before wiki freeze.",
-    "figure placeholder": "figure evidence slot",
+    "Editor's note": "Documentation note",
+    "This page is a styled, ready-to-fill scaffold  -  the layout, outline and animations are wired up. Replace the placeholder tags with your real content.": "This page is structurally complete; final team evidence will be added before wiki freeze.",
+    "This page is a fully-styled scaffold. Replace the placeholder tags with your real figures, citations, and data  -  the layout, animations and outline are already wired up.": "This page is structurally complete; final figures, citations, and data will be added before wiki freeze.",
+    "figure placeholder": "figure pending",
     "  -  replace with your final assay schematic.": " - final assay schematic pending.",
     "  -  replace with your annotated diagram.": " - annotated diagram pending.",
     "  /  cite": " / source pending",
@@ -141,7 +207,7 @@ SCAFFOLD_REPLACEMENTS = {
     "Instructor name": "Instructor",
     "Team name": "Collaborating team",
     "Partner name": "Partner",
-    "Registry ID pending - ": "Registry slot - ",
+    "Registry ID pending - ": "Registry entry - ",
     "Pending final Registry ID and characterization summary.": "Registry ID and characterization summary will be added here.",
     "Pending final composite-device Registry ID and characterization summary.": "Composite-device Registry ID and characterization summary will be added here.",
     "Role on the team  -  e.g. wet lab, modelling, design.": "Role and contribution summary.",
@@ -251,7 +317,7 @@ def prepare_body(body):
         label = slot_text(match.group("text"))
         return (
             '<aside class="content-slot" role="note">'
-            '<span>Evidence slot</span>'
+            '<span>Pending documentation</span>'
             f'<p>{label}</p>'
             '</aside>'
         )
@@ -259,13 +325,240 @@ def prepare_body(body):
     def span_slot(match):
         label = slot_text(match.group("text"))
         if label.lower() in {"replace", "citation", "source"}:
-            label = "Citation pending"
+            label = "Reference to add"
         return f'<span class="slot-chip">{label}</span>'
 
     body = INSTRUCTION_P_RE.sub(lambda m: p_slot(m) if is_instruction_text(m.group("text")) else m.group(0), body)
     body = PLACEHOLDER_P_RE.sub(p_slot, body)
     body = PLACEHOLDER_SPAN_RE.sub(span_slot, body)
     return body
+
+# -- global site data -------------------------------------------------------
+def load_site_data():
+    path = DATA / "site.json"
+    if not path.exists():
+        return {"sponsors": [], "friends": []}
+    data = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(data, dict):
+        raise ValueError("_data/site.json must contain a JSON object.")
+    return data
+
+def as_items(value):
+    return value if isinstance(value, list) else []
+
+def footer_initials(name):
+    words = re.findall(r"[A-Za-z0-9]+", name)
+    if words:
+        return "".join(w[0] for w in words[:2]).upper()
+    compact = re.sub(r"\s+", "", name)
+    return (compact[:2] or "?").upper()
+
+def safe_link(url):
+    url = str(url or "").strip()
+    if not url or url == "#":
+        return ""
+    if url.lower().startswith(("javascript:", "data:")):
+        return ""
+    return url
+
+def render_footer_item(item):
+    if not isinstance(item, dict):
+        return ""
+    name = str(item.get("name", "")).strip()
+    if not name:
+        return ""
+    note = str(item.get("note", "")).strip()
+    url = safe_link(item.get("url", ""))
+    badge = html.escape(footer_initials(name))
+    name_html = html.escape(name)
+    note_html = f"<span>{html.escape(note)}</span>" if note else ""
+    body = (
+        f'<span class="footer-feature__mark" aria-hidden="true">{badge}</span>'
+        f'<span class="footer-feature__text"><b>{name_html}</b>{note_html}</span>'
+    )
+    if url:
+        return f'<a class="footer-feature" href="{html.escape(url, quote=True)}">{body}</a>'
+    return f'<span class="footer-feature">{body}</span>'
+
+def render_sponsor_badge(item):
+    if not isinstance(item, dict):
+        return ""
+    name = str(item.get("name", "")).strip()
+    if not name:
+        return ""
+    url = safe_link(item.get("url", ""))
+    body = (
+        f'<span class="sponsor-badge__name">{html.escape(name)}</span>'
+        '<i class="sponsor-badge__dot" aria-hidden="true"></i>'
+    )
+    if url:
+        return f'<a class="sponsor-badge" href="{html.escape(url, quote=True)}">{body}</a>'
+    return f'<span class="sponsor-badge">{body}</span>'
+
+def render_friend_link(item):
+    if not isinstance(item, dict):
+        return ""
+    name = str(item.get("name", "")).strip()
+    if not name:
+        return ""
+    note = str(item.get("note", "")).strip()
+    url = safe_link(item.get("url", ""))
+    body = (
+        f'<span class="friend-link__name">{html.escape(name)}</span>'
+        f'<span class="friend-link__note">{html.escape(note)}</span>'
+    )
+    if url:
+        return f'<a class="friend-link" href="{html.escape(url, quote=True)}">{body}</a>'
+    return f'<span class="friend-link">{body}</span>'
+
+def render_sponsor_strip(site_data):
+    sponsor_badges = "".join(render_sponsor_badge(item) for item in as_items(site_data.get("sponsors", [])))
+    if not sponsor_badges:
+        return ""
+    return (
+        '<section class="sponsor-strip" aria-label="Sponsors">'
+        '<span class="sr-only">Sponsors</span>'
+        '<div class="sponsor-strip__marquee">'
+        '<div class="sponsor-strip__track">'
+        f'<div class="sponsor-strip__set">{sponsor_badges}</div>'
+        f'<div class="sponsor-strip__set" aria-hidden="true">{sponsor_badges}</div>'
+        '</div>'
+        '</div>'
+        '</section>'
+    )
+
+def render_footer_features(site_data):
+    friend_links = "".join(render_friend_link(item) for item in as_items(site_data.get("friends", [])))
+    if not friend_links:
+        return ""
+    friends = ""
+    if friend_links:
+        friends = (
+            '<section class="friend-links" aria-label="Friend teams">'
+            '<div class="friend-links__head">'
+            '<b>Friend links</b>'
+            '<p>Collaboration teams and partner pages can be linked here after confirmation.</p>'
+            '</div>'
+            f'<div class="friend-links__grid">{friend_links}</div>'
+            '</section>'
+        )
+    return (
+        '<div class="footer-features" aria-label="Sponsors and friend teams">'
+        f'{friends}'
+        '</div>'
+    )
+
+SITE_DATA = load_site_data()
+GLOBAL_SPONSOR_STRIP = render_sponsor_strip(SITE_DATA)
+GLOBAL_FOOTER_FEATURES = render_footer_features(SITE_DATA)
+
+# -- search index generation -----------------------------------------------
+def clean_text(text):
+    return html.unescape(re.sub(r"\s+", " ", str(text or "")).strip())
+
+class VisibleTextParser(HTMLParser):
+    SKIP_TAGS = {"script", "style", "noscript"}
+    BREAK_TAGS = {
+        "address", "article", "aside", "blockquote", "br", "dd", "div", "dt",
+        "figcaption", "footer", "h1", "h2", "h3", "h4", "h5", "h6", "header",
+        "li", "main", "nav", "p", "section", "td", "th", "tr",
+    }
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.parts = []
+        self.skip_depth = 0
+
+    def handle_starttag(self, tag, attrs):
+        tag = tag.lower()
+        if tag in self.SKIP_TAGS:
+            self.skip_depth += 1
+            return
+        if self.skip_depth:
+            return
+        if tag in self.BREAK_TAGS:
+            self.parts.append(" ")
+        if tag == "img":
+            for key, value in attrs:
+                if key.lower() == "alt" and value:
+                    self.parts.append(value)
+
+    def handle_endtag(self, tag):
+        tag = tag.lower()
+        if tag in self.SKIP_TAGS and self.skip_depth:
+            self.skip_depth -= 1
+            return
+        if not self.skip_depth and tag in self.BREAK_TAGS:
+            self.parts.append(" ")
+
+    def handle_data(self, data):
+        if not self.skip_depth and data.strip():
+            self.parts.append(data)
+
+    def text(self):
+        return clean_text(" ".join(self.parts))
+
+def visible_text(fragment):
+    parser = VisibleTextParser()
+    parser.feed(fragment or "")
+    parser.close()
+    return parser.text()
+
+def attrs_from(attr_text):
+    return {k.lower(): html.unescape(v.strip()) for k, _, v in ATTR_RE.findall(attr_text or "")}
+
+def first_heading_text(fragment):
+    m = re.search(r"<h[1-6][^>]*>(.*?)</h[1-6]>", fragment or "", re.S | re.I)
+    return visible_text(m.group(1)) if m else ""
+
+def page_crumbs(meta):
+    parts = [visible_text(part) for part in meta.get("crumbs", "").split("/") if part.strip()]
+    return ["Home"] + parts if parts else ["Home"]
+
+def search_sections(body, page_url):
+    sections = []
+    for m in SECTION_RE.finditer(body):
+        attrs = attrs_from(m.group("attrs"))
+        section_id = attrs.get("id", "").strip()
+        if not section_id:
+            continue
+        title = clean_text(attrs.get("data-toc") or first_heading_text(m.group("body")) or section_id.replace("-", " ").title())
+        sections.append({
+            "id": section_id,
+            "title": title,
+            "text": visible_text(m.group("body")),
+            "url": f"{page_url}#{section_id}",
+        })
+    return sections
+
+def search_entry(path):
+    src = path.read_text(encoding="utf-8")
+    meta, body = parse(src)
+    body = prepare_body(body)
+    name = path.stem
+    is_home = is_home_page(name, meta)
+    url = page_url_for(name, meta)
+    title = visible_text(meta.get("title") or meta.get("heading") or ("NKU iGEM 2026" if is_home else name.replace("-", " ").title()))
+    desc = visible_text(meta.get("desc") or meta.get("sub") or "")
+    crumbs = page_crumbs(meta)
+    sections = search_sections(body, url)
+    text = clean_text(" ".join([title, desc, *crumbs, visible_text(body)]))
+    return {
+        "title": title,
+        "url": url,
+        "crumbs": crumbs,
+        "desc": desc,
+        "text": text,
+        "sections": sections,
+    }
+
+def write_search_data(files):
+    index = [search_entry(path) for path in files]
+    SEARCH_DATA.parent.mkdir(exist_ok=True)
+    payload = "window.NKU_SEARCH_INDEX = " + json.dumps(index, ensure_ascii=False, indent=2) + ";\n"
+    SEARCH_DATA.write_text(payload, encoding="utf-8")
+    section_count = sum(len(entry["sections"]) for entry in index)
+    return SEARCH_DATA, len(index), section_count
 
 def toc_items(body):
     items = []
@@ -350,8 +643,9 @@ def build_page(path):
     meta, body = parse(src)
     body = prepare_body(body)
     name = path.stem
-    is_home = meta.get("layout", "page") == "home" or name == "index"
-    P = "" if is_home else "../"
+    is_home = is_home_page(name, meta)
+    out = output_path_for(name, meta)
+    P = path_prefix_for(out)
 
     if is_home:
         body_html = body
@@ -376,28 +670,57 @@ def build_page(path):
     title_tag = meta.get("title", "NKU iGEM 2026")
     title_full = "NKU iGEM 2026" if is_home else f"{title_tag}  /  NKU iGEM 2026"
     desc = meta.get("desc", "NKU iGEM 2026  -  a synthetic-biology biosensor for early detection of plant-parasitic nematodes.")
+    footer_html = FOOTER.replace("{{GLOBAL_FOOTER_FEATURES}}", GLOBAL_FOOTER_FEATURES)
+    footer_html = footer_html.replace("{{GLOBAL_SPONSOR_STRIP}}", GLOBAL_SPONSOR_STRIP)
 
     html = (BASE
             .replace("{{TITLE}}", title_full)
             .replace("{{DESC}}", desc)
             .replace("{{NAV}}", NAV)
-            .replace("{{FOOTER}}", FOOTER)
+            .replace("{{FOOTER}}", footer_html)
+            .replace("{{GLOBAL_SPONSOR_STRIP}}", GLOBAL_SPONSOR_STRIP)
+            .replace("{{GLOBAL_FOOTER_FEATURES}}", GLOBAL_FOOTER_FEATURES)
             .replace("{{BODY}}", body_html)
             .replace("{{P}}", P))
 
-    out = (ROOT / "index.html") if is_home else (PAGES_DIR / f"{name}.html")
+    out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(html, encoding="utf-8")
     return out, len(toc_items(body)) if not is_home else 0
+
+def clean_generated_outputs(files):
+    PAGES_DIR.mkdir(exist_ok=True)
+    # clean previously generated legacy page files so routed pages do not linger
+    for f in PAGES_DIR.glob("*.html"):
+        f.unlink()
+
+    route_outputs = set()
+    for f in files:
+        meta = read_meta(f)
+        route = normalize_route(meta)
+        if route:
+            route_outputs.add(output_path_for(f.stem, meta))
+    for out in sorted(route_outputs, key=lambda p: str(p)):
+        if out.exists():
+            out.unlink()
+        parent = out.parent
+        if parent != ROOT and parent.exists():
+            try:
+                parent.rmdir()
+            except OSError:
+                pass
 
 def main():
     if not CONTENT.exists():
         print("No _content/ directory found."); sys.exit(1)
-    PAGES_DIR.mkdir(exist_ok=True)
-    # clean previously generated pages so nothing stale lingers
-    for f in PAGES_DIR.glob("*.html"):
-        f.unlink()
 
-    files = sorted(CONTENT.glob("*.html"))
+    all_files = sorted(CONTENT.glob("*.html"))
+    clean_generated_outputs(all_files)
+
+    files = [f for f in all_files if not is_draft(read_meta(f))]
+    search_files = [f for f in files if is_searchable(read_meta(f))]
+    hidden_count = sum(1 for f in files if is_hidden(read_meta(f)))
+    draft_count = len(all_files) - len(files)
+
     print(f"Building {len(files)} pages  ->  static HTML\n" + "-" * 52)
     n_home = 0
     for f in files:
@@ -406,8 +729,10 @@ def main():
         tag = "home" if f.stem == "index" else f"{ntoc:2d} toc"
         if f.stem == "index": n_home += 1
         print(f"  {f.stem:22s}  ->  {str(rel):24s} [{tag}]")
+    search_path, search_pages, search_sections_n = write_search_data(search_files)
     print("-" * 52)
-    print(f"Done. {len(files)} pages, {n_home} home. Output: index.html + pages/*.html")
+    print(f"Done. {len(files)} pages, {n_home} home, {hidden_count} hidden, {draft_count} draft.")
+    print(f"Search index: {search_path.relative_to(ROOT)} ({search_pages} pages, {search_sections_n} sections)")
 
 if __name__ == "__main__":
     main()
