@@ -578,7 +578,7 @@
         if (Math.abs(tx - cx) > 0.5 || Math.abs(ty - cy) > 0.5) raf(loop); else raf_on = false;
       }
       setLens(cx, cy, 150);
-    } else if (!REDUCED) {
+    } else if (!REDUCED && !hero.hasAttribute('data-flow-scene')) {
       // touch / coarse pointer: gentle auto-sweep so the effect is still discoverable
       hero.classList.add('lens-on');
       var t0 = null;
@@ -657,6 +657,8 @@
   /* -- Hero scroll transition (dark soil -> pale case file) ------------ */
   function heroScrollTransition() {
     var hero = $('.hero'); if (!hero) return;
+    // The home flow scene owns its camera and scroll variables in flow-scene.js.
+    if (hero.hasAttribute('data-flow-scene')) return;
     if (REDUCED) {
       hero.style.setProperty('--hero-scroll', '0');
       hero.style.setProperty('--hero-map-y', '0px');

@@ -3,79 +3,89 @@ layout: home
 title: NKU iGEM 2026
 desc: NKU iGEM 2026  -  a synthetic-biology biosensor that detects soybean cyst and root-knot nematodes in soil before crop damage appears.
 -->
-<header class="hero">
-  <!-- clean deep-soil backdrop -->
-  <div class="hero__bg" aria-hidden="true"></div>
-
-  <!-- faint hidden nematodes (always dim) -->
-  <div class="hero__field" aria-hidden="true">
-    <svg width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
-      <defs><pattern id="wormsA" width="150" height="118" patternUnits="userSpaceOnUse" patternTransform="rotate(-9)">
-        <path d="M14,58 q18,-26 36,0 t36,0" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/>
-        <circle cx="120" cy="26" r="3.4" fill="currentColor"/>
-        <path d="M86,92 q12,-18 24,0 t24,0" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" opacity=".7"/>
-      </pattern></defs>
-      <rect width="100%" height="100%" fill="url(#wormsA)"/>
-    </svg>
-  </div>
-  <!-- the same field, bright, revealed only inside the lens mask -->
-  <div class="hero__field--lit" aria-hidden="true">
-    <svg width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
-      <defs><pattern id="wormsB" width="150" height="118" patternUnits="userSpaceOnUse" patternTransform="rotate(-9)">
-        <path d="M14,58 q18,-26 36,0 t36,0" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/>
-        <circle cx="120" cy="26" r="3.4" fill="currentColor"/>
-        <path d="M86,92 q12,-18 24,0 t24,0" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" opacity=".7"/>
-      </pattern></defs>
-      <rect width="100%" height="100%" fill="url(#wormsB)"/>
-    </svg>
-  </div>
-
-  <!-- swimming nematodes injected here by JS -->
-  <div class="hero__worm" aria-hidden="true"></div>
-  <div class="hero__lens" aria-hidden="true"></div>
-  <div class="hero__dot" aria-hidden="true"></div>
-  <div class="hero__grain" aria-hidden="true"></div>
-
-  <div class="hero__inner">
-    <p class="hero__eyebrow eyebrow">Nankai University &middot; iGEM 2026</p>
-    <h1 class="hero__title">
-      <span class="row"><span>The soil is</span></span>
-      <span class="row"><span class="is-italic"><em>hiding</em></span></span>
-      <span class="row"><span class="is-grad">something.</span></span>
-    </h1>
-    <p class="hero__sub">Two microscopic nematodes can damage crops underground, invisibly, and often before the field shows symptoms. We are engineering a biosensor that names them <strong style="color:var(--cream)">before</strong> the damage shows.</p>
-    <div class="hero__species">
-      <span class="chip"><i></i>Heterodera glycines &middot; soybean cyst</span>
-      <span class="chip"><i></i>Meloidogyne incognita &middot; root-knot</span>
-    </div>
-    <div class="hero__cta">
-      <a href="pages/description.html" class="btn btn--primary">Read the investigation
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-      <a href="#how" class="btn btn--ghost">How detection works</a>
-    </div>
-  </div>
-
-  <aside class="hero-map" aria-label="Subsurface evidence map">
-    <div class="hero-map__head">
-      <span><i></i>Subsurface Evidence Map</span>
-      <b>scan 03</b>
-    </div>
-    <div class="soil-core">
-      <svg class="soil-core__waves" viewBox="0 0 620 520" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0 86 C116 44 204 124 318 88 C434 52 524 128 620 74 L620 138 C500 172 426 118 312 150 C186 184 96 124 0 162 Z"/>
-        <path d="M0 218 C122 182 220 260 346 226 C466 194 534 250 620 214 L620 286 C494 318 404 260 286 302 C160 344 88 270 0 312 Z"/>
-        <path d="M0 390 C106 360 188 424 306 392 C426 360 500 414 620 380 L620 520 L0 520 Z"/>
+<header class="hero hero--flow" data-flow-scene>
+  <div class="hero__viewport">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="hero__field" aria-hidden="true">
+      <svg width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+        <defs><pattern id="wormsA" width="150" height="118" patternUnits="userSpaceOnUse" patternTransform="rotate(-9)">
+          <path d="M14,58 q18,-26 36,0 t36,0" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/>
+          <circle cx="120" cy="26" r="3.4" fill="currentColor"/>
+          <path d="M86,92 q12,-18 24,0 t24,0" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" opacity=".7"/>
+        </pattern></defs>
+        <rect width="100%" height="100%" fill="url(#wormsA)"/>
       </svg>
-      <div class="detection-route" aria-hidden="true"><span class="route__glow"></span></div>
-      <span class="evidence-pin evidence-pin--sample is-lit" data-evidence-pin data-route-y="18%" style="--pin-x:58%;--pin-y:22%"><span></span><b>Soil sample</b></span>
-      <span class="evidence-pin evidence-pin--target" data-evidence-pin data-route-y="52%" style="--pin-x:46%;--pin-y:54%"><span></span><b>Target sequence</b></span>
-      <span class="evidence-pin evidence-pin--readout" data-evidence-pin data-route-y="78%" style="--pin-x:62%;--pin-y:78%"><span></span><b>Field readout</b></span>
-      <div class="assay-strip" aria-hidden="true"><i></i></div>
     </div>
-  </aside>
+    <div class="hero__field--lit" aria-hidden="true">
+      <svg width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+        <defs><pattern id="wormsB" width="150" height="118" patternUnits="userSpaceOnUse" patternTransform="rotate(-9)">
+          <path d="M14,58 q18,-26 36,0 t36,0" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/>
+          <circle cx="120" cy="26" r="3.4" fill="currentColor"/>
+          <path d="M86,92 q12,-18 24,0 t24,0" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" opacity=".7"/>
+        </pattern></defs>
+        <rect width="100%" height="100%" fill="url(#wormsB)"/>
+      </svg>
+    </div>
 
-  <p class="hero__hint">Move your cursor across the soil  -  <b>something is down there.</b></p>
-  <div class="hero__scroll" aria-hidden="true"><span class="mouse"></span>Scroll</div>
+    <div class="hero__lens" aria-hidden="true"></div>
+    <div class="hero__grain" aria-hidden="true"></div>
+
+    <div class="hero-flow" data-fluid-stage aria-hidden="true">
+      <canvas class="hero-flow__canvas" data-fluid-canvas></canvas>
+      <div class="hero-flow__fallback"></div>
+      <div class="hero-flow__orbit hero-flow__orbit--a"></div>
+      <div class="hero-flow__orbit hero-flow__orbit--b"></div>
+      <div class="hero-flow__mascot-shell">
+        <img class="hero-flow__mascot" src="img/mascot.png" alt="" decoding="async" />
+      </div>
+      <div class="hero-flow__caustic"></div>
+    </div>
+
+    <p class="hero__flow-word" aria-hidden="true">LET&apos;S FLOW</p>
+
+    <div class="hero__inner">
+      <p class="hero__eyebrow eyebrow">Nankai University &middot; iGEM 2026</p>
+      <h1 class="hero__title" aria-label="The soil is hiding something.">
+        <span class="row"><span data-disrupt="The soil is">The soil is</span></span>
+        <span class="row"><span class="is-italic" data-disrupt="hiding"><em>hiding</em></span></span>
+        <span class="row"><span class="is-grad" data-disrupt="something.">something.</span></span>
+      </h1>
+      <p class="hero__sub">Two microscopic nematodes can damage crops underground, invisibly, and often before the field shows symptoms. We are engineering a biosensor that names them <strong>before</strong> the damage shows.</p>
+      <div class="hero__species">
+        <span class="chip"><i></i>Heterodera glycines &middot; soybean cyst</span>
+        <span class="chip"><i></i>Meloidogyne incognita &middot; root-knot</span>
+      </div>
+      <div class="hero__cta">
+        <a href="pages/description.html" class="btn btn--primary">Read the investigation
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        <a href="#how" class="btn btn--ghost">How detection works</a>
+      </div>
+    </div>
+
+    <aside class="hero-map" aria-label="Subsurface evidence map">
+      <div class="hero-map__head">
+        <span><i></i>Subsurface Evidence Map</span>
+        <b>scan 03</b>
+      </div>
+      <div class="soil-core">
+        <svg class="soil-core__waves" viewBox="0 0 620 520" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 86 C116 44 204 124 318 88 C434 52 524 128 620 74 L620 138 C500 172 426 118 312 150 C186 184 96 124 0 162 Z"/>
+          <path d="M0 218 C122 182 220 260 346 226 C466 194 534 250 620 214 L620 286 C494 318 404 260 286 302 C160 344 88 270 0 312 Z"/>
+          <path d="M0 390 C106 360 188 424 306 392 C426 360 500 414 620 380 L620 520 L0 520 Z"/>
+        </svg>
+        <div class="detection-route" aria-hidden="true"><span class="route__glow"></span></div>
+        <span class="evidence-pin evidence-pin--sample is-lit" data-evidence-pin data-route-y="18%" style="--pin-x:58%;--pin-y:22%"><span></span><b>Soil sample</b></span>
+        <span class="evidence-pin evidence-pin--target" data-evidence-pin data-route-y="52%" style="--pin-x:46%;--pin-y:54%"><span></span><b>Target sequence</b></span>
+        <span class="evidence-pin evidence-pin--readout" data-evidence-pin data-route-y="78%" style="--pin-x:62%;--pin-y:78%"><span></span><b>Field readout</b></span>
+        <div class="assay-strip" aria-hidden="true"><i></i></div>
+      </div>
+    </aside>
+
+    <div class="hero__material-note" aria-hidden="true">
+      <span>Fluid reagent field</span><b>pointer / scroll</b>
+    </div>
+    <div class="hero__scroll" aria-hidden="true"><span class="mouse"></span>Scroll to move through the specimen</div>
+  </div>
 </header>
 
 <!-- THE CASE (loam) -->
@@ -95,10 +105,10 @@ desc: NKU iGEM 2026  -  a synthetic-biology biosensor that detects soybean cyst 
   </div>
 </section>
 
-<div class="ticker" style="background:var(--loam)" aria-hidden="true">
+<div class="ticker" style="background:var(--loam)" data-kinetic-ticker aria-hidden="true">
   <div class="ticker__track">
-    <span>biosensing</span><i class="dot"></i><span>root-knot</span><i class="dot"></i><span>soybean cyst</span><i class="dot"></i><span>early detection</span><i class="dot"></i><span>synthetic biology</span><i class="dot"></i>
-    <span>biosensing</span><i class="dot"></i><span>root-knot</span><i class="dot"></i><span>soybean cyst</span><i class="dot"></i><span>early detection</span><i class="dot"></i><span>synthetic biology</span><i class="dot"></i>
+    <div class="ticker__set"><span>biosensing</span><i class="dot"></i><span>root-knot</span><i class="dot"></i><span>soybean cyst</span><i class="dot"></i><span>early detection</span><i class="dot"></i><span>synthetic biology</span><i class="dot"></i></div>
+    <div class="ticker__set" aria-hidden="true"><span>biosensing</span><i class="dot"></i><span>root-knot</span><i class="dot"></i><span>soybean cyst</span><i class="dot"></i><span>early detection</span><i class="dot"></i><span>synthetic biology</span><i class="dot"></i></div>
   </div>
 </div>
 
@@ -148,22 +158,22 @@ desc: NKU iGEM 2026  -  a synthetic-biology biosensor that detects soybean cyst 
       <p class="lead">Everything we did, evidenced and cross-referenced. Start anywhere.</p>
     </div>
     <div class="grid grid-3 reveal" data-stagger>
-      <a class="card" href="pages/description.html"><span class="card__ring"></span>
+      <a class="card" data-inertia-card href="pages/description.html"><span class="card__ring"></span>
         <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.7" y2="16.7"/></svg></div>
         <h3>Description</h3><p>The problem, the suspects, and the idea that catches them.</p></a>
-      <a class="card" href="contribution/"><span class="card__ring"></span>
+      <a class="card" data-inertia-card href="contribution/"><span class="card__ring"></span>
         <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v4l-5 9a3 3 0 0 0 3 4h10a3 3 0 0 0 3-4l-5-9V3"/><line x1="8" y1="3" x2="16" y2="3"/></svg></div>
         <h3>Contribution</h3><p>What we leave for future teams to reuse and extend.</p></a>
-      <a class="card" href="engineering/"><span class="card__ring"></span>
+      <a class="card" data-inertia-card href="engineering/"><span class="card__ring"></span>
         <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><polyline points="21 4 21 9 16 9"/></svg></div>
         <h3>Engineering</h3><p>Design-build-test-learn, cycle by documented cycle.</p></a>
-      <a class="card" href="model/"><span class="card__ring"></span>
+      <a class="card" data-inertia-card href="model/"><span class="card__ring"></span>
         <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M5 8l-2 4 2 4M19 8l2 4-2 4M9 22h6"/><circle cx="12" cy="13" r="3"/></svg></div>
         <h3>Model</h3><p>The assumptions, predictions, and design feedback from dry lab.</p></a>
-      <a class="card" href="human-practices/"><span class="card__ring"></span>
+      <a class="card" data-inertia-card href="human-practices/"><span class="card__ring"></span>
         <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M17 5a3 3 0 0 1 0 6M16 20a6 6 0 0 0-2-4.5"/></svg></div>
         <h3>Human Practices</h3><p>Listening to farmers, agronomists, and regulators.</p></a>
-      <a class="card" href="pages/results.html"><span class="card__ring"></span>
+      <a class="card" data-inertia-card href="pages/results.html"><span class="card__ring"></span>
         <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="20" x2="20" y2="20"/><rect x="6" y="11" width="3" height="6"/><rect x="11" y="7" width="3" height="10"/><rect x="16" y="13" width="3" height="4"/></svg></div>
         <h3>Results</h3><p>What the detector actually did at the bench.</p></a>
     </div>
@@ -182,11 +192,14 @@ desc: NKU iGEM 2026  -  a synthetic-biology biosensor that detects soybean cyst 
 <section class="band band--loam" style="padding-block:clamp(70px,9vw,120px)">
   <div class="wrap">
     <div class="split split--media-first">
-      <div class="split__media reveal-l" style="position:relative;display:grid;place-items:center;min-height:320px">
-        <svg viewBox="0 0 400 400" style="position:absolute;width:min(100%,420px)" aria-hidden="true">
-          <g fill="none" stroke="#9b7fe0" stroke-opacity=".25"><circle cx="200" cy="200" r="120"/><circle cx="200" cy="200" r="160"/><circle cx="200" cy="200" r="195"/></g>
-        </svg>
-        <img src="img/mascot.png" alt="The NKU iGEM mascot  -  a round detective with a deerstalker hat and magnifying glass" style="position:relative;width:min(78%,300px);filter:drop-shadow(0 22px 40px rgba(0,0,0,.45));animation:bob 4s var(--ease) infinite" />
+      <div class="split__media reveal-l">
+        <figure class="mascot-stage" data-fluid-anchor>
+          <span class="mascot-stage__blob mascot-stage__blob--a" aria-hidden="true"></span>
+          <span class="mascot-stage__blob mascot-stage__blob--b" aria-hidden="true"></span>
+          <span class="mascot-stage__ring" aria-hidden="true"></span>
+          <img class="mascot-stage__character" src="img/mascot.png" alt="The NKU iGEM mascot  -  a round detective with a deerstalker hat and magnifying glass" />
+          <figcaption><span>Specimen 04</span><b>Detective / reagent field</b></figcaption>
+        </figure>
       </div>
       <div class="split__body reveal-r flow">
         <p class="eyebrow">04  -  The investigator</p>
@@ -202,3 +215,5 @@ desc: NKU iGEM 2026  -  a synthetic-biology biosensor that detects soybean cyst 
     </div>
   </div>
 </section>
+
+<script src="js/flow-scene.js"></script>
