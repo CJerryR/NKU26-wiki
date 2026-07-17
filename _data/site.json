@@ -1,16 +1,4 @@
 {
-  "sponsors": [
-    {
-      "name": "Sponsor slot",
-      "url": "",
-      "note": "Awaiting the confirmed sponsor list before public wiki freeze."
-    }
-  ],
-  "friends": [
-    {
-      "name": "Friend link slot",
-      "url": "",
-      "note": "Awaiting the confirmed friend-team list before public wiki freeze."
-    }
-  ]
+  "sponsors": [],
+  "friends": []
 }

@@ -4,18 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Modeling  /  NKU iGEM 2026</title>
-  <meta name="description" content="NKU iGEM 2026  -  a synthetic-biology biosensor for early detection of plant-parasitic nematodes." />
+  <meta name="description" content="NKU iGEM 2026 - a synthetic-biology sensing concept for plant-parasitic nematode-associated signals, under investigation." />
   <meta name="theme-color" content="#191222" />
   <link rel="icon" href="../img/logo.svg" type="image/svg+xml" />
   <link rel="preload" href="../fonts/spline-variable.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="../fonts/fraunces-variable.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="../css/style.css" />
 </head>
-<body data-path-prefix="../">
+<body class="page-standard" data-path-prefix="../">
   <a class="skip" href="#main">Skip to content</a>
   <div class="scroll-progress" aria-hidden="true"></div>
 
   <nav class="nav" aria-label="Primary">
+  <div class="nav-veil" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
   <div class="nav-inner">
     <a href="../index.html" class="nav-brand" aria-label="NKU iGEM 2026 home">
       <img src="../img/logo.svg" alt="" width="46" height="46" />
@@ -26,17 +27,14 @@
 
     <ul class="nav-links">
       <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
-      <li class="nav-item"><a href="../pages/description.html" class="nav-link">Description</a></li>
-      <li class="nav-item"><a href="../contribution/" class="nav-link">Contribution</a></li>
+      <li class="nav-item"><a href="../pages/description.html" class="nav-link">Project</a></li>
       <li class="nav-item"><a href="../engineering/" class="nav-link">Engineering</a></li>
+      <li class="nav-item"><a href="../pages/results.html" class="nav-link">Results</a></li>
       <li class="nav-item"><a href="../human-practices/" class="nav-link">Human Practices</a></li>
-      <li class="nav-item"><a href="../education/" class="nav-link">Education</a></li>
-      <li class="nav-item"><a href="../model/" class="nav-link">Model</a></li>
-      <li class="nav-item"><a href="../software/" class="nav-link">Software</a></li>
       <li class="nav-item"><a href="../safety-and-security/" class="nav-link">Safety</a></li>
 
       <li class="nav-item">
-        <button type="button" class="nav-link" aria-haspopup="true" aria-expanded="false">Team
+        <button type="button" class="nav-link" aria-haspopup="true" aria-expanded="false">Team &amp; Attributions
           <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0l5 6 5-6z"/></svg></button>
         <div class="mega">
           <div class="mega-col">
@@ -45,17 +43,23 @@
             <a href="../pages/attribution.html"><span class="dot"></span>Attributions</a>
             <a href="../pages/team-members.html#affiliation"><span class="dot"></span>Nankai University</a>
           </div>
+          <div class="mega-col">
+            <h4>Resources</h4>
+            <a href="../contribution/"><span class="dot"></span>Contribution</a>
+            <a href="../pages/notebook.html"><span class="dot"></span>Notebook</a>
+            <a href="../pages/parts.html"><span class="dot"></span>Parts</a>
+          </div>
           <a class="mega-feature" href="../pages/attribution.html">
             <span class="tag">Transparency</span>
-            <p>Team roles, support, and acknowledgements are kept visible.</p>
-            <small>Read attributions &rarr;</small>
+            <p>Current evidence status for team membership, roles, support, and acknowledgements.</p>
+            <small>Review verification status &rarr;</small>
             <img class="mascot-mini" src="../img/mascot-trim.png" alt="" />
           </a>
         </div>
       </li>
 
       <li class="nav-item nav-item--search">
-        <button type="button" class="nav-link nav-search-trigger" data-search-open aria-haspopup="dialog">
+        <button type="button" class="nav-link nav-search-trigger" data-search-open aria-haspopup="dialog" aria-controls="site-search" aria-expanded="false">
           <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.5" y2="16.5"/></svg>
           <span class="sr-only">Search</span>
         </button>
@@ -72,8 +76,8 @@
       <nav class="phero__crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>/</span>Lab<span>/</span><span>Modeling</span></nav>
       <p class="eyebrow" style="margin-bottom:14px">Dry lab  /  Modeling</p>
       <h1>Modelling the <span class='ink-accent'>signal</span></h1>
-      <p class="phero__sub">The mathematics and simulation that guided the design and explained the data.</p>
-      <div class="phero__meta"><span>Reading<b>6 min</b></span><span>Tools<b>fill in</b></span></div>
+      <p class="phero__sub">A conceptual teaching skeleton that exposes unknowns before any solver, calibration, or project prediction exists.</p>
+      <div class="phero__meta"><span>Stage<b>Conceptual</b></span><span>Solver<b>Not implemented</b></span></div>
     </div>
   </header>
   <div class="strata strata--down" aria-hidden="true"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><rect width="1440" height="120" fill="#191222"/><path fill="#241830" d="M0,60 C240,18 420,96 720,64 C1020,32 1230,92 1440,52 L1440,120 L0,120 Z"/><path fill="#f7f2e8" d="M0,86 C260,52 470,110 720,86 C1010,58 1240,108 1440,82 L1440,120 L0,120 Z"/></svg></div>
@@ -87,10 +91,13 @@
       <div class="toc__progress" aria-hidden="true"><i></i></div>
       <ul class="toc__list">
         <span class="toc__rail" aria-hidden="true"></span>
-        <li class="lvl-1"><a href="#why">Why we modelled</a></li>
-        <li class="lvl-1"><a href="#model">The model</a></li>
-        <li class="lvl-1"><a href="#results">Predictions vs data</a></li>
-        <li class="lvl-1"><a href="#refs">References</a></li>
+        <li class="lvl-1"><a href="#status">Current status</a></li>
+        <li class="lvl-1"><a href="#abstraction">Question and abstraction</a></li>
+        <li class="lvl-1"><a href="#skeleton">Teaching skeleton</a></li>
+        <li class="lvl-2"><a href="#maturation">Alternative maturation layer</a></li>
+        <li class="lvl-1"><a href="#provenance">Parameter provenance</a></li>
+        <li class="lvl-1"><a href="#gates">Calibration gates</a></li>
+        <li class="lvl-1"><a href="#scope">What it can answer</a></li>
       </ul>
       <div class="toc__foot"><a href="#main"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="6 11 12 5 18 11"/></svg>Back to top</a></div>
     </aside>
@@ -101,16 +108,105 @@
           <b>Modeling</b><span class="now"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <div class="toc-mini__panel"><ul>
-          <li class="lvl-1"><a href="#why">Why we modelled</a></li>
-        <li class="lvl-1"><a href="#model">The model</a></li>
-        <li class="lvl-1"><a href="#results">Predictions vs data</a></li>
-        <li class="lvl-1"><a href="#refs">References</a></li>
+          <li class="lvl-1"><a href="#status">Current status</a></li>
+        <li class="lvl-1"><a href="#abstraction">Question and abstraction</a></li>
+        <li class="lvl-1"><a href="#skeleton">Teaching skeleton</a></li>
+        <li class="lvl-2"><a href="#maturation">Alternative maturation layer</a></li>
+        <li class="lvl-1"><a href="#provenance">Parameter provenance</a></li>
+        <li class="lvl-1"><a href="#gates">Calibration gates</a></li>
+        <li class="lvl-1"><a href="#scope">What it can answer</a></li>
         </ul></div>
       </div>
-<section id="why" data-toc="Why we modelled"><p class="eyebrow sec-label">01  -  Motivation</p><h2 class="section-title">What the model is for</h2><div class="prose"><aside class="content-slot" role="note"><span>Pending documentation</span><p>The questions the model answers: predicting sensitivity, choosing parameters, or interpreting results - and how it fed back into design.</p></aside></div></section>
-<section id="model" data-toc="The model"><p class="eyebrow sec-label">02  -  Model</p><h2 class="section-title">Assumptions & equations</h2><div class="prose"><aside class="content-slot" role="note"><span>Pending documentation</span><p>The model type, key assumptions, and governing equations.</p></aside><p>Use inline code for variables, e.g. <code>k_on</code>, <code>k_cat</code>.</p></div><figure class="figure" style="margin-top:26px"><div class="figure__media"><svg viewBox="0 0 600 200" style="max-width:560px" aria-hidden="true"><rect x="20" y="30" width="560" height="140" rx="14" fill="none" stroke="#9a7a6b" stroke-dasharray="6 7"/><text x="300" y="105" text-anchor="middle" font-family="Space Mono,monospace" font-size="13" fill="#9a7a6b">figure pending</text></svg></div><figcaption><b>Fig 1</b> Model schematic / equation system.</figcaption></figure><aside class="content-slot" role="note"><span>Pending documentation</span><p>Equations and assumptions</p></aside></section>
-<section id="results" data-toc="Predictions vs data"><p class="eyebrow sec-label">03  -  Results</p><h2 class="section-title">Did reality agree?</h2><figure class="figure" style="margin-top:26px"><div class="figure__media"><svg viewBox="0 0 600 200" style="max-width:560px" aria-hidden="true"><rect x="20" y="30" width="560" height="140" rx="14" fill="none" stroke="#9a7a6b" stroke-dasharray="6 7"/><text x="300" y="105" text-anchor="middle" font-family="Space Mono,monospace" font-size="13" fill="#9a7a6b">figure pending</text></svg></div><figcaption><b>Fig 2</b> Model prediction overlaid on experimental data.</figcaption></figure><div class="prose"><p>Model predictions compared with experimental measurements.</p></div><div class="callout callout--tip" style="margin-top:24px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10c.7.7 1 1.3 1 2h6c0-.7.3-1.3 1-2a6 6 0 0 0-4-10z"/></svg><div><b>Close the loop</b><p>The strongest modelling sections show the model changing a real design decision.</p></div></div></section>
-<section id="refs" data-toc="References"><p class="eyebrow sec-label">04  -  Sources</p><h2 class="section-title">References</h2><ol class="refs"><li>Modelling method / parameter source. <span class="slot-chip">Reference to add</span></li></ol></section>
+<section id="status" data-toc="Current status">
+  <p class="eyebrow sec-label">01  -  Status</p>
+  <h2 class="section-title">A preparation layer, not a finished model</h2>
+  <div class="prose">
+    <p>The work documented here is a conceptual model-preparation and teaching layer. The repository contains no runnable ODE solver, simulation notebook, parameter file, fitting code, or calibrated model artifact. No equation on this page has produced a project result or guided a design decision.</p>
+    <p>The value of this stage is narrower but still useful: it makes the proposed signal chain explicit, separates algebraic relations from changing states, and turns missing biological evidence into a visible measurement agenda. It also prevents an attractive diagram from being mistaken for an implemented sensing system.</p>
+  </div>
+  <div class="callout callout--warn" style="margin-top:24px">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 16H3z"/><line x1="12" y1="9" x2="12" y2="14"/><circle cx="12" cy="17" r=".6" fill="currentColor"/></svg>
+    <div><b>Evidence boundary</b><p>Gpr2/Gpr3 response to ascr#18, receptor expression and localisation, pathway coupling, reporter selection, reporter output, and end-to-end sensing are all unresolved. The current skeleton cannot establish any of them.</p></div>
+  </div>
+</section>
+
+<section id="abstraction" data-toc="Question and abstraction">
+  <p class="eyebrow sec-label">02  -  Abstraction</p>
+  <h2 class="section-title">Which links would a future model need?</h2>
+  <div class="prose">
+    <p>The proposed abstraction asks how a symbolic ligand input might propagate through candidate receptor activity, proposed G-protein coupling, MAPK/Fus3 activity, a transcriptional layer, and a proposed reporter output. The internal explainer also considers Ste12 or a synthetic transcription factor and a possible GAL output layer. These are candidate mathematical layers, not selected or functional biological parts.</p>
+    <p>In the equations below, <code>L</code> is only a hypothetical ligand-input variable. It is not a measured ascr#18 concentration. Likewise, <code>R_active</code>, <code>G_on</code>, <code>M</code>, <code>TF</code>, <code>Prod</code>, <code>C</code>, and optional <code>P</code> are conceptual activity or output proxies. They have no supplied units, ranges, initial conditions, or measured identities.</p>
+  </div>
+  <div class="grid grid-3 reveal" data-stagger style="margin-top:26px">
+    <div class="card"><span class="card__ring"></span><h3>Recognition</h3><p>Candidate receptor activation is a proposed link. The algebraic expression does not demonstrate binding, occupancy, or response.</p></div>
+    <div class="card"><span class="card__ring"></span><h3>Coupling</h3><p>G-protein and MAPK/Fus3 activity are conceptual layers. Functional coupling has not been established for this project.</p></div>
+    <div class="card"><span class="card__ring"></span><h3>Output</h3><p>Transcriptional and visible-reporter layers remain proposals. No reporter has been selected or measured.</p></div>
+  </div>
+</section>
+
+<section id="skeleton" data-toc="Teaching skeleton">
+  <p class="eyebrow sec-label">03  -  Equations</p>
+  <h2 class="section-title">A mixed algebraic/differential skeleton</h2>
+  <div class="prose">
+    <p>The team teaching skeleton is transcribed below without modification. It is not six ODEs and not a complete mechanistic model. <code>R_active</code>, <code>TF</code>, and <code>Prod</code> are algebraic relations; <code>G_on</code>, <code>M</code>, and <code>C</code> have differential equations.</p>
+  </div>
+  <pre><code>R_active = basal_R + E_R * L^n_R / (K_L^n_R + L^n_R)
+dG_on/dt = k_couple * R_active * (1 - G_on) - k_g_off * G_on
+dM/dt = k_m_on * G_on * (1 - M) - k_m_off * M
+TF = basal_TF + E_TF * M^n_TF / (K_TF^n_TF + M^n_TF)
+Prod = leak_out + copy_number * gain_out * TF / (K_out + TF)
+dC/dt = k_color_prod * Prod - k_color_loss * C</code></pre>
+  <div class="prose">
+    <p>The block organizes a possible sequence from input to output while leaving every parameter symbolic. Its algebraic relations do not establish equilibrium, timescale separation, conservation, or a unique biological interpretation.</p>
+    <h3 id="maturation" data-toc-sub="Alternative maturation layer">Alternative maturation layer</h3>
+    <p>The explainer supplies a second, optional output-layer formulation:</p>
+  </div>
+  <pre><code>dP/dt = protein_production - k_mature * P - k_deg_P * P
+dC/dt = k_mature * P - k_loss_C * C</code></pre>
+  <div class="prose">
+    <p>This optional block is a separate alternative. Its <code>dC/dt</code> replaces the simple <code>dC/dt</code> in the main block when the maturation split is considered; the two forms are not simultaneous equations in one system. The evidence supplies no mapping between <code>protein_production</code> and <code>Prod</code>, or between <code>k_loss_C</code> and <code>k_color_loss</code>.</p>
+  </div>
+</section>
+
+<section id="provenance" data-toc="Parameter provenance">
+  <p class="eyebrow sec-label">04  -  Provenance</p>
+  <h2 class="section-title">A future ledger for every parameter</h2>
+  <div class="prose">
+    <p>The explainer proposes five bookkeeping labels: <code>fixed from source</code>, <code>literature prior</code>, <code>scenario prior</code>, <code>wet-lab required</code>, and <code>do-not-use</code>. They are categories for future evidence tracking, not assignments already made.</p>
+    <p>No final parameter table or parameter-to-category mapping is supplied. No named parameter can therefore be described as fixed, measured, or estimated. A scenario prior would be an exploratory assumption only; it could not become a project conclusion or performance claim.</p>
+  </div>
+  <div class="grid grid-3" data-stagger style="margin-top:26px">
+    <div class="card"><h3>Trace</h3><p>Record the exact source and interpretation for any future quantity.</p></div>
+    <div class="card"><h3>Separate</h3><p>Keep literature information, exploratory assumptions, and team measurements distinct.</p></div>
+    <div class="card"><h3>Exclude</h3><p>Mark unusable quantities explicitly instead of silently carrying them into later work.</p></div>
+  </div>
+</section>
+
+<section id="gates" data-toc="Calibration gates">
+  <p class="eyebrow sec-label">05  -  Gates</p>
+  <h2 class="section-title">What must exist before calculation</h2>
+  <div class="prose">
+    <p>Before an executable simulation could be implemented, the formulation, variable meanings, units, provenance, initial conditions, and verification tests would need to be specified. Before later calibration or validation, the biological chain would need controlled measurements rather than assumed links.</p>
+  </div>
+  <ul class="timeline" style="margin-top:24px">
+    <li><span class="when">Component evidence</span><h4>Recognition and coupling</h4><p>Direct ligand-response controls, no-ligand basal leak, non-cognate controls, receptor expression and localisation, and receptor/G-protein coupling evidence.</p></li>
+    <li><span class="when">Dynamic evidence</span><h4>Input and time</h4><p>Ligand dose-response and time-course measurements collected with defined controls and reproducible sample handling.</p></li>
+    <li><span class="when">Output evidence</span><h4>Reporter and complete chain</h4><p>Reporter selection, gain, maturation and loss measurements, followed by replicated end-to-end measurements with matched controls.</p></li>
+  </ul>
+  <div class="callout callout--note" style="margin-top:24px">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="13"/><circle cx="12" cy="16.5" r=".6" fill="currentColor"/></svg>
+    <div><b>No numerical gate yet</b><p>The evidence supplies no pass/fail threshold for moving from concept to implementation, calibration, or validation. Those criteria must follow the measurement definitions and intended use.</p></div>
+  </div>
+</section>
+
+<section id="scope" data-toc="What it can answer">
+  <p class="eyebrow sec-label">06  -  Scope</p>
+  <h2 class="section-title">Useful for questions, not performance claims</h2>
+  <div class="prose">
+    <p>The current skeleton can expose unknowns, show where experimental measurements would enter, and help keep alternative output formulations separate. It cannot predict sensor performance, establish receptor response, quantify sensitivity or specificity, determine a limit of detection or dynamic range, compare prediction with data, or justify a design decision.</p>
+    <p>A later model should be presented as a project result only after its implementation, provenance, verification, calibration, and comparison evidence are available. Until then, this page records the conceptual foundation and the conditions required to progress responsibly.</p>
+  </div>
+</section>
     </div>
   </div>
   <div class="strata strata--down" aria-hidden="true"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><rect width="1440" height="120" fill="#f7f2e8"/><path fill="#241830" d="M0,60 C240,18 420,96 720,64 C1020,32 1230,92 1440,52 L1440,120 L0,120 Z"/><path fill="#180f1e" d="M0,86 C260,52 470,110 720,86 C1010,58 1240,108 1440,82 L1440,120 L0,120 Z"/></svg></div>
@@ -118,13 +214,13 @@
 
   <footer class="footer">
   <div class="footer__seal" aria-hidden="true"><img src="../img/nankai-seal.gif" alt="" loading="lazy" /></div>
-  <section class="sponsor-strip" aria-label="Sponsors"><span class="sr-only">Sponsors</span><div class="sponsor-strip__marquee"><div class="sponsor-strip__track"><div class="sponsor-strip__set"><span class="sponsor-badge"><span class="sponsor-badge__name">Sponsor slot</span><i class="sponsor-badge__dot" aria-hidden="true"></i></span></div><div class="sponsor-strip__set" aria-hidden="true"><span class="sponsor-badge"><span class="sponsor-badge__name">Sponsor slot</span><i class="sponsor-badge__dot" aria-hidden="true"></i></span></div></div></div></section>
+
   <div class="footer__inner">
-    <div class="footer-features" aria-label="Sponsors and friend teams"><section class="friend-links" aria-label="Friend teams"><div class="friend-links__head"><b>Friend links</b><p>Collaboration teams and partner pages can be linked here after confirmation.</p></div><div class="friend-links__grid"><span class="friend-link"><span class="friend-link__name">Friend link slot</span><span class="friend-link__note">Awaiting the confirmed friend-team list before public wiki freeze.</span></span></div></section></div>
+
     <div class="footer__top">
       <div class="footer__brand">
         <b>NKU-iGEM 2026 Team</b>
-        <p>A synthetic-biology biosensor for the early detection of plant-parasitic nematodes. Built by students at Nankai University.</p>
+        <p>A Nankai University student project investigating a synthetic-biology sensing concept for plant-parasitic nematode-associated signals; component and system validation remain open.</p>
       </div>
       <div class="footer__col">
         <h5>Project</h5>
@@ -146,13 +242,11 @@
         <a href="../model/">Model</a>
         <a href="../software/">Software</a>
         <a href="../pages/attribution.html">Attribution status</a>
-        <a href="https://gitlab.igem.org/2026/nku-china">GitLab source</a>
-        <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC-BY 4.0 license</a>
       </div>
     </div>
     <div class="footer__bottom">
-      <span>&copy; 2026 NKU iGEM Team &middot; Static wiki build &middot; <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC-BY 4.0</a></span>
-      <span><a href="https://gitlab.igem.org/2026/nku-china">GitLab source</a> &middot; self-hosted fonts &middot; no external scripts or trackers</span>
+      <span>&copy; 2026 NKU iGEM Team &middot; Static wiki build</span>
+      <span>self-hosted fonts &middot; no external scripts or trackers</span>
     </div>
   </div>
 </footer>

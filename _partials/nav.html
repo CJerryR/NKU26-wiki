@@ -1,4 +1,5 @@
 <nav class="nav" aria-label="Primary">
+  <div class="nav-veil" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
   <div class="nav-inner">
     <a href="{{P}}index.html" class="nav-brand" aria-label="NKU iGEM 2026 home">
       <img src="{{P}}img/logo.svg" alt="" width="46" height="46" />
@@ -9,17 +10,14 @@
 
     <ul class="nav-links">
       <li class="nav-item"><a href="{{P}}index.html" class="nav-link">Home</a></li>
-      <li class="nav-item"><a href="{{P}}pages/description.html" class="nav-link">Description</a></li>
-      <li class="nav-item"><a href="{{P}}contribution/" class="nav-link">Contribution</a></li>
+      <li class="nav-item"><a href="{{P}}pages/description.html" class="nav-link">Project</a></li>
       <li class="nav-item"><a href="{{P}}engineering/" class="nav-link">Engineering</a></li>
+      <li class="nav-item"><a href="{{P}}pages/results.html" class="nav-link">Results</a></li>
       <li class="nav-item"><a href="{{P}}human-practices/" class="nav-link">Human Practices</a></li>
-      <li class="nav-item"><a href="{{P}}education/" class="nav-link">Education</a></li>
-      <li class="nav-item"><a href="{{P}}model/" class="nav-link">Model</a></li>
-      <li class="nav-item"><a href="{{P}}software/" class="nav-link">Software</a></li>
       <li class="nav-item"><a href="{{P}}safety-and-security/" class="nav-link">Safety</a></li>
 
       <li class="nav-item">
-        <button type="button" class="nav-link" aria-haspopup="true" aria-expanded="false">Team
+        <button type="button" class="nav-link" aria-haspopup="true" aria-expanded="false">Team &amp; Attributions
           <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0l5 6 5-6z"/></svg></button>
         <div class="mega">
           <div class="mega-col">
@@ -28,17 +26,23 @@
             <a href="{{P}}pages/attribution.html"><span class="dot"></span>Attributions</a>
             <a href="{{P}}pages/team-members.html#affiliation"><span class="dot"></span>Nankai University</a>
           </div>
+          <div class="mega-col">
+            <h4>Resources</h4>
+            <a href="{{P}}contribution/"><span class="dot"></span>Contribution</a>
+            <a href="{{P}}pages/notebook.html"><span class="dot"></span>Notebook</a>
+            <a href="{{P}}pages/parts.html"><span class="dot"></span>Parts</a>
+          </div>
           <a class="mega-feature" href="{{P}}pages/attribution.html">
             <span class="tag">Transparency</span>
-            <p>Team roles, support, and acknowledgements are kept visible.</p>
-            <small>Read attributions &rarr;</small>
+            <p>Current evidence status for team membership, roles, support, and acknowledgements.</p>
+            <small>Review verification status &rarr;</small>
             <img class="mascot-mini" src="{{P}}img/mascot-trim.png" alt="" />
           </a>
         </div>
       </li>
 
       <li class="nav-item nav-item--search">
-        <button type="button" class="nav-link nav-search-trigger" data-search-open aria-haspopup="dialog">
+        <button type="button" class="nav-link nav-search-trigger" data-search-open aria-haspopup="dialog" aria-controls="site-search" aria-expanded="false">
           <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.5" y2="16.5"/></svg>
           <span class="sr-only">Search</span>
         </button>

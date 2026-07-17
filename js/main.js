@@ -10,6 +10,7 @@
   var $  = function (s, c) { return (c || document).querySelector(s); };
   var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
   var clamp = function (v, a, b) { return Math.max(a, Math.min(b, v)); };
+  var smoothstep = function (v) { v = clamp(v, 0, 1); return v * v * (3 - 2 * v); };
   var raf = window.requestAnimationFrame || function (f){ return setTimeout(f, 16); };
 
   document.addEventListener('DOMContentLoaded', init);
@@ -24,8 +25,12 @@
     heroSequence();
     detectionLens();
     evidenceMap();
+    signalTrace();
     heroScrollTransition();
     swimmingNematode();
+    liquidHome();
+    liquidMascotFlow();
+    glassPointer();
     parallax();
     magnetic();
     cardSpotlight();
@@ -42,6 +47,8 @@
     var openButtons = $$('[data-search-open]');
     var rawIndex = window.NKU_SEARCH_INDEX || [];
     var lastFocus = null;
+    var closeTimer = null;
+    var focusableSelector = 'a[href],button:not([disabled]),input:not([disabled]),textarea:not([disabled]),select:not([disabled]),[tabindex]:not([tabindex="-1"])';
 
     function norm(text) {
       return (text || '').toString().toLowerCase().replace(/\s+/g, ' ').trim();
@@ -174,8 +181,15 @@
     }
 
     function openSearch() {
+      if (closeTimer) {
+        clearTimeout(closeTimer);
+        closeTimer = null;
+      }
       lastFocus = document.activeElement;
       modal.hidden = false;
+      openButtons.forEach(function (button) {
+        button.setAttribute('aria-expanded', 'true');
+      });
       document.documentElement.classList.add('search-open');
       raf(function () { modal.classList.add('is-open'); });
       if (input) {
@@ -186,10 +200,34 @@
     }
 
     function closeSearch() {
+      if (closeTimer) clearTimeout(closeTimer);
       modal.classList.remove('is-open');
       document.documentElement.classList.remove('search-open');
-      setTimeout(function () { modal.hidden = true; }, 180);
+      openButtons.forEach(function (button) {
+        button.setAttribute('aria-expanded', 'false');
+      });
+      closeTimer = setTimeout(function () {
+        modal.hidden = true;
+        closeTimer = null;
+      }, 180);
       if (lastFocus && lastFocus.focus) lastFocus.focus();
+    }
+
+    function trapFocus(e) {
+      if (e.key !== 'Tab' || modal.hidden) return;
+      var focusable = $$(focusableSelector, modal).filter(function (el) {
+        return el.offsetParent !== null || el === document.activeElement;
+      });
+      if (!focusable.length) return;
+      var first = focusable[0];
+      var last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
     }
 
     openButtons.forEach(function (button) {
@@ -208,6 +246,8 @@
         openSearch();
       } else if (e.key === 'Escape' && !modal.hidden) {
         closeSearch();
+      } else {
+        trapFocus(e);
       }
     });
     render('');
@@ -433,10 +473,17 @@
           var t = document.getElementById(id);
           if (!t) return;
           e.preventDefault();
-          var top = t.getBoundingClientRect().top + window.scrollY - 84;
+          var miniShift = 0;
+          if (mini && mini.classList.contains('open')) {
+            var miniPanel = $('.toc-mini__panel', mini);
+            miniShift = miniPanel ? miniPanel.getBoundingClientRect().height : 0;
+            mini.classList.remove('open');
+            var miniBar = $('.toc-mini__bar', mini);
+            if (miniBar) miniBar.setAttribute('aria-expanded', 'false');
+          }
+          var top = t.getBoundingClientRect().top + window.scrollY - miniShift - 84;
           window.scrollTo({ top: top, behavior: REDUCED ? 'auto' : 'smooth' });
           history.replaceState(null, '', '#' + id);
-          if (mini) mini.classList.remove('open');
         });
       });
     }
@@ -654,6 +701,43 @@
     core.addEventListener('mouseleave', onLeave, { passive: true });
   }
 
+  /* -- Homepage signal pathway stepper -------------------------------- */
+  function signalTrace() {
+    var trace = $('[data-signal-trace]'); if (!trace) return;
+    var steps = $$('[data-signal-step]', trace);
+    var panels = $$('[data-signal-panel]', trace);
+    if (!steps.length || !panels.length) return;
+
+    function activate(id) {
+      trace.dataset.active = id;
+      steps.forEach(function (step) {
+        var on = step.getAttribute('data-signal-step') === id;
+        step.classList.toggle('is-active', on);
+        step.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      panels.forEach(function (panel) {
+        panel.classList.toggle('is-active', panel.getAttribute('data-signal-panel') === id);
+      });
+    }
+
+    steps.forEach(function (step) {
+      step.addEventListener('click', function () {
+        activate(step.getAttribute('data-signal-step'));
+      });
+      step.addEventListener('keydown', function (e) {
+        if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+        e.preventDefault();
+        var dir = e.key === 'ArrowRight' ? 1 : -1;
+        var i = steps.indexOf(step);
+        var next = steps[(i + dir + steps.length) % steps.length];
+        if (next) {
+          next.focus();
+          activate(next.getAttribute('data-signal-step'));
+        }
+      });
+    });
+  }
+
   /* -- Hero scroll transition (dark soil -> pale case file) ------------ */
   function heroScrollTransition() {
     var hero = $('.hero'); if (!hero) return;
@@ -788,6 +872,193 @@
     upd();
   }
 
+  /* -- Liquid glass homepage depth ------------------------------------ */
+  function liquidHome() {
+    var hero = $('[data-liquid-home]');
+    var stack = $('[data-liquid-depth]', hero);
+    if (hero) document.documentElement.classList.add('liquid-home-active');
+    if (!hero || !stack || REDUCED || !window.matchMedia('(pointer:fine)').matches) return;
+
+    var tx = 0, ty = 0, cx = 0, cy = 0, ticking = false;
+
+    function render() {
+      cx += (tx - cx) * 0.12;
+      cy += (ty - cy) * 0.12;
+      $$('[data-depth]', stack).forEach(function (el) {
+        var depth = parseFloat(el.getAttribute('data-depth')) || 0.5;
+        el.style.setProperty('--px', (cx * depth).toFixed(2) + 'px');
+        el.style.setProperty('--py', (cy * depth).toFixed(2) + 'px');
+      });
+      if (Math.abs(tx - cx) > 0.1 || Math.abs(ty - cy) > 0.1) {
+        raf(render);
+      } else {
+        ticking = false;
+      }
+    }
+
+    hero.addEventListener('pointermove', function (e) {
+      var r = hero.getBoundingClientRect();
+      tx = ((e.clientX - r.left) / Math.max(r.width, 1) - 0.5) * 22;
+      ty = ((e.clientY - r.top) / Math.max(r.height, 1) - 0.5) * 18;
+      if (!ticking) {
+        ticking = true;
+        raf(render);
+      }
+    }, { passive: true });
+
+    hero.addEventListener('pointerleave', function () {
+      tx = 0;
+      ty = 0;
+      if (!ticking) {
+        ticking = true;
+        raf(render);
+      }
+    }, { passive: true });
+  }
+
+  /* -- Single travelling mascot on the liquid homepage ----------------- */
+  function liquidMascotFlow() {
+    var stage = $('[data-mascot-runner-stage]');
+    if (!stage) return;
+    var runner = $('[data-mascot-runner]', stage);
+    if (!runner) return;
+    var tag = $('.liquid-mascot-runner__tag', runner);
+    var modelHost = $('[data-mascot-3d]', runner);
+
+    function loadLocalScript(path) {
+      return new Promise(function (resolve, reject) {
+        var existing = document.querySelector('script[data-local-src="' + path + '"]');
+        if (existing) {
+          if (existing.dataset.loaded === 'true') resolve();
+          else existing.addEventListener('load', resolve, { once: true });
+          return;
+        }
+        var script = document.createElement('script');
+        var prefix = document.body.getAttribute('data-path-prefix') || '';
+        script.src = prefix + path;
+        script.dataset.localSrc = path;
+        script.addEventListener('load', function () {
+          script.dataset.loaded = 'true';
+          resolve();
+        }, { once: true });
+        script.addEventListener('error', reject, { once: true });
+        document.head.appendChild(script);
+      });
+    }
+
+    if (modelHost && window.WebGLRenderingContext) {
+      loadLocalScript('js/vendor/three.min.js')
+        .then(function () { return loadLocalScript('js/mascot-3d.js'); })
+        .then(function () {
+          if (window.NKUMascot3D) window.NKUMascot3D.create(modelHost);
+        })
+        .catch(function () {
+          modelHost.dataset.mascotFailed = 'true';
+        });
+    }
+
+    function setRunner(x, y, scale, rot, tilt, alpha, aura, label) {
+      runner.style.setProperty('--runner-x', x.toFixed(1) + 'px');
+      runner.style.setProperty('--runner-y', y.toFixed(1) + 'px');
+      runner.style.setProperty('--runner-scale', scale.toFixed(3));
+      runner.style.setProperty('--runner-rot', rot.toFixed(2) + 'deg');
+      runner.style.setProperty('--runner-tilt', tilt.toFixed(2) + 'deg');
+      runner.style.setProperty('--runner-alpha', alpha.toFixed(3));
+      runner.style.setProperty('--runner-aura', aura.toFixed(3));
+      runner.dataset.mascotProgress = runner.dataset.mascotProgress || '0';
+      if (tag && tag.textContent !== label) tag.textContent = label;
+    }
+
+    if (REDUCED) {
+      setRunner(window.innerWidth * 0.58, window.innerHeight * 0.22, 0.92, -4, -10, 0.12, 0.18, 'candidate reader');
+      return;
+    }
+
+    var ticking = false;
+    function update() {
+      var vh = window.innerHeight || 1;
+      var vw = window.innerWidth || 1;
+      var r = stage.getBoundingClientRect();
+      var travel = Math.max(r.height - vh, 1);
+      var progress = clamp(-r.top / travel, 0, 1);
+      var visible = r.bottom > -vh * 0.2 && r.top < vh * 1.15;
+      var eased = smoothstep(progress);
+      var mechanismPull = Math.sin(smoothstep((progress - 0.18) / 0.54) * Math.PI);
+      var wave = Math.sin(progress * Math.PI * 2);
+      var gait = Math.sin(progress * Math.PI * 10);
+      var localScroll = -r.top;
+      var mobile = vw < 680;
+      var entrance = smoothstep((vh * 1.05 - r.top) / (vh * 0.7));
+      var closingLift = smoothstep((progress - 0.72) / 0.28);
+      var x = mobile
+        ? vw * (0.57 - 0.18 * eased) + wave * vw * 0.015
+        : vw * (0.68 - 0.16 * eased - 0.06 * mechanismPull) + wave * vw * 0.025;
+      if (!mobile) x += closingLift * vw * 0.03;
+      var y = localScroll + (mobile ? vh * (0.07 + progress * 0.32) : vh * (0.04 + progress * 0.34)) + gait * (mobile ? 8 : 18);
+      if (mobile) y -= (1 - eased) * vh * 0.02;
+      y -= closingLift * vh * (mobile ? 0.12 : 0.37);
+      var alpha = visible ? entrance * (mobile ? 0.58 : 0.78) : 0;
+      var aura = (mobile ? 0.26 : 0.34) * (1 - closingLift * 0.42);
+      var scale = mobile ? 0.72 + eased * 0.15 : 0.78 + eased * 0.28;
+      var rot = -8 + eased * 13 + wave * 1.5;
+      var tilt = -20 + eased * 26;
+      var label = progress < 0.33 ? 'evidence scout' : progress < 0.72 ? 'candidate reader' : 'case open';
+      runner.classList.toggle('is-closing', !mobile && progress > 0.72);
+      runner.dataset.mascotProgress = progress.toFixed(4);
+      setRunner(x, y, scale, rot, tilt, alpha, aura, label);
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        ticking = true;
+        raf(update);
+      }
+    }, { passive: true });
+    window.addEventListener('resize', function () {
+      if (!ticking) {
+        ticking = true;
+        raf(update);
+      }
+    });
+    update();
+  }
+
+  /* -- Glass pointer response ------------------------------------------- */
+  function glassPointer() {
+    if (REDUCED || !window.matchMedia('(pointer:fine)').matches) return;
+    var navLinks = $('.nav-links');
+    var pending = false;
+    var px = 0, py = 0;
+
+    function localise(el, prefixX, prefixY) {
+      var r = el.getBoundingClientRect();
+      if (!r.width || !r.height) return;
+      el.style.setProperty(prefixX, (((px - r.left) / r.width) * 100).toFixed(1) + '%');
+      el.style.setProperty(prefixY, (((py - r.top) / r.height) * 100).toFixed(1) + '%');
+    }
+
+    function apply() {
+      var el = document.elementFromPoint(px, py);
+      var hovered = el && el.closest ? el.closest('.liquid-btn, .review-tile') : null;
+      if (hovered) {
+        var isButton = hovered.classList.contains('liquid-btn');
+        localise(hovered, isButton ? '--bx' : '--tx', isButton ? '--by' : '--ty');
+      }
+      if (navLinks && py < 140) localise(navLinks, '--nav-lx', '--nav-ly');
+      pending = false;
+    }
+
+    document.addEventListener('pointermove', function (e) {
+      px = e.clientX;
+      py = e.clientY;
+      if (!pending) {
+        pending = true;
+        raf(apply);
+      }
+    }, { passive: true });
+  }
+
   /* -- Mascot helper (scroll-to-top + rotating field-notes) ------------ */
   function mascot() {
     var fab = $('.mascot-fab'); if (!fab) return;
@@ -798,7 +1069,7 @@
       'Every figure here is hosted on iGEM servers. No outside trackers.',
       'Looking for our parts? They live under <b>Project  ->  Parts</b>.',
       'Back to the top? Just tap me.',
-      'Two suspects: <b>H. glycines</b> &amp; <b>M. incognita</b>. We catch both.'
+      'Two target species: <b>H. glycines</b> &amp; <b>M. incognita</b>. We are testing shared signal candidates.'
     ];
     var ti = 0, shown = false, timer;
 

@@ -2,3 +2,6 @@ __pycache__/
 *.pyc
 .DS_Store
 node_modules/
+tmp/
+# Local provenance notes may contain authenticated workspace links.
+docs/source-inventory.md

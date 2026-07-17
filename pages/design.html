@@ -4,18 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Design  /  NKU iGEM 2026</title>
-  <meta name="description" content="NKU iGEM 2026  -  a synthetic-biology biosensor for early detection of plant-parasitic nematodes." />
+  <meta name="description" content="NKU iGEM 2026 - a synthetic-biology sensing concept for plant-parasitic nematode-associated signals, under investigation." />
   <meta name="theme-color" content="#191222" />
   <link rel="icon" href="../img/logo.svg" type="image/svg+xml" />
   <link rel="preload" href="../fonts/spline-variable.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="../fonts/fraunces-variable.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="../css/style.css" />
 </head>
-<body data-path-prefix="../">
+<body class="page-standard" data-path-prefix="../">
   <a class="skip" href="#main">Skip to content</a>
   <div class="scroll-progress" aria-hidden="true"></div>
 
   <nav class="nav" aria-label="Primary">
+  <div class="nav-veil" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
   <div class="nav-inner">
     <a href="../index.html" class="nav-brand" aria-label="NKU iGEM 2026 home">
       <img src="../img/logo.svg" alt="" width="46" height="46" />
@@ -26,17 +27,14 @@
 
     <ul class="nav-links">
       <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
-      <li class="nav-item"><a href="../pages/description.html" class="nav-link">Description</a></li>
-      <li class="nav-item"><a href="../contribution/" class="nav-link">Contribution</a></li>
+      <li class="nav-item"><a href="../pages/description.html" class="nav-link">Project</a></li>
       <li class="nav-item"><a href="../engineering/" class="nav-link">Engineering</a></li>
+      <li class="nav-item"><a href="../pages/results.html" class="nav-link">Results</a></li>
       <li class="nav-item"><a href="../human-practices/" class="nav-link">Human Practices</a></li>
-      <li class="nav-item"><a href="../education/" class="nav-link">Education</a></li>
-      <li class="nav-item"><a href="../model/" class="nav-link">Model</a></li>
-      <li class="nav-item"><a href="../software/" class="nav-link">Software</a></li>
       <li class="nav-item"><a href="../safety-and-security/" class="nav-link">Safety</a></li>
 
       <li class="nav-item">
-        <button type="button" class="nav-link" aria-haspopup="true" aria-expanded="false">Team
+        <button type="button" class="nav-link" aria-haspopup="true" aria-expanded="false">Team &amp; Attributions
           <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0l5 6 5-6z"/></svg></button>
         <div class="mega">
           <div class="mega-col">
@@ -45,17 +43,23 @@
             <a href="../pages/attribution.html"><span class="dot"></span>Attributions</a>
             <a href="../pages/team-members.html#affiliation"><span class="dot"></span>Nankai University</a>
           </div>
+          <div class="mega-col">
+            <h4>Resources</h4>
+            <a href="../contribution/"><span class="dot"></span>Contribution</a>
+            <a href="../pages/notebook.html"><span class="dot"></span>Notebook</a>
+            <a href="../pages/parts.html"><span class="dot"></span>Parts</a>
+          </div>
           <a class="mega-feature" href="../pages/attribution.html">
             <span class="tag">Transparency</span>
-            <p>Team roles, support, and acknowledgements are kept visible.</p>
-            <small>Read attributions &rarr;</small>
+            <p>Current evidence status for team membership, roles, support, and acknowledgements.</p>
+            <small>Review verification status &rarr;</small>
             <img class="mascot-mini" src="../img/mascot-trim.png" alt="" />
           </a>
         </div>
       </li>
 
       <li class="nav-item nav-item--search">
-        <button type="button" class="nav-link nav-search-trigger" data-search-open aria-haspopup="dialog">
+        <button type="button" class="nav-link nav-search-trigger" data-search-open aria-haspopup="dialog" aria-controls="site-search" aria-expanded="false">
           <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.5" y2="16.5"/></svg>
           <span class="sr-only">Search</span>
         </button>
@@ -71,9 +75,9 @@
     <div class="phero__inner">
       <nav class="phero__crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>/</span>Project<span>/</span><span>Design</span></nav>
       <p class="eyebrow" style="margin-bottom:14px">Project  /  The build</p>
-      <h1>Designing the <span class='ink-accent'>detector</span></h1>
-      <p class="phero__sub">From a detection requirement to a concrete biological circuit  -  the reasoning behind every part.</p>
-      <div class="phero__meta"><span>Discipline<b>Synthetic biology</b></span><span>Reading<b>7 min</b></span><span>Status<b>Living document</b></span></div>
+      <h1>Designing a <span class='ink-accent'>sensing concept</span></h1>
+      <p class="phero__sub">From validation questions to a candidate biological circuit  -  with every unresolved link made explicit.</p>
+      <div class="phero__meta"><span>Discipline<b>Synthetic biology</b></span><span>Reading<b>9 min</b></span><span>Status<b>Working draft</b></span></div>
     </div>
   </header>
   <div class="strata strata--down" aria-hidden="true"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><rect width="1440" height="120" fill="#191222"/><path fill="#241830" d="M0,60 C240,18 420,96 720,64 C1020,32 1230,92 1440,52 L1440,120 L0,120 Z"/><path fill="#f7f2e8" d="M0,86 C260,52 470,110 720,86 C1010,58 1240,108 1440,82 L1440,120 L0,120 Z"/></svg></div>
@@ -92,6 +96,7 @@
         <li class="lvl-1"><a href="#recognition">Recognition module</a></li>
         <li class="lvl-1"><a href="#reporter">Reporter & readout</a></li>
         <li class="lvl-1"><a href="#iterations">Design iterations</a></li>
+        <li class="lvl-1"><a href="#refs">References</a></li>
       </ul>
       <div class="toc__foot"><a href="#main"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="6 11 12 5 18 11"/></svg>Back to top</a></div>
     </aside>
@@ -107,13 +112,195 @@
         <li class="lvl-1"><a href="#recognition">Recognition module</a></li>
         <li class="lvl-1"><a href="#reporter">Reporter & readout</a></li>
         <li class="lvl-1"><a href="#iterations">Design iterations</a></li>
+        <li class="lvl-1"><a href="#refs">References</a></li>
         </ul></div>
       </div>
-<section id="brief" data-toc="Design brief"><p class="eyebrow sec-label">01  -  Brief</p><h2 class="section-title">What the sensor must do</h2><div class="prose"><aside class="content-slot" role="note"><span>Pending documentation</span><p>The design requirements that fall out of the problem: which molecules to detect, the specificity needed to tell the two species apart, the sensitivity threshold, and the constraint that the readout work in the field.</p></aside></div><div class="grid grid-3 reveal" data-stagger style="margin-top:26px"><div class="card"><span class="card__ring"></span><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.7" y2="16.7"/></svg></div><h3>Specific</h3><p>Distinguish each target species from each other and from harmless relatives.</p></div><div class="card"><span class="card__ring"></span><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="20" x2="20" y2="20"/><rect x="6" y="11" width="3" height="6"/><rect x="11" y="7" width="3" height="10"/><rect x="16" y="13" width="3" height="4"/></svg></div><h3>Sensitive</h3><p>Detect infestation early, below the threshold of visible crop damage.</p></div><div class="card"><span class="card__ring"></span><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 4 13c0-6 7-9 16-9 0 9-3 16-9 16z"/><line x1="6" y1="18" x2="13" y2="11"/></svg></div><h3>Field-ready</h3><p>Function from a soil-derived sample without lab infrastructure.</p></div></div></section>
-<section id="architecture" data-toc="Circuit architecture"><p class="eyebrow sec-label">02  -  Architecture</p><h2 class="section-title">How the circuit is put together</h2><div class="prose"><aside class="content-slot" role="note"><span>Pending documentation</span><p>The modular architecture: a recognition module that binds the target signature, a signal-processing/amplification module, and a reporter module that produces the readout.</p></aside></div><figure class="figure" style="margin-top:26px"><div class="figure__media"><svg viewBox="0 0 600 200" style="max-width:560px" aria-hidden="true"><rect x="20" y="30" width="560" height="140" rx="14" fill="none" stroke="#9a7a6b" stroke-dasharray="6 7"/><text x="300" y="105" text-anchor="middle" font-family="Space Mono,monospace" font-size="13" fill="#9a7a6b">figure pending</text></svg></div><figcaption><b>Fig 1</b> Modular circuit diagram: recognition  ->  amplification  ->  reporter.</figcaption></figure><aside class="content-slot" role="note"><span>Pending documentation</span><p>Team construct maps and module choices</p></aside></section>
-<section id="recognition" data-toc="Recognition module"><p class="eyebrow sec-label">03  -  Recognition</p><h2 class="section-title">Telling the suspects apart</h2><div class="prose"><p>Sequence or biomarker choices and the recognition chemistry behind them.</p><h3 id='r-glycines' data-toc-sub='Targeting H. glycines'>Targeting <em class='serif-italic'>H. glycines</em></h3><p>Species-specific target and rationale.</p><h3 id='r-incognita' data-toc-sub='Targeting M. incognita'>Targeting <em class='serif-italic'>M. incognita</em></h3><p>Species-specific target and rationale.</p></div><aside class="content-slot" role="note"><span>Pending documentation</span><p>Sequence/biomarker selection evidence</p></aside></section>
-<section id="reporter" data-toc="Reporter & readout"><p class="eyebrow sec-label">04  -  Reporter</p><h2 class="section-title">Making the answer visible</h2><div class="prose"><aside class="content-slot" role="note"><span>Pending documentation</span><p>The output: colourimetric, fluorescent, or otherwise, and why it suits a field user. Note how a positive is distinguished from background.</p></aside></div><div class="callout callout--note" style="margin-top:24px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="13"/><circle cx="12" cy="16.5" r=".6" fill="currentColor"/></svg><div><b>Design for the reader</b><p>The readout was chosen so a non-specialist can interpret it confidently  -  a direct response to what we heard in Human Practices.</p></div></div></section>
-<section id="iterations" data-toc="Design iterations"><p class="eyebrow sec-label">05  -  Iterations</p><h2 class="section-title">What changed, and why</h2><ul class="timeline" style="margin-top:24px"><li><span class="when">v0.1</span><h4>First paper design</h4><p>Initial architecture and rationale.</p></li><li><span class="when">v0.2</span><h4>Revised after modelling</h4><p>Model-informed design revision.</p></li><li><span class="when">v1.0</span><h4>Build-ready design</h4><p>Build-ready design version.</p></li></ul><aside class="content-slot" role="note"><span>Pending documentation</span><p>Each iteration to its Engineering cycle</p></aside></section>
+<section id="brief" data-toc="Design brief">
+  <p class="eyebrow sec-label">01  -  Brief</p>
+  <h2 class="section-title">What the concept would need to demonstrate</h2>
+  <div class="prose">
+    <p>The problem defines validation questions rather than established requirements. A future system would need to distinguish a relevant chemical input from soil background, respond within a decision-relevant window, and produce an interpretable output. The target organisms' usable signal, sampling context, and every downstream module remain unproven.</p>
+  </div>
+  <div class="grid grid-3 reveal" data-stagger style="margin-top:26px">
+    <div class="card"><span class="card__ring"></span><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.7" y2="16.7"/></svg></div><h3>Discriminating</h3><p>Respond to a nematode-associated ascaroside signal against a noisy soil background while measuring cross-species interference.</p></div>
+    <div class="card"><span class="card__ring"></span><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="20" x2="20" y2="20"/><rect x="6" y="11" width="3" height="6"/><rect x="11" y="7" width="3" height="10"/><rect x="16" y="13" width="3" height="4"/></svg></div><h3>Sensitive</h3><p>Establish whether a biologically relevant signal range exists before defining any response target.</p></div>
+    <div class="card"><span class="card__ring"></span><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 4 13c0-6 7-9 16-9 0 9-3 16-9 16z"/><line x1="6" y1="18" x2="13" y2="11"/></svg></div><h3>Field-oriented</h3><p>Ultimately function from a soil-derived sample without laboratory infrastructure; this remains an untested target.</p></div>
+  </div>
+  <div class="prose" style="margin-top:22px">
+    <p>The ascaroside <strong>ascr#18</strong> is a provisional candidate analyte drawn from internal literature leads involving <em class="serif-italic">Meloidogyne</em> entries and <em class="serif-italic">H. glycines</em>. A usable signal is <strong>not yet established</strong>: those leads do not establish production by either exact target under the proposed sampling conditions, and the internal concentration and timing entries require primary-source tracing before they can define a public design target.</p>
+  </div>
+  <div class="callout callout--warn" style="margin-top:22px">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 16H3z"/><line x1="12" y1="10" x2="12" y2="14"/><circle cx="12" cy="17" r=".6" fill="currentColor"/></svg>
+    <div><b>An open taxonomic question</b><p>The team has not tested ascr#18 coverage across <em class="serif-italic">Meloidogyne</em> spp., <em class="serif-italic">H. glycines</em>, <em class="serif-italic">M. incognita</em>, or other <em class="serif-italic">nematode taxa</em>; cross-reactivity and environmental background are also unknown. Internal notes do not establish a marker for either target or any taxonomic group. A response to ascr#18 alone could not be interpreted as species identification without independent evidence.</p></div>
+  </div>
+  <div class="callout callout--note" style="margin-top:18px">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="13"/><circle cx="12" cy="16.5" r=".6" fill="currentColor"/></svg>
+    <div><b>What this page is</b><p>This is a design and its planned validation. The final receptor and reporter are not confirmed, and no wet-lab results are presented here  -  which is why the page is a working draft.</p></div>
+  </div>
+</section>
+<section id="architecture" data-toc="Circuit architecture">
+  <p class="eyebrow sec-label">02  -  Architecture</p>
+  <h2 class="section-title">How the circuit is put together</h2>
+  <div class="prose">
+    <p>The proposed design is modular: a recognition module would test candidate-analyte response; a coupling module would attempt to route receptor activity through the yeast mating pathway; and a reporter module would translate a validated pathway response into a readout. Heterologous-GPCR work in yeast provides platform precedent, including a Gpa1&ndash;G&alpha; chimera strategy described in a 2019 review [7], but it does not establish any module in this project.</p>
+  </div>
+  <figure class="figure" style="margin-top:26px">
+    <div class="figure__media"><svg viewBox="0 0 960 176" style="max-width:740px;width:100%" aria-hidden="true">
+      <defs><marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#6e4fb8"/></marker></defs>
+      <g font-family="'Space Mono',monospace" font-size="12">
+        <rect x="8" y="48" width="168" height="72" rx="12" fill="#efe6d6" stroke="#6e4fb8" stroke-width="1.5"/>
+        <text x="92" y="80" text-anchor="middle" fill="#241c2b">Ascaroside</text><text x="92" y="97" text-anchor="middle" fill="#7b7280">ascr#18 (candidate)</text>
+        <rect x="204" y="48" width="168" height="72" rx="12" fill="#f6e6c8" stroke="#e2a23c" stroke-width="1.9"/>
+        <text x="288" y="76" text-anchor="middle" fill="#241c2b">Fungal GPCR</text><text x="288" y="92" text-anchor="middle" fill="#a8792a">Gpr2 / Gpr3</text><text x="288" y="107" text-anchor="middle" fill="#a8792a">(candidate  -  untested)</text>
+        <rect x="400" y="48" width="168" height="72" rx="12" fill="#efe6d6" stroke="#6e4fb8" stroke-width="1.5"/>
+        <text x="484" y="80" text-anchor="middle" fill="#241c2b">Gpa1&ndash;G&alpha; chimera</text><text x="484" y="97" text-anchor="middle" fill="#7b7280">pathway coupling</text>
+        <rect x="596" y="48" width="168" height="72" rx="12" fill="#efe6d6" stroke="#6e4fb8" stroke-width="1.5"/>
+        <text x="680" y="80" text-anchor="middle" fill="#241c2b">Mating MAPK</text><text x="680" y="97" text-anchor="middle" fill="#7b7280">cascade (amplify)</text>
+        <rect x="792" y="48" width="160" height="72" rx="12" fill="#efe6d6" stroke="#e2a23c" stroke-width="1.6"/>
+        <text x="872" y="80" text-anchor="middle" fill="#241c2b">Reporter</text><text x="872" y="97" text-anchor="middle" fill="#7b7280">(candidate)</text>
+        <g stroke="#6e4fb8" stroke-width="2" marker-end="url(#ar)">
+          <line x1="178" y1="84" x2="200" y2="84"/>
+          <line x1="374" y1="84" x2="396" y2="84"/>
+          <line x1="570" y1="84" x2="592" y2="84"/>
+          <line x1="766" y1="84" x2="788" y2="84"/>
+        </g>
+      </g>
+    </svg></div>
+    <figcaption><b>Fig 1</b> Candidate architecture (design hypothesis). The receptor's response to ascr#18 is unproven, pathway coupling has not been demonstrated, and the reporter is not yet chosen.</figcaption>
+  </figure>
+</section>
+<section id="recognition" data-toc="Recognition module">
+  <p class="eyebrow sec-label">03  -  Recognition</p>
+  <h2 class="section-title">Defining what the signal can distinguish</h2>
+  <div class="prose">
+    <p>This is the hardest and least-settled part of the design, so we separate what is <em>known from the literature</em> from what is <em>hypothesis</em> and what is <em>still to be tested</em>.</p>
+    <p><strong>Literature evidence  -  the molecule class.</strong> Ascarosides are nematode signalling glycolipids built from the sugar ascarylose and a fatty-acid-derived side chain; their biosynthesis runs through peroxisomal &beta;-oxidation, and iterative two-carbon shortening generates side-chain diversity (Choe <em>et al.</em>, 2012 [1]; Yang <em>et al.</em>, 2023 [2]). Production and release can depend on developmental stage, diet, population density, temperature, and stress. Internal table entries that describe the composition of <em class="serif-italic">Meloidogyne</em> ascaroside profiles are <strong>not treated as established evidence</strong> because their primary sources remain untraced.</p>
+    <p><strong>Literature evidence  -  the receptors that exist.</strong> Known ascaroside receptors come from <em class="serif-italic">C. elegans</em>: DAF-37/DAF-38 for ascr#2 and SRG-36/SRG-37 for ascr#5 (Park <em>et al.</em>, 2012 [5]). More promising for a fungal chassis, Kuo <em>et al.</em> (2024) showed that the nematode-trapping fungus <em class="serif-italic">Arthrobotrys oligospora</em> uses <strong>Gpr2 and Gpr3</strong> to detect ascr#3 and ascr#7 through a Gpa2/cAMP-PKA pathway [6]. Because they are fungal and homologous to yeast glucose receptors, Gpr2/Gpr3 are attractive heterologous candidates.</p>
+  </div>
+  <div class="callout callout--warn" style="margin-top:22px">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 16H3z"/><line x1="12" y1="10" x2="12" y2="14"/><circle cx="12" cy="17" r=".6" fill="currentColor"/></svg>
+    <div><b>The central open question</b><p>Gpr2 and Gpr3 are reported to participate in responses involving ascr#3 and ascr#7  -  <em>not</em> ascr#18. There is no direct evidence in our sources that Gpr2/Gpr3 bind or respond strongly to ascr#18. They are therefore <strong>candidates that require a direct ascr#18 response assay</strong>, not validated ascr#18 receptors. A negative result would require the recognition strategy to change.</p></div>
+  </div>
+  <div class="prose" style="margin-top:24px">
+    <h3 id='r-glycines' data-toc-sub='Targeting H. glycines'>Targeting <em class='serif-italic'>H. glycines</em></h3>
+    <p>An internal literature lead associates ascr#18 with <em class="serif-italic">H. glycines</em>, but no traceable primary source is supplied. Its profile also cannot be inferred from <em class="serif-italic">Meloidogyne</em> notes. Source tracing, sampling relevance, and direct testing are required before the candidate signal can be applied to <em class="serif-italic">H. glycines</em>.</p>
+    <h3 id='r-incognita' data-toc-sub='Targeting M. incognita'>Targeting <em class='serif-italic'>M. incognita</em></h3>
+    <p>An internal table associates ascr#18 with <em class="serif-italic">Meloidogyne</em> spp. and identifies the infective J2 as a candidate sampling stage. Those genus-level leads must be traced before they are applied specifically to <em class="serif-italic">M. incognita</em>, and they do not establish coverage across <em class="serif-italic">Meloidogyne</em> or <em class="serif-italic">H. glycines</em>. <strong>Design hypothesis (not validated):</strong> informed by metabolic observations in Manohar <em>et al.</em> (2020) [3] and Yu <em>et al.</em> (2021) [4], internal notes propose exploring an ascr#18/ascr#3 ratio and ascr#9 as additional context. No false-positive or false-negative control capability has been demonstrated.</p>
+  </div>
+  <figure class="figure" style="margin-top:26px">
+    <div style="overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:14px;min-width:560px">
+        <thead>
+          <tr>
+            <th style="text-align:left;padding:9px 12px;border-bottom:2px solid #6e4fb8;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;background:#efe6d6;color:#241c2b">Candidate receptor</th>
+            <th style="text-align:left;padding:9px 12px;border-bottom:2px solid #6e4fb8;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;background:#efe6d6;color:#241c2b">Demonstrated ligand (evidence)</th>
+            <th style="text-align:left;padding:9px 12px;border-bottom:2px solid #6e4fb8;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;background:#efe6d6;color:#241c2b">Why considered</th>
+            <th style="text-align:left;padding:9px 12px;border-bottom:2px solid #6e4fb8;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;background:#efe6d6;color:#241c2b">Key uncertainty for ascr#18</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding:9px 12px;border-bottom:1px solid rgba(110,79,184,.18);vertical-align:top">Gpr2 / Gpr3 (<em class="serif-italic">A. oligospora</em>)</td>
+            <td style="padding:9px 12px;border-bottom:1px solid rgba(110,79,184,.18);vertical-align:top">ascr#3, ascr#7 (Kuo <em>et al.</em>, 2024 [6])</td>
+            <td style="padding:9px 12px;border-bottom:1px solid rgba(110,79,184,.18);vertical-align:top">Fungal origin; homologous to yeast glucose receptors</td>
+            <td style="padding:9px 12px;border-bottom:1px solid rgba(110,79,184,.18);vertical-align:top">No evidence of ascr#18 response  -  must be tested directly</td>
+          </tr>
+          <tr>
+            <td style="padding:9px 12px;border-bottom:1px solid rgba(110,79,184,.18);vertical-align:top">DAF-37 / DAF-38 (<em class="serif-italic">C. elegans</em>)</td>
+            <td style="padding:9px 12px;border-bottom:1px solid rgba(110,79,184,.18);vertical-align:top">ascr#2 (Park <em>et al.</em>, 2012 [5])</td>
+            <td style="padding:9px 12px;border-bottom:1px solid rgba(110,79,184,.18);vertical-align:top">Well-characterised ascaroside receptor</td>
+            <td style="padding:9px 12px;border-bottom:1px solid rgba(110,79,184,.18);vertical-align:top">Animal GPCR; different ligand; heterologous expression harder</td>
+          </tr>
+          <tr>
+            <td style="padding:9px 12px;vertical-align:top">SRG-36 / SRG-37 (<em class="serif-italic">C. elegans</em>)</td>
+            <td style="padding:9px 12px;vertical-align:top">ascr#5 (Park <em>et al.</em>, 2012 [5])</td>
+            <td style="padding:9px 12px;vertical-align:top">Ascaroside-specific; precedent for signalling</td>
+            <td style="padding:9px 12px;vertical-align:top">Different ligand; no ascr#18 data</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <figcaption><b>Table 1</b> Candidate ascaroside receptors and the uncertainty each carries for our target signal. Every row shares the same gap: none is demonstrated to respond to ascr#18, so a direct response assay is the deciding experiment.</figcaption>
+  </figure>
+</section>
+<section id="reporter" data-toc="Reporter & readout">
+  <p class="eyebrow sec-label">04  -  Reporter</p>
+  <h2 class="section-title">Making the answer visible</h2>
+  <div class="prose">
+    <p>The reporter is not selected, built, or measured. If a candidate receptor and pathway coupling are first demonstrated, future work could compare fluorescent, colourimetric, enzymatic, or growth-based outputs. Readability, background separation, containment, and interpretation are evaluation questions rather than fixed capabilities; no dynamic range or field-use threshold has been established.</p>
+  </div>
+  <div class="callout callout--note" style="margin-top:24px">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="13"/><circle cx="12" cy="16.5" r=".6" fill="currentColor"/></svg>
+    <div><b>Design for the reader</b><p>We are committing to a design principle: the readout should be interpretable by the grower who uses it, not only by a lab. How that principle survives contact with real end users is something we plan to test through Human Practices  -  it is a commitment here, not yet a documented finding.</p></div>
+  </div>
+</section>
+<section id="iterations" data-toc="Design iterations">
+  <p class="eyebrow sec-label">05  -  Iterations</p>
+  <h2 class="section-title">The iterations we plan to run</h2>
+  <div class="prose">
+    <p>The current source inventory does not establish a completed or verified sensor build, so we present these design iterations as a plan rather than a history. Each phase is labelled <em>planned</em>; results will be documented against the Engineering cycle only when supporting records are available.</p>
+  </div>
+  <ul class="timeline" style="margin-top:24px">
+    <li><span class="when">Phase 1 &middot; planned</span><h4>Assess the candidate analyte</h4><p>Trace primary sources, define the relevant organism and life-stage evidence, examine taxonomic range, and determine whether a soil-derived sampling context is biologically plausible.</p></li>
+    <li><span class="when">Phase 2 &middot; planned</span><h4>Test the receptor  -  the go/no-go step</h4><p>Assay Gpr2/Gpr3 (and the <em class="serif-italic">C. elegans</em> receptors as alternatives) for a direct ascr#18 response in yeast. This decides whether the recognition strategy holds.</p></li>
+    <li><span class="when">Phase 3 &middot; planned</span><h4>Couple and report</h4><p>If direct receptor response is established, test pathway coupling and compare reporter candidates under controlled conditions.</p></li>
+    <li><span class="when">Phase 4 &middot; planned</span><h4>Examine the sample matrix</h4><p>Characterise analyte persistence, representative sampling, matrix interference, and the exploratory multi-signal hypotheses involving ascr#18/ascr#3 and ascr#9.</p></li>
+  </ul>
+  <figure class="figure" style="margin-top:26px">
+    <div style="overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:14px;min-width:560px">
+        <thead>
+          <tr>
+            <th style="text-align:left;padding:9px 12px;border-bottom:2px solid #6e4fb8;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;background:#efe6d6;color:#241c2b">Risk / open question</th>
+            <th style="text-align:left;padding:9px 12px;border-bottom:2px solid #6e4fb8;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;background:#efe6d6;color:#241c2b">Why it matters</th>
+            <th style="text-align:left;padding:9px 12px;border-bottom:2px solid #6e4fb8;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;background:#efe6d6;color:#241c2b">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding:9px 12px;border-bottom:1px solid rgba(110,79,184,.18);vertical-align:top">Receptor response to ascr#18 unproven</td>
+            <td style="padding:9px 12px;border-bottom:1px solid rgba(110,79,184,.18);vertical-align:top">Gpr2/Gpr3 shown only for ascr#3/#7; the recognition module depends on this</td>
+            <td style="padding:9px 12px;border-bottom:1px solid rgba(110,79,184,.18);vertical-align:top">To be tested (Phase 2)</td>
+          </tr>
+          <tr>
+            <td style="padding:9px 12px;border-bottom:1px solid rgba(110,79,184,.18);vertical-align:top">Candidate-analyte coverage across <em class="serif-italic">Meloidogyne</em> and <em class="serif-italic">H. glycines</em> is untested</td>
+            <td style="padding:9px 12px;border-bottom:1px solid rgba(110,79,184,.18);vertical-align:top">A response could not be assigned to either target species without independent evidence</td>
+            <td style="padding:9px 12px;border-bottom:1px solid rgba(110,79,184,.18);vertical-align:top">Open; source tracing and direct testing required</td>
+          </tr>
+          <tr>
+            <td style="padding:9px 12px;border-bottom:1px solid rgba(110,79,184,.18);vertical-align:top">Ascaroside soil stability</td>
+            <td style="padding:9px 12px;border-bottom:1px solid rgba(110,79,184,.18);vertical-align:top">External plant and cross-species metabolism studies show that persistence cannot be assumed [3,4]</td>
+            <td style="padding:9px 12px;border-bottom:1px solid rgba(110,79,184,.18);vertical-align:top">To be characterised (Phase 4)</td>
+          </tr>
+          <tr>
+            <td style="padding:9px 12px;border-bottom:1px solid rgba(110,79,184,.18);vertical-align:top">Reported J2 concentrations and timing not yet traced</td>
+            <td style="padding:9px 12px;border-bottom:1px solid rgba(110,79,184,.18);vertical-align:top">Sets the sensitivity target; currently team-table values only</td>
+            <td style="padding:9px 12px;border-bottom:1px solid rgba(110,79,184,.18);vertical-align:top">To be verified (Phase 1)</td>
+          </tr>
+          <tr>
+            <td style="padding:9px 12px;vertical-align:top">Chassis uptake of ascarosides is not yet sourced precisely</td>
+            <td style="padding:9px 12px;vertical-align:top">Target loss could affect the measured response</td>
+            <td style="padding:9px 12px;vertical-align:top">Unverified; citation and assay required</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <figcaption><b>Table 2</b> The risks we must validate. These are the reasons this design is presented as a hypothesis with a validation plan, and the reason the page stays hidden until the experiments are done.</figcaption>
+  </figure>
+</section>
+<section id="refs" data-toc="References">
+  <p class="eyebrow sec-label">06  -  Sources</p>
+  <h2 class="section-title">References</h2>
+  <ol class="refs">
+    <li>Choe A <em>et al.</em> Ascaroside signaling is widely conserved among nematodes. <em>Current Biology</em> 22(9):772&ndash;780 (2012). <a href="https://doi.org/10.1016/j.cub.2012.03.024">doi:10.1016/j.cub.2012.03.024</a></li>
+    <li>Yang B <em>et al.</em> Nematode pheromones: structures and functions. <em>Molecules</em> 28(5):2409 (2023). <a href="https://doi.org/10.3390/molecules28052409">doi:10.3390/molecules28052409</a></li>
+    <li>Manohar M <em>et al.</em> Plant metabolism of nematode pheromones mediates plant-nematode interactions. <em>Nature Communications</em> 11:208 (2020). <a href="https://doi.org/10.1038/s41467-019-14104-2">doi:10.1038/s41467-019-14104-2</a></li>
+    <li>Yu Y <em>et al.</em> Nematode signaling molecules are extensively metabolized by animals, plants, and microorganisms. <em>ACS Chemical Biology</em> 16(6):1050&ndash;1058 (2021). <a href="https://doi.org/10.1021/acschembio.1c00217">doi:10.1021/acschembio.1c00217</a></li>
+    <li>Park D <em>et al.</em> Interaction of structure-specific and promiscuous G-protein-coupled receptors mediates small-molecule signaling in <em class="serif-italic">Caenorhabditis elegans</em>. <em>PNAS</em> 109(25):9917&ndash;9922 (2012). <a href="https://doi.org/10.1073/pnas.1202216109">doi:10.1073/pnas.1202216109</a></li>
+    <li>Kuo CY <em>et al.</em> The nematode-trapping fungus <em class="serif-italic">Arthrobotrys oligospora</em> detects prey pheromones via G protein-coupled receptors. <em>Nature Microbiology</em> 9:1738&ndash;1751 (2024). <a href="https://doi.org/10.1038/s41564-024-01679-w">doi:10.1038/s41564-024-01679-w</a></li>
+    <li>Engineering G protein-coupled receptor signalling in yeast for biotechnological and medical purposes. (2019). <a href="https://pubmed.ncbi.nlm.nih.gov/31825496/">PMID 31825496</a></li>
+  </ol>
+</section>
     </div>
   </div>
   <div class="strata strata--down" aria-hidden="true"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><rect width="1440" height="120" fill="#f7f2e8"/><path fill="#241830" d="M0,60 C240,18 420,96 720,64 C1020,32 1230,92 1440,52 L1440,120 L0,120 Z"/><path fill="#180f1e" d="M0,86 C260,52 470,110 720,86 C1010,58 1240,108 1440,82 L1440,120 L0,120 Z"/></svg></div>
@@ -121,13 +308,13 @@
 
   <footer class="footer">
   <div class="footer__seal" aria-hidden="true"><img src="../img/nankai-seal.gif" alt="" loading="lazy" /></div>
-  <section class="sponsor-strip" aria-label="Sponsors"><span class="sr-only">Sponsors</span><div class="sponsor-strip__marquee"><div class="sponsor-strip__track"><div class="sponsor-strip__set"><span class="sponsor-badge"><span class="sponsor-badge__name">Sponsor slot</span><i class="sponsor-badge__dot" aria-hidden="true"></i></span></div><div class="sponsor-strip__set" aria-hidden="true"><span class="sponsor-badge"><span class="sponsor-badge__name">Sponsor slot</span><i class="sponsor-badge__dot" aria-hidden="true"></i></span></div></div></div></section>
+
   <div class="footer__inner">
-    <div class="footer-features" aria-label="Sponsors and friend teams"><section class="friend-links" aria-label="Friend teams"><div class="friend-links__head"><b>Friend links</b><p>Collaboration teams and partner pages can be linked here after confirmation.</p></div><div class="friend-links__grid"><span class="friend-link"><span class="friend-link__name">Friend link slot</span><span class="friend-link__note">Awaiting the confirmed friend-team list before public wiki freeze.</span></span></div></section></div>
+
     <div class="footer__top">
       <div class="footer__brand">
         <b>NKU-iGEM 2026 Team</b>
-        <p>A synthetic-biology biosensor for the early detection of plant-parasitic nematodes. Built by students at Nankai University.</p>
+        <p>A Nankai University student project investigating a synthetic-biology sensing concept for plant-parasitic nematode-associated signals; component and system validation remain open.</p>
       </div>
       <div class="footer__col">
         <h5>Project</h5>
@@ -149,13 +336,11 @@
         <a href="../model/">Model</a>
         <a href="../software/">Software</a>
         <a href="../pages/attribution.html">Attribution status</a>
-        <a href="https://gitlab.igem.org/2026/nku-china">GitLab source</a>
-        <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC-BY 4.0 license</a>
       </div>
     </div>
     <div class="footer__bottom">
-      <span>&copy; 2026 NKU iGEM Team &middot; Static wiki build &middot; <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC-BY 4.0</a></span>
-      <span><a href="https://gitlab.igem.org/2026/nku-china">GitLab source</a> &middot; self-hosted fonts &middot; no external scripts or trackers</span>
+      <span>&copy; 2026 NKU iGEM Team &middot; Static wiki build</span>
+      <span>self-hosted fonts &middot; no external scripts or trackers</span>
     </div>
   </div>
 </footer>

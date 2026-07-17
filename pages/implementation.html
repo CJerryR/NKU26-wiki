@@ -4,18 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Implementation  /  NKU iGEM 2026</title>
-  <meta name="description" content="NKU iGEM 2026  -  a synthetic-biology biosensor for early detection of plant-parasitic nematodes." />
+  <meta name="description" content="NKU iGEM 2026 - a synthetic-biology sensing concept for plant-parasitic nematode-associated signals, under investigation." />
   <meta name="theme-color" content="#191222" />
   <link rel="icon" href="../img/logo.svg" type="image/svg+xml" />
   <link rel="preload" href="../fonts/spline-variable.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="../fonts/fraunces-variable.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="../css/style.css" />
 </head>
-<body data-path-prefix="../">
+<body class="page-standard" data-path-prefix="../">
   <a class="skip" href="#main">Skip to content</a>
   <div class="scroll-progress" aria-hidden="true"></div>
 
   <nav class="nav" aria-label="Primary">
+  <div class="nav-veil" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
   <div class="nav-inner">
     <a href="../index.html" class="nav-brand" aria-label="NKU iGEM 2026 home">
       <img src="../img/logo.svg" alt="" width="46" height="46" />
@@ -26,17 +27,14 @@
 
     <ul class="nav-links">
       <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
-      <li class="nav-item"><a href="../pages/description.html" class="nav-link">Description</a></li>
-      <li class="nav-item"><a href="../contribution/" class="nav-link">Contribution</a></li>
+      <li class="nav-item"><a href="../pages/description.html" class="nav-link">Project</a></li>
       <li class="nav-item"><a href="../engineering/" class="nav-link">Engineering</a></li>
+      <li class="nav-item"><a href="../pages/results.html" class="nav-link">Results</a></li>
       <li class="nav-item"><a href="../human-practices/" class="nav-link">Human Practices</a></li>
-      <li class="nav-item"><a href="../education/" class="nav-link">Education</a></li>
-      <li class="nav-item"><a href="../model/" class="nav-link">Model</a></li>
-      <li class="nav-item"><a href="../software/" class="nav-link">Software</a></li>
       <li class="nav-item"><a href="../safety-and-security/" class="nav-link">Safety</a></li>
 
       <li class="nav-item">
-        <button type="button" class="nav-link" aria-haspopup="true" aria-expanded="false">Team
+        <button type="button" class="nav-link" aria-haspopup="true" aria-expanded="false">Team &amp; Attributions
           <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0l5 6 5-6z"/></svg></button>
         <div class="mega">
           <div class="mega-col">
@@ -45,17 +43,23 @@
             <a href="../pages/attribution.html"><span class="dot"></span>Attributions</a>
             <a href="../pages/team-members.html#affiliation"><span class="dot"></span>Nankai University</a>
           </div>
+          <div class="mega-col">
+            <h4>Resources</h4>
+            <a href="../contribution/"><span class="dot"></span>Contribution</a>
+            <a href="../pages/notebook.html"><span class="dot"></span>Notebook</a>
+            <a href="../pages/parts.html"><span class="dot"></span>Parts</a>
+          </div>
           <a class="mega-feature" href="../pages/attribution.html">
             <span class="tag">Transparency</span>
-            <p>Team roles, support, and acknowledgements are kept visible.</p>
-            <small>Read attributions &rarr;</small>
+            <p>Current evidence status for team membership, roles, support, and acknowledgements.</p>
+            <small>Review verification status &rarr;</small>
             <img class="mascot-mini" src="../img/mascot-trim.png" alt="" />
           </a>
         </div>
       </li>
 
       <li class="nav-item nav-item--search">
-        <button type="button" class="nav-link nav-search-trigger" data-search-open aria-haspopup="dialog">
+        <button type="button" class="nav-link nav-search-trigger" data-search-open aria-haspopup="dialog" aria-controls="site-search" aria-expanded="false">
           <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.5" y2="16.5"/></svg>
           <span class="sr-only">Search</span>
         </button>
@@ -71,9 +75,9 @@
     <div class="phero__inner">
       <nav class="phero__crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>/</span>Project<span>/</span><span>Implementation</span></nav>
       <p class="eyebrow" style="margin-bottom:14px">Project  /  Real world</p>
-      <h1>Into the <span class='ink-accent'>field</span></h1>
-      <p class="phero__sub">Who would use this, how it reaches them, and what has to be true for it to work in practice.</p>
-      <div class="phero__meta"><span>Lens<b>Deployment</b></span><span>Reading<b>5 min</b></span></div>
+      <h1>Defining a responsible <span class='ink-accent'>use pathway</span></h1>
+      <p class="phero__sub">Intended-user hypotheses, staged validation gates, and the questions that must be answered before any deployment decision.</p>
+      <div class="phero__meta"><span>Lens<b>Proposed implementation</b></span><span>Reading<b>5 min</b></span></div>
     </div>
   </header>
   <div class="strata strata--down" aria-hidden="true"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><rect width="1440" height="120" fill="#191222"/><path fill="#241830" d="M0,60 C240,18 420,96 720,64 C1020,32 1230,92 1440,52 L1440,120 L0,120 Z"/><path fill="#f7f2e8" d="M0,86 C260,52 470,110 720,86 C1010,58 1240,108 1440,82 L1440,120 L0,120 Z"/></svg></div>
@@ -107,10 +111,10 @@
         <li class="lvl-1"><a href="#roadmap">Roadmap</a></li>
         </ul></div>
       </div>
-<section id="users" data-toc="Intended users"><p class="eyebrow sec-label">01  -  Users</p><h2 class="section-title">Who this is for</h2><div class="grid grid-3 reveal" data-stagger style="margin-top:26px"><div class="card"><span class="card__ring"></span><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 21a6.5 6.5 0 0 1 13 0M16 5a3.2 3.2 0 0 1 0 6.4M22 21a6.5 6.5 0 0 0-4-6"/></svg></div><h3>Smallholder farmers</h3><p>People who cannot ship samples to a central lab and need an answer on-site.</p></div><div class="card"><span class="card__ring"></span><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 4 13c0-6 7-9 16-9 0 9-3 16-9 16z"/><line x1="6" y1="18" x2="13" y2="11"/></svg></div><h3>Agronomists & advisors</h3><p>Professionals guiding planting and treatment decisions.</p></div><div class="card"><span class="card__ring"></span><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div><h3>Extension & co-ops</h3><p>Organisations supporting many growers at once.</p></div></div></section>
-<section id="delivery" data-toc="How it's delivered"><p class="eyebrow sec-label">02  -  Delivery</p><h2 class="section-title">From bench to soil</h2><div class="prose"><aside class="content-slot" role="note"><span>Pending documentation</span><p>The intended product form, the workflow in the hands of a user, and the supply/manufacturing assumptions.</p></aside></div><aside class="content-slot" role="note"><span>Pending documentation</span><p>Product form-factor sketch</p></aside></section>
-<section id="safety-reg" data-toc="Safety & regulation"><p class="eyebrow sec-label">03  -  Regulation</p><h2 class="section-title">Doing it responsibly</h2><div class="prose"><aside class="content-slot" role="note"><span>Pending documentation</span><p>The biosafety and regulatory considerations of real-world deployment; link to the Safety page.</p></aside></div><div class="callout callout--note" style="margin-top:24px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="13"/><circle cx="12" cy="16.5" r=".6" fill="currentColor"/></svg><div><b>Grounded in HP</b><p>These plans were shaped by the regulators and practitioners we spoke with  -  see Human Practices.</p></div></div></section>
-<section id="roadmap" data-toc="Roadmap"><p class="eyebrow sec-label">04  -  Roadmap</p><h2 class="section-title">What comes next</h2><ul class="timeline" style="margin-top:24px"><li><span class="when">Now</span><h4>Proof of concept</h4><p>Bench validation evidence.</p></li><li><span class="when">Next</span><h4>Field pilot</h4><p>Field pilot plan and partner requirements.</p></li><li><span class="when">Later</span><h4>Scale</h4><p>Scale-up path, constraints, and partners.</p></li></ul></section>
+<section id="users" data-toc="Intended users"><p class="eyebrow sec-label">01  -  Users</p><h2 class="section-title">Who might use future evidence</h2><p>The groups below are intended-user hypotheses, not documented adopters. Future human-practices work must test their actual decisions, constraints, and interpretation needs before the project defines a user workflow.</p><div class="grid grid-3 reveal" data-stagger style="margin-top:26px"><div class="card"><span class="card__ring"></span><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 21a6.5 6.5 0 0 1 13 0M16 5a3.2 3.2 0 0 1 0 6.4M22 21a6.5 6.5 0 0 0-4-6"/></svg></div><h3>Growers</h3><p>A possible audience if representative sampling and an interpretable result can be validated for a real crop-management decision.</p></div><div class="card"><span class="card__ring"></span><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 4 13c0-6 7-9 16-9 0 9-3 16-9 16z"/><line x1="6" y1="18" x2="13" y2="11"/></svg></div><h3>Agronomists & advisors</h3><p>A possible interpretation layer between an assay result and any recommendation; no decision threshold or agronomic meaning is established.</p></div><div class="card"><span class="card__ring"></span><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div><h3>Extension & co-ops</h3><p>Potential coordinators of sampling or communication, subject to evidence about training, quality control, access, and responsibility.</p></div></div></section>
+<section id="delivery" data-toc="How it's delivered"><p class="eyebrow sec-label">02  -  Delivery</p><h2 class="section-title">A conditional path from sample to decision</h2><div class="prose"><p>No product form, kit, assay time, storage condition, supply chain, or manufacturing route has been validated. Implementation therefore begins with questions, not a deployment promise.</p><p>A future pathway would first need a representative sampling method and a defined way to prepare a soil-derived input. It would then need direct evidence that the candidate receptor responds to the intended ligand, evidence that the engineered pathway couples that response, and a selected reporter with bounded background and output behaviour.</p><p>Only after those component gates could an end-to-end test ask whether the result is repeatable in controlled samples and then in an appropriate soil matrix. Interpretation would require a justified threshold, controls, uncertainty handling, and evidence connecting the readout to a decision. None of those links currently exists.</p><p>Form factor, operator steps, equipment, storage, transport, waste handling, and quality assurance remain open design decisions. They should be specified only after biological feasibility and intended-user needs are supported by evidence.</p></div></section>
+<section id="safety-reg" data-toc="Safety & regulation"><p class="eyebrow sec-label">03  -  Regulation</p><h2 class="section-title">Containment before deployment</h2><div class="prose"><p>The proposed chassis is living engineered yeast. It must not be assumed suitable for release into soil or the wider environment. Any future implementation would require a containment strategy, verified inactivation, defined disposal, exposure assessment, biosafety review, and a jurisdiction-specific regulatory assessment.</p><p>These gates must be evaluated alongside biological performance rather than after it. A useful result would also need controls, traceability, operator guidance, and a clear boundary on what the output can and cannot establish.</p></div><div class="callout callout--note" style="margin-top:24px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="13"/><circle cx="12" cy="16.5" r=".6" fill="currentColor"/></svg><div><b>Engagement is a validation gate</b><p>Internal records show exploratory consultation and planning, but not a public stakeholder-to-design change loop. Future engagement should be consented, attributable where appropriate, and documented against specific design decisions.</p></div></div></section>
+<section id="roadmap" data-toc="Roadmap"><p class="eyebrow sec-label">04  -  Roadmap</p><h2 class="section-title">Evidence before scale</h2><ul class="timeline" style="margin-top:24px"><li><span class="when">Current evidence</span><h4>Component-level attempts</h4><p>Notebook records support molecular workflows, negative and inconclusive checks, and a preliminary delta-Gal80 PCR interpretation without sequence confirmation. Receptor response, reporter output, and end-to-end operation are not demonstrated.</p></li><li><span class="when">Next gates</span><h4>Biological feasibility</h4><p>Trace the candidate-analyte evidence; test receptor expression, localisation, and ligand response; establish pathway coupling; select a reporter; and measure controlled end-to-end behaviour with matched controls.</p></li><li><span class="when">Later gates</span><h4>Responsible use assessment</h4><p>Only after biological feasibility should the team evaluate representative sampling, soil-matrix effects, quantitative performance, intended-user interpretation, containment, waste, biosafety, regulation, manufacturing feasibility, and whether deployment is justified.</p></li></ul></section>
     </div>
   </div>
   <div class="strata strata--down" aria-hidden="true"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><rect width="1440" height="120" fill="#f7f2e8"/><path fill="#241830" d="M0,60 C240,18 420,96 720,64 C1020,32 1230,92 1440,52 L1440,120 L0,120 Z"/><path fill="#180f1e" d="M0,86 C260,52 470,110 720,86 C1010,58 1240,108 1440,82 L1440,120 L0,120 Z"/></svg></div>
@@ -118,13 +122,13 @@
 
   <footer class="footer">
   <div class="footer__seal" aria-hidden="true"><img src="../img/nankai-seal.gif" alt="" loading="lazy" /></div>
-  <section class="sponsor-strip" aria-label="Sponsors"><span class="sr-only">Sponsors</span><div class="sponsor-strip__marquee"><div class="sponsor-strip__track"><div class="sponsor-strip__set"><span class="sponsor-badge"><span class="sponsor-badge__name">Sponsor slot</span><i class="sponsor-badge__dot" aria-hidden="true"></i></span></div><div class="sponsor-strip__set" aria-hidden="true"><span class="sponsor-badge"><span class="sponsor-badge__name">Sponsor slot</span><i class="sponsor-badge__dot" aria-hidden="true"></i></span></div></div></div></section>
+
   <div class="footer__inner">
-    <div class="footer-features" aria-label="Sponsors and friend teams"><section class="friend-links" aria-label="Friend teams"><div class="friend-links__head"><b>Friend links</b><p>Collaboration teams and partner pages can be linked here after confirmation.</p></div><div class="friend-links__grid"><span class="friend-link"><span class="friend-link__name">Friend link slot</span><span class="friend-link__note">Awaiting the confirmed friend-team list before public wiki freeze.</span></span></div></section></div>
+
     <div class="footer__top">
       <div class="footer__brand">
         <b>NKU-iGEM 2026 Team</b>
-        <p>A synthetic-biology biosensor for the early detection of plant-parasitic nematodes. Built by students at Nankai University.</p>
+        <p>A Nankai University student project investigating a synthetic-biology sensing concept for plant-parasitic nematode-associated signals; component and system validation remain open.</p>
       </div>
       <div class="footer__col">
         <h5>Project</h5>
@@ -146,13 +150,11 @@
         <a href="../model/">Model</a>
         <a href="../software/">Software</a>
         <a href="../pages/attribution.html">Attribution status</a>
-        <a href="https://gitlab.igem.org/2026/nku-china">GitLab source</a>
-        <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC-BY 4.0 license</a>
       </div>
     </div>
     <div class="footer__bottom">
-      <span>&copy; 2026 NKU iGEM Team &middot; Static wiki build &middot; <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC-BY 4.0</a></span>
-      <span><a href="https://gitlab.igem.org/2026/nku-china">GitLab source</a> &middot; self-hosted fonts &middot; no external scripts or trackers</span>
+      <span>&copy; 2026 NKU iGEM Team &middot; Static wiki build</span>
+      <span>self-hosted fonts &middot; no external scripts or trackers</span>
     </div>
   </div>
 </footer>

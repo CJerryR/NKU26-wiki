@@ -328,7 +328,6 @@ def prepare_body(body):
             label = "Reference to add"
         return f'<span class="slot-chip">{label}</span>'
 
-    body = INSTRUCTION_P_RE.sub(lambda m: p_slot(m) if is_instruction_text(m.group("text")) else m.group(0), body)
     body = PLACEHOLDER_P_RE.sub(p_slot, body)
     body = PLACEHOLDER_SPAN_RE.sub(span_slot, body)
     return body
@@ -669,7 +668,8 @@ def build_page(path):
 
     title_tag = meta.get("title", "NKU iGEM 2026")
     title_full = "NKU iGEM 2026" if is_home else f"{title_tag}  /  NKU iGEM 2026"
-    desc = meta.get("desc", "NKU iGEM 2026  -  a synthetic-biology biosensor for early detection of plant-parasitic nematodes.")
+    desc = meta.get("desc", "NKU iGEM 2026 - a synthetic-biology sensing concept for plant-parasitic nematode-associated signals, under investigation.")
+    body_class = "page-home" if is_home else "page-standard"
     footer_html = FOOTER.replace("{{GLOBAL_FOOTER_FEATURES}}", GLOBAL_FOOTER_FEATURES)
     footer_html = footer_html.replace("{{GLOBAL_SPONSOR_STRIP}}", GLOBAL_SPONSOR_STRIP)
 
@@ -680,6 +680,7 @@ def build_page(path):
             .replace("{{FOOTER}}", footer_html)
             .replace("{{GLOBAL_SPONSOR_STRIP}}", GLOBAL_SPONSOR_STRIP)
             .replace("{{GLOBAL_FOOTER_FEATURES}}", GLOBAL_FOOTER_FEATURES)
+            .replace("{{BODY_CLASS}}", body_class)
             .replace("{{BODY}}", body_html)
             .replace("{{P}}", P))
 

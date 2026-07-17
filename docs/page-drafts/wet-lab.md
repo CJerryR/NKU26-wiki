@@ -1,0 +1,114 @@
+---
+source: _content/wet-lab.html
+slug: wet-lab
+title: Experiments
+hidden: true
+crumbs: Lab / Wet Lab
+eyebrow: Lab / Wet lab
+heading: At the bench
+sub: The documented laboratory programme across the eighteen notebook records, organised by workstream, with the boundary of what each record establishes.
+meta: Scope=18-record audit | See also=Protocols, Results | Reading=10 min
+---
+
+# Experiments
+
+01 - Scope
+
+## What this page covers
+
+The team's authenticated notebook folder holds eighteen labelled records, from 0506 through 0607. This page covers all eighteen.
+
+The labels and the file-metadata dates recorded in Feishu are provenance signals, not independent confirmation of when the bench work was carried out, so every statement below is attributed to what a record describes rather than to a verified event. Five of the later records, 0601, 0603, 0604, 0606 and 0607, are image-only handwritten pages whose text is not exposed to accessibility extraction and in places remains ambiguous, so their handwritten details are reported cautiously.
+
+**How to read this page**
+
+This is a record of documented procedure, laboratory traceability, and the genuine negative, inconclusive and preliminary outcomes the notebook contains. It is not a sensor-performance page. Where a record documents a procedure without an output value, or an image without expected sizes and a written interpretation, that procedure or image cannot on its own establish a confirmed construct or a working sensor. Measured outcomes are reported on the [ Results](../pages/results.html) page.
+
+02 - Chronology
+
+## The eighteen records at a glance
+
+The records fall into a chronological sequence by label. The table indexes what each documents and the boundary that limits it; the workstream sections that follow group the same records by theme. The labels are folder identifiers, not confirmed execution dates.
+
+| Record | Documented work | Boundary | **
+| 0506-0507 | YPD preparation, an attempted plasmid transformation into Trans5alpha E. coli, selection plating, and overnight colony culture. | No plasmid recovery or transformation outcome; antibiotic units unverified and withheld. |
+| 0508 | Plasmid-extraction workflow that called for a NanoDrop measurement step, gel-sample preparation, and storage at -20 degrees C; no NanoDrop value, purity ratio or interpretable measurement result is present. | No NanoDrop value, purity ratio, gel interpretation or plasmid identity. | **
+| 0511 | S. cerevisiae genomic-DNA extraction from 1.5 mL culture, organic extraction and precipitation, and a 1 kb-marker gel. | No concentration, gel interpretation or downstream result. |
+| 0513 | First-round PCR work targeting six KOGal fragments (Gal4 and Gal80 homology arms, Ura3 for KOGal4, Trp1 for KOGal80) from CEN.PK2-1C genomic DNA, p406TEF1 and pRS314. | No program, expected sizes, gel, band or yield. |
+| 0514 | Gel purification of KOGal80 first-round PCR material; second-round overlap and nested third-round PCR work for KOGal4 and KOGal80. | No expected sizes, recovery concentrations, gel image or interpretation. |
+| 0520 | SDCt medium preparation and an attempted CEN.PK2-1C transformation with KOGal4 and KOGal80 material, plated on His- and Leu-supplemented SDCt. | No colony count, colony PCR, edit or construct verification. |
+| 0525 | Three attempted-transformation conditions, Blank, delta-Gal4 and delta-Gal80, on drop-out media (delta-Gal4 omitting Ura, delta-Gal80 omitting Trp). | No plate observation, colony count or edit validation. |
+| 0526 | A further attempted CEN.PK2-1C transformation with KOGal4 material and selective plating, with casamino-acid handling and light-protection notes. | No growth or verification result. |
+| 0527 | Repeated third-round KOGal4 and KOGal80 PCR, duplicate reactions, verification and recovery gels with an embedded lane image, and band excision; YPD streaking. | No expected sizes or written conclusion that the bands were correct. |
+| 0528 | An explicit result: no yeast on the double-auxotrophy plate lacking Trp and Ura; competent yeast grew on the YPD growth control; both with embedded images. | A negative selective result with a growth control, not successful transformation; no molecular cause assigned. |
+| 0529 | Attempted transformation repeated across four groups including combined delta-Gal4 plus delta-Gal80; fragile morning medium prompted sourcing and preparing an afternoon medium from a published method. | No colony observation, efficiency or edit validation. |
+| 0530 | Repeated third-round KOGal PCR and recovery checks with two lane maps and a 100 bp versus 1 kb marker caution. | No expected sizes or written pass-or-fail interpretation. |
+| 0601 | Image-only: streaking putative delta-Gal80 material and the start of a GPR2-GFP double-joint PCR fragment-construction workflow. | Handwriting ambiguous; apparent counts and marks not used as results. |
+| 0603 | Colony-PCR verification with RT, 5-prime and 3-prime checks and controls; RT positive control passed, other reactions gave no result; author suspected DNA not released. | A failed or inconclusive verification, not a correct edit. |
+| 0604 | Colony PCR in which 32 colonies gave no bands while the positive control banded and the negative did not; plus PCR work targeting KOste-5F, GPR2 and CYC1-related fragments. | Candidates unverified; no reason recorded for the absent bands. |
+| 0606 | A further GPR2-GFP double-joint PCR stage and putative delta-Gal80 genomic-DNA extraction from 5 mL culture with a gel run and -20 degrees C storage. | No gel interpretation, DNA concentration or sequence result. |
+| 0607 | RT, 5-prime and 3-prime PCR on eight putative delta-Gal80 candidates with controls, recorded RT-negative and 5-prime/3-prime-positive; further PCR work targeting GPR2-GFP fragments and a sketched validation-gel lane plan. | Author's preliminary PCR conclusion on the putative delta-Gal80 candidates only; no gel image, sizes, sequencing or replicate; no Gal4 verification; no GPR2-GFP result. |
+
+03 - Workstreams
+
+## The programme by theme
+
+The same records group into five workstreams. Each is documented procedure with its boundary stated, and several document procedures without output values.
+
+### Plasmid and genomic-DNA preparation
+
+The 0506 record describes dissolving plasmid DNA and a transformation workflow using Trans5alpha competent *E. coli*; it states that five plasmids were handled, does not name all five in the audited section, and describes four as ampicillin-resistant and one as kanamycin-resistant. The 0507 record describes an overnight liquid culture of a single Trans5alpha colony and two colony-picking methods, with a flask-labelling convention recording plasmid name, date and operator initials. The transformation parameters recorded in 0506 are set out below as written.
+
+| Step described in record 0506 | Parameter as recorded |
+| Spin down plasmid powder | 13,000 rpm for 3 min |
+| Dissolve DNA | Each 4 microgram tube in 40 microlitres EB |
+| Aliquot competent cells | Thaw Trans5alpha on ice, split into 50 microlitre aliquots |
+| Add plasmid | 0.3 microlitres plasmid solution (30 ng) |
+| Chill, heat-shock, chill | 30 min on ice; 42 degrees C for 45 s; 2 min on ice |
+| Recover | Add 500 microlitres plain LB; 37 degrees C for 1 h |
+| Plate | 100 microlitres of recovered culture onto the matching selection plate |
+
+**Antibiotic units are unverified**
+
+The ampicillin stock and working concentrations written into records 0506 and 0507 are dilution-consistent with one another: the stated 1000x stock and the stated final values agree. They are, however, atypical for standard selection and may contain a unit error. The numerical values are therefore withheld here and the units remain unverified, awaiting confirmation from the team before any selection step is interpreted.
+
+Downstream of the bacterial work, the 0508 record documents a plasmid-extraction workflow that called for a NanoDrop measurement step, gel-sample preparation and storage at -20 degrees C; no NanoDrop value, purity ratio or interpretable measurement result is present, and the record gives no gel interpretation or plasmid identity. The 0511 record documents *S. cerevisiae* genomic-DNA extraction from 1.5 mL culture, with organic extraction, precipitation and a 1 kb-marker gel, and the 0606 record documents putative delta-Gal80 genomic-DNA extraction from a larger 5 mL culture, with electrophoresis and -20 degrees C storage. Neither DNA-extraction record reports a concentration, a gel interpretation or a downstream result.
+
+### Attempted KOGal4 and KOGal80 fragment construction
+
+The attempted KOGal4 and KOGal80 cassette-construction workflow combined Gal4 and Gal80 homology arms with nutritional markers. The 0513 record documents first-round PCR work targeting six fragments, with CEN.PK2-1C genomic DNA as template for the homology arms and p406TEF1 and pRS314 as templates for the Ura3 and Trp1 markers, but records no program, expected sizes, gel or yield. The 0514 record documents gel purification of the KOGal80 first-round PCR material and second-round overlap and nested third-round PCR work, ending in a gel-recovery step and -20 degrees C storage, with no expected sizes or written interpretation. The 0527 and 0530 records repeat the third-round PCR with duplicate reactions, verification and recovery gels, embedded lane images and recorded lane maps, and 0527 notes excision of the bands recorded as Gal4 and Gal80. Neither states expected fragment sizes or a written pass-or-fail conclusion, and 0530 explicitly cautions against confusing the 100 bp and 1 kb markers. Embedded images and lane maps without expected sizes and a written interpretation cannot establish that the recovered material carries the intended construct identity, and a recovered band cannot be treated as the intended fragment on that basis.
+
+### Attempted yeast transformation and selection
+
+Yeast transformation and selection were attempted several times in CEN.PK2-1C, and a transformation workflow was documented on each occasion. The 0520 record documents SDCt medium preparation and an attempted transformation with KOGal4 and KOGal80 material, plated on His- and Leu-supplemented SDCt. The 0525 record documents Blank, delta-Gal4 and delta-Gal80 conditions on drop-out media designed so that delta-Gal4 omitted Ura and delta-Gal80 omitted Trp. The 0526 record documents a further attempted transformation with KOGal4 material, with a practical note that the casamino acids were highly hygroscopic and a reminder to protect tryptophan-containing material from light. The 0528 record is an explicit result: no yeast grew on the previously prepared and inoculated double-auxotrophy medium lacking Trp and Ura, while competent yeast grew on YPD, giving a positive growth control, and both observations have embedded plate images. This is a negative selective-medium result with a growth control and is not successful double transformation. In response, the 0529 record documents repeating the attempted transformation across four groups, including a combined delta-Gal4 plus delta-Gal80 group; the morning medium was fragile during spreading, so we contacted the source of a published method and prepared the afternoon medium accordingly. None of these records reports a colony count, transformation efficiency or edit validation.
+
+### Putative delta-Gal80 verification
+
+Verification of putative delta-Gal80 transformants was attempted by colony PCR. The 0601 image-only record documents streaking putative delta-Gal80 material and the start of a GPR2-GFP fragment-construction workflow; its handwriting is in places ambiguous, so apparent position counts and marks are not reported as results. The 0603 record documents RT, 5-prime and 3-prime colony-PCR checks with positive and negative controls; the handwritten result records that the RT positive control passed while the remaining reactions produced no result, and the author suspected that genomic DNA had not been released from the cells, which makes this a failed or inconclusive verification rather than a correct edit. The 0604 record continues the verification: its result records that 32 colonies produced no bands while the positive control had a band and the negative did not, leaving the candidates unverified, with a next step to culture a subset, extract genomic DNA and repeat the PCR. The 0606 putative delta-Gal80 genomic-DNA re-extraction from a 5 mL culture supports that next step. The 0607 record then documents RT, 5-prime and 3-prime PCR on eight putative delta-Gal80 candidates with positive and negative controls, and the author recorded all eight as RT-negative and 5-prime/3-prime-positive and concluded that they were correct. Because the 0607 page embeds no gel photograph, band sizes, sequencing or independent replicate, this is a preliminary PCR conclusion, a pattern recorded as consistent with the intended edit, not independent proof of a sequence-confirmed genomic edit. It concerns the eight putative delta-Gal80 candidates only. Delta-Gal4 remains unverified: no positive Gal4 verification evidence appears in the audited records, and any future Gal4 confirmation is a separate unmet gate.
+
+### Attempted early GPR2-GFP fragment construction
+
+A separate receptor-stage build track targets a GPR2-GFP construct and had reached attempted fragment construction only. The 0601 record documents the start of a GPR2-GFP homologous-recombination fragment-construction workflow by double-joint PCR; the 0604 record documents PCR work targeting KOste-5F, GPR2 and CYC1-related fragments; the 0606 record documents a further double-joint PCR stage with two fragment-reaction recipes and a program; and the 0607 record documents four fragment reactions with Phanta polymerase followed by gel separation and a gel-recovery step, together with a sketched WT/T1/T2/T3 validation-gel lane plan. The audited records show no integration of GPR2-GFP into the chassis, no receptor expression or localisation, and no functional test, and a sketched lane plan is a plan rather than a result.
+
+04 - Controls
+
+## The controls that are genuinely present
+
+Genuine controls appear in the verification records, and they are worth stating precisely. The 0528 record pairs the no-growth selective plate with YPD growth as a positive growth control. The 0603 record includes a positive control that passed while the test reactions did not. The 0604 record includes a positive control that banded and a negative control that did not. The 0607 record includes positive and negative controls alongside the check on the eight putative delta-Gal80 candidates. In every case the controls describe how the assay behaved; they do not by themselves establish that a colony carried an edit, and behaving controls do not rescue a colony result in which the test reactions gave no bands.
+
+Several records, including 0508, 0511, 0513, 0514, 0520, 0525, 0526 and 0606, document procedures without output values, and the notebook images and lane maps are recorded without expected sizes and written interpretations. Neither a procedure without an output nor an image without an interpretation can establish a confirmed construct identity.
+
+05 - Next
+
+## What would turn this into evidence
+
+To move from documented procedure and preliminary observations toward supported results, the following remain, roughly in order:
+
+1. confirm the ampicillin stock and working units so any selection step can be interpreted;
+2. independently confirm the identity of the recovered KOGal material by sequencing or an equivalently decisive method;
+3. independently confirm the putative delta-Gal80 edit, moving beyond the 0607 preliminary PCR conclusion, and obtain independently verified delta-Gal80 transformants;
+4. confirm the delta-Gal4 edit separately: it remains unverified, and the audited records hold no positive Gal4 verification evidence, so this is a distinct unmet gate;
+5. complete GPR2-GFP integration and show receptor expression and localisation;
+6. test a controlled ligand response and a reporter readout, with matched controls and independent replicates.
+
+Methods are on the [ Protocols](../pages/protocols.html) page, the record-by-record notebook is on the [ Notebook](../pages/notebook.html) page, and any measured outcome will appear on the [ Results](../pages/results.html) page; none of those pages carries evidence beyond this audit.

@@ -4,9 +4,72 @@ hidden: true
 crumbs: Project / Proof of Concept
 eyebrow: Project  /  Evidence
 heading: Proof of <span class='ink-accent'>concept</span>
-sub: The end-to-end demonstration that the idea holds together.
-meta: Milestone=Integrated demo | Reading=4 min
+sub: The evidence gates an end-to-end demonstration would need, the point the work has actually reached, and why the chain is not yet demonstrated.
+meta: Status=Not yet demonstrated | Reading=5 min
 -->
-<section id="claim" data-toc="The claim"><p class="eyebrow sec-label">01  -  Claim</p><h2 class="section-title">What we set out to prove</h2><div class="prose"><p>State precisely the proof-of-concept claim: that a soil-derived sample can be turned into a correct species call by your integrated system.</p></div></section>
-<section id="demo" data-toc="The demonstration"><p class="eyebrow sec-label">02  -  Demo</p><h2 class="section-title">Start to finish</h2><figure class="figure" style="margin-top:26px"><div class="figure__media"><svg viewBox="0 0 600 200" style="max-width:560px" aria-hidden="true"><rect x="20" y="30" width="560" height="140" rx="14" fill="none" stroke="#9a7a6b" stroke-dasharray="6 7"/><text x="300" y="105" text-anchor="middle" font-family="Space Mono,monospace" font-size="13" fill="#9a7a6b">figure placeholder</text></svg></div><figcaption><b>Fig 1</b> End-to-end run: sample in, verdict out.</figcaption></figure><div class="prose"><p>Walk through the integrated demonstration and its result.</p></div><p class="placeholder-tag">Insert end-to-end demo data</p></section>
-<section id="limits" data-toc="Limitations & next steps"><p class="eyebrow sec-label">03  -  Limits</p><h2 class="section-title">How far it goes</h2><div class="prose"><p>Be candid about the boundaries of the demonstration and what would be needed for a deployable product.</p></div><div class="callout callout--tip" style="margin-top:24px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10c.7.7 1 1.3 1 2h6c0-.7.3-1.3 1-2a6 6 0 0 0-4-10z"/></svg><div><b>Editor's note</b><p>This page is a styled, ready-to-fill scaffold  -  the layout, outline and animations are wired up. Replace the placeholder tags with your real content.</p></div></div></section>
+<section id="claim" data-toc="What we aim to prove">
+  <p class="eyebrow sec-label">01  -  Claim</p>
+  <h2 class="section-title">What we aim to prove</h2>
+  <div class="prose">
+    <p>The aim of the project is an early-warning biosensor that reports a nematode-derived ascaroside signal in a sample. As a proof-of-concept target, that means a yeast chassis carrying a heterologous receptor should give a reporter readout when the ascaroside ascr#18 is present and stay quiet when it is not. This end-to-end behaviour has not been demonstrated; this page describes the plan, the gates it must pass, and the point the audited work has actually reached.</p>
+    <p>One scope limit matters up front. The intended readout is the presence of an ascaroside signal, not an identification of species. The supported boundary is narrow: team material reports ascr#18 across several <em>Meloidogyne</em> species and also from <em>Heterodera glycines</em>. Two further descriptions carried in an internal team table, concerning the relative abundance of ascr#18 and its degree of conservation, are not traced to a public source and are withheld here rather than repeated. On that basis species-level discrimination cannot be assumed, and the taxonomic range and specificity of ascr#18 remain untested. A response to ascr#18 therefore could not, on its own, distinguish one species from another, and species-level discrimination would require additional, orthogonal evidence beyond the chain described here.</p>
+  </div>
+</section>
+<section id="current" data-toc="Current endpoint">
+  <p class="eyebrow sec-label">02  -  Endpoint</p>
+  <h2 class="section-title">How far the work actually reaches</h2>
+  <div class="prose">
+    <p>It is worth being exact about the current endpoint, because it is early. On the chassis side, the furthest documented point is a preliminary edit-verification PCR conclusion: in the 0607 record the author checked eight putative CEN.PK2-1C delta-Gal80 candidates against positive and negative controls, recorded all eight as RT-negative and 5-prime/3-prime-positive, and concluded that they were correct. Because that record embeds no gel photograph, band sizes, sequencing or independent replicate, it is a preliminary PCR pattern recorded as consistent with the intended delta-Gal80 edit, not an independent or sequence-confirmed edit. That conclusion reaches the eight putative delta-Gal80 candidates only. Delta-Gal4 remains unverified: the audited records carry no positive Gal4 verification evidence, and any future Gal4 confirmation is a separate unmet gate.</p>
+    <p>On the receptor side, an attempted GPR2-GFP fragment-construction workflow was under way but unfinished: the records document double-joint PCR work targeting the fragments, a gel-recovery step and a sketched validation-gel lane plan, but no integration into the chassis, no receptor expression or localisation, and no functional test.</p>
+    <p>Two clarifications follow. The earlier 0528 record, in which no yeast grew on the double-auxotrophy plate while yeast grew on the YPD growth control, is a selection observation with a growth control; it is not an integrated sensor test. And no end-to-end run, from a prepared sample to a call, has been performed at any point in the audit.</p>
+  </div>
+</section>
+<section id="chain" data-toc="Intended evidence chain">
+  <p class="eyebrow sec-label">03  -  Chain</p>
+  <h2 class="section-title">The chain we intend to build</h2>
+  <div class="prose">
+    <p>A convincing demonstration would connect the links below in order, and the chain is only as strong as its weakest unproven link. The first link is where the audited work currently sits, at a preliminary rather than a confirmed stage, and it reaches the putative delta-Gal80 candidates only; the rest are not yet begun as measured evidence.</p>
+    <ol>
+      <li>independent or sequence confirmation of the putative delta-Gal80 edit, moving beyond the 0607 preliminary PCR conclusion;</li>
+      <li>confirmation of the delta-Gal4 edit, which remains unverified and is a separate unmet gate with no positive verification evidence in the audit;</li>
+      <li>integration of GPR2-GFP into the chassis, with evidence of receptor expression and correct localisation;</li>
+      <li>a controlled response to ascr#18, measured against vehicle and non-cognate controls;</li>
+      <li>a reporter response reproduced across independent replicates with matched controls;</li>
+      <li>characterised interference and recovery in a soil-derived matrix;</li>
+      <li>an end-to-end, blinded run that turns a prepared sample into a call scored against known inputs, with species context interpreted rather than assumed.</li>
+    </ol>
+  </div>
+</section>
+<section id="gates" data-toc="Gate status">
+  <p class="eyebrow sec-label">04  -  Gates</p>
+  <h2 class="section-title">Gate status</h2>
+  <div class="prose">
+    <p>The same links, written as gates. No gate is cleared, because the audited evidence does not yet meet its definition, and no performance figure, detection limit or replicate count is supported. Attempted build and verification work has begun, and the delta-Gal80 gate below has a preliminary PCR conclusion attached to it, but no gate below is met.</p>
+  </div>
+  <div style="overflow-x:auto;margin-top:22px"><table style="width:100%;border-collapse:collapse;font-size:.95rem">
+    <thead><tr>
+      <th style="text-align:left;padding:10px 12px;border-bottom:2px solid var(--iris,#6e4fb8)">Gate</th>
+      <th style="text-align:left;padding:10px 12px;border-bottom:2px solid var(--iris,#6e4fb8)">Status</th>
+      <th style="text-align:left;padding:10px 12px;border-bottom:2px solid var(--iris,#6e4fb8)">What would clear it</th>
+    </tr></thead>
+    <tbody>
+      <tr><td style="padding:10px 12px;border-bottom:1px solid var(--line,#e0d6c2);vertical-align:top">Independent confirmation of the putative delta-Gal80 edit</td><td style="padding:10px 12px;border-bottom:1px solid var(--line,#e0d6c2);vertical-align:top">Preliminary PCR conclusion recorded at 0607 on eight putative candidates; not yet independently confirmed</td><td style="padding:10px 12px;border-bottom:1px solid var(--line,#e0d6c2);vertical-align:top">Sequencing or an independent decisive method confirming the delta-Gal80 edit</td></tr>
+      <tr><td style="padding:10px 12px;border-bottom:1px solid var(--line,#e0d6c2);vertical-align:top">Confirmation of the delta-Gal4 edit</td><td style="padding:10px 12px;border-bottom:1px solid var(--line,#e0d6c2);vertical-align:top">Not yet demonstrated; delta-Gal4 remains unverified and the audit holds no positive Gal4 verification evidence</td><td style="padding:10px 12px;border-bottom:1px solid var(--line,#e0d6c2);vertical-align:top">A separate gate: sequencing or an independent decisive method confirming the delta-Gal4 edit</td></tr>
+      <tr><td style="padding:10px 12px;border-bottom:1px solid var(--line,#e0d6c2);vertical-align:top">GPR2-GFP integration and receptor expression</td><td style="padding:10px 12px;border-bottom:1px solid var(--line,#e0d6c2);vertical-align:top">Not yet demonstrated</td><td style="padding:10px 12px;border-bottom:1px solid var(--line,#e0d6c2);vertical-align:top">GPR2-GFP integrated and the receptor shown present and correctly located in the chassis</td></tr>
+      <tr><td style="padding:10px 12px;border-bottom:1px solid var(--line,#e0d6c2);vertical-align:top">Controlled ligand response</td><td style="padding:10px 12px;border-bottom:1px solid var(--line,#e0d6c2);vertical-align:top">Not yet demonstrated</td><td style="padding:10px 12px;border-bottom:1px solid var(--line,#e0d6c2);vertical-align:top">A response to ascr#18 above vehicle and non-cognate controls</td></tr>
+      <tr><td style="padding:10px 12px;border-bottom:1px solid var(--line,#e0d6c2);vertical-align:top">Reporter response with replicates</td><td style="padding:10px 12px;border-bottom:1px solid var(--line,#e0d6c2);vertical-align:top">Not yet demonstrated</td><td style="padding:10px 12px;border-bottom:1px solid var(--line,#e0d6c2);vertical-align:top">Reporter output above matched controls, reproduced across independent replicates</td></tr>
+      <tr><td style="padding:10px 12px;border-bottom:1px solid var(--line,#e0d6c2);vertical-align:top">Matrix interference and recovery</td><td style="padding:10px 12px;border-bottom:1px solid var(--line,#e0d6c2);vertical-align:top">Not yet demonstrated</td><td style="padding:10px 12px;border-bottom:1px solid var(--line,#e0d6c2);vertical-align:top">Recovery and interference characterised in soil-derived samples versus clean buffer</td></tr>
+      <tr><td style="padding:10px 12px;vertical-align:top">End-to-end blinded classification</td><td style="padding:10px 12px;vertical-align:top">Not yet demonstrated</td><td style="padding:10px 12px;vertical-align:top">A blinded sample-to-call run scored against known inputs</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout callout--warn" style="margin-top:24px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 16H3z"/><line x1="12" y1="9" x2="12" y2="14"/><circle cx="12" cy="17" r=".6" fill="currentColor"/></svg><div><b>No gate is cleared yet</b><p>Proof of concept means the whole chain shown to work from sample to call. At present it is a plan, with an early preliminary PCR conclusion attached to the putative delta-Gal80 gate alone. The receptor step is unresolved in particular: there is no evidence that Gpr2 or Gpr3 responds to ascr#18. This page stays marked as not yet demonstrated until the gates above are met with data. Current evidence status is tracked on the <a href="../pages/results.html">Results</a> page.</p></div></div>
+</section>
+<section id="refs" data-toc="Sources">
+  <p class="eyebrow sec-label">05  -  Sources</p>
+  <h2 class="section-title">References</h2>
+  <ol class="refs">
+    <li>Choe A, et al. Ascaroside signaling is widely conserved among nematodes. <i>Current Biology</i> 22(9):772-780 (2012). <a href="https://doi.org/10.1016/j.cub.2012.03.024">doi:10.1016/j.cub.2012.03.024</a>.</li>
+    <li>Kuo CY, et al. The nematode-trapping fungus <em>Arthrobotrys oligospora</em> detects prey pheromones via G protein-coupled receptors. <i>Nature Microbiology</i> 9:1738-1751 (2024). <a href="https://doi.org/10.1038/s41564-024-01679-w">doi:10.1038/s41564-024-01679-w</a>. Reports Gpr2 and Gpr3 detecting ascr#3 and ascr#7, not ascr#18.</li>
+    <li>Yang B, et al. Nematode pheromones: structures and functions. <i>Molecules</i> 28(5):2409 (2023). <a href="https://doi.org/10.3390/molecules28052409">doi:10.3390/molecules28052409</a>.</li>
+  </ol>
+</section>

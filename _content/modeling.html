@@ -4,10 +4,96 @@ route: model
 crumbs: Lab / Modeling
 eyebrow: Dry lab  /  Modeling
 heading: Modelling the <span class='ink-accent'>signal</span>
-sub: The mathematics and simulation that guided the design and explained the data.
-meta: Reading=6 min | Tools=fill in
+sub: A conceptual teaching skeleton that exposes unknowns before any solver, calibration, or project prediction exists.
+meta: Stage=Conceptual | Solver=Not implemented
 -->
-<section id="why" data-toc="Why we modelled"><p class="eyebrow sec-label">01  -  Motivation</p><h2 class="section-title">What the model is for</h2><div class="prose"><p>Explain the questions the model answers: predicting sensitivity, choosing parameters, or interpreting results  -  and how it fed back into design.</p></div></section>
-<section id="model" data-toc="The model"><p class="eyebrow sec-label">02  -  Model</p><h2 class="section-title">Assumptions & equations</h2><div class="prose"><p>State the model type, key assumptions, and governing equations.</p><p>Use inline code for variables, e.g. <code>k_on</code>, <code>k_cat</code>.</p></div><figure class="figure" style="margin-top:26px"><div class="figure__media"><svg viewBox="0 0 600 200" style="max-width:560px" aria-hidden="true"><rect x="20" y="30" width="560" height="140" rx="14" fill="none" stroke="#9a7a6b" stroke-dasharray="6 7"/><text x="300" y="105" text-anchor="middle" font-family="Space Mono,monospace" font-size="13" fill="#9a7a6b">figure placeholder</text></svg></div><figcaption><b>Fig 1</b> Model schematic / equation system.</figcaption></figure><p class="placeholder-tag">Insert equations and assumptions</p></section>
-<section id="results" data-toc="Predictions vs data"><p class="eyebrow sec-label">03  -  Results</p><h2 class="section-title">Did reality agree?</h2><figure class="figure" style="margin-top:26px"><div class="figure__media"><svg viewBox="0 0 600 200" style="max-width:560px" aria-hidden="true"><rect x="20" y="30" width="560" height="140" rx="14" fill="none" stroke="#9a7a6b" stroke-dasharray="6 7"/><text x="300" y="105" text-anchor="middle" font-family="Space Mono,monospace" font-size="13" fill="#9a7a6b">figure placeholder</text></svg></div><figcaption><b>Fig 2</b> Model prediction overlaid on experimental data.</figcaption></figure><div class="prose"><p>Compare predictions with measurements and discuss the fit.</p></div><div class="callout callout--tip" style="margin-top:24px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10c.7.7 1 1.3 1 2h6c0-.7.3-1.3 1-2a6 6 0 0 0-4-10z"/></svg><div><b>Close the loop</b><p>The strongest modelling sections show the model changing a real design decision.</p></div></div></section>
-<section id="refs" data-toc="References"><p class="eyebrow sec-label">04  -  Sources</p><h2 class="section-title">References</h2><ol class="refs"><li>Modelling method / parameter source. <span class="placeholder-tag">replace</span></li></ol></section>
+<section id="status" data-toc="Current status">
+  <p class="eyebrow sec-label">01  -  Status</p>
+  <h2 class="section-title">A preparation layer, not a finished model</h2>
+  <div class="prose">
+    <p>The work documented here is a conceptual model-preparation and teaching layer. The repository contains no runnable ODE solver, simulation notebook, parameter file, fitting code, or calibrated model artifact. No equation on this page has produced a project result or guided a design decision.</p>
+    <p>The value of this stage is narrower but still useful: it makes the proposed signal chain explicit, separates algebraic relations from changing states, and turns missing biological evidence into a visible measurement agenda. It also prevents an attractive diagram from being mistaken for an implemented sensing system.</p>
+  </div>
+  <div class="callout callout--warn" style="margin-top:24px">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 16H3z"/><line x1="12" y1="9" x2="12" y2="14"/><circle cx="12" cy="17" r=".6" fill="currentColor"/></svg>
+    <div><b>Evidence boundary</b><p>Gpr2/Gpr3 response to ascr#18, receptor expression and localisation, pathway coupling, reporter selection, reporter output, and end-to-end sensing are all unresolved. The current skeleton cannot establish any of them.</p></div>
+  </div>
+</section>
+
+<section id="abstraction" data-toc="Question and abstraction">
+  <p class="eyebrow sec-label">02  -  Abstraction</p>
+  <h2 class="section-title">Which links would a future model need?</h2>
+  <div class="prose">
+    <p>The proposed abstraction asks how a symbolic ligand input might propagate through candidate receptor activity, proposed G-protein coupling, MAPK/Fus3 activity, a transcriptional layer, and a proposed reporter output. The internal explainer also considers Ste12 or a synthetic transcription factor and a possible GAL output layer. These are candidate mathematical layers, not selected or functional biological parts.</p>
+    <p>In the equations below, <code>L</code> is only a hypothetical ligand-input variable. It is not a measured ascr#18 concentration. Likewise, <code>R_active</code>, <code>G_on</code>, <code>M</code>, <code>TF</code>, <code>Prod</code>, <code>C</code>, and optional <code>P</code> are conceptual activity or output proxies. They have no supplied units, ranges, initial conditions, or measured identities.</p>
+  </div>
+  <div class="grid grid-3 reveal" data-stagger style="margin-top:26px">
+    <div class="card"><span class="card__ring"></span><h3>Recognition</h3><p>Candidate receptor activation is a proposed link. The algebraic expression does not demonstrate binding, occupancy, or response.</p></div>
+    <div class="card"><span class="card__ring"></span><h3>Coupling</h3><p>G-protein and MAPK/Fus3 activity are conceptual layers. Functional coupling has not been established for this project.</p></div>
+    <div class="card"><span class="card__ring"></span><h3>Output</h3><p>Transcriptional and visible-reporter layers remain proposals. No reporter has been selected or measured.</p></div>
+  </div>
+</section>
+
+<section id="skeleton" data-toc="Teaching skeleton">
+  <p class="eyebrow sec-label">03  -  Equations</p>
+  <h2 class="section-title">A mixed algebraic/differential skeleton</h2>
+  <div class="prose">
+    <p>The team teaching skeleton is transcribed below without modification. It is not six ODEs and not a complete mechanistic model. <code>R_active</code>, <code>TF</code>, and <code>Prod</code> are algebraic relations; <code>G_on</code>, <code>M</code>, and <code>C</code> have differential equations.</p>
+  </div>
+  <pre><code>R_active = basal_R + E_R * L^n_R / (K_L^n_R + L^n_R)
+dG_on/dt = k_couple * R_active * (1 - G_on) - k_g_off * G_on
+dM/dt = k_m_on * G_on * (1 - M) - k_m_off * M
+TF = basal_TF + E_TF * M^n_TF / (K_TF^n_TF + M^n_TF)
+Prod = leak_out + copy_number * gain_out * TF / (K_out + TF)
+dC/dt = k_color_prod * Prod - k_color_loss * C</code></pre>
+  <div class="prose">
+    <p>The block organizes a possible sequence from input to output while leaving every parameter symbolic. Its algebraic relations do not establish equilibrium, timescale separation, conservation, or a unique biological interpretation.</p>
+    <h3 id="maturation" data-toc-sub="Alternative maturation layer">Alternative maturation layer</h3>
+    <p>The explainer supplies a second, optional output-layer formulation:</p>
+  </div>
+  <pre><code>dP/dt = protein_production - k_mature * P - k_deg_P * P
+dC/dt = k_mature * P - k_loss_C * C</code></pre>
+  <div class="prose">
+    <p>This optional block is a separate alternative. Its <code>dC/dt</code> replaces the simple <code>dC/dt</code> in the main block when the maturation split is considered; the two forms are not simultaneous equations in one system. The evidence supplies no mapping between <code>protein_production</code> and <code>Prod</code>, or between <code>k_loss_C</code> and <code>k_color_loss</code>.</p>
+  </div>
+</section>
+
+<section id="provenance" data-toc="Parameter provenance">
+  <p class="eyebrow sec-label">04  -  Provenance</p>
+  <h2 class="section-title">A future ledger for every parameter</h2>
+  <div class="prose">
+    <p>The explainer proposes five bookkeeping labels: <code>fixed from source</code>, <code>literature prior</code>, <code>scenario prior</code>, <code>wet-lab required</code>, and <code>do-not-use</code>. They are categories for future evidence tracking, not assignments already made.</p>
+    <p>No final parameter table or parameter-to-category mapping is supplied. No named parameter can therefore be described as fixed, measured, or estimated. A scenario prior would be an exploratory assumption only; it could not become a project conclusion or performance claim.</p>
+  </div>
+  <div class="grid grid-3" data-stagger style="margin-top:26px">
+    <div class="card"><h3>Trace</h3><p>Record the exact source and interpretation for any future quantity.</p></div>
+    <div class="card"><h3>Separate</h3><p>Keep literature information, exploratory assumptions, and team measurements distinct.</p></div>
+    <div class="card"><h3>Exclude</h3><p>Mark unusable quantities explicitly instead of silently carrying them into later work.</p></div>
+  </div>
+</section>
+
+<section id="gates" data-toc="Calibration gates">
+  <p class="eyebrow sec-label">05  -  Gates</p>
+  <h2 class="section-title">What must exist before calculation</h2>
+  <div class="prose">
+    <p>Before an executable simulation could be implemented, the formulation, variable meanings, units, provenance, initial conditions, and verification tests would need to be specified. Before later calibration or validation, the biological chain would need controlled measurements rather than assumed links.</p>
+  </div>
+  <ul class="timeline" style="margin-top:24px">
+    <li><span class="when">Component evidence</span><h4>Recognition and coupling</h4><p>Direct ligand-response controls, no-ligand basal leak, non-cognate controls, receptor expression and localisation, and receptor/G-protein coupling evidence.</p></li>
+    <li><span class="when">Dynamic evidence</span><h4>Input and time</h4><p>Ligand dose-response and time-course measurements collected with defined controls and reproducible sample handling.</p></li>
+    <li><span class="when">Output evidence</span><h4>Reporter and complete chain</h4><p>Reporter selection, gain, maturation and loss measurements, followed by replicated end-to-end measurements with matched controls.</p></li>
+  </ul>
+  <div class="callout callout--note" style="margin-top:24px">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="13"/><circle cx="12" cy="16.5" r=".6" fill="currentColor"/></svg>
+    <div><b>No numerical gate yet</b><p>The evidence supplies no pass/fail threshold for moving from concept to implementation, calibration, or validation. Those criteria must follow the measurement definitions and intended use.</p></div>
+  </div>
+</section>
+
+<section id="scope" data-toc="What it can answer">
+  <p class="eyebrow sec-label">06  -  Scope</p>
+  <h2 class="section-title">Useful for questions, not performance claims</h2>
+  <div class="prose">
+    <p>The current skeleton can expose unknowns, show where experimental measurements would enter, and help keep alternative output formulations separate. It cannot predict sensor performance, establish receptor response, quantify sensitivity or specificity, determine a limit of detection or dynamic range, compare prediction with data, or justify a design decision.</p>
+    <p>A later model should be presented as a project result only after its implementation, provenance, verification, calibration, and comparison evidence are available. Until then, this page records the conceptual foundation and the conditions required to progress responsibly.</p>
+  </div>
+</section>

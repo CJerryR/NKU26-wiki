@@ -1,204 +1,129 @@
 <!--META
 layout: home
 title: NKU iGEM 2026
-desc: NKU iGEM 2026  -  a synthetic-biology biosensor that detects soybean cyst and root-knot nematodes in soil before crop damage appears.
+desc: NKU iGEM 2026 - an early-warning biosensor concept asking whether engineered yeast could be designed to read nematode-derived ascaroside signals from soil.
 -->
-<header class="hero">
-  <!-- clean deep-soil backdrop -->
-  <div class="hero__bg" aria-hidden="true"></div>
+<header class="liquid-hero" data-liquid-home>
+  <div class="liquid-hero__noise" aria-hidden="true"></div>
+  <div class="liquid-hero__aurora" aria-hidden="true"></div>
 
-  <!-- faint hidden nematodes (always dim) -->
-  <div class="hero__field" aria-hidden="true">
-    <svg width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
-      <defs><pattern id="wormsA" width="150" height="118" patternUnits="userSpaceOnUse" patternTransform="rotate(-9)">
-        <path d="M14,58 q18,-26 36,0 t36,0" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/>
-        <circle cx="120" cy="26" r="3.4" fill="currentColor"/>
-        <path d="M86,92 q12,-18 24,0 t24,0" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" opacity=".7"/>
-      </pattern></defs>
-      <rect width="100%" height="100%" fill="url(#wormsA)"/>
-    </svg>
-  </div>
-  <!-- the same field, bright, revealed only inside the lens mask -->
-  <div class="hero__field--lit" aria-hidden="true">
-    <svg width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
-      <defs><pattern id="wormsB" width="150" height="118" patternUnits="userSpaceOnUse" patternTransform="rotate(-9)">
-        <path d="M14,58 q18,-26 36,0 t36,0" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/>
-        <circle cx="120" cy="26" r="3.4" fill="currentColor"/>
-        <path d="M86,92 q12,-18 24,0 t24,0" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" opacity=".7"/>
-      </pattern></defs>
-      <rect width="100%" height="100%" fill="url(#wormsB)"/>
-    </svg>
-  </div>
-
-  <!-- swimming nematodes injected here by JS -->
-  <div class="hero__worm" aria-hidden="true"></div>
-  <div class="hero__lens" aria-hidden="true"></div>
-  <div class="hero__dot" aria-hidden="true"></div>
-  <div class="hero__grain" aria-hidden="true"></div>
-
-  <div class="hero__inner">
-    <p class="hero__eyebrow eyebrow">Nankai University &middot; iGEM 2026</p>
-    <h1 class="hero__title">
-      <span class="row"><span>The soil is</span></span>
-      <span class="row"><span class="is-italic"><em>hiding</em></span></span>
-      <span class="row"><span class="is-grad">something.</span></span>
+  <section class="liquid-hero__copy" aria-labelledby="home-title">
+    <p class="liquid-kicker">NKU-iGEM26 / SUBSURFACE</p>
+    <h1 id="home-title" class="liquid-title">
+      <span>The soil</span>
+      <span>already <em>knows.</em></span>
     </h1>
-    <p class="hero__sub">Two microscopic nematodes can damage crops underground, invisibly, and often before the field shows symptoms. We are engineering a biosensor that names them <strong style="color:var(--cream)">before</strong> the damage shows.</p>
-    <div class="hero__species">
-      <span class="chip"><i></i>Heterodera glycines &middot; soybean cyst</span>
-      <span class="chip"><i></i>Meloidogyne incognita &middot; root-knot</span>
+    <p class="liquid-deck">We are exploring whether engineered yeast can read nematode ascaroside clues as a possible upstream signal before visible root damage.</p>
+    <div class="liquid-actions" aria-label="Homepage actions">
+      <a class="liquid-btn liquid-btn--primary" href="pages/description.html">
+        <span>Open the case</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+      </a>
+      <a class="liquid-btn liquid-btn--ghost" href="engineering/">Trace the design</a>
     </div>
-    <div class="hero__cta">
-      <a href="pages/description.html" class="btn btn--primary">Read the investigation
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-      <a href="#how" class="btn btn--ghost">How detection works</a>
-    </div>
-  </div>
+  </section>
 
-  <aside class="hero-map" aria-label="Subsurface evidence map">
-    <div class="hero-map__head">
-      <span><i></i>Subsurface Evidence Map</span>
-      <b>scan 03</b>
+  <section class="liquid-visual" aria-label="Subsurface case file">
+    <div class="case-stack" data-liquid-depth>
+      <div class="case-glass case-glass--back" data-depth="0.28" aria-hidden="true"></div>
+      <article class="case-glass case-file" data-depth="0.58" aria-label="Subsurface case file showing an ascaroside clue, a candidate GPCR, and an under-test reporter concept">
+        <div class="case-file__pin" aria-hidden="true"></div>
+        <div class="case-file__grid" aria-hidden="true"></div>
+        <div class="case-file__label">Case no. 26-001</div>
+        <svg class="case-file__trace" viewBox="0 0 640 560" aria-hidden="true">
+          <defs>
+            <filter id="signalGlow" x="-35%" y="-35%" width="170%" height="170%">
+              <feGaussianBlur stdDeviation="8" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <path class="trace trace--soil" d="M68 354 C158 310 210 370 296 328 C392 282 448 232 558 266"/>
+          <path class="trace trace--signal" d="M112 380 C170 332 226 374 276 306 C326 238 338 156 432 126 C498 104 560 136 590 196"/>
+          <path class="trace trace--orbit" d="M363 207 C461 160 555 214 560 314 C564 410 477 464 386 426 C300 390 282 278 363 207Z"/>
+          <g class="trace-dots">
+            <circle cx="112" cy="380" r="9"/>
+            <circle cx="223" cy="353" r="9"/>
+            <circle cx="276" cy="306" r="9"/>
+            <circle cx="365" cy="208" r="9"/>
+          </g>
+        </svg>
+        <div class="case-note case-note--a">ascaroside clue</div>
+        <div class="case-note case-note--b">candidate GPCR</div>
+        <div class="case-stamp">under test</div>
+      </article>
+      <aside class="case-glass case-card" data-depth="0.86">
+        <p>The suspect: invisible.</p>
+        <p>The signal: chemical.</p>
+        <p>The proposed reader: engineered yeast, still a design hypothesis.</p>
+      </aside>
     </div>
-    <div class="soil-core">
-      <svg class="soil-core__waves" viewBox="0 0 620 520" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0 86 C116 44 204 124 318 88 C434 52 524 128 620 74 L620 138 C500 172 426 118 312 150 C186 184 96 124 0 162 Z"/>
-        <path d="M0 218 C122 182 220 260 346 226 C466 194 534 250 620 214 L620 286 C494 318 404 260 286 302 C160 344 88 270 0 312 Z"/>
-        <path d="M0 390 C106 360 188 424 306 392 C426 360 500 414 620 380 L620 520 L0 520 Z"/>
-      </svg>
-      <div class="detection-route" aria-hidden="true"><span class="route__glow"></span></div>
-      <span class="evidence-pin evidence-pin--sample is-lit" data-evidence-pin data-route-y="18%" style="--pin-x:58%;--pin-y:22%"><span></span><b>Soil sample</b></span>
-      <span class="evidence-pin evidence-pin--target" data-evidence-pin data-route-y="52%" style="--pin-x:46%;--pin-y:54%"><span></span><b>Target sequence</b></span>
-      <span class="evidence-pin evidence-pin--readout" data-evidence-pin data-route-y="78%" style="--pin-x:62%;--pin-y:78%"><span></span><b>Field readout</b></span>
-      <div class="assay-strip" aria-hidden="true"><i></i></div>
-    </div>
-  </aside>
+  </section>
 
-  <p class="hero__hint">Move your cursor across the soil  -  <b>something is down there.</b></p>
-  <div class="hero__scroll" aria-hidden="true"><span class="mouse"></span>Scroll</div>
+  <a class="liquid-scroll" href="#review-paths" aria-label="Scroll to review paths"><span></span></a>
 </header>
 
-<!-- THE CASE (loam) -->
-<section class="band band--paper home-casebook" style="padding-block:clamp(72px,9vw,118px)">
-  <div class="wrap">
-    <div class="band-head reveal">
-      <p class="eyebrow">01  -  The case</p>
-      <h2 class="section-title">A pest you never see, on a bill you always pay.</h2>
-      <p class="lead">Plant-parasitic nematodes are among the most overlooked threats in agriculture. They live in the soil, feed on roots, and can spread before symptoms reach the surface. This section frames the project case and leaves a clear slot for final burden-of-disease evidence and regional context.</p>
+<div class="liquid-story" data-mascot-runner-stage>
+  <div class="liquid-mascot-runner" data-mascot-runner aria-hidden="true">
+    <span class="liquid-mascot-runner__aura"></span>
+    <div class="liquid-mascot-runner__model" data-mascot-3d>
+      <canvas></canvas>
+      <img src="img/mascot-trim.png" alt="" />
     </div>
-    <div class="stat-grid reveal" data-stagger>
-      <div class="stat stat--pending"><div class="stat__num">Data</div><div class="stat__label">Global crop-loss figure and source</div></div>
-      <div class="stat stat--pending"><div class="stat__num">Local</div><div class="stat__label">Regional crop and field relevance</div></div>
-      <div class="stat"><div class="stat__num">2</div><div class="stat__label">Target species: soybean cyst and root-knot nematodes</div></div>
-      <div class="stat stat--pending"><div class="stat__num">Test</div><div class="stat__label">Final assay format, time-to-result, and detection limit</div></div>
-    </div>
+    <span class="liquid-mascot-runner__tag">proposed reader</span>
   </div>
-</section>
 
-<div class="ticker" style="background:var(--loam)" aria-hidden="true">
-  <div class="ticker__track">
-    <span>biosensing</span><i class="dot"></i><span>root-knot</span><i class="dot"></i><span>soybean cyst</span><i class="dot"></i><span>early detection</span><i class="dot"></i><span>synthetic biology</span><i class="dot"></i>
-    <span>biosensing</span><i class="dot"></i><span>root-knot</span><i class="dot"></i><span>soybean cyst</span><i class="dot"></i><span>early detection</span><i class="dot"></i><span>synthetic biology</span><i class="dot"></i>
-  </div>
-</div>
-
-<div class="strata strata--down" aria-hidden="true">
-  <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-    <rect width="1440" height="120" fill="#191222"/>
-    <path fill="#241830" d="M0,60 C240,18 420,96 720,64 C1020,32 1230,92 1440,52 L1440,120 L0,120 Z"/>
-    <path fill="#f7f2e8" d="M0,86 C260,52 470,110 720,86 C1010,58 1240,108 1440,82 L1440,120 L0,120 Z"/>
-  </svg>
-</div>
-
-<!-- HOW IT WORKS (paper) -->
-<section class="band band--paper" id="how">
-  <div class="wrap">
-    <div class="band-head reveal">
-      <p class="eyebrow">02  -  How detection works</p>
-      <h2 class="section-title">Three moves from a clod of soil to a clear answer.</h2>
-      <p class="lead">Our detector reads the molecular fingerprints these nematodes leave in soil and turns them into a signal anyone can interpret in the field  -  no lab, no microscope, no PhD required.</p>
-    </div>
-    <div class="feature-list reveal" data-stagger>
-      <div class="feature">
-        <span class="feature__idx">01</span>
-        <div><h3>Sample</h3><p>A pinch of field soil goes into a tube. Target nucleic acids are released and concentrated on the spot.</p></div>
-        <a class="feature__go" href="pages/description.html" aria-label="Description"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+  <section class="liquid-section liquid-section--dark" id="review-paths">
+    <div class="liquid-wrap liquid-review">
+      <div class="liquid-section__head reveal">
+        <p class="liquid-kicker">Minimal wiki map</p>
+        <h2>Six doors, one evidence trail.</h2>
+        <p>Each door opens one part of the investigation: the problem and its targets, the engineering path, what the records do and do not show, the human context, safety boundaries, and how credit is recorded.</p>
       </div>
-      <div class="feature">
-        <span class="feature__idx">02</span>
-        <div><h3>Amplify &amp; recognise</h3><p>An engineered recognition module locks onto sequences unique to each species and triggers an amplifying biological circuit.</p></div>
-        <a class="feature__go" href="engineering/" aria-label="Engineering"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
-      </div>
-      <div class="feature">
-        <span class="feature__idx">03</span>
-        <div><h3>Read the verdict</h3><p>A colour or fluorescence readout reports which nematode is present  -  and roughly how much  -  within the hour.</p></div>
-        <a class="feature__go" href="pages/results.html" aria-label="Results"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+      <div class="review-grid reveal" data-stagger>
+        <a class="review-tile" href="pages/description.html"><span>01</span><b>Project</b><p>Problem, targets, and why soil-borne chemical signals matter.</p></a>
+        <a class="review-tile" href="engineering/"><span>02</span><b>Engineering</b><p>The design-build-test-learn path for the yeast reporter concept.</p></a>
+        <a class="review-tile" href="pages/results.html"><span>03</span><b>Results</b><p>Documented observations, negative and inconclusive checks, limits, and validation gates.</p></a>
+        <a class="review-tile" href="human-practices/"><span>04</span><b>Human Practices</b><p>Engagement still to be documented, and the design questions it has to answer.</p></a>
+        <a class="review-tile" href="safety-and-security/"><span>05</span><b>Safety</b><p>Responsible boundaries for engineered yeast and any proposed soil-facing use.</p></a>
+        <a class="review-tile" href="pages/attribution.html"><span>06</span><b>Team &amp; Attributions</b><p>Contributions and outside help, recorded as each is confirmed.</p></a>
       </div>
     </div>
-    <p class="placeholder-tag">Swap in your real assay chemistry &amp; circuit once finalised</p>
-  </div>
-</section>
+  </section>
 
-<!-- EXPLORE (paper-2) -->
-<section class="band band--paper-2">
-  <div class="wrap">
-    <div class="band-head reveal">
-      <p class="eyebrow">03  -  The casebook</p>
-      <h2 class="section-title">Open the wiki.</h2>
-      <p class="lead">Everything we did, evidenced and cross-referenced. Start anywhere.</p>
-    </div>
-    <div class="grid grid-3 reveal" data-stagger>
-      <a class="card" href="pages/description.html"><span class="card__ring"></span>
-        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.7" y2="16.7"/></svg></div>
-        <h3>Description</h3><p>The problem, the suspects, and the idea that catches them.</p></a>
-      <a class="card" href="contribution/"><span class="card__ring"></span>
-        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v4l-5 9a3 3 0 0 0 3 4h10a3 3 0 0 0 3-4l-5-9V3"/><line x1="8" y1="3" x2="16" y2="3"/></svg></div>
-        <h3>Contribution</h3><p>What we leave for future teams to reuse and extend.</p></a>
-      <a class="card" href="engineering/"><span class="card__ring"></span>
-        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><polyline points="21 4 21 9 16 9"/></svg></div>
-        <h3>Engineering</h3><p>Design-build-test-learn, cycle by documented cycle.</p></a>
-      <a class="card" href="model/"><span class="card__ring"></span>
-        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M5 8l-2 4 2 4M19 8l2 4-2 4M9 22h6"/><circle cx="12" cy="13" r="3"/></svg></div>
-        <h3>Model</h3><p>The assumptions, predictions, and design feedback from dry lab.</p></a>
-      <a class="card" href="human-practices/"><span class="card__ring"></span>
-        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M17 5a3 3 0 0 1 0 6M16 20a6 6 0 0 0-2-4.5"/></svg></div>
-        <h3>Human Practices</h3><p>Listening to farmers, agronomists, and regulators.</p></a>
-      <a class="card" href="pages/results.html"><span class="card__ring"></span>
-        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="20" x2="20" y2="20"/><rect x="6" y="11" width="3" height="6"/><rect x="11" y="7" width="3" height="10"/><rect x="16" y="13" width="3" height="4"/></svg></div>
-        <h3>Results</h3><p>What the detector actually did at the bench.</p></a>
-    </div>
-  </div>
-</section>
-
-<div class="strata strata--down" aria-hidden="true">
-  <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-    <rect width="1440" height="120" fill="#efe6d6"/>
-    <path fill="#241830" d="M0,64 C240,30 470,100 720,66 C1010,28 1240,96 1440,56 L1440,120 L0,120 Z"/>
-    <path fill="#191222" d="M0,90 C260,58 470,112 720,90 C1010,62 1240,110 1440,84 L1440,120 L0,120 Z"/>
-  </svg>
-</div>
-
-<!-- MEET THE DETECTIVE (loam) -->
-<section class="band band--loam" style="padding-block:clamp(70px,9vw,120px)">
-  <div class="wrap">
-    <div class="split split--media-first">
-      <div class="split__media reveal-l" style="position:relative;display:grid;place-items:center;min-height:320px">
-        <svg viewBox="0 0 400 400" style="position:absolute;width:min(100%,420px)" aria-hidden="true">
-          <g fill="none" stroke="#9b7fe0" stroke-opacity=".25"><circle cx="200" cy="200" r="120"/><circle cx="200" cy="200" r="160"/><circle cx="200" cy="200" r="195"/></g>
-        </svg>
-        <img src="img/mascot.png" alt="The NKU iGEM mascot  -  a round detective with a deerstalker hat and magnifying glass" style="position:relative;width:min(78%,300px);filter:drop-shadow(0 22px 40px rgba(0,0,0,.45));animation:bob 4s var(--ease) infinite" />
+  <section class="liquid-section liquid-section--soil">
+    <div class="liquid-wrap liquid-split">
+      <div class="liquid-section__head reveal-l">
+        <p class="liquid-kicker">Mechanism, not a product claim</p>
+        <h2>A signal chain we can test, step by step.</h2>
+        <p>SUBSURFACE is an investigation rather than a device: literature-grounded ascaroside cues, receptor candidates, a yeast signalling chassis, and a reporter readout still to be chosen and tested.</p>
       </div>
-      <div class="split__body reveal-r flow">
-        <p class="eyebrow">04  -  The investigator</p>
-        <h2 class="section-title">Meet our detective.</h2>
-        <p class="lead">Every good case needs a sharp eye. Ours wears a deerstalker, carries a magnifying glass, and never lets a nematode slip past unnoticed  -  the face of a project about seeing the unseen.</p>
-        <p style="color:var(--cream-2)">Behind the mascot is a team of Nankai University students from the life sciences and beyond, who spent a year turning a soil problem into a piece of synthetic biology.</p>
-        <div class="hero__cta" style="opacity:1;transform:none;margin-top:28px">
-          <a href="pages/team-members.html" class="btn btn--iris">Meet the team
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-          <a href="human-practices/" class="btn btn--ghost">Our human practices</a>
+      <ol class="signal-ladder reveal-r" aria-label="Project signal chain">
+        <li class="ladder-step"><span>cue</span><b>Nematode ascarosides</b><p>Chemical trail in soil, treated as a literature-derived target input.</p></li>
+        <li class="ladder-step"><span>receptor</span><b>Heterologous GPCR candidate</b><p>A candidate recognition layer; its ascr#18 response is untested and must be measured directly.</p></li>
+        <li class="ladder-step"><span>chassis</span><b>Engineered yeast pathway</b><p>A synthetic-biology platform intended to couple receptor activation into a cellular signal, still under construction.</p></li>
+        <li class="ladder-step"><span>readout</span><b>Proposed reporter readout</b><p>Unselected: the measurement layer where results and limits will be recorded.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="liquid-section liquid-section--paper">
+    <div class="close-stage" aria-hidden="true">
+      <span class="close-stage__horizon"></span>
+      <span class="close-stage__grid"></span>
+    </div>
+    <div class="liquid-wrap">
+      <div class="liquid-close liquid-close-card">
+        <span class="liquid-close-card__band" aria-hidden="true"></span>
+        <div class="liquid-close__copy">
+          <p class="liquid-kicker reveal">Case file stays open</p>
+          <h2 class="reveal">Follow the biology below the surface.</h2>
+          <p class="reveal">The questions stay open: whether the candidate GPCR responds to ascr#18 at all, whether a rewired yeast pathway could carry that signal, and what a reporter would have to show to be trusted. Negative and inconclusive records are part of the trail.</p>
+          <div class="liquid-actions reveal" aria-label="Final homepage links">
+            <a class="liquid-btn liquid-btn--primary" href="pages/design.html">Read the design</a>
+            <a class="liquid-btn liquid-btn--ghost liquid-btn--dark" href="pages/team-members.html">Meet the team</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</div>

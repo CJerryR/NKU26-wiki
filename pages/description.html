@@ -4,18 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Description  /  NKU iGEM 2026</title>
-  <meta name="description" content="NKU iGEM 2026  -  a synthetic-biology biosensor for early detection of plant-parasitic nematodes." />
+  <meta name="description" content="NKU iGEM 2026 - a synthetic-biology sensing concept for plant-parasitic nematode-associated signals, under investigation." />
   <meta name="theme-color" content="#191222" />
   <link rel="icon" href="../img/logo.svg" type="image/svg+xml" />
   <link rel="preload" href="../fonts/spline-variable.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="../fonts/fraunces-variable.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="../css/style.css" />
 </head>
-<body data-path-prefix="../">
+<body class="page-standard" data-path-prefix="../">
   <a class="skip" href="#main">Skip to content</a>
   <div class="scroll-progress" aria-hidden="true"></div>
 
   <nav class="nav" aria-label="Primary">
+  <div class="nav-veil" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
   <div class="nav-inner">
     <a href="../index.html" class="nav-brand" aria-label="NKU iGEM 2026 home">
       <img src="../img/logo.svg" alt="" width="46" height="46" />
@@ -26,17 +27,14 @@
 
     <ul class="nav-links">
       <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
-      <li class="nav-item"><a href="../pages/description.html" class="nav-link">Description</a></li>
-      <li class="nav-item"><a href="../contribution/" class="nav-link">Contribution</a></li>
+      <li class="nav-item"><a href="../pages/description.html" class="nav-link">Project</a></li>
       <li class="nav-item"><a href="../engineering/" class="nav-link">Engineering</a></li>
+      <li class="nav-item"><a href="../pages/results.html" class="nav-link">Results</a></li>
       <li class="nav-item"><a href="../human-practices/" class="nav-link">Human Practices</a></li>
-      <li class="nav-item"><a href="../education/" class="nav-link">Education</a></li>
-      <li class="nav-item"><a href="../model/" class="nav-link">Model</a></li>
-      <li class="nav-item"><a href="../software/" class="nav-link">Software</a></li>
       <li class="nav-item"><a href="../safety-and-security/" class="nav-link">Safety</a></li>
 
       <li class="nav-item">
-        <button type="button" class="nav-link" aria-haspopup="true" aria-expanded="false">Team
+        <button type="button" class="nav-link" aria-haspopup="true" aria-expanded="false">Team &amp; Attributions
           <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0l5 6 5-6z"/></svg></button>
         <div class="mega">
           <div class="mega-col">
@@ -45,17 +43,23 @@
             <a href="../pages/attribution.html"><span class="dot"></span>Attributions</a>
             <a href="../pages/team-members.html#affiliation"><span class="dot"></span>Nankai University</a>
           </div>
+          <div class="mega-col">
+            <h4>Resources</h4>
+            <a href="../contribution/"><span class="dot"></span>Contribution</a>
+            <a href="../pages/notebook.html"><span class="dot"></span>Notebook</a>
+            <a href="../pages/parts.html"><span class="dot"></span>Parts</a>
+          </div>
           <a class="mega-feature" href="../pages/attribution.html">
             <span class="tag">Transparency</span>
-            <p>Team roles, support, and acknowledgements are kept visible.</p>
-            <small>Read attributions &rarr;</small>
+            <p>Current evidence status for team membership, roles, support, and acknowledgements.</p>
+            <small>Review verification status &rarr;</small>
             <img class="mascot-mini" src="../img/mascot-trim.png" alt="" />
           </a>
         </div>
       </li>
 
       <li class="nav-item nav-item--search">
-        <button type="button" class="nav-link nav-search-trigger" data-search-open aria-haspopup="dialog">
+        <button type="button" class="nav-link nav-search-trigger" data-search-open aria-haspopup="dialog" aria-controls="site-search" aria-expanded="false">
           <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.5" y2="16.5"/></svg>
           <span class="sr-only">Search</span>
         </button>
@@ -72,8 +76,8 @@
       <nav class="phero__crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>/</span>Project<span>/</span><span>Description</span></nav>
       <p class="eyebrow" style="margin-bottom:14px">Project  /  Case file 01</p>
       <h1>What we are <span class="ink-accent">solving</span></h1>
-      <p class="phero__sub">Two soil-borne nematodes, visible damage only after infection, and a field decision that needs earlier evidence. This is the problem  -  and the idea that answers it.</p>
-      <div class="phero__meta"><span>Track<b>Diagnostics / Agriculture</b></span><span>Reading<b>6 min</b></span><span>Status<b>Living document</b></span></div>
+      <p class="phero__sub">Two soil-borne nematodes, delayed visible symptoms, and a proposed sensing route whose biological links still require validation.</p>
+      <div class="phero__meta"><span>Track<b>Diagnostics / Agriculture</b></span><span>Reading<b>7 min</b></span><span>Status<b>Living document</b></span></div>
     </div>
   </header>
   <div class="strata strata--down" aria-hidden="true"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><rect width="1440" height="120" fill="#191222"/><path fill="#241830" d="M0,60 C240,18 420,96 720,64 C1020,32 1230,92 1440,52 L1440,120 L0,120 Z"/><path fill="#f7f2e8" d="M0,86 C260,52 470,110 720,86 C1010,58 1240,108 1440,82 L1440,120 L0,120 Z"/></svg></div>
@@ -119,61 +123,124 @@
   <p class="eyebrow sec-label">01  -  Background</p>
   <h2 class="section-title">A threat that works underground</h2>
   <div class="prose">
-    <p>Plant-parasitic nematodes are microscopic roundworms that feed on plant roots. They are everywhere agriculture happens, they are invisible to the naked eye, and they are astonishingly destructive. Because the damage begins below the soil line, infestations are usually discovered only after yields have already collapsed.</p>
-    <p>Our project focuses on the two species that matter most to the crops grown around us  -  and to growers worldwide.</p>
+    <p>Plant-parasitic nematodes are microscopic roundworms that feed on plant roots. Because the damage begins below the soil line, infestations can remain unnoticed until above-ground symptoms and yield effects appear.</p>
+    <p>Our project focuses on two targets identified in the team's project materials: <em class="serif-italic">Heterodera glycines</em> and <em class="serif-italic">Meloidogyne incognita</em>. Internal literature notes associate the ascaroside <strong>ascr#18</strong> with both targets, but the underlying primary sources must be traced before that association can be treated as established.</p>
   </div>
 
   <div class="grid grid-2" data-stagger style="margin-top:30px">
     <div class="card card--num">
       <h3 id="suspect-glycines" data-toc-sub="Suspect  -  H. glycines"><em class="serif-italic">Heterodera glycines</em></h3>
-      <p><strong>The soybean cyst nematode.</strong> The single most damaging pathogen of soybean. Females swell into protective cysts packed with eggs that survive in soil for years, making it nearly impossible to eradicate once established.</p>
-      <aside class="content-slot" role="note"><span>Pending documentation</span><p>Team local incidence data &amp; a field photo</p></aside>
+      <p><strong>The soybean cyst nematode.</strong> A major pathogen of soybean. Females swell into protective cysts packed with eggs that can persist in soil between growing seasons, complicating control once the pest is established.</p>
+      <p>An internal literature lead reports the ascaroside <strong>ascr#18</strong> from <em class="serif-italic">H. glycines</em>. Because a traceable primary source is not supplied, this remains part of the candidate-analyte rationale rather than proof of a usable signal.</p>
     </div>
     <div class="card card--num">
       <h3 id="suspect-incognita" data-toc-sub="Suspect  -  M. incognita"><em class="serif-italic">Meloidogyne incognita</em></h3>
-      <p><strong>The southern root-knot nematode.</strong> A generalist that attacks thousands of plant species, forming the characteristic "knots" (galls) on roots that choke off water and nutrient flow.</p>
-      <aside class="content-slot" role="note"><span>Pending documentation</span><p>Host range &amp; a gall photo</p></aside>
+      <p><strong>The southern root-knot nematode.</strong> A generalist with a broad host range that forms characteristic "knots" (galls) on roots and disrupts plant function.</p>
+      <p>It has a broad host range. Separately, an internal research table describes <strong>ascr#18</strong> in entries for <em class="serif-italic">Meloidogyne</em> spp.; that genus-level lead still requires primary-source tracing before it is applied specifically to <em class="serif-italic">M. incognita</em>.</p>
     </div>
   </div>
 
   <div class="callout callout--note" style="margin-top:26px">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="13"/><circle cx="12" cy="16.5" r=".6" fill="currentColor"/></svg>
-    <div><b>Why these two?</b><p>Together they represent the two dominant strategies of plant-parasitic nematodes  -  sedentary cyst-formers and root-knot gall-formers. A detector that handles both covers the vast majority of field cases.</p></div>
+    <div><b>Why these two?</b><p>They represent two important sedentary endoparasitic strategies  -  cyst formation and root-knot gall formation. Internal notes link ascr#18 to <em class="serif-italic">Meloidogyne</em> entries and <em class="serif-italic">H. glycines</em>, but neither the taxonomic coverage nor a usable signal under the proposed sampling conditions has been established. Even if broad ascr#18 recognition proves possible, it would not identify either species on its own.</p></div>
   </div>
 </section>
 
 <section id="gap" data-toc="Why current tests fail">
   <p class="eyebrow sec-label">02  -  The gap</p>
-  <h2 class="section-title">Diagnosis today is slow, costly, and late</h2>
+  <h2 class="section-title">Diagnostic methods carry different trade-offs</h2>
   <div class="prose">
-    <p>Conventional nematode diagnosis depends on extracting worms from soil and identifying them under a microscope  -  a process that demands trained specialists, days of turnaround, and central laboratory infrastructure. For a smallholder farmer, that is rarely an option.</p>
+    <p>Some conventional workflows extract organisms from soil for morphological identification. These can require trained specialists, while molecular and field-oriented alternatives introduce different requirements and limitations.</p>
+    <p>Molecular and field methods exist, but the team's literature review found recurring trade-offs in workflow, equipment, cost, specificity, and sampling reliability. The table below summarises those method families without treating any one limitation as universal.</p>
   </div>
   <div class="grid grid-3" data-stagger style="margin-top:26px">
-    <div class="card"><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 16 14"/></svg></div><h3>Too slow</h3><p>Days to weeks between sampling and an answer  -  long after the planting decision has been made.</p></div>
-    <div class="card"><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><h3>Too costly</h3><p>Specialist labour and equipment put routine testing out of reach for most growers.</p></div>
-    <div class="card"><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.7" y2="16.7"/><line x1="11" y1="8" x2="11" y2="11.5"/></svg></div><h3>Too specialised</h3><p>Reliable identification still hinges on scarce taxonomic expertise.</p></div>
+    <div class="card"><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 16 14"/></svg></div><h3>Slow workflows</h3><p>Extraction, preparation, and identification can delay an actionable answer.</p></div>
+    <div class="card"><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><h3>Resource-intensive</h3><p>Several methods depend on specialist labour, instruments, or laboratory workflows.</p></div>
+    <div class="card"><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.7" y2="16.7"/><line x1="11" y1="8" x2="11" y2="11.5"/></svg></div><h3>Specialist interpretation</h3><p>Reliable identification can depend on taxonomic expertise or validated reference workflows.</p></div>
+  </div>
+
+  <figure class="figure" style="margin-top:26px">
+    <div style="overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:14px;min-width:520px">
+        <thead>
+          <tr>
+            <th style="text-align:left;padding:9px 12px;border-bottom:2px solid #6e4fb8;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;background:#efe6d6;color:#241c2b">Method family</th>
+            <th style="text-align:left;padding:9px 12px;border-bottom:2px solid #6e4fb8;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;background:#efe6d6;color:#241c2b">What it offers</th>
+            <th style="text-align:left;padding:9px 12px;border-bottom:2px solid #6e4fb8;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;background:#efe6d6;color:#241c2b">Field-readiness limitation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding:9px 12px;border-bottom:1px solid rgba(110,79,184,.18);vertical-align:top">Morphology</td>
+            <td style="padding:9px 12px;border-bottom:1px solid rgba(110,79,184,.18);vertical-align:top">Inexpensive and direct</td>
+            <td style="padding:9px 12px;border-bottom:1px solid rgba(110,79,184,.18);vertical-align:top">Slow, subjective, expertise-dependent; overlapping morphology and intraspecific variation</td>
+          </tr>
+          <tr>
+            <td style="padding:9px 12px;border-bottom:1px solid rgba(110,79,184,.18);vertical-align:top">Biochemical (isoenzyme, MALDI-TOF)</td>
+            <td style="padding:9px 12px;border-bottom:1px solid rgba(110,79,184,.18);vertical-align:top">Isoenzyme useful for root-knot species; MALDI-TOF fast and sensitive</td>
+            <td style="padding:9px 12px;border-bottom:1px solid rgba(110,79,184,.18);vertical-align:top">Isoenzyme largely limited to root-knot nematodes; MALDI-TOF needs specialist equipment and skills</td>
+          </tr>
+          <tr>
+            <td style="padding:9px 12px;border-bottom:1px solid rgba(110,79,184,.18);vertical-align:top">PCR-based (RFLP, SCAR, barcoding, qPCR, ddPCR)</td>
+            <td style="padding:9px 12px;border-bottom:1px solid rgba(110,79,184,.18);vertical-align:top">Strong specificity or quantification</td>
+            <td style="padding:9px 12px;border-bottom:1px solid rgba(110,79,184,.18);vertical-align:top">Field use constrained by workflow, reference databases, equipment, or cost</td>
+          </tr>
+          <tr>
+            <td style="padding:9px 12px;border-bottom:1px solid rgba(110,79,184,.18);vertical-align:top">Isothermal (LAMP, RPA, with CRISPR/Cas12a)</td>
+            <td style="padding:9px 12px;border-bottom:1px solid rgba(110,79,184,.18);vertical-align:top">Simpler and faster than PCR; Cas12a can add specificity and sensitivity</td>
+            <td style="padding:9px 12px;border-bottom:1px solid rgba(110,79,184,.18);vertical-align:top">LAMP vulnerable to aerosol contamination; still reagent- and design-intensive</td>
+          </tr>
+          <tr>
+            <td style="padding:9px 12px;border-bottom:1px solid rgba(110,79,184,.18);vertical-align:top">Direct field kits (FTA cards, soil-DNA, lateral flow)</td>
+            <td style="padding:9px 12px;border-bottom:1px solid rgba(110,79,184,.18);vertical-align:top">Simplified preparation; visual readouts</td>
+            <td style="padding:9px 12px;border-bottom:1px solid rgba(110,79,184,.18);vertical-align:top">Heterogeneous nematode distribution in soil reduces sampling reliability</td>
+          </tr>
+          <tr>
+            <td style="padding:9px 12px;vertical-align:top">Remote sensing / machine learning</td>
+            <td style="padding:9px 12px;vertical-align:top">Supports large-area monitoring</td>
+            <td style="padding:9px 12px;vertical-align:top">Depends on symptom specificity and high-quality datasets</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <figcaption><b>Table 1</b> Detection method families and the constraint each faces in the field, as compiled by the team's literature review. As a state-of-the-art field comparator, Camacho <em>et al.</em> (2024) combined FTA-card extraction, LAMP (60&ndash;65 &deg;C), and a magnetoresistive biosensor for the cyst nematode <em class="serif-italic">Globodera pallida</em> and reported detection of a single juvenile; even so, the modules were not fully integrated, the workflow stayed relatively long, and the assay was single-target [4].</figcaption>
+  </figure>
+  <div class="prose" style="margin-top:20px">
+    <p>Across the methods reviewed, no single approach removed every constraint the team prioritised. Our project therefore investigates a complementary route: sensing a nematode-associated chemical signal rather than first isolating and identifying the organism itself.</p>
   </div>
 </section>
 
 <section id="idea" data-toc="Our idea">
   <p class="eyebrow sec-label">03  -  The idea</p>
-  <h2 class="section-title">Put the diagnosis in the grower's hand</h2>
+  <h2 class="section-title">Investigate a field-oriented sensing route</h2>
   <div class="prose">
-    <p>We are designing a <strong>field-deployable biosensor</strong> that detects the molecular signatures of <em class="serif-italic">H. glycines</em> and <em class="serif-italic">M. incognita</em> directly from a soil sample, and reports the result as a simple visual readout. No microscope, no shipping samples to a lab, no waiting.</p>
+    <p>We are investigating a <strong>biosensor concept intended for eventual field-oriented use</strong>. The proposed workflow would prepare a soil-derived input, challenge a candidate receptor with an ascaroside signal, and produce an interpretable output. Every stage remains contingent on direct validation, including whether the signal represents <em class="serif-italic">H. glycines</em> or <em class="serif-italic">M. incognita</em>.</p>
     <blockquote>See the pest before you see the symptom.</blockquote>
-    <p>The remainder of this wiki documents how that sensor was conceived, engineered, tested, and shaped by the people who will ultimately use it.</p>
+    <p>That is the goal, not a finished claim. Signal persistence in soil, representative sampling, receptor response, pathway coupling, reporter choice, and interpretation are open questions. Future engagement must also test whether the proposed workflow addresses real user and regulatory needs.</p>
   </div>
   <figure class="figure" style="margin-top:26px">
-    <div class="figure__media"><svg viewBox="0 0 760 240" style="max-width:680px" aria-hidden="true">
-      <g font-family="'Space Mono',monospace" font-size="13" fill="#7b7280">
-        <rect x="20" y="86" width="150" height="68" rx="12" fill="#efe6d6" stroke="#6e4fb8" stroke-width="1.5"/><text x="95" y="124" text-anchor="middle" fill="#241c2b">Soil sample</text>
-        <rect x="300" y="86" width="160" height="68" rx="12" fill="#efe6d6" stroke="#6e4fb8" stroke-width="1.5"/><text x="380" y="118" text-anchor="middle" fill="#241c2b">Recognition</text><text x="380" y="134" text-anchor="middle">+ amplify</text>
-        <rect x="590" y="86" width="150" height="68" rx="12" fill="#efe6d6" stroke="#e2a23c" stroke-width="1.5"/><text x="665" y="124" text-anchor="middle" fill="#241c2b">Readout</text>
-        <g stroke="#6e4fb8" stroke-width="2" marker-end="url(#ah)"><line x1="172" y1="120" x2="296" y2="120"/><line x1="462" y1="120" x2="586" y2="120"/></g>
-      </g>
+    <div class="figure__media"><svg viewBox="0 0 940 172" style="max-width:720px;width:100%" aria-hidden="true">
       <defs><marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#6e4fb8"/></marker></defs>
+      <g font-family="'Space Mono',monospace" font-size="12">
+        <rect x="10" y="46" width="150" height="70" rx="12" fill="#efe6d6" stroke="#6e4fb8" stroke-width="1.5"/>
+        <text x="85" y="78" text-anchor="middle" fill="#241c2b">Soil-derived</text><text x="85" y="95" text-anchor="middle" fill="#241c2b">sample</text>
+        <rect x="196" y="46" width="150" height="70" rx="12" fill="#efe6d6" stroke="#6e4fb8" stroke-width="1.5"/>
+        <text x="271" y="78" text-anchor="middle" fill="#241c2b">Ascaroside</text><text x="271" y="95" text-anchor="middle" fill="#7b7280">signal (ascr#18?)</text>
+        <rect x="382" y="46" width="150" height="70" rx="12" fill="#efe6d6" stroke="#6e4fb8" stroke-width="1.5"/>
+        <text x="457" y="78" text-anchor="middle" fill="#241c2b">Yeast GPCR</text><text x="457" y="95" text-anchor="middle" fill="#7b7280">sensor (candidate)</text>
+        <rect x="568" y="46" width="150" height="70" rx="12" fill="#efe6d6" stroke="#6e4fb8" stroke-width="1.5"/>
+        <text x="643" y="78" text-anchor="middle" fill="#241c2b">Mating-pathway</text><text x="643" y="95" text-anchor="middle" fill="#241c2b">amplification</text>
+        <rect x="754" y="46" width="150" height="70" rx="12" fill="#efe6d6" stroke="#e2a23c" stroke-width="1.6"/>
+        <text x="829" y="78" text-anchor="middle" fill="#241c2b">Visual</text><text x="829" y="95" text-anchor="middle" fill="#241c2b">readout</text>
+        <g stroke="#6e4fb8" stroke-width="2" marker-end="url(#ah)">
+          <line x1="162" y1="81" x2="192" y2="81"/>
+          <line x1="348" y1="81" x2="378" y2="81"/>
+          <line x1="534" y1="81" x2="564" y2="81"/>
+          <line x1="720" y1="81" x2="750" y2="81"/>
+        </g>
+      </g>
     </svg></div>
-    <figcaption><b>Fig 1</b> The detection pipeline at a glance - final assay schematic pending.</figcaption>
+    <figcaption><b>Fig 1</b> The intended sensing pipeline at a glance. This is the design hypothesis  -  not a validated end-to-end result. The candidate receptor still requires direct response testing, and the reporter has not been selected; see the Design page for the open questions.</figcaption>
   </figure>
 </section>
 
@@ -181,13 +248,13 @@
   <p class="eyebrow sec-label">04  -  Approach</p>
   <h2 class="section-title">Why this is a synthetic-biology problem</h2>
   <div class="prose">
-    <p>Specificity is the hard part. Soil is a noisy molecular environment, and the two target species must be told apart from each other and from harmless relatives. Engineered biological recognition  -  programmable, sequence-specific, and self-amplifying  -  is uniquely suited to that job, and it can be manufactured cheaply and deployed without a cold chain.</p>
+    <p>Nematodes use ascarosides as chemical signals, and organisms that hunt nematodes have receptors involved in reading related compounds. Synthetic biology provides a way to test whether a candidate receptor can be expressed in a yeast chassis and coupled to a future output. Three features motivate the investigation:</p>
     <ul>
-      <li><strong>Programmable specificity</strong>  -  recognition elements can be retargeted to new species by changing a single sequence.</li>
-      <li><strong>Built-in amplification</strong>  -  biological circuits turn a few molecules into a visible signal.</li>
-      <li><strong>Low-cost, field-ready</strong>  -  reagents that travel and store without specialist infrastructure.</li>
+      <li><strong>Recognition evolved for related signals</strong>  -  rather than designing a binder from scratch, we start from G-protein-coupled receptors (GPCRs) that a nematode-preying fungus uses to sense ascr#3 and ascr#7 (Kuo <em>et al.</em>, 2024) [3]. Their response to our candidate target, ascr#18, is unknown.</li>
+      <li><strong>Pathway precedent</strong>  -  heterologous GPCRs can be coupled to the native yeast mating pathway, but receptor expression, functional coupling, amplification, and output remain unproven for this project.</li>
+      <li><strong>A well-understood chassis</strong>  -  budding yeast is straightforward to culture and has an established heterologous-GPCR engineering toolkit. Whether it preserves enough target signal for this specific assay still has to be tested.</li>
     </ul>
-    <aside class="content-slot" role="note"><span>Pending documentation</span><p>The specific chassis, recognition system &amp; reporter the team adopts</p></aside>
+    <p>Concretely, the proposed chassis is <em>Saccharomyces cerevisiae</em>; the recognition element is a candidate heterologous GPCR that first requires direct ascr#18 response testing; and mating-pathway coupling is an intended engineering step. No reporter has yet been selected, built, or measured.</p>
   </div>
 </section>
 
@@ -195,10 +262,10 @@
   <p class="eyebrow sec-label">05  -  Scope</p>
   <h2 class="section-title">What we set out to achieve this season</h2>
   <ul class="timeline" style="margin-top:24px">
-    <li><span class="when">Goal 01</span><h4>Design a species-specific recognition module</h4><p>Identify and validate sequences that uniquely distinguish each target nematode.</p></li>
-    <li><span class="when">Goal 02</span><h4>Build an amplifying reporter circuit</h4><p>Couple recognition to a robust, naked-eye readout.</p></li>
-    <li><span class="when">Goal 03</span><h4>Demonstrate detection from a soil-like matrix</h4><aside class="content-slot" role="note"><span>Pending documentation</span><p>The sensor works outside clean buffer, toward real-world use.</p></aside></li>
-    <li><span class="when">Goal 04</span><h4>Ground the design in real needs</h4><p>Let growers, agronomists, and regulators shape what "useful" means.</p></li>
+    <li><span class="when">Goal 01</span><h4>Establish the molecular target</h4><p>Confirm which ascaroside signal best indicates early infestation by our target nematodes, and trace the reported concentrations to primary literature.</p></li>
+    <li><span class="when">Goal 02</span><h4>Test a candidate receptor in yeast</h4><p>Assess receptor expression, localisation, direct ligand response, and proposed pathway coupling before selecting and testing a reporter.</p></li>
+    <li><span class="when">Goal 03</span><h4>Move toward a soil-derived sample</h4><p>Test performance beyond clean buffer and characterise how stable the ascaroside signal is in soil.</p></li>
+    <li><span class="when">Goal 04</span><h4>Ground the design in real needs</h4><p>Seek consented, attributable engagement with growers, agronomists, and regulators, then document whether it changes a design decision.</p></li>
   </ul>
 </section>
 
@@ -206,13 +273,14 @@
   <p class="eyebrow sec-label">06  -  Sources</p>
   <h2 class="section-title">References</h2>
   <ol class="refs">
-    <li>Author, A. <em>et al.</em> Title of the global nematode crop-loss study. <em>Journal</em> (Year). <span class="slot-chip">Reference to add</span></li>
-    <li>Author, B. <em>et al.</em> Biology and management of <em>Heterodera glycines</em>. <em>Journal</em> (Year). <span class="slot-chip">Reference to add</span></li>
-    <li>Author, C. <em>et al.</em> <em>Meloidogyne incognita</em> host range and impact. <em>Journal</em> (Year). <span class="slot-chip">Reference to add</span></li>
+    <li>Jones JT <em>et al.</em> Top 10 plant-parasitic nematodes in molecular plant pathology. <em>Molecular Plant Pathology</em> 14(9):946&ndash;961 (2013).</li>
+    <li>Choe A <em>et al.</em> Ascaroside signaling is widely conserved among nematodes. <em>Current Biology</em> 22(9):772&ndash;780 (2012). <a href="https://doi.org/10.1016/j.cub.2012.03.024">doi:10.1016/j.cub.2012.03.024</a></li>
+    <li>Kuo CY <em>et al.</em> The nematode-trapping fungus <em class="serif-italic">Arthrobotrys oligospora</em> detects prey pheromones via G protein-coupled receptors. <em>Nature Microbiology</em> 9:1738&ndash;1751 (2024). <a href="https://doi.org/10.1038/s41564-024-01679-w">doi:10.1038/s41564-024-01679-w</a></li>
+    <li>Camacho MJ <em>et al.</em> FTA-LAMP based biosensor for a rapid in-field detection of <em class="serif-italic">Globodera pallida</em>. <em>Frontiers in Bioengineering and Biotechnology</em> 12:1337879 (2024). <a href="https://doi.org/10.3389/fbioe.2024.1337879">doi:10.3389/fbioe.2024.1337879</a></li>
   </ol>
-  <div class="callout callout--tip" style="margin-top:24px">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10c.7.7 1 1.3 1 2h6c0-.7.3-1.3 1-2a6 6 0 0 0-4-10z"/></svg>
-    <div><b>Documentation note</b><p>This page is structurally complete; final figures, citations, and data will be added before wiki freeze.</p></div>
+  <div class="callout callout--note" style="margin-top:24px">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="13"/><circle cx="12" cy="16.5" r=".6" fill="currentColor"/></svg>
+    <div><b>Status of this page</b><p>This is a living document. The sensing concept described here is a design in progress  -  it has not been demonstrated end-to-end, and no detection limit, timing, or field performance is claimed. The Background and Design pages carry the underlying evidence and the open questions still to be resolved.</p></div>
   </div>
 </section>
     </div>
@@ -222,13 +290,13 @@
 
   <footer class="footer">
   <div class="footer__seal" aria-hidden="true"><img src="../img/nankai-seal.gif" alt="" loading="lazy" /></div>
-  <section class="sponsor-strip" aria-label="Sponsors"><span class="sr-only">Sponsors</span><div class="sponsor-strip__marquee"><div class="sponsor-strip__track"><div class="sponsor-strip__set"><span class="sponsor-badge"><span class="sponsor-badge__name">Sponsor slot</span><i class="sponsor-badge__dot" aria-hidden="true"></i></span></div><div class="sponsor-strip__set" aria-hidden="true"><span class="sponsor-badge"><span class="sponsor-badge__name">Sponsor slot</span><i class="sponsor-badge__dot" aria-hidden="true"></i></span></div></div></div></section>
+
   <div class="footer__inner">
-    <div class="footer-features" aria-label="Sponsors and friend teams"><section class="friend-links" aria-label="Friend teams"><div class="friend-links__head"><b>Friend links</b><p>Collaboration teams and partner pages can be linked here after confirmation.</p></div><div class="friend-links__grid"><span class="friend-link"><span class="friend-link__name">Friend link slot</span><span class="friend-link__note">Awaiting the confirmed friend-team list before public wiki freeze.</span></span></div></section></div>
+
     <div class="footer__top">
       <div class="footer__brand">
         <b>NKU-iGEM 2026 Team</b>
-        <p>A synthetic-biology biosensor for the early detection of plant-parasitic nematodes. Built by students at Nankai University.</p>
+        <p>A Nankai University student project investigating a synthetic-biology sensing concept for plant-parasitic nematode-associated signals; component and system validation remain open.</p>
       </div>
       <div class="footer__col">
         <h5>Project</h5>
@@ -250,13 +318,11 @@
         <a href="../model/">Model</a>
         <a href="../software/">Software</a>
         <a href="../pages/attribution.html">Attribution status</a>
-        <a href="https://gitlab.igem.org/2026/nku-china">GitLab source</a>
-        <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC-BY 4.0 license</a>
       </div>
     </div>
     <div class="footer__bottom">
-      <span>&copy; 2026 NKU iGEM Team &middot; Static wiki build &middot; <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC-BY 4.0</a></span>
-      <span><a href="https://gitlab.igem.org/2026/nku-china">GitLab source</a> &middot; self-hosted fonts &middot; no external scripts or trackers</span>
+      <span>&copy; 2026 NKU iGEM Team &middot; Static wiki build</span>
+      <span>self-hosted fonts &middot; no external scripts or trackers</span>
     </div>
   </div>
 </footer>
