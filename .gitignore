@@ -3,5 +3,10 @@ __pycache__/
 .DS_Store
 node_modules/
 tmp/
+public/
 # Local provenance notes may contain authenticated workspace links.
 docs/source-inventory.md
+# Private Feishu mirror: authenticated URLs, raw captures, and local library.
+docs/feishu-archive/archive-manifest.json
+docs/feishu-archive/captures/
+docs/feishu-archive/library/

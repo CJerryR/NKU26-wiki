@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "archive": {
+    "title": "NKU iGEM Feishu source archive",
+    "provenance": {
+      "scope": "Authenticated team Feishu workspace",
+      "note": "Capture status is not scientific verification."
+    }
+  },
+  "folders": [
+    {
+      "path": [
+        "Wet lab"
+      ],
+      "source_url": "https://nankai.feishu.cn/drive/folder/EXAMPLE",
+      "status": "partial",
+      "provenance": {
+        "captured_by": "replace-with-reviewer",
+        "captured_at": "2026-07-17T00:00:00+08:00"
+      },
+      "order": 10
+    },
+    {
+      "path": [
+        "Wet lab",
+        "Notebook"
+      ],
+      "source_url": "https://nankai.feishu.cn/drive/folder/EXAMPLE-NOTEBOOK",
+      "status": "partial",
+      "provenance": "Folder listing captured; children still being checked.",
+      "order": 10
+    }
+  ],
+  "documents": [
+    {
+      "id": "example-0506",
+      "title": "0506",
+      "folder_path": [
+        "Wet lab",
+        "Notebook"
+      ],
+      "output_name": "0506",
+      "source_url": "https://nankai.feishu.cn/docx/EXAMPLE-DOCUMENT",
+      "source_type": "docx",
+      "status": "partial",
+      "captured_at": "2026-07-17T00:00:00+08:00",
+      "provenance": {
+        "capture_method": "authenticated browser transcription",
+        "displayed_contributors": [
+          "replace-with-displayed-name"
+        ],
+        "notes": "Example only; replace all EXAMPLE values."
+      },
+      "content_file": "captures/documents/example-0506.md",
+      "assets": [
+        {
+          "id": "figure-01",
+          "source": "captures/assets/example-0506/figure-01.png",
+          "filename": "figure-01.png",
+          "caption": "Caption transcribed from Feishu",
+          "source_url": "",
+          "provenance": {
+            "capture_method": "downloaded from the same Feishu document"
+          }
+        }
+      ],
+      "order": 10
+    }
+  ]
+}
