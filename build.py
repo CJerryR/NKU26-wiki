@@ -315,6 +315,7 @@ def prepare_body(body):
     The source files can stay useful for editing, while generated pages avoid
     raw draft language such as "replace this" or "Editor's note".
     """
+    body = expand_home_partials(body)
     for old, new in SCAFFOLD_REPLACEMENTS.items():
         body = body.replace(old, new)
 
@@ -336,6 +337,40 @@ def prepare_body(body):
     body = PLACEHOLDER_P_RE.sub(p_slot, body)
     body = PLACEHOLDER_SPAN_RE.sub(span_slot, body)
     return body
+
+def home_data():
+    """Resolve semantic homepage links through existing page metadata."""
+    data = json.loads((DATA / "home.json").read_text(encoding="utf-8"))
+    for key, item in data["links"].items():
+        source = CONTENT / (item["source"] + ".html")
+        if not source.is_file():
+            raise ValueError(f"Homepage link {key!r} has no source page: {source}")
+        meta = read_meta(source)
+        if is_draft(meta):
+            raise ValueError(f"Homepage link {key!r} targets an unpublished draft")
+        item["url"] = page_url_for(source.stem, meta)
+    return data
+
+def resolve_home_links(body):
+    if "{{HOME_URL:" not in body:
+        return body
+    links = home_data()["links"]
+    def resolve(match):
+        key = match.group(1)
+        if key not in links:
+            raise ValueError(f"Unknown homepage link key: {key}")
+        return html.escape(links[key]["url"], quote=True)
+    return re.sub(r"\{\{HOME_URL:([a-z-]+)\}\}", resolve, body)
+
+def expand_home_partials(body):
+    """Compose homepage source sections at build time, including in search."""
+    def include(match):
+        name = match.group(1)
+        if name not in {"opening", "maps", "science", "closing"}:
+            raise ValueError(f"Unknown homepage section: {name}")
+        return (PARTIALS / "home" / f"{name}.html").read_text(encoding="utf-8")
+    body = re.sub(r"<!--\s*HOME:([a-z-]+)\s*-->", include, body)
+    return resolve_home_links(body)
 
 # -- global site data -------------------------------------------------------
 def load_site_data():
@@ -680,19 +715,33 @@ def build_page(path):
     title_full = "NKU iGEM 2026" if is_home else f"{title_tag}  /  NKU iGEM 2026"
     desc = meta.get("desc", "NKU iGEM 2026 - a synthetic-biology sensing concept for plant-parasitic nematode-associated signals, under investigation.")
     body_class = "page-home" if is_home else "page-standard"
-    footer_html = FOOTER.replace("{{GLOBAL_FOOTER_FEATURES}}", GLOBAL_FOOTER_FEATURES)
+    footer_source = read("_partials/home/footer.html") if is_home else FOOTER
+    nav_source = read("_partials/home/nav.html") if is_home else NAV
+    nav_source = resolve_home_links(nav_source) if is_home else nav_source
+    footer_html = footer_source.replace("{{GLOBAL_FOOTER_FEATURES}}", GLOBAL_FOOTER_FEATURES)
     footer_html = footer_html.replace("{{GLOBAL_SPONSOR_STRIP}}", GLOBAL_SPONSOR_STRIP)
+
+    home_styles = ""
+    home_scripts = ""
+    if is_home:
+        home_styles = "\n  ".join(f'<link rel="stylesheet" href="{P}css/{name}.css" />' for name in ("home-shared", "home-opening", "home-maps", "home-science", "home-shell"))
+        payload = json.dumps(home_data(), ensure_ascii=False).replace("<", "\\u003c")
+        home_scripts = '<script>window.NKU_HOME = ' + payload + ';</script>\n  '
+        home_scripts += "\n  ".join(f'<script src="{P}js/{name}.js" defer></script>' for name in ("home-opening", "home-maps-data", "home-maps", "home-science", "home-shell"))
 
     page_html = (BASE
             .replace("{{TITLE}}", title_full)
             .replace("{{DESC}}", desc)
-            .replace("{{NAV}}", NAV)
+            .replace("{{NAV}}", nav_source)
             .replace("{{FOOTER}}", footer_html)
             .replace("{{GLOBAL_SPONSOR_STRIP}}", GLOBAL_SPONSOR_STRIP)
             .replace("{{GLOBAL_FOOTER_FEATURES}}", GLOBAL_FOOTER_FEATURES)
             .replace("{{SOURCE_REPOSITORY_URL}}", html.escape(SOURCE_REPOSITORY_URL, quote=True))
             .replace("{{BODY_CLASS}}", body_class)
             .replace("{{BODY}}", body_html)
+            .replace("{{MASCOT}}", read("_partials/home/mascot.html" if is_home else "_partials/mascot.html").strip())
+            .replace("{{HOME_STYLES}}", home_styles)
+            .replace("{{HOME_SCRIPTS}}", home_scripts)
             .replace("{{P}}", P))
 
     out.parent.mkdir(parents=True, exist_ok=True)

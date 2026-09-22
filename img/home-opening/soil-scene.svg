@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 740" preserveAspectRatio="none" fill="none">
+  <title>Illustrated underground soil and branching roots</title>
+  <desc>A dark violet soil scene with hand-drawn roots and paper-like mineral layers. Decorative illustration, not scientific measurement.</desc>
+  <defs>
+    <linearGradient id="soil" x1="720" y1="0" x2="720" y2="740" gradientUnits="userSpaceOnUse"><stop stop-color="#251632"/><stop offset=".52" stop-color="#1c1129"/><stop offset="1" stop-color="#170e23"/></linearGradient>
+    <linearGradient id="topsoil" x1="600" y1="0" x2="690" y2="230" gradientUnits="userSpaceOnUse"><stop stop-color="#463047"/><stop offset="1" stop-color="#24182f"/></linearGradient>
+    <linearGradient id="warm-root" x1="960" y1="28" x2="965" y2="456" gradientUnits="userSpaceOnUse"><stop stop-color="#aa806d"/><stop offset=".53" stop-color="#bd9774"/><stop offset="1" stop-color="#755a62"/></linearGradient>
+    <linearGradient id="side-root" x1="165" y1="55" x2="445" y2="520" gradientUnits="userSpaceOnUse"><stop stop-color="#786174"/><stop offset="1" stop-color="#4b354f"/></linearGradient>
+    <radialGradient id="soil-light" cx="0" cy="0" r="1" gradientTransform="translate(994 250) rotate(90) scale(360 484)" gradientUnits="userSpaceOnUse"><stop stop-color="#64404d" stop-opacity=".28"/><stop offset="1" stop-color="#23152f" stop-opacity="0"/></radialGradient>
+    <filter id="grain" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".72" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".22"/></feComponentTransfer></filter>
+  </defs>
+  <path fill="url(#soil)" d="M0 0h1440v740H0z"/>
+  <path fill="url(#soil-light)" d="M0 0h1440v740H0z"/>
+  <!-- Quiet strata frame the central trail without prescribing its position. -->
+  <path fill="#291a34" d="M0 434c84 5 112 53 202 61s120-16 191 24 113 25 199 47 109-8 177 18 162-18 219 2 103-10 173-49 174-41 279-96v299H0Z"/>
+  <path fill="#312037" opacity=".65" d="M0 543c83-35 131-8 201 4s101 69 188 65 163-28 238 1 97 19 169 9 127 12 196-22 133-39 220-64 157-34 228-29v233H0Z"/>
+  <path fill="#24162e" d="M0 633c90-28 150-24 214 12s140 19 235 22 181-5 247 6 148-34 250-16 142-19 218-29 184-6 276-41v153H0Z"/>
+  <path d="M0 530c107-11 148 24 224 27m116 33c66 37 159-5 234 13m521-27c93-4 169-56 231-55m-1141 86c59-6 83 16 111 26m814-1c91-24 125-20 191-32" stroke="#66506a" stroke-opacity=".17" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Uneven surface, mineral fragments, and sparse low vegetation. -->
+  <path fill="url(#topsoil)" d="M0 0h1440v69l-51-8-34 13-44-9-45 22-40-5-51 13-63-13-57 15-54-9-55 13-50-16-47 9-58-23-35 14-55-16-35 10-60-26-48 8-54-18-39 18-46-9-43 17-49-13-48 21-57-6-34 11-43-13-49 12-55-21-43 7L0 90Z"/>
+  <path d="M0 90l45-16 43-7 55 21 49-12 43 13 34-11 57 6 48-21 49 13 43-17 46 9 39-18 54 18 48-8 60 26 35-10 55 16 35-14 58 23 47-9 50 16 55-13 54 9 57-15 63 13 51-13 40 5 45-22 44 9 34-13 51 8" stroke="#786175" stroke-opacity=".29" stroke-width="2"/>
+  <g stroke="#5a5260" stroke-width="2" stroke-linecap="round" opacity=".75">
+    <path d="M108 79c-4-23-2-46 7-64m-5 42c-11-17-23-18-28-29m28 18c12-5 16-14 22-20M271 77c4-22 2-40-6-52m7 35c10-12 18-14 23-27m-26 15c-10-8-17-8-22-19M513 66c-2-21 1-38 8-52m-6 31c-7-13-16-16-19-24M766 78c-6-22-7-47-2-63m3 44c10-10 14-20 15-33M1159 86c1-20 10-38 22-48m-15 30c-11-4-16-12-18-25M1322 72c-2-19 2-39 12-53m-9 29c-13-9-21-19-22-28"/>
+  </g>
+  <g fill="#5b5061" opacity=".65">
+    <path d="M94 47C75 45 70 34 69 26c17 0 26 7 25 21ZM117 35c2-15 11-22 23-21-1 13-9 20-23 21ZM289 42c6-12 17-17 28-13-5 12-15 17-28 13ZM504 33c-15-3-22-10-22-21 16 3 23 9 22 21ZM1174 50c1-13 7-23 20-24 1 14-6 22-20 24ZM1314 38c-15-3-21-10-23-21 15 1 24 9 23 21Z"/>
+  </g>
+  <!-- Fine roots: intentionally asymmetrical, with tapered peripheral branches. -->
+  <g stroke="url(#side-root)" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M105 80c6 37-14 61-6 95s44 52 41 92-11 53 7 88" stroke-width="4"/>
+    <path d="M105 112c-26 17-35 34-57 42S18 170 7 189M103 169c-19 17-40 21-48 47s-21 35-44 43M131 229c29 3 48 22 55 45s20 30 43 44M135 287c-32 14-43 40-42 64s-11 41-29 60M96 353c16 16 17 35 13 55" stroke-width="2"/>
+    <path d="M48 154c-2 20-10 28-23 37m29 25c-16 0-23-5-31-11m160 70c23 0 38 10 51 29m-36-9c0 23 11 32 21 41m-92-6c20 12 19 26 25 39m-49-253c20 14 24 31 23 45m-87 85c3 13 0 29-9 42m48 88c-14 4-27 15-35 26" stroke-width="1" opacity=".76"/>
+    <path d="M284 82c-8 36-8 65 14 91s33 51 34 88 19 41 25 70" stroke-width="3.2"/>
+    <path d="M281 119c-18 13-22 31-19 56s-3 41-17 59m53-63c20-13 42-9 62-27m-33 83c-23 9-32 25-34 50s-15 39-29 50m70-56c22 9 29 20 34 39" stroke-width="1.7"/>
+    <path d="M263 180c-16 10-22 20-22 34m71-49c6-20 18-29 32-33m-47 125c-15-6-25-17-29-32m30 62c12 16 14 31 10 43m26-50c-10 14-9 32-4 48" stroke-width=".85"/>
+    <path d="M490 71c11 33 7 58-10 85s-12 53-26 78m27-79c21 9 35 24 33 48m-47-84c-27 13-27 32-36 48m27 59c16 5 23 17 25 34" stroke-width="2" opacity=".62"/>
+    <path d="M1308 76c-9 35 3 57-12 88s-53 28-60 71 8 64-14 94-56 39-53 78" stroke-width="4"/>
+    <path d="M1300 119c24 7 38 26 41 48s20 32 41 39m-86-42c-23-1-42 8-56 21m-7 65c-26-5-46 10-61 32m62-10c30 12 38 32 32 53s0 42 18 56m-71-39c-22-6-40-1-61 12m27 56c26 4 44 21 44 42" stroke-width="2"/>
+    <path d="M1341 167c-8 12-8 30-2 43m25-15c19-9 30-7 46-1m-172-9c0 17-11 28-26 34m-34 55c-22-5-38-1-49 9m136 47c15 11 20 26 16 42m-123-13c-14 4-20 18-21 29m77-11c-1 14 4 24 15 33" stroke-width="1" opacity=".7"/>
+    <path d="M1439 342c-45 1-70 24-69 61s-28 45-54 59-42 30-47 53m100-112c22 8 43 8 70 1m-112 51c10 12 11 27 6 44m-44-8c-19-3-34 6-44 22" stroke-width="2.5" opacity=".65"/>
+  </g>
+  <!-- A warm root cluster becomes legible inside the live flashlight. -->
+  <g stroke="url(#warm-root)" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M938 92c-12 27-3 47-7 72s-24 38-21 67 24 40 27 67-9 42-4 65 21 39 14 71" stroke-width="5"/>
+    <path d="M1022 92c3 33-17 49-16 72s18 40 11 68-31 39-32 64 15 33 8 57" stroke-width="4"/>
+    <path d="M933 139c-23 5-43 20-46 40s-20 31-42 34m66-5c-23 10-31 29-27 52s-9 34-26 48m63-50c32-8 49-29 48-57s7-42 22-58m-55 155c-30 3-36 17-33 41s-13 35-25 47m55-23c-20 17-17 34-7 56m5-60c20-2 34 11 37 28m42-271c22 14 37 35 31 58s4 41 20 57m-69-3c-14-5-29-4-41 6m35 48c26-3 41 7 47 25s20 21 34 20m-90 6c-17 7-24 23-23 40" stroke-width="2.35"/>
+    <path d="M888 178c-18-4-29-15-34-33m-3 67c-3 17-11 30-26 41m59 2c-21-6-39 0-51 15m59 18c18 10 19 26 14 41m10 5c-17-1-30-9-38-22m80-76c17 8 21 20 19 34m-12-91c-15-3-25-13-28-25m47 158c14 9 19 19 20 32m36-173c15-4 26 1 40 8m-34 33c-13 5-19 13-20 27m14 3c18-4 35 5 42 22m-53 19c-2 16 6 24 16 31m-43 50c8 20 3 32-10 45m-78-7c-17 0-24 10-31 24m42-16c-5 21 4 34 13 48m19-49c11 10 15 24 10 36" stroke-width="1.1" opacity=".8"/>
+    <path d="M863 166l-13 6m-11 65 3 18m-10 15-16-3m64 45-10 4m62-153-5 13m126 92 9-7m-16 57 17 8m-86 27-13 5m-63 67-13 11" stroke-width=".7" opacity=".54"/>
+  </g>
+  <!-- Weathered stones retain soft paper-cut facets and irregular shoulders. -->
+  <g>
+    <path fill="#3a2943" d="M30 332q2-13 18-16l18-4q15 2 22 16 6 13-9 20l-30 7q-23 1-19-23Z"/><path fill="#4c3954" d="M34 326q4-10 17-11l15-3q14 3 19 14-16 6-30 5Z"/>
+    <path fill="#3c2a44" d="M179 163q2-10 16-14l21 2q15 5 13 18-5 17-26 14l-15-4q-10-4-9-16Z"/><path fill="#50394f" d="M181 161q0-8 14-12l21 2 7 4q-11 10-26 9Z"/>
+    <path fill="#2b1c34" d="M387 335q-4-10 15-15l18-4q13 0 28 9 12 11 0 29l-31 8q-23-1-28-13Z"/><path fill="#49324f" opacity=".7" d="M387 331q2-10 17-12l16-3q15 2 29 12-17 10-34 9Z"/>
+    <path fill="#422b42" d="M567 159q3-11 19-16l21 4q13 3 12 22-5 10-29 11-24-3-23-21Z"/><path fill="#594050" opacity=".65" d="M568 156q8-12 19-13l22 5q-9 15-25 14Z"/>
+    <path fill="#362239" d="M709 284q9-14 24-14l28 5q16 5 20 20 1 15-13 17l-40-4q-22-5-19-24Z"/><path fill="#4c3448" d="M709 284q9-14 24-14l25 4q-12 19-29 22Z"/>
+    <path fill="#3e2c42" d="M1104 195q10-14 27-12l22 6q11 5 9 21-12 14-34 11l-20-9q-8-5-4-17Z"/><path fill="#5f4255" opacity=".6" d="M1105 195q9-13 26-12l22 6q-12 15-25 13Z"/>
+    <path fill="#432c45" d="M1197 464q8-24 30-26l24-3q19 2 28 22 6 17-6 26l-42 8q-23 1-34-15Z"/><path fill="#5d3f57" opacity=".65" d="M1199 463q8-23 28-25l24-3q-3 21-19 29Z"/>
+    <path fill="#3c2741" d="M59 547q13-30 41-35l48 5q23 1 37 28 14 25-6 43-13 13-45 12l-31 1q-34-1-45-20Z"/><path fill="#53364f" opacity=".65" d="M64 542q13-26 37-30l47 5 10 4q-6 19-29 39Z"/>
+    <path fill="#38283f" d="M297 601q13-24 31-22l30 3q16 4 23 25 9 20-10 34l-42 1q-24-4-34-20Z"/><path fill="#543950" opacity=".6" d="M298 600q13-23 30-21l30 3q-1 19-18 30Z"/>
+    <path fill="#39263f" d="M638 578q17-18 35-17 21 2 37 16 10 12-1 30l-39 9q-26-6-33-20Z"/><path fill="#53374d" opacity=".56" d="M640 576q16-16 33-15 23 4 36 16-17 12-32 12Z"/>
+    <path fill="#37283f" d="M881 635q11-31 38-34l34 1q19 1 38 20 15 17-2 37l-43 12q-34 6-50-7Z"/><path fill="#563a52" opacity=".58" d="M884 630q12-27 35-29l34 1q-2 27-24 38Z"/>
+    <path fill="#412b45" d="M1296 571q8-26 31-28l32 1q22 2 30 20 8 25-8 37l-45 11q-32-4-42-25Z"/><path fill="#5c3e59" opacity=".5" d="M1298 569q9-24 29-26l32 1q-5 27-26 38Z"/>
+    <path fill="#37233d" d="M1369 248q8-19 24-17l26 6q12 5 17 19 7 20-11 28l-36-6q-23-7-20-30Z"/><path fill="#594052" opacity=".6" d="M1369 249q6-19 24-18l25 6q-10 17-25 19Z"/>
+  </g>
+  <g fill="#796071" opacity=".35">
+    <path d="m169 386 9-4 7 7-5 7-10-2Zm84-108 7-6 11 5-2 8-10 1Zm123-120 10-5 8 8-5 7-12-2Zm73 334 8-3 5 7-8 4Zm76-281 7-7 9 4-1 9-10 2Zm134 35 10-3 6 6-5 8-12-4Zm83 277 6-5 9 4-4 7Zm100-349 6-6 9 2 2 8-10 3Zm188 296 8-3 6 6-3 8-10-3Zm99-144 7-6 11 4-4 9Zm61 160 8-4 7 5-2 8-11-2Zm206-107 8-5 8 5-5 8Zm-216 299 11-6 7 7-3 10-13-1Zm-283 85 8-4 8 5-5 8Zm-263-103 7-4 8 6-5 7Zm-178 115 11-6 10 10-5 9-14-2Z"/>
+  </g>
+  <g fill="#b39aa6" opacity=".16">
+    <circle cx="83" cy="459" r="1.6"/><circle cx="206" cy="290" r="1.3"/><circle cx="234" cy="478" r="1.9"/><circle cx="334" cy="206" r="1.4"/><circle cx="411" cy="257" r="1.7"/><circle cx="468" cy="373" r="1.2"/><circle cx="516" cy="527" r="1.8"/><circle cx="582" cy="303" r="1.5"/><circle cx="656" cy="130" r="1.3"/><circle cx="752" cy="203" r="1.6"/><circle cx="802" cy="529" r="1.4"/><circle cx="843" cy="458" r="1.1"/><circle cx="1087" cy="414" r="1.8"/><circle cx="1139" cy="333" r="1.4"/><circle cx="1213" cy="148" r="1.6"/><circle cx="1301" cy="426" r="1.3"/><circle cx="1377" cy="486" r="1.8"/><circle cx="1066" cy="566" r="1.5"/><circle cx="378" cy="550" r="1.4"/><circle cx="746" cy="653" r="1.7"/>
+  </g>
+  <path fill="#99818e" opacity=".38" filter="url(#grain)" d="M0 0h1440v740H0z"/>
+</svg>

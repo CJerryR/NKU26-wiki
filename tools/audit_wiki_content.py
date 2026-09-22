@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import html
+import importlib.util
 import re
 import sys
 from pathlib import Path
@@ -95,6 +96,14 @@ def has_unnegated_match(source: str, pattern: re.Pattern[str]) -> bool:
 def audit_source(path: Path, failures: list[str]) -> dict[str, int | str | bool]:
     source = path.read_text(encoding="utf-8")
     meta, body = parse_meta(source, path, failures)
+    # Audit the authored homepage composition, not empty include comments.
+    if "<!-- HOME:" in body:
+        spec = importlib.util.spec_from_file_location("wiki_build_for_audit", path.parent.parent / "build.py")
+        builder = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(builder)
+        # The homepage is always at the output root; its normal prefix is empty.
+        body = builder.expand_home_partials(body).replace("{{P}}", "")
+        source = META_RE.match(source).group(0) + body
     for label, pattern in FORBIDDEN_PATTERNS:
         if pattern.search(source):
             failures.append(f"{path}: {label}")
