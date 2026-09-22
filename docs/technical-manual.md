@@ -20,8 +20,7 @@
 
 ```
 nku/
-├── index.html              # 构建产物（首页）—— 不要手改
-├── pages/*.html            # 构建产物（子页面）—— 不要手改
+├── public/                 # CI/CD 构建产物（已忽略、不要提交）
 ├── _templates/base.html    # 页面骨架（占位符 token）
 ├── _partials/
 │   ├── nav.html            # 唯一导航（mega 菜单）
@@ -37,7 +36,7 @@ nku/
 └── CLAUDE.md               # 给 AI/人类的仓库说明
 ```
 
-> **黄金法则**：`index.html` 与 `pages/*.html` 是**构建产物**，会被覆盖。
+> **黄金法则**：`public/` 是**构建产物**，会被覆盖且不应提交。
 > 所有修改都应发生在 `_content/`、`_partials/`、`_templates/`、`css/`、`js/`。
 
 ---
@@ -48,7 +47,8 @@ nku/
 
 ```bash
 python3 build.py        # 修改内容/模板/样式/脚本后运行
-# 然后用浏览器打开 index.html 预览
+python3 -m http.server 8000 --directory public
+# 然后打开 http://127.0.0.1:8000/
 ```
 
 `build.py` 会：
@@ -58,7 +58,7 @@ python3 build.py        # 修改内容/模板/样式/脚本后运行
    包裹为 `.layout`（大纲 + 内容两栏）；首页（`layout: home`）则直接使用整段式布局；
 4. 用 token 替换骨架（`{{TITLE}} {{DESC}} {{NAV}} {{FOOTER}} {{BODY}} {{P}}`），
    其中 `{{P}}` 为相对路径前缀（首页为空，子页面为 `../`）；
-5. 先清空再写出 `index.html` 与 `pages/*.html`。
+5. 重新创建并写出 `public/` 发布目录。
 
 ### 3.2 脚手架生成
 
@@ -180,7 +180,7 @@ iGEM **禁止 wiki 运行时加载任何外部资源**（含 Google Fonts、CDN�
   并对正文/标题字体做了 `<link rel="preload">`（同样指向本地）。
 - 全站无任何指向站外的 `<script src>` / `<link href>`；`main.js` 为零依赖原生 JS。
 - 所有图片本地化（`img/`）。
-- 每页为完全独立静态 HTML，**无运行时 fetch**，本地直接打开与 GitLab Pages 均可渲染。
+- 每页为静态 HTML，**无站外运行时 fetch**，通过本地服务器与 iGEM Pages 均可渲染。
 
 > 若将来要引入库：**把它 vendoring 进仓库**，绝不要加 CDN 标签。
 
@@ -189,9 +189,9 @@ iGEM **禁止 wiki 运行时加载任何外部资源**（含 Google Fonts、CDN�
 ## 8. 部署到 iGEM
 
 1. 在团队的 **iGEM GitLab** 仓库（`https://gitlab.igem.org/2026/<team>`）中，
-   推送构建产物与资源：`index.html`、`pages/`、`css/`、`js/`、`fonts/`、`img/`。
+   只推送源码；不要提交 `public/`。GitLab CI/CD 会构建并发布该目录。
 2. **保持相对路径不变**（站点可能部署在子路径下）。
-3. 每次推送前先 `python3 build.py`。
+3. 每次推送前先运行 `python3 build.py` 和内容审计。
 4. 在真实 GitLab Pages 上验证渲染、字体加载与内部链接。
 
 ---

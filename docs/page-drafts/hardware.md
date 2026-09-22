@@ -2,7 +2,7 @@
 source: _content/hardware.html
 slug: hardware
 title: Hardware
-hidden: true
+route: hardware
 crumbs: Lab / Hardware
 eyebrow: Dry lab / Hardware status
 heading: The device question

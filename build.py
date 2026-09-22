@@ -14,9 +14,14 @@ automatically from markers in the content:
     <h3 id="suspects" data-toc-sub="The two suspects"> ...
 No need to maintain the outline by hand  -  add a marker, rebuild, done.
 """
+import argparse
 import html
 import json
-import re, sys, pathlib
+import os
+import pathlib
+import re
+import shutil
+import sys
 from html.parser import HTMLParser
 
 ROOT = pathlib.Path(__file__).resolve().parent
@@ -24,9 +29,9 @@ CONTENT = ROOT / "_content"
 DATA = ROOT / "_data"
 PARTIALS = ROOT / "_partials"
 TPL = ROOT / "_templates"
-PAGES_DIR = ROOT / "pages"
-JS_DIR = ROOT / "js"
-SEARCH_DATA = JS_DIR / "search-data.js"
+OUTPUT_ROOT = ROOT / "public"
+PAGES_DIR = OUTPUT_ROOT / "pages"
+SEARCH_DATA = OUTPUT_ROOT / "js" / "search-data.js"
 
 def read(p): return (ROOT / p).read_text(encoding="utf-8")
 
@@ -109,10 +114,10 @@ def normalize_route(meta):
 
 def output_path_for(name, meta):
     if is_home_page(name, meta):
-        return ROOT / "index.html"
+        return OUTPUT_ROOT / "index.html"
     route = normalize_route(meta)
     if route:
-        return ROOT.joinpath(*route.split("/")) / "index.html"
+        return OUTPUT_ROOT.joinpath(*route.split("/")) / "index.html"
     return PAGES_DIR / f"{name}.html"
 
 def page_url_for(name, meta):
@@ -124,7 +129,7 @@ def page_url_for(name, meta):
     return f"pages/{name}.html"
 
 def path_prefix_for(out):
-    rel = out.relative_to(ROOT)
+    rel = out.relative_to(OUTPUT_ROOT)
     depth = max(len(rel.parts) - 1, 0)
     return "../" * depth
 
@@ -450,6 +455,11 @@ def render_footer_features(site_data):
 SITE_DATA = load_site_data()
 GLOBAL_SPONSOR_STRIP = render_sponsor_strip(SITE_DATA)
 GLOBAL_FOOTER_FEATURES = render_footer_features(SITE_DATA)
+SOURCE_REPOSITORY_URL = safe_link(
+    os.environ.get("CI_PROJECT_URL")
+    or os.environ.get("IGEM_SOURCE_REPOSITORY")
+    or SITE_DATA.get("source_repository_url", "")
+)
 
 # -- search index generation -----------------------------------------------
 def clean_text(text):
@@ -673,49 +683,58 @@ def build_page(path):
     footer_html = FOOTER.replace("{{GLOBAL_FOOTER_FEATURES}}", GLOBAL_FOOTER_FEATURES)
     footer_html = footer_html.replace("{{GLOBAL_SPONSOR_STRIP}}", GLOBAL_SPONSOR_STRIP)
 
-    html = (BASE
+    page_html = (BASE
             .replace("{{TITLE}}", title_full)
             .replace("{{DESC}}", desc)
             .replace("{{NAV}}", NAV)
             .replace("{{FOOTER}}", footer_html)
             .replace("{{GLOBAL_SPONSOR_STRIP}}", GLOBAL_SPONSOR_STRIP)
             .replace("{{GLOBAL_FOOTER_FEATURES}}", GLOBAL_FOOTER_FEATURES)
+            .replace("{{SOURCE_REPOSITORY_URL}}", html.escape(SOURCE_REPOSITORY_URL, quote=True))
             .replace("{{BODY_CLASS}}", body_class)
             .replace("{{BODY}}", body_html)
             .replace("{{P}}", P))
 
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(html, encoding="utf-8")
+    out.write_text(page_html, encoding="utf-8")
     return out, len(toc_items(body)) if not is_home else 0
 
 def clean_generated_outputs(files):
-    PAGES_DIR.mkdir(exist_ok=True)
-    # clean previously generated legacy page files so routed pages do not linger
-    for f in PAGES_DIR.glob("*.html"):
-        f.unlink()
+    if OUTPUT_ROOT == ROOT or ROOT not in OUTPUT_ROOT.parents:
+        raise ValueError("Build output must be a dedicated directory inside the repository.")
+    if OUTPUT_ROOT.exists():
+        shutil.rmtree(OUTPUT_ROOT)
+    OUTPUT_ROOT.mkdir(parents=True)
 
-    route_outputs = set()
-    for f in files:
-        meta = read_meta(f)
-        route = normalize_route(meta)
-        if route:
-            route_outputs.add(output_path_for(f.stem, meta))
-    for out in sorted(route_outputs, key=lambda p: str(p)):
-        if out.exists():
-            out.unlink()
-        parent = out.parent
-        if parent != ROOT and parent.exists():
-            try:
-                parent.rmdir()
-            except OSError:
-                pass
+def copy_static_assets():
+    """Copy authored static assets into the CI-generated public directory."""
+    for dirname in ("css", "fonts", "img", "js"):
+        source = ROOT / dirname
+        target = OUTPUT_ROOT / dirname
+        if source.exists():
+            ignored = ("search-data.js",) if dirname == "js" else ("nankai-seal.gif", "mascot.png") if dirname == "img" else ()
+            shutil.copytree(source, target, ignore=shutil.ignore_patterns(*ignored))
 
 def main():
+    global OUTPUT_ROOT, PAGES_DIR, SEARCH_DATA
+
+    parser = argparse.ArgumentParser(description="Build the NKU iGEM wiki from source.")
+    parser.add_argument(
+        "--output",
+        default="public",
+        help="Dedicated build directory inside the repository (default: public)",
+    )
+    args = parser.parse_args()
+    OUTPUT_ROOT = (ROOT / args.output).resolve()
+    PAGES_DIR = OUTPUT_ROOT / "pages"
+    SEARCH_DATA = OUTPUT_ROOT / "js" / "search-data.js"
+
     if not CONTENT.exists():
         print("No _content/ directory found."); sys.exit(1)
 
     all_files = sorted(CONTENT.glob("*.html"))
     clean_generated_outputs(all_files)
+    copy_static_assets()
 
     files = [f for f in all_files if not is_draft(read_meta(f))]
     search_files = [f for f in files if is_searchable(read_meta(f))]
@@ -726,14 +745,15 @@ def main():
     n_home = 0
     for f in files:
         out, ntoc = build_page(f)
-        rel = out.relative_to(ROOT)
+        rel = out.relative_to(OUTPUT_ROOT)
         tag = "home" if f.stem == "index" else f"{ntoc:2d} toc"
         if f.stem == "index": n_home += 1
         print(f"  {f.stem:22s}  ->  {str(rel):24s} [{tag}]")
     search_path, search_pages, search_sections_n = write_search_data(search_files)
     print("-" * 52)
     print(f"Done. {len(files)} pages, {n_home} home, {hidden_count} hidden, {draft_count} draft.")
-    print(f"Search index: {search_path.relative_to(ROOT)} ({search_pages} pages, {search_sections_n} sections)")
+    print(f"Output directory: {OUTPUT_ROOT.relative_to(ROOT)}")
+    print(f"Search index: {search_path.relative_to(OUTPUT_ROOT)} ({search_pages} pages, {search_sections_n} sections)")
 
 if __name__ == "__main__":
     main()

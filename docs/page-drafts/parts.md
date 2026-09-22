@@ -2,7 +2,7 @@
 source: _content/parts.html
 slug: parts
 title: Parts
-hidden: true
+route: parts
 crumbs: Project / Parts
 eyebrow: Project / Registry
 heading: Our parts

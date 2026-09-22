@@ -22,6 +22,20 @@ RESOURCE_RE = re.compile(
     re.I,
 )
 
+STANDARD_ROUTES = {
+    "contribution",
+    "engineering",
+    "human-practices",
+    "education",
+    "entrepreneurship",
+    "hardware",
+    "inclusivity",
+    "model",
+    "safety-and-security",
+    "software",
+    "sustainability",
+}
+
 FORBIDDEN_PATTERNS: tuple[tuple[str, re.Pattern[str]], ...] = (
     ("placeholder class", re.compile(r"placeholder-tag|content-slot|slot-chip", re.I)),
     ("placeholder wording", re.compile(r"figure placeholder|pending documentation|reference to add|content slot", re.I)),
@@ -100,13 +114,14 @@ def audit_source(path: Path, failures: list[str]) -> dict[str, int | str | bool]
         failures.append(f"{path}: no sections")
     return {
         "slug": path.stem,
+        "route": meta.get("route", "").strip("/"),
         "sections": len(re.findall(r"<section\b", body, re.I)),
         "hidden": meta.get("hidden", "false").strip().lower() in {"true", "yes", "1", "on"},
         "draft": meta.get("draft", "false").strip().lower() in {"true", "yes", "1", "on"},
     }
 
 
-def audit_generated(root: Path, failures: list[str]) -> None:
+def audit_generated(root: Path, failures: list[str], expected_count: int) -> None:
     generated = [root / "index.html", *sorted((root / "pages").glob("*.html"))]
     generated += sorted(
         path for path in root.glob("*/index.html")
@@ -139,8 +154,51 @@ def audit_generated(root: Path, failures: list[str]) -> None:
                 fragment_re = re.compile(rf"\bid=[\"']{re.escape(fragment)}[\"']", re.I)
                 if not fragment_re.search(target_source):
                     failures.append(f"{path}: missing fragment target {value}")
-    if len(seen) != 30:
-        failures.append(f"generated page count is {len(seen)}, expected 30")
+    if len(seen) != expected_count:
+        failures.append(f"generated page count is {len(seen)}, expected {expected_count}")
+
+
+def audit_igem_2026_controls(root: Path, results: list[dict[str, int | str | bool]], failures: list[str]) -> None:
+    by_route = {str(result["route"]): result for result in results if result["route"]}
+    for route in sorted(STANDARD_ROUTES):
+        result = by_route.get(route)
+        if result is None:
+            failures.append(f"missing 2026 Standard URL route: /{route}")
+            continue
+        if result["hidden"]:
+            failures.append(f"2026 Standard URL route is hidden from search: /{route}")
+        if result["draft"]:
+            failures.append(f"2026 Standard URL route is draft: /{route}")
+
+    required_files = ("LICENSE", ".gitlab-ci.yml")
+    for name in required_files:
+        if not (root / name).exists():
+            failures.append(f"missing iGEM repository control file: {name}")
+
+    gitignore = (root / ".gitignore").read_text(encoding="utf-8") if (root / ".gitignore").exists() else ""
+    if not re.search(r"(?m)^/?public/?$", gitignore):
+        failures.append(".gitignore must exclude CI-generated public output")
+
+    pipeline = (root / ".gitlab-ci.yml").read_text(encoding="utf-8") if (root / ".gitlab-ci.yml").exists() else ""
+    for marker in ("python3 build.py", "public", "artifacts"):
+        if marker not in pipeline:
+            failures.append(f".gitlab-ci.yml missing required marker: {marker}")
+
+    footer = (root / "_partials" / "footer.html").read_text(encoding="utf-8")
+    for marker in ("creativecommons.org/licenses/by/4.0", "{{SOURCE_REPOSITORY_URL}}", "licensing/"):
+        if marker not in footer:
+            failures.append(f"footer missing 2026 compliance marker: {marker}")
+    if "nankai-seal" in footer.lower():
+        failures.append("footer still embeds an uncredited institutional seal")
+
+    licensing = root / "_content" / "licensing.html"
+    if not licensing.exists():
+        failures.append("missing public licensing and responsible-AI disclosure page")
+    else:
+        text = licensing.read_text(encoding="utf-8").lower()
+        for marker in ("cc by 4.0", "openai codex", "human review", "ai-generated"):
+            if marker not in text:
+                failures.append(f"licensing page missing disclosure marker: {marker}")
 
 
 def audit_drafts(root: Path, sources: list[Path], failures: list[str]) -> None:
@@ -161,18 +219,19 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--generated", action="store_true")
+    parser.add_argument("--generated-root", type=Path)
     parser.add_argument("--drafts", action="store_true")
     args = parser.parse_args()
     root = args.root.resolve()
     sources = sorted((root / "_content").glob("*.html"))
     failures: list[str] = []
-    if len(sources) != 30:
-        failures.append(f"source page count is {len(sources)}, expected 30")
     results = [audit_source(path, failures) for path in sources]
+    audit_igem_2026_controls(root, results, failures)
     if any(result["draft"] for result in results):
         failures.append("one or more source pages are marked draft")
     if args.generated:
-        audit_generated(root, failures)
+        generated_root = (args.generated_root or (root / "public")).resolve()
+        audit_generated(generated_root, failures, len([result for result in results if not result["draft"]]))
     if args.drafts:
         audit_drafts(root, sources, failures)
     print(

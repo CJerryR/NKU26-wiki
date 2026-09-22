@@ -1,0 +1,15 @@
+image: python:3.12
+
+pages:
+  stage: build
+  script:
+    - python3 build.py --output public
+    - python3 tools/audit_wiki_content.py --generated --generated-root public
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH
+      when: never
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      when: always

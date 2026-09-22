@@ -3,7 +3,6 @@ source: _content/safety.html
 slug: safety
 title: Safety
 route: safety-and-security
-hidden: true
 crumbs: Project / Safety
 eyebrow: Project / Responsibility
 heading: Working safely

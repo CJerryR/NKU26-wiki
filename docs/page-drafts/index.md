@@ -34,8 +34,6 @@ The proposed reader: engineered yeast, still a design hypothesis.
 
 ![image](img/mascot-trim.png)
 
-proposed reader
-
 Minimal wiki map
 
 ## Six doors, one evidence trail.

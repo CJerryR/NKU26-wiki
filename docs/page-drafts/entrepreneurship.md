@@ -2,7 +2,7 @@
 source: _content/entrepreneurship.html
 slug: entrepreneurship
 title: Entrepreneurship
-hidden: true
+route: entrepreneurship
 crumbs: Human Practices / Entrepreneurship
 eyebrow: Human Practices / Business
 heading: A path to impact

@@ -3,7 +3,6 @@ source: _content/contribution.html
 slug: contribution
 title: Contribution
 route: contribution
-hidden: true
 crumbs: Project / Contribution
 eyebrow: Project / For the community
 heading: What we leave behind
@@ -47,7 +46,7 @@ Bench workflows as recorded, with the handling notes and the gaps that matter fo
 
 Named elements and construct work, separated from the evidence still missing for each.
 
-[](../pages/parts.html)
+[](../parts/)
 
 These pages are working documentation, not final validated resources. They are most useful as a starting point to reproduce, correct, and extend — not as endpoints to cite.
 

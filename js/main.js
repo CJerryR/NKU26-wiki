@@ -916,26 +916,57 @@
     }, { passive: true });
   }
 
-  /* -- Single travelling mascot on the liquid homepage ----------------- */
+  /* -- Single travelling detective on the liquid homepage --------------
+     One narrative investigator that walks review -> mechanism -> closing.
+     The WebGL runtime is downloaded only when the *untransformed* story
+     sentinel (#review-paths) nears the viewport, and never on low-capability
+     / save-data / coarse-pointer / reduced-motion sessions. The runner is
+     routed through deliberate empty zones so it never sits over the cards. */
   function liquidMascotFlow() {
     var stage = $('[data-mascot-runner-stage]');
     if (!stage) return;
     var runner = $('[data-mascot-runner]', stage);
     if (!runner) return;
-    var tag = $('.liquid-mascot-runner__tag', runner);
     var modelHost = $('[data-mascot-3d]', runner);
+    var review = $('#review-paths', stage);
+    var mechanism = $('.liquid-section--soil', stage);
+    var closing = $('.liquid-section--paper', stage);
+    if (!review || !mechanism || !closing) return;
+
+    // ---- capability gate: decide whether the 3D runtime may load -------
+    var finePointer = window.matchMedia('(pointer:fine)').matches;
+    var conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+    var saveData = !!(conn && conn.saveData);
+    var motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    function lowCapability() {
+      // never initialise 3D on: reduced motion, save-data, coarse pointer,
+      // no WebGL, or obviously tiny/low-core devices.
+      if (motionQuery.matches) return true;
+      if (saveData) return true;
+      if (!finePointer) return true;
+      if (!window.WebGLRenderingContext) return true;
+      if (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 2) return true;
+      return false;
+    }
+
+    var mascot = null;       // the 3D instance (exposes intent + wake)
+    var loadStarted = false;
 
     function loadLocalScript(path) {
       return new Promise(function (resolve, reject) {
         var existing = document.querySelector('script[data-local-src="' + path + '"]');
         if (existing) {
           if (existing.dataset.loaded === 'true') resolve();
-          else existing.addEventListener('load', resolve, { once: true });
+          else {
+            existing.addEventListener('load', resolve, { once: true });
+            existing.addEventListener('error', reject, { once: true });
+          }
           return;
         }
         var script = document.createElement('script');
         var prefix = document.body.getAttribute('data-path-prefix') || '';
         script.src = prefix + path;
+        script.defer = true;
         script.dataset.localSrc = path;
         script.addEventListener('load', function () {
           script.dataset.loaded = 'true';
@@ -946,18 +977,48 @@
       });
     }
 
-    if (modelHost && window.WebGLRenderingContext) {
+    function initModel() {
+      if (loadStarted) return true;
+      if (!modelHost || lowCapability()) return false;
+      loadStarted = true;
       loadLocalScript('js/vendor/three.min.js')
         .then(function () { return loadLocalScript('js/mascot-3d.js'); })
         .then(function () {
-          if (window.NKUMascot3D) window.NKUMascot3D.create(modelHost);
+          if (window.NKUMascot3D) {
+            mascot = window.NKUMascot3D.create(modelHost);
+            if (mascot) { syncIntent(); mascot.wake(); }
+          }
         })
         .catch(function () {
           modelHost.dataset.mascotFailed = 'true';
         });
+      return true;
     }
 
-    function setRunner(x, y, scale, rot, tilt, alpha, aura, label) {
+    /* ---- true lazy trigger: observe the untransformed sentinel --------
+       #review-paths is a normal section (never translated), so its
+       intersection is a faithful "story is approaching" signal. The runner
+       itself is translated all over the page, so it must NOT be the load
+       trigger. */
+    var sentinelInView = false;
+    if (typeof window.IntersectionObserver === 'function') {
+      var sentinelObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          sentinelInView = e.isIntersecting;
+          if (e.isIntersecting) {
+            if (initModel()) sentinelObserver.disconnect();
+          }
+        });
+      }, { rootMargin: '0px', threshold: 0.12 });
+      sentinelObserver.observe(review);
+    } else {
+      // no IO: defer to first scroll rather than loading eagerly on the hero
+      window.addEventListener('scroll', function once() {
+        if (initModel()) window.removeEventListener('scroll', once);
+      }, { passive: true });
+    }
+
+    function setRunner(x, y, scale, rot, tilt, alpha, aura, blur) {
       runner.style.setProperty('--runner-x', x.toFixed(1) + 'px');
       runner.style.setProperty('--runner-y', y.toFixed(1) + 'px');
       runner.style.setProperty('--runner-scale', scale.toFixed(3));
@@ -965,63 +1026,154 @@
       runner.style.setProperty('--runner-tilt', tilt.toFixed(2) + 'deg');
       runner.style.setProperty('--runner-alpha', alpha.toFixed(3));
       runner.style.setProperty('--runner-aura', aura.toFixed(3));
-      runner.dataset.mascotProgress = runner.dataset.mascotProgress || '0';
-      if (tag && tag.textContent !== label) tag.textContent = label;
+      runner.style.setProperty('--runner-blur', blur.toFixed(2) + 'px');
     }
 
-    if (REDUCED) {
-      setRunner(window.innerWidth * 0.58, window.innerHeight * 0.22, 0.92, -4, -10, 0.12, 0.18, 'candidate reader');
-      return;
+    // Reduced motion / low-capability: park a calm, non-intrusive PNG pose
+    // in the review margin and stop. Nothing animates, nothing downloads.
+    function parkStatic() {
+      var vw = window.innerWidth || 1;
+      var vh = window.innerHeight || 1;
+      var mobile = vw < 700;
+      setRunner(mobile ? vw * 0.62 : vw - Math.min(vw * 0.26, 360),
+                vh * 0.14, mobile ? 0.5 : 0.56, -3, -8, mobile ? 0.2 : 0.24, 0.12, 0.6);
+    }
+
+    if (motionQuery.matches) { parkStatic(); }
+
+    function mix(a, b, amount) { return a + (b - a) * amount; }
+    function clamp01(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
+
+    // continuous responsive factor (no hard 680/980 jumps): 0 at <=380px,
+    // 1 at >=1200px, smoothly interpolated. All sizing keys off this.
+    function widthFactor() {
+      return clamp01(((window.innerWidth || 1) - 380) / (1200 - 380));
+    }
+
+    // shared, smoothed story progress + gaze pushed to the 3D model
+    var state = { progress: 0, lift: 0 };
+    function syncIntent() {
+      if (!mascot) return;
+      mascot.intent.progress = state.progress;
+      mascot.intent.lift = state.lift;
+      mascot.intent.gx = gaze.x;
+      mascot.intent.gy = gaze.y;
+    }
+
+    // ---- pointer gaze (fine pointers only, bounded) --------------------
+    var gaze = { x: 0, y: 0, tx: 0, ty: 0 };
+    if (finePointer && !motionQuery.matches) {
+      window.addEventListener('pointermove', function (e) {
+        // normalise pointer to -1..1 around the runner's screen box
+        var rect = runner.getBoundingClientRect();
+        var cx = rect.left + rect.width / 2;
+        var cy = rect.top + rect.height / 2;
+        gaze.tx = clamp01((e.clientX - cx) / (window.innerWidth * 0.5) * 0.5 + 0.5) * 2 - 1;
+        gaze.ty = clamp01((e.clientY - cy) / (window.innerHeight * 0.5) * 0.5 + 0.5) * 2 - 1;
+      }, { passive: true });
     }
 
     var ticking = false;
     function update() {
+      ticking = false;
       var vh = window.innerHeight || 1;
       var vw = window.innerWidth || 1;
+      var wf = widthFactor();
+      var mobile = vw < 700;
+
       var r = stage.getBoundingClientRect();
-      var travel = Math.max(r.height - vh, 1);
-      var progress = clamp(-r.top / travel, 0, 1);
-      var visible = r.bottom > -vh * 0.2 && r.top < vh * 1.15;
-      var eased = smoothstep(progress);
-      var mechanismPull = Math.sin(smoothstep((progress - 0.18) / 0.54) * Math.PI);
-      var wave = Math.sin(progress * Math.PI * 2);
-      var gait = Math.sin(progress * Math.PI * 10);
-      var localScroll = -r.top;
-      var mobile = vw < 680;
-      var entrance = smoothstep((vh * 1.05 - r.top) / (vh * 0.7));
-      var closingLift = smoothstep((progress - 0.72) / 0.28);
-      var x = mobile
-        ? vw * (0.57 - 0.18 * eased) + wave * vw * 0.015
-        : vw * (0.68 - 0.16 * eased - 0.06 * mechanismPull) + wave * vw * 0.025;
-      if (!mobile) x += closingLift * vw * 0.03;
-      var y = localScroll + (mobile ? vh * (0.07 + progress * 0.32) : vh * (0.04 + progress * 0.34)) + gait * (mobile ? 8 : 18);
-      if (mobile) y -= (1 - eased) * vh * 0.02;
-      y -= closingLift * vh * (mobile ? 0.12 : 0.37);
-      var alpha = visible ? entrance * (mobile ? 0.58 : 0.78) : 0;
-      var aura = (mobile ? 0.26 : 0.34) * (1 - closingLift * 0.42);
-      var scale = mobile ? 0.72 + eased * 0.15 : 0.78 + eased * 0.28;
-      var rot = -8 + eased * 13 + wave * 1.5;
-      var tilt = -20 + eased * 26;
-      var label = progress < 0.33 ? 'evidence scout' : progress < 0.72 ? 'candidate reader' : 'case open';
-      runner.classList.toggle('is-closing', !mobile && progress > 0.72);
-      runner.dataset.mascotProgress = progress.toFixed(4);
-      setRunner(x, y, scale, rot, tilt, alpha, aura, label);
-      ticking = false;
+      var reviewRect = review.getBoundingClientRect();
+      var mechanismRect = mechanism.getBoundingClientRect();
+      var closingRect = closing.getBoundingClientRect();
+
+      var visible = r.bottom > -vh * 0.25 && r.top < vh * 1.2;
+
+      // per-span entry progress (0..1)
+      var entrance = smoothstep((vh * 1.05 - reviewRect.top) / (vh * 0.7));
+      var mechanismEntry = smoothstep((vh * 0.86 - mechanismRect.top) / (vh * 0.72));
+      var closingEntry = smoothstep((vh * 0.74 - closingRect.top) / (vh * 0.66));
+
+      /* ---- horizontal route ------------------------------------------
+         review   : right margin, beside the tile grid (grid ends short of
+                    the right edge, so this is an empty column).
+         mechanism: settle into the empty transition band above both the
+                    heading and the card ladder. This keeps the character in
+                    the story without crossing either reading column.
+         closing  : drift back toward centre-right as a foreground guide. */
+      var reviewX    = mobile ? vw * 0.60 : vw - mix(150, 380, wf);
+      var mechanismX = mobile ? vw * 0.29 : mix(vw * 0.26, vw * 0.35, wf);
+      var closingX   = mobile ? vw * 0.55 : vw - mix(260, 520, wf);
+      var x = mix(mix(reviewX, mechanismX, mechanismEntry), closingX, closingEntry);
+
+      // vertical: use the quiet transition band above the mechanism copy.
+      var reviewY    = mobile ? vh * 0.10 : vh * 0.12;
+      var mechanismY = mobile ? vh * 0.03 : vh * 0.035;
+      var closingY   = mobile ? vh * 0.10 : vh * 0.06;
+      var vy = mix(mix(reviewY, mechanismY, mechanismEntry), closingY, closingEntry);
+
+      // continuous scale (no breakpoint jump)
+      var reviewScale    = mix(0.54, 0.6, wf);
+      var mechanismScale = mix(0.34, 0.4, wf);
+      var closingScale   = mix(0.66, 0.88, wf);
+      var scale = mix(mix(reviewScale, mechanismScale, mechanismEntry), closingScale, closingEntry);
+
+      /* ---- opacity: keep it a faint guide near text, only assertive in
+         the closing section where it is the deliberate foreground. In the
+         mechanism band it is routed to empty space AND kept low so even any
+         slight overlap can't muddy the cards. */
+      var reviewAlpha    = mobile ? 0.34 : 0.46;
+      var mechanismAlpha = mobile ? 0.28 : 0.38;
+      var closingAlpha   = mobile ? 0.5 : 0.92;
+      var alpha = visible ? entrance * mix(mix(reviewAlpha, mechanismAlpha, mechanismEntry), closingAlpha, closingEntry) : 0;
+
+      var aura = mix(mix(0.12, 0.08, mechanismEntry), mobile ? 0.14 : 0.22, closingEntry);
+      // Keep the face and instrument legible while retaining a soft entrance.
+      var blur = mix(mix(0.15, 0.35, mechanismEntry), 0, closingEntry);
+      var rot = mix(mix(-4, 3, mechanismEntry), 0, closingEntry);
+      var tilt = mix(mix(-12, 6, mechanismEntry), 2, closingEntry);
+
+      var y = -r.top + vy;
+
+      // the closing foreground moment (desktop only) lifts the runner above
+      // the glass card with a clean, unblurred silhouette.
+      var closingForeground = !mobile && closingEntry > 0.85 && closingRect.top < vh * 0.3;
+      runner.classList.toggle('is-closing', closingForeground);
+
+      setRunner(x, y, scale, rot, tilt, alpha, aura, blur);
+
+      // drive the 3D character
+      state.progress = mix(mix(0.08, 0.5, mechanismEntry), 0.92, closingEntry);
+      state.lift = closingForeground ? closingEntry : 0;
+      runner.dataset.mascotProgress = state.progress.toFixed(4);
+
+      // ease gaze toward its target and push everything to the model
+      gaze.x += (gaze.tx - gaze.x) * 0.1;
+      gaze.y += (gaze.ty - gaze.y) * 0.1;
+      syncIntent();
+
+      // resume a paused render loop the instant the runner is visible again
+      if (mascot && alpha > 0.012) mascot.wake();
     }
 
-    window.addEventListener('scroll', function () {
-      if (!ticking) {
-        ticking = true;
-        raf(update);
+    function onScrollResize() {
+      if (!ticking) { ticking = true; raf(update); }
+    }
+    window.addEventListener('scroll', onScrollResize, { passive: true });
+    window.addEventListener('resize', onScrollResize);
+
+    // respect live reduced-motion changes without a refresh
+    function onMotion() {
+      if (motionQuery.matches) { parkStatic(); }
+      else {
+        if (sentinelInView) initModel();
+        update();
+        if (mascot) mascot.wake();
       }
-    }, { passive: true });
-    window.addEventListener('resize', function () {
-      if (!ticking) {
-        ticking = true;
-        raf(update);
-      }
-    });
-    update();
+    }
+    if (motionQuery.addEventListener) motionQuery.addEventListener('change', onMotion);
+    else if (motionQuery.addListener) motionQuery.addListener(onMotion);
+
+    if (!motionQuery.matches) update();
   }
 
   /* -- Glass pointer response ------------------------------------------- */

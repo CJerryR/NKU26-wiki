@@ -20,6 +20,7 @@ Generated from `_content/*.html` for copy review.
 - [index](index.md)
 - [instructors](instructors.md)
 - [integrated-hp](integrated-hp.md)
+- [licensing](licensing.md)
 - [modeling](modeling.md)
 - [notebook](notebook.md)
 - [partnerships](partnerships.md)

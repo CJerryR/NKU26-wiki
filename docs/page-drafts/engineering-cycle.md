@@ -3,7 +3,6 @@ source: _content/engineering-cycle.html
 slug: engineering-cycle
 title: Engineering
 route: engineering
-hidden: true
 crumbs: Project / Engineering
 eyebrow: Project / Evidence
 heading: The engineering cycle

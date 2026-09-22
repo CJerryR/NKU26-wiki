@@ -2,7 +2,7 @@
 source: _content/sustainability.html
 slug: sustainability
 title: Sustainability
-hidden: true
+route: sustainability
 crumbs: Human Practices / Sustainability
 eyebrow: Human Practices / Impact
 heading: Designing for the long term

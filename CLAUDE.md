@@ -23,8 +23,9 @@
 
 ```bash
 # 需要 Python 3（构建脚本零第三方依赖）
-python3 build.py          # 由源文件生成 index.html + pages/*.html
-# 然后直接用浏览器打开 index.html 预览（无需本地服务器）
+python3 build.py          # 由源文件生成 public/（CI/CD 发布目录）
+python3 -m http.server 8000 --directory public
+# 浏览器打开 http://127.0.0.1:8000/
 ```
 
 - 想批量重建页面骨架(很少用到):`python3 scaffold.py`(不会覆盖手写页)。
@@ -36,7 +37,7 @@ python3 build.py          # 由源文件生成 index.html + pages/*.html
 
 **已完成(可直接用)**
 - ✅ 全套设计系统 `css/style.css`、动画引擎 `js/main.js`、构建系统 `build.py`。
-- ✅ 30 个页面全部生成,导航/页脚/面包屑/左侧浮动大纲齐全。
+- ✅ 页面全部由源码生成到 `public/`,导航/页脚/面包屑/左侧浮动大纲齐全。
 - ✅ 自托管字体、纯静态、**0 外部资源、0 未替换 token、0 失效内链**(已校验)。
 - ✅ 响应式(桌面/移动)、`prefers-reduced-motion`、打印样式。
 
@@ -94,8 +95,7 @@ python3 build.py          # 由源文件生成 index.html + pages/*.html
 
 ```
 nku/
-├── index.html              # 构建产物（首页）—— 不要手改
-├── pages/*.html            # 构建产物（子页面）—— 不要手改
+├── public/                 # CI/CD 构建产物（已忽略、不要提交）
 ├── _templates/base.html    # 页面骨架（占位符 token）
 ├── _partials/
 │   ├── nav.html            # 唯一导航（含左上角名称）
@@ -110,7 +110,7 @@ nku/
 └── CLAUDE.md               # 本文件
 ```
 
-> **黄金法则**:`index.html` / `pages/*.html` 会被覆盖;一切修改都在
+> **黄金法则**:`public/` 会被覆盖且不应提交;一切修改都在
 > `_content/`、`_partials/`、`_templates/`、`css/`、`js/`。
 
 ---
@@ -174,7 +174,7 @@ meta: Discipline=Synthetic biology | Reading=7 min
 
 ## 8. 合规红线（务必遵守 = Best Wiki 前提）
 
-iGEM **禁止 wiki 运行时加载任何站外资源**(Google Fonts、CDN、外链图片),违反可能失格。
+iGEM 2026 要求 Wiki 由源码通过 CI/CD 构建、运行时资源位于 iGEM 基础设施、团队内容使用 CC BY 4.0、页脚链接官方 GitLab 源码，并公开说明 AI 使用。
 - 字体本地 `@font-face`;无任何站外 `<script src>`/`<link href>`;图片全在 `img/`。
 - 每页完全独立静态、无运行时 fetch。
 - **若要引库:把它 vendoring 进仓库,绝不要加 CDN。**
@@ -183,10 +183,9 @@ iGEM **禁止 wiki 运行时加载任何站外资源**(Google Fonts、CDN、外�
 
 ## 9. 部署到 iGEM
 
-1. 推送构建产物与资源到团队 **iGEM GitLab**(`https://gitlab.igem.org/2026/<team>`):
-   `index.html`、`pages/`、`css/`、`js/`、`fonts/`、`img/`。
-2. **保持相对路径不变**(站点可能在子路径)。
-3. 推送前先 `python3 build.py`,并在真实 GitLab Pages 上验证。
+1. 将源码推送到团队 **iGEM GitLab**；不要提交 `public/` 或其他预生成页面。
+2. `.gitlab-ci.yml` 会运行 `python3 build.py --output public` 并发布 artifacts。
+3. 推送前先运行构建与审计，并在真实 iGEM Wiki 域名上运行 External Content Check。
 
 ---
 

@@ -2,7 +2,7 @@
 source: _content/diversity-inclusion.html
 slug: diversity-inclusion
 title: Inclusion
-hidden: true
+route: inclusivity
 crumbs: Human Practices / Inclusion
 eyebrow: Human Practices / Inclusion
 heading: Who gets to take part
