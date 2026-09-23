@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 172" width="940" height="172" role="img" aria-labelledby="t">
+  <title id="t">Intended sensing pipeline: soil-derived sample, ascaroside signal, candidate yeast GPCR sensor, mating-pathway amplification, visual readout</title>
+      <defs><marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#6e4fb8"/></marker></defs>
+      <g font-family="'Space Mono',Menlo,Consolas,monospace" font-size="12">
+        <rect x="10" y="46" width="150" height="70" rx="12" fill="#efe6d6" stroke="#6e4fb8" stroke-width="1.5"/>
+        <text x="85" y="78" text-anchor="middle" fill="#241c2b">Soil-derived</text><text x="85" y="95" text-anchor="middle" fill="#241c2b">sample</text>
+        <rect x="196" y="46" width="150" height="70" rx="12" fill="#efe6d6" stroke="#6e4fb8" stroke-width="1.5"/>
+        <text x="271" y="78" text-anchor="middle" fill="#241c2b">Ascaroside</text><text x="271" y="95" text-anchor="middle" fill="#7b7280">signal (ascr#18?)</text>
+        <rect x="382" y="46" width="150" height="70" rx="12" fill="#efe6d6" stroke="#6e4fb8" stroke-width="1.5"/>
+        <text x="457" y="78" text-anchor="middle" fill="#241c2b">Yeast GPCR</text><text x="457" y="95" text-anchor="middle" fill="#7b7280">sensor (candidate)</text>
+        <rect x="568" y="46" width="150" height="70" rx="12" fill="#efe6d6" stroke="#6e4fb8" stroke-width="1.5"/>
+        <text x="643" y="78" text-anchor="middle" fill="#241c2b">Mating-pathway</text><text x="643" y="95" text-anchor="middle" fill="#241c2b">amplification</text>
+        <rect x="754" y="46" width="150" height="70" rx="12" fill="#efe6d6" stroke="#e2a23c" stroke-width="1.6"/>
+        <text x="829" y="78" text-anchor="middle" fill="#241c2b">Visual</text><text x="829" y="95" text-anchor="middle" fill="#241c2b">readout</text>
+        <g stroke="#6e4fb8" stroke-width="2" marker-end="url(#ah)">
+          <line x1="162" y1="81" x2="192" y2="81"/>
+          <line x1="348" y1="81" x2="378" y2="81"/>
+          <line x1="534" y1="81" x2="564" y2="81"/>
+          <line x1="720" y1="81" x2="750" y2="81"/>
+        </g>
+      </g>
+    </svg>

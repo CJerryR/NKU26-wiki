@@ -1219,7 +1219,7 @@
     var tips = [
       'Tip  -  tap the outline on the left to jump between sections.',
       'Every figure here is hosted on iGEM servers. No outside trackers.',
-      'Looking for our parts? They live under <b>Project  ->  Parts</b>.',
+      'Looking for our parts? They live under <b>Lab  ->  Parts</b>.',
       'Back to the top? Just tap me.',
       'Two target species: <b>H. glycines</b> &amp; <b>M. incognita</b>. We are testing shared signal candidates.'
     ];

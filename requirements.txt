@@ -1,0 +1,6 @@
+# Build dependencies for the wiki. Install once:
+#   python3 -m pip install -r requirements.txt
+#
+# Markdown pages in _content/*.md are rendered with Python-Markdown.
+# Pinned below 4.0 because the extension API changes between major versions.
+Markdown>=3.6,<4

@@ -1,0 +1,119 @@
+/* Reference-led visual pass. This file is loaded last on the homepage so the
+   existing semantic sections and interactions keep their contracts while the
+   composition follows the supplied B17 storyboard. */
+.page-home {
+  --home-width: 1200px;
+  --home-gutter: 40px;
+  --home-dark: #170e23;
+  --home-dark-2: #23112f;
+  --home-brand: #7e0c6e;
+  --home-paper: #f5eedc;
+  --home-paper-2: #e9dfca;
+  --home-cyan: #76dfd2;
+  --home-gold: #ecc56b;
+  --home-ink: #34283d;
+  background: var(--home-dark);
+}
+
+.page-home .nav {background:linear-gradient(180deg,#7e0c6e 0%,#5c164f 100%);border-bottom:1px solid #c995bf44;}
+.page-home .nav-inner {min-height:64px;}
+.page-home .nav-brand img {filter:drop-shadow(0 3px 5px #12091b80);}
+.page-home .nav-link {font-size:12px;letter-spacing:.01em;}
+
+.page-home .home-opening {background:#170e23;}
+.page-home .opening-intro {min-height:640px;padding-block:96px 110px;background:
+  radial-gradient(ellipse at 50% 18%,#6f245b4d 0%,transparent 44%),
+  linear-gradient(180deg,#2d143b 0%,#170e23 72%);}
+.page-home .opening-intro__copy {max-width:920px;}
+.page-home .opening-intro__copy h1 {font-size:clamp(48px,6.4vw,86px);line-height:.98;letter-spacing:-.055em;text-shadow:0 6px 28px #08040e80;}
+.page-home .opening-intro__copy h1 em {color:#f3e5c9;}
+.page-home .opening-intro__lead {color:#d7c8d4;font-size:16px;}
+.page-home .opening-botanical {opacity:.66;mix-blend-mode:screen;}
+.page-home .opening-botanical svg {transform:scale(1.05);transform-origin:center bottom;}
+.page-home .opening-experience {padding-block:34px 58px;background:
+  linear-gradient(180deg,#180d26 0%,#241231 45%,#170e23 100%);}
+.page-home .opening-field-head {margin-bottom:8px;}
+.page-home .opening-field-title {font-size:clamp(26px,3vw,40px);color:#f5eedc;}
+.page-home .opening-instructions {color:#cfbed3;}
+.page-home .opening-field {height:clamp(520px,50vw,700px);border-top:1px solid #b595d622;border-bottom:1px solid #b595d622;}
+.page-home .opening-soil {object-fit:cover;object-position:center;filter:saturate(.92) contrast(1.06);}
+.page-home .opening-shade {background:linear-gradient(180deg,#170e235c 0%,transparent 22%,transparent 76%,#170e23d0 100%);}
+.page-home .opening-trail--ambient {opacity:.3;}
+.page-home .opening-field-caption {right:20px;bottom:10%;color:#d7c7d4;}
+.page-home .opening-controls {padding-top:16px;}
+.page-home .opening-status strong {font-size:20px;}
+.page-home .opening-footnote {border-top-color:#d7b9d52c;}
+
+.page-home .home-trail-ribbon {min-height:58px;display:flex;align-items:center;justify-content:center;gap:26px;padding:10px 24px;background:#24122f;color:#f5eedc;border-top:1px solid #7e0c6e;border-bottom:1px solid #b595d633;font:11px/1.4 'Space Mono',monospace;letter-spacing:.08em;text-transform:uppercase;overflow:hidden;}
+.page-home .home-trail-ribbon i {width:5px;height:5px;flex:0 0 5px;border-radius:50%;background:var(--home-gold);}
+
+.page-home #global-story {padding-block:96px 90px;background:#f5eedc;}
+.page-home .home-maps__world-heading {grid-template-columns:1fr 1fr;align-items:start;gap:80px;}
+.page-home #global-story .home-heading {max-width:12ch;font-size:clamp(44px,5vw,70px);color:#34283d;}
+.page-home #global-story .home-lead {font-size:18px;max-width:38ch;}
+.page-home .home-map--world {margin-top:44px;}
+.page-home .home-map__heading {padding-block:18px;border-top:1px solid #7e0c6e66;}
+.page-home .home-map__canvas--world {background:#efe4d0;box-shadow:inset 0 0 0 1px #7e0c6e1c;}
+.page-home .home-map__empty {background:#f5eedc;}
+.page-home #china-story {padding-block:86px 100px;background:#170e23;}
+.page-home .home-maps__china-heading {grid-template-columns:1fr 1fr;gap:80px;}
+.page-home #china-story .home-heading {color:#f5eedc;}
+.page-home .home-map--china {border-top-color:#b595d666;}
+
+.page-home #hidden-threat {padding-block:94px 102px;background:#f5eedc;}
+.page-home .science-section-head {grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.page-home .science-threat .home-heading {font-size:clamp(44px,5vw,68px);color:#34283d;}
+.page-home .science-infection {gap:26px;margin-top:56px;}
+.page-home .science-scene {background:#eadfc9;border:1px solid #7e0c6e1c;}
+.page-home .science-scene img {mix-blend-mode:multiply;}
+.page-home #chemical-clues,#signal-combination {background:#24112f;}
+.page-home #chemical-clues {padding-block:92px 100px;}
+.page-home #chemical-clues .home-heading,#signal-combination .home-heading {color:#f5eedc;}
+.page-home .science-clue-types {margin-top:48px;gap:22px;}
+.page-home .science-clue-type {border-top:1px solid #b595d655;padding-top:22px;}
+.page-home #signal-combination {padding-block:84px 88px;background:radial-gradient(circle at 73% 52%,#7e0c6e29,transparent 34%),#24112f;}
+.page-home .science-signal-pair {background:#170e23aa;border:1px solid #b595d62f;padding:28px 24px 22px;}
+.page-home #sensor-design {padding-block:94px 102px;background:#f5eedc;}
+.page-home #sensor-design .science-section-head {margin-bottom:52px;}
+.page-home .science-pathway {gap:18px;}
+.page-home .science-pathway li {border-top:2px solid #7e0c6e66;padding-top:18px;}
+.page-home .science-pathway-art {background:#eee3d0;}
+.page-home #research-loop {padding-block:96px;background:#f5eedc;}
+.page-home .science-network {margin-top:56px;background:#efe4d0;border:1px solid #7e0c6e22;}
+.page-home .science-network-core {background:#7e0c6e;color:#f5eedc;box-shadow:0 12px 32px #7e0c6e2e;}
+.page-home .science-connection {background:#f5eedc;border-color:#7e0c6e44;box-shadow:0 8px 22px #34283d12;}
+.page-home #our-results {padding-block:92px 104px;background:#f5eedc;}
+.page-home .science-results-grid {gap:22px;margin-top:48px;}
+.page-home .science-result {border:1px solid #7e0c6e33;background:#f5eedc;box-shadow:0 10px 24px #34283d12;}
+.page-home .science-result-media {background:#24122f;min-height:190px;}
+
+.page-home .home-closing {background:#170e23;}
+.page-home .home-explore {padding-block:82px 70px;background:#24112f;}
+.page-home .home-explore__layout {grid-template-columns:340px 1fr;gap:60px;}
+.page-home .home-explore__intro .home-heading {color:#f5eedc;}
+.page-home .home-explore__grid {gap:10px;background:#170e23;border:1px solid #b595d62e;padding:10px;}
+.page-home .home-explore__grid a {min-height:112px;padding:18px;border:1px solid #b595d62e;background:#24122f;}
+.page-home .home-explore__grid a:hover {background:#35183f;border-color:#ecc56b88;}
+.page-home .home-footer {background:#f5eedc;color:#34283d;}
+.page-home .home-footer__support {border-bottom-color:#7e0c6e33;}
+
+@media (max-width:760px) {
+  .page-home {--home-gutter:22px;}
+  .page-home .opening-intro {min-height:600px;padding-block:100px 80px;}
+  .page-home .opening-intro__copy {width:min(100%,calc(100vw - 44px));}
+  .page-home .opening-intro__copy h1 {max-width:320px;margin-inline:auto;font-size:clamp(28px,7vw,34px);line-height:1.08;letter-spacing:-.03em;text-wrap:wrap;overflow-wrap:normal;}
+  .page-home .opening-skip {display:none;}
+  .page-home .opening-field {height:460px;}
+  .page-home .home-trail-ribbon {justify-content:flex-start;gap:18px;white-space:nowrap;overflow-x:auto;font-size:9px;}
+  .page-home .home-maps__world-heading,.page-home .home-maps__china-heading,.page-home .science-section-head {grid-template-columns:1fr;gap:24px;}
+  .page-home #global-story .home-heading,.page-home .science-threat .home-heading {max-width:15ch;font-size:42px;}
+  .page-home .home-map--world {margin-top:32px;}
+  .page-home .science-infection {margin-top:34px;}
+  .page-home .science-network {min-height:0;}
+  .page-home .home-explore__layout {grid-template-columns:1fr;gap:34px;}
+  .page-home .home-explore__grid {grid-template-columns:repeat(2,minmax(0,1fr));}
+  .page-home .home-detective {width:34px;height:40px;bottom:6px;left:3px;opacity:.76;}
+}
+@media (max-width:360px) {
+  .page-home .home-explore__grid {grid-template-columns:1fr;}
+}

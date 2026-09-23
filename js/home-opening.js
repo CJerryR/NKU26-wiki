@@ -20,6 +20,7 @@
     var frame = 0;
     var pendingPointer = null;
     var touchStart = null;
+    var touchMoved = false;
     var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
     var hints = [
       ['A chemical clue.', 'Follow the glow as it curves toward the roots.'],
@@ -142,19 +143,34 @@
     field.addEventListener('pointerdown', function (event) {
       if (terminal() || isControl(event.target)) return;
       touchStart = { id: event.pointerId, x: event.clientX, y: event.clientY };
+      touchMoved = false;
+    }, { passive: true });
+    field.addEventListener('pointermove', function (event) {
+      if (!touchStart || touchStart.id !== event.pointerId || terminal()) return;
+      var dx = event.clientX - touchStart.x;
+      var dy = event.clientY - touchStart.y;
+      if (Math.hypot(dx, dy) < 12) return;
+      // Horizontal swipes scrub the illustrated trail; vertical gestures remain
+      // native page scrolling because the field uses touch-action: pan-y.
+      if (Math.abs(dx) >= Math.abs(dy) * 0.72) {
+        touchMoved = true;
+        inspect(pointerPoint(event));
+      }
     }, { passive: true });
     field.addEventListener('pointerup', function (event) {
       if (!touchStart || touchStart.id !== event.pointerId) return;
       var moved = Math.hypot(event.clientX - touchStart.x, event.clientY - touchStart.y);
       touchStart = null;
-      if (moved <= 12 && !isControl(event.target)) inspect(pointerPoint(event));
+      if ((moved <= 12 || touchMoved) && !isControl(event.target)) inspect(pointerPoint(event));
+      touchMoved = false;
     }, { passive: true });
-    field.addEventListener('pointercancel', function () { touchStart = null; }, { passive: true });
+    field.addEventListener('pointercancel', function () { touchStart = null; touchMoved = false; }, { passive: true });
     field.addEventListener('pointerleave', function () {
       if (frame) cancelAnimationFrame(frame);
       frame = 0;
       pendingPointer = null;
       touchStart = null;
+      touchMoved = false;
     }, { passive: true });
 
     clues.forEach(function (button, index) {

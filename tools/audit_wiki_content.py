@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import html
 import importlib.util
+import json
 import re
 import sys
 from pathlib import Path
@@ -18,6 +19,16 @@ EXTERNAL_RUNTIME_RE = re.compile(
     r"<(?:script|img|iframe)\b[^>]*\bsrc=[\"']https?://|<link\b[^>]*\bhref=[\"']https?://",
     re.I,
 )
+# iGEM's own hosts are the only runtime origins the competition allows.
+IGEM_RUNTIME_HOSTS = ("video.igem.org", "static.igem.wiki")
+
+def external_runtime_hits(source: str) -> list[str]:
+    hits = []
+    for match in EXTERNAL_RUNTIME_RE.finditer(source):
+        tail = source[match.end() - 8 : match.end() + 120]
+        if not any(host in tail for host in IGEM_RUNTIME_HOSTS):
+            hits.append(match.group(0))
+    return hits
 RESOURCE_RE = re.compile(
     r"<(?P<tag>a|img|script|link)\b[^>]*\b(?:href|src)=[\"'](?P<value>[^\"']+)[\"']",
     re.I,
@@ -65,6 +76,30 @@ NEGATION_RE = re.compile(
 )
 
 
+FRONT_RE = re.compile(r"^\ufeff?---[ \t]*\n(?P<meta>.*?)\n---[ \t]*(?:\n|$)", re.S)
+
+
+def parse_front_meta(source: str, path: Path, failures: list[str]) -> tuple[dict[str, str], str]:
+    """Front matter for Markdown pages. The renderer is the source of truth for the body."""
+    match = FRONT_RE.match(source)
+    if not match:
+        failures.append(f"{path}: missing leading front matter")
+        return {}, source
+    meta: dict[str, str] = {}
+    for line in match.group("meta").splitlines():
+        if not line.strip() or line.lstrip().startswith("#") or ":" not in line:
+            continue
+        key, value = line.split(":", 1)
+        value = value.strip()
+        if len(value) >= 2 and value[0] == value[-1] and value[0] in "\"'":
+            value = value[1:-1]
+        meta[key.strip()] = value
+    for required in ("title", "group", "summary"):
+        if not meta.get(required):
+            failures.append(f"{path}: front matter missing {required}")
+    return meta, source[match.end() :]
+
+
 def parse_meta(source: str, path: Path, failures: list[str]) -> tuple[dict[str, str], str]:
     match = META_RE.match(source)
     if not match:
@@ -93,9 +128,37 @@ def has_unnegated_match(source: str, pattern: re.Pattern[str]) -> bool:
     return False
 
 
+def render_markdown_page(path: Path, body: str, failures: list[str]) -> str:
+    """Run the real build pipeline so the audit sees what a reader will see."""
+    spec = importlib.util.spec_from_file_location("wiki_md_for_audit", path.parent.parent / "wikimd.py")
+    wikimd = importlib.util.module_from_spec(spec)
+    sys.path.insert(0, str(path.parent.parent))
+    try:
+        spec.loader.exec_module(wikimd)
+        root = path.parent.parent
+        ctx = wikimd.RenderContext(
+            path.stem,
+            wikimd.load_bibliography(root / "_data" / "references.bib"),
+            wikimd.load_glossary(root / "_data" / "glossary.json"),
+        )
+        return wikimd.render_article(body, ctx)
+    except Exception as error:  # noqa: BLE001 - the audit reports, it does not crash
+        failures.append(f"{path}: Markdown page does not render ({error})")
+        return ""
+    finally:
+        sys.path.remove(str(path.parent.parent))
+
+
 def audit_source(path: Path, failures: list[str]) -> dict[str, int | str | bool]:
     source = path.read_text(encoding="utf-8")
-    meta, body = parse_meta(source, path, failures)
+    if path.suffix == ".md":
+        meta, markdown_body = parse_front_meta(source, path, failures)
+        body = render_markdown_page(path, markdown_body, failures)
+        # `{{P}}` and `page:` are build-time link tokens; the generated-page pass
+        # checks what they resolve to, so strip them before the wording checks.
+        source = source + body.replace("{{P}}", "").replace('"page:', '"')
+    else:
+        meta, body = parse_meta(source, path, failures)
     # Audit the authored homepage composition, not empty include comments.
     if "<!-- HOME:" in body:
         spec = importlib.util.spec_from_file_location("wiki_build_for_audit", path.parent.parent / "build.py")
@@ -117,8 +180,8 @@ def audit_source(path: Path, failures: list[str]) -> dict[str, int | str | bool]
     for tag in TOC_TAG_RE.findall(body):
         if not ID_RE.search(tag):
             failures.append(f"{path}: data-toc marker without id: {tag[:100]}")
-    if EXTERNAL_RUNTIME_RE.search(body):
-        failures.append(f"{path}: external runtime resource")
+    for hit in external_runtime_hits(body):
+        failures.append(f"{path}: external runtime resource: {hit[:60]}")
     if "<section" not in body:
         failures.append(f"{path}: no sections")
     return {
@@ -133,8 +196,8 @@ def audit_source(path: Path, failures: list[str]) -> dict[str, int | str | bool]
 def audit_generated(root: Path, failures: list[str], expected_count: int) -> None:
     generated = [root / "index.html", *sorted((root / "pages").glob("*.html"))]
     generated += sorted(
-        path for path in root.glob("*/index.html")
-        if not path.parent.name.startswith("_")
+        path for path in root.glob("**/index.html")
+        if path.parent != root and not any(part.startswith("_") for part in path.parts)
     )
     seen: set[Path] = set()
     for path in generated:
@@ -145,8 +208,8 @@ def audit_generated(root: Path, failures: list[str], expected_count: int) -> Non
         for label, pattern in FORBIDDEN_PATTERNS:
             if pattern.search(source):
                 failures.append(f"{path}: generated {label}")
-        if EXTERNAL_RUNTIME_RE.search(source):
-            failures.append(f"{path}: generated external runtime resource")
+        for hit in external_runtime_hits(source):
+            failures.append(f"{path}: generated external runtime resource: {hit[:60]}")
         for match in RESOURCE_RE.finditer(source):
             value = html.unescape(match.group("value")).strip()
             if not value or value.startswith(("http://", "https://", "mailto:", "tel:", "javascript:", "data:")):
@@ -169,6 +232,16 @@ def audit_generated(root: Path, failures: list[str], expected_count: int) -> Non
 
 def audit_igem_2026_controls(root: Path, results: list[dict[str, int | str | bool]], failures: list[str]) -> None:
     by_route = {str(result["route"]): result for result in results if result["route"]}
+    nav_path = root / "_data" / "nav.json"
+    if nav_path.exists():
+        nav = json.loads(nav_path.read_text(encoding="utf-8"))
+        slugs = {result["slug"] for result in results}
+        listed = [item["page"] for group in nav["groups"] for item in group["items"]]
+        listed.append(nav["awards"]["page"])
+        for page in listed:
+            if page not in slugs:
+                failures.append(f"_data/nav.json points to a page that does not exist: {page}")
+
     for route in sorted(STANDARD_ROUTES):
         result = by_route.get(route)
         if result is None:
@@ -205,7 +278,7 @@ def audit_igem_2026_controls(root: Path, results: list[dict[str, int | str | boo
         failures.append("missing public licensing and responsible-AI disclosure page")
     else:
         text = licensing.read_text(encoding="utf-8").lower()
-        for marker in ("cc by 4.0", "openai codex", "human review", "ai-generated"):
+        for marker in ("cc by 4.0", "openai codex", "anthropic claude", "human review", "ai-generated"):
             if marker not in text:
                 failures.append(f"licensing page missing disclosure marker: {marker}")
 
@@ -213,7 +286,8 @@ def audit_igem_2026_controls(root: Path, results: list[dict[str, int | str | boo
 def audit_drafts(root: Path, sources: list[Path], failures: list[str]) -> None:
     draft_dir = root / "docs" / "page-drafts"
     drafts = sorted(path for path in draft_dir.glob("*.md") if path.name != "README.md")
-    expected = {path.stem for path in sources}
+    # Markdown pages are the draft: they are readable source, so they need no mirror.
+    expected = {path.stem for path in sources if path.suffix == ".html"}
     actual = {path.stem for path in drafts}
     if actual != expected:
         failures.append(f"Markdown draft slug mismatch: missing={sorted(expected-actual)} extra={sorted(actual-expected)}")
@@ -232,7 +306,7 @@ def main() -> int:
     parser.add_argument("--drafts", action="store_true")
     args = parser.parse_args()
     root = args.root.resolve()
-    sources = sorted((root / "_content").glob("*.html"))
+    sources = sorted(list((root / "_content").glob("*.html")) + list((root / "_content").glob("*.md")))
     failures: list[str] = []
     results = [audit_source(path, failures) for path in sources]
     audit_igem_2026_controls(root, results, failures)

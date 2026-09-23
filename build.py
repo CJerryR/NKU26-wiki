@@ -25,7 +25,11 @@ import sys
 from html.parser import HTMLParser
 
 ROOT = pathlib.Path(__file__).resolve().parent
+sys.path.insert(0, str(ROOT))
+import wikimd  # noqa: E402  (Markdown article pipeline, needs ROOT on sys.path)
+
 CONTENT = ROOT / "_content"
+STYLEGUIDE = ROOT / "_styleguide"
 DATA = ROOT / "_data"
 PARTIALS = ROOT / "_partials"
 TPL = ROOT / "_templates"
@@ -36,8 +40,11 @@ SEARCH_DATA = OUTPUT_ROOT / "js" / "search-data.js"
 def read(p): return (ROOT / p).read_text(encoding="utf-8")
 
 BASE   = read("_templates/base.html")
-NAV    = read("_partials/nav.html")
 FOOTER = read("_partials/footer.html")
+NAV_DATA = json.loads(read("_data/nav.json"))
+BIB = wikimd.load_bibliography(ROOT / "_data" / "references.bib")
+GLOSSARY = wikimd.load_glossary(ROOT / "_data" / "glossary.json")
+BUILD_STYLEGUIDE = False
 
 # -- small reusable SVG snippets --------------------------------------------
 def strata(top, bottom, back):
@@ -51,22 +58,6 @@ def strata(top, bottom, back):
       '</svg></div>'
     )
 
-def phero_bg():
-    """Subtle 'depth + detection-ring' atmosphere behind a page banner."""
-    rings = "".join(
-        f'<circle cx="1320" cy="120" r="{r}" fill="none" stroke="#9b7fe0" '
-        f'stroke-opacity="{0.16 - i*0.025:.3f}" stroke-width="1.2"/>'
-        for i, r in enumerate((70, 130, 200, 280, 370)))
-    lines = "".join(
-        f'<path d="M-40,{y} C300,{y-22} 900,{y+26} 1480,{y-12}" fill="none" '
-        f'stroke="#f4ecdd" stroke-opacity="{0.05 - i*0.006:.3f}" stroke-width="1"/>'
-        for i, y in enumerate((140, 210, 280, 350, 420)))
-    return ('<div class="phero__bg" aria-hidden="true">'
-            '<svg viewBox="0 0 1440 460" preserveAspectRatio="xMidYMid slice">'
-            + rings + lines + '</svg></div>')
-
-CHEV_LEFT  = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 5 7 12 13 19"/><polyline points="18 5 12 12 18 19"/></svg>'
-CHEV_DOWN  = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>'
 ARROW_UP   = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="6 11 12 5 18 11"/></svg>'
 
 # -- front-matter parsing ---------------------------------------------------
@@ -85,6 +76,40 @@ def parse(src):
             meta[k.strip()] = v.strip()
         body = src[m.end():]
     return meta, body.strip()
+
+FRONT_RE = re.compile(r"^\ufeff?---[ \t]*\n(.*?)\n---[ \t]*(?:\n|$)", re.S)
+
+def parse_front(src):
+    """YAML-style front matter for Markdown pages (flat `key: value` lines only)."""
+    m = FRONT_RE.match(src)
+    if not m:
+        return {}, src
+    meta = {}
+    for line in m.group(1).splitlines():
+        if not line.strip() or line.lstrip().startswith("#") or ":" not in line:
+            continue
+        k, v = line.split(":", 1)
+        v = v.strip()
+        if len(v) >= 2 and v[0] == v[-1] and v[0] in "\"'":
+            v = v[1:-1]
+        meta[k.strip()] = v
+    return meta, src[m.end():]
+
+def parse_source(path):
+    """(meta, body) for either a Markdown page or a legacy HTML page."""
+    src = path.read_text(encoding="utf-8")
+    if path.suffix == ".md":
+        meta, body = parse_front(src)
+        meta["format"] = "md"
+        if path.parent == STYLEGUIDE:
+            # The component reference lives under an underscore directory so the
+            # content audit and the search index both skip it.
+            meta["route"] = f"_styleguide/{path.stem}"
+            meta["hidden"] = "true"
+    else:
+        meta, body = parse(src)
+        meta["format"] = "html"
+    return meta, body
 
 TRUE_VALUES = {"true", "yes", "1", "on"}
 FALSE_VALUES = {"false", "no", "0", "off"}
@@ -112,21 +137,19 @@ def normalize_route(meta):
         raise ValueError(f"Invalid route value: {raw!r}")
     return "/".join(parts)
 
+def route_for(name, meta):
+    """Directory route for a page: META `route:` if given, otherwise the file name."""
+    return normalize_route(meta) or name
+
 def output_path_for(name, meta):
     if is_home_page(name, meta):
         return OUTPUT_ROOT / "index.html"
-    route = normalize_route(meta)
-    if route:
-        return OUTPUT_ROOT.joinpath(*route.split("/")) / "index.html"
-    return PAGES_DIR / f"{name}.html"
+    return OUTPUT_ROOT.joinpath(*route_for(name, meta).split("/")) / "index.html"
 
 def page_url_for(name, meta):
     if is_home_page(name, meta):
         return "index.html"
-    route = normalize_route(meta)
-    if route:
-        return f"{route}/"
-    return f"pages/{name}.html"
+    return f"{route_for(name, meta)}/"
 
 def path_prefix_for(out):
     rel = out.relative_to(OUTPUT_ROOT)
@@ -143,7 +166,65 @@ def is_searchable(meta):
     return (not is_draft(meta)) and (not is_hidden(meta)) and meta_bool(meta, "search", True)
 
 def read_meta(path):
-    return parse(path.read_text(encoding="utf-8"))[0]
+    return parse_source(path)[0]
+
+def content_files(include_styleguide=False):
+    files = sorted(list(CONTENT.glob("*.html")) + list(CONTENT.glob("*.md")))
+    if include_styleguide and STYLEGUIDE.exists():
+        files += sorted(STYLEGUIDE.glob("*.md"))
+    stems = [f.stem for f in files]
+    dupes = sorted({x for x in stems if stems.count(x) > 1})
+    if dupes:
+        raise ValueError(f"Two source files share a page name: {dupes} (keep either .html or .md)")
+    return files
+
+def find_source(stem):
+    for suffix in (".md", ".html"):
+        path = CONTENT / f"{stem}{suffix}"
+        if path.is_file():
+            return path
+    return None
+
+_PAGE_INDEX = None
+
+def page_index():
+    """stem -> {meta, url} for every published page (drafts excluded)."""
+    global _PAGE_INDEX
+    if _PAGE_INDEX is None:
+        _PAGE_INDEX = {}
+        for path in content_files(BUILD_STYLEGUIDE):
+            meta = read_meta(path)
+            if is_draft(meta):
+                continue
+            name = path.stem
+            if path.parent == STYLEGUIDE:
+                meta.setdefault("route", f"_styleguide/{name}")
+            _PAGE_INDEX[name] = {"meta": meta, "url": page_url_for(name, meta), "path": path}
+    return _PAGE_INDEX
+
+PAGE_LINK_RE = re.compile(r'(href|src)="page:([a-z0-9-]+)(#[^"]*)?"')
+
+def resolve_page_links(text, where):
+    """`page:<source-file-name>` -> the page's real route, so links survive renaming."""
+    idx = page_index()
+    def sub(m):
+        item = idx.get(m.group(2))
+        if not item:
+            raise ValueError(f"{where}: link to page:{m.group(2)}, which is not a page in _content/")
+        return f'{m.group(1)}="{{{{P}}}}{item["url"]}{m.group(3) or ""}"'
+    return PAGE_LINK_RE.sub(sub, text)
+
+LEGACY_LINK_RE = re.compile(r'(href|src)="(?:\{\{P\}\}|(?:\.\./)+|\./)?pages/([a-z0-9-]+)\.html(#[^"]*)?"')
+
+def rewrite_legacy_links(text):
+    """Old `pages/<name>.html` links -> the page's directory route."""
+    idx = page_index()
+    def sub(m):
+        item = idx.get(m.group(2))
+        if not item:
+            return m.group(0)
+        return f'{m.group(1)}="{{{{P}}}}{item["url"]}{m.group(3) or ""}"'
+    return LEGACY_LINK_RE.sub(sub, text)
 
 # -- TOC generation ---------------------------------------------------------
 TOC_RE = re.compile(r'<[a-zA-Z][^>]*\bdata-toc(?P<sub>-sub)?="(?P<label>[^"]*)"[^>]*>')
@@ -309,7 +390,9 @@ def is_instruction_text(raw):
         return True
     return any(marker in lower for marker in INSTRUCTION_MARKERS)
 
-def prepare_body(body):
+SEC_LABEL_RE = re.compile(r'\s*<p class="eyebrow sec-label">.*?</p>', re.S)
+
+def prepare_body(body, article=False):
     """Normalize scaffold markers into final-site content slots.
 
     The source files can stay useful for editing, while generated pages avoid
@@ -336,15 +419,27 @@ def prepare_body(body):
 
     body = PLACEHOLDER_P_RE.sub(p_slot, body)
     body = PLACEHOLDER_SPAN_RE.sub(span_slot, body)
+    if article:
+        # The article template shows the page structure in the outline island;
+        # numbered "01 - Background" labels above every heading are dropped.
+        body = SEC_LABEL_RE.sub("", body)
     return body
+
+def render_body(path, meta, body):
+    """Rendered page body, plus the Markdown render context (None for legacy HTML)."""
+    name = path.stem
+    if meta.get("format") == "md":
+        ctx = wikimd.RenderContext(name, BIB, GLOSSARY)
+        return wikimd.render_article(body, ctx), ctx
+    return prepare_body(body, article=not is_home_page(name, meta)), None
 
 def home_data():
     """Resolve semantic homepage links through existing page metadata."""
     data = json.loads((DATA / "home.json").read_text(encoding="utf-8"))
     for key, item in data["links"].items():
-        source = CONTENT / (item["source"] + ".html")
-        if not source.is_file():
-            raise ValueError(f"Homepage link {key!r} has no source page: {source}")
+        source = find_source(item["source"])
+        if source is None:
+            raise ValueError(f"Homepage link {key!r} has no source page: {item['source']}")
         meta = read_meta(source)
         if is_draft(meta):
             raise ValueError(f"Homepage link {key!r} targets an unpublished draft")
@@ -556,7 +651,8 @@ def first_heading_text(fragment):
     return visible_text(m.group(1)) if m else ""
 
 def page_crumbs(meta):
-    parts = [visible_text(part) for part in meta.get("crumbs", "").split("/") if part.strip()]
+    raw = meta.get("crumbs") or (f"{meta['group']} / {meta.get('title', '')}" if meta.get("group") else "")
+    parts = [visible_text(part) for part in raw.split("/") if part.strip()]
     return ["Home"] + parts if parts else ["Home"]
 
 def search_sections(body, page_url):
@@ -576,14 +672,13 @@ def search_sections(body, page_url):
     return sections
 
 def search_entry(path):
-    src = path.read_text(encoding="utf-8")
-    meta, body = parse(src)
-    body = prepare_body(body)
+    meta, body = parse_source(path)
+    body, _ = render_body(path, meta, body)
     name = path.stem
     is_home = is_home_page(name, meta)
     url = page_url_for(name, meta)
     title = visible_text(meta.get("title") or meta.get("heading") or ("NKU iGEM 2026" if is_home else name.replace("-", " ").title()))
-    desc = visible_text(meta.get("desc") or meta.get("sub") or "")
+    desc = visible_text(meta.get("desc") or meta.get("summary") or meta.get("sub") or "")
     crumbs = page_crumbs(meta)
     sections = search_sections(body, url)
     text = clean_text(" ".join([title, desc, *crumbs, visible_text(body)]))
@@ -614,120 +709,242 @@ def toc_items(body):
         items.append((idm.group(1), m.group("label"), 2 if m.group("sub") else 1))
     return items
 
+# -- article chrome (navigation, outline, header, pager) --------------------
+NAV_ORDER = [item["page"] for group in NAV_DATA["groups"] for item in group["items"]] + [NAV_DATA["awards"]["page"]]
+
+def nav_lookup(stem):
+    """(group label, nav item) for a page stem, or (None, None) when it is not in the menu."""
+    for group in NAV_DATA["groups"]:
+        for item in group["items"]:
+            if item["page"] == stem:
+                return group["label"], item
+    if NAV_DATA["awards"]["page"] == stem:
+        return "Awards", NAV_DATA["awards"]
+    return None, None
+
+GROUP_ICONS = {"Project": "magnifier", "Lab": "flask", "Human Practices": "chat", "Team": "people", "Awards": "medal"}
+
+def page_group(stem, meta):
+    group, _ = nav_lookup(stem)
+    if group:
+        return group
+    if meta.get("group"):
+        return meta["group"]
+    crumbs = [c.strip() for c in meta.get("crumbs", "").split("/") if c.strip()]
+    return crumbs[0] if crumbs else ""
+
+def page_icon_name(stem, meta):
+    group, item = nav_lookup(stem)
+    return meta.get("icon") or (item or {}).get("icon") or GROUP_ICONS.get(group or page_group(stem, meta), "magnifier")
+
+def page_icon(name):
+    """Mascot + prop badge. Drop img/page-icons/<name>.(svg|png|webp) in to use drawn artwork instead."""
+    for ext in ("svg", "png", "webp"):
+        if (ROOT / "img" / "page-icons" / f"{name}.{ext}").is_file():
+            return (f'<span class="page-icon page-icon--art" aria-hidden="true">'
+                    f'<img src="{{{{P}}}}img/page-icons/{name}.{ext}" alt="" width="88" height="88"></span>')
+    return ('<span class="page-icon" aria-hidden="true">'
+            '<img class="page-icon__mascot" src="{{P}}img/mascot-trim.png" alt="" width="84" height="77">'
+            f'<span class="page-icon__prop">{wikimd.icon(name, "ico", 22)}</span></span>')
+
+def nav_slug(label):
+    return re.sub(r"[^a-z0-9]+", "-", label.lower()).strip("-")
+
+def render_article_nav(current):
+    idx = page_index()
+    items_html, menus_html, sheet_html = [], [], []
+    for group in NAV_DATA["groups"]:
+        gid = "gm-" + nav_slug(group["label"])
+        links, sheet_links, in_group = [], [], False
+        for item in group["items"]:
+            page = idx.get(item["page"])
+            if not page:
+                raise ValueError(f"_data/nav.json points to a missing page: {item['page']}")
+            here = item["page"] == current
+            in_group = in_group or here
+            cur = ' class="is-current" aria-current="page"' if here else ""
+            links.append(
+                f'<a href="{{{{P}}}}{page["url"]}"{cur}><span class="gnav__ico">{wikimd.icon(item.get("icon", "magnifier"), "ico", 20)}</span>'
+                f'<span><b>{html.escape(item["label"])}</b><small>{html.escape(item.get("note", ""))}</small></span></a>'
+            )
+            sheet_links.append(f'<a href="{{{{P}}}}{page["url"]}"{cur}>{html.escape(item["label"])}</a>')
+        items_html.append(
+            f'<li class="gnav__item{" is-current" if in_group else ""}"><button type="button" class="gnav__btn" '
+            f'aria-expanded="false" aria-controls="{gid}">{html.escape(group["label"])}{wikimd.icon("chevron", "gnav__chev", 14)}</button></li>'
+        )
+        menus_html.append(
+            f'<div class="gnav__menu glass" id="{gid}" hidden><p class="gnav__menu-k">{html.escape(group["label"])}</p>'
+            f'<div class="gnav__menu-grid">{"".join(links)}</div></div>'
+        )
+        sheet_html.append(f'<div class="gnav-sheet__group"><p>{html.escape(group["label"])}</p>{"".join(sheet_links)}</div>')
+    awards = NAV_DATA["awards"]
+    awards_url = idx[awards["page"]]["url"]
+    awards_cur = ' is-current" aria-current="page' if current == awards["page"] else ""
+    return f"""<div class="gnav-shell" data-gnav>
+  <nav class="gnav glass glass--refract" aria-label="Primary">
+    <a class="gnav__brand" href="{{{{P}}}}index.html" aria-label="NemaKlear by NKU26-China, home">
+      <img src="{{{{P}}}}img/logo.svg" alt="" width="34" height="34" />
+      <span><b>NemaKlear</b><small>NKU26-China</small></span>
+    </a>
+    <ul class="gnav__items">
+      {"".join(items_html)}
+      <li class="gnav__item"><a class="gnav__btn gnav__awards{awards_cur}" href="{{{{P}}}}{awards_url}">{wikimd.icon("medal", "gnav__medal", 16)}{html.escape(awards["label"])}</a></li>
+    </ul>
+    <button type="button" class="gnav__icon-btn" data-search-open aria-haspopup="dialog" aria-controls="site-search" aria-expanded="false">
+      {wikimd.icon("search", "ico", 18)}<span class="sr-only">Search</span>
+    </button>
+    <button type="button" class="gnav__icon-btn gnav__menu-toggle" aria-expanded="false" aria-controls="gnav-sheet">
+      <span class="gnav__burger" aria-hidden="true"><i></i><i></i></span><span class="sr-only">Menu</span>
+    </button>
+  </nav>
+  {"".join(menus_html)}
+  <div class="gnav-sheet glass" id="gnav-sheet" hidden>
+    {"".join(sheet_html)}
+    <div class="gnav-sheet__group"><a class="gnav-sheet__awards" href="{{{{P}}}}{awards_url}">{wikimd.icon("medal", "ico", 18)} {html.escape(awards["label"])}</a></div>
+  </div>
+</div>"""
+
 def render_li(items):
     out = []
     for _id, label, lvl in items:
         out.append(f'<li class="lvl-{lvl}"><a href="#{_id}">{label}</a></li>')
     return "\n        ".join(out)
 
-def toc_island(title, items, P):
-    lis = render_li(items)
-    return f'''<aside class="toc" aria-label="On this page">
-      <div class="toc__top">
-        <div class="toc__badge"><img src="{P}img/logo.svg" alt="" width="24" height="24"/></div>
-        <div class="toc__titles"><div class="toc__kicker">On this page</div><div class="toc__title">{title}</div></div>
-        <button class="toc__collapse" aria-label="Collapse outline">{CHEV_LEFT}</button>
+def outline_island(title, items):
+    return f"""<aside class="atoc glass" aria-label="On this page">
+      <p class="atoc__kicker">On the {html.escape(title)} page</p>
+      <div class="atoc__progress" aria-hidden="true"><i></i></div>
+      <ol class="atoc__list">
+        {render_li(items)}
+      </ol>
+      <a class="atoc__top" href="#main">{ARROW_UP}Back to top</a>
+    </aside>"""
+
+def outline_mini(items):
+    first = items[0][1] if items else ""
+    return f"""<details class="atoc-mini glass">
+        <summary><span class="atoc-mini__k">On this page</span><span class="atoc-mini__now">{first}</span>{wikimd.icon("chevron", "atoc-mini__chev", 16)}</summary>
+        <ol>
+        {render_li(items)}
+        </ol>
+      </details>"""
+
+def reading_minutes(body_html):
+    words = len(re.findall(r"\w+", visible_text(body_html)))
+    return max(1, round(words / 230))
+
+def article_header(name, meta, body_html, ctx):
+    title = meta.get("title", "Untitled")
+    summary = meta.get("summary") or meta.get("sub") or ""
+    group = page_group(name, meta)
+    crumbs = '<a href="{{P}}index.html">Home</a>'
+    if group:
+        crumbs += f'<span aria-hidden="true">/</span><span>{html.escape(group)}</span>'
+    crumbs += f'<span aria-hidden="true">/</span><span aria-current="page">{html.escape(title)}</span>'
+    facts = [f"<li>{reading_minutes(body_html)} min read</li>"]
+    for pair in meta.get("meta", "").split("|"):
+        if "=" in pair:
+            k, v = [x.strip() for x in pair.split("=", 1)]
+            if k.lower() != "reading":
+                facts.append(f"<li><span>{k}</span> {v}</li>")
+    legend = ""
+    if ctx and ctx.evidence_levels:
+        tags = "".join(
+            f'<span class="etag etag--{lvl}" title="{html.escape(wikimd.EVIDENCE_LEVELS[lvl][1], quote=True)}">{wikimd.EVIDENCE_LEVELS[lvl][0]}</span>'
+            for lvl in wikimd.EVIDENCE_LEVELS if lvl in ctx.evidence_levels
+        )
+        awards = page_index().get(NAV_DATA["awards"]["page"])
+        how = f' <a href="{{{{P}}}}{awards["url"]}#evidence-tags">How to read these</a>' if awards and name != NAV_DATA["awards"]["page"] else ""
+        legend = f'<p class="art-legend"><span>Evidence tags on this page</span>{tags}{how}</p>'
+    return f"""<header class="art-head">
+    <div class="art-head__bg" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="art-grid">
+      <div class="art-head__inner">
+        <nav class="art-crumbs" aria-label="Breadcrumb">{crumbs}</nav>
+        <div class="art-head__row">
+          {page_icon(page_icon_name(name, meta))}
+          <div class="art-head__text">
+            <h1>{html.escape(title)}</h1>
+            {f'<p class="art-sum">{summary}</p>' if summary else ""}
+          </div>
+        </div>
+        <ul class="art-facts">{"".join(facts)}</ul>
+        {legend}
       </div>
-      <div class="toc__progress" aria-hidden="true"><i></i></div>
-      <ul class="toc__list">
-        <span class="toc__rail" aria-hidden="true"></span>
-        {lis}
-      </ul>
-      <div class="toc__foot"><a href="#main">{ARROW_UP}Back to top</a></div>
-    </aside>'''
-
-def toc_mini(title, items):
-    lis = render_li(items)
-    return f'''<div class="toc-mini" aria-label="On this page (mobile)">
-        <button type="button" class="toc-mini__bar" aria-expanded="false">
-          <div class="toc__badge"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#f4ecdd" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><line x1="20" y1="20" x2="15.5" y2="15.5"/></svg></div>
-          <b>{title}</b><span class="now"></span>{CHEV_DOWN}
-        </button>
-        <div class="toc-mini__panel"><ul>
-          {lis}
-        </ul></div>
-      </div>'''
-
-# -- page banner ------------------------------------------------------------
-def phero(meta, P):
-    crumbs = ['<a href="' + P + 'index.html">Home</a>']
-    raw = meta.get("crumbs", "")
-    parts = [c.strip() for c in raw.split("/") if c.strip()]
-    for i, c in enumerate(parts):
-        crumbs.append('<span>/</span>')
-        crumbs.append(f'<span>{c}</span>' if i == len(parts) - 1 else c)
-    crumbs_html = "".join(crumbs)
-
-    metarow = ""
-    if meta.get("meta"):
-        cells = []
-        for pair in meta["meta"].split("|"):
-            if "=" in pair:
-                k, v = pair.split("=", 1)
-                cells.append(f'<span>{k.strip()}<b>{v.strip()}</b></span>')
-        metarow = '<div class="phero__meta">' + "".join(cells) + '</div>'
-
-    heading = meta.get("heading", meta.get("title", "Untitled"))
-    sub = f'<p class="phero__sub">{meta["sub"]}</p>' if meta.get("sub") else ""
-    eyebrow = f'<p class="eyebrow" style="margin-bottom:14px">{meta["eyebrow"]}</p>' if meta.get("eyebrow") else ""
-    return f'''<header class="phero">
-    {phero_bg()}
-    <div class="phero__inner">
-      <nav class="phero__crumbs" aria-label="Breadcrumb">{crumbs_html}</nav>
-      {eyebrow}
-      <h1>{heading}</h1>
-      {sub}
-      {metarow}
     </div>
-  </header>'''
+  </header>"""
+
+def article_pager(name):
+    if name not in NAV_ORDER:
+        return ""
+    idx = page_index()
+    i = NAV_ORDER.index(name)
+    def link(stem, cls, label):
+        page = idx.get(stem)
+        if not page:
+            return ""
+        title = page["meta"].get("title", stem)
+        _, item = nav_lookup(stem)
+        title = (item or {}).get("label", title)
+        ico = wikimd.icon("arrow-left" if cls == "prev" else "arrow-right", "ico", 18)
+        return (f'<a class="art-pager__{cls}" href="{{{{P}}}}{page["url"]}"><small>{ico}{label}</small>'
+                f'<b>{html.escape(title)}</b></a>')
+    prev = link(NAV_ORDER[i - 1], "prev", "Previous") if i > 0 else "<span></span>"
+    nxt = link(NAV_ORDER[i + 1], "next", "Next") if i + 1 < len(NAV_ORDER) else ""
+    return f'<nav class="art-pager" aria-label="Continue reading">{prev}{nxt}</nav>'
+
+def article_shell(name, meta, body_html, ctx):
+    title = meta.get("title", "Untitled")
+    items = toc_items(body_html)
+    return (
+        article_header(name, meta, body_html, ctx)
+        + f"""
+  <div class="art-grid art-layout">
+    {outline_island(title, items)}
+    <article class="art-body" id="article">
+      {outline_mini(items)}
+{body_html}
+      {article_pager(name)}
+    </article>
+  </div>
+  """
+        + strata("#f7f2e8", "#180f1e", "#241830")
+    )
 
 # -- assemble one page ------------------------------------------------------
+HOME_CSS = ("home-shared", "home-opening", "home-maps", "home-science", "home-shell", "home-reference")
+HOME_JS = ("home-opening", "home-maps-data", "home-maps", "home-science", "home-shell")
+
 def build_page(path):
-    src = path.read_text(encoding="utf-8")
-    meta, body = parse(src)
-    body = prepare_body(body)
+    meta, body = parse_source(path)
+    body_html, ctx = render_body(path, meta, body)
     name = path.stem
     is_home = is_home_page(name, meta)
     out = output_path_for(name, meta)
     P = path_prefix_for(out)
 
     if is_home:
-        body_html = body
+        page_body = body_html
+        nav_source = resolve_home_links(read("_partials/home/nav.html"))
+        footer_source = read("_partials/home/footer.html")
+        extra_styles = "\n  ".join(f'<link rel="stylesheet" href="{P}css/{n}.css" />' for n in HOME_CSS)
+        payload = json.dumps(home_data(), ensure_ascii=False).replace("<", "\\u003c")
+        extra_scripts = '<script>window.NKU_HOME = ' + payload + ';</script>\n  '
+        extra_scripts += "\n  ".join(f'<script src="{P}js/{n}.js" defer></script>' for n in HOME_JS)
     else:
-        title = meta.get("title", "Untitled")
-        items = toc_items(body)
-        island = toc_island(title, items, P)
-        mini = toc_mini(title, items)
-        body_html = (
-            phero(meta, P)
-            + "\n  " + strata("#191222", "#f7f2e8", "#241830")
-            + f'''\n  <div class="layout">
-    {island}
-    <div class="content">
-      {mini}
-{body}
-    </div>
-  </div>\n  '''
-            + strata("#f7f2e8", "#180f1e", "#241830")
-        )
+        page_body = article_shell(name, meta, body_html, ctx)
+        nav_source = render_article_nav(name)
+        footer_source = FOOTER
+        extra_styles = f'<link rel="stylesheet" href="{P}css/article.css" />'
+        extra_scripts = f'<script src="{P}js/article.js" defer></script>'
 
     title_tag = meta.get("title", "NKU iGEM 2026")
     title_full = "NKU iGEM 2026" if is_home else f"{title_tag}  /  NKU iGEM 2026"
-    desc = meta.get("desc", "NKU iGEM 2026 - a synthetic-biology sensing concept for plant-parasitic nematode-associated signals, under investigation.")
-    body_class = "page-home" if is_home else "page-standard"
-    footer_source = read("_partials/home/footer.html") if is_home else FOOTER
-    nav_source = read("_partials/home/nav.html") if is_home else NAV
-    nav_source = resolve_home_links(nav_source) if is_home else nav_source
+    desc = meta.get("desc") or meta.get("summary") or "NKU iGEM 2026 - a synthetic-biology sensing concept for plant-parasitic nematode-associated signals, under investigation."
+    desc = html.escape(visible_text(desc), quote=True)
+    body_class = "page-home" if is_home else "page-standard page-article"
     footer_html = footer_source.replace("{{GLOBAL_FOOTER_FEATURES}}", GLOBAL_FOOTER_FEATURES)
     footer_html = footer_html.replace("{{GLOBAL_SPONSOR_STRIP}}", GLOBAL_SPONSOR_STRIP)
-
-    home_styles = ""
-    home_scripts = ""
-    if is_home:
-        home_styles = "\n  ".join(f'<link rel="stylesheet" href="{P}css/{name}.css" />' for name in ("home-shared", "home-opening", "home-maps", "home-science", "home-shell"))
-        payload = json.dumps(home_data(), ensure_ascii=False).replace("<", "\\u003c")
-        home_scripts = '<script>window.NKU_HOME = ' + payload + ';</script>\n  '
-        home_scripts += "\n  ".join(f'<script src="{P}js/{name}.js" defer></script>' for name in ("home-opening", "home-maps-data", "home-maps", "home-science", "home-shell"))
 
     page_html = (BASE
             .replace("{{TITLE}}", title_full)
@@ -738,15 +955,15 @@ def build_page(path):
             .replace("{{GLOBAL_FOOTER_FEATURES}}", GLOBAL_FOOTER_FEATURES)
             .replace("{{SOURCE_REPOSITORY_URL}}", html.escape(SOURCE_REPOSITORY_URL, quote=True))
             .replace("{{BODY_CLASS}}", body_class)
-            .replace("{{BODY}}", body_html)
+            .replace("{{BODY}}", page_body)
             .replace("{{MASCOT}}", read("_partials/home/mascot.html" if is_home else "_partials/mascot.html").strip())
-            .replace("{{HOME_STYLES}}", home_styles)
-            .replace("{{HOME_SCRIPTS}}", home_scripts)
-            .replace("{{P}}", P))
+            .replace("{{EXTRA_STYLES}}", extra_styles)
+            .replace("{{EXTRA_SCRIPTS}}", extra_scripts))
+    page_html = resolve_page_links(rewrite_legacy_links(page_html), path.name).replace("{{P}}", P)
 
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(page_html, encoding="utf-8")
-    return out, len(toc_items(body)) if not is_home else 0
+    return out, len(toc_items(body_html)) if not is_home else 0
 
 def clean_generated_outputs(files):
     if OUTPUT_ROOT == ROOT or ROOT not in OUTPUT_ROOT.parents:
@@ -765,7 +982,7 @@ def copy_static_assets():
             shutil.copytree(source, target, ignore=shutil.ignore_patterns(*ignored))
 
 def main():
-    global OUTPUT_ROOT, PAGES_DIR, SEARCH_DATA
+    global OUTPUT_ROOT, PAGES_DIR, SEARCH_DATA, BUILD_STYLEGUIDE, _PAGE_INDEX
 
     parser = argparse.ArgumentParser(description="Build the NKU iGEM wiki from source.")
     parser.add_argument(
@@ -773,33 +990,41 @@ def main():
         default="public",
         help="Dedicated build directory inside the repository (default: public)",
     )
+    parser.add_argument(
+        "--styleguide",
+        action="store_true",
+        help="Also build the component reference in _styleguide/ (local use; not for the live wiki)",
+    )
     args = parser.parse_args()
     OUTPUT_ROOT = (ROOT / args.output).resolve()
     PAGES_DIR = OUTPUT_ROOT / "pages"
     SEARCH_DATA = OUTPUT_ROOT / "js" / "search-data.js"
+    BUILD_STYLEGUIDE = args.styleguide
+    _PAGE_INDEX = None
 
     if not CONTENT.exists():
         print("No _content/ directory found."); sys.exit(1)
 
-    all_files = sorted(CONTENT.glob("*.html"))
+    all_files = content_files(BUILD_STYLEGUIDE)
     clean_generated_outputs(all_files)
     copy_static_assets()
 
     files = [f for f in all_files if not is_draft(read_meta(f))]
-    search_files = [f for f in files if is_searchable(read_meta(f))]
+    search_files = [f for f in files if is_searchable(read_meta(f)) and f.parent != STYLEGUIDE]
     hidden_count = sum(1 for f in files if is_hidden(read_meta(f)))
     draft_count = len(all_files) - len(files)
 
-    print(f"Building {len(files)} pages  ->  static HTML\n" + "-" * 52)
+    print(f"Building {len(files)} pages  ->  static HTML\n" + "-" * 60)
     n_home = 0
     for f in files:
         out, ntoc = build_page(f)
         rel = out.relative_to(OUTPUT_ROOT)
-        tag = "home" if f.stem == "index" else f"{ntoc:2d} toc"
+        kind = "md" if f.suffix == ".md" else "html"
+        tag = "home" if f.stem == "index" else f"{ntoc:2d} toc, {kind}"
         if f.stem == "index": n_home += 1
-        print(f"  {f.stem:22s}  ->  {str(rel):24s} [{tag}]")
+        print(f"  {f.stem:22s}  ->  {str(rel):32s} [{tag}]")
     search_path, search_pages, search_sections_n = write_search_data(search_files)
-    print("-" * 52)
+    print("-" * 60)
     print(f"Done. {len(files)} pages, {n_home} home, {hidden_count} hidden, {draft_count} draft.")
     print(f"Output directory: {OUTPUT_ROOT.relative_to(ROOT)}")
     print(f"Search index: {search_path.relative_to(OUTPUT_ROOT)} ({search_pages} pages, {search_sections_n} sections)")

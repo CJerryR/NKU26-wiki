@@ -33,7 +33,8 @@ meta: License=CC BY 4.0 | Updated=17 July 2026
   <p class="eyebrow sec-label">03 &mdash; AI disclosure</p>
   <h2 class="section-title">What AI assisted with, and what it did not do</h2>
   <div class="prose">
-    <p><b>Model used:</b> OpenAI Codex, GPT-5 family. It was used for repository inspection, implementation of the static build and compliance checks, navigation and accessibility review, structural editing, and language polishing.</p>
+    <p><b>Models used:</b> OpenAI Codex, GPT-5 family, for repository inspection, implementation of the static build and compliance checks, navigation and accessibility review, structural editing, and language polishing. Anthropic Claude, Opus family, for the Markdown and citation build pipeline behind the article pages, the shared page template and its components, and drafting and restructuring of wiki text, including the Awards evidence map.</p>
+    <p><b>Where AI-assisted text appears:</b> page text that an AI drafted or restructured is not marked inline, so treat every page as AI-assisted until a named reviewer has signed it off. Reviewers should be particularly careful with citations placed by an AI tool: check that each reference exists, that it says what the sentence claims, and that it sits next to the claim it actually supports.</p>
     <p><b>Human review:</b> Team members remain responsible for every published claim. AI-assisted text and code must be checked by a named team reviewer before the Wiki Freeze; scientific statements must be traced to the team's records or a real cited source, and code changes must pass the repository's build and audit commands.</p>
     <p><b>Prohibited uses:</b> AI has not been authorized to invent experiments, results, citations, quotations, consent, safety approvals, team contributions, or stakeholder feedback. It must not generate or alter evidentiary figures such as gels, microscopy, plots, or simulated experimental results presented as data. Decorative AI imagery, if added later, must identify the model next to the image and follow the licensing rules above.</p>
   </div>
@@ -51,6 +52,7 @@ meta: License=CC BY 4.0 | Updated=17 July 2026
       <li>Resolve every citation to a real DOI, Registry identifier, ISBN, or stable URL and confirm that it supports the adjacent claim.</li>
       <li>Confirm provenance, permission, and license for every image, icon, font, quotation, interview excerpt, and photograph.</li>
       <li>Verify that plots and scientific images correspond to archived raw data or documented computations and have not been AI-generated or cosmetically altered.</li>
+      <li>Check every AI-placed citation against the source itself, not against a summary of it.</li>
       <li>Run the build, compliance audit, internal-link audit, and iGEM External Content Check before the Wiki Freeze.</li>
     </ol>
   </div>

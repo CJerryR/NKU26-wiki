@@ -1,0 +1,44 @@
+{
+  "groups": [
+    {
+      "label": "Project",
+      "items": [
+        {"page": "description", "label": "Description", "note": "The problem, the idea, and this season's scope", "icon": "magnifier"},
+        {"page": "engineering-cycle", "label": "Engineering", "note": "Design-Build-Test-Learn cycles from the notebook", "icon": "wrench"},
+        {"page": "modeling", "label": "Model", "note": "What the models ask and what they can say", "icon": "chart"},
+        {"page": "software", "label": "Software", "note": "The build system behind this wiki", "icon": "code"},
+        {"page": "contribution", "label": "Contribution", "note": "What future teams can reuse", "icon": "puzzle"}
+      ]
+    },
+    {
+      "label": "Lab",
+      "items": [
+        {"page": "parts", "label": "Parts", "note": "Genetic elements and their evidence status", "icon": "dna"},
+        {"page": "wet-lab", "label": "Experiments", "note": "Workstreams, methods, and controls", "icon": "flask"},
+        {"page": "results", "label": "Results", "note": "What the records establish so far", "icon": "bars"},
+        {"page": "notebook", "label": "Notebook", "note": "Record-by-record lab history", "icon": "notebook"},
+        {"page": "safety", "label": "Safety", "note": "Biosafety practice and open questions", "icon": "shield"},
+        {"page": "hardware", "label": "Hardware", "note": "The device question", "icon": "chip"}
+      ]
+    },
+    {
+      "label": "Human Practices",
+      "items": [
+        {"page": "human-practices", "label": "Human Practices", "note": "Consultations and how they shaped the project", "icon": "chat"},
+        {"page": "education", "label": "Education", "note": "Teaching and public engagement", "icon": "book"},
+        {"page": "sustainability", "label": "Sustainability", "note": "Long-term consequences", "icon": "leaf"},
+        {"page": "diversity-inclusion", "label": "Inclusivity", "note": "Who gets to take part", "icon": "hands"},
+        {"page": "entrepreneurship", "label": "Entrepreneurship", "note": "A path to responsible impact", "icon": "briefcase"}
+      ]
+    },
+    {
+      "label": "Team",
+      "items": [
+        {"page": "team-members", "label": "Members", "note": "The people behind the project", "icon": "people"},
+        {"page": "attribution", "label": "Attributions", "note": "Who did what, inside and outside the team", "icon": "scroll"},
+        {"page": "licensing", "label": "Licensing & AI use", "note": "Reuse terms and AI disclosure", "icon": "scale"}
+      ]
+    }
+  ],
+  "awards": {"page": "awards", "label": "Awards", "note": "Evidence map for judges", "icon": "medal"}
+}

@@ -32,7 +32,7 @@
         <p class="home-kicker">01 / Follow a chemical trail</p>
         <h2 class="opening-field-title">Some stories begin in the dark.</h2>
       </div>
-      <p id="opening-instructions" class="opening-instructions"><span class="opening-pointer-hint">Move your light through the soil.</span><span class="opening-touch-hint">Tap the soil to move your light.</span><br>Follow the cyan glow to its hidden visitor.</p>
+      <p id="opening-instructions" class="opening-instructions"><span class="opening-pointer-hint">Move your light through the soil.</span><span class="opening-touch-hint">Tap or swipe across the soil to move your light.</span><br>Follow the cyan glow to its hidden visitor.</p>
     </div>
 
     <div id="opening-field" class="opening-field" data-exploration-field role="group" aria-label="Interactive soil illustration" aria-describedby="opening-instructions opening-evidence-note">
@@ -56,7 +56,9 @@
       <div class="opening-reveal" aria-hidden="true">
         <svg class="opening-trail opening-trail--lit" viewBox="0 0 1000 620" preserveAspectRatio="none"><use href="#opening-signal-trail"/></svg>
         <img class="opening-nematode" src="img/home-opening/nematode.svg" width="320" height="180" alt="">
+        <div class="opening-root-damage"><span></span><span></span><span></span></div>
       </div>
+      <div class="opening-detector" aria-hidden="true"><span class="opening-detector__beam"></span><span class="opening-detector__label">YEAST DETECTOR</span><b>CLUE FOUND</b></div>
 
       <span class="opening-start-note" aria-hidden="true">Start with a little light <span>↘</span></span>
       <button class="opening-clue" style="--clue-x:24%;--clue-y:50%" type="button" data-opening-clue="0" aria-label="Inspect the first chemical clue" disabled><span class="opening-clue__dot" aria-hidden="true"></span></button>
