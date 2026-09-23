@@ -1,85 +1,14 @@
-<section id="soil-exploration" class="home-opening" data-exploration-state="idle" aria-labelledby="home-title">
-  <header class="opening-intro">
-    <div class="opening-botanical" aria-hidden="true">
-      <svg viewBox="0 0 1440 520" preserveAspectRatio="xMidYMax slice">
-        <defs>
-          <linearGradient id="opening-leaf" x2="1" y2="1"><stop stop-color="#81785a"/><stop offset="1" stop-color="#31233c"/></linearGradient>
-          <g id="opening-sprig" fill="url(#opening-leaf)" stroke="#75644e" stroke-width="1.5">
-            <path fill="none" d="M0 310C15 233-18 131 19 12M3 225L-63 173M5 180L65 131M6 117L-30 77M14 69L55 26"/>
-            <path d="M-62 173C-96 162-108 118-101 105C-63 111-45 140-62 173ZM65 131C52 95 84 59 107 56C111 92 102 125 65 131ZM-30 77C-59 71-64 37-57 13C-27 23-14 47-30 77ZM55 26C45 4 60-28 83-39C99-12 85 11 55 26ZM0 266C-40 242-70 243-88 255C-65 286-28 295 0 266ZM8 221C39 179 82 176 103 191C82 224 45 240 8 221Z"/>
-            <path d="M-95 114L-64 167M101 64L66 126M-55 21L-31 72M80-31L55 21M-82 257L-7 268M96 194L16 218" fill="none" opacity=".65"/>
-          </g>
-        </defs>
-        <use href="#opening-sprig" transform="translate(1140 158) rotate(12) scale(1.18)"/>
-        <use href="#opening-sprig" transform="translate(275 319) rotate(-24) scale(.73)" opacity=".7"/>
-        <use href="#opening-sprig" transform="translate(1290 390) rotate(37) scale(.65)" opacity=".5"/>
-        <path d="M0 496C176 439 266 499 376 482S620 481 732 502S1036 433 1188 465S1340 494 1440 469V520H0Z" fill="#24172e"/>
-        <path d="M0 510C237 484 282 527 520 499S849 525 1029 491S1267 499 1440 493" stroke="#6a4b5e" fill="none" opacity=".4"/>
-      </svg>
+<section class="op" id="opening" data-nav-label="What lies beneath the soil" data-op data-tone="dark" aria-label="Opening: what lies beneath the soil">
+  <div class="op__stage">
+    <canvas class="op__canvas" data-op-canvas aria-hidden="true"></canvas>
+    <div class="op__hero" data-op-hero>
+      <h1 class="op__title" data-split><span>What secrets lie</span><br><span>beneath the soil?</span></h1>
+      <p class="op__hint" data-op-hint>Move your mouse to explore.</p>
     </div>
-    <div class="home-wrap opening-intro__copy">
-      <p class="home-kicker">NKU-iGEM · NemaKlear</p>
-      <h1 id="home-title">What secrets lie<br>beneath the <em>soil?</em></h1>
-      <p class="opening-intro__lead">A hidden world. A chemical trail.<br>An invitation to look closer.</p>
-      <a class="opening-invitation" href="#opening-field">Explore beneath the surface <span aria-hidden="true">↓</span></a>
-      <a class="opening-skip" href="#global-story" data-exploration-skip>Skip exploration <span aria-hidden="true">↗</span></a>
+    <div class="op__labels" data-op-labels aria-live="polite"></div>
+    <p class="op__cue" data-op-cue><span>Scroll to follow the light</span><i aria-hidden="true"></i></p>
+    <div class="ribbon" data-ribbon aria-hidden="true">
+      <div class="ribbon__track"><span>root-knot</span><span>soybean cyst</span><span>ascarosides</span><span>early detection</span><span>engineered yeast</span><span>synthetic biology</span><span>root-knot</span><span>soybean cyst</span><span>ascarosides</span><span>early detection</span><span>engineered yeast</span><span>synthetic biology</span></div>
     </div>
-  </header>
-
-  <div class="opening-experience">
-    <div class="home-wrap opening-field-head">
-      <div>
-        <p class="home-kicker">01 / Follow a chemical trail</p>
-        <h2 class="opening-field-title">Some stories begin in the dark.</h2>
-      </div>
-      <p id="opening-instructions" class="opening-instructions"><span class="opening-pointer-hint">Move your light through the soil.</span><span class="opening-touch-hint">Tap the soil to move your light.</span><br>Follow the cyan glow to its hidden visitor.</p>
-    </div>
-
-    <div id="opening-field" class="opening-field" data-exploration-field role="group" aria-label="Interactive soil illustration" aria-describedby="opening-instructions opening-evidence-note">
-      <img class="opening-soil" src="img/home-opening/soil-scene.svg" width="1440" height="740" alt="" aria-hidden="true" fetchpriority="high">
-      <div class="opening-shade" aria-hidden="true"></div>
-      <div class="opening-light" aria-hidden="true"></div>
-      <svg class="opening-trail opening-trail--ambient" viewBox="0 0 1000 620" preserveAspectRatio="none" aria-hidden="true">
-        <defs>
-          <g id="opening-signal-trail" fill="none" stroke="currentColor" stroke-linecap="round">
-            <path d="M94 358C141 359 169 322 210 310S296 312 332 341S399 410 445 391S502 329 553 329S622 372 695 353" stroke-width="2.8" stroke-dasharray=".1 20"/>
-            <g fill="currentColor" stroke="none">
-              <circle cx="117" cy="372" r="2.5"/><circle cx="166" cy="331" r="3"/><circle cx="204" cy="325" r="2"/><circle cx="238" cy="302" r="4"/>
-              <circle cx="284" cy="302" r="2.5"/><circle cx="313" cy="333" r="3.5"/><circle cx="350" cy="342" r="2"/><circle cx="371" cy="385" r="4"/>
-              <circle cx="416" cy="399" r="2.5"/><circle cx="453" cy="384" r="3.5"/><circle cx="481" cy="359" r="2.5"/><circle cx="514" cy="329" r="4"/>
-              <circle cx="539" cy="314" r="2"/><circle cx="576" cy="337" r="3"/><circle cx="603" cy="361" r="2"/><circle cx="638" cy="351" r="4"/>
-            </g>
-          </g>
-        </defs>
-        <use href="#opening-signal-trail"/>
-      </svg>
-      <div class="opening-reveal" aria-hidden="true">
-        <svg class="opening-trail opening-trail--lit" viewBox="0 0 1000 620" preserveAspectRatio="none"><use href="#opening-signal-trail"/></svg>
-        <img class="opening-nematode" src="img/home-opening/nematode.svg" width="320" height="180" alt="">
-      </div>
-
-      <span class="opening-start-note" aria-hidden="true">Start with a little light <span>↘</span></span>
-      <button class="opening-clue" style="--clue-x:24%;--clue-y:50%" type="button" data-opening-clue="0" aria-label="Inspect the first chemical clue" disabled><span class="opening-clue__dot" aria-hidden="true"></span></button>
-      <button class="opening-clue" style="--clue-x:44%;--clue-y:63%" type="button" data-opening-clue="1" aria-label="Follow the chemical clue toward the roots" disabled><span class="opening-clue__dot" aria-hidden="true"></span></button>
-      <button class="opening-clue opening-clue--target" style="--clue-x:69%;--clue-y:57%" type="button" data-opening-clue="2" aria-label="Discover the hidden visitor near the roots" disabled><span class="opening-clue__dot" aria-hidden="true"></span><span class="opening-target-label">A hidden visitor</span></button>
-      <div class="opening-discovery-label" aria-hidden="true"><span>✦</span> A clue beneath our feet</div>
-      <span class="opening-field-caption" aria-hidden="true">Look closer. There is more than meets the eye.</span>
-    </div>
-
-    <div class="home-wrap opening-controls">
-      <div class="opening-status" role="status" aria-live="polite" aria-atomic="true">
-        <span class="opening-status__mark" aria-hidden="true">✧</span>
-        <div><strong data-opening-status>Follow the cyan trail.</strong><p data-opening-detail>Find the visitor hidden among the roots.</p></div>
-      </div>
-      <div class="opening-actions">
-        <button class="home-button home-button--outline opening-next" type="button" data-opening-next hidden>Follow the next clue <span aria-hidden="true">→</span></button>
-        <a class="opening-continue" href="#global-story" data-exploration-skip><span data-opening-continue>Or, continue reading</span> <span aria-hidden="true">↓</span></a>
-      </div>
-    </div>
-    <div class="home-wrap opening-footnote">
-      <p id="opening-evidence-note"><span class="opening-signal-key" aria-hidden="true"></span>Illustrated chemical clues · not measured data</p>
-      <p class="opening-progress" data-opening-progress hidden>Exploration: <span data-opening-count>0</span> / 3 clues</p>
-    </div>
-    <noscript><p class="home-wrap opening-nojs">This illustration introduces chemical clues in soil. The interactive light needs JavaScript; you can continue reading using either link above.</p></noscript>
   </div>
 </section>

@@ -1,0 +1,42 @@
+<section class="cn" id="china" data-nav-label="Closer to home" data-china data-tone="dark" aria-labelledby="china-title">
+  <div class="wrap">
+    <div class="cn__head">
+      <h2 class="h-display" id="china-title" data-split>Closer to home</h2>
+    </div>
+    <div class="cn__row">
+      <figure class="cn__map" data-cmap="env" style="--c:#c48cff">
+        <button type="button" class="cn__open" data-cmap-open aria-label="Open the environment map"></button>
+        <canvas aria-hidden="true"></canvas>
+        <figcaption><i></i><b>Environment</b><span>Where they live</span></figcaption>
+      </figure>
+      <figure class="cn__map" data-cmap="agr" style="--c:#ffa24a">
+        <button type="button" class="cn__open" data-cmap-open aria-label="Open the agriculture map"></button>
+        <canvas aria-hidden="true"></canvas>
+        <figcaption><i></i><b>Agriculture</b><span>What they affect</span></figcaption>
+        <div class="cn__filters" role="group" aria-label="Show species">
+          <button type="button" aria-pressed="true" data-sp="scn"><i class="tri"></i>Soybean cyst</button>
+          <button type="button" aria-pressed="true" data-sp="rkn"><i class="dot"></i>Root-knot</button>
+        </div>
+      </figure>
+      <figure class="cn__map" data-cmap="pot" style="--c:#9aa7ff">
+        <button type="button" class="cn__open" data-cmap-open aria-label="Open the exploration map"></button>
+        <canvas aria-hidden="true"></canvas>
+        <figcaption><i></i><b>Potential</b><span>Where to explore</span></figcaption>
+      </figure>
+    </div>
+    <p class="cn__src">Province markers from literature (CABI; national soybean cyst nematode reviews; Xinjiang greenhouse survey 2021–23). Basemap: Natural Earth, China point of view.</p>
+  </div>
+  <div class="cnfocus" data-cfocus role="dialog" aria-modal="true" aria-labelledby="cf-title" hidden>
+    <div class="cnfocus__panel">
+      <button type="button" class="cnfocus__close" data-cfocus-close aria-label="Close map">×</button>
+      <canvas data-cfocus-canvas aria-hidden="true"></canvas>
+      <div class="cnfocus__text">
+        <p class="cnfocus__kicker" data-cf-kicker></p>
+        <h3 id="cf-title" data-cf-title></h3>
+        <div data-cf-body></div>
+        <div class="cnfocus__nav"><button type="button" data-cf-prev>Previous map</button><button type="button" data-cf-next>Next map</button></div>
+      </div>
+    </div>
+  </div>
+  <div class="tip" data-tip hidden></div>
+</section>

@@ -1,52 +1,82 @@
-<nav class="nav" aria-label="Primary">
-  <div class="nav-veil" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-  <div class="nav-inner">
-    <a href="{{P}}index.html" class="nav-brand" aria-label="NKU iGEM 2026 home">
-      <img src="{{P}}img/logo.svg" alt="" width="46" height="46" />
-      <span><b>NKU-iGEM26 Team</b><span>SUBSURFACE</span></span>
+<header class="lnav" data-lnav>
+  <div class="lnav__row lnav__bar">
+  <div class="lnav__island lnav__island--brand lg" data-lg="bar">
+    <span class="lg__fx" aria-hidden="true"></span><span class="lg__tint" aria-hidden="true"></span><span class="lg__shine" aria-hidden="true"></span>
+    <a href="{{P}}index.html" class="lnav__brand" aria-label="NKU-iGEM 2026 home">
+      <img src="{{P}}img/shell/nku-mark.png" alt="" width="30" height="41" />
+      <span><b>NKU-iGEM</b><small>NKU26-China</small></span>
     </a>
-
-    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span></button>
-
-    <ul class="nav-links">
-      <li class="nav-item"><a href="{{P}}index.html" class="nav-link">Home</a></li>
-      <li class="nav-item"><a href="{{P}}pages/description.html" class="nav-link">Project</a></li>
-      <li class="nav-item"><a href="{{P}}engineering/" class="nav-link">Engineering</a></li>
-      <li class="nav-item"><a href="{{P}}pages/results.html" class="nav-link">Results</a></li>
-      <li class="nav-item"><a href="{{P}}human-practices/" class="nav-link">Human Practices</a></li>
-      <li class="nav-item"><a href="{{P}}safety-and-security/" class="nav-link">Safety</a></li>
-
-      <li class="nav-item">
-        <button type="button" class="nav-link" aria-haspopup="true" aria-expanded="false">Team &amp; Attributions
-          <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0l5 6 5-6z"/></svg></button>
-        <div class="mega">
-          <div class="mega-col">
-            <h4>People & credit</h4>
-            <a href="{{P}}pages/team-members.html"><span class="dot"></span>Team</a>
-            <a href="{{P}}pages/attribution.html"><span class="dot"></span>Attributions</a>
-            <a href="{{P}}pages/team-members.html#affiliation"><span class="dot"></span>Nankai University</a>
-          </div>
-          <div class="mega-col">
-            <h4>Resources</h4>
-            <a href="{{P}}contribution/"><span class="dot"></span>Contribution</a>
-            <a href="{{P}}pages/notebook.html"><span class="dot"></span>Notebook</a>
-            <a href="{{P}}parts/"><span class="dot"></span>Parts</a>
-          </div>
-          <a class="mega-feature" href="{{P}}pages/attribution.html">
-            <span class="tag">Transparency</span>
-            <p>Current evidence status for team membership, roles, support, and acknowledgements.</p>
-            <small>Review verification status &rarr;</small>
-            <img class="mascot-mini" src="{{P}}img/mascot-trim.png" alt="" />
-          </a>
-        </div>
-      </li>
-
-      <li class="nav-item nav-item--search">
-        <button type="button" class="nav-link nav-search-trigger" data-search-open aria-haspopup="dialog" aria-controls="site-search" aria-expanded="false">
-          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.5" y2="16.5"/></svg>
-          <span class="sr-only">Search</span>
-        </button>
-      </li>
-    </ul>
   </div>
-</nav>
+  <div class="lnav__island lnav__island--menu lg" data-lg="bar">
+    <span class="lg__fx" aria-hidden="true"></span><span class="lg__tint" aria-hidden="true"></span><span class="lg__shine" aria-hidden="true"></span>
+    <span class="lnav__now" data-lnav-now aria-hidden="true"></span>
+
+    <nav class="lnav__links" aria-label="Primary">
+      <span class="lnav__lens lg" data-lg="lens" aria-hidden="true"><span class="lg__fx"></span><span class="lg__shine"></span></span>
+      <a class="lnav__link" href="{{P}}index.html" data-match="index.html">Home</a>
+      <div class="lnav__group">
+        <button type="button" class="lnav__link" aria-expanded="false" aria-controls="lnav-project">Project<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+        <div class="lnav__drop lg" id="lnav-project" data-lg="drop">
+          <span class="lg__fx" aria-hidden="true"></span><span class="lg__tint" aria-hidden="true"></span><span class="lg__shine" aria-hidden="true"></span>
+          <div class="lnav__drop-grid">
+            <a href="{{P}}pages/description.html"><b>Description</b><span>Why nematode signals, and what we propose</span></a>
+            <a href="{{P}}engineering/"><b>Engineering</b><span>Design, build, test, learn</span></a>
+            <a href="{{P}}pages/results.html"><b>Results</b><span>What the bench has shown so far</span></a>
+            <a href="{{P}}model/"><b>Model</b><span>From signal input to color output</span></a>
+            <a href="{{P}}parts/"><b>Parts</b><span>Registry entries</span></a>
+            <a href="{{P}}hardware/"><b>Hardware</b><span>The closed test device</span></a>
+            <a href="{{P}}software/"><b>Software</b><span>Tools we built</span></a>
+            <a href="{{P}}contribution/"><b>Contribution</b><span>What future teams can reuse</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="lnav__group">
+        <button type="button" class="lnav__link" aria-expanded="false" aria-controls="lnav-hp">Human Practices<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+        <div class="lnav__drop lg" id="lnav-hp" data-lg="drop">
+          <span class="lg__fx" aria-hidden="true"></span><span class="lg__tint" aria-hidden="true"></span><span class="lg__shine" aria-hidden="true"></span>
+          <div class="lnav__drop-grid">
+            <a href="{{P}}human-practices/"><b>Human Practices</b><span>Growers, experts and what changed</span></a>
+            <a href="{{P}}education/"><b>Education</b><span>Classes and outreach across China</span></a>
+            <a href="{{P}}entrepreneurship/"><b>Entrepreneurship</b><span>Who would use it, and how</span></a>
+            <a href="{{P}}sustainability/"><b>Sustainability</b><span>Soil health and the SDGs</span></a>
+            <a href="{{P}}inclusivity/"><b>Inclusion</b><span>Who we built this with</span></a>
+          </div>
+        </div>
+      </div>
+      <a class="lnav__link" href="{{P}}safety-and-security/" data-match="safety-and-security/">Safety</a>
+      <div class="lnav__group">
+        <button type="button" class="lnav__link" aria-expanded="false" aria-controls="lnav-team">Team<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+        <div class="lnav__drop lnav__drop--narrow lg" id="lnav-team" data-lg="drop">
+          <span class="lg__fx" aria-hidden="true"></span><span class="lg__tint" aria-hidden="true"></span><span class="lg__shine" aria-hidden="true"></span>
+          <div class="lnav__drop-grid">
+            <a href="{{P}}pages/team-members.html"><b>Members</b><span>The people behind the wiki</span></a>
+            <a href="{{P}}pages/attribution.html"><b>Attributions</b><span>Who did what</span></a>
+            <a href="{{P}}licensing/"><b>Licensing &amp; AI use</b><span>How this site may be reused</span></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <button type="button" class="lnav__search" data-search-open aria-haspopup="dialog" aria-controls="site-search" aria-expanded="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><line x1="20" y1="20" x2="16" y2="16"/></svg>
+      <span>Search</span>
+    </button>
+    <button type="button" class="lnav__toggle" aria-expanded="false" aria-controls="lnav-sheet" aria-label="Open menu"><i></i><i></i></button>
+  </div>
+  </div>
+
+  <div class="lnav__sheet lg" id="lnav-sheet" data-lg="sheet" hidden>
+    <span class="lg__fx" aria-hidden="true"></span><span class="lg__tint" aria-hidden="true"></span><span class="lg__shine" aria-hidden="true"></span>
+    <div class="lnav__sheet-body">
+      <a href="{{P}}index.html">Home</a>
+      <p>Project</p>
+      <a href="{{P}}pages/description.html">Description</a><a href="{{P}}engineering/">Engineering</a><a href="{{P}}pages/results.html">Results</a><a href="{{P}}model/">Model</a><a href="{{P}}parts/">Parts</a><a href="{{P}}hardware/">Hardware</a><a href="{{P}}software/">Software</a><a href="{{P}}contribution/">Contribution</a>
+      <p>Human Practices</p>
+      <a href="{{P}}human-practices/">Human Practices</a><a href="{{P}}education/">Education</a><a href="{{P}}entrepreneurship/">Entrepreneurship</a><a href="{{P}}sustainability/">Sustainability</a><a href="{{P}}inclusivity/">Inclusion</a>
+      <p>More</p>
+      <a href="{{P}}safety-and-security/">Safety</a><a href="{{P}}pages/team-members.html">Team</a><a href="{{P}}pages/attribution.html">Attributions</a><a href="{{P}}licensing/">Licensing &amp; AI use</a>
+    </div>
+  </div>
+</header>
+
+<svg class="lg-defs" width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden"><defs></defs></svg>

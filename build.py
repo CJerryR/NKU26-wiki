@@ -362,11 +362,13 @@ def resolve_home_links(body):
         return html.escape(links[key]["url"], quote=True)
     return re.sub(r"\{\{HOME_URL:([a-z-]+)\}\}", resolve, body)
 
+HOME_SECTIONS = {"opening", "world", "china", "threat", "traces", "combo", "signal", "loop", "built", "explore"}
+
 def expand_home_partials(body):
     """Compose homepage source sections at build time, including in search."""
     def include(match):
         name = match.group(1)
-        if name not in {"opening", "maps", "science", "closing"}:
+        if name not in HOME_SECTIONS:
             raise ValueError(f"Unknown homepage section: {name}")
         return (PARTIALS / "home" / f"{name}.html").read_text(encoding="utf-8")
     body = re.sub(r"<!--\s*HOME:([a-z-]+)\s*-->", include, body)
@@ -714,20 +716,19 @@ def build_page(path):
     title_tag = meta.get("title", "NKU iGEM 2026")
     title_full = "NKU iGEM 2026" if is_home else f"{title_tag}  /  NKU iGEM 2026"
     desc = meta.get("desc", "NKU iGEM 2026 - a synthetic-biology sensing concept for plant-parasitic nematode-associated signals, under investigation.")
-    body_class = "page-home" if is_home else "page-standard"
+    body_class = "page-home home" if is_home else "page-standard"
     footer_source = read("_partials/home/footer.html") if is_home else FOOTER
-    nav_source = read("_partials/home/nav.html") if is_home else NAV
-    nav_source = resolve_home_links(nav_source) if is_home else nav_source
+    nav_source = NAV
     footer_html = footer_source.replace("{{GLOBAL_FOOTER_FEATURES}}", GLOBAL_FOOTER_FEATURES)
     footer_html = footer_html.replace("{{GLOBAL_SPONSOR_STRIP}}", GLOBAL_SPONSOR_STRIP)
 
     home_styles = ""
     home_scripts = ""
     if is_home:
-        home_styles = "\n  ".join(f'<link rel="stylesheet" href="{P}css/{name}.css" />' for name in ("home-shared", "home-opening", "home-maps", "home-science", "home-shell"))
+        home_styles = "\n  ".join(f'<link rel="stylesheet" href="{P}css/{name}.css" />' for name in ("home",))
         payload = json.dumps(home_data(), ensure_ascii=False).replace("<", "\\u003c")
         home_scripts = '<script>window.NKU_HOME = ' + payload + ';</script>\n  '
-        home_scripts += "\n  ".join(f'<script src="{P}js/{name}.js" defer></script>' for name in ("home-opening", "home-maps-data", "home-maps", "home-science", "home-shell"))
+        home_scripts += "\n  ".join(f'<script src="{P}js/{name}.js" defer></script>' for name in ("home-geo", "home-land", "home-abundance", "home-core", "home-pager", "home-opening", "home-maps", "home-threat", "home-story") if name != "home-abundance" or (ROOT / "js" / "home-abundance.js").exists())
 
     page_html = (BASE
             .replace("{{TITLE}}", title_full)
@@ -739,7 +740,7 @@ def build_page(path):
             .replace("{{SOURCE_REPOSITORY_URL}}", html.escape(SOURCE_REPOSITORY_URL, quote=True))
             .replace("{{BODY_CLASS}}", body_class)
             .replace("{{BODY}}", body_html)
-            .replace("{{MASCOT}}", read("_partials/home/mascot.html" if is_home else "_partials/mascot.html").strip())
+            .replace("{{MASCOT}}", read("_partials/mascot.html").strip())
             .replace("{{HOME_STYLES}}", home_styles)
             .replace("{{HOME_SCRIPTS}}", home_scripts)
             .replace("{{P}}", P))
