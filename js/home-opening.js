@@ -1,383 +1,1110 @@
-/* NKU homepage — 01 opening: surface hero, descent, flashlight hunt */
+/* Part 01 · the field detective's search (three.js).
+ * A painted soil section: the camera sinks from the surface into the soil,
+ * the flashlight follows the pointer, flickering cyan chemical clues form a
+ * trail, and the trail ends at a damaged root and a nematode. Illustrative:
+ * no signal here is measured data. */
 (function () {
   'use strict';
-  var H = window.NKUH; if (!H) return;
-  H.ready(function () {
-    var sec = H.$('[data-op]'); if (!sec) return;
-    var cv = H.$('[data-op-canvas]', sec), hero = H.$('[data-op-hero]', sec), labelsEl = H.$('[data-op-labels]', sec);
-    var hint = H.$('[data-op-hint]', sec);
-    var P = document.body.getAttribute('data-path-prefix') || '';
-    if (H.coarse && hint) hint.textContent = 'Tap the soil to explore.';
+  var NK = window.NK;
+  var root = document.querySelector('[data-opening]');
+  if (!NK || !root) return;
 
-    var ctx, W, Hh, CAM, SURF, dark, lit, tmp, tctx, texDark, texLight, R;
-    var plants = [], roots = [], pebbles = [], ghosts = [], mols = [], damage = null, wormW = 150;
-    var worm = new Image(); worm.src = P + 'img/home/nematode.png';
-    var print = new Image(); print.src = P + 'img/home/soil-print.png';
-    var light = { x: 0, y: 0, tx: 0, ty: 0 }, pointerSeen = false, found = false, foundT = 0, auto = false;
-    var seen = 0, cam = 0, t0 = performance.now(), visible = true, labels = {};
-    var dsc = { from: 0, to: 0, t0: 0, dur: 1 }, descentNow = 0;
-    function descentAt(now) { var k = H.clamp((now - dsc.t0) / dsc.dur, 0, 1); return H.lerp(dsc.from, dsc.to, H.ease(k)); }
-    function descendTo(v, ms) { dsc = { from: descentNow, to: v, t0: performance.now(), dur: Math.max(1, ms) }; }
-    var warm = 0; // 0 cool -> 1 warm
+  var stage = root.querySelector('[data-opening-stage]');
+  var canvas = root.querySelector('[data-opening-canvas]');
+  var hudLine = root.querySelector('[data-hud-line]');
+  var meter = root.querySelector('[data-hud-meter]');
+  var labelsEl = root.querySelector('[data-labels]');
+  var guideBtn = root.querySelector('[data-opening-guide]');
+  var startBtn = root.querySelector('[data-opening-start]');
+  var focusEl = root.querySelector('[data-opening-focus]');
+  var T = window.THREE;
 
-    function rnd() { return rng(); } var rng = H.rand(7);
+  var COPY = {
+    scan: NK.coarse ? 'Tap the soil to move your light.' : 'Move your cursor to scan the soil.',
+    detected: 'Signal detected!',
+    trail: 'The fluorescent signals seem to form a trail.',
+    hint: 'Look for the flickering cyan glow.',
+    roots: 'The plant\u2019s roots are under severe attack!',
+    found: 'Nematodes are behind it!'
+  };
 
-    /* ---------- scene generation ---------- */
-    function build() {
-      W = sec.clientWidth; Hh = innerHeight;
-      CAM = Math.round(Hh * .66); SURF = Math.round(Hh * .8);
-      R = Math.max(120, Math.min(W, Hh) * .2);
-      ctx = H.fit(cv, W, Hh, 1.5);
-      rng = H.rand(11);
-      var d = Math.min(H.dpr(), 1.5), total = CAM + Hh;
-      dark = document.createElement('canvas'); lit = document.createElement('canvas'); tmp = document.createElement('canvas');
-      var dc = H.fit(dark, W, total, 1.5), lc = H.fit(lit, W, total, 1.5); tctx = H.fit(tmp, W, Hh, 1.5);
-      wormW = H.clamp(W * .12, 100, 180);
-      // plants
-      plants = [.07, .19, .3, .7, .82, .93, .55].map(function (fx, i) {
-        return { x: fx * W + (rnd() - .5) * 30, h: (i === 6 ? .2 : .2 + rnd() * .16) * Hh, ph: rnd() * 6, leaves: 3 + Math.floor(rnd() * 3), s: .8 + rnd() * .45 };
-      });
-      // worm & damaged root (world coords)
-      var wv = { x: W * .66, y: CAM + Hh * .7 };
-      worm.pos = wv;
-      damage = { x: wv.x + wormW * .1, y: wv.y - Hh * .12 };
-      // roots
-      roots = [];
-      plants.forEach(function (pl, i) { grow(pl.x, SURF + 4, Math.PI / 2 + (rnd() - .5) * .3, Hh * (.14 + rnd() * .08), 3.2, 0, roots); });
-      // a long root reaching the nematode
-      var near = plants.reduce(function (a, b) { return Math.abs(b.x - wv.x) < Math.abs(a.x - wv.x) ? b : a; });
-      var path = [], x = near.x, y = SURF + 4;
-      for (var k = 0; k <= 24; k++) { var tt = k / 24; path.push([H.lerp(x, damage.x, tt) + Math.sin(tt * 7) * 14, H.lerp(y, damage.y + 30, tt)]); }
-      roots.push({ pts: path, w: 3, hurt: true });
-      grow(damage.x, damage.y + 30, Math.PI / 2 + .6, Hh * .08, 1.6, 2, roots, true);
-      grow(damage.x, damage.y + 30, Math.PI / 2 - .7, Hh * .07, 1.6, 2, roots, true);
-      // pebbles
-      pebbles = [];
-      for (var i = 0; i < 70; i++) pebbles.push({ x: rnd() * W, y: SURF + 30 + rnd() * (total - SURF), rx: 4 + rnd() * 22, ry: 3 + rnd() * 12, a: rnd() * 3 });
-      // ghosts
-      ghosts = [];
-      for (var g = 0; g < 7; g++) ghosts.push({ x: rnd() * W, y: CAM + Hh * (.25 + rnd() * .65), len: 70 + rnd() * 70, ang: rnd() * 6.28, sp: .2 + rnd() * .3, ph: rnd() * 6 });
-      // ascaroside molecules: trail + decoys (view-relative y)
-      mols = [];
-      var a = { x: W * .16, y: Hh * .34 }, b = { x: W * .34, y: Hh * .86 }, c = { x: W * .5, y: Hh * .42 }, e = { x: wv.x - wormW * .2, y: Hh * .7 };
-      for (var m = 0; m < 16; m++) {
-        var u = m / 15, iu = 1 - u;
-        var px = iu * iu * iu * a.x + 3 * iu * iu * u * b.x + 3 * iu * u * u * c.x + u * u * u * e.x;
-        var py = iu * iu * iu * a.y + 3 * iu * iu * u * b.y + 3 * iu * u * u * c.y + u * u * u * e.y;
-        mols.push(mol(px + (rnd() - .5) * 40, CAM + py + (rnd() - .5) * 34, true, u));
+  function setLine(text, cls) {
+    if (!hudLine || hudLine.textContent === text) return;
+    hudLine.textContent = text;
+    hudLine.className = 'nk-hud__line' + (cls ? ' ' + cls : '');
+  }
+  function progress() {
+    var r = root.getBoundingClientRect();
+    var span = root.offsetHeight - window.innerHeight;
+    return span > 0 ? NK.clamp(-r.top / span, 0, 1) : 1;
+  }
+  function exploreTop() {
+    return root.getBoundingClientRect().top + window.pageYOffset + root.offsetHeight - window.innerHeight;
+  }
+  if (startBtn) {
+    startBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      window.scrollTo({ top: exploreTop(), behavior: NK.reduced ? 'auto' : 'smooth' });
+      setTimeout(function () { if (focusEl) focusEl.focus({ preventScroll: true }); }, NK.reduced ? 0 : 1100);
+    });
+  }
+
+  function fallback() {
+    root.classList.add('is-fallback');
+    root.style.setProperty('--hero-o', '1');
+    setLine('Scroll on to follow the trail of chemical clues.');
+    stage.addEventListener('pointermove', function (e) {
+      var r = stage.getBoundingClientRect();
+      stage.style.setProperty('--fx', ((e.clientX - r.left) / r.width * 100).toFixed(1) + '%');
+      stage.style.setProperty('--fy', ((e.clientY - r.top) / r.height * 100).toFixed(1) + '%');
+    });
+    var onScroll = function () {
+      var p = progress();
+      root.style.setProperty('--hero-o', String(1 - NK.smooth(0.04, 0.3, p)));
+      root.style.setProperty('--hud-o', String(NK.smooth(0.7, 0.95, p)));
+      root.classList.toggle('is-exploring', p > 0.78);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  if (!T || !NK.webgl()) { fallback(); return; }
+  var renderer;
+  try {
+    renderer = new T.WebGLRenderer({ canvas: canvas, antialias: true, powerPreference: 'high-performance' });
+  } catch (err) { fallback(); return; }
+  renderer.setClearColor(0x140b1c, 1);
+  var DPR = Math.min(window.devicePixelRatio || 1, NK.coarse ? 1.5 : 1.8);
+  renderer.setPixelRatio(DPR);
+
+  var scene = new T.Scene();
+  var camera = new T.PerspectiveCamera(32, 1, 0.5, 400);
+  var HALF_TAN = Math.tan(16 * Math.PI / 180);
+  var W = 1, H = 1;
+  var L = null;           // layout
+  var built = null;       // current scene objects
+  var nemTex = null;      // nematode texture (loaded once)
+
+  /* uniforms shared by every material that reacts to the light */
+  var U = {
+    uL: { value: new T.Vector2(0, -10) },
+    uR: { value: 2.6 },
+    uOn: { value: 0 },
+    uLC: { value: new T.Color(1.0, 0.93, 0.82) },
+    uTime: { value: 0 },
+    uGall: { value: 0 },
+    uPx: { value: 800 },
+    uHint: { value: 0 }
+  };
+
+  var S = {                 // search state (survives rebuilds)
+    detected: 0, roots: false, found: false, exploring: false, everExplored: false,
+    tExplore: 0, lastDetect: 0, hinted: false, foundT: 0, userMoved: false
+  };
+  var light = { x: 0, y: 0, tx: 0, ty: 0 };
+  var guide = null;
+  var pointerN = { x: 0.5, y: 0.5 };
+
+  /* ------------------------------------------------------------------ */
+  function computeLayout() {
+    var a = W / H;
+    var portrait = a < 0.95;
+    var Hx = portrait ? Math.max(17.2, 10.6 / a) : 17.2;
+    var Wx = Hx * a;
+    var yH = Hx * 0.21;
+    var yX = -(Hx * 0.5 + 3.4);
+    var PW = Wx + 5;
+    var top = yH + Hx * 0.5 + 1.4;
+    var bottom = yX - Hx * 0.5 - 1.4;
+    var PH = top - bottom;
+    var maxTex = Math.min(renderer.capabilities.maxTextureSize || 4096, NK.coarse ? 1600 : 2600);
+    var texW = Math.round(maxTex * Math.min(1, PW / PH >= 1 ? 1 : PW / PH));
+    var texH = Math.round(texW * PH / PW);
+    if (texH > maxTex) { texH = maxTex; texW = Math.round(texH * PW / PH); }
+    var trail = portrait
+      ? [[0.22, 0.2], [0.46, 0.25], [0.68, 0.32], [0.52, 0.4], [0.3, 0.47], [0.44, 0.55], [0.6, 0.6]]
+      : [[0.13, 0.25], [0.21, 0.37], [0.3, 0.29], [0.38, 0.42], [0.46, 0.51], [0.54, 0.41], [0.61, 0.49], [0.66, 0.58]];
+    var tgt = portrait ? [0.62, 0.7] : [0.735, 0.64];
+    function w(n) { return { x: -Wx / 2 + n[0] * Wx, y: yX + Hx / 2 - n[1] * Hx }; }
+    var nodes = trail.map(w);
+    var target = w(tgt);
+    var plants = portrait
+      ? [{ x: -0.6, h: 6.6, lean: 0.5, s: 1.05 }, { x: 3.4, h: 4.4, lean: -0.4, s: 0.85 }, { x: -4.4, h: 3.0, lean: 0.3, s: 0.7 }]
+      : [{ x: -2.3, h: 7.3, lean: 0.6, s: 1.15 }, { x: 6.2, h: 5.1, lean: -0.5, s: 0.95 }, { x: -9.6, h: 3.4, lean: 0.35, s: 0.72 }, { x: 11.6, h: 2.9, lean: -0.3, s: 0.62 }];
+    plants.forEach(function (p) { p.mound = 0.34 * p.s; p.mw = 1.6 + p.s; });
+    return {
+      a: a, portrait: portrait, Hx: Hx, Wx: Wx, yH: yH, yX: yX, PW: PW, PH: PH, top: top, bottom: bottom,
+      camZ: Hx / (2 * HALF_TAN), texW: texW, texH: texH, nodes: nodes, target: target, plants: plants,
+      nem: { x: target.x + 0.95, y: target.y + 0.18 }
+    };
+  }
+
+  function surf(x) {
+    var v = 0.22 * Math.sin(0.43 * x + 0.6) + 0.15 * Math.sin(1.07 * x + 2.1) + 0.06 * Math.sin(2.9 * x + 1.3);
+    for (var i = 0; i < L.plants.length; i++) {
+      var p = L.plants[i];
+      v += p.mound * Math.exp(-Math.pow((x - p.x) / p.mw, 2));
+    }
+    return v;
+  }
+
+  /* ---------------- procedural painting (albedo + data) ---------------- */
+  function paint() {
+    var cA = document.createElement('canvas');
+    var cD = document.createElement('canvas');
+    cA.width = cD.width = L.texW;
+    cA.height = cD.height = L.texH;
+    var a = cA.getContext('2d');
+    var d = cD.getContext('2d');
+    var k = L.texW / L.PW;
+    var R = NK.rng(20260923);
+    function X(x) { return (x + L.PW / 2) * k; }
+    function Y(y) { return (L.top - y) * k; }
+    function rgb(h, amb, flag) { return 'rgb(' + Math.round(h * 255) + ',' + Math.round(amb * 255) + ',' + (flag || 0) + ')'; }
+    var x0 = -L.PW / 2;
+    var x1 = L.PW / 2;
+
+    /* sky */
+    var g = a.createLinearGradient(0, 0, 0, Y(0));
+    g.addColorStop(0, '#0f0816');
+    g.addColorStop(0.55, '#1a0f24');
+    g.addColorStop(1, '#2d1b39');
+    a.fillStyle = g;
+    a.fillRect(0, 0, L.texW, L.texH);
+    var moon = a.createRadialGradient(X(L.portrait ? 3 : 7.5), Y(L.top - 1.5), 0, X(L.portrait ? 3 : 7.5), Y(L.top - 1.5), 9 * k);
+    moon.addColorStop(0, 'rgba(160,130,190,0.16)');
+    moon.addColorStop(1, 'rgba(160,130,190,0)');
+    a.fillStyle = moon;
+    a.fillRect(0, 0, L.texW, Y(0));
+    d.fillStyle = rgb(0, 1, 255);
+    d.fillRect(0, 0, L.texW, L.texH);
+
+    /* soil body */
+    function soilPath(ctx) {
+      ctx.beginPath();
+      ctx.moveTo(X(x0), Y(surf(x0)));
+      for (var x = x0; x <= x1 + 0.1; x += 0.08) ctx.lineTo(X(x), Y(surf(x)));
+      ctx.lineTo(X(x1), L.texH + 2);
+      ctx.lineTo(X(x0), L.texH + 2);
+      ctx.closePath();
+    }
+    g = a.createLinearGradient(0, Y(0.6), 0, L.texH);
+    var depthStop = function (y) { return NK.clamp((Y(y) - Y(0.6)) / (L.texH - Y(0.6)), 0, 1); };
+    g.addColorStop(0, '#3f2a22');
+    g.addColorStop(depthStop(-2.4), '#5a3c2e');
+    g.addColorStop(depthStop(-3.6), '#7b5a44');
+    g.addColorStop(depthStop(-7.2), '#96775d');
+    g.addColorStop(1, '#a6876b');
+    soilPath(a);
+    a.fillStyle = g;
+    a.fill();
+    soilPath(d);
+    d.fillStyle = rgb(0.34, 0.04, 0);
+    d.fill();
+
+    function blob(ctx, cx, cy, r, n, jit, rot) {
+      ctx.beginPath();
+      for (var i = 0; i <= n; i++) {
+        var ang = rot + i / n * Math.PI * 2;
+        var rr = r * (1 - jit + ((i * 7919 + Math.floor(cx * 131)) % 97) / 97 * jit * 2);
+        var px = X(cx) + Math.cos(ang) * rr * k;
+        var py = Y(cy) + Math.sin(ang) * rr * k * 0.82;
+        if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
       }
-      for (var q = 0; q < 12; q++) mols.push(mol(rnd() * W, CAM + Hh * (.25 + rnd() * .7), false, 0));
-      paint(dc, false); paint(lc, true);
-      // texture copies
-      texLight = texDark = null;
-      if (print.complete && print.naturalWidth) textures(dc, lc);
-      light.x = light.tx = W * .5; light.y = light.ty = Hh * .45;
+      ctx.closePath();
     }
-    function mol(x, y, trail, u) {
-      var n = 2 + Math.floor(rnd() * 3), balls = [];
-      for (var i = 0; i < n; i++) balls.push({ dx: (rnd() - .5) * 12, dy: (rnd() - .5) * 12, r: 3 + rnd() * 3.5 });
-      return { x: x, y: y, trail: trail, u: u, balls: balls, ph: rnd() * 6.28, sp: .6 + rnd() * 1.4, seen: 0, rot: rnd() * 6 };
+
+    /* topsoil crumbs */
+    var crumbCols = ['#2f1e19', '#4a3127', '#6a4a37', '#7e5b43', '#3a261e'];
+    for (var i = 0; i < 2600; i++) {
+      var cx = x0 + R() * L.PW;
+      var cy = surf(cx) - Math.pow(R(), 0.8) * 3.5;
+      var r = 0.025 + R() * R() * 0.12;
+      blob(a, cx, cy, r, 6, 0.3, R() * 6);
+      a.fillStyle = crumbCols[(R() * crumbCols.length) | 0];
+      a.globalAlpha = 0.85;
+      a.fill();
+      blob(d, cx, cy, r, 6, 0.3, 0);
+      d.fillStyle = rgb(0.45 + R() * 0.3, 0.05, 0);
+      d.fill();
     }
-    function grow(x, y, ang, len, w, depth, out, hurt) {
-      var pts = [[x, y]], cx = x, cy = y, a = ang;
-      var steps = 10;
-      for (var i = 1; i <= steps; i++) { a += (rnd() - .5) * .35; cx += Math.cos(a) * len / steps; cy += Math.sin(a) * len / steps; pts.push([cx, cy]); }
-      out.push({ pts: pts, w: w, hurt: hurt });
-      if (depth < 3) {
-        var kids = 2 + Math.floor(rnd() * 2);
-        for (var k = 0; k < kids; k++) {
-          var at = pts[3 + Math.floor(rnd() * (pts.length - 4))];
-          grow(at[0], at[1], a + (rnd() < .5 ? -1 : 1) * (.5 + rnd() * .7), len * (.45 + rnd() * .25), w * .6, depth + 1, out, hurt);
+    a.globalAlpha = 1;
+
+    /* striated band */
+    for (i = 0; i < 34; i++) {
+      var yb = -3.4 - R() * 3.8;
+      var amp = 0.05 + R() * 0.12;
+      var fr = 0.3 + R() * 0.6;
+      var ph = R() * 6;
+      a.beginPath();
+      d.beginPath();
+      for (var x = x0; x <= x1; x += 0.2) {
+        var yy = yb + Math.sin(x * fr + ph) * amp + Math.sin(x * 2.3 + ph * 2) * 0.03;
+        if (x === x0) { a.moveTo(X(x), Y(yy)); d.moveTo(X(x), Y(yy)); } else { a.lineTo(X(x), Y(yy)); d.lineTo(X(x), Y(yy)); }
+      }
+      a.strokeStyle = R() < 0.5 ? 'rgba(58,38,28,0.42)' : 'rgba(196,164,128,0.26)';
+      a.lineWidth = (0.025 + R() * 0.06) * k;
+      a.stroke();
+      d.strokeStyle = rgb(0.46, 0.05, 0);
+      d.lineWidth = a.lineWidth;
+      d.stroke();
+    }
+    for (i = 0; i < 1800; i++) {
+      var sx = x0 + R() * L.PW;
+      var syy = -3.2 - R() * 4.4;
+      a.fillStyle = R() < 0.5 ? 'rgba(52,34,26,0.5)' : 'rgba(210,182,146,0.35)';
+      a.beginPath();
+      a.arc(X(sx), Y(syy), (0.012 + R() * 0.03) * k, 0, 6.283);
+      a.fill();
+    }
+
+    /* pebbles: denser and larger with depth (woodcut strata, A07) */
+    var pebCols = ['#8b6f58', '#76604e', '#b59a7f', '#c8b095', '#6a5241', '#9c7f63', '#d5c0a4'];
+    var span = -6.4 - L.bottom;
+    var nPeb = Math.round(L.PW * span * 2.1);
+    for (i = 0; i < nPeb; i++) {
+      var px = x0 + R() * L.PW;
+      var py = -6.4 - Math.pow(R(), 0.85) * span;
+      var dn = NK.clamp((-py - 6.4) / span, 0, 1);
+      var pr = 0.07 + Math.pow(R(), 2.4) * (0.3 + 0.62 * dn);
+      var rot = R() * 6.283;
+      var n = 7 + ((R() * 4) | 0);
+      blob(a, px, py, pr + 0.03, n, 0.18, rot);
+      a.fillStyle = 'rgba(46,30,22,0.55)';
+      a.fill();
+      blob(a, px, py, pr, n, 0.18, rot);
+      a.fillStyle = pebCols[(R() * pebCols.length) | 0];
+      a.fill();
+      a.save();
+      a.clip();
+      a.fillStyle = 'rgba(40,26,20,0.35)';
+      for (var s = 0; s < 4 + pr * 26; s++) {
+        a.beginPath();
+        a.arc(X(px + (R() - 0.5) * pr * 1.8), Y(py + (R() - 0.5) * pr * 1.5), (0.01 + R() * 0.025) * k, 0, 6.283);
+        a.fill();
+      }
+      a.strokeStyle = 'rgba(255,238,214,0.2)';
+      a.lineWidth = pr * 0.16 * k;
+      a.beginPath();
+      a.arc(X(px - pr * 0.12), Y(py + pr * 0.12), pr * 0.8 * k, Math.PI * 1.05, Math.PI * 1.55);
+      a.stroke();
+      a.restore();
+      var rg = d.createRadialGradient(X(px - pr * 0.2), Y(py + pr * 0.2), 0, X(px), Y(py), pr * k * 1.05);
+      rg.addColorStop(0, rgb(0.95, 0.07, 0));
+      rg.addColorStop(1, rgb(0.5, 0.06, 0));
+      blob(d, px, py, pr, n, 0.18, rot);
+      d.fillStyle = rg;
+      d.fill();
+    }
+
+    /* roots: branching, tapered (visible faintly in the dark via the ambient mask) */
+    function growRoot(xs, ys, ang, len, wid, depth, col, amb) {
+      var x = xs;
+      var y = ys;
+      var steps = Math.max(4, Math.round(len / 0.3));
+      for (var s = 0; s < steps; s++) {
+        var nx = x + Math.cos(ang) * 0.3;
+        var ny = y + Math.sin(ang) * 0.3;
+        a.strokeStyle = col;
+        a.lineWidth = Math.max(0.6, wid * k);
+        a.lineCap = 'round';
+        a.beginPath(); a.moveTo(X(x), Y(y)); a.lineTo(X(nx), Y(ny)); a.stroke();
+        d.strokeStyle = rgb(0.82, amb, 0);
+        d.lineWidth = a.lineWidth;
+        d.lineCap = 'round';
+        d.beginPath(); d.moveTo(X(x), Y(y)); d.lineTo(X(nx), Y(ny)); d.stroke();
+        ang += (R() - 0.5) * 0.42;
+        ang = ang * 0.88 + (-Math.PI / 2) * 0.12;
+        wid *= 0.968;
+        if (depth < 3 && wid > 0.022 && R() < 0.17) {
+          var side = R() < 0.5 ? -1 : 1;
+          growRoot(nx, ny, ang + side * (0.5 + R() * 0.7), len * (0.3 + R() * 0.25), wid * 0.66, depth + 1, col, amb * 0.9);
+        }
+        x = nx;
+        y = ny;
+        if (y < L.bottom) break;
+      }
+    }
+    L.plants.forEach(function (p) {
+      var by = surf(p.x) - 0.1;
+      growRoot(p.x, by, -Math.PI / 2 - 0.12, 6 + p.s * 5, 0.1 * p.s + 0.03, 0, '#dcc39c', 0.34);
+      growRoot(p.x + 0.1, by, -Math.PI / 2 + 0.5, 3 + p.s * 2, 0.06 * p.s + 0.02, 1, '#d6bd97', 0.3);
+      growRoot(p.x - 0.1, by, -Math.PI / 2 - 0.6, 3 + p.s * 2, 0.06 * p.s + 0.02, 1, '#d6bd97', 0.3);
+    });
+    for (i = 0; i < Math.round(L.PW / 4.2); i++) {
+      var rx = x0 + 1.5 + i * 4.2 + (R() - 0.5) * 1.6;
+      if (Math.abs(rx - L.target.x) < 2.2) continue;
+      growRoot(rx, surf(rx) - 0.2, -Math.PI / 2 + (R() - 0.5) * 0.4, 7 + R() * 9, 0.07 + R() * 0.05, 0, '#d8c09a', 0.28);
+    }
+
+    /* the damaged root: thick, with galls around the target */
+    var t0 = L.target;
+    var ctrl = [
+      [t0.x + 1.3, surf(t0.x + 1.3) - 0.1], [t0.x + 1.1, -4.2], [t0.x + 0.5, t0.y + 3.2],
+      [t0.x, t0.y], [t0.x - 0.55, t0.y - 2.4], [t0.x - 0.25, t0.y - 4.6], [t0.x - 0.6, t0.y - 7]
+    ];
+    function cr(p0, p1, p2, p3, t) {
+      var t2 = t * t;
+      var t3 = t2 * t;
+      return 0.5 * ((2 * p1) + (-p0 + p2) * t + (2 * p0 - 5 * p1 + 4 * p2 - p3) * t2 + (-p0 + 3 * p1 - 3 * p2 + p3) * t3);
+    }
+    var pts = [];
+    for (i = 0; i < ctrl.length - 1; i++) {
+      var q0 = ctrl[Math.max(0, i - 1)];
+      var q1 = ctrl[i];
+      var q2 = ctrl[i + 1];
+      var q3 = ctrl[Math.min(ctrl.length - 1, i + 2)];
+      for (var st = 0; st < 12; st++) {
+        var tt = st / 12;
+        pts.push([cr(q0[0], q1[0], q2[0], q3[0], tt), cr(q0[1], q1[1], q2[1], q3[1], tt)]);
+      }
+    }
+    for (i = 1; i < pts.length; i++) {
+      var ww = 0.2 - i / pts.length * 0.1;
+      a.strokeStyle = '#e8d2ad';
+      a.lineWidth = ww * k;
+      a.beginPath(); a.moveTo(X(pts[i - 1][0]), Y(pts[i - 1][1])); a.lineTo(X(pts[i][0]), Y(pts[i][1])); a.stroke();
+      d.strokeStyle = rgb(0.86, 0.14, 0);
+      d.lineWidth = ww * k;
+      d.beginPath(); d.moveTo(X(pts[i - 1][0]), Y(pts[i - 1][1])); d.lineTo(X(pts[i][0]), Y(pts[i][1])); d.stroke();
+      if (i % 5 === 0 && i > 8) growRoot(pts[i][0], pts[i][1], -Math.PI / 2 + (i % 10 ? 0.9 : -0.9), 1.6 + R() * 1.4, 0.05, 2, '#e0c7a2', 0.12);
+    }
+    var ti = 0;
+    var best = 1e9;
+    pts.forEach(function (p, j) { var dd = Math.hypot(p[0] - t0.x, p[1] - t0.y); if (dd < best) { best = dd; ti = j; } });
+    [-13, -7, -2, 3, 8, 14].forEach(function (off, j) {
+      var p = pts[NK.clamp(ti + off, 0, pts.length - 1)];
+      var gr = 0.2 + (j % 3) * 0.06;
+      var gx = p[0] + (j % 2 ? 0.08 : -0.08);
+      a.fillStyle = '#e9b8a0';
+      a.strokeStyle = '#b47460';
+      a.lineWidth = 0.03 * k;
+      blob(a, gx, p[1], gr, 12, 0.08, j);
+      a.fill();
+      a.stroke();
+      a.fillStyle = 'rgba(255,236,220,0.45)';
+      a.beginPath();
+      a.arc(X(gx - gr * 0.3), Y(p[1] + gr * 0.3), gr * 0.35 * k, 0, 6.283);
+      a.fill();
+      blob(d, gx, p[1], gr, 12, 0.08, j);
+      d.fillStyle = rgb(0.95, 0.1, 128);
+      d.fill();
+    });
+    L.rootPts = pts;
+
+    /* surface clods: catch the moonlight in the hero view */
+    for (x = x0; x < x1; x += 0.32 + R() * 0.3) {
+      var cy2 = surf(x) - 0.05 - R() * 0.25;
+      var cr2 = 0.12 + R() * 0.2;
+      blob(a, x, cy2, cr2, 9, 0.25, R() * 6);
+      a.fillStyle = R() < 0.5 ? '#3b2821' : '#46302a';
+      a.fill();
+      a.strokeStyle = 'rgba(150,120,140,0.45)';
+      a.lineWidth = 0.03 * k;
+      a.beginPath();
+      a.arc(X(x), Y(cy2), cr2 * k * 0.92, Math.PI * 1.15, Math.PI * 1.85);
+      a.stroke();
+      blob(d, x, cy2, cr2, 9, 0.25, 0);
+      d.fillStyle = rgb(0.7, 0.34, 0);
+      d.fill();
+    }
+    /* grass tufts */
+    a.lineCap = 'round';
+    for (x = x0; x < x1; x += 0.18 + R() * 0.4) {
+      var sy = surf(x);
+      for (var b = 0; b < 3; b++) {
+        a.strokeStyle = R() < 0.5 ? '#4f5a3c' : '#66704c';
+        a.lineWidth = 0.035 * k;
+        a.beginPath();
+        a.moveTo(X(x), Y(sy));
+        a.quadraticCurveTo(X(x + (R() - 0.5) * 0.2), Y(sy + 0.18), X(x + (R() - 0.5) * 0.35), Y(sy + 0.22 + R() * 0.25));
+        a.stroke();
+      }
+    }
+
+    /* seedlings above ground (painted final colours; emissive in the shader) */
+    function leaf(bx, by, ang, len, wid) {
+      var tx = bx + Math.cos(ang) * len;
+      var ty = by + Math.sin(ang) * len;
+      var nx = -Math.sin(ang) * wid;
+      var ny = Math.cos(ang) * wid;
+      var mx = (bx + tx) / 2;
+      var my = (by + ty) / 2;
+      var lg = a.createLinearGradient(X(bx), Y(by), X(tx), Y(ty));
+      lg.addColorStop(0, '#3a4630');
+      lg.addColorStop(0.6, '#5e6d49');
+      lg.addColorStop(1, '#7f8d62');
+      a.fillStyle = lg;
+      a.beginPath();
+      a.moveTo(X(bx), Y(by));
+      a.quadraticCurveTo(X(mx + nx), Y(my + ny), X(tx), Y(ty));
+      a.quadraticCurveTo(X(mx - nx * 0.8), Y(my - ny * 0.8), X(bx), Y(by));
+      a.fill();
+      a.strokeStyle = 'rgba(200,210,160,0.32)';
+      a.lineWidth = 0.025 * k;
+      a.beginPath();
+      a.moveTo(X(bx), Y(by));
+      a.quadraticCurveTo(X(mx + nx * 0.1), Y(my + ny * 0.1), X(tx), Y(ty));
+      a.stroke();
+      a.strokeStyle = 'rgba(214,224,176,0.28)';
+      a.lineWidth = 0.02 * k;
+      a.beginPath();
+      a.moveTo(X(bx + nx * 0.2), Y(by + ny * 0.2));
+      a.quadraticCurveTo(X(mx + nx), Y(my + ny), X(tx), Y(ty));
+      a.stroke();
+    }
+    L.plants.forEach(function (p) {
+      var bx = p.x;
+      var by = surf(p.x) - 0.05;
+      var tx = p.x + p.lean;
+      var ty = by + p.h;
+      a.strokeStyle = '#4e5a3a';
+      a.lineWidth = 0.08 * p.s * k;
+      a.beginPath();
+      a.moveTo(X(bx), Y(by));
+      a.quadraticCurveTo(X(bx + p.lean * 0.15), Y(by + p.h * 0.55), X(tx), Y(ty));
+      a.stroke();
+      var nLeaves = Math.round(4 + p.s * 4);
+      for (var j = 0; j < nLeaves; j++) {
+        var t = 0.22 + 0.74 * j / nLeaves;
+        var sxp = (1 - t) * (1 - t) * bx + 2 * (1 - t) * t * (bx + p.lean * 0.15) + t * t * tx;
+        var syp = (1 - t) * (1 - t) * by + 2 * (1 - t) * t * (by + p.h * 0.55) + t * t * ty;
+        var side = j % 2 ? 1 : -1;
+        var ang = Math.PI / 2 - side * (0.62 + 0.5 * (1 - t) + (R() - 0.5) * 0.25);
+        var len = (0.7 + 1.35 * (1 - t) + R() * 0.3) * p.s * 1.25;
+        leaf(sxp, syp, ang, len, len * 0.3);
+      }
+      leaf(tx, ty, Math.PI / 2 + (R() - 0.5) * 0.3, 0.75 * p.s, 0.2 * p.s);
+    });
+
+    /* fine grain */
+    try {
+      var img = a.getImageData(0, 0, L.texW, L.texH);
+      var px8 = img.data;
+      for (i = 0; i < px8.length; i += 4) {
+        var nn = (R() - 0.5) * 16;
+        px8[i] += nn; px8[i + 1] += nn; px8[i + 2] += nn;
+      }
+      a.putImageData(img, 0, 0);
+    } catch (e) { /* ignore */ }
+    return { albedo: cA, data: cD };
+  }
+
+  /* ---------------- shaders ---------------- */
+  var VERT_WORLD = 'varying vec2 vUv; varying vec2 vW; void main(){ vUv = uv; vec4 w = modelMatrix * vec4(position, 1.0); vW = w.xy; gl_Position = projectionMatrix * viewMatrix * w; }';
+  var FRAG_SOIL = [
+    'precision highp float;',
+    'uniform sampler2D uA; uniform sampler2D uD; uniform vec2 uTex;',
+    'uniform vec2 uL; uniform float uR; uniform float uOn; uniform vec3 uLC; uniform float uTime; uniform float uGall;',
+    'varying vec2 vUv; varying vec2 vW;',
+    'float hash(vec2 p){ return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453); }',
+    'void main(){',
+    '  vec3 alb = texture2D(uA, vUv).rgb; vec3 dat = texture2D(uD, vUv).rgb;',
+    '  if (dat.b > 0.9) { gl_FragColor = vec4(alb * (0.92 + 0.08 * sin(uTime * 0.4)), 1.0); return; }',
+    '  float hl = texture2D(uD, vUv - vec2(uTex.x, 0.0)).r; float hr = texture2D(uD, vUv + vec2(uTex.x, 0.0)).r;',
+    '  float hb = texture2D(uD, vUv - vec2(0.0, uTex.y)).r; float ht = texture2D(uD, vUv + vec2(0.0, uTex.y)).r;',
+    '  vec3 n = normalize(vec3((hl - hr) * 3.4, (hb - ht) * 3.4, 1.0));',
+    '  vec2 dl = uL - vW; float d = length(dl);',
+    '  vec3 ld = normalize(vec3(dl, 2.4));',
+    '  float diff = max(dot(n, ld), 0.0);',
+    '  float spot = 1.0 - smoothstep(uR * 0.74, uR, d);',
+    '  float spill = exp(-pow(d / (uR * 2.1), 2.0));',
+    '  float lamp = (spot * 0.95 + spill * 0.2) * uOn;',
+    '  float ao = 0.58 + 0.42 * smoothstep(0.25, 0.7, dat.r);',
+    '  vec3 lit = alb * uLC * (0.32 + 1.02 * diff) * lamp * ao;',
+    '  float surf = smoothstep(-5.0, 0.6, vW.y);',
+    '  vec3 tint = mix(vec3(0.36, 0.25, 0.45), vec3(0.5, 0.45, 0.43), dat.g);',
+    '  vec3 amb = alb * tint * (0.3 + 1.3 * dat.g) * (1.0 + surf * 1.35);',
+    '  vec3 col = amb + lit;',
+    '  float gall = step(0.35, dat.b) * step(dat.b, 0.65);',
+    '  col += vec3(1.0, 0.3, 0.36) * gall * uGall * (0.32 + 0.22 * sin(uTime * 3.4)) * (0.35 + lamp);',
+    '  float rim = smoothstep(uR * 1.03, uR * 0.98, d) * smoothstep(uR * 0.9, uR * 0.985, d);',
+    '  col += uLC * rim * 0.07 * uOn;',
+    '  col += (hash(vUv * vec2(1733.0, 927.0) + fract(uTime * 0.37)) - 0.5) * 0.02;',
+    '  gl_FragColor = vec4(col, 1.0);',
+    '}'
+  ].join('\n');
+
+  var VERT_PTS = [
+    'attribute float aSize; attribute float aPhase; attribute float aState; attribute float aT0;',
+    'uniform float uTime; uniform float uPx; uniform float uHint; uniform float uFlick;',
+    'varying float vA; varying float vPulse; varying float vState;',
+    'void main(){',
+    '  vec4 mv = modelViewMatrix * vec4(position, 1.0); gl_Position = projectionMatrix * mv;',
+    '  float age = uTime - aT0;',
+    '  float flick = 0.55 + 0.45 * sin(uTime * (2.1 + aPhase * 2.3) + aPhase * 6.283);',
+    '  flick *= 0.72 + 0.28 * sin(uTime * 8.7 + aPhase * 17.0);',
+    '  flick = mix(0.85, flick, uFlick);',
+    '  float a = 0.0; vPulse = 0.0;',
+    '  if (aState > 0.5 && aState < 1.5) a = flick * clamp(age / 0.7, 0.0, 1.0) * (1.0 + uHint * 0.6);',
+    '  else if (aState > 1.5 && aState < 2.5) { a = 0.92 + 0.08 * sin(uTime * 2.0 + aPhase * 6.0); vPulse = clamp(1.0 - age / 1.2, 0.0, 1.0); }',
+    '  else if (aState > 2.5) a = 0.34 * clamp(0.5 + 0.5 * sin(uTime * (0.6 + aPhase) + aPhase * 30.0), 0.0, 1.0) * flick;',
+    '  vA = a; vState = aState;',
+    '  gl_PointSize = aSize * uPx / -mv.z * (1.0 + vPulse * 2.2 + uHint * 0.5 * step(0.5, aState) * step(aState, 1.5));',
+    '}'
+  ].join('\n');
+  var FRAG_PTS = [
+    'precision mediump float;',
+    'uniform vec3 uCol; varying float vA; varying float vPulse; varying float vState;',
+    'void main(){',
+    '  vec2 c = gl_PointCoord - 0.5; float r = length(c) * 2.0;',
+    '  if (r > 1.0) discard;',
+    '  float core = smoothstep(0.34, 0.0, r);',
+    '  float glow = exp(-r * r * 4.2) * 0.55;',
+    '  float ring = vPulse * smoothstep(0.1, 0.0, abs(r - (1.0 - vPulse) * 0.85 - 0.1));',
+    '  float a = (core + glow) * vA + ring * 0.9;',
+    '  gl_FragColor = vec4(uCol * a, a);',
+    '}'
+  ].join('\n');
+
+  var VERT_GHOST = [
+    'uniform float uTime; uniform float uSpeed; uniform float uPhase; uniform float uAmp; uniform float uLen; uniform float uWid;',
+    'varying vec2 vUv; varying vec2 vW;',
+    'void main(){',
+    '  vUv = uv; float u = uv.x;',
+    '  float wave = sin(u * 8.5 - uTime * uSpeed + uPhase) * uAmp * (0.35 + 0.65 * u);',
+    '  float width = uWid * pow(max(sin(3.14159 * clamp(u * 0.94 + 0.03, 0.0, 1.0)), 0.0), 0.6);',
+    '  vec3 p = vec3((u - 0.5) * uLen, wave + (uv.y - 0.5) * width, 0.0);',
+    '  vec4 w = modelMatrix * vec4(p, 1.0); vW = w.xy;',
+    '  gl_Position = projectionMatrix * viewMatrix * w;',
+    '}'
+  ].join('\n');
+  var FRAG_GHOST = [
+    'precision mediump float;',
+    'uniform vec2 uL; uniform float uR; uniform float uOn; uniform vec3 uCol; uniform float uAlpha;',
+    'varying vec2 vUv; varying vec2 vW;',
+    'void main(){',
+    '  float e = 1.0 - abs(vUv.y - 0.5) * 2.0;',
+    '  float body = smoothstep(0.0, 0.4, e);',
+    '  float gut = smoothstep(0.7, 1.0, e) * 0.3;',
+    '  float lit = (1.0 - smoothstep(uR * 0.55, uR * 1.05, length(uL - vW))) * uOn;',
+    '  float a = (uAlpha + lit * 0.32) * body;',
+    '  gl_FragColor = vec4(uCol * (0.78 + gut + lit * 0.35), a);',
+    '}'
+  ].join('\n');
+
+  var VERT_NEM = [
+    'uniform float uTime; uniform float uWig;',
+    'varying vec2 vUv; varying vec2 vW;',
+    'void main(){',
+    '  vUv = uv; vec3 p = position;',
+    '  p.y += sin(uv.x * 6.5 - uTime * 6.0) * uWig * (1.1 - uv.x * 0.5);',
+    '  vec4 w = modelMatrix * vec4(p, 1.0); vW = w.xy;',
+    '  gl_Position = projectionMatrix * viewMatrix * w;',
+    '}'
+  ].join('\n');
+  var FRAG_NEM = [
+    'precision mediump float;',
+    'uniform sampler2D uMap; uniform vec2 uL; uniform float uR; uniform float uOn; uniform float uShow;',
+    'varying vec2 vUv; varying vec2 vW;',
+    'void main(){',
+    '  vec4 tx = texture2D(uMap, vUv);',
+    '  float lit = (1.0 - smoothstep(uR * 0.62, uR * 1.02, length(uL - vW))) * uOn;',
+    '  float vis = max(lit, uShow);',
+    '  gl_FragColor = vec4(tx.rgb * (0.5 + 0.5 * vis), tx.a * vis);',
+    '}'
+  ].join('\n');
+
+  var VERT_DUST = [
+    'attribute float aPhase; uniform float uTime; uniform float uPx; uniform vec2 uL; uniform float uR; uniform float uOn;',
+    'varying float vA;',
+    'void main(){',
+    '  vec3 p = position;',
+    '  p.x += sin(uTime * 0.23 + aPhase * 9.0) * 0.5; p.y += sin(uTime * 0.17 + aPhase * 5.0) * 0.4 + mod(uTime * 0.05 + aPhase * 3.0, 1.0) * 0.3;',
+    '  vec4 mv = modelViewMatrix * vec4(p, 1.0); gl_Position = projectionMatrix * mv;',
+    '  float d = length(p.xy - uL);',
+    '  vA = (1.0 - smoothstep(uR * 0.3, uR * 1.1, d)) * uOn * (0.35 + 0.65 * fract(aPhase * 7.1));',
+    '  gl_PointSize = (0.05 + fract(aPhase * 13.0) * 0.07) * uPx / -mv.z;',
+    '}'
+  ].join('\n');
+  var FRAG_DUST = 'precision mediump float; uniform vec3 uLC; varying float vA; void main(){ float r = length(gl_PointCoord - 0.5) * 2.0; float a = smoothstep(1.0, 0.0, r) * vA * 0.7; gl_FragColor = vec4(uLC * a, a); }';
+
+  /* ---------------- build / rebuild ---------------- */
+  function dispose() {
+    if (!built) return;
+    built.list.forEach(function (o) {
+      scene.remove(o);
+      if (o.geometry) o.geometry.dispose();
+      if (o.material) o.material.dispose();
+    });
+    built.textures.forEach(function (t) { t.dispose(); });
+    built = null;
+  }
+
+  function pointsMaterial(color, extra) {
+    return new T.ShaderMaterial({
+      uniforms: {
+        uTime: U.uTime, uPx: U.uPx, uHint: extra && extra.hint ? U.uHint : { value: 0 },
+        uFlick: { value: NK.reduced ? 0 : 1 }, uCol: { value: new T.Color(color) }
+      },
+      vertexShader: VERT_PTS, fragmentShader: FRAG_PTS,
+      transparent: true, depthWrite: false, depthTest: false, blending: T.AdditiveBlending
+    });
+  }
+
+  function build() {
+    dispose();
+    L = computeLayout();
+    var list = [];
+    var textures = [];
+    var painted = paint();
+    var tA = new T.CanvasTexture(painted.albedo);
+    var tD = new T.CanvasTexture(painted.data);
+    tA.anisotropy = Math.min(8, renderer.capabilities.getMaxAnisotropy());
+    tD.generateMipmaps = false;
+    tD.minFilter = T.LinearFilter;
+    textures.push(tA, tD);
+
+    var soil = new T.Mesh(new T.PlaneGeometry(L.PW, L.PH), new T.ShaderMaterial({
+      uniforms: {
+        uA: { value: tA }, uD: { value: tD }, uTex: { value: new T.Vector2(1 / L.texW, 1 / L.texH) },
+        uL: U.uL, uR: U.uR, uOn: U.uOn, uLC: U.uLC, uTime: U.uTime, uGall: U.uGall
+      },
+      vertexShader: VERT_WORLD, fragmentShader: FRAG_SOIL
+    }));
+    soil.position.set(0, (L.top + L.bottom) / 2, 0);
+    scene.add(soil);
+    list.push(soil);
+
+    /* signal nodes: a main dot and two satellites each */
+    var R = NK.rng(314);
+    var pos = [];
+    var size = [];
+    var phase = [];
+    var owner = [];
+    L.nodes.forEach(function (n, i) {
+      for (var j = 0; j < 3; j++) {
+        var ox = j ? (R() - 0.5) * 0.9 : 0;
+        var oy = j ? (R() - 0.5) * 0.7 : 0;
+        pos.push(n.x + ox, n.y + oy, 0.05);
+        size.push(j ? 0.34 + R() * 0.12 : 0.62);
+        phase.push(R());
+        owner.push(i);
+      }
+    });
+    var gNodes = new T.BufferGeometry();
+    gNodes.setAttribute('position', new T.Float32BufferAttribute(pos, 3));
+    gNodes.setAttribute('aSize', new T.Float32BufferAttribute(size, 1));
+    gNodes.setAttribute('aPhase', new T.Float32BufferAttribute(phase, 1));
+    gNodes.setAttribute('aState', new T.Float32BufferAttribute(new Float32Array(owner.length), 1));
+    gNodes.setAttribute('aT0', new T.Float32BufferAttribute(new Float32Array(owner.length), 1));
+    var nodesPts = new T.Points(gNodes, pointsMaterial('#5ff0d6', { hint: true }));
+    nodesPts.frustumCulled = false;
+    nodesPts.renderOrder = 3;
+    scene.add(nodesPts);
+    list.push(nodesPts);
+
+    /* trail dots between consecutive nodes */
+    var tpos = [];
+    var tseg = [];
+    var tph = [];
+    var chain = L.nodes.concat([L.target]);
+    for (var i = 1; i < chain.length; i++) {
+      var p0 = chain[i - 1];
+      var p1 = chain[i];
+      var len = Math.hypot(p1.x - p0.x, p1.y - p0.y);
+      var steps = Math.max(2, Math.floor(len / 0.3));
+      for (var s = 1; s < steps; s++) {
+        var t = s / steps;
+        var bend = Math.sin(t * Math.PI) * 0.35 * (i % 2 ? 1 : -1);
+        var nx = -(p1.y - p0.y) / len;
+        var ny = (p1.x - p0.x) / len;
+        tpos.push(p0.x + (p1.x - p0.x) * t + nx * bend, p0.y + (p1.y - p0.y) * t + ny * bend, 0.04);
+        tseg.push(i);
+        tph.push(t);
+      }
+    }
+    var gTrail = new T.BufferGeometry();
+    gTrail.setAttribute('position', new T.Float32BufferAttribute(tpos, 3));
+    gTrail.setAttribute('aSize', new T.Float32BufferAttribute(tseg.map(function () { return 0.2; }), 1));
+    gTrail.setAttribute('aPhase', new T.Float32BufferAttribute(tph, 1));
+    gTrail.setAttribute('aState', new T.Float32BufferAttribute(new Float32Array(tseg.length), 1));
+    gTrail.setAttribute('aT0', new T.Float32BufferAttribute(new Float32Array(tseg.length), 1));
+    var trailPts = new T.Points(gTrail, pointsMaterial('#7ff5e0'));
+    trailPts.frustumCulled = false;
+    trailPts.renderOrder = 2;
+    scene.add(trailPts);
+    list.push(trailPts);
+
+    /* decoys: background chemistry that never leads anywhere */
+    var dpos = [];
+    var dsz = [];
+    var dph = [];
+    var tries = 0;
+    while (dpos.length < 3 * 26 && tries++ < 800) {
+      var dx = -L.Wx / 2 + R() * L.Wx;
+      var dy = L.yX - L.Hx / 2 + R() * L.Hx;
+      var far = chain.every(function (c) { return Math.hypot(c.x - dx, c.y - dy) > 2.2; });
+      if (!far) continue;
+      dpos.push(dx, dy, 0.03);
+      dsz.push(0.28 + R() * 0.2);
+      dph.push(R());
+    }
+    var gDec = new T.BufferGeometry();
+    gDec.setAttribute('position', new T.Float32BufferAttribute(dpos, 3));
+    gDec.setAttribute('aSize', new T.Float32BufferAttribute(dsz, 1));
+    gDec.setAttribute('aPhase', new T.Float32BufferAttribute(dph, 1));
+    gDec.setAttribute('aState', new T.Float32BufferAttribute(dsz.map(function () { return 3; }), 1));
+    gDec.setAttribute('aT0', new T.Float32BufferAttribute(new Float32Array(dsz.length), 1));
+    var decoys = new T.Points(gDec, pointsMaterial('#5ff0d6'));
+    decoys.frustumCulled = false;
+    scene.add(decoys);
+    list.push(decoys);
+
+    /* ghost nematodes: free-living neighbours drifting through the soil */
+    var ghosts = [];
+    for (i = 0; i < (L.portrait ? 5 : 7); i++) {
+      var gm = new T.Mesh(new T.PlaneGeometry(1, 1, 36, 1), new T.ShaderMaterial({
+        uniforms: {
+          uTime: U.uTime, uL: U.uL, uR: U.uR, uOn: U.uOn,
+          uSpeed: { value: 2 + R() * 2.5 }, uPhase: { value: R() * 6 }, uAmp: { value: 0.1 + R() * 0.1 },
+          uLen: { value: 1.3 + R() * 1.2 }, uWid: { value: 0.1 + R() * 0.06 },
+          uCol: { value: new T.Color(0.86, 0.82, 0.93) }, uAlpha: { value: 0.1 + R() * 0.06 }
+        },
+        vertexShader: VERT_GHOST, fragmentShader: FRAG_GHOST, transparent: true, depthWrite: false
+      }));
+      var home = { x: -L.Wx / 2 + (0.08 + R() * 0.84) * L.Wx, y: L.yX - L.Hx / 2 + (0.1 + R() * 0.8) * L.Hx };
+      gm.userData = { hx: home.x, hy: home.y, rx: 1.2 + R() * 2.2, ry: 0.6 + R() * 1.2, s1: 0.05 + R() * 0.06, s2: 0.04 + R() * 0.05, ph: R() * 6, z: 0.4 + R() * 1.4 };
+      gm.renderOrder = 1;
+      scene.add(gm);
+      list.push(gm);
+      ghosts.push(gm);
+    }
+
+    /* the nematode (hidden until the light finds it) */
+    var nemUniforms = { uTime: U.uTime, uL: U.uL, uR: U.uR, uOn: U.uOn, uWig: { value: 0.03 }, uShow: { value: S.found ? 1 : 0 }, uMap: { value: nemTex } };
+    var nem = new T.Mesh(new T.PlaneGeometry(2.5, 2.5 * 180 / 320, 28, 1), new T.ShaderMaterial({
+      uniforms: nemUniforms, vertexShader: VERT_NEM, fragmentShader: FRAG_NEM, transparent: true, depthWrite: false
+    }));
+    nem.position.set(L.nem.x, L.nem.y, 0.12);
+    nem.scale.x = -1;
+    nem.rotation.z = -0.12;
+    nem.visible = !!nemTex;
+    nem.renderOrder = 4;
+    scene.add(nem);
+    list.push(nem);
+
+    /* dust in the beam */
+    var dust = [];
+    var dustPh = [];
+    for (i = 0; i < 170; i++) {
+      dust.push(-L.Wx / 2 + R() * L.Wx, L.yX - L.Hx / 2 + R() * L.Hx, 0.6 + R() * 4.5);
+      dustPh.push(R());
+    }
+    var gDust = new T.BufferGeometry();
+    gDust.setAttribute('position', new T.Float32BufferAttribute(dust, 3));
+    gDust.setAttribute('aPhase', new T.Float32BufferAttribute(dustPh, 1));
+    var dustPts = new T.Points(gDust, new T.ShaderMaterial({
+      uniforms: { uTime: U.uTime, uPx: U.uPx, uL: U.uL, uR: U.uR, uOn: U.uOn, uLC: U.uLC },
+      vertexShader: VERT_DUST, fragmentShader: FRAG_DUST, transparent: true, depthWrite: false, blending: T.AdditiveBlending
+    }));
+    dustPts.frustumCulled = false;
+    scene.add(dustPts);
+    list.push(dustPts);
+
+    built = {
+      list: list, textures: textures, nodes: nodesPts, trail: trailPts, trailSeg: tseg, owner: owner,
+      ghosts: ghosts, nem: nem, nemU: nemUniforms, nodeState: L.nodes.map(function () { return 0; })
+    };
+    /* restore progress after a rebuild */
+    for (i = 0; i < S.detected; i++) setNode(i, 2, -10);
+    if (S.everExplored) {
+      for (i = S.detected; i < Math.min(L.nodes.length, S.detected + 2); i++) setNode(i, 1, U.uTime.value);
+      revealTrail(S.detected, -10);
+    }
+    if (S.found) { revealTrail(chain.length, -10); for (i = 0; i < L.nodes.length; i++) setNode(i, 2, -10); }
+    if (!light.tx && !light.ty) { light.x = light.tx = L.nodes[0].x + 1.6; light.y = light.ty = L.nodes[0].y + 1.9; }
+    buildMeter();
+  }
+
+  function setNode(i, state, t0) {
+    if (!built || i < 0 || i >= built.nodeState.length) return;
+    built.nodeState[i] = state;
+    var st = built.nodes.geometry.getAttribute('aState');
+    var at = built.nodes.geometry.getAttribute('aT0');
+    for (var k = 0; k < built.owner.length; k++) {
+      if (built.owner[k] === i) { st.array[k] = state; at.array[k] = t0; }
+    }
+    st.needsUpdate = true;
+    at.needsUpdate = true;
+  }
+  function revealTrail(uptoSeg, t0) {
+    if (!built) return;
+    var st = built.trail.geometry.getAttribute('aState');
+    var at = built.trail.geometry.getAttribute('aT0');
+    var ph = built.trail.geometry.getAttribute('aPhase');
+    for (var k = 0; k < built.trailSeg.length; k++) {
+      if (built.trailSeg[k] <= uptoSeg && st.array[k] < 1) {
+        st.array[k] = 1.2;
+        at.array[k] = t0 + ph.array[k] * 0.5;
+      }
+    }
+    st.needsUpdate = true;
+    at.needsUpdate = true;
+  }
+
+  function buildMeter() {
+    if (!meter || !L) return;
+    meter.innerHTML = '';
+    for (var i = 0; i < L.nodes.length; i++) {
+      var li = document.createElement('li');
+      if (i < S.detected) li.className = 'is-on';
+      meter.appendChild(li);
+    }
+  }
+
+  /* ---------------- labels ---------------- */
+  var labelMap = {};
+  function label(id, text, x, y, cls) {
+    var el = labelMap[id];
+    if (!el) {
+      el = document.createElement('span');
+      el.className = 'nk-label' + (cls ? ' ' + cls : '');
+      el.textContent = text;
+      labelsEl.appendChild(el);
+      labelMap[id] = el;
+    }
+    el._x = x;
+    el._y = y;
+    requestAnimationFrame(function () { el.classList.add('is-on'); });
+  }
+  var tmpV = new T.Vector3();
+  function toScreen(x, y) {
+    tmpV.set(x, y, 0).project(camera);
+    return { x: (tmpV.x * 0.5 + 0.5) * W, y: (-tmpV.y * 0.5 + 0.5) * H };
+  }
+  function toWorld(cx, cy) {
+    var v = new T.Vector3(cx / W * 2 - 1, -(cy / H * 2 - 1), 0.5).unproject(camera);
+    v.sub(camera.position).normalize();
+    var t = -camera.position.z / v.z;
+    return { x: camera.position.x + v.x * t, y: camera.position.y + v.y * t };
+  }
+
+  /* ---------------- search logic ---------------- */
+  function detect(i, t) {
+    for (var j = 0; j <= i; j++) if (built.nodeState[j] < 2) setNode(j, 2, j === i ? t : t - 2);
+    var before = S.detected;
+    S.detected = Math.max(S.detected, i + 1);
+    S.lastDetect = t;
+    revealTrail(i, t);
+    for (j = i + 1; j <= Math.min(L.nodes.length - 1, i + 2); j++) if (built.nodeState[j] === 0) setNode(j, 1, t);
+    if (meter) Array.prototype.forEach.call(meter.children, function (li, k) { li.classList.toggle('is-on', k < S.detected); });
+    if (before === 0) {
+      setLine(COPY.detected, 'is-signal');
+      label('first', 'Signal detected', L.nodes[i].x, L.nodes[i].y);
+    } else if (S.detected >= 3 && before < 3) {
+      setLine(COPY.trail, 'is-signal');
+    }
+    if (S.detected === L.nodes.length) revealTrail(L.nodes.length, t);
+  }
+  function onRoots(t) {
+    if (S.roots) return;
+    S.roots = true;
+    setLine(COPY.roots, 'is-alert');
+    for (var j = 0; j < L.nodes.length; j++) if (built.nodeState[j] === 0) setNode(j, 1, t);
+  }
+  function onFound(t) {
+    if (S.found) return;
+    S.found = true;
+    S.foundT = t;
+    if (!S.roots) onRoots(t);
+    for (var j = 0; j < L.nodes.length; j++) setNode(j, 2, j === L.nodes.length - 1 ? t : t - 2);
+    S.detected = L.nodes.length;
+    revealTrail(L.nodes.length + 1, t);
+    if (meter) Array.prototype.forEach.call(meter.children, function (li) { li.classList.add('is-on'); });
+    setTimeout(function () { setLine(COPY.found, 'is-found'); }, 650);
+    label('nem', 'Root-knot nematode', L.nem.x - 1.1, L.nem.y + 0.9, 'nk-label--gold');
+    root.classList.add('is-found');
+    NK.state.found = true;
+    NK.emit('found');
+    if (window.innerWidth > 760) NK.say('Found it! Scroll on and I will show you where they live.', 5200);
+    guide = null;
+  }
+
+  function startGuide() {
+    if (!L) return;
+    var pts = [{ x: light.x, y: light.y }];
+    for (var i = S.detected; i < L.nodes.length; i++) pts.push(L.nodes[i]);
+    pts.push(L.target, L.nem);
+    guide = { pts: pts, seg: 0, t: 0 };
+    S.userMoved = true;
+    if (!S.exploring) window.scrollTo({ top: exploreTop(), behavior: NK.reduced ? 'auto' : 'smooth' });
+  }
+  if (guideBtn) guideBtn.addEventListener('click', startGuide);
+
+  /* ---------------- input ---------------- */
+  function pointerTo(e) {
+    var r = stage.getBoundingClientRect();
+    var cx = e.clientX - r.left;
+    var cy = e.clientY - r.top;
+    pointerN.x = cx / r.width;
+    pointerN.y = cy / r.height;
+    if (!S.exploring || !L) return;
+    var w = toWorld(cx, cy);
+    light.tx = w.x;
+    light.ty = w.y;
+    S.userMoved = true;
+    guide = null;
+  }
+  stage.addEventListener('pointermove', pointerTo, { passive: true });
+  stage.addEventListener('pointerdown', pointerTo, { passive: true });
+  if (focusEl) {
+    focusEl.addEventListener('keydown', function (e) {
+      var step = 0.9;
+      var used = true;
+      if (e.key === 'ArrowLeft') light.tx -= step;
+      else if (e.key === 'ArrowRight') light.tx += step;
+      else if (e.key === 'ArrowUp') light.ty += step;
+      else if (e.key === 'ArrowDown') light.ty -= step;
+      else if (e.key === 'Enter' || e.key === ' ') startGuide();
+      else used = false;
+      if (used) { e.preventDefault(); guide = e.key === 'Enter' || e.key === ' ' ? guide : null; S.userMoved = true; }
+    });
+  }
+
+  /* ---------------- sizing ---------------- */
+  var lastA = 0;
+  function resize(force) {
+    var r = stage.getBoundingClientRect();
+    W = Math.max(1, Math.round(r.width));
+    H = Math.max(1, Math.round(r.height));
+    renderer.setSize(W, H, false);
+    camera.aspect = W / H;
+    camera.updateProjectionMatrix();
+    U.uPx.value = H * DPR / (2 * HALF_TAN);
+    var a = W / H;
+    if (force || !built || Math.abs(a - lastA) > 0.12 || (L && W > L.Wx / L.Hx * H * 1.2)) {
+      lastA = a;
+      if (!nemTex) loadNematode();
+      build();
+    }
+  }
+  function loadNematode() {
+    var img = new Image();
+    img.onload = function () {
+      var c = document.createElement('canvas');
+      c.width = 640;
+      c.height = 360;
+      c.getContext('2d').drawImage(img, 0, 0, 640, 360);
+      nemTex = new T.CanvasTexture(c);
+      if (built) { built.nemU.uMap.value = nemTex; built.nem.visible = true; }
+    };
+    img.src = NK.prefix + 'img/home-opening/nematode.svg';
+  }
+  var rT = 0;
+  window.addEventListener('resize', function () { clearTimeout(rT); rT = setTimeout(function () { resize(false); }, 220); });
+
+  /* ---------------- frame ---------------- */
+  var warm = new T.Color(1.0, 0.93, 0.82);
+  var gold = new T.Color(1.0, 0.8, 0.33);
+  var wasExploring = false;
+  function frame(t, dt) {
+    if (!built) return;
+    U.uTime.value = t;
+    var p = progress();
+    var k = NK.easeInOut(NK.smooth(0.0, 0.62, p));
+    var camY = NK.lerp(L.yH, L.yX, k);
+    var par = NK.reduced ? 0 : 1;
+    camera.position.set((pointerN.x - 0.5) * 0.45 * par, camY - (pointerN.y - 0.5) * 0.28 * par, L.camZ);
+    camera.lookAt(camera.position.x * 0.6, camY, 0);
+
+    root.style.setProperty('--p', p.toFixed(3));
+    root.style.setProperty('--hero-o', (1 - NK.smooth(0.04, 0.3, p)).toFixed(3));
+    root.style.setProperty('--hud-o', NK.smooth(0.72, 0.95, p).toFixed(3));
+    S.exploring = p > 0.78;
+    if (S.exploring !== wasExploring) {
+      wasExploring = S.exploring;
+      root.classList.toggle('is-exploring', S.exploring);
+      if (S.exploring && !S.everExplored) {
+        S.everExplored = true;
+        S.tExplore = t;
+        setNode(0, 1, t);
+        setNode(1, 1, t + 0.5);
+        setLine(COPY.scan);
+        NK.setDetective('scanning');
+        if (window.innerWidth > 760) NK.say('Move the light. Look for the cyan glow.');
+      }
+    }
+    U.uOn.value = NK.smooth(0.52, 0.86, p);
+
+    /* light motion */
+    if (guide) {
+      var a0 = guide.pts[guide.seg];
+      var a1 = guide.pts[guide.seg + 1];
+      if (!a1) guide = null;
+      else {
+        var segLen = Math.max(0.3, Math.hypot(a1.x - a0.x, a1.y - a0.y));
+        guide.t += dt * 3.2 / segLen;
+        var e = NK.easeInOut(Math.min(1, guide.t));
+        light.tx = NK.lerp(a0.x, a1.x, e) + Math.sin(t * 3) * 0.08;
+        light.ty = NK.lerp(a0.y, a1.y, e) + Math.cos(t * 2.4) * 0.08;
+        if (guide.t >= 1) { guide.seg++; guide.t = 0; }
+      }
+    } else if (!S.userMoved && S.exploring) {
+      var n0 = L.nodes[0];
+      light.tx = n0.x + 1.6 + Math.sin(t * 0.6) * 0.45;
+      light.ty = n0.y + 1.9 + Math.cos(t * 0.5) * 0.25;
+    }
+    var ease = 1 - Math.exp(-dt * (guide ? 14 : 8));
+    light.x += (light.tx - light.x) * ease;
+    light.y += (light.ty - light.y) * ease;
+    light.x = NK.clamp(light.x, -L.Wx / 2 - 0.5, L.Wx / 2 + 0.5);
+    light.y = NK.clamp(light.y, L.yX - L.Hx / 2 - 0.5, L.yX + L.Hx / 2 + 0.5);
+    U.uL.value.set(light.x, light.y);
+
+    /* light colour warms as clues accumulate; betaxanthin gold once found */
+    var warmK = S.found ? NK.smooth(0, 1.2, t - S.foundT) : 0.18 * S.detected / L.nodes.length;
+    U.uLC.value.copy(warm).lerp(gold, warmK);
+    U.uR.value = NK.lerp(L.portrait ? 2.9 : 2.6, L.portrait ? 3.4 : 3.1, S.found ? NK.smooth(0, 1.2, t - S.foundT) : 0);
+    U.uGall.value += ((S.roots ? 1 : 0) - U.uGall.value) * Math.min(1, dt * 2);
+
+    /* detection */
+    if (S.exploring && !S.found) {
+      var R = U.uR.value;
+      for (var i = 0; i < L.nodes.length; i++) {
+        if (built.nodeState[i] === 1) {
+          var nd = L.nodes[i];
+          if (Math.hypot(nd.x - light.x, nd.y - light.y) < R * 0.55) detect(i, t);
         }
       }
+      if (Math.hypot(L.target.x - light.x, L.target.y - light.y) < R * 0.95 && (S.detected >= 2 || guide)) onRoots(t);
+      if (Math.hypot(L.nem.x - light.x, L.nem.y - light.y) < R * 0.6 && S.roots) onFound(t);
+      if (!S.detected && t - S.tExplore > 7 && !S.hinted) { S.hinted = true; setLine(COPY.hint, 'is-signal'); if (guideBtn) guideBtn.classList.add('is-nudge'); }
     }
-    function paint(c, isLit) {
-      var total = CAM + Hh;
-      // sky
-      var sky = c.createLinearGradient(0, 0, 0, SURF);
-      sky.addColorStop(0, isLit ? '#2a1a33' : '#150a1c'); sky.addColorStop(1, isLit ? '#3b2542' : '#22132a');
-      c.fillStyle = sky; c.fillRect(0, 0, W, SURF + 40);
-      if (!isLit) { for (var s = 0; s < 90; s++) { c.fillStyle = 'rgba(255,240,230,' + (rnd() * .35) + ')'; c.fillRect(rnd() * W, rnd() * SURF * .8, 1.2, 1.2); } }
-      // ground silhouette with mounds
-      c.beginPath(); c.moveTo(0, SURF + 20);
-      for (var x = 0; x <= W; x += 20) {
-        var y = SURF - 34 * Math.sin(x / W * Math.PI * 1.3 + .6) - 16 * Math.sin(x / 90) * Math.sin(x / 210);
-        c.lineTo(x, y);
-      }
-      c.lineTo(W, total); c.lineTo(0, total); c.closePath();
-      var soil = c.createLinearGradient(0, SURF - 40, 0, total);
-      if (isLit) { soil.addColorStop(0, '#9c7358'); soil.addColorStop(.3, '#c29a74'); soil.addColorStop(1, '#a8805e'); }
-      else { soil.addColorStop(0, '#26162c'); soil.addColorStop(.25, '#1d1024'); soil.addColorStop(1, '#140a1a'); }
-      c.fillStyle = soil; c.fill();
-      c.save(); c.clip();
-      // speckle
-      for (var i = 0; i < W * total / 900; i++) {
-        c.fillStyle = isLit ? 'rgba(90,60,40,' + (rnd() * .35) + ')' : 'rgba(180,150,190,' + (rnd() * .07) + ')';
-        var r = rnd() * 1.6 + .3; c.fillRect(rnd() * W, SURF - 30 + rnd() * (total - SURF + 30), r, r);
-      }
-      // pebbles
-      pebbles.forEach(function (pb) {
-        c.save(); c.translate(pb.x, pb.y); c.rotate(pb.a);
-        var g = c.createRadialGradient(-pb.rx * .3, -pb.ry * .4, 1, 0, 0, pb.rx);
-        if (isLit) { g.addColorStop(0, '#e9d3b8'); g.addColorStop(1, '#a8876a'); } else { g.addColorStop(0, '#2d1d33'); g.addColorStop(1, '#1a0f20'); }
-        c.fillStyle = g; c.beginPath(); c.ellipse(0, 0, pb.rx, pb.ry, 0, 0, 6.29); c.fill(); c.restore();
-      });
-      // roots
-      roots.forEach(function (rt) {
-        c.beginPath(); rt.pts.forEach(function (q, i) { i ? c.lineTo(q[0], q[1]) : c.moveTo(q[0], q[1]); });
-        c.lineCap = 'round'; c.lineJoin = 'round';
-        if (isLit) {
-          c.strokeStyle = rt.hurt ? '#8a3a2c' : '#f4ddb4'; c.lineWidth = rt.w; c.shadowColor = rt.hurt ? 'rgba(200,60,40,.6)' : 'rgba(255,230,190,.8)'; c.shadowBlur = 6;
-        } else { c.strokeStyle = 'rgba(120,80,90,.35)'; c.lineWidth = rt.w * .8; c.shadowBlur = 0; }
-        c.stroke(); c.shadowBlur = 0;
-      });
-      // galls on hurt roots
-      if (isLit) {
-        roots.filter(function (r) { return r.hurt; }).forEach(function (rt) {
-          rt.pts.forEach(function (q, i) { if (i % 3 === 1 && q[1] > damage.y - 60) { c.fillStyle = '#a0462f'; c.beginPath(); c.ellipse(q[0], q[1], 5 + rnd() * 4, 4 + rnd() * 3, rnd(), 0, 6.29); c.fill(); } });
-        });
-      }
-      c.restore();
-      // grass along the surface
-      for (var gx = 0; gx < W; gx += 7) {
-        var gy = SURF - 34 * Math.sin(gx / W * Math.PI * 1.3 + .6) - 16 * Math.sin(gx / 90) * Math.sin(gx / 210);
-        var hgt = 6 + rnd() * 14;
-        c.strokeStyle = isLit ? 'rgba(120,150,90,.9)' : 'rgba(60,80,70,.55)'; c.lineWidth = 1.2;
-        c.beginPath(); c.moveTo(gx, gy + 2); c.quadraticCurveTo(gx + 2, gy - hgt * .6, gx + (rnd() - .5) * 8, gy - hgt); c.stroke();
-      }
-    }
-    function gy(x) { return SURF - 34 * Math.sin(x / W * Math.PI * 1.3 + .6) - 16 * Math.sin(x / 90) * Math.sin(x / 210); }
-    function ground() { var p = new Path2D(); p.moveTo(0, gy(0)); for (var x = 0; x <= W; x += 20) p.lineTo(x, gy(x)); p.lineTo(W, CAM + Hh); p.lineTo(0, CAM + Hh); p.closePath(); return p; }
-    function textures(dc, lc) {
-      var total = CAM + Hh, iw = print.naturalWidth, ih = print.naturalHeight;
-      var scale = W / iw * 1.1, h = ih * scale;
-      [dc, lc].forEach(function (c, i) {
-        c.save(); c.clip(ground()); 
-        c.globalAlpha = i ? .2 : .07;
-        if (i) c.globalCompositeOperation = 'multiply';
-        var sy0 = ih * .3, sh = ih - sy0, hh2 = sh * scale; for (var y = SURF + 10; y < total; y += hh2 * .95) c.drawImage(print, 0, sy0, iw, sh, -W * .05, y, W * 1.1, hh2);
-        c.restore();
-      });
-    }
-    print.onload = function () { if (W) build(); };
+    U.uHint.value = S.hinted && !S.detected ? 0.5 + 0.5 * Math.sin(t * 3) : 0;
 
-    /* ---------- live drawing ---------- */
-    function plant(c, pl, t, glow) {
-      var sway = Math.sin(t * .9 + pl.ph) * .04 + (light.x - pl.x) / W * .08 * glow;
-      c.save(); c.translate(pl.x, gy(pl.x) + 2); c.rotate(sway);
-      var h = pl.h * pl.s, dist = Math.hypot(light.x - pl.x, light.y + cam - (SURF - h / 2)), lit = Math.max(0, 1 - dist / (R * 3)) * glow;
-      c.strokeStyle = 'rgb(' + Math.round(40 + 60 * lit) + ',' + Math.round(48 + 70 * lit) + ',' + Math.round(40 + 40 * lit) + ')';
-      c.lineWidth = 2.4; c.beginPath(); c.moveTo(0, 0); c.quadraticCurveTo(6, -h * .5, 0, -h); c.stroke();
-      for (var i = 0; i < pl.leaves; i++) {
-        var yy = -h * (.35 + i * .6 / pl.leaves), side = i % 2 ? 1 : -1, len = (26 + (pl.leaves - i) * 9) * pl.s;
-        c.save(); c.translate(0, yy); c.rotate(side * (.7 + Math.sin(t * 1.3 + pl.ph + i) * .06));
-        var g = c.createLinearGradient(0, 0, 0, -len);
-        g.addColorStop(0, 'rgb(' + Math.round(34 + 50 * lit) + ',' + Math.round(44 + 70 * lit) + ',' + Math.round(34 + 30 * lit) + ')');
-        g.addColorStop(1, 'rgb(' + Math.round(58 + 90 * lit) + ',' + Math.round(70 + 100 * lit) + ',' + Math.round(50 + 40 * lit) + ')');
-        c.fillStyle = g; c.beginPath(); c.moveTo(0, 0);
-        c.bezierCurveTo(len * .45, -len * .2, len * .35, -len * .85, 0, -len);
-        c.bezierCurveTo(-len * .35, -len * .85, -len * .45, -len * .2, 0, 0); c.fill();
-        c.strokeStyle = 'rgba(255,240,210,' + (.08 + .3 * lit) + ')'; c.lineWidth = 1; c.beginPath(); c.moveTo(0, -2); c.lineTo(0, -len * .9); c.stroke();
-        c.restore();
-      }
-      c.restore();
-    }
-    function ghost(c, g, t, alpha, tint) {
-      var segs = 34, px = g.x + Math.cos(g.ang) * Math.sin(t * g.sp) * 20, py = g.y + Math.sin(g.ang) * Math.sin(t * g.sp) * 20;
-      for (var i = 0; i < segs; i++) {
-        var u = i / (segs - 1), off = Math.sin(u * 5 + t * 2 + g.ph) * 9;
-        var x = px + Math.cos(g.ang) * g.len * u - Math.sin(g.ang) * off, y = py + Math.sin(g.ang) * g.len * u + Math.cos(g.ang) * off;
-        var r = 7 * Math.sin(Math.PI * (.12 + u * .8));
-        c.fillStyle = 'rgba(' + tint + ',' + alpha + ')'; c.beginPath(); c.arc(x, y - cam, r, 0, 6.29); c.fill();
-      }
-    }
-    function drawMol(c, m, t, lightK) {
-      var vy = m.y - cam, flick = m.trail ? .35 + .65 * Math.max(0, Math.sin(t * m.sp + m.ph)) : .15 + .5 * Math.max(0, Math.sin(t * m.sp * 1.3 + m.ph));
-      var a = Math.min(1, lightK * 1.25 * (.55 + .45 * flick) + m.seen * .16 * flick);
-      if (a < .03) return;
-      c.save(); c.translate(m.x, vy + Math.sin(t * 1.4 + m.ph) * 3); c.rotate(m.rot + t * .15);
-      c.globalAlpha = a;
-      var halo = c.createRadialGradient(0, 0, 0, 0, 0, 22); halo.addColorStop(0, 'rgba(111,243,222,.45)'); halo.addColorStop(1, 'rgba(111,243,222,0)');
-      c.fillStyle = halo; c.beginPath(); c.arc(0, 0, 22, 0, 6.29); c.fill();
-      m.balls.forEach(function (b) {
-        var g = c.createRadialGradient(b.dx - b.r * .4, b.dy - b.r * .4, .5, b.dx, b.dy, b.r);
-        g.addColorStop(0, '#f2fffc'); g.addColorStop(.45, '#6ff3de'); g.addColorStop(1, '#1f9e98');
-        c.fillStyle = g; c.beginPath(); c.arc(b.dx, b.dy, b.r, 0, 6.29); c.fill();
-      });
-      if (m.seen) { c.globalAlpha = .5 * (1 - ((t * .8 + m.ph) % 1)); c.strokeStyle = '#6ff3de'; c.lineWidth = 1.2; c.beginPath(); c.arc(0, 0, 10 + 18 * ((t * .8 + m.ph) % 1), 0, 6.29); c.stroke(); }
-      c.restore();
-    }
-    function drawWorm(c, t, bounce) {
-      if (!worm.complete || !worm.naturalWidth) return;
-      var w = wormW, h = w * worm.naturalHeight / worm.naturalWidth, x = worm.pos.x, y = worm.pos.y - cam;
-      c.save(); c.translate(x, y - bounce * 16);
-      c.rotate(Math.sin(t * 2.2) * .04); c.transform(1, 0, Math.sin(t * 3) * .06, 1, 0, 0);
-      c.drawImage(worm, -w / 2, -h / 2, w, h); c.restore();
-    }
-    function torch(c, a, alpha) {
-      var ox = Math.min(170, W * .16), oy = Hh - 96;
-      c.save(); c.globalAlpha = alpha; c.translate(ox, oy); c.rotate(a);
-      // body (cylinder)
-      var g = c.createLinearGradient(0, -14, 0, 14);
-      g.addColorStop(0, '#6f5a86'); g.addColorStop(.35, '#d8c8ec'); g.addColorStop(.55, '#8f78ad'); g.addColorStop(1, '#2b1d3a');
-      c.fillStyle = g; roundRect(c, -78, -12, 70, 24, 7); c.fill();
-      c.fillStyle = 'rgba(0,0,0,.35)'; for (var k = 0; k < 4; k++) c.fillRect(-66 + k * 9, -12, 3, 24);
-      // head (cone)
-      var hg = c.createLinearGradient(0, -22, 0, 22);
-      hg.addColorStop(0, '#7e0c6e'); hg.addColorStop(.35, '#e59ad4'); hg.addColorStop(.6, '#9c2a8a'); hg.addColorStop(1, '#3d0636');
-      c.fillStyle = hg; c.beginPath(); c.moveTo(-10, -13); c.lineTo(20, -22); c.lineTo(20, 22); c.lineTo(-10, 13); c.closePath(); c.fill();
-      // lens
-      var lg = c.createRadialGradient(22, 0, 1, 22, 0, 30);
-      lg.addColorStop(0, 'rgba(255,255,240,1)'); lg.addColorStop(.3, warm > .5 ? 'rgba(255,224,120,.9)' : 'rgba(230,245,255,.85)'); lg.addColorStop(1, 'rgba(255,230,180,0)');
-      c.fillStyle = lg; c.beginPath(); c.arc(22, 0, 30, 0, 6.29); c.fill();
-      c.fillStyle = '#fffdf2'; c.beginPath(); c.ellipse(21, 0, 5, 21, 0, 0, 6.29); c.fill();
-      c.restore();
-      return { x: ox + Math.cos(a) * 22, y: oy + Math.sin(a) * 22 };
-    }
-    function roundRect(c, x, y, w, h, r) { c.beginPath(); c.moveTo(x + r, y); c.arcTo(x + w, y, x + w, y + h, r); c.arcTo(x + w, y + h, x, y + h, r); c.arcTo(x, y + h, x, y, r); c.arcTo(x, y, x + w, y, r); c.closePath(); }
-    var dust = [];
-    for (var di = 0; di < 60; di++) dust.push({ u: Math.random(), v: Math.random() * 2 - 1, s: .2 + Math.random() * .8, ph: Math.random() * 6 });
+    /* nematode */
+    built.nemU.uShow.value = S.found ? NK.smooth(0, 0.6, t - S.foundT) : 0;
+    built.nemU.uWig.value = S.found ? 0.05 + 0.1 * Math.max(0, 1 - (t - S.foundT) / 2.5) : 0.03;
+    built.nem.position.y = L.nem.y + (S.found ? Math.sin((t - S.foundT) * 14) * 0.05 * Math.max(0, 1 - (t - S.foundT)) : 0);
 
-    function label(key, text, x, y, cls) {
-      if (labels[key]) return;
-      var el = document.createElement('p'); el.className = 'op__label ' + (cls || ''); el.textContent = text;
-      labelsEl.appendChild(el);
-      var w = el.offsetWidth, h = el.offsetHeight;
-      if (x + w > W - 20) x = W - 20 - w;
-      x = Math.max(16, x);
-      // keep discovery notes from landing on each other
-      for (var tries = 0; tries < 6; tries++) {
-        var hit = Object.keys(labels).some(function (k) { var o = labels[k]; return x < o._x + o._w + 8 && x + w + 8 > o._x && y < o._y + o._h + 6 && y + h + 6 > o._y; });
-        if (!hit) break; y += h + 10;
-      }
-      el._x = x; el._y = y; el._w = w; el._h = h;
-      el.style.left = x + 'px'; el.style.top = y + 'px';
-      labels[key] = el; requestAnimationFrame(function () { el.classList.add('is-on'); });
-    }
-
-    function frame(now) {
-      if (!visible) return;
-      var t = (now - t0) / 1000;
-      var descent = descentNow = descentAt(now); cam = descent * CAM; heroStyle(descent);
-      var soilMode = descent > .96;
-      // light target
-      if (auto && !found) { light.tx = worm.pos.x - wormW * .05; light.ty = worm.pos.y - cam; }
-      else if (!pointerSeen) { light.tx = W * .5 + Math.sin(t * .6) * W * .22; light.ty = (soilMode ? Hh * .5 : Hh * .42) + Math.sin(t * .9) * Hh * .12; }
-      var k = auto ? .045 : .14;
-      light.x += (light.tx - light.x) * k; light.y += (light.ty - light.y) * k;
-      if (found) warm = Math.min(1, warm + .03);
-      var intensity = H.lerp(.62, .96, descent), rad = H.lerp(R * 1.25, R, descent) * (1 + Math.sin(t * 7) * .006);
-
-      ctx.clearRect(0, 0, W, Hh);
-      ctx.drawImage(dark, 0, cam * dark.width / W, dark.width, Hh * dark.width / W, 0, 0, W, Hh);
-      var night = H.smooth(.25, .9, descent);
-      if (night > 0) { ctx.fillStyle = 'rgba(3,1,5,' + (night * .97).toFixed(3) + ')'; ctx.fillRect(0, 0, W, Hh); }
-      // lit layer through the light
-      tctx.globalCompositeOperation = 'source-over'; tctx.clearRect(0, 0, W, Hh);
-      tctx.drawImage(lit, 0, cam * lit.width / W, lit.width, Hh * lit.width / W, 0, 0, W, Hh);
-      ghosts.forEach(function (g) { ghost(tctx, g, t, .13, '255,245,235'); });
-      if (!found) drawWorm(tctx, t, 0);
-      if (warm > 0) { tctx.globalCompositeOperation = 'source-atop'; tctx.fillStyle = 'rgba(255,200,60,' + (.22 * warm) + ')'; tctx.fillRect(0, 0, W, Hh); }
-      tctx.globalCompositeOperation = 'destination-in';
-      var mg = tctx.createRadialGradient(light.x, light.y, 0, light.x, light.y, rad);
-      mg.addColorStop(0, 'rgba(0,0,0,' + intensity + ')'); mg.addColorStop(.5, 'rgba(0,0,0,' + intensity * .86 + ')');
-      mg.addColorStop(.78, 'rgba(0,0,0,' + intensity * .42 + ')'); mg.addColorStop(1, 'rgba(0,0,0,0)');
-      tctx.fillStyle = mg; tctx.fillRect(0, 0, W, Hh);
-      ctx.drawImage(tmp, 0, 0, W, Hh);
-      // plants (above ground, visible in hero)
-      if (descent < .99) { ctx.save(); ctx.translate(0, -cam); plants.forEach(function (pl) { plant(ctx, pl, t, 1 - descent * .6); }); ctx.restore(); }
-      // beam + torch
-      var tAlpha = H.smooth(.55, 1, descent);
-      ctx.save(); ctx.globalCompositeOperation = 'screen';
-      if (tAlpha > 0) {
-        var ox = Math.min(170, W * .16), oy = Hh - 96, ang = Math.atan2(light.y - oy, light.x - ox);
-        var tip = { x: ox + Math.cos(ang) * 22, y: oy + Math.sin(ang) * 22 }, nx = -Math.sin(ang), ny = Math.cos(ang);
-        var bg = ctx.createLinearGradient(tip.x, tip.y, light.x, light.y);
-        var col = warm > .5 ? '255,214,110' : '225,236,255';
-        bg.addColorStop(0, 'rgba(' + col + ',' + .16 * tAlpha + ')'); bg.addColorStop(1, 'rgba(' + col + ',' + .03 * tAlpha + ')');
-        ctx.fillStyle = bg; ctx.beginPath();
-        ctx.moveTo(tip.x + nx * 16, tip.y + ny * 16); ctx.lineTo(light.x + nx * rad * .82, light.y + ny * rad * .82);
-        ctx.lineTo(light.x - nx * rad * .82, light.y - ny * rad * .82); ctx.lineTo(tip.x - nx * 16, tip.y - ny * 16); ctx.closePath(); ctx.fill();
-        // dust in the beam
-        var len = Math.hypot(light.x - tip.x, light.y - tip.y);
-        dust.forEach(function (d) {
-          var u = (d.u + t * .02 * d.s) % 1, spread = H.lerp(14, rad * .8, u), v = d.v + Math.sin(t * d.s + d.ph) * .15;
-          var x = tip.x + Math.cos(ang) * len * u + nx * spread * v, y = tip.y + Math.sin(ang) * len * u + ny * spread * v;
-          ctx.fillStyle = 'rgba(255,250,235,' + (.42 * tAlpha * (1 - Math.abs(v)) * (.3 + .7 * Math.sin(u * Math.PI))) + ')';
-          ctx.beginPath(); ctx.arc(x, y, .6 + d.s * 1.1, 0, 6.29); ctx.fill();
-        });
-      }
-      // bloom
-      var bl = ctx.createRadialGradient(light.x, light.y, 0, light.x, light.y, rad * 1.3);
-      var bc = warm > 0 ? 'rgba(255,' + Math.round(H.lerp(236, 196, warm)) + ',' + Math.round(H.lerp(220, 90, warm)) + ',' : 'rgba(215,230,255,';
-      bl.addColorStop(0, bc + (.16 * intensity) + ')'); bl.addColorStop(1, bc + '0)');
-      ctx.fillStyle = bl; ctx.beginPath(); ctx.arc(light.x, light.y, rad * 1.3, 0, 6.29); ctx.fill();
-      ctx.restore();
-      // molecules
-      mols.forEach(function (m) {
-        var vy = m.y - cam, dd = Math.hypot(m.x - light.x, vy - light.y), lk = Math.max(0, 1 - dd / rad);
-        if (soilMode && !m.seen && m.trail && dd < rad * .62) { m.seen = 1; seen++; onSeen(m, vy); }
-        drawMol(ctx, m, t, lk);
-      });
-      if (soilMode && !found) {
-        var dh = Math.hypot(damage.x - light.x, damage.y - cam - light.y);
-        if (dh < rad * .7 && seen >= 1) label('roots', 'The plant’s roots are under severe attack!', damage.x - 140, damage.y - cam - 70, 'op__label--warn');
-        if (Math.hypot(worm.pos.x - light.x, worm.pos.y - cam - light.y) < rad * .5) becomeFound(t);
-      }
-      if (found) { var bt = Math.max(0, 1 - (t - foundT) / .9); drawWorm(ctx, t, Math.abs(Math.sin((t - foundT) * 9)) * bt); }
-      if (tAlpha > 0) torch(ctx, Math.atan2(light.y - (Hh - 96), light.x - Math.min(170, W * .16)), tAlpha);
-      labelsEl.style.opacity = soilMode ? 1 : 0;
-      H.lastLight = { x: light.x, y: light.y, r: rad, warm: warm };
-      requestAnimationFrame(frame);
-    }
-    function onSeen(m, vy) {
-      if (seen === 1) { sec.classList.add('has-signal'); label('sig', 'Signal detected!', m.x + 18, vy - 30, 'op__label--signal'); }
-      if (seen === 4) label('trail', 'The fluorescent signals seem to form a trail.', m.x + 20, vy + 16, 'op__label--signal');
-    }
-    function becomeFound(t) {
-      if (found) return; found = true; foundT = t;
-      mols.forEach(function (m) { if (m.trail) m.seen = 1; });
-      sec.classList.add('is-found');
-      label('roots', 'The plant’s roots are under severe attack!', damage.x - 140, damage.y - cam - 70, 'op__label--warn');
-      var wx = worm.pos.x + wormW * .62, wy = worm.pos.y - cam - 64;
-      setTimeout(function () { label('worm', 'Nematodes are behind it!', wx, wy, 'op__label--big'); }, 500);
-      if (window.NKUDetective) window.NKUDetective.lit(true);
-      H.say('Got it! The light turned <b>yellow</b>, just like our yeast would.', 4200);
-    }
-
-    /* ---------- input & scroll ---------- */
-    function setPointer(e) {
-      var r = cv.getBoundingClientRect();
-      light.tx = e.clientX - r.left; light.ty = e.clientY - r.top; pointerSeen = true;
-    }
-    cv.addEventListener('pointermove', setPointer);
-    cv.addEventListener('pointerdown', setPointer);
-    sec.addEventListener('pointerleave', function () { pointerSeen = false; });
-    function heroStyle(d) {
-      var hp = H.smooth(0, .5, d);
-      hero.style.opacity = 1 - hp;
-      hero.style.transform = 'translateY(' + (-hp * 90) + 'px) scale(' + (1 + hp * .06) + ')';
-      hero.style.filter = hp > .01 ? 'blur(' + (hp * 8).toFixed(1) + 'px)' : 'none';
-      sec.classList.toggle('is-under', d > .9);
-    }
-    function findNow() { if (found) return; light.x = light.tx = worm.pos.x - wormW * .05; light.y = light.ty = worm.pos.y - CAM; auto = true; }
-    H.scene('opening', {
-      steps: 2, tall: 2.6, noCue: true,
-      set: function (i) {
-        dsc = { from: i ? 1 : 0, to: i ? 1 : 0, t0: 0, dur: 1 }; descentNow = i ? 1 : 0;
-        if (i >= 2) { findNow(); sec.classList.add('is-late'); } else sec.classList.remove('is-late');
-      },
-      step: function (i, dir) {
-        if (i === 1 && dir > 0) { descendTo(1, 1500); return 1500; }
-        if (i === 0) { descendTo(0, 1300); sec.classList.remove('is-late'); return 1300; }
-        if (i === 1 && dir < 0) return -1;
-        if (i === 2) { sec.classList.add('is-late'); if (found) return 250; auto = true; return 1900; }
-        return 0;
-      },
-      ff: function () { if (descentNow > .5) { dsc.t0 = 0; } if (auto && !found) findNow(); }
+    /* ghosts */
+    built.ghosts.forEach(function (g) {
+      var u = g.userData;
+      var px = u.hx + Math.cos(t * u.s1 + u.ph) * u.rx;
+      var py = u.hy + Math.sin(t * u.s2 + u.ph) * u.ry;
+      var vx = -Math.sin(t * u.s1 + u.ph) * u.rx * u.s1;
+      var vy = Math.cos(t * u.s2 + u.ph) * u.ry * u.s2;
+      g.position.set(px, py, u.z);
+      g.rotation.z = Math.atan2(vy, vx);
     });
-    var rt; addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(function () { labels = {}; labelsEl.innerHTML = ''; build(); }, 200); });
-    H.onView(sec, function (v) { var was = visible; visible = v; if (v && !was) requestAnimationFrame(frame); });
-    build(); requestAnimationFrame(frame);
-  });
-})();
+
+    /* labels + shared screen position for the iris transition */
+    var ls = toScreen(light.x, light.y);
+    var r = stage.getBoundingClientRect();
+    NK.state.lightScreen = { x: r.left + ls.x, y: r.top + ls.y };
+    Object.keys(labelMap).forEach(function (id) {
+      var el = labelMap[id];
+      var s = toScreen(el._x, el._y);
+      var flip = s.x + 16 + el.offsetWidth > W - 8;
+      el.style.transform = 'translate(' + (flip ? s.x - 16 - el.offsetWidth : s.x + 16).toFixed(1) + 'px,' + (s.y - 10).toFixed(1) + 'px)';
+      el.style.opacity = S.exploring ? '' : '0';
+    });
+
+    renderer.render(scene, camera);
+  }
+
+  resize(true);
+  setLine(COPY.scan);
+  NK.loopWhileVisible(stage, frame, '80px 0px');
+}());
