@@ -107,13 +107,18 @@
   - 团队的原始记录。
   
   找不到来源就不写。不要用"看起来合理"的数值去填空。
-- **示意数据不得当成真实数据展示。** 首页世界地图的丰度色块，以及中国地图中的"环境"和"潜力"两张图，都来自 `js/home-maps.js` 里的示意值（`SPOTS`、`SITES`）。只有 `js/home-abundance.js` 提供了团队的实测数据时，它们才会显示。**不得移除或绕过这个开关。**
+- **首页的每一项数据都登记在 [`DATA_SOURCES.md`](DATA_SOURCES.md)**，包括页面位置、完整出处和核对状态。新增或修改数据，必须同时更新这张表。
+- **示意数据不得当成真实数据展示，也不得重新加入。**
+  - 丰度图只画 `js/home-abundance.js` 中的实测像元。这个文件由 `tools/build_abundance.py` 从 van den Hoogen et al. 2020（CC0）生成，不能手写，也不能插值出没有采样的区域。
+  - 文件不存在时，丰度层自动隐藏。
+  - 审查脚本会拦截 `SPOTS`、"sample level"这类示意数据的写法。
+- 案例标记（`CASES`）和中国地图的文字（`TEXT`）里，每一条数字都必须写明出处，并且与 `DATA_SOURCES.md` 一致。
 - 设计目标和已有结果要用不同的措辞：
   - 写设计目标，用 "designed to"、"aims to"、"could"。
   - 写结果，必须有实验证据支撑。
   - `tools/audit_wiki_content.py` 里的 `OVERCLAIM_PATTERNS` 会拦截 "working/validated sensor"、"field-ready" 这类表述。**不得为了让审查通过而放宽或删除任何规则。**
 - 访谈原话必须逐字引用，并且得到受访者同意。结果图必须对应存档的原始数据，不得由 AI 生成，也不得做修饰性修改。
-- 首页的 US$173 billion 标注了出处（Kantor et al. 2022, *Horticulturae* 8: 208，其中引用了 Elling 2013）。冻结前应由团队核对原文。其他任何新加的统计数字都按同样的要求处理。
+- 首页的 US$173 billion 标注了出处（Kantor et al. 2022, *Horticulturae* 8: 208，其中引用了 Elling 2013）。其他数字的出处见 `DATA_SOURCES.md`。标为"团队核对"的条目，冻结前必须由团队对照原文确认。
 - **每一个用过的 AI 工具都要写进 `/licensing` 页面的 AI 使用说明**：用在了哪里，没做什么。审查脚本会检查是否提到了 OpenAI Codex 和 Anthropic Claude。以后新用了其他工具，就在页面上补一段，并把名字加进审查脚本的检查列表。
 - 陈述 iGEM 规则时要先核对官方页面。核对不到的，写明"待确认"，不要猜。
 
@@ -166,8 +171,9 @@ Agent 不能代办以下事项，但应该在交付说明里提醒。
 3. 在 teams.igem.org 上填完 Project Attributions Form。
 4. 宣传片和音频上传到 video.igem.org，再嵌入页面。
 5. 核对官方 Standard URL 列表，确定是否申报 measurement 和 alternative-platform。
-6. 核对 US$173 billion 的原文出处。结果、对比表、访谈原话一律由团队提供真实材料。
-7. 在 GitLab 上确认最后一次流水线成功，并确认 `https://2026.igem.wiki/<slug>/` 各标准页面都能打开。
+6. 运行 `python3 tools/build_abundance.py`，生成全球丰度数据并提交。本仓库的 Agent 环境没有外网，所以这一步需要在联网的电脑上完成。
+7. 核对 `DATA_SOURCES.md` 中标为"团队核对"的条目。结果、对比表、访谈原话一律由团队提供真实材料。
+8. 在 GitLab 上确认最后一次流水线成功，并确认 `https://2026.igem.wiki/<slug>/` 各标准页面都能打开。
 
 ## 4. 禁止事项速查
 
@@ -192,4 +198,6 @@ Agent 不能代办以下事项，但应该在交付说明里提醒。
 | `css/`、`js/` | 样式与脚本。首页脚本为 `home-*.js`，全站外壳为 `shell.js` |
 | `img/`、`fonts/` | 本地开发用的媒体文件，发布时应上传到 static.igem.wiki |
 | `tools/audit_wiki_content.py` | 合规与内容审查，CI 中也会运行 |
+| `tools/build_abundance.py` | 从 van den Hoogen et al. 2020 的原始数据生成 `js/home-abundance.js` |
+| `DATA_SOURCES.md` | 首页数据来源登记表 |
 | `.gitlab-ci.yml` | iGEM GitLab Pages 流水线，只在默认分支上构建 |

@@ -204,6 +204,9 @@ def audit_generated(root: Path, failures: list[str], expected_count: int) -> Non
         text = css.read_text(encoding="utf-8", errors="ignore")
         if EXTERNAL_RUNTIME_RE.search(text):
             failures.append(f"{css}: loads a resource from outside iGEM infrastructure")
+    maps_js = (root / "js" / "home-maps.js")
+    if maps_js.exists() and re.search(r"\bSPOTS\b|Sample level|sample abundance", maps_js.read_text(encoding="utf-8")):
+        failures.append("home-maps.js draws invented sample abundance; only data from js/home-abundance.js may be shown")
     site = json.loads((root.parent / "_data" / "site.json").read_text(encoding="utf-8")) if (root.parent / "_data" / "site.json").exists() else {}
     team_id = str(site.get("igem_team_id", "")).strip()
     att = root / "attributions" / "index.html"

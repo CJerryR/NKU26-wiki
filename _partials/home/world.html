@@ -4,15 +4,17 @@
       <div class="world__copy">
         <h2 class="h-display" id="world-title" data-world-title data-split>A global story beneath our feet</h2>
         <p class="world__stat"><b data-usd>US$173</b><span>billion</span></p>
-        <p class="world__lede">Estimated yearly crop losses caused by plant-parasitic nematodes worldwide.</p>
-        <p class="world__src">Estimate cited in Kantor et al. 2022, <i>Horticulturae</i> 8: 208, after Elling 2013.</p>
-        <div class="world__legend">
+        <p class="world__lede">The estimated annual toll that plant-parasitic nematodes inflict on agriculture worldwide.</p>
+        <p class="world__src">Kantor et al. 2022, <i>Horticulturae</i> 8: 208, after Elling 2013.</p>
+        <p class="world__call">Plant-parasitic nematodes are advancing across the globe. The time to detect, prevent and control them is now.</p>
+        <div class="world__legend" data-abundance>
           <p>Plant-feeding nematode abundance</p>
           <i class="world__ramp" aria-hidden="true"></i>
           <span><em>lower</em><em>higher</em></span>
-          <p class="world__case"><i aria-hidden="true"></i>Reported crop damage</p>
+          <small>Individuals per 100 g dry soil, log scale. Each dot is one of <b data-abundance-n>1,933</b> sampled pixels of about 1 km.</small>
         </div>
-        <p class="world__note" data-demo-flag>Sample color layer. The team’s dataset (Herbivores field, individuals per 100 g dry soil, log₁₀(x+1)) sets the final colours.</p>
+        <p class="world__case"><i aria-hidden="true"></i>Documented crop losses</p>
+        <p class="world__note" data-abundance>Abundance data: van den Hoogen et al. 2020, <i>Scientific Data</i> 7: 103 (CC0). It indicates potential exposure, not crop loss.</p>
       </div>
       <figure class="world__map" data-world-map>
         <div class="world__canvas">
@@ -21,7 +23,7 @@
           <div class="world__marks" data-world-marks></div>
           <button type="button" class="world__china" data-world-china>China <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 6h6M6.5 3.5 9 6l-2.5 2.5"/></svg></button>
         </div>
-        <figcaption>Select a continent. Basemap: Natural Earth.</figcaption>
+        <figcaption>Select a continent or a marker. Basemap: Natural Earth.</figcaption>
       </figure>
     </div>
     <div class="world__mask" data-world-mask aria-hidden="true"></div>
