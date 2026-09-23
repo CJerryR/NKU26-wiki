@@ -103,7 +103,7 @@
   NK.on('found', function () { NK.setDetective('found'); });
 
   var NOTES = [
-    ['global-story', 'Tap China to take a closer look.'],
+    ['global-story', NK.coarse ? 'Tap China to take a closer look.' : 'Click China to take a closer look.'],
     ['china-story', 'One landscape, three questions. Switch maps any time.'],
     ['hidden-threat', NK.coarse ? 'Borrow my lens: tap a scene.' : 'Borrow my lens: hover over a scene.'],
     ['chemical-clues', 'Two signals caught my eye: ascr#3 and ascr#18.'],
@@ -147,6 +147,7 @@
     ov.className = 'nk-iris';
     ov.setAttribute('aria-hidden', 'true');
     document.body.appendChild(ov);
+    NK.state.irisOpen = false;
     var popped = false;
     var popT0 = 0;
     var popFrom = 80;
@@ -157,7 +158,7 @@
       var vw = window.innerWidth;
       var rect = sec.getBoundingClientRect();
       var q = (vh - rect.top) / (vh * 0.95);
-      if (q <= 0.001) { ov.style.opacity = '0'; popped = false; return; }
+      if (q <= 0.001) { ov.style.opacity = '0'; popped = false; NK.state.irisOpen = false; return; }
       var tr = title.getBoundingClientRect();
       var tx = tr.left + tr.width * 0.46;
       var ty = tr.top + tr.height * 0.5;
@@ -170,7 +171,7 @@
         cur.y = NK.lerp(start.y, ty, k) + (Math.cos(t * 4.3) * 30 + Math.sin(t * 9.1) * 7) * wob;
         cur.r = NK.lerp(86, rTitle, NK.smooth(0.36, 0.56, q));
         ov.style.opacity = String(NK.smooth(0, 0.12, q));
-        if (q > 0.64) { popped = true; popT0 = t; popFrom = cur.r; }
+        if (q > 0.64) { popped = true; NK.state.irisOpen = true; popT0 = t; popFrom = cur.r; NK.emit('iris-pop'); }
       } else {
         var e = NK.clamp((t - popT0) / 0.9, 0, 1);
         var full = Math.sqrt(vw * vw + vh * vh);
@@ -178,7 +179,7 @@
         cur.y = NK.lerp(cur.y, ty, 0.2);
         cur.r = popFrom + (full - popFrom) * (e < 1 ? 1 - Math.pow(1 - e, 3) : 1) + (e < 0.25 ? -18 * Math.sin(e / 0.25 * Math.PI) : 0);
         ov.style.opacity = String(1 - NK.smooth(0.55, 1, e));
-        if (q < 0.46) popped = false;
+        if (q < 0.46) { popped = false; NK.state.irisOpen = false; }
       }
       ov.style.setProperty('--ix', cur.x.toFixed(1) + 'px');
       ov.style.setProperty('--iy', cur.y.toFixed(1) + 'px');
@@ -192,6 +193,7 @@
         if (stop) { stop(); stop = null; }
         ov.style.opacity = '0';
         popped = e.boundingClientRect.top < 0;
+        NK.state.irisOpen = popped;
       });
     }, { rootMargin: '0px 0px 25% 0px' }).observe(sec);
   }());

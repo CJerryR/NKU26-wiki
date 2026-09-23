@@ -366,7 +366,7 @@ def resolve_home_links(body):
 HOME_CHROME = {"nav", "mascot", "footer"}
 HOME_STYLES = ("home-base", "home-shell", "home-opening", "home-maps", "home-story", "home-loop")
 HOME_SCRIPTS = ("vendor/three.min", "home-geo", "home-maps-data", "home-abundance", "home-core",
-                "home-opening", "home-world", "home-china", "home-zoom", "home-story", "home-loop")
+                "home-opening", "home-world", "home-china", "home-zoom3d", "home-zoom", "home-story", "home-loop")
 
 def expand_home_partials(body):
     """Compose homepage source sections at build time, including in search."""
