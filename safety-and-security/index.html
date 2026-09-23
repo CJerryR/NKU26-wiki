@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Safety  /  NKU iGEM 2026</title>
+  <meta name="description" content="NKU iGEM 2026 - a synthetic-biology sensing concept for plant-parasitic nematode-associated signals, under investigation." />
+  <meta name="theme-color" content="#1a0d1d" />
+  <link rel="icon" href="../img/logo.svg" type="image/svg+xml" />
+  <link rel="preload" href="../fonts/spline-variable.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="../fonts/fraunces-variable.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="../css/style.css" />
+  
+  <link rel="stylesheet" href="../css/shell.css" />
+</head>
+<body class="page-standard" data-path-prefix="../">
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="lnav" data-lnav>
+  <div class="lnav__row lnav__bar">
+  <div class="lnav__island lnav__island--brand lg" data-lg="bar">
+    <span class="lg__fx" aria-hidden="true"></span><span class="lg__tint" aria-hidden="true"></span><span class="lg__shine" aria-hidden="true"></span>
+    <a href="../index.html" class="lnav__brand" aria-label="NKU-iGEM 2026 home">
+      <img src="../img/shell/nku-mark.png" alt="" width="30" height="41" />
+      <span><b>NKU-iGEM</b><small>NKU26-China</small></span>
+    </a>
+  </div>
+  <div class="lnav__island lnav__island--menu lg" data-lg="bar">
+    <span class="lg__fx" aria-hidden="true"></span><span class="lg__tint" aria-hidden="true"></span><span class="lg__shine" aria-hidden="true"></span>
+    <span class="lnav__now" data-lnav-now aria-hidden="true"></span>
+
+    <nav class="lnav__links" aria-label="Primary">
+      <span class="lnav__lens lg" data-lg="lens" aria-hidden="true"><span class="lg__fx"></span><span class="lg__shine"></span></span>
+      <a class="lnav__link" href="../index.html" data-match="index.html">Home</a>
+      <div class="lnav__group">
+        <button type="button" class="lnav__link" aria-expanded="false" aria-controls="lnav-project">Project<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+        <div class="lnav__drop lg" id="lnav-project" data-lg="drop">
+          <span class="lg__fx" aria-hidden="true"></span><span class="lg__tint" aria-hidden="true"></span><span class="lg__shine" aria-hidden="true"></span>
+          <div class="lnav__drop-grid">
+            <a href="../pages/description.html"><b>Description</b><span>Why nematode signals, and what we propose</span></a>
+            <a href="../engineering/"><b>Engineering</b><span>Design, build, test, learn</span></a>
+            <a href="../pages/results.html"><b>Results</b><span>What the bench has shown so far</span></a>
+            <a href="../model/"><b>Model</b><span>From signal input to color output</span></a>
+            <a href="../parts/"><b>Parts</b><span>Registry entries</span></a>
+            <a href="../hardware/"><b>Hardware</b><span>The closed test device</span></a>
+            <a href="../software/"><b>Software</b><span>Tools we built</span></a>
+            <a href="../contribution/"><b>Contribution</b><span>What future teams can reuse</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="lnav__group">
+        <button type="button" class="lnav__link" aria-expanded="false" aria-controls="lnav-hp">Human Practices<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+        <div class="lnav__drop lg" id="lnav-hp" data-lg="drop">
+          <span class="lg__fx" aria-hidden="true"></span><span class="lg__tint" aria-hidden="true"></span><span class="lg__shine" aria-hidden="true"></span>
+          <div class="lnav__drop-grid">
+            <a href="../human-practices/"><b>Human Practices</b><span>Growers, experts and what changed</span></a>
+            <a href="../education/"><b>Education</b><span>Classes and outreach across China</span></a>
+            <a href="../entrepreneurship/"><b>Entrepreneurship</b><span>Who would use it, and how</span></a>
+            <a href="../sustainability/"><b>Sustainability</b><span>Soil health and the SDGs</span></a>
+            <a href="../inclusivity/"><b>Inclusion</b><span>Who we built this with</span></a>
+          </div>
+        </div>
+      </div>
+      <a class="lnav__link" href="../safety-and-security/" data-match="safety-and-security/">Safety</a>
+      <div class="lnav__group">
+        <button type="button" class="lnav__link" aria-expanded="false" aria-controls="lnav-team">Team<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+        <div class="lnav__drop lnav__drop--narrow lg" id="lnav-team" data-lg="drop">
+          <span class="lg__fx" aria-hidden="true"></span><span class="lg__tint" aria-hidden="true"></span><span class="lg__shine" aria-hidden="true"></span>
+          <div class="lnav__drop-grid">
+            <a href="../pages/team-members.html"><b>Members</b><span>The people behind the wiki</span></a>
+            <a href="../pages/attribution.html"><b>Attributions</b><span>Who did what</span></a>
+            <a href="../licensing/"><b>Licensing &amp; AI use</b><span>How this site may be reused</span></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <button type="button" class="lnav__search" data-search-open aria-haspopup="dialog" aria-controls="site-search" aria-expanded="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><line x1="20" y1="20" x2="16" y2="16"/></svg>
+      <span>Search</span>
+    </button>
+    <button type="button" class="lnav__toggle" aria-expanded="false" aria-controls="lnav-sheet" aria-label="Open menu"><i></i><i></i></button>
+  </div>
+  </div>
+
+  <div class="lnav__sheet lg" id="lnav-sheet" data-lg="sheet" hidden>
+    <span class="lg__fx" aria-hidden="true"></span><span class="lg__tint" aria-hidden="true"></span><span class="lg__shine" aria-hidden="true"></span>
+    <div class="lnav__sheet-body">
+      <a href="../index.html">Home</a>
+      <p>Project</p>
+      <a href="../pages/description.html">Description</a><a href="../engineering/">Engineering</a><a href="../pages/results.html">Results</a><a href="../model/">Model</a><a href="../parts/">Parts</a><a href="../hardware/">Hardware</a><a href="../software/">Software</a><a href="../contribution/">Contribution</a>
+      <p>Human Practices</p>
+      <a href="../human-practices/">Human Practices</a><a href="../education/">Education</a><a href="../entrepreneurship/">Entrepreneurship</a><a href="../sustainability/">Sustainability</a><a href="../inclusivity/">Inclusion</a>
+      <p>More</p>
+      <a href="../safety-and-security/">Safety</a><a href="../pages/team-members.html">Team</a><a href="../pages/attribution.html">Attributions</a><a href="../licensing/">Licensing &amp; AI use</a>
+    </div>
+  </div>
+</header>
+
+<svg class="lg-defs" width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden"><defs></defs></svg>
+
+
+  <main id="main">
+<header class="phero">
+    <div class="phero__bg" aria-hidden="true"><svg viewBox="0 0 1440 460" preserveAspectRatio="xMidYMid slice"><circle cx="1320" cy="120" r="70" fill="none" stroke="#9b7fe0" stroke-opacity="0.160" stroke-width="1.2"/><circle cx="1320" cy="120" r="130" fill="none" stroke="#9b7fe0" stroke-opacity="0.135" stroke-width="1.2"/><circle cx="1320" cy="120" r="200" fill="none" stroke="#9b7fe0" stroke-opacity="0.110" stroke-width="1.2"/><circle cx="1320" cy="120" r="280" fill="none" stroke="#9b7fe0" stroke-opacity="0.085" stroke-width="1.2"/><circle cx="1320" cy="120" r="370" fill="none" stroke="#9b7fe0" stroke-opacity="0.060" stroke-width="1.2"/><path d="M-40,140 C300,118 900,166 1480,128" fill="none" stroke="#f4ecdd" stroke-opacity="0.050" stroke-width="1"/><path d="M-40,210 C300,188 900,236 1480,198" fill="none" stroke="#f4ecdd" stroke-opacity="0.044" stroke-width="1"/><path d="M-40,280 C300,258 900,306 1480,268" fill="none" stroke="#f4ecdd" stroke-opacity="0.038" stroke-width="1"/><path d="M-40,350 C300,328 900,376 1480,338" fill="none" stroke="#f4ecdd" stroke-opacity="0.032" stroke-width="1"/><path d="M-40,420 C300,398 900,446 1480,408" fill="none" stroke="#f4ecdd" stroke-opacity="0.026" stroke-width="1"/></svg></div>
+    <div class="phero__inner">
+      <nav class="phero__crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>/</span>Project<span>/</span><span>Safety</span></nav>
+      <p class="eyebrow" style="margin-bottom:14px">Project  /  Responsibility</p>
+      <h1>Working <span class='ink-accent'>safely</span></h1>
+      <p class="phero__sub">The bench practices the records actually document &mdash; and the biosafety information still needed before this page can make compliance claims.</p>
+      <div class="phero__meta"><span>Scope<b>Biosafety</b></span><span>Reading<b>5 min</b></span></div>
+    </div>
+  </header>
+  <div class="strata strata--down" aria-hidden="true"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><rect width="1440" height="120" fill="#191222"/><path fill="#241830" d="M0,60 C240,18 420,96 720,64 C1020,32 1230,92 1440,52 L1440,120 L0,120 Z"/><path fill="#f7f2e8" d="M0,86 C260,52 470,110 720,86 C1010,58 1240,108 1440,82 L1440,120 L0,120 Z"/></svg></div>
+  <div class="layout">
+    <aside class="toc" aria-label="On this page">
+      <div class="toc__top">
+        <div class="toc__badge"><img src="../img/logo.svg" alt="" width="24" height="24"/></div>
+        <div class="toc__titles"><div class="toc__kicker">On this page</div><div class="toc__title">Safety</div></div>
+        <button class="toc__collapse" aria-label="Collapse outline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 5 7 12 13 19"/><polyline points="18 5 12 12 18 19"/></svg></button>
+      </div>
+      <div class="toc__progress" aria-hidden="true"><i></i></div>
+      <ul class="toc__list">
+        <span class="toc__rail" aria-hidden="true"></span>
+        <li class="lvl-1"><a href="#documented">Documented practices</a></li>
+        <li class="lvl-1"><a href="#not-supplied">Not yet supplied</a></li>
+        <li class="lvl-1"><a href="#antibiotic">Antibiotic handling</a></li>
+        <li class="lvl-1"><a href="#containment">Containment (future)</a></li>
+        <li class="lvl-1"><a href="#risk">Prospective risks</a></li>
+      </ul>
+      <div class="toc__foot"><a href="#main"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="6 11 12 5 18 11"/></svg>Back to top</a></div>
+    </aside>
+    <div class="content">
+      <div class="toc-mini" aria-label="On this page (mobile)">
+        <button type="button" class="toc-mini__bar" aria-expanded="false">
+          <div class="toc__badge"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#f4ecdd" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><line x1="20" y1="20" x2="15.5" y2="15.5"/></svg></div>
+          <b>Safety</b><span class="now"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="toc-mini__panel"><ul>
+          <li class="lvl-1"><a href="#documented">Documented practices</a></li>
+        <li class="lvl-1"><a href="#not-supplied">Not yet supplied</a></li>
+        <li class="lvl-1"><a href="#antibiotic">Antibiotic handling</a></li>
+        <li class="lvl-1"><a href="#containment">Containment (future)</a></li>
+        <li class="lvl-1"><a href="#risk">Prospective risks</a></li>
+        </ul></div>
+      </div>
+<section id="documented" data-toc="Documented practices">
+  <p class="eyebrow sec-label">01 &mdash; Documented</p>
+  <h2 class="section-title">What the records actually show</h2>
+  <div class="prose">
+    <p>The audited notebook documents a set of standard microbiology and molecular-biology practices. We describe them here as documented practices only &mdash; they are what the records show the team doing, not proof of full biosafety compliance, which would require the institutional information listed further down this page.</p>
+  </div>
+  <div class="grid grid-3 reveal" data-stagger style="margin-top:26px">
+    <div class="card"><span class="card__ring"></span><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v4l-5 9a3 3 0 0 0 3 4h10a3 3 0 0 0 3-4l-5-9V3"/><line x1="8" y1="3" x2="16" y2="3"/></svg></div><h3>Chassis handled</h3><p>Trans5&alpha; competent <i>E.&nbsp;coli</i> and <i>S.&nbsp;cerevisiae</i> CEN.PK2-1C, as named in the records.</p></div>
+    <div class="card"><span class="card__ring"></span><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg></div><h3>Bench practices</h3><p>Autoclaving wrapped, labelled vessels with indicator tape; aseptic hood and clean bench for plating and cell work.</p></div>
+    <div class="card"><span class="card__ring"></span><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="13"/><circle cx="12" cy="16.5" r=".6" fill="currentColor"/></svg></div><h3>Recorded precautions</h3><p>Light and UV protection for tryptophan-containing material; minimal (~10&nbsp;s) UV during gel excision; deliberate marker labelling.</p></div>
+  </div>
+  <div class="prose" style="margin-top:22px">
+    <p>Also documented across the records: plasmid handling and minipreps, PCR and agarose-gel electrophoresis, and yeast transformation with dropout selection. None of these entries, on its own, demonstrates that a formal safety framework was in place.</p>
+  </div>
+</section>
+<section id="not-supplied" data-toc="Not yet supplied">
+  <p class="eyebrow sec-label">02 &mdash; Gaps</p>
+  <h2 class="section-title">Biosafety information not yet in evidence</h2>
+  <div class="prose">
+    <p>The following would normally anchor a biosafety page. None of it is established in the supplied material, so we do not assert it, and we do not assign a risk group or biosafety level from general knowledge.</p>
+  </div>
+  <div style="overflow-x:auto;margin-top:22px">
+    <table style="width:100%;border-collapse:collapse;font-size:15px;line-height:1.55">
+      <thead>
+        <tr>
+          <th style="text-align:left;padding:11px 14px;border-bottom:2px solid rgba(25,18,34,.22)">Item</th>
+          <th style="text-align:left;padding:11px 14px;border-bottom:2px solid rgba(25,18,34,.22)">Status in supplied evidence</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td style="padding:11px 14px;border-bottom:1px solid rgba(25,18,34,.12)">Institutional biosafety level</td><td style="padding:11px 14px;border-bottom:1px solid rgba(25,18,34,.12)">Not supplied</td></tr>
+        <tr><td style="padding:11px 14px;border-bottom:1px solid rgba(25,18,34,.12)">Biosafety training records</td><td style="padding:11px 14px;border-bottom:1px solid rgba(25,18,34,.12)">Not supplied</td></tr>
+        <tr><td style="padding:11px 14px;border-bottom:1px solid rgba(25,18,34,.12)">Supervision arrangements</td><td style="padding:11px 14px;border-bottom:1px solid rgba(25,18,34,.12)">Not supplied</td></tr>
+        <tr><td style="padding:11px 14px;border-bottom:1px solid rgba(25,18,34,.12)">Personal protective equipment</td><td style="padding:11px 14px;border-bottom:1px solid rgba(25,18,34,.12)">Not supplied</td></tr>
+        <tr><td style="padding:11px 14px;border-bottom:1px solid rgba(25,18,34,.12)">Decontamination and waste handling</td><td style="padding:11px 14px;border-bottom:1px solid rgba(25,18,34,.12)">Not supplied</td></tr>
+        <tr><td style="padding:11px 14px;border-bottom:1px solid rgba(25,18,34,.12)">Strain provenance and approvals</td><td style="padding:11px 14px;border-bottom:1px solid rgba(25,18,34,.12)">Not supplied</td></tr>
+        <tr><td style="padding:11px 14px;border-bottom:1px solid rgba(25,18,34,.12)">Antibiotic handling details</td><td style="padding:11px 14px;border-bottom:1px solid rgba(25,18,34,.12)">Requires confirmation (see below)</td></tr>
+        <tr><td style="padding:11px 14px;border-bottom:1px solid rgba(25,18,34,.12)">Genetic-part risk review</td><td style="padding:11px 14px;border-bottom:1px solid rgba(25,18,34,.12)">Not supplied</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout callout--warn" style="margin-top:22px">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 16H3z"/><line x1="12" y1="9" x2="12" y2="14"/><circle cx="12" cy="17" r=".6" fill="currentColor"/></svg>
+    <div><b>No risk-group or containment-level claim</b><p>Because none of the above is documented, this page makes no institutional biosafety-level, risk-group, containment-approval, or waste-procedure claim. Those determinations belong to the host institution and are outstanding for this draft.</p></div>
+  </div>
+</section>
+<section id="antibiotic" data-toc="Antibiotic handling">
+  <p class="eyebrow sec-label">03 &mdash; Antibiotics</p>
+  <h2 class="section-title">An antibiotic value to confirm first</h2>
+  <div class="prose">
+    <p>The earliest records (0506 and 0507) state an ampicillin stock and working concentration that are atypical for standard LB&ndash;ampicillin selection and may reflect a unit error. The suspect values are not printed here. They must be confirmed with the team before any protocol or risk assessment that depends on antibiotic handling is finalised. The corresponding bench workflow is documented on the <a href="../pages/protocols.html">Protocols</a> page, also with the numbers withheld.</p>
+  </div>
+</section>
+<section id="containment" data-toc="Containment (future)">
+  <p class="eyebrow sec-label">04 &mdash; By design</p>
+  <h2 class="section-title">Containment and non-release as future requirements</h2>
+  <div class="prose">
+    <p>The intended direction of the project is a diagnostic that reads a soil-borne nematode signal rather than an organism released into the environment. That is a design intention, not a demonstrated safeguard: the current records show no direct-soil testing, environmental release, field deployment, or finished diagnostic enclosure.</p>
+  </div>
+  <div class="callout callout--note" style="margin-top:22px">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="13"/><circle cx="12" cy="16.5" r=".6" fill="currentColor"/></svg>
+    <div><b>Non-release is a requirement, not a result</b><p>Physical and biological containment and strict non-release would be requirements for any future implementation of this system. Nothing in the present records demonstrates them, so we describe them as design obligations to meet, not features already achieved.</p></div>
+  </div>
+</section>
+<section id="risk" data-toc="Prospective risks">
+  <p class="eyebrow sec-label">05 &mdash; Risk</p>
+  <h2 class="section-title">Risks to weigh in future design</h2>
+  <div class="prose">
+    <p>Because no device has been built or tested, the following are prospective design risks rather than measured performance. A future assay would need to address the possibility of false positives and false negatives, and the specificity of the chosen biomarker: literature the team reviewed describes the candidate ascaroside as conserved across several related root-knot species, which may prevent species-level discrimination; its full taxonomic range and specificity remain untested. Turning that into a reliable readout &mdash; and defining any real-world sensitivity, specificity, or response behaviour &mdash; remains future design work.</p>
+  </div>
+  <div class="callout callout--warn" style="margin-top:22px">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 16H3z"/><line x1="12" y1="9" x2="12" y2="14"/><circle cx="12" cy="17" r=".6" fill="currentColor"/></svg>
+    <div><b>No measured device performance</b><p>This page reports no detection limit, response time, sensitivity, specificity, or species discrimination. Those are not established by the records and are not claimed here.</p></div>
+  </div>
+</section>
+    </div>
+  </div>
+  <div class="strata strata--down" aria-hidden="true"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><rect width="1440" height="120" fill="#f7f2e8"/><path fill="#241830" d="M0,60 C240,18 420,96 720,64 C1020,32 1230,92 1440,52 L1440,120 L0,120 Z"/><path fill="#180f1e" d="M0,86 C260,52 470,110 720,86 C1010,58 1240,108 1440,82 L1440,120 L0,120 Z"/></svg></div>
+  </main>
+
+  <footer class="footer">
+
+  <div class="footer__inner">
+
+    <div class="footer__top">
+      <div class="footer__brand">
+        <b>NKU-iGEM 2026 Team</b>
+        <p>A Nankai University student project investigating a synthetic-biology sensing concept for plant-parasitic nematode-associated signals; component and system validation remain open.</p>
+      </div>
+      <div class="footer__col">
+        <h5>Project</h5>
+        <a href="../pages/description.html">Description</a>
+        <a href="../contribution/">Contribution</a>
+        <a href="../engineering/">Engineering</a>
+        <a href="../pages/results.html">Results</a>
+      </div>
+      <div class="footer__col">
+        <h5>People &amp; Practice</h5>
+        <a href="../human-practices/">Human Practices</a>
+        <a href="../education/">Education</a>
+        <a href="../inclusivity/">Inclusivity</a>
+        <a href="../pages/team-members.html">Team</a>
+        <a href="../safety-and-security/">Safety</a>
+        <a href="../pages/attribution.html">Attributions</a>
+      </div>
+      <div class="footer__col">
+        <h5>Open science</h5>
+        <a href="../model/">Model</a>
+        <a href="../software/">Software</a>
+        <a href="../sustainability/">Sustainability</a>
+        <a href="../licensing/">Licensing &amp; AI use</a>
+        <a href="https://github.com/CJerryR/NKU26-wiki">Source repository</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 NKU iGEM Team &middot; <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>
+      <span>Fraunces, Spline Sans &amp; Space Mono: SIL OFL 1.1 &middot; Three.js: MIT</span>
+    </div>
+  </div>
+</footer>
+
+
+  <div class="site-search" id="site-search" role="dialog" aria-modal="true" aria-labelledby="site-search-title" hidden>
+    <div class="site-search__backdrop" data-search-close></div>
+    <section class="site-search__panel" role="document">
+      <div class="site-search__head">
+        <div>
+          <p class="eyebrow">Search the wiki</p>
+          <h2 id="site-search-title">Find articles, sections, and evidence.</h2>
+        </div>
+        <button class="site-search__close" type="button" data-search-close aria-label="Close search">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+        </button>
+      </div>
+      <label class="site-search__box">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.5" y2="16.5"/></svg>
+        <span class="sr-only">Search query</span>
+        <input type="search" data-search-input autocomplete="off" spellcheck="false" placeholder="Search project content..." />
+      </label>
+      <div class="site-search__meta" data-search-meta>Type to search the full wiki.</div>
+      <div class="site-search__results" data-search-results></div>
+    </section>
+  </div>
+
+  <div class="detective" data-detective>
+  <p class="detective__bubble" role="status" aria-live="polite"></p>
+  <button type="button" class="detective__btn" aria-label="Yeast detective: back to the top">
+    <img src="../img/shell/detective.png" width="120" height="110" alt="" />
+  </button>
+</div>
+
+  <script src="../js/search-data.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/shell.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Software  /  NKU iGEM 2026</title>
+  <meta name="description" content="NKU iGEM 2026 - a synthetic-biology sensing concept for plant-parasitic nematode-associated signals, under investigation." />
+  <meta name="theme-color" content="#1a0d1d" />
+  <link rel="icon" href="../img/logo.svg" type="image/svg+xml" />
+  <link rel="preload" href="../fonts/spline-variable.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="../fonts/fraunces-variable.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="../css/style.css" />
+  
+  <link rel="stylesheet" href="../css/shell.css" />
+</head>
+<body class="page-standard" data-path-prefix="../">
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="lnav" data-lnav>
+  <div class="lnav__row lnav__bar">
+  <div class="lnav__island lnav__island--brand lg" data-lg="bar">
+    <span class="lg__fx" aria-hidden="true"></span><span class="lg__tint" aria-hidden="true"></span><span class="lg__shine" aria-hidden="true"></span>
+    <a href="../index.html" class="lnav__brand" aria-label="NKU-iGEM 2026 home">
+      <img src="../img/shell/nku-mark.png" alt="" width="30" height="41" />
+      <span><b>NKU-iGEM</b><small>NKU26-China</small></span>
+    </a>
+  </div>
+  <div class="lnav__island lnav__island--menu lg" data-lg="bar">
+    <span class="lg__fx" aria-hidden="true"></span><span class="lg__tint" aria-hidden="true"></span><span class="lg__shine" aria-hidden="true"></span>
+    <span class="lnav__now" data-lnav-now aria-hidden="true"></span>
+
+    <nav class="lnav__links" aria-label="Primary">
+      <span class="lnav__lens lg" data-lg="lens" aria-hidden="true"><span class="lg__fx"></span><span class="lg__shine"></span></span>
+      <a class="lnav__link" href="../index.html" data-match="index.html">Home</a>
+      <div class="lnav__group">
+        <button type="button" class="lnav__link" aria-expanded="false" aria-controls="lnav-project">Project<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+        <div class="lnav__drop lg" id="lnav-project" data-lg="drop">
+          <span class="lg__fx" aria-hidden="true"></span><span class="lg__tint" aria-hidden="true"></span><span class="lg__shine" aria-hidden="true"></span>
+          <div class="lnav__drop-grid">
+            <a href="../pages/description.html"><b>Description</b><span>Why nematode signals, and what we propose</span></a>
+            <a href="../engineering/"><b>Engineering</b><span>Design, build, test, learn</span></a>
+            <a href="../pages/results.html"><b>Results</b><span>What the bench has shown so far</span></a>
+            <a href="../model/"><b>Model</b><span>From signal input to color output</span></a>
+            <a href="../parts/"><b>Parts</b><span>Registry entries</span></a>
+            <a href="../hardware/"><b>Hardware</b><span>The closed test device</span></a>
+            <a href="../software/"><b>Software</b><span>Tools we built</span></a>
+            <a href="../contribution/"><b>Contribution</b><span>What future teams can reuse</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="lnav__group">
+        <button type="button" class="lnav__link" aria-expanded="false" aria-controls="lnav-hp">Human Practices<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+        <div class="lnav__drop lg" id="lnav-hp" data-lg="drop">
+          <span class="lg__fx" aria-hidden="true"></span><span class="lg__tint" aria-hidden="true"></span><span class="lg__shine" aria-hidden="true"></span>
+          <div class="lnav__drop-grid">
+            <a href="../human-practices/"><b>Human Practices</b><span>Growers, experts and what changed</span></a>
+            <a href="../education/"><b>Education</b><span>Classes and outreach across China</span></a>
+            <a href="../entrepreneurship/"><b>Entrepreneurship</b><span>Who would use it, and how</span></a>
+            <a href="../sustainability/"><b>Sustainability</b><span>Soil health and the SDGs</span></a>
+            <a href="../inclusivity/"><b>Inclusion</b><span>Who we built this with</span></a>
+          </div>
+        </div>
+      </div>
+      <a class="lnav__link" href="../safety-and-security/" data-match="safety-and-security/">Safety</a>
+      <div class="lnav__group">
+        <button type="button" class="lnav__link" aria-expanded="false" aria-controls="lnav-team">Team<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+        <div class="lnav__drop lnav__drop--narrow lg" id="lnav-team" data-lg="drop">
+          <span class="lg__fx" aria-hidden="true"></span><span class="lg__tint" aria-hidden="true"></span><span class="lg__shine" aria-hidden="true"></span>
+          <div class="lnav__drop-grid">
+            <a href="../pages/team-members.html"><b>Members</b><span>The people behind the wiki</span></a>
+            <a href="../pages/attribution.html"><b>Attributions</b><span>Who did what</span></a>
+            <a href="../licensing/"><b>Licensing &amp; AI use</b><span>How this site may be reused</span></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <button type="button" class="lnav__search" data-search-open aria-haspopup="dialog" aria-controls="site-search" aria-expanded="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><line x1="20" y1="20" x2="16" y2="16"/></svg>
+      <span>Search</span>
+    </button>
+    <button type="button" class="lnav__toggle" aria-expanded="false" aria-controls="lnav-sheet" aria-label="Open menu"><i></i><i></i></button>
+  </div>
+  </div>
+
+  <div class="lnav__sheet lg" id="lnav-sheet" data-lg="sheet" hidden>
+    <span class="lg__fx" aria-hidden="true"></span><span class="lg__tint" aria-hidden="true"></span><span class="lg__shine" aria-hidden="true"></span>
+    <div class="lnav__sheet-body">
+      <a href="../index.html">Home</a>
+      <p>Project</p>
+      <a href="../pages/description.html">Description</a><a href="../engineering/">Engineering</a><a href="../pages/results.html">Results</a><a href="../model/">Model</a><a href="../parts/">Parts</a><a href="../hardware/">Hardware</a><a href="../software/">Software</a><a href="../contribution/">Contribution</a>
+      <p>Human Practices</p>
+      <a href="../human-practices/">Human Practices</a><a href="../education/">Education</a><a href="../entrepreneurship/">Entrepreneurship</a><a href="../sustainability/">Sustainability</a><a href="../inclusivity/">Inclusion</a>
+      <p>More</p>
+      <a href="../safety-and-security/">Safety</a><a href="../pages/team-members.html">Team</a><a href="../pages/attribution.html">Attributions</a><a href="../licensing/">Licensing &amp; AI use</a>
+    </div>
+  </div>
+</header>
+
+<svg class="lg-defs" width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden"><defs></defs></svg>
+
+
+  <main id="main">
+<header class="phero">
+    <div class="phero__bg" aria-hidden="true"><svg viewBox="0 0 1440 460" preserveAspectRatio="xMidYMid slice"><circle cx="1320" cy="120" r="70" fill="none" stroke="#9b7fe0" stroke-opacity="0.160" stroke-width="1.2"/><circle cx="1320" cy="120" r="130" fill="none" stroke="#9b7fe0" stroke-opacity="0.135" stroke-width="1.2"/><circle cx="1320" cy="120" r="200" fill="none" stroke="#9b7fe0" stroke-opacity="0.110" stroke-width="1.2"/><circle cx="1320" cy="120" r="280" fill="none" stroke="#9b7fe0" stroke-opacity="0.085" stroke-width="1.2"/><circle cx="1320" cy="120" r="370" fill="none" stroke="#9b7fe0" stroke-opacity="0.060" stroke-width="1.2"/><path d="M-40,140 C300,118 900,166 1480,128" fill="none" stroke="#f4ecdd" stroke-opacity="0.050" stroke-width="1"/><path d="M-40,210 C300,188 900,236 1480,198" fill="none" stroke="#f4ecdd" stroke-opacity="0.044" stroke-width="1"/><path d="M-40,280 C300,258 900,306 1480,268" fill="none" stroke="#f4ecdd" stroke-opacity="0.038" stroke-width="1"/><path d="M-40,350 C300,328 900,376 1480,338" fill="none" stroke="#f4ecdd" stroke-opacity="0.032" stroke-width="1"/><path d="M-40,420 C300,398 900,446 1480,408" fill="none" stroke="#f4ecdd" stroke-opacity="0.026" stroke-width="1"/></svg></div>
+    <div class="phero__inner">
+      <nav class="phero__crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>/</span>Lab<span>/</span><span>Software</span></nav>
+      <p class="eyebrow" style="margin-bottom:14px">Dry lab  /  Software</p>
+      <h1>The <span class='ink-accent'>code</span></h1>
+      <p class="phero__sub">The source-built static publishing system behind this wiki, generated by GitLab CI/CD into iGEM's public artifact directory.</p>
+      <div class="phero__meta"><span>Stack<b>HTML + CSS + JavaScript</b></span><span>Build<b>Python 3</b></span><span>Delivery<b>GitLab CI/CD</b></span></div>
+    </div>
+  </header>
+  <div class="strata strata--down" aria-hidden="true"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><rect width="1440" height="120" fill="#191222"/><path fill="#241830" d="M0,60 C240,18 420,96 720,64 C1020,32 1230,92 1440,52 L1440,120 L0,120 Z"/><path fill="#f7f2e8" d="M0,86 C260,52 470,110 720,86 C1010,58 1240,108 1440,82 L1440,120 L0,120 Z"/></svg></div>
+  <div class="layout">
+    <aside class="toc" aria-label="On this page">
+      <div class="toc__top">
+        <div class="toc__badge"><img src="../img/logo.svg" alt="" width="24" height="24"/></div>
+        <div class="toc__titles"><div class="toc__kicker">On this page</div><div class="toc__title">Software</div></div>
+        <button class="toc__collapse" aria-label="Collapse outline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 5 7 12 13 19"/><polyline points="18 5 12 12 18 19"/></svg></button>
+      </div>
+      <div class="toc__progress" aria-hidden="true"><i></i></div>
+      <ul class="toc__list">
+        <span class="toc__rail" aria-hidden="true"></span>
+        <li class="lvl-1"><a href="#overview">Overview</a></li>
+        <li class="lvl-1"><a href="#architecture">Architecture</a></li>
+        <li class="lvl-1"><a href="#pipeline">Build pipeline</a></li>
+        <li class="lvl-2"><a href="#publication">Publication controls</a></li>
+        <li class="lvl-2"><a href="#outline-search">Outline and search</a></li>
+        <li class="lvl-1"><a href="#authoring">Authoring</a></li>
+        <li class="lvl-1"><a href="#limits">Safeguards and limits</a></li>
+        <li class="lvl-2"><a href="#cleanup">Draft-marker cleanup</a></li>
+        <li class="lvl-2"><a href="#urls">Sponsor and friend URLs</a></li>
+        <li class="lvl-2"><a href="#boundaries">What this is not</a></li>
+        <li class="lvl-1"><a href="#repo">Repository</a></li>
+      </ul>
+      <div class="toc__foot"><a href="#main"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="6 11 12 5 18 11"/></svg>Back to top</a></div>
+    </aside>
+    <div class="content">
+      <div class="toc-mini" aria-label="On this page (mobile)">
+        <button type="button" class="toc-mini__bar" aria-expanded="false">
+          <div class="toc__badge"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#f4ecdd" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><line x1="20" y1="20" x2="15.5" y2="15.5"/></svg></div>
+          <b>Software</b><span class="now"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="toc-mini__panel"><ul>
+          <li class="lvl-1"><a href="#overview">Overview</a></li>
+        <li class="lvl-1"><a href="#architecture">Architecture</a></li>
+        <li class="lvl-1"><a href="#pipeline">Build pipeline</a></li>
+        <li class="lvl-2"><a href="#publication">Publication controls</a></li>
+        <li class="lvl-2"><a href="#outline-search">Outline and search</a></li>
+        <li class="lvl-1"><a href="#authoring">Authoring</a></li>
+        <li class="lvl-1"><a href="#limits">Safeguards and limits</a></li>
+        <li class="lvl-2"><a href="#cleanup">Draft-marker cleanup</a></li>
+        <li class="lvl-2"><a href="#urls">Sponsor and friend URLs</a></li>
+        <li class="lvl-2"><a href="#boundaries">What this is not</a></li>
+        <li class="lvl-1"><a href="#repo">Repository</a></li>
+        </ul></div>
+      </div>
+<section id="overview" data-toc="Overview">
+  <p class="eyebrow sec-label">01  -  Overview</p>
+  <h2 class="section-title">Supporting infrastructure, not a Software prize claim</h2>
+  <div class="prose">
+    <p>This page documents the publishing infrastructure used to build the team wiki. It is not submitted as the separate 2026 Software deliverable and does not, by itself, qualify the team for Best Software. A competition wiki is a multi-page publication that must stay consistent while it is edited, remain reproducible from source, and avoid non-iGEM runtime dependencies.</p>
+    <p>The answer is a single source of truth. Page text lives in <code>_content/*.html</code>, one fragment per page. The document shell lives in <code>_templates/base.html</code>, and the one navigation and the one footer live in <code>_partials/</code>. A single script, <code>build.py</code>, assembles them into the static HTML that is actually served. Nothing is copied between pages by hand, and generated HTML is never edited by hand either: the builder deletes and rewrites it on every run.</p>
+  </div>
+  <div class="grid grid-3 reveal" data-stagger style="margin-top:26px">
+    <div class="card"><span class="card__ring"></span><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l5 5v13H7z"/><polyline points="14 3 14 8 19 8"/></svg></div><h3>Edit one file</h3><p>Page text, the shared shell, and the navigation and footer each exist exactly once. Every page is assembled from them.</p></div>
+    <div class="card"><span class="card__ring"></span><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><polyline points="21 4 21 9 16 9"/></svg></div><h3>Run one command</h3><p>One script rebuilds every published page and regenerates the search index. Python 3 is the only prerequisite.</p></div>
+    <div class="card"><span class="card__ring"></span><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg></div><h3>Ship no dependencies</h3><p>Self-hosted fonts, native JavaScript, no runtime fetch and no CDN. The pages do still load repository-local CSS, JavaScript, fonts and images.</p></div>
+  </div>
+</section>
+<section id="architecture" data-toc="Architecture">
+  <p class="eyebrow sec-label">02  -  Architecture</p>
+  <h2 class="section-title">Source in, static pages out</h2>
+  <div class="prose">
+    <p>A page source is a fragment, not a document. It opens with one HTML-comment metadata block and continues with the body sections; it never restates the document head, the navigation or the footer. This page is one such fragment: <code>_content/software.html</code>.</p>
+    <p>For each fragment the builder parses that metadata, prepares the body, and generates the page banner from the metadata fields  -  the breadcrumb trail from <code>crumbs</code>, then the eyebrow, heading, subtitle and the small key/value row beneath them. It collects the outline markers found in the body, renders the floating outline island and its mobile counterpart, wraps everything in the two-column layout, and substitutes the tokens in <code>_templates/base.html</code> with the finished nav, footer, title, description and body.</p>
+    <p>Where the result lands is decided by metadata too. <code>route: software</code> writes this page to <code>public/software/index.html</code>; a page with no route falls back to <code>public/pages/&lt;name&gt;.html</code>; and <code>layout: home</code>, or the file name <code>index</code>, writes <code>public/index.html</code>. The relative asset prefix follows from the depth of that output path, so the generated site remains portable on iGEM's host.</p>
+  </div>
+  <figure class="figure" style="margin-top:26px">
+    <div class="figure__media">
+      <svg viewBox="0 0 560 224" style="max-width:560px" role="img" aria-labelledby="arch-fig-title arch-fig-desc">
+        <title id="arch-fig-title">How one page is built</title>
+        <desc id="arch-fig-desc">Editable sources are read by build.py. It recreates the public directory, writes the homepage and routed pages there, copies local static assets, and regenerates the search data. GitLab CI/CD publishes that directory as an artifact; generated output is not committed.</desc>
+        <rect x="6" y="26" width="170" height="156" rx="10" fill="#f7f2e8" stroke="#6e4fb8" stroke-opacity=".38" stroke-width="1.2"/>
+        <text x="91" y="50" text-anchor="middle" font-family="Space Mono,monospace" font-size="9.5" font-weight="700" letter-spacing="1.1" fill="#6c5d53">EDITABLE SOURCE</text>
+        <line x1="22" y1="60" x2="160" y2="60" stroke="#9a7a6b" stroke-opacity=".35" stroke-width="1"/>
+        <text x="22" y="84" font-family="Space Mono,monospace" font-size="11" fill="#241c2b">_content/*.html</text>
+        <text x="22" y="105" font-family="Space Mono,monospace" font-size="11" fill="#241c2b">_templates/base.html</text>
+        <text x="22" y="126" font-family="Space Mono,monospace" font-size="11" fill="#241c2b">_partials/nav.html</text>
+        <text x="22" y="147" font-family="Space Mono,monospace" font-size="11" fill="#241c2b">_partials/footer.html</text>
+        <text x="22" y="168" font-family="Space Mono,monospace" font-size="11" fill="#241c2b">_data/site.json</text>
+        <path d="M184 104 H201" fill="none" stroke="#9a7a6b" stroke-width="1.6" stroke-linecap="round"/>
+        <polyline points="195 98 202 104 195 110" fill="none" stroke="#9a7a6b" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="210" y="72" width="140" height="64" rx="10" fill="#6e4fb8"/>
+        <text x="280" y="100" text-anchor="middle" font-family="Space Mono,monospace" font-size="15" font-weight="700" fill="#f7f2e8">build.py</text>
+        <text x="280" y="119" text-anchor="middle" font-family="Space Mono,monospace" font-size="9.5" letter-spacing="1" fill="#cdbfd6">STDLIB ONLY</text>
+        <path d="M358 104 H377" fill="none" stroke="#9a7a6b" stroke-width="1.6" stroke-linecap="round"/>
+        <polyline points="371 98 378 104 371 110" fill="none" stroke="#9a7a6b" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="384" y="26" width="170" height="156" rx="10" fill="#f7f2e8" stroke="#6e4fb8" stroke-opacity=".38" stroke-width="1.2"/>
+        <text x="469" y="50" text-anchor="middle" font-family="Space Mono,monospace" font-size="9.5" font-weight="700" letter-spacing="1.1" fill="#6c5d53">GENERATED OUTPUT</text>
+        <line x1="400" y1="60" x2="538" y2="60" stroke="#9a7a6b" stroke-opacity=".35" stroke-width="1"/>
+        <text x="400" y="84" font-family="Space Mono,monospace" font-size="11" fill="#241c2b">public/index.html</text>
+        <text x="400" y="105" font-family="Space Mono,monospace" font-size="11" fill="#241c2b">public/route/</text>
+        <text x="400" y="126" font-family="Space Mono,monospace" font-size="11" fill="#241c2b">public/pages/</text>
+        <text x="400" y="147" font-family="Space Mono,monospace" font-size="11" fill="#241c2b">public/js/search-data.js</text>
+        <text x="400" y="168" font-family="Space Mono,monospace" font-size="9.5" fill="#7b7280">(rewritten every build)</text>
+        <line x1="6" y1="194" x2="554" y2="194" stroke="#9a7a6b" stroke-opacity=".3" stroke-width="1" stroke-dasharray="4 5"/>
+        <text x="280" y="212" text-anchor="middle" font-family="Space Mono,monospace" font-size="10" fill="#6c5d53">GitLab CI publishes the generated public artifact</text>
+      </svg>
+    </div>
+    <figcaption><b>Fig 1</b> One build: editable sources in, a disposable <code>public/</code> artifact out. GitLab CI/CD publishes the artifact; generated pages are not committed as source.</figcaption>
+  </figure>
+  <div class="prose" style="margin-top:26px">
+    <p>That last row of the diagram matters, because it is the claim most easily overstated. The output is static HTML, but a generated page is not a single self-contained file: it still loads <code>css/style.css</code>, <code>js/main.js</code>, the generated <code>js/search-data.js</code>, the self-hosted fonts under <code>fonts/</code> and the images under <code>img/</code>. Every one of those comes from inside the repository. The accurate claim is no runtime third-party or network dependency  -  not self-containment.</p>
+  </div>
+</section>
+<section id="pipeline" data-toc="Build pipeline">
+  <p class="eyebrow sec-label">03  -  Pipeline</p>
+  <h2 class="section-title">What one build does</h2>
+  <div class="prose">
+    <p>One command rebuilds the whole site. These are the stages it moves through, in the order the script runs them.</p>
+  </div>
+  <ul class="timeline" style="margin-top:24px">
+    <li><span class="when">Read</span><h4>Collect the sources</h4><p>The builder loads the base template, the shared nav and footer, and the optional site data used for the footer's sponsor and friend entries. It then lists every fragment in _content/ and parses each metadata block.</p></li>
+    <li><span class="when">Clean</span><h4>Recreate the artifact</h4><p>The disposable <code>public/</code> directory is recreated before anything new is written, so renamed or retired routes cannot linger as stale pages.</p></li>
+    <li><span class="when">Assemble</span><h4>Build each page</h4><p>Known scaffold phrases and marked placeholders are normalised, the banner and the outline are generated from the metadata and the content markers, and the template tokens are replaced. Draft pages never reach this stage.</p></li>
+    <li><span class="when">Write</span><h4>Route the file</h4><p>The route metadata decides the path inside <code>public/</code>. Nested routes are written as <code>public/route/index.html</code>, and the relative asset prefix is calculated from how deep that file sits.</p></li>
+    <li><span class="when">Index</span><h4>Regenerate the search data</h4><p>Visible text from every searchable page is written to js/search-data.js, which the wiki's search dialog loads as an ordinary repository-local script.</p></li>
+  </ul>
+  <div class="prose" style="margin-top:26px">
+    <h3 id="publication" data-toc-sub="Publication controls">Publication controls</h3>
+    <p>Metadata is a single HTML comment at the top of the file, one <code>key: value</code> per line. A handful of those keys decide what happens to a page, and the distinctions between them are worth stating exactly:</p>
+    <ul>
+      <li><code>route</code> sets the output path, as above.</li>
+      <li><code>layout: home</code> selects the homepage layout, which skips the outline and the two-column frame.</li>
+      <li><code>draft</code> pages are not built at all  -  they are filtered out before the build loop begins.</li>
+      <li><code>hidden</code> pages <em>are</em> built and reachable; they are only left out of the generated search index.</li>
+      <li>Public, non-draft pages are searchable by default. <code>search</code> exists to turn that off for one page, not to turn it on.</li>
+    </ul>
+    <p>This page carries <code>route: software</code> and no <code>draft</code>, <code>hidden</code> or <code>search</code> field of its own, so it is built, public and searchable.</p>
+    <h3 id="outline-search" data-toc-sub="Outline and search">Outline and search</h3>
+    <p>Neither the outline nor the search index is maintained by hand. A <code>&lt;section&gt;</code> carrying an <code>id</code> and a <code>data-toc</code> label becomes a first-level entry in both the desktop outline island and the mobile outline; any element with an <code>id</code> and a <code>data-toc-sub</code> label becomes a second-level entry beneath it. The two indented entries under Build pipeline in the outline beside this text are exactly that.</p>
+    <p>The search index is generated from the same body text. It holds one entry per searchable page, plus one entry for each top-level <code>&lt;section&gt;</code> that has an <code>id</code>, using that section's <code>data-toc</code> value as the entry title where one is present. A <code>data-toc-sub</code> marker contributes to the outline but does not create a search entry of its own  -  a useful thing to know before wondering why a subheading is not turning up in search.</p>
+  </div>
+</section>
+<section id="authoring" data-toc="Authoring">
+  <p class="eyebrow sec-label">04  -  Authoring</p>
+  <h2 class="section-title">Edit, build, inspect</h2>
+  <div class="prose">
+    <p>The loop is short enough to run between edits.</p>
+  </div>
+  <div class="feature-list reveal" data-stagger style="margin-top:26px">
+    <div class="feature"><span class="feature__idx">01</span><div><h3>Edit</h3><p>Change the fragment for the page in <code>_content/</code>, or the shell and partials that every page shares.</p></div><a class="feature__go" href="#architecture" aria-label="Go to Architecture"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a></div>
+    <div class="feature"><span class="feature__idx">02</span><div><h3>Build</h3><p>Run <code>python3 build.py</code> from the repository root. It rebuilds every published page and the search index together.</p></div><a class="feature__go" href="#pipeline" aria-label="Go to Build pipeline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a></div>
+    <div class="feature"><span class="feature__idx">03</span><div><h3>Inspect</h3><p>Read the generated page before committing. The builder assembles pages; it does not judge whether what they say is true.</p></div><a class="feature__go" href="#limits" aria-label="Go to Safeguards and limits"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a></div>
+  </div>
+  <div class="prose" style="margin-top:26px">
+    <p>The local command is <code>python3 build.py</code>; GitLab CI/CD runs <code>python3 build.py --output public</code>. Python 3 is the only build dependency, so the output is deterministic without downloading packages during the pipeline.</p>
+    <p>Everything editable sits in a handful of places:</p>
+    <ul>
+      <li><code>_content/*.html</code>  -  one fragment per page: the metadata block and the body sections.</li>
+      <li><code>_templates/base.html</code>  -  the document shell and the tokens the builder fills in.</li>
+      <li><code>_partials/nav.html</code> and <code>_partials/footer.html</code>  -  the single navigation and footer shared by every page.</li>
+      <li><code>_data/site.json</code>  -  optional sponsor and friend entries for the footer.</li>
+      <li><code>css/style.css</code> and <code>js/main.js</code>  -  the design system and the interaction layer, both self-hosted and dependency-free.</li>
+    </ul>
+    <p>Generated route HTML is deliberately absent from that list. Editing it is wasted work, because the next build deletes it and writes it again from source.</p>
+  </div>
+  <div class="callout callout--tip" style="margin-top:24px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10c.7.7 1 1.3 1 2h6c0-.7.3-1.3 1-2a6 6 0 0 0-4-10z"/></svg><div><b>Adding a section</b><p>Give the new &lt;section&gt; a unique id and a data-toc label, then run python3 build.py again. The desktop outline, the mobile outline and the search index all pick it up  -  there is no contents list to update separately. For a second-level outline entry, put an id and a data-toc-sub label on a heading inside the section.</p></div></div>
+  <div class="callout callout--warn" style="margin-top:24px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 16H3z"/><line x1="12" y1="9" x2="12" y2="14"/><circle cx="12" cy="17" r=".6" fill="currentColor"/></svg><div><b>scaffold.py can overwrite this page</b><p>A second script, scaffold.py, is a registry-driven generator that writes the first structural skeleton of each deliverable page. Its KEEP set contains only index and description, so re-running it rewrites every other registered page  -  this one included  -  over whatever has been hand-edited since. Treat it as a one-time bootstrap rather than a repeatable step.</p></div></div>
+</section>
+<section id="limits" data-toc="Safeguards and limits">
+  <p class="eyebrow sec-label">05  -  Limits</p>
+  <h2 class="section-title">Small guarantees, stated exactly</h2>
+  <div class="prose">
+    <p>The builder does a little tidying on the way out, and it is worth being exact about how little it promises. Each of these safeguards is narrower than its name suggests.</p>
+    <h3 id="cleanup" data-toc-sub="Draft-marker cleanup">Draft-marker cleanup</h3>
+    <p>Two things happen to a body before it is written. A fixed table of known scaffold phrases is replaced with neutral wording, and paragraphs or spans carrying the scaffold's explicit placeholder marker class are converted into a public-facing pending-documentation slot. Both are literal operations: the table matches exact strings, and the conversion fires only on that one marker. Ordinary paragraphs are never rewritten by guesswork.</p>
+    <p>So nothing here detects an unmarked placeholder, an editorial note left in prose, or a claim the evidence does not support. It is a safety net for one specific authoring convention, not a content validator. Keeping a page honest remains an editorial job.</p>
+    <h3 id="urls" data-toc-sub="Sponsor and friend URLs">Sponsor and friend URLs</h3>
+    <p>The optional <code>_data/site.json</code> supplies the sponsor and friend entries rendered into the shared footer. For those URLs only, the builder drops <code>javascript:</code> and <code>data:</code> schemes and renders the affected entry as plain text instead of a link, rather than failing the build over a bad value. That is narrow handling of two data fields. It is not a site-wide URL check, not a link validator and not a security audit of anything.</p>
+    <h3 id="boundaries" data-toc-sub="What this is not">What this is not</h3>
+    <p>This software builds and presents the wiki, and that is the whole of it. It does not analyse experimental measurements, infer a detector call, select a biological target, run a detector or demonstrate field readiness. There is no application backend, database, or scientific-analysis API; GitLab CI/CD only turns reviewed source files into the public static artifact.</p>
+    <p>No claim is made here about a security audit, accessibility conformance, universal browser support or perfect link validation either. None of those has been established, and this page does not imply otherwise.</p>
+  </div>
+  <div class="callout callout--warn" style="margin-top:24px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 16H3z"/><line x1="12" y1="9" x2="12" y2="14"/><circle cx="12" cy="17" r=".6" fill="currentColor"/></svg><div><b>Not yet verified on the live host</b><p>Deployment to the real iGEM GitLab Pages host has not been verified. Rendering, the relative paths and the internal links as served from that host are still an open question and remain a required check before the wiki freeze.</p></div></div>
+</section>
+<section id="repo" data-toc="Repository">
+  <p class="eyebrow sec-label">06  -  Repository</p>
+  <h2 class="section-title">Read the code</h2>
+  <div class="prose">
+    <p>Everything described above is in one repository, and the shortest way to check any of it is to read <code>build.py</code> from top to bottom. It is a single standard-library file, and every behaviour on this page is somewhere inside it.</p>
+    <p>Use the visible <b>Source repository</b> link in the footer to inspect the build script, templates, page sources, design system, and interaction layer. On the official iGEM deployment this link is injected from GitLab's <code>CI_PROJECT_URL</code>.</p>
+    <p>That link is ordinary page content. No script, stylesheet, font or image is fetched from it, or from any other off-site origin, while a page is being read  -  which is the entire point of building the site this way.</p>
+  </div>
+</section>
+    </div>
+  </div>
+  <div class="strata strata--down" aria-hidden="true"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><rect width="1440" height="120" fill="#f7f2e8"/><path fill="#241830" d="M0,60 C240,18 420,96 720,64 C1020,32 1230,92 1440,52 L1440,120 L0,120 Z"/><path fill="#180f1e" d="M0,86 C260,52 470,110 720,86 C1010,58 1240,108 1440,82 L1440,120 L0,120 Z"/></svg></div>
+  </main>
+
+  <footer class="footer">
+
+  <div class="footer__inner">
+
+    <div class="footer__top">
+      <div class="footer__brand">
+        <b>NKU-iGEM 2026 Team</b>
+        <p>A Nankai University student project investigating a synthetic-biology sensing concept for plant-parasitic nematode-associated signals; component and system validation remain open.</p>
+      </div>
+      <div class="footer__col">
+        <h5>Project</h5>
+        <a href="../pages/description.html">Description</a>
+        <a href="../contribution/">Contribution</a>
+        <a href="../engineering/">Engineering</a>
+        <a href="../pages/results.html">Results</a>
+      </div>
+      <div class="footer__col">
+        <h5>People &amp; Practice</h5>
+        <a href="../human-practices/">Human Practices</a>
+        <a href="../education/">Education</a>
+        <a href="../inclusivity/">Inclusivity</a>
+        <a href="../pages/team-members.html">Team</a>
+        <a href="../safety-and-security/">Safety</a>
+        <a href="../pages/attribution.html">Attributions</a>
+      </div>
+      <div class="footer__col">
+        <h5>Open science</h5>
+        <a href="../model/">Model</a>
+        <a href="../software/">Software</a>
+        <a href="../sustainability/">Sustainability</a>
+        <a href="../licensing/">Licensing &amp; AI use</a>
+        <a href="https://github.com/CJerryR/NKU26-wiki">Source repository</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 NKU iGEM Team &middot; <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>
+      <span>Fraunces, Spline Sans &amp; Space Mono: SIL OFL 1.1 &middot; Three.js: MIT</span>
+    </div>
+  </div>
+</footer>
+
+
+  <div class="site-search" id="site-search" role="dialog" aria-modal="true" aria-labelledby="site-search-title" hidden>
+    <div class="site-search__backdrop" data-search-close></div>
+    <section class="site-search__panel" role="document">
+      <div class="site-search__head">
+        <div>
+          <p class="eyebrow">Search the wiki</p>
+          <h2 id="site-search-title">Find articles, sections, and evidence.</h2>
+        </div>
+        <button class="site-search__close" type="button" data-search-close aria-label="Close search">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+        </button>
+      </div>
+      <label class="site-search__box">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.5" y2="16.5"/></svg>
+        <span class="sr-only">Search query</span>
+        <input type="search" data-search-input autocomplete="off" spellcheck="false" placeholder="Search project content..." />
+      </label>
+      <div class="site-search__meta" data-search-meta>Type to search the full wiki.</div>
+      <div class="site-search__results" data-search-results></div>
+    </section>
+  </div>
+
+  <div class="detective" data-detective>
+  <p class="detective__bubble" role="status" aria-live="polite"></p>
+  <button type="button" class="detective__btn" aria-label="Yeast detective: back to the top">
+    <img src="../img/shell/detective.png" width="120" height="110" alt="" />
+  </button>
+</div>
+
+  <script src="../js/search-data.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/shell.js"></script>
+  
+</body>
+</html>
