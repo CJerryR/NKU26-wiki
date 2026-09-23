@@ -406,3 +406,47 @@ html.is-paged[data-page="world"] .detective *,html.is-paged[data-page="loop"] .d
 .co__field.is-merged .co__orb--3 b,.co__field.is-merged .co__orb--3 svg{transform:translateX(-18%)}
 .co__field.is-merged .co__orb--18 b,.co__field.is-merged .co__orb--18 svg{transform:translateX(18%)}
 .co__orb b,.co__orb svg{transition:transform .8s var(--ease-o)}
+
+/* ---------- v4: native scrolling, project first, sample data off ---------- */
+html.home-snap{scroll-snap-type:y proximity;scroll-padding-top:0}
+.home main > section{scroll-snap-align:start}
+html.home-snap .pager{display:flex}
+/* hero */
+.op__hero{gap:0}
+.op__team{display:flex;align-items:center;gap:12px;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(243,235,224,.78)}
+.op__team i{width:24px;height:1.5px;background:currentColor;opacity:.6}
+.op__title{margin-top:clamp(10px,2vh,20px);font-size:clamp(64px,12vw,200px);line-height:.86}
+.op__lede{margin-top:clamp(14px,2.4vh,24px);max-width:34ch;font-size:clamp(17px,1.5vw,22px);line-height:1.45;color:rgba(246,238,228,.9);text-wrap:balance}
+.op__cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:clamp(20px,3.4vh,34px);pointer-events:auto}
+.op__btn{display:inline-flex;align-items:center;height:46px;padding:0 22px;border-radius:999px;font-size:15px;font-weight:600;color:#f6eee4;box-shadow:inset 0 0 0 1.5px rgba(246,238,228,.45);transition:background .25s,box-shadow .25s,transform .3s var(--ease-o)}
+.op__btn:hover{transform:translateY(-2px);box-shadow:inset 0 0 0 1.5px #f6eee4}
+.op__btn--main{background:#f5c21b;color:#231829;box-shadow:none}
+.op__btn--main:hover{background:#ffd34d;box-shadow:0 12px 30px -10px rgba(245,194,27,.6)}
+.op__q{margin-top:clamp(22px,4vh,40px);font-size:clamp(18px,1.6vw,24px);color:rgba(243,235,224,.7)}
+.op__hint{margin-top:10px}
+/* world: without measured data the map shows land and reported cases only */
+.world__src{margin-top:6px;font-size:12px;line-height:1.45;color:var(--ink-2)}
+.world--nodata .world__legend>p:first-child,.world--nodata .world__ramp,.world--nodata .world__legend>span,.world--nodata .world__note{display:none}
+.world--nodata .world__case{margin-top:0}
+.world.is-iris{height:190vh}
+.world.is-iris .world__pin{position:sticky;top:0;height:100vh;height:100svh}
+/* china: one literature-based map with its reading beside it */
+.cn--one .cn__row{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);align-items:center;gap:clamp(24px,4vw,64px)}
+.cn__side h3{font-family:var(--sans);font-size:clamp(22px,2vw,30px);font-weight:600;letter-spacing:-.02em;line-height:1.12;margin:6px 0 16px}
+.cn__kicker{font-size:12.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#ffa24a}
+.cn__side ul{display:grid;gap:12px;font-size:15px;line-height:1.5}
+.cn__side li{display:grid;grid-template-columns:96px 1fr;gap:12px}
+.cn__side li b{color:#fff}
+.cn__side li span{color:rgba(239,230,243,.78)}
+.cn__side small{display:block;margin-top:14px;font-size:12.5px;color:rgba(239,230,243,.62)}
+/* legibility: small print at AA contrast */
+.home{--ink-3:#6b5f71}
+.cn__src{color:rgba(239,230,243,.64)}
+@media (max-width:980px){
+  .cn--one .cn__row{grid-template-columns:1fr}
+  .world.is-iris{height:auto}
+}
+@media (max-width:760px){
+  .home .detective__btn{width:66px;height:61px}
+  .home .detective__bubble{display:none}
+}

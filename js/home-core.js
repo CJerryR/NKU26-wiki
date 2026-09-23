@@ -23,6 +23,11 @@
     var r = el.getBoundingClientRect(), span = r.height - innerHeight;
     return span <= 0 ? (r.top <= 0 ? 1 : 0) : H.clamp(-r.top / span, 0, 1);
   };
+  /* images live on static.igem.wiki once uploaded; build.py passes the URL map in NKU_HOME.assets */
+  H.asset = function (rel) {
+    var m = win.NKU_HOME && win.NKU_HOME.assets, key = rel.replace(/^img\//, '');
+    return (m && m[key]) || (doc.body.getAttribute('data-path-prefix') || '') + rel;
+  };
   H.dpr = function () { return Math.min(win.devicePixelRatio || 1, 2); };
   H.fit = function (cv, w, h, max) {
     var d = Math.min(H.dpr(), max || 2);

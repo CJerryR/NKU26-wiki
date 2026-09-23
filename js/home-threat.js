@@ -74,7 +74,7 @@
     el('path', { d: soilD }, clip);
     var soil = el('g', { 'clip-path': 'url(#thSoilClip)' }, cam);
     el('rect', { x: -1200, y: GROUND - 20, width: 5200, height: 2000, fill: 'url(#thSoil)' }, soil);
-    el('image', { href: P + 'img/home/soil-print.png', x: -1200, y: GROUND + 10, width: 5200, height: 1500, preserveAspectRatio: 'none', opacity: .045 }, soil);
+    el('image', { href: H.asset('img/home/soil-print.png'), x: -1200, y: GROUND + 10, width: 5200, height: 1500, preserveAspectRatio: 'none', opacity: .045 }, soil);
     for (var r = 0; r < 5; r++) {
       var y0 = GROUND + 150 + r * 125, pts = [];
       for (x = -1200; x <= 4000; x += 160) pts.push([x, y0 + Math.sin(x / 260 + r) * 16]);

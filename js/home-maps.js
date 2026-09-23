@@ -21,7 +21,9 @@
     }
     return H.clamp(v, 0, 1);
   }
-  if (window.NKU_ABUNDANCE && window.NKU_ABUNDANCE.length) {
+  // Without the team's measured abundance file, nothing drawn from SPOTS is shown on the page.
+  var REAL = !!(window.NKU_ABUNDANCE && window.NKU_ABUNDANCE.length);
+  if (REAL) {
     var pts = window.NKU_ABUNDANCE, mx = 0;
     Array.prototype.forEach.call(document.querySelectorAll('[data-demo-flag]'), function (e) { e.hidden = true; });
     pts.forEach(function (p) { p.l = Math.log10(p.value + 1); mx = Math.max(mx, p.l); });
@@ -76,9 +78,11 @@
     function size() { var r = cv.getBoundingClientRect(); w = r.width; h = r.height; ctx = H.fit(cv, w, h, 2); draw(); }
     function X(lon) { return (lon + 180) * 2.5 / 900 * w; }
     function Y(lat) { return (84 - lat) * 2.5 / 350 * h; }
+    if (!REAL) sec.classList.add('world--nodata');
     function draw() {
       if (!ctx) return;
       ctx.clearRect(0, 0, w, h);
+      if (!REAL) return;
       ctx.save(); ctx.scale(w / 900, h / 350); ctx.clip(landPath); ctx.setTransform(H.dpr(), 0, 0, H.dpr(), 0, 0);
       var s = w / 900 * 2.5;
       SPOTS.forEach(function (sp) {
@@ -127,7 +131,7 @@
       var C = CONT[k], v = field(ll[0], ll[1]);
       H.$('[data-flip-kicker]', card).textContent = 'Continent';
       H.$('[data-flip-title]', card).textContent = C.name;
-      H.$('[data-flip-body]', card).innerHTML = '<dl><dt>Nematodes</dt><dd>' + C.nem + '</dd><dt>Crops</dt><dd>' + C.crops + '</dd><dt>Abundance</dt><dd><div class="flipcard__bar"><i style="width:' + Math.round(20 + v * 80) + '%"></i></div></dd></dl><small>' + C.note + ' Abundance bar reads the sample colour layer.</small>';
+      H.$('[data-flip-body]', card).innerHTML = '<dl><dt>Nematodes</dt><dd>' + C.nem + '</dd><dt>Crops</dt><dd>' + C.crops + '</dd>' + (REAL ? '<dt>Abundance</dt><dd><div class="flipcard__bar"><i style="width:' + Math.round(20 + v * 80) + '%"></i></div></dd>' : '') + '</dl><small>' + C.note + '</small>';
       var pr = pin.getBoundingClientRect(), x = e.clientX - pr.left, y = e.clientY - pr.top, cw = 290;
       var left = x + 16 + cw > pr.width - 12 ? x - cw - 16 : x + 16, top = H.clamp(y - 40, 70, pr.height - 260);
       card.style.left = left + 'px'; card.style.top = top + 'px';
@@ -163,9 +167,27 @@
       }
       if (visible) requestAnimationFrame(tick);
     }
+    /* native scrolling: the section pins and the iris follows scroll, from the flashlight's last spot */
+    function scrollIris() { return !(H.pager && H.pager.isPaged()) && innerWidth > 980 && !H.reduced; }
+    function onIrisScroll() {
+      if (!sec.classList.contains('is-iris')) return;
+      var p = H.progress(sec), k = H.smooth(.02, .5, p), pr = pin.getBoundingClientRect();
+      var L = H.lastLight || { x: pr.width * .5, y: pr.height * .55, r: 140 };
+      var far = Math.hypot(Math.max(L.x, pr.width - L.x), Math.max(L.y, pr.height - L.y)) + 80;
+      if (k >= 1) { if (!opened) openNow(); return; }
+      if (opened) { opened = false; sec.classList.remove('is-open'); }
+      setMask(L.x, L.y, p <= 0 ? 0 : H.lerp(Math.max(40, L.r * .85), far, H.ease(k)));
+      bloom = H.smooth(.2, .5, p); draw();
+      if (!counted && k > .4) { counted = true; count(); }
+    }
+    addEventListener('scroll', onIrisScroll, { passive: true });
     H.scene('world', {
       cutIn: true,
-      set: function (i, dir) { if (dir < 0) openNow(); else closeNow(); },
+      set: function (i, dir) {
+        if (scrollIris()) { sec.classList.add('is-iris'); onIrisScroll(); return; }
+        sec.classList.remove('is-iris');
+        if (dir < 0) openNow(); else closeNow();
+      },
       enter: function (dir, info) {
         if (opened) return 0;
         if (!info || !info.cut || !H.lastLight || innerWidth <= 980) { openNow(); return 0; }
@@ -180,7 +202,7 @@
       (function step(n) { var k = H.ease(H.clamp((n - s) / 1400, 0, 1)); el.textContent = 'US$' + Math.round(173 * k); if (k < 1) requestAnimationFrame(step); })(s);
     }
     var visible = false;
-    H.onView(sec, function (v) { var was = visible; visible = v; if (v && !was) requestAnimationFrame(tick); if (v && !opened && !(H.pager && H.pager.isPaged())) openNow(); });
+    H.onView(sec, function (v) { var was = visible; visible = v; if (v && !was) requestAnimationFrame(tick); if (v && !opened && !(H.pager && H.pager.isPaged()) && !sec.classList.contains('is-iris')) openNow(); });
     size(); addEventListener('resize', size);
   }
 
@@ -190,7 +212,7 @@
   var RKN = ['Anhui', 'Fujian', 'Guangdong', 'Guangxi', 'Guizhou', 'Hainan', 'Hebei', 'Heilongjiang', 'Henan', 'Hubei', 'Hunan', 'Jiangsu', 'Jiangxi', 'Inner Mongolia', 'Qinghai', 'Shaanxi', 'Shandong', 'Sichuan', 'Yunnan', 'Zhejiang', 'Xinjiang'];
   var SITES = ['Heilongjiang', 'Jilin', 'Shandong', 'Henan', 'Hebei', 'Anhui', 'Jiangsu', 'Hubei', 'Hunan', 'Guangdong', 'Guangxi', 'Yunnan', 'Sichuan', 'Xinjiang', 'Shaanxi', 'Inner Mongolia'];
   var TEXT = {
-    env: { k: 'Environment', t: 'Plant-feeding nematode abundance in China', b: '<p>Same Herbivores field, unit (individuals per 100 g dry soil) and colour scale as the world map; China is not re-scaled.</p><p>Abundance shows potential exposure. It does not stand for crop loss or disease severity.</p><small>Colours read the sample layer until the team dataset is added.</small>' },
+    env: { k: 'Environment', t: 'Plant-feeding nematode abundance in China', b: '<p>Same Herbivores field, unit (individuals per 100 g dry soil) and color scale as the world map; China is not re-scaled.</p><p>Abundance shows potential exposure. It does not stand for crop loss or disease severity.</p><small>Colours read the sample layer until the team dataset is added.</small>' },
     agr: { k: 'Agriculture', t: 'Soybean cyst and southern root-knot nematodes', b: '<ul><li><b>Soybean cyst</b><span>Reported in 22 provinces. Typical yield loss 20–30%, 60–70% in badly infested fields; over US$120 million in soybean losses a year (estimate).</span></li><li><b>Root-knot</b><span>Records in 20 provinces (CABI) plus Xinjiang greenhouses (2021–23). Over 3,000 host plants, from tomato to tobacco.</span></li></ul><small>Markers show reported presence, not how severe damage is across a province.</small>' },
     pot: { k: 'Potential', t: 'Where an early signal could help next', b: '<p>Our soil programme and interviews look for places where a quick, early risk signal would matter most.</p><small>Bar height: sample abundance at candidate sampling regions, to be redrawn from the team’s field data.</small>' }
   };
@@ -198,6 +220,14 @@
   function china() {
     var sec = H.$('[data-china]'); if (!sec || !GEO.china) return;
     var G = GEO.china, maps = {};
+    // environment and potential maps are drawn from sample values; show them only with real data
+    if (!REAL) {
+      sec.classList.add('cn--one');
+      H.$$('[data-cmap="env"], [data-cmap="pot"]', sec).forEach(function (f) { f.remove(); });
+      var side = document.createElement('div'); side.className = 'cn__side';
+      side.innerHTML = '<p class="cn__kicker">' + TEXT.agr.k + '</p><h3>' + TEXT.agr.t + '</h3>' + TEXT.agr.b;
+      H.$('.cn__row', sec).appendChild(side);
+    }
     H.$$('[data-cmap]', sec).forEach(function (fig) {
       var kind = fig.getAttribute('data-cmap'), m = makeMap(kind, H.$('canvas', fig), false);
       maps[kind] = m;
@@ -209,7 +239,8 @@
     });
     addEventListener('resize', function () { Object.keys(maps).forEach(function (k) { maps[k].resize(); }); });
     // focus dialog
-    var dlg = H.$('[data-cfocus]', sec), fcv = H.$('[data-cfocus-canvas]', sec), order = ['env', 'agr', 'pot'], cur = 0, fm = null, lastFocus;
+    var dlg = H.$('[data-cfocus]', sec), fcv = H.$('[data-cfocus-canvas]', sec), order = REAL ? ['env', 'agr', 'pot'] : ['agr'], cur = 0, fm = null, lastFocus;
+    if (!REAL) H.$('.cnfocus__nav', dlg).hidden = true;
     function openFocus(kind) {
       lastFocus = document.activeElement; cur = order.indexOf(kind);
       dlg.hidden = false; requestAnimationFrame(function () { dlg.classList.add('is-open'); fill(); });
@@ -225,8 +256,8 @@
     function close() { dlg.classList.remove('is-open'); document.documentElement.style.overflow = ''; setTimeout(function () { dlg.hidden = true; if (fm) { fm.destroy(); fm = null; } }, 350); if (lastFocus) lastFocus.focus(); }
     H.$('[data-cfocus-close]', dlg).addEventListener('click', close);
     dlg.addEventListener('click', function (e) { if (e.target === dlg) close(); });
-    H.$('[data-cf-prev]', dlg).addEventListener('click', function () { cur = (cur + 2) % 3; fill(); });
-    H.$('[data-cf-next]', dlg).addEventListener('click', function () { cur = (cur + 1) % 3; fill(); });
+    H.$('[data-cf-prev]', dlg).addEventListener('click', function () { cur = (cur + order.length - 1) % order.length; fill(); });
+    H.$('[data-cf-next]', dlg).addEventListener('click', function () { cur = (cur + 1) % order.length; fill(); });
     document.addEventListener('keydown', function (e) { if (!dlg.hidden && e.key === 'Escape') close(); });
 
     function inside(lon, lat) {

@@ -1,6 +1,17 @@
-# NKU-iGEM 2026 Wiki（首页重做 v3）
+# NKU-iGEM 2026 Wiki（首页重做 v4：合规版）
 
 纯静态站点。`python3 build.py` 把 `_content/`、`_partials/`、`css/`、`js/`、`img/` 拼装到 `public/`，不依赖任何框架或 npm。
+
+> **任何人或 AI 助手修改本仓库前，必须先读 [`AGENTS.md`](AGENTS.md)。** 里面是 iGEM 2026 合规的硬性要求，包括：
+> - 标准 URL
+> - 页脚链接到 GitLab 仓库，并显示 CC BY 4.0
+> - 资源托管在 static.igem.wiki
+> - 10 MiB 体积上限
+> - 使用官方 Attributions 表
+> - 不编造数据和引用
+> - 不劫持滚动
+>
+> `CLAUDE.md` 会让 Claude Code 自动加载这份文件。
 
 ## 本地运行
 
@@ -14,7 +25,13 @@ cd public && python3 -m http.server 8000
 
 ## 首页结构
 
-### 翻页方式：一页一页走
+### 滚动方式
+
+默认是**原生滚动**，只在分区边缘加轻度吸附（`scroll-snap-type: y proximity`），右侧圆点可以直接跳到各分区。`opening` 和 `threat` 是吸顶长场景，按滚动位置推进各个步骤。世界地图分区也会吸顶：光圈从手电筒最后停留的位置随滚动展开。
+
+下面描述的"一页一页走"模式仍然保留在 `js/home-pager.js` 里，但**默认关闭**，只有 `_data/site.json` 的 `home_paged_scroll` 设为 `true` 才会启用。它会接管滚轮，评审在触控板上可能会觉得页面"卡住"，所以是否打开由团队决定。
+
+### 翻页方式：一页一页走（可选，默认关闭）
 
 宽屏且使用鼠标或触控板时（`pointer:fine`，宽 ≥ 960px，高 ≥ 600px，且未开启“减少动态效果”），首页按页翻动，由 `js/home-pager.js` 控制：
 
@@ -141,6 +158,35 @@ python3 tools/audit_wiki_content.py --generated --generated-root public
 审查脚本会拦截占位词、编辑指令和过度声明，提交前应为 PASS。
 
 ## 本版文件变更
+
+v4（合规）：
+
+- **标准 URL**：所有页面改为 `/<route>/`，不再有 `pages/*.html`。
+  - 新增或调整的路由：`description`、`results`、`notebook`、`experiments`（原 wet-lab）、`team`（原 team-members）、`attributions`（原 attribution）。
+  - `results`、`notebook`、`experiments` 取消了隐藏。
+- **Attributions**：页面顶部嵌入官方表格 `teams.igem.org/wiki/6303/attributions`。
+- **页脚**：仓库链接只取 GitLab CI 提供的地址，或由 `site.json` 的 `igem_team_slug` 生成的 gitlab.igem.org 地址，删除了 GitHub 回退地址。
+- **资源托管**：`build.py --static-base …` 会把图片和字体引用改成 static.igem.wiki 地址，并生成 `_uploads/` 和上传清单。首页脚本的图片路径改为经过 `NKUH.asset()`。
+- **审查脚本**扩展了以下检查：
+  - 标准 route 是否齐全
+  - 每页页脚是否有 CC BY 4.0 和 GitLab 链接
+  - 是否从 iGEM 以外加载资源（允许 igem.org 和 igem.wiki）
+  - Attributions 页是否嵌入了官方表格
+  - `public/` 是否小于 10 MiB
+  - 图片和字体是否仍由仓库提供
+  - `--release` 模式会把警告也算作失败
+- **首页**：
+  - 首屏以 NemaKlear 为主标题，配一句话说明和两个入口按钮。
+  - 默认改回原生滚动。
+  - 示意数据不再显示：世界丰度色块、中国"环境"和"潜力"两张图，只有 `js/home-abundance.js` 提供实测数据时才会出现。
+  - US$173 billion 标注了出处。
+  - 首页拼写统一为 color。
+  - 小字对比度提高。
+  - 手机端修复了导航遮挡队名、玻璃过透、吉祥物遮挡标题的问题。
+- **AI 使用披露**：`/licensing` 补充了 Anthropic Claude 的使用范围。
+- **新增** `AGENTS.md` 和 `CLAUDE.md`。
+
+v3：
 
 v3（本次）：
 

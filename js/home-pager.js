@@ -10,6 +10,7 @@
      ff()    finish a running step at once
      cutIn   arrive without scrolling when coming from the previous page
      tall    height in viewports when pages are not snapped (narrow screens)
+   Off unless _data/site.json sets home_paged_scroll: the default is native scrolling.
    Narrow screens, touch-only devices and reduced motion keep native scrolling;
    steps then play from scroll position (tall scenes) or when a page is in view. */
 (function () {
@@ -29,6 +30,9 @@
     });
     if (!pages.length) return;
     var mq = matchMedia('(pointer: fine) and (min-width: 960px) and (min-height: 600px)');
+    // Page-by-page mode takes over the wheel, so it is off unless _data/site.json sets home_paged_scroll.
+    var optIn = !!(window.NKU_HOME && window.NKU_HOME.pagedScroll);
+    function wantPaged() { return optIn && mq.matches && !H.reduced; }
     var paged = false, cur = 0, st = 0, busy = false, busyTimer = 0, atFoot = false, tween = 0;
     function call(pg, fn) { var f = pg.sp[fn]; if (!f) return 0; var r = f.apply(pg.sp, [].slice.call(arguments, 2)); return typeof r === 'number' ? r : 0; }
 
@@ -171,7 +175,7 @@
     addEventListener('keydown', onKey);
     var rz; addEventListener('resize', function () {
       clearTimeout(rz); rz = setTimeout(function () {
-        if (mq.matches && !H.reduced) { if (!paged) enable(); else scrollTo(0, atFoot ? maxY() : top(cur)); }
+        if (wantPaged()) { if (!paged) enable(); else scrollTo(0, atFoot ? maxY() : top(cur)); }
         else disable();
       }, 150);
     });
@@ -184,6 +188,7 @@
     /* ---------- native scrolling ---------- */
     var fb = null;
     function setupFallback() {
+      root.classList.toggle('home-snap', mq.matches && !H.reduced);
       if (fb) return; fb = true;
       pages.forEach(function (pg) {
         pg.done = 0; pg.running = false;
@@ -222,7 +227,7 @@
       dots();
     }
 
-    if (mq.matches && !H.reduced) enable(); else setupFallback();
+    if (wantPaged()) enable(); else setupFallback();
     H.pager = { next: next, prev: prev, go: function (id) { pages.forEach(function (pg, i) { if (pg.id === id) { if (paged) go(i, i >= cur ? 1 : -1); else pg.el.scrollIntoView({ behavior: H.reduced ? 'auto' : 'smooth' }); } }); }, isPaged: function () { return paged; } };
     H.goto = H.pager.go;
   }

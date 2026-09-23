@@ -187,7 +187,7 @@
       teach: [C[3], R[1], 'Teaching', 'hp', 'Classes and outreach that bring questions back.'],
       expert: [C[3], R[2], 'Expert interviews', 'hp', 'Agronomists and testers shape how results are used.'],
       samples: [C[4], R[0], 'Samples', 'wet', 'Real soil samples to test against.'],
-      bench: [C[4], R[2], 'Bench tests', 'wet', 'Does the yeast respond, and can we read the colour?']
+      bench: [C[4], R[2], 'Bench tests', 'wet', 'Does the yeast respond, and can we read the color?']
     };
     function box(k) { var n = N[k], core = n[3] === 'core', w = n[2].length * (core ? 9.8 : 8.6) + (core ? 30 : 26); return { x: n[0], y: n[1], w: w, h: 40, l: n[0] - w / 2, r: n[0] + w / 2, t: n[1] - 20, b: n[1] + 20 }; }
     var G = 7; // gap between a line end and a node

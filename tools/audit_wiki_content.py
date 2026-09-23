@@ -6,24 +6,55 @@ from __future__ import annotations
 import argparse
 import html
 import importlib.util
+import json
 import re
 import sys
 from pathlib import Path
 
 
+WARN: list[str] = []
 META_RE = re.compile(r"^\s*<!--META(?P<meta>.*?)-->\s*", re.S)
 ID_RE = re.compile(r"\bid=[\"']([^\"']+)[\"']", re.I)
 TOC_TAG_RE = re.compile(r"<[^>]+\bdata-toc(?:-sub)?=[\"'][^\"']*[\"'][^>]*>", re.I)
-EXTERNAL_RUNTIME_RE = re.compile(
-    r"<(?:script|img|iframe)\b[^>]*\bsrc=[\"']https?://|<link\b[^>]*\bhref=[\"']https?://",
+# Everything a page loads must come from iGEM infrastructure (template README, 2026).
+# Links (<a href>) to other sites are fine; loading from them is not.
+EXTERNAL_LOAD_RE = re.compile(
+    r"<(?:script|img|iframe|video|audio|source|embed|object)\b[^>]*\b(?:src|data)=[\"']https?://(?P<h1>[^/\"']+)"
+    r"|<link\b[^>]*\bhref=[\"']https?://(?P<h2>[^/\"']+)"
+    r"|url\(\s*[\"']?https?://(?P<h3>[^/\"')]+)"
+    r"|@import\s+[\"']https?://(?P<h4>[^/\"']+)",
     re.I,
 )
+IGEM_HOST_RE = re.compile(r"(?:^|\.)igem\.(?:org|wiki)$", re.I)
+GITLAB_REPO_RE = re.compile(r"href=[\"']https://gitlab\.igem\.org/\d{4}/[a-z0-9-]+/?[\"']", re.I)
+CC_BY_RE = re.compile(r"creativecommons\.org/licenses/by/4\.0", re.I)
+ARTIFACT_LIMIT = 10 * 1024 * 1024   # gitlab.igem.org maximum job artifact
+
+
+class _Ext:
+    """Keeps the old call sites: .search() finds a load from a non-iGEM host."""
+    @staticmethod
+    def search(text: str):
+        for m in EXTERNAL_LOAD_RE.finditer(text):
+            host = next(h for h in m.groups() if h)
+            if not IGEM_HOST_RE.search(host.split(":")[0]):
+                return m
+        return None
+
+
+EXTERNAL_RUNTIME_RE = _Ext()
 RESOURCE_RE = re.compile(
     r"<(?P<tag>a|img|script|link)\b[^>]*\b(?:href|src)=[\"'](?P<value>[^\"']+)[\"']",
     re.I,
 )
 
 STANDARD_ROUTES = {
+    "attributions",
+    "description",
+    "experiments",
+    "notebook",
+    "results",
+    "team",
     "contribution",
     "engineering",
     "human-practices",
@@ -163,8 +194,28 @@ def audit_generated(root: Path, failures: list[str], expected_count: int) -> Non
                 fragment_re = re.compile(rf"\bid=[\"']{re.escape(fragment)}[\"']", re.I)
                 if not fragment_re.search(target_source):
                     failures.append(f"{path}: missing fragment target {value}")
+        if not CC_BY_RE.search(source):
+            failures.append(f"{path}: footer has no CC BY 4.0 licence link")
+        if not GITLAB_REPO_RE.search(source):
+            WARN.append(f"{path.relative_to(root)}: footer has no link to the team's gitlab.igem.org repository")
     if len(seen) != expected_count:
         failures.append(f"generated page count is {len(seen)}, expected {expected_count}")
+    for css in sorted((root / "css").rglob("*.css")) + sorted((root / "js").rglob("*.js")):
+        text = css.read_text(encoding="utf-8", errors="ignore")
+        if EXTERNAL_RUNTIME_RE.search(text):
+            failures.append(f"{css}: loads a resource from outside iGEM infrastructure")
+    site = json.loads((root.parent / "_data" / "site.json").read_text(encoding="utf-8")) if (root.parent / "_data" / "site.json").exists() else {}
+    team_id = str(site.get("igem_team_id", "")).strip()
+    att = root / "attributions" / "index.html"
+    if att.exists() and team_id and f"teams.igem.org/wiki/{team_id}/attributions" not in att.read_text(encoding="utf-8"):
+        failures.append("attributions page does not embed the official form for team " + team_id)
+    size = sum(f.stat().st_size for f in root.rglob("*") if f.is_file())
+    if size > ARTIFACT_LIMIT:
+        failures.append(f"public/ is {size / 1048576:.2f} MiB; gitlab.igem.org rejects job artifacts over 10 MiB")
+    media = [f for d in ("img", "fonts") for f in (root / d).rglob("*") if f.is_file()] if any((root / d).exists() for d in ("img", "fonts")) else []
+    if media:
+        WARN.append(f"{len(media)} image/font files are served from the repository; before the freeze build with "
+                    "--static-base https://static.igem.wiki/teams/<id>/wiki/ and upload _uploads/")
 
 
 def audit_igem_2026_controls(root: Path, results: list[dict[str, int | str | bool]], failures: list[str]) -> None:
@@ -205,7 +256,7 @@ def audit_igem_2026_controls(root: Path, results: list[dict[str, int | str | boo
         failures.append("missing public licensing and responsible-AI disclosure page")
     else:
         text = licensing.read_text(encoding="utf-8").lower()
-        for marker in ("cc by 4.0", "openai codex", "human review", "ai-generated"):
+        for marker in ("cc by 4.0", "openai codex", "anthropic claude", "human review", "ai-generated"):
             if marker not in text:
                 failures.append(f"licensing page missing disclosure marker: {marker}")
 
@@ -230,6 +281,7 @@ def main() -> int:
     parser.add_argument("--generated", action="store_true")
     parser.add_argument("--generated-root", type=Path)
     parser.add_argument("--drafts", action="store_true")
+    parser.add_argument("--release", action="store_true", help="treat freeze-blocking warnings as failures")
     args = parser.parse_args()
     root = args.root.resolve()
     sources = sorted((root / "_content").glob("*.html"))
@@ -247,6 +299,14 @@ def main() -> int:
         f"sources={len(sources)} sections={sum(int(result['sections']) for result in results)} "
         f"hidden={sum(bool(result['hidden']) for result in results)} drafts={sum(bool(result['draft']) for result in results)}"
     )
+    if WARN:
+        print(f"WARNINGS ({len(WARN)})" + ("  [--release: counted as failures]" if args.release else ""))
+        for w in WARN[:12]:
+            print(f"- {w}")
+        if len(WARN) > 12:
+            print(f"- ... and {len(WARN) - 12} more")
+        if args.release:
+            failures.extend(WARN)
     if failures:
         print(f"FAIL ({len(failures)})")
         for failure in failures:

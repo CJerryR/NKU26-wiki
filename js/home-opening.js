@@ -7,12 +7,11 @@
     var cv = H.$('[data-op-canvas]', sec), hero = H.$('[data-op-hero]', sec), labelsEl = H.$('[data-op-labels]', sec);
     var hint = H.$('[data-op-hint]', sec);
     var P = document.body.getAttribute('data-path-prefix') || '';
-    if (H.coarse && hint) hint.textContent = 'Tap the soil to explore.';
 
     var ctx, W, Hh, CAM, SURF, dark, lit, tmp, tctx, texDark, texLight, R;
     var plants = [], roots = [], pebbles = [], ghosts = [], mols = [], damage = null, wormW = 150;
-    var worm = new Image(); worm.src = P + 'img/home/nematode.png';
-    var print = new Image(); print.src = P + 'img/home/soil-print.png';
+    var worm = new Image(); worm.src = H.asset('img/home/nematode.png');
+    var print = new Image(); print.src = H.asset('img/home/soil-print.png');
     var light = { x: 0, y: 0, tx: 0, ty: 0 }, pointerSeen = false, found = false, foundT = 0, auto = false;
     var seen = 0, cam = 0, t0 = performance.now(), visible = true, labels = {};
     var dsc = { from: 0, to: 0, t0: 0, dur: 1 }, descentNow = 0;
@@ -243,7 +242,7 @@
       var el = document.createElement('p'); el.className = 'op__label ' + (cls || ''); el.textContent = text;
       labelsEl.appendChild(el);
       var w = el.offsetWidth, h = el.offsetHeight;
-      if (x + w > W - 20) x = W - 20 - w;
+      if (x + w > W - 72) x = W - 72 - w;   // clear of the page rail
       x = Math.max(16, x);
       // keep discovery notes from landing on each other
       for (var tries = 0; tries < 6; tries++) {
