@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - HomePage
+      - ClaudeBuild
   workflow_dispatch:
 
 permissions:
