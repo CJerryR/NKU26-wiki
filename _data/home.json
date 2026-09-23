@@ -1,30 +1,175 @@
 {
-  "project": {"name": "NemaKlear", "team": "NKU26-China", "status": "Homepage prototype", "basis": "D01 supplied narrative"},
+  "project": {
+    "name": "NemaKlear",
+    "team": "NKU26-China",
+    "status": "Homepage prototype",
+    "basis": "D01 supplied narrative"
+  },
   "links": {
-    "description": {"source": "description", "label": "Project", "status": "existing"},
-    "engineering": {"source": "engineering-cycle", "label": "Engineering", "status": "existing"},
-    "experiments": {"source": "wet-lab", "label": "Experiments", "status": "evidence-records"},
-    "results": {"source": "results", "label": "Results", "status": "evidence-records"},
-    "model": {"source": "modeling", "label": "Model", "status": "existing"},
-    "human-practices": {"source": "human-practices", "label": "Human Practices", "status": "existing"},
-    "education": {"source": "education", "label": "Education", "status": "existing"},
-    "parts": {"source": "parts", "label": "Parts", "status": "existing"},
-    "safety": {"source": "safety", "label": "Safety", "status": "existing"},
-    "team": {"source": "team-members", "label": "Team", "status": "existing"},
-    "attribution": {"source": "attribution", "label": "Attributions", "status": "existing"},
-    "contribution": {"source": "contribution", "label": "Contribution", "status": "existing"},
-    "design": {"source": "design", "label": "Design", "status": "existing"}
+    "description": {
+      "source": "description",
+      "label": "Project",
+      "status": "existing"
+    },
+    "engineering": {
+      "source": "engineering-cycle",
+      "label": "Engineering",
+      "status": "existing"
+    },
+    "experiments": {
+      "source": "wet-lab",
+      "label": "Experiments",
+      "status": "evidence-records"
+    },
+    "results": {
+      "source": "results",
+      "label": "Results",
+      "status": "evidence-records"
+    },
+    "model": {
+      "source": "modeling",
+      "label": "Model",
+      "status": "existing"
+    },
+    "human-practices": {
+      "source": "human-practices",
+      "label": "Human Practices",
+      "status": "existing"
+    },
+    "education": {
+      "source": "education",
+      "label": "Education",
+      "status": "existing"
+    },
+    "parts": {
+      "source": "parts",
+      "label": "Parts",
+      "status": "existing"
+    },
+    "safety": {
+      "source": "safety",
+      "label": "Safety",
+      "status": "existing"
+    },
+    "team": {
+      "source": "team-members",
+      "label": "Team",
+      "status": "existing"
+    },
+    "attribution": {
+      "source": "attribution",
+      "label": "Attributions",
+      "status": "existing"
+    },
+    "contribution": {
+      "source": "contribution",
+      "label": "Contribution",
+      "status": "existing"
+    },
+    "design": {
+      "source": "design",
+      "label": "Design",
+      "status": "existing"
+    },
+    "integrated-hp": {
+      "source": "integrated-hp",
+      "label": "Integrated Human Practices",
+      "status": "existing"
+    },
+    "implementation": {
+      "source": "implementation",
+      "label": "Implementation",
+      "status": "existing"
+    },
+    "hardware": {
+      "source": "hardware",
+      "label": "Hardware",
+      "status": "existing"
+    },
+    "notebook": {
+      "source": "notebook",
+      "label": "Notebook",
+      "status": "existing"
+    },
+    "protocols": {
+      "source": "protocols",
+      "label": "Protocols",
+      "status": "existing"
+    },
+    "collaborations": {
+      "source": "collaborations",
+      "label": "Collaborations",
+      "status": "existing"
+    },
+    "proof-of-concept": {
+      "source": "proof-of-concept",
+      "label": "Proof of Concept",
+      "status": "existing"
+    },
+    "background": {
+      "source": "background",
+      "label": "Background",
+      "status": "existing"
+    },
+    "sustainability": {
+      "source": "sustainability",
+      "label": "Sustainability",
+      "status": "existing"
+    },
+    "members": {
+      "source": "team-members",
+      "label": "Members",
+      "status": "existing"
+    }
   },
   "content": [
-    {"id": "story", "status": "confirmed-narrative", "source": "D01", "note": "Six narrative themes, presented across additional visual sections."},
-    {"id": "sensor", "status": "proposed-design", "source": "D01; D03; B14", "note": "Receptor recognition, yeast signal relay/amplification, intended betaxanthin color output. No demonstrated sensor performance claimed."},
-    {"id": "combination", "status": "project-hypothesis", "source": "D01 section 03", "note": "ascr#3 and ascr#18 combinations may carry additional risk information; no spectrum, threshold or discrimination result assumed."},
-    {"id": "maps", "status": "awaiting-verified-data", "source": "D01 section 02", "note": "No sampled values, classifications or choropleth data are supplied in this build."},
-    {"id": "results", "status": "existing-evidence-records", "source": "_content/results.html", "note": "Existing negative/inconclusive engineering records may be linked with limitations; none establish full sensor performance."},
-    {"id": "scientific-art", "status": "replaceable-illustration", "source": "B11; B12; B14", "note": "Simplified schematic diagrams await team-reviewed vector artwork."},
-    {"id": "sponsors", "status": "awaiting-confirmed-material", "source": "D05", "note": "No sponsor or institutional support is inferred."}
-  ],
-  "confirmationPoints": [
-    {"id": "china-map-semantics", "current": "D01 scientific distributions", "older": "D02 0913 HP workstreams", "action": "Confirm meaning and source dataset before formal map data integration."}
+    {
+      "id": "story",
+      "status": "confirmed-narrative",
+      "source": "D01",
+      "note": "Six narrative parts; homepage rebuilt to B17/A04 with D02-D04, B10-B14 and A06-A17 guidance."
+    },
+    {
+      "id": "opening",
+      "status": "interactive-illustration",
+      "source": "D01 part 01; A04; A16/A17",
+      "note": "Illustrated chemical clues, not measured data."
+    },
+    {
+      "id": "maps",
+      "status": "awaiting-verified-data",
+      "source": "D01 part 02",
+      "note": "Abundance layers render only after tools/import_herbivores.py imports the verified dataset. Province markers are schematic anchors for literature records."
+    },
+    {
+      "id": "combination",
+      "status": "project-hypothesis",
+      "source": "D01 part 03",
+      "note": "No spectrum, concentration, ratio or threshold is implied."
+    },
+    {
+      "id": "sensor",
+      "status": "proposed-design",
+      "source": "D01 part 04; D03; B14",
+      "note": "Recognition, relay/amplification and betaxanthin output as intended design."
+    },
+    {
+      "id": "loop",
+      "status": "planned-relationships",
+      "source": "B10; B11; D03",
+      "note": "All relationships from the team sketch; no completed validation implied."
+    },
+    {
+      "id": "results",
+      "status": "awaiting-evidence",
+      "source": "D01 part 05; D02",
+      "note": "Five reserved slots; filled only with completed, supported results."
+    },
+    {
+      "id": "sponsors",
+      "status": "awaiting-confirmed-material",
+      "source": "D02; D05",
+      "note": "No sponsor inferred."
+    }
   ]
 }

@@ -1,42 +1,85 @@
-<section class="cn" id="china" data-nav-label="Closer to home" data-china data-tone="dark" aria-labelledby="china-title">
-  <div class="wrap">
-    <div class="cn__head">
-      <h2 class="h-display" id="china-title" data-split>Closer to home</h2>
-    </div>
-    <div class="cn__row">
-      <figure class="cn__map" data-cmap="env" style="--c:#c48cff">
-        <button type="button" class="cn__open" data-cmap-open aria-label="Open the environment map"></button>
-        <canvas aria-hidden="true"></canvas>
-        <figcaption><i></i><b>Environment</b><span>Where they live</span></figcaption>
-      </figure>
-      <figure class="cn__map" data-cmap="agr" style="--c:#ffa24a">
-        <button type="button" class="cn__open" data-cmap-open aria-label="Open the agriculture map"></button>
-        <canvas aria-hidden="true"></canvas>
-        <figcaption><i></i><b>Agriculture</b><span>What they affect</span></figcaption>
-        <div class="cn__filters" role="group" aria-label="Show species">
-          <button type="button" aria-pressed="true" data-sp="scn"><i class="tri"></i>Soybean cyst</button>
-          <button type="button" aria-pressed="true" data-sp="rkn"><i class="dot"></i>Root-knot</button>
+<section id="china-story" class="nk-china nk-night" data-china aria-labelledby="china-title">
+  <div class="nk-edge nk-edge--night" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0 0H1440V20C1180 50 960 6 720 30S250 48 0 18Z"/></svg></div>
+  <div class="nk-china__runway" data-china-runway>
+    <div class="nk-china__stage" data-china-stage>
+      <canvas class="nk-china__canvas" data-china-canvas aria-hidden="true"></canvas>
+      <div class="nk-china__labels" data-china-labels aria-hidden="true"></div>
+      <div class="nk-china__tip" data-china-tip hidden></div>
+      <div class="nk-wrap nk-china__ui">
+        <div class="nk-china__panel">
+          <p class="nk-chapter nk-chapter--dark"><span>02</span>A closer look at China</p>
+          <h2 id="china-title" class="nk-h2">Closer to the field.</h2>
+          <p class="nk-china__intro">One landscape, three questions. Switch maps here, or keep scrolling.</p>
+          <div class="nk-tabs" role="tablist" aria-label="China maps">
+            <button type="button" role="tab" id="china-tab-0" aria-controls="china-layer-0" aria-selected="true" data-layer-tab="0">Abundance</button>
+            <button type="button" role="tab" id="china-tab-1" aria-controls="china-layer-1" aria-selected="false" tabindex="-1" data-layer-tab="1">Soybean cyst</button>
+            <button type="button" role="tab" id="china-tab-2" aria-controls="china-layer-2" aria-selected="false" tabindex="-1" data-layer-tab="2">Root-knot</button>
+          </div>
+          <article id="china-layer-0" class="nk-layer is-active" role="tabpanel" aria-labelledby="china-tab-0" data-layer="0">
+            <h3>Distribution of Plant-feeding Nematode Abundance in China</h3>
+            <p>The same Herbivores field, unit and colour scale as the global map, with no local rescaling. Darker still means more plant-feeding nematodes per 100 g of dry soil.</p>
+            <div class="nk-ramp nk-ramp--dark"><span>Lower</span><i></i><span>Higher</span></div>
+            <p class="nk-status nk-status--dark" data-china-status>Verified dataset import pending</p>
+            <p class="nk-fine">Abundance indicates potential exposure. It is not crop loss or disease severity.</p>
+          </article>
+          <article id="china-layer-1" class="nk-layer" role="tabpanel" aria-labelledby="china-tab-1" data-layer="1" hidden>
+            <h3>Distribution and Impact of Soybean Cyst Nematode in China</h3>
+            <p class="nk-species"><i>Heterodera glycines</i>, reported in 22 provincial-level regions</p>
+            <p class="nk-callout">It is estimated that soybean cyst nematode causes more than <b>US$120 million</b> in soybean yield losses in China every year.</p>
+            <ul class="nk-facts">
+              <li><b>20–30%</b><span>typical yield loss in infested soybean fields</span></li>
+              <li><b>60–70%</b><span>in severely infested fields; extreme cases approach total loss</span></li>
+            </ul>
+            <p>Soybean is the main host. Mung bean, pea, common bean and other food legumes can also be infected.</p>
+            <ul class="nk-key"><li><span class="nk-key__tri" aria-hidden="true"></span>Province with published reports</li><li><span class="nk-key__halo" aria-hidden="true"></span>Major soybean regions: Northeast and Huang-Huai-Hai</li></ul>
+            <p class="nk-fine">A report does not mean the whole province is affected. National losses are not divided among provinces.</p>
+          </article>
+          <article id="china-layer-2" class="nk-layer" role="tabpanel" aria-labelledby="china-tab-2" data-layer="2" hidden>
+            <h3>Reported Distribution and Major Hosts of Southern Root-knot Nematode in China</h3>
+            <p class="nk-species"><i>Meloidogyne incognita</i>, recorded in 20 provinces, plus detections in Xinjiang</p>
+            <p class="nk-callout">Southern root-knot nematode has an extremely broad host range. It can infect vegetables, field crops, cash crops and many medicinal plants: more than 3,000 plant species in all.</p>
+            <ul class="nk-hosts" aria-label="Main protected-vegetable hosts">
+              <li><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="23" r="12" fill="#e5533d"/><path d="M13 13l7 4 7-4-4 6h-6z" fill="#5f9a47"/></svg>Tomato</li>
+              <li><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M9 29C6 22 20 8 30 9c4 1 3 6-1 11S13 35 9 29z" fill="#5b9a45"/><g fill="#b5d98a"><circle cx="18" cy="21" r="1.2"/><circle cx="23" cy="16" r="1.2"/><circle cx="14" cy="26" r="1.2"/></g></svg>Cucumber</li>
+              <li><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M17 12c-6 2-7 10-4 16 3 5 9 7 12 5 5-4 5-14-1-20z" fill="#d93d34"/><path d="M19 12c0-4 3-6 6-6" stroke="#4f8a3d" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg>Pepper</li>
+              <li><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M14 17c-5 5-4 15 3 17s11-5 10-11c0-4-3-8-7-9z" fill="#6c3b8e"/><path d="M13 16l7-6 7 6-3 2-4-2-4 2z" fill="#5f9a47"/></svg>Eggplant</li>
+            </ul>
+            <div class="nk-notecard"><b>Hunan vegetable survey</b><p>About 80% disease incidence in greenhouse vegetables against about 10% in open fields; <i>M. incognita</i> made up 87% of the root-knot populations identified. These are incidence and species shares, not yield losses.</p></div>
+            <ul class="nk-key"><li><span class="nk-key__pin" aria-hidden="true"></span>Province record (CABI)</li><li><span class="nk-key__pin nk-key__pin--gold" aria-hidden="true"></span>Detected in protected vegetables, 2021–2023 survey</li></ul>
+            <p class="nk-fine">Records show where the species has been reported, not that whole provinces are heavily affected. Rice root-knot damage in China mostly involves another species, <i>M. graminicola</i>, which is kept separate.</p>
+          </article>
         </div>
-      </figure>
-      <figure class="cn__map" data-cmap="pot" style="--c:#9aa7ff">
-        <button type="button" class="cn__open" data-cmap-open aria-label="Open the exploration map"></button>
-        <canvas aria-hidden="true"></canvas>
-        <figcaption><i></i><b>Potential</b><span>Where to explore</span></figcaption>
-      </figure>
-    </div>
-    <p class="cn__src">Province markers from literature (CABI; national soybean cyst nematode reviews; Xinjiang greenhouse survey 2021–23). Basemap: Natural Earth, China point of view.</p>
-  </div>
-  <div class="cnfocus" data-cfocus role="dialog" aria-modal="true" aria-labelledby="cf-title" hidden>
-    <div class="cnfocus__panel">
-      <button type="button" class="cnfocus__close" data-cfocus-close aria-label="Close map">×</button>
-      <canvas data-cfocus-canvas aria-hidden="true"></canvas>
-      <div class="cnfocus__text">
-        <p class="cnfocus__kicker" data-cf-kicker></p>
-        <h3 id="cf-title" data-cf-title></h3>
-        <div data-cf-body></div>
-        <div class="cnfocus__nav"><button type="button" data-cf-prev>Previous map</button><button type="button" data-cf-next>Next map</button></div>
       </div>
+      <p class="nk-china__hint" data-china-hint aria-hidden="true">Hover a marker for its record</p>
     </div>
   </div>
-  <div class="tip" data-tip hidden></div>
+  <div class="nk-wrap nk-china__after">
+    <details class="nk-sources nk-sources--dark">
+      <summary>Sources, province lists and how to read these maps</summary>
+      <div class="nk-sources__body nk-sources__cols">
+        <div>
+          <h4>Soybean cyst nematode: 22 regions</h4>
+          <p>Northeast: Heilongjiang, Jilin, Liaoning, Inner Mongolia. North: Beijing, Hebei, Henan, Shandong, Shanxi. East and Central: Anhui, Jiangsu, Shanghai, Zhejiang, Jiangxi, Hubei. Northwest: Shaanxi, Gansu, Ningxia, Xinjiang. Southwest and South: Guizhou, Yunnan, Guangxi.</p>
+        </div>
+        <div>
+          <h4>Southern root-knot nematode records</h4>
+          <p>CABI: Anhui, Fujian, Guangdong, Guangxi, Guizhou, Hainan, Hebei, Heilongjiang, Henan, Hubei, Hunan, Jiangsu, Jiangxi, Inner Mongolia, Qinghai, Shaanxi, Shandong, Sichuan, Yunnan, Zhejiang. Survey 2021–2023: Xinjiang, protected vegetables.</p>
+        </div>
+        <div>
+          <h4>Sources</h4>
+          <ul>
+            <li><a href="https://www.nature.com/articles/s41597-020-0437-3">Global soil nematode database (same global measure)</a></li>
+            <li><a href="https://link.springer.com/article/10.1186/s42483-021-00095-w">Soybean cyst nematode in China: 22 provinces and losses</a></li>
+            <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9242501/">Soybean cyst nematode: spatial distribution, area and races</a></li>
+            <li><a href="https://www.researchgate.net/publication/363347872_Meloidogyne_incognita_Distribution_map">CABI: <i>M. incognita</i> provincial records</a></li>
+            <li><a href="https://www.sciencedirect.com/science/article/pii/S2095311924004179">Xinjiang protected-vegetable root-knot survey</a></li>
+            <li><a href="https://nph.onlinelibrary.wiley.com/doi/10.1111/nph.71431"><i>M. incognita</i> host range</a></li>
+            <li><a href="https://onlinelibrary.wiley.com/doi/10.1002/npp2.70004">Rice diseases in China: <i>M. graminicola</i></a></li>
+            <li><a href="https://www.cgl.org.cn/auto/dbfile/file?db=171029&amp;fid=30d8a&amp;fname=%E6%B9%96%E5%8D%97%E7%9C%81%E8%94%AC%E8%8F%9C%E6%A0%B9%E7%BB%93%E7%BA%BF%E8%99%AB%E5%8F%91%E7%94%9F%E5%8F%8A%E7%A7%8D%E7%B1%BB%E9%89%B4%E5%AE%9A&amp;rid=200074">Hunan vegetable root-knot survey</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="nk-fine">Markers sit at schematic points inside each provincial-level region; they are not detection sites. Base map: Natural Earth China POV (public domain), including Taiwan, Hainan, the South China Sea islands and maritime indicator lines.</p>
+    </details>
+  </div>
 </section>

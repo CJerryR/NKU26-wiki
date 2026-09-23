@@ -1,36 +1,71 @@
-<section class="world" id="world" data-nav-label="A global story" data-world data-tone="light" aria-labelledby="world-title">
-  <div class="world__pin">
-    <div class="world__inner wrap">
-      <div class="world__copy">
-        <h2 class="h-display" id="world-title" data-world-title data-split>A global story beneath our feet</h2>
-        <p class="world__stat"><b data-usd>US$173</b><span>billion</span></p>
-        <p class="world__lede">Estimated yearly crop losses caused by plant-parasitic nematodes worldwide.</p>
-        <div class="world__legend">
-          <p>Plant-feeding nematode abundance</p>
-          <i class="world__ramp" aria-hidden="true"></i>
-          <span><em>lower</em><em>higher</em></span>
-          <p class="world__case"><i aria-hidden="true"></i>Reported crop damage</p>
-        </div>
-        <p class="world__note" data-demo-flag>Sample colour layer. The team’s dataset (Herbivores field, individuals per 100 g dry soil, log₁₀(x+1)) sets the final colours.</p>
+<section id="global-story" class="nk-world nk-paper" data-world aria-labelledby="global-story-title">
+  <div class="nk-edge nk-edge--paper" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0 0H1440V24C1210 52 990 6 720 28S236 54 0 20Z"/></svg></div>
+  <div class="nk-wrap nk-world__grid">
+    <div class="nk-world__intro">
+      <p class="nk-chapter"><span>02</span>Problem discovery</p>
+      <h2 id="global-story-title" class="nk-h2" data-iris-target>A global story<br /> beneath our feet</h2>
+      <p class="nk-lead">Soils everywhere are home to nematodes. Some of them feed on plant roots, and those can cost agriculture dearly.</p>
+      <div class="nk-stat">
+        <p class="nk-stat__num">US$173 billion</p>
+        <p class="nk-stat__txt">This is the estimated annual toll that plant-parasitic nematodes inflict on agriculture worldwide.</p>
+        <a class="nk-stat__src" href="https://www.annualreviews.org/content/journals/10.1146/annurev-phyto-021622-113539">Annual Review of Phytopathology</a>
       </div>
-      <figure class="world__map" data-world-map>
-        <div class="world__canvas">
-          <svg class="world__land" data-world-svg viewBox="0 0 900 350" role="img" aria-label="World map. Select a continent to read about nematodes there."></svg>
-          <canvas data-world-heat aria-hidden="true"></canvas>
-          <div class="world__marks" data-world-marks></div>
-          <button type="button" class="world__china" data-world-china>China <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 6h6M6.5 3.5 9 6l-2.5 2.5"/></svg></button>
+      <p class="nk-world__call">Plant-parasitic nematodes are advancing across the globe. The time to detect, prevent, and control them is now.</p>
+    </div>
+    <figure class="nk-map nk-map--world" data-world-map aria-labelledby="world-map-title">
+      <figcaption class="nk-map__head">
+        <h3 id="world-map-title">Global Distribution of Plant-feeding Nematode Abundance</h3>
+        <span class="nk-status" data-world-status>Verified dataset import pending</span>
+      </figcaption>
+      <div class="nk-map__stage" data-world-stage>
+        <img class="nk-map__base" src="{{P}}img/home-maps/world-base.svg" width="1000" height="450" alt="World land map. China is highlighted as the way into the next view. The abundance layer appears only after the verified dataset is imported." data-world-base />
+        <canvas class="nk-map__dots" data-world-dots aria-hidden="true"></canvas>
+        <svg class="nk-map__overlay" viewBox="0 0 1000 450" data-world-overlay>
+          <a href="#china-story" class="nk-map__china" data-china-entry aria-label="China: take a closer look at three China maps">
+            <path class="nk-map__china-glow" data-china-path d="M0 0" />
+            <path class="nk-map__china-shape" data-china-path d="M0 0" />
+          </a>
+          <g data-world-points></g>
+          <g data-world-cases></g>
+        </svg>
+        <div class="nk-map__callout" data-china-callout aria-hidden="true"><b>China</b><span>Look closer</span></div>
+        <div class="nk-card" data-world-card hidden>
+          <div class="nk-card__inner" data-card-inner>
+            <div class="nk-card__face nk-card__face--front" data-card-front></div>
+            <div class="nk-card__face nk-card__face--back" data-card-back></div>
+          </div>
         </div>
-        <figcaption>Select a continent. Basemap: Natural Earth.</figcaption>
-      </figure>
-    </div>
-    <div class="world__mask" data-world-mask aria-hidden="true"></div>
-  </div>
-  <div class="flipcard" data-flipcard role="dialog" aria-modal="false" aria-labelledby="flip-title" hidden>
-    <div class="flipcard__face">
-      <button type="button" class="flipcard__close" data-flip-close aria-label="Close">×</button>
-      <p class="flipcard__kicker" data-flip-kicker></p>
-      <h3 id="flip-title" data-flip-title></h3>
-      <div data-flip-body></div>
-    </div>
+      </div>
+      <div class="nk-map__foot">
+        <div class="nk-legend">
+          <p class="nk-legend__title">Plant-feeding nematode abundance <span>individuals per 100 g dry soil</span></p>
+          <div class="nk-ramp"><span>Lower</span><i></i><span>Higher</span></div>
+          <p class="nk-legend__note">Colour follows log<sub>10</sub>(Herbivores + 1) on one global scale, shared with the China map.</p>
+        </div>
+        <div class="nk-legend nk-legend--marks">
+          <p><span class="nk-mark nk-mark--case" aria-hidden="true"></span>Sourced crop-loss case</p>
+          <p><span class="nk-mark nk-mark--china" aria-hidden="true"></span>China, the next view</p>
+        </div>
+      </div>
+      <details class="nk-sources">
+        <summary>Sources and how to read this map</summary>
+        <div class="nk-sources__body">
+          <p>Abundance describes potential exposure to plant-feeding nematodes. It is not the same as crop loss or disease severity.</p>
+          <p>The layer uses the Herbivores field of the global soil nematode database: 6,825 georeferenced samples, aggregated to 1,933 pixels of about 1 km² for mapping.</p>
+          <ul>
+            <li><a href="https://www.nature.com/articles/s41597-020-0437-3">Scientific Data: global soil nematode abundance and functional groups</a></li>
+            <li><a href="https://springernature.figshare.com/articles/dataset/Nematode_abundance_dataset/11733897">Figshare: raw nematode abundance data (CC0)</a></li>
+            <li><a href="https://raw.githubusercontent.com/hooge104/2020_global_nematode_dataset/master/data/nematode_aggregated_wCovariateData.csv">Aggregated data: 1,933 pixels of about 1 km²</a></li>
+            <li><a href="https://www.nature.com/articles/s41586-019-1418-6">Nature: high-resolution global soil nematode map</a></li>
+            <li><a href="https://gitlab.ethz.ch/devinrouth/crowther_lab_nematodes">Prediction model and mapping code</a></li>
+            <li><a href="https://www.annualreviews.org/content/journals/10.1146/annurev-phyto-021622-113539">Annual Review of Phytopathology: global losses and species</a></li>
+            <li><a href="https://www.sciencedirect.com/science/chapter/edited-volume/pii/B9780128224298000182">Agrios' Plant Pathology: estimated losses by crop group</a></li>
+            <li><a href="https://news.cctv.com/2023/03/05/ARTI32PpeiGivztpt7AtUhhe230305.shtml">CCTV: nematodes now the second-largest category of crop disease</a></li>
+            <li><a href="https://gd.eppo.int/">EPPO Global Database: country and regional records</a></li>
+          </ul>
+          <p class="nk-fine">Base map: <a href="https://www.naturalearthdata.com/about/terms-of-use/">Natural Earth</a>, public domain.</p>
+        </div>
+      </details>
+    </figure>
   </div>
 </section>

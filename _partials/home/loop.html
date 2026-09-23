@@ -1,18 +1,39 @@
-<section class="lp" id="loop" data-nav-label="Field, bench and back" data-loop data-tone="light" aria-labelledby="loop-title">
-  <div class="wrap">
-    <div class="lp__head">
-      <h2 class="h-display" id="loop-title" data-split>From the field to the bench, and back again</h2>
-      <div class="lp__filters" role="group" aria-label="Highlight a question">
-        <button type="button" data-q="wet" aria-pressed="false">Can we see it?</button>
-        <button type="button" data-q="dry" aria-pressed="false">Can we explain it?</button>
-        <button type="button" data-q="hp" aria-pressed="false">Can we use it to decide?</button>
-        <button type="button" class="lp__play" data-lp-play>Play the loop</button>
+<section id="research-loop" class="nk-loop nk-paper" data-loop aria-labelledby="loop-title">
+  <div class="nk-wrap">
+    <header class="nk-head nk-head--split">
+      <div>
+        <p class="nk-chapter"><span>04</span>How the work connects</p>
+        <h2 id="loop-title" class="nk-h2">A loop, not a line.</h2>
       </div>
-    </div>
-    <div class="lp__board" data-lp-board>
-      <i class="lp__wash lp__wash--dry"></i><i class="lp__wash lp__wash--hp"></i><i class="lp__wash lp__wash--wet"></i><i class="lp__wash lp__wash--core"></i>
-      <svg class="lp__svg" data-lp-svg viewBox="0 0 1200 620" role="img" aria-label="How the dry lab, Human Practices and the wet lab feed each other, with society and our project at the centre"></svg>
-      <div class="lp__card" data-lp-card hidden></div>
-    </div>
+      <p class="nk-lead">We did not build a sensor first and look for a use later. Real settings raise the questions, the wet lab produces evidence, the dry lab helps explain and predict, and results go back to the lab and the field to be tested again.</p>
+    </header>
+    <ol class="nk-questions">
+      <li><span class="nk-questions__who">Wet lab</span><h3>Can we see it?</h3><p>Whether the receptor works in engineered yeast, whether the system responds to the target ascarosides, whether betaxanthin gives a readable color, and whether background, non-target signals or soil interfere.</p></li>
+      <li><span class="nk-questions__who">Dry lab</span><h3>Can we explain it?</h3><p>Models linking ascaroside input to color output, the parameters that matter most, what ascr#3 and ascr#18 together might add, and how noise and degradation affect reliability.</p></li>
+      <li><span class="nk-questions__who">Human Practices, product design and the Eco model</span><h3>Can it inform decisions?</h3><p>Who needs early risk information and when, how sampling can be simplified, how results route uncertain samples to professional testing, and how biosafety is built in.</p></li>
+    </ol>
+    <p class="nk-fine nk-loop__note">Reading times, thresholds, combination rules and uncertainty will be filled in from the final models and experiments.</p>
+    <figure class="nk-loopmap" data-loopmap>
+      <div class="nk-loopmap__scroll"><svg viewBox="0 0 1200 740" data-loop-svg role="img" aria-labelledby="nk-loop-svg-title"><title id="nk-loop-svg-title">Relationships between the dry lab, Human Practices and the wet lab, with the project and society at the centre</title></svg></div>
+      <figcaption class="nk-loopmap__bar">
+        <p class="nk-loopmap__legend"><span class="nk-ln nk-ln--flow" aria-hidden="true"></span>Material and evidence<span class="nk-ln nk-ln--back" aria-hidden="true"></span>Feedback and questions</p>
+        <button type="button" class="nk-chip nk-chip--ink" data-loop-trace>Trace the loop</button>
+      </figcaption>
+      <p class="nk-loopmap__info" data-loop-info aria-live="polite">Hover or focus a node to see its connections.</p>
+    </figure>
+    <details class="nk-sources nk-loop__list">
+      <summary>All relationships as a list</summary>
+      <ul class="nk-sources__body">
+        <li>Soil plan provides data to the dry lab and samples to the wet lab.</li>
+        <li>Society takes part in the soil plan and responds to questionnaires.</li>
+        <li>Field data calibrate the Eco model; questionnaires support it; the Eco model makes predictions for society.</li>
+        <li>Education and outreach feed science back to society.</li>
+        <li>Society shapes the project; the project is applied back to society.</li>
+        <li>The signalling ODE model helps optimize the project; expert interviews guide it.</li>
+        <li>The wet lab asks experts questions; soil samples are tested in the wet lab.</li>
+        <li>Wet-lab measurements feed the ODE model; the model returns simulations and analysis to the wet lab.</li>
+        <li>Docking and molecular dynamics suggest candidate receptor variants for the wet lab.</li>
+      </ul>
+    </details>
   </div>
 </section>

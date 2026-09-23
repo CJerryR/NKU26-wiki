@@ -1,376 +1,270 @@
-/* NKU homepage — 04 threat · 05 traces · 06 combo · 07 signal · 08 loop · 09 built · 10 explore */
+/* Parts 03–04 · animated nematodes, the detective's lens, the clue sky,
+ * the signal-combination toggle and the proposed sensor pathway. */
 (function () {
   'use strict';
-  var H = window.NKUH; if (!H) return;
-  var NS = 'http://www.w3.org/2000/svg';
-  function el(tag, attrs, parent) { var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
-  function wormD(x, y, len, ang, ph, amp, segs) {
-    var d = '', ca = Math.cos(ang), sa = Math.sin(ang); segs = segs || 12;
-    for (var i = 0; i <= segs; i++) { var u = i / segs, off = Math.sin(u * 6 + ph) * (amp || 6) * Math.sin(u * Math.PI); d += (i ? 'L' : 'M') + (x + ca * len * u - sa * off).toFixed(1) + ',' + (y + sa * len * u + ca * off).toFixed(1); }
-    return d;
-  }
-  H.ready(function () { traces(); combo(); signal(); loop(); built(); explore(); });
+  var NK = window.NK;
+  if (!NK || !NK.wormPath) return;
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
 
-  /* ================= 05 TRACES ================= */
-  function traces() {
-    var sec = H.$('[data-traces]'); if (!sec) return;
-    var cv = H.$('[data-tr-canvas]', sec), ctx, w, h, parts = [], ghosts = [], stars = [], hot = null, vis = false, t0 = performance.now();
-    var groups = H.$$('[data-tr-group]', sec);
-    // clusters
-    H.$$('[data-cluster]', sec).forEach(function (c) {
-      var kind = c.getAttribute('data-cluster'), r = H.rand(kind === '3' ? 2 : 6);
-      for (var i = 0; i < 9; i++) { var b = document.createElement('i'); b.style.setProperty('--x', (10 + r() * 70) + 'px'); b.style.setProperty('--y', (8 + r() * 60) + 'px'); b.style.setProperty('--s', (12 + r() * 14) + 'px'); b.style.setProperty('--dl', (r() * 3) + 's'); b.style.setProperty('--col', kind === '3' ? (i % 3 ? '#4c8dff' : '#9fc3ff') : (i % 3 ? '#ff5e86' : '#ffb0a0')); c.appendChild(b); }
-    });
-    function shuffle() {
-      H.$$('[data-mix]', sec).forEach(function (m) {
-        m.innerHTML = ''; var n = 5 + Math.floor(Math.random() * 3);
-        for (var i = 0; i < n; i++) { var b = document.createElement('i'); b.style.setProperty('--col', Math.random() < .5 ? '#4c8dff' : '#ff5e86'); b.style.setProperty('--s', (10 + Math.random() * 8) + 'px'); m.appendChild(b); }
-      });
-    }
-    shuffle(); var sh = setInterval(function () { if (vis && !H.reduced) shuffle(); }, 2600);
-    function size() { w = sec.clientWidth; h = sec.clientHeight; ctx = H.fit(cv, w, h, 1.5); stars = []; var r = H.rand(9); for (var i = 0; i < 90; i++) stars.push([r() * w, r() * h * .7, r() * 1.6, r() * 6]); ghosts = []; var sr = sec.getBoundingClientRect(), anchors = groups.map(function (g) { var b = g.getBoundingClientRect(); return [b.left - sr.left + b.width / 2, b.top - sr.top + 70]; });
-      var cl = H.$('.tr__pair', sec).getBoundingClientRect(); target = [cl.left - sr.left, cl.width, cl.top - sr.top + cl.height * .6];
-      for (i = 0; i < 8; i++) { var an = anchors[i < 4 ? 0 : 1]; ghosts.push({ side: i < 4 ? 0 : 1, x: an[0] - 90 + r() * 110, y: an[1] - 40 + r() * 60, a: r() * 6, len: 60 + r() * 50, ph: r() * 6 }); } }
-    var target = [0, 0, 0];
-    function draw(now) {
-      if (!vis) return; var t = (now - t0) / 1000; ctx.clearRect(0, 0, w, h);
-      // hills
-      ctx.fillStyle = '#2a1735'; ctx.beginPath(); ctx.moveTo(0, h * .3);
-      for (var x = 0; x <= w; x += 30) ctx.lineTo(x, h * .28 - Math.sin(x / w * 5 + 1) * 40 - Math.sin(x / 70) * 8); ctx.lineTo(w, h); ctx.lineTo(0, h); ctx.fill();
-      stars.forEach(function (s) { ctx.fillStyle = 'rgba(255,230,200,' + (.2 + .5 * Math.max(0, Math.sin(t + s[3]))) + ')'; ctx.fillRect(s[0], s[1], s[2], s[2]); });
-      ghosts.forEach(function (g) {
-        var hotG = hot === 'both' || hot === (g.side ? 'pp' : 'free');
-        for (var i = 0; i < 30; i++) {
-          var u = i / 29, off = Math.sin(u * 5 + t * 2 + g.ph) * 8, gx = g.x + Math.cos(g.a + Math.sin(t * .2 + g.ph) * .4) * g.len * u, gy = g.y + Math.sin(g.a) * g.len * u * .5 + off;
-          ctx.fillStyle = 'rgba(230,210,240,' + (hotG ? .14 : .07) + ')'; ctx.beginPath(); ctx.arc(gx, gy, 7 * Math.sin(Math.PI * (.12 + u * .8)), 0, 6.29); ctx.fill();
-        }
-        if (Math.random() < (hotG ? .25 : .04)) parts.push({ x: g.x, y: g.y, vx: (Math.random() - .5) * .6, vy: -.2 - Math.random() * .4, c: Math.random() < .5 ? '76,141,255' : '255,94,134', life: 1, to: hotG ? (Math.random() < .5 ? .44 : .56) : 0 });
-      });
-      parts = parts.filter(function (p) { return p.life > 0; });
-      parts.forEach(function (p) {
-        if (p.to) { p.vx += ((target[0] + target[1] * (p.to < .5 ? .25 : .75) - p.x) * .0009); p.vy += ((target[2] - p.y) * .0009); }
-        p.x += p.vx; p.y += p.vy; p.vx *= .99; p.vy *= .99; p.life -= .006;
-        var g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, 9); g.addColorStop(0, 'rgba(' + p.c + ',' + p.life + ')'); g.addColorStop(1, 'rgba(' + p.c + ',0)');
-        ctx.fillStyle = g; ctx.beginPath(); ctx.arc(p.x, p.y, 9, 0, 6.29); ctx.fill();
-      });
-      requestAnimationFrame(draw);
-    }
-    groups.forEach(function (g) {
-      var k = g.getAttribute('data-tr-group');
-      g.addEventListener('pointerenter', function () { hot = k; g.classList.add('is-hot'); });
-      g.addEventListener('pointerleave', function () { hot = null; g.classList.remove('is-hot'); });
-      g.addEventListener('click', function () { hot = hot === k ? null : k; shuffle(); });
-    });
-    size(); addEventListener('resize', size);
-    H.onView(sec, function (v) { var was = vis; vis = v; if (v && !was) requestAnimationFrame(draw); });
-    var tt = 0;
-    H.scene('traces', {
-      steps: 1,
-      set: function (i) { clearTimeout(tt); hot = null; sec.classList.toggle('is-told', i > 0); },
-      step: function (i) {
-        clearTimeout(tt);
-        if (!i) { hot = null; sec.classList.remove('is-told'); return 400; }
-        hot = 'both'; shuffle();
-        tt = setTimeout(function () { hot = null; sec.classList.add('is-told'); }, 1700);
-        return 2400;
-      },
-      ff: function () { clearTimeout(tt); hot = null; sec.classList.add('is-told'); }
-    });
-  }
-
-  /* ================= 06 COMBO ================= */
-  function combo() {
-    var field = H.$('[data-co-field]'); if (!field) return;
-    var orbs = H.$$('[data-orb]', field), read = H.$('[data-co-read]', field), wave = H.$('[data-co-wave]');
-    var st = orbs.map(function (o) { return { el: o, x: 0, y: 0, tx: 0, ty: 0, drag: false }; });
-    var merged = false, vis = false, t0 = performance.now();
-    function setMerged(v, instant) {
-      merged = v; field.classList.toggle('is-merged', v);
-      var fw = field.clientWidth, ow = orbs[0].offsetWidth;
-      var home0 = orbs[0].offsetLeft, home1 = orbs[1].offsetLeft, mid = fw / 2 - ow / 2;
-      st[0].tx = v ? mid - home0 - ow * .3 : 0; st[1].tx = v ? mid - home1 + ow * .3 : 0; st[0].ty = st[1].ty = 0;
-      read.textContent = v ? 'Read together: a pattern, not a single value.' : 'Drag one signal onto the other';
-      if (instant) st.forEach(function (s2) { s2.x = s2.tx; s2.y = s2.ty; });
-    }
-    st.forEach(function (s, i) {
-      var sx, sy, ox, oy;
-      s.el.addEventListener('pointerdown', function (e) { s.drag = true; s.el.setPointerCapture(e.pointerId); sx = e.clientX; sy = e.clientY; ox = s.x; oy = s.y; });
-      s.el.addEventListener('pointermove', function (e) { if (!s.drag) return; s.x = s.tx = ox + e.clientX - sx; s.y = s.ty = oy + e.clientY - sy; });
-      s.el.addEventListener('pointerup', function () {
-        if (!s.drag) return; s.drag = false;
-        var a = orbs[0].getBoundingClientRect(), b = orbs[1].getBoundingClientRect();
-        var d = Math.hypot(a.left + a.width / 2 - b.left - b.width / 2, a.top + a.height / 2 - b.top - b.height / 2);
-        setMerged(d < a.width * .78 ? true : (merged && d < a.width * 1.1));
-      });
-      s.el.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setMerged(!merged); } });
-    });
-    function tick(now) {
-      if (!vis) return; var t = (now - t0) / 1000;
-      st.forEach(function (s, i) {
-        if (!s.drag) { s.x += (s.tx - s.x) * .09; s.y += (s.ty - s.y) * .09; }
-        var fx = H.reduced ? 0 : Math.sin(t * .7 + i * 2) * 6, fy = H.reduced ? 0 : Math.cos(t * .9 + i) * 8;
-        s.el.style.transform = 'translate(' + (s.x + fx) + 'px,' + (s.y + fy) + 'px)';
-      });
-      if (wave) H.$$('path', wave).forEach(function (p, k) { var d = ''; for (var x = 0; x <= 140; x += 4) d += (x ? 'L' : 'M') + x + ',' + (20 + Math.sin(x / 14 + t * 2 + k * .8) * (6 + k * 2) * Math.sin(x / 140 * Math.PI)).toFixed(1); p.setAttribute('d', d); });
-      requestAnimationFrame(tick);
-    }
-    H.onView(field, function (v) { var was = vis; vis = v; if (v && !was) requestAnimationFrame(tick); });
-    H.scene('combo', {
-      steps: 1,
-      set: function (i) { setMerged(i > 0, true); },
-      step: function (i) { setMerged(i > 0); return i ? 1300 : 800; },
-      ff: function () { setMerged(merged, true); }
-    });
-  }
-
-  /* ================= 07 SIGNAL → COLOUR ================= */
-  function signal() {
-    var sec = H.$('[data-signal]'); if (!sec) return;
-    var nodes = H.$$('[data-node]', sec), wire = H.$('[data-sg-wire]', sec), run = H.$('[data-sg-run]', sec), amt = H.$('[data-sg-amount]', sec);
-    var readout = H.$('[data-sg-readout]', sec), chip = H.$('[data-sg-chip]', sec), rgb = H.$('[data-sg-rgb]', sec), fill = H.$('.sg-fill', sec);
-    var bind = H.$('.sg-bind', sec), pyr = H.$$('.sg-pyr circle', sec), timers = [], ran = false;
-    wire.setAttribute('pathLength', 1000); wire.style.transition = 'stroke-dashoffset .9s cubic-bezier(.16,1,.3,1)';
-    function at(ms, fn) { timers.push(setTimeout(fn, H.reduced ? 0 : ms)); }
-    function colour() {
-      var k = amt.value / 10, c = [Math.round(H.lerp(255, 245, k)), Math.round(H.lerp(246, 190, k)), Math.round(H.lerp(214, 20, k))];
-      fill.style.fill = 'rgb(' + c + ')'; fill.style.transform = 'scaleY(' + (.25 + k * .75) + ')';
-      chip.style.background = 'rgb(' + c + ')'; rgb.textContent = 'RGB(' + c.join(', ') + ')';
-    }
-    function go() {
-      timers.forEach(clearTimeout); timers = []; ran = true;
-      nodes.forEach(function (n) { n.classList.remove('is-on'); }); readout.classList.remove('is-on');
-      wire.style.strokeDashoffset = 1000; bind.style.transform = 'translateY(-14px)'; fill.style.transform = 'scaleY(.08)';
-      pyr.forEach(function (c) { c.style.opacity = .18; });
-      at(80, function () { nodes[0].classList.add('is-on'); wire.style.strokeDashoffset = 800; });
-      at(700, function () { nodes[1].classList.add('is-on'); bind.style.transform = 'translateY(16px)'; wire.style.strokeDashoffset = 600; });
-      [0, 1, 1, 1, 2, 2, 2, 2, 2, 2].forEach(function (row, i) { at(1300 + row * 380 + i * 30, function () { pyr[i].style.opacity = 1; }); });
-      at(1300, function () { nodes[2].classList.add('is-on'); wire.style.strokeDashoffset = 400; });
-      at(2500, function () { nodes[3].classList.add('is-on'); wire.style.strokeDashoffset = 200; });
-      at(3200, function () { nodes[4].classList.add('is-on'); wire.style.strokeDashoffset = 0; colour(); });
-      at(4300, function () { readout.classList.add('is-on'); });
-    }
-    function reset() {
-      timers.forEach(clearTimeout); timers = []; ran = false;
-      nodes.forEach(function (n) { n.classList.remove('is-on'); }); readout.classList.remove('is-on');
-      wire.style.strokeDashoffset = 1000; bind.style.transform = 'translateY(-14px)'; fill.style.transform = 'scaleY(.08)';
-      pyr.forEach(function (c) { c.style.opacity = .18; });
-    }
-    function final() {
-      timers.forEach(clearTimeout); timers = []; ran = true;
-      nodes.forEach(function (n) { n.classList.add('is-on'); }); wire.style.strokeDashoffset = 0;
-      bind.style.transform = 'translateY(16px)'; pyr.forEach(function (c) { c.style.opacity = 1; }); colour(); readout.classList.add('is-on');
-    }
-    run.addEventListener('click', go);
-    amt.addEventListener('input', function () { if (ran) { colour(); readout.classList.add('is-on'); } });
-    H.scene('signal', {
-      steps: 1,
-      set: function (i) { if (i) final(); else reset(); },
-      step: function (i) { if (!i) { reset(); return 300; } go(); return 4500; },
-      ff: final
-    });
-  }
-
-  /* ================= 08 LOOP ================= */
-  function loop() {
-    var sec = H.$('[data-loop]'); if (!sec) return;
-    var svg = H.$('[data-lp-svg]', sec), board = H.$('[data-lp-board]', sec), card = H.$('[data-lp-card]', sec);
-    /* grid from the team's sketch (B11): dry lab | HP (questionnaire · centre · teaching/interviews) | wet lab */
-    var C = [130, 370, 600, 840, 1110], R = [140, 310, 460], BOT = 566;
-    var N = {
-      data: [C[0], R[0], 'Data', 'dry', 'Soil and survey data used to tune the models.'],
-      eco: [C[0], R[1], 'Eco model', 'dry', 'Estimates where and when the product could make economic sense.'],
-      ode: [C[0], R[2], 'ODE model', 'dry', 'Links ascaroside input to pigment output over time.'],
-      soil: [C[2], R[0], 'Soil survey', 'hp', 'Public soil sampling that feeds both labs.'],
-      survey: [C[1], R[1], 'Questionnaire', 'hp', 'Growers’ needs and intentions, for the Eco model.'],
-      society: [C[2], R[1], 'Society', 'core', 'The people and fields the project serves.'],
-      project: [C[2], R[2], 'Our project', 'core', 'The sensor, its workflow and its limits.'],
-      teach: [C[3], R[1], 'Teaching', 'hp', 'Classes and outreach that bring questions back.'],
-      expert: [C[3], R[2], 'Expert interviews', 'hp', 'Agronomists and testers shape how results are used.'],
-      samples: [C[4], R[0], 'Samples', 'wet', 'Real soil samples to test against.'],
-      bench: [C[4], R[2], 'Bench tests', 'wet', 'Does the yeast respond, and can we read the colour?']
-    };
-    function box(k) { var n = N[k], core = n[3] === 'core', w = n[2].length * (core ? 9.8 : 8.6) + (core ? 30 : 26); return { x: n[0], y: n[1], w: w, h: 40, l: n[0] - w / 2, r: n[0] + w / 2, t: n[1] - 20, b: n[1] + 20 }; }
-    var G = 7; // gap between a line end and a node
-    /* each edge: from, to, label, route. Routes are orthogonal so nothing crosses. */
-    function hz(a, b, y, lab) { var A = box(a), B = box(b), x0 = A.x < B.x ? A.r + G : A.l - G, x1 = A.x < B.x ? B.l - G : B.r + G; return { d: 'M' + x0 + ',' + y + 'H' + x1, lx: (x0 + x1) / 2, ly: y - 9, anchor: 'middle' }; }
-    function vt(a, b, x, side, lab) { var A = box(a), B = box(b), y0 = A.y < B.y ? A.b + G : A.t - G, y1 = A.y < B.y ? B.t - G : B.b + G; return { d: 'M' + x + ',' + y0 + 'V' + y1, lx: x + side * 9, ly: (y0 + y1) / 2 + 5, anchor: side > 0 ? 'start' : 'end' }; }
-    function under(a, b, y, xa, xb) { var A = box(a), B = box(b), r = 14; xa = xa == null ? A.x : xa; xb = xb == null ? B.x : xb; var y0 = A.b + G, y1 = B.b + G, dir = xb > xa ? 1 : -1;
-      return { d: 'M' + xa + ',' + y0 + 'V' + (y - r) + 'Q' + xa + ',' + y + ' ' + (xa + dir * r) + ',' + y + 'H' + (xb - dir * r) + 'Q' + xb + ',' + y + ' ' + xb + ',' + (y - r) + 'V' + y1, lx: (xa + xb) / 2, ly: y + 20, anchor: 'middle' }; }
-    var E = [
-      ['soil', 'samples', 'provides', hz('soil', 'samples', R[0])],
-      ['soil', 'data', 'provides', hz('soil', 'data', R[0])],
-      ['samples', 'bench', 'tested', vt('samples', 'bench', C[4], 1)],
-      ['data', 'eco', 'adjusts', vt('data', 'eco', C[0], 1)],
-      ['bench', 'expert', 'raises questions', hz('bench', 'expert', R[2])],
-      ['ode', 'bench', 'simulation analysis', under('ode', 'bench', BOT)],
-      ['expert', 'project', 'guidance', hz('expert', 'project', R[2])],
-      ['ode', 'project', 'optimises', hz('ode', 'project', R[2])],
-      ['teach', 'society', 'feedback', hz('teach', 'society', R[1])],
-      ['society', 'survey', 'fills in', hz('society', 'survey', R[1])],
-      ['survey', 'eco', 'supports', hz('survey', 'eco', R[1])],
-      ['eco', 'society', 'predicts', under('eco', 'society', R[1] + 64, C[0] + 26, C[2] - 26)],
-      ['society', 'project', 'decides', vt('society', 'project', C[2] + 14, 1)],
-      ['project', 'society', 'applied', vt('project', 'society', C[2] - 14, -1)]
-    ];
-    var QUESTION = { wet: 'Can we see it?', dry: 'Can we explain it?', hp: 'Can we use it to decide?', core: 'The centre of the loop' };
-    var defs = el('defs', {}, svg), mk = el('marker', { id: 'lp-arrow', viewBox: '0 0 10 10', refX: 8.5, refY: 5, markerWidth: 7, markerHeight: 7, orient: 'auto-start-reverse' }, defs);
-    el('path', { d: 'M1,1.5 L8.5,5 L1,8.5', fill: 'none', stroke: '#c8374f', 'stroke-width': 1.6, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, mk);
-    [['Dry lab', C[0], 56], ['Human Practices', C[2], 50], ['Wet lab', C[4], 56]].forEach(function (c) { var tx = el('text', { x: c[1], y: c[2], 'text-anchor': 'middle', class: 'col' }, svg); tx.textContent = c[0]; });
-    var eg = el('g', {}, svg), ng = el('g', {}, svg);
-    var edges = E.map(function (e, i) {
-      var g = el('g', { class: 'edge' }, eg), r = e[3];
-      var path = el('path', { d: r.d }, g); el('path', { d: r.d, class: 'flow' }, g);
-      var tx = el('text', { x: r.lx, y: r.ly, 'text-anchor': r.anchor }, g); tx.textContent = e[2];
-      var L = path.getTotalLength ? path.getTotalLength() : 300;
-      path.style.strokeDasharray = L; path.style.strokeDashoffset = L;
-      return { g: g, path: path, text: tx, a: e[0], b: e[1], L: L, i: i };
-    });
-    var nodes = {};
-    Object.keys(N).forEach(function (k) {
-      var n = N[k], b = box(k), g = el('g', { class: 'node' + (n[3] === 'core' ? ' core' : ''), tabindex: 0, role: 'button', 'aria-label': n[2] + ': ' + n[4] }, ng);
-      el('rect', { x: b.l, y: b.t, width: b.w, height: b.h, rx: 20 }, g);
-      var tx = el('text', { x: b.x, y: b.y + 6, 'text-anchor': 'middle' }, g); tx.textContent = n[2];
-      nodes[k] = g;
-      g.addEventListener('pointerenter', function () { if (drawn) { focus([k]); show(k); } });
-      g.addEventListener('pointerleave', function () { if (!playing) { focus(null); card.hidden = true; } });
-      g.addEventListener('click', function () { focus([k]); show(k); });
-      g.addEventListener('focus', function () { focus([k]); show(k); });
-    });
-    /* drawing the connections is this page's step */
-    var drawn = false, dtm = [];
-    function drawAll(on, instant) {
-      dtm.forEach(clearTimeout); dtm = []; drawn = on;
-      board.classList.toggle('is-drawn', on);
-      edges.forEach(function (e, i) {
-        var delay = instant || !on ? 0 : i * 170;
-        e.path.style.transition = instant ? 'none' : 'stroke-dashoffset .55s cubic-bezier(.3,.7,.2,1) ' + delay + 'ms';
-        e.text.style.transitionDelay = instant ? '0ms' : (delay + 280) + 'ms';
-        e.path.style.strokeDashoffset = on ? 0 : e.L;
-        e.path.removeAttribute('marker-end');
-        if (on) { if (instant) e.path.setAttribute('marker-end', 'url(#lp-arrow)'); else dtm.push(setTimeout(function () { e.path.setAttribute('marker-end', 'url(#lp-arrow)'); }, delay + 480)); }
-      });
-    }
-    function focus(keys, onlyEdges) {
-      board.classList.toggle('is-focus', !!keys);
-      H.$$('.is-hl', svg).forEach(function (x) { x.classList.remove('is-hl'); });
-      if (!keys) return;
-      keys.forEach(function (k) { nodes[k].classList.add('is-hl'); });
-      edges.forEach(function (e) {
-        var hit = onlyEdges ? onlyEdges.indexOf(e) >= 0 : (keys.indexOf(e.a) >= 0 || keys.indexOf(e.b) >= 0);
-        if (hit) { e.g.classList.add('is-hl'); nodes[e.a].classList.add('is-hl'); nodes[e.b].classList.add('is-hl'); }
-      });
-    }
-    function show(k) {
-      var n = N[k], r = board.getBoundingClientRect(), sx = r.width / 1200, sy = r.height / 620;
-      card.innerHTML = '<b>' + n[2] + '</b>' + n[4] + '<em>' + QUESTION[n[3]] + '</em>';
-      var b = box(k), x = n[0] * sx, y = b.b * sy + 10; card.hidden = false;
-      card.style.left = H.clamp(x - 125, 0, r.width - 250) + 'px'; card.style.top = H.clamp(y, 0, r.height - 110) + 'px';
-    }
-    H.$$('[data-q]', sec).forEach(function (b) {
-      b.addEventListener('click', function () {
-        if (!drawn) drawAll(true, true);
-        var on = b.getAttribute('aria-pressed') !== 'true';
-        H.$$('[data-q]', sec).forEach(function (o) { o.setAttribute('aria-pressed', 'false'); });
-        b.setAttribute('aria-pressed', on ? 'true' : 'false'); card.hidden = true;
-        var q = b.getAttribute('data-q');
-        focus(on ? Object.keys(N).filter(function (k) { return N[k][3] === q; }) : null);
-      });
-    });
-    // play the loop: a field question travels through the labs and back to society
-    var seq = [['soil', 'samples'], ['samples', 'bench'], ['bench', 'expert'], ['expert', 'project'], ['project', 'society'], ['society', 'survey'], ['survey', 'eco'], ['eco', 'society'], ['society', 'project']];
-    var dot = el('circle', { r: 7, class: 'lp__dot', opacity: 0 }, svg), playing = false;
-    H.$('[data-lp-play]', sec).addEventListener('click', function () {
-      if (playing) return; playing = true; if (!drawn) drawAll(true, true); var i = 0;
-      (function step() {
-        if (i >= seq.length) { playing = false; dot.setAttribute('opacity', 0); focus(null); card.hidden = true; return; }
-        var e = edges.filter(function (x) { return x.a === seq[i][0] && x.b === seq[i][1]; })[0];
-        focus([e.a, e.b], [e]); show(e.b);
-        var L = e.L, s0 = performance.now(); dot.setAttribute('opacity', 1);
-        (function mv(now) { var k = H.clamp((now - s0) / 900, 0, 1), p = e.path.getPointAtLength(L * H.ease(k)); dot.setAttribute('cx', p.x); dot.setAttribute('cy', p.y); if (k < 1) requestAnimationFrame(mv); else { i++; setTimeout(step, 200); } })(s0);
-      })();
-    });
-    H.scene('loop', {
-      steps: 1,
-      set: function (i) { drawAll(i > 0, true); },
-      step: function (i) { drawAll(i > 0, false); return i ? edges.length * 170 + 560 : 300; },
-      ff: function () { drawAll(true, true); }
-    });
-  }
-
-  /* ================= 09 BUILT ================= */
-  function built() {
-    H.$$('[data-art]').forEach(function (card) {
-      var cv = H.$('canvas', card), kind = card.getAttribute('data-art'), ctx, w, h, hover = false, vis = false, t0 = performance.now(), r = H.rand(kind.length * 7);
-      var net = []; for (var i = 0; i < 26; i++) net.push([r(), r(), r()]);
-      function size() { w = card.clientWidth; h = card.clientHeight; ctx = H.fit(cv, w, h, 2); }
-      function glow(x, y, rad, col, a) { var g = ctx.createRadialGradient(x, y, 0, x, y, rad); g.addColorStop(0, 'rgba(' + col + ',' + a + ')'); g.addColorStop(1, 'rgba(' + col + ',0)'); ctx.fillStyle = g; ctx.fillRect(x - rad, y - rad, rad * 2, rad * 2); }
-      function ball(x, y, rad, col) { var g = ctx.createRadialGradient(x - rad * .35, y - rad * .35, 1, x, y, rad); g.addColorStop(0, '#fff'); g.addColorStop(.35, col); g.addColorStop(1, 'rgba(0,0,0,.4)'); ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, rad, 0, 6.29); ctx.fill(); }
-      function draw(now) {
-        if (!vis) return; var t = (now - t0) / 1000 * (hover ? 1.8 : .6), cx = w * .62, cy = h * .6;
-        ctx.clearRect(0, 0, w, h); var bg = ctx.createLinearGradient(0, 0, w, h); bg.addColorStop(0, '#221430'); bg.addColorStop(1, '#130a19'); ctx.fillStyle = bg; ctx.fillRect(0, 0, w, h);
-        if (kind === 'yeast') {
-          glow(cx, cy, h * .6, '160,110,240', .35);
-          ctx.save(); ctx.translate(cx, cy); ctx.rotate(-.3 + Math.sin(t) * .05);
-          ctx.fillStyle = 'rgba(200,170,255,.35)'; ctx.strokeStyle = 'rgba(230,210,255,.7)'; ctx.lineWidth = 1.5;
-          ctx.beginPath(); ctx.ellipse(0, 0, h * .34, h * .25, 0, 0, 6.29); ctx.fill(); ctx.stroke();
-          ctx.beginPath(); ctx.ellipse(h * .34, -h * .12, h * .09, h * .08, 0, 0, 6.29); ctx.fill(); ctx.stroke();
-          for (var k = 0; k < 6; k++) { ctx.fillStyle = ['rgba(255,140,120,.7)', 'rgba(255,210,120,.7)', 'rgba(140,200,255,.6)'][k % 3]; ctx.beginPath(); ctx.arc(Math.cos(k * 1.7 + t) * h * .15, Math.sin(k * 2.3 + t) * h * .1, 4 + k % 3 * 2, 0, 6.29); ctx.fill(); }
-          ctx.restore();
-        }
-        if (kind === 'pair') {
-          [['76,141,255', '#4c8dff', w * .42], ['255,140,60', '#ff9a4a', w * .72]].forEach(function (m, j) {
-            var x = m[2], y = cy + Math.sin(t + j) * 6; glow(x, y, h * .35, m[0], .35);
-            var pts = [[0, 0], [-26, 18], [26, 18], [0, -28]];
-            ctx.strokeStyle = m[1]; ctx.lineWidth = 3; pts.slice(1).forEach(function (p) { ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x + p[0], y + p[1]); ctx.stroke(); });
-            pts.forEach(function (p, k) { ball(x + p[0], y + p[1], k ? 9 : 12, m[1]); });
-          });
-        }
-        if (kind === 'receptor') {
-          glow(cx, cy, h * .5, '150,90,230', .3);
-          ctx.strokeStyle = '#a77bf0'; ctx.lineWidth = 16; ctx.lineCap = 'round';
-          ctx.beginPath(); ctx.moveTo(cx, h * .95); ctx.lineTo(cx, cy); ctx.lineTo(cx - 26, cy - 40); ctx.moveTo(cx, cy); ctx.lineTo(cx + 26, cy - 40); ctx.stroke();
-          ball(cx - 70 + Math.sin(t) * 8, cy - 30, 11, '#ff7a5a'); ball(cx + 64, cy - 60 + Math.cos(t) * 8, 7, '#e86bff'); ball(cx + 18 * Math.sin(t * .7), cy - 70, 6, '#ff5e86');
-        }
-        if (kind === 'color') {
-          [[.7, .55, .28], [.46, .72, .12], [.58, .82, .08]].forEach(function (d, j) { var x = w * d[0], y = h * d[1] + Math.sin(t + j) * 5; glow(x, y, h * d[2] * 2, '245,194,27', .35); ball(x, y, h * d[2], '#f5c21b'); });
-        }
-        if (kind === 'model') {
-          ctx.strokeStyle = 'rgba(120,160,255,.35)'; ctx.lineWidth = 1;
-          for (var c = 0; c < 7; c++) { ctx.beginPath(); for (var x2 = 0; x2 <= w; x2 += 8) { var y2 = h * (.3 + c * .1) + Math.sin(x2 / 40 + c + t * .5) * 10; x2 ? ctx.lineTo(x2, y2) : ctx.moveTo(x2, y2); } ctx.stroke(); }
-          net.forEach(function (n, k) { var x3 = w * (.3 + n[0] * .7), y3 = h * (.3 + n[1] * .6) + Math.sin(t + k) * 3; ctx.fillStyle = ['#6ff3de', '#ffa24a', '#4c8dff'][k % 3]; ctx.shadowColor = ctx.fillStyle; ctx.shadowBlur = 8; ctx.beginPath(); ctx.arc(x3, y3, 2 + n[2] * 2.5, 0, 6.29); ctx.fill(); });
-          ctx.shadowBlur = 0;
-        }
-        if (kind === 'field') {
-          ctx.fillStyle = '#2b1d22'; ctx.beginPath(); ctx.moveTo(0, h); for (var x4 = 0; x4 <= w; x4 += 10) ctx.lineTo(x4, h * .82 - Math.sin(x4 / w * 6) * 10); ctx.lineTo(w, h); ctx.fill();
-          for (var s = 0; s < 5; s++) {
-            var px = w * (.36 + s * .14), py = h * .82 - Math.sin(px / w * 6) * 10, ph = h * (.22 + s * .04), sw = Math.sin(t + s) * .06;
-            ctx.save(); ctx.translate(px, py); ctx.rotate(sw); ctx.strokeStyle = '#7fae5a'; ctx.lineWidth = 2.4; ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(0, -ph); ctx.stroke();
-            [[-1, .55], [1, .75], [-1, .95]].forEach(function (l) { ctx.save(); ctx.translate(0, -ph * l[1]); ctx.scale(l[0], 1); ctx.fillStyle = '#8fc063'; ctx.beginPath(); ctx.moveTo(0, 0); ctx.quadraticCurveTo(12, -12, 24, -4); ctx.quadraticCurveTo(12, 4, 0, 0); ctx.fill(); ctx.restore(); });
-            ctx.restore();
-          }
-        }
-        requestAnimationFrame(draw);
+  /* ---------------- nematodes drawn from data attributes ---------------- */
+  function nums(el, attr) { return el.getAttribute(attr).split(/\s+/).map(Number); }
+  function drawWorms(list, t) {
+    list.forEach(function (w) {
+      var a = w.a;
+      var amp = a[4] * (w.j2 ? 0.42 : 0.5);
+      var res = NK.wormPath(a[0], a[1], a[2], a[3], a[4], t, a[5] * 2.4, amp);
+      w.body.setAttribute('d', res.d);
+      if (w.eye) {
+        var ca = Math.cos(a[2]);
+        var sa = Math.sin(a[2]);
+        var lx = -a[3] * 0.09;
+        var ly = -a[4] * 0.12;
+        var ex = res.head.x + lx * ca - ly * sa;
+        var ey = res.head.y + lx * sa + ly * ca;
+        w.eye.setAttribute('cx', ex.toFixed(1));
+        w.eye.setAttribute('cy', ey.toFixed(1));
+        w.pupil.setAttribute('cx', (ex + ca * 1.4).toFixed(1));
+        w.pupil.setAttribute('cy', (ey + sa * 1.4).toFixed(1));
       }
-      card.addEventListener('pointermove', function (e) { var b = card.getBoundingClientRect(); card.style.setProperty('--ry', ((e.clientX - b.left) / b.width - .5) * 10 + 'deg'); card.style.setProperty('--rx', -((e.clientY - b.top) / b.height - .5) * 10 + 'deg'); hover = true; });
-      card.addEventListener('pointerleave', function () { card.style.setProperty('--rx', '0deg'); card.style.setProperty('--ry', '0deg'); hover = false; });
-      size(); addEventListener('resize', size);
-      H.onView(card, function (v) { var was = vis; vis = v; if (v && !was) requestAnimationFrame(draw); });
     });
   }
+  function collectWorms(scope) {
+    var out = [];
+    $$('[data-worm]', scope).forEach(function (p) { out.push({ a: nums(p, 'data-worm'), body: p }); });
+    $$('[data-j2]', scope).forEach(function (g) {
+      out.push({ a: nums(g, 'data-j2'), body: $('.nk-j2__body', g), eye: $('.nk-j2__eye', g), pupil: $('.nk-j2__pupil', g), j2: true });
+    });
+    return out;
+  }
+  ['[data-stages]', '[data-profiles]'].forEach(function (sel) {
+    var scope = $(sel);
+    if (!scope) return;
+    var worms = collectWorms(scope);
+    if (!worms.length) return;
+    drawWorms(worms, 0);
+    if (!NK.reduced) NK.loopWhileVisible(scope, function (t) { drawWorms(worms, t); });
+  });
 
-  /* ================= 10 EXPLORE ================= */
-  function explore() {
-    var sec = H.$('#explore'); if (!sec) return;
-    var masc = H.$('[data-ex-mascot]', sec);
-    sec.addEventListener('pointermove', function (e) {
-      if (H.reduced || !masc) return; var b = masc.getBoundingClientRect(), dx = (e.clientX - b.left - b.width / 2) / innerWidth, dy = (e.clientY - b.top - b.height / 2) / innerHeight;
-      masc.style.transform = 'translate(' + dx * 24 + 'px,' + dy * 18 + 'px) rotate(' + dx * 8 + 'deg)';
+  /* ---------------- the detective's lens ---------------- */
+  $$('[data-scene]').forEach(function (fig) {
+    var svg = $('[data-scene-svg]', fig);
+    var clip = $('[data-lens-clip]', fig);
+    var zoom = $('[data-lens-zoom]', fig);
+    var lens = $('[data-lens]', fig);
+    if (!svg || !clip || !zoom || !lens) return;
+    var hot = (fig.getAttribute('data-hot') || '200 200').split(' ').map(Number);
+    var pos = { x: hot[0], y: hot[1] };
+    var pinned = false;
+    function place(x, y) {
+      pos.x = NK.clamp(x, 60, 360);
+      pos.y = NK.clamp(y, 118, 300);
+      clip.setAttribute('cx', pos.x.toFixed(1));
+      clip.setAttribute('cy', pos.y.toFixed(1));
+      zoom.setAttribute('transform', 'translate(' + pos.x.toFixed(1) + ' ' + pos.y.toFixed(1) + ') scale(2.2) translate(' + (-pos.x).toFixed(1) + ' ' + (-pos.y).toFixed(1) + ')');
+      lens.setAttribute('transform', 'translate(' + pos.x.toFixed(1) + ' ' + pos.y.toFixed(1) + ')');
+    }
+    function toSvg(e) {
+      var m = svg.getScreenCTM();
+      if (!m) return null;
+      var pt = svg.createSVGPoint();
+      pt.x = e.clientX;
+      pt.y = e.clientY;
+      return pt.matrixTransform(m.inverse());
+    }
+    function show(on) { fig.classList.toggle('is-lens', on); }
+    fig.addEventListener('pointermove', function (e) {
+      if (e.pointerType === 'touch') return;
+      var p = toSvg(e);
+      if (!p) return;
+      place(p.x, p.y);
+      show(true);
     });
-    H.$$('[data-ex-grid] a', sec).forEach(function (a) { a.addEventListener('pointermove', function (e) { var b = a.getBoundingClientRect(); a.style.setProperty('--gx', (e.clientX - b.left) + 'px'); a.style.setProperty('--gy', (e.clientY - b.top) + 'px'); }); });
-    var path = H.$('[data-ex-path]', sec), lis = H.$$('li', path), beam = H.$('.ex__beam', path);
-    H.once(path, function () {
-      var ol = H.$('ol', path); beam.style.setProperty('--ty', ol.offsetTop + 'px'); beam.style.width = (ol.offsetWidth - 12) + 'px';
-      lis.forEach(function (li, i) { setTimeout(function () { li.classList.add('is-on'); }, H.reduced ? 0 : 200 + i * 900); });
-    }, .5);
-  }
-})();
+    fig.addEventListener('pointerleave', function (e) { if (e.pointerType !== 'touch' && !pinned) show(false); });
+    fig.addEventListener('click', function (e) {
+      var p = toSvg(e);
+      if (p) place(p.x, p.y);
+      if (e.pointerType === 'mouse') { pinned = !pinned; show(true); } else { pinned = true; show(true); }
+    });
+    fig.addEventListener('focus', function () { place(pos.x, pos.y); show(true); });
+    fig.addEventListener('blur', function () { if (!pinned) show(false); });
+    fig.addEventListener('keydown', function (e) {
+      var d = 14;
+      var k = e.key;
+      if (k === 'ArrowLeft') place(pos.x - d, pos.y);
+      else if (k === 'ArrowRight') place(pos.x + d, pos.y);
+      else if (k === 'ArrowUp') place(pos.x, pos.y - d);
+      else if (k === 'ArrowDown') place(pos.x, pos.y + d);
+      else if (k === 'Escape') { pinned = false; show(false); return; }
+      else return;
+      e.preventDefault();
+      show(true);
+    });
+    place(pos.x, pos.y);
+  });
+
+  /* ---------------- clue sky: free-living nematodes drifting ---------------- */
+  (function () {
+    var sky = $('[data-clue-sky]');
+    if (!sky) return;
+    var R = NK.rng(5);
+    var worms = [];
+    for (var i = 0; i < 11; i++) {
+      var p = NK.svg('path', { class: 'nk-ghost' }, sky);
+      worms.push({ el: p, x: R() * 1440, y: 80 + R() * 760, ang: R() * 6.28, len: 60 + R() * 70, wid: 7 + R() * 5, sp: 6 + R() * 10, ph: R() * 6 });
+    }
+    for (i = 0; i < 46; i++) {
+      var c = NK.svg('circle', { cx: (R() * 1440).toFixed(0), cy: (R() * 900).toFixed(0), r: (0.8 + R() * 1.8).toFixed(1), fill: R() < 0.7 ? '#5ff0d6' : '#ffd66b', class: 'nk-zf__sig' }, sky);
+      c.style.setProperty('--d', (R() * 3).toFixed(2) + 's');
+      c.style.opacity = '.55';
+    }
+    function draw(t, dt) {
+      worms.forEach(function (w) {
+        w.ang += Math.sin(t * 0.2 + w.ph) * 0.002;
+        w.x += Math.cos(w.ang) * w.sp * (dt || 0);
+        w.y += Math.sin(w.ang) * w.sp * (dt || 0);
+        if (w.x < -120) w.x = 1560; else if (w.x > 1560) w.x = -120;
+        if (w.y < -120) w.y = 1020; else if (w.y > 1020) w.y = -120;
+        w.el.setAttribute('d', NK.wormPath(w.x, w.y, w.ang, w.len, w.wid, t + w.ph, 3, w.wid * 0.6).d);
+      });
+    }
+    draw(0, 0);
+    if (!NK.reduced) NK.loopWhileVisible(sky.parentNode, draw);
+  }());
+
+  /* ---------------- one signal or a combination ---------------- */
+  (function () {
+    var sec = $('[data-combo-section]');
+    if (!sec) return;
+    var orbs = $('[data-orbs]', sec);
+    var read = $('[data-combo-read]', sec);
+    var btns = $$('[data-combo]', sec);
+    var TEXT = {
+      single: 'A single ascaroside may only tell us that a related signal is present.',
+      pair: 'Reading ascr#3 and ascr#18 together is the question we test: could the combination help separate plant-parasitic risk from background activity?'
+    };
+    var touched = false;
+    function set(mode, focus) {
+      orbs.setAttribute('data-mode', mode);
+      read.textContent = TEXT[mode];
+      btns.forEach(function (b) {
+        var on = b.getAttribute('data-combo') === mode;
+        b.setAttribute('aria-checked', on ? 'true' : 'false');
+        b.tabIndex = on ? 0 : -1;
+        if (on && focus) b.focus();
+      });
+    }
+    btns.forEach(function (b, i) {
+      b.addEventListener('click', function () { touched = true; set(b.getAttribute('data-combo')); });
+      b.addEventListener('keydown', function (e) {
+        if (['ArrowRight', 'ArrowDown', 'ArrowLeft', 'ArrowUp'].indexOf(e.key) < 0) return;
+        e.preventDefault();
+        touched = true;
+        set(btns[(i + 1) % btns.length].getAttribute('data-combo'), true);
+      });
+    });
+    set('single');
+    NK.onVisible(orbs, function () { setTimeout(function () { if (!touched) set('pair'); }, 2400); }, { threshold: 0.5 });
+  }());
+
+  /* ---------------- proposed sensor pathway ---------------- */
+  (function () {
+    var fig = $('[data-pathway]');
+    if (!fig) return;
+    var edgesG = $('[data-pw-edges]', fig);
+    var nodesG = $('[data-pw-nodes]', fig);
+    var pigG = $('[data-pw-pigment]', fig);
+    var liquid = $('[data-pw-liquid]', fig);
+    var pointer = $('[data-pw-pointer]', fig);
+    var glyphs = $$('[data-pw-glyph]', fig);
+    var labels = $$('[data-pw-label]', fig);
+    var goBtns = $$('[data-pw-go]', fig);
+    var play = $('[data-pw-play]', fig);
+
+    /* amplification pyramid: 1 → 3 → 9 → 27 */
+    var levels = [[{ x: 372, y: 252 }]];
+    function ys(n, a, b) { var out = []; for (var i = 0; i < n; i++) out.push(n === 1 ? (a + b) / 2 : a + (b - a) * i / (n - 1)); return out; }
+    levels.push(ys(3, 190, 314).map(function (y) { return { x: 440, y: y }; }));
+    levels.push(ys(9, 138, 366).map(function (y) { return { x: 512, y: y }; }));
+    levels.push(ys(27, 96, 408).map(function (y) { return { x: 584, y: y }; }));
+    var edgeSets = [[], [], [], [], []];
+    function line(x1, y1, x2, y2, set) { set.push(NK.svg('line', { x1: x1, y1: y1.toFixed(1), x2: x2, y2: y2.toFixed(1) }, edgesG)); }
+    line(330, 252, 372, 252, edgeSets[0]);
+    for (var l = 1; l < levels.length; l++) {
+      levels[l].forEach(function (n, i) { var parent = levels[l - 1][Math.floor(i / 3)]; line(parent.x, parent.y, n.x, n.y, edgeSets[l]); });
+    }
+    levels[3].forEach(function (n, i) { line(n.x, n.y, 702, 262 + (i / 26) * 40, edgeSets[4]); });
+    var radii = [7, 6, 4.6, 3.2];
+    var nodeSets = levels.map(function (lv, li) { return lv.map(function (n) { return NK.svg('circle', { cx: n.x, cy: n.y.toFixed(1), r: radii[li] }, nodesG); }); });
+    var R = NK.rng(21);
+    var pig = [];
+    while (pig.length < 34) {
+      var px = 640 + R() * 400;
+      var py = 80 + R() * 380;
+      var inCell = Math.pow((px - 640) / 318, 2) + Math.pow((py - 270) / 198, 2) < 1;
+      var inNuc = Math.hypot(px - 780, py - 282) < 88;
+      var outside = px > 972 && px < 1030 && py > 190 && py < 360;
+      if ((inCell && !inNuc) || outside) {
+        var d = Math.hypot(px - 780, py - 282);
+        pig.push({ el: NK.svg('circle', { cx: px.toFixed(1), cy: py.toFixed(1), r: (3.6 + R() * 3.4).toFixed(1) }, pigG), t: 3.7 + d / 260 + R() * 0.4 });
+      }
+    }
+    var from = [[110, 200], [140, 290]];
+    var to = [[252, 244], [246, 266]];
+
+    var T_END = 7.2;
+    var t0 = 0;
+    var elapsed = 0;
+    var running = false;
+    var stop = null;
+    function ease(x) { return NK.easeInOut(NK.clamp(x, 0, 1)); }
+    function apply(e) {
+      glyphs.forEach(function (g, i) {
+        var k = ease((e - i * 0.15) / 1.3);
+        var x = NK.lerp(from[i][0], to[i][0], k) + (k < 1 ? Math.sin(e * 3 + i) * 3 : 0);
+        var y = NK.lerp(from[i][1], to[i][1], k) + (k < 1 ? Math.cos(e * 2.4 + i) * 4 : 0);
+        g.setAttribute('transform', 'translate(' + x.toFixed(1) + ' ' + y.toFixed(1) + ')');
+      });
+      fig.classList.toggle('is-bound', e >= 1.4);
+      var times = [1.6, 1.9, 2.3, 2.7, 3.1];
+      edgeSets.forEach(function (set, i) { var on = e >= times[i]; set.forEach(function (ln) { ln.classList.toggle('is-on', on); }); });
+      nodeSets.forEach(function (set, i) { var on = e >= times[i]; set.forEach(function (c) { c.classList.toggle('is-on', on); }); });
+      fig.classList.toggle('is-gene', e >= 3.4);
+      pig.forEach(function (p) { p.el.classList.toggle('is-on', e >= p.t); });
+      var level = ease((e - 4.4) / 2.0);
+      liquid.setAttribute('y', (409 - 230 * level).toFixed(1));
+      liquid.setAttribute('height', (230 * level).toFixed(1));
+      liquid.style.opacity = String(0.35 + 0.65 * level);
+      pointer.style.transform = 'translateX(' + (100 * ease((e - 6.0) / 0.8)).toFixed(1) + 'px)';
+      var step = e >= 3.4 ? 3 : e >= 1.9 ? 2 : e >= 1.4 ? 1 : 0;
+      fig.setAttribute('data-step', String(step));
+      labels.forEach(function (lb) { lb.classList.toggle('is-on', Number(lb.getAttribute('data-pw-label')) <= step); });
+      goBtns.forEach(function (b) { b.classList.toggle('is-on', Number(b.getAttribute('data-pw-go')) === step); });
+    }
+    function frame(t) {
+      if (!running) return;
+      if (!t0) t0 = t - elapsed;
+      elapsed = t - t0;
+      apply(elapsed);
+      if (elapsed >= T_END) { running = false; if (stop) { stop(); stop = null; } }
+    }
+    function run() {
+      if (NK.reduced) { elapsed = T_END; apply(T_END); return; }
+      elapsed = 0;
+      t0 = 0;
+      running = true;
+      fig.classList.remove('is-bound');
+      if (!stop) stop = NK.loop(frame);
+    }
+    function jump(step) {
+      running = false;
+      if (stop) { stop(); stop = null; }
+      elapsed = step === 1 ? 1.5 : step === 2 ? 3.2 : T_END;
+      apply(elapsed);
+    }
+    goBtns.forEach(function (b) { b.addEventListener('click', function () { jump(Number(b.getAttribute('data-pw-go'))); }); });
+    if (play) play.addEventListener('click', run);
+    apply(0);
+    NK.onVisible(fig, run, { threshold: 0.45 });
+  }());
+}());
