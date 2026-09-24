@@ -64,7 +64,7 @@
 .nk-triad__item p{font-size:14.5px;color:var(--nk-cream-3)}
 .nk-triad.is-in .nk-triad__item--focus{opacity:1;background:rgba(95,240,214,.07);box-shadow:inset 0 0 0 1px rgba(95,240,214,.32);transition-delay:2.2s}
 .nk-triad.is-in .nk-triad__item:not(.nk-triad__item--focus){opacity:.4;transition-delay:2.2s}
-.nk-triad__lens{position:absolute;top:-8px;left:16.66%;width:170px;height:170px;transform:translateX(-50%);pointer-events:none;opacity:0}
+.nk-triad__lens{position:absolute;top:14px;left:16.66%;width:112px;height:112px;transform:translateX(-50%);pointer-events:none;opacity:0}
 .nk-triad.is-in .nk-triad__lens{animation:nk-lens-scan 2.6s var(--nk-ease) .3s forwards}
 @keyframes nk-lens-scan{0%{opacity:0;left:16.66%}12%{opacity:1;left:16.66%}40%{left:50%}55%{left:50%}85%,100%{opacity:1;left:83.33%}}
 .nk-clues__text{max-width:760px;margin:clamp(40px,5vw,64px) auto 0;text-align:center;font-size:clamp(17px,1.35vw,20px);line-height:1.62;color:var(--nk-cream-2)}
@@ -167,4 +167,34 @@
   .nk-combo__grid{grid-template-columns:1fr}
   .nk-three{grid-template-columns:1fr}
   .nk-pathway__bar .nk-tag{margin-left:0}
+}
+
+/* Part 03 stages as a pinned sequence (JS adds .is-on): the overview of the
+ * four scenes, a zoom into scene 1, then vertical scroll pans across 2–4. */
+.nk-stagerun.is-on{position:relative;height:460vh;height:460svh}
+.nk-stagerun.is-on .nk-stagepin{position:sticky;top:0;height:100vh;height:100svh;width:100vw;margin-left:calc(50% - 50vw);overflow:hidden;display:flex;align-items:center}
+.nk-stagerun.is-on .nk-stages{flex:none;grid-template-columns:repeat(4,minmax(0,1fr));width:min(1240px,calc(100vw - 2 * var(--nk-gut)));margin:0 auto;transform-origin:0 0;will-change:transform}
+.nk-stagerun.is-on .nk-scene{transition:opacity .35s}
+.nk-stagerun.is-on .nk-stagepin::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0;transition:opacity .4s;background:linear-gradient(90deg,var(--nk-paper) 0,var(--nk-paper) calc(var(--nk-gut) + min(340px,28vw) + 24px),transparent calc(var(--nk-gut) + min(340px,28vw) + 150px))}
+.nk-stagerun.is-zoom .nk-stagepin::before{opacity:1}
+.nk-stagerun.is-on .nk-stage h3,.nk-stagerun.is-on .nk-stage p{transition:opacity .35s}
+.nk-stagerun.is-zooming .nk-stage h3,.nk-stagerun.is-zooming .nk-stage p{opacity:0}
+.nk-stagecap{position:absolute;z-index:2;left:var(--nk-gut);top:50%;width:min(340px,28vw);transform:translateY(-50%);opacity:0;pointer-events:none;transition:opacity .4s}
+.nk-stagerun.is-zoom .nk-stagecap{opacity:1}
+.nk-stagerun.is-zoom .nk-stagecap.is-swap{opacity:0;transition-duration:.15s}
+.nk-stagecap__n{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--nk-ink);color:var(--nk-paper);font-weight:700;font-size:16px}
+.nk-stagecap h3{margin-top:16px;font-size:clamp(26px,2.5vw,38px);line-height:1.1;letter-spacing:-.02em;font-weight:650;color:var(--nk-ink)}
+.nk-stagecap p{margin-top:12px;font-size:17px;line-height:1.5;color:var(--nk-ink-2)}
+.nk-stagedots{position:absolute;z-index:2;left:50%;bottom:30px;transform:translateX(-50%);display:flex;gap:10px;list-style:none;margin:0;padding:0;opacity:0;transition:opacity .4s}
+.nk-stagerun.is-zoom .nk-stagedots{opacity:1}
+.nk-stagedots li{width:8px;height:8px;border-radius:50%;background:rgba(40,22,48,.22);transition:background .3s,transform .3s}
+.nk-stagedots li.is-on{background:var(--nk-plum);transform:scale(1.4)}
+@media (max-width:760px){
+  .nk-stagerun.is-on .nk-stages{width:calc(4 * 84vw + 3 * 20px);gap:20px;margin:0}
+  .nk-stagerun.is-on .nk-stage:nth-child(even){margin-top:0}
+  .nk-stagecap{left:var(--nk-gut);right:var(--nk-gut);top:auto;bottom:112px;width:auto;transform:none}
+  .nk-stagecap h3{margin-top:10px;font-size:23px}
+  .nk-stagecap p{font-size:15px}
+  .nk-stagerun.is-on .nk-arrow{display:none}
+  .nk-stagerun.is-on .nk-stagepin::before{background:linear-gradient(0deg,var(--nk-paper) 0,var(--nk-paper) 210px,transparent 300px)}
 }

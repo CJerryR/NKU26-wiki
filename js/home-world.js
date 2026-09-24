@@ -59,6 +59,8 @@
     if (statusEl) { statusEl.textContent = stText; statusEl.classList.add('is-ok'); }
     var cs = document.querySelector('[data-china-status]');
     if (cs) { cs.textContent = stText; cs.classList.add('is-ok'); }
+    var cl = document.querySelector('[data-china-legend]');
+    if (cl) cl.hidden = false;
     var legend = map.querySelector('[data-world-legend]');
     if (legend) legend.hidden = false;
   }

@@ -297,47 +297,125 @@
       d.fill();
     }
 
-    /* roots: branching, tapered (visible faintly in the dark via the ambient mask) */
-    function growRoot(xs, ys, ang, len, wid, depth, col, amb) {
+    /* roots: smooth tapered ribbons. Colour: dark rim, lit body and a
+     * highlight toward the light. Height (red channel of the data canvas):
+     * a rounded profile, so the flashlight shades each root as a cylinder.
+     * Laterals are painted before their parent so the parent overlaps its
+     * branch points; fine roots carry root hairs near the tip. */
+    var rootBudget = 520;
+    var LIGHT = [-0.45, 0.89];
+    function ribbon(ctx, pts, w0, w1, scale, shift) {
+      var n = pts.length;
+      var lf = [];
+      var rt = [];
+      for (var i = 0; i < n; i++) {
+        var pa = pts[Math.max(0, i - 1)];
+        var pb = pts[Math.min(n - 1, i + 1)];
+        var tx = pb[0] - pa[0];
+        var ty = pb[1] - pa[1];
+        var tl = Math.sqrt(tx * tx + ty * ty) || 1;
+        var nx = -ty / tl;
+        var ny = tx / tl;
+        var hw = (w0 + (w1 - w0) * Math.pow(i / (n - 1), 0.75)) * 0.5;
+        var sh = (nx * LIGHT[0] + ny * LIGHT[1]) * shift * hw;
+        var cx = pts[i][0] + nx * sh;
+        var cy = pts[i][1] + ny * sh;
+        lf.push([cx + nx * hw * scale, cy + ny * hw * scale]);
+        rt.push([cx - nx * hw * scale, cy - ny * hw * scale]);
+      }
+      var e = pts[n - 1];
+      var q = pts[n - 2];
+      var el = Math.sqrt((e[0] - q[0]) * (e[0] - q[0]) + (e[1] - q[1]) * (e[1] - q[1])) || 1;
+      var tip = [e[0] + (e[0] - q[0]) / el * w1 * 0.6 * scale, e[1] + (e[1] - q[1]) / el * w1 * 0.6 * scale];
+      ctx.beginPath();
+      ctx.moveTo(X(lf[0][0]), Y(lf[0][1]));
+      for (i = 1; i < n; i++) ctx.lineTo(X(lf[i][0]), Y(lf[i][1]));
+      ctx.lineTo(X(tip[0]), Y(tip[1]));
+      for (i = n - 1; i >= 0; i--) ctx.lineTo(X(rt[i][0]), Y(rt[i][1]));
+      ctx.closePath();
+    }
+    function paintRoot(pts, w0, w1, amb, hairs, sick) {
+      ribbon(a, pts, w0, w1, 1, 0);
+      a.fillStyle = sick ? '#7c4a40' : '#6a4e3e';
+      a.fill();
+      ribbon(a, pts, w0, w1, 0.76, 0.12);
+      a.fillStyle = sick ? '#e2bb9f' : '#d8c09a';
+      a.fill();
+      ribbon(a, pts, w0, w1, 0.26, 0.5);
+      a.fillStyle = 'rgba(252,242,222,0.78)';
+      a.fill();
+      ribbon(d, pts, w0, w1, 1, 0);
+      d.fillStyle = rgb(0.62, amb, 0);
+      d.fill();
+      ribbon(d, pts, w0, w1, 0.7, 0.1);
+      d.fillStyle = rgb(0.77, amb, 0);
+      d.fill();
+      ribbon(d, pts, w0, w1, 0.36, 0.25);
+      d.fillStyle = rgb(0.9, amb, 0);
+      d.fill();
+      if (!hairs) return;
+      a.strokeStyle = 'rgba(240,226,198,0.42)';
+      a.lineWidth = Math.max(0.6, 0.011 * k);
+      a.lineCap = 'round';
+      for (var i = Math.floor(pts.length * 0.55); i < pts.length - 2; i += 2) {
+        var p0 = pts[i];
+        var ang = Math.atan2(pts[i + 1][1] - p0[1], pts[i + 1][0] - p0[0]);
+        for (var sd = -1; sd <= 1; sd += 2) {
+          var aa = ang + sd * (1.1 + R() * 0.7);
+          var hl = 0.05 + R() * 0.09;
+          a.beginPath();
+          a.moveTo(X(p0[0]), Y(p0[1]));
+          a.lineTo(X(p0[0] + Math.cos(aa) * hl), Y(p0[1] + Math.sin(aa) * hl));
+          a.stroke();
+        }
+      }
+    }
+    function rootPath(xs, ys, ang, len) {
+      var pts = [[xs, ys]];
       var x = xs;
       var y = ys;
-      var steps = Math.max(4, Math.round(len / 0.3));
-      for (var s = 0; s < steps; s++) {
-        var nx = x + Math.cos(ang) * 0.3;
-        var ny = y + Math.sin(ang) * 0.3;
-        a.strokeStyle = col;
-        a.lineWidth = Math.max(0.6, wid * k);
-        a.lineCap = 'round';
-        a.beginPath(); a.moveTo(X(x), Y(y)); a.lineTo(X(nx), Y(ny)); a.stroke();
-        d.strokeStyle = rgb(0.82, amb, 0);
-        d.lineWidth = a.lineWidth;
-        d.lineCap = 'round';
-        d.beginPath(); d.moveTo(X(x), Y(y)); d.lineTo(X(nx), Y(ny)); d.stroke();
-        ang += (R() - 0.5) * 0.42;
-        ang = ang * 0.88 + (-Math.PI / 2) * 0.12;
-        wid *= 0.968;
-        if (depth < 3 && wid > 0.022 && R() < 0.17) {
-          var side = R() < 0.5 ? -1 : 1;
-          growRoot(nx, ny, ang + side * (0.5 + R() * 0.7), len * (0.3 + R() * 0.25), wid * 0.66, depth + 1, col, amb * 0.9);
-        }
-        x = nx;
-        y = ny;
-        if (y < L.bottom) break;
+      var bend = 0;
+      var n = Math.max(6, Math.round(len / 0.12));
+      for (var st = 0; st < n; st++) {
+        bend = bend * 0.86 + (R() - 0.5) * 0.11;
+        ang += bend;
+        ang += (-Math.PI / 2 - ang) * 0.05;
+        x += Math.cos(ang) * 0.12;
+        y += Math.sin(ang) * 0.12;
+        if (y < L.bottom + 0.15) break;
+        pts.push([x, y]);
       }
+      return pts;
+    }
+    function growRoot(xs, ys, ang, len, wid, depth, amb) {
+      if (rootBudget-- <= 0) return;
+      var pts = rootPath(xs, ys, ang, len);
+      if (pts.length < 4) return;
+      var n = pts.length;
+      if (depth < 3) {
+        for (var j = 5 + ((R() * 5) | 0); j < n - 4; j += 6 + depth * 5 + ((R() * 8) | 0)) {
+          var u = j / (n - 1);
+          var wl = wid * (1 - 0.7 * u) * (0.42 + R() * 0.18);
+          if (wl < 0.01) continue;
+          var dir = Math.atan2(pts[j + 1][1] - pts[j][1], pts[j + 1][0] - pts[j][0]);
+          growRoot(pts[j][0], pts[j][1], dir + (R() < 0.5 ? -1 : 1) * (0.7 + R() * 0.6), len * (1 - u) * (0.3 + R() * 0.3), wl, depth + 1, amb * 0.9);
+        }
+      }
+      paintRoot(pts, wid, Math.max(0.008, wid * 0.2), amb, depth >= 1, false);
     }
     L.plants.forEach(function (p) {
       var by = surf(p.x) - 0.1;
-      growRoot(p.x, by, -Math.PI / 2 - 0.12, 6 + p.s * 5, 0.1 * p.s + 0.03, 0, '#dcc39c', 0.34);
-      growRoot(p.x + 0.1, by, -Math.PI / 2 + 0.5, 3 + p.s * 2, 0.06 * p.s + 0.02, 1, '#d6bd97', 0.3);
-      growRoot(p.x - 0.1, by, -Math.PI / 2 - 0.6, 3 + p.s * 2, 0.06 * p.s + 0.02, 1, '#d6bd97', 0.3);
+      growRoot(p.x, by, -Math.PI / 2 - 0.12, 6 + p.s * 5, 0.13 * p.s + 0.04, 0, 0.34);
+      growRoot(p.x + 0.1, by, -Math.PI / 2 + 0.5, 3 + p.s * 2, 0.08 * p.s + 0.03, 1, 0.3);
+      growRoot(p.x - 0.1, by, -Math.PI / 2 - 0.6, 3 + p.s * 2, 0.08 * p.s + 0.03, 1, 0.3);
     });
     for (i = 0; i < Math.round(L.PW / 4.2); i++) {
       var rx = x0 + 1.5 + i * 4.2 + (R() - 0.5) * 1.6;
       if (Math.abs(rx - L.target.x) < 2.2) continue;
-      growRoot(rx, surf(rx) - 0.2, -Math.PI / 2 + (R() - 0.5) * 0.4, 7 + R() * 9, 0.07 + R() * 0.05, 0, '#d8c09a', 0.28);
+      growRoot(rx, surf(rx) - 0.2, -Math.PI / 2 + (R() - 0.5) * 0.4, 7 + R() * 9, 0.09 + R() * 0.06, 0, 0.28);
     }
 
-    /* the damaged root: thick, with galls around the target */
+    /* the damaged root: thicker and reddened, galls around the target */
     var t0 = L.target;
     var ctrl = [
       [t0.x + 1.3, surf(t0.x + 1.3) - 0.1], [t0.x + 1.1, -4.2], [t0.x + 0.5, t0.y + 3.2],
@@ -359,16 +437,9 @@
         pts.push([cr(q0[0], q1[0], q2[0], q3[0], tt), cr(q0[1], q1[1], q2[1], q3[1], tt)]);
       }
     }
-    for (i = 1; i < pts.length; i++) {
-      var ww = 0.2 - i / pts.length * 0.1;
-      a.strokeStyle = '#e8d2ad';
-      a.lineWidth = ww * k;
-      a.beginPath(); a.moveTo(X(pts[i - 1][0]), Y(pts[i - 1][1])); a.lineTo(X(pts[i][0]), Y(pts[i][1])); a.stroke();
-      d.strokeStyle = rgb(0.86, 0.14, 0);
-      d.lineWidth = ww * k;
-      d.beginPath(); d.moveTo(X(pts[i - 1][0]), Y(pts[i - 1][1])); d.lineTo(X(pts[i][0]), Y(pts[i][1])); d.stroke();
-      if (i % 5 === 0 && i > 8) growRoot(pts[i][0], pts[i][1], -Math.PI / 2 + (i % 10 ? 0.9 : -0.9), 1.6 + R() * 1.4, 0.05, 2, '#e0c7a2', 0.12);
-    }
+    rootBudget += 24;
+    for (i = 10; i < pts.length - 6; i += 5) growRoot(pts[i][0], pts[i][1], -Math.PI / 2 + (i % 10 ? 0.9 : -0.9), 1.6 + R() * 1.4, 0.045, 2, 0.12);
+    paintRoot(pts, 0.3, 0.14, 0.14, false, true);
     var ti = 0;
     var best = 1e9;
     pts.forEach(function (p, j) { var dd = Math.hypot(p[0] - t0.x, p[1] - t0.y); if (dd < best) { best = dd; ti = j; } });
@@ -376,18 +447,25 @@
       var p = pts[NK.clamp(ti + off, 0, pts.length - 1)];
       var gr = 0.2 + (j % 3) * 0.06;
       var gx = p[0] + (j % 2 ? 0.08 : -0.08);
-      a.fillStyle = '#e9b8a0';
-      a.strokeStyle = '#b47460';
-      a.lineWidth = 0.03 * k;
-      blob(a, gx, p[1], gr, 12, 0.08, j);
+      var gg = a.createRadialGradient(X(gx - gr * 0.35), Y(p[1] + gr * 0.35), gr * k * 0.08, X(gx), Y(p[1]), gr * k * 1.05);
+      gg.addColorStop(0, '#f7d6c2');
+      gg.addColorStop(0.55, '#dfa58c');
+      gg.addColorStop(1, '#a4625a');
+      blob(a, gx, p[1], gr, 14, 0.08, j);
+      a.fillStyle = gg;
       a.fill();
+      a.strokeStyle = 'rgba(112,58,50,0.55)';
+      a.lineWidth = 0.02 * k;
       a.stroke();
-      a.fillStyle = 'rgba(255,236,220,0.45)';
+      a.fillStyle = 'rgba(255,240,228,0.55)';
       a.beginPath();
-      a.arc(X(gx - gr * 0.3), Y(p[1] + gr * 0.3), gr * 0.35 * k, 0, 6.283);
+      a.arc(X(gx - gr * 0.32), Y(p[1] + gr * 0.34), gr * 0.26 * k, 0, 6.283);
       a.fill();
-      blob(d, gx, p[1], gr, 12, 0.08, j);
-      d.fillStyle = rgb(0.95, 0.1, 128);
+      var hg = d.createRadialGradient(X(gx - gr * 0.2), Y(p[1] + gr * 0.2), 0, X(gx), Y(p[1]), gr * k);
+      hg.addColorStop(0, rgb(0.98, 0.1, 128));
+      hg.addColorStop(1, rgb(0.72, 0.1, 128));
+      blob(d, gx, p[1], gr, 14, 0.08, j);
+      d.fillStyle = hg;
       d.fill();
     });
     L.rootPts = pts;
@@ -917,7 +995,6 @@
     root.classList.add('is-found');
     NK.state.found = true;
     NK.emit('found');
-    if (window.innerWidth > 760) NK.say('Found it! Scroll on and I will show you where they live.', 5200);
     guide = null;
   }
 
@@ -1022,7 +1099,6 @@
         setNode(1, 1, t + 0.5);
         setLine(COPY.scan);
         NK.setDetective('scanning');
-        if (window.innerWidth > 760) NK.say('Move the light. Look for the cyan glow.');
       }
     }
     U.uOn.value = NK.smooth(0.52, 0.86, p);

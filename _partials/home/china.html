@@ -1,15 +1,17 @@
-<section id="china-story" class="nk-china nk-night" data-china aria-labelledby="china-title">
+<section id="china-story" class="nk-china nk-night" data-china data-zoom aria-labelledby="china-title">
   <div class="nk-edge nk-edge--night" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0 0H1440V20C1180 50 960 6 720 30S250 48 0 18Z"/></svg></div>
   <div class="nk-china__runway" data-china-runway>
-    <div class="nk-china__stage" data-china-stage>
-      <canvas class="nk-china__canvas" data-china-canvas aria-hidden="true"></canvas>
+    <span id="to-the-roots" class="nk-china__anchor" aria-hidden="true"></span>
+    <div class="nk-zoom__runway" data-zoom-runway aria-hidden="true"></div>
+    <div class="nk-china__stage" data-china-stage data-zoom-stage data-mascot-away>
+      <canvas class="nk-zoom__canvas" data-zoom-canvas aria-hidden="true"></canvas>
+      <svg class="nk-zoom__svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" data-zoom-svg aria-hidden="true"></svg>
       <div class="nk-china__labels" data-china-labels aria-hidden="true"></div>
       <div class="nk-china__tip" data-china-tip hidden></div>
       <div class="nk-wrap nk-china__ui">
         <div class="nk-china__panel">
-          <p class="nk-chapter nk-chapter--dark"><span>02</span>A closer look at China</p>
           <h2 id="china-title" class="nk-h2">Closer to the field.</h2>
-          <p class="nk-china__intro">One landscape, three questions. Switch maps here, or keep scrolling.</p>
+          <p class="nk-china__intro">Three questions, one map. Switch here or keep scrolling.</p>
           <div class="nk-tabs" role="tablist" aria-label="China maps">
             <button type="button" role="tab" id="china-tab-0" aria-controls="china-layer-0" aria-selected="true" data-layer-tab="0">Abundance</button>
             <button type="button" role="tab" id="china-tab-1" aria-controls="china-layer-1" aria-selected="false" tabindex="-1" data-layer-tab="1">Soybean cyst</button>
@@ -17,40 +19,43 @@
           </div>
           <article id="china-layer-0" class="nk-layer is-active" role="tabpanel" aria-labelledby="china-tab-0" data-layer="0">
             <h3>Distribution of Plant-feeding Nematode Abundance in China</h3>
-            <p>The same Herbivores field, unit and colour scale as the global map, with no local rescaling. Darker still means more plant-feeding nematodes per 100 g of dry soil.</p>
-            <div class="nk-ramp nk-ramp--dark"><span>Lower</span><i></i><span>Higher</span></div>
-            <p class="nk-status nk-status--dark" data-china-status>Verified dataset import pending</p>
-            <p class="nk-fine">Abundance indicates potential exposure. It is not crop loss or disease severity.</p>
+            <p>Same data and colour scale as the global map.</p>
+            <div data-china-legend hidden><div class="nk-ramp nk-ramp--dark"><span>Lower</span><i></i><span>Higher</span></div>
+            <p class="nk-status nk-status--dark" data-china-status>Verified dataset import pending</p></div>
+            <p class="nk-fine">Abundance shows potential exposure, not crop loss or severity.</p>
           </article>
           <article id="china-layer-1" class="nk-layer" role="tabpanel" aria-labelledby="china-tab-1" data-layer="1" hidden>
             <h3>Distribution and Impact of Soybean Cyst Nematode in China</h3>
             <p class="nk-species"><i>Heterodera glycines</i>, reported in 22 provincial-level regions</p>
-            <p class="nk-callout">It is estimated that soybean cyst nematode causes more than <b>US$120 million</b> in soybean yield losses in China every year.</p>
+            <p class="nk-callout">Estimated soybean losses in China: over <b>US$120 million</b> a year.</p>
             <ul class="nk-facts">
               <li><b>20–30%</b><span>typical yield loss in infested soybean fields</span></li>
-              <li><b>60–70%</b><span>in severely infested fields; extreme cases approach total loss</span></li>
+              <li><b>60–70%</b><span>in severely infested fields</span></li>
             </ul>
-            <p>Soybean is the main host. Mung bean, pea, common bean and other food legumes can also be infected.</p>
+            <p>Main host: soybean; other food legumes too.</p>
             <ul class="nk-key"><li><span class="nk-key__tri" aria-hidden="true"></span>Province with published reports</li><li><span class="nk-key__halo" aria-hidden="true"></span>Major soybean regions: Northeast and Huang-Huai-Hai</li></ul>
-            <p class="nk-fine">A report does not mean the whole province is affected. National losses are not divided among provinces.</p>
+            <p class="nk-fine">A report does not mean the whole province is affected.</p>
           </article>
           <article id="china-layer-2" class="nk-layer" role="tabpanel" aria-labelledby="china-tab-2" data-layer="2" hidden>
             <h3>Reported Distribution and Major Hosts of Southern Root-knot Nematode in China</h3>
             <p class="nk-species"><i>Meloidogyne incognita</i>, recorded in 20 provinces, plus detections in Xinjiang</p>
-            <p class="nk-callout">Southern root-knot nematode has an extremely broad host range. It can infect vegetables, field crops, cash crops and many medicinal plants: more than 3,000 plant species in all.</p>
+            <p class="nk-callout">More than 3,000 host plants: vegetables, field and cash crops, medicinal plants.</p>
             <ul class="nk-hosts" aria-label="Main protected-vegetable hosts">
               <li><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="23" r="12" fill="#e5533d"/><path d="M13 13l7 4 7-4-4 6h-6z" fill="#5f9a47"/></svg>Tomato</li>
               <li><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M9 29C6 22 20 8 30 9c4 1 3 6-1 11S13 35 9 29z" fill="#5b9a45"/><g fill="#b5d98a"><circle cx="18" cy="21" r="1.2"/><circle cx="23" cy="16" r="1.2"/><circle cx="14" cy="26" r="1.2"/></g></svg>Cucumber</li>
               <li><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M17 12c-6 2-7 10-4 16 3 5 9 7 12 5 5-4 5-14-1-20z" fill="#d93d34"/><path d="M19 12c0-4 3-6 6-6" stroke="#4f8a3d" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg>Pepper</li>
               <li><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M14 17c-5 5-4 15 3 17s11-5 10-11c0-4-3-8-7-9z" fill="#6c3b8e"/><path d="M13 16l7-6 7 6-3 2-4-2-4 2z" fill="#5f9a47"/></svg>Eggplant</li>
             </ul>
-            <div class="nk-notecard"><b>Hunan vegetable survey</b><p>About 80% disease incidence in greenhouse vegetables against about 10% in open fields; <i>M. incognita</i> made up 87% of the root-knot populations identified. These are incidence and species shares, not yield losses.</p></div>
+            <div class="nk-notecard"><b>Hunan vegetable survey</b><p>About 80% incidence in greenhouses against 10% in open fields; 87% of root-knot populations were <i>M. incognita</i>. Incidence, not yield loss.</p></div>
             <ul class="nk-key"><li><span class="nk-key__pin" aria-hidden="true"></span>Province record (CABI)</li><li><span class="nk-key__pin nk-key__pin--gold" aria-hidden="true"></span>Detected in protected vegetables, 2021–2023 survey</li></ul>
-            <p class="nk-fine">Records show where the species has been reported, not that whole provinces are heavily affected. Rice root-knot damage in China mostly involves another species, <i>M. graminicola</i>, which is kept separate.</p>
+            <p class="nk-fine">Records show presence, not severity. Rice root-knot (mostly <i>M. graminicola</i>) is not included.</p>
           </article>
         </div>
       </div>
       <p class="nk-china__hint" data-china-hint aria-hidden="true">Hover a marker for its record</p>
+      <span class="nk-zoom__label" data-zoom-label aria-hidden="true">Huang-Huai-Hai Plain</span>
+      <ol class="nk-zoom__steps" data-zoom-steps aria-hidden="true"><li><i></i><span>Farming regions</span></li><li><i></i><span>A field</span></li><li><i></i><span>Crop roots</span></li><li><i></i><span>In the soil</span></li></ol>
+      <h2 id="zoom-question" class="nk-zoom__q" data-zoom-q>How do nematodes infect plants?</h2>
     </div>
   </div>
   <div class="nk-wrap nk-china__after">

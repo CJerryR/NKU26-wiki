@@ -81,16 +81,21 @@
 .nk-mark--china{background:rgba(126,12,110,.25);border:1.5px solid var(--nk-plum);border-radius:4px}
 
 .nk-china{background:var(--nk-night)}
-.nk-china__runway{position:relative;height:300vh;height:300svh}
+.nk-china__runway{position:relative;height:620vh;height:620svh}
+.nk-china__anchor{position:absolute;left:0;top:240vh;top:240svh}
 .nk-china__stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:radial-gradient(ellipse 70% 62% at 64% 56%,#271840 0,#140b1c 72%)}
-.nk-china__canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
-.nk-china.is-2d .nk-china__canvas{display:none}
 .nk-china__svg{position:absolute;right:4%;top:52%;width:min(58%,760px);transform:translateY(-50%)}
 .nk-china__land{fill:#2c1f45;stroke:#b99be0;stroke-width:1}
 .nk-china__tri{fill:#5fd18f}
 .nk-china__pin{fill:#ff6f9a}
 .nk-china__pin--gold{fill:var(--nk-gold)}
 .nk-china__svg g{transition:opacity .4s}
+.nk-china__svg{opacity:calc(1 - var(--merge,0))}
+.nk-china__ui{transform:translateX(calc(var(--merge,0) * -118%));opacity:calc(1 - var(--merge,0) * 1.6)}
+.nk-china.is-merging .nk-china__panel{pointer-events:none}
+.nk-china__stage::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;opacity:var(--qo,0);background:radial-gradient(ellipse 62% 44% at 50% 50%,rgba(20,10,16,.8),rgba(20,10,16,.35) 65%,rgba(20,10,16,0))}
+.nk-china .nk-zoom__steps{opacity:clamp(0,calc((var(--merge,0) - .6) * 2.5),1)}
+[data-zoom]:not(.is-3d) .nk-zoom__svg{opacity:var(--merge,0)}
 .nk-china__ui{position:relative;z-index:2;height:100%;display:flex;align-items:center;padding-top:var(--nav-h);pointer-events:none}
 .nk-china__panel{pointer-events:auto;width:min(440px,40%);max-height:calc(100svh - var(--nav-h) - 36px);overflow:auto;padding:24px 26px 22px;border-radius:22px;background:rgba(27,16,38,.8);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid var(--nk-line-dark);box-shadow:0 30px 70px rgba(5,2,8,.45);scrollbar-width:thin}
 .nk-china__panel .nk-chapter{margin-bottom:12px}
@@ -129,15 +134,14 @@
 .nk-china__tip[hidden]{display:none}
 .nk-china__tip b{font-size:14px}
 .nk-china__tip small{color:var(--nk-ink-3);font-size:12px}
-.nk-china__hint{position:absolute;right:var(--nk-gut);bottom:28px;z-index:2;font-size:13px;color:var(--nk-cream-3);pointer-events:none}
+.nk-china__hint{position:absolute;right:var(--nk-gut);bottom:28px;z-index:2;font-size:13px;color:var(--nk-cream-3);pointer-events:none;opacity:calc(1 - var(--merge,0) * 3)}
 .nk-china__after{padding:28px 0 56px}
 
 .nk-zoom{background:var(--nk-night)}
-.nk-zoom__runway{position:relative;height:380vh;height:380svh}
+.nk-zoom__runway{position:absolute;left:0;right:0;top:240vh;top:240svh;height:380vh;height:380svh;pointer-events:none}
 .nk-zoom__stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:var(--zbg,#140b1c);transition:background-color .4s}
 .nk-zoom__svg,.nk-zoom__canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
-.nk-zoom.is-3d .nk-zoom__svg,.nk-zoom:not(.is-3d) .nk-zoom__canvas,.nk-zoom:not(.is-3d) .nk-zoom__label{display:none}
-.nk-zoom.is-3d .nk-zoom__stage::after{background:radial-gradient(ellipse 62% 44% at 50% 50%,rgba(20,10,16,.8),rgba(20,10,16,.35) 65%,rgba(20,10,16,0))}
+[data-zoom].is-3d .nk-zoom__svg,[data-zoom]:not(.is-3d) .nk-zoom__canvas,[data-zoom]:not(.is-3d) .nk-zoom__label{display:none}
 .nk-zoom__label{position:absolute;left:0;top:0;z-index:2;padding:6px 13px;border-radius:999px;background:rgba(20,11,28,.62);border:1px solid rgba(246,193,75,.55);color:#ffe3a3;font-size:13px;font-weight:650;white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .35s;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
 .nk-zoom__stage::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;opacity:var(--qo,0);background:radial-gradient(ellipse 52% 36% at 50% 50%,rgba(22,11,16,.72),rgba(22,11,16,0))}
 .nk-zf__j2{fill:rgba(247,178,120,.9);stroke:rgba(255,236,214,.6);stroke-width:2}
@@ -157,7 +161,7 @@
 @media (max-width:1000px){.nk-world__grid{grid-template-columns:1fr}}
 @media (max-width:600px){.nk-map__callout{display:none}.nk-card{width:min(280px,92%)}}
 @media (max-width:860px){
-  .nk-china__ui{align-items:flex-end;padding-bottom:14px}
+  .nk-china__ui{align-items:flex-end;padding-bottom:88px;transform:translateY(calc(var(--merge,0) * 130%))}
   .nk-china__panel{width:100%;max-height:54svh;padding:18px 18px 16px}
   .nk-china__hint{display:none}
   .nk-china__svg{left:5%;right:5%;top:calc(var(--nav-h) + 8px);width:90%;transform:none}

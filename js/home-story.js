@@ -103,6 +103,94 @@
     place(pos.x, pos.y);
   });
 
+  /* ---------------- stages: overview, zoom into scene 1, pan across 2–4 ----------------
+   * Vertical scroll drives it. The scenes stay real SVG (the lens keeps
+   * working through the transform); one large caption replaces the four
+   * small ones while zoomed. Narrow screens skip the overview. */
+  (function () {
+    var run = $('[data-stagerun]');
+    if (!run || !('IntersectionObserver' in window)) return;
+    var pin = $('[data-stagepin]', run);
+    var list = $('[data-stages]', run);
+    var items = $$('.nk-stage', list);
+    var scenes = items.map(function (li) { return $('.nk-scene', li); });
+    var cap = $('[data-stagecap]', run);
+    var capN = $('[data-stagecap-n]', run);
+    var capT = $('[data-stagecap-t]', run);
+    var capP = $('[data-stagecap-p]', run);
+    var dots = $$('[data-stagedots] li', run);
+    if (!pin || !list || items.length !== 4 || scenes.some(function (s) { return !s; })) return;
+    run.classList.add('is-on');
+    var M = null;
+    var cur = -1;
+    var lastP = -1;
+    function lerp(a, b, t) { return a + (b - a) * t; }
+    function measure() {
+      list.style.transform = 'none';
+      var pr = pin.getBoundingClientRect();
+      var lr = list.getBoundingClientRect();
+      var narrow = pr.width < 760;
+      var sc = scenes.map(function (s) {
+        var r = s.getBoundingClientRect();
+        return { cx: r.left - lr.left + r.width / 2, cy: r.top - lr.top + r.height / 2, w: r.width, h: r.height };
+      });
+      var capRight = narrow ? 0 : cap.getBoundingClientRect().right - pr.left + 40;
+      var availW = (pr.width - capRight) * (narrow ? 1 : 0.9);
+      var availH = pr.height * (narrow ? 0.5 : 0.7);
+      M = {
+        lx: lr.left - pr.left, ly: lr.top - pr.top, sc: sc, narrow: narrow,
+        S: narrow ? 1 : Math.min(availW / sc[0].w, availH / sc[0].h),
+        tx: narrow ? pr.width / 2 : capRight + (pr.width - capRight) / 2,
+        ty: narrow ? pr.height * 0.36 : pr.height / 2
+      };
+      lastP = -1;
+    }
+    function setCap(i) {
+      var h = $('h3', items[i]);
+      var num = h && $('span', h);
+      var p = $('p', items[i]);
+      cap.classList.add('is-swap');
+      setTimeout(function () {
+        capN.textContent = String(i + 1);
+        capT.textContent = h ? h.textContent.replace(num ? num.textContent : '', '').trim() : '';
+        capP.textContent = p ? p.textContent : '';
+        cap.classList.remove('is-swap');
+      }, cur < 0 ? 0 : 160);
+    }
+    function apply(p) {
+      if (!M) measure();
+      var zk = M.narrow ? 1 : NK.easeInOut(NK.clamp((p - 0.08) / 0.14, 0, 1));
+      var raw = NK.clamp((p - 0.22) / 0.78, 0, 1) * 3;
+      var i = Math.min(2, Math.floor(raw));
+      var k = raw >= 3 ? 3 : i + NK.smooth(0.3, 0.8, raw - i);
+      var k0 = Math.floor(k);
+      var k1 = Math.min(3, k0 + 1);
+      var f = k - k0;
+      var fx = lerp(M.sc[k0].cx, M.sc[k1].cx, f);
+      var fy = lerp(M.sc[k0].cy, M.sc[k1].cy, f);
+      var s = Math.exp(Math.log(M.S) * zk);
+      var tx = lerp(M.lx + M.sc[0].cx, M.tx, zk);
+      var ty = lerp(M.ly + M.sc[0].cy, M.ty, zk);
+      list.style.transform = 'translate(' + (tx - M.lx - s * fx).toFixed(1) + 'px,' + (ty - M.ly - s * fy).toFixed(1) + 'px) scale(' + s.toFixed(4) + ')';
+      run.classList.toggle('is-zooming', M.narrow || zk > 0.02);
+      run.classList.toggle('is-zoom', M.narrow || zk > 0.6);
+      scenes.forEach(function (sc, j) { sc.style.opacity = zk > 0.6 ? String(1 - 0.72 * NK.clamp(Math.abs(j - k), 0, 1)) : ''; });
+      var idx = Math.round(k);
+      if (idx !== cur) { setCap(idx); cur = idx; }
+      dots.forEach(function (d, j) { d.classList.toggle('is-on', j === idx); });
+    }
+    function frame() {
+      var r = run.getBoundingClientRect();
+      var p = NK.clamp(-r.top / Math.max(1, run.offsetHeight - window.innerHeight), 0, 1);
+      if (Math.abs(p - lastP) < 1e-4) return;
+      lastP = p;
+      apply(p);
+    }
+    var rT = 0;
+    window.addEventListener('resize', function () { clearTimeout(rT); rT = setTimeout(function () { M = null; frame(); }, 150); });
+    NK.loopWhileVisible(run, frame, '100px 0px');
+  }());
+
   /* ---------------- clue sky: free-living nematodes drifting ---------------- */
   (function () {
     var sky = $('[data-clue-sky]');

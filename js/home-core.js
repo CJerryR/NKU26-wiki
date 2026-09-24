@@ -102,16 +102,9 @@
   };
   NK.on('found', function () { NK.setDetective('found'); });
 
-  var NOTES = [
-    ['global-story', NK.coarse ? 'Tap China to take a closer look.' : 'Click China to take a closer look.'],
-    ['china-story', 'One landscape, three questions. Switch maps any time.'],
-    ['hidden-threat', NK.coarse ? 'Borrow my lens: tap a scene.' : 'Borrow my lens: hover over a scene.'],
-    ['chemical-clues', 'Two signals caught my eye: ascr#3 and ascr#18.'],
-    ['sensor', 'This is how I would change color.'],
-    ['research-loop', NK.coarse ? 'Tap a node to see who talks to whom.' : 'Hover a node to see who talks to whom.'],
-    ['our-results', 'Evidence first. These cards fill in as results are confirmed.'],
-    ['closing', 'Follow the signals!']
-  ];
+  /* Section notes are off: each one repeated a hint already on the page and
+   * covered content near the mascot. Add [sectionId, text] pairs to restore. */
+  var NOTES = [];
   if (det && 'IntersectionObserver' in window) {
     var said = {};
     var noteIO = new IntersectionObserver(function (entries) {
@@ -125,6 +118,38 @@
       });
     }, { threshold: 0.32 });
     NOTES.forEach(function (n) { var el = document.getElementById(n[0]); if (el) noteIO.observe(el); });
+  }
+
+  /* On narrow screens the mascot steps aside while a pinned panel that sits
+   * at the bottom of the screen is in view ([data-mascot-away]). */
+  if (det && 'IntersectionObserver' in window) {
+    var awayOn = [];
+    var awayIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var k = awayOn.indexOf(e.target);
+        if (e.isIntersecting && k < 0) awayOn.push(e.target);
+        if (!e.isIntersecting && k >= 0) awayOn.splice(k, 1);
+      });
+      det.classList.toggle('is-away', awayOn.length > 0);
+    }, { threshold: 0.5 });
+    Array.prototype.forEach.call(document.querySelectorAll('[data-mascot-away]'), function (el) { awayIO.observe(el); });
+  }
+
+  /* Phones: the mascot tucks away while the reader scrolls down through the
+   * story and returns on the way back up or near the top, so it never rests
+   * on a line that is being read (it stays the way back to the start). */
+  if (det) {
+    var lastY = window.pageYOffset;
+    var tucked = false;
+    var setTuck = function (on) { if (on !== tucked) { tucked = on; det.classList.toggle('is-tucked', on); } };
+    window.addEventListener('scroll', function () {
+      var y = window.pageYOffset;
+      var dy = y - lastY;
+      if (window.innerWidth > 760 || y < 160) { setTuck(false); lastY = y; return; }
+      if (!tucked && dy > 10) { setTuck(true); lastY = y; }
+      else if (tucked && dy < -40) { setTuck(false); lastY = y; }
+      else if ((tucked && dy > 0) || (!tucked && dy < 0)) lastY = y;
+    }, { passive: true });
   }
 
   /* ---- reveal-on-scroll for elements marked [data-reveal] ---- */

@@ -24,23 +24,25 @@
     samples: 'M-7-9V5A2.5 2.5 0 0 0-2 5V-9M2-9V5A2.5 2.5 0 0 0 7 5V-9M-8-9H-1M1-9H8',
     bench: 'M-3-9H3M-2-9V-3L-8 7H8L2-3V-9M-5 3H5'
   };
+  /* lab: where the label sits (l, r, t, b), chosen so that no edge or
+   * arrow runs through a label; checked by tools/check_loop_layout.py */
   var NODES = [
-    { id: 'data', zone: 'dry', x: 170, y: 132, name: 'Field data', zh: '数据', d: 'Soil-plan and survey data that calibrate the models.' },
-    { id: 'eco', zone: 'dry', x: 170, y: 300, name: 'Eco model', zh: 'Eco 模型', d: 'Uses questionnaires and literature to explore where the product could be feasible. It does not promise a fixed economic return.' },
-    { id: 'ode', zone: 'dry', x: 170, y: 468, name: 'Signalling ODE model', zh: 'ODE', d: 'Links ascaroside input to pigment output; wet-lab measurements tune its parameters.' },
-    { id: 'md', zone: 'dry', x: 170, y: 632, name: 'Docking and dynamics', zh: '分子对接 · 分子动力学', d: 'Simulates receptor–ascaroside interactions to suggest candidate receptor variants for the wet lab.' },
-    { id: 'soil', zone: 'hp', x: 600, y: 92, name: 'Soil plan', zh: '土壤计划', d: 'Invites the public to collect soil: samples go to the wet lab, data to the dry lab.' },
-    { id: 'survey', zone: 'hp', x: 430, y: 236, name: 'Questionnaires', zh: '问卷', d: 'Asks potential users what they need; responses support the Eco model.' },
-    { id: 'edu', zone: 'hp', x: 770, y: 236, name: 'Education', zh: '支教科普', d: 'Teaching and outreach carry the science back to society.' },
-    { id: 'society', zone: 'core', x: 600, y: 322, name: 'Society', zh: '社会', d: 'Growers, experts, testers and the public: where questions come from and where results must return.', core: true },
-    { id: 'project', zone: 'core', x: 600, y: 462, name: 'Our project', zh: '项目', d: 'NemaKlear: the sensor, its workflow and its boundaries.', core: true },
-    { id: 'expert', zone: 'hp', x: 760, y: 606, name: 'Expert interviews', zh: '专家访谈', d: 'Specialists answer the team\u2019s questions and guide the design.' },
-    { id: 'samples', zone: 'wet', x: 1030, y: 150, name: 'Soil samples', zh: '样本', d: 'Real soils from the soil plan, ready for testing.' },
-    { id: 'bench', zone: 'wet', x: 1030, y: 462, name: 'Experiments', zh: '实验 · 技术验证', d: 'Measures recognition, response and color, and tests technical feasibility.' }
+    { id: 'data', zone: 'dry', x: 230, y: 150, lab: 'l', name: 'Field data', zh: '数据', d: 'Soil-plan and survey data that calibrate the models.' },
+    { id: 'eco', zone: 'dry', x: 230, y: 320, lab: 'l', name: 'Eco model', zh: 'Eco 模型', d: 'Uses questionnaires and literature to explore where the product could be feasible. It does not promise a fixed economic return.' },
+    { id: 'ode', zone: 'dry', x: 230, y: 490, lab: 'l', name: 'Signalling ODE model', zh: 'ODE', d: 'Links ascaroside input to pigment output; wet-lab measurements tune its parameters.' },
+    { id: 'md', zone: 'dry', x: 230, y: 650, lab: 'l', name: 'Docking and dynamics', zh: '分子对接 · 分子动力学', d: 'Simulates receptor–ascaroside interactions to suggest candidate receptor variants for the wet lab.' },
+    { id: 'soil', zone: 'hp', x: 600, y: 140, lab: 't', name: 'Soil plan', zh: '土壤计划', d: 'Invites the public to collect soil: samples go to the wet lab, data to the dry lab.' },
+    { id: 'survey', zone: 'hp', x: 430, y: 250, lab: 't', name: 'Questionnaires', zh: '问卷', d: 'Asks potential users what they need; responses support the Eco model.' },
+    { id: 'edu', zone: 'hp', x: 770, y: 250, lab: 't', name: 'Education', zh: '支教科普', d: 'Teaching and outreach carry the science back to society.' },
+    { id: 'society', zone: 'core', x: 600, y: 330, lab: 'r', name: 'Society', zh: '社会', d: 'Growers, experts, testers and the public: where questions come from and where results must return.', core: true },
+    { id: 'project', zone: 'core', x: 600, y: 520, lab: 'b', name: 'Our project', zh: '项目', d: 'NemaKlear: the sensor, its workflow and its boundaries.', core: true },
+    { id: 'expert', zone: 'hp', x: 820, y: 470, lab: 'b', name: 'Expert interviews', zh: '专家访谈', d: 'Specialists answer the team\u2019s questions and guide the design.' },
+    { id: 'samples', zone: 'wet', x: 990, y: 170, lab: 'r', name: 'Soil samples', zh: '样本', d: 'Real soils from the soil plan, ready for testing.' },
+    { id: 'bench', zone: 'wet', x: 990, y: 520, lab: 'r', name: 'Experiments', zh: '实验 · 技术验证', d: 'Measures recognition, response and color, and tests technical feasibility.' }
   ];
   var EDGES = [
-    { f: 'soil', t: 'data', l: 'provides data', b: -0.16 },
-    { f: 'soil', t: 'samples', l: 'provides samples', b: 0.16 },
+    { f: 'soil', t: 'data', l: 'provides data', b: 0.16 },
+    { f: 'soil', t: 'samples', l: 'provides samples', b: -0.16 },
     { f: 'data', t: 'eco', l: 'calibrates', b: 0 },
     { f: 'survey', t: 'eco', l: 'supports', b: -0.1 },
     { f: 'society', t: 'survey', l: 'responds to', b: -0.12 },
@@ -50,10 +52,10 @@
     { f: 'project', t: 'society', l: 'applies to', b: 0.42 },
     { f: 'ode', t: 'project', l: 'optimizes', b: -0.06, back: true },
     { f: 'expert', t: 'project', l: 'guides', b: 0.12, back: true },
-    { f: 'bench', t: 'expert', l: 'asks', b: -0.14 },
+    { f: 'bench', t: 'expert', l: 'asks', b: 0.22 },
     { f: 'samples', t: 'bench', l: 'tested in', b: 0 },
-    { f: 'ode', t: 'bench', l: 'measured data \u21c4 simulation and analysis', both: true, c: [[420, 548], [800, 548]] },
-    { f: 'md', t: 'bench', l: 'candidate variants', c: [[430, 760], [930, 740]] },
+    { f: 'ode', t: 'bench', l: 'data \u21c4 simulation', both: true, c: [[420, 690], [800, 690]] },
+    { f: 'md', t: 'bench', l: 'candidate variants', c: [[500, 760], [900, 700]] },
     { f: 'society', t: 'soil', l: 'takes part in', b: 0.28 }
   ];
   var TRACE = [
@@ -74,17 +76,15 @@
   S('feDisplacementMap', { in: 'SourceGraphic', in2: 'n', scale: '30', xChannelSelector: 'R', yChannelSelector: 'G', result: 'd' }, filt);
   S('feGaussianBlur', { in: 'd', stdDeviation: '2.4' }, filt);
   var zones = S('g', { class: 'lp-zones', filter: 'url(#lp-wc)' }, svg);
-  S('path', { d: 'M60 70C150 40 280 60 318 110S330 420 322 560 290 720 180 716 50 690 44 560 30 150 60 70Z', fill: '#f5d27a', opacity: '.5' }, zones);
-  S('path', { d: 'M880 80C980 50 1130 60 1150 130S1170 420 1150 540 1060 600 960 590 870 520 866 400 850 120 880 80Z', fill: '#f7c48f', opacity: '.5' }, zones);
-  S('path', { d: 'M380 150C470 60 740 50 830 150S880 460 846 620 660 700 540 690 360 630 350 470 320 230 380 150Z', fill: '#a9c8ea', opacity: '.42' }, zones);
-  S('ellipse', { cx: 600, cy: 392, rx: 118, ry: 132, fill: '#f09a9a', opacity: '.42' }, zones);
+  S('path', { d: 'M40 80C120 50 280 60 318 110S336 420 326 560 300 730 180 724 30 700 26 560 12 160 40 80Z', fill: '#f5d27a', opacity: '.5' }, zones);
+  S('path', { d: 'M890 90C990 60 1150 70 1176 140S1194 420 1176 540 1080 610 980 600 880 540 874 420 862 130 890 90Z', fill: '#f7c48f', opacity: '.5' }, zones);
+  S('path', { d: 'M380 170C460 70 740 60 832 160S884 470 850 630 660 710 540 700 360 640 350 480 322 250 380 170Z', fill: '#a9c8ea', opacity: '.42' }, zones);
+  S('ellipse', { cx: 600, cy: 425, rx: 128, ry: 150, fill: '#f09a9a', opacity: '.42' }, zones);
   var zl = S('g', null, svg);
-  [['Dry lab', 70, 44], ['Human Practices', 520, 44], ['Wet lab', 1000, 44]].forEach(function (z) {
+  [['Dry lab', 60, 44], ['Human Practices', 505, 44], ['Wet lab', 1000, 44]].forEach(function (z) {
     var tx = S('text', { x: z[1], y: z[2], class: 'lp-zone-label' }, zl);
     tx.textContent = z[0];
   });
-  var core = S('text', { x: 600, y: 398, 'text-anchor': 'middle', class: 'lp-core-label' }, zl);
-  core.textContent = 'project and social value';
 
   /* ---- edges ---- */
   var edgeG = S('g', null, svg);
@@ -139,9 +139,14 @@
     n.el = g;
     S('circle', { class: 'lp-disc', r: n.r }, g);
     S('path', { class: 'lp-icon', d: ICON[n.id], transform: n.core ? 'scale(1.25)' : '' }, g);
-    var t1 = S('text', { class: 'lp-name', y: n.r + 18, 'text-anchor': 'middle' }, g);
+    var side = n.lab || 'b';
+    var lx = side === 'l' ? -(n.r + 12) : side === 'r' ? n.r + 12 : 0;
+    var anchor = side === 'l' ? 'end' : side === 'r' ? 'start' : 'middle';
+    var y1 = side === 't' ? -(n.r + 26) : side === 'b' ? n.r + 18 : -2;
+    var y2 = side === 't' ? -(n.r + 10) : side === 'b' ? n.r + 33 : 15;
+    var t1 = S('text', { class: 'lp-name', x: lx, y: y1, 'text-anchor': anchor }, g);
     t1.textContent = n.name;
-    var t2 = S('text', { class: 'lp-zh', y: n.r + 33, 'text-anchor': 'middle', lang: 'zh-Hans' }, g);
+    var t2 = S('text', { class: 'lp-zh', x: lx, y: y2, 'text-anchor': anchor, lang: 'zh-Hans' }, g);
     t2.textContent = n.zh;
     function on() { focusNode(n); }
     g.addEventListener('mouseenter', on);
@@ -192,7 +197,8 @@
   var tracing = false;
   var timer = 0;
   function badge(n, k) {
-    var g = S('g', { class: 'lp-badge', transform: 'translate(' + (n.x + n.r * 0.8).toFixed(0) + ' ' + (n.y - n.r * 0.8).toFixed(0) + ')' }, badgeG);
+    var by = n.lab === 't' ? n.y + n.r * 0.8 : n.y - n.r * 0.8;
+    var g = S('g', { class: 'lp-badge', transform: 'translate(' + (n.x + n.r * 0.8).toFixed(0) + ' ' + by.toFixed(0) + ')' }, badgeG);
     S('circle', { r: 11 }, g);
     var t = S('text', { y: 4, 'text-anchor': 'middle' }, g);
     t.textContent = String(k);

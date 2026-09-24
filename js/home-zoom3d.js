@@ -19,11 +19,14 @@
   var labelEl = sec.querySelector('[data-zoom-label]');
   var steps = Array.prototype.slice.call(sec.querySelectorAll('[data-zoom-steps] li'));
   if (!runway || !stage || !canvas) return;
+  var chinaLabels = sec.querySelector('[data-china-labels]');
+  var panelEl = sec.querySelector('.nk-china__panel');
+  var uiEl = sec.querySelector('.nk-china__ui');
 
   var renderer;
   try {
     renderer = new T.WebGLRenderer({ canvas: canvas, antialias: true, powerPreference: 'high-performance' });
-  } catch (e) { return; }
+  } catch (e) { if (NK.china2d) NK.china2d(); return; }
   /* From here on the 3D version owns the section (see home-zoom.js). */
   NK.zoom3d = true;
   sec.classList.add('is-3d');
@@ -373,19 +376,35 @@
     slab.rotateX(-Math.PI / 2);
     scene.add(new T.Mesh(slab, new T.MeshStandardMaterial({ color: 0x2b1c40, emissive: 0x100818, roughness: 0.92 })));
     var lineMat = new T.LineBasicMaterial({ color: 0xb99be0, transparent: true, opacity: 0.85 });
+    var bb = { x0: 1e9, x1: -1e9, z0: 1e9, z1: -1e9 };
     geo.rings.forEach(function (r) {
       if (r.a < 1.5) return;
       var pts = [];
-      for (var i = 0; i < r.p.length; i += 2) { var q = toP(r.p[i], r.p[i + 1]); pts.push(V3(q[0], 0.81, q[1])); }
+      for (var i = 0; i < r.p.length; i += 2) {
+        var q = toP(r.p[i], r.p[i + 1]);
+        pts.push(V3(q[0], 0.81, q[1]));
+        bb.x0 = Math.min(bb.x0, q[0]); bb.x1 = Math.max(bb.x1, q[0]); bb.z0 = Math.min(bb.z0, q[1]); bb.z1 = Math.max(bb.z1, q[1]);
+      }
       scene.add(new T.LineLoop(new T.BufferGeometry().setFromPoints(pts), lineMat));
     });
+    (geo.maritime || []).forEach(function (line) {
+      var pts = [];
+      for (var i = 0; i < line.length; i += 2) { var q = toP(line[i], line[i + 1]); pts.push(V3(q[0], 0.02, q[1])); }
+      if (pts.length < 2) return;
+      var ln = new T.Line(new T.BufferGeometry().setFromPoints(pts), new T.LineDashedMaterial({ color: 0xb99be0, dashSize: 0.5, gapSize: 0.5, transparent: true, opacity: 0.5 }));
+      ln.computeLineDistances();
+      scene.add(ln);
+    });
+    var MC = V3((bb.x0 + bb.x1) / 2, 0.8, (bb.z0 + bb.z1) / 2);
+    var MW = bb.x1 - bb.x0 + 3;
+    var MD = bb.z1 - bb.z0 + 5;
     function ll(lon, lat) {
       var c = geo.china;
       var q = toP((lon - c.west) * c.upd + c.ox, (c.north - lat) * c.upd + c.oy);
       return V3(q[0], 0.82, q[1]);
     }
     var glows = [[126, 46.3, 15, 0.55], [105, 30.6, 10, 0.5], [115.6, 30.4, 11, 0.5], [116.5, 35.6, 12, 1.0]].map(function (g) {
-      var sp = new T.Mesh(new T.PlaneGeometry(1, 1), new T.MeshBasicMaterial({ map: glowTex, transparent: true, depthWrite: false, blending: T.AdditiveBlending, opacity: g[3] }));
+      var sp = new T.Mesh(new T.PlaneGeometry(1, 1), new T.MeshBasicMaterial({ map: glowTex, transparent: true, depthWrite: false, blending: T.AdditiveBlending, opacity: 0 }));
       sp.rotation.x = -Math.PI / 2;
       sp.position.copy(ll(g[0], g[1]));
       sp.position.y = 0.87;
@@ -409,40 +428,196 @@
     var dust = new T.Points(dg, new T.PointsMaterial({ color: 0xb99be0, size: 0.16, transparent: true, opacity: 0.5, depthWrite: false }));
     scene.add(dust);
 
-    var T0 = V3(1.5, 0, 2.5);
-    var T1 = hhh.clone();
-    var D0 = V3(0, 0.83, 0.56).normalize();
-    var D1 = V3(0.04, 0.84, 0.54).normalize();
+    /* ---- the three questions as data layers on this one map (records from
+     * home-maps-data.js; markers sit at schematic province anchors) ---- */
+    var CUI = NK.chinaUI;
+    var DATA = window.NKUHomeMapsData;
+    var PV = geo.provinces;
+    var layers = [];
+    var hits = [];
+    var markers = [];
+    var m4 = new T.Matrix4();
+    function track(g, mat) { mat.transparent = true; mat.userData.base = mat.opacity; g.userData.mats.push(mat); return mat; }
+    if (CUI && DATA && PV) {
+      for (var li = 0; li < 3; li++) { var g0 = new T.Group(); g0.userData = { mats: [], op: 0 }; g0.visible = false; scene.add(g0); layers.push(g0); }
+      (function () {
+        var pts = [];
+        for (var y = 10; y < 500; y += 9) for (var x = 10 + ((y / 9) % 2 ? 4.5 : 0); x < 600; x += 9) if (CUI.inside(x, y)) pts.push(toP(x, y));
+        var dm = track(layers[0], new T.MeshBasicMaterial({ color: 0x9a86bb, opacity: 0.6, depthWrite: false }));
+        var dots = new T.InstancedMesh(new T.CylinderGeometry(0.17, 0.17, 0.06, 8), dm, pts.length);
+        pts.forEach(function (q, k) { m4.makeTranslation(q[0], 0.84, q[1]); dots.setMatrixAt(k, m4); });
+        layers[0].add(dots);
+        var ab = window.NKUHomeAbundance || { points: [] };
+        if (ab.status === 'imported' && ab.points && ab.points.length && NK.abundanceColor) {
+          var cp = ab.points.filter(function (pt) { var c = CUI.llToChina(pt[0], pt[1]); return CUI.inside(c[0], c[1]); });
+          if (cp.length) {
+            var sph = new T.InstancedMesh(new T.SphereGeometry(0.34, 12, 8), track(layers[0], new T.MeshBasicMaterial({ opacity: 1 })), cp.length);
+            cp.forEach(function (pt, k) {
+              var c = toP.apply(null, CUI.llToChina(pt[0], pt[1]));
+              m4.makeTranslation(c[0], 1.1, c[1]);
+              sph.setMatrixAt(k, m4);
+              sph.setColorAt(k, new T.Color(NK.abundanceColor(Math.log(pt[2] + 1) / Math.LN10)));
+            });
+            layers[0].add(sph);
+          }
+        }
+      }());
+      (function () {
+        var list = DATA.china.scn.provinces.filter(function (c) { return PV[c]; });
+        var inst = new T.InstancedMesh(new T.ConeGeometry(0.34, 0.62, 3), track(layers[1], new T.MeshStandardMaterial({ color: 0x5fd18f, roughness: 0.6, emissive: 0x1d5a35, emissiveIntensity: 0.5, opacity: 1 })), list.length * 4);
+        var rr = NK.rng(11);
+        var k = 0;
+        list.forEach(function (c) {
+          var q = toP(PV[c].x, PV[c].y);
+          for (var j = 0; j < 4; j++) {
+            var sc = j ? 0.62 + rr() * 0.3 : 1.05;
+            m4.compose(V3(q[0] + (j ? (rr() - 0.5) * 1.3 : 0), 1.13, q[1] + (j ? (rr() - 0.5) * 1.1 : 0)), new T.Quaternion().setFromEuler(new T.Euler(0, rr() * 3, 0)), V3(sc, sc, sc));
+            inst.setMatrixAt(k++, m4);
+          }
+          var hit = new T.Mesh(new T.SphereGeometry(1.25, 8, 6), new T.MeshBasicMaterial({ visible: false }));
+          hit.position.set(q[0], 1.15, q[1]);
+          hit.userData = { layer: 1, code: c };
+          layers[1].add(hit);
+          hits.push(hit);
+        });
+        layers[1].add(inst);
+        DATA.china.scn.focus.forEach(function (f) {
+          var c = CUI.llToChina(f.lon, f.lat);
+          var q = toP(c[0], c[1]);
+          var halo = new T.Mesh(new T.CircleGeometry(1, 48), track(layers[1], new T.MeshBasicMaterial({ color: 0xf2934a, opacity: 0.22, depthWrite: false })));
+          halo.rotation.x = -Math.PI / 2;
+          halo.scale.set(f.rx * geo.china.upd / 10, f.ry * geo.china.upd / 10, 1);
+          halo.position.set(q[0], 0.85, q[1]);
+          var ring = new T.Mesh(new T.RingGeometry(0.96, 1, 64), track(layers[1], new T.MeshBasicMaterial({ color: 0xf6a15c, opacity: 0.85, depthWrite: false, side: T.DoubleSide })));
+          ring.rotation.x = -Math.PI / 2;
+          ring.scale.copy(halo.scale);
+          ring.position.set(q[0], 0.87, q[1]);
+          layers[1].add(halo);
+          layers[1].add(ring);
+          markers.push({ layer: 1, text: f.label, pos: V3(q[0], 0.95, q[1] - halo.scale.y - 0.6) });
+        });
+      }());
+      (function () {
+        var rkn = DATA.china.rkn;
+        var codes = rkn.cabi.concat(rkn.survey).filter(function (c) { return PV[c]; });
+        var stem = new T.CylinderGeometry(0.07, 0.07, 3.0, 6);
+        stem.translate(0, 2.3, 0);
+        var ball = new T.SphereGeometry(0.4, 16, 12);
+        ball.translate(0, 3.95, 0);
+        var stemMat = track(layers[2], new T.MeshBasicMaterial({ color: 0xe8dcef, opacity: 0.55 }));
+        var pink = track(layers[2], new T.MeshStandardMaterial({ color: 0xff6f9a, emissive: 0x8a1f45, emissiveIntensity: 0.6, roughness: 0.4, opacity: 1 }));
+        var gold = track(layers[2], new T.MeshStandardMaterial({ color: 0xf6c14b, emissive: 0x8a5a10, emissiveIntensity: 0.7, roughness: 0.4, opacity: 1 }));
+        codes.forEach(function (c) {
+          var q = toP(PV[c].x, PV[c].y);
+          var survey = rkn.survey.indexOf(c) >= 0;
+          var s1 = new T.Mesh(stem, stemMat);
+          var b1 = new T.Mesh(ball, survey ? gold : pink);
+          s1.position.set(q[0], 0, q[1]);
+          b1.position.set(q[0], 0, q[1]);
+          layers[2].add(s1);
+          layers[2].add(b1);
+          var hit = new T.Mesh(new T.CylinderGeometry(0.9, 0.9, 4.2, 8), new T.MeshBasicMaterial({ visible: false }));
+          hit.position.set(q[0], 2.5, q[1]);
+          hit.userData = { layer: 2, code: c };
+          layers[2].add(hit);
+          hits.push(hit);
+          if (survey) markers.push({ layer: 2, text: 'Xinjiang · survey', pos: V3(q[0], 4.7, q[1]) });
+        });
+      }());
+    }
+    markers.forEach(function (mk) {
+      if (!chinaLabels) return;
+      mk.el = document.createElement('span');
+      mk.el.className = 'nk-china__label';
+      mk.el.textContent = mk.text;
+      chinaLabels.appendChild(mk.el);
+    });
+
+    /* ---- camera: the layer view sits close to the screen plane and is fitted
+     * (distance + lens shift) to the free area beside the panel; the merge
+     * blends it into the flight's opening view; then the dive ---- */
+    var ELEV_L = 1.19;
+    var D0 = V3(0, 0.9, 0.44).normalize();
+    var D1 = V3(0.04, 0.91, 0.42).normalize();
+    var VW = 1;
+    var VH = 1;
+    var FREE = { x0: 0, x1: 1, y0: 0, y1: 1 };
+    var distL = 95;
     var dist0 = 95;
+    function fitDist(fr, elev) {
+      var tanV = Math.tan(cam.fov * Math.PI / 360);
+      var fw = Math.max(90, fr.x1 - fr.x0);
+      var fh = Math.max(90, fr.y1 - fr.y0);
+      return Math.max(MW * VH / (2 * tanV * fw), MD * Math.sin(elev) * VH / (2 * tanV * fh)) * 1.04;
+    }
     var tgt = new T.Vector3();
     var dir = new T.Vector3();
+    var dirL = new T.Vector3();
+    var ray = new T.Raycaster();
+    var ndc = new T.Vector2();
     return {
-      scene: scene, cam: cam, focus: hhh, label: V3(hhh.x, 1.7, hhh.z),
-      fit: function (a) {
-        cam.fov = a < 1 ? 50 : 36;
-        dist0 = Math.max(95, 36 / (Math.tan(cam.fov * Math.PI / 360) * a));
-        scene.fog.near = dist0 * 0.85;
-        scene.fog.far = dist0 * 2.2;
+      scene: scene, cam: cam, focus: hhh, label: V3(hhh.x, 1.7, hhh.z), markers: markers, hasLayers: layers.length === 3,
+      fit: function (a) { cam.fov = a < 1 ? 50 : 36; },
+      layout: function (w, h, fr) {
+        VW = w;
+        VH = h;
+        FREE = fr;
+        distL = fitDist(fr, ELEV_L);
+        dist0 = fitDist({ x0: w * 0.08, x1: w * 0.92, y0: h * 0.16, y1: h * 0.9 }, Math.asin(D0.y));
+        scene.fog.near = Math.max(distL, dist0) * 0.95;
+        scene.fog.far = Math.max(distL, dist0) * 2.6;
       },
-      update: function (t, time) {
+      pick: function (x, y, layer) {
+        ndc.set(x / VW * 2 - 1, -(y / VH * 2 - 1));
+        ray.setFromCamera(ndc, cam);
+        var cand = hits.filter(function (hh) { return hh.userData.layer === layer; });
+        var hit = ray.intersectObjects(cand, false)[0];
+        return hit ? hit.object.userData.code : null;
+      },
+      update: function (t, time, dt, merge, layer) {
+        var mg = merge === undefined ? 1 : merge;
         var e = ease(t);
         var kT = ease(t / 0.62);
-        var dist = t > 1 ? 3 * (1 - (t - 1) * 1.6) : dist0 * Math.pow(3 / dist0, Math.pow(e, 1.35));
-        tgt.copy(T0).lerp(T1, kT);
+        var dz = t > 1 ? 3 * (1 - (t - 1) * 1.6) : dist0 * Math.pow(3 / dist0, Math.pow(e, 1.35));
+        tgt.copy(MC).lerp(hhh, kT);
         dir.copy(D0).lerp(D1, kT).normalize().applyAxisAngle(UP, -0.28 * kT + Math.sin(time * 0.15) * 0.015);
+        var dist = dz;
+        var offX = 0;
+        var offY = 0;
+        if (mg < 1) {
+          var bl = ease(mg);
+          dirL.set(0, Math.sin(ELEV_L), Math.cos(ELEV_L)).applyAxisAngle(UP, Math.sin(time * 0.15) * 0.012);
+          dir.copy(dirL).lerp(dir, bl).normalize();
+          dist = Math.exp(Math.log(distL) + (Math.log(dz) - Math.log(distL)) * bl);
+          offX = -((FREE.x0 + FREE.x1) / 2 - VW / 2) * (1 - bl);
+          offY = -((FREE.y0 + FREE.y1) / 2 - VH / 2) * (1 - bl);
+        }
         cam.position.copy(tgt).addScaledVector(dir, Math.max(0.9, dist));
         cam.lookAt(tgt);
+        if (Math.abs(offX) > 0.5 || Math.abs(offY) > 0.5) cam.setViewOffset(VW, VH, offX, offY, VW, VH);
+        else if (cam.view && cam.view.enabled) cam.clearViewOffset();
         cam.near = Math.max(0.02, dist * 0.02);
         cam.far = dist * 6 + 90;
         cam.updateProjectionMatrix();
         patch.material.opacity = NK.smooth(0.45, 0.85, t);
         frame.material.opacity = 0.9 * NK.smooth(0.3, 0.55, t) * (1 - NK.smooth(1.02, 1.12, t));
+        var glowIn = mg < 1 ? NK.smooth(0.15, 1, mg) : 1;
         glows.forEach(function (sp) {
           var u = sp.userData;
           var pulse = 1 + 0.06 * Math.sin(time * 1.4 + u.ph);
           sp.scale.set(u.s * pulse, u.s * pulse, 1);
-          sp.material.opacity = u.o * (0.86 + 0.14 * Math.sin(time * 1.1 + u.ph)) * (1 - 0.88 * NK.smooth(0.28, 0.72, t));
+          sp.material.opacity = glowIn * u.o * (0.86 + 0.14 * Math.sin(time * 1.1 + u.ph)) * (1 - 0.88 * NK.smooth(0.28, 0.72, t));
         });
+        var k = mg >= 1 ? 1 : 1 - Math.exp(-(dt || 0.016) * 6);
+        layers.forEach(function (g, i) {
+          var target = (i === layer ? 1 : 0) * (1 - NK.smooth(0, 0.55, mg));
+          g.userData.op += (target - g.userData.op) * k;
+          if (Math.abs(target - g.userData.op) < 0.002) g.userData.op = target;
+          g.userData.mats.forEach(function (mt) { mt.opacity = mt.userData.base * g.userData.op; mt.depthWrite = g.userData.op > 0.6 && mt.userData.base >= 1; });
+          g.visible = g.userData.op > 0.01;
+          g.userData.shown = g.userData.op;
+        });
+        this.layerOp = layers.map(function (g) { return g.userData.op; });
         dust.rotation.y = time * 0.012;
       }
     };
@@ -564,7 +739,7 @@
       scene.add(house);
     });
 
-    var D0 = V3(0, 0.83, 0.56).normalize();
+    var D0 = V3(0, 0.9, 0.44).normalize();
     var TGT_END = V3(0, 0.28, 0);
     var tgt = new T.Vector3();
     var dir = new T.Vector3();
@@ -890,6 +1065,8 @@
       fit: function (a) {
         cam.fov = a < 1 ? 52 : 40;
         path = poses(a < 1 ? NK.clamp((1 - a) / 0.55, 0, 1) : 0);
+        /* the portrait close-up sits further back, so the J2s grow to stay legible */
+        nems.forEach(function (m) { m.scale.setScalar(a < 1 ? 1.5 : 1); });
         P0 = path.C.getPoint(0);
         Q0 = path.T.getPoint(0);
         sigU.uPx.value = H * DPR / (2 * Math.tan(cam.fov * Math.PI / 360));
@@ -962,8 +1139,48 @@
     H = Math.max(1, Math.round(r.height));
     renderer.setSize(W, H, false);
     LV.forEach(function (l) { l.cam.aspect = W / H; l.fit(W / H); l.cam.updateProjectionMatrix(); });
+    FR = freeRect();
+    if (LV[0].layout) LV[0].layout(W, H, FR);
     CU.uAsp.value = W / H;
     if (rtA) { rtA.setSize(Math.round(W * DPR), Math.round(H * DPR)); rtB.setSize(Math.round(W * DPR), Math.round(H * DPR)); }
+  }
+  /* the free area for the map during the layers: right of the panel on wide
+   * screens, above it on narrow ones (layout boxes, not the slid-out ones) */
+  var FR = null;
+  function freeRect() {
+    var navH = parseFloat(getComputedStyle(stage).getPropertyValue('--nav-h')) || 64;
+    if (!panelEl || !uiEl || !panelEl.offsetWidth) return { x0: W * 0.08, x1: W * 0.92, y0: navH + 20, y1: H - 40 };
+    var pl = uiEl.offsetLeft + panelEl.offsetLeft;
+    var pt = uiEl.offsetTop + panelEl.offsetTop;
+    if (W >= 860) return { x0: pl + panelEl.offsetWidth + 44, x1: W - 36, y0: navH + 28, y1: H - 64 };
+    return { x0: 12, x1: W - 12, y0: navH + 16, y1: Math.max(navH + 170, pt - 14) };
+  }
+  var pointer = { x: -1, y: -1, inside: false, tap: false };
+  function ptr(e) { var r = stage.getBoundingClientRect(); pointer.x = e.clientX - r.left; pointer.y = e.clientY - r.top; pointer.inside = true; }
+  stage.addEventListener('pointermove', function (e) { if (e.pointerType !== 'touch') ptr(e); }, { passive: true });
+  stage.addEventListener('pointerleave', function () { pointer.inside = false; stage.style.cursor = ''; if (NK.chinaUI) NK.chinaUI.hideTip(); });
+  stage.addEventListener('pointerdown', function (e) { if (e.pointerType === 'touch') { ptr(e); pointer.tap = true; } }, { passive: true });
+  var lastPick = 0;
+  var chinaShown = true;
+  function chinaPhase(time, merge, layer) {
+    var L0 = LV[0];
+    var ops = L0.layerOp || [0, 0, 0];
+    L0.markers.forEach(function (mk) {
+      if (!mk.el) return;
+      var on = ops[mk.layer] > 0.6 && merge < 0.3;
+      mk.el.style.opacity = on ? '1' : '0';
+      if (!on) return;
+      tmp.copy(mk.pos).project(L0.cam);
+      mk.el.style.transform = 'translate(' + ((tmp.x * 0.5 + 0.5) * W).toFixed(0) + 'px,' + ((-tmp.y * 0.5 + 0.5) * H).toFixed(0) + 'px) translate(-50%,-100%)';
+    });
+    var CUI = NK.chinaUI;
+    if (!CUI || merge > 0.04 || !pointer.inside || layer === 0 || time - lastPick < 0.06) return;
+    lastPick = time;
+    if (FR && W >= 860 && pointer.x < FR.x0 - 30) { CUI.hideTip(); stage.style.cursor = ''; return; }
+    var code = L0.pick(pointer.x, pointer.y, layer);
+    if (code) { CUI.showTip(CUI.recordHtml(layer, code), pointer.x, pointer.y); stage.style.cursor = 'help'; }
+    else { stage.style.cursor = ''; if (!pointer.tap) CUI.hideTip(); }
+    pointer.tap = false;
   }
   function phase(q) {
     var p;
@@ -984,12 +1201,40 @@
     else qCur += (qT - qCur) * (1 - Math.exp(-dt * 5));
     lastT = time;
     U.uTime.value = NK.reduced ? 0 : time;
+    var cp = NK.chinaUI && LV[0].hasLayers ? NK.chinaUI.progress() : null;
+    var merge = cp ? cp.merge : 1;
+    var layer = NK.chinaUI ? NK.chinaUI.active() : 0;
+    if (merge < 1) {
+      /* the China layers and the merge: one map, no portal yet */
+      qCur = 0;
+      LV[0].update(0, time, dt, merge, layer);
+      renderer.setRenderTarget(null);
+      renderer.render(LV[0].scene, LV[0].cam);
+      chinaPhase(time, merge, layer);
+      if (labelEl) {
+        var hs = NK.smooth(0.6, 1, merge);
+        labelEl.style.opacity = hs.toFixed(3);
+        if (hs > 0) {
+          tmp.copy(LV[0].label).project(LV[0].cam);
+          labelEl.style.transform = 'translate(' + ((tmp.x * 0.5 + 0.5) * W).toFixed(0) + 'px,' + ((-tmp.y * 0.5 + 0.5) * H).toFixed(0) + 'px) translate(-50%,-120%)';
+        }
+      }
+      steps.forEach(function (li, i) { li.classList.toggle('is-on', i === 0); li.classList.remove('is-done'); });
+      stage.style.setProperty('--qo', '0');
+      chinaShown = true;
+      return;
+    }
+    if (chinaShown) {
+      chinaShown = false;
+      LV[0].markers.forEach(function (mk) { if (mk.el) mk.el.style.opacity = '0'; });
+      if (NK.chinaUI) NK.chinaUI.hideTip();
+    }
     var ph = phase(qCur);
     var A = LV[ph.a];
-    A.update(ph.ta, time);
+    A.update(ph.ta, time, dt, 1, layer);
     if (ph.b !== undefined) {
       var B = LV[ph.b];
-      B.update(ph.tb, time);
+      B.update(ph.tb, time, dt, 1, layer);
       ensureRT();
       renderer.setRenderTarget(rtA);
       renderer.render(A.scene, A.cam);
@@ -1057,6 +1302,7 @@
     sec.classList.remove('is-3d');
     NK.zoom3d = false;
     try { renderer.dispose(); renderer.forceContextLoss(); } catch (e2) { /* context already gone */ }
+    if (NK.china2d) NK.china2d();
     if (NK.zoom2d) NK.zoom2d();
   }
   function run(upto) {
