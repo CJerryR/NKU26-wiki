@@ -50,3 +50,7 @@ python3 tools/audit_wiki_content.py --generated --generated-root public
 ## 仍待团队提供
 
 Herbivores 数据导入；美工组矢量图（可替换 `_partials/home/threat.html` 中的场景画面，保留 macro/micro 分组即可继续使用放大镜）；世界地图案例卡背面的作物照片（需注明许可）；第五部分的正式成果；经批准的赞助机构名称与标志。本版本已推送到 `3Dv2` 源代码分支供评审，没有部署到 GitHub Pages。
+
+## 版本说明
+
+当前分支为 `3Dv2`。本版范围、构建方法和已知限制见 [`docs/3d-version-v2.md`](docs/3d-version-v2.md)。
