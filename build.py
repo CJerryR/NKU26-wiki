@@ -725,7 +725,7 @@ def build_page(path):
     home_styles = ""
     home_scripts = ""
     if is_home:
-        home_styles = "\n  ".join(f'<link rel="stylesheet" href="{P}css/{name}.css" />' for name in ("home", "home-v6"))
+        home_styles = "\n  ".join(f'<link rel="stylesheet" href="{P}css/{name}.css" />' for name in ("home", "home-v6", "home-threat3d"))
         payload = json.dumps(home_data(), ensure_ascii=False).replace("<", "\\u003c")
         home_scripts = '<script>window.NKU_HOME = ' + payload + ';</script>\n  '
         home_scripts += "\n  ".join(f'<script src="{P}js/{name}.js" defer></script>' for name in ("vendor/three.min", "home-geo", "home-land", "home-geo3d", "home-abundance", "home-maps-data", "home-core", "home-nk", "home-pager", "home-opening", "home-maps", "home-zoom3d", "home-threat", "home-story") if name != "home-abundance" or (ROOT / "js" / "home-abundance.js").exists())

@@ -266,7 +266,13 @@
     function dive(on) {
       if (!on) { sec.classList.remove('is-diving'); mapBox.style.transform = ''; return; }
       var cr = mapBox.getBoundingClientRect();
-      var f = (window.NK && NK.chinaFrame && NK.chinaFrame()) || { x: innerWidth * 0.36, y: innerHeight * 0.14, w: innerWidth * 0.56, h: innerHeight * 0.74 };
+      var f = window.NK && NK.chinaFrame ? NK.chinaFrame() : null;
+      if (!f) {
+        /* no WebGL: aim at the 2D China map of the next page instead */
+        var cz = document.getElementById('china'), land = cz && cz.querySelector('.cz__land');
+        if (land) { var lr = land.getBoundingClientRect(), zr = cz.getBoundingClientRect(); if (lr.width) f = { x: lr.left, y: lr.top - zr.top, w: lr.width, h: lr.height * 0.9 }; }
+      }
+      f = f || { x: innerWidth * 0.36, y: innerHeight * 0.14, w: innerWidth * 0.56, h: innerHeight * 0.74 };
       var X = function (lon) { return (lon + 180) * 2.5 / 900 * cr.width; }, Y = function (lat) { return (84 - lat) * 2.5 / 350 * cr.height; };
       var x0 = X(73.5), x1 = X(134.8), y0 = Y(53.6), y1 = Y(18.2);
       var s = Math.min(f.w / (x1 - x0), f.h / (y1 - y0));
@@ -281,7 +287,7 @@
       enter: function () { dive(false); if (!opened) openNow(); return 300; },
       leave: function (dir, info) {
         closeCard();
-        if (dir > 0 && info && info.to === 'china' && info.adjacent && innerWidth > 980) { dive(true); return 1400; }
+        if (dir > 0 && info && info.to === 'china' && info.adjacent && innerWidth > 980) { if (window.NK && NK.chinaHandoff) NK.chinaHandoff(); dive(true); return 1400; }
         return 0;
       },
       ff: function () { openNow(); }
@@ -322,34 +328,35 @@
 
   function hp() {
     var sec = H.$('[data-hp]'); if (!sec || !GEO.china) return;
-    var G = GEO.china, maps = {};
-    H.$$('[data-cmap]', sec).forEach(function (fig) {
-      var kind = fig.getAttribute('data-cmap'), m = makeMap(kind, H.$('canvas', fig), false);
-      maps[kind] = m;
-      H.$('[data-cmap-open]', fig).addEventListener('click', function () { openFocus(kind); });
-      H.once(fig, function () { m.intro(); }, .3);
+    var G = GEO.china, KINDS = ['survey', 'teach', 'soil'], COL = ['#c48cff', '#ffa24a', '#9aa7ff'];
+    var cvs = KINDS.map(function (k) { return H.$('canvas[data-layer="' + k + '"]', sec); });
+    var tabs = H.$$('[data-hp-tab]', sec);
+    /* one short figure per layer, from the same (illustrative) values the map draws */
+    KINDS.forEach(function (k, i) {
+      var d = HPD[k], n = Object.keys(d), sum = n.reduce(function (a, p) { return a + d[p]; }, 0);
+      var el = H.$('[data-hp-stat="' + i + '"]', sec);
+      if (el) el.textContent = sum + (k === 'survey' ? ' responses' : k === 'teach' ? ' classes' : ' samples') + ' \u00b7 ' + n.length + ' provinces';
     });
-    addEventListener('resize', function () { Object.keys(maps).forEach(function (k) { maps[k].resize(); }); });
-    var dlg = H.$('[data-cfocus]', sec), fcv = H.$('[data-cfocus-canvas]', sec), order = ['survey', 'teach', 'soil'], cur = 0, fm = null, lastFocus;
-    function openFocus(kind) {
-      lastFocus = document.activeElement; cur = order.indexOf(kind);
-      dlg.hidden = false; requestAnimationFrame(function () { dlg.classList.add('is-open'); fill(); });
-      document.documentElement.style.overflow = 'hidden';
-      H.$('[data-cfocus-close]', dlg).focus();
+    var maps = [], cur = -1;
+    function show(i) {
+      if (i === cur) return;
+      cur = i;
+      cvs.forEach(function (c, j) { c.classList.toggle('is-on', j === i); });
+      tabs.forEach(function (t, j) { t.setAttribute('aria-selected', j === i ? 'true' : 'false'); t.tabIndex = j === i ? 0 : -1; });
+      maps.forEach(function (m, j) { m.active = j === i; });
+      sec.style.setProperty('--hpc', COL[i]);
+      if (maps[i]) maps[i].intro();
+      H.tip(null);
     }
-    function fill() {
-      var kind = order[cur], T = TEXT[kind];
-      dlg.style.setProperty('--c', H.$('[data-cmap="' + kind + '"]', sec).style.getPropertyValue('--c'));
-      H.$('[data-cf-kicker]', dlg).textContent = T.k; H.$('[data-cf-title]', dlg).textContent = T.t; H.$('[data-cf-body]', dlg).innerHTML = T.b;
-      if (fm) fm.destroy(); fm = makeMap(kind, fcv, true); fm.intro();
-    }
-    function close() { dlg.classList.remove('is-open'); document.documentElement.style.overflow = ''; setTimeout(function () { dlg.hidden = true; if (fm) { fm.destroy(); fm = null; } }, 350); if (lastFocus) lastFocus.focus(); }
-    H.$('[data-cfocus-close]', dlg).addEventListener('click', close);
-    dlg.addEventListener('click', function (e) { if (e.target === dlg) close(); });
-    H.$('[data-cf-prev]', dlg).addEventListener('click', function () { cur = (cur + 2) % 3; fill(); });
-    H.$('[data-cf-next]', dlg).addEventListener('click', function () { cur = (cur + 1) % 3; fill(); });
-    document.addEventListener('keydown', function (e) { if (!dlg.hidden && e.key === 'Escape') close(); });
-
+    tabs.forEach(function (t, i) {
+      t.addEventListener('click', function () { show(i); });
+      t.addEventListener('keydown', function (e) {
+        var n = e.key === 'ArrowDown' || e.key === 'ArrowRight' ? 1 : e.key === 'ArrowUp' || e.key === 'ArrowLeft' ? -1 : 0;
+        if (!n) return;
+        e.preventDefault(); e.stopPropagation();
+        var k = (i + n + 3) % 3; tabs[k].focus(); show(k);
+      });
+    });
     function inside(lon, lat) {
       var r = Math.floor((G.north - lat) / G.step), c = Math.floor((lon - G.west) / G.step), row = G.rows_mask[r];
       if (!row) return false;
@@ -456,7 +463,7 @@
         m.hot = hot;
         if (it < 1 || mouse || kind !== 'survey') m.kick();
       }
-      m.kick = function () { if (!raf && alive && m.visible !== false) raf = requestAnimationFrame(draw); };
+      m.kick = function () { if (!raf && alive && m.visible !== false && m.active !== false) raf = requestAnimationFrame(draw); };
       m.intro = function () { introT = performance.now(); m.kick(); };
       m.resize = function () { size(); m.kick(); };
       m.destroy = function () { alive = false; cv.removeEventListener('pointermove', move); cv.removeEventListener('pointerleave', leave); cv.removeEventListener('pointerdown', move); };
@@ -466,10 +473,10 @@
           var html = '';
           if (kind === 'survey' && mouse) {
             var lon = (mouse[0] - ox) / (.84 * s) + 73, lat = 54 - (mouse[1] - oy) / s;
-            if (inside(lon, lat)) { var pn = provAt(lon, lat); html = '<b>' + pn + '</b>' + (data[pn] ? data[pn] + ' responses' : 'No responses yet') + '<em>Illustrative data</em>'; }
+            if (inside(lon, lat)) { var pn = provAt(lon, lat); html = '<b>' + pn + '</b>' + (data[pn] ? data[pn] + ' responses' : 'No responses yet'); }
           }
-          if (kind === 'teach' && m.hot) html = '<b>' + m.hot.n + '</b>' + m.hot.v + (m.hot.v > 1 ? ' classes' : ' class') + '<em>Illustrative data</em>';
-          if (kind === 'soil' && m.hot) html = '<b>' + m.hot.n + '</b>' + m.hot.raw + ' soil samples<em>Illustrative data</em>';
+          if (kind === 'teach' && m.hot) html = '<b>' + m.hot.n + '</b>' + m.hot.v + (m.hot.v > 1 ? ' classes' : ' class');
+          if (kind === 'soil' && m.hot) html = '<b>' + m.hot.n + '</b>' + m.hot.raw + ' soil samples';
           H.tip(html, e.clientX, e.clientY);
         }, 20);
       }
@@ -479,6 +486,15 @@
       size();
       return m;
     }
+    maps = KINDS.map(function (k, i) { return makeMap(k, cvs[i], true); });
+    addEventListener('resize', function () { maps.forEach(function (m) { m.resize(); }); });
+    H.scene('hp', {
+      steps: 2,
+      set: function (i) { show(i); },
+      step: function (i) { show(i); return 900; }
+    });
+    show(0);
+    H.once(sec, function () { if (maps[cur]) maps[cur].intro(); }, .3);
   }
   H.ready(function () { world(); hp(); });
 })();

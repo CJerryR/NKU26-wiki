@@ -1,40 +1,29 @@
-<section class="cn hp" id="hp" data-nav-label="Closer to home" data-hp data-tone="dark" aria-labelledby="hp-title">
-  <div class="wrap">
-    <div class="cn__head hp__head">
-      <h2 class="h-display" id="hp-title" data-split>Closer to home</h2>
-      <p class="hp__lede">Human practices across China: who we asked, where we taught, and where the soil came from.</p>
-      <p class="hp__flag"><i aria-hidden="true"></i>Illustrative data</p>
-    </div>
-    <div class="cn__row">
-      <figure class="cn__map" data-cmap="survey" style="--c:#c48cff">
-        <button type="button" class="cn__open" data-cmap-open aria-label="Open the survey map"></button>
-        <canvas aria-hidden="true"></canvas>
-        <figcaption><i></i><b>Survey</b><span>Who answered our questions</span></figcaption>
-      </figure>
-      <figure class="cn__map" data-cmap="teach" style="--c:#ffa24a">
-        <button type="button" class="cn__open" data-cmap-open aria-label="Open the teaching map"></button>
-        <canvas aria-hidden="true"></canvas>
-        <figcaption><i></i><b>Teaching</b><span>Where we taught</span></figcaption>
-      </figure>
-      <figure class="cn__map" data-cmap="soil" style="--c:#9aa7ff">
-        <button type="button" class="cn__open" data-cmap-open aria-label="Open the soil programme map"></button>
-        <canvas aria-hidden="true"></canvas>
-        <figcaption><i></i><b>Soil programme</b><span>Where samples came from</span></figcaption>
-      </figure>
-    </div>
-    <p class="cn__src">Province values on these three maps are illustrative until the team&#8217;s survey, teaching and sampling records are added. Basemap: Natural Earth, China point of view.</p>
-  </div>
-  <div class="cnfocus" data-cfocus role="dialog" aria-modal="true" aria-labelledby="cf-title" hidden>
-    <div class="cnfocus__panel">
-      <button type="button" class="cnfocus__close" data-cfocus-close aria-label="Close map">×</button>
-      <canvas data-cfocus-canvas aria-hidden="true"></canvas>
-      <div class="cnfocus__text">
-        <p class="cnfocus__kicker" data-cf-kicker></p>
-        <h3 id="cf-title" data-cf-title></h3>
-        <div data-cf-body></div>
-        <div class="cnfocus__nav"><button type="button" data-cf-prev>Previous map</button><button type="button" data-cf-next>Next map</button></div>
+<section class="hp2" id="hp" data-nav-label="Closer to home" data-hp data-tone="dark" aria-labelledby="hp-title">
+  <div class="hp2__inner">
+    <div class="hp2__copy">
+      <h2 class="h-display" id="hp-title">Closer to home</h2>
+      <p class="hp2__lede">Our human practices across China, in three layers.</p>
+      <div class="hp2__layers" role="tablist" aria-label="Human practices layers">
+        <button type="button" class="hp2__tab" role="tab" aria-selected="true" data-hp-tab="0" style="--c:#c48cff">
+          <i aria-hidden="true"></i><b>Survey</b>
+          <span class="hp2__more"><span><em data-hp-stat="0"></em>Growers, agronomists and students told us how they spot nematode damage today.</span></span>
+        </button>
+        <button type="button" class="hp2__tab" role="tab" aria-selected="false" data-hp-tab="1" style="--c:#ffa24a">
+          <i aria-hidden="true"></i><b>Teaching</b>
+          <span class="hp2__more"><span><em data-hp-stat="1"></em>Classes on soil life and synthetic biology for school students.</span></span>
+        </button>
+        <button type="button" class="hp2__tab" role="tab" aria-selected="false" data-hp-tab="2" style="--c:#9aa7ff">
+          <i aria-hidden="true"></i><b>Soil programme</b>
+          <span class="hp2__more"><span><em data-hp-stat="2"></em>Soil samples collected together with local growers.</span></span>
+        </button>
       </div>
+      <p class="hp2__note">Illustrative data</p>
     </div>
+    <figure class="hp2__map" data-hp-map aria-label="Map of China showing the selected human practices layer">
+      <canvas data-layer="survey" aria-hidden="true"></canvas>
+      <canvas data-layer="teach" aria-hidden="true"></canvas>
+      <canvas data-layer="soil" aria-hidden="true"></canvas>
+    </figure>
   </div>
   <div class="tip" data-tip hidden></div>
 </section>

@@ -82,6 +82,9 @@
    * to roots, roots, question. Each step has a fixed pace and cannot be
    * skipped with a fast scroll. */
   var DUR = [0, 4400, 5200];
+  NK.chinaArr = 1;
+  NK.chinaHandoff = function () { sec.classList.add('is-handoff'); stage.style.setProperty('--arrive', '0'); requestAnimationFrame(function () { requestAnimationFrame(function () { sec.classList.add('is-show'); }); }); };
+  NK.chinaArrive = function () { sec.classList.remove('is-handoff', 'is-show'); stage.style.setProperty('--arrive', '1'); };
   var drive = function () { return null; };
   NK.chinaDriver = function (fn) { drive = fn; };
   function to(i, ms) {
@@ -91,9 +94,12 @@
   }
   H0.scene('china', {
     steps: 2, tall: 4, cutIn: true, noSkip: true,
-    set: function (i) { to(i, 0); },
+    set: function (i) { to(i, 0); if (!sec.classList.contains('is-handoff')) { NK.chinaArr = 1; stage.style.setProperty('--arrive', '1'); } },
     step: function (i, dir) { var ms = sec.classList.contains('is-2d') ? 450 : dir > 0 ? DUR[i] : 1500; to(i, ms); return ms; },
-    enter: function () { return 0; }
+    enter: function (dir, info) {
+      if (sec.classList.contains('is-handoff')) { NK.chinaArrive(1700); return 1500; }
+      return 0;
+    }
   });
   if (!window.THREE || !NK.webgl()) NK.china2d();
 }());
@@ -476,16 +482,42 @@
     scene.add(new T.Mesh(slab, new T.MeshStandardMaterial({ color: 0x2b1c40, emissive: 0x100818, roughness: 0.92 })));
     var lineMat = new T.LineBasicMaterial({ color: 0xb99be0, transparent: true, opacity: 0.85 });
     var bb = { x0: 1e9, x1: -1e9, z0: 1e9, z1: -1e9 };
+    var outl = [];
     geo.rings.forEach(function (r) {
       if (r.a < 1.5) return;
-      var pts = [];
+      var pts = [], p2 = [];
+      outl.push(p2);
       for (var i = 0; i < r.p.length; i += 2) {
         var q = toP(r.p[i], r.p[i + 1]);
+        p2.push(q);
         pts.push(V3(q[0], 0.81, q[1]));
         bb.x0 = Math.min(bb.x0, q[0]); bb.x1 = Math.max(bb.x1, q[0]); bb.z0 = Math.min(bb.z0, q[1]); bb.z1 = Math.max(bb.z1, q[1]);
       }
       scene.add(new T.LineLoop(new T.BufferGeometry().setFromPoints(pts), lineMat));
     });
+    /* v6.3: a bold outline painted on the map, as thick on screen as the world
+     * map's China outline, so the hand-off from the world map is seamless */
+    var ribbon = new T.Mesh(new T.BufferGeometry(), new T.MeshBasicMaterial({ color: 0xb99be0, transparent: true, depthWrite: false, side: T.DoubleSide }));
+    ribbon.renderOrder = 2;
+    scene.add(ribbon);
+    function setRibbon(hw) {
+      var pos = [], idx = [];
+      outl.forEach(function (P) {
+        var n = P.length, base = pos.length / 3, i;
+        for (i = 0; i < n; i++) {
+          var a = P[(i - 1 + n) % n], b = P[i], c = P[(i + 1) % n];
+          var tx = c[0] - a[0], tz = c[1] - a[1], tl = Math.sqrt(tx * tx + tz * tz) || 1;
+          var nx = -tz / tl, nz = tx / tl;
+          pos.push(b[0] + nx * hw, 0.816, b[1] + nz * hw, b[0] - nx * hw, 0.816, b[1] - nz * hw);
+        }
+        for (i = 0; i < n; i++) { var a0 = base + i * 2, b0 = base + ((i + 1) % n) * 2; idx.push(a0, a0 + 1, b0, a0 + 1, b0 + 1, b0); }
+      });
+      var g = new T.BufferGeometry();
+      g.setIndex(idx);
+      g.setAttribute('position', new T.Float32BufferAttribute(pos, 3));
+      ribbon.geometry.dispose();
+      ribbon.geometry = g;
+    }
     (geo.maritime || []).forEach(function (line) {
       var pts = [];
       for (var i = 0; i < line.length; i += 2) { var q = toP(line[i], line[i + 1]); pts.push(V3(q[0], 0.02, q[1])); }
@@ -620,6 +652,7 @@
     var VH = 1;
     var FREE = { x0: 0, x1: 1, y0: 0, y1: 1 };
     var distL = 95;
+    var distTop = 95;
     var dist0 = 95;
     function fitDist(fr, elev) {
       var tanV = Math.tan(cam.fov * Math.PI / 360);
@@ -640,9 +673,11 @@
         VH = h;
         FREE = fr;
         distL = fitDist(fr, ELEV_L);
+        distTop = fitDist(fr, 1.555);
         dist0 = fitDist({ x0: w * 0.08, x1: w * 0.92, y0: h * 0.16, y1: h * 0.9 }, Math.asin(D0.y));
-        scene.fog.near = Math.max(distL, dist0) * 0.95;
-        scene.fog.far = Math.max(distL, dist0) * 2.6;
+        scene.fog.near = Math.max(distL, dist0, distTop) * 1.02;
+        scene.fog.far = Math.max(distL, dist0, distTop) * 2.8;
+        setRibbon(1.35 * 2 * distTop * Math.tan(cam.fov * Math.PI / 360) / h);
       },
       pick: function (x, y, layer) {
         ndc.set(x / VW * 2 - 1, -(y / VH * 2 - 1));
@@ -662,9 +697,12 @@
         var offY = 0;
         if (mg < 1) {
           var bl = ease(mg);
-          dirL.set(0, Math.sin(ELEV_L), Math.cos(ELEV_L)).applyAxisAngle(UP, Math.sin(time * 0.15) * 0.012);
+          /* arrival from the world map: straight down first, then the view tilts into 3D */
+          var ar = NK.easeInOut(NK.chinaArr == null ? 1 : NK.chinaArr), elev = NK.lerp(1.555, ELEV_L, ar);
+          var dLv = Math.exp(Math.log(distTop) + (Math.log(distL) - Math.log(distTop)) * ar);
+          dirL.set(0, Math.sin(elev), Math.cos(elev)).applyAxisAngle(UP, Math.sin(time * 0.15) * 0.012 * ar);
           dir.copy(dirL).lerp(dir, bl).normalize();
-          dist = Math.exp(Math.log(distL) + (Math.log(dz) - Math.log(distL)) * bl);
+          dist = Math.exp(Math.log(dLv) + (Math.log(dz) - Math.log(dLv)) * bl);
           offX = -((FREE.x0 + FREE.x1) / 2 - VW / 2) * (1 - bl);
           offY = -((FREE.y0 + FREE.y1) / 2 - VH / 2) * (1 - bl);
         }
@@ -676,6 +714,7 @@
         cam.far = dist * 6 + 90;
         cam.updateProjectionMatrix();
         patch.material.opacity = NK.smooth(0.45, 0.85, t);
+        ribbon.material.opacity = 1 - NK.smooth(0.02, 0.22, t);
         frame.material.opacity = 0.9 * NK.smooth(0.3, 0.55, t) * (1 - NK.smooth(1.02, 1.12, t));
         var glowIn = mg < 1 ? NK.smooth(0.15, 1, mg) : 1;
         glows.forEach(function (sp) {
@@ -686,7 +725,7 @@
         });
         var k = mg >= 1 ? 1 : 1 - Math.exp(-(dt || 0.016) * 6);
         layers.forEach(function (g, i) {
-          var target = (i ? 1 : 0) * (1 - NK.smooth(0, 0.55, mg));
+          var target = (i ? 1 : 0) * (1 - NK.smooth(0, 0.55, mg)) * NK.smooth(0.35, 1, NK.chinaArr == null ? 1 : NK.chinaArr);
           g.userData.op += (target - g.userData.op) * k;
           if (Math.abs(target - g.userData.op) < 0.002) g.userData.op = target;
           g.userData.mats.forEach(function (mt) { mt.opacity = mt.userData.base * g.userData.op; mt.depthWrite = g.userData.op > 0.6 && mt.userData.base >= 1; });
@@ -1268,6 +1307,17 @@
   var STATES = [{ merge: 0, q: 0, qo: 0 }, { merge: 1, q: 0.38, qo: 0 }, { merge: 1, q: 0.9, qo: 1 }];
   var Z = { merge: 0, q: 0, qo: 0 };
   var tw = null;
+  var arrTw = null;
+  NK.chinaHandoff = function () {
+    tw = null; arrTw = null; Z.merge = 0; Z.q = 0; Z.qo = 0; NK.chinaArr = 0;
+    stage.style.setProperty('--arrive', '0');
+    sec.classList.add('is-handoff');
+    requestAnimationFrame(function () { requestAnimationFrame(function () { sec.classList.add('is-show'); }); });
+  };
+  NK.chinaArrive = function (ms) {
+    sec.classList.remove('is-handoff', 'is-show');
+    arrTw = { t0: performance.now(), dur: ms };
+  };
   NK.chinaDriver(function (i, ms) {
     var s = STATES[Math.max(0, Math.min(2, i))];
     if (!ms) { tw = null; Z.merge = s.merge; Z.q = s.q; Z.qo = s.qo; return true; }
@@ -1276,6 +1326,8 @@
   });
   var tmp = new T.Vector3();
   function frame(time, dt) {
+    if (arrTw) { var ka = NK.clamp((performance.now() - arrTw.t0) / arrTw.dur, 0, 1); NK.chinaArr = ka; if (ka >= 1) arrTw = null; }
+    stage.style.setProperty('--arrive', NK.easeInOut(NK.chinaArr == null ? 1 : NK.chinaArr).toFixed(3));
     if (tw) {
       /* the map settles into the flight first, then the flight runs (in reverse the other way round); the question comes in at the end */
       var k = NK.clamp((performance.now() - tw.t0) / tw.dur, 0, 1), a = tw.a, b = tw.b;
@@ -1374,8 +1426,10 @@
       resize();
       /* where China sits on screen at the start of this page: the world map zooms to exactly this frame */
       NK.chinaFrame = function () {
-        var L0 = LV[0], b = L0.bbox, x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9;
+        var L0 = LV[0], b = L0.bbox, x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9, keep = NK.chinaArr;
+        NK.chinaArr = 0;
         L0.update(0, performance.now() / 1000, 0.016, 0, 1);
+        NK.chinaArr = keep;
         [[b.x0, b.z0], [b.x1, b.z0], [b.x0, b.z1], [b.x1, b.z1]].forEach(function (p) {
           tmp.set(p[0], 0.8, p[1]).project(L0.cam);
           var sx = (tmp.x * 0.5 + 0.5) * W, sy = (-tmp.y * 0.5 + 0.5) * H;
