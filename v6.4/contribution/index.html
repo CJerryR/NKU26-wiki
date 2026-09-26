@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contribution  /  NKU iGEM 2026</title>
+  <meta name="description" content="NKU iGEM 2026 - a synthetic-biology sensing concept for plant-parasitic nematode-associated signals, under investigation." />
+  <meta name="theme-color" content="#1a0d1d" />
+  <link rel="icon" href="../img/logo.svg" type="image/svg+xml" />
+  <link rel="preload" href="../fonts/spline-variable.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="../fonts/fraunces-variable.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="../css/style.css" />
+  
+  <link rel="stylesheet" href="../css/shell.css" />
+</head>
+<body class="page-standard" data-path-prefix="../">
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="lnav" data-lnav>
+  <div class="lnav__row lnav__bar">
+  <div class="lnav__island lnav__island--brand lg" data-lg="bar">
+    <span class="lg__fx" aria-hidden="true"></span><span class="lg__tint" aria-hidden="true"></span><span class="lg__shine" aria-hidden="true"></span>
+    <a href="../index.html" class="lnav__brand" aria-label="NKU26 NemaKlear home">
+      <img src="../img/shell/nku-mark.svg" alt="" width="34" height="44" />
+      <span><b>NKU26</b><em>NemaKlear</em></span>
+    </a>
+  </div>
+  <div class="lnav__island lnav__island--menu lg" data-lg="bar">
+    <span class="lg__fx" aria-hidden="true"></span><span class="lg__tint" aria-hidden="true"></span><span class="lg__shine" aria-hidden="true"></span>
+    <span class="lnav__now" data-lnav-now aria-hidden="true"></span>
+
+    <nav class="lnav__links" aria-label="Primary">
+      <span class="lnav__lens lg" data-lg="lens" aria-hidden="true"><span class="lg__fx"></span><span class="lg__shine"></span></span>
+      <a class="lnav__link" href="../index.html" data-match="index.html">Home</a>
+      <div class="lnav__group">
+        <button type="button" class="lnav__link" aria-expanded="false" aria-controls="lnav-project">Project<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+        <div class="lnav__drop lg" id="lnav-project" data-lg="drop">
+          <span class="lg__fx" aria-hidden="true"></span><span class="lg__tint" aria-hidden="true"></span><span class="lg__shine" aria-hidden="true"></span>
+          <div class="lnav__drop-grid">
+            <a href="../pages/description.html"><b>Description</b><span>Why nematode signals, and what we propose</span></a>
+            <a href="../engineering/"><b>Engineering</b><span>Design, build, test, learn</span></a>
+            <a href="../pages/results.html"><b>Results</b><span>What the bench has shown so far</span></a>
+            <a href="../model/"><b>Model</b><span>From signal input to color output</span></a>
+            <a href="../parts/"><b>Parts</b><span>Registry entries</span></a>
+            <a href="../hardware/"><b>Hardware</b><span>The closed test device</span></a>
+            <a href="../software/"><b>Software</b><span>Tools we built</span></a>
+            <a href="../contribution/"><b>Contribution</b><span>What future teams can reuse</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="lnav__group">
+        <button type="button" class="lnav__link" aria-expanded="false" aria-controls="lnav-hp">Human Practices<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+        <div class="lnav__drop lg" id="lnav-hp" data-lg="drop">
+          <span class="lg__fx" aria-hidden="true"></span><span class="lg__tint" aria-hidden="true"></span><span class="lg__shine" aria-hidden="true"></span>
+          <div class="lnav__drop-grid">
+            <a href="../human-practices/"><b>Human Practices</b><span>Growers, experts and what changed</span></a>
+            <a href="../education/"><b>Education</b><span>Classes and outreach across China</span></a>
+            <a href="../entrepreneurship/"><b>Entrepreneurship</b><span>Who would use it, and how</span></a>
+            <a href="../sustainability/"><b>Sustainability</b><span>Soil health and the SDGs</span></a>
+            <a href="../inclusivity/"><b>Inclusion</b><span>Who we built this with</span></a>
+          </div>
+        </div>
+      </div>
+      <a class="lnav__link" href="../safety-and-security/" data-match="safety-and-security/">Safety</a>
+      <div class="lnav__group">
+        <button type="button" class="lnav__link" aria-expanded="false" aria-controls="lnav-team">Team<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+        <div class="lnav__drop lnav__drop--narrow lg" id="lnav-team" data-lg="drop">
+          <span class="lg__fx" aria-hidden="true"></span><span class="lg__tint" aria-hidden="true"></span><span class="lg__shine" aria-hidden="true"></span>
+          <div class="lnav__drop-grid">
+            <a href="../pages/team-members.html"><b>Members</b><span>The people behind the wiki</span></a>
+            <a href="../pages/attribution.html"><b>Attributions</b><span>Who did what</span></a>
+            <a href="../licensing/"><b>Licensing &amp; AI use</b><span>How this site may be reused</span></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <button type="button" class="lnav__search" data-search-open aria-haspopup="dialog" aria-controls="site-search" aria-expanded="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><line x1="20" y1="20" x2="16" y2="16"/></svg>
+      <span>Search</span>
+    </button>
+    <button type="button" class="lnav__toggle" aria-expanded="false" aria-controls="lnav-sheet" aria-label="Open menu"><i></i><i></i></button>
+  </div>
+  </div>
+
+  <div class="lnav__sheet lg" id="lnav-sheet" data-lg="sheet" hidden>
+    <span class="lg__fx" aria-hidden="true"></span><span class="lg__tint" aria-hidden="true"></span><span class="lg__shine" aria-hidden="true"></span>
+    <div class="lnav__sheet-body">
+      <a href="../index.html">Home</a>
+      <p>Project</p>
+      <a href="../pages/description.html">Description</a><a href="../engineering/">Engineering</a><a href="../pages/results.html">Results</a><a href="../model/">Model</a><a href="../parts/">Parts</a><a href="../hardware/">Hardware</a><a href="../software/">Software</a><a href="../contribution/">Contribution</a>
+      <p>Human Practices</p>
+      <a href="../human-practices/">Human Practices</a><a href="../education/">Education</a><a href="../entrepreneurship/">Entrepreneurship</a><a href="../sustainability/">Sustainability</a><a href="../inclusivity/">Inclusion</a>
+      <p>More</p>
+      <a href="../safety-and-security/">Safety</a><a href="../pages/team-members.html">Team</a><a href="../pages/attribution.html">Attributions</a><a href="../licensing/">Licensing &amp; AI use</a>
+    </div>
+  </div>
+</header>
+
+<svg class="lg-defs" width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden"><defs></defs></svg>
+
+
+  <main id="main">
+<header class="phero">
+    <div class="phero__bg" aria-hidden="true"><svg viewBox="0 0 1440 460" preserveAspectRatio="xMidYMid slice"><circle cx="1320" cy="120" r="70" fill="none" stroke="#9b7fe0" stroke-opacity="0.160" stroke-width="1.2"/><circle cx="1320" cy="120" r="130" fill="none" stroke="#9b7fe0" stroke-opacity="0.135" stroke-width="1.2"/><circle cx="1320" cy="120" r="200" fill="none" stroke="#9b7fe0" stroke-opacity="0.110" stroke-width="1.2"/><circle cx="1320" cy="120" r="280" fill="none" stroke="#9b7fe0" stroke-opacity="0.085" stroke-width="1.2"/><circle cx="1320" cy="120" r="370" fill="none" stroke="#9b7fe0" stroke-opacity="0.060" stroke-width="1.2"/><path d="M-40,140 C300,118 900,166 1480,128" fill="none" stroke="#f4ecdd" stroke-opacity="0.050" stroke-width="1"/><path d="M-40,210 C300,188 900,236 1480,198" fill="none" stroke="#f4ecdd" stroke-opacity="0.044" stroke-width="1"/><path d="M-40,280 C300,258 900,306 1480,268" fill="none" stroke="#f4ecdd" stroke-opacity="0.038" stroke-width="1"/><path d="M-40,350 C300,328 900,376 1480,338" fill="none" stroke="#f4ecdd" stroke-opacity="0.032" stroke-width="1"/><path d="M-40,420 C300,398 900,446 1480,408" fill="none" stroke="#f4ecdd" stroke-opacity="0.026" stroke-width="1"/></svg></div>
+    <div class="phero__inner">
+      <nav class="phero__crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>/</span>Project<span>/</span><span>Contribution</span></nav>
+      <p class="eyebrow" style="margin-bottom:14px">Project  /  For the community</p>
+      <h1>What we leave <span class='ink-accent'>behind</span></h1>
+      <p class="phero__sub">A draft, evidence-led documentation package for future teams to verify and build on &mdash; not a finished Registry contribution.</p>
+      <div class="phero__meta"><span>Audience<b>Future iGEMers</b></span><span>Reading<b>4 min</b></span></div>
+    </div>
+  </header>
+  <div class="strata strata--down" aria-hidden="true"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><rect width="1440" height="120" fill="#191222"/><path fill="#241830" d="M0,60 C240,18 420,96 720,64 C1020,32 1230,92 1440,52 L1440,120 L0,120 Z"/><path fill="#f7f2e8" d="M0,86 C260,52 470,110 720,86 C1010,58 1240,108 1440,82 L1440,120 L0,120 Z"/></svg></div>
+  <div class="layout">
+    <aside class="toc" aria-label="On this page">
+      <div class="toc__top">
+        <div class="toc__badge"><img src="../img/logo.svg" alt="" width="24" height="24"/></div>
+        <div class="toc__titles"><div class="toc__kicker">On this page</div><div class="toc__title">Contribution</div></div>
+        <button class="toc__collapse" aria-label="Collapse outline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 5 7 12 13 19"/><polyline points="18 5 12 12 18 19"/></svg></button>
+      </div>
+      <div class="toc__progress" aria-hidden="true"><i></i></div>
+      <ul class="toc__list">
+        <span class="toc__rail" aria-hidden="true"></span>
+        <li class="lvl-1"><a href="#what">The contribution</a></li>
+        <li class="lvl-1"><a href="#package">What's in the package</a></li>
+        <li class="lvl-1"><a href="#boundary">Draft vs. final</a></li>
+        <li class="lvl-1"><a href="#scope">Scope &amp; honesty</a></li>
+      </ul>
+      <div class="toc__foot"><a href="#main"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="6 11 12 5 18 11"/></svg>Back to top</a></div>
+    </aside>
+    <div class="content">
+      <div class="toc-mini" aria-label="On this page (mobile)">
+        <button type="button" class="toc-mini__bar" aria-expanded="false">
+          <div class="toc__badge"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#f4ecdd" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><line x1="20" y1="20" x2="15.5" y2="15.5"/></svg></div>
+          <b>Contribution</b><span class="now"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="toc-mini__panel"><ul>
+          <li class="lvl-1"><a href="#what">The contribution</a></li>
+        <li class="lvl-1"><a href="#package">What's in the package</a></li>
+        <li class="lvl-1"><a href="#boundary">Draft vs. final</a></li>
+        <li class="lvl-1"><a href="#scope">Scope &amp; honesty</a></li>
+        </ul></div>
+      </div>
+<section id="what" data-toc="The contribution">
+  <p class="eyebrow sec-label">01 &mdash; Contribution</p>
+  <h2 class="section-title">What this draft actually offers</h2>
+  <div class="prose">
+    <p>Our contribution at this stage is documentation, not a finished product. It is an honest, evidence-led package that a future team could pick up and verify: a chronological audit of the 18 supplied records, the practical protocol observations that go with it, the explicit negative and inconclusive outcomes, and a clearly drawn line between preliminary PCR evidence and sequence-confirmed editing.</p>
+    <p>To be clear about what this is <em>not</em>: we are not claiming a completed Registry contribution, a published dataset, a validated software or hardware tool, community adoption, a fully validated protocol set, or a working sensor. Those claims would require evidence the current records do not contain.</p>
+  </div>
+</section>
+<section id="package" data-toc="What's in the package">
+  <p class="eyebrow sec-label">02 &mdash; The package</p>
+  <h2 class="section-title">What a future team can pick up</h2>
+  <div class="feature-list reveal" data-stagger>
+    <div class="feature"><span class="feature__idx">01</span><div><h3>A dated experimental record</h3><p>Eighteen documented notebook records with a result status for each, including the dead ends.</p></div><a class="feature__go" href="../pages/notebook.html" aria-label="Open the Notebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a></div>
+    <div class="feature"><span class="feature__idx">02</span><div><h3>Practical protocol observations</h3><p>Bench workflows as recorded, with the handling notes and the gaps that matter for reuse.</p></div><a class="feature__go" href="../pages/protocols.html" aria-label="Open Protocols"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a></div>
+    <div class="feature"><span class="feature__idx">03</span><div><h3>An evidence-status parts ledger</h3><p>Named elements and construct work, separated from the evidence still missing for each.</p></div><a class="feature__go" href="../parts/" aria-label="Open Parts"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a></div>
+  </div>
+  <div class="prose" style="margin-top:18px">
+    <p>These pages are working documentation, not final validated resources. They are most useful as a starting point to reproduce, correct, and extend &mdash; not as endpoints to cite.</p>
+  </div>
+</section>
+<section id="boundary" data-toc="Draft vs. final">
+  <p class="eyebrow sec-label">03 &mdash; Draft vs. final</p>
+  <h2 class="section-title">What would make this a real contribution</h2>
+  <div class="prose">
+    <p>The gap between this draft and a contribution we could publish is concrete and worth naming explicitly.</p>
+  </div>
+  <div style="overflow-x:auto;margin-top:22px">
+    <table style="width:100%;border-collapse:collapse;font-size:15px;line-height:1.55">
+      <thead>
+        <tr>
+          <th style="text-align:left;padding:11px 14px;border-bottom:2px solid rgba(25,18,34,.22)">Already documented (draft)</th>
+          <th style="text-align:left;padding:11px 14px;border-bottom:2px solid rgba(25,18,34,.22)">Required before a final contribution claim</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:11px 14px;border-bottom:1px solid rgba(25,18,34,.12);vertical-align:top">Chronological notebook with result status</td>
+          <td style="padding:11px 14px;border-bottom:1px solid rgba(25,18,34,.12);vertical-align:top">Confirmed sequences and Registry identifiers for each element</td>
+        </tr>
+        <tr>
+          <td style="padding:11px 14px;border-bottom:1px solid rgba(25,18,34,.12);vertical-align:top">Recorded bench workflows and handling notes</td>
+          <td style="padding:11px 14px;border-bottom:1px solid rgba(25,18,34,.12);vertical-align:top">Complete, reproducible protocols with programs and success criteria</td>
+        </tr>
+        <tr>
+          <td style="padding:11px 14px;border-bottom:1px solid rgba(25,18,34,.12);vertical-align:top">Explicit negative and inconclusive outcomes</td>
+          <td style="padding:11px 14px;border-bottom:1px solid rgba(25,18,34,.12);vertical-align:top">Complete source data behind the gels: some 0527/0530 records embed gel images, but uncropped and labelled images, expected sizes, and written interpretation are still missing</td>
+        </tr>
+        <tr>
+          <td style="padding:11px 14px;border-bottom:1px solid rgba(25,18,34,.12);vertical-align:top">Preliminary 0607 &Delta;Gal80 PCR conclusion</td>
+          <td style="padding:11px 14px;border-bottom:1px solid rgba(25,18,34,.12);vertical-align:top">Independent validation and replication, including sequencing</td>
+        </tr>
+        <tr>
+          <td style="padding:11px 14px;border-bottom:1px solid rgba(25,18,34,.12);vertical-align:top">Element and construct names with documented work</td>
+          <td style="padding:11px 14px;border-bottom:1px solid rgba(25,18,34,.12);vertical-align:top">Clear licensing and versioning for reuse</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section id="scope" data-toc="Scope &amp; honesty">
+  <p class="eyebrow sec-label">04 &mdash; Scope</p>
+  <h2 class="section-title">Where we draw the line</h2>
+  <div class="prose">
+    <p>We are not presenting the underlying scientific idea &mdash; a yeast GPCR reading a nematode ascaroside signal &mdash; as an iGEM contribution. A hypothesis is not a reusable artifact, and the records do not yet contain a concrete, verified deliverable built on it. What we can offer honestly is the documentation package above, which is why this page remains hidden until its contents are verified.</p>
+  </div>
+  <div class="callout callout--note" style="margin-top:22px">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="13"/><circle cx="12" cy="16.5" r=".6" fill="currentColor"/></svg>
+    <div><b>Why this page is still a draft</b><p>A contribution claim is only as good as the evidence behind it. Until sequences, complete protocols, source data, and independent replication are in place, this stays a draft package to build on rather than a finished contribution to rely on.</p></div>
+  </div>
+</section>
+    </div>
+  </div>
+  <div class="strata strata--down" aria-hidden="true"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><rect width="1440" height="120" fill="#f7f2e8"/><path fill="#241830" d="M0,60 C240,18 420,96 720,64 C1020,32 1230,92 1440,52 L1440,120 L0,120 Z"/><path fill="#180f1e" d="M0,86 C260,52 470,110 720,86 C1010,58 1240,108 1440,82 L1440,120 L0,120 Z"/></svg></div>
+  </main>
+
+  <footer class="footer">
+
+  <div class="footer__inner">
+
+    <div class="footer__top">
+      <div class="footer__brand">
+        <b>NKU-iGEM 2026 Team</b>
+        <p>A Nankai University student project investigating a synthetic-biology sensing concept for plant-parasitic nematode-associated signals; component and system validation remain open.</p>
+      </div>
+      <div class="footer__col">
+        <h5>Project</h5>
+        <a href="../pages/description.html">Description</a>
+        <a href="../contribution/">Contribution</a>
+        <a href="../engineering/">Engineering</a>
+        <a href="../pages/results.html">Results</a>
+      </div>
+      <div class="footer__col">
+        <h5>People &amp; Practice</h5>
+        <a href="../human-practices/">Human Practices</a>
+        <a href="../education/">Education</a>
+        <a href="../inclusivity/">Inclusivity</a>
+        <a href="../pages/team-members.html">Team</a>
+        <a href="../safety-and-security/">Safety</a>
+        <a href="../pages/attribution.html">Attributions</a>
+      </div>
+      <div class="footer__col">
+        <h5>Open science</h5>
+        <a href="../model/">Model</a>
+        <a href="../software/">Software</a>
+        <a href="../sustainability/">Sustainability</a>
+        <a href="../licensing/">Licensing &amp; AI use</a>
+        <a href="https://github.com/CJerryR/NKU26-wiki">Source repository</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 NKU iGEM Team &middot; <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>
+      <span>Fraunces, Spline Sans &amp; Space Mono: SIL OFL 1.1 &middot; Three.js: MIT</span>
+    </div>
+  </div>
+</footer>
+
+
+  <div class="site-search" id="site-search" role="dialog" aria-modal="true" aria-labelledby="site-search-title" hidden>
+    <div class="site-search__backdrop" data-search-close></div>
+    <section class="site-search__panel" role="document">
+      <div class="site-search__head">
+        <div>
+          <p class="eyebrow">Search the wiki</p>
+          <h2 id="site-search-title">Find articles, sections, and evidence.</h2>
+        </div>
+        <button class="site-search__close" type="button" data-search-close aria-label="Close search">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+        </button>
+      </div>
+      <label class="site-search__box">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.5" y2="16.5"/></svg>
+        <span class="sr-only">Search query</span>
+        <input type="search" data-search-input autocomplete="off" spellcheck="false" placeholder="Search project content..." />
+      </label>
+      <div class="site-search__meta" data-search-meta>Type to search the full wiki.</div>
+      <div class="site-search__results" data-search-results></div>
+    </section>
+  </div>
+
+  <div class="detective" data-detective>
+  <p class="detective__bubble" role="status" aria-live="polite"></p>
+  <button type="button" class="detective__btn" aria-label="Yeast detective: back to the top">
+    <span class="detective__fig">
+      <img class="detective__std" src="../img/shell/detective.png" width="120" height="110" alt="" />
+      <img class="detective__alt" src="../img/shell/detective-torch.png" width="120" height="110" alt="" />
+      <svg class="detective__torch" viewBox="-40 -40 80 80" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="dt-body" x1="0" y1="-6" x2="0" y2="6" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#6f5a86"/><stop offset=".32" stop-color="#e4d6f2"/><stop offset=".56" stop-color="#8f78ad"/><stop offset="1" stop-color="#2b1d3a"/></linearGradient>
+          <linearGradient id="dt-head" x1="0" y1="-11" x2="0" y2="11" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7e0c6e"/><stop offset=".34" stop-color="#e59ad4"/><stop offset=".6" stop-color="#9c2a8a"/><stop offset="1" stop-color="#3d0636"/></linearGradient>
+          <radialGradient id="dt-fist" cx="-.2" cy="-.35" r="1.1"><stop offset="0" stop-color="#fff0cf"/><stop offset=".6" stop-color="#fcd49c"/><stop offset="1" stop-color="#eaa55c"/></radialGradient>
+        </defs>
+        <g data-torch-rot>
+          <rect x="-4" y="-5.5" width="32" height="11" rx="3" fill="url(#dt-body)"/>
+          <g fill="rgba(0,0,0,.28)"><rect x="12" y="-5.5" width="1.6" height="11"/><rect x="16" y="-5.5" width="1.6" height="11"/><rect x="20" y="-5.5" width="1.6" height="11"/></g>
+          <path d="M26 -6.5 L37 -11 L37 11 L26 6.5 Z" fill="url(#dt-head)"/>
+          <ellipse cx="37.4" cy="0" rx="2.4" ry="10.2" fill="#fffdf2"/>
+          <circle data-torch-tip cx="38" cy="0" r=".6" fill="none"/>
+          <path d="M-7 -6.5C-7 -10.5 -2 -12 3 -11.5C8 -11 10.5 -8.5 10.5 -4.5V5C10.5 9.5 7 11.5 2 11.5C-3.5 11.5 -7.5 9 -7.5 4Z" fill="url(#dt-fist)" stroke="#e39b52" stroke-width=".9"/>
+          <path d="M2.5 -11V-5.5M6.5 -10.5V-5.5M-1.5 -10.8V-5.8" stroke="#dc9048" stroke-width=".9" stroke-linecap="round" fill="none"/>
+          <path d="M-5 -4.5C-1 -3 4 -3 9 -4.4" stroke="#e8a45e" stroke-width=".8" fill="none" stroke-linecap="round"/>
+        </g>
+      </svg>
+    </span>
+  </button>
+</div>
+
+  <script src="../js/search-data.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/shell.js"></script>
+  
+</body>
+</html>

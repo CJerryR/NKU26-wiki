@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NKU iGEM 2026</title>
+  <meta name="description" content="NemaKlear by NKU26-China explores how engineered yeast could translate nematode chemical clues into an early risk signal. Follow the trail from soil to science." />
+  <meta name="theme-color" content="#1a0d1d" />
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml" />
+  <link rel="preload" href="fonts/spline-variable.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/fraunces-variable.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/home-v6.css" />
+  <link rel="stylesheet" href="css/shell.css" />
+</head>
+<body class="page-home home" data-path-prefix="">
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="lnav" data-lnav>
+  <div class="lnav__row lnav__bar">
+  <div class="lnav__island lnav__island--brand lg" data-lg="bar">
+    <span class="lg__fx" aria-hidden="true"></span><span class="lg__tint" aria-hidden="true"></span><span class="lg__shine" aria-hidden="true"></span>
+    <a href="index.html" class="lnav__brand" aria-label="NKU26 NemaKlear home">
+      <img src="img/shell/nku-mark.svg" alt="" width="34" height="44" />
+      <span><b>NKU26</b><em>NemaKlear</em></span>
+    </a>
+  </div>
+  <div class="lnav__island lnav__island--menu lg" data-lg="bar">
+    <span class="lg__fx" aria-hidden="true"></span><span class="lg__tint" aria-hidden="true"></span><span class="lg__shine" aria-hidden="true"></span>
+    <span class="lnav__now" data-lnav-now aria-hidden="true"></span>
+
+    <nav class="lnav__links" aria-label="Primary">
+      <span class="lnav__lens lg" data-lg="lens" aria-hidden="true"><span class="lg__fx"></span><span class="lg__shine"></span></span>
+      <a class="lnav__link" href="index.html" data-match="index.html">Home</a>
+      <div class="lnav__group">
+        <button type="button" class="lnav__link" aria-expanded="false" aria-controls="lnav-project">Project<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+        <div class="lnav__drop lg" id="lnav-project" data-lg="drop">
+          <span class="lg__fx" aria-hidden="true"></span><span class="lg__tint" aria-hidden="true"></span><span class="lg__shine" aria-hidden="true"></span>
+          <div class="lnav__drop-grid">
+            <a href="pages/description.html"><b>Description</b><span>Why nematode signals, and what we propose</span></a>
+            <a href="engineering/"><b>Engineering</b><span>Design, build, test, learn</span></a>
+            <a href="pages/results.html"><b>Results</b><span>What the bench has shown so far</span></a>
+            <a href="model/"><b>Model</b><span>From signal input to color output</span></a>
+            <a href="parts/"><b>Parts</b><span>Registry entries</span></a>
+            <a href="hardware/"><b>Hardware</b><span>The closed test device</span></a>
+            <a href="software/"><b>Software</b><span>Tools we built</span></a>
+            <a href="contribution/"><b>Contribution</b><span>What future teams can reuse</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="lnav__group">
+        <button type="button" class="lnav__link" aria-expanded="false" aria-controls="lnav-hp">Human Practices<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+        <div class="lnav__drop lg" id="lnav-hp" data-lg="drop">
+          <span class="lg__fx" aria-hidden="true"></span><span class="lg__tint" aria-hidden="true"></span><span class="lg__shine" aria-hidden="true"></span>
+          <div class="lnav__drop-grid">
+            <a href="human-practices/"><b>Human Practices</b><span>Growers, experts and what changed</span></a>
+            <a href="education/"><b>Education</b><span>Classes and outreach across China</span></a>
+            <a href="entrepreneurship/"><b>Entrepreneurship</b><span>Who would use it, and how</span></a>
+            <a href="sustainability/"><b>Sustainability</b><span>Soil health and the SDGs</span></a>
+            <a href="inclusivity/"><b>Inclusion</b><span>Who we built this with</span></a>
+          </div>
+        </div>
+      </div>
+      <a class="lnav__link" href="safety-and-security/" data-match="safety-and-security/">Safety</a>
+      <div class="lnav__group">
+        <button type="button" class="lnav__link" aria-expanded="false" aria-controls="lnav-team">Team<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+        <div class="lnav__drop lnav__drop--narrow lg" id="lnav-team" data-lg="drop">
+          <span class="lg__fx" aria-hidden="true"></span><span class="lg__tint" aria-hidden="true"></span><span class="lg__shine" aria-hidden="true"></span>
+          <div class="lnav__drop-grid">
+            <a href="pages/team-members.html"><b>Members</b><span>The people behind the wiki</span></a>
+            <a href="pages/attribution.html"><b>Attributions</b><span>Who did what</span></a>
+            <a href="licensing/"><b>Licensing &amp; AI use</b><span>How this site may be reused</span></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <button type="button" class="lnav__search" data-search-open aria-haspopup="dialog" aria-controls="site-search" aria-expanded="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><line x1="20" y1="20" x2="16" y2="16"/></svg>
+      <span>Search</span>
+    </button>
+    <button type="button" class="lnav__toggle" aria-expanded="false" aria-controls="lnav-sheet" aria-label="Open menu"><i></i><i></i></button>
+  </div>
+  </div>
+
+  <div class="lnav__sheet lg" id="lnav-sheet" data-lg="sheet" hidden>
+    <span class="lg__fx" aria-hidden="true"></span><span class="lg__tint" aria-hidden="true"></span><span class="lg__shine" aria-hidden="true"></span>
+    <div class="lnav__sheet-body">
+      <a href="index.html">Home</a>
+      <p>Project</p>
+      <a href="pages/description.html">Description</a><a href="engineering/">Engineering</a><a href="pages/results.html">Results</a><a href="model/">Model</a><a href="parts/">Parts</a><a href="hardware/">Hardware</a><a href="software/">Software</a><a href="contribution/">Contribution</a>
+      <p>Human Practices</p>
+      <a href="human-practices/">Human Practices</a><a href="education/">Education</a><a href="entrepreneurship/">Entrepreneurship</a><a href="sustainability/">Sustainability</a><a href="inclusivity/">Inclusion</a>
+      <p>More</p>
+      <a href="safety-and-security/">Safety</a><a href="pages/team-members.html">Team</a><a href="pages/attribution.html">Attributions</a><a href="licensing/">Licensing &amp; AI use</a>
+    </div>
+  </div>
+</header>
+
+<svg class="lg-defs" width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden"><defs></defs></svg>
+
+
+  <main id="main">
+<section class="op op6" id="opening" data-nav-label="What lies beneath the soil" data-op data-tone="dark" aria-label="Opening: what lies beneath the soil">
+  <div class="op__stage">
+    <canvas class="op__gl" data-op-gl aria-hidden="true"></canvas>
+    <canvas class="op__fx" data-op-fx aria-hidden="true"></canvas>
+    <div class="op__hero" data-op-hero>
+      <h1 class="op__title" data-split><span>What secrets lie</span><br><span>beneath the soil?</span></h1>
+    </div>
+    <div class="op__labels" data-op-labels aria-hidden="true"></div>
+    <div class="op__hud" data-op-hud>
+      <p class="op__line" data-op-line role="status" aria-live="polite"></p>
+      <button type="button" class="op__guide" data-op-guide>Guide my light</button>
+      <p class="op__next" aria-hidden="true">Scroll to follow the story</p>
+    </div>
+    <div class="op__focus" tabindex="0" role="group" aria-label="Soil scan. Arrow keys move the light. Press Enter to follow the trail automatically." data-op-focus></div>
+  </div>
+  <noscript><p class="op__nojs">An illustrated soil scan: glowing chemical clues lead through the soil to a root damaged by nematodes.</p></noscript>
+</section>
+
+<section class="world" id="world" data-nav-label="A global story" data-world data-tone="light" aria-labelledby="world-title">
+  <div class="world__pin">
+    <div class="world__inner">
+      <div class="world__copy">
+        <h2 class="h-display" id="world-title" data-world-title data-split>A global story beneath our feet</h2>
+        <p class="world__stat"><b data-usd>US$173</b><span>billion</span></p>
+        <p class="world__lede">Estimated yearly crop losses caused by plant-parasitic nematodes worldwide.</p>
+        <div class="world__legend">
+          <p>Plant-feeding nematode abundance</p>
+          <i class="world__ramp" aria-hidden="true"></i>
+          <span><em>lower</em><em>higher</em></span>
+          <p class="world__unit">Individuals per 100 g dry soil, colour by log<sub>10</sub>(x + 1). 1,901 sampled pixels.</p>
+          <p class="world__case"><i aria-hidden="true"></i>Reported crop loss. Point at a dot to read it.</p>
+        </div>
+      </div>
+      <figure class="world__map" data-world-map>
+        <div class="world__canvas">
+          <svg class="world__land" data-world-svg viewBox="0 0 900 350" role="img" aria-label="World map of plant-feeding nematode abundance, with seven reported crop-loss cases and China highlighted."></svg>
+          <canvas data-world-heat aria-hidden="true"></canvas>
+          <div class="world__marks" data-world-marks></div>
+          <button type="button" class="world__china" data-world-china><b>China</b><span>Look closer</span></button>
+        </div>
+        <figcaption>Data: van den Hoogen et al. 2020, <i>Scientific Data</i> 7:103 (CC0). Basemap: Natural Earth.</figcaption>
+      </figure>
+    </div>
+    <div class="world__dive" aria-hidden="true"></div>
+    <div class="world__mask" data-world-mask aria-hidden="true"></div>
+  </div>
+  <div class="flipcard" data-flipcard role="dialog" aria-modal="false" aria-labelledby="flip-title" hidden>
+    <div class="flipcard__inner">
+      <div class="flipcard__face flipcard__front">
+        <p class="flipcard__kicker" data-flip-kicker></p>
+        <h3 id="flip-title" data-flip-title></h3>
+        <dl data-flip-front></dl>
+        <button type="button" class="flipcard__turn" data-flip-turn>Reported loss and source</button>
+      </div>
+      <div class="flipcard__face flipcard__back">
+        <p class="flipcard__kicker">Reported loss</p>
+        <p class="flipcard__loss" data-flip-loss></p>
+        <p class="flipcard__src" data-flip-src></p>
+        <button type="button" class="flipcard__turn" data-flip-turn>Back to the case</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cz" id="china" data-nav-label="Closer to the field" data-zoom data-tone="dark" aria-labelledby="china-title">
+  <div class="cz__stage" data-zoom-stage>
+    <canvas class="cz__canvas" data-zoom-canvas aria-hidden="true"></canvas>
+    <svg class="cz__svg" data-cz-svg viewBox="0 0 600 500" aria-hidden="true"></svg>
+    <div class="cz__labels" data-china-labels aria-hidden="true"></div>
+    <div class="cz__tip" data-china-tip hidden></div>
+    <div class="cz__head" data-cz-head>
+      <h2 class="h-display" id="china-title">Closer to the field</h2>
+      <ul class="cz__key">
+        <li><i class="cz__tri" aria-hidden="true"></i>Soybean cyst nematode, 22 provinces</li>
+        <li><i class="cz__pin" aria-hidden="true"></i>Southern root-knot nematode, 20 provinces</li>
+        <li><i class="cz__pin cz__pin--gold" aria-hidden="true"></i>Xinjiang vegetable survey, 2021&#8211;23</li>
+      </ul>
+    </div>
+    <p class="cz__hint" aria-hidden="true">Point at a marker to read its record</p>
+    <span class="nk-zoom__label" data-zoom-label aria-hidden="true">Huang-Huai-Hai Plain</span>
+    <ol class="nk-zoom__steps" data-zoom-steps aria-hidden="true"><li><i></i><span>Farming regions</span></li><li><i></i><span>A field</span></li><li><i></i><span>Crop roots</span></li><li><i></i><span>In the soil</span></li></ol>
+    <h2 class="nk-zoom__q" data-zoom-q id="zoom-question">How do nematodes infect plants?</h2>
+  </div>
+</section>
+
+<svg class="th-sprite" width="0" height="0" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="th-front" x1="0" y1="120" x2="0" y2="300" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#46302a"/><stop offset=".18" stop-color="#5b3f30"/><stop offset=".55" stop-color="#735442"/><stop offset="1" stop-color="#8d6f57"/></linearGradient>
+    <linearGradient id="th-top" x1="0" y1="90" x2="0" y2="120" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#8f6f55"/><stop offset="1" stop-color="#6b4f3c"/></linearGradient>
+    <linearGradient id="th-right" x1="340" y1="0" x2="384" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3a281f"/><stop offset="1" stop-color="#281a14"/></linearGradient>
+    <radialGradient id="th-exud"><stop offset="0" stop-color="#ffe2a0" stop-opacity=".55"/><stop offset="1" stop-color="#ffe2a0" stop-opacity="0"/></radialGradient>
+    <radialGradient id="th-cyan"><stop offset="0" stop-color="#9ab8ff" stop-opacity=".5"/><stop offset=".6" stop-color="#ff8fab" stop-opacity=".16"/><stop offset="1" stop-color="#ff8fab" stop-opacity="0"/></radialGradient>
+    <radialGradient id="th-red"><stop offset="0" stop-color="#ff5f6d" stop-opacity=".42"/><stop offset="1" stop-color="#ff5f6d" stop-opacity="0"/></radialGradient>
+    <radialGradient id="th-gall" cx=".38" cy=".35" r=".7"><stop offset="0" stop-color="#f7d6c2"/><stop offset=".55" stop-color="#dfa58c"/><stop offset="1" stop-color="#a4625a"/></radialGradient>
+  </defs>
+</svg>
+<section class="th" id="threat" data-nav-label="The hidden threat" data-th data-tone="light" aria-labelledby="threat-title">
+  <div class="th__stage">
+    <header class="th__head"><h2 class="h-display" id="threat-title" data-split>The hidden threat</h2><p>One infection cycle below ground, in four stages.</p></header>
+    <div class="th__track" data-th-track></div>
+    <div class="th__cap" data-th-cap aria-live="polite">
+      <h3><b data-th-n></b><span data-th-t></span></h3>
+      <p class="th__key">The step NemaKlear listens for</p>
+    </div>
+    <ol class="th__dots" data-th-dots aria-hidden="true"></ol>
+    <p class="th__over">Scroll to go through the four stages.</p>
+  </div>
+</section>
+
+<section class="tr" id="traces" data-nav-label="Chemical traces" data-traces data-tone="dark" aria-labelledby="traces-title">
+  <canvas class="tr__bg" data-tr-canvas aria-hidden="true"></canvas>
+  <div class="wrap tr__inner">
+    <h2 class="hand tr__title" id="traces-title">Nematodes leave chemical traces.</h2>
+    <p class="tr__lede">Most tests find the worm or read its DNA. We read what it leaves behind.</p>
+    <div class="tr__stage">
+      <button type="button" class="tr__group tr__group--free" data-tr-group="free"><b>Free-living nematodes</b><span class="tr__mix" data-mix></span></button>
+      <div class="tr__center">
+        <div class="tr__pair">
+          <div class="tr__mol tr__mol--3"><b>ascr#3</b><span data-cluster="3"></span></div>
+          <div class="tr__mol tr__mol--18"><b>ascr#18</b><span data-cluster="18"></span></div>
+        </div>
+        <p class="tr__hyp"><b>Project hypothesis</b>Their mixes may differ between the two groups.</p>
+      </div>
+      <button type="button" class="tr__group tr__group--pp" data-tr-group="pp"><b>Plant-parasitic nematodes</b><span class="tr__mix" data-mix></span></button>
+    </div>
+  </div>
+</section>
+
+<section class="co" id="combo" data-nav-label="A combination of signals" data-combo data-tone="dark" aria-labelledby="combo-title">
+  <div class="wrap co__inner">
+    <div class="co__copy">
+      <h2 class="h-display" id="combo-title" data-split>Could a combination of signals tell us more?</h2>
+      <p>One ascaroside may only say that nematodes are around. Two read together, as a pair or a ratio, might say more about risk.</p>
+    </div>
+    <div class="co__field" data-co-field>
+      <div class="co__orb co__orb--3" data-orb="3" tabindex="0" role="button" aria-label="ascr#3. Drag towards ascr#18.">
+        <svg viewBox="0 0 60 44" aria-hidden="true"><path d="M14 30 30 18 46 30M30 18V6"/><circle cx="30" cy="18" r="6"/><circle cx="14" cy="30" r="5"/><circle cx="46" cy="30" r="5"/><circle cx="30" cy="6" r="4"/></svg>
+        <b>ascr#3</b><span>What is around?</span>
+      </div>
+      <span class="co__plus" data-co-plus aria-hidden="true">+</span>
+      <div class="co__orb co__orb--18" data-orb="18" tabindex="0" role="button" aria-label="ascr#18. Drag towards ascr#3.">
+        <svg viewBox="0 0 60 44" aria-hidden="true"><path d="M12 12 26 22 44 14M26 22 30 38"/><circle cx="26" cy="22" r="6"/><circle cx="12" cy="12" r="5"/><circle cx="44" cy="14" r="5"/><circle cx="30" cy="38" r="4"/></svg>
+        <b>ascr#18</b><span>Is it a parasite?</span>
+      </div>
+      <p class="co__read" data-co-read>Drag one signal onto the other</p>
+    </div>
+  </div>
+</section>
+
+<section class="sg lab" id="signal" data-nav-label="Dry lab and wet lab" data-signal data-tone="light" aria-labelledby="signal-title">
+  <div class="wrap sg__inner lab__inner">
+    <div class="sg__copy lab__head">
+      <h2 class="h-display" id="signal-title" data-split>Our work: dry lab and wet lab</h2>
+      <p>At the centre, the wet lab turns a chemical signal into a color. The dry lab works on both sides of it.</p>
+    </div>
+    <div class="lab__row">
+      <div class="lab__dry"><span class="lab__tag">Dry lab</span><span class="lab__slot" aria-hidden="true"></span></div>
+      <svg class="lab__arrow" viewBox="0 0 60 24" aria-hidden="true"><path d="M2 12H54M44 4l10 8-10 8"/></svg>
+      <div class="lab__wet">
+      <p class="lab__tag lab__tag--wet">Wet lab</p>
+      <h3 class="lab__wettitle">Turning chemical signals into color</h3>
+    <div class="sg__chain" data-sg-chain>
+      <svg class="sg__wire" viewBox="0 0 1000 40" preserveAspectRatio="none" aria-hidden="true"><path d="M60 20H940"/><path class="sg__wire-on" d="M60 20H940" data-sg-wire/></svg>
+      <div class="sg__node" data-node="0"><div class="sg__art"><svg viewBox="0 0 100 100"><g class="sg-mols"><circle cx="30" cy="40" r="11" fill="#4c8dff"/><circle cx="52" cy="28" r="8" fill="#7fb0ff"/><circle cx="46" cy="58" r="9" fill="#ff5e86"/><circle cx="70" cy="46" r="7" fill="#ffa0b5"/><circle cx="66" cy="70" r="6" fill="#4c8dff"/><path d="M30 40 52 28M30 40 46 58M46 58 70 46M46 58 66 70" stroke="#b9c6e8" stroke-width="3"/></g></svg></div><b>Ascaroside</b><span>in the soil sample</span></div>
+      <div class="sg__node" data-node="1"><div class="sg__art"><svg viewBox="0 0 100 100"><rect x="14" y="62" width="72" height="10" rx="5" fill="#e6d3bf"/><path d="M36 64V38c0-9 8-15 14-15s14 6 14 15v26" fill="none" stroke="#7c4dd6" stroke-width="12" stroke-linecap="round"/><circle class="sg-bind" cx="50" cy="16" r="7" fill="#4c8dff"/></svg></div><b>Receptor</b><span>fungal GPCR on yeast</span></div>
+      <div class="sg__node sg__node--wide" data-node="2"><div class="sg__art"><svg viewBox="0 0 140 100"><ellipse cx="70" cy="50" rx="62" ry="42" fill="#ffe3c4"/><ellipse cx="70" cy="50" rx="62" ry="42" fill="none" stroke="#f0b27a" stroke-width="2"/><g class="sg-pyr" fill="#c2410c"><circle cx="70" cy="24" r="5"/><circle cx="56" cy="44" r="4.5"/><circle cx="70" cy="44" r="4.5"/><circle cx="84" cy="44" r="4.5"/><circle cx="42" cy="66" r="4"/><circle cx="54" cy="66" r="4"/><circle cx="66" cy="66" r="4"/><circle cx="78" cy="66" r="4"/><circle cx="90" cy="66" r="4"/><circle cx="102" cy="66" r="4"/></g></svg></div><b>Signal relay</b><span>passed on and amplified</span></div>
+      <div class="sg__node" data-node="3"><div class="sg__art"><svg viewBox="0 0 100 100"><path d="M22 30h-8v40h8M78 30h8v40h-8" fill="none" stroke="#5b3a8e" stroke-width="4"/><path class="sg-dna" d="M26 50c6-14 12-14 18 0s12 14 18 0 12-14 16 0" fill="none" stroke="#7c4dd6" stroke-width="4" stroke-linecap="round"/><path d="M26 50c6 14 12 14 18 0s12-14 18 0 12 14 16 0" fill="none" stroke="#c9b3ef" stroke-width="4" stroke-linecap="round"/></svg></div><b>Synthetic transcription</b><span>switches on pigment genes</span></div>
+      <div class="sg__node" data-node="4"><div class="sg__art"><svg viewBox="0 0 100 100"><path d="M40 14h20M44 14v24L24 78c-3 7 1 10 8 10h36c7 0 11-3 8-10L56 38V14" fill="#fffaf0" stroke="#8a6a4a" stroke-width="3" stroke-linejoin="round"/><path class="sg-fill" d="M31 70h38l7 9c2 5 0 7-6 7H30c-6 0-8-2-6-7z" fill="#f5c21b"/></svg></div><b>Betaxanthin</b><span>a yellow you can see</span></div>
+      <div class="sg__readout" data-sg-readout><i data-sg-chip></i><span data-sg-rgb>RGB —</span></div>
+    </div>
+    <div class="sg__controls">
+      <button type="button" class="btn" data-sg-run>Send a signal</button>
+      <label class="sg__slider">Signal amount<input type="range" min="1" max="10" value="6" data-sg-amount /></label>
+      <small>Illustration of the design goal, not a measured response.</small>
+    </div>
+      </div>
+      <svg class="lab__arrow" viewBox="0 0 60 24" aria-hidden="true"><path d="M2 12H54M44 4l10 8-10 8"/></svg>
+      <div class="lab__dry"><span class="lab__tag">Dry lab</span><span class="lab__slot" aria-hidden="true"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="cn hp" id="hp" data-nav-label="Closer to home" data-hp data-tone="dark" aria-labelledby="hp-title">
+  <div class="wrap">
+    <div class="cn__head hp__head">
+      <h2 class="h-display" id="hp-title" data-split>Closer to home</h2>
+      <p class="hp__lede">Human practices across China: who we asked, where we taught, and where the soil came from.</p>
+      <p class="hp__flag"><i aria-hidden="true"></i>Illustrative data</p>
+    </div>
+    <div class="cn__row">
+      <figure class="cn__map" data-cmap="survey" style="--c:#c48cff">
+        <button type="button" class="cn__open" data-cmap-open aria-label="Open the survey map"></button>
+        <canvas aria-hidden="true"></canvas>
+        <figcaption><i></i><b>Survey</b><span>Who answered our questions</span></figcaption>
+      </figure>
+      <figure class="cn__map" data-cmap="teach" style="--c:#ffa24a">
+        <button type="button" class="cn__open" data-cmap-open aria-label="Open the teaching map"></button>
+        <canvas aria-hidden="true"></canvas>
+        <figcaption><i></i><b>Teaching</b><span>Where we taught</span></figcaption>
+      </figure>
+      <figure class="cn__map" data-cmap="soil" style="--c:#9aa7ff">
+        <button type="button" class="cn__open" data-cmap-open aria-label="Open the soil programme map"></button>
+        <canvas aria-hidden="true"></canvas>
+        <figcaption><i></i><b>Soil programme</b><span>Where samples came from</span></figcaption>
+      </figure>
+    </div>
+    <p class="cn__src">Province values on these three maps are illustrative until the team&#8217;s survey, teaching and sampling records are added. Basemap: Natural Earth, China point of view.</p>
+  </div>
+  <div class="cnfocus" data-cfocus role="dialog" aria-modal="true" aria-labelledby="cf-title" hidden>
+    <div class="cnfocus__panel">
+      <button type="button" class="cnfocus__close" data-cfocus-close aria-label="Close map">×</button>
+      <canvas data-cfocus-canvas aria-hidden="true"></canvas>
+      <div class="cnfocus__text">
+        <p class="cnfocus__kicker" data-cf-kicker></p>
+        <h3 id="cf-title" data-cf-title></h3>
+        <div data-cf-body></div>
+        <div class="cnfocus__nav"><button type="button" data-cf-prev>Previous map</button><button type="button" data-cf-next>Next map</button></div>
+      </div>
+    </div>
+  </div>
+  <div class="tip" data-tip hidden></div>
+</section>
+
+<section class="lp" id="loop" data-nav-label="Field, bench and back" data-loop data-tone="light" aria-labelledby="loop-title">
+  <div class="wrap">
+    <div class="lp__head">
+      <h2 class="h-display" id="loop-title" data-split>From the field to the bench, and back again</h2>
+      <div class="lp__filters" role="group" aria-label="Highlight a question">
+        <button type="button" data-q="wet" aria-pressed="false">Can we see it?</button>
+        <button type="button" data-q="dry" aria-pressed="false">Can we explain it?</button>
+        <button type="button" data-q="hp" aria-pressed="false">Can we use it to decide?</button>
+        <button type="button" class="lp__play" data-lp-play>Play the loop</button>
+      </div>
+    </div>
+    <div class="lp__board" data-lp-board>
+      <i class="lp__wash lp__wash--dry"></i><i class="lp__wash lp__wash--hp"></i><i class="lp__wash lp__wash--wet"></i><i class="lp__wash lp__wash--core"></i>
+      <svg class="lp__svg" data-lp-svg viewBox="0 0 1200 620" role="img" aria-label="How the dry lab, Human Practices and the wet lab feed each other, with society and our project at the centre"></svg>
+      <div class="lp__card" data-lp-card hidden></div>
+    </div>
+  </div>
+</section>
+
+<svg class="bt-sprite" width="0" height="0" aria-hidden="true" focusable="false">
+  <defs>
+    <g id="bt-g3" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M6.1 3.5L0 7-6.1 3.5V-3.5L0-7 6.1-3.5Z" stroke-width="1.8"/><circle cx="-6.1" cy="-3.5" r="1.6" stroke="none" fill="currentColor"/><path d="M6.1-3.5L10-7 14-3.5 18-7 22-3.5 26-7" stroke-width="1.6"/><path d="M22-3.5L26-7M23.2-1.4L27.2-4.9" stroke-width="1.3"/><circle cx="28.6" cy="-7.4" r="1.7" stroke="none" fill="currentColor"/></g>
+    <g id="bt-g18" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M6.1 3.5L0 7-6.1 3.5V-3.5L0-7 6.1-3.5Z" stroke-width="1.8"/><circle cx="-6.1" cy="-3.5" r="1.6" stroke="none" fill="currentColor"/><path d="M6.1-3.5L10-7 14-3.5 18-7 22-3.5 26-7 30-3.5 34-7 38-3.5" stroke-width="1.6"/><circle cx="40.6" cy="-2.6" r="1.7" stroke="none" fill="currentColor"/></g>
+    <g id="bt-sprout"><path d="M0 0C1-14-1-28 2-44" fill="none" stroke="#6f9a4c" stroke-width="2.4" stroke-linecap="round"/><path d="M2-30C-10-34-18-44-18-52C-6-50 2-42 2-30Z" fill="#7fae57"/><path d="M2-38C12-44 22-44 26-52C14-56 4-50 2-38Z" fill="#6c9d4a"/><path d="M2-44C-4-52-2-62 4-68C10-60 8-50 2-44Z" fill="#8cbc63"/></g>
+    <radialGradient id="bt-r1" cx="45%" cy="40%"><stop offset="0" stop-color="#e9d6ff"/><stop offset="1" stop-color="#7a4fb0"/></radialGradient>
+    <radialGradient id="bt-r2"><stop offset="0" stop-color="#ffe08a"/><stop offset="1" stop-color="#f6c14b" stop-opacity="0"/></radialGradient>
+    <radialGradient id="bt-blue"><stop offset="0" stop-color="#4c8dff" stop-opacity=".45"/><stop offset="1" stop-color="#4c8dff" stop-opacity="0"/></radialGradient>
+    <radialGradient id="bt-pink"><stop offset="0" stop-color="#ff5e86" stop-opacity=".45"/><stop offset="1" stop-color="#ff5e86" stop-opacity="0"/></radialGradient>
+  </defs>
+</svg>
+<section class="bt" id="built" data-nav-label="What we built" data-tone="light" aria-labelledby="built-title">
+  <div class="wrap">
+    <h2 class="h-display" id="built-title" data-split>What we built</h2>
+    <div class="bt__grid" data-bt>
+      <a class="bt__card bt__card--svg" href="pages/design.html" data-art3d="yeast"><span class="bt__art" aria-hidden="true"><svg viewBox="0 0 320 180"><ellipse cx="226" cy="54" rx="30" ry="24" fill="url(#bt-r1)" opacity=".75"/><ellipse cx="160" cy="98" rx="78" ry="58" fill="url(#bt-r1)" opacity=".8"/><circle cx="178" cy="98" r="22" fill="#f4e9ff" opacity=".7"/><g fill="#5ff0d6" class="bt-float"><circle cx="84" cy="96" r="4"/><circle cx="96" cy="66" r="3.4"/><circle cx="104" cy="132" r="3.4"/><circle cx="124" cy="46" r="3"/></g></svg></span><b>Engineered yeast</b><span>A living sensor</span><em>Result to come</em></a>
+      <a class="bt__card bt__card--svg" href="pages/description.html" data-art3d="pair"><span class="bt__art" aria-hidden="true"><svg viewBox="0 0 320 180"><circle cx="118" cy="86" r="62" fill="url(#bt-blue)"/><circle cx="206" cy="100" r="62" fill="url(#bt-pink)"/><use href="#bt-g3" transform="translate(88 82) scale(2.2)" style="color:#7fb0ff" stroke="#7fb0ff"/><use href="#bt-g18" transform="translate(168 104) scale(2)" style="color:#ff8fab" stroke="#ff8fab"/><g fill="#fff4dc" font-size="11" font-family="Spline Sans, sans-serif"><text x="78" y="130">ascr#3</text><text x="196" y="146">ascr#18</text></g></svg></span><b>ascr#3 + ascr#18</b><span>Two signals, different responses</span><em>Result to come</em></a>
+      <a class="bt__card bt__card--svg" href="engineering/" data-art3d="receptor"><span class="bt__art" aria-hidden="true"><svg viewBox="0 0 320 180"><rect x="0" y="96" width="320" height="26" fill="#3a2350"/><path d="M0 96H320M0 122H320" stroke="#b99be0" stroke-width="1.5" opacity=".6"/><g fill="none" stroke="#b88bff" stroke-width="7" stroke-linecap="round"><path d="M122 70V144M140 144V78M158 70V144M176 144V78M194 70V144"/><path d="M122 70c0-10 18-10 18 0M158 70c0-10 18-10 18 0M140 144c0 10 18 10 18 0M176 144c0 10 18 10 18 0" stroke-width="5"/></g><use href="#bt-g3" transform="translate(150 40) scale(1.6)" style="color:#7fb0ff" stroke="#7fb0ff" class="bt-dock"/><g fill="#5ff0d6"><circle cx="160" cy="158" r="3.4"/><circle cx="182" cy="166" r="2.8"/><circle cx="140" cy="168" r="2.6"/></g></svg></span><b>Signal recognition</b><span>How the yeast senses it</span><em>Result to come</em></a>
+      <a class="bt__card bt__card--svg" href="pages/results.html" data-art3d="color"><span class="bt__art" aria-hidden="true"><svg viewBox="0 0 320 180"><circle cx="170" cy="100" r="74" fill="url(#bt-r2)" opacity=".7"/><path d="M152 34h36M156 36v70l-24 40q-4 10 8 10h60q12 0 8-10l-24-40V36" fill="none" stroke="#e7dbe9" stroke-width="3"/><path d="M142 124l-10 18q-2 6 6 6h64q8 0 6-6l-10-18q-28-8-56 0z" fill="#f6c14b"/><use href="#bt-g3" transform="translate(66 64)" style="color:#7fb0ff" stroke="#7fb0ff"/><use href="#bt-g18" transform="translate(58 112) scale(.85)" style="color:#ff8fab" stroke="#ff8fab"/></svg></span><b>Betaxanthin output</b><span>A visible readout</span><em>Result to come</em></a>
+      <a class="bt__card bt__card--svg" href="model/" data-art3d="model"><span class="bt__art" aria-hidden="true"><svg viewBox="0 0 320 180"><g fill="none" stroke-linecap="round"><path d="M30 140C90 132 120 60 180 70S260 40 300 30" stroke="#5f7fd8" stroke-width="2" opacity=".8"/><path d="M30 150C100 140 140 100 200 104S270 80 300 70" stroke="#5ff0d6" stroke-width="2" opacity=".7"/><path d="M30 120C80 116 130 130 180 110S250 118 300 96" stroke="#f2934a" stroke-width="2" opacity=".7"/></g><g fill="#fff4dc"><circle cx="120" cy="92" r="3"/><circle cx="180" cy="70" r="3"/><circle cx="200" cy="104" r="3"/><circle cx="252" cy="54" r="3"/></g></svg></span><b>Modeling</b><span>From data to insight</span><em>Result to come</em></a>
+      <a class="bt__card bt__card--svg" href="human-practices/" data-art3d="field"><span class="bt__art" aria-hidden="true"><svg viewBox="0 0 320 180"><path d="M0 140C60 126 120 150 180 136S280 128 320 138V180H0Z" fill="#3b2a25"/><use href="#bt-sprout" transform="translate(90 136) scale(.9)"/><use href="#bt-sprout" transform="translate(160 132) scale(1.1)"/><use href="#bt-sprout" transform="translate(236 134) scale(.8)"/><path d="M200 36h86a10 10 0 0 1 10 10v24a10 10 0 0 1-10 10h-60l-14 12v-12h-12a10 10 0 0 1-10-10V46a10 10 0 0 1 10-10z" fill="#f4ecdd" opacity=".9"/><g fill="#7e0c6e"><circle cx="226" cy="58" r="3"/><circle cx="242" cy="58" r="3"/><circle cx="258" cy="58" r="3"/></g></svg></span><b>Agricultural application</b><span>Healthier soils, better timing</span><em>Result to come</em></a>
+    </div>
+  </div>
+</section>
+
+<section class="ex" id="explore" data-nav-label="Explore the wiki" data-tone="dark" aria-labelledby="explore-title">
+  <div class="wrap">
+    <div class="ex__path" data-ex-path>
+      <p class="ex__path-title">A colour is where the next step starts</p>
+      <ol>
+        <li><b>Soil sampling</b><span>at the right time and place</span></li>
+        <li><b>Risk pre-screen</b><span>a first warning on site</span></li>
+        <li><b>Professional confirmation</b><span>species and density in the lab</span></li>
+        <li><b>Management decision</b><span>crop, region, planting plan</span></li>
+      </ol>
+      <i class="ex__beam" aria-hidden="true"></i>
+    </div>
+    <div class="ex__main">
+      <div class="ex__copy">
+        <h2 class="h-display" id="explore-title" data-split>Explore the wiki.</h2>
+        <p>Dive deeper into our project, methods, results and the people behind it.</p>
+        <p class="co__tag">Curious minds build brighter tomorrows.</p>
+      </div>
+      <div class="ex__mascot" data-ex-mascot aria-hidden="true"><img src="img/home/mascot-lg.png" width="589" height="538" alt="" loading="lazy" /><span class="hand">Follow the signals!</span></div>
+      <nav class="ex__grid" aria-label="Explore the wiki" data-ex-grid>
+        <a href="pages/description.html"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7zM14 3v4h4M10 12h5M10 16h5"/></svg>Project</a>
+        <a href="pages/design.html"><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3M8 15h8"/></svg>Design</a>
+        <a href="engineering/"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></svg>Engineering</a>
+        <a href="pages/results.html"><svg viewBox="0 0 24 24"><path d="M5 20V11M10 20V5M15 20v-7M20 20V8M3 20h19"/></svg>Results</a>
+        <a href="model/"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.5"/><circle cx="4" cy="6" r="2"/><circle cx="20" cy="6" r="2"/><circle cx="4" cy="18" r="2"/><circle cx="20" cy="18" r="2"/><path d="M6 7l4 4M18 7l-4 4M6 17l4-4M18 17l-4-4"/></svg>Model</a>
+        <a href="human-practices/"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M2 20c0-4 3-6 6-6s6 2 6 6M12 15c1-1 2.5-1 4-1 3 0 6 2 6 6"/></svg>Human Practices</a>
+        <a href="safety-and-security/"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>Safety</a>
+        <a href="pages/team-members.html"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 21c0-4 3-7 7-7s7 3 7 7"/></svg>Team</a>
+      </nav>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="hf" data-tone="light">
+  
+  <div class="wrap">
+    <p class="hf__support"><b>Support and partners</b>Confirmed sponsors and their approved logos appear here.</p>
+    <div class="hf__bar">
+      <a href="index.html" class="hf__brand"><img src="img/shell/nku-mark.png" width="22" height="30" alt="" /><b>iGEM 2026</b></a>
+      <span class="hf__motto">Small signals, big possibilities</span>
+      <i class="hf__rule" aria-hidden="true"></i>
+      <nav class="hf__links" aria-label="Footer">
+        <a href="https://teams.igem.org/6303">Team page</a>
+        <a href="pages/attribution.html">Attributions</a>
+        <a href="licensing/">Licenses and AI use</a>
+        <a href="https://github.com/CJerryR/NKU26-wiki" aria-label="Source code on GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.2-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.3 4.8-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg></a>
+      </nav>
+      <p class="hf__small">Soils connect us.<br>Science empowers change.</p>
+    </div>
+    <p class="hf__legal">© 2026 NKU-iGEM · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · Basemaps: Natural Earth (public domain)</p>
+  </div>
+</footer>
+
+
+  <div class="site-search" id="site-search" role="dialog" aria-modal="true" aria-labelledby="site-search-title" hidden>
+    <div class="site-search__backdrop" data-search-close></div>
+    <section class="site-search__panel" role="document">
+      <div class="site-search__head">
+        <div>
+          <p class="eyebrow">Search the wiki</p>
+          <h2 id="site-search-title">Find articles, sections, and evidence.</h2>
+        </div>
+        <button class="site-search__close" type="button" data-search-close aria-label="Close search">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+        </button>
+      </div>
+      <label class="site-search__box">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.5" y2="16.5"/></svg>
+        <span class="sr-only">Search query</span>
+        <input type="search" data-search-input autocomplete="off" spellcheck="false" placeholder="Search project content..." />
+      </label>
+      <div class="site-search__meta" data-search-meta>Type to search the full wiki.</div>
+      <div class="site-search__results" data-search-results></div>
+    </section>
+  </div>
+
+  <div class="detective" data-detective>
+  <p class="detective__bubble" role="status" aria-live="polite"></p>
+  <button type="button" class="detective__btn" aria-label="Yeast detective: back to the top">
+    <span class="detective__fig">
+      <img class="detective__std" src="img/shell/detective.png" width="120" height="110" alt="" />
+      <img class="detective__alt" src="img/shell/detective-torch.png" width="120" height="110" alt="" />
+      <svg class="detective__torch" viewBox="-40 -40 80 80" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="dt-body" x1="0" y1="-6" x2="0" y2="6" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#6f5a86"/><stop offset=".32" stop-color="#e4d6f2"/><stop offset=".56" stop-color="#8f78ad"/><stop offset="1" stop-color="#2b1d3a"/></linearGradient>
+          <linearGradient id="dt-head" x1="0" y1="-11" x2="0" y2="11" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7e0c6e"/><stop offset=".34" stop-color="#e59ad4"/><stop offset=".6" stop-color="#9c2a8a"/><stop offset="1" stop-color="#3d0636"/></linearGradient>
+          <radialGradient id="dt-fist" cx="-.2" cy="-.35" r="1.1"><stop offset="0" stop-color="#fff0cf"/><stop offset=".6" stop-color="#fcd49c"/><stop offset="1" stop-color="#eaa55c"/></radialGradient>
+        </defs>
+        <g data-torch-rot>
+          <rect x="-4" y="-5.5" width="32" height="11" rx="3" fill="url(#dt-body)"/>
+          <g fill="rgba(0,0,0,.28)"><rect x="12" y="-5.5" width="1.6" height="11"/><rect x="16" y="-5.5" width="1.6" height="11"/><rect x="20" y="-5.5" width="1.6" height="11"/></g>
+          <path d="M26 -6.5 L37 -11 L37 11 L26 6.5 Z" fill="url(#dt-head)"/>
+          <ellipse cx="37.4" cy="0" rx="2.4" ry="10.2" fill="#fffdf2"/>
+          <circle data-torch-tip cx="38" cy="0" r=".6" fill="none"/>
+          <path d="M-7 -6.5C-7 -10.5 -2 -12 3 -11.5C8 -11 10.5 -8.5 10.5 -4.5V5C10.5 9.5 7 11.5 2 11.5C-3.5 11.5 -7.5 9 -7.5 4Z" fill="url(#dt-fist)" stroke="#e39b52" stroke-width=".9"/>
+          <path d="M2.5 -11V-5.5M6.5 -10.5V-5.5M-1.5 -10.8V-5.8" stroke="#dc9048" stroke-width=".9" stroke-linecap="round" fill="none"/>
+          <path d="M-5 -4.5C-1 -3 4 -3 9 -4.4" stroke="#e8a45e" stroke-width=".8" fill="none" stroke-linecap="round"/>
+        </g>
+      </svg>
+    </span>
+  </button>
+</div>
+
+  <script src="js/search-data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/shell.js"></script>
+  <script>window.NKU_HOME = {"project": {"name": "NemaKlear", "team": "NKU26-China", "status": "Homepage prototype", "basis": "D01 supplied narrative"}, "links": {"description": {"source": "description", "label": "Project", "status": "existing", "url": "pages/description.html"}, "engineering": {"source": "engineering-cycle", "label": "Engineering", "status": "existing", "url": "engineering/"}, "experiments": {"source": "wet-lab", "label": "Experiments", "status": "evidence-records", "url": "pages/wet-lab.html"}, "results": {"source": "results", "label": "Results", "status": "evidence-records", "url": "pages/results.html"}, "model": {"source": "modeling", "label": "Model", "status": "existing", "url": "model/"}, "human-practices": {"source": "human-practices", "label": "Human Practices", "status": "existing", "url": "human-practices/"}, "education": {"source": "education", "label": "Education", "status": "existing", "url": "education/"}, "parts": {"source": "parts", "label": "Parts", "status": "existing", "url": "parts/"}, "safety": {"source": "safety", "label": "Safety", "status": "existing", "url": "safety-and-security/"}, "team": {"source": "team-members", "label": "Team", "status": "existing", "url": "pages/team-members.html"}, "attribution": {"source": "attribution", "label": "Attributions", "status": "existing", "url": "pages/attribution.html"}, "contribution": {"source": "contribution", "label": "Contribution", "status": "existing", "url": "contribution/"}, "design": {"source": "design", "label": "Design", "status": "existing", "url": "pages/design.html"}, "software": {"source": "software", "label": "Software", "status": "existing", "url": "software/"}}, "content": [{"id": "story", "status": "confirmed-narrative", "source": "D01", "note": "Six narrative themes, presented across additional visual sections."}, {"id": "sensor", "status": "proposed-design", "source": "D01; D03; B14", "note": "Receptor recognition, yeast signal relay/amplification, intended betaxanthin color output. No demonstrated sensor performance claimed."}, {"id": "combination", "status": "project-hypothesis", "source": "D01 section 03", "note": "ascr#3 and ascr#18 combinations may carry additional risk information; no spectrum, threshold or discrimination result assumed."}, {"id": "maps", "status": "world-and-china-records-imported", "source": "DATA_SOURCES.md", "note": "World layer: van den Hoogen et al. 2020 Herbivores field, 1,901 pixels. China: province-level literature records. HP maps use illustrative values until team records are added."}, {"id": "results", "status": "existing-evidence-records", "source": "_content/results.html", "note": "Existing negative/inconclusive engineering records may be linked with limitations; none establish full sensor performance."}, {"id": "scientific-art", "status": "replaceable-illustration", "source": "B11; B12; B14", "note": "Simplified schematic diagrams await team-reviewed vector artwork."}, {"id": "sponsors", "status": "awaiting-confirmed-material", "source": "D05", "note": "No sponsor or institutional support is inferred."}], "confirmationPoints": [{"id": "china-map-semantics", "current": "D01 scientific distributions", "older": "D02 0913 HP workstreams", "action": "Confirm meaning and source dataset before formal map data integration."}]};</script>
+  <script src="js/vendor/three.min.js" defer></script>
+  <script src="js/home-geo.js" defer></script>
+  <script src="js/home-land.js" defer></script>
+  <script src="js/home-geo3d.js" defer></script>
+  <script src="js/home-abundance.js" defer></script>
+  <script src="js/home-maps-data.js" defer></script>
+  <script src="js/home-core.js" defer></script>
+  <script src="js/home-nk.js" defer></script>
+  <script src="js/home-pager.js" defer></script>
+  <script src="js/home-opening.js" defer></script>
+  <script src="js/home-maps.js" defer></script>
+  <script src="js/home-zoom3d.js" defer></script>
+  <script src="js/home-threat.js" defer></script>
+  <script src="js/home-story.js" defer></script>
+</body>
+</html>
