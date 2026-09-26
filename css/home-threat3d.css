@@ -111,3 +111,17 @@
 /* same type as 3D v3: everything in this section is Spline Sans */
 .th3,.th3 h2,.th3 h3,.th3 p,.th3 span,.th3 .nk-stagecap h3{font-family:var(--nk-sans)}
 .th3 .th3__title{font-weight:560}
+
+/* v6.6: 3D v3's reveal, as on its page: the four scenes rise in one after another and the arrows draw themselves */
+.th3 .nk-will-reveal{opacity:0;transform:translateY(24px);transition:opacity .8s var(--nk-ease),transform .8s var(--nk-ease)}
+.th3 .nk-will-reveal.is-in{opacity:1;transform:none}
+.th3 .nk-will-reveal:nth-child(2){transition-delay:.08s}.th3 .nk-will-reveal:nth-child(3){transition-delay:.16s}.th3 .nk-will-reveal:nth-child(4){transition-delay:.24s}
+/* v6.6 details inside the blocks (from v6) and the lens that enlarges the same spot */
+.th3-mol{animation:th3Mol 3.2s ease-in-out infinite;animation-delay:var(--d,0s)}
+@keyframes th3Mol{0%{transform:translate(0,0);opacity:0}25%{opacity:1}100%{transform:translate(var(--dx),var(--dy));opacity:0}}
+.th3-ring{fill:none;stroke:#58c7ff;stroke-width:1.2;transform-box:fill-box;transform-origin:center;animation:th3Ring 2.4s ease-out infinite}
+.th3-ring--2{stroke:#ff6f9a;animation-delay:1.2s}
+@keyframes th3Ring{0%{transform:scale(.4);opacity:.9}100%{transform:scale(3.4);opacity:0}}
+.th3-pale{filter:saturate(.72) brightness(1.06)}
+.th3-pill text{font-family:var(--nk-sans);font-weight:600}
+@media (prefers-reduced-motion:reduce){.th3-mol,.th3-ring{animation:none}.th3-mol{opacity:1}}

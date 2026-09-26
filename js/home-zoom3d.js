@@ -81,28 +81,43 @@
   /* the pager drives the flight: stop, merge, high altitude to field, field
    * to roots, roots, question. Each step has a fixed pace and cannot be
    * skipped with a fast scroll. */
-  var DUR = [0, 4400, 5200];
+  var LAYERED = sec.getAttribute('data-layers') === 'on';
+  NK.chinaLayered = LAYERED;
+  var DUR = LAYERED ? [0, 1300, 1300, 1300, 6200, 5200] : [0, 4400, 5200];
+  var LAST = DUR.length - 1;
+  /* the big number counts up once the title is in, like US$173 billion on the world map */
+  var usd = sec.querySelector('[data-cz-usd]'), counted = false;
+  function countUp() {
+    if (!usd || counted) return;
+    counted = true;
+    if (H0.reduced) return;
+    var t0 = performance.now();
+    (function f(now) { var k = NK.clamp((now - t0) / 1400, 0, 1); usd.textContent = 'US$' + Math.round(120 * NK.easeOut(k)); if (k < 1) requestAnimationFrame(f); })(t0);
+  }
   NK.chinaArr = 1;
   NK.chinaHandoff = function () { sec.classList.add('is-handoff', 'is-pre'); stage.style.setProperty('--arrive', '0'); requestAnimationFrame(function () { requestAnimationFrame(function () { sec.classList.add('is-show'); }); }); };
   NK.chinaArrive = function () { sec.classList.remove('is-handoff', 'is-show'); stage.style.setProperty('--arrive', '1'); };
   var drive = function () { return null; };
   NK.chinaDriver = function (fn) { drive = fn; };
-  function to(i, ms) {
-    var d = drive(i, ms);
-    stage.style.setProperty('--qo', i >= 2 ? '1' : '0');
-    if (d === null) { sec.classList.toggle('is-q', i >= 2); stage.style.setProperty('--merge', i ? '1' : '0'); }
+  function to(i, ms, dir) {
+    var d = drive(i, ms, dir);
+    stage.style.setProperty('--qo', i >= LAST ? '1' : '0');
+    sec.setAttribute('data-fo', LAYERED && i >= 1 && i <= 3 ? String(i - 1) : '-1');
+    if (d === null) { sec.classList.toggle('is-q', i >= LAST); stage.style.setProperty('--merge', i >= LAST - 1 && i > 0 ? '1' : '0'); }
   }
   H0.scene('china', {
-    steps: 2, tall: 4, cutIn: true, noSkip: true,
+    steps: LAST, tall: LAYERED ? 7 : 4, cutIn: true, noSkip: true,
     set: function (i) { to(i, 0); if (i === 0) sec.classList.add('is-pre'); if (!sec.classList.contains('is-handoff')) { NK.chinaArr = 1; stage.style.setProperty('--arrive', '1'); } },
-    step: function (i, dir) { if (i === 0) sec.classList.remove('is-pre'); var ms = sec.classList.contains('is-2d') ? 450 : dir > 0 ? DUR[i] : 1500; to(i, ms); return ms; },
+    step: function (i, dir) { if (i === 0) sec.classList.remove('is-pre'); var ms = sec.classList.contains('is-2d') ? 450 : dir > 0 ? DUR[i] : (LAYERED && i === 3 ? 2600 : 1400); to(i, ms, dir); return ms; },
     enter: function (dir, info) {
       if (sec.classList.contains('is-handoff')) {
         NK.chinaArrive(1700);
         setTimeout(function () { sec.classList.remove('is-pre'); }, 250);
+        setTimeout(countUp, 700);
         return 1500;
       }
       sec.classList.remove('is-pre');
+      setTimeout(countUp, 450);
       return 0;
     }
   });
@@ -484,10 +499,11 @@
     });
     var slab = new T.ExtrudeGeometry(shapes, { depth: 0.8, bevelEnabled: false, curveSegments: 1 });
     slab.rotateX(-Math.PI / 2);
-    scene.add(new T.Mesh(slab, new T.MeshStandardMaterial({ color: 0x2b1c40, emissive: 0x100818, roughness: 0.92 })));
+    var slab0 = new T.Mesh(slab, new T.MeshStandardMaterial({ color: 0x2b1c40, emissive: 0x100818, roughness: 0.92, transparent: true, opacity: 1 }));
+    scene.add(slab0);
     var lineMat = new T.LineBasicMaterial({ color: 0xb99be0, transparent: true, opacity: 0.85 });
     var bb = { x0: 1e9, x1: -1e9, z0: 1e9, z1: -1e9 };
-    var outl = [];
+    var outl = [], ringV3 = [];
     geo.rings.forEach(function (r) {
       if (r.a < 1.5) return;
       var pts = [], p2 = [];
@@ -496,6 +512,7 @@
         var q = toP(r.p[i], r.p[i + 1]);
         p2.push(q);
         pts.push(V3(q[0], 0.81, q[1]));
+        if (i === 0) ringV3.push(pts);
         bb.x0 = Math.min(bb.x0, q[0]); bb.x1 = Math.max(bb.x1, q[0]); bb.z0 = Math.min(bb.z0, q[1]); bb.z1 = Math.max(bb.z1, q[1]);
       }
       scene.add(new T.LineLoop(new T.BufferGeometry().setFromPoints(pts), lineMat));
@@ -505,6 +522,18 @@
     var ribbon = new T.Mesh(new T.BufferGeometry(), new T.MeshBasicMaterial({ color: 0xb99be0, transparent: true, depthWrite: false, side: T.DoubleSide }));
     ribbon.renderOrder = 2;
     scene.add(ribbon);
+    /* v6.6 layered view: two more plates slide out beneath the map (abundance on top,
+     * soybean cyst nematode in the middle, root-knot nematode at the bottom) */
+    var plates = [slab0];
+    for (var pi2 = 1; pi2 < 3; pi2++) {
+      var pm = new T.Mesh(slab, new T.MeshStandardMaterial({ color: 0x2b1c40, emissive: 0x120a1c, roughness: 0.92, transparent: true, opacity: 0.95 }));
+      var plm = new T.LineBasicMaterial({ color: 0xb99be0, transparent: true, opacity: 0.7 });
+      ringV3.forEach(function (pts) { pm.add(new T.LineLoop(new T.BufferGeometry().setFromPoints(pts), plm)); });
+      pm.userData.lm = plm;
+      pm.visible = false;
+      scene.add(pm);
+      plates.push(pm);
+    }
     function setRibbon(hw) {
       var pos = [], idx = [];
       outl.forEach(function (P) {
@@ -534,6 +563,7 @@
     var MC = V3((bb.x0 + bb.x1) / 2, 0.8, (bb.z0 + bb.z1) / 2);
     var MW = bb.x1 - bb.x0 + 3;
     var MD = bb.z1 - bb.z0 + 5;
+    var GAP = MD * 0.42;
     function ll(lon, lat) {
       var c = geo.china;
       var q = toP((lon - c.west) * c.upd + c.ox, (c.north - lat) * c.upd + c.oy);
@@ -576,6 +606,29 @@
     function track(g, mat) { mat.transparent = true; mat.userData.base = mat.opacity; g.userData.mats.push(mat); return mat; }
     if (CUI && DATA && PV) {
       for (var li = 0; li < 3; li++) { var g0 = new T.Group(); g0.userData = { mats: [], op: 0 }; g0.visible = false; scene.add(g0); layers.push(g0); }
+      (function () {
+        var RAMP = [[243, 220, 194], [244, 162, 97], [239, 111, 108], [192, 78, 168], [110, 79, 210]];
+        function rampColor(v) { v = NK.clamp(v, 0, 1) * 4; var i = Math.min(3, Math.floor(v)), f = v - i, A = RAMP[i], B = RAMP[i + 1]; return new T.Color((A[0] + (B[0] - A[0]) * f) / 255, (A[1] + (B[1] - A[1]) * f) / 255, (A[2] + (B[2] - A[2]) * f) / 255); }
+        var pts = [];
+        for (var y = 10; y < 500; y += 9) for (var x = 10 + ((y / 9) % 2 ? 4.5 : 0); x < 600; x += 9) if (CUI.inside(x, y)) pts.push(toP(x, y));
+        var dm = track(layers[0], new T.MeshBasicMaterial({ color: 0x9a86bb, opacity: 0.5, depthWrite: false }));
+        var dots = new T.InstancedMesh(new T.CylinderGeometry(0.17, 0.17, 0.06, 8), dm, pts.length);
+        pts.forEach(function (q, k) { m4.makeTranslation(q[0], 0.84, q[1]); dots.setMatrixAt(k, m4); });
+        layers[0].add(dots);
+        var src = window.NKU_ABUNDANCE || [], mx = NK.abundanceMax || 4;
+        var cp = src.filter(function (pt) { if (!isFinite(pt.value)) return false; var c = CUI.llToChina(pt.lon, pt.lat); return CUI.inside(c[0], c[1]); });
+        var nEl = document.querySelector('[data-ab-n]');
+        if (nEl) nEl.textContent = String(cp.length);
+        if (!cp.length) return;
+        var bars = new T.InstancedMesh(new T.CylinderGeometry(0.3, 0.3, 1, 10), track(layers[0], new T.MeshStandardMaterial({ roughness: 0.5, emissive: 0x2a0f2a, emissiveIntensity: 0.35, opacity: 1 })), cp.length);
+        cp.forEach(function (pt, k) {
+          var c = toP.apply(null, CUI.llToChina(pt.lon, pt.lat)), v = NK.clamp(Math.log(pt.value + 1) / Math.LN10 / mx, 0, 1), h = 0.25 + v * 3.4;
+          m4.makeScale(1, h, 1).setPosition(c[0], 0.82 + h / 2, c[1]);
+          bars.setMatrixAt(k, m4);
+          bars.setColorAt(k, rampColor(v));
+        });
+        layers[0].add(bars);
+      }());
       (function () {
         var list = DATA.china.scn.provinces.filter(function (c) { return PV[c]; });
         var inst = new T.InstancedMesh(new T.ConeGeometry(0.34, 0.62, 3), track(layers[1], new T.MeshStandardMaterial({ color: 0x5fd18f, roughness: 0.6, emissive: 0x1d5a35, emissiveIntensity: 0.5, opacity: 1 })), list.length * 4);
@@ -651,6 +704,8 @@
      * (distance + lens shift) to the free area beside the panel; the merge
      * blends it into the flight's opening view; then the dive ---- */
     var ELEV_L = 1.19;
+    var ELEV_S = 0.74;
+    var distS = 95;
     var D0 = V3(0, 0.9, 0.44).normalize();
     var D1 = V3(0.04, 0.91, 0.42).normalize();
     var VW = 1;
@@ -659,6 +714,12 @@
     var distL = 95;
     var distTop = 95;
     var dist0 = 95;
+    function fitStack(fr, elev) {
+      var tanV = Math.tan(cam.fov * Math.PI / 360);
+      var fw = Math.max(90, fr.x1 - fr.x0), fh = Math.max(90, fr.y1 - fr.y0);
+      var hgt = MD * Math.sin(elev) + 2 * GAP * Math.cos(elev);
+      return Math.max(MW * VH / (2 * tanV * fw), hgt * VH / (2 * tanV * fh)) * 1.06;
+    }
     function fitDist(fr, elev) {
       var tanV = Math.tan(cam.fov * Math.PI / 360);
       var fw = Math.max(90, fr.x1 - fr.x0);
@@ -679,9 +740,10 @@
         FREE = fr;
         distL = fitDist(fr, ELEV_L);
         distTop = fitDist(fr, 1.555);
+        distS = fitStack(fr, ELEV_S);
         dist0 = fitDist({ x0: w * 0.08, x1: w * 0.92, y0: h * 0.16, y1: h * 0.9 }, Math.asin(D0.y));
         scene.fog.near = Math.max(distL, dist0, distTop) * 1.02;
-        scene.fog.far = Math.max(distL, dist0, distTop) * 2.8;
+        scene.fog.far = Math.max(distL, dist0, distTop, distS) * 3;
         setRibbon(1.35 * 2 * distTop * Math.tan(cam.fov * Math.PI / 360) / h);
       },
       pick: function (x, y, layer) {
@@ -703,8 +765,11 @@
         if (mg < 1) {
           var bl = ease(mg);
           /* arrival from the world map: straight down first, then the view tilts into 3D */
-          var ar = NK.easeInOut(NK.chinaArr == null ? 1 : NK.chinaArr), elev = NK.lerp(1.555, ELEV_L, ar);
-          var dLv = Math.exp(Math.log(distTop) + (Math.log(distL) - Math.log(distTop)) * ar);
+          var ar = NK.easeInOut(NK.chinaArr == null ? 1 : NK.chinaArr), exC = ease(NK.chinaEx == null ? 0 : NK.chinaEx);
+          var elev = NK.lerp(1.555, NK.lerp(ELEV_L, ELEV_S, exC), ar);
+          var dLay = Math.exp(NK.lerp(Math.log(distL), Math.log(distS), exC));
+          var dLv = Math.exp(Math.log(distTop) + (Math.log(dLay) - Math.log(distTop)) * ar);
+          tgt.y -= GAP * exC * (1 - bl);
           dirL.set(0, Math.sin(elev), Math.cos(elev)).applyAxisAngle(UP, Math.sin(time * 0.15) * 0.012 * ar);
           dir.copy(dirL).lerp(dir, bl).normalize();
           dist = Math.exp(Math.log(dLv) + (Math.log(dz) - Math.log(dLv)) * bl);
@@ -728,9 +793,24 @@
           sp.scale.set(u.s * pulse, u.s * pulse, 1);
           sp.material.opacity = glowIn * u.o * (0.86 + 0.14 * Math.sin(time * 1.1 + u.ph)) * (1 - 0.88 * NK.smooth(0.28, 0.72, t));
         });
+        /* layered view: plates apart by exV, one layer in focus (FO: -1 none, 0..2) */
+        var exV = mg < 1 ? ease(NK.chinaEx == null ? 0 : NK.chinaEx) : 0;
+        var FO = NK.chinaFo == null ? -1 : NK.chinaFo, fw = NK.clamp(FO + 1, 0, 1), fpos = NK.clamp(FO, 0, 2);
+        var arrV = NK.smooth(0.35, 1, NK.chinaArr == null ? 1 : NK.chinaArr);
+        var LY = [0, -GAP * exV, -2 * GAP * exV];
+        this.layerY = LY;
+        var fop = [0, 1, 2].map(function (i) { return NK.lerp(1, NK.lerp(0.16, 1, Math.max(0, 1 - Math.abs(fpos - i))), fw); });
+        plates.forEach(function (pm, i) {
+          var po = i ? NK.smooth(0.02, 0.3, exV) * NK.lerp(0.3, 0.95, fop[i]) : NK.lerp(1, 0.3 + 0.7 * fop[0], exV);
+          if (i) { pm.position.y = LY[i]; pm.visible = exV > 0.01; }
+          pm.material.opacity = po;
+          if (pm.userData.lm) pm.userData.lm.opacity = 0.7 * po;
+        });
+        ribbon.material.opacity *= NK.lerp(1, 0.3 + 0.7 * fop[0], exV);
         var k = mg >= 1 ? 1 : 1 - Math.exp(-(dt || 0.016) * 6);
         layers.forEach(function (g, i) {
-          var target = (i ? 1 : 0) * (1 - NK.smooth(0, 0.55, mg)) * NK.smooth(0.35, 1, NK.chinaArr == null ? 1 : NK.chinaArr);
+          g.position.y = LY[i];
+          var target = (i === 0 ? exV : 1) * fop[i] * (1 - NK.smooth(0, 0.55, mg)) * arrV;
           g.userData.op += (target - g.userData.op) * k;
           if (Math.abs(target - g.userData.op) < 0.002) g.userData.op = target;
           g.userData.mats.forEach(function (mt) { mt.opacity = mt.userData.base * g.userData.op; mt.depthWrite = g.userData.op > 0.6 && mt.userData.base >= 1; });
@@ -1288,7 +1368,9 @@
       var on = ops[mk.layer] > 0.6 && merge < 0.3;
       mk.el.style.opacity = on ? '1' : '0';
       if (!on) return;
-      tmp.copy(mk.pos).project(L0.cam);
+      tmp.copy(mk.pos);
+      if (L0.layerY) tmp.y += L0.layerY[mk.layer] || 0;
+      tmp.project(L0.cam);
       mk.el.style.transform = 'translate(' + ((tmp.x * 0.5 + 0.5) * W).toFixed(0) + 'px,' + ((-tmp.y * 0.5 + 0.5) * H).toFixed(0) + 'px) translate(-50%,-100%)';
     });
     var CUI = NK.chinaUI;
@@ -1309,12 +1391,25 @@
     return { a: 2, ta: NK.clamp((q - 0.68) / 0.22, 0, 1) };
   }
   /* stops (as in the v6 list): 0 the China map · 1 high above to the field, stop · 2 field to the roots, the question stays */
-  var STATES = [{ merge: 0, q: 0, qo: 0 }, { merge: 1, q: 0.38, qo: 0 }, { merge: 1, q: 0.9, qo: 1 }];
-  var Z = { merge: 0, q: 0, qo: 0 };
+  /* 0 the three layers apart · 1–3 one layer in focus · 4 layers close, fly to the field · 5 the roots and the question */
+  var STATES = !NK.chinaLayered ? [{ ex: 0, fo: -1, merge: 0, q: 0, qo: 0 }, { ex: 0, fo: -1, merge: 1, q: 0.38, qo: 0 }, { ex: 0, fo: -1, merge: 1, q: 0.9, qo: 1 }] : [
+    { ex: 1, fo: -1, merge: 0, q: 0, qo: 0 }, { ex: 1, fo: 0, merge: 0, q: 0, qo: 0 }, { ex: 1, fo: 1, merge: 0, q: 0, qo: 0 }, { ex: 1, fo: 2, merge: 0, q: 0, qo: 0 },
+    { ex: 0, fo: -1, merge: 1, q: 0.38, qo: 0 }, { ex: 0, fo: -1, merge: 1, q: 0.9, qo: 1 }];
+  var Z = { ex: 0, fo: -1, merge: 0, q: 0, qo: 0 };
+  var KEYS = ['ex', 'fo', 'merge', 'q', 'qo'];
+  function plan(a, b, fwd) {
+    var groups = [['ex', 'fo'], ['merge'], ['q']], W = { ex: 1, merge: 0.7, q: 2.2 }, ph = [], tot = 0, t = 0, win = {};
+    groups.forEach(function (g) { if (g.some(function (key) { return Math.abs(a[key] - b[key]) > 1e-6; })) { ph.push(g); tot += W[g[0]]; } });
+    if (!fwd) ph.reverse();
+    ph.forEach(function (g) { var w = W[g[0]] / tot; g.forEach(function (key) { win[key] = [Math.max(0, t - 0.05), Math.min(1, t + w)]; }); t += w; });
+    win.qo = b.qo > a.qo ? [0.8, 1] : [0, 0.25];
+    return win;
+  }
+  function copyZ() { var o = {}; KEYS.forEach(function (key) { o[key] = Z[key]; }); return o; }
   var tw = null;
   var arrTw = null;
   NK.chinaHandoff = function () {
-    tw = null; arrTw = null; Z.merge = 0; Z.q = 0; Z.qo = 0; NK.chinaArr = 0;
+    tw = null; arrTw = null; Z.ex = 0; Z.fo = -1; Z.merge = 0; Z.q = 0; Z.qo = 0; NK.chinaArr = 0; NK.chinaEx = 0; NK.chinaFo = -1;
     stage.style.setProperty('--arrive', '0');
     sec.classList.add('is-handoff', 'is-pre');
     if (LV) { try { frame(performance.now() / 1000, 0.016); } catch (e) {} }
@@ -1325,11 +1420,15 @@
     if (hLoop) { hLoop(); hLoop = null; }
     sec.classList.remove('is-handoff', 'is-show');
     arrTw = { t0: performance.now(), dur: ms };
+    /* after the tilt starts, the plates slide apart */
+    var a0 = copyZ();
+    tw = { a: a0, b: STATES[0], t0: performance.now() + 450, dur: 2300, win: plan(a0, STATES[0], true) };
   };
-  NK.chinaDriver(function (i, ms) {
-    var s = STATES[Math.max(0, Math.min(2, i))];
-    if (!ms) { tw = null; Z.merge = s.merge; Z.q = s.q; Z.qo = s.qo; return true; }
-    tw = { a: { merge: Z.merge, q: Z.q, qo: Z.qo }, b: s, t0: performance.now(), dur: ms };
+  NK.chinaDriver(function (i, ms, dir) {
+    var s = STATES[Math.max(0, Math.min(STATES.length - 1, i))];
+    if (!ms) { tw = null; KEYS.forEach(function (key) { Z[key] = s[key]; }); return true; }
+    var a0 = copyZ();
+    tw = { a: a0, b: s, t0: performance.now(), dur: ms, win: plan(a0, s, dir !== -1) };
     return true;
   });
   var tmp = new T.Vector3();
@@ -1339,17 +1438,12 @@
     lastFrameT = time;
     if (arrTw) { var ka = NK.clamp((performance.now() - arrTw.t0) / arrTw.dur, 0, 1); NK.chinaArr = ka; if (ka >= 1) arrTw = null; }
     stage.style.setProperty('--arrive', NK.easeInOut(NK.chinaArr == null ? 1 : NK.chinaArr).toFixed(3));
+    NK.chinaEx = Z.ex; NK.chinaFo = Z.fo;
     if (tw) {
       /* the map settles into the flight first, then the flight runs (in reverse the other way round); the question comes in at the end */
-      var k = NK.clamp((performance.now() - tw.t0) / tw.dur, 0, 1), a = tw.a, b = tw.b;
-      var fwd = b.q >= a.q && b.merge >= a.merge, dm = a.merge !== b.merge;
-      var mS = dm ? (fwd ? [0, 0.3] : [0.7, 1]) : [0, 0];
-      var qS = fwd ? [dm ? 0.3 : 0, b.qo > a.qo ? 0.86 : 1] : [0, dm ? 0.7 : 1];
-      var oS = b.qo > a.qo ? [0.8, 1] : [0, 0.25];
-      var seg = function (sp) { return sp[1] > sp[0] ? NK.easeInOut(NK.clamp((k - sp[0]) / (sp[1] - sp[0]), 0, 1)) : 1; };
-      Z.merge = NK.lerp(a.merge, b.merge, seg(mS));
-      Z.q = NK.lerp(a.q, b.q, seg(qS));
-      Z.qo = NK.lerp(a.qo, b.qo, seg(oS));
+      var k = NK.clamp((performance.now() - tw.t0) / tw.dur, 0, 1), a = tw.a, b = tw.b, win = tw.win;
+      var seg = function (sp) { return sp && sp[1] > sp[0] ? NK.easeInOut(NK.clamp((k - sp[0]) / (sp[1] - sp[0]), 0, 1)) : 1; };
+      KEYS.forEach(function (key) { Z[key] = NK.lerp(a[key], b[key], seg(win[key] || [0, 1])); });
       if (k >= 1) tw = null;
     }
     U.uTime.value = NK.reduced ? 0 : time;

@@ -155,14 +155,19 @@
         if (k < 1) raf = requestAnimationFrame(f);
       })(t0);
     }
+    /* 3D v3's reveal: the scenes rise in and the arrows draw themselves each time the page is entered from above */
+    items.forEach(function (li) { li.classList.add('nk-will-reveal'); });
+    function reveal(on) { items.forEach(function (li) { li.classList.toggle('is-in', on); }); }
     H.scene('threat', {
       steps: 4, tall: 5,
-      set: function (i) { cancelAnimationFrame(raf); M = null; pNow = pTo = P[i]; apply(pNow); },
+      set: function (i, dir) { cancelAnimationFrame(raf); M = null; pNow = pTo = P[i]; apply(pNow); if (i > 0 || dir < 0) reveal(true); else reveal(false); },
+      enter: function () { setTimeout(function () { reveal(true); }, 60); return 0; },
       step: function (i) { var ms = H.reduced ? 1 : 1300; tweenTo(P[i], ms); return ms; },
       ff: function () { cancelAnimationFrame(raf); pNow = pTo; apply(pNow); }
     });
     var rT = 0;
     window.addEventListener('resize', function () { clearTimeout(rT); rT = setTimeout(function () { M = null; apply(pNow); }, 150); });
+    H.onView(sec, function (v) { if (v && !(H.pager && H.pager.isPaged())) reveal(true); });
     apply(0);
   });
 })();
