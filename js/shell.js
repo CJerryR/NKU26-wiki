@@ -42,7 +42,7 @@
   function bezelProfile(bezel, thickness) {
     var key = bezel + ':' + thickness; if (profiles[key]) return profiles[key];
     var N = 128, out = new Float32Array(N), max = 0, n = 1.5;
-    function h(x) { x = Math.max(0, Math.min(1, x)); return Math.pow(1 - Math.pow(1 - x, 4), 0.25); }
+    function h(x) { x = Math.max(0, Math.min(1, x)); return 1 - (1 - x) * (1 - x); }   // v6: a smooth dome, so the whole pane bends light continuously
     for (var i = 0; i < N; i++) {
       var x = i / (N - 1), e = 0.002;
       var slope = (h(x + e) - h(x - e)) / (2 * e) * (thickness / bezel);   // dh/ds in px/px
@@ -67,7 +67,7 @@
   }
   function maps(w, h, radius, bezel, specular) {
     var s = 0.5, cw = Math.max(2, Math.round(w * s)), ch = Math.max(2, Math.round(h * s));
-    var prof = bezelProfile(bezel, bezel * 2.4);
+    var prof = bezelProfile(bezel, bezel * 1.15);
     var c1 = doc.createElement('canvas'); c1.width = cw; c1.height = ch;
     var c2 = doc.createElement('canvas'); c2.width = Math.round(w); c2.height = Math.round(h);
     var d1 = c1.getContext('2d').createImageData(cw, ch), D = d1.data;
@@ -125,11 +125,13 @@
   var PRESETS = {
     /* bezel: refracting rim (px) · shift: largest inward shift at the rim (px)
        aberration: channel split · spec: rim light strength · blur/sat: backdrop */
-    bar:   { bezel: 16, shift: 11, aberration: 0.045, spec: 0.42, blur: 1.2, sat: 165 },
-    lens:  { bezel: 11, shift: 7, aberration: 0.04, spec: 0.35, blur: 0.4, sat: 150 },
-    drop:  { bezel: 22, shift: 14, aberration: 0.03, spec: 0.3, blur: 9, sat: 170 },
-    sheet: { bezel: 22, shift: 14, aberration: 0.03, spec: 0.3, blur: 9, sat: 170 },
-    card:  { bezel: 18, shift: 10, aberration: 0.035, spec: 0.3, blur: 5, sat: 160 }
+    /* v6: the refracting zone spans the whole pane (bezel >= half its height),
+       so the surface reads as one continuous lens instead of a frosted slab */
+    bar:   { bezel: 999, shift: 13, aberration: 0.06, spec: 0.55, blur: 0.35, sat: 150 },
+    lens:  { bezel: 999, shift: 9, aberration: 0.05, spec: 0.45, blur: 0, sat: 140 },
+    drop:  { bezel: 44, shift: 16, aberration: 0.05, spec: 0.45, blur: 3.5, sat: 155 },
+    sheet: { bezel: 44, shift: 16, aberration: 0.05, spec: 0.45, blur: 3.5, sat: 155 },
+    card:  { bezel: 999, shift: 12, aberration: 0.05, spec: 0.45, blur: 1.5, sat: 150 }
   };
 
   function attach(el) {
@@ -313,7 +315,20 @@
       bubble.innerHTML = html; box.classList.add('show-bubble');
       clearTimeout(timer); timer = setTimeout(function () { box.classList.remove('show-bubble'); }, ms || 4800);
     }
-    window.NKUDetective = { say: say, el: box, lit: function (on) { box.classList.toggle('is-lit', !!on); } };
+    var torch = box.querySelector('.detective__torch'), rot = torch && torch.querySelector('[data-torch-rot]'), tipEl = torch && torch.querySelector('[data-torch-tip]');
+    function aim(x, y) {
+      if (!torch || !rot) return;
+      var r = torch.getBoundingClientRect(); if (!r.width) return;
+      var a = Math.atan2(y - (r.top + r.height / 2), x - (r.left + r.width / 2)) * 180 / Math.PI;
+      a = Math.max(-150, Math.min(80, a));
+      rot.setAttribute('transform', 'rotate(' + a.toFixed(1) + ')');
+    }
+    function torchTip() {
+      if (!tipEl) return null;
+      var r = tipEl.getBoundingClientRect(); if (!r.width && !r.height && !r.left) return null;
+      return { x: r.left + r.width / 2, y: r.top + r.height / 2 };
+    }
+    window.NKUDetective = { say: say, el: box, lit: function (on) { box.classList.toggle('is-lit', !!on); }, aim: aim, torchTip: torchTip };
     btn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: REDUCED ? 'auto' : 'smooth' }); });
     btn.addEventListener('pointerenter', function () { say(tips[ti++ % tips.length]); });
     btn.addEventListener('focus', function () { say(tips[ti++ % tips.length]); });

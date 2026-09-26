@@ -2409,5 +2409,3 @@ body:has(.liquid-hero),
 @media (prefers-reduced-motion:reduce){
   .liquid-mascot-runner{transition:none!important}
 }
-/* official iGEM Project Attributions Form, embedded from teams.igem.org */
-.igem-attributions{display:block;width:100%;min-height:1400px;height:170vh;margin-top:24px;border:0;border-radius:var(--radius);background:#fff}

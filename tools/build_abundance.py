@@ -1,121 +1,144 @@
 #!/usr/bin/env python3
-"""Build js/home-abundance.js from the global soil nematode database.
+"""Build the homepage abundance layer from van den Hoogen et al. (2020).
 
-Source (CC0): van den Hoogen, J. et al. (2020) A global database of soil
-nematode abundance and functional group composition. Scientific Data 7, 103.
-https://doi.org/10.1038/s41597-020-0437-3 · data: https://doi.org/10.6084/m9.figshare.c.4718003
-code and csv: https://github.com/hooge104/2020_global_nematode_dataset
-
-Field: Herbivores = plant-feeding nematodes per 100 g dry soil.
-The 6,825 samples are averaged per 30 arc-second pixel (Pixel_Lat, Pixel_Long),
-which gives the 1,933 pixels the paper maps. Nothing is interpolated: the
-homepage draws one dot per sampled pixel, coloured on log10(value + 1), and
-the world and China maps share the same scale.
-
-    python3 tools/build_abundance.py                 # download from GitHub, then figshare
-    python3 tools/build_abundance.py --csv FILE.csv  # use a file you downloaded yourself
-
-Standard library only. Commit the generated js/home-abundance.js; build.py
-loads it automatically and the homepage switches the abundance layers on.
+The downloaded file is already aggregated to 30 arc-second pixels. This
+script copies only Pixel_Long, Pixel_Lat and Herbivores; it does not average,
+interpolate or round the source values. Rows with missing or invalid values
+are skipped and counted in the generated metadata.
 """
-import argparse, csv, io, json, math, pathlib, statistics, sys, urllib.request, datetime
+
+import argparse
+import csv
+import datetime as dt
+import hashlib
+import json
+import math
+import pathlib
+import sys
+import urllib.error
+import urllib.request
+from decimal import Decimal, InvalidOperation
+
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "js" / "home-abundance.js"
-BASE = "https://raw.githubusercontent.com/hooge104/2020_global_nematode_dataset/master/data/"
-CANDIDATES = [
-    BASE + "nematode_full_dataset_wBiome.csv",          # 6,825 samples (README)
-    BASE + "nematode_abundance_aggregated_wCovar.csv",  # 1,933 pixels (README)
-    BASE + "nematode_aggregated_wCovariateData.csv",    # name used in the team's source list
-]
-CITATION = ("van den Hoogen, J. et al. (2020) A global database of soil nematode abundance and "
-            "functional group composition. Scientific Data 7, 103. doi:10.1038/s41597-020-0437-3 (data CC0)")
+SOURCE_URL = (
+    "https://raw.githubusercontent.com/hooge104/2020_global_nematode_dataset/"
+    "master/data/nematode_aggregated_wCovariateData.csv"
+)
+CITATION = (
+    "van den Hoogen, J. et al. (2020) A global database of soil nematode "
+    "abundance and functional group composition. Scientific Data 7:103. "
+    "doi:10.1038/s41597-020-0437-3"
+)
+LICENSE = "CC0 1.0 Universal"
+LICENSE_URL = "https://creativecommons.org/publicdomain/zero/1.0/"
 
 
-def fetch(url):
-    req = urllib.request.Request(url, headers={"User-Agent": "NKU-iGEM-wiki-build"})
-    with urllib.request.urlopen(req, timeout=60) as r:
-        return r.read().decode("utf-8-sig", errors="replace")
+def read_source(path):
+    if path:
+        return pathlib.Path(path).read_bytes(), str(pathlib.Path(path))
+    request = urllib.request.Request(
+        SOURCE_URL, headers={"User-Agent": "NKU-iGEM-wiki-build"}
+    )
+    with urllib.request.urlopen(request, timeout=60) as response:
+        return response.read(), SOURCE_URL
 
 
-def col(header, *names):
-    low = {h.strip().lower(): h for h in header}
-    for n in names:
-        if n.lower() in low:
-            return low[n.lower()]
-    return None
-
-
-def number(v):
+def decimal_value(value):
     try:
-        x = float(str(v).strip())
-    except ValueError:
+        number = Decimal(str(value).strip())
+    except (InvalidOperation, ValueError):
         return None
-    return x if math.isfinite(x) else None
+    if not number.is_finite():
+        return None
+    return number
 
 
-def pixels(text):
-    rows = list(csv.DictReader(io.StringIO(text)))
-    if not rows:
-        raise ValueError("empty csv")
-    h = rows[0].keys()
-    herb = col(h, "Herbivores")
-    plat, plon = col(h, "Pixel_Lat"), col(h, "Pixel_Long", "Pixel_Lon")
-    lat, lon = col(h, "Latitude", "Lat"), col(h, "Longitude", "Long", "Lon")
-    if not herb or not ((plat and plon) or (lat and lon)):
-        raise ValueError("csv has no Herbivores / coordinate columns: " + ", ".join(list(h)[:12]))
-    groups = {}
-    for r in rows:
-        v = number(r.get(herb))
-        if v is None or v < 0:
-            continue                                   # samples without a functional-group split
-        y = number(r.get(plat)) if plat else None
-        x = number(r.get(plon)) if plon else None
-        if y is None or x is None:                     # fall back to the sample position
-            y, x = number(r.get(lat)), number(r.get(lon))
-        if y is None or x is None or not (-90 <= y <= 90 and -180 <= x <= 180):
+def build_points(text):
+    rows = list(csv.DictReader(text.splitlines()))
+    required = {"Pixel_Lat", "Pixel_Long", "Herbivores"}
+    missing = required.difference(rows[0].keys() if rows else set())
+    if missing:
+        raise ValueError("missing required columns: " + ", ".join(sorted(missing)))
+
+    skipped = {"missing_or_invalid": 0, "out_of_bounds": 0, "negative": 0}
+    points = []
+    for row in rows:
+        lat_raw = row.get("Pixel_Lat", "").strip()
+        lon_raw = row.get("Pixel_Long", "").strip()
+        value_raw = row.get("Herbivores", "").strip()
+        lat = decimal_value(lat_raw)
+        lon = decimal_value(lon_raw)
+        value = decimal_value(value_raw)
+        if lat is None or lon is None or value is None:
+            skipped["missing_or_invalid"] += 1
             continue
-        groups.setdefault((round(x, 5), round(y, 5)), []).append(v)
-    out = [{"lon": round(k[0], 3), "lat": round(k[1], 3), "value": round(statistics.fmean(vs), 1), "n": len(vs)}
-           for k, vs in groups.items()]
-    out.sort(key=lambda p: (p["lat"], p["lon"]))
-    return out, len(rows)
+        if not (-90 <= float(lat) <= 90 and -180 <= float(lon) <= 180):
+            skipped["out_of_bounds"] += 1
+            continue
+        if value < 0:
+            skipped["negative"] += 1
+            continue
+        points.append({"lon": lon_raw, "lat": lat_raw, "value": value_raw})
+    return rows, points, skipped
 
 
 def main():
-    ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
-    ap.add_argument("--csv", type=pathlib.Path, help="local copy of one of the dataset csv files")
-    a = ap.parse_args()
-    text, used = None, None
-    if a.csv:
-        text, used = a.csv.read_text(encoding="utf-8-sig", errors="replace"), str(a.csv)
-    else:
-        for url in CANDIDATES:
-            try:
-                text, used = fetch(url), url
-                break
-            except Exception as e:  # noqa: BLE001 - try the next mirror
-                print(f"  could not read {url}: {e}", file=sys.stderr)
-    if text is None:
-        print("No data. Download a csv from https://doi.org/10.6084/m9.figshare.c.4718003 and pass --csv.", file=sys.stderr)
-        return 1
-    pts, nrows = pixels(text)
-    if len(pts) < 100:
-        print(f"Only {len(pts)} pixels found; refusing to write a map from so few points.", file=sys.stderr)
-        return 1
-    vals = [p["value"] for p in pts]
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--csv", help="use a local copy of the source CSV")
+    args = parser.parse_args()
+
+    raw, source = read_source(args.csv)
+    digest = hashlib.sha256(raw).hexdigest()
+    text = raw.decode("utf-8-sig")
+    rows, points, skipped = build_points(text)
+    if not points:
+        raise SystemExit("no valid abundance points found")
+
     meta = {
-        "field": "Herbivores", "unit": "individuals per 100 g dry soil", "scale": "log10(value + 1)",
-        "pixels": len(pts), "rows": nrows, "median": round(statistics.median(vals), 1),
-        "source": CITATION, "file": used, "built": datetime.date.today().isoformat(),
+        "field": "Herbivores",
+        "unit": "individuals per 100 g dry soil",
+        "coordinates": ["Pixel_Long", "Pixel_Lat"],
+        "pixels": len(points),
+        "source_rows": len(rows),
+        "skipped_rows": skipped,
+        "source": source,
+        "source_sha256": digest,
+        "download_date": dt.date.today().isoformat(),
+        "license": LICENSE,
+        "license_url": LICENSE_URL,
+        "citation": CITATION,
+        "color_transform": "log10(Herbivores + 1)",
     }
-    body = ("/* Generated by tools/build_abundance.py. Do not edit by hand.\n   " + CITATION + " */\n"
-            "window.NKU_ABUNDANCE_META = " + json.dumps(meta, ensure_ascii=False) + ";\n"
-            "window.NKU_ABUNDANCE = " + json.dumps(pts, separators=(",", ":")) + ";\n")
+    header = (
+        "/* Generated by tools/build_abundance.py. Do not edit by hand.\n"
+        f" * {CITATION}\n"
+        f" * Source SHA-256: {digest}\n"
+        " */\n"
+    )
+    body = (
+        header
+        + "window.NKU_ABUNDANCE_META = "
+        + json.dumps(meta, ensure_ascii=False, separators=(",", ":"))
+        + ";\n"
+        + "window.NKU_ABUNDANCE = [\n"
+        + ",\n".join(
+            "  {lon: " + p["lon"] + ", lat: " + p["lat"] + ", value: " + p["value"] + "}"
+            for p in points
+        )
+        + "\n];\n"
+    )
     OUT.write_text(body, encoding="utf-8")
-    print(f"wrote {OUT.relative_to(ROOT)}: {len(pts)} pixels from {nrows} rows ({OUT.stat().st_size // 1024} KB), median {meta['median']}")
-    return 0
+    print(
+        f"wrote {OUT.relative_to(ROOT)}: {len(points)} points from {len(rows)} rows; "
+        f"skipped {sum(skipped.values())} ({skipped}); sha256={digest}"
+    )
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    try:
+        main()
+    except (OSError, ValueError, urllib.error.URLError) as exc:
+        print(f"build_abundance.py: {exc}", file=sys.stderr)
+        raise SystemExit(1)

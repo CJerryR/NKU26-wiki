@@ -10,7 +10,13 @@
      ff()    finish a running step at once
      cutIn   arrive without scrolling when coming from the previous page
      tall    height in viewports when pages are not snapped (narrow screens)
-   Off unless _data/site.json sets home_paged_scroll: the default is native scrolling.
+   v6 stop rules (each page decides where it holds the reader):
+     canLeave()  return false to hold the reader on this page (blocked() is
+                 then called, e.g. the soil scan before the nematode is found)
+     noSkip      a running step cannot be fast-forwarded (the China flight)
+     dwell       ms the page stays put after its last step before a scroll
+                 may leave it; leaveDelta: a firmer scroll is needed to leave
+     leave(dir, info) may return ms to play an exit before the next page
    Narrow screens, touch-only devices and reduced motion keep native scrolling;
    steps then play from scroll position (tall scenes) or when a page is in view. */
 (function () {
@@ -30,10 +36,7 @@
     });
     if (!pages.length) return;
     var mq = matchMedia('(pointer: fine) and (min-width: 960px) and (min-height: 600px)');
-    // Page-by-page mode takes over the wheel, so it is off unless _data/site.json sets home_paged_scroll.
-    var optIn = !!(window.NKU_HOME && window.NKU_HOME.pagedScroll);
-    function wantPaged() { return optIn && mq.matches && !H.reduced; }
-    var paged = false, cur = 0, st = 0, busy = false, busyTimer = 0, atFoot = false, tween = 0;
+    var paged = false, cur = 0, st = 0, busy = false, busyTimer = 0, atFoot = false, tween = 0, doneAt = 0, leaving = false;
     function call(pg, fn) { var f = pg.sp[fn]; if (!f) return 0; var r = f.apply(pg.sp, [].slice.call(arguments, 2)); return typeof r === 'number' ? r : 0; }
 
     /* ---------- dots ---------- */
@@ -74,6 +77,7 @@
       })(t0);
     }
     function lock(ms) {
+      doneAt = performance.now() + Math.max(0, ms);
       busy = true; clearTimeout(busyTimer); dots();
       busyTimer = setTimeout(function () { busy = false; dots(); }, Math.max(0, ms));
     }
@@ -84,6 +88,8 @@
         if (ms < 0) return next();
         lock(ms); return;
       }
+      if (pg.sp.canLeave && !pg.sp.canLeave()) { call(pg, 'blocked'); lock(450); return; }
+      if (pg.sp.dwell && performance.now() - doneAt < pg.sp.dwell) return;
       if (cur < pages.length - 1) return go(cur + 1, 1);
       if (!atFoot && maxY() > top(cur) + 4) { atFoot = true; scrollToY(maxY(), 800); lock(820); }
     }
@@ -100,7 +106,15 @@
     function go(i, dir) {
       if (i === cur && !atFoot) return;
       var from = pages[cur], to = pages[i], adjacent = i === cur + dir;
-      call(from, 'leave', dir);
+      var wait = H.reduced ? 0 : call(from, 'leave', dir, { to: to.id, adjacent: adjacent });
+      if (wait > 0) {
+        leaving = true; busy = true; clearTimeout(busyTimer); dots();
+        setTimeout(function () { leaving = false; arrive(i, dir, from, to, adjacent); }, wait);
+        return;
+      }
+      arrive(i, dir, from, to, adjacent);
+    }
+    function arrive(i, dir, from, to, adjacent) {
       cur = i; atFoot = false;
       st = dir < 0 ? to.steps : 0;
       call(to, 'set', st, dir);
@@ -128,9 +142,10 @@
         return;
       }
       acc += d;
-      if (Math.abs(acc) >= 22) { used = true; acc = 0; busyAt = now; d > 0 ? next() : prev(); }
+      var pgw = pages[cur], need = d > 0 && st >= pgw.steps && pgw.sp.leaveDelta ? pgw.sp.leaveDelta : 22;
+      if (Math.abs(acc) >= need) { used = true; acc = 0; busyAt = now; d > 0 ? next() : prev(); }
     }
-    function ff() { var pg = pages[cur]; if (pg.sp.ff) { pg.sp.ff(); clearTimeout(busyTimer); busy = false; dots(); } }
+    function ff() { var pg = pages[cur]; if (leaving || pg.sp.noSkip) return; if (pg.sp.ff) { pg.sp.ff(); clearTimeout(busyTimer); busy = false; dots(); } }
     function blocked(t) {
       if (root.classList.contains('search-open')) return true;
       if (document.querySelector('.cnfocus:not([hidden]), dialog[open]')) return true;
@@ -144,6 +159,7 @@
       if ((k === ' ' || k === 'Enter') && tg && tg.closest && tg.closest('button, a, [role="button"]')) return;
       if (dn || up || k === 'Home' || k === 'End') e.preventDefault(); else return;
       if (busy) { if (e.repeat) return; ff(); return; }
+      if (e.target && e.target.closest && e.target.closest('[data-op-focus]') && k.indexOf('Arrow') === 0) return;
       if (dn) next(); else if (up) prev(); else if (k === 'Home') go(0, -1); else go(pages.length - 1, 1);
     }
     function enable() {
@@ -175,7 +191,7 @@
     addEventListener('keydown', onKey);
     var rz; addEventListener('resize', function () {
       clearTimeout(rz); rz = setTimeout(function () {
-        if (wantPaged()) { if (!paged) enable(); else scrollTo(0, atFoot ? maxY() : top(cur)); }
+        if (mq.matches && !H.reduced) { if (!paged) enable(); else scrollTo(0, atFoot ? maxY() : top(cur)); }
         else disable();
       }, 150);
     });
@@ -188,7 +204,6 @@
     /* ---------- native scrolling ---------- */
     var fb = null;
     function setupFallback() {
-      root.classList.toggle('home-snap', mq.matches && !H.reduced);
       if (fb) return; fb = true;
       pages.forEach(function (pg) {
         pg.done = 0; pg.running = false;
@@ -227,7 +242,7 @@
       dots();
     }
 
-    if (wantPaged()) enable(); else setupFallback();
+    if (mq.matches && !H.reduced) enable(); else setupFallback();
     H.pager = { next: next, prev: prev, go: function (id) { pages.forEach(function (pg, i) { if (pg.id === id) { if (paged) go(i, i >= cur ? 1 : -1); else pg.el.scrollIntoView({ behavior: H.reduced ? 'auto' : 'smooth' }); } }); }, isPaged: function () { return paged; } };
     H.goto = H.pager.go;
   }

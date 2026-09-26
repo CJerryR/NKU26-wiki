@@ -1,39 +1,45 @@
 <section class="world" id="world" data-nav-label="A global story" data-world data-tone="light" aria-labelledby="world-title">
   <div class="world__pin">
-    <div class="world__inner wrap">
+    <div class="world__inner">
       <div class="world__copy">
         <h2 class="h-display" id="world-title" data-world-title data-split>A global story beneath our feet</h2>
         <p class="world__stat"><b data-usd>US$173</b><span>billion</span></p>
-        <p class="world__lede">The estimated annual toll that plant-parasitic nematodes inflict on agriculture worldwide.</p>
-        <p class="world__src">Kantor et al. 2022, <i>Horticulturae</i> 8: 208, after Elling 2013.</p>
-        <p class="world__call">Plant-parasitic nematodes are advancing across the globe. The time to detect, prevent and control them is now.</p>
-        <div class="world__legend" data-abundance>
+        <p class="world__lede">Estimated yearly crop losses caused by plant-parasitic nematodes worldwide.</p>
+        <div class="world__legend">
           <p>Plant-feeding nematode abundance</p>
           <i class="world__ramp" aria-hidden="true"></i>
           <span><em>lower</em><em>higher</em></span>
-          <small>Individuals per 100 g dry soil, log scale. Each dot is one of <b data-abundance-n>1,933</b> sampled pixels of about 1 km.</small>
+          <p class="world__unit">Individuals per 100 g dry soil, colour by log<sub>10</sub>(x + 1). 1,901 sampled pixels.</p>
+          <p class="world__case"><i aria-hidden="true"></i>Reported crop loss. Point at a dot to read it.</p>
         </div>
-        <p class="world__case"><i aria-hidden="true"></i>Documented crop losses</p>
-        <p class="world__note" data-abundance>Abundance data: van den Hoogen et al. 2020, <i>Scientific Data</i> 7: 103 (CC0). It indicates potential exposure, not crop loss.</p>
       </div>
       <figure class="world__map" data-world-map>
         <div class="world__canvas">
-          <svg class="world__land" data-world-svg viewBox="0 0 900 350" role="img" aria-label="World map. Select a continent to read about nematodes there."></svg>
+          <svg class="world__land" data-world-svg viewBox="0 0 900 350" role="img" aria-label="World map of plant-feeding nematode abundance, with seven reported crop-loss cases and China highlighted."></svg>
           <canvas data-world-heat aria-hidden="true"></canvas>
           <div class="world__marks" data-world-marks></div>
-          <button type="button" class="world__china" data-world-china>China <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 6h6M6.5 3.5 9 6l-2.5 2.5"/></svg></button>
+          <button type="button" class="world__china" data-world-china><b>China</b><span>Look closer</span></button>
         </div>
-        <figcaption>Select a continent or a marker. Basemap: Natural Earth.</figcaption>
+        <figcaption>Data: van den Hoogen et al. 2020, <i>Scientific Data</i> 7:103 (CC0). Basemap: Natural Earth.</figcaption>
       </figure>
     </div>
+    <div class="world__dive" aria-hidden="true"></div>
     <div class="world__mask" data-world-mask aria-hidden="true"></div>
   </div>
   <div class="flipcard" data-flipcard role="dialog" aria-modal="false" aria-labelledby="flip-title" hidden>
-    <div class="flipcard__face">
-      <button type="button" class="flipcard__close" data-flip-close aria-label="Close">×</button>
-      <p class="flipcard__kicker" data-flip-kicker></p>
-      <h3 id="flip-title" data-flip-title></h3>
-      <div data-flip-body></div>
+    <div class="flipcard__inner">
+      <div class="flipcard__face flipcard__front">
+        <p class="flipcard__kicker" data-flip-kicker></p>
+        <h3 id="flip-title" data-flip-title></h3>
+        <dl data-flip-front></dl>
+        <button type="button" class="flipcard__turn" data-flip-turn>Reported loss and source</button>
+      </div>
+      <div class="flipcard__face flipcard__back">
+        <p class="flipcard__kicker">Reported loss</p>
+        <p class="flipcard__loss" data-flip-loss></p>
+        <p class="flipcard__src" data-flip-src></p>
+        <button type="button" class="flipcard__turn" data-flip-turn>Back to the case</button>
+      </div>
     </div>
   </div>
 </section>

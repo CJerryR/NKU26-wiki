@@ -21,14 +21,13 @@
       var kind = c.getAttribute('data-cluster'), r = H.rand(kind === '3' ? 2 : 6);
       for (var i = 0; i < 9; i++) { var b = document.createElement('i'); b.style.setProperty('--x', (10 + r() * 70) + 'px'); b.style.setProperty('--y', (8 + r() * 60) + 'px'); b.style.setProperty('--s', (12 + r() * 14) + 'px'); b.style.setProperty('--dl', (r() * 3) + 's'); b.style.setProperty('--col', kind === '3' ? (i % 3 ? '#4c8dff' : '#9fc3ff') : (i % 3 ? '#ff5e86' : '#ffb0a0')); c.appendChild(b); }
     });
-    // Both groups show the same two signals. Real profiles are not drawn until they are measured.
     function shuffle() {
       H.$$('[data-mix]', sec).forEach(function (m) {
-        if (m.childNodes.length) return;
-        ['#4c8dff', '#ff5e86', '#4c8dff', '#ff5e86'].forEach(function (c) { var b = document.createElement('i'); b.style.setProperty('--col', c); b.style.setProperty('--s', '13px'); m.appendChild(b); });
+        m.innerHTML = ''; var n = 5 + Math.floor(Math.random() * 3);
+        for (var i = 0; i < n; i++) { var b = document.createElement('i'); b.style.setProperty('--col', Math.random() < .5 ? '#4c8dff' : '#ff5e86'); b.style.setProperty('--s', (10 + Math.random() * 8) + 'px'); m.appendChild(b); }
       });
     }
-    shuffle();
+    shuffle(); var sh = setInterval(function () { if (vis && !H.reduced) shuffle(); }, 2600);
     function size() { w = sec.clientWidth; h = sec.clientHeight; ctx = H.fit(cv, w, h, 1.5); stars = []; var r = H.rand(9); for (var i = 0; i < 90; i++) stars.push([r() * w, r() * h * .7, r() * 1.6, r() * 6]); ghosts = []; var sr = sec.getBoundingClientRect(), anchors = groups.map(function (g) { var b = g.getBoundingClientRect(); return [b.left - sr.left + b.width / 2, b.top - sr.top + 70]; });
       var cl = H.$('.tr__pair', sec).getBoundingClientRect(); target = [cl.left - sr.left, cl.width, cl.top - sr.top + cl.height * .6];
       for (i = 0; i < 8; i++) { var an = anchors[i < 4 ? 0 : 1]; ghosts.push({ side: i < 4 ? 0 : 1, x: an[0] - 90 + r() * 110, y: an[1] - 40 + r() * 60, a: r() * 6, len: 60 + r() * 50, ph: r() * 6 }); } }
@@ -135,7 +134,7 @@
     function colour() {
       var k = amt.value / 10, c = [Math.round(H.lerp(255, 245, k)), Math.round(H.lerp(246, 190, k)), Math.round(H.lerp(214, 20, k))];
       fill.style.fill = 'rgb(' + c + ')'; fill.style.transform = 'scaleY(' + (.25 + k * .75) + ')';
-      chip.style.background = 'rgb(' + c + ')'; rgb.textContent = 'Target color (illustration)';
+      chip.style.background = 'rgb(' + c + ')'; rgb.textContent = 'RGB(' + c.join(', ') + ')';
     }
     function go() {
       timers.forEach(clearTimeout); timers = []; ran = true;
@@ -188,7 +187,7 @@
       teach: [C[3], R[1], 'Teaching', 'hp', 'Classes and outreach that bring questions back.'],
       expert: [C[3], R[2], 'Expert interviews', 'hp', 'Agronomists and testers shape how results are used.'],
       samples: [C[4], R[0], 'Samples', 'wet', 'Real soil samples to test against.'],
-      bench: [C[4], R[2], 'Bench tests', 'wet', 'Does the yeast respond, and can we read the color?']
+      bench: [C[4], R[2], 'Bench tests', 'wet', 'Does the yeast respond, and can we read the colour?']
     };
     function box(k) { var n = N[k], core = n[3] === 'core', w = n[2].length * (core ? 9.8 : 8.6) + (core ? 30 : 26); return { x: n[0], y: n[1], w: w, h: 40, l: n[0] - w / 2, r: n[0] + w / 2, t: n[1] - 20, b: n[1] + 20 }; }
     var G = 7; // gap between a line end and a node

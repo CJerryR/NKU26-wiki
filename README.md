@@ -1,17 +1,48 @@
-# NKU-iGEM 2026 Wiki（首页重做 v4：合规版）
+# NKU-iGEM 2026 Wiki（首页 v6）
+
+v6 以经典 V3 为底版，按《v6 首页修改清单》改写首页；土壤、中国地图和飞行三处移植自 3D v3（`source-2026-09-24-r4`）。构建方式不变：
+
+```bash
+python3 build.py
+cd public && python3 -m http.server 8000
+```
+
+## v6 页面顺序与停顿点
+
+| 页 | 分区 id | 脚本 | 在哪里停 |
+|---|---|---|---|
+| 01–02 开屏 + 手电筒照土壤 | `opening` | `home-opening.js` | 滚一下标题扩散、镜头下沉；**找到线虫之前滚动无效**（底部提示，"Guide my light" 可自动找）；找到后显示 "Nematodes are behind it!"，约 0.9 秒后再滚一次才离开 |
+| 03 世界地图 | `world` | `home-maps.js` | 进入时手电筒变成聚光灯，先照亮标题再展开（约 2.8 秒）；到达后停留，需要更明确的一次滚动才离开；离开时地图放大进 China、画面转暗 |
+| 04 中国地图 → 田地 → 根部 | `china` | `home-zoom3d.js` | 5 步：农区 1.7 秒 → 高空到田地 4.6 秒（在田地停）→ 田地到土壤 4.4 秒 → 根部 3.4 秒 → 问句；飞行中快速滚动不能跳过；问句出现后再滚一次才离开 |
+| 05 侵害 | `threat` | `home-threat.js` | 先看四个长方体，之后每个侵染阶段一步 |
+| 化学线索 / 信号组合 | `traces` / `combo` | `home-story.js` | 沿用 V3 |
+| 06 干湿实验 | `signal` | `home-story.js` | 湿实验信号链在中间，两侧是干实验空位（Model、Software），动画播完再滚 |
+| 06 HP | `hp` | `home-maps.js` | 三张中国地图：问卷、支教、土壤计划 |
+| 07 闭环 / 08 成果 / 09 Explore | `loop` / `built` / `explore` | `home-story.js` | 沿用 V3；成果卡换成 3D 版图标 |
+
+停顿规则写在各分区的 `NKUH.scene()` 里，由 `js/home-pager.js` 执行，v6 新增字段：`canLeave()` / `blocked()`（开屏找线虫）、`noSkip`（飞行不可快进）、`dwell` 与 `leaveDelta`（停留时间与离开所需的滚动力度）、`leave()` 返回毫秒数（离开前先播退场动画）。
+
+## 各页要点
+
+- **开屏**：标题只保留一句，米黄色加粗。地下是 3D v3 的 three.js 土壤，光束、浮尘和光斑用 V3 的 2D 画法叠在上面；光圈外全黑（着色器里的 `uAmb` 在下沉时降到 0）。线虫躺在土里一条暗色隧道中，身上有土粒遮挡，只有被照到时才看得见。底部一句话随光照内容变化（泥土、石子、健康根系、受伤根系、自由生活线虫、信号、轨迹、线虫）。
+- **吉祥物拿手电筒**：`img/shell/detective-torch.png` 是去掉放大镜和右手的侦探图，手电筒和拳头是 `_partials/mascot.html` 里的 SVG，由 `NKUDetective.aim()` 转向光斑，光束从 `NKUDetective.torchTip()` 射出。只在开屏显示；美工给正式图后替换这张 PNG 和 SVG 即可。
+- **世界地图**：色块由真实丰度数据画出（每个样点一块水彩斑，按 log10(x+1) 着色）；China 采用 3D 版样式（紫色填充、金色呼吸描边、声呐波纹、"Look closer" 标签）。卡片只由 7 个案例点触发，鼠标移出卡片后自动关闭；正面是线虫、作物和最近样点丰度，翻面是损失与出处。
+- **中国地图**：一张发光 3D 地图，同时标出胞囊线虫（绿色锥体，22 省）、根结线虫（粉色，20 省）和新疆调查（金色）；左侧只有一个小图例，悬停标记显示记录。问句移到画面下方并加渐变衬底，去掉了原来压住根部的中心暗色遮罩。
+- **侵害**：四个长方体是同一块土在四个阶段的样子，用代码绘制。放大镜显示的是同一位置放大后的画面（`<use>` 复制场景并放大），另有只在近看时出现的细节层：J2 口针、ascr#3 / ascr#18 结构、巨型细胞、雌虫与卵囊。
+- **HP 三张地图**：省份数值是固定种子的随机数（`home-maps.js` 顶部 `HPD`），页面、悬停提示和放大弹窗都标注 "Illustrative data"。换成真实数据时，只需把 `HPD.survey / teach / soil` 改成 `{ 省名: 数值 }`。
+- **导航**：Logo 区高于右侧菜单，两行 NKU26 / NemaKlear；下拉菜单与菜单栏同一种玻璃；悬停 Logo 只轻转、不放大；液态玻璃的折射区覆盖整个面板（`js/shell.js` 的 `PRESETS`），模糊降到很低。真折射只在 Chrome / Edge 生效，Safari 和 Firefox 显示为轻度磨砂。
+
+## 数据
+
+见 `DATA_SOURCES.md`。`js/home-abundance.js`（1,901 个像元，van den Hoogen et al. 2020，CC0）和 `js/home-maps-data.js`（世界案例、中国省级记录）来自数据交接包，原始 CSV 在 `data/raw/`，校验值见 `data/MANIFEST.txt`，生成脚本 `tools/build_abundance.py`。省级标记放在省内示意点上，表示文献记录，不是检测地点。
+
+---
+
+以下为 V3 原说明。
+
+# NKU-iGEM 2026 Wiki（首页重做 v3）
 
 纯静态站点。`python3 build.py` 把 `_content/`、`_partials/`、`css/`、`js/`、`img/` 拼装到 `public/`，不依赖任何框架或 npm。
-
-> **任何人或 AI 助手修改本仓库前，必须先读 [`AGENTS.md`](AGENTS.md)。** 里面是 iGEM 2026 合规的硬性要求，包括：
-> - 标准 URL
-> - 页脚链接到 GitLab 仓库，并显示 CC BY 4.0
-> - 资源托管在 static.igem.wiki
-> - 10 MiB 体积上限
-> - 使用官方 Attributions 表
-> - 不编造数据和引用
-> - 不劫持滚动
->
-> `CLAUDE.md` 会让 Claude Code 自动加载这份文件。
 
 ## 本地运行
 
@@ -25,13 +56,7 @@ cd public && python3 -m http.server 8000
 
 ## 首页结构
 
-### 滚动方式
-
-默认是**原生滚动**，只在分区边缘加轻度吸附（`scroll-snap-type: y proximity`），右侧圆点可以直接跳到各分区。`opening` 和 `threat` 是吸顶长场景，按滚动位置推进各个步骤。世界地图分区也会吸顶：光圈从手电筒最后停留的位置随滚动展开。
-
-下面描述的"一页一页走"模式仍然保留在 `js/home-pager.js` 里，但**默认关闭**，只有 `_data/site.json` 的 `home_paged_scroll` 设为 `true` 才会启用。它会接管滚轮，评审在触控板上可能会觉得页面"卡住"，所以是否打开由团队决定。
-
-### 翻页方式：一页一页走（可选，默认关闭）
+### 翻页方式：一页一页走
 
 宽屏且使用鼠标或触控板时（`pointer:fine`，宽 ≥ 960px，高 ≥ 600px，且未开启“减少动态效果”），首页按页翻动，由 `js/home-pager.js` 控制：
 
@@ -158,54 +183,6 @@ python3 tools/audit_wiki_content.py --generated --generated-root public
 审查脚本会拦截占位词、编辑指令和过度声明，提交前应为 PASS。
 
 ## 本版文件变更
-
-v5（数据来源）：
-
-- **首页数据全部改为真实来源**，逐条登记在 `DATA_SOURCES.md`。
-- **全球层**：
-  - 丰度只画 van den Hoogen et al. 2020 的实测像元，由 `tools/build_abundance.py` 生成。
-  - 6 个危害案例标记各自带出处：美国、巴西、欧洲、乌干达、中国、澳大利亚。
-  - 点击大洲显示该洲实测丰度的中位数和像元数。
-- **中国层**：按团队文档改为 3 张图。
-  - 丰度图：与全球层同一数据、同一色阶。
-  - 大豆胞囊线虫图：22 个省份，标出东北和黄淮海，给出减产幅度、年损失和寄主。
-  - 南方根结线虫图：CABI 的 20 个省份加新疆，给出寄主范围和湖南调查数据。
-  - 删除了使用示意数值的"潜力"柱图。
-  - 新增央视网上的院士发言，以及转场问句"How do nematodes infect a plant?"。
-- **其他分区**：
-  - `signal` 删掉了编造的 RGB 数值。
-  - `traces` 两组不再随机显示信号比例。
-  - 开场提示语改回团队文档的原文。
-- **审查脚本**：新增拦截示意数据写法的检查。
-
-v4（合规）：
-
-- **标准 URL**：所有页面改为 `/<route>/`，不再有 `pages/*.html`。
-  - 新增或调整的路由：`description`、`results`、`notebook`、`experiments`（原 wet-lab）、`team`（原 team-members）、`attributions`（原 attribution）。
-  - `results`、`notebook`、`experiments` 取消了隐藏。
-- **Attributions**：页面顶部嵌入官方表格 `teams.igem.org/wiki/6303/attributions`。
-- **页脚**：仓库链接只取 GitLab CI 提供的地址，或由 `site.json` 的 `igem_team_slug` 生成的 gitlab.igem.org 地址，删除了 GitHub 回退地址。
-- **资源托管**：`build.py --static-base …` 会把图片和字体引用改成 static.igem.wiki 地址，并生成 `_uploads/` 和上传清单。首页脚本的图片路径改为经过 `NKUH.asset()`。
-- **审查脚本**扩展了以下检查：
-  - 标准 route 是否齐全
-  - 每页页脚是否有 CC BY 4.0 和 GitLab 链接
-  - 是否从 iGEM 以外加载资源（允许 igem.org 和 igem.wiki）
-  - Attributions 页是否嵌入了官方表格
-  - `public/` 是否小于 10 MiB
-  - 图片和字体是否仍由仓库提供
-  - `--release` 模式会把警告也算作失败
-- **首页**：
-  - 首屏以 NemaKlear 为主标题，配一句话说明和两个入口按钮。
-  - 默认改回原生滚动。
-  - 示意数据不再显示：世界丰度色块、中国"环境"和"潜力"两张图，只有 `js/home-abundance.js` 提供实测数据时才会出现。
-  - US$173 billion 标注了出处。
-  - 首页拼写统一为 color。
-  - 小字对比度提高。
-  - 手机端修复了导航遮挡队名、玻璃过透、吉祥物遮挡标题的问题。
-- **AI 使用披露**：`/licensing` 补充了 Anthropic Claude 的使用范围。
-- **新增** `AGENTS.md` 和 `CLAUDE.md`。
-
-v3：
 
 v3（本次）：
 

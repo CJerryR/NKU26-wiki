@@ -1,344 +1,271 @@
-/* NKU homepage — 04 the hidden threat.
-   One continuous scene, played in five stages (B12 sketch): eggs in the soil,
-   juveniles hatch, they release ascarosides on the way, one enters a root and
-   settles, and only then does the plant show it. A camera pans and zooms
-   through a single soil cross-section, so each scroll moves the story
-   sideways instead of swapping pictures. */
+/* NKU homepage v6 — 05 the hidden threat.
+ * Four blocks of the same patch of soil, one per stage of the infection:
+ * finding a host, releasing ascarosides (the step this project is about),
+ * invading the root, yellowing above ground. The pager shows all four, then
+ * one stage per scroll. The lens enlarges the same spot of the same block:
+ * a scaled copy of the scene plus details only visible up close (the J2's
+ * stylet, ascr#3 / ascr#18, giant cells, a female and her egg mass).
+ * Drawn in code; structures and sizes are simplified illustrations. */
 (function () {
   'use strict';
   var H = window.NKUH; if (!H) return;
-  var NS = 'http://www.w3.org/2000/svg';
-  function el(tag, attrs, parent) { var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
-  function f1(v) { return Math.round(v * 10) / 10; }
-  /* smooth path through points (Catmull-Rom → cubic Bézier) */
-  function curve(pts) {
-    var d = 'M' + f1(pts[0][0]) + ',' + f1(pts[0][1]);
-    for (var i = 0; i < pts.length - 1; i++) {
-      var p0 = pts[i - 1] || pts[i], p1 = pts[i], p2 = pts[i + 1], p3 = pts[i + 2] || p2;
-      d += 'C' + f1(p1[0] + (p2[0] - p0[0]) / 6) + ',' + f1(p1[1] + (p2[1] - p0[1]) / 6) + ' ' + f1(p2[0] - (p3[0] - p1[0]) / 6) + ',' + f1(p2[1] - (p3[1] - p1[1]) / 6) + ' ' + f1(p2[0]) + ',' + f1(p2[1]);
+  var ZOOM = 2.5, LR = 58;
+  var STAGES = [
+    { n: 1, t: 'Finding a host', p: 'Second-stage juveniles (J2) hatch from eggs in the soil and swim through water films toward the chemicals leaking from root tips.', hot: [228, 250] },
+    { n: 2, t: 'Releasing ascarosides', p: 'While they move and gather, nematodes release ascarosides such as ascr#3 and ascr#18. These small molecules linger in the soil around the roots. They are the clue NemaKlear is designed to read.', hot: [182, 226], key: true },
+    { n: 3, t: 'Invading the root', p: 'A juvenile pierces the root near its tip, settles inside and turns nearby cells into giant feeding cells. The root swells into knots called galls.', hot: [210, 203] },
+    { n: 4, t: 'Yellowing above ground', p: 'With galled roots the plant takes up less water and nutrients. Leaves yellow and wilt, easily mistaken for drought, while the next generation of eggs goes back into the soil.', hot: [226, 238] }
+  ];
+
+  function rnd(seed) { var s = seed; return function () { s = (s * 16807) % 2147483647; return (s - 1) / 2147483646; }; }
+  var ROOT_MAIN = 'M206 121C204 150 212 170 208 200S216 240 214 262';
+  var LAT = ['M207 150C190 160 170 168 150 190C140 200 128 206 118 222', 'M208 165C226 172 246 182 262 204C272 216 280 226 292 236', 'M209 205C196 214 184 226 176 246', 'M211 222C226 230 238 244 246 262', 'M150 190C146 206 146 222 140 238', 'M262 204C270 220 268 236 274 252'];
+  var LAT_SHORT = ['M207 150C192 158 178 166 166 182', 'M208 165C224 172 238 180 248 194', 'M209 205C200 212 192 222 188 234', 'M211 222C222 228 230 238 234 250'];
+  function soil() {
+    var r = rnd(4242), s = '', i;
+    s += '<path d="M340 120L384 90V270L340 300Z" fill="url(#th-right)"/>';
+    s += '<path d="M40 120L84 90H384L340 120Z" fill="url(#th-top)"/>';
+    s += '<rect x="40" y="120" width="300" height="180" fill="url(#th-front)"/>';
+    s += '<g fill="none" stroke-linecap="round"><path d="M40 164C110 156 210 176 340 160" stroke="rgba(38,24,18,.34)" stroke-width="2"/><path d="M40 214C140 206 240 228 340 210" stroke="rgba(38,24,18,.3)" stroke-width="1.6"/><path d="M40 262C120 254 230 276 340 258" stroke="rgba(214,186,146,.22)" stroke-width="2.4"/>';
+    s += '<path d="M340 160L384 132M340 210L384 184M340 258L384 232" stroke="rgba(20,12,9,.35)" stroke-width="1.4"/></g>';
+    var peb = ['#8b6f58', '#76604e', '#b59a7f', '#9c7f63', '#5e4636', '#c8b095'];
+    for (i = 0; i < 30; i++) {
+      var x = 50 + r() * 282, y = 150 + Math.pow(r(), .7) * 144, rx = 2.4 + Math.pow(r(), 2) * (5 + (y - 150) / 18), ry = rx * (.55 + r() * .3);
+      s += '<ellipse cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" rx="' + rx.toFixed(1) + '" ry="' + ry.toFixed(1) + '" transform="rotate(' + Math.round(r() * 180) + ' ' + x.toFixed(1) + ' ' + y.toFixed(1) + ')" fill="' + peb[(r() * peb.length) | 0] + '" stroke="rgba(30,20,14,.45)" stroke-width=".8"/>';
+    }
+    s += '<g fill="rgba(240,220,190,.28)">';
+    for (i = 0; i < 70; i++) s += '<circle cx="' + (42 + r() * 296).toFixed(1) + '" cy="' + (122 + r() * 176).toFixed(1) + '" r="' + (.5 + r() * .9).toFixed(2) + '"/>';
+    s += '</g><g fill="rgba(20,12,8,.35)">';
+    for (i = 0; i < 50; i++) s += '<circle cx="' + (42 + r() * 296).toFixed(1) + '" cy="' + (122 + r() * 176).toFixed(1) + '" r="' + (.6 + r() * 1.1).toFixed(2) + '"/>';
+    s += '</g><g fill="rgba(255,240,215,.2)">';
+    for (i = 0; i < 40; i++) { var tx = 90 + r() * 280, ty = 93 + r() * 25; s += '<ellipse cx="' + (tx - (ty - 93) * 1.4).toFixed(1) + '" cy="' + ty.toFixed(1) + '" rx="' + (1 + r() * 2.4).toFixed(1) + '" ry="' + (.6 + r()).toFixed(1) + '"/>'; }
+    s += '</g><g stroke="#86a35b" stroke-width="1.3" stroke-linecap="round">';
+    for (i = 0; i < 26; i++) { var gx = 46 + r() * 290; s += '<path d="M' + gx.toFixed(1) + ' 120l' + ((r() - .5) * 5).toFixed(1) + ' -' + (3 + r() * 6).toFixed(1) + '"/>'; }
+    return s + '</g>';
+  }
+  function roots(kind) {
+    var lat = kind === 4 ? LAT_SHORT : LAT, s = '<g fill="none" stroke-linecap="round" class="th-roots">';
+    lat.forEach(function (d) { s += '<path d="' + d + '" stroke="#6e5240" stroke-width="3.8"/>'; });
+    s += '<path d="' + ROOT_MAIN + '" stroke="#6e5240" stroke-width="6.6"/>';
+    lat.forEach(function (d) { s += '<path d="' + d + '" stroke="' + (kind >= 3 ? '#dfc2a0' : '#e2cfa8') + '" stroke-width="2.2"/>'; });
+    s += '<path d="' + ROOT_MAIN + '" stroke="' + (kind >= 3 ? '#e2c0a0' : '#e6d4ae') + '" stroke-width="4.4"/>';
+    s += '<path d="' + ROOT_MAIN + '" stroke="rgba(255,248,230,.55)" stroke-width="1.2" transform="translate(-1 0)"/></g>';
+    var hairs = '<g stroke="rgba(240,226,198,.5)" stroke-width=".5">';
+    [[212, 244], [214, 250], [213, 238], [210, 232]].forEach(function (p, i) { hairs += '<path d="M' + p[0] + ' ' + p[1] + 'l' + (i % 2 ? 5 : -5) + ' ' + (i % 2 ? -2 : 2) + '"/>'; });
+    return s + hairs + '</g>';
+  }
+  function gall(x, y, rx, ry, rot) {
+    return '<ellipse cx="' + x + '" cy="' + y + '" rx="' + rx + '" ry="' + ry + '" transform="rotate(' + (rot || 0) + ' ' + x + ' ' + y + ')" fill="url(#th-gall)" stroke="#7c4a40" stroke-width="1"/>' +
+      '<ellipse cx="' + (x - rx * .3) + '" cy="' + (y - ry * .35) + '" rx="' + (rx * .3) + '" ry="' + (ry * .22) + '" fill="rgba(255,240,228,.5)"/>';
+  }
+  function plant(kind) {
+    var col = kind === 4 ? ['#a9913a', '#c9a23f', '#dcbf55'] : kind === 3 ? ['#7d9a4d', '#9cb462', '#aec372'] : ['#5f8f3e', '#7fae57', '#8cbc63'];
+    var droop = kind === 4 ? .55 : kind === 3 ? .15 : 0;
+    var stem = kind === 4 ? 'M206 121C207 104 204 88 214 70' : 'M206 121C207 100 204 80 208 56';
+    var s = '<g class="th-plant"><path d="' + stem + '" fill="none" stroke="' + (kind === 4 ? '#8f8a45' : '#5b7f3a') + '" stroke-width="2.6" stroke-linecap="round"/>';
+    var L = kind === 4 ? [[206.4, 106, -1, 28], [206.3, 96, 1, 29], [207, 86, -1, 24], [210, 76, 1, 18]] : [[206.4, 106, -1, 30], [206.2, 96, 1, 32], [205.6, 84, -1, 27], [207, 72, 1, 22], [208, 60, -1, 15]];
+    L.forEach(function (l, i) {
+      var len = l[3], a = l[2] * (62 + droop * 70 + i * 3), c = col[i % 3];
+      s += '<g transform="translate(' + l[0] + ' ' + l[1] + ') rotate(' + a + ')"><path d="M0 0C' + (len * .42) + ' ' + (-len * .18) + ' ' + (len * .34) + ' ' + (-len * .86) + ' 0 ' + (-len) + 'C' + (-len * .34) + ' ' + (-len * .86) + ' ' + (-len * .42) + ' ' + (-len * .18) + ' 0 0Z" fill="' + c + '"/>' +
+        '<path d="M0 -1V' + (-len * .9) + '" stroke="rgba(255,248,220,.35)" stroke-width=".7"/>' +
+        (kind === 4 && i < 2 ? '<path d="M' + (len * .12) + ' ' + (-len * .5) + 'c3 -2 5 -1 6 1" stroke="#8a5a2a" stroke-width=".8" fill="none"/>' : '') + '</g>';
+    });
+    if (kind === 4) s += '<path d="M150 112c6-3 12-2 16 2c-6 3-12 2-16-2z" fill="#c9a23f" opacity=".85"/>';
+    return s + '</g>';
+  }
+  function eggs(x, y, n, sc) {
+    var r = rnd(Math.round(x * 7 + y)), s = '<g class="th-eggs">';
+    for (var i = 0; i < n; i++) s += '<ellipse cx="' + (x + (r() - .5) * 14 * sc).toFixed(1) + '" cy="' + (y + (r() - .5) * 9 * sc).toFixed(1) + '" rx="' + (2.8 * sc).toFixed(1) + '" ry="' + (1.9 * sc).toFixed(1) + '" transform="rotate(' + Math.round(r() * 180) + ' ' + x + ' ' + y + ')" fill="#f3e6c8" stroke="#a88a63" stroke-width=".6"/>';
+    return s + '</g>';
+  }
+  var jid = 0;
+  function j2(x, y, ang, len, cls) {
+    jid++;
+    return '<g class="th-j2 ' + (cls || '') + '" data-j2="' + [x, y, ang, len, (jid * 1.7) % 6].join(' ') + '"><path class="th-j2__o" d=""/><path class="th-j2__b" d=""/><circle class="th-j2__h" r="1.5" cx="' + x + '" cy="' + y + '"/></g>';
+  }
+  function wormD(x, y, ang, len, ph, amp) {
+    var d = '', dx = Math.cos(ang), dy = Math.sin(ang), nx = -dy, ny = dx;
+    for (var i = 0; i <= 14; i++) {
+      var u = i / 14, w = Math.sin(u * Math.PI * 2.3 + ph) * amp * Math.pow(u, .7);
+      d += (i ? 'L' : 'M') + (x - dx * len * u + nx * w).toFixed(1) + ' ' + (y - dy * len * u + ny * w).toFixed(1);
     }
     return d;
   }
-  /* sample a Catmull-Rom curve into an arc-length table */
-  function sampler(pts, n) {
-    var raw = [];
-    for (var i = 0; i < pts.length - 1; i++) {
-      var p0 = pts[i - 1] || pts[i], p1 = pts[i], p2 = pts[i + 1], p3 = pts[i + 2] || p2;
-      for (var k = 0; k < 24; k++) {
-        var t = k / 24, t2 = t * t, t3 = t2 * t;
-        raw.push([.5 * (2 * p1[0] + (-p0[0] + p2[0]) * t + (2 * p0[0] - 5 * p1[0] + 4 * p2[0] - p3[0]) * t2 + (-p0[0] + 3 * p1[0] - 3 * p2[0] + p3[0]) * t3),
-                  .5 * (2 * p1[1] + (-p0[1] + p2[1]) * t + (2 * p0[1] - 5 * p1[1] + 4 * p2[1] - p3[1]) * t2 + (-p0[1] + 3 * p1[1] - 3 * p2[1] + p3[1]) * t3)]);
-      }
+  function mols(cx, cy, n, seed) {
+    var r = rnd(seed), s = '<g class="th-mols">';
+    for (var i = 0; i < n; i++) {
+      var a = r() * 6.283, d = 8 + r() * 46, x = cx + Math.cos(a) * d, y = cy + Math.sin(a) * d * .8;
+      s += '<circle class="th-mol" cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="' + (1.5 + r() * 1.2).toFixed(1) + '" fill="' + (i % 2 ? '#4c8dff' : '#ff5e86') + '" style="--dx:' + (Math.cos(a) * 9).toFixed(1) + 'px;--dy:' + (Math.sin(a) * 7).toFixed(1) + 'px;--d:' + (r() * 3).toFixed(2) + 's"/>';
     }
-    raw.push(pts[pts.length - 1]);
-    var L = [0]; for (i = 1; i < raw.length; i++) L.push(L[i - 1] + Math.hypot(raw[i][0] - raw[i - 1][0], raw[i][1] - raw[i - 1][1]));
-    var total = L[L.length - 1];
-    return {
-      len: total,
-      at: function (u) {
-        var d = H.clamp(u, 0, 1) * total, lo = 0, hi = L.length - 1;
-        while (hi - lo > 1) { var m = (lo + hi) >> 1; if (L[m] < d) lo = m; else hi = m; }
-        var f = (d - L[lo]) / ((L[hi] - L[lo]) || 1), a = raw[lo], b = raw[hi];
-        return [a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f, Math.atan2(b[1] - a[1], b[0] - a[0])];
-      }
-    };
+    return s + '</g>';
+  }
+  function pill(x, y, text, fs) {
+    fs = fs || 4.2;
+    var w = text.length * fs * .56 + fs * 1.6;
+    return '<g class="th-pill"><rect x="' + x + '" y="' + (y - fs * 1.1).toFixed(2) + '" width="' + w.toFixed(1) + '" height="' + (fs * 1.75).toFixed(1) + '" rx="' + (fs * .87).toFixed(1) + '" fill="rgba(24,14,12,.84)"/><text x="' + (x + fs * .8).toFixed(1) + '" y="' + (y + fs * .25).toFixed(1) + '" font-size="' + fs + '" fill="#fff4dc">' + text + '</text></g>';
+  }
+  function lead(x1, y1, x2, y2) { return '<path d="M' + x1 + ' ' + y1 + 'L' + x2 + ' ' + y2 + '" stroke="#fff4dc" stroke-width=".35" fill="none"/>'; }
+  function ascr(x, y, chain, col, sc) {
+    var s = '<g transform="translate(' + x + ' ' + y + ') scale(' + sc + ')" fill="none" stroke="' + col + '" stroke-linecap="round" stroke-linejoin="round"><path d="M6.1 3.5L0 7-6.1 3.5V-3.5L0-7 6.1-3.5Z" stroke-width="1.8"/><circle cx="-6.1" cy="-3.5" r="1.4" fill="' + col + '" stroke="none"/><circle cx="0" cy="7" r="1.4" fill="' + col + '" stroke="none"/><path d="M6.1-3.5';
+    for (var i = 1; i <= chain; i++) s += 'L' + (6.1 + i * 4) + ' ' + (i % 2 ? -7 : -3.5);
+    return s + '" stroke-width="1.6"/><circle cx="' + (6.1 + chain * 4 + 2) + '" cy="' + (chain % 2 ? -7.6 : -3) + '" r="1.5" fill="' + col + '" stroke="none"/></g>';
+  }
+
+  function sceneContent(k) {
+    var s = soil();
+    if (k === 1) {
+      s += '<circle cx="214" cy="262" r="42" fill="url(#th-exud)" class="th-pulse"/>' + roots(1);
+      s += eggs(96, 266, 9, 1) + '<ellipse cx="96" cy="266" rx="14" ry="9" fill="none" stroke="rgba(243,230,200,.35)" stroke-dasharray="1.5 2"/>';
+      s += j2(236, 250, -2.75, 30, 'is-hot') + j2(150, 244, .15, 28) + j2(270, 290, -2.3, 26) + j2(112, 262, .6, 18, 'is-small');
+    }
+    if (k === 2) {
+      s += '<circle cx="190" cy="228" r="58" fill="url(#th-cyan)" class="th-pulse"/>' + roots(2) + mols(188, 228, 34, 77);
+      s += j2(184, 228, -.25, 30, 'is-hot') + j2(236, 250, -2.75, 28) + j2(162, 202, .9, 26);
+      s += '<circle cx="184" cy="228" r="10" class="th-ring"/><circle cx="184" cy="228" r="10" class="th-ring th-ring--2"/>';
+      s += '<g class="th-chips"><rect x="262" y="138" width="44" height="15" rx="7.5" fill="#4c8dff"/><text x="284" y="148.6" text-anchor="middle">ascr#3</text><rect x="262" y="158" width="48" height="15" rx="7.5" fill="#ff5e86"/><text x="286" y="168.6" text-anchor="middle">ascr#18</text></g>';
+    }
+    if (k === 3) {
+      s += roots(3) + gall(209, 203, 8.5, 6.5, 80) + gall(158, 184, 6.5, 5, 30) + gall(250, 190, 7, 5.2, -35) + gall(212, 243, 6, 4.8, 85);
+      s += j2(216, 257, -1.95, 26, 'is-in') + j2(128, 250, .3, 24) + '<circle cx="215" cy="255" r="3" fill="rgba(120,40,30,.55)"/>';
+    }
+    if (k === 4) {
+      s += '<circle cx="214" cy="220" r="70" fill="url(#th-red)" class="th-pulse th-pulse--slow"/>' + roots(4);
+      s += gall(208, 186, 9, 7, 80) + gall(174, 170, 7, 5.5, 30) + gall(236, 184, 7.5, 5.5, -35) + gall(212, 232, 10, 7.5, 85) + gall(196, 222, 6, 4.8, 40) + gall(228, 244, 8, 6, -20);
+      s += '<ellipse cx="236" cy="240" rx="5.5" ry="4" fill="#9b6a42" stroke="#6b4428" stroke-width=".6"/><ellipse cx="186" cy="176" rx="4.5" ry="3.4" fill="#9b6a42" stroke="#6b4428" stroke-width=".6"/>';
+      s += eggs(252, 262, 6, .9) + eggs(160, 250, 5, .9) + eggs(118, 214, 4, .9);
+    }
+    return s + plant(k) + '<path d="M40 120H340M340 120L384 90" stroke="rgba(255,240,210,.28)" stroke-width="1" fill="none"/>';
+  }
+  function microContent(k) {
+    var s = '';
+    if (k === 1) {
+      s += '<g stroke="#b99a70" stroke-width=".35" fill="rgba(240,222,190,.35)"><ellipse cx="213" cy="262" rx="2.4" ry="1.6"/><ellipse cx="216" cy="263" rx="2" ry="1.4"/><ellipse cx="211" cy="264.5" rx="2" ry="1.3"/><ellipse cx="214.5" cy="265.5" rx="1.8" ry="1.2"/></g>';
+      s += '<path d="M236.2 249.6L240.4 248.1" stroke="#5a2d14" stroke-width=".5" stroke-linecap="round"/><g stroke="#c96a2a" stroke-width=".25"><path d="M241 250.5l1 1.6M244 251.2l1 1.6M247 252.4l.9 1.6M250 253.8l.9 1.6"/></g>';
+      s += lead(240.5, 248, 244, 240) + pill(244, 240, 'stylet') + lead(252, 255, 257, 262) + pill(257, 262, 'J2 juvenile') + lead(215, 266, 205, 274) + pill(178, 274, 'root cap cells');
+      s += '<g fill="rgba(255,236,190,.8)"><circle cx="222" cy="258" r=".6"/><circle cx="226" cy="262" r=".5"/><circle cx="220" cy="266" r=".55"/><circle cx="229" cy="256" r=".45"/></g>' + pill(216, 250, 'root exudates', 3.6);
+    }
+    if (k === 2) {
+      s += ascr(173, 216, 3, '#7fb0ff', .42) + ascr(190, 238, 5, '#ff8fab', .42) + ascr(196, 214, 3, '#7fb0ff', .3) + ascr(168, 238, 5, '#ff8fab', .3);
+      s += pill(160, 207, 'ascr#3') + pill(194, 250, 'ascr#18') + pill(163, 262, 'sugar ring + fatty side chain', 3.4);
+    }
+    if (k === 3) {
+      s += '<g stroke="#7c4a40" stroke-width=".45" fill="#f1c9b4">';
+      [[205, 200, 4.2], [212.5, 199, 3.6], [208, 206.5, 3.8], [214.5, 206, 3]].forEach(function (c) {
+        var p = ''; for (var i = 0; i < 7; i++) { var a = i / 7 * 6.283; p += (i ? 'L' : 'M') + (c[0] + Math.cos(a) * c[2] * (.85 + (i % 3) * .08)).toFixed(2) + ' ' + (c[1] + Math.sin(a) * c[2] * .8).toFixed(2); }
+        s += '<path d="' + p + 'Z"/>';
+      });
+      s += '</g><g fill="#6b2f4a">';
+      [[204, 199.3], [205.8, 201], [204.6, 201.6], [211.8, 198.6], [213.3, 199.8], [207.4, 206], [208.9, 207.2], [214, 205.4], [215.2, 206.6]].forEach(function (p) { s += '<circle cx="' + p[0] + '" cy="' + p[1] + '" r=".45"/>'; });
+      s += '</g><path d="M209.5 203.2c2 .6 3.6 .1 4.6-1.2" stroke="#f08a3c" stroke-width="1.4" fill="none" stroke-linecap="round"/>';
+      s += lead(204, 197, 196, 190) + pill(168, 190, 'giant cells') + lead(214, 202, 222, 196) + pill(222, 196, 'feeding juvenile');
+    }
+    if (k === 4) {
+      s += '<path d="M222 236c-1.6-3.2.2-6.6 3.4-6.8c3.4-.2 5 3.4 3.4 6.4c-1 1.8-2.4 2.8-3.4 2.8s-2.6-.8-3.4-2.4z" fill="#fff6e6" stroke="#c7a883" stroke-width=".4"/>';
+      s += '<path d="M229.6 237.4c2.6-.4 5.8.4 7.4 2.4c1.4 2-.2 4-2.8 4.2c-2.8.2-5.4-1.4-5.8-3.6z" fill="rgba(160,113,74,.85)" stroke="#6b4428" stroke-width=".35"/><g fill="#f3e6c8" stroke="#a88a63" stroke-width=".2">';
+      [[231.4, 239.4], [233.2, 240.2], [234.8, 241.2], [232.2, 241.6], [230.6, 240.8], [234, 239]].forEach(function (p) { s += '<ellipse cx="' + p[0] + '" cy="' + p[1] + '" rx=".7" ry=".48"/>'; });
+      s += '</g>' + lead(223, 233, 214, 226) + pill(196, 226, 'female') + lead(236, 243, 242, 250) + pill(242, 250, 'egg mass');
+    }
+    return s;
   }
 
   H.ready(function () {
-    var sec = H.$('[data-threat]'); if (!sec) return;
-    var svg = H.$('[data-th-svg]', sec), head = H.$('[data-th-head]', sec), track = H.$('[data-th-track]', sec);
-    var bars = H.$$('[data-th-bar] i', sec), items = H.$$('li', track), chips = H.$$('[data-th-chip]', sec);
-    var P = document.body.getAttribute('data-path-prefix') || '';
-    var GROUND = 330, PX = 1900, IS = [1702, 626];
-    var rnd = H.rand(21);
-
-    /* ---------- defs ---------- */
-    var defs = el('defs', {}, svg);
-    function radial(id, stops) { var g = el('radialGradient', { id: id }, defs); stops.forEach(function (s) { el('stop', { offset: s[0], 'stop-color': s[1], 'stop-opacity': s[2] }, g); }); }
-    radial('thGlowB', [[0, '#8fb6ff', .95], [.35, '#4c8dff', .55], [1, '#4c8dff', 0]]);
-    radial('thGlowP', [[0, '#ffb3c4', .95], [.35, '#ff5e86', .55], [1, '#ff5e86', 0]]);
-    radial('thGlowR', [[0, '#ff5a4f', .75], [.5, '#e0413f', .3], [1, '#e0413f', 0]]);
-    var sg = el('linearGradient', { id: 'thSoil', x1: 0, y1: 0, x2: 0, y2: 1 }, defs);
-    el('stop', { offset: 0, 'stop-color': '#7a4d36' }, sg); el('stop', { offset: .45, 'stop-color': '#5e3a2a' }, sg); el('stop', { offset: 1, 'stop-color': '#3f261d' }, sg);
-    var sk = el('linearGradient', { id: 'thSky', x1: 0, y1: 0, x2: 0, y2: 1 }, defs);
-    el('stop', { offset: 0, 'stop-color': '#f7f0e3' }, sk); el('stop', { offset: 1, 'stop-color': '#efe2cc' }, sk);
-    var clip = el('clipPath', { id: 'thSoilClip' }, defs);
-
-    var cam = el('g', {}, svg);
-    /* ---------- sky & ground ---------- */
-    el('rect', { x: -1200, y: -1400, width: 5200, height: GROUND + 1400, fill: 'url(#thSky)' }, cam);
-    var hills = []; for (var x = -1200; x <= 4000; x += 60) hills.push([x, GROUND - 40 - 34 * Math.sin(x / 380) - 18 * Math.sin(x / 150 + 1)]);
-    el('path', { d: 'M-1200,' + GROUND + 'L' + hills.map(function (p) { return f1(p[0]) + ',' + f1(p[1]); }).join('L') + 'L4000,' + GROUND + 'Z', fill: '#e7d8bf' }, cam);
-    var surf = []; for (x = -1200; x <= 4000; x += 40) surf.push([x, GROUND + Math.sin(x / 90) * 4 + Math.sin(x / 37) * 2]);
-    var soilD = 'M-1200,2200L' + surf.map(function (p) { return f1(p[0]) + ',' + f1(p[1]); }).join('L') + 'L4000,2200Z';
-    el('path', { d: soilD }, clip);
-    var soil = el('g', { 'clip-path': 'url(#thSoilClip)' }, cam);
-    el('rect', { x: -1200, y: GROUND - 20, width: 5200, height: 2000, fill: 'url(#thSoil)' }, soil);
-    el('image', { href: H.asset('img/home/soil-print.png'), x: -1200, y: GROUND + 10, width: 5200, height: 1500, preserveAspectRatio: 'none', opacity: .045 }, soil);
-    for (var r = 0; r < 5; r++) {
-      var y0 = GROUND + 150 + r * 125, pts = [];
-      for (x = -1200; x <= 4000; x += 160) pts.push([x, y0 + Math.sin(x / 260 + r) * 16]);
-      el('path', { d: curve(pts), fill: 'none', stroke: 'rgba(255,228,200,.07)', 'stroke-width': 3 }, soil);
-    }
-    el('path', { d: 'M-1200,' + GROUND + 'L' + surf.map(function (p) { return f1(p[0]) + ',' + f1(p[1] + 16); }).join('L') + 'L4000,' + (GROUND - 30) + 'L-1200,' + (GROUND - 30) + 'Z', fill: '#4a2d21', opacity: .55 }, soil);
-    for (var i = 0; i < 90; i++) {
-      var px = -200 + rnd() * 3000, py = GROUND + 50 + rnd() * 700, rx = 5 + rnd() * 20, ry = 3 + rnd() * 11;
-      el('ellipse', { cx: f1(px), cy: f1(py), rx: f1(rx), ry: f1(ry), transform: 'rotate(' + Math.round(rnd() * 180) + ' ' + f1(px) + ' ' + f1(py) + ')', fill: rnd() < .5 ? '#8a624b' : '#6f4b39', opacity: .85 }, soil);
-    }
-    for (i = 0; i < 320; i++) el('circle', { cx: f1(-200 + rnd() * 3000), cy: f1(GROUND + 20 + rnd() * 760), r: f1(.8 + rnd() * 2.4), fill: rnd() < .55 ? 'rgba(255,232,205,.16)' : 'rgba(20,8,4,.28)' }, soil);
-
-    /* ---------- feeding-site glow (under the roots) ---------- */
-    var glow = el('circle', { cx: IS[0], cy: IS[1], r: 120, fill: 'url(#thGlowR)', opacity: 0 }, cam);
-
-    /* ---------- roots ---------- */
-    var ROOTS = [
-      { w: 13, p: [[PX, GROUND - 4], [PX + 4, 420], [PX + 14, 560], [PX + 30, 720], [PX + 24, 870]] },
-      { w: 11, p: [[PX + 6, 430], [1800, 490], [1740, 560], [1700, 626], [1672, 700], [1650, 770]], inf: true },
-      { w: 6.5, p: [[PX + 10, 500], [2010, 540], [2090, 610], [2160, 720]] },
-      { w: 6, p: [[PX + 20, 620], [1850, 680], [1800, 760], [1780, 830]] },
-      { w: 5.5, p: [[PX + 28, 700], [2000, 760], [2050, 840], [2080, 900]] },
-      { w: 5, p: [[PX + 3, 380], [1990, 400], [2060, 440], [2120, 490]] },
-      { w: 3, p: [[1760, 540], [1700, 540], [1640, 575]] },
-      { w: 3, p: [[2090, 610], [2150, 600], [2220, 630]] },
-      { w: 2.5, p: [[1800, 760], [1740, 780], [1700, 830]] },
-      { w: 2.5, p: [[2060, 440], [2100, 400], [2150, 410]] }
-    ];
-    var rootG = el('g', { fill: 'none', 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, cam);
-    ROOTS.forEach(function (rt) { el('path', { d: curve(rt.p), stroke: '#b99a70', 'stroke-width': rt.w + 3 }, rootG); });
-    ROOTS.forEach(function (rt) { el('path', { d: curve(rt.p), stroke: '#f1e2c4', 'stroke-width': rt.w }, rootG); rt.s = sampler(rt.p); });
-    // root cells along the infected root, only readable when the camera is close
-    var inf = ROOTS[1].s, cells = el('g', { stroke: 'rgba(150,112,72,.45)', 'stroke-width': .6 }, cam);
-    for (var u = .35; u < .92; u += .012) {
-      var q = inf.at(u), nx = -Math.sin(q[2]), ny = Math.cos(q[2]);
-      el('line', { x1: f1(q[0] + nx * 3.2), y1: f1(q[1] + ny * 3.2), x2: f1(q[0] - nx * 3.2), y2: f1(q[1] - ny * 3.2) }, cells);
-    }
-    // gall with giant cells
-    var tangent = inf.at(.62)[2] * 180 / Math.PI;
-    var gall = el('g', { transform: 'translate(' + IS[0] + ',' + IS[1] + ') rotate(' + f1(tangent) + ') scale(0)' }, cam);
-    el('ellipse', { rx: 20, ry: 13, fill: '#f0cfa8', stroke: '#c69c70', 'stroke-width': 1.4 }, gall);
-    [[-8, -3, 5.5], [2, 3, 6], [9, -4, 4.5], [-2, -6, 3.5]].forEach(function (c) {
-      el('circle', { cx: c[0], cy: c[1], r: c[2], fill: '#f3a6a0', stroke: '#d9787a', 'stroke-width': .7 }, gall);
-      el('circle', { cx: c[0] - 1, cy: c[1] - 1, r: 1, fill: '#a8404d' }, gall); el('circle', { cx: c[0] + 1.6, cy: c[1] + .8, r: .8, fill: '#a8404d' }, gall);
+    var sec = H.$('[data-th]'); if (!sec) return;
+    var stageEl = H.$('.th__stage', sec), track = H.$('[data-th-track]', sec), cap = H.$('[data-th-cap]', sec);
+    var capN = H.$('[data-th-n]', cap), capT = H.$('[data-th-t]', cap), capP = H.$('[data-th-p]', cap), dotsEl = H.$('[data-th-dots]', sec);
+    var blocks = STAGES.map(function (st, i) {
+      var k = i + 1, fig = document.createElement('figure');
+      fig.className = 'th__block' + (st.key ? ' th__block--key' : '');
+      fig.innerHTML = '<svg viewBox="0 0 420 330" role="img" aria-label="Stage ' + k + ': ' + st.t + '. Move the lens to look closer.">' +
+        '<defs><clipPath id="th-lensclip-' + k + '"><circle r="' + LR + '" cx="' + st.hot[0] + '" cy="' + st.hot[1] + '" data-lensclip/></clipPath></defs>' +
+        '<g id="th-scene-' + k + '">' + sceneContent(k) + '</g>' +
+        '<g class="th__lensview" clip-path="url(#th-lensclip-' + k + ')"><rect width="420" height="330" fill="#2a1a14"/><g data-lenszoom><use href="#th-scene-' + k + '"/><g class="th__micro">' + microContent(k) + '</g></g></g>' +
+        '<g class="th__lens" data-lens><circle r="' + LR + '" fill="none" stroke="#f6e9c9" stroke-width="5"/><circle r="' + LR + '" fill="none" stroke="#7e0c6e" stroke-width="1.4"/><circle r="' + (LR - 4) + '" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="1"/><path d="M' + (LR * .71 + 2) + ' ' + (LR * .71 + 2) + 'L' + (LR * .71 + 34) + ' ' + (LR * .71 + 34) + '" stroke="#6b3f2a" stroke-width="10" stroke-linecap="round"/><path d="M' + (LR * .71 + 3) + ' ' + (LR * .71 + 3) + 'L' + (LR * .71 + 33) + ' ' + (LR * .71 + 33) + '" stroke="#8e5a3c" stroke-width="4" stroke-linecap="round"/></g>' +
+        '</svg><figcaption><b>' + k + '</b>' + st.t + '</figcaption>';
+      track.appendChild(fig);
+      var li = document.createElement('li'); dotsEl.appendChild(li);
+      return {
+        k: k, st: st, fig: fig, svg: fig.querySelector('svg'), dot: li,
+        clip: fig.querySelector('[data-lensclip]'), zoom: fig.querySelector('[data-lenszoom]'), lens: fig.querySelector('[data-lens]'),
+        worms: H.$$('[data-j2]', fig).filter(function (g) { return !g.closest('.th__lensview'); }).map(function (g) { var a = g.getAttribute('data-j2').split(' ').map(Number); return { o: g.children[0], b: g.children[1], x: a[0], y: a[1], ang: a[2], len: a[3], ph: a[4] }; }),
+        lx: st.hot[0], ly: st.hot[1], tx: st.hot[0], ty: st.hot[1]
+      };
     });
-
-    /* ---------- egg mass ---------- */
-    var EM = [430, 700], eggs = [], eggG = el('g', {}, cam);
-    el('path', { d: 'M' + (EM[0] - 78) + ',' + EM[1] + 'C' + (EM[0] - 80) + ',' + (EM[1] - 52) + ' ' + (EM[0] + 70) + ',' + (EM[1] - 60) + ' ' + (EM[0] + 82) + ',' + (EM[1] - 6) + 'C' + (EM[0] + 90) + ',' + (EM[1] + 44) + ' ' + (EM[0] - 70) + ',' + (EM[1] + 56) + ' ' + (EM[0] - 78) + ',' + EM[1] + 'Z', fill: 'rgba(246,226,168,.42)', stroke: 'rgba(236,206,140,.85)', 'stroke-width': 2 }, eggG);
-    var er = H.rand(4);
-    for (i = 0; i < 17; i++) {
-      var ex = EM[0] - 58 + (i % 6) * 22 + er() * 8, ey = EM[1] - 26 + Math.floor(i / 6) * 22 + er() * 6, rot = er() * 180;
-      var g = el('g', { transform: 'translate(' + f1(ex) + ',' + f1(ey) + ') rotate(' + Math.round(rot) + ')' }, eggG);
-      el('ellipse', { rx: 10, ry: 6, fill: '#fbf2d8', stroke: '#d8bf8a', 'stroke-width': 1.2 }, g);
-      var curl = el('path', { d: 'M-5,1C-5,-4 4,-4 4,0C4,3 -1,3 -1,0', fill: 'none', stroke: '#f09a42', 'stroke-width': 1.8, 'stroke-linecap': 'round' }, g);
-      eggs.push({ g: g, curl: curl, x: ex, y: ey });
+    var cur = 0;
+    function place(b) {
+      b.clip.setAttribute('cx', b.lx.toFixed(2)); b.clip.setAttribute('cy', b.ly.toFixed(2));
+      b.zoom.setAttribute('transform', 'translate(' + b.lx.toFixed(2) + ' ' + b.ly.toFixed(2) + ') scale(' + ZOOM + ') translate(' + (-b.lx).toFixed(2) + ' ' + (-b.ly).toFixed(2) + ')');
+      b.lens.setAttribute('transform', 'translate(' + b.lx.toFixed(2) + ' ' + b.ly.toFixed(2) + ')');
     }
-
-    /* ---------- particles & larvae layers ---------- */
-    var partG = el('g', {}, cam), larvaG = el('g', {}, cam);
-    var sheath = el('path', { d: curve(ROOTS[1].p.slice(1, 6)), fill: 'none', stroke: 'rgba(241,226,196,.78)', 'stroke-width': 11, 'stroke-linecap': 'round', opacity: 0 }, cam);
-    var newEggs = el('g', { transform: 'translate(' + (IS[0] - 22) + ',' + (IS[1] + 10) + ') scale(0)' }, cam);
-    el('ellipse', { rx: 16, ry: 11, fill: 'rgba(246,226,168,.7)', stroke: 'rgba(230,200,140,.95)', 'stroke-width': 1 }, newEggs);
-    for (i = 0; i < 7; i++) el('ellipse', { cx: -9 + (i % 4) * 6, cy: -4 + Math.floor(i / 4) * 7, rx: 3, ry: 2, fill: '#fbf2d8', stroke: '#d8bf8a', 'stroke-width': .6 }, newEggs);
-
-    /* ---------- grass & plant ---------- */
-    var grass = el('g', { fill: 'none', 'stroke-linecap': 'round' }, cam);
-    for (x = -300; x < 3100; x += 18 + rnd() * 16) {
-      var gy0 = GROUND + Math.sin(x / 90) * 4 - 2;
-      for (var b = 0; b < 3; b++) { var hh = 10 + rnd() * 22, lean = (rnd() - .5) * 14; el('path', { d: 'M' + f1(x + b * 3) + ',' + f1(gy0) + 'q' + f1(lean * .3) + ',' + f1(-hh * .6) + ' ' + f1(lean) + ',' + f1(-hh), stroke: rnd() < .5 ? '#86b45a' : '#6f9d45', 'stroke-width': 2.2 }, grass); }
-    }
-    // seedlings with their own shallow roots, so the field is not empty
-    [[980, .8], [1330, .65], [640, .55]].forEach(function (sd) {
-      var bx = sd[0], sc = sd[1], sg2 = el('g', { transform: 'translate(' + bx + ',' + GROUND + ') scale(' + sc + ')' }, cam);
-      el('path', { d: 'M0,4C4,90 -6,170 10,260M2,90C30,120 50,150 60,200M-2,140C-30,170 -40,210 -48,250', fill: 'none', stroke: '#b99a70', 'stroke-width': 6, 'stroke-linecap': 'round' }, sg2);
-      el('path', { d: 'M0,4C4,90 -6,170 10,260M2,90C30,120 50,150 60,200M-2,140C-30,170 -40,210 -48,250', fill: 'none', stroke: '#f1e2c4', 'stroke-width': 3.5, 'stroke-linecap': 'round' }, sg2);
-      el('path', { d: 'M0,2C-3,-40 3,-80 0,-120', fill: 'none', stroke: '#6f9f45', 'stroke-width': 5, 'stroke-linecap': 'round' }, sg2);
-      el('path', { d: 'M0,-110C20,-140 52,-138 64,-120C44,-104 18,-100 0,-110Z', fill: '#8cbc5e' }, sg2);
-      el('path', { d: 'M0,-100C-20,-130 -52,-128 -62,-108C-42,-94 -18,-92 0,-100Z', fill: '#7fb055' }, sg2);
-    });
-    var plant = el('g', {}, cam), stemTop = el('g', {}, plant);
-    el('path', { d: 'M' + PX + ',' + (GROUND + 2) + 'C' + (PX + 8) + ',250 ' + (PX - 10) + ',160 ' + (PX - 4) + ',50', fill: 'none', stroke: '#6f9f45', 'stroke-width': 9, 'stroke-linecap': 'round' }, stemTop);
-    /* trifoliate leaves on short petioles, alternating sides */
-    var leaves = [];
-    [[270, 1, 1.15], [222, -1, 1.1], [172, 1, 1], [124, -1, .88], [84, 1, .72], [56, -1, .5]].forEach(function (n, ni) {
-      var side = n[1], sx = PX - 4 + (GROUND - n[0]) * -.02, sy = n[0], tipX = sx + side * 34 * n[2], tipY = sy - 16 * n[2];
-      el('path', { d: 'M' + f1(sx) + ',' + sy + 'Q' + f1(sx + side * 18 * n[2]) + ',' + f1(sy - 2) + ' ' + f1(tipX) + ',' + f1(tipY), fill: 'none', stroke: '#6f9f45', 'stroke-width': 3.4, 'stroke-linecap': 'round' }, stemTop);
-      [22, 68, 114].forEach(function (deg, k) {
-        var ang = side * deg, len = (k === 1 ? 66 : 54) * n[2];
-        var lf = el('g', { transform: 'translate(' + f1(tipX) + ',' + f1(tipY) + ') rotate(' + ang + ')' }, stemTop);
-        var body = el('path', { d: 'M0,0C' + f1(len * .36) + ',' + f1(-len * .2) + ' ' + f1(len * .32) + ',' + f1(-len * .84) + ' 0,' + f1(-len) + 'C' + f1(-len * .32) + ',' + f1(-len * .84) + ' ' + f1(-len * .36) + ',' + f1(-len * .2) + ' 0,0Z', fill: '#86b85a' }, lf);
-        el('path', { d: 'M0,-3V' + f1(-len * .88), stroke: 'rgba(60,90,40,.45)', 'stroke-width': 1.4 }, lf);
-        leaves.push({ g: lf, body: body, ang: ang, x: tipX, y: tipY, side: side, k: k });
-      });
-    });
-
-    /* ---------- larvae ---------- */
-    var PATH0 = sampler([[EM[0] + 6, EM[1] - 8], [560, 652], [700, 704], [860, 640], [1020, 694], [1180, 632], [1340, 684], [1480, 640], [1600, 652], [IS[0] - 8, IS[1] + 4], [IS[0] + 10, IS[1] - 16]]);
-    function loopPath(cx, cy, rx, ry, ph) { var p = []; for (var k = 0; k <= 12; k++) { var a = k / 12 * Math.PI * 2 + ph; p.push([cx + Math.cos(a) * rx + Math.sin(a * 3) * 18, cy + Math.sin(a) * ry]); } return sampler(p); }
-    function larva(parent) {
-      var g = el('g', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', fill: 'none' }, parent);
-      return { g: g, o: el('path', { stroke: '#c46a22', 'stroke-width': 9.5 }, g), b: el('path', { stroke: '#f6a445', 'stroke-width': 7 }, g),
-        hl: el('path', { stroke: 'rgba(255,232,196,.65)', 'stroke-width': 1.6 }, g),
-        eye: el('circle', { r: 2.7, fill: '#fff' }, g), pup: el('circle', { r: 1.35, fill: '#2a1712' }, g) };
-    }
-    var L0 = larva(larvaG), L1 = larva(larvaG), L2 = larva(larvaG);
-    var LP1 = loopPath(640, 780, 150, 60, 0), LP2 = loopPath(330, 560, 130, 50, 2);
-    function drawLarva(Lv, pathS, u, t, len, thick, visible, amp) {
-      Lv.g.setAttribute('opacity', visible);
-      if (!visible) return null;
-      var pts = [], n = 16, step = len / pathS.len / n;
-      for (var k = 0; k <= n; k++) {
-        var q = pathS.at(u - k * step), wig = Math.sin(t * 7 - k * .75) * amp * Math.sin(Math.PI * k / n * .9 + .1);
-        pts.push([q[0] - Math.sin(q[2]) * wig, q[1] + Math.cos(q[2]) * wig]);
+    function layout() {
+      var vw = sec.clientWidth, vh = stageEl.clientHeight, narrow = vw < 760;
+      var pad = Math.max(24, (vw - 1300) / 2), head = H.$('.th__head', sec), hb = head.offsetTop + head.offsetHeight;
+      var B = narrow ? vw - 2 * pad : Math.min(vw * .56, 840, (vh - 170) * 420 / 330), hB = B * 330 / 420;
+      blocks.forEach(function (b) { b.fig.style.width = B + 'px'; });
+      if (cur === 0) {
+        var gap = 18, s0 = narrow ? .47 : Math.min((vw - 2 * pad - 3 * gap) / 4 / B, .5);
+        var rowW = 4 * s0 * B + 3 * gap, x0 = (vw - rowW) / 2, y0 = Math.max(hb + 40, (vh - s0 * hB) / 2 + 10);
+        blocks.forEach(function (b, i) {
+          var x = narrow ? pad + (i % 2) * (s0 * B + 10) : x0 + i * (s0 * B + gap), y = narrow ? hb + 20 + Math.floor(i / 2) * (s0 * hB + 40) : y0;
+          b.fig.style.transform = 'translate(' + x + 'px,' + y + 'px) scale(' + s0 + ')';
+          b.fig.classList.remove('is-focus', 'is-thumb');
+        });
+        return;
       }
-      var d = curve(pts);
-      Lv.o.setAttribute('d', d); Lv.b.setAttribute('d', d); Lv.hl.setAttribute('d', curve(pts.slice(1, 9).map(function (p) { return [p[0], p[1] - thick * .22]; })));
-      Lv.o.setAttribute('stroke-width', thick + 2.5); Lv.b.setAttribute('stroke-width', thick);
-      var hd = pts[0], a = Math.atan2(pts[0][1] - pts[2][1], pts[0][0] - pts[2][0]);
-      Lv.eye.setAttribute('cx', f1(hd[0] - Math.sin(a) * 1.2)); Lv.eye.setAttribute('cy', f1(hd[1] - thick * .15));
-      Lv.pup.setAttribute('cx', f1(hd[0] + Math.cos(a) * 1 - Math.sin(a) * 1.2)); Lv.pup.setAttribute('cy', f1(hd[1] - thick * .15 + Math.sin(a) * .8));
-      return pts;
+      var fy = narrow ? hb + 8 : Math.max(hb + 6, (vh - hB) / 2 + 24), capX = pad + B + 44;
+      cap.style.left = (narrow ? pad : capX) + 'px';
+      cap.style.top = (narrow ? fy + hB + 16 : fy + 16) + 'px';
+      cap.style.width = (narrow ? vw - 2 * pad : Math.min(420, vw - pad - capX)) + 'px';
+      var st2 = .16, tw = st2 * B, tj = 0;
+      blocks.forEach(function (b) {
+        if (b.k === cur) { b.fig.style.transform = 'translate(' + pad + 'px,' + fy + 'px) scale(1)'; b.fig.classList.add('is-focus'); b.fig.classList.remove('is-thumb'); return; }
+        var x = capX + tj * (tw + 12), y = fy + hB - st2 * hB; tj++;
+        b.fig.style.transform = 'translate(' + (narrow ? vw + 40 : x) + 'px,' + y + 'px) scale(' + st2 + ')';
+        b.fig.classList.remove('is-focus'); b.fig.classList.add('is-thumb');
+      });
     }
-
-    /* ---------- ascaroside particles ---------- */
-    var parts = [], MAX = 170;
-    for (i = 0; i < MAX; i++) {
-      var pg = el('g', { opacity: 0 }, partG);
-      var kind = i % 2;
-      el('circle', { r: 12, fill: kind ? 'url(#thGlowP)' : 'url(#thGlowB)' }, pg);
-      el('circle', { r: 3.2, fill: kind ? '#ff7aa0' : '#6ea2ff', stroke: '#fff', 'stroke-width': .8 }, pg);
-      el('circle', { cx: 4.2, cy: -2.6, r: 2.1, fill: kind ? '#ffb3c4' : '#a8c6ff' }, pg);
-      parts.push({ g: pg, on: false, x: 0, y: 0, vx: 0, vy: 0, age: 0, life: 1, sc: 1 });
+    function show(i) {
+      cur = i;
+      sec.setAttribute('data-st', i);
+      blocks.forEach(function (b) { b.dot.classList.toggle('is-on', b.k === i); b.dot.classList.toggle('is-done', b.k < i); if (b.k !== i) { b.tx = b.st.hot[0]; b.ty = b.st.hot[1]; } });
+      if (i) {
+        var st = STAGES[i - 1];
+        capN.textContent = 'Stage ' + i + ' of 4'; capT.textContent = st.t; capP.textContent = st.p;
+        cap.classList.toggle('is-key', !!st.key);
+        cap.classList.remove('is-in'); void cap.offsetWidth; cap.classList.add('is-in');
+      }
+      layout();
     }
-    var nextP = 0;
-    function emit(x, y, spread) {
-      var p = parts[nextP]; nextP = (nextP + 1) % MAX;
-      p.on = true; p.x = x + (Math.random() - .5) * spread; p.y = y + (Math.random() - .5) * spread;
-      var a = Math.random() * Math.PI * 2, v = 4 + Math.random() * 9;
-      p.vx = Math.cos(a) * v; p.vy = Math.sin(a) * v - 2; p.age = 0; p.life = 9 + Math.random() * 6; p.sc = .75 + Math.random() * .55; p.rot = Math.random() * 360;
-    }
-    function prefill() {
-      parts.forEach(function (p) { p.on = false; p.g.setAttribute('opacity', 0); });
-      for (var k = 0; k < 150; k++) { var q = PATH0.at(.05 + Math.random() * .67); emit(q[0], q[1], 70); parts[(nextP + MAX - 1) % MAX].age = Math.random() * 7; }
-    }
-
-    /* ---------- stage timeline ---------- */
-    var S = { from: 0, to: 0, t0: 0, dur: 1 }, s = 0, W = 0, Hh = 0;
-    function stageAt(now) { var k = H.clamp((now - S.t0) / S.dur, 0, 1); return H.lerp(S.from, S.to, H.ease(k)); }
-    function goStage(v, ms) { S = { from: s, to: v, t0: performance.now(), dur: H.reduced ? 1 : ms }; caption(v); if (!running) start(); }
-    function larvaU(v) {
-      if (v < 1) return 0;
-      if (v < 1.3) return H.lerp(0, .02, (v - 1) / .3);
-      if (v < 2) return H.lerp(.02, .72, H.smooth(1.3, 2, v));
-      if (v < 2.35) return H.lerp(.72, .8, (v - 2) / .35);
-      if (v < 3) return H.lerp(.8, 1, H.smooth(2.35, 3, v));
-      return 1;
-    }
-    /* camera keyframes: world rect to fit, and where its centre sits on screen */
-    function key(i, v) {
-      if (i === 0) return [220, 40, 2200, 980, .52, .55];
-      if (i === 1) return [230, 560, 760, 830, .57, .5];
-      if (i === 2) { var lx = PATH0.at(larvaU(Math.min(v, 2.2)))[0]; return [lx - 520, 440, lx + 560, 880, .5, .5]; }
-      if (i === 3) return [1590, 560, 1812, 704, .57, .5];
-      return [1330, 20, 2430, 900, .6, .53];
-    }
-    function camera(v) {
-      var a = Math.floor(H.clamp(v, 0, 3.999)), f = H.smooth(0, 1, v - a), A = key(a, v), B = key(Math.min(4, a + 1), v);
-      function zc(R) { return [Math.min(W / (R[2] - R[0]), Hh / (R[3] - R[1])), (R[0] + R[2]) / 2, (R[1] + R[3]) / 2, R[4], R[5]]; }
-      var za = zc(A), zb = zc(B);
-      var z = Math.exp(H.lerp(Math.log(za[0]), Math.log(zb[0]), f));
-      return [z, H.lerp(za[1], zb[1], f), H.lerp(za[2], zb[2], f), H.lerp(za[3], zb[3], f), H.lerp(za[4], zb[4], f)];
-    }
-    function toScreen(c, x, y) { return [c[3] * W + (x - c[1]) * c[0], c[4] * Hh + (y - c[2]) * c[0]]; }
-    function caption(v) {
-      var i = Math.round(v);
-      track.style.transform = 'translateX(' + (-i * 100) + '%)';
-      items.forEach(function (li, k) { li.classList.toggle('is-on', k === i); li.setAttribute('aria-hidden', k === i ? 'false' : 'true'); });
-      bars.forEach(function (b, k) { b.classList.toggle('is-on', k <= i); });
-      sec.classList.toggle('is-key', i === 2);
-    }
-
-    var running = false, vis = false, last = 0, t0 = performance.now(), toneDark = false;
-    function start() { if (running || !vis) return; running = true; last = performance.now(); requestAnimationFrame(frame); }
-    function frame(now) {
-      if (!vis) { running = false; return; }
-      var dt = Math.min(.05, (now - last) / 1000); last = now;
+    blocks.forEach(function (b) {
+      b.svg.addEventListener('pointermove', function (e) {
+        if (b.k !== cur) return;
+        var r = b.svg.getBoundingClientRect();
+        b.tx = H.clamp((e.clientX - r.left) / r.width * 420, 40, 380); b.ty = H.clamp((e.clientY - r.top) / r.height * 330, 96, 300);
+      });
+      b.svg.addEventListener('pointerleave', function () { b.tx = b.st.hot[0]; b.ty = b.st.hot[1]; });
+      b.worms.forEach(function (w) { var d = wormD(w.x, w.y, w.ang, w.len, w.ph, 2.6); w.o.setAttribute('d', d); w.b.setAttribute('d', d); });
+      place(b);
+    });
+    var vis = false, t0 = performance.now();
+    function tick(now) {
+      if (!vis) return;
       var t = (now - t0) / 1000;
-      s = stageAt(now);
-      var c = camera(s);
-      cam.setAttribute('transform', 'translate(' + f1(c[3] * W) + ',' + f1(c[4] * Hh) + ') scale(' + c[0].toFixed(4) + ') translate(' + f1(-c[1]) + ',' + f1(-c[2]) + ')');
-      head.style.opacity = (1 - H.smooth(.08, .5, s)).toFixed(3);
-      // nav tone follows what is under it
-      var gTop = toScreen(c, 0, GROUND)[1], dark = gTop < 90;
-      if (dark !== toneDark) { toneDark = dark; sec.setAttribute('data-tone', dark ? 'dark' : 'light'); dispatchEvent(new Event('scroll')); }
-
-      // hatching
-      var hatch = H.smooth(1, 1.35, s);
-      eggs.forEach(function (e, k) { if (k < 3) e.curl.setAttribute('opacity', (1 - hatch).toFixed(2)); });
-      // larvae
-      var u = larvaU(s) + (s > 1.95 && s < 2.3 ? Math.sin(t * .8) * .004 : 0), inside = H.smooth(2.85, 3.05, s);
-      var swell = H.smooth(3.1, 3.8, s), len = H.lerp(H.lerp(70, 44, inside), 26, swell), thick = H.lerp(H.lerp(7, 5, inside), 12, swell);
-      var p0 = drawLarva(L0, PATH0, u, t, len, thick, s >= 1 ? 1 : 0, H.lerp(4.5, .6, inside));
-      var wander = H.smooth(1.1, 1.5, s);
-      var p1 = drawLarva(L1, LP1, (t * .018) % 1, t + 1, 60, 6.2, wander, 4);
-      var p2 = drawLarva(L2, LP2, (t * .015 + .5) % 1, t + 2, 56, 6, wander, 4);
-      sheath.setAttribute('opacity', (inside * .85).toFixed(2));
-      L0.g.setAttribute('opacity', s >= 1 ? (1 - inside * .35).toFixed(2) : 0);
-      // release: the key stage
-      if (s > 1.35 && s < 3.05 && p0) {
-        var rate = s < 2.9 ? 30 : 5;
-        if (Math.random() < rate * dt) { var q = p0[6 + Math.floor(Math.random() * 8)]; emit(q[0], q[1], 8); }
-      }
-      if (s > 1.4 && wander > .5) {
-        if (p1 && Math.random() < 4 * dt) { q = p1[8]; emit(q[0], q[1], 6); }
-        if (p2 && Math.random() < 4 * dt) { q = p2[8]; emit(q[0], q[1], 6); }
-      }
-      var fade = s < 1.3 ? 3 : 1, focus = 1 + H.smooth(1.7, 2, s) * (1 - H.smooth(2.4, 2.8, s)) * .6;
-      parts.forEach(function (p) {
-        if (!p.on) return;
-        p.age += dt * fade;
-        if (p.age > p.life) { p.on = false; p.g.setAttribute('opacity', 0); return; }
-        p.vx *= .985; p.vy *= .985; p.vx += (Math.random() - .5) * 6 * dt; p.vy += (Math.random() - .5) * 6 * dt;
-        p.x += p.vx * dt; p.y += p.vy * dt;
-        var a = Math.min(1, p.age * 2) * (1 - H.smooth(p.life * .6, p.life, p.age));
-        p.g.setAttribute('opacity', a.toFixed(2));
-        p.g.setAttribute('transform', 'translate(' + f1(p.x) + ',' + f1(p.y) + ') rotate(' + Math.round(p.rot + p.age * 12) + ') scale(' + (p.sc * focus).toFixed(2) + ')');
+      blocks.forEach(function (b) {
+        if (!H.reduced) b.worms.forEach(function (w) {
+          var sway = Math.sin(t * .7 + w.ph) * 1.2, d = wormD(w.x + Math.cos(w.ang) * sway, w.y + Math.sin(w.ang) * sway, w.ang, w.len, t * 4 + w.ph, 2.6);
+          w.o.setAttribute('d', d); w.b.setAttribute('d', d);
+        });
+        if (Math.abs(b.tx - b.lx) > .05 || Math.abs(b.ty - b.ly) > .05) { b.lx += (b.tx - b.lx) * .16; b.ly += (b.ty - b.ly) * .16; place(b); }
       });
-      // infection and symptoms
-      var gs = H.smooth(2.55, 3.05, s);
-      gall.setAttribute('transform', 'translate(' + IS[0] + ',' + IS[1] + ') rotate(' + f1(tangent) + ') scale(' + (.3 + gs * .9).toFixed(3) + ')');
-      gall.setAttribute('opacity', gs.toFixed(2));
-      glow.setAttribute('opacity', (H.smooth(2.55, 3.1, s) * (.7 + Math.sin(t * 2.4) * .12)).toFixed(2));
-      var ne = H.smooth(3.55, 3.95, s);
-      newEggs.setAttribute('transform', 'translate(' + (IS[0] - 24) + ',' + (IS[1] + 12) + ') scale(' + ne.toFixed(3) + ')');
-      var sick = H.smooth(3.2, 3.95, s);
-      stemTop.setAttribute('transform', 'rotate(' + f1(sick * 7 + Math.sin(t * .9) * .6) + ' ' + PX + ' ' + GROUND + ')');
-      leaves.forEach(function (lf, k) {
-        var col = mix([134, 184, 90], k % 3 === 1 ? [214, 176, 70] : [201, 168, 78], sick);
-        lf.body.setAttribute('fill', 'rgb(' + col.join(',') + ')');
-        var droop = sick * (26 + lf.k * 10) * lf.side, sway = Math.sin(t * 1.2 + k) * 1.8;
-        lf.g.setAttribute('transform', 'translate(' + f1(lf.x) + ',' + f1(lf.y) + ') rotate(' + f1(lf.ang + droop + sway) + ') scale(' + (1 - sick * .22).toFixed(3) + ')');
-      });
-      // labels for the two signals
-      var cl = H.smooth(1.75, 2, s) * (1 - H.smooth(2.35, 2.7, s));
-      chips.forEach(function (ch, k) {
-        var w = PATH0.at(k ? .6 : .42), sp = toScreen(c, w[0], w[1] - 70 - k * 20);
-        ch.style.transform = 'translate(' + Math.round(sp[0]) + 'px,' + Math.round(sp[1]) + 'px)';
-        ch.style.opacity = cl.toFixed(2);
-      });
-      requestAnimationFrame(frame);
+      requestAnimationFrame(tick);
     }
-    function mix(a, b, k) { return [Math.round(H.lerp(a[0], b[0], k)), Math.round(H.lerp(a[1], b[1], k)), Math.round(H.lerp(a[2], b[2], k))]; }
-    function size() { W = svg.clientWidth || innerWidth; Hh = svg.clientHeight || innerHeight; svg.setAttribute('viewBox', '0 0 ' + W + ' ' + Hh); }
-    size(); addEventListener('resize', size);
-    H.onView(sec, function (v) { vis = v; if (v) start(); });
-    caption(0);
-
-    var DUR = [0, 1500, 2600, 2000, 2100];
+    H.onView(sec, function (v) { var was = vis; vis = v; if (v && !was) requestAnimationFrame(tick); });
+    var rz; addEventListener('resize', function () { clearTimeout(rz); rz = setTimeout(layout, 120); });
     H.scene('threat', {
-      steps: 4, tall: 4.4,
-      set: function (i) { S = { from: i, to: i, t0: 0, dur: 1 }; s = i; caption(i); if (i >= 2 && i < 3) prefill(); if (i < 1) parts.forEach(function (p) { p.on = false; p.g.setAttribute('opacity', 0); }); },
-      step: function (i, dir) { var ms = DUR[dir > 0 ? i : i + 1] * (dir > 0 ? 1 : .7); goStage(i, ms); return ms; },
-      ff: function () { S.t0 = 0; }
+      steps: 4, tall: 5,
+      set: function (i) { show(i); },
+      step: function (i) { show(i); return 950; },
+      ff: function () {}
     });
+    show(0);
   });
 })();

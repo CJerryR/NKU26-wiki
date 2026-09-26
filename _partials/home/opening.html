@@ -1,18 +1,17 @@
-<section class="op" id="opening" data-nav-label="NemaKlear" data-op data-tone="dark" aria-labelledby="op-title">
+<section class="op op6" id="opening" data-nav-label="What lies beneath the soil" data-op data-tone="dark" aria-label="Opening: what lies beneath the soil">
   <div class="op__stage">
-    <canvas class="op__canvas" data-op-canvas aria-hidden="true"></canvas>
+    <canvas class="op__gl" data-op-gl aria-hidden="true"></canvas>
+    <canvas class="op__fx" data-op-fx aria-hidden="true"></canvas>
     <div class="op__hero" data-op-hero>
-      <p class="op__team">NKU26-China <i aria-hidden="true"></i> iGEM 2026</p>
-      <h1 class="op__title" id="op-title" data-split>NemaKlear</h1>
-      <p class="op__lede">Engineered yeast, designed to turn the chemical signals of soil nematodes into a visible yellow.</p>
-      <div class="op__cta"><a class="op__btn op__btn--main" href="{{HOME_URL:description}}">The project</a><a class="op__btn" href="{{HOME_URL:results}}">Results so far</a></div>
-      <p class="hand op__q">What secrets lie beneath the soil?</p>
-      <p class="op__hint" data-op-hint>Move your cursor to scan the soil.</p>
+      <h1 class="op__title"><span>What secrets lie</span><br><span>beneath the soil?</span></h1>
     </div>
-    <div class="op__labels" data-op-labels aria-live="polite"></div>
-    <p class="op__cue" data-op-cue><span>Scroll to follow the trail</span><i aria-hidden="true"></i></p>
-    <div class="ribbon" data-ribbon aria-hidden="true">
-      <div class="ribbon__track"><span>root-knot</span><span>soybean cyst</span><span>ascarosides</span><span>early detection</span><span>engineered yeast</span><span>synthetic biology</span><span>root-knot</span><span>soybean cyst</span><span>ascarosides</span><span>early detection</span><span>engineered yeast</span><span>synthetic biology</span></div>
+    <div class="op__labels" data-op-labels aria-hidden="true"></div>
+    <div class="op__hud" data-op-hud>
+      <p class="op__line" data-op-line role="status" aria-live="polite"></p>
+      <button type="button" class="op__guide" data-op-guide>Guide my light</button>
+      <p class="op__next" aria-hidden="true">Scroll to follow the story</p>
     </div>
+    <div class="op__focus" tabindex="0" role="group" aria-label="Soil scan. Arrow keys move the light. Press Enter to follow the trail automatically." data-op-focus></div>
   </div>
+  <noscript><p class="op__nojs">An illustrated soil scan: glowing chemical clues lead through the soil to a root damaged by nematodes.</p></noscript>
 </section>

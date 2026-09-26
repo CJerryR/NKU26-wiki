@@ -362,7 +362,7 @@ def resolve_home_links(body):
         return html.escape(links[key]["url"], quote=True)
     return re.sub(r"\{\{HOME_URL:([a-z-]+)\}\}", resolve, body)
 
-HOME_SECTIONS = {"opening", "world", "china", "threat", "traces", "combo", "signal", "loop", "built", "explore"}
+HOME_SECTIONS = {"opening", "world", "china", "threat", "traces", "combo", "signal", "hp", "loop", "built", "explore"}
 
 def expand_home_partials(body):
     """Compose homepage source sections at build time, including in search."""
@@ -492,83 +492,11 @@ def render_footer_features(site_data):
 SITE_DATA = load_site_data()
 GLOBAL_SPONSOR_STRIP = render_sponsor_strip(SITE_DATA)
 GLOBAL_FOOTER_FEATURES = render_footer_features(SITE_DATA)
-# iGEM rule: every page footer links to the team's assigned repository on
-# gitlab.igem.org, and no other. GitLab CI provides it as CI_PROJECT_URL;
-# for local builds set igem_team_slug in _data/site.json.
-IGEM_YEAR = int(SITE_DATA.get("igem_year", 2026))
-_slug = str(SITE_DATA.get("igem_team_slug", "")).strip().strip("/")
 SOURCE_REPOSITORY_URL = safe_link(
     os.environ.get("CI_PROJECT_URL")
     or os.environ.get("IGEM_SOURCE_REPOSITORY")
-    or (f"https://gitlab.igem.org/{IGEM_YEAR}/{_slug}" if _slug else "")
+    or SITE_DATA.get("source_repository_url", "")
 )
-
-# -- iGEM asset hosting ---------------------------------------------------------
-# Images, icons and fonts must be served from static.igem.wiki (uploads tool),
-# not from the repository. With a static base set, the build points every
-# reference at its static.igem.wiki URL, leaves img/ and fonts/ out of public/,
-# and writes the files to upload into _uploads/ with UPLOAD_MANIFEST.csv.
-MEDIA_EXT = {".png", ".jpg", ".jpeg", ".gif", ".svg", ".webp", ".avif", ".ico", ".woff2", ".woff", ".ttf", ".otf", ".pdf"}
-MEDIA_DIRS = ("img", "fonts")
-STATIC_BASE = ""
-KEEP_IMAGE_EXT = False
-ASSET_MAP = {}
-
-def upload_name(rel):
-    """Name a file the way the uploads tool does: lower case, runs of other characters become one hyphen."""
-    parts = rel.split("/")
-    folders = [re.sub(r"[^a-z0-9]+", "-", p.lower()).strip("-") for p in parts[:-1]]
-    stem, ext = os.path.splitext(parts[-1])
-    stem = re.sub(r"[^a-z0-9]+", "-", stem.lower()).strip("-")
-    ext = ext.lower()
-    if ext in (".png", ".jpg", ".jpeg") and not KEEP_IMAGE_EXT:
-        ext = ".avif"   # observed on 2026 uploads; check the first upload, else rebuild with --keep-image-ext
-    return "/".join(folders + [stem + ext])
-
-def collect_assets():
-    ASSET_MAP.clear()
-    if not STATIC_BASE:
-        return
-    # only files the site actually references are uploaded
-    corpus = "\n".join(p.read_text(encoding="utf-8", errors="ignore")
-                       for d in ("_partials", "_templates", "_content", "_data", "css", "js")
-                       for p in (ROOT / d).rglob("*") if p.is_file() and p.suffix in (".html", ".css", ".js", ".json"))
-    for d in MEDIA_DIRS:
-        for f in sorted((ROOT / d).rglob("*")):
-            if f.is_file() and f.suffix.lower() in MEDIA_EXT:
-                rel = f.relative_to(ROOT).as_posix()
-                if rel in corpus or rel[len(d) + 1:] in corpus:
-                    ASSET_MAP[rel] = STATIC_BASE + upload_name(rel)
-
-ASSET_REF_RE = re.compile(r"(?<![\w/.-])((?:\.\./)*)((?:img|fonts)/[A-Za-z0-9_./-]+?\.(?:png|jpe?g|gif|svg|webp|avif|ico|woff2?|ttf|otf|pdf))\b")
-
-def point_at_static(text):
-    if not ASSET_MAP:
-        return text
-    return ASSET_REF_RE.sub(lambda m: ASSET_MAP.get(m.group(2), m.group(0)), text)
-
-def finish_static_assets():
-    """Rewrite CSS, drop media from public/, stage the uploads."""
-    if not ASSET_MAP:
-        return
-    for css in (OUTPUT_ROOT / "css").rglob("*.css"):
-        css.write_text(point_at_static(css.read_text(encoding="utf-8")), encoding="utf-8")
-    for d in MEDIA_DIRS:
-        if (OUTPUT_ROOT / d).exists():
-            shutil.rmtree(OUTPUT_ROOT / d)
-    up = ROOT / "_uploads"
-    if up.exists():
-        shutil.rmtree(up)
-    rows = ["source,upload_as,target_url"]
-    for rel, url in ASSET_MAP.items():
-        name = upload_name(rel)
-        # the uploads tool converts PNG/JPEG itself; stage the original under its final folder
-        staged = up / (os.path.splitext(name)[0] + os.path.splitext(rel)[1].lower() if name.endswith(".avif") else name)
-        staged.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(ROOT / rel, staged)
-        rows.append(f"{rel},{staged.relative_to(up).as_posix()},{url}")
-    (up / "UPLOAD_MANIFEST.csv").write_text("\n".join(rows) + "\n", encoding="utf-8")
-    print(f"static assets: {len(ASSET_MAP)} files staged in _uploads/ for static.igem.wiki")
 
 # -- search index generation -----------------------------------------------
 def clean_text(text):
@@ -797,14 +725,10 @@ def build_page(path):
     home_styles = ""
     home_scripts = ""
     if is_home:
-        home_styles = "\n  ".join(f'<link rel="stylesheet" href="{P}css/{name}.css" />' for name in ("home",))
-        hd = home_data()
-        hd["pagedScroll"] = bool(SITE_DATA.get("home_paged_scroll", False))
-        # keys drop the "img/" prefix so the page rewrite cannot touch them
-        hd["assets"] = {k[4:]: v for k, v in ASSET_MAP.items() if k.startswith("img/home/")}
-        payload = json.dumps(hd, ensure_ascii=False).replace("<", "\\u003c")
+        home_styles = "\n  ".join(f'<link rel="stylesheet" href="{P}css/{name}.css" />' for name in ("home", "home-v6"))
+        payload = json.dumps(home_data(), ensure_ascii=False).replace("<", "\\u003c")
         home_scripts = '<script>window.NKU_HOME = ' + payload + ';</script>\n  '
-        home_scripts += "\n  ".join(f'<script src="{P}js/{name}.js" defer></script>' for name in ("home-geo", "home-land", "home-abundance", "home-core", "home-pager", "home-opening", "home-maps", "home-threat", "home-story") if name != "home-abundance" or (ROOT / "js" / "home-abundance.js").exists())
+        home_scripts += "\n  ".join(f'<script src="{P}js/{name}.js" defer></script>' for name in ("vendor/three.min", "home-geo", "home-land", "home-geo3d", "home-abundance", "home-maps-data", "home-core", "home-nk", "home-pager", "home-opening", "home-maps", "home-zoom3d", "home-threat", "home-story") if name != "home-abundance" or (ROOT / "js" / "home-abundance.js").exists())
 
     page_html = (BASE
             .replace("{{TITLE}}", title_full)
@@ -821,7 +745,6 @@ def build_page(path):
             .replace("{{HOME_SCRIPTS}}", home_scripts)
             .replace("{{P}}", P))
 
-    page_html = point_at_static(page_html)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(page_html, encoding="utf-8")
     return out, len(toc_items(body)) if not is_home else 0
@@ -839,7 +762,7 @@ def copy_static_assets():
         source = ROOT / dirname
         target = OUTPUT_ROOT / dirname
         if source.exists():
-            ignored = ("search-data.js",) if dirname == "js" else ("nankai-seal.gif", "mascot.png", "*.py", "*.md", "home-maps") if dirname == "img" else ()
+            ignored = ("search-data.js",) if dirname == "js" else ("nankai-seal.gif", "mascot.png") if dirname == "img" else ()
             shutil.copytree(source, target, ignore=shutil.ignore_patterns(*ignored))
 
 def main():
@@ -851,28 +774,11 @@ def main():
         default="public",
         help="Dedicated build directory inside the repository (default: public)",
     )
-    parser.add_argument(
-        "--static-base",
-        default=os.environ.get("IGEM_STATIC_BASE") or SITE_DATA.get("igem_static_base", ""),
-        help="static.igem.wiki folder URL for images and fonts, e.g. https://static.igem.wiki/teams/6303/wiki/",
-    )
-    parser.add_argument("--keep-image-ext", action="store_true", help="keep .png/.jpg names instead of .avif")
     args = parser.parse_args()
-    global STATIC_BASE, KEEP_IMAGE_EXT
-    STATIC_BASE = args.static_base.strip()
-    if STATIC_BASE and not STATIC_BASE.endswith("/"):
-        STATIC_BASE += "/"
-    if STATIC_BASE and not STATIC_BASE.startswith("https://static.igem.wiki/"):
-        print("static base must be on https://static.igem.wiki/"); sys.exit(1)
-    KEEP_IMAGE_EXT = args.keep_image_ext
-    collect_assets()
     OUTPUT_ROOT = (ROOT / args.output).resolve()
     PAGES_DIR = OUTPUT_ROOT / "pages"
     SEARCH_DATA = OUTPUT_ROOT / "js" / "search-data.js"
 
-    if not SOURCE_REPOSITORY_URL.startswith("https://gitlab.igem.org/"):
-        print("WARNING: footer repository link is not on gitlab.igem.org. "
-              "Set igem_team_slug in _data/site.json (GitLab CI sets it automatically).", file=sys.stderr)
     if not CONTENT.exists():
         print("No _content/ directory found."); sys.exit(1)
 
@@ -894,7 +800,6 @@ def main():
         if f.stem == "index": n_home += 1
         print(f"  {f.stem:22s}  ->  {str(rel):24s} [{tag}]")
     search_path, search_pages, search_sections_n = write_search_data(search_files)
-    finish_static_assets()
     print("-" * 52)
     print(f"Done. {len(files)} pages, {n_home} home, {hidden_count} hidden, {draft_count} draft.")
     print(f"Output directory: {OUTPUT_ROOT.relative_to(ROOT)}")
