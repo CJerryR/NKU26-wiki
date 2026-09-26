@@ -171,7 +171,7 @@
   H.ready(function () {
     var sec = H.$('[data-th]'); if (!sec) return;
     var stageEl = H.$('.th__stage', sec), track = H.$('[data-th-track]', sec), cap = H.$('[data-th-cap]', sec);
-    var capN = H.$('[data-th-n]', cap), capT = H.$('[data-th-t]', cap), capP = H.$('[data-th-p]', cap), dotsEl = H.$('[data-th-dots]', sec);
+    var capN = H.$('[data-th-n]', cap), capT = H.$('[data-th-t]', cap), dotsEl = H.$('[data-th-dots]', sec);
     var blocks = STAGES.map(function (st, i) {
       var k = i + 1, fig = document.createElement('figure');
       fig.className = 'th__block' + (st.key ? ' th__block--key' : '');
@@ -196,32 +196,33 @@
       b.zoom.setAttribute('transform', 'translate(' + b.lx.toFixed(2) + ' ' + b.ly.toFixed(2) + ') scale(' + ZOOM + ') translate(' + (-b.lx).toFixed(2) + ' ' + (-b.ly).toFixed(2) + ')');
       b.lens.setAttribute('transform', 'translate(' + b.lx.toFixed(2) + ' ' + b.ly.toFixed(2) + ')');
     }
+    /* 3D v3 interaction: a preview of the four blocks, then the first block
+     * zooms in, then each scroll slides sideways to the next block. One big
+     * line of text per stage. */
     function layout() {
       var vw = sec.clientWidth, vh = stageEl.clientHeight, narrow = vw < 760;
-      var pad = Math.max(24, (vw - 1300) / 2), head = H.$('.th__head', sec), hb = head.offsetTop + head.offsetHeight;
-      var B = narrow ? vw - 2 * pad : Math.min(vw * .56, 840, (vh - 170) * 420 / 330), hB = B * 330 / 420;
+      var head = H.$('.th__head', sec), hb = head.offsetTop + head.offsetHeight;
+      var pad = narrow ? 16 : 32;
+      var B = narrow ? vw - 2 * pad : Math.min(vw * 0.6, 920, (vh - hb - 130) * 420 / 330), hB = B * 330 / 420;
       blocks.forEach(function (b) { b.fig.style.width = B + 'px'; });
       if (cur === 0) {
-        var gap = 18, s0 = narrow ? .47 : Math.min((vw - 2 * pad - 3 * gap) / 4 / B, .5);
-        var rowW = 4 * s0 * B + 3 * gap, x0 = (vw - rowW) / 2, y0 = Math.max(hb + 40, (vh - s0 * hB) / 2 + 10);
+        var gap = narrow ? 10 : 16, s0 = narrow ? (vw - 2 * pad - gap) / 2 / B : (vw - 2 * pad - 3 * gap) / 4 / B;
+        var rowW = 4 * s0 * B + 3 * gap, x0 = (vw - rowW) / 2, y0 = hb + Math.max(24, (vh - hb - s0 * hB) / 2 - 36);
         blocks.forEach(function (b, i) {
-          var x = narrow ? pad + (i % 2) * (s0 * B + 10) : x0 + i * (s0 * B + gap), y = narrow ? hb + 20 + Math.floor(i / 2) * (s0 * hB + 40) : y0;
-          b.fig.style.transform = 'translate(' + x + 'px,' + y + 'px) scale(' + s0 + ')';
-          b.fig.classList.remove('is-focus', 'is-thumb');
+          var x = narrow ? pad + (i % 2) * (s0 * B + gap) : x0 + i * (s0 * B + gap), y = narrow ? hb + 20 + Math.floor(i / 2) * (s0 * hB + 44) : y0;
+          b.fig.style.transform = 'translate(' + x.toFixed(1) + 'px,' + y.toFixed(1) + 'px) scale(' + s0.toFixed(4) + ')';
+          b.fig.classList.remove('is-focus', 'is-side');
         });
         return;
       }
-      var fy = narrow ? hb + 8 : Math.max(hb + 6, (vh - hB) / 2 + 24), capX = pad + B + 44;
-      cap.style.left = (narrow ? pad : capX) + 'px';
-      cap.style.top = (narrow ? fy + hB + 16 : fy + 16) + 'px';
-      cap.style.width = (narrow ? vw - 2 * pad : Math.min(420, vw - pad - capX)) + 'px';
-      var st2 = .16, tw = st2 * B, tj = 0;
+      var fx = (vw - B) / 2, fy = hb + Math.max(8, (vh - hb - hB - 96) / 2), gapF = narrow ? 24 : 72;
       blocks.forEach(function (b) {
-        if (b.k === cur) { b.fig.style.transform = 'translate(' + pad + 'px,' + fy + 'px) scale(1)'; b.fig.classList.add('is-focus'); b.fig.classList.remove('is-thumb'); return; }
-        var x = capX + tj * (tw + 12), y = fy + hB - st2 * hB; tj++;
-        b.fig.style.transform = 'translate(' + (narrow ? vw + 40 : x) + 'px,' + y + 'px) scale(' + st2 + ')';
-        b.fig.classList.remove('is-focus'); b.fig.classList.add('is-thumb');
+        var off = b.k - cur;
+        b.fig.style.transform = 'translate(' + (fx + off * (B + gapF)).toFixed(1) + 'px,' + fy.toFixed(1) + 'px) scale(1)';
+        b.fig.classList.toggle('is-focus', off === 0);
+        b.fig.classList.toggle('is-side', off !== 0);
       });
+      cap.style.left = fx + 'px'; cap.style.width = B + 'px'; cap.style.top = (fy + hB + 14) + 'px';
     }
     function show(i) {
       cur = i;
@@ -229,7 +230,7 @@
       blocks.forEach(function (b) { b.dot.classList.toggle('is-on', b.k === i); b.dot.classList.toggle('is-done', b.k < i); if (b.k !== i) { b.tx = b.st.hot[0]; b.ty = b.st.hot[1]; } });
       if (i) {
         var st = STAGES[i - 1];
-        capN.textContent = 'Stage ' + i + ' of 4'; capT.textContent = st.t; capP.textContent = st.p;
+        capN.textContent = String(i); capT.textContent = st.t;
         cap.classList.toggle('is-key', !!st.key);
         cap.classList.remove('is-in'); void cap.offsetWidth; cap.classList.add('is-in');
       }

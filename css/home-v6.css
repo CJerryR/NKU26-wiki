@@ -7,7 +7,7 @@
 .op6.is-exploring .op__gl{cursor:none}
 .op6 .op__fx{pointer-events:none;z-index:1}
 .op6 .op__hero{z-index:2}
-.op6 .op__title{color:#f4e3b1;font-weight:760;font-size:clamp(52px,9.2vw,166px);line-height:.88;letter-spacing:-.052em;text-shadow:0 10px 70px rgba(10,4,16,.75),0 0 2px rgba(10,4,16,.4)}
+.op6 .op__title{color:#f4e3b1}
 .op6 .op__labels{z-index:3}
 .op6 .op__label{left:0;top:0;will-change:transform}
 .op__hud{position:absolute;left:50%;bottom:clamp(24px,6vh,58px);transform:translateX(-50%);z-index:4;width:min(820px,92vw);display:flex;flex-direction:column;align-items:center;gap:14px;opacity:0;pointer-events:none;transition:opacity .7s}
@@ -38,8 +38,6 @@
 html[data-page="opening"] .detective__std{display:none}
 html[data-page="opening"] .detective__alt{display:block}
 html[data-page="opening"] .detective__torch{display:block;position:absolute;left:39.1%;top:53.5%;width:64%;aspect-ratio:1;transform:translateY(-50%);overflow:visible;pointer-events:none}
-html[data-page="opening"] .detective__btn{width:150px;height:137px}
-@media (max-width:640px){html[data-page="opening"] .detective__btn{width:96px;height:88px}}
 @media (prefers-reduced-motion:reduce){.detective__fig{animation:none}}
 
 /* ---------- 03 world ---------- */
@@ -85,7 +83,6 @@ html[data-page="opening"] .detective__btn{width:150px;height:137px}
 
 /* leaving for China: the map dives in and the room goes dark */
 .world__canvas{transition:transform 1.3s cubic-bezier(.6,0,.2,1);transform-origin:var(--cx,78%) var(--cy,35%)}
-.world.is-diving .world__canvas{transform:scale(3.8)}
 .world__copy,.world__map figcaption,.world__marks,.world .world__china{transition:opacity .4s}
 .world.is-diving .world__copy,.world.is-diving .world__map figcaption,.world.is-diving .world__marks,.world.is-diving .world__china{opacity:0}
 .world.is-diving .world__cn-glow{opacity:1;stroke-width:3;animation:none}
@@ -95,8 +92,6 @@ html[data-page="opening"] .detective__btn{width:150px;height:137px}
 /* ---------- 04 one China map and the flight ---------- */
 .cz{position:relative;height:100vh;height:100svh;background:#140b1c;color:#f4ecf6}
 .cz.is-tall{height:calc(var(--tall) * 100vh)}
-.cz::before{content:'';position:absolute;inset:0;z-index:8;pointer-events:none;background:#140b1c;opacity:0;transition:opacity .9s ease}
-.cz.is-arriving::before{opacity:1;transition:none}
 .cz__stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:radial-gradient(ellipse 70% 62% at 64% 56%,#271840 0,#140b1c 72%)}
 .cz__canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
 .cz__svg{display:none}
@@ -136,9 +131,6 @@ html[data-page="opening"] .detective__btn{width:150px;height:137px}
 .cz .nk-zoom__steps li.is-done i{background:rgba(244,236,246,.6);border-color:rgba(244,236,246,.6)}
 .cz .nk-zoom__steps li.is-on i{background:#ffd66b;border-color:#ffd66b;box-shadow:0 0 12px rgba(255,214,107,.75)}
 .cz .nk-zoom__steps li.is-on span{max-width:190px;opacity:1;margin-left:9px}
-/* the question sits low on the screen over a soft floor, so the root tip stays in view */
-.nk-zoom__qwrap{position:absolute;left:0;right:0;bottom:0;z-index:4;padding:16vh 24px 8vh;text-align:center;pointer-events:none;opacity:var(--qo,0);background:linear-gradient(to top,rgba(12,6,16,.86),rgba(12,6,16,.45) 58%,rgba(12,6,16,0))}
-.nk-zoom__q{font-family:var(--hand);font-style:italic;font-weight:420;font-variation-settings:"SOFT" 100,"WONK" 1;font-size:clamp(34px,4.3vw,66px);line-height:1.06;letter-spacing:-.02em;color:#fff7ea;transform:translateY(calc((1 - var(--qo,0)) * 20px));text-shadow:0 6px 30px rgba(20,8,16,.85)}
 .cz.is-2d .nk-zoom__steps,.cz.is-2d .nk-zoom__label{display:none}
 @media (max-width:860px){
   .cz__head{top:auto;bottom:24px;left:20px;right:20px;width:auto;transform:none}
@@ -245,3 +237,49 @@ html[data-page="opening"] .detective__btn{width:150px;height:137px}
 .flipcard.is-open.is-flipped .flipcard__inner{transform:none}
 .flipcard.is-turning .flipcard__inner{animation:fcTurn .46s ease-in-out}
 @keyframes fcTurn{50%{transform:rotateY(90deg) scale(.96)}}
+
+/* ---------- v6.1: back to the originals where nothing else was asked ---------- */
+/* the 3D v3 iris: the flashlight becomes a spotlight between the soil and the world map */
+.nk-iris{position:fixed;inset:0;z-index:880;pointer-events:none;opacity:0;--ix:50%;--iy:50%;--ir:80px;background:radial-gradient(circle at var(--ix) var(--iy),rgba(18,10,25,0) 0,rgba(18,10,25,0) var(--ir),rgba(18,10,25,.82) calc(var(--ir) + 10px),rgba(15,8,21,.985) calc(var(--ir) + 46px))}
+.nk-iris::after{content:"";position:absolute;left:var(--ix);top:var(--iy);width:calc(var(--ir) * 2);height:calc(var(--ir) * 2);border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 0 0 1px rgba(255,214,107,.32),0 0 70px 14px rgba(255,214,107,.14),inset 0 0 80px rgba(255,214,107,.16)}
+html.nk-irising .detective__std{display:none}
+html.nk-irising .detective__alt{display:block}
+html.nk-irising .detective__torch{display:block;position:absolute;left:39.1%;top:53.5%;width:64%;aspect-ratio:1;transform:translateY(-50%);overflow:visible;pointer-events:none}
+.world__mask,.world__dive{display:none}
+
+/* world to China: the map zooms onto China and the room darkens around it, no black cut */
+.world,.world__pin{transition:background-color .9s ease}
+.world.is-diving,.world.is-diving .world__pin{background-color:#140b1c}
+.world__pin::before{transition:opacity .8s}
+.world.is-diving .world__pin::before{opacity:0}
+.world__landpath{transition:fill .9s ease}
+.world.is-diving .world__landpath{fill:#1a1024}
+.world__canvas canvas{transition:opacity .7s}
+.world.is-diving .world__canvas canvas{opacity:0}
+.world__cn-shape{transition:fill .9s,stroke .9s}
+.world.is-diving .world__cn-shape{fill:#2b1c40;stroke:#b99be0;stroke-width:.5}
+.world.is-diving .world__cn-glow{opacity:0;animation:none}
+.world.is-diving .world__cn-ping{display:none}
+
+/* China map: a small key only; the question and its soft centre shade as in 3D v3 */
+.cz__head{top:112px;transform:translateX(calc(var(--merge,0) * -60px));width:auto;max-width:360px}
+.cz__head .h-display{font-size:clamp(28px,2.6vw,40px)}
+.cz__key{margin-top:14px;gap:8px;font-size:13.5px}
+.cz__key li{grid-template-columns:16px auto;align-items:center}
+.cz__key .cz__tri,.cz__key .cz__pin{margin-top:0}
+.cz__stage::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;opacity:var(--qo,0);background:radial-gradient(ellipse 52% 36% at 50% 50%,rgba(22,11,16,.72),rgba(22,11,16,0))}
+.cz .nk-zoom__q{position:absolute;left:50%;top:50%;z-index:2;width:min(920px,88%);transform:translate(-50%,calc(-50% + (1 - var(--qo,0)) * 24px));text-align:center;font-family:var(--hand);font-style:italic;font-weight:420;font-size:clamp(34px,4.8vw,70px);line-height:1.08;letter-spacing:-.02em;color:#fff7ea;opacity:var(--qo,0);text-shadow:0 8px 50px rgba(20,8,16,.9);pointer-events:none}
+@media (max-width:860px){.cz__head{top:auto;bottom:24px}}
+
+/* hidden threat: preview of four, then one big block at a time sliding sideways, one big line of text */
+.th .th__cap{text-align:center}
+.th .th__cap.is-key{padding:0;border:0;border-radius:0;background:none}
+.th__cap h3{display:flex;justify-content:center;align-items:baseline;gap:16px;margin:0;font-size:clamp(30px,3vw,48px);font-weight:600;letter-spacing:-.03em;line-height:1.05}
+.th__cap h3 b{color:var(--plum);font-weight:600}
+.th__cap.is-key h3{color:var(--plum)}
+.th__cap .th__key{margin:10px auto 0}
+.th__block figcaption{font-size:40px}
+.th__block.is-side{opacity:.32;filter:saturate(.4)}
+.th__block.is-side svg{cursor:default}
+.lab__dry{min-height:320px}
+.lab__dry:hover{border-color:rgba(35,24,41,.3);background:none}

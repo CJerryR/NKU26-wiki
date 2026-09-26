@@ -120,7 +120,7 @@
       call(to, 'set', st, dir);
       var cut = !!to.sp.cutIn && dir > 0 && adjacent && !H.reduced;
       busy = true; dots();
-      scrollToY(top(i), cut ? 0 : 950, function () {
+      scrollToY(top(i), cut ? 0 : (dir > 0 && adjacent && to.sp.inMs ? to.sp.inMs : 950), function () {
         var ms = call(to, 'enter', dir, { cut: cut, from: from.id });
         lock(ms + 80);
       });
@@ -138,11 +138,14 @@
       if (used || !a) return;
       if (busy) {
         // a new, deliberate gesture while a long step is playing finishes that step
-        if (fresh && a > 14 && now - busyAt > 700) { used = true; ff(); }
+        // a gesture that lands while a step is playing is used up entirely,
+        // so its inertia tail cannot trigger a second step afterwards
+        if (fresh && a > 14 && now - busyAt > 700) ff();
+        used = true;
         return;
       }
       acc += d;
-      var pgw = pages[cur], need = d > 0 && st >= pgw.steps && pgw.sp.leaveDelta ? pgw.sp.leaveDelta : 22;
+      var need = 11;   // v6: half the scroll that V3 needed; one trackpad swipe is enough
       if (Math.abs(acc) >= need) { used = true; acc = 0; busyAt = now; d > 0 ? next() : prev(); }
     }
     function ff() { var pg = pages[cur]; if (leaving || pg.sp.noSkip) return; if (pg.sp.ff) { pg.sp.ff(); clearTimeout(busyTimer); busy = false; dots(); } }

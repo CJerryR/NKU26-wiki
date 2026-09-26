@@ -194,53 +194,94 @@
     cnLink.addEventListener('pointerenter', function () { sec.classList.add('is-cn-hot'); });
     cnLink.addEventListener('pointerleave', function () { sec.classList.remove('is-cn-hot'); });
 
-    /* ---------- the flashlight becomes a spotlight on the title, then opens ---------- */
-    var opened = false, counted = false, spot = null, visible = false;
-    function setMask(x, y, r) { mask.style.setProperty('--mx', x + 'px'); mask.style.setProperty('--my', y + 'px'); mask.style.setProperty('--mr', Math.max(0, r) + 'px'); }
-    function openNow() { spot = null; opened = true; sec.classList.add('is-open'); sec.classList.remove('is-spot'); bloom = 1; draw(); if (!counted) { counted = true; count(); } }
-    function closeNow() { opened = false; counted = false; sec.classList.remove('is-open', 'is-spot'); bloom = 0; draw(); setMask(-999, -999, 0); }
-    var T_MOVE = 1100, T_HOLD = 650, T_POP = 1050, T_ALL = T_MOVE + T_HOLD + T_POP;
-    function tick(now) {
-      if (spot) {
-        var pr = pin.getBoundingClientRect(), tr = title.getBoundingClientRect();
-        var tx = tr.left - pr.left + tr.width * .5, ty = tr.top - pr.top + tr.height * .5, rT = Math.max(tr.width * .62, tr.height * .95) + 26;
-        var el = now - spot.t0, x, y, r;
-        if (el < T_MOVE) {
-          var k = H.ease(el / T_MOVE), wob = (1 - H.smooth(.35, 1, el / T_MOVE));
-          x = H.lerp(spot.x, tx, k) + (Math.sin(now / 190) * 46 + Math.sin(now / 81) * 9) * wob;
-          y = H.lerp(spot.y, ty, k) + (Math.cos(now / 232) * 30 + Math.sin(now / 110) * 7) * wob;
-          r = H.lerp(spot.r, rT, H.smooth(.35, 1, el / T_MOVE));
-        } else if (el < T_MOVE + T_HOLD) {
-          x = tx; y = ty; r = rT * (1 + Math.sin((el - T_MOVE) / 110) * .012);
-        } else {
-          var e2 = H.clamp((el - T_MOVE - T_HOLD) / T_POP, 0, 1), far = Math.hypot(Math.max(tx, pr.width - tx), Math.max(ty, pr.height - ty)) + 120;
-          x = tx; y = ty; r = rT + (far - rT) * (1 - Math.pow(1 - e2, 3)) - (e2 < .22 ? 16 * Math.sin(e2 / .22 * Math.PI) : 0);
-          bloom = H.smooth(.1, .8, e2); draw();
-          if (!counted && e2 > .3) { counted = true; count(); }
-        }
-        setMask(x, y, r);
-        if (el >= T_ALL) openNow();
-      }
-      if (visible && spot) requestAnimationFrame(tick);
+    /* ---------- 3D v3 iris: the flashlight becomes a spotlight ----------
+     * Ported from the 3D v3 homepage (home-core.js, iris) without changing its
+     * logic. While the page scrolls from the soil to this page, the light
+     * leaves the spot where the nematode was found, wobbles its way to the
+     * title, circles it, then pops open over the whole map. */
+    var opened = false, counted = false, visible = false, bloomRaf = 0;
+    function bloomTo(v, ms) {
+      cancelAnimationFrame(bloomRaf);
+      var b0 = bloom, t0 = performance.now(), dur = H.reduced ? 1 : (ms || 1200);
+      (function f(now) { var k = H.clamp((now - t0) / dur, 0, 1); bloom = H.lerp(b0, v, H.ease(k)); draw(); if (k < 1) bloomRaf = requestAnimationFrame(f); })(t0);
     }
-    /* ---------- leaving for China: the map dives into China ---------- */
-    function dive(on) { sec.classList.toggle('is-diving', !!on); }
+    function openNow() { opened = true; sec.classList.add('is-open'); if (bloom < 1) bloomTo(1); if (!counted) { counted = true; count(); } }
+    function closeNow() { opened = false; counted = false; sec.classList.remove('is-open'); cancelAnimationFrame(bloomRaf); bloom = 0; draw(); }
+    var NK = window.NK;
+    (function iris() {
+      if (!NK || !NK.loop || H.reduced) return;
+      var ov = document.createElement('div');
+      ov.className = 'nk-iris';
+      ov.setAttribute('aria-hidden', 'true');
+      document.body.appendChild(ov);
+      var root = document.documentElement;
+      var popped = false, popT0 = 0, popFrom = 80, r0 = 86;
+      var cur = { x: 0, y: 0, r: 80 };
+      function frame(t) {
+        var vh = window.innerHeight, vw = window.innerWidth;
+        var rect = sec.getBoundingClientRect();
+        var q = (vh - rect.top) / (vh * 0.95);
+        if (q <= 0.001) { ov.style.opacity = '0'; popped = false; root.classList.remove('nk-irising'); r0 = H.lastLight ? Math.max(60, H.lastLight.r * 0.8) : 86; return; }
+        var tr = title.getBoundingClientRect();
+        var tx = tr.left + tr.width * 0.46;
+        var ty = tr.top + tr.height * 0.5;
+        if (!popped) {
+          var start = NK.state.lightScreen || { x: vw * 0.66, y: vh * 0.7 };
+          var k = NK.smooth(0.05, 0.5, q);
+          var wob = 1 - NK.smooth(0.2, 0.52, q);
+          var rTitle = Math.max(tr.width * 0.58, tr.height * 0.9) + 20;
+          cur.x = NK.lerp(start.x, tx, k) + (Math.sin(t * 5.1) * 46 + Math.sin(t * 12.3) * 9) * wob;
+          cur.y = NK.lerp(start.y, ty, k) + (Math.cos(t * 4.3) * 30 + Math.sin(t * 9.1) * 7) * wob;
+          cur.r = NK.lerp(r0, rTitle, NK.smooth(0.36, 0.56, q));
+          ov.style.opacity = String(NK.smooth(0, 0.12, q));
+          root.classList.toggle('nk-irising', q < 0.64);
+          if (q > 0.64) { popped = true; popT0 = t; popFrom = cur.r; root.classList.remove('nk-irising'); openNow(); }
+        } else {
+          var e = NK.clamp((t - popT0) / 0.9, 0, 1);
+          var full = Math.sqrt(vw * vw + vh * vh);
+          cur.x = NK.lerp(cur.x, tx, 0.2);
+          cur.y = NK.lerp(cur.y, ty, 0.2);
+          cur.r = popFrom + (full - popFrom) * (e < 1 ? 1 - Math.pow(1 - e, 3) : 1) + (e < 0.25 ? -18 * Math.sin(e / 0.25 * Math.PI) : 0);
+          ov.style.opacity = String(1 - NK.smooth(0.55, 1, e));
+          if (q < 0.46) popped = false;
+        }
+        ov.style.setProperty('--ix', cur.x.toFixed(1) + 'px');
+        ov.style.setProperty('--iy', cur.y.toFixed(1) + 'px');
+        ov.style.setProperty('--ir', Math.max(0, cur.r).toFixed(1) + 'px');
+      }
+      var stop = null;
+      if (!('IntersectionObserver' in window)) { NK.loop(frame); return; }
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) { if (!stop) stop = NK.loop(frame); return; }
+          if (stop) { stop(); stop = null; }
+          ov.style.opacity = '0';
+          root.classList.remove('nk-irising');
+          popped = en.boundingClientRect.top < 0;
+        });
+      }, { rootMargin: '0px 0px 25% 0px' }).observe(sec);
+    }());
+    /* ---------- leaving for China: the map zooms until China sits exactly where
+     * the 3D China map starts, and the page darkens around it ---------- */
+    function dive(on) {
+      if (!on) { sec.classList.remove('is-diving'); mapBox.style.transform = ''; return; }
+      var cr = mapBox.getBoundingClientRect();
+      var f = (window.NK && NK.chinaFrame && NK.chinaFrame()) || { x: innerWidth * 0.36, y: innerHeight * 0.14, w: innerWidth * 0.56, h: innerHeight * 0.74 };
+      var X = function (lon) { return (lon + 180) * 2.5 / 900 * cr.width; }, Y = function (lat) { return (84 - lat) * 2.5 / 350 * cr.height; };
+      var x0 = X(73.5), x1 = X(134.8), y0 = Y(53.6), y1 = Y(18.2);
+      var s = Math.min(f.w / (x1 - x0), f.h / (y1 - y0));
+      var dx = f.x + f.w / 2 - cr.left - (x0 + x1) / 2 * s, dy = f.y + f.h / 2 - cr.top - (y0 + y1) / 2 * s;
+      mapBox.style.transformOrigin = '0 0';
+      mapBox.style.transform = 'translate(' + dx.toFixed(1) + 'px,' + dy.toFixed(1) + 'px) scale(' + s.toFixed(3) + ')';
+      sec.classList.add('is-diving');
+    }
     H.scene('world', {
-      cutIn: true, dwell: 700, leaveDelta: 40,
+      inMs: 2800,
       set: function (i, dir) { dive(false); if (dir < 0) openNow(); else closeNow(); },
-      enter: function (dir, info) {
-        dive(false);
-        if (opened) return 0;
-        if (!info || !info.cut || !H.lastLight || innerWidth <= 980) { openNow(); return 0; }
-        var L = H.lastLight, pr = pin.getBoundingClientRect();
-        spot = { x: L.x, y: L.y - pr.top, r: Math.max(50, L.r * .9), t0: performance.now() };
-        sec.classList.add('is-spot');
-        setMask(spot.x, spot.y, spot.r); requestAnimationFrame(tick);
-        return T_ALL;
-      },
+      enter: function () { dive(false); if (!opened) openNow(); return 300; },
       leave: function (dir, info) {
         closeCard();
-        if (dir > 0 && info && info.to === 'china' && info.adjacent && innerWidth > 980) { dive(true); return 1350; }
+        if (dir > 0 && info && info.to === 'china' && info.adjacent && innerWidth > 980) { dive(true); return 1400; }
         return 0;
       },
       ff: function () { openNow(); }
@@ -250,7 +291,7 @@
       var s = performance.now();
       (function step(n) { var k = H.ease(H.clamp((n - s) / 1400, 0, 1)); el.textContent = 'US$' + Math.round(173 * k); if (k < 1) requestAnimationFrame(step); })(s);
     }
-    H.onView(sec, function (v) { var was = visible; visible = v; if (v && !was && spot) requestAnimationFrame(tick); if (v && !opened && !(H.pager && H.pager.isPaged())) openNow(); });
+    H.onView(sec, function (v) { visible = v; if (v && !opened && !(H.pager && H.pager.isPaged())) openNow(); });
     size();
     var rz; addEventListener('resize', function () { clearTimeout(rz); rz = setTimeout(size, 120); });
     if (window.ResizeObserver) new ResizeObserver(function () { clearTimeout(rz); rz = setTimeout(size, 120); }).observe(cv);

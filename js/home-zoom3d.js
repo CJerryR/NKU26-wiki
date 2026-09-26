@@ -81,26 +81,19 @@
   /* the pager drives the flight: stop, merge, high altitude to field, field
    * to roots, roots, question. Each step has a fixed pace and cannot be
    * skipped with a fast scroll. */
-  var DUR = [0, 1700, 4600, 4400, 3400, 1000];
+  var DUR = [0, 4400, 5200];
   var drive = function () { return null; };
   NK.chinaDriver = function (fn) { drive = fn; };
   function to(i, ms) {
     var d = drive(i, ms);
-    stage.style.setProperty('--qo', i >= 5 ? '1' : '0');
-    if (d === null) { sec.classList.toggle('is-q', i >= 5); stage.style.setProperty('--merge', i ? '1' : '0'); }
+    stage.style.setProperty('--qo', i >= 2 ? '1' : '0');
+    if (d === null) { sec.classList.toggle('is-q', i >= 2); stage.style.setProperty('--merge', i ? '1' : '0'); }
   }
   H0.scene('china', {
-    steps: 5, tall: 6, cutIn: true, noSkip: true, dwell: 600,
+    steps: 2, tall: 4, cutIn: true, noSkip: true,
     set: function (i) { to(i, 0); },
-    step: function (i, dir) { var ms = sec.classList.contains('is-2d') ? 450 : dir > 0 ? DUR[i] : 1200; to(i, ms); return ms; },
-    enter: function (dir, info) {
-      if (info && info.cut) {
-        sec.classList.add('is-arriving');
-        requestAnimationFrame(function () { requestAnimationFrame(function () { sec.classList.remove('is-arriving'); }); });
-        return 900;
-      }
-      return 0;
-    }
+    step: function (i, dir) { var ms = sec.classList.contains('is-2d') ? 450 : dir > 0 ? DUR[i] : 1500; to(i, ms); return ms; },
+    enter: function () { return 0; }
   });
   if (!window.THREE || !NK.webgl()) NK.china2d();
 }());
@@ -640,7 +633,7 @@
     var ray = new T.Raycaster();
     var ndc = new T.Vector2();
     return {
-      scene: scene, cam: cam, focus: hhh, label: V3(hhh.x, 1.7, hhh.z), markers: markers, hasLayers: layers.length === 3,
+      scene: scene, cam: cam, focus: hhh, bbox: bb, label: V3(hhh.x, 1.7, hhh.z), markers: markers, hasLayers: layers.length === 3,
       fit: function (a) { cam.fov = a < 1 ? 50 : 36; },
       layout: function (w, h, fr) {
         VW = w;
@@ -1271,12 +1264,12 @@
     if (q < 0.68) { p = (q - 0.6) / 0.08; return { a: 1, ta: 1 + p * 0.2, b: 2, tb: -0.12 * (1 - p), p: p }; }
     return { a: 2, ta: NK.clamp((q - 0.68) / 0.22, 0, 1) };
   }
-  /* stops: 0 China map · 1 farming regions · 2 the field · 3 into the soil · 4 roots · 5 question */
-  var STATES = [{ merge: 0, q: 0, qo: 0 }, { merge: 1, q: 0, qo: 0 }, { merge: 1, q: 0.38, qo: 0 }, { merge: 1, q: 0.68, qo: 0 }, { merge: 1, q: 0.9, qo: 0 }, { merge: 1, q: 0.9, qo: 1 }];
+  /* stops (as in the v6 list): 0 the China map · 1 high above to the field, stop · 2 field to the roots, the question stays */
+  var STATES = [{ merge: 0, q: 0, qo: 0 }, { merge: 1, q: 0.38, qo: 0 }, { merge: 1, q: 0.9, qo: 1 }];
   var Z = { merge: 0, q: 0, qo: 0 };
   var tw = null;
   NK.chinaDriver(function (i, ms) {
-    var s = STATES[Math.max(0, Math.min(5, i))];
+    var s = STATES[Math.max(0, Math.min(2, i))];
     if (!ms) { tw = null; Z.merge = s.merge; Z.q = s.q; Z.qo = s.qo; return true; }
     tw = { a: { merge: Z.merge, q: Z.q, qo: Z.qo }, b: s, t0: performance.now(), dur: ms };
     return true;
@@ -1284,10 +1277,16 @@
   var tmp = new T.Vector3();
   function frame(time, dt) {
     if (tw) {
-      var k = NK.clamp((performance.now() - tw.t0) / tw.dur, 0, 1), e = NK.easeInOut(k);
-      Z.merge = NK.lerp(tw.a.merge, tw.b.merge, e);
-      Z.q = NK.lerp(tw.a.q, tw.b.q, e);
-      Z.qo = NK.lerp(tw.a.qo, tw.b.qo, k);
+      /* the map settles into the flight first, then the flight runs (in reverse the other way round); the question comes in at the end */
+      var k = NK.clamp((performance.now() - tw.t0) / tw.dur, 0, 1), a = tw.a, b = tw.b;
+      var fwd = b.q >= a.q && b.merge >= a.merge, dm = a.merge !== b.merge;
+      var mS = dm ? (fwd ? [0, 0.3] : [0.7, 1]) : [0, 0];
+      var qS = fwd ? [dm ? 0.3 : 0, b.qo > a.qo ? 0.86 : 1] : [0, dm ? 0.7 : 1];
+      var oS = b.qo > a.qo ? [0.8, 1] : [0, 0.25];
+      var seg = function (sp) { return sp[1] > sp[0] ? NK.easeInOut(NK.clamp((k - sp[0]) / (sp[1] - sp[0]), 0, 1)) : 1; };
+      Z.merge = NK.lerp(a.merge, b.merge, seg(mS));
+      Z.q = NK.lerp(a.q, b.q, seg(qS));
+      Z.qo = NK.lerp(a.qo, b.qo, seg(oS));
       if (k >= 1) tw = null;
     }
     U.uTime.value = NK.reduced ? 0 : time;
@@ -1373,6 +1372,17 @@
     function () {
       LV = built;
       resize();
+      /* where China sits on screen at the start of this page: the world map zooms to exactly this frame */
+      NK.chinaFrame = function () {
+        var L0 = LV[0], b = L0.bbox, x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9;
+        L0.update(0, performance.now() / 1000, 0.016, 0, 1);
+        [[b.x0, b.z0], [b.x1, b.z0], [b.x0, b.z1], [b.x1, b.z1]].forEach(function (p) {
+          tmp.set(p[0], 0.8, p[1]).project(L0.cam);
+          var sx = (tmp.x * 0.5 + 0.5) * W, sy = (-tmp.y * 0.5 + 0.5) * H;
+          x0 = Math.min(x0, sx); x1 = Math.max(x1, sx); y0 = Math.min(y0, sy); y1 = Math.max(y1, sy);
+        });
+        return { x: x0, y: y0, w: x1 - x0, h: y1 - y0 };
+      };
       var rT = 0;
       window.addEventListener('resize', function () { clearTimeout(rT); rT = setTimeout(resize, 150); });
       NK.loopWhileVisible(stage, frame, '80px 0px');

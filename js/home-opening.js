@@ -88,7 +88,7 @@
         if (!S.exploring) return;
         S.blockedN++;
         setLine(S.blockedN > 1 ? 'stuck' : 'blocked', 'is-alert', true);
-        lineAt = api.now() + 1.6;
+        lineAt = api.now() + 1.6; shownAt = api.now();
         nudge();
       }
     });
@@ -1167,9 +1167,13 @@
   }
 
   /* ---------------- what is the light on? ---------------- */
+  /* what is the light on? The line only changes when the light has settled on
+   * something new for a moment, and every line stays at least 1 s */
+  var cand = null, candAt = 0, shownAt = -10;
+  var MIN_SHOW = 1.0, SETTLE = 0.3;
   function describe(t) {
     if (!S.exploring || t < lineAt) return;
-    if (S.found) { if (lineKey !== 'found') setLine('found', 'is-found'); return; }
+    if (S.found) { if (lineKey !== 'found') { setLine('found', 'is-found'); shownAt = t; } return; }
     var R = U.uR.value, lx = light.x, ly = light.y, key = null, cls = '';
     if (S.roots && Math.hypot(L.target.x - lx, L.target.y - ly) < R * 0.95) { key = 'roots'; cls = 'is-alert'; }
     if (!key) {
@@ -1177,15 +1181,19 @@
         if (built.nodeState[i] === 2 && Math.hypot(L.nodes[i].x - lx, L.nodes[i].y - ly) < R * 0.6) { key = S.detected >= 3 ? 'trail' : 'detected'; cls = 'is-signal'; break; }
       }
     }
-    if (!key) {
-      built.ghosts.forEach(function (g) { if (!key && Math.hypot(g.position.x - lx, g.position.y - ly) < R * 0.45) key = 'ghost'; });
-    }
+    if (!key) built.ghosts.forEach(function (g) { if (!key && Math.hypot(g.position.x - lx, g.position.y - ly) < R * 0.45) key = 'ghost'; });
     if (!key) {
       key = sample(lx, ly);
+      if (key === 'pebble') key = 'soil';
       if (key === 'sick' && S.roots) { key = 'roots'; cls = 'is-alert'; }
       if (key === 'soil' && S.hinted && !S.detected) { key = 'hint'; cls = 'is-signal'; }
     }
-    if (key !== lineKey) { setLine(key, cls); lineAt = t + 0.45; }
+    if (key === lineKey) { cand = null; return; }
+    if (key !== cand) { cand = key; candAt = t; return; }
+    var urgent = key === 'roots' || key === 'detected' || key === 'trail';
+    if (t - shownAt < MIN_SHOW) return;
+    if (!urgent && t - candAt < SETTLE) return;
+    setLine(key, cls); shownAt = t; cand = null;
   }
 
   /* ---------------- frame ---------------- */
@@ -1210,7 +1218,7 @@
       if (exploring && !S.everExplored) {
         S.everExplored = true; S.tExplore = t;
         setNode(0, 1, t); setNode(1, 1, t + 0.5);
-        setLine('scan', '', true); lineAt = t + 2.2;
+        setLine('scan', '', true); lineAt = t + 2.2; shownAt = t;
         if (!ptr.seen && !guide) { light.tx = L.nodes[0].x + 1.6; light.ty = L.nodes[0].y + 1.9; }
       }
     }
