@@ -274,9 +274,15 @@
       }
       f = f || { x: innerWidth * 0.36, y: innerHeight * 0.14, w: innerWidth * 0.56, h: innerHeight * 0.74 };
       var X = function (lon) { return (lon + 180) * 2.5 / 900 * cr.width; }, Y = function (lat) { return (84 - lat) * 2.5 / 350 * cr.height; };
-      var x0 = X(73.5), x1 = X(134.8), y0 = Y(53.6), y1 = Y(18.2);
-      var s = Math.min(f.w / (x1 - x0), f.h / (y1 - y0));
-      var dx = f.x + f.w / 2 - cr.left - (x0 + x1) / 2 * s, dy = f.y + f.h / 2 - cr.top - (y0 + y1) / 2 * s;
+      var x0 = X(73.5), x1 = X(134.8), y0 = Y(53.6), y1 = Y(18.2), s, dx, dy;
+      if (f.a && f.b) {
+        /* map the same two lon/lat points onto where the 3D map draws them */
+        s = ((f.b.x - f.a.x) / (X(f.b.lon) - X(f.a.lon)) + (f.b.y - f.a.y) / (Y(f.b.lat) - Y(f.a.lat))) / 2;
+        dx = f.a.x - cr.left - X(f.a.lon) * s; dy = f.a.y - cr.top - Y(f.a.lat) * s;
+      } else {
+        s = Math.min(f.w / (x1 - x0), f.h / (y1 - y0));
+        dx = f.x + f.w / 2 - cr.left - (x0 + x1) / 2 * s; dy = f.y + f.h / 2 - cr.top - (y0 + y1) / 2 * s;
+      }
       mapBox.style.transformOrigin = '0 0';
       mapBox.style.transform = 'translate(' + dx.toFixed(1) + 'px,' + dy.toFixed(1) + 'px) scale(' + s.toFixed(3) + ')';
       sec.classList.add('is-diving');
@@ -287,7 +293,7 @@
       enter: function () { dive(false); if (!opened) openNow(); return 300; },
       leave: function (dir, info) {
         closeCard();
-        if (dir > 0 && info && info.to === 'china' && info.adjacent && innerWidth > 980) { if (window.NK && NK.chinaHandoff) NK.chinaHandoff(); dive(true); return 1400; }
+        if (dir > 0 && info && info.to === 'china' && info.adjacent && innerWidth > 980) { if (window.NK && NK.chinaHandoff) NK.chinaHandoff(); dive(true); return 1900; }
         return 0;
       },
       ff: function () { openNow(); }

@@ -83,7 +83,7 @@
    * skipped with a fast scroll. */
   var DUR = [0, 4400, 5200];
   NK.chinaArr = 1;
-  NK.chinaHandoff = function () { sec.classList.add('is-handoff'); stage.style.setProperty('--arrive', '0'); requestAnimationFrame(function () { requestAnimationFrame(function () { sec.classList.add('is-show'); }); }); };
+  NK.chinaHandoff = function () { sec.classList.add('is-handoff', 'is-pre'); stage.style.setProperty('--arrive', '0'); requestAnimationFrame(function () { requestAnimationFrame(function () { sec.classList.add('is-show'); }); }); };
   NK.chinaArrive = function () { sec.classList.remove('is-handoff', 'is-show'); stage.style.setProperty('--arrive', '1'); };
   var drive = function () { return null; };
   NK.chinaDriver = function (fn) { drive = fn; };
@@ -94,10 +94,15 @@
   }
   H0.scene('china', {
     steps: 2, tall: 4, cutIn: true, noSkip: true,
-    set: function (i) { to(i, 0); if (!sec.classList.contains('is-handoff')) { NK.chinaArr = 1; stage.style.setProperty('--arrive', '1'); } },
-    step: function (i, dir) { var ms = sec.classList.contains('is-2d') ? 450 : dir > 0 ? DUR[i] : 1500; to(i, ms); return ms; },
+    set: function (i) { to(i, 0); if (i === 0) sec.classList.add('is-pre'); if (!sec.classList.contains('is-handoff')) { NK.chinaArr = 1; stage.style.setProperty('--arrive', '1'); } },
+    step: function (i, dir) { if (i === 0) sec.classList.remove('is-pre'); var ms = sec.classList.contains('is-2d') ? 450 : dir > 0 ? DUR[i] : 1500; to(i, ms); return ms; },
     enter: function (dir, info) {
-      if (sec.classList.contains('is-handoff')) { NK.chinaArrive(1700); return 1500; }
+      if (sec.classList.contains('is-handoff')) {
+        NK.chinaArrive(1700);
+        setTimeout(function () { sec.classList.remove('is-pre'); }, 250);
+        return 1500;
+      }
+      sec.classList.remove('is-pre');
       return 0;
     }
   });
@@ -1311,10 +1316,13 @@
   NK.chinaHandoff = function () {
     tw = null; arrTw = null; Z.merge = 0; Z.q = 0; Z.qo = 0; NK.chinaArr = 0;
     stage.style.setProperty('--arrive', '0');
-    sec.classList.add('is-handoff');
+    sec.classList.add('is-handoff', 'is-pre');
+    if (LV) { try { frame(performance.now() / 1000, 0.016); } catch (e) {} }
+    if (!hLoop) hLoop = NK.loop(frame);
     requestAnimationFrame(function () { requestAnimationFrame(function () { sec.classList.add('is-show'); }); });
   };
   NK.chinaArrive = function (ms) {
+    if (hLoop) { hLoop(); hLoop = null; }
     sec.classList.remove('is-handoff', 'is-show');
     arrTw = { t0: performance.now(), dur: ms };
   };
@@ -1325,7 +1333,10 @@
     return true;
   });
   var tmp = new T.Vector3();
+  var lastFrameT = -1, hLoop = null;
   function frame(time, dt) {
+    if (!LV || time === lastFrameT) return;
+    lastFrameT = time;
     if (arrTw) { var ka = NK.clamp((performance.now() - arrTw.t0) / arrTw.dur, 0, 1); NK.chinaArr = ka; if (ka >= 1) arrTw = null; }
     stage.style.setProperty('--arrive', NK.easeInOut(NK.chinaArr == null ? 1 : NK.chinaArr).toFixed(3));
     if (tw) {
@@ -1429,13 +1440,21 @@
         var L0 = LV[0], b = L0.bbox, x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9, keep = NK.chinaArr;
         NK.chinaArr = 0;
         L0.update(0, performance.now() / 1000, 0.016, 0, 1);
+        L0.cam.updateMatrixWorld();
         NK.chinaArr = keep;
+        var C = geo.china;
+        function anchor(lon, lat) {
+          var x = (lon - C.west) * C.upd + C.ox, y = (C.north - lat) * C.upd + C.oy;
+          tmp.set((x - 300) / 10, 0.81, (y - 250) / 10).project(L0.cam);
+          return { lon: lon, lat: lat, x: (tmp.x * 0.5 + 0.5) * W, y: (-tmp.y * 0.5 + 0.5) * H };
+        }
+        var A = anchor(73.5, 53.6), B = anchor(134.8, 18.2);
         [[b.x0, b.z0], [b.x1, b.z0], [b.x0, b.z1], [b.x1, b.z1]].forEach(function (p) {
           tmp.set(p[0], 0.8, p[1]).project(L0.cam);
           var sx = (tmp.x * 0.5 + 0.5) * W, sy = (-tmp.y * 0.5 + 0.5) * H;
           x0 = Math.min(x0, sx); x1 = Math.max(x1, sx); y0 = Math.min(y0, sy); y1 = Math.max(y1, sy);
         });
-        return { x: x0, y: y0, w: x1 - x0, h: y1 - y0 };
+        return { x: x0, y: y0, w: x1 - x0, h: y1 - y0, a: A, b: B };
       };
       var rT = 0;
       window.addEventListener('resize', function () { clearTimeout(rT); rT = setTimeout(resize, 150); });
