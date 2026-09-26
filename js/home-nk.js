@@ -55,10 +55,13 @@
     }
     if (loops.length) requestAnimationFrame(tick); else running = false;
   }
+  /* every call is its own registration: stopping one never stops another
+     caller that registered the same function (v6.4 lost the China map that way) */
   NK.loop = function (fn) {
-    if (loops.indexOf(fn) < 0) loops.push(fn);
+    var entry = function (t, dt) { fn(t, dt); };
+    loops.push(entry);
     if (!running) { running = true; last = performance.now(); requestAnimationFrame(tick); }
-    return function () { var i = loops.indexOf(fn); if (i >= 0) loops.splice(i, 1); };
+    return function () { var i = loops.indexOf(entry); if (i >= 0) loops.splice(i, 1); };
   };
   NK.loopWhileVisible = function (el, fn, margin) {
     var stop = null;
