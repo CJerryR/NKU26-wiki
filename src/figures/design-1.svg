@@ -1,0 +1,21 @@
+<svg viewBox="0 0 960 176" style="max-width:740px;width:100%" aria-hidden="true">
+      <defs><marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#6e4fb8"/></marker></defs>
+      <g font-family="'Space Mono',monospace" font-size="12">
+        <rect x="8" y="48" width="168" height="72" rx="12" fill="#efe6d6" stroke="#6e4fb8" stroke-width="1.5"/>
+        <text x="92" y="80" text-anchor="middle" fill="#241c2b">Ascaroside</text><text x="92" y="97" text-anchor="middle" fill="#7b7280">ascr#18 (candidate)</text>
+        <rect x="204" y="48" width="168" height="72" rx="12" fill="#f6e6c8" stroke="#e2a23c" stroke-width="1.9"/>
+        <text x="288" y="76" text-anchor="middle" fill="#241c2b">Fungal GPCR</text><text x="288" y="92" text-anchor="middle" fill="#a8792a">Gpr2 / Gpr3</text><text x="288" y="107" text-anchor="middle" fill="#a8792a">(candidate  -  untested)</text>
+        <rect x="400" y="48" width="168" height="72" rx="12" fill="#efe6d6" stroke="#6e4fb8" stroke-width="1.5"/>
+        <text x="484" y="80" text-anchor="middle" fill="#241c2b">Gpa1&ndash;G&alpha; chimera</text><text x="484" y="97" text-anchor="middle" fill="#7b7280">pathway coupling</text>
+        <rect x="596" y="48" width="168" height="72" rx="12" fill="#efe6d6" stroke="#6e4fb8" stroke-width="1.5"/>
+        <text x="680" y="80" text-anchor="middle" fill="#241c2b">Mating MAPK</text><text x="680" y="97" text-anchor="middle" fill="#7b7280">cascade (amplify)</text>
+        <rect x="792" y="48" width="160" height="72" rx="12" fill="#efe6d6" stroke="#e2a23c" stroke-width="1.6"/>
+        <text x="872" y="80" text-anchor="middle" fill="#241c2b">Reporter</text><text x="872" y="97" text-anchor="middle" fill="#7b7280">(candidate)</text>
+        <g stroke="#6e4fb8" stroke-width="2" marker-end="url(#ar)">
+          <line x1="178" y1="84" x2="200" y2="84"/>
+          <line x1="374" y1="84" x2="396" y2="84"/>
+          <line x1="570" y1="84" x2="592" y2="84"/>
+          <line x1="766" y1="84" x2="788" y2="84"/>
+        </g>
+      </g>
+    </svg>

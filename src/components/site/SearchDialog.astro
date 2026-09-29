@@ -1,0 +1,21 @@
+---
+import Glass from '../glass/Glass.astro';
+import { UI_ICONS } from '../../lib/icons.mjs';
+---
+<div class="site-search" id="site-search" role="dialog" aria-modal="true" aria-labelledby="site-search-title" hidden data-search>
+  <div class="site-search__backdrop" data-search-close></div>
+  <Glass as="section" preset="sheet" class="site-search__panel">
+    <div class="site-search__head">
+      <h2 id="site-search-title">Search the wiki</h2>
+      <button class="site-search__close" type="button" data-search-close aria-label="Close search"><Fragment set:html={UI_ICONS.close} /></button>
+    </div>
+    <label class="site-search__box">
+      <Fragment set:html={UI_ICONS.search} />
+      <span class="sr-only">Search query</span>
+      <input type="search" data-search-input autocomplete="off" spellcheck="false" placeholder="Search pages and sections" aria-controls="site-search-results" />
+      <kbd>Esc</kbd>
+    </label>
+    <p class="site-search__meta" data-search-meta aria-live="polite">Type a word to search every page.</p>
+    <div class="site-search__results" id="site-search-results" data-search-results></div>
+  </Glass>
+</div>

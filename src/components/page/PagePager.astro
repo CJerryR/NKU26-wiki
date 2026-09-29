@@ -1,0 +1,25 @@
+---
+import { UI_ICONS } from '../../lib/icons.mjs';
+
+interface Link { href: string; title: string; blurb?: string }
+interface Props { prev?: Link | null; next?: Link | null }
+const { prev = null, next = null } = Astro.props;
+---
+{(prev || next) && (
+  <nav class="pager" aria-label="Previous and next page">
+    {prev ? (
+      <a class="pager__link pager__link--prev" href={prev.href} rel="prev">
+        <span class="pager__dir"><Fragment set:html={UI_ICONS.arrowLeft} />Previous</span>
+        <span class="pager__title">{prev.title}</span>
+        {prev.blurb && <span class="pager__blurb">{prev.blurb}</span>}
+      </a>
+    ) : <span class="pager__spacer"></span>}
+    {next ? (
+      <a class="pager__link pager__link--next" href={next.href} rel="next">
+        <span class="pager__dir">Next<Fragment set:html={UI_ICONS.arrowRight} /></span>
+        <span class="pager__title">{next.title}</span>
+        {next.blurb && <span class="pager__blurb">{next.blurb}</span>}
+      </a>
+    ) : <span class="pager__spacer"></span>}
+  </nav>
+)}
