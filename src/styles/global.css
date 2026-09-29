@@ -1,0 +1,12 @@
+/* Inner-page design system. Order matters: tokens → base → material → shell → page → content. */
+@import './fonts.css';
+@import './tokens.css';
+@import './base.css';
+@import './glass.css';
+@import './nav.css';
+@import './page.css';
+@import './toc.css';
+@import './prose.css';
+@import './blocks.css';
+@import './search.css';
+@import './footer.css';

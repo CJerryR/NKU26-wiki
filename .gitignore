@@ -1,4 +1,13 @@
+node_modules/
+public/
+.astro/
+dist/
+.DS_Store
 __pycache__/
 *.pyc
-.DS_Store
-node_modules/
+tmp/
+# Local provenance notes may contain authenticated workspace links.
+docs/source-inventory.md
+docs/feishu-archive/archive-manifest.json
+docs/feishu-archive/captures/
+docs/feishu-archive/library/
