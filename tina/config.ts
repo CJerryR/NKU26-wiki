@@ -39,7 +39,10 @@ export default defineConfig({
   schema: { collections: [{
     name: 'wiki', label: 'Wiki 内页', path: 'content/wiki', format: 'json',
     ui: {
-      ...(hosted ? {} : { router: ({ document }) => `/edit/${document._sys.filename}` }),
+      router: ({ document }) => {
+        if (typeof window !== 'undefined' && !['localhost', '127.0.0.1'].includes(window.location.hostname)) return undefined;
+        return `/edit/${document._sys.filename}`;
+      },
       allowedActions: { create: false, delete: false, createFolder: false },
       filename: { readonly: true, slugify: (values) => (values.title || 'page').toLowerCase().replace(/[^a-z0-9]+/g, '-') },
     },
