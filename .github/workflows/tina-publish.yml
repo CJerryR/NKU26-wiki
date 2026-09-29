@@ -39,7 +39,8 @@ jobs:
         run: |
           mkdir -p published/wiki-editor
           rsync -a --delete source/public/ published/wiki-editor/
-          cp -R source/.tina-static/admin published/wiki-editor/admin
+          mkdir -p published/wiki-editor/admin
+          rsync -a --exclude=.gitignore source/.tina-static/admin/ published/wiki-editor/admin/
           touch published/.nojekyll
           cd published
           git config user.name 'github-actions[bot]'
