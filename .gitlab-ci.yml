@@ -1,0 +1,26 @@
+# iGEM GitLab Pages: build the wiki with Astro, audit it, publish public/.
+image: node:22
+
+variables:
+  ASTRO_TELEMETRY_DISABLED: "1"
+  npm_config_cache: "$CI_PROJECT_DIR/.npm"
+
+pages:
+  stage: build
+  cache:
+    key: npm-cache
+    paths:
+      - .npm/
+  script:
+    - command -v python3 >/dev/null || (apt-get update -qq && apt-get install -y -qq python3 >/dev/null)
+    - if [ -f package-lock.json ]; then npm ci --no-audit --no-fund; else npm install --no-audit --no-fund; fi
+    - npm run build
+    - python3 tools/audit_wiki_content.py --generated --generated-root public
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH
+      when: never
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      when: always
