@@ -1,0 +1,121 @@
+{
+  "license": "Public domain",
+  "license_url": "https://www.naturalearthdata.com/about/terms-of-use/",
+  "projection": "Equidistant cylindrical/equirectangular; latitude of true scale 0 degrees; WGS84 geographic lon/lat inputs",
+  "point_formula": {
+    "x": "(longitude - west) * units_per_degree + offset_x",
+    "y": "(north - latitude) * units_per_degree + offset_y"
+  },
+  "sources": {
+    "world_land": {
+      "file": "ne_50m_land.geojson",
+      "theme_version": "4.0.0",
+      "sha256": "e874b27a51d146452be360cafb3cc50c86001074a67d534113e6534682f9826b",
+      "page": "https://www.naturalearthdata.com/downloads/50m-physical-vectors/50m-land/",
+      "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/v5.1.2/geojson/ne_50m_land.geojson",
+      "bytes": 1636166,
+      "release": "v5.1.2"
+    },
+    "countries_china_pov": {
+      "file": "ne_10m_admin_0_countries_chn.geojson",
+      "theme_version": "5.1.1",
+      "sha256": "a13bf5f310fde87bc0a5f994f8ce9bd706cc198d8ee37d221e61c2546b945372",
+      "page": "https://www.naturalearthdata.com/blog/admin-0-countries-point-of-views/",
+      "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/v5.1.2/geojson/ne_10m_admin_0_countries_chn.geojson",
+      "bytes": 13205107,
+      "release": "v5.1.2"
+    },
+    "china_maritime_indicators": {
+      "file": "ne_10m_admin_0_boundary_lines_maritime_indicator_chn.geojson",
+      "theme_version": "5.1.0",
+      "sha256": "6d8649e20b41a944937cbca983052c99c74662e681e7551c3936aff40cbfc17b",
+      "page": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/",
+      "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/v5.1.2/geojson/ne_10m_admin_0_boundary_lines_maritime_indicator_chn.geojson",
+      "bytes": 14655,
+      "release": "v5.1.2"
+    }
+  },
+  "projections": {
+    "world": {
+      "west": -180,
+      "east": 180,
+      "south": -90,
+      "north": 90,
+      "units_per_degree": 2.5,
+      "offset_x": 50,
+      "offset_y": 0,
+      "viewBox": [
+        0,
+        0,
+        1000,
+        450
+      ]
+    },
+    "china": {
+      "west": 72,
+      "east": 138,
+      "south": 0,
+      "north": 56,
+      "units_per_degree": 8.5,
+      "offset_x": 19.5,
+      "offset_y": 12,
+      "viewBox": [
+        0,
+        0,
+        600,
+        500
+      ]
+    }
+  },
+  "geometry_stats": {
+    "world_land": {
+      "features": 1420,
+      "polygons": 1421,
+      "rings": 1422,
+      "vertices": 60669,
+      "bounds": [
+        -180,
+        -89.998926,
+        180,
+        83.599609
+      ]
+    },
+    "china_land": {
+      "features": 3,
+      "polygons": 99,
+      "rings": 99,
+      "vertices": 15185,
+      "bounds": [
+        73.602256,
+        9.679511,
+        134.772579,
+        53.569444
+      ]
+    },
+    "maritime_indicators": {
+      "features": 9,
+      "polygons": 0,
+      "rings": 0,
+      "vertices": 135,
+      "bounds": [
+        108.302914,
+        3.401132,
+        121.838288,
+        21.724709
+      ]
+    }
+  },
+  "selection": "ADM0_A3 in CHN,HKG,MAC from China POV file. Taiwan already part of CHN; do not add a TWN geometry.",
+  "precision": "0.001 viewBox units; all source polygon rings and vertices retained; no simplification, smoothing or island removal",
+  "scientific_data": "None. Basemap geometry is not nematode distribution data.",
+  "outputs": {
+    "world-base.svg": {
+      "bytes": 779247,
+      "sha256": "fb92ed13ec5c335a674dfa54f1e93696a087388bc6ddab7e2c10703c2531450a"
+    },
+    "china-base.svg": {
+      "bytes": 196136,
+      "sha256": "67e86069d996baa3fac56886238478e1ec7d6f8dc7dccd6ba82b144ea5625297"
+    }
+  }
+}
