@@ -1,0 +1,39 @@
+---
+import Glass from '../glass/Glass.astro';
+import { inlineMd } from '../../lib/text';
+
+interface Props { title: string; heading?: string; sub?: string; crumbs: string[]; meta: Record<string, string> }
+const { title, heading, sub, crumbs, meta } = Astro.props;
+const trail = crumbs.length ? crumbs : [title];
+const facts = Object.entries(meta);
+const rings = [70, 130, 200, 280, 370];
+const lines = [140, 210, 280, 350, 420];
+---
+<header class="hero" data-tone="dark">
+  <div class="hero__art" aria-hidden="true">
+    <svg viewBox="0 0 1440 460" preserveAspectRatio="xMidYMid slice">
+      {rings.map((r, i) => <circle cx="1240" cy="150" r={r} class="hero__ring" style={`--i:${i}`} />)}
+      {lines.map((y, i) => <path d={`M-40,${y} C300,${y - 22} 900,${y + 26} 1480,${y - 12}`} class="hero__line" style={`--i:${i}`} />)}
+    </svg>
+  </div>
+  <div class="hero__inner">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/index.html">Home</a></li>
+        {trail.map((c, i) => <li aria-current={i === trail.length - 1 ? 'page' : undefined}>{c}</li>)}
+      </ol>
+    </nav>
+    <h1 class="hero__title" set:html={inlineMd(heading ?? title)} />
+    {sub && <p class="hero__sub" set:html={inlineMd(sub)} />}
+    {facts.length > 0 && (
+      <ul class="hero__facts" aria-label="About this page">
+        {facts.map(([k, v]) => (
+          <li><Glass as="span" preset="chip" class="chip"><span class="chip__k">{k}</span><span class="chip__v">{v}</span></Glass></li>
+        ))}
+      </ul>
+    )}
+  </div>
+  <div class="hero__edge" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path class="edge-back" d="M0,60 C240,18 420,96 720,64 C1020,32 1230,92 1440,52 L1440,120 L0,120 Z" /><path class="edge-front" d="M0,86 C260,52 470,110 720,86 C1010,58 1240,108 1440,82 L1440,120 L0,120 Z" /></svg>
+  </div>
+</header>

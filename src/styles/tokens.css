@@ -1,0 +1,34 @@
+:root {
+  /* soil + paper, from the v6 palette */
+  --paper: #f7f2e8; --paper-2: #efe6d6; --paper-3: #e7dcc8; --paper-hi: #fbf8f1;
+  --loam: #191222; --loam-2: #241830; --loam-3: #180f1e;
+  --ink: #241c2b; --ink-2: #4a4152; --ink-3: #6c6373;
+  --cream: #f4ecdd; --cream-2: #cdbfd6; --cream-3: #a595b0;
+  --iris: #6e4fb8; --iris-deep: #523a8c; --iris-bright: #9b7fe0;
+  --iris-wash: color-mix(in srgb, var(--iris) 9%, var(--paper-hi));
+  --amber: #e2a23c; --amber-deep: #8f5d10; --amber-soft: #f2c879;
+  --rust: #b8561f; --signal: #6ff3de; --brand: #7e0c6e; --gold: #ffd98a;
+  --line: rgba(36, 28, 43, .12); --line-2: rgba(36, 28, 43, .07); --line-loam: rgba(244, 236, 221, .12);
+
+  /* v7.2 (6.7 notes: "no serif fonts"): headings use the body sans too */
+  --font-display: 'Spline Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: 'Spline Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'Space Mono', 'SFMono-Regular', Menlo, Consolas, monospace;
+
+  /* layout */
+  --nav-h: 88px;
+  --wrap: 1240px;
+  /* v7.2: side gutter of the top bar — scales with the screen, so the bar spreads
+     out on big displays without touching the edges (same value on the homepage) */
+  --nav-gutter: clamp(20px, 4vw - 8px, 88px);
+  --rail: 244px;
+  --gutter: clamp(36px, 4.2vw, 64px);
+  --measure: 46rem;
+  --bleed: 0px;
+
+  --ease: cubic-bezier(.22, .61, .36, 1);
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
+  --lg-ease: cubic-bezier(.2, .9, .25, 1.08);
+}
+@media (min-width: 1380px) { :root { --bleed: 128px; } }
+@media (max-width: 520px) { :root { --nav-h: 78px; } }

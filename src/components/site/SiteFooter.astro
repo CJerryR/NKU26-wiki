@@ -1,0 +1,53 @@
+---
+import { footerNav } from '../../data/nav';
+import { site } from '../../data/site';
+import { getPages, byId, pageHref } from '../../lib/pages';
+
+const ids = byId(await getPages());
+const columns = footerNav.map((col) => ({
+  label: col.label,
+  links: col.items.map((l) => {
+    if (l.page === 'repository') return site.repository ? { label: l.label, href: site.repository } : null;
+    const entry = ids.get(l.page);
+    return entry ? { label: l.label, href: pageHref(entry) } : null;
+  }).filter((l): l is { label: string; href: string } => l !== null),
+}));
+const sponsors = site.sponsors.map((s) => ({ ...s, url: site.safeUrl(s.url) }));
+const friends = site.friends.map((s) => ({ ...s, url: site.safeUrl(s.url) }));
+---
+<footer class="site-footer" data-tone="dark">
+  <div class="site-footer__edge" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path class="edge-back" d="M0,60 C240,18 420,96 720,64 C1020,32 1230,92 1440,52 L1440,120 L0,120 Z" /><path class="edge-front" d="M0,86 C260,52 470,110 720,86 C1010,58 1240,108 1440,82 L1440,120 L0,120 Z" /></svg>
+  </div>
+  {sponsors.length > 0 && (
+    <section class="site-footer__sponsors" aria-label="Sponsors">
+      {sponsors.map((s) => s.url ? <a href={s.url}>{s.name}</a> : <span>{s.name}</span>)}
+    </section>
+  )}
+  <div class="site-footer__inner">
+    <div class="site-footer__brand">
+      <a href="/index.html" class="site-footer__logo" aria-label="NKU26 NemaKlear home">
+        <img src="/img/shell/nku-mark.svg" alt="" width="30" height="39" loading="lazy" />
+        <span><b>NKU26</b><em>NemaKlear</em></span>
+      </a>
+      <p><b>{site.team}</b></p>
+      <p>A Nankai University student project investigating a synthetic-biology sensing concept for plant-parasitic nematode-associated signals; component and system validation remain open.</p>
+    </div>
+    {columns.map((col) => (
+      <nav class="site-footer__col" aria-label={col.label}>
+        <h2>{col.label}</h2>
+        <ul>{col.links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
+      </nav>
+    ))}
+  </div>
+  {friends.length > 0 && (
+    <section class="site-footer__friends" aria-label="Friend teams">
+      <h2>Friend links</h2>
+      <ul>{friends.map((f) => <li>{f.url ? <a href={f.url}>{f.name}</a> : f.name}{f.note && <span>{f.note}</span>}</li>)}</ul>
+    </section>
+  )}
+  <div class="site-footer__legal">
+    <span>&copy; 2026 NKU iGEM Team &middot; <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>
+    <span>Fraunces, Spline Sans &amp; Space Mono: SIL OFL 1.1 &middot; Three.js: MIT</span>
+  </div>
+</footer>
