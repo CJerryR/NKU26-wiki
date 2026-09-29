@@ -1,0 +1,21 @@
+{
+  "name": "nku26-wiki",
+  "version": "7.0.0",
+  "private": true,
+  "type": "module",
+  "description": "NKU-iGEM 2026 wiki (NemaKlear): Astro build with liquid-glass inner pages; the story homepage is kept as-is.",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "audit": "python3 tools/audit_wiki_content.py --generated --generated-root public",
+    "verify": "astro build && python3 tools/audit_wiki_content.py --generated --generated-root public"
+  },
+  "dependencies": {
+    "astro": "^5.10.0",
+    "remark-directive": "^3.0.0 || ^4.0.0"
+  },
+  "engines": {
+    "node": ">=18.20.8"
+  }
+}

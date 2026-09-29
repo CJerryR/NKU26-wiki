@@ -1,0 +1,16 @@
+NKU homepage real-data handoff
+Generated: 2026-09-25
+
+Included files:
+- raw/nematode_aggregated_wCovariateData.csv
+- js/home-abundance.js
+- js/home-maps.js
+- DATA_SOURCES.md
+- tools/build_abundance.py
+
+The raw CSV is the van den Hoogen et al. (2020) aggregated dataset.
+The generated abundance layer contains 1,901 valid points from 1,933 rows;
+32 rows were skipped because Herbivores was NA.
+
+Raw CSV SHA-256:
+1d22daf9dee91c8d8ffb63f5c794bb19bb7766e938a076af567cfbf53bda75a1
