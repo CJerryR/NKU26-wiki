@@ -1,0 +1,81 @@
+/* Liquid glass: one material for every control that floats above the page.
+
+   The recipe is the top bar's, with its tint 5% more opaque than v7:
+     dark  – over the purple hero and the footer: a clear white film;
+     light – over the paper page: a cream film with dark ink.
+   Every glass surface (bar, dropdowns, phone menu, outline, outline pill,
+   search, hero labels) takes these tokens, so the look is changed here.
+
+   Layers inside every `.lg`:
+     fx    – the backdrop, refracted by an SVG displacement map (Chromium,
+             src/scripts/glass.ts) or frosted with a blur (Safari, Firefox);
+     tint  – the film;
+     shine – the rim light. */
+:root {
+  --lg-ink: #fff;
+  --lg-radius: 999px;
+  --glass-dark-tint: linear-gradient(180deg, rgb(255 255 255 / .14), rgb(255 255 255 / .08));
+  --glass-dark-edge: rgba(255, 255, 255, .16);
+  --glass-dark-ink: #fff;
+  --glass-light-tint: linear-gradient(180deg, rgb(255 253 248 / .85), rgb(251 247 239 / .69));
+  --glass-light-edge: rgba(36, 28, 43, .1);
+  --glass-light-ink: #1f1424;
+  /* Blur under the refraction. Small controls keep the bar's. Panels that
+     hold lists of text blur what lies behind them so it cannot be read
+     through; set the panel values to the bar values for identical glass. */
+  --glass-blur-bar-dark: .35px;
+  --glass-blur-bar-light: 3px;
+  --glass-blur-panel-dark: 14px;
+  --glass-blur-panel-light: 6px;
+  --glass-shadow-dark: 0 14px 34px -14px rgba(10, 2, 16, .55), 0 2px 6px rgba(10, 2, 16, .12);
+  --glass-shadow-light: 0 16px 36px -18px rgba(40, 24, 54, .45), 0 2px 6px rgba(40, 24, 54, .08);
+  --glass-shadow-panel-dark: 0 26px 60px -20px rgba(30, 4, 28, .6);
+  --glass-shadow-panel-light: 0 26px 56px -24px rgba(40, 24, 54, .5), 0 2px 8px -4px rgba(40, 24, 54, .12);
+}
+.lg {
+  position: relative; isolation: isolate; border-radius: var(--lg-radius);
+  --lg-blur-dark: var(--glass-blur-bar-dark); --lg-blur-light: var(--glass-blur-bar-light);
+  --lg-tint-bg: var(--glass-dark-tint); --lg-edge: var(--glass-dark-edge);
+  --lg-blur: var(--lg-blur-dark); --lg-frost: 10px;
+}
+/* panels: the same film and rim, more blur behind the text */
+.lnav__drop, .lnav__sheet, .toc__panel, .site-search__panel {
+  --lg-blur-dark: var(--glass-blur-panel-dark); --lg-blur-light: var(--glass-blur-panel-light); --lg-frost: 22px;
+}
+/* light tone: everything over the paper page */
+.lg-light, .toc__panel, .toc__pill, .site-search__panel,
+.lnav.is-on-light .lnav__island, .lnav__drop.is-light, .lnav__sheet.is-light {
+  --lg-ink: var(--glass-light-ink);
+  --lg-tint-bg: var(--glass-light-tint);
+  --lg-edge: var(--glass-light-edge);
+  --lg-blur: var(--lg-blur-light);
+}
+.lg > .lg__fx, .lg > .lg__tint, .lg > .lg__shine { position: absolute; inset: 0; border-radius: inherit; pointer-events: none; }
+.lg > .lg__fx {
+  z-index: -3; overflow: hidden;
+  -webkit-backdrop-filter: blur(var(--lg-frost)) saturate(175%) brightness(1.05);
+  backdrop-filter: blur(var(--lg-frost)) saturate(175%) brightness(1.05);
+}
+html.lg-refract .lg > .lg__fx { -webkit-backdrop-filter: none; }
+.lg > .lg__tint { z-index: -2; background: var(--lg-tint-bg); }
+.lg > .lg__shine {
+  z-index: -1;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(255, 255, 255, .14), inset 0 0 0 .5px var(--lg-edge);
+  background: radial-gradient(120% 90% at 50% -35%, rgba(255, 255, 255, .2), transparent 58%),
+    radial-gradient(160px 90px at var(--lg-mx, 30%) var(--lg-my, 0%), rgba(255, 255, 255, .08), transparent 70%);
+}
+html.lg-refract .lg > .lg__shine {
+  box-shadow: inset 0 0 0 .5px var(--lg-edge);
+  background: radial-gradient(120% 80% at 50% -40%, rgba(255, 255, 255, .12), transparent 55%);
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .lg { --lg-tint-bg: rgb(36 24 48 / .9); }
+  .lg-light, .toc__panel, .toc__pill, .site-search__panel,
+  .lnav.is-on-light .lnav__island, .lnav__drop.is-light, .lnav__sheet.is-light { --lg-tint-bg: rgb(251 248 241 / .97); }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .lg { --lg-tint-bg: rgb(36 24 48 / .94); }
+  .lg-light, .toc__panel, .toc__pill, .site-search__panel,
+  .lnav.is-on-light .lnav__island, .lnav__drop.is-light, .lnav__sheet.is-light { --lg-tint-bg: rgb(251 248 241 / .97); }
+}
