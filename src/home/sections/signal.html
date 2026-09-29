@@ -1,0 +1,230 @@
+<!-- v7.5: Wang Chang's concept sketch of the project, rebuilt in the site's own
+     colours as an interactive diagram. Same layout as the sketch: the wet lab
+     runs on the paper, the dry lab in the two lavender bands. The script
+     (home-story.js, labFlow) plays the signal through once on arrival;
+     the chapter tabs replay one part, and every step opens a short note. -->
+<section class="lf" id="signal" data-nav-label="Dry lab and wet lab" data-signal data-lf data-tone="light" aria-labelledby="signal-title">
+  <div class="lf__inner">
+    <div class="lf__copy">
+      <h2 class="h-display" id="signal-title">Our work: dry lab and wet lab</h2>
+      <p class="lf__lede">The wet lab builds a yeast that turns an ascaroside signal into color. The dry lab screens its receptor and turns that color into nematode numbers and advice.</p>
+      <p class="lf__hint">Point at any step to read about it.</p>
+      <div class="lf__tabs" role="group" aria-label="Chapters of the workflow">
+        <button type="button" class="lf__tab lf__tab--wet" data-lf-tab="1" aria-pressed="false"><i aria-hidden="true"></i><b>Discover</b><span class="lf__more"><span>A nematode-trapping fungus gives us a receptor for ascarosides.</span></span></button>
+        <button type="button" class="lf__tab lf__tab--dry" data-lf-tab="2" aria-pressed="false"><i aria-hidden="true"></i><b>Engineer</b><span class="lf__more"><span>Docking and molecular dynamics pick the receptor variants for ascr#3 and ascr#18.</span></span></button>
+        <button type="button" class="lf__tab lf__tab--wet" data-lf-tab="3" aria-pressed="false"><i aria-hidden="true"></i><b>Sense</b><span class="lf__more"><span>In yeast, the receptor switches on betaxanthin and the medium turns yellow.</span></span></button>
+        <button type="button" class="lf__tab lf__tab--dry" data-lf-tab="4" aria-pressed="false"><i aria-hidden="true"></i><b>Interpret</b><span class="lf__more"><span>Models turn the color into nematode numbers, then into costs and advice.</span></span></button>
+      </div>
+    </div>
+
+    <figure class="lf__stage" data-lf-stage>
+      <svg class="lf-svg is-pre" data-lf-svg viewBox="0 0 1440 780" role="img" aria-labelledby="lf-svg-title">
+        <title id="lf-svg-title">How the wet lab and the dry lab fit together, in ten steps</title>
+        <defs>
+          <marker id="lf-h-wet" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1.5L8 5L1 8.5" fill="none" stroke="#7e0c6e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></marker>
+          <marker id="lf-h-dry" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1.5L8 5L1 8.5" fill="none" stroke="#5a3f8c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></marker>
+          <marker id="lf-h-gold" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1.5L8 5L1 8.5" fill="none" stroke="#c98d12" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></marker>
+          <radialGradient id="lf-knob" cx=".38" cy=".34" r=".72"><stop offset="0" stop-color="#ffe98a" /><stop offset=".6" stop-color="#f5c21b" /><stop offset="1" stop-color="#d9a008" /></radialGradient>
+          <radialGradient id="lf-cyto" cx=".45" cy=".4" r=".7"><stop offset="0" stop-color="#fffaf0" /><stop offset="1" stop-color="#f6ead3" /></radialGradient>
+          <radialGradient id="lf-nuc" cx=".4" cy=".35" r=".75"><stop offset="0" stop-color="#7a64ad" /><stop offset="1" stop-color="#4c3a78" /></radialGradient>
+          <linearGradient id="lf-medium" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd84a" /><stop offset="1" stop-color="#e9a90e" /></linearGradient>
+          <g id="lf-y"><path d="M0 22V4M0 4L-11-11M0 4L11-11" fill="none" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" /></g>
+          <g id="lf-hex"><path d="M0-9L7.8-4.5V4.5L0 9L-7.8 4.5V-4.5Z" fill="#fff" stroke-width="2.6" stroke-linejoin="round" /><path d="M7.8 0C13 -4 16 4 21 0S28 -4 32 0" fill="none" stroke-width="2.4" stroke-linecap="round" /></g>
+        </defs>
+
+        <!-- the two dry lab bands, as in the sketch -->
+        <path class="lf-band" d="M905 0H1440V372H1054Z" />
+        <path class="lf-band" d="M0 246H842L926 456H0Z" />
+        <text class="lf-zone lf-zone--dry" x="1422" y="356" text-anchor="end">Dry lab</text>
+        <text class="lf-zone lf-zone--dry" x="896" y="440" text-anchor="end">Dry lab</text>
+        <text class="lf-zone lf-zone--wet" x="26" y="34">Wet lab</text>
+        <text class="lf-zone lf-zone--wet" x="1422" y="768" text-anchor="end">Wet lab</text>
+
+        <!-- arrows between steps (drawn in order by the script) -->
+        <g class="lf-arrows" fill="none" stroke-linecap="round">
+          <path class="lf-arrow lf-arrow--wet" data-ch="1" data-to="2" d="M272 94C312 70 362 70 404 92" />
+          <path class="lf-arrow lf-arrow--dry" data-ch="2" data-to="3" d="M632 124C724 206 884 196 976 126" />
+          <path class="lf-arrow lf-arrow--dry" data-ch="2" data-to="4" d="M1128 104H1182" />
+          <path class="lf-arrow lf-arrow--wet" data-ch="3" data-to="5" d="M1306 206C1308 236 1308 268 1306 298" />
+          <path class="lf-arrow lf-arrow--wet" data-ch="3" data-to="6" d="M1290 396C1272 426 1248 454 1224 476" />
+          <path class="lf-arrow lf-arrow--gold" data-ch="3" data-to="7" d="M998 626C964 634 928 636 892 632" />
+          <path class="lf-arrow lf-arrow--gold" data-ch="3" data-to="8" d="M716 640C686 642 652 642 616 640" />
+          <path class="lf-arrow lf-arrow--dry" data-ch="4" data-to="9" d="M436 564C436 530 436 500 436 424" />
+          <path class="lf-arrow lf-arrow--dry" data-ch="4" data-to="10" d="M604 350H666" />
+        </g>
+
+        <!-- 1 the fungus -->
+        <g class="lf-stop" data-k="1" data-ch="1" data-ax="150" data-ay="232" data-below tabindex="0" role="button" aria-label="Step 1: a fungus that traps nematodes">
+          <g transform="translate(150 112)">
+            <path d="M-112 74C-84 44-62 62-42 22S-18-12-8-26M-42 22C-20 32 2 42 32 32S82 28 104 8M32 32C36 50 40 64 38 82" fill="none" stroke="#6b4f3c" stroke-width="6" stroke-linecap="round" />
+            <circle cx="104" cy="4" r="12" fill="url(#lf-knob)" />
+            <circle cx="38" cy="84" r="10" fill="url(#lf-knob)" />
+            <path class="lf-worm" d="M20-44C44-62 70-26 104-46" fill="none" stroke="#f39a4c" stroke-width="9" stroke-linecap="round" />
+            <circle cx="104" cy="-46" r="1.8" fill="#3b2a25" />
+            <path d="M-10-40L18-58A29 29 0 1 0 18-22Z" fill="url(#lf-knob)" stroke="#c38b06" stroke-width="1.5" stroke-linejoin="round" />
+            <circle cx="-14" cy="-54" r="3.2" fill="#3b2a25" />
+          </g>
+          <text class="lf-label" x="150" y="222" text-anchor="middle">A fungus that traps nematodes</text>
+        </g>
+
+        <!-- 2 the receptor -->
+        <g class="lf-stop" data-k="2" data-ch="1" data-ax="520" data-ay="232" data-below tabindex="0" role="button" aria-label="Step 2: a receptor for ascarosides">
+          <g transform="translate(520 112)">
+            <path d="M-104 72V42Q0-10 104 42V72Z" fill="#fbeecb" />
+            <path d="M-104 42Q0-10 104 42" fill="none" stroke="#6b4f3c" stroke-width="6" stroke-linecap="round" />
+            <use href="#lf-y" x="0" y="-10" stroke="#7e0c6e" />
+            <use href="#lf-hex" transform="translate(40 -46) rotate(-20)" stroke="#ff5e86" />
+            <path d="M26-28l-8 6M34-20l-6 8" stroke="#ff5e86" stroke-width="2" stroke-linecap="round" opacity=".6" />
+          </g>
+          <text class="lf-label" x="520" y="222" text-anchor="middle">A receptor for ascarosides</text>
+        </g>
+
+        <!-- 3 receptor variants (dry) -->
+        <g class="lf-stop lf-stop--dry" data-k="3" data-ch="2" data-ax="1070" data-ay="206" data-below tabindex="0" role="button" aria-label="Step 3: redesigning the receptor">
+          <g transform="translate(1056 106)">
+            <use href="#lf-y" x="-46" y="-6" stroke="#6e5a8f" />
+            <path d="M-26 0C-10-2 0-30 20-38M-26 4H22M-26 8C-10 10 0 38 20 46" fill="none" stroke="#9b86c4" stroke-width="2.4" stroke-linecap="round" />
+            <g transform="translate(40 -44) scale(.72)"><use href="#lf-y" stroke="#6e5a8f" /><path d="M-11-11l-4-6M11-11l4-6" stroke="#e2a23c" stroke-width="6" stroke-linecap="round" /></g>
+            <g transform="translate(42 0) scale(.72)"><use href="#lf-y" stroke="#6e5a8f" /><path d="M-11-11l-4-6M11-11l4-6" stroke="#ff5e86" stroke-width="6" stroke-linecap="round" /></g>
+            <g transform="translate(40 44) scale(.72)"><use href="#lf-y" stroke="#6e5a8f" /><path d="M-11-11l-4-6M11-11l4-6" stroke="#4c8dff" stroke-width="6" stroke-linecap="round" /></g>
+          </g>
+          <text class="lf-label" x="1076" y="196" text-anchor="middle">Receptor variants</text>
+        </g>
+
+        <!-- 4 docking and MD (dry) -->
+        <g class="lf-stop lf-stop--dry" data-k="4" data-ch="2" data-ax="1300" data-ay="210" data-below tabindex="0" role="button" aria-label="Step 4: docking and molecular dynamics">
+          <g transform="translate(1300 96)">
+            <text class="lf-tag" x="-44" y="-70" text-anchor="middle">MD</text>
+            <rect x="-100" y="-60" width="112" height="78" rx="9" fill="#231829" />
+            <rect x="-93" y="-53" width="98" height="56" rx="4" fill="#33263d" />
+            <path class="lf-md" d="M-80-14C-72-44-60 8-50-30S-34-2-26-36S-10-6-4-24" fill="none" stroke="#e880d0" stroke-width="3" stroke-linecap="round" />
+            <path d="M-86 12h40M-86 8h24" stroke="#6ff3de" stroke-width="1.6" opacity=".6" />
+            <text class="lf-tag" x="78" y="-70" text-anchor="middle">Docking</text>
+            <g class="lf-dock">
+              <use href="#lf-y" x="76" y="-2" stroke="#6e5a8f" />
+              <g transform="translate(50 -34) scale(.8)"><use href="#lf-hex" stroke="#4c8dff" /></g>
+              <g transform="translate(88 -40) scale(.8)"><use href="#lf-hex" stroke="#ff5e86" /></g>
+            </g>
+            <path d="M104 14l6 6 12-14" fill="none" stroke="#2f9e74" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+          </g>
+          <text class="lf-label" x="1316" y="148" text-anchor="middle"><tspan x="1316" dy="30">Keep the variants for</tspan><tspan x="1316" dy="21">ascr#3 and ascr#18</tspan></text>
+        </g>
+
+        <!-- 5 into yeast -->
+        <g class="lf-stop" data-k="5" data-ch="3" data-ax="1306" data-ay="306" tabindex="0" role="button" aria-label="Step 5: the receptor gene goes into yeast">
+          <g transform="translate(1306 350)">
+            <circle cx="30" cy="-30" r="12" fill="url(#lf-cyto)" stroke="#5b4636" stroke-width="3" />
+            <circle r="40" fill="url(#lf-cyto)" stroke="#5b4636" stroke-width="3.5" />
+            <circle r="17" fill="none" stroke="#7e0c6e" stroke-width="3" />
+            <path d="M-12-12A17 17 0 0 1 12-12" fill="none" stroke="#e2a23c" stroke-width="6" stroke-linecap="round" />
+          </g>
+          <text class="lf-label" x="1250" y="342" text-anchor="end"><tspan x="1250">Receptor gene</tspan><tspan x="1250" dy="21">into yeast</tspan></text>
+        </g>
+
+        <!-- 6 the yeast cell: receptor, pathway, pigment genes -->
+        <g class="lf-stop" data-k="6" data-ch="3" data-ax="1140" data-ay="466" tabindex="0" role="button" aria-label="Step 6: the receptor signal switches on the pigment genes">
+          <g transform="translate(1140 606)">
+            <circle r="136" fill="url(#lf-cyto)" stroke="#5b4636" stroke-width="6" />
+            <g transform="translate(72 -115) rotate(32)">
+              <path d="M0-24q20 4 0 8t0 8t0 8t0 8t0 8t0 8" fill="none" stroke="#7e0c6e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+              <g transform="translate(-4 -40) rotate(-32) scale(.85)"><use href="#lf-hex" stroke="#ff5e86" /></g>
+            </g>
+            <g class="lf-cascade">
+              <rect x="30" y="-78" width="18" height="18" rx="5" fill="#8a6fc4" />
+              <rect x="6" y="-50" width="16" height="16" rx="5" fill="#6e5a8f" />
+              <rect x="-16" y="-24" width="14" height="14" rx="4" fill="#7e0c6e" />
+              <path d="M36-58l-8 8M12-32l-8 8" stroke="#6e5a8f" stroke-width="2.2" stroke-linecap="round" />
+            </g>
+            <ellipse cx="-22" cy="40" rx="76" ry="58" fill="url(#lf-nuc)" />
+            <g stroke="#f4ecdd" stroke-width="2" stroke-linecap="round" opacity=".75"><path d="M-84 18h122M-88 42h128M-84 66h122" /></g>
+            <g class="lf-genes">
+              <rect x="-62" y="12" width="30" height="12" rx="3" fill="#f2a93b" />
+              <rect x="-52" y="36" width="30" height="12" rx="3" fill="#f2a93b" />
+              <rect x="-62" y="60" width="30" height="12" rx="3" fill="#f2a93b" />
+              <path d="M-18 12h22l7 6-7 6h-22zM-8 36h22l7 6-7 6h-22zM-18 60h22l7 6-7 6h-22z" fill="#5fbf8f" />
+            </g>
+            <g class="lf-pig" fill="#f5c21b">
+              <circle cx="-96" cy="-40" r="6" /><circle cx="-112" cy="-6" r="7" /><circle cx="-60" cy="-70" r="5" /><circle cx="-104" cy="96" r="6" /><circle cx="-70" cy="112" r="5" />
+              <circle cx="-164" cy="-18" r="6" opacity=".8" /><circle cx="-178" cy="30" r="5" opacity=".7" /><circle cx="-152" cy="54" r="4" opacity=".7" />
+            </g>
+          </g>
+          <text class="lf-label" x="1290" y="574"><tspan x="1290">The signal</tspan><tspan x="1290" dy="21">switches on</tspan><tspan x="1290" dy="21">pigment genes</tspan></text>
+        </g>
+
+        <!-- 7 the medium turns yellow -->
+        <g class="lf-stop" data-k="7" data-ch="3" data-ax="790" data-ay="548" tabindex="0" role="button" aria-label="Step 7: betaxanthin turns the medium yellow">
+          <g transform="translate(804 624)">
+            <ellipse cx="-58" cy="46" rx="50" ry="15" fill="#fff" stroke="#b3a6bf" stroke-width="2.5" />
+            <ellipse class="lf-fill" cx="-58" cy="46" rx="42" ry="10" fill="url(#lf-medium)" />
+            <path d="M8-72h26M14-72v36L-12 34Q-18 50 0 50h42q18 0 12-16L28-36v-36" fill="rgba(255,255,255,.7)" stroke="#9a8fae" stroke-width="3" stroke-linejoin="round" />
+            <path class="lf-fill" d="M-4 14H46L52 34Q56 44 42 44H0Q-12 44-8 34Z" fill="url(#lf-medium)" />
+          </g>
+          <text class="lf-label" x="780" y="708" text-anchor="middle"><tspan x="780">Betaxanthin turns</tspan><tspan x="780" dy="21">the medium yellow</tspan></text>
+        </g>
+
+        <!-- 8 OD and RGB readings -->
+        <g class="lf-stop" data-k="8" data-ch="3" data-ax="470" data-ay="566" tabindex="0" role="button" aria-label="Step 8: OD and RGB readings give the pigment level">
+          <g transform="translate(470 632)">
+            <rect x="-136" y="-60" width="184" height="112" rx="12" fill="#fffaf1" stroke="rgba(35,24,41,.14)" />
+            <path d="M-116-44V36H32" fill="none" stroke="#877b8d" stroke-width="1.6" />
+            <path class="lf-curve" d="M-114 30C-80 28-66 8-48-10S-10-36 28-38" fill="none" stroke="#e9a90e" stroke-width="3.2" stroke-linecap="round" />
+            <g fill="#7e0c6e"><circle cx="-96" cy="27" r="3.4" /><circle cx="-70" cy="16" r="3.4" /><circle cx="-46" cy="-6" r="3.4" /><circle cx="-18" cy="-26" r="3.4" /><circle cx="12" cy="-34" r="3.4" /></g>
+            <rect x="62" y="-60" width="52" height="30" rx="8" fill="#231829" /><text class="lf-chip" x="88" y="-40" text-anchor="middle">OD</text>
+            <rect x="62" y="-20" width="52" height="52" rx="10" fill="#f5c21b" stroke="rgba(35,24,41,.12)" /><text class="lf-chip lf-chip--ink" x="88" y="10" text-anchor="middle">RGB</text>
+          </g>
+          <text class="lf-label" x="484" y="714" text-anchor="middle">OD and RGB give the pigment level</text>
+        </g>
+
+        <!-- 9 lumped model (dry) -->
+        <g class="lf-stop lf-stop--dry" data-k="9" data-ch="4" data-ax="440" data-ay="424" data-below tabindex="0" role="button" aria-label="Step 9: from color to nematode numbers">
+          <text class="lf-eq" x="40" y="318">N<tspan class="lf-eq__sub" dy="8">nematode</tspan><tspan x="40" dy="38">= f(OD, t, …)</tspan><tspan x="40" dy="40">= f′(color)</tspan></text>
+          <g transform="translate(440 352)">
+            <rect x="-148" y="-64" width="296" height="128" rx="14" fill="#fffaf1" stroke="rgba(35,24,41,.12)" />
+            <text class="lf-card-t" x="-128" y="-34">Lumped model</text>
+            <g class="lf-chain" transform="translate(-128 -6)">
+              <rect width="60" height="22" rx="11" /><text x="30" y="15" text-anchor="middle">Receptor</text>
+              <rect x="70" width="62" height="22" rx="11" /><text x="101" y="15" text-anchor="middle">G protein</text>
+              <rect x="142" width="44" height="22" rx="11" /><text x="164" y="15" text-anchor="middle">MAPK</text>
+              <rect x="196" width="28" height="22" rx="11" /><text x="210" y="15" text-anchor="middle">TF</text>
+              <rect class="lf-chain__end" x="234" width="22" height="22" rx="11" />
+            </g>
+            <path d="M-128 50C-96 48-84 30-60 26S-10 20 20 20S90 18 128 18" fill="none" stroke="#9b86c4" stroke-width="2" />
+            <path d="M-128 50C-104 50-88 44-64 40S-4 34 40 34S100 33 128 32" fill="none" stroke="#ff9db5" stroke-width="2" />
+          </g>
+        </g>
+
+        <!-- 10 eco model (dry) -->
+        <g class="lf-stop lf-stop--dry" data-k="10" data-ch="4" data-ax="764" data-ay="424" data-below tabindex="0" role="button" aria-label="Step 10: the eco model estimates costs and suggests what to do">
+          <g transform="translate(764 352)">
+            <rect x="-88" y="-64" width="176" height="128" rx="14" fill="#fffaf1" stroke="rgba(35,24,41,.12)" />
+            <text class="lf-card-t" x="-70" y="-34">Eco model</text>
+            <g class="lf-bars"><rect x="-70" y="-2" width="16" height="42" rx="3" fill="#c7b3e3" /><rect x="-48" y="-18" width="16" height="58" rx="3" fill="#9b86c4" /><rect x="-26" y="10" width="16" height="30" rx="3" fill="#e2a23c" /></g>
+            <g stroke="#2f9e74" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M6 -4l5 5 9-10M6 22l5 5 9-10" /></g>
+            <g stroke="#cdbfd6" stroke-width="5" stroke-linecap="round"><path d="M28-4h42M28 22h32" /></g>
+          </g>
+        </g>
+
+        <!-- the signal that runs through the steps -->
+        <g class="lf-dot" data-lf-dot aria-hidden="true"><circle class="lf-dot__halo" r="13" /><circle class="lf-dot__core" r="5.5" /></g>
+      </svg>
+        <div class="lf__foot" aria-label="Key">
+          <span class="lf__keys"><span class="lf__key"><i class="lf__sw lf__sw--wet" aria-hidden="true"></i>Wet lab</span>
+          <span class="lf__key"><i class="lf__sw lf__sw--dry" aria-hidden="true"></i>Dry lab</span></span>
+          <button type="button" class="lf__replay" data-lf-replay><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10a5.5 5.5 0 1 0 1.7-4" /><path d="M5.6 2.8l.6 3.4 3.4-.6" /></svg>Replay</button>
+        </div>
+      <div class="lf-card" data-lf-card role="status" aria-live="polite" hidden><b></b><p></p></div>
+    </figure>
+  </div>
+  <ol class="sr-only">
+    <li>Wet lab: Arthrobotrys oligospora, a nematode-trapping fungus, captures the nematodes around it.</li>
+    <li>Wet lab: in it we found a receptor that recognizes ascarosides, the nematodes' chemical signals.</li>
+    <li>Dry lab: we took this receptor and designed variants of it.</li>
+    <li>Dry lab: molecular docking and molecular dynamics screened the variants that recognize ascr#3 and ascr#18.</li>
+    <li>Wet lab: the modified gene goes into yeast, which then carries the receptor and recognizes ascarosides.</li>
+    <li>Wet lab: the receptor signal is coupled to the yeast's own pathway and switches on the betaxanthin synthesis genes.</li>
+    <li>Wet lab: betaxanthin builds up inside and outside the cells and the culture medium changes color.</li>
+    <li>Wet lab: OD and RGB measurements of the medium give the pigment concentration.</li>
+    <li>Dry lab: a lumped model links pigment concentration to the ascaroside concentration, and so to nematode activity: N nematode = f(OD, t, …) = f′(color).</li>
+    <li>Dry lab: the eco model takes the abundance of harmful nematodes, estimates the economic impact and suggests what to do.</li>
+  </ol>
+</section>

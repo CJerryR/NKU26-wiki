@@ -1,0 +1,13 @@
+---
+/** Pages with a `route` (the iGEM standard addresses): <route>/index.html */
+import PageView from '../../components/page/PageView.astro';
+import { getPages } from '../../lib/pages';
+
+export async function getStaticPaths() {
+  const pages = await getPages();
+  return pages.filter((entry) => entry.data.route).map((entry) => ({ params: { route: entry.data.route }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+---
+<PageView entry={entry} />

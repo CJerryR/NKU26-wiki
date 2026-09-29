@@ -1,0 +1,43 @@
+---
+/** One inner page: hero, outline, Markdown body, previous / next. */
+import { render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from './PageHero.astro';
+import Toc from './Toc.astro';
+import PagePager from './PagePager.astro';
+import { readingOrder } from '../../data/nav';
+import { getPages, byId, pageHref, type PageEntry } from '../../lib/pages';
+import { stripMd } from '../../lib/text';
+
+interface Props { entry: PageEntry }
+const { entry } = Astro.props;
+const data = entry.data;
+
+const { Content, headings, remarkPluginFrontmatter } = await render(entry);
+type TocItem = { depth: number; id: string; text: string; num?: string };
+const fromPlugin = (remarkPluginFrontmatter as { toc?: TocItem[] } | undefined)?.toc;
+const toc: TocItem[] = Array.isArray(fromPlugin) ? fromPlugin
+  : headings.filter((h) => h.depth === 2).map((h, i) => ({ depth: 2, id: h.slug, text: h.text, num: String(i + 1).padStart(2, '0') }));
+
+const ids = byId(await getPages());
+const order = readingOrder().filter((l) => ids.has(l.page));
+const at = order.findIndex((l) => l.page === entry.id);
+const link = (i: number) => {
+  const l = order[i];
+  const target = l ? ids.get(l.page) : undefined;
+  return l && target ? { href: pageHref(target), title: l.label, blurb: l.blurb } : null;
+};
+const prev = at > 0 ? link(at - 1) : null;
+const next = at >= 0 && at < order.length - 1 ? link(at + 1) : null;
+const description = data.description ?? (data.sub ? stripMd(data.sub) : undefined);
+---
+<BaseLayout title={data.title} description={description} current={pageHref(entry)}>
+  <PageHero title={data.title} heading={data.heading} sub={data.sub} crumbs={data.crumbs} meta={data.meta} />
+  <div class:list={['doc', { 'doc--no-toc': toc.length === 0 }]} data-tone="light">
+    <Toc items={toc} title={data.title} />
+    <article class="doc__body prose" data-doc>
+      <Content />
+    </article>
+  </div>
+  <PagePager prev={prev} next={next} />
+</BaseLayout>
