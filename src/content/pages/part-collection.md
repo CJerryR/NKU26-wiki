@@ -1,12 +1,18 @@
 ---
 title: Part Collection
-heading: "The part *collection*"
-sub: "How our parts are meant to work as one set, and how another team could reuse them. The formal record lives on the iGEM Registry."
-crumbs: [Wet Lab, Part Collection]
+heading: The part *collection*
+sub: >-
+  How our parts are meant to work as one set, and how another team could reuse
+  them. The formal record lives on the iGEM Registry.
+crumbs:
+  - Wet Lab
+  - Part Collection
+search: true
 meta:
   Status: In preparation
+draft: false
+hidden: false
 ---
-
 ## What the collection is for {#purpose toc="Purpose"}
 
 This page will describe our parts as a single collection: the goal they share, the design logic that connects them, and the system function the set is meant to deliver. No collection has been assembled or verified yet, so nothing is claimed here. The current evidence for each element is on the [Parts](/parts/) page.

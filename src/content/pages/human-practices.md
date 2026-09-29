@@ -1,14 +1,20 @@
 ---
 title: Integrated Human Practices
-heading: "Questions from the *field*"
-sub: "Documented consultations, unresolved challenges, and the evidence still needed for integration."
-crumbs: [Human Practices, Integrated Human Practices]
+heading: Questions from the *field*
+sub: >-
+  Documented consultations, unresolved challenges, and the evidence still needed
+  for integration.
+crumbs:
+  - Human Practices
+  - Integrated Human Practices
 route: human-practices
+search: true
 meta:
-  Reading: "7 min"
+  Reading: 7 min
   Status: Consultation documented
+draft: false
+hidden: false
 ---
-
 ## Starting from what is documented {#approach toc="Our approach"}
 
 An internal progress document contains two dated consultation records. Other inspected materials, including an interview brief and question lists, are preparation only and do not prove that additional interactions occurred. Public-attribution consent is unverified, so this page withholds names, identifying details, and direct quotations.
@@ -17,7 +23,7 @@ The notes are neither transcripts nor independently verified scientific or legal
 
 ## Two recorded consultations and the questions they opened {#stakeholders toc="Who we met"}
 
-:::cards{cols=3}
+:::cards{cols="3"}
 
 ### 21 April 2026 {icon="leaf"}
 

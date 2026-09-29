@@ -1,0 +1,77 @@
+{
+  "title": "Contribution",
+  "heading": "What we leave *behind*",
+  "sub": "A draft, evidence-led documentation package for future teams to verify and build on — not a finished Registry contribution.",
+  "crumbs": [
+    "Project",
+    "Contribution"
+  ],
+  "route": "contribution",
+  "meta": [
+    {
+      "key": "Audience",
+      "value": "Future iGEMers"
+    },
+    {
+      "key": "Reading",
+      "value": "4 min"
+    }
+  ],
+  "search": true,
+  "blocks": [
+    {
+      "_template": "heading",
+      "text": "What this draft actually offers",
+      "level": 2,
+      "attributes": "#what toc=\"The contribution\""
+    },
+    {
+      "_template": "text",
+      "body": "Our contribution at this stage is documentation, not a finished product. It is an honest, evidence-led package that a future team could pick up and verify: a chronological audit of the 18 supplied records, the practical protocol observations that go with it, the explicit negative and inconclusive outcomes, and a clearly drawn line between preliminary PCR evidence and sequence-confirmed editing.\n\nTo be clear about what this is *not*: we are not claiming a completed Registry contribution, a published dataset, a validated software or hardware tool, community adoption, a fully validated protocol set, or a working sensor. Those claims would require evidence the current records do not contain."
+    },
+    {
+      "_template": "heading",
+      "text": "What a future team can pick up",
+      "level": 2,
+      "attributes": "#package toc=\"What's in the package\""
+    },
+    {
+      "_template": "layout",
+      "kind": "features",
+      "label": "",
+      "attributes": "",
+      "body": "### A dated experimental record {idx=\"01\" href=\"/notebook/\"}\n\nEighteen documented notebook records with a result status for each, including the dead ends.\n\n### Practical protocol observations {idx=\"02\" href=\"/pages/protocols.html\"}\n\nBench workflows as recorded, with the handling notes and the gaps that matter for reuse.\n\n### An evidence-status parts ledger {idx=\"03\" href=\"/parts/\"}\n\nNamed elements and construct work, separated from the evidence still missing for each."
+    },
+    {
+      "_template": "text",
+      "body": "These pages are working documentation, not final validated resources. They are most useful as a starting point to reproduce, correct, and extend — not as endpoints to cite."
+    },
+    {
+      "_template": "heading",
+      "text": "What would make this a real contribution",
+      "level": 2,
+      "attributes": "#boundary toc=\"Draft vs. final\""
+    },
+    {
+      "_template": "text",
+      "body": "The gap between this draft and a contribution we could publish is concrete and worth naming explicitly.\n\n| Already documented (draft) | Required before a final contribution claim |\n| --- | --- |\n| Chronological notebook with result status | Confirmed sequences and Registry identifiers for each element |\n| Recorded bench workflows and handling notes | Complete, reproducible protocols with programs and success criteria |\n| Explicit negative and inconclusive outcomes | Complete source data behind the gels: some 0527/0530 records embed gel images, but uncropped and labelled images, expected sizes, and written interpretation are still missing |\n| Preliminary 0607 ΔGal80 PCR conclusion | Independent validation and replication, including sequencing |\n| Element and construct names with documented work | Clear licensing and versioning for reuse |"
+    },
+    {
+      "_template": "heading",
+      "text": "Where we draw the line",
+      "level": 2,
+      "attributes": "#scope toc=\"Scope & honesty\""
+    },
+    {
+      "_template": "text",
+      "body": "We are not presenting the underlying scientific idea — a yeast GPCR reading a nematode ascaroside signal — as an iGEM contribution. A hypothesis is not a reusable artifact, and the records do not yet contain a concrete, verified deliverable built on it. What we can offer honestly is the documentation package above, which is why this page remains hidden until its contents are verified."
+    },
+    {
+      "_template": "layout",
+      "kind": "note",
+      "label": "Why this page is still a draft",
+      "attributes": "",
+      "body": "A contribution claim is only as good as the evidence behind it. Until sequences, complete protocols, source data, and independent replication are in place, this stays a draft package to build on rather than a finished contribution to rely on."
+    }
+  ]
+}

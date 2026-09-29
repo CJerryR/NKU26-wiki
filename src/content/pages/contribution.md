@@ -1,14 +1,20 @@
 ---
 title: Contribution
-heading: "What we leave *behind*"
-sub: "A draft, evidence-led documentation package for future teams to verify and build on — not a finished Registry contribution."
-crumbs: [Project, Contribution]
+heading: What we leave *behind*
+sub: >-
+  A draft, evidence-led documentation package for future teams to verify and
+  build on — not a finished Registry contribution.
+crumbs:
+  - Project
+  - Contribution
 route: contribution
+search: true
 meta:
   Audience: Future iGEMers
-  Reading: "4 min"
+  Reading: 4 min
+draft: false
+hidden: false
 ---
-
 ## What this draft actually offers {#what toc="The contribution"}
 
 Our contribution at this stage is documentation, not a finished product. It is an honest, evidence-led package that a future team could pick up and verify: a chronological audit of the 18 supplied records, the practical protocol observations that go with it, the explicit negative and inconclusive outcomes, and a clearly drawn line between preliminary PCR evidence and sequence-confirmed editing.

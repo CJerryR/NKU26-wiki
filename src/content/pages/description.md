@@ -1,22 +1,28 @@
 ---
 title: Description
-heading: "What we are *solving*"
-sub: "Two soil-borne nematodes, delayed visible symptoms, and a proposed sensing route whose biological links still require validation."
-crumbs: [Project, Description]
+heading: What we are *solving*
+sub: >-
+  Two soil-borne nematodes, delayed visible symptoms, and a proposed sensing
+  route whose biological links still require validation.
+crumbs:
+  - Project
+  - Description
 route: description
+search: true
 meta:
   Track: Diagnostics / Agriculture
-  Reading: "7 min"
+  Reading: 7 min
   Status: Living document
+draft: false
+hidden: false
 ---
-
 ## A threat that works underground {#problem toc="The problem"}
 
 Plant-parasitic nematodes are microscopic roundworms that feed on plant roots. Because the damage begins below the soil line, infestations can remain unnoticed until above-ground symptoms and yield effects appear.
 
 Our project focuses on two targets identified in the team's project materials: *Heterodera glycines* and *Meloidogyne incognita*. Internal literature notes associate the ascaroside **ascr#18** with both targets, but the underlying primary sources must be traced before that association can be treated as established.
 
-:::cards{cols=2}
+:::cards{cols="2"}
 
 ### *Heterodera glycines* {#suspect-glycines toc="Suspect - H. glycines"}
 
@@ -44,7 +50,7 @@ Some conventional workflows extract organisms from soil for morphological identi
 
 Molecular and field methods exist, but the team's literature review found recurring trade-offs in workflow, equipment, cost, specificity, and sampling reliability. The table below summarises those method families without treating any one limitation as universal.
 
-:::cards{cols=3}
+:::cards{cols="3"}
 
 ### Slow workflows {icon="clock"}
 

@@ -1,19 +1,25 @@
 ---
 title: Safety
-heading: "Working *safely*"
-sub: The bench practices the records actually document — and the biosafety information still needed before this page can make compliance claims.
-crumbs: [Wet Lab, Safety]
+heading: Working *safely*
+sub: >-
+  The bench practices the records actually document — and the biosafety
+  information still needed before this page can make compliance claims.
+crumbs:
+  - Wet Lab
+  - Safety
 route: safety-and-security
+search: true
 meta:
   Scope: Biosafety
-  Reading: "5 min"
+  Reading: 5 min
+draft: false
+hidden: false
 ---
-
 ## What the records actually show {#documented toc="Documented practices"}
 
 The audited notebook documents a set of standard microbiology and molecular-biology practices. We describe them here as documented practices only — they are what the records show the team doing, not proof of full biosafety compliance, which would require the institutional information listed further down this page.
 
-:::cards{cols=3}
+:::cards{cols="3"}
 
 ### Chassis handled {icon="flask"}
 

@@ -1,14 +1,20 @@
 ---
 title: Licensing and AI Use
-heading: "Licensing, assets & *AI use*"
-sub: "How this wiki is licensed, which third-party components it uses, and how AI-assisted work is reviewed."
-crumbs: [Team, Licensing and AI Use]
+heading: 'Licensing, assets & *AI use*'
+sub: >-
+  How this wiki is licensed, which third-party components it uses, and how
+  AI-assisted work is reviewed.
+crumbs:
+  - Team
+  - Licensing and AI Use
 route: licensing
+search: true
 meta:
   License: CC BY 4.0
-  Updated: "17 July 2026"
+  Updated: 17 July 2026
+draft: false
+hidden: false
 ---
-
 ## Reusable under CC BY 4.0 {#license toc="Wiki license"}
 
 Unless an item is credited otherwise beside the item or below, team-authored text, figures, photographs, and visual material on this wiki are released under the [Creative Commons Attribution 4.0 International license](https://creativecommons.org/licenses/by/4.0/). The complete legal text is stored in the repository root as `LICENSE`.

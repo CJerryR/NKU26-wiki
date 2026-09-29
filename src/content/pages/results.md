@@ -1,15 +1,21 @@
 ---
 title: Results
-heading: "Results and *evidence status*"
-sub: "The auditable outcomes across the eighteen notebook records, and the sensor-performance evidence that remains absent."
-crumbs: [Wet Lab, Results]
+heading: Results and *evidence status*
+sub: >-
+  The auditable outcomes across the eighteen notebook records, and the
+  sensor-performance evidence that remains absent.
+crumbs:
+  - Wet Lab
+  - Results
 route: results
+search: true
 meta:
   Type: Evidence status
-  Scope: "18 notebook records"
-  Reading: "8 min"
+  Scope: 18 notebook records
+  Reading: 8 min
+draft: false
+hidden: false
 ---
-
 ## Where the evidence stands {#status toc="Status summary"}
 
 This page reports the auditable outcomes across the full eighteen-record notebook audit, labelled 0506 to 0607. The honest headline is that the strongest auditable result is not a working detector. It is a documented sequence of attempted build and verification work: one explicit negative selective-plate observation, two failed or inconclusive PCR verification attempts, the troubleshooting that followed, and a later preliminary PCR conclusion recorded by the notebook author.

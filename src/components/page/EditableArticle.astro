@@ -1,0 +1,33 @@
+---
+import { createMarkdownProcessor } from '@astrojs/markdown-remark';
+import remarkDirective from 'remark-directive';
+import remarkWiki from '../../lib/remark-wiki.mjs';
+import PageHero from './PageHero.astro';
+import Toc from './Toc.astro';
+import PagePager from './PagePager.astro';
+import { readingOrder } from '../../data/nav';
+import { getPages, byId, pageHref } from '../../lib/pages';
+import { tinaField } from '@tinacms/astro';
+
+const { entry, document } = Astro.props;
+const data = entry.data;
+const processor = await createMarkdownProcessor({ remarkPlugins: [remarkDirective, remarkWiki], syntaxHighlight: false, smartypants: false });
+const rendered = await processor.render(entry.body || '');
+const toc = rendered.metadata.frontmatter.toc || [];
+const ids = byId(await getPages());
+const order = readingOrder().filter((item) => ids.has(item.page));
+const at = order.findIndex((item) => item.page === entry.id);
+const link = (i) => {
+  const item = order[i];
+  const target = item ? ids.get(item.page) : undefined;
+  return item && target ? { href: pageHref(target), title: item.label, blurb: item.blurb } : null;
+};
+---
+<div data-tina-field={document ? tinaField(document, 'heading') : undefined}>
+  <PageHero title={data.title} heading={data.heading} sub={data.sub} crumbs={data.crumbs} meta={data.meta} />
+</div>
+<div class:list={['doc', { 'doc--no-toc': toc.length === 0 }]} data-tone="light">
+  <Toc items={toc} title={data.title} />
+  <article class="doc__body prose" data-doc data-tina-field={document ? tinaField(document, 'blocks') : undefined} set:html={rendered.code} />
+</div>
+<PagePager prev={at > 0 ? link(at - 1) : null} next={at >= 0 && at < order.length - 1 ? link(at + 1) : null} />

@@ -1,0 +1,67 @@
+{
+  "title": "Attributions",
+  "heading": "Evidence before *credit*",
+  "sub": "An interim record of what must be verified before person-by-work attribution is published.",
+  "crumbs": [
+    "Team",
+    "Attributions"
+  ],
+  "route": "attributions",
+  "meta": [
+    {
+      "key": "Reading",
+      "value": "5 min"
+    },
+    {
+      "key": "Status",
+      "value": "Interim"
+    }
+  ],
+  "search": true,
+  "blocks": [
+    {
+      "_template": "heading",
+      "text": "Attribution verification status",
+      "level": 2,
+      "attributes": "#work toc=\"Attribution of work\""
+    },
+    {
+      "_template": "text",
+      "body": "This page records attribution verification status; it is not the final person-by-work matrix. Names and organizations remain unpublished until each contribution and permission record passes team review.\n\nThe 18 notebook records contain document-owner and contributor fields. Document metadata establishes document association only; it does not establish bench execution, authorship of every sentence, or a complete team role.\n\nMeeting notes identify some participants, recorders, and task assignments, but those notes are incomplete and cannot substitute for confirmed contributions. A dated source record and a team confirmation pass are still required for every entry."
+    },
+    {
+      "_template": "heading",
+      "text": "Pending evidence by area",
+      "level": 2,
+      "attributes": "#breakdown toc=\"By area\""
+    },
+    {
+      "_template": "text",
+      "body": "These are attribution categories awaiting verification, not additional verified workstreams and not credits to unnamed people."
+    },
+    {
+      "_template": "layout",
+      "kind": "cards",
+      "label": "",
+      "attributes": "cols=\"3\"",
+      "body": "### Experimental design and execution {icon=\"flask\"}\n\nConfirm who planned and performed each work package, including sample handling, analysis, and recordkeeping, against dated source records.\n\n### Dry Lab and modeling {icon=\"chip\"}\n\nConfirm literature review, docking or computational work, modeling decisions, code artifacts, runs, and review records before credit is assigned.\n\n### Human Practices and interviews {icon=\"people\"}\n\nConfirm planning, interviews, consent handling, analysis, follow-up, dates, and the source record for each contribution.\n\n### Education {icon=\"board\"}\n\nConfirm course design, authorship, delivery, logistics, evaluation, dates, and supporting materials before publishing names.\n\n### Wiki, code, and design {icon=\"file\"}\n\nConfirm wiki architecture, code, visual design, implementation, review, and version history for each credited contribution.\n\n### Writing and editing {icon=\"book\"}\n\nConfirm content drafting, editing, fact checking, translation, and approval against revision evidence.\n\n### Advisors, instructors, and laboratories {icon=\"building\"}\n\nConfirm the exact external or instructional role, dated support, source record, and permission to identify before acknowledgement.\n\n### Materials, facilities, and services {icon=\"briefcase\"}\n\nConfirm the material or facility supplied, any paid services, dates, provider role, and supporting record.\n\n### Sponsors and partners {icon=\"check-circle\"}\n\nConfirm exact support, delivery evidence, dates, acknowledgement terms, and permission to publish a name or logo.\n\n### Collaborations and friend teams {icon=\"link\"}\n\nConfirm both parties, dates, two-way activities, outputs, mutual benefit, and publication approval.\n\n### Media {icon=\"camera\"}\n\nConfirm photography, illustration, mascot, logo, video, social media, creator credit, source files, and publication permission."
+    },
+    {
+      "_template": "heading",
+      "text": "Acknowledgements remain gated",
+      "level": 2,
+      "attributes": "#thanks toc=\"Acknowledgements\""
+    },
+    {
+      "_template": "text",
+      "body": "Public acknowledgements, sponsor names, partner names, and logos are withheld until both support and publication permission are verified. An outreach proposal or contact plan is not evidence that support was delivered.\n\nEach final entry must identify the person or organization, exact contribution, date or work package, source record, student versus external role, permission to identify, and a team confirmation pass. Until that gate is complete, this page does not satisfy a final attribution matrix.\n\nThe corresponding directory status appears on the [Team page](/team/)."
+    },
+    {
+      "_template": "layout",
+      "kind": "note",
+      "label": "Evidence before credit",
+      "attributes": "",
+      "body": "Document association is a starting point for review, never a substitute for a confirmed contribution and permission record."
+    }
+  ]
+}
