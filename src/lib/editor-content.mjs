@@ -31,6 +31,7 @@ export function blocksToMarkdown(blocks = []) {
 }
 
 export function toEntry(id, document) {
+  if (!document || typeof document !== 'object') throw new Error(`页面 ${id} 的 Tina 数据未能加载。请检查是否存在未填写必填字段的模块，或重新打开编辑器。`);
   const { blocks, meta, _sys, _values, __typename, ...data } = document;
   if (data.route && !/^[a-z0-9][a-z0-9-]*$/.test(data.route)) throw new Error(`Invalid route: ${data.route}`);
   return {

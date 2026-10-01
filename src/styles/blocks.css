@@ -27,6 +27,7 @@
 .card__icon { display: inline-grid; place-items: center; width: 42px; height: 42px; border-radius: 13px; background: var(--iris-wash); color: var(--iris); }
 .card__icon svg { width: 21px; height: 21px; }
 .card strong { color: var(--ink); }
+.card img { display: block; width: 100%; height: auto; border-radius: 12px; }
 .cards--plain .card { background: none; border: 0; border-top: 1px solid var(--line); border-radius: 0; padding: 18px 0 0; }
 .card--link:hover { border-color: color-mix(in srgb, var(--iris) 45%, transparent); transform: translateY(-2px); box-shadow: 0 18px 36px -26px rgba(60, 30, 90, .5); }
 .stretched-link { color: inherit; }
@@ -122,6 +123,32 @@
   .figure__media { padding: 14px; }
   .callout { padding: 16px 16px 16px 14px; gap: 12px; }
 }
+
+/* embedded viewers (protein / PDF / HTML) — markup from src/lib/media-blocks.mjs */
+.wiki-media { margin: 0; }
+.wiki-media__frame { display: block; width: 100%; border: 1px solid var(--line); border-radius: 20px; background: var(--paper-hi); }
+.wiki-media__bar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding: 10px 12px 10px 16px; border: 1px solid var(--line); border-bottom: 0; border-radius: 20px 20px 0 0; background: var(--paper-2); font-size: 14px; }
+.wiki-media__bar + .wiki-media__frame { border-radius: 0 0 20px 20px; }
+.wiki-media__kind { padding: 2px 8px; border-radius: 6px; background: var(--rust); color: #fff; font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: .04em; }
+.wiki-media__title { flex: 1 1 12ch; min-width: 0; font-weight: 620; color: var(--ink); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.prose .wiki-media__action, .wiki-media__action { display: inline-flex; align-items: center; height: 30px; padding: 0 12px; border: 1px solid var(--line); border-radius: 99px; background: var(--paper-hi); color: var(--ink-2); font-size: 13px; font-weight: 520; text-decoration: none; }
+.prose .wiki-media__action:hover, .wiki-media__action:hover { border-color: color-mix(in srgb, var(--iris) 45%, transparent); background: var(--iris-wash); color: var(--iris-deep); }
+.wiki-media figcaption { margin-top: 12px; max-width: calc(var(--measure) + var(--bleed)); font-size: 14px; line-height: 1.55; color: var(--ink-3); }
+.wiki-media__empty { display: grid; gap: 4px; padding: 28px 24px; border: 1.5px dashed var(--line); border-radius: 20px; background: var(--paper-hi); color: var(--ink-3); font-size: 14.5px; }
+.wiki-media__empty strong { color: var(--ink); font-size: 16px; }
+.wiki-media__invalid { padding: 12px 16px; border-radius: 12px; background: #fbeee6; color: var(--rust); font-size: 14px; }
+
+/* interactive blocks (src/scripts/toolkit.ts). Until the script upgrades a block
+   it keeps its height with a quiet placeholder; the readable fallback text is
+   only shown when JavaScript is off (see the <noscript> rule it ships with). */
+wiki-toolkit { display: block; }
+wiki-toolkit:not(:defined) { min-height: 180px; border: 1px solid var(--line-2); border-radius: 20px; background: linear-gradient(100deg, var(--paper-hi) 40%, color-mix(in srgb, var(--iris) 5%, var(--paper-hi)) 50%, var(--paper-hi) 60%) 0 0 / 300% 100%; animation: wiki-toolkit-wait 1.6s linear infinite; }
+@keyframes wiki-toolkit-wait { to { background-position: -150% 0; } }
+@media (prefers-reduced-motion: reduce) { wiki-toolkit:not(:defined) { animation: none; } }
+.wiki-toolkit-fallback { display: none; }
+.wiki-toolkit-fallback h3 { font-size: 20px; }
+.wiki-toolkit-fallback ol, .wiki-toolkit-fallback ul { padding-left: 1.3em; }
+@media print { wiki-toolkit { break-inside: avoid; } }
 
 /* A link whose page is switched off (src/content/optional or archive) loses
    its href at build time; show it as plain text and its card as a plain card. */
