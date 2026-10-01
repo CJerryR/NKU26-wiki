@@ -458,3 +458,10 @@ html.is-paged .home .lf{padding:76px 0 22px}
 }
 @media (max-width:640px){.lf-card{max-width:220px}}
 @media (prefers-reduced-motion:reduce){.lf__more,.lf__more>span,.lf-stop,.lf-arrow,.lf__tab{transition:none}}
+
+/* China arrival: show the reading column with the map, without staggered lag. */
+.cz__head h2,.cz__intro,.cz__layers li,.cz__fine,.cz__big,.cz__lede,.cz__cite,.cz__key li,.cz__hint{
+  transition-duration:.35s;transition-delay:0s;
+}
+
+.cz__key li:nth-child(n),.cz__layers li:nth-child(n){transition-delay:0s}

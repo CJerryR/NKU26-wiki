@@ -288,6 +288,7 @@
       sec.classList.add('is-diving');
     }
     H.scene('world', {
+      cancel: function () { dive(false); if (window.NK && NK.chinaCancelHandoff) NK.chinaCancelHandoff(); },
       inMs: 2000,   // v7.2: 2.8 s -> 2.0 s from the soil to the world map
       set: function (i, dir) { dive(false); if (dir < 0) openNow(); else closeNow(); },
       enter: function () { dive(false); if (!opened) openNow(); return 300; },

@@ -1,5 +1,13 @@
 ---
-import Glass from '../glass/Glass.astro';
+/**
+ * Title bar. Its layers sit at different depths (after the team's
+ * DepthLockScreen and ParallaxTiles demos): the lines are furthest back,
+ * then the rings, the back wave, the text; the paper wave is in front.
+ * Pointer parallax moves the far layers most and the text hardly at all;
+ * scrolling sinks each layer at its own speed, so the paper wave rises over
+ * the title (src/scripts/hero.ts). Reduced motion keeps everything still.
+ */
+import LiquidGlass from '../glass/LiquidGlass.astro';
 import { inlineMd } from '../../lib/text';
 
 interface Props { title: string; heading?: string; sub?: string; crumbs: string[]; meta: Record<string, string> }
@@ -9,14 +17,16 @@ const facts = Object.entries(meta);
 const rings = [70, 130, 200, 280, 370];
 const lines = [140, 210, 280, 350, 420];
 ---
-<header class="hero" data-tone="dark">
+<header class="hero" data-tone="dark" data-hero>
   <div class="hero__art" aria-hidden="true">
-    <svg viewBox="0 0 1440 460" preserveAspectRatio="xMidYMid slice">
-      {rings.map((r, i) => <circle cx="1240" cy="150" r={r} class="hero__ring" style={`--i:${i}`} />)}
+    <svg class="hero__layer" data-depth="26" data-sink=".52" viewBox="0 0 1440 460" preserveAspectRatio="xMidYMid slice">
       {lines.map((y, i) => <path d={`M-40,${y} C300,${y - 22} 900,${y + 26} 1480,${y - 12}`} class="hero__line" style={`--i:${i}`} />)}
     </svg>
+    <svg class="hero__layer" data-depth="15" data-sink=".42" viewBox="0 0 1440 460" preserveAspectRatio="xMidYMid slice">
+      {rings.map((r, i) => <circle cx="1240" cy="150" r={r} class="hero__ring" style={`--i:${i}`} />)}
+    </svg>
   </div>
-  <div class="hero__inner">
+  <div class="hero__inner" data-depth="3" data-sink=".3">
     <nav class="crumbs" aria-label="Breadcrumb">
       <ol>
         <li><a href="/index.html">Home</a></li>
@@ -28,12 +38,13 @@ const lines = [140, 210, 280, 350, 420];
     {facts.length > 0 && (
       <ul class="hero__facts" aria-label="About this page">
         {facts.map(([k, v]) => (
-          <li><Glass as="span" preset="chip" class="chip"><span class="chip__k">{k}</span><span class="chip__v">{v}</span></Glass></li>
+          <li><LiquidGlass as="span" preset="chip" class="chip"><span class="chip__k">{k}</span><span class="chip__v">{v}</span></LiquidGlass></li>
         ))}
       </ul>
     )}
   </div>
   <div class="hero__edge" aria-hidden="true">
-    <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path class="edge-back" d="M0,60 C240,18 420,96 720,64 C1020,32 1230,92 1440,52 L1440,120 L0,120 Z" /><path class="edge-front" d="M0,86 C260,52 470,110 720,86 C1010,58 1240,108 1440,82 L1440,120 L0,120 Z" /></svg>
+    <svg class="hero__edge-back" data-depth="7" data-sink=".12" viewBox="0 0 1440 120" preserveAspectRatio="none"><path class="edge-back" d="M0,60 C240,18 420,96 720,64 C1020,32 1230,92 1440,52 L1440,120 L0,120 Z" /></svg>
+    <svg class="hero__edge-front" viewBox="0 0 1440 120" preserveAspectRatio="none"><path class="edge-front" d="M0,86 C260,52 470,110 720,86 C1010,58 1240,108 1440,82 L1440,120 L0,120 Z" /></svg>
   </div>
 </header>

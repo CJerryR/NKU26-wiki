@@ -1,12 +1,18 @@
 ---
 title: Model 2
-heading: "Model *two*"
-sub: "A page reserved for the second model. It will carry that model's question, method, parameters and checks once the work is ready to publish."
-crumbs: [Model, Model 2]
+heading: Model *two*
+sub: >-
+  A page reserved for the second model. It will carry that model's question,
+  method, parameters and checks once the work is ready to publish.
+crumbs:
+  - Model
+  - Model 2
+search: true
 meta:
   Status: In preparation
+draft: false
+hidden: false
 ---
-
 ## The question this model answers {#question toc="Question and assumptions"}
 
 No model on this page has been built or run yet. When it is, this section will state the question, the assumptions behind it and where each assumption comes from.

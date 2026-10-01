@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { showcase } from './showcase-data.mjs';
+import { blocksToMarkdown } from '../lib/editor-content.mjs';
+import { renderEditorMarkdown } from '../lib/editor-markdown.mjs';
+export const prerender = false;
+const entries = await Promise.all(showcase.map(async item => ({...item,html:(await renderEditorMarkdown(blocksToMarkdown(item.blocks))).code})));
+const names={tabs:'分栏切换 / 工程循环',accordion:'折叠问答 / 访谈记录',chronology:'Notebook / HP 时间线',protocol:'实验步骤清单',lightbox:'多图相册 / 放大阅读',comparison:'前后图片对比',video:'视频 / 字幕',downloads:'附件下载列表',datatable:'数据表 / Parts 表（搜索排序）',chart:'实验数据图表',sequence:'DNA / 蛋白序列阅读器',equation:'数学公式（LaTeX）',protein:'蛋白质结构（可旋转）',pdf:'PDF 阅读器',html:'HTML 阅读 / 交互演示',heading:'章节标题',text:'富文本 / 表格',layout:'排版模块',image:'图片与图注',gallery:'双图并排'};
+const materials={protein:'PDB / CIF 结构文件；可选链与残基编号。',pdf:'PDF 文件、标题和说明。',html:'单文件 HTML，或整理好依赖文件的作品文件夹。',chart:'CSV 数据，首列横轴，其余列为各组数值；补充单位和来源。',datatable:'CSV 表格，第一行填写列名。',sequence:'单条 FASTA 或序列文本；可选高亮区间。',equation:'LaTeX 公式文本。',video:'MP4 / WebM，可选封面与 VTT 字幕。',image:'原图、图片说明、图注和来源。',gallery:'两张原图、各自说明和统一图注。',lightbox:'多张原图，每张附标题与图注。',comparison:'两张对照图片，建议尺寸一致。',downloads:'附件原文件、显示名称和版本说明。'};
+const groups=['全部','湿实验','干实验','HP','设计','全组'];
+---
+<BaseLayout title="组件效果展厅 · 各组选型" description="临时本地组件选型页：32 个完整演示，支持按组筛选和导出候选清单。">
+<div class="showcase-shell">
+<header class="showcase-hero">
+<p class="eyebrow">NKU26 / COMPONENT SHOWROOM / LOCAL PREVIEW</p>
+<h1>把内容，变成<br /><em>看得懂的页面。</em></h1>
+<p class="intro">给湿实验、干实验、HP 和设计组的组件选型展厅。先操作效果，再记下编号；不必先准备素材。</p>
+<div class="facts"><span><strong>32</strong> 组完整演示</span><span><strong>20</strong> 种后台组件</span><span><strong>14</strong> 种排版类型</span></div>
+<p class="notice">临时本地展示。除注明来源的公开文件外，图形、数字、序列与人物均为演示内容，不代表 NKU 项目成果。</p>
+</header>
+<div class="showcase-layout">
+<aside class="catalog" aria-label="组件筛选与目录">
+<label for="showcase-search">找一个展示方式</label>
+<input id="showcase-search" type="search" placeholder="搜索：PDF、图表、访谈…" />
+<div class="group-filters">{groups.map((group,i)=><button type="button" data-group={group} aria-pressed={i===0?'true':'false'}>{group}</button>)}</div>
+<label class="only"><input id="only-selected" type="checkbox" /> 只看已选</label>
+<p id="visible-count" aria-live="polite">显示 32 组</p>
+<nav class="sample-links" aria-label="组件目录">{entries.map(item=><a href={`#sample-${item.id}`} data-nav-id={item.id}><span>{item.id}</span>{item.title}</a>)}</nav>
+<a class="selection-jump" href="#selection">↓ 查看 / 导出候选清单</a>
+</aside>
+<div class="showcase-examples">
+{entries.map(item=><section class="sample" id={`sample-${item.id}`} data-id={item.id} data-title={item.title} data-groups={item.groups.join(',')} data-search={`${item.title} ${item.tip} ${item.groups.join(' ')}`}>
+<header class="sample-heading"><div><p class="sample-kicker">COMPONENT {item.id} / {item.groups.join(' · ')}</p><h2>{item.title}</h2></div><label class="pick"><input type="checkbox" data-pick={item.id} /> 加入候选</label></header>
+<p class="usage">{item.tip}</p>
+<div class="demo-stage prose" set:html={item.html} />
+<details class="how-to"><summary>后台怎么添加？需要什么材料？</summary><p>进入 Tina → Wiki 内页 → 选择页面 → 正文排版「＋」。选择下列模块，再填写内容。</p><ul>{item.blocks.map(block=><li><strong>{names[block._template]}{block.kind ? ` → ${block.kind}` : ''}</strong>：{materials[block._template] || '准备标题、正文和条目顺序；如涉及引用，请附来源。'}</li>)}</ul><p>选型时只需反馈组件编号和使用页面，暂时没有素材也可以先加入候选。</p></details>
+<a class="sample-top" href="#showcase-search">↑ 返回筛选</a>
+</section>)}
+<p id="no-results" hidden>没有符合条件的组件。请尝试其他关键词或分组。</p>
+<section id="selection" class="selection-panel"><p class="eyebrow">YOUR SHORTLIST</p><h2>各组候选清单</h2><p>勾选喜欢的组件，填写组别与用途，再导出文本交给排版负责人。选择保存在当前浏览器中。</p><label>组别 / 联系人<input id="team-name" placeholder="例如：HP 组 / 小王" /></label><label>准备放在哪一页？有哪些要求？<textarea id="team-notes" rows="3" placeholder="例如：Human Practices 页面用 02、03、05；希望保留访谈全文。"></textarea></label><ul id="selected-list"></ul><div class="selection-actions"><button id="export-picks" type="button">下载候选清单 .txt</button><button id="clear-picks" type="button">清空选择</button></div><p id="selection-status" aria-live="polite"></p></section>
+<section class="source-panel"><h2>示例来源与使用范围</h2><p>蛋白结构：<a href="https://www.rcsb.org/structure/1CRN" target="_blank" rel="noopener noreferrer">RCSB PDB · 1CRN</a>。PDF：<a href="https://mozilla.github.io/pdf.js/web/viewer.html" target="_blank" rel="noopener noreferrer">Mozilla PDF.js 官方示例</a>。它们只用于展示阅读交互；PDF 仍由浏览器原生阅读器显示。其他图形与示例数据在本地生成。</p><p>实验步骤勾选不会形成实验记录。图表不包含拟合或统计分析；序列组件不是质粒编辑器。HTML 页面为隔离交互演示。</p></section>
+</div></div></div>
+</BaseLayout>
+<script>
+const root=document.querySelector('.showcase-shell');
+if(root){
+const cards=Array.from(root.querySelectorAll<HTMLElement>('.sample'));
+const search=root.querySelector<HTMLInputElement>('#showcase-search')!;
+const only=root.querySelector<HTMLInputElement>('#only-selected')!;
+const team=root.querySelector<HTMLInputElement>('#team-name')!;
+const notes=root.querySelector<HTMLTextAreaElement>('#team-notes')!;
+const selected=new Set<string>();let group='全部';const key='nku-component-shortlist-v1';let storageOK=true;
+try{const saved=JSON.parse(localStorage.getItem(key)||'{}');for(const id of saved.ids||[])if(cards.some(c=>c.dataset.id===id))selected.add(id);team.value=saved.team||'';notes.value=saved.notes||'';}catch{storageOK=false;}
+function persist(){try{localStorage.setItem(key,JSON.stringify({ids:[...selected],team:team.value,notes:notes.value}));}catch{storageOK=false;}}
+function filter(){let count=0;const q=search.value.trim().toLowerCase();for(const card of cards){const match=(!q||card.dataset.search!.toLowerCase().includes(q))&&(group==='全部'||card.dataset.groups!.split(',').includes(group)||card.dataset.groups!.split(',').includes('全组'))&&(!only.checked||selected.has(card.dataset.id!));card.hidden=!match;const nav=root!.querySelector<HTMLElement>(`[data-nav-id="${card.dataset.id}"]`);if(nav)nav.hidden=!match;if(match)count++;}root!.querySelector('#visible-count')!.textContent=`显示 ${count} / ${cards.length} 组`;root!.querySelector<HTMLElement>('#no-results')!.hidden=count>0;}
+function sync(){root!.querySelectorAll<HTMLInputElement>('[data-pick]').forEach(input=>input.checked=selected.has(input.dataset.pick!));const list=root!.querySelector('#selected-list')!;list.replaceChildren();for(const card of cards.filter(c=>selected.has(c.dataset.id!))){const li=document.createElement('li');const a=document.createElement('a');a.href='#'+card.id;a.textContent=`${card.dataset.id} · ${card.dataset.title}`;li.append(a);list.append(li);}root!.querySelector('#selection-status')!.textContent=`已选 ${selected.size} 个组件${storageOK?'，已保存在本浏览器。':'。浏览器存储不可用，请下载清单保存。'}`;filter();}
+root.querySelectorAll<HTMLInputElement>('[data-pick]').forEach(input=>input.addEventListener('change',()=>{if(input.checked)selected.add(input.dataset.pick!);else selected.delete(input.dataset.pick!);persist();sync();}));
+root.querySelectorAll<HTMLButtonElement>('[data-group]').forEach(btn=>btn.addEventListener('click',()=>{group=btn.dataset.group!;root!.querySelectorAll('[data-group]').forEach(b=>b.setAttribute('aria-pressed',String(b===btn)));filter();}));
+search.addEventListener('input',filter);only.addEventListener('change',filter);[team,notes].forEach(input=>input.addEventListener('input',persist));
+root.querySelector('#clear-picks')!.addEventListener('click',()=>{selected.clear();persist();sync();});
+root.querySelector('#export-picks')!.addEventListener('click',()=>{const items=cards.filter(c=>selected.has(c.dataset.id!));if(!items.length){root!.querySelector('#selection-status')!.textContent='请先勾选至少一个组件。';return;}const text=['NKU26 Wiki 组件候选清单',`组别 / 联系人：${team.value||'未填写'}`,`用途与要求：${notes.value||'未填写'}`,'',...items.map(c=>`${c.dataset.id} · ${c.dataset.title}\n查看：${location.origin}${location.pathname}#${c.id}`),'','此地址为本地预览，需要运行展示服务。'].join('\n');const url=URL.createObjectURL(new Blob([text],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='NKU26-组件候选清单.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});sync();
+}
+</script>
+<style>
+.showcase-shell{max-width:1320px;margin:auto;padding:140px 28px 90px;color:var(--ink)}.showcase-hero{padding:30px 0 55px;border-bottom:1px solid var(--line)}.eyebrow,.sample-kicker{font:11px/1.6 var(--font-mono);letter-spacing:.12em;color:var(--iris-deep)}.showcase-hero h1{font-size:clamp(42px,5.5vw,76px);line-height:1.15;letter-spacing:-.04em;margin:20px 0}.showcase-hero h1 em{font-style:normal;color:var(--iris)}.intro{font-size:19px;max-width:760px;line-height:1.8}.facts{display:flex;flex-wrap:wrap;gap:30px;margin:28px 0}.facts span{display:flex;align-items:baseline;gap:9px;color:var(--ink-3)}.facts strong{font-size:28px;color:var(--ink)}.notice{font-size:13px;line-height:1.7;color:var(--ink-3)}.showcase-layout{display:grid;grid-template-columns:240px minmax(0,1fr);gap:44px;padding-top:32px}.catalog{position:sticky;top:106px;height:calc(100vh - 130px);overflow:auto;align-self:start;padding-right:8px;font-size:13px}.catalog>label{display:block;font-weight:600;margin-bottom:10px}.catalog input[type=search],.selection-panel input,.selection-panel textarea{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;background:#fffdf8;font:inherit;color:inherit}.group-filters{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0}.group-filters button,.selection-actions button{border:1px solid var(--line);border-radius:8px;padding:8px 12px;background:#fffdf8;font:inherit;cursor:pointer}.group-filters button[aria-pressed=true],.selection-actions button:first-child{background:var(--iris-deep);color:white}.only{display:flex!important;gap:8px;align-items:center}.sample-links{display:grid;gap:3px;margin-top:14px}.sample-links a{padding:7px 5px;display:flex;gap:12px;color:var(--ink-2);text-decoration:none}.sample-links a:hover{background:var(--iris-wash);border-radius:7px}.sample-links span{color:var(--iris);font-family:var(--font-mono)}.selection-jump{display:block;margin-top:18px;color:var(--iris-deep)}.sample{padding:26px 0 48px;border-bottom:1px solid var(--line);scroll-margin-top:110px}.sample-heading{display:flex;justify-content:space-between;align-items:center;gap:12px}.sample-heading h2{font-size:27px;line-height:1.3;margin:8px 0}.pick{display:flex;gap:8px;align-items:center;white-space:nowrap;font-size:13px;border:1px solid var(--line);border-radius:50px;padding:9px 12px;background:var(--paper-hi)}.pick input{accent-color:var(--iris);width:16px;height:16px}.usage{color:var(--ink-3);font-size:14px;line-height:1.8;margin:10px 0 24px}.demo-stage{--measure:100%;--bleed:0px}.demo-stage :global(.wiki-toolkit-block + .wiki-toolkit-block){margin-top:24px}.demo-stage :global(.doc-section::before){display:none}.demo-stage :global(.doc-section+ .doc-section){margin-top:30px}.demo-stage :global(.wiki-media){background:var(--paper-hi)}.how-to{margin-top:24px;border-top:1px dashed var(--line);padding-top:16px;font-size:13px}.how-to summary{cursor:pointer;color:var(--iris-deep)}.how-to p{line-height:1.8;margin:14px 0}.how-to pre{max-height:320px;overflow:auto;padding:18px;background:#eee8df;white-space:pre-wrap;overflow-wrap:anywhere;border-radius:10px;font-size:12px}.sample-top{display:inline-block;font-size:12px;margin-top:18px;color:var(--ink-3)}.selection-panel{padding:30px;background:#eee7f5;border-radius:20px;margin-top:44px;scroll-margin-top:110px}.selection-panel h2,.source-panel h2{font-size:25px;margin:8px 0 14px}.selection-panel p,.source-panel p{line-height:1.8;font-size:14px}.selection-panel label{display:block;margin:16px 0;font-size:14px}.selection-panel input,.selection-panel textarea{display:block;margin-top:8px}.selection-panel ul{padding:12px 0;list-style:none;line-height:2}.selection-panel a{color:var(--iris-deep)}.selection-actions{display:flex;gap:12px;flex-wrap:wrap}.source-panel{margin-top:40px;color:var(--ink-3)}.source-panel a{color:var(--iris-deep)}[hidden]{display:none!important}@media(max-width:900px){.showcase-layout{grid-template-columns:1fr;gap:20px}.catalog{position:static;height:auto;padding:0}.sample-links{grid-template-columns:1fr 1fr;max-height:200px;overflow:auto}.showcase-shell{padding:110px 18px 50px}.sample-heading{align-items:flex-start}.sample-heading h2{font-size:23px}.pick{padding:8px;font-size:12px}.selection-panel{padding:20px}}
+</style>

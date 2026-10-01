@@ -171,137 +171,9 @@
     });
   }
 
-  /* ---- nav ------------------------------------------------------------- */
-  function nav() {
-    var bar = doc.querySelector('[data-lnav]'); if (!bar) return;
-    var links = bar.querySelector('.lnav__links');
-    var lens = bar.querySelector('.lnav__lens');
-    var toggle = bar.querySelector('.lnav__toggle');
-    var sheet = bar.querySelector('.lnav__sheet');
-    var groups = [].slice.call(bar.querySelectorAll('.lnav__group'));
-    var pathPrefix = doc.body.getAttribute('data-path-prefix') || '';
-
-    [].slice.call(bar.querySelectorAll('.lg')).forEach(function (el) { attach(el); pointerSheen(el); });
-
-    // mark the current section
-    var here = location.pathname.replace(/index\.html$/, '');
-    [].slice.call(bar.querySelectorAll('a[href]')).forEach(function (a) {
-      var p = new URL(a.getAttribute('href'), location.href).pathname.replace(/index\.html$/, '');
-      if (p === here) {
-        a.setAttribute('aria-current', 'page');
-        var top = a.classList.contains('lnav__link') ? a : null;
-        var g = a.closest('.lnav__group');
-        if (g) top = g.querySelector('.lnav__link');
-        if (top) top.classList.add('is-current');
-      }
-    });
-
-    // droplet lens that follows the hovered link
-    var lensTimer, hovered = null;
-    function moveLens(target) {
-      if (!lens || !target) return;
-      var lr = links.getBoundingClientRect(), tr = target.getBoundingClientRect();
-      lens.style.width = tr.width + 'px';
-      lens.style.setProperty('--lens-x', (tr.left - lr.left) + 'px');
-      lens.classList.add('is-on');
-      clearTimeout(lensTimer);
-      lensTimer = setTimeout(function () { lens.__lgUpdate && lens.__lgUpdate(); }, 480);
-    }
-    function hideLens() {
-      var open = groups.filter(function (g) { return g.classList.contains('is-open'); })[0];
-      if (open) moveLens(open.querySelector('.lnav__link'));
-      else if (hovered) moveLens(hovered);
-      else if (lens) lens.classList.remove('is-on');
-    }
-    if (links) {
-      [].slice.call(links.querySelectorAll('.lnav__link')).forEach(function (l) {
-        l.addEventListener('pointerenter', function () { hovered = l; moveLens(l); });
-        l.addEventListener('pointerleave', function () { if (hovered === l) hovered = null; });
-        l.addEventListener('focus', function () { moveLens(l); });
-        l.addEventListener('pointerdown', function () { lens && lens.classList.add('is-pressed'); });
-      });
-      doc.addEventListener('pointerup', function () { lens && lens.classList.remove('is-pressed'); });
-      links.addEventListener('pointerleave', hideLens);
-    }
-
-    // dropdowns: hover on fine pointers, click everywhere, Esc to close
-    var hover = window.matchMedia('(hover:hover) and (pointer:fine)');
-    function setOpen(g, open) {
-      g.classList.toggle('is-open', open);
-      g.querySelector('.lnav__link').setAttribute('aria-expanded', open ? 'true' : 'false');
-      if (open) { var drop = g.querySelector('.lnav__drop'); drop && drop.__lgUpdate && drop.__lgUpdate(); }
-    }
-    function closeAll(except) { groups.forEach(function (g) { if (g !== except) setOpen(g, false); }); }
-    groups.forEach(function (g) {
-      var btn = g.querySelector('.lnav__link'), t;
-      btn.addEventListener('click', function () { var o = !g.classList.contains('is-open'); closeAll(g); setOpen(g, o); });
-      g.addEventListener('pointerenter', function () { if (!hover.matches) return; clearTimeout(t); closeAll(g); setOpen(g, true); });
-      g.addEventListener('pointerleave', function () { if (!hover.matches) return; t = setTimeout(function () { setOpen(g, false); hideLens(); }, 220); });
-    });
-    doc.addEventListener('click', function (e) { if (!e.target.closest('.lnav__group')) closeAll(); });
-    doc.addEventListener('keydown', function (e) {
-      if (e.key !== 'Escape') return;
-      var open = groups.filter(function (g) { return g.classList.contains('is-open'); })[0];
-      closeAll(); if (open) open.querySelector('.lnav__link').focus();
-      if (sheet && !sheet.hidden) { setSheet(false); toggle.focus(); }
-    });
-
-    // mobile sheet
-    function setSheet(open) {
-      if (!sheet) return;
-      sheet.hidden = !open;
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-      if (open) attach(sheet), sheet.__lgUpdate && sheet.__lgUpdate();
-    }
-    toggle && toggle.addEventListener('click', function () { setSheet(sheet.hidden); });
-
-    // hide on scroll down, show on scroll up; tint adapts to light sections
-    var lastY = window.scrollY, ticking = false;
-    function tone() {
-      var y = 42, xs = [window.innerWidth * 0.3, window.innerWidth * 0.7], light = 0;
-      xs.forEach(function (x) {
-        var stack = doc.elementsFromPoint ? doc.elementsFromPoint(x, y) : [];
-        for (var i = 0; i < stack.length; i++) {
-          if (stack[i].closest && stack[i].closest('.lnav')) continue;
-          var t = stack[i].closest && stack[i].closest('[data-tone]');
-          if (t) { if (t.getAttribute('data-tone') === 'light') light++; break; }
-          var bg = getComputedStyle(stack[i]).backgroundColor;
-          var m = bg && bg.match(/\d+(\.\d+)?/g);
-          if (m && (m.length < 4 || +m[3] > 0.5)) { if ((+m[0] * .3 + +m[1] * .59 + +m[2] * .11) > 170) light++; break; }
-        }
-      });
-      bar.classList.toggle('is-on-light', light > 0);
-    }
-    var nowEl = bar.querySelector('[data-lnav-now]'), nowText = '';
-    function nowLabel() {
-      if (!nowEl) return;
-      var y = window.innerHeight * .35, secs = doc.querySelectorAll('main section, main > article, footer'), txt = '';
-      for (var i = 0; i < secs.length; i++) {
-        var r = secs[i].getBoundingClientRect();
-        if (r.top <= y && r.bottom > y) { var h = secs[i].querySelector('h1,h2'); txt = secs[i].getAttribute('data-nav-label') || (h ? h.textContent : '') || ''; break; }
-      }
-      txt = txt.replace(/\s+/g, ' ').trim(); if (txt.length > 34) txt = txt.slice(0, 32) + '…';
-      if (!txt) txt = doc.title.split('|')[0].trim();
-      if (txt !== nowText) { nowText = txt; nowEl.textContent = txt; }
-    }
-    bar.addEventListener('pointerenter', function () { bar.classList.add('is-peek'); });
-    bar.addEventListener('pointerleave', function () { bar.classList.remove('is-peek'); });
-    /* v7.2: reading what lies under the bar (tone, current label) forces a
-       layout, so it runs once the page has stopped moving, not every frame */
-    var settleT = 0;
-    function settle() { nowLabel(); tone(); }
-    function onScroll() {
-      var y = window.scrollY;
-      var busy = (sheet && !sheet.hidden) || groups.some(function (g) { return g.classList.contains('is-open'); });
-      if (!busy && y > lastY + 2 && y > 420) bar.classList.add('is-compact');
-      if (y < lastY - 6 || y < 420) bar.classList.remove('is-compact');
-      lastY = y; ticking = false;
-      clearTimeout(settleT); settleT = setTimeout(settle, 90);
-    }
-    window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
-    settle();
-  }
+  /* ---- nav -------------------------------------------------------------
+     The top bar now runs src/scripts/nav.ts on every page, the homepage
+     included (loaded by src/layouts/HomeLayout.astro). */
 
   /* ---- detective ------------------------------------------------------- */
   function detective() {
@@ -328,11 +200,17 @@
     function aim() {}
     function torchTip() { return null; }
     window.NKUDetective = { say: say, el: box, lit: function (on) { box.classList.toggle('is-lit', !!on); }, aim: aim, torchTip: torchTip };
-    btn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: REDUCED ? 'auto' : 'smooth' }); });
+    btn.addEventListener('click', function () {
+      /* v7.7: on the paged homepage, go back through the pager (one smooth
+         move) instead of a native scroll that would wake every page on the way */
+      var H = window.NKUH;
+      if (H && H.pager && H.pager.top && H.pager.isPaged && H.pager.isPaged()) { H.pager.top(); return; }
+      window.scrollTo({ top: 0, behavior: REDUCED ? 'auto' : 'smooth' });
+    });
     btn.addEventListener('pointerenter', function () { say(tips[ti++ % tips.length]); });
     btn.addEventListener('focus', function () { say(tips[ti++ % tips.length]); });
   }
 
-  function init() { nav(); detective(); }
+  function init() { detective(); }
   if (doc.readyState === 'loading') doc.addEventListener('DOMContentLoaded', init); else init();
 })();

@@ -1,10 +1,11 @@
 /* Outline: sticky glass panel beside the text on wide screens,
-   a glass pill at the bottom that opens the same list on narrow ones. */
+   a glass pill at the bottom that opens the same list on narrow ones.
+   Material: liquid-glass.css. The section being read is marked by a film
+   that springs along the list (src/scripts/toc.ts). */
 .toc { grid-column: 1; grid-row: 1; position: relative; z-index: 3; }
 .toc__panel {
   position: sticky; top: calc(var(--nav-h) + 20px); display: flex; flex-direction: column;
   max-height: calc(100vh - var(--nav-h) - 40px); padding: 18px 10px 12px; border-radius: 24px; color: var(--ink);
-  box-shadow: var(--glass-shadow-light);
 }
 .toc__head { position: relative; padding: 0 10px 12px; }
 .toc__kicker { font-size: 12.5px; font-weight: 600; color: var(--ink-3); }
@@ -12,12 +13,22 @@
 .toc__close { display: none; }
 .toc__progress { height: 3px; margin: 0 10px 10px; border-radius: 3px; background: rgba(36, 28, 43, .08); overflow: hidden; }
 .toc__progress i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--iris), var(--iris-bright)); transform: scaleX(0); transform-origin: 0 50%; }
-.toc__list { flex: 1 1 auto; overflow-y: auto; overscroll-behavior: contain; padding: 2px 0; }
+.toc__list { position: relative; flex: 1 1 auto; overflow-y: auto; overscroll-behavior: contain; padding: 2px 0; }
+.toc__film {
+  position: absolute; z-index: 0; top: 0; left: 0; right: 0; height: 30px; border-radius: 12px;
+  opacity: 0; pointer-events: none; transform-origin: 50% 50%; will-change: transform;
+  background: rgba(110, 79, 184, .13);
+  box-shadow: inset 0 0 0 .5px rgba(255, 255, 255, .8), inset 0 1px 1px rgba(255, 255, 255, .7), 0 2px 8px rgba(60, 30, 90, .1);
+  transition: opacity .25s;
+}
+.toc__film.is-on { opacity: 1; }
+.toc__item { position: relative; z-index: 1; }
 .toc__item a { display: grid; grid-template-columns: 28px minmax(0, 1fr); align-items: baseline; padding: 7px 10px; border-radius: 12px; font-size: 14px; line-height: 1.35; color: var(--ink-2); transition: background .2s, color .2s; }
 .toc__num { font-family: var(--font-mono); font-size: 11px; color: var(--ink-3); }
 .toc__item--3 a, .toc__item--4 a { grid-template-columns: minmax(0, 1fr); padding: 5px 10px 5px 38px; font-size: 13px; color: var(--ink-3); }
 .toc__item a:hover { background: rgba(110, 79, 184, .08); color: var(--ink); }
-.toc__item a.is-active { background: rgba(110, 79, 184, .14); color: var(--iris-deep); font-weight: 600; }
+.toc__item a.is-active { color: var(--iris-deep); font-weight: 600; }
+.toc__item a.is-active:hover { background: transparent; }
 .toc__item a.is-active .toc__num { color: var(--iris); }
 .toc__top { display: inline-flex; align-items: center; gap: 6px; align-self: flex-start; margin: 10px 10px 2px; font-size: 13px; color: var(--ink-3); transition: color .2s; }
 .toc__top svg { width: 14px; height: 14px; }
@@ -29,14 +40,17 @@
   .toc.is-open::before { content: ''; position: fixed; inset: 0; background: rgba(24, 15, 30, .2); pointer-events: auto; }
   .toc__pill {
     pointer-events: auto; display: flex; align-items: center; gap: 10px; width: min(100%, 420px); height: 54px; padding: 0 16px 0 9px;
-    color: var(--ink); text-align: left; box-shadow: var(--glass-shadow-light); transition: transform .4s var(--lg-ease);
+    text-align: left; transition: var(--glass-transition), transform .45s var(--lg-ease);
+    -webkit-tap-highlight-color: transparent; touch-action: manipulation;
   }
-  .toc__pill:active { transform: scale(.97); }
+  /* pressed, the pill lifts off the page like the bar's film */
+  .toc__pill.is-lifted { transform: scale(1.045) translateY(-2px); box-shadow: 0 22px 40px -16px rgba(30, 14, 44, .5), 0 3px 8px rgba(30, 14, 44, .12); }
   .toc__ring svg { display: block; width: 36px; height: 36px; transform: rotate(-90deg); }
-  .toc__ring-track { fill: none; stroke: rgba(36, 28, 43, .12); stroke-width: 3; }
+  .toc__ring-track { fill: none; stroke: currentColor; stroke-opacity: .14; stroke-width: 3; }
+  .toc__pill[data-tone='dark'] .toc__ring-fill { stroke: var(--iris-bright); }
   .toc__ring-fill { fill: none; stroke: var(--iris); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 94.25; stroke-dashoffset: 94.25; }
   .toc__pill-text { display: grid; flex: 1; min-width: 0; line-height: 1.2; }
-  .toc__pill-label { font-size: 11.5px; font-weight: 600; color: var(--ink-3); }
+  .toc__pill-label { font-size: 11.5px; font-weight: 600; opacity: .66; }
   .toc__pill-now { font-size: 14.5px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .toc__pill-chev { display: grid; }
   .toc__pill-chev svg { width: 18px; height: 18px; transform: rotate(180deg); transition: transform .35s var(--lg-ease); }
@@ -45,14 +59,13 @@
     position: fixed; top: auto; left: 12px; right: 12px; bottom: calc(14px + 54px + 10px + env(safe-area-inset-bottom, 0px));
     width: auto; max-width: 440px; margin-inline: auto; max-height: min(66vh, 560px);
     pointer-events: none; visibility: hidden; transform: translateY(14px) scale(.97); transform-origin: 50% 100%;
-    transition: transform .45s var(--lg-ease), visibility 0s .45s;
+    transition: var(--glass-transition), transform .45s var(--lg-ease), visibility 0s .45s;
     box-shadow: none;
   }
   /* the layers fade, not the panel, so the glass keeps its backdrop mid-fade */
-  .toc__panel > * { opacity: 0; transition: opacity .2s; }
-  .toc.is-open .toc__panel > * { opacity: 1; }
-  .toc__panel > .lg__tint { box-shadow: var(--glass-shadow-panel-light); }
-  .toc.is-open .toc__panel { pointer-events: auto; visibility: visible; transform: none; transition: transform .5s var(--lg-ease), visibility 0s; }
+  .toc__panel > *, .toc__panel::after { opacity: 0; transition: opacity .2s; }
+  .toc.is-open .toc__panel > *, .toc.is-open .toc__panel::after { opacity: 1; }
+  .toc.is-open .toc__panel { pointer-events: auto; visibility: visible; transform: none; box-shadow: var(--glass-shadow); transition: var(--glass-transition), transform .5s var(--lg-ease), visibility 0s; }
   .toc__head { padding-right: 52px; }
   .toc__close { display: grid; place-items: center; position: absolute; top: -4px; right: 2px; width: 36px; height: 36px; border-radius: 99px; background: rgba(36, 28, 43, .06); }
   .toc__close svg { width: 16px; height: 16px; }
@@ -63,4 +76,7 @@
 @media (max-width: 640px) {
   .toc { left: 92px; justify-content: flex-start; }
   .toc__pill { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .toc__film, .toc__pill { transition: none !important; }
 }

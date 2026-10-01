@@ -3,8 +3,8 @@
    The recipe is the top bar's, with its tint 5% more opaque than v7:
      dark  – over the purple hero and the footer: a clear white film;
      light – over the paper page: a cream film with dark ink.
-   Every glass surface (bar, dropdowns, phone menu, outline, outline pill,
-   search, hero labels) takes these tokens, so the look is changed here.
+   The search dialog takes these tokens. The top bar, the outline and the
+   hero labels use the liquid glass of liquid-glass.css.
 
    Layers inside every `.lg`:
      fx    – the backdrop, refracted by an SVG displacement map (Chromium,
@@ -42,12 +42,11 @@
   --lg-blur: var(--lg-blur-dark); --lg-frost: 10px;
 }
 /* panels: the same film and rim, more blur behind the text */
-.lnav__drop, .lnav__sheet, .toc__panel, .site-search__panel {
+.site-search__panel {
   --lg-blur-dark: var(--glass-blur-panel-dark); --lg-blur-light: var(--glass-blur-panel-light); --lg-frost: 22px;
 }
 /* light tone: everything over the paper page */
-.lg-light, .toc__panel, .toc__pill, .site-search__panel,
-.lnav.is-on-light .lnav__island, .lnav__drop.is-light, .lnav__sheet.is-light {
+.lg-light, .site-search__panel {
   --lg-ink: var(--glass-light-ink);
   --lg-tint-bg: var(--glass-light-tint);
   --lg-edge: var(--glass-light-edge);
@@ -74,11 +73,9 @@ html.lg-refract .lg > .lg__shine {
 
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .lg { --lg-tint-bg: rgb(36 24 48 / .9); }
-  .lg-light, .toc__panel, .toc__pill, .site-search__panel,
-  .lnav.is-on-light .lnav__island, .lnav__drop.is-light, .lnav__sheet.is-light { --lg-tint-bg: rgb(251 248 241 / .97); }
+  .lg-light, .site-search__panel { --lg-tint-bg: rgb(251 248 241 / .97); }
 }
 @media (prefers-reduced-transparency: reduce) {
   .lg { --lg-tint-bg: rgb(36 24 48 / .94); }
-  .lg-light, .toc__panel, .toc__pill, .site-search__panel,
-  .lnav.is-on-light .lnav__island, .lnav__drop.is-light, .lnav__sheet.is-light { --lg-tint-bg: rgb(251 248 241 / .97); }
+  .lg-light, .site-search__panel { --lg-tint-bg: rgb(251 248 241 / .97); }
 }

@@ -5,17 +5,42 @@
   "type": "module",
   "description": "NKU-iGEM 2026 wiki (NemaKlear): Astro build with liquid-glass inner pages; the story homepage is kept as-is.",
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
+    "dev": "tinacms dev -p 4101 --datalayer-port 9101 -c \"TINA_EDITOR=1 astro dev --host 127.0.0.1 --port 3000\"",
+    "build": "node tools/export-tina.mjs && astro build",
+    "build:admin": "tinacms build --content=local --skip-cloud-checks --datalayer-port 9102",
+    "dev:cloud": "TINA_EDITOR=1 astro dev --host 127.0.0.1 --port 3000",
     "preview": "astro preview",
     "audit": "python3 tools/audit_wiki_content.py --generated --generated-root public",
-    "verify": "astro build && python3 tools/audit_wiki_content.py --generated --generated-root public"
+    "verify": "npm run build && npm run audit",
+    "predev": "node tools/prepare-viewers.mjs",
+    "predev:cloud": "node tools/prepare-viewers.mjs",
+    "prebuild": "node tools/prepare-viewers.mjs"
   },
   "dependencies": {
+    "@astrojs/markdown-remark": "^6.3.11",
+    "@astrojs/node": "^9.5.5",
+    "@tinacms/astro": "^0.7.1",
+    "@tinacms/cli": "^3.1.0",
+    "@tinacms/mdx": "^2.2.3",
+    "3dmol": "^2.5.5",
     "astro": "^5.10.0",
-    "remark-directive": "^3.0.0 || ^4.0.0"
+    "chart.js": "^4.5.1",
+    "gray-matter": "^4.0.3",
+    "katex": "^0.18.9",
+    "papaparse": "^5.7.0",
+    "pdfjs-dist": "^6.3.289",
+    "remark-directive": "^3.0.0 || ^4.0.0",
+    "remark-gfm": "^4.0.1",
+    "remark-parse": "^11.0.0",
+    "remark-stringify": "^11.0.0",
+    "sirv": "^3.0.2",
+    "tinacms": "^3.14.1",
+    "unified": "^11.0.5"
   },
   "engines": {
     "node": ">=18.20.8"
+  },
+  "devDependencies": {
+    "esbuild": "^0.27.7"
   }
 }

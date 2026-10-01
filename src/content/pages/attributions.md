@@ -1,14 +1,20 @@
 ---
 title: Attributions
-heading: "Evidence before *credit*"
-sub: An interim record of what must be verified before person-by-work attribution is published.
-crumbs: [Team, Attributions]
+heading: Evidence before *credit*
+sub: >-
+  An interim record of what must be verified before person-by-work attribution
+  is published.
+crumbs:
+  - Team
+  - Attributions
 route: attributions
+search: true
 meta:
-  Reading: "5 min"
+  Reading: 5 min
   Status: Interim
+draft: false
+hidden: false
 ---
-
 ## Attribution verification status {#work toc="Attribution of work"}
 
 This page records attribution verification status; it is not the final person-by-work matrix. Names and organizations remain unpublished until each contribution and permission record passes team review.
@@ -21,7 +27,7 @@ Meeting notes identify some participants, recorders, and task assignments, but t
 
 These are attribution categories awaiting verification, not additional verified workstreams and not credits to unnamed people.
 
-:::cards{cols=3}
+:::cards{cols="3"}
 
 ### Experimental design and execution {icon="flask"}
 

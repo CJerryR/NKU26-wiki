@@ -1,15 +1,21 @@
 ---
 title: Engineering
-heading: "The engineering *cycle*"
-sub: "Design-Build-Test-Learn across the audited notebook, told as documented build work, observed test evidence, and the gates that remain open."
-crumbs: [Project, Engineering]
+heading: The engineering *cycle*
+sub: >-
+  Design-Build-Test-Learn across the audited notebook, told as documented build
+  work, observed test evidence, and the gates that remain open.
+crumbs:
+  - Project
+  - Engineering
 route: engineering
+search: true
 meta:
   Framework: DBTL
-  Scope: "18-record notebook audit"
-  Reading: "8 min"
+  Scope: 18-record notebook audit
+  Reading: 8 min
+draft: false
+hidden: false
 ---
-
 ## How we engineer, and how far the records reach {#approach toc="DBTL and status"}
 
 We organise the project around Design-Build-Test-Learn: state a design question and a construct, build it at the bench, test it against a defined criterion, and feed what we learn into the next round.

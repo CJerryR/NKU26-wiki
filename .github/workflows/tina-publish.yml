@@ -1,0 +1,56 @@
+name: Publish Tina wiki
+on:
+  push:
+    branches: [tina-v7.6]
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+concurrency:
+  group: tina-publish
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: source
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: source/package-lock.json
+      - run: npm ci --no-audit --no-fund
+        working-directory: source
+      - run: npm run build
+        working-directory: source
+      - run: npm run build:admin
+        working-directory: source
+        env:
+          TINA_HOSTED: '1'
+          TINA_BRANCH: tina-v7.6
+          TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
+      - uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: published
+      - name: Update only the editable wiki
+        run: |
+          mkdir -p published/wiki-editor
+          rsync -a --delete source/public/ published/wiki-editor/
+          mkdir -p published/wiki-editor/admin
+          rsync -a --exclude=.gitignore source/.tina-static/admin/ published/wiki-editor/admin/
+          touch published/.nojekyll
+          cd published
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add wiki-editor .nojekyll
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish Tina wiki from ${GITHUB_SHA}"
+            git push origin gh-pages
+          fi
+      - name: Request GitHub Pages build
+        run: gh api --method POST repos/${{ github.repository }}/pages/builds
+        env:
+          GH_TOKEN: ${{ github.token }}

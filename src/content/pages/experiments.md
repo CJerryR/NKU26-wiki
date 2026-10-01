@@ -1,15 +1,21 @@
 ---
 title: Experiments
-heading: "At the *bench*"
-sub: "The documented laboratory programme across the eighteen notebook records, organised by workstream, with the boundary of what each record establishes."
-crumbs: [Wet Lab, Experiments]
+heading: At the *bench*
+sub: >-
+  The documented laboratory programme across the eighteen notebook records,
+  organised by workstream, with the boundary of what each record establishes.
+crumbs:
+  - Wet Lab
+  - Experiments
 route: experiments
+search: true
 meta:
-  Scope: "18-record audit"
-  See also: "Protocols, Results"
-  Reading: "10 min"
+  Scope: 18-record audit
+  See also: 'Protocols, Results'
+  Reading: 10 min
+draft: false
+hidden: false
 ---
-
 ## What this page covers {#scope toc="Scope and sources"}
 
 The team's authenticated notebook folder holds eighteen labelled records, from 0506 through 0607. This page covers all eighteen.

@@ -106,7 +106,7 @@
       return out;
     }
 
-    var candidates = flattenIndex();
+    var candidates = null;
 
     function score(candidate, qTerms) {
       if (!qTerms.length) return -1;
@@ -154,9 +154,10 @@
       var qTerms = terms(query);
       if (!qTerms.length) {
         results.innerHTML = '<div class="site-search__empty">Search by project page, experiment, target species, or any phrase from the article body.</div>';
-        if (meta) meta.textContent = candidates.length ? 'Ready to search ' + rawIndex.length + ' pages.' : 'Search index is not loaded yet.';
+        if (meta) meta.textContent = rawIndex.length ? 'Ready to search ' + rawIndex.length + ' pages.' : 'Search index is not loaded yet.';
         return;
       }
+      if (!candidates) candidates = flattenIndex();
       var found = candidates.map(function (candidate) {
         return { item: candidate, score: score(candidate, qTerms) };
       }).filter(function (hit) {

@@ -76,7 +76,7 @@
 .figure__media > img { margin: 0 auto; border-radius: 10px; }
 .figure__media:has(> .table-wrap) { padding: 0; border: 0; background: none; overflow: visible; }
 .figure__media > .table-wrap { margin: 0; }
-.figure figcaption { margin-top: 12px; max-width: var(--measure); font-size: 14px; line-height: 1.55; color: var(--ink-3); }
+.figure figcaption { margin-top: 12px; max-width: calc(var(--measure) + var(--bleed)); font-size: 14px; line-height: 1.55; color: var(--ink-3); }
 .figure figcaption strong:first-child { color: var(--ink); font-weight: 650; margin-right: .3em; }
 .figure__credit { display: block; margin-top: 4px; font-size: 12.5px; }
 .figure__missing { padding: 14px 16px; border-radius: 12px; background: #fbeee6; color: var(--rust); font-family: var(--font-mono); font-size: 13px; }

@@ -9,6 +9,12 @@
 }
 .hero__art { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
 .hero__art svg { display: block; width: 100%; height: 100%; }
+.hero__art .hero__layer { position: absolute; inset: 0; }
+/* depth order inside the hero: art, back wave, text, paper wave (hero.ts moves them) */
+.hero [data-depth] { will-change: transform; }
+.hero__inner { position: relative; z-index: 1; }
+.hero__edge .hero__edge-back { z-index: 0; }
+.hero__edge .hero__edge-front { z-index: 2; }
 .hero__ring { fill: none; stroke: var(--iris-bright); stroke-width: 1.2; opacity: calc(.3 - var(--i) * .05); }
 .hero__line { fill: none; stroke: var(--cream); stroke-width: 1; opacity: .075; }
 .hero__inner {
@@ -33,7 +39,7 @@
 .hero__sub { margin-top: 22px; max-width: 42rem; font-size: clamp(18px, 1.75vw, 21px); line-height: 1.55; color: var(--cream-2); text-wrap: pretty; }
 .hero__sub em { font-family: var(--font-display); font-style: italic; }
 .hero__facts { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
-.chip { display: inline-flex; align-items: baseline; gap: 9px; padding: 9px 16px 10px; color: var(--cream); font-size: 14px; line-height: 1.2; box-shadow: 0 10px 24px -14px rgba(8, 2, 14, .7); }
+.chip { display: inline-flex; align-items: baseline; gap: 9px; padding: 9px 16px 10px; color: var(--cream); font-size: 14px; line-height: 1.2; box-shadow: 0 10px 24px -14px rgba(8, 2, 14, .7); --glass-blur: 2px; }
 .chip__k { font-size: 12.5px; color: var(--cream-3); }
 .chip__v { font-weight: 600; }
 .hero__edge { position: relative; height: clamp(44px, 6vw, 96px); margin-top: -1px; }
@@ -65,7 +71,7 @@
 
 /* ---------------------------------------------------- previous / next */
 .pager {
-  --doc-w: calc(var(--rail) + var(--gutter) + var(--measure));
+  --doc-w: calc(var(--rail) + var(--gutter) + var(--measure) + var(--bleed));
   display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
   width: min(100% - 44px, var(--doc-w)); margin: 0 auto clamp(64px, 8vw, 104px); padding-left: calc(var(--rail) + var(--gutter));
 }
@@ -81,7 +87,7 @@
 @media (max-width: 1099px) {
   .doc { grid-template-columns: minmax(0, 1fr); width: min(100% - 40px, calc(var(--measure) + var(--bleed))); }
   .doc__body { grid-column: 1; }
-  .hero__inner, .pager { width: min(100% - 40px, var(--measure)); }
+  .hero__inner, .pager { width: min(100% - 40px, calc(var(--measure) + var(--bleed))); }
   .pager { padding-left: 0; }
 }
 @media (max-width: 640px) {

@@ -4,12 +4,96 @@
  * invading the root, yellowing above ground. The pager shows all four, then
  * one stage per scroll. The lens enlarges the same spot of the same block:
  * a scaled copy of the scene plus details only visible up close (the J2's
- * stylet, ascr#3 / ascr#18, giant cells, a female and her egg mass).
+ * stylet, ascr#3 / ascr#18, giant cells, a female and her egg mass). Since
+ * v7.8 the lens is liquid glass (see GLASS below).
  * Drawn in code; structures and sizes are simplified illustrations. */
 (function () {
   'use strict';
   var H = window.NKUH; if (!H) return;
   var ZOOM = 2.5, LR = 58;
+  /* v7.8: the lens is liquid glass, with the parameters the team tuned in the
+   * LiquidGlassLens demo on a round 200 px lens: index 2.20, thickness 90,
+   * bezel 39, centre zoom 0.33, dispersion 0.03, frost 0.4. Lengths are scaled
+   * from that lens to this one, so it looks the same at any size. The scene is
+   * magnified as vectors (sharp at any pixel density) and the glass's centre
+   * zoom is folded into ZOOM, so the centre is still 2.5x; the displacement map
+   * carries only the rim's refraction, scaled by 1 / (1 - zoom) to match.
+   * (Baking the zoom into the 8-bit map stair-stepped the magnified detail.)
+   * An 8-bit map still steps the rim's lines at these strong settings, so the
+   * rim is bent twice: by a coarse map, then by a fine map holding what the
+   * coarse one rounded off (about 250x finer). The fine map fades out at the
+   * very edge, where the bend changes too fast for rounding to show and the
+   * correction would only add speckle. One filter serves all four blocks:
+   * only the focused block's lens is ever shown.
+   * SVG filters on SVG content refract in every browser, not only Chromium. */
+  var GLASS = { ior: 2.2, thickness: 90, bezel: 39, zoom: 0.33, dispersion: 0.03, blur: 0.4, saturate: 1.35, tunedAt: 200 };
+  var lensMap = null;
+  function lensGlass() {
+    if (lensMap) return lensMap;
+    var g = 2 * LR / GLASS.tunedAt, T = GLASS.thickness * g, Bz = Math.min(GLASS.bezel * g, LR);
+    var RES = 4, D = 2 * LR * RES, N = 128, eps = 1e-3, i, x, y;
+    var sq = function (t) { return Math.pow(1 - Math.pow(1 - t, 4), 0.25); };   // squircle cross-section
+    var prof = new Float32Array(N);
+    for (i = 0; i < N; i++) {   // Snell's law along the bezel
+      var t = i / (N - 1), a = Math.max(0, t - eps), b = Math.min(1, t + eps);
+      var inc = Math.atan((sq(b) - sq(a)) / (b - a) * (T / Bz));
+      prof[i] = sq(t) * T * Math.tan(inc - Math.asin(Math.sin(inc) / GLASS.ior));
+    }
+    var at = function (d) {   // the profile, read between its samples
+      var u = Math.max(0, Math.min(N - 1, d / Bz * (N - 1))), i0 = Math.min(N - 2, Math.floor(u)), f = u - i0;
+      return prof[i0] * (1 - f) + prof[i0 + 1] * f;
+    };
+    var vx = new Float32Array(D * D), vy = new Float32Array(D * D), slope = new Float32Array(D * D), max = 0;
+    for (y = 0; y < D; y++) for (x = 0; x < D; x++) {
+      var px = (x + 0.5) / RES - LR, py = (y + 0.5) / RES - LR, l = Math.sqrt(px * px + py * py), d = LR - l;
+      if (d < 0 || d >= Bz || !l) continue;
+      var m = at(d), k = y * D + x;
+      vx[k] = -px / l * m; vy[k] = -py / l * m;   // the convex rim pulls light inwards
+      slope[k] = Math.abs(at(d + 1 / RES) - m);   // how fast the bend changes per map pixel
+      max = Math.max(max, Math.abs(vx[k]), Math.abs(vy[k]));
+    }
+    /* coarse byte + fine byte: the fine map carries the coarse one's rounding error */
+    var S = max ? max * 2 / (1 - GLASS.zoom) * 255 / 254 : 0, Sf = S / 254, to = 1 / (1 - GLASS.zoom);
+    var mk = function () { var c = document.createElement('canvas'); c.width = c.height = D; var x2 = c.getContext('2d'); return { c: c, x: x2, img: x2.createImageData(D, D) }; };
+    var A = mk(), F = mk(), level = S / 255, keep = 1, split = function (v, q, o) {
+      var b = S ? Math.round(127.5 + v * to / S * 255) : 128;   // coarse byte
+      var r = v * to - S * (b / 255 - 0.5);                       // what it rounded off
+      A.img.data[q + o] = b;
+      F.img.data[q + o] = Sf ? Math.max(0, Math.min(255, Math.round(127.5 + keep * r / Sf * 255))) : 128;
+    };
+    for (var j = 0, q = 0; j < D * D; j++, q += 4) {
+      /* full correction while the bend moves under one step per map pixel, none past two */
+      keep = level ? Math.max(0, Math.min(1, 2 - slope[j] * to / level)) : 0;
+      split(vx[j], q, 0); split(vy[j], q, 1);
+      A.img.data[q + 2] = F.img.data[q + 2] = 128; A.img.data[q + 3] = F.img.data[q + 3] = 255;
+    }
+    A.x.putImageData(A.img, 0, 0); F.x.putImageData(F.img, 0, 0);
+    lensMap = { url: A.c.toDataURL('image/png'), fine: F.c.toDataURL('image/png'), scale: S, fineScale: Sf, blur: GLASS.blur * g };
+    return lensMap;
+  }
+  function lensFilter() {
+    var gm = lensGlass(), box = 'x="' + (-LR) + '" y="' + (-LR) + '" width="' + 2 * LR + '" height="' + 2 * LR + '"', f = '', ch = ['r', 'g', 'b'];
+    f += '<filter id="th-lensfx" filterUnits="userSpaceOnUse" primitiveUnits="userSpaceOnUse" ' + box + ' color-interpolation-filters="sRGB">' +
+      '<feGaussianBlur in="SourceGraphic" stdDeviation="' + gm.blur.toFixed(3) + '" result="soft"/>' +
+      '<feImage href="' + gm.url + '" ' + box + ' preserveAspectRatio="none" result="map"/>' +
+      '<feImage href="' + gm.fine + '" ' + box + ' preserveAspectRatio="none" result="fine"/>';
+    ch.forEach(function (c, i) {   // RGB bend by slightly different amounts: dispersion
+      var d = 1 + (i - 1) * GLASS.dispersion;
+      f += '<feDisplacementMap in="soft" in2="map" scale="' + (gm.scale * d).toFixed(3) + '" xChannelSelector="R" yChannelSelector="G" data-fx="' + d + '" result="c' + c + '"/>' +
+        '<feDisplacementMap in="c' + c + '" in2="fine" scale="' + (gm.fineScale * d).toFixed(4) + '" xChannelSelector="R" yChannelSelector="G" data-fx="' + d + '" data-fine result="d' + c + '"/>' +
+        '<feColorMatrix in="d' + c + '" type="matrix" values="' + ['1 0 0 0 0  0 0 0 0 0  0 0 0 0 0', '0 0 0 0 0  0 1 0 0 0  0 0 0 0 0', '0 0 0 0 0  0 0 0 0 0  0 0 1 0 0'][i] + '  0 0 0 1 0" result="' + c + '"/>';
+    });
+    f += '<feBlend in="r" in2="g" mode="screen" result="rg"/><feBlend in="rg" in2="b" mode="screen" result="glass"/>' +
+      '<feColorMatrix in="glass" type="saturate" values="' + GLASS.saturate + '"/></filter>';
+    return f;
+  }
+  function lensDefs(k) {
+    return '<clipPath id="th-lensclip-' + k + '"><circle r="' + LR + '"/></clipPath>' +
+      '<filter id="th-lensshade-' + k + '" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"/></filter>' +
+      // rim light: bright where the light comes from, a fainter back rim opposite
+      '<linearGradient id="th-lensrim-' + k + '" gradientUnits="userSpaceOnUse" x1="0" y1="' + (-LR) + '" x2="0" y2="' + LR + '" data-lensrim><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset=".32" stop-color="#fff" stop-opacity="0"/><stop offset=".68" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff" stop-opacity=".4"/></linearGradient>' +
+      '<radialGradient id="th-lensglow-' + k + '" gradientUnits="userSpaceOnUse" cx="0" cy="' + (-LR * 1.1) + '" r="' + (LR * 1.3) + '"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset=".65" stop-color="#fff" stop-opacity="0"/></radialGradient>';
+  }
   var STAGES = [
     { n: 1, t: 'Finding a host', p: 'Second-stage juveniles (J2) hatch from eggs in the soil and swim through water films toward the chemicals leaking from root tips.', hot: [228, 250] },
     { n: 2, t: 'Releasing ascarosides', p: 'While they move and gather, nematodes release ascarosides such as ascr#3 and ascr#18. These small molecules linger in the soil around the roots. They are the clue NemaKlear is designed to read.', hot: [182, 226], key: true },
@@ -172,29 +256,56 @@
     var sec = H.$('[data-th]'); if (!sec) return;
     var stageEl = H.$('.th__stage', sec), track = H.$('[data-th-track]', sec), cap = H.$('[data-th-cap]', sec);
     var capN = H.$('[data-th-n]', cap), capT = H.$('[data-th-t]', cap), dotsEl = H.$('[data-th-dots]', sec);
+    var lensSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    lensSvg.setAttribute('aria-hidden', 'true'); lensSvg.setAttribute('focusable', 'false');
+    lensSvg.style.cssText = 'position:absolute;width:0;height:0;overflow:hidden';
+    lensSvg.innerHTML = '<defs>' + lensFilter() + '</defs>';
+    sec.insertBefore(lensSvg, sec.firstChild);
+    var lensFx = [].slice.call(lensSvg.querySelectorAll('feDisplacementMap'));
     var blocks = STAGES.map(function (st, i) {
       var k = i + 1, fig = document.createElement('figure');
       fig.className = 'th__block' + (st.key ? ' th__block--key' : '');
       fig.innerHTML = '<svg viewBox="0 0 420 330" role="img" aria-label="Stage ' + k + ': ' + st.t + '. Move the lens to look closer.">' +
-        '<defs><clipPath id="th-lensclip-' + k + '"><circle r="' + LR + '" cx="' + st.hot[0] + '" cy="' + st.hot[1] + '" data-lensclip/></clipPath></defs>' +
+        '<defs>' + lensDefs(k) + '</defs>' +
         '<g id="th-scene-' + k + '">' + sceneContent(k) + '</g>' +
-        '<g class="th__lensview" clip-path="url(#th-lensclip-' + k + ')"><rect width="420" height="330" fill="#2a1a14"/><g data-lenszoom><use href="#th-scene-' + k + '"/><g class="th__micro">' + microContent(k) + '</g></g></g>' +
-        '<g class="th__lens" data-lens><circle r="' + LR + '" fill="none" stroke="#f6e9c9" stroke-width="5"/><circle r="' + LR + '" fill="none" stroke="#7e0c6e" stroke-width="1.4"/><circle r="' + (LR - 4) + '" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="1"/><path d="M' + (LR * .71 + 2) + ' ' + (LR * .71 + 2) + 'L' + (LR * .71 + 34) + ' ' + (LR * .71 + 34) + '" stroke="#6b3f2a" stroke-width="10" stroke-linecap="round"/><path d="M' + (LR * .71 + 3) + ' ' + (LR * .71 + 3) + 'L' + (LR * .71 + 33) + ' ' + (LR * .71 + 33) + '" stroke="#8e5a3c" stroke-width="4" stroke-linecap="round"/></g>' +
+        '<g class="th__lensview" data-lensview><circle r="' + LR + '" cy="6" fill="rgba(12,20,40,.34)" filter="url(#th-lensshade-' + k + ')"/>' +
+          '<g clip-path="url(#th-lensclip-' + k + ')"><g filter="url(#th-lensfx)"><rect x="' + (-LR) + '" y="' + (-LR) + '" width="' + 2 * LR + '" height="' + 2 * LR + '" fill="#2a1a14"/><g data-lenszoom><use href="#th-scene-' + k + '"/><g class="th__micro">' + microContent(k) + '</g></g></g></g></g>' +
+        '<g class="th__lens" data-lens><circle r="' + LR + '" fill="rgba(255,255,255,.05)"/><circle r="' + LR + '" fill="url(#th-lensglow-' + k + ')"/>' +
+          '<circle r="' + (LR - 0.7) + '" fill="none" stroke="url(#th-lensrim-' + k + ')" stroke-width="1.4"/><circle r="' + (LR - 0.3) + '" fill="none" stroke="rgba(255,255,255,.35)" stroke-width=".5"/></g>' +
         '</svg><figcaption><b>' + k + '</b>' + st.t + '</figcaption>';
       track.appendChild(fig);
       var li = document.createElement('li'); dotsEl.appendChild(li);
       return {
         k: k, st: st, fig: fig, svg: fig.querySelector('svg'), dot: li,
-        clip: fig.querySelector('[data-lensclip]'), zoom: fig.querySelector('[data-lenszoom]'), lens: fig.querySelector('[data-lens]'),
+        view: fig.querySelector('[data-lensview]'), zoom: fig.querySelector('[data-lenszoom]'), lens: fig.querySelector('[data-lens]'),
+        rim: fig.querySelector('[data-lensrim]'),
         worms: H.$$('[data-j2]', fig).filter(function (g) { return !g.closest('.th__lensview'); }).map(function (g) { var a = g.getAttribute('data-j2').split(' ').map(Number); return { o: g.children[0], b: g.children[1], x: a[0], y: a[1], ang: a[2], len: a[3], ph: a[4] }; }),
         lx: st.hot[0], ly: st.hot[1], tx: st.hot[0], ty: st.hot[1]
       };
     });
     var cur = 0;
     function place(b) {
-      b.clip.setAttribute('cx', b.lx.toFixed(2)); b.clip.setAttribute('cy', b.ly.toFixed(2));
-      b.zoom.setAttribute('transform', 'translate(' + b.lx.toFixed(2) + ' ' + b.ly.toFixed(2) + ') scale(' + ZOOM + ') translate(' + (-b.lx).toFixed(2) + ' ' + (-b.ly).toFixed(2) + ')');
-      b.lens.setAttribute('transform', 'translate(' + b.lx.toFixed(2) + ' ' + b.ly.toFixed(2) + ')');
+      var at = 'translate(' + b.lx.toFixed(2) + ' ' + b.ly.toFixed(2) + ')';
+      b.view.setAttribute('transform', at);
+      b.zoom.setAttribute('transform', 'scale(' + ZOOM + ') translate(' + (-b.lx).toFixed(2) + ' ' + (-b.ly).toFixed(2) + ')');
+      b.lens.setAttribute('transform', at);
+      b.rim.setAttribute('gradientTransform', 'rotate(' + (-45 + (b.lx - 210) / 170 * 18).toFixed(1) + ')');   // light from the upper left
+    }
+    /* like the demo's glass, the lens does not fade in: its bending grows until it is there */
+    function bend(k) {
+      var gm = lensGlass();
+      lensFx.forEach(function (fe) {
+        var fine = fe.hasAttribute('data-fine');
+        fe.setAttribute('scale', ((fine ? gm.fineScale : gm.scale) * k * +fe.getAttribute('data-fx')).toFixed(fine ? 4 : 3));
+      });
+    }
+    var focused = 0;
+    var bendRun = 0;
+    function materialize() {
+      if (H.reduced) { bend(1); return; }
+      var t0 = performance.now(), run = ++bendRun;   // a newer focus takes over the shared filter
+      bend(0);
+      (function step(t) { if (run !== bendRun) return; var p = Math.min(1, (t - t0) / 900); bend(1 - Math.pow(1 - p, 3)); if (p < 1) requestAnimationFrame(step); })(t0);
     }
     /* 3D v3 interaction: a preview of the four blocks, then the first block
      * zooms in, then each scroll slides sideways to the next block. One big
@@ -233,7 +344,9 @@
         capN.textContent = String(i); capT.textContent = st.t;
         cap.classList.toggle('is-key', !!st.key);
         cap.classList.remove('is-in'); void cap.offsetWidth; cap.classList.add('is-in');
+        if (focused !== i) materialize();
       }
+      focused = i;
       layout();
     }
     blocks.forEach(function (b) {
@@ -257,9 +370,8 @@
         });
         if (Math.abs(b.tx - b.lx) > .05 || Math.abs(b.ty - b.ly) > .05) { b.lx += (b.tx - b.lx) * .16; b.ly += (b.ty - b.ly) * .16; place(b); }
       });
-      requestAnimationFrame(tick);
     }
-    H.onView(sec, function (v) { var was = vis; vis = v; if (v && !was) requestAnimationFrame(tick); });
+    H.visibleLoop(sec, tick, function (v) { vis = v; });
     var rz; addEventListener('resize', function () { clearTimeout(rz); rz = setTimeout(layout, 120); });
     H.scene('threat', {
       steps: 4, tall: 5,

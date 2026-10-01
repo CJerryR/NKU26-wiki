@@ -1,89 +1,139 @@
-/* Top bar — the v6 two-island glass nav (same markup as the homepage). */
-.lnav { position: fixed; inset: 14px 0 auto; z-index: 1000; display: flex; flex-direction: column; align-items: center; pointer-events: none; font-family: var(--font-body); transition: transform .55s var(--lg-ease), opacity .4s; }
-.lnav__row { pointer-events: none; display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; width: calc(100% - 2 * var(--nav-gutter)); }
-.lnav__island { pointer-events: auto; display: flex; align-items: center; height: 56px; color: var(--lg-ink); transition: color .35s, box-shadow .35s; box-shadow: var(--glass-shadow-dark); }
-/* v7.3: same height and pill shape as the menu island, so the two line up */
-.lnav__island--brand { height: 56px; padding: 0 20px 0 12px; border-radius: 99px; overflow: clip; }
+/* Top bar — two liquid-glass islands after the team's LiquidTabBar demo
+   (material: liquid-glass.css; behaviour: src/scripts/nav.ts). The same
+   file styles the story homepage, so it brings its own resets and falls
+   back to fixed values where the inner pages' tokens are missing. */
+.lnav {
+  --nav-ease: cubic-bezier(.2, .9, .25, 1.08);
+  --nav-gold: #ffd98a; --nav-brand: #7e0c6e; --nav-signal: #6ff3de; --nav-focus: #e2a23c;
+  position: fixed; inset: 14px 0 auto; z-index: 1000;
+  display: flex; flex-direction: column; align-items: center;
+  pointer-events: none;
+  font-family: var(--font-body, 'Spline Sans', system-ui, -apple-system, 'Segoe UI', sans-serif);
+  transition: transform .55s var(--nav-ease), opacity .4s;
+}
+.lnav.is-hidden { transform: translateY(-120%); opacity: 0; }
+:where(.lnav) :where(a) { color: inherit; text-decoration: none; }
+:where(.lnav) :where(button) { font: inherit; color: inherit; border: 0; background: none; padding: 0; margin: 0; cursor: pointer; }
+.lnav__row {
+  pointer-events: none; display: flex; justify-content: space-between; align-items: flex-start; gap: 12px;
+  width: calc(100% - 2 * var(--nav-gutter, clamp(20px, 4vw - 8px, 88px)));
+}
+.lnav__island { pointer-events: auto; display: flex; align-items: center; height: 56px; border-radius: 99px; }
+.lnav__island--brand { padding: 0 20px 0 12px; }
 .lnav__island--menu { padding: 0 7px 0 8px; gap: 2px; }
+
 .lnav__brand { display: flex; align-items: center; gap: 10px; flex-shrink: 0; border-radius: 16px; }
-.lnav__brand img { width: 26px; height: 34px; object-fit: contain; filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .35)); transition: transform .5s var(--lg-ease); }
+.lnav__brand img { width: 26px; height: 34px; object-fit: contain; filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .35)); transition: transform .5s var(--nav-ease); }
 .lnav__brand:hover img { transform: rotate(-6deg); }
 .lnav__brand > span { display: flex; flex-direction: column; line-height: 1.05; }
-.lnav__brand b { display: block; font-weight: 700; font-size: 16.5px; letter-spacing: -.01em; }
-.lnav__brand em { font-family: var(--font-body); font-style: normal; font-weight: 500; font-size: 12.5px; letter-spacing: .01em; color: var(--gold); margin-top: 2px; }
+.lnav__brand b { display: block; font-weight: 700; font-size: 16.5px; letter-spacing: -.01em; white-space: nowrap; }
+.lnav__brand em { font-style: normal; font-weight: 500; font-size: 12.5px; letter-spacing: .01em; margin-top: 2px; color: var(--nav-gold); transition: color .35s; }
+.lnav__island[data-tone='light'] .lnav__brand em { color: var(--nav-brand); }
 
-.lnav__links { position: relative; display: flex; align-items: center; gap: 2px; height: 100%; max-width: 900px; overflow: visible; transition: max-width .6s var(--lg-ease), opacity .35s; }
-.lnav__link { position: relative; z-index: 1; display: inline-flex; align-items: center; gap: 6px; height: 40px; padding: 0 15px; border-radius: 99px; font-size: 14.5px; font-weight: 500; white-space: nowrap; text-shadow: 0 1px 1px rgba(40, 0, 30, .35); transition: color .2s; }
-.lnav__link svg { width: 9px; height: 6px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; transition: transform .35s var(--lg-ease); }
+/* ---- the menu: links and the film that marks one of them ---- */
+.lnav__links {
+  position: relative; display: flex; align-items: center; gap: 2px; height: 100%; max-width: 900px;
+  touch-action: pan-y; user-select: none; -webkit-user-select: none;
+  transition: max-width .6s var(--nav-ease), opacity .35s;
+}
+.lnav__link {
+  position: relative; z-index: 1; display: inline-flex; align-items: center; gap: 6px; height: 40px; padding: 0 15px;
+  border-radius: 99px; font-size: 14.5px; font-weight: 500; white-space: nowrap;
+  -webkit-user-drag: none; -webkit-tap-highlight-color: transparent; transition: color .3s;
+}
+.lnav__island[data-tone='dark'] .lnav__link { text-shadow: 0 1px 1px rgba(40, 0, 30, .35); }
+.lnav__link svg { width: 9px; height: 6px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; transition: transform .35s var(--nav-ease); }
 .lnav__link[aria-expanded='true'] svg { transform: rotate(180deg); }
-.lnav__link.is-current::after { content: ''; position: absolute; left: 50%; bottom: 5px; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: var(--signal); box-shadow: 0 0 8px var(--signal); }
+/* the section you are in keeps an accent even while the film is elsewhere */
+.lnav__link.is-current { font-weight: 600; color: #d9ccff; }
+.lnav__island[data-tone='light'] .lnav__link.is-current { color: #523a8c; }
 
-.lnav__lens { position: absolute; z-index: 0; top: 9px; left: 0; height: 40px; width: 60px; border-radius: 99px; opacity: 0; transform: translateX(var(--lens-x, 0)) scale(var(--lens-s, .9)); transition: transform .5s var(--lg-ease), width .45s var(--lg-ease), opacity .25s; }
-.lnav__lens.is-on { opacity: 1; --lens-s: 1; }
-.lnav__lens.is-pressed { --lens-s: 1.12; }
-.lnav__lens > .lg__fx { -webkit-backdrop-filter: blur(3px) brightness(1.18) saturate(160%); backdrop-filter: blur(3px) brightness(1.18) saturate(160%); }
-.lnav__lens > .lg__shine { background: rgba(255, 255, 255, .1); }
+/* A film inside the menu glass, not a second pane (glass never samples
+   glass). It rests on the current section, follows the pointer on a
+   spring, stretches with speed, and lifts into a drop of glass when pressed. */
+.lnav__film {
+  position: absolute; z-index: 0; top: 8px; left: 0; width: 60px; height: 40px; border-radius: 99px;
+  opacity: 0; pointer-events: none; transform-origin: 50% 50%; will-change: transform;
+  background: var(--glass-film);
+  box-shadow: inset 0 0 0 .5px var(--glass-film-edge), inset 0 1px 1px var(--glass-film-edge), 0 2px 8px rgb(20 10 30 / .12);
+  transition: opacity .25s, background-color .3s, box-shadow .3s;
+}
+.lnav__film.is-on { opacity: 1; }
+.lnav__links.is-lifted .lnav__film {
+  background: rgb(255 255 255 / .18);
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / .85), inset 0 2px 3px rgb(255 255 255 / .6), inset 0 -2px 4px rgb(0 0 0 / .12), 0 10px 24px -6px rgb(20 10 30 / .35);
+}
 
-.lnav__search { position: relative; display: inline-flex; align-items: center; gap: 7px; height: 42px; padding: 0 16px 0 13px; margin-left: 6px; border-radius: 99px; font-size: 14px; font-weight: 600; color: var(--lg-ink); background: rgba(255, 255, 255, .14); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .22); transition: transform .35s var(--lg-ease), background .3s; }
+.lnav__search {
+  position: relative; display: inline-flex; align-items: center; gap: 7px; height: 42px; padding: 0 16px 0 13px; margin-left: 6px;
+  border-radius: 99px; font-size: 14px; font-weight: 600;
+  background: var(--glass-film); box-shadow: inset 0 1px 0 var(--glass-film-edge);
+  transition: transform .35s var(--nav-ease), background-color .3s;
+}
 .lnav__search svg { width: 16px; height: 16px; }
 .lnav__search:hover { transform: scale(1.05); }
 .lnav__search:active { transform: scale(.96); }
-.lnav__toggle { display: none; position: relative; width: 42px; height: 42px; margin-left: 4px; border-radius: 99px; background: rgba(255, 255, 255, .16); }
-.lnav__toggle i { position: absolute; left: 12px; right: 12px; height: 2px; border-radius: 2px; background: var(--lg-ink); transition: transform .35s var(--lg-ease); }
+.lnav__toggle { display: none; position: relative; width: 42px; height: 42px; margin-left: 4px; border-radius: 99px; background: var(--glass-film); }
+.lnav__toggle i { position: absolute; left: 12px; right: 12px; height: 2px; border-radius: 2px; background: currentColor; transition: transform .35s var(--nav-ease); }
 .lnav__toggle i:first-child { top: 16px; }
 .lnav__toggle i:last-child { top: 24px; }
 .lnav__toggle[aria-expanded='true'] i:first-child { transform: translateY(4px) rotate(45deg); }
 .lnav__toggle[aria-expanded='true'] i:last-child { transform: translateY(-4px) rotate(-45deg); }
 
+/* ---- dropdowns: each is its own pane, toned by what lies under it ----
+   The pane never fades as a whole (an ancestor below opacity 1 cuts glass
+   off from its backdrop); its layers fade instead. */
 .lnav__group { position: relative; }
-/* The menu itself never fades: a parent with opacity below 1 cuts the glass
-   off from what is behind it, and it flashed as a flat grey slab. Its layers
-   fade instead, the shadow with the film. */
-.lnav__drop { --lg-ink: var(--glass-dark-ink); position: absolute; top: calc(100% + 18px); left: 50%; width: 520px; padding: 10px; border-radius: 26px; color: var(--lg-ink); visibility: hidden; transform: translate(-50%, -8px) scale(.96); transform-origin: 50% 0; transition: transform .45s var(--lg-ease), visibility 0s .45s; }
-.lnav__drop > * { opacity: 0; transition: opacity .2s; }
-.lnav__drop > .lg__tint { box-shadow: var(--glass-shadow-panel-dark); }
-.lnav__drop.is-light > .lg__tint { box-shadow: var(--glass-shadow-panel-light); }
-.lnav__drop--narrow { width: 300px; }
+.lnav__drop {
+  position: absolute; top: calc(100% + 18px); left: 50%; width: 520px; padding: 10px; border-radius: 26px;
+  visibility: hidden; box-shadow: none;
+  transform: translate(-50%, -8px) scale(.96); transform-origin: 50% 0;
+  transition: var(--glass-transition), transform .45s var(--nav-ease), visibility 0s .45s;
+}
+.lnav__drop > *, .lnav__drop::after { opacity: 0; transition: opacity .2s; }
 .lnav__drop::before { content: ''; position: absolute; left: 0; right: 0; top: -20px; height: 20px; }
-.lnav__group.is-open .lnav__drop { visibility: visible; transform: translate(-50%, 0) scale(1); transition: transform .5s var(--lg-ease), visibility 0s; }
-.lnav__group.is-open .lnav__drop > * { opacity: 1; }
+.lnav__drop--narrow { width: 300px; }
+.lnav__group.is-open .lnav__drop {
+  visibility: visible; box-shadow: var(--glass-shadow); transform: translate(-50%, 0) scale(1);
+  transition: var(--glass-transition), transform .5s var(--nav-ease), visibility 0s;
+}
+.lnav__group.is-open .lnav__drop > *, .lnav__group.is-open .lnav__drop::after { opacity: 1; }
 .lnav__drop-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
 .lnav__drop--narrow .lnav__drop-grid { grid-template-columns: 1fr; }
-.lnav__drop-grid a { display: block; padding: 11px 14px; border-radius: 17px; transition: background .2s; }
-.lnav__drop-grid a:hover, .lnav__drop-grid a:focus-visible, .lnav__drop-grid a[aria-current='page'] { background: rgba(255, 255, 255, .14); }
+.lnav__drop-grid a { display: block; padding: 11px 14px; border-radius: 17px; transition: background-color .2s; }
+.lnav__drop-grid a:hover, .lnav__drop-grid a:focus-visible, .lnav__drop-grid a[aria-current='page'] { background: var(--glass-film); }
 .lnav__drop-grid b { display: block; font-size: 14.5px; font-weight: 600; }
 .lnav__drop-grid span { display: block; font-size: 12.5px; opacity: .76; margin-top: 2px; line-height: 1.35; }
-.lnav__drop-grid b, .lnav__drop-grid span { text-shadow: 0 1px 2px rgba(20, 4, 24, .35); }
+.lnav__drop[data-tone='dark'] .lnav__drop-grid b, .lnav__drop[data-tone='dark'] .lnav__drop-grid span { text-shadow: 0 1px 2px rgba(20, 4, 24, .35); }
 
-.lnav__sheet { --lg-ink: var(--glass-dark-ink); pointer-events: auto; width: min(100% - 28px, 520px); margin-top: 10px; border-radius: 28px; padding: 14px 10px; color: var(--lg-ink); box-shadow: var(--glass-shadow-panel-dark); }
-.lnav__sheet.is-light { box-shadow: var(--glass-shadow-panel-light); }
+.lnav__sheet { pointer-events: auto; width: min(100% - 28px, 520px); margin-top: 10px; border-radius: 28px; padding: 14px 10px; }
 .lnav__sheet[hidden] { display: none; }
 .lnav__sheet-body { display: flex; flex-wrap: wrap; gap: 4px; max-height: calc(100vh - 120px); overflow: auto; }
 .lnav__sheet-body p { flex-basis: 100%; margin: 10px 12px 2px; font-size: 12px; opacity: .7; font-weight: 600; }
-.lnav__sheet-body a { padding: 9px 14px; border-radius: 99px; background: rgba(255, 255, 255, .1); font-size: 14.5px; }
-.lnav__sheet-body a[aria-current='page'] { background: rgba(255, 255, 255, .24); }
+.lnav__sheet-body a { padding: 9px 14px; border-radius: 99px; background: var(--glass-film); font-size: 14.5px; }
+.lnav__sheet-body a[aria-current='page'] { box-shadow: inset 0 0 0 1px var(--glass-film-edge); font-weight: 600; }
 
-/* collapsed state: the menu island shows the current section */
-.lnav__now { max-width: 0; opacity: 0; overflow: hidden; white-space: nowrap; font-size: 14px; font-weight: 600; transition: max-width .6s var(--lg-ease), opacity .3s, padding .4s; }
+/* ---- collapsed: the menu island shows the current section ---- */
+.lnav__now { max-width: 0; opacity: 0; overflow: hidden; white-space: nowrap; font-size: 14px; font-weight: 600; transition: max-width .6s var(--nav-ease), opacity .3s, padding .4s; }
 .lnav.is-compact:not(.is-peek):not(:focus-within) .lnav__links { max-width: 0; opacity: 0; pointer-events: none; overflow: hidden; }
 .lnav.is-compact:not(.is-peek):not(:focus-within) .lnav__now { max-width: 300px; opacity: 1; padding: 0 10px 0 12px; }
-.lnav.is-compact:not(.is-peek):not(:focus-within) .lnav__now::before { content: ''; display: inline-block; width: 7px; height: 7px; margin-right: 9px; border-radius: 50%; background: var(--signal); box-shadow: 0 0 10px var(--signal); vertical-align: 1px; }
+.lnav.is-compact:not(.is-peek):not(:focus-within) .lnav__now::before {
+  content: ''; display: inline-block; width: 7px; height: 7px; margin-right: 9px; border-radius: 50%; vertical-align: 1px;
+  background: var(--nav-signal); box-shadow: 0 0 10px var(--nav-signal);
+}
+.lnav__island[data-tone='light'] .lnav__now::before { background: #6e4fb8; box-shadow: none; }
 
-/* over the paper page the bar takes the light glass (tokens in glass.css) */
-.lnav.is-on-light { --lg-ink: var(--glass-light-ink); }
-.lnav.is-on-light .lnav__island { box-shadow: var(--glass-shadow-light); }
-.lnav.is-on-light .lnav__brand em { color: var(--brand); }
-.lnav.is-on-light .lnav__link { text-shadow: none; }
-.lnav.is-on-light .lnav__search { background: rgba(31, 20, 36, .07); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5); }
-.lnav.is-on-light .lnav__toggle { background: rgba(31, 20, 36, .07); }
-/* dropdowns and the phone menu take their tone from what lies under them
-   (src/scripts/nav.ts), so a menu reaching from the hero onto the paper
-   stays readable */
-.lnav__drop.is-light .lnav__drop-grid b, .lnav__drop.is-light .lnav__drop-grid span { text-shadow: none; }
-.lnav__drop.is-light .lnav__drop-grid a:hover, .lnav__drop.is-light .lnav__drop-grid a:focus-visible, .lnav__drop.is-light .lnav__drop-grid a[aria-current='page'] { background: rgba(31, 20, 36, .07); }
-.lnav__sheet.is-light .lnav__sheet-body a { background: rgba(31, 20, 36, .06); }
-.lnav__sheet.is-light .lnav__sheet-body a[aria-current='page'] { background: rgba(31, 20, 36, .13); }
-.lnav a:focus-visible, .lnav button:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
+/* A soft fade under the bar in the colour of the page beneath it, so text
+   scrolling under the bar recedes and the bar's labels stay clear. */
+.lnav-scrim { position: fixed; inset: 0 0 auto; z-index: 999; height: 104px; pointer-events: none; opacity: 0; transition: opacity .4s; }
+.lnav-scrim::before, .lnav-scrim::after { content: ''; position: absolute; inset: 0; transition: opacity .4s; }
+.lnav-scrim::before { background: linear-gradient(to bottom, rgb(247 242 232 / .82), rgb(247 242 232 / .5) 45%, rgb(247 242 232 / 0)); }
+.lnav-scrim::after { background: linear-gradient(to bottom, rgb(25 18 34 / .5), rgb(25 18 34 / 0)); opacity: 0; }
+.lnav-scrim[data-tone='dark']::before { opacity: 0; }
+.lnav-scrim[data-tone='dark']::after { opacity: 1; }
+.lnav-scrim.is-on { opacity: 1; }
+
+.lnav a:focus-visible, .lnav button:focus-visible { outline: 2px solid var(--nav-focus); outline-offset: 2px; }
 
 @media (max-width: 1099px) {
   .lnav__now { display: none; }
@@ -97,6 +147,14 @@
 }
 @media (max-width: 520px) {
   .lnav { inset: 10px 0 auto; }
+  .lnav__island--brand { padding: 0 16px 0 10px; }
   .lnav__brand b { font-size: 15.5px; }
   .lnav__brand em { font-size: 12px; }
+  .lnav-scrim { height: 92px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lnav, .lnav__drop, .lnav__film, .lnav__links, .lnav__now { transition: none !important; }
+}
+@media print {
+  .lnav, .lnav-scrim { display: none !important; }
 }

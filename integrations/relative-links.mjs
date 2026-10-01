@@ -103,6 +103,7 @@ export default function relativeLinks() {
           const q = url.indexOf('?');
           const p = q === -1 ? url : url.slice(0, q);
           const rest = q === -1 ? '' : url.slice(q);
+          if (p.startsWith('/admin/')) { next(); return; }
           if (p.endsWith('/index.html')) req.url = p.slice(0, -'index.html'.length) + rest;
           else if (/^\/pages\/[^/]+\.html$/.test(p)) req.url = p.slice(0, -'.html'.length) + rest;
           next();

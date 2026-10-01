@@ -1,10 +1,11 @@
 ---
 /**
- * Top bar: two floating glass islands (brand + menu), dropdowns and the phone
- * sheet. The markup matches v6 exactly, so the story homepage keeps running
- * on its own static/js/shell.js while inner pages use src/scripts/nav.ts.
+ * Top bar: two floating liquid-glass islands (brand + menu), dropdowns and
+ * the phone sheet, after the team's LiquidTabBar demo. The menu island is one
+ * pane of glass; its highlight is a film inside it (glass never samples
+ * glass). Every page, the story homepage included, runs src/scripts/nav.ts.
  */
-import Glass from '../glass/Glass.astro';
+import LiquidGlass from '../glass/LiquidGlass.astro';
 import { primaryNav, mobileNav, type NavLink } from '../../data/nav';
 import { getPages, byId, pageHref } from '../../lib/pages';
 
@@ -30,28 +31,29 @@ const menu = primaryNav.map((item) => {
 }).filter((item) => item.kind !== 'group' || item.items.length > 0);
 const sheet = mobileNav.map((g) => ({ ...g, items: g.items.map(link).filter((l) => l.href) })).filter((g) => g.items.length > 0);
 ---
+<div class="lnav-scrim" data-lnav-scrim data-tone="dark" aria-hidden="true"></div>
 <header class="lnav" data-lnav>
   <div class="lnav__row lnav__bar">
-    <Glass class="lnav__island lnav__island--brand" preset="bar">
-      <a href={HOME} class="lnav__brand" aria-label="NKU26 NemaKlear home">
+    <LiquidGlass class="lnav__island lnav__island--brand" preset="bar">
+      <a href={HOME} class="lnav__brand" aria-label="iGEM-NKU26 NemaKlear home">
         <img src="/img/shell/nku-mark.svg" alt="" width="34" height="44" />
-        <span><b>NKU26</b><em>NemaKlear</em></span>
+        <span><b>iGEM-NKU26</b><em>NemaKlear</em></span>
       </a>
-    </Glass>
-    <Glass class="lnav__island lnav__island--menu" preset="bar">
+    </LiquidGlass>
+    <LiquidGlass class="lnav__island lnav__island--menu" preset="bar">
       <span class="lnav__now" data-lnav-now aria-hidden="true"></span>
-      <nav class="lnav__links" aria-label="Primary">
-        <span class="lnav__lens lg" data-lg="lens" aria-hidden="true"><span class="lg__fx"></span><span class="lg__shine"></span></span>
+      <nav class="lnav__links" aria-label="Primary" data-lnav-links>
+        <span class="lnav__film" data-lnav-film aria-hidden="true"></span>
         {menu.map((item) => item.kind === 'group' ? (
           <div class="lnav__group">
             <button type="button" class:list={['lnav__link', { 'is-current': item.current }]} aria-expanded="false" aria-controls={`lnav-${item.id}`}>{item.label}<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" /></svg></button>
-            <Glass class={item.narrow ? 'lnav__drop lnav__drop--narrow' : 'lnav__drop'} id={`lnav-${item.id}`} preset="drop">
+            <LiquidGlass class={item.narrow ? 'lnav__drop lnav__drop--narrow' : 'lnav__drop'} id={`lnav-${item.id}`} preset="panel">
               <div class="lnav__drop-grid">
                 {item.items.map((l) => (
                   <a href={l.href} aria-current={l.current ? 'page' : undefined}><b>{l.label}</b><span>{l.blurb}</span></a>
                 ))}
               </div>
-            </Glass>
+            </LiquidGlass>
           </div>
         ) : item.href && (
           <a class:list={['lnav__link', { 'is-current': item.current }]} href={item.href} aria-current={item.current ? 'page' : undefined}>{item.label}</a>
@@ -62,9 +64,9 @@ const sheet = mobileNav.map((g) => ({ ...g, items: g.items.map(link).filter((l) 
         <span>Search</span>
       </button>
       <button type="button" class="lnav__toggle" aria-expanded="false" aria-controls="lnav-sheet" aria-label="Open menu"><i></i><i></i></button>
-    </Glass>
+    </LiquidGlass>
   </div>
-  <Glass class="lnav__sheet" id="lnav-sheet" preset="sheet" hidden>
+  <LiquidGlass class="lnav__sheet" id="lnav-sheet" preset="panel" hidden>
     <div class="lnav__sheet-body">
       {sheet.map((g) => (
         <Fragment>
@@ -73,6 +75,6 @@ const sheet = mobileNav.map((g) => ({ ...g, items: g.items.map(link).filter((l) 
         </Fragment>
       ))}
     </div>
-  </Glass>
+  </LiquidGlass>
 </header>
 <svg class="lg-defs" width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden"><defs></defs></svg>

@@ -1,14 +1,18 @@
 ---
 title: Education
-heading: "Sharing the *science*"
-sub: "How we helped others understand nematodes, biosensing, and synthetic biology."
-crumbs: [Human Practices, Education]
+heading: Sharing the *science*
+sub: 'How we helped others understand nematodes, biosensing, and synthetic biology.'
+crumbs:
+  - Human Practices
+  - Education
 route: education
+search: true
 meta:
-  Reading: "4 min"
-  Audience: "Public & students"
+  Reading: 4 min
+  Audience: Public & students
+draft: false
+hidden: false
 ---
-
 ## Teaching records, with honest limits {#goals toc="Goals"}
 
 The available records establish two documented activities and the teaching materials prepared for them. They support an account of what the courses were designed to explain, but they contain no verified attendance or reach count and no measured learning impact. We therefore describe the teaching structure without treating delivery records as evidence that understanding changed.
@@ -17,7 +21,7 @@ Across both activities, the instructional goal was to make an invisible biologic
 
 ## Two documented teaching designs {#activities toc="Activities"}
 
-:::cards{cols=3}
+:::cards{cols="3"}
 
 ### Nematode Chase {icon="book"}
 

@@ -53,7 +53,6 @@
         var g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, 9); g.addColorStop(0, 'rgba(' + p.c + ',' + p.life + ')'); g.addColorStop(1, 'rgba(' + p.c + ',0)');
         ctx.fillStyle = g; ctx.beginPath(); ctx.arc(p.x, p.y, 9, 0, 6.29); ctx.fill();
       });
-      requestAnimationFrame(draw);
     }
     groups.forEach(function (g) {
       var k = g.getAttribute('data-tr-group');
@@ -62,7 +61,7 @@
       g.addEventListener('click', function () { hot = hot === k ? null : k; shuffle(); });
     });
     size(); addEventListener('resize', size);
-    H.onView(sec, function (v) { var was = vis; vis = v; if (v && !was) requestAnimationFrame(draw); });
+    H.visibleLoop(sec, draw, function (v) { vis = v; });
     var tt = 0;
     H.scene('traces', {
       steps: 1,
@@ -112,9 +111,8 @@
         s.el.style.transform = 'translate(' + (s.x + fx) + 'px,' + (s.y + fy) + 'px)';
       });
       if (wave) H.$$('path', wave).forEach(function (p, k) { var d = ''; for (var x = 0; x <= 140; x += 4) d += (x ? 'L' : 'M') + x + ',' + (20 + Math.sin(x / 14 + t * 2 + k * .8) * (6 + k * 2) * Math.sin(x / 140 * Math.PI)).toFixed(1); p.setAttribute('d', d); });
-      requestAnimationFrame(tick);
     }
-    H.onView(field, function (v) { var was = vis; vis = v; if (v && !was) requestAnimationFrame(tick); });
+    H.visibleLoop(field, tick, function (v) { vis = v; });
     H.scene('combo', {
       steps: 1,
       set: function (i) { setMerged(i > 0, true); },
@@ -494,12 +492,11 @@
             ctx.restore();
           }
         }
-        requestAnimationFrame(draw);
       }
       card.addEventListener('pointermove', function (e) { var b = card.getBoundingClientRect(); card.style.setProperty('--ry', ((e.clientX - b.left) / b.width - .5) * 10 + 'deg'); card.style.setProperty('--rx', -((e.clientY - b.top) / b.height - .5) * 10 + 'deg'); hover = true; });
       card.addEventListener('pointerleave', function () { card.style.setProperty('--rx', '0deg'); card.style.setProperty('--ry', '0deg'); hover = false; });
       size(); addEventListener('resize', size);
-      H.onView(card, function (v) { var was = vis; vis = v; if (v && !was) requestAnimationFrame(draw); });
+      H.visibleLoop(card, draw, function (v) { vis = v; });
     });
   }
 

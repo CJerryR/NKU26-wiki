@@ -1,0 +1,77 @@
+{
+  "title": "Members",
+  "heading": "The *team record*",
+  "sub": "An interim directory that separates verified identity from details still awaiting confirmation.",
+  "crumbs": [
+    "Team",
+    "Members"
+  ],
+  "route": "team",
+  "meta": [
+    {
+      "key": "Institution",
+      "value": "Nankai University"
+    },
+    {
+      "key": "Status",
+      "value": "Interim"
+    }
+  ],
+  "search": true,
+  "blocks": [
+    {
+      "_template": "heading",
+      "text": "What can be published now",
+      "level": 2,
+      "attributes": "#members toc=\"Members\""
+    },
+    {
+      "_template": "text",
+      "body": "The verified public identity is NKU iGEM 2026 at Nankai University. This is an interim evidence-status page: an authoritative complete member roster has not been located, and approved public display names, verified person-by-person roles, biographies, and public-image permissions have not been confirmed.\n\nMember cards are absent because the roster, display names, and roles remain unverified. Photographs are also absent because publication permission was not verified; this does not mean that anyone refused permission."
+    },
+    {
+      "_template": "layout",
+      "kind": "cards",
+      "label": "",
+      "attributes": "cols=\"3\"",
+      "body": "### Identity verified {icon=\"verified\"}\n\nNKU iGEM 2026 and Nankai University are supported by the reviewed records.\n\n### Roster pending {icon=\"roster\"}\n\nOne authoritative roster must be confirmed before a complete directory can be published.\n\n### Names pending {icon=\"person\"}\n\nEach approved public display name requires a separate confirmation record.\n\n### Roles pending {icon=\"id-card\"}\n\nBroad workstream labels do not establish a person's role or contribution.\n\n### Biography optional {icon=\"doc\"}\n\nAny biography must be approved and may be omitted without affecting attribution.\n\n### Images withheld {icon=\"camera\"}\n\nNo photograph is shown until its exact file, credit, caption, alt text, and publication permission are confirmed."
+    },
+    {
+      "_template": "heading",
+      "text": "Broad workstreams, not a roster",
+      "level": 2,
+      "attributes": "#subteams toc=\"Sub-teams\""
+    },
+    {
+      "_template": "text",
+      "body": "The reviewed records organize work into three broad workstreams: Wet Lab, Dry Lab, and Human Practices. These workstreams do not establish person-by-person assignments or membership."
+    },
+    {
+      "_template": "layout",
+      "kind": "cards",
+      "label": "",
+      "attributes": "cols=\"3\"",
+      "body": "### Wet Lab {icon=\"flask\"}\n\nReviewed Wet Lab evidence consists of documented experimental records and attempted workflows. It does not show an end-to-end detector.\n\n### Dry Lab {icon=\"chip\"}\n\nDry Lab evidence supports literature research and conceptual computational preparation. No validated model, software, or hardware system is documented.\n\n### Human Practices {icon=\"people\"}\n\nHuman Practices records include documented education materials and consultation records. They do not establish a completed integrated cycle."
+    },
+    {
+      "_template": "heading",
+      "text": "Identity and count boundary",
+      "level": 2,
+      "attributes": "#affiliation toc=\"Affiliation\""
+    },
+    {
+      "_template": "text",
+      "body": "The team identity is NKU iGEM 2026 at Nankai University. Reviewed internal materials use inconsistent counting conventions, so the numeric team count is withheld and identities are withheld until an authoritative roster and permission record are confirmed.\n\nThe reviewed partnership invitation is a proposal. It is not a roster, not a role matrix, not an identity permission record, and not a photo permission record. It therefore cannot establish membership, individual roles, image rights, sponsorship, or delivered support."
+    },
+    {
+      "_template": "heading",
+      "text": "Final directory publication gate",
+      "level": 2,
+      "attributes": "#thanks toc=\"Thanks\""
+    },
+    {
+      "_template": "text",
+      "body": "A final directory entry will require an authoritative roster, an approved public display name, a verified role or contribution, and an optional biography. Any image entry must also identify the exact authorized photo file, caption and alt text, photographer or source credit, and publication permission.\n\nThe current person-by-work verification status is recorded in [Attributions](/attributions/)."
+    }
+  ]
+}

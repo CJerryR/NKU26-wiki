@@ -1,0 +1,4 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="viewer.css"><title>蛋白质结构</title></head><body>
+<header><strong id="title">蛋白质结构</strong><select id="style" aria-label="显示方式"><option value="cartoon">丝带</option><option value="stick">球棍</option><option value="sphere">原子球</option><option value="surface">分子表面</option></select><button id="reset">复位</button><button id="spin" aria-pressed="false">自动旋转</button><button id="fullscreen">全屏</button><a id="download" class="action" download>结构文件</a></header>
+<p id="status" role="status">正在加载结构…</p><div id="error" role="alert"></div><div id="model" class="stage" aria-label="拖动旋转蛋白质，滚轮缩放"></div>
+<script src="vendor/3Dmol-min.js"></script><script type="module" src="protein.js"></script></body></html>

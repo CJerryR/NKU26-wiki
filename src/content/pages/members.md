@@ -1,21 +1,27 @@
 ---
 title: Members
-heading: "The *team record*"
-sub: An interim directory that separates verified identity from details still awaiting confirmation.
-crumbs: [Team, Members]
+heading: The *team record*
+sub: >-
+  An interim directory that separates verified identity from details still
+  awaiting confirmation.
+crumbs:
+  - Team
+  - Members
 route: team
+search: true
 meta:
   Institution: Nankai University
   Status: Interim
+draft: false
+hidden: false
 ---
-
 ## What can be published now {#members toc="Members"}
 
 The verified public identity is NKU iGEM 2026 at Nankai University. This is an interim evidence-status page: an authoritative complete member roster has not been located, and approved public display names, verified person-by-person roles, biographies, and public-image permissions have not been confirmed.
 
 Member cards are absent because the roster, display names, and roles remain unverified. Photographs are also absent because publication permission was not verified; this does not mean that anyone refused permission.
 
-:::cards{cols=3}
+:::cards{cols="3"}
 
 ### Identity verified {icon="verified"}
 
@@ -47,7 +53,7 @@ No photograph is shown until its exact file, credit, caption, alt text, and publ
 
 The reviewed records organize work into three broad workstreams: Wet Lab, Dry Lab, and Human Practices. These workstreams do not establish person-by-person assignments or membership.
 
-:::cards{cols=3}
+:::cards{cols="3"}
 
 ### Wet Lab {icon="flask"}
 

@@ -108,16 +108,17 @@
   H0.scene('china', {
     steps: LAST, tall: LAYERED ? 7 : 4, cutIn: true, noSkip: true,
     set: function (i) { to(i, 0); if (i === 0) sec.classList.add('is-pre'); if (!sec.classList.contains('is-handoff')) { NK.chinaArr = 1; stage.style.setProperty('--arrive', '1'); } },
-    step: function (i, dir) { if (i === 0) sec.classList.remove('is-pre'); var ms = sec.classList.contains('is-2d') ? 450 : dir > 0 ? DUR[i] : (LAYERED && i === 3 ? 2600 : 1400); to(i, ms, dir); return ms; },
+    accelerate: function (ms) { return NK.chinaAccelerate ? NK.chinaAccelerate(ms) : 0; },
+    step: function (i, dir, speed) { if (i === 0) sec.classList.remove('is-pre'); var ms = sec.classList.contains('is-2d') ? 450 : dir > 0 ? DUR[i] : (LAYERED && i === 3 ? 2600 : 1400); ms /= Math.max(1, speed || 1); to(i, ms, dir); return ms; },
     enter: function (dir, info) {
       if (sec.classList.contains('is-handoff')) {
         NK.chinaArrive(1700);
-        setTimeout(function () { sec.classList.remove('is-pre'); }, 250);
-        setTimeout(countUp, 700);
-        return 1500;
+        sec.classList.remove('is-pre');
+        countUp();
+        return LAYERED ? 2750 : 1700;
       }
       sec.classList.remove('is-pre');
-      setTimeout(countUp, 450);
+      countUp();
       return 0;
     }
   });
@@ -581,10 +582,12 @@
     });
     var hhh = ll(116.5, 35.6);
     var patch = new T.Mesh(new T.PlaneGeometry(3.4, 2.3), new T.MeshBasicMaterial({ map: fieldTex, transparent: true, opacity: 0, depthWrite: false }));
+    patch.renderOrder = 2; // Draw the transparent field after the transparent land slab.
     patch.rotation.x = -Math.PI / 2;
     patch.position.set(hhh.x, 0.84, hhh.z);
     scene.add(patch);
     var frame = new T.LineLoop(new T.BufferGeometry().setFromPoints([[-1.7, -1.15], [1.7, -1.15], [1.7, 1.15], [-1.7, 1.15]].map(function (p) { return V3(hhh.x + p[0], 0.86, hhh.z + p[1]); })), new T.LineDashedMaterial({ color: 0xffe3a3, dashSize: 0.16, gapSize: 0.12, transparent: true, opacity: 0 }));
+    frame.renderOrder = 3;
     frame.computeLineDistances();
     scene.add(frame);
     var dp = [];
@@ -783,9 +786,12 @@
         cam.near = Math.max(0.02, dist * 0.02);
         cam.far = dist * 6 + 90;
         cam.updateProjectionMatrix();
-        patch.material.opacity = NK.smooth(0.45, 0.85, t);
+        // Keep the field hidden on the China overview. Reveal it only after
+        // the camera has begun closing in on the selected location.
+        var fieldReveal = NK.smooth(0.32, 0.52, t);
+        patch.material.opacity = fieldReveal;
         ribbon.material.opacity = 1 - NK.smooth(0.02, 0.22, t);
-        frame.material.opacity = 0.9 * NK.smooth(0.3, 0.55, t) * (1 - NK.smooth(1.02, 1.12, t));
+        frame.material.opacity = 0.9 * fieldReveal * (1 - NK.smooth(1.02, 1.12, t));
         var glowIn = mg < 1 ? NK.smooth(0.15, 1, mg) : 1;
         glows.forEach(function (sp) {
           var u = sp.userData;
@@ -1416,6 +1422,12 @@
     if (!hLoop) hLoop = NK.loop(frame);
     requestAnimationFrame(function () { requestAnimationFrame(function () { sec.classList.add('is-show'); }); });
   };
+  NK.chinaCancelHandoff = function () {
+    if (hLoop) { hLoop(); hLoop = null; }
+    sec.classList.remove('is-handoff', 'is-show');
+    arrTw = null; tw = null; NK.chinaArr = 1;
+    stage.style.setProperty('--arrive', '1');
+  };
   NK.chinaArrive = function (ms) {
     if (hLoop) { hLoop(); hLoop = null; }
     sec.classList.remove('is-handoff', 'is-show');
@@ -1423,6 +1435,18 @@
     /* after the tilt starts, the plates slide apart */
     var a0 = copyZ();
     tw = { a: a0, b: STATES[0], t0: performance.now() + 450, dur: 2300, win: plan(a0, STATES[0], true) };
+  };
+  NK.chinaAccelerate = function (remaining) {
+    var now = performance.now(), end = 0;
+    [tw, arrTw].forEach(function (motion) {
+      if (!motion) return;
+      var k = NK.clamp((now - motion.t0) / motion.dur, 0, 0.999);
+      var left = Math.min(remaining, motion.dur * (1 - k));
+      motion.dur = left / (1 - k);
+      motion.t0 = now - k * motion.dur;
+      end = Math.max(end, left);
+    });
+    return end;
   };
   NK.chinaDriver(function (i, ms, dir) {
     var s = STATES[Math.max(0, Math.min(STATES.length - 1, i))];
@@ -1438,7 +1462,6 @@
     lastFrameT = time;
     if (arrTw) { var ka = NK.clamp((performance.now() - arrTw.t0) / arrTw.dur, 0, 1); NK.chinaArr = ka; if (ka >= 1) arrTw = null; }
     stage.style.setProperty('--arrive', NK.easeInOut(NK.chinaArr == null ? 1 : NK.chinaArr).toFixed(3));
-    NK.chinaEx = Z.ex; NK.chinaFo = Z.fo;
     if (tw) {
       /* the map settles into the flight first, then the flight runs (in reverse the other way round); the question comes in at the end */
       var k = NK.clamp((performance.now() - tw.t0) / tw.dur, 0, 1), a = tw.a, b = tw.b, win = tw.win;
@@ -1446,6 +1469,7 @@
       KEYS.forEach(function (key) { Z[key] = NK.lerp(a[key], b[key], seg(win[key] || [0, 1])); });
       if (k >= 1) tw = null;
     }
+    NK.chinaEx = Z.ex; NK.chinaFo = Z.fo;
     U.uTime.value = NK.reduced ? 0 : time;
     var merge = Z.merge, qCur = Z.q;
     stage.style.setProperty('--merge', merge.toFixed(3));
@@ -1574,7 +1598,7 @@
     }
   }
   var idle = window.requestIdleCallback ? function (f) { window.requestIdleCallback(f, { timeout: 1500 }); } : function (f) { setTimeout(f, 40); };
-  function pump() { run(qi + 1); if (qi < jobs.length && !failed) idle(pump); }
+  function pump() { run(Math.min(qi + 1, jobs.length)); if (qi < jobs.length && !failed) idle(pump); }
   function begin() { setTimeout(function () { idle(pump); }, 300); }
   if (document.readyState === 'complete') begin(); else window.addEventListener('load', begin);
   if ('IntersectionObserver' in window) {

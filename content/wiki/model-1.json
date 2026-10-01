@@ -1,0 +1,68 @@
+{
+  "title": "Model 1",
+  "heading": "Model *one*",
+  "sub": "A page reserved for the first model. It will carry that model's question, method, parameters and checks once the work is ready to publish.",
+  "crumbs": [
+    "Model",
+    "Model 1"
+  ],
+  "meta": [
+    {
+      "key": "Status",
+      "value": "In preparation"
+    }
+  ],
+  "search": true,
+  "blocks": [
+    {
+      "_template": "heading",
+      "text": "The question this model answers",
+      "level": 2,
+      "attributes": "#question toc=\"Question and assumptions\""
+    },
+    {
+      "_template": "text",
+      "body": "No model on this page has been built or run yet. When it is, this section will state the question, the assumptions behind it and where each assumption comes from."
+    },
+    {
+      "_template": "heading",
+      "text": "Equations or algorithm",
+      "level": 2,
+      "attributes": "#method toc=\"Method\""
+    },
+    {
+      "_template": "text",
+      "body": "The formulation, the solver and its settings will appear here together, so that every result can be checked against the method that produced it."
+    },
+    {
+      "_template": "heading",
+      "text": "Parameters and data",
+      "level": 2,
+      "attributes": "#parameters toc=\"Parameters and data\""
+    },
+    {
+      "_template": "text",
+      "body": "Every parameter will be listed with its value, unit and source, and marked as measured, taken from the literature, or fitted."
+    },
+    {
+      "_template": "heading",
+      "text": "Results, validation and limits",
+      "level": 2,
+      "attributes": "#results toc=\"Results and validation\""
+    },
+    {
+      "_template": "text",
+      "body": "Predictions will be shown next to the data they are compared with, together with the error, how strongly the result depends on key parameters, and the range in which the model can be trusted."
+    },
+    {
+      "_template": "heading",
+      "text": "Code and reproduction",
+      "level": 2,
+      "attributes": "#code toc=\"Code and reproduction\""
+    },
+    {
+      "_template": "text",
+      "body": "The code, input files, software versions and the steps to reproduce each figure will be linked from here."
+    }
+  ]
+}

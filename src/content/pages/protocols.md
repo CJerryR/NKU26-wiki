@@ -1,18 +1,24 @@
 ---
 title: Protocols
-heading: "The *recipes*"
-sub: "Bench workflows exactly as written in the team notebook — recorded procedures, not yet independently validated results."
-crumbs: [Wet Lab, Protocols]
+heading: The *recipes*
+sub: >-
+  Bench workflows exactly as written in the team notebook — recorded procedures,
+  not yet independently validated results.
+crumbs:
+  - Wet Lab
+  - Protocols
+search: true
 meta:
-  Reading: "6 min"
+  Reading: 6 min
   Format: Documented workflows
+draft: false
+hidden: false
 ---
-
 ## Everything we actually recorded {#index toc="Documented workflows"}
 
 This page collects the wet-lab procedures that appear in the team notebook, grouped by workstream. Every entry is transcribed from a dated record: it documents what the workflow *called for*, not a claim that the step produced a correct or validated result. Where the notebook does not supply a parameter — a primer sequence, a full thermal-cycling program, an expected band size, a reagent lot, or a numeric yield — we leave the gap visible rather than fill it from general knowledge.
 
-:::cards{cols=3}
+:::cards{cols="3"}
 
 ### Bacterial plasmid handling {icon="file"}
 

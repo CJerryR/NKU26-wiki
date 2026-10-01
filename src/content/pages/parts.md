@@ -1,14 +1,20 @@
 ---
 title: Parts
-heading: "Our *parts*"
-sub: An evidence-status ledger for the genetic elements and construct work documented so far — not a completed Registry collection.
-crumbs: [Wet Lab, Parts]
+heading: Our *parts*
+sub: >-
+  An evidence-status ledger for the genetic elements and construct work
+  documented so far — not a completed Registry collection.
+crumbs:
+  - Wet Lab
+  - Parts
 route: parts
+search: true
 meta:
   Status: Draft ledger
-  Reading: "5 min"
+  Reading: 5 min
+draft: false
+hidden: false
 ---
-
 ## A ledger, not a collection {#overview toc="Status overview"}
 
 This page tracks the genetic elements and construct work that appear in the team notebook and records what evidence does — and does not — exist for each. It is deliberately framed as a status ledger rather than a finished part collection: at this stage the source material names elements and documents cloning attempts, but it does not supply sequences, characterization data, or Registry-submission evidence.

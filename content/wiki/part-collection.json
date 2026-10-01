@@ -1,0 +1,58 @@
+{
+  "title": "Part Collection",
+  "heading": "The part *collection*",
+  "sub": "How our parts are meant to work as one set, and how another team could reuse them. The formal record lives on the iGEM Registry.",
+  "crumbs": [
+    "Wet Lab",
+    "Part Collection"
+  ],
+  "meta": [
+    {
+      "key": "Status",
+      "value": "In preparation"
+    }
+  ],
+  "search": true,
+  "blocks": [
+    {
+      "_template": "heading",
+      "text": "What the collection is for",
+      "level": 2,
+      "attributes": "#purpose toc=\"Purpose\""
+    },
+    {
+      "_template": "text",
+      "body": "This page will describe our parts as a single collection: the goal they share, the design logic that connects them, and the system function the set is meant to deliver. No collection has been assembled or verified yet, so nothing is claimed here. The current evidence for each element is on the [Parts](/parts/) page."
+    },
+    {
+      "_template": "heading",
+      "text": "How the parts fit together",
+      "level": 2,
+      "attributes": "#architecture toc=\"Architecture\""
+    },
+    {
+      "_template": "text",
+      "body": "An architecture figure will show which parts combine, which ones can be swapped for alternatives, and which combinations have been tested."
+    },
+    {
+      "_template": "heading",
+      "text": "Using the collection",
+      "level": 2,
+      "attributes": "#usage toc=\"Usage guide\""
+    },
+    {
+      "_template": "text",
+      "body": "For teams that want the whole set or a single part: the host, the conditions, the known limits and the common problems."
+    },
+    {
+      "_template": "heading",
+      "text": "Registry documentation",
+      "level": 2,
+      "attributes": "#registry toc=\"Registry\""
+    },
+    {
+      "_template": "text",
+      "body": "The Registry collection page and each part page carry the sequences, characterisation and usage notes. They are the formal record, and this page will link to them once they exist."
+    }
+  ]
+}

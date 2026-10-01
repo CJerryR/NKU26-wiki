@@ -2,8 +2,9 @@
 /**
  * Page outline. Wide screens: a sticky glass panel beside the text.
  * Narrow screens: a glass pill at the bottom that opens the same list.
+ * The section being read is marked by a film that springs along the list.
  */
-import Glass from '../glass/Glass.astro';
+import LiquidGlass from '../glass/LiquidGlass.astro';
 import { UI_ICONS } from '../../lib/icons.mjs';
 
 interface Item { depth: number; id: string; text: string; num?: string }
@@ -12,7 +13,7 @@ const { items, title } = Astro.props;
 ---
 {items.length > 0 && (
   <nav class="toc" aria-label="On this page" data-toc>
-    <Glass class="toc__panel" id="toc-panel" preset="panel">
+    <LiquidGlass class="toc__panel" id="toc-panel" preset="panel" tone="light">
       <div class="toc__head">
         <p class="toc__kicker">On this page</p>
         <p class="toc__title">{title}</p>
@@ -20,6 +21,7 @@ const { items, title } = Astro.props;
       </div>
       <div class="toc__progress" aria-hidden="true"><i data-toc-bar></i></div>
       <ol class="toc__list">
+        <li class="toc__film" data-toc-film aria-hidden="true"></li>
         {items.map((item) => (
           <li class:list={['toc__item', `toc__item--${item.depth}`]}>
             <a href={`#${item.id}`} data-toc-link>{item.num && <span class="toc__num">{item.num}</span>}<span class="toc__text">{item.text}</span></a>
@@ -27,11 +29,11 @@ const { items, title } = Astro.props;
         ))}
       </ol>
       <a class="toc__top" href="#main"><Fragment set:html={UI_ICONS.arrowUp} />Back to top</a>
-    </Glass>
-    <Glass as="button" class="toc__pill" preset="pill" type="button" aria-expanded="false" aria-controls="toc-panel" data-toc-toggle>
+    </LiquidGlass>
+    <LiquidGlass as="button" class="toc__pill" preset="pill" tone="light" type="button" aria-expanded="false" aria-controls="toc-panel" data-toc-toggle>
       <span class="toc__ring" aria-hidden="true"><svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="15" class="toc__ring-track" /><circle cx="18" cy="18" r="15" class="toc__ring-fill" data-toc-ring /></svg></span>
       <span class="toc__pill-text"><span class="toc__pill-label">On this page</span><span class="toc__pill-now" data-toc-now>{items[0].text}</span></span>
       <span class="toc__pill-chev" aria-hidden="true"><Fragment set:html={UI_ICONS.chevronDown} /></span>
-    </Glass>
+    </LiquidGlass>
   </nav>
 )}

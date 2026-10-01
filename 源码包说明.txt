@@ -1,0 +1,12 @@
+当前本地工作区源码快照（包括尚未提交的修改）
+
+包含：Astro 网站、Tina 配置与内容、交互组件、最新滚动速度响应与 3D 修复。
+环境：Node.js 22。
+安装依赖：npm ci
+构建网站：npm run build
+本地预览：npm run preview -- --host 127.0.0.1 --port 60530
+本地编辑：npm run dev
+Tina 云端配置请参考 .env.example 和项目 README。
+
+不包含 node_modules、构建产物、Git 历史、缓存或 .env 中的凭据。
+旧调试文档记录的是当时状态；当前交互以本包代码为准。

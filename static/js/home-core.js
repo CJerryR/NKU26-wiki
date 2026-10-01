@@ -17,6 +17,32 @@
     var io = new IntersectionObserver(function (es) { es.forEach(function (e) { cb(e.isIntersecting, e); }); }, opts || { threshold: 0 });
     io.observe(el); return io;
   };
+  /* A scene owns at most one pending frame, including rapid leave/re-entry.
+     Hidden tabs stop scheduling work; visible scenes retain their frame rate. */
+  H.visibleLoop = function (el, draw, onVisibility) {
+    var visible = false, frame = 0;
+    function tick(now) {
+      frame = 0;
+      if (!visible || doc.hidden) return;
+      draw(now);
+      schedule();
+    }
+    function schedule() {
+      if (visible && !doc.hidden && !frame) frame = requestAnimationFrame(tick);
+    }
+    function sync() {
+      if ((!visible || doc.hidden) && frame) { cancelAnimationFrame(frame); frame = 0; }
+      if (onVisibility) onVisibility(visible && !doc.hidden);
+      schedule();
+    }
+    var observer = H.onView(el, function (v) { visible = v; sync(); });
+    doc.addEventListener('visibilitychange', sync);
+    return function () {
+      visible = false; sync();
+      if (observer) observer.disconnect();
+      doc.removeEventListener('visibilitychange', sync);
+    };
+  };
   H.once = function (el, cb, th) { var io = H.onView(el, function (v) { if (v) { cb(); if (io) io.disconnect(); } }, { threshold: th || .25 }); };
   /* progress of a tall section through the viewport: 0 when its top hits top, 1 when its bottom hits bottom */
   H.progress = function (el) {

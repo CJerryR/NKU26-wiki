@@ -1,19 +1,25 @@
 ---
 title: Safety
-heading: "Working *safely*"
-sub: The bench practices the records actually document — and the biosafety information still needed before this page can make compliance claims.
-crumbs: [Wet Lab, Safety]
+heading: Working *safely*
+sub: >-
+  The bench practices the records actually document — and the biosafety
+  information still needed before this page can make compliance claims.
 route: safety-and-security
+crumbs:
+  - Wet Lab
+  - Safety
+search: true
 meta:
   Scope: Biosafety
-  Reading: "5 min"
+  Reading: 5 min
+draft: false
+hidden: false
 ---
-
 ## What the records actually show {#documented toc="Documented practices"}
 
 The audited notebook documents a set of standard microbiology and molecular-biology practices. We describe them here as documented practices only — they are what the records show the team doing, not proof of full biosafety compliance, which would require the institutional information listed further down this page.
 
-:::cards{cols=3}
+:::cards{cols="3"}
 
 ### Chassis handled {icon="flask"}
 
@@ -35,16 +41,16 @@ Also documented across the records: plasmid handling and minipreps, PCR and agar
 
 The following would normally anchor a biosafety page. None of it is established in the supplied material, so we do not assert it, and we do not assign a risk group or biosafety level from general knowledge.
 
-| Item | Status in supplied evidence |
-| --- | --- |
-| Institutional biosafety level | Not supplied |
-| Biosafety training records | Not supplied |
-| Supervision arrangements | Not supplied |
-| Personal protective equipment | Not supplied |
-| Decontamination and waste handling | Not supplied |
-| Strain provenance and approvals | Not supplied |
-| Antibiotic handling details | Requires confirmation (see below) |
-| Genetic-part risk review | Not supplied |
+| Item                               | Status in supplied evidence       |
+| ---------------------------------- | --------------------------------- |
+| Institutional biosafety level      | Not supplied                      |
+| Biosafety training records         | Not supplied                      |
+| Supervision arrangements           | Not supplied                      |
+| Personal protective equipment      | Not supplied                      |
+| Decontamination and waste handling | Not supplied                      |
+| Strain provenance and approvals    | Not supplied                      |
+| Antibiotic handling details        | Requires confirmation (see below) |
+| Genetic-part risk review           | Not supplied                      |
 
 :::warning[No risk-group or containment-level claim]
 
@@ -75,3 +81,5 @@ Because no device has been built or tested, the following are prospective design
 This page reports no detection limit, response time, sensitivity, specificity, or species discrimination. Those are not established by the records and are not claimed here.
 
 :::
+
+<figure class="wiki-media" style="margin:2rem 0"><iframe src="/img/uploads/2513100-陈家锐（实验1）.pdf" title="PDF组件" loading="lazy" style="display:block;width:100%;height:600px;border:0" referrerpolicy="no-referrer"></iframe><figcaption>test-实验报告1111 · <a href="/img/uploads/2513100-陈家锐（实验1）.pdf" target="_blank" rel="noopener noreferrer">打开 PDF / 下载</a></figcaption></figure>

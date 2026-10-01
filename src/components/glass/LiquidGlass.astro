@@ -1,0 +1,18 @@
+---
+/**
+ * Liquid glass surface (src/styles/liquid-glass.css, src/scripts/liquid-glass.ts).
+ * Renders the host and its .lg-surface layer, so the frosted glass shows
+ * before the script adds refraction. `preset` picks the optics
+ * (bar | panel | pill | chip); `tone` is the starting tone, which the page
+ * script then keeps in step with the section underneath.
+ */
+interface Props {
+  as?: string;
+  preset?: 'bar' | 'panel' | 'pill' | 'chip';
+  tone?: 'light' | 'dark';
+  class?: string;
+  [attr: string]: unknown;
+}
+const { as: Tag = 'div', preset = 'bar', tone = 'dark', class: className, ...attrs } = Astro.props;
+---
+<Tag class:list={['lg-glass', className]} data-glass={preset} data-tone={tone} {...attrs}><span class="lg-surface" aria-hidden="true"></span><slot /></Tag>

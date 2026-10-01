@@ -1,10 +1,14 @@
 ---
 /**
  * The story homepage shell — identical to v6's base template. Its styles and
- * scripts are the untouched files in static/css and static/js; only the nav
- * and footer come from components (same markup as before).
+ * scripts are the files in static/css and static/js; the nav and footer come
+ * from components. The top bar runs the same code as the inner pages
+ * (src/scripts/nav.ts via home-nav.ts); static/js/shell.js keeps the detective.
  */
 import SiteNav from '../components/site/SiteNav.astro';
+/* the top bar is shared with the inner pages: its material and styles */
+import '../styles/liquid-glass.css';
+import '../styles/nav.css';
 import { homeFooter, mascotHtml } from '../lib/home';
 
 interface Props { title: string; description: string; homeData: string }
@@ -54,10 +58,11 @@ const scripts = ['vendor/three.min', 'home-geo', 'home-land', 'home-geo3d', 'hom
     </section>
   </div>
   <Fragment set:html={mascotHtml()} />
-  <script is:inline src="/js/search-data.js"></script>
-  <script is:inline src="/js/main.js"></script>
-  <script is:inline src="/js/shell.js"></script>
+  <script is:inline src="/js/search-data.js" defer></script>
+  <script is:inline src="/js/main.js" defer></script>
+  <script is:inline src="/js/shell.js" defer></script>
+  <script>import '../scripts/home-nav.ts';</script>
   <script is:inline set:html={`window.NKU_HOME = ${homeData};`}></script>
-  {scripts.map((name) => <script is:inline src={`/js/${name}.js`} defer></script>)}
+  {scripts.map((name) => <script is:inline src={`/js/${name}.js${['home-zoom3d', 'home-pager'].includes(name) ? '?v=gesture-speed-2' : ''}`} defer></script>)}
 </body>
 </html>

@@ -1,14 +1,20 @@
 ---
 title: Model
-heading: "Modelling the *signal*"
-sub: "A conceptual teaching skeleton that exposes unknowns before any solver, calibration, or project prediction exists."
-crumbs: [Model, Overview]
+heading: Modelling the *signal*
+sub: >-
+  A conceptual teaching skeleton that exposes unknowns before any solver,
+  calibration, or project prediction exists.
+crumbs:
+  - Model
+  - Overview
 route: model
+search: true
 meta:
   Stage: Conceptual
   Solver: Not implemented
+draft: false
+hidden: false
 ---
-
 ## A preparation layer, not a finished model {#status toc="Current status"}
 
 The work documented here is a conceptual model-preparation and teaching layer. The repository contains no runnable ODE solver, simulation notebook, parameter file, fitting code, or calibrated model artifact. No equation on this page has produced a project result or guided a design decision.
@@ -27,7 +33,7 @@ The proposed abstraction asks how a symbolic ligand input might propagate throug
 
 In the equations below, `L` is only a hypothetical ligand-input variable. It is not a measured ascr#18 concentration. Likewise, `R_active`, `G_on`, `M`, `TF`, `Prod`, `C`, and optional `P` are conceptual activity or output proxies. They have no supplied units, ranges, initial conditions, or measured identities.
 
-:::cards{cols=3}
+:::cards{cols="3"}
 
 ### Recognition
 
@@ -75,7 +81,7 @@ The explainer proposes five bookkeeping labels: `fixed from source`, `literature
 
 No final parameter table or parameter-to-category mapping is supplied. No named parameter can therefore be described as fixed, measured, or estimated. A scenario prior would be an exploratory assumption only; it could not become a project conclusion or performance claim.
 
-:::cards{cols=3}
+:::cards{cols="3"}
 
 ### Trace
 
