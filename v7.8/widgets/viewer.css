@@ -1,1 +1,19 @@
-:root{font:14px system-ui,sans-serif;color:#292332;background:#f5f2eb}*{box-sizing:border-box}body{margin:0}header{min-height:54px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:10px 14px;background:#272130;color:#fff}header strong{margin-right:auto;max-width:40%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}button,select,input,.action{font:inherit;border:1px solid #a8a0b4;border-radius:7px;padding:6px 10px;background:#fff;color:#292332}button,.action{cursor:pointer}.action{text-decoration:none}button:disabled{opacity:.45;cursor:default}button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #ac8de9;outline-offset:2px}#status{margin:0;padding:8px 14px;background:#eee7db;color:#494051;font-size:13px}#status:empty{display:none}.stage{position:relative;height:calc(100dvh - 94px);min-height:220px}iframe{display:block;border:0;width:100%;height:100%}#error{padding:24px;color:#9c2525;white-space:pre-wrap}#error:empty{display:none}@media(max-width:600px){header strong{max-width:100%;width:100%}.stage{height:calc(100dvh - 145px)}}
+/* Shared chrome of the protein / PDF / HTML viewers (loaded inside an iframe).
+   Matches the wiki palette; fonts come from the site's /fonts folder. */
+@font-face{font-family:'Spline Sans';src:url('../fonts/spline-variable.woff2') format('woff2');font-weight:300 700;font-display:swap}
+:root{--ink:#241c2b;--ink-2:#4a4152;--ink-3:#6c6373;--paper:#f7f2e8;--paper-2:#efe6d6;--paper-hi:#fbf8f1;--iris:#6e4fb8;--iris-deep:#523a8c;--line:rgba(36,28,43,.12);font:14px/1.5 'Spline Sans',-apple-system,'PingFang SC','Microsoft YaHei',system-ui,sans-serif;color:var(--ink);background:var(--paper-hi)}
+*{box-sizing:border-box}body{margin:0}
+header{min-height:52px;display:flex;gap:6px;align-items:center;flex-wrap:wrap;padding:8px 10px 8px 16px;background:var(--paper-2);border-bottom:1px solid var(--line);color:var(--ink)}
+header strong{margin-right:auto;max-width:45%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:620}
+button,select,input,.action{font:inherit;font-size:13px;height:32px;border:1px solid var(--line);border-radius:999px;padding:0 12px;background:var(--paper-hi);color:var(--ink-2)}
+select{padding-right:8px}
+button,.action{cursor:pointer;display:inline-flex;align-items:center}.action{text-decoration:none}
+button:hover,.action:hover,select:hover{border-color:rgba(110,79,184,.45);background:color-mix(in srgb,var(--iris) 9%,var(--paper-hi));color:var(--iris-deep)}
+button[aria-pressed="true"]{border-color:rgba(110,79,184,.45);background:color-mix(in srgb,var(--iris) 12%,var(--paper-hi));color:var(--iris-deep)}
+button:disabled{opacity:.45;cursor:default}
+button:focus-visible,select:focus-visible,input:focus-visible,.action:focus-visible{outline:2.5px solid var(--iris);outline-offset:2px}
+#status{margin:0;padding:7px 16px;background:var(--paper);color:var(--ink-3);font-size:12.5px;border-bottom:1px solid var(--line)}#status:empty{display:none}
+.stage{position:relative;height:calc(100dvh - 94px);min-height:220px}
+iframe{display:block;border:0;width:100%;height:100%}
+#error{margin:16px;padding:14px 16px;border-radius:12px;background:#fbeee6;color:#8f3a12;white-space:pre-wrap}#error:empty{display:none}
+@media(max-width:600px){header strong{max-width:100%;width:100%}.stage{height:calc(100dvh - 145px)}}
