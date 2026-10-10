@@ -1,0 +1,110 @@
+{
+  "reviewed_at": "2026-10-09",
+  "timezone": "Asia/Shanghai",
+  "basis": "User confirmed no team final inner-page copy has been supplied; local source and historical material review.",
+  "note": "AI draft can refer to real historical material. Presence of text is not evidence of team final copy or approval.",
+  "pages": [
+    {
+      "slug": "attributions",
+      "status": "empty-awaiting-team-copy",
+      "team_copy_received": false,
+      "team_review_approved": false
+    },
+    {
+      "slug": "contribution",
+      "status": "ai-draft-awaiting-team-copy",
+      "team_copy_received": false,
+      "team_review_approved": false
+    },
+    {
+      "slug": "description",
+      "status": "ai-draft-awaiting-team-copy",
+      "team_copy_received": false,
+      "team_review_approved": false
+    },
+    {
+      "slug": "education",
+      "status": "ai-draft-awaiting-team-copy",
+      "team_copy_received": false,
+      "team_review_approved": false
+    },
+    {
+      "slug": "engineering",
+      "status": "ai-draft-awaiting-team-copy",
+      "team_copy_received": false,
+      "team_review_approved": false
+    },
+    {
+      "slug": "experiments",
+      "status": "ai-draft-awaiting-team-copy",
+      "team_copy_received": false,
+      "team_review_approved": false
+    },
+    {
+      "slug": "human-practices",
+      "status": "ai-draft-awaiting-team-copy",
+      "team_copy_received": false,
+      "team_review_approved": false
+    },
+    {
+      "slug": "licensing",
+      "status": "ai-draft-awaiting-team-copy",
+      "team_copy_received": false,
+      "team_review_approved": false
+    },
+    {
+      "slug": "members",
+      "status": "empty-awaiting-team-copy",
+      "team_copy_received": false,
+      "team_review_approved": false
+    },
+    {
+      "slug": "model-1",
+      "status": "empty-awaiting-team-copy",
+      "team_copy_received": false,
+      "team_review_approved": false
+    },
+    {
+      "slug": "model-2",
+      "status": "empty-awaiting-team-copy",
+      "team_copy_received": false,
+      "team_review_approved": false
+    },
+    {
+      "slug": "model",
+      "status": "ai-draft-awaiting-team-copy",
+      "team_copy_received": false,
+      "team_review_approved": false
+    },
+    {
+      "slug": "part-collection",
+      "status": "empty-awaiting-team-copy",
+      "team_copy_received": false,
+      "team_review_approved": false
+    },
+    {
+      "slug": "parts",
+      "status": "ai-draft-awaiting-team-copy",
+      "team_copy_received": false,
+      "team_review_approved": false
+    },
+    {
+      "slug": "protocols",
+      "status": "ai-draft-awaiting-team-copy",
+      "team_copy_received": false,
+      "team_review_approved": false
+    },
+    {
+      "slug": "results",
+      "status": "ai-draft-awaiting-team-copy",
+      "team_copy_received": false,
+      "team_review_approved": false
+    },
+    {
+      "slug": "safety",
+      "status": "ai-draft-awaiting-team-copy",
+      "team_copy_received": false,
+      "team_review_approved": false
+    }
+  ]
+}

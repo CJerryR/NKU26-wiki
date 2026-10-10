@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import EditableArticle from '../components/page/EditableArticle.astro';
+import TinaIsland from '@tinacms/astro/TinaIsland.astro';
+import { loadWiki } from '../lib/tina/data';
+import { toEntry } from '../lib/editor-content.mjs';
+import { pageHref } from '../lib/pages';
+export const prerender = false;
+const slug = Astro.params.slug || '';
+if (!/^[a-z0-9-]+$/.test(slug)) return new Response('Page not found', { status: 404 });
+const result = await loadWiki(slug);
+const document = result.data.wiki;
+const entry = toEntry(slug, document);
+---
+<BaseLayout title={entry.data.title} description={entry.data.description} current={pageHref(entry)}>
+  <TinaIsland name="wiki" params={{ slug }} wrapper={{ tag: 'div', className: 'wiki-editor-content' }} primary>
+    <EditableArticle entry={entry} document={document} />
+  </TinaIsland>
+</BaseLayout>

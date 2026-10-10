@@ -1,0 +1,29 @@
+<section class="hp2" id="hp" data-nav-label="Closer to home" data-hp data-tone="dark" aria-labelledby="hp-title">
+  <div class="hp2__inner">
+    <div class="hp2__copy">
+      <h2 class="h-display" id="hp-title">Closer to home</h2>
+      <p class="hp2__lede">Our human practices across China, in three layers.</p>
+      <div class="hp2__layers" role="tablist" aria-label="Human practices layers">
+        <button type="button" class="hp2__tab" role="tab" aria-selected="true" data-hp-tab="0" style="--c:#c48cff">
+          <i aria-hidden="true"></i><b>Survey</b>
+          <span class="hp2__more"><span><em data-hp-stat="0"></em>Growers, agronomists and students told us how they spot nematode damage today.</span></span>
+        </button>
+        <button type="button" class="hp2__tab" role="tab" aria-selected="false" data-hp-tab="1" style="--c:#ffa24a">
+          <i aria-hidden="true"></i><b>Teaching</b>
+          <span class="hp2__more"><span><em data-hp-stat="1"></em>Classes on soil life and synthetic biology for school students.</span></span>
+        </button>
+        <button type="button" class="hp2__tab" role="tab" aria-selected="false" data-hp-tab="2" style="--c:#9aa7ff">
+          <i aria-hidden="true"></i><b>Soil programme</b>
+          <span class="hp2__more"><span><em data-hp-stat="2"></em>Soil samples collected together with local growers.</span></span>
+        </button>
+      </div>
+      <p class="hp2__note">Illustrative data</p>
+    </div>
+    <figure class="hp2__map" data-hp-map aria-label="Map of China showing the selected human practices layer">
+      <canvas data-layer="survey" aria-hidden="true"></canvas>
+      <canvas data-layer="teach" aria-hidden="true"></canvas>
+      <canvas data-layer="soil" aria-hidden="true"></canvas>
+    </figure>
+  </div>
+  <div class="tip" data-tip hidden></div>
+</section>

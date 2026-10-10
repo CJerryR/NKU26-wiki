@@ -1,0 +1,5 @@
+@font-face{font-family:'Fraunces';src:url('/fonts/fraunces-variable.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap}
+@font-face{font-family:'Fraunces';src:url('/fonts/fraunces-italic.woff2') format('woff2');font-weight:100 900;font-style:italic;font-display:swap}
+@font-face{font-family:'Spline Sans';src:url('/fonts/spline-variable.woff2') format('woff2');font-weight:300 700;font-style:normal;font-display:swap}
+@font-face{font-family:'Space Mono';src:url('/fonts/spacemono-400.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Space Mono';src:url('/fonts/spacemono-700.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}

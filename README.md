@@ -1,74 +1,46 @@
-# Team NKU-China 2026 Wiki
+# NKU-China Wiki v8.0 — 阶段源码
 
-This repository **MUST** contain all coding assets to generate your team's wiki (HTML, CSS, JavaScript, TypeScript, Python, etc).
+本仓库是 2026 年 NKU-China（队伍编号 6303）的官方 Wiki 源码。此版按团队要求先保存为阶段版本，后续继续补充内容。当前技术构建可通过，但**尚未通过正式提交内容检查**。
 
-Images, photos, icons and fonts **MUST** be stored on `static.igem.wiki` using [the uploads tool](https://teams.igem.org/go/deliverables/wiki/uploads), and Videos **must** be embedded from [iGEM Video Universe](https://video.igem.org); see [the Video & Audio page](https://teams.igem.org/go/deliverables/wiki/videos-and-audios) for guidance on adding video and audio.
+- 官方仓库：https://gitlab.igem.org/2026/nku-china
+- 阶段分支：`codex/v8.0-stage`
+- 正式 Wiki：https://2026.igem.wiki/nku-china
+- 官方要求：https://teams.igem.org/6303/deliverables/wiki/requirements
 
-**Everything your wiki loads (CSS, JavaScript, fonts, images) must be served from iGEM infrastructure.** Do not link to external or third-party CDNs (for example Google Fonts, jsDelivr, cdnjs) — upload the files you need via [the uploads tool](https://teams.igem.org/go/deliverables/wiki/uploads) and reference them from `static.igem.wiki` instead.
+## 本地构建与编辑
 
-For up-to-date requirements, resources, help and guidance, visit [teams.igem.org/go/deliverables/wiki](https://teams.igem.org/go/deliverables/wiki).
+需要 Node.js 22 和 Python 3。依赖已锁定在 `package-lock.json`。
 
-> **Using an AI assistant (e.g. Claude Code)?** Please read [.claude/RESPONSIBLE_AI_USE.md](.claude/RESPONSIBLE_AI_USE.md) first. You remain fully responsible for everything you publish: never fabricate scientific results, data, or citations.
-
-## Getting started
-
-You should probably only edit the files inside folders `static`, `wiki` and `wiki > pages`.
-1. Open the Web IDE
-2. Make the changes on the files you wish:
-    * For the menu, change the file [menu.html](wiki/menu.html)
-    * For the layout, change the file [layout.html](wiki/layout.html)
-    * For the pages, change the corresponding file in the foler [pages](wiki/pages)
-3. Review the changes you made
-4. Once you are done, save the changes by **committing** them to the *main branch* of the repository 
-5. An automated script will build, test and deploy your wiki, which should take less than 30 seconds.
-
-## About this Template
-
-### Files
-
-The static assets are in the `static` directory. The layout and templates are in the `wiki` directory, and the pages live in the `wiki > pages` directory. Unless you are an experienced and/or adventurous human, you probably shouldn't change other files.
-
-    |__ static/             -> static assets (CSS and JavaScript files only)
-    |__ wiki/               -> Main directory for the pages and layouts
-        |__ footer.html     -> Footer that will appear in all the pages
-        |__ layout.html     -> Main layout of your wiki. All the pages will follow its structure
-        |__ menu.html       -> Menu that will appear in all the pages
-        |__ pages/          -> Directory for all the pages
-            |__ *.html      -> Actual pages of your wiki
-    |__ .gitignore          -> Tells GitLab which files/directories should not be uploaded to the repository
-    |__ .gitlab-ci.yml      -> Automated flow for building, testing and deploying your website.
-    |__ LICENSE             -> License CC-by-4.0, all wikis are required to have this license - DO NOT MODIFY
-    |__ README.md           -> File containing the text you are reading right now
-    |__ app.py              -> Python code managing your wiki
-    |__ dependencies.txt    -> Software dependencies from the Python code
-
-### Technologies
-
-  * [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/)
-  * [Python](https://www.python.org): Programming language
-  * [Flask](https://palletsprojects.com/projects/flask): Python framework
-  * [Frozen-Flask](https://pypi.org/project/Frozen-Flask): Library that builds the wiki to be deployed as a static website
-  * [Bootstrap](https://getbootstrap.com/docs/5.3/components): CSS and JS components used
-
-### Building locally (advanced users)
-
-To work locally with this project, follow the steps below:
-
-#### Important
-
-Ensure you are using Python `>=3.8` (Python 3.12 recommended) to avoid compatibility issues. You can check your Python version by running `python3 --version` in your terminal.
-
-#### Install
 ```bash
-git clone https://gitlab.igem.org/2026/nku-china.git
-cd nku-china
-python3 -m venv venv
-. venv/bin/activate # on Linux, MacOS; or
-. venv\Scripts\activate # on Windows
-pip install -r dependencies.txt
+npm ci --no-audit --no-fund
+npm run verify
+npm run audit:publication
 ```
 
-#### Execute
+`verify` 执行构建和技术审计；`audit:publication` 在团队文案及审核未完成时应返回失败。二者不能混作同一项验收。
+
+内容从 `content/wiki/*.json` 经 `tools/export-tina.mjs` 导出到 `src/content/pages/*.md`。修改内容时优先编辑 JSON 或 Tina 编辑器；直接改导出 Markdown 会在下次构建时被覆盖。
+
 ```bash
-python app.py
+npm run dev
 ```
+
+Tina 本地编辑预览在 `http://127.0.0.1:3000`，编辑器端口为 4101。首页段落在 `src/home/sections/`；导航和页脚来源分别为 `src/data/nav.ts`、`src/data/site.json`。`static/` 包含现有本地预览所需的脚本、样式和素材。
+
+## GitLab 检查与发布
+
+阶段分支的流水线从源码构建 19 个页面并执行技术审计，不部署正式 Wiki。默认分支的 Pages 发布另需通过 `audit:publication`。不得把 `public/`、`node_modules/`、令牌或本地环境变量提交到仓库。
+
+本版替换官方 Flask 初始模板，使用 Astro 5 + Tina 的现有 v8.0 实现；保留官方 Git 历史和原始 `LICENSE`。页脚指向本队真实 GitLab 仓库并保留 CC BY 4.0 许可。
+
+## 正式发布前仍需完成
+
+- Attributions、Members、Part Collection、Model 1、Model 2 正文为空。
+- 其余 12 页的现有 AI 草稿未获得团队定稿及人工审核；逐页状态见 `content/wiki-provenance.json`。不得仅为通过检查而改写审核状态。
+- 图片、字体和文档等需迁移到官方 Uploads CDN，并核验实际返回地址。当前迁移未完成；本地资源地址仍保留。
+- 组件展厅的本地 MP4 示例需移到 Video Universe 或停止在正式站点提供该演示。
+- 团队需核实历史 AI 模型的具体版本及实际审核者，并完成独立官方 Attributions Form。
+
+官方素材入口：https://teams.igem.org/6303/deliverables/wiki/uploads
+
+AI 协助实现和检查，不得编造实验结果、测量、引用、访谈、贡献或科研证据。科学文案及证据的最终审核由团队完成。此阶段版本不代表 Wiki Freeze 前的正式验收通过。

@@ -1,0 +1,19 @@
+---
+/**
+ * Liquid glass surface. Renders the three layers the glass engine
+ * (src/scripts/glass.ts) and styles (src/styles/glass.css) expect:
+ * refraction (fx), tint, and rim light (shine). `preset` picks the optics:
+ * bar | lens | drop | sheet | card | panel | pill | chip.
+ * Use it only for controls that float above content (nav, outline, dialogs,
+ * small labels) — body text always sits on the solid paper surface.
+ */
+interface Props {
+  as?: string;
+  preset?: string;
+  class?: string;
+  [attr: string]: unknown;
+}
+const { as: Tag = 'div', preset = 'card', class: className, ...attrs } = Astro.props;
+const cls = ['lg', className].filter(Boolean).join(' ');
+---
+<Tag class={cls} data-lg={preset} {...attrs}><span class="lg__fx" aria-hidden="true"></span><span class="lg__tint" aria-hidden="true"></span><span class="lg__shine" aria-hidden="true"></span><slot /></Tag>

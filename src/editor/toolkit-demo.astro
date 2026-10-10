@@ -1,0 +1,23 @@
+---
+/**
+ * Component catalogue for the content groups (/component-showcase).
+ * Each sample is rendered through the same pipeline as a real Tina page
+ * (blocksToMarkdown → renderEditorMarkdown), so what the groups see here is what
+ * their page will look like. Page chrome lives in showcase-render.mjs.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { showcase } from './showcase-data.mjs';
+import { blocksToMarkdown } from '../lib/editor-content.mjs';
+import { renderEditorMarkdown } from '../lib/editor-markdown.mjs';
+import { renderShowcase } from './showcase-render.mjs';
+import './showcase.css';
+export const prerender = false;
+const rendered = await Promise.all(showcase.map(async (item) => (await renderEditorMarkdown(blocksToMarkdown(item.blocks))).code));
+const html = renderShowcase(rendered);
+---
+<BaseLayout title="组件目录 · 各组选型" description={`NKU26 Wiki 组件目录：${showcase.length} 个示例、按页面推荐组合、Word 填写模板与候选清单导出。`}>
+  <Fragment set:html={html} />
+</BaseLayout>
+<script>
+  import './showcase-client.mjs';
+</script>

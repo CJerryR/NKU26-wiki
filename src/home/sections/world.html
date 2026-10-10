@@ -1,0 +1,45 @@
+<section class="world" id="world" data-nav-label="A global story" data-world data-tone="light" aria-labelledby="world-title">
+  <div class="world__pin">
+    <div class="world__inner">
+      <div class="world__copy">
+        <h2 class="h-display" id="world-title" data-world-title data-split>A global story beneath our feet</h2>
+        <p class="world__stat"><b data-usd>US$173</b><span>billion</span></p>
+        <p class="world__lede">Estimated yearly crop losses caused by plant-parasitic nematodes worldwide.</p>
+        <div class="world__legend">
+          <p>Plant-feeding nematode abundance</p>
+          <i class="world__ramp" aria-hidden="true"></i>
+          <span><em>lower</em><em>higher</em></span>
+          <p class="world__unit">Individuals per 100 g dry soil, colour by log<sub>10</sub>(x + 1). 1,901 sampled pixels.</p>
+          <p class="world__case"><i aria-hidden="true"></i>Reported crop loss. Point at a dot to read it.</p>
+        </div>
+      </div>
+      <figure class="world__map" data-world-map>
+        <div class="world__canvas">
+          <svg class="world__land" data-world-svg viewBox="0 0 900 350" role="img" aria-label="World map of plant-feeding nematode abundance, with seven reported crop-loss cases and China highlighted."></svg>
+          <canvas data-world-heat aria-hidden="true"></canvas>
+          <div class="world__marks" data-world-marks></div>
+          <button type="button" class="world__china" data-world-china><b>China</b><span>Look closer</span></button>
+        </div>
+        <figcaption>Data: van den Hoogen et al. 2020, <i>Scientific Data</i> 7:103 (CC0). Basemap: Natural Earth.</figcaption>
+      </figure>
+    </div>
+    <div class="world__dive" aria-hidden="true"></div>
+    <div class="world__mask" data-world-mask aria-hidden="true"></div>
+  </div>
+  <div class="flipcard" data-flipcard role="dialog" aria-modal="false" aria-labelledby="flip-title" hidden>
+    <div class="flipcard__inner">
+      <div class="flipcard__face flipcard__front">
+        <p class="flipcard__kicker" data-flip-kicker></p>
+        <h3 id="flip-title" data-flip-title></h3>
+        <dl data-flip-front></dl>
+        <button type="button" class="flipcard__turn" data-flip-turn>Reported loss and source</button>
+      </div>
+      <div class="flipcard__face flipcard__back">
+        <p class="flipcard__kicker">Reported loss</p>
+        <p class="flipcard__loss" data-flip-loss></p>
+        <p class="flipcard__src" data-flip-src></p>
+        <button type="button" class="flipcard__turn" data-flip-turn>Back to the case</button>
+      </div>
+    </div>
+  </div>
+</section>

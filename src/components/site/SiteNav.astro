@@ -1,0 +1,84 @@
+---
+/**
+ * Top bar: two floating liquid-glass islands (brand + menu), dropdowns and
+ * the phone sheet, after the team's LiquidTabBar demo. The menu island is one
+ * pane of glass; its highlight is a film inside it (glass never samples
+ * glass). Every page, the story homepage included, runs src/scripts/nav.ts.
+ */
+import LiquidGlass from '../glass/LiquidGlass.astro';
+import { primaryNav, mobileNav, type NavLink } from '../../data/nav';
+import { getPages, byId, pageHref } from '../../lib/pages';
+
+interface Props { current?: string }
+const { current = '' } = Astro.props;
+
+const ids = byId(await getPages());
+const HOME = '/index.html';
+/* An optional outline page is left out quietly while its file waits in
+   src/content/optional; any other missing page is a mistake worth a warning. */
+function href(page: string, optional = false): string | null {
+  if (page === 'home') return HOME;
+  const entry = ids.get(page);
+  if (!entry) { if (!optional) console.warn(`[nav] no page "${page}" in src/content/pages — link skipped`); return null; }
+  return pageHref(entry);
+}
+const link = (l: NavLink) => {
+  const h = href(l.page, l.optional);
+  const empty = ['attributions', 'members', 'part-collection', 'model-1', 'model-2'].includes(l.page);
+  return { ...l, blurb: current !== HOME && empty ? undefined : l.blurb, href: h, current: h !== null && h === current };
+};
+const menu = primaryNav.map((item) => {
+  if (item.kind === 'home') return { ...item, href: HOME, current: current === HOME };
+  if (item.kind === 'link') return { ...item, ...link(item) };
+  const items = item.items.map(link).filter((l) => l.href);
+  return { ...item, items, current: items.some((l) => l.current) };
+}).filter((item) => item.kind !== 'group' || item.items.length > 0);
+const sheet = mobileNav.map((g) => ({ ...g, items: g.items.map(link).filter((l) => l.href) })).filter((g) => g.items.length > 0);
+---
+<div class="lnav-scrim" data-lnav-scrim data-tone="dark" aria-hidden="true"></div>
+<header class="lnav" data-lnav>
+  <div class="lnav__row lnav__bar">
+    <LiquidGlass class="lnav__island lnav__island--brand" preset="bar">
+      <a href={HOME} class="lnav__brand" aria-label="iGEM-NKU26 NemaKlear home">
+        <img src="/img/shell/nku-mark.svg" alt="" width="34" height="44" />
+        <span><b>iGEM-NKU26</b><em>NemaKlear</em></span>
+      </a>
+    </LiquidGlass>
+    <LiquidGlass class="lnav__island lnav__island--menu" preset="bar">
+      <span class="lnav__now" data-lnav-now aria-hidden="true"></span>
+      <nav class="lnav__links" aria-label="Primary" data-lnav-links>
+        <span class="lnav__film" data-lnav-film aria-hidden="true"></span>
+        {menu.map((item) => item.kind === 'group' ? (
+          <div class="lnav__group">
+            <button type="button" class:list={['lnav__link', { 'is-current': item.current }]} aria-expanded="false" aria-controls={`lnav-${item.id}`}>{item.label}<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" /></svg></button>
+            <LiquidGlass class={item.narrow ? 'lnav__drop lnav__drop--narrow' : 'lnav__drop'} id={`lnav-${item.id}`} preset="panel">
+              <div class="lnav__drop-grid">
+                {item.items.map((l) => (
+                  <a href={l.href} aria-current={l.current ? 'page' : undefined}><b>{l.label}</b><span>{l.blurb}</span></a>
+                ))}
+              </div>
+            </LiquidGlass>
+          </div>
+        ) : item.href && (
+          <a class:list={['lnav__link', { 'is-current': item.current }]} href={item.href} aria-current={item.current ? 'page' : undefined}>{item.label}</a>
+        ))}
+      </nav>
+      <button type="button" class="lnav__search" data-search-open aria-haspopup="dialog" aria-controls="site-search" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5" /><line x1="20" y1="20" x2="16" y2="16" /></svg>
+        <span>Search</span>
+      </button>
+      <button type="button" class="lnav__toggle" aria-expanded="false" aria-controls="lnav-sheet" aria-label="Open menu"><i></i><i></i></button>
+    </LiquidGlass>
+  </div>
+  <LiquidGlass class="lnav__sheet" id="lnav-sheet" preset="panel" hidden>
+    <div class="lnav__sheet-body">
+      {sheet.map((g) => (
+        <Fragment>
+          {g.label && <p>{g.label}</p>}
+          {g.items.map((l) => <a href={l.href} aria-current={l.current ? 'page' : undefined}>{l.label}</a>)}
+        </Fragment>
+      ))}
+    </div>
+  </LiquidGlass>
+</header>
+<svg class="lg-defs" width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden"><defs></defs></svg>

@@ -1,0 +1,113 @@
+/* Liquid glass — the material of the top bar, the page outline and the hero
+   labels. After the .lg-glass rules of the team's LiquidGlass demo, in the
+   site's two tones:
+     dark  – over the hero, the dark homepage scenes and the footer;
+     light – over the paper: a cream film with dark ink.
+   A control's tone is set by src/scripts/tone.ts from the data-tone of the
+   section underneath (data-tone on the glass itself).
+
+   Layers of every .lg-glass (see src/scripts/liquid-glass.ts):
+     host        – outer shadow only, so nothing overflows the refraction;
+     .lg-surface – backdrop (refracted in Chromium), tint, glow, inner rim;
+     ::after     – the specular rim, turned towards the pointer (--glass-light).
+
+   The colours are registered, so a tone switch glides instead of flipping. */
+@property --glass-tint { syntax: '<color>'; inherits: true; initial-value: rgb(26 14 34 / .28); }
+@property --glass-ink { syntax: '<color>'; inherits: true; initial-value: #fff; }
+@property --glass-rim { syntax: '<color>'; inherits: true; initial-value: rgb(255 255 255 / .7); }
+@property --glass-rim-back { syntax: '<color>'; inherits: true; initial-value: rgb(255 255 255 / .22); }
+@property --glass-glow { syntax: '<color>'; inherits: true; initial-value: rgb(255 255 255 / .12); }
+@property --glass-film { syntax: '<color>'; inherits: true; initial-value: rgb(255 255 255 / .16); }
+@property --glass-film-edge { syntax: '<color>'; inherits: true; initial-value: rgb(255 255 255 / .3); }
+@property --glass-blur { syntax: '<length>'; inherits: true; initial-value: 1.2px; }
+
+/* defaults a component may override (zero specificity) */
+:where(.lg-glass) {
+  --glass-light: -45deg;
+  --glass-sat: 1.6;
+  --glass-transition: --glass-tint .35s, --glass-ink .35s, --glass-rim .35s, --glass-rim-back .35s, --glass-glow .35s,
+    --glass-film .35s, --glass-film-edge .35s, --glass-blur .35s, box-shadow .35s, color .35s;
+  position: relative;
+  border-radius: 999px;
+  color: var(--glass-ink);
+  box-shadow: var(--glass-shadow);
+  transition: var(--glass-transition);
+}
+:where(.lg-glass) > :where(:not(.lg-surface)) { position: relative; z-index: 3; }
+
+/* dark tone (the default) */
+.lg-glass, .lg-glass[data-tone='dark'] {
+  --glass-tint: rgb(26 14 34 / .28);
+  --glass-ink: #fff;
+  --glass-rim: rgb(255 255 255 / .7);
+  --glass-rim-back: rgb(255 255 255 / .22);
+  --glass-glow: rgb(255 255 255 / .12);
+  --glass-film: rgb(255 255 255 / .16);
+  --glass-film-edge: rgb(255 255 255 / .3);
+  --glass-blur: 1.2px;
+  --glass-shadow: 0 14px 34px -14px rgb(10 2 16 / .55), 0 2px 6px rgb(10 2 16 / .12);
+}
+/* light tone: over the paper the film is cream and frosted enough that body
+   text behind a control cannot be read through its labels */
+.lg-glass[data-tone='light'] {
+  --glass-tint: rgb(255 252 246 / .74);
+  --glass-ink: #1f1424;
+  --glass-rim: rgb(255 255 255 / .95);
+  --glass-rim-back: rgb(255 255 255 / .45);
+  --glass-glow: rgb(255 255 255 / .38);
+  --glass-film: rgb(70 36 96 / .09);
+  --glass-film-edge: rgb(255 255 255 / .75);
+  --glass-blur: 6px;
+  --glass-shadow: 0 16px 36px -18px rgb(40 24 54 / .45), 0 2px 6px rgb(40 24 54 / .08);
+}
+/* panels hold lists of text, so they frost more; same film and rim */
+.lg-glass[data-glass='panel'] { --glass-blur: 14px; --glass-shadow: 0 26px 60px -20px rgb(30 4 28 / .6); }
+.lg-glass[data-glass='panel'][data-tone='light'] {
+  --glass-blur: 12px;
+  --glass-tint: rgb(255 252 246 / .82);
+  --glass-shadow: 0 26px 56px -24px rgb(40 24 54 / .5), 0 2px 8px -4px rgb(40 24 54 / .12);
+}
+
+.lg-glass > .lg-surface {
+  position: absolute; inset: 0; z-index: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background-color: var(--glass-tint);
+  background-image: radial-gradient(120% 70% at 50% -10%, var(--glass-glow), transparent 65%);
+  box-shadow:
+    inset 0 0 0 .5px rgb(255 255 255 / .35),
+    inset 0 1.5px 2px -.5px rgb(255 255 255 / .55),
+    inset 0 -2px 3px -1px rgb(0 0 0 / .14);
+  /* frosted until (or unless) the refraction takes over in Chromium */
+  -webkit-backdrop-filter: blur(calc(var(--glass-blur) + 10px)) saturate(var(--glass-sat));
+  backdrop-filter: blur(calc(var(--glass-blur) + 10px)) saturate(var(--glass-sat));
+}
+/* without refraction the frost alone has to make the glass readable */
+.lg-glass.lg-fallback { --glass-tint: rgb(26 14 34 / .42); }
+.lg-glass.lg-fallback[data-tone='light'] { --glass-tint: rgb(255 252 246 / .86); }
+
+/* specular rim: a thin light along the edge, bright where the light comes from */
+.lg-glass::after {
+  content: '';
+  position: absolute; inset: 0; z-index: 2;
+  border-radius: inherit;
+  padding: 1.25px;
+  background: conic-gradient(from calc(var(--glass-light) - 70deg),
+    transparent 0deg, var(--glass-rim) 70deg, transparent 140deg,
+    transparent 180deg, var(--glass-rim-back) 250deg, transparent 320deg);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .lg-glass, .lg-glass[data-tone='dark'] { --glass-tint: rgb(36 22 46 / .92); }
+  .lg-glass[data-tone='light'] { --glass-tint: rgb(251 248 241 / .97); }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .lg-glass, .lg-glass[data-tone='dark'] { --glass-tint: rgb(36 22 46 / .94); }
+  .lg-glass[data-tone='light'] { --glass-tint: rgb(251 248 241 / .97); }
+  .lg-glass > .lg-surface { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+}

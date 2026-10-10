@@ -1,0 +1,13 @@
+{
+  "title": "Members",
+  "heading": "Members",
+  "sub": "",
+  "crumbs": [
+    "Team",
+    "Members"
+  ],
+  "route": "team",
+  "meta": [],
+  "search": true,
+  "blocks": []
+}

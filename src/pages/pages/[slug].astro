@@ -1,0 +1,13 @@
+---
+/** Pages without a `route`: pages/<file name>.html */
+import PageView from '../../components/page/PageView.astro';
+import { getPages } from '../../lib/pages';
+
+export async function getStaticPaths() {
+  const pages = await getPages();
+  return pages.filter((entry) => !entry.data.route).map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+---
+<PageView entry={entry} />

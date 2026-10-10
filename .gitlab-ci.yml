@@ -1,15 +1,38 @@
-image: python:3.12
+# Build from locked source dependencies. Only reviewed main-branch builds deploy.
+image: node:22
 
-pages:
+variables:
+  ASTRO_TELEMETRY_DISABLED: "1"
+  npm_config_cache: "$CI_PROJECT_DIR/.npm"
+
+.wiki-build:
   stage: build
+  cache:
+    key:
+      files:
+        - package-lock.json
+    paths:
+      - .npm/
+  before_script:
+    - command -v python3 >/dev/null || (apt-get update -qq && apt-get install -y -qq python3 >/dev/null)
+    - npm ci --no-audit --no-fund
   script:
-    - pip install --no-cache-dir -r dependencies.txt
-    - FLASK_APP=app.py flask freeze
+    - npm run build
+    - npm run audit
   artifacts:
     paths:
       - public
+    expire_in: 7 days
+
+verify:
+  extends: .wiki-build
   rules:
-    - if: $CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH
-      when: never # No runners will run on branches other than main
+    - if: $CI_COMMIT_BRANCH && $CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH
+
+pages:
+  extends: .wiki-build
+  script:
+    - npm run build
+    - npm run audit:publication
+  rules:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-      when: always

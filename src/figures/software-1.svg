@@ -1,0 +1,29 @@
+<svg viewBox="0 0 560 224" style="max-width:560px" role="img" aria-labelledby="arch-fig-title arch-fig-desc">
+        <title id="arch-fig-title">How one page is built</title>
+        <desc id="arch-fig-desc">Editable sources are read by build.py. It recreates the public directory, writes the homepage and routed pages there, copies local static assets, and regenerates the search data. GitLab CI/CD publishes that directory as an artifact; generated output is not committed.</desc>
+        <rect x="6" y="26" width="170" height="156" rx="10" fill="#f7f2e8" stroke="#6e4fb8" stroke-opacity=".38" stroke-width="1.2"/>
+        <text x="91" y="50" text-anchor="middle" font-family="Space Mono,monospace" font-size="9.5" font-weight="700" letter-spacing="1.1" fill="#6c5d53">EDITABLE SOURCE</text>
+        <line x1="22" y1="60" x2="160" y2="60" stroke="#9a7a6b" stroke-opacity=".35" stroke-width="1"/>
+        <text x="22" y="84" font-family="Space Mono,monospace" font-size="11" fill="#241c2b">_content/*.html</text>
+        <text x="22" y="105" font-family="Space Mono,monospace" font-size="11" fill="#241c2b">_templates/base.html</text>
+        <text x="22" y="126" font-family="Space Mono,monospace" font-size="11" fill="#241c2b">_partials/nav.html</text>
+        <text x="22" y="147" font-family="Space Mono,monospace" font-size="11" fill="#241c2b">_partials/footer.html</text>
+        <text x="22" y="168" font-family="Space Mono,monospace" font-size="11" fill="#241c2b">_data/site.json</text>
+        <path d="M184 104 H201" fill="none" stroke="#9a7a6b" stroke-width="1.6" stroke-linecap="round"/>
+        <polyline points="195 98 202 104 195 110" fill="none" stroke="#9a7a6b" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="210" y="72" width="140" height="64" rx="10" fill="#6e4fb8"/>
+        <text x="280" y="100" text-anchor="middle" font-family="Space Mono,monospace" font-size="15" font-weight="700" fill="#f7f2e8">build.py</text>
+        <text x="280" y="119" text-anchor="middle" font-family="Space Mono,monospace" font-size="9.5" letter-spacing="1" fill="#cdbfd6">STDLIB ONLY</text>
+        <path d="M358 104 H377" fill="none" stroke="#9a7a6b" stroke-width="1.6" stroke-linecap="round"/>
+        <polyline points="371 98 378 104 371 110" fill="none" stroke="#9a7a6b" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="384" y="26" width="170" height="156" rx="10" fill="#f7f2e8" stroke="#6e4fb8" stroke-opacity=".38" stroke-width="1.2"/>
+        <text x="469" y="50" text-anchor="middle" font-family="Space Mono,monospace" font-size="9.5" font-weight="700" letter-spacing="1.1" fill="#6c5d53">GENERATED OUTPUT</text>
+        <line x1="400" y1="60" x2="538" y2="60" stroke="#9a7a6b" stroke-opacity=".35" stroke-width="1"/>
+        <text x="400" y="84" font-family="Space Mono,monospace" font-size="11" fill="#241c2b">public/index.html</text>
+        <text x="400" y="105" font-family="Space Mono,monospace" font-size="11" fill="#241c2b">public/route/</text>
+        <text x="400" y="126" font-family="Space Mono,monospace" font-size="11" fill="#241c2b">public/pages/</text>
+        <text x="400" y="147" font-family="Space Mono,monospace" font-size="11" fill="#241c2b">public/js/search-data.js</text>
+        <text x="400" y="168" font-family="Space Mono,monospace" font-size="9.5" fill="#7b7280">(rewritten every build)</text>
+        <line x1="6" y1="194" x2="554" y2="194" stroke="#9a7a6b" stroke-opacity=".3" stroke-width="1" stroke-dasharray="4 5"/>
+        <text x="280" y="212" text-anchor="middle" font-family="Space Mono,monospace" font-size="10" fill="#6c5d53">GitLab CI publishes the generated public artifact</text>
+      </svg>

@@ -1,0 +1,49 @@
+NKU-China v8.0 GitLab 上传前检查
+核查日期：2026-10-10～2026-10-11（北京时间）
+
+官方队伍：NKU-China，编号 6303，2026 Collegiate / Higher Education。
+官方仓库：https://gitlab.igem.org/2026/nku-china （项目 ID 5165）
+正式 Wiki：https://2026.igem.wiki/nku-china
+本次用途：用户确认先上传阶段版本，继续补内容。
+
+已完成：
+- 从官方队伍后台激活 HTML Wiki 模板；官方初始流水线已通过。
+- 克隆队伍真实 GitLab 仓库，保留官方提交历史和原始 LICENSE。
+- 在 .work-v8/gitlab-nku-china 的 codex/v8.0-stage 分支准备最新本地 v8.0 工作文件。
+- 本地 npm run verify 成功，构建 19 个页面，技术审计 PASS。
+- 额外核查生成 HTML 和 CSS：无缺失资源、无非 iGEM 外部运行时引用。
+- 生成完整资源清单：184 个图片、字体和文档文件，共 6,384,963 字节。
+- 准备官方 CDN 的 v8-0 文件夹和带内容哈希的上传文件。
+
+当前不通过/未完成：
+- 官方 CDN 上传表已确认 26 / 184 个素材；大批上传及后续文件失败，页面地址还未改写，资源迁移未完成。
+- 5 个内页无正文；12 个内页在本地状态记录中未获团队定稿和人工审核。
+- npm run audit:publication 返回失败；17 个记录不能视为内容验收通过。
+- 已补充本轮 GPT-6 检查和历史 Claude 交互代码记录；历史具体版本及实际审核者仍需团队核实。
+- 组件展示页会在运行时创建本地 MP4 示例播放器；正式发布前应改用 Video Universe 或排除这一演示。
+- 当前官方 2026 固定路径表没有列出 Attributions Wiki 页面；Attributions 是独立官方表单，不能沿用旧年份嵌入要求作本年度断言。
+- 尚未推送 v8.0 源码，也未将 v8.0 发布到正式 Wiki。现在线上仍为官方初始模板。
+
+上传障碍：
+- GitLab 网页登录使用 SSO；Git 推送必须另外使用 token 或已注册 SSH key。
+- 用户已在本机 Git 凭据助手配置推送凭据；本轮将实际推送验证写入权限。
+- 扩展文件上传限制已通过系统文件选择器解决，不再需要修改扩展设置。
+- 官方工具上传错误未给出可读原因；上传表中的真实 CDN 地址已保存到 cdn-upload-progress.json。
+
+本轮读取的官方来源：
+https://teams.igem.org/6303/deliverables/wiki/requirements
+https://teams.igem.org/6303/deliverables/wiki/getting-started
+https://teams.igem.org/6303/deliverables/wiki/uploads
+https://gitlab.igem.org/templates/wiki-frozen-flask
+官方模板核查提交：9182b09df473d3097e5304d4809a2c01edde3ddb。
+
+官方要求摘要：
+1. HTML 和源码放队伍 GitLab；图片、文档、字体等走官方 CDN；音视频走 Video Universe。
+2. Wiki 必须通过 CI 从源码构建，提交 lockfile，不提交预构建输出。
+3. 保留原始 LICENSE、页脚 CC BY 4.0、真实队伍 GitLab 链接及第三方许可和署名。
+4. 使用官方指定的奖牌/奖项页面路径。
+5. 科学论述和证据必须真实、可追溯，团队负责核查。
+6. AI 可以润色和协助实现；不能代写实质项目内容，不能生成科学证据。
+
+结论：技术构建可以通过；当前 v8.0 不能声称满足正式 Wiki 全部要求。
+可以保留为源码阶段版本；正式发布前需完成资源迁移、AI 使用披露和团队内容审核。

@@ -1,8 +1,24 @@
-env
-venv
-.vscode
-.idea
-.DS_Store
-__pycache__
-public
+node_modules/
 node_modules
+.env
+.env.*
+!.env.example
+tina/__generated__/
+static/admin/
+.tina/
+.tina-static/
+public/
+.astro/
+dist/
+.DS_Store
+__pycache__/
+*.pyc
+tmp/
+# Local provenance notes may contain authenticated workspace links.
+docs/source-inventory.md
+docs/feishu-archive/archive-manifest.json
+docs/feishu-archive/captures/
+docs/feishu-archive/library/
+
+# Generated viewer libraries (prepared from locked npm packages)
+static/widgets/vendor/
