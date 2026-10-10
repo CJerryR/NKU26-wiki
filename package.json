@@ -6,7 +6,7 @@
   "description": "NKU-iGEM 2026 wiki (NemaKlear): Astro build with liquid-glass inner pages; the story homepage is kept as-is.",
   "scripts": {
     "dev": "tinacms dev -p 4101 --datalayer-port 9101 -c \"TINA_EDITOR=1 astro dev --host 127.0.0.1 --port 3000\"",
-    "build": "node tools/export-tina.mjs && astro build",
+    "build": "node tools/export-tina.mjs && astro build && node tools/finalize-stage-assets.mjs",
     "build:admin": "tinacms build --content=local --skip-cloud-checks --datalayer-port 9102",
     "dev:cloud": "TINA_EDITOR=1 astro dev --host 127.0.0.1 --port 3000",
     "preview": "astro preview",

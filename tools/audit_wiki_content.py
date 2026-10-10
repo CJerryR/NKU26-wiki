@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Strict content and publishing audit for the NKU-iGEM26 wiki (Astro, v7).
+"""Strict content and publishing audit for the NKU-iGEM26 wiki (Astro, v8).
 
 Sources:   src/content/pages/*.md (Markdown + frontmatter) and the homepage
            sections in src/home/sections/*.html
@@ -10,8 +10,8 @@ Generated: the built site in public/ (with --generated)
     python3 tools/audit_wiki_content.py --generated --generated-root public
 
 Content checks cover placeholder wording, untraced numbers, overclaims,
-iGEM 2026 standard routes and licensing disclosure. v8.0 intentionally leaves
-five page bodies empty, which remain publication blockers.
+iGEM 2026 standard routes and licensing disclosure. Stage releases allow empty inner-page bodies. Final-submission checks still
+require team-reviewed content.
 """
 from __future__ import annotations
 
@@ -23,7 +23,7 @@ import sys
 from pathlib import Path
 
 EXTERNAL_RUNTIME_RE = re.compile(
-    r"<(?:script|img|iframe)\b[^>]*\bsrc=[\"']https?://|<link\b[^>]*\bhref=[\"']https?://",
+    r"<(?:script|img|iframe)\b[^>]*\bsrc=[\"']https?://(?!(?:[a-z0-9-]+\.)*igem\.(?:wiki|org)/)|<link\b[^>]*\bhref=[\"']https?://(?!(?:[a-z0-9-]+\.)*igem\.(?:wiki|org)/)",
     re.I,
 )
 MD_EXTERNAL_RE = re.compile(r"!\[[^\]]*\]\(\s*<?https?://|\b(?:src|img)=[\"']https?://", re.I)
@@ -40,10 +40,11 @@ STANDARD_ROUTES = {
 }
 
 # These routes are deliberately retained with empty bodies in v8.0. Their
-# missing content remains a publication blocker, but is not a broken source
-# structure while the team is collecting the material.
+# missing content blocks final submission, while stage deployment is permitted.
 EMPTY_PAGE_SLUGS = {
-    "attributions", "members", "model-1", "model-2", "part-collection",
+    "attributions", "contribution", "description", "education", "engineering", "experiments",
+    "human-practices", "licensing", "members", "model", "model-1", "model-2",
+    "part-collection", "parts", "protocols", "results", "safety",
 }
 
 FORBIDDEN_PATTERNS: tuple[tuple[str, re.Pattern[str]], ...] = (
@@ -157,12 +158,12 @@ def audit_source(root: Path, path: Path, icons: set[str], failures: list[str], b
     fm, body = parse_frontmatter(text)
     intentionally_empty = path.stem in EMPTY_PAGE_SLUGS and not body.strip()
     if intentionally_empty:
-        blockers.append(f"{rel}: body is empty; team content is required before publication")
+        blockers.append(f"{rel}: body is empty; team content is required before final submission")
     if fm is None:
         failures.append(f"{rel}: missing frontmatter block (--- ... ---)")
         fm = {}
     for field in ("title", "crumbs", "heading", "sub", "meta"):
-        if not fm.get(field) and not (intentionally_empty and field == "sub"):
+        if not fm.get(field) and not (intentionally_empty and field in ("sub", "meta")):
             failures.append(f"{rel}: frontmatter missing {field}")
     check_text(str(rel), text, failures)
 
@@ -333,7 +334,7 @@ def audit_igem_2026_controls(root: Path, results: list[dict], failures: list[str
     licensing = root / "src" / "content" / "pages" / "licensing.md"
     if not licensing.exists():
         failures.append("missing public licensing and responsible-AI disclosure page")
-    else:
+    elif not next((r["body_empty"] for r in results if r["slug"] == "licensing"), False):
         text = licensing.read_text(encoding="utf-8").lower()
         for marker in ("cc by 4.0", "openai codex", "human review",
                        "evidentiary figures", "attributions form"):
@@ -376,10 +377,11 @@ def main() -> int:
             print(f"- {failure}")
         return 1
     if blockers:
-        print(f"PUBLICATION BLOCKED ({len(blockers)} missing-content warnings)")
+        print(f"CONTENT INCOMPLETE ({len(blockers)} warnings; empty stage pages are allowed)")
         for blocker in blockers:
             print(f"- {blocker}")
         if args.publication_ready:
+            print("FINAL SUBMISSION BLOCKED: required content is incomplete")
             return 1
     print("PASS (technical checks only; content readiness reported separately)")
     return 0

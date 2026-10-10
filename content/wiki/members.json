@@ -9,5 +9,8 @@
   "route": "team",
   "meta": [],
   "search": true,
-  "blocks": []
+  "blocks": [],
+  "description": "",
+  "draft": false,
+  "hidden": false
 }

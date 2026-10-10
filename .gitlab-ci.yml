@@ -1,4 +1,4 @@
-# Build from locked source dependencies. Only reviewed main-branch builds deploy.
+# Build from locked source dependencies. Stage releases permit empty page bodies; technical checks still gate deployment.
 image: node:22
 
 variables:
@@ -26,9 +26,6 @@ variables:
 
 pages:
   extends: .wiki-build
-  script:
-    - npm run build
-    - npm run audit:publication
   rules:
     # iGEM's official template states that runners only run on main.
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH

@@ -25,7 +25,7 @@ const at = order.findIndex((l) => l.page === entry.id);
 const link = (i: number) => {
   const l = order[i];
   const target = l ? ids.get(l.page) : undefined;
-  return l && target ? { href: pageHref(target), title: l.label, blurb: ['attributions', 'members', 'part-collection', 'model-1', 'model-2'].includes(l.page) ? undefined : l.blurb } : null;
+  return l && target ? { href: pageHref(target), title: l.label, blurb: !target.body?.trim() ? undefined : l.blurb } : null;
 };
 const prev = at > 0 ? link(at - 1) : null;
 const next = at >= 0 && at < order.length - 1 ? link(at + 1) : null;

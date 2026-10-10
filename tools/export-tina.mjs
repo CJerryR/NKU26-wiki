@@ -5,6 +5,6 @@ for (const name of await fs.readdir('content/wiki')) {
   if (!name.endsWith('.json')) continue;
   const doc = JSON.parse(await fs.readFile(`content/wiki/${name}`, 'utf8'));
   const entry = toEntry(name.slice(0, -5), doc);
-  await fs.writeFile(`src/content/pages/${entry.id}.md`, matter.stringify(entry.body, entry.data));
+  await fs.writeFile(`src/content/pages/${entry.id}.md`, matter.stringify(entry.body, entry.data).trimEnd() + '\n');
 }
 console.log('Exported Tina content to Markdown for static build and content audit.');

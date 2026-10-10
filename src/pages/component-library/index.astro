@@ -1,5 +1,8 @@
 ---
-import ToolkitDemo from '../../editor/toolkit-demo.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/page/PageHero.astro';
 ---
-
-<ToolkitDemo />
+<BaseLayout title="Component library">
+  <PageHero title="Component library" crumbs={['Component library']} meta={{}} />
+  <div class="doc doc--no-toc"><article class="doc__body prose" data-doc></article></div>
+</BaseLayout>

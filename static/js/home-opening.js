@@ -1120,7 +1120,8 @@
       nemTex = new T.CanvasTexture(c);
       if (built) { built.nemU.uMap.value = nemTex; built.nem.visible = true; }
     };
-    img.src = NK.prefix + 'img/home/nematode-soil.svg';
+    img.crossOrigin = 'anonymous';
+    img.src = 'https://static.igem.wiki/teams/6303/wiki/v8-0/v8-7904b0e2ba3c-nematode-soil.svg';
   }
   var rT = 0;
   window.addEventListener('resize', function () { clearTimeout(rT); rT = setTimeout(function () { resize(false); }, 220); });

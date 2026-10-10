@@ -1,46 +1,27 @@
-# NKU-China Wiki v8.0 — 阶段源码
+# NKU-China Wiki v8.0 — 阶段版本
 
-本仓库是 2026 年 NKU-China（队伍编号 6303）的官方 Wiki 源码。此版按团队要求先保存为阶段版本，后续继续补充内容。当前技术构建可通过，但**尚未通过正式提交内容检查**。
+2026 NKU-China（队伍编号 6303）的官方 Wiki 源码。按团队要求保留首页，17 个内页和组件目录仅保留页面框架与导航，正文为空，等待后续回填。所有修改直接提交 main，以 commit 记录版本。
 
-- 官方仓库：https://gitlab.igem.org/2026/nku-china
-- 开发分支：`main`；版本进度通过连续 commit 记录。
-- 正式 Wiki：https://2026.igem.wiki/nku-china
+- 仓库：https://gitlab.igem.org/2026/nku-china
+- Wiki：https://2026.igem.wiki/nku-china
 - 官方要求：https://teams.igem.org/6303/deliverables/wiki/requirements
 
-## 本地构建与编辑
+## 构建与编辑
 
-需要 Node.js 22 和 Python 3。依赖已锁定在 `package-lock.json`。
+Node.js 22 和 Python 3；依赖由 package-lock.json 锁定。
 
 ```bash
 npm ci --no-audit --no-fund
 npm run verify
-npm run audit:publication
-```
-
-`verify` 执行构建和技术审计；`audit:publication` 在团队文案及审核未完成时应返回失败。二者不能混作同一项验收。
-
-内容从 `content/wiki/*.json` 经 `tools/export-tina.mjs` 导出到 `src/content/pages/*.md`。修改内容时优先编辑 JSON 或 Tina 编辑器；直接改导出 Markdown 会在下次构建时被覆盖。
-
-```bash
 npm run dev
 ```
 
-Tina 本地编辑预览在 `http://127.0.0.1:3000`，编辑器端口为 4101。首页段落在 `src/home/sections/`；导航和页脚来源分别为 `src/data/nav.ts`、`src/data/site.json`。`static/` 包含现有本地预览所需的脚本、样式和素材。
+内容编辑 content/wiki/*.json，构建自动导出 Markdown。原始本地 v8.0 的文案保留在上传目录之外，可以逐页回填。Tina 编辑器在 http://127.0.0.1:3000，首页在 src/home/sections/。
 
-## GitLab 检查与发布
+## 阶段发布检查
 
-所有版本继续提交到 `main`，以 commit 历史记录每次修改。本地构建生成 19 个页面并执行技术审计；iGEM 官方模板注明 Runner 只运行 `main` 分支。Pages 从源码构建，并需通过 `audit:publication`；目前内容检查仍有阻塞，因此源码上传不表示正式 Wiki 已更新。不得把 `public/`、`node_modules/`、令牌或本地环境变量提交到仓库。
+GitLab Pages 在 main 上执行 npm run build 和 npm run audit。空正文是阶段版允许的状态；构建错误、断链、缺失资源等仍会失败。npm run audit:publication 是独立的最终内容检查，空页将使它失败，但不阻止阶段版部署。不得为了通过检查伪造内容审核状态。
 
-本版替换官方 Flask 初始模板，使用 Astro 5 + Tina 的现有 v8.0 实现；保留官方 Git 历史和原始 `LICENSE`。页脚指向本队真实 GitLab 仓库并保留 CC BY 4.0 许可。
+首页和页面框架使用的图片、字体已改为官方 Uploads 中实际返回的 CDN 地址。构建后移除未使用的本地图片、字体、文档和演示音视频；组件演示仅保留在本地编辑模式。其他原始素材尚未迁移，后续使用前必须完成官方上传；音视频使用 Video Universe。
 
-## 正式发布前仍需完成
-
-- Attributions、Members、Part Collection、Model 1、Model 2 正文为空。
-- 其余 12 页的现有 AI 草稿未获得团队定稿及人工审核；逐页状态见 `content/wiki-provenance.json`。不得仅为通过检查而改写审核状态。
-- 图片、字体和文档等需迁移到官方 Uploads CDN，并核验实际返回地址。当前迁移未完成；本地资源地址仍保留。
-- 组件展厅的本地 MP4 示例需移到 Video Universe 或停止在正式站点提供该演示。
-- 团队需核实历史 AI 模型的具体版本及实际审核者，并完成独立官方 Attributions Form。
-
-官方素材入口：https://teams.igem.org/6303/deliverables/wiki/uploads
-
-AI 协助实现和检查，不得编造实验结果、测量、引用、访谈、贡献或科研证据。科学文案及证据的最终审核由团队完成。此阶段版本不代表 Wiki Freeze 前的正式验收通过。
+保留官方 Git 历史和原始 LICENSE，页脚保留 CC BY 4.0、真实仓库链接和 AI 使用说明。科学文案、历史 AI 模型版本、具体审核者、完整素材署名及官方 Attributions Form 仍需团队完成。此版本是可访问的阶段网站，尚非最终内容验收。

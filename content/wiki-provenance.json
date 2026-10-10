@@ -2,7 +2,7 @@
   "reviewed_at": "2026-10-09",
   "timezone": "Asia/Shanghai",
   "basis": "User confirmed no team final inner-page copy has been supplied; local source and historical material review.",
-  "note": "AI draft can refer to real historical material. Presence of text is not evidence of team final copy or approval.",
+  "note": "All inner-page bodies cleared for the stage release at the team owner’s request. Original local v8.0 content is preserved for later editing. Empty pages do not imply final content approval.",
   "pages": [
     {
       "slug": "attributions",
@@ -12,43 +12,43 @@
     },
     {
       "slug": "contribution",
-      "status": "ai-draft-awaiting-team-copy",
+      "status": "empty-awaiting-team-copy",
       "team_copy_received": false,
       "team_review_approved": false
     },
     {
       "slug": "description",
-      "status": "ai-draft-awaiting-team-copy",
+      "status": "empty-awaiting-team-copy",
       "team_copy_received": false,
       "team_review_approved": false
     },
     {
       "slug": "education",
-      "status": "ai-draft-awaiting-team-copy",
+      "status": "empty-awaiting-team-copy",
       "team_copy_received": false,
       "team_review_approved": false
     },
     {
       "slug": "engineering",
-      "status": "ai-draft-awaiting-team-copy",
+      "status": "empty-awaiting-team-copy",
       "team_copy_received": false,
       "team_review_approved": false
     },
     {
       "slug": "experiments",
-      "status": "ai-draft-awaiting-team-copy",
+      "status": "empty-awaiting-team-copy",
       "team_copy_received": false,
       "team_review_approved": false
     },
     {
       "slug": "human-practices",
-      "status": "ai-draft-awaiting-team-copy",
+      "status": "empty-awaiting-team-copy",
       "team_copy_received": false,
       "team_review_approved": false
     },
     {
       "slug": "licensing",
-      "status": "ai-draft-awaiting-team-copy",
+      "status": "empty-awaiting-team-copy",
       "team_copy_received": false,
       "team_review_approved": false
     },
@@ -72,7 +72,7 @@
     },
     {
       "slug": "model",
-      "status": "ai-draft-awaiting-team-copy",
+      "status": "empty-awaiting-team-copy",
       "team_copy_received": false,
       "team_review_approved": false
     },
@@ -84,27 +84,28 @@
     },
     {
       "slug": "parts",
-      "status": "ai-draft-awaiting-team-copy",
+      "status": "empty-awaiting-team-copy",
       "team_copy_received": false,
       "team_review_approved": false
     },
     {
       "slug": "protocols",
-      "status": "ai-draft-awaiting-team-copy",
+      "status": "empty-awaiting-team-copy",
       "team_copy_received": false,
       "team_review_approved": false
     },
     {
       "slug": "results",
-      "status": "ai-draft-awaiting-team-copy",
+      "status": "empty-awaiting-team-copy",
       "team_copy_received": false,
       "team_review_approved": false
     },
     {
       "slug": "safety",
-      "status": "ai-draft-awaiting-team-copy",
+      "status": "empty-awaiting-team-copy",
       "team_copy_received": false,
       "team_review_approved": false
     }
-  ]
+  ],
+  "updated_at": "2026-10-11"
 }

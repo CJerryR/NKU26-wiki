@@ -7,8 +7,8 @@ crumbs:
   - Attributions
 route: attributions
 search: true
-meta: {}
+description: ''
 draft: false
 hidden: false
+meta: {}
 ---
-

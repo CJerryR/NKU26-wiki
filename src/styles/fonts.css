@@ -1,5 +1,5 @@
-@font-face{font-family:'Fraunces';src:url('/fonts/fraunces-variable.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap}
-@font-face{font-family:'Fraunces';src:url('/fonts/fraunces-italic.woff2') format('woff2');font-weight:100 900;font-style:italic;font-display:swap}
-@font-face{font-family:'Spline Sans';src:url('/fonts/spline-variable.woff2') format('woff2');font-weight:300 700;font-style:normal;font-display:swap}
-@font-face{font-family:'Space Mono';src:url('/fonts/spacemono-400.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:'Space Mono';src:url('/fonts/spacemono-700.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Fraunces';src:url('https://static.igem.wiki/teams/6303/wiki/v8-0/v8-7234ed860a9c-fraunces-variable.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap}
+@font-face{font-family:'Fraunces';src:url('https://static.igem.wiki/teams/6303/wiki/v8-0/v8-13cd664e0f8b-fraunces-italic.woff2') format('woff2');font-weight:100 900;font-style:italic;font-display:swap}
+@font-face{font-family:'Spline Sans';src:url('https://static.igem.wiki/teams/6303/wiki/v8-0/v8-64513365c2d8-spline-variable.woff2') format('woff2');font-weight:300 700;font-style:normal;font-display:swap}
+@font-face{font-family:'Space Mono';src:url('https://static.igem.wiki/teams/6303/wiki/v8-0/v8-fb4a81a2d0a8-spacemono-400.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Space Mono';src:url('https://static.igem.wiki/teams/6303/wiki/v8-0/v8-2d46bd159b53-spacemono-700.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
