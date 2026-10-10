@@ -22,6 +22,8 @@ npm run dev
 
 GitLab Pages 在 main 上执行 npm run build 和 npm run audit。空正文是阶段版允许的状态；构建错误、断链、缺失资源等仍会失败。npm run audit:publication 是独立的最终内容检查，空页将使它失败，但不阻止阶段版部署。不得为了通过检查伪造内容审核状态。
 
-首页和页面框架使用的图片、字体已改为官方 Uploads 中实际返回的 CDN 地址。构建后移除未使用的本地图片、字体、文档和演示音视频；组件演示仅保留在本地编辑模式。其他原始素材尚未迁移，后续使用前必须完成官方上传；音视频使用 Video Universe。
+首页和页面框架使用的图片、字体已改为官方 Uploads 中实际返回的 CDN 地址。构建后根据页面、CSS、脚本、组件参数和 viewer 的引用移除未使用资源；实际引用的文件、字体和组件依赖保留，不按扩展名或整个目录无条件删除。新增组件后仍须迁移其实际使用的素材到官方 CDN，依赖裁剪不代替托管验收。组件示例保持本地编辑模式。其他原始素材尚未迁移，后续使用前必须完成官方上传；音视频使用 Video Universe。
 
 保留官方 Git 历史和原始 LICENSE，页脚保留 CC BY 4.0、真实仓库链接和 AI 使用说明。科学文案、历史 AI 模型版本、具体审核者、完整素材署名及官方 Attributions Form 仍需团队完成。此版本是可访问的阶段网站，尚非最终内容验收。
+
+部署回归检查：`npm run test:deployment`。当前实际使用的 11 个 CDN 映射及验证记录见 `content/cdn-assets.json`。重新验证可运行 `python3 tools/verify-cdn-assets.py --progress <完整上传记录路径> --public public --manifest content/cdn-assets.json`；HTTP、构建引用和浏览器验证分开记录。

@@ -15,7 +15,8 @@
     "verify": "npm run build && npm run audit",
     "predev": "node tools/prepare-viewers.mjs",
     "predev:cloud": "node tools/prepare-viewers.mjs",
-    "prebuild": "node tools/prepare-viewers.mjs"
+    "prebuild": "node tools/prepare-viewers.mjs",
+    "test:deployment": "node --test tools/tests/assets.test.mjs && python3 -m unittest discover -s tools/tests -p \"test_*.py\""
   },
   "dependencies": {
     "@astrojs/markdown-remark": "^6.3.11",

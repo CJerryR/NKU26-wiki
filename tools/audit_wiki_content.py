@@ -21,16 +21,39 @@ import json
 import re
 import sys
 from pathlib import Path
+from urllib.parse import urlsplit
 
-EXTERNAL_RUNTIME_RE = re.compile(
-    r"<(?:script|img|iframe)\b[^>]*\bsrc=[\"']https?://(?!(?:[a-z0-9-]+\.)*igem\.(?:wiki|org)/)|<link\b[^>]*\bhref=[\"']https?://(?!(?:[a-z0-9-]+\.)*igem\.(?:wiki|org)/)",
+RUNTIME_URL_RE = re.compile(
+    r"<(?:script|img|iframe|video|audio|source)\b[^>]*?\bsrc=[\"']([^\"']+)[\"']|<link\b[^>]*?\bhref=[\"']([^\"']+)[\"']",
     re.I,
 )
-MD_EXTERNAL_RE = re.compile(r"!\[[^\]]*\]\(\s*<?https?://|\b(?:src|img)=[\"']https?://", re.I)
+MD_IMAGE_URL_RE = re.compile(r"!\[[^\]]*\]\(\s*<?([^\s)>]+)", re.I)
 RESOURCE_RE = re.compile(
     r"<(?P<tag>a|img|script|link)\b[^>]*\b(?:href|src)=[\"'](?P<value>[^\"']+)[\"']",
     re.I,
 )
+
+
+def is_external_runtime_url(value: str) -> bool:
+    value = html.unescape(value).strip()
+    if not value.lower().startswith(("http://", "https://", "//")):
+        return False
+    try:
+        parsed = urlsplit(value)
+        host = (parsed.hostname or "").lower()
+        return bool(parsed.username or parsed.password) or not any(
+            host == domain or host.endswith("." + domain)
+            for domain in ("igem.org", "igem.wiki")
+        )
+    except ValueError:
+        return True
+
+
+def has_external_runtime(source: str) -> bool:
+    return any(is_external_runtime_url(m.group(1) or m.group(2))
+               for m in RUNTIME_URL_RE.finditer(source)) or any(
+        is_external_runtime_url(m.group(1)) for m in MD_IMAGE_URL_RE.finditer(source)
+    )
 
 # Standard iGEM addresses for the pages in the team's outline (medal and
 # special-prize pages first). Optional outline pages are not required.
@@ -177,8 +200,8 @@ def audit_source(root: Path, path: Path, icons: set[str], failures: list[str], b
     dupes = sorted({i for i in ids if ids.count(i) > 1})
     if dupes:
         failures.append(f"{rel}: duplicate heading ids {dupes}")
-    if EXTERNAL_RUNTIME_RE.search(body) or MD_EXTERNAL_RE.search(body):
-        failures.append(f"{rel}: external runtime resource (images and scripts must be local)")
+    if has_external_runtime(body):
+        failures.append(f"{rel}: runtime resource hosted outside iGEM")
     sections = sum(1 for line in lines if re.match(r"^##\s", line))
     if not sections and not intentionally_empty:
         failures.append(f"{rel}: no sections (a page needs at least one '## ' heading)")
@@ -247,7 +270,7 @@ def audit_home(root: Path, page_ids: set[str], failures: list[str]) -> None:
             failures.append(f"src/data/home.json: link {key} points to missing page {link.get('source')}")
     body = re.sub(r"\{\{(?:HOME_URL:[a-z-]+|P)\}\}", "", body)
     check_text("homepage", body, failures)
-    if EXTERNAL_RUNTIME_RE.search(body):
+    if has_external_runtime(body):
         failures.append("homepage: external runtime resource")
 
 
@@ -263,7 +286,7 @@ def audit_generated(root: Path, failures: list[str], expected_count: int) -> Non
         for name, pattern in FORBIDDEN_PATTERNS:
             if pattern.search(source):
                 failures.append(f"{path}: generated {name}")
-        if EXTERNAL_RUNTIME_RE.search(source):
+        if has_external_runtime(source):
             failures.append(f"{path}: generated external runtime resource")
         if "creativecommons.org/licenses/by/4.0" not in source:
             failures.append(f"{path}: footer missing CC BY 4.0 link")

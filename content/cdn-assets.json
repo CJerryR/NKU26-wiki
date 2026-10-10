@@ -1,0 +1,215 @@
+{
+  "verified_at": "2026-10-10T17:37:05.616869+00:00",
+  "scope": "Recorded CDN assets referenced in the current build; HTTP checks do not certify licensing or human review.",
+  "assets": [
+    {
+      "path": "fonts/fraunces-italic.woff2",
+      "source_sha256": "13cd664e0f8bff7116e6aa798e59720e31ef389b682c76f4e813f4e7c7413bc3",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8-13cd664e0f8b-fraunces-italic.woff2",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-10T17:37:05.616869+00:00",
+        "status": 200,
+        "content_type": "font/woff2",
+        "content_length": "42372",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8-13cd664e0f8b-fraunces-italic.woff2"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "not-verified"
+      }
+    },
+    {
+      "path": "fonts/spacemono-700.woff2",
+      "source_sha256": "2d46bd159b53f55c41167a4f1540a074649464194fd1e416f5b4694a6c0f282c",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8-2d46bd159b53-spacemono-700.woff2",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-10T17:37:05.616869+00:00",
+        "status": 200,
+        "content_type": "font/woff2",
+        "content_length": "16724",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8-2d46bd159b53-spacemono-700.woff2"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "not-verified"
+      }
+    },
+    {
+      "path": "img/shell/nku-mark.svg",
+      "source_sha256": "3439b58a1e735866f32f33ba9d8776583faf094cdf3af0ce5fc0680da94a6c1b",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8-3439b58a1e73-nku-mark.svg",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-10T17:37:05.616869+00:00",
+        "status": 200,
+        "content_type": "image/svg+xml",
+        "content_length": "3993",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8-3439b58a1e73-nku-mark.svg"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "not-verified"
+      }
+    },
+    {
+      "path": "fonts/spline-variable.woff2",
+      "source_sha256": "64513365c2d82a4ba56470e830577247342ffbf54ed8dc8df011957db5d65a9e",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8-64513365c2d8-spline-variable.woff2",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-10T17:37:05.616869+00:00",
+        "status": 200,
+        "content_type": "font/woff2",
+        "content_length": "57984",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8-64513365c2d8-spline-variable.woff2"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "not-verified"
+      }
+    },
+    {
+      "path": "fonts/fraunces-variable.woff2",
+      "source_sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8-7234ed860a9c-fraunces-variable.woff2",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-10T17:37:05.616869+00:00",
+        "status": 200,
+        "content_type": "font/woff2",
+        "content_length": "67304",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8-7234ed860a9c-fraunces-variable.woff2"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "not-verified"
+      }
+    },
+    {
+      "path": "img/home/nematode-soil.svg",
+      "source_sha256": "7904b0e2ba3ce51dadfae9a776b59b18a28575fe330fe79e6f20c51aa2842e41",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8-7904b0e2ba3c-nematode-soil.svg",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-10T17:37:05.616869+00:00",
+        "status": 200,
+        "content_type": "image/svg+xml",
+        "content_length": "3881",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8-7904b0e2ba3c-nematode-soil.svg"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "not-verified"
+      }
+    },
+    {
+      "path": "img/home/mascot-lg.png",
+      "source_sha256": "7ef6f2e4ae30b2d026abbe41380e2e8f13c0509b4f5f9f7c87e75fd5ebd10ce2",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8-7ef6f2e4ae30-mascot-lg.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-10T17:37:05.616869+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "26063",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8-7ef6f2e4ae30-mascot-lg.avif"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "not-verified"
+      }
+    },
+    {
+      "path": "fonts/spacemono-400-italic.woff2",
+      "source_sha256": "a5fb49042e7305918585561ab5fbd587d708ce74b0f54b56751e2b1151922d19",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8-a5fb49042e73-spacemono-400-italic.woff2",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-10T17:37:05.616869+00:00",
+        "status": 200,
+        "content_type": "font/woff2",
+        "content_length": "18300",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8-a5fb49042e73-spacemono-400-italic.woff2"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "not-verified"
+      }
+    },
+    {
+      "path": "img/shell/nku-mark.png",
+      "source_sha256": "c1510390550cf647847a2b584df6031e8ae3a21cd83f4ca7c4c7be7ffd800985",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8-c1510390550c-nku-mark.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-10T17:37:05.616869+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "20484",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8-c1510390550c-nku-mark.avif"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "not-verified"
+      }
+    },
+    {
+      "path": "img/shell/detective.png",
+      "source_sha256": "ea3470efac8f9e43ab3aa56b5d265735c1ec664c63f717496b95d445f94f19d7",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8-ea3470efac8f-detective.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-10T17:37:05.616869+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "24747",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8-ea3470efac8f-detective.avif"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "not-verified"
+      }
+    },
+    {
+      "path": "fonts/spacemono-400.woff2",
+      "source_sha256": "fb4a81a2d0a893e5c38c394a7e716a1cef0b24610a0af49c96f6d529bd66bf2b",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8-fb4a81a2d0a8-spacemono-400.woff2",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-10T17:37:05.616869+00:00",
+        "status": 200,
+        "content_type": "font/woff2",
+        "content_length": "16520",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8-fb4a81a2d0a8-spacemono-400.woff2"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "not-verified"
+      }
+    }
+  ]
+}
