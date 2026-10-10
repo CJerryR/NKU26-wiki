@@ -3,7 +3,7 @@
 本仓库是 2026 年 NKU-China（队伍编号 6303）的官方 Wiki 源码。此版按团队要求先保存为阶段版本，后续继续补充内容。当前技术构建可通过，但**尚未通过正式提交内容检查**。
 
 - 官方仓库：https://gitlab.igem.org/2026/nku-china
-- 阶段分支：`codex/v8.0-stage`
+- 开发分支：`main`；版本进度通过连续 commit 记录。
 - 正式 Wiki：https://2026.igem.wiki/nku-china
 - 官方要求：https://teams.igem.org/6303/deliverables/wiki/requirements
 
@@ -29,7 +29,7 @@ Tina 本地编辑预览在 `http://127.0.0.1:3000`，编辑器端口为 4101。�
 
 ## GitLab 检查与发布
 
-阶段分支不部署正式 Wiki。本地构建生成 19 个页面并执行技术审计；iGEM 官方模板注明 Runner 只运行 `main` 分支，因此阶段分支不排队创建 CI 任务。默认分支的 Pages 发布从源码构建，并需通过 `audit:publication`。不得把 `public/`、`node_modules/`、令牌或本地环境变量提交到仓库。
+所有版本继续提交到 `main`，以 commit 历史记录每次修改。本地构建生成 19 个页面并执行技术审计；iGEM 官方模板注明 Runner 只运行 `main` 分支。Pages 从源码构建，并需通过 `audit:publication`；目前内容检查仍有阻塞，因此源码上传不表示正式 Wiki 已更新。不得把 `public/`、`node_modules/`、令牌或本地环境变量提交到仓库。
 
 本版替换官方 Flask 初始模板，使用 Astro 5 + Tina 的现有 v8.0 实现；保留官方 Git 历史和原始 `LICENSE`。页脚指向本队真实 GitLab 仓库并保留 CC BY 4.0 许可。
 
