@@ -29,7 +29,7 @@ Tina 本地编辑预览在 `http://127.0.0.1:3000`，编辑器端口为 4101。�
 
 ## GitLab 检查与发布
 
-阶段分支的流水线从源码构建 19 个页面并执行技术审计，不部署正式 Wiki。默认分支的 Pages 发布另需通过 `audit:publication`。不得把 `public/`、`node_modules/`、令牌或本地环境变量提交到仓库。
+阶段分支不部署正式 Wiki。本地构建生成 19 个页面并执行技术审计；iGEM 官方模板注明 Runner 只运行 `main` 分支，因此阶段分支不排队创建 CI 任务。默认分支的 Pages 发布从源码构建，并需通过 `audit:publication`。不得把 `public/`、`node_modules/`、令牌或本地环境变量提交到仓库。
 
 本版替换官方 Flask 初始模板，使用 Astro 5 + Tina 的现有 v8.0 实现；保留官方 Git 历史和原始 `LICENSE`。页脚指向本队真实 GitLab 仓库并保留 CC BY 4.0 许可。
 

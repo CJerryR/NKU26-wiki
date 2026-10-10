@@ -24,15 +24,11 @@ variables:
       - public
     expire_in: 7 days
 
-verify:
-  extends: .wiki-build
-  rules:
-    - if: $CI_COMMIT_BRANCH && $CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH
-
 pages:
   extends: .wiki-build
   script:
     - npm run build
     - npm run audit:publication
   rules:
+    # iGEM's official template states that runners only run on main.
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
