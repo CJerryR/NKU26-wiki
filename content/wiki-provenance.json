@@ -1,62 +1,88 @@
 {
-  "reviewed_at": "2026-10-09",
+  "reviewed_at": "2026-10-11",
   "timezone": "Asia/Shanghai",
-  "basis": "User confirmed no team final inner-page copy has been supplied; local source and historical material review.",
-  "note": "All inner-page bodies cleared for the stage release at the team owner’s request. Original local v8.0 content is preserved for later editing. Empty pages do not imply final content approval.",
+  "basis": "Supplied Word/PDF and Feishu Markdown snapshots; user approved local integration Gate1.",
+  "note": "Gate1 approves this content integration scope, not scientific verification or final publication. Missing material is tracked separately.",
   "pages": [
     {
       "slug": "attributions",
-      "status": "empty-awaiting-team-copy",
-      "team_copy_received": false,
-      "team_review_approved": false
+      "status": "team-material-integrated-awaiting-final-review",
+      "team_copy_received": true,
+      "team_review_approved": false,
+      "integration_gate1_approved": true,
+      "sources": [
+        "outputs/v8.0/已收材料-2026-10-09/attributions+收稿快照__2026-10-02_1748/原稿/Attributions（Wet Lab）.docx",
+        "outputs/v8.0/已收材料-2026-10-09/project-teams+干实验微信旧稿快照__日期未显示/原稿/Teams/Drylab Wiki｜Teams.pdf"
+      ]
     },
     {
       "slug": "contribution",
-      "status": "empty-awaiting-team-copy",
-      "team_copy_received": false,
-      "team_review_approved": false
+      "status": "team-material-integrated-awaiting-final-review",
+      "team_copy_received": true,
+      "team_review_approved": false,
+      "integration_gate1_approved": true,
+      "sources": [
+        "outputs/v8.0/已收材料-2026-10-09/contribution+收稿快照__2026-10-07_1934/原稿/Contribution 英文版.docx",
+        "outputs/v8.0/已收材料-2026-10-09/contribution+收稿快照__2026-10-07_1934/原稿/附件/Troubleshooting & Lessons Learned.pdf",
+        "outputs/v8.0/已收材料-2026-10-09/project-model+干实验飞书迭代快照__2026-10-10/Project｜en.md"
+      ]
     },
     {
       "slug": "description",
-      "status": "empty-awaiting-team-copy",
-      "team_copy_received": false,
-      "team_review_approved": false
+      "status": "team-material-integrated-awaiting-final-review",
+      "team_copy_received": true,
+      "team_review_approved": false,
+      "integration_gate1_approved": true
     },
     {
       "slug": "education",
-      "status": "empty-awaiting-team-copy",
+      "status": "ai-draft-awaiting-team-copy",
       "team_copy_received": false,
       "team_review_approved": false
     },
     {
       "slug": "engineering",
-      "status": "empty-awaiting-team-copy",
-      "team_copy_received": false,
-      "team_review_approved": false
+      "status": "team-material-integrated-awaiting-final-review",
+      "team_copy_received": true,
+      "team_review_approved": false,
+      "integration_gate1_approved": true,
+      "sources": [
+        "outputs/v8.0/已收材料-2026-10-09/engineering+稿件3.0__2026-10-08_0124/原稿/Engineering 英文版3.0.docx",
+        "outputs/v8.0/已收材料-2026-10-09/project-model+干实验飞书迭代快照__2026-10-10/Project｜en.md"
+      ]
     },
     {
       "slug": "experiments",
-      "status": "empty-awaiting-team-copy",
-      "team_copy_received": false,
-      "team_review_approved": false
+      "status": "team-material-integrated-awaiting-final-review",
+      "team_copy_received": true,
+      "team_review_approved": false,
+      "integration_gate1_approved": true,
+      "sources": [
+        "outputs/v8.0/已收材料-2026-10-09/experiments+收稿快照__2026-10-07_1931/原稿/Experiments-英文版.docx"
+      ]
     },
     {
       "slug": "human-practices",
-      "status": "empty-awaiting-team-copy",
+      "status": "ai-draft-awaiting-team-copy",
       "team_copy_received": false,
       "team_review_approved": false
     },
     {
       "slug": "licensing",
-      "status": "empty-awaiting-team-copy",
+      "status": "ai-draft-awaiting-team-copy",
       "team_copy_received": false,
       "team_review_approved": false
     },
     {
       "slug": "members",
-      "status": "empty-awaiting-team-copy",
-      "team_copy_received": false,
-      "team_review_approved": false
+      "status": "team-material-integrated-awaiting-final-review",
+      "team_copy_received": true,
+      "team_review_approved": false,
+      "integration_gate1_approved": true,
+      "sources": [
+        "outputs/v8.0/已收材料-2026-10-09/members+收稿快照__2026-10-07_1806/原稿/Team members(Wet Lab).docx",
+        "outputs/v8.0/已收材料-2026-10-09/project-teams+干实验微信旧稿快照__日期未显示/原稿/Teams/Drylab Wiki｜Teams.pdf"
+      ]
     },
     {
       "slug": "model-1",
@@ -72,40 +98,86 @@
     },
     {
       "slug": "model",
-      "status": "empty-awaiting-team-copy",
-      "team_copy_received": false,
-      "team_review_approved": false
+      "status": "team-material-integrated-awaiting-final-review",
+      "team_copy_received": true,
+      "team_review_approved": false,
+      "integration_gate1_approved": true,
+      "sources": [
+        "outputs/v8.0/已收材料-2026-10-09/project-model+干实验飞书迭代快照__2026-10-10/Model｜en.md",
+        "outputs/v8.0/已收材料-2026-10-09/project-model+干实验飞书迭代快照__2026-10-10/Project｜en.md"
+      ]
     },
     {
       "slug": "part-collection",
-      "status": "empty-awaiting-team-copy",
-      "team_copy_received": false,
-      "team_review_approved": false
+      "status": "team-material-integrated-awaiting-final-review",
+      "team_copy_received": true,
+      "team_review_approved": false,
+      "integration_gate1_approved": true,
+      "sources": [
+        "outputs/v8.0/已收材料-2026-10-09/part-collection+收稿快照__2026-10-08_0043/原稿/Part Collection 英文.docx"
+      ]
     },
     {
       "slug": "parts",
-      "status": "empty-awaiting-team-copy",
-      "team_copy_received": false,
-      "team_review_approved": false
+      "status": "team-material-integrated-awaiting-final-review",
+      "team_copy_received": true,
+      "team_review_approved": false,
+      "integration_gate1_approved": true,
+      "sources": [
+        "outputs/v8.0/已收材料-2026-10-09/part-collection+收稿快照__2026-10-08_0043/原稿/Part Collection 英文.docx"
+      ]
     },
     {
       "slug": "protocols",
-      "status": "empty-awaiting-team-copy",
-      "team_copy_received": false,
-      "team_review_approved": false
+      "status": "team-material-integrated-awaiting-final-review",
+      "team_copy_received": true,
+      "team_review_approved": false,
+      "integration_gate1_approved": true,
+      "sources": [
+        "outputs/v8.0/已收材料-2026-10-09/experiments+收稿快照__2026-10-07_1931/原稿/Experiments-英文版.docx",
+        "outputs/v8.0/已收材料-2026-10-09/experiments+收稿快照__2026-10-07_1931/原稿/附件/1.PCR Amplification.pdf",
+        "outputs/v8.0/已收材料-2026-10-09/experiments+收稿快照__2026-10-07_1931/原稿/附件/10.Restriction Enzyme Digestion Reaction.pdf",
+        "outputs/v8.0/已收材料-2026-10-09/experiments+收稿快照__2026-10-07_1931/原稿/附件/11.Preparation of Common Antibiotics and Culture Media.pdf",
+        "outputs/v8.0/已收材料-2026-10-09/experiments+收稿快照__2026-10-07_1931/原稿/附件/12.Preservation and Recovery of Glycerol Stocks.pdf",
+        "outputs/v8.0/已收材料-2026-10-09/experiments+收稿快照__2026-10-07_1931/原稿/附件/13.Extraction of Yeast Genomic DNA.pdf",
+        "outputs/v8.0/已收材料-2026-10-09/experiments+收稿快照__2026-10-07_1931/原稿/附件/14.Observation of Fluorescent Molecules Using Fluores.pdf",
+        "outputs/v8.0/已收材料-2026-10-09/experiments+收稿快照__2026-10-07_1931/原稿/附件/15.Preparation of Viable Yeast Detection Test Strips via Lyophilization.pdf",
+        "outputs/v8.0/已收材料-2026-10-09/experiments+收稿快照__2026-10-07_1931/原稿/附件/16.Multi-Fragment and Vector Assembly 2.0.pdf",
+        "outputs/v8.0/已收材料-2026-10-09/experiments+收稿快照__2026-10-07_1931/原稿/附件/2.DNA Recovery.pdf",
+        "outputs/v8.0/已收材料-2026-10-09/experiments+收稿快照__2026-10-07_1931/原稿/附件/3.Plasmid DNA Extraction.pdf",
+        "outputs/v8.0/已收材料-2026-10-09/experiments+收稿快照__2026-10-07_1931/原稿/附件/4.Double-Joint PCR.pdf",
+        "outputs/v8.0/已收材料-2026-10-09/experiments+收稿快照__2026-10-07_1931/原稿/附件/5.Multi-Fragment and Vector Seamless Assembly.pdf",
+        "outputs/v8.0/已收材料-2026-10-09/experiments+收稿快照__2026-10-07_1931/原稿/附件/6.Chemical Transformation of Trans5α Chemically Competent Cells.pdf",
+        "outputs/v8.0/已收材料-2026-10-09/experiments+收稿快照__2026-10-07_1931/原稿/附件/7.Yeast Transformation.pdf",
+        "outputs/v8.0/已收材料-2026-10-09/experiments+收稿快照__2026-10-07_1931/原稿/附件/8.Agarose Gel Electrophoresis.pdf",
+        "outputs/v8.0/已收材料-2026-10-09/experiments+收稿快照__2026-10-07_1931/原稿/附件/9.Colony PCR Amplification.pdf"
+      ]
     },
     {
       "slug": "results",
-      "status": "empty-awaiting-team-copy",
+      "status": "team-material-integrated-awaiting-final-review",
+      "team_copy_received": true,
+      "team_review_approved": false,
+      "integration_gate1_approved": true,
+      "sources": [
+        "outputs/v8.0/已收材料-2026-10-09/results+收稿快照__2026-10-09_1616/原稿/Results 英文.docx"
+      ]
+    },
+    {
+      "slug": "safety",
+      "status": "ai-draft-awaiting-team-copy",
       "team_copy_received": false,
       "team_review_approved": false
     },
     {
-      "slug": "safety",
-      "status": "empty-awaiting-team-copy",
-      "team_copy_received": false,
-      "team_review_approved": false
+      "slug": "background",
+      "status": "team-material-integrated-awaiting-final-review",
+      "team_copy_received": true,
+      "team_review_approved": false,
+      "integration_gate1_approved": true,
+      "sources": [
+        "outputs/v8.0/已收材料-2026-10-09/project-model+干实验飞书迭代快照__2026-10-10/Project｜en.md"
+      ]
     }
-  ],
-  "updated_at": "2026-10-11"
+  ]
 }

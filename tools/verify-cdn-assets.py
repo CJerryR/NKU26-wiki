@@ -3,6 +3,7 @@
 import argparse
 import concurrent.futures
 import datetime
+import html
 import json
 from pathlib import Path
 import re
@@ -37,7 +38,7 @@ def main():
     used = set()
     for file in args.public.rglob('*'):
         if file.is_file() and file.suffix in ('.html', '.css', '.js', '.mjs', '.json'):
-            used.update(re.findall(r'''https://static\.igem\.wiki/[^"'\s<>);]+''', file.read_text()))
+            used.update(re.findall(r'''https://static\.igem\.wiki/[^"'\s<>);]+''', html.unescape(file.read_text())))
     now = datetime.datetime.now(datetime.timezone.utc).isoformat()
     failures = []
     with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool:

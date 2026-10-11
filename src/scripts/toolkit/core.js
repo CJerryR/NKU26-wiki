@@ -305,13 +305,13 @@ export async function copyText(text) {
   }
 }
 /** Button that copies and briefly confirms. */
-export function copyButton(getText, label = '复制', cls = 'btn btn--quiet') {
+export function copyButton(getText, label = 'Copy', cls = 'btn btn--quiet') {
   const b = button(label, { icon: 'copy', cls });
   const text = b.querySelector('span');
   let timer;
   b.addEventListener('click', async () => {
     const ok = await copyText(typeof getText === 'function' ? getText() : getText);
-    if (text) text.textContent = ok ? '已复制' : '复制失败，请手动选择';
+    if (text) text.textContent = ok ? 'Copied' : 'Copy failed; select the text manually';
     clearTimeout(timer); timer = setTimeout(() => { if (text) text.textContent = label; }, 1800);
   });
   return b;

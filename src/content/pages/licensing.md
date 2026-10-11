@@ -7,8 +7,7 @@ crumbs:
   - Licensing and AI Use
 route: licensing
 search: true
-description: ''
+meta: {}
 draft: false
 hidden: false
-meta: {}
 ---

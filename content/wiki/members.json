@@ -2,15 +2,251 @@
   "title": "Members",
   "heading": "Members",
   "sub": "",
+  "description": "",
+  "route": "team",
   "crumbs": [
     "Team",
     "Members"
   ],
-  "route": "team",
   "meta": [],
   "search": true,
-  "blocks": [],
-  "description": "",
-  "draft": false,
-  "hidden": false
+  "blocks": [
+    {
+      "text": "Wet Lab",
+      "level": 2,
+      "attributes": "#wet-lab toc=\"Wet Lab\"",
+      "_template": "heading"
+    },
+    {
+      "text": "Fu Xinya",
+      "level": 3,
+      "attributes": "#fu-xinya toc=\"Fu Xinya\"",
+      "_template": "heading"
+    },
+    {
+      "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-8fa16e16e7a4-fu-xinya.avif",
+      "alt": "Fu Xinya",
+      "body": "",
+      "layout": "left",
+      "imageWidth": "narrow",
+      "accompanyingBody": "Major: Biological Sciences, Class of 2028\n\nRole: Wet Lab / Parts / Design / Project Management\n\nHello everyone, nice to meet you. I hope this page gives you a glimpse of who I am.\n",
+      "_template": "image"
+    },
+    {
+      "text": "Chen Feiyue",
+      "level": 3,
+      "attributes": "#chen-feiyue toc=\"Chen Feiyue\"",
+      "_template": "heading"
+    },
+    {
+      "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-e8eae705159b-chen-feiyue.avif",
+      "alt": "Chen Feiyue",
+      "body": "",
+      "layout": "left",
+      "imageWidth": "narrow",
+      "accompanyingBody": "Major: Biological Sciences, Class of 2028\n\nRole: Wet Lab / Dry Lab / Parts / Design / Project Management / Software\n\nI am a junior majoring in Biological Sciences. My main work focuses on wet-lab experiments.\n",
+      "_template": "image"
+    },
+    {
+      "text": "Kuang Yinzi",
+      "level": 3,
+      "attributes": "#kuang-yinzi toc=\"Kuang Yinzi\"",
+      "_template": "heading"
+    },
+    {
+      "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-73eaaceee28d-kuang-yinzi.avif",
+      "alt": "Kuang Yinzi",
+      "body": "",
+      "layout": "left",
+      "imageWidth": "narrow",
+      "accompanyingBody": "Major: Biological Sciences, Class of 2029\n\nRole: Wet lab  / Parts\n\nI am interested in synthetic biology and responsible for the wet-lab group’s work.\n",
+      "_template": "image"
+    },
+    {
+      "text": "Wang Qinghua",
+      "level": 3,
+      "attributes": "#wang-qinghua toc=\"Wang Qinghua\"",
+      "_template": "heading"
+    },
+    {
+      "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-08d95b754ff3-wang-qinghua.avif",
+      "alt": "Wang Qinghua",
+      "body": "",
+      "layout": "left",
+      "imageWidth": "narrow",
+      "accompanyingBody": "Major: Biological Sciences, Class of 2028\n\nRole: Wet lab / Fundraising\n\nObsessed with exploring the beauty of life, with a wild heart and endless curiosity about life.\n",
+      "_template": "image"
+    },
+    {
+      "text": "Huang Xinqi",
+      "level": 3,
+      "attributes": "#huang-xinqi toc=\"Huang Xinqi\"",
+      "_template": "heading"
+    },
+    {
+      "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-f0001fee5950-huang-xinqi.avif",
+      "alt": "Huang Xinqi",
+      "body": "",
+      "layout": "left",
+      "imageWidth": "narrow",
+      "accompanyingBody": "Major: Biological Sciences, Class of 2028\n\nRole: Wet Lab / Dry Lab\n\nGrateful for this encounter.\n",
+      "_template": "image"
+    },
+    {
+      "text": "Ivy Liu",
+      "level": 3,
+      "attributes": "#ivy-liu toc=\"Ivy Liu\"",
+      "_template": "heading"
+    },
+    {
+      "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-120e8273aa67-ivy-liu.avif",
+      "alt": "Ivy Liu",
+      "body": "",
+      "layout": "left",
+      "imageWidth": "narrow",
+      "accompanyingBody": "Major: Biological Sciences, Class of 2028\n\nRole: Wet lab\n\na person who loves sports and travelling .Nice to meet you all！\n",
+      "_template": "image"
+    },
+    {
+      "text": "Shizhao Zheng",
+      "level": 3,
+      "attributes": "#shizhao-zheng toc=\"Shizhao Zheng\"",
+      "_template": "heading"
+    },
+    {
+      "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-001ba276229e-shizhao-zheng.avif",
+      "alt": "Shizhao Zheng",
+      "body": "",
+      "layout": "left",
+      "imageWidth": "narrow",
+      "accompanyingBody": "Major: Biological Sciences (Boling Class), Class of 2028\n\nRole: Wet La / Education\n\nHi there! I'm a person with wide-ranging interests and I often come up with spontaneous insights and creative ideas. I'm delighted to apply many of these ideas to practical innovation and services.\n",
+      "_template": "image"
+    },
+    {
+      "text": "Yuanwen Luo",
+      "level": 3,
+      "attributes": "#yuanwen-luo toc=\"Yuanwen Luo\"",
+      "_template": "heading"
+    },
+    {
+      "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-270ecf6f2522-yuanwen-luo.avif",
+      "alt": "Yuanwen Luo",
+      "body": "",
+      "layout": "left",
+      "imageWidth": "narrow",
+      "accompanyingBody": "Major: Biological Sciences (Boling Class), Class of 2028\n\nRole: Wet Lab / Education\n\nHi, I’m Yuanwen Luo. I’m a curious person who enjoys learning new things and meeting new people.\n",
+      "_template": "image"
+    },
+    {
+      "text": "Chang Wang",
+      "level": 3,
+      "attributes": "#chang-wang toc=\"Chang Wang\"",
+      "_template": "heading"
+    },
+    {
+      "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-322c60bc159e-chang-wang.avif",
+      "alt": "Chang Wang",
+      "body": "",
+      "layout": "left",
+      "imageWidth": "narrow",
+      "accompanyingBody": "Major: Biological Sciences (Boling Class), Class of 2028\n\nRole: Wet Lab / Human Practice\n\nThis is Chang Wang. He says hello and had no clue what to put down here, btw Hexapoda is coooool！\n",
+      "_template": "image"
+    },
+    {
+      "text": "Ziyi Peng",
+      "level": 3,
+      "attributes": "#ziyi-peng toc=\"Ziyi Peng\"",
+      "_template": "heading"
+    },
+    {
+      "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-491794815e37-ziyi-peng.avif",
+      "alt": "Ziyi Peng",
+      "body": "",
+      "layout": "left",
+      "imageWidth": "narrow",
+      "accompanyingBody": "Major: Biological Sciences (Boling Class), Class of 2028\n\nRole: Wet Lab\n\nHello, I'm Ziyi Peng, a 2024 Biological Sciences Boling Class student at Nankai University's College of Life Sciences. Passionate about biology, I'm excited to join this international competition and connect with fellow science enthusiasts!\n",
+      "_template": "image"
+    },
+    {
+      "text": "Dry Lab",
+      "level": 2,
+      "attributes": "#dry-lab toc=\"Dry Lab\"",
+      "_template": "heading"
+    },
+    {
+      "text": "Ruoxi Yang｜Student Leader",
+      "level": 3,
+      "attributes": "#ruoxi-yang-student-leader toc=\"Ruoxi Yang｜Student Leader\"",
+      "_template": "heading"
+    },
+    {
+      "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-5667764dc7f7-ruoxi-yang.avif",
+      "alt": "Ruoxi Yang",
+      "body": "",
+      "layout": "left",
+      "imageWidth": "narrow",
+      "accompanyingBody": "Hi, I’m Ruoxi! I mainly work on dry lab, and as team leader, I also help  connect people, coordinate our work, and keep things moving. Outside  iGEM, I’m an art, music, and film lover. I also have an interest in astrology  and occasionally spend time studying lyrics and horoscopes.\n",
+      "_template": "image"
+    },
+    {
+      "text": "Zhanning Zhang｜Advisor",
+      "level": 3,
+      "attributes": "#zhanning-zhang-advisor toc=\"Zhanning Zhang｜Advisor\"",
+      "_template": "heading"
+    },
+    {
+      "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-ddac5d034258-zhanning-zhang.avif",
+      "alt": "Zhanning Zhang",
+      "body": "",
+      "layout": "left",
+      "imageWidth": "narrow",
+      "accompanyingBody": "As a master's student at Nankai University focusing on multiomics and  scientific foundation models, Roy Zhang helps shape the team's dry lab  strategy. He designs and screens protein candidates, runs molecular  simulations, and translates computational findings into experimental  priorities. Returning to iGEM, he brings experience in omics analysis and  model training to support the design of the team's yeast biosensor.\n",
+      "_template": "image"
+    },
+    {
+      "text": "Zhiyuan Guan｜Student",
+      "level": 3,
+      "attributes": "#zhiyuan-guan-student toc=\"Zhiyuan Guan｜Student\"",
+      "_template": "heading"
+    },
+    {
+      "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-7db5eeb70e57-zhiyuan-guan.avif",
+      "alt": "Zhiyuan Guan",
+      "body": "",
+      "layout": "left",
+      "imageWidth": "narrow",
+      "accompanyingBody": "English Name： Zhiyuan Guan  Major: Biological Science  Grade: Undergraduates, Class of 2024  Main Responsibility：Dry Lab Modeling，Software, Project Management  Motto: Stay hungry, stay foolish.\n",
+      "_template": "image"
+    },
+    {
+      "text": "Shulan Ye｜Student",
+      "level": 3,
+      "attributes": "#shulan-ye-student toc=\"Shulan Ye｜Student\"",
+      "_template": "heading"
+    },
+    {
+      "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-0f149e57e32b-shulan-ye.avif",
+      "alt": "Shulan Ye",
+      "body": "",
+      "layout": "left",
+      "imageWidth": "narrow",
+      "accompanyingBody": "Osanna  Team Members Dry Lab Software  Life is full of challenges and fun！\n",
+      "_template": "image"
+    },
+    {
+      "text": "Yanmei Song｜Student",
+      "level": 3,
+      "attributes": "#yanmei-song-student toc=\"Yanmei Song｜Student\"",
+      "_template": "heading"
+    },
+    {
+      "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-456cf76f9557-yanmei-song.avif",
+      "alt": "Yanmei Song",
+      "body": "",
+      "layout": "left",
+      "imageWidth": "narrow",
+      "accompanyingBody": "Song Yanmei  biological scienceclass: 2024  Dry Lab  I am Song Yanmei from Nankai University, focusing on the design and  improvement of economic modeling.  Song Yanmei, a dry lab enthusiast majoring in Biological Sciences. She has  a knack for designing and improving economic modeling, bridging the gap  between biology and economics. When not tweaking computational  models, you'll find her watching sci-fi movies. She dreams of making a real- world impact through iGEM.\n",
+      "_template": "image"
+    }
+  ]
 }

@@ -20,7 +20,7 @@ export function renderTable(target, headers, rows, { name = 'data', pageSize = 2
   const numeric = headers.map((_, k) => isNumericColumn(rows, k));
   let sort = -1; let asc = true; let page = 0; let query = '';
   const status = h('span', { class: 'muted small', 'aria-live': 'polite' });
-  const box = searchBox('筛选表格', (v) => { query = v; page = 0; draw(); });
+  const box = searchBox('Filter table', (v) => { query = v; page = 0; draw(); });
   const tbody = h('tbody');
   const ths = headers.map((label, k) => {
     const b = h('button', { type: 'button', class: 'dt__sort' }, h('span', { text: label }), icon('down', 'i dt__arrow'));
@@ -28,12 +28,12 @@ export function renderTable(target, headers, rows, { name = 'data', pageSize = 2
     b.addEventListener('click', () => { asc = sort === k ? !asc : true; sort = k; page = 0; draw(); });
     return th;
   });
-  const prev = button('', { cls: 'btn btn--icon', icon: 'left', title: '上一页', onClick: () => { page--; draw(); } });
-  const next = button('', { cls: 'btn btn--icon', icon: 'right', title: '下一页', onClick: () => { page++; draw(); } });
+  const prev = button('', { cls: 'btn btn--icon', icon: 'left', title: 'Previous page', onClick: () => { page--; draw(); } });
+  const next = button('', { cls: 'btn btn--icon', icon: 'right', title: 'Next page', onClick: () => { page++; draw(); } });
   const pageText = h('span', { class: 'muted small' });
   const pager = h('div', { class: 'dt__pager' }, prev, pageText, next);
   let current = rows;
-  const exportCsv = button('下载 CSV', { cls: 'btn btn--quiet', icon: 'download', onClick: () => saveBlob(new Blob([`\uFEFF${toCSV(headers, current)}`], { type: 'text/csv;charset=utf-8' }), `${name}.csv`) });
+  const exportCsv = button('Download CSV', { cls: 'btn btn--quiet', icon: 'download', onClick: () => saveBlob(new Blob([`\uFEFF${toCSV(headers, current)}`], { type: 'text/csv;charset=utf-8' }), `${name}.csv`) });
   function draw() {
     const q = query.trim().toLowerCase();
     let result = q ? rows.filter((r) => r.join(' ').toLowerCase().includes(q)) : rows;
@@ -49,14 +49,14 @@ export function renderTable(target, headers, rows, { name = 'data', pageSize = 2
     const pages = Math.max(1, Math.ceil(result.length / pageSize));
     page = Math.max(0, Math.min(page, pages - 1));
     swap(tbody, ...result.slice(page * pageSize, page * pageSize + pageSize).map((r) => h('tr', null, r.map((v, k) => h('td', { class: numeric[k] ? 'num' : '' }, cell(v))))));
-    if (!result.length) tbody.append(h('tr', null, h('td', { colspan: headers.length, class: 'dt__none', text: '没有匹配的行。' })));
-    status.textContent = q ? `${result.length} / ${rows.length} 行` : `${rows.length} 行`;
-    pageText.textContent = `第 ${page + 1} / ${pages} 页`;
+    if (!result.length) tbody.append(h('tr', null, h('td', { colspan: headers.length, class: 'dt__none', text: 'No matching rows.' })));
+    status.textContent = q ? `${result.length} / ${rows.length} rows` : `${rows.length} rows`;
+    pageText.textContent = `Page ${page + 1} / ${pages}`;
     prev.disabled = page === 0; next.disabled = page >= pages - 1;
     pager.hidden = pages < 2;
   }
   target.append(h('div', { class: 'toolbar' }, box.el, status, h('span', { class: 'grow' }), exportCsv),
-    h('div', { class: 'dt__scroll', tabindex: '0', role: 'region', 'aria-label': '数据表（可横向滚动）' }, h('table', { class: 'dt' }, h('thead', null, h('tr', null, ths)), tbody)),
+    h('div', { class: 'dt__scroll', tabindex: '0', role: 'region', 'aria-label': 'Data table (scroll horizontally)' }, h('table', { class: 'dt' }, h('thead', null, h('tr', null, ths)), tbody)),
     pager);
   draw();
 }
@@ -479,8 +479,8 @@ async function equation(d, ctx) {
   const katex = await loadKatex();
   if (!active()) return;
   const math = h('div', { class: 'eq__math' });
-  katex.render(d.latex, math, { displayMode: true, throwOnError: true, trust: false, strict: 'warn', maxExpand: 500, maxSize: 20 });
-  tools.append(copyButton(d.latex, '复制 LaTeX', 'btn btn--quiet'));
+  katex.render(d.latex.replace(/(?<!\\)#/g, '\\#'), math, { displayMode: true, throwOnError: true, trust: false, strict: 'warn', maxExpand: 500, maxSize: 20 });
+  tools.append(copyButton(d.latex, 'Copy LaTeX', 'btn btn--quiet'));
   body.append(h('div', { class: 'eq' }, h('div', { class: 'eq__scroll', tabindex: '0' }, math), has(d.label) ? h('span', { class: 'eq__label', text: d.label }) : null));
 }
 

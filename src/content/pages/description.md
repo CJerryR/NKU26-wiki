@@ -2,13 +2,144 @@
 title: Description
 heading: Description
 sub: ''
+description: ''
+route: description
 crumbs:
   - Project
   - Description
-route: description
 search: true
-description: ''
+meta: {}
 draft: false
 hidden: false
-meta: {}
 ---
+## Background {#background toc="Background"}
+
+### Silent Killers Underground: The Urgent Threat of Plant-Parasitic Nematodes {#11-silent-killers-underground-the-urgent-threat-of-plant-parasitic-nematodes toc="Plant-Parasitic Nematodes"}
+
+Plant-parasitic nematodes are among the most destructive pathogens in global agricultural production. Widely distributed in cultivated soils, they parasitize plant roots, disrupt nutrient uptake pathways and trigger secondary diseases, posing severe threats to crop yield and quality. Statistically, plant-parasitic nematodes cause up to 157 billion dollars in annual crop losses worldwide across more than 20 major cash crops\[1]. Among them, sedentary endoparasitic nematodes represent the most harmful group due to their unique parasitic lifestyle, strong dispersal capacity and difficult control\[2]. As two representative species, Heterodera glycines and Meloidogyne incognita exhibit typical taxonomic and biological features. They continuously endanger the production of globally critical crops and serve as core model organisms for research on soil nematode management (Figure 1).
+
+:::figure
+
+![Figure 1. Symptoms of two major plant-parasitic nematodes on soybean roots. (a) Meloidogyne incognita: obvious root galls formed on infected soybean roots. (b) Heterodera glycines: white lemon-shaped mature females protruding from soybean roots (arrows). Note that soybean cyst nematode does not form root galls.](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-a69f0a5adee6-fig1.avif)
+
+Figure 1. Symptoms of two major plant-parasitic nematodes on soybean roots. (a) Meloidogyne incognita: obvious root galls formed on infected soybean roots. (b) Heterodera glycines: white lemon-shaped mature females protruding from soybean roots (arrows). Note that soybean cyst nematode does not form root galls. Source: Management of Plant-Parasitic Nematodes in Florida Soybean Production (NG018), UF/IFAS EDIS. Used for educational demonstration only.
+
+:::
+
+Plant-parasitic nematodes of these two species exert substantial economic and ecological impacts. Heterodera glycines specifically parasitizes legumes such as soybean and common bean. After second-stage juveniles (J2) invade host roots, they secrete effectors to induce syncytial feeding sites, which leads to root lignification, stunting and chlorosis of plants. In heavily infested fields, soybean yield losses can reach 30%–80% or even total crop failure. The cysts of this nematode can remain dormant in soil for more than 10 years, serving as persistent primary inoculum sources that are hard to eradicate, making it the most devastating disease in major soybean-producing regions worldwide\[3].
+
+As a polyphagous sedentary endoparasitic nematode, Meloidogyne incognita infects over 3000 plant species including vegetables, grain and cash crops such as tomato, cucumber, cotton and maize\[4]. Losses caused by this nematode are especially severe in protected agriculture due to continuous cropping obstacles. Notably, M. incognita secretes secondary metabolites such as 6-methoxybenzoxazolin-2-one to modulate the rhizosphere microbiome, improving its host-finding capacity and further expanding its damage range\[5].
+
+Co-infection by these two nematodes elevates the risk of complex soil-borne disease outbreaks and creates a “dual stress” on crop production. Therefore, systematic identification of detection and control targets for the two nematodes will not only enrich nematode management tools, but also provide universal strategies for eco-friendly control of nematode diseases in global agriculture.
+
+### Control Dilemma: The Critical Weakness of Current Nematode Control Systems {#control-dilemma toc="Control Dilemma"}
+
+Current major management strategies for nematode diseases include chemical fumigation, non-fumigant nematicides, novel nematicides, biological control, resistant cultivar breeding, and crop rotation. To maximize the efficacy of these control approaches while lowering their environmental risks, multiple detection technologies for plant-parasitic nematodes have been developed\[6]. Nevertheless, these methods generally suffer from delayed detection, high cost, poor portability, and heavy reliance on professional operators (Table 1).
+
+| Method                        | Cost     | Early-Warning Capacity | Portability | Professional Dependence |
+| ----------------------------- | -------- | ---------------------- | ----------- | ----------------------- |
+| Morphological Methods         | low      | poor                   | moderate    | high                    |
+| Biochemical Methods           | moderate | poor                   | low         | high                    |
+| PCR / qPCR                    | high     | poor                   | low         | high                    |
+| NGS and Metabarcoding         | high     | poor                   | low         | high                    |
+| LAMP / RPA                    | moderate | poor                   | high        | high                    |
+| Conventional Image Processing | moderate | poor                   | moderate    | high                    |
+| Deep Learning / CNN           | high     | poor                   | moderate    | high                    |
+| Hyperspectral Imaging         | high     | poor                   | low         | high                    |
+| Remote Sensing                | high     | poor                   | low         | high                    |
+
+Table 1. Comparison of detection methods for plant-parasitic nematodes
+
+### Dawn Breaks: Nematophagous Fungi Fuel Innovation in Nematode Detection {#nematophagous-fungi toc="Nematophagous Fungi"}
+
+Previous studies revealed that ascaroside #18 (ascr#18) acts as the dominant ascaroside across multiple genera of plant-parasitic nematodes (Figure 2). In contrast, larvae of free-living nematodes such as Caenorhabditis elegans mainly produce ascaroside #3 (ascr#3) and ascaroside #5 (ascr#5) (Figure 3)\[7].
+
+:::figure
+
+![Figure 2. Ascaroside profiles in plant-parasitic nematodes.](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-4aaded62bc25-fig2.avif)
+
+Figure 2. Ascaroside profiles in plant-parasitic nematodes. Source: Manosalva P, et al. (2015), Nature Communications, DOI:10.1038/ncomms8795.
+
+:::
+
+:::figure
+
+![Figure 3. Ascaroside profiles in free-living nematodes.](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-cdf748e96338-fig3.avif)
+
+Figure 3. Ascaroside profiles in free-living nematodes. Source: Lee D, et al. (2023), Proceedings of the National Academy of Sciences, DOI:10.1073/pnas.2221150120.
+
+:::
+
+::::figuretext{side=left width=medium}
+
+:::figure
+
+![Figure 4. GPCR-mediated prey pheromone sensing pathway in the nematode-trapping fungus Arthrobotrys oligospora.](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-df028eb5874f-fig4.avif)
+
+Figure 4. GPCR-mediated prey pheromone sensing pathway in the nematode-trapping fungus Arthrobotrys oligospora. Source: Kuo C-Y, et al. (2024), Nature Microbiology, DOI:10.1038/s41564-024-01647-4.
+
+:::
+
+Recent studies demonstrate that the G protein-coupled receptor (GPCR) GPR2 from the nematode-trapping fungus Arthrobotrys oligospora can sense ascaroside #3 (ascr#3). It triggers a MAPK cascade to activate downstream gene expression and ultimately initiate predatory behavior (Figure 4) \[8]. This inspired our idea: we could repurpose this receptor to achieve early warning of plant-parasitic nematodes!
+
+::::
+
+## Project Design & Strategy {#project-design toc="Project Design & Strategy"}
+
+Based on the above background, we aim to construct yeast biosensors capable of specifically recognizing ascr#3 and ascr#18 through the collaboration of dry-lab, wet-lab and HP teams, to realize early warning for agricultural protection.
+
+### Wet Lab {#wet-lab toc="Wet Lab"}
+
+::::figuretext{side=left width=wide}
+
+:::figure
+
+![Figure 5. Schematic of ascaroside-specific yeast biosensor construction. Drawn with assistance from ChatGPT.](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-8314b17ab26f-fig5.avif)
+
+Figure 5. Schematic of ascaroside-specific yeast biosensor construction. Drawn with assistance from ChatGPT.
+
+:::
+
+Based on dry-lab screening results, the wet-lab team will build yeast biosensors for the detection of various ascarosides (Figure 5). Experiments using HP-collected soil samples will supply data to support dry-lab ODE modeling. Our final deliverable is a freeze-dried yeast test strip for real-world use.
+
+::::
+
+Literature shows that Saccharomyces cerevisiae serves as an excellent platform for GPCR display. With only two native GPCR signaling systems that are readily knockable, it is stable, fast-growing and easy to manipulate. Prior work has established yeast biosensing platforms to express heterologous G protein-coupled receptors (GPCRs) on yeast cell surfaces and produce visual readouts\[9]. We adopt similar strategies to display engineered GPR proteins and achieve visual signal output via betaxanthin.
+
+Meanwhile, Saccharomyces cerevisiae features strong robustness, controllable genetics and established biosafety for humans, supporting cost-effective large-scale production. These properties lay critical foundations for fabricating freeze-dried yeast color strips. Requiring no extra equipment for detection, freeze-dried yeast color strips align well with our project goals. Thus, our final product is the freeze-dried yeast color strip.
+
+Detailed experimental design and results can be found in [Wet Lab-Results](/results/)
+
+### Dry Lab {#dry-lab toc="Dry Lab"}
+
+Our dry-lab work addresses three connected questions: how to select and engineer receptors that recognize ascarosides, how to convert recognition signals into a colorimetric output, and how detection results can support practical field management decisions. Four lines of computational work—molecular docking, molecular dynamics simulations, ODE signaling pathway modeling, and economic benefit modeling—inform the project design.
+
+At the receptor-recognition level, molecular docking helps us compare Gpr2, Gpr3, and GprC. Focusing on Gpr2, we identify interaction hotspots and design mutations, using changes in scores and interactions to explore differences in the recognition of ascaroside #3 and ascaroside #18. Molecular dynamics simulations further examine the behavior of selected systems over time, investigating changes in ligand position and key contacts to provide additional evidence for the structural hypotheses proposed by docking.
+
+At the signal-output level, ODE modeling connects receptor activation, intracellular signal transduction, and color development. We select model complexity according to pathway mechanisms and the data available from wet-lab experiments, combine intermediate steps that are difficult to measure separately, and retain provisions for later experimental parameter calibration. This allows us to progressively develop a model that can explain the system’s response.
+
+At the application level, economic benefit modeling asks what users can do after a signal is detected. By comparing costs and benefits across risk levels and management scenarios, we assess the decision-making value of detection information and identify requirements for quantitative capability, detection range, and result presentation. We will further refine this application assessment using HP research and wet-lab data.
+
+Together, these four lines of computational work connect molecular design, system responses, and application needs. Through candidate validation, model calibration, and use-scenario analysis, we collaborate with Wet Lab and Human Practices to advance the project. Detailed methods and results are available on the [Model page](/model/).
+
+## Innovative Strategies {#innovative-strategies toc="Innovative Strategies"}
+
+### Early-Warning Strategy for Plant-Parasitic Nematode Infestations {#early-warning-strategy-for-plant-parasitic-nematode-infestations toc="Early-Warning Strategy"}
+
+Unlike conventional detection methods, our strategy features early warning, low cost and simple operation. This approach sensitively detects ascarosides and outputs pest risk levels via colorimetric readout on test strips. Designed for end users, our product holds broad application prospects and research value.
+
+### Strategy for Reconstructing Ascaroside-Specific Yeast Biosensors {#strategy-for-reconstructing-ascaroside-specific-yeast-biosensors toc="Ascaroside-Specific Yeast Biosensors"}
+
+We utilize a reported yeast sensing circuit chassis with signal cascade amplification capacity. The intact intracellular signal-amplifying module is retained. Only the ascaroside-specific receptor, independently designed by our team, is replaced on the yeast cell surface. This enables specific recognition of ascarosides, qualitative detection of ascaroside presence/absence and semi-quantitative measurement. It further expands the application scenarios of this yeast sensing platform for plant pest detection.
+
+## References {#references toc="References"}
+
+1. Li J, Zou C, Xu J, et al. Molecular mechanisms of nematode-nematophagous microbe interactions: basis for biological control of plant-parasitic nematodes\[J]. Annual Review of Phytopathology, 2015, 53(1): 67-95.
+2. Savary S, Willocquet L, Pethybridge S J, et al. The global burden of pathogens and pests on major food crops\[J]. Nature Ecology & Evolution, 2019, 3(3): 431-439.
+3. Siddique S, Radakovic Z S, Hiltl C, et al. The genome and lifestage-specific transcriptomes of a plant-parasitic nematode and its host reveal susceptibility genes involved in trans-kingdom synthesis of vitamin B5\[J]. Nature Communications, 2022, 13(1): 6190.
+4. Abad P, Gouzy J, Aury J M, et al. Genome sequence of the metazoan plant-parasitic nematode meloidogyne incognita\[J]. Nature Biotechnology, 2008, 26(8): 909-915.
+5. Wu Z, Liu Z, Wang W, et al. Root-knot nematode meloidogyne incognita uses secondary-metabolite-mediated soil microbiome shifts to locate host plants\[J]. Nature Plants, 2026, 12(2): 337-355.
+6. Pun, T. B., Thapa Magar, R., Koech, R., Owen, K. J., & Adorada, D. L. (2024). Emerging Trends and Technologies Used for the Identification, Detection, and Characterisation of Plant-Parasitic Nematode Infestation in Crops. Plants, 13(21), 3041. [https://doi.org/10.3390/plants13213041](https://doi.org/10.3390/plants13213041).
+7. Manosalva, P., Manohar, M., von Reuss, S. et al. Conserved nematode signalling molecules elicit plant defenses and pathogen resistance. Nat Commun 6, 7795 (2015). [https://doi.org/10.1038/ncomms8795](https://doi.org/10.1038/ncomms8795).
+8. Kuo, CY., Tay, R.J., Lin, HC. et al. The nematode-trapping fungus Arthrobotrys oligospora detects prey pheromones via G protein-coupled receptors. Nat Microbiol 9, 1738–1751 (2024). [https://doi.org/10.1038/s41564-024-01679-w](https://doi.org/10.1038/s41564-024-01679-w).
+9. Cong Fan, Nike He, Jifeng Yuan, Cascaded amplifying circuit enables sensitive detection of fungal pathogens, Biosensors and Bioelectronics, Volume 250, 2024, 116058, ISSN 0956-5663, [https://doi.org/10.1016/j.bios.2024.116058](https://doi.org/10.1016/j.bios.2024.116058).

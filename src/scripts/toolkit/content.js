@@ -74,7 +74,7 @@ function downloads(d, { body }) {
         h('p', { class: 'file__name', text: it.title || (it.file ? fileName(it.file) : '待上传附件') }),
         has(it.text) ? h('div', { class: 'file__text' }, rich(it.text)) : null,
         meta.length ? h('p', { class: 'meta' }, meta) : null),
-      url ? h('a', { class: 'btn', href: url, download: '' }, icon('download'), h('span', { text: '下载' })) : h('span', { class: 'pill pill--muted', text: '尚未上传' }));
+      url ? h('a', { class: 'btn', href: url, download: '' }, icon('download'), h('span', { text: 'Download' })) : h('span', { class: 'pill pill--muted', text: '尚未上传' }));
   });
   body.append(h('ul', { class: 'files' }, rows));
 }

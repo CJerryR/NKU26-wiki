@@ -2,15 +2,177 @@
   "title": "Experiments",
   "heading": "Experiments",
   "sub": "",
+  "description": "",
+  "route": "experiments",
   "crumbs": [
     "Wet Lab",
     "Experiments"
   ],
-  "route": "experiments",
   "meta": [],
   "search": true,
-  "blocks": [],
-  "description": "",
-  "draft": false,
-  "hidden": false
+  "blocks": [
+    {
+      "text": "Biological Materials",
+      "level": 2,
+      "attributes": "#biological-materials toc=\"Biological Materials\"",
+      "_template": "heading"
+    },
+    {
+      "title": "Table 1 Biological Materials",
+      "csv": "Name,Description\nEscherichia coli,Mainly used for plasmid amplification\nSaccharomyces cerevisiae CEN.PK2-1C,\"Biological materials for genetic modification, mainly applied in heterologous GPCR display and the construction of ascaroside-specific biosensors\"\n",
+      "_template": "datatable"
+    },
+    {
+      "body": "This section documents the biological materials and experimental methods used in wet-lab work, and summarizes the designed sgRNA sequences, constructed plasmids and engineered strains generated in our project.\n",
+      "_template": "text"
+    },
+    {
+      "text": "Protocol",
+      "level": 2,
+      "attributes": "#protocol toc=\"Protocol\"",
+      "_template": "heading"
+    },
+    {
+      "title": "Protocol",
+      "items": [
+        {
+          "title": "PCR Amplification",
+          "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-3539c6074fb1-protocol-01.pdf",
+          "text": "PCR Amplification Using Phanta Max Super-Fidelity DNA Polymerase."
+        },
+        {
+          "title": "DNA Recovery",
+          "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-154647698e67-protocol-02.pdf",
+          "text": "DNA Recovery Using FastPure Gel DNA Extraction Mini Kit."
+        },
+        {
+          "title": "Plasmid DNA Extraction",
+          "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-df98a0af0943-protocol-03.pdf",
+          "text": "Plasmid DNA Extraction Using Fast Plasmid Miniprep Kit."
+        },
+        {
+          "title": "Double-Joint PCR",
+          "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-730ddb351ab0-protocol-04.pdf",
+          "text": "Construction of Homologous Recombination Constructs Using Double-Joint PCR (DJ-PCR)."
+        },
+        {
+          "title": "One Step Cloning",
+          "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-915625f7b4c9-protocol-05.pdf",
+          "text": "Multi-Fragment and Vector Seamless Assembly Using pEASY Pro Seamless Cloning and Assembly Kit."
+        },
+        {
+          "title": "Chemical Transformation of Trans5α",
+          "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-c810ddc4deed-protocol-06.pdf",
+          "text": "Chemical Transformation of Trans5α Chemically Competent Cells."
+        },
+        {
+          "title": "Yeast Transformation",
+          "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-94e1d5b82d0f-protocol-07.pdf",
+          "text": "Yeast Transformation Using S.c. EasyComp™ Transformation Kit."
+        },
+        {
+          "title": "Agarose Gel Electrophoresis",
+          "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-4bee1bb6f8a3-protocol-08.pdf",
+          "text": "Agarose Gel Electrophoresis."
+        },
+        {
+          "title": "Colony PCR Amplification",
+          "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-c2aebd95ee12-protocol-09.pdf",
+          "text": "Colony PCR Amplification Using 2×TransFast Taq PCR SuperMix (+dye)."
+        },
+        {
+          "title": "Restriction Enzyme Digestion Reaction",
+          "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-6c92e753b05a-protocol-10.pdf",
+          "text": "Restriction Enzyme Digestion Reaction."
+        },
+        {
+          "title": "Preparation of Common Antibiotics and Culture Media",
+          "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-05ccf4cb7bd5-protocol-11.pdf",
+          "text": "Preparation of Common Antibiotics and Culture Media."
+        },
+        {
+          "title": "Preservation and Recovery of Glycerol Stocks",
+          "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-fa5162f5aaca-protocol-12.pdf",
+          "text": "Preservation and Recovery of Glycerol Stocks."
+        },
+        {
+          "title": "Extraction of Yeast Genomic DNA",
+          "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-01699080a847-protocol-13.pdf",
+          "text": "Extraction of Yeast Genomic DNA."
+        },
+        {
+          "title": "Observation of Fluorescent Molecules",
+          "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-8d474be66ea7-protocol-14.pdf",
+          "text": "Observation of Fluorescent Molecules Using Fluorescence Microscopy."
+        },
+        {
+          "title": "Preparation of Viable Yeast Detection Test Strips via Lyophilization",
+          "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-3b75e8981471-protocol-15.pdf",
+          "text": ""
+        },
+        {
+          "title": "One Step Cloning 2.0",
+          "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-cb70639f0cf2-protocol-16.pdf",
+          "text": "Multi-Fragment and Vector Assembly Using ClonExpress Ultra One Step Cloning Kit V3."
+        }
+      ],
+      "_template": "downloads"
+    },
+    {
+      "text": "Summary of Experimental Design",
+      "level": 2,
+      "attributes": "#summary-of-experimental-design toc=\"Summary of Experimental Design\"",
+      "_template": "heading"
+    },
+    {
+      "text": "Plasmid Construction",
+      "level": 3,
+      "attributes": "#plasmid-construction toc=\"Plasmid Construction\"",
+      "_template": "heading"
+    },
+    {
+      "body": "In this project, we designed and constructed a total of 10 plasmids, as shown in the table below.\n",
+      "_template": "text"
+    },
+    {
+      "title": "Table 2 Plasmids designed and constructed in this project",
+      "csv": "Name,Number,Description\npRS315-TEF1p-GPR2-sfGFP,BBa_260J9X0X,For knock-in of the constitutively expressed GPR2 gene fused with sfGFP\npRS315-MjDOD-BvCYP76AD5,BBa_26PGUFWX,For knock-in of constitutively expressed betaxanthin-related genes and serves as a template for constructing inducible recombinant fragments\npRS315-sTF,BBa_2687EQID,For storage of recombinant fragments for knock-in of the synthetic transcription factor (sTF)\np414-Cas9-Leu,BBa_262NU08K,Cas9-carrying plasmid with altered nutritional selection marker\np426-SNR52p-gGal4-SUP4t,BBa_269ZKY8C,Carries gRNA sequence targeting the Gal4 gene\np426-SNR52p-gSTE12-SUP4t,BBa_2612RHXO,Carries gRNA sequence targeting the STE12 gene\np426-SNR52p-gSTE2-SUP4t,BBa_26TQ18PN,Carries gRNA sequence targeting the STE2 gene\npRS315-TEF1p-GPR2,BBa_26ZT9H48,For knock-in of the constitutively expressed GPR2 gene\npRS315-TEF1p-GPR2-N84V,BBa_2628FZFH,For knock-in of the constitutively expressed N84V-mutated GPR2 gene\npRS315-TEF1p-GPR2-V368R,BBa_26XA2JFQ,For knock-in of the constitutively expressed V368R-mutated GPR2 gene\n",
+      "_template": "datatable"
+    },
+    {
+      "text": "Strain Construction",
+      "level": 3,
+      "attributes": "#strain-construction toc=\"Strain Construction\"",
+      "_template": "heading"
+    },
+    {
+      "body": "In this project, we constructed a total of 9 yeast strains. The workflow and summary table are displayed below.\n",
+      "_template": "text"
+    },
+    {
+      "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-12cdb6f517ca-contribution.avif",
+      "alt": "Figure 1 Workflow of engineered strain construction",
+      "body": "Figure 1 Workflow of engineered strain construction\n",
+      "layout": "full",
+      "imageWidth": "medium",
+      "accompanyingBody": "",
+      "_template": "image"
+    },
+    {
+      "title": "Table 3 Strains designed and constructed in this project",
+      "csv": "Number,Description\nNKU-Y01,\"Matα; ura3-52, trp1-289, leu2-3,112,his3Δ1; MAL2-8c; SUC2（Saccharomyces cerevisiae CEN.PK2-1C）\"\nNKU-Y02,Strain CEN.PK2-1C derivative with ΔGal80\nNKU-Y03,Strain NKU-Y02 derivative with -GPR2-sfGFP\nNKU-Y04,Strain NKU-Y02 transformed with pRS315-MjDOD-BvCYP76AD5\nNKU-Y05,Strain NKU-Y02 derivative with -sTF\nNKU-Y06,Strain NKU-Y05 derivative with -MjDOD :  -BvCYP76AD5\nNKU-Y07,Strain NKU-Y06 derivative with -GPR2\nNKU-Y08,Strain NKU-Y06 derivative with -GPR2-N84V\nNKU-Y09,Strain NKU-Y06 derivative with -GPR2-V368R\n",
+      "_template": "datatable"
+    },
+    {
+      "text": "sgRNA Design",
+      "level": 3,
+      "attributes": "#sgrna-design toc=\"sgRNA Design\"",
+      "_template": "heading"
+    },
+    {
+      "title": "Table 4 sgRNA designed and constructed in this project",
+      "csv": "Name,Sequence\ngSTE12,gcgaagttgaagaatcgcta\ngGal4,ggatggatcgaccataaagc\ngSTE2,ggatgcattattagcagccg\n",
+      "_template": "datatable"
+    }
+  ]
 }

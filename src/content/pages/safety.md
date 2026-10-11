@@ -7,8 +7,7 @@ crumbs:
   - Wet Lab
   - Safety
 search: true
-description: ''
+meta: {}
 draft: false
 hidden: false
-meta: {}
 ---

@@ -2,15 +2,42 @@
   "title": "Parts",
   "heading": "Parts",
   "sub": "",
+  "description": "",
+  "route": "parts",
   "crumbs": [
     "Wet Lab",
     "Parts"
   ],
-  "route": "parts",
   "meta": [],
   "search": true,
-  "blocks": [],
-  "description": "",
-  "draft": false,
-  "hidden": false
+  "blocks": [
+    {
+      "text": "Parts",
+      "level": 2,
+      "attributes": "#parts toc=\"Parts\"",
+      "_template": "heading"
+    },
+    {
+      "text": "Basic Parts",
+      "level": 3,
+      "attributes": "#basic-parts toc=\"Basic Parts\"",
+      "_template": "heading"
+    },
+    {
+      "title": "Basic Parts",
+      "csv": "Name,Part Number,Type,Description\nGal80 5’ homology region,BBa_26L2KJQX,Homologous Region,This part is designed for the assembly of Gal80 knockout cassette\nGal80 3’ homology region,BBa_26BZN7AE,Homologous Region,This part is designed for the assembly of Gal80 knockout cassette\nGPR2 cDNA,BBa_26P7J5V3,CDNA Match,This cDNA encodes GPR2 from the nematode-trapping fungus Orbilia oligospora\nSTE2 5’ homology region,BBa_260V498D,Homologous Region,This part is designed to replace yeast STE2 with GPR2-sfGFP through homologous recombination (HR)\nSTE2 3’ homology region,BBa_260VULNA,Homologous Region,This part is designed to replace yeast STE2 with GPR2-sfGFP through homologous recombination (HR)\nsfGFP,BBa_26MAY2X6,CDS,Superfolder green fluorescent protein (sfGFP) serves as a fluorescent reporter to assist in determining the subcellular localization of GPR2 in yeast cells\nGAL1 and GAL10 bidirectional promoters,BBa_26TDFVI3,Promoter,\"The GAL1/GAL10 bidirectional promoters are derived from Saccharomyces cerevisiae, enabling galactose-inducible bidirectional gene expression in yeast\"\npRS315 backbone,BBa_26R6CTVF,Plasmid,\"This vector for one-step cloning carries the ampicillin resistance gene and restriction sites, allowing autonomous replication in E. coli\"\nGal4 3‘ homology region,BBa_26KPW3LZ,Homologous Region,This part is designed to replace yeast Gal4 with DOD-CYP76AD5 through homologous recombination (HR).\nGal4 5‘ homology region,BBa_26T1QDYX,Homologous Region,This part is designed to replace yeast Gal4 with DOD-CYP76AD5 through homologous recombination (HR)\nMjDOD,BBa_26ITFFZ0,CDNA Match,\"This gene encodes L-DOPA dioxygenase, which oxidizes L-DOPA to betalamic acid\"\nBvCYP76AD5,BBa_26CD571A,CDNA Match,\"This gene encodes tyrosine hydroxylase/cyclase, which converts L-tyrosine into L-DOPA\"\np414-TEF1p-Cas9-CYC1t,BBa_26RDB5XU,Circular Plasmid,\"This construct contains Cas9 CDS and Trp marker, which drives constitutive Cas9 expression in yeast for CRISPR editing.\"\nSTE12 5' homology region,BBa_26CG7I8I,Homologous Region,This part is designed to insert sTF into yeast through homologous recombination (HR)\nSTE12 3' homology region,BBa_26BLOJK0,Homologous Region,This part is designed to insert sTF into yeast through homologous recombination (HR)\np406TEF1,BBa_26Y1JMT1,Circular Plasmid,\"This part contains the TEF1 promoter, CYC1 terminator and URA3 marker gene for amplification of these components.\"\np426-SNR52p-gRNA.CAN1.Y-SUP4t,BBa_266EBQE1,Circular Plasmid,\"This part is a yeast sgRNA expression vector containing the SNR52 promoter and SUP4 terminator, which enables efficient sgRNA transcription and assists CRISPR-Cas9-mediated genome editing in yeast\"\np414-Cas9-Leu,BBa_262NU08K,Plasmid,This part is a yeast Cas9 expression vector whose  original nutritional selection marker has been replaced by LEU2\ngSTE12,BBa_26VBBFVU,GRNA Gene,This part contains the DNA template for gSTE12 gRNA\ngGal4,BBa_26AIA84W,GRNA Gene,This part contains the DNA template for gGal4 gRNA\ngSTE2,BBa_26U6Z74A,GRNA Gene,This part contains the DNA template for gSTE2 gRNA\nGPR2（N84V） cDNA,BBa_26YCPMQN,CDNA Match,This part contains the mutant cDNA sequence of GPR2\nGPR2（V368R） cDNA,BBa_2683TK6Y,CDNA Match,This part contains the mutant cDNA sequence of GPR2\np426-SNR52p-gSTE2-SUP4t,BBa_26TQ18PN,Plasmid,This part contains the DNA sequence encoding gRNA that targets the STE2 gene\np426-SNR52p-gSTE12-SUP4t,BBa_2612RHXO,Plasmid,This part contains the DNA sequence encoding gRNA that targets the STE12 gene\np426-SNR52p-gGal4-SUP4t,BBa_269ZKY8C,Plasmid,This part contains the DNA sequence encoding gRNA that targets the Gal4 gene\npScCEN-ADH1-FMN(yeast)-Myc-6×His,BBa_26RANQPA,Plasmid,\"This part is the pScCEN plasmid backbone carrying the ADH1 promoter, yeast-derived FMN gene, Myc tag and 6×His tag\"\n",
+      "_template": "datatable"
+    },
+    {
+      "text": "Composite Parts",
+      "level": 3,
+      "attributes": "#composite-parts toc=\"Composite Parts\"",
+      "_template": "heading"
+    },
+    {
+      "title": "Composite Parts",
+      "csv": "Name,Part Number,Type,Description\nKOGAL80,BBa_26OPIZCX,Assembly Component,This cassette is used for knocking out the Gal80 gene in the yeast genome via homologous recombination (HR)\nTRP1 marker gene,BBa_26WLH0UL,CDS,\"The Trp1 gene encodes an enzyme involved in Trp  biosynthesis, serving as a nutritional selection marker for yeast.\"\nLEU2 marker gene,BBa_26DW2ZT7,CDS,\"The LEU2 gene encodes an enzyme involved in Leu  biosynthesis, serving as a nutritional selection marker for yeast.\"\npRS315-TEF1p-GPR2-sfGFP,BBa_260J9X0X,Plasmid,\nUra3 marker gene,BBa_26OPQ6RW,CDS,\"The Ura3 gene encodes an enzyme involved in uracil biosynthesis, serving as a nutritional selection marker for yeast.\"\npRS315-MjDOD-BvCYP76AD5,BBa_26PGUFWX,Plasmid,\"This part contains betaxanthin-related genes, with homology arms for the knock-in of constitutively expressed betaxanthin biosynthetic genes\"\nGal1/10bp-Betaxanthin Expression Cassette,BBa_2697LAQW,Assembly Component,This part contains the betaxanthin biosynthetic genes (MjDOD and BvCYP76AD5) under the control of the Gal1/10 bidirectional promoter\npRS315-sTF,BBa_2687EQID,Plasmid,This part is used for amplifying the homologous recombination fragment for sTF assembly\nsTF Expression Cassette,BBa_26IOTMOF,Assembly Component,This part is designed for CRISPR-Cas9-mediated knock-in to express sTF in yeast\npRS315-TEF1p-GPR2,BBa_26ZT9H48,Plasmid,This part is designed for CRISPRCas9mediated knockin of the constitutively expressed GPR2 gene\npRS315-TEF1p-GPR2-N84V,BBa_2628FZFH,Plasmid,This part is designed for CRISPRCas9mediated knockin of the constitutively expressed GPR2 gene with N84V mutation\npRS315-TEF1p-GPR2-V368R,BBa_26XA2JFQ,Plasmid,This part is designed for CRISPRCas9mediated knockin of the constitutively expressed GPR2 gene with V368R mutation\n",
+      "_template": "datatable"
+    }
+  ]
 }

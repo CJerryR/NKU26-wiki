@@ -44,7 +44,10 @@ const templates: Template[] = [
   { name: 'image', label: '图片与图注', fields: [
     { type: 'image', name: 'src', label: '上传图片', required: true },
     { type: 'string', name: 'alt', label: '图片说明', required: true },
-    body,
+    { ...body, label: '图注' },
+    { type: 'string', name: 'layout', label: '图文版式', options: [{ label: '通栏图片', value: 'full' }, { label: '左图右文', value: 'left' }, { label: '右图左文', value: 'right' }], description: '留空使用通栏；配套正文留空时也使用通栏。' },
+    { type: 'string', name: 'imageWidth', label: '图片列宽', options: [{ label: '窄（约 32%）', value: 'narrow' }, { label: '中（约 40%）', value: 'medium' }, { label: '宽（约 50%）', value: 'wide' }], description: '仅用于左右图文版式；手机自动上下排列。' },
+    { ...body, name: 'accompanyingBody', label: '配套正文' },
   ] },
   { name: 'gallery', label: '双图并排', fields: [
     { type: 'image', name: 'left', label: '左图', required: true },

@@ -7,8 +7,7 @@ crumbs:
   - Integrated Human Practices
 route: human-practices
 search: true
-description: ''
+meta: {}
 draft: false
 hidden: false
-meta: {}
 ---

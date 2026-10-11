@@ -23,7 +23,14 @@ export function blocksToMarkdown(blocks = []) {
       case 'heading': return `${'#'.repeat(Math.max(2, Math.min(4, block.level || 2)))} ${block.text}${attrs ? ` ${attrs}` : ''}`;
       case 'text': return body;
       case 'layout': return `:::${block.kind}${label}${attrs}\n\n${body}\n\n:::`;
-      case 'image': return `:::figure\n\n${img(block.src, block.alt)}\n\n${body}\n\n:::`;
+      case 'image': {
+        const figure = `:::figure\n\n${img(block.src, block.alt)}\n\n${body}\n\n:::`;
+        const accompanying = markdown(block.accompanyingBody).trim();
+        if (!accompanying) return figure;
+        if (!['left', 'right'].includes(block.layout)) return `${figure}\n\n${accompanying}`;
+        const width = ['narrow', 'medium', 'wide'].includes(block.imageWidth) ? block.imageWidth : 'medium';
+        return `::::figuretext{side=${block.layout} width=${width}}\n\n${figure}\n\n${accompanying}\n\n::::`;
+      }
       case 'gallery': return `:::cols{cols=2}\n\n### ${block.leftAlt || 'A'}\n\n${img(block.left, block.leftAlt)}\n\n### ${block.rightAlt || 'B'}\n\n${img(block.right, block.rightAlt)}\n\n:::\n\n${body}`;
       default: throw new Error(`Unknown content block: ${block._template}`);
     }

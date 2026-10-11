@@ -14,12 +14,13 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
+import katex from 'katex';
 import { iconSvg, CALLOUT_ICONS, UI_ICONS } from './icons.mjs';
 
 const CALLOUT_TYPES = { note: 'note', important: 'note', tip: 'tip', warning: 'warning', warn: 'warning', caution: 'warning' };
 const CONTAINERS = new Set([
   ...Object.keys(CALLOUT_TYPES), 'callout',
-  'cards', 'cols', 'timeline', 'features', 'stats', 'refs', 'figure', 'details', 'people', 'lead',
+  'cards', 'cols', 'timeline', 'features', 'stats', 'refs', 'figure', 'figuretext', 'details', 'people', 'lead',
 ]);
 const LEAVES = new Set(['figure']);
 
@@ -31,8 +32,29 @@ export default function remarkWiki(options = {}) {
     eachNode(tree, (node) => { if (node.type === 'heading') readHeadingAttributes(node); });
     transformBlocks(tree, ctx);
     wrapTablesAndImages(tree);
+    renderInlineMath(tree);
     finalize(tree, file);
   };
+}
+
+/** Supplied inline TeX stays editable as $...$ in Tina's Markdown fields. */
+function renderInlineMath(node) {
+  if (!node.children || ['code', 'inlineCode', 'html'].includes(node.type)) return;
+  const children = [];
+  for (const child of node.children) {
+    if (child.type !== 'text') { renderInlineMath(child); children.push(child); continue; }
+    const value = child.value; const regex = /\$([^$\n]+)\$/g;
+    let at = 0; let match;
+    while ((match = regex.exec(value))) {
+      children.push(text(value.slice(at, match.index)));
+      // Manuscripts use ascr#18/ascr#3 inside math; # is literal notation here.
+      const formula = match[1].replace(/(?<!\\)#/g, '\\#');
+      children.push(raw(katex.renderToString(formula, { throwOnError: false, output: 'htmlAndMathml' })));
+      at = regex.lastIndex;
+    }
+    children.push(text(value.slice(at)));
+  }
+  node.children = children;
 }
 
 /* ---------------------------------------------------------------- helpers */
@@ -201,6 +223,7 @@ function renderBlock(node, ctx) {
     case 'refs': return [el('div', { className: ['refs'] }, takeLabel(node).rest)];
     case 'lead': return [el('div', { className: ['lead'] }, takeLabel(node).rest)];
     case 'figure': return figure(node, ctx);
+    case 'figuretext': return figureText(node);
     case 'details': return details(node);
     case 'people': return people(node);
     default: return takeLabel(node).rest;
@@ -299,6 +322,20 @@ function readFigure(name, ctx, node) {
   }
 }
 
+function figureText(node) {
+  const attrs = node.attributes || {};
+  const side = attrs.side === 'right' ? 'right' : 'left';
+  const width = ['narrow', 'medium', 'wide'].includes(attrs.width) ? attrs.width : 'medium';
+  const children = takeLabel(node).rest;
+  const imageAt = children.findIndex((child) => child.data?.hName === 'figure');
+  if (imageAt === -1) return children;
+  const figure = children[imageAt];
+  const body = children.filter((_, i) => i !== imageAt);
+  return [el('div', { className: ['figure-text', `figure-text--${side}`, `figure-text--${width}`] }, [
+    figure, el('div', { className: ['figure-text__body'] }, body),
+  ])];
+}
+
 function figure(node, ctx) {
   const a = node.attributes || {};
   const { label, rest } = takeLabel(node);
@@ -357,13 +394,59 @@ function people(node) {
 
 /* ------------------------------------------------ 4. tables and images */
 
+const pngSizes = new Map();
+let cdnImageSizes;
+function localPngSize(url) {
+  if (typeof url === 'string' && url.startsWith('https://static.igem.wiki/')) {
+    if (!cdnImageSizes) {
+      try {
+        const records = JSON.parse(fs.readFileSync(path.resolve('content/cdn-assets.json'), 'utf8')).assets;
+        cdnImageSizes = new Map(records.filter((entry) => entry.dimensions).map((entry) => [entry.cdn_url, entry.dimensions]));
+      } catch { cdnImageSizes = new Map(); }
+    }
+    return cdnImageSizes.get(url) || {};
+  }
+  if (typeof url !== 'string' || !url.startsWith('/img/') || !/\.(png|jpe?g)$/i.test(url)) return {};
+  const root = path.resolve(process.cwd(), 'static');
+  const filename = path.resolve(root, `.${url}`);
+  if (!filename.startsWith(root + path.sep)) return {};
+  try {
+    const stamp = fs.statSync(filename).mtimeMs;
+    const cached = pngSizes.get(filename);
+    if (cached?.stamp === stamp) return cached.size;
+    const header = fs.readFileSync(filename);
+    let size;
+    if (header.subarray(0, 8).toString('hex') === '89504e470d0a1a0a') {
+      size = { width: header.readUInt32BE(16), height: header.readUInt32BE(20) };
+    } else if (header[0] === 0xff && header[1] === 0xd8) {
+      let at = 2;
+      while (at + 8 < header.length) {
+        if (header[at] !== 0xff) break;
+        while (header[at] === 0xff) at++;
+        const marker = header[at++];
+        if (marker === 0xd9 || marker === 0xda) break;
+        if (marker === 0x01 || (marker >= 0xd0 && marker <= 0xd7)) continue;
+        const length = header.readUInt16BE(at);
+        if (length < 2) break;
+        if ([0xc0, 0xc1, 0xc2, 0xc3, 0xc5, 0xc6, 0xc7, 0xc9, 0xca, 0xcb, 0xcd, 0xce, 0xcf].includes(marker)) {
+          size = { width: header.readUInt16BE(at + 5), height: header.readUInt16BE(at + 3) }; break;
+        }
+        at += length;
+      }
+    }
+    if (!size) return {};
+    pngSizes.set(filename, { stamp, size });
+    return size;
+  } catch { return {}; }
+}
+
 function wrapTablesAndImages(node) {
   if (!node.children) return;
   node.children = node.children.map((c) => {
     wrapTablesAndImages(c);
     if (c.type === 'image') {
       c.data = c.data || {};
-      c.data.hProperties = { loading: 'lazy', decoding: 'async', ...(c.data.hProperties || {}) };
+      c.data.hProperties = { loading: 'lazy', decoding: 'async', ...localPngSize(c.url), ...(c.data.hProperties || {}) };
     }
     if (c.type === 'table') {
       return el('div', { className: ['table-wrap'], tabindex: '0', role: 'region', 'aria-label': 'Table (scrolls sideways)' }, [c]);
@@ -413,7 +496,7 @@ function finalize(tree, file) {
       h.data.tocText = a.toc || toText(h);
       toc.push({ depth: 2, id, text: h.data.tocText, num });
     } else if (h.depth >= 3 && 'toc' in a) {
-      toc.push({ depth: 3, id, text: a.toc || toText(h) });
+      toc.push({ depth: h.depth, id, text: a.toc || toText(h) });
     }
   }
 

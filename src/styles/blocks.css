@@ -1,5 +1,8 @@
 /* Content blocks produced by :::directives (see src/content/README.md). */
 
+/* Source manuscripts include unbroken registry URLs. */
+.prose a { overflow-wrap: anywhere; }
+
 /* callouts */
 .callout { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 14px; padding: 18px 22px 18px 18px; border-radius: 18px; border: 1px solid; font-size: 15.5px; line-height: 1.62; }
 .callout__icon { padding-top: 2px; }
@@ -154,3 +157,59 @@ wiki-toolkit:not(:defined) { min-height: 180px; border: 1px solid var(--line-2);
    its href at build time; show it as plain text and its card as a plain card. */
 a[data-page-off] { cursor: auto; color: inherit !important; text-decoration: none !important; background: none !important; box-shadow: none !important; }
 [class*="--link"]:has(a[data-page-off]):hover { transform: none !important; box-shadow: none !important; border-color: var(--line) !important; }
+
+/* Submitted Description figures keep their intrinsic size within the reading column. */
+.doc[data-reading="submitted"] .figure__media img { margin-inline: auto; }
+
+/* Editable image/text compositions retain real figure captions and rich text. */
+.figure-text {
+  --image-share: 40%;
+  display: grid; grid-template-columns: minmax(0, var(--image-share)) minmax(0, 1fr);
+  gap: clamp(24px, 3vw, 40px); align-items: start; width: 100%; min-width: 0;
+}
+.figure-text--narrow { --image-share: 32%; }
+.figure-text--wide { --image-share: 50%; }
+.figure-text--right { grid-template-columns: minmax(0, 1fr) minmax(0, var(--image-share)); }
+.figure-text--right > .figure { grid-column: 2; grid-row: 1; }
+.figure-text--right > .figure-text__body { grid-column: 1; grid-row: 1; }
+.figure-text > *, .figure-text__body { min-width: 0; }
+.figure-text .figure__media { padding: 12px; }
+.figure-text .figure__media img { display: block; max-width: 100%; height: auto; margin-inline: auto; }
+.figure-text__body > * + * { margin-top: 1em; }
+.figure-text__body > :first-child { margin-top: 0; }
+.figure-text__body > :last-child { margin-bottom: 0; }
+@media (max-width: 760px) {
+  .figure-text, .figure-text--right { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .figure-text--right > .figure, .figure-text--right > .figure-text__body { grid-column: auto; grid-row: auto; }
+}
+
+/* Submitted pages: a wider, quieter reading surface within the V8.0 shell. */
+main:has(.doc[data-reading="submitted"]) { --measure: 65rem; --bleed: 0px; }
+.doc[data-reading="submitted"] .prose { font-size: 17px; line-height: 1.65; }
+.doc[data-reading="submitted"] .prose h2 { font-size: clamp(28px, 2.3vw, 34px); font-weight: 560; line-height: 1.2; margin-bottom: .65em; }
+.doc[data-reading="submitted"] .prose h3 { font-size: 24px; font-weight: 560; line-height: 1.3; margin-bottom: .65em; }
+.doc[data-reading="submitted"] .doc-section + .doc-section { margin-top: clamp(56px, 5vw, 76px); }
+.doc[data-reading="submitted"] .doc-section > h3 { margin-top: 1.65em; }
+.doc[data-reading="submitted"] .figure__media { padding: 0; background: none; border: 0; border-radius: 0; }
+.doc[data-reading="submitted"] .figure__media img { display: block; max-width: 100%; height: auto; border-radius: 0; }
+.doc[data-reading="submitted"] .figure figcaption { margin-top: 10px; font-size: 13px; line-height: 1.5; }
+.doc[data-reading="submitted"] .toc__item--3 a { padding-left: 24px; font-size: 13px; }
+.doc[data-reading="submitted"] .toc__item--2 a { padding-block: 6px; }
+.doc[data-reading="submitted"] .toc__item--3 a { padding-block: 4px; }
+@media (max-width: 640px) {
+  .doc[data-reading="submitted"] .prose { font-size: 16.5px; line-height: 1.7; }
+  .doc[data-reading="submitted"] .prose h3 { font-size: 21px; }
+  .doc[data-reading="submitted"] .toc__item--3 a { padding-block: 7px; font-size: 14px; }
+}
+
+/* Long submitted manuscripts retain distinct subordinate heading levels. */
+.doc[data-reading="submitted"] .prose h4 { font-size: 19px; line-height: 1.4; font-weight: 600; margin-top: 1.6em; }
+.doc[data-reading="submitted"] .toc__item--4 a { padding-left: 38px; font-size: 12px; padding-block: 4px; }
+.doc[data-page="members"] .figure__media img { width: 100%; max-height: 300px; object-fit: contain; object-position: left top; }
+.doc[data-page="members"] .figure-text { margin-block: 24px 40px; }
+.prose .katex { font-size: 1em; }
+.prose .katex-display { overflow-x: auto; max-width: 100%; padding-block: 8px; }
+@media (max-width: 640px) {
+ .doc[data-reading="submitted"] .toc__item--4 a { font-size: 13px; padding-block: 7px; }
+ .doc[data-page="members"] .figure__media img { max-height: 260px; }
+}

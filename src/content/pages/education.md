@@ -7,8 +7,7 @@ crumbs:
   - Education
 route: education
 search: true
-description: ''
+meta: {}
 draft: false
 hidden: false
-meta: {}
 ---

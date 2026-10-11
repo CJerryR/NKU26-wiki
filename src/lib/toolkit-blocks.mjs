@@ -1,4 +1,6 @@
 import { toolkitNames } from './toolkit-specs.mjs';
+import Papa from 'papaparse';
+import katex from 'katex';
 
 export const toolkitTypes = new Set(toolkitNames);
 
@@ -35,8 +37,14 @@ function lines(record, depth = 0) {
 export function renderToolkit(block, type) {
   const props = esc(JSON.stringify({ ...block, _template: type }));
   const heading = block.title ? `<p><strong>${esc(block.title)}</strong></p>` : '';
-  const body = lines(block).join('');
+  let body = lines(block).join('');
+  if (type === 'datatable' && block.csv) {
+    const rows = Papa.parse(block.csv, { skipEmptyLines: true }).data;
+    body = `<div class="table-wrap"><table><thead><tr>${(rows[0] || []).map((cell) => `<th>${esc(cell)}</th>`).join('')}</tr></thead><tbody>${rows.slice(1).map((row) => `<tr>${row.map((cell) => `<td>${esc(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+  } else if (type === 'equation' && block.latex) {
+    body = katex.renderToString(block.latex.replace(/(?<!\\)#/g, '\\#'), { displayMode: true, throwOnError: false, output: 'htmlAndMathml' });
+  }
   // Hidden until the element upgrades (no flash of raw text); the <noscript> rule
   // reveals it for visitors without JavaScript.
-  return `<div class="wiki-toolkit-block"><wiki-toolkit data-type="${esc(type)}" data-props="${props}"><div class="wiki-toolkit-fallback">${heading}${body}</div><noscript><style>.wiki-toolkit-fallback{display:block!important}wiki-toolkit:not(:defined){min-height:0;border:0;background:none;animation:none}</style><p>此组件的交互版本需要启用 JavaScript。</p></noscript></wiki-toolkit></div>`;
+  return `<div class="wiki-toolkit-block"><wiki-toolkit data-type="${esc(type)}" data-props="${props}"><div class="wiki-toolkit-fallback">${heading}${body}</div><noscript><style>.wiki-toolkit-fallback{display:block!important}wiki-toolkit:not(:defined){min-height:0;border:0;background:none;animation:none}</style><p>Enable JavaScript to use the interactive controls.</p></noscript></wiki-toolkit></div>`;
 }

@@ -5,7 +5,8 @@ import { getPages } from '../../lib/pages';
 
 export async function getStaticPaths() {
   const pages = await getPages();
-  return pages.filter((entry) => !entry.data.route).map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+  // Keep the addresses used before the new standard routes were assigned.
+  return pages.filter((entry) => !entry.data.route || ['protocols', 'part-collection'].includes(entry.id)).map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
 }
 
 const { entry } = Astro.props;

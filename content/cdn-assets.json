@@ -1,5 +1,5 @@
 {
-  "verified_at": "2026-10-10T17:37:05.616869+00:00",
+  "verified_at": "2026-10-11T02:46:54.501811+00:00",
   "scope": "Recorded CDN assets referenced in the current build; HTTP checks do not certify licensing or human review.",
   "assets": [
     {
@@ -8,7 +8,7 @@
       "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8-13cd664e0f8b-fraunces-italic.woff2",
       "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
       "http_verification": {
-        "checked_at": "2026-10-10T17:37:05.616869+00:00",
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
         "status": 200,
         "content_type": "font/woff2",
         "content_length": "42372",
@@ -27,7 +27,7 @@
       "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8-2d46bd159b53-spacemono-700.woff2",
       "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
       "http_verification": {
-        "checked_at": "2026-10-10T17:37:05.616869+00:00",
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
         "status": 200,
         "content_type": "font/woff2",
         "content_length": "16724",
@@ -46,7 +46,7 @@
       "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8-3439b58a1e73-nku-mark.svg",
       "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
       "http_verification": {
-        "checked_at": "2026-10-10T17:37:05.616869+00:00",
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
         "status": 200,
         "content_type": "image/svg+xml",
         "content_length": "3993",
@@ -65,7 +65,7 @@
       "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8-64513365c2d8-spline-variable.woff2",
       "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
       "http_verification": {
-        "checked_at": "2026-10-10T17:37:05.616869+00:00",
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
         "status": 200,
         "content_type": "font/woff2",
         "content_length": "57984",
@@ -84,7 +84,7 @@
       "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8-7234ed860a9c-fraunces-variable.woff2",
       "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
       "http_verification": {
-        "checked_at": "2026-10-10T17:37:05.616869+00:00",
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
         "status": 200,
         "content_type": "font/woff2",
         "content_length": "67304",
@@ -103,7 +103,7 @@
       "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8-7904b0e2ba3c-nematode-soil.svg",
       "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
       "http_verification": {
-        "checked_at": "2026-10-10T17:37:05.616869+00:00",
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
         "status": 200,
         "content_type": "image/svg+xml",
         "content_length": "3881",
@@ -122,7 +122,7 @@
       "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8-7ef6f2e4ae30-mascot-lg.avif",
       "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
       "http_verification": {
-        "checked_at": "2026-10-10T17:37:05.616869+00:00",
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
         "status": 200,
         "content_type": "image/avif",
         "content_length": "26063",
@@ -141,7 +141,7 @@
       "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8-a5fb49042e73-spacemono-400-italic.woff2",
       "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
       "http_verification": {
-        "checked_at": "2026-10-10T17:37:05.616869+00:00",
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
         "status": 200,
         "content_type": "font/woff2",
         "content_length": "18300",
@@ -160,7 +160,7 @@
       "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8-c1510390550c-nku-mark.avif",
       "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
       "http_verification": {
-        "checked_at": "2026-10-10T17:37:05.616869+00:00",
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
         "status": 200,
         "content_type": "image/avif",
         "content_length": "20484",
@@ -179,7 +179,7 @@
       "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8-ea3470efac8f-detective.avif",
       "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
       "http_verification": {
-        "checked_at": "2026-10-10T17:37:05.616869+00:00",
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
         "status": 200,
         "content_type": "image/avif",
         "content_length": "24747",
@@ -198,7 +198,7 @@
       "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8-fb4a81a2d0a8-spacemono-400.woff2",
       "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
       "http_verification": {
-        "checked_at": "2026-10-10T17:37:05.616869+00:00",
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
         "status": 200,
         "content_type": "font/woff2",
         "content_length": "16520",
@@ -210,6 +210,2251 @@
       "browser_verification": {
         "status": "not-verified"
       }
+    },
+    {
+      "path": "static/img/uploads/contribution/troubleshooting.pdf",
+      "source_sha256": "cbf9a80135838fd22037c0519d278756013f464976878001182172f274346920",
+      "bytes": 156330,
+      "upload_name": "v8c-cbf9a8013583-troubleshooting.pdf",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-cbf9a8013583-troubleshooting.pdf",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "application/pdf",
+        "content_length": "156330",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-cbf9a8013583-troubleshooting.pdf"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/contribution/流程图-菌株构建.png",
+      "source_sha256": "12cdb6f517caf882c6884ff6d8958cfd961dbd6ef687ef8686fce19f1b96377f",
+      "bytes": 299981,
+      "upload_name": "v8c-12cdb6f517ca-contribution.png",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-12cdb6f517ca-contribution.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "dimensions": {
+        "width": 4225,
+        "height": 1894
+      },
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "277126",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-12cdb6f517ca-contribution.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/description/Fig1.png",
+      "source_sha256": "a69f0a5adee6f4388f1af9d34b39e64ce03cd699c6e3b54448ac5d2837e3ceb5",
+      "bytes": 3373340,
+      "upload_name": "v8c-a69f0a5adee6-fig1.png",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-a69f0a5adee6-fig1.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "dimensions": {
+        "width": 1691,
+        "height": 834
+      },
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "144712",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-a69f0a5adee6-fig1.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/description/Fig2.png",
+      "source_sha256": "4aaded62bc250e8fcbb73675af88a44c0a68fdd1da7850eb7bdb1d5775c04a6b",
+      "bytes": 683605,
+      "upload_name": "v8c-4aaded62bc25-fig2.png",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-4aaded62bc25-fig2.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "dimensions": {
+        "width": 2211,
+        "height": 534
+      },
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "100222",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-4aaded62bc25-fig2.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/description/Fig3.png",
+      "source_sha256": "cdf748e963387f9347f476a705287826eb307c4560cc582736bcccb3989a9c30",
+      "bytes": 129778,
+      "upload_name": "v8c-cdf748e96338-fig3.png",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-cdf748e96338-fig3.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "dimensions": {
+        "width": 977,
+        "height": 300
+      },
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "31070",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-cdf748e96338-fig3.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/description/Fig4.png",
+      "source_sha256": "df028eb5874f500f7c538015e36500925e91db7d6f473d3f4b7d743e12f2738a",
+      "bytes": 205097,
+      "upload_name": "v8c-df028eb5874f-fig4.png",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-df028eb5874f-fig4.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "dimensions": {
+        "width": 649,
+        "height": 612
+      },
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "40446",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-df028eb5874f-fig4.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/description/Fig5.png",
+      "source_sha256": "8314b17ab26f1f9ba87aff027df61e215347a9a202c62a2b0eaaa4cebe76dc17",
+      "bytes": 252640,
+      "upload_name": "v8c-8314b17ab26f-fig5.png",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-8314b17ab26f-fig5.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "dimensions": {
+        "width": 554,
+        "height": 283
+      },
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "40255",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-8314b17ab26f-fig5.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/engineering/FIg1.3.2.png",
+      "source_sha256": "ad5d098cc61772025d525f3a7b033e2a009b2ff9fa99c1a9b714fff737485f59",
+      "bytes": 175116,
+      "upload_name": "v8c-ad5d098cc617-fig1-3-2.png",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-ad5d098cc617-fig1-3-2.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "dimensions": {
+        "width": 633,
+        "height": 467
+      },
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "14444",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-ad5d098cc617-fig1-3-2.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/engineering/Fig1.3.1.png",
+      "source_sha256": "65db15fab4652318f426c0b8011e1a4425333287d6f2c8daacf403c4c072f092",
+      "bytes": 122527,
+      "upload_name": "v8c-65db15fab465-fig1-3-1.png",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-65db15fab465-fig1-3-1.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "dimensions": {
+        "width": 827,
+        "height": 537
+      },
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "21831",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-65db15fab465-fig1-3-1.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/engineering/Fig1.3.3.png",
+      "source_sha256": "f9ddc932c78a10176688cd8a58523da3793d79069609fcda16ce8dee9c1ec68d",
+      "bytes": 125390,
+      "upload_name": "v8c-f9ddc932c78a-fig1-3-3.png",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-f9ddc932c78a-fig1-3-3.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "dimensions": {
+        "width": 863,
+        "height": 259
+      },
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "10175",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-f9ddc932c78a-fig1-3-3.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/engineering/Fig1.3.4.png",
+      "source_sha256": "03753b902e9a1e9a948a4efcbfe936c8e5ee68c33f28129d0108769d93ad31ab",
+      "bytes": 265905,
+      "upload_name": "v8c-03753b902e9a-fig1-3-4.png",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-03753b902e9a-fig1-3-4.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "dimensions": {
+        "width": 827,
+        "height": 435
+      },
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "18829",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-03753b902e9a-fig1-3-4.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/engineering/Fig1.4.1.png",
+      "source_sha256": "0a2876570655f0f721d11e4508a7de3938edb527e5205ee65522e1f79121a672",
+      "bytes": 60647,
+      "upload_name": "v8c-0a2876570655-fig1-4-1.png",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-0a2876570655-fig1-4-1.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "dimensions": {
+        "width": 902,
+        "height": 192
+      },
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "24165",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-0a2876570655-fig1-4-1.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/engineering/Fig1.4.2.png",
+      "source_sha256": "dbd29273fd228e6796b4693517282af3693d33f73ccb81a876ad2d5bb4361911",
+      "bytes": 107006,
+      "upload_name": "v8c-dbd29273fd22-fig1-4-2.png",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-dbd29273fd22-fig1-4-2.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "dimensions": {
+        "width": 802,
+        "height": 418
+      },
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "17053",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-dbd29273fd22-fig1-4-2.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/engineering/Fig1.4.3.png",
+      "source_sha256": "7c829241bfa9d59ca73ca1a7eff413f15773d41222780448d568cca8a8a3c863",
+      "bytes": 377873,
+      "upload_name": "v8c-7c829241bfa9-fig1-4-3.png",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-7c829241bfa9-fig1-4-3.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "dimensions": {
+        "width": 1642,
+        "height": 1220
+      },
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "48871",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-7c829241bfa9-fig1-4-3.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/experiments/流程图-菌株构建.png",
+      "source_sha256": "12cdb6f517caf882c6884ff6d8958cfd961dbd6ef687ef8686fce19f1b96377f",
+      "bytes": 299981,
+      "upload_name": "v8c-12cdb6f517ca-contribution.png",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-12cdb6f517ca-contribution.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "dimensions": {
+        "width": 4225,
+        "height": 1894
+      },
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "277126",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-12cdb6f517ca-contribution.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/members/chang-wang.jpg",
+      "source_sha256": "322c60bc159e7e5692efc4dde6fc2b062e2b615df598d97cf22691bb2995d1b4",
+      "bytes": 722251,
+      "upload_name": "v8c-322c60bc159e-chang-wang.jpg",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-322c60bc159e-chang-wang.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "dimensions": {
+        "width": 1728,
+        "height": 2368
+      },
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "207242",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-322c60bc159e-chang-wang.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/members/chen-feiyue.jpg",
+      "source_sha256": "e8eae705159b1473c7d3b2df82342929c60d792220ff44b0b1d8955acef8a6ef",
+      "bytes": 3937998,
+      "upload_name": "v8c-e8eae705159b-chen-feiyue.jpg",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "dimensions": {
+        "width": 2448,
+        "height": 3264
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-e8eae705159b-chen-feiyue.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "573601",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-e8eae705159b-chen-feiyue.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/members/fu-xinya.jpg",
+      "source_sha256": "8fa16e16e7a49200917b22225a954fc9d71b1fc0cd905c0d0f47c7bd96f2c93a",
+      "bytes": 5237549,
+      "upload_name": "v8c-8fa16e16e7a4-fu-xinya.jpg",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "dimensions": {
+        "width": 3648,
+        "height": 2736
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-8fa16e16e7a4-fu-xinya.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "2077271",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-8fa16e16e7a4-fu-xinya.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/members/huang-xinqi.jpg",
+      "source_sha256": "f0001fee59508653008c41fc912182861823fca8b95fe3664b62a517ccbb9402",
+      "bytes": 3149175,
+      "upload_name": "v8c-f0001fee5950-huang-xinqi.jpg",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "dimensions": {
+        "width": 3264,
+        "height": 2448
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-f0001fee5950-huang-xinqi.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "375307",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-f0001fee5950-huang-xinqi.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/members/ivy-liu.jpg",
+      "source_sha256": "120e8273aa67bb31925fe5774a57dd6799f3faab78ec113f5a67d235729552c2",
+      "bytes": 264969,
+      "upload_name": "v8c-120e8273aa67-ivy-liu.jpg",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "dimensions": {
+        "width": 1279,
+        "height": 1706
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-120e8273aa67-ivy-liu.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "225486",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-120e8273aa67-ivy-liu.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/members/kuang-yinzi.jpg",
+      "source_sha256": "73eaaceee28d1c0206c54c0948e5ddcef0265c34ce4cef9c4002aa08c6c5a351",
+      "bytes": 2826958,
+      "upload_name": "v8c-73eaaceee28d-kuang-yinzi.jpg",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "dimensions": {
+        "width": 3120,
+        "height": 4160
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-73eaaceee28d-kuang-yinzi.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "559422",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-73eaaceee28d-kuang-yinzi.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/members/ruoxi-yang.jpg",
+      "source_sha256": "5667764dc7f74dce5cc1ecb4cf79284f35414be04cf5705de7c4af0f06eb8104",
+      "bytes": 5867909,
+      "upload_name": "v8c-5667764dc7f7-ruoxi-yang.jpg",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "dimensions": {
+        "width": 2316,
+        "height": 3088
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-5667764dc7f7-ruoxi-yang.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "1099260",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-5667764dc7f7-ruoxi-yang.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/members/shizhao-zheng.jpg",
+      "source_sha256": "001ba276229ed126610e34f1ba4ca8aabcbd4fde76094b30e7f2b8a9aa68d421",
+      "bytes": 3131944,
+      "upload_name": "v8c-001ba276229e-shizhao-zheng.jpg",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "dimensions": {
+        "width": 3072,
+        "height": 4096
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-001ba276229e-shizhao-zheng.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "323102",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-001ba276229e-shizhao-zheng.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/members/shulan-ye.jpg",
+      "source_sha256": "0f149e57e32beef5df30583481cba0e999d5156424de0bcf83418e9a9afbda0a",
+      "bytes": 5529477,
+      "upload_name": "v8c-0f149e57e32b-shulan-ye.jpg",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "dimensions": {
+        "width": 4032,
+        "height": 3024
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-0f149e57e32b-shulan-ye.avif",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "2184442",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-0f149e57e32b-shulan-ye.avif"
+      },
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/members/wang-qinghua.jpg",
+      "source_sha256": "08d95b754ff344e4802dfcc67485eeead729346b15bfc6c2eafbe68807836185",
+      "bytes": 3424458,
+      "upload_name": "v8c-08d95b754ff3-wang-qinghua.jpg",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "dimensions": {
+        "width": 2048,
+        "height": 1536
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-08d95b754ff3-wang-qinghua.avif",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "174282",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-08d95b754ff3-wang-qinghua.avif"
+      },
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/members/yanmei-song.jpg",
+      "source_sha256": "456cf76f9557f0a23e6dafe82e7d91d3b9df94b79b634f7655beb0247f7c8561",
+      "bytes": 254536,
+      "upload_name": "v8c-456cf76f9557-yanmei-song.jpg",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "dimensions": {
+        "width": 2391,
+        "height": 3348
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-456cf76f9557-yanmei-song.avif",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "173520",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-456cf76f9557-yanmei-song.avif"
+      },
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/members/yuanwen-luo.jpg",
+      "source_sha256": "270ecf6f2522a2e107e28ecbf38e7398f3f598c9e0d8a79b5d106065e3b13e59",
+      "bytes": 1330433,
+      "upload_name": "v8c-270ecf6f2522-yuanwen-luo.jpg",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "dimensions": {
+        "width": 3264,
+        "height": 2448
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-270ecf6f2522-yuanwen-luo.avif",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "304801",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-270ecf6f2522-yuanwen-luo.avif"
+      },
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/members/zhanning-zhang.jpg",
+      "source_sha256": "ddac5d0342584a652dae4bf5c8ac430a19fcd3c3e82ce8f4550233b6ef66e684",
+      "bytes": 3303256,
+      "upload_name": "v8c-ddac5d034258-zhanning-zhang.jpg",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "dimensions": {
+        "width": 2316,
+        "height": 3088
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-ddac5d034258-zhanning-zhang.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "759983",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-ddac5d034258-zhanning-zhang.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/members/zhiyuan-guan.jpg",
+      "source_sha256": "7db5eeb70e5752b4776f48f8f14f7453b7b6260c759c1388bb2d622d22ba1de8",
+      "bytes": 298532,
+      "upload_name": "v8c-7db5eeb70e57-zhiyuan-guan.jpg",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "dimensions": {
+        "width": 1030,
+        "height": 1546
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-7db5eeb70e57-zhiyuan-guan.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "73415",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-7db5eeb70e57-zhiyuan-guan.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/members/ziyi-peng.jpg",
+      "source_sha256": "491794815e37f7b6a55c754f9ff1998422780693f9ad545e6efaaa04e0b4453a",
+      "bytes": 628269,
+      "upload_name": "v8c-491794815e37-ziyi-peng.jpg",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "dimensions": {
+        "width": 1728,
+        "height": 2432
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-491794815e37-ziyi-peng.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "129833",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-491794815e37-ziyi-peng.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/protocols/protocol-01.pdf",
+      "source_sha256": "3539c6074fb1fc55487cc3a7d7343546007f14759502d5487470e30402457b2a",
+      "bytes": 203195,
+      "upload_name": "v8c-3539c6074fb1-protocol-01.pdf",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "rendered-in-native-Chrome",
+        "evidence": "protocol-01-cdn-native-chrome.png"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-3539c6074fb1-protocol-01.pdf",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: rendered-in-native-Chrome",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "application/pdf",
+        "content_length": "203195",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-3539c6074fb1-protocol-01.pdf"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/protocols/protocol-02.pdf",
+      "source_sha256": "154647698e67b22d200ec1e382e074f8cf28240d1ada0700c531a9cfaec5c745",
+      "bytes": 227429,
+      "upload_name": "v8c-154647698e67-protocol-02.pdf",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-154647698e67-protocol-02.pdf",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "application/pdf",
+        "content_length": "227429",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-154647698e67-protocol-02.pdf"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/protocols/protocol-03.pdf",
+      "source_sha256": "df98a0af09434403044d7c2e053b21dec6349c598da098c9c15116c86775a680",
+      "bytes": 181445,
+      "upload_name": "v8c-df98a0af0943-protocol-03.pdf",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-df98a0af0943-protocol-03.pdf",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "application/pdf",
+        "content_length": "181445",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-df98a0af0943-protocol-03.pdf"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/protocols/protocol-04.pdf",
+      "source_sha256": "730ddb351ab094218efab57a3b3416115c427a7d88610a460c162dd25f142b36",
+      "bytes": 295960,
+      "upload_name": "v8c-730ddb351ab0-protocol-04.pdf",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-730ddb351ab0-protocol-04.pdf",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "application/pdf",
+        "content_length": "295960",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-730ddb351ab0-protocol-04.pdf"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/protocols/protocol-05.pdf",
+      "source_sha256": "915625f7b4c9aec42adfb622c6df321dc1c9ce427c9b87831f3e856fe2333e7c",
+      "bytes": 197356,
+      "upload_name": "v8c-915625f7b4c9-protocol-05.pdf",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-915625f7b4c9-protocol-05.pdf",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "application/pdf",
+        "content_length": "197356",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-915625f7b4c9-protocol-05.pdf"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/protocols/protocol-06.pdf",
+      "source_sha256": "c810ddc4deedd1c69cda7f1090f9c8fe6e907b3f011ac5aaa3fae46f123b1848",
+      "bytes": 150059,
+      "upload_name": "v8c-c810ddc4deed-protocol-06.pdf",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-c810ddc4deed-protocol-06.pdf",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "application/pdf",
+        "content_length": "150059",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-c810ddc4deed-protocol-06.pdf"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/protocols/protocol-07.pdf",
+      "source_sha256": "94e1d5b82d0f68e3486534bd273f308e7daa47df021853a11d157dad167ba2fd",
+      "bytes": 227367,
+      "upload_name": "v8c-94e1d5b82d0f-protocol-07.pdf",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-94e1d5b82d0f-protocol-07.pdf",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "application/pdf",
+        "content_length": "227367",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-94e1d5b82d0f-protocol-07.pdf"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/protocols/protocol-08.pdf",
+      "source_sha256": "4bee1bb6f8a3d1bdcd19b905959d5d89c52bf45c15b2237ba98a1b7931bfbd6b",
+      "bytes": 92848,
+      "upload_name": "v8c-4bee1bb6f8a3-protocol-08.pdf",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-4bee1bb6f8a3-protocol-08.pdf",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "application/pdf",
+        "content_length": "92848",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-4bee1bb6f8a3-protocol-08.pdf"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/protocols/protocol-09.pdf",
+      "source_sha256": "c2aebd95ee124c2115a31045a3a81c36345dead5a7c7cc77c3fdb29ad93be314",
+      "bytes": 206221,
+      "upload_name": "v8c-c2aebd95ee12-protocol-09.pdf",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-c2aebd95ee12-protocol-09.pdf",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "application/pdf",
+        "content_length": "206221",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-c2aebd95ee12-protocol-09.pdf"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/protocols/protocol-10.pdf",
+      "source_sha256": "6c92e753b05aa5fa0cec645ab79e5100aec8685162a092e531ddf4cd16342176",
+      "bytes": 143793,
+      "upload_name": "v8c-6c92e753b05a-protocol-10.pdf",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-6c92e753b05a-protocol-10.pdf",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "application/pdf",
+        "content_length": "143793",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-6c92e753b05a-protocol-10.pdf"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/protocols/protocol-11.pdf",
+      "source_sha256": "05ccf4cb7bd5e596eda5092a102f32e8b68fa45f16d8d80bcf18c05fcc69cd99",
+      "bytes": 148061,
+      "upload_name": "v8c-05ccf4cb7bd5-protocol-11.pdf",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-05ccf4cb7bd5-protocol-11.pdf",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "application/pdf",
+        "content_length": "148061",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-05ccf4cb7bd5-protocol-11.pdf"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/protocols/protocol-12.pdf",
+      "source_sha256": "fa5162f5aacaeb090bab1cf3d65569e0a299734909486c29057f1043932c3fdc",
+      "bytes": 161564,
+      "upload_name": "v8c-fa5162f5aaca-protocol-12.pdf",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-fa5162f5aaca-protocol-12.pdf",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "application/pdf",
+        "content_length": "161564",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-fa5162f5aaca-protocol-12.pdf"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/protocols/protocol-13.pdf",
+      "source_sha256": "01699080a847e99ff860ad820ee75e29f90312c8d07951af992e9417f63ddf16",
+      "bytes": 200160,
+      "upload_name": "v8c-01699080a847-protocol-13.pdf",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-01699080a847-protocol-13.pdf",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "application/pdf",
+        "content_length": "200160",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-01699080a847-protocol-13.pdf"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/protocols/protocol-14.pdf",
+      "source_sha256": "8d474be66ea72e830072d1d225ce0fad036ed9ae0ed19ca82893018b19fcd449",
+      "bytes": 108519,
+      "upload_name": "v8c-8d474be66ea7-protocol-14.pdf",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-8d474be66ea7-protocol-14.pdf",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "application/pdf",
+        "content_length": "108519",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-8d474be66ea7-protocol-14.pdf"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/protocols/protocol-15.pdf",
+      "source_sha256": "3b75e8981471175a7caa906be24aa9719553f69e1232a9029c4031e9a4e1be68",
+      "bytes": 199652,
+      "upload_name": "v8c-3b75e8981471-protocol-15.pdf",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-3b75e8981471-protocol-15.pdf",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "application/pdf",
+        "content_length": "199652",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-3b75e8981471-protocol-15.pdf"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/protocols/protocol-16.pdf",
+      "source_sha256": "cb70639f0cf2255046cd99881e02e74a14bbd2cceca873a7bb7975e1050a1dd1",
+      "bytes": 149591,
+      "upload_name": "v8c-cb70639f0cf2-protocol-16.pdf",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-cb70639f0cf2-protocol-16.pdf",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "application/pdf",
+        "content_length": "149591",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-cb70639f0cf2-protocol-16.pdf"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/results/Fig1.1.png",
+      "source_sha256": "6a3e31c31a57e899555b8787d1203a0d0d396299d729144d828137917b025477",
+      "bytes": 844764,
+      "upload_name": "v8c-6a3e31c31a57-fig1-1.png",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "dimensions": {
+        "width": 2336,
+        "height": 1528
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-6a3e31c31a57-fig1-1.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "126342",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-6a3e31c31a57-fig1-1.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/results/Fig1.2.png",
+      "source_sha256": "b9bf38820eb89a29961c6b1a1a368abbbd42fc03791b1e53bb88605dbe85cd42",
+      "bytes": 445633,
+      "upload_name": "v8c-b9bf38820eb8-fig1-2.png",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "dimensions": {
+        "width": 2005,
+        "height": 1401
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-b9bf38820eb8-fig1-2.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "49526",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-b9bf38820eb8-fig1-2.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/results/Fig1.3.png",
+      "source_sha256": "b5c833268081a26cbbdd05fa8d50eda6d1ca5a5c24ee572736da16ce7c1c0034",
+      "bytes": 613250,
+      "upload_name": "v8c-b5c833268081-fig1-3.png",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "dimensions": {
+        "width": 1393,
+        "height": 1027
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-b5c833268081-fig1-3.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "31674",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-b5c833268081-fig1-3.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/results/Fig1.4.png",
+      "source_sha256": "66d05c9efec618bc72ac7c0f486941ebe76f3385c917487d6fb80a88e70745f1",
+      "bytes": 423648,
+      "upload_name": "v8c-66d05c9efec6-fig1-4.png",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "dimensions": {
+        "width": 1899,
+        "height": 569
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-66d05c9efec6-fig1-4.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "22697",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-66d05c9efec6-fig1-4.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/results/Fig1.5.png",
+      "source_sha256": "ecc5dd246c41f1552a7b8658589af29eb84b50c22f30803344f1d454521cb936",
+      "bytes": 1177310,
+      "upload_name": "v8c-ecc5dd246c41-fig1-5.png",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "dimensions": {
+        "width": 2103,
+        "height": 1105
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-ecc5dd246c41-fig1-5.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "47533",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-ecc5dd246c41-fig1-5.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/results/Fig2.1.1.png",
+      "source_sha256": "54bc3d3f3bd356ce8c9210504b3c3e33587e463becdae2af01b378fcba3a2ff7",
+      "bytes": 374686,
+      "upload_name": "v8c-54bc3d3f3bd3-fig2-1-1.png",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "dimensions": {
+        "width": 2045,
+        "height": 661
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-54bc3d3f3bd3-fig2-1-1.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "39752",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-54bc3d3f3bd3-fig2-1-1.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/results/Fig2.1.2.png",
+      "source_sha256": "f79bf47f490c9e56b81dda7edaa2005c208b97372f1f18fd4d5b5efae7d1544d",
+      "bytes": 489127,
+      "upload_name": "v8c-f79bf47f490c-fig2-1-2.png",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "dimensions": {
+        "width": 2211,
+        "height": 1125
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-f79bf47f490c-fig2-1-2.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "50938",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-f79bf47f490c-fig2-1-2.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/results/Fig2.2.1.png",
+      "source_sha256": "e8d85e8ac64b215ac95ca31df480df91dbb486cef5e1961216852bcb6f32d489",
+      "bytes": 447233,
+      "upload_name": "v8c-e8d85e8ac64b-fig2-2-1.png",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "dimensions": {
+        "width": 2008,
+        "height": 1758
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-e8d85e8ac64b-fig2-2-1.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "123928",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-e8d85e8ac64b-fig2-2-1.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/results/Fig2.2.2.png",
+      "source_sha256": "c9dd0c23eba948ef56eb7c565bf865b89136ffd7683465f9563edd3ae299822a",
+      "bytes": 223198,
+      "upload_name": "v8c-c9dd0c23eba9-fig2-2-2.png",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "dimensions": {
+        "width": 1697,
+        "height": 633
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-c9dd0c23eba9-fig2-2-2.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "31803",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-c9dd0c23eba9-fig2-2-2.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/results/Fig2.2.3.png",
+      "source_sha256": "dd7eb6cbc85bc8751ae63c8fc39526d3e570cf43a3146a8cc009e8a2a1d3dbe6",
+      "bytes": 343684,
+      "upload_name": "v8c-dd7eb6cbc85b-fig2-2-3.png",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "dimensions": {
+        "width": 2457,
+        "height": 639
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-dd7eb6cbc85b-fig2-2-3.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "40618",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-dd7eb6cbc85b-fig2-2-3.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/results/Fig2.2.4.png",
+      "source_sha256": "ff3d00fb619444334d582dc3129dc8eea32eb41d460b389e1bad2db7dda664cc",
+      "bytes": 719367,
+      "upload_name": "v8c-ff3d00fb6194-fig2-2-4.png",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "dimensions": {
+        "width": 2076,
+        "height": 1789
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-ff3d00fb6194-fig2-2-4.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "158909",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-ff3d00fb6194-fig2-2-4.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/results/Fig2.2.5.png",
+      "source_sha256": "3b0197d8eb0c762b2cc2e6ff71264935ca98f0f20a2e87d644882470b86ca3e7",
+      "bytes": 183060,
+      "upload_name": "v8c-3b0197d8eb0c-fig2-2-5.png",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "dimensions": {
+        "width": 1732,
+        "height": 853
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-3b0197d8eb0c-fig2-2-5.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "18448",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-3b0197d8eb0c-fig2-2-5.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/results/Fig2.3.1.png",
+      "source_sha256": "1e5da6928b7347b833db71d58699f356d12c26f38d963d6a738b6fc68e1fc5ab",
+      "bytes": 1102074,
+      "upload_name": "v8c-1e5da6928b73-fig2-3-1.png",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "dimensions": {
+        "width": 2434,
+        "height": 2097
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-1e5da6928b73-fig2-3-1.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "215564",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-1e5da6928b73-fig2-3-1.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/results/Fig2.3.2.png",
+      "source_sha256": "bad380137ce7301ae84b1c9b8d84db7d361c3a46e1f11fadbf8bd4bdda8d6239",
+      "bytes": 278570,
+      "upload_name": "v8c-bad380137ce7-fig2-3-2.png",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "dimensions": {
+        "width": 2378,
+        "height": 1039
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-bad380137ce7-fig2-3-2.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "42377",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-bad380137ce7-fig2-3-2.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/results/Fig2.3.3.png",
+      "source_sha256": "b80d515be3c214b5ae831db560580d5e23a87c7eb5aa1713f3c99144cccbc2b4",
+      "bytes": 1576951,
+      "upload_name": "v8c-b80d515be3c2-fig2-3-3.png",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "dimensions": {
+        "width": 1931,
+        "height": 650
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-b80d515be3c2-fig2-3-3.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "64655",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-b80d515be3c2-fig2-3-3.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/results/Fig2.4.1.png",
+      "source_sha256": "e034ba0dffbfa6ff56b2e2e5cb8b6d9e17ec130aa3cc2893fb8900da52ba112c",
+      "bytes": 429704,
+      "upload_name": "v8c-e034ba0dffbf-fig2-4-1.png",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "dimensions": {
+        "width": 2188,
+        "height": 979
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-e034ba0dffbf-fig2-4-1.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "129823",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-e034ba0dffbf-fig2-4-1.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/results/Fig2.4.10.png",
+      "source_sha256": "2e431ac997566149d4a75899bd10fa7d5cddeefd33ffd9a03748974264dfca03",
+      "bytes": 249135,
+      "upload_name": "v8c-2e431ac99756-fig2-4-10.png",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "dimensions": {
+        "width": 2373,
+        "height": 743
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-2e431ac99756-fig2-4-10.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "35696",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-2e431ac99756-fig2-4-10.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/results/Fig2.4.11.png",
+      "source_sha256": "a4204d900f2389f9fff81bfef4556214e3ca1fe1b0b59ccddea0c67f75bda985",
+      "bytes": 25813,
+      "upload_name": "v8c-a4204d900f23-fig2-4-11.png",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "dimensions": {
+        "width": 1515,
+        "height": 345
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-a4204d900f23-fig2-4-11.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "10228",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-a4204d900f23-fig2-4-11.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/results/Fig2.4.2.png",
+      "source_sha256": "520027082450c536a999ea683858cd2df5693cbd73ebca40b82de8f6a08f6246",
+      "bytes": 716110,
+      "upload_name": "v8c-520027082450-fig2-4-2.png",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "dimensions": {
+        "width": 2241,
+        "height": 1542
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-520027082450-fig2-4-2.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "164865",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-520027082450-fig2-4-2.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/results/Fig2.4.3.png",
+      "source_sha256": "35c2440a69e2b1dfcec7a4cb831f39ce8239216ff959deb1d392d988e5074610",
+      "bytes": 317754,
+      "upload_name": "v8c-35c2440a69e2-fig2-4-3.png",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "dimensions": {
+        "width": 1902,
+        "height": 676
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-35c2440a69e2-fig2-4-3.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "109063",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-35c2440a69e2-fig2-4-3.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/results/Fig2.4.4.png",
+      "source_sha256": "d982a8b520ffc2a957e7a0f21db9888183aabc2c319997722941f8e528b5329d",
+      "bytes": 594244,
+      "upload_name": "v8c-d982a8b520ff-fig2-4-4.png",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "dimensions": {
+        "width": 1916,
+        "height": 1573
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-d982a8b520ff-fig2-4-4.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "147418",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-d982a8b520ff-fig2-4-4.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/results/Fig2.4.5.png",
+      "source_sha256": "69de44f60d1c3fd33266154392db4dde19fed8ca5d66877c44fd12a46347190d",
+      "bytes": 460402,
+      "upload_name": "v8c-69de44f60d1c-fig2-4-5.png",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "dimensions": {
+        "width": 1373,
+        "height": 1390
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-69de44f60d1c-fig2-4-5.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "104707",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-69de44f60d1c-fig2-4-5.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/results/Fig2.4.6.png",
+      "source_sha256": "d5131d0a322fed436ed4f00a9257d5de9f6aa09ae15870ad535f553dba239af8",
+      "bytes": 446889,
+      "upload_name": "v8c-d5131d0a322f-fig2-4-6.png",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "dimensions": {
+        "width": 1443,
+        "height": 1347
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-d5131d0a322f-fig2-4-6.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "105419",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-d5131d0a322f-fig2-4-6.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/results/Fig2.4.7.png",
+      "source_sha256": "3fc8bdc1eede7096ce04589985cc1cab883b9e4a2fd5b984bc44cc9f1ae5e2b9",
+      "bytes": 182164,
+      "upload_name": "v8c-3fc8bdc1eede-fig2-4-7.png",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "dimensions": {
+        "width": 1395,
+        "height": 899
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-3fc8bdc1eede-fig2-4-7.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "35017",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-3fc8bdc1eede-fig2-4-7.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/results/Fig2.4.8.png",
+      "source_sha256": "b849be4108e20dfd34c406a05cfa6acd554f16b0ef207408fb6ff19d55d94f65",
+      "bytes": 383439,
+      "upload_name": "v8c-b849be4108e2-fig2-4-8.png",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "dimensions": {
+        "width": 1804,
+        "height": 1783
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-b849be4108e2-fig2-4-8.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "108215",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-b849be4108e2-fig2-4-8.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/uploads/results/Fig2.4.9.png",
+      "source_sha256": "17c9afd1d0d700df2a680ec6f70a77316dcde661b6b4e22c489fd05575caa8c9",
+      "bytes": 455144,
+      "upload_name": "v8c-17c9afd1d0d7-fig2-4-9.png",
+      "source": "Team supplied attachment",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "dimensions": {
+        "width": 2096,
+        "height": 1105
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-17c9afd1d0d7-fig2-4-9.avif",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "83047",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-17c9afd1d0d7-fig2-4-9.avif"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/widgets/vendor/katex/fonts/KaTeX_AMS-Regular.woff2",
+      "source_sha256": "0cdd387c9590a1a9f9794560022dbb59654a7d86f187aa0c81495ad42d3a7308",
+      "bytes": 28076,
+      "upload_name": "v8c-0cdd387c9590-katex-ams-regular.woff2",
+      "source": "KaTeX locked npm package (MIT)",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-0cdd387c9590-katex-ams-regular.woff2",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "font/woff2",
+        "content_length": "28076",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-0cdd387c9590-katex-ams-regular.woff2"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/widgets/vendor/katex/fonts/KaTeX_Caligraphic-Bold.woff2",
+      "source_sha256": "de7701e42cf1f4cf0b766c03fb27977207eee2f4fd5d76fa82188406da43ea4c",
+      "bytes": 6912,
+      "upload_name": "v8c-de7701e42cf1-katex-caligraphic-bold.woff2",
+      "source": "KaTeX locked npm package (MIT)",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-de7701e42cf1-katex-caligraphic-bold.woff2",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "font/woff2",
+        "content_length": "6912",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-de7701e42cf1-katex-caligraphic-bold.woff2"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/widgets/vendor/katex/fonts/KaTeX_Caligraphic-Regular.woff2",
+      "source_sha256": "5d53e70ad607c2352162dec9e0923fb54ecdafaccbf604cd8dcf7d00facb989b",
+      "bytes": 6908,
+      "upload_name": "v8c-5d53e70ad607-katex-caligraphic-regular.woff2",
+      "source": "KaTeX locked npm package (MIT)",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-5d53e70ad607-katex-caligraphic-regular.woff2",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "font/woff2",
+        "content_length": "6908",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-5d53e70ad607-katex-caligraphic-regular.woff2"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/widgets/vendor/katex/fonts/KaTeX_Fraktur-Bold.woff2",
+      "source_sha256": "74444efd593c005e3f4573b44524704c0af0a937fe911cca9e94068d0d140d3f",
+      "bytes": 11348,
+      "upload_name": "v8c-74444efd593c-katex-fraktur-bold.woff2",
+      "source": "KaTeX locked npm package (MIT)",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-74444efd593c-katex-fraktur-bold.woff2",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "font/woff2",
+        "content_length": "11348",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-74444efd593c-katex-fraktur-bold.woff2"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/widgets/vendor/katex/fonts/KaTeX_Fraktur-Regular.woff2",
+      "source_sha256": "51814d270d06ff0255dba0799994fa4d8c84d11f09951d47595f4abb1f3602dc",
+      "bytes": 11316,
+      "upload_name": "v8c-51814d270d06-katex-fraktur-regular.woff2",
+      "source": "KaTeX locked npm package (MIT)",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-51814d270d06-katex-fraktur-regular.woff2",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "font/woff2",
+        "content_length": "11316",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-51814d270d06-katex-fraktur-regular.woff2"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/widgets/vendor/katex/fonts/KaTeX_Main-Bold.woff2",
+      "source_sha256": "0f60d1b897938ec918c8ce073092411baf9438f6739465693ff18b0f9d20b021",
+      "bytes": 25324,
+      "upload_name": "v8c-0f60d1b89793-katex-main-bold.woff2",
+      "source": "KaTeX locked npm package (MIT)",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-0f60d1b89793-katex-main-bold.woff2",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "font/woff2",
+        "content_length": "25324",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-0f60d1b89793-katex-main-bold.woff2"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/widgets/vendor/katex/fonts/KaTeX_Main-BoldItalic.woff2",
+      "source_sha256": "99cd42a3c072d918f2f44984a807cf7aa16e13545fd0875fc07c6c65f99e715b",
+      "bytes": 16780,
+      "upload_name": "v8c-99cd42a3c072-katex-main-bolditalic.woff2",
+      "source": "KaTeX locked npm package (MIT)",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-99cd42a3c072-katex-main-bolditalic.woff2",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "font/woff2",
+        "content_length": "16780",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-99cd42a3c072-katex-main-bolditalic.woff2"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/widgets/vendor/katex/fonts/KaTeX_Main-Italic.woff2",
+      "source_sha256": "97479ca6cce906abc961ecac96faa5f9ca2e61b8e7670d475826bcdee9a7c267",
+      "bytes": 16988,
+      "upload_name": "v8c-97479ca6cce9-katex-main-italic.woff2",
+      "source": "KaTeX locked npm package (MIT)",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-97479ca6cce9-katex-main-italic.woff2",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "font/woff2",
+        "content_length": "16988",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-97479ca6cce9-katex-main-italic.woff2"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/widgets/vendor/katex/fonts/KaTeX_Main-Regular.woff2",
+      "source_sha256": "c2342cd8b869e01752a9321dc17213fc40d4d04c79688c1d43f2cf316abd7866",
+      "bytes": 26272,
+      "upload_name": "v8c-c2342cd8b869-katex-main-regular.woff2",
+      "source": "KaTeX locked npm package (MIT)",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-c2342cd8b869-katex-main-regular.woff2",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "font/woff2",
+        "content_length": "26272",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-c2342cd8b869-katex-main-regular.woff2"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/widgets/vendor/katex/fonts/KaTeX_Math-BoldItalic.woff2",
+      "source_sha256": "dc47344dbb6cb5b655c8460d561f4df5f501b90c804ad3c6cec65fe322351ab1",
+      "bytes": 16400,
+      "upload_name": "v8c-dc47344dbb6c-katex-math-bolditalic.woff2",
+      "source": "KaTeX locked npm package (MIT)",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-dc47344dbb6c-katex-math-bolditalic.woff2",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "font/woff2",
+        "content_length": "16400",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-dc47344dbb6c-katex-math-bolditalic.woff2"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/widgets/vendor/katex/fonts/KaTeX_Math-Italic.woff2",
+      "source_sha256": "7af58c5ec8f132a2ddde9027c6d7814decce4d3b822a11192a42a20e2e973264",
+      "bytes": 16440,
+      "upload_name": "v8c-7af58c5ec8f1-katex-math-italic.woff2",
+      "source": "KaTeX locked npm package (MIT)",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-7af58c5ec8f1-katex-math-italic.woff2",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "font/woff2",
+        "content_length": "16440",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-7af58c5ec8f1-katex-math-italic.woff2"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/widgets/vendor/katex/fonts/KaTeX_SansSerif-Bold.woff2",
+      "source_sha256": "e99ae51144bf1232efcc1bfe5add36262c6866b0faab24fa75740e1b98577a62",
+      "bytes": 12216,
+      "upload_name": "v8c-e99ae51144bf-katex-sansserif-bold.woff2",
+      "source": "KaTeX locked npm package (MIT)",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-e99ae51144bf-katex-sansserif-bold.woff2",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "font/woff2",
+        "content_length": "12216",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-e99ae51144bf-katex-sansserif-bold.woff2"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/widgets/vendor/katex/fonts/KaTeX_SansSerif-Italic.woff2",
+      "source_sha256": "00b26ac825e2095056396e0553b8ac26d3f8ad158c3826e28b4c45b385c4714a",
+      "bytes": 12028,
+      "upload_name": "v8c-00b26ac825e2-katex-sansserif-italic.woff2",
+      "source": "KaTeX locked npm package (MIT)",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-00b26ac825e2-katex-sansserif-italic.woff2",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "font/woff2",
+        "content_length": "12028",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-00b26ac825e2-katex-sansserif-italic.woff2"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/widgets/vendor/katex/fonts/KaTeX_SansSerif-Regular.woff2",
+      "source_sha256": "68e8c73ef42afd3ccec58bf0fba302cce448938e7fc020a5e31f8a952eee1342",
+      "bytes": 10344,
+      "upload_name": "v8c-68e8c73ef42a-katex-sansserif-regular.woff2",
+      "source": "KaTeX locked npm package (MIT)",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-68e8c73ef42a-katex-sansserif-regular.woff2",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "font/woff2",
+        "content_length": "10344",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-68e8c73ef42a-katex-sansserif-regular.woff2"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/widgets/vendor/katex/fonts/KaTeX_Script-Regular.woff2",
+      "source_sha256": "036d4e95149b69ff9bcc0cd55771efeb25ffa3947293e69acd78d5ac328c684b",
+      "bytes": 9644,
+      "upload_name": "v8c-036d4e95149b-katex-script-regular.woff2",
+      "source": "KaTeX locked npm package (MIT)",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-036d4e95149b-katex-script-regular.woff2",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "font/woff2",
+        "content_length": "9644",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-036d4e95149b-katex-script-regular.woff2"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/widgets/vendor/katex/fonts/KaTeX_Size1-Regular.woff2",
+      "source_sha256": "6b47c40166b6dbe21a5dfca7718413f2147fd2399be1ba605d8ad39cedf25dfe",
+      "bytes": 5468,
+      "upload_name": "v8c-6b47c40166b6-katex-size1-regular.woff2",
+      "source": "KaTeX locked npm package (MIT)",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-6b47c40166b6-katex-size1-regular.woff2",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "font/woff2",
+        "content_length": "5468",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-6b47c40166b6-katex-size1-regular.woff2"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/widgets/vendor/katex/fonts/KaTeX_Size2-Regular.woff2",
+      "source_sha256": "d04c54219f9eaec6d4d4fd42dfb28785975a4794d6b2fc71e566b9cd6db842dd",
+      "bytes": 5208,
+      "upload_name": "v8c-d04c54219f9e-katex-size2-regular.woff2",
+      "source": "KaTeX locked npm package (MIT)",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-d04c54219f9e-katex-size2-regular.woff2",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "font/woff2",
+        "content_length": "5208",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-d04c54219f9e-katex-size2-regular.woff2"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/widgets/vendor/katex/fonts/KaTeX_Size3-Regular.woff2",
+      "source_sha256": "73d591271b1604960cb10bb90fee021670af7297017e0e98480b332d11f51995",
+      "bytes": 3624,
+      "upload_name": "v8c-73d591271b16-katex-size3-regular.woff2",
+      "source": "KaTeX locked npm package (MIT)",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-73d591271b16-katex-size3-regular.woff2",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "font/woff2",
+        "content_length": "3624",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-73d591271b16-katex-size3-regular.woff2"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/widgets/vendor/katex/fonts/KaTeX_Size4-Regular.woff2",
+      "source_sha256": "a4af7d414440a1c1790825cfb700cf9cf43b0f2c4b04f0ebc523011ad9853ec0",
+      "bytes": 4928,
+      "upload_name": "v8c-a4af7d414440-katex-size4-regular.woff2",
+      "source": "KaTeX locked npm package (MIT)",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-a4af7d414440-katex-size4-regular.woff2",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "font/woff2",
+        "content_length": "4928",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-a4af7d414440-katex-size4-regular.woff2"
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/widgets/vendor/katex/fonts/KaTeX_Typewriter-Regular.woff2",
+      "source_sha256": "71d517d67827787cfabdf186914cc3358eda539e37931941f2b2fd4a21f68c0b",
+      "bytes": 13568,
+      "upload_name": "v8c-71d517d67827-katex-typewriter-regular.woff2",
+      "source": "KaTeX locked npm package (MIT)",
+      "browser_verification": {
+        "status": "not-verified"
+      },
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-71d517d67827-katex-typewriter-regular.woff2",
+      "verification": "HTTP 200 and nonempty response verified; referenced in current build; browser status: not-verified",
+      "http_verification": {
+        "checked_at": "2026-10-11T02:46:54.501811+00:00",
+        "status": 200,
+        "content_type": "font/woff2",
+        "content_length": "13568",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-71d517d67827-katex-typewriter-regular.woff2"
+      },
+      "referenced_in_build": true
     }
   ]
 }

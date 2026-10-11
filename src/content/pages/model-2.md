@@ -6,8 +6,7 @@ crumbs:
   - Model
   - Model 2
 search: true
-description: ''
+meta: {}
 draft: false
 hidden: false
-meta: {}
 ---

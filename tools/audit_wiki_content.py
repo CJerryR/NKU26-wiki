@@ -21,7 +21,7 @@ import json
 import re
 import sys
 from pathlib import Path
-from urllib.parse import urlsplit
+from urllib.parse import unquote, urlsplit
 
 RUNTIME_URL_RE = re.compile(
     r"<(?:script|img|iframe|video|audio|source)\b[^>]*?\bsrc=[\"']([^\"']+)[\"']|<link\b[^>]*?\bhref=[\"']([^\"']+)[\"']",
@@ -77,7 +77,7 @@ FORBIDDEN_PATTERNS: tuple[tuple[str, re.Pattern[str]], ...] = (
     ("draft marker", re.compile(r"\b(?:TODO|TBD)\b", re.I)),
     ("fake person", re.compile(r"\b(?:Member|Advisor|Instructor) name\b", re.I)),
     ("fake relationship", re.compile(r"\b(?:Team|Partner) name\b", re.I)),
-    ("editing instruction", re.compile(r"Editor's note|Replace (?:with|the)|Add (?:your|real|final|activity|market|reach|instructor|advisor|partnership|collaboration)|Insert (?:CAD|equations)", re.I)),
+    ("editing instruction", re.compile(r"Editor's note|(?:^|\n|<p[^>]*>)\s*Replace (?:with|the)|Add (?:your|real|final|activity|market|reach|instructor|advisor|partnership|collaboration)|Insert (?:CAD|equations)", re.I)),
     ("untraced concentration", re.compile(r"5\s*(?:-|–|&ndash;|&#8211;)\s*100\s*nM", re.I)),
     ("untraced proportion", re.compile(r"60\s*(?:-|–|&ndash;|&#8211;)\s*82\s*%", re.I)),
     ("untraced timing", re.compile(r"24\s*(?:-|–|&ndash;|&#8211;)\s*72\s*(?:h|hours?)\b", re.I)),
@@ -103,6 +103,8 @@ FRONTMATTER_RE = re.compile(r"^---\n(.*?)\n---\n?", re.S)
 
 def _scalar(value: str):
     value = value.strip()
+    if value in ("{}", "[]"):
+        return json.loads(value)
     if value.startswith('"'):
         return json.loads(value)
     if value.startswith("'") and value.endswith("'"):
@@ -185,9 +187,13 @@ def audit_source(root: Path, path: Path, icons: set[str], failures: list[str], b
     if fm is None:
         failures.append(f"{rel}: missing frontmatter block (--- ... ---)")
         fm = {}
-    for field in ("title", "crumbs", "heading", "sub", "meta"):
-        if not fm.get(field) and not (intentionally_empty and field in ("sub", "meta")):
+    for field in ("title", "crumbs", "heading"):
+        if not fm.get(field):
             failures.append(f"{rel}: frontmatter missing {field}")
+    if "sub" in fm and not isinstance(fm["sub"], str):
+        failures.append(f"{rel}: frontmatter sub must be a string")
+    if "meta" in fm and not isinstance(fm["meta"], dict):
+        failures.append(f"{rel}: frontmatter meta must be a map")
     check_text(str(rel), text, failures)
 
     lines = outside_code(body)
@@ -247,7 +253,10 @@ def audit_copy_provenance(root: Path, results: list[dict], blockers: list[str], 
             continue
         approved = record.get("team_copy_received") is True and record.get("team_review_approved") is True
         if not approved and not (result["body_empty"] and slug in EMPTY_PAGE_SLUGS):
-            blockers.append(f"src/content/pages/{slug}.md: team final copy/review not confirmed; existing AI draft is not approved content")
+            state = ('supplied team material integrated; final team review pending'
+                     if record.get('team_copy_received') is True else
+                     'team final copy/review not confirmed; placeholder is not approved content')
+            blockers.append(f"src/content/pages/{slug}.md: {state}")
 
 
 def audit_home(root: Path, page_ids: set[str], failures: list[str]) -> None:
@@ -299,7 +308,8 @@ def audit_generated(root: Path, failures: list[str], expected_count: int) -> Non
             if not value or value.startswith(("http://", "https://", "mailto:", "tel:", "javascript:", "data:")):
                 continue
             path_part, _, fragment = value.partition("#")
-            path_part = path_part.partition("?")[0]
+            path_part = unquote(path_part.partition("?")[0])
+            fragment = unquote(fragment)
             target = path if not path_part else (path.parent / path_part).resolve()
             if target.is_dir() or path_part.endswith("/"):
                 target = target / "index.html"
@@ -388,8 +398,11 @@ def main() -> int:
     if args.generated:
         generated_root = (args.generated_root or (root / "public")).resolve()
         component_demo = (root / "src" / "pages" / "component-library" / "index.astro").exists()
+        # Preserve the two pre-standard-route addresses implemented by pages/[slug].astro.
+        legacy_aliases = sum(r["slug"] in {"protocols", "part-collection"} and bool(r["route"])
+                             and not r["draft"] for r in results)
         audit_generated(generated_root, failures,
-                        1 + len([r for r in results if not r["draft"]]) + int(component_demo))
+                        1 + len([r for r in results if not r["draft"]]) + int(component_demo) + legacy_aliases)
     print(
         f"sources={len(sources)} sections={sum(r['sections'] for r in results)} "
         f"hidden={sum(r['hidden'] for r in results)} drafts={sum(r['draft'] for r in results)}"

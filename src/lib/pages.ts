@@ -2,6 +2,12 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 
 export type PageEntry = CollectionEntry<'pages'>;
 
+/** Pages filled from the team's supplied material use the approved reading layout. */
+export const submittedPages = new Set([
+  'description', 'attributions', 'members', 'experiments', 'protocols',
+  'contribution', 'engineering', 'results', 'parts', 'part-collection', 'model', 'background',
+]);
+
 /** Every published page (drafts left out), in a stable order. */
 export async function getPages(): Promise<PageEntry[]> {
   const all = await getCollection('pages', ({ data }) => !data.draft);
