@@ -1,9 +1,10 @@
 {
   "version": "v8.0",
-  "source_commit": "0580af10a94da93ee36b0add6f1102ab049d012c",
-  "source_url": "https://github.com/CJerryR/NKU26-wiki/tree/0580af10a94da93ee36b0add6f1102ab049d012c",
+  "source_commit": "ea57088d5ae6ecadc2b5cfa374be8d821c8a037f",
+  "source_url": "https://github.com/CJerryR/NKU26-wiki/tree/ea57088d5ae6ecadc2b5cfa374be8d821c8a037f",
   "built_at": "2026-10-17T04:47:54.064694+08:00",
-  "snapshot_at": "2026-10-17T04:47:06.776979+08:00",
+  "snapshot_at": "2026-10-17T04:48:24.261599+08:00",
   "deployment_target": "GitHub Pages preview",
-  "official_site_updated_by_this_sync": false
+  "official_site_updated_by_this_sync": false,
+  "notes": "Final source-only documentation and npm test command follow the verified build; application and content files are unchanged."
 }
