@@ -123,6 +123,8 @@
       raf = 0;
       var d = D.v = descentAt(performance.now());
       heroStyle(d);
+      S.exploring = d > 0.96;
+      root.classList.toggle('is-exploring', S.exploring);
       if (d > 0.96 && !S.found) { S.found = true; S.foundAt = performance.now(); root.classList.add('is-exploring', 'is-found'); setLine('found', 'is-found'); }
       if (D.v !== D.to || D.t0 > performance.now() - D.dur) raf = requestAnimationFrame(tick);
     }
@@ -1224,7 +1226,10 @@
     var covered = artwork && !artFailed && d === 0 && D.to === 0 && Array.prototype.every.call(artImages, function (img) { return img.complete && img.naturalWidth > 0; });
     var mode = covered ? 'artwork' : 'live';
     if (mode !== renderMode) { renderMode = mode; root.setAttribute('data-op-render', mode); }
-    if (covered) { H0.lastLight = null; return; }
+    if (covered) {
+      if (S.exploring) { S.exploring = false; root.classList.remove('is-exploring'); }
+      H0.lastLight = null; return;
+    }
     if (!built) return;
     adaptResolution(dt);
     clock = t;

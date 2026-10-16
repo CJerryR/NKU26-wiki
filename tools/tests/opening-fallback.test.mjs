@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
 test('no-WebGL opening artwork returns after scene/viewport restoration', () => {
-  const classes=()=>({add(){},remove(){},toggle(){}});
+  const classes=()=>{ const values=new Set(); return {add(...names){names.forEach(n=>values.add(n));},remove(...names){names.forEach(n=>values.delete(n));},toggle(n,on){if(on??!values.has(n))values.add(n);else values.delete(n);},contains:n=>values.has(n)}; };
   const hero={style:{}}, art={style:{}}, stage={style:{setProperty(){}},addEventListener(){}}, hud={classList:classes(),offsetWidth:1,textContent:'',className:''};
   const nodes={'.op__stage':stage,'[data-op-hero]':hero,'[data-op-art]':art,'[data-op-line]':hud,'[data-op-guide]':null,'[data-op-focus]':null,'[data-op-gl]':{style:{}}};
   const root={classList:classes(),querySelector:s=>nodes[s]||null};
@@ -14,7 +14,7 @@ test('no-WebGL opening artwork returns after scene/viewport restoration', () => 
   vm.createContext(sandbox);
   vm.runInContext(fs.readFileSync('static/js/home-opening.js','utf8'),sandbox);
   assert.equal(art.style.opacity,'1');
-  scene.set(1); assert.equal(art.style.opacity,'0'); assert.equal(art.style.visibility,'hidden');
-  scene.set(0); assert.equal(art.style.opacity,'1'); assert.equal(art.style.visibility,'visible');
+  scene.set(1); assert.equal(root.classList.contains('is-exploring'),true); assert.equal(art.style.opacity,'0'); assert.equal(art.style.visibility,'hidden');
+  scene.set(0); assert.equal(root.classList.contains('is-exploring'),false); assert.equal(art.style.opacity,'1'); assert.equal(art.style.visibility,'visible');
   assert.equal(hero.style.opacity,'1');
 });
