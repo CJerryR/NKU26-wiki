@@ -17,21 +17,26 @@
 
 /* ---- 3. yeast detective, always bottom-left --------------------------- */
 .detective{position:fixed;left:14px;bottom:10px;z-index:950;display:flex;align-items:flex-end;pointer-events:none}
-.detective__btn{pointer-events:auto;width:104px;height:96px;padding:0;border:0;background:none;cursor:pointer;
+/* R1-H01: one detective size everywhere, the opening screen's 131 × 112 (Figma) */
+.detective__btn{pointer-events:auto;width:131px;height:112px;padding:0;border:0;background:none;cursor:pointer;
   filter:drop-shadow(0 8px 12px rgba(20,4,24,.35));transition:transform .45s var(--lg-ease)}
 .detective__btn img{width:100%;height:100%;object-fit:contain;animation:detective-bob 3.6s ease-in-out infinite;transform-origin:50% 90%}
 .detective__btn:hover{transform:translateY(-4px) rotate(-4deg)}
 .detective__btn:focus-visible{outline:2px solid #ffd66b;outline-offset:4px;border-radius:20px}
-.detective__bubble{order:2;margin:0 0 70px -6px;max-width:230px;padding:10px 14px;border-radius:16px 16px 16px 4px;
+.detective__bubble{order:2;margin:0 0 86px -10px;max-width:230px;padding:10px 14px;border-radius:16px 16px 16px 4px;
   background:#fff8ee;color:#3a1d36;font-size:13.5px;line-height:1.4;box-shadow:0 12px 30px -12px rgba(40,10,40,.45);
   opacity:0;transform:translateY(6px) scale(.94);transform-origin:0 100%;transition:opacity .3s,transform .4s var(--lg-ease)}
 .detective__bubble b{color:#7E0C6E}
 .detective.show-bubble .detective__bubble{opacity:1;transform:none}
 .detective.is-lit .detective__btn{filter:drop-shadow(0 0 18px rgba(255,201,74,.75)) drop-shadow(0 8px 12px rgba(20,4,24,.35))}
 @keyframes detective-bob{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-5px) rotate(-2deg)}}
+@media (max-width:1099px){
+  .detective__btn{width:96px;height:82px}
+  .detective__bubble{margin-bottom:62px}
+}
 @media (max-width:640px){
-  .detective__btn{width:70px;height:64px}
-  .detective__bubble{margin-bottom:48px;max-width:190px;font-size:12.5px}
+  .detective__btn{width:76px;height:65px}
+  .detective__bubble{margin-bottom:50px;max-width:190px;font-size:12.5px}
 }
 
 /* old floating mascot and legacy nav are retired */
