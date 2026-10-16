@@ -1,1 +1,0 @@
-import{b as n,c as a,d as e,i as d}from"./search.Cext5raH.js";function i(){n(),a(),e();const t=document.getElementById("china");t&&d(t)}document.readyState==="loading"?document.addEventListener("DOMContentLoaded",i):i();
