@@ -83,7 +83,8 @@ export function initSearch(): void {
       loading = new Promise<Entry[]>((resolve) => {
         if (window.NKU_SEARCH_INDEX) return resolve(window.NKU_SEARCH_INDEX);
         const s = document.createElement('script');
-        s.src = `${root}js/search-data.js`;
+        const version = modal.dataset.searchVersion;
+        s.src = `${root}js/search-data.js${version ? `?v=${encodeURIComponent(version)}` : ''}`;
         s.onload = () => resolve(window.NKU_SEARCH_INDEX || []);
         s.onerror = () => resolve([]);
         document.head.appendChild(s);

@@ -1210,13 +1210,18 @@
       renderer.setPixelRatio(DPR); resize(false);
     }
   }
-  var artImages = artwork ? artwork.querySelectorAll('img') : [], renderMode = '';
+  var artImages = artwork ? artwork.querySelectorAll('img') : [], renderMode = '', artFailed = false;
+  Array.prototype.forEach.call(artImages, function (img) {
+    function failed() { artFailed = true; artwork.hidden = true; }
+    img.addEventListener('error', failed, { once: true });
+    if (img.complete && !img.naturalWidth) failed();
+  });
   function frame(t, dt) {
     var d = D.v = descentAt(performance.now());
     heroStyle(d);
     // Opaque, decoded artwork covers the entire canvas at rest. Resume the live
     // scene on the first descent frame; failed artwork keeps the old renderer.
-    var covered = artwork && d === 0 && D.to === 0 && Array.prototype.every.call(artImages, function (img) { return img.complete && img.naturalWidth > 0; });
+    var covered = artwork && !artFailed && d === 0 && D.to === 0 && Array.prototype.every.call(artImages, function (img) { return img.complete && img.naturalWidth > 0; });
     var mode = covered ? 'artwork' : 'live';
     if (mode !== renderMode) { renderMode = mode; root.setAttribute('data-op-render', mode); }
     if (covered) { H0.lastLight = null; return; }

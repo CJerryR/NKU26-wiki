@@ -1,8 +1,15 @@
 ---
 import Glass from '../glass/Glass.astro';
 import { UI_ICONS } from '../../lib/icons.mjs';
+import { createHash } from 'node:crypto';
+import { getPages } from '../../lib/pages';
+
+// A stable URL can otherwise keep an older manuscript index in browser/CDN caches.
+const indexVersion = createHash('sha256')
+  .update(JSON.stringify((await getPages()).map(({ id, data, body }) => ({ id, data, body }))))
+  .digest('hex').slice(0, 16);
 ---
-<div class="site-search" id="site-search" role="dialog" aria-modal="true" aria-labelledby="site-search-title" hidden data-search>
+<div class="site-search" id="site-search" role="dialog" aria-modal="true" aria-labelledby="site-search-title" hidden data-search data-search-version={indexVersion}>
   <div class="site-search__backdrop" data-search-close></div>
   <Glass as="section" preset="lens" class="site-search__panel lg-light" data-tone="light">
     <div class="site-search__head">
