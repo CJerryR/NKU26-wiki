@@ -16,11 +16,17 @@ hidden: false
 
 In this cycle, we performed heterologous expression and transmembrane localization verification of GPR2. The construction strategy of verification strains and detection methods were iteratively optimized. The final results met our expectations, laying a foundation for the next DBTL cycle.
 
+:::warning[Data status]
+
+The wet-lab team has reported that the culture medium in part of the fluorescence experiments was prepared incorrectly, and those experiments are being repeated. Until the team confirms which fluorescence results are affected, the GPR2-sfGFP localization results in this section (fluorescence microscopy, CFW and FM4-64 staining) and the conclusion drawn from them are provisional.
+
+:::
+
 ### The First Cycle {#the-first-cycle toc="The First Cycle"}
 
 #### Design {#design toc="Design"}
 
-Based on the dry-lab screening results, we selected GPR2 as the receptor for display. To confirm that GPR2 can be heterologously expressed and correctly localized to the plasma membrane in our desired strain CEN.PK21C, we devised an experimental workflow consisting of "construction of the GPR2sfGFP heterologousexpression plasmid — gene knockin via yeast endogenous homologous recombination (HR) — assessment of expression and localization using fluorescence microscopy".
+Based on the dry-lab screening results, we selected GPR2 as the receptor for display. To confirm that GPR2 can be heterologously expressed and correctly localized to the plasma membrane in our desired strain CEN.PK2-1C, we devised an experimental workflow consisting of "construction of the GPR2-sfGFP heterologous-expression plasmid — gene knock-in via yeast endogenous homologous recombination (HR) — assessment of expression and localization using fluorescence microscopy".
 
 For plasmid construction (Figure 1.a), our design rationale was as follows:
 
@@ -52,7 +58,7 @@ Figure 2. Yeast transformation of GPR2-sfGFP. a, Schematic diagram of yeast homo
 
 #### Test {#test toc="Test"}
 
-Upon examining GPR2sfGFPtransformed yeast cells by fluorescence microscopy, we detected intense green fluorescent signals (Figure 3).
+Upon examining GPR2-sfGFP-transformed yeast cells by fluorescence microscopy, we detected intense green fluorescent signals (Figure 3).
 
 :::figure
 
@@ -64,7 +70,7 @@ Figure 3. Fluorescence microscopy results
 
 #### Learn {#learn toc="Learn"}
 
-While Figure 3 indicates that GPR2 is heterologously expressed and appears to localize to the plasma membrane, definitive evidence for authentic plasmamembrane localization remains absent. We therefore moved on to the next DBTL cycle.
+While Figure 3 indicates that GPR2 is heterologously expressed and appears to localize to the plasma membrane, definitive evidence for authentic plasma-membrane localization remains absent. We therefore moved on to the next DBTL cycle.
 
 ### The Second Cycle {#the-second-cycle toc="The Second Cycle"}
 
@@ -72,13 +78,13 @@ While Figure 3 indicates that GPR2 is heterologously expressed and appears to lo
 
 To further confirm that GPR2 correctly localizes to the plasma membrane, we designed two sets of experiments:
 
-a. Staining of the yeast cell wall with the cellwall dye Calcofluor‑White (CFW);
+a. Staining of the yeast cell wall with the cell-wall dye Calcofluor‑White (CFW);
 
-b. Staining of the yeast plasma membrane with the plasmamembrane dye FM464.
+b. Staining of the yeast plasma membrane with the plasma-membrane dye FM4-64.
 
 #### Test {#test-2 toc="Test"}
 
-With cellwall staining, we found that the fluorescence signal of GPR2sfGFP barely overlapped with the CFW signal and resided on the inner side of the cell wall (Figure 4).
+With cell-wall staining, we found that the fluorescence signal of GPR2-sfGFP barely overlapped with the CFW signal and resided on the inner side of the cell wall (Figure 4).
 
 :::figure
 
@@ -88,7 +94,7 @@ Figure 4. Calcofluor‑White (CFW) staining of yeast cells
 
 :::
 
-When performing plasmamembrane staining, we unintentionally gave FM464exposed yeast an extra 30 min of incubation. GPR2sfGFP was found to colocalize with the membrane dye at the plasma membrane and vacuole (Figure 5). Since FM464 is known to trigger endocytosis[1], this result suggests that plasmamembranelocalized GPR2sfGFP was internalized along with FM464, further supporting correct plasmamembrane targeting of GPR2. We also added fluorescencemicroscopy results from yeast under regular incubation conditions (Figure 5), matching our expectations.
+When performing plasma-membrane staining, we unintentionally gave FM4-64-exposed yeast an extra 30 min of incubation. GPR2-sfGFP was found to co-localize with the membrane dye at the plasma membrane and vacuole (Figure 5). Since FM4-64 is known to trigger endocytosis[1], this result suggests that plasma-membrane-localized GPR2-sfGFP was internalized along with FM4-64, further supporting correct plasma-membrane targeting of GPR2. We also added fluorescence-microscopy results from yeast under regular incubation conditions (Figure 5), matching our expectations.
 
 :::figure
 
@@ -100,7 +106,7 @@ Figure 5. FM4‑64 staining of yeast cells
 
 #### Learn {#learn-2 toc="Learn"}
 
-Taken together, these results confirm that CEN.PK21C can achieve heterologous expression and proper plasmamembrane localization of GPR2, which is an essential prerequisite for chassisstrain construction based on this host.
+Taken together, these results confirm that CEN.PK2-1C can achieve heterologous expression and proper plasma-membrane localization of GPR2, which is an essential prerequisite for chassis-strain construction based on this host.
 
 ### Reference {#reference toc="Reference"}
 
@@ -226,7 +232,7 @@ After constructing the strain carrying sTF, the next step was to introduce genes
 
 After successfully amplifying the required fragments via PCR, we encountered a problem that plagued us for nearly one month: 11 attempts of plasmid construction using one-step cloning all failed. We faced a variety of issues, including no colony growth after transformation, fully negative bands in colony PCR, incorrect plasmid double digestion results, and erroneous sequencing data. Each time one problem was solved, another emerged, severely delaying our experimental progress.
 
-Nevertheless, our team did not give up. Together with our instructors, we analyzed potential causes and proposed multiple solutions (see ContributionExperimental Methods and Practical Experience for details). Finally, we obtained correct results after replacing with fresh one-step cloning enzyme (Figure 1).
+Nevertheless, our team did not give up. Together with our instructors, we analyzed potential causes and proposed multiple solutions (see Contribution-Experimental Methods and Practical Experience for details). Finally, we obtained correct results after replacing with fresh one-step cloning enzyme (Figure 1).
 
 :::figure
 
@@ -272,7 +278,7 @@ Figure 1. Map of auxotrophic marker replacement for p414-Cas9 plasmid.
 
 #### Design {#design-5 toc="Design"}
 
-We needed to construct three types of components: the Cas9 plasmid with replaced auxotrophic marker, plasmids expressing specific sgRNAs, and donor DNA. Consistent with our previous strategy, we assembled the required plasmids via one-step cloning. Notably, we initially intended to use QuickChange PCR for sgRNA plasmid construction. However, we encountered great difficulty in whole-plasmid amplification during practical operation. Consequently, we still adopted one-step cloning to build this plasmid.
+We needed to construct three types of components: the Cas9 plasmid with replaced auxotrophic marker, plasmids expressing specific sgRNAs, and donor DNA. Consistent with our previous strategy, we assembled the required plasmids via one-step cloning. Notably, we initially intended to use Quick-Change PCR for sgRNA plasmid construction. However, we encountered great difficulty in whole-plasmid amplification during practical operation. Consequently, we still adopted one-step cloning to build this plasmid.
 
 #### Build {#build-5 toc="Build"}
 
@@ -296,7 +302,7 @@ Figure 3. sgRNA expression plasmids. a, Plasmid map of p426-SNR52p-gSTE12-SUP4t.
 
 :::
 
-Although QuickChange PCR failed to yield satisfactory results, our team successfully obtained three correct plasmids after switching to one-step cloning (shown in the figure below).
+Although Quick-Change PCR failed to yield satisfactory results, our team successfully obtained three correct plasmids after switching to one-step cloning (shown in the figure below).
 
 :::figure
 

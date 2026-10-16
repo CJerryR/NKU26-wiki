@@ -20,7 +20,7 @@ import { iconSvg, CALLOUT_ICONS, UI_ICONS } from './icons.mjs';
 const CALLOUT_TYPES = { note: 'note', important: 'note', tip: 'tip', warning: 'warning', warn: 'warning', caution: 'warning' };
 const CONTAINERS = new Set([
   ...Object.keys(CALLOUT_TYPES), 'callout',
-  'cards', 'cols', 'timeline', 'features', 'stats', 'refs', 'figure', 'figuretext', 'details', 'people', 'lead',
+  'cards', 'cols', 'timeline', 'features', 'stats', 'refs', 'figure', 'figuretext', 'figures', 'details', 'people', 'lead',
 ]);
 const LEAVES = new Set(['figure']);
 
@@ -30,6 +30,7 @@ export default function remarkWiki(options = {}) {
     const ctx = { figureDir, file };
     restoreDirectives(tree, ctx);
     eachNode(tree, (node) => { if (node.type === 'heading') readHeadingAttributes(node); });
+    scientificTypography(tree);
     transformBlocks(tree, ctx);
     wrapTablesAndImages(tree);
     renderInlineMath(tree);
@@ -224,6 +225,8 @@ function renderBlock(node, ctx) {
     case 'lead': return [el('div', { className: ['lead'] }, takeLabel(node).rest)];
     case 'figure': return figure(node, ctx);
     case 'figuretext': return figureText(node);
+    // R1-I04: two figures side by side, each in its own frame with its own caption
+    case 'figures': return [el('div', { className: ['figure-pair'] }, takeLabel(node).rest)];
     case 'details': return details(node);
     case 'people': return people(node);
     default: return takeLabel(node).rest;
@@ -353,13 +356,17 @@ function figure(node, ctx) {
   media.push(...body);
   const kids = [el('div', { className: ['figure__media'] }, media)];
   if (caption || a.credit) {
-    const cap = caption ? [...caption] : [];
+    const cap = caption ? captionLead([...caption]) : [];
     if (a.credit) cap.push(el('span', { className: ['figure__credit'] }, [text(a.credit)]));
     kids.push(el('figcaption', {}, cap));
   }
   const cls = ['figure'];
   if ('wide' in a) cls.push('figure--wide');
-  return [el('figure', { className: cls }, kids)];
+  // R1-I03: optional display scale for one figure (percent of the column), set in Tina
+  const scale = Number(a.scale);
+  const props = { className: cls };
+  if (scale >= 30 && scale < 100) { cls.push('figure--scaled'); props.style = `--fig-scale:${scale}%`; }
+  return [el('figure', props, kids)];
 }
 
 function details(node) {
@@ -442,6 +449,15 @@ function localPngSize(url) {
 
 function wrapTablesAndImages(node) {
   if (!node.children) return;
+  // R1-I03: a "Table N." paragraph right before a table is its caption, styled like a figure caption
+  node.children.forEach((c, i) => {
+    const next = node.children[i + 1];
+    const prev = node.children[i - 1];
+    if (c.type === 'paragraph' && ((next && next.type === 'table') || (prev && prev.type === 'table')) && /^Table\s+S?\d+[A-Za-z]?[.:]/.test(toText(c).trim())) {
+      c.children = captionLead(c.children);
+      c.data = { ...(c.data || {}), hProperties: { ...((c.data || {}).hProperties || {}), className: ['table-caption'] } };
+    }
+  });
   node.children = node.children.map((c) => {
     wrapTablesAndImages(c);
     if (c.type === 'image') {
@@ -522,4 +538,143 @@ function finalize(tree, file) {
   astro.frontmatter = astro.frontmatter || {};
   astro.frontmatter.toc = toc;
   file.data.wikiToc = toc;
+}
+
+
+/* ------------------------------------------ R1-I01: scientific typography
+ * Applied to the Markdown tree, never to raw strings, so code, inline code,
+ * TeX, HTML, URLs and link targets are untouched:
+ *  - species and genus names in italics (a fixed list taken from the content);
+ *  - citation numbers [1], [2, 3], [4–6] in running text as superscripts,
+ *    except inside the References list itself;
+ *  - in figure/table captions, the label and the first sentence in bold, and
+ *    panel letters — (a), (b) and the Nature-style a, / b, labels — in bold
+ *    (captionLead, boldPanels; F02 in checkpoint-10).                       */
+const SPECIES = [
+  'Arthrobotrys oligospora', 'Arthrobotrys flagrans', 'Orbilia oligospora', 'Caenorhabditis elegans', 'Heterodera glycines',
+  'Meloidogyne incognita', 'Saccharomyces cerevisiae', 'Escherichia coli', 'Globodera rostochiensis', 'Globodera pallida',
+  'A\\. oligospora', 'A\\. flagrans', 'C\\. elegans', 'H\\. glycines', 'M\\. incognita', 'S\\. cerevisiae', 'E\\. coli',
+  'Meloidogyne', 'Heterodera', 'Globodera', 'Arthrobotrys', 'Caenorhabditis', 'Saccharomyces',
+];
+const SPECIES_RE = new RegExp(`(?<![\\p{L}-])(?:${SPECIES.join('|')})(?:\\s+spp?\\.)?(?![\\p{L}-])`, 'gu');
+const CITE_RE = /\[(\d{1,3}(?:\s*[,\u2013\u2014-]\s*\d{1,3})*)\]/g;
+const SKIP = new Set(['code', 'inlineCode', 'html', 'math', 'inlineMath', 'emphasis', 'link', 'linkReference', 'definition', 'image', 'imageReference']);
+
+function splitText(node, re, make) {
+  if (!node.children) return;
+  const out = [];
+  for (const child of node.children) {
+    if (child.type !== 'text') { out.push(child); continue; }
+    const value = child.value; re.lastIndex = 0;
+    let at = 0; let m;
+    while ((m = re.exec(value))) {
+      if (m.index > at) out.push(text(value.slice(at, m.index)));
+      out.push(make(m));
+      at = m.index + m[0].length;
+    }
+    out.push(at ? text(value.slice(at)) : child);
+  }
+  node.children = out.filter((c) => c.type !== 'text' || c.value !== '');
+}
+
+function scientificTypography(tree) {
+  // the References list (from the References heading to the next heading of the same or higher level) keeps its numbering and brackets
+  const refs = new Set();
+  let refDepth = 0;
+  for (const child of tree.children || []) {
+    if (child.type === 'heading') {
+      if (refDepth && child.depth <= refDepth) refDepth = 0;
+      if (/^references?$/i.test(toText(child).trim())) { refDepth = child.depth; continue; }
+    }
+    if (refDepth) refs.add(child);
+  }
+  const walk = (node, inRefs) => {
+    if (!node.children || SKIP.has(node.type)) return;
+    for (const child of node.children) walk(child, inRefs || refs.has(child));
+    splitText(node, SPECIES_RE, (m) => ({ type: 'emphasis', children: [text(m[0])] }));
+    if (!inRefs && node.type !== 'heading') splitText(node, CITE_RE, (m) => el('sup', { className: ['cite'] }, [text(m[0])]));
+  };
+  walk(tree, false);
+}
+
+/* R1-I01 / F02 (checkpoint-10): panel letters in figure and table captions, matched on the caption's
+ * Markdown tree (top-level text only), never on raw strings. Lowercase a–h, in the forms the supplied
+ * manuscripts use plus their common variants:
+ *   - parenthesised anywhere in the caption body: (a)  (a, b)  (a–c)  (a and b)
+ *   - a label opening a caption segment, i.e. at the start of the body or after . ; : ! ? and a space:
+ *       a, Text   a–c, Text   a and b, Text   a: Text   a) Text          (Nature style, used on Results)
+ *   - a reference right after the word panel/panels: "shown in panel b, …", "panels a and b"
+ * The marker and its own punctuation are bolded ("a," like "(a)"); the caption text is unchanged.
+ * Never matched: uppercase letters (author initials such as "Lee D,"), letters inside words or after a
+ * digit (5000 g, 24 h, Fig. 2b), e.g./i.e., inline TeX $…$, and anything inside code, links, emphasis
+ * (species) or an existing strong, so no strong is ever nested. Tests: tools/tests/caption-panels.test.mjs */
+const PANEL_LETTER = '[a-h](?![\\p{L}\\p{N}])';
+const PANEL_GROUP = `${PANEL_LETTER}(?:\\s*(?:,\\s*and|and|&|[,\\u2013\\u2014-])\\s*${PANEL_LETTER})*`;
+const PANEL_PAREN = `\\((?:${PANEL_GROUP})\\)`;
+const PANEL_LABEL = `(?<=^\\s*|[.;:!?\\u3002\\uff1b\\uff1a]\\s+)(?:${PANEL_GROUP})[,:)](?=\\s|$)`;
+const PANEL_REF = `(?<=\\b[Pp]anels?\\s+)(?:${PANEL_GROUP})[,:]?(?![\\p{L}\\p{N}])`;
+const PANEL_RE = new RegExp(`${PANEL_PAREN}|${PANEL_LABEL}|${PANEL_REF}`, 'gu');
+/** a panel label directly after a sentence end / right after the "Figure N." label */
+const PANEL_NEXT = new RegExp(`^\\s+(?:${PANEL_PAREN}|(?:${PANEL_GROUP})[,:)](?=\\s|$))`, 'u');
+const PANEL_FIRST = new RegExp(`^\\s*(?:${PANEL_PAREN}|(?:${PANEL_GROUP})[,:)](?=\\s|$))`, 'u');
+/* same pairing as renderInlineMath: $…$ becomes TeX later, so its letters are not panel markers */
+const maskMath = (value) => value.replace(/\$[^$\n]+\$/g, (m) => '\u0000'.repeat(m.length));
+
+/** Bold "Figure N." plus the caption's first sentence; bold panel letters. */
+export function captionLead(children) {
+  const isText = (c) => c && c.type === 'text';
+  const out = [];
+  const lead = [];
+  let done = false;
+  const first = children[0];
+  const label = isText(first) && first.value.match(/^\s*((?:Supplementary\s+)?(?:Figure|Fig\.|Table)\s+S?\d+[A-Za-z]?[.:]?)/);
+  if (!label) done = true;
+  let skip = label ? label[0].length : 0;
+  for (const child of children) {
+    if (done) { out.push(child); continue; }
+    if (!isText(child)) { lead.push(child); continue; }
+    const v = child.value;
+    let end = -1;
+    // "Figure 1. a, …" / "Figure 1. (a) …": no title sentence, only the label is the lead
+    if (skip && /[.:]\s*$/.test(v.slice(0, skip)) && PANEL_FIRST.test(maskMath(v.slice(skip)))) end = skip;
+    // first sentence end after the label: ". " not preceded by et al / e.g / i.e / a single capital (genus
+    // abbreviation) / a digit — unless a panel label follows it ("… cassette KOGal80. a, PCR …" ends there)
+    const re = /\.(?=\s|$)/g; re.lastIndex = skip; skip = 0;
+    let m;
+    while (end < 0 && (m = re.exec(v))) {
+      const before = v.slice(Math.max(0, m.index - 6), m.index);
+      if (/(?:\bet al|\be\.g|\bi\.e|\bvs|\bFig|(?:^|[\s(])[A-Z]|\d)$/.test(before) && !PANEL_NEXT.test(maskMath(v.slice(m.index + 1)))) continue;
+      end = m.index + 1;
+    }
+    if (end < 0) { lead.push(child); continue; }
+    lead.push(text(v.slice(0, end)));
+    if (end < v.length) out.push(text(v.slice(end)));
+    done = true;
+  }
+  // no sentence end: a title-only caption ("Table 1. Comparison of …", "Figure 2 Knockout of …") is bold as a whole
+  if (!done) return label ? [{ type: 'strong', children: lead }] : boldPanels(children);
+  if (!lead.length) return boldPanels(out);
+  const strong = { type: 'strong', children: lead };
+  return [strong, ...boldPanels(out, toText(strong))];
+}
+/** Split top-level text children at panel markers; `context` is the caption text before them. */
+export function boldPanels(children, context = '') {
+  const out = [];
+  let ctx = maskMath(context);
+  for (const child of children) {
+    if (!child || child.type !== 'text') { out.push(child); ctx += maskMath(toText(child)); continue; }
+    const value = child.value;
+    const hay = ctx + maskMath(value);
+    PANEL_RE.lastIndex = ctx.length;
+    let at = 0; let m;
+    while ((m = PANEL_RE.exec(hay))) {
+      const from = m.index - ctx.length; const to = from + m[0].length;
+      if (from > at) out.push(text(value.slice(at, from)));
+      out.push({ type: 'strong', children: [text(value.slice(from, to))] });
+      at = to;
+    }
+    if (at === 0) out.push(child); else if (at < value.length) out.push(text(value.slice(at)));
+    ctx = hay;
+  }
+  return out;
 }

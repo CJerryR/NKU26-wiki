@@ -18,7 +18,7 @@ hidden: false
 
 Plant-parasitic nematodes are among the most destructive pathogens in global agricultural production. Widely distributed in cultivated soils, they parasitize plant roots, disrupt nutrient uptake pathways and trigger secondary diseases, posing severe threats to crop yield and quality. Statistically, plant-parasitic nematodes cause up to 157 billion dollars in annual crop losses worldwide across more than 20 major cash crops\[1]. Among them, sedentary endoparasitic nematodes represent the most harmful group due to their unique parasitic lifestyle, strong dispersal capacity and difficult control\[2]. As two representative species, Heterodera glycines and Meloidogyne incognita exhibit typical taxonomic and biological features. They continuously endanger the production of globally critical crops and serve as core model organisms for research on soil nematode management (Figure 1).
 
-:::figure
+:::figure{scale=70}
 
 ![Figure 1. Symptoms of two major plant-parasitic nematodes on soybean roots. (a) Meloidogyne incognita: obvious root galls formed on infected soybean roots. (b) Heterodera glycines: white lemon-shaped mature females protruding from soybean roots (arrows). Note that soybean cyst nematode does not form root galls.](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-a69f0a5adee6-fig1.avif)
 
@@ -52,7 +52,7 @@ Table 1. Comparison of detection methods for plant-parasitic nematodes
 
 ### Dawn Breaks: Nematophagous Fungi Fuel Innovation in Nematode Detection {#nematophagous-fungi toc="Nematophagous Fungi"}
 
-Previous studies revealed that ascaroside #18 (ascr#18) acts as the dominant ascaroside across multiple genera of plant-parasitic nematodes (Figure 2). In contrast, larvae of free-living nematodes such as Caenorhabditis elegans mainly produce ascaroside #3 (ascr#3) and ascaroside #5 (ascr#5) (Figure 3)\[7].
+Previous studies revealed that ascaroside #18 (ascr#18) acts as the dominant ascaroside across multiple genera of plant-parasitic nematodes (Figure 2).
 
 :::figure
 
@@ -62,6 +62,8 @@ Figure 2. Ascaroside profiles in plant-parasitic nematodes. Source: Manosalva P,
 
 :::
 
+In contrast, larvae of free-living nematodes such as Caenorhabditis elegans mainly produce ascaroside #3 (ascr#3) and ascaroside #5 (ascr#5) (Figure 3)\[7].
+
 :::figure
 
 ![Figure 3. Ascaroside profiles in free-living nematodes.](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-cdf748e96338-fig3.avif)
@@ -70,7 +72,7 @@ Figure 3. Ascaroside profiles in free-living nematodes. Source: Lee D, et al. (2
 
 :::
 
-::::figuretext{side=left width=medium}
+Recent studies demonstrate that the G protein-coupled receptor (GPCR) GPR2 from the nematode-trapping fungus Arthrobotrys oligospora can sense ascaroside #3 (ascr#3). It triggers a MAPK cascade to activate downstream gene expression and ultimately initiate predatory behavior (Figure 4) \[8]. This inspired our idea: we could repurpose this receptor to achieve early warning of plant-parasitic nematodes!
 
 :::figure
 
@@ -80,17 +82,13 @@ Figure 4. GPCR-mediated prey pheromone sensing pathway in the nematode-trapping 
 
 :::
 
-Recent studies demonstrate that the G protein-coupled receptor (GPCR) GPR2 from the nematode-trapping fungus Arthrobotrys oligospora can sense ascaroside #3 (ascr#3). It triggers a MAPK cascade to activate downstream gene expression and ultimately initiate predatory behavior (Figure 4) \[8]. This inspired our idea: we could repurpose this receptor to achieve early warning of plant-parasitic nematodes!
-
-::::
-
 ## Project Design & Strategy {#project-design toc="Project Design & Strategy"}
 
 Based on the above background, we aim to construct yeast biosensors capable of specifically recognizing ascr#3 and ascr#18 through the collaboration of dry-lab, wet-lab and HP teams, to realize early warning for agricultural protection.
 
 ### Wet Lab {#wet-lab toc="Wet Lab"}
 
-::::figuretext{side=left width=wide}
+Based on dry-lab screening results, the wet-lab team will build yeast biosensors for the detection of various ascarosides (Figure 5). Experiments using HP-collected soil samples will supply data to support dry-lab ODE modeling. Our final deliverable is a freeze-dried yeast test strip for real-world use.
 
 :::figure
 
@@ -99,10 +97,6 @@ Based on the above background, we aim to construct yeast biosensors capable of s
 Figure 5. Schematic of ascaroside-specific yeast biosensor construction. Drawn with assistance from ChatGPT.
 
 :::
-
-Based on dry-lab screening results, the wet-lab team will build yeast biosensors for the detection of various ascarosides (Figure 5). Experiments using HP-collected soil samples will supply data to support dry-lab ODE modeling. Our final deliverable is a freeze-dried yeast test strip for real-world use.
-
-::::
 
 Literature shows that Saccharomyces cerevisiae serves as an excellent platform for GPCR display. With only two native GPCR signaling systems that are readily knockable, it is stable, fast-growing and easy to manipulate. Prior work has established yeast biosensing platforms to express heterologous G protein-coupled receptors (GPCRs) on yeast cell surfaces and produce visual readouts\[9]. We adopt similar strategies to display engineered GPR proteins and achieve visual signal output via betaxanthin.
 

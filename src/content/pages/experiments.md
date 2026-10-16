@@ -20,7 +20,99 @@ This section documents the biological materials and experimental methods used in
 
 ## Protocol {#protocol toc="Protocol"}
 
-<div class="wiki-toolkit-block"><wiki-toolkit data-type="downloads" data-props="{&quot;title&quot;:&quot;Protocol&quot;,&quot;items&quot;:[{&quot;title&quot;:&quot;PCR Amplification&quot;,&quot;file&quot;:&quot;https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-3539c6074fb1-protocol-01.pdf&quot;,&quot;text&quot;:&quot;PCR Amplification Using Phanta Max Super-Fidelity DNA Polymerase.&quot;},{&quot;title&quot;:&quot;DNA Recovery&quot;,&quot;file&quot;:&quot;https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-154647698e67-protocol-02.pdf&quot;,&quot;text&quot;:&quot;DNA Recovery Using FastPure Gel DNA Extraction Mini Kit.&quot;},{&quot;title&quot;:&quot;Plasmid DNA Extraction&quot;,&quot;file&quot;:&quot;https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-df98a0af0943-protocol-03.pdf&quot;,&quot;text&quot;:&quot;Plasmid DNA Extraction Using Fast Plasmid Miniprep Kit.&quot;},{&quot;title&quot;:&quot;Double-Joint PCR&quot;,&quot;file&quot;:&quot;https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-730ddb351ab0-protocol-04.pdf&quot;,&quot;text&quot;:&quot;Construction of Homologous Recombination Constructs Using Double-Joint PCR (DJ-PCR).&quot;},{&quot;title&quot;:&quot;One Step Cloning&quot;,&quot;file&quot;:&quot;https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-915625f7b4c9-protocol-05.pdf&quot;,&quot;text&quot;:&quot;Multi-Fragment and Vector Seamless Assembly Using pEASY Pro Seamless Cloning and Assembly Kit.&quot;},{&quot;title&quot;:&quot;Chemical Transformation of Trans5α&quot;,&quot;file&quot;:&quot;https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-c810ddc4deed-protocol-06.pdf&quot;,&quot;text&quot;:&quot;Chemical Transformation of Trans5α Chemically Competent Cells.&quot;},{&quot;title&quot;:&quot;Yeast Transformation&quot;,&quot;file&quot;:&quot;https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-94e1d5b82d0f-protocol-07.pdf&quot;,&quot;text&quot;:&quot;Yeast Transformation Using S.c. EasyComp™ Transformation Kit.&quot;},{&quot;title&quot;:&quot;Agarose Gel Electrophoresis&quot;,&quot;file&quot;:&quot;https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-4bee1bb6f8a3-protocol-08.pdf&quot;,&quot;text&quot;:&quot;Agarose Gel Electrophoresis.&quot;},{&quot;title&quot;:&quot;Colony PCR Amplification&quot;,&quot;file&quot;:&quot;https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-c2aebd95ee12-protocol-09.pdf&quot;,&quot;text&quot;:&quot;Colony PCR Amplification Using 2×TransFast Taq PCR SuperMix (+dye).&quot;},{&quot;title&quot;:&quot;Restriction Enzyme Digestion Reaction&quot;,&quot;file&quot;:&quot;https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-6c92e753b05a-protocol-10.pdf&quot;,&quot;text&quot;:&quot;Restriction Enzyme Digestion Reaction.&quot;},{&quot;title&quot;:&quot;Preparation of Common Antibiotics and Culture Media&quot;,&quot;file&quot;:&quot;https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-05ccf4cb7bd5-protocol-11.pdf&quot;,&quot;text&quot;:&quot;Preparation of Common Antibiotics and Culture Media.&quot;},{&quot;title&quot;:&quot;Preservation and Recovery of Glycerol Stocks&quot;,&quot;file&quot;:&quot;https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-fa5162f5aaca-protocol-12.pdf&quot;,&quot;text&quot;:&quot;Preservation and Recovery of Glycerol Stocks.&quot;},{&quot;title&quot;:&quot;Extraction of Yeast Genomic DNA&quot;,&quot;file&quot;:&quot;https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-01699080a847-protocol-13.pdf&quot;,&quot;text&quot;:&quot;Extraction of Yeast Genomic DNA.&quot;},{&quot;title&quot;:&quot;Observation of Fluorescent Molecules&quot;,&quot;file&quot;:&quot;https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-8d474be66ea7-protocol-14.pdf&quot;,&quot;text&quot;:&quot;Observation of Fluorescent Molecules Using Fluorescence Microscopy.&quot;},{&quot;title&quot;:&quot;Preparation of Viable Yeast Detection Test Strips via Lyophilization&quot;,&quot;file&quot;:&quot;https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-3b75e8981471-protocol-15.pdf&quot;,&quot;text&quot;:&quot;&quot;},{&quot;title&quot;:&quot;One Step Cloning 2.0&quot;,&quot;file&quot;:&quot;https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-cb70639f0cf2-protocol-16.pdf&quot;,&quot;text&quot;:&quot;Multi-Fragment and Vector Assembly Using ClonExpress Ultra One Step Cloning Kit V3.&quot;}],&quot;_template&quot;:&quot;downloads&quot;}"><div class="wiki-toolkit-fallback"><p><strong>Protocol</strong></p><ul><li><p>PCR Amplification</p> <p>PCR Amplification Using Phanta Max Super-Fidelity DNA Polymerase.</p></li><li><p>DNA Recovery</p> <p>DNA Recovery Using FastPure Gel DNA Extraction Mini Kit.</p></li><li><p>Plasmid DNA Extraction</p> <p>Plasmid DNA Extraction Using Fast Plasmid Miniprep Kit.</p></li><li><p>Double-Joint PCR</p> <p>Construction of Homologous Recombination Constructs Using Double-Joint PCR (DJ-PCR).</p></li><li><p>One Step Cloning</p> <p>Multi-Fragment and Vector Seamless Assembly Using pEASY Pro Seamless Cloning and Assembly Kit.</p></li><li><p>Chemical Transformation of Trans5α</p> <p>Chemical Transformation of Trans5α Chemically Competent Cells.</p></li><li><p>Yeast Transformation</p> <p>Yeast Transformation Using S.c. EasyComp™ Transformation Kit.</p></li><li><p>Agarose Gel Electrophoresis</p> <p>Agarose Gel Electrophoresis.</p></li><li><p>Colony PCR Amplification</p> <p>Colony PCR Amplification Using 2×TransFast Taq PCR SuperMix (+dye).</p></li><li><p>Restriction Enzyme Digestion Reaction</p> <p>Restriction Enzyme Digestion Reaction.</p></li><li><p>Preparation of Common Antibiotics and Culture Media</p> <p>Preparation of Common Antibiotics and Culture Media.</p></li><li><p>Preservation and Recovery of Glycerol Stocks</p> <p>Preservation and Recovery of Glycerol Stocks.</p></li><li><p>Extraction of Yeast Genomic DNA</p> <p>Extraction of Yeast Genomic DNA.</p></li><li><p>Observation of Fluorescent Molecules</p> <p>Observation of Fluorescent Molecules Using Fluorescence Microscopy.</p></li><li><p>Preparation of Viable Yeast Detection Test Strips via Lyophilization</p></li><li><p>One Step Cloning 2.0</p> <p>Multi-Fragment and Vector Assembly Using ClonExpress Ultra One Step Cloning Kit V3.</p></li></ul></div><noscript><style>.wiki-toolkit-fallback{display:block!important}wiki-toolkit:not(:defined){min-height:0;border:0;background:none;animation:none}</style><p>Enable JavaScript to use the interactive controls.</p></noscript></wiki-toolkit></div>
+### PCR Amplification {#protocol-pcr-amplification toc="PCR Amplification"}
+
+PCR Amplification Using Phanta Max Super-Fidelity DNA Polymerase.
+
+<figure class="wiki-media wiki-media--pdf"><div class="wiki-media__bar"><span class="wiki-media__kind">PDF</span><span class="wiki-media__title">PCR Amplification</span><a class="wiki-media__action" href="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-3539c6074fb1-protocol-01.pdf" target="_blank" rel="noopener noreferrer">Open PDF / Download</a></div><iframe class="wiki-media__frame" src="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-3539c6074fb1-protocol-01.pdf" title="PCR Amplification" loading="lazy" style="height:650px" referrerpolicy="no-referrer"></iframe></figure>
+
+### DNA Recovery {#protocol-dna-recovery toc="DNA Recovery"}
+
+DNA Recovery Using FastPure Gel DNA Extraction Mini Kit.
+
+<figure class="wiki-media wiki-media--pdf"><div class="wiki-media__bar"><span class="wiki-media__kind">PDF</span><span class="wiki-media__title">DNA Recovery</span><a class="wiki-media__action" href="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-154647698e67-protocol-02.pdf" target="_blank" rel="noopener noreferrer">Open PDF / Download</a></div><iframe class="wiki-media__frame" src="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-154647698e67-protocol-02.pdf" title="DNA Recovery" loading="lazy" style="height:650px" referrerpolicy="no-referrer"></iframe></figure>
+
+### Plasmid DNA Extraction {#protocol-plasmid-dna-extraction toc="Plasmid DNA Extraction"}
+
+Plasmid DNA Extraction Using Fast Plasmid Miniprep Kit.
+
+<figure class="wiki-media wiki-media--pdf"><div class="wiki-media__bar"><span class="wiki-media__kind">PDF</span><span class="wiki-media__title">Plasmid DNA Extraction</span><a class="wiki-media__action" href="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-df98a0af0943-protocol-03.pdf" target="_blank" rel="noopener noreferrer">Open PDF / Download</a></div><iframe class="wiki-media__frame" src="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-df98a0af0943-protocol-03.pdf" title="Plasmid DNA Extraction" loading="lazy" style="height:650px" referrerpolicy="no-referrer"></iframe></figure>
+
+### Double-Joint PCR {#protocol-double-joint-pcr toc="Double-Joint PCR"}
+
+Construction of Homologous Recombination Constructs Using Double-Joint PCR (DJ-PCR).
+
+<figure class="wiki-media wiki-media--pdf"><div class="wiki-media__bar"><span class="wiki-media__kind">PDF</span><span class="wiki-media__title">Double-Joint PCR</span><a class="wiki-media__action" href="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-730ddb351ab0-protocol-04.pdf" target="_blank" rel="noopener noreferrer">Open PDF / Download</a></div><iframe class="wiki-media__frame" src="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-730ddb351ab0-protocol-04.pdf" title="Double-Joint PCR" loading="lazy" style="height:650px" referrerpolicy="no-referrer"></iframe></figure>
+
+### One Step Cloning {#protocol-one-step-cloning toc="One Step Cloning"}
+
+Multi-Fragment and Vector Seamless Assembly Using pEASY Pro Seamless Cloning and Assembly Kit.
+
+<figure class="wiki-media wiki-media--pdf"><div class="wiki-media__bar"><span class="wiki-media__kind">PDF</span><span class="wiki-media__title">One Step Cloning</span><a class="wiki-media__action" href="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-915625f7b4c9-protocol-05.pdf" target="_blank" rel="noopener noreferrer">Open PDF / Download</a></div><iframe class="wiki-media__frame" src="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-915625f7b4c9-protocol-05.pdf" title="One Step Cloning" loading="lazy" style="height:650px" referrerpolicy="no-referrer"></iframe></figure>
+
+### Chemical Transformation of Trans5α {#protocol-chemical-transformation-of-trans5 toc="Chemical Transformation of Trans5α"}
+
+Chemical Transformation of Trans5α Chemically Competent Cells.
+
+<figure class="wiki-media wiki-media--pdf"><div class="wiki-media__bar"><span class="wiki-media__kind">PDF</span><span class="wiki-media__title">Chemical Transformation of Trans5α</span><a class="wiki-media__action" href="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-c810ddc4deed-protocol-06.pdf" target="_blank" rel="noopener noreferrer">Open PDF / Download</a></div><iframe class="wiki-media__frame" src="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-c810ddc4deed-protocol-06.pdf" title="Chemical Transformation of Trans5α" loading="lazy" style="height:650px" referrerpolicy="no-referrer"></iframe></figure>
+
+### Yeast Transformation {#protocol-yeast-transformation toc="Yeast Transformation"}
+
+Yeast Transformation Using S.c. EasyComp™ Transformation Kit.
+
+<figure class="wiki-media wiki-media--pdf"><div class="wiki-media__bar"><span class="wiki-media__kind">PDF</span><span class="wiki-media__title">Yeast Transformation</span><a class="wiki-media__action" href="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-94e1d5b82d0f-protocol-07.pdf" target="_blank" rel="noopener noreferrer">Open PDF / Download</a></div><iframe class="wiki-media__frame" src="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-94e1d5b82d0f-protocol-07.pdf" title="Yeast Transformation" loading="lazy" style="height:650px" referrerpolicy="no-referrer"></iframe></figure>
+
+### Agarose Gel Electrophoresis {#protocol-agarose-gel-electrophoresis toc="Agarose Gel Electrophoresis"}
+
+Agarose Gel Electrophoresis.
+
+<figure class="wiki-media wiki-media--pdf"><div class="wiki-media__bar"><span class="wiki-media__kind">PDF</span><span class="wiki-media__title">Agarose Gel Electrophoresis</span><a class="wiki-media__action" href="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-4bee1bb6f8a3-protocol-08.pdf" target="_blank" rel="noopener noreferrer">Open PDF / Download</a></div><iframe class="wiki-media__frame" src="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-4bee1bb6f8a3-protocol-08.pdf" title="Agarose Gel Electrophoresis" loading="lazy" style="height:650px" referrerpolicy="no-referrer"></iframe></figure>
+
+### Colony PCR Amplification {#protocol-colony-pcr-amplification toc="Colony PCR Amplification"}
+
+Colony PCR Amplification Using 2×TransFast Taq PCR SuperMix (+dye).
+
+<figure class="wiki-media wiki-media--pdf"><div class="wiki-media__bar"><span class="wiki-media__kind">PDF</span><span class="wiki-media__title">Colony PCR Amplification</span><a class="wiki-media__action" href="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-c2aebd95ee12-protocol-09.pdf" target="_blank" rel="noopener noreferrer">Open PDF / Download</a></div><iframe class="wiki-media__frame" src="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-c2aebd95ee12-protocol-09.pdf" title="Colony PCR Amplification" loading="lazy" style="height:650px" referrerpolicy="no-referrer"></iframe></figure>
+
+### Restriction Enzyme Digestion Reaction {#protocol-restriction-enzyme-digestion-reaction toc="Restriction Enzyme Digestion Reaction"}
+
+Restriction Enzyme Digestion Reaction.
+
+<figure class="wiki-media wiki-media--pdf"><div class="wiki-media__bar"><span class="wiki-media__kind">PDF</span><span class="wiki-media__title">Restriction Enzyme Digestion Reaction</span><a class="wiki-media__action" href="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-6c92e753b05a-protocol-10.pdf" target="_blank" rel="noopener noreferrer">Open PDF / Download</a></div><iframe class="wiki-media__frame" src="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-6c92e753b05a-protocol-10.pdf" title="Restriction Enzyme Digestion Reaction" loading="lazy" style="height:650px" referrerpolicy="no-referrer"></iframe></figure>
+
+### Preparation of Common Antibiotics and Culture Media {#protocol-preparation-of-common-antibiotics-and-culture-media toc="Preparation of Common Antibiotics and Culture Media"}
+
+Preparation of Common Antibiotics and Culture Media.
+
+<figure class="wiki-media wiki-media--pdf"><div class="wiki-media__bar"><span class="wiki-media__kind">PDF</span><span class="wiki-media__title">Preparation of Common Antibiotics and Culture Media</span><a class="wiki-media__action" href="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-05ccf4cb7bd5-protocol-11.pdf" target="_blank" rel="noopener noreferrer">Open PDF / Download</a></div><iframe class="wiki-media__frame" src="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-05ccf4cb7bd5-protocol-11.pdf" title="Preparation of Common Antibiotics and Culture Media" loading="lazy" style="height:650px" referrerpolicy="no-referrer"></iframe></figure>
+
+### Preservation and Recovery of Glycerol Stocks {#protocol-preservation-and-recovery-of-glycerol-stocks toc="Preservation and Recovery of Glycerol Stocks"}
+
+Preservation and Recovery of Glycerol Stocks.
+
+<figure class="wiki-media wiki-media--pdf"><div class="wiki-media__bar"><span class="wiki-media__kind">PDF</span><span class="wiki-media__title">Preservation and Recovery of Glycerol Stocks</span><a class="wiki-media__action" href="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-fa5162f5aaca-protocol-12.pdf" target="_blank" rel="noopener noreferrer">Open PDF / Download</a></div><iframe class="wiki-media__frame" src="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-fa5162f5aaca-protocol-12.pdf" title="Preservation and Recovery of Glycerol Stocks" loading="lazy" style="height:650px" referrerpolicy="no-referrer"></iframe></figure>
+
+### Extraction of Yeast Genomic DNA {#protocol-extraction-of-yeast-genomic-dna toc="Extraction of Yeast Genomic DNA"}
+
+Extraction of Yeast Genomic DNA.
+
+<figure class="wiki-media wiki-media--pdf"><div class="wiki-media__bar"><span class="wiki-media__kind">PDF</span><span class="wiki-media__title">Extraction of Yeast Genomic DNA</span><a class="wiki-media__action" href="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-01699080a847-protocol-13.pdf" target="_blank" rel="noopener noreferrer">Open PDF / Download</a></div><iframe class="wiki-media__frame" src="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-01699080a847-protocol-13.pdf" title="Extraction of Yeast Genomic DNA" loading="lazy" style="height:650px" referrerpolicy="no-referrer"></iframe></figure>
+
+### Observation of Fluorescent Molecules {#protocol-observation-of-fluorescent-molecules toc="Observation of Fluorescent Molecules"}
+
+Observation of Fluorescent Molecules Using Fluorescence Microscopy.
+
+<figure class="wiki-media wiki-media--pdf"><div class="wiki-media__bar"><span class="wiki-media__kind">PDF</span><span class="wiki-media__title">Observation of Fluorescent Molecules</span><a class="wiki-media__action" href="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-8d474be66ea7-protocol-14.pdf" target="_blank" rel="noopener noreferrer">Open PDF / Download</a></div><iframe class="wiki-media__frame" src="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-8d474be66ea7-protocol-14.pdf" title="Observation of Fluorescent Molecules" loading="lazy" style="height:650px" referrerpolicy="no-referrer"></iframe></figure>
+
+### Preparation of Viable Yeast Detection Test Strips via Lyophilization {#protocol-preparation-of-viable-yeast-detection-test-strips-via-lyophilization toc="Preparation of Viable Yeast Detection Test Strips via Lyophilization"}
+
+<figure class="wiki-media wiki-media--pdf"><div class="wiki-media__bar"><span class="wiki-media__kind">PDF</span><span class="wiki-media__title">Preparation of Viable Yeast Detection Test Strips via Lyophilization</span><a class="wiki-media__action" href="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-3b75e8981471-protocol-15.pdf" target="_blank" rel="noopener noreferrer">Open PDF / Download</a></div><iframe class="wiki-media__frame" src="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-3b75e8981471-protocol-15.pdf" title="Preparation of Viable Yeast Detection Test Strips via Lyophilization" loading="lazy" style="height:650px" referrerpolicy="no-referrer"></iframe></figure>
+
+### One Step Cloning 2.0 {#protocol-one-step-cloning-2-0 toc="One Step Cloning 2.0"}
+
+Multi-Fragment and Vector Assembly Using ClonExpress Ultra One Step Cloning Kit V3.
+
+<figure class="wiki-media wiki-media--pdf"><div class="wiki-media__bar"><span class="wiki-media__kind">PDF</span><span class="wiki-media__title">One Step Cloning 2.0</span><a class="wiki-media__action" href="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-cb70639f0cf2-protocol-16.pdf" target="_blank" rel="noopener noreferrer">Open PDF / Download</a></div><iframe class="wiki-media__frame" src="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-cb70639f0cf2-protocol-16.pdf" title="One Step Cloning 2.0" loading="lazy" style="height:650px" referrerpolicy="no-referrer"></iframe></figure>
 
 ## Summary of Experimental Design {#summary-of-experimental-design toc="Summary of Experimental Design"}
 

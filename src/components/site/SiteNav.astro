@@ -24,7 +24,7 @@ function href(page: string, optional = false): string | null {
 }
 const link = (l: NavLink) => {
   const h = href(l.page, l.optional);
-  const empty = ['attributions', 'members', 'part-collection', 'model-1', 'model-2'].includes(l.page);
+  const empty = ['attributions', 'members', 'model-1', 'model-2'].includes(l.page);
   return { ...l, blurb: current !== HOME && empty ? undefined : l.blurb, href: h, current: h !== null && h === current };
 };
 const menu = primaryNav.map((item) => {

@@ -52,14 +52,27 @@
   var D = { from: 0, to: 0, t0: 0, dur: 1, v: 0 };
   function descentAt(now) { var k = NK.clamp((now - D.t0) / D.dur, 0, 1); return NK.lerp(D.from, D.to, NK.easeInOut(k)); }
   function descendTo(v, ms) { D = { from: D.v, to: v, t0: performance.now(), dur: Math.max(1, ms), v: D.v }; }
+  /* R1-I08: the hero is restyled only when the descent has moved, and only
+   * with compositor-friendly properties. v8.0 wrote opacity, transform, blur and
+   * letter-spacing on every frame, even at rest; letter-spacing re-laid out the
+   * headline each frame and the blur ran over the whole title. */
+  var heroHp = -1, heroUnder = null;
   function heroStyle(d) {
-    var hp = NK.smooth(0, 0.5, d);
-    hero.style.opacity = String(1 - hp);
-    hero.style.transform = 'translateY(' + (-hp * 90).toFixed(1) + 'px) scale(' + (1 + hp * 0.08).toFixed(3) + ')';
-    hero.style.filter = hp > 0.01 ? 'blur(' + (hp * 10).toFixed(1) + 'px)' : 'none';
-    hero.style.letterSpacing = (hp * 0.12).toFixed(3) + 'em';
-    root.classList.toggle('is-under', d > 0.9);
+    var hp = Math.round(NK.smooth(0, 0.5, d) * 400) / 400;
+    if (hp !== heroHp) {
+      heroHp = hp;
+      hero.style.opacity = String(1 - hp);
+      hero.style.transform = 'translate3d(0,' + (-hp * 90).toFixed(1) + 'px,0) scale(' + (1 + hp * 0.1).toFixed(3) + ')';
+      hero.style.filter = hp > 0.01 && hp < 0.99 ? 'blur(' + (hp * 6).toFixed(1) + 'px)' : 'none';
+    }
+    var under = d > 0.9;
+    if (under !== heroUnder) { heroUnder = under; root.classList.toggle('is-under', under); }
   }
+  /* the stage's box, read once per layout change instead of every frame */
+  var stageBox = null;
+  function stageRect() { return stageBox || (stageBox = stage.getBoundingClientRect()); }
+  window.addEventListener('scroll', function () { stageBox = null; }, { passive: true });
+  window.addEventListener('resize', function () { stageBox = null; });
 
   var S = {
     detected: 0, roots: false, found: false, exploring: false, everExplored: false,
@@ -706,8 +719,8 @@
     '  float body = smoothstep(0.0, 0.4, e);',
     '  float gut = smoothstep(0.7, 1.0, e) * 0.3;',
     '  float lit = (1.0 - smoothstep(uR * 0.55, uR * 1.05, length(uL - vW))) * uOn;',
-    '  float a = (uAlpha * uAmb + lit * 0.32) * body;',
-    '  gl_FragColor = vec4(uCol * (0.78 + gut + lit * 0.35), a);',
+    '  float a = (uAlpha * uAmb + lit * 0.42) * body;',
+    '  gl_FragColor = vec4(uCol * (0.72 + gut + lit * 0.3), a);',
     '}'
   ].join('\n');
 
@@ -897,7 +910,7 @@
           uTime: U.uTime, uL: U.uL, uR: U.uR, uOn: U.uOn, uAmb: U.uAmb,
           uSpeed: { value: 2 + R() * 2.5 }, uPhase: { value: R() * 6 }, uAmp: { value: 0.1 + R() * 0.1 },
           uLen: { value: 1.3 + R() * 1.2 }, uWid: { value: 0.1 + R() * 0.06 },
-          uCol: { value: new T.Color(0.86, 0.82, 0.93) }, uAlpha: { value: 0.1 + R() * 0.06 }
+          uCol: { value: new T.Color(0.98, 0.6, 0.34) }, uAlpha: { value: 0.12 + R() * 0.06 } /* R1-H02: same orange as the nematode we track, kept translucent */
         },
         vertexShader: VERT_GHOST, fragmentShader: FRAG_GHOST, transparent: true, depthWrite: false
       }));
@@ -1004,13 +1017,14 @@
   }
 
   /* ---------------- labels (screen space) ---------------- */
-  var bigLabel = null;
+  var bigLabel = null, bigW = 0;
   function showBig() {
     if (bigLabel || !labelsEl) return;
     bigLabel = document.createElement('p');
     bigLabel.className = 'op__label op__label--big';
     bigLabel.textContent = COPY.found;
     labelsEl.appendChild(bigLabel);
+    bigW = bigLabel.offsetWidth;
     requestAnimationFrame(function () { bigLabel.classList.add('is-on'); });
   }
   var tmpV = new T.Vector3();
@@ -1068,7 +1082,7 @@
 
   /* ---------------- input ---------------- */
   function pointerTo(e) {
-    var r = stage.getBoundingClientRect();
+    var r = stageRect();
     ptr.x = e.clientX - r.left; ptr.y = e.clientY - r.top;
     pointerN.x = ptr.x / r.width; pointerN.y = ptr.y / r.height;
     if (e.target && e.target.closest && e.target.closest('button, a')) return;
@@ -1093,7 +1107,8 @@
   /* ---------------- sizing ---------------- */
   var lastA = 0;
   function resize(force) {
-    var r = stage.getBoundingClientRect();
+    stageBox = null; bigW = 0;
+    var r = stageRect();
     W = Math.max(1, Math.round(r.width));
     H = Math.max(1, Math.round(r.height));
     renderer.setSize(W, H, false);
@@ -1130,7 +1145,7 @@
   function drawFx(t, ls, rad, d, warmK) {
     var c = fctx; if (!c) return;
     c.clearRect(0, 0, W, H);
-    var sr = stage.getBoundingClientRect();
+    var sr = stageRect();
     /* v7.2: no flashlight beam, dust or lens flare from the mascot's corner;
        only the glow of the light circle that follows the mouse */
     var intensity = NK.lerp(0.55, 0.95, d);
@@ -1175,8 +1190,22 @@
   /* ---------------- frame ---------------- */
   var warmC = new T.Color(1.0, 0.93, 0.82);
   var gold = new T.Color(1.0, 0.8, 0.33);
+  /* R1-I08: if frames stay slow (over ~24 ms for two seconds) the WebGL canvas
+   * steps its pixel ratio down, never below 1; it never steps back up, so it
+   * cannot oscillate. Fill rate at DPR 1.8 is 3.2x that of DPR 1. */
+  var slowFor = 0, emaDt = 1 / 60;
+  function adaptResolution(dt) {
+    if (!(dt > 0) || dt > 0.25) return;            // tab switches and hitches do not count
+    emaDt += (dt - emaDt) * 0.05;
+    slowFor = emaDt > 0.024 ? slowFor + dt : 0;
+    if (slowFor > 2 && DPR > 1) {
+      DPR = Math.max(1, Math.round((DPR - 0.3) * 10) / 10); slowFor = 0;
+      renderer.setPixelRatio(DPR); resize(false);
+    }
+  }
   function frame(t, dt) {
     if (!built) return;
+    adaptResolution(dt);
     clock = t;
     U.uTime.value = t;
     var d = D.v = descentAt(performance.now());
@@ -1264,12 +1293,12 @@
 
     var ls = toScreen(light.x, light.y);
     var rad = Math.abs(toScreen(light.x + U.uR.value, light.y).x - ls.x);
-    var sr = stage.getBoundingClientRect();
+    var sr = stageRect();
     NK.state.lightScreen = { x: sr.left + ls.x, y: sr.top + ls.y };
     H0.lastLight = { x: ls.x, y: sr.top + ls.y, r: rad, warm: warmK };
     if (bigLabel) {
       var s = toScreen(L.nem.x + 0.2, L.nem.y + 1.25);
-      var bw = bigLabel.offsetWidth;
+      var bw = bigW || (bigW = bigLabel.offsetWidth);
       var bx = NK.clamp(s.x - bw * 0.5, 16, W - bw - 16);
       bigLabel.style.transform = 'translate(' + bx.toFixed(1) + 'px,' + (s.y - 40).toFixed(1) + 'px)';
     }

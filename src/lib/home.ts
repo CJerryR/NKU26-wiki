@@ -11,7 +11,9 @@ import { byId, pagePath, type PageEntry } from './pages';
 import { escapeHtml, htmlToText } from './text';
 
 const HOME_DIR = path.resolve(process.cwd(), 'src/home');
-export const HOME_SECTIONS = ['opening', 'world', 'china', 'threat', 'traces', 'combo', 'signal', 'hp', 'loop', 'built', 'explore'];
+/* cp16: 'traces' is the merged ascaroside story (the old traces + combo pages, PPT sketch);
+   its last step hands the map to 'hp', so 'signal' (dry lab / wet lab) now follows HP. */
+export const HOME_SECTIONS = ['opening', 'world', 'china', 'threat', 'traces', 'hp', 'signal', 'loop', 'built', 'explore'];
 export const HOME_DESCRIPTION = 'NemaKlear by NKU26-China explores how engineered yeast could translate nematode chemical clues into an early risk signal. Follow the trail from soil to science.';
 
 const read = (rel: string) => fs.readFileSync(path.join(HOME_DIR, rel), 'utf8');

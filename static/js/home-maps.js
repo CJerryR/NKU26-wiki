@@ -122,7 +122,7 @@
     }
 
     /* ---------- case points and their flip cards ---------- */
-    var openCase = null, closeT = 0, openT = 0, overCard = false;
+    var openCase = null, closeT = 0, openT = 0, overCard = false, overMark = null, hoverLockT = 0, hoverLocked = false, turnT = 0, turnEndT = 0;
     var fKick = H.$('[data-flip-kicker]', card), fTitle = H.$('[data-flip-title]', card), fFront = H.$('[data-flip-front]', card);
     var fLoss = H.$('[data-flip-loss]', card), fSrc = H.$('[data-flip-src]', card);
     (REG.cases || []).forEach(function (c, i) {
@@ -130,19 +130,32 @@
       b.style.left = ((c.lon + 180) * 2.5 / 9) + '%'; b.style.top = ((84 - c.lat) * 2.5 / 3.5) + '%'; b.style.setProperty('--d', (i * .35) + 's');
       b.setAttribute('aria-label', c.region + ': ' + c.nematode + ' on ' + c.crop);
       b.setAttribute('aria-expanded', 'false');
-      b.addEventListener('pointerenter', function (e) { if (e.pointerType === 'touch') return; clearTimeout(closeT); clearTimeout(openT); openT = setTimeout(function () { open(c, b); }, 110); });
-      b.addEventListener('pointerleave', function () { clearTimeout(openT); scheduleClose(); });
-      b.addEventListener('click', function (e) { e.stopPropagation(); if (openCase === c && !card.hidden) { if (e.pointerType === 'touch' || !e.pointerType) closeCard(); } else open(c, b); });
-      b.addEventListener('focus', function () { open(c, b); });
+      b.addEventListener('pointerenter', function (e) { if (e.pointerType === 'touch') return; overMark = c; if (hoverLocked) return; clearTimeout(closeT); clearTimeout(openT); openT = setTimeout(function () { if (!hoverLocked) open(c, b); }, 110); });
+      b.addEventListener('pointerleave', function (e) { if (e.pointerType === 'touch') return; if (overMark === c) overMark = null; clearTimeout(openT); scheduleClose(); });
+      var pointerActivation = false;
+      b.addEventListener('pointerdown', function () { pointerActivation = true; });
+      b.addEventListener('click', function (e) { pointerActivation = false; e.stopPropagation(); if (openCase === c && !card.hidden) { if (e.pointerType === 'touch' || !e.pointerType) closeCard(); } else open(c, b); });
+      b.addEventListener('focus', function () { if (!pointerActivation && openCase !== c) open(c, b); });
       b.addEventListener('blur', function () { setTimeout(function () { if (!card.contains(document.activeElement)) scheduleClose(0); }, 10); });
       c.btn = b;
       marks.appendChild(b);
     });
-    function scheduleClose(ms) { clearTimeout(closeT); closeT = setTimeout(function () { if (!overCard) closeCard(); }, ms == null ? 320 : ms); }
+    function scheduleClose(ms) { clearTimeout(closeT); if (hoverLocked) return; closeT = setTimeout(function () { if (!hoverLocked && !overCard && !overMark) closeCard(); }, ms == null ? 320 : ms); }
+    function protectFlip(resumeHover) {
+      clearTimeout(openT); clearTimeout(closeT); clearTimeout(hoverLockT);
+      hoverLocked = true;
+      hoverLockT = setTimeout(function () {
+        hoverLocked = false;
+        if (card.hidden || !openCase || !resumeHover) return;
+        if (overMark && overMark !== openCase) open(overMark, overMark.btn);
+        else if (!overCard && !overMark) closeCard();
+      }, 2000);
+    }
     card.addEventListener('pointerenter', function () { overCard = true; clearTimeout(closeT); });
-    card.addEventListener('pointerleave', function () { overCard = false; scheduleClose(160); });
+    card.addEventListener('pointerleave', function (e) { if (e.pointerType === 'touch') return; overCard = false; scheduleClose(160); });
     card.addEventListener('focusout', function (e) { if (card.classList.contains('is-turning')) return; if (!card.contains(e.relatedTarget) && !(openCase && e.relatedTarget === openCase.btn)) scheduleClose(0); });
     function open(c, b) {
+      clearTimeout(hoverLockT); clearTimeout(turnT); clearTimeout(turnEndT); hoverLocked = false; card.classList.remove('is-turning');
       clearTimeout(closeT);
       if (openCase && openCase.btn) openCase.btn.setAttribute('aria-expanded', 'false');
       openCase = c; b.setAttribute('aria-expanded', 'true');
@@ -163,6 +176,8 @@
       hover = c.continent; draw();
     }
     function closeCard() {
+      clearTimeout(openT); clearTimeout(closeT); clearTimeout(hoverLockT); clearTimeout(turnT); clearTimeout(turnEndT);
+      hoverLocked = false; card.classList.remove('is-turning');
       if (card.hidden) return;
       card.classList.remove('is-open');
       if (openCase && openCase.btn) openCase.btn.setAttribute('aria-expanded', 'false');
@@ -170,14 +185,16 @@
       setTimeout(function () { if (!card.classList.contains('is-open')) card.hidden = true; }, 380);
     }
     H.$$('[data-flip-turn]', card).forEach(function (bt) {
-      bt.addEventListener('click', function () {
-        card.classList.add('is-turning'); clearTimeout(closeT);
-        setTimeout(function () {
+      bt.addEventListener('click', function (e) {
+        if (card.classList.contains('is-turning')) return;
+        protectFlip(e.pointerType === 'mouse' || e.pointerType === 'pen' || e.detail > 0 && e.pointerType !== 'touch');
+        card.classList.add('is-turning');
+        turnT = setTimeout(function () {
           card.classList.toggle('is-flipped');
           var f = card.querySelector(card.classList.contains('is-flipped') ? '.flipcard__back [data-flip-turn]' : '.flipcard__front [data-flip-turn]');
           if (f) f.focus({ preventScroll: true });
         }, 220);
-        setTimeout(function () { card.classList.remove('is-turning'); }, 480);
+        turnEndT = setTimeout(function () { card.classList.remove('is-turning'); }, 480);
       });
     });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeCard(); });
@@ -206,7 +223,7 @@
       (function f(now) { var k = H.clamp((now - t0) / dur, 0, 1); bloom = H.lerp(b0, v, H.ease(k)); draw(); if (k < 1) bloomRaf = requestAnimationFrame(f); })(t0);
     }
     function openNow() { opened = true; sec.classList.add('is-open'); if (bloom < 1) bloomTo(1); if (!counted) { counted = true; count(); } }
-    function closeNow() { opened = false; counted = false; sec.classList.remove('is-open'); cancelAnimationFrame(bloomRaf); bloom = 0; draw(); }
+    function closeNow() { closeCard(); opened = false; counted = false; sec.classList.remove('is-open'); cancelAnimationFrame(bloomRaf); bloom = 0; draw(); }
     var NK = window.NK;
     (function iris() {
       if (!NK || !NK.loop || H.reduced) return;
@@ -545,7 +562,11 @@
     H.onView(fig, function (v) { visible = v; if (v) { dirty = true; kick(); } });
     var rz; addEventListener('resize', function () { clearTimeout(rz); rz = setTimeout(resize, 120); });
     resize();
+    /* cp16: the ascaroside story ends with the same outline where this map will
+       be drawn; draw it before arriving so the cut has nothing to fill in */
+    H.hpWarm = function () { visible = true; dirty = true; kick(); };
     H.scene('hp', {
+      get cutIn() { return !!(H.ascrStory && H.ascrStory.handsOver()); },
       steps: 2,
       set: function (i) { show(i); },
       step: function (i) { show(i); return 700; }

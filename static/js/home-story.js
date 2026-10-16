@@ -15,22 +15,29 @@
   function traces() {
     var sec = H.$('[data-traces]'); if (!sec) return;
     var cv = H.$('[data-tr-canvas]', sec), ctx, w, h, parts = [], ghosts = [], stars = [], hot = null, vis = false, t0 = performance.now();
+    if (!cv) return; // The replacement ascaroside story has no legacy traces canvas.
     var groups = H.$$('[data-tr-group]', sec);
     // clusters
     H.$$('[data-cluster]', sec).forEach(function (c) {
-      var kind = c.getAttribute('data-cluster'), r = H.rand(kind === '3' ? 2 : 6);
-      for (var i = 0; i < 9; i++) { var b = document.createElement('i'); b.style.setProperty('--x', (10 + r() * 70) + 'px'); b.style.setProperty('--y', (8 + r() * 60) + 'px'); b.style.setProperty('--s', (12 + r() * 14) + 'px'); b.style.setProperty('--dl', (r() * 3) + 's'); b.style.setProperty('--col', kind === '3' ? (i % 3 ? '#4c8dff' : '#9fc3ff') : (i % 3 ? '#ff5e86' : '#ffb0a0')); c.appendChild(b); }
+      /* R1-H07: one soft cloud with a short trail of pale droplets, after ascr.ai */
+      var kind = c.getAttribute('data-cluster'), r = H.rand(kind === '3' ? 2 : 6), blue = kind === '3';
+      var cloud = document.createElement('i'); cloud.className = 'tr__cloud'; c.appendChild(cloud);
+      var drops = blue ? [[4, 20, 13, 17], [70, 16, 14, 11], [96, 40, 24, 15], [120, 50, 18, 13], [60, 70, 20, 14]] : [[0, 34, 14, 18], [84, 52, 12, 10], [100, 46, 19, 14], [122, 30, 18, 16], [80, 70, 21, 15]];
+      drops.forEach(function (d, i) { var b = document.createElement('i'); b.className = 'tr__drop'; b.style.setProperty('--x', d[0] + 'px'); b.style.setProperty('--y', d[1] + 'px'); b.style.setProperty('--w', d[2] + 'px'); b.style.setProperty('--h', d[3] + 'px'); b.style.setProperty('--dl', (r() * 3).toFixed(2) + 's'); b.style.setProperty('--rot', ((r() - .5) * 50).toFixed(0) + 'deg'); c.appendChild(b); });
     });
     function shuffle() {
       H.$$('[data-mix]', sec).forEach(function (m) {
-        m.innerHTML = ''; var n = 5 + Math.floor(Math.random() * 3);
-        for (var i = 0; i < n; i++) { var b = document.createElement('i'); b.style.setProperty('--col', Math.random() < .5 ? '#4c8dff' : '#ff5e86'); b.style.setProperty('--s', (10 + Math.random() * 8) + 'px'); m.appendChild(b); }
+        /* R1-H07: the mix is a ring of soft blue (ascr#3) / pink (ascr#18) glows round the worm */
+        m.innerHTML = ''; var n = 5, a0 = Math.random() * 6.28;
+        for (var i = 0; i < n; i++) { var b = document.createElement('i'), a = a0 + i * 6.283 / n + (Math.random() - .5) * .5, rr = 28 + Math.random() * 14, big = i < 4;
+          b.style.setProperty('--col', Math.random() < .5 ? 'var(--tr-blue)' : 'var(--tr-pink)'); b.style.setProperty('--s', (big ? 56 + Math.random() * 18 : 22 + Math.random() * 8) + 'px');
+          b.style.setProperty('--x', (Math.cos(a) * rr * 1.25).toFixed(1) + 'px'); b.style.setProperty('--y', (Math.sin(a) * rr * .8).toFixed(1) + 'px'); m.appendChild(b); }
       });
     }
     shuffle(); var sh = setInterval(function () { if (vis && !H.reduced) shuffle(); }, 2600);
-    function size() { w = sec.clientWidth; h = sec.clientHeight; ctx = H.fit(cv, w, h, 1.5); stars = []; var r = H.rand(9); for (var i = 0; i < 90; i++) stars.push([r() * w, r() * h * .7, r() * 1.6, r() * 6]); ghosts = []; var sr = sec.getBoundingClientRect(), anchors = groups.map(function (g) { var b = g.getBoundingClientRect(); return [b.left - sr.left + b.width / 2, b.top - sr.top + 70]; });
+    function size() { w = sec.clientWidth; h = sec.clientHeight; ctx = H.fit(cv, w, h, 1.5); stars = []; var r = H.rand(9); for (var i = 0; i < 90; i++) stars.push([r() * w, r() * h * .7, r() * 1.6, r() * 6]); ghosts = []; var sr = sec.getBoundingClientRect(), anchors = groups.map(function (g) { var f = H.$('.tr__fig', g) || g, b = f.getBoundingClientRect(); return [b.left - sr.left + b.width / 2, b.top - sr.top + b.height / 2]; });
       var cl = H.$('.tr__pair', sec).getBoundingClientRect(); target = [cl.left - sr.left, cl.width, cl.top - sr.top + cl.height * .6];
-      for (i = 0; i < 8; i++) { var an = anchors[i < 4 ? 0 : 1]; ghosts.push({ side: i < 4 ? 0 : 1, x: an[0] - 90 + r() * 110, y: an[1] - 40 + r() * 60, a: r() * 6, len: 60 + r() * 50, ph: r() * 6 }); } }
+      for (i = 0; i < 8; i++) { var an = anchors[i < 4 ? 0 : 1]; ghosts.push({ side: i < 4 ? 0 : 1, x: an[0] - 30 + r() * 60, y: an[1] - 18 + r() * 36, a: r() * 6, len: 60 + r() * 50, ph: r() * 6 }); } }
     var target = [0, 0, 0];
     function draw(now) {
       if (!vis) return; var t = (now - t0) / 1000; ctx.clearRect(0, 0, w, h);
@@ -40,11 +47,8 @@
       stars.forEach(function (s) { ctx.fillStyle = 'rgba(255,230,200,' + (.2 + .5 * Math.max(0, Math.sin(t + s[3]))) + ')'; ctx.fillRect(s[0], s[1], s[2], s[2]); });
       ghosts.forEach(function (g) {
         var hotG = hot === 'both' || hot === (g.side ? 'pp' : 'free');
-        for (var i = 0; i < 30; i++) {
-          var u = i / 29, off = Math.sin(u * 5 + t * 2 + g.ph) * 8, gx = g.x + Math.cos(g.a + Math.sin(t * .2 + g.ph) * .4) * g.len * u, gy = g.y + Math.sin(g.a) * g.len * u * .5 + off;
-          ctx.fillStyle = 'rgba(230,210,240,' + (hotG ? .14 : .07) + ')'; ctx.beginPath(); ctx.arc(gx, gy, 7 * Math.sin(Math.PI * (.12 + u * .8)), 0, 6.29); ctx.fill();
-        }
-        if (Math.random() < (hotG ? .25 : .04)) parts.push({ x: g.x, y: g.y, vx: (Math.random() - .5) * .6, vy: -.2 - Math.random() * .4, c: Math.random() < .5 ? '76,141,255' : '255,94,134', life: 1, to: hotG ? (Math.random() < .5 ? .44 : .56) : 0 });
+        /* R1-H07: the worms themselves are the white SVG figures; the canvas only carries the signal */
+        if (Math.random() < (hotG ? .25 : .04)) parts.push({ x: g.x, y: g.y, vx: (Math.random() - .5) * .6, vy: -.2 - Math.random() * .4, c: Math.random() < .5 ? '143,186,236' : '236,166,201', life: 1, to: hotG ? (Math.random() < .5 ? .44 : .56) : 0 });
       });
       parts = parts.filter(function (p) { return p.life > 0; });
       parts.forEach(function (p) {
@@ -444,6 +448,7 @@
   function built() {
     H.$$('[data-art]').forEach(function (card) {
       var cv = H.$('canvas', card), kind = card.getAttribute('data-art'), ctx, w, h, hover = false, vis = false, t0 = performance.now(), r = H.rand(kind.length * 7);
+      if (!cv) return; // SVG data-art slots are not legacy canvas cards.
       var net = []; for (var i = 0; i < 26; i++) net.push([r(), r(), r()]);
       function size() { w = card.clientWidth; h = card.clientHeight; ctx = H.fit(cv, w, h, 2); }
       function glow(x, y, rad, col, a) { var g = ctx.createRadialGradient(x, y, 0, x, y, rad); g.addColorStop(0, 'rgba(' + col + ',' + a + ')'); g.addColorStop(1, 'rgba(' + col + ',0)'); ctx.fillStyle = g; ctx.fillRect(x - rad, y - rad, rad * 2, rad * 2); }

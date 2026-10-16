@@ -16,6 +16,8 @@
     "predev": "node tools/prepare-viewers.mjs",
     "predev:cloud": "node tools/prepare-viewers.mjs",
     "prebuild": "node tools/prepare-viewers.mjs && node tools/apply-cdn-fonts.mjs",
+    "test:captions": "node --test tools/tests/caption-panels.test.mjs",
+    "test:media": "node --test tools/tests/media-blocks.test.mjs",
     "test:deployment": "node --test tools/tests/assets.test.mjs && python3 -m unittest discover -s tools/tests -p \"test_*.py\""
   },
   "dependencies": {

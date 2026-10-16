@@ -21,11 +21,13 @@ export function renderMediaBlock(block, type) {
 
   // PDF: the visitor's browser draws its own reader; we only add a title bar with
   // open / download so devices without inline PDF support can still read it.
+  // The bar sits above the frame: on phones that show no inline PDF (e.g. Android
+  // Chrome) the frame stays blank, so the link must not wait below it (checkpoint-13).
   if (type === 'pdf') {
     const file = String(block.file).trim();
     if (!SAFE_URL.test(file)) return '<p class="wiki-media__invalid">请选择有效的 PDF 文件地址（站内路径或 https 地址）。</p>';
     const url = escape(file);
-    return `<figure class="wiki-media wiki-media--pdf"><iframe class="wiki-media__frame" src="${url}" title="${escape(title)}" loading="lazy" style="height:${height}px;border:0;border-radius:0" referrerpolicy="no-referrer"></iframe><figcaption>${block.caption ? `${escape(block.caption)} · ` : ''}<a href="${url}" target="_blank" rel="noopener noreferrer">Open PDF / Download</a></figcaption></figure>`;
+    return `<figure class="wiki-media wiki-media--pdf"><div class="wiki-media__bar"><span class="wiki-media__kind">PDF</span><span class="wiki-media__title">${escape(title)}</span><a class="wiki-media__action" href="${url}" target="_blank" rel="noopener noreferrer">Open PDF / Download</a></div><iframe class="wiki-media__frame" src="${url}" title="${escape(title)}" loading="lazy" style="height:${height}px" referrerpolicy="no-referrer"></iframe>${caption(block)}</figure>`;
   }
 
   return `<figure class="wiki-media wiki-media--${type}"><iframe class="wiki-media__frame" src="/widgets/${type}.html?${escape(params.toString())}" title="${escape(title)}" loading="lazy" allow="fullscreen" style="height:${height}px" referrerpolicy="no-referrer"></iframe>${caption(block)}</figure>`;

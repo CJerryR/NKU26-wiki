@@ -45,16 +45,20 @@ const templates: Template[] = [
     { type: 'image', name: 'src', label: '上传图片', required: true },
     { type: 'string', name: 'alt', label: '图片说明', required: true },
     { ...body, label: '图注' },
-    { type: 'string', name: 'layout', label: '图文版式', options: [{ label: '通栏图片', value: 'full' }, { label: '左图右文', value: 'left' }, { label: '右图左文', value: 'right' }], description: '留空使用通栏；配套正文留空时也使用通栏。' },
+    { type: 'string', name: 'layout', label: '图文版式', options: [{ label: '通栏图片', value: 'full' }, { label: '文字在上、图片在下', value: 'stack' }, { label: '左图右文', value: 'left' }, { label: '右图左文', value: 'right' }], description: '留空使用通栏；配套正文留空时也使用通栏。“文字在上、图片在下”把配套正文放在图片上方。' },
+    { type: 'string', name: 'scale', label: '图片显示比例', options: [{ label: '100%（默认）', value: '' }, { label: '85%', value: '85' }, { label: '70%', value: '70' }, { label: '55%', value: '55' }], description: '图片在白色图框中按此比例居中显示，左右留白。' },
     { type: 'string', name: 'imageWidth', label: '图片列宽', options: [{ label: '窄（约 32%）', value: 'narrow' }, { label: '中（约 40%）', value: 'medium' }, { label: '宽（约 50%）', value: 'wide' }], description: '仅用于左右图文版式；手机自动上下排列。' },
     { ...body, name: 'accompanyingBody', label: '配套正文' },
   ] },
   { name: 'gallery', label: '双图并排', fields: [
+    { ...body, label: '图组上方正文' },
     { type: 'image', name: 'left', label: '左图', required: true },
     { type: 'string', name: 'leftAlt', label: '左图说明' },
+    { ...body, name: 'leftCaption', label: '左图图注' },
     { type: 'image', name: 'right', label: '右图', required: true },
     { type: 'string', name: 'rightAlt', label: '右图说明' },
-    body,
+    { ...body, name: 'rightCaption', label: '右图图注' },
+    { ...body, name: 'afterBody', label: '图组下方正文' },
   ] },
 ];
 

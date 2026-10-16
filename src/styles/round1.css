@@ -1,0 +1,48 @@
+/* Inner pages — round 1 (2026-10-15). Loaded last by global.css.
+   I01 figures/captions/citations · I02 section numbers · I03 scaled figures · I04 figure pairs */
+
+/* I01 / F01 (checkpoint-10): experimental figures sit on a white rounded card with even margins (Word-style).
+   Scope: block figures inside article bodies (:::figure and ::::figures pairs) on every inner page, including
+   data-reading="submitted" pages. Not affected: image/text compositions (.figure-text, e.g. Members photos)
+   and tables placed in a figure (reset below). Specificity (0,4,0) is deliberate: it must beat the base card
+   in blocks.css and must not depend on file order. Tune the card with --figure-pad / --figure-radius. */
+.prose .figure:not(.figure-text > *) > .figure__media {
+  background: #fff; border: 1px solid var(--line); border-radius: var(--figure-radius, 18px);
+  padding: var(--figure-pad, clamp(14px, 2.2vw, 26px)); box-shadow: 0 14px 30px -26px rgba(40, 20, 60, .35);
+}
+/* images keep square corners inside the card (panel letters often sit in the very corner) and never distort */
+.prose .figure:not(.figure-text > *) > .figure__media img {
+  /* width:auto beats the width="" attribute, so max-width/max-height scale both sides and keep the ratio */
+  display: block; width: auto; max-width: 100%; height: auto; max-height: min(78vh, 760px); margin-inline: auto;
+  border-radius: 0; object-fit: contain;
+}
+.prose .figure > .figure__media:has(> .table-wrap) { padding: 0; border: 0; border-radius: 0; background: none; box-shadow: none; }
+@media (max-width: 640px) { .prose { --figure-radius: 14px; } }
+.figure__media > p { margin: 0; }
+.figure figcaption, .table-caption { font-size: 14px; line-height: 1.6; color: var(--ink-2); }
+.figure figcaption strong, .table-caption strong { color: var(--ink); font-weight: 650; }
+.figure figcaption strong:first-child, .table-caption strong:first-child { margin-right: .15em; }
+.table-caption { margin: 12px 0 0; max-width: calc(var(--measure) + var(--bleed)); }
+.table-wrap + .table-caption { margin-top: 12px; }
+/* I01: citation numbers as superscripts that do not open up the line spacing */
+sup.cite { font-size: .72em; line-height: 0; vertical-align: super; margin-left: .06em; color: var(--iris-deep, var(--ink-2)); font-variant-numeric: lining-nums; white-space: nowrap; }
+
+/* I03: a figure shown smaller than the column, centred in its white card */
+/* (0,4,1), after the card rule: caps the width at the chosen share; never upscales; full width on phones */
+.prose .figure.figure--scaled > .figure__media img { width: auto; max-width: var(--fig-scale); }
+@media (max-width: 640px) { .prose .figure.figure--scaled > .figure__media img { max-width: 100%; } }
+
+/* I04: two framed figures side by side, frames stretched to the taller one; stacked on narrow screens */
+.figure-pair { --figure-pad: clamp(10px, 1.5vw, 18px); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 24px); align-items: stretch; margin: 1.6em 0; }
+.figure-pair > .figure { margin: 0; min-width: 0; display: flex; flex-direction: column; }
+.figure-pair > .figure > .figure__media { flex: 1 1 auto; display: grid; place-items: center; }
+@media (max-width: 760px) { .figure-pair { grid-template-columns: minmax(0, 1fr); --figure-pad: initial; } }
+
+/* I02: the big section number moves into the text column, above the heading,
+   so the sticky outline on the left can no longer cover it */
+@media (min-width: 1100px) {
+  .doc-section[data-num] { padding-top: clamp(46px, 4.6vw, 70px); }
+  .doc-section[data-num]::before { top: 0; right: auto; left: -.05em; font-size: clamp(64px, 5.4vw, 92px); line-height: .82; opacity: .13; }
+  .doc-section:only-of-type { padding-top: 0; }
+}

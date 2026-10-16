@@ -25,8 +25,7 @@ export const primaryNav: NavItem[] = [
   },
   {
     kind: 'group', id: 'wetlab', label: 'Wet Lab', items: [
-      { page: 'parts', label: 'Parts', blurb: 'Every element and how far it is verified' },
-      { page: 'part-collection', label: 'Part Collection', blurb: 'How the parts work as one set' },
+      { page: 'parts', label: 'Parts and Collections', blurb: 'Every part, and the collections they form' },
       { page: 'experiments', label: 'Experiments', blurb: 'What each experiment tests' },
       { page: 'protocols', label: 'Protocols', blurb: 'The methods we followed' },
       { page: 'notebook', label: 'Notebook', blurb: 'Dated bench records', optional: true },
@@ -71,7 +70,7 @@ export const footerNav: { label: string; items: NavLink[] }[] = [
     { page: 'contribution', label: 'Contribution' }, { page: 'model', label: 'Model' },
   ] },
   { label: 'Wet Lab', items: [
-    { page: 'parts', label: 'Parts' }, { page: 'experiments', label: 'Experiments' },
+    { page: 'parts', label: 'Parts and Collections' }, { page: 'experiments', label: 'Experiments' },
     { page: 'results', label: 'Results' }, { page: 'safety', label: 'Safety' },
   ] },
   { label: 'People & practice', items: [

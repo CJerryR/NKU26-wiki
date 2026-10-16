@@ -19,15 +19,16 @@
   width: calc(100% - 2 * var(--nav-gutter, clamp(20px, 4vw - 8px, 88px)));
 }
 .lnav__island { pointer-events: auto; display: flex; align-items: center; height: 56px; border-radius: 99px; }
-.lnav__island--brand { padding: 0 20px 0 12px; }
+.lnav__island--brand { padding: 0 24px 0 14px; }
 .lnav__island--menu { padding: 0 7px 0 8px; gap: 2px; }
 
 .lnav__brand { display: flex; align-items: center; gap: 10px; flex-shrink: 0; border-radius: 16px; }
-.lnav__brand img { width: 26px; height: 34px; object-fit: contain; filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .35)); transition: transform .5s var(--nav-ease); }
+/* R1-H01: the brand island uses the opening-screen size (Figma 217 × 56, mark ≈ 38 × 50) on every page */
+.lnav__brand img { width: 38px; height: 50px; object-fit: contain; filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .35)); transition: transform .5s var(--nav-ease); }
 .lnav__brand:hover img { transform: rotate(-6deg); }
 .lnav__brand > span { display: flex; flex-direction: column; line-height: 1.05; }
-.lnav__brand b { display: block; font-weight: 700; font-size: 16.5px; letter-spacing: -.01em; white-space: nowrap; }
-.lnav__brand em { font-style: normal; font-weight: 500; font-size: 12.5px; letter-spacing: .01em; margin-top: 2px; color: var(--nav-gold); transition: color .35s; }
+.lnav__brand b { display: block; font-weight: 700; font-size: 19.6px; letter-spacing: -.01em; white-space: nowrap; }
+.lnav__brand em { font-style: normal; font-weight: 500; font-size: 14.7px; letter-spacing: .01em; margin-top: 2px; color: var(--nav-gold); transition: color .35s; }
 .lnav__island[data-tone='light'] .lnav__brand em { color: var(--nav-brand); }
 
 /* ---- the menu: links and the film that marks one of them ---- */
@@ -148,8 +149,9 @@
 @media (max-width: 520px) {
   .lnav { inset: 10px 0 auto; }
   .lnav__island--brand { padding: 0 16px 0 10px; }
-  .lnav__brand b { font-size: 15.5px; }
-  .lnav__brand em { font-size: 12px; }
+  .lnav__brand img { width: 30px; height: 40px; }
+  .lnav__brand b { font-size: 16.5px; }
+  .lnav__brand em { font-size: 12.5px; }
   .lnav-scrim { height: 92px; }
 }
 @media (prefers-reduced-motion: reduce) {

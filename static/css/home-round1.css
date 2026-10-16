@@ -1,0 +1,190 @@
+/* NKU homepage — round 1 (2026-10-15), loaded after home-v6.css and shell.css.
+   Each block names the requirement it answers (see REQUIREMENTS-MATRIX.csv).
+   Design values come from Chen's Figma album; sizes are fluid so the desktop
+   proportions hold at 1440 px and scale down instead of locking coordinates. */
+
+/* SECRETS face: Flavors (Sideshow, SIL OFL 1.1), subset to the letters of
+   "secrets" and renamed as OFL requires for a modified copy. Licence:
+   fonts/nk26-secrets-display.OFL.txt. Local file until the team uploads it. */
+@font-face{font-family:'NK26 Secrets Display';src:url('../fonts/nk26-secrets-display.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+
+/* ---------- H01 opening title: What / SECRETS / lie / beneath the soil? ----------
+   Figma (1440 wide): Spline Sans Medium 95 px, tracking -3 px, #F4E3B1;
+   SECRETS Flavors 110 px, #F8D88D. Line pitch is measured from the frame. */
+.op6 .op__title--r1{
+  display:flex;flex-direction:column;align-items:center;
+  font-family:var(--sans);font-weight:500;
+  font-size:clamp(40px,min(6.6vw,10.4svh),118px);
+  line-height:1.16;letter-spacing:-.032em;color:#f4e3b1;
+  text-shadow:0 6px 40px rgba(10,4,16,.55)
+}
+.op6 .op__title--r1>.op__ln{display:block;white-space:nowrap}
+.op6 .op__title--r1 .op__secrets{
+  font-family:'NK26 Secrets Display','Fraunces',Georgia,serif;font-weight:400;
+  font-size:1.158em;line-height:1.02;letter-spacing:.01em;text-transform:uppercase;
+  color:#f8d88d;padding-block:.04em .02em
+}
+@media (max-width:700px){
+  .op6 .op__title--r1{font-size:clamp(34px,11.2vw,56px)}
+}
+
+/* ---------- H03 one "Nematodes are behind it!" ----------
+   The label next to the nematode stays; the bottom status line keeps the
+   sentence for screen readers only. */
+.op6 .op__line.is-found{
+  position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;
+  clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0
+}
+
+/* ---------- H04 world: content lifted, four-line title ----------
+   Figma: Spline Sans SemiBold 44.135 px / 45 px. The block is centred a little
+   above the middle of the screen instead of below it. */
+.world__inner{padding-top:0;padding-left:clamp(0px,3vw,44px)}
+.world__pin{padding:clamp(56px,7svh,72px) 0 clamp(64px,11svh,118px)}
+.world__copy .world__title{
+  font-weight:600;font-size:clamp(32px,3.07vw,46px);line-height:1.02;
+  letter-spacing:-.03em;max-width:none;text-wrap:initial
+}
+.world__title>.world__tl{display:block;white-space:nowrap}
+/* v6 set the two-column grid without a breakpoint, which squeezed the map
+   into a sliver on phones; restore the stacked layout home.css intended */
+@media (max-width:980px){
+  .world__inner{grid-template-columns:1fr;padding-left:0}
+  .world__pin{padding:90px 0 60px}
+}
+@media (max-width:900px){
+  .world__copy .world__title{font-size:clamp(30px,8.4vw,40px)}
+}
+
+/* ---------- H09 explore: "Follow the signals!" above the eight doors ----------
+   Figma: Fraunces SemiBold 36 px, #C79BFF, set directly over the 2 × 4 grid. */
+.ex__links{display:flex;flex-direction:column;min-width:0}
+.ex__signals{
+  margin:0 0 clamp(12px,1.3vw,18px);
+  font-family:'Fraunces',Georgia,serif;font-style:normal;font-weight:600;
+  font-variation-settings:"SOFT" 0,"WONK" 0,"opsz" 72;
+  font-size:clamp(26px,2.5vw,36px);line-height:1.02;letter-spacing:-.005em;color:#c79bff
+}
+
+/* ---------- H07 chemical traces: white worms and soft blue/pink glows ----------
+   After ascr.ai (album p.12-13). The page keeps its own purple ground; only the
+   worms and the signals change. Blue = ascr#3, pink = ascr#18, as before. */
+.tr{--tr-blue:#8fbaec;--tr-pink:#eca6c9}
+.tr__group{padding:8px 12px 18px;gap:14px}
+.tr__fig{position:relative;display:grid;place-items:center;width:200px;height:150px;pointer-events:none}
+.tr__fig .tr__mix{position:absolute;inset:0;display:block;max-width:none;min-height:0;margin:0}
+.tr__fig .tr__mix i{position:absolute;left:50%;top:50%;width:var(--s);height:var(--s);border-radius:50%;
+  background:radial-gradient(circle,color-mix(in srgb,var(--col) 92%,#fff) 0%,color-mix(in srgb,var(--col) 70%,transparent) 42%,transparent 70%);
+  box-shadow:none;opacity:.88;transform:translate(calc(-50% + var(--x,0px)),calc(-50% + var(--y,0px)));
+  transition:transform .9s var(--ease-o),opacity .5s;animation:none}
+.tr__group:hover .tr__fig .tr__mix i,.tr__group.is-hot .tr__fig .tr__mix i{opacity:1}
+.tr__worm{position:relative;width:96px;height:auto;overflow:visible;transform-origin:50% 60%;animation:trWorm 3.4s ease-in-out infinite}
+.tr__group--pp .tr__worm{animation-delay:-1.7s}
+.tr__worm path{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.tr__worm-shade{stroke:#b9a7d6;stroke-width:6.4;opacity:.55}
+.tr__worm-body{stroke:#fbf8ff;stroke-width:4.4}
+@keyframes trWorm{0%,100%{transform:rotate(-3deg) translateX(-2px)}50%{transform:rotate(3deg) translateX(2px)}}
+.tr__mol{position:relative;display:grid;place-items:center}
+.tr__mol>b,.tr__mol>span{grid-area:1/1}
+.tr__mol>b{position:relative;z-index:1;margin:6px 46px 0 0;font-family:'Fraunces',Georgia,serif;font-style:normal;font-weight:500;
+  font-size:clamp(20px,1.7vw,26px);color:#fffaff;text-shadow:0 1px 10px rgba(29,15,38,.55)}
+.tr__mol>span{width:150px;height:96px}
+.tr__mol span .tr__cloud{position:absolute;left:4px;top:4px;width:92px;height:84px;border-radius:50%;
+  background:radial-gradient(closest-side,var(--c1) 0%,var(--c1) 38%,color-mix(in srgb,var(--c1) 55%,transparent) 66%,transparent 100%);animation:none}
+.tr__mol span .tr__drop{position:absolute;left:var(--x);top:var(--y);width:var(--w);height:var(--h);border-radius:50%;
+  background:radial-gradient(closest-side,#fff 0%,var(--c2) 55%,color-mix(in srgb,var(--c2) 40%,transparent) 85%,transparent 100%);
+  transform:rotate(var(--rot));box-shadow:none;animation:trDrop 4.2s ease-in-out infinite;animation-delay:var(--dl)}
+.tr__mol--3 span{--c1:#7fa8dc;--c2:#b9d3f1}
+.tr__mol--18 span{--c1:#e3a0c1;--c2:#f3d4e4}
+@keyframes trDrop{0%,100%{translate:0 0}50%{translate:0 -4px}}
+@media (max-width:900px){.tr__fig{width:170px;height:124px}.tr__worm{width:82px}}
+@media (prefers-reduced-motion:reduce){.tr__worm,.tr__mol span .tr__drop{animation:none}}
+
+/* ---------- H06 the hidden threat: plant on the left, magnified circle on the right ----------
+   Artwork: 单图大豆植株.ai / 单图放大.ai (colours as supplied). JS: static/js/home-threat-r1.js */
+.th2 .th__track{position:absolute;inset:0}
+.th2 .th__head{top:clamp(80px,11svh,104px)}
+.th2__ov{position:absolute;left:max(28px,(100% - 1300px) / 2);right:max(28px,(100% - 1300px) / 2);top:clamp(200px,30svh,270px);
+  display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,2.2vw,34px);margin:0;padding:0;list-style:none;
+  transition:opacity .55s,transform .8s var(--ease-o)}
+.th2__card figure{position:relative;margin:0}
+.th2__card .th2__plant{display:block;position:relative}
+.th2__card .th2__plant img{display:block;width:100%;height:auto;max-height:44svh;object-fit:contain}
+.th2__card .th2__lens{position:absolute;right:-2%;bottom:20%;width:42%;aspect-ratio:1;border-radius:50%;
+  box-shadow:0 14px 28px -10px rgba(35,24,41,.45),0 0 0 3px #fbf5ea}
+.th2__card figcaption{margin-top:14px;display:flex;gap:12px;align-items:baseline;font-size:clamp(18px,1.75vw,26px);font-weight:600;letter-spacing:-.02em;line-height:1.15}
+.th2__card figcaption b{color:var(--plum)}
+.th2__card.is-key figcaption{color:var(--plum)}
+.th2__card .th2__spot{display:none}
+.th2:not([data-st="0"]) .th2__ov{opacity:0;transform:translateY(24px) scale(.97);pointer-events:none}
+
+.th2__focus{position:absolute;inset:0;pointer-events:none}
+.th2__pane{position:absolute;left:max(28px,(100% - 1300px) / 2);width:min(840px,62%);top:clamp(170px,23svh,220px);bottom:clamp(70px,10svh,96px)}
+.th2__scene{position:absolute;inset:0;display:grid;grid-template-columns:1.15fr 1fr;align-items:center;gap:clamp(26px,5vw,80px);
+  opacity:0;transform:translateX(-18px);transition:opacity .6s,transform .9s var(--ease-o)}
+.th2__scene.is-on{opacity:1;transform:none}
+.th2__scene .th2__plant{position:relative;justify-self:end;height:100%;max-height:600px;aspect-ratio:541/582;max-width:100%}
+.th2__scene .th2__plant img{display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 26px 30px rgba(35,24,41,.18))}
+.th2__scene .th2__lens{position:relative;width:min(100%,46svh,400px);aspect-ratio:1;border-radius:50%;
+  box-shadow:0 26px 44px -18px rgba(35,24,41,.5),0 0 0 4px #fbf5ea,0 0 0 5.5px rgba(126,12,110,.35)}
+.th2__lens img{display:block;width:100%;height:100%;border-radius:50%}
+.th2__spot{position:absolute;width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;opacity:0}
+.th2__call{position:absolute;inset:0;z-index:2;width:100%;height:100%;overflow:visible;opacity:0;transition:opacity .5s .35s}
+.th2:not([data-st="0"]) .th2__call{opacity:1}
+/* the callout must read on the dark soil and on the cream page alike */
+.th2__call path{stroke:#b07ae0;stroke-width:1.6;stroke-dasharray:4 4;fill:none}
+.th2__call [data-call-ring]{fill:rgba(255,255,255,.12);stroke:#fffaf0;stroke-width:2.2}
+.th2__call [data-call-ring2]{fill:none;stroke:#7e0c6e;stroke-width:2}
+/* ascr#3 (blue) and ascr#18 (pink) as soft glows, the same language as the traces page */
+.th2__glow{position:absolute;inset:0;border-radius:50%;overflow:hidden;pointer-events:none}
+.th2__glow i,.th2__plantglow i{position:absolute;border-radius:50%;mix-blend-mode:screen;animation:th2Glow 4.6s ease-in-out infinite}
+.th2__glow i{left:var(--x);top:var(--y);width:var(--s);aspect-ratio:1;translate:-50% -50%}
+.th2__glow i:nth-child(2n){animation-delay:-2.3s}
+.is-b{background:radial-gradient(closest-side,rgba(143,186,236,.95),rgba(143,186,236,.5) 55%,transparent)}
+.is-p{background:radial-gradient(closest-side,rgba(236,166,201,.95),rgba(236,166,201,.5) 55%,transparent)}
+.th2__plantglow{position:absolute;width:30%;aspect-ratio:1;translate:-50% -50%;pointer-events:none}
+.th2__plantglow i{width:58%;aspect-ratio:1;opacity:.75}
+.th2__plantglow i:nth-child(1){left:0;top:12%}.th2__plantglow i:nth-child(2){left:40%;top:0;animation-delay:-1.5s}.th2__plantglow i:nth-child(3){left:26%;top:44%;animation-delay:-3s}
+@keyframes th2Glow{0%,100%{opacity:.7;scale:.94}50%{opacity:1;scale:1.05}}
+.th2__chip{position:absolute;z-index:1;padding:3px 10px;border-radius:999px;font:600 12.5px/1.2 var(--sans);color:#fff;letter-spacing:.01em;box-shadow:0 4px 12px rgba(20,10,30,.25)}
+.th2__chip.is-3{left:12%;top:24%;background:#4f78b8}
+.th2__chip.is-18{right:12%;bottom:22%;background:#b5527f}
+.th2__card .th2__chip{display:none}
+/* caption to the right of the scene */
+.th2 .th__cap{left:auto!important;right:max(28px,(100% - 1300px) / 2);top:50%!important;width:min(380px,30%)!important;transform:translateY(calc(-50% + 12px))}
+.th2 .th__cap.is-in{transform:translateY(-50%)}
+.th2 .th__cap{text-align:left}
+.th2 .th__cap h3{display:flex;justify-content:flex-start;gap:.35em;align-items:baseline}
+.th2 .th__p{margin-top:12px;max-width:36ch;font-size:15.5px;line-height:1.55;color:var(--ink-2)}
+/* the stage strip replaces the plain dashes */
+.th2 .th__dots{bottom:clamp(18px,3svh,28px);gap:clamp(10px,2vw,28px)}
+.th2 .th__dots li{width:auto;height:auto;background:none;display:flex;gap:6px;align-items:baseline;font-size:12.5px;font-weight:600;color:var(--ink-3);
+  padding-top:8px;border-top:3px solid rgba(35,24,41,.14);transition:color .4s,border-color .4s}
+.th2 .th__dots li b{color:inherit}
+.th2 .th__dots li.is-done{border-color:rgba(126,12,110,.4)}
+.th2 .th__dots li.is-on{border-color:var(--plum);color:var(--plum)}
+.th2[data-st="0"] .th__dots{opacity:0}
+.th2 .th__over{bottom:clamp(20px,3.4svh,34px)}
+@media (max-width:1100px){
+  .th2__pane{width:auto;right:max(28px,(100% - 1300px) / 2);bottom:clamp(200px,30svh,280px)}
+  .th2 .th__cap{left:max(28px,(100% - 1300px) / 2)!important;right:auto;top:auto!important;bottom:clamp(64px,9svh,90px);width:auto!important;max-width:640px;transform:translateY(12px)}
+  .th2 .th__cap.is-in{transform:none}
+}
+@media (max-width:760px){
+  .th2__ov{grid-template-columns:1fr 1fr;row-gap:22px;top:150px}
+  .th2__card .th2__plant img{max-height:24svh}
+  .th2__pane{top:140px;bottom:auto;height:44svh}
+  .th2__scene{grid-template-columns:1fr;place-items:center}
+  .th2__scene .th2__plant{justify-self:center;height:100%;grid-area:1/1}
+  .th2__scene .th2__lens{grid-area:1/1;justify-self:end;align-self:end;width:min(46vw,24svh)}
+  .th2__call{display:none}
+  .th2 .th__cap{bottom:76px;max-width:none;right:20px}
+  .th2 .th__p{font-size:14.5px}
+  .th2 .th__dots li span{display:none}
+}
+@media (prefers-reduced-motion:reduce){.th2__scene,.th2__ov{transition:none}.th2__glow i,.th2__plantglow i{animation:none}}
+/* the v3 rules for .th__track li do not apply to the new stage cards */
+.th2 .th__track li{flex:none;display:block;opacity:1;gap:0}
+.th2 .th__track{display:block;transform:none;transition:none}
+.th2 .th__track span{max-width:none;font-size:inherit;line-height:normal;color:inherit}
+.th2 .th__track b{font-size:inherit;letter-spacing:inherit;line-height:inherit}

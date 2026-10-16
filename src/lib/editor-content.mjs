@@ -24,14 +24,22 @@ export function blocksToMarkdown(blocks = []) {
       case 'text': return body;
       case 'layout': return `:::${block.kind}${label}${attrs}\n\n${body}\n\n:::`;
       case 'image': {
-        const figure = `:::figure\n\n${img(block.src, block.alt)}\n\n${body}\n\n:::`;
+        const scale = ['85', '70', '55'].includes(String(block.scale || '')) ? `{scale=${block.scale}}` : '';
+        const figure = `:::figure${scale}\n\n${img(block.src, block.alt)}\n\n${body}\n\n:::`;
         const accompanying = markdown(block.accompanyingBody).trim();
         if (!accompanying) return figure;
+        if (block.layout === 'stack') return `${accompanying}\n\n${figure}`;   // R1-I03: text above, figure below
         if (!['left', 'right'].includes(block.layout)) return `${figure}\n\n${accompanying}`;
         const width = ['narrow', 'medium', 'wide'].includes(block.imageWidth) ? block.imageWidth : 'medium';
         return `::::figuretext{side=${block.layout} width=${width}}\n\n${figure}\n\n${accompanying}\n\n::::`;
       }
-      case 'gallery': return `:::cols{cols=2}\n\n### ${block.leftAlt || 'A'}\n\n${img(block.left, block.leftAlt)}\n\n### ${block.rightAlt || 'B'}\n\n${img(block.right, block.rightAlt)}\n\n:::\n\n${body}`;
+      // R1-I04: two framed figures side by side, each with its own caption (stacked on phones)
+      case 'gallery': {
+        const one = (src, alt, cap) => `:::figure\n\n${img(src, alt)}\n\n${markdown(cap).trim() || alt || ''}\n\n:::`;
+        const pair = `::::figures\n\n${one(block.left, block.leftAlt, block.leftCaption)}\n\n${one(block.right, block.rightAlt, block.rightCaption)}\n\n::::`;
+        const after = markdown(block.afterBody).trim();
+        return [body.trim(), pair, after].filter(Boolean).join('\n\n');
+      }
       default: throw new Error(`Unknown content block: ${block._template}`);
     }
   }).join('\n\n') + '\n';

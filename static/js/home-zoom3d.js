@@ -83,8 +83,12 @@
    * skipped with a fast scroll. */
   var LAYERED = sec.getAttribute('data-layers') === 'on';
   NK.chinaLayered = LAYERED;
-  var DUR = LAYERED ? [0, 1300, 1300, 1300, 6200, 5200] : [0, 4400, 5200];
-  var LAST = DUR.length - 1;
+  /* R1-H05: the field-to-soil flight now stops half-way, where the lens has opened
+   * over the plant (field outside, roots inside), so one scroll can no longer
+   * carry the reader from the field straight into the soil. */
+  var DUR = LAYERED ? [0, 1300, 1300, 1300, 6200, 3800, 3600] : [0, 4400, 3800, 3600];
+  var DESCENT = LAYERED ? 5 : 2;   // first step of the field-to-soil flight
+  var LAST = DUR.length - 1, curStep = 0;
   /* the big number counts up once the title is in, like US$173 billion on the world map */
   var usd = sec.querySelector('[data-cz-usd]'), counted = false;
   function countUp() {
@@ -103,13 +107,14 @@
     var d = drive(i, ms, dir);
     stage.style.setProperty('--qo', i >= LAST ? '1' : '0');
     sec.setAttribute('data-fo', LAYERED && i >= 1 && i <= 3 ? String(i - 1) : '-1');
-    if (d === null) { sec.classList.toggle('is-q', i >= LAST); stage.style.setProperty('--merge', i >= LAST - 1 && i > 0 ? '1' : '0'); }
+    if (d === null) { sec.classList.toggle('is-q', i >= LAST); stage.style.setProperty('--merge', i >= DESCENT - 1 && i > 0 ? '1' : '0'); }
   }
   H0.scene('china', {
-    steps: LAST, tall: LAYERED ? 7 : 4, cutIn: true, noSkip: true,
-    set: function (i) { to(i, 0); if (i === 0) sec.classList.add('is-pre'); if (!sec.classList.contains('is-handoff')) { NK.chinaArr = 1; stage.style.setProperty('--arrive', '1'); } },
-    accelerate: function (ms) { return NK.chinaAccelerate ? NK.chinaAccelerate(ms) : 0; },
-    step: function (i, dir, speed) { if (i === 0) sec.classList.remove('is-pre'); var ms = sec.classList.contains('is-2d') ? 450 : dir > 0 ? DUR[i] : (LAYERED && i === 3 ? 2600 : 1400); ms /= Math.max(1, speed || 1); to(i, ms, dir); return ms; },
+    steps: LAST, tall: LAYERED ? 8 : 5, cutIn: true, noSkip: true,
+    set: function (i) { curStep = i; to(i, 0); if (i === 0) sec.classList.add('is-pre'); if (!sec.classList.contains('is-handoff')) { NK.chinaArr = 1; stage.style.setProperty('--arrive', '1'); } },
+    /* a forceful push may shorten the descent a little, never to a cut */
+    accelerate: function (ms) { return NK.chinaAccelerate ? NK.chinaAccelerate(curStep >= DESCENT ? Math.max(ms, 1500) : ms) : 0; },
+    step: function (i, dir, speed) { if (i === 0) sec.classList.remove('is-pre'); curStep = i; var ms = sec.classList.contains('is-2d') ? 450 : dir > 0 ? DUR[i] : (LAYERED && i === 3 ? 2600 : i >= DESCENT - 1 ? 1900 : 1400); ms /= Math.min(i >= DESCENT - 1 ? 1.25 : 4, Math.max(1, speed || 1)); to(i, ms, dir); return ms; },
     enter: function (dir, info) {
       if (sec.classList.contains('is-handoff')) {
         NK.chinaArrive(1700);
@@ -213,7 +218,7 @@
     '  soil *= 0.86 + 0.18 * (1.0 - smoothstep(0.0, 0.5, row));',
     '  float edge = min(32.0 - abs(wp.x), 22.0 - abs(wp.y));',
     '  float outer = clamp(max(smoothstep(15.6, 17.6, abs(wp.x)), smoothstep(8.9, 10.4, abs(wp.y))), 0.0, 1.0);',
-    '  vec3 crop = mix(vec3(0.34, 0.49, 0.2), vec3(0.2, 0.3, 0.12), smoothstep(0.25, 0.7, row)) * (0.82 + 0.34 * n2);',
+    '  vec3 crop = mix(vec3(0.37, 0.45, 0.25), vec3(0.24, 0.3, 0.16), smoothstep(0.25, 0.7, row)) * (0.84 + 0.3 * n2);',   // R1-I09: less saturated green
     '  soil = mix(soil, crop, outer);',
     '  vec3 grass = vec3(0.5, 0.57, 0.32) * (0.84 + 0.3 * n2);',
     '  soil = mix(grass, soil, smoothstep(0.0, 1.6, edge));',
@@ -402,8 +407,8 @@
   /* ---------------- textures (made during the deferred build) ---------------- */
   var GROUND = 760;
   var ROADS = [
-    { w: 7, c: '#ece2c9', pts: [[-380, 36], [-210, 29], [-90, 34], [30, 31], [170, 23], [380, 31]] },
-    { w: 5, c: '#e6dbc1', pts: [[-62, -380], [-57, -150], [-61, 33]] },
+    { w: 7, c: '#cdc2a3', pts: [[-380, 36], [-210, 29], [-90, 34], [30, 31], [170, 23], [380, 31]] },
+    { w: 5, c: '#c9be9f', pts: [[-62, -380], [-57, -150], [-61, 33]] },
     { w: 10, c: '#8fb3c4', pts: [[172, -380], [150, -150], [166, 60], [140, 380]] }
   ];
   var fieldTex = null;
@@ -414,7 +419,8 @@
     return canvasTex(2048, 2048, function (g, w) {
       var k = w / GROUND;
       function X(x) { return (x + GROUND / 2) * k; }
-      g.fillStyle = '#cdbf88';
+      /* R1-I09 (1013 prompt, version 1 'soft 3D sandbox'): muted olive, wheat and moss, no lemon yellow, thin earthy ridges */
+      g.fillStyle = '#b4a77a';
       g.fillRect(0, 0, w, w);
       var n = 9;
       var cell = GROUND / n;
@@ -426,7 +432,7 @@
           Vt[r].push([-GROUND / 2 + q * cell + (e ? 0 : (R() - 0.5) * cell * 0.4), -GROUND / 2 + r * cell + (e ? 0 : (R() - 0.5) * cell * 0.3)]);
         }
       }
-      var crops = [['#9fb766', '#86a553'], ['#d8c07a', '#c4aa62'], ['#b5c97e', '#9cb867'], ['#e2d39a', '#cdbd82'], ['#a9bf78', '#8fae62'], ['#c9b979', '#b4a466'], ['#7fa153', '#6b9046']];
+      var crops = [['#929d63', '#87925a'], ['#bfae78', '#b3a26e'], ['#a3aa6f', '#989f66'], ['#c6b787', '#bbac7d'], ['#8c9a60', '#829057'], ['#ad9f6d', '#a29464'], ['#77874f', '#6f7e49']];
       function path(poly) { g.beginPath(); poly.forEach(function (p, i) { if (i) g.lineTo(X(p[0]), X(p[1])); else g.moveTo(X(p[0]), X(p[1])); }); g.closePath(); }
       for (r = 0; r < n; r++) {
         for (q = 0; q < n; q++) {
@@ -447,12 +453,12 @@
             g.rotate((R() - 0.5) * 0.5 + (R() < 0.5 ? 0 : Math.PI / 2));
             var spc = (1.8 + R() * 1.6) * k;
             g.strokeStyle = cp[1];
-            g.lineWidth = spc * 0.45;
+            g.lineWidth = spc * 0.32;
             for (var s = -w; s < w; s += spc) { g.beginPath(); g.moveTo(-w, s); g.lineTo(w, s); g.stroke(); }
             g.restore();
             path(sp);
-            g.strokeStyle = 'rgba(238,228,198,.95)';
-            g.lineWidth = 2.4 * k;
+            g.strokeStyle = 'rgba(203,191,156,.8)';
+            g.lineWidth = 1.3 * k;
             g.stroke();
           });
         }
@@ -836,8 +842,9 @@
     scene.background = haze;
     scene.fog = new T.Fog(haze, 150, 820);
     var cam = new T.PerspectiveCamera(40, 1, 0.05, 2400);
-    scene.add(new T.HemisphereLight(0xfff4dc, 0x5d4a33, 0.85));
-    var sun = new T.DirectionalLight(0xfff0d2, 1.15);
+    /* R1-I09: softer, lower light so the field is not over-exposed */
+    scene.add(new T.HemisphereLight(0xf1e8d6, 0x4c3e2e, 0.78));
+    var sun = new T.DirectionalLight(0xf6e8cf, 0.82);
     sun.position.set(-30, 60, 24);
     sun.castShadow = true;
     sun.shadow.mapSize.set(NK.coarse ? 512 : 1024, NK.coarse ? 512 : 1024);
@@ -903,7 +910,7 @@
         var p0 = rd.pts[a];
         var p1 = rd.pts[a + 1];
         var len = Math.hypot(p1[0] - p0[0], p1[1] - p0[1]);
-        for (var d = 6; d < len; d += 13 + R() * 8) {
+        for (var d = 6; d < len; d += 22 + R() * 12) {   // R1-I09: fewer trees, kept as a scale reference
           var tx = p0[0] + (p1[0] - p0[0]) * d / len;
           var tz = p0[1] + (p1[1] - p0[1]) * d / len;
           var nx = -(p1[1] - p0[1]) / len;
@@ -930,7 +937,7 @@
     });
     scene.add(canopy);
     scene.add(trunk);
-    [[-92, 52, 0.2], [-76, 61, -0.1], [62, 50, 0.05], [224, 44, 0.3], [-150, 14, -0.2]].forEach(function (b) {
+    [[-92, 52, 0.2], [62, 50, 0.05]].forEach(function (b) {   // R1-I09: two houses as scale references
       var house = new T.Group();
       var body = new T.Mesh(new T.BoxGeometry(9, 4, 6), new T.MeshStandardMaterial({ color: 0xefe6d6, roughness: 0.9 }));
       body.position.y = 2;
@@ -1345,6 +1352,7 @@
     H = Math.max(1, Math.round(r.height));
     renderer.setSize(W, H, false);
     LV.forEach(function (l) { l.cam.aspect = W / H; l.fit(W / H); l.cam.updateProjectionMatrix(); });
+    fitFieldStop();
     FR = freeRect();
     if (LV[0].layout) LV[0].layout(W, H, FR);
     CU.uAsp.value = W / H;
@@ -1398,9 +1406,11 @@
   }
   /* stops (as in the v6 list): 0 the China map · 1 high above to the field, stop · 2 field to the roots, the question stays */
   /* 0 the three layers apart · 1–3 one layer in focus · 4 layers close, fly to the field · 5 the roots and the question */
-  var STATES = !NK.chinaLayered ? [{ ex: 0, fo: -1, merge: 0, q: 0, qo: 0 }, { ex: 0, fo: -1, merge: 1, q: 0.38, qo: 0 }, { ex: 0, fo: -1, merge: 1, q: 0.9, qo: 1 }] : [
+  /* R1-H05: q 0.645 is the half-open lens (phase(): 0.6–0.68), the middle shot */
+  /* R1-I09: the 'A field' stop sits closer (q 0.468 at 16:10; measured 50.2 % there), so the trial plot fills about half the width; fitFieldStop() adapts it to the aspect */
+  var STATES = !NK.chinaLayered ? [{ ex: 0, fo: -1, merge: 0, q: 0, qo: 0 }, { ex: 0, fo: -1, merge: 1, q: 0.468, qo: 0 }, { ex: 0, fo: -1, merge: 1, q: 0.645, qo: 0 }, { ex: 0, fo: -1, merge: 1, q: 0.9, qo: 1 }] : [
     { ex: 1, fo: -1, merge: 0, q: 0, qo: 0 }, { ex: 1, fo: 0, merge: 0, q: 0, qo: 0 }, { ex: 1, fo: 1, merge: 0, q: 0, qo: 0 }, { ex: 1, fo: 2, merge: 0, q: 0, qo: 0 },
-    { ex: 0, fo: -1, merge: 1, q: 0.38, qo: 0 }, { ex: 0, fo: -1, merge: 1, q: 0.9, qo: 1 }];
+    { ex: 0, fo: -1, merge: 1, q: 0.38, qo: 0 }, { ex: 0, fo: -1, merge: 1, q: 0.645, qo: 0 }, { ex: 0, fo: -1, merge: 1, q: 0.9, qo: 1 }];
   var Z = { ex: 0, fo: -1, merge: 0, q: 0, qo: 0 };
   var KEYS = ['ex', 'fo', 'merge', 'q', 'qo'];
   function plan(a, b, fwd) {
@@ -1414,6 +1424,26 @@
   function copyZ() { var o = {}; KEYS.forEach(function (key) { o[key] = Z[key]; }); return o; }
   var tw = null;
   var arrTw = null;
+  /* R1-I09 (cp15): the field camera keeps a fixed vertical fov (40° landscape, 52° portrait), so at q 0.468 the
+   * 64×44 centre plot fills 50.2 % of a 16:10 frame, 45.2 % of 16:9, less in wider browser windows, and 129.8 %
+   * of a 390×844 phone, where its outline leaves the screen (Claude cp13/cp14 projections). The 'A field' stop
+   * therefore slides along the same flight with the aspect: landscape holds about 50 % (never closer than 0.88×
+   * the 16:10 distance, which keeps the near corner in frame), portrait only backs off until the whole plot fits
+   * (about 86 %). The flight path, its timing and the other stops are unchanged. */
+  var FIELD_Q = 0.468;
+  function fieldStopQ(a) {
+    var share = a < 1 ? 0.5996 / a : 0.8035 / a;                                    // measured share at q 0.468
+    var k = a < 1 ? Math.max(1, share / 0.86) : Math.max(0.88, share / 0.5);        // wanted / current distance
+    var e = ease((FIELD_Q - 0.38) / 0.22) + Math.log(k) / Math.log(1.45 / 620);      // field distance = 620·(1.45/620)^ease(t)
+    return 0.38 + 0.22 * Math.cbrt(NK.clamp(e, 0.02, 0.48) / 4);                     // inverse of the ease on its first half
+  }
+  function fitFieldStop() {
+    if (!STATES || NK.chinaLayered || !Z || !(W > 0 && H > 0)) return;
+    var q = fieldStopQ(W / H), old = STATES[1].q;
+    STATES[1].q = q;
+    if (!tw && Math.abs(Z.q - old) < 1e-6) Z.q = q;   // resting at the stop: follow a resize or rotation
+  }
+  fitFieldStop();
   NK.chinaHandoff = function () {
     tw = null; arrTw = null; Z.ex = 0; Z.fo = -1; Z.merge = 0; Z.q = 0; Z.qo = 0; NK.chinaArr = 0; NK.chinaEx = 0; NK.chinaFo = -1;
     stage.style.setProperty('--arrive', '0');

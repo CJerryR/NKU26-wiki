@@ -1,16 +1,20 @@
 {
-  "title": "Parts",
-  "heading": "Parts",
+  "title": "Parts and Collections",
+  "heading": "Parts and Collections",
   "sub": "",
   "description": "",
   "route": "parts",
   "crumbs": [
     "Wet Lab",
-    "Parts"
+    "Parts and Collections"
   ],
   "meta": [],
   "search": true,
   "blocks": [
+    {
+      "body": "This page summarizes all Parts and Collections submitted in this project.\n",
+      "_template": "text"
+    },
     {
       "text": "Parts",
       "level": 2,
@@ -36,8 +40,19 @@
     },
     {
       "title": "Composite Parts",
-      "csv": "Name,Part Number,Type,Description\nKOGAL80,BBa_26OPIZCX,Assembly Component,This cassette is used for knocking out the Gal80 gene in the yeast genome via homologous recombination (HR)\nTRP1 marker gene,BBa_26WLH0UL,CDS,\"The Trp1 gene encodes an enzyme involved in Trp  biosynthesis, serving as a nutritional selection marker for yeast.\"\nLEU2 marker gene,BBa_26DW2ZT7,CDS,\"The LEU2 gene encodes an enzyme involved in Leu  biosynthesis, serving as a nutritional selection marker for yeast.\"\npRS315-TEF1p-GPR2-sfGFP,BBa_260J9X0X,Plasmid,\nUra3 marker gene,BBa_26OPQ6RW,CDS,\"The Ura3 gene encodes an enzyme involved in uracil biosynthesis, serving as a nutritional selection marker for yeast.\"\npRS315-MjDOD-BvCYP76AD5,BBa_26PGUFWX,Plasmid,\"This part contains betaxanthin-related genes, with homology arms for the knock-in of constitutively expressed betaxanthin biosynthetic genes\"\nGal1/10bp-Betaxanthin Expression Cassette,BBa_2697LAQW,Assembly Component,This part contains the betaxanthin biosynthetic genes (MjDOD and BvCYP76AD5) under the control of the Gal1/10 bidirectional promoter\npRS315-sTF,BBa_2687EQID,Plasmid,This part is used for amplifying the homologous recombination fragment for sTF assembly\nsTF Expression Cassette,BBa_26IOTMOF,Assembly Component,This part is designed for CRISPR-Cas9-mediated knock-in to express sTF in yeast\npRS315-TEF1p-GPR2,BBa_26ZT9H48,Plasmid,This part is designed for CRISPRCas9mediated knockin of the constitutively expressed GPR2 gene\npRS315-TEF1p-GPR2-N84V,BBa_2628FZFH,Plasmid,This part is designed for CRISPRCas9mediated knockin of the constitutively expressed GPR2 gene with N84V mutation\npRS315-TEF1p-GPR2-V368R,BBa_26XA2JFQ,Plasmid,This part is designed for CRISPRCas9mediated knockin of the constitutively expressed GPR2 gene with V368R mutation\n",
+      "csv": "Name,Part Number,Type,Description\nKOGAL80,BBa_26OPIZCX,Assembly Component,This cassette is used for knocking out the Gal80 gene in the yeast genome via homologous recombination (HR)\nTRP1 marker gene,BBa_26WLH0UL,CDS,\"The Trp1 gene encodes an enzyme involved in Trp biosynthesis, serving as a nutritional selection marker for yeast.\"\nLEU2 marker gene,BBa_26DW2ZT7,CDS,\"The LEU2 gene encodes an enzyme involved in Leu biosynthesis, serving as a nutritional selection marker for yeast.\"\npRS315-TEF1p-GPR2-sfGFP,BBa_260J9X0X,Plasmid,\nUra3 marker gene,BBa_26OPQ6RW,CDS,\"The Ura3 gene encodes an enzyme involved in uracil biosynthesis, serving as a nutritional selection marker for yeast.\"\npRS315-MjDOD-BvCYP76AD5,BBa_26PGUFWX,Plasmid,\"This part contains betaxanthin-related genes, with homology arms for the knock-in of constitutively expressed betaxanthin biosynthetic genes\"\nGal1/10bp-Betaxanthin Expression Cassette,BBa_2697LAQW,Assembly Component,This part contains the betaxanthin biosynthetic genes (MjDOD and BvCYP76AD5) under the control of the Gal1/10 bidirectional promoter\npRS315-sTF,BBa_2687EQID,Plasmid,This part is used for amplifying the homologous recombination fragment for sTF assembly\nsTF Expression Cassette,BBa_26IOTMOF,Assembly Component,This part is designed for CRISPR-Cas9-mediated knock-in to express sTF in yeast\npRS315-TEF1p-GPR2,BBa_26ZT9H48,Plasmid,This part is designed for CRISPR-Cas9-mediated knock-in of the constitutively expressed GPR2 gene\npRS315-TEF1p-GPR2-N84V,BBa_2628FZFH,Plasmid,This part is designed for CRISPR-Cas9-mediated knock-in of the constitutively expressed GPR2 gene with N84V mutation\npRS315-TEF1p-GPR2-V368R,BBa_26XA2JFQ,Plasmid,This part is designed for CRISPR-Cas9-mediated knock-in of the constitutively expressed GPR2 gene with V368R mutation",
       "_template": "datatable"
+    },
+    {
+      "text": "Collections",
+      "level": 2,
+      "attributes": "#collections toc=\"Collections\"",
+      "_template": "heading"
+    },
+    {
+      "_template": "datatable",
+      "title": "Collections",
+      "csv": "Name,Description\nChassis Strain Construction Collection,This collection contains all the parts used to construct chassis strains in our project\nTool Plasmid Family,This collection contains all tool plasmids used in this project\nsgRNA Family,This collection contains all sgRNAs used in this project\nGPR2 variant family,This collection contains cDNA sequences of GPR2 and its variants\n"
     }
   ]
 }
