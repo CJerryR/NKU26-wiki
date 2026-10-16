@@ -5,6 +5,8 @@
  * from components. The top bar runs the same code as the inner pages
  * (src/scripts/nav.ts via home-nav.ts); static/js/shell.js keeps the detective.
  */
+import { readFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import SiteNav from '../components/site/SiteNav.astro';
 import SearchDialog from '../components/site/SearchDialog.astro';
 import '../styles/glass.css';
@@ -16,6 +18,10 @@ import { homeFooter, mascotHtml } from '../lib/home';
 
 interface Props { title: string; description: string; homeData: string }
 const { title, description, homeData } = Astro.props;
+// These authored files bypass Astro's bundled-asset hashing. Change their URL
+// whenever the source changes so returning readers receive the current version.
+const staticAsset = (file: string) => `/${file}?v=${createHash('sha256')
+  .update(readFileSync(`${process.cwd()}/static/${file}`)).digest('hex').slice(0, 16)}`;
 const styles = ['style', 'home', 'home-v6', 'shell', 'home-round1', 'home-ascr'];
 const scripts = ['vendor/three.min', 'home-geo', 'home-land', 'home-geo3d', 'home-abundance', 'home-maps-data', 'home-core', 'home-nk', 'home-pager', 'home-opening', 'home-maps', 'home-field-camera', 'home-zoom3d', 'home-threat-r1', 'home-ascr-story', 'home-story'];
 ---
@@ -29,7 +35,7 @@ const scripts = ['vendor/three.min', 'home-geo', 'home-land', 'home-geo3d', 'hom
   <meta name="theme-color" content="#1a0d1d" />
   <link rel="icon" href="https://static.igem.wiki/teams/6303/wiki/v8-0/v8-3439b58a1e73-nku-mark.svg" type="image/svg+xml" />
   <link rel="preload" href="https://static.igem.wiki/teams/6303/wiki/v8-0/v8-64513365c2d8-spline-variable.woff2" as="font" type="font/woff2" crossorigin />
-  {styles.map((name) => <link rel="stylesheet" href={`/css/${name}.css`} />)}
+  {styles.map((name) => <link rel="stylesheet" href={staticAsset(`css/${name}.css`)} />)}
 </head>
 <body class="page-home home" data-path-prefix="">
   <a class="skip" href="#main">Skip to content</a>
@@ -41,11 +47,11 @@ const scripts = ['vendor/three.min', 'home-geo', 'home-land', 'home-geo3d', 'hom
   <Fragment set:html={homeFooter()} />
   <SearchDialog />
   <Fragment set:html={mascotHtml()} />
-  <script is:inline src="/js/search-data.js" defer></script>
-  <script is:inline src="/js/main.js" defer></script>
-  <script is:inline src="/js/shell.js" defer></script>
+  <!-- Shared search loads the manuscript-versioned index when opened. -->
+  <script is:inline src={staticAsset('js/main.js')} defer></script>
+  <script is:inline src={staticAsset('js/shell.js')} defer></script>
   <script>import '../scripts/home-nav.ts';</script>
   <script is:inline set:html={`window.NKU_HOME = ${homeData};`}></script>
-  {scripts.map((name) => <script is:inline src={`/js/${name}.js${['home-zoom3d', 'home-pager', 'home-opening', 'home-field-camera'].includes(name) ? '?v=20261017-closeout-1' : ''}`} defer></script>)}
+  {scripts.map((name) => <script is:inline src={staticAsset(`js/${name}.js`)} defer></script>)}
 </body>
 </html>
