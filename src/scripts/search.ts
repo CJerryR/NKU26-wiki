@@ -1,3 +1,6 @@
+import { attach, refresh } from './glass';
+import { panelTone, setTone, toneAt } from './tone';
+
 /** Site search: loads js/search-data.js on first use (same index as v6). */
 type Section = { id: string; title: string; text: string; url: string };
 type Entry = { title: string; url: string; crumbs?: string[]; desc?: string; text?: string; sections?: Section[] };
@@ -55,6 +58,16 @@ export function initSearch(): void {
   const modal = document.getElementById('site-search');
   if (!modal) return;
   const input = modal.querySelector<HTMLInputElement>('[data-search-input]')!;
+  const panel = modal.querySelector<HTMLElement>('.site-search__panel');
+  const paintMaterial = () => {
+    if (modal.hidden || !panel) return;
+    const r = panel.getBoundingClientRect(), x = r.left + r.width / 2;
+    const top = toneAt(x, r.top + 14), bottom = toneAt(x, r.bottom - 14);
+    const mixed = !!top && !!bottom && top !== bottom;
+    panel.classList.toggle('is-mixed', mixed);
+    setTone(panel, mixed ? 'light' : panelTone(r) || 'light');
+  };
+  if (panel && 'ResizeObserver' in window) new ResizeObserver(paintMaterial).observe(panel);
   const results = modal.querySelector<HTMLElement>('[data-search-results]')!;
   const meta = modal.querySelector<HTMLElement>('[data-search-meta]')!;
   const openers = Array.from(document.querySelectorAll<HTMLElement>('[data-search-open]'));
@@ -109,9 +122,11 @@ export function initSearch(): void {
     modal.hidden = false;
     document.documentElement.classList.add('search-open');
     openers.forEach((b) => b.setAttribute('aria-expanded', 'true'));
-    const panel = modal.querySelector<HTMLElement>('.site-search__panel');
-    const lg = (window as unknown as { LiquidGlass?: { attach(el: HTMLElement): void } }).LiquidGlass;
-    if (panel && lg) lg.attach(panel);
+    if (panel) {
+      paintMaterial();
+      attach(panel);
+      refresh(panel);
+    }
     requestAnimationFrame(() => { modal.classList.add('is-open'); input.focus(); input.select(); });
     load().then(render);
   };

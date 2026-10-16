@@ -1,33 +1,120 @@
-/** Click/touch/keyboard flip with a readable no-JS fallback and managed focus. */
-function wireCards(): void {
-  document.querySelectorAll<HTMLElement>('[data-member-card]').forEach(card => {
-    if (card.classList.contains('is-ready')) return;
-    const front=card.querySelector<HTMLElement>('.member-card__front');
-    const back=card.querySelector<HTMLElement>('.member-card__back');
-    const open=card.querySelector<HTMLButtonElement>('[data-member-flip]');
-    const close=card.querySelector<HTMLButtonElement>('[data-member-back]');
-    if (!front || !back || !open || !close) return;
-    const flip=(yes:boolean) => {
-      card.classList.toggle('is-flipped',yes);
-      open.setAttribute('aria-expanded',String(yes));
-      front.inert=yes;back.inert=!yes;
-      front.setAttribute('aria-hidden',String(yes));back.setAttribute('aria-hidden',String(!yes));
-      (yes ? close : open).focus({preventScroll:true});
-    };
-    back.inert=true;back.setAttribute('aria-hidden','true');card.classList.add('is-ready');
-    open.addEventListener('click',()=>flip(true));close.addEventListener('click',()=>flip(false));
-    card.addEventListener('keydown',e=>{if(e.key==='Escape' && card.classList.contains('is-flipped')) {e.preventDefault();flip(false);}});
+/**
+ * Member cards: click anywhere on the card, or press the round glass button, to turn it.
+ * Escape turns it back. The face that is turned away is inert and aria-hidden, so keyboard
+ * and screen-reader users only meet the visible one; the button keeps focus and changes its
+ * label and aria-expanded. Without scripting both faces stay visible (person-cards.css).
+ */
+import { initLiquidGlass } from './liquid-glass';
+const resizeCleanup = new WeakMap<HTMLElement, () => void>();
+
+let frontFrame = 0;
+function syncFrontSizes(): void {
+  if (frontFrame) return;
+  frontFrame = requestAnimationFrame(() => {
+    frontFrame = 0;
+    const fronts = [...document.querySelectorAll<HTMLElement>('.member-card__front')];
+    // Measure natural content first, so the common height can shrink after a resize/edit.
+    fronts.forEach(front => { front.style.minHeight = ''; });
+    const height = Math.max(0, ...fronts.map(front => front.offsetHeight));
+    fronts.forEach(front => { front.style.minHeight = `${height}px`; });
   });
+}
+
+function wire(card: HTMLElement): void {
+  if (card.classList.contains('is-ready')) return;
+  const front = card.querySelector<HTMLElement>('.member-card__front');
+  const back = card.querySelector<HTMLElement>('.member-card__back');
+  const button = card.querySelector<HTMLButtonElement>('[data-member-flip]');
+  const inner = card.querySelector<HTMLElement>('.member-card__inner');
+  if (!front || !back || !button || !inner) return;
+
+  const fit = () => {
+    const face = card.classList.contains('is-flipped') ? back : front;
+    inner.style.height = `${face.offsetHeight}px`;
+  };
+
+  const labels = {
+    open: button.dataset.labelOpen || button.getAttribute('aria-label') || 'Turn card',
+    close: button.dataset.labelClose || button.getAttribute('aria-label') || 'Turn card',
+  };
+  const turn = (yes: boolean) => {
+    if (yes === card.classList.contains('is-flipped')) return;
+    // A rotated lazy image may not start loading until the animation has finished.
+    // Request it at the click; its URL is shared with the visible front portrait.
+    if (yes) back.querySelectorAll<HTMLImageElement>('img[loading="lazy"]').forEach(img => { img.loading = 'eager'; });
+    card.classList.toggle('is-flipped', yes);
+    button.setAttribute('aria-expanded', String(yes));
+    button.setAttribute('aria-label', yes ? labels.close : labels.open);
+    front.inert = yes; back.inert = !yes;
+    front.setAttribute('aria-hidden', String(yes));
+    back.setAttribute('aria-hidden', String(!yes));
+    fit();
+  };
+
+  back.inert = true;
+  back.setAttribute('aria-hidden', 'true');
+  card.classList.add('is-ready');
+  fit();
+  // Natural face sizes update after responsive reflow, fonts and Tina content edits.
+  const resize = new ResizeObserver(fit);
+  resize.observe(front); resize.observe(back);
+  let width = -1;
+  const frontSize = new ResizeObserver(entries => {
+    for (const entry of entries) {
+      if (entry.target !== card || entry.contentRect.width !== width) {
+        if (entry.target === card) width = entry.contentRect.width;
+        syncFrontSizes();
+      }
+    }
+  });
+  frontSize.observe(card);
+  const info = front.querySelector<HTMLElement>('.member-card__info');
+  if (info) frontSize.observe(info);
+  syncFrontSizes();
+  resizeCleanup.set(card, () => { resize.disconnect(); frontSize.disconnect(); syncFrontSizes(); });
+
+  button.addEventListener('click', () => turn(!card.classList.contains('is-flipped')));
+  // The whole card turns, except when the reader is selecting text or using a control.
+  card.addEventListener('click', (e) => {
+    const target = e.target as Element;
+    if (target.closest('button, a, input, textarea, select, summary, [contenteditable]')) return;
+    if (window.getSelection()?.toString()) return;
+    turn(!card.classList.contains('is-flipped'));
+    // a click that lands on a face that has just become inert would drop focus: keep it on the button
+    button.focus({ preventScroll: true });
+  });
+  card.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && card.classList.contains('is-flipped')) {
+      e.preventDefault();
+      turn(false);
+      button.focus({ preventScroll: true });
+    }
+  });
+}
+
+function wireAll(root: ParentNode): void {
+  root.querySelectorAll<HTMLElement>('[data-member-card]').forEach(wire);
 }
 
 let observing = false;
 export function initPersonCards(): void {
-  wireCards();
+  wireAll(document);
   if (observing) return;
   observing = true;
-  // Tina islands replace article markup after edits; initialize fresh cards too.
-  new MutationObserver(records => {
-    if (records.some(r => [...r.addedNodes].some(n => n instanceof Element &&
-      (n.matches('[data-member-card], .member-grid') || n.querySelector('[data-member-card]'))))) wireCards();
-  }).observe(document.body, {childList:true,subtree:true});
+  // Tina islands replace the article after edits: wire the new cards and give the
+  // credit nameplates their glass.
+  new MutationObserver((records) => {
+    for (const r of records) for (const n of r.removedNodes) {
+      if (!(n instanceof HTMLElement) || n.isConnected) continue;
+      resizeCleanup.get(n)?.();
+      n.querySelectorAll<HTMLElement>('[data-member-card]').forEach(c => resizeCleanup.get(c)?.());
+    }
+    for (const r of records) for (const n of r.addedNodes) {
+      if (!(n instanceof Element)) continue;
+      const grid = n.matches('.member-grid, .credit-grid') || n.querySelector('.member-grid, .credit-grid');
+      if (!grid && !n.matches('[data-member-card]')) continue;
+      if (n.matches('[data-member-card]')) wire(n as HTMLElement); else wireAll(n);
+      initLiquidGlass(n);
+    }
+  }).observe(document.body, { childList: true, subtree: true });
 }

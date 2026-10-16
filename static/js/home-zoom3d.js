@@ -63,11 +63,11 @@
   function showTip(html, x, y) {
     tipBody.innerHTML = html; tip.hidden = false;
     var r = stage.getBoundingClientRect(), tw = tip.offsetWidth, th = tip.offsetHeight, top = 8, bot = r.height - 8;
-    if (barBox && barBox.offsetHeight) top = barBox.getBoundingClientRect().bottom - r.top + 8;
-    if (readBox && readBox.offsetHeight) bot = readBox.getBoundingClientRect().top - r.top - 8;
+    if (r.width < 860 && barBox && barBox.offsetHeight) top = barBox.getBoundingClientRect().bottom - r.top + 8;
+    if (r.width < 860 && readBox && readBox.offsetHeight) bot = readBox.getBoundingClientRect().top - r.top - 8;
     var ty = y - th - 14;
     if (ty < top) ty = Math.min(y + 16, bot - th);
-    tip.style.transform = 'translate(' + NK.clamp(x - tw / 2, 8, r.width - tw - 8).toFixed(0) + 'px,' + Math.max(top, ty).toFixed(0) + 'px)';
+    tip.style.transform = 'translate(' + NK.clamp(x - tw / 2, 8, r.width - tw - 8).toFixed(0) + 'px,' + NK.clamp(ty, top, Math.max(top, bot - th)).toFixed(0) + 'px)';
   }
   function hideTip() { if (tip) tip.hidden = true; }
   /* one species on the map at a time: 'scn' (layer 1, circles) or 'rkn' (layer 2, triangles) */
@@ -134,20 +134,24 @@
       var r = el.getBoundingClientRect(), sr = stage.getBoundingClientRect();
       showTip(recordHtml(layer, c), r.left + r.width / 2 - sr.left, r.top - sr.top);
     };
-    /* the 2D map is fitted between the switch and the card, like the 3D one */
+    /* Desktop readout sits under the intro; mobile keeps its vertical stack. */
     var bar = sec.querySelector('[data-cz-bar]'), card = sec.querySelector('[data-cz-card]'), head = sec.querySelector('[data-cz-head]');
     function fit2d() {
       var sr = stage.getBoundingClientRect(), W = sr.width, H = sr.height;
       if (!W || !H) return;
       var narrow = W < 860, x0 = 12, x1 = W - 12;
-      if (!narrow && head) x0 = head.getBoundingClientRect().right - sr.left + 36;
-      if (!narrow) x1 = W - 70;
+      if (!narrow && head) {
+        var hr = head.getBoundingClientRect();
+        x0 = hr.right - sr.left + 20;
+        stage.style.setProperty('--readTop', Math.round(hr.bottom - sr.top + 24) + 'px');
+      }
+      if (!narrow) x1 = W - 54;
       stage.style.setProperty('--fx0', Math.round(x0) + 'px');
       stage.style.setProperty('--fx1', Math.round(W - x1) + 'px');
       if (narrow && head) stage.style.setProperty('--cardB', Math.round(H - (head.getBoundingClientRect().top - sr.top) + 10) + 'px');
       else stage.style.removeProperty('--cardB');
-      var y0 = bar ? bar.getBoundingClientRect().bottom - sr.top + 10 : 150;
-      var y1 = card ? card.getBoundingClientRect().top - sr.top - 10 : H - 60;
+      var y0 = narrow && bar ? bar.getBoundingClientRect().bottom - sr.top + 10 : 94;
+      var y1 = narrow && card ? card.getBoundingClientRect().top - sr.top - 10 : H - 32;
       if (y1 - y0 < 120) y1 = y0 + 120;
       svg.style.left = Math.round(x0) + 'px';
       svg.style.width = Math.round(x1 - x0) + 'px';
@@ -792,7 +796,7 @@
     /* ---- camera: the layer view sits close to the screen plane and is fitted
      * (distance + lens shift) to the free area beside the panel; the merge
      * blends it into the flight's opening view; then the dive ---- */
-    var ELEV_L = 1.19;
+    var ELEV_L = NK.chinaLayered ? 1.19 : Math.PI / 2;
     var ELEV_S = 0.74;
     var distS = 95;
     var D0 = V3(0, 0.9, 0.44).normalize();
@@ -828,7 +832,7 @@
         VH = h;
         FREE = fr;
         distL = fitDist(fr, ELEV_L);
-        distTop = fitDist(fr, 1.555);
+        distTop = fitDist(fr, Math.PI / 2);
         distS = fitStack(fr, ELEV_S);
         dist0 = fitDist({ x0: w * 0.08, x1: w * 0.92, y0: h * 0.16, y1: h * 0.9 }, Math.asin(D0.y));
         scene.fog.near = Math.max(distL, dist0, distTop) * 1.02;
@@ -854,19 +858,22 @@
         var offY = 0;
         if (mg < 1) {
           var bl = ease(mg);
-          /* arrival from the world map: straight down first, then the view tilts into 3D */
+          /* Keep the single-map overview north-up and directly overhead. */
           var ar = NK.easeInOut(NK.chinaArr == null ? 1 : NK.chinaArr), exC = ease(NK.chinaEx == null ? 0 : NK.chinaEx);
-          var elev = NK.lerp(1.555, NK.lerp(ELEV_L, ELEV_S, exC), ar);
+          var elev = NK.lerp(Math.PI / 2, NK.lerp(ELEV_L, ELEV_S, exC), ar);
           var dLay = Math.exp(NK.lerp(Math.log(distL), Math.log(distS), exC));
           var dLv = Math.exp(Math.log(distTop) + (Math.log(dLay) - Math.log(distTop)) * ar);
           tgt.y -= GAP * exC * (1 - bl);
-          dirL.set(0, Math.sin(elev), Math.cos(elev)).applyAxisAngle(UP, Math.sin(time * 0.15) * 0.012 * ar);
+          dirL.set(0, Math.sin(elev), Math.cos(elev)).applyAxisAngle(UP, NK.chinaLayered ? Math.sin(time * 0.15) * 0.012 * ar : 0);
           dir.copy(dirL).lerp(dir, bl).normalize();
           dist = Math.exp(Math.log(dLv) + (Math.log(dz) - Math.log(dLv)) * bl);
           offX = -((FREE.x0 + FREE.x1) / 2 - VW / 2) * (1 - bl);
           offY = -((FREE.y0 + FREE.y1) / 2 - VH / 2) * (1 - bl);
         }
         cam.position.copy(tgt).addScaledVector(dir, Math.max(0.9, dist));
+        // A downward camera needs a north-up vector; blend it back for the field flight.
+        var upBlend = mg < 1 ? ease(mg) : 1;
+        cam.up.set(0, upBlend, -(1 - upBlend)).normalize();
         cam.lookAt(tgt);
         if (Math.abs(offX) > 0.5 || Math.abs(offY) > 0.5) cam.setViewOffset(VW, VH, offX, offY, VW, VH);
         else if (cam.view && cam.view.enabled) cam.clearViewOffset();
@@ -1034,24 +1041,13 @@
       scene.add(house);
     });
 
-    var D0 = V3(0, 0.9, 0.44).normalize();
-    var TGT_END = V3(0, 0.28, 0);
-    var tgt = new T.Vector3();
-    var dir = new T.Vector3();
+    var framing = window.NKFieldCamera(T, cam);
     return {
       scene: scene, cam: cam, focus: V3(0, 0.05, 0),
-      fit: function (a) { cam.fov = a < 1 ? 52 : 40; },
+      fit: framing.fit,
+      fieldStop: framing.stop,
       update: function (t, time) {
-        var e = ease(t);
-        var dist = t < 0 ? 620 * (1 - t * 1.3) : t > 1 ? 1.45 * (1 - (t - 1) * 1.4) : 620 * Math.pow(1.45 / 620, e);
-        tgt.set(0, 0, 0).lerp(TGT_END, e);
-        dir.copy(D0).lerp(DEND, Math.pow(e, 1.2)).normalize().applyAxisAngle(UP, -0.85 * Math.sin(Math.PI * e));
-        cam.position.copy(tgt).addScaledVector(dir, Math.max(0.7, dist));
-        cam.position.y += Math.sin(time * 0.6) * 0.01 * Math.min(1, dist);
-        cam.lookAt(tgt);
-        cam.near = Math.max(0.03, dist * 0.012);
-        cam.far = Math.max(1200, dist * 4);
-        cam.updateProjectionMatrix();
+        var dist = framing.update(t, time);
         scene.fog.near = Math.max(45, dist * 0.9);
         scene.fog.far = Math.max(460, dist * 3.4);
         dome.position.copy(cam.position);
@@ -1442,21 +1438,23 @@
   }
   /* the map is framed in the free area right of the legend (above it on narrow screens) */
   var FR = null;
-  /* v8.1: the species switch sits above the map and the species card below it,
-   * both spanning the map's column; the map is fitted between them. */
+  /* Desktop map uses the full right column; mobile fits between switch and readout. */
   var barEl = sec.querySelector('[data-cz-bar]'), cardEl = sec.querySelector('[data-cz-card]');
   function freeRect() {
     var navH = 76;
     if (!panelEl || !panelEl.offsetWidth) return { x0: W * 0.08, x1: W * 0.92, y0: navH + 20, y1: H - 40 };
     var sr = stage.getBoundingClientRect(), pr = panelEl.getBoundingClientRect();
-    var x0 = W >= 860 ? pr.right - sr.left + 36 : 12, x1 = W >= 860 ? W - 70 : W - 12;
+    var x0 = W >= 860 ? pr.right - sr.left + 20 : 12, x1 = W >= 860 ? W - 54 : W - 12;
     stage.style.setProperty('--fx0', Math.round(x0) + 'px');
     stage.style.setProperty('--fx1', Math.round(W - x1) + 'px');
     if (W < 860) stage.style.setProperty('--cardB', Math.round(H - (pr.top - sr.top) + 10) + 'px');
-    else stage.style.removeProperty('--cardB');
-    var y0 = navH + 18, y1 = W >= 860 ? H - 60 : Math.max(navH + 170, pr.top - sr.top - 14);
-    if (barEl && barEl.offsetHeight) y0 = Math.max(y0, barEl.getBoundingClientRect().bottom - sr.top + 8);
-    if (cardEl && cardEl.offsetHeight) y1 = Math.min(y1, cardEl.getBoundingClientRect().top - sr.top - 8);
+    else {
+      stage.style.removeProperty('--cardB');
+      stage.style.setProperty('--readTop', Math.round(pr.bottom - sr.top + 24) + 'px');
+    }
+    var y0 = navH + 18, y1 = W >= 860 ? H - 32 : Math.max(navH + 170, pr.top - sr.top - 14);
+    if (W < 860 && barEl && barEl.offsetHeight) y0 = Math.max(y0, barEl.getBoundingClientRect().bottom - sr.top + 8);
+    if (W < 860 && cardEl && cardEl.offsetHeight) y1 = Math.min(y1, cardEl.getBoundingClientRect().top - sr.top - 8);
     if (y1 - y0 < 160) y1 = y0 + 160;
     return { x0: x0, x1: x1, y0: y0, y1: y1 };
   }
@@ -1532,24 +1530,12 @@
   function copyZ() { var o = {}; KEYS.forEach(function (key) { o[key] = Z[key]; }); return o; }
   var tw = null;
   var arrTw = null;
-  /* R1-I09 (cp15): the field camera keeps a fixed vertical fov (40° landscape, 52° portrait), so at q 0.468 the
-   * 64×44 centre plot fills 50.2 % of a 16:10 frame, 45.2 % of 16:9, less in wider browser windows, and 129.8 %
-   * of a 390×844 phone, where its outline leaves the screen (Claude cp13/cp14 projections). The 'A field' stop
-   * therefore slides along the same flight with the aspect: landscape holds about 50 % (never closer than 0.88×
-   * the 16:10 distance, which keeps the near corner in frame), portrait only backs off until the whole plot fits
-   * (about 86 %). The flight path, its timing and the other stops are unchanged. */
-  var FIELD_Q = 0.468;
-  function fieldStopQ(a) {
-    var share = a < 1 ? 0.5996 / a : 0.8035 / a;                                    // measured share at q 0.468
-    var k = a < 1 ? Math.max(1, share / 0.86) : Math.max(0.88, share / 0.5);        // wanted / current distance
-    var e = ease((FIELD_Q - 0.38) / 0.22) + Math.log(k) / Math.log(1.45 / 620);      // field distance = 620·(1.45/620)^ease(t)
-    return 0.38 + 0.22 * Math.cbrt(NK.clamp(e, 0.02, 0.48) / 4);                     // inverse of the ease on its first half
-  }
+  // Measure the actual projected plot after each camera/aspect change.
   function fitFieldStop() {
-    if (!STATES || NK.chinaLayered || !Z || !(W > 0 && H > 0)) return;
-    var q = fieldStopQ(W / H), old = STATES[1].q;
+    if (!STATES || NK.chinaLayered || !Z || !LV || !LV[1] || !(W > 0 && H > 0)) return;
+    var q = LV[1].fieldStop(), old = STATES[1].q;
     STATES[1].q = q;
-    if (!tw && Math.abs(Z.q - old) < 1e-6) Z.q = q;   // resting at the stop: follow a resize or rotation
+    if (!tw && Math.abs(Z.q - old) < 1e-6) Z.q = q;
   }
   fitFieldStop();
   NK.chinaHandoff = function () {

@@ -35,3 +35,7 @@ GitLab Pages 在 main 上执行 npm run build 和 npm run audit。空正文是�
 本轮新增媒体18份（17张原图与1份PDF）目前使用本地编辑路径，原始SHA已核对，正式发布前须迁移官方Uploads；前述CDN数量是本轮基线记录。本轮未推送或发布。内容唯一编辑源仍为content/wiki/*.json；生成Markdown不单独手改。图片采用新版白框、独立图注、尺寸比例、双图与手机单列；另补图片加载占位和直接章节链接的初始布局稳定。详细方案、原文来源、缺项、验收与备份见工作区outputs/第二轮内容排版-20261016。
 
 2026-10-16 成员补充：Member_Formatted.docx的24位成员与新增HP队长马培松已整合为25张Team翻转卡片和25张Attributions个人贡献卡片，新增Tina“成员翻转卡片”“个人贡献卡片”模块。现有15张照片沿用，10位暂无照片使用姓名字母。具体文案按原稿逐条保留；两处空介绍沿用此前供稿。新模板已在本地Tina完成保存与精确恢复测试。
+
+## GitHub 版本镜像与预览
+
+GitHub 同步约定、当前版本范围及编辑要求见 [docs/GITHUB-SYNC.md](docs/GITHUB-SYNC.md)。GitHub 的版本分支与 `gh-pages/latest/` 用于源码保存和预览；官方 GitLab `main` 与 iGEM 正式站发布分别核验。

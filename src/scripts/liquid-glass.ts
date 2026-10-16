@@ -93,7 +93,9 @@ export function computeDisplacementMap(w: number, h: number, radius: number, o: 
   const W = Math.max(2, Math.round(w)), H = Math.max(2, Math.round(h));
   const hw = W / 2, hh = H / 2;
   const r = Math.min(radius, hw, hh);
-  const bezel = Math.max(1, Math.min(o.bezel, hw, hh));
+  // Stop bending before nearest-edge normals change sides in the flat
+  // interior; oversized bezels otherwise create a seam through the pane.
+  const bezel = Math.max(.001, Math.min(o.bezel, r, hw - 1, hh - 1));
   const key = `${W}x${H}r${Math.round(r)}:${o.ior}:${o.thickness}:${bezel}:${o.zoom}`;
   const hit = mapCache.get(key);
   if (hit) return hit;

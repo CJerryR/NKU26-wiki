@@ -1,11 +1,30 @@
 /* Outline: sticky glass panel beside the text on wide screens,
    a glass pill at the bottom that opens the same list on narrow ones.
-   Material: liquid-glass.css. The section being read is marked by a film
+   Material: the original clear lens from glass.css / glass.ts. The section being read is marked by a film
    that springs along the list (src/scripts/toc.ts). */
 .toc { grid-column: 1; grid-row: 1; position: relative; z-index: 3; }
 .toc__panel {
   position: sticky; top: calc(var(--nav-h) + 20px); display: flex; flex-direction: column;
   max-height: calc(100vh - var(--nav-h) - 40px); padding: 18px 10px 12px; border-radius: 24px; color: var(--ink);
+}
+/* Original soil-block lens optics: clear centre, refracting rim, no zoom.
+   Scope the material to this outline so navigation and dialogs retain theirs. */
+.toc__panel.lg {
+  --lg-radius: 24px;
+  --lg-blur: 0px;
+  --lg-frost: .65px;
+  --lg-tint-bg: linear-gradient(160deg, rgb(255 255 255 / .14), rgb(255 252 246 / .055));
+  --lg-edge: rgb(255 255 255 / .62);
+  box-shadow: 0 18px 42px -26px rgb(40 24 54 / .26), 0 2px 8px -5px rgb(40 24 54 / .18);
+}
+.toc__panel.lg > .lg__shine {
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / .8), inset 0 -1px 0 rgb(255 255 255 / .25), inset 0 0 0 .6px var(--lg-edge);
+}
+@media (prefers-reduced-transparency: reduce) {
+  .toc__panel.lg { --lg-tint-bg: rgb(251 248 241 / .97); }
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .toc__panel.lg { --lg-tint-bg: rgb(251 248 241 / .97); }
 }
 .toc__head { position: relative; padding: 0 10px 12px; }
 .toc__kicker { font-size: 12.5px; font-weight: 600; color: var(--ink-3); }
@@ -37,7 +56,7 @@
 
 @media (max-width: 1099px) {
   .toc { position: fixed; z-index: 960; left: 12px; right: 12px; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); display: flex; justify-content: center; pointer-events: none; }
-  .toc.is-open::before { content: ''; position: fixed; inset: 0; background: rgba(24, 15, 30, .2); pointer-events: auto; }
+  .toc.is-open::before { content: ''; position: fixed; inset: 0; background: rgba(24, 15, 30, .16); -webkit-backdrop-filter: blur(7px); backdrop-filter: blur(7px); pointer-events: auto; }
   .toc__pill {
     pointer-events: auto; display: flex; align-items: center; gap: 10px; width: min(100%, 420px); height: 54px; padding: 0 16px 0 9px;
     text-align: left; transition: var(--glass-transition), transform .45s var(--lg-ease);
@@ -65,7 +84,7 @@
   /* the layers fade, not the panel, so the glass keeps its backdrop mid-fade */
   .toc__panel > *, .toc__panel::after { opacity: 0; transition: opacity .2s; }
   .toc.is-open .toc__panel > *, .toc.is-open .toc__panel::after { opacity: 1; }
-  .toc.is-open .toc__panel { pointer-events: auto; visibility: visible; transform: none; box-shadow: var(--glass-shadow); transition: var(--glass-transition), transform .5s var(--lg-ease), visibility 0s; }
+  .toc.is-open .toc__panel { pointer-events: auto; visibility: visible; transform: none; box-shadow: 0 18px 42px -26px rgb(40 24 54 / .26); transition: var(--glass-transition), transform .5s var(--lg-ease), visibility 0s; }
   .toc__head { padding-right: 52px; }
   .toc__close { display: grid; place-items: center; position: absolute; top: -4px; right: 2px; width: 36px; height: 36px; border-radius: 99px; background: rgba(36, 28, 43, .06); }
   .toc__close svg { width: 16px; height: 16px; }

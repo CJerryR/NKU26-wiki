@@ -15,6 +15,7 @@
   var canvas = root.querySelector('[data-op-gl]');
   var fxCv = root.querySelector('[data-op-fx]');
   var hero = root.querySelector('[data-op-hero]');
+  var artwork = root.querySelector('[data-op-art]');
   var hudLine = root.querySelector('[data-op-line]');
   var labelsEl = root.querySelector('[data-op-labels]');
   var guideBtn = root.querySelector('[data-op-guide]');
@@ -64,6 +65,11 @@
       hero.style.opacity = String(1 - hp);
       hero.style.transform = 'translate3d(0,' + (-hp * 90).toFixed(1) + 'px,0) scale(' + (1 + hp * 0.1).toFixed(3) + ')';
       hero.style.filter = hp > 0.01 && hp < 0.99 ? 'blur(' + (hp * 6).toFixed(1) + 'px)' : 'none';
+      if (artwork) {
+        artwork.style.opacity = String(1 - hp);
+        artwork.style.visibility = hp >= 1 ? 'hidden' : 'visible';
+        artwork.style.transform = 'translate3d(0,' + (-hp * 12).toFixed(2) + '%,0)';
+      }
     }
     var under = d > 0.9;
     if (under !== heroUnder) { heroUnder = under; root.classList.toggle('is-under', under); }
@@ -90,12 +96,13 @@
   function registerScene(api) {
     H0.scene('opening', {
       steps: 1, tall: 2.6, noCue: false,
-      set: function (i) { var v = i ? 1 : 0; D = { from: v, to: v, t0: 0, dur: 1, v: v }; },
+      set: function (i) { if (i && api.prepare) api.prepare(); var v = i ? 1 : 0; D = { from: v, to: v, t0: 0, dur: 1, v: v }; if (api.refresh) api.refresh(); },
       step: function (i) {
+        if (api.prepare) api.prepare();
         if (i === 1) { descendTo(1, 1650); return 1700; }
         descendTo(0, 1300); return 1300;
       },
-      ff: function () { D.t0 = -1e9; },
+      ff: function () { D.t0 = -1e9; if (api.refresh) api.refresh(); },
       canLeave: function () { return S.found && performance.now() - S.foundAt > 900; },
       blocked: function () {
         if (!S.exploring) return;
@@ -123,7 +130,7 @@
       var r = stage.getBoundingClientRect();
       stage.style.setProperty('--fx', (e.clientX - r.left) + 'px'); stage.style.setProperty('--fy', (e.clientY - r.top) + 'px');
     });
-    registerScene({ now: function () { return performance.now() / 1000; } });
+    registerScene({ now: function () { return performance.now() / 1000; }, refresh: tick });
     var orig = descendTo;
     descendTo = function (v, ms) { orig(v, ms); if (!raf) raf = requestAnimationFrame(tick); };
     tick();
@@ -1203,13 +1210,20 @@
       renderer.setPixelRatio(DPR); resize(false);
     }
   }
+  var artImages = artwork ? artwork.querySelectorAll('img') : [], renderMode = '';
   function frame(t, dt) {
+    var d = D.v = descentAt(performance.now());
+    heroStyle(d);
+    // Opaque, decoded artwork covers the entire canvas at rest. Resume the live
+    // scene on the first descent frame; failed artwork keeps the old renderer.
+    var covered = artwork && d === 0 && D.to === 0 && Array.prototype.every.call(artImages, function (img) { return img.complete && img.naturalWidth > 0; });
+    var mode = covered ? 'artwork' : 'live';
+    if (mode !== renderMode) { renderMode = mode; root.setAttribute('data-op-render', mode); }
+    if (covered) { H0.lastLight = null; return; }
     if (!built) return;
     adaptResolution(dt);
     clock = t;
     U.uTime.value = t;
-    var d = D.v = descentAt(performance.now());
-    heroStyle(d);
     var camY = NK.lerp(L.yH, L.yX, d);
     var par = NK.reduced ? 0 : 1;
     camera.position.set((pointerN.x - 0.5) * 0.45 * par, camY - (pointerN.y - 0.5) * 0.28 * par, L.camZ);
@@ -1307,8 +1321,14 @@
     drawFx(t, ls, rad, d, warmK);
   }
 
-  resize(true);
-  registerScene({ now: function () { return clock; } });
+  function prepareOpening() { if (!built) resize(true); }
+  registerScene({ now: function () { return clock; }, prepare: prepareOpening });
+  // Paint the supplied hero first; warm the procedural scene during idle time.
+  // A user entering the soil sooner prepares it synchronously through scene.step.
+  if (artwork) requestAnimationFrame(function () {
+    if (window.requestIdleCallback) requestIdleCallback(prepareOpening, { timeout: 1200 });
+    else setTimeout(prepareOpening, 60);
+  }); else prepareOpening();
   NK.loopWhileVisible(stage, frame, '80px 0px');
 
   /* narrow screens scroll natively and cannot be held back: the light

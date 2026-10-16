@@ -66,12 +66,16 @@
     return [dist, x < 0 ? -nx : nx, y < 0 ? -ny : ny];
   }
   function maps(w, h, radius, bezel, specular) {
+    // A rounded rectangle's flat interior must not refract: its nearest-edge
+    // normals flip on the medial axis. Limit bending to the rounded rim.
+    var r = Math.min(radius, w / 2, h / 2);
+    bezel = Math.max(.001, Math.min(bezel, r, w / 2 - 1, h / 2 - 1));
     var s = 0.5, cw = Math.max(2, Math.round(w * s)), ch = Math.max(2, Math.round(h * s));
     var prof = bezelProfile(bezel, bezel * 1.15);
     var c1 = doc.createElement('canvas'); c1.width = cw; c1.height = ch;
     var c2 = doc.createElement('canvas'); c2.width = Math.round(w); c2.height = Math.round(h);
     var d1 = c1.getContext('2d').createImageData(cw, ch), D = d1.data;
-    var r = Math.min(radius, w / 2, h / 2), hw = w / 2, hh = h / 2, px, py, f, i;
+    var hw = w / 2, hh = h / 2, px, py, f, i;
     for (py = 0; py < ch; py++) for (px = 0; px < cw; px++) {
       f = edgeField((px + 0.5) / s - hw, (py + 0.5) / s - hh, hw, hh, r);
       var t = f[0] / bezel, m = t < 1 && t >= 0 ? prof[Math.min(127, Math.round(t * 127))] : 0;

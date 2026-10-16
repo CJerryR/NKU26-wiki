@@ -1,0 +1,20 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import vm from 'node:vm';
+test('no-WebGL opening artwork returns after scene/viewport restoration', () => {
+  const classes=()=>({add(){},remove(){},toggle(){}});
+  const hero={style:{}}, art={style:{}}, stage={style:{setProperty(){}},addEventListener(){}}, hud={classList:classes(),offsetWidth:1,textContent:'',className:''};
+  const nodes={'.op__stage':stage,'[data-op-hero]':hero,'[data-op-art]':art,'[data-op-line]':hud,'[data-op-guide]':null,'[data-op-focus]':null,'[data-op-gl]':{style:{}}};
+  const root={classList:classes(),querySelector:s=>nodes[s]||null};
+  let scene;
+  const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+  const NK={clamp,lerp:(a,b,t)=>a+(b-a)*t,smooth:(a,b,v)=>{const t=clamp((v-a)/(b-a),0,1);return t*t*(3-2*t);},easeInOut:t=>t,webgl:()=>false};
+  const sandbox={window:{NK,NKUH:{scene:(_id,sp)=>{scene=sp;}},addEventListener(){}},document:{querySelector:()=>root},performance:{now:()=>100},requestAnimationFrame:()=>1};
+  vm.createContext(sandbox);
+  vm.runInContext(fs.readFileSync('static/js/home-opening.js','utf8'),sandbox);
+  assert.equal(art.style.opacity,'1');
+  scene.set(1); assert.equal(art.style.opacity,'0'); assert.equal(art.style.visibility,'hidden');
+  scene.set(0); assert.equal(art.style.opacity,'1'); assert.equal(art.style.visibility,'visible');
+  assert.equal(hero.style.opacity,'1');
+});
