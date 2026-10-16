@@ -12,33 +12,25 @@ meta: {}
 draft: false
 hidden: false
 ---
-## DBTL-1：Engineering of Signaling Response Pathway {#dbtl-1-engineering-of-signaling-response-pathway toc="DBTL-1：Engineering of Signaling Response Pathway"}
+## DBTL-1 | Engineering the Signal Response Pathway {#dbtl-1-engineering-the-signal-response-pathway toc="DBTL-1 | Engineering the Signal Response Pathway"}
 
-### The First Cycle——Dry Lab {#the-first-cycle-dry-lab toc="The First Cycle——Dry Lab"}
+### Receptor Screening and Target Selection {#the-first-cycle-dry-lab toc="Receptor Screening and Target Selection"}
 
-The yeast sensor is intended to establish two channels based on differential responses to ascr#18 and ascr#3. To select recognition elements suitable for further engineering, we first considered G protein-coupled receptors (GPCRs) involved in fungal ascaroside sensing: Gpr2 and Gpr3 from *Arthrobotrys oligospora*, and GprC from *Arthrobotrys flagrans*. Their natural sensing functions provided a basis for selecting them as candidates, while their localization and integration with signaling pathways in yeast required investigation for heterologous use. [B02, B03]
+#### Design | Defining the Receptor Screening Objective {#design-defining-the-receptor-screening-objective toc="Design | Defining the Receptor Screening Objective"}
 
-#### Preliminary Receptor Comparisons and Substitution Studies {#preliminary-receptor-comparisons-and-substitution-studies toc="Preliminary Receptor Comparisons and Substitution Studies"}
+To build a yeast sensor that distinguishes ascr#18 from ascr#3, we needed recognition elements suitable for further engineering. Published studies identify Gpr2, Gpr3, and GprC from nematode-trapping fungi as G protein-coupled receptors (GPCRs) involved in ascaroside sensing. We selected all three as candidates, examining their ligand-recognition characteristics while considering the requirements for localization and signaling integration in yeast.
 
-Our preliminary work compared docking results for each of the three receptors with ascr#18, ascr#3, and ascr#7. We combined these comparisons with literature references, checks using multiple random seeds, and preliminary alanine (Ala) scanning to examine WT docking behavior and the computational changes caused by residue substitutions.
+#### Build | Establishing Receptor Comparisons and Literature References {#build-establishing-receptor-comparisons-and-literature-references toc="Build | Establishing Receptor Comparisons and Literature References"}
 
-The preliminary Ala scan also produced substantial perturbations in the negative control. This prompted us to reconsider whether the observed changes could effectively distinguish the receptors’ engineering potential and whether alanine substitution alone was sufficient to support that assessment. We therefore performed additional saturation substitution tests on GprC, extending the comparison to a wider range of amino acid substitutions.
+We prepared predicted structures of the three receptors and the ascaroside ligands. Drawing on the AutoDock Vina method used in the GprC study and the SwissDock method used in the Gpr2 and Gpr3 study, we conducted docking explorations with the respective methods. We also compiled reported pocket locations and key residues as references for comparison.
 
-#### Selecting the Receptor for Engineering and Establishing the Source of Gpr2 {#selecting-the-receptor-for-engineering-and-establishing-the-source-of-gpr2 toc="Selecting the Receptor for Engineering and Establishing the Source of Gpr2"}
+#### Test | Comparing with the Literature and Refining the Docking Workflow {#test-comparing-with-the-literature-and-refining-the-docking-workflow toc="Test | Comparing with the Literature and Refining the Docking Workflow"}
 
-Localization characteristics influenced our engineering decision for GprC. Hu et al. observed plasma membrane- and mitochondria-associated localization of GprC in *A. flagrans*, with its distribution varying according to expression conditions and hyphal region. [B03] Because this feature could increase the complexity of localization and signaling integration during heterologous expression in yeast, we excluded GprC from this round of yeast receptor engineering. We retained GprC in the structural comparisons to analyze ligand contacts and residue correspondence among the fungal receptors.
+We examined scores, ligand positions, and residue contacts to assess whether docking poses agreed with the available literature evidence. The analysis revealed that inconsistent coordinate references could misplace search regions and that loss of formal charges during format conversion could affect the identification of charged contacts. We therefore added structural alignment, search-region review, and chemical-information checks, progressively refining the docking and contact-analysis workflow.
 
-Subsequent engineering focused on Gpr2, while work on Gpr3 and its mutants continued.
+#### Learn | Selecting Receptors for Further Engineering {#learn-selecting-receptors-for-further-engineering toc="Learn | Selecting Receptors for Further Engineering"}
 
-Once the target receptor had been selected, the next question was whether Gpr2 could be expressed and achieve the intended localization in the chosen yeast chassis.
-
-### The Second Cycle——Dry Lab {#the-second-cycle-dry-lab toc="The Second Cycle——Dry Lab"}
-
-To investigate the differential recognition of ascr#18 and ascr#3 by Gpr2, we explored whether side-chain substitutions could alter the positioning and interactions of the two ligands.
-
-#### Preparing the Receptor for Docking {#preparing-the-receptor-for-docking toc="Preparing the Receptor for Docking"}
-
-Segments were removed from the predicted Gpr2 structure before docking. The same segments were removed from the WT and mutant structures, and residue numbering from the full-length sequence was retained. Subsequent scoring and contact analyses were based on these processed structures.
+Receptor selection requires consideration of both computational results and the conditions for heterologous use. GprC has been reported to show plasma membrane- and mitochondria-associated localization. Because this could increase the complexity of localization and pathway integration in yeast, we did not include GprC in this round of engineering, while retaining it as a structural reference. Subsequent mutant screening focused on Gpr2, with studies of Gpr3 and its mutants continuing alongside it.
 
 ### The Third Cycle——Wet Lab {#the-third-cycle-wet-lab toc="The Third Cycle——Wet Lab"}
 
@@ -54,7 +46,7 @@ Via homologous recombination (HR), we integrated the constitutive *GPR2-sfGFP* e
 
 :::figure
 
-![Figure 1 Yeast transformation of GPR2‑sfGFP construct](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-65db15fab465-fig1-3-1.avif)
+![Figure 1 Yeast transformation of GPR2‑sfGFP construct](/img/uploads/round2/r2-e81fa7011e20-engineering-r2-eng-001.webp)
 
 Figure 1 Yeast transformation of GPR2‑sfGFP construct
 
@@ -114,7 +106,7 @@ Referring to previous work reported by Fan et al. [1][2], we assembled the ascar
 
 :::figure
 
-![Figure 1 Schematic Diagram of Yeast Biosensor Construction Pipeline](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-0a2876570655-fig1-4-1.avif)
+![Figure 1 Schematic Diagram of Yeast Biosensor Construction Pipeline](/img/uploads/round2/r2-d2f6a13810e7-engineering-r2-eng-002.webp)
 
 Figure 1 Schematic Diagram of Yeast Biosensor Construction Pipeline
 
@@ -128,7 +120,7 @@ First, we knocked out the *Gal80* gene in CEN.PK2-1C to obtain the engineered st
 
 :::figure
 
-![Figure 2 Knockout of the *Gal80* Gene](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-dbd29273fd22-fig1-4-2.avif)
+![Figure 2 Knockout of the *Gal80* Gene](/img/uploads/round2/r2-9ec82d42de33-engineering-r2-eng-003.webp)
 
 Figure 2 Knockout of the *Gal80* Gene
 
@@ -136,7 +128,7 @@ Figure 2 Knockout of the *Gal80* Gene
 
 :::figure
 
-![Figure 3 Construction of Synthetic Transcription Factor](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-7c829241bfa9-fig1-4-3.avif)
+![Figure 3 Construction of Synthetic Transcription Factor](/img/uploads/round2/r2-10dfc2855aa3-engineering-r2-eng-004.webp)
 
 Figure 3 Construction of Synthetic Transcription Factor
 
@@ -156,99 +148,111 @@ Fan C, Yuan J. Reshaping the yeast galactose regulon via GPCR signaling cascade.
 
 Cong Fan, Nike He, Jifeng Yuan, Cascaded amplifying circuit enables sensitive detection of fungal pathogens, Biosensors and Bioelectronics, Volume 250, 2024, 116058, ISSN 0956-5663, [https://doi.org/10.1016/j.bios.2024.116058](https://doi.org/10.1016/j.bios.2024.116058).
 
-## DBTL-2：Engineering Receptor Specificity and Establishing Pathway Models {#dbtl-2-engineering-receptor-specificity-and-establishing-pathway-models toc="DBTL-2：Engineering Receptor Specificity and Establishing Pathway Models"}
+## DBTL-2 | Engineering Receptor Specificity and Developing Pathway Models {#dbtl-2-engineering-receptor-specificity-and-developing-pathway-models toc="DBTL-2 | Engineering Receptor Specificity and Developing Pathway Models"}
 
-### The First Cycle——Dry Lab {#the-first-cycle-dry-lab-2 toc="The First Cycle——Dry Lab"}
+### Mutation Design and Screening Guided by Contact Differences {#mutation-design-and-screening-guided-by-contact-differences toc="Mutation Design and Screening Guided by Contact Differences"}
 
-#### Candidate Sites and Single-Site Substitutions {#candidate-sites-and-single-site-substitutions toc="Candidate Sites and Single-Site Substitutions"}
+#### Design | Identifying Engineering Sites from WT Contact Differences {#design-identifying-engineering-sites-from-wt-contact-differences toc="Design | Identifying Engineering Sites from WT Contact Differences"}
 
-We compared the predicted contact distributions of WT with the two ligands and selected seven candidate sites for substitution.
+To investigate the differential recognition of ascr#18 and ascr#3 by Gpr2, we compared the WT receptor’s contact distributions with both ligands. Residues showing contact differences were selected as candidate sites, and alanine substitutions were used to examine how each position affected the two-ligand profile.
 
-The initial multisite alanine substitutions worsened the docking scores for both ligands. We then separated the combination into single-site substitutions to examine the effect of each site. At four of these sites, we designed 19 amino acid substitutions per site, producing 76 single-mutant designs for saturation screening. Screening combined changes in docking scores relative to WT for both ligands with contact analysis to examine how different substitutions affected the two-ligand profile.
+#### Build | Generating Mutant Models and Consistent Controls {#build-generating-mutant-models-and-consistent-controls toc="Build | Generating Mutant Models and Consistent Controls"}
 
-#### Exploring Mutation Combinations and Setting Priorities {#exploring-mutation-combinations-and-setting-priorities toc="Exploring Mutation Combinations and Setting Priorities"}
+We generated mutant sequences according to the substitution designs and predicted their structures using AlphaFold 3. WT and mutant structures underwent consistent preparation and docking procedures. Original residue numbering was retained, structures were aligned to a common coordinate reference, and identical ligand inputs and search settings were used to support corresponding comparisons of scores and contacts.
 
-Based on the single-mutant results, we selected 14 single-mutant parents and designed 18 double mutants to explore the combined effects of substitutions at different sites. These were compared with the corresponding single mutants. The combination designs were not prioritized for further development, and subsequent work continued to focus on single-site engineering.
+#### Test | Iterating Substitutions Using Score and Contact Feedback {#test-iterating-substitutions-using-score-and-contact-feedback toc="Test | Iterating Substitutions Using Score and Contact Feedback"}
 
-#### Selecting Single-Mutant Candidates {#selecting-single-mutant-candidates toc="Selecting Single-Mutant Candidates"}
+We selected candidates from single-site alanine scanning, used score changes and contact analysis to guide additional side-chain substitutions, and performed saturation scanning at selected sites. Candidates were grouped as favoring ascr#3 or ascr#18 according to the difference between the two ligands’ score changes relative to WT. We then examined both scores separately to determine whether the shift resulted from a lower score for the target ligand, a higher score for the other ligand, or both. Contact comparisons with WT helped identify the associated changes in ligand position and interactions.
 
-The single-mutant candidates selected for subsequent dynamic studies were N84V and V368R.
+After obtaining single-mutant candidates, we explored combined mutations. Parents were selected according to the direction of the shift and the pattern of score changes to test whether the effects of different substitutions could be retained together. Each combination was compared with WT and both single-mutant parents. Most tested combinations did not further improve the better parent’s target-ligand score or increase the difference between the two ligands, so subsequent work continued to focus on single-mutant candidates.
 
-### The Second Cycle——Dry Lab {#the-second-cycle-dry-lab-2 toc="The Second Cycle——Dry Lab"}
+#### Learn | Selecting Candidates for Dynamic Testing {#learn-selecting-candidates-for-dynamic-testing toc="Learn | Selecting Candidates for Dynamic Testing"}
 
-Docking provides static candidate poses ranked by an approximate scoring function within a specified receptor structure and search region. We further examined how these poses behaved dynamically in a membrane environment: how ligand position changed with receptor motion, whether predicted contacts persisted, and whether contacts rearranged. To address these questions, we used molecular dynamics (MD), in which a force field describes molecular interactions, to simulate the selected complexes in a lipid bilayer, solvent, and ionic environment. [B04; 7–8]
+Score differentiation and contact analysis led us to select N84V and V368R. Relative to WT from the same batch, N84V had a lower ascr#18 score and a higher ascr#3 score, while V368R showed the opposite pattern. These results defined the next questions: would the selected ligand poses persist in full-length receptors within a membrane environment, and would the predicted contacts remain or rearrange? Both mutants and WT therefore proceeded to MD comparisons.
 
-#### From Docking Poses to Full-Length Membrane Systems {#from-docking-poses-to-full-length-membrane-systems toc="From Docking Poses to Full-Length Membrane Systems"}
+### Investigating Candidate Dynamics in a Membrane Environment {#investigating-candidate-dynamics-in-a-membrane-environment toc="Investigating Candidate Dynamics in a Membrane Environment"}
 
-The comparison included six complexes: WT, N84V, and V368R, each paired with ascr#18 or ascr#3. Each complex used its corresponding receptor structure and initial ligand pose.
+#### Design | Examining Docking Candidates in the Membrane {#design-examining-docking-candidates-in-the-membrane toc="Design | Examining Docking Candidates in the Membrane"}
 
-These ligand poses came from docking against the structures with deleted segments described in Section 2.2. Because the MD systems used full-length receptors, the selected poses and their corresponding full-length structures had to be placed in a common coordinate reference so that the spatial relationships between the restored segments and the ligands could be checked. Reintroducing local structures that had been absent during docking could create geometric clashes with the selected poses.
+In docking, the score changes for N84V favored ascr#18, while those for V368R favored ascr#3. We wanted to understand whether the ligands would remain in the predicted pockets and retain their original contacts in a membrane environment. We therefore performed molecular dynamics (MD) simulations of six complexes: WT, N84V, and V368R, each paired with one of the two ligands.
 
-We attempted loop rebuilding for a local covering loop region, or lid. The original approach also changed parts of the backbone outside the loop or the initial ligand pose in some systems, confounding the local loop adjustment with other structural changes. We discontinued the use of these rebuilt controls, retained each combination’s own starting structure, and proposed an approach that would rebuild only the local loop while keeping the ligand pose and coordinates outside the loop fixed.
+#### Build | Preparing Full-Length Receptors and Membrane Systems {#build-preparing-full-length-receptors-and-membrane-systems toc="Build | Preparing Full-Length Receptors and Membrane Systems"}
 
-#### Comparing the Dynamics of WT and Single Mutants {#comparing-the-dynamics-of-wt-and-single-mutants toc="Comparing the Dynamics of WT and Single Mutants"}
+We placed each docking pose into its corresponding full-length receptor, checked for spatial clashes between the ligand and restored segments, and adjusted local lid regions where overlaps occurred. During rebuilding, we found that some approaches also changed the backbone outside the loop or the initial ligand pose. We therefore restricted adjustments to the lid region while retaining the remaining coordinates of each system. After these checks, each of the six complexes was placed in a POPC lipid bilayer with solvent and ions.
 
-Trajectory analysis focused on ligand position relative to the receptor and the persistence and rearrangement of key contacts, with receptor motion used to interpret local changes. We compared the same ligand in WT and single-mutant receptors, as well as contact changes for the two ligands within the same receptor, to examine how the differences observed in docking appeared in dynamic simulations.
+#### Test | Tracking Ligand Motion and Contact Changes {#test-tracking-ligand-motion-and-contact-changes toc="Test | Tracking Ligand Motion and Contact Changes"}
 
-#### Functional Testing and Feedback {#functional-testing-and-feedback toc="Functional Testing and Feedback"}
+Each of the six systems completed one 100 ns simulation. We tracked the ligand relative to the local pocket to distinguish global receptor motion from ligand movement within the pocket.
 
-Functional testing of the mutant candidates is intended to compare the responses of WT and the candidates to ascr#18 and ascr#3. Expression, localization, and overall signaling-function controls will also be used to distinguish differences in recognition of the two ligands from changes in overall receptor function.
+During the second half of the trajectory, N84V–ascr#18 showed less displacement than WT–ascr#18 and N84V–ascr#3. Contact analysis showed persistent contact between Arg189 and the carboxylate end of ascr#18, providing a possible explanation for the ligand’s retention in that region.
 
-### The Third Cycle——Dry Lab {#the-third-cycle-dry-lab toc="The Third Cycle——Dry Lab"}
+In V368R–ascr#3, the ligand moved away from its initial position toward Arg345 and formed contacts also observed in WT–ascr#3. To understand this change, we examined internal receptor contacts around the mutation site. The charged end of Arg368 moved away from Asp70 at approximately the same time that the ligand began contacting Arg345. In V368R–ascr#18, by contrast, Arg368 and Asp70 remained close throughout the trajectory.
 
-#### Design | Building the Initial Model from Seven Nodes {#design-building-the-initial-model-from-seven-nodes toc="Design \| Building the Initial Model from Seven Nodes"}
+#### Learn | Reinterpreting Mutation Effects from the Trajectories {#learn-reinterpreting-mutation-effects-from-the-trajectories toc="Learn | Reinterpreting Mutation Effects from the Trajectories"}
 
-We aimed to connect ligand recognition with colorimetric output through modeling, understand how signals propagate along the pathway, and identify which steps require constraints from experimental data. To do this, we organized the system into seven nodes:
+The MD results prompted us to revisit the contact-based interpretation of docking. A ligand may maintain its position through persistent contacts, or it may leave its initial pose and establish contacts elsewhere. Assessing mutation effects therefore requires examining both ligand motion and internal receptor changes. Each system currently has only one trajectory, so the sequence of contact changes requires testing through replicate simulations, while actual recognition capability requires experimental confirmation.
 
-Ligand input L → receptor activity R_active → G protein G(t) → MAPK M(t) → synthetic transcription factor activity TF → GAL product formation rate Prod → colorimetric signal C(t).
+### ODE: Connecting Receptor Signaling to Colorimetric Output {#ode-connecting-receptor-signaling-to-colorimetric-output toc="ODE: Connecting Receptor Signaling to Colorimetric Output"}
 
-Drawing on mechanistic descriptions in the literature, we used ordinary differential equations to track the dynamics of G protein, MAPK, and the colorimetric signal, while Hill-type or other saturating algebraic relationships connected the remaining steps. The initial model reduced the multistage MAPK reactions to a single effective dynamic state, retaining the overall activation and recovery behavior.
+#### Design | Building a Minimal Model from Biological Principles {#design-building-a-minimal-model-from-biological-principles toc="Design | Building a Minimal Model from Biological Principles"}
 
-#### Build | Implementing a Runnable Normalized Prototype {#build-implementing-a-runnable-normalized-prototype toc="Build \| Implementing a Runnable Normalized Prototype"}
+Using the biological principles of receptor activation, signal transduction, and color development, we established a minimal, lumped model. Ligand L served as the input to six functional nodes: receptor R, G protein, MAPK, sTF, GAL production rate, and color. The model used three dynamic equations and three algebraic relationships. Analysis showed that several internal parameters lacked project-specific measurements and could not be determined separately from the final color output alone. We therefore investigated reusable models from the literature and previous iGEM teams.
 
-We implemented a model solver, configurable parameter files, and time-course outputs so that the pathway description could be simulated under explicitly defined example conditions. We also documented parameter sources and the corresponding experimental measurement requirements, preparing the model for the later incorporation of project-specific data.
+#### Build | Adapting the Shared Pathway and Colorimetric Output {#build-adapting-the-shared-pathway-and-colorimetric-output toc="Build | Adapting the Shared Pathway and Colorimetric Output"}
 
-At this stage, we used normalized inputs and example parameters to examine model behavior, compare modeling assumptions, and identify additional data needs.
+Using the publicly available reaction structures of Supady Model B and TU Delft 2012, we incorporated G protein, scaffold, Fus3, and feedback modules. Under fixed construct conditions, we combined sTF regulation, GAL production rate, and color generation. Conservation of total molecular amounts was then used to eliminate redundant states in the shared pathway, yielding six independent dynamic equations.
 
-#### Test | Checking Dynamic Behavior and Parameter Measurability {#test-checking-dynamic-behavior-and-parameter-measurability toc="Test \| Checking Dynamic Behavior and Parameter Measurability"}
+#### Test | Checking Computational Consistency and Response Range {#test-checking-computational-consistency-and-response-range toc="Test | Checking Computational Consistency and Response Range"}
 
-We performed numerical checks on the prototype and independently ran and checked relevant published models to compare the pathway behaviors that different structures could describe. These checks showed that the original G protein–MAPK equations could not produce a decline after a peak under constant input, zero initial conditions, and nonnegative parameters. This prompted us to examine which mechanisms the intermediate module would need to retain to describe pathway adaptation or feedback.
+We ran the models before and after simplification with identical inputs and parameters, confirming that combining the output relationships and eliminating redundant states preserved the calculated results. We then found that, under the current example parameters, ligand inputs of different strengths eventually produced similar color signals, making it difficult to distinguish high from low inputs. We therefore continued adjusting input and color-development parameters to identify a response range that reflected differences in input.
 
-We also examined the output layer in relation to the readouts available from wet-lab experiments. If the final colorimetric signal is the main measurement, the gains and thresholds across multiple response layers are difficult to determine separately. We therefore combined the original equations for sTF, GAL production rate, and color accumulation and completed algebraic equivalence checks. With a fixed copy number and under the assumptions of the original model, the combined colorimetric equation preserved the original input-output relationship while reducing the number of parameters that needed to be determined separately.
+#### Learn | Prioritizing Project-Specific Inputs and Outputs {#learn-prioritizing-project-specific-inputs-and-outputs toc="Learn | Prioritizing Project-Specific Inputs and Outputs"}
 
-#### Learn | Retaining Essential Dynamics and Combining Steps That Are Difficult to Measure Independently {#learn-retaining-essential-dynamics-and-combining-steps-that-are-difficult-to-measure-independently toc="Learn \| Retaining Essential Dynamics and Combining Steps That Are Difficult to Measure Independently"}
+We retained the source parameters of the shared pathway and focused on adjusting the effective input scale and color-production gain, using simulated endpoint fitting to explore distinguishable output ranges. Actual readout times and response ranges still require dose-response and time-course measurements. This work also established the next direction for configuring the two sensors.
 
-This round of work led us to revise the structure planned for the next model version: use an effective input to represent the receptor’s drive on downstream signaling, draw on a checked signaling module from the literature, and connect it to the output through the combined colorimetric equation. The details retained in the model will be determined jointly by the research question, mechanistic evidence, and the extent to which experimental data can constrain them.
+### Two-Channel Model: Estimating Target Density from Paired Color Readouts {#two-channel-model-estimating-target-density-from-paired-color-readouts toc="Two-Channel Model: Estimating Target Density from Paired Color Readouts"}
 
-The normalized prototype, the derivation of the combined output equation, and the equivalence checks have been completed. Final selection of the literature module, integration of the simplified model into the main solver, and calibration against project wet-lab data are still underway. In the next iteration, we will calibrate parameters using actual construct information and measurements and assess whether response delays or pathway recovery mechanisms need to be added.
+#### Design | Estimating Mi Density with an Unknown Background Population {#design-estimating-mi-density-with-an-unknown-background-population toc="Design | Estimating Mi Density with an Unknown Background Population"}
 
-## DBTL-3：Social Practical Impact Feedback {#dbtl-3-social-practical-impact-feedback toc="DBTL-3：Social Practical Impact Feedback"}
+The southern root-knot nematode, Meloidogyne incognita (Mi), and the free-living nematode Caenorhabditis elegans (C. elegans) may contribute overlapping ascaroside signals. We therefore retained both sensor readouts from the same sample. Our objective was to estimate Mi density from two color readouts in a complex soil setting where free-living C. elegans and plant-parasitic Mi coexist.
 
-**Economic Benefit Model: From Detection Results to Management Decisions**
+#### Build | Constructing Mixed Samples and a Density Regression Model {#build-constructing-mixed-samples-and-a-density-regression-model toc="Build | Constructing Mixed Samples and a Density Regression Model"}
 
-#### Design | Assessing Whether Detection Information Can Support Action {#design-assessing-whether-detection-information-can-support-action toc="Design \| Assessing Whether Detection Information Can Support Action"}
+We used Mi densities of 0, 40, and 120 J2/100 cm³, corresponding to the low-, medium-, and high-risk categories in the current Eco example. These were crossed with three independently varying background levels to produce nine simulated combinations. After defining assumptions about ligand release and the mapping to colorimetric output, we fitted the two ODE models separately and used their blank-corrected color outputs to build a density regression model with three coefficients.
 
-Our initial question was whether detecting nematode signals would provide enough information to help growers choose management measures. We aimed to compare testing costs with potentially avoidable losses and then examine the decision-making value of different types of detection information.
+#### Test | Comparing One and Two Channels with New Mixed Samples {#test-comparing-one-and-two-channels-with-new-mixed-samples toc="Test | Comparing One and Two Channels with New Mixed Samples"}
 
-#### Build | Establishing Cost Calculations and Management Scenarios {#build-establishing-cost-calculations-and-management-scenarios toc="Build \| Establishing Cost Calculations and Management Scenarios"}
+After fitting, we defined twelve additional combinations of target and background abundance. Colors were generated through the ODE models, and we compared how well one or two channels recovered the predefined Mi densities. The two-channel model produced smaller errors in these simulated combinations, but some low-density samples yielded negative estimates, indicating that bias remained when the target signal was weak. Changing the assumed ratio of the two ligands released by Mi while keeping model parameters fixed also changed the prediction error, showing that the estimates depended on assumptions about ligand composition.
 
-We first developed a general cost calculation framework that converts yield losses associated with nematode density into economic losses per unit area and compares costs and net benefits across management scenarios.
+#### Learn | Examining Errors at Low Densities and Near Risk Thresholds {#learn-examining-errors-at-low-densities-and-near-risk-thresholds toc="Learn | Examining Errors at Low Densities and Near Risk Thresholds"}
 
-Our preliminary analysis indicated that a simple negative or positive result could not adequately reflect differences in risk at different densities. We therefore introduced three risk levels: low, medium, and high. These corresponded to no targeted control, moderate-intensity treatment, and high-intensity treatment, respectively, allowing us to compare risk-based management with uniform treatment.
+Near the Eco risk thresholds, even a small density-prediction error can assign a sample to an adjacent risk category. Subsequent experiments should therefore assess overall prediction error, increase sampling near the thresholds, and separately examine background-only samples and samples with low target densities. Experimental calibration will vary target and background abundance independently, with separate batches used to evaluate whether two channels improve density estimation.
 
-#### Test | Examining the Added Value of Density Information {#test-examining-the-added-value-of-density-information toc="Test \| Examining the Added Value of Density Information"}
+The model derivation is complete, while calibration with project wet-lab data is still underway. In the next iteration, we will calibrate parameters using actual construct information and measurements and assess whether additional mechanisms, such as response delays, are needed.
 
-Using the example of greenhouse tomatoes in Spain, we compared treatment levels selected according to density with a uniform moderate-intensity treatment strategy. The example analysis showed that, under the corresponding assumptions, density information could help adjust treatment intensity and yield additional expected net benefits.
+## DBTL-3 | Feedback from Practical and Societal Needs {#dbtl-3-feedback-from-practical-and-societal-needs toc="DBTL-3 | Feedback from Practical and Societal Needs"}
 
-This comparison also helped distinguish the contributions of detection information and control measures. An improvement relative to no control includes the effect of treatment itself. Assessing the value of detection therefore also requires examining whether the information helps users make more appropriate management choices.
+### Economic Benefit Modeling and Refinement of Detection Requirements {#economic-benefit-modeling-and-refinement-of-detection-requirements toc="Economic Benefit Modeling and Refinement of Detection Requirements"}
 
-#### Learn | Translating Management Needs into Detection System Design Requirements {#learn-translating-management-needs-into-detection-system-design-requirements toc="Learn \| Translating Management Needs into Detection System Design Requirements"}
+#### Design | Defining the Decision-Making Value of Detection Information {#design-defining-the-decision-making-value-of-detection-information toc="Design | Defining the Decision-Making Value of Detection Information"}
 
-This round of analysis clarified our design objectives for the detection output: provide semiquantitative or quantitative information that supports risk classification wherever possible, cover the key ranges in which management choices change, and communicate sampling and measurement uncertainty when results fall close to classification thresholds.
+We wanted to determine whether nematode detection results could help growers choose appropriate management measures. We therefore compared testing costs with potentially avoidable losses and examined how detection information affected treatment choices and expected returns.
 
-We also expanded the presentation of model results from a single return-on-investment metric to include measured density, expected yield loss, risk level, the treatment strategy in each scenario, testing costs, and comparisons of net benefits. These outputs provided a basis for discussing the product’s quantitative capabilities, sampling strategy, and intended application settings.
+#### Build | Establishing Cost Calculations and Management Scenarios {#build-establishing-cost-calculations-and-management-scenarios toc="Build | Establishing Cost Calculations and Management Scenarios"}
 
-We will update the model using detection performance and sampling error measured in wet-lab experiments, along with local prices, testing costs, and willingness to pay identified through Human Practices (HP) research. We will then reassess whether these design requirements hold under practical use conditions.
+We developed a general cost calculation framework that converts yield losses associated with nematode density into economic losses per unit area and compares costs and net returns across management scenarios. Preliminary analysis indicated that a simple negative or positive result could not adequately reflect differences in risk across densities. We therefore introduced low, medium, and high risk levels, corresponding to no targeted control, moderate-intensity treatment, and high-intensity treatment, respectively, to compare risk-based management with uniform treatment.
+
+#### Test | Comparing the Added Benefit of Density Information {#test-comparing-the-added-benefit-of-density-information toc="Test | Comparing the Added Benefit of Density Information"}
+
+Using greenhouse tomatoes in Spain as an example, we compared treatment levels selected according to density with a uniform moderate-intensity treatment strategy. Under the example assumptions, density information helped adjust treatment intensity and provided additional expected net returns.
+
+This comparison clarified the control needed to assess the value of detection. Improvements relative to no control include the effect of treatment itself, while comparison with uniform treatment more directly examines whether detection information helps users make better management choices.
+
+#### Learn | Feeding Management Needs Back into Detection Design {#learn-feeding-management-needs-back-into-detection-design toc="Learn | Feeding Management Needs Back into Detection Design"}
+
+The analysis refined our detection objectives: provide semiquantitative or quantitative information that supports risk classification, cover the key density ranges where management strategies change, and communicate sampling and measurement uncertainty when results fall close to classification thresholds.
+
+Model outputs also expanded from a single return-on-investment metric to include measured density, expected yield loss, risk level, the treatment strategy in each scenario, testing costs, and comparisons of net returns. These outputs inform discussions of the product’s quantitative capability, sampling strategy, and application settings. We will update the model using detection performance and sampling error from wet-lab experiments, together with local prices, testing costs, and willingness to pay from HP research, to test whether these design requirements hold under practical conditions.
 
 ## References {#references-2 toc="References"}
 

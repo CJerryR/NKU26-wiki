@@ -16,6 +16,12 @@
   display: block; width: auto; max-width: 100%; height: auto; max-height: min(78vh, 760px); margin-inline: auto;
   border-radius: 0; object-fit: contain;
 }
+/* Keep the final intrinsic-size box while a lazy image is still decoding.
+   These variables come from verified CDN dimensions or local image headers. */
+.prose .figure:not(.figure-text > *) > .figure__media img[style*="--figure-ratio"] {
+  width: min(var(--figure-natural-width), 100%, calc(min(78vh, 760px) * var(--figure-ratio)));
+  aspect-ratio: var(--figure-ratio);
+}
 .prose .figure > .figure__media:has(> .table-wrap) { padding: 0; border: 0; border-radius: 0; background: none; box-shadow: none; }
 @media (max-width: 640px) { .prose { --figure-radius: 14px; } }
 .figure__media > p { margin: 0; }

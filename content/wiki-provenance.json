@@ -13,7 +13,12 @@
       "sources": [
         "outputs/v8.0/已收材料-2026-10-09/attributions+收稿快照__2026-10-02_1748/原稿/Attributions（Wet Lab）.docx",
         "outputs/v8.0/已收材料-2026-10-09/project-teams+干实验微信旧稿快照__日期未显示/原稿/Teams/Drylab Wiki｜Teams.pdf"
-      ]
+      ],
+      "round2_member_sources": [
+        "Member_Formatted.docx",
+        "2026-10-16 user supplied HP captain introduction and five contributions"
+      ],
+      "round2_local_integrated_at": "2026-10-16"
     },
     {
       "slug": "contribution",
@@ -25,6 +30,10 @@
         "outputs/v8.0/已收材料-2026-10-09/contribution+收稿快照__2026-10-07_1934/原稿/Contribution 英文版.docx",
         "outputs/v8.0/已收材料-2026-10-09/contribution+收稿快照__2026-10-07_1934/原稿/附件/Troubleshooting & Lessons Learned.pdf",
         "outputs/v8.0/已收材料-2026-10-09/project-model+干实验飞书迭代快照__2026-10-10/Project｜en.md"
+      ],
+      "round2_local_integrated_at": "2026-10-16",
+      "round2_sources": [
+        "https://nankai.feishu.cn/wiki/L1qqwieFbiCMTskGj8Lcr1ofnLd"
       ]
     },
     {
@@ -32,13 +41,21 @@
       "status": "team-material-integrated-awaiting-final-review",
       "team_copy_received": true,
       "team_review_approved": false,
-      "integration_gate1_approved": true
+      "integration_gate1_approved": true,
+      "round2_local_integrated_at": "2026-10-16",
+      "round2_sources": [
+        "https://nankai.feishu.cn/wiki/VmmAw00xCi4PQhkoCr7cCBkXnwf"
+      ]
     },
     {
       "slug": "education",
-      "status": "ai-draft-awaiting-team-copy",
-      "team_copy_received": false,
-      "team_review_approved": false
+      "status": "team-material-integrated-awaiting-final-review",
+      "team_copy_received": true,
+      "team_review_approved": false,
+      "round2_local_integrated_at": "2026-10-16",
+      "round2_sources": [
+        "Best-Education-page-revised-draft(1).docx (English body only)"
+      ]
     },
     {
       "slug": "engineering",
@@ -49,6 +66,11 @@
       "sources": [
         "outputs/v8.0/已收材料-2026-10-09/engineering+稿件3.0__2026-10-08_0124/原稿/Engineering 英文版3.0.docx",
         "outputs/v8.0/已收材料-2026-10-09/project-model+干实验飞书迭代快照__2026-10-10/Project｜en.md"
+      ],
+      "round2_local_integrated_at": "2026-10-16",
+      "round2_sources": [
+        "https://nankai.feishu.cn/wiki/MxrBwbN1HiIeIokhwrAcmat1n2b",
+        "Round2 user-supplied four replacement images"
       ]
     },
     {
@@ -59,6 +81,10 @@
       "integration_gate1_approved": true,
       "sources": [
         "outputs/v8.0/已收材料-2026-10-09/experiments+收稿快照__2026-10-07_1931/原稿/Experiments-英文版.docx"
+      ],
+      "round2_local_integrated_at": "2026-10-16",
+      "round2_sources": [
+        "Wet Lab-Experiments 补充.zip / 补充内容.docx and protocol 17 PDF"
       ]
     },
     {
@@ -82,7 +108,12 @@
       "sources": [
         "outputs/v8.0/已收材料-2026-10-09/members+收稿快照__2026-10-07_1806/原稿/Team members(Wet Lab).docx",
         "outputs/v8.0/已收材料-2026-10-09/project-teams+干实验微信旧稿快照__日期未显示/原稿/Teams/Drylab Wiki｜Teams.pdf"
-      ]
+      ],
+      "round2_member_sources": [
+        "Member_Formatted.docx",
+        "2026-10-16 user supplied HP captain introduction and five contributions"
+      ],
+      "round2_local_integrated_at": "2026-10-16"
     },
     {
       "slug": "model-1",
@@ -161,13 +192,21 @@
       "integration_gate1_approved": true,
       "sources": [
         "outputs/v8.0/已收材料-2026-10-09/results+收稿快照__2026-10-09_1616/原稿/Results 英文.docx"
+      ],
+      "round2_local_integrated_at": "2026-10-16",
+      "round2_sources": [
+        "Results-补充 (1).zip / Results-补充-英文.docx; Chinese explanations for asset selection and exclusions"
       ]
     },
     {
       "slug": "safety",
-      "status": "ai-draft-awaiting-team-copy",
-      "team_copy_received": false,
-      "team_review_approved": false
+      "status": "team-material-integrated-awaiting-final-review",
+      "team_copy_received": true,
+      "team_review_approved": false,
+      "round2_local_integrated_at": "2026-10-16",
+      "round2_sources": [
+        "Wet Lab-Safety 新.zip / Safety 英文.docx and Fig1–Fig6"
+      ]
     },
     {
       "slug": "background",
@@ -179,5 +218,6 @@
         "outputs/v8.0/已收材料-2026-10-09/project-model+干实验飞书迭代快照__2026-10-10/Project｜en.md"
       ]
     }
-  ]
+  ],
+  "round2_note": "Local Tina integration of supplied English copy and assets. Human Practices Chinese manuscript remains archive-only. No final team review or publication approval is asserted."
 }

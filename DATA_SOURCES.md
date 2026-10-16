@@ -49,7 +49,24 @@ anchors. A marker means “reported in this province,” not that the entire
 province is infested or that the marker is a sampling site.
 
 - **Soybean cyst nematode, *Heterodera glycines*:** 22 provincial-level records listed in Peng et al. (2021), DOI https://doi.org/10.1186/s42483-021-00095-w. The same paper supports the 20–30% typical field loss, 60–70% severe-field loss and national estimate above US$120 million per year.
-- **Southern root-knot nematode, *Meloidogyne incognita*:** 20-province distribution list carried over from CABI/Plantwise records, https://plantwiseplusknowledgebank.org/doi/10.1079/pwkb.species.33247. That page returned an access restriction here, so the team must compare the final list against the map before release.
-- **Xinjiang survey:** Zhou et al. (2024), “The occurrence and genetic diversity of vegetable root-knot nematodes in Xinjiang Uyghur Autonomous Region,” *Journal of Integrative Agriculture*, DOI https://doi.org/10.1016/j.jia.2024.12.008. The survey covered 2021–2023 and found root-knot nematodes in 57 of 130 vegetable samples; this is a survey result, not an annual loss estimate.
+- **Southern root-knot nematode, *Meloidogyne incognita*:** CABI datasheet 33245 (the same datasheet as PlantwisePlus Knowledge Bank PWKB.Species.33245, https://doi.org/10.1079/PWKB.Species.33245; v8.1 fixed an old link to 33247, the wrong species). **v8.2 check (2026-10-17):** the province list was compared with the datasheet's distribution table (https://www.cabi.org/isc/datasheet/33245). China is listed as *Widespread*; the 20 provinces under it (all *Present*) are Anhui, Fujian, Guangdong, Guangxi, Guizhou, Hainan, Hebei, Heilongjiang, Henan, Hubei, Hunan, Jiangsu, Jiangxi, Nei Menggu (Inner Mongolia), Qinghai, Shaanxi, Shandong, Sichuan, Yunnan and Zhejiang, which match the map exactly. The table's references date from 1986 to 2002 (mainly Yang et al. 1991, *Afro-Asian Journal of Nematology* 1(1): 91–93, and CABI/EPPO 2002); the card says so. Taiwan is drawn (team decision, 2026-10-17) from its own row of the same table (*Present*, Taylor et al. 1982), so the card counts 21 provincial-level regions with references from 1982 to 2002. Not drawn: Ningxia (named only in the datasheet text as a protected-cultivation record, Yang et al. 1991).
+- **Xinjiang survey:** Zhou et al. (2026; online 2024), *JIA* 25(6): 2475–2484, “The occurrence and genetic diversity of vegetable root-knot nematodes in Xinjiang Uyghur Autonomous Region,” *Journal of Integrative Agriculture*, DOI https://doi.org/10.1016/j.jia.2024.12.008. The survey covered 2021–2023 and found root-knot nematodes in 57 of 130 vegetable samples; this is a survey result, not an annual loss estimate.
 - **National southern root-knot loss:** no recent, reliable species-specific China-wide loss figure was found. The homepage does not invent one.
 
+
+## D. v8.1 display changes (China map)
+
+- One species on the map at a time (switch above the map). Soybean cyst nematode = circles, southern root-knot nematode = triangles; one flat marker per province at the schematic anchor (no stems, no clusters).
+- The Xinjiang survey is no longer a gold map category; Xinjiang is an ordinary *M. incognita* record (from Zhou et al.) and the survey is the third tab (Xinjiang survey) of the root-knot species card (v8.2: tabs replace the expanding sections, so the card keeps one height and never covers the map).
+- The "Northeast" and "Huang-Huai-Hai" rings/labels were removed: they were editorial highlights, not data.
+- US$120 million+ is labelled as a historical estimate cited by Peng et al. 2021.
+
+## E. World case photos (v8.1)
+
+Seven representative species photos, see `img/home-cases/CREDITS.md`. They are not photographs from the marker locations.
+
+## China base map (v8.2)
+
+Every China map on the homepage (the 3D China map and its 2D stand-in, the world map's China shape, the dot-grid China maps) now uses the **Standard Map of China** (中国地图, English edition, 1:14 000 000, vertical layout with the South China Sea), Ministry of Natural Resources of the PRC, standard map service, **review no. GS(2022)4308** (自然资源部 监制). The review number is printed under the China map, in the world map caption and in the homepage footer.
+
+How it was taken from the sheet (`tools/china_standard_map.py`, output `data/china-standard-map.json`): the CorelDRAW EPS paths were read directly; the province and island fills (plus the South China Sea island symbols) were merged into one land mask at about 1 km per pixel and traced; the ten dashes of the national boundary in the South China Sea were taken from the boundary symbol. The sheet was georeferenced by fitting a projection (oblique Lambert azimuthal equal-area, centre about 103.9°E 34.7°N, plus a similarity transform; median error about 3.5 km) and converted to lon/lat, then drawn in the site's existing China frame. Boundaries, islands and the dash line come from the sheet; they were not redrawn. The world map outside China is still Natural Earth.

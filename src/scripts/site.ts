@@ -1,4 +1,5 @@
 import './toolkit';
+import { initPersonCards } from './person-cards';
 /** Entry point for every inner page (bundled by Astro). */
 import { initGlass } from './glass';
 import { initLiquidGlass } from './liquid-glass';
@@ -20,6 +21,7 @@ function start(): void {
   initMascot();
   initEnhance();
   initSmooth();
+  initPersonCards();
 }
 
 if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);

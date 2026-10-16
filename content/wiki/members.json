@@ -12,241 +12,309 @@
   "search": true,
   "blocks": [
     {
+      "_template": "heading",
       "text": "Wet Lab",
       "level": 2,
-      "attributes": "#wet-lab toc=\"Wet Lab\"",
-      "_template": "heading"
+      "attributes": "#wet-lab toc=\"Wet Lab\""
     },
     {
-      "text": "Fu Xinya",
-      "level": 3,
-      "attributes": "#fu-xinya toc=\"Fu Xinya\"",
-      "_template": "heading"
+      "_template": "membergrid",
+      "items": [
+        {
+          "name": "Peng Ziyi",
+          "chineseName": "彭梓懿",
+          "anchor": "ziyi-peng",
+          "image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-491794815e37-ziyi-peng.avif",
+          "role": "Wet Lab",
+          "major": "Biological Sciences (Boling Class)",
+          "cohort": "2024",
+          "introduction": "Hello, I'm Ziyi Peng, a 2024 Biological Sciences Boling Class student at Nankai University. Beyond my passion for biology, I'm a Minecraft enthusiast actively building our campus MC club, a sweet tooth, and a music lover who enjoys playing various instruments. Excited to join iGEM and connect with fellow science enthusiasts!"
+        },
+        {
+          "name": "Liu Yifei",
+          "chineseName": "刘一菲",
+          "anchor": "ivy-liu",
+          "image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-120e8273aa67-ivy-liu.avif",
+          "role": "Wet Lab",
+          "major": "Biological Sciences",
+          "cohort": "2024",
+          "introduction": "Hello, I'm Liu Yifei, but you can also call me Ivy. I enjoy sports, travelling, and meeting new people. I'm open-minded and energetic, and I love exploring unfamiliar places and making new connections. An energy bar and orange juice are my go-to snacks."
+        },
+        {
+          "name": "Fu Xinya",
+          "chineseName": "付欣雅",
+          "anchor": "fu-xinya",
+          "image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-8fa16e16e7a4-fu-xinya.avif",
+          "role": "Wet Lab / Parts / Design / Project Management / Student Leader",
+          "major": "Biological Sciences",
+          "cohort": "2024",
+          "introduction": "Hello, I'm Fu Xinya. I enjoy hiking and reading, and I make time for both outdoor adventures and quiet moments with a book. I'm meticulous, resilient, and responsible in my approach to everyday challenges. My favourite snacks are yogurt and dried cranberries, and if I had to pick an animal to represent me, it would be the red panda."
+        },
+        {
+          "name": "Chen Feiyue",
+          "chineseName": "陈费月",
+          "anchor": "chen-feiyue",
+          "image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-e8eae705159b-chen-feiyue.avif",
+          "role": "Wet Lab / Dry Lab / Parts / Design / Project Management",
+          "major": "Biological Sciences",
+          "cohort": "2024",
+          "introduction": "I enjoy playing basketball and exploring open-source tools. Patient and attentive to detail, I like working through questions carefully and discovering how things work. Dark chocolate and black coffee are my favourite companions, and if I had to choose an animal to represent me, it would be the owl."
+        },
+        {
+          "name": "Kuang Yinzi",
+          "chineseName": "匡胤子",
+          "anchor": "kuang-yinzi",
+          "image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-73eaaceee28d-kuang-yinzi.avif",
+          "role": "Wet Lab / Parts",
+          "major": "Biological Sciences",
+          "cohort": "2025",
+          "introduction": "I'm Kuang Yinzi. I'm introverted and slow to warm up, but I become easygoing once I'm comfortable. My biggest hobby is playing video games. In sports, I like table tennis and badminton, enjoying the focused, back-and-forth rhythm of a match. When relaxing, I also listen to music and scroll through short videos. I'm also interested in synthetic biology, drawn to the combination of biology and engineering, and hope to learn more about it in the future."
+        },
+        {
+          "name": "Wang Qinghua",
+          "chineseName": "王清华",
+          "anchor": "wang-qinghua",
+          "image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-08d95b754ff3-wang-qinghua.avif",
+          "role": "Wet Lab / Fundraising",
+          "major": "Biological Sciences",
+          "cohort": "2024",
+          "introduction": "I'm Wang Qinghua. I love wandering outdoors and observing tiny creatures that are easy to overlook. I find beauty in living things and am endlessly curious about the natural world. I'm warm and proactive, and I enjoy exploring my surroundings. Lemon candy and oolong tea are among my favourite treats."
+        },
+        {
+          "name": "Ye Shulan",
+          "chineseName": "叶书兰",
+          "anchor": "shulan-ye-student",
+          "image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-0f149e57e32b-shulan-ye.avif",
+          "role": "Wet Lab",
+          "major": "",
+          "cohort": "2024",
+          "introduction": "I've loved volleyball for a long time and wish I had more chances to get on the court. I'm also a big foodie and an avid city walker, always happy to discover a new street or something delicious. My favourite snack is potato chips, and I haven't decided on an animal to represent me yet."
+        },
+        {
+          "name": "Huang Xinqi",
+          "chineseName": "黄鑫淇",
+          "anchor": "huang-xinqi",
+          "image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-f0001fee5950-huang-xinqi.avif",
+          "role": "Wet Lab / Dry Lab",
+          "major": "Biological Sciences",
+          "cohort": "",
+          "introduction": "I enjoy reading novels and jogging, making time for both imagined worlds and the outdoors. Calm and thoughtful, I value the friendships I've formed with my teammates. Milk tea and mixed nuts are my go-to treats, and I identify with the sea turtle."
+        },
+        {
+          "name": "Song Xinying",
+          "chineseName": "宋馨盈",
+          "anchor": "song-xinying",
+          "image": "",
+          "role": "Wet Lab",
+          "major": "",
+          "cohort": "2025",
+          "introduction": "I'm Song Xinying. I'm equally passionate about biology and art, and that passion is what brought me to this team. In my daily life, I enjoy a range of hobbies such as writing, photography, and listening to music. Though I may seem introverted at first, I have a rich inner world and look forward to meeting people from different backgrounds."
+        },
+        {
+          "name": "Yuanwen Luo",
+          "chineseName": "罗苑汶",
+          "anchor": "yuanwen-luo",
+          "image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-270ecf6f2522-yuanwen-luo.avif",
+          "role": "Wet Lab",
+          "major": "Biological Sciences (Boling Class)",
+          "cohort": "2024",
+          "introduction": "I enjoy making crafts and trying different foods. Curious and attentive to detail, I like learning new things and working with others. My hobbies give me the chance to create something by hand and discover something new."
+        },
+        {
+          "name": "Wang Chang",
+          "chineseName": "王昶",
+          "anchor": "chang-wang",
+          "image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-322c60bc159e-chang-wang.avif",
+          "role": "Wet Lab / HP",
+          "major": "Biological Sciences (Boling Class)",
+          "cohort": "2024",
+          "introduction": "Wang Chang is a nature enthusiast and an avid arthropod fan! Blessed with a leaping train of thought, unpredictable bursts of passion, and a dash of good‑humour. He enjoys drawing, reading books, and rolling d20s down in the dungeons. Occasionally, he wishes he could be a moth."
+        },
+        {
+          "name": "Shizhao Zheng",
+          "chineseName": "郑士钊",
+          "anchor": "shizhao-zheng",
+          "image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-001ba276229e-shizhao-zheng.avif",
+          "role": "Wet Lab",
+          "major": "Biological Sciences (Boling Class)",
+          "cohort": "",
+          "introduction": "Hi there! I'm a person with wide-ranging interests and I often come up with spontaneous insights and creative ideas. I'm delighted to apply many of these ideas to practical innovation and services."
+        },
+        {
+          "name": "Zhang Hongbo",
+          "chineseName": "张鸿波",
+          "anchor": "zhang-hongbo",
+          "image": "",
+          "role": "Wet Lab / Fundraising",
+          "major": "",
+          "cohort": "Ph.D. Year 1",
+          "introduction": "I'm Zhang Hongbo, a first-year Ph.D. student. This is my second time participating in iGEM, which has given me valuable experience in early-stage project design and teamwork. I love playing volleyball and growing plants, hobbies that cultivate my patience and team spirit. I am highly collaborative and proactive. During the early stages of the competition, I actively engaged in multiple discussions to determine the project topic and specific experimental directions."
+        }
+      ]
     },
     {
-      "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-8fa16e16e7a4-fu-xinya.avif",
-      "alt": "Fu Xinya",
-      "body": "",
-      "layout": "left",
-      "imageWidth": "narrow",
-      "accompanyingBody": "Major: Biological Sciences, Class of 2028\n\nRole: Wet Lab / Parts / Design / Project Management\n\nHello everyone, nice to meet you. I hope this page gives you a glimpse of who I am.\n",
-      "_template": "image"
-    },
-    {
-      "text": "Chen Feiyue",
-      "level": 3,
-      "attributes": "#chen-feiyue toc=\"Chen Feiyue\"",
-      "_template": "heading"
-    },
-    {
-      "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-e8eae705159b-chen-feiyue.avif",
-      "alt": "Chen Feiyue",
-      "body": "",
-      "layout": "left",
-      "imageWidth": "narrow",
-      "accompanyingBody": "Major: Biological Sciences, Class of 2028\n\nRole: Wet Lab / Dry Lab / Parts / Design / Project Management / Software\n\nI am a junior majoring in Biological Sciences. My main work focuses on wet-lab experiments.\n",
-      "_template": "image"
-    },
-    {
-      "text": "Kuang Yinzi",
-      "level": 3,
-      "attributes": "#kuang-yinzi toc=\"Kuang Yinzi\"",
-      "_template": "heading"
-    },
-    {
-      "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-73eaaceee28d-kuang-yinzi.avif",
-      "alt": "Kuang Yinzi",
-      "body": "",
-      "layout": "left",
-      "imageWidth": "narrow",
-      "accompanyingBody": "Major: Biological Sciences, Class of 2029\n\nRole: Wet lab  / Parts\n\nI am interested in synthetic biology and responsible for the wet-lab group’s work.\n",
-      "_template": "image"
-    },
-    {
-      "text": "Wang Qinghua",
-      "level": 3,
-      "attributes": "#wang-qinghua toc=\"Wang Qinghua\"",
-      "_template": "heading"
-    },
-    {
-      "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-08d95b754ff3-wang-qinghua.avif",
-      "alt": "Wang Qinghua",
-      "body": "",
-      "layout": "left",
-      "imageWidth": "narrow",
-      "accompanyingBody": "Major: Biological Sciences, Class of 2028\n\nRole: Wet lab / Fundraising\n\nObsessed with exploring the beauty of life, with a wild heart and endless curiosity about life.\n",
-      "_template": "image"
-    },
-    {
-      "text": "Huang Xinqi",
-      "level": 3,
-      "attributes": "#huang-xinqi toc=\"Huang Xinqi\"",
-      "_template": "heading"
-    },
-    {
-      "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-f0001fee5950-huang-xinqi.avif",
-      "alt": "Huang Xinqi",
-      "body": "",
-      "layout": "left",
-      "imageWidth": "narrow",
-      "accompanyingBody": "Major: Biological Sciences, Class of 2028\n\nRole: Wet Lab / Dry Lab\n\nGrateful for this encounter.\n",
-      "_template": "image"
-    },
-    {
-      "text": "Ivy Liu",
-      "level": 3,
-      "attributes": "#ivy-liu toc=\"Ivy Liu\"",
-      "_template": "heading"
-    },
-    {
-      "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-120e8273aa67-ivy-liu.avif",
-      "alt": "Ivy Liu",
-      "body": "",
-      "layout": "left",
-      "imageWidth": "narrow",
-      "accompanyingBody": "Major: Biological Sciences, Class of 2028\n\nRole: Wet lab\n\na person who loves sports and travelling .Nice to meet you all！\n",
-      "_template": "image"
-    },
-    {
-      "text": "Shizhao Zheng",
-      "level": 3,
-      "attributes": "#shizhao-zheng toc=\"Shizhao Zheng\"",
-      "_template": "heading"
-    },
-    {
-      "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-001ba276229e-shizhao-zheng.avif",
-      "alt": "Shizhao Zheng",
-      "body": "",
-      "layout": "left",
-      "imageWidth": "narrow",
-      "accompanyingBody": "Major: Biological Sciences (Boling Class), Class of 2028\n\nRole: Wet La / Education\n\nHi there! I'm a person with wide-ranging interests and I often come up with spontaneous insights and creative ideas. I'm delighted to apply many of these ideas to practical innovation and services.\n",
-      "_template": "image"
-    },
-    {
-      "text": "Yuanwen Luo",
-      "level": 3,
-      "attributes": "#yuanwen-luo toc=\"Yuanwen Luo\"",
-      "_template": "heading"
-    },
-    {
-      "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-270ecf6f2522-yuanwen-luo.avif",
-      "alt": "Yuanwen Luo",
-      "body": "",
-      "layout": "left",
-      "imageWidth": "narrow",
-      "accompanyingBody": "Major: Biological Sciences (Boling Class), Class of 2028\n\nRole: Wet Lab / Education\n\nHi, I’m Yuanwen Luo. I’m a curious person who enjoys learning new things and meeting new people.\n",
-      "_template": "image"
-    },
-    {
-      "text": "Chang Wang",
-      "level": 3,
-      "attributes": "#chang-wang toc=\"Chang Wang\"",
-      "_template": "heading"
-    },
-    {
-      "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-322c60bc159e-chang-wang.avif",
-      "alt": "Chang Wang",
-      "body": "",
-      "layout": "left",
-      "imageWidth": "narrow",
-      "accompanyingBody": "Major: Biological Sciences (Boling Class), Class of 2028\n\nRole: Wet Lab / Human Practice\n\nThis is Chang Wang. He says hello and had no clue what to put down here, btw Hexapoda is coooool！\n",
-      "_template": "image"
-    },
-    {
-      "text": "Ziyi Peng",
-      "level": 3,
-      "attributes": "#ziyi-peng toc=\"Ziyi Peng\"",
-      "_template": "heading"
-    },
-    {
-      "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-491794815e37-ziyi-peng.avif",
-      "alt": "Ziyi Peng",
-      "body": "",
-      "layout": "left",
-      "imageWidth": "narrow",
-      "accompanyingBody": "Major: Biological Sciences (Boling Class), Class of 2028\n\nRole: Wet Lab\n\nHello, I'm Ziyi Peng, a 2024 Biological Sciences Boling Class student at Nankai University's College of Life Sciences. Passionate about biology, I'm excited to join this international competition and connect with fellow science enthusiasts!\n",
-      "_template": "image"
-    },
-    {
+      "_template": "heading",
       "text": "Dry Lab",
       "level": 2,
-      "attributes": "#dry-lab toc=\"Dry Lab\"",
-      "_template": "heading"
+      "attributes": "#dry-lab toc=\"Dry Lab\""
     },
     {
-      "text": "Ruoxi Yang｜Student Leader",
-      "level": 3,
-      "attributes": "#ruoxi-yang-student-leader toc=\"Ruoxi Yang｜Student Leader\"",
-      "_template": "heading"
+      "_template": "membergrid",
+      "items": [
+        {
+          "name": "Yang Ruoxi",
+          "chineseName": "杨若希",
+          "anchor": "ruoxi-yang-student-leader",
+          "image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-5667764dc7f7-ruoxi-yang.avif",
+          "role": "Dry Lab / Student Leader",
+          "major": "",
+          "cohort": "2024",
+          "introduction": "I'm Yang Ruoxi. I love art, music, and film, and I enjoy exploring different forms of expression. I sometimes spend my free time analyzing lyrics and reading horoscopes, and I'm interested in astrology. These interests offer a glimpse into what catches my attention outside my academic work."
+        },
+        {
+          "name": "Song Yanmei",
+          "chineseName": "宋滟镁",
+          "anchor": "yanmei-song-student",
+          "image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-456cf76f9557-yanmei-song.avif",
+          "role": "Dry Lab",
+          "major": "",
+          "cohort": "2024",
+          "introduction": "I enjoy science-fiction films and expressing imaginative ideas through painting. My interest in science goes hand in hand with my love of art, giving me different ways to explore what intrigues me. I'm analytical and creative, and I enjoy working with others."
+        },
+        {
+          "name": "Guan Zhiyuan",
+          "chineseName": "关志远",
+          "anchor": "zhiyuan-guan-student",
+          "image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-7db5eeb70e57-zhiyuan-guan.avif",
+          "role": "Dry Lab",
+          "major": "Biological Science",
+          "cohort": "2024",
+          "introduction": "Hi everyone, I’m Guan Zhiyuan! I enjoy exploring unfamiliar things and trying something new. I also love a good book, especially psychology books and novels. I have plenty of hobbies, though I’m more of a curious beginner than an expert in any of them."
+        },
+        {
+          "name": "Zhang Zhanning",
+          "chineseName": "张展宁",
+          "anchor": "zhanning-zhang-advisor",
+          "image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-ddac5d034258-zhanning-zhang.avif",
+          "role": "Dry Lab / Advisor",
+          "major": "",
+          "cohort": "",
+          "introduction": "As a master's student at Nankai University focusing on multiomics and  scientific foundation models, Roy Zhang helps shape the team's dry lab  strategy. He designs and screens protein candidates, runs molecular  simulations, and translates computational findings into experimental  priorities. Returning to iGEM, he brings experience in omics analysis and  model training to support the design of the team's yeast biosensor."
+        }
+      ]
     },
     {
-      "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-5667764dc7f7-ruoxi-yang.avif",
-      "alt": "Ruoxi Yang",
-      "body": "",
-      "layout": "left",
-      "imageWidth": "narrow",
-      "accompanyingBody": "Hi, I’m Ruoxi! I mainly work on dry lab, and as team leader, I also help  connect people, coordinate our work, and keep things moving. Outside  iGEM, I’m an art, music, and film lover. I also have an interest in astrology  and occasionally spend time studying lyrics and horoscopes.\n",
-      "_template": "image"
+      "_template": "heading",
+      "text": "Human Practices",
+      "level": 2,
+      "attributes": "#human-practices toc=\"Human Practices\""
     },
     {
-      "text": "Zhanning Zhang｜Advisor",
-      "level": 3,
-      "attributes": "#zhanning-zhang-advisor toc=\"Zhanning Zhang｜Advisor\"",
-      "_template": "heading"
+      "_template": "membergrid",
+      "items": [
+        {
+          "name": "Ma Peisong",
+          "chineseName": "马培松",
+          "anchor": "ma-peisong",
+          "image": "",
+          "role": "Human Practices Captain",
+          "major": "Biology and Medicine",
+          "cohort": "Master’s student",
+          "introduction": "I’m the captain of Human Practices of NKU-iGEM. I’m a master student majoring in Biology and Medicine at Nankai University. I oversee the whole HP work, build the link between our research and society, and lead the team to finish stakeholder interviews, public outreach, social practice, Wiki writing and media production."
+        },
+        {
+          "name": "Han Xinyu",
+          "chineseName": "韩欣妤",
+          "anchor": "han-xinyu",
+          "image": "",
+          "role": "Human Practices",
+          "major": "",
+          "cohort": "2025",
+          "introduction": "As a creative team member working on Human Practices and visual design, I enjoy illustration, exploring nature, and crafting in my spare time. I specialize in turning complex scientific concepts into intuitive visuals and accessible science communication. Detail-oriented, I create engaging outreach materials that connect research with the public. Ultimately, I hope to make science more approachable to everyone."
+        },
+        {
+          "name": "Chen Jiarui",
+          "chineseName": "陈家锐",
+          "anchor": "chen-jiarui",
+          "image": "",
+          "role": "Human Practices & Wiki",
+          "major": "Computer Science",
+          "cohort": "2025",
+          "introduction": "I'm Chen Jiarui, a computer science student and a self-described night owl. I enjoy experimenting with AI tools and playing Valorant, and I joke that waking up is much harder than falling asleep. My favourite snack is salted chips, and if I had to choose an animal to represent me, it would be a dog."
+        },
+        {
+          "name": "Chen Yuxin",
+          "chineseName": "陈雨欣",
+          "anchor": "chen-yuxin",
+          "image": "",
+          "role": "Human Practices",
+          "major": "",
+          "cohort": "2024",
+          "introduction": "For me, music and visuals are closely connected. I love anime music, enjoy singing, and often spend my free time creating MAD edits in Adobe After Effects. I'm gentle and optimistic, and I enjoy capturing moments and expressing my ideas through visual storytelling."
+        },
+        {
+          "name": "Kaiben Zhang",
+          "chineseName": "张开奔",
+          "anchor": "kaiben-zhang",
+          "image": "",
+          "role": "Human Practices",
+          "major": "",
+          "cohort": "2023",
+          "introduction": "I'm Zhang Kaiben. I'm optimistic and enthusiastic about volunteering. I enjoy meeting people, bringing them together, and taking part in activities that connect me with the broader community. My curiosity and interest in sharing science draw me to conversations with people of different ages and backgrounds."
+        }
+      ]
     },
     {
-      "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-ddac5d034258-zhanning-zhang.avif",
-      "alt": "Zhanning Zhang",
-      "body": "",
-      "layout": "left",
-      "imageWidth": "narrow",
-      "accompanyingBody": "As a master's student at Nankai University focusing on multiomics and  scientific foundation models, Roy Zhang helps shape the team's dry lab  strategy. He designs and screens protein candidates, runs molecular  simulations, and translates computational findings into experimental  priorities. Returning to iGEM, he brings experience in omics analysis and  model training to support the design of the team's yeast biosensor.\n",
-      "_template": "image"
+      "_template": "heading",
+      "text": "Visual Design",
+      "level": 2,
+      "attributes": "#visual-design toc=\"Visual Design\""
     },
     {
-      "text": "Zhiyuan Guan｜Student",
-      "level": 3,
-      "attributes": "#zhiyuan-guan-student toc=\"Zhiyuan Guan｜Student\"",
-      "_template": "heading"
+      "_template": "membergrid",
+      "items": [
+        {
+          "name": "Yiling Chen",
+          "chineseName": "陈奕伶",
+          "anchor": "yiling-chen",
+          "image": "",
+          "role": "Visual Design",
+          "major": "Digital Interaction",
+          "cohort": "",
+          "introduction": "As a Digital Interaction major, I enjoy exploring how visuals and interactive experiences shape the way people connect with ideas. I am attentive to detail and thoughtful in my approach, while bringing enthusiasm and creative energy to collaborative work. Curious about fields beyond design, I welcome opportunities to learn from people with different backgrounds and explore new ways to express ideas."
+        },
+        {
+          "name": "Ruitong Bai",
+          "chineseName": "白芮桐",
+          "anchor": "ruitong-bai",
+          "image": "",
+          "role": "Visual Design",
+          "major": "Visual Communication Design",
+          "cohort": "",
+          "introduction": "Blinda is an undergraduate student in Visual Communication Design who enjoys getting lost in words and films—or simply letting her mind wander. Patient and approachable, she enjoys exchanging ideas with others and exploring different ways to express them. Her imagination often takes her in unexpected directions, while her attention to detail helps her give those ideas a clear visual form."
+        }
+      ]
     },
     {
-      "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-7db5eeb70e57-zhiyuan-guan.avif",
-      "alt": "Zhiyuan Guan",
-      "body": "",
-      "layout": "left",
-      "imageWidth": "narrow",
-      "accompanyingBody": "English Name： Zhiyuan Guan  Major: Biological Science  Grade: Undergraduates, Class of 2024  Main Responsibility：Dry Lab Modeling，Software, Project Management  Motto: Stay hungry, stay foolish.\n",
-      "_template": "image"
+      "_template": "heading",
+      "text": "Advisors",
+      "level": 2,
+      "attributes": "#advisors toc=\"Advisors\""
     },
     {
-      "text": "Shulan Ye｜Student",
-      "level": 3,
-      "attributes": "#shulan-ye-student toc=\"Shulan Ye｜Student\"",
-      "_template": "heading"
-    },
-    {
-      "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-0f149e57e32b-shulan-ye.avif",
-      "alt": "Shulan Ye",
-      "body": "",
-      "layout": "left",
-      "imageWidth": "narrow",
-      "accompanyingBody": "Osanna  Team Members Dry Lab Software  Life is full of challenges and fun！\n",
-      "_template": "image"
-    },
-    {
-      "text": "Yanmei Song｜Student",
-      "level": 3,
-      "attributes": "#yanmei-song-student toc=\"Yanmei Song｜Student\"",
-      "_template": "heading"
-    },
-    {
-      "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-456cf76f9557-yanmei-song.avif",
-      "alt": "Yanmei Song",
-      "body": "",
-      "layout": "left",
-      "imageWidth": "narrow",
-      "accompanyingBody": "Song Yanmei  biological scienceclass: 2024  Dry Lab  I am Song Yanmei from Nankai University, focusing on the design and  improvement of economic modeling.  Song Yanmei, a dry lab enthusiast majoring in Biological Sciences. She has  a knack for designing and improving economic modeling, bridging the gap  between biology and economics. When not tweaking computational  models, you'll find her watching sci-fi movies. She dreams of making a real- world impact through iGEM.\n",
-      "_template": "image"
+      "_template": "membergrid",
+      "items": [
+        {
+          "name": "Zhiyi Zhu",
+          "chineseName": "朱至易",
+          "anchor": "zhiyi-zhu",
+          "image": "",
+          "role": "Advisor",
+          "major": "",
+          "cohort": "2023",
+          "introduction": "I'm Zhiyi Zhu. Last year I led NKU-China 2025 through the full iGEM season; this year I've returned as an advisor, standing one step behind the team instead of at the front. Still a Dionysus in human form—warm, open, always up for a genuine conversation, and forever ready to help. My reverence for life hasn't changed, nor has my belief that studying it pushes the frontier of human knowledge and feeds the flame of civilization. This year, I'm simply helping a new crew push it a little further—passing on what last season taught me, and learning from them in return."
+        }
+      ]
     }
   ]
 }

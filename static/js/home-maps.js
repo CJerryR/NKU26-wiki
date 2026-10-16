@@ -125,6 +125,7 @@
     var openCase = null, closeT = 0, openT = 0, overCard = false, overMark = null, hoverLockT = 0, hoverLocked = false, turnT = 0, turnEndT = 0;
     var fKick = H.$('[data-flip-kicker]', card), fTitle = H.$('[data-flip-title]', card), fFront = H.$('[data-flip-front]', card);
     var fLoss = H.$('[data-flip-loss]', card), fSrc = H.$('[data-flip-src]', card);
+    var fPhoto = H.$('[data-flip-photo]', card), fCredit = H.$('[data-flip-credit]', card);
     (REG.cases || []).forEach(function (c, i) {
       var b = document.createElement('button'); b.type = 'button'; b.className = 'wmark';
       b.style.left = ((c.lon + 180) * 2.5 / 9) + '%'; b.style.top = ((84 - c.lat) * 2.5 / 3.5) + '%'; b.style.setProperty('--d', (i * .35) + 's');
@@ -163,12 +164,19 @@
       var near = nearest(c.lon, c.lat, 6);
       fKick.textContent = cont.name || '';
       fTitle.textContent = c.region;
+      var ph = (REG.photos || {})[c.id];
+      fPhoto.innerHTML = ph ? '<img src="' + esc(ph.src) + '" width="' + ph.w + '" height="' + ph.h + '" alt="' + esc(ph.alt) + '" loading="lazy" decoding="async"><figcaption><i>' + esc(ph.species) + '</i> · representative image, not from this site</figcaption>' : '';
+      fPhoto.hidden = !ph;
       fFront.innerHTML = '<dt>Nematode</dt><dd>' + esc(c.nematode) + '<i>' + esc(c.species) + '</i></dd><dt>Crop</dt><dd>' + esc(c.crop) + '</dd>' +
         (near ? '<dt>Nearest sample</dt><dd><div class="flipcard__bar"><i style="width:' + Math.round(12 + near.l / LMAX * 88) + '%;background:' + ramp(near.l / LMAX) + '"></i></div><small>' + Math.round(near.value).toLocaleString('en') + ' plant-feeding nematodes per 100 g dry soil</small></dd>' : '');
       fLoss.textContent = c.loss;
       fSrc.innerHTML = c.source ? '<a href="' + esc(c.source.url) + '" target="_blank" rel="noopener">' + esc(c.source.title) + '</a> (' + esc(c.source.year) + ')' : '';
+      fCredit.innerHTML = ph ? '<b>Photo</b> ' + esc(ph.caption) + ' ' + esc(ph.credit) + ' <a href="' + esc(ph.source) + '" target="_blank" rel="noopener">Image source</a> · <a href="' + esc(ph.license) + '" target="_blank" rel="noopener">Licence</a>' : '';
+      fCredit.hidden = !ph;
       var pr = pin.getBoundingClientRect(), br = b.getBoundingClientRect(), x = br.left + br.width / 2 - pr.left, y = br.top + br.height / 2 - pr.top, cw = 300;
-      var left = x + 22 + cw > pr.width - 12 ? x - cw - 22 : x + 22, top = H.clamp(y - 70, 80, pr.height - 300);
+      var left = x + 22 + cw > pr.width - 12 ? x - cw - 22 : x + 22;
+      card.hidden = false;
+      var chH = card.offsetHeight || 420, top = H.clamp(y - 70, 80, Math.max(80, pr.height - chH - 16));
       card.style.left = left + 'px'; card.style.top = top + 'px';
       card.style.setProperty('--ox', left < x ? '100%' : '0');
       card.classList.remove('is-flipped');

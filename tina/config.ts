@@ -1,4 +1,4 @@
-import { defineConfig, type Template } from 'tinacms';
+import { defineConfig, type Template, type TinaField } from 'tinacms';
 import { toolkitTemplates } from './toolkit';
 
 const hosted = process.env.TINA_HOSTED === '1';
@@ -9,7 +9,30 @@ const mediaFields = [
   { type: 'number' as const, name: 'height', label: '窗口高度（300–1200 像素，默认 600）' },
   { type: 'string' as const, name: 'caption', label: '图注 / 说明', ui: { component: 'textarea' } },
 ];
+const identityFields: TinaField[] = [
+  {type:'string',name:'name',label:'英文姓名'},
+  {type:'string',name:'chineseName',label:'中文姓名'},
+  {type:'string',name:'anchor',label:'原有成员锚点'},
+  {type:'image',name:'image',label:'成员照片（可留空）'},
+  {type:'string',name:'role',label:'分组 / 职责'},
+];
+const memberCards: Template = {name:'membergrid',label:'成员翻转卡片',fields:[
+  {type:'object',name:'items',label:'成员',list:true,fields:[...identityFields,
+    {type:'string',name:'major',label:'专业 / 研究领域'},
+    {type:'string',name:'cohort',label:'年级（按原稿）'},
+    {type:'string',name:'introduction',label:'卡片背面介绍',ui:{component:'textarea'}},
+  ],ui:{itemProps:item=>({label:item.name || '成员'})}},
+]};
+const personalCredits: Template = {name:'creditgrid',label:'个人贡献卡片',fields:[
+  {type:'object',name:'items',label:'成员',list:true,fields:[...identityFields,
+    {type:'string',name:'tasks',label:'Tasks（逗号分隔）',ui:{component:'textarea'}},
+    {type:'object',name:'specificTasks',label:'Specific Tasks',list:true,fields:[
+      {type:'string',name:'text',label:'具体贡献',ui:{component:'textarea'}},
+    ],ui:{itemProps:item=>({label:item.text?.slice(0,65) || '贡献'})}},
+  ],ui:{itemProps:item=>({label:item.name || '成员'})}},
+]};
 const templates: Template[] = [
+  memberCards, personalCredits,
   ...toolkitTemplates,
   { name: 'protein', label: '蛋白质结构（可旋转）', fields: [
     ...mediaFields,

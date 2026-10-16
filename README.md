@@ -1,6 +1,6 @@
 # NKU-China Wiki v8.0 — 阶段版本
 
-2026 NKU-China（队伍编号 6303）的官方 Wiki 源码。本次整合团队初步审查的 V8.0 内容副本，已接入 Description、Background、Experiments、Protocols、Engineering、Results、Model、Contribution、Parts、Part Collection、Members、Attributions。HP、Education、Safety、Licensing、Model 1/2 保持空白正文、副标题及信息标签，保留页面框架与导航。首页和组件目录保留原内容。所有修改直接提交 main，以 commit 记录版本。
+2026 NKU-China（队伍编号 6303）的官方 Wiki 源码。以 Claude checkpoint16 与 local17 合并版本为基线，已在本地 Tina 整合第二轮 Description、Contribution、Engineering、Education、Results、Experiments、Safety 七页供稿。Protocols 并入 Experiments，旧地址保留兼容入口。HP 中文版总稿仅归档；HP、Licensing、Model 1/2 仍待后续供稿。团队终稿审核状态保持待审核。首页和新版 Tina 组件沿用基线。所有修改直接提交 main，以 commit 记录版本。
 
 - 仓库：https://gitlab.igem.org/2026/nku-china
 - Wiki：https://2026.igem.wiki/nku-china
@@ -29,3 +29,9 @@ GitLab Pages 在 main 上执行 npm run build 和 npm run audit。空正文是�
 部署回归检查：`npm run test:deployment`。实际使用的 CDN 映射及验证记录见 `content/cdn-assets.json`。重新验证可运行 `python3 tools/verify-cdn-assets.py --progress <完整上传记录路径> --public public --manifest content/cdn-assets.json`；HTTP、构建引用和浏览器验证分开记录。
 
 内容填充仍有 43 条材料待补及作者终稿复核事项；初步审查与本次发布授权不替代最终科学内容验收。Protocols 的 PDF 使用浏览器原生阅读器，并提供直接打开/下载链接。旧 protocols 和 part-collection 地址保留兼容页面。
+
+## 2026-10-16 第二轮本地内容
+
+本轮新增媒体18份（17张原图与1份PDF）目前使用本地编辑路径，原始SHA已核对，正式发布前须迁移官方Uploads；前述CDN数量是本轮基线记录。本轮未推送或发布。内容唯一编辑源仍为content/wiki/*.json；生成Markdown不单独手改。图片采用新版白框、独立图注、尺寸比例、双图与手机单列；另补图片加载占位和直接章节链接的初始布局稳定。详细方案、原文来源、缺项、验收与备份见工作区outputs/第二轮内容排版-20261016。
+
+2026-10-16 成员补充：Member_Formatted.docx的24位成员与新增HP队长马培松已整合为25张Team翻转卡片和25张Attributions个人贡献卡片，新增Tina“成员翻转卡片”“个人贡献卡片”模块。现有15张照片沿用，10位暂无照片使用姓名字母。具体文案按原稿逐条保留；两处空介绍沿用此前供稿。新模板已在本地Tina完成保存与精确恢复测试。

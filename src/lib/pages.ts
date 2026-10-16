@@ -6,6 +6,9 @@ export type PageEntry = CollectionEntry<'pages'>;
 export const submittedPages = new Set([
   'description', 'attributions', 'members', 'experiments', 'protocols',
   'contribution', 'engineering', 'results', 'parts', 'part-collection', 'model', 'background',
+  'education', 'safety',
+  'education', 'safety',
+  'education', 'safety',
 ]);
 
 /** Every published page (drafts left out), in a stable order. */

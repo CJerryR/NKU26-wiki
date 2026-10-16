@@ -96,7 +96,23 @@ export function initToc(): void {
       if (ring) ring.style.strokeDashoffset = (94.25 * (1 - p)).toFixed(2);
     }
   };
-  const remeasure = () => { measure(); update(); placeFilm(true); };
+  // Keep a direct section URL aligned while fonts and embedded readers settle.
+  // Yield permanently as soon as the reader scrolls or interacts with the page.
+  let initialTarget: HTMLElement | null = null;
+  try { initialTarget = document.getElementById(decodeURIComponent(location.hash.slice(1))); } catch { /* malformed external hash */ }
+  let followInitialHash = !!initialTarget && !!article?.contains(initialTarget);
+  const releaseInitialHash = () => { followInitialHash = false; };
+  for (const event of ['wheel', 'touchstart', 'pointerdown', 'keydown', 'hashchange']) {
+    addEventListener(event, releaseInitialHash, { passive: true, once: true });
+  }
+  const alignInitialHash = () => {
+    if (!followInitialHash || !initialTarget) return;
+    const margin = parseFloat(getComputedStyle(initialTarget).scrollMarginTop) || 0;
+    if (Math.abs(initialTarget.getBoundingClientRect().top - margin) > 2) {
+      initialTarget.scrollIntoView({ block: 'start', behavior: 'instant' as ScrollBehavior });
+    }
+  };
+  const remeasure = () => { measure(); update(); placeFilm(true); requestAnimationFrame(alignInitialHash); };
   measure();
   const main = document.querySelector('main');
   if (main && 'ResizeObserver' in window) new ResizeObserver(remeasure).observe(main);

@@ -380,6 +380,54 @@ Figure 11. Schematic diagram of sTF Expression Cassette transformation.
 
 :::
 
+Subsequently, we co-transformed the p426-SNR52p-gGal4-SUP4t plasmid together with the Gal1/10bp-Betaxanthin Expression Cassette. The *Gal4* gene was successfully knocked out, and the betaxanthin synthase gene under the control of the Gal1/10 bidirectional promoter was simultaneously knocked in (Figure 12).
+
+:::figure
+
+![Figure 12. Schematic diagram of Gal1/10bp-Betaxanthin Expression Cassette transformation (a) and transformant validation (b).](/img/uploads/round2/r2-66c1379247d8-fig2-4-12.png)
+
+**Figure 12.** Schematic diagram of Gal1/10bp-Betaxanthin Expression Cassette transformation (a) and transformant validation (b).
+
+:::
+
+Finally, we co-transformed the p426-SNR52p-gSTE2-SUP4t plasmid and linearized pRS315-TEF1p-GPR2 plasmid. The *GPR2* gene was successfully recombined into the *STE2* locus.
+
+#### Learn {#learn-5 toc="Learn"}
+
+So far, the chassis engineered yeast strain of our project has been constructed. Meanwhile, the dry lab finished the modification of GPR2 mutants. We therefore moved to the next cycle to characterize the screened GPR2 mutants.
+
+### The Fifth Cycle {#the-fifth-cycle toc="The Fifth Cycle"}
+
+#### Design {#design-6 toc="Design"}
+
+Based on the results from previous cycles and dry lab, we still used one-step cloning to construct plasmids for transformation (Figure 1). Strain NKU-Y06 ([Wet Lab — Experiments — Strain Construction](/experiments/#strain-construction)) was utilized for genetic modification.
+
+:::figure
+
+![Figure 1. Plasmid maps of pRS315-TEF1p-GPR2-N84V and pRS315-TEF1p-GPR2-V368R.](/img/uploads/round2/r2-5c10cfcd0e4c-fig2-5-1.png)
+
+**Figure 1.** Plasmid maps of pRS315-TEF1p-GPR2-N84V and pRS315-TEF1p-GPR2-V368R.
+
+:::
+
+#### Build and Test {#build-and-test toc="Build and Test"}
+
+We successfully constructed two plasmids, pRS315-TEF1p-GPR2-N84V and pRS315-TEF1p-GPR2-V368R, via one-step cloning. Sequencing verified that their sequences were correct (Figure 2).
+
+:::figure
+
+![Figure 2. Construction of pRS315-TEF1p-GPR2-N84V (a) and pRS315-TEF1p-GPR2-V368R (b). Whole-plasmid sequencing confirmed the correct base sequences in key regions.](/img/uploads/round2/r2-28480e6cf5ad-fig2-5-2.png)
+
+**Figure 2.** Construction of pRS315-TEF1p-GPR2-N84V (a) and pRS315-TEF1p-GPR2-V368R (b). Whole-plasmid sequencing confirmed the correct base sequences in key regions.
+
+:::
+
+Subsequently, we mixed the p426-SNR52p-gSTE2-SUP4t plasmid with each of the two plasmids mentioned above and co-transformed them into strain NKU-Y06. The recombination locus was identical to that used for GPR2 knock-in. After transformant validation, we successfully obtained two strains carrying GPR2 mutants.
+
+#### Learn {#learn-6 toc="Learn"}
+
+This cycle is hereby concluded. The strains constructed in this cycle can only function under laboratory conditions. For field applications, product formulation and packaging of the strains are required. Therefore, we proceeded to the third major DBTL cycle.
+
 ### References {#references toc="References"}
 
 Fan C, Yuan J. Reshaping the yeast galactose regulon via GPCR signaling cascade. Cell Rep Methods. 2023 Dec 18;3(12):100647. doi: 10.1016/j.crmeth.2023.100647. Epub 2023 Nov 20. PMID: 37989311; PMCID: PMC10753199.
@@ -389,3 +437,107 @@ Cong Fan, Nike He, Jifeng Yuan, Cascaded amplifying circuit enables sensitive de
 James E. DiCarlo, Julie E. Norville, Prashant Mali, Xavier Rios, John Aach, George M. Church, Genome engineering in Saccharomyces cerevisiae using CRISPR-Cas systems, Nucleic Acids Research, Volume 41, Issue 7, 1 April 2013, Pages 4336–4343, [https://doi.org/10.1093/nar/gkt135](https://doi.org/10.1093/nar/gkt135)，
 
 Mans R, Wijsman M, Daran-Lapujade P, Daran JM. A protocol for introduction of multiple genetic modifications in Saccharomyces cerevisiae using CRISPR/Cas9. FEMS Yeast Res. 2018 Nov 1;18(7):foy063. doi: 10.1093/femsyr/foy063. PMID: 29860374; PMCID: PMC6074844.
+
+## DBTL-3: Test Strip Development and Productization {#dbtl-3-test-strip-development-and-productization toc="DBTL-3: Test Strip Development and Productization"}
+
+Building upon the engineered chassis strain constructed in previous DBTL cycles, we turned to another key project objective: developing an affordable, convenient, and user-friendly colorimetric detection platform. To achieve this, we executed subsequent engineering cycles focused on cell immobilization and test-strip productization. This section details two overarching DBTL cycles—test-strip formulation using engineered yeast and on-strip colorimetric development—each encompassing several sub-iterative cycles that drive continuous optimization.
+
+### The First Cycle: Test-Strip Formulation & Processing {#the-first-cycle-test-strip-formulation-processing toc="The First Cycle: Test-Strip Formulation & Processing"}
+
+To create an accessible, rapid, and low-cost live-cell test strip, we developed a standardized, transferable workflow for yeast cell immobilization and freeze-drying. This major cycle comprises three sub-iterative DBTL cycles: Substrate Selection, Surface Modification & Spotting Optimization, and Elution Method Refinement.
+
+#### Sub-cycle 1: Substrate Selection {#sub-cycle-1-substrate-selection toc="Sub-cycle 1: Substrate Selection"}
+
+**Design**
+
+An ideal test-strip substrate must exhibit high cell-loading capacity, excellent mechanical stability, batch-to-batch reproducibility, and high biocompatibility during both freeze-drying and reactivation. We selected four candidate substrates representing distinct physical/chemical properties: Qualitative Filter Paper, Laboratory Paper Towels, Lens Paper, and Weighing Paper.
+
+Using a first-generation freeze-drying protectant (glucose-free YPD + sucrose), we performed a comparative evaluation via freeze-drying, cell elution, and colony counting to establish an initial benchmark.
+
+**Build & Test**
+
+Cells were suspended in the protectant, spotted onto each substrate, freeze-dried, eluted, and plated for viable colony counting. The following sections present our experimental results.
+
+<div class="wiki-toolkit-block"><wiki-toolkit data-type="datatable" data-props="{&quot;_template&quot;:&quot;datatable&quot;,&quot;title&quot;:&quot;Table 1. First-Generation Freeze-Drying Plate Counts&quot;,&quot;csv&quot;:&quot;Substrate,Cell Survival Rate,Processability &amp; Handling,Spotting Performance\nQualitative Filter Paper,8%,Excellent,Moderate (liquid spreads slightly)\nWeighing Paper,27%,Poor,Poor (droplet beading on surface)\nPaper Towels,10%,Poor (non-uniform),Moderate\nLens Paper,3%,Poor (too fragile),Poor\n&quot;,&quot;caption&quot;:&quot;Qualitative Filter Paper: Easy to cut, structurally stable, and provided consistent liquid absorption, yielding an 8% cell recovery rate. Weighing Paper: High surface hydrophobic resistance resulted in poor liquid absorption; droplets formed raised beads on the surface without infiltrating, causing low batch stability despite a high nominal recovery rate (27%). Paper Towel: Poor batch-to-batch uniformity and structural inconsistency made uniform cutting impossible. Lens Paper: Exceptionally thin and fragile, difficult to handle, and offered poor cell loading (3% recovery).&quot;}"><div class="wiki-toolkit-fallback"><p><strong>Table 1. First-Generation Freeze-Drying Plate Counts</strong></p><div class="table-wrap"><table><thead><tr><th>Substrate</th><th>Cell Survival Rate</th><th>Processability &amp; Handling</th><th>Spotting Performance</th></tr></thead><tbody><tr><td>Qualitative Filter Paper</td><td>8%</td><td>Excellent</td><td>Moderate (liquid spreads slightly)</td></tr><tr><td>Weighing Paper</td><td>27%</td><td>Poor</td><td>Poor (droplet beading on surface)</td></tr><tr><td>Paper Towels</td><td>10%</td><td>Poor (non-uniform)</td><td>Moderate</td></tr><tr><td>Lens Paper</td><td>3%</td><td>Poor (too fragile)</td><td>Poor</td></tr></tbody></table></div></div><noscript><style>.wiki-toolkit-fallback{display:block!important}wiki-toolkit:not(:defined){min-height:0;border:0;background:none;animation:none}</style><p>Enable JavaScript to use the interactive controls.</p></noscript></wiki-toolkit></div>
+
+**Learn**
+
+Lens paper, paper towels, and weighing paper were eliminated due to mechanical frailty, poor reproducibility, or severe hydrophobic surface pooling. Qualitative filter paper was retained as a temporary baseline.
+
+However, the qualitative filter paper exhibited lateral wicking (irregular spot boundaries and uneven cell distribution). Additionally, colony counting alone proved biased, as elution efficiency was heavily confounded by substrate adsorption capacity.Therefore, we moved on to the next cycle.
+
+#### Sub-cycle 2: Surface Modification & Spotting Optimization {#sub-cycle-2-surface-modification-spotting-optimization toc="Sub-cycle 2: Surface Modification & Spotting Optimization"}
+
+**Design**
+
+To address lateral wicking and irregular spot boundaries, we sought to create distinct hydrophilic/hydrophobic boundaries on the substrate. Inspired by photolithography masking, we hypothesized that vapor deposition of cyanoacrylate adhesive (ergo.® 5300) using adhesive label masks could define localized, circular hydrophilic spotting zones.
+
+To prevent cell sedimentation and uneven spatial distribution, we improved the protectant formulation by introducing sodium alginate (to increase viscosity) and replacing sucrose with trehalose, glycerol, sodium glutamate, and mannitol for matrix stabilization and osmotic protection. Furthermore, to overcome manual pipetting retention caused by high solution viscosity, we engineered a custom vacuum-assisted spotting fixture.
+
+**Build & Test**
+
+We developed three types of devices and materials. For the surface hydrophobic coating, filter paper treated with masking and glue vapor fumigation formed well-defined circular hydrophilic regions (diameter = 5 mm) surrounded by hydrophobic barriers to effectively prevent lateral liquid spreading(Figure 1).
+
+:::figure
+
+![Figure 1. Water-absorption behavior (a) and hydrophobic-coating masking procedure](/img/uploads/round2/r2-97754aadf01e-fig3-1-1.png)
+
+**Figure 1.** Water-absorption behavior (a) and hydrophobic-coating masking procedure
+
+:::
+
+Physical characterization of the protectant confirmed that the novel sodium alginate-based protectant formed flexible 3D protective matrices after drying without structural collapse(Figure 2).
+
+:::figure
+
+![Figure 2. Protectant Water-Retention Test Setup](/img/uploads/round2/r2-4ffd015f5fcc-fig3-1-2.png)
+
+**Figure 2.** Protectant Water-Retention Test Setup
+
+:::
+
+We also fabricated a custom vacuum filtration fixture as a vacuum-assisted spotting device, which enables rapid infiltration of high-viscosity protectant suspension into the substrate and greatly improves spotting speed and volume accuracy (Figure 4).
+
+:::figure
+
+![Figure 4. Schematic of the spotting process](/img/uploads/round2/r2-48ee38c731e9-fig3-1-4.jpg)
+
+**Figure 4.** Schematic of the spotting process
+
+:::
+
+**Learn**
+
+The combination of vapor-phase hydrophobic masking and the sodium alginate-based protectant successfully confined cell loading within a uniform circular boundary. The vacuum-assisted spotting device eliminated liquid retention on pipette tips and standardized cell distribution.
+
+While physical wicking was resolved, selecting the final optimal substrate required validating broader candidate materials under a refined, reliable elution protocol.
+
+#### Sub-cycle 3: Elution Method Refinement & Final Substrate Selection {#sub-cycle-3-elution-method-refinement-final-substrate-selection toc="Sub-cycle 3: Elution Method Refinement & Final Substrate Selection"}
+
+**Design**
+
+To decouple cell survival rates from physical paper adsorption, we refined the evaluation protocol. We modified the eluent to an isotonic PBS buffer supplemented with 0.1% Tween 80 to reduce non-specific cell-substrate binding. Mechanical bead homogenization was introduced to standardize cell detachment.
+
+Using this standardized elution method, we added new candidate substrates and performed rigorous comparative screening on them: Qualitative Filter Paper, Thin Glass-Fiber Paper, Thick Glass-Fiber Paper (Whatman™ GF/B), and Cellulose Acetate Paper.
+
+**Build & Test**
+
+Substrates were spotted with the optimized formulation, freeze-dried (and parallel air-dried to test stability), eluted under the new bead-homogenization protocol, and evaluated for viability, batch-to-batch consistency (Coefficient of Variation, CV), and water absorption capacity (Table 2).
+
+<div class="wiki-toolkit-block"><wiki-toolkit data-type="datatable" data-props="{&quot;_template&quot;:&quot;datatable&quot;,&quot;title&quot;:&quot;Table 2. Second-Generation Freeze-Drying Performance&quot;,&quot;csv&quot;:&quot;Substrate,Freeze-Drying Viability,Viability CV (%),Water Absorption Capacity,Physical Handling &amp; Stability\nQualitative Filter Paper,40%,21.2%,Low,Moderate; prone to deformation\nThick Glass Fiber (GF/B),18%,55.0%,Highest,\&quot;Excellent; robust, no deformation\&quot;\nThin Glass Fiber,18%,65.6%,Moderate,Good\nCellulose Acetate,19%,86.6%,Excluded,Poor; static-prone and brittle\n&quot;}"><div class="wiki-toolkit-fallback"><p><strong>Table 2. Second-Generation Freeze-Drying Performance</strong></p><div class="table-wrap"><table><thead><tr><th>Substrate</th><th>Freeze-Drying Viability</th><th>Viability CV (%)</th><th>Water Absorption Capacity</th><th>Physical Handling &amp; Stability</th></tr></thead><tbody><tr><td>Qualitative Filter Paper</td><td>40%</td><td>21.2%</td><td>Low</td><td>Moderate; prone to deformation</td></tr><tr><td>Thick Glass Fiber (GF/B)</td><td>18%</td><td>55.0%</td><td>Highest</td><td>Excellent; robust, no deformation</td></tr><tr><td>Thin Glass Fiber</td><td>18%</td><td>65.6%</td><td>Moderate</td><td>Good</td></tr><tr><td>Cellulose Acetate</td><td>19%</td><td>86.6%</td><td>Excluded</td><td>Poor; static-prone and brittle</td></tr></tbody></table></div></div><noscript><style>.wiki-toolkit-fallback{display:block!important}wiki-toolkit:not(:defined){min-height:0;border:0;background:none;animation:none}</style><p>Enable JavaScript to use the interactive controls.</p></noscript></wiki-toolkit></div>
+
+Water absorption was independently quantified using a  liquid wicking assay (Figure 5).
+
+:::figure
+
+![Figure 5. Water-absorption test](/img/uploads/round2/r2-b8d29a0fb201-fig3-1-5.jpg)
+
+**Figure 5.** Water-absorption test
+
+:::
+
+**Learn**
+
+Finally, the Whatman™ GF/B Thick Glass-Fiber Paper was selected as the final chassis substrate. Despite filter paper showing higher recovery in small-scale counts, GF/B displayed superior fluid loading capacity, absorbed viscous protectants instantaneously without surface pooling or paper warping, and offered unmatched mechanical robustness during large-scale handling.
+
+Through these three sub-cycles, we successfully built a standardized, high-reproducibility pipeline for test-strip substrate processing, protectant formulation, and automated cell loading.

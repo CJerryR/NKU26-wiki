@@ -1,4 +1,5 @@
 import { toolkitTypes, renderToolkit } from './toolkit-blocks.mjs';
+import { renderMemberGrid, renderCreditGrid } from './person-cards.mjs';
 import { renderMediaBlock } from './media-blocks.mjs';
 import { serializeMDX } from '@tinacms/mdx';
 
@@ -19,6 +20,8 @@ export function blocksToMarkdown(blocks = []) {
     const template = block._template || block.__typename?.replace(/^WikiBlocks/, '').toLowerCase();
     if (toolkitTypes.has(template)) return renderToolkit(block, template);
     switch (template) {
+      case 'membergrid': return renderMemberGrid(block);
+      case 'creditgrid': return renderCreditGrid(block);
       case 'protein': case 'pdf': case 'html': return renderMediaBlock(block, template);
       case 'heading': return `${'#'.repeat(Math.max(2, Math.min(4, block.level || 2)))} ${block.text}${attrs ? ` ${attrs}` : ''}`;
       case 'text': return body;

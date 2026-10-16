@@ -594,6 +594,88 @@
       "imageWidth": "medium"
     },
     {
+      "_template": "text",
+      "body": "Subsequently, we co-transformed the p426-SNR52p-gGal4-SUP4t plasmid together with the Gal1/10bp-Betaxanthin Expression Cassette. The *Gal4* gene was successfully knocked out, and the betaxanthin synthase gene under the control of the Gal1/10 bidirectional promoter was simultaneously knocked in (Figure 12)."
+    },
+    {
+      "_template": "image",
+      "src": "/img/uploads/round2/r2-66c1379247d8-fig2-4-12.png",
+      "alt": "Figure 12. Schematic diagram of Gal1/10bp-Betaxanthin Expression Cassette transformation (a) and transformant validation (b).",
+      "body": "**Figure 12.** Schematic diagram of Gal1/10bp-Betaxanthin Expression Cassette transformation (a) and transformant validation (b).",
+      "layout": "full",
+      "imageWidth": "wide"
+    },
+    {
+      "_template": "text",
+      "body": "Finally, we co-transformed the p426-SNR52p-gSTE2-SUP4t plasmid and linearized pRS315-TEF1p-GPR2 plasmid. The *GPR2* gene was successfully recombined into the *STE2* locus."
+    },
+    {
+      "_template": "heading",
+      "text": "Learn",
+      "level": 4,
+      "attributes": "#learn-5 toc=\"Learn\""
+    },
+    {
+      "_template": "text",
+      "body": "So far, the chassis engineered yeast strain of our project has been constructed. Meanwhile, the dry lab finished the modification of GPR2 mutants. We therefore moved to the next cycle to characterize the screened GPR2 mutants."
+    },
+    {
+      "_template": "heading",
+      "text": "The Fifth Cycle",
+      "level": 3,
+      "attributes": "#the-fifth-cycle toc=\"The Fifth Cycle\""
+    },
+    {
+      "_template": "heading",
+      "text": "Design",
+      "level": 4,
+      "attributes": "#design-6 toc=\"Design\""
+    },
+    {
+      "_template": "text",
+      "body": "Based on the results from previous cycles and dry lab, we still used one-step cloning to construct plasmids for transformation (Figure 1). Strain NKU-Y06 ([Wet Lab — Experiments — Strain Construction](/experiments/#strain-construction)) was utilized for genetic modification."
+    },
+    {
+      "_template": "image",
+      "src": "/img/uploads/round2/r2-5c10cfcd0e4c-fig2-5-1.png",
+      "alt": "Figure 1. Plasmid maps of pRS315-TEF1p-GPR2-N84V and pRS315-TEF1p-GPR2-V368R.",
+      "body": "**Figure 1.** Plasmid maps of pRS315-TEF1p-GPR2-N84V and pRS315-TEF1p-GPR2-V368R.",
+      "layout": "full",
+      "imageWidth": "wide"
+    },
+    {
+      "_template": "heading",
+      "text": "Build and Test",
+      "level": 4,
+      "attributes": "#build-and-test toc=\"Build and Test\""
+    },
+    {
+      "_template": "text",
+      "body": "We successfully constructed two plasmids, pRS315-TEF1p-GPR2-N84V and pRS315-TEF1p-GPR2-V368R, via one-step cloning. Sequencing verified that their sequences were correct (Figure 2)."
+    },
+    {
+      "_template": "image",
+      "src": "/img/uploads/round2/r2-28480e6cf5ad-fig2-5-2.png",
+      "alt": "Figure 2. Construction of pRS315-TEF1p-GPR2-N84V (a) and pRS315-TEF1p-GPR2-V368R (b). Whole-plasmid sequencing confirmed the correct base sequences in key regions.",
+      "body": "**Figure 2.** Construction of pRS315-TEF1p-GPR2-N84V (a) and pRS315-TEF1p-GPR2-V368R (b). Whole-plasmid sequencing confirmed the correct base sequences in key regions.",
+      "layout": "full",
+      "imageWidth": "wide"
+    },
+    {
+      "_template": "text",
+      "body": "Subsequently, we mixed the p426-SNR52p-gSTE2-SUP4t plasmid with each of the two plasmids mentioned above and co-transformed them into strain NKU-Y06. The recombination locus was identical to that used for GPR2 knock-in. After transformant validation, we successfully obtained two strains carrying GPR2 mutants."
+    },
+    {
+      "_template": "heading",
+      "text": "Learn",
+      "level": 4,
+      "attributes": "#learn-6 toc=\"Learn\""
+    },
+    {
+      "_template": "text",
+      "body": "This cycle is hereby concluded. The strains constructed in this cycle can only function under laboratory conditions. For field applications, product formulation and packaging of the strains are required. Therefore, we proceeded to the third major DBTL cycle."
+    },
+    {
       "_template": "heading",
       "text": "References",
       "level": 3,
@@ -614,6 +696,195 @@
     {
       "_template": "text",
       "body": "Mans R, Wijsman M, Daran-Lapujade P, Daran JM. A protocol for introduction of multiple genetic modifications in Saccharomyces cerevisiae using CRISPR/Cas9. FEMS Yeast Res. 2018 Nov 1;18(7):foy063. doi: 10.1093/femsyr/foy063. PMID: 29860374; PMCID: PMC6074844."
+    },
+    {
+      "_template": "heading",
+      "text": "DBTL-3: Test Strip Development and Productization",
+      "level": 2,
+      "attributes": "#dbtl-3-test-strip-development-and-productization toc=\"DBTL-3: Test Strip Development and Productization\""
+    },
+    {
+      "_template": "text",
+      "body": "Building upon the engineered chassis strain constructed in previous DBTL cycles, we turned to another key project objective: developing an affordable, convenient, and user-friendly colorimetric detection platform. To achieve this, we executed subsequent engineering cycles focused on cell immobilization and test-strip productization. This section details two overarching DBTL cycles—test-strip formulation using engineered yeast and on-strip colorimetric development—each encompassing several sub-iterative cycles that drive continuous optimization."
+    },
+    {
+      "_template": "heading",
+      "text": "The First Cycle: Test-Strip Formulation & Processing",
+      "level": 3,
+      "attributes": "#the-first-cycle-test-strip-formulation-processing toc=\"The First Cycle: Test-Strip Formulation & Processing\""
+    },
+    {
+      "_template": "text",
+      "body": "To create an accessible, rapid, and low-cost live-cell test strip, we developed a standardized, transferable workflow for yeast cell immobilization and freeze-drying. This major cycle comprises three sub-iterative DBTL cycles: Substrate Selection, Surface Modification & Spotting Optimization, and Elution Method Refinement."
+    },
+    {
+      "_template": "heading",
+      "text": "Sub-cycle 1: Substrate Selection",
+      "level": 4,
+      "attributes": "#sub-cycle-1-substrate-selection toc=\"Sub-cycle 1: Substrate Selection\""
+    },
+    {
+      "_template": "text",
+      "body": "**Design**"
+    },
+    {
+      "_template": "text",
+      "body": "An ideal test-strip substrate must exhibit high cell-loading capacity, excellent mechanical stability, batch-to-batch reproducibility, and high biocompatibility during both freeze-drying and reactivation. We selected four candidate substrates representing distinct physical/chemical properties: Qualitative Filter Paper, Laboratory Paper Towels, Lens Paper, and Weighing Paper."
+    },
+    {
+      "_template": "text",
+      "body": "Using a first-generation freeze-drying protectant (glucose-free YPD + sucrose), we performed a comparative evaluation via freeze-drying, cell elution, and colony counting to establish an initial benchmark."
+    },
+    {
+      "_template": "text",
+      "body": "**Build & Test**"
+    },
+    {
+      "_template": "text",
+      "body": "Cells were suspended in the protectant, spotted onto each substrate, freeze-dried, eluted, and plated for viable colony counting. The following sections present our experimental results."
+    },
+    {
+      "_template": "datatable",
+      "title": "Table 1. First-Generation Freeze-Drying Plate Counts",
+      "csv": "Substrate,Cell Survival Rate,Processability & Handling,Spotting Performance\nQualitative Filter Paper,8%,Excellent,Moderate (liquid spreads slightly)\nWeighing Paper,27%,Poor,Poor (droplet beading on surface)\nPaper Towels,10%,Poor (non-uniform),Moderate\nLens Paper,3%,Poor (too fragile),Poor\n",
+      "caption": "Qualitative Filter Paper: Easy to cut, structurally stable, and provided consistent liquid absorption, yielding an 8% cell recovery rate. Weighing Paper: High surface hydrophobic resistance resulted in poor liquid absorption; droplets formed raised beads on the surface without infiltrating, causing low batch stability despite a high nominal recovery rate (27%). Paper Towel: Poor batch-to-batch uniformity and structural inconsistency made uniform cutting impossible. Lens Paper: Exceptionally thin and fragile, difficult to handle, and offered poor cell loading (3% recovery)."
+    },
+    {
+      "_template": "text",
+      "body": "**Learn**"
+    },
+    {
+      "_template": "text",
+      "body": "Lens paper, paper towels, and weighing paper were eliminated due to mechanical frailty, poor reproducibility, or severe hydrophobic surface pooling. Qualitative filter paper was retained as a temporary baseline."
+    },
+    {
+      "_template": "text",
+      "body": "However, the qualitative filter paper exhibited lateral wicking (irregular spot boundaries and uneven cell distribution). Additionally, colony counting alone proved biased, as elution efficiency was heavily confounded by substrate adsorption capacity.Therefore, we moved on to the next cycle."
+    },
+    {
+      "_template": "heading",
+      "text": "Sub-cycle 2: Surface Modification & Spotting Optimization",
+      "level": 4,
+      "attributes": "#sub-cycle-2-surface-modification-spotting-optimization toc=\"Sub-cycle 2: Surface Modification & Spotting Optimization\""
+    },
+    {
+      "_template": "text",
+      "body": "**Design**"
+    },
+    {
+      "_template": "text",
+      "body": "To address lateral wicking and irregular spot boundaries, we sought to create distinct hydrophilic/hydrophobic boundaries on the substrate. Inspired by photolithography masking, we hypothesized that vapor deposition of cyanoacrylate adhesive (ergo.® 5300) using adhesive label masks could define localized, circular hydrophilic spotting zones."
+    },
+    {
+      "_template": "text",
+      "body": "To prevent cell sedimentation and uneven spatial distribution, we improved the protectant formulation by introducing sodium alginate (to increase viscosity) and replacing sucrose with trehalose, glycerol, sodium glutamate, and mannitol for matrix stabilization and osmotic protection. Furthermore, to overcome manual pipetting retention caused by high solution viscosity, we engineered a custom vacuum-assisted spotting fixture."
+    },
+    {
+      "_template": "text",
+      "body": "**Build & Test**"
+    },
+    {
+      "_template": "text",
+      "body": "We developed three types of devices and materials. For the surface hydrophobic coating, filter paper treated with masking and glue vapor fumigation formed well-defined circular hydrophilic regions (diameter = 5 mm) surrounded by hydrophobic barriers to effectively prevent lateral liquid spreading(Figure 1)."
+    },
+    {
+      "_template": "image",
+      "src": "/img/uploads/round2/r2-97754aadf01e-fig3-1-1.png",
+      "alt": "Figure 1. Water-absorption behavior (a) and hydrophobic-coating masking procedure",
+      "body": "**Figure 1.** Water-absorption behavior (a) and hydrophobic-coating masking procedure",
+      "layout": "full",
+      "imageWidth": "wide"
+    },
+    {
+      "_template": "text",
+      "body": "Physical characterization of the protectant confirmed that the novel sodium alginate-based protectant formed flexible 3D protective matrices after drying without structural collapse(Figure 2)."
+    },
+    {
+      "_template": "image",
+      "src": "/img/uploads/round2/r2-4ffd015f5fcc-fig3-1-2.png",
+      "alt": "Figure 2. Protectant Water-Retention Test Setup",
+      "body": "**Figure 2.** Protectant Water-Retention Test Setup",
+      "layout": "full",
+      "imageWidth": "wide"
+    },
+    {
+      "_template": "text",
+      "body": "We also fabricated a custom vacuum filtration fixture as a vacuum-assisted spotting device, which enables rapid infiltration of high-viscosity protectant suspension into the substrate and greatly improves spotting speed and volume accuracy (Figure 4)."
+    },
+    {
+      "_template": "image",
+      "src": "/img/uploads/round2/r2-48ee38c731e9-fig3-1-4.jpg",
+      "alt": "Figure 4. Schematic of the spotting process",
+      "body": "**Figure 4.** Schematic of the spotting process",
+      "layout": "full",
+      "imageWidth": "wide"
+    },
+    {
+      "_template": "text",
+      "body": "**Learn**"
+    },
+    {
+      "_template": "text",
+      "body": "The combination of vapor-phase hydrophobic masking and the sodium alginate-based protectant successfully confined cell loading within a uniform circular boundary. The vacuum-assisted spotting device eliminated liquid retention on pipette tips and standardized cell distribution."
+    },
+    {
+      "_template": "text",
+      "body": "While physical wicking was resolved, selecting the final optimal substrate required validating broader candidate materials under a refined, reliable elution protocol."
+    },
+    {
+      "_template": "heading",
+      "text": "Sub-cycle 3: Elution Method Refinement & Final Substrate Selection",
+      "level": 4,
+      "attributes": "#sub-cycle-3-elution-method-refinement-final-substrate-selection toc=\"Sub-cycle 3: Elution Method Refinement & Final Substrate Selection\""
+    },
+    {
+      "_template": "text",
+      "body": "**Design**"
+    },
+    {
+      "_template": "text",
+      "body": "To decouple cell survival rates from physical paper adsorption, we refined the evaluation protocol. We modified the eluent to an isotonic PBS buffer supplemented with 0.1% Tween 80 to reduce non-specific cell-substrate binding. Mechanical bead homogenization was introduced to standardize cell detachment."
+    },
+    {
+      "_template": "text",
+      "body": "Using this standardized elution method, we added new candidate substrates and performed rigorous comparative screening on them: Qualitative Filter Paper, Thin Glass-Fiber Paper, Thick Glass-Fiber Paper (Whatman™ GF/B), and Cellulose Acetate Paper."
+    },
+    {
+      "_template": "text",
+      "body": "**Build & Test**"
+    },
+    {
+      "_template": "text",
+      "body": "Substrates were spotted with the optimized formulation, freeze-dried (and parallel air-dried to test stability), eluted under the new bead-homogenization protocol, and evaluated for viability, batch-to-batch consistency (Coefficient of Variation, CV), and water absorption capacity (Table 2)."
+    },
+    {
+      "_template": "datatable",
+      "title": "Table 2. Second-Generation Freeze-Drying Performance",
+      "csv": "Substrate,Freeze-Drying Viability,Viability CV (%),Water Absorption Capacity,Physical Handling & Stability\nQualitative Filter Paper,40%,21.2%,Low,Moderate; prone to deformation\nThick Glass Fiber (GF/B),18%,55.0%,Highest,\"Excellent; robust, no deformation\"\nThin Glass Fiber,18%,65.6%,Moderate,Good\nCellulose Acetate,19%,86.6%,Excluded,Poor; static-prone and brittle\n"
+    },
+    {
+      "_template": "text",
+      "body": "Water absorption was independently quantified using a  liquid wicking assay (Figure 5)."
+    },
+    {
+      "_template": "image",
+      "src": "/img/uploads/round2/r2-b8d29a0fb201-fig3-1-5.jpg",
+      "alt": "Figure 5. Water-absorption test",
+      "body": "**Figure 5.** Water-absorption test",
+      "layout": "full",
+      "imageWidth": "wide"
+    },
+    {
+      "_template": "text",
+      "body": "**Learn**"
+    },
+    {
+      "_template": "text",
+      "body": "Finally, the Whatman™ GF/B Thick Glass-Fiber Paper was selected as the final chassis substrate. Despite filter paper showing higher recovery in small-scale counts, GF/B displayed superior fluid loading capacity, absorbed viscous protectants instantaneously without surface pooling or paper warping, and offered unmatched mechanical robustness during large-scale handling."
+    },
+    {
+      "_template": "text",
+      "body": "Through these three sub-cycles, we successfully built a standardized, high-reproducibility pipeline for test-strip substrate processing, protectant formulation, and automated cell loading."
     }
   ],
   "description": ""

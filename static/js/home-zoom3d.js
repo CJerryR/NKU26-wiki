@@ -21,15 +21,16 @@
     china: {
       scn: {
         provinces: codes(scn.provinces),
-        groups: { Northeast: ['HL', 'JL', 'LN', 'NM'], North: ['BJ', 'HE', 'HA', 'SD', 'SX'], 'East and Central': ['AH', 'JS', 'SH', 'ZJ', 'JX', 'HB'], Northwest: ['SN', 'GS', 'NX', 'XJ'], 'Southwest and South': ['GZ', 'YN', 'GX'] },
-        focus: [{ id: 'ne', label: 'Northeast', lon: 125.8, lat: 45.2, rx: 5.2, ry: 3.6 }, { id: 'hhh', label: 'Huang-Huai-Hai', lon: 116.0, lat: 36.6, rx: 3.8, ry: 3.3 }],
-        source: scn.source ? scn.source.title + ' (' + scn.source.year + ')' : ''
+        /* v8.1: the 'Northeast' / 'Huang-Huai-Hai' focus rings and their labels were
+         * removed; they were editorial highlights, not records from the source. */
+        focus: [],
+        source: 'Peng et al. 2021, Phytopathology Research'
       },
       rkn: {
         cabi: codes(rkn.provinces),
         survey: rkn.survey ? codes([rkn.survey.province]) : [],
         notes: {},
-        source: 'CABI distribution records'
+        source: 'CABI datasheet 33245, distribution table'
       }
     }
   };
@@ -46,23 +47,65 @@
     }
     return false;
   }
+  /* v8.4 marker label: name and one line of provenance, kept between the switch and the readout */
+  var tipBody = tip.querySelector('[data-tip-body]') || tip;
+  var barBox = sec.querySelector('[data-cz-bar]'), readBox = sec.querySelector('[data-cz-card]');
   function recordHtml(layer, code) {
     var pr = P[code]; if (!pr) return '';
-    var head = '<b>' + pr.en + '</b> <span lang="zh-Hans">' + pr.zh + '</span>';
-    if (layer === 1) {
-      var grp = ''; Object.keys(DATA.china.scn.groups).forEach(function (g) { if (DATA.china.scn.groups[g].indexOf(code) >= 0) grp = g; });
-      return head + '<span>Soybean cyst nematode reported' + (grp ? ' \u00b7 ' + grp : '') + '</span><small>' + DATA.china.scn.source + '</small>';
+    var line;
+    if (layer === 1) line = 'Provincial record, Peng et al. 2021';
+    else {
+      var survey = DATA.china.rkn.survey.indexOf(code) >= 0, listed = DATA.china.rkn.cabi.indexOf(code) >= 0;
+      line = survey && !listed ? 'Survey record, Zhou et al. 2026' : survey ? 'CABI distribution table and the Xinjiang survey' : 'Listed in CABI\u2019s distribution table';
     }
-    var survey = DATA.china.rkn.survey.indexOf(code) >= 0;
-    return head + '<span>' + (survey ? 'Southern root-knot nematode, 2021\u201323 vegetable survey' : 'Southern root-knot nematode, provincial record (CABI)') + '</span>' + (survey && rkn.survey ? '<small>' + rkn.survey.record + '</small>' : '');
+    return '<b>' + pr.en + '</b><span lang="zh-Hans">' + pr.zh + '</span><small>' + line + '</small>';
   }
   function showTip(html, x, y) {
-    tip.innerHTML = html; tip.hidden = false;
-    var r = stage.getBoundingClientRect(), tw = tip.offsetWidth;
-    tip.style.transform = 'translate(' + NK.clamp(x + 16, 8, r.width - tw - 8).toFixed(0) + 'px,' + (y - 12).toFixed(0) + 'px) translateY(-100%)';
+    tipBody.innerHTML = html; tip.hidden = false;
+    var r = stage.getBoundingClientRect(), tw = tip.offsetWidth, th = tip.offsetHeight, top = 8, bot = r.height - 8;
+    if (barBox && barBox.offsetHeight) top = barBox.getBoundingClientRect().bottom - r.top + 8;
+    if (readBox && readBox.offsetHeight) bot = readBox.getBoundingClientRect().top - r.top - 8;
+    var ty = y - th - 14;
+    if (ty < top) ty = Math.min(y + 16, bot - th);
+    tip.style.transform = 'translate(' + NK.clamp(x - tw / 2, 8, r.width - tw - 8).toFixed(0) + 'px,' + Math.max(top, ty).toFixed(0) + 'px)';
   }
   function hideTip() { if (tip) tip.hidden = true; }
-  NK.chinaUI = { active: function () { return 1; }, recordHtml: recordHtml, showTip: showTip, hideTip: hideTip, inside: inside, llToChina: llToChina };
+  /* one species on the map at a time: 'scn' (layer 1, circles) or 'rkn' (layer 2, triangles) */
+  var SP_LAYER = { scn: 1, rkn: 2 };
+  NK.chinaSp = sec.getAttribute('data-sp') === 'rkn' ? 'rkn' : 'scn';
+  function spCodes(sp) {
+    var list = sp === 'scn' ? DATA.china.scn.provinces : DATA.china.rkn.cabi.concat(DATA.china.rkn.survey.filter(function (c) { return DATA.china.rkn.cabi.indexOf(c) < 0; }));
+    return list.filter(function (c) { return P[c]; });
+  }
+  function setSp(sp) {
+    if (!SP_LAYER[sp]) return;
+    NK.chinaSp = sp;
+    sec.setAttribute('data-sp', sp);
+    Array.prototype.forEach.call(sec.querySelectorAll('[data-cz-sp]'), function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-cz-sp') === sp)); });
+    Array.prototype.forEach.call(sec.querySelectorAll('[data-cz-for]'), function (el) { el.hidden = el.getAttribute('data-cz-for') !== sp; });
+    hideTip();
+    placeLens();
+    if (NK.chinaRelayout) NK.chinaRelayout();
+  }
+  Array.prototype.forEach.call(sec.querySelectorAll('[data-cz-sp]'), function (b) {
+    b.addEventListener('click', function () { setSp(b.getAttribute('data-cz-sp')); });
+  });
+  /* the switch's glass lens slides under the active species */
+  var sw = sec.querySelector('.cz__switch');
+  function placeLens() {
+    var on = sw && sw.querySelector('[aria-pressed="true"]'); if (!on || !on.offsetWidth) return;
+    sw.style.setProperty('--lx', on.offsetLeft + 'px');
+    sw.style.setProperty('--lw', on.offsetWidth + 'px');
+  }
+  placeLens();
+  window.addEventListener('resize', placeLens);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(placeLens);
+  /* screen readers get the province names as text */
+  ['scn', 'rkn'].forEach(function (sp) {
+    var el = sec.querySelector('[data-cz-list="' + sp + '"]');
+    if (el) el.textContent = spCodes(sp).map(function (c) { return P[c].en; }).join(', ') + '.';
+  });
+  NK.chinaUI = { active: function () { return SP_LAYER[NK.chinaSp]; }, recordHtml: recordHtml, showTip: showTip, hideTip: hideTip, inside: inside, llToChina: llToChina, spCodes: spCodes };
 
   /* 2D stand-in when WebGL is missing: the map and its markers, then the question */
   NK.china2d = function () {
@@ -72,10 +115,50 @@
     var d = '';
     geo.rings.forEach(function (r) { for (var i = 0; i < r.p.length; i += 2) d += (i ? 'L' : 'M') + r.p[i] + ' ' + r.p[i + 1]; d += 'Z'; });
     NK.svg('path', { d: d, class: 'cz__land' }, svg);
-    DATA.china.scn.provinces.forEach(function (c) { if (P[c]) NK.svg('path', { d: 'M' + (P[c].x - 5) + ' ' + (P[c].y - 5) + 'l5 -9l5 9z', class: 'cz__m-tri' }, svg); });
-    DATA.china.rkn.cabi.concat(DATA.china.rkn.survey).forEach(function (c) {
-      if (P[c]) NK.svg('circle', { cx: P[c].x + 6, cy: P[c].y + 3, r: 5, class: DATA.china.rkn.survey.indexOf(c) >= 0 ? 'cz__m-pin cz__m-pin--gold' : 'cz__m-pin' }, svg);
+    var md = '';
+    (geo.maritime || []).forEach(function (m) { for (var i = 0; i < m.length; i += 2) md += (i ? 'L' : 'M') + m[i] + ' ' + m[i + 1]; });
+    if (md) NK.svg('path', { d: md, class: 'cz__sea' }, svg);
+    var els = { 1: {}, 2: {} };
+    spCodes('scn').forEach(function (c) { els[1][c] = NK.svg('circle', { cx: P[c].x, cy: P[c].y, r: 5.5, class: 'cz__m cz__m--scn' }, svg); });
+    spCodes('rkn').forEach(function (c) { els[2][c] = NK.svg('path', { d: 'M' + P[c].x + ' ' + (P[c].y - 7) + 'l6.5 11.5h-13z', class: 'cz__m cz__m--rkn' }, svg); });
+    [1, 2].forEach(function (layer) {
+      Object.keys(els[layer]).forEach(function (c) {
+        var el = els[layer][c];
+        el.addEventListener('pointerenter', function () { NK.chinaFocus(layer, c); });
+        el.addEventListener('click', function () { NK.chinaFocus(layer, c); });
+        el.addEventListener('pointerleave', hideTip);
+      });
     });
+    NK.chinaFocus = function (layer, c) {
+      var el = els[layer] && els[layer][c]; if (!el) return;
+      var r = el.getBoundingClientRect(), sr = stage.getBoundingClientRect();
+      showTip(recordHtml(layer, c), r.left + r.width / 2 - sr.left, r.top - sr.top);
+    };
+    /* the 2D map is fitted between the switch and the card, like the 3D one */
+    var bar = sec.querySelector('[data-cz-bar]'), card = sec.querySelector('[data-cz-card]'), head = sec.querySelector('[data-cz-head]');
+    function fit2d() {
+      var sr = stage.getBoundingClientRect(), W = sr.width, H = sr.height;
+      if (!W || !H) return;
+      var narrow = W < 860, x0 = 12, x1 = W - 12;
+      if (!narrow && head) x0 = head.getBoundingClientRect().right - sr.left + 36;
+      if (!narrow) x1 = W - 70;
+      stage.style.setProperty('--fx0', Math.round(x0) + 'px');
+      stage.style.setProperty('--fx1', Math.round(W - x1) + 'px');
+      if (narrow && head) stage.style.setProperty('--cardB', Math.round(H - (head.getBoundingClientRect().top - sr.top) + 10) + 'px');
+      else stage.style.removeProperty('--cardB');
+      var y0 = bar ? bar.getBoundingClientRect().bottom - sr.top + 10 : 150;
+      var y1 = card ? card.getBoundingClientRect().top - sr.top - 10 : H - 60;
+      if (y1 - y0 < 120) y1 = y0 + 120;
+      svg.style.left = Math.round(x0) + 'px';
+      svg.style.width = Math.round(x1 - x0) + 'px';
+      svg.style.top = Math.round(y0) + 'px';
+      svg.style.height = Math.round(y1 - y0) + 'px';
+    }
+    NK.chinaRelayout = fit2d;
+    fit2d();
+    var fT = 0;
+    window.addEventListener('resize', function () { clearTimeout(fT); fT = setTimeout(fit2d, 120); });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit2d);
   };
 
   /* the pager drives the flight: stop, merge, high altitude to field, field
@@ -511,15 +594,16 @@
     var lineMat = new T.LineBasicMaterial({ color: 0xb99be0, transparent: true, opacity: 0.85 });
     var bb = { x0: 1e9, x1: -1e9, z0: 1e9, z1: -1e9 };
     var outl = [], ringV3 = [];
+    /* v8.2 standard map: every island ring (South China Sea included) gets an outline and
+     * counts for the frame; only the larger rings get the bold ribbon */
     geo.rings.forEach(function (r) {
-      if (r.a < 1.5) return;
-      var pts = [], p2 = [];
-      outl.push(p2);
+      var small = r.a < 1.5, pts = [], p2 = [];
+      if (!small) outl.push(p2);
       for (var i = 0; i < r.p.length; i += 2) {
         var q = toP(r.p[i], r.p[i + 1]);
         p2.push(q);
         pts.push(V3(q[0], 0.81, q[1]));
-        if (i === 0) ringV3.push(pts);
+        if (i === 0 && !small) ringV3.push(pts);
         bb.x0 = Math.min(bb.x0, q[0]); bb.x1 = Math.max(bb.x1, q[0]); bb.z0 = Math.min(bb.z0, q[1]); bb.z1 = Math.max(bb.z1, q[1]);
       }
       scene.add(new T.LineLoop(new T.BufferGeometry().setFromPoints(pts), lineMat));
@@ -559,14 +643,32 @@
       ribbon.geometry.dispose();
       ribbon.geometry = g;
     }
+    /* v8.2: the ten dashes of the national boundary in the South China Sea (standard map
+     * GS(2022)4308), drawn solid on the map's top plane, in the frame like the land */
+    var dashPos = [], dashIdx = [];
     (geo.maritime || []).forEach(function (line) {
-      var pts = [];
-      for (var i = 0; i < line.length; i += 2) { var q = toP(line[i], line[i + 1]); pts.push(V3(q[0], 0.02, q[1])); }
-      if (pts.length < 2) return;
-      var ln = new T.Line(new T.BufferGeometry().setFromPoints(pts), new T.LineDashedMaterial({ color: 0xb99be0, dashSize: 0.5, gapSize: 0.5, transparent: true, opacity: 0.5 }));
-      ln.computeLineDistances();
-      scene.add(ln);
+      var P = [], i;
+      for (i = 0; i < line.length; i += 2) {
+        var q = toP(line[i], line[i + 1]); P.push(q);
+        bb.x0 = Math.min(bb.x0, q[0]); bb.x1 = Math.max(bb.x1, q[0]); bb.z0 = Math.min(bb.z0, q[1]); bb.z1 = Math.max(bb.z1, q[1]);
+      }
+      var n = P.length, base = dashPos.length / 3;
+      if (n < 2) return;
+      for (i = 0; i < n; i++) {
+        var a = P[Math.max(0, i - 1)], c = P[Math.min(n - 1, i + 1)], tx = c[0] - a[0], tz = c[1] - a[1], tl = Math.sqrt(tx * tx + tz * tz) || 1;
+        var nx = -tz / tl * 0.12, nz = tx / tl * 0.12;
+        dashPos.push(P[i][0] + nx, 0.816, P[i][1] + nz, P[i][0] - nx, 0.816, P[i][1] - nz);
+        if (i) { var a0 = base + (i - 1) * 2, b0 = base + i * 2; dashIdx.push(a0, a0 + 1, b0, a0 + 1, b0 + 1, b0); }
+      }
     });
+    if (dashPos.length) {
+      var dashG = new T.BufferGeometry();
+      dashG.setIndex(dashIdx);
+      dashG.setAttribute('position', new T.Float32BufferAttribute(dashPos, 3));
+      var dashM = new T.Mesh(dashG, new T.MeshBasicMaterial({ color: 0xb99be0, transparent: true, depthWrite: false, side: T.DoubleSide }));
+      dashM.renderOrder = 2;
+      scene.add(dashM);
+    }
     var MC = V3((bb.x0 + bb.x1) / 2, 0.8, (bb.z0 + bb.z1) / 2);
     var MW = bb.x1 - bb.x0 + 3;
     var MD = bb.z1 - bb.z0 + 5;
@@ -638,67 +740,45 @@
         });
         layers[0].add(bars);
       }());
+      /* v8.1 markers: flat and on the land surface, so a marker is drawn where its
+       * anchor is (the old 3-unit stems were seen in perspective and the
+       * Heilongjiang pin appeared to sit outside the border). One marker per
+       * province; soybean cyst = circles, southern root-knot = triangles. */
+      var markerAt = { 1: {}, 2: {} };
+      function addHit(layer, c, q) {
+        var hit = new T.Mesh(new T.CylinderGeometry(0.85, 0.85, 1.2, 10), new T.MeshBasicMaterial({ visible: false }));
+        hit.position.set(q[0], 1.1, q[1]);
+        hit.userData = { layer: layer, code: c };
+        layers[layer].add(hit);
+        hits.push(hit);
+        markerAt[layer][c] = V3(q[0], 0.95, q[1]);
+      }
       (function () {
-        var list = DATA.china.scn.provinces.filter(function (c) { return PV[c]; });
-        var inst = new T.InstancedMesh(new T.ConeGeometry(0.34, 0.62, 3), track(layers[1], new T.MeshStandardMaterial({ color: 0x5fd18f, roughness: 0.6, emissive: 0x1d5a35, emissiveIntensity: 0.5, opacity: 1 })), list.length * 4);
-        var rr = NK.rng(11);
-        var k = 0;
-        list.forEach(function (c) {
+        var list = CUI.spCodes('scn');
+        var disc = new T.InstancedMesh(new T.CylinderGeometry(0.5, 0.5, 0.14, 28), track(layers[1], new T.MeshStandardMaterial({ color: 0x46c8c3, roughness: 0.45, emissive: 0x1b6d6a, emissiveIntensity: 0.55, opacity: 1 })), list.length);
+        var rim = new T.InstancedMesh(new T.RingGeometry(0.62, 0.74, 36), track(layers[1], new T.MeshBasicMaterial({ color: 0xbff3ef, opacity: 0.55, depthWrite: false, side: T.DoubleSide })), list.length);
+        var flat = new T.Quaternion().setFromEuler(new T.Euler(-Math.PI / 2, 0, 0)), one = V3(1, 1, 1);
+        list.forEach(function (c, k) {
           var q = toP(PV[c].x, PV[c].y);
-          for (var j = 0; j < 4; j++) {
-            var sc = j ? 0.62 + rr() * 0.3 : 1.05;
-            m4.compose(V3(q[0] + (j ? (rr() - 0.5) * 1.3 : 0), 1.13, q[1] + (j ? (rr() - 0.5) * 1.1 : 0)), new T.Quaternion().setFromEuler(new T.Euler(0, rr() * 3, 0)), V3(sc, sc, sc));
-            inst.setMatrixAt(k++, m4);
-          }
-          var hit = new T.Mesh(new T.SphereGeometry(1.25, 8, 6), new T.MeshBasicMaterial({ visible: false }));
-          hit.position.set(q[0], 1.15, q[1]);
-          hit.userData = { layer: 1, code: c };
-          layers[1].add(hit);
-          hits.push(hit);
+          m4.makeTranslation(q[0], 0.95, q[1]); disc.setMatrixAt(k, m4);
+          m4.compose(V3(q[0], 0.9, q[1]), flat, one); rim.setMatrixAt(k, m4);
+          addHit(1, c, q);
         });
-        layers[1].add(inst);
-        DATA.china.scn.focus.forEach(function (f) {
-          var c = CUI.llToChina(f.lon, f.lat);
-          var q = toP(c[0], c[1]);
-          var halo = new T.Mesh(new T.CircleGeometry(1, 48), track(layers[1], new T.MeshBasicMaterial({ color: 0xf2934a, opacity: 0.22, depthWrite: false })));
-          halo.rotation.x = -Math.PI / 2;
-          halo.scale.set(f.rx * geo.china.upd / 10, f.ry * geo.china.upd / 10, 1);
-          halo.position.set(q[0], 0.85, q[1]);
-          var ring = new T.Mesh(new T.RingGeometry(0.96, 1, 64), track(layers[1], new T.MeshBasicMaterial({ color: 0xf6a15c, opacity: 0.85, depthWrite: false, side: T.DoubleSide })));
-          ring.rotation.x = -Math.PI / 2;
-          ring.scale.copy(halo.scale);
-          ring.position.set(q[0], 0.87, q[1]);
-          layers[1].add(halo);
-          layers[1].add(ring);
-          markers.push({ layer: 1, text: f.label, pos: V3(q[0], 0.95, q[1] - halo.scale.y - 0.6) });
-        });
+        layers[1].add(rim);
+        layers[1].add(disc);
       }());
       (function () {
-        var rkn = DATA.china.rkn;
-        var codes = rkn.cabi.concat(rkn.survey).filter(function (c) { return PV[c]; });
-        var stem = new T.CylinderGeometry(0.07, 0.07, 3.0, 6);
-        stem.translate(0, 2.3, 0);
-        var ball = new T.SphereGeometry(0.4, 16, 12);
-        ball.translate(0, 3.95, 0);
-        var stemMat = track(layers[2], new T.MeshBasicMaterial({ color: 0xe8dcef, opacity: 0.55 }));
-        var pink = track(layers[2], new T.MeshStandardMaterial({ color: 0xff6f9a, emissive: 0x8a1f45, emissiveIntensity: 0.6, roughness: 0.4, opacity: 1 }));
-        var gold = track(layers[2], new T.MeshStandardMaterial({ color: 0xf6c14b, emissive: 0x8a5a10, emissiveIntensity: 0.7, roughness: 0.4, opacity: 1 }));
-        codes.forEach(function (c) {
+        var list = CUI.spCodes('rkn');
+        /* a three-sided prism seen from above is a triangle; one corner points north */
+        var tri = new T.CylinderGeometry(0.66, 0.66, 0.16, 3);
+        tri.rotateY(Math.PI);
+        var inst = new T.InstancedMesh(tri, track(layers[2], new T.MeshStandardMaterial({ color: 0xf27d64, roughness: 0.45, emissive: 0x7a2a1c, emissiveIntensity: 0.55, opacity: 1 })), list.length);
+        list.forEach(function (c, k) {
           var q = toP(PV[c].x, PV[c].y);
-          var survey = rkn.survey.indexOf(c) >= 0;
-          var s1 = new T.Mesh(stem, stemMat);
-          var b1 = new T.Mesh(ball, survey ? gold : pink);
-          s1.position.set(q[0], 0, q[1]);
-          b1.position.set(q[0], 0, q[1]);
-          layers[2].add(s1);
-          layers[2].add(b1);
-          var hit = new T.Mesh(new T.CylinderGeometry(0.9, 0.9, 4.2, 8), new T.MeshBasicMaterial({ visible: false }));
-          hit.position.set(q[0], 2.5, q[1]);
-          hit.userData = { layer: 2, code: c };
-          layers[2].add(hit);
-          hits.push(hit);
-          if (survey) markers.push({ layer: 2, text: 'Xinjiang · survey', pos: V3(q[0], 4.7, q[1]) });
+          m4.makeTranslation(q[0], 0.96, q[1]); inst.setMatrixAt(k, m4);
+          addHit(2, c, q);
         });
+        layers[2].add(inst);
       }());
     }
     markers.forEach(function (mk) {
@@ -741,7 +821,7 @@
     var ray = new T.Raycaster();
     var ndc = new T.Vector2();
     return {
-      scene: scene, cam: cam, focus: hhh, bbox: bb, label: V3(hhh.x, 1.7, hhh.z), markers: markers, hasLayers: layers.length === 3,
+      scene: scene, cam: cam, focus: hhh, bbox: bb, label: V3(hhh.x, 1.7, hhh.z), markers: markers, hasLayers: layers.length === 3, markerAt: typeof markerAt === 'undefined' ? { 1: {}, 2: {} } : markerAt,
       fit: function (a) { cam.fov = a < 1 ? 50 : 36; },
       layout: function (w, h, fr) {
         VW = w;
@@ -758,7 +838,8 @@
       pick: function (x, y, layer) {
         ndc.set(x / VW * 2 - 1, -(y / VH * 2 - 1));
         ray.setFromCamera(ndc, cam);
-        var hit = ray.intersectObjects(hits, false)[0];
+        var want = CUI ? CUI.active() : 0;
+        var hit = ray.intersectObjects(hits.filter(function (h) { return !want || h.userData.layer === want; }), false)[0];
         return hit ? hit.object.userData : null;
       },
       update: function (t, time, dt, merge, layer) {
@@ -822,7 +903,8 @@
         var k = mg >= 1 ? 1 : 1 - Math.exp(-(dt || 0.016) * 6);
         layers.forEach(function (g, i) {
           g.position.y = LY[i];
-          var target = (i === 0 ? exV : 1) * fop[i] * (1 - NK.smooth(0, 0.55, mg)) * arrV;
+          var spOn = i === 0 ? 1 : (CUI && CUI.active() === i ? 1 : 0);
+          var target = (i === 0 ? exV : 1) * spOn * fop[i] * (1 - NK.smooth(0, 0.55, mg)) * arrV;
           g.userData.op += (target - g.userData.op) * k;
           if (Math.abs(target - g.userData.op) < 0.002) g.userData.op = target;
           g.userData.mats.forEach(function (mt) { mt.opacity = mt.userData.base * g.userData.op; mt.depthWrite = g.userData.op > 0.6 && mt.userData.base >= 1; });
@@ -1360,15 +1442,39 @@
   }
   /* the map is framed in the free area right of the legend (above it on narrow screens) */
   var FR = null;
+  /* v8.1: the species switch sits above the map and the species card below it,
+   * both spanning the map's column; the map is fitted between them. */
+  var barEl = sec.querySelector('[data-cz-bar]'), cardEl = sec.querySelector('[data-cz-card]');
   function freeRect() {
     var navH = 76;
     if (!panelEl || !panelEl.offsetWidth) return { x0: W * 0.08, x1: W * 0.92, y0: navH + 20, y1: H - 40 };
     var sr = stage.getBoundingClientRect(), pr = panelEl.getBoundingClientRect();
-    if (W >= 860) return { x0: pr.right - sr.left + 36, x1: W - 70, y0: navH + 18, y1: H - 60 };
-    return { x0: 12, x1: W - 12, y0: navH + 16, y1: Math.max(navH + 170, pr.top - sr.top - 14) };
+    var x0 = W >= 860 ? pr.right - sr.left + 36 : 12, x1 = W >= 860 ? W - 70 : W - 12;
+    stage.style.setProperty('--fx0', Math.round(x0) + 'px');
+    stage.style.setProperty('--fx1', Math.round(W - x1) + 'px');
+    if (W < 860) stage.style.setProperty('--cardB', Math.round(H - (pr.top - sr.top) + 10) + 'px');
+    else stage.style.removeProperty('--cardB');
+    var y0 = navH + 18, y1 = W >= 860 ? H - 60 : Math.max(navH + 170, pr.top - sr.top - 14);
+    if (barEl && barEl.offsetHeight) y0 = Math.max(y0, barEl.getBoundingClientRect().bottom - sr.top + 8);
+    if (cardEl && cardEl.offsetHeight) y1 = Math.min(y1, cardEl.getBoundingClientRect().top - sr.top - 8);
+    if (y1 - y0 < 160) y1 = y0 + 160;
+    return { x0: x0, x1: x1, y0: y0, y1: y1 };
   }
+  /* a card of a different height (switching species) refits the map */
+  NK.chinaRelayout = function () { if (!LV || !LV[0] || !LV[0].layout) return; FR = freeRect(); LV[0].layout(W, H, FR); };
+  /* keyboard / chip route: show the record at the marker's projected position */
+  NK.chinaFocus = function (layer, c) {
+    var L0 = LV[0], p = L0 && L0.markerAt && L0.markerAt[layer] && L0.markerAt[layer][c]; if (!p) return;
+    var v = p.clone(); if (L0.layerY) v.y += L0.layerY[layer] || 0;
+    v.project(L0.cam);
+    NK.chinaUI.showTip(NK.chinaUI.recordHtml(layer, c), (v.x * 0.5 + 0.5) * W, (-v.y * 0.5 + 0.5) * H - 10);
+  };
   var pointer = { x: -1, y: -1, inside: false, tap: false };
-  function ptr(e) { var r = stage.getBoundingClientRect(); pointer.x = e.clientX - r.left; pointer.y = e.clientY - r.top; pointer.inside = true; }
+  function ptr(e) {
+    var r = stage.getBoundingClientRect(); pointer.x = e.clientX - r.left; pointer.y = e.clientY - r.top;
+    /* over the switch, the card or the panel the pointer is not on the map */
+    pointer.inside = !(e.target && e.target.closest && e.target.closest('.cz__bar,.cz__card,.cz__head'));
+  }
   stage.addEventListener('pointermove', function (e) { if (e.pointerType !== 'touch') ptr(e); }, { passive: true });
   stage.addEventListener('pointerleave', function () { pointer.inside = false; stage.style.cursor = ''; NK.chinaUI.hideTip(); });
   stage.addEventListener('pointerdown', function (e) { if (e.pointerType === 'touch') { ptr(e); pointer.tap = true; } }, { passive: true });
@@ -1388,6 +1494,8 @@
       mk.el.style.transform = 'translate(' + ((tmp.x * 0.5 + 0.5) * W).toFixed(0) + 'px,' + ((-tmp.y * 0.5 + 0.5) * H).toFixed(0) + 'px) translate(-50%,-100%)';
     });
     var CUI = NK.chinaUI;
+    /* the switch and the card leave with the panel when the flight starts */
+    var away = merge > 0.3; if (away !== sec.classList.contains('is-away')) { sec.classList.toggle('is-away', away); if (away) CUI.hideTip(); }
     if (merge > 0.04 || !pointer.inside || time - lastPick < 0.06) return;
     lastPick = time;
     if (FR && W >= 860 && pointer.x < FR.x0 - 30) { CUI.hideTip(); stage.style.cursor = ''; return; }

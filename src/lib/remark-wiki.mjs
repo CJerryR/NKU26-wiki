@@ -413,7 +413,7 @@ function localPngSize(url) {
     }
     return cdnImageSizes.get(url) || {};
   }
-  if (typeof url !== 'string' || !url.startsWith('/img/') || !/\.(png|jpe?g)$/i.test(url)) return {};
+  if (typeof url !== 'string' || !url.startsWith('/img/') || !/\.(png|jpe?g|webp)$/i.test(url)) return {};
   const root = path.resolve(process.cwd(), 'static');
   const filename = path.resolve(root, `.${url}`);
   if (!filename.startsWith(root + path.sep)) return {};
@@ -441,6 +441,17 @@ function localPngSize(url) {
         at += length;
       }
     }
+    if (!size && header.subarray(0, 4).toString() === 'RIFF' && header.subarray(8, 12).toString() === 'WEBP') {
+      const type = header.subarray(12, 16).toString();
+      if (type === 'VP8X' && header.length >= 30) {
+        size = { width: header.readUIntLE(24, 3) + 1, height: header.readUIntLE(27, 3) + 1 };
+      } else if (type === 'VP8L' && header.length >= 25 && header[20] === 0x2f) {
+        const bits = header.readUInt32LE(21);
+        size = { width: (bits & 0x3fff) + 1, height: ((bits >>> 14) & 0x3fff) + 1 };
+      } else if (type === 'VP8 ' && header.length >= 30 && header.subarray(23, 26).toString('hex') === '9d012a') {
+        size = { width: header.readUInt16LE(26) & 0x3fff, height: header.readUInt16LE(28) & 0x3fff };
+      }
+    }
     if (!size) return {};
     pngSizes.set(filename, { stamp, size });
     return size;
@@ -462,7 +473,13 @@ function wrapTablesAndImages(node) {
     wrapTablesAndImages(c);
     if (c.type === 'image') {
       c.data = c.data || {};
-      c.data.hProperties = { loading: 'lazy', decoding: 'async', ...localPngSize(c.url), ...(c.data.hProperties || {}) };
+      const dimensions = localPngSize(c.url);
+      // Reserve the same constrained image box before decoding. width:auto used
+      // the unloaded image's fallback width and shifted deep TOC targets on load.
+      const sizing = dimensions.width > 0 && dimensions.height > 0
+        ? { style: `--figure-natural-width:${dimensions.width}px;--figure-ratio:${dimensions.width / dimensions.height}` }
+        : {};
+      c.data.hProperties = { loading: 'lazy', decoding: 'async', ...dimensions, ...sizing, ...(c.data.hProperties || {}) };
     }
     if (c.type === 'table') {
       return el('div', { className: ['table-wrap'], tabindex: '0', role: 'region', 'aria-label': 'Table (scrolls sideways)' }, [c]);

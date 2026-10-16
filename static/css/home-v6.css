@@ -313,6 +313,7 @@
 .hp2__tab[aria-selected="true"] .hp2__more>span{opacity:1;transition-delay:.15s}
 .hp2__more em{display:block;margin:8px 0 4px;font-style:normal;font-size:15px;font-weight:600;color:var(--c)}
 .hp2__note{margin-top:22px;display:flex;align-items:center;gap:8px;font-size:12.5px;color:rgba(243,235,224,.5)}
+.hp2__mapno{margin-top:6px;padding-left:14px;font-size:11.5px;color:rgba(243,235,224,.42)}
 .hp2__note::before{content:'';width:6px;height:6px;border-radius:50%;background:#ffd66b}
 .hp2__map{position:relative;margin:0;width:100%;height:min(74vh,740px);touch-action:pan-y}
 /* v7.2: the base map never moves; only the data layers cross-fade over it */
@@ -465,3 +466,101 @@ html.is-paged .home .lf{padding:76px 0 22px}
 }
 
 .cz__key li:nth-child(n),.cz__layers li:nth-child(n){transition-delay:0s}
+
+/* ===== v8.4 China map: a glass switch above the map, a glass readout below =====
+   Material: the site's liquid glass (src/styles/liquid-glass.css; refraction from
+   src/scripts/liquid-glass.ts via home-nav.ts). Colour carries one meaning only:
+   teal = soybean cyst nematode, coral = southern root-knot nematode. */
+.cz{--sp-scn:#46c8c3;--sp-scn-rim:#bff3ef;--sp-rkn:#f27d64;--sp:var(--sp-scn)}
+.cz[data-sp="rkn"]{--sp:var(--sp-rkn)}
+.cz__stage{--fx0:calc(max(28px,(100% - 1300px) / 2) + min(390px,31vw) + 88px);--fx1:70px}
+.cz__bar,.cz__card{position:absolute;z-index:4;left:var(--fx0);right:var(--fx1);opacity:calc(1 - var(--merge,0) * 1.8);transition:opacity .6s var(--ease-o),filter 1.1s var(--ease-o),transform 1.2s var(--ease-o)}
+.cz__bar{top:88px;display:flex;justify-content:center;pointer-events:none}
+.cz__bar>*{pointer-events:auto}
+/* the readout stops above the pager's scroll cue (fixed, 20px from the bottom, 32px tall) */
+.cz__card{bottom:var(--cardB,64px)}
+.cz.is-away .cz__bar,.cz.is-away .cz__card,.cz.is-q .cz__bar,.cz.is-q .cz__card,.cz.is-handoff .cz__bar,.cz.is-handoff .cz__card{opacity:0;pointer-events:none}
+.cz.is-pre .cz__bar,.cz.is-pre .cz__card{filter:blur(14px);opacity:0;transform:scale(1.04)}
+.cz__bar{transition-delay:.3s}.cz__card{transition-delay:.45s}
+.cz .cz__dot{flex:none;display:inline-block;width:10px;height:10px;margin:0;border-radius:50%;background:var(--sp-scn);box-shadow:0 0 0 2px rgb(191 243 239 / .35),0 0 10px rgb(70 200 195 / .55)}
+.cz .cz__tri{flex:none;display:inline-block;width:0;height:0;margin:0;border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:10px solid var(--sp-rkn);background:none;box-shadow:none;filter:drop-shadow(0 0 5px rgb(242 125 100 / .6))}
+/* switch: a lighter lens of glass slides under the active species */
+.cz__switch{display:inline-flex;padding:4px;border-radius:999px}
+.cz__lens{position:absolute;z-index:1;top:4px;bottom:4px;left:0;width:var(--lw,0px);border-radius:999px;transform:translateX(var(--lx,4px));background:rgb(255 255 255 / .15);box-shadow:inset 0 0 0 .5px rgb(255 255 255 / .55),inset 0 1.5px 1.5px -.5px rgb(255 255 255 / .75),inset 0 -2px 3px -1px rgb(0 0 0 / .2),0 8px 18px -10px rgb(0 0 0 / .7);transition:transform .55s cubic-bezier(.34,1.3,.5,1),width .55s cubic-bezier(.34,1.3,.5,1)}
+.cz__sw-btn{position:relative;z-index:3;display:inline-flex;align-items:center;padding:9px 18px;border:0;border-radius:999px;background:none;font:600 13.5px/1.2 var(--sans);letter-spacing:-.005em;color:rgb(236 228 242 / .58);white-space:nowrap;cursor:pointer;transition:color .3s}
+.cz .cz__sw-btn i{margin-right:9px;transition:opacity .3s}
+.cz .cz__sw-btn[aria-pressed="false"] i{opacity:.5}
+.cz__sw-btn:hover{color:rgb(255 255 255 / .86)}
+.cz__sw-btn[aria-pressed="true"]{color:#fff}
+.cz__sw-btn:focus-visible{outline:2px solid #ffd66b;outline-offset:2px}
+/* readout: one pane of glass, three figures, one line of provenance */
+.cz__read{display:grid;max-width:700px;margin:0 auto;padding:17px 26px 13px;border-radius:26px}
+.cz__read>.cz__sp{grid-area:1/1;min-width:0}
+.cz__read>.cz__sp[hidden]{display:block;visibility:hidden}
+.cz__figs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 30px;margin:0}
+.cz__fig{display:flex;flex-direction:column-reverse;justify-content:flex-end;gap:6px;min-width:0}
+.cz__fig dd{margin:0;font:600 36px/1 var(--sans);letter-spacing:-.035em;font-variant-numeric:tabular-nums lining-nums;color:#fff}
+.cz__fig dd small{margin-left:1px;font-size:.5em;font-weight:500;letter-spacing:0;color:rgb(236 228 242 / .62)}
+.cz__fig--key dd{color:var(--sp);text-shadow:0 0 22px color-mix(in srgb,var(--sp) 45%,transparent)}
+.cz__fig dt{max-width:27ch;font-size:12.5px;line-height:1.38;color:rgb(236 228 242 / .72);text-wrap:pretty}
+.cz .cz__fig dt i{margin-right:7px;vertical-align:0}
+.cz__prov{margin:13px 0 0;padding-top:10px;border-top:1px solid rgb(255 255 255 / .1);font-size:11.5px;line-height:1.45;color:rgb(236 228 242 / .55)}
+.cz__prov a{color:rgb(236 228 242 / .85);text-decoration:underline;text-decoration-color:rgb(236 228 242 / .35);text-underline-offset:2px}
+.cz__prov a:hover{text-decoration-color:currentColor}
+/* marker label: a small chip of glass; script keeps it between the switch and the readout */
+.cz .cz__tip{position:absolute;left:0;top:0;z-index:6;display:block;max-width:250px;padding:8px 13px 9px;border:0;border-radius:15px;background:none;box-shadow:var(--glass-shadow);color:#fff;font:500 12px/1.35 var(--sans);pointer-events:none;--glass-tint:rgb(26 14 34 / .5)}
+.cz .cz__tip[hidden]{display:none}
+.cz__tip-body{display:block}
+.cz__tip-body b{font-size:13.5px;font-weight:650}
+.cz__tip-body span{margin-left:6px;color:rgb(236 228 242 / .7)}
+.cz__tip-body small{display:block;margin-top:2px;font-size:11.5px;color:rgb(236 228 242 / .66)}
+/* the old corner legend, gold survey pin and region labels are gone */
+.cz__key,.cz__hint,.nk-china__label{display:none}
+/* 2D stand-in (no WebGL): same layout, one species at a time; js fits the box */
+.cz.is-2d .cz__svg{left:var(--fx0);right:auto;top:150px;width:calc(100% - var(--fx0) - var(--fx1));height:calc(100% - 330px);transform:none}
+.cz__sea{fill:none;stroke:#b99be0;stroke-width:2.4px;stroke-linecap:round;vector-effect:non-scaling-stroke}
+/* the standard map's review number, always shown with the China map */
+.cz__mapno{margin-top:8px;max-width:34ch;font-size:11.5px;line-height:1.4;color:#9f90ab;transition:opacity .35s}
+.cz.is-pre .cz__mapno{opacity:0}
+.cz__m{cursor:help}
+.cz__m--scn{fill:var(--sp-scn);stroke:var(--sp-scn-rim);stroke-width:1.4px;vector-effect:non-scaling-stroke}
+.cz__m--rkn{fill:var(--sp-rkn)}
+.cz[data-sp="scn"] .cz__m--rkn,.cz[data-sp="rkn"] .cz__m--scn{display:none}
+@media (prefers-reduced-motion:reduce){.cz__lens{transition:none}}
+/* phones: switch on top, map, readout, then the headline at the bottom (the
+   data-layers="off" rule used to lock the headline at 31vw, see v8.2) */
+@media (max-width:859px){
+  .cz[data-layers="off"] .cz__head,.cz__head{top:auto;bottom:18px;left:16px;right:16px;width:auto;max-width:none;transform:none}
+  .cz__head .h-display{font-size:26px}
+  .cz__big{margin-top:6px}
+  .cz__big b{font-size:38px}
+  .cz__big span{font-size:17px}
+  .cz__lede{margin-top:6px;max-width:none;font-size:13px;line-height:1.45}
+  .cz__cite{margin-top:6px;font-size:11.5px}
+  .cz__mapno{margin-top:5px;max-width:none;font-size:10.5px}
+  .cz__bar{top:72px;left:12px;right:12px}
+  .cz__sw-tail{display:none}
+  .cz__sw-btn{padding:8px 14px;font-size:12.5px}
+  .cz__card{left:12px;right:12px}
+  .cz__read{padding:12px 14px 10px;border-radius:20px}
+  .cz__figs{gap:0 12px}
+  .cz__fig{gap:4px}
+  .cz__fig dd{font-size:24px}
+  .cz__fig dt{font-size:10.5px;line-height:1.3}
+  .cz__prov{margin-top:9px;padding-top:7px;font-size:10px}
+}
+@media (max-width:859px) and (max-height:740px){
+  .cz__cite{display:none}
+  .cz__lede{font-size:12.5px}
+  .cz__fig dt{font-size:10px}
+}
+
+/* ===== v8.1 world case cards: a representative species photo ===== */
+.flipcard__photo{margin:0 0 12px}
+.flipcard__photo[hidden]{display:none}
+.flipcard__photo img{display:block;width:100%;height:150px;object-fit:contain;border-radius:12px;background:#ece4d6}
+.flipcard__photo figcaption{margin-top:5px;font-size:11px;line-height:1.35;color:var(--ink-3)}
+.flipcard__credit{margin-top:10px;padding-top:10px;border-top:1px solid rgba(35,24,41,.1);font-size:11.5px;line-height:1.45;color:var(--ink-3)}
+.flipcard__credit[hidden]{display:none}
+.flipcard__credit b{color:var(--ink-2,var(--ink));font-weight:600}
+.flipcard__credit a{color:var(--plum);text-decoration:underline;text-underline-offset:2px}

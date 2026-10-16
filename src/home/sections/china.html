@@ -1,21 +1,48 @@
-<section class="cz" data-layers="off" id="china" data-nav-label="Closer to the field" data-zoom data-tone="dark" aria-labelledby="china-title">
+<section class="cz" data-layers="off" data-sp="scn" id="china" data-nav-label="Closer to the field" data-zoom data-tone="dark" aria-labelledby="china-title">
   <div class="cz__stage" data-zoom-stage>
     <canvas class="cz__canvas" data-zoom-canvas aria-hidden="true"></canvas>
     <svg class="cz__svg" data-cz-svg viewBox="0 0 600 500" aria-hidden="true"></svg>
     <div class="cz__labels" data-china-labels aria-hidden="true"></div>
-    <div class="cz__tip" data-china-tip hidden></div>
+    <div class="cz__tip lg-glass" data-china-tip role="status" hidden><span class="lg-surface" aria-hidden="true"></span><span class="cz__tip-body" data-tip-body></span></div>
     <div class="cz__head" data-cz-head>
       <h2 class="h-display" id="china-title">Closer to the field</h2>
       <p class="cz__big"><b data-cz-usd>US$120</b><span>million+</span></p>
-      <p class="cz__lede">Yearly soybean losses to soybean cyst nematode in China, where infested fields typically lose 20&#8211;30% of their yield.</p>
-      <ul class="cz__key">
-        <li><i class="cz__tri" aria-hidden="true"></i>Soybean cyst nematode, 22 provinces</li>
-        <li><i class="cz__pin" aria-hidden="true"></i>Southern root-knot nematode, 20 provinces</li>
-        <li><i class="cz__pin cz__pin--gold" aria-hidden="true"></i>Xinjiang vegetable survey, 2021&#8211;23</li>
-      </ul>
-      <p class="cz__cite"><a href="https://doi.org/10.1186/s42483-021-00095-w">Peng et al. 2021, <i>Phytopathology Research</i></a></p>
+      <p class="cz__lede">Estimated yearly soybean losses to soybean cyst nematode in China, a historical estimate cited in the review below. Infested fields typically lose 20&#8211;30% of their yield.</p>
+      <p class="cz__cite">Source: <a href="https://doi.org/10.1186/s42483-021-00095-w" target="_blank" rel="noopener">Peng et al. 2021, <i>Phytopathology Research</i></a></p>
+      <p class="cz__mapno">Map: Standard Map of China, review no. GS(2022)4308, Ministry of Natural Resources</p>
     </div>
-    <p class="cz__hint" aria-hidden="true">Point at a marker to read its record</p>
+    <!-- v8.4 above the map: one glass switch; its icons are the map's legend -->
+    <div class="cz__bar" data-cz-bar>
+      <div class="cz__switch lg-glass" data-glass="pill" role="group" aria-label="Nematode shown on the map">
+        <span class="lg-surface" aria-hidden="true"></span>
+        <span class="cz__lens" aria-hidden="true"></span>
+        <button type="button" class="cz__sw-btn" data-cz-sp="scn" aria-pressed="true"><i class="cz__dot" aria-hidden="true"></i>Soybean cyst<span class="cz__sw-tail">&#160;nematode</span></button>
+        <button type="button" class="cz__sw-btn" data-cz-sp="rkn" aria-pressed="false"><i class="cz__tri" aria-hidden="true"></i>Southern root-knot<span class="cz__sw-tail">&#160;nematode</span></button>
+      </div>
+    </div>
+    <!-- v8.4 below the map: one glass readout, three figures and their source.
+         Both species share one grid cell, so switching never moves the map. -->
+    <div class="cz__card cz__read lg-glass" data-glass="panel" data-cz-card aria-live="polite">
+      <span class="lg-surface" aria-hidden="true"></span>
+      <section class="cz__sp" data-cz-for="scn" aria-label="Soybean cyst nematode in China">
+        <dl class="cz__figs">
+          <div class="cz__fig cz__fig--key"><dt><i class="cz__dot" aria-hidden="true"></i>provinces with a published record</dt><dd>22</dd></div>
+          <div class="cz__fig"><dt>yield loss in a typical infested field</dt><dd>20&#8211;30<small>%</small></dd></div>
+          <div class="cz__fig"><dt>yield loss in a severely infested field</dt><dd>60&#8211;70<small>%</small></dd></div>
+        </dl>
+        <p class="cz__prov"><i>Heterodera glycines</i> on soybean. Source: <a href="https://doi.org/10.1186/s42483-021-00095-w" target="_blank" rel="noopener">Peng et al. 2021, <i>Phytopathology Research</i></a>. One schematic marker per province.</p>
+        <p class="sr-only">Provinces on the map: <span data-cz-list="scn"></span></p>
+      </section>
+      <section class="cz__sp" data-cz-for="rkn" aria-label="Southern root-knot nematode in China" hidden>
+        <dl class="cz__figs">
+          <div class="cz__fig cz__fig--key"><dt><i class="cz__tri" aria-hidden="true"></i>provinces in CABI&#8217;s distribution table</dt><dd>21</dd></div>
+          <div class="cz__fig"><dt>Xinjiang vegetable samples with root-knot nematodes, 2021&#8211;23</dt><dd>57<small>/130</small></dd></div>
+          <div class="cz__fig"><dt>root-knot samples in East China, with this species dominant</dt><dd>104</dd></div>
+        </dl>
+        <p class="cz__prov"><i>Meloidogyne incognita</i> on vegetables and many other crops. Sources: <a href="https://doi.org/10.1079/PWKB.Species.33245" target="_blank" rel="noopener">CABI datasheet</a>, <a href="https://doi.org/10.1016/j.jia.2024.12.008" target="_blank" rel="noopener">Zhou et al. 2026</a>, Yang et al. One schematic marker per province.</p>
+        <p class="sr-only">Provinces on the map: <span data-cz-list="rkn"></span></p>
+      </section>
+    </div>
     <span class="nk-zoom__label" data-zoom-label aria-hidden="true">Huang-Huai-Hai Plain</span>
     <ol class="nk-zoom__steps" data-zoom-steps aria-hidden="true"><li><i></i><span>Farming regions</span></li><li><i></i><span>A field</span></li><li><i></i><span>Crop roots</span></li><li><i></i><span>In the soil</span></li></ol>
     <h2 class="nk-zoom__q" data-zoom-q id="zoom-question">How do nematodes infect plants?</h2>

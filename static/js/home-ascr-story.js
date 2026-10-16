@@ -326,7 +326,7 @@
   function buildMap(g) {
     var G = window.NKU_GEO && window.NKU_GEO.china; if (!g || !G) return;
     var NS = 'http://www.w3.org/2000/svg', LON0 = 104.25, LAT0 = 35.75;
-    var IN = { lon0: 106, lon1: 124, lat0: 3, lat1: 24, k: 0.52, clon: 130.6, clat: 23.2 };
+    var IN = { lon0: 106, lon1: 124, lat0: 2.5, lat1: 24, k: 0.52, clon: 130.6, clat: 23.2 };
     function P(lon, lat) { return [(lon - LON0) * 0.84 * 0.96, LAT0 - lat]; }
     function PI(lon, lat) { return P(IN.clon + (lon - (IN.lon0 + IN.lon1) / 2) * IN.k, IN.clat + (lat - (IN.lat0 + IN.lat1) / 2) * IN.k); }
     function d(rings, proj, close) {
@@ -341,5 +341,7 @@
     var ins = el('g', { 'clip-path': 'url(#as-inset)' }, g);
     el('path', { d: d(G.outline, PI, true), 'class': 'as-map__inland', 'vector-effect': 'non-scaling-stroke' }, ins);
     el('path', { d: d(G.maritime || [], PI, false), 'class': 'as-map__sea', 'vector-effect': 'non-scaling-stroke' }, ins);
+    /* v8.2: the China outline is the Standard Map of China; its review number goes with the map */
+    el('text', { x: e[0].toFixed(2), y: (e[1] + 1.6).toFixed(2), 'class': 'as-map__no' }, g).textContent = 'Map: GS(2022)4308';
   }
 })();

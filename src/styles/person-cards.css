@@ -1,0 +1,62 @@
+/* Member and attribution cards follow the supplied screenshot reference. */
+.member-grid,.credit-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;max-width:none!important;align-items:start}
+.member-card {scroll-margin-top:calc(var(--nav-h) + 30px)}
+.member-card,.credit-card {min-width:0;font-family:Arial,Helvetica,sans-serif;letter-spacing:normal}
+.member-card__inner {display:grid;gap:16px;height:100%}
+.member-grid {align-items:stretch}
+.member-card__face {position:relative;min-width:0;display:grid;grid-template-columns:minmax(0,42%) minmax(0,1fr);gap:24px;align-items:center;padding:24px;border:5px solid #fff;border-radius:12px;color:#e3edf1;background:#147da5;box-shadow:0 0 0 1px #d4d9db}
+.member-card__identity {min-width:0;text-align:center;align-self:stretch;display:flex;flex-direction:column;justify-content:flex-start}
+.member-portrait {display:block;width:100%;height:auto;aspect-ratio:164/240;object-fit:cover;object-position:center;border-radius:8px;background:#c8d5dc}
+.person-placeholder {display:grid;place-items:center;background:#d9e0e4}
+.person-placeholder svg {width:72%;height:72%;fill:#b1bec7}
+.doc .prose .member-card h3 {margin:6px 0 0;color:#e3edf1;font-family:inherit;font-size:20px;font-weight:700;line-height:1.15;letter-spacing:normal}
+.member-card .person-name__cn {margin:5px 0 0;color:#d6e5ec;font-size:12px;line-height:1.3}
+.member-card .heading-anchor {display:none}
+.member-card__info {min-width:0;align-self:start;padding:10px 0}
+.member-card__role {margin:0 0 13px;padding:0 0 12px;border-bottom:1px solid #afc9d5;font-size:16px;font-weight:700;line-height:1.3}
+.member-card__facts {margin:0;display:grid;gap:13px}
+.member-card dt {margin:0 0 7px;font-size:16px;font-weight:700;line-height:1.2}
+.member-card dd {margin:0;font-size:16px;font-weight:400;line-height:1.3;overflow-wrap:anywhere}
+.member-card__back {background:#3e5064}
+.member-card__back-name {margin:6px 0 0;font-size:20px;font-weight:700;line-height:1.15}
+.member-card__back-name span {display:block;font-size:12px;font-weight:400;margin-top:5px}
+.member-card__bio {min-width:0;border-top:1px solid #afbdc8;border-bottom:1px solid #afbdc8;padding:14px 0;font-size:16px;line-height:1.25;align-self:center}
+.member-card__bio p {margin:0}
+.member-card__bio p+p {margin-top:.7em}
+.member-card button {display:none}
+/* Keep both faces readable when scripting is unavailable. */
+.member-card.is-ready {perspective:1400px}
+.member-card.is-ready .member-card__inner {position:relative;gap:0;transform-style:preserve-3d;transition:transform .5s cubic-bezier(.2,.65,.3,1)}
+.member-card.is-ready .member-card__face {grid-area:1/1;backface-visibility:hidden}
+.member-card.is-ready .member-card__front {transform:rotateY(0deg)}
+.member-card.is-ready .member-card__back {transform:rotateY(180deg)}
+.member-card.is-flipped .member-card__inner {transform:rotateY(180deg)}
+.member-card.is-ready button {display:grid;place-items:center;position:absolute;right:3px;bottom:3px;width:26px;height:26px;border:0;border-radius:4px;background:transparent;color:#e3edf1;font:18px/1 Arial,sans-serif;cursor:pointer;opacity:.65}
+.member-card.is-ready button:hover {opacity:1;background:rgba(255,255,255,.12)}
+.member-card button:focus-visible,.credit-card summary:focus-visible {outline:2px solid #fff;outline-offset:2px;opacity:1}
+.credit-card {padding:20px;border:0;border-radius:12px;background:#fff;color:#282828}
+.credit-card header {display:flex;gap:10px;align-items:center;margin-bottom:18px}
+.credit-portrait {display:block;flex:0 0 40px;width:40px;height:40px;object-fit:cover;border-radius:50%;background:#ddd}
+.credit-portrait.person-placeholder {display:grid}
+.credit-portrait.person-placeholder svg {height:82%;width:82%;fill:#f5f5f5}
+.doc .prose .credit-card h3 {margin:0;color:#282828;font-family:inherit;font-size:14px;line-height:1.25;font-weight:700;letter-spacing:normal}
+.credit-card .person-name__cn {margin:3px 0 0;font-size:11px;color:#777;line-height:1.25}
+.credit-card__role {margin:3px 0 0;color:#777;font-size:12px;line-height:1.3}
+.doc .prose .credit-card h4 {margin:15px 0 6px;color:#282828;font-size:14px;font-family:inherit;font-weight:700;line-height:1.3;letter-spacing:normal;text-transform:none}
+.credit-card__tasks,.credit-card__preview,.credit-card details {font-size:12px;line-height:1.5;color:#777}
+.credit-card__tasks {margin:0}
+.credit-card__tasks span {text-decoration:underline dotted;text-underline-offset:2px}
+.credit-card__preview,.credit-card__rest p {margin:0}
+.credit-card__rest p+p {margin-top:0}
+.credit-card details {display:flex;flex-direction:column}
+.credit-card__rest {order:0}
+.credit-card summary {order:1;display:block;width:fit-content;padding:0 3px;margin-top:5px;border:1px solid #282828;border-radius:3px;background:#fff;color:#282828;font:12px/1.15 Arial,sans-serif;cursor:pointer}
+.credit-card summary::-webkit-details-marker {display:none}
+.credit-card summary::marker {content:''}
+.credit-card__less,.credit-card details[open] .credit-card__more {display:none}
+.credit-card details[open] .credit-card__less {display:inline}
+.credit-card summary:focus-visible {outline-color:#147da5}
+@media(max-width:1000px){.member-grid{grid-template-columns:minmax(0,1fr);max-width:600px!important}.member-card__face{grid-template-columns:minmax(0,40%) minmax(0,1fr)}}
+@media(max-width:760px){.credit-grid{grid-template-columns:minmax(0,1fr)}.member-card__face{gap:18px;padding:20px}.member-card dt,.member-card dd,.member-card__role{font-size:15px}.member-card__bio{font-size:15px}.credit-card{padding:20px}}
+@media(max-width:420px){.member-card__face{gap:15px;padding:17px}.doc .prose .member-card h3,.member-card__back-name{font-size:17px}.member-card__role,.member-card dt,.member-card dd{font-size:14px}.member-card__bio{font-size:14px;line-height:1.3}}
+@media(prefers-reduced-motion:reduce){.member-card.is-ready .member-card__inner{transition:none}}

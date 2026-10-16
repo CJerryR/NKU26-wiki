@@ -27,7 +27,6 @@ export const primaryNav: NavItem[] = [
     kind: 'group', id: 'wetlab', label: 'Wet Lab', items: [
       { page: 'parts', label: 'Parts and Collections', blurb: 'Every part, and the collections they form' },
       { page: 'experiments', label: 'Experiments', blurb: 'What each experiment tests' },
-      { page: 'protocols', label: 'Protocols', blurb: 'The methods we followed' },
       { page: 'notebook', label: 'Notebook', blurb: 'Dated bench records', optional: true },
       { page: 'results', label: 'Results', blurb: 'What the bench has shown so far' },
       { page: 'safety', label: 'Safety', blurb: 'Biosafety at the bench and beyond' },
