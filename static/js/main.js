@@ -39,7 +39,7 @@
 
   /* -- Global wiki search --------------------------------------------- */
   function siteSearch() {
-    var modal = $('#site-search'); if (!modal) return;
+    var modal = $('#site-search'); if (!modal || modal.hasAttribute('data-search')) return;
     var input = $('[data-search-input]', modal);
     var results = $('[data-search-results]', modal);
     var meta = $('[data-search-meta]', modal);

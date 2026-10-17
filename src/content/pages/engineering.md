@@ -46,7 +46,7 @@ Via homologous recombination (HR), we integrated the constitutive *GPR2-sfGFP* e
 
 :::figure
 
-![Figure 1 Yeast transformation of GPR2‑sfGFP construct](/img/uploads/round2/r2-e81fa7011e20-engineering-r2-eng-001.webp)
+![Figure 1 Yeast transformation of GPR2‑sfGFP construct](https://static.igem.wiki/teams/6303/wiki/v8-0/v85-e81fa7011e20-r2-e81fa7011e20-engineering-r2-eng-001.webp)
 
 Figure 1 Yeast transformation of GPR2‑sfGFP construct
 
@@ -106,7 +106,7 @@ Referring to previous work reported by Fan et al. [1][2], we assembled the ascar
 
 :::figure
 
-![Figure 1 Schematic Diagram of Yeast Biosensor Construction Pipeline](/img/uploads/round2/r2-d2f6a13810e7-engineering-r2-eng-002.webp)
+![Figure 1 Schematic Diagram of Yeast Biosensor Construction Pipeline](https://static.igem.wiki/teams/6303/wiki/v8-0/v85-d2f6a13810e7-r2-d2f6a13810e7-engineering-r2-eng-002.webp)
 
 Figure 1 Schematic Diagram of Yeast Biosensor Construction Pipeline
 
@@ -120,7 +120,7 @@ First, we knocked out the *Gal80* gene in CEN.PK2-1C to obtain the engineered st
 
 :::figure
 
-![Figure 2 Knockout of the *Gal80* Gene](/img/uploads/round2/r2-9ec82d42de33-engineering-r2-eng-003.webp)
+![Figure 2 Knockout of the *Gal80* Gene](https://static.igem.wiki/teams/6303/wiki/v8-0/v85-9ec82d42de33-r2-9ec82d42de33-engineering-r2-eng-003.webp)
 
 Figure 2 Knockout of the *Gal80* Gene
 
@@ -128,7 +128,7 @@ Figure 2 Knockout of the *Gal80* Gene
 
 :::figure
 
-![Figure 3 Construction of Synthetic Transcription Factor](/img/uploads/round2/r2-10dfc2855aa3-engineering-r2-eng-004.webp)
+![Figure 3 Construction of Synthetic Transcription Factor](https://static.igem.wiki/teams/6303/wiki/v8-0/v85-10dfc2855aa3-r2-10dfc2855aa3-engineering-r2-eng-004.webp)
 
 Figure 3 Construction of Synthetic Transcription Factor
 

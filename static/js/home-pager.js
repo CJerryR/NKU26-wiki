@@ -279,7 +279,7 @@
       if (e.target && e.target.closest && e.target.closest('[data-op-focus]') && k.indexOf('Arrow') === 0) return;
       if (dn) next(); else if (up) prev(); else if (k === 'Home') go(0, -1); else go(pages.length - 1, 1);
     }
-    function enable() {
+    function enable(anchor) {
       if (paged) return; paged = true;
       root.classList.add('is-paged');
       pages.forEach(function (pg) { pg.el.classList.remove('is-tall'); pg.el.style.removeProperty('--tall'); });
@@ -288,19 +288,19 @@
       pages.forEach(function (pg, i) { if (Math.abs(pg.el.offsetTop - y) < Math.abs(pages[best].el.offsetTop - y)) best = i; });
       var hash = location.hash && document.getElementById(location.hash.slice(1));
       if (hash) pages.forEach(function (pg, i) { if (pg.el === hash) best = i; });
-      cur = best; st = 0; atFoot = false;
-      pages.forEach(function (pg, i) { call(pg, 'set', i < cur ? pg.steps : 0, 1); });
-      halt(); write(top(cur)); lock(call(pages[cur], 'enter', 1, { cut: false, initial: true }));
+      cur = anchor ? anchor.index : best; st = anchor ? anchor.step : 0; atFoot = !!(anchor && anchor.foot);
+      pages.forEach(function (pg, i) { call(pg, 'set', i < cur ? pg.steps : i === cur ? st : 0, 1); });
+      halt(); write(rest()); lock(call(pages[cur], 'enter', 1, { cut: false, initial: true, resume: !!anchor }));
       dots(); armHint();
     }
-    function disable() {
+    function disable(anchor) {
       if (!paged) return; paged = false; root.classList.remove('is-paged');
       halt(); clearTimeout(hintT); clearTimeout(busyTimer); clearTimeout(leaveTimer); if (leaving) call(pages[cur], 'cancel'); busy = false; leaving = false; tops = [];
-      setupFallback(); dots();
+      setupFallback(anchor); dots();
     }
     // something else moved the page (the mascot's back-to-top, find in page): follow it
     addEventListener('scroll', function () {
-      if (!paged || busy || atFoot) return;
+      if (layoutChanging || !paged || busy || atFoot) return;
       if (A.mode || Math.abs(scrollY - top(cur)) < 40) return;
       var best = 0; pages.forEach(function (pg, i) { if (Math.abs(top(i) - scrollY) < Math.abs(top(best) - scrollY)) best = i; });
       if (best === cur) return;
@@ -308,10 +308,27 @@
     }, { passive: true });
     addEventListener('wheel', onWheel, { passive: false });
     addEventListener('keydown', onKey);
-    var rz; addEventListener('resize', function () {
+    // Keep the reader's scene and stop while CSS switches between snapped and
+    // native layouts. A stale URL hash describes the initial link, not this stop.
+    var rz, layoutChanging = false, resizeAnchor = null;
+    function readingAnchor() {
+      var pg = pages[cur];
+      return { index: cur, step: st, foot: atFoot,
+        progress: paged ? (st ? (st + .3) / (pg.steps + .6) : 0) : (pg.nativeProgress || 0) };
+    }
+    addEventListener('resize', function () {
+      if (!layoutChanging) resizeAnchor = readingAnchor();
+      layoutChanging = true;
       clearTimeout(rz); rz = setTimeout(function () {
-        if (mq.matches && !H.reduced) { if (!paged) enable(); else { measure(); halt(); write(rest()); } }
-        else disable();
+        var anchor = resizeAnchor;
+        if (mq.matches && !H.reduced) {
+          if (!paged) enable(anchor); else { measure(); halt(); write(rest()); }
+        } else if (paged) disable(anchor);
+        else restoreFallback(anchor);
+        requestAnimationFrame(function () {
+          layoutChanging = false; resizeAnchor = null;
+          if (!paged) onFallbackScroll();
+        });
       }, 150);
     });
     // anything else that scrolls (find in page, focus moving into a later page) resyncs
@@ -348,42 +365,63 @@
 
     /* ---------- native scrolling ---------- */
     var fb = null;
-    function setupFallback() {
-      if (fb) return; fb = true;
+    function restoreFallback(anchor) {
+      if (!anchor) return;
+      cur = anchor.index; st = anchor.step; atFoot = anchor.foot;
+      pages.forEach(function (pg, i) {
+        pg.done = i < cur ? pg.steps : i === cur ? st : 0;
+        pg.running = false; pg.runId = (pg.runId || 0) + 1;
+        call(pg, 'set', pg.done, 1);
+      });
+      var pg = pages[cur], span = Math.max(0, pg.el.offsetHeight - innerHeight);
+      var progress = pg.sp.tall ? anchor.progress : 0;
+      pg.nativeProgress = progress;
+      halt(); write(atFoot ? maxY() : pg.el.offsetTop + span * progress);
+      dots();
+    }
+    function setupFallback(anchor) {
+      pages.forEach(function (pg) {
+        if (pg.sp.tall && pg.steps) { pg.el.classList.add('is-tall'); pg.el.style.setProperty('--tall', pg.sp.tall); }
+      });
+      if (fb) { restoreFallback(anchor); return; } fb = true;
       pages.forEach(function (pg) {
         pg.done = 0; pg.running = false;
         if (pg.sp.tall && pg.steps) { pg.el.classList.add('is-tall'); pg.el.style.setProperty('--tall', pg.sp.tall); }
         call(pg, 'set', 0, 1);
         H.onView(pg.el, function (v, e) {
-          if (paged || !v) return;
+          if (layoutChanging || paged || !v) return;
           if (!pg.entered) { pg.entered = true; call(pg, 'enter', 1, { cut: false }); }
           if (!pg.sp.tall && pg.steps && !pg.running && pg.done < pg.steps) autoplay(pg);
         }, { threshold: .5 });
       });
       addEventListener('scroll', onFallbackScroll, { passive: true });
-      onFallbackScroll();
+      if (anchor) restoreFallback(anchor); else onFallbackScroll();
     }
     function autoplay(pg) {
       pg.running = true;
+      var runId = pg.runId = (pg.runId || 0) + 1;
       (function one() {
+        if (pg.runId !== runId) return;
         if (paged || pg.done >= pg.steps) { pg.running = false; return; }
+        if (layoutChanging) { setTimeout(one, 180); return; }
         pg.done++; var ms = call(pg, 'step', pg.done, 1);
         setTimeout(one, Math.max(0, ms) + 900);
       })();
     }
     function onFallbackScroll() {
-      if (paged) return;
+      if (paged || layoutChanging) return;
       pages.forEach(function (pg) {
         if (!pg.sp.tall || !pg.steps || pg.running) return;
         var want = Math.min(pg.steps, Math.floor(H.progress(pg.el) * (pg.steps + .6)));
         if (want === pg.done) return;
         pg.running = true;
         var dir = want > pg.done ? 1 : -1; pg.done += dir;
+        var runId = pg.runId = (pg.runId || 0) + 1;
         var ms = call(pg, 'step', pg.done, dir);
-        setTimeout(function () { pg.running = false; onFallbackScroll(); }, Math.max(0, Math.min(ms, 900)));
+        setTimeout(function () { if (pg.runId !== runId) return; pg.running = false; onFallbackScroll(); }, Math.max(0, Math.min(ms, 900)));
       });
       var y = scrollY + innerHeight * .5;
-      pages.forEach(function (pg, i) { if (pg.el.offsetTop <= y && pg.el.offsetTop + pg.el.offsetHeight > y) { cur = i; st = pg.done || 0; } });
+      pages.forEach(function (pg, i) { if (pg.el.offsetTop <= y && pg.el.offsetTop + pg.el.offsetHeight > y) { cur = i; st = pg.done || 0; pg.nativeProgress = H.progress(pg.el); } });
       dots();
     }
 

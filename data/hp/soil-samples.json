@@ -1,0 +1,97 @@
+{
+ "title": "Soil sample log (土样登记表)",
+ "source": "Team soil sample log, records 1–6 (records 7–16 are still empty)",
+ "precision": "Markers sit at the county / district / city named in the log (≈10–30 km).",
+ "pending": "Ascaroside (蛔甘素) content: not yet measured for any sample.",
+ "sites": [
+  {
+   "id": 1,
+   "place": "Yuncheng County, Heze, Shandong",
+   "placeZh": "山东省菏泽市郓城县",
+   "province": "Shandong",
+   "n": 25,
+   "soil": "several types",
+   "soilZh": "多种",
+   "cover": "farmland, orchards, urban green space",
+   "coverZh": "农田，果园，城市绿地",
+   "ll": [
+    115.94,
+    35.6
+   ],
+   "prec": "county",
+   "short": "Yuncheng"
+  },
+  {
+   "id": 2,
+   "place": "Getuo Village, Hunyuan County, Datong, Shanxi",
+   "placeZh": "山西省大同市浑源县圪坨村",
+   "province": "Shanxi",
+   "n": 1,
+   "soil": "loess",
+   "soilZh": "黄土",
+   "ll": [
+    113.7,
+    39.7
+   ],
+   "prec": "county",
+   "short": "Hunyuan"
+  },
+  {
+   "id": 3,
+   "place": "Qingdao, Shandong",
+   "placeZh": "山东省青岛市",
+   "province": "Shandong",
+   "n": 5,
+   "ll": [
+    120.38,
+    36.07
+   ],
+   "prec": "city",
+   "short": "Qingdao"
+  },
+  {
+   "id": 4,
+   "place": "Haozhuang, Lincheng County, Xingtai, Hebei",
+   "placeZh": "河北省邢台市临城县郝庄",
+   "province": "Hebei",
+   "n": 1,
+   "ll": [
+    114.5,
+    37.44
+   ],
+   "prec": "county",
+   "link": "also a teaching site (Hebei · Lincheng)",
+   "short": "Lincheng"
+  },
+  {
+   "id": 5,
+   "place": "Fengman District, Jilin City, Jilin",
+   "placeZh": "吉林省吉林市丰满区",
+   "province": "Jilin",
+   "n": 1,
+   "cover": "urban green space",
+   "coverZh": "城市绿地",
+   "ll": [
+    126.56,
+    43.82
+   ],
+   "prec": "district",
+   "short": "Jilin"
+  },
+  {
+   "id": 6,
+   "place": "Duliying Village, Fengning Manchu Autonomous County, Chengde, Hebei",
+   "placeZh": "河北省承德市丰宁满族自治县独立营村",
+   "province": "Hebei",
+   "n": 1,
+   "cover": "mountain land",
+   "coverZh": "山地",
+   "ll": [
+    116.65,
+    41.21
+   ],
+   "prec": "county",
+   "short": "Fengning"
+  }
+ ]
+}

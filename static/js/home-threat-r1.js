@@ -18,14 +18,14 @@
    * stay local and are kept by tools/finalize-stage-assets.mjs. */
   var ART = {
     plant: {
-      '01': 'img/home-threat/plant-soil-artboard-01.svg',
-      '02': 'img/home-threat/plant-soil-artboard-02.svg',
-      '03': 'img/home-threat/plant-soil-artboard-03.svg'
+      '01': 'https://static.igem.wiki/teams/6303/wiki/v8-0/v85-0bb6ae1732a7-plant-soil-artboard-01.svg',
+      '02': 'https://static.igem.wiki/teams/6303/wiki/v8-0/v85-76c7b5750f6c-plant-soil-artboard-02.svg',
+      '03': 'https://static.igem.wiki/teams/6303/wiki/v8-0/v85-2c45995f477d-plant-soil-artboard-03.svg'
     },
     lens: {
-      '01': 'img/home-threat/magnified-artboard-01.svg',
-      '02': 'img/home-threat/magnified-artboard-02.svg',
-      '03': 'img/home-threat/magnified-artboard-03.svg'
+      '01': 'https://static.igem.wiki/teams/6303/wiki/v8-0/v85-d0e06f642252-magnified-artboard-01.svg',
+      '02': 'https://static.igem.wiki/teams/6303/wiki/v8-0/v85-608e705490a6-magnified-artboard-02.svg',
+      '03': 'https://static.igem.wiki/teams/6303/wiki/v8-0/v85-a80b7fce538f-magnified-artboard-03.svg'
     }
   };
   var VB = [34, 118, 541, 582];   // shared viewBox of the plant artboards (same scale for all)
@@ -62,7 +62,8 @@
     var focus = document.createElement('div'); focus.className = 'th2__focus'; focus.setAttribute('aria-hidden', 'true');
     var callout = '<svg class="th2__call" aria-hidden="true" focusable="false"><path data-call-a /><path data-call-b /><circle data-call-ring2 r="16" /><circle data-call-ring r="13" /></svg>';
     var p = document.createElement('p'); p.className = 'th__p'; p.setAttribute('data-th-p', '');
-    cap.insertBefore(p, cap.querySelector('.th__key'));
+    var key = cap.querySelector('.th__key');
+    key.parentNode.insertBefore(p, key);
     STAGES.forEach(function (st, i) {
       var k = i + 1;
       var li = document.createElement('li'); li.className = 'th2__card' + (st.key ? ' is-key' : '');

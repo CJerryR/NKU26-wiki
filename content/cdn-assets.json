@@ -2534,6 +2534,943 @@
         "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-71d517d67827-katex-typewriter-regular.woff2"
       },
       "referenced_in_build": true
+    },
+    {
+      "path": "img/home-cases/brazil_p_brachyurus_soybean_roots_crop_fig6.webp",
+      "bytes": 65120,
+      "source_sha256": "05688ce65a1c6208fa60110af06be6f2553de204f965998a33fb3daa7f7db25b",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/cdn-migration-20261017/upload/v85-05688ce65a1c-brazil_p_brachyurus_soybean_roots_crop_fig6.webp",
+      "upload_name": "v85-05688ce65a1c-brazil_p_brachyurus_soybean_roots_crop_fig6.webp",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-05688ce65a1c-brazil-p-brachyurus-soybean-roots-crop-fig6.webp",
+      "status": "observed_in_official_table",
+      "http_verification": {
+        "checked_at": "2026-10-17T06:51:13.766855+00:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "content_length": "65120",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-05688ce65a1c-brazil-p-brachyurus-soybean-roots-crop-fig6.webp"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "image-decode-and-cors-pass",
+        "dimensions": [
+          322,
+          720
+        ]
+      },
+      "verification": "HTTP 200 and nonempty response verified; image-decode-and-cors-pass"
+    },
+    {
+      "path": "img/home-cases/g_rostochiensis_cyst_eggs_USDA_D813-2.webp",
+      "bytes": 64434,
+      "source_sha256": "17251e97ea558414ffa97d844156ccac2abc3dd2c8d2062db4bda86a80b0b889",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/cdn-migration-20261017/upload/v85-17251e97ea55-g_rostochiensis_cyst_eggs_USDA_D813-2.webp",
+      "upload_name": "v85-17251e97ea55-g_rostochiensis_cyst_eggs_USDA_D813-2.webp",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-17251e97ea55-g-rostochiensis-cyst-eggs-usda-d813-2.webp",
+      "status": "observed_in_official_table",
+      "http_verification": {
+        "checked_at": "2026-10-17T06:51:13.766855+00:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "content_length": "64434",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-17251e97ea55-g-rostochiensis-cyst-eggs-usda-d813-2.webp"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "image-decode-and-cors-pass",
+        "dimensions": [
+          550,
+          640
+        ]
+      },
+      "verification": "HTTP 200 and nonempty response verified; image-decode-and-cors-pass"
+    },
+    {
+      "path": "img/home-cases/m_incognita_entering_tomato_root_USDA_D2549-1.webp",
+      "bytes": 80086,
+      "source_sha256": "1d8b794d7fe5f3daad3d412fd68a5ac5ba568efee75309d2f4e0ce960c3ca5d3",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/cdn-migration-20261017/upload/v85-1d8b794d7fe5-m_incognita_entering_tomato_root_USDA_D2549-1.webp",
+      "upload_name": "v85-1d8b794d7fe5-m_incognita_entering_tomato_root_USDA_D2549-1.webp",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-1d8b794d7fe5-m-incognita-entering-tomato-root-usda-d2549-1.webp",
+      "status": "observed_in_official_table",
+      "http_verification": {
+        "checked_at": "2026-10-17T06:51:13.766855+00:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "content_length": "80086",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-1d8b794d7fe5-m-incognita-entering-tomato-root-usda-d2549-1.webp"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "image-decode-and-cors-pass",
+        "dimensions": [
+          428,
+          640
+        ]
+      },
+      "verification": "HTTP 200 and nonempty response verified; image-decode-and-cors-pass"
+    },
+    {
+      "path": "img/home-cases/p_neglectus_USDA_commons.webp",
+      "bytes": 24256,
+      "source_sha256": "9cd2f86cc954e88736358528a29ddd71aac3884fa69697ba0b3c407f28b19e21",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/cdn-migration-20261017/upload/v85-9cd2f86cc954-p_neglectus_USDA_commons.webp",
+      "upload_name": "v85-9cd2f86cc954-p_neglectus_USDA_commons.webp",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-9cd2f86cc954-p-neglectus-usda-commons.webp",
+      "status": "observed_in_official_table",
+      "http_verification": {
+        "checked_at": "2026-10-17T06:51:13.766855+00:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "content_length": "24256",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-9cd2f86cc954-p-neglectus-usda-commons.webp"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "image-decode-and-cors-pass",
+        "dimensions": [
+          720,
+          540
+        ]
+      },
+      "verification": "HTTP 200 and nonempty response verified; image-decode-and-cors-pass"
+    },
+    {
+      "path": "img/home-cases/soybean_cyst_on_roots_USDA_K5244-6.webp",
+      "bytes": 82324,
+      "source_sha256": "2185d1ca0236893cc049a7b313d04123d3b768fd07e270c95a2c1cedbea46fdd",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/cdn-migration-20261017/upload/v85-2185d1ca0236-soybean_cyst_on_roots_USDA_K5244-6.webp",
+      "upload_name": "v85-2185d1ca0236-soybean_cyst_on_roots_USDA_K5244-6.webp",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-2185d1ca0236-soybean-cyst-on-roots-usda-k5244-6.webp",
+      "status": "observed_in_official_table",
+      "http_verification": {
+        "checked_at": "2026-10-17T06:51:13.766855+00:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "content_length": "82324",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-2185d1ca0236-soybean-cyst-on-roots-usda-k5244-6.webp"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "image-decode-and-cors-pass",
+        "dimensions": [
+          413,
+          636
+        ]
+      },
+      "verification": "HTTP 200 and nonempty response verified; image-decode-and-cors-pass"
+    },
+    {
+      "path": "img/home-cases/soybean_cyst_roots_USDA_Endo.webp",
+      "bytes": 18950,
+      "source_sha256": "a933560f211ce3e4c23723b70149acb9fbe45d970c3842cc392ef91b29701d3e",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/cdn-migration-20261017/upload/v85-a933560f211c-soybean_cyst_roots_USDA_Endo.webp",
+      "upload_name": "v85-a933560f211c-soybean_cyst_roots_USDA_Endo.webp",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-a933560f211c-soybean-cyst-roots-usda-endo.webp",
+      "status": "observed_in_official_table",
+      "http_verification": {
+        "checked_at": "2026-10-17T06:51:13.766855+00:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "content_length": "18950",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-a933560f211c-soybean-cyst-roots-usda-endo.webp"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "image-decode-and-cors-pass",
+        "dimensions": [
+          720,
+          483
+        ]
+      },
+      "verification": "HTTP 200 and nonempty response verified; image-decode-and-cors-pass"
+    },
+    {
+      "path": "img/home-cases/uganda_r_similis_sem_fig3.webp",
+      "bytes": 58816,
+      "source_sha256": "3a873f3710a4e947f5eba39f7632bfc5fe6674769f80fcec78585f23f4b51251",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/cdn-migration-20261017/upload/v85-3a873f3710a4-uganda_r_similis_sem_fig3.webp",
+      "upload_name": "v85-3a873f3710a4-uganda_r_similis_sem_fig3.webp",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-3a873f3710a4-uganda-r-similis-sem-fig3.webp",
+      "status": "observed_in_official_table",
+      "http_verification": {
+        "checked_at": "2026-10-17T06:51:13.766855+00:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "content_length": "58816",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-3a873f3710a4-uganda-r-similis-sem-fig3.webp"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "image-decode-and-cors-pass",
+        "dimensions": [
+          665,
+          720
+        ]
+      },
+      "verification": "HTTP 200 and nonempty response verified; image-decode-and-cors-pass"
+    },
+    {
+      "path": "img/home-opening/opening-foreground.webp",
+      "bytes": 167996,
+      "source_sha256": "c73c0ba0d55af79fbf469ef2e430c46cd18c2766cb76f608023ba5900e89c18d",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/cdn-migration-20261017/upload/v85-c73c0ba0d55a-opening-foreground.webp",
+      "upload_name": "v85-c73c0ba0d55a-opening-foreground.webp",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-c73c0ba0d55a-opening-foreground.webp",
+      "status": "observed_in_official_table",
+      "http_verification": {
+        "checked_at": "2026-10-17T06:51:13.766855+00:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "content_length": "167996",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-c73c0ba0d55a-opening-foreground.webp"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "image-decode-and-cors-pass",
+        "dimensions": [
+          1586,
+          992
+        ]
+      },
+      "verification": "HTTP 200 and nonempty response verified; image-decode-and-cors-pass"
+    },
+    {
+      "path": "img/home-opening/opening-sky.webp",
+      "bytes": 89982,
+      "source_sha256": "286c59c2d24c297725f354f6c888cdd93ecd1a5a88644b8ab7ed28740d7821d4",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/cdn-migration-20261017/upload/v85-286c59c2d24c-opening-sky.webp",
+      "upload_name": "v85-286c59c2d24c-opening-sky.webp",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-286c59c2d24c-opening-sky.webp",
+      "status": "observed_in_official_table",
+      "http_verification": {
+        "checked_at": "2026-10-17T06:51:13.766855+00:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "content_length": "89982",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-286c59c2d24c-opening-sky.webp"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "image-decode-and-cors-pass",
+        "dimensions": [
+          1586,
+          992
+        ]
+      },
+      "verification": "HTTP 200 and nonempty response verified; image-decode-and-cors-pass"
+    },
+    {
+      "path": "img/home-opening/soil-extension-ai-v1.png",
+      "bytes": 2716297,
+      "source_sha256": "897637c29b853093cba5b70d19b196c5262d176d607a4f45edf49f4db30676a4",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/cdn-migration-20261017/upload/v85-897637c29b85-soil-extension-ai-v1.png",
+      "upload_name": "v85-897637c29b85-soil-extension-ai-v1.png",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-897637c29b85-soil-extension-ai-v1.avif",
+      "status": "observed_in_official_table",
+      "http_verification": {
+        "checked_at": "2026-10-17T06:51:13.766855+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "287639",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-897637c29b85-soil-extension-ai-v1.avif"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "image-decode-and-cors-pass",
+        "dimensions": [
+          1254,
+          1254
+        ]
+      },
+      "verification": "HTTP 200 and nonempty response verified; image-decode-and-cors-pass"
+    },
+    {
+      "path": "img/home-threat/magnified-artboard-01.svg",
+      "bytes": 72862,
+      "source_sha256": "d0e06f642252f4c950a14db8f7b74e81e754750a7b71d8faa7fe74f68069164b",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/cdn-migration-20261017/upload/v85-d0e06f642252-magnified-artboard-01.svg",
+      "upload_name": "v85-d0e06f642252-magnified-artboard-01.svg",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-d0e06f642252-magnified-artboard-01.svg",
+      "status": "observed_in_official_table",
+      "http_verification": {
+        "checked_at": "2026-10-17T06:51:13.766855+00:00",
+        "status": 200,
+        "content_type": "image/svg+xml",
+        "content_length": "72862",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-d0e06f642252-magnified-artboard-01.svg"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "image-decode-and-cors-pass",
+        "dimensions": [
+          414,
+          414
+        ]
+      },
+      "verification": "HTTP 200 and nonempty response verified; image-decode-and-cors-pass"
+    },
+    {
+      "path": "img/home-threat/magnified-artboard-02.svg",
+      "bytes": 41512,
+      "source_sha256": "608e705490a6aa191b2425166df03796350cdae8ff21629449ea553de0806895",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/cdn-migration-20261017/upload/v85-608e705490a6-magnified-artboard-02.svg",
+      "upload_name": "v85-608e705490a6-magnified-artboard-02.svg",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-608e705490a6-magnified-artboard-02.svg",
+      "status": "observed_in_official_table",
+      "http_verification": {
+        "checked_at": "2026-10-17T06:51:13.766855+00:00",
+        "status": 200,
+        "content_type": "image/svg+xml",
+        "content_length": "41512",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-608e705490a6-magnified-artboard-02.svg"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "image-decode-and-cors-pass",
+        "dimensions": [
+          414,
+          414
+        ]
+      },
+      "verification": "HTTP 200 and nonempty response verified; image-decode-and-cors-pass"
+    },
+    {
+      "path": "img/home-threat/magnified-artboard-03.svg",
+      "bytes": 63327,
+      "source_sha256": "a80b7fce538f09aa2318e630a4986f257ea48ab3e7ec3ebc5fa793644de6e75d",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/cdn-migration-20261017/upload/v85-a80b7fce538f-magnified-artboard-03.svg",
+      "upload_name": "v85-a80b7fce538f-magnified-artboard-03.svg",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-a80b7fce538f-magnified-artboard-03.svg",
+      "status": "observed_in_official_table",
+      "http_verification": {
+        "checked_at": "2026-10-17T06:51:13.766855+00:00",
+        "status": 200,
+        "content_type": "image/svg+xml",
+        "content_length": "63327",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-a80b7fce538f-magnified-artboard-03.svg"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "image-decode-and-cors-pass",
+        "dimensions": [
+          414,
+          414
+        ]
+      },
+      "verification": "HTTP 200 and nonempty response verified; image-decode-and-cors-pass"
+    },
+    {
+      "path": "img/home-threat/plant-soil-artboard-01.svg",
+      "bytes": 23790,
+      "source_sha256": "0bb6ae1732a7d49e7eeee5864040088d7d46d2c44f0ed76d91e47467e25608d8",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/cdn-migration-20261017/upload/v85-0bb6ae1732a7-plant-soil-artboard-01.svg",
+      "upload_name": "v85-0bb6ae1732a7-plant-soil-artboard-01.svg",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-0bb6ae1732a7-plant-soil-artboard-01.svg",
+      "status": "observed_in_official_table",
+      "http_verification": {
+        "checked_at": "2026-10-17T06:51:13.766855+00:00",
+        "status": 200,
+        "content_type": "image/svg+xml",
+        "content_length": "23790",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-0bb6ae1732a7-plant-soil-artboard-01.svg"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "image-decode-and-cors-pass",
+        "dimensions": [
+          541,
+          582
+        ]
+      },
+      "verification": "HTTP 200 and nonempty response verified; image-decode-and-cors-pass"
+    },
+    {
+      "path": "img/home-threat/plant-soil-artboard-02.svg",
+      "bytes": 82260,
+      "source_sha256": "76c7b5750f6cdf2d458234a56732accb32d95a998f143ecb17d6513b5e14a121",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/cdn-migration-20261017/upload/v85-76c7b5750f6c-plant-soil-artboard-02.svg",
+      "upload_name": "v85-76c7b5750f6c-plant-soil-artboard-02.svg",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-76c7b5750f6c-plant-soil-artboard-02.svg",
+      "status": "observed_in_official_table",
+      "http_verification": {
+        "checked_at": "2026-10-17T06:51:13.766855+00:00",
+        "status": 200,
+        "content_type": "image/svg+xml",
+        "content_length": "82260",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-76c7b5750f6c-plant-soil-artboard-02.svg"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "image-decode-and-cors-pass",
+        "dimensions": [
+          541,
+          582
+        ]
+      },
+      "verification": "HTTP 200 and nonempty response verified; image-decode-and-cors-pass"
+    },
+    {
+      "path": "img/home-threat/plant-soil-artboard-03.svg",
+      "bytes": 104177,
+      "source_sha256": "2c45995f477df7a381118cfb8ef458ceedba338683a8c0dfd66349f0634ebeef",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/cdn-migration-20261017/upload/v85-2c45995f477d-plant-soil-artboard-03.svg",
+      "upload_name": "v85-2c45995f477d-plant-soil-artboard-03.svg",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-2c45995f477d-plant-soil-artboard-03.svg",
+      "status": "observed_in_official_table",
+      "http_verification": {
+        "checked_at": "2026-10-17T06:51:13.766855+00:00",
+        "status": 200,
+        "content_type": "image/svg+xml",
+        "content_length": "104177",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-2c45995f477d-plant-soil-artboard-03.svg"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "image-decode-and-cors-pass",
+        "dimensions": [
+          541,
+          582
+        ]
+      },
+      "verification": "HTTP 200 and nonempty response verified; image-decode-and-cors-pass"
+    },
+    {
+      "path": "img/uploads/round2/r2-0626938f4f22-fig4.png",
+      "bytes": 3489916,
+      "source_sha256": "0626938f4f225e16c27bdd8609f1fd53d86001096fb6d0a484deef37d52fb45d",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/cdn-migration-20261017/upload/v85-0626938f4f22-r2-0626938f4f22-fig4.png",
+      "upload_name": "v85-0626938f4f22-r2-0626938f4f22-fig4.png",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-0626938f4f22-r2-0626938f4f22-fig4.avif",
+      "status": "observed_in_official_table",
+      "http_verification": {
+        "checked_at": "2026-10-17T06:51:13.766855+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "200333",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-0626938f4f22-r2-0626938f4f22-fig4.avif"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "image-decode-and-cors-pass",
+        "dimensions": [
+          2208,
+          1675
+        ]
+      },
+      "verification": "HTTP 200 and nonempty response verified; image-decode-and-cors-pass"
+    },
+    {
+      "path": "img/uploads/round2/r2-07dd27072c49-fig6.png",
+      "bytes": 8261737,
+      "source_sha256": "3dcf1a9d6eb4d50588e17d3acaaf880fe064e5e7b52cdcbf11059efdfba882db",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/cdn-migration-20261017/upload/v85-3dcf1a9d6eb4-r2-07dd27072c49-fig6.png",
+      "upload_name": "v85-3dcf1a9d6eb4-r2-07dd27072c49-fig6.png",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-3dcf1a9d6eb4-r2-07dd27072c49-fig6.avif",
+      "status": "observed_in_official_table",
+      "http_verification": {
+        "checked_at": "2026-10-17T06:51:13.766855+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "862695",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-3dcf1a9d6eb4-r2-07dd27072c49-fig6.avif"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "image-decode-and-cors-pass",
+        "dimensions": [
+          3515,
+          1655
+        ]
+      },
+      "verification": "HTTP 200 and nonempty response verified; image-decode-and-cors-pass"
+    },
+    {
+      "path": "img/uploads/round2/r2-10dfc2855aa3-engineering-r2-eng-004.webp",
+      "bytes": 25142,
+      "source_sha256": "10dfc2855aa34039217511b1df8781eb2070c8a034461c621c967f2fab43f8ff",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/cdn-migration-20261017/upload/v85-10dfc2855aa3-r2-10dfc2855aa3-engineering-r2-eng-004.webp",
+      "upload_name": "v85-10dfc2855aa3-r2-10dfc2855aa3-engineering-r2-eng-004.webp",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-10dfc2855aa3-r2-10dfc2855aa3-engineering-r2-eng-004.webp",
+      "status": "observed_in_official_table",
+      "http_verification": {
+        "checked_at": "2026-10-17T06:51:13.766855+00:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "content_length": "25142",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-10dfc2855aa3-r2-10dfc2855aa3-engineering-r2-eng-004.webp"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "image-decode-and-cors-pass",
+        "dimensions": [
+          750,
+          604
+        ]
+      },
+      "verification": "HTTP 200 and nonempty response verified; image-decode-and-cors-pass"
+    },
+    {
+      "path": "img/uploads/round2/r2-28480e6cf5ad-fig2-5-2.png",
+      "bytes": 489183,
+      "source_sha256": "28480e6cf5ad335fe0afb6f63e35fe775359200739c5b979e6cff79747cd6e3c",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/cdn-migration-20261017/upload/v85-28480e6cf5ad-r2-28480e6cf5ad-fig2-5-2.png",
+      "upload_name": "v85-28480e6cf5ad-r2-28480e6cf5ad-fig2-5-2.png",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-28480e6cf5ad-r2-28480e6cf5ad-fig2-5-2.avif",
+      "status": "observed_in_official_table",
+      "http_verification": {
+        "checked_at": "2026-10-17T06:51:13.766855+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "166950",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-28480e6cf5ad-r2-28480e6cf5ad-fig2-5-2.avif"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "image-decode-and-cors-pass",
+        "dimensions": [
+          1982,
+          1869
+        ]
+      },
+      "verification": "HTTP 200 and nonempty response verified; image-decode-and-cors-pass"
+    },
+    {
+      "path": "img/uploads/round2/r2-48ee38c731e9-fig3-1-4.jpg",
+      "bytes": 164156,
+      "source_sha256": "48ee38c731e997714b5f7d3814bc8cb155cc543c89d67bfd0d3dfe54b4c6eb9a",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/cdn-migration-20261017/upload/v85-48ee38c731e9-r2-48ee38c731e9-fig3-1-4.jpg",
+      "upload_name": "v85-48ee38c731e9-r2-48ee38c731e9-fig3-1-4.jpg",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-48ee38c731e9-r2-48ee38c731e9-fig3-1-4.avif",
+      "status": "observed_in_official_table",
+      "http_verification": {
+        "checked_at": "2026-10-17T06:51:13.766855+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "68089",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-48ee38c731e9-r2-48ee38c731e9-fig3-1-4.avif"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "image-decode-and-cors-pass",
+        "dimensions": [
+          1260,
+          1680
+        ]
+      },
+      "verification": "HTTP 200 and nonempty response verified; image-decode-and-cors-pass"
+    },
+    {
+      "path": "img/uploads/round2/r2-4ffd015f5fcc-fig3-1-2.png",
+      "bytes": 2733884,
+      "source_sha256": "4ffd015f5fccec83521ad35f13dd7d662c3e899a2a66fcbed22775eaf4650a5a",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/cdn-migration-20261017/upload/v85-4ffd015f5fcc-r2-4ffd015f5fcc-fig3-1-2.png",
+      "upload_name": "v85-4ffd015f5fcc-r2-4ffd015f5fcc-fig3-1-2.png",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-4ffd015f5fcc-r2-4ffd015f5fcc-fig3-1-2.avif",
+      "status": "observed_in_official_table",
+      "http_verification": {
+        "checked_at": "2026-10-17T06:51:13.766855+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "136416",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-4ffd015f5fcc-r2-4ffd015f5fcc-fig3-1-2.avif"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "image-decode-and-cors-pass",
+        "dimensions": [
+          1803,
+          847
+        ]
+      },
+      "verification": "HTTP 200 and nonempty response verified; image-decode-and-cors-pass"
+    },
+    {
+      "path": "img/uploads/round2/r2-54382c8e77e7-fig1.png",
+      "bytes": 60955,
+      "source_sha256": "54382c8e77e7e3ebea154e1eb51283aaa98b7c3043efbe3c44ecf681c5a7551e",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/cdn-migration-20261017/upload/v85-54382c8e77e7-r2-54382c8e77e7-fig1.png",
+      "upload_name": "v85-54382c8e77e7-r2-54382c8e77e7-fig1.png",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-54382c8e77e7-r2-54382c8e77e7-fig1.avif",
+      "status": "observed_in_official_table",
+      "http_verification": {
+        "checked_at": "2026-10-17T06:51:13.766855+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "38172",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-54382c8e77e7-r2-54382c8e77e7-fig1.avif"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "image-decode-and-cors-pass",
+        "dimensions": [
+          2278,
+          831
+        ]
+      },
+      "verification": "HTTP 200 and nonempty response verified; image-decode-and-cors-pass"
+    },
+    {
+      "path": "img/uploads/round2/r2-5c10cfcd0e4c-fig2-5-1.png",
+      "bytes": 324206,
+      "source_sha256": "5c10cfcd0e4c68733f56b2c36b92a46a32aca2e54134d4c3f6015dd6e8e81a59",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/cdn-migration-20261017/upload/v85-5c10cfcd0e4c-r2-5c10cfcd0e4c-fig2-5-1.png",
+      "upload_name": "v85-5c10cfcd0e4c-r2-5c10cfcd0e4c-fig2-5-1.png",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-5c10cfcd0e4c-r2-5c10cfcd0e4c-fig2-5-1.avif",
+      "status": "observed_in_official_table",
+      "http_verification": {
+        "checked_at": "2026-10-17T06:51:13.766855+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "91552",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-5c10cfcd0e4c-r2-5c10cfcd0e4c-fig2-5-1.avif"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "image-decode-and-cors-pass",
+        "dimensions": [
+          1773,
+          979
+        ]
+      },
+      "verification": "HTTP 200 and nonempty response verified; image-decode-and-cors-pass"
+    },
+    {
+      "path": "img/uploads/round2/r2-616aeb24f5f8-fig5.png",
+      "bytes": 5697336,
+      "source_sha256": "616aeb24f5f82f3e6bf141c441dc02e1bd2b9a720735b911c8a130d4865b8a10",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/cdn-migration-20261017/upload/v85-616aeb24f5f8-r2-616aeb24f5f8-fig5.png",
+      "upload_name": "v85-616aeb24f5f8-r2-616aeb24f5f8-fig5.png",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-616aeb24f5f8-r2-616aeb24f5f8-fig5.avif",
+      "status": "observed_in_official_table",
+      "http_verification": {
+        "checked_at": "2026-10-17T06:51:13.766855+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "811595",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-616aeb24f5f8-r2-616aeb24f5f8-fig5.avif"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "image-decode-and-cors-pass",
+        "dimensions": [
+          3474,
+          2292
+        ]
+      },
+      "verification": "HTTP 200 and nonempty response verified; image-decode-and-cors-pass"
+    },
+    {
+      "path": "img/uploads/round2/r2-66c1379247d8-fig2-4-12.png",
+      "bytes": 412018,
+      "source_sha256": "66c1379247d8c8797300d463e172b1c14432027cfd74379c0ed3ab067804e274",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/cdn-migration-20261017/upload/v85-66c1379247d8-r2-66c1379247d8-fig2-4-12.png",
+      "upload_name": "v85-66c1379247d8-r2-66c1379247d8-fig2-4-12.png",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-66c1379247d8-r2-66c1379247d8-fig2-4-12.avif",
+      "status": "observed_in_official_table",
+      "http_verification": {
+        "checked_at": "2026-10-17T06:51:13.766855+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "122908",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-66c1379247d8-r2-66c1379247d8-fig2-4-12.avif"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "image-decode-and-cors-pass",
+        "dimensions": [
+          1979,
+          1175
+        ]
+      },
+      "verification": "HTTP 200 and nonempty response verified; image-decode-and-cors-pass"
+    },
+    {
+      "path": "img/uploads/round2/r2-97754aadf01e-fig3-1-1.png",
+      "bytes": 2067406,
+      "source_sha256": "97754aadf01e5e5acdd936875fe03f7f0f8524b26803fea75507e0ec95d425f6",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/cdn-migration-20261017/upload/v85-97754aadf01e-r2-97754aadf01e-fig3-1-1.png",
+      "upload_name": "v85-97754aadf01e-r2-97754aadf01e-fig3-1-1.png",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-97754aadf01e-r2-97754aadf01e-fig3-1-1.avif",
+      "status": "observed_in_official_table",
+      "http_verification": {
+        "checked_at": "2026-10-17T06:51:13.766855+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "104865",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-97754aadf01e-r2-97754aadf01e-fig3-1-1.avif"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "image-decode-and-cors-pass",
+        "dimensions": [
+          1772,
+          852
+        ]
+      },
+      "verification": "HTTP 200 and nonempty response verified; image-decode-and-cors-pass"
+    },
+    {
+      "path": "img/uploads/round2/r2-9ec82d42de33-engineering-r2-eng-003.webp",
+      "bytes": 17106,
+      "source_sha256": "9ec82d42de33ce5a4b8321de1f2204cf2a918d0a5c1ee08a5c31a6abd4f0c646",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/cdn-migration-20261017/upload/v85-9ec82d42de33-r2-9ec82d42de33-engineering-r2-eng-003.webp",
+      "upload_name": "v85-9ec82d42de33-r2-9ec82d42de33-engineering-r2-eng-003.webp",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-9ec82d42de33-r2-9ec82d42de33-engineering-r2-eng-003.webp",
+      "status": "observed_in_official_table",
+      "http_verification": {
+        "checked_at": "2026-10-17T06:51:13.766855+00:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "content_length": "17106",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-9ec82d42de33-r2-9ec82d42de33-engineering-r2-eng-003.webp"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "image-decode-and-cors-pass",
+        "dimensions": [
+          750,
+          382
+        ]
+      },
+      "verification": "HTTP 200 and nonempty response verified; image-decode-and-cors-pass"
+    },
+    {
+      "path": "img/uploads/round2/r2-b8d29a0fb201-fig3-1-5.jpg",
+      "bytes": 196526,
+      "source_sha256": "b8d29a0fb201761ffb841f7670632a3963c6c5751411293858696b8b3e8ca713",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/cdn-migration-20261017/upload/v85-b8d29a0fb201-r2-b8d29a0fb201-fig3-1-5.jpg",
+      "upload_name": "v85-b8d29a0fb201-r2-b8d29a0fb201-fig3-1-5.jpg",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-b8d29a0fb201-r2-b8d29a0fb201-fig3-1-5.avif",
+      "status": "observed_in_official_table",
+      "http_verification": {
+        "checked_at": "2026-10-17T06:51:13.766855+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "86046",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-b8d29a0fb201-r2-b8d29a0fb201-fig3-1-5.avif"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "image-decode-and-cors-pass",
+        "dimensions": [
+          1459,
+          1094
+        ]
+      },
+      "verification": "HTTP 200 and nonempty response verified; image-decode-and-cors-pass"
+    },
+    {
+      "path": "img/uploads/round2/r2-cfa8f763f0dd-fig2.png",
+      "bytes": 332325,
+      "source_sha256": "cfa8f763f0dd9b6bffc08cd7ec8e0f51b92277afaf8d94100968d7ec8c2c2c08",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/cdn-migration-20261017/upload/v85-cfa8f763f0dd-r2-cfa8f763f0dd-fig2.png",
+      "upload_name": "v85-cfa8f763f0dd-r2-cfa8f763f0dd-fig2.png",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-cfa8f763f0dd-r2-cfa8f763f0dd-fig2.avif",
+      "status": "observed_in_official_table",
+      "http_verification": {
+        "checked_at": "2026-10-17T06:51:13.766855+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "43656",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-cfa8f763f0dd-r2-cfa8f763f0dd-fig2.avif"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "image-decode-and-cors-pass",
+        "dimensions": [
+          1040,
+          582
+        ]
+      },
+      "verification": "HTTP 200 and nonempty response verified; image-decode-and-cors-pass"
+    },
+    {
+      "path": "img/uploads/round2/r2-d2f6a13810e7-engineering-r2-eng-002.webp",
+      "bytes": 10486,
+      "source_sha256": "d2f6a13810e703e4c81ec4906bbe49d719d1fe7544e3c2dc0d16a6247749f5b3",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/cdn-migration-20261017/upload/v85-d2f6a13810e7-r2-d2f6a13810e7-engineering-r2-eng-002.webp",
+      "upload_name": "v85-d2f6a13810e7-r2-d2f6a13810e7-engineering-r2-eng-002.webp",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-d2f6a13810e7-r2-d2f6a13810e7-engineering-r2-eng-002.webp",
+      "status": "observed_in_official_table",
+      "http_verification": {
+        "checked_at": "2026-10-17T06:51:13.766855+00:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "content_length": "10486",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-d2f6a13810e7-r2-d2f6a13810e7-engineering-r2-eng-002.webp"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "image-decode-and-cors-pass",
+        "dimensions": [
+          750,
+          161
+        ]
+      },
+      "verification": "HTTP 200 and nonempty response verified; image-decode-and-cors-pass"
+    },
+    {
+      "path": "img/uploads/round2/r2-e81fa7011e20-engineering-r2-eng-001.webp",
+      "bytes": 23724,
+      "source_sha256": "e81fa7011e207bd936b535a0bef918722aa9b6e8a9ba04659b896105b4e89aee",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/cdn-migration-20261017/upload/v85-e81fa7011e20-r2-e81fa7011e20-engineering-r2-eng-001.webp",
+      "upload_name": "v85-e81fa7011e20-r2-e81fa7011e20-engineering-r2-eng-001.webp",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-e81fa7011e20-r2-e81fa7011e20-engineering-r2-eng-001.webp",
+      "status": "observed_in_official_table",
+      "http_verification": {
+        "checked_at": "2026-10-17T06:51:13.766855+00:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "content_length": "23724",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-e81fa7011e20-r2-e81fa7011e20-engineering-r2-eng-001.webp"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "image-decode-and-cors-pass",
+        "dimensions": [
+          750,
+          524
+        ]
+      },
+      "verification": "HTTP 200 and nonempty response verified; image-decode-and-cors-pass"
+    },
+    {
+      "path": "img/uploads/round2/r2-fb3b2741b5dc-fig3.png",
+      "bytes": 463913,
+      "source_sha256": "fb3b2741b5dcdf5fa59cd49ccc41da78afcd2b6df2646a4e73276bd6152cf326",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/cdn-migration-20261017/upload/v85-fb3b2741b5dc-r2-fb3b2741b5dc-fig3.png",
+      "upload_name": "v85-fb3b2741b5dc-r2-fb3b2741b5dc-fig3.png",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-fb3b2741b5dc-r2-fb3b2741b5dc-fig3.avif",
+      "status": "observed_in_official_table",
+      "http_verification": {
+        "checked_at": "2026-10-17T06:51:13.766855+00:00",
+        "status": 200,
+        "content_type": "image/avif",
+        "content_length": "48962",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-fb3b2741b5dc-r2-fb3b2741b5dc-fig3.avif"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "image-decode-and-cors-pass",
+        "dimensions": [
+          831,
+          371
+        ]
+      },
+      "verification": "HTTP 200 and nonempty response verified; image-decode-and-cors-pass"
+    },
+    {
+      "path": "img/uploads/round2/r2-adda730d2ef5-protocol-17-hydrophobic-coating.pdf",
+      "bytes": 166857,
+      "source_sha256": "adda730d2ef57a948a5aa10824d8c3a373333c5e2ccc3b0c8811991822e25a7a",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/cdn-migration-20261017/upload/v85-adda730d2ef5-r2-adda730d2ef5-protocol-17-hydrophobic-coating.pdf",
+      "upload_name": "v85-adda730d2ef5-r2-adda730d2ef5-protocol-17-hydrophobic-coating.pdf",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-adda730d2ef5-r2-adda730d2ef5-protocol-17-hydrophobic-coating.pdf",
+      "status": "observed_in_official_table",
+      "http_verification": {
+        "checked_at": "2026-10-17T06:51:13.766855+00:00",
+        "status": 200,
+        "content_type": "application/pdf",
+        "content_length": "166857",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-adda730d2ef5-r2-adda730d2ef5-protocol-17-hydrophobic-coating.pdf"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "http-only"
+      },
+      "verification": "HTTP 200 and nonempty response verified; http-only"
+    },
+    {
+      "path": "fonts/nk26-secrets-display.woff2",
+      "bytes": 6480,
+      "source_sha256": "9fbaefa0757a5f1425ff6b70b419cdbd9f198bd0736d3731848083e7be5251d2",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/cdn-migration-20261017/upload/v85-9fbaefa0757a-nk26-secrets-display.woff2",
+      "upload_name": "v85-9fbaefa0757a-nk26-secrets-display.woff2",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-9fbaefa0757a-nk26-secrets-display.woff2",
+      "status": "observed_in_official_table",
+      "http_verification": {
+        "checked_at": "2026-10-17T06:51:13.766855+00:00",
+        "status": 200,
+        "content_type": "font/woff2",
+        "content_length": "6480",
+        "cors_allow_origin": "*",
+        "nonempty": true,
+        "final_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-9fbaefa0757a-nk26-secrets-display.woff2"
+      },
+      "referenced_in_build": true,
+      "browser_verification": {
+        "status": "http-only"
+      },
+      "verification": "HTTP 200 and nonempty response verified; http-only"
     }
   ]
 }

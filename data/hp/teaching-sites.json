@@ -1,0 +1,125 @@
+{
+ "title": "Volunteer teaching sites (支教/社区服务点)",
+ "source": "Team sign-up table: 分队 / 服务地点 / 报名学生人数 (8 sites, about 397 students)",
+ "precision": "Markers sit at the county or district seat (≈10–20 km); the school or community itself is not geolocated.",
+ "total": 397,
+ "totalApprox": true,
+ "sites": [
+  {
+   "team": "Jiangxi · Yugan",
+   "zh": "江西余干队",
+   "place": "Yuntou Primary School, Hongjiazui Township, Yugan County, Shangrao, Jiangxi",
+   "placeZh": "江西省上饶市余干县洪家嘴乡云头小学",
+   "province": "Jiangxi",
+   "kind": "school",
+   "n": 62,
+   "ll": [
+    116.69,
+    28.7
+   ],
+   "short": "Yugan"
+  },
+  {
+   "team": "Hebei · Lincheng",
+   "zh": "河北临城队",
+   "place": "Haozhuang Middle School, Lincheng County, Xingtai, Hebei",
+   "placeZh": "河北省邢台市临城县郝庄中学",
+   "province": "Hebei",
+   "kind": "school",
+   "n": 130,
+   "ll": [
+    114.5,
+    37.44
+   ],
+   "short": "Lincheng"
+  },
+  {
+   "team": "Hebei · Pingshan",
+   "zh": "河北平山队",
+   "place": "Nanjiabi Village Primary School, Pingshan Town, Pingshan County, Shijiazhuang, Hebei",
+   "placeZh": "河北省石家庄市平山县平山镇南贾壁村完全小学",
+   "province": "Hebei",
+   "kind": "school",
+   "n": 67,
+   "ll": [
+    114.19,
+    38.26
+   ],
+   "short": "Pingshan"
+  },
+  {
+   "team": "Hebei · Chengde",
+   "zh": "河北承德队",
+   "place": "Taipingzhuang Manchu Township Central Primary School, Longhua County, Chengde, Hebei",
+   "placeZh": "河北省承德市隆化县太平庄满族乡中心小学",
+   "province": "Hebei",
+   "kind": "school",
+   "n": 50,
+   "ll": [
+    117.74,
+    41.32
+   ],
+   "short": "Longhua"
+  },
+  {
+   "team": "Gansu · Baiyin",
+   "zh": "甘肃白银队",
+   "place": "Yintan Primary School, Santan Town, Jingyuan County, Baiyin, Gansu",
+   "placeZh": "甘肃省白银市靖远县三滩镇银滩小学",
+   "province": "Gansu",
+   "kind": "school",
+   "n": 23,
+   "ll": [
+    104.68,
+    36.57
+   ],
+   "short": "Jingyuan"
+  },
+  {
+   "team": "Beijing · Miyun",
+   "zh": "北京密云队",
+   "place": "Xitiangezhuang Central Primary School, Miyun District, Beijing",
+   "placeZh": "北京市密云区西田各庄镇中心小学",
+   "province": "Beijing",
+   "kind": "school",
+   "n": 30,
+   "ll": [
+    116.8,
+    40.4
+   ],
+   "short": "Miyun"
+  },
+  {
+   "team": "Tianjin · Nanjiangxili",
+   "zh": "天津南江西里社区",
+   "place": "Nanjiangxili Community, Tianjin (district to be confirmed)",
+   "placeZh": "天津市南江西里社区",
+   "province": "Tianjin",
+   "kind": "community",
+   "n": 25,
+   "ll": [
+    117.17,
+    39.11
+   ],
+   "check": "district not confirmed; marker at central Tianjin",
+   "short": "Nanjiangxili",
+   "group": "Tianjin"
+  },
+  {
+   "team": "Tianjin · Shangyouli",
+   "zh": "天津和平区尚友里社区",
+   "place": "Shangyouli Community, Heping District, Tianjin",
+   "placeZh": "天津市和平区尚友里社区",
+   "province": "Tianjin",
+   "kind": "community",
+   "n": 10,
+   "approx": true,
+   "ll": [
+    117.21,
+    39.12
+   ],
+   "short": "Shangyouli",
+   "group": "Tianjin"
+  }
+ ]
+}

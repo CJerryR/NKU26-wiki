@@ -45,10 +45,5 @@ sup.cite { font-size: .72em; line-height: 0; vertical-align: super; margin-left:
 .figure-pair > .figure > .figure__media { flex: 1 1 auto; display: grid; place-items: center; }
 @media (max-width: 760px) { .figure-pair { grid-template-columns: minmax(0, 1fr); --figure-pad: initial; } }
 
-/* I02: the big section number moves into the text column, above the heading,
-   so the sticky outline on the left can no longer cover it */
-@media (min-width: 1100px) {
-  .doc-section[data-num] { padding-top: clamp(46px, 4.6vw, 70px); }
-  .doc-section[data-num]::before { top: 0; right: auto; left: -.05em; font-size: clamp(64px, 5.4vw, 92px); line-height: .82; opacity: .13; }
-  .doc-section:only-of-type { padding-top: 0; }
-}
+/* Section numbers use page.css's original left-margin position again.
+   The clear outline lens can refract the number beneath it. */

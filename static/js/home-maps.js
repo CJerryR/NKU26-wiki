@@ -3,8 +3,8 @@
  * Herbivores layer (js/home-abundance.js, 1,901 pixels, log10(x + 1)).
  * Cards open only from the case points and close when the pointer leaves
  * them. China is highlighted the 3D v3 way and dives into the next page.
- * HP: the three V3 China maps (survey, teaching, soil programme) with
- * illustrative province values until the team's records are in. */
+ * HP: the three China maps (survey, teaching, soil programme) from the
+ * team's records (js/home-hp-data.js); see tools/build_hp_maps.py. */
 (function () {
   'use strict';
   var H = window.NKUH; if (!H) return;
@@ -335,72 +335,85 @@
     if (window.ResizeObserver) new ResizeObserver(function () { clearTimeout(rz); rz = setTimeout(size, 120); }).observe(cv);
   }
 
-  /* ================= HUMAN PRACTICES: three China maps ================= */
-  var PROV = { Heilongjiang: [126.6, 45.8], Jilin: [125.3, 43.9], Liaoning: [123.4, 41.8], 'Inner Mongolia': [111.7, 40.8], Beijing: [116.4, 39.9], Tianjin: [117.2, 39.1], Hebei: [114.5, 38], Shanxi: [112.5, 37.9], Shandong: [117, 36.7], Henan: [113.7, 34.8], Anhui: [117.3, 31.9], Jiangsu: [118.8, 32.1], Shanghai: [121.5, 31.2], Zhejiang: [120.2, 30.3], Jiangxi: [115.9, 28.7], Hubei: [114.3, 30.6], Shaanxi: [108.9, 34.3], Gansu: [103.8, 36.1], Ningxia: [106.3, 38.5], Xinjiang: [87.6, 43.8], Tibet: [91.1, 29.7], Guizhou: [106.7, 26.6], Yunnan: [102.7, 25], Guangxi: [108.3, 22.8], Fujian: [119.3, 26.1], Guangdong: [113.3, 23.1], Hainan: [110.3, 20], Hunan: [113, 28.2], Qinghai: [101.8, 36.6], Sichuan: [104.1, 30.7], Chongqing: [106.5, 29.6] };
-  /* illustrative values: seeded, so the page looks the same on every visit */
-  var HPD = (function () {
-    var r = H.rand(2026), names = Object.keys(PROV), out = { survey: {}, teach: {}, soil: {} };
-    names.forEach(function (n) { if (r() < .74) out.survey[n] = Math.round(8 + Math.pow(r(), 1.6) * 190); });
-    names.forEach(function (n) { if (r() < .4) out.teach[n] = 1 + Math.floor(r() * 7); });
-    names.forEach(function (n) { if (r() < .45) out.soil[n] = 4 + Math.floor(Math.pow(r(), 1.3) * 42); });
-    return out;
-  }());
-  var HPMAX = { survey: 1, teach: 1, soil: 1 };
-  Object.keys(HPD).forEach(function (k) { Object.keys(HPD[k]).forEach(function (n) { HPMAX[k] = Math.max(HPMAX[k], HPD[k][n]); }); });
-  function provAt(lon, lat) {
-    var best = null, bd = 1e9;
-    Object.keys(PROV).forEach(function (n) { var p = PROV[n], dx = (p[0] - lon) * Math.cos(lat * Math.PI / 180), dy = p[1] - lat, d = dx * dx + dy * dy; if (d < bd) { bd = d; best = n; } });
-    return best;
+  /* ================= HUMAN PRACTICES: three China maps =================
+   * v8.5: real records (js/home-hp-data.js, built by tools/build_hp_maps.py).
+   * Survey   = province choropleth, 5 classes, boundaries from the Standard
+   *            Map of China GS(2022)4303; outline + South China Sea GS(2022)4308.
+   * Teaching = 8 sites, circle AREA proportional to students signed up.
+   * Soil     = 6 sampling sites, bar HEIGHT proportional to samples (linear).
+   * Projection is unchanged (the ascaroside story hands its outline over). */
+  var HP = window.NKU_HP;
+  var CLS = ['#6b2a8f', '#b03a86', '#e65a62', '#fb9b5f', '#fde6a3'];   // magma-like, dark -> light = few -> many
+  var NODATA = 'rgba(255,255,255,.07)';
+  function fmtN(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
+  function pip(x, y, f) {   // point in polygon, flat [x0,y0,x1,y1,...]
+    var c = false, n = f.length / 2;
+    for (var i = 0, j = n - 1; i < n; j = i++) {
+      var xi = f[i * 2], yi = f[i * 2 + 1], xj = f[j * 2], yj = f[j * 2 + 1];
+      if ((yi > y) !== (yj > y) && x < (xj - xi) * (y - yi) / (yj - yi) + xi) c = !c;
+    }
+    return c;
   }
-  var TEXT = {
-    survey: { k: 'Survey', t: 'Who answered our questionnaire', b: '<p>Growers, agronomists and students told us how they notice nematode damage today and what an early warning would need to look like.</p><p>Colour: responses per province.</p><small>Illustrative data. The team\u2019s survey counts replace these values.</small>' },
-    teach: { k: 'Teaching', t: 'Where we taught', b: '<p>Volunteer classes on soil life, nematodes and synthetic biology for primary and middle school students.</p><p>Marker size: classes held in the province.</p><small>Illustrative data. The team\u2019s teaching records replace these values.</small>' },
-    soil: { k: 'Soil programme', t: 'Where soil samples came from', b: '<p>Soil samples collected with local growers, for the lab and for talking about what a colour readout could mean on a farm.</p><p>Bar height: samples from the province.</p><small>Illustrative data. The team\u2019s sampling log replaces these values.</small>' }
-  };
 
   function hp() {
-    var sec = H.$('[data-hp]'); if (!sec || !GEO.china) return;
+    var sec = H.$('[data-hp]'); if (!sec || !GEO.china || !HP) return;
     var G = GEO.china, KINDS = ['survey', 'teach', 'soil'], COL = ['#c48cff', '#ffa24a', '#9aa7ff'];
     var fig = H.$('[data-hp-map]', sec);
     var cvs = KINDS.map(function (k) { return H.$('canvas[data-layer="' + k + '"]', sec); });
     var tabs = H.$$('[data-hp-tab]', sec);
-    /* one short figure per layer, from the same (illustrative) values the map draws */
-    KINDS.forEach(function (k, i) {
-      var d = HPD[k], n = Object.keys(d), sum = n.reduce(function (a, p) { return a + d[p]; }, 0);
-      var el = H.$('[data-hp-stat="' + i + '"]', sec);
-      if (el) el.textContent = sum + (k === 'survey' ? ' responses' : k === 'teach' ? ' classes' : ' samples') + ' \u00b7 ' + n.length + ' provinces';
-    });
-    function inside(lon, lat) {
-      var r = Math.floor((G.north - lat) / G.step), c = Math.floor((lon - G.west) / G.step), row = G.rows_mask[r];
-      if (!row) return false;
-      return row.split(',').some(function (run) { var a = run.split(':'); return c >= +a[0] && c < +a[0] + +a[1]; });
-    }
+    var SV = HP.survey, TS = HP.teach.sites, SS = HP.soil.sites;
+    var BY = {}; SV.byProvince.forEach(function (p) { BY[p.en] = p; });
+    var BR = SV.breaks;
+    function cls(n) { if (!n) return -1; for (var i = 0; i < BR.length; i++) if (n >= BR[i][0] && (BR[i][1] == null || n <= BR[i][1])) return i; return BR.length - 1; }
+    function rng(b) { return b[1] == null ? '\u2265 ' + b[0] : b[0] === b[1] ? String(b[0]) : b[0] + '\u2013' + b[1]; }
+    var nSites = function (a) { return a.reduce(function (s, x) { return s + x.n; }, 0); };
+    var soilProv = {}; SS.forEach(function (s) { soilProv[s.province] = 1; });
 
-    /* ---------- one view shared by all three layers ----------
-     * The base map (outline + South China Sea inset) sits on its own canvas
-     * and never changes when the layer changes; the three data layers use
-     * the same projection and only cross-fade on top of it. v7.6: the map
-     * faces the reader straight on (no oblique angle, no pointer tilt);
-     * nothing is redrawn once it has settled. */
+    /* ---------- the copy column: figures, legends, sources ---------- */
+    var STAT = [
+      fmtN(SV.responses) + ' responses \u00b7 ' + SV.byProvince.length + ' provinces',
+      TS.length + ' sites \u00b7 \u2248' + HP.teach.total + ' students',
+      nSites(SS) + ' samples \u00b7 ' + SS.length + ' sites \u00b7 ' + Object.keys(soilProv).length + ' provinces'
+    ];
+    STAT.forEach(function (t, i) { var el = H.$('[data-hp-stat="' + i + '"]', sec); if (el) el.textContent = t; });
+    var counts = BR.map(function () { return 0; }); SV.byProvince.forEach(function (p) { counts[cls(p.n)]++; });
+    var LEG = [
+      '<span class="hp2__lgt">Responses per province</span><span class="hp2__chips">' +
+        BR.map(function (b, i) { return '<span class="hp2__chip" title="' + counts[i] + (counts[i] > 1 ? ' provinces' : ' province') + '"><i style="background:' + CLS[i] + '"></i>' + rng(b) + '</span>'; }).join('') +
+        '<span class="hp2__chip"><i class="is-none"></i>none</span></span>',
+      '<span class="hp2__lgt">Circle area = students signed up</span><span class="hp2__sizes">' +
+        [10, 50, 130].map(function (n) { var d = Math.round(26 * Math.sqrt(n / 130)); return '<span><i style="width:' + d + 'px;height:' + d + 'px"></i>' + n + '</span>'; }).join('') + '</span>',
+      '<span class="hp2__lgt">Bar height = samples at the site (1\u201325)</span><span class="hp2__bars"><span><i style="height:3px"></i>1</span><span><i style="height:6px"></i>5</span><span><i style="height:26px"></i>25</span></span>'
+    ];
+    LEG.forEach(function (h, i) { var el = H.$('[data-hp-legend="' + i + '"]', sec); if (el) el.innerHTML = h; });
+    var NOTE = [
+      'Questionnaire, ' + SV.first + ' to ' + SV.last + ' (n = ' + SV.responses + '), self-reported province',
+      'Team sign-up sheet; markers at county or district seats',
+      'Soil log, records 1\u20136; ascaroside not yet measured'
+    ];
+    var noteEl = H.$('[data-hp-note]', sec);
+    /* the same records as text, for screen readers */
+    var sr = H.$('[data-hp-sr]', sec);
+    if (sr) sr.innerHTML =
+      '<h3>Survey responses by province</h3><ul>' + SV.byProvince.map(function (p) { return '<li>' + p.en + ': ' + p.n + '</li>'; }).join('') + '</ul>' +
+      '<h3>Teaching sites</h3><ul>' + TS.map(function (s) { return '<li>' + s.place + ': ' + (s.approx ? 'about ' : '') + s.n + ' students</li>'; }).join('') + '</ul>' +
+      '<h3>Soil samples</h3><ul>' + SS.map(function (s) { return '<li>' + s.place + ': ' + s.n + (s.n > 1 ? ' samples' : ' sample') + '</li>'; }).join('') + '</ul>';
+
+    /* ---------- one view shared by all three layers (unchanged since v7.6) ---------- */
     var base = document.createElement('canvas');
     base.setAttribute('data-layer', 'base'); base.setAttribute('aria-hidden', 'true');
     fig.insertBefore(base, fig.firstChild);
     var LON0 = 104.25, LAT0 = 35.75;
-    var V = { w: 1, h: 1, s: 1, cx: 0, cy: 0, yaw: 0, tilt: 0, ty: 0, tt: 0, hmax: 100 };
-    function sq() { return 1; }   // v7.6: face-on (was an oblique 0.6 squash)
-    function P3(lon, lat, z) {
-      var dx = (lon - LON0) * 0.84 * V.s, dy = (LAT0 - lat) * V.s;
-      var ca = Math.cos(V.yaw), sa = Math.sin(V.yaw), rx = dx * ca - dy * sa, ry = dx * sa + dy * ca;
-      return [V.cx + rx * 0.96, V.cy + ry * sq() - (z || 0)];
-    }
-    function unP3(x, y) {
-      var rx = (x - V.cx) / 0.96, ry = (y - V.cy) / sq(), ca = Math.cos(V.yaw), sa = Math.sin(V.yaw);
-      var dx = rx * ca + ry * sa, dy = -rx * sa + ry * ca;
-      return [dx / (0.84 * V.s) + LON0, LAT0 - dy / V.s];
-    }
+    var V = { w: 1, h: 1, s: 1, cx: 0, cy: 0, hmax: 100 };
+    function P3(lon, lat) { return [V.cx + (lon - LON0) * 0.84 * V.s * 0.96, V.cy + (LAT0 - lat) * V.s]; }
+    function unP3(x, y) { return [(x - V.cx) / (0.96 * 0.84 * V.s) + LON0, LAT0 - (y - V.cy) / V.s]; }
     /* the South China Sea inset lies on the same plane, south-east of the mainland */
     var IN = { lon0: 106, lon1: 124, lat0: 3, lat1: 24, k: 0.52, clon: 130.6, clat: 23.2 };
-    function PI3(lon, lat) { return P3(IN.clon + (lon - (IN.lon0 + IN.lon1) / 2) * IN.k, IN.clat + (lat - (IN.lat0 + IN.lat1) / 2) * IN.k); }
+    var IMX = (IN.lon0 + IN.lon1) / 2, IMY = (IN.lat0 + IN.lat1) / 2;
+    function PI3(lon, lat) { return P3(IN.clon + (lon - IMX) * IN.k, IN.clat + (lat - IMY) * IN.k); }
+    function unPI3(x, y) { var l = unP3(x, y); return [IMX + (l[0] - IN.clon) / IN.k, IMY + (l[1] - IN.clat) / IN.k]; }
+    function inInset(x, y) { var a = PI3(IN.lon0, IN.lat1), d = PI3(IN.lon1, IN.lat0); return x >= a[0] && x <= d[0] && y >= a[1] && y <= d[1]; }
+    function insetClip(c) { var a = PI3(IN.lon0, IN.lat1), d = PI3(IN.lon1, IN.lat0); c.beginPath(); c.rect(a[0], a[1], d[0] - a[0], d[1] - a[1]); c.clip(); }
     function sizeView() {
       var r = fig.getBoundingClientRect(); V.w = Math.max(1, r.width); V.h = Math.max(1, r.height || r.width * 0.86);
       V.hmax = V.h * 0.12;
@@ -408,12 +421,14 @@
       V.cx = V.w / 2; V.cy = V.hmax + (V.h - V.hmax) / 2;
     }
     function ringPath(c, ring, proj) { c.beginPath(); ring.forEach(function (p, i) { var q = proj(p[0], p[1]); i ? c.lineTo(q[0], q[1]) : c.moveTo(q[0], q[1]); }); c.closePath(); }
+    function flatPath(c, f, proj) { for (var i = 0; i < f.length; i += 2) { var q = proj(f[i], f[i + 1]); i ? c.lineTo(q[0], q[1]) : c.moveTo(q[0], q[1]); } c.closePath(); }
+    function outlineStroke(c, proj, a, w) {
+      c.strokeStyle = 'rgba(255,255,255,' + a + ')'; c.lineWidth = w;
+      G.outline.forEach(function (ring) { ringPath(c, ring, proj); c.stroke(); });
+    }
     var bctx = null;
     function drawBase() {
       var c = bctx; c.clearRect(0, 0, V.w, V.h);
-      /* a soft pool of light under the map */
-      /* an ellipse that fades out before it reaches the canvas edges, so it
-         never ends in a hard line at the bottom of the map box */
       var ry = Math.min(V.h - V.cy, V.cy) * 0.96, sx = Math.min(1.7, (V.w / 2) * 0.96 / ry);
       c.save(); c.translate(V.cx, V.cy); c.scale(sx, 1);
       var g = c.createRadialGradient(0, 0, 0, 0, 0, ry);
@@ -424,7 +439,6 @@
         c.fillStyle = 'rgba(255,255,255,.045)'; c.fill();
         c.strokeStyle = 'rgba(255,255,255,.82)'; c.lineWidth = 1.3; c.shadowColor = 'rgba(255,255,255,.45)'; c.shadowBlur = 6; c.stroke(); c.shadowBlur = 0;
       });
-      /* inset frame */
       var a = PI3(IN.lon0, IN.lat1), b = PI3(IN.lon1, IN.lat1), d = PI3(IN.lon1, IN.lat0), e = PI3(IN.lon0, IN.lat0);
       c.save();
       c.beginPath(); c.moveTo(a[0], a[1]); c.lineTo(b[0], b[1]); c.lineTo(d[0], d[1]); c.lineTo(e[0], e[1]); c.closePath();
@@ -436,106 +450,215 @@
       (G.maritime || []).forEach(function (l) { c.beginPath(); l.forEach(function (p, i) { var q = PI3(p[0], p[1]); i ? c.lineTo(q[0], q[1]) : c.moveTo(q[0], q[1]); }); c.stroke(); });
       c.restore();
     }
+    function label(c, t, x, y, al, size, col) {
+      c.font = '600 ' + (size || 12) + 'px Spline Sans, system-ui, sans-serif'; c.textAlign = al || 'left'; c.textBaseline = 'middle';
+      c.lineWidth = 3.2; c.strokeStyle = 'rgba(23,12,31,.92)'; c.lineJoin = 'round'; c.strokeText(t, x, y);
+      c.fillStyle = col || '#fff'; c.fillText(t, x, y);
+    }
 
-    /* ---------- the three data layers ---------- */
-    function makeLayer(kind, cv) {
-      var ctx = null, introT = -1, m = { kind: kind, cv: cv, hot: null, on: false, fadeUntil: 0 };
-      var rng = H.rand(kind === 'soil' ? 3 : 9);
-      var data = HPD[kind], mx = HPMAX[kind];
-      var hexes = [], pins = [], mesh = [], bars = [];
-      if (kind === 'survey') {
-        var st = 0.62, rowH = st * 0.866;
-        for (var lat = 53.8, ri = 0; lat > 17.6; lat -= rowH, ri++) for (var lon = 73.4 + (ri % 2) * st / 2; lon < 135.4; lon += st)
-          if (inside(lon, lat)) { var pn = provAt(lon, lat), v = data[pn]; hexes.push({ lon: lon, lat: lat, n: pn, v: v ? v / mx : -1, d: (lon - 73) / 62 + rng() * 0.25 }); }
-        m.dot = st * 0.84 * 0.37;
+    /* ---------- survey: the provinces of the standard map ---------- */
+    var PROVS = HP.provinces.map(function (p, i) {
+      var d = BY[p.en], minLon = 999;
+      p.r.forEach(function (f) { for (var k = 0; k < f.length; k += 2) minLon = Math.min(minLon, f[k]); });
+      return { en: p.en, zh: p.zh, r: p.r, n: d ? d.n : 0, c: d ? cls(d.n) : -1, d: d, delay: (minLon - 73) / 62 };
+    });
+    /* value labels for every province with 10 or more responses; the two small
+       municipalities get a leader line out to open water / open land */
+    var LAB = [
+      { en: 'Shandong', at: [118.3, 36.25] }, { en: 'Hebei', at: [115.1, 38.45] }, { en: 'Guangdong', at: [113.6, 23.55] },
+      { en: 'Tianjin', from: [117.35, 39.12], at: [120.6, 39.25] }, { en: 'Beijing', from: [116.35, 40.25], at: [113.6, 41.75] }
+    ];
+    function provAt(x, y) {
+      var ll = inInset(x, y) ? unPI3(x, y) : unP3(x, y);
+      for (var i = PROVS.length - 1; i >= 0; i--) {   // topmost first (sheet drawing order)
+        var p = PROVS[i]; for (var k = 0; k < p.r.length; k++) if (pip(ll[0], ll[1], p.r[k])) return p;
       }
-      if (kind === 'teach') Object.keys(data).forEach(function (n, i) { pins.push({ n: n, ll: PROV[n], v: data[n], d: i * 0.05 }); });
+      return null;
+    }
+    function drawProvinces(c, proj, it, hotP, small) {
+      PROVS.forEach(function (p) {
+        var k = H.clamp((it * 1.6 - p.delay * 0.8) * 2.4, 0, 1); if (k <= 0) return;
+        c.globalAlpha = k;
+        c.fillStyle = p.c < 0 ? NODATA : CLS[p.c];
+        p.r.forEach(function (f) { c.beginPath(); flatPath(c, f, proj); c.fill(); });
+      });
+      c.globalAlpha = 1;
+      /* province boundaries: a dark hairline between coloured provinces */
+      c.strokeStyle = 'rgba(23,12,31,.85)'; c.lineWidth = small ? 0.5 : 0.8; c.lineJoin = 'round';
+      PROVS.forEach(function (p) { p.r.forEach(function (f) { c.beginPath(); flatPath(c, f, proj); c.stroke(); }); });
+      c.strokeStyle = 'rgba(255,255,255,.16)'; c.lineWidth = 0.5;
+      PROVS.forEach(function (p) { if (p.c < 0) p.r.forEach(function (f) { c.beginPath(); flatPath(c, f, proj); c.stroke(); }); });
+      if (hotP) { c.strokeStyle = '#fff'; c.lineWidth = small ? 1.2 : 2; hotP.r.forEach(function (f) { c.beginPath(); flatPath(c, f, proj); c.stroke(); }); }
+    }
+
+    /* ---------- teaching: sites, dodged so near neighbours stay readable ---------- */
+    var TMAX = Math.max.apply(null, TS.map(function (s) { return s.n; }));
+    function teachLayout() {
+      var R = H.clamp(V.s * 1.3, 7, 30);
+      var pts = TS.map(function (s) { var q = P3(s.ll[0], s.ll[1]); return { s: s, tx: q[0], ty: q[1], x: q[0], y: q[1], r: R * Math.sqrt(s.n / TMAX) }; });
+      for (var it = 0; it < 60; it++) {
+        for (var i = 0; i < pts.length; i++) for (var j = i + 1; j < pts.length; j++) {
+          var a = pts[i], b = pts[j], dx = b.x - a.x, dy = b.y - a.y, d = Math.hypot(dx, dy) || 0.01, need = (a.r + b.r) * 0.8 + 3;
+          if (d < need) { var m = (need - d) / 2, ux = dx / d, uy = dy / d; if (d < 0.02) { ux = 1; uy = 0; } a.x -= ux * m; a.y -= uy * m; b.x += ux * m; b.y += uy * m; }
+        }
+        pts.forEach(function (p) { p.x += (p.tx - p.x) * 0.04; p.y += (p.ty - p.y) * 0.04; });
+      }
+      return pts;
+    }
+    /* labels: try right, left, above, below and the diagonals; take the first
+       spot that hits no marker and no label already placed */
+    function placeLabels(c, items, obst, col) {
+      c.font = '600 12px Spline Sans, system-ui, sans-serif';
+      var boxes = [], H2 = 14;
+      items.slice().sort(function (a, b) { return b.r - a.r; }).forEach(function (L) {
+        var w = c.measureText(L.t).width + 4, g = L.r + 4, best = null;
+        var cand = [];
+        [g, g + 16].forEach(function (d) { cand.push([d, -H2 / 2], [-d - w, -H2 / 2], [-w / 2, -d - H2], [-w / 2, d], [d * .7, -d * .7 - H2], [d * .7, d * .7], [-d * .7 - w, -d * .7 - H2], [-d * .7 - w, d * .7]); });
+        for (var k = 0; k < cand.length && !best; k++) {
+          var bx = { x: L.x + cand[k][0], y: L.y + cand[k][1], w: w, h: H2 }, ok = bx.x > 2 && bx.x + w < V.w - 2;
+          boxes.forEach(function (b) { if (bx.x < b.x + b.w && bx.x + bx.w > b.x && bx.y < b.y + b.h && bx.y + bx.h > b.y) ok = false; });
+          (obst || []).forEach(function (o) {
+            if (o.rw) { if (bx.x < o.rx + o.rw + 1 && bx.x + w > o.rx - 1 && bx.y < o.ry + o.rh && bx.y + H2 > o.ry) ok = false; return; }
+            var cx = H.clamp(o.x, bx.x, bx.x + w), cy = H.clamp(o.y, bx.y, bx.y + H2); if (Math.hypot(cx - o.x, cy - o.y) < (o.r || 3) + 1) ok = false;
+          });
+          if (ok) { best = bx; best.far = k >= 8; }
+        }
+        best = best || { x: L.x + g, y: L.y - H2 / 2, w: w, h: H2 };
+        boxes.push(best);
+        if (best.far) {   // moved out to the second ring: tie it back to its marker
+          var ex = H.clamp(L.x, best.x, best.x + w), ey = H.clamp(L.y, best.y, best.y + H2);
+          c.strokeStyle = col; c.globalAlpha *= 0.6; c.lineWidth = 0.8; c.beginPath(); c.moveTo(L.x, L.y); c.lineTo(ex, ey); c.stroke(); c.globalAlpha /= 0.6;
+        }
+        label(c, L.t, best.x + 2, best.y + H2 / 2, 'left', 12, col);
+      });
+    }
+    /* ---------- soil: one bar per site, linear in samples ---------- */
+    var SMAX = Math.max.apply(null, SS.map(function (s) { return s.n; }));
+
+    function makeLayer(kind, cv) {
+      var ctx = null, introT = -1, m = { kind: kind, cv: cv, hot: null, fadeUntil: 0 }, tpts = [], mesh = [];
       if (kind === 'soil') {
-        var stp = 1.25, grid = {};
+        var rr = H.rand(3), stp = 1.25, grid = {};
         for (var la = 53.5, r2 = 0; la > 18; la -= stp, r2++) for (var lo = 73.5, c2 = 0; lo < 135; lo += stp, c2++) {
-          var jl = lo + (rng() - 0.5) * stp * 0.7, ja = la + (rng() - 0.5) * stp * 0.7;
-          if (inside(jl, ja)) grid[r2 + ',' + c2] = [jl, ja];
+          var jl = lo + (rr() - 0.5) * stp * 0.7, ja = la + (rr() - 0.5) * stp * 0.7;
+          var row = G.rows_mask[Math.floor((G.north - ja) / G.step)], col = Math.floor((jl - G.west) / G.step);
+          if (row && row.split(',').some(function (run) { var a = run.split(':'); return col >= +a[0] && col < +a[0] + +a[1]; })) grid[r2 + ',' + c2] = [jl, ja];
         }
         Object.keys(grid).forEach(function (key) {
           var rc = key.split(','), r = +rc[0], c = +rc[1], a = grid[key];
           [[0, 1], [1, 0], [1, 1], [1, -1]].forEach(function (d) { var b = grid[(r + d[0]) + ',' + (c + d[1])]; if (b && !(d[0] === 1 && d[1] === -1 && grid[(r + 1) + ',' + c])) mesh.push([a, b]); });
         });
-        Object.keys(data).forEach(function (n, i) { bars.push({ n: n, ll: PROV[n], v: data[n] / mx, raw: data[n], d: i * 0.06, col: ['#ffa24a', '#ff6f8a', '#b88bff', '#6fb6ff', '#ffd34d'][i % 5] }); });
-        bars.sort(function (a, b) { return b.ll[1] - a.ll[1]; });
       }
-      m.size = function () { ctx = H.fit(cv, V.w, V.h, 2); };
+      m.size = function () { ctx = H.fit(cv, V.w, V.h, 2); if (kind === 'teach') tpts = teachLayout(); };
       m.intro = function () { introT = performance.now(); };
       m.busy = function () { return introT >= 0 && performance.now() - introT < 1700; };
       m.draw = function (mouse) {
         if (!ctx) return;
-        var it = introT < 0 ? 0 : H.clamp((performance.now() - introT) / 1600, 0, 1), c = ctx, S = sq(), hot = null;
+        var it = introT < 0 ? 1 : H.clamp((performance.now() - introT) / 1600, 0, 1), c = ctx, hot = null;
         c.clearRect(0, 0, V.w, V.h);
         if (kind === 'survey') {
-          var r0 = m.dot * V.s;
-          hexes.forEach(function (d) {
-            var k = H.clamp((it * 1.5 - d.d) * 3, 0, 1); if (k <= 0) return;
-            var q = P3(d.lon, d.lat), near = 0;
-            if (mouse) { var dd = Math.hypot(q[0] - mouse[0], (q[1] - mouse[1]) / S); near = Math.max(0, 1 - dd / 80); }
-            var r = r0 * (1 + near * 0.9) * k;
-            c.fillStyle = d.v < 0 ? 'rgba(255,255,255,' + (0.13 + near * 0.2) + ')' : ramp(Math.min(1, 0.15 + d.v * 0.85), 0.82 + near * 0.18);
-            c.beginPath(); c.ellipse(q[0], q[1], r, r * S, 0, 0, 6.29); c.fill();
-          });
+          hot = mouse ? provAt(mouse[0], mouse[1]) : null;
+          drawProvinces(c, P3, it, hot, false);
+          outlineStroke(c, P3, 0.7, 1);
+          c.save(); insetClip(c); drawProvinces(c, PI3, it, hot, true); outlineStroke(c, PI3, 0.6, 0.7); c.restore();
+          if (it > 0.55) {
+            c.globalAlpha = H.clamp((it - 0.55) * 3, 0, 1);
+            LAB.forEach(function (L) {
+              var p = BY[L.en]; if (!p) return;
+              if (V.s < 10 && !L.from && p.n < 100) return;   // small screens: keep 171, 99 and 18; the rest are in the tooltip
+              var q = P3(L.at[0], L.at[1]);
+              if (L.from) {
+                var f = P3(L.from[0], L.from[1]);
+                c.strokeStyle = 'rgba(255,255,255,.75)'; c.lineWidth = 0.9; c.beginPath(); c.moveTo(f[0], f[1]); c.lineTo(q[0], q[1]); c.stroke();
+                c.fillStyle = '#fff'; c.beginPath(); c.arc(f[0], f[1], 1.8, 0, 6.29); c.fill();
+                var right = q[0] > f[0];
+                label(c, p.n + '  ' + L.en, q[0] + (right ? 4 : -4), q[1], right ? 'left' : 'right', V.s < 10 ? 11 : 12);
+              } else label(c, String(p.n), q[0], q[1], 'center', V.s < 10 ? 11 : 13);
+            });
+            c.globalAlpha = 1;
+          }
         }
         if (kind === 'teach') {
-          pins.forEach(function (pn) {
-            var k = H.ease(H.clamp((it * 1.6 - pn.d) * 2.5, 0, 1)); if (k <= 0) return;
-            var q = P3(pn.ll[0], pn.ll[1]), near = mouse && Math.hypot(q[0] - mouse[0], q[1] - mouse[1]) < 14; if (near) hot = pn;
-            var sz = 5 * (1 + pn.v * 0.45) * k * (near ? 1.35 : 1);
-            c.fillStyle = 'rgba(255,162,74,.2)'; c.beginPath(); c.ellipse(q[0], q[1], sz * 2.2, sz * 2.2 * S, 0, 0, 6.29); c.fill();
-            c.fillStyle = '#ffa24a'; c.shadowColor = '#ffa24a'; c.shadowBlur = 10; c.beginPath(); c.arc(q[0], q[1], sz, 0, 6.29); c.fill(); c.shadowBlur = 0;
+          var order = tpts.slice().sort(function (a, b) { return b.r - a.r; });
+          order.forEach(function (p, i) {
+            var k = H.ease(H.clamp((it * 1.6 - i * 0.08) * 2.5, 0, 1)); if (k <= 0) return;
+            var near = mouse && Math.hypot(p.x - mouse[0], p.y - mouse[1]) < Math.max(9, p.r + 2);
+            if (near) hot = p;
+            if (Math.hypot(p.x - p.tx, p.y - p.ty) > 2.5) {
+              c.strokeStyle = 'rgba(255,200,150,.7)'; c.lineWidth = 0.8; c.beginPath(); c.moveTo(p.tx, p.ty); c.lineTo(p.x, p.y); c.stroke();
+              c.fillStyle = '#ffd1a6'; c.beginPath(); c.arc(p.tx, p.ty, 1.6, 0, 6.29); c.fill();
+            }
+            var r = p.r * k;
+            c.fillStyle = near ? 'rgba(255,162,74,.55)' : 'rgba(255,162,74,.32)';
+            c.beginPath(); c.arc(p.x, p.y, r, 0, 6.29); c.fill();
+            c.strokeStyle = '#ffa24a'; c.lineWidth = near ? 2 : 1.3; c.shadowColor = '#ffa24a'; c.shadowBlur = near ? 14 : 6; c.stroke(); c.shadowBlur = 0;
+            c.fillStyle = '#ffe2c4'; c.beginPath(); c.arc(p.x, p.y, 1.8, 0, 6.29); c.fill();
           });
+          if (it > 0.5) {
+            c.globalAlpha = H.clamp((it - 0.5) * 3, 0, 1);
+            /* sites that share a group (the two Tianjin communities) share one label */
+            var seen = {}, items = [];
+            tpts.forEach(function (p) {
+              var g = p.s.group, v = (p.s.approx ? '\u2248' : '') + p.s.n;
+              if (!g) { items.push({ x: p.x, y: p.y, r: p.r, t: p.s.short + ' ' + v }); return; }
+              if (seen[g]) { seen[g].t += ' + ' + v; seen[g].x = (seen[g].x + p.x) / 2; seen[g].y = (seen[g].y + p.y) / 2; seen[g].r = Math.max(seen[g].r, p.r) + 3; return; }
+              seen[g] = { x: p.x, y: p.y, r: p.r, t: g + ' ' + v }; items.push(seen[g]);
+            });
+            placeLabels(c, items, tpts, '#ffe2c4');
+            c.globalAlpha = 1;
+          }
         }
         if (kind === 'soil') {
-          c.strokeStyle = 'rgba(235,235,255,' + (0.06 + 0.14 * it) + ')'; c.lineWidth = 0.7;
+          c.strokeStyle = 'rgba(235,235,255,' + (0.05 + 0.1 * it) + ')'; c.lineWidth = 0.7;
           c.beginPath();
           mesh.forEach(function (e, i) { if (i / mesh.length > it * 1.3) return; var a = P3(e[0][0], e[0][1]), b = P3(e[1][0], e[1][1]); c.moveTo(a[0], a[1]); c.lineTo(b[0], b[1]); });
           c.stroke();
-          bars.forEach(function (b) {
-            var k = H.ease(H.clamp((it * 1.8 - b.d) * 2, 0, 1)), q = P3(b.ll[0], b.ll[1]), hh = (12 + b.v * V.hmax) * k;
-            var near = mouse && Math.abs(mouse[0] - q[0]) < 9 && mouse[1] < q[1] + 6 && mouse[1] > q[1] - hh - 10; if (near) hot = b;
-            var g = c.createLinearGradient(0, q[1], 0, q[1] - hh); g.addColorStop(0, b.col + '22'); g.addColorStop(1, b.col);
-            c.fillStyle = 'rgba(255,255,255,.5)'; c.beginPath(); c.ellipse(q[0], q[1], 5, 5 * S * 0.6, 0, 0, 6.29); c.fill();
-            c.fillStyle = g; c.fillRect(q[0] - (near ? 4 : 2.6), q[1] - hh, near ? 8 : 5.2, hh);
-            c.fillStyle = b.col; c.shadowColor = b.col; c.shadowBlur = near ? 20 : 12; c.beginPath(); c.arc(q[0], q[1] - hh, near ? 5 : 3.4, 0, 6.29); c.fill(); c.shadowBlur = 0;
+          var HB = V.hmax * 0.9, col = '#9aa7ff', tops = [];
+          SS.slice().sort(function (a, b) { return b.ll[1] - a.ll[1]; }).forEach(function (s, i) {
+            var k = H.ease(H.clamp((it * 1.8 - i * 0.08) * 2, 0, 1)), q = P3(s.ll[0], s.ll[1]), hh = Math.max(3, s.n / SMAX * HB) * k;
+            var near = mouse && Math.abs(mouse[0] - q[0]) < 9 && mouse[1] < q[1] + 7 && mouse[1] > q[1] - hh - 18; if (near) hot = { s: s };
+            c.fillStyle = 'rgba(255,255,255,.55)'; c.beginPath(); c.ellipse(q[0], q[1], 5, 2.2, 0, 0, 6.29); c.fill();
+            var g = c.createLinearGradient(0, q[1], 0, q[1] - hh); g.addColorStop(0, col + '55'); g.addColorStop(1, col);
+            c.fillStyle = near ? '#c9d0ff' : g; c.fillRect(q[0] - (near ? 4 : 3), q[1] - hh, near ? 8 : 6, hh);
+            c.fillStyle = '#e4e8ff'; c.shadowColor = col; c.shadowBlur = near ? 16 : 8; c.beginPath(); c.arc(q[0], q[1] - hh, near ? 3.6 : 2.6, 0, 6.29); c.fill(); c.shadowBlur = 0;
+            if (k > 0.9) tops.push({ x: q[0], y: q[1] - hh, r: 5, t: s.short + ' ' + s.n, bar: [q[0] - 4, q[1] - hh, 8, hh] });
           });
+          if (tops.length) placeLabels(c, tops, tops.map(function (t) { return { rx: t.bar[0], ry: t.bar[1], rw: t.bar[2], rh: t.bar[3] + 3 }; }).concat(tops), '#e4e8ff');
         }
         m.hot = hot;
       };
       m.tipAt = function (mouse) {
         if (kind === 'survey') {
-          var ll = unP3(mouse[0], mouse[1]);
-          if (inside(ll[0], ll[1])) { var pn = provAt(ll[0], ll[1]); return '<b>' + pn + '</b>' + (data[pn] ? data[pn] + ' responses' : 'No responses yet'); }
-          return '';
+          var p = provAt(mouse[0], mouse[1]); if (!p) return '';
+          if (!p.n) return '<b>' + p.en + ' \u00b7 ' + p.zh + '</b>No responses';
+          var share = (p.n / SV.responses * 100).toFixed(1);
+          return '<b>' + p.en + ' \u00b7 ' + p.zh + '</b>' + p.n + (p.n > 1 ? ' responses' : ' response') + ' (' + share + '% of ' + SV.responses + ')' +
+            '<em>' + p.d.top.map(function (t) { return t[0] + ' ' + t[1]; }).join(' \u00b7 ') + (p.d.places > 3 ? ' \u00b7 +' + (p.d.places - 3) + ' more' : '') + '</em>';
         }
         if (!m.hot) return '';
-        if (kind === 'teach') return '<b>' + m.hot.n + '</b>' + m.hot.v + (m.hot.v > 1 ? ' classes' : ' class');
-        return '<b>' + m.hot.n + '</b>' + m.hot.raw + ' soil samples';
+        if (kind === 'teach') { var s = m.hot.s; return '<b>' + s.team + '</b>' + s.placeZh + '<br>' + (s.approx ? 'About ' : '') + s.n + ' students signed up' + (s.check ? '<em>Location to be confirmed</em>' : ''); }
+        var o = m.hot.s;
+        return '<b>' + o.place + '</b>' + o.n + (o.n > 1 ? ' soil samples' : ' soil sample') +
+          (o.soil || o.cover ? '<br>' + [o.soil, o.cover].filter(Boolean).join(' \u00b7 ') : '') + (o.link ? '<em>' + o.link + '</em>' : '');
       };
       return m;
     }
     var layers = KINDS.map(function (k, i) { return makeLayer(k, cvs[i]); });
 
     /* ---------- one render loop that sleeps when nothing moves ---------- */
-    var raf = 0, visible = true, mouse = null, cur = -1, dirty = true, lastYaw = 1, lastTilt = 1;
+    var raf = 0, visible = true, mouse = null, cur = -1, dirty = true;
     function frame() {
       raf = 0; if (!visible) return;
-      V.yaw += (V.ty - V.yaw) * 0.12; V.tilt += (V.tt - V.tilt) * 0.12;
-      var moved = Math.abs(V.yaw - lastYaw) > 1e-4 || Math.abs(V.tilt - lastTilt) > 1e-4;
-      if (moved || dirty) { drawBase(); lastYaw = V.yaw; lastTilt = V.tilt; }
-      var now = performance.now(), busy = moved;
+      if (dirty) drawBase();
+      var now = performance.now(), busy = false;
       layers.forEach(function (L, j) {
         var shown = j === cur || now < L.fadeUntil;
         if (!shown) return;
-        if (moved || dirty || L.busy() || (j === cur && mouse)) L.draw(j === cur ? mouse : null);
+        if (dirty || L.busy() || (j === cur && mouse)) L.draw(j === cur ? mouse : null);
         if (L.busy()) busy = true;
       });
       dirty = false;
-      if (busy || Math.abs(V.ty - V.yaw) > 1e-4 || Math.abs(V.tt - V.tilt) > 1e-4) kick();
+      if (busy) kick();
     }
     function kick() { if (!raf && visible) raf = requestAnimationFrame(frame); }
     function resize() { sizeView(); bctx = H.fit(base, V.w, V.h, 2); layers.forEach(function (L) { L.size(); }); dirty = true; kick(); }
@@ -546,6 +669,7 @@
       layers.forEach(function (L, j) { L.cv.classList.toggle('is-on', j === i); if (j === was) L.fadeUntil = performance.now() + 850; });
       tabs.forEach(function (t, j) { t.setAttribute('aria-selected', j === i ? 'true' : 'false'); t.tabIndex = j === i ? 0 : -1; });
       sec.style.setProperty('--hpc', COL[i]);
+      if (noteEl) noteEl.textContent = NOTE[i];
       layers[i].intro(); kick();
       H.tip(null);
     }
@@ -570,8 +694,6 @@
     H.onView(fig, function (v) { visible = v; if (v) { dirty = true; kick(); } });
     var rz; addEventListener('resize', function () { clearTimeout(rz); rz = setTimeout(resize, 120); });
     resize();
-    /* cp16: the ascaroside story ends with the same outline where this map will
-       be drawn; draw it before arriving so the cut has nothing to fill in */
     H.hpWarm = function () { visible = true; dirty = true; kick(); };
     H.scene('hp', {
       get cutIn() { return !!(H.ascrStory && H.ascrStory.handsOver()); },

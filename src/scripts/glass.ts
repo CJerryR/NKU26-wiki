@@ -84,13 +84,18 @@ function edgeField(x: number, y: number, hw: number, hh: number, r: number): [nu
 }
 
 function maps(w: number, h: number, radius: number, bezel: number, specular: number) {
+  // Keep the refracting band inside the rounded rim. Beyond the corner
+  // radius the nearest-edge normal flips at the medial axis, splitting
+  // background glyphs across the centre of tall or wide rectangles.
+  const r = Math.min(radius, w / 2, h / 2);
+  bezel = Math.max(.001, Math.min(bezel, r, w / 2 - 1, h / 2 - 1));
   const s = 0.5, cw = Math.max(2, Math.round(w * s)), ch = Math.max(2, Math.round(h * s));
   const prof = bezelProfile(bezel, bezel * 1.15);
   const c1 = document.createElement('canvas'); c1.width = cw; c1.height = ch;
   const c2 = document.createElement('canvas'); c2.width = Math.round(w); c2.height = Math.round(h);
   const x1 = c1.getContext('2d')!, x2 = c2.getContext('2d')!;
   const d1 = x1.createImageData(cw, ch), D = d1.data;
-  const r = Math.min(radius, w / 2, h / 2), hw = w / 2, hh = h / 2;
+  const hw = w / 2, hh = h / 2;
   for (let py = 0; py < ch; py++) for (let px = 0; px < cw; px++) {
     const f = edgeField((px + 0.5) / s - hw, (py + 0.5) / s - hh, hw, hh, r);
     const t = f[0] / bezel, m = t < 1 && t >= 0 ? prof[Math.min(127, Math.round(t * 127))] : 0;

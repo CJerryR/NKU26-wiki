@@ -14,3 +14,10 @@ The generated abundance layer contains 1,901 valid points from 1,933 rows;
 
 Raw CSV SHA-256:
 1d22daf9dee91c8d8ffb63f5c794bb19bb7766e938a076af567cfbf53bda75a1
+
+v8.5 Human Practices maps (2026-10-17)
+- china-provinces-standard.json: province fills of GS(2022)4303, lon/lat
+- hp/survey-locations.json: questionnaire counts by province and city (n = 369)
+- hp/teaching-sites.json: 8 teaching sites, students signed up
+- hp/soil-samples.json: soil sample log records 1-6 (34 samples)
+See DATA_SOURCES.md section H and tools/build_hp_maps.py.

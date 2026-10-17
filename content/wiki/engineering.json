@@ -94,7 +94,7 @@
     },
     {
       "_template": "image",
-      "src": "/img/uploads/round2/r2-e81fa7011e20-engineering-r2-eng-001.webp",
+      "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-e81fa7011e20-r2-e81fa7011e20-engineering-r2-eng-001.webp",
       "alt": "Figure 1 Yeast transformation of GPR2‑sfGFP construct",
       "body": "Figure 1 Yeast transformation of GPR2‑sfGFP construct",
       "layout": "full",
@@ -185,7 +185,7 @@
     },
     {
       "_template": "image",
-      "src": "/img/uploads/round2/r2-d2f6a13810e7-engineering-r2-eng-002.webp",
+      "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-d2f6a13810e7-r2-d2f6a13810e7-engineering-r2-eng-002.webp",
       "alt": "Figure 1 Schematic Diagram of Yeast Biosensor Construction Pipeline",
       "body": "Figure 1 Schematic Diagram of Yeast Biosensor Construction Pipeline",
       "layout": "full",
@@ -199,10 +199,10 @@
     },
     {
       "body": "First, we knocked out the *Gal80* gene in CEN.PK2-1C to obtain the engineered strain NKU-Y02 (Figure 2), which eliminates endogenous signal interference in this pathway.",
-      "left": "/img/uploads/round2/r2-9ec82d42de33-engineering-r2-eng-003.webp",
+      "left": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-9ec82d42de33-r2-9ec82d42de33-engineering-r2-eng-003.webp",
       "leftAlt": "Figure 2 Knockout of the *Gal80* Gene",
       "leftCaption": "Figure 2 Knockout of the *Gal80* Gene",
-      "right": "/img/uploads/round2/r2-10dfc2855aa3-engineering-r2-eng-004.webp",
+      "right": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-10dfc2855aa3-r2-10dfc2855aa3-engineering-r2-eng-004.webp",
       "rightAlt": "Figure 3 Construction of Synthetic Transcription Factor",
       "rightCaption": "Figure 3 Construction of Synthetic Transcription Factor",
       "afterBody": "Subsequently, we fused the PRD domain of Ste12 (216–688 aa) with the DBD domain of Gal4 (1–147 aa) to construct a synthetic transcription factor (sTF). This construct was transformed into NKU-Y05, yielding strain NKU-Y05 (Figure 3) and enabling the coupling of GPCR-activated signaling with the GAL pathway.",

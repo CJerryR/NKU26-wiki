@@ -384,7 +384,7 @@ Subsequently, we co-transformed the p426-SNR52p-gGal4-SUP4t plasmid together wit
 
 :::figure
 
-![Figure 12. Schematic diagram of Gal1/10bp-Betaxanthin Expression Cassette transformation (a) and transformant validation (b).](/img/uploads/round2/r2-66c1379247d8-fig2-4-12.png)
+![Figure 12. Schematic diagram of Gal1/10bp-Betaxanthin Expression Cassette transformation (a) and transformant validation (b).](https://static.igem.wiki/teams/6303/wiki/v8-0/v85-66c1379247d8-r2-66c1379247d8-fig2-4-12.avif)
 
 **Figure 12.** Schematic diagram of Gal1/10bp-Betaxanthin Expression Cassette transformation (a) and transformant validation (b).
 
@@ -404,7 +404,7 @@ Based on the results from previous cycles and dry lab, we still used one-step cl
 
 :::figure
 
-![Figure 1. Plasmid maps of pRS315-TEF1p-GPR2-N84V and pRS315-TEF1p-GPR2-V368R.](/img/uploads/round2/r2-5c10cfcd0e4c-fig2-5-1.png)
+![Figure 1. Plasmid maps of pRS315-TEF1p-GPR2-N84V and pRS315-TEF1p-GPR2-V368R.](https://static.igem.wiki/teams/6303/wiki/v8-0/v85-5c10cfcd0e4c-r2-5c10cfcd0e4c-fig2-5-1.avif)
 
 **Figure 1.** Plasmid maps of pRS315-TEF1p-GPR2-N84V and pRS315-TEF1p-GPR2-V368R.
 
@@ -416,7 +416,7 @@ We successfully constructed two plasmids, pRS315-TEF1p-GPR2-N84V and pRS315-TEF1
 
 :::figure
 
-![Figure 2. Construction of pRS315-TEF1p-GPR2-N84V (a) and pRS315-TEF1p-GPR2-V368R (b). Whole-plasmid sequencing confirmed the correct base sequences in key regions.](/img/uploads/round2/r2-28480e6cf5ad-fig2-5-2.png)
+![Figure 2. Construction of pRS315-TEF1p-GPR2-N84V (a) and pRS315-TEF1p-GPR2-V368R (b). Whole-plasmid sequencing confirmed the correct base sequences in key regions.](https://static.igem.wiki/teams/6303/wiki/v8-0/v85-28480e6cf5ad-r2-28480e6cf5ad-fig2-5-2.avif)
 
 **Figure 2.** Construction of pRS315-TEF1p-GPR2-N84V (a) and pRS315-TEF1p-GPR2-V368R (b). Whole-plasmid sequencing confirmed the correct base sequences in key regions.
 
@@ -480,7 +480,7 @@ We developed three types of devices and materials. For the surface hydrophobic c
 
 :::figure
 
-![Figure 1. Water-absorption behavior (a) and hydrophobic-coating masking procedure](/img/uploads/round2/r2-97754aadf01e-fig3-1-1.png)
+![Figure 1. Water-absorption behavior (a) and hydrophobic-coating masking procedure](https://static.igem.wiki/teams/6303/wiki/v8-0/v85-97754aadf01e-r2-97754aadf01e-fig3-1-1.avif)
 
 **Figure 1.** Water-absorption behavior (a) and hydrophobic-coating masking procedure
 
@@ -490,7 +490,7 @@ Physical characterization of the protectant confirmed that the novel sodium algi
 
 :::figure
 
-![Figure 2. Protectant Water-Retention Test Setup](/img/uploads/round2/r2-4ffd015f5fcc-fig3-1-2.png)
+![Figure 2. Protectant Water-Retention Test Setup](https://static.igem.wiki/teams/6303/wiki/v8-0/v85-4ffd015f5fcc-r2-4ffd015f5fcc-fig3-1-2.avif)
 
 **Figure 2.** Protectant Water-Retention Test Setup
 
@@ -500,7 +500,7 @@ We also fabricated a custom vacuum filtration fixture as a vacuum-assisted spott
 
 :::figure
 
-![Figure 4. Schematic of the spotting process](/img/uploads/round2/r2-48ee38c731e9-fig3-1-4.jpg)
+![Figure 4. Schematic of the spotting process](https://static.igem.wiki/teams/6303/wiki/v8-0/v85-48ee38c731e9-r2-48ee38c731e9-fig3-1-4.avif)
 
 **Figure 4.** Schematic of the spotting process
 
@@ -530,7 +530,7 @@ Water absorption was independently quantified using a  liquid wicking assay (Fig
 
 :::figure
 
-![Figure 5. Water-absorption test](/img/uploads/round2/r2-b8d29a0fb201-fig3-1-5.jpg)
+![Figure 5. Water-absorption test](https://static.igem.wiki/teams/6303/wiki/v8-0/v85-b8d29a0fb201-r2-b8d29a0fb201-fig3-1-5.avif)
 
 **Figure 5.** Water-absorption test
 

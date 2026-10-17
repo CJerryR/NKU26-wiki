@@ -23,7 +23,7 @@ First, we used yeast with four auxotrophies as the chassis strain for this proje
 
 :::figure{scale=85}
 
-![CEN.PK2-1C auxotrophic yeast strain schematic](/img/uploads/round2/r2-54382c8e77e7-fig1.png)
+![CEN.PK2-1C auxotrophic yeast strain schematic](https://static.igem.wiki/teams/6303/wiki/v8-0/v85-54382c8e77e7-r2-54382c8e77e7-fig1.avif)
 
 **Figure 1.** CEN.PK21C strain with four auxotrophies
 
@@ -33,7 +33,7 @@ Secondly, we adopted the previously designed engineered yeast suicide switch, wh
 
 :::figure{scale=85}
 
-![Tet-On and Bax suicide-system design](/img/uploads/round2/r2-cfa8f763f0dd-fig2.png)
+![Tet-On and Bax suicide-system design](https://static.igem.wiki/teams/6303/wiki/v8-0/v85-cfa8f763f0dd-r2-cfa8f763f0dd-fig2.avif)
 
 **Figure 2.** The design of suicide system
 
@@ -45,7 +45,7 @@ All experimental operators of this project have received specialized laboratory 
 
 :::figure
 
-![Laboratory work with personal protective equipment](/img/uploads/round2/r2-fb3b2741b5dc-fig3.png)
+![Laboratory work with personal protective equipment](https://static.igem.wiki/teams/6303/wiki/v8-0/v85-fb3b2741b5dc-r2-fb3b2741b5dc-fig3.avif)
 
 
 
@@ -69,7 +69,7 @@ All laboratories supporting our iGEM project fall under the university’s stric
 
 :::figure
 
-![Laboratory safety facilities and inspection records](/img/uploads/round2/r2-0626938f4f22-fig4.png)
+![Laboratory safety facilities and inspection records](https://static.igem.wiki/teams/6303/wiki/v8-0/v85-0626938f4f22-r2-0626938f4f22-fig4.avif)
 
 
 
@@ -83,7 +83,7 @@ Meanwhile, all team members participating in experiments have taken and passed t
 
 :::figure
 
-![Team laboratory safety examination certificates](/img/uploads/round2/r2-616aeb24f5f8-fig5.png)
+![Team laboratory safety examination certificates](https://static.igem.wiki/teams/6303/wiki/v8-0/v85-616aeb24f5f8-r2-616aeb24f5f8-fig5.avif)
 
 
 
@@ -97,7 +97,7 @@ Senior students are appointed as laboratory safety officers. They continuously r
 
 :::figure
 
-![Laboratory safety signs and management records](/img/uploads/round2/r2-07dd27072c49-fig6.png)
+![Laboratory safety signs and management records](https://static.igem.wiki/teams/6303/wiki/v8-0/v85-3dcf1a9d6eb4-r2-07dd27072c49-fig6.avif)
 
 
 

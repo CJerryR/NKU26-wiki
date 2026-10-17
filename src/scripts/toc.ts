@@ -6,6 +6,7 @@
  * under it, so it turns dark over the footer.
  */
 import { glassFor } from './liquid-glass';
+import { attach, refresh } from './glass';
 import { setTone, toneAt, watchTone } from './tone';
 
 const clamp = (v: number) => Math.max(0, Math.min(1, v));
@@ -129,7 +130,8 @@ export function initToc(): void {
     toc.classList.toggle('is-open', open);
     toggle?.setAttribute('aria-expanded', open ? 'true' : 'false');
     if (open && panel) {
-      glassFor(panel).refresh();
+      attach(panel);
+      refresh(panel);
       const cur = pairs[active]?.a;
       requestAnimationFrame(() => { cur?.scrollIntoView({ block: 'center' }); placeFilm(true); });
     }

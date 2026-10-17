@@ -5,6 +5,7 @@
  * The section being read is marked by a film that springs along the list.
  */
 import LiquidGlass from '../glass/LiquidGlass.astro';
+import Glass from '../glass/Glass.astro';
 import { UI_ICONS } from '../../lib/icons.mjs';
 
 interface Item { depth: number; id: string; text: string; num?: string }
@@ -13,7 +14,7 @@ const { items, title } = Astro.props;
 ---
 {items.length > 0 && (
   <nav class="toc" aria-label="On this page" data-toc>
-    <LiquidGlass class="toc__panel" id="toc-panel" preset="panel" tone="light">
+    <Glass class="toc__panel lg-light" id="toc-panel" preset="lens">
       <div class="toc__head">
         <p class="toc__kicker">On this page</p>
         <p class="toc__title">{title}</p>
@@ -29,7 +30,7 @@ const { items, title } = Astro.props;
         ))}
       </ol>
       <a class="toc__top" href="#main"><Fragment set:html={UI_ICONS.arrowUp} />Back to top</a>
-    </LiquidGlass>
+    </Glass>
     <LiquidGlass as="button" class="toc__pill" preset="pill" tone="light" type="button" aria-expanded="false" aria-controls="toc-panel" data-toc-toggle>
       <span class="toc__ring" aria-hidden="true"><svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="15" class="toc__ring-track" /><circle cx="18" cy="18" r="15" class="toc__ring-fill" data-toc-ring /></svg></span>
       <span class="toc__pill-text"><span class="toc__pill-label">On this page</span><span class="toc__pill-now" data-toc-now>{items[0].text}</span></span>

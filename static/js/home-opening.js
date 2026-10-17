@@ -1,9 +1,12 @@
 /* NKU homepage v6 — 01 opening + 02 flashlight in the soil.
- * Surface (V3): one cream headline, the mouse halo, and the words scatter on
- * the first scroll. Underground (3D v3): the painted three.js soil section,
- * lit by the V3 flashlight. The beam comes from the flashlight in the
- * detective's hand; outside the circle of light the soil is black. The line
- * at the bottom says what the light is on. Scrolling on only works once the
+ * Surface (v8.5): the team's painted trees and roots over the purple night
+ * sky (Chen's Figma opening frame), drawn in the same three.js scene as the
+ * soil so the descent is one camera move; the cream headline stands in the
+ * sky and scatters on the first scroll. Underground (3D v3): the drawn soil
+ * continues the painting below its lower edge (same plum horizons, the drawn
+ * roots growing on from the painted ones), lit by the V3 flashlight; outside
+ * the circle of light the soil and the painting are black. The line at the
+ * bottom says what the light is on. Scrolling on only works once the
  * nematode has been found ("Guide my light" finds it). Everything here is an
  * illustration: no signal on this screen is measured data. */
 (function () {
@@ -15,6 +18,7 @@
   var canvas = root.querySelector('[data-op-gl]');
   var fxCv = root.querySelector('[data-op-fx]');
   var hero = root.querySelector('[data-op-hero]');
+  var artwork = root.querySelector('[data-op-art]');
   var hudLine = root.querySelector('[data-op-line]');
   var labelsEl = root.querySelector('[data-op-labels]');
   var guideBtn = root.querySelector('[data-op-guide]');
@@ -36,6 +40,69 @@
     blocked: 'Not yet. Follow the signals to what is hiding here.',
     stuck: 'Stuck? Press \u201cGuide my light\u201d.'
   };
+  /* v8.5 opening artwork (Chen's Figma opening frame): the team's painted
+   * trees-and-roots foreground over its purple night sky, both 1586 x 992.
+   * One literal per file so the CDN switch is a one-line swap each
+   * (HOME-OPENING-ASSETS.csv). The foreground's ground line sits at GROUND of
+   * its height; the root systems leave its bottom edge at ROOTS (fractions of
+   * its width); on phones the two tree groups LEFT and RIGHT are joined at a
+   * root-free strip instead of cropping both trees in half. */
+  var ART = {
+    sky: 'https://static.igem.wiki/teams/6303/wiki/v8-0/v85-286c59c2d24c-opening-sky.webp',
+    ground: 'https://static.igem.wiki/teams/6303/wiki/v8-0/v85-c73c0ba0d55a-opening-foreground.webp'
+  };
+  var ART_W = 1586, ART_H = 992, GROUND = 0.655;
+  var ROOTS = [0.1, 0.27, 0.74, 0.95];
+  var LEFT = [0, 0.215], RIGHT = [0.565, 1], SEAM = 0.018;
+  var TALL_LW = Math.round((LEFT[1] - LEFT[0]) * ART_W), TALL_RW = Math.round((RIGHT[1] - RIGHT[0]) * ART_W), TALL_OV = Math.round(SEAM * ART_W);
+  var TALL_W = TALL_LW + TALL_RW - TALL_OV;
+  /* where a point of the whole painting (fraction of its width) lands in the joined one */
+  function tallU(f) {
+    if (f <= LEFT[1]) return (f - LEFT[0]) * ART_W / TALL_W;
+    if (f >= RIGHT[0]) return (TALL_LW - TALL_OV + (f - RIGHT[0]) * ART_W) / TALL_W;
+    return (TALL_LW - TALL_OV / 2) / TALL_W;
+  }
+  function wideU(f) { return f; }
+  var soilExtension = null;
+  var art = { sky: null, ground: null, wide: null, tall: null, fade: 0, fadeT: -1 };
+  function loadArt(onReady) {
+    var left = 2;
+    function one(key) {
+      var img = new Image();
+      img.decoding = 'async';
+      if (/^https?:/.test(ART[key])) img.crossOrigin = 'anonymous';
+      img.onload = function () { art[key] = img; if (--left === 0) onReady(); };
+      img.onerror = function () { root.classList.add('is-art-missing'); };
+      img.src = ART[key];
+    }
+    one('sky'); one('ground');
+  }
+  /* the foreground as drawn for a layout: whole on wide screens; on portrait
+   * screens the left and right tree groups, cross-faded over SEAM */
+  function artCanvas(tall) {
+    var img = art.ground;
+    if (!tall) return art.wide || (art.wide = { src: img, w: ART_W, h: ART_H });
+    if (art.tall) return art.tall;
+    var lw = TALL_LW, rw = TALL_RW, ov = TALL_OV, w = TALL_W;
+    var c = document.createElement('canvas'); c.width = w; c.height = ART_H;
+    var g = c.getContext('2d');
+    g.drawImage(img, LEFT[0] * ART_W, 0, lw, ART_H, 0, 0, lw, ART_H);
+    /* right group on its own canvas, its left edge faded so the soil bands
+     * of the two groups cross-fade instead of meeting at a hard line */
+    var r = document.createElement('canvas'); r.width = rw; r.height = ART_H;
+    var rg = r.getContext('2d');
+    rg.drawImage(img, RIGHT[0] * ART_W, 0, rw, ART_H, 0, 0, rw, ART_H);
+    rg.globalCompositeOperation = 'destination-in';
+    /* destination-in clears everything outside the filled shape, so the
+     * mask covers the whole group: a ramp over the seam, opaque after it */
+    var fadeG = rg.createLinearGradient(0, 0, rw, 0);
+    fadeG.addColorStop(0, 'rgba(0,0,0,0)'); fadeG.addColorStop(ov / rw, 'rgba(0,0,0,1)'); fadeG.addColorStop(1, 'rgba(0,0,0,1)');
+    rg.fillStyle = fadeG; rg.fillRect(0, 0, rw, ART_H);
+    g.drawImage(r, lw - ov, 0);
+    art.tall = { src: c, w: w, h: ART_H };
+    return art.tall;
+  }
+
   var lineKey = '', lineAt = -10;
   function setLine(key, cls, force) {
     if (!hudLine) return;
@@ -65,6 +132,10 @@
       hero.style.transform = 'translate3d(0,' + (-hp * 90).toFixed(1) + 'px,0) scale(' + (1 + hp * 0.1).toFixed(3) + ')';
       hero.style.filter = hp > 0.01 && hp < 0.99 ? 'blur(' + (hp * 6).toFixed(1) + 'px)' : 'none';
     }
+    if (artwork) {
+      artwork.style.opacity = String(1 - hp);
+      artwork.style.visibility = hp >= 1 ? 'hidden' : 'visible';
+    }
     var under = d > 0.9;
     if (under !== heroUnder) { heroUnder = under; root.classList.toggle('is-under', under); }
   }
@@ -90,12 +161,13 @@
   function registerScene(api) {
     H0.scene('opening', {
       steps: 1, tall: 2.6, noCue: false,
-      set: function (i) { var v = i ? 1 : 0; D = { from: v, to: v, t0: 0, dur: 1, v: v }; },
+      set: function (i) { if (i && api.prepare) api.prepare(); var v = i ? 1 : 0; D = { from: v, to: v, t0: 0, dur: 1, v: v }; if (api.refresh) api.refresh(); },
       step: function (i) {
+        if (api.prepare) api.prepare();
         if (i === 1) { descendTo(1, 1650); return 1700; }
         descendTo(0, 1300); return 1300;
       },
-      ff: function () { D.t0 = -1e9; },
+      ff: function () { D.t0 = -1e9; if (api.refresh) api.refresh(); },
       canLeave: function () { return S.found && performance.now() - S.foundAt > 900; },
       blocked: function () {
         if (!S.exploring) return;
@@ -116,6 +188,8 @@
       raf = 0;
       var d = D.v = descentAt(performance.now());
       heroStyle(d);
+      S.exploring = d > 0.96;
+      root.classList.toggle('is-exploring', S.exploring);
       if (d > 0.96 && !S.found) { S.found = true; S.foundAt = performance.now(); root.classList.add('is-exploring', 'is-found'); setLine('found', 'is-found'); }
       if (D.v !== D.to || D.t0 > performance.now() - D.dur) raf = requestAnimationFrame(tick);
     }
@@ -123,7 +197,7 @@
       var r = stage.getBoundingClientRect();
       stage.style.setProperty('--fx', (e.clientX - r.left) + 'px'); stage.style.setProperty('--fy', (e.clientY - r.top) + 'px');
     });
-    registerScene({ now: function () { return performance.now() / 1000; } });
+    registerScene({ now: function () { return performance.now() / 1000; }, refresh: tick });
     var orig = descendTo;
     descendTo = function (v, ms) { orig(v, ms); if (!raf) raf = requestAnimationFrame(tick); };
     tick();
@@ -154,7 +228,9 @@
     uTime: { value: 0 },
     uGall: { value: 0 },
     uPx: { value: 800 },
-    uHint: { value: 0 }
+    uHint: { value: 0 },
+    uArt: { value: 0 },
+    uFade: { value: 0 }
   };
 
   function computeLayout() {
@@ -162,7 +238,17 @@
     var portrait = a < 0.95;
     var Hx = portrait ? Math.max(17.2, 10.6 / a) : 17.2;
     var Wx = Hx * a;
-    var yH = Hx * 0.21;
+    /* v8.5: the hero is framed on the painted foreground. Its width follows
+     * the screen (plus room for the pointer parallax); the ground line (world
+     * y = 0) sits where the painting puts it on a 16:10 frame, a little lower
+     * on wider screens (the empty sky is cropped, not the trees), and the
+     * painting rests on the bottom of narrower screens with the purple sky
+     * continuing above it. Phones use the joined two-group foreground. */
+    var ac = { w: portrait ? TALL_W : ART_W, h: ART_H };
+    var iw = portrait ? Wx * 1.05 + 0.5 : Wx + 0.9;
+    var ih = iw * ac.h / ac.w;
+    var gs = ih >= Hx ? NK.clamp(GROUND + (a - 1.6) * 0.16, GROUND, 0.73) : Math.min(1 - (1 - GROUND) * ih / Hx, portrait ? 0.8 : 1);
+    var yH = Hx * (gs - 0.5);
     var yX = -(Hx * 0.5 + 3.4);
     var PW = Wx + 5;
     var top = yH + Hx * 0.5 + 1.4;
@@ -179,14 +265,18 @@
     function w(n) { return { x: -Wx / 2 + n[0] * Wx, y: yX + Hx / 2 - n[1] * Hx }; }
     var nodes = trail.map(w);
     var target = w(tgt);
-    var plants = portrait
-      ? [{ x: -0.6, h: 6.6, lean: 0.5, s: 1.05 }, { x: 3.4, h: 4.4, lean: -0.4, s: 0.85 }, { x: -4.4, h: 3.0, lean: 0.3, s: 0.7 }]
-      : [{ x: -2.3, h: 7.3, lean: 0.6, s: 1.15 }, { x: 6.2, h: 5.1, lean: -0.5, s: 0.95 }, { x: -9.6, h: 3.4, lean: 0.35, s: 0.72 }, { x: 11.6, h: 2.9, lean: -0.3, s: 0.62 }];
-    plants.forEach(function (p) { p.mound = 0.34 * p.s; p.mw = 1.6 + p.s; });
+    /* root origins: under the painted root systems, so the drawn roots go on
+     * growing below the painting's lower edge */
+    var ux = portrait ? tallU : wideU;
+    var plants = ROOTS.map(function (f, i) {
+      return { x: (ux(f) - 0.5) * iw, h: 0, lean: 0, s: [1.1, 0.8, 1.0, 0.85][i] };
+    }).filter(function (p, i, all) { return i === 0 || Math.abs(p.x - all[i - 1].x) > 0.8; });
+    plants.forEach(function (p) { p.mound = 0; p.mw = 1.6 + p.s; });
     return {
       a: a, portrait: portrait, Hx: Hx, Wx: Wx, yH: yH, yX: yX, PW: PW, PH: PH, top: top, bottom: bottom,
       camZ: Hx / (2 * HALF_TAN), texW: texW, texH: texH, nodes: nodes, target: target, plants: plants,
-      nem: { x: target.x + 0.95, y: target.y + 0.18 }
+      nem: { x: target.x + 0.95, y: target.y + 0.18 },
+      art: { w: iw, h: ih, x: 0, y: ih * (GROUND - 0.5), sky: gs }
     };
   }
 
@@ -217,9 +307,9 @@
 
     /* sky */
     var g = a.createLinearGradient(0, 0, 0, Y(0));
-    g.addColorStop(0, '#0f0816');
-    g.addColorStop(0.55, '#1a0f24');
-    g.addColorStop(1, '#2d1b39');
+    g.addColorStop(0, '#120a17');
+    g.addColorStop(0.55, '#180c1f');
+    g.addColorStop(1, '#22122a');
     a.fillStyle = g;
     a.fillRect(0, 0, L.texW, L.texH);
     var moon = a.createRadialGradient(X(L.portrait ? 3 : 7.5), Y(L.top - 1.5), 0, X(L.portrait ? 3 : 7.5), Y(L.top - 1.5), 9 * k);
@@ -241,11 +331,14 @@
     }
     g = a.createLinearGradient(0, Y(0.6), 0, L.texH);
     var depthStop = function (y) { return NK.clamp((Y(y) - Y(0.6)) / (L.texH - Y(0.6)), 0, 1); };
-    g.addColorStop(0, '#3f2a22');
-    g.addColorStop(depthStop(-2.4), '#5a3c2e');
-    g.addColorStop(depthStop(-3.6), '#7b5a44');
-    g.addColorStop(depthStop(-7.2), '#96775d');
-    g.addColorStop(1, '#a6876b');
+    /* v8.5 soil horizons: the painting's plum topsoil, mauve below its lower
+     * edge, a warmer taupe in the deep subsoil (where the trail runs) */
+    g.addColorStop(0, '#3a2134');
+    g.addColorStop(depthStop(-3.6), '#4a2b45');
+    g.addColorStop(depthStop(-6.4), '#56344f');
+    g.addColorStop(depthStop(-10), '#6c4a5e');
+    g.addColorStop(depthStop(-15), '#7d5d62');
+    g.addColorStop(1, '#8a6c66');
     soilPath(a);
     a.fillStyle = g;
     a.fill();
@@ -266,7 +359,7 @@
     }
 
     /* topsoil crumbs */
-    var crumbCols = ['#2f1e19', '#4a3127', '#6a4a37', '#7e5b43', '#3a261e'];
+    var crumbCols = ['#2c1828', '#43273d', '#5e3a52', '#71495f', '#361f31'];
     for (var i = 0; i < 2600; i++) {
       var cx = x0 + R() * L.PW;
       var cy = surf(cx) - Math.pow(R(), 0.8) * 3.5;
@@ -293,7 +386,7 @@
         var yy = yb + Math.sin(x * fr + ph) * amp + Math.sin(x * 2.3 + ph * 2) * 0.03;
         if (x === x0) { a.moveTo(X(x), Y(yy)); d.moveTo(X(x), Y(yy)); } else { a.lineTo(X(x), Y(yy)); d.lineTo(X(x), Y(yy)); }
       }
-      a.strokeStyle = R() < 0.5 ? 'rgba(58,38,28,0.42)' : 'rgba(196,164,128,0.26)';
+      a.strokeStyle = R() < 0.5 ? 'rgba(46,24,40,0.42)' : 'rgba(190,150,180,0.22)';
       a.lineWidth = (0.025 + R() * 0.06) * k;
       a.stroke();
       d.strokeStyle = rgb(0.46, 0.05, 0);
@@ -303,14 +396,15 @@
     for (i = 0; i < 1800; i++) {
       var sx = x0 + R() * L.PW;
       var syy = -3.2 - R() * 4.4;
-      a.fillStyle = R() < 0.5 ? 'rgba(52,34,26,0.5)' : 'rgba(210,182,146,0.35)';
+      a.fillStyle = R() < 0.5 ? 'rgba(44,24,38,0.5)' : 'rgba(206,172,196,0.3)';
       a.beginPath();
       a.arc(X(sx), Y(syy), (0.012 + R() * 0.03) * k, 0, 6.283);
       a.fill();
     }
 
     /* pebbles: denser and larger with depth (woodcut strata, A07) */
-    var pebCols = ['#8b6f58', '#76604e', '#b59a7f', '#c8b095', '#6a5241', '#9c7f63', '#d5c0a4'];
+    var pebCols = ['#836a80', '#6f5a6e', '#a68ea2', '#b9a2b3', '#634b60', '#937a8c', '#c8b2c0'];
+    var pebWarm = ['#8b7368', '#76625c', '#ab968a', '#bfab9e', '#6a554f', '#9a8276', '#cdbcae'];
     var span = -6.4 - L.bottom;
     var nPeb = Math.round(L.PW * span * 2.1);
     for (i = 0; i < nPeb; i++) {
@@ -321,14 +415,15 @@
       var rot = R() * 6.283;
       var n = 7 + ((R() * 4) | 0);
       blob(a, px, py, pr + 0.03, n, 0.18, rot);
-      a.fillStyle = 'rgba(46,30,22,0.55)';
+      a.fillStyle = 'rgba(40,22,36,0.55)';
       a.fill();
       blob(a, px, py, pr, n, 0.18, rot);
-      a.fillStyle = pebCols[(R() * pebCols.length) | 0];
+      var pc = (R() * pebCols.length) | 0;
+      a.fillStyle = R() < dn * 0.9 ? pebWarm[pc] : pebCols[pc];
       a.fill();
       a.save();
       a.clip();
-      a.fillStyle = 'rgba(40,26,20,0.35)';
+      a.fillStyle = 'rgba(36,20,32,0.35)';
       for (var s = 0; s < 4 + pr * 26; s++) {
         a.beginPath();
         a.arc(X(px + (R() - 0.5) * pr * 1.8), Y(py + (R() - 0.5) * pr * 1.5), (0.01 + R() * 0.025) * k, 0, 6.283);
@@ -346,6 +441,26 @@
       blob(d, px, py, pr, n, 0.18, rot);
       d.fillStyle = rg;
       d.fill();
+    }
+
+    /* AI-generated decorative continuation of the supplied opening painting.
+     * Only the background albedo changes: targets, signals and damaged roots
+     * are still painted/controlled by the original interaction below. */
+    if (soilExtension) {
+      var extensionTop = L.art.y - L.art.h / 2 + 1.6;
+      var ey = Math.max(0, Math.round(Y(extensionTop))), eh = L.texH - ey;
+      var ext = document.createElement('canvas'); ext.width = L.texW; ext.height = eh;
+      var ec = ext.getContext('2d');
+      var scale = Math.max(L.texW / soilExtension.width, eh / soilExtension.height);
+      var ew = soilExtension.width * scale, eheight = soilExtension.height * scale;
+      ec.drawImage(soilExtension, (L.texW - ew) / 2, 0, ew, eheight);
+      ec.globalCompositeOperation = 'destination-in';
+      var mask = ec.createLinearGradient(0, 0, 0, Math.min(eh, k * 2.2));
+      mask.addColorStop(0, 'rgba(0,0,0,0)'); mask.addColorStop(1, 'rgba(0,0,0,1)');
+      ec.fillStyle = mask; ec.fillRect(0, 0, L.texW, eh);
+      a.drawImage(ext, 0, ey);
+      // Remove the old pebbles' bump pattern beneath the new printed texture.
+      d.fillStyle = rgb(0.6, 0.06, 0); d.fillRect(0, ey, L.texW, eh);
     }
 
     /* roots: smooth tapered ribbons. Colour: dark rim, lit body and a
@@ -387,13 +502,13 @@
     }
     function paintRoot(pts, w0, w1, amb, hairs, sick) {
       ribbon(a, pts, w0, w1, 1, 0);
-      a.fillStyle = sick ? '#7c4a40' : '#6a4e3e';
+      a.fillStyle = sick ? '#7c4a40' : '#5a4057';
       a.fill();
       ribbon(a, pts, w0, w1, 0.76, 0.12);
-      a.fillStyle = sick ? '#e2bb9f' : '#d8c09a';
+      a.fillStyle = sick ? '#e2bb9f' : '#c7aec2';
       a.fill();
       ribbon(a, pts, w0, w1, 0.26, 0.5);
-      a.fillStyle = 'rgba(252,242,222,0.78)';
+      a.fillStyle = sick ? 'rgba(252,242,222,0.78)' : 'rgba(246,232,244,0.7)';
       a.fill();
       ribbon(d, pts, w0, w1, 1, 0);
       d.fillStyle = rgb(0.62, amb, 0);
@@ -405,7 +520,7 @@
       d.fillStyle = rgb(0.9, amb, 0);
       d.fill();
       if (!hairs) return;
-      a.strokeStyle = 'rgba(240,226,198,0.42)';
+      a.strokeStyle = 'rgba(232,214,230,0.4)';
       a.lineWidth = Math.max(0.6, 0.011 * k);
       a.lineCap = 'round';
       for (var i = Math.floor(pts.length * 0.55); i < pts.length - 2; i += 2) {
@@ -469,7 +584,7 @@
     /* the damaged root: thicker and reddened, galls around the target */
     var t0 = L.target;
     var ctrl = [
-      [t0.x + 1.3, surf(t0.x + 1.3) - 0.1], [t0.x + 1.1, -4.2], [t0.x + 0.5, t0.y + 3.2],
+      [t0.x + 1.3, surf(t0.x + 1.3) - 0.1], [t0.x + 1.75, -3.4], [t0.x + 0.85, -6.3], [t0.x + 0.5, t0.y + 3.2],
       [t0.x, t0.y], [t0.x - 0.55, t0.y - 2.4], [t0.x - 0.25, t0.y - 4.6], [t0.x - 0.6, t0.y - 7]
     ];
     function cr(p0, p1, p2, p3, t) {
@@ -526,94 +641,12 @@
       var bx = X(L.nem.x), by = Y(L.nem.y), bw = 1.2 * k, bh = 0.36 * k;
       a.save(); a.translate(bx, by); a.rotate(0.12); a.scale(1, bh / bw);
       var bg2 = a.createRadialGradient(0, 0, bw * 0.15, 0, 0, bw);
-      bg2.addColorStop(0, 'rgba(22,13,9,0.95)'); bg2.addColorStop(0.6, 'rgba(34,21,15,0.72)'); bg2.addColorStop(1, 'rgba(40,26,20,0)');
+      bg2.addColorStop(0, 'rgba(20,10,18,0.95)'); bg2.addColorStop(0.6, 'rgba(32,17,28,0.72)'); bg2.addColorStop(1, 'rgba(38,22,34,0)');
       a.fillStyle = bg2; a.beginPath(); a.arc(0, 0, bw, 0, 6.283); a.fill(); a.restore();
       d.save(); d.translate(bx, by); d.rotate(0.12); d.scale(1, bh / bw); d.fillStyle = rgb(0.16, 0.03, 0); d.beginPath(); d.arc(0, 0, bw * 0.78, 0, 6.283); d.fill(); d.restore();
     }());
-    /* surface clods: catch the moonlight in the hero view */
-    for (x = x0; x < x1; x += 0.32 + R() * 0.3) {
-      var cy2 = surf(x) - 0.05 - R() * 0.25;
-      var cr2 = 0.12 + R() * 0.2;
-      blob(a, x, cy2, cr2, 9, 0.25, R() * 6);
-      a.fillStyle = R() < 0.5 ? '#3b2821' : '#46302a';
-      a.fill();
-      a.strokeStyle = 'rgba(150,120,140,0.45)';
-      a.lineWidth = 0.03 * k;
-      a.beginPath();
-      a.arc(X(x), Y(cy2), cr2 * k * 0.92, Math.PI * 1.15, Math.PI * 1.85);
-      a.stroke();
-      blob(d, x, cy2, cr2, 9, 0.25, 0);
-      d.fillStyle = rgb(0.7, 0.34, 0);
-      d.fill();
-    }
-    /* grass tufts */
-    a.lineCap = 'round';
-    for (x = x0; x < x1; x += 0.18 + R() * 0.4) {
-      var sy = surf(x);
-      for (var b = 0; b < 3; b++) {
-        a.strokeStyle = R() < 0.5 ? '#4f5a3c' : '#66704c';
-        a.lineWidth = 0.035 * k;
-        a.beginPath();
-        a.moveTo(X(x), Y(sy));
-        a.quadraticCurveTo(X(x + (R() - 0.5) * 0.2), Y(sy + 0.18), X(x + (R() - 0.5) * 0.35), Y(sy + 0.22 + R() * 0.25));
-        a.stroke();
-      }
-    }
-
-    /* seedlings above ground (painted final colours; emissive in the shader) */
-    function leaf(bx, by, ang, len, wid) {
-      var tx = bx + Math.cos(ang) * len;
-      var ty = by + Math.sin(ang) * len;
-      var nx = -Math.sin(ang) * wid;
-      var ny = Math.cos(ang) * wid;
-      var mx = (bx + tx) / 2;
-      var my = (by + ty) / 2;
-      var lg = a.createLinearGradient(X(bx), Y(by), X(tx), Y(ty));
-      lg.addColorStop(0, '#3a4630');
-      lg.addColorStop(0.6, '#5e6d49');
-      lg.addColorStop(1, '#7f8d62');
-      a.fillStyle = lg;
-      a.beginPath();
-      a.moveTo(X(bx), Y(by));
-      a.quadraticCurveTo(X(mx + nx), Y(my + ny), X(tx), Y(ty));
-      a.quadraticCurveTo(X(mx - nx * 0.8), Y(my - ny * 0.8), X(bx), Y(by));
-      a.fill();
-      a.strokeStyle = 'rgba(200,210,160,0.32)';
-      a.lineWidth = 0.025 * k;
-      a.beginPath();
-      a.moveTo(X(bx), Y(by));
-      a.quadraticCurveTo(X(mx + nx * 0.1), Y(my + ny * 0.1), X(tx), Y(ty));
-      a.stroke();
-      a.strokeStyle = 'rgba(214,224,176,0.28)';
-      a.lineWidth = 0.02 * k;
-      a.beginPath();
-      a.moveTo(X(bx + nx * 0.2), Y(by + ny * 0.2));
-      a.quadraticCurveTo(X(mx + nx), Y(my + ny), X(tx), Y(ty));
-      a.stroke();
-    }
-    L.plants.forEach(function (p) {
-      var bx = p.x;
-      var by = surf(p.x) - 0.05;
-      var tx = p.x + p.lean;
-      var ty = by + p.h;
-      a.strokeStyle = '#4e5a3a';
-      a.lineWidth = 0.08 * p.s * k;
-      a.beginPath();
-      a.moveTo(X(bx), Y(by));
-      a.quadraticCurveTo(X(bx + p.lean * 0.15), Y(by + p.h * 0.55), X(tx), Y(ty));
-      a.stroke();
-      var nLeaves = Math.round(4 + p.s * 4);
-      for (var j = 0; j < nLeaves; j++) {
-        var t = 0.22 + 0.74 * j / nLeaves;
-        var sxp = (1 - t) * (1 - t) * bx + 2 * (1 - t) * t * (bx + p.lean * 0.15) + t * t * tx;
-        var syp = (1 - t) * (1 - t) * by + 2 * (1 - t) * t * (by + p.h * 0.55) + t * t * ty;
-        var side = j % 2 ? 1 : -1;
-        var ang = Math.PI / 2 - side * (0.62 + 0.5 * (1 - t) + (R() - 0.5) * 0.25);
-        var len = (0.7 + 1.35 * (1 - t) + R() * 0.3) * p.s * 1.25;
-        leaf(sxp, syp, ang, len, len * 0.3);
-      }
-      leaf(tx, ty, Math.PI / 2 + (R() - 0.5) * 0.3, 0.75 * p.s, 0.2 * p.s);
-    });
+    /* v8.5: the surface (clods, grass, seedlings) is the painted foreground
+     * now; only the soil under it is drawn here */
 
     /* fine grain */
     try {
@@ -635,12 +668,12 @@
   var FRAG_SOIL = [
     'precision highp float;',
     'uniform sampler2D uA; uniform sampler2D uD; uniform vec2 uTex;',
-    'uniform vec2 uL; uniform float uR; uniform float uOn; uniform vec3 uLC; uniform float uTime; uniform float uGall; uniform float uAmb;',
+    'uniform vec2 uL; uniform float uR; uniform float uOn; uniform vec3 uLC; uniform float uTime; uniform float uGall; uniform float uAmb; uniform float uArt;',
     'varying vec2 vUv; varying vec2 vW;',
     'float hash(vec2 p){ return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453); }',
     'void main(){',
     '  vec3 alb = texture2D(uA, vUv).rgb; vec3 dat = texture2D(uD, vUv).rgb;',
-    '  if (dat.b > 0.9) { gl_FragColor = vec4(alb * (0.92 + 0.08 * sin(uTime * 0.4)) * mix(0.08, 1.0, uAmb), 1.0); return; }',
+    '  if (dat.b > 0.9) { if (uArt > 0.5) discard; gl_FragColor = vec4(alb * mix(0.08, 1.0, uAmb), 1.0); return; }',
     '  float hl = texture2D(uD, vUv - vec2(uTex.x, 0.0)).r; float hr = texture2D(uD, vUv + vec2(uTex.x, 0.0)).r;',
     '  float hb = texture2D(uD, vUv - vec2(0.0, uTex.y)).r; float ht = texture2D(uD, vUv + vec2(0.0, uTex.y)).r;',
     '  vec3 n = normalize(vec3((hl - hr) * 3.4, (hb - ht) * 3.4, 1.0));',
@@ -652,9 +685,12 @@
     '  float lamp = (spot * 0.95 + spill * 0.2 * uAmb) * uOn;',
     '  float ao = 0.58 + 0.42 * smoothstep(0.25, 0.7, dat.r);',
     '  vec3 lit = alb * uLC * (0.32 + 1.02 * diff) * lamp * ao;',
-    '  float surf = smoothstep(-5.0, 0.6, vW.y);',
-    '  vec3 tint = mix(vec3(0.36, 0.25, 0.45), vec3(0.5, 0.45, 0.43), dat.g);',
-    '  vec3 amb = alb * tint * (0.3 + 1.3 * dat.g) * (1.0 + surf * 1.35) * uAmb;',
+    /* v8.5: unlit, the soil matches the painting it continues: its plum value
+     * at the seam, roots a little brighter, darkening with depth */
+    '  float lift = 0.6 + 0.4 * (0.3 + 1.3 * dat.g) / 0.352;',
+    '  float deep = mix(0.55, 1.0, smoothstep(-16.0, -6.0, vW.y));',
+    '  vec3 albA = mix(vec3(0.33, 0.2, 0.31), alb, 0.62);',
+    '  vec3 amb = albA * vec3(0.44, 0.37, 0.44) * lift * deep * uAmb;',
     '  vec3 col = amb + lit;',
     '  float gall = step(0.35, dat.b) * step(dat.b, 0.65);',
     '  col += vec3(1.0, 0.3, 0.36) * gall * uGall * (0.32 + 0.22 * sin(uTime * 3.4)) * (0.35 + lamp);',
@@ -662,6 +698,44 @@
     '  col += uLC * rim * 0.07 * uOn;',
     '  col += (hash(vUv * vec2(1733.0, 927.0) + fract(uTime * 0.37)) - 0.5) * 0.02 * max(uAmb, lamp);',
     '  gl_FragColor = vec4(col, 1.0);',
+    '}'
+  ].join('\n');
+
+  /* v8.5 painted foreground: as painted while the hero is lit; underground
+   * it goes dark like the soil around it and only the flashlight shows it,
+   * brightened the way the drawn soil is. Its lower edge fades into the
+   * drawn soil over uFeather (a fraction of its height). */
+  var FRAG_ART = [
+    'precision highp float;',
+    'uniform sampler2D uMap; uniform vec2 uL; uniform float uR; uniform float uOn; uniform vec3 uLC; uniform float uAmb; uniform float uFade; uniform float uFeather;',
+    'varying vec2 vUv; varying vec2 vW;',
+    'void main(){',
+    '  vec4 tx = texture2D(uMap, vUv);',
+    '  float a = tx.a * uFade * smoothstep(0.0, uFeather, vUv.y);',
+    '  if (a < 0.004) discard;',
+    '  float under = 1.0 - smoothstep(-0.3, 0.3, vW.y);',
+    '  float d = length(uL - vW);',
+    '  float spot = 1.0 - smoothstep(uR * 0.74, uR, d);',
+    '  float spill = exp(-pow(d / (uR * 2.1), 2.0));',
+    '  float lamp = clamp((spot * 0.95 + spill * 0.2 * uAmb) * uOn, 0.0, 1.0);',
+    '  vec3 base = tx.rgb * mix(0.035 * (1.0 - under), 1.0, uAmb);',
+    '  vec3 litc = pow(tx.rgb, vec3(0.72)) * 1.18 * uLC;',
+    '  vec3 col = mix(base, litc, lamp * under * mix(1.0, 0.3, uAmb));',
+    '  gl_FragColor = vec4(col, a);',
+    '}'
+  ].join('\n');
+  /* the purple sky, mirrored outside the painting so it never ends; its
+   * fine grain (softened by compression) is put back in the shader */
+  var FRAG_SKY = [
+    'precision mediump float;',
+    'uniform sampler2D uMap; uniform vec2 uO; uniform vec2 uS; uniform float uAmb; uniform float uFade;',
+    'varying vec2 vUv; varying vec2 vW;',
+    'float hash(vec2 p){ return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453); }',
+    'void main(){',
+    '  vec2 uv = (vW - uO) / uS;',
+    '  vec3 tx = texture2D(uMap, uv).rgb + (hash(floor(uv * vec2(1586.0, 992.0))) - 0.5) * 0.03;',
+    '  vec3 plain = vec3(0.071, 0.039, 0.09);',
+    '  gl_FragColor = vec4(mix(plain, tx, uFade) * mix(0.08, 1.0, uAmb), 1.0);',
     '}'
   ].join('\n');
 
@@ -809,7 +883,7 @@
     var soil = new T.Mesh(new T.PlaneGeometry(L.PW, L.PH), new T.ShaderMaterial({
       uniforms: {
         uA: { value: tA }, uD: { value: tD }, uTex: { value: new T.Vector2(1 / L.texW, 1 / L.texH) },
-        uL: U.uL, uR: U.uR, uOn: U.uOn, uLC: U.uLC, uTime: U.uTime, uGall: U.uGall, uAmb: U.uAmb
+        uL: U.uL, uR: U.uR, uOn: U.uOn, uLC: U.uLC, uTime: U.uTime, uGall: U.uGall, uAmb: U.uAmb, uArt: U.uArt
       },
       vertexShader: VERT_WORLD, fragmentShader: FRAG_SOIL
     }));
@@ -966,6 +1040,65 @@
     if (S.found) { revealTrail(chain.length, -10); for (i = 0; i < L.nodes.length; i++) setNode(i, 2, -10); }
     if (!light.tx && !light.ty) { light.x = light.tx = L.nodes[0].x + 1.6; light.y = light.ty = L.nodes[0].y + 1.9; }
     buildMeter();
+    U.uArt.value = 0;
+    buildArt();
+    /* the stage is one screen (100svh) tall, so the ground line is kept in svh and
+     * stays right when a phone's toolbar resizes the screen without a rebuild */
+    if (stage) stage.style.setProperty('--op-sky', (L.art.sky * 100).toFixed(2) + 'svh');
+  }
+
+  /* v8.5: the sky behind everything and the painted foreground in front of
+   * the drawn soil. Added to the current build; rebuilt with it. */
+  function buildArt() {
+    if (!built || !art.sky || !art.ground || built.art) return;
+    var A = L.art, ac = artCanvas(L.portrait);
+    var tSky = new T.Texture(art.sky);
+    tSky.wrapS = tSky.wrapT = T.MirroredRepeatWrapping;
+    tSky.needsUpdate = true;
+    var tArt = ac.src instanceof HTMLCanvasElement ? new T.CanvasTexture(ac.src) : new T.Texture(ac.src);
+    tArt.anisotropy = Math.min(4, renderer.capabilities.getMaxAnisotropy());
+    tArt.needsUpdate = true;
+    /* the sky's texels are the same size as the painting's, as in the frame */
+    var su = A.w * (ART_W / ac.w), sv = su * ART_H / ART_W;
+    var skyH = L.top - (-3) + 4, skyW = L.PW + 8;
+    var sky = new T.Mesh(new T.PlaneGeometry(skyW, skyH), new T.ShaderMaterial({
+      uniforms: { uMap: { value: tSky }, uO: { value: new T.Vector2(A.x - su / 2, A.y - A.h / 2) }, uS: { value: new T.Vector2(su, sv) }, uAmb: U.uAmb, uFade: U.uFade },
+      vertexShader: VERT_WORLD, fragmentShader: FRAG_SKY, depthWrite: false
+    }));
+    sky.position.set(0, L.top + 2 - skyH / 2, -0.6);
+    sky.renderOrder = -1;
+    var ground = new T.Mesh(new T.PlaneGeometry(A.w, A.h), new T.ShaderMaterial({
+      uniforms: { uMap: { value: tArt }, uL: U.uL, uR: U.uR, uOn: U.uOn, uLC: U.uLC, uAmb: U.uAmb, uFade: U.uFade, uFeather: { value: 0.09 } },
+      vertexShader: VERT_WORLD, fragmentShader: FRAG_ART, transparent: true, depthWrite: false
+    }));
+    ground.position.set(A.x, A.y, 0.02);
+    ground.renderOrder = 0.5;
+    scene.add(sky); scene.add(ground);
+    built.list.push(sky, ground);
+    built.textures.push(tSky, tArt);
+    built.art = true;
+    U.uArt.value = 1;
+    artLook = makeArtLookup(ac);
+    if (!art.shown) { art.shown = true; art.fadeT = NK.reduced || D.v > 0.5 ? -1e9 : performance.now(); }
+    root.classList.add('has-art');
+  }
+  /* what the light is on inside the painting: its brightest strokes (the
+   * lavender roots), from a small copy of the foreground */
+  var artLook = null;
+  function makeArtLookup(ac) {
+    var c = document.createElement('canvas'), s = 8;
+    c.width = Math.round(ac.w / s); c.height = Math.round(ac.h / s);
+    var g = c.getContext('2d'); g.drawImage(ac.src, 0, 0, c.width, c.height);
+    try { return { w: c.width, h: c.height, d: g.getImageData(0, 0, c.width, c.height).data }; } catch (e) { return null; }
+  }
+  function sampleArt(x, y) {
+    var A = L.art;
+    var u = (x - A.x) / A.w + 0.5, v = (A.y + A.h / 2 - y) / A.h;
+    if (!artLook || u < 0 || u > 1 || v < GROUND || v > 0.9) return null;
+    var px = Math.min(artLook.w - 1, Math.floor(u * artLook.w)), py = Math.min(artLook.h - 1, Math.floor(v * artLook.h));
+    var i = (py * artLook.w + px) * 4, d = artLook.d;
+    var lum = (d[i] * 0.3 + d[i + 1] * 0.59 + d[i + 2] * 0.11) / 255;
+    return lum > 0.37 ? 'root' : 'soil';
   }
 
   function setNode(i, state, t0) {
@@ -1006,6 +1139,8 @@
     try { look = { w: c.width, h: c.height, d: g.getImageData(0, 0, c.width, c.height).data, k: c.width / L.PW }; } catch (e) { look = null; }
   }
   function sample(x, y) {
+    var inArt = sampleArt(x, y);
+    if (inArt) return inArt;
     if (!look) return 'soil';
     var px = Math.round((x + L.PW / 2) * look.k), py = Math.round((L.top - y) * look.k);
     if (px < 0 || py < 0 || px >= look.w || py >= look.h) return 'soil';
@@ -1107,6 +1242,7 @@
   /* ---------------- sizing ---------------- */
   var lastA = 0;
   function resize(force) {
+    heroFrameKey = null;
     stageBox = null; bigW = 0;
     var r = stageRect();
     W = Math.max(1, Math.round(r.width));
@@ -1203,8 +1339,15 @@
       renderer.setPixelRatio(DPR); resize(false);
     }
   }
+  var heroFrameKey = null;
   function frame(t, dt) {
     if (!built) return;
+    // Keep the local resting-hero optimization with the new in-scene artwork.
+    // Redraw after input, resize, descent or artwork fade; otherwise reuse the canvas.
+    var resting = D.to === 0 && descentAt(performance.now()) === 0 && built.art && U.uFade.value >= 1;
+    var frameKey = resting ? [W, H, pointerN.x, pointerN.y].join(':') : null;
+    if (resting && frameKey === heroFrameKey) return;
+    heroFrameKey = frameKey;
     adaptResolution(dt);
     clock = t;
     U.uTime.value = t;
@@ -1228,6 +1371,7 @@
       }
     }
     U.uAmb.value = 1 - NK.smooth(0.2, 0.85, d);
+    if (art.fadeT > -2e9 && built.art) U.uFade.value = NK.smooth(0, 700, performance.now() - art.fadeT);
     U.uOn.value = NK.lerp(0.8, 1, NK.smooth(0.3, 0.9, d));
 
     /* light motion */
@@ -1304,11 +1448,23 @@
     }
     describe(t);
     renderer.render(scene, camera);
+    if (built.art && U.uFade.value >= 1 && artwork) artwork.hidden = true;
     drawFx(t, ls, rad, d, warmK);
   }
 
-  resize(true);
-  registerScene({ now: function () { return clock; } });
+  function prepareOpening() { if (!built) resize(true); }
+  loadArt(function () { if (built) buildArt(); });
+  var soilImage = new Image();
+  soilImage.decoding = 'async';
+  soilImage.crossOrigin = 'anonymous';
+  soilImage.onload = function () { soilExtension = soilImage; if (built) resize(true); };
+  // A failed decorative asset leaves the original procedural soil available.
+  soilImage.src = 'https://static.igem.wiki/teams/6303/wiki/v8-0/v85-897637c29b85-soil-extension-ai-v1.avif';
+  registerScene({ now: function () { return clock; }, prepare: prepareOpening });
+  if (artwork) requestAnimationFrame(function () {
+    if (window.requestIdleCallback) requestIdleCallback(prepareOpening, { timeout: 1200 });
+    else setTimeout(prepareOpening, 60);
+  }); else prepareOpening();
   NK.loopWhileVisible(stage, frame, '80px 0px');
 
   /* narrow screens scroll natively and cannot be held back: the light

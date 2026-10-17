@@ -6,7 +6,7 @@
 /* SECRETS face: Flavors (Sideshow, SIL OFL 1.1), subset to the letters of
    "secrets" and renamed as OFL requires for a modified copy. Licence:
    fonts/nk26-secrets-display.OFL.txt. Local file until the team uploads it. */
-@font-face{font-family:'NK26 Secrets Display';src:url('../fonts/nk26-secrets-display.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'NK26 Secrets Display';src:url('https://static.igem.wiki/teams/6303/wiki/v8-0/v85-9fbaefa0757a-nk26-secrets-display.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
 
 /* ---------- H01 opening title: What / SECRETS / lie / beneath the soil? ----------
    Figma (1440 wide): Spline Sans Medium 95 px, tracking -3 px, #F4E3B1;
@@ -26,6 +26,26 @@
 }
 @media (max-width:700px){
   .op6 .op__title--r1{font-size:clamp(34px,11.2vw,56px)}
+}
+
+/* ---------- v8.5 opening artwork (Chen's Figma opening frame) ----------
+   The painted trees and roots stand on the bottom of the hero, the purple
+   sky behind them (home-opening.js draws both in the soil scene). The title
+   is centred in the sky above the ground line; --op-sky is that line's
+   distance from the top of the screen, set by the script for each layout. */
+.op6 .op__hero{
+  bottom:auto;height:calc(var(--op-sky,66svh) - clamp(8px,2.2svh,26px));
+  padding-top:clamp(64px,9svh,104px)
+}
+/* no WebGL: the same two pictures as CSS layers until the descent */
+.op6.is-fallback{--op-sky:calc(100svh - max(21.6vw,34.5svh))}
+.op6.is-fallback:not(.is-under) .op__stage{
+  background:url('https://static.igem.wiki/teams/6303/wiki/v8-0/v85-c73c0ba0d55a-opening-foreground.webp') 50% 100%/max(100%,160svh) auto no-repeat,
+    url('https://static.igem.wiki/teams/6303/wiki/v8-0/v85-286c59c2d24c-opening-sky.webp') 50% 50%/cover #180c1f
+}
+@media (max-aspect-ratio:19/20){
+  .op6.is-fallback{--op-sky:calc(100svh - 21.6vw)}
+  .op6.is-fallback:not(.is-under) .op__stage{background-size:100% auto,cover}
 }
 
 /* ---------- H03 one "Nematodes are behind it!" ----------
@@ -155,6 +175,8 @@
 .th2 .th__cap.is-in{transform:translateY(-50%)}
 .th2 .th__cap{text-align:left}
 .th2 .th__cap h3{display:flex;justify-content:flex-start;gap:.35em;align-items:baseline}
+.th2 .th__copy{width:100%;max-width:36ch;font-size:15.5px}
+.th2 .th__copy .th__key{max-width:100%;text-align:center}
 .th2 .th__p{margin-top:12px;max-width:36ch;font-size:15.5px;line-height:1.55;color:var(--ink-2)}
 /* the stage strip replaces the plain dashes */
 .th2 .th__dots{bottom:clamp(18px,3svh,28px);gap:clamp(10px,2vw,28px)}
@@ -179,6 +201,7 @@
   .th2__scene .th2__lens{grid-area:1/1;justify-self:end;align-self:end;width:min(46vw,24svh)}
   .th2__call{display:none}
   .th2 .th__cap{bottom:76px;max-width:none;right:20px}
+  .th2 .th__copy{font-size:14.5px}
   .th2 .th__p{font-size:14.5px}
   .th2 .th__dots li span{display:none}
 }
@@ -188,3 +211,11 @@
 .th2 .th__track{display:block;transform:none;transition:none}
 .th2 .th__track span{max-width:none;font-size:inherit;line-height:normal;color:inherit}
 .th2 .th__track b{font-size:inherit;letter-spacing:inherit;line-height:inherit}
+
+/* Retain the fast first paint while the integrated WebGL scene warms up. */
+.op6 .op__art{position:absolute;inset:0;z-index:1;pointer-events:none;background:url('https://static.igem.wiki/teams/6303/wiki/v8-0/v85-c73c0ba0d55a-opening-foreground.webp') 50% 100%/max(100%,160svh) auto no-repeat,url('https://static.igem.wiki/teams/6303/wiki/v8-0/v85-286c59c2d24c-opening-sky.webp') 50% 50%/cover #180c1f}
+.op6 .op__art[hidden]{display:none}
+@media(max-aspect-ratio:19/20){.op6 .op__art{background-size:100% auto,cover}}
+
+/* Same underground illustration in the no-WebGL flashlight fallback. */
+.op6.is-fallback.is-under .op__stage{background:radial-gradient(circle 170px at var(--fx,50%) var(--fy,50%),transparent 25%,#050208 100%),url('https://static.igem.wiki/teams/6303/wiki/v8-0/v85-897637c29b85-soil-extension-ai-v1.avif') center/cover #291528}

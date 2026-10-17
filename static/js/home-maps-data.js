@@ -99,7 +99,7 @@
      * marker locations (see static/img/home-cases/CREDITS.md). Keyed by case id. */
     photos: {
       "na-scn-us": {
-        "src": "img/home-cases/soybean_cyst_on_roots_USDA_K5244-6.webp",
+        "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-2185d1ca0236-soybean-cyst-on-roots-usda-k5244-6.webp",
         "w": 413,
         "h": 636,
         "species": "Heterodera glycines",
@@ -110,7 +110,7 @@
         "license": "https://www.ars.usda.gov/oc/images/copyright/"
       },
       "sa-rln-brazil": {
-        "src": "img/home-cases/brazil_p_brachyurus_soybean_roots_crop_fig6.webp",
+        "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-05688ce65a1c-brazil-p-brachyurus-soybean-roots-crop-fig6.webp",
         "w": 322,
         "h": 720,
         "species": "Pratylenchus brachyurus",
@@ -121,7 +121,7 @@
         "license": "https://creativecommons.org/licenses/by/4.0/"
       },
       "eu-pcn": {
-        "src": "img/home-cases/g_rostochiensis_cyst_eggs_USDA_D813-2.webp",
+        "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-17251e97ea55-g-rostochiensis-cyst-eggs-usda-d813-2.webp",
         "w": 550,
         "h": 640,
         "species": "Globodera rostochiensis",
@@ -132,7 +132,7 @@
         "license": "https://www.ars.usda.gov/oc/images/copyright/"
       },
       "af-banana-uganda": {
-        "src": "img/home-cases/uganda_r_similis_sem_fig3.webp",
+        "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-3a873f3710a4-uganda-r-similis-sem-fig3.webp",
         "w": 665,
         "h": 720,
         "species": "Radopholus similis",
@@ -143,7 +143,7 @@
         "license": "https://creativecommons.org/licenses/by/4.0/"
       },
       "as-ppn-india": {
-        "src": "img/home-cases/m_incognita_entering_tomato_root_USDA_D2549-1.webp",
+        "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-1d8b794d7fe5-m-incognita-entering-tomato-root-usda-d2549-1.webp",
         "w": 428,
         "h": 640,
         "species": "Meloidogyne incognita",
@@ -154,7 +154,7 @@
         "license": "https://www.ars.usda.gov/oc/images/copyright/"
       },
       "as-scn-china": {
-        "src": "img/home-cases/soybean_cyst_roots_USDA_Endo.webp",
+        "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-a933560f211c-soybean-cyst-roots-usda-endo.webp",
         "w": 720,
         "h": 483,
         "species": "Heterodera glycines",
@@ -165,7 +165,7 @@
         "license": "https://commons.wikimedia.org/wiki/File:Root_cyst_nematode_infection.jpg"
       },
       "oc-rln-australia": {
-        "src": "img/home-cases/p_neglectus_USDA_commons.webp",
+        "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-9cd2f86cc954-p-neglectus-usda-commons.webp",
         "w": 720,
         "h": 540,
         "species": "Pratylenchus neglectus",
