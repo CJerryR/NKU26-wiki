@@ -129,6 +129,10 @@ html.is-paged .th3{--th-gr:max(64px,(100% - 1300px) / 2)}
 .th3-defs{position:absolute;width:0;height:0;overflow:hidden}
 .th2 .th__track{position:absolute;inset:0;display:block;transform:none;transition:none}
 .th2 .th__head{top:clamp(80px,11svh,104px)}
+/* Place the overview heading in the open area above the four-stage cycle. */
+@media (min-width:1101px){
+  .th3[data-st="0"] .th__head{left:calc(var(--th-g) + clamp(48px,6vw,96px));top:calc(clamp(80px,11svh,104px) + clamp(40px,8svh,80px))}
+}
 .th3 .th__track li{flex:none;opacity:1;gap:0}
 .th3 .th__track span{max-width:none;font-size:inherit;line-height:inherit;color:inherit}
 .th3 .th__track b{font-size:inherit;letter-spacing:inherit;line-height:inherit}
@@ -301,3 +305,71 @@ html.is-paged .th3{--th-gr:max(64px,(100% - 1300px) / 2)}
 
 /* Same underground illustration in the no-WebGL flashlight fallback. */
 .op6.is-fallback.is-under .op__stage{background:radial-gradient(circle 170px at var(--fx,50%) var(--fy,50%),transparent 25%,#050208 100%),url('https://static.igem.wiki/teams/6303/wiki/v8-0/v85-897637c29b85-soil-extension-ai-v1.avif') center/cover #291528}
+
+/* ==========================================================================
+   Merged end page: compact timeline, prominent cards, then eight wiki doors.
+   Each card has separate title, description, illustration and status rows.
+   ========================================================================== */
+.ex--one{position:relative}
+.ex--one .ex__path{padding-bottom:18px;margin-bottom:22px}
+.ex--one .ex__path-title{margin-bottom:16px}
+.ex--one .ex__path li{gap:0}
+.ex--one .ex__built{margin-bottom:26px}
+.ex__built-title{margin:0 0 12px;font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(243,234,242,.55)}
+.ex--one .bt__grid{grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
+.ex--one .bt__card{display:grid;grid-template-rows:2.4em 2.8em minmax(56px,1fr) auto;gap:6px;aspect-ratio:auto;height:clamp(216px,29vh,300px);padding:14px;border-radius:12px;box-shadow:0 0 0 1px rgba(255,255,255,.12);background:linear-gradient(155deg,#2a1b35,#1a1022);font-size:15px;line-height:1.2}
+.ex--one .bt__card b{order:0;position:relative;font-size:inherit;line-height:1.2;align-self:start}
+.ex--one .bt__card>span:not(.bt__art){order:1;position:relative;font-size:12px;line-height:1.4;align-self:start;opacity:.74}
+.ex--one .bt__card .bt__art{order:2;position:relative;inset:auto;z-index:auto;display:block;min-height:0;width:100%;height:100%;overflow:hidden;background:none}
+.ex--one .bt__art svg{position:static;display:block;width:100%;height:100%;right:auto;top:auto}
+.ex--one .bt__card em{order:3;position:static;justify-self:start;align-self:end;font-size:10px;line-height:1.2;padding:4px 9px;white-space:nowrap}
+.ex--one .ex__main{display:block;position:relative;padding-left:clamp(120px,11vw,170px)}
+.ex--one .ex__mascot{position:absolute;left:clamp(-34px,-2vw,-14px);bottom:-6px;width:clamp(120px,11vw,170px);justify-self:auto}
+.ex--one .ex__mascot img{filter:drop-shadow(0 16px 22px rgba(0,0,0,.5))}
+.ex--one .ex__links{display:block}
+.ex--one .ex__title{font-size:clamp(26px,2.5vw,36px);line-height:1.05;margin:0 0 6px}
+.ex--one .ex__lede{margin:0 0 16px;max-width:none;font-size:14px;line-height:1.5;color:rgba(243,234,242,.7)}
+.ex--one .ex__signals{display:inline;margin:0 0 0 6px;font-size:inherit;font-family:var(--hand,'Fraunces',Georgia,serif);font-style:italic;font-weight:600;color:#c79bff}
+.ex--one .ex__grid{grid-template-columns:repeat(8,minmax(0,1fr));gap:8px}
+.ex--one .ex__grid a{aspect-ratio:auto;min-height:74px;padding:12px 4px;gap:8px;font-size:10.5px;line-height:1.2;letter-spacing:.07em;text-align:center}
+.ex--one .ex__grid svg{width:24px;height:24px}
+html.is-paged .home .ex--one{justify-content:flex-start;padding:clamp(96px,12vh,132px) 0 24px}
+html.is-paged .home .ex--one .ex__path{padding-bottom:18px;margin-bottom:22px}
+html.is-paged .home .ex--one .ex__path ol{grid-template-columns:repeat(4,minmax(0,1fr))}
+html.is-paged .home .ex--one .ex__path li b{line-height:1.25}
+html.is-paged .home .ex--one .bt__card{aspect-ratio:auto}
+html.is-paged .home .ex--one .ex__mascot{width:clamp(120px,11vw,170px)}
+html:not(.is-paged) .home .ex--one{padding-top:max(96px,8vw)}
+/* Native scrolling already keeps the shared detective at the left edge. */
+html:not(.is-paged) .home .ex--one .ex__mascot{display:none}
+html:not(.is-paged) .home .ex--one .ex__main{padding-left:0;padding-top:0}
+@media (max-height:760px){
+  html.is-paged .home .ex--one{padding-top:90px}
+  html.is-paged .home .ex--one .ex__path{padding-bottom:12px;margin-bottom:16px}
+  .ex--one .ex__path-title{margin-bottom:12px}
+  .ex--one .ex__built{margin-bottom:20px}
+  .ex--one .bt__card{height:210px;padding:12px;font-size:14px;grid-template-rows:2.4em 2.8em minmax(48px,1fr) auto}
+  .ex--one .bt__card>span:not(.bt__art){font-size:11px}
+  .ex--one .ex__lede{margin-bottom:12px}
+  .ex--one .ex__grid a{min-height:62px}
+}
+@media (max-height:640px) and (min-width:960px){
+  html.is-paged .home .ex--one{padding-top:84px}
+  .ex--one .ex__path-title{font-size:27px;margin-bottom:10px}
+  .ex--one .ex__path li{padding-top:22px}
+  .ex--one .ex__path li b{font-size:14px}
+  .ex--one .bt__card{height:184px;padding:10px;gap:4px;font-size:13px;grid-template-rows:2.4em 2.8em minmax(40px,1fr) auto}
+  .ex--one .ex__grid a{min-height:54px;padding-block:9px;gap:5px}
+}
+@media (max-width:1100px){
+  .ex--one .bt__grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .ex--one .ex__grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  html.is-paged .home .ex--one .bt__grid{grid-template-columns:repeat(6,minmax(0,1fr))}
+  html.is-paged .home .ex--one .ex__grid{grid-template-columns:repeat(8,minmax(0,1fr))}
+  html.is-paged .home .ex--one .bt__card{padding:10px;font-size:13px}
+}
+@media (max-width:700px){
+  .ex--one .bt__grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .ex--one .ex__grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ex--one .bt__card{height:230px;padding:12px;font-size:14px}
+}

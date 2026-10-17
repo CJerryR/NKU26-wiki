@@ -4,24 +4,28 @@ import { initPersonCards } from './person-cards';
 import { initGlass } from './glass';
 import { initLiquidGlass } from './liquid-glass';
 import { initHero } from './hero';
+import { initSceneHero } from './scene-hero';
 import { initNav } from './nav';
 import { initToc } from './toc';
 import { initSearch } from './search';
 import { initMascot } from './mascot';
 import { initEnhance } from './enhance';
 import { initSmooth } from './smooth';
+import { initWorkflow } from './workflow';
 
 function start(): void {
   initGlass();
   initLiquidGlass();
   initNav();
   initHero();
+  initSceneHero();
   initToc();
   initSearch();
   initMascot();
   initEnhance();
   initSmooth();
   initPersonCards();
+  initWorkflow();
 }
 
 if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);

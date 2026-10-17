@@ -1,8 +1,9 @@
 /* NKU homepage — cp16: the merged ascaroside page (#traces), see home-ascr-story.js.
    Background = Human Practices' own, so the last step can cut straight to it.
-   --as-c3 / --as-c18: the two signal colours. The site uses blue (ascr#3) and
-   pink (ascr#18); the PPT sketch used red / blue. Change only these two (H07). */
-.as{--as-c3:#7fb0ff;--as-c18:#ff86ad;--as-ink:#f3ebe0;position:relative;height:100vh;height:100svh;overflow:hidden;color:var(--as-ink);background:radial-gradient(90% 80% at 70% 56%,#26143a 0,#170c1f 68%)}
+   --as-c3 / --as-c18: the two signal colours, blue (ascr#3) and red (ascr#18) as
+   in the team's artwork (total_2.svg: #1b1b84 / #800000, lifted so they read on
+   this dark ground). --as-p3 / --as-p18: the matching receptor pockets. */
+.as{--as-c3:#6f8cff;--as-c18:#ff5d68;--as-p3:#5568ea;--as-p18:#e64159;--as-ink:#f3ebe0;position:relative;height:100vh;height:100svh;overflow:hidden;color:var(--as-ink);background:radial-gradient(90% 80% at 70% 56%,#26143a 0,#170c1f 68%)}
 .as.is-tall{height:calc(var(--tall) * 100vh);overflow:visible}
 .as__pin{position:relative;height:100%;overflow:hidden}
 .as.is-tall .as__pin{position:sticky;top:0;height:100vh;height:100svh}
@@ -39,9 +40,14 @@ html.is-paged[data-motion="idle"] .as__rail li.is-next::before{animation:as-next
 .as__rail li.is-on{color:#fff}
 .as__rail li.is-on::before{background:#ffd45a;border-color:#ffd45a}
 
-/* ---------- drawings (temporary art, see docs/home-ascr-story.md) ---------- */
+/* ---------- drawings: the team's artwork sits in the data-art slots; these rules
+   only recolour the signal parts and draw the few shapes that are still ours ---------- */
 .as-stop3{stop-color:var(--as-c3)}
 .as-stop18{stop-color:var(--as-c18)}
+.as-a3{fill:var(--as-c3)}
+.as-a18{fill:var(--as-c18)}
+.as-pk3{fill:var(--as-p3)}
+.as-pk18{fill:var(--as-p18)}
 .as-worm{fill:none;stroke-width:9;stroke-linecap:round}
 .as-worm--free{stroke:#8fd6a0}
 .as-worm--pp{stroke:#c9a0ff}
@@ -57,28 +63,17 @@ html.is-paged[data-motion="idle"] .as__rail li.is-next::before{animation:as-next
 .as-mol{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:28px}
 .as-mol--3{fill:var(--as-c3)}
 .as-mol--18{fill:var(--as-c18)}
-.as-hx--d{fill:#7a4fb0}
-.as-hx--l{fill:#b59ae6;opacity:.7}
-.as-pocket{fill:#d84fc0}
-.as-mut{fill:#e8485f}
-.as-hypha{fill:none;stroke:#b48a68;stroke-width:6;stroke-linecap:round}
-.as-knob{fill:#f5c21b}
-.as-prey{fill:none;stroke:#f39a4c;stroke-width:8;stroke-linecap:round}
 .as-scr__case{fill:#cfc8d6}
 .as-scr__glass{fill:#120a18}
 .as-code{fill:#6be3a8;font-family:var(--sans);font-weight:600;font-size:24px}
 .as-code-line{fill:none;stroke:#6be3a8;stroke-width:5;stroke-linecap:round;opacity:.35}
-.as-dna{fill:none;stroke:#4a2e12;stroke-width:3.5}
-.as-prom{fill:#f48aa0;stroke:#b84a62;stroke-width:2}
-.as-gene{fill:#ffb07a;stroke:#c46a2a;stroke-width:2}
-.as-gb{fill:#4c74d9;stroke:#2c4a9a;stroke-width:2}
-.as-gg{fill:#9bd27f;stroke:#4f8a36;stroke-width:2}
-.as-tf{fill:#ffd65a;stroke:#c79b12;stroke-width:2}
-.as-sig{fill:none;stroke:#e8743a;stroke-width:18;stroke-linecap:round;opacity:.55}
-.as-sig-head{fill:#e8743a;opacity:.8}
-.as-arc,.as-arc-head{fill:none;stroke:#f5c21b;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
-.as-out{fill:none;stroke:#ef7f95;stroke-width:20;stroke-linecap:round;opacity:.85}
-.as-out-head{fill:#ef7f95}
+/* yeast scene: the way the signal goes (the PPT's arrows), pigment out, part names */
+.as-flow{fill:none;stroke:#ffd45a;stroke-width:3.5;stroke-linecap:round}
+.as-flow-head{fill:#ffd45a}
+.as-out{fill:none;stroke:#f5c21b;stroke-width:16;stroke-linecap:round;opacity:.8}
+.as-out-head{fill:#f5c21b}
+.as-tag{fill:rgba(243,235,224,.92);font-family:var(--sans);font-weight:600;font-size:17px;letter-spacing:.01em}
+.as-tag--ink{fill:#2c1233}
 .as-strip{fill:#fbf6ee;stroke:#d9cdbb;stroke-width:2}
 .as-spot{fill:#ffcf3a}
 .as-note{fill:rgba(243,235,224,.78);font-family:var(--hand);font-style:normal;font-size:19px}

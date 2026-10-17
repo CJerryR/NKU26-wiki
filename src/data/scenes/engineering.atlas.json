@@ -1,0 +1,74 @@
+{
+  "desktop": {
+    "file": "engineering-desktop.webp",
+    "size": [
+      528,
+      1429
+    ],
+    "bytes": 73830,
+    "quality": 86,
+    "hash": "f0f5d73b177f",
+    "frames": {
+      "blueprint": [
+        0,
+        834,
+        521,
+        297
+      ],
+      "laptop": [
+        0,
+        0,
+        510,
+        431
+      ],
+      "plasmid": [
+        0,
+        435,
+        387,
+        395
+      ],
+      "plate": [
+        0,
+        1135,
+        528,
+        294
+      ]
+    }
+  },
+  "mobile": {
+    "file": "engineering-mobile.webp",
+    "size": [
+      486,
+      1325
+    ],
+    "bytes": 73690,
+    "quality": 86,
+    "hash": "40b04d8f0ba9",
+    "frames": {
+      "blueprint": [
+        0,
+        774,
+        486,
+        277
+      ],
+      "laptop": [
+        0,
+        0,
+        458,
+        387
+      ],
+      "plasmid": [
+        0,
+        391,
+        372,
+        379
+      ],
+      "plate": [
+        0,
+        1055,
+        486,
+        270
+      ]
+    }
+  }
+}

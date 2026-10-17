@@ -34,6 +34,24 @@ RESOURCE_RE = re.compile(
 )
 
 
+def has_uncredited_seal(source: str) -> bool:
+    if "nankai-seal" not in source.lower():
+        return False
+    # Restored institutional artwork needs visible attribution and an explicit
+    # exception to the team's content license. Hidden metadata is insufficient.
+    credit = re.search(
+        r'<(?:p|span)\b[^>]*data-institutional-credit="nankai-university"[^>]*>(.*?)</(?:p|span)>',
+        source, re.I | re.S,
+    )
+    return not (credit and not re.search(r'\bhidden\b|aria-hidden\s*=\s*["\']true', credit.group(0), re.I)
+                and all(marker in credit.group(1) for marker in (
+                    'href="https://www.nankai.edu.cn/"',
+                    'Nankai University emblem',
+                    'https://github.com/CJerryR/NKU26-wiki/blob/e283a55/img/nankai-seal.gif',
+                    'Institutional marks are excluded from CC BY 4.0.',
+                )))
+
+
 def is_external_runtime_url(value: str) -> bool:
     value = html.unescape(value).strip()
     if not value.lower().startswith(("http://", "https://", "//")):
@@ -65,6 +83,8 @@ STANDARD_ROUTES = {
 # These routes are deliberately retained with empty bodies in v8.0. Their
 # missing content blocks final submission, while stage deployment is permitted.
 EMPTY_PAGE_SLUGS = {
+    # User requested the 3D pilot first; copy will be supplied separately.
+    "awards", "acknowledgements",
     "attributions", "contribution", "description", "education", "engineering", "experiments",
     "human-practices", "licensing", "members", "model", "model-1", "model-2",
     "part-collection", "parts", "protocols", "results", "safety",
@@ -348,20 +368,18 @@ def audit_igem_2026_controls(root: Path, results: list[dict], failures: list[str
             failures.append(f".gitlab-ci.yml missing required marker: {marker}")
 
     footer = (root / "src" / "components" / "site" / "SiteFooter.astro").read_text(encoding="utf-8")
-    nav = (root / "src" / "data" / "nav.ts").read_text(encoding="utf-8")
-    home_footer = (root / "src" / "home" / "sections" / "footer.html").read_text(encoding="utf-8")
+    home_layout = (root / "src" / "layouts" / "HomeLayout.astro").read_text(encoding="utf-8")
+    base_layout = (root / "src" / "layouts" / "BaseLayout.astro").read_text(encoding="utf-8")
     for marker, where, label in (
         ("creativecommons.org/licenses/by/4.0", footer, "SiteFooter.astro"),
         ("site.repository", footer, "SiteFooter.astro"),
-        ("page: 'licensing'", nav, "footerNav in src/data/nav.ts"),
-        ("page: 'repository'", nav, "footerNav in src/data/nav.ts"),
-        ("creativecommons.org/licenses/by/4.0", home_footer, "homepage footer"),
-        ("{{SOURCE_REPOSITORY_URL}}", home_footer, "homepage footer"),
-        ("licensing/", home_footer, "homepage footer"),
+        ("/licensing/", footer, "SiteFooter.astro"),
+        ("<SiteFooter />", home_layout, "homepage layout"),
+        ("<SiteFooter />", base_layout, "inner-page layout"),
     ):
         if marker not in where:
             failures.append(f"{label} missing 2026 compliance marker: {marker}")
-    if "nankai-seal" in (footer + home_footer).lower():
+    if has_uncredited_seal(footer):
         failures.append("footer still embeds an uncredited institutional seal")
 
     licensing = root / "src" / "content" / "pages" / "licensing.md"

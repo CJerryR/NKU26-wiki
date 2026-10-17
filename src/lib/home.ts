@@ -12,8 +12,9 @@ import { escapeHtml, htmlToText } from './text';
 
 const HOME_DIR = path.resolve(process.cwd(), 'src/home');
 /* cp16: 'traces' is the merged ascaroside story (the old traces + combo pages, PPT sketch);
-   its last step hands the map to 'hp', so 'signal' (dry lab / wet lab) now follows HP. */
-export const HOME_SECTIONS = ['opening', 'world', 'china', 'threat', 'traces', 'hp', 'signal', 'loop', 'built', 'explore'];
+   its last step hands the map to 'hp'. v8.6: the dry lab / wet lab page ('Our work') moved to the
+   Description page, and 'built' + 'explore' are one page, so the home ends traces, hp, loop, explore. */
+export const HOME_SECTIONS = ['opening', 'world', 'china', 'threat', 'traces', 'hp', 'loop', 'explore'];
 export const HOME_DESCRIPTION = 'NemaKlear by NKU26-China explores how engineered yeast could translate nematode chemical clues into an early risk signal. Follow the trail from soil to science.';
 
 const read = (rel: string) => fs.readFileSync(path.join(HOME_DIR, rel), 'utf8');
@@ -40,23 +41,6 @@ export function homeBody(pages: PageEntry[]): string {
       if (!link || !link.url) throw new Error(`Homepage section uses an unknown link key "${key}"`);
       return escapeHtml(link.url);
     })
-    .replace(/\{\{P\}\}/g, '');
-}
-
-export function sponsorStrip(): string {
-  if (!site.sponsors.length) return '';
-  const badges = site.sponsors.map((s) => {
-    const body = `<span class="sponsor-badge__name">${escapeHtml(s.name)}</span><i class="sponsor-badge__dot" aria-hidden="true"></i>`;
-    const url = site.safeUrl(s.url);
-    return url ? `<a class="sponsor-badge" href="${escapeHtml(url)}">${body}</a>` : `<span class="sponsor-badge">${body}</span>`;
-  }).join('');
-  return `<section class="sponsor-strip" aria-label="Sponsors"><span class="sr-only">Sponsors</span><div class="sponsor-strip__marquee"><div class="sponsor-strip__track"><div class="sponsor-strip__set">${badges}</div><div class="sponsor-strip__set" aria-hidden="true">${badges}</div></div></div></section>`;
-}
-
-export function homeFooter(): string {
-  return read('sections/footer.html')
-    .replace('{{GLOBAL_SPONSOR_STRIP}}', sponsorStrip())
-    .replace(/\{\{SOURCE_REPOSITORY_URL\}\}/g, escapeHtml(site.repository))
     .replace(/\{\{P\}\}/g, '');
 }
 

@@ -35,8 +35,10 @@ export const primaryNav: NavItem[] = [
   {
     kind: 'group', id: 'model', label: 'Model', narrow: true, items: [
       { page: 'model', label: 'Overview', blurb: 'How the models fit together' },
-      { page: 'model-1', label: 'Model 1', blurb: 'Reserved for the first model' },
-      { page: 'model-2', label: 'Model 2', blurb: 'Reserved for the second model' },
+      { page: 'model-docking', label: 'Docking', blurb: 'Two-ligand contacts and receptor candidates' },
+      { page: 'model-md', label: 'Molecular Dynamics', blurb: 'Ligand motion and persistent contacts' },
+      { page: 'model-ode', label: 'ODE & Two-channel', blurb: 'Signal dynamics and density estimation' },
+      { page: 'model-eco', label: 'Economic Benefit', blurb: 'When density information changes a decision' },
     ],
   },
   {
@@ -51,6 +53,8 @@ export const primaryNav: NavItem[] = [
     kind: 'group', id: 'team', label: 'Team', narrow: true, items: [
       { page: 'members', label: 'Members', blurb: 'The people behind the project' },
       { page: 'attributions', label: 'Attributions', blurb: 'Who did what' },
+      { page: 'awards', label: 'Awards' },
+      { page: 'acknowledgements', label: 'Acknowledgements' },
       { page: 'sponsors', label: 'Sponsors & Partners', blurb: 'Who supports the project', optional: true },
     ],
   },
@@ -62,22 +66,10 @@ export const mobileNav: { label?: string; items: NavLink[] }[] = [
   ...primaryNav.filter((item): item is NavGroup => item.kind === 'group').map((g) => ({ label: g.label, items: g.items })),
 ];
 
-/** Footer columns; `repository` is the source-code link from src/data/site.ts. */
-export const footerNav: { label: string; items: NavLink[] }[] = [
-  { label: 'Project', items: [
-    { page: 'description', label: 'Description' }, { page: 'engineering', label: 'Engineering' },
-    { page: 'contribution', label: 'Contribution' }, { page: 'model', label: 'Model' },
-  ] },
-  { label: 'Wet Lab', items: [
-    { page: 'parts', label: 'Parts and Collections' }, { page: 'experiments', label: 'Experiments' },
-    { page: 'results', label: 'Results' }, { page: 'safety', label: 'Safety' },
-  ] },
-  { label: 'People & practice', items: [
-    { page: 'human-practices', label: 'Human Practices' }, { page: 'education', label: 'Education' },
-    { page: 'members', label: 'Team' }, { page: 'attributions', label: 'Attributions' },
-    { page: 'licensing', label: 'Licensing & AI use' }, { page: 'repository', label: 'Source repository' },
-  ] },
-];
+/** Footer uses the same published groups as the main navigation. */
+export const footerNav: { label: string; items: NavLink[] }[] = primaryNav
+  .filter((item): item is NavGroup => item.kind === 'group')
+  .map(({ label, items }) => ({ label, items }));
 
 /** Reading order for the previous / next links: the top bar, left to right. */
 export function readingOrder(): NavLink[] {

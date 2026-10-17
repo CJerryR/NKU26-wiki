@@ -20,7 +20,7 @@ import { iconSvg, CALLOUT_ICONS, UI_ICONS } from './icons.mjs';
 const CALLOUT_TYPES = { note: 'note', important: 'note', tip: 'tip', warning: 'warning', warn: 'warning', caution: 'warning' };
 const CONTAINERS = new Set([
   ...Object.keys(CALLOUT_TYPES), 'callout',
-  'cards', 'cols', 'timeline', 'features', 'stats', 'refs', 'figure', 'figuretext', 'figures', 'details', 'people', 'lead',
+  'cards', 'cols', 'timeline', 'features', 'stats', 'refs', 'figure', 'figuretext', 'figures', 'details', 'people', 'lead', 'workflow',
 ]);
 const LEAVES = new Set(['figure']);
 
@@ -223,6 +223,8 @@ function renderBlock(node, ctx) {
     case 'stats': return stats(node);
     case 'refs': return [el('div', { className: ['refs'] }, takeLabel(node).rest)];
     case 'lead': return [el('div', { className: ['lead'] }, takeLabel(node).rest)];
+    // v8.6: the dry lab / wet lab diagram of the home page, shown where the project design starts
+    case 'workflow': return [el('figure', { className: ['wf'], dataWf: '' }, [raw(readHtmlFigure('our-work', ctx, node))])];
     case 'figure': return figure(node, ctx);
     case 'figuretext': return figureText(node);
     // R1-I04: two figures side by side, each in its own frame with its own caption
@@ -323,6 +325,11 @@ function readFigure(name, ctx, node) {
     warn(ctx, `Figure file not found: src/figures/${name}.svg`, node);
     return `<p class="figure__missing">Figure file not found: src/figures/${escAttr(name)}.svg</p>`;
   }
+}
+
+function readHtmlFigure(name, ctx, node) {
+  try { return fs.readFileSync(path.join(ctx.figureDir, `${name}.html`), 'utf8').trim(); }
+  catch { warn(ctx, `Figure file not found: src/figures/${name}.html`, node); return `<p class="figure__missing">Figure file not found: src/figures/${escAttr(name)}.html</p>`; }
 }
 
 function figureText(node) {

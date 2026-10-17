@@ -3,11 +3,14 @@
 import { render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from './PageHero.astro';
+import SceneHero from './SceneHero.astro';
+import { getScene, PORTRAIT_QUERY } from '../../data/scenes';
 import Toc from './Toc.astro';
 import PagePager from './PagePager.astro';
+import EcoExplorer from './EcoExplorer.astro';
 import { readingOrder } from '../../data/nav';
 import { getPages, byId, pageHref, submittedPages, type PageEntry } from '../../lib/pages';
-import { stripMd } from '../../lib/text';
+import { inlineMd, stripMd } from '../../lib/text';
 
 interface Props { entry: PageEntry }
 const { entry } = Astro.props;
@@ -30,13 +33,23 @@ const link = (i: number) => {
 const prev = at > 0 ? link(at - 1) : null;
 const next = at >= 0 && at < order.length - 1 ? link(at + 1) : null;
 const description = data.description ?? (data.sub ? stripMd(data.sub) : undefined);
+// Scroll-opened hero where this page has an enabled scene; the SVG title bar otherwise.
+const scene = getScene(entry.id);
+const preload = scene ? [
+  { href: scene.sets.desktop.url, media: `not all and ${PORTRAIT_QUERY}` },
+  { href: scene.sets.mobile.url, media: PORTRAIT_QUERY },
+] : [];
 ---
-<BaseLayout title={data.title} description={description} current={pageHref(entry)}>
-  <PageHero title={data.title} heading={data.heading} sub={data.sub} crumbs={data.crumbs} meta={data.meta} />
-  <div class:list={['doc', { 'doc--no-toc': toc.length === 0 }]} data-tone="light" data-page={entry.id} data-reading={submittedPages.has(entry.id) ? 'submitted' : undefined}>
+<BaseLayout title={data.title} description={description} current={pageHref(entry)} skipTo="#content" preload={preload}>
+  {scene
+    ? <SceneHero scene={scene} title={data.title} heading={data.heading} crumbs={data.crumbs} />
+    : <PageHero title={data.title} heading={data.heading} sub={data.sub} crumbs={data.crumbs} meta={data.meta} />}
+  <div id="content" tabindex="-1" class:list={['doc', { 'doc--no-toc': toc.length === 0 }]} data-tone="light" data-page={entry.id} data-reading={submittedPages.has(entry.id) ? 'submitted' : undefined}>
     <Toc items={toc} title={data.title} />
     <article class="doc__body prose" data-doc>
+      {scene && data.sub && <p class="scene-intro" set:html={inlineMd(data.sub)} />}
       <Content />
+      {entry.id === 'model-eco' && <EcoExplorer />}
     </article>
   </div>
   <PagePager prev={prev} next={next} />

@@ -1,0 +1,120 @@
+/* <wiki-toolkit> at night. Appended to toolkit.css in every shadow root
+   (src/scripts/toolkit.ts).
+
+   Most of a block already follows the page through the inherited tokens
+   (--ink, --paper, ...). This file covers the colours toolkit.css and the
+   block scripts write as literals. Each rule restates one declaration with
+   its day value as the fallback of a --tk-* token; the tokens exist only
+   under html[data-theme='dark'] on screen (theme-night.css), so in day and
+   in print every rule computes to exactly what it did before. */
+
+:host { --k-teal: var(--tk-teal, #2e8a7e); }
+
+/* notices */
+.tk__error { background: var(--tk-error-bg, #fbeee6); color: var(--tk-error-ink, #8f3a12); }
+
+/* solid accents that carry white labels keep the day iris */
+.btn--next { background: var(--pc, var(--tk-fill, var(--k-iris))); }
+.btn--next:hover { background: color-mix(in srgb, var(--pc, var(--tk-fill, var(--k-iris))) 84%, #000); }
+.chip[aria-pressed='true'] { border-color: var(--tk-fill-deep, var(--k-iris-deep)); background: var(--tk-fill-deep, var(--k-iris-deep)); }
+details[open] > summary .acc__chev { background: var(--tk-fill, var(--k-iris)); }
+.proto__box:checked + .proto__n { border-color: var(--tk-fill, var(--k-iris)); background: var(--tk-fill, var(--k-iris)); }
+.flow__n, .hs__pin, .hs__n { background: var(--tk-fill, var(--k-iris)); }
+.hs__pin[aria-pressed='true'], .is-on .hs__n { background: var(--k-amber); }
+.seg__btn[aria-selected='true'], .seg__btn[aria-pressed='true'] { background: var(--tk-seg-on, var(--k-surface)); }
+
+/* dark text stays dark where it sits on amber or on a pastel */
+.hs__pin[aria-pressed='true'], .is-on .hs__n, .rk__score, .seq__hit { color: var(--tk-on-light, var(--k-ink)); }
+.seq__pos { color: var(--tk-seqpos, rgba(108, 99, 115, .55)); }
+.mx__sym--part { color: var(--tk-amber-ink, #8f5d10); }
+.rk__mit .fb__label { color: var(--tk-teal-ink, #2a7068); }
+/* risk markers stay dark on the pastel cells, as in day */
+.rk__mark { background: var(--tk-on-light, var(--k-ink)); color: var(--tk-mark-ink, var(--k-surface)); }
+.rk__mark[aria-pressed='true'] { background: var(--tk-fill, var(--k-iris)); box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--tk-fill, var(--k-iris)); }
+.file__kind { color: color-mix(in srgb, var(--tone) var(--tk-mix-pct, 82%), var(--tk-mix-to, #000)); }
+
+/* light chips laid over photos and sliders */
+.lb__zoom { background: var(--tk-zoom-bg, rgba(251, 248, 241, .92)); }
+.cmp__knob { color: var(--tk-knob-ink, var(--k-iris-deep)); }
+
+/* dark panels that would melt into the night page get a hairline */
+.code { box-shadow: var(--tk-code-edge, none); }
+.chart__tip { box-shadow: var(--tk-tip-shadow, 0 12px 28px -12px rgba(25, 18, 34, .6)); }
+
+/* engineering cycle (the order of these three matches toolkit.css) */
+.cyc__arc path { fill: color-mix(in srgb, var(--pc) 15%, var(--tk-paper, #fbf8f1)); }
+.cyc__arc:hover path { fill: color-mix(in srgb, var(--pc) 28%, var(--tk-paper, #fbf8f1)); }
+.cyc__arc[aria-pressed='true'] path { fill: var(--pc); }
+.cyc__arc.is-empty path { fill: var(--tk-paper, #fbf8f1); }
+.cyc__en { fill: color-mix(in srgb, var(--pc) var(--tk-mix-pct, 78%), var(--tk-mix-to, #241c2b)); }
+
+/* stakeholders */
+.sh__dot circle { stroke: var(--tk-paper, #fbf8f1); }
+.sh__dot[aria-pressed='true'] circle { stroke: var(--tk-ink, #241c2b); }
+.sh__dot:focus-visible circle { stroke: var(--tk-ink, #241c2b); }
+
+/* empty photo / media tiles */
+.act__media--none { background: repeating-linear-gradient(135deg, color-mix(in srgb, var(--tone) 9%, var(--tk-paper, #fbf8f1)) 0 10px, color-mix(in srgb, var(--tone) 15%, var(--tk-paper, #fbf8f1)) 10px 20px); }
+.mb__photo--empty { background: radial-gradient(circle at 30% 22%, color-mix(in srgb, var(--k-iris) 17%, var(--tk-paper, #fbf8f1)), color-mix(in srgb, var(--k-iris) 7%, var(--tk-paper-2, #efe6d6))); }
+
+/* SVG drawn by the block scripts (charts, heatmaps, stakeholder quadrants,
+   construct glyphs) sets colours as attributes; CSS outranks attributes.
+   Text placed on a data colour picks its own ink (inkOn in toolkit/core.js:
+   the 11.5 / 10 px bar and cell labels, the 600-weight CDS label) and is left
+   alone; every other text of that ink is a label on the page.
+   A heatmap keeps its plate tray and empty wells as in day: its colour ramp
+   runs from paper to deep iris and only reads on a light ground (like the
+   white figure cards). */
+svg :not(text)[fill='#241c2b'],
+svg text[fill='#241c2b']:not([font-size='11.5'], [font-size='10'], [font-weight='600']) { fill: var(--tk-ink, #241c2b); }
+svg [stroke='#241c2b'] { stroke: var(--tk-ink, #241c2b); }
+svg [fill='#6c6373'] { fill: var(--tk-ink-3, #6c6373); }
+svg:not(.hm__svg) :not(text)[fill='#fbf8f1'] { fill: var(--tk-paper, #fbf8f1); }
+svg [stroke='#fbf8f1'] { stroke: var(--tk-paper, #fbf8f1); }
+svg [stroke='#e6ddcc'] { stroke: var(--tk-grid, #e6ddcc); }
+svg:not(.hm__svg) [stroke='#cbbfa8'] { stroke: var(--tk-grid-strong, #cbbfa8); }
+.sh__plot [fill='#efe6d6'] { fill: var(--tk-quad-a, #efe6d6); }
+.sh__plot [fill='#e9e0f4'] { fill: var(--tk-quad-b, #e9e0f4); }
+.sh__plot [fill='#f3ede2'] { fill: var(--tk-quad-c, #f3ede2); }
+
+/* Categorical chart series keep their hue across themes. Only chart marks and
+   their matching legend / hover swatches use these tokens: heatmap ramps,
+   stacked Likert responses, sequence annotations and biological glyphs retain
+   their data colours. SVG source attributes stay unchanged, so the PNG exporter
+   (which clones the SVG without this shadow stylesheet) keeps its paper palette. */
+.tk--chart {
+  --chart-0: var(--tk-chart-0, #6e4fb8);
+  --chart-1: var(--tk-chart-1, #2e8a7e);
+  --chart-2: var(--tk-chart-2, #d18f25);
+  --chart-3: var(--tk-chart-3, #b2466f);
+  --chart-4: var(--tk-chart-4, #4f6db0);
+  --chart-5: var(--tk-chart-5, #7b8a36);
+  --chart-6: var(--tk-chart-6, #8c5a3c);
+  --chart-7: var(--tk-chart-7, #3d9bc2);
+}
+.tk--chart .chart__svg [stroke='#6e4fb8'] { stroke: var(--chart-0); }
+.tk--chart .chart__svg [stroke='#2e8a7e'] { stroke: var(--chart-1); }
+.tk--chart .chart__svg [stroke='#d18f25'] { stroke: var(--chart-2); }
+.tk--chart .chart__svg [stroke='#b2466f'] { stroke: var(--chart-3); }
+.tk--chart .chart__svg [stroke='#4f6db0'] { stroke: var(--chart-4); }
+.tk--chart .chart__svg [stroke='#7b8a36'] { stroke: var(--chart-5); }
+.tk--chart .chart__svg [stroke='#8c5a3c'] { stroke: var(--chart-6); }
+.tk--chart .chart__svg [stroke='#3d9bc2'] { stroke: var(--chart-7); }
+.tk--chart .chart__svg :not(text)[fill='#6e4fb8'] { fill: var(--chart-0); }
+.tk--chart .chart__svg :not(text)[fill='#2e8a7e'] { fill: var(--chart-1); }
+.tk--chart .chart__svg :not(text)[fill='#d18f25'] { fill: var(--chart-2); }
+.tk--chart .chart__svg :not(text)[fill='#b2466f'] { fill: var(--chart-3); }
+.tk--chart .chart__svg :not(text)[fill='#4f6db0'] { fill: var(--chart-4); }
+.tk--chart .chart__svg :not(text)[fill='#7b8a36'] { fill: var(--chart-5); }
+.tk--chart .chart__svg :not(text)[fill='#8c5a3c'] { fill: var(--chart-6); }
+.tk--chart .chart__svg :not(text)[fill='#3d9bc2'] { fill: var(--chart-7); }
+/* h() assigns style.background through CSSOM, which serializes hex as rgb.
+   Include both spellings so a future markup renderer uses the same mapping. */
+.tk--chart :is(.legend__sw, .chart__tiprow i):is([style*='#6e4fb8' i], [style*='110, 79, 184']) { background: var(--chart-0) !important; }
+.tk--chart :is(.legend__sw, .chart__tiprow i):is([style*='#2e8a7e' i], [style*='46, 138, 126']) { background: var(--chart-1) !important; }
+.tk--chart :is(.legend__sw, .chart__tiprow i):is([style*='#d18f25' i], [style*='209, 143, 37']) { background: var(--chart-2) !important; }
+.tk--chart :is(.legend__sw, .chart__tiprow i):is([style*='#b2466f' i], [style*='178, 70, 111']) { background: var(--chart-3) !important; }
+.tk--chart :is(.legend__sw, .chart__tiprow i):is([style*='#4f6db0' i], [style*='79, 109, 176']) { background: var(--chart-4) !important; }
+.tk--chart :is(.legend__sw, .chart__tiprow i):is([style*='#7b8a36' i], [style*='123, 138, 54']) { background: var(--chart-5) !important; }
+.tk--chart :is(.legend__sw, .chart__tiprow i):is([style*='#8c5a3c' i], [style*='140, 90, 60']) { background: var(--chart-6) !important; }
+.tk--chart :is(.legend__sw, .chart__tiprow i):is([style*='#3d9bc2' i], [style*='61, 155, 194']) { background: var(--chart-7) !important; }

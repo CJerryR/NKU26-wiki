@@ -1,0 +1,92 @@
+{
+  "desktop": {
+    "file": "acknowledgements-desktop.webp",
+    "size": [
+      1956,
+      1972
+    ],
+    "bytes": 157358,
+    "quality": 86,
+    "hash": "ffda496b49ca",
+    "frames": {
+      "correspondence": [
+        0,
+        1580,
+        640,
+        392
+      ],
+      "envelope-base": [
+        0,
+        0,
+        1040,
+        786
+      ],
+      "envelope-flap": [
+        0,
+        790,
+        1040,
+        786
+      ],
+      "flowers-gift": [
+        1044,
+        790,
+        912,
+        466
+      ],
+      "letter": [
+        644,
+        1580,
+        672,
+        306
+      ],
+      "people": [
+        1320,
+        1580,
+        624,
+        284
+      ]
+    }
+  },
+  "mobile": {
+    "file": "acknowledgements-mobile.webp",
+    "size": [
+      1473,
+      1532
+    ],
+    "bytes": 90620,
+    "quality": 86,
+    "hash": "1b42b8336d5d",
+    "frames": {
+      "envelope-base": [
+        0,
+        0,
+        845,
+        638
+      ],
+      "envelope-flap": [
+        0,
+        642,
+        845,
+        638
+      ],
+      "flowers-gift": [
+        849,
+        642,
+        624,
+        319
+      ],
+      "letter": [
+        0,
+        1284,
+        546,
+        248
+      ],
+      "people": [
+        550,
+        1284,
+        442,
+        201
+      ]
+    }
+  }
+}

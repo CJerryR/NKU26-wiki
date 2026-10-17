@@ -1,395 +1,112 @@
 ---
 title: Model
 heading: Model
-sub: ''
+sub: >-
+  Four connected studies, from receptor contacts to conditional management
+  value.
 crumbs:
   - Model
   - Overview
 route: model
 search: true
-description: ''
+description: >-
+  Four connected studies, from receptor contacts to conditional management
+  value.
 meta: {}
 draft: false
 hidden: false
 ---
-## Overview {#overview toc="Overview"}
-
-Structural modeling focuses on the differential recognition of ascr#18 and ascr#3 to support a sensor design based on two response channels and their ratio. Docking compares contacts made by the two ligands within the same receptor model and examines whether positions showing differential contacts correspond across receptors. MD investigates receptor motion, relative ligand displacement, and local contacts in selected complexes.
-
-In the two-ligand comparison covering five receptors with five predicted models each, Gpr2 W338, Gpr3 W306, and GprC W388 showed contact differences favoring ascr#18, although the number of models showing the same direction of difference varied by receptor and contact type. These three positions received relatively consistent support from sequence and structural mapping to transmembrane helix 6 (TM6) among the fungal receptors. When DAF-37 and SRBC-64 from *Caenorhabditis elegans* were included, the two mapping approaches diverged. GprC N56 emerged as a candidate contact site favoring ascr#3 within that receptor, with weaker support for correspondence across receptors. These results distinguish comparable fungal TM6 positions from receptor-specific differential contacts.
-
-Earlier MD analyses revealed that global backbone motion and local ligand behavior convey different information. The lower whole-receptor backbone root-mean-square deviation (RMSD) of Gpr2 R59C did not correspond to smaller relative ligand displacement, and the backbone comparison between WT and R59C changed with the fitting region. Gpr3 R167Y showed substantial global displacement together with retention of local contacts. These observations came, respectively, from a Gpr2 comparison using single trajectories with different starting structures and a single Gpr3 trajectory lacking a matched WT. Work on the new candidates has so far led to changes in input design: we discontinued local loop-region (ECL2) rebuilding controls that simultaneously changed the backbone and initial ligand pose, and proposed restricting rebuilding to the local loop while fixing coordinates outside it. A complete new comparison of dynamic behavior has not yet been completed.
-
-One 200 ns trajectory of Gpr3 R167Y–ascr#3 showed that substantial global backbone displacement can coexist with retention of local ligand contacts.
-
-Docking and MD focus on molecular recognition. The ordinary differential equation (ODE) model describes the relationship between signaling and color development, while the economic benefit (Eco) model examines the agricultural decision-making value of detection information. The intended application remains the identification and abundance assessment of plant-parasitic nematodes. Receptor selection and validation questions are addressed separately in Engineering.
-
-## Molecular Docking: From Receptor Comparisons to Gpr2 Mutant Design {#molecular-docking-from-receptor-comparisons-to-gpr2-mutant-design toc="Molecular Docking: From Receptor Comparisons to Gpr2 Mutant Design"}
-
-### Research Objectives {#research-objectives toc="Research Objectives"}
-
-We aim to use the natural ability of receptors to sense ascarosides to identify recognition elements that can be engineered for a yeast biosensor. Our docking work addresses two successive questions. First, we compare Gpr2, Gpr3, and GprC to explore their potential as engineering targets. Second, we identify candidate interaction hotspots in the selected receptor, Gpr2, and design mutations to investigate whether their computational profiles differ for ascr#18 and ascr#3.
-
-Docking provides candidate binding poses and scores, while interaction analysis describes how the ligands contact the receptors. We combine these two sources of information to develop engineering hypotheses and define questions for subsequent MD simulations and wet-lab validation.
-
-### Computational Workflow and Evaluation Methods {#computational-workflow-and-evaluation-methods toc="Computational Workflow and Evaluation Methods"}
-
-We used predicted structures and checked the species, strain, sequence, and model source for each receptor. The preliminary receptor comparisons and subsequent Gpr2 mutant screening used their own defined inputs and method versions. Each comparison must therefore be interpreted in relation to the structures, ligand states, and search settings actually used.
-
-In the subsequent Gpr2 mutation workflow, we used the 406-amino-acid full-length sequence from TWF154 and submitted sequences carrying the specified mutations to AlphaFold 3. After prediction, residues 1–21 and 164–178 were removed, leaving 370 residues with their original numbering. The structures were then aligned to a common reference using 153 Cα atoms from seven transmembrane regions. The WT baseline underwent the same structural processing and was used to compare computational changes associated with point mutations.
-
-Receptors were prepared with Meeko, and a fixed input representing the −1 charge state was reused for each ligand. The current Gpr2 batch used AutoDock Vina 1.2.5, with a shared search-box center at (20, −20, 5) Å and dimensions of 26 × 26 × 26 Å. Exhaustiveness was set to 8, the random seed to 1919, the maximum number of output poses to 9, and the energy range to 3 kcal/mol. These parameters apply to this screening round and its common coordinate system.
-
-The main analysis used the lowest-scoring pose from each docking run; the remaining poses were used for supplementary checks. ProLIF was used to analyze contacting residues and interaction types, alongside inspection of ligand position and orientation. Multiple poses generated by the same search were not treated as independent replicates.
-
-The workflow progressively incorporated sequence and residue-numbering checks, alignment to a common coordinate system, review of search boxes and poses, and records of input and output provenance. For example, preparation of the default predicted W338C model failed because of local atomic overlaps. We retained the failure record and selected an alternative model based on geometric checks before docking. Exceptions in model selection were determined by structural quality rather than docking scores.
-
-### Receptor Comparisons and Selection of the Study Target {#receptor-comparisons-and-selection-of-the-study-target toc="Receptor Comparisons and Selection of the Study Target"}
-
-Preliminary work compared the docking profiles of Gpr2, Gpr3, and GprC with ascr#18, ascr#3, and ascr#7. Literature references, checks using multiple random seeds, and preliminary mutation scans were used to explore the engineering potential of each receptor. This stage examined both WT performance and whether the computational methods could distinguish the effects of substitutions at different sites.
-
-In the preliminary GprC Ala scan, negative-control mutations also produced substantial perturbations, indicating that the discriminatory capacity of the scan required further examination. At that stage, we could not distinguish workflow bias from pocket sensitivity to perturbation, so the team added saturation substitution tests. This process showed us that WT score profiles and reliable identification of mutation effects require separate evaluation.
-
-The team subsequently focused on Gpr2 to investigate its candidate binding sites and substitution patterns in greater detail.
-
-### From Hotspot Identification to Combination Design {#from-hotspot-identification-to-combination-design toc="From Hotspot Identification to Combination Design"}
-
-After comparing the contact distributions of Gpr2 with the two ligands, we selected seven initial sites. N84, L90, and R345 had higher contact frequencies in ascr#3 poses, whereas V110, R181, W338, and V368 had higher frequencies in ascr#18 poses. These differences provided hypotheses for site selection; the engineering value of each site was evaluated through specific substitutions.
-
-We first conducted multisite Ala tests and then separated the combinations into single-site substitutions. In the initial AF3 combination results, scores worsened for both ligands, prompting further investigation of substitution patterns at individual sites. We subsequently completed 19 substitutions at each of N84, V110, W338, and V368, giving 76 single-mutant designs for saturation screening.
-
-Based on the single-mutant results, we selected 14 parents according to their effects and designed 18 double mutants. Some single mutations mainly improved the target-ligand score, some mainly worsened the other ligand’s score, and others improved both. Combination tests examined whether these effects could be retained together and whether existing contact patterns persisted after a further site was changed.
-
-For evaluation, we recorded the score changes for both ligands relative to WT:
-
-<div class="wiki-toolkit-block"><wiki-toolkit data-type="equation" data-props="{&quot;_template&quot;:&quot;equation&quot;,&quot;latex&quot;:&quot;\\Delta S_i=S_{\\mathrm{mutant},i}-S_{\\mathrm{WT},i},\n\n\\qquad\n\nD=\\Delta S_{18}-\\Delta S_3.&quot;}"><div class="wiki-toolkit-fallback"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>S</mi><mi>i</mi></msub><mo>=</mo><msub><mi>S</mi><mrow><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi></mrow><mo separator="true">,</mo><mi>i</mi></mrow></msub><mo>−</mo><msub><mi>S</mi><mrow><mrow><mi mathvariant="normal">W</mi><mi mathvariant="normal">T</mi></mrow><mo separator="true">,</mo><mi>i</mi></mrow></msub><mo separator="true">,</mo><mspace width="2em"/><mi>D</mi><mo>=</mo><mi mathvariant="normal">Δ</mi><msub><mi>S</mi><mn>18</mn></msub><mo>−</mo><mi mathvariant="normal">Δ</mi><msub><mi>S</mi><mn>3</mn></msub><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\Delta S_i=S_{\mathrm{mutant},i}-S_{\mathrm{WT},i},
-
-\qquad
-
-D=\Delta S_{18}-\Delta S_3.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord">Δ</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0576em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0576em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0576em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0576em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathrm mtight">mutant</span></span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0576em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.0576em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathrm mtight">WT</span></span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:2em;"></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">D</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord">Δ</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0576em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0576em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">18</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord">Δ</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0576em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0576em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">.</span></span></span></span></span></div><noscript><style>.wiki-toolkit-fallback{display:block!important}wiki-toolkit:not(:defined){min-height:0;border:0;background:none;animation:none}</style><p>Enable JavaScript to use the interactive controls.</p></noscript></wiki-toolkit></div>
-
-A negative ($\Delta S$) indicates a lower score. A positive (D) indicates a shift toward ascr#3 relative to WT, while a negative value indicates a shift toward ascr#18. Considering both score changes helps distinguish whether the shift results from improvement for the target ligand, deterioration for the other ligand, or changes in both.
-
-The double-mutant analysis reused existing WT and parental results, with the batch 05 WT as the common reference and the batch 07 WT used to check sensitivity to the baseline. Each combination was also compared with both single-mutant parents to determine whether adding the second mutation provided an additional benefit.
-
-### Main Findings and Subsequent Validation {#main-findings-and-subsequent-validation toc="Main Findings and Subsequent Validation"}
-
-Combination analysis showed that single-mutation effects depend on the mutational background. Under the common WT reference, N84V had a (D) value of −0.725, which changed to +0.330 when combined with V110C. This reversal in the direction of the original difference was mainly associated with an improvement in the ascr#3 score.
-
-N84Y/V368N illustrated another type of benefit. Relative to the N84Y single mutant, the scores for the two ligands decreased by 0.590 and 0.612 kcal/mol, respectively, while (D) changed by only −0.022 kcal/mol. This combination improved both scores while largely retaining the original difference, showing that ranking designs solely by the magnitude of the difference can overlook useful candidates.
-
-Contact analysis provided structural clues to these changes. For example, the ascr#3 pose in N84Y/V368R shifted substantially relative to the V368R single mutant, losing many original contacts while its score worsened. Conversely, the ascr#18 pose in V110S/W338H remained close to those of its parents, but its score did not outperform them. Contacts and conformations therefore help explain where changes occur, while the benefit of a combination still requires score-based comparisons with the controls.
-
-These results led us to broaden candidate assessment to include target-ligand performance, changes for the other ligand, differences relative to WT, and benefits relative to the parents. Other teams can use the same comparison strategy to define questions for subsequent testing of each candidate.
-
-We have prepared four sets of starting structures, comprising N84V and V368R paired with each ligand, for subsequent MD system preparation and testing. The docking results support computational engineering hypotheses, but their interpretation is constrained by predicted structures, single searches, and the scoring method. Actual expression, signaling responses, and experimental selectivity still require wet-lab evaluation.
-
-## Docking: Differential Contacts with Two Ligands and Residue Correspondence {#docking-differential-contacts-with-two-ligands-and-residue-correspondence toc="Docking: Differential Contacts with Two Ligands and Residue Correspondence"}
-
-Two-ligand docking first compares the predicted contacts of two ascarosides within the same receptor, then examines whether positions showing differential contacts correspond across receptors. The first comparison requires a consistent receptor model; the second requires identification of sequence positions, structural positions, and the actual constructs used. Separating these comparisons helps prevent differences between models from being directly attributed to ligand preference and preserves disagreements in cross-receptor mapping.
-
-### Comparison Set and Contact Frequencies {#comparison-set-and-contact-frequencies toc="Comparison Set and Contact Frequencies"}
-
-The core contact analysis included Gpr2 and Gpr3 from *Arthrobotrys oligospora*, GprC from *Arthrobotrys flagrans*, and DAF-37 and SRBC-64 from *Caenorhabditis elegans*. The inclusion of nematode receptors drew on the structural and chimeric-receptor studies of Hu et al. and was intended to investigate recurring contact positions among receptors with low sequence similarity. [B03]
-
-Five AlphaFold 3 (AF3) predicted models were used for each receptor. Each model was docked separately with ascr#18 and ascr#3, giving 50 receptor-model–ligand combinations. [B07] Gpr2 and Gpr3 used deletion constructs designated deltaN, while GprC, DAF-37, and SRBC-64 used WT constructs. Residue positions retained full-length numbering, and contact statistics included only positions actually present in the docking structures.
-
-For a given receptor model, ligand, residue, and contact type, contact frequency was defined as the number of valid poses showing the contact divided by the total number of valid poses in that group. The two ligands were paired within each receptor model, and the direction and magnitude of the differences were then summarized across the five models. Throughout the tables:
-
-<div class="wiki-toolkit-block"><wiki-toolkit data-type="equation" data-props="{&quot;_template&quot;:&quot;equation&quot;,&quot;latex&quot;:&quot;\\Delta f=f(\\mathrm{ascr#18})-f(\\mathrm{ascr#3}).&quot;}"><div class="wiki-toolkit-fallback"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>f</mi><mo>=</mo><mi>f</mi><mo stretchy="false">(</mo><mrow><mi mathvariant="normal">a</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">#</mi><mn>18</mn></mrow><mo stretchy="false">)</mo><mo>−</mo><mi>f</mi><mo stretchy="false">(</mo><mrow><mi mathvariant="normal">a</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">#</mi><mn>3</mn></mrow><mo stretchy="false">)</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\Delta f=f(\mathrm{ascr\#18})-f(\mathrm{ascr\#3}).</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord">Δ</span><span class="mord mathnormal" style="margin-right:0.1076em;">f</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.1076em;">f</span><span class="mopen">(</span><span class="mord"><span class="mord mathrm">ascr#18</span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.1076em;">f</span><span class="mopen">(</span><span class="mord"><span class="mord mathrm">ascr#3</span></span><span class="mclose">)</span><span class="mord">.</span></span></span></span></span></div><noscript><style>.wiki-toolkit-fallback{display:block!important}wiki-toolkit:not(:defined){min-height:0;border:0;background:none;animation:none}</style><p>Enable JavaScript to use the interactive controls.</p></noscript></wiki-toolkit></div>
-
-Positive values indicate a higher contact frequency for ascr#18, and negative values indicate a higher frequency for ascr#3. This frequency describes contact occurrence within the set of valid docking poses; the five AF3 models represent predicted conformations.
-
-The original analysis organized candidates by the favored ligand. Its reported descriptive criteria included a higher contact frequency for the favored ligand in at least 3/5 paired models, a median paired difference of at least 0.20, and the relevant contact-recurrence conditions. Subsequent sequence and structural mapping added positional annotations to these existing candidates without revising the contact candidates or thresholds.
-
-Complete configuration details are still missing for the total number of valid poses in each group, the full definition of the “support count in the original report,” the set included in the median, the directional implementation of the 0.20 threshold, the recurrence conditions, and the stratification rules. Tables 1 and 3 separately present the original support counts, the numbers of paired models showing the same direction of difference, and the reported median differences. These fields cannot currently be combined into a single support proportion. The correspondence between the constructs, search configurations, and input checks from individual batches and the core set of 50 results has also not been fully verified. Available methods and missing details are listed under “Contact Analysis and Residue Mapping” in “Supporting Methods and Resources.”
-
-Early receptor exploration compared docking of Gpr2, Gpr3, and GprC with ascr#18, ascr#3, and ascr#7. WT structures came from the AlphaFold Database, ligands came from PubChem, inputs were prepared with ADFR, and AutoDock Vina was used to search for poses. Independently predicted mutants were used to explore substitutions. Dynamic analysis of Gpr3 R167Y–ascr#3 is presented under Model/MD. Screening and selection of Gpr2 single-mutant candidates are described in “Mutation Design and Candidate Screening Guided by Contact Differences” under Engineering.
-
-### Differential Contacts with Two Ligands in the Three Fungal Receptors {#differential-contacts-with-two-ligands-in-the-three-fungal-receptors toc="Differential Contacts with Two Ligands in the Three Fungal Receptors"}
-
-Gpr2 W338, Gpr3 W306, and GprC W388 all showed contact differences favoring ascr#18, but the consistency of this bias varied across models. Hydrophobic contacts at Gpr2 W338 were more frequent for ascr#18 in all five paired models, whereas the same contact type at Gpr3 W306 showed this pattern in 3/5 models. For GprC W388, the counts were 4/5 for van der Waals contacts and 3/5 for hydrophobic contacts. The three positions therefore shared the direction of contact bias while retaining differences between receptors and contact types (Table 1).
-
-Hydrophobic denotes hydrophobic contacts identified according to the rules used, while VdWContact denotes contacts meeting the geometric criteria for van der Waals contacts. For Gpr3 W306, the “support count in the original report” is 4/5, whereas the number of paired models with a higher frequency for ascr#18 is 3/5. These are different fields. Median Δf describes a difference in contact frequency, not binding energy. Gaps in the records for the set included in the median and the pose denominators are discussed in the statistical definitions in Model/Docking Section 1.1.
-
-These results identify the three tryptophans as candidate sites for differential contacts with the two ligands. However, ligand bias within a receptor is insufficient to establish whether the sites correspond across receptors. We therefore compared the existing contact results with sequence and structural mapping.
-
-### Support for TM6 Positional Correspondence and Disagreement in the Nematode Receptors {#support-for-tm6-positional-correspondence-and-disagreement-in-the-nematode-receptors toc="Support for TM6 Positional Correspondence and Disagreement in the Nematode Receptors"}
-
-Gpr2 W338, Gpr3 W306, and GprC W388 were assigned to TM6 by both topology-prediction methods. In full-length multiple sequence alignments (MSAs), both MAFFT L-INS-i and MUSCLE super5 placed the three tryptophans in the same column. When any of these positions was used to query the other two fungal receptors, US-align returned the corresponding tryptophan in all 25 predicted-structure combinations for each relevant receptor pair. All three positions also mapped to position 226 of the Phyre2 fold reference c7xmsA. These consistent results support a hypothesis of positional homology within TM6 among the three fungal receptors. [B08, B09, B10]
-
-When the analysis was extended to nematode receptors, sequence and structural mapping identified different corresponding positions. MAFFT placed DAF-37 W301 and SRBC-64 F235 in the same column as the three fungal tryptophans. MUSCLE retained DAF-37 W301 but produced a gap for SRBC-64. In contrast, structural mapping using the three fungal tryptophans as queries returned DAF-37 N299 and SRBC-64 S228. This disagreement concerns specific residues, rather than simply higher or lower alignment scores: the aromatic-residue column in the sequence alignment was not supported by the same structural correspondence.
-
-Table 2 presents three distinct levels of analysis. The five target receptors are used to compare correspondence of the same candidate position across receptors. Each receptor’s own set of homologous sequences is used to examine residue retention within that receptor family. The 25 structural combinations for each receptor pair come from 5 × 5 pairings of the predicted models. W338, W306, and W388 have high exact-W proportions within their respective homologous-sequence sets, but these are not proportions of shared tryptophan across the five target receptors.
-
-HHalign sequence-model comparisons support overall homology among the fungal receptors, but direct mapping at this site covers only W338 ↔ W306 and does not return GprC W388. [B11] Considering both MSAs, structural mapping, and the fold reference together, the most consistent correspondence currently covers the three fungal receptors. A shared aromatic recognition position in TM6 across all five receptors has not been established. Inputs, filtering commands, and mapping scope for each method are retained in Methods Table A.
-
-### GprC N56 and Other Receptor-Specific Contacts {#gprc-n56-and-other-receptor-specific-contacts toc="GprC N56 and Other Receptor-Specific Contacts"}
-
-A representative candidate favoring ascr#3 is the HBAcceptor contact at GprC N56. Both ligands can contact this position in all five models. The frequency is higher for ascr#3 in three paired models, with a median Δf of −0.222. This difference describes how the two ligands contact the same receptor; it is not a contact position exclusive to ascr#3.
-
-Cross-receptor correspondence for N56 is sensitive to the alignment algorithm. Within GprC’s own homologous sequences, N is retained in 15/34 sequences, and the chemical class used in the analysis is retained in 16/34. This level of retention differs from that of the three TM6 tryptophans. The GprC N2.53A mutant studied by Hu et al. showed no detectable loss of function in the trap-formation readout, and the team mapped that literature position to N56 in the full-length sequence. [B03, Figure 4] This functional readout differs from the relative response to ascr#3 versus ascr#18. The effect of N56A on the relative responses to the two ligands remains to be tested.
-
-Gpr3 Y172 and SRBC-64 F161 also show contacts favoring ascr#18 within their respective receptors, but support for cross-receptor correspondence is weaker. At other positions, absence results from the construct itself: some full-length positions in Gpr2/Gpr3 corresponding to GprC W155/W157 lie within the current deltaN deletion regions and therefore did not contribute to contact statistics for the corresponding docking structures (Table 3).
-
-For N56, the original report recorded a median difference of +0.222 in the direction of the favored ligand. Under the common ascr#18-minus-ascr#3 direction used in this table, it is −0.222. Candidates are retained from the existing report; the implementation of the 0.20 threshold and the set included in the median remain subject to the statistical definitions discussed in Model/Docking Section 1.1.
-
-`NA_construct_absent` indicates that the residue is absent from the docking structure, while an MSA gap indicates a gap in an alignment column. A residue that is present but makes no contact and a failed calculation are recorded as separate states. Preserving these distinctions allows N56, Y172, and F161 to be discussed as differential contacts within individual receptors, while cross-receptor contact comparisons for W155/W157 remain constrained by the actual deleted regions.
-
-### How Search Regions and Chemical Representation Affect Interpretation {#how-search-regions-and-chemical-representation-affect-interpretation toc="How Search Regions and Chemical Representation Affect Interpretation"}
-
-Interpretation of docking poses depends on the regions actually searched and the ligand structures used. Vina ranks candidate poses with an approximate scoring function. More negative values are more favorable under that function; they are not experimentally measured binding free energies. [B04] The project encountered both spatial mismatches and chemical-conversion problems. These arose in different study batches, and their observations and handling conditions are retained by batch.
-
-#### Common Coordinate References, Membrane Orientation, and Local Searches {#common-coordinate-references-membrane-orientation-and-local-searches toc="Common Coordinate References, Membrane Orientation, and Local Searches"}
-
-Anomalies in early mutant comparisons were identified through PyMOL visualization: independently predicted WT and mutant structures had used the same search-box coordinates without prior superposition, and more favorable scores corresponded to implausible receptor regions. When repeating the relevant docking runs, we used a common coordinate reference for the receptor, ligand, and search box to define the actual search location.
-
-Membrane-position checks further showed that 19 of 20 poses in one Gpr2 batch were on the intracellular side. Shifting the search region by 10 Å along the original docking Z-axis still moved it in the wrong direction because membrane construction had rotated the receptor, leaving the original Z-axis opposite to the membrane normal in use. Positions and directions therefore had to be handled separately: the receptor, ligand, and search-box center received the same rotation and translation, the membrane normal was updated with the rotation, and the extracellular side was determined from the post-construction orientation.
-
-The local search for Gpr3 addressed a different spatial bias. Candidate poses were mainly located in a groove between the transmembrane helices and the membrane lipid POPC (1-palmitoyl-2-oleoylphosphatidylcholine). Reducing the search-box size excluded some peripheral space, and shifting it toward the extracellular side produced a small number of extracellular poses, but groove poses still received more favorable Vina rankings. The final protocol centered a 20 Å local search box on the geometric center of the Cα atoms of residues 150–175 in ECL2, explicitly incorporating an extracellular positional prior into the search.
-
-Records for this batch state that poses for four ligands passed the geometric checks used, but the complete ligand list, quantitative criteria, and per-pose check results have not been fully documented. This result is therefore retained as a record of geometric checks within a constrained search region. Earlier Gpr3 scans and interaction fingerprints used different search conditions and were not included in the interpretation of this local-search protocol. The pending verification of box-size reductions, offsets, and comparisons with literature rankings is listed in Methods Table B.
-
-The actual constructs also alter the search space. All three fungal receptors contain a large third intracellular loop (ICL3). In GprC, this region previously displaced the search center away from the extracellular binding region, while truncated structures can expose intracellular hydrophobic cavities. Full-length numbering therefore identifies residue identity, and the actual construct identifies the structural boundaries present during the search. Both must be retained with the pose results.
-
-#### Atom-Record Integrity and Formal Charges {#atom-record-integrity-and-formal-charges toc="Atom-Record Integrity and Formal Charges"}
-
-Torsion processing of ascr#18 once inadvertently deleted atoms, leaving the docking input structure incomplete. After the procedure was changed to remove only BRANCH/ENDBRANCH torsion-branch records, the regenerated PDBQT file contained 26 atom records instead of 15. These values refer to atom-record counts in the file.
-
-Formal charges were also lost during conversion from PDBQT back to SDF, causing Anionic/Cationic contacts, which depend on identifying charged chemical groups, to lose their correct chemical meaning. ProLIF interaction fingerprints (IFPs) identify contacts using chemical types and distance and angle criteria. Identical spatial coordinates are therefore insufficient to preserve identical contact classifications. [B05]
-
-The corresponding chemical checks preserve the chemical state specified in the original SDF, explicit atom mapping, and post-docking coordinates. Pose export reconstructs SDF files using the SMILES and index mappings stored by Meeko in PDBQT remarks and depends on complete retention of the structural metadata written during preparation. [B06] Historical records also showed systematic score shifts when WT used a single-stage search and mutants used a two-stage search. Spatial region, search protocol, and chemical state must therefore be checked together within a comparison.
-
-### From Differential Contacts to Testable Structural Hypotheses {#from-differential-contacts-to-testable-structural-hypotheses toc="From Differential Contacts to Testable Structural Hypotheses"}
-
-Contact bias and positional mapping together support the TM6 tryptophans in the three fungal receptors as candidates for parallel comparison. The proposed substitutions are Gpr2 W338F, Gpr3 W306F, and GprC W388F. W → F retains aromaticity while reducing side-chain volume and can be used to examine whether this side-chain change alters recognition of ascr#18 relative to ascr#3. If a clear difference between the two ligands is observed, W → A controls that remove the aromatic ring can then be considered.
-
-GprC N56 and other receptor-specific positions address questions about responses to the two ligands within their respective receptors. Interpretation of these candidates requires responses to both ligands together with controls for expression, localization, and overall signaling function. The execution status of actual constructs and experimental feedback is described in the validation-status notes in Engineering Section 2.2. The current structural interpretation is that relatively consistent evidence for TM6 correspondence exists among the three fungal receptors, alongside receptor-specific contacts, construct-related absences, and mapping disagreements in the nematode receptors. A shared recognition position across all five receptors has not been established.
-
-## MD: Receptor Motion and Local Ligand Contacts {#md-receptor-motion-and-local-ligand-contacts toc="MD: Receptor Motion and Local Ligand Contacts"}
-
-### Simulation Systems and Analysis Questions {#simulation-systems-and-analysis-questions toc="Simulation Systems and Analysis Questions"}
-
-Molecular dynamics (MD) places selected receptor–ligand complexes in membrane, solvent, and ion systems to examine how conformations and contacts change over time. The Gpr3 analysis uses one 200 ns trajectory of the R167Y–ascr#3 complex. The Gpr2 comparison uses complexes formed by TWF154-derived WT, N84V, and V368R with ascr#18 and ascr#3.
-
-Receptor backbone root-mean-square deviation (RMSD) describes the deviation of selected atoms from a reference structure. Cα root-mean-square fluctuation (RMSF) describes fluctuations around mean positions within a trajectory. Relative ligand displacement, distance to a local residue cluster, and contact retention track the ligand’s position and interactions relative to the receptor.
-
-### Dynamic Comparison of Gpr2 WT and Single Mutants {#dynamic-comparison-of-gpr2-wt-and-single-mutants toc="Dynamic Comparison of Gpr2 WT and Single Mutants"}
-
-### Gpr3 R167Y: Coexistence of Global Displacement and Local Contacts {#gpr3-r167y-coexistence-of-global-displacement-and-local-contacts toc="Gpr3 R167Y: Coexistence of Global Displacement and Local Contacts"}
-
-This analysis uses one 200 ns trajectory of Gpr3 R167Y–ascr#3. A matched WT and independent replicate results are still missing. Local analysis uses a 15-residue cluster defined by the docking interaction fingerprint (IFP) as its reference. Distances were calculated using mass-weighted centers of mass, and retention of the nine initial contacts was tracked.
-
-After 100 ns, the receptor backbone deviated substantially from the initial structure, while the ligand remained close to this residue cluster and retained some initial contacts (Table 6).
-
-The residue-level initial-contact occupancy of ARG175–ASCR402 was 1.0, meaning that this contact persisted across all analyzed frames of the trajectory. The specific hydrogen bond ARG175–H → ASCR402 had an occupancy of 0.4140, representing the fraction of frames in which the corresponding atoms met the hydrogen-bond criteria. These statistics describe residue-level contact and the geometry of a specific atomic interaction, respectively. ASCR402 is the ligand’s residue identifier.
-
-In Table 6, RMSD, local distance, and the fraction of initial contacts retained use the time window ≥100 ns. Both maximum-occupancy statistics use the full trajectory.
-
-### Restoring Full-Length Structures and Rebuilding Local Loops for New Candidates {#restoring-full-length-structures-and-rebuilding-local-loops-for-new-candidates toc="Restoring Full-Length Structures and Rebuilding Local Loops for New Candidates"}
-
-The new MD comparison includes four complexes formed by Gpr2 N84V and V368R with ascr#3 and ascr#18, together with two complexes formed by independent WT structures and the two ligands. The mutants use specified AF3 models and the top-ranked docking pose for each combination. The complete selection rationale has not yet been provided; see the candidate-selection notes in Engineering Section 2.2. Before entering the membrane environment, these inputs require restoration from docking receptors with deleted segments to full-length structures, together with assessment of the geometric relationships between the reintroduced local structures and the ligands.
-
-These docking receptors retain 370 of the 406 full-length residues, with original residues 1–21 and 164–178 removed and full-length numbering preserved. The ligand poses share the coordinate system of the receptors after deletion and alignment. When assembling full-length MD inputs, the original AF3 structures must be transformed into the docking coordinate system using the recorded rotation and translation, or the corresponding inverse transformation must be applied to the ligands. This deletion range applies to the inputs for this round.
-
-Restoring the full-length structure reintroduces regions that were absent during docking. The relationship between the locally covering loop, or lid, and the ligand involves which side of the opening contains the ligand, whether the loop is closed, and whether the geometry involves passage through the opening or interlocking. These questions are assessed separately from atomic clashes, completion of minimization or heating, and whether the system has equilibrated. The existing written records do not yet specify the complete residue range of the lid rebuilding.
-
-The earlier rebuilding protocol compared a branch using a common N84V backbone and a shared pose for each ligand with an original branch using each receptor’s own AF3 structure and each combination’s own docking pose. Some pairs therefore changed the lid, other backbone regions, mutant side chains, or the initial ligand pose simultaneously. Any trajectory differences would include the effects of these input changes and could not readily be attributed to local loop rebuilding alone. This rebuilding control has therefore been discontinued, and WT branches obtained by reverting mutations on the N84V backbone are no longer included.
-
-The four original mutant combinations and two independent WT systems are currently retained, each using its own receptor and ligand-pose sources. The independent WT–ascr#18 system underwent a Trp174 side-chain repair, which remains part of the input differences between groups. The proposed local rebuilding approach would fix each combination’s own ligand pose and all coordinates outside the lid, restricting sampling, closure, and optimization to the lid region. This new local protocol has not yet been executed, and the geometric problems identified in the original six systems still require treatment on a system-by-system basis.
-
-The selected N84V poses score more favorably for ascr#18, whereas those of V368R score more favorably for ascr#3. These four values describe the selected starting structures. The same-batch WT screening controls for both ligands and the complete candidate comparison are still missing. Specific models, pose identifiers, and branch statuses are listed in Methods Table C.
-
-### Input Sources and Completion Status of the New MD Study {#input-sources-and-completion-status-of-the-new-md-study toc="Input Sources and Completion Status of the New MD Study"}
-
-The available status records are current as of October 5, 2026. Heating and the two production-trajectory segments in the retained groups belong to the inputs from the original sources. They are recorded separately from the unexecuted local rebuilding protocol.
-
-### Insights from Dynamic Analysis {#insights-from-dynamic-analysis toc="Insights from Dynamic Analysis"}
-
-In Gpr3 R167Y–ascr#3, receptor backbone displacement occurred alongside retention of local ligand contacts. The ARG175 residue-level contact persisted, while the specific hydrogen bond examined formed in only some frames.
-
-The proposed local loop rebuilding for Gpr2 would fix each combination’s own ligand pose and coordinates outside the loop, restricting sampling, closure, and optimization to the lid region.
-
-## ODE {#ode toc="ODE"}
-
-### ODE: Connecting Receptor Recognition to Colorimetric Output {#ode-connecting-receptor-recognition-to-colorimetric-output toc="ODE: Connecting Receptor Recognition to Colorimetric Output"}
-
-#### Research Objectives {#research-objectives-2 toc="Research Objectives"}
-
-Molecular docking and MD focus on receptor–ligand interactions. The ODE model further describes how a signal passes through intracellular pathways after ligand recognition and is ultimately converted into an observable colorimetric output.
-
-Starting from the project design, we organized this process into seven nodes:
-
-Ligand L → receptor activity R_active → G protein G(t) → MAPK M(t) → synthetic transcription factor activity TF → GAL-regulated production rate Prod → colorimetric signal C(t).
-
-The main modeling objective is to connect input and output while adjusting model complexity to the available experimental data, establishing a basis for subsequent analysis of dose responses and color development.
-
-#### Initial Model: Retaining Dynamic Processes and Simplifying Intermediate Steps {#initial-model-retaining-dynamic-processes-and-simplifying-intermediate-steps toc="Initial Model: Retaining Dynamic Processes and Simplifying Intermediate Steps"}
-
-We used the literature to examine the time dependence of each step. The initial model uses three dynamic states to describe G protein activation, MAPK response, and color accumulation. The receptor’s response to the ligand, regulation of sTF by MAPK, and the effect of sTF on downstream production are connected through Hill functions or saturating algebraic relationships.
-
-This division retains the response times of signal transduction while reducing the number of intermediate parameters that must be determined independently. The multistage MAPK reactions are combined into one effective dynamic state, while the algebraic treatment of receptor responses and transcriptional regulation is an approximation in the initial model. If subsequent experiments reveal substantial delays in these steps, the corresponding assumptions will be reassessed.
-
-The current model runs individual simulations with constant ligand input. G protein and MAPK are represented by normalized activities, and color is expressed in arbitrary units. Parameters define illustrative scenarios; the actual timescale, concentration scale, and color intensity still require calibration using project data.
-
-#### Prototype Simulations and Control Comparisons {#prototype-simulations-and-control-comparisons toc="Prototype Simulations and Control Comparisons"}
-
-We have implemented a configurable numerical solution workflow that produces time-course curves for each state and compares model behavior under different input strengths, signaling-coupling conditions, and output conditions. In the reference scenario, G protein responds before MAPK, followed by gradual color accumulation, illustrating how the model connects signal transduction to output accumulation. These curves help explain model behavior but cannot yet directly determine the time required for actual detection.
-
-To distinguish ligand-induced signaling from background output, we paired ligand-containing scenarios with parameter-matched no-ligand controls. We compared total color output, the increase above background, and the ratio of the two. This helps avoid judging a design as better for detection solely because its total output is higher. When the background is zero or close to zero, the ratio may become uninterpretable, so absolute output and the difference from background must also be considered.
-
-We also checked output ranges, numerical consistency, and metric calculations to ensure that comparisons used the same time points and control conditions. These checks support computational use of the prototype; its biological predictive ability still requires experimental testing.
-
-#### Model Iteration: Matching Complexity to Experimental Conditions {#model-iteration-matching-complexity-to-experimental-conditions toc="Model Iteration: Matching Complexity to Experimental Conditions"}
-
-After establishing the prototype, we considered which observations the wet lab could provide. If the main readout is the final colorimetric signal, it is difficult to determine the gains and thresholds of the sTF, GAL-regulation, and color-development layers separately. We therefore redirected model refinement toward retaining essential signaling dynamics while combining output steps that lack independent observations.
-
-With a fixed construct copy number and under the assumptions of the original model, the output component can be expressed as:
-
-<div class="wiki-toolkit-block"><wiki-toolkit data-type="equation" data-props="{&quot;_template&quot;:&quot;equation&quot;,&quot;latex&quot;:&quot;B+A\\frac{M^{n_o}}{K_o^{n_o}+M^{n_o}}-\\delta C.&quot;}"><div class="wiki-toolkit-fallback"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>B</mi><mo>+</mo><mi>A</mi><mfrac><msup><mi>M</mi><msub><mi>n</mi><mi>o</mi></msub></msup><mrow><msubsup><mi>K</mi><mi>o</mi><msub><mi>n</mi><mi>o</mi></msub></msubsup><mo>+</mo><msup><mi>M</mi><msub><mi>n</mi><mi>o</mi></msub></msup></mrow></mfrac><mo>−</mo><mi>δ</mi><mi>C</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">B+A\frac{M^{n_o}}{K_o^{n_o}+M^{n_o}}-\delta C.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.0502em;">B</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:2.1629em;vertical-align:-0.8026em;"></span><span class="mord mathnormal">A</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3603em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.0715em;">K</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.7463em;"><span style="top:-2.5834em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">o</span></span></span><span style="top:-3.1449em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1645em;"><span style="top:-2.357em;margin-left:0em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="katex-sizing reset-size3 size1 mtight"><span class="mord mathnormal mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1166em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.109em;">M</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.5904em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1645em;"><span style="top:-2.357em;margin-left:0em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="katex-sizing reset-size3 size1 mtight"><span class="mord mathnormal mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.109em;">M</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6644em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1645em;"><span style="top:-2.357em;margin-left:0em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="katex-sizing reset-size3 size1 mtight"><span class="mord mathnormal mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8026em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.0379em;">δ</span><span class="mord mathnormal" style="margin-right:0.0715em;">C</span><span class="mord">.</span></span></span></span></span></div><noscript><style>.wiki-toolkit-fallback{display:block!important}wiki-toolkit:not(:defined){min-height:0;border:0;background:none;animation:none}</style><p>Enable JavaScript to use the interactive controls.</p></noscript></wiki-toolkit></div>
-
-Here, (B) is the background production rate, (A) is the maximum additional production rate, ($K_o$) and ($n_o$) describe the effective response from MAPK to color development, and ($\delta$) represents effective loss. This formulation preserves the original output relationship with fewer parameters and reduces the need to assign separate values to each intermediate step. The algebraic derivation and equivalence checks have been completed, while integration into the main solver is still underway.
-
-For the intermediate signaling pathway, we are also comparing published models and models from previous iGEM teams. The G protein cycle model of Yi et al. and the yeast signaling pathway model of Kofahl and Klipp provide references for reaction structures and parameter sources. Relevant modules have been independently run or checked. The final choice of reactions still requires adaptation to our receptor, chimeric G protein, and downstream constructs.
-
-#### Integration with Wet-Lab Experiments and Next Steps {#integration-with-wet-lab-experiments-and-next-steps toc="Integration with Wet-Lab Experiments and Next Steps"}
-
-Next, we will prioritize dose-response data and color-development time courses that include no-ligand controls to constrain background, response amplitude, and accumulation in the model. We first need to define whether the color variable represents culture absorbance, a signal normalized to cell quantity, or pigment concentration, and then determine the corresponding parameter meanings and units.
-
-Literature parameters will inform model adaptation, while project-specific input and color-development parameters will be calibrated experimentally. Additional dynamic steps will be introduced if the data indicate substantial delays or recovery processes.
-
-We have completed the normalized prototype, scenario and control calculations, some checks of published models, and the derivation of the combined output module. Subsequent work will complete module integration and wet-lab calibration, progressively testing whether the model can explain colorimetric changes under different ligand inputs and inform the design of detection conditions.
-
-## Eco {#eco toc="Eco"}
-
-### Economic Benefit Model: From Detection Information to Management Decisions {#economic-benefit-model-from-detection-information-to-management-decisions toc="Economic Benefit Model: From Detection Information to Management Decisions"}
-
-#### Research Objectives {#research-objectives-3 toc="Research Objectives"}
-
-Molecular docking, MD, and ODE modeling focus on receptor recognition and signal output. The economic benefit model addresses a further question: after receiving detection results, can growers use them to choose more appropriate management strategies and reduce economic losses caused by nematode infestation?
-
-Using greenhouse tomatoes in Spain and the southern root-knot nematode, *Meloidogyne incognita*, as an example, we translate preplant nematode density into expected yield loss, risk level, and returns per unit area. We examine the decision-making value of detection information by comparing three scenarios: no testing and no control, uniform treatment without testing, and risk-based treatment following testing.
-
-#### Model Structure and Basic Assumptions {#model-structure-and-basic-assumptions toc="Model Structure and Basic Assumptions"}
-
-The model takes preplant nematode density (d) as its input, measured in J2/100 cm³ of soil, where J2 denotes second-stage juveniles. Current calculations are performed per hectare for a single production season. They assume that the input density represents the field to be managed and that baseline yield, crop price, and the treatment efficacy of each strategy remain constant during that season.
-
-We first use the Seinhorst relationship fitted by Expósito et al. to convert nematode density into relative yield:
-
-<div class="wiki-toolkit-block"><wiki-toolkit data-type="equation" data-props="{&quot;_template&quot;:&quot;equation&quot;,&quot;latex&quot;:&quot;y(d)=\n\n\\begin{cases}\n\n1, &amp; d\\leq T,\\\\\n\nm+(1-m)z^{d/T-1}, &amp; d&gt;T.\n\n\\end{cases}&quot;}"><div class="wiki-toolkit-fallback"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>y</mi><mo stretchy="false">(</mo><mi>d</mi><mo stretchy="false">)</mo><mo>=</mo><mrow><mo fence="true">{</mo><mtable rowspacing="0.36em" columnalign="left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mn>1</mn><mo separator="true">,</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>d</mi><mo>≤</mo><mi>T</mi><mo separator="true">,</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>m</mi><mo>+</mo><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>m</mi><mo stretchy="false">)</mo><msup><mi>z</mi><mrow><mi>d</mi><mi mathvariant="normal">/</mi><mi>T</mi><mo>−</mo><mn>1</mn></mrow></msup><mo separator="true">,</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>d</mi><mo>&gt;</mo><mi>T</mi><mi mathvariant="normal">.</mi></mrow></mstyle></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">y(d)=
-
-\begin{cases}
-
-1, &amp; d\leq T,\\
-
-m+(1-m)z^{d/T-1}, &amp; d&gt;T.
-
-\end{cases}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0359em;">y</span><span class="mopen">(</span><span class="mord mathnormal">d</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:3em;vertical-align:-1.25em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size4">{</span></span><span class="mord"><span class="mtable"><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.69em;"><span style="top:-3.69em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord">1</span><span class="mpunct">,</span></span></span><span style="top:-2.25em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord mathnormal">m</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal">m</span><span class="mclose">)</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.044em;">z</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.888em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">d</span><span class="mord mtight">/</span><span class="mord mathnormal mtight" style="margin-right:0.1389em;">T</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mpunct">,</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.19em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:1em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.69em;"><span style="top:-3.69em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord mathnormal">d</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="mpunct">,</span></span></span><span style="top:-2.25em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord mathnormal">d</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="mord">.</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.19em;"><span></span></span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></div><noscript><style>.wiki-toolkit-fallback{display:block!important}wiki-toolkit:not(:defined){min-height:0;border:0;background:none;animation:none}</style><p>Enable JavaScript to use the interactive controls.</p></noscript></wiki-toolkit></div>
-
-Here, (T) is the tolerance density, (m) is the minimum relative yield approached at high densities, and (z) controls the rate of decline. The example uses (T=6), (m=0.34), and (z=0.95), with the yield-loss fraction defined as (L(d)=1-y(d)). The model accepts densities from 0 to 869.6 J2/100 cm³ of soil, matching the range covered by the source experiment. [1]
-
-The yield-loss fraction is then converted into an economic loss, and the relevant costs are deducted:
-
-<div class="wiki-toolkit-block"><wiki-toolkit data-type="equation" data-props="{&quot;_template&quot;:&quot;equation&quot;,&quot;latex&quot;:&quot;N(d)=Y_0P-C_0-Y_0P,L(d)(1-e)-C_t-C_d.&quot;}"><div class="wiki-toolkit-fallback"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>N</mi><mo stretchy="false">(</mo><mi>d</mi><mo stretchy="false">)</mo><mo>=</mo><msub><mi>Y</mi><mn>0</mn></msub><mi>P</mi><mo>−</mo><msub><mi>C</mi><mn>0</mn></msub><mo>−</mo><msub><mi>Y</mi><mn>0</mn></msub><mi>P</mi><mo separator="true">,</mo><mi>L</mi><mo stretchy="false">(</mo><mi>d</mi><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>e</mi><mo stretchy="false">)</mo><mo>−</mo><msub><mi>C</mi><mi>t</mi></msub><mo>−</mo><msub><mi>C</mi><mi>d</mi></msub><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">N(d)=Y_0P-C_0-Y_0P,L(d)(1-e)-C_t-C_d.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">N</span><span class="mopen">(</span><span class="mord mathnormal">d</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.2222em;">Y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.2222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0715em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.2222em;">Y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.2222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">L</span><span class="mopen">(</span><span class="mord mathnormal">d</span><span class="mclose">)</span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">e</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0715em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0715em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">.</span></span></span></span></span></div><noscript><style>.wiki-toolkit-fallback{display:block!important}wiki-toolkit:not(:defined){min-height:0;border:0;background:none;animation:none}</style><p>Enable JavaScript to use the interactive controls.</p></noscript></wiki-toolkit></div>
-
-Here, ($Y_0$) is baseline yield, (P) is crop price, ($C_0$) is the base production cost, (e) is the fraction of loss avoided by treatment, and ($C_t$) and ($C_d$) are treatment and testing costs, respectively. All three scenarios use the same baseline yield and price; differences in returns arise from residual losses and additional costs.
-
-#### Parameter Sources and Risk-Based Management {#parameter-sources-and-risk-based-management toc="Parameter Sources and Risk-Based Management"}
-
-The current example combines density-yield research with control-cost research to establish the calculation sequence. Baseline yield is 113,500 kg/ha, potential revenue is approximately 78,320 EUR/ha, and base production costs are 51,600 EUR/ha. [1, 2] Testing costs are provisionally set by the team at 5 EUR/ha and will need to be revised using material costs, sample numbers, and labor costs.
-
-We define three risk levels corresponding to different treatment intensities:
-
-The thresholds of 10 and 80 are team-defined classification rules used for demonstration and can later be adjusted according to local costs and treatment efficacy.
-
-The nematode population-control efficacy reported in the literature must also be converted into the fraction of yield loss avoided using the density-yield relationship. We performed this conversion at a common reference density of 100 J2/100 cm³, obtaining avoided-loss fractions of approximately 58.68% and 69.12% for the medium- and high-level strategies, respectively. These are used as fixed approximations in the example. [2] Actual efficacy at different densities and under field conditions still requires further calibration.
-
-#### Example Results: How Much Benefit Does Detection Information Provide? {#example-results-how-much-benefit-does-detection-information-provide toc="Example Results: How Much Benefit Does Detection Information Provide?"}
-
-At an input density of 100 J2/100 cm³, the model estimates a relative yield of approximately 63.55%, corresponding to a yield loss of about 36.45% and a gross loss without control of approximately 28,548.19 EUR/ha. The calculated results for the three management scenarios are as follows:
-
-Compared with no control, the additional return from treatment following detection includes the effect of the control measure itself. Compared with an existing uniform-treatment strategy, risk-based treatment adds approximately 496.26 EUR/ha. This difference more closely represents the added value, in this example, of obtaining density information and adjusting treatment intensity accordingly.
-
-The model also indicates that the benefit of detection depends on whether the result changes the management action. Under the current low-risk rule, testing adds a cost without changing the treatment strategy. At higher risk levels, the treatment changes, and the return changes with it. Risk thresholds therefore need to be evaluated together with costs and control efficacy rather than treated as fixed economic optima.
-
-#### Model Checks and Applicability {#model-checks-and-applicability toc="Model Checks and Applicability"}
-
-The Spanish greenhouse-tomato example has passed 12 automated checks covering the loss formula, risk classification, cost calculations, invalid inputs, and numerical consistency between the Chinese and English reports. The model does not extrapolate beyond the density range covered by the literature. Where a denominator is zero, the corresponding return-rate metric is not calculated.
-
-These checks support reproducibility of the specified calculations. The current results remain scenario comparisons under fixed parameters. The main literature sources do not come from the same field, and regional average yield, provisional testing costs, and converted treatment efficacy all require updating with local data. Sampling error, detection performance, price fluctuations, and long-term soil effects have not yet been incorporated.
-
-#### Integration with Wet Lab and Human Practices {#integration-with-wet-lab-and-human-practices toc="Integration with Wet Lab and Human Practices"}
-
-The economic model identifies data needs for subsequent experiments and field research. Wet Lab needs to establish a calibration relationship between sensor signals and soil nematode density and provide information such as the detection limit, sensitivity, and specificity. Human Practices can contribute local crop prices, treatment costs, testing costs, and growers’ willingness to pay to support assessment of application settings and pricing.
-
-The model also feeds requirements back into detection-system design. If management strategies change with density level, semiquantitative or quantitative information is more useful for selecting treatment intensity. The detection range should cover the key intervals where strategies change, while results close to thresholds require consideration of sampling and measurement error. We will progressively incorporate these data and use independent field results to test the links between detection, assessment, management, and economic returns.
-
-### References {#references toc="References"}
-
-[1] Expósito A, Pujolà M, Achaerandio I, et al. Tomato and Melon Meloidogyne Resistant Rootstocks Improve Crop Yield but Melon Fruit Quality Is Influenced by the Cropping Season. *Frontiers in Plant Science*, 2020.
-
-[2] Talavera-Rubia M, Vela-Delgado M D, Verdejo-Lucas S. A Cost-Benefit Analysis of Soil Disinfestation Methods against Root-Knot Nematodes in Mediterranean Intensive Horticulture. *Plants*, 2022.
-
-## References {#references-2 toc="References"}
-
-### Docking and Receptor Recognition {#docking-and-receptor-recognition toc="Docking and Receptor Recognition"}
-
-B01. Manosalva P, Manohar M, von Reuss SH, et al. Conserved nematode signalling molecules elicit plant defenses and pathogen resistance. *Nature Communications.* 2015;6:7795. DOI: [10.1038/ncomms8795](https://doi.org/10.1038/ncomms8795).
-
-B02. Kuo C-Y, Tay RJ, Lin H-C, et al. The nematode-trapping fungus Arthrobotrys oligospora detects prey pheromones via G protein-coupled receptors. *Nature Microbiology.* 2024;9:1738–1751. DOI: [10.1038/s41564-024-01679-w](https://doi.org/10.1038/s41564-024-01679-w).
-
-B03. Hu X, Hoffmann DS, Wang M, et al. GprC of the nematode-trapping fungus Arthrobotrys flagrans activates mitochondria and reprograms fungal cells for nematode hunting. *Nature Microbiology.* 2024;9:1752–1763. DOI: [10.1038/s41564-024-01731-9](https://doi.org/10.1038/s41564-024-01731-9).
-
-B04. AutoDock Vina developers. *AutoDock Vina Documentation: Frequently Asked Questions.* Accessed October 7, 2026. Relevant entries: “How accurate is AutoDock Vina?”; “How big should the search space be?”; “Why do I not get the correct bound conformation?”
-
-B05. Bouysset C, Fiorucci S. ProLIF: a library to encode molecular interactions as fingerprints. *Journal of Cheminformatics.* 2021;13:72. DOI: [10.1186/s13321-021-00548-6](https://doi.org/10.1186/s13321-021-00548-6).
-
-B06. Meeko authors, Forli Lab. *Meeko Documentation: Exporting docking results.* Accessed October 7, 2026. Relevant content: SMILES and index mapping in PDBQT files, SDF export, and dependence on structural metadata.
-
-B07. Abramson J, Adler J, Dunger J, et al. Accurate structure prediction of biomolecular interactions with AlphaFold 3. *Nature.* 2024;630:493–500. DOI: [10.1038/s41586-024-07487-w](https://doi.org/10.1038/s41586-024-07487-w).
-
-B08. Katoh K, Standley DM. MAFFT multiple sequence alignment software version 7: improvements in performance and usability. *Molecular Biology and Evolution.* 2013;30(4):772–780. DOI: [10.1093/molbev/mst010](https://doi.org/10.1093/molbev/mst010).
-
-B09. Edgar RC. Muscle5: High-accuracy alignment ensembles enable unbiased assessments of sequence homology and phylogeny. *Nature Communications.* 2022;13:6968. DOI: [10.1038/s41467-022-34630-w](https://doi.org/10.1038/s41467-022-34630-w).
-
-B10. Zhang C, Shine M, Pyle AM, Zhang Y. US-align: universal structure alignments of proteins, nucleic acids, and macromolecular complexes. *Nature Methods.* 2022;19:1109–1115. DOI: [10.1038/s41592-022-01585-1](https://doi.org/10.1038/s41592-022-01585-1).
-
-B11. Söding J. Protein homology detection by HMM–HMM comparison. *Bioinformatics.* 2005;21(7):951–960. DOI: [10.1093/bioinformatics/bti125](https://doi.org/10.1093/bioinformatics/bti125).
-
-B12. Reliability and reproducibility checklist for molecular dynamics simulations. Editorial. *Communications Biology.* 2023;6:268. DOI: [10.1038/s42003-023-04653-0](https://doi.org/10.1038/s42003-023-04653-0).
-
-[1] Hsueh Y-P, Mahanti P, Schroeder FC, Sternberg PW. Nematode-Trapping Fungi Eavesdrop on Nematode Pheromones. *Current Biology.* 2013;23:83–86. [Article](https://doi.org/10.1016/j.cub.2012.11.035)
-
-[2] Kuo C-Y, et al. The nematode-trapping fungus Arthrobotrys oligospora detects prey pheromones via G protein-coupled receptors. *Nature Microbiology.* 2024;9:1738–1751. [Article](https://doi.org/10.1038/s41564-024-01679-w)
-
-[3] Hu X, et al. GprC of the nematode-trapping fungus Arthrobotrys flagrans activates mitochondria and reprograms fungal cells for nematode hunting. *Nature Microbiology.* 2024;9:1752–1763. [Article](https://doi.org/10.1038/s41564-024-01731-9)
-
-[4] Trott O, Olson AJ. AutoDock Vina: Improving the speed and accuracy of docking with a new scoring function, efficient optimization, and multithreading. *Journal of Computational Chemistry.* 2010;31:455–461. [Article](https://doi.org/10.1002/jcc.21334)
-
-[5] Eberhardt J, Santos-Martins D, Tillack AF, Forli S. AutoDock Vina 1.2.0: New Docking Methods, Expanded Force Field, and Python Bindings. *Journal of Chemical Information and Modeling.* 2021;61:3891–3898. [Article](https://doi.org/10.1021/acs.jcim.1c00203)
-
-[6] Bouysset C, Fiorucci S. ProLIF: a library to encode molecular interactions as fingerprints. *Journal of Cheminformatics.* 2021;13:72. [Article](https://doi.org/10.1186/s13321-021-00548-6)
-
-### MD and Membrane System Simulations {#md-and-membrane-system-simulations toc="MD and Membrane System Simulations"}
-
-[7] Huang J, et al. CHARMM36m: an improved force field for folded and intrinsically disordered proteins. *Nature Methods.* 2017;14:71–73. [Article](https://doi.org/10.1038/nmeth.4067)
-
-[8] Feng S, Park S, Choi YK, Im W. CHARMM-GUI Membrane Builder: Past, Current, and Future Developments and Applications. *Journal of Chemical Theory and Computation.* 2023;19:2161–2185. [Article](https://doi.org/10.1021/acs.jctc.2c01246)
-
-### ODE Modeling and Signal Output {#ode-modeling-and-signal-output toc="ODE Modeling and Signal Output"}
-
-[9] Yi T-M, Kitano H, Simon MI. A quantitative characterization of the yeast heterotrimeric G protein cycle. *Proceedings of the National Academy of Sciences.* 2003;100:10764–10769. [Article](https://doi.org/10.1073/pnas.1834247100)
-
-[10] Kofahl B, Klipp E. Modelling the dynamics of the yeast pheromone pathway. *Yeast.* 2004;21:831–850. [Article](https://doi.org/10.1002/yea.1122)
-
-[11] Shaw WM, et al. Engineering a Model Cell for Rational Tuning of GPCR Signaling. *Cell.* 2019;177:782–796.e27. [Article](https://doi.org/10.1016/j.cell.2019.02.023)
-
-[12] Fan C, Yuan J. Reshaping the yeast galactose regulon via GPCR signaling cascade. *Cell Reports Methods.* 2023;3:100647. [Article](https://doi.org/10.1016/j.crmeth.2023.100647)
-
-[13] Fan C, He N, Yuan J. Cascaded amplifying circuit enables sensitive detection of fungal pathogens. *Biosensors and Bioelectronics.* 2024;250:116058. [Article](https://doi.org/10.1016/j.bios.2024.116058)
-
-### Economic Benefit Modeling and Management Decisions {#economic-benefit-modeling-and-management-decisions toc="Economic Benefit Modeling and Management Decisions"}
-
-[14] FAO. Nematode population dynamics, threshold levels and estimation of crop losses. [Original source](https://www.fao.org/4/V9978E/v9978e07.htm)
-
-[15] UC Statewide Integrated Pest Management Program. Root-Knot Nematode: Tomato Pest Management Guidelines.
+## From recognition to management decisions {#overview toc="Connected questions"}
+
+:::lead
+Our four modeling studies connect **molecular recognition, dynamic contacts, signal interpretation** and the value of density information. Each stage answers a different question and defines what the next stage needs to test.
+:::
+
+Docking compares predicted contacts and **two-ligand scores** to nominate receptor changes. MD follows selected complexes in a membrane. ODE and two-channel models connect mixed ligand inputs to color and target density. Eco asks whether density information changes management choices and conditional income.
+
+:::cards{cols=2}
+### Docking {icon="inspect" href="/model-docking/"}
+From WT contact differences through 76 single-mutant designs to complementary N84V and V368R candidates.
+
+### Molecular Dynamics {icon="cycle" href="/model-md/"}
+Six membrane systems, local ligand motion, persistent contacts and the limits of single-trajectory comparisons.
+
+### ODE and two-channel sensing {icon="signal" href="/model-ode/"}
+A six-state signaling model, simulated color calibration, phone observation and paired-color density estimation.
+
+### Economic benefit {icon="cost" href="/model-eco/"}
+Density-to-yield relationships and three management scenarios, with separate comparisons against no control and **uniform control**.
+:::
+
+## Molecular recognition {#molecular-docking-from-receptor-comparisons-to-gpr2-mutant-design toc="Docking"}
+
+<span id="research-objectives" class="model-legacy-anchor" aria-hidden="true"></span>
+<span id="computational-workflow-and-evaluation-methods" class="model-legacy-anchor" aria-hidden="true"></span>
+<span id="receptor-comparisons-and-selection-of-the-study-target" class="model-legacy-anchor" aria-hidden="true"></span>
+<span id="from-hotspot-identification-to-combination-design" class="model-legacy-anchor" aria-hidden="true"></span>
+<span id="main-findings-and-subsequent-validation" class="model-legacy-anchor" aria-hidden="true"></span>
+<span id="docking-differential-contacts-with-two-ligands-and-residue-correspondence" class="model-legacy-anchor" aria-hidden="true"></span>
+<span id="comparison-set-and-contact-frequencies" class="model-legacy-anchor" aria-hidden="true"></span>
+<span id="differential-contacts-with-two-ligands-in-the-three-fungal-receptors" class="model-legacy-anchor" aria-hidden="true"></span>
+<span id="support-for-tm6-positional-correspondence-and-disagreement-in-the-nematode-receptors" class="model-legacy-anchor" aria-hidden="true"></span>
+<span id="gprc-n56-and-other-receptor-specific-contacts" class="model-legacy-anchor" aria-hidden="true"></span>
+<span id="how-search-regions-and-chemical-representation-affect-interpretation" class="model-legacy-anchor" aria-hidden="true"></span>
+<span id="common-coordinate-references-membrane-orientation-and-local-searches" class="model-legacy-anchor" aria-hidden="true"></span>
+<span id="atom-record-integrity-and-formal-charges" class="model-legacy-anchor" aria-hidden="true"></span>
+<span id="from-differential-contacts-to-testable-structural-hypotheses" class="model-legacy-anchor" aria-hidden="true"></span>
+
+Contact differences identify positions to test. Side-chain scans and combinations show why two ligand scores must be interpreted separately; contact retention alone does not guarantee a favorable score. N84V and V368R provide opposite candidate directions for further study. [Read the docking workflow and score table](/model-docking/).
+
+## Testing contacts in motion {#molecular-dynamics-from-global-motion-to-local-contact-behavior toc="Molecular Dynamics"}
+
+<span id="md-receptor-motion-and-local-ligand-contacts" class="model-legacy-anchor" aria-hidden="true"></span>
+<span id="simulation-systems-and-analysis-questions" class="model-legacy-anchor" aria-hidden="true"></span>
+<span id="dynamic-comparison-of-gpr2-wt-and-single-mutants" class="model-legacy-anchor" aria-hidden="true"></span>
+<span id="gpr3-r167y-coexistence-of-global-displacement-and-local-contacts" class="model-legacy-anchor" aria-hidden="true"></span>
+<span id="restoring-full-length-structures-and-rebuilding-local-loops-for-new-candidates" class="model-legacy-anchor" aria-hidden="true"></span>
+<span id="input-sources-and-completion-status-of-the-new-md-study" class="model-legacy-anchor" aria-hidden="true"></span>
+<span id="insights-from-dynamic-analysis" class="model-legacy-anchor" aria-hidden="true"></span>
+
+Each of WT, N84V and V368R was paired with both ligands for **one 100 ns trajectory**. Pocket-aligned motion and contact occupancy inform structural explanations, with **starting-pose differences and lack of replicates** retained as limitations. [Read the MD observations and pending method details](/model-md/).
+
+## From a mixed sample to paired colors {#ode-modeling-from-receptor-input-to-color-output toc="ODE and density"}
+
+<span id="ode" class="model-legacy-anchor" aria-hidden="true"></span>
+<span id="ode-connecting-receptor-recognition-to-colorimetric-output" class="model-legacy-anchor" aria-hidden="true"></span>
+<span id="research-objectives-2" class="model-legacy-anchor" aria-hidden="true"></span>
+<span id="initial-model-retaining-dynamic-processes-and-simplifying-intermediate-steps" class="model-legacy-anchor" aria-hidden="true"></span>
+<span id="prototype-simulations-and-control-comparisons" class="model-legacy-anchor" aria-hidden="true"></span>
+<span id="model-iteration-matching-complexity-to-experimental-conditions" class="model-legacy-anchor" aria-hidden="true"></span>
+<span id="integration-with-wet-lab-experiments-and-next-steps" class="model-legacy-anchor" aria-hidden="true"></span>
+
+The ODE uses a **literature-derived common signaling core** and **project-specific input/output interfaces**. Paired simulated colors allow a regression to estimate Mi density without supplying Ce density at prediction time. **The current evidence is simulated**; experiments must calibrate secretion, sensor response and reading conditions. [Read the equations, four research figures and parameter tables](/model-ode/).
+
+## From density to an action {#economic-benefit-modeling-from-detection-information-to-management-decisions toc="Economic benefit"}
+
+<span id="eco" class="model-legacy-anchor" aria-hidden="true"></span>
+<span id="economic-benefit-model-from-detection-information-to-management-decisions" class="model-legacy-anchor" aria-hidden="true"></span>
+<span id="research-objectives-3" class="model-legacy-anchor" aria-hidden="true"></span>
+<span id="model-structure-and-basic-assumptions" class="model-legacy-anchor" aria-hidden="true"></span>
+<span id="parameter-sources-and-risk-based-management" class="model-legacy-anchor" aria-hidden="true"></span>
+<span id="example-results-how-much-benefit-does-detection-information-provide" class="model-legacy-anchor" aria-hidden="true"></span>
+<span id="model-checks-and-applicability" class="model-legacy-anchor" aria-hidden="true"></span>
+<span id="integration-with-wet-lab-and-human-practices" class="model-legacy-anchor" aria-hidden="true"></span>
+<span id="references" class="model-legacy-anchor" aria-hidden="true"></span>
+<span id="references-2" class="model-legacy-anchor" aria-hidden="true"></span>
+<span id="docking-and-receptor-recognition" class="model-legacy-anchor" aria-hidden="true"></span>
+<span id="md-and-membrane-system-simulations" class="model-legacy-anchor" aria-hidden="true"></span>
+<span id="ode-modeling-and-signal-output" class="model-legacy-anchor" aria-hidden="true"></span>
+<span id="economic-benefit-modeling-and-management-decisions" class="model-legacy-anchor" aria-hidden="true"></span>
+
+The Spain/protected-tomato scenario distinguishes the benefit of a testing-and-control program from the added value of changing a uniform treatment. The interactive economic comparison uses density directly and the submitted economic parameters. [Explore the economic model](/model-eco/).
+
+## What the models establish {#model-evidence toc="Evidence and next steps"}
+
+| Study | Present contribution | Further evidence needed |
+| --- | --- | --- |
+| Docking | Candidate scores, predicted poses and contact hypotheses | Prepared structural panels and experimental binding/selectivity tests |
+| MD | Local movement and contact observations in selected trajectories | Complete preparation methods, revised interpretations and replicate comparisons |
+| ODE / two channels | Internal calibration and density estimation in simulated mixtures | Measured paired samples, pigment/phone calibration and noise evaluation |
+| Eco | Reproducible conditional management comparisons | Local cost, sampling, treatment and detection-error data |
+
+The original Chinese manuscripts are preserved in the team's source archive. The English presentation retains scientific qualifications and marks unfinished author material. Candidate ranking, simulated prediction error and scenario income each have different meanings; none substitutes for experimental or field validation.

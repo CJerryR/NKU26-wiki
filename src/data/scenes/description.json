@@ -1,0 +1,254 @@
+{
+  "page": "description",
+  "enabled": true,
+  "note": "Design units: desktop canvas 1600x900, mobile 900x1600, origin at the canvas centre, y down. w = drawn width. from = state at scroll progress 0, to = state at 1; win = the part of the progress over which this layer moves. s scale, r degrees, o opacity. depth = pointer parallax in design px.",
+  "signature": "The soil block splits; the roots and the nematode behind it come into view.",
+  "desktop": {
+    "canvas": [
+      1600,
+      900
+    ],
+    "title": {
+      "y": -30,
+      "toY": -300,
+      "toScale": 0.62
+    },
+    "layers": [
+      {
+        "id": "strip",
+        "prop": "strip",
+        "w": 250,
+        "z": 2,
+        "depth": 26,
+        "from": {
+          "x": 440,
+          "y": -190,
+          "r": -4
+        },
+        "to": {
+          "x": 650,
+          "y": -320,
+          "r": 10,
+          "s": 1.08
+        },
+        "win": [
+          0.08,
+          0.8
+        ]
+      },
+      {
+        "id": "roots",
+        "prop": "roots",
+        "w": 200,
+        "z": 3,
+        "depth": 10,
+        "from": {
+          "x": 0,
+          "y": 300,
+          "s": 0.82,
+          "o": 0
+        },
+        "to": {
+          "x": -20,
+          "y": 170,
+          "s": 1.12,
+          "o": 1
+        },
+        "win": [
+          0.16,
+          0.66
+        ]
+      },
+      {
+        "id": "soil-left",
+        "prop": "soil-left",
+        "w": 320,
+        "z": 4,
+        "depth": 18,
+        "from": {
+          "x": -300,
+          "y": 190
+        },
+        "to": {
+          "x": -640,
+          "y": 250,
+          "r": -9,
+          "s": 1.22
+        },
+        "win": [
+          0.1,
+          0.72
+        ]
+      },
+      {
+        "id": "soil-right",
+        "prop": "soil-right",
+        "w": 320,
+        "z": 4,
+        "depth": 18,
+        "from": {
+          "x": 300,
+          "y": 190
+        },
+        "to": {
+          "x": 640,
+          "y": 250,
+          "r": 9,
+          "s": 1.22
+        },
+        "win": [
+          0.1,
+          0.72
+        ]
+      },
+      {
+        "id": "nematode",
+        "prop": "nematode",
+        "w": 290,
+        "z": 5,
+        "depth": 14,
+        "from": {
+          "x": 60,
+          "y": 330,
+          "s": 0.8,
+          "o": 0
+        },
+        "to": {
+          "x": 200,
+          "y": 290,
+          "r": -7,
+          "o": 1,
+          "s": 1
+        },
+        "win": [
+          0.32,
+          0.78
+        ]
+      }
+    ]
+  },
+  "mobile": {
+    "canvas": [
+      900,
+      1600
+    ],
+    "title": {
+      "y": -80,
+      "toY": -470,
+      "toScale": 0.7
+    },
+    "layers": [
+      {
+        "id": "strip",
+        "prop": "strip",
+        "w": 290,
+        "z": 2,
+        "depth": 0,
+        "from": {
+          "x": 230,
+          "y": -440,
+          "r": -4
+        },
+        "to": {
+          "x": 330,
+          "y": -600,
+          "r": 12,
+          "s": 1.05
+        },
+        "win": [
+          0.08,
+          0.8
+        ]
+      },
+      {
+        "id": "roots",
+        "prop": "roots",
+        "w": 230,
+        "z": 3,
+        "depth": 0,
+        "from": {
+          "x": 0,
+          "y": 470,
+          "s": 0.82,
+          "o": 0
+        },
+        "to": {
+          "x": -10,
+          "y": 330,
+          "s": 1.1,
+          "o": 1
+        },
+        "win": [
+          0.16,
+          0.66
+        ]
+      },
+      {
+        "id": "soil-left",
+        "prop": "soil-left",
+        "w": 330,
+        "z": 4,
+        "depth": 0,
+        "from": {
+          "x": -200,
+          "y": 420
+        },
+        "to": {
+          "x": -430,
+          "y": 560,
+          "r": -9,
+          "s": 1.12
+        },
+        "win": [
+          0.1,
+          0.72
+        ]
+      },
+      {
+        "id": "soil-right",
+        "prop": "soil-right",
+        "w": 330,
+        "z": 4,
+        "depth": 0,
+        "from": {
+          "x": 200,
+          "y": 420
+        },
+        "to": {
+          "x": 430,
+          "y": 560,
+          "r": 9,
+          "s": 1.12
+        },
+        "win": [
+          0.1,
+          0.72
+        ]
+      },
+      {
+        "id": "nematode",
+        "prop": "nematode",
+        "w": 360,
+        "z": 5,
+        "depth": 0,
+        "from": {
+          "x": 40,
+          "y": 600,
+          "s": 0.8,
+          "o": 0
+        },
+        "to": {
+          "x": 110,
+          "y": 560,
+          "r": -6,
+          "o": 1,
+          "s": 1
+        },
+        "win": [
+          0.32,
+          0.78
+        ]
+      }
+    ]
+  }
+}

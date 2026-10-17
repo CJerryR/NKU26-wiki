@@ -1,12 +1,24 @@
 {
-  "title": "Model 2",
-  "heading": "Model 2",
-  "sub": "",
+  "title": "Model archive: Molecular Dynamics",
+  "heading": "Molecular Dynamics",
+  "sub": "Continue to the current model chapter.",
   "crumbs": [
     "Model",
-    "Model 2"
+    "Molecular Dynamics"
   ],
+  "hidden": true,
+  "search": false,
   "meta": [],
-  "search": true,
-  "blocks": []
+  "blocks": [
+    {
+      "_template": "heading",
+      "level": 2,
+      "text": "Current chapter",
+      "attributes": "#current-chapter toc=\"Current chapter\""
+    },
+    {
+      "_template": "text",
+      "body": "The model chapters now have descriptive names. [Continue to Molecular Dynamics](/model-md/), or [open the Model overview](/model/)."
+    }
+  ]
 }

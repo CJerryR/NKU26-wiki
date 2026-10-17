@@ -1,5 +1,5 @@
 {
-  "verified_at": "2026-10-11T02:46:54.501811+00:00",
+  "verified_at": "2026-10-18T04:57:21.674520+08:00",
   "scope": "Recorded CDN assets referenced in the current build; HTTP checks do not certify licensing or human review.",
   "assets": [
     {
@@ -3471,6 +3471,924 @@
         "status": "http-only"
       },
       "verification": "HTTP 200 and nonempty response verified; http-only"
+    },
+    {
+      "path": "img/nankai-seal.gif",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-a8e96b14b89e-nankai-seal.webp",
+      "source_sha256": "c7598d95805d9c22d59b7daf1d5ab62d9ca3b36b0e7b67123e028ea66f7d9a9c",
+      "cdn_sha256": "a8e96b14b89eddd0f6e0ce2f3cf6b48c82468645d5d1757ef1ddabfc8a67c03b",
+      "bytes": 1046054,
+      "content_type": "image/webp",
+      "dimensions": {
+        "width": 648,
+        "height": 216
+      },
+      "source_dimensions": {
+        "width": 648,
+        "height": 216
+      },
+      "checked_at": "2026-10-18T04:55:58.430235+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/scenes/acknowledgements-desktop.webp",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-ffda496b49ca-acknowledgements-desktop.webp",
+      "source_sha256": "ffda496b49ca1c3214617b7630507d2f0259290660b23d2777e69f3b91c2ba96",
+      "cdn_sha256": "ffda496b49ca1c3214617b7630507d2f0259290660b23d2777e69f3b91c2ba96",
+      "bytes": 157358,
+      "content_type": "image/webp",
+      "dimensions": {
+        "width": 1956,
+        "height": 1972
+      },
+      "source_dimensions": {
+        "width": 1956,
+        "height": 1972
+      },
+      "checked_at": "2026-10-18T04:55:57.870929+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/scenes/acknowledgements-mobile.webp",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-1b42b8336d5d-acknowledgements-mobile.webp",
+      "source_sha256": "1b42b8336d5daa875b08bc77595a54a96268cd21dfa75af19c2a27d9b7118a62",
+      "cdn_sha256": "1b42b8336d5daa875b08bc77595a54a96268cd21dfa75af19c2a27d9b7118a62",
+      "bytes": 90620,
+      "content_type": "image/webp",
+      "dimensions": {
+        "width": 1473,
+        "height": 1532
+      },
+      "source_dimensions": {
+        "width": 1473,
+        "height": 1532
+      },
+      "checked_at": "2026-10-18T04:55:57.723363+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/scenes/attributions-desktop.webp",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-071a5bc41ed9-attributions-desktop.webp",
+      "source_sha256": "071a5bc41ed94764aec5353ece39cc9af8f9fd9e66341bc954abcf082e076a80",
+      "cdn_sha256": "071a5bc41ed94764aec5353ece39cc9af8f9fd9e66341bc954abcf082e076a80",
+      "bytes": 38874,
+      "content_type": "image/webp",
+      "dimensions": {
+        "width": 1346,
+        "height": 265
+      },
+      "source_dimensions": {
+        "width": 1346,
+        "height": 265
+      },
+      "checked_at": "2026-10-18T04:55:57.624491+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/scenes/attributions-mobile.webp",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-2c62556b175b-attributions-mobile.webp",
+      "source_sha256": "2c62556b175bb568d9fd53c77ba2e7fc9ec81c307d2d2d9c0c0acff003d2fd19",
+      "cdn_sha256": "2c62556b175bb568d9fd53c77ba2e7fc9ec81c307d2d2d9c0c0acff003d2fd19",
+      "bytes": 40010,
+      "content_type": "image/webp",
+      "dimensions": {
+        "width": 1341,
+        "height": 264
+      },
+      "source_dimensions": {
+        "width": 1341,
+        "height": 264
+      },
+      "checked_at": "2026-10-18T04:55:57.624439+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/scenes/awards-desktop.webp",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-cf4f0acb3050-awards-desktop.webp",
+      "source_sha256": "cf4f0acb30509e4e63d4cae6c6d9921b83dc10e6f0bdb200dd4af1818a7185b6",
+      "cdn_sha256": "cf4f0acb30509e4e63d4cae6c6d9921b83dc10e6f0bdb200dd4af1818a7185b6",
+      "bytes": 138514,
+      "content_type": "image/webp",
+      "dimensions": {
+        "width": 1208,
+        "height": 1689
+      },
+      "source_dimensions": {
+        "width": 1208,
+        "height": 1689
+      },
+      "checked_at": "2026-10-18T04:55:57.935377+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/scenes/awards-mobile.webp",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-886ada3d3035-awards-mobile.webp",
+      "source_sha256": "886ada3d303514f8144d7639aa6c3a6146ca710615df3ad698eeabec675fdc22",
+      "cdn_sha256": "886ada3d303514f8144d7639aa6c3a6146ca710615df3ad698eeabec675fdc22",
+      "bytes": 124866,
+      "content_type": "image/webp",
+      "dimensions": {
+        "width": 1014,
+        "height": 1311
+      },
+      "source_dimensions": {
+        "width": 1014,
+        "height": 1311
+      },
+      "checked_at": "2026-10-18T04:55:59.446776+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/scenes/background-desktop.webp",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-2c6e40e28b7a-background-desktop.webp",
+      "source_sha256": "2c6e40e28b7a32b4781e15d794ed96df5d8dc6a8b07ad965655f9a249c8ece10",
+      "cdn_sha256": "2c6e40e28b7a32b4781e15d794ed96df5d8dc6a8b07ad965655f9a249c8ece10",
+      "bytes": 90598,
+      "content_type": "image/webp",
+      "dimensions": {
+        "width": 669,
+        "height": 1478
+      },
+      "source_dimensions": {
+        "width": 669,
+        "height": 1478
+      },
+      "checked_at": "2026-10-18T04:55:59.373516+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/scenes/background-mobile.webp",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-aacf9a056dd1-background-mobile.webp",
+      "source_sha256": "aacf9a056dd1e5d4bd18858a3a31ad0c006b18eefc0b35005b3597d9a3514c8b",
+      "cdn_sha256": "aacf9a056dd1e5d4bd18858a3a31ad0c006b18eefc0b35005b3597d9a3514c8b",
+      "bytes": 67180,
+      "content_type": "image/webp",
+      "dimensions": {
+        "width": 709,
+        "height": 957
+      },
+      "source_dimensions": {
+        "width": 709,
+        "height": 957
+      },
+      "checked_at": "2026-10-18T04:55:59.516603+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/scenes/contribution-desktop.webp",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-5528f9bff332-contribution-desktop.webp",
+      "source_sha256": "5528f9bff332a75241ca579b48cca04f6f5f7121f19734a6b5c73ec0fd3e6527",
+      "cdn_sha256": "5528f9bff332a75241ca579b48cca04f6f5f7121f19734a6b5c73ec0fd3e6527",
+      "bytes": 34726,
+      "content_type": "image/webp",
+      "dimensions": {
+        "width": 640,
+        "height": 1114
+      },
+      "source_dimensions": {
+        "width": 640,
+        "height": 1114
+      },
+      "checked_at": "2026-10-18T04:55:59.448034+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/scenes/contribution-mobile.webp",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-b27e379b4c03-contribution-mobile.webp",
+      "source_sha256": "b27e379b4c033013b6532cc2c4ff63b9fe94e26879b5956e77dc0ba11501eed1",
+      "cdn_sha256": "b27e379b4c033013b6532cc2c4ff63b9fe94e26879b5956e77dc0ba11501eed1",
+      "bytes": 24386,
+      "content_type": "image/webp",
+      "dimensions": {
+        "width": 522,
+        "height": 1018
+      },
+      "source_dimensions": {
+        "width": 522,
+        "height": 1018
+      },
+      "checked_at": "2026-10-18T04:55:59.440159+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/scenes/description-desktop.webp",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-2ca7580ba2a1-description-desktop.webp",
+      "source_sha256": "2ca7580ba2a145f54ce1ece98b8413b08c3206b7198ba0c5e99e179741cc44eb",
+      "cdn_sha256": "2ca7580ba2a145f54ce1ece98b8413b08c3206b7198ba0c5e99e179741cc44eb",
+      "bytes": 57198,
+      "content_type": "image/webp",
+      "dimensions": {
+        "width": 1394,
+        "height": 961
+      },
+      "source_dimensions": {
+        "width": 1394,
+        "height": 961
+      },
+      "checked_at": "2026-10-18T04:56:00.426932+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/scenes/description-mobile.webp",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-af8b74d880df-description-mobile.webp",
+      "source_sha256": "af8b74d880df104dab117a79690719f7c62a8814b2849def93ca106e25cb2807",
+      "cdn_sha256": "af8b74d880df104dab117a79690719f7c62a8814b2849def93ca106e25cb2807",
+      "bytes": 76020,
+      "content_type": "image/webp",
+      "dimensions": {
+        "width": 1297,
+        "height": 908
+      },
+      "source_dimensions": {
+        "width": 1297,
+        "height": 908
+      },
+      "checked_at": "2026-10-18T04:56:01.275586+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/scenes/engineering-desktop.webp",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-f0f5d73b177f-engineering-desktop.webp",
+      "source_sha256": "f0f5d73b177fea76a92ebd25870cb736a4b8c502efcaeed0e4ef4e5c964565f2",
+      "cdn_sha256": "f0f5d73b177fea76a92ebd25870cb736a4b8c502efcaeed0e4ef4e5c964565f2",
+      "bytes": 73830,
+      "content_type": "image/webp",
+      "dimensions": {
+        "width": 528,
+        "height": 1429
+      },
+      "source_dimensions": {
+        "width": 528,
+        "height": 1429
+      },
+      "checked_at": "2026-10-18T04:56:01.276843+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/scenes/engineering-mobile.webp",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-40b04d8f0ba9-engineering-mobile.webp",
+      "source_sha256": "40b04d8f0ba993ab278c74554e0f755b71acdab477877d67585322aaa7c33fd6",
+      "cdn_sha256": "40b04d8f0ba993ab278c74554e0f755b71acdab477877d67585322aaa7c33fd6",
+      "bytes": 73690,
+      "content_type": "image/webp",
+      "dimensions": {
+        "width": 486,
+        "height": 1325
+      },
+      "source_dimensions": {
+        "width": 486,
+        "height": 1325
+      },
+      "checked_at": "2026-10-18T04:56:01.275517+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/scenes/experiments-desktop.webp",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-26121982e5bc-experiments-desktop.webp",
+      "source_sha256": "26121982e5bc7e30596252ccc905ac1efc40cd4400ff43a5c970ab1e3e8af449",
+      "cdn_sha256": "26121982e5bc7e30596252ccc905ac1efc40cd4400ff43a5c970ab1e3e8af449",
+      "bytes": 68900,
+      "content_type": "image/webp",
+      "dimensions": {
+        "width": 861,
+        "height": 1126
+      },
+      "source_dimensions": {
+        "width": 861,
+        "height": 1126
+      },
+      "checked_at": "2026-10-18T04:56:01.277673+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/scenes/experiments-mobile.webp",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-efba8fb86275-experiments-mobile.webp",
+      "source_sha256": "efba8fb86275f43ad039e0ebf53b4a9bfc2de4a6ae6ae07c316dcd39f454566c",
+      "cdn_sha256": "efba8fb86275f43ad039e0ebf53b4a9bfc2de4a6ae6ae07c316dcd39f454566c",
+      "bytes": 61368,
+      "content_type": "image/webp",
+      "dimensions": {
+        "width": 1226,
+        "height": 673
+      },
+      "source_dimensions": {
+        "width": 1226,
+        "height": 673
+      },
+      "checked_at": "2026-10-18T04:56:01.586514+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/scenes/model-desktop.webp",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-be67aea270da-model-desktop.webp",
+      "source_sha256": "be67aea270da3e0b49f997cd805c8cba26802fde5657fab9ffd6f43233e533b0",
+      "cdn_sha256": "be67aea270da3e0b49f997cd805c8cba26802fde5657fab9ffd6f43233e533b0",
+      "bytes": 43706,
+      "content_type": "image/webp",
+      "dimensions": {
+        "width": 672,
+        "height": 853
+      },
+      "source_dimensions": {
+        "width": 672,
+        "height": 853
+      },
+      "checked_at": "2026-10-18T04:56:01.803830+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/scenes/model-docking-desktop.webp",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-e21799d02ac7-model-docking-desktop.webp",
+      "source_sha256": "e21799d02ac7177ab57875d9d8ca185703277ee068941a71a7a87ce914ef80e4",
+      "cdn_sha256": "e21799d02ac7177ab57875d9d8ca185703277ee068941a71a7a87ce914ef80e4",
+      "bytes": 211566,
+      "content_type": "image/webp",
+      "dimensions": {
+        "width": 1604,
+        "height": 1880
+      },
+      "source_dimensions": {
+        "width": 1604,
+        "height": 1880
+      },
+      "checked_at": "2026-10-18T04:56:02.949136+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/scenes/model-docking-mobile.webp",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-a2846fdded0f-model-docking-mobile.webp",
+      "source_sha256": "a2846fdded0fcdbb13390b4fd89c411e25f9525eeee8a2d57bc35e739dcf4d19",
+      "cdn_sha256": "a2846fdded0fcdbb13390b4fd89c411e25f9525eeee8a2d57bc35e739dcf4d19",
+      "bytes": 139588,
+      "content_type": "image/webp",
+      "dimensions": {
+        "width": 1267,
+        "height": 1424
+      },
+      "source_dimensions": {
+        "width": 1267,
+        "height": 1424
+      },
+      "checked_at": "2026-10-18T04:56:02.921754+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/scenes/model-mobile.webp",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-98795fba04df-model-mobile.webp",
+      "source_sha256": "98795fba04df256690f877fdffc095fec1657fd829ba37b468cc5514ce67cd93",
+      "cdn_sha256": "98795fba04df256690f877fdffc095fec1657fd829ba37b468cc5514ce67cd93",
+      "bytes": 35240,
+      "content_type": "image/webp",
+      "dimensions": {
+        "width": 655,
+        "height": 611
+      },
+      "source_dimensions": {
+        "width": 655,
+        "height": 611
+      },
+      "checked_at": "2026-10-18T04:56:02.660060+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/scenes/parts-desktop.webp",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-753a7f10d36c-parts-desktop.webp",
+      "source_sha256": "753a7f10d36cf96c7fdc155a2e67cf973af0f0da1b3bbaaa11e929b40b238367",
+      "cdn_sha256": "753a7f10d36cf96c7fdc155a2e67cf973af0f0da1b3bbaaa11e929b40b238367",
+      "bytes": 56458,
+      "content_type": "image/webp",
+      "dimensions": {
+        "width": 317,
+        "height": 2012
+      },
+      "source_dimensions": {
+        "width": 317,
+        "height": 2012
+      },
+      "checked_at": "2026-10-18T04:56:02.639877+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/scenes/parts-mobile.webp",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-dc5f6ce1e976-parts-mobile.webp",
+      "source_sha256": "dc5f6ce1e976db03cbd29d77ce4e8450243f95320cf02ea1042bbfa8f972c1a5",
+      "cdn_sha256": "dc5f6ce1e976db03cbd29d77ce4e8450243f95320cf02ea1042bbfa8f972c1a5",
+      "bytes": 31622,
+      "content_type": "image/webp",
+      "dimensions": {
+        "width": 451,
+        "height": 1065
+      },
+      "source_dimensions": {
+        "width": 451,
+        "height": 1065
+      },
+      "checked_at": "2026-10-18T04:56:02.929261+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/scenes/results-desktop.webp",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-3230d626de9a-results-desktop.webp",
+      "source_sha256": "3230d626de9a45534f637d26114f5b2b23fecb64253fad2b2e599f50e9c16f9e",
+      "cdn_sha256": "3230d626de9a45534f637d26114f5b2b23fecb64253fad2b2e599f50e9c16f9e",
+      "bytes": 39838,
+      "content_type": "image/webp",
+      "dimensions": {
+        "width": 620,
+        "height": 930
+      },
+      "source_dimensions": {
+        "width": 620,
+        "height": 930
+      },
+      "checked_at": "2026-10-18T04:56:03.101457+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/scenes/results-mobile.webp",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-68304ee7dfee-results-mobile.webp",
+      "source_sha256": "68304ee7dfee1ca1078af23c112dc0249684ecbabcd426c8998fe9332d99f2a5",
+      "cdn_sha256": "68304ee7dfee1ca1078af23c112dc0249684ecbabcd426c8998fe9332d99f2a5",
+      "bytes": 67364,
+      "content_type": "image/webp",
+      "dimensions": {
+        "width": 578,
+        "height": 1123
+      },
+      "source_dimensions": {
+        "width": 578,
+        "height": 1123
+      },
+      "checked_at": "2026-10-18T04:56:04.032944+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/sponsors/excell.png",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-6b6833027f6c-excell.avif",
+      "source_sha256": "6b6833027f6c057531e7a181865d5490a71df6b71b1670e91e3fbd065f772e02",
+      "cdn_sha256": "09bed1bc69c762799941adc94fef2e98b27870fc613cf4f3ff38d0293b46ce9b",
+      "bytes": 28674,
+      "content_type": "image/avif",
+      "dimensions": {
+        "width": 1851,
+        "height": 895
+      },
+      "source_dimensions": {
+        "width": 1851,
+        "height": 895
+      },
+      "checked_at": "2026-10-18T04:56:03.922234+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/sponsors/solarbio.png",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-add955af5966-solarbio.avif",
+      "source_sha256": "add955af596616930c4b86193a61d96967f87091fe91375f06d5629d8d10d641",
+      "cdn_sha256": "e0dabf19b61b5b5d5ea5052270783137a5d8cfb07f95d53dbd5769a00c5723c1",
+      "bytes": 33093,
+      "content_type": "image/avif",
+      "dimensions": {
+        "width": 1920,
+        "height": 549
+      },
+      "source_dimensions": {
+        "width": 1920,
+        "height": 549
+      },
+      "checked_at": "2026-10-18T04:56:04.192078+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/uploads/round3/fig-3-2-density-response.png",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-8067bba1941d-fig-3-2-density-response.avif",
+      "source_sha256": "8067bba1941d37a34073fa4ba28b112ec1e063c77ee32f31edda1608cc8fd217",
+      "cdn_sha256": "c917f5d4dda3b71a74d623c64463cbe94a9920fc33980ce23a66577c7c3f07dd",
+      "bytes": 161855,
+      "content_type": "image/avif",
+      "dimensions": {
+        "width": 4000,
+        "height": 2171
+      },
+      "source_dimensions": {
+        "width": 4200,
+        "height": 2280
+      },
+      "checked_at": "2026-10-18T04:56:04.488338+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/uploads/round3/fig-3-3-net-timecourse.png",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-0bdc26ce6e27-fig-3-3-net-timecourse.avif",
+      "source_sha256": "0bdc26ce6e2703fccf35a55f634e0cde0b1d2e0cb288ca39b26aa531c6da9ad1",
+      "cdn_sha256": "b59176da3e4023dd12dd2d5db247b336706d0e20ed4408adf038549353bbefbd",
+      "bytes": 126159,
+      "content_type": "image/avif",
+      "dimensions": {
+        "width": 4000,
+        "height": 2171
+      },
+      "source_dimensions": {
+        "width": 4200,
+        "height": 2280
+      },
+      "checked_at": "2026-10-18T04:56:04.462027+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/uploads/round3/fig-3-4-signal-space.png",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-2b72620e598d-fig-3-4-signal-space.avif",
+      "source_sha256": "2b72620e598dd1e745a8bb8cba1b1a54474feecb08045a999dc95f2c713ee336",
+      "cdn_sha256": "028d26c9aa65ec95760c0a857c6235f85b601617f403c84317b2b39aab8549c8",
+      "bytes": 152606,
+      "content_type": "image/avif",
+      "dimensions": {
+        "width": 3600,
+        "height": 2760
+      },
+      "source_dimensions": {
+        "width": 3600,
+        "height": 2760
+      },
+      "checked_at": "2026-10-18T04:56:04.807587+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/uploads/round3/fig-3-5-prediction-comparison-wiki.png",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-9fee4e88d157-fig-3-5-prediction-comparison-wiki.avif",
+      "source_sha256": "9fee4e88d157942beb7823735b366a318a2c50857e17467e23bcc83f517b11ea",
+      "cdn_sha256": "550cc1f2b706dfdd38154babd44215850e945ddce0cb696f82a537a66d31a74d",
+      "bytes": 131701,
+      "content_type": "image/avif",
+      "dimensions": {
+        "width": 4000,
+        "height": 1950
+      },
+      "source_dimensions": {
+        "width": 4800,
+        "height": 2340
+      },
+      "checked_at": "2026-10-18T04:56:05.556153+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/uploads/round3-docking/docking-source-01.png",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-08befb7e1df2-docking-source-01.avif",
+      "source_sha256": "08befb7e1df2c5b9462bc24e965c5944e879fe16c51b811c7b46cc6dd2a8047f",
+      "cdn_sha256": "41054a168811f44f3909bd6b893a0cb482fdc658756557f9e127343b4f2c097b",
+      "bytes": 74471,
+      "content_type": "image/avif",
+      "dimensions": {
+        "width": 1132,
+        "height": 1800
+      },
+      "source_dimensions": {
+        "width": 1132,
+        "height": 1800
+      },
+      "checked_at": "2026-10-18T04:56:05.558712+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/uploads/round3-docking/docking-source-02.png",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-c4d04847c0b3-docking-source-02.avif",
+      "source_sha256": "c4d04847c0b38233b009b46e22743475f8ef4a10282585ec1fb05da5a6615ba7",
+      "cdn_sha256": "e53072a4cd974172027b59304c3c9646a42591c0484c3049da1a9e0a353a632d",
+      "bytes": 523429,
+      "content_type": "image/avif",
+      "dimensions": {
+        "width": 4000,
+        "height": 3000
+      },
+      "source_dimensions": {
+        "width": 4000,
+        "height": 3000
+      },
+      "checked_at": "2026-10-18T04:56:06.168889+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/uploads/round3-docking/docking-source-03.png",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-a42c709871dd-docking-source-03.avif",
+      "source_sha256": "a42c709871dd64c2da35e73101e82fedfc223124f9d9f61cf818fbad3ff8eac4",
+      "cdn_sha256": "2a58fed6d9fabfd981b710a305e9463009ad603fa7cf26da610504ea7251dfb6",
+      "bytes": 101339,
+      "content_type": "image/avif",
+      "dimensions": {
+        "width": 2400,
+        "height": 2382
+      },
+      "source_dimensions": {
+        "width": 2400,
+        "height": 2382
+      },
+      "checked_at": "2026-10-18T04:56:05.876256+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/uploads/round3-docking/docking-source-04.png",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-bd6f41305f4d-docking-source-04.avif",
+      "source_sha256": "bd6f41305f4d5911876494088c233e1596485c40c58d02ef17e97af8d7e0f194",
+      "cdn_sha256": "3b145a4ca7ade9f3f8e7b0a689a81f763e21c3de449bd4d7bf9db0644c0f0b07",
+      "bytes": 560929,
+      "content_type": "image/avif",
+      "dimensions": {
+        "width": 4000,
+        "height": 3000
+      },
+      "source_dimensions": {
+        "width": 4000,
+        "height": 3000
+      },
+      "checked_at": "2026-10-18T04:56:06.569096+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/uploads/round3-docking/docking-source-05.png",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-2e0dde6cfeee-docking-source-05.avif",
+      "source_sha256": "2e0dde6cfeeec5c766a74da8c8135bc4136a9e0ef926d1e1142bb355a580ff09",
+      "cdn_sha256": "0ed7196d1c5b5272ba8b9fcf8d2db60b6ffe179209b0e81ba191a72f572def2c",
+      "bytes": 112069,
+      "content_type": "image/avif",
+      "dimensions": {
+        "width": 2400,
+        "height": 2312
+      },
+      "source_dimensions": {
+        "width": 2400,
+        "height": 2312
+      },
+      "checked_at": "2026-10-18T04:56:06.635837+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/uploads/round3-docking/docking-source-07.png",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-290633cd2c70-docking-source-07.avif",
+      "source_sha256": "290633cd2c70ae1ef4bab3d1b6d5bd92ea5d1d767932d35022a8d215097bcc78",
+      "cdn_sha256": "6c328f3a90f4b75963824bcd9af4b9d3fb5e8e76da16757e36e8a571ab2ea49e",
+      "bytes": 604068,
+      "content_type": "image/avif",
+      "dimensions": {
+        "width": 4000,
+        "height": 3000
+      },
+      "source_dimensions": {
+        "width": 4000,
+        "height": 3000
+      },
+      "checked_at": "2026-10-18T04:56:07.622949+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/uploads/round3-docking/docking-source-08.png",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-fdc859343d6f-docking-source-08.avif",
+      "source_sha256": "fdc859343d6f2bc78154fe8230db84cbcd56cfb6cb67408e05f71e0875754660",
+      "cdn_sha256": "293c352f9fc478e4439c9f7423106c08d1786d3eac093167bcf6f5a63892f7b4",
+      "bytes": 88238,
+      "content_type": "image/avif",
+      "dimensions": {
+        "width": 1709,
+        "height": 2400
+      },
+      "source_dimensions": {
+        "width": 1709,
+        "height": 2400
+      },
+      "checked_at": "2026-10-18T04:56:07.222060+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/uploads/round3-docking/docking-source-09.png",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-1239c64d4af0-docking-source-09.avif",
+      "source_sha256": "1239c64d4af05ba8de6dfa7807f2b3c89ecc0a71d599d3b34598c1d91a1f7b39",
+      "cdn_sha256": "9e87d20f10b48daf6213ebebfd70e760a3a8ebd3667bbde67b025f15ddd6e544",
+      "bytes": 644235,
+      "content_type": "image/avif",
+      "dimensions": {
+        "width": 4000,
+        "height": 3000
+      },
+      "source_dimensions": {
+        "width": 4000,
+        "height": 3000
+      },
+      "checked_at": "2026-10-18T04:56:08.144712+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/uploads/round3-docking/docking-source-10.png",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-c89c70191520-docking-source-10.avif",
+      "source_sha256": "c89c701915202d1b430be058c93392d3b06b76df232bb525439708337dcf1676",
+      "cdn_sha256": "d8ca7a03cac0a11214adf60b7d8ea4e49dcbfad99c6571cf9b91995e71f924a2",
+      "bytes": 98434,
+      "content_type": "image/avif",
+      "dimensions": {
+        "width": 2400,
+        "height": 1536
+      },
+      "source_dimensions": {
+        "width": 2400,
+        "height": 1536
+      },
+      "checked_at": "2026-10-18T04:56:07.933149+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/uploads/round3-docking/docking-source-11.png",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-ed8369c53675-docking-source-11.avif",
+      "source_sha256": "ed8369c53675bd1f91228ba42f9c2168c35799957eec3c6df7171439a37aafe9",
+      "cdn_sha256": "3c9648c03643412edccbafed9ba5fe4165548eea344fa888f98263b1cd1941f4",
+      "bytes": 326492,
+      "content_type": "image/avif",
+      "dimensions": {
+        "width": 2666,
+        "height": 2000
+      },
+      "source_dimensions": {
+        "width": 2666,
+        "height": 2000
+      },
+      "checked_at": "2026-10-18T04:56:08.696755+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/uploads/round3-docking/docking-source-12.png",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-9b84a8b736bb-docking-source-12.avif",
+      "source_sha256": "9b84a8b736bba3d69f568b2877059a32658c63fb6a194a69c00764806528a127",
+      "cdn_sha256": "a750f84c61eee6d2af30b87e09b355c04c71bcd941022d5fc9d81439332338cf",
+      "bytes": 78042,
+      "content_type": "image/avif",
+      "dimensions": {
+        "width": 2400,
+        "height": 1546
+      },
+      "source_dimensions": {
+        "width": 2400,
+        "height": 1546
+      },
+      "checked_at": "2026-10-18T04:56:08.244614+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/uploads/round3-docking/docking-source-13.png",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-a7066f8f852e-docking-source-13.avif",
+      "source_sha256": "a7066f8f852e01e51ee5220c2db603f163737be193a1bd09cbe77ababa423706",
+      "cdn_sha256": "a7bd710142d1063c4deab97038d7fbfce51d91f63a70a7ffa105be11a6ae5db6",
+      "bytes": 387709,
+      "content_type": "image/avif",
+      "dimensions": {
+        "width": 2666,
+        "height": 2000
+      },
+      "source_dimensions": {
+        "width": 2666,
+        "height": 2000
+      },
+      "checked_at": "2026-10-18T04:56:09.318264+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/uploads/round3-docking/docking-source-14.png",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-848ee038bf41-docking-source-14.avif",
+      "source_sha256": "848ee038bf4146f4101da3ee06b464da1bc29e2e9e7304831fddf3dd23355fc9",
+      "cdn_sha256": "c8915db2a3416d0bdd388a838e3f055d5e21b02d9d988530f91c8ecf244da133",
+      "bytes": 88900,
+      "content_type": "image/avif",
+      "dimensions": {
+        "width": 2400,
+        "height": 1867
+      },
+      "source_dimensions": {
+        "width": 2400,
+        "height": 1867
+      },
+      "checked_at": "2026-10-18T04:56:09.346270+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/uploads/round3-docking/docking-source-15.png",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-bbf52d6e8540-docking-source-15.avif",
+      "source_sha256": "bbf52d6e854000ffd327b7e147417385b9add3981365cb9e3f9ac00e86f64c75",
+      "cdn_sha256": "3060f076299fa2816206d3a3ad5f5554c047bafcb3a7064a67f1598610b8e489",
+      "bytes": 182567,
+      "content_type": "image/avif",
+      "dimensions": {
+        "width": 1823,
+        "height": 602
+      },
+      "source_dimensions": {
+        "width": 1823,
+        "height": 602
+      },
+      "checked_at": "2026-10-18T04:56:09.710637+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/uploads/round3-results/Fig3.1.1.jpg",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-f41bd79ce2d8-fig3-1-1.avif",
+      "source_sha256": "f41bd79ce2d8d2afba3ec0e4ae508f2d683e63aaddc0a6367aef9a8cf62a2b59",
+      "cdn_sha256": "bee8acfba36b8b9c81f98a2d969cf5d8cf26deec8005592b294311e52018c2ea",
+      "bytes": 83532,
+      "content_type": "image/avif",
+      "dimensions": {
+        "width": 1706,
+        "height": 1279
+      },
+      "source_dimensions": {
+        "width": 1706,
+        "height": 1279
+      },
+      "checked_at": "2026-10-18T04:56:09.796609+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/uploads/round3-results/Fig3.1.2.png",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-06c56594b1d7-fig3-1-2.avif",
+      "source_sha256": "06c56594b1d78b22594a5f009ef52608001f1b5d0684d2086095b4998c61b489",
+      "cdn_sha256": "0d2476656ced1bf286f9b775fdc58074ef2c19b38549ec8a7a9db7314af57fa2",
+      "bytes": 48290,
+      "content_type": "image/avif",
+      "dimensions": {
+        "width": 1096,
+        "height": 662
+      },
+      "source_dimensions": {
+        "width": 1096,
+        "height": 662
+      },
+      "checked_at": "2026-10-18T04:56:09.775681+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/uploads/round3-results/Fig3.1.3.png",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-e2be3f101f5e-fig3-1-3.avif",
+      "source_sha256": "e2be3f101f5e411536081da4327498d125141bbc1d84039e29c7de6a9b8fc3dd",
+      "cdn_sha256": "bedd42c5add8f81430902a5e0493c7b57857bcc1fc62f8067eced8509a87e0e7",
+      "bytes": 21270,
+      "content_type": "image/avif",
+      "dimensions": {
+        "width": 572,
+        "height": 227
+      },
+      "source_dimensions": {
+        "width": 572,
+        "height": 227
+      },
+      "checked_at": "2026-10-18T04:56:10.056775+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/uploads/round3-results/Fig3.1.4.jpg",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-48ee38c731e9-fig3-1-4.avif",
+      "source_sha256": "48ee38c731e997714b5f7d3814bc8cb155cc543c89d67bfd0d3dfe54b4c6eb9a",
+      "cdn_sha256": "e71d20a129617dfe679656d846e39e87c008dc33718fdafc0752bf44569b09b2",
+      "bytes": 68089,
+      "content_type": "image/avif",
+      "dimensions": {
+        "width": 1260,
+        "height": 1680
+      },
+      "source_dimensions": {
+        "width": 1260,
+        "height": 1680
+      },
+      "checked_at": "2026-10-18T04:56:39.845646+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/uploads/round3-results/Fig3.1.5.jpg",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-ea1a49677396-fig3-1-5.avif",
+      "source_sha256": "ea1a496773964a222ed67ccaa75f2c2a793e056a1bd3cae26e253de3ee321422",
+      "cdn_sha256": "3bbf05326a22355cdb2ab3c18b77e02f01028a892d6978dfc05dc26b954119d1",
+      "bytes": 330946,
+      "content_type": "image/avif",
+      "dimensions": {
+        "width": 3072,
+        "height": 3072
+      },
+      "source_dimensions": {
+        "width": 3072,
+        "height": 3072
+      },
+      "checked_at": "2026-10-18T04:56:40.144687+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
+    },
+    {
+      "path": "img/uploads/round3-results/Fig3.2.2.jpg",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-b5b9b9256085-fig3-2-2.avif",
+      "source_sha256": "b5b9b9256085a81d0516adcb30603fbe6636c3560f53cc8500fba1e274a4470f",
+      "cdn_sha256": "f6fd7c676d6c3cfbd7a03bdfcfe29d7a32810d1d105b67cb4e48f5529bc8eae8",
+      "bytes": 878201,
+      "content_type": "image/avif",
+      "dimensions": {
+        "width": 3072,
+        "height": 3072
+      },
+      "source_dimensions": {
+        "width": 3072,
+        "height": 3072
+      },
+      "checked_at": "2026-10-18T04:56:40.423307+08:00",
+      "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
     }
   ]
 }

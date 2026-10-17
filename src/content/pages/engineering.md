@@ -26,7 +26,7 @@ We prepared predicted structures of the three receptors and the ascaroside ligan
 
 #### Test | Comparing with the Literature and Refining the Docking Workflow {#test-comparing-with-the-literature-and-refining-the-docking-workflow toc="Test | Comparing with the Literature and Refining the Docking Workflow"}
 
-We examined scores, ligand positions, and residue contacts to assess whether docking poses agreed with the available literature evidence. The analysis revealed that inconsistent coordinate references could misplace search regions and that loss of formal charges during format conversion could affect the identification of charged contacts. We therefore added structural alignment, search-region review, and chemical-information checks, progressively refining the docking and contact-analysis workflow.
+We examined scores, ligand positions, and residue contacts to assess whether docking poses agreed with the available literature evidence. The analysis revealed that inconsistent coordinate references could misplace search regions and that loss of formal charges during format conversion could affect the identification of charged contacts. We therefore added **structural alignment, search-region review, and chemical-information checks**, progressively refining the docking and contact-analysis workflow.
 
 #### Learn | Selecting Receptors for Further Engineering {#learn-selecting-receptors-for-further-engineering toc="Learn | Selecting Receptors for Further Engineering"}
 
@@ -34,15 +34,15 @@ Receptor selection requires consideration of both computational results and the 
 
 ### The Third Cycle——Wet Lab {#the-third-cycle-wet-lab toc="The Third Cycle——Wet Lab"}
 
-Informed by results from the prior cycle, this iteration characterizes heterologous expression and proper plasma membrane localization of GPR2, establishing proof of feasibility for downstream chassis engineering.
+Informed by results from the prior cycle, this iteration characterizes **heterologous expression and proper plasma membrane localization** of GPR2, establishing proof of feasibility for downstream chassis engineering.
 
 #### Design {#design toc="Design"}
 
-To validate heterologous expression and proper plasma membrane localization of GPR2 in our host strain *S. cerevisiae* CEN.PK2-1C, we adopted the following experimental pipeline: assembly of the GPR2-sfGFP expression plasmid, gene knock-in mediated by yeast homologous recombination (HR), and fluorescence microscopy to characterize protein expression and subcellular localization. See Wet Lab-Results- DBTL-1 for detailed design and experimental protocols.
+To validate heterologous expression and proper plasma membrane localization of GPR2 in our host strain *S. cerevisiae* `CEN.PK2-1C`, we adopted the following experimental pipeline: assembly of the GPR2-sfGFP expression plasmid, gene knock-in mediated by yeast homologous recombination (HR), and fluorescence microscopy to characterize protein expression and subcellular localization. See Wet Lab-Results- DBTL-1 for detailed design and experimental protocols.
 
 #### Build {#build toc="Build"}
 
-Via homologous recombination (HR), we integrated the constitutive *GPR2-sfGFP* expression cassette into the CEN.PK2-1C genome (Figure 1).
+Via homologous recombination (HR), we integrated the constitutive *GPR2-sfGFP* expression cassette into the `CEN.PK2-1C` genome (Figure 1).
 
 :::figure
 
@@ -88,7 +88,7 @@ Figure 4 FM4‑64 staining of yeast cells
 
 #### Learn {#learn toc="Learn"}
 
-Collectively, these data confirm heterologous expression and proper plasma membrane localization of GPR2 in CEN.PK2-1C, laying an essential foundation for our chassis engineering. We therefore advance to the next cycle to assemble the full signal-responsive engineered strain.
+Collectively, these data confirm heterologous expression and proper plasma membrane localization of GPR2 in `CEN.PK2-1C`, laying an essential foundation for our chassis engineering. We therefore advance to the next cycle to assemble the full signal-responsive engineered strain.
 
 ### The Fourth Cycle——Wet Lab {#the-fourth-cycle-wet-lab toc="The Fourth Cycle——Wet Lab"}
 
@@ -108,7 +108,7 @@ Figure 1 Schematic Diagram of Yeast Biosensor Construction Pipeline
 
 #### Build {#build-2 toc="Build"}
 
-First, we knocked out the *Gal80* gene in CEN.PK2-1C to obtain the engineered strain NKU-Y02 (Figure 2), which eliminates endogenous signal interference in this pathway.
+First, we knocked out the *Gal80* gene in `CEN.PK2-1C` to obtain the engineered strain `NKU-Y02` (Figure 2), which eliminates endogenous signal interference in this pathway.
 
 ::::figures
 
@@ -132,9 +132,9 @@ Figure 3 Construction of Synthetic Transcription Factor
 
 Subsequently, we fused the PRD domain of Ste12 (216–688 aa) with the DBD domain of Gal4 (1–147 aa) to construct a synthetic transcription factor (sTF). This construct was transformed into NKU-Y05, yielding strain NKU-Y05 (Figure 3) and enabling the coupling of GPCR-activated signaling with the GAL pathway.
 
-Subsequently, we introduced MjDOD and BvCYP76AD5 driven by the bidirectional Gal1/10 promoter into NKU-Y05 to generate the engineered strain NKU-Y06 (Figure 4), realizing the visualization of signal output.
+Subsequently, we introduced MjDOD and BvCYP76AD5 driven by the bidirectional Gal1/10 promoter into `NKU-Y05` to generate the engineered strain `NKU-Y06` (Figure 4), realizing the visualization of signal output.
 
-Finally, we transformed the constitutive *GPR2* expression cassette into NKU-Y06 to obtain the engineered strain NKU-Y07 (Figure 5), completing the preliminary construction of the full engineered strain system and advancing the project to the testing phase.
+Finally, we transformed the constitutive *GPR2* expression cassette into `NKU-Y06` to obtain the engineered strain `NKU-Y07` (Figure 5), completing the preliminary construction of the full engineered strain system and advancing the project to the testing phase.
 
 ### References {#references toc="References"}
 
@@ -148,7 +148,7 @@ Cong Fan, Nike He, Jifeng Yuan, Cascaded amplifying circuit enables sensitive de
 
 #### Design | Identifying Engineering Sites from WT Contact Differences {#design-identifying-engineering-sites-from-wt-contact-differences toc="Design | Identifying Engineering Sites from WT Contact Differences"}
 
-To investigate the differential recognition of ascr#18 and ascr#3 by Gpr2, we compared the WT receptor’s contact distributions with both ligands. Residues showing contact differences were selected as candidate sites, and alanine substitutions were used to examine how each position affected the two-ligand profile.
+To investigate the differential recognition of ascr#18 and ascr#3 by Gpr2, we compared the WT receptor’s contact distributions with both ligands. Residues showing **contact differences** were selected as candidate sites, and alanine substitutions were used to examine how each position affected the two-ligand profile.
 
 #### Build | Generating Mutant Models and Consistent Controls {#build-generating-mutant-models-and-consistent-controls toc="Build | Generating Mutant Models and Consistent Controls"}
 
@@ -156,7 +156,7 @@ We generated mutant sequences according to the substitution designs and predicte
 
 #### Test | Iterating Substitutions Using Score and Contact Feedback {#test-iterating-substitutions-using-score-and-contact-feedback toc="Test | Iterating Substitutions Using Score and Contact Feedback"}
 
-We selected candidates from single-site alanine scanning, used score changes and contact analysis to guide additional side-chain substitutions, and performed saturation scanning at selected sites. Candidates were grouped as favoring ascr#3 or ascr#18 according to the difference between the two ligands’ score changes relative to WT. We then examined both scores separately to determine whether the shift resulted from a lower score for the target ligand, a higher score for the other ligand, or both. Contact comparisons with WT helped identify the associated changes in ligand position and interactions.
+We selected candidates from single-site alanine scanning, used score changes and contact analysis to guide additional side-chain substitutions, and performed **saturation scanning** at selected sites. Candidates were grouped as favoring ascr#3 or ascr#18 according to the difference between the two ligands’ score changes relative to WT. We then examined both scores separately to determine whether the shift resulted from a lower score for the target ligand, a higher score for the other ligand, or both. Contact comparisons with WT helped identify the associated changes in ligand position and interactions.
 
 After obtaining single-mutant candidates, we explored combined mutations. Parents were selected according to the direction of the shift and the pattern of score changes to test whether the effects of different substitutions could be retained together. Each combination was compared with WT and both single-mutant parents. Most tested combinations did not further improve the better parent’s target-ligand score or increase the difference between the two ligands, so subsequent work continued to focus on single-mutant candidates.
 
@@ -172,7 +172,7 @@ In docking, the score changes for N84V favored ascr#18, while those for V368R fa
 
 #### Build | Preparing Full-Length Receptors and Membrane Systems {#build-preparing-full-length-receptors-and-membrane-systems toc="Build | Preparing Full-Length Receptors and Membrane Systems"}
 
-We placed each docking pose into its corresponding full-length receptor, checked for spatial clashes between the ligand and restored segments, and adjusted local lid regions where overlaps occurred. During rebuilding, we found that some approaches also changed the backbone outside the loop or the initial ligand pose. We therefore restricted adjustments to the lid region while retaining the remaining coordinates of each system. After these checks, each of the six complexes was placed in a POPC lipid bilayer with solvent and ions.
+We placed each docking pose into its corresponding full-length receptor, checked for spatial clashes between the ligand and restored segments, and adjusted local lid regions where overlaps occurred. During rebuilding, we found that some approaches also changed the backbone outside the loop or the initial ligand pose. We therefore **restricted adjustments to the lid region** while retaining the remaining coordinates of each system. After these checks, each of the six complexes was placed in a POPC lipid bilayer with solvent and ions.
 
 #### Test | Tracking Ligand Motion and Contact Changes {#test-tracking-ligand-motion-and-contact-changes toc="Test | Tracking Ligand Motion and Contact Changes"}
 
@@ -184,17 +184,17 @@ In V368R–ascr#3, the ligand moved away from its initial position toward Arg345
 
 #### Learn | Reinterpreting Mutation Effects from the Trajectories {#learn-reinterpreting-mutation-effects-from-the-trajectories toc="Learn | Reinterpreting Mutation Effects from the Trajectories"}
 
-The MD results prompted us to revisit the contact-based interpretation of docking. A ligand may maintain its position through persistent contacts, or it may leave its initial pose and establish contacts elsewhere. Assessing mutation effects therefore requires examining both ligand motion and internal receptor changes. Each system currently has only one trajectory, so the sequence of contact changes requires testing through replicate simulations, while actual recognition capability requires experimental confirmation.
+The MD results prompted us to revisit the contact-based interpretation of docking. A ligand may maintain its position through persistent contacts, or it may leave its initial pose and establish contacts elsewhere. Assessing mutation effects therefore requires examining both ligand motion and internal receptor changes. Each system currently has only **one trajectory**, so the sequence of contact changes requires testing through replicate simulations, while actual recognition capability requires experimental confirmation.
 
 ### ODE: Connecting Receptor Signaling to Colorimetric Output {#ode-connecting-receptor-signaling-to-colorimetric-output toc="ODE: Connecting Receptor Signaling to Colorimetric Output"}
 
 #### Design | Building a Minimal Model from Biological Principles {#design-building-a-minimal-model-from-biological-principles toc="Design | Building a Minimal Model from Biological Principles"}
 
-Using the biological principles of receptor activation, signal transduction, and color development, we established a minimal, lumped model. Ligand L served as the input to six functional nodes: receptor R, G protein, MAPK, sTF, GAL production rate, and color. The model used three dynamic equations and three algebraic relationships. Analysis showed that several internal parameters lacked project-specific measurements and could not be determined separately from the final color output alone. We therefore investigated reusable models from the literature and previous iGEM teams.
+Using the biological principles of receptor activation, signal transduction, and color development, we established a **minimal, lumped model**. Ligand L served as the input to six functional nodes: receptor R, G protein, MAPK, sTF, GAL production rate, and color. The model used three dynamic equations and three algebraic relationships. Analysis showed that several internal parameters lacked project-specific measurements and could not be determined separately from the final color output alone. We therefore investigated reusable models from the literature and previous iGEM teams.
 
 #### Build | Adapting the Shared Pathway and Colorimetric Output {#build-adapting-the-shared-pathway-and-colorimetric-output toc="Build | Adapting the Shared Pathway and Colorimetric Output"}
 
-Using the publicly available reaction structures of Supady Model B and TU Delft 2012, we incorporated G protein, scaffold, Fus3, and feedback modules. Under fixed construct conditions, we combined sTF regulation, GAL production rate, and color generation. Conservation of total molecular amounts was then used to eliminate redundant states in the shared pathway, yielding six independent dynamic equations.
+Using the publicly available reaction structures of Supady Model B and TU Delft 2012, we incorporated G protein, scaffold, Fus3, and feedback modules. Under fixed construct conditions, we combined sTF regulation, GAL production rate, and color generation. Conservation of total molecular amounts was then used to eliminate redundant states in the shared pathway, yielding **six independent dynamic equations**.
 
 #### Test | Checking Computational Consistency and Response Range {#test-checking-computational-consistency-and-response-range toc="Test | Checking Computational Consistency and Response Range"}
 
@@ -212,17 +212,17 @@ The southern root-knot nematode, Meloidogyne incognita (Mi), and the free-living
 
 #### Build | Constructing Mixed Samples and a Density Regression Model {#build-constructing-mixed-samples-and-a-density-regression-model toc="Build | Constructing Mixed Samples and a Density Regression Model"}
 
-We used Mi densities of 0, 40, and 120 J2/100 cm³, corresponding to the low-, medium-, and high-risk categories in the current Eco example. These were crossed with three independently varying background levels to produce nine simulated combinations. After defining assumptions about ligand release and the mapping to colorimetric output, we fitted the two ODE models separately and used their blank-corrected color outputs to build a density regression model with three coefficients.
+We used Mi densities of 0, 40, and 120 J2/100 cm³, corresponding to the low-, medium-, and high-risk categories in the current Eco example. These were crossed with three independently varying background levels to produce nine simulated combinations. After defining assumptions about ligand release and the mapping to colorimetric output, we fitted the two ODE models separately and used their **blank-corrected color outputs** to build a density regression model with three coefficients.
 
 #### Test | Comparing One and Two Channels with New Mixed Samples {#test-comparing-one-and-two-channels-with-new-mixed-samples toc="Test | Comparing One and Two Channels with New Mixed Samples"}
 
-After fitting, we defined twelve additional combinations of target and background abundance. Colors were generated through the ODE models, and we compared how well one or two channels recovered the predefined Mi densities. The two-channel model produced smaller errors in these simulated combinations, but some low-density samples yielded negative estimates, indicating that bias remained when the target signal was weak. Changing the assumed ratio of the two ligands released by Mi while keeping model parameters fixed also changed the prediction error, showing that the estimates depended on assumptions about ligand composition.
+After fitting, we defined **twelve additional combinations** of target and background abundance. Colors were generated through the ODE models, and we compared how well one or two channels recovered the predefined Mi densities. The two-channel model produced smaller errors in these simulated combinations, but some low-density samples yielded negative estimates, indicating that bias remained when the target signal was weak. Changing the assumed ratio of the two ligands released by Mi while keeping model parameters fixed also changed the prediction error, showing that the estimates depended on assumptions about ligand composition.
 
 #### Learn | Examining Errors at Low Densities and Near Risk Thresholds {#learn-examining-errors-at-low-densities-and-near-risk-thresholds toc="Learn | Examining Errors at Low Densities and Near Risk Thresholds"}
 
-Near the Eco risk thresholds, even a small density-prediction error can assign a sample to an adjacent risk category. Subsequent experiments should therefore assess overall prediction error, increase sampling near the thresholds, and separately examine background-only samples and samples with low target densities. Experimental calibration will vary target and background abundance independently, with separate batches used to evaluate whether two channels improve density estimation.
+**Near the Eco risk thresholds**, even a small density-prediction error can assign a sample to an adjacent risk category. Subsequent experiments should therefore assess overall prediction error, increase sampling near the thresholds, and separately examine background-only samples and samples with low target densities. Experimental calibration will vary target and background abundance independently, with separate batches used to evaluate whether two channels improve density estimation.
 
-The model derivation is complete, while calibration with project wet-lab data is still underway. In the next iteration, we will calibrate parameters using actual construct information and measurements and assess whether additional mechanisms, such as response delays, are needed.
+The model derivation is complete, while **calibration with project wet-lab data is still underway**. In the next iteration, we will calibrate parameters using actual construct information and measurements and assess whether additional mechanisms, such as response delays, are needed.
 
 ## DBTL-3 | Feedback from Practical and Societal Needs {#dbtl-3-feedback-from-practical-and-societal-needs toc="DBTL-3 | Feedback from Practical and Societal Needs"}
 
@@ -240,11 +240,11 @@ We developed a general cost calculation framework that converts yield losses ass
 
 Using greenhouse tomatoes in Spain as an example, we compared treatment levels selected according to density with a uniform moderate-intensity treatment strategy. Under the example assumptions, density information helped adjust treatment intensity and provided additional expected net returns.
 
-This comparison clarified the control needed to assess the value of detection. Improvements relative to no control include the effect of treatment itself, while comparison with uniform treatment more directly examines whether detection information helps users make better management choices.
+This comparison clarified the control needed to assess the value of detection. Improvements relative to no control include the effect of treatment itself, while **comparison with uniform treatment** more directly examines whether detection information helps users make better management choices.
 
 #### Learn | Feeding Management Needs Back into Detection Design {#learn-feeding-management-needs-back-into-detection-design toc="Learn | Feeding Management Needs Back into Detection Design"}
 
-The analysis refined our detection objectives: provide semiquantitative or quantitative information that supports risk classification, cover the key density ranges where management strategies change, and communicate sampling and measurement uncertainty when results fall close to classification thresholds.
+The analysis refined our detection objectives: provide semiquantitative or quantitative information that supports risk classification, cover the key density ranges where management strategies change, and communicate **sampling and measurement uncertainty** when results fall close to classification thresholds.
 
 Model outputs also expanded from a single return-on-investment metric to include measured density, expected yield loss, risk level, the treatment strategy in each scenario, testing costs, and comparisons of net returns. These outputs inform discussions of the product’s quantitative capability, sampling strategy, and application settings. We will update the model using detection performance and sampling error from wet-lab experiments, together with local prices, testing costs, and willingness to pay from HP research, to test whether these design requirements hold under practical conditions.
 

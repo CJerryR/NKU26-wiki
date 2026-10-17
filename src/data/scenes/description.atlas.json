@@ -1,0 +1,86 @@
+{
+  "desktop": {
+    "file": "description-desktop.webp",
+    "size": [
+      1394,
+      961
+    ],
+    "bytes": 57198,
+    "quality": 86,
+    "hash": "2ca7580ba2a1",
+    "frames": {
+      "nematode": [
+        436,
+        666,
+        464,
+        132
+      ],
+      "roots": [
+        0,
+        0,
+        344,
+        662
+      ],
+      "soil-left": [
+        348,
+        0,
+        521,
+        641
+      ],
+      "soil-right": [
+        873,
+        0,
+        521,
+        641
+      ],
+      "strip": [
+        0,
+        666,
+        432,
+        295
+      ]
+    }
+  },
+  "mobile": {
+    "file": "description-mobile.webp",
+    "size": [
+      1297,
+      908
+    ],
+    "bytes": 76020,
+    "quality": 86,
+    "hash": "af8b74d880df",
+    "frames": {
+      "nematode": [
+        400,
+        637,
+        468,
+        133
+      ],
+      "roots": [
+        0,
+        0,
+        329,
+        633
+      ],
+      "soil-left": [
+        333,
+        0,
+        480,
+        591
+      ],
+      "soil-right": [
+        817,
+        0,
+        480,
+        591
+      ],
+      "strip": [
+        0,
+        637,
+        396,
+        271
+      ]
+    }
+  }
+}

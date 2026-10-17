@@ -26,7 +26,7 @@
    2026-10-17 polish: slide 1 sits below the title block (they overlapped on
    short screens); captions scale with the stage (cqw) so text and drawing keep
    one proportion; the bars appear with the ratio instead of as empty pills;
-   the receptor's two states cross-fade (never both at once); the pocket flies
+   the pocket flies
    onto the monitor instead of behind it; the yeast slides pan left so its
    captions sit beside the cell; the worms undulate; the kit lands with a
    ripple; the chapter rail shows progress inside a chapter. */
@@ -45,34 +45,40 @@
 
     var K = ['x', 'y', 's', 'sx', 'r', 'o'];
     var HIDE = { o: 0 };
-    /* positions along the DNA in the nucleus (centre 739,438, axis -41 deg) */
-    function onDna(t) { return { x: 739 + 0.755 * t, y: 438 - 0.656 * t }; }
     function mix(a, b) { var r = {}, k; for (k in a) r[k] = a[k]; for (k in b) r[k] = b[k]; return r; }
 
+    /* v8.6 — the team's artwork (total_2.svg) and its PPT "Ste20-Gpa1-MAPK-p-sTF".
+       Molecules are drawn round the top of their ring's notch and the pockets round
+       the top of their block, so docking = putting the two origins together:
+       in the receptor's own frame the pocket sits at B = (22.7, -70.3) (slide 1 of the
+       PPT). The yeast scene follows slide 2: Gpa1, Ste20, the MAPK cascade, the
+       phosphate p and the sTF on the DNA. */
+    var REC_Y = { x: 374.5, y: 199.6, s: 0.475, r: -50 };     // receptor in the membrane
+    var DOCK_Y = { x: 355.8, y: 169.9, s: 0.475, r: -50 };    // ascr#18 bound to it
+    var STF_L = { x: 595.1, y: 504.6 }, STF_R = { x: 789.2, y: 504.6 };
     var STATES = [
       /* 0 · slide 1: two signals, two kinds of nematode */
       { cam: [330, 40, 620, 660], set: {
-        /* the title block takes the top ~230 units (captions scale with the stage), so the drawing starts below it */
-        m3: { x: 448, y: 384, s: 1, o: 1, P: { x: 480, y: 165, s: 0.6 } }, m18: { x: 812, y: 384, s: 1, o: 1, P: { x: 800, y: 165, s: 0.6 } },
+        m3: { x: 425.8, y: 437.4, s: 0.9, o: 1, P: { x: 466.4, y: 198.5, s: 0.55 } }, m18: { x: 778.9, y: 451.7, s: 0.9, o: 1, P: { x: 779.8, y: 207.3, s: 0.55 } },
         lbl3: { x: 448, y: 296, o: 1, P: { x: 480, y: 102 } }, lbl18: { x: 812, y: 296, o: 1, P: { x: 800, y: 102 } },
-        swap: { x: 630, y: 384, o: 1, P: { x: 640, y: 165, s: 0.55 } },
+        swap: { x: 630, y: 394, o: 1, P: { x: 640, y: 172, s: 0.55 } },
         wormF: { x: 168, y: 372, s: 1.05, o: 1, P: { x: 480, y: 300, s: 0.85 } }, wormP: { x: 1110, y: 372, s: 1.05, o: 1, P: { x: 800, y: 300, s: 0.85 } },
         lblF: { x: 168, y: 452, o: 1, P: { x: 480, y: 372 } }, lblP: { x: 1110, y: 452, o: 1, P: { x: 800, y: 372 } },
-        /* the bars arrive with the ratio (step 1); empty tracks on their own read as broken UI */
         barF: { x: 168, y: 540, o: 0, P: { x: 480, y: 462, s: 1.1 } }, barP: { x: 1110, y: 540, o: 0, P: { x: 800, y: 462, s: 1.1 } },
-        /* the fill is drawn from its left end (x = -120), so it grows left to right */
         barFi: { x: -120, sx: 0.001, o: 1 }, barPi: { x: -120, sx: 0.001, o: 1 },
         ratF: { x: 168, y: 592, o: 0, P: { x: 480, y: 520 } }, ratP: { x: 1110, y: 592, o: 0, P: { x: 800, y: 520 } },
         ask: { x: 630, y: 549, o: 0, P: { x: 640, y: 610 } },
-        /* the receptor's two states never show together: state A (recD) or state B (recL), with a small twist between them */
-        rec: { x: 300, y: 490, s: 0.92, o: 0 }, recD: { x: 301, y: 496, o: 1, r: 0 }, recL: { x: 289, y: 480, o: 0, r: -6 },
-        pocket: { x: 356, y: 382, o: 1 }, mut: { x: 926, y: 337, o: 0 },
+        rec: { x: 300, y: 490, s: 0.92, o: 0 }, recD: { x: 300, y: 490, o: 0 }, recL: { x: 300, y: 490, o: 1 },
+        pocket: { x: 322.7, y: 419.7, o: 1 }, mut: { x: 950, y: 296, o: 0 },
         fung: { x: 760, y: 330, s: 0.9, o: 0 }, scr: { x: 873, y: 362, s: 0.96, o: 0 },
-        cell: { x: 647, y: 391, s: 0.9, o: 0 }, nuc: { x: 739, y: 438, o: 1 }, dna: { x: 739, y: 438, o: 1 },
-        prom: mix(onDna(10), { o: 1 }), gene: mix(onDna(95), { o: 1 }), tf: mix(onDna(-130), { o: 1 }),
-        gB: { x: 418, y: 262, o: 0 }, gG: { x: 452, y: 246, o: 0 }, sig: { x: 540, y: 330, o: 0 },
-        arc: { x: 410, y: 270, s: 0.9, o: 0 }, out: { x: 900, y: 330, s: 1.2, o: 0 },
-        glow: { x: 1104, y: 300, o: 0 }, lblBx: { x: 1104, y: 309, o: 0 },
+        cell: { x: 647, y: 391, s: 0.9, o: 0 }, cellIn: { x: 640, y: 398.3, o: 1 }, bud: { x: 640, y: 398.3, o: 0 },
+        nuc: { x: 685.1, y: 494.5, o: 1 }, dna: { x: 687.8, y: 504.6, o: 1 },
+        prom: { x: 598, y: 504.6, o: 1 }, gene: { x: 731.9, y: 504.6, o: 1 },
+        tf: mix(STF_L, { o: 1 }), tfP: { x: 12, y: -72.4, o: 0 },
+        gB: { x: 492.9, y: 205.3, o: 0 }, ste20: { x: 540.9, y: 242.4, o: 0 }, mapk: { x: 674, y: 239.9, o: 0 },
+        gG: { x: 662.8, y: 287, o: 0 },
+        arc: { x: 567.7, y: 242, o: 0 }, sig: { x: 676, y: 300, o: 0 }, out: { x: 760, y: 440, o: 0 },
+        glow: { x: 1100, y: 300, o: 0 }, lblBx: { x: 1100, y: 310, o: 0 },
         strip: { x: 260, y: 409, o: 0 }, spot: { x: 58, y: -4, o: 0 }, lblStrip: { x: 260, y: 470, o: 0 },
         box: { x: 560, y: 556, s: 0.72, o: 0 }, lblBox: { x: 560, y: 660, o: 0 },
         map: { x: 949, y: 220, s: 6, o: 0 }, ping: { x: 935, y: 250, o: 0 }
@@ -85,68 +91,78 @@
       } },
       /* 2 · slide 2 (Morph): the molecules rise, the receptor and the fungus arrive */
       { cam: [0, 0, 1280, 720], set: {
-        m3: { x: 291, y: 130, s: 0.62, t: 1100 }, m18: { x: 889, y: 130, s: 0.62, t: 1100 },
-        lbl3: { x: 291, y: 72, t: 1100 }, lbl18: { x: 889, y: 72, t: 1100 },
+        m3: { x: 275.7, y: 164.9, s: 0.62, t: 1100 }, m18: { x: 866.2, y: 174.8, s: 0.62, t: 1100 },
+        lbl3: { x: 291, y: 66, t: 1100 }, lbl18: { x: 889, y: 66, t: 1100 },
         swap: HIDE, wormF: HIDE, wormP: HIDE, lblF: HIDE, lblP: HIDE, barF: HIDE, barP: HIDE, ratF: HIDE, ratP: HIDE, ask: HIDE,
-        rec: { s: 1, o: 1, d: 300, t: 900 }, fung: { s: 1, o: 1, d: 450, t: 900 }
+        rec: { s: 1, o: 1, d: 300, t: 900 },
+        // Reveal the upper layer only after the lower receptor has arrived.
+        recD: { o: 1, d: 1200, t: 500 }, fung: { s: 1, o: 1, d: 450, t: 900 }
       } },
-      /* 3 · clicks 1-3: the fungus fades, ascr#3 docks, the receptor changes state */
+      /* 3 · PPT slide 1: ascr#3 slides into its pocket; 0.5 s in, the receptor's
+         upper layer fades over 1 s, leaving the lower layer, the pocket and ascr#3 */
       { cam: [0, 0, 1280, 720], set: {
         fung: { o: 0, t: 500 },
-        m3: { x: 330, y: 432, s: 0.36, via: [214, 330], d: 200, t: 1500 },
-        recD: { o: 0, r: 6, d: 1300, t: 700 }, recL: { o: 1, r: 0, d: 1300, t: 700 },
+        m3: { x: 322.7, y: 419.7, s: 1, via: [214, 330], t: 2000 },
+        recD: { o: 0, d: 500, t: 1000 },
         lbl3: { o: 0, d: 200, t: 400 }
       } },
       /* 4 · clicks 4-6: the computer; the pocket flies to the screen and pulses */
       { cam: [0, 80, 1280, 640], set: {
-        m3: { o: 0, t: 400 }, recD: { o: 1, r: 0, t: 500 }, recL: { o: 0, r: -6, t: 500 },
+        m3: { o: 0, t: 400 }, recD: { o: 1, t: 500 },
         scr: { s: 1, o: 1, t: 600 },
-        pocket: { x: 926, y: 337, via: [640, 250], d: 400, t: 1400, fx: 'pulse', fxd: 1850 }
+        pocket: { x: 950, y: 296, via: [640, 250], d: 400, t: 1400, fx: 'pulse', fxd: 1850 }
       } },
       /* 5 · clicks 7-8: the redesigned pocket goes back into the receptor */
       { cam: [0, 80, 1280, 640], set: {
         pocket: { o: 0, t: 350 },
-        mut: { x: 356, y: 382, o: 1, via: [650, 470], d: 250, t: 1500, ot: 300 }
+        mut: { x: 322.7, y: 419.7, o: 1, via: [650, 470], d: 250, t: 1500, ot: 300 }
       } },
-      /* 6 · clicks 9-11: ascr#18 docks; the receptor switches state, then lets go */
+      /* 6 · ascr#18 docks into the redesigned pocket, the upper layer fades as in slide 1 */
       { cam: [0, 0, 1280, 720], set: {
         scr: { o: 0, t: 500 },
-        m18: { x: 330, y: 432, s: 0.36, via: [600, 200], d: 200, t: 1500 },
+        m18: { x: 322.7, y: 419.7, s: 1, via: [600, 200], t: 2000 },
         lbl18: { o: 0, d: 200, t: 400 },
-        recD: { o: 0, r: 6, d: 1500, t: 500 }, recL: { o: 1, r: 0, d: 1500, t: 500 }
+        recD: { o: 0, d: 500, t: 1000 }, recL: { o: 1 }
       } },
-      /* 7 · slide 3 (Morph): the receptor shrinks to the corner, the yeast appears */
+      /* 7 · slide 3 (Morph): the receptor shrinks to the corner, the yeast appears;
+         ascr#18 waits outside, already at the size and angle it will bind with */
       { cam: [0, 0, 1080, 720], wcam: [110, 0, 1280, 720], set: {
-        m18: { x: 380, y: 74, s: 0.3, o: 1, from: { x: 380, y: 74, s: 0.3, o: 0 }, d: 900, t: 500 },
-        rec: { x: 214, y: 136, s: 0.42, r: -58, t: 1300 }, recD: { o: 1, r: 0, t: 600 }, recL: { o: 0, r: -6, t: 600 },
+        m18: { x: 104.1, y: 117, s: DOCK_Y.s, r: DOCK_Y.r, o: 1, from: { x: 104.1, y: 117, s: DOCK_Y.s, r: DOCK_Y.r, o: 0 }, d: 900, t: 500 },
+        rec: { x: 230, y: 150, s: REC_Y.s, r: REC_Y.r, t: 1300 }, recD: { o: 1, t: 600 },
         cell: { s: 1, o: 1, d: 250, t: 1100 }
       } },
-      /* 8 · clicks 1-2: into the membrane; the G protein waits underneath */
+      /* 8 · into the membrane; Gpa1, Ste20 and the MAPK cascade wait underneath */
       { cam: [180, 60, 900, 660], wcam: [110, 0, 1280, 720], set: {
-        rec: { x: 373, y: 222, t: 1200 },
-        gB: { o: 1, d: 1000, t: 450 }, gG: { o: 1, d: 1300, t: 450 }
+        rec: { x: REC_Y.x, y: REC_Y.y, t: 1200 },
+        gB: { o: 1, d: 1000, t: 450 }, ste20: { o: 1, d: 1150, t: 450 }, mapk: { o: 1, d: 1300, t: 450 }
       } },
-      /* 9 · clicks 3-4: ascr#18 binds, the signal travels to the nucleus */
+      /* 9 · ascr#18 binds (the upper layer fades), Gpa1 passes the signal to Ste20,
+         Ste20 joins the MAPK cascade, and the phosphate p travels to the sTF */
       { cam: [180, 60, 900, 660], wcam: [110, 0, 1280, 720], set: {
-        m18: { x: 345, y: 176, via: [404, 128], t: 1100 },
-        recD: { o: 0, r: 6, d: 900, t: 600 }, recL: { o: 1, r: 0, d: 900, t: 600 },
-        arc: { o: 1, d: 1200, t: 400 },
-        gB: { fx: 'pulse', fxd: 1400 },
-        gG: { x: 612, y: 418, via: [470, 360], d: 1700, t: 1300, fx: 'pulse', fxd: 1400 },
-        sig: { o: 1, d: 1600, t: 700 },
-        tf: mix(onDna(-46), { d: 3000, t: 1000, fx: 'pulse', fxd: 3000 })
+        m18: { x: DOCK_Y.x, y: DOCK_Y.y, via: [200, 150], t: 1400 },
+        recD: { o: 0, d: 400, t: 900 },
+        gB: { fx: 'pulse', fxd: 1300 },
+        arc: { o: 1, d: 1400, t: 400 },
+        ste20: { x: 659, y: 199.2, d: 1500, t: 800 },
+        mapk: { fx: 'pulse', fxd: 2300 },
+        sig: { o: 1, d: 2400, t: 400 },
+        gG: { x: 607.1, y: 429.5, o: 1, via: [700, 380], d: 2500, t: 1200, od: 2400, ot: 250 },
+        tf: { fx: 'pulse', fxd: 3600 }
       } },
-      /* 10 · clicks 5-6: pigment out */
+      /* 10 · the sTF, now carrying p, moves along the DNA; the pigment genes switch on */
       { cam: [180, 60, 1100, 660], wcam: [110, 0, 1280, 720], set: {
-        gene: { fx: 'pulse', fxd: 0 },
-        out: { o: 1, d: 200, t: 600 },
-        glow: { o: 1, d: 700, t: 700 }, lblBx: { o: 1, d: 800, t: 600 }
+        gG: { o: 0, t: 150 }, tfP: { o: 1, t: 150 },
+        tf: mix(STF_R, { d: 150, t: 1100, fx: 'pulse', fxd: 150 }),
+        gene: { fx: 'pulse', fxd: 1300 },
+        out: { o: 1, d: 1300, t: 600 },
+        glow: { o: 1, d: 1700, t: 700 }, lblBx: { o: 1, d: 1800, t: 600 }
       } },
-      /* 11 · slide 4 (Morph): the yeast shrinks; strip, kit and map */
+      /* 11 · slide 4 (Morph): the yeast shrinks and becomes the budding yeast; strip, kit and map */
       { cam: [100, 20, 1080, 690], set: {
         m18: HIDE, rec: HIDE,
         cell: { x: 290, y: 174, s: 0.34, t: 1300 },
-        dna: HIDE, prom: HIDE, gene: HIDE, tf: HIDE, gB: HIDE, gG: HIDE, sig: HIDE, arc: HIDE, out: HIDE, glow: HIDE, lblBx: HIDE,
+        cellIn: { o: 0, d: 200, t: 900 }, nuc: { o: 0, d: 200, t: 700 }, bud: { o: 1, d: 200, t: 900 },
+        dna: HIDE, prom: HIDE, gene: HIDE, tf: HIDE, gB: HIDE, ste20: HIDE, mapk: HIDE, gG: HIDE, sig: HIDE, arc: HIDE, out: HIDE, glow: HIDE, lblBx: HIDE,
         strip: { o: 1, d: 500, t: 600 }, lblStrip: { o: 1, d: 700, t: 500 },
         box: { o: 1, d: 700, t: 600 }, lblBox: { o: 1, d: 850, t: 500 },
         map: { o: 1, d: 900, t: 700 }

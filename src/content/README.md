@@ -1,6 +1,10 @@
-# 写页面：Markdown 写法
+# 内容编辑与 Markdown 写法
 
-每个内页是 `src/content/pages/` 里的一个 `.md` 文件。文件名就是页面 id，导航用它来引用页面。
+V8.6 的正文编辑源是 `content/wiki/*.json`，可通过 Tina 后台维护；`src/content/pages/*.md` 是构建生成文件，不直接修改。
+
+JSON 文件名是页面 id，导航通过 `src/data/nav.ts` 引用。页面地址由 `route` 决定。`npm run build` 自动导出 Markdown；本地保存后也可运行 `node tools/export-tina.mjs` 更新普通预览。
+
+以下语法用于 Tina 富文本和排版模块，以及检查导出的 Markdown。字段和模板见 `tina/config.ts`、`tina/toolkit.ts`。
 
 ## 1. 文件开头（frontmatter）
 
@@ -29,17 +33,18 @@ description: "…"                        # 可选。给搜索引擎的摘要，
 ```
 
 - **`##` 二级标题就是一个章节**：自动编号（01、02…），自动进入目录和搜索。
-- **`{#problem}`**：固定该章节的锚点地址，如 `/pages/description.html#problem`。不写会按标题自动生成。**已有页面的锚点请不要改**，站内外可能有链接指向它们。
+- **`{#problem}`**：固定该章节的锚点地址，如 `/description/#problem`。不写会按标题自动生成。**已有页面的锚点请不要改**，站内外可能有链接指向它们。
 - **`toc="…"`**：目录里显示的短名字。不写就用标题原文。
 - **`###` 及更小的标题**默认不进目录。要进目录就加 `toc`：`### The 0528 plate {#r0528 toc="0528 plate"}`，或只写 `{toc}`。
 - **`{notoc}`**：该二级标题不进目录、不编号。
 
 ## 3. 正文
 
-支持普通 Markdown：段落、`**粗体**`、`*斜体*`（显示为衬线斜体，适合物种名）、`` `代码` ``、列表、引用 `>`、表格、代码块。
+支持普通 Markdown：段落、`**粗体**`、`*斜体*`（用于物种名等科学排版）、`` `代码` ``、列表、引用 `>`、表格、代码块。
 
-- **站内链接**：写以 `/` 开头的地址，构建时会自动改成相对地址。例如 `[Notebook](/pages/notebook.html)`、`[Model](/model/)`、`[本页章节](#problem)`。
-- **图片**：文件放在 `static/img/…`，正文写 `![说明文字](/img/xxx.png)`。不能引用外部网址的图片（iGEM 的规定，审计会拦下）。
+- **站内链接**：写以 `/` 开头的地址，构建时会自动改成相对地址。例如 `[Experiments](/experiments/)`、`[Model](/model/)`、`[本页章节](#problem)`。
+- **图片**：本地排版可使用 `static/img/…` 或 Tina 图片模块；发布使用官方托管地址，并登记 `content/cdn-assets.json`。图片、图注和来源分别维护。
+- **标注**：路径、命令和代码标识符使用行内代码；术语首次出现可加粗解释，物种名按科学规范排版，详见 [正文语义标注规范](../../docs/正文语义标注规范.md)。
 
 ## 4. 内容块
 
@@ -132,10 +137,16 @@ description: "…"                        # 可选。给搜索引擎的摘要，
 
 建议发布前运行 `npm run verify`（构建 + 审计）。
 
-## 页面结构（v7.1，按内部大纲）
+## 当前页面结构
 
-- `src/content/pages/`：已上线的页面。导航分组和顺序写在 `src/data/nav.ts`。
-- `src/content/optional/`：大纲里标为【可选】的页面（Background、Notebook、Sustainability、Collaboration、Sponsors & Partners）。内容保留，暂不上线。要上线时，把文件移到 `pages/` 即可，顶部导航、手机菜单和上一页/下一页会自动加上它。
-- `src/content/archive/`：大纲以外的旧页面（Hardware、Software、Design 等），不上线，文字留作备查。
-- 指向未上线页面的链接不会让构建失败：构建时它们会自动显示为普通文字，构建日志逐条列出；页面上线后，链接自动恢复。
-- Model 1、Model 2、Part Collection 是占位页。改名时要同时改文件名、`title`、`crumbs`，以及 `src/data/nav.ts` 里对应的 `page` 和 `label`。
+- 五个导航栏目为 Project、Wet Lab、Model、Human Practices、Team，分组和顺序由 `src/data/nav.ts` 维护。
+- Model 包含总览及 `model-docking`、`model-md`、`model-ode`、`model-eco` 四章；`model-1`、`model-2` 保留旧入口。
+- Protocols 并入 Experiments，Part Collection 并入 Parts；原地址保留兼容入口。
+- Background 已启用；其他可选页面是否生成取决于实际内容文件，不能仅凭旧版目录名判断。
+- `src/content/optional/` 与 `src/content/archive/` 留存未启用或旧版内容；新增正式页面先建立 JSON，再维护导航。
+- 页面开场由 `src/data/scenes/` 配置，详见 [页面开场说明](../../docs/页面开场-使用说明.md)。
+- Awards 和 Acknowledgements 已建立页面与开场，正文留空待供稿，暂不进入搜索。
+- 昼夜模式和正文标注由公共样式统一处理，新增正文无需重复导入主题样式。
+- 后续正文按 [逐页面标注计划](../../docs/逐页面标注计划.md) 维护术语和关键句强调。
+
+供稿来源与团队审核状态记录在 `content/wiki-provenance.json`；更新正文不等于完成审核。

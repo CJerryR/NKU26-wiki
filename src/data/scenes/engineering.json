@@ -1,0 +1,205 @@
+{
+  "page": "engineering",
+  "enabled": true,
+  "note": "Design units: desktop canvas 1600x900, mobile 900x1600, origin at the canvas centre, y down. w = drawn width. from = state at scroll progress 0, to = state at 1; win = the part of the progress over which this layer moves. s scale, r degrees, o opacity. depth = pointer parallax in design px.",
+  "signature": "The four DBTL stations turn a quarter-step round the title and spread out.",
+  "desktop": {
+    "canvas": [
+      1600,
+      900
+    ],
+    "title": {
+      "y": -30,
+      "toY": -300,
+      "toScale": 0.62
+    },
+    "layers": [
+      {
+        "id": "plasmid",
+        "prop": "plasmid",
+        "w": 220,
+        "z": 2,
+        "depth": 24,
+        "from": {
+          "x": 0,
+          "y": -300,
+          "s": 0.9
+        },
+        "to": {
+          "x": 570,
+          "y": -250,
+          "r": 40,
+          "s": 1.1
+        },
+        "win": [
+          0.1,
+          0.78
+        ]
+      },
+      {
+        "id": "blueprint",
+        "prop": "blueprint",
+        "w": 300,
+        "z": 3,
+        "depth": 20,
+        "from": {
+          "x": -600,
+          "y": 20,
+          "r": -4
+        },
+        "to": {
+          "x": -570,
+          "y": -250,
+          "r": 6,
+          "s": 1.1
+        },
+        "win": [
+          0.1,
+          0.78
+        ]
+      },
+      {
+        "id": "plate",
+        "prop": "plate",
+        "w": 300,
+        "z": 3,
+        "depth": 18,
+        "from": {
+          "x": 600,
+          "y": 20,
+          "r": 4
+        },
+        "to": {
+          "x": 580,
+          "y": 270,
+          "r": -6,
+          "s": 1.1
+        },
+        "win": [
+          0.1,
+          0.78
+        ]
+      },
+      {
+        "id": "laptop",
+        "prop": "laptop",
+        "w": 290,
+        "z": 4,
+        "depth": 12,
+        "from": {
+          "x": 0,
+          "y": 300
+        },
+        "to": {
+          "x": -570,
+          "y": 260,
+          "r": -4,
+          "s": 1.1
+        },
+        "win": [
+          0.1,
+          0.78
+        ]
+      }
+    ]
+  },
+  "mobile": {
+    "canvas": [
+      900,
+      1600
+    ],
+    "title": {
+      "y": -80,
+      "toY": -470,
+      "toScale": 0.7
+    },
+    "layers": [
+      {
+        "id": "plasmid",
+        "prop": "plasmid",
+        "w": 260,
+        "z": 2,
+        "depth": 0,
+        "from": {
+          "x": 0,
+          "y": -480,
+          "s": 0.9
+        },
+        "to": {
+          "x": 360,
+          "y": -740,
+          "r": 40,
+          "s": 1.1
+        },
+        "win": [
+          0.1,
+          0.78
+        ]
+      },
+      {
+        "id": "blueprint",
+        "prop": "blueprint",
+        "w": 340,
+        "z": 3,
+        "depth": 0,
+        "from": {
+          "x": -230,
+          "y": 300,
+          "r": -4
+        },
+        "to": {
+          "x": -330,
+          "y": 380,
+          "r": 8,
+          "s": 1.1
+        },
+        "win": [
+          0.1,
+          0.78
+        ]
+      },
+      {
+        "id": "plate",
+        "prop": "plate",
+        "w": 340,
+        "z": 3,
+        "depth": 0,
+        "from": {
+          "x": 230,
+          "y": 330,
+          "r": 4
+        },
+        "to": {
+          "x": 330,
+          "y": 420,
+          "r": -8,
+          "s": 1.1
+        },
+        "win": [
+          0.1,
+          0.78
+        ]
+      },
+      {
+        "id": "laptop",
+        "prop": "laptop",
+        "w": 320,
+        "z": 4,
+        "depth": 0,
+        "from": {
+          "x": 0,
+          "y": 600
+        },
+        "to": {
+          "x": 0,
+          "y": 700,
+          "s": 1.1
+        },
+        "win": [
+          0.1,
+          0.78
+        ]
+      }
+    ]
+  }
+}

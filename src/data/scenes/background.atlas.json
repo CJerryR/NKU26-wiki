@@ -1,0 +1,92 @@
+{
+  "desktop": {
+    "file": "background-desktop.webp",
+    "size": [
+      669,
+      1478
+    ],
+    "bytes": 90598,
+    "quality": 86,
+    "hash": "2c6e40e28b7a",
+    "frames": {
+      "book-closed": [
+        0,
+        390,
+        509,
+        358
+      ],
+      "book-open": [
+        0,
+        752,
+        669,
+        321
+      ],
+      "helix": [
+        0,
+        0,
+        108,
+        386
+      ],
+      "journals": [
+        112,
+        0,
+        547,
+        360
+      ],
+      "ligand": [
+        0,
+        1285,
+        416,
+        193
+      ],
+      "ribbon": [
+        0,
+        1077,
+        480,
+        204
+      ]
+    }
+  },
+  "mobile": {
+    "file": "background-mobile.webp",
+    "size": [
+      709,
+      957
+    ],
+    "bytes": 67180,
+    "quality": 86,
+    "hash": "aacf9a056dd1",
+    "frames": {
+      "book-closed": [
+        112,
+        0,
+        455,
+        320
+      ],
+      "book-open": [
+        0,
+        390,
+        618,
+        296
+      ],
+      "helix": [
+        0,
+        0,
+        108,
+        386
+      ],
+      "journals": [
+        0,
+        690,
+        406,
+        267
+      ],
+      "ligand": [
+        410,
+        690,
+        299,
+        138
+      ]
+    }
+  }
+}

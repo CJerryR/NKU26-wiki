@@ -1,0 +1,314 @@
+{
+  "page": "acknowledgements",
+  "sharedFrames": [
+    "envelope-base",
+    "envelope-flap"
+  ],
+  "enabled": true,
+  "version": "codex-3d-pilot",
+  "signature": "An envelope flap moves aside and a blank card rises; gifts, flowers and abstract tokens surround it.",
+  "illustration": "Code-rendered schematic decoration; not experimental evidence, actual molecular geometry, team size, or competition results.",
+  "desktop": {
+    "canvas": [
+      1600,
+      900
+    ],
+    "title": {
+      "y": -55,
+      "toY": -240,
+      "toScale": 0.62,
+      "fontSize": 108
+    },
+    "layers": [
+      {
+        "id": "correspondence",
+        "prop": "correspondence",
+        "w": 400,
+        "z": 1,
+        "depth": 8,
+        "from": {
+          "x": -590,
+          "y": -160,
+          "r": -13,
+          "s": 1,
+          "o": 1
+        },
+        "to": {
+          "x": -740,
+          "y": -50,
+          "r": -24,
+          "s": 1,
+          "o": 1
+        },
+        "win": [
+          0.08,
+          0.8
+        ]
+      },
+      {
+        "id": "people",
+        "prop": "people",
+        "w": 390,
+        "z": 1,
+        "depth": 8,
+        "from": {
+          "x": 580,
+          "y": -160,
+          "r": 9,
+          "s": 1,
+          "o": 1
+        },
+        "to": {
+          "x": 730,
+          "y": -40,
+          "r": 16,
+          "s": 1,
+          "o": 1
+        },
+        "win": [
+          0.08,
+          0.8
+        ]
+      },
+      {
+        "id": "flowers-gift",
+        "prop": "flowers-gift",
+        "w": 570,
+        "z": 3,
+        "depth": 8,
+        "from": {
+          "x": 410,
+          "y": 240,
+          "r": 0,
+          "s": 1,
+          "o": 1
+        },
+        "to": {
+          "x": 580,
+          "y": 290,
+          "r": 8,
+          "s": 1,
+          "o": 1
+        },
+        "win": [
+          0.08,
+          0.8
+        ]
+      },
+      {
+        "id": "letter",
+        "prop": "letter",
+        "w": 420,
+        "z": 3,
+        "depth": 8,
+        "from": {
+          "x": -340,
+          "y": 240,
+          "r": -8,
+          "s": 1,
+          "o": 1
+        },
+        "to": {
+          "x": -310,
+          "y": 70,
+          "r": 6,
+          "s": 1,
+          "o": 1
+        },
+        "win": [
+          0.24,
+          0.85
+        ]
+      },
+      {
+        "id": "envelope-base",
+        "prop": "envelope-base",
+        "w": 650,
+        "z": 4,
+        "depth": 18,
+        "from": {
+          "x": -310,
+          "y": 280,
+          "r": 0,
+          "s": 1,
+          "o": 1
+        },
+        "to": {
+          "x": -420,
+          "y": 320,
+          "r": 0,
+          "s": 1,
+          "o": 1
+        },
+        "win": [
+          0.08,
+          0.8
+        ]
+      },
+      {
+        "id": "envelope-flap",
+        "prop": "envelope-flap",
+        "w": 650,
+        "z": 5,
+        "depth": 18,
+        "from": {
+          "x": -310,
+          "y": 280,
+          "r": 0,
+          "s": 1,
+          "o": 1
+        },
+        "to": {
+          "x": -440,
+          "y": 430,
+          "r": -28,
+          "s": 0.88,
+          "o": 1
+        },
+        "win": [
+          0.04,
+          0.56
+        ]
+      }
+    ]
+  },
+  "mobile": {
+    "canvas": [
+      900,
+      1600
+    ],
+    "title": {
+      "y": -85,
+      "toY": -360,
+      "toScale": 0.68,
+      "fontSize": 70
+    },
+    "layers": [
+      {
+        "id": "people",
+        "prop": "people",
+        "w": 340,
+        "z": 1,
+        "depth": 0,
+        "from": {
+          "x": 265,
+          "y": -420,
+          "r": 12,
+          "s": 1,
+          "o": 1
+        },
+        "to": {
+          "x": 410,
+          "y": -260,
+          "r": 20,
+          "s": 1,
+          "o": 1
+        },
+        "win": [
+          0.08,
+          0.8
+        ]
+      },
+      {
+        "id": "flowers-gift",
+        "prop": "flowers-gift",
+        "w": 480,
+        "z": 2,
+        "depth": 0,
+        "from": {
+          "x": 230,
+          "y": 400,
+          "r": 0,
+          "s": 1,
+          "o": 1
+        },
+        "to": {
+          "x": 370,
+          "y": 500,
+          "r": 10,
+          "s": 1,
+          "o": 1
+        },
+        "win": [
+          0.08,
+          0.8
+        ]
+      },
+      {
+        "id": "letter",
+        "prop": "letter",
+        "w": 420,
+        "z": 3,
+        "depth": 0,
+        "from": {
+          "x": -130,
+          "y": 340,
+          "r": -8,
+          "s": 1,
+          "o": 1
+        },
+        "to": {
+          "x": -80,
+          "y": 170,
+          "r": 6,
+          "s": 1,
+          "o": 1
+        },
+        "win": [
+          0.24,
+          0.85
+        ]
+      },
+      {
+        "id": "envelope-base",
+        "prop": "envelope-base",
+        "w": 650,
+        "z": 4,
+        "depth": 0,
+        "from": {
+          "x": -130,
+          "y": 440,
+          "r": 0,
+          "s": 1,
+          "o": 1
+        },
+        "to": {
+          "x": -250,
+          "y": 520,
+          "r": 0,
+          "s": 1,
+          "o": 1
+        },
+        "win": [
+          0.08,
+          0.8
+        ]
+      },
+      {
+        "id": "envelope-flap",
+        "prop": "envelope-flap",
+        "w": 650,
+        "z": 5,
+        "depth": 0,
+        "from": {
+          "x": -130,
+          "y": 440,
+          "r": 0,
+          "s": 1,
+          "o": 1
+        },
+        "to": {
+          "x": -270,
+          "y": 640,
+          "r": -28,
+          "s": 0.88,
+          "o": 1
+        },
+        "win": [
+          0.04,
+          0.56
+        ]
+      }
+    ]
+  }
+}

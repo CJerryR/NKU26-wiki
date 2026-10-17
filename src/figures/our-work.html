@@ -1,25 +1,13 @@
-<!-- v7.5: Wang Chang's concept sketch of the project, rebuilt in the site's own
-     colours as an interactive diagram. Same layout as the sketch: the wet lab
-     runs on the paper, the dry lab in the two lavender bands. The script
-     (home-story.js, labFlow) plays the signal through once on arrival;
-     the chapter tabs replay one part, and every step opens a short note. -->
-<section class="lf" id="signal" data-nav-label="Dry lab and wet lab" data-signal data-lf data-tone="light" aria-labelledby="signal-title">
-  <div class="lf__inner">
-    <div class="lf__copy">
-      <h2 class="h-display" id="signal-title">Our work: dry lab and wet lab</h2>
-      <p class="lf__lede">The wet lab builds a yeast that turns an ascaroside signal into color. The dry lab screens its receptor and turns that color into nematode numbers and advice.</p>
-      <p class="lf__hint">Point at any step to read about it.</p>
-      <div class="lf__tabs" role="group" aria-label="Chapters of the workflow">
+<p class="lf__lede">The wet lab builds a yeast that turns an ascaroside signal into color. The dry lab screens its receptor and turns that color into nematode numbers and advice. Point at any step to read about it, or pick a chapter to replay it.</p>
+<div class="lf__tabs" role="group" aria-label="Chapters of the workflow">
         <button type="button" class="lf__tab lf__tab--wet" data-lf-tab="1" aria-pressed="false"><i aria-hidden="true"></i><b>Discover</b><span class="lf__more"><span>A nematode-trapping fungus gives us a receptor for ascarosides.</span></span></button>
         <button type="button" class="lf__tab lf__tab--dry" data-lf-tab="2" aria-pressed="false"><i aria-hidden="true"></i><b>Engineer</b><span class="lf__more"><span>Docking and molecular dynamics pick the receptor variants for ascr#3 and ascr#18.</span></span></button>
         <button type="button" class="lf__tab lf__tab--wet" data-lf-tab="3" aria-pressed="false"><i aria-hidden="true"></i><b>Sense</b><span class="lf__more"><span>In yeast, the receptor switches on betaxanthin and the medium turns yellow.</span></span></button>
         <button type="button" class="lf__tab lf__tab--dry" data-lf-tab="4" aria-pressed="false"><i aria-hidden="true"></i><b>Interpret</b><span class="lf__more"><span>Models turn the color into nematode numbers, then into costs and advice.</span></span></button>
       </div>
-    </div>
-
-    <figure class="lf__stage" data-lf-stage>
-      <svg class="lf-svg is-pre" data-lf-svg viewBox="0 0 1440 780" role="img" aria-labelledby="lf-svg-title">
-        <title id="lf-svg-title">How the wet lab and the dry lab fit together, in ten steps</title>
+<div class="lf__stage" data-lf-stage>
+<svg class="lf-svg is-pre" data-lf-svg viewBox="0 0 1440 780" role="img" aria-labelledby="wf-svg-title">
+        <title id="wf-svg-title">How the wet lab and the dry lab fit together, in ten steps</title>
         <defs>
           <marker id="lf-h-wet" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1.5L8 5L1 8.5" fill="none" stroke="#7e0c6e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></marker>
           <marker id="lf-h-dry" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1.5L8 5L1 8.5" fill="none" stroke="#5a3f8c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></marker>
@@ -212,19 +200,5 @@
           <span class="lf__key"><i class="lf__sw lf__sw--dry" aria-hidden="true"></i>Dry lab</span></span>
           <button type="button" class="lf__replay" data-lf-replay><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10a5.5 5.5 0 1 0 1.7-4" /><path d="M5.6 2.8l.6 3.4 3.4-.6" /></svg>Replay</button>
         </div>
-      <div class="lf-card" data-lf-card role="status" aria-live="polite" hidden><b></b><p></p></div>
-    </figure>
-  </div>
-  <ol class="sr-only">
-    <li>Wet lab: Arthrobotrys oligospora, a nematode-trapping fungus, captures the nematodes around it.</li>
-    <li>Wet lab: in it we found a receptor that recognizes ascarosides, the nematodes' chemical signals.</li>
-    <li>Dry lab: we took this receptor and designed variants of it.</li>
-    <li>Dry lab: molecular docking and molecular dynamics screened the variants that recognize ascr#3 and ascr#18.</li>
-    <li>Wet lab: the modified gene goes into yeast, which then carries the receptor and recognizes ascarosides.</li>
-    <li>Wet lab: the receptor signal is coupled to the yeast's own pathway and switches on the betaxanthin synthesis genes.</li>
-    <li>Wet lab: betaxanthin builds up inside and outside the cells and the culture medium changes color.</li>
-    <li>Wet lab: OD and RGB measurements of the medium give the pigment concentration.</li>
-    <li>Dry lab: a lumped model links pigment concentration to the ascaroside concentration, and so to nematode activity: N nematode = f(OD, t, …) = f′(color).</li>
-    <li>Dry lab: the eco model takes the abundance of harmful nematodes, estimates the economic impact and suggests what to do.</li>
-  </ol>
-</section>
+  <div class="lf-card" data-lf-card role="status" aria-live="polite" hidden><b></b><p></p></div>
+</div>

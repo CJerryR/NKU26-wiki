@@ -1,0 +1,48 @@
+﻿文件名,页面,生产方式,工具与版本,生成日期,提示词编号,需科学审核确认的点,科学审核人,状态
+soil-left.png,description,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,土壤分层与细根示意,（签名）,待审核
+soil-right.png,description,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,土壤分层与细根示意,（签名）,待审核
+roots.png,description,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,大豆幼苗：根结应为根上的圆形瘤状膨大,（签名）,待审核
+nematode.png,description,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,线虫细长、两端渐尖,（签名）,待审核
+strip.png,description,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,试纸条，检测窗为 amber（示意，不对应数据）,（签名）,待审核
+blueprint.png,engineering,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,抽象线条，无数据,（签名）,待审核
+plasmid.png,engineering,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,环状质粒（环 + 色带）,（签名）,待审核
+plate.png,engineering,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,96 孔板 8×12,（签名）,待审核
+laptop.png,engineering,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,屏幕曲线为纯示意，无坐标轴、无数值,（签名）,待审核
+yeast.png,results,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,出芽酵母：五个椭圆细胞，其中一个出芽,（签名）,待审核
+membrane.png,results,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,双层膜 + 一个跨膜受体,（签名）,待审核
+strip-neutral.png,results,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,试纸（未显色）,（签名）,待审核
+strip-amber.png,results,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,试纸（显色，纯示意，不对应数据）,（签名）,待审核
+plate.png,results,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,孔板,（签名）,待审核
+helix.png,model,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,α 螺旋（复制 7 层表示 7 次跨膜）,（签名）,待审核
+ligand.png,model,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,配体小分子球棍模型（约 15 个原子，示意）,（签名）,待审核
+ribbon.png,model,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,曲线丝带（示意，非真实曲线）,（签名）,待审核
+field.png,model,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,田块 + 三枚硬币（示意经济收益）,（签名）,待审核
+toolbox-body.png,contribution,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,工具箱箱体,（签名）,待审核
+toolbox-lid.png,contribution,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,工具箱盖,（签名）,待审核
+block-promoter.png,contribution,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,启动子：弯折箭头（SBOL 符号）,（签名）,待审核
+block-cds.png,contribution,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,CDS 积木,（签名）,待审核
+block-terminator.png,contribution,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,终止子：T 形（SBOL 符号）,（签名）,待审核
+cryovial.png,contribution,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,冻存管,（签名）,待审核
+manual.png,contribution,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,手册,（签名）,待审核
+dish-base.png,experiments,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,培养皿 + 菌落（圆点，纯示意，不对应实验结果）,（签名）,待审核
+dish-lid.png,experiments,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,培养皿盖,（签名）,待审核
+pipette.png,experiments,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,移液枪,（签名）,待审核
+tube-rack.png,experiments,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,离心管架 + 管,（签名）,待审核
+thermocycler.png,experiments,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,PCR 仪（屏幕为空白色块，无数字）,（签名）,待审核
+arc-left.png,parts,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,质粒环的左半（带色带）,（签名）,待审核
+arc-right.png,parts,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,质粒环的右半,（签名）,待审核
+plasmid.png,parts,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,质粒环（手机版整环）,（签名）,待审核
+block-promoter.png,parts,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,启动子：弯折箭头,（签名）,待审核
+block-rbs.png,parts,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,RBS：半圆（SBOL 符号）,（签名）,待审核
+block-cds.png,parts,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,CDS：箭头方块（SBOL 符号）,（签名）,待审核
+block-terminator.png,parts,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,终止子：T 形,（签名）,待审核
+journals.png,background,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,一摞期刊（封面无字）,（签名）,待审核
+book-closed.png,background,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,合上的书（封面无字）,（签名）,待审核
+book-open.png,background,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,打开的书（页面只有抽象横线，无文字）,（签名）,待审核
+ligand.png,background,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,配体（同 Model 页）,（签名）,待审核
+helix.png,background,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,受体 α 螺旋（同 Model 页）,（签名）,待审核
+ribbon.png,background,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,曲线丝带（同 Model 页）,（签名）,待审核
+piece-a.png,attributions,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,拼图块 a,（签名）,待审核
+piece-b.png,attributions,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,拼图块 b,（签名）,待审核
+piece-c.png,attributions,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,拼图块 c,（签名）,待审核
+piece-d.png,attributions,代码渲染（AI 辅助编写）,tools/scene-art/props.py + sdf.py（NumPy 距离场光线步进）,2026-10-17,无（不用图像模型）,拼图块 d,（签名）,待审核

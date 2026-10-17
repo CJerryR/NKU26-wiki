@@ -1,0 +1,92 @@
+{
+  "desktop": {
+    "file": "parts-desktop.webp",
+    "size": [
+      317,
+      2012
+    ],
+    "bytes": 56458,
+    "quality": 86,
+    "hash": "753a7f10d36c",
+    "frames": {
+      "arc-left": [
+        0,
+        643,
+        315,
+        628
+      ],
+      "arc-right": [
+        0,
+        0,
+        305,
+        639
+      ],
+      "block-cds": [
+        0,
+        1695,
+        317,
+        182
+      ],
+      "block-promoter": [
+        0,
+        1501,
+        246,
+        190
+      ],
+      "block-rbs": [
+        0,
+        1881,
+        185,
+        131
+      ],
+      "block-terminator": [
+        0,
+        1275,
+        197,
+        222
+      ]
+    }
+  },
+  "mobile": {
+    "file": "parts-mobile.webp",
+    "size": [
+      451,
+      1065
+    ],
+    "bytes": 31622,
+    "quality": 86,
+    "hash": "dc5f6ce1e976",
+    "frames": {
+      "block-cds": [
+        0,
+        666,
+        355,
+        204
+      ],
+      "block-promoter": [
+        0,
+        874,
+        247,
+        191
+      ],
+      "block-rbs": [
+        251,
+        874,
+        200,
+        142
+      ],
+      "block-terminator": [
+        0,
+        417,
+        218,
+        245
+      ],
+      "plasmid": [
+        0,
+        0,
+        405,
+        413
+      ]
+    }
+  }
+}

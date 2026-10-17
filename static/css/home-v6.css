@@ -65,15 +65,22 @@
 .wmark::after{border-color:var(--plum)}
 .world__map figcaption{font-size:11.5px}
 
-.flipcard{width:300px;perspective:1000px}
-.flipcard .flipcard__inner{position:relative;transform-style:preserve-3d;transform-origin:var(--ox,0) 50%;transform:rotateY(-80deg) scale(.92);opacity:0;transition:transform .6s var(--ease-o),opacity .3s}
+.flipcard{width:min(340px,calc(100% - 24px));perspective:1000px}
+.flipcard .flipcard__inner{position:relative;border-radius:18px;background:#fffaf1;box-shadow:0 28px 60px -24px rgba(35,24,41,.55),0 0 0 1px rgba(35,24,41,.08);transform-style:preserve-3d;transform-origin:var(--ox,0) 50%;transform:rotateY(-80deg) scale(.92);opacity:0;transition:transform .6s var(--ease-o),opacity .3s}
 .flipcard.is-open .flipcard__inner{transform:none;opacity:1}
 .flipcard.is-open.is-flipped .flipcard__inner{transform:rotateY(180deg)}
-.flipcard .flipcard__face{transform:none;opacity:1;-webkit-backface-visibility:hidden;backface-visibility:hidden}
+.flipcard .flipcard__face{transform:none;opacity:1;border-radius:18px 18px 0 0;box-shadow:none;max-height:calc(var(--case-card-max-height,calc(100svh - 96px)) - 66px);overflow:auto;overscroll-behavior:contain;-webkit-backface-visibility:hidden;backface-visibility:hidden}
 .flipcard .flipcard__back{position:absolute;inset:0;transform:rotateY(180deg);overflow:auto}
 .flipcard dd i{display:block;font-size:12.5px;color:var(--ink-3)}
 .flipcard dd small{display:block;margin-top:5px;font-size:11.5px;color:var(--ink-3)}
-.flipcard__turn{margin-top:14px;padding:0 0 1px;font:600 13px var(--sans);color:var(--plum);border-bottom:1px solid currentColor;cursor:pointer}
+.flipcard__controls{display:flex;align-items:center;justify-content:space-between;gap:12px;height:66px;padding:10px 12px 12px 20px;border-top:1px solid rgba(35,24,41,.1);pointer-events:auto}
+.flipcard__flip-label{font:600 13px/1.35 var(--sans);color:var(--plum)}
+.flipcard__flip{display:grid;place-items:center;flex:none;width:44px;height:44px;padding:0;border:0;border-radius:50%;color:#fff;cursor:pointer;background:linear-gradient(180deg,rgb(255 255 255 / .3),rgb(255 255 255 / .12)),#60427b;box-shadow:inset 0 1px 0 rgb(255 255 255 / .55),inset 0 0 0 .5px rgb(255 255 255 / .42),inset 0 -1px 1px rgb(0 0 0 / .14),0 10px 18px -8px rgb(40 24 54 / .5);-webkit-tap-highlight-color:transparent;transition:transform .25s var(--ease-o),background-color .2s}
+.flipcard__flip svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;transition:transform .6s var(--ease-o)}
+.flipcard__flip:hover{transform:scale(1.07)}
+.flipcard.is-flipped .flipcard__flip svg{transform:rotate(180deg)}
+.flipcard__flip:focus-visible{outline:2.5px solid var(--plum);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.flipcard__flip,.flipcard__flip svg{transition:none}}
 .flipcard__loss{margin:6px 0 12px;font-size:16px;line-height:1.45;color:var(--ink)}
 .flipcard__src{font-size:12.5px;line-height:1.45;color:var(--ink-3)}
 .flipcard__src a{color:var(--plum);text-decoration:underline;text-underline-offset:2px}
@@ -297,6 +304,8 @@
 .hp2{position:relative;height:100vh;height:100svh;overflow:hidden;color:#f3ebe0;background:radial-gradient(90% 80% at 70% 56%,#26143a 0,#170c1f 68%)}
 .hp2.is-tall{height:auto;min-height:100svh}
 .hp2__inner{height:100%;width:min(1300px,100% - 56px);margin-inline:auto;display:grid;grid-template-columns:minmax(260px,.33fr) 1fr;gap:clamp(20px,3vw,56px);align-items:center;padding-top:72px}
+/* Bring the complete text column towards the map on spacious desktop views. */
+@media (min-width:1101px){.hp2__copy{position:relative;z-index:1;transform:translateX(clamp(36px,6.5vw,100px))}}
 .hp2 .h-display{font-size:clamp(34px,3.6vw,56px);color:#fff}
 .hp2__lede{margin-top:12px;max-width:30ch;font-size:16px;line-height:1.5;color:rgba(243,235,224,.72)}
 .hp2__layers{margin-top:32px;display:grid;gap:6px}
@@ -496,8 +505,9 @@ html.is-paged .home .lf{padding:76px 0 22px}
 .cz__sw-btn:focus-visible{outline:2px solid #ffd66b;outline-offset:2px}
 /* readout: one pane of glass, three figures, one line of provenance */
 .cz__read{display:grid;max-width:700px;margin:0 auto;padding:17px 26px 13px;border-radius:26px}
-.cz__read>.cz__sp{grid-area:1/1;min-width:0}
-.cz__read>.cz__sp[hidden]{display:block;visibility:hidden}
+.cz__read-body{display:grid;min-width:0;overscroll-behavior:contain}
+.cz__read-body>.cz__sp{grid-area:1/1;min-width:0}
+.cz__read-body>.cz__sp[hidden]{display:none}
 .cz__figs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 30px;margin:0}
 .cz__fig{display:flex;flex-direction:column-reverse;justify-content:flex-end;gap:6px;min-width:0}
 .cz__fig dd{margin:0;font:600 36px/1 var(--sans);letter-spacing:-.035em;font-variant-numeric:tabular-nums lining-nums;color:#fff}
@@ -508,6 +518,9 @@ html.is-paged .home .lf{padding:76px 0 22px}
 .cz__prov{margin:13px 0 0;padding-top:10px;border-top:1px solid rgb(255 255 255 / .1);font-size:11.5px;line-height:1.45;color:rgb(236 228 242 / .55)}
 .cz__prov a{color:rgb(236 228 242 / .85);text-decoration:underline;text-decoration-color:rgb(236 228 242 / .35);text-underline-offset:2px}
 .cz__prov a:hover{text-decoration-color:currentColor}
+.cz__sources{display:grid;gap:5px;margin:9px 0 0;padding:0;list-style:none;font-size:10.5px;line-height:1.45;color:rgb(236 228 242 / .65)}
+.cz__sources li{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 10px}
+.cz__sources a{white-space:nowrap;color:rgb(236 228 242 / .9);text-decoration:underline;text-underline-offset:2px}
 /* marker label: a small chip of glass; script keeps it between the switch and the readout */
 .cz .cz__tip{position:absolute;left:0;top:0;z-index:6;display:block;max-width:250px;padding:8px 13px 9px;border:0;border-radius:15px;background:none;box-shadow:var(--glass-shadow);color:#fff;font:500 12px/1.35 var(--sans);pointer-events:none;--glass-tint:rgb(26 14 34 / .5)}
 .cz .cz__tip[hidden]{display:none}
@@ -559,10 +572,21 @@ html.is-paged .home .lf{padding:76px 0 22px}
 /* ===== v8.1 world case cards: a representative species photo ===== */
 .flipcard__photo{margin:0 0 12px}
 .flipcard__photo[hidden]{display:none}
-.flipcard__photo img{display:block;width:100%;height:150px;object-fit:contain;border-radius:12px;background:#ece4d6}
+.flipcard__photo img{display:block;width:100%;height:auto;aspect-ratio:var(--case-photo-ratio,4 / 3);object-fit:cover;object-position:var(--case-photo-position,50% 50%);border-radius:12px;background:#ece4d6}
 .flipcard__photo figcaption{margin-top:5px;font-size:11px;line-height:1.35;color:var(--ink-3)}
+.flipcard__image-link{display:block}
+.flipcard__full{display:block;width:max-content;max-width:100%;margin:5px 0 8px auto;font-size:11px;color:var(--plum);text-decoration:underline;text-underline-offset:2px}
+.flipcard__caption{margin:0;color:var(--ink);font-size:12px;line-height:1.45}
+.flipcard__image-note{margin-top:6px;font-size:11px;line-height:1.4;font-style:italic}
+.flipcard__image-note b{font-weight:600;font-style:normal}
+.flipcard__evidence{margin-top:14px;padding-top:12px;border-top:1px solid rgba(35,24,41,.12)}
+.flipcard__src a{display:inline-block;max-width:100%;overflow-wrap:anywhere}
+.flipcard #flip-photo-title{font-size:20px;line-height:1.25}
+.flipcard #flip-photo-title i{font-weight:400}
 .flipcard__credit{margin-top:10px;padding-top:10px;border-top:1px solid rgba(35,24,41,.1);font-size:11.5px;line-height:1.45;color:var(--ink-3)}
 .flipcard__credit[hidden]{display:none}
+.flipcard__credit summary{width:max-content;max-width:100%;color:var(--plum);cursor:pointer}
+.flipcard__credit p{margin-top:7px}
 .flipcard__credit b{color:var(--ink-2,var(--ink));font-weight:600}
 .flipcard__credit a{color:var(--plum);text-decoration:underline;text-underline-offset:2px}
 
@@ -599,7 +623,18 @@ html.is-paged .home .lf{padding:76px 0 22px}
   .cz__sw-btn{width:50%;justify-content:center;white-space:normal;padding:10px 8px;font-size:12px;line-height:1.25}
   .cz__sw-tail{display:none}
   .cz__card.cz__read{top:calc(var(--readTop,360px) + 58px)}
+  .cz__read-body{max-height:calc(100svh - var(--readTop,360px) - 110px);overflow:auto}
 }
+@media (min-width:860px) and (max-height:760px){
+  html.is-paged[data-page="china"] .detective{opacity:0;pointer-events:none}
+  html.is-paged[data-page="china"] .detective *{pointer-events:none}
+}
+@media (max-width:859px){
+  html[data-page="china"] .detective{opacity:0;pointer-events:none}
+  html[data-page="china"] .detective *{pointer-events:none}
+}
+.home:has([data-flipcard].is-open) .detective{opacity:0;pointer-events:none}
+.home:has([data-flipcard].is-open) .detective *{pointer-events:none}
 
 @media (min-width:860px){
   .cz[data-layers="off"] .cz__head{width:min(360px,29vw)}

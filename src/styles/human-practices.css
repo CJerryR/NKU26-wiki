@@ -1,0 +1,7 @@
+/* Keep the two-column program evaluation readable within the phone viewport. */
+.doc[data-page="education"] .prose table { min-width:0; table-layout:fixed; }
+.doc[data-page="education"] .prose th:first-child { width:68%; }
+.doc[data-page="education"] .prose td { overflow-wrap:break-word; }
+.doc[data-page="education"] .prose td:nth-child(2),
+.doc[data-page="education"] .prose th:nth-child(2) { text-align:right; font-variant-numeric:tabular-nums; }
+.content-anchor { scroll-margin-top:calc(var(--nav-h) + 50px); }

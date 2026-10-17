@@ -170,11 +170,10 @@
    * skipped with a fast scroll. */
   var LAYERED = sec.getAttribute('data-layers') === 'on';
   NK.chinaLayered = LAYERED;
-  /* R1-H05: the field-to-soil flight now stops half-way, where the lens has opened
-   * over the plant (field outside, roots inside), so one scroll can no longer
-   * carry the reader from the field straight into the soil. */
-  var DUR = LAYERED ? [0, 1300, 1300, 1300, 6200, 3800, 3600] : [0, 4400, 3800, 3600];
-  var DESCENT = LAYERED ? 5 : 2;   // first step of the field-to-soil flight
+  // Hold only complete shots: map, overview, plant, soil, roots/question.
+  // The lens transition (q .60–.68) plays through instead of freezing half open.
+  var DUR = LAYERED ? [0, 1300, 1300, 1300, 3000, 3000, 3000, 3000] : [0, 3000, 3000, 3000, 3000];
+  var DESCENT = LAYERED ? 5 : 2;
   var LAST = DUR.length - 1, curStep = 0;
   /* the big number counts up once the title is in, like US$173 billion on the world map */
   var usd = sec.querySelector('[data-cz-usd]'), counted = false;
@@ -185,6 +184,13 @@
     var t0 = performance.now();
     (function f(now) { var k = NK.clamp((now - t0) / 1400, 0, 1); usd.textContent = 'US$' + Math.round(120 * NK.easeOut(k)); if (k < 1) requestAnimationFrame(f); })(t0);
   }
+  // The native scene is six viewports tall, so observing the scene at 50%
+  // visibility cannot reveal its readout. Observe the one-screen sticky stage.
+  H0.onView(stage, function (visible) {
+    if (!visible || !H0.pager || H0.pager.isPaged() || sec.classList.contains('is-handoff')) return;
+    sec.classList.remove('is-pre');
+    countUp();
+  }, { threshold: .35 });
   NK.chinaArr = 1;
   NK.chinaHandoff = function () { sec.classList.add('is-handoff', 'is-pre'); stage.style.setProperty('--arrive', '0'); requestAnimationFrame(function () { requestAnimationFrame(function () { sec.classList.add('is-show'); }); }); };
   NK.chinaArrive = function () { sec.classList.remove('is-handoff', 'is-show'); stage.style.setProperty('--arrive', '1'); };
@@ -197,11 +203,15 @@
     if (d === null) { sec.classList.toggle('is-q', i >= LAST); stage.style.setProperty('--merge', i >= DESCENT - 1 && i > 0 ? '1' : '0'); }
   }
   H0.scene('china', {
-    steps: LAST, tall: LAYERED ? 8 : 5, cutIn: true, noSkip: true,
+    steps: LAST, tall: LAYERED ? 9 : 6, cutIn: true, noSkip: true, pacedWheel: true,
     set: function (i) { curStep = i; to(i, 0); if (i === 0) sec.classList.add('is-pre'); if (!sec.classList.contains('is-handoff')) { NK.chinaArr = 1; stage.style.setProperty('--arrive', '1'); } },
-    /* a forceful push may shorten the descent a little, never to a cut */
-    accelerate: function (ms) { return NK.chinaAccelerate ? NK.chinaAccelerate(curStep >= DESCENT ? Math.max(ms, 1500) : ms) : 0; },
-    step: function (i, dir, speed) { if (i === 0) sec.classList.remove('is-pre'); curStep = i; var ms = sec.classList.contains('is-2d') ? 450 : dir > 0 ? DUR[i] : (LAYERED && i === 3 ? 2600 : i >= DESCENT - 1 ? 1900 : 1400); ms /= Math.min(i >= DESCENT - 1 ? 1.25 : 4, Math.max(1, speed || 1)); to(i, ms, dir); return ms; },
+    step: function (i, dir) {
+      if (i === 0) sec.classList.remove('is-pre');
+      curStep = i;
+      // Match forward and reverse travel; input strength never changes damping.
+      var ms = sec.classList.contains('is-2d') ? 450 : DUR[dir < 0 ? i + 1 : i];
+      to(i, ms, dir); return ms;
+    },
     enter: function (dir, info) {
       if (sec.classList.contains('is-handoff')) {
         NK.chinaArrive(1700);
@@ -1510,13 +1520,16 @@
     if (q < 0.68) { p = (q - 0.6) / 0.08; return { a: 1, ta: 1 + p * 0.2, b: 2, tb: -0.12 * (1 - p), p: p }; }
     return { a: 2, ta: NK.clamp((q - 0.68) / 0.22, 0, 1) };
   }
-  /* stops (as in the v6 list): 0 the China map · 1 high above to the field, stop · 2 field to the roots, the question stays */
-  /* 0 the three layers apart · 1–3 one layer in focus · 4 layers close, fly to the field · 5 the roots and the question */
-  /* R1-H05: q 0.645 is the half-open lens (phase(): 0.6–0.68), the middle shot */
-  /* R1-I09: the 'A field' stop sits closer (q 0.468 at 16:10; measured 50.2 % there), so the trial plot fills about half the width; fitFieldStop() adapts it to the aspect */
-  var STATES = !NK.chinaLayered ? [{ ex: 0, fo: -1, merge: 0, q: 0, qo: 0 }, { ex: 0, fo: -1, merge: 1, q: 0.468, qo: 0 }, { ex: 0, fo: -1, merge: 1, q: 0.645, qo: 0 }, { ex: 0, fo: -1, merge: 1, q: 0.9, qo: 1 }] : [
-    { ex: 1, fo: -1, merge: 0, q: 0, qo: 0 }, { ex: 1, fo: 0, merge: 0, q: 0, qo: 0 }, { ex: 1, fo: 1, merge: 0, q: 0, qo: 0 }, { ex: 1, fo: 2, merge: 0, q: 0, qo: 0 },
-    { ex: 0, fo: -1, merge: 1, q: 0.38, qo: 0 }, { ex: 0, fo: -1, merge: 1, q: 0.645, qo: 0 }, { ex: 0, fo: -1, merge: 1, q: 0.9, qo: 1 }];
+  // q .60 is the complete plant close-up; q .68 is the fully opened soil view.
+  var flightStops = [0.468, 0.6, 0.68, 0.9].map(function (q, i) {
+    return { ex: 0, fo: -1, merge: 1, q: q, qo: i === 3 ? 1 : 0 };
+  });
+  var STATES = (NK.chinaLayered ? [
+    { ex: 1, fo: -1, merge: 0, q: 0, qo: 0 },
+    { ex: 1, fo: 0, merge: 0, q: 0, qo: 0 },
+    { ex: 1, fo: 1, merge: 0, q: 0, qo: 0 },
+    { ex: 1, fo: 2, merge: 0, q: 0, qo: 0 }
+  ] : [{ ex: 0, fo: -1, merge: 0, q: 0, qo: 0 }]).concat(flightStops);
   var Z = { ex: 0, fo: -1, merge: 0, q: 0, qo: 0 };
   var KEYS = ['ex', 'fo', 'merge', 'q', 'qo'];
   function plan(a, b, fwd) {
@@ -1532,9 +1545,10 @@
   var arrTw = null;
   // Measure the actual projected plot after each camera/aspect change.
   function fitFieldStop() {
-    if (!STATES || NK.chinaLayered || !Z || !LV || !LV[1] || !(W > 0 && H > 0)) return;
-    var q = LV[1].fieldStop(), old = STATES[1].q;
-    STATES[1].q = q;
+    if (!STATES || !Z || !LV || !LV[1] || !(W > 0 && H > 0)) return;
+    var index = NK.chinaLayered ? 4 : 1;
+    var q = LV[1].fieldStop(), old = STATES[index].q;
+    STATES[index].q = q;
     if (!tw && Math.abs(Z.q - old) < 1e-6) Z.q = q;
   }
   fitFieldStop();

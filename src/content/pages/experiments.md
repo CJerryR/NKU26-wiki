@@ -16,67 +16,67 @@ hidden: false
 
 <div class="wiki-toolkit-block"><wiki-toolkit data-type="datatable" data-props="{&quot;title&quot;:&quot;Table 1 Biological Materials&quot;,&quot;csv&quot;:&quot;Name,Description,Source,Identifier\nTrans5α Chemically Competent Cell,Mainly used for plasmid transformation and cloning,TransGen Biotech,Cat. No. CD201-01\nSaccharomyces cerevisiae CEN.PK2-1C,\&quot;Biological materials for genetic modification, mainly applied in heterologous GPCR display and the construction of ascaroside-specific biosensors\&quot;,Biobw ,Strain No. bio-116324\n&quot;,&quot;_template&quot;:&quot;datatable&quot;}"><div class="wiki-toolkit-fallback"><p><strong>Table 1 Biological Materials</strong></p><div class="table-wrap"><table><thead><tr><th>Name</th><th>Description</th><th>Source</th><th>Identifier</th></tr></thead><tbody><tr><td>Trans5α Chemically Competent Cell</td><td>Mainly used for plasmid transformation and cloning</td><td>TransGen Biotech</td><td>Cat. No. CD201-01</td></tr><tr><td>Saccharomyces cerevisiae CEN.PK2-1C</td><td>Biological materials for genetic modification, mainly applied in heterologous GPCR display and the construction of ascaroside-specific biosensors</td><td>Biobw </td><td>Strain No. bio-116324</td></tr></tbody></table></div></div><noscript><style>.wiki-toolkit-fallback{display:block!important}wiki-toolkit:not(:defined){min-height:0;border:0;background:none;animation:none}</style><p>Enable JavaScript to use the interactive controls.</p></noscript></wiki-toolkit></div>
 
-This section documents the biological materials and experimental methods used in wet-lab work, and summarizes the designed sgRNA sequences, constructed plasmids and engineered strains generated in our project.
+This section documents the biological materials and experimental methods used in wet-lab work, and summarizes the **designed sgRNA sequences, constructed plasmids and engineered strains** generated in our project.
 
 ## Protocol {#protocol toc="Protocol"}
 
 ### PCR Amplification {#protocol-pcr-amplification toc="PCR Amplification"}
 
-PCR Amplification Using Phanta Max Super-Fidelity DNA Polymerase.
+**PCR Amplification** Using Phanta Max Super-Fidelity DNA Polymerase.
 
 <figure class="wiki-media wiki-media--pdf"><div class="wiki-media__bar"><span class="wiki-media__kind">PDF</span><span class="wiki-media__title">PCR Amplification</span><a class="wiki-media__action" href="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-3539c6074fb1-protocol-01.pdf" target="_blank" rel="noopener noreferrer">Open PDF / Download</a></div><iframe class="wiki-media__frame" src="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-3539c6074fb1-protocol-01.pdf" title="PCR Amplification" loading="lazy" style="height:650px" referrerpolicy="no-referrer"></iframe></figure>
 
 ### DNA Recovery {#protocol-dna-recovery toc="DNA Recovery"}
 
-DNA Recovery Using FastPure Gel DNA Extraction Mini Kit.
+**DNA Recovery** Using FastPure Gel DNA Extraction Mini Kit.
 
 <figure class="wiki-media wiki-media--pdf"><div class="wiki-media__bar"><span class="wiki-media__kind">PDF</span><span class="wiki-media__title">DNA Recovery</span><a class="wiki-media__action" href="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-154647698e67-protocol-02.pdf" target="_blank" rel="noopener noreferrer">Open PDF / Download</a></div><iframe class="wiki-media__frame" src="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-154647698e67-protocol-02.pdf" title="DNA Recovery" loading="lazy" style="height:650px" referrerpolicy="no-referrer"></iframe></figure>
 
 ### Plasmid DNA Extraction {#protocol-plasmid-dna-extraction toc="Plasmid DNA Extraction"}
 
-Plasmid DNA Extraction Using Fast Plasmid Miniprep Kit.
+**Plasmid DNA Extraction** Using Fast Plasmid Miniprep Kit.
 
 <figure class="wiki-media wiki-media--pdf"><div class="wiki-media__bar"><span class="wiki-media__kind">PDF</span><span class="wiki-media__title">Plasmid DNA Extraction</span><a class="wiki-media__action" href="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-df98a0af0943-protocol-03.pdf" target="_blank" rel="noopener noreferrer">Open PDF / Download</a></div><iframe class="wiki-media__frame" src="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-df98a0af0943-protocol-03.pdf" title="Plasmid DNA Extraction" loading="lazy" style="height:650px" referrerpolicy="no-referrer"></iframe></figure>
 
 ### Double-Joint PCR {#protocol-double-joint-pcr toc="Double-Joint PCR"}
 
-Construction of Homologous Recombination Constructs Using Double-Joint PCR (DJ-PCR).
+Construction of Homologous Recombination Constructs Using **Double-Joint PCR (DJ-PCR)**.
 
 <figure class="wiki-media wiki-media--pdf"><div class="wiki-media__bar"><span class="wiki-media__kind">PDF</span><span class="wiki-media__title">Double-Joint PCR</span><a class="wiki-media__action" href="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-730ddb351ab0-protocol-04.pdf" target="_blank" rel="noopener noreferrer">Open PDF / Download</a></div><iframe class="wiki-media__frame" src="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-730ddb351ab0-protocol-04.pdf" title="Double-Joint PCR" loading="lazy" style="height:650px" referrerpolicy="no-referrer"></iframe></figure>
 
 ### One Step Cloning {#protocol-one-step-cloning toc="One Step Cloning"}
 
-Multi-Fragment and Vector Seamless Assembly Using pEASY Pro Seamless Cloning and Assembly Kit.
+**Multi-Fragment and Vector Seamless Assembly** Using pEASY Pro Seamless Cloning and Assembly Kit.
 
 <figure class="wiki-media wiki-media--pdf"><div class="wiki-media__bar"><span class="wiki-media__kind">PDF</span><span class="wiki-media__title">One Step Cloning</span><a class="wiki-media__action" href="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-915625f7b4c9-protocol-05.pdf" target="_blank" rel="noopener noreferrer">Open PDF / Download</a></div><iframe class="wiki-media__frame" src="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-915625f7b4c9-protocol-05.pdf" title="One Step Cloning" loading="lazy" style="height:650px" referrerpolicy="no-referrer"></iframe></figure>
 
 ### Chemical Transformation of Trans5α {#protocol-chemical-transformation-of-trans5 toc="Chemical Transformation of Trans5α"}
 
-Chemical Transformation of Trans5α Chemically Competent Cells.
+**Chemical Transformation** of Trans5α Chemically Competent Cells.
 
 <figure class="wiki-media wiki-media--pdf"><div class="wiki-media__bar"><span class="wiki-media__kind">PDF</span><span class="wiki-media__title">Chemical Transformation of Trans5α</span><a class="wiki-media__action" href="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-c810ddc4deed-protocol-06.pdf" target="_blank" rel="noopener noreferrer">Open PDF / Download</a></div><iframe class="wiki-media__frame" src="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-c810ddc4deed-protocol-06.pdf" title="Chemical Transformation of Trans5α" loading="lazy" style="height:650px" referrerpolicy="no-referrer"></iframe></figure>
 
 ### Yeast Transformation {#protocol-yeast-transformation toc="Yeast Transformation"}
 
-Yeast Transformation Using S.c. EasyComp™ Transformation Kit.
+**Yeast Transformation** Using S.c. EasyComp™ Transformation Kit.
 
 <figure class="wiki-media wiki-media--pdf"><div class="wiki-media__bar"><span class="wiki-media__kind">PDF</span><span class="wiki-media__title">Yeast Transformation</span><a class="wiki-media__action" href="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-94e1d5b82d0f-protocol-07.pdf" target="_blank" rel="noopener noreferrer">Open PDF / Download</a></div><iframe class="wiki-media__frame" src="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-94e1d5b82d0f-protocol-07.pdf" title="Yeast Transformation" loading="lazy" style="height:650px" referrerpolicy="no-referrer"></iframe></figure>
 
 ### Agarose Gel Electrophoresis {#protocol-agarose-gel-electrophoresis toc="Agarose Gel Electrophoresis"}
 
-Agarose Gel Electrophoresis.
+**Agarose Gel Electrophoresis**.
 
 <figure class="wiki-media wiki-media--pdf"><div class="wiki-media__bar"><span class="wiki-media__kind">PDF</span><span class="wiki-media__title">Agarose Gel Electrophoresis</span><a class="wiki-media__action" href="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-4bee1bb6f8a3-protocol-08.pdf" target="_blank" rel="noopener noreferrer">Open PDF / Download</a></div><iframe class="wiki-media__frame" src="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-4bee1bb6f8a3-protocol-08.pdf" title="Agarose Gel Electrophoresis" loading="lazy" style="height:650px" referrerpolicy="no-referrer"></iframe></figure>
 
 ### Colony PCR Amplification {#protocol-colony-pcr-amplification toc="Colony PCR Amplification"}
 
-Colony PCR Amplification Using 2×TransFast Taq PCR SuperMix (+dye).
+**Colony PCR Amplification** Using 2×TransFast Taq PCR SuperMix (+dye).
 
 <figure class="wiki-media wiki-media--pdf"><div class="wiki-media__bar"><span class="wiki-media__kind">PDF</span><span class="wiki-media__title">Colony PCR Amplification</span><a class="wiki-media__action" href="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-c2aebd95ee12-protocol-09.pdf" target="_blank" rel="noopener noreferrer">Open PDF / Download</a></div><iframe class="wiki-media__frame" src="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-c2aebd95ee12-protocol-09.pdf" title="Colony PCR Amplification" loading="lazy" style="height:650px" referrerpolicy="no-referrer"></iframe></figure>
 
 ### Restriction Enzyme Digestion Reaction {#protocol-restriction-enzyme-digestion-reaction toc="Restriction Enzyme Digestion Reaction"}
 
-Restriction Enzyme Digestion Reaction.
+**Restriction Enzyme Digestion Reaction**.
 
 <figure class="wiki-media wiki-media--pdf"><div class="wiki-media__bar"><span class="wiki-media__kind">PDF</span><span class="wiki-media__title">Restriction Enzyme Digestion Reaction</span><a class="wiki-media__action" href="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-6c92e753b05a-protocol-10.pdf" target="_blank" rel="noopener noreferrer">Open PDF / Download</a></div><iframe class="wiki-media__frame" src="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-6c92e753b05a-protocol-10.pdf" title="Restriction Enzyme Digestion Reaction" loading="lazy" style="height:650px" referrerpolicy="no-referrer"></iframe></figure>
 
@@ -94,13 +94,13 @@ Preservation and Recovery of Glycerol Stocks.
 
 ### Extraction of Yeast Genomic DNA {#protocol-extraction-of-yeast-genomic-dna toc="Extraction of Yeast Genomic DNA"}
 
-Extraction of Yeast Genomic DNA.
+**Extraction of Yeast Genomic DNA**.
 
 <figure class="wiki-media wiki-media--pdf"><div class="wiki-media__bar"><span class="wiki-media__kind">PDF</span><span class="wiki-media__title">Extraction of Yeast Genomic DNA</span><a class="wiki-media__action" href="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-01699080a847-protocol-13.pdf" target="_blank" rel="noopener noreferrer">Open PDF / Download</a></div><iframe class="wiki-media__frame" src="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-01699080a847-protocol-13.pdf" title="Extraction of Yeast Genomic DNA" loading="lazy" style="height:650px" referrerpolicy="no-referrer"></iframe></figure>
 
 ### Observation of Fluorescent Molecules {#protocol-observation-of-fluorescent-molecules toc="Observation of Fluorescent Molecules"}
 
-Observation of Fluorescent Molecules Using Fluorescence Microscopy.
+**Observation of Fluorescent Molecules** Using Fluorescence Microscopy.
 
 <figure class="wiki-media wiki-media--pdf"><div class="wiki-media__bar"><span class="wiki-media__kind">PDF</span><span class="wiki-media__title">Observation of Fluorescent Molecules</span><a class="wiki-media__action" href="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-8d474be66ea7-protocol-14.pdf" target="_blank" rel="noopener noreferrer">Open PDF / Download</a></div><iframe class="wiki-media__frame" src="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-8d474be66ea7-protocol-14.pdf" title="Observation of Fluorescent Molecules" loading="lazy" style="height:650px" referrerpolicy="no-referrer"></iframe></figure>
 
@@ -122,13 +122,13 @@ Multi-Fragment and Vector Assembly Using ClonExpress Ultra One Step Cloning Kit 
 
 ### Plasmid Construction {#plasmid-construction toc="Plasmid Construction"}
 
-In this project, we designed and constructed a total of 10 plasmids, as shown in the table below.
+In this project, we designed and constructed a total of **10 plasmids**, as shown in the table below.
 
 <div class="wiki-toolkit-block"><wiki-toolkit data-type="datatable" data-props="{&quot;title&quot;:&quot;Table 2 Plasmids designed and constructed in this project&quot;,&quot;csv&quot;:&quot;Name,Number,Description\npRS315-TEF1p-GPR2-sfGFP,BBa_260J9X0X,For knock-in of the constitutively expressed GPR2 gene fused with sfGFP\npRS315-MjDOD-BvCYP76AD5,BBa_26PGUFWX,For knock-in of constitutively expressed betaxanthin-related genes and serves as a template for constructing inducible recombinant fragments\npRS315-sTF,BBa_2687EQID,For storage of recombinant fragments for knock-in of the synthetic transcription factor (sTF)\np414-Cas9-Leu,BBa_262NU08K,Cas9-carrying plasmid with altered nutritional selection marker\np426-SNR52p-gGal4-SUP4t,BBa_269ZKY8C,Carries gRNA sequence targeting the Gal4 gene\np426-SNR52p-gSTE12-SUP4t,BBa_2612RHXO,Carries gRNA sequence targeting the STE12 gene\np426-SNR52p-gSTE2-SUP4t,BBa_26TQ18PN,Carries gRNA sequence targeting the STE2 gene\npRS315-TEF1p-GPR2,BBa_26ZT9H48,For knock-in of the constitutively expressed GPR2 gene\npRS315-TEF1p-GPR2-N84V,BBa_2628FZFH,For knock-in of the constitutively expressed N84V-mutated GPR2 gene\npRS315-TEF1p-GPR2-V368R,BBa_26XA2JFQ,For knock-in of the constitutively expressed V368R-mutated GPR2 gene\n&quot;,&quot;_template&quot;:&quot;datatable&quot;}"><div class="wiki-toolkit-fallback"><p><strong>Table 2 Plasmids designed and constructed in this project</strong></p><div class="table-wrap"><table><thead><tr><th>Name</th><th>Number</th><th>Description</th></tr></thead><tbody><tr><td>pRS315-TEF1p-GPR2-sfGFP</td><td>BBa_260J9X0X</td><td>For knock-in of the constitutively expressed GPR2 gene fused with sfGFP</td></tr><tr><td>pRS315-MjDOD-BvCYP76AD5</td><td>BBa_26PGUFWX</td><td>For knock-in of constitutively expressed betaxanthin-related genes and serves as a template for constructing inducible recombinant fragments</td></tr><tr><td>pRS315-sTF</td><td>BBa_2687EQID</td><td>For storage of recombinant fragments for knock-in of the synthetic transcription factor (sTF)</td></tr><tr><td>p414-Cas9-Leu</td><td>BBa_262NU08K</td><td>Cas9-carrying plasmid with altered nutritional selection marker</td></tr><tr><td>p426-SNR52p-gGal4-SUP4t</td><td>BBa_269ZKY8C</td><td>Carries gRNA sequence targeting the Gal4 gene</td></tr><tr><td>p426-SNR52p-gSTE12-SUP4t</td><td>BBa_2612RHXO</td><td>Carries gRNA sequence targeting the STE12 gene</td></tr><tr><td>p426-SNR52p-gSTE2-SUP4t</td><td>BBa_26TQ18PN</td><td>Carries gRNA sequence targeting the STE2 gene</td></tr><tr><td>pRS315-TEF1p-GPR2</td><td>BBa_26ZT9H48</td><td>For knock-in of the constitutively expressed GPR2 gene</td></tr><tr><td>pRS315-TEF1p-GPR2-N84V</td><td>BBa_2628FZFH</td><td>For knock-in of the constitutively expressed N84V-mutated GPR2 gene</td></tr><tr><td>pRS315-TEF1p-GPR2-V368R</td><td>BBa_26XA2JFQ</td><td>For knock-in of the constitutively expressed V368R-mutated GPR2 gene</td></tr></tbody></table></div></div><noscript><style>.wiki-toolkit-fallback{display:block!important}wiki-toolkit:not(:defined){min-height:0;border:0;background:none;animation:none}</style><p>Enable JavaScript to use the interactive controls.</p></noscript></wiki-toolkit></div>
 
 ### Strain Construction {#strain-construction toc="Strain Construction"}
 
-In this project, we constructed a total of 9 yeast strains. The workflow and summary table are displayed below.
+In this project, we constructed a total of **9 yeast strains**. The workflow and summary table are displayed below.
 
 :::figure
 

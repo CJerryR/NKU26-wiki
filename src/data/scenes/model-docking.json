@@ -1,0 +1,313 @@
+{
+  "page": "model-docking",
+  "sharedFrames": [
+    "receptor-left",
+    "receptor-right"
+  ],
+  "enabled": true,
+  "version": "codex-3d-pilot",
+  "signature": "Seven schematic receptor helices separate in two connected groups as two schematic ligands approach.",
+  "illustration": "Code-rendered schematic decoration; not experimental evidence, actual molecular geometry, team size, or competition results.",
+  "desktop": {
+    "canvas": [
+      1600,
+      900
+    ],
+    "title": {
+      "y": -55,
+      "toY": -240,
+      "toScale": 0.62,
+      "fontSize": 104
+    },
+    "layers": [
+      {
+        "id": "membrane",
+        "prop": "membrane",
+        "w": 350,
+        "z": 1,
+        "depth": 8,
+        "from": {
+          "x": 595,
+          "y": -235,
+          "r": -8,
+          "s": 1,
+          "o": 1
+        },
+        "to": {
+          "x": 710,
+          "y": -85,
+          "r": 4,
+          "s": 1,
+          "o": 1
+        },
+        "win": [
+          0.08,
+          0.8
+        ]
+      },
+      {
+        "id": "molecule-cloud",
+        "prop": "molecule-cloud",
+        "w": 330,
+        "z": 1,
+        "depth": 8,
+        "from": {
+          "x": -605,
+          "y": -225,
+          "r": 12,
+          "s": 1,
+          "o": 1
+        },
+        "to": {
+          "x": -740,
+          "y": -55,
+          "r": -8,
+          "s": 1,
+          "o": 1
+        },
+        "win": [
+          0.08,
+          0.8
+        ]
+      },
+      {
+        "id": "receptor-left",
+        "prop": "receptor-left",
+        "w": 650,
+        "z": 3,
+        "depth": 8,
+        "from": {
+          "x": -350,
+          "y": 250,
+          "r": 0,
+          "s": 1,
+          "o": 1
+        },
+        "to": {
+          "x": -470,
+          "y": 240,
+          "r": -9,
+          "s": 1,
+          "o": 1
+        },
+        "win": [
+          0.08,
+          0.8
+        ]
+      },
+      {
+        "id": "receptor-right",
+        "prop": "receptor-right",
+        "w": 650,
+        "z": 3,
+        "depth": 8,
+        "from": {
+          "x": -350,
+          "y": 250,
+          "r": 0,
+          "s": 1,
+          "o": 1
+        },
+        "to": {
+          "x": -310,
+          "y": 240,
+          "r": 9,
+          "s": 1,
+          "o": 1
+        },
+        "win": [
+          0.08,
+          0.8
+        ]
+      },
+      {
+        "id": "ligand-a",
+        "prop": "ligand-a",
+        "w": 270,
+        "z": 4,
+        "depth": 18,
+        "from": {
+          "x": 390,
+          "y": 180,
+          "r": -15,
+          "s": 1,
+          "o": 1
+        },
+        "to": {
+          "x": 20,
+          "y": 130,
+          "r": 10,
+          "s": 1,
+          "o": 1
+        },
+        "win": [
+          0.24,
+          0.9
+        ]
+      },
+      {
+        "id": "ligand-b",
+        "prop": "ligand-b",
+        "w": 250,
+        "z": 5,
+        "depth": 18,
+        "from": {
+          "x": 600,
+          "y": 310,
+          "r": 25,
+          "s": 1,
+          "o": 1
+        },
+        "to": {
+          "x": 200,
+          "y": 270,
+          "r": -5,
+          "s": 1,
+          "o": 1
+        },
+        "win": [
+          0.32,
+          1
+        ]
+      }
+    ]
+  },
+  "mobile": {
+    "canvas": [
+      900,
+      1600
+    ],
+    "title": {
+      "y": -85,
+      "toY": -360,
+      "toScale": 0.68
+    },
+    "layers": [
+      {
+        "id": "membrane",
+        "prop": "membrane",
+        "w": 360,
+        "z": 1,
+        "depth": 0,
+        "from": {
+          "x": 290,
+          "y": -430,
+          "r": -12,
+          "s": 1,
+          "o": 1
+        },
+        "to": {
+          "x": 420,
+          "y": -260,
+          "r": 0,
+          "s": 1,
+          "o": 1
+        },
+        "win": [
+          0.08,
+          0.8
+        ]
+      },
+      {
+        "id": "receptor-left",
+        "prop": "receptor-left",
+        "w": 720,
+        "z": 3,
+        "depth": 0,
+        "from": {
+          "x": -70,
+          "y": 350,
+          "r": 0,
+          "s": 1,
+          "o": 1
+        },
+        "to": {
+          "x": -220,
+          "y": 390,
+          "r": -9,
+          "s": 1,
+          "o": 1
+        },
+        "win": [
+          0.08,
+          0.8
+        ]
+      },
+      {
+        "id": "receptor-right",
+        "prop": "receptor-right",
+        "w": 720,
+        "z": 3,
+        "depth": 0,
+        "from": {
+          "x": -70,
+          "y": 350,
+          "r": 0,
+          "s": 1,
+          "o": 1
+        },
+        "to": {
+          "x": -20,
+          "y": 390,
+          "r": 9,
+          "s": 1,
+          "o": 1
+        },
+        "win": [
+          0.08,
+          0.8
+        ]
+      },
+      {
+        "id": "ligand-a",
+        "prop": "ligand-a",
+        "w": 260,
+        "z": 4,
+        "depth": 0,
+        "from": {
+          "x": 240,
+          "y": 170,
+          "r": -10,
+          "s": 1,
+          "o": 1
+        },
+        "to": {
+          "x": 80,
+          "y": 200,
+          "r": 16,
+          "s": 1,
+          "o": 1
+        },
+        "win": [
+          0.08,
+          0.8
+        ]
+      },
+      {
+        "id": "ligand-b",
+        "prop": "ligand-b",
+        "w": 220,
+        "z": 2,
+        "depth": 0,
+        "from": {
+          "x": -280,
+          "y": -400,
+          "r": 24,
+          "s": 1,
+          "o": 1
+        },
+        "to": {
+          "x": -390,
+          "y": -250,
+          "r": -8,
+          "s": 1,
+          "o": 1
+        },
+        "win": [
+          0.08,
+          0.8
+        ]
+      }
+    ]
+  }
+}

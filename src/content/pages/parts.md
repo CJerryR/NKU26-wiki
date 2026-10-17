@@ -12,7 +12,7 @@ meta: {}
 draft: false
 hidden: false
 ---
-This page summarizes all Parts and Collections submitted in this project.
+This page summarizes all **Parts and Collections** submitted in this project.
 
 ## Parts {#parts toc="Parts"}
 

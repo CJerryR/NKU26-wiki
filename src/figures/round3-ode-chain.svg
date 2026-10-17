@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 460" role="img" aria-labelledby="title desc">
+<title id="title">ODE and two-channel model workflow</title><desc id="desc">Prespecified mixtures calibrate ODE interfaces. Actual ODE outputs become paired color features for density regression. A separate future path uses experimentally calibrated phone readings to estimate density and compare economic scenarios.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="none" stroke="#6e4fb8" stroke-width="1.5"/></marker></defs>
+<rect width="1120" height="460" rx="20" fill="#fff"/>
+<g font-family="Arial, sans-serif" fill="#241a31">
+<text x="32" y="42" font-size="21" font-weight="700">Building the simulated model</text>
+<g fill="#f6f2fb" stroke="#d8cbe9" stroke-width="1.5"><rect x="32" y="68" width="224" height="112" rx="12"/><rect x="306" y="68" width="224" height="112" rx="12"/><rect x="580" y="68" width="224" height="112" rx="12"/><rect x="854" y="68" width="234" height="112" rx="12"/></g>
+<g text-anchor="middle" font-size="18"><text x="144" y="101" font-weight="700">Mi + Ce mixtures</text><text x="144" y="130">Assumed secretion</text><text x="144" y="156">Prespecified endpoints</text><text x="418" y="101" font-weight="700">ODE interfaces</text><text x="418" y="130">Input scale + pigment gain</text><text x="418" y="156">Fit to endpoint targets</text><text x="692" y="101" font-weight="700">Paired color features</text><text x="692" y="130">Actual ODE outputs</text><text x="692" y="156">Matched-blank correction</text><text x="971" y="101" font-weight="700">Two-channel regression</text><text x="971" y="130">Known Mi training labels</text><text x="971" y="156">Separate test mixtures</text></g>
+<g stroke="#6e4fb8" stroke-width="2" marker-end="url(#arrow)"><path d="M261 124H296"/><path d="M535 124H570"/><path d="M809 124H844"/></g>
+<path d="M32 212H1088" stroke="#e5deeb"/>
+<text x="32" y="252" font-size="21" font-weight="700">Intended use after experimental calibration</text>
+<g fill="#fcf7e9" stroke="#e8d5a5" stroke-width="1.5"><rect x="32" y="278" width="300" height="104" rx="12"/><rect x="410" y="278" width="300" height="104" rx="12"/><rect x="788" y="278" width="300" height="104" rx="12"/></g>
+<g text-anchor="middle" font-size="18"><text x="182" y="317" font-weight="700">Paired phone readings</text><text x="182" y="350">Same observation calibration</text><text x="560" y="317" font-weight="700">Mi density + uncertainty</text><text x="560" y="350">Check units and valid range</text><text x="938" y="317" font-weight="700">Economic scenarios</text><text x="938" y="350">Compare two explicit baselines</text></g>
+<g stroke="#6e4fb8" stroke-width="2" marker-end="url(#arrow)"><path d="M340 330H400"/><path d="M718 330H778"/></g>
+<text x="32" y="425" font-size="17" fill="#675772">Conceptual workflow from the supplied manuscript; simulated calibration does not establish field validation.</text>
+</g></svg>

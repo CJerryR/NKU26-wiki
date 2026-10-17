@@ -52,7 +52,16 @@ h4 { font-size: 16.5px; font-weight: 620; line-height: 1.35; color: var(--k-ink)
 strong, b { font-weight: 620; color: var(--k-ink); }
 a { color: var(--k-iris-deep); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-color: color-mix(in srgb, var(--k-iris) 40%, transparent); }
 a:hover { color: var(--k-iris); text-decoration-color: currentColor; }
-code { padding: .1em .38em; border-radius: 6px; background: color-mix(in srgb, var(--k-iris) 9%, transparent); color: var(--k-iris-deep); font-family: var(--k-mono); font-size: .85em; }
+code { font-family: var(--k-mono); font-size: .9em; }
+/* Same inline annotation tokens and glyph spacing as annotations.css.
+   Preformatted code and command controls retain their dedicated layout. */
+code:not(pre code):not(.code__cmd code) {
+  padding: 0 .26em .12em; border: 1px solid var(--annotation-border, #d4ccde);
+  border-radius: .48em; background: var(--annotation-bg, #eeeaf2);
+  color: var(--annotation-ink, #443b50); line-height: inherit;
+  white-space: var(--annotation-white-space, normal); overflow-wrap: anywhere;
+  box-decoration-break: clone; -webkit-box-decoration-break: clone;
+}
 .muted { color: var(--k-ink3); }
 .small { font-size: 13px; }
 .grow { flex: 1; }
@@ -345,7 +354,12 @@ th[aria-sort='descending'] .dt__arrow { opacity: 1; }
 .mx__key .mx__sym { width: 20px; height: 20px; }
 
 /* --------------------------------------------------- equation / params */
-.eq { display: flex; align-items: center; gap: 16px; padding: 18px 12px; border-radius: var(--k-r2); background: var(--k-paper); }
+.tk--equation .tk__body { padding: 22px; }
+.eq { position: relative; display: flex; align-items: center; gap: 16px; padding: 18px 48px; border-radius: var(--k-r2); background: var(--k-paper); }
+.eq__copy { position: absolute; top: 6px; right: 6px; }
+@container tk (max-width: 520px) {
+  .tk--equation .tk__body { padding: 16px; }
+}
 .eq__scroll { flex: 1; min-width: 0; overflow-x: auto; overflow-y: hidden; }
 .eq__math .katex-display { margin: 0; }
 .eq__math .katex { font-size: 1.12em; }
@@ -607,6 +621,9 @@ mark { border-radius: 3px; background: none; color: inherit; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
 @media print {
-  .tk__tools, .toolbar, .chips, .seg-scroll, .code__more { display: none !important; }
+  .tk__tools, .toolbar, .chips, .seg-scroll, .code__more, .eq__copy { display: none !important; }
   .dt__scroll, .seq__pre, .code--clip .code__pre { max-height: none !important; overflow: visible !important; -webkit-mask-image: none; mask-image: none; }
 }
+
+/* Keep exact identifiers intact inside the table’s existing horizontal scroller. */
+.dt { --annotation-white-space: nowrap; }

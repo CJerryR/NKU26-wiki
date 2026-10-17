@@ -18,15 +18,15 @@ We want them to start from where we stopped—and go further.
 
 ## Wet Lab {#wet-lab toc="Wet Lab"}
 
-Our Wet Lab work supports not only the construction and validation of the yeast biosensor in this project. More importantly, we intend to make the genetic parts, engineered strains, plasmids, donor DNA, experimental protocols and practical experience generated during our research available as public resources for future iGEM teams to reference, reuse and extend.
+Our Wet Lab work supports not only the construction and validation of the yeast biosensor in this project. More importantly, we intend to make the genetic parts, engineered strains, plasmids, donor DNA, experimental protocols and practical experience generated during our research available as **public resources for future iGEM teams** to reference, reuse and extend.
 
 These contributions allow subsequent teams to build on our established resources and experience, rather than constructing comparable yeast engineering systems entirely from scratch.
 
 ### Parts and Collections {#parts-and-collections toc="Parts and Collections"}
 
-In this project, we have submitted 39 Parts and 4 Collections to the iGEM Registry ([https://registry.igem.org/organisations/igem/6303](https://registry.igem.org/organisations/igem/6303)). These submissions cover multiple modules including yeast chassis construction, genome editing, tool plasmids, sgRNA, receptor expression and functional components of biosensors.
+In this project, we have submitted **39 Parts and 4 Collections** to the iGEM Registry ([https://registry.igem.org/organisations/igem/6303](https://registry.igem.org/organisations/igem/6303)). These submissions cover multiple modules including yeast chassis construction, genome editing, tool plasmids, sgRNA, receptor expression and functional components of biosensors.
 
-Among all submitted parts, we designed and constructed 10 plasmids (Table 1). These plasmids serve as core components of our project and also provide direct references for future teams undertaking similar yeast strain construction work.
+Among all submitted parts, we designed and constructed **10 plasmids** (Table 1). These plasmids serve as core components of our project and also provide direct references for future teams undertaking similar yeast strain construction work.
 
 <div class="wiki-toolkit-block"><wiki-toolkit data-type="datatable" data-props="{&quot;_template&quot;:&quot;datatable&quot;,&quot;title&quot;:&quot;Table 1 Plasmids designed and constructed in this project&quot;,&quot;csv&quot;:&quot;Name,Number,Description\npRS315-TEF1p-GPR2-sfGFP,BBa_260J9X0X,For knock-in of the constitutively expressed GPR2 gene fused with sfGFP\npRS315-MjDOD-BvCYP76AD5,BBa_26PGUFWX,For knock-in of constitutively expressed betaxanthin-related genes and serves as a template for constructing inducible recombinant fragments\npRS315-sTF,BBa_2687EQID,For storage of recombinant fragments for knock-in of the synthetic transcription factor (sTF)\np414-Cas9-Leu,BBa_262NU08K,Cas9-carrying plasmid with altered nutritional selection marker\np426-SNR52p-gGal4-SUP4t,BBa_269ZKY8C,Carries gRNA sequence targeting the Gal4 gene\np426-SNR52p-gSTE12-SUP4t,BBa_2612RHXO,Carries gRNA sequence targeting the STE12 gene\np426-SNR52p-gSTE2-SUP4t,BBa_26TQ18PN,Carries gRNA sequence targeting the STE2 gene\npRS315-TEF1p-GPR2,BBa_26ZT9H48,For knock-in of the constitutively expressed GPR2 gene\npRS315-TEF1p-GPR2-N84V,BBa_2628FZFH,For knock-in of the constitutively expressed N84V-mutated GPR2 gene\npRS315-TEF1p-GPR2-V368R,BBa_26XA2JFQ,For knock-in of the constitutively expressed V368R-mutated GPR2 gene\n&quot;}"><div class="wiki-toolkit-fallback"><p><strong>Table 1 Plasmids designed and constructed in this project</strong></p><div class="table-wrap"><table><thead><tr><th>Name</th><th>Number</th><th>Description</th></tr></thead><tbody><tr><td>pRS315-TEF1p-GPR2-sfGFP</td><td>BBa_260J9X0X</td><td>For knock-in of the constitutively expressed GPR2 gene fused with sfGFP</td></tr><tr><td>pRS315-MjDOD-BvCYP76AD5</td><td>BBa_26PGUFWX</td><td>For knock-in of constitutively expressed betaxanthin-related genes and serves as a template for constructing inducible recombinant fragments</td></tr><tr><td>pRS315-sTF</td><td>BBa_2687EQID</td><td>For storage of recombinant fragments for knock-in of the synthetic transcription factor (sTF)</td></tr><tr><td>p414-Cas9-Leu</td><td>BBa_262NU08K</td><td>Cas9-carrying plasmid with altered nutritional selection marker</td></tr><tr><td>p426-SNR52p-gGal4-SUP4t</td><td>BBa_269ZKY8C</td><td>Carries gRNA sequence targeting the Gal4 gene</td></tr><tr><td>p426-SNR52p-gSTE12-SUP4t</td><td>BBa_2612RHXO</td><td>Carries gRNA sequence targeting the STE12 gene</td></tr><tr><td>p426-SNR52p-gSTE2-SUP4t</td><td>BBa_26TQ18PN</td><td>Carries gRNA sequence targeting the STE2 gene</td></tr><tr><td>pRS315-TEF1p-GPR2</td><td>BBa_26ZT9H48</td><td>For knock-in of the constitutively expressed GPR2 gene</td></tr><tr><td>pRS315-TEF1p-GPR2-N84V</td><td>BBa_2628FZFH</td><td>For knock-in of the constitutively expressed N84V-mutated GPR2 gene</td></tr><tr><td>pRS315-TEF1p-GPR2-V368R</td><td>BBa_26XA2JFQ</td><td>For knock-in of the constitutively expressed V368R-mutated GPR2 gene</td></tr></tbody></table></div></div><noscript><style>.wiki-toolkit-fallback{display:block!important}wiki-toolkit:not(:defined){min-height:0;border:0;background:none;animation:none}</style><p>Enable JavaScript to use the interactive controls.</p></noscript></wiki-toolkit></div>
 
@@ -68,7 +68,7 @@ Figure 1 Workflow of engineered strain construction
 
 :::
 
-We consider strain construction itself to be an important Contribution. Rather than merely providing a final strain, we place greater emphasis on documenting the stepwise construction process.
+We consider strain construction itself to be an important Contribution. Rather than merely providing a final strain, we place greater emphasis on documenting the **stepwise construction process**.
 
 Therefore, we preserve the construction logic and genetic modification information of strains at different stages, offering references for future teams to reconstruct or further modify these strains according to their own requirements.
 
@@ -76,7 +76,7 @@ Therefore, we preserve the construction logic and genetic modification informati
 
 During project implementation, we systematically compiled the major Wet Lab methods involved in this project (Wet Lab-Experiments). We believe that Wet Lab Contribution should not only demonstrate successful experimental results. So we documented not only standard experimental protocols but also the practical experience accumulated throughout our experiments.
 
-During practical experiments, we also encountered difficulties including problematic PCR amplification, fluctuating yeast transformation efficiency and failed one-step cloning. Therefore, we compiled these experiences into Troubleshooting & Lessons Learned, aiming to convert the "cost of failures" into readily usable experience for future teams.
+During practical experiments, we also encountered difficulties including problematic PCR amplification, fluctuating yeast transformation efficiency and failed one-step cloning. Therefore, we compiled these experiences into **Troubleshooting & Lessons Learned**, aiming to convert the "cost of failures" into readily usable experience for future teams.
 
 <figure class="wiki-media wiki-media--pdf"><div class="wiki-media__bar"><span class="wiki-media__kind">PDF</span><span class="wiki-media__title">Troubleshooting &amp; Lessons Learned</span><a class="wiki-media__action" href="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-cbf9a8013583-troubleshooting.pdf" target="_blank" rel="noopener noreferrer">Open PDF / Download</a></div><iframe class="wiki-media__frame" src="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-cbf9a8013583-troubleshooting.pdf" title="Troubleshooting &amp; Lessons Learned" loading="lazy" style="height:650px" referrerpolicy="no-referrer"></iframe></figure>
 
@@ -88,7 +88,7 @@ In this way, for future teams performing yeast engineering experiments for the f
 
 #### Receptor Engineering Guided by Contacts with Two Ligands {#receptor-engineering-guided-by-contacts-with-two-ligands toc="Receptor Engineering Guided by Contacts with Two Ligands"}
 
-We developed a stepwise screening approach for engineering a receptor’s recognition of two ligands, using contact differences to identify candidate sites and successive substitutions to evaluate them. We first compare the contact distributions of the wild-type (WT) receptor with both ligands and select candidate positions for alanine substitution. We then combine single-mutant scores with contact changes to select sites for saturation scanning and compare how different side chains affect the two ligands.
+We developed a **stepwise screening approach** for engineering a receptor’s recognition of two ligands, using contact differences to identify candidate sites and successive substitutions to evaluate them. We first compare the contact distributions of the wild-type (WT) receptor with both ligands and select candidate positions for alanine substitution. We then combine single-mutant scores with contact changes to select sites for saturation scanning and compare how different side chains affect the two ligands.
 
 Screening uses the difference between the docking-score changes for the two ligands relative to WT:
 
@@ -100,13 +100,13 @@ Most tested combinations did not further improve the better parent’s target-li
 
 Contact analysis supports both site selection and candidate review. We compare ligand positions and contacts between mutants and WT to examine the structural basis of score differences. This process led us to select V368R and N84V for further study. For example, N84V had a lower ascr#18 score and a higher ascr#3 score than WT. Although no direct contact at position 84 was detected in the selected poses, ascr#18 gained ionic and hydrogen-bond-type contacts involving R189, together with a hydrophobic contact at W338. This observation indicates that candidate review should consider the contact network surrounding the ligand.
 
-Other teams can apply this screening approach by combining scores for both ligands, contact comparisons with WT, and comparisons of combinations with their parents to develop testable engineering hypotheses. Binding capability and selectivity can then be evaluated experimentally. The design iterations are described in Engineering, and the score and contact evidence is presented in Model/Docking.
+Other teams can apply this screening approach by combining scores for both ligands, contact comparisons with WT, and comparisons of combinations with their parents to develop **testable engineering hypotheses**. Binding capability and selectivity can then be evaluated experimentally. The design iterations are described in Engineering, and the score and contact evidence is presented in Model/Docking.
 
 #### Tools for Checking Docking Inputs and Exporting Poses {#tools-for-checking-docking-inputs-and-exporting-poses toc="Tools for Checking Docking Inputs and Exporting Poses"}
 
 We found that inconsistent coordinate references between receptor structures and search boxes can alter the region actually searched, while loss of chemical information during format conversion can affect interaction identification. To address these issues, we developed an input-checking and pose-export workflow. Structural superposition places the receptor, ligand, and search box in a common coordinate reference, and the search region is checked against membrane orientation and the structural segments actually retained.
 
-An atom-mapping verification tool checks the correspondence of atoms, coordinates, and structures between the original SDF and the docking PDBQT files. A pose-export tool reconstructs SDF files using the complete Meeko structural metadata retained in PDBQT, preserving docking poses and chemical information such as formal charges for subsequent contact analysis.
+An **atom-mapping verification tool** checks the correspondence of atoms, coordinates, and structures between the original SDF and the docking PDBQT files. A **pose-export tool** reconstructs SDF files using the complete Meeko structural metadata retained in PDBQT, preserving docking poses and chemical information such as formal charges for subsequent contact analysis.
 
 We will release the tools, instructions, and accompanying ascr#18 and ascr#3 examples on GitHub. Other teams can reproduce the checking and export workflow, then substitute their own data to verify search locations, atom correspondence, and the chemical information in pose files.
 
@@ -120,7 +120,7 @@ Other teams can use this approach to combine contact bias, positional correspond
 
 ### MD: Joint Analysis of Receptor Motion and Local Ligand Behavior {#md-joint-analysis-of-receptor-motion-and-local-ligand-behavior toc="MD: Joint Analysis of Receptor Motion and Local Ligand Behavior"}
 
-Docking provides candidate binding poses for receptor engineering. We further used molecular dynamics (MD) simulations to examine how these poses persist or adjust in a membrane environment and organized the analysis of receptor conformational changes, ligand positions, and contacts into a reusable workflow.
+Docking provides candidate binding poses for receptor engineering. We further used **molecular dynamics (MD) simulations** to examine how these poses persist or adjust in a membrane environment and organized the analysis of receptor conformational changes, ligand positions, and contacts into a reusable workflow.
 
 The workflow tracks ligand motion relative to the receptor or a local pocket while recording the retention of existing contacts and formation of new ones. Analysis of Gpr3 R167Y–ascr#3 showed that local contacts can persist despite global receptor displacement. Gpr2 V368R–ascr#3 illustrated how ligand repositioning can be accompanied by the loss of initial contacts and the formation of new ones.
 
@@ -128,9 +128,9 @@ We will make the analysis tools, instructions, and example results available on 
 
 ### ODE: A Full-Pathway Model from Receptor Signaling to Colorimetric Output {#ode-a-full-pathway-model-from-receptor-signaling-to-colorimetric-output toc="ODE: A Full-Pathway Model from Receptor Signaling to Colorimetric Output"}
 
-We developed a full-pathway ODE model for our yeast GPCR biosensing system, connecting effective receptor input, intracellular signal transduction, and colorimetric output. The model reuses the yeast pathway structure from Supady Model B and the publicly available materials of TU Delft’s 2012 iGEM team, incorporates our project’s color-development module, and calculates signaling activity and color over time.
+We developed a **full-pathway ODE model** for our yeast GPCR biosensing system, connecting effective receptor input, intracellular signal transduction, and colorimetric output. The model reuses the yeast pathway structure from Supady Model B and the publicly available materials of TU Delft’s 2012 iGEM team, incorporates our project’s color-development module, and calculates signaling activity and color over time.
 
-We documented the shared pathway parameters separately from project-specific input and output settings, recording parameter meanings, units, sources, and assumptions. Under fixed construct conditions, sTF regulation, GAL production rate, and color generation were combined into one effective colorimetric equation. Conservation of total molecular amounts was used to eliminate redundant states in the shared pathway. The accompanying equation descriptions and computational consistency checks help users understand and adapt the model.
+We documented the **shared pathway parameters** separately from **project-specific input and output settings**, recording parameter meanings, units, sources, and assumptions. Under fixed construct conditions, sTF regulation, GAL production rate, and color generation were combined into one effective colorimetric equation. Conservation of total molecular amounts was used to eliminate redundant states in the shared pathway. The accompanying equation descriptions and computational consistency checks help users understand and adapt the model.
 
 A simulated two-sensor fitting example further demonstrates how the shared pathway parameters can be retained while adjusting each sensor’s effective input scale and color-production gain to approach predefined colorimetric endpoints. Parameter records distinguish source values, assumed values, and values fitted to simulated targets, helping users identify which parameters require recalibration with their own experimental data.
 
@@ -138,13 +138,77 @@ Other teams can run the accompanying code and example configurations, reproduce 
 
 ### Eco: Economic Benefit Analysis from Detection Results to Management Strategies {#eco-economic-benefit-analysis-from-detection-results-to-management-strategies toc="Eco: Economic Benefit Analysis from Detection Results to Management Strategies"}
 
-We developed an economic benefit model connecting pathogen or pest density, crop yield loss, and management costs. It compares three scenarios: no testing and no treatment, uniform treatment without testing, and risk-based treatment following testing. The model estimates yield losses from the density-yield relationship, then combines product prices, testing costs, treatment costs, and treatment efficacy to calculate the expected net return of each strategy.
+We developed an economic benefit model connecting pathogen or pest density, crop yield loss, and management costs. It compares **three scenarios**: no testing and no treatment, uniform treatment without testing, and risk-based treatment following testing. The model estimates yield losses from the density-yield relationship, then combines product prices, testing costs, treatment costs, and treatment efficacy to calculate the expected net return of each strategy.
 
-Model parameters are organized separately from report content so that users can substitute local crop prices, testing costs, treatment costs, risk thresholds, and treatment efficacy. Settings with an established density-yield relationship support comparisons of economic returns. Settings with risk thresholds alone provide risk indications, with the analysis extended as more data become available.
+Model parameters are organized separately from report content so that users can **substitute local crop prices**, testing costs, treatment costs, risk thresholds, and treatment efficacy. Settings with an established density-yield relationship support comparisons of economic returns. Settings with risk thresholds alone provide risk indications, with the analysis extended as more data become available.
 
 The accompanying example of greenhouse tomatoes in Spain and the southern root-knot nematode demonstrates how to combine a yield-loss relationship fitted from published data, three risk levels, and per-unit-area cost calculations to compare management strategies under specified conditions.
 
 Other teams can start from this example, substitute density-yield relationships appropriate to their own crops and target organisms, and add local cost data to compare the management benefits of detection information. Parameters can then be updated using experimental or field data. Complete methods, parameter sources, and scenario results are available in Model/Eco.
+
+## Human Practices {#human-practices toc="Human Practices"}
+
+### Resources for Connecting Synthetic Biology with Real World Questions {#hp-contribution-resources-for-connecting-synthetic-biology-with-real-world-questions toc="Resources for Connecting Synthetic Biology with Real World Questions"}
+
+Our Human Practices contribution extends beyond an account of our own activities. We developed **educational materials, survey tools, sampling guidance, and engagement documents** that can support future teams working at the interface of synthetic biology and agriculture.
+
+These resources serve different purposes. Questionnaires help teams investigate knowledge and expectations. Interview materials support conversations about technical feasibility and use conditions. Educational resources support scientific learning. Partnership documents help student teams define responsibilities and communicate their work accurately.
+
+No template replaces local knowledge, ethical review, scientific validation, or institutional authorization. Their value lies in making a process easier to understand, adapt, and document.
+
+### Agricultural Awareness and Needs Questionnaire {#hp-contribution-agricultural-awareness-and-needs-questionnaire toc="Agricultural Awareness and Needs Questionnaire"}
+
+Our questionnaire connects the project's early laboratory questions with public understanding of nematodes and agricultural testing. It explores awareness, information sources, expectations of testing, and interpretation of possible results.
+
+Future teams can adapt the question structure by first identifying their intended respondents and the decisions that the answers might inform. They should then review terminology, pilot the questions, document recruitment channels, and define valid-response criteria before analysis.
+
+Results should be reported with the relevant denominator for each question, including missing responses. A questionnaire circulated through university or outreach networks describes the participating sample; it should not automatically be presented as representative of farmers or a national population.
+
+An important reusable feature is the **connection between questions and decisions**: what did the team need to learn, why was each question asked, and which answer could change a design priority?
+
+### Stakeholder Interviews and Feedback Records {#hp-contribution-stakeholder-interviews-and-feedback-records toc="Stakeholder Interviews and Feedback Records"}
+
+Our engagement materials cover agricultural, scientific, and industry perspectives. Technical discussions address candidate signals, background interference, controls, sample conditions, and possible routes to further validation. Partnership discussions address the purpose of support, realistic deliverables, communication responsibilities, and longer-term collaboration.
+
+Teams using these materials should prepare a short project explanation, clarify the purpose of the conversation, obtain permission for recording and publication, and separate direct statements from the team's interpretation. Confidential information should be removed from public records.
+
+The accompanying feedback-recording framework follows four stages: **feedback, decision, project change, and verification**. Each entry should identify the source and context of the feedback, the reasoning behind accepting or rejecting it, the affected document or design version, and the evidence available to assess the change.
+
+Where verification has not occurred, the record should state the next test rather than imply that the feedback has already improved technical performance.
+
+### Sampling Guidance and Context Records {#hp-contribution-sampling-guidance-and-context-records toc="Sampling Guidance and Context Records"}
+
+Our sampling guidance video and recording approach help connect a soil sample with its agricultural background. Useful records include **sample identification, crop context, collection location, collection date, handling, and storage**.
+
+These materials support consistent documentation and communication with participants. They do not constitute a universally validated protocol for every nematode, soil type, or analytical method. Future users should adapt collection and preservation procedures to their target analyte and institutional requirements.
+
+Collecting a sample creates an opportunity for research; it does not establish the presence of a particular nematode or demonstrate field performance.
+
+### Educational Courses and Supporting Materials {#hp-contribution-educational-courses-and-supporting-materials toc="Educational Courses and Supporting Materials"}
+
+We developed **three course themes**: The Great Nematode Chase, The Signal Discovery Challenge, and Small Lives, Shared Responsibility. The theoretical and experimental course themes include versions for primary-school and junior-secondary learners; the responsibility-focused course is designed for primary-school learners.
+
+Supporting materials include lesson presentations, illustrated materials, posters, leaflets, postcards, and activity sheets. The collection provides a starting point for discussing agricultural nematodes, biological signals, scientific inquiry, and responsible innovation.
+
+To reuse a course, educators should select the appropriate age version, review the learning objectives, prepare the required materials, and adapt examples to local agricultural contexts. Activities should distinguish observation from interpretation and invite learners to question the proposed technology.
+
+The term “experimental course” describes a teaching format and does not imply that learners handled genetically modified organisms. Any practical activity requires a separate assessment of its materials and setting.
+
+### Sponsorship and Partnership Documentation {#hp-contribution-sponsorship-and-partnership-documentation toc="Sponsorship and Partnership Documentation"}
+
+Our sponsorship work provides a framework for organizing initial contact, meeting preparation, discussion records, follow-up actions, and proposed support arrangements. It also addresses how a student team can describe possible acknowledgements and other deliverables without overstating its authority or technical progress.
+
+A reusable partnership workflow begins with identifying suitable organizations and their reasons for engagement. Teams should then agree on a meeting purpose, document expectations, assess which commitments they can fulfill, obtain institutional authorization where necessary, and keep a record of delivery.
+
+Recognition and activity support should be separated from scientific conclusions and competition outcomes. A sponsor's support does not validate a technology, and an award cannot be guaranteed as a sponsorship benefit.
+
+### Making the Resources Usable {#hp-contribution-making-the-resources-usable toc="Making the Resources Usable"}
+
+Reusable resources need more than a file name. Each public item should identify its **purpose, intended users, version, required preparation, instructions, limitations, authorship, and permitted use**.
+
+Our contribution combines the materials with the reasoning needed to use them responsibly. Future teams can adapt the process while preserving the distinction between a useful conversation, a documented decision, and a scientifically validated result.
+
+See the [engagement and integration cases](/human-practices/) and [education program](/education/) for how these resources were used. Public download links will be added when release-ready versions and permissions are available.
 
 ## References {#references toc="References"}
 

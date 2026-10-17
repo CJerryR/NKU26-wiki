@@ -1,0 +1,360 @@
+{
+  "page": "model",
+  "enabled": true,
+  "note": "Design units: desktop canvas 1600x900, mobile 900x1600, origin at the canvas centre, y down. w = drawn width. from = state at scroll progress 0, to = state at 1; win = the part of the progress over which this layer moves. s scale, r degrees, o opacity. depth = pointer parallax in design px.",
+  "signature": "The receptor’s seven helices spring apart like an exploded view and the ligand rises from the middle.",
+  "eyebrow": "Overview",
+  "desktop": {
+    "canvas": [
+      1600,
+      900
+    ],
+    "title": {
+      "y": -30,
+      "toY": -300,
+      "toScale": 0.62
+    },
+    "layers": [
+      {
+        "id": "helix-1",
+        "prop": "helix",
+        "w": 64,
+        "z": 3,
+        "depth": 12,
+        "from": {
+          "x": -84,
+          "y": 262,
+          "r": -4.5
+        },
+        "to": {
+          "x": -540,
+          "y": 303,
+          "r": -18,
+          "s": 1.15
+        },
+        "win": [
+          0.1,
+          0.62
+        ]
+      },
+      {
+        "id": "helix-2",
+        "prop": "helix",
+        "w": 64,
+        "z": 3,
+        "depth": 12,
+        "from": {
+          "x": -56,
+          "y": 278,
+          "r": -3.0
+        },
+        "to": {
+          "x": -360,
+          "y": 262,
+          "r": -12,
+          "s": 1.15
+        },
+        "win": [
+          0.13,
+          0.65
+        ]
+      },
+      {
+        "id": "helix-3",
+        "prop": "helix",
+        "w": 64,
+        "z": 3,
+        "depth": 12,
+        "from": {
+          "x": -28,
+          "y": 262,
+          "r": -1.5
+        },
+        "to": {
+          "x": -180,
+          "y": 238,
+          "r": -6,
+          "s": 1.15
+        },
+        "win": [
+          0.16,
+          0.6799999999999999
+        ]
+      },
+      {
+        "id": "helix-4",
+        "prop": "helix",
+        "w": 64,
+        "z": 3,
+        "depth": 12,
+        "from": {
+          "x": 0,
+          "y": 278,
+          "r": 0.0
+        },
+        "to": {
+          "x": 0,
+          "y": 230,
+          "r": 0,
+          "s": 1.15
+        },
+        "win": [
+          0.19,
+          0.71
+        ]
+      },
+      {
+        "id": "helix-5",
+        "prop": "helix",
+        "w": 64,
+        "z": 3,
+        "depth": 12,
+        "from": {
+          "x": 28,
+          "y": 262,
+          "r": 1.5
+        },
+        "to": {
+          "x": 180,
+          "y": 238,
+          "r": 6,
+          "s": 1.15
+        },
+        "win": [
+          0.22,
+          0.74
+        ]
+      },
+      {
+        "id": "helix-6",
+        "prop": "helix",
+        "w": 64,
+        "z": 3,
+        "depth": 12,
+        "from": {
+          "x": 56,
+          "y": 278,
+          "r": 3.0
+        },
+        "to": {
+          "x": 360,
+          "y": 262,
+          "r": 12,
+          "s": 1.15
+        },
+        "win": [
+          0.25,
+          0.77
+        ]
+      },
+      {
+        "id": "helix-7",
+        "prop": "helix",
+        "w": 64,
+        "z": 3,
+        "depth": 12,
+        "from": {
+          "x": 84,
+          "y": 262,
+          "r": 4.5
+        },
+        "to": {
+          "x": 540,
+          "y": 303,
+          "r": 18,
+          "s": 1.15
+        },
+        "win": [
+          0.28,
+          0.8
+        ]
+      },
+      {
+        "id": "ligand",
+        "prop": "ligand",
+        "w": 280,
+        "z": 5,
+        "depth": 6,
+        "from": {
+          "x": 0,
+          "y": 270,
+          "s": 0.4,
+          "o": 0
+        },
+        "to": {
+          "x": 0,
+          "y": 30,
+          "s": 1.25,
+          "o": 1
+        },
+        "win": [
+          0.45,
+          0.86
+        ]
+      },
+      {
+        "id": "ribbon",
+        "prop": "ribbon",
+        "w": 300,
+        "z": 2,
+        "depth": 24,
+        "from": {
+          "x": -520,
+          "y": -230
+        },
+        "to": {
+          "x": -600,
+          "y": -300,
+          "r": -5,
+          "s": 1.1
+        },
+        "win": [
+          0.1,
+          0.78
+        ]
+      },
+      {
+        "id": "field",
+        "prop": "field",
+        "w": 290,
+        "z": 2,
+        "depth": 24,
+        "from": {
+          "x": 560,
+          "y": -200
+        },
+        "to": {
+          "x": 620,
+          "y": -280,
+          "r": 5,
+          "s": 1.1
+        },
+        "win": [
+          0.1,
+          0.78
+        ]
+      }
+    ]
+  },
+  "mobile": {
+    "canvas": [
+      900,
+      1600
+    ],
+    "title": {
+      "y": -80,
+      "toY": -470,
+      "toScale": 0.7
+    },
+    "layers": [
+      {
+        "id": "helix-1",
+        "prop": "helix",
+        "w": 80,
+        "z": 3,
+        "depth": 0,
+        "from": {
+          "x": -36,
+          "y": 470,
+          "r": -3
+        },
+        "to": {
+          "x": -260,
+          "y": 480,
+          "r": -12,
+          "s": 1.1
+        },
+        "win": [
+          0.1,
+          0.62
+        ]
+      },
+      {
+        "id": "helix-2",
+        "prop": "helix",
+        "w": 80,
+        "z": 3,
+        "depth": 0,
+        "from": {
+          "x": 0,
+          "y": 462
+        },
+        "to": {
+          "x": 0,
+          "y": 500,
+          "s": 1.1
+        },
+        "win": [
+          0.13,
+          0.65
+        ]
+      },
+      {
+        "id": "helix-3",
+        "prop": "helix",
+        "w": 80,
+        "z": 3,
+        "depth": 0,
+        "from": {
+          "x": 36,
+          "y": 470,
+          "r": 3
+        },
+        "to": {
+          "x": 260,
+          "y": 480,
+          "r": 12,
+          "s": 1.1
+        },
+        "win": [
+          0.16,
+          0.68
+        ]
+      },
+      {
+        "id": "ligand",
+        "prop": "ligand",
+        "w": 380,
+        "z": 5,
+        "depth": 0,
+        "from": {
+          "x": 0,
+          "y": 470,
+          "s": 0.4,
+          "o": 0
+        },
+        "to": {
+          "x": 0,
+          "y": 120,
+          "s": 1.1,
+          "o": 1
+        },
+        "win": [
+          0.45,
+          0.86
+        ]
+      },
+      {
+        "id": "ribbon",
+        "prop": "ribbon",
+        "w": 380,
+        "z": 2,
+        "depth": 0,
+        "from": {
+          "x": 0,
+          "y": -480
+        },
+        "to": {
+          "x": -120,
+          "y": -720,
+          "r": -5,
+          "s": 1.05
+        },
+        "win": [
+          0.1,
+          0.78
+        ]
+      }
+    ]
+  }
+}

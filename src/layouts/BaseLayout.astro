@@ -4,32 +4,46 @@ import '../styles/global.css';
 import SiteNav from '../components/site/SiteNav.astro';
 import SiteFooter from '../components/site/SiteFooter.astro';
 import SearchDialog from '../components/site/SearchDialog.astro';
+import ChangeNotice from '../components/site/ChangeNotice.astro';
+import ReviewPreferences from '../components/site/ReviewPreferences.astro';
+import { SHOW_REVIEW_TOOLS } from '../data/review-tools';
 import Mascot from '../components/site/Mascot.astro';
 import { site } from '../data/site';
 
-interface Props { title: string; description?: string; current?: string }
-const { title, description = site.description, current } = Astro.props;
+interface Props {
+  title: string; description?: string; current?: string;
+  /** Where "Skip to content" lands (an inner page's article, past its hero). */
+  skipTo?: string;
+  /** Images the first screen needs at once, each for its own media query. */
+  preload?: { href: string; media: string }[];
+}
+const { title, description = site.description, current, skipTo = '#main', preload = [] } = Astro.props;
 ---
 <!DOCTYPE html>
 <html lang="en" data-root="/">
   <head>
+    {SHOW_REVIEW_TOOLS && <ReviewPreferences />}
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>{`${title} / ${site.title}`}</title>
     <meta name="description" content={description} />
     <meta name="theme-color" content="#191222" />
+    <!-- Day / night before the first paint, so a night page never flashes paper (key: src/scripts/theme.ts) -->
+    <script is:inline>try{if(localStorage.getItem('nku26-theme')==='dark')document.documentElement.setAttribute('data-theme','dark')}catch(e){}</script>
     <link rel="stylesheet" href="/widgets/vendor/katex/katex.min.css" />
     <link rel="icon" href="https://static.igem.wiki/teams/6303/wiki/v8-0/v8-3439b58a1e73-nku-mark.svg" type="image/svg+xml" />
     <link rel="preload" href="https://static.igem.wiki/teams/6303/wiki/v8-0/v8-64513365c2d8-spline-variable.woff2" as="font" type="font/woff2" crossorigin />
+    {preload.map((p) => <link rel="preload" as="image" href={p.href} media={p.media} fetchpriority="high" />)}
   </head>
   <body class="wiki" data-page-title={title}>
-    <a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip-link" href={skipTo}>Skip to content</a>
     <SiteNav current={current} />
-    <main id="main" tabindex="-1">
+    <main id="main" tabindex="-1" data-tone="light">
       <slot />
     </main>
     <SiteFooter />
     <SearchDialog />
+  {SHOW_REVIEW_TOOLS && <ChangeNotice />}
     <Mascot />
     <script>
       import '../scripts/site.ts';

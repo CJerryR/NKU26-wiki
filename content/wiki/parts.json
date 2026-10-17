@@ -12,7 +12,7 @@
   "search": true,
   "blocks": [
     {
-      "body": "This page summarizes all Parts and Collections submitted in this project.\n",
+      "body": "This page summarizes all **Parts and Collections** submitted in this project.\n",
       "_template": "text"
     },
     {

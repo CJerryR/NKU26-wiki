@@ -59,7 +59,7 @@ const templates: Template[] = [
   ] },
   { name: 'text', label: '富文本 / 表格', fields: [body] },
   { name: 'layout', label: '排版模块', fields: [
-    { type: 'string', name: 'kind', label: '类型', required: true, options: ['note', 'tip', 'warning', 'cards', 'cols', 'figure', 'timeline', 'features', 'stats', 'refs', 'details', 'people', 'lead'] },
+    { type: 'string', name: 'kind', label: '类型', required: true, options: ['note', 'tip', 'warning', 'cards', 'cols', 'figure', 'timeline', 'features', 'stats', 'refs', 'details', 'people', 'lead', 'workflow'] },
     { type: 'string', name: 'label', label: '模块标题' },
     { type: 'string', name: 'attributes', label: '布局设置', description: '例如 cols="2"；已有 svg 图形编号请保留。' },
     body,

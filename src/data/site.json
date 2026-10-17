@@ -1,5 +1,16 @@
 {
   "source_repository_url": "https://gitlab.igem.org/2026/nku-china",
-  "sponsors": [],
+  "sponsors": [
+    {
+      "name": "ExCell",
+      "logo": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-6b6833027f6c-excell.avif",
+      "logoAlt": "ExCell 依科赛"
+    },
+    {
+      "name": "Solarbio",
+      "logo": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-add955af5966-solarbio.avif",
+      "logoAlt": "Solarbio Life Sciences"
+    }
+  ],
   "friends": []
 }

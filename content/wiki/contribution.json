@@ -26,7 +26,7 @@
     },
     {
       "_template": "text",
-      "body": "Our Wet Lab work supports not only the construction and validation of the yeast biosensor in this project. More importantly, we intend to make the genetic parts, engineered strains, plasmids, donor DNA, experimental protocols and practical experience generated during our research available as public resources for future iGEM teams to reference, reuse and extend."
+      "body": "Our Wet Lab work supports not only the construction and validation of the yeast biosensor in this project. More importantly, we intend to make the genetic parts, engineered strains, plasmids, donor DNA, experimental protocols and practical experience generated during our research available as **public resources for future iGEM teams** to reference, reuse and extend."
     },
     {
       "_template": "text",
@@ -40,11 +40,11 @@
     },
     {
       "_template": "text",
-      "body": "In this project, we have submitted 39 Parts and 4 Collections to the iGEM Registry ([https://registry.igem.org/organisations/igem/6303](https://registry.igem.org/organisations/igem/6303)). These submissions cover multiple modules including yeast chassis construction, genome editing, tool plasmids, sgRNA, receptor expression and functional components of biosensors."
+      "body": "In this project, we have submitted **39 Parts and 4 Collections** to the iGEM Registry ([https://registry.igem.org/organisations/igem/6303](https://registry.igem.org/organisations/igem/6303)). These submissions cover multiple modules including yeast chassis construction, genome editing, tool plasmids, sgRNA, receptor expression and functional components of biosensors."
     },
     {
       "_template": "text",
-      "body": "Among all submitted parts, we designed and constructed 10 plasmids (Table 1). These plasmids serve as core components of our project and also provide direct references for future teams undertaking similar yeast strain construction work."
+      "body": "Among all submitted parts, we designed and constructed **10 plasmids** (Table 1). These plasmids serve as core components of our project and also provide direct references for future teams undertaking similar yeast strain construction work."
     },
     {
       "_template": "datatable",
@@ -131,7 +131,7 @@
     },
     {
       "_template": "text",
-      "body": "We consider strain construction itself to be an important Contribution. Rather than merely providing a final strain, we place greater emphasis on documenting the stepwise construction process."
+      "body": "We consider strain construction itself to be an important Contribution. Rather than merely providing a final strain, we place greater emphasis on documenting the **stepwise construction process**."
     },
     {
       "_template": "text",
@@ -149,7 +149,7 @@
     },
     {
       "_template": "text",
-      "body": "During practical experiments, we also encountered difficulties including problematic PCR amplification, fluctuating yeast transformation efficiency and failed one-step cloning. Therefore, we compiled these experiences into Troubleshooting & Lessons Learned, aiming to convert the \"cost of failures\" into readily usable experience for future teams."
+      "body": "During practical experiments, we also encountered difficulties including problematic PCR amplification, fluctuating yeast transformation efficiency and failed one-step cloning. Therefore, we compiled these experiences into **Troubleshooting & Lessons Learned**, aiming to convert the \"cost of failures\" into readily usable experience for future teams."
     },
     {
       "_template": "pdf",
@@ -181,7 +181,7 @@
     },
     {
       "_template": "text",
-      "body": "We developed a stepwise screening approach for engineering a receptor’s recognition of two ligands, using contact differences to identify candidate sites and successive substitutions to evaluate them. We first compare the contact distributions of the wild-type (WT) receptor with both ligands and select candidate positions for alanine substitution. We then combine single-mutant scores with contact changes to select sites for saturation scanning and compare how different side chains affect the two ligands."
+      "body": "We developed a **stepwise screening approach** for engineering a receptor’s recognition of two ligands, using contact differences to identify candidate sites and successive substitutions to evaluate them. We first compare the contact distributions of the wild-type (WT) receptor with both ligands and select candidate positions for alanine substitution. We then combine single-mutant scores with contact changes to select sites for saturation scanning and compare how different side chains affect the two ligands."
     },
     {
       "_template": "text",
@@ -205,7 +205,7 @@
     },
     {
       "_template": "text",
-      "body": "Other teams can apply this screening approach by combining scores for both ligands, contact comparisons with WT, and comparisons of combinations with their parents to develop testable engineering hypotheses. Binding capability and selectivity can then be evaluated experimentally. The design iterations are described in Engineering, and the score and contact evidence is presented in Model/Docking."
+      "body": "Other teams can apply this screening approach by combining scores for both ligands, contact comparisons with WT, and comparisons of combinations with their parents to develop **testable engineering hypotheses**. Binding capability and selectivity can then be evaluated experimentally. The design iterations are described in Engineering, and the score and contact evidence is presented in Model/Docking."
     },
     {
       "_template": "heading",
@@ -219,7 +219,7 @@
     },
     {
       "_template": "text",
-      "body": "An atom-mapping verification tool checks the correspondence of atoms, coordinates, and structures between the original SDF and the docking PDBQT files. A pose-export tool reconstructs SDF files using the complete Meeko structural metadata retained in PDBQT, preserving docking poses and chemical information such as formal charges for subsequent contact analysis."
+      "body": "An **atom-mapping verification tool** checks the correspondence of atoms, coordinates, and structures between the original SDF and the docking PDBQT files. A **pose-export tool** reconstructs SDF files using the complete Meeko structural metadata retained in PDBQT, preserving docking poses and chemical information such as formal charges for subsequent contact analysis."
     },
     {
       "_template": "text",
@@ -251,7 +251,7 @@
     },
     {
       "_template": "text",
-      "body": "Docking provides candidate binding poses for receptor engineering. We further used molecular dynamics (MD) simulations to examine how these poses persist or adjust in a membrane environment and organized the analysis of receptor conformational changes, ligand positions, and contacts into a reusable workflow."
+      "body": "Docking provides candidate binding poses for receptor engineering. We further used **molecular dynamics (MD) simulations** to examine how these poses persist or adjust in a membrane environment and organized the analysis of receptor conformational changes, ligand positions, and contacts into a reusable workflow."
     },
     {
       "_template": "text",
@@ -269,11 +269,11 @@
     },
     {
       "_template": "text",
-      "body": "We developed a full-pathway ODE model for our yeast GPCR biosensing system, connecting effective receptor input, intracellular signal transduction, and colorimetric output. The model reuses the yeast pathway structure from Supady Model B and the publicly available materials of TU Delft’s 2012 iGEM team, incorporates our project’s color-development module, and calculates signaling activity and color over time."
+      "body": "We developed a **full-pathway ODE model** for our yeast GPCR biosensing system, connecting effective receptor input, intracellular signal transduction, and colorimetric output. The model reuses the yeast pathway structure from Supady Model B and the publicly available materials of TU Delft’s 2012 iGEM team, incorporates our project’s color-development module, and calculates signaling activity and color over time."
     },
     {
       "_template": "text",
-      "body": "We documented the shared pathway parameters separately from project-specific input and output settings, recording parameter meanings, units, sources, and assumptions. Under fixed construct conditions, sTF regulation, GAL production rate, and color generation were combined into one effective colorimetric equation. Conservation of total molecular amounts was used to eliminate redundant states in the shared pathway. The accompanying equation descriptions and computational consistency checks help users understand and adapt the model."
+      "body": "We documented the **shared pathway parameters** separately from **project-specific input and output settings**, recording parameter meanings, units, sources, and assumptions. Under fixed construct conditions, sTF regulation, GAL production rate, and color generation were combined into one effective colorimetric equation. Conservation of total molecular amounts was used to eliminate redundant states in the shared pathway. The accompanying equation descriptions and computational consistency checks help users understand and adapt the model."
     },
     {
       "_template": "text",
@@ -291,11 +291,11 @@
     },
     {
       "_template": "text",
-      "body": "We developed an economic benefit model connecting pathogen or pest density, crop yield loss, and management costs. It compares three scenarios: no testing and no treatment, uniform treatment without testing, and risk-based treatment following testing. The model estimates yield losses from the density-yield relationship, then combines product prices, testing costs, treatment costs, and treatment efficacy to calculate the expected net return of each strategy."
+      "body": "We developed an economic benefit model connecting pathogen or pest density, crop yield loss, and management costs. It compares **three scenarios**: no testing and no treatment, uniform treatment without testing, and risk-based treatment following testing. The model estimates yield losses from the density-yield relationship, then combines product prices, testing costs, treatment costs, and treatment efficacy to calculate the expected net return of each strategy."
     },
     {
       "_template": "text",
-      "body": "Model parameters are organized separately from report content so that users can substitute local crop prices, testing costs, treatment costs, risk thresholds, and treatment efficacy. Settings with an established density-yield relationship support comparisons of economic returns. Settings with risk thresholds alone provide risk indications, with the analysis extended as more data become available."
+      "body": "Model parameters are organized separately from report content so that users can **substitute local crop prices**, testing costs, treatment costs, risk thresholds, and treatment efficacy. Settings with an established density-yield relationship support comparisons of economic returns. Settings with risk thresholds alone provide risk indications, with the analysis extended as more data become available."
     },
     {
       "_template": "text",
@@ -304,6 +304,150 @@
     {
       "_template": "text",
       "body": "Other teams can start from this example, substitute density-yield relationships appropriate to their own crops and target organisms, and add local cost data to compare the management benefits of detection information. Parameters can then be updated using experimental or field data. Complete methods, parameter sources, and scenario results are available in Model/Eco."
+    },
+    {
+      "_template": "heading",
+      "text": "Human Practices",
+      "level": 2,
+      "attributes": "#human-practices toc=\"Human Practices\""
+    },
+    {
+      "_template": "heading",
+      "text": "Resources for Connecting Synthetic Biology with Real World Questions",
+      "level": 3,
+      "attributes": "#hp-contribution-resources-for-connecting-synthetic-biology-with-real-world-questions toc=\"Resources for Connecting Synthetic Biology with Real World Questions\""
+    },
+    {
+      "_template": "text",
+      "body": "Our Human Practices contribution extends beyond an account of our own activities. We developed **educational materials, survey tools, sampling guidance, and engagement documents** that can support future teams working at the interface of synthetic biology and agriculture."
+    },
+    {
+      "_template": "text",
+      "body": "These resources serve different purposes. Questionnaires help teams investigate knowledge and expectations. Interview materials support conversations about technical feasibility and use conditions. Educational resources support scientific learning. Partnership documents help student teams define responsibilities and communicate their work accurately."
+    },
+    {
+      "_template": "text",
+      "body": "No template replaces local knowledge, ethical review, scientific validation, or institutional authorization. Their value lies in making a process easier to understand, adapt, and document."
+    },
+    {
+      "_template": "heading",
+      "text": "Agricultural Awareness and Needs Questionnaire",
+      "level": 3,
+      "attributes": "#hp-contribution-agricultural-awareness-and-needs-questionnaire toc=\"Agricultural Awareness and Needs Questionnaire\""
+    },
+    {
+      "_template": "text",
+      "body": "Our questionnaire connects the project's early laboratory questions with public understanding of nematodes and agricultural testing. It explores awareness, information sources, expectations of testing, and interpretation of possible results."
+    },
+    {
+      "_template": "text",
+      "body": "Future teams can adapt the question structure by first identifying their intended respondents and the decisions that the answers might inform. They should then review terminology, pilot the questions, document recruitment channels, and define valid-response criteria before analysis."
+    },
+    {
+      "_template": "text",
+      "body": "Results should be reported with the relevant denominator for each question, including missing responses. A questionnaire circulated through university or outreach networks describes the participating sample; it should not automatically be presented as representative of farmers or a national population."
+    },
+    {
+      "_template": "text",
+      "body": "An important reusable feature is the **connection between questions and decisions**: what did the team need to learn, why was each question asked, and which answer could change a design priority?"
+    },
+    {
+      "_template": "heading",
+      "text": "Stakeholder Interviews and Feedback Records",
+      "level": 3,
+      "attributes": "#hp-contribution-stakeholder-interviews-and-feedback-records toc=\"Stakeholder Interviews and Feedback Records\""
+    },
+    {
+      "_template": "text",
+      "body": "Our engagement materials cover agricultural, scientific, and industry perspectives. Technical discussions address candidate signals, background interference, controls, sample conditions, and possible routes to further validation. Partnership discussions address the purpose of support, realistic deliverables, communication responsibilities, and longer-term collaboration."
+    },
+    {
+      "_template": "text",
+      "body": "Teams using these materials should prepare a short project explanation, clarify the purpose of the conversation, obtain permission for recording and publication, and separate direct statements from the team's interpretation. Confidential information should be removed from public records."
+    },
+    {
+      "_template": "text",
+      "body": "The accompanying feedback-recording framework follows four stages: **feedback, decision, project change, and verification**. Each entry should identify the source and context of the feedback, the reasoning behind accepting or rejecting it, the affected document or design version, and the evidence available to assess the change."
+    },
+    {
+      "_template": "text",
+      "body": "Where verification has not occurred, the record should state the next test rather than imply that the feedback has already improved technical performance."
+    },
+    {
+      "_template": "heading",
+      "text": "Sampling Guidance and Context Records",
+      "level": 3,
+      "attributes": "#hp-contribution-sampling-guidance-and-context-records toc=\"Sampling Guidance and Context Records\""
+    },
+    {
+      "_template": "text",
+      "body": "Our sampling guidance video and recording approach help connect a soil sample with its agricultural background. Useful records include **sample identification, crop context, collection location, collection date, handling, and storage**."
+    },
+    {
+      "_template": "text",
+      "body": "These materials support consistent documentation and communication with participants. They do not constitute a universally validated protocol for every nematode, soil type, or analytical method. Future users should adapt collection and preservation procedures to their target analyte and institutional requirements."
+    },
+    {
+      "_template": "text",
+      "body": "Collecting a sample creates an opportunity for research; it does not establish the presence of a particular nematode or demonstrate field performance."
+    },
+    {
+      "_template": "heading",
+      "text": "Educational Courses and Supporting Materials",
+      "level": 3,
+      "attributes": "#hp-contribution-educational-courses-and-supporting-materials toc=\"Educational Courses and Supporting Materials\""
+    },
+    {
+      "_template": "text",
+      "body": "We developed **three course themes**: The Great Nematode Chase, The Signal Discovery Challenge, and Small Lives, Shared Responsibility. The theoretical and experimental course themes include versions for primary-school and junior-secondary learners; the responsibility-focused course is designed for primary-school learners."
+    },
+    {
+      "_template": "text",
+      "body": "Supporting materials include lesson presentations, illustrated materials, posters, leaflets, postcards, and activity sheets. The collection provides a starting point for discussing agricultural nematodes, biological signals, scientific inquiry, and responsible innovation."
+    },
+    {
+      "_template": "text",
+      "body": "To reuse a course, educators should select the appropriate age version, review the learning objectives, prepare the required materials, and adapt examples to local agricultural contexts. Activities should distinguish observation from interpretation and invite learners to question the proposed technology."
+    },
+    {
+      "_template": "text",
+      "body": "The term “experimental course” describes a teaching format and does not imply that learners handled genetically modified organisms. Any practical activity requires a separate assessment of its materials and setting."
+    },
+    {
+      "_template": "heading",
+      "text": "Sponsorship and Partnership Documentation",
+      "level": 3,
+      "attributes": "#hp-contribution-sponsorship-and-partnership-documentation toc=\"Sponsorship and Partnership Documentation\""
+    },
+    {
+      "_template": "text",
+      "body": "Our sponsorship work provides a framework for organizing initial contact, meeting preparation, discussion records, follow-up actions, and proposed support arrangements. It also addresses how a student team can describe possible acknowledgements and other deliverables without overstating its authority or technical progress."
+    },
+    {
+      "_template": "text",
+      "body": "A reusable partnership workflow begins with identifying suitable organizations and their reasons for engagement. Teams should then agree on a meeting purpose, document expectations, assess which commitments they can fulfill, obtain institutional authorization where necessary, and keep a record of delivery."
+    },
+    {
+      "_template": "text",
+      "body": "Recognition and activity support should be separated from scientific conclusions and competition outcomes. A sponsor's support does not validate a technology, and an award cannot be guaranteed as a sponsorship benefit."
+    },
+    {
+      "_template": "heading",
+      "text": "Making the Resources Usable",
+      "level": 3,
+      "attributes": "#hp-contribution-making-the-resources-usable toc=\"Making the Resources Usable\""
+    },
+    {
+      "_template": "text",
+      "body": "Reusable resources need more than a file name. Each public item should identify its **purpose, intended users, version, required preparation, instructions, limitations, authorship, and permitted use**."
+    },
+    {
+      "_template": "text",
+      "body": "Our contribution combines the materials with the reasoning needed to use them responsibly. Future teams can adapt the process while preserving the distinction between a useful conversation, a documented decision, and a scientifically validated result."
+    },
+    {
+      "_template": "text",
+      "body": "See the [engagement and integration cases](/human-practices/) and [education program](/education/) for how these resources were used. Public download links will be added when release-ready versions and permissions are available."
     },
     {
       "_template": "heading",

@@ -19,11 +19,38 @@
      leave(dir, info) may return ms to play an exit before the next page
    Narrow screens, touch-only devices and reduced motion keep native scrolling;
    steps then play from scroll position (tall scenes) or when a page is in view.
-   Input policy: hand velocity sets the pace. Light input preserves playback;
+   The traces story distinguishes discrete wheels from continuous gestures,
+   preserves playback and retains at most one deliberate next internal step.
+   Other scenes: hand velocity sets the pace. Light input preserves playback;
    forceful input accelerates or reverses the current scene without queuing
    extra pages. Only page turns use viewport resistance. */
 (function () {
   'use strict';
+  // Wheel intent is heuristic: browsers expose deltas, not device identity.
+  function makeStoryWheel() {
+    var last = -Infinity, previous = 0, sum = 0, used = false;
+    var mode = 'unknown', fired = -Infinity;
+    return function (delta, deltaMode, now) {
+      var a = Math.abs(delta), gap = now - last;
+      var reverse = delta * previous < 0 && a >= 4;
+      if (gap > 220) mode = 'unknown';
+      if (deltaMode !== 0) mode = 'wheel';
+      else if (a < 40 || Math.abs(delta % 1) > 0.01 || (gap < 35 && a !== Math.abs(previous))) mode = 'trackpad';
+      else if (mode === 'unknown' && a >= 48) mode = 'wheel';
+      // A new push can start before an old trackpad momentum tail has stopped.
+      var renewed = now - fired > 300 && a >= 8 && a > Math.abs(previous) * 1.8 + 4;
+      var fresh = gap > 180 || reverse || (mode === 'trackpad' && renewed);
+      if (mode === 'wheel' && gap >= 55 && now - fired >= 180) fresh = true;
+      if (fresh) { used = false; sum = 0; }
+      last = now; previous = delta;
+      if (used || a < 0.5) return null;
+      sum += delta;
+      if (Math.abs(sum) < (mode === 'wheel' ? 32 : 24)) return null;
+      used = true; fired = now;
+      return { dir: sum > 0 ? 1 : -1, speed: mode === 'wheel' ? 1.8 : 1.5, mode: mode };
+    };
+  }
+  // End wheel intent helper.
   var H = window.NKUH; if (!H) return;
   var scenes = {};
   H.scene = function (id, spec) { scenes[id] = spec; };
@@ -162,9 +189,18 @@
     function lock(ms) {
       doneAt = performance.now() + Math.max(0, ms);
       busy = true; clearTimeout(busyTimer); dots();
-      busyTimer = setTimeout(function () { busy = false; if (paged) { halt(); write(rest()); } dots(); armHint(); }, Math.max(0, ms));
+      busyTimer = setTimeout(function () { busy = false; if (paged) { halt(); write(rest()); } dots(); armHint(); drainStoryInput(); }, Math.max(0, ms));
     }
     var inputSpeed = 1, activeDir = 1;
+    var storyWheel = makeStoryWheel(), pendingStory = null;
+    function drainStoryInput() {
+      var q = pendingStory; pendingStory = null;
+      if (!q || !paged || busy || cur !== q.page || performance.now() - q.time > 5000 || blocked(document.activeElement)) return;
+      // Never let a queued gesture carry the reader into another section.
+      if (q.dir > 0 ? st >= pages[cur].steps : st <= 0) return;
+      inputSpeed = q.speed; turns++;
+      q.dir > 0 ? next() : prev();
+    }
     function next() {
       activeDir = 1;
       var pg = pages[cur];
@@ -192,6 +228,7 @@
       if (cur > 0) go(cur - 1, -1);
     }
     function go(i, dir, st0) {
+      pendingStory = null; storyWheel = makeStoryWheel();
       if (i === cur && !atFoot && st0 == null) return;
       clearTimeout(leaveTimer); clearTimeout(busyTimer); if (leaving) call(pages[cur], 'cancel'); leaving = false;
       var from = pages[cur], to = pages[i], adjacent = i === cur + dir;
@@ -227,6 +264,19 @@
       var now = performance.now(), d = e.deltaY * (e.deltaMode === 1 ? 16 : e.deltaMode === 2 ? innerHeight : 1), a = Math.abs(d);
       if (!a) return;
       e.preventDefault(); touched();
+      if (pages[cur].id === 'traces' || pages[cur].sp.pacedWheel) {
+        var intent = storyWheel(d, e.deltaMode, now);
+        if (!intent) return;
+        if (busy) {
+          // Keep one deliberate request, not every inertia event. Let the current
+          // transition finish instead of snapping its objects to the final frame.
+          if (!leaving && A.mode !== 'tween') pendingStory = { page: cur, dir: intent.dir, speed: intent.speed, time: now };
+          return;
+        }
+        pendingStory = null; inputSpeed = intent.speed; turns++;
+        intent.dir > 0 ? next() : prev();
+        return;
+      }
       var gap = now - lastWheel, reverse = d * lastDelta < 0 && a > 12;
       var fresh = gap > 180 || reverse || (now - lastAction > 380 && a > 45 && a > Math.abs(lastDelta) * 2.4 + 12);
       if (fresh) { used = false; boosted = false; acc = 0; samples = []; }
@@ -284,7 +334,7 @@
       var k = e.key, dn = k === 'ArrowDown' || k === 'PageDown' || (k === ' ' && !e.shiftKey), up = k === 'ArrowUp' || k === 'PageUp' || (k === ' ' && e.shiftKey);
       if ((k === ' ' || k === 'Enter') && tg && tg.closest && tg.closest('button, a, [role="button"]')) return;
       if (dn || up || k === 'Home' || k === 'End') e.preventDefault(); else return;
-      touched();
+      touched(); pendingStory = null;
       if (busy || e.repeat) return;
       turns++; inputSpeed = 1;
       if (e.target && e.target.closest && e.target.closest('[data-op-focus]') && k.indexOf('Arrow') === 0) return;
@@ -305,6 +355,7 @@
       dots(); armHint();
     }
     function disable(anchor) {
+      pendingStory = null; storyWheel = makeStoryWheel();
       if (!paged) return; paged = false; root.classList.remove('is-paged');
       halt(); clearTimeout(hintT); clearTimeout(busyTimer); clearTimeout(leaveTimer); if (leaving) call(pages[cur], 'cancel'); busy = false; leaving = false; tops = [];
       setupFallback(anchor); dots();

@@ -1,0 +1,77 @@
+---
+/**
+ * Scroll-opened page hero (see src/data/scenes.ts).
+ *
+ * A pinned stage on paper: the page title in the middle, the page's props
+ * (one WebP atlas, sliced with background-position) gathered round it. As the
+ * reader scrolls, src/scripts/scene-hero.ts moves every prop from its `from`
+ * to its `to` state over its own window of the scroll, the title shrinks and
+ * rises, and the article follows straight on. Layout and sizes are pure CSS
+ * (design units × --u), so without JavaScript, or with reduced motion, the
+ * closed composition simply stands as a static hero.
+ *
+ * Two compositions (landscape, portrait) are rendered; the hidden one's atlas
+ * is never downloaded because its layers sit inside a display:none parent.
+ */
+import type { ResolvedScene, SceneKind, SceneLayer, AtlasSet } from '../../data/scenes';
+import { inlineMd } from '../../lib/text';
+
+interface Props { scene: ResolvedScene; title: string; heading?: string; crumbs: string[] }
+const { scene, title, heading, crumbs } = Astro.props;
+const trail = crumbs.length ? crumbs : [title];
+const eyebrow = scene.eyebrow ?? (crumbs.length > 1 ? crumbs[0] : undefined);
+
+const pct = (n: number) => `${+n.toFixed(4)}%`;
+function layerStyle(l: SceneLayer, atlas: AtlasSet): string {
+  const [fx, fy, fw, fh] = atlas.frames[l.prop];
+  const [AW, AH] = atlas.size;
+  const h = (l.w * fh) / fw;
+  const f = l.from;
+  return [
+    `--x:${f.x}`, `--y:${f.y}`, `--w:${l.w}`, `--h:${+h.toFixed(2)}`, `--z:${l.z ?? 1}`,
+    `--r:${f.r ?? 0}deg`, `--s:${f.s ?? 1}`, `--o:${f.o ?? 1}`,
+    `background-size:${pct((AW / fw) * 100)} ${pct((AH / fh) * 100)}`,
+    `background-position:${pct(AW === fw ? 0 : (fx / (AW - fw)) * 100)} ${pct(AH === fh ? 0 : (fy / (AH - fh)) * 100)}`,
+  ].join(';');
+}
+const motion = (l: SceneLayer) => JSON.stringify({ f: l.from, t: l.to, w: l.win ?? [0, 1], d: l.depth ?? 0 });
+const kinds: SceneKind[] = ['desktop', 'mobile'];
+const d = scene.sets.desktop.set.title ?? {}, m = scene.sets.mobile.set.title ?? {};
+const stageVars = [
+  `--ty-d:${d.y ?? 0}`, `--ty-m:${m.y ?? 0}`,
+  ...(d.fontSize ? [`--title-size-d:calc(${d.fontSize} * var(--u))`] : []),
+  ...(m.fontSize ? [`--title-size-m:calc(${m.fontSize} * var(--u))`] : []),
+].join(';');
+---
+<section class="scene" data-scene data-tone="light" aria-labelledby="page-title" style={stageVars}>
+  <div class="scene__stage">
+    <div class="scene__floor" aria-hidden="true" data-scene-floor></div>
+    {kinds.map((kind) => {
+      const { set, atlas, url } = scene.sets[kind];
+      return (
+        <div class={`scene__set scene__set--${kind}`} aria-hidden="true" data-scene-set={kind}
+          data-canvas={set.canvas.join(",")} data-src={url}
+          data-title={JSON.stringify({ y: set.title?.y ?? 0, toY: set.title?.toY ?? -200, toScale: set.title?.toScale ?? 0.65 })}
+          style={`--cw:${set.canvas[0]};--ch:${set.canvas[1]};--atlas:url(${url})`}>
+          {[...set.layers].sort((a, b) => (a.z ?? 1) - (b.z ?? 1)).map((l) => (
+            <div class="scene__layer" data-scene-layer={l.id} data-motion={motion(l)} style={layerStyle(l, atlas)}></div>
+          ))}
+        </div>
+      );
+    })}
+    <nav class="crumbs scene__crumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/index.html">Home</a></li>
+        {trail.map((c, i) => <li aria-current={i === trail.length - 1 ? 'page' : undefined}>{c}</li>)}
+      </ol>
+    </nav>
+    <div class="scene__title" data-scene-title>
+      {eyebrow && <p class="scene__eyebrow">{eyebrow}</p>}
+      <h1 id="page-title" class="scene__h1" set:html={inlineMd(heading ?? title)} />
+      <span class="scene__pill" aria-hidden="true"></span>
+    </div>
+    <div class="scene__cue" aria-hidden="true" data-scene-cue><span>Scroll to open</span><i></i></div>
+    <a class="scene__skip" href="#content">Skip intro</a>
+  </div>
+  <noscript><style>.scene { height: auto !important; } .scene__stage { position: relative !important; }</style></noscript>
+</section>

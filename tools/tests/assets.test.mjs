@@ -29,6 +29,18 @@ test('retains CSS fonts, srcset, poster, downloads and dynamic JS images', async
   for(const f of media)assert.equal(await exists(root,f),true,f);
   assert.equal(await exists(root,'img/unused.png'),false);
 });
+test('scene atlases survive pruning before their viewport-specific composition is activated', async (t) => {
+  const root = await fixture(t, {
+    'experiments/index.html': '<div data-scene-set="desktop" data-src="../img/scenes/experiments-desktop.webp?v=abc"></div><div data-scene-set="mobile" data-src="../img/scenes/experiments-mobile.webp?v=def"></div>',
+    'img/scenes/experiments-desktop.webp': 'desktop atlas',
+    'img/scenes/experiments-mobile.webp': 'mobile atlas',
+    'img/scenes/unused.webp': 'unused atlas',
+  });
+  await finalizeAssets(root);
+  assert.equal(await exists(root, 'img/scenes/experiments-desktop.webp'), true);
+  assert.equal(await exists(root, 'img/scenes/experiments-mobile.webp'), true);
+  assert.equal(await exists(root, 'img/scenes/unused.webp'), false);
+});
 test('equation retains lazy KaTeX stylesheet and fonts; excludes unused PDF engine', async(t)=>{
   const needed=['widgets/vendor/katex/katex.min.css','widgets/vendor/katex/fonts/math.woff2','widgets/vendor/katex/LICENSE'];
   const root=await fixture(t,{'index.html':'<wiki-toolkit data-type="equation"></wiki-toolkit><script src="_astro/app.js"></script>','_astro/app.js':'const lazy = () => import("./data.js");','_astro/data.js':'const css = asset("/widgets/vendor/katex/katex.min.css");',...Object.fromEntries(needed.map(f=>[f,'asset'])),'widgets/vendor/katex/katex.min.css':'@font-face{src:url(fonts/math.woff2)}','widgets/vendor/pdf/unused.wasm':'unused'});

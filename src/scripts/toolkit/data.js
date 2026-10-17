@@ -1,5 +1,5 @@
 import { h, s, rich, has, icon, button, segmented, chips, searchBox, copyButton, empty, asset, safeHref, linkProps,
-  table, toCSV, toNum, fmt, color, ramp, inkOn, saveBlob, reduced, swap } from './core.js';
+  table, toCSV, toNum, fmt, color, ramp, inkOn, saveBlob, copyText, reduced, swap } from './core.js';
 
 const FONT = "'Spline Sans', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif";
 const INK = '#241c2b'; const INK3 = '#6c6373'; const GRID = '#e6ddcc'; const PAPER = '#fbf8f1';
@@ -9,7 +9,12 @@ function isNumericColumn(rows, k) {
   const vals = rows.map((r) => r[k]).filter((v) => v.trim() !== '');
   return vals.length > 0 && vals.filter((v) => Number.isFinite(toNum(v))).length / vals.length >= 0.8;
 }
-function cell(value) {
+function cell(value, header = '') {
+  // Exact experimental identifiers and DNA/RNA sequences, never arbitrary English.
+  // Keep the underlying values untouched for filter, sort, copy and CSV export.
+  const identifier = /^(?:BBa_[A-Za-z0-9]+|NKU-Y\d+|CEN\.PK2-1C|pRS\d+[A-Za-z0-9-]*|p(?:414|426)-[A-Za-z0-9-]+)$/;
+  const sequence = /^(?:sequence|序列)$/i.test(header.trim()) && /^[ACGTUacgtu]{6,}$/.test(value);
+  if (identifier.test(value) || sequence) return h('code', { text: value });
   if (/^https?:\/\/\S+$/i.test(value)) {
     const url = safeHref(value);
     if (url) { let label = value; try { const u = new URL(value); label = `${u.hostname.replace(/^www\./, '')}${u.pathname.length > 1 ? `/…/${u.pathname.split('/').filter(Boolean).pop()}` : ''}`; } catch { /* keep */ } return h('a', { href: url, text: label, ...linkProps(url) }); }
@@ -48,7 +53,9 @@ export function renderTable(target, headers, rows, { name = 'data', pageSize = 2
     ths.forEach((th, k) => th.setAttribute('aria-sort', k === sort ? (asc ? 'ascending' : 'descending') : 'none'));
     const pages = Math.max(1, Math.ceil(result.length / pageSize));
     page = Math.max(0, Math.min(page, pages - 1));
-    swap(tbody, ...result.slice(page * pageSize, page * pageSize + pageSize).map((r) => h('tr', null, r.map((v, k) => h('td', { class: numeric[k] ? 'num' : '' }, cell(v))))));
+    const visibleRows = result.slice(page * pageSize, page * pageSize + pageSize);
+    swap(tbody, ...visibleRows.map(r => h('tr', null,
+      r.map((v, k) => h('td', { class: numeric[k] ? 'num' : '' }, cell(v, headers[k]))))));
     if (!result.length) tbody.append(h('tr', null, h('td', { colspan: headers.length, class: 'dt__none', text: 'No matching rows.' })));
     status.textContent = q ? `${result.length} / ${rows.length} rows` : `${rows.length} rows`;
     pageText.textContent = `Page ${page + 1} / ${pages}`;
@@ -473,15 +480,28 @@ function katexCss(root) {
 const loadKatex = () => (katexPromise ||= import('katex').then((m) => m.default || m));
 
 async function equation(d, ctx) {
-  const { body, tools, root, active } = ctx;
+  const { body, root, active, onCleanup } = ctx;
   if (!has(d.latex)) return body.append(empty('请填写 LaTeX 公式。'));
   katexCss(root);
   const katex = await loadKatex();
   if (!active()) return;
   const math = h('div', { class: 'eq__math' });
   katex.render(d.latex.replace(/(?<!\\)#/g, '\\#'), math, { displayMode: true, throwOnError: true, trust: false, strict: 'warn', maxExpand: 500, maxSize: 20 });
-  tools.append(copyButton(d.latex, 'Copy LaTeX', 'btn btn--quiet'));
-  body.append(h('div', { class: 'eq' }, h('div', { class: 'eq__scroll', tabindex: '0' }, math), has(d.label) ? h('span', { class: 'eq__label', text: d.label }) : null));
+  let timer;
+  const copy = button('', { icon: 'copy', title: 'Copy LaTeX', cls: 'btn btn--quiet btn--icon eq__copy', onClick: async () => {
+    const ok = await copyText(d.latex);
+    if (!active()) return;
+    copy.replaceChildren(icon(ok ? 'check' : 'close'));
+    copy.title = ok ? 'Copied' : 'Copy failed; select the text manually';
+    copy.setAttribute('aria-label', copy.title);
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      copy.replaceChildren(icon('copy'));
+      copy.title = 'Copy LaTeX'; copy.setAttribute('aria-label', copy.title);
+    }, 1800);
+  } });
+  onCleanup(() => clearTimeout(timer));
+  body.append(h('div', { class: 'eq' }, copy, h('div', { class: 'eq__scroll', tabindex: '0' }, math), has(d.label) ? h('span', { class: 'eq__label', text: d.label }) : null));
 }
 
 const SOURCE_TONE = [[/文献|literature|ref/i, 'slate'], [/实验|测定|measur|exp/i, 'teal'], [/拟合|fit/i, 'iris'], [/估计|estimat/i, 'amber'], [/假设|assum/i, 'berry']];

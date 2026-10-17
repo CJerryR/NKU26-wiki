@@ -1,0 +1,101 @@
+/* ------------------------------------------------ scroll-opened hero
+ * src/components/page/SceneHero.astro + src/scripts/scene-hero.ts.
+ * Sizes are design units × --u, so the closed composition is laid out by CSS
+ * alone; the script only adds motion. Landscape uses a 1600×900 canvas,
+ * portrait (max-aspect-ratio: 4/5) a 900×1600 one. */
+.scene {
+  --u: calc(min(100vw, 100svh * 16 / 9) / 1600);
+  --ty: var(--ty-d);
+  position: relative; height: 180svh; background: var(--paper);
+}
+.scene__stage {
+  position: sticky; top: 0; height: 100svh; overflow: hidden; isolation: isolate;
+  background:
+    radial-gradient(70% 60% at 50% 46%, var(--paper-hi) 0%, transparent 70%),
+    var(--paper);
+}
+.scene__floor {
+  position: absolute; left: 50%; top: calc(50% + 300 * var(--u)); width: calc(1300 * var(--u)); height: calc(260 * var(--u));
+  transform: translate(-50%, -50%); border-radius: 50%; pointer-events: none; z-index: 0;
+  background: radial-gradient(closest-side, rgba(36, 28, 43, .16), rgba(36, 28, 43, .06) 55%, transparent);
+}
+.scene__set {
+  position: absolute; left: 50%; top: 50%; z-index: 1; pointer-events: none;
+  width: calc(var(--cw) * var(--u)); height: calc(var(--ch) * var(--u)); transform: translate(-50%, -50%);
+}
+.scene__set--mobile { display: none; }
+.scene__layer {
+  position: absolute; z-index: var(--z);
+  left: calc(50% + (var(--x) - var(--w) / 2) * var(--u)); top: calc(50% + (var(--y) - var(--h) / 2) * var(--u));
+  width: calc(var(--w) * var(--u)); height: calc(var(--h) * var(--u));
+  background-image: var(--atlas); background-repeat: no-repeat;
+  transform: rotate(var(--r)) scale(var(--s)); opacity: var(--o);
+  backface-visibility: hidden;
+}
+.scene--live .scene__layer { will-change: transform, opacity; }
+.scene--noart .scene__set, .scene--noart .scene__floor { display: none; }
+
+/* text */
+.scene__crumbs {
+  position: absolute; z-index: 3; top: calc(var(--nav-h) + 18px);
+  left: max(22px, calc((100% - (var(--rail) + var(--gutter) + var(--measure) + var(--bleed))) / 2));
+}
+.scene__crumbs ol { color: var(--ink-3); }
+.scene__crumbs a { color: var(--ink-2); }
+.scene__crumbs a:hover { color: var(--iris-deep); }
+.scene__crumbs [aria-current='page'] { color: var(--ink-2); }
+.scene__title {
+  position: absolute; z-index: 2; left: 50%; top: calc(50% + var(--ty) * var(--u));
+  width: min(100% - 44px, 1100px); transform: translate(-50%, -50%); transform-origin: 50% 50%;
+  text-align: center; pointer-events: none;
+}
+.scene__title a { pointer-events: auto; }
+.scene__eyebrow {
+  margin: 0 0 14px; font-family: var(--font-mono); font-size: 13px; letter-spacing: .22em; text-transform: uppercase; color: var(--ink-3);
+}
+.scene__h1 {
+  margin: 0; font-family: var(--font-display); font-weight: 600; font-size: var(--title-size-d, clamp(48px, 7.4vw, 124px));
+  line-height: .98; letter-spacing: -.02em; color: var(--iris-deep); text-wrap: balance;
+  text-shadow: 0 0 18px var(--paper), 0 0 36px var(--paper);
+}
+.scene__h1 em { font-style: normal; color: var(--iris); }
+.scene__pill { display: block; width: 76px; height: 8px; margin: 22px auto 0; border-radius: 99px; background: var(--amber); }
+.prose .scene-intro { margin: 0 0 2rem; font-size: clamp(18px, 1.6vw, 21px); line-height: 1.6; color: var(--ink-2); }
+
+.scene__cue {
+  position: absolute; z-index: 2; left: 50%; bottom: calc(26px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-3);
+}
+.scene__cue i { width: 10px; height: 10px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(45deg); animation: scene-cue 1.8s var(--ease) infinite; }
+@keyframes scene-cue { 0%, 100% { translate: 0 -3px; opacity: .5; } 50% { translate: 0 3px; opacity: 1; } }
+.scene__skip {
+  position: absolute; z-index: 3; right: max(22px, 3vw); bottom: calc(22px + env(safe-area-inset-bottom, 0px));
+  padding: 8px 14px; border-radius: 99px; font-size: 13px; color: var(--ink-2);
+  background: color-mix(in srgb, var(--paper-hi) 80%, transparent); border: 1px solid var(--line);
+  transition: color .2s, border-color .2s;
+}
+.scene__skip:hover, .scene__skip:focus-visible { color: var(--iris-deep); border-color: var(--iris); }
+
+/* the article that follows: skip target, clear of the fixed bar */
+/* html already reserves the fixed bar via scroll-padding-top. */
+#content { scroll-margin-top: 0; }
+#content:focus { outline: none; }
+
+/* portrait composition */
+@media (max-aspect-ratio: 4/5) {
+  .scene { --u: calc(min(100vw, 100svh * 9 / 16) / 900); --ty: var(--ty-m); height: 150svh; }
+  .scene__set--desktop { display: none; }
+  .scene__set--mobile { display: block; }
+  .scene__floor { top: calc(50% + 560 * var(--u)); width: calc(900 * var(--u)); height: calc(200 * var(--u)); }
+  .scene__h1 { font-size: var(--title-size-m, clamp(44px, 13vw, 76px)); }
+  .scene__cue { bottom: calc(92px + env(safe-area-inset-bottom, 0px)); } /* clear of the phone outline bar */
+  .scene__skip:not(:focus-visible) { opacity: 0; pointer-events: none; }
+}
+
+/* reduced motion: the closed composition as a still hero, nothing pinned */
+@media (prefers-reduced-motion: reduce) {
+  .scene { height: auto; }
+  .scene__stage { position: relative; }
+  .scene__cue i { animation: none; }
+}

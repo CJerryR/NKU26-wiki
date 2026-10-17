@@ -1,12 +1,15 @@
 ---
-title: Model 1
-heading: Model 1
-sub: ''
+title: 'Model archive: Molecular Docking'
+heading: Molecular Docking
+sub: Continue to the current model chapter.
 crumbs:
   - Model
-  - Model 1
-search: true
+  - Molecular Docking
+hidden: true
+search: false
 meta: {}
 draft: false
-hidden: false
 ---
+## Current chapter {#current-chapter toc="Current chapter"}
+
+The model chapters now have descriptive names. [Continue to Molecular Docking](/model-docking/), or [open the Model overview](/model/).

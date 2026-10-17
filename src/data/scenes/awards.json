@@ -1,0 +1,284 @@
+{
+  "page": "awards",
+  "sharedFrames": [],
+  "enabled": true,
+  "version": "codex-3d-pilot",
+  "signature": "A blank medal rises over an unnumbered violet podium. No award, ranking or result is asserted.",
+  "illustration": "Code-rendered schematic decoration; not experimental evidence, actual molecular geometry, team size, or competition results.",
+  "desktop": {
+    "canvas": [
+      1600,
+      900
+    ],
+    "title": {
+      "y": -55,
+      "toY": -240,
+      "toScale": 0.62
+    },
+    "layers": [
+      {
+        "id": "laurel",
+        "prop": "laurel",
+        "w": 300,
+        "z": 1,
+        "depth": 8,
+        "from": {
+          "x": -610,
+          "y": -155,
+          "r": -18,
+          "s": 1,
+          "o": 1
+        },
+        "to": {
+          "x": -740,
+          "y": -70,
+          "r": -28,
+          "s": 1,
+          "o": 1
+        },
+        "win": [
+          0.08,
+          0.8
+        ]
+      },
+      {
+        "id": "ribbon",
+        "prop": "ribbon",
+        "w": 360,
+        "z": 1,
+        "depth": 8,
+        "from": {
+          "x": 575,
+          "y": -165,
+          "r": 12,
+          "s": 1,
+          "o": 1
+        },
+        "to": {
+          "x": 730,
+          "y": -80,
+          "r": 25,
+          "s": 1,
+          "o": 1
+        },
+        "win": [
+          0.08,
+          0.8
+        ]
+      },
+      {
+        "id": "prize-station",
+        "prop": "prize-station",
+        "w": 720,
+        "z": 3,
+        "depth": 8,
+        "from": {
+          "x": -260,
+          "y": 290,
+          "r": 0,
+          "s": 1,
+          "o": 1
+        },
+        "to": {
+          "x": -420,
+          "y": 310,
+          "r": 0,
+          "s": 1.08,
+          "o": 1
+        },
+        "win": [
+          0.08,
+          0.8
+        ]
+      },
+      {
+        "id": "medal",
+        "prop": "medal",
+        "w": 390,
+        "z": 4,
+        "depth": 18,
+        "from": {
+          "x": 410,
+          "y": 260,
+          "r": 14,
+          "s": 1,
+          "o": 1
+        },
+        "to": {
+          "x": 330,
+          "y": 100,
+          "r": -12,
+          "s": 1,
+          "o": 1
+        },
+        "win": [
+          0.18,
+          0.84
+        ]
+      },
+      {
+        "id": "confetti",
+        "prop": "confetti",
+        "w": 350,
+        "z": 5,
+        "depth": 18,
+        "from": {
+          "x": 620,
+          "y": 230,
+          "r": -10,
+          "s": 1,
+          "o": 1
+        },
+        "to": {
+          "x": 700,
+          "y": 120,
+          "r": 16,
+          "s": 1,
+          "o": 1
+        },
+        "win": [
+          0.08,
+          0.8
+        ]
+      }
+    ]
+  },
+  "mobile": {
+    "canvas": [
+      900,
+      1600
+    ],
+    "title": {
+      "y": -85,
+      "toY": -360,
+      "toScale": 0.68
+    },
+    "layers": [
+      {
+        "id": "laurel",
+        "prop": "laurel",
+        "w": 260,
+        "z": 1,
+        "depth": 0,
+        "from": {
+          "x": -280,
+          "y": -430,
+          "r": -14,
+          "s": 1,
+          "o": 1
+        },
+        "to": {
+          "x": -400,
+          "y": -270,
+          "r": -28,
+          "s": 1,
+          "o": 1
+        },
+        "win": [
+          0.08,
+          0.8
+        ]
+      },
+      {
+        "id": "ribbon",
+        "prop": "ribbon",
+        "w": 310,
+        "z": 1,
+        "depth": 0,
+        "from": {
+          "x": 270,
+          "y": -420,
+          "r": 15,
+          "s": 1,
+          "o": 1
+        },
+        "to": {
+          "x": 400,
+          "y": -280,
+          "r": 30,
+          "s": 1,
+          "o": 1
+        },
+        "win": [
+          0.08,
+          0.8
+        ]
+      },
+      {
+        "id": "prize-station",
+        "prop": "prize-station",
+        "w": 780,
+        "z": 3,
+        "depth": 0,
+        "from": {
+          "x": -100,
+          "y": 380,
+          "r": 0,
+          "s": 1,
+          "o": 1
+        },
+        "to": {
+          "x": -230,
+          "y": 490,
+          "r": 0,
+          "s": 1,
+          "o": 1
+        },
+        "win": [
+          0.08,
+          0.8
+        ]
+      },
+      {
+        "id": "medal",
+        "prop": "medal",
+        "w": 340,
+        "z": 4,
+        "depth": 0,
+        "from": {
+          "x": 235,
+          "y": 230,
+          "r": 16,
+          "s": 1,
+          "o": 1
+        },
+        "to": {
+          "x": 180,
+          "y": 160,
+          "r": -14,
+          "s": 1,
+          "o": 1
+        },
+        "win": [
+          0.08,
+          0.8
+        ]
+      },
+      {
+        "id": "confetti",
+        "prop": "confetti",
+        "w": 300,
+        "z": 5,
+        "depth": 0,
+        "from": {
+          "x": 260,
+          "y": 500,
+          "r": 0,
+          "s": 1,
+          "o": 1
+        },
+        "to": {
+          "x": 330,
+          "y": 340,
+          "r": 0,
+          "s": 1,
+          "o": 1
+        },
+        "win": [
+          0.08,
+          0.8
+        ]
+      }
+    ]
+  }
+}

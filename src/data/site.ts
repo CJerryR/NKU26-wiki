@@ -1,6 +1,6 @@
 import siteJson from './site.json';
 
-export interface FooterItem { name: string; url?: string; note?: string }
+export interface FooterItem { name: string; url?: string; note?: string; logo?: string; logoAlt?: string }
 
 const json = siteJson as { source_repository_url?: string; sponsors?: FooterItem[]; friends?: FooterItem[] };
 

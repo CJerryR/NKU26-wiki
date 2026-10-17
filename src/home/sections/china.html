@@ -18,30 +18,38 @@
       </div>
     </div>
     <!-- Readout below the introduction on desktop, below the map on mobile.
-         Both species share one grid cell, so switching never moves the map. -->
-    <div class="cz__card cz__read lg-glass" data-glass="panel" data-cz-card aria-live="polite">
+         Only the selected species contributes content height. -->
+    <div class="cz__card cz__read lg-glass" data-glass="panel" data-cz-card data-free-scroll aria-live="polite">
       <span class="lg-surface" aria-hidden="true"></span>
+      <div class="cz__read-body" tabindex="0" aria-label="Nematode distribution summary and sources">
       <section class="cz__sp" data-cz-for="scn" aria-label="Soybean cyst nematode in China">
         <dl class="cz__figs">
-          <div class="cz__fig cz__fig--key"><dt><i class="cz__dot" aria-hidden="true"></i>provinces with a published record</dt><dd>22</dd></div>
-          <div class="cz__fig"><dt>yield loss in a typical infested field</dt><dd>20&#8211;30<small>%</small></dd></div>
-          <div class="cz__fig"><dt>yield loss in a severely infested field</dt><dd>60&#8211;70<small>%</small></dd></div>
+          <div class="cz__fig cz__fig--key"><dt><i class="cz__dot" aria-hidden="true"></i>provinces reported in the 2021 review</dt><dd>22</dd></div>
+          <div class="cz__fig"><dt>soybean yield loss in a typical infested field</dt><dd>20&#8211;30<small>%</small></dd></div>
+          <div class="cz__fig"><dt>soybean yield loss in a severely infested field</dt><dd>60&#8211;70<small>%</small></dd></div>
         </dl>
-        <p class="cz__prov"><i>Heterodera glycines</i> on soybean. One schematic marker per province.</p>
+        <p class="cz__prov"><i>Heterodera glycines</i> infects soybean and other hosts. The loss figures above refer to soybean.</p>
         <p class="sr-only">Provinces on the map: <span data-cz-list="scn"></span></p>
       </section>
       <section class="cz__sp" data-cz-for="rkn" aria-label="Southern root-knot nematode in China" hidden>
         <dl class="cz__figs">
           <div class="cz__fig cz__fig--key"><dt><i class="cz__tri" aria-hidden="true"></i>provinces in CABI&#8217;s distribution table</dt><dd>21</dd></div>
           <div class="cz__fig"><dt>Xinjiang vegetable samples with root-knot nematodes, 2021&#8211;23</dt><dd>57<small>/130</small></dd></div>
-          <div class="cz__fig"><dt>root-knot samples in East China, with this species dominant</dt><dd>104</dd></div>
+          <div class="cz__fig"><dt>root-knot samples surveyed across six East China provinces</dt><dd>104</dd></div>
         </dl>
-        <p class="cz__prov"><i>Meloidogyne incognita</i> on vegetables and many other crops. Sources: <a href="https://doi.org/10.1079/PWKB.Species.33245" target="_blank" rel="noopener">CABI datasheet</a>, <a href="https://doi.org/10.1016/j.jia.2024.12.008" target="_blank" rel="noopener">Zhou et al. 2026</a>, Yang et al. One schematic marker per province.</p>
+        <p class="cz__prov"><i>Meloidogyne incognita</i> was the dominant species in both surveys. Sample counts cover root-knot nematodes, not this species alone.</p>
+        <ul class="cz__sources" aria-label="Sources for southern root-knot nematode records">
+          <li><span>Distribution</span><a href="https://doi.org/10.1079/PWKB.Species.33245" target="_blank" rel="noopener">CABI datasheet ↗</a></li>
+          <li><span>Xinjiang survey</span><a href="https://doi.org/10.1016/j.jia.2024.12.008" target="_blank" rel="noopener">Zhou et al. (2026) ↗</a></li>
+          <li><span>East China survey</span><a href="https://www.aeeisp.com/lykxyj/cn/article/pdf/preview/2692e214-259c-4e36-9d01-5e61ded0f13c.pdf" target="_blank" rel="noopener" title="Investigation of Root-knot Nematodes in East China. Forest Research 14(5): 484–489.">Wang et al. (2001) ↗</a></li>
+        </ul>
         <p class="sr-only">Provinces on the map: <span data-cz-list="rkn"></span></p>
       </section>
       <div class="cz__shared-source">
-        <p>US$120 million+: historical estimate of yearly soybean losses to soybean cyst nematode in China. <a href="https://doi.org/10.1186/s42483-021-00095-w" target="_blank" rel="noopener">Peng et al. 2021</a>.</p>
+        <p>US$120 million+: historical yearly soybean losses to soybean cyst nematode in China. <a href="https://doi.org/10.1186/s42483-021-00095-w" target="_blank" rel="noopener">Peng et al. (2021) ↗</a></p>
+        <p>Markers show provincial records; positions are schematic, not sampling sites.</p>
         <p>Map: GS(2022)4308, Ministry of Natural Resources.</p>
+      </div>
       </div>
     </div>
     <span class="nk-zoom__label" data-zoom-label aria-hidden="true">Huang-Huai-Hai Plain</span>

@@ -1,0 +1,189 @@
+{
+  "title": "ODE and Two-channel Sensing",
+  "heading": "ODE and Two-channel Sensing",
+  "sub": "Signaling dynamics, simulated color and paired-channel interpretation.",
+  "crumbs": [
+    "Model",
+    "ODE and Two-channel Sensing"
+  ],
+  "route": "model-ode",
+  "search": true,
+  "description": "Signaling dynamics, simulated color and paired-channel interpretation.",
+  "meta": [],
+  "blocks": [
+    {
+      "_template": "heading",
+      "level": 2,
+      "text": "From signal response to target density",
+      "attributes": "#ode-introduction toc=\"Two connected models\""
+    },
+    {
+      "_template": "text",
+      "body": "After receptors recognize ascarosides, two further transformations are needed: intracellular signaling must produce readable color, and that color must inform an estimate of target-nematode density. In a mixture of root-knot and free-living nematodes, stronger color could reflect more target organisms or a changing background.\n\nWe connect an ODE model of effective receptor input, the shared yeast pathway and pigment formation with a **two-channel density model**. ODE simulations generate responses to mixtures; paired colors then estimate target density without requiring the background count. We first ask whether the pathway preserves input differences, then whether those differences distinguish target from background.\n\n*Figure 3-1. ODE and two-channel calibration workflow. The source manuscript reserves this position for a figure showing the simulated model-building path and the intended paired-phone reading workflow. The author’s figure is pending.*"
+    },
+    {
+      "_template": "heading",
+      "level": 2,
+      "text": "Choosing which dynamics to retain",
+      "attributes": "#ode-minimal toc=\"Minimal model\""
+    },
+    {
+      "_template": "text",
+      "body": "Our initial chain was ligand → receptor → G protein → MAPK → synthetic transcription factor (sTF) → GAL → color. To retain the chain while limiting parameter count, we used **three dynamic equations** for G protein, MAPK and color, with receptor response, sTF activity and GAL output represented algebraically.\n\nThe response to normalized ligand input $L$ was:"
+    },
+    {
+      "_template": "equation",
+      "latex": "R(L)=b_R+E_R\\frac{L^{n_R}}{K_R^{n_R}+L^{n_R}}"
+    },
+    {
+      "_template": "text",
+      "body": "Normalized G-protein and MAPK activities, $G$ and $M$, combined activation and inactivation:"
+    },
+    {
+      "_template": "equation",
+      "latex": "\\frac{dG}{dt}=k_GR(L)(1-G)-d_GG,\\qquad \\frac{dM}{dt}=k_MG(1-M)-d_MM"
+    },
+    {
+      "_template": "text",
+      "body": "Effective downstream responses converted MAPK activity to sTF activity $T$ and GAL output rate $P$, which drove color accumulation:"
+    },
+    {
+      "_template": "equation",
+      "latex": "T(M)=b_T+E_T\\frac{M^{n_T}}{K_T^{n_T}+M^{n_T}},\\qquad P(T)=\\ell+Ng\\frac{T}{D_T+T}"
+    },
+    {
+      "_template": "equation",
+      "latex": "\\frac{dC}{dt}=pP(T)-\\delta C"
+    },
+    {
+      "_template": "text",
+      "body": "$b_R$ and $b_T$ describe basal activity; $E_R$ and $E_T$ describe response amplitudes. The $K$ values and Hill exponents shape the responses. $N$ is the copy number in a fixed construct; $\\ell$, $g$ and $D_T$ describe GAL output; $p$ and $\\delta$ control color production and loss. In this first model, $C$ was relative color and time was in hours.\n\nThe model located every functional stage but exposed a parameter-identification problem. Input sensitivity, signaling amplification and pigment efficiency all affect final color, and a single endpoint cannot easily identify their separate effects. We therefore reused published quantitative reactions and parameters for the shared yeast pathway, retaining an effective description of the project-specific pigment stage. Calibration could then focus on input and output interfaces."
+    },
+    {
+      "_template": "heading",
+      "level": 2,
+      "text": "Connecting the published core to pigment production",
+      "attributes": "#ode-core toc=\"Six-state model\""
+    },
+    {
+      "_template": "text",
+      "body": "Using Supady Model B and public TU Delft 2012 iGEM materials [1,2], we reconstructed the G-protein cycle, scaffold module, Fus3 activation and feedback. Unlike the initial two-variable summary, this core retains source-model reactions and records internal rates separately from project-specific parameters.\n\nConservation of molecular pools allows some states to be reconstructed. We retain five independent variables: G-protein heterotrimer $H$, activated Gα $A$, effective scaffold complex $Q$, activated Fus3 $F^*$ and activated feedback state $Z^*$:"
+    },
+    {
+      "_template": "equation",
+      "latex": "\\begin{aligned}\n\\frac{dH}{d\\tau}&=-u(L)H+k_5DB,\\\\\n\\frac{dA}{d\\tau}&=u(L)H-(k_4+k_{41}Z^*)A,\\\\\n\\frac{dQ}{d\\tau}&=k_6SB-(k_7+k_{71}Z^*)Q,\\\\\n\\frac{dF^*}{d\\tau}&=k_8QF-(k_9+k_{91}Z)F^*,\\\\\n\\frac{dZ^*}{d\\tau}&=k_{10}F^*Z-k_{11}Z^*.\n\\end{aligned}"
+    },
+    {
+      "_template": "text",
+      "body": "$D$, $B$, $S$, $F$ and $Z$ denote Gα-GDP, free Gβγ, free scaffold, inactive Fus3 and inactive Sst2, respectively:"
+    },
+    {
+      "_template": "equation",
+      "latex": "\\begin{aligned}\nD&=T_\\alpha-H-A,&B&=T_\\beta-H-Q,\\\\\nS&=T_S-Q,&F&=T_F-F^*,\\\\\nZ&=T_Z-Z^*.\n\\end{aligned}"
+    },
+    {
+      "_template": "text",
+      "body": "Each $T$ is the total corresponding molecular pool. Effective input drive is:"
+    },
+    {
+      "_template": "equation",
+      "latex": "u(L)=u_{\\max}\\frac{L}{K_L+L}"
+    },
+    {
+      "_template": "text",
+      "body": "Here $L$ is normalized effective ligand input, while $K_L$ controls its entry scale. Feedback retains the source model's effective mechanism; applicability to our actual strain must be checked against its construct.\n\nFor a fixed construct, the original sTF, GAL and color relationships were merged into an effective production equation, driven by activated Fus3 fraction $m=F^*/T_F$:"
+    },
+    {
+      "_template": "equation",
+      "latex": "\\frac{dC}{d\\tau}=\\frac{1}{3600}\\left(b+a\\frac{m^n}{K^n+m^n}-\\delta C\\right)"
+    },
+    {
+      "_template": "text",
+      "body": "Core time $\\tau$ is in seconds, so hourly production and loss rates are divided by 3600. In the later calibration, $C$ is pigment-equivalent concentration, $b$ basal production, $a$ stimulus-driven production amplitude, $K$ and $n$ response-shape parameters, and $\\delta$ loss.\n\nFive core equations and one pigment equation form a **six-state model**. We checked calculation consistency before and after merging the output relationships, and between this six-state implementation and a reaction implementation retaining all states. Conservation removes redundant states; merging pigment output focuses endpoint constraints on a small number of effective parameters. The Fus3-to-pigment interface still requires **experimental calibration**."
+    },
+    {
+      "_template": "heading",
+      "level": 2,
+      "text": "Constructing two inputs from independent populations",
+      "attributes": "#ode-mixtures toc=\"Target and background\""
+    },
+    {
+      "_template": "text",
+      "body": "The target is *Meloidogyne incognita* (Mi), and *Caenorhabditis elegans* (Ce) provides the background. Both can contribute ascr#3 and ascr#18, so both ligands are retained while the two organism densities vary independently.\n\n| Simulation setting | Value |\n| --- | --- |\n| Combined release $q_3+q_{18}$ | 1 fmol per nematode per hour for both Mi and Ce |\n| Release ratio $q_3:q_{18}$ | Mi 1:10; Ce 10:1 |\n| Input weights $(w_3,w_{18})$ | P3: (2/3, 1/3); P18: (1/3, 2/3) |\n\nPublished secretion profiles motivate compositional differences [3,4]. The exact ratios, equal combined release and response weights in this table construct an **idealized simulation scenario**; they are **not measured secretion rates** from our samples. Mi is represented by J2 and Ce by L4, with density per 100 cm³ soil. Collection time and effective volume are fixed in the parameter table.\n\nEach ligand concentration combines the two populations' contributions, collection time and effective volume. Holding target density fixed while adding background examines interference; holding background fixed while adding target examines target response.\n\nThe complementary P3- and P18-biased designs correspond to the candidate directions of V368R and N84V. Docking motivates this design, but pure-ligand gradient experiments must establish actual weights. Cross-response is retained, so both colors reflect the mixture. This also defines a measured calibration design: independently vary target and background, record paired colors from each sample, and include blanks and different background levels."
+    },
+    {
+      "_template": "heading",
+      "level": 2,
+      "text": "Calibrating input and output interfaces",
+      "attributes": "#ode-calibration toc=\"Endpoint calibration\""
+    },
+    {
+      "_template": "text",
+      "body": "In early simulations, different stimulus strengths produced similar final colors. We therefore held the shared pathway fixed and adjusted effective input scale $K_L$ and pigment gain $a$. A larger $K_L$ weakens effective drive at the same stimulus; $a$ controls pigment amplitude. Each sensor fitted these two parameters while keeping $K$, $n$ and $\\delta$ fixed.\n\nSix Mi densities crossed with three Ce backgrounds gave **18 simulated endpoint targets**, covering low density, grading boundaries and higher density. Targets combined prespecified ligand contributions with a shared color scale. We then sought interface parameters that approached them.\n\nThe calibrated ODE broadly followed the targets but retained a sublinear response at weak stimulation. The next question was whether this low-end bias prevents useful density estimation. We therefore used the **actual ODE output**, including its deviations, for the two-channel evaluation.\n\n:::note[Two distinct calibration steps]\nPrespecified color endpoints calibrate the ODE. Colors calculated by the ODE train the two-channel density model. Prespecified linear targets do not replace the ODE's computed results.\n:::\n\nTo connect to the phone-reading example, we subsequently set 8 h total-pigment targets to 0.07–0.56 mg/mL indicaxanthin equivalent, adjusted basal production and uniformly scaled net pigment amplitude. Production coefficients were adjusted analytically while retaining $K_L$, then checked by full ODE integration.\n\nThe two channels' actual endpoints cover approximately **0.070–0.543** and **0.070–0.480 mg/mL**. The endpoint-fit RMSE across 18 points is about **0.0097 mg/mL** for both. This changes output scale while preserving response shape and relative deviations. The 0.07 mg/mL blank is a chosen scenario value; real yeast background and induced yields await measurement.\n\n:::figure\n![Two panels comparing P3 and P18 ODE endpoints with prespecified color targets across Ce backgrounds.](https://static.igem.wiki/teams/6303/wiki/v8-6/v86-8067bba1941d-fig-3-2-density-response.avif)\n\n**Figure 3-2. ODE color fitting at different background densities.** A and B show P3 and P18. Colors distinguish Ce backgrounds; dashed lines are prespecified color targets and solid lines are the simulated 8 h pigment output.\n:::\n\nWe also followed blank, target-only, background-only and mixed samples through time. To highlight stimulus-associated pigment, every time point subtracts the matching blank from the same sensor channel.\n\n:::figure\n![Paired P3 and P18 time courses for blank, target-only, background-only and mixed samples.](https://static.igem.wiki/teams/6303/wiki/v8-6/v86-0bdc26ce6e27-fig-3-3-net-timecourse.avif)\n\n**Figure 3-3. Net pigment accumulation in representative mixtures.** A and B show P3 and P18, respectively. Net pigment subtracts the matched same-channel blank at each time point.\n:::"
+    },
+    {
+      "_template": "heading",
+      "level": 2,
+      "text": "Converting pigment to phone color features",
+      "attributes": "#ode-phone toc=\"Phone observation\""
+    },
+    {
+      "_template": "text",
+      "body": "The intended product reads color from phone images. Stücheli et al. quantified indicaxanthin using the **blue RGB channel** under defined illumination, shielding and cuvette conditions [7], providing a reference for an observation relationship.\n\nWe use their blue-channel calibration slope and assume a **shared linear calibration** for sample and sensor blank:"
+    },
+    {
+      "_template": "equation",
+      "latex": "r_j=\\frac{B_{\\mathrm{sample},j}}{B_{\\mathrm{blank},j}},\\qquad\nx_j=-\\log_{10}(r_j)=k_B\\left(c_{\\mathrm{sample},j}-c_{\\mathrm{blank},j}\\right)"
+    },
+    {
+      "_template": "text",
+      "body": "$j$ is P3 or P18; $B$ is the image blue-channel value; $c$ is in mg/mL. This simulation uses $k_B=0.36$ mL/mg. Taking the ratio to each channel's own blank describes its color change; the shared calibrated intercept cancels after subtraction.\n\nWe calculate $r_j$ from the ODE pigment output and then obtain $x_j$ for the density model. These are **simulated blue-channel ratios**. Exposure, scattering and device differences require calibration using standards and paired sample measurements.\n\nThe ODE calculates pigment formation; the phone relationship describes its observation. Separating them allows a measured phone-calibration curve to replace the observation interface without redefining the signaling model."
+    },
+    {
+      "_template": "heading",
+      "level": 2,
+      "text": "Estimating target density from two colors",
+      "attributes": "#ode-regression toc=\"Density prediction\""
+    },
+    {
+      "_template": "text",
+      "body": "With the ODE and phone conversion fixed, we generated **45 paired readings** from different Mi and Ce mixtures. Each sample occupies a point in P3/P18 color space. Comparing fixed-Mi and fixed-Ce series shows how background and target change the color combination in different directions.\n\n:::figure\n![Two-dimensional P3 and P18 color space, with Mi density encoded by color and separate target/background trajectories.](https://static.igem.wiki/teams/6303/wiki/v8-6/v86-2b72620e598d-fig-3-4-signal-space.avif)\n\n**Figure 3-4. Mixtures in two-channel color space.** Axes are simulated phone color indices for P3 and P18. Color indicates Mi density. Solid lines connect fixed-Mi samples and dashed lines connect fixed-Ce samples; arrows distinguish increasing target from increasing background.\n:::\n\nKnown Mi density supplies the training label for an **ordinary least-squares model**:"
+    },
+    {
+      "_template": "equation",
+      "latex": "\\widehat d_{\\mathrm{Mi}}=\\beta_0+\\beta_3x_3+\\beta_{18}x_{18}"
+    },
+    {
+      "_template": "text",
+      "body": "$\\beta_0$ describes the overall offset, while the two channel coefficients jointly determine the estimate. One set of three coefficients minimizes the summed squared density error across training samples. Ce density constructs the training background but is not a predictor input.\n\nThe rounded regression obtained in this simulation is:"
+    },
+    {
+      "_template": "equation",
+      "latex": "\\widehat d_{\\mathrm{Mi}}=4.335-1207.944x_3+2109.881x_{18}"
+    },
+    {
+      "_template": "text",
+      "body": "These coefficients belong to this feature definition, reading condition and simulation range. Their opposite signs use response differences to compensate for part of the background contribution; neither channel independently measures one nematode species.\n\nWe evaluated **19 further mixtures excluded from fitting** and compared single- and dual-channel models using the same training/test split.\n\n| Model input | Test RMSE (J2/100 cm³) |\n| --- | ---: |\n| P3 only | 36.59 |\n| P18 only | 28.43 |\n| P3 and P18 | 3.01 |\n\n:::figure\n![Known versus predicted Mi density, a low-density detail, and RMSE bars for one- and two-channel models.](https://static.igem.wiki/teams/6303/wiki/v8-6/v86-9fee4e88d157-fig-3-5-prediction-comparison-wiki.avif)\n\n**Figure 3-5. Mi density prediction and channel comparison.** A compares known and dual-channel predicted density for simulated test samples; B enlarges the low-density region; C compares prediction errors. Dashed lines in the scatter plots indicate ideal agreement.\n:::\n\nUnder these simulation conditions, **the second channel reduces density error**. A single color responds to target and background, so similar colors can represent different mixtures. Different response weights let the combined model distinguish more of that variation.\n\nFor Mi=40 and Ce=80, simulated sample-to-blank blue ratios are approximately 0.854 and 0.879. The model estimates Mi at approximately **39.72 J2/100 cm³**, which enters the middle management band of the Eco example without requiring Ce density at prediction time.\n\nNear grading thresholds, small density deviations can change the selected band. The interface therefore checks calibration range and indicates neighboring scenarios when an estimate interval crosses a threshold.\n\nThese results come from noiseless simulations under the same ODE generator. They describe internal estimation under assumed secretion, sensing and observation relationships, rather than field validation. Density predictions remain essentially unchanged after adding the phone interface, showing that the new observation representation retains the earlier information.\n\nCode, parameter sources, frozen configurations and sample data support reproduction and later incorporation of measured paired data. [Eco](/model-eco/) examines how density information changes management choices and conditional returns."
+    },
+    {
+      "_template": "heading",
+      "level": 2,
+      "text": "Parameters and sources",
+      "attributes": "#ode-parameters toc=\"Parameters\""
+    },
+    {
+      "_template": "text",
+      "body": "The tables distinguish the **published common core** from **project interfaces and simulation calibration**. Values correspond to this manuscript; where channels differ, P3 is listed before P18. Pigment concentration uses indicaxanthin equivalents. $G$ constructs endpoint calibration targets, whereas $a$ belongs to the dynamic pigment equation. $K_L$ is the effective scale of normalized input.\n\n### Table 3-1. Shared pathway\n\n| Module | Parameter | Value | Unit | Meaning / source |\n| --- | --- | ---: | --- | --- |\n| G-protein cycle | $k_4$ | 1.259 | s⁻¹ | Basal Gα-GTP hydrolysis [1,2] |\n| G-protein cycle | $k_{41}$ | 1.124 | µM⁻¹ s⁻¹ | Active-Sst2-associated hydrolysis [1,2] |\n| G-protein cycle | $k_5$ | 0.002 | µM⁻¹ s⁻¹ | Heterotrimer reassembly [1,2] |\n| Scaffold | $k_6$ | 0.021 | µM⁻¹ s⁻¹ | Scaffold-complex assembly [1,2] |\n| Scaffold | $k_7$ | 0.004 | s⁻¹ | Basal dissociation [1,2] |\n| Scaffold | $k_{71}$ | 0.261 | µM⁻¹ s⁻¹ | Active-Sst2-associated dissociation [1,2] |\n| Fus3 | $k_8$ | 0.818 | µM⁻¹ s⁻¹ | Activation [1,2] |\n| Fus3 | $k_9$ | 0 | s⁻¹ | Basal inactivation in the source model [1] |\n| Fus3 | $k_{91}$ | 0.017 | µM⁻¹ s⁻¹ | Sst2-associated inactivation; unit follows the reaction [1,2] |\n| Feedback | $k_{10}$ | 0.342 | µM⁻¹ s⁻¹ | Fus3-associated Sst2 activation [1,2] |\n| Feedback | $k_{11}$ | 0.643 | s⁻¹ | Recovery of activated Sst2 [1,2] |\n| Conserved pools | $T_\\alpha,T_\\beta$ | 1.667 each | µM | Gα and Gβγ totals, calculated from source initial conditions [1,2] |\n| Conserved pools | $T_S$ | 0.036 | µM | Scaffold total [1,2] |\n| Conserved pools | $T_F$ | 0.686 | µM | Fus3 total [1,2] |\n| Conserved pools | $T_Z$ | 0.505 | µM | Sst2 total [1,2] |\n| Initial conditions | $H(0)$ | 1.667 | µM | Initial heterotrimer [1,2] |\n| Initial conditions | $A(0),Q(0),F^*(0),Z^*(0)$ | 0 each | µM | Other independent states [1,2] |\n\n### Table 3-2. Input and pigment module\n\n| Module | Parameter | Value | Unit | Meaning / source |\n| --- | --- | --- | --- | --- |\n| Release | $q_3+q_{18}$ | Mi = Ce = 1 | fmol nematode⁻¹ h⁻¹ | Equal-total-release simulation assumption |\n| Composition | $q_3:q_{18}$ | Mi 1:10; Ce 10:1 | Dimensionless | Assumed ratios informed by secretion differences [3,4] |\n| Sampling | $V_{\\mathrm{soil}}$ | 100 | cm³ | Mi J2 and Ce L4 counts |\n| Sampling | $t_{\\mathrm{coll}}$ | 1 | h | Collection duration |\n| Sampling | $V_{\\mathrm{eff}}$ | 1 | mL | Effective collection volume |\n| Sampling | $\\eta,D$ | 1 each | Dimensionless | Idealized recovery and dilution |\n| Input | $(w_3,w_{18})$ | P3 (2/3, 1/3); P18 (1/3, 2/3) | Dimensionless | Complementary weights motivated by docking candidates |\n| Input | $S_{\\mathrm{ref}}$ | 1 | nM | Ligand-input normalization scale |\n| Input | $u_{\\max}$ | 1.206908 | s⁻¹ | Source-model $k_3$ and initial receptor concentration [1,2] |\n| Input | $K_L$ | P3 472207.031; P18 417856.926 | Dimensionless | Fitted to simulated endpoints |\n| Pigment | $a$ | P3 1033.644509; P18 905.278000 | µM h⁻¹ | Stimulus-driven production, fitted then converted to current scale |\n| Pigment | $b$ | 44.152906 | µM h⁻¹ | Basal production constrained by blank endpoint |\n| Pigment | $K$ | 0.120994 | Dimensionless | Effective half-response scale from merged output |\n| Pigment | $n$ | 2 | Dimensionless | Fixed Hill exponent |\n| Pigment | $\\delta$ | 0.12 | h⁻¹ | Fixed effective pigment loss |\n| Pigment | $C(0)$ | 0 | µM | Initial concentration |\n| Endpoint | $t_{\\mathrm{read}}$ | 8 | h | Reading duration informed by pigment research [5] |\n| Endpoint | $c_{\\mathrm{blank}}$ | 0.07 | mg mL⁻¹ | Simulated 8 h blank |\n| Endpoint | $G$ | 9299.754376 | µM nM⁻¹ | Shared target gain, corresponding to 0.07–0.56 mg/mL total pigment |\n\n### Table 3-3. Observation and regression\n\n| Module | Parameter | Value | Unit | Meaning / source |\n| --- | --- | ---: | --- | --- |\n| Conversion | $M_W$ | 308.29 | g mol⁻¹ | Indicaxanthin molecular weight [6] |\n| Conversion | $\\kappa$ | 3.0829 × 10⁻⁴ | (mg mL⁻¹)/µM | Derived from $M_W$ |\n| RGB observation | $s_B$ | 0.36 | mL mg⁻¹ | Published blue-channel slope used for simulated phone readings [7] |\n| Regression | $\\beta_0$ | 4.335372 | J2/100 cm³ | Intercept fitted from 45 simulated pairs |\n| Regression | $\\beta_3$ | −1207.944477 | J2/100 cm³ | P3 color-index coefficient, same fit |\n| Regression | $\\beta_{18}$ | 2109.880583 | J2/100 cm³ | P18 color-index coefficient, same fit |\n\nRegression inputs are dimensionless $x_j=-\\log_{10}(B_{\\mathrm{sample},j}/B_{\\mathrm{blank},j})$. The coefficients must be used with this definition; output is Mi J2 density."
+    },
+    {
+      "_template": "heading",
+      "level": 2,
+      "text": "References",
+      "attributes": "#ode-references toc=\"References\""
+    },
+    {
+      "_template": "text",
+      "body": ":::refs\n1. [Supady (2009), Model B. Reactions, parameters and initial conditions, pp. 48–49.](https://rumo.biologie.hu-berlin.de/tbp/images/Theses/bsc_supady.pdf)\n2. [TU Delft iGEM (2012), Reduced Model Details, Tables 4.1–4.3.](https://static.igem.org/mediawiki/2012/0/05/ReducedModelDetails.pdf)\n3. [Kaplan et al. (2011). Ascaroside Expression in Caenorhabditis elegans Is Strongly Dependent on Diet and Developmental Stage.](https://doi.org/10.1371/journal.pone.0017804)\n4. [Manosalva et al. (2015). Conserved nematode signalling molecules elicit plant defenses and pathogen resistance.](https://doi.org/10.1038/ncomms8795)\n5. [Fan et al. (2024). Cascaded amplifying circuit enables sensitive detection of fungal pathogens.](https://doi.org/10.1016/j.bios.2024.116058)\n6. [PubChem: Indicaxanthin.](https://pubchem.ncbi.nlm.nih.gov/compound/Indicaxanthin)\n7. [Stücheli et al. (2020), Nucleic Acids Research, 48, e67; phone color quantification and Figure 4.](https://doi.org/10.1093/nar/gkaa342)\n:::"
+    }
+  ]
+}

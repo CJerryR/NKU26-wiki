@@ -19,6 +19,15 @@ export default defineConfig({
   outDir: './public',
   // Keeps the v6 addresses: pages/description.html, model/index.html, ...
   build: { format: 'preserve' },
+  // Lazy module preloads must resolve beside their importing chunk, including
+  // when the generated site is served below /nku-china/.
+  vite: {
+    experimental: {
+      renderBuiltUrl(_filename, { hostType, type }) {
+        if (hostType === 'js' && type === 'asset') return { relative: true };
+      },
+    },
+  },
   markdown: {
     remarkPlugins: [remarkDirective, remarkWiki],
     syntaxHighlight: false,

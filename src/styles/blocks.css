@@ -195,23 +195,18 @@ main:has(.doc[data-reading="submitted"]) { --measure: 65rem; --bleed: 0px; }
 .doc[data-reading="submitted"] .figure-text .figure__media { padding: 0; background: none; border: 0; border-radius: 0; box-shadow: none; }
 .doc[data-reading="submitted"] .figure__media img { display: block; max-width: 100%; height: auto; border-radius: 0; }
 .doc[data-reading="submitted"] .figure figcaption { margin-top: 10px; font-size: 13px; line-height: 1.5; }
-.doc[data-reading="submitted"] .toc__item--3 a { padding-left: 24px; font-size: 13px; }
-.doc[data-reading="submitted"] .toc__item--2 a { padding-block: 6px; }
-.doc[data-reading="submitted"] .toc__item--3 a { padding-block: 4px; }
+/* Outline sizing and hierarchy are shared by all pages in toc.css. */
 @media (max-width: 640px) {
   .doc[data-reading="submitted"] .prose { font-size: 17.5px; line-height: 1.7; }
   .doc[data-reading="submitted"] .prose h3 { font-size: 21px; }
-  .doc[data-reading="submitted"] .toc__item--3 a { padding-block: 7px; font-size: 14px; }
 }
 
 /* Long submitted manuscripts retain distinct subordinate heading levels. */
 .doc[data-reading="submitted"] .prose h4 { font-size: 19px; line-height: 1.4; font-weight: 600; margin-top: 1.6em; }
-.doc[data-reading="submitted"] .toc__item--4 a { padding-left: 38px; font-size: 12px; padding-block: 4px; }
 .doc[data-page="members"] .figure__media img { width: 100%; max-height: 300px; object-fit: contain; object-position: left top; }
 .doc[data-page="members"] .figure-text { margin-block: 24px 40px; }
 .prose .katex { font-size: 1em; }
 .prose .katex-display { overflow-x: auto; max-width: 100%; padding-block: 8px; }
 @media (max-width: 640px) {
- .doc[data-reading="submitted"] .toc__item--4 a { font-size: 13px; padding-block: 7px; }
  .doc[data-page="members"] .figure__media img { max-height: 260px; }
 }

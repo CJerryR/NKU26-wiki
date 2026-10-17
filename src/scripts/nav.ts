@@ -220,8 +220,42 @@ export function initNav(): void {
     if (txt.length > 34) txt = `${txt.slice(0, 32)}…`;
     if (txt !== nowText) { nowText = txt; nowEl.textContent = txt; }
   };
-  bar.addEventListener('pointerenter', () => bar.classList.add('is-peek'));
-  bar.addEventListener('pointerleave', () => bar.classList.remove('is-peek'));
+  /* Keep each island's swept bounds for the whole hover. The section label
+     and links resize at different speeds, so the left rim can move back
+     across a stationary pointer during expansion. Geometry changes alone
+     must not collapse the menu and start that animation over again. */
+  let peekBounds: { left: number; right: number; top: number; bottom: number }[] = [];
+  const rememberPeekBounds = () => {
+    if (!bar.classList.contains('is-peek')) return;
+    islands.forEach((island, i) => {
+      const r = island.getBoundingClientRect(), old = peekBounds[i];
+      peekBounds[i] = old ? {
+        left: Math.min(old.left, r.left), right: Math.max(old.right, r.right),
+        top: Math.min(old.top, r.top), bottom: Math.max(old.bottom, r.bottom),
+      } : { left: r.left, right: r.right, top: r.top, bottom: r.bottom };
+    });
+  };
+  const endPeek = () => { bar.classList.remove('is-peek'); peekBounds = []; };
+  const checkPeek = (e: PointerEvent) => {
+    if (!bar.classList.contains('is-peek')) return;
+    rememberPeekBounds();
+    if (e.target instanceof Node && bar.contains(e.target)) return;
+    const inside = peekBounds.some((r) => e.clientX >= r.left - 8 && e.clientX <= r.right + 8
+      && e.clientY >= r.top - 8 && e.clientY <= r.bottom + 8);
+    if (!inside) endPeek();
+  };
+  bar.addEventListener('pointerenter', () => {
+    rememberPeekBounds();
+    bar.classList.add('is-peek');
+    rememberPeekBounds();
+  });
+  bar.addEventListener('pointerleave', checkPeek);
+  document.addEventListener('pointermove', checkPeek, { passive: true });
+  document.addEventListener('pointerleave', endPeek);
+  window.addEventListener('blur', endPeek);
+  window.addEventListener('resize', endPeek);
+  const peekObserver = new ResizeObserver(rememberPeekBounds);
+  islands.forEach((island) => peekObserver.observe(island));
   /* the compact/peek switch resizes the islands: re-read the film and the tone once it settles */
   menu?.addEventListener('transitionend', (e) => { if ((e.target as Element).matches?.('.lnav__links')) { relayout(); paint(); } });
 

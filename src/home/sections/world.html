@@ -28,19 +28,27 @@
   </div>
   <div class="flipcard" data-flipcard role="dialog" aria-modal="false" aria-labelledby="flip-title" hidden>
     <div class="flipcard__inner">
-      <div class="flipcard__face flipcard__front">
+      <div class="flipcard__face flipcard__front" data-free-scroll>
         <p class="flipcard__kicker" data-flip-kicker></p>
         <h3 id="flip-title" data-flip-title></h3>
-        <figure class="flipcard__photo" data-flip-photo hidden></figure>
         <dl data-flip-front></dl>
-        <button type="button" class="flipcard__turn" data-flip-turn>Reported loss and source</button>
+        <div class="flipcard__evidence">
+          <p class="flipcard__kicker">Reported loss</p>
+          <p class="flipcard__loss" data-flip-loss></p>
+          <p class="flipcard__src" data-flip-src></p>
+        </div>
       </div>
-      <div class="flipcard__face flipcard__back">
-        <p class="flipcard__kicker">Reported loss</p>
-        <p class="flipcard__loss" data-flip-loss></p>
-        <p class="flipcard__src" data-flip-src></p>
-        <p class="flipcard__credit" data-flip-credit hidden></p>
-        <button type="button" class="flipcard__turn" data-flip-turn>Back to the case</button>
+      <div class="flipcard__face flipcard__back" id="flip-photo-face" data-free-scroll>
+        <p class="flipcard__kicker" data-flip-photo-region></p>
+        <h3 id="flip-photo-title"><i data-flip-photo-species></i></h3>
+        <figure class="flipcard__photo" data-flip-photo hidden></figure>
+        <details class="flipcard__credit" data-flip-credit hidden></details>
+      </div>
+      <div class="flipcard__controls" data-free-scroll>
+        <span class="flipcard__flip-label" data-flip-label>Picture and image details</span>
+        <button type="button" class="flipcard__flip" data-flip-turn data-flip-toggle aria-label="Show picture and image details" aria-expanded="false" aria-controls="flip-photo-face" title="Show picture and image details">
+          <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M16.2 8.2A6.6 6.6 0 0 0 4.3 6.1M3.8 2.8v3.5h3.5M3.8 11.8a6.6 6.6 0 0 0 11.9 2.1M16.2 17.2v-3.5h-3.5"/></svg>
+        </button>
       </div>
     </div>
   </div>

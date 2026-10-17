@@ -57,6 +57,14 @@ export function initToc(): void {
     if (!reduce && !raf) raf = requestAnimationFrame(frame);
   };
 
+  const keepActiveVisible = () => {
+    const li = pairs[active]?.a.parentElement;
+    if (!li || !list || narrow.matches || list.scrollHeight <= list.clientHeight) return;
+    const top = li.offsetTop, bottom = top + li.offsetHeight;
+    if (top < list.scrollTop + 8 || bottom > list.scrollTop + list.clientHeight - 8) {
+      list.scrollTo({ top: top - list.clientHeight / 3, behavior: reduce ? 'instant' as ScrollBehavior : 'smooth' });
+    }
+  };
   const setActive = (i: number) => {
     if (i === active) return;
     active = i;
@@ -68,12 +76,7 @@ export function initToc(): void {
     if (!cur) return;
     placeFilm();
     if (now) now.textContent = cur.a.querySelector('.toc__text')?.textContent || '';
-    if (list && !narrow.matches && list.scrollHeight > list.clientHeight) {
-      const top = cur.a.parentElement!.offsetTop;
-      if (top < list.scrollTop + 8 || top > list.scrollTop + list.clientHeight - 48) {
-        list.scrollTo({ top: top - list.clientHeight / 3, behavior: 'smooth' });
-      }
-    }
+    keepActiveVisible();
   };
 
   /* where the headings and the article sit is measured only when the
@@ -121,7 +124,7 @@ export function initToc(): void {
   addEventListener('load', remeasure);
   let ticking = false;
   addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(() => { update(); ticking = false; }); } }, { passive: true });
-  addEventListener('resize', remeasure, { passive: true });
+  addEventListener('resize', () => { remeasure(); keepActiveVisible(); }, { passive: true });
   update();
 
   /* ------------------------------------------------ phone pill + sheet */

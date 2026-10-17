@@ -1,0 +1,80 @@
+{
+  "desktop": {
+    "file": "results-desktop.webp",
+    "size": [
+      620,
+      930
+    ],
+    "bytes": 39838,
+    "quality": 86,
+    "hash": "3230d626de9a",
+    "frames": {
+      "membrane": [
+        0,
+        518,
+        522,
+        412
+      ],
+      "strip-amber": [
+        84,
+        0,
+        80,
+        514
+      ],
+      "strip-neutral": [
+        0,
+        0,
+        80,
+        514
+      ],
+      "yeast": [
+        168,
+        0,
+        452,
+        445
+      ]
+    }
+  },
+  "mobile": {
+    "file": "results-mobile.webp",
+    "size": [
+      578,
+      1123
+    ],
+    "bytes": 67364,
+    "quality": 86,
+    "hash": "68304ee7dfee",
+    "frames": {
+      "membrane": [
+        0,
+        518,
+        472,
+        373
+      ],
+      "plate": [
+        0,
+        895,
+        410,
+        228
+      ],
+      "strip-amber": [
+        84,
+        0,
+        80,
+        514
+      ],
+      "strip-neutral": [
+        0,
+        0,
+        80,
+        514
+      ],
+      "yeast": [
+        168,
+        0,
+        410,
+        404
+      ]
+    }
+  }
+}

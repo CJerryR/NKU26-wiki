@@ -1,0 +1,363 @@
+{
+  "page": "results",
+  "enabled": true,
+  "note": "Design units: desktop canvas 1600x900, mobile 900x1600, origin at the canvas centre, y down. w = drawn width. from = state at scroll progress 0, to = state at 1; win = the part of the progress over which this layer moves. s scale, r degrees, o opacity. depth = pointer parallax in design px.",
+  "signature": "The test strips fan out into a row and their windows develop colour (illustration only, no data).",
+  "desktop": {
+    "canvas": [
+      1600,
+      900
+    ],
+    "title": {
+      "y": -30,
+      "toY": -300,
+      "toScale": 0.62
+    },
+    "layers": [
+      {
+        "id": "yeast",
+        "prop": "yeast",
+        "w": 260,
+        "z": 3,
+        "depth": 22,
+        "from": {
+          "x": -540,
+          "y": 0
+        },
+        "to": {
+          "x": -610,
+          "y": -220,
+          "r": -6,
+          "s": 1.15
+        },
+        "win": [
+          0.1,
+          0.78
+        ]
+      },
+      {
+        "id": "membrane",
+        "prop": "membrane",
+        "w": 300,
+        "z": 3,
+        "depth": 22,
+        "from": {
+          "x": 540,
+          "y": -20
+        },
+        "to": {
+          "x": 600,
+          "y": -220,
+          "r": 6,
+          "s": 1.1
+        },
+        "win": [
+          0.1,
+          0.78
+        ]
+      },
+      {
+        "id": "strip-1",
+        "prop": "strip-neutral",
+        "w": 54,
+        "z": 4,
+        "depth": 10,
+        "from": {
+          "x": -40,
+          "y": 310,
+          "r": -8
+        },
+        "to": {
+          "x": -300,
+          "y": 250,
+          "s": 1.05,
+          "r": 0
+        },
+        "win": [
+          0.12,
+          0.6
+        ]
+      },
+      {
+        "id": "strip-2",
+        "prop": "strip-neutral",
+        "w": 54,
+        "z": 4,
+        "depth": 10,
+        "from": {
+          "x": -14,
+          "y": 310,
+          "r": -3
+        },
+        "to": {
+          "x": -100,
+          "y": 250,
+          "s": 1.05,
+          "r": 0
+        },
+        "win": [
+          0.12,
+          0.6
+        ]
+      },
+      {
+        "id": "strip-3",
+        "prop": "strip-neutral",
+        "w": 54,
+        "z": 4,
+        "depth": 10,
+        "from": {
+          "x": 12,
+          "y": 310,
+          "r": 3
+        },
+        "to": {
+          "x": 100,
+          "y": 250,
+          "s": 1.05,
+          "r": 0
+        },
+        "win": [
+          0.12,
+          0.6
+        ]
+      },
+      {
+        "id": "strip-4",
+        "prop": "strip-neutral",
+        "w": 54,
+        "z": 4,
+        "depth": 10,
+        "from": {
+          "x": 38,
+          "y": 310,
+          "r": 8
+        },
+        "to": {
+          "x": 300,
+          "y": 250,
+          "s": 1.05,
+          "r": 0
+        },
+        "win": [
+          0.12,
+          0.6
+        ]
+      },
+      {
+        "id": "strip-1-signal",
+        "prop": "strip-amber",
+        "w": 54,
+        "z": 5,
+        "depth": 10,
+        "from": {
+          "x": -300,
+          "y": 250,
+          "s": 1.05,
+          "o": 0
+        },
+        "to": {
+          "x": -300,
+          "y": 250,
+          "s": 1.05,
+          "o": 1
+        },
+        "win": [
+          0.62,
+          0.8
+        ]
+      },
+      {
+        "id": "strip-2-signal",
+        "prop": "strip-amber",
+        "w": 54,
+        "z": 5,
+        "depth": 10,
+        "from": {
+          "x": -100,
+          "y": 250,
+          "s": 1.05,
+          "o": 0
+        },
+        "to": {
+          "x": -100,
+          "y": 250,
+          "s": 1.05,
+          "o": 1
+        },
+        "win": [
+          0.66,
+          0.8400000000000001
+        ]
+      },
+      {
+        "id": "strip-3-signal",
+        "prop": "strip-amber",
+        "w": 54,
+        "z": 5,
+        "depth": 10,
+        "from": {
+          "x": 100,
+          "y": 250,
+          "s": 1.05,
+          "o": 0
+        },
+        "to": {
+          "x": 100,
+          "y": 250,
+          "s": 1.05,
+          "o": 1
+        },
+        "win": [
+          0.7,
+          0.88
+        ]
+      },
+      {
+        "id": "strip-4-signal",
+        "prop": "strip-amber",
+        "w": 54,
+        "z": 5,
+        "depth": 10,
+        "from": {
+          "x": 300,
+          "y": 250,
+          "s": 1.05,
+          "o": 0
+        },
+        "to": {
+          "x": 300,
+          "y": 250,
+          "s": 1.05,
+          "o": 1
+        },
+        "win": [
+          0.74,
+          0.92
+        ]
+      }
+    ]
+  },
+  "mobile": {
+    "canvas": [
+      900,
+      1600
+    ],
+    "title": {
+      "y": -80,
+      "toY": -470,
+      "toScale": 0.7
+    },
+    "layers": [
+      {
+        "id": "yeast",
+        "prop": "yeast",
+        "w": 300,
+        "z": 3,
+        "depth": 0,
+        "from": {
+          "x": -200,
+          "y": -470
+        },
+        "to": {
+          "x": -340,
+          "y": -560,
+          "r": -6,
+          "s": 1.05
+        },
+        "win": [
+          0.1,
+          0.78
+        ]
+      },
+      {
+        "id": "plate",
+        "prop": "plate",
+        "w": 300,
+        "z": 2,
+        "depth": 0,
+        "from": {
+          "x": 230,
+          "y": -480,
+          "r": 4
+        },
+        "to": {
+          "x": 320,
+          "y": -580,
+          "r": -4,
+          "s": 1.05
+        },
+        "win": [
+          0.1,
+          0.78
+        ]
+      },
+      {
+        "id": "membrane",
+        "prop": "membrane",
+        "w": 330,
+        "z": 3,
+        "depth": 0,
+        "from": {
+          "x": -200,
+          "y": 450
+        },
+        "to": {
+          "x": -270,
+          "y": 560,
+          "r": 4,
+          "s": 1.1
+        },
+        "win": [
+          0.1,
+          0.78
+        ]
+      },
+      {
+        "id": "strip",
+        "prop": "strip-neutral",
+        "w": 80,
+        "z": 4,
+        "depth": 0,
+        "from": {
+          "x": 190,
+          "y": 460,
+          "r": 6
+        },
+        "to": {
+          "x": 160,
+          "y": 420,
+          "s": 1.05,
+          "r": 0
+        },
+        "win": [
+          0.12,
+          0.6
+        ]
+      },
+      {
+        "id": "strip-signal",
+        "prop": "strip-amber",
+        "w": 80,
+        "z": 5,
+        "depth": 0,
+        "from": {
+          "x": 160,
+          "y": 420,
+          "s": 1.05,
+          "o": 0
+        },
+        "to": {
+          "x": 160,
+          "y": 420,
+          "s": 1.05,
+          "o": 1
+        },
+        "win": [
+          0.62,
+          0.86
+        ]
+      }
+    ]
+  }
+}

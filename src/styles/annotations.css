@@ -1,0 +1,41 @@
+/* Shared inline annotations for all Wiki prose. Theme follows the existing html switch. */
+:root, .prose {
+  --annotation-ink: #443b50;
+  --annotation-bg: #eeeaf2;
+  --annotation-border: #d4ccde;
+}
+@media screen {
+  html[data-theme='dark'],
+  html[data-theme='dark'] .prose,
+  .annotation-scope[data-annotation-theme='dark'] {
+    --annotation-ink: #eee8f4;
+    --annotation-bg: #342c40;
+    --annotation-border: #5b506a;
+  }
+  html .prose.annotation-scope[data-annotation-theme='light'] {
+    --annotation-ink: #443b50;
+    --annotation-bg: #eeeaf2;
+    --annotation-border: #d4ccde;
+  }
+}
+/* Inline glyph spacing is shared across themes; block code keeps its own layout. */
+html .prose code:not(pre code) {
+  color: var(--annotation-ink);
+  background: var(--annotation-bg);
+  border: 1px solid var(--annotation-border);
+  border-radius: .48em;
+  /* Compensate for the mono font’s visible glyph bounds, not just its line box. */
+  padding: 0 .26em .12em;
+  font-family: var(--font-mono), monospace;
+  font-size: .9em;
+  line-height: inherit;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+html .prose pre code {
+  padding: 0; border: 0; border-radius: 0; position: static;
+  background: none; color: inherit; white-space: pre;
+  font-family: var(--font-mono), monospace; font-size: inherit; overflow-wrap: normal;
+}

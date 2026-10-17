@@ -23,7 +23,7 @@
       "_template": "datatable"
     },
     {
-      "body": "This section documents the biological materials and experimental methods used in wet-lab work, and summarizes the designed sgRNA sequences, constructed plasmids and engineered strains generated in our project.\n",
+      "body": "This section documents the biological materials and experimental methods used in wet-lab work, and summarizes the **designed sgRNA sequences, constructed plasmids and engineered strains** generated in our project.\n",
       "_template": "text"
     },
     {
@@ -39,7 +39,7 @@
       "_template": "heading"
     },
     {
-      "body": "PCR Amplification Using Phanta Max Super-Fidelity DNA Polymerase.\n",
+      "body": "**PCR Amplification** Using Phanta Max Super-Fidelity DNA Polymerase.\n",
       "_template": "text"
     },
     {
@@ -56,7 +56,7 @@
       "_template": "heading"
     },
     {
-      "body": "DNA Recovery Using FastPure Gel DNA Extraction Mini Kit.\n",
+      "body": "**DNA Recovery** Using FastPure Gel DNA Extraction Mini Kit.\n",
       "_template": "text"
     },
     {
@@ -72,7 +72,7 @@
       "_template": "heading"
     },
     {
-      "body": "Plasmid DNA Extraction Using Fast Plasmid Miniprep Kit.\n",
+      "body": "**Plasmid DNA Extraction** Using Fast Plasmid Miniprep Kit.\n",
       "_template": "text"
     },
     {
@@ -88,7 +88,7 @@
       "_template": "heading"
     },
     {
-      "body": "Construction of Homologous Recombination Constructs Using Double-Joint PCR (DJ-PCR).\n",
+      "body": "Construction of Homologous Recombination Constructs Using **Double-Joint PCR (DJ-PCR)**.\n",
       "_template": "text"
     },
     {
@@ -104,7 +104,7 @@
       "_template": "heading"
     },
     {
-      "body": "Multi-Fragment and Vector Seamless Assembly Using pEASY Pro Seamless Cloning and Assembly Kit.\n",
+      "body": "**Multi-Fragment and Vector Seamless Assembly** Using pEASY Pro Seamless Cloning and Assembly Kit.\n",
       "_template": "text"
     },
     {
@@ -120,7 +120,7 @@
       "_template": "heading"
     },
     {
-      "body": "Chemical Transformation of Trans5α Chemically Competent Cells.\n",
+      "body": "**Chemical Transformation** of Trans5α Chemically Competent Cells.\n",
       "_template": "text"
     },
     {
@@ -136,7 +136,7 @@
       "_template": "heading"
     },
     {
-      "body": "Yeast Transformation Using S.c. EasyComp™ Transformation Kit.\n",
+      "body": "**Yeast Transformation** Using S.c. EasyComp™ Transformation Kit.\n",
       "_template": "text"
     },
     {
@@ -152,7 +152,7 @@
       "_template": "heading"
     },
     {
-      "body": "Agarose Gel Electrophoresis.\n",
+      "body": "**Agarose Gel Electrophoresis**.\n",
       "_template": "text"
     },
     {
@@ -168,7 +168,7 @@
       "_template": "heading"
     },
     {
-      "body": "Colony PCR Amplification Using 2×TransFast Taq PCR SuperMix (+dye).\n",
+      "body": "**Colony PCR Amplification** Using 2×TransFast Taq PCR SuperMix (+dye).\n",
       "_template": "text"
     },
     {
@@ -184,7 +184,7 @@
       "_template": "heading"
     },
     {
-      "body": "Restriction Enzyme Digestion Reaction.\n",
+      "body": "**Restriction Enzyme Digestion Reaction**.\n",
       "_template": "text"
     },
     {
@@ -232,7 +232,7 @@
       "_template": "heading"
     },
     {
-      "body": "Extraction of Yeast Genomic DNA.\n",
+      "body": "**Extraction of Yeast Genomic DNA**.\n",
       "_template": "text"
     },
     {
@@ -248,7 +248,7 @@
       "_template": "heading"
     },
     {
-      "body": "Observation of Fluorescent Molecules Using Fluorescence Microscopy.\n",
+      "body": "**Observation of Fluorescent Molecules** Using Fluorescence Microscopy.\n",
       "_template": "text"
     },
     {
@@ -310,7 +310,7 @@
       "_template": "heading"
     },
     {
-      "body": "In this project, we designed and constructed a total of 10 plasmids, as shown in the table below.\n",
+      "body": "In this project, we designed and constructed a total of **10 plasmids**, as shown in the table below.\n",
       "_template": "text"
     },
     {
@@ -325,7 +325,7 @@
       "_template": "heading"
     },
     {
-      "body": "In this project, we constructed a total of 9 yeast strains. The workflow and summary table are displayed below.\n",
+      "body": "In this project, we constructed a total of **9 yeast strains**. The workflow and summary table are displayed below.\n",
       "_template": "text"
     },
     {

@@ -126,6 +126,14 @@
     var fKick = H.$('[data-flip-kicker]', card), fTitle = H.$('[data-flip-title]', card), fFront = H.$('[data-flip-front]', card);
     var fLoss = H.$('[data-flip-loss]', card), fSrc = H.$('[data-flip-src]', card);
     var fPhoto = H.$('[data-flip-photo]', card), fCredit = H.$('[data-flip-credit]', card);
+    var flipToggle = H.$('[data-flip-toggle]', card), flipLabel = H.$('[data-flip-label]', card);
+    function syncFlipControl() {
+      var back = card.classList.contains('is-flipped');
+      flipLabel.textContent = back ? 'Back to the case' : 'Picture and image details';
+      flipToggle.title = back ? 'Back to the case' : 'Show picture and image details';
+      flipToggle.setAttribute('aria-label', flipToggle.title);
+      flipToggle.setAttribute('aria-expanded', String(back));
+    }
     (REG.cases || []).forEach(function (c, i) {
       var b = document.createElement('button'); b.type = 'button'; b.className = 'wmark';
       b.style.left = ((c.lon + 180) * 2.5 / 9) + '%'; b.style.top = ((84 - c.lat) * 2.5 / 3.5) + '%'; b.style.setProperty('--d', (i * .35) + 's');
@@ -155,6 +163,20 @@
     card.addEventListener('pointerenter', function () { overCard = true; clearTimeout(closeT); });
     card.addEventListener('pointerleave', function (e) { if (e.pointerType === 'touch') return; overCard = false; scheduleClose(160); });
     card.addEventListener('focusout', function (e) { if (card.classList.contains('is-turning')) return; if (!card.contains(e.relatedTarget) && !(openCase && e.relatedTarget === openCase.btn)) scheduleClose(0); });
+    function placeCard() {
+      if (!openCase || card.hidden) return;
+      var pr = pin.getBoundingClientRect(), br = openCase.btn.getBoundingClientRect();
+      var x = br.left + br.width / 2 - pr.left, y = br.top + br.height / 2 - pr.top;
+      var minTop = Math.max(80, 80 - pr.top), bottom = Math.min(pr.height, innerHeight - pr.top) - 16;
+      card.style.setProperty('--case-card-max-height', Math.max(120, bottom - minTop) + 'px');
+      var cw = card.offsetWidth, ch = card.offsetHeight;
+      var left = H.clamp(x + 22 + cw > pr.width - 12 ? x - cw - 22 : x + 22, 12, Math.max(12, pr.width - cw - 12));
+      card.style.left = left + 'px';
+      card.style.top = H.clamp(y - 70, minTop, Math.max(minTop, bottom - ch)) + 'px';
+      card.style.setProperty('--ox', left < x ? '100%' : '0');
+    }
+    // Refit after fonts, image decoding or a turn changes the visible face's height.
+    new ResizeObserver(placeCard).observe(H.$('.flipcard__inner', card));
     function open(c, b) {
       clearTimeout(hoverLockT); clearTimeout(turnT); clearTimeout(turnEndT); hoverLocked = false; card.classList.remove('is-turning');
       clearTimeout(closeT);
@@ -165,21 +187,26 @@
       fKick.textContent = cont.name || '';
       fTitle.textContent = c.region;
       var ph = (REG.photos || {})[c.id];
-      fPhoto.innerHTML = ph ? '<img src="' + esc(ph.src) + '" width="' + ph.w + '" height="' + ph.h + '" alt="' + esc(ph.alt) + '" loading="lazy" decoding="async"><figcaption><i>' + esc(ph.species) + '</i> · representative image, not from this site</figcaption>' : '';
+      var view = ph && ph.view || {};
+      fPhoto.style.setProperty('--case-photo-ratio', view.ratio || '4 / 3');
+      fPhoto.style.setProperty('--case-photo-position', view.position || '50% 50%');
+      H.$('[data-flip-photo-region]', card).textContent = c.region;
+      H.$('[data-flip-photo-species]', card).textContent = ph ? ph.species : '';
+      var description = ph ? esc(ph.description).split(esc(ph.species)).join('<i>' + esc(ph.species) + '</i>') : '';
+      fPhoto.innerHTML = ph ? '<a class="flipcard__image-link" href="' + esc(ph.src) + '" target="_blank" rel="noopener" aria-label="View full image of ' + esc(ph.species) + '"><img src="' + esc(ph.src) + '" width="' + ph.w + '" height="' + ph.h + '" alt="' + esc(ph.alt) + '" loading="lazy" decoding="async"></a><a class="flipcard__full" href="' + esc(ph.src) + '" target="_blank" rel="noopener">View full image ↗</a><figcaption><p class="flipcard__caption">' + description + '</p><p class="flipcard__image-note"><b>Image note:</b> ' + esc(ph.imageNote) + '</p></figcaption>' : '';
       fPhoto.hidden = !ph;
-      fFront.innerHTML = '<dt>Nematode</dt><dd>' + esc(c.nematode) + '<i>' + esc(c.species) + '</i></dd><dt>Crop</dt><dd>' + esc(c.crop) + '</dd>' +
+      fFront.innerHTML = '<dt>Nematode</dt><dd>' + esc(c.nematode) + '<i>' + esc(c.species) + '</i></dd><dt>Reported crop</dt><dd>' + esc(c.crop) + '</dd>' +
         (near ? '<dt>Nearest sample</dt><dd><div class="flipcard__bar"><i style="width:' + Math.round(12 + near.l / LMAX * 88) + '%;background:' + ramp(near.l / LMAX) + '"></i></div><small>' + Math.round(near.value).toLocaleString('en') + ' plant-feeding nematodes per 100 g dry soil</small></dd>' : '');
       fLoss.textContent = c.loss;
-      fSrc.innerHTML = c.source ? '<a href="' + esc(c.source.url) + '" target="_blank" rel="noopener">' + esc(c.source.title) + '</a> (' + esc(c.source.year) + ')' : '';
-      fCredit.innerHTML = ph ? '<b>Photo</b> ' + esc(ph.caption) + ' ' + esc(ph.credit) + ' <a href="' + esc(ph.source) + '" target="_blank" rel="noopener">Image source</a> · <a href="' + esc(ph.license) + '" target="_blank" rel="noopener">Licence</a>' : '';
+      fSrc.innerHTML = c.source ? '<a href="' + esc(c.source.url) + '" target="_blank" rel="noopener" title="' + esc(c.source.title) + '">' + esc(c.source.label || 'Source (' + c.source.year + ')') + ' ↗</a>' : '';
+      fCredit.innerHTML = ph ? '<summary>Image credit and source</summary><p>' + esc(ph.credit) + '</p><p><a href="' + esc(ph.source) + '" target="_blank" rel="noopener">Original source</a> · <a href="' + esc(ph.license) + '" target="_blank" rel="noopener">License</a></p>' : '';
+      fCredit.open = false;
       fCredit.hidden = !ph;
-      var pr = pin.getBoundingClientRect(), br = b.getBoundingClientRect(), x = br.left + br.width / 2 - pr.left, y = br.top + br.height / 2 - pr.top, cw = 300;
-      var left = x + 22 + cw > pr.width - 12 ? x - cw - 22 : x + 22;
-      card.hidden = false;
-      var chH = card.offsetHeight || 420, top = H.clamp(y - 70, 80, Math.max(80, pr.height - chH - 16));
-      card.style.left = left + 'px'; card.style.top = top + 'px';
-      card.style.setProperty('--ox', left < x ? '100%' : '0');
       card.classList.remove('is-flipped');
+      syncFlipControl();
+      card.setAttribute('aria-labelledby', 'flip-title');
+      card.hidden = false;
+      placeCard();
       card.hidden = false; card.classList.remove('is-open'); void card.offsetWidth; card.classList.add('is-open');
       hover = c.continent; draw();
     }
@@ -199,8 +226,10 @@
         card.classList.add('is-turning');
         turnT = setTimeout(function () {
           card.classList.toggle('is-flipped');
-          var f = card.querySelector(card.classList.contains('is-flipped') ? '.flipcard__back [data-flip-turn]' : '.flipcard__front [data-flip-turn]');
-          if (f) f.focus({ preventScroll: true });
+          syncFlipControl();
+          card.setAttribute('aria-labelledby', card.classList.contains('is-flipped') ? 'flip-photo-title' : 'flip-title');
+          placeCard();
+          flipToggle.focus({ preventScroll: true });
         }, 220);
         turnEndT = setTimeout(function () { card.classList.remove('is-turning'); }, 480);
       });
@@ -331,7 +360,7 @@
     }
     H.onView(sec, function (v) { visible = v; if (v && !opened && !(H.pager && H.pager.isPaged())) openNow(); });
     size();
-    var rz; addEventListener('resize', function () { clearTimeout(rz); rz = setTimeout(size, 120); });
+    var rz; addEventListener('resize', function () { clearTimeout(rz); rz = setTimeout(function () { size(); placeCard(); }, 120); });
     if (window.ResizeObserver) new ResizeObserver(function () { clearTimeout(rz); rz = setTimeout(size, 120); }).observe(cv);
   }
 

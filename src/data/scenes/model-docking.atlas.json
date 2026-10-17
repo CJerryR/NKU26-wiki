@@ -1,0 +1,92 @@
+{
+  "desktop": {
+    "file": "model-docking-desktop.webp",
+    "size": [
+      1604,
+      1880
+    ],
+    "bytes": 211566,
+    "quality": 86,
+    "hash": "e21799d02ac7",
+    "frames": {
+      "ligand-a": [
+        936,
+        1580,
+        432,
+        152
+      ],
+      "ligand-b": [
+        532,
+        1580,
+        400,
+        224
+      ],
+      "membrane": [
+        1044,
+        790,
+        560,
+        409
+      ],
+      "molecule-cloud": [
+        0,
+        1580,
+        528,
+        300
+      ],
+      "receptor-left": [
+        0,
+        0,
+        1040,
+        786
+      ],
+      "receptor-right": [
+        0,
+        790,
+        1040,
+        786
+      ]
+    }
+  },
+  "mobile": {
+    "file": "model-docking-mobile.webp",
+    "size": [
+      1267,
+      1424
+    ],
+    "bytes": 139588,
+    "quality": 86,
+    "hash": "a2846fdded0f",
+    "frames": {
+      "ligand-a": [
+        261,
+        1280,
+        304,
+        107
+      ],
+      "ligand-b": [
+        0,
+        1280,
+        257,
+        144
+      ],
+      "membrane": [
+        846,
+        640,
+        421,
+        308
+      ],
+      "receptor-left": [
+        0,
+        0,
+        842,
+        636
+      ],
+      "receptor-right": [
+        0,
+        640,
+        842,
+        636
+      ]
+    }
+  }
+}

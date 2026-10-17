@@ -1,0 +1,196 @@
+{
+  "title": "Molecular Docking",
+  "heading": "Molecular Docking",
+  "sub": "Two ligands, comparable structures and candidate receptor substitutions.",
+  "crumbs": [
+    "Model",
+    "Molecular Docking"
+  ],
+  "route": "model-docking",
+  "search": true,
+  "description": "Two ligands, comparable structures and candidate receptor substitutions.",
+  "meta": [],
+  "blocks": [
+    {
+      "_template": "heading",
+      "level": 2,
+      "text": "1. From ligand contacts to receptor hypotheses",
+      "attributes": "#docking-introduction toc=\"Research question\""
+    },
+    {
+      "_template": "text",
+      "body": "To build a sensing system that distinguishes ascr#18 from ascr#3, we seek receptor candidates with **complementary ligand preferences**. Molecular docking helps us identify residues contacted by each ligand, examine the effects of changing their side chains, and select candidates for further study.\n\nWe established **common comparison conditions**, identified positions from wild-type (WT) contact differences, and refined our designs through **alanine substitutions**, side-chain scans and combination tests. Scores compare the two-ligand profiles; contact analysis helps us propose structural explanations. Each round informed the next design."
+    },
+    {
+      "_template": "heading",
+      "level": 2,
+      "text": "1.1 Establishing comparable docking conditions",
+      "attributes": "#docking-conditions toc=\"Common conditions\""
+    },
+    {
+      "_template": "image",
+      "src": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-08befb7e1df2-docking-source-01.avif",
+      "alt": "Figure 1. Full-length AlphaFold 3 model_0 of Gpr2 WT shown as a cartoon.",
+      "body": "**Figure 1.** Full-length predicted structure of Gpr2 WT. The AlphaFold 3 `model_0` is shown as a cartoon. Structure-prediction method: [1](#docking-reference-1).",
+      "layout": "right",
+      "imageWidth": "medium",
+      "accompanyingBody": "We initially considered the fungal ascaroside-sensing GPCRs Gpr2, Gpr3 and GprC, prepared predicted structures and ligands, and consulted published pocket locations, key residues and docking methods. Receptor selection also considered application in yeast. Reported plasma-membrane and mitochondria-associated localization of GprC could complicate heterologous localization and pathway integration. We therefore focused engineering on Gpr2, retained Gpr3 and its mutants for study, and used GprC as a structural comparison.\n\nEarly checks exposed two input problems. Inconsistent coordinate references between structures and search boxes displaced the actual search region. Loss of chemical information, including formal charges, during format conversion affected the identification of charged contacts. Input checks became part of the analysis workflow.\n\nWe aligned structures to place receptors, ligands and search boxes in a common coordinate system, then checked the search region against membrane orientation and the retained receptor segments. **Atom mapping** linked the original SDF and docking PDBQT files, allowing us to check atoms, coordinates and structural correspondence. Where PDBQT files retained complete Meeko structural metadata, we recovered SDF files containing docking poses and formal charges for contact analysis.\n\nSubsequent mutant comparisons used **consistent ligand inputs and search settings**, while retaining original residue numbering. Literature supplied biological and structural context; input checks established computational comparability; two-ligand docking generated engineering hypotheses."
+    },
+    {
+      "_template": "heading",
+      "level": 2,
+      "text": "1.2 Combining contact frequencies and individual poses",
+      "attributes": "#docking-contact-sites toc=\"Initial sites\""
+    },
+    {
+      "_template": "text",
+      "body": "We used **two complementary scales of observation**. Across predicted receptor models and docking poses, we counted residue contacts, looking for recurrent positions and differences between the ligands. Within `model_0`, we compared specific poses, including contacts detected for only one ligand and their interaction types."
+    },
+    {
+      "_template": "text",
+      "body": "<figure class=\"docking-source-figure\" id=\"docking-figure-2\"><div class=\"docking-panel-scroll\" role=\"region\" aria-label=\"Figure 2 panels; scroll horizontally on small screens\" tabindex=\"0\"><div class=\"docking-panel-row\" style=\"--source-columns:2337fr 1776fr 2337fr 1828fr\"><a href=\"https://static.igem.wiki/teams/6303/wiki/v8-6/v86-c4d04847c0b3-docking-source-02.avif\" target=\"_blank\" rel=\"noopener\" aria-label=\"Open full-resolution WT–ascr#3, three-dimensional pocket\"><img src=\"https://static.igem.wiki/teams/6303/wiki/v8-6/v86-c4d04847c0b3-docking-source-02.avif\" alt=\"WT–ascr#3, three-dimensional pocket\" width=\"4000\" height=\"3000\" loading=\"lazy\" decoding=\"async\" /></a><a href=\"https://static.igem.wiki/teams/6303/wiki/v8-6/v86-a42c709871dd-docking-source-03.avif\" target=\"_blank\" rel=\"noopener\" aria-label=\"Open full-resolution WT–ascr#3, two-dimensional contacts\"><img src=\"https://static.igem.wiki/teams/6303/wiki/v8-6/v86-a42c709871dd-docking-source-03.avif\" alt=\"WT–ascr#3, two-dimensional contacts\" width=\"2400\" height=\"2382\" loading=\"lazy\" decoding=\"async\" /></a><a href=\"https://static.igem.wiki/teams/6303/wiki/v8-6/v86-bd6f41305f4d-docking-source-04.avif\" target=\"_blank\" rel=\"noopener\" aria-label=\"Open full-resolution WT–ascr#18, three-dimensional pocket\"><img src=\"https://static.igem.wiki/teams/6303/wiki/v8-6/v86-bd6f41305f4d-docking-source-04.avif\" alt=\"WT–ascr#18, three-dimensional pocket\" width=\"4000\" height=\"3000\" loading=\"lazy\" decoding=\"async\" /></a><a href=\"https://static.igem.wiki/teams/6303/wiki/v8-6/v86-2e0dde6cfeee-docking-source-05.avif\" target=\"_blank\" rel=\"noopener\" aria-label=\"Open full-resolution WT–ascr#18, two-dimensional contacts\"><img src=\"https://static.igem.wiki/teams/6303/wiki/v8-6/v86-2e0dde6cfeee-docking-source-05.avif\" alt=\"WT–ascr#18, two-dimensional contacts\" width=\"2400\" height=\"2312\" loading=\"lazy\" decoding=\"async\" /></a></div></div><figcaption><strong>Figure 2.</strong> Predicted docking poses of Gpr2 WT with the two ligands: (a) WT–ascr#3; (b) WT–ascr#18. Each ligand is shown in the lowest-scoring pose from its run, alongside the pocket and contact diagrams supplied with the manuscript. The receptor is shown as a cartoon; ligand and marked residues are shown as sticks in the three-dimensional views. Residue numbers follow the original sequence.</figcaption></figure>"
+    },
+    {
+      "_template": "text",
+      "body": "Frequency statistics describe the sampled models and poses; individual-pose comparisons locate differences that side-chain substitutions can test. Contact frequencies depend on the included conformations and contact criteria and **do not represent independent experimental observations**."
+    },
+    {
+      "_template": "text",
+      "body": "We tested alanine substitutions at N84, L90, V110, R181, R345, W338 and V368. Mutant sequences were submitted to AlphaFold 3, followed by structure preparation, docking and contact comparison with WT."
+    },
+    {
+      "_template": "text",
+      "body": "<div class=\"docking-caption-only\" id=\"docking-figure-3\"><p><strong>Figure 3.</strong> Spatial distribution of the initial Gpr2 candidate sites N84, L90, V110, R181, W338, R345 and V368 in the full-length AlphaFold 3 <code>model_0</code>, with candidate side chains shown as sticks and original residue numbering retained [<a href=\"#docking-reference-1\">1</a>].</p><p><em>The image is pending in the supplied manuscript; its caption is retained here.</em></p></div>"
+    },
+    {
+      "_template": "text",
+      "body": "In the initial structures and WT comparison, N84A, V110A and V368A all showed a lower score for ascr#3 and a higher score for ascr#18. N84, V110 and V368 became core sites for further side-chain comparisons. Score and contact changes at W338 and R181 also remained of interest. Docking thus converted initial contact differences into substitution hypotheses."
+    },
+    {
+      "_template": "heading",
+      "level": 2,
+      "text": "1.3 Extending the scan to all side chains",
+      "attributes": "#docking-saturation toc=\"Saturation scan\""
+    },
+    {
+      "_template": "text",
+      "body": "The alanine scan narrowed the search and raised another question: can different side chains at the same position shift the two-ligand profile in different directions?\n\nCombining alanine-scan scores, contact analysis and additional substitutions, we selected N84, V110, V368 and W338 for **saturation scanning**. Nineteen substitutions at each of four positions gave **76 single-mutant designs**.\n\nDifferent substitutions at one site could produce opposite shifts. For example, N84V lowered the ascr#18 score and raised the ascr#3 score, whereas N84Y showed the reverse direction. Contact differences suggest positions to explore; candidate selection still requires the two-ligand results of individual substitutions.\n\nThe principal analysis used the lowest-scoring pose from each run and its contact distribution. These 76 substitutions are different designs. Each main result used **one random seed**; multiple poses and different substitutions were **not treated as independent replicates**. Original scores, structures and corresponding WT references were retained for review."
+    },
+    {
+      "_template": "heading",
+      "level": 2,
+      "text": "1.4 Separating the sources of a score shift",
+      "attributes": "#docking-scores toc=\"Scores and candidates\""
+    },
+    {
+      "_template": "text",
+      "body": "Let $G$ denote the Vina docking score. We define the changes relative to WT as:"
+    },
+    {
+      "_template": "equation",
+      "latex": "\\Delta G_{18}=G_{\\mathrm{mut},18}-G_{\\mathrm{WT},18},\\qquad\n\\Delta G_3=G_{\\mathrm{mut},3}-G_{\\mathrm{WT},3}"
+    },
+    {
+      "_template": "equation",
+      "latex": "\\Delta\\Delta G=\\Delta G_{18}-\\Delta G_3"
+    },
+    {
+      "_template": "text",
+      "body": "A negative $\\Delta G$ means a lower score than WT for that ligand. Under this definition, a positive $\\Delta\\Delta G$ indicates a shift toward ascr#3 relative to WT; a negative value indicates a shift toward ascr#18. This is a docking-score comparison. Actual binding and selectivity require experimental evaluation.\n\nWe inspect the two changes separately: lowering the target-ligand score, raising the other-ligand score, or both can produce the same direction of $\\Delta\\Delta G$, while describing different candidate profiles.\n\nThe first focused contact review after saturation scanning included N84V, V110C, V110M and V368R. Their shared WT scores were −6.492 for ascr#18 and −6.625 for ascr#3, in kcal/mol.\n\n| Candidate | $G_{18}$ | $G_3$ | $\\Delta G_{18}$ | $\\Delta G_3$ | $\\Delta\\Delta G$ |\n| --- | ---: | ---: | ---: | ---: | ---: |\n| N84V | −6.856 | −6.264 | −0.364 | 0.361 | −0.725 |\n| V110C | −7.053 | −6.719 | −0.561 | −0.094 | −0.467 |\n| V110M | −6.066 | −6.629 | 0.426 | −0.004 | |\n| V368R | −6.293 | −7.013 | 0.199 | −0.388 | |\n\nAll reported entries are in kcal/mol. Blank final-column cells indicate values not reported in the submitted table.\n\nN84V and V110C both shift toward ascr#18, but for different reasons. V110C lowers both scores, with the larger decrease for ascr#18. N84V lowers the ascr#18 score and raises the ascr#3 score. V110C therefore gives a larger improvement in the ascr#18 score, while N84V gives greater separation between the ligands.\n\nV110M and V368R both shift toward ascr#3. For V110M, the ascr#3 score is close to WT, so the shift mainly reflects a higher ascr#18 score. V368R combines a lower ascr#3 score with a higher ascr#18 score. This distinction informed candidate and combination design."
+    },
+    {
+      "_template": "heading",
+      "level": 2,
+      "text": "1.5 Testing whether single-site effects combine",
+      "attributes": "#docking-combinations toc=\"Combination tests\""
+    },
+    {
+      "_template": "text",
+      "body": "We asked whether substitutions with the same direction of shift could enlarge the score difference, and whether complementary single-site effects could coexist in one receptor. Combinations were **compared with WT and with each single-mutant parent**. The former tests whether the original direction is retained; the latter tests whether the combination adds an advantage.\n\nN84V and V110C both shift toward ascr#18. We hoped their combination would combine N84V's two-ligand separation with V110C's lower ascr#18 score. Instead, the combination gave $\\Delta G_{18}=-0.081$, $\\Delta G_3=-0.411$ and $\\Delta\\Delta G=+0.330$ kcal/mol. The ascr#3 score decreased more, reversing the original ascr#18 direction.\n\nThe ascr#18 pose retained an R189 ionic-type contact and W338 hydrophobic contact, but its score was 0.480 kcal/mol higher than that of V110C alone. **Retaining selected contacts** therefore needs to be interpreted with the full pose and contact network; single-site effects must be tested again in combinations.\n\nMost tested combinations did not further improve the better parent's target-ligand score or enlarge the two-ligand difference. We continued to focus on **single-site candidates** and evaluated combinations jointly against WT, their parents and the complete contact network."
+    },
+    {
+      "_template": "heading",
+      "level": 2,
+      "text": "1.6 Selecting two candidates for dynamics",
+      "attributes": "#docking-md-candidates toc=\"Candidates for MD\""
+    },
+    {
+      "_template": "text",
+      "body": "Combining score separation and contact review, we selected **N84V and V368R** for MD. Their opposite, two-sided score changes provided representative candidates for comparing ascr#18 and ascr#3 behavior."
+    },
+    {
+      "_template": "text",
+      "body": "In the selected N84V pose, position 84 did not directly contact the ligand. Relative to the same-batch WT, ascr#18 gained R189-related ionic and hydrogen-bond-type contacts and a W338 hydrophobic contact. We therefore focused on changes in ligand position and neighboring contacts, asking whether these contacts persist dynamically and accompany ligand localization."
+    },
+    {
+      "_template": "text",
+      "body": "<figure class=\"docking-source-figure\" id=\"docking-figure-4\"><div class=\"docking-panel-scroll\" role=\"region\" aria-label=\"Figure 4 panels; scroll horizontally on small screens\" tabindex=\"0\"><div class=\"docking-panel-row\" style=\"--source-columns:2231fr 1210fr 2231fr 2607fr\"><a href=\"https://static.igem.wiki/teams/6303/wiki/v8-6/v86-290633cd2c70-docking-source-07.avif\" target=\"_blank\" rel=\"noopener\" aria-label=\"Open full-resolution N84V–ascr#3, three-dimensional pocket\"><img src=\"https://static.igem.wiki/teams/6303/wiki/v8-6/v86-290633cd2c70-docking-source-07.avif\" alt=\"N84V–ascr#3, three-dimensional pocket\" width=\"4000\" height=\"3000\" loading=\"lazy\" decoding=\"async\" /></a><a href=\"https://static.igem.wiki/teams/6303/wiki/v8-6/v86-fdc859343d6f-docking-source-08.avif\" target=\"_blank\" rel=\"noopener\" aria-label=\"Open full-resolution N84V–ascr#3, two-dimensional contacts\"><img src=\"https://static.igem.wiki/teams/6303/wiki/v8-6/v86-fdc859343d6f-docking-source-08.avif\" alt=\"N84V–ascr#3, two-dimensional contacts\" width=\"1709\" height=\"2400\" loading=\"lazy\" decoding=\"async\" /></a><a href=\"https://static.igem.wiki/teams/6303/wiki/v8-6/v86-1239c64d4af0-docking-source-09.avif\" target=\"_blank\" rel=\"noopener\" aria-label=\"Open full-resolution N84V–ascr#18, three-dimensional pocket\"><img src=\"https://static.igem.wiki/teams/6303/wiki/v8-6/v86-1239c64d4af0-docking-source-09.avif\" alt=\"N84V–ascr#18, three-dimensional pocket\" width=\"4000\" height=\"3000\" loading=\"lazy\" decoding=\"async\" /></a><a href=\"https://static.igem.wiki/teams/6303/wiki/v8-6/v86-c89c70191520-docking-source-10.avif\" target=\"_blank\" rel=\"noopener\" aria-label=\"Open full-resolution N84V–ascr#18, two-dimensional contacts\"><img src=\"https://static.igem.wiki/teams/6303/wiki/v8-6/v86-c89c70191520-docking-source-10.avif\" alt=\"N84V–ascr#18, two-dimensional contacts\" width=\"2400\" height=\"1536\" loading=\"lazy\" decoding=\"async\" /></a></div></div><figcaption><strong>Figure 4.</strong> Predicted docking poses of Gpr2 N84V with the two ligands: (a) N84V–ascr#3; (b) N84V–ascr#18. The lowest-scoring pose from each run and its surrounding residues are shown to compare ligand position and orientation in the N84V pocket. Residue numbering follows the WT sequence.</figcaption></figure>"
+    },
+    {
+      "_template": "text",
+      "body": "V368R raised another question. Although the mutation introduces arginine, R368 itself showed a close contact only with ascr#18 in the selected poses and no ionic-type contact. Both ligands gained K364-related ionic and hydrogen-bond-type contacts. Its explanation therefore also requires the neighboring structure and contact network."
+    },
+    {
+      "_template": "text",
+      "body": "<figure class=\"docking-source-figure\" id=\"docking-figure-5\"><div class=\"docking-panel-scroll\" role=\"region\" aria-label=\"Figure 5 panels; scroll horizontally on small screens\" tabindex=\"0\"><div class=\"docking-panel-row\" style=\"--source-columns:2006fr 2330fr 2006fr 1936fr\"><a href=\"https://static.igem.wiki/teams/6303/wiki/v8-6/v86-ed8369c53675-docking-source-11.avif\" target=\"_blank\" rel=\"noopener\" aria-label=\"Open full-resolution V368R–ascr#3, three-dimensional pocket\"><img src=\"https://static.igem.wiki/teams/6303/wiki/v8-6/v86-ed8369c53675-docking-source-11.avif\" alt=\"V368R–ascr#3, three-dimensional pocket\" width=\"2666\" height=\"2000\" loading=\"lazy\" decoding=\"async\" /></a><a href=\"https://static.igem.wiki/teams/6303/wiki/v8-6/v86-9b84a8b736bb-docking-source-12.avif\" target=\"_blank\" rel=\"noopener\" aria-label=\"Open full-resolution V368R–ascr#3, two-dimensional contacts\"><img src=\"https://static.igem.wiki/teams/6303/wiki/v8-6/v86-9b84a8b736bb-docking-source-12.avif\" alt=\"V368R–ascr#3, two-dimensional contacts\" width=\"2400\" height=\"1546\" loading=\"lazy\" decoding=\"async\" /></a><a href=\"https://static.igem.wiki/teams/6303/wiki/v8-6/v86-a7066f8f852e-docking-source-13.avif\" target=\"_blank\" rel=\"noopener\" aria-label=\"Open full-resolution V368R–ascr#18, three-dimensional pocket\"><img src=\"https://static.igem.wiki/teams/6303/wiki/v8-6/v86-a7066f8f852e-docking-source-13.avif\" alt=\"V368R–ascr#18, three-dimensional pocket\" width=\"2666\" height=\"2000\" loading=\"lazy\" decoding=\"async\" /></a><a href=\"https://static.igem.wiki/teams/6303/wiki/v8-6/v86-848ee038bf41-docking-source-14.avif\" target=\"_blank\" rel=\"noopener\" aria-label=\"Open full-resolution V368R–ascr#18, two-dimensional contacts\"><img src=\"https://static.igem.wiki/teams/6303/wiki/v8-6/v86-848ee038bf41-docking-source-14.avif\" alt=\"V368R–ascr#18, two-dimensional contacts\" width=\"2400\" height=\"1867\" loading=\"lazy\" decoding=\"async\" /></a></div></div><figcaption><strong>Figure 5.</strong> Predicted docking poses of Gpr2 V368R with the two ligands: (a) V368R–ascr#3; (b) V368R–ascr#18. The lowest-scoring pose from each run and its surrounding residues are shown to compare ligand position and orientation in the V368R pocket. Residue numbering follows the WT sequence.</figcaption></figure>"
+    },
+    {
+      "_template": "text",
+      "body": "Docking led to dynamic questions: in the membrane environment of the full-length receptor, does the ligand retain its initial position, and which contacts persist or rearrange? WT, N84V and V368R were each paired with both ligands to form **six MD systems**. [Read the MD comparison](/model-md/)."
+    },
+    {
+      "_template": "heading",
+      "level": 2,
+      "text": "1.7 Looking for comparable positions across receptors",
+      "attributes": "#docking-cross-receptor toc=\"Cross-receptor analysis\""
+    },
+    {
+      "_template": "text",
+      "body": "Beyond Gpr2, we compared Gpr3, GprC and the *Caenorhabditis elegans* receptors DAF-37 and SRBC-64 to find contact positions worth studying in parallel. Hu et al. (2024) [2](#docking-reference-2) provided a reference for comparing ascaroside pockets across docking models."
+    },
+    {
+      "_template": "text",
+      "body": "For each receptor, five predicted models were used. Within a model, we paired ascr#18 and ascr#3 contact frequencies, then checked positional correspondence through **sequence alignment and structural mapping**. We also recorded which residues were retained in the actual constructs."
+    },
+    {
+      "_template": "text",
+      "body": "The fungal TM6 tryptophans **Gpr2 W338, Gpr3 W306 and GprC W388** combined ascr#18-biased contact differences with support from sequence and structural correspondence. They are candidates for parallel substitutions that could test whether corresponding positions have similar roles."
+    },
+    {
+      "_template": "image",
+      "src": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-bbf52d6e8540-docking-source-15.avif",
+      "alt": "Figure 6. Published docking-model reference for GprC, SRBC-64 and DAF-37.",
+      "body": "**Figure 6.** Published ascaroside-pocket models for GprC, SRBC-64 and DAF-37. The supplied crop shows five poses for each of five ascarosides. Cropped from Hu et al. (2024), Fig. 5a–c [2](#docking-reference-2), under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), as literature context for the cross-receptor comparison.",
+      "layout": "full",
+      "imageWidth": "wide"
+    },
+    {
+      "_template": "text",
+      "body": "This extends selection from within-receptor ligand comparisons to cross-receptor analysis. Contact differences nominate positions; sequence and structural correspondence establish comparability; construct records identify the structures actually analyzed. **Raw scores, per-pose contact tables, model numbers, WT sources and processing records** support review and reuse."
+    },
+    {
+      "_template": "heading",
+      "level": 2,
+      "text": "Figure preparation record",
+      "attributes": "#docking-figure-record toc=\"Figure record\""
+    },
+    {
+      "_template": "text",
+      "body": ":::details[Figure sources and remaining materials]\nFigures 1, 2, 4 and 5 show the team’s predicted structures and contact diagrams. Figure 6 supplies the cited literature reference. Figure 3 and the proposed C1–C3 comparison views remain in preparation. Structural figures retain their construct, pose, residue-numbering and contact-analysis records for review and reuse.\n:::"
+    },
+    {
+      "_template": "heading",
+      "level": 2,
+      "text": "References",
+      "attributes": "#docking-references toc=\"References\""
+    },
+    {
+      "_template": "text",
+      "body": "<div id=\"docking-reference-1\"></div>**[1]** Abramson J, Adler J, Dunger J, et al. Accurate structure prediction of biomolecular interactions with AlphaFold 3. *Nature.* 2024;630:493–500. [doi:10.1038/s41586-024-07487-w](https://doi.org/10.1038/s41586-024-07487-w)."
+    },
+    {
+      "_template": "text",
+      "body": "<div id=\"docking-reference-2\"></div>**[2]** Hu X, Hoffmann DS, Wang M, et al. GprC of the nematode-trapping fungus *Arthrobotrys flagrans* activates mitochondria and reprograms fungal cells for nematode hunting. *Nature Microbiology.* 2024;9:1752–1763. [doi:10.1038/s41564-024-01731-9](https://doi.org/10.1038/s41564-024-01731-9)."
+    }
+  ]
+}

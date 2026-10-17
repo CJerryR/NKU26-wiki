@@ -32,3 +32,14 @@ test('camera remains finite and continuous through both directions of the flight
     }
   }
 });
+
+test('portal entry and exit keep finite camera matrices outside the field interval', () => {
+  const cam = new T.PerspectiveCamera(), view = sandbox.window.NKFieldCamera(T, cam);
+  for (const aspect of [.462, 1.6, 2.4, 3.56]) {
+    view.fit(aspect);
+    for (let i = -150; i <= 1200; i++) {
+      view.update(i / 1000, 0);
+      assert.ok([...cam.position.toArray(), ...cam.matrixWorldInverse.elements].every(Number.isFinite), `invalid camera at t=${i / 1000}`);
+    }
+  }
+});

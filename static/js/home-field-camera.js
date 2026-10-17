@@ -19,7 +19,9 @@
       cam.updateProjectionMatrix();
     }
     function update(t, time) {
-      var e = ease(t);
+      // Portal entry uses t < 0. Clamp orientation, while distance keeps its
+      // approach extension; a fractional power of negative ease produces NaN.
+      var e = ease(Math.max(0, Math.min(1, t)));
       var dist = t < 0 ? 620 * (1 - t * 1.3) : t > 1 ? 1.45 * (1 - (t - 1) * 1.4) : 620 * Math.pow(1.45 / 620, e);
       target.set(0, 0, 0).lerp(targetEnd, e);
       dir.copy(start).lerp(end, Math.pow(e, 1.2)).normalize().applyAxisAngle(UP, -0.85 * Math.sin(Math.PI * e) * turn);

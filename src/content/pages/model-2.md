@@ -1,12 +1,15 @@
 ---
-title: Model 2
-heading: Model 2
-sub: ''
+title: 'Model archive: Molecular Dynamics'
+heading: Molecular Dynamics
+sub: Continue to the current model chapter.
 crumbs:
   - Model
-  - Model 2
-search: true
+  - Molecular Dynamics
+hidden: true
+search: false
 meta: {}
 draft: false
-hidden: false
 ---
+## Current chapter {#current-chapter toc="Current chapter"}
+
+The model chapters now have descriptive names. [Continue to Molecular Dynamics](/model-md/), or [open the Model overview](/model/).

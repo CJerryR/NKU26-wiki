@@ -2,10 +2,19 @@
    a glass pill at the bottom that opens the same list on narrow ones.
    Material: the original clear lens from glass.css / glass.ts. The section being read is marked by a film
    that springs along the list (src/scripts/toc.ts). */
-.toc { grid-column: 1; grid-row: 1; position: relative; z-index: 3; }
+.toc {
+  --toc-type: .9375rem;
+  --toc-subtype: .90625rem;
+  --toc-meta: .8125rem;
+  --toc-title: 1.25rem;
+  --toc-pad: 12px;
+  --toc-row-pad: 8px;
+  --toc-num-width: 30px;
+  grid-column: 1; grid-row: 1; position: relative; z-index: 3;
+}
 .toc__panel {
   position: sticky; top: calc(var(--nav-h) + 20px); display: flex; flex-direction: column;
-  max-height: calc(100vh - var(--nav-h) - 40px); padding: 18px 10px 12px; border-radius: 24px; color: var(--ink);
+  max-height: calc(100vh - var(--nav-h) - 40px); padding: 20px var(--toc-pad) 14px; border-radius: 24px; color: var(--ink);
 }
 /* Original soil-block lens optics: clear centre, refracting rim, no zoom.
    Scope the material to this outline so navigation and dialogs retain theirs. */
@@ -27,8 +36,8 @@
   .toc__panel.lg { --lg-tint-bg: rgb(251 248 241 / .97); }
 }
 .toc__head { flex-shrink: 0; position: relative; padding: 0 10px 12px; }
-.toc__kicker { font-size: 12.5px; font-weight: 600; color: var(--ink-3); }
-.toc__title { margin-top: 2px; font-family: var(--font-display); font-size: 19px; font-weight: 560; line-height: 1.2; }
+.toc__kicker { font-size: var(--toc-meta); font-weight: 600; color: var(--ink-2); }
+.toc__title { margin-top: 3px; font-family: var(--font-display); font-size: var(--toc-title); font-weight: 600; line-height: 1.3; overflow-wrap: anywhere; }
 .toc__close { display: none; }
 .toc__progress { flex-shrink: 0; height: 3px; margin: 0 10px 10px; border-radius: 3px; background: rgba(36, 28, 43, .08); overflow: hidden; }
 .toc__progress i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--iris), var(--iris-bright)); transform: scaleX(0); transform-origin: 0 50%; }
@@ -42,14 +51,16 @@
 }
 .toc__film.is-on { opacity: 1; }
 .toc__item { position: relative; z-index: 1; }
-.toc__item a { display: grid; grid-template-columns: 28px minmax(0, 1fr); align-items: baseline; padding: 7px 10px; border-radius: 12px; font-size: 14px; line-height: 1.35; color: var(--ink-2); transition: background .2s, color .2s; }
-.toc__num { font-family: var(--font-mono); font-size: 11px; color: var(--ink-3); }
-.toc__item--3 a, .toc__item--4 a { grid-template-columns: minmax(0, 1fr); padding: 5px 10px 5px 38px; font-size: 13px; color: var(--ink-3); }
+.toc__item a { display: grid; grid-template-columns: var(--toc-num-width) minmax(0, 1fr); align-items: baseline; padding: var(--toc-row-pad) 10px; border-radius: 12px; font-size: var(--toc-type); font-weight: 500; line-height: 1.45; color: var(--ink); transition: background .2s, color .2s; }
+.toc__text { min-width: 0; overflow-wrap: anywhere; }
+.toc__num { font-family: var(--font-mono); font-size: var(--toc-meta); color: var(--ink-2); }
+.toc__item--3 a, .toc__item--4 a { grid-template-columns: minmax(0, 1fr); padding: calc(var(--toc-row-pad) - 2px) 10px calc(var(--toc-row-pad) - 2px) calc(10px + var(--toc-num-width)); font-size: var(--toc-subtype); font-weight: 450; color: var(--ink-2); }
+.toc__item--4 a { padding-left: calc(22px + var(--toc-num-width)); font-size: calc(var(--toc-subtype) - .0625rem); }
 .toc__item a:hover { background: rgba(110, 79, 184, .08); color: var(--ink); }
 .toc__item a.is-active { color: var(--iris-deep); font-weight: 600; }
 .toc__item a.is-active:hover { background: transparent; }
 .toc__item a.is-active .toc__num { color: var(--iris); }
-.toc__top { flex-shrink: 0; display: inline-flex; align-items: center; gap: 6px; align-self: flex-start; margin: 10px 10px 2px; font-size: 13px; color: var(--ink-3); transition: color .2s; }
+.toc__top { flex-shrink: 0; display: inline-flex; align-items: center; gap: 6px; align-self: flex-start; margin: 10px 10px 2px; font-size: var(--toc-meta); color: var(--ink-2); transition: color .2s; }
 .toc__top svg { width: 14px; height: 14px; }
 .toc__top:hover { color: var(--iris-deep); }
 .toc__pill { display: none; }
@@ -58,6 +69,28 @@
    (112px tall + bottom offset + its bob/hover motion + breathing room). */
 @media (min-width: 1100px) {
   .toc__panel { max-height: calc(100dvh - var(--nav-h) - 170px); }
+}
+/* Desktop tiers enlarge actual type and geometry, never a scaled bitmap
+   or transformed text layer. Keep the original clear lens optics above. */
+@media (min-width: 1600px) {
+  .toc { --toc-type: 1rem; --toc-subtype: .9375rem; --toc-meta: .875rem; --toc-title: 1.375rem; --toc-pad: 14px; --toc-num-width: 32px; }
+}
+@media (min-width: 1920px) {
+  .toc { --toc-type: 1.0625rem; --toc-subtype: 1rem; --toc-meta: .9375rem; --toc-title: 1.5rem; --toc-row-pad: 9px; --toc-num-width: 34px; }
+}
+@media (min-width: 2560px) {
+  .toc { --toc-type: 1.1875rem; --toc-subtype: 1.125rem; --toc-meta: 1rem; --toc-title: 1.6875rem; --toc-pad: 18px; --toc-row-pad: 10px; --toc-num-width: 38px; }
+}
+@media (min-width: 3200px) {
+  .toc { --toc-type: 1.3125rem; --toc-subtype: 1.25rem; --toc-meta: 1.125rem; --toc-title: 1.875rem; --toc-pad: 20px; --toc-row-pad: 11px; --toc-num-width: 42px; }
+}
+/* Short laptop and ultrawide viewports keep readable type; only the list
+   scrolls while the heading, progress and Back to top remain available. */
+@media (min-width: 1100px) and (max-height: 700px) {
+  .toc { --toc-row-pad: 6px; }
+  .toc__panel { padding-block: 14px 10px; }
+  .toc__head { padding-bottom: 8px; }
+  .toc__top { margin-top: 6px; }
 }
 
 @media (max-width: 1099px) {
@@ -94,8 +127,9 @@
   .toc__head { padding-right: 52px; }
   .toc__close { display: grid; place-items: center; position: absolute; top: -4px; right: 2px; width: 36px; height: 36px; border-radius: 99px; background: rgba(36, 28, 43, .06); }
   .toc__close svg { width: 16px; height: 16px; }
-  .toc__item a { padding-block: 9px; font-size: 15px; }
-  .toc__item--3 a, .toc__item--4 a { padding-block: 7px; font-size: 14px; }
+  .toc__item a { min-height: 44px; padding-block: 10px; font-size: 1rem; }
+  .toc__item--3 a, .toc__item--4 a { min-height: 44px; padding-block: 10px; font-size: .9375rem; }
+  .toc__item--4 a { font-size: .90625rem; }
   .site-footer { padding-bottom: 92px; }
 }
 @media (max-width: 640px) {

@@ -2,8 +2,12 @@
 // <wiki-toolkit data-props="{…}"> — interactive content blocks from Tina.
 // Custom elements reconnect automatically when Tina replaces an editable island.
 // Each family of components is a separate chunk, loaded only when a page uses it.
-import styles from '../styles/toolkit.css?raw';
+import baseStyles from '../styles/toolkit.css?raw';
+// night colours as fallbacks on --tk-* tokens: day renders exactly as before
+import nightStyles from '../styles/toolkit-night.css?raw';
 import { h, icon, asset } from './toolkit/core.js';
+
+const styles = `${baseStyles}\n${nightStyles}`;
 
 const families = {
   content: () => import('./toolkit/content.js'),

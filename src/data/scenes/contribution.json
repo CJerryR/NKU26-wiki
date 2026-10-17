@@ -1,0 +1,303 @@
+{
+  "page": "contribution",
+  "enabled": true,
+  "note": "Design units: desktop canvas 1600x900, mobile 900x1600, origin at the canvas centre, y down. w = drawn width. from = state at scroll progress 0, to = state at 1; win = the part of the progress over which this layer moves. s scale, r degrees, o opacity. depth = pointer parallax in design px.",
+  "signature": "The toolbox lid swings off and the parts fly out into a row.",
+  "desktop": {
+    "canvas": [
+      1600,
+      900
+    ],
+    "title": {
+      "y": -30,
+      "toY": -300,
+      "toScale": 0.62
+    },
+    "layers": [
+      {
+        "id": "body",
+        "prop": "toolbox-body",
+        "w": 360,
+        "z": 3,
+        "depth": 10,
+        "from": {
+          "x": 0,
+          "y": 300
+        },
+        "to": {
+          "x": 0,
+          "y": 330,
+          "s": 1.05
+        },
+        "win": [
+          0.1,
+          0.78
+        ]
+      },
+      {
+        "id": "lid",
+        "prop": "toolbox-lid",
+        "w": 370,
+        "z": 4,
+        "depth": 14,
+        "from": {
+          "x": 0,
+          "y": 205
+        },
+        "to": {
+          "x": 570,
+          "y": 260,
+          "r": 20,
+          "s": 1.05
+        },
+        "win": [
+          0.06,
+          0.45
+        ]
+      },
+      {
+        "id": "promoter",
+        "prop": "block-promoter",
+        "w": 170,
+        "z": 2,
+        "depth": 18,
+        "from": {
+          "x": -40,
+          "y": 280,
+          "s": 0.5,
+          "o": 0
+        },
+        "to": {
+          "x": -420,
+          "y": 30,
+          "r": -8,
+          "s": 1.1,
+          "o": 1
+        },
+        "win": [
+          0.2,
+          0.7
+        ]
+      },
+      {
+        "id": "cds",
+        "prop": "block-cds",
+        "w": 190,
+        "z": 2,
+        "depth": 18,
+        "from": {
+          "x": 0,
+          "y": 280,
+          "s": 0.5,
+          "o": 0
+        },
+        "to": {
+          "x": -150,
+          "y": -40,
+          "r": 4,
+          "s": 1.1,
+          "o": 1
+        },
+        "win": [
+          0.25,
+          0.75
+        ]
+      },
+      {
+        "id": "terminator",
+        "prop": "block-terminator",
+        "w": 150,
+        "z": 2,
+        "depth": 18,
+        "from": {
+          "x": 40,
+          "y": 280,
+          "s": 0.5,
+          "o": 0
+        },
+        "to": {
+          "x": 150,
+          "y": -40,
+          "r": -4,
+          "s": 1.1,
+          "o": 1
+        },
+        "win": [
+          0.3,
+          0.8
+        ]
+      },
+      {
+        "id": "cryovial",
+        "prop": "cryovial",
+        "w": 90,
+        "z": 2,
+        "depth": 18,
+        "from": {
+          "x": 20,
+          "y": 280,
+          "s": 0.5,
+          "o": 0
+        },
+        "to": {
+          "x": 430,
+          "y": -30,
+          "r": 8,
+          "s": 1.1,
+          "o": 1
+        },
+        "win": [
+          0.35,
+          0.85
+        ]
+      },
+      {
+        "id": "manual",
+        "prop": "manual",
+        "w": 260,
+        "z": 3,
+        "depth": 20,
+        "from": {
+          "x": -520,
+          "y": 290
+        },
+        "to": {
+          "x": -620,
+          "y": 320,
+          "r": -6,
+          "s": 1.05
+        },
+        "win": [
+          0.1,
+          0.78
+        ]
+      }
+    ]
+  },
+  "mobile": {
+    "canvas": [
+      900,
+      1600
+    ],
+    "title": {
+      "y": -80,
+      "toY": -470,
+      "toScale": 0.7
+    },
+    "layers": [
+      {
+        "id": "body",
+        "prop": "toolbox-body",
+        "w": 400,
+        "z": 3,
+        "depth": 0,
+        "from": {
+          "x": 0,
+          "y": 520
+        },
+        "to": {
+          "x": 0,
+          "y": 560,
+          "s": 1.05
+        },
+        "win": [
+          0.1,
+          0.78
+        ]
+      },
+      {
+        "id": "lid",
+        "prop": "toolbox-lid",
+        "w": 410,
+        "z": 4,
+        "depth": 0,
+        "from": {
+          "x": 0,
+          "y": 425
+        },
+        "to": {
+          "x": 250,
+          "y": 330,
+          "r": 20,
+          "s": 1.05
+        },
+        "win": [
+          0.06,
+          0.45
+        ]
+      },
+      {
+        "id": "promoter",
+        "prop": "block-promoter",
+        "w": 200,
+        "z": 2,
+        "depth": 0,
+        "from": {
+          "x": -40,
+          "y": 500,
+          "s": 0.5,
+          "o": 0
+        },
+        "to": {
+          "x": -250,
+          "y": 120,
+          "r": -8,
+          "s": 1.1,
+          "o": 1
+        },
+        "win": [
+          0.2,
+          0.7
+        ]
+      },
+      {
+        "id": "cds",
+        "prop": "block-cds",
+        "w": 220,
+        "z": 2,
+        "depth": 0,
+        "from": {
+          "x": 0,
+          "y": 500,
+          "s": 0.5,
+          "o": 0
+        },
+        "to": {
+          "x": 0,
+          "y": 40,
+          "r": 4,
+          "s": 1.1,
+          "o": 1
+        },
+        "win": [
+          0.25,
+          0.75
+        ]
+      },
+      {
+        "id": "terminator",
+        "prop": "block-terminator",
+        "w": 180,
+        "z": 2,
+        "depth": 0,
+        "from": {
+          "x": 40,
+          "y": 500,
+          "s": 0.5,
+          "o": 0
+        },
+        "to": {
+          "x": 250,
+          "y": 120,
+          "r": -4,
+          "s": 1.1,
+          "o": 1
+        },
+        "win": [
+          0.3,
+          0.8
+        ]
+      }
+    ]
+  }
+}
