@@ -58,7 +58,18 @@
     document.body.appendChild(rail);
     var cue = document.createElement('div'); cue.className = 'pager__cue'; cue.setAttribute('aria-hidden', 'true'); document.body.appendChild(cue);
     var nextDot = -1;   // v7.7: the page a remembered scroll will lead to
+    var dotPage = -1;
     function dots() {
+      /* 2026-10-17: a dot keeps focus after it was clicked; when the page then
+         changes by wheel or keys, its label (shown on focus) named the old page.
+         Focus follows the reader instead, only when the page itself changes. */
+      if (cur !== dotPage) {
+        var fd = document.activeElement;
+        if (dotPage >= 0 && fd && fd !== pages[cur].dot && fd.classList && fd.classList.contains('pager__dot')) {
+          try { pages[cur].dot.focus({ preventScroll: true }); } catch (e) {}
+        }
+        dotPage = cur;
+      }
       pages.forEach(function (pg, i) {
         pg.dot.classList.toggle('is-on', i === cur);
         pg.dot.style.setProperty('--f', i < cur ? 1 : i > cur ? 0 : (pg.steps ? st / pg.steps : 1));

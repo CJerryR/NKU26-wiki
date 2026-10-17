@@ -1,5 +1,5 @@
 /* Running text and embedded blocks share the same reading-column boundary. */
-.prose { font-size: 17px; line-height: 1.72; color: var(--ink); }
+.prose { font-size: 18px; line-height: 1.72; color: var(--ink); }
 .prose :is(p, ul, ol, blockquote, pre, h2, h3, h4, h5, .callout, .timeline, .features, .details, .lead) { max-width: calc(var(--measure) + var(--bleed)); }
 .prose :is(.cards, .figure, .table-wrap, .stats, .people, .refs, .wiki-media, wiki-toolkit) {
   width: 100%;
@@ -44,7 +44,7 @@
 :is(h2, h3):hover > .heading-anchor, .heading-anchor:focus-visible { opacity: .8; }
 @media (hover: none) { .heading-anchor { display: none; } }
 @media (max-width: 640px) {
-  .prose { font-size: 16.5px; line-height: 1.7; }
+  .prose { font-size: 17.5px; line-height: 1.7; }
   .doc-section + .doc-section { margin-top: 64px; }
   .prose h3 { font-size: 21px; }
   .prose blockquote { font-size: 21px; }

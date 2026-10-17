@@ -26,10 +26,10 @@
         <g data-o="wormP"><g data-art="worm-parasitic"><path class="as-worm as-worm--pp" d="M-92-40C-58-48-40-30-24-6C-10 16 8 34 36 36C58 38 76 30 94 34" /><path class="as-worm-stylet" d="M-92-40l-14-3" /></g></g>
         <text class="as-label" data-o="lblF" text-anchor="middle"><tspan x="0" dy="0">Free-living</tspan><tspan x="0" dy="1.15em">nematodes</tspan></text>
         <text class="as-label" data-o="lblP" text-anchor="middle"><tspan x="0" dy="0">Plant-parasitic</tspan><tspan x="0" dy="1.15em">nematodes</tspan></text>
-        <g data-o="barF"><rect class="as-bar__track" x="-120" y="-14" width="240" height="28" rx="14" /><g clip-path="url(#as-barclip)"><g data-o="barFi"><rect x="-120" y="-14" width="240" height="28" fill="url(#as-mixF)" /></g></g></g>
-        <g data-o="barP"><rect class="as-bar__track" x="-120" y="-14" width="240" height="28" rx="14" /><g clip-path="url(#as-barclip)"><g data-o="barPi"><rect x="-120" y="-14" width="240" height="28" fill="url(#as-mixP)" /></g></g></g>
-        <text class="as-ratio" data-o="ratF" text-anchor="middle">ascr#3 &gt; ascr#18</text>
-        <text class="as-ratio" data-o="ratP" text-anchor="middle">ascr#3 &lt; ascr#18</text>
+        <g data-o="barF"><rect class="as-bar__track" x="-120" y="-14" width="240" height="28" rx="14" /><g clip-path="url(#as-barclip)"><g data-o="barFi"><rect x="0" y="-14" width="240" height="28" fill="url(#as-mixF)" /></g></g></g>
+        <g data-o="barP"><rect class="as-bar__track" x="-120" y="-14" width="240" height="28" rx="14" /><g clip-path="url(#as-barclip)"><g data-o="barPi"><rect x="0" y="-14" width="240" height="28" fill="url(#as-mixP)" /></g></g></g>
+        <text class="as-ratio" data-o="ratF" text-anchor="middle"><tspan class="as-ratio--3">ascr#3</tspan> &gt; <tspan class="as-ratio--18">ascr#18</tspan></text>
+        <text class="as-ratio" data-o="ratP" text-anchor="middle"><tspan class="as-ratio--3">ascr#3</tspan> &lt; <tspan class="as-ratio--18">ascr#18</tspan></text>
         <g data-o="swap"><path class="as-swap" d="M-38-10H38M-38 10H38" marker-start="url(#as-tip)" marker-end="url(#as-tip)" /></g>
         <text class="as-q" data-o="ask" text-anchor="middle">Different ratio, different nematode?</text>
 
@@ -54,6 +54,17 @@
         <g data-o="glow"><ellipse rx="140" ry="76" fill="url(#as-glow)" /></g>
         <text class="as-label as-label--gold" data-o="lblBx" text-anchor="middle">Betaxanthin</text>
 
+        <!-- the computer sits below the receptor: the pocket (a child of the receptor) lands on its screen -->
+        <g data-o="scr"><g data-art="computer">
+          <rect x="-169" y="-107" width="338" height="214" rx="14" class="as-scr__case" />
+          <rect x="-153" y="-93" width="306" height="166" rx="6" class="as-scr__glass" />
+          <path d="M-36 107L-46 128H46L36 107" class="as-scr__case" />
+          <text class="as-code" x="-134" y="-58">PyMOL</text>
+          <text class="as-code" x="-134" y="-24">&#8250; MD</text>
+          <text class="as-code" x="-134" y="10">&#8250; docking&#8230;</text>
+          <path class="as-code-line" d="M-134 40H-30M-134 56H-70" />
+        </g></g>
+
         <!-- ===== chapter 2: the receptor (authored in slide-2 coordinates, centre 300,490) ===== -->
         <g data-o="rec">
           <g transform="translate(-300 -490)">
@@ -67,15 +78,6 @@
           <path class="as-hypha" d="M-120 70C-90 40-70 56-48 18S-24-16-12-30M-48 18C-24 30 0 40 32 30S84 26 110 6M32 30C36 50 40 64 38 82" />
           <circle class="as-knob" cx="110" cy="2" r="13" /><circle class="as-knob" cx="38" cy="86" r="11" /><circle class="as-knob" cx="-12" cy="-34" r="12" />
           <path class="as-prey" d="M40-52C62-70 84-36 112-54" />
-        </g></g>
-        <g data-o="scr"><g data-art="computer">
-          <rect x="-169" y="-107" width="338" height="214" rx="14" class="as-scr__case" />
-          <rect x="-153" y="-93" width="306" height="166" rx="6" class="as-scr__glass" />
-          <path d="M-36 107L-46 128H46L36 107" class="as-scr__case" />
-          <text class="as-code" x="-134" y="-58">PyMOL</text>
-          <text class="as-code" x="-134" y="-24">&#8250; MD</text>
-          <text class="as-code" x="-134" y="10">&#8250; docking&#8230;</text>
-          <path class="as-code-line" d="M-134 40H-30M-134 56H-70" />
         </g></g>
 
         <!-- ===== molecules (top layer: they travel into the receptor) ===== -->
@@ -93,14 +95,15 @@
         </g></g>
         <text class="as-note" data-o="lblBox" text-anchor="middle">Packaged as a kit</text>
         <g data-o="map"><g data-art="china-map" data-as-map></g></g>
+        <g data-o="ping" aria-hidden="true"><circle class="as-ping" r="14" /><circle class="as-ping" r="14" /><circle class="as-ping" r="14" /></g>
       </svg>
 
       <div class="as__caps" data-as-caps>
-        <div class="as__cap as__cap--title" data-as-cap="0-1" data-at="64,52,560">
+        <div class="as__cap as__cap--title" data-as-cap="0-1" data-as-tall="0" data-at="64,52,640">
           <h2 class="as__title" id="as-title">Nematodes leave chemical traces</h2>
           <p>Ascarosides are small signal molecules that nematodes release. We follow two of them: ascr#3 and ascr#18.</p>
         </div>
-        <div class="as__cap" data-as-cap="1" data-at="70,540,560">
+        <div class="as__cap" data-as-cap="1" data-at="724,58,512">
           <p>Free-living nematodes tend to release more ascr#3 than ascr#18; plant-parasitic ones, the reverse. So the ratio may hint at which nematodes are in a field, and we would like to read it early, before the damage shows.</p>
           <p class="as__fine">Schematic only, not measured values.</p>
         </div>
@@ -112,11 +115,11 @@
           <h3>Redesigned on the computer</h3>
           <p>With PyMOL, molecular dynamics and docking we model its binding pocket, and redesign it aiming for a tighter fit to ascr#18.</p>
         </div>
-        <div class="as__cap" data-as-cap="7-9" data-at="866,46,380">
+        <div class="as__cap" data-as-cap="7-9" data-at="902,46,350">
           <h3>Put to work in yeast</h3>
           <p>We express the redesigned receptor in yeast and couple it to the yeast&#8217;s own signalling pathway, which leads into the nucleus.</p>
         </div>
-        <div class="as__cap" data-as-cap="10" data-at="866,46,380">
+        <div class="as__cap" data-as-cap="10" data-at="902,46,350">
           <h3>Signal in, colour out</h3>
           <p>The design turns the level of one ascaroside around the cell into a yellow pigment, betaxanthin.</p>
         </div>

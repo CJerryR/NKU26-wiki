@@ -204,10 +204,13 @@
   }
   function build(st, lay, big) {
     var L = LAY[lay], vb = L.vb, P = PLANT[st.plant];
-    var hot = g2(st, st.hot[0], st.hot[1]), lx = L.lens[0], ly = L.lens[1], lr = L.lens[2], k = lr / (LENS_R + 4);
+    // Overview uses one ground line and soil depth across all artboards.
+    var soilScale = lay === 'card' ? 247 / P.b : 1;
+    var hot = g2(st, st.hot[0], st.hot[1]); hot[1] *= soilScale;
+    var lx = L.lens[0], ly = L.lens[1], lr = L.lens[2], k = lr / (LENS_R + 4);
     var ringR = big ? 12 : 13;
     var s = '<svg class="th3-svg" viewBox="' + vb.join(' ') + '" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false">';
-    s += '<g class="th3-plant"><ellipse class="th3-plant__shade" cx="0" cy="' + (P.b - 2) + '" rx="' + (P.w / 2 + 26) + '" ry="30" fill="url(#th3-g-shade)"/>' +
+    s += '<g class="th3-plant" transform="scale(1 ' + soilScale + ')"><ellipse class="th3-plant__shade" cx="0" cy="' + (P.b - 2) + '" rx="' + (P.w / 2 + 26) + '" ry="30" fill="url(#th3-g-shade)"/>' +
       '<g transform="translate(' + -P.cx + ' ' + -P.gy + ')">' +
       '<image class="th3-plant__img" href="' + ART.plant[st.plant] + '" x="34" y="118" width="541" height="582"/>' +
       '<g class="th3-fx">' + FX[st.fx](st) + '</g></g></g>';
@@ -235,6 +238,7 @@
     });
     if (st.sign) {
       var g = g2(st, st.sign[0], st.sign[1]);
+      if (lay === 'card') g[1] *= 247 / PLANT[st.plant].b;
       s += '<span class="th3-sign" style="' + pctOf(vb, g[0] + 10, g[1] - 26) + '"><i></i>' + SIGN_NOTE + '</span>';
     }
     return s;

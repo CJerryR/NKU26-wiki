@@ -54,12 +54,6 @@ Figure 1 Yeast transformation of GPR2‑sfGFP construct
 
 #### Test {#test toc="Test"}
 
-:::warning[Data status]
-
-The wet-lab team has reported that the culture medium in part of the fluorescence experiments was prepared incorrectly, and those experiments are being repeated. Until the team confirms which fluorescence results are affected, the GPR2-sfGFP localization results in this section (fluorescence microscopy, CFW and FM4-64 staining) and the conclusion drawn from them are provisional.
-
-:::
-
 Following gene knock-in, we visualized three groups of yeast under fluorescence microscopy: unstained cells (Figure 2), cell wall-stained yeast (Figure 3), and plasma membrane-stained yeast (Figure 4).
 
 Distinct GFP fluorescence signals were detected at the cell periphery in unstained yeast.

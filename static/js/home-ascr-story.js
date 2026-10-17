@@ -16,10 +16,20 @@
        d t   delay / duration of the move (ms)          od ot  same for opacity
        via   [x, y] control point: the move bends like the slide's motion path
        from  props to jump to before moving (forward only)
-       fx    'pulse': a short glow, like the slides' colour pulse
+       fx    'pulse': a short glow, like the slides' colour pulse;
+             'ripple': rings spreading out (the kit landing on the map)
        P     overrides used on tall (portrait) screens
-   - STATES[i].cam is the part of the slide a tall screen shows (viewBox).
-   Going backwards replays the same states in reverse, briskly (700 ms). */
+   - STATES[i].cam is the part of the slide a tall screen shows (viewBox);
+     STATES[i].wcam the same for wide screens (default: the whole slide).
+   - INTRO: how slide 1 assembles when the reader arrives from above.
+   Going backwards replays the same states in reverse, briskly (700 ms).
+   2026-10-17 polish: slide 1 sits below the title block (they overlapped on
+   short screens); captions scale with the stage (cqw) so text and drawing keep
+   one proportion; the bars appear with the ratio instead of as empty pills;
+   the receptor's two states cross-fade (never both at once); the pocket flies
+   onto the monitor instead of behind it; the yeast slides pan left so its
+   captions sit beside the cell; the worms undulate; the kit lands with a
+   ripple; the chapter rail shows progress inside a chapter. */
 (function () {
   'use strict';
   var H = window.NKUH; if (!H) return;
@@ -42,31 +52,36 @@
     var STATES = [
       /* 0 · slide 1: two signals, two kinds of nematode */
       { cam: [330, 40, 620, 660], set: {
-        m3: { x: 448, y: 282, s: 1, o: 1, P: { x: 480, y: 165, s: 0.6 } }, m18: { x: 812, y: 282, s: 1, o: 1, P: { x: 800, y: 165, s: 0.6 } },
-        lbl3: { x: 448, y: 196, o: 1, P: { x: 480, y: 102 } }, lbl18: { x: 812, y: 196, o: 1, P: { x: 800, y: 102 } },
-        swap: { x: 630, y: 282, o: 1, P: { x: 640, y: 165, s: 0.55 } },
-        wormF: { x: 168, y: 236, s: 1.05, o: 1, P: { x: 480, y: 300, s: 0.85 } }, wormP: { x: 1110, y: 236, s: 1.05, o: 1, P: { x: 800, y: 300, s: 0.85 } },
-        lblF: { x: 168, y: 318, o: 1, P: { x: 480, y: 372 } }, lblP: { x: 1110, y: 318, o: 1, P: { x: 800, y: 372 } },
-        barF: { x: 168, y: 418, o: 1, P: { x: 480, y: 462, s: 1.1 } }, barP: { x: 1110, y: 418, o: 1, P: { x: 800, y: 462, s: 1.1 } },
-        barFi: { sx: 0.001, o: 1 }, barPi: { sx: 0.001, o: 1 },
-        ratF: { x: 168, y: 470, o: 0, P: { x: 480, y: 520 } }, ratP: { x: 1110, y: 470, o: 0, P: { x: 800, y: 520 } },
-        ask: { x: 630, y: 420, o: 0, P: { x: 640, y: 610 } },
-        rec: { x: 300, y: 490, s: 0.92, o: 0 }, recD: { x: 301, y: 496, o: 1 }, recL: { x: 289, y: 480, o: 1 },
+        /* the title block takes the top ~230 units (captions scale with the stage), so the drawing starts below it */
+        m3: { x: 448, y: 384, s: 1, o: 1, P: { x: 480, y: 165, s: 0.6 } }, m18: { x: 812, y: 384, s: 1, o: 1, P: { x: 800, y: 165, s: 0.6 } },
+        lbl3: { x: 448, y: 296, o: 1, P: { x: 480, y: 102 } }, lbl18: { x: 812, y: 296, o: 1, P: { x: 800, y: 102 } },
+        swap: { x: 630, y: 384, o: 1, P: { x: 640, y: 165, s: 0.55 } },
+        wormF: { x: 168, y: 372, s: 1.05, o: 1, P: { x: 480, y: 300, s: 0.85 } }, wormP: { x: 1110, y: 372, s: 1.05, o: 1, P: { x: 800, y: 300, s: 0.85 } },
+        lblF: { x: 168, y: 452, o: 1, P: { x: 480, y: 372 } }, lblP: { x: 1110, y: 452, o: 1, P: { x: 800, y: 372 } },
+        /* the bars arrive with the ratio (step 1); empty tracks on their own read as broken UI */
+        barF: { x: 168, y: 540, o: 0, P: { x: 480, y: 462, s: 1.1 } }, barP: { x: 1110, y: 540, o: 0, P: { x: 800, y: 462, s: 1.1 } },
+        /* the fill is drawn from its left end (x = -120), so it grows left to right */
+        barFi: { x: -120, sx: 0.001, o: 1 }, barPi: { x: -120, sx: 0.001, o: 1 },
+        ratF: { x: 168, y: 592, o: 0, P: { x: 480, y: 520 } }, ratP: { x: 1110, y: 592, o: 0, P: { x: 800, y: 520 } },
+        ask: { x: 630, y: 549, o: 0, P: { x: 640, y: 610 } },
+        /* the receptor's two states never show together: state A (recD) or state B (recL), with a small twist between them */
+        rec: { x: 300, y: 490, s: 0.92, o: 0 }, recD: { x: 301, y: 496, o: 1, r: 0 }, recL: { x: 289, y: 480, o: 0, r: -6 },
         pocket: { x: 356, y: 382, o: 1 }, mut: { x: 926, y: 337, o: 0 },
         fung: { x: 760, y: 330, s: 0.9, o: 0 }, scr: { x: 873, y: 362, s: 0.96, o: 0 },
         cell: { x: 647, y: 391, s: 0.9, o: 0 }, nuc: { x: 739, y: 438, o: 1 }, dna: { x: 739, y: 438, o: 1 },
         prom: mix(onDna(10), { o: 1 }), gene: mix(onDna(95), { o: 1 }), tf: mix(onDna(-130), { o: 1 }),
         gB: { x: 418, y: 262, o: 0 }, gG: { x: 452, y: 246, o: 0 }, sig: { x: 540, y: 330, o: 0 },
         arc: { x: 410, y: 270, s: 0.9, o: 0 }, out: { x: 900, y: 330, s: 1.2, o: 0 },
-        glow: { x: 1110, y: 296, o: 0 }, lblBx: { x: 1110, y: 306, o: 0 },
+        glow: { x: 1104, y: 300, o: 0 }, lblBx: { x: 1104, y: 309, o: 0 },
         strip: { x: 260, y: 409, o: 0 }, spot: { x: 58, y: -4, o: 0 }, lblStrip: { x: 260, y: 470, o: 0 },
         box: { x: 560, y: 556, s: 0.72, o: 0 }, lblBox: { x: 560, y: 660, o: 0 },
-        map: { x: 949, y: 220, s: 6, o: 0 }
+        map: { x: 949, y: 220, s: 6, o: 0 }, ping: { x: 935, y: 250, o: 0 }
       } },
       /* 1 · the ratio */
       { cam: [330, 40, 620, 660], set: {
-        barFi: { sx: 1, t: 1100 }, barPi: { sx: 1, d: 150, t: 1100 },
-        ratF: { o: 1, d: 700, t: 500 }, ratP: { o: 1, d: 850, t: 500 }, ask: { o: 1, d: 1100, t: 600 }
+        barF: { o: 1, t: 420 }, barP: { o: 1, d: 120, t: 420 },
+        barFi: { sx: 1, d: 220, t: 1100 }, barPi: { sx: 1, d: 360, t: 1100 },
+        ratF: { o: 1, d: 950, t: 500 }, ratP: { o: 1, d: 1100, t: 500 }, ask: { o: 1, d: 1350, t: 600 }
       } },
       /* 2 · slide 2 (Morph): the molecules rise, the receptor and the fungus arrive */
       { cam: [0, 0, 1280, 720], set: {
@@ -79,12 +94,12 @@
       { cam: [0, 0, 1280, 720], set: {
         fung: { o: 0, t: 500 },
         m3: { x: 330, y: 432, s: 0.36, via: [214, 330], d: 200, t: 1500 },
-        recD: { o: 0, d: 1300, t: 700 },
+        recD: { o: 0, r: 6, d: 1300, t: 700 }, recL: { o: 1, r: 0, d: 1300, t: 700 },
         lbl3: { o: 0, d: 200, t: 400 }
       } },
       /* 4 · clicks 4-6: the computer; the pocket flies to the screen and pulses */
       { cam: [0, 80, 1280, 640], set: {
-        m3: { o: 0, t: 400 }, recD: { o: 1, t: 500 },
+        m3: { o: 0, t: 400 }, recD: { o: 1, r: 0, t: 500 }, recL: { o: 0, r: -6, t: 500 },
         scr: { s: 1, o: 1, t: 600 },
         pocket: { x: 926, y: 337, via: [640, 250], d: 400, t: 1400, fx: 'pulse', fxd: 1850 }
       } },
@@ -98,23 +113,23 @@
         scr: { o: 0, t: 500 },
         m18: { x: 330, y: 432, s: 0.36, via: [600, 200], d: 200, t: 1500 },
         lbl18: { o: 0, d: 200, t: 400 },
-        recD: { o: 0, d: 1500, t: 500 }, recL: { o: 1 }
+        recD: { o: 0, r: 6, d: 1500, t: 500 }, recL: { o: 1, r: 0, d: 1500, t: 500 }
       } },
       /* 7 · slide 3 (Morph): the receptor shrinks to the corner, the yeast appears */
-      { cam: [0, 0, 1080, 720], set: {
-        m18: { x: 60, y: 70, s: 0.3, o: 1, from: { x: 60, y: 70, s: 0.3, o: 0 }, d: 900, t: 500 },
-        rec: { x: 214, y: 136, s: 0.42, r: -58, t: 1300 }, recD: { o: 1, t: 600 },
+      { cam: [0, 0, 1080, 720], wcam: [110, 0, 1280, 720], set: {
+        m18: { x: 380, y: 74, s: 0.3, o: 1, from: { x: 380, y: 74, s: 0.3, o: 0 }, d: 900, t: 500 },
+        rec: { x: 214, y: 136, s: 0.42, r: -58, t: 1300 }, recD: { o: 1, r: 0, t: 600 }, recL: { o: 0, r: -6, t: 600 },
         cell: { s: 1, o: 1, d: 250, t: 1100 }
       } },
       /* 8 · clicks 1-2: into the membrane; the G protein waits underneath */
-      { cam: [180, 60, 900, 660], set: {
+      { cam: [180, 60, 900, 660], wcam: [110, 0, 1280, 720], set: {
         rec: { x: 373, y: 222, t: 1200 },
         gB: { o: 1, d: 1000, t: 450 }, gG: { o: 1, d: 1300, t: 450 }
       } },
       /* 9 · clicks 3-4: ascr#18 binds, the signal travels to the nucleus */
-      { cam: [180, 60, 900, 660], set: {
-        m18: { x: 345, y: 176, via: [150, 200], t: 1100 },
-        recD: { o: 0, d: 900, t: 600 },
+      { cam: [180, 60, 900, 660], wcam: [110, 0, 1280, 720], set: {
+        m18: { x: 345, y: 176, via: [404, 128], t: 1100 },
+        recD: { o: 0, r: 6, d: 900, t: 600 }, recL: { o: 1, r: 0, d: 900, t: 600 },
         arc: { o: 1, d: 1200, t: 400 },
         gB: { fx: 'pulse', fxd: 1400 },
         gG: { x: 612, y: 418, via: [470, 360], d: 1700, t: 1300, fx: 'pulse', fxd: 1400 },
@@ -122,7 +137,7 @@
         tf: mix(onDna(-46), { d: 3000, t: 1000, fx: 'pulse', fxd: 3000 })
       } },
       /* 10 · clicks 5-6: pigment out */
-      { cam: [180, 60, 1100, 660], set: {
+      { cam: [180, 60, 1100, 660], wcam: [110, 0, 1280, 720], set: {
         gene: { fx: 'pulse', fxd: 0 },
         out: { o: 1, d: 200, t: 600 },
         glow: { o: 1, d: 700, t: 700 }, lblBx: { o: 1, d: 800, t: 600 }
@@ -144,11 +159,12 @@
         lblStrip: { o: 0, d: 1200, t: 300 },
         box: { x: 935, y: 250, s: 0.16, o: 0, d: 2500, t: 1100, od: 3100, ot: 500, fx: 'pulse', fxd: 2300 },
         lblBox: { o: 0, d: 2400, t: 300 },
-        map: { fx: 'pulse', fxd: 3400 }
+        map: { fx: 'pulse', fxd: 3400 },
+        ping: { o: 1, d: 3300, t: 100, fx: 'ripple', fxd: 3420 }
       } },
       /* 13 · slide 5: the map takes Human Practices' place (computed in mapTarget) */
       { cam: [300, 60, 680, 620], set: {
-        map: { dyn: true, t: 1300 }
+        map: { dyn: true, t: 1300 }, ping: HIDE
       } }
     ];
     var N = STATES.length - 1;
@@ -169,12 +185,26 @@
         R[L][i] = cur; prev = cur;
       });
     });
-    var CAM = []; STATES.forEach(function (st, i) { CAM[i] = st.cam || CAM[i - 1] || [0, 0, 1280, 720]; });
+    var FULL = [0, 0, 1280, 720];
+    var CAM = []; STATES.forEach(function (st, i) { CAM[i] = st.cam || CAM[i - 1] || FULL; });
+
+    /* slide 1 assembling (forward arrival only): offsets from state 0 and timings */
+    var INTRO_DELAY = 380;   // most of the page turn (720 ms) has landed by then
+    var INTRO = {
+      wormF: { dx: -70, d: 0, t: 1200, ot: 700 }, wormP: { dx: 70, d: 90, t: 1200, ot: 700 },
+      lblF: { dy: 14, d: 480, t: 650 }, lblP: { dy: 14, d: 560, t: 650 },
+      m3: { k: 0.55, r: -24, d: 260, t: 950, ot: 600 }, m18: { k: 0.55, r: 24, d: 400, t: 950, ot: 600 },
+      lbl3: { dy: 12, d: 720, t: 600 }, lbl18: { dy: 12, d: 820, t: 600 },
+      swap: { k: 0.7, d: 940, t: 600 }
+    };
+    /* ms: how long the class stays on; hold: how much of it the step waits for
+       (the ripple is an afterglow, the reader may scroll on while it fades) */
+    var FX = { pulse: { ms: 900, hold: 800 }, ripple: { ms: 1700, hold: 500 } };
 
     /* ---------- layout ---------- */
     var tallMq = matchMedia('(max-aspect-ratio: 5/4), (max-width: 760px)');
     var layout = tallMq.matches ? 'tall' : 'wide';
-    function camFor(i) { return layout === 'tall' ? CAM[i] : [0, 0, 1280, 720]; }
+    function camFor(i) { return layout === 'tall' ? CAM[i] : (STATES[i].wcam || FULL); }
 
     /* ---------- the map hand-over ----------
        Human Practices draws China face-on with a linear projection
@@ -213,18 +243,30 @@
     var camNow = null;
     function setCam(c) { camNow = c; svg.setAttribute('viewBox', c.map(f).join(' ')); }
 
-    var cur = 0, anims = [], camA = null, raf = 0, timers = [];
-    function clearFx() { timers.forEach(clearTimeout); timers = []; H.$$('.is-pulse', svg).forEach(function (e) { e.classList.remove('is-pulse'); }); }
-    function pulse(o, at) {
-      timers.push(setTimeout(function () { o.el.classList.remove('is-pulse'); void o.el.getBBox; o.el.classList.add('is-pulse'); timers.push(setTimeout(function () { o.el.classList.remove('is-pulse'); }, 900)); }, at));
+    var cur = 0, anims = [], camA = null, raf = 0, timers = [], introEnd = 0;
+    function clearFx() { timers.forEach(clearTimeout); timers = []; H.$$('.is-pulse, .is-ripple', svg).forEach(function (e) { e.classList.remove('is-pulse', 'is-ripple'); }); }
+    function fx(o, kind, at) {
+      var cls = 'is-' + kind, ms = FX[kind] ? FX[kind].ms : 900;
+      timers.push(setTimeout(function () {
+        o.el.classList.remove(cls);
+        void o.el.getBoundingClientRect();   // reflow, so a repeated effect restarts (getBBox was only read, never called)
+        o.el.classList.add(cls);
+        timers.push(setTimeout(function () { o.el.classList.remove(cls); }, ms));
+      }, at));
     }
     function same(a, b) { for (var i = 0; i < K.length; i++) if (Math.abs(a[K[i]] - b[K[i]]) > 1e-3) return false; return true; }
 
     function show(i) {
-      caps.forEach(function (c) { c.classList.toggle('is-on', inRange(c.getAttribute('data-as-cap'), i)); });
+      caps.forEach(function (c) {
+        var spec = (layout === 'tall' && c.getAttribute('data-as-tall')) || c.getAttribute('data-as-cap');
+        c.classList.toggle('is-on', inRange(spec, i));
+      });
       rail.forEach(function (li) {
         var r = li.getAttribute('data-ch').split('-'), a = +r[0], b = +(r[1] || r[0]);
         li.classList.toggle('is-on', i >= a && i <= b); li.classList.toggle('is-done', i > b);
+        /* progress inside the chapter, and which dot the next scroll leads to */
+        li.style.setProperty('--p', i > b ? 1 : i < a ? 0 : ((i - a + 1) / (b - a + 1)).toFixed(3));
+        li.classList.toggle('is-next', i < N && i + 1 >= a && i + 1 <= b);
       });
       sec.setAttribute('data-as-step', String(i));
       if (i === N && H.hpWarm) H.hpWarm();
@@ -232,33 +274,38 @@
     function inRange(spec, i) { var r = spec.split('-'), a = +r[0], b = +(r[1] || r[0]); return i >= a && i <= b; }
 
     function jump(i) {
-      cancelAnimationFrame(raf); raf = 0; anims = []; camA = null; clearFx();
+      cancelAnimationFrame(raf); raf = 0; anims = []; camA = null; clearFx(); introEnd = 0;
       cur = i; var t = target(i);
       Object.keys(O).forEach(function (n) { apply(O[n], t[n]); });
       setCam(camFor(i)); show(i);
     }
     function goTo(i, dir, speed) {
       if (H.reduced) { jump(i); return 0; }
+      var from = cur; cur = i; introEnd = 0;
+      var back = dir < 0 || i < from;
+      return run(target(i), back ? {} : STATES[i].set, back, 1 / Math.max(0.4, speed || 1), 0, camFor(i), i);
+    }
+    /* animate every object from where it is now to t. spec: per-object timings
+       (STATES[i].set or INTRO); back: brisk reverse; k: speed; lag: added delay */
+    function run(t, spec, back, k, lag, cam1, i) {
       cancelAnimationFrame(raf); raf = 0; clearFx();
-      var from = cur; cur = i;
-      var t = target(i), k = 1 / Math.max(0.4, speed || 1), back = dir < 0 || i < from;
-      var spec = back ? {} : STATES[i].set, total = 0, now = performance.now();
+      var total = 0, now = performance.now();
       anims = [];
       Object.keys(O).forEach(function (n) {
         var o = O[n], v1 = t[n], e = spec[n] || {};
         var v0 = mix(o.v, {});
         if (!back && e.from) K.forEach(function (key) { if (e.from[key] != null) v0[key] = e.from[key]; });
-        if (!back && e.fx === 'pulse') pulse(o, (e.fxd || 0) * k);
+        if (!back && e.fx) fx(o, e.fx, ((e.fxd || 0) + lag) * k);
         if (same(v0, v1)) return;
-        var d = back ? 0 : (e.d || 0), dur = back ? 700 : (e.t || 700);
-        var od = back ? 0 : (e.od != null ? e.od : d), ot = back ? 520 : (e.ot || dur);
+        var d = back ? 0 : (e.d || 0) + lag, dur = back ? 700 : (e.t || 700);
+        var od = back ? 0 : (e.od != null ? e.od + lag : d), ot = back ? 520 : (e.ot || dur);
         var a = { o: o, v0: v0, v1: v1, d: d * k, t: dur * k, od: od * k, ot: ot * k, via: back ? null : e.via };
         anims.push(a);
         total = Math.max(total, a.d + a.t, a.od + a.ot);
       });
-      Object.keys(spec).forEach(function (n) { var e = spec[n]; if (e.fx === 'pulse') total = Math.max(total, ((e.fxd || 0) + 800) * k); });
-      var c1 = camFor(i), c0 = camNow || c1;
-      camA = c0.join() === c1.join() ? null : { c0: c0, c1: c1, t: Math.max(700 * k, Math.min(1300 * k, total)) };
+      Object.keys(spec).forEach(function (n) { var e = spec[n]; if (e.fx && !back) total = Math.max(total, ((e.fxd || 0) + lag + (FX[e.fx] ? FX[e.fx].hold : 800)) * k); });
+      var c0 = camNow || cam1;
+      camA = c0.join() === cam1.join() ? null : { c0: c0, c1: cam1, t: Math.max(700 * k, Math.min(1300 * k, total)) };
       if (camA) total = Math.max(total, camA.t);
       show(i);
       var t0 = now;
@@ -287,10 +334,29 @@
       return Math.round(total);
     }
     function finish() {
+      introEnd = 0;
       if (!anims.length && !camA) return;
       cancelAnimationFrame(raf); raf = 0;
       anims.forEach(function (a) { apply(a.o, a.v1); }); anims = [];
       if (camA) setCam(camA.c1); camA = null;
+    }
+    /* slide 1 assembles while the page turn lands: worms crawl in, the two
+       molecules turn into place, then the labels. Returns its length in ms. */
+    function intro() {
+      cancelAnimationFrame(raf); raf = 0; anims = []; camA = null; clearFx();
+      cur = 0;
+      var t = target(0);
+      Object.keys(O).forEach(function (n) {
+        var v = mix(t[n], {}), e = INTRO[n];
+        if (e) {
+          v.x += e.dx || 0; v.y += e.dy || 0; v.s *= e.k || 1; v.r += e.r || 0; v.o = 0;
+        }
+        apply(O[n], v);
+      });
+      setCam(camFor(0));
+      var ms = run(t, INTRO, false, 1, INTRO_DELAY, camFor(0), 0);
+      introEnd = performance.now() + ms;
+      return ms;
     }
 
     /* captions: placed over the slide on wide screens (slide units -> %) */
@@ -309,14 +375,71 @@
     sec.classList.toggle('as--tall', layout === 'tall');
     var rz = 0; addEventListener('resize', function () { clearTimeout(rz); rz = setTimeout(relayout, 160); });
 
+    wormsAlive();
+
     H.scene('traces', {
       steps: N, tall: 9,
-      set: function (i) { jump(i); },
+      /* the chapter rail below the stage shows progress, and the global scroll
+         cue would sit on top of it (it covered "Yeast") */
+      noCue: true,
+      set: function (i, dir) {
+        /* arriving from above in paged mode: slide 1 assembles as the page lands */
+        if (i === 0 && dir > 0 && !H.reduced && H.pager && H.pager.isPaged()) intro(); else jump(i);
+      },
+      enter: function () { return Math.max(0, Math.round(introEnd - performance.now())); },
       step: function (i, dir, speed) { return goTo(i, dir, speed); },
       ff: finish
     });
+    /* ---------- the worms undulate ----------
+       Only the placeholder drawings (path.as-worm) are animated: a travelling
+       sine wave from head to tail, like a nematode's own crawl. Replaced art in
+       the data-art slot is left alone; reduced motion keeps the still drawing. */
+    function wormsAlive() {
+      if (H.reduced) return;
+      var W = [
+        { o: O.wormF, body: H.$('[data-art="worm-free"] path.as-worm', svg), x0: -100, x1: 100, amp: 15, cyc: 1.45, per: 2400, tilt: 0, head: 1 },
+        { o: O.wormP, body: H.$('[data-art="worm-parasitic"] path.as-worm', svg), stylet: H.$('[data-art="worm-parasitic"] .as-worm-stylet', svg), x0: -92, x1: 94, amp: 17, cyc: 0.85, per: 3400, tilt: 64, head: 0 }
+      ].filter(function (w) { return w.o && w.body; });
+      if (!W.length) return;
+      var SEG = 18, t0 = performance.now();
+      function pts(w, t) {
+        var out = [], ph = t / w.per;
+        for (var j = 0; j <= SEG; j++) {
+          var u = j / SEG, env = 0.6 + 0.4 * Math.sin(Math.PI * u);
+          /* the wave runs from the head to the tail */
+          var a = 2 * Math.PI * (w.cyc * u + (w.head ? ph : -ph));
+          out.push([w.x0 + (w.x1 - w.x0) * u, (u - 0.5) * w.tilt + w.amp * env * Math.sin(a)]);
+        }
+        return out;
+      }
+      function smooth(p) {
+        var d = 'M' + f(p[0][0]) + ' ' + f(p[0][1]);
+        for (var j = 0; j < p.length - 1; j++) {
+          var a = p[j - 1] || p[j], b = p[j], c = p[j + 1], e = p[j + 2] || c;
+          d += 'C' + f(b[0] + (c[0] - a[0]) / 6) + ' ' + f(b[1] + (c[1] - a[1]) / 6) + ' ' + f(c[0] - (e[0] - b[0]) / 6) + ' ' + f(c[1] - (e[1] - b[1]) / 6) + ' ' + f(c[0]) + ' ' + f(c[1]);
+        }
+        return d;
+      }
+      function draw(now) {
+        var t = now - t0;
+        W.forEach(function (w) {
+          if (!w.o.v || w.o.v.o < 0.01) return;
+          var p = pts(w, t);
+          w.body.setAttribute('d', smooth(p));
+          if (w.stylet) {
+            var h = p[0], n = p[1], dx = h[0] - n[0], dy = h[1] - n[1], l = Math.hypot(dx, dy) || 1;
+            w.stylet.setAttribute('d', 'M' + f(h[0]) + ' ' + f(h[1]) + 'L' + f(h[0] + dx / l * 14) + ' ' + f(h[1] + dy / l * 14));
+          }
+        });
+      }
+      draw(t0);
+      H.visibleLoop(sec, draw);
+    }
+
     /* for checks and the asset swap: jump to any state, read the timeline */
     H.ascrStory = { states: N, jump: jump, current: function () { return cur; }, objects: Object.keys(O),
+      /* play one step forward or back as the pager would, and the arrival intro */
+      play: function (i) { return goTo(i, i >= cur ? 1 : -1, 1); }, intro: intro,
       /* Human Practices cuts in only when the map really sits on its map box */
       handsOver: function () { return cur === N && layout === 'wide' && !!(H.pager && H.pager.isPaged()); } };
   }

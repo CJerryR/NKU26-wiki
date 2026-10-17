@@ -16,12 +16,6 @@ hidden: false
 
 In this cycle, we performed heterologous expression and transmembrane localization verification of GPR2. The construction strategy of verification strains and detection methods were iteratively optimized. The final results met our expectations, laying a foundation for the next DBTL cycle.
 
-:::warning[Data status]
-
-The wet-lab team has reported that the culture medium in part of the fluorescence experiments was prepared incorrectly, and those experiments are being repeated. Until the team confirms which fluorescence results are affected, the GPR2-sfGFP localization results in this section (fluorescence microscopy, CFW and FM4-64 staining) and the conclusion drawn from them are provisional.
-
-:::
-
 ### The First Cycle {#the-first-cycle toc="The First Cycle"}
 
 #### Design {#design toc="Design"}

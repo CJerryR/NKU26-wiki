@@ -185,7 +185,11 @@
     },
     {
       "_template": "text",
-      "body": "Screening uses the difference between the docking-score changes for the two ligands relative to WT."
+      "body": "Screening uses the difference between the docking-score changes for the two ligands relative to WT:"
+    },
+    {
+      "_template": "equation",
+      "latex": "\\Delta\\Delta G= \\bigl(G_{\\mathrm{mut},18}-G_{\\mathrm{WT},18}\\bigr) - \\bigl(G_{\\mathrm{mut},3}-G_{\\mathrm{WT},3}\\bigr)"
     },
     {
       "_template": "text",
