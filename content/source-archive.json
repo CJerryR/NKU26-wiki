@@ -154,5 +154,213 @@
     "chunks": [
       "https://static.igem.wiki/teams/6303/wiki/v8-7/history-5b747ff0fc87-00.json"
     ]
+  },
+  {
+    "id": "meeting-20261019-1564a7b1bf5d",
+    "title": "Project-Engineering — 2026-10-19",
+    "category": "19 October meeting update",
+    "original_name": "Project-Engineering.docx",
+    "sha256": "1564a7b1bf5de205e55e76e6ca2a10f6b8a9d7faa46288a4000700ebdbfebefe",
+    "bytes": 12171,
+    "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-source-1564a7b1bf5de205-00.json"
+    ],
+    "source_file_unchanged": true
+  },
+  {
+    "id": "meeting-20261019-a035b2e959ac",
+    "title": "Model-Docking — 2026-10-19",
+    "category": "19 October meeting update",
+    "original_name": "Model-Docking.docx",
+    "sha256": "a035b2e959ac73e0718dac5f4fbaa17720db62c0849ee2e96a4db2e2e37bd69b",
+    "bytes": 29317487,
+    "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-source-a035b2e959ac73e0-00.json",
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-source-a035b2e959ac73e0-01.json",
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-source-a035b2e959ac73e0-02.json",
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-source-a035b2e959ac73e0-03.json",
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-source-a035b2e959ac73e0-04.json",
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-source-a035b2e959ac73e0-05.json",
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-source-a035b2e959ac73e0-06.json",
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-source-a035b2e959ac73e0-07.json",
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-source-a035b2e959ac73e0-08.json",
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-source-a035b2e959ac73e0-09.json",
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-source-a035b2e959ac73e0-10.json",
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-source-a035b2e959ac73e0-11.json",
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-source-a035b2e959ac73e0-12.json",
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-source-a035b2e959ac73e0-13.json",
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-source-a035b2e959ac73e0-14.json",
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-source-a035b2e959ac73e0-15.json",
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-source-a035b2e959ac73e0-16.json",
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-source-a035b2e959ac73e0-17.json",
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-source-a035b2e959ac73e0-18.json",
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-source-a035b2e959ac73e0-19.json"
+    ],
+    "source_file_unchanged": true
+  },
+  {
+    "id": "meeting-20261019-90cea9447c0c",
+    "title": "HP-Engineering — 2026-10-19",
+    "category": "19 October meeting update",
+    "original_name": "HP-Engineering.docx",
+    "sha256": "90cea9447c0c41d174dd13fd191dd461aa334027e7ff36fc51ce858b9d887962",
+    "bytes": 10270,
+    "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-source-90cea9447c0c41d1-00.json"
+    ],
+    "source_file_unchanged": true
+  },
+  {
+    "id": "meeting-20261019-7eafd8795b38",
+    "title": "Model-Overview — 2026-10-19",
+    "category": "19 October meeting update",
+    "original_name": "Model-Overview.docx",
+    "sha256": "7eafd8795b3870c52fdcb70497ca629f3f0c27657a4d4eaab695c47f98b3d60e",
+    "bytes": 7756,
+    "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-source-7eafd8795b3870c5-00.json"
+    ],
+    "source_file_unchanged": true
+  },
+  {
+    "id": "meeting-20261019-cf8e375550b3",
+    "title": "Model-Eco — 2026-10-19",
+    "category": "19 October meeting update",
+    "original_name": "Model-Eco.docx",
+    "sha256": "cf8e375550b304e66f784c43073368e82311f58f23bbf17cefb37bec2bf3a4da",
+    "bytes": 115765,
+    "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-source-cf8e375550b304e6-00.json"
+    ],
+    "source_file_unchanged": true
+  },
+  {
+    "id": "meeting-20261019-aabe053205e9",
+    "title": "HP-Description — 2026-10-19",
+    "category": "19 October meeting update",
+    "original_name": "HP-Description.docx",
+    "sha256": "aabe053205e94a0edbefcaf49c025c368c9c97f3c0db4ecaabb343366248d5bb",
+    "bytes": 7998,
+    "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-source-aabe053205e94a0e-00.json"
+    ],
+    "source_file_unchanged": true
+  },
+  {
+    "id": "meeting-20261019-0511db20fff1",
+    "title": "HP-Contribution — 2026-10-19",
+    "category": "19 October meeting update",
+    "original_name": "HP-Contribution.docx",
+    "sha256": "0511db20fff1e888ff742738470fd4f7c6286b2b515b66010dbaadfa1f6344fd",
+    "bytes": 9360,
+    "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-source-0511db20fff1e888-00.json"
+    ],
+    "source_file_unchanged": true
+  },
+  {
+    "id": "meeting-20261019-2bfa8e09f424",
+    "title": "Model-ODE — 2026-10-19",
+    "category": "19 October meeting update",
+    "original_name": "Model-ODE.docx",
+    "sha256": "2bfa8e09f424c26ca14c888f66ed276170be4e0351300558713d6ce0816956ae",
+    "bytes": 3117266,
+    "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-source-2bfa8e09f424c26c-00.json",
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-source-2bfa8e09f424c26c-01.json",
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-source-2bfa8e09f424c26c-02.json"
+    ],
+    "source_file_unchanged": true
+  },
+  {
+    "id": "meeting-20261019-93884c4d3dba",
+    "title": "Project-Contribution — 2026-10-19",
+    "category": "19 October meeting update",
+    "original_name": "Project-Contribution.docx",
+    "sha256": "93884c4d3dba26b88789682257552fbaf28e9039f1dda8a732d392a728fc0cdb",
+    "bytes": 10876,
+    "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-source-93884c4d3dba26b8-00.json"
+    ],
+    "source_file_unchanged": true
+  },
+  {
+    "id": "meeting-20261019-d8c0f0af5a28",
+    "title": "Project-Description — 2026-10-19",
+    "category": "19 October meeting update",
+    "original_name": "Project-Description.docx",
+    "sha256": "d8c0f0af5a28af34c17e78b2ba8bb2a760cd438c28d0c70ae5f3aae0e8eae072",
+    "bytes": 7678,
+    "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-source-d8c0f0af5a28af34-00.json"
+    ],
+    "source_file_unchanged": true
+  },
+  {
+    "id": "meeting-20261019-76c711668d10",
+    "title": "README — 2026-10-19",
+    "category": "19 October meeting update",
+    "original_name": "README.docx",
+    "sha256": "76c711668d1002cb2c009c3b37cca0b9759ac8d2b8e3f081893ca15124cf5339",
+    "bytes": 3775871,
+    "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-source-76c711668d1002cb-00.json",
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-source-76c711668d1002cb-01.json",
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-source-76c711668d1002cb-02.json"
+    ],
+    "source_file_unchanged": true
+  },
+  {
+    "id": "meeting-20261019-a689408f0daa",
+    "title": "Model-Molecular Dynamics — 2026-10-19",
+    "category": "19 October meeting update",
+    "original_name": "Model-Molecular Dynamics.docx",
+    "sha256": "a689408f0daa0e7959e144c6847ffd73ebb9d2ae44df6202004e2ba52cdbf2c9",
+    "bytes": 1095579,
+    "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-source-a689408f0daa0e79-00.json"
+    ],
+    "source_file_unchanged": true
+  },
+  {
+    "id": "meeting-20261019-2d68e59d82e5",
+    "title": "Results-修改3.0中文 — 2026-10-19",
+    "category": "19 October meeting update",
+    "original_name": "Results-修改3.0中文.docx",
+    "sha256": "2d68e59d82e58955bcba69b98c60793745bd405d44d6b831c9cd2a3fefa195db",
+    "bytes": 3185319,
+    "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-source-2d68e59d82e58955-00.json",
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-source-2d68e59d82e58955-01.json",
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-source-2d68e59d82e58955-02.json"
+    ],
+    "source_file_unchanged": true
+  },
+  {
+    "id": "meeting-20261019-552fb139c19f",
+    "title": "Results-修改3.0英文 — 2026-10-19",
+    "category": "19 October meeting update",
+    "original_name": "Results-修改3.0英文.docx",
+    "sha256": "552fb139c19fcb4146194871a2f4c06b806ee4061ae2a8baf6083dc59b81809a",
+    "bytes": 2915715,
+    "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-source-552fb139c19fcb41-00.json",
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-source-552fb139c19fcb41-01.json"
+    ],
+    "source_file_unchanged": true
   }
 ]

@@ -1,13 +1,1 @@
-[
-  {
-    "page": "results",
-    "source_file": "Results-补充-英文 2.0.docx",
-    "source_file_sha256": "dfe9c9e639befeaaf557dd8069679e3e8238675748b8bfdc76b12eaa9208cf6a",
-    "source_xml_paragraph": 133,
-    "fragment": "<p>This 3D-printed strip holder successfully overcomes the physical bottleneck of hypoxia caused by full submersion of test strips, converting our yeast biosensor into a deployable physical product. By precisely tuning liquid layer thickness and the chamber microenvironment, the hardware enables rapid and reproducible colorimetric signal output, laying a solid foundation for our final portable, intuitive, field-ready yeast test-strip detection device.</p>",
-    "fragment_sha256": "fe6d58064374d7de518fac0a1bec9358db04c814ce2462ddc58c71db7c07b25f",
-    "user_authorized_preservation": true,
-    "scientific_review_approved": false,
-    "decision": "Restore the author original and preserve differences between submitted documents; user decision 2026-10-18"
-  }
-]
+[]

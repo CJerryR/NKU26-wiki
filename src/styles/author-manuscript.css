@@ -1,0 +1,15 @@
+/* Original manuscript grouping and ratios; no automatic emphasis or numbering. */
+.prose .author-manuscript{min-width:0;font-family:inherit;overflow-wrap:anywhere}
+.prose .author-manuscript p{white-space:pre-wrap;margin-block:1em}
+.prose .author-manuscript img{max-width:100%;height:auto;object-fit:contain}
+.prose .author-table-scroll{overflow-x:auto;max-width:100%;margin-block:1.5em}
+.prose .author-table{border-collapse:collapse;width:100%;table-layout:fixed}
+.prose .author-table td{vertical-align:top;padding:.45em .65em;overflow-wrap:anywhere}
+.prose .author-table p{margin-block:.3em;font-size:inherit}
+.prose .author-manuscript math{font-size:1.05em}
+.prose .author-manuscript .katex-display{overflow-x:auto;overflow-y:hidden;padding-block:.3em}
+.prose .author-source-link{font-size:.82em;opacity:.78}
+.prose .author-screening-figure{display:block;width:100%;min-height:980px;border:0}
+
+.prose .author-table td{font-weight:400;color:inherit}
+.prose .author-table:has(tr > td:only-child){min-width:0}

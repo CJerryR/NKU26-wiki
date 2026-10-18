@@ -19,11 +19,44 @@
     },
     {
       "_template": "text",
-      "body": "<span id=\"overview\" aria-hidden=\"true\"></span>\n<span id=\"molecular-docking-from-receptor-comparisons-to-gpr2-mutant-design\" aria-hidden=\"true\"></span>\n<span id=\"molecular-dynamics-from-global-motion-to-local-contact-behavior\" aria-hidden=\"true\"></span>\n<span id=\"ode-modeling-from-receptor-input-to-color-output\" aria-hidden=\"true\"></span>\n<span id=\"economic-benefit-modeling-from-detection-information-to-management-decisions\" aria-hidden=\"true\"></span>\n<span id=\"model-evidence\" aria-hidden=\"true\"></span>"
+      "body": "<p class=\"author-source-link\"><a href=\"/source-archive/#meeting-20261019\" data-source-document=\"meeting-20261019-7eafd8795b38\">Original submission (.docx)</a><span role=\"status\" aria-live=\"polite\"></span></p>"
     },
     {
       "_template": "text",
-      "body": "- [1. Docking](/model-docking/)\n- [2. Molecular Dynamics](/model-md/)\n- [3. ODE](/model-ode/)\n- [4. Eco](/model-eco/)"
+      "body": "<section class=\"author-manuscript\" lang=\"zh\">"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\">如何将土壤中的线虫化学信号转化为有用的检测信息？我们的干实验围绕这一问题，连接受体改造、动态结构分析、信号与显色模拟，以及经济效益评价，逐步探索从蛔苷素识别到农业管理的路径。</p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"><strong>Docking｜寻找双配体差异响应的改造方向</strong><br>我们比较受体与 ascr#18、ascr#3 的对接评分和接触分布，通过丙氨酸替换、饱和扫描及组合测试筛选候选，选取分别向两种配体偏移的 Gpr2 N84V 和 V368R 开展后续研究。跨受体的序列与结构比较进一步提供可平行检验的残基位置。</p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"><strong>Molecular Dynamics｜观察候选姿态在膜环境中的变化</strong><br>以对接构象为起点，我们在膜环境中模拟受体—配体复合物，联合分析受体运动、配体定位与接触重排。这些动态观察帮助解释候选的结构行为，并将静态对接线索转化为更具体的实验问题。</p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"><strong>ODE 与双通道模型｜从信号输入到目标密度估计</strong><br>我们用 ODE 连接有效受体输入、酵母信号通路与显色过程，再将模拟色素输出转换为手机颜色特征。双通道模型利用两路互补响应，探索在背景线虫数量未知时估计南方根结线虫密度的方法，为实测标定提供框架。</p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"><strong>Eco｜评价密度信息的应用价值</strong><br>以目标密度为接口，经济模型连接潜在产量损失、检测费用与处理成本，比较不处理、统一处理和检测后分级处理的净收益，考察检测信息何时能够改变管理选择并带来收益。</p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\">四部分共同构成一条研究路径：<strong>受体改造提出识别假说，动态模拟补充结构解释，信号与双通道模型探索密度解读，经济模型评价信息价值。</strong> 其中，Docking 与 MD 为传感器设计提供依据；ODE、双通道模型与 Eco 则通过显色和密度接口衔接，并将管理分级对精度的需求反馈到后续检测标定。</p>"
+    },
+    {
+      "_template": "text",
+      "body": "</section>"
+    },
+    {
+      "_template": "text",
+      "body": "<span id=\"model-overview\" aria-hidden=\"true\"></span>"
     }
-  ]
+  ],
+  "preserveAuthorFormatting": true
 }

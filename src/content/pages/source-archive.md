@@ -54,3 +54,33 @@ These earlier submissions are retained in full, in their original file formats. 
 <section id="engineering-zh-earlier"><h3>Engineering 3.0 — 中文旧稿</h3><p>Engineering 中文版3.0.docx · DOCX</p><p><a href="https://static.igem.wiki/teams/6303/wiki/v8-7/history-304de21bcca1-00.json" data-source-document="engineering-zh-earlier" download="Engineering 中文版3.0.docx">Download complete original / 下载完整原件</a> <span role="status" aria-live="polite"></span></p></section>
 
 <section id="engineering-en-earlier"><h3>Engineering 3.0 — English earlier submission</h3><p>Engineering 英文版3.0.docx · DOCX</p><p><a href="https://static.igem.wiki/teams/6303/wiki/v8-7/history-5b747ff0fc87-00.json" data-source-document="engineering-en-earlier" download="Engineering 英文版3.0.docx">Download complete original / 下载完整原件</a> <span role="status" aria-live="polite"></span></p></section>
+
+## 19 October 2026 meeting update / 19日凌晨会后更新 {#meeting-20261019}
+
+<p><a href="#meeting-20261019" data-source-document="meeting-20261019-1564a7b1bf5d">Project-Engineering.docx</a><span role="status" aria-live="polite"></span></p>
+
+<p><a href="#meeting-20261019" data-source-document="meeting-20261019-a035b2e959ac">Model-Docking.docx</a><span role="status" aria-live="polite"></span></p>
+
+<p><a href="#meeting-20261019" data-source-document="meeting-20261019-90cea9447c0c">HP-Engineering.docx</a><span role="status" aria-live="polite"></span></p>
+
+<p><a href="#meeting-20261019" data-source-document="meeting-20261019-7eafd8795b38">Model-Overview.docx</a><span role="status" aria-live="polite"></span></p>
+
+<p><a href="#meeting-20261019" data-source-document="meeting-20261019-cf8e375550b3">Model-Eco.docx</a><span role="status" aria-live="polite"></span></p>
+
+<p><a href="#meeting-20261019" data-source-document="meeting-20261019-aabe053205e9">HP-Description.docx</a><span role="status" aria-live="polite"></span></p>
+
+<p><a href="#meeting-20261019" data-source-document="meeting-20261019-0511db20fff1">HP-Contribution.docx</a><span role="status" aria-live="polite"></span></p>
+
+<p><a href="#meeting-20261019" data-source-document="meeting-20261019-2bfa8e09f424">Model-ODE.docx</a><span role="status" aria-live="polite"></span></p>
+
+<p><a href="#meeting-20261019" data-source-document="meeting-20261019-93884c4d3dba">Project-Contribution.docx</a><span role="status" aria-live="polite"></span></p>
+
+<p><a href="#meeting-20261019" data-source-document="meeting-20261019-d8c0f0af5a28">Project-Description.docx</a><span role="status" aria-live="polite"></span></p>
+
+<p><a href="#meeting-20261019" data-source-document="meeting-20261019-76c711668d10">README.docx</a><span role="status" aria-live="polite"></span></p>
+
+<p><a href="#meeting-20261019" data-source-document="meeting-20261019-a689408f0daa">Model-Molecular Dynamics.docx</a><span role="status" aria-live="polite"></span></p>
+
+<p><a href="#meeting-20261019" data-source-document="meeting-20261019-2d68e59d82e5">Results-修改3.0中文.docx</a><span role="status" aria-live="polite"></span></p>
+
+<p><a href="#meeting-20261019" data-source-document="meeting-20261019-552fb139c19f">Results-修改3.0英文.docx</a><span role="status" aria-live="polite"></span></p>

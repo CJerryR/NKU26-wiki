@@ -44,7 +44,11 @@
         "Public evidence records, dates and permissions for activity photos and anonymized records",
         "Author final review; no publication in this update",
         "Release-ready survey, interview, course, sampling and partnership resource downloads"
-      ]
+      ],
+      "meeting_20261019_received": true,
+      "meeting_20261019_source_language_preserved": true,
+      "meeting_20261019_status": "original manuscripts integrated; publication validation pending",
+      "meeting_20261019_record": "outputs/19日凌晨会后更新-20261019/00-全部原件SHA256.json"
     },
     {
       "slug": "description",
@@ -64,7 +68,11 @@
       "round3_hp_open_items": [
         "Public evidence records, dates and permissions for activity photos and anonymized records",
         "Author final review; no publication in this update"
-      ]
+      ],
+      "meeting_20261019_received": true,
+      "meeting_20261019_source_language_preserved": true,
+      "meeting_20261019_status": "original manuscripts integrated; publication validation pending",
+      "meeting_20261019_record": "outputs/19日凌晨会后更新-20261019/00-全部原件SHA256.json"
     },
     {
       "slug": "education",
@@ -100,7 +108,11 @@
       "round2_sources": [
         "https://nankai.feishu.cn/wiki/MxrBwbN1HiIeIokhwrAcmat1n2b",
         "Round2 user-supplied four replacement images"
-      ]
+      ],
+      "meeting_20261019_received": true,
+      "meeting_20261019_source_language_preserved": true,
+      "meeting_20261019_status": "original manuscripts integrated; publication validation pending",
+      "meeting_20261019_record": "outputs/19日凌晨会后更新-20261019/00-全部原件SHA256.json"
     },
     {
       "slug": "experiments",
@@ -198,7 +210,11 @@
         "Model round3 chapter index / compatibility navigation"
       ],
       "round3_archive": "outputs/第三轮内容更新-20261017",
-      "round3_open_items": []
+      "round3_open_items": [],
+      "meeting_20261019_received": true,
+      "meeting_20261019_source_language_preserved": true,
+      "meeting_20261019_status": "original manuscripts integrated; publication validation pending",
+      "meeting_20261019_record": "outputs/19日凌晨会后更新-20261019/00-全部原件SHA256.json"
     },
     {
       "slug": "part-collection",
@@ -269,7 +285,11 @@
         "Earlier DBTL-2 missing figures unchanged",
         "6 image files await official CDN migration; one video awaits official Video Universe hosting",
         "Team review of the revised quantitative claims and underlying measurements"
-      ]
+      ],
+      "meeting_20261019_received": true,
+      "meeting_20261019_source_language_preserved": true,
+      "meeting_20261019_status": "original manuscripts integrated; publication validation pending",
+      "meeting_20261019_record": "outputs/19日凌晨会后更新-20261019/00-全部原件SHA256.json"
     },
     {
       "slug": "safety",
@@ -310,7 +330,11 @@
       ],
       "round3_docking_latest_integrated_at": "2026-10-18T02:28:50+08:00",
       "round3_docking_latest_source_sha256": "3d1cb2e9f6474a6134eb70398b1b130812bef8dc54d5dd67da596baca8bbf6f7",
-      "round3_docking_layout": "Preserved original 5402:2877 text/image columns and all three four-panel image orders and column ratios"
+      "round3_docking_layout": "Preserved original 5402:2877 text/image columns and all three four-panel image orders and column ratios",
+      "meeting_20261019_received": true,
+      "meeting_20261019_source_language_preserved": true,
+      "meeting_20261019_status": "original manuscripts integrated; publication validation pending",
+      "meeting_20261019_record": "outputs/19日凌晨会后更新-20261019/00-全部原件SHA256.json"
     },
     {
       "slug": "model-md",
@@ -329,7 +353,11 @@
         "50–100 ns window rationale",
         "Trajectory figures",
         "Author revisions to N84V and V368R sections"
-      ]
+      ],
+      "meeting_20261019_received": true,
+      "meeting_20261019_source_language_preserved": true,
+      "meeting_20261019_status": "original manuscripts integrated; publication validation pending",
+      "meeting_20261019_record": "outputs/19日凌晨会后更新-20261019/00-全部原件SHA256.json"
     },
     {
       "slug": "model-ode",
@@ -348,7 +376,11 @@
         "Final author review of translated equations and tables",
         "Official CDN migration for four figures"
       ],
-      "layout_restoration_2026_10_18": "Source Figure 3-1 is a placeholder; prior supplementary conceptual SVG retained only in source archive. Original single-column image/table order preserved."
+      "layout_restoration_2026_10_18": "Source Figure 3-1 is a placeholder; prior supplementary conceptual SVG retained only in source archive. Original single-column image/table order preserved.",
+      "meeting_20261019_received": true,
+      "meeting_20261019_source_language_preserved": true,
+      "meeting_20261019_status": "original manuscripts integrated; publication validation pending",
+      "meeting_20261019_record": "outputs/19日凌晨会后更新-20261019/00-全部原件SHA256.json"
     },
     {
       "slug": "model-eco",
@@ -367,7 +399,11 @@
         "Official CDN migration of full browser-Python runtime and original figure resources",
         "Author review of untranslated/conflicting passages and unproofread English"
       ],
-      "original_program_integration": "Author Python, source parameters and report renderer unchanged; browser transport only"
+      "original_program_integration": "Author Python, source parameters and report renderer unchanged; browser transport only",
+      "meeting_20261019_received": true,
+      "meeting_20261019_source_language_preserved": true,
+      "meeting_20261019_status": "original manuscripts integrated; publication validation pending",
+      "meeting_20261019_record": "outputs/19日凌晨会后更新-20261019/00-全部原件SHA256.json"
     },
     {
       "slug": "source-archive",
@@ -388,7 +424,11 @@
         "HP调研.docx",
         "Engineering 中文版3.0.docx",
         "Engineering 英文版3.0.docx"
-      ]
+      ],
+      "meeting_20261019_received": true,
+      "meeting_20261019_source_language_preserved": true,
+      "meeting_20261019_status": "original manuscripts integrated; publication validation pending",
+      "meeting_20261019_record": "outputs/19日凌晨会后更新-20261019/00-全部原件SHA256.json"
     }
   ],
   "round2_note": "Local Tina integration of supplied English copy and assets. Human Practices Chinese manuscript remains archive-only. No final team review or publication approval is asserted.",

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reactivation medium screening</title>
+<style>
+  *{box-sizing:border-box}
+  body{
+    margin:0; padding:26px 22px 54px; background:#fff; color:#1c1c1c;
+    font-family:"Times New Roman",Georgia,"Songti SC",serif;
+    font-size:12.5px; line-height:1.6;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    font-feature-settings:"kern" 1,"liga" 1;
+  }
+  .wrap{max-width:800px;margin:0 auto}
+
+  header{padding-bottom:10px;border-bottom:1px solid #dcd8d2;margin-bottom:12px}
+  h1{font-size:16px;font-weight:normal;letter-spacing:.01em;margin:0 0 4px}
+  .sub{font-size:11px;color:#6f6a63;letter-spacing:.02em}
+
+  .panel{font-size:11.5px;font-weight:bold;letter-spacing:.04em;
+         color:#3a352f;margin:0 0 5px}
+
+  .legend{display:flex;flex-wrap:wrap;gap:16px;margin:2px 0 12px;
+          font-size:10.5px;color:#4a453f;letter-spacing:.01em}
+  .legend span{display:flex;align-items:center;gap:5px}
+  .legend i{width:8px;height:8px;border-radius:50%;display:inline-block}
+
+  .cap{margin-top:16px;padding-top:10px;border-top:1px solid #e6e2db;
+       font-size:10.5px;line-height:1.9;color:#5b564f;letter-spacing:.005em}
+  .cap b{font-weight:bold;color:#1c1c1c}
+  .cap i{font-style:italic}
+
+  details{margin-top:18px;border-top:1px solid #e6e2db;padding-top:11px}
+  summary{font-size:10.5px;color:#6f6a63;cursor:pointer;list-style:none;
+          letter-spacing:.05em;text-transform:uppercase}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:"+ ";color:#a8a29a}
+  details[open] summary::before{content:"– "}
+  .reg{width:100%;border-collapse:collapse;font-size:10.5px;margin-top:9px}
+  .reg th{font-weight:bold;text-align:left;color:#6f6a63;font-size:9.5px;
+          letter-spacing:.05em;padding:6px 8px;border-bottom:1px solid #dcd8d2}
+  .reg td{padding:4px 8px;border-bottom:1px solid #f2efe9;color:#3a352f;
+          font-variant-numeric:lining-nums tabular-nums}
+  .reg .num{text-align:right}
+  .reg tr:hover td{background:#faf8f4}
+
+  #pop{
+    position:fixed;z-index:99;pointer-events:none;opacity:0;
+    transform:translateY(3px);transition:opacity .13s ease, transform .13s ease;
+    background:#fff;border:1px solid #ddd8d0;border-radius:4px;
+    box-shadow:0 6px 20px rgba(60,55,48,.14);
+    padding:8px 11px 9px;min-width:170px;max-width:250px;
+    font-family:inherit;font-size:10.5px;line-height:1.55;color:#2b2824;
+  }
+  #pop.on{opacity:1;transform:translateY(0)}
+  #pop .h{font-size:11px;font-weight:bold;letter-spacing:.03em;margin-bottom:2px}
+  #pop .m{color:#6f6a63;font-size:9.5px;letter-spacing:.02em;margin-bottom:3px}
+  #pop .b{color:#3a352f}
+
+  @keyframes rowIn{from{opacity:0;transform:translateX(-7px)}
+                   to{opacity:1;transform:translateX(0)}}
+  .anim{animation:rowIn .42s cubic-bezier(.22,.68,.35,1) both}
+
+  .rowg{transition:opacity .24s ease}
+  .rowg.dim{opacity:.30}
+  .rowg .catbar{transform-box:fill-box;transform-origin:0 50%;
+                transition:transform .26s cubic-bezier(.34,1.4,.64,1)}
+  .rowg.same .catbar{transform:scaleX(1.65)}
+  .rowg .cattint{transition:fill-opacity .26s ease}
+  .rowg.same .cattint{fill-opacity:.13}
+
+  .rowg .lbl{transform-box:fill-box;transform-origin:100% 50%;
+             transition:fill .2s ease}
+  .rowg.same .lbl{fill:#111111}
+  .rowg.jelly .lbl{animation:jelly .55s cubic-bezier(.34,1.56,.64,1) both}
+  @keyframes jelly{
+    0%  {transform:scale(1,1)}
+    28% {transform:scale(1.07,.93)}
+    52% {transform:scale(.97,1.03)}
+    76% {transform:scale(1.02,.995)}
+    100%{transform:scale(1,1)}
+  }
+
+  .rowg .dot{transition:transform .16s cubic-bezier(.3,.7,.4,1);
+             transform-box:fill-box;transform-origin:center}
+  .rowg.hot .dot{transform:scale(1.9)}
+  .rowg .bar,.rowg .cap{transition:stroke .16s ease}
+  .rowg.hot .bar,.rowg.hot .cap{stroke:#5e594f}
+  .hit,.lblhit{cursor:pointer}
+
+  @media print{ body{padding:0} details{display:none} #pop{display:none} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>Screening of reactivation-medium components for betaxanthin color development in engineered <i>S. cerevisiae</i></h1>
+    <div class="sub">
+      Fourteen treatments and one blank control assayed across four 24-well plates.
+      Color index: blue-channel gray level (Δ<i>B</i>).
+    </div>
+  </header>
+
+  <div class="panel">Color gain relative to the blank control</div>
+  <div class="legend" id="legend"></div>
+  <div id="chart"></div>
+
+  <div class="cap">
+    <b>Figure 6.</b> Effect of reactivation-medium components on color gain.
+    Color gain is expressed as Δ<i>B</i>, the difference between the mean blue-channel
+    gray level of the blank control and that of each treatment
+    (Δ<i>B</i> = <i>B</i><sub>blank</sub> − <i>B</i><sub>sample</sub>, arbitrary units on
+    a 0–255 scale). Positive values indicate a more yellow well. Symbols are treatment
+    means; horizontal bars span ±1 SD across replicate wells
+    (<i>n</i> = 3, except <i>n</i> = 2 for the three glucose treatments and
+    <i>n</i> = 6 for the blank).
+    <br>
+    The dashed vertical line marks Δ<i>B</i> = 0, the position of the blank control.
+    It is a relative reference, not an absolute zero: it corresponds to a mean
+    blue-channel gray level of 144.46, as labeled on the line, because the blue
+    channel darkens as the well becomes more yellow. The dotted line marks the
+    detection limit against the blank (Δ<i>B</i> = 7), approximately twice the standard
+    error of the difference between a triplicate mean and the blank mean. Rows are
+    ordered by Δ<i>B</i> and identified by compound class on the left margin.
+    <br>
+    The column headed mean ± SD reports the mean and standard deviation of each
+    treatment, with the mean colored by magnitude (ochre above the blank, blue below,
+    gray near zero). The final column gives the same difference as a percentage of the
+    blank mean.
+    <br>
+    All wells contained SC medium with amino-acid-free YNB and 2.0% glucose as the
+    reference carbon source, in a working volume of 1.0 mL. Glucose treatments varied
+    the carbon source alone (1.0, 3.0 and 5.0%). Tween 80 treatments combined
+    0.1–1.5% surfactant with 0.2 g/L tyrosine, except one combination at 0.3 g/L.
+    Images were acquired under fixed exposure and white balance and analyzed in
+    ImageJ with a circular region of interest covering the central 55–60% of each
+    well; the median blue-channel value of the region was used. Plate-to-plate
+    illumination differences were normalized against the plate background, and
+    residual edge-well shading was corrected using a set of 12 replicate wells not
+    shown here. Abbreviations: Tyr, L-tyrosine; VC, ascorbic acid; Tw80, Tween 80.
+  </div>
+
+  <details>
+    <summary>Treatment registry</summary>
+    <table class="reg" id="reg"></table>
+  </details>
+
+</div>
+
+<div id="pop"></div>
+
+<script>
+/* ================= data ================= */
+const BASE = 144.46;
+
+const CAT = {
+  C:{label:"Glucose",       color:"#9C5A3C"},
+  A:{label:"Tyrosine",      color:"#3F6699"},
+  V:{label:"Ascorbic acid", color:"#4F8A6E"},
+  T:{label:"Tween 80",      color:"#C08A2E"}
+};
+const CCOL = {
+  "Glucose":"#9C5A3C","Tyrosine":"#3F6699",
+  "Ascorbic acid":"#4F8A6E","Tween 80":"#C08A2E"
+};
+
+/* [label, ΔB, SD, class, mean, n] */
+const DATA = [
+ ["0.3 g/L Tyr + 0.5% Tw80",  25.32, 3.87,"Tween 80",     119.14,3],
+ ["0.2 g/L Tyr + 0.5% Tw80",  22.87, 4.54,"Tween 80",     121.59,3],
+ ["20 mM VC",                 22.47, 6.88,"Ascorbic acid",121.99,3],
+ ["0.5% DMSO + 10 mM VC",     17.37, 1.38,"Ascorbic acid",127.09,3],
+ ["10 mM VC",                 15.31, 2.83,"Ascorbic acid",129.15,3],
+ ["0.2 g/L Tyr + 1.5% Tw80",  13.63, 4.55,"Tween 80",     130.83,3],
+ ["0.1 g/L Tyr",              11.11, 3.76,"Tyrosine",     133.35,3],
+ ["0.2 g/L Tyr + 0.1% Tw80",   8.43, 4.40,"Tween 80",     136.03,3],
+ ["0.05 g/L Tyr",              7.82, 3.48,"Tyrosine",     136.64,3],
+ ["0.2 g/L Tyr",               7.26, 0.55,"Tyrosine",     137.20,3],
+ ["0.3 g/L Tyr",               5.38, 4.65,"Tyrosine",     139.08,3],
+ ["2.5× glucose (5.0%)",      -3.26, 4.22,"Glucose",      147.72,2],
+ ["1.5× glucose (3.0%)",      -3.76, 3.55,"Glucose",      148.22,2],
+ ["0.5× glucose (1.0%)",     -15.52, 1.96,"Glucose",      159.98,2]
+];
+
+const REG = [
+ ["C1",1,"Glucose","0.5× glucose","1.0% glucose","B1–B3",2],
+ ["C2",1,"Glucose","1.5× glucose","3.0% glucose","B4–B6",2],
+ ["C3",1,"Glucose","2.5× glucose","5.0% glucose","C1–C3",2],
+ ["A1",2,"Tyrosine","L-Tyr","0.05 g/L","A1–A3",3],
+ ["A2",2,"Tyrosine","L-Tyr","0.10 g/L","A4–A6",3],
+ ["A3",2,"Tyrosine","L-Tyr","0.20 g/L","B1–B3",3],
+ ["A4",2,"Tyrosine","L-Tyr","0.30 g/L","B4–B6",3],
+ ["V1",4,"Ascorbic acid","Ascorbic acid","10 mM","A1–A3",3],
+ ["V2",4,"Ascorbic acid","Ascorbic acid","20 mM","A4–A6",3],
+ ["V3",3,"Ascorbic acid","DMSO + ascorbic acid","0.5% DMSO + 10 mM","C4–C6",3],
+ ["T1",4,"Tween 80","Tyr + Tween 80","0.2 g/L + 0.5%","C4–C6",3],
+ ["T2",4,"Tween 80","Tyr + Tween 80","0.3 g/L + 0.5%","D4–D6",3],
+ ["T3",4,"Tween 80","Tyr + Tween 80","0.2 g/L + 0.1%","C1–C3",3],
+ ["T4",4,"Tween 80","Tyr + Tween 80","0.2 g/L + 1.5%","D1–D3",3]
+];
+
+/* ================= registry ================= */
+(function(){
+  let h = `<thead><tr><th>Code</th><th>Plate</th><th>Class</th>
+           <th>Treatment</th><th>Level</th><th>Wells</th>
+           <th style="text-align:right">n</th></tr></thead><tbody>`;
+  REG.forEach(r=>{
+    h += `<tr><td style="color:${(CAT[r[0][0]]||{}).color||'#999'}">${r[0]}</td>
+      <td class="num">${r[1]}</td><td>${r[2]}</td><td>${r[3]}</td>
+      <td>${r[4]}</td><td>${r[5]}</td><td class="num">${r[6]}</td></tr>`;
+  });
+  document.getElementById("reg").innerHTML = h + `</tbody>`;
+})();
+
+/* ================= popover ================= */
+const pop = document.getElementById("pop");
+let popOn = false;
+function showPop(html, x, y){
+  pop.innerHTML = html;
+  pop.classList.add("on"); popOn = true;
+  const w = pop.offsetWidth, h = pop.offsetHeight;
+  let left = Math.max(8, Math.min(window.innerWidth - w - 8, x - w/2));
+  let top  = y - h - 12; if (top < 8) top = y + 18;
+  pop.style.left = left + "px"; pop.style.top = top + "px";
+}
+function hidePop(){ pop.classList.remove("on"); popOn = false; }
+
+/* ================= figure ================= */
+(function(){
+  const N = DATA.length;
+  const ROW = 26, TOP = 46;
+
+  const LBL_W = 196;
+  const PX0 = 200, PX1 = 480;
+  const C1 = 500, C1W = 96;
+  const C2 = 606, C2W = 80;
+  const W = 700;
+  const H = TOP + N*ROW + 58;
+
+  const xmin = -24, xmax = 34;
+  const X = v => PX0 + (v-xmin)/(xmax-xmin)*(PX1-PX0);
+
+  const mid=[245,245,244], posC=[201,139,75], negC=[74,112,147];
+  const pctRamp = v => v >= 0
+    ? mid.map((m,i)=>m+(posC[i]-m)*Math.min(v/26,1))
+    : mid.map((m,i)=>m+(negC[i]-m)*Math.min(-v/17,1));
+  const rgb = c => `rgb(${c.map(Math.round).join(",")})`;
+
+  const neutralDark=[69,66,62], posDark=[138,89,37], negDark=[48,76,104];
+  const textInk = v => {
+    const t = v >= 0 ? Math.min(v/26,1) : Math.min(-v/17,1);
+    const tg = v >= 0 ? posDark : negDark;
+    const c = neutralDark.map((n,i)=> n + (tg[i]-n)*t);
+    return `rgb(${c.map(Math.round).join(",")})`;
+  };
+
+  let s = `<svg viewBox="0 0 ${W} ${H}" width="100%"
+           style="max-width:${W}px;display:block;font-family:inherit">`;
+
+  s += `<text x="${(PX0+PX1)/2}" y="18" text-anchor="middle" font-size="10"
+        fill="#6f6a63" letter-spacing=".05em">ΔB (gray levels)</text>`;
+  s += `<text x="${C1+C1W/2}" y="18" text-anchor="middle" font-size="10"
+        fill="#6f6a63" letter-spacing=".04em">mean ± SD</text>`;
+  s += `<text x="${C2+C2W/2}" y="18" text-anchor="middle" font-size="10"
+        fill="#6f6a63" letter-spacing=".03em">% of blank</text>`;
+
+  DATA.forEach((r,i)=>{
+    if (i % 2 === 0){
+      const y = TOP + i*ROW;
+      s += `<rect x="${PX0-12}" y="${y}" width="${PX1-PX0+24}" height="${ROW}"
+            fill="#fafafa"/>`;
+    }
+  });
+
+  s += `<line x1="${X(0)}" y1="${TOP-4}" x2="${X(0)}" y2="${TOP+N*ROW+6}"
+        stroke="#a9a39a" stroke-width=".8" stroke-dasharray="4 3"/>`;
+  s += `<line x1="${X(7)}" y1="${TOP-4}" x2="${X(7)}" y2="${TOP+N*ROW+6}"
+        stroke="#d9d4cb" stroke-width=".8" stroke-dasharray="1.5 2.5"/>`;
+
+  const tagW = 92, tagH = 14, tagY = TOP - 21;
+  s += `<rect x="${X(0)-tagW/2}" y="${tagY}" width="${tagW}" height="${tagH}"
+        rx="2.5" fill="#ffffff" stroke="#e2ded8" stroke-width=".8"/>`;
+  s += `<text x="${X(0)}" y="${tagY+9.8}" text-anchor="middle" font-size="7.6"
+        fill="#8a8478">blank, B = 144.46</text>`;
+
+  DATA.forEach((r,i)=>{
+    const [g,dB,sd,c,mean,n] = r;
+    const y = TOP + i*ROW, yc = y + ROW/2;
+    const pct = dB / BASE * 100;
+    const pctTxt = (pct>0?"+":"−") + Math.abs(pct).toFixed(0) + "%";
+    const col = CCOL[c] || "#8c8c8c";
+
+    s += `<g class="rowg" data-i="${i}" data-cat="${c}">`;
+    s += `<g class="anim" style="animation-delay:${i*22}ms">`;
+
+    s += `<rect class="cattint" x="0" y="${y}" width="${LBL_W}" height="${ROW}"
+          fill="${col}" fill-opacity=".05"/>`;
+    s += `<rect class="catbar" x="0" y="${y}" width="4" height="${ROW}"
+          fill="${col}" opacity=".85"/>`;
+
+    s += `<text class="lbl" x="${LBL_W-10}" y="${yc+3.5}" text-anchor="end"
+          font-size="10" fill="#2b2824">${g}</text>`;
+
+    const xL = X(dB - sd), xR = X(dB + sd), CAP = 3.8;
+    s += `<line class="bar" x1="${xL}" y1="${yc}" x2="${xR}" y2="${yc}"
+          stroke="#9a948a" stroke-width="1.1"/>`;
+    s += `<line class="cap" x1="${xL}" y1="${yc-CAP}" x2="${xL}" y2="${yc+CAP}"
+          stroke="#9a948a" stroke-width="1.1"/>`;
+    s += `<line class="cap" x1="${xR}" y1="${yc-CAP}" x2="${xR}" y2="${yc+CAP}"
+          stroke="#9a948a" stroke-width="1.1"/>`;
+    s += `<circle class="dot" cx="${X(dB)}" cy="${yc}" r="3.6" fill="${col}"/>`;
+    s += `<circle class="hit" cx="${X(dB)}" cy="${yc}" r="11" fill="transparent"/>`;
+
+    s += `<text x="${C1+50}" y="${yc+4}" text-anchor="end"
+          font-size="10.5" font-weight="700" fill="${textInk(dB)}"
+          font-variant-numeric="tabular-nums">${dB.toFixed(1)}</text>`;
+    s += `<text x="${C1+55}" y="${yc+3.6}" text-anchor="start"
+          font-size="8.8" fill="#9a948a"
+          font-variant-numeric="tabular-nums">± ${sd.toFixed(1)}</text>`;
+
+    s += `<rect x="${C2}" y="${y}" width="${C2W}" height="${ROW}"
+          fill="${rgb(pctRamp(pct))}"/>`;
+    s += `<text x="${C2+C2W/2}" y="${yc+3.5}" text-anchor="middle"
+          font-size="10" fill="#2b2824">${pctTxt}</text>`;
+
+    s += `<rect class="lblhit" x="0" y="${y}" width="${LBL_W-4}" height="${ROW}"
+          fill="transparent"/>`;
+
+    s += `</g></g>`;
+  });
+
+  let prev = null;
+  DATA.forEach((r,i)=>{
+    const c = r[3];
+    if (prev && prev !== c){
+      const y = TOP + i*ROW;
+      s += `<line x1="0" y1="${y}" x2="${C2-12}" y2="${y}"
+            stroke="#e8e5df" stroke-width=".9"/>`;
+    }
+    prev = c;
+  });
+
+  const ay = TOP + N*ROW + 16;
+  s += `<line x1="${PX0}" y1="${ay}" x2="${PX1}" y2="${ay}"
+        stroke="#cfc9c0" stroke-width=".8"/>`;
+  [-20,-10,0,10,20,30].forEach(v=>{
+    s += `<line x1="${X(v)}" y1="${ay}" x2="${X(v)}" y2="${ay+3.5}"
+          stroke="#cfc9c0" stroke-width=".8"/>`;
+    s += `<text x="${X(v)}" y="${ay+13}" text-anchor="middle"
+          font-size="9.5" fill="#8a8478">${v}</text>`;
+  });
+
+  s += `<text x="${(PX0+PX1)/2}" y="${H-8}" text-anchor="middle"
+        font-size="9.5" fill="#6f6a63">
+        ΔB (blue channel); 0 = blank (B 144.46); positive = more yellow</text>`;
+
+  s += `</svg>`;
+
+  const box = document.getElementById("chart");
+  box.innerHTML = s;
+
+  document.getElementById("legend").innerHTML =
+    Object.values(CAT).map(c=>
+      `<span><i style="background:${c.color}"></i>${c.label}</span>`).join("");
+
+  const groups = Array.from(box.querySelectorAll(".rowg"));
+
+  groups.forEach(g=>{
+    const lblhit = g.querySelector(".lblhit");
+    const lbl = g.querySelector(".lbl");
+
+    lblhit.addEventListener("mouseenter", ()=>{
+      const cat = g.dataset.cat;
+      groups.forEach(o=>{
+        if (o === g){
+          o.classList.remove("jelly");
+          void o.offsetWidth;
+          o.classList.add("jelly");
+        }
+        if (o.dataset.cat === cat) o.classList.add("same");
+        else o.classList.add("dim");
+      });
+    });
+
+    lbl.addEventListener("animationend", e=>{
+      if (e.animationName === "jelly") g.classList.remove("jelly");
+    });
+
+    lblhit.addEventListener("mouseleave", ()=>{
+      groups.forEach(o=>o.classList.remove("same","dim"));
+      g.classList.remove("jelly");
+    });
+  });
+
+  groups.forEach(g=>{
+    const i = +g.dataset.i, r = DATA[i];
+    const hit = g.querySelector(".hit"), dot = g.querySelector(".dot");
+    const snr = Math.abs(r[1]) / r[2];
+    hit.addEventListener("mouseenter", ()=>{
+      g.classList.add("hot");
+      const b = dot.getBoundingClientRect();
+      showPop(
+        `<div class="h" style="color:${CCOL[r[3]]}">${r[0]}</div>
+         <div class="m">${r[3]}, n = ${r[5]}</div>
+         <div class="b">ΔB = ${r[1].toFixed(2)} ± ${r[2].toFixed(2)}</div>
+         <div class="b">absolute B = ${r[4].toFixed(2)}</div>
+         <div class="b">SNR = ${snr.toFixed(1)}</div>`,
+        b.left + b.width/2, b.top);
+    });
+    hit.addEventListener("mouseleave", ()=>{ g.classList.remove("hot"); hidePop(); });
+  });
+})();
+
+document.addEventListener("scroll", ()=>{ if(popOn) hidePop(); }, {passive:true});
+</script>
+</body>
+</html>

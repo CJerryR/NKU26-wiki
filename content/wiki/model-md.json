@@ -13,139 +13,149 @@
   "blocks": [
     {
       "_template": "text",
-      "body": ":::note[翻译未校对]\nTranslation not proofread.\n:::"
+      "body": "<p class=\"author-source-link\"><a href=\"/source-archive/#meeting-20261019\" data-source-document=\"meeting-20261019-a689408f0daa\">Original submission (.docx)</a><span role=\"status\" aria-live=\"polite\"></span></p>"
+    },
+    {
+      "_template": "text",
+      "body": "<section class=\"author-manuscript\" lang=\"zh\">"
     },
     {
       "_template": "heading",
-      "text": "2. Molecular Dynamics | Ligand positioning and contact changes in a membrane environment",
       "level": 2,
-      "attributes": "#md-introduction toc=\"2. Molecular Dynamics | Ligand positioning and contact changes in a membrane environment\""
+      "text": "<strong>Molecular Dynamics｜膜环境中的配体定位与接触变化</strong>",
+      "attributes": "#src-Model-Molecular-Dynamics-1 toc=\"Molecular Dynamics｜膜环境中的配体定位与接触变化\""
     },
     {
       "_template": "text",
-      "body": "Docking provided candidate poses and contact clues for N84V and V368R. We further used molecular dynamics (MD) simulations to observe how these poses change after entering a membrane environment and whether the predicted contacts persist, adding dynamic evidence to the structural interpretation of the candidates."
+      "body": "<p style=\"text-align:left;\">分子对接给出了 N84V 和 V368R 的候选结合姿态。我们进一步开展分子动力学（molecular dynamics，MD）模拟，观察这些姿态在膜环境中如何调整，以及哪些受体–配体接触能够保持。</p>"
     },
     {
       "_template": "heading",
-      "text": "2.1 Starting from docking poses to establish comparative systems in a membrane environment",
-      "level": 2,
-      "attributes": "#md-systems toc=\"2.1 Starting from docking poses to establish comparative systems in a membrane environment\""
+      "level": 3,
+      "text": "<strong>2.1 从对接姿态建立六组膜体系</strong>",
+      "attributes": "#src-Model-Molecular-Dynamics-3 toc=\"2.1 从对接姿态建立六组膜体系\""
     },
     {
       "_template": "text",
-      "body": "We paired WT, N84V and V368R with ascr#18 and ascr#3, respectively, to construct six complexes. System preparation started from each system’s own docking pose: the ligand was placed back into the corresponding full-length receptor, the structure was rationalized, and spatial clashes between the restored segments, ligand and surrounding structure were checked and addressed. While retaining each system’s original conformation as far as possible, we placed the complexes in POPC lipid bilayers, solvent and ions."
+      "body": "<p style=\"text-align:left;\">将 WT、N84V 和 V368R 分别与 ascr#18、ascr#3 配对，构建六组复合物。各组从自身的对接姿态出发，将配体放回对应的全长受体，处理恢复片段与配体及周围结构的空间冲突，再将复合物置于 POPC 脂质双层、溶剂和离子环境中。</p>"
     },
     {
       "_template": "text",
-      "body": "To be inserted: “Description of energy minimization and other preparation stages.”"
-    },
-    {
-      "_template": "text",
-      "body": "Each of the six systems completed one 100 ns simulation. We used a common analysis method to compare ligand motion and contact changes, while retaining the source of each starting structure and ligand pose as a basis for interpreting the results."
+      "body": "<p style=\"text-align:left;\">体系先经过能量最小化，再在定容条件下逐步升温至 303.15 K，并进行短时恒温预热。随后在 1 bar 下分阶段进行压力平衡，逐步减弱位置和二面角约束，使受体、配体、膜脂和溶剂共同松弛。撤去约束后继续进行准备模拟，检查温度、密度、膜平面面积及盒高的变化。六组随后各完成一条 100 ns 生产模拟。</p>"
     },
     {
       "_template": "heading",
-      "text": "2.2 Observing ligand motion relative to the local pocket",
-      "level": 2,
-      "attributes": "#md-pocket-rmsd toc=\"2.2 Observing ligand motion relative to the local pocket\""
+      "level": 3,
+      "text": "<strong>2.2 以局部口袋为参照，观察配体运动</strong>",
+      "attributes": "#src-Model-Molecular-Dynamics-6 toc=\"2.2 以局部口袋为参照，观察配体运动\""
     },
     {
       "_template": "text",
-      "body": "The receptor itself also moves during simulation. When observing ligand position, it is therefore necessary to distinguish movement together with the receptor from a change of position within the pocket. We aligned the local pocket, calculated the ligand heavy-atom RMSD relative to its own starting pose, and interpreted it together with contact changes and actual conformations."
+      "body": "<p style=\"text-align:left;\">为区分受体整体运动与配体在口袋内的移动，我们用六组共同的一组口袋主链原子对齐轨迹，再计算配体相对各自生产起始帧的重原子均方根偏差（RMSD）。同时采用全受体和膜内螺旋核心对齐，比较不同参照下的结果。</p>"
     },
     {
       "_template": "text",
-      "body": "Results are mainly summarized over 50–100 ns (to be supplemented: why the first 50 ns are not used), while the full trajectory is also examined. RMSD describes the extent of ligand departure from the initial pose; contact occupancy is the proportion of sampled frames within the analyzed time window that satisfy the specified contact criteria."
+      "body": "<p style=\"text-align:left;\">六组统一以 50–100 ns 为主要比较窗口，以减少早期构象松弛的影响，并利用全程轨迹追踪接触形成、丢失和配体换位。RMSD 描述配体偏离自身起始姿态的程度，接触占有率则表示窗口内满足接触判据的采样帧比例。</p>"
     },
     {
       "_template": "text",
-      "body": "Image to be inserted."
+      "body": "<p style=\"text-align:center;\"><a href=\"https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-d5f1716f681b7d35-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-d5f1716f681b7d35-00.json\" alt=\"\" loading=\"lazy\" width=\"552\" height=\"319\"></a></p>"
+    },
+    {
+      "_template": "text",
+      "body": "<div class=\"author-table-scroll\"><table class=\"author-table\"><colgroup><col style=\"width:100.0000%\"></colgroup><tbody><tr><td colspan=\"1\"><p style=\"text-align:left;\"><strong>图1｜不同结构对齐方式下的配体重原子 RMSD。</strong> 分别以全受体、膜内螺旋核心和局部口袋主链对齐，各轨迹以自身生产起始结构为参照。曲线为每 100 ps 采样数据的 1 ns 居中滑动平均，阴影标示 50–100 ns 比较窗口。每组包含一条 100 ns 轨迹。</p></td></tr></tbody></table></div>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\">口袋对齐与膜内螺旋核心对齐的曲线接近，而全受体对齐的结果明显不同。这说明受体其他区域的运动会影响配体 RMSD 的读数；以局部结构为参照，更容易看清配体在结合区域内的姿态变化。</p>"
     },
     {
       "_template": "heading",
-      "text": "2.3 N84V–ascr#18: tracing persistent contacts from smaller local motion",
-      "level": 2,
-      "attributes": "#md-n84v toc=\"2.3 N84V–ascr#18: tracing persistent contacts from smaller local motion\""
+      "level": 3,
+      "text": "<strong>2.3 N84V–ascr#18：Arg189 持续锚定配体羧酸端</strong>",
+      "attributes": "#src-Model-Molecular-Dynamics-12 toc=\"2.3 N84V–ascr#18：Arg189 持续锚定配体羧酸端\""
     },
     {
       "_template": "text",
-      "body": "To be rewritten — focus on the hydrogen bond/salt bridge formed between arg189 and the carboxyl group."
+      "body": "<p style=\"text-align:left;\">N84V–ascr#18 中，Arg189 与配体末端羧酸盐保持持续接触。模型中的 Arg189 胍基带正电，配体羧酸盐带负电；二者的近距离接触符合盐桥特征，并具有氢键几何。盐桥的静电作用及其几何特征，为理解带电末端的定位提供了参考。[1]</p>"
     },
     {
       "_template": "text",
-      "body": "Relative to the local pocket, the ligand in N84V–ascr#18 moved less in the second half of the trajectory than in WT–ascr#18 and N84V–ascr#3. This observation was also retained when the transmembrane helical core was used as the alignment reference."
+      "body": "<p style=\"text-align:left;\">在 50–100 ns，Arg189 胍基氮与配体羧酸盐氧的最近距离在全部采样帧中均不超过 4 Å，接触占有率为 100%；其中 93.6% 的采样帧至少存在一条氢键。氢键按供体–受体距离 ≤3.0 Å、D–H–A 角 ≥150° 判断。采用相同判据，N84V–ascr#3 和 WT–ascr#18 在这一时段均未检出 Arg189 与配体羧酸端的氢键。</p>"
     },
     {
       "_template": "text",
-      "body": "| System | Mean ligand RMSD, 50–100 ns, pocket aligned (Å) |\n| --- | ---: |\n| WT–ascr#18 | 2.62 |\n| N84V–ascr#18 | 1.73 |\n| N84V–ascr#3 | 4.68 |\n"
+      "body": "<p style=\"text-align:center;\"><a href=\"https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-f0178ce121bafde0-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-f0178ce121bafde0-00.json\" alt=\"\" loading=\"lazy\" width=\"552\" height=\"251\"></a></p>"
     },
     {
       "_template": "text",
-      "body": "To understand ligand retention in this region, we further examined persistently contacting residues and the specific ligand groups they contacted. In N84V–ascr#18, the guanidinium group of Arg189 remained close to the terminal carboxylate of the ligand. During 50–100 ns, their heavy-atom contact occupancy was 100%, and the occupancy of any candidate geometric hydrogen bond was 93.6%."
+      "body": "<div class=\"author-table-scroll\"><table class=\"author-table\"><colgroup><col style=\"width:100.0000%\"></colgroup><tbody><tr><td colspan=\"1\"><p style=\"text-align:left;\"><strong>图2｜Gpr2 N84V 中 Arg189 与 ascr#18 羧酸端的接触。</strong> （a）64.64 ns 时的模拟快照，虚线标示 Arg189 与配体之间的氢键，供体–受体距离为 2.77 Å。（b）50–100 ns 内的氢键占有率：N84V–ascr#18 为 93.6%，WT–ascr#18 和 N84V–ascr#3 均为 0%。每 100 ps 采样，氢键判据同正文。</p></td></tr></tbody></table></div>"
     },
     {
       "_template": "text",
-      "body": "Here, the heavy-atom contact criterion was a minimum distance no greater than 4 Å; the candidate geometric hydrogen-bond criteria were a donor–acceptor distance no greater than 3.0 Å and a D–H–A angle no smaller than 150°."
+      "body": "<p style=\"text-align:left;\">持续接触也伴随着较小的配体移动。口袋对齐后，N84V–ascr#18 的后半程平均配体 RMSD 低于 WT–ascr#18 和 N84V–ascr#3；改用膜内螺旋核心对齐，仍保留这一关系。Arg189 盐桥及其中的氢键，为 ascr#18 在该构象中保持位置提供了机制线索。</p>"
     },
     {
       "_template": "text",
-      "body": "This result makes the R189 contact clue from docking more specific: in this trajectory, the carboxyl end of the ligand maintained persistent contact with Arg189, providing a structural explanation for its local positioning."
+      "body": "<p style=\"text-align:left;\"><br></p>"
     },
     {
       "_template": "text",
-      "body": "We then examined the relationship between this contact and the mutation site. Val84 did not directly contact the ligand in the second half of the trajectory, and the current local analysis has not established a specific connection from position 84 to Arg189. Meanwhile, the Arg189–carboxyl-end contact was already present at the starting point of the production simulation."
-    },
-    {
-      "_template": "text",
-      "body": "The current results therefore support an association between persistent contact and smaller local motion in this N84V–ascr#18 conformation. Replicate simulations and more controlled comparisons of starting points are still needed to test the relationship between this behavior and the substitution at position 84."
+      "body": "<p style=\"text-align:center;\"><strong>点击图片可查看完整电子表格</strong></p>"
     },
     {
       "_template": "heading",
-      "text": "2.4 V368R–ascr#3: adjusting the interpretation following ligand relocation,",
-      "level": 2,
-      "attributes": "#md-v368r toc=\"2.4 V368R–ascr#3: adjusting the interpretation following ligand relocation,\""
+      "level": 3,
+      "text": "<strong>2.4 V368R–ascr#3：尚未找到稳定的机制解释</strong>",
+      "attributes": "#src-Model-Molecular-Dynamics-20 toc=\"2.4 V368R–ascr#3：尚未找到稳定的机制解释\""
     },
     {
       "_template": "text",
-      "body": "To be rewritten."
+      "body": "<p style=\"text-align:left;\">原始 V368R–ascr#3 轨迹中，配体离开初始位置，随后由 Arg345 固定羧酸端。与此同时，Arg368 的带电末端从 Asp70 附近移开，使我们开始关注受体局部变化与配体重定位的关系。然而，WT–ascr#3 和 V368R–ascr#18 也具有持续的 Arg345–配体接触。因此，Arg345 是多个体系都能利用的固定位置，不能解释 V368R 对 ascr#3 的偏好增强。</p>"
     },
     {
       "_template": "text",
-      "body": "V368R–ascr#3 showed different dynamic behavior: the ligand left its initial position, moved toward Arg345, and formed new contacts. This led us to further examine the receptor structure around the mutation site, looking for local changes accompanying ligand movement."
+      "body": "<p style=\"text-align:left;\">为寻找其他稳定作用，我们设计了两种 V368R–ascr#3 起始构象，各进行了 100 ns MD 模拟。一种让配体羧酸端靠近突变新增的 Arg368，检验其能否直接固定配体；另一种让羧酸端靠近 Arg189，借鉴 N84V–ascr#18 中的锚定方式。两条轨迹均在早期失去预设接触，后期主要转为 Arg345 固定，没有得到新的持续锚定模式。</p>"
     },
     {
       "_template": "text",
-      "body": "The analysis showed that the charged end of Arg368 gradually moved away from Asp70 in V368R–ascr#3, whereas the two groups remained close in V368R–ascr#18. In the former trajectory, movement of the charged end and the onset of persistent ligand contact with Arg345 occurred at similar times, suggesting that local rearrangement of the receptor accompanied ligand relocation. However, these changes come from the same trajectory, and their temporal proximity is still insufficient to establish a causal relationship."
+      "body": "<p style=\"text-align:left;\">全受体直接盐桥、氢键及组合接触筛查发现，Arg189 起点的轨迹中，Asp89 曾固定 ascr#3 的糖环：这处氢键在 20–50 ns 频繁出现，后半程大多消失。氢键形成和丢失前后，Arg368–Asp70 接触均保持，未显示出与糖环移动相对应的变化。ascr#18 的静态模型也能容纳相同的糖环位置。因此，Asp89 提供了一种阶段性结合姿势，却没有形成解释 V368R–ascr#3 偏好的稳定线索。</p>"
     },
     {
       "_template": "text",
-      "body": "The WT control also led us to reconsider this interpretation. WT–ascr#3 also had persistent contact between Arg345 and the carboxyl end of the ligand; during 50–100 ns, its contact occupancy was 100%, compared with 90.4% in V368R–ascr#3. The current results therefore do not support interpreting the Arg345 contact as a positioning effect unique to or enhanced by V368R, and these occupancies cannot directly determine binding strength."
-    },
-    {
-      "_template": "text",
-      "body": "In addition, the two V368R systems differed in their starting ligand poses and local structural processing, making it difficult to attribute subsequent changes solely to ligand type or mutation effects. The current observations support a local-rearrangement hypothesis that requires further testing, and show that candidate interpretation needs to consider ligand motion, internal receptor changes and the influence of starting structures together."
+      "body": "<p style=\"text-align:left;\"><strong>补充模拟和后续分析仍未找到类似 N84V–ascr#18 中 Arg189 持续锚定的机制线索。Vina 所预测的 V368R 对 ascr#3 偏好增强，其结构机制仍待深入研究。</strong></p>"
     },
     {
       "_template": "heading",
-      "text": "2.5 Feeding dynamic observations back into candidate interpretation",
-      "level": 2,
-      "attributes": "#md-next-steps toc=\"2.5 Feeding dynamic observations back into candidate interpretation\""
+      "level": 3,
+      "text": "<strong>2.5 两种候选的机制解释</strong>",
+      "attributes": "#src-Model-Molecular-Dynamics-25 toc=\"2.5 两种候选的机制解释\""
     },
     {
       "_template": "text",
-      "body": "MD added different structural explanations for the two candidates: in N84V–ascr#18, persistent contact between Arg189 and the carboxyl end provided a clue to the smaller local motion; V368R–ascr#3 underwent ligand relocation, suggesting that subsequent evaluation needs to consider contact rearrangements beyond the initial pose."
+      "body": "<p style=\"text-align:left;\">N84V 的 MD 结果为 Vina 预测的 ascr#18 偏好提供了结构线索：Arg189 持续锚定配体羧酸端，形成盐桥和氢键接触，同时配体在局部口袋中的移动较小。这为 ascr#18 如何保持结合姿态提供了具体解释。</p>"
     },
     {
       "_template": "text",
-      "body": "These observations make the next questions more specific: whether the local positioning of N84V persists in replicate simulations, whether the rearrangement process in V368R recurs, and how these behaviors are related to the mutations. Each system currently has only one trajectory, and the starting conformations differ; the effects of the mutations on actual binding and selectivity still require further simulations and experimental evaluation."
+      "body": "<p style=\"text-align:left;\">V368R 则尚未获得类似的机制线索。两条补充模拟未能保持预设的 Arg368 或 Arg189 接触，后期形成的 Arg345 接触也见于对照；新发现的 Asp89 氢键仅在部分时段保持。因此，现有 MD 仍未解释 Vina 所预测的 V368R 对 ascr#3 偏好增强，其结构机制仍待深入研究。</p>"
+    },
+    {
+      "_template": "heading",
+      "level": 3,
+      "text": "<strong>References</strong>",
+      "attributes": "#src-Model-Molecular-Dynamics-28 toc=\"References\""
     },
     {
       "_template": "text",
-      "body": "<span id=\"source-english-20261010\" aria-hidden=\"true\"></span>\n<span id=\"original-model-block-80\" aria-hidden=\"true\"></span>"
+      "body": "<p style=\"text-align:left;\">[1] Donald, J. E., Kulp, D. W., &amp; DeGrado, W. F. (2011). Salt bridges: Geometrically specific, designable interactions. <em>Proteins: Structure, Function, and Bioinformatics</em>, 79(3), 898–915. <a href=\"https://doi.org/10.1002/prot.22927\">https://doi.org/10.1002/prot.22927</a></p>"
     },
     {
       "_template": "text",
-      "body": "[Historical source documents / 历史原稿](/source-archive/)"
+      "body": "</section>"
+    },
+    {
+      "_template": "text",
+      "body": "<span id=\"md-introduction\" aria-hidden=\"true\"></span>\n<span id=\"md-systems\" aria-hidden=\"true\"></span>\n<span id=\"md-pocket-rmsd\" aria-hidden=\"true\"></span>\n<span id=\"md-n84v\" aria-hidden=\"true\"></span>\n<span id=\"md-v368r\" aria-hidden=\"true\"></span>\n<span id=\"md-next-steps\" aria-hidden=\"true\"></span>"
     }
   ],
   "preserveAuthorFormatting": true

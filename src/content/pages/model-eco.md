@@ -13,96 +13,138 @@ meta: {}
 draft: false
 hidden: false
 ---
-:::note[翻译未校对]
-Translation not proofread.
-:::
-
-## 4. Eco | How density information supports management decisions {#eco-introduction toc="4. Eco | How density information supports management decisions"}
-
-The preceding models connect receptor recognition to an interpretable color signal and estimate target-nematode density through two-channel readings. Having obtained this information, we further ask: when growers can already choose uniform treatment, what additional value does knowing nematode density provide?
-
-We established an economic-benefit model linking density to potential yield loss, treatment costs and testing costs, and comparing the net income from different management approaches over a single production season. As the comparison developed, the focus also moved from “whether testing and control can cover their costs” to “whether density information changes action, and when that change is worthwhile.”
-
-## 4.1 Using density as the interface between signal interpretation and economic comparison {#eco-interface toc="4.1 Using density as the interface between signal interpretation and economic comparison"}
-
-ODE, the two-channel model and Eco perform three consecutive tasks. ODE describes how receptor input passes through the intracellular pathway to form a color output; the two-channel model uses two color features to estimate southern root-knot nematode density while background nematodes also contribute to the signal; Eco receives this density and combines it with cultivation and management parameters to compare economic outcomes.
-
-The interface between the three can be summarized as follows:
-
-ODE color output → two-channel color features and density regression → target-density estimate → Eco management-scenario comparison.
-
-In the current example, density is consistently expressed as the number of second-stage juveniles per 100 cm³ of soil (J2/100 cm³). The two readings are processed in the same way as in calibration, and the regression output enters Eco after checks on units and the applicable range. Eco’s economic parameters come independently from the literature and scenario settings; color and income are connected through density as the intermediate quantity.
-
-The current simulated interface retains both a density point estimate and its regression prediction interval. When the interval crosses a management-tier boundary, the program calculates scenarios on both sides of the boundary to show how treatment choices and income comparisons may change. Results with negative density, outside the calibration range, or outside the range supported by the economic model are stopped from being passed downstream. The current interval reflects the formal uncertainty of the simulated regression; its coverage for actual measurements still needs to be tested through calibration with real samples and readings.
-
-## 4.2 Estimating yield loss and net income from nematode density {#eco-economics toc="4.2 Estimating yield loss and net income from nematode density"}
-
-We selected protected tomato production in Spain and southern root-knot nematodes as a specific example, using preplant density as the input and calculating income per hectare over one production season.
-
-The relationship between density and relative yield uses the Seinhorst loss relationship, with parameters based on the fitted spring-season results for ungrafted tomato reported by Expósito et al. (2020). This relationship describes a response with a tolerance level: at low density, the model predicts that yield remains at the normal level; above the tolerance level, relative yield decreases as density increases and gradually approaches a lower bound. The tolerance density used in the example is 6 J2/100 cm³ after conversion, and the minimum relative yield is 0.34. [Expósito et al., 2020](https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2020.560024/full)
-
-After obtaining potential yield loss, we introduced crop selling price, baseline production cost, treatment cost and treatment effect, and calculated income using the following relationship:
-
-Net income over one production season = sales revenue after the remaining nematode loss − baseline production cost − treatment cost − testing cost.
-
-Economic and treatment information refers to the study by Talavera-Rubia et al. (2022). The population reduction reported in the literature is first converted into a proportion of loss avoided through the density–yield relationship at a reference density of 100 J2/100 cm³, and is then held fixed for the different density scenarios in this example. This simplifies the comparison and also makes the results depend on the fixed-effect assumption. [Talavera-Rubia et al., 2022](https://doi.org/10.3390/plants11202774)
-
-The model combines yield relationships and economic parameters from different studies to form a reproducible literature scenario. Testing cost is provisionally set at 5 EUR/ha as a team assumption; the sources of literature prices, treatment costs and converted effects are retained for subsequent updates according to actual application conditions.
-
-## 4.3 Distinguishing control benefits from information value through two comparison baselines {#eco-baselines toc="4.3 Distinguishing control benefits from information value through two comparison baselines"}
-
-We first compare “no testing, no treatment” with “graded treatment after testing.” This comparison can answer whether the entire testing-and-control program improves income, but it also includes the loss avoided by treatment itself. To further assess the value provided by density information, we added the “no testing, uniform treatment” scenario.
-
-In the example, uniform treatment uses the fluopyram program from the literature. Graded treatment is selected according to density: below 10 J2/100 cm³, no additional dedicated control is used; from 10 to below 80, middle-tier treatment is used; at 80 and above, high-tier treatment is used. The middle tier uses the same program as uniform treatment, while the high tier uses chicken-manure biosolarization.
-
-The values 10 and 80 are preset management-tier boundaries and have a different meaning from the tolerance density in the yield curve. The model separately compares the net income of the candidate programs to check whether the preset choice agrees with the option giving the highest income under the current parameters.
-
-We therefore calculate two income differences separately:
-
-Improvement relative to no treatment reflects the overall benefit of testing and graded treatment;
-
-Improvement relative to uniform treatment reflects the conditional value of using density information to adjust action when a treatment option already exists.
-
-Keeping the two baselines separate allows us to further assess whether increased income comes from undertaking control or from adjusting the treatment approach after obtaining information.
-
-## 4.4 Examining when information has value through representative scenarios {#eco-example toc="4.4 Examining when information has value through representative scenarios"}
-
-At a density of 100 J2/100 cm³, with the other parameters kept at the example configuration, the model gives the following results.
-
-| Management scenario | Net seasonal income (EUR/ha) |
-| --- | ---: |
-| No testing, no control | −1,828.19 |
-| No testing, uniform control | 14,704.03 |
-| Testing, graded treatment | 15,200.29 |
-
-Graded treatment after testing increases income by approximately 17,028.48 EUR/ha relative to no treatment and by approximately 496.26 EUR/ha relative to uniform treatment. The difference between these two values shows that assessing testing value requires an explicit comparator. In this scenario, the additional loss avoided by stronger treatment covers the increased treatment and testing costs.
-
-The role of information also changes with density. At low density, testing may help reduce unnecessary treatment; in the middle-density range, the graded program is the same as uniform treatment, so the modeled income difference is −5 EUR/ha, the additional testing cost. At high density, whether stronger treatment is worthwhile depends on whether the additional loss avoided covers the cost.
-
-These results led us to focus the evaluation on whether density information changed the management choice. We further varied testing cost, treatment cost, treatment effect and crop selling price separately to examine how the two income differences changed. When the graded program and uniform treatment used the same measure, their shared cost and effect parameters were adjusted together to keep the comparison conditions consistent. These one-factor scenarios examine the sensitivity of the conclusions to the assumptions.
-
-The above income calculations are conditional on the given density and the cost and effect assumptions. Real detection errors may lead to treatment choices that differ from the program appropriate for the actual density; their economic effects still need to be evaluated using measured error distributions.
-
-## 4.5 Feeding economic comparisons back into detection design {#eco-design toc="4.5 Feeding economic comparisons back into detection design"}
-
-The economic model further clarified the requirements for detection outputs: when different densities correspond to different treatment approaches, semi-quantitative or quantitative information is more useful for supporting management tiers. In particular, estimation bias in density ranges where action may change affects program selection, so these regions should be priorities for subsequent calibration and evaluation.
-
-This understanding also influenced how results are presented. We retain the density estimate, corresponding management tier and income comparisons against both baselines together; when the estimated range crosses a tier boundary, neighboring scenarios are displayed to help users understand the dependence of the results on the density interpretation.
-
-Subsequent work will calibrate density estimates using real samples and phone readings, and update sampling coverage, testing cost per hectare and management parameters through application research. New data will test both whether the front-end readings sufficiently distinguish the relevant density ranges and whether the cost of obtaining this information is reasonable.
-
-We store parameter configurations separately from the calculation program and provide example inputs and reproducible reports. Existing automated checks cover density–loss calculations, cost calculations and the consistency of comparison baselines; actual application benefits still need to be tested using local data. Other researchers can replace crop, price and treatment parameters within this framework to evaluate the value of their detection programs under specific management conditions.
-
-## 4.6 Exploring the connection from color development to income through an interactive webpage {#eco-explorer toc="4.6 Exploring the connection from color development to income through an interactive webpage"}
-
-To let readers directly observe how the preceding models connect, we integrated ODE, dual-channel density estimation and Eco scenario comparison into the NemaKlear interactive webpage. Readers can select different simulated soil samples and view the two color responses, target-density estimates and corresponding economic results in sequence, exploring how changes in sample composition affect subsequent interpretation.
-
-The webpage provides two input modes: simulated soil samples and manual absorbance. After a simulated sample is selected, the program solves the two ODEs, displays color development over time, and passes the blank-corrected endpoint absorbances to the dual-channel regression. Manual mode allows two A480 readings to be entered directly for density estimation; ODE curves in this mode are shown as references.
-
-After obtaining the density estimate, the webpage jointly displays the management grade, potential yield loss, net-income tables and income curves for three management scenarios. Readers can compare changes relative to both no control and uniform control, and switch among the point estimate, prediction-interval endpoints and neighboring scenarios where a grading boundary is crossed, observing how density interpretation affects treatment choice and economic results.
-
-These interactions continue the question of this chapter: after density information is obtained, does the treatment plan change, and how much additional income does that change bring? The page labels the simulated-calibration status and conditional interpretation beyond the calibration range. Income at different densities is used for scenario comparison; its variation does not constitute a confidence interval for income. Readers can also open the full report to inspect parameters and sensitivity analysis, or download the calculation results for review.
-
 <div data-nemaklear-original></div>
 
-<span id="eco-references" aria-hidden="true"></span>
+<p class="author-source-link"><a href="/source-archive/#meeting-20261019" data-source-document="meeting-20261019-cf8e375550b3">Original submission (.docx)</a><span role="status" aria-live="polite"></span></p>
+
+<section class="author-manuscript" lang="zh">
+
+## 4. <strong>Eco｜从显色读数到管理决策</strong> {#src-Model-Eco-1 toc="4. Eco｜从显色读数到管理决策"}
+
+<p style="text-align:left;">我们开发了 <strong>NemaKlear 交互网页</strong>，将 ODE 显色模拟、双通道密度估计和经济效益分析连接起来。读者可以选择模拟土样或输入两路吸光度读数，查看目标线虫密度，并比较不同管理方式下的单季净收益。</p>
+
+<p style="text-align:left;">这个网页让我们能够直接探索一个问题：<strong>当农户已经可以选择统一处理时，知道线虫密度还能带来多少额外收益？</strong> 为此，Eco 模型将密度与潜在产量损失、处理成本和检测费用联系起来，考察密度信息何时会改变管理选择，以及这种改变能否覆盖获取信息和调整处理的成本。</p>
+
+### <strong>4.1 在交互网页中探索从显色到收益的联系</strong> {#src-Model-Eco-4 toc="4.1 在交互网页中探索从显色到收益的联系"}
+
+<p style="text-align:left;">在 NemaKlear 中，读者可以沿着“显色响应 → 密度估计 → 管理选择 → 经济结果”的过程查看模型输出。</p>
+
+<p style="text-align:left;">网页提供两种输入方式：</p>
+
+<p style="text-align:left;">**模拟土样：**选择不同样本，观察两路显色随时间的变化及对应的密度估计。</p>
+
+<p style="text-align:left;">**手动读数：**输入两路 A480 读数，直接开展密度估计。该模式中的 ODE 曲线作为参考展示。</p>
+
+<p style="text-align:left;">获得密度估计后，网页联动显示管理分级、潜在产量损失，以及“不检测、不处理”“不检测、统一处理”和“检测后分级处理”三种情景的净收益表与收益曲线。读者可以比较检测后分级处理相对两个基准的收益变化，也可以切换密度点估计、预测区间端点和跨越分级界限时的相邻情景，观察密度判断如何影响处理选择。</p>
+
+<p style="text-align:left;">探索时，可以重点观察三个问题：</p>
+
+<p style="text-align:left;">低密度下，检测能否帮助减少不必要的处理？</p>
+
+<p style="text-align:left;">分级处理与统一处理相同时，检测费用如何影响净收益？</p>
+
+<p style="text-align:left;">高密度下，加强处理带来的额外收益能否覆盖增加的成本？</p>
+
+<p style="text-align:left;">网页同时提供完整报告，供读者查看参数与敏感性分析，并下载计算结果进行复查。</p>
+
+### <strong>4.2 以密度为接口，连接显色与经济分析</strong> {#src-Model-Eco-15 toc="4.2 以密度为接口，连接显色与经济分析"}
+
+<p style="text-align:left;">ODE、双通道模型和 Eco 分别完成三个连续任务：ODE 描述受体输入如何经胞内通路形成显色输出；双通道模型利用两路颜色特征，在背景线虫共同贡献信号的条件下估计南方根结线虫密度；Eco 接收密度估计，结合种植与管理参数计算经济结果。</p>
+
+<p style="text-align:left;">模拟土样的计算过程为：</p>
+
+<p style="text-align:left;"><strong>ODE 显色输出 → 终点吸光度与空白校正 → 双通道密度回归 → Eco 管理情景比较。</strong></p>
+
+<p style="text-align:left;">密度统一为每 100 cm³ 土壤中的二龄幼虫数量（J2/100 cm³）。两路读数采用与校准一致的处理方式，回归结果经单位和适用范围检查后进入 Eco。经济参数独立来自文献与情景设定，颜色与收益通过密度这一中间量连接。</p>
+
+<p style="text-align:left;">接口同时保留密度点估计及其回归预测区间。当区间跨过管理分级界限时，程序分别计算界限两侧的情景，显示处理选择与收益比较可能如何变化。负密度、超出校准范围或超出经济模型支持范围的结果会停止向后传递，页面同时说明校准状态与适用条件。</p>
+
+### <strong>4.3 从线虫密度计算产量损失与净收益</strong> {#src-Model-Eco-21 toc="4.3 从线虫密度计算产量损失与净收益"}
+
+<p style="text-align:left;">我们选择西班牙设施番茄与南方根结线虫作为示例，以种植前密度为输入，按每公顷、一个生产季核算收益。</p>
+
+<p style="text-align:left;">密度与相对产量之间采用 Seinhorst 损失关系，参数依据 Expósito 等（2020）未嫁接番茄春季试验的拟合结果。密度低于耐受水平时，模型预测产量保持在正常水平；超过这一水平后，相对产量随密度增加而下降，并逐渐接近下限。示例中的耐受密度换算后为 <strong>6 J2/100 cm³</strong>，最低相对产量为 <strong>0.34</strong>。<a href="https://doi.org/10.3389/fpls.2020.560024">1</a></p>
+
+<p style="text-align:left;">在此基础上，模型引入作物售价、基础生产成本、处理费用和处理效果，计算：</p>
+
+<p style="text-align:left;"><strong>单季净收益＝考虑剩余线虫损失后的销售收入－基础生产成本－处理成本－检测成本。</strong></p>
+
+<p style="text-align:left;">经济与处理资料参考 Talavera-Rubia 等（2022）的研究。<a href="https://doi.org/10.3390/plants11202774">2</a> 我们先将文献中的虫口降低率在参考密度 100 J2/100 cm³ 下，通过密度—产量关系换算为避免损失的比例，再将这一比例固定用于不同密度情景。因此，<strong>避免损失的比例随密度保持不变</strong>是本示例的一项简化假设。</p>
+
+<p style="text-align:left;">模型综合不同研究中的产量关系和经济参数，形成可复算的文献情景。检测费用暂设为 <strong>5 EUR/ha</strong>，属于团队假设。文献价格、处理费用与换算效果均保留来源，便于结合实际应用条件更新。</p>
+
+### <strong>4.4 用两个基准区分防治收益与信息价值</strong> {#src-Model-Eco-28 toc="4.4 用两个基准区分防治收益与信息价值"}
+
+<p style="text-align:left;">检测后收益提高，可能同时来自防治本身和依据密度调整处理的作用。为区分这两部分，我们设置三种管理情景。</p>
+
+<p style="text-align:left;"><br></p>
+
+<p style="text-align:center;"><strong>点击图片可查看完整电子表格</strong></p>
+
+<p style="text-align:left;">分级处理采用以下预设规则，其中处理方案的资料来自文献 <a href="https://doi.org/10.3390/plants11202774">2</a>。</p>
+
+<p style="text-align:left;"><br></p>
+
+<p style="text-align:center;"><strong>点击图片可查看完整电子表格</strong></p>
+
+<p style="text-align:left;">这里，10 和 80 J2/100 cm³ 是预设的管理分级界限；6 J2/100 cm³ 是产量曲线中的耐受密度，两者承担不同作用。模型另行比较各候选方案的净收益，检查预设分级是否与当前参数下收益最高的选项一致。</p>
+
+<p style="text-align:left;">我们分别计算两项收益差：</p>
+
+<p style="text-align:left;"><strong>相对不处理的净收益改善</strong><br>＝检测后分级处理净收益－不检测、不处理净收益。</p>
+
+<p style="text-align:left;"><strong>相对统一处理的净收益改善</strong><br>＝检测后分级处理净收益－不检测、统一处理净收益。</p>
+
+<p style="text-align:left;">前者评价检测与分级处理整套方案的收益；后者评价在已有统一处理选择时，利用密度信息调整行动的条件性价值。将两个基准分开，有助于判断收益增加来自实施防治，还是来自获得信息后对处理方式的调整。</p>
+
+### <strong>4.5 密度信息何时值得获取</strong> {#src-Model-Eco-40 toc="4.5 密度信息何时值得获取"}
+
+<p style="text-align:left;">在密度为 <strong>100 J2/100 cm³</strong>、其余参数保持示例配置时，模型得到以下结果：</p>
+
+<p style="text-align:left;"><br></p>
+
+<p style="text-align:center;"><strong>点击图片可查看完整电子表格</strong></p>
+
+<p style="text-align:left;">两项差值回答不同的问题。17,028.48 EUR/ha 体现整套检测与防治方案相对不处理的改善；496.26 EUR/ha 则体现相对已有统一处理方案，调整处理后增加的净收益。在这一情景下，较强处理额外避免的损失能够覆盖增加的处理费用与检测费用。</p>
+
+<p style="text-align:left;">随着密度变化，信息的作用也随之变化：</p>
+
+<p style="text-align:left;">**低密度时，**检测可能帮助减少不必要的处理。</p>
+
+<p style="text-align:left;">**中等密度区间，**分级处理与统一处理采用相同方案，两者收益差为 <strong>−5 EUR/ha</strong>，即新增的检测费用。</p>
+
+<p style="text-align:left;">**高密度时，**加强处理是否值得，取决于额外避免的损失能否覆盖增加的成本。</p>
+
+<p style="text-align:left;">因此，评价检测价值需要同时考察<strong>密度信息是否改变管理选择，以及改变后能否提高净收益</strong>。</p>
+
+<p style="text-align:left;">我们进一步分别改变检测费用、处理费用、处理效果和作物售价，检查两项收益差对假设的敏感性。当分级处理与统一处理采用相同措施时，两侧共享的成本和效果参数同步调整，保持比较条件一致。</p>
+
+<p style="text-align:left;">这些结果是在给定密度及成本、效果假设下的条件性计算。当前密度预测区间反映模拟回归的形式不确定性，其实测覆盖率仍需真实样本与读数标定检验。网页展示的区间端点及相邻密度情景用于观察判断变化的经济影响，所得收益变化范围不构成收益的置信区间。真实检测误差可能改变处理选择，其经济影响还需结合实测误差分布评价。</p>
+
+### <strong>4.6 让经济比较反馈到检测设计</strong> {#src-Model-Eco-52 toc="4.6 让经济比较反馈到检测设计"}
+
+<p style="text-align:left;">Eco 将检测设计的重点进一步落到可能改变管理选择的密度区间。当不同密度对应不同处理方式时，半定量或定量信息有助于支持管理分级；尤其在分级界限附近，估计偏差可能改变方案选择，因此这些区域应成为后续标定与评价的重点。</p>
+
+<p style="text-align:left;">这一需求也体现在网页的结果呈现中：同时保留密度估计、对应管理等级与两个基准下的收益比较，并在估计范围跨越分级界限时展示相邻情景，帮助读者判断结论对密度估计的依赖。</p>
+
+<p style="text-align:left;">后续将结合真实样本与手机读数校准密度估计，并通过应用调研更新采样覆盖、每公顷检测费用和管理参数。这些数据将用于检验前端读数能否区分有关密度区间，以及获取这些信息的成本是否合理。</p>
+
+<p style="text-align:left;">为便于复算与更新，我们将参数配置与计算程序分开保存，并提供示例输入和可再生成的报告。现有自动化检查覆盖密度—损失计算、成本核算和比较基准的一致性；实际应用收益仍需当地数据检验。其他研究者可以在这一框架中替换作物、价格和处理参数，评价其检测方案在具体管理条件下的价值。</p>
+
+### <strong>References</strong> {#src-Model-Eco-57 toc="References"}
+
+<p style="text-align:left;">[1] Expósito, A., Pujolà, M., Achaerandio, I., Giné, A., Escudero, N., Fullana, A. M., Cunquero, M., Loza-Alvarez, P., &amp; Sorribas, F. J. (2020). Tomato and Melon <em>Meloidogyne</em> Resistant Rootstocks Improve Crop Yield but Melon Fruit Quality Is Influenced by the Cropping Season. <em>Frontiers in Plant Science, 11</em>, 560024. <a href="https://doi.org/10.3389/fpls.2020.560024">DOI: 10.3389/fpls.2020.560024</a></p>
+
+<p style="text-align:left;">[2] Talavera-Rubia, M., Vela-Delgado, M. D., &amp; Verdejo-Lucas, S. (2022). A Cost-Benefit Analysis of Soil Disinfestation Methods against Root-Knot Nematodes in Mediterranean Intensive Horticulture. <em>Plants, 11</em>(20), 2774. <a href="https://doi.org/10.3390/plants11202774">DOI: 10.3390/plants11202774</a></p>
+
+<p style="text-align:left;"><br></p>
+
+</section>
+
+<span id="eco-introduction" aria-hidden="true"></span>
+<span id="eco-interface" aria-hidden="true"></span>
+<span id="eco-economics" aria-hidden="true"></span>
+<span id="eco-baselines" aria-hidden="true"></span>
+<span id="eco-example" aria-hidden="true"></span>
+<span id="eco-design" aria-hidden="true"></span>
+<span id="eco-explorer" aria-hidden="true"></span>

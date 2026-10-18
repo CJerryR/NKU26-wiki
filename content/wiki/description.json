@@ -100,109 +100,39 @@
     },
     {
       "_template": "text",
-      "body": "<span id=\"hp-social-needs\" aria-hidden=\"true\"></span>\n<span id=\"hp-description-nemaklear-making-underground-risks-visible\" aria-hidden=\"true\"></span>\n<span id=\"hp-description-understanding-the-need-beyond-the-laboratory\" aria-hidden=\"true\"></span>\n<span id=\"hp-description-from-user-needs-to-design-priorities\" aria-hidden=\"true\"></span>\n<span id=\"hp-description-why-ascarosides\" aria-hidden=\"true\"></span>\n<span id=\"hp-description-what-we-have-built-and-what-comes-next\" aria-hidden=\"true\"></span>"
-    },
-    {
-      "_template": "heading",
-      "text": "NemaKlear Making Underground Risks Visible",
-      "level": 3,
-      "attributes": "#hp-description-source-16 toc=\"NemaKlear Making Underground Risks Visible\""
+      "body": "<p class=\"author-source-link\"><a href=\"/source-archive/#meeting-20261019\" data-source-document=\"meeting-20261019-aabe053205e9\">Original submission (.docx)</a><span role=\"status\" aria-live=\"polite\"></span></p>"
     },
     {
       "_template": "text",
-      "body": "Plant-parasitic nematodes present a difficult agricultural challenge: damage develops around roots and within soil, where it is not readily visible. Yellowing, wilting, and reduced growth may alert growers to a problem, but these symptoms can also arise from water stress, nutrient deficiencies, or other diseases. Recognizing an abnormal plant is therefore different from identifying its cause."
+      "body": "<section class=\"author-manuscript\" lang=\"zh\">"
     },
     {
       "_template": "text",
-      "body": "NemaKlear explores an ascaroside-responsive yeast biosensor for the early screening of nematode-associated agricultural risks. Our project focuses on questions relevant to soybean cyst nematodes and southern root-knot nematodes, while investigating whether nematode-associated chemical signals can provide useful screening information."
+      "body": "<p style=\"text-align:left;\">Human Practices 围绕一个核心问题展开：如何让线虫检测回应真实的农业需求。针对 Field Detective 利用工程酵母感知蛔苷素并产生可观察输出的设想，我们通过问卷、专家访谈和田间实践明确使用场景与设计要求，并结合教育传播和产业交流，推动项目与潜在使用者及公众建立联系。</p>"
     },
     {
       "_template": "text",
-      "body": "Our motivation is practical. A screening tool should help users decide when a sample deserves further investigation, communicate uncertainty clearly, and fit into existing agricultural advisory services. Detecting a signal is only one part of that task."
-    },
-    {
-      "_template": "heading",
-      "text": "Understanding the Need Beyond the Laboratory",
-      "level": 3,
-      "attributes": "#hp-description-source-20 toc=\"Understanding the Need Beyond the Laboratory\""
+      "body": "<p style=\"text-align:left;\">在需求识别层面，我们收集了 369 条问卷提交。受访者对理想检测工具的期待集中于操作简便、准确可靠和价格可负担；53.4% 的受访者对植物寄生线虫缺乏了解。这些结果分别为检测流程设计和科普内容提供了起点。我们进一步走访天津乡语果蔬园和第六埠村蔬菜示范园，了解病害管理与生产经验，结合当地作物和地块条件判断具体需求。</p>"
     },
     {
       "_template": "text",
-      "body": "We approached this problem through three connected Human Practices workstreams: Research and Field Engagement, Education and Public Engagement, and Sponsorship and Translation Planning."
+      "body": "<p style=\"text-align:left;\">在项目设计层面，与姚玉荣、刘倩和庞志豪三位老师的交流，帮助我们将早期检测与种植前管理决策联系起来，并识别采样代表性、土壤背景色、蛔苷素稳定性及工程酵母处置等问题。团队据此将关注范围扩展到采样、检测、判读和检测后处理的完整流程，开展土样收集并制作采样指导短片，为实验和建模提出需要检验的条件。</p>"
     },
     {
       "_template": "text",
-      "body": "Research and field engagement helped us examine agricultural practices, public understanding, and scientific assumptions. Education created opportunities to discuss nematodes, food security, and synthetic biology with learners and the wider public. Industry conversations helped us consider potential users, development constraints, partnership responsibilities, and the resources needed to continue the work."
+      "body": "<p style=\"text-align:left;\">在教育与传播层面，我们围绕线虫与农业、生物信号和科学责任设计三套课程，按小学与初中学段调整内容，并依托南开大学向阳计划开展教学与科普活动。绘本、海报及其他传播材料进一步帮助公众理解地下病害和生物传感。课程从认识现象逐步引向信号与结果解释，回应问卷所反映的认知需求。</p>"
     },
     {
       "_template": "text",
-      "body": "These workstreams informed one another. Agricultural observations supplied concrete examples for educational materials. Public questions revealed where our explanations were unclear. Scientific and industry discussions prompted us to reconsider what our prototype could reasonably claim."
+      "body": "<p style=\"text-align:left;\">在社会支持与产业交流层面，我们准备合作邀请书、项目书和路演材料，与企业讨论应用设想、潜在用户及后续研发条件，并获得包括 ExCell Bio 在内的赞助支持。这些交流为持续研究提供资源，也帮助我们梳理未来开展样品获取、原型评价和实际场景验证所需的合作条件。</p>"
     },
     {
       "_template": "text",
-      "body": "Our potential users include growers, family farms, agricultural cooperatives, and local plant-protection personnel. Agricultural researchers and diagnostic laboratories are important partners for interpreting results and conducting confirmatory testing. Biotechnology and agricultural service companies provide additional perspectives on development and implementation. Students and the public contribute questions about accessibility, environmental responsibility, and the social purpose of the technology."
-    },
-    {
-      "_template": "heading",
-      "text": "From User Needs to Design Priorities",
-      "level": 3,
-      "attributes": "#hp-description-source-25 toc=\"From User Needs to Design Priorities\""
+      "body": "<p style=\"text-align:left;\">上述工作将使用需求、专业意见与公众沟通纳入项目推进过程，并与湿实验和干实验共同细化验证方向。后续将结合真实样品与技术数据，检验传感输出与线虫信息之间的关系，以及检测流程在实际农业场景中的可用性。详细调研、活动记录与反馈见 Human Practices 页面。</p>"
     },
     {
       "_template": "text",
-      "body": "Our engagement highlighted that accessibility depends on the complete testing process. Users would need to know where and when to collect a sample, how to prepare it, whether a test has functioned correctly, and what to do with the result."
-    },
-    {
-      "_template": "text",
-      "body": "We therefore identified several design priorities: a manageable sampling workflow; limited dependence on specialized equipment; a readable output; clear instructions; and an appropriate route to professional confirmation. Time, cost, training requirements, and storage conditions must be assessed across the entire workflow."
-    },
-    {
-      "_template": "text",
-      "body": "These are development targets rather than established product specifications. We do not currently claim a validated field turnaround time, final test price, shelf life, or diagnostic accuracy."
-    },
-    {
-      "_template": "text",
-      "body": "Our proposed visual readout is intended to reduce the burden of interpreting laboratory-style measurements. However, any future risk category must be calibrated against appropriate reference methods and relevant agricultural conditions. A color change alone cannot establish a nematode species, quantify crop damage, or determine whether pesticide treatment is necessary."
-    },
-    {
-      "_template": "heading",
-      "text": "Why Ascarosides",
-      "level": 3,
-      "attributes": "#hp-description-source-30 toc=\"Why Ascarosides\""
-    },
-    {
-      "_template": "text",
-      "body": "Ascarosides are nematode-associated signaling molecules. Published research has identified ascr#18 in several plant-parasitic nematode species, providing a rationale for investigating these molecules as candidate inputs.[1] However, ascr#18 is also produced by nematodes outside this group, and ascarosides can be transformed by plants and other organisms.[2,3]"
-    },
-    {
-      "_template": "text",
-      "body": "These findings make chemical context important. We investigate ascr#3 and ascr#18 as candidate inputs and explore whether their responses or relative abundance could provide useful information. We do not treat their ratio as an established universal classifier of harmful and harmless nematodes."
-    },
-    {
-      "_template": "text",
-      "body": "Our proposed architecture connects candidate ascaroside inputs to an engineered yeast sensing pathway involving GPR2 and G-protein-mediated signaling, with a betaxanthin-based visual output. Each connection requires its own evidence: ligand response, pathway function, background activity, output performance, and behavior in relevant samples. The Design, Engineering, Model, and Results pages describe the corresponding technical work."
-    },
-    {
-      "_template": "heading",
-      "text": "What We Have Built and What Comes Next",
-      "level": 3,
-      "attributes": "#hp-description-source-34 toc=\"What We Have Built and What Comes Next\""
-    },
-    {
-      "_template": "text",
-      "body": "Our Human Practices work includes questionnaire development and distribution, agricultural visits in Tianjin, expert and inter-team discussions, soil-sampling activities, educational resource development, and industry engagement. These activities helped us define the questions that a useful agricultural screening system must answer."
-    },
-    {
-      "_template": "text",
-      "body": "A freeze-dried yeast color card is a proposed product format. Its feasibility depends on further work on preservation, reactivation, containment, signal consistency, storage, and disposal. Freeze-drying must not be assumed to eliminate viable engineered cells."
-    },
-    {
-      "_template": "text",
-      "body": "The next development stage requires comparison with reference methods, testing across relevant soil conditions, assessment of cross-reactivity and recovery, and evaluation of whether users can follow the instructions and interpret results correctly."
-    },
-    {
-      "_template": "text",
-      "body": "Our intended contribution is an evidence-based route from an agricultural problem to a testable screening concept. NemaKlear remains a research prototype whose value and limitations must be evaluated together."
+      "body": "</section>"
     },
     {
       "text": "2 Project Design & Strategy",
@@ -256,23 +186,39 @@
     },
     {
       "_template": "text",
-      "body": "Our dry-lab work addresses three connected questions: how to select and engineer receptors that recognize ascarosides, how to convert recognition signals into a colorimetric output, and how detection results can support practical field management decisions. Four areas of computational work—molecular docking, molecular dynamics simulations, ODE signaling pathway modeling, and economic benefit modeling—inform our project design."
+      "body": "<p class=\"author-source-link\"><a href=\"/source-archive/#meeting-20261019\" data-source-document=\"meeting-20261019-d8c0f0af5a28\">Original submission (.docx)</a><span role=\"status\" aria-live=\"polite\"></span></p>"
     },
     {
       "_template": "text",
-      "body": "At the receptor-recognition level, molecular docking helps us compare Gpr2, Gpr3, and GprC. Focusing on Gpr2, we identify interaction hotspots and design mutations, using changes in scores and interactions to explore differences in the recognition of ascaroside #3 and ascaroside #18. Molecular dynamics simulations examine the behavior of selected systems over time, tracking changes in ligand position and key contacts to provide further evidence for the structural hypotheses proposed through docking."
+      "body": "<section class=\"author-manuscript\" lang=\"zh\">"
     },
     {
       "_template": "text",
-      "body": "At the signal-output level, ODE modeling connects receptor activation, intracellular signal transduction, and color development. We select model complexity according to pathway mechanisms and the data available from wet-lab experiments, combine intermediate steps that are difficult to measure separately, and retain parameters for subsequent experimental calibration. This allows us to progressively develop a model that can explain the system’s response."
+      "body": "<p style=\"text-align:left;\">干实验围绕三个相互衔接的问题展开：如何选择和改造识别蛔苷素的受体，如何将识别信号转化为显色输出，以及检测结果如何支持田间实际管理决策。我们通过分子对接、分子动力学模拟、ODE 信号通路建模和经济效益建模四条线，为项目设计提供计算依据。</p>"
     },
     {
       "_template": "text",
-      "body": "At the application level, economic benefit modeling asks what users can do after a signal is detected. By comparing costs and benefits across risk levels and management scenarios, we assess the decision-making value of detection information and identify requirements for quantitative capability, detection range, and result presentation. We will further refine this application assessment using Human Practices (HP) research and wet-lab data."
+      "body": "<p style=\"text-align:left;\">在受体识别层面，<strong>分子对接</strong>帮助我们比较 Gpr2、Gpr3 和 GprC，并围绕 Gpr2 识别热点、设计突变，结合评分与相互作用变化，探索其对蛔苷素3和蛔苷素18的识别差异。<strong>分子动力学模拟</strong>进一步关注选定体系中的动态行为，考察配体定位与关键接触如何随时间变化，为对接提出的结构假说补充证据。</p>"
     },
     {
       "_template": "text",
-      "body": "Together, these four areas connect molecular design, system responses, and application needs. Through candidate validation, model calibration, and use-scenario analysis, we collaborate with Wet Lab and Human Practices to advance the project. Detailed methods and results are available on the [Model page](/model/)."
+      "body": "<p style=\"text-align:left;\"><br></p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\">在信号输出层面，<strong>ODE建模</strong>将受体输入、胞内信号传递与显色过程连接起来。我们复用文献通路，通过模拟数据校准输入输出接口，再将两路色素输出转换为模拟手机RGB中的蓝通道颜色特征，用于拟合<strong>双通道模型的三系数回归方程</strong>。模型据此在背景虫数量未知时估计南方根结线虫密度，为风险分级提供输入。真实样本与手机拍摄数据将用于后续实验校准。</p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\">在实际应用层面，<strong>经济效益建模</strong>关注“检测到信号之后，使用者可以如何行动”。通过比较不同风险等级与管理情景下的成本和收益，我们评估检测信息的决策价值，并提出对定量能力、检测范围和结果呈现的需求。后续将结合 HP 调研和湿实验数据，进一步完善应用评价。</p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\">四条计算线共同连接分子设计、系统响应与应用需求，并通过候选验证、模型校准和使用情景分析，与 Wet Lab 和 Human Practices 协作推进项目。详细方法与结果见 Model 页面。</p>"
+    },
+    {
+      "_template": "text",
+      "body": "</section>"
     },
     {
       "text": "3 Innovative Strategies",
@@ -311,42 +257,8 @@
       "_template": "text"
     },
     {
-      "_template": "heading",
-      "text": "References and Supporting Evidence",
-      "level": 2,
-      "attributes": "#hp-original-references toc=\"References and Supporting Evidence\""
-    },
-    {
       "_template": "text",
-      "body": "[1] Conserved nematode signalling molecules elicit plant defenses and pathogen resistance. Nature Communications (2015)."
-    },
-    {
-      "_template": "text",
-      "body": "https://doi.org/10.1038/ncomms8795"
-    },
-    {
-      "_template": "text",
-      "body": "[2] Plant metabolism of nematode pheromones mediates plant-nematode interactions. Nature Communications (2020)."
-    },
-    {
-      "_template": "text",
-      "body": "https://doi.org/10.1038/s41467-019-14104-2"
-    },
-    {
-      "_template": "text",
-      "body": "[3] Nematode Signaling Molecules Are Extensively Metabolized by Animals, Plants, and Microorganisms."
-    },
-    {
-      "_template": "text",
-      "body": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8590397/"
-    },
-    {
-      "_template": "text",
-      "body": "[4] Nankai University Xiangyang Initiative, 2026 Summer Teaching-Support Program Evaluation Report. Internal project source."
-    },
-    {
-      "_template": "text",
-      "body": "Team evidence supporting these pages includes questionnaire versions and response records; Tianjin agricultural visit records; anonymized expert and industry discussion summaries; inter-team exchange records; sampling guidance and sample records; course materials and teaching-partner records; and partnership planning documents. Technical performance claims should be read alongside the experimental and modeling evidence on the corresponding project pages."
+      "body": "<span id=\"hp-description-source-16\" aria-hidden=\"true\"></span>\n<span id=\"hp-description-source-20\" aria-hidden=\"true\"></span>\n<span id=\"hp-description-source-25\" aria-hidden=\"true\"></span>\n<span id=\"hp-description-source-30\" aria-hidden=\"true\"></span>\n<span id=\"hp-description-source-34\" aria-hidden=\"true\"></span>\n<span id=\"hp-original-references\" aria-hidden=\"true\"></span>"
     }
   ],
   "preserveAuthorFormatting": true

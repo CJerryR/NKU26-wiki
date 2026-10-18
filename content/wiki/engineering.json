@@ -11,56 +11,72 @@
   "search": true,
   "blocks": [
     {
+      "_template": "text",
+      "body": "<p class=\"author-source-link\"><a href=\"/source-archive/#meeting-20261019\" data-source-document=\"meeting-20261019-1564a7b1bf5d\">Original submission (.docx)</a><span role=\"status\" aria-live=\"polite\"></span></p>"
+    },
+    {
+      "_template": "text",
+      "body": "<section class=\"author-manuscript\" lang=\"zh\">"
+    },
+    {
       "_template": "heading",
-      "text": "DBTL-1 | Engineering the Signal Response Pathway",
       "level": 2,
-      "attributes": "#dbtl-1-engineering-the-signal-response-pathway toc=\"DBTL-1 | Engineering the Signal Response Pathway\""
+      "text": "<strong>DBTL-1｜信号响应通路的工程化构建</strong>",
+      "attributes": "#src-Project-Engineering-1 toc=\"DBTL-1｜信号响应通路的工程化构建\""
     },
     {
       "_template": "heading",
-      "text": "1.1 Receptor Screening and Target Selection",
       "level": 3,
-      "attributes": "#the-first-cycle-dry-lab toc=\"Receptor Screening and Target Selection\""
+      "text": "<strong>1.1 受体筛选与研究对象确定</strong>",
+      "attributes": "#src-Project-Engineering-2 toc=\"1.1 受体筛选与研究对象确定\""
     },
     {
       "_template": "heading",
-      "text": "Design | Defining the Receptor Screening Objective",
       "level": 4,
-      "attributes": "#design-defining-the-receptor-screening-objective toc=\"Design | Defining the Receptor Screening Objective\""
+      "text": "<strong>Design｜确定受体筛选目标</strong>",
+      "attributes": "#src-Project-Engineering-3 toc=\"Design｜确定受体筛选目标\""
     },
     {
       "_template": "text",
-      "body": "To build a yeast sensor that distinguishes ascr#18 from ascr#3, we needed recognition elements suitable for further engineering. Published studies identify Gpr2, Gpr3, and GprC from nematode-trapping fungi as G protein-coupled receptors (GPCRs) involved in ascaroside sensing. We selected all three as candidates, examining their ligand-recognition characteristics while considering the requirements for localization and signaling integration in yeast."
+      "body": "<p style=\"text-align:left;\">为构建区分ascr#18与ascr#3的酵母传感器，我们筛选可进一步改造的识别元件。文献报道，捕食线虫真菌的Gpr2、Gpr3和GprC是参与蛔苷素感知的G蛋白偶联受体（GPCR）。我们将三者纳入候选，兼顾配体识别、酵母中的定位及通路衔接条件。</p>"
     },
     {
       "_template": "heading",
-      "text": "Build | Establishing Receptor Comparisons and Literature References",
       "level": 4,
-      "attributes": "#build-establishing-receptor-comparisons-and-literature-references toc=\"Build | Establishing Receptor Comparisons and Literature References\""
+      "text": "<strong>Build｜建立受体比较与文献对照</strong>",
+      "attributes": "#src-Project-Engineering-5 toc=\"Build｜建立受体比较与文献对照\""
     },
     {
       "_template": "text",
-      "body": "We prepared predicted structures of the three receptors and the ascaroside ligands. Drawing on the AutoDock Vina method used in the GprC study and the SwissDock method used in the Gpr2 and Gpr3 study, we conducted docking explorations with the respective methods. We also compiled reported pocket locations and key residues as references for comparison."
+      "body": "<p style=\"text-align:left;\">准备三种受体的预测结构与蛔苷素配体后，我们分别参考GprC文献的AutoDock Vina及Gpr2、Gpr3文献的SwissDock方法开展对接探索，以文献中的口袋位置和关键残基为参照。</p>"
     },
     {
       "_template": "heading",
-      "text": "Test | Comparing with the Literature and Refining the Docking Workflow",
       "level": 4,
-      "attributes": "#test-comparing-with-the-literature-and-refining-the-docking-workflow toc=\"Test | Comparing with the Literature and Refining the Docking Workflow\""
+      "text": "<strong>Test｜对照文献并修正对接流程</strong>",
+      "attributes": "#src-Project-Engineering-7 toc=\"Test｜对照文献并修正对接流程\""
     },
     {
       "_template": "text",
-      "body": "We examined scores, ligand positions, and residue contacts to assess whether docking poses agreed with the available literature evidence. The analysis revealed that inconsistent coordinate references could misplace search regions and that loss of formal charges during format conversion could affect the identification of charged contacts. We therefore added structural alignment, search-region review, and chemical-information checks, progressively refining the docking and contact-analysis workflow."
+      "body": "<p style=\"text-align:left;\">结合评分、配体位置和残基接触对照文献线索后，我们发现坐标参照不一致会使搜索区域错配，格式转换中的形式电荷丢失会影响带电接触识别，因此加入结构对齐、搜索区域复核及化学信息检查，修正对接与接触分析流程。</p>"
     },
     {
       "_template": "heading",
-      "text": "Learn | Selecting Receptors for Further Engineering",
       "level": 4,
-      "attributes": "#learn-selecting-receptors-for-further-engineering toc=\"Learn | Selecting Receptors for Further Engineering\""
+      "text": "<strong>Learn｜确定后续改造对象</strong>",
+      "attributes": "#src-Project-Engineering-9 toc=\"Learn｜确定后续改造对象\""
     },
     {
       "_template": "text",
-      "body": "Receptor selection requires consideration of both computational results and the conditions for heterologous use. GprC has been reported to show plasma membrane- and mitochondria-associated localization. Because this could increase the complexity of localization and pathway integration in yeast, we did not include GprC in this round of engineering, while retaining it as a structural reference. Subsequent mutant screening focused on Gpr2, with studies of Gpr3 and its mutants continuing alongside it."
+      "body": "<p style=\"text-align:left;\">文献报道GprC具有质膜及线粒体相关定位，可能增加酵母中的定位与通路整合复杂度，因此本轮未将其纳入工程改造，但保留为结构比较参照。综合计算表现与异源应用条件，后续突变筛选聚焦Gpr2，并保留Gpr3及其突变体研究。</p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"><br></p>"
+    },
+    {
+      "_template": "text",
+      "body": "</section>"
     },
     {
       "_template": "heading",
@@ -244,408 +260,470 @@
       "body": "Cong Fan, Nike He, Jifeng Yuan, Cascaded amplifying circuit enables sensitive detection of fungal pathogens, Biosensors and Bioelectronics, Volume 250, 2024, 116058, ISSN 0956-5663, [https://doi.org/10.1016/j.bios.2024.116058](https://doi.org/10.1016/j.bios.2024.116058)."
     },
     {
+      "_template": "text",
+      "body": "<section class=\"author-manuscript\" lang=\"zh\">"
+    },
+    {
       "_template": "heading",
-      "text": "DBTL-2 | Engineering Receptor Specificity and Developing Pathway Models",
       "level": 2,
-      "attributes": "#dbtl-2-engineering-receptor-specificity-and-developing-pathway-models toc=\"DBTL-2 | Engineering Receptor Specificity and Developing Pathway Models\""
+      "text": "<strong>DBTL-2｜受体特异性工程改造与通路模型构建</strong>",
+      "attributes": "#src-Project-Engineering-12 toc=\"DBTL-2｜受体特异性工程改造与通路模型构建\""
     },
     {
       "_template": "heading",
-      "text": "2.1 Mutation Design and Screening Guided by Contact Differences",
       "level": 3,
-      "attributes": "#mutation-design-and-screening-guided-by-contact-differences toc=\"Mutation Design and Screening Guided by Contact Differences\""
+      "text": "<strong>2.1 接触差异引导的突变设计与筛选</strong>",
+      "attributes": "#src-Project-Engineering-13 toc=\"2.1 接触差异引导的突变设计与筛选\""
     },
     {
       "_template": "heading",
-      "text": "Design | Identifying Engineering Sites from WT Contact Differences",
       "level": 4,
-      "attributes": "#design-identifying-engineering-sites-from-wt-contact-differences toc=\"Design | Identifying Engineering Sites from WT Contact Differences\""
+      "text": "<strong>Design｜从WT接触差异提出改造位点</strong>",
+      "attributes": "#src-Project-Engineering-14 toc=\"Design｜从WT接触差异提出改造位点\""
     },
     {
       "_template": "text",
-      "body": "To investigate the differential recognition of ascr#18 and ascr#3 by Gpr2, we compared the WT receptor’s contact distributions with both ligands. Residues showing contact differences were selected as candidate sites, and alanine substitutions were used to examine how each position affected the two-ligand profile."
+      "body": "<p style=\"text-align:left;\">我们比较Gpr2野生型（WT）与ascr#18、ascr#3的接触分布，选择接触存在差异的残基进行丙氨酸替换，考察其对双配体表现的影响。</p>"
     },
     {
       "_template": "heading",
-      "text": "Build | Generating Mutant Models and Consistent Controls",
       "level": 4,
-      "attributes": "#build-generating-mutant-models-and-consistent-controls toc=\"Build | Generating Mutant Models and Consistent Controls\""
+      "text": "<strong>Build｜构建突变模型与统一对照</strong>",
+      "attributes": "#src-Project-Engineering-16 toc=\"Build｜构建突变模型与统一对照\""
     },
     {
       "_template": "text",
-      "body": "We generated mutant sequences according to the substitution designs and predicted their structures using AlphaFold 3. WT and mutant structures underwent consistent preparation and docking procedures. Original residue numbering was retained, structures were aligned to a common coordinate reference, and identical ligand inputs and search settings were used to support corresponding comparisons of scores and contacts."
+      "body": "<p style=\"text-align:left;\">根据替换方案生成突变序列并用AlphaFold 3预测结构；WT与突变体保留原始残基编号，对齐至共同坐标参照，统一结构准备、配体输入及对接搜索设置，以比较评分和接触变化。</p>"
     },
     {
       "_template": "heading",
-      "text": "Test | Iterating Substitutions Using Score and Contact Feedback",
       "level": 4,
-      "attributes": "#test-iterating-substitutions-using-score-and-contact-feedback toc=\"Test | Iterating Substitutions Using Score and Contact Feedback\""
+      "text": "<strong>Test｜根据评分与接触反馈迭代替换</strong>",
+      "attributes": "#src-Project-Engineering-18 toc=\"Test｜根据评分与接触反馈迭代替换\""
     },
     {
       "_template": "text",
-      "body": "We selected candidates from single-site alanine scanning, used score changes and contact analysis to guide additional side-chain substitutions, and performed saturation scanning at selected sites. Candidates were grouped as favoring ascr#3 or ascr#18 according to the difference between the two ligands’ score changes relative to WT. We then examined both scores separately to determine whether the shift resulted from a lower score for the target ligand, a higher score for the other ligand, or both. Contact comparisons with WT helped identify the associated changes in ligand position and interactions."
+      "body": "<p style=\"text-align:left;\">从单点丙氨酸扫描中筛选候选后，我们结合评分与接触分析补充侧链替换，并对选定位点开展饱和扫描。以两种配体各自相对WT的评分变化之差划分ascr#3或ascr#18偏向，再分别检查评分，区分目标配体评分降低、另一配体评分升高或两者兼有；与WT的接触对照用于检查对应的配体位置及相互作用线索。</p>"
     },
     {
       "_template": "text",
-      "body": "After obtaining single-mutant candidates, we explored combined mutations. Parents were selected according to the direction of the shift and the pattern of score changes to test whether the effects of different substitutions could be retained together. Each combination was compared with WT and both single-mutant parents. Most tested combinations did not further improve the better parent’s target-ligand score or increase the difference between the two ligands, so subsequent work continued to focus on single-mutant candidates."
+      "body": "<p style=\"text-align:left;\">随后按偏向方向与评分变化方式选择单点亲本，尝试组合以检验各替换作用能否共同保留。与WT及各亲本比较后，多数受测组合未进一步改善较优亲本的目标评分或扩大双配体差异，后续因此聚焦单点候选。</p>"
     },
     {
       "_template": "heading",
-      "text": "Learn | Selecting Candidates for Dynamic Testing",
       "level": 4,
-      "attributes": "#learn-selecting-candidates-for-dynamic-testing toc=\"Learn | Selecting Candidates for Dynamic Testing\""
+      "text": "<strong>Learn｜确定候选并转入动态检验</strong>",
+      "attributes": "#src-Project-Engineering-21 toc=\"Learn｜确定候选并转入动态检验\""
     },
     {
       "_template": "text",
-      "body": "Score differentiation and contact analysis led us to select N84V and V368R. Relative to WT from the same batch, N84V had a lower ascr#18 score and a higher ascr#3 score, while V368R showed the opposite pattern. These results defined the next questions: would the selected ligand poses persist in full-length receptors within a membrane environment, and would the predicted contacts remain or rearrange? Both mutants and WT therefore proceeded to MD comparisons."
+      "body": "<p style=\"text-align:left;\">结合评分分化与接触分析，我们选定N84V和V368R：相对同批WT，N84V的ascr#18评分降低、ascr#3评分升高，V368R方向相反。两种突变体与WT随后进入膜环境中的动态比较。</p>"
     },
     {
       "_template": "heading",
-      "text": "2.2 Investigating Candidate Dynamics in a Membrane Environment",
       "level": 3,
-      "attributes": "#investigating-candidate-dynamics-in-a-membrane-environment toc=\"Investigating Candidate Dynamics in a Membrane Environment\""
+      "text": "<strong>2.2 在膜环境中考察选定候选的动态行为</strong>",
+      "attributes": "#src-Project-Engineering-23 toc=\"2.2 在膜环境中考察选定候选的动态行为\""
     },
     {
       "_template": "heading",
-      "text": "Design | Examining Docking Candidates in the Membrane",
       "level": 4,
-      "attributes": "#design-examining-docking-candidates-in-the-membrane toc=\"Design | Examining Docking Candidates in the Membrane\""
+      "text": "<strong>Design｜检查对接筛选结果在膜中的表现</strong>",
+      "attributes": "#src-Project-Engineering-24 toc=\"Design｜检查对接筛选结果在膜中的表现\""
     },
     {
       "_template": "text",
-      "body": "In docking, the score changes for N84V favored ascr#18, while those for V368R favored ascr#3. We wanted to understand whether the ligands would remain in the predicted pockets and retain their original contacts in a membrane environment. We therefore performed molecular dynamics (MD) simulations of six complexes: WT, N84V, and V368R, each paired with one of the two ligands."
+      "body": "<p style=\"text-align:left;\">我们对WT、N84V和V368R分别与两种配体构成的六个复合物开展分子动力学（MD）模拟，检查进入膜环境后配体是否仍停留在预测口袋，以及原有接触能否维持。</p>"
     },
     {
       "_template": "heading",
-      "text": "Build | Preparing Full-Length Receptors and Membrane Systems",
       "level": 4,
-      "attributes": "#build-preparing-full-length-receptors-and-membrane-systems toc=\"Build | Preparing Full-Length Receptors and Membrane Systems\""
+      "text": "<strong>Build｜准备全长受体与膜体系</strong>",
+      "attributes": "#src-Project-Engineering-26 toc=\"Build｜准备全长受体与膜体系\""
     },
     {
       "_template": "text",
-      "body": "We placed each docking pose into its corresponding full-length receptor, checked for spatial clashes between the ligand and restored segments, and adjusted local lid regions where overlaps occurred. During rebuilding, we found that some approaches also changed the backbone outside the loop or the initial ligand pose. We therefore restricted adjustments to the lid region while retaining the remaining coordinates of each system. After these checks, each of the six complexes was placed in a POPC lipid bilayer with solvent and ions."
+      "body": "<p style=\"text-align:left;\">将对接姿态与对应全长受体对齐至共同坐标参照，检查配体与恢复片段的冲突并调整重叠的局部盖子区（lid）。部分重建方案同时改变了环外骨架或配体起点，因此调整范围收窄至lid，保留各组自身的其余坐标，再将六个复合物分别置于POPC脂质双层、溶剂和离子环境中。</p>"
     },
     {
       "_template": "heading",
-      "text": "Test | Tracking Ligand Motion and Contact Changes",
       "level": 4,
-      "attributes": "#test-tracking-ligand-motion-and-contact-changes toc=\"Test | Tracking Ligand Motion and Contact Changes\""
+      "text": "<strong>Test｜追踪配体移动及接触变化</strong>",
+      "attributes": "#src-Project-Engineering-28 toc=\"Test｜追踪配体移动及接触变化\""
     },
     {
       "_template": "text",
-      "body": "Each of the six systems completed one 100 ns simulation. We tracked the ligand relative to the local pocket to distinguish global receptor motion from ligand movement within the pocket."
+      "body": "<p style=\"text-align:left;\">六组各完成一条100 ns轨迹。我们以局部口袋为参照，区分受体整体运动与配体在口袋内的移动，并比较接触随时间的变化及代表构象。</p>"
     },
     {
       "_template": "text",
-      "body": "During the second half of the trajectory, N84V–ascr#18 showed less displacement than WT–ascr#18 and N84V–ascr#3. Contact analysis showed persistent contact between Arg189 and the carboxylate end of ascr#18, providing a possible explanation for the ligand’s retention in that region."
+      "body": "<p style=\"text-align:left;\">轨迹后半程，N84V–ascr#18相对自身起始姿态的偏离小于WT–ascr#18和N84V–ascr#3。其起点已有的Arg189接触得到保持：50–100 ns内，Arg189与ascr#18羧酸端的氢键占有率为93.6%，另两组同期均未检出该氢键。该持续接触为配体的位置保持提供了可能解释。</p>"
     },
     {
       "_template": "text",
-      "body": "In V368R–ascr#3, the ligand moved away from its initial position toward Arg345 and formed contacts also observed in WT–ascr#3. To understand this change, we examined internal receptor contacts around the mutation site. The charged end of Arg368 moved away from Asp70 at approximately the same time that the ligand began contacting Arg345. In V368R–ascr#18, by contrast, Arg368 and Asp70 remained close throughout the trajectory."
+      "body": "<p style=\"text-align:left;\">V368R–ascr#3离开初始位置并转向Arg345附近。Arg368带电末端从Asp70移开，与配体开始接触Arg345发生在相近时段；V368R–ascr#18中，Arg368与Asp70则持续保持近距离。Arg345与配体羧酸端的接触也见于WT–ascr#3和V368R–ascr#18，因此该接触本身尚不能解释V368R的ascr#3评分偏向。</p>"
     },
     {
       "_template": "heading",
-      "text": "Learn | Reinterpreting Mutation Effects from the Trajectories",
       "level": 4,
-      "attributes": "#learn-reinterpreting-mutation-effects-from-the-trajectories toc=\"Learn | Reinterpreting Mutation Effects from the Trajectories\""
+      "text": "<strong>Learn｜根据轨迹重新理解突变作用</strong>",
+      "attributes": "#src-Project-Engineering-32 toc=\"Learn｜根据轨迹重新理解突变作用\""
     },
     {
       "_template": "text",
-      "body": "The MD results prompted us to revisit the contact-based interpretation of docking. A ligand may maintain its position through persistent contacts, or it may leave its initial pose and establish contacts elsewhere. Assessing mutation effects therefore requires examining both ligand motion and internal receptor changes. Each system currently has only one trajectory, so the sequence of contact changes requires testing through replicate simulations, while actual recognition capability requires experimental confirmation."
+      "body": "<p style=\"text-align:left;\">MD显示，配体可保持初始接触，也可重新定位并形成持续接触；解释突变作用需结合配体运动、受体内部变化和WT对照。当前每组仅一条轨迹且起点不同，后续需检验接触与重排的可重复性，并通过实验判断其与实际识别能力的关系。</p>"
     },
     {
       "_template": "heading",
-      "text": "2.3 ODE: Connecting Receptor Signaling to Colorimetric Output",
       "level": 3,
-      "attributes": "#ode-connecting-receptor-signaling-to-colorimetric-output toc=\"ODE: Connecting Receptor Signaling to Colorimetric Output\""
+      "text": "<strong>2.3 ODE：连接受体信号与显色输出</strong>",
+      "attributes": "#src-Project-Engineering-34 toc=\"2.3 ODE：连接受体信号与显色输出\""
     },
     {
       "_template": "heading",
-      "text": "Design | Building a Minimal Model from Biological Principles",
       "level": 4,
-      "attributes": "#design-building-a-minimal-model-from-biological-principles toc=\"Design | Building a Minimal Model from Biological Principles\""
+      "text": "<strong>Design｜从生物学原理建立最小模型</strong>",
+      "attributes": "#src-Project-Engineering-35 toc=\"Design｜从生物学原理建立最小模型\""
     },
     {
       "_template": "text",
-      "body": "Using the biological principles of receptor activation, signal transduction, and color development, we established a minimal, lumped model. Ligand L served as the input to six functional nodes: receptor R, G protein, MAPK, sTF, GAL production rate, and color. The model used three dynamic equations and three algebraic relationships. Analysis showed that several internal parameters lacked project-specific measurements and could not be determined separately from the final color output alone. We therefore investigated reusable models from the literature and previous iGEM teams."
+      "body": "<p style=\"text-align:left;\">我们最初以配体为输入，将受体、G蛋白、MAPK、sTF、GAL产率与颜色串联为最小模型。多个内部参数缺少项目测量依据，也难以仅凭最终颜色分别确定，因此转向文献与往届iGEM的公开模型，寻找可复用的通路结构和参数。</p>"
     },
     {
       "_template": "heading",
-      "text": "Build | Adapting the Shared Pathway and Colorimetric Output",
       "level": 4,
-      "attributes": "#build-adapting-the-shared-pathway-and-colorimetric-output toc=\"Build | Adapting the Shared Pathway and Colorimetric Output\""
+      "text": "<strong>Build｜适配公共通路与显色接口</strong>",
+      "attributes": "#src-Project-Engineering-37 toc=\"Build｜适配公共通路与显色接口\""
     },
     {
       "_template": "text",
-      "body": "Using the publicly available reaction structures of Supady Model B and TU Delft 2012, we incorporated G protein, scaffold, Fus3, and feedback modules. Under fixed construct conditions, we combined sTF regulation, GAL production rate, and color generation. Conservation of total molecular amounts was then used to eliminate redundant states in the shared pathway, yielding six independent dynamic equations."
+      "body": "<p style=\"text-align:left;\">依据Supady Model B与TU Delft 2012的公开反应结构，我们接入G蛋白、支架、Fus3及反馈模块；在固定构建条件下合并sTF调控、GAL产率与产色关系，并以分子总量守恒消去重复状态，形成六个独立动态方程。两个传感器共享公共通路，分别设置有效输入尺度与产色增益。</p>"
     },
     {
       "_template": "heading",
-      "text": "Test | Checking Computational Consistency and Response Range",
       "level": 4,
-      "attributes": "#test-checking-computational-consistency-and-response-range toc=\"Test | Checking Computational Consistency and Response Range\""
+      "text": "<strong>Test｜用模拟终点调整响应范围</strong>",
+      "attributes": "#src-Project-Engineering-39 toc=\"Test｜用模拟终点调整响应范围\""
     },
     {
       "_template": "text",
-      "body": "We ran the models before and after simplification with identical inputs and parameters, confirming that combining the output relationships and eliminating redundant states preserved the calculated results. We then found that, under the current example parameters, ligand inputs of different strengths eventually produced similar color signals, making it difficult to distinguish high from low inputs. We therefore continued adjusting input and color-development parameters to identify a response range that reflected differences in input."
+      "body": "<p style=\"text-align:left;\">通过计算一致性检查后，我们发现初始参数下不同刺激的颜色过于接近。因此，保留公共通路参数，独立改变目标虫与背景虫密度，构造模拟显色目标，拟合两个传感器的输入尺度与产色增益；再按手机读色示例调整产色尺度与基础产色，重新积分核对输出。</p>"
     },
     {
       "_template": "heading",
-      "text": "Learn | Prioritizing Project-Specific Inputs and Outputs",
       "level": 4,
-      "attributes": "#learn-prioritizing-project-specific-inputs-and-outputs toc=\"Learn | Prioritizing Project-Specific Inputs and Outputs\""
+      "text": "<strong>Learn｜区分通路机制与接口校准</strong>",
+      "attributes": "#src-Project-Engineering-41 toc=\"Learn｜区分通路机制与接口校准\""
     },
     {
       "_template": "text",
-      "body": "We retained the source parameters of the shared pathway and focused on adjusting the effective input scale and color-production gain, using simulated endpoint fitting to explore distinguishable output ranges. Actual readout times and response ranges still require dose-response and time-course measurements. This work also established the next direction for configuring the two sensors."
+      "body": "<p style=\"text-align:left;\">文献结构描述信号传递，输入尺度与显色参数适配具体构建和测量条件。模拟拟合帮助找到可区分的输出范围，也暴露了弱刺激区偏差。后续实验需同时测量剂量响应、空白和时间曲线，以确定真实参数与可用读色范围。</p>"
     },
     {
       "_template": "heading",
-      "text": "2.4 Two-Channel Model: Estimating Target Density from Paired Color Readouts",
       "level": 3,
-      "attributes": "#two-channel-model-estimating-target-density-from-paired-color-readouts toc=\"Two-Channel Model: Estimating Target Density from Paired Color Readouts\""
+      "text": "<strong>2.4 双通道模型：从配对颜色估计目标密度</strong>",
+      "attributes": "#src-Project-Engineering-43 toc=\"2.4 双通道模型：从配对颜色估计目标密度\""
     },
     {
       "_template": "heading",
-      "text": "Design | Estimating Mi Density with an Unknown Background Population",
       "level": 4,
-      "attributes": "#design-estimating-mi-density-with-an-unknown-background-population toc=\"Design | Estimating Mi Density with an Unknown Background Population\""
+      "text": "<strong>Design｜在背景数量未知时估计Mi密度</strong>",
+      "attributes": "#src-Project-Engineering-44 toc=\"Design｜在背景数量未知时估计Mi密度\""
     },
     {
       "_template": "text",
-      "body": "The southern root-knot nematode, Meloidogyne incognita (Mi), and the free-living nematode Caenorhabditis elegans (C. elegans) may contribute overlapping ascaroside signals. We therefore retained both sensor readouts from the same sample. Our objective was to estimate Mi density from two color readouts in a complex soil setting where free-living C. elegans and plant-parasitic Mi coexist."
+      "body": "<p style=\"text-align:left;\">南方根结线虫（Mi）与秀丽隐杆线虫（Ce）均可能贡献ascr#3和ascr#18。我们设计两路配体偏好不同、保留交叉响应的传感器，利用同一样本的配对颜色，在Ce数量未知时估计Mi密度。</p>"
     },
     {
       "_template": "heading",
-      "text": "Build | Constructing Mixed Samples and a Density Regression Model",
       "level": 4,
-      "attributes": "#build-constructing-mixed-samples-and-a-density-regression-model toc=\"Build | Constructing Mixed Samples and a Density Regression Model\""
+      "text": "<strong>Build｜连接混合样本、ODE与手机读色</strong>",
+      "attributes": "#src-Project-Engineering-46 toc=\"Build｜连接混合样本、ODE与手机读色\""
     },
     {
       "_template": "text",
-      "body": "We used Mi densities of 0, 40, and 120 J2/100 cm³, corresponding to the low-, medium-, and high-risk categories in the current Eco example. These were crossed with three independently varying background levels to produce nine simulated combinations. After defining assumptions about ligand release and the mapping to colorimetric output, we fitted the two ODE models separately and used their blank-corrected color outputs to build a density regression model with three coefficients."
+      "body": "<p style=\"text-align:left;\">我们独立改变目标虫与背景虫密度，在统一释放总量假设下设置两种虫的不同配体组成。固定校准后的ODE，计算混合样本的两路色素输出，按文献关系转换为模拟手机RGB蓝通道读数；再对各通道相对空白的颜色比值取负对数，拟合三系数回归方程，将配对颜色映射至Mi密度。</p>"
     },
     {
       "_template": "heading",
-      "text": "Test | Comparing One and Two Channels with New Mixed Samples",
       "level": 4,
-      "attributes": "#test-comparing-one-and-two-channels-with-new-mixed-samples toc=\"Test | Comparing One and Two Channels with New Mixed Samples\""
+      "text": "<strong>Test｜在新组合中比较单、双通道</strong>",
+      "attributes": "#src-Project-Engineering-48 toc=\"Test｜在新组合中比较单、双通道\""
     },
     {
       "_template": "text",
-      "body": "After fitting, we defined twelve additional combinations of target and background abundance. Colors were generated through the ODE models, and we compared how well one or two channels recovered the predefined Mi densities. The two-channel model produced smaller errors in these simulated combinations, but some low-density samples yielded negative estimates, indicating that bias remained when the target signal was weak. Changing the assumed ratio of the two ligands released by Mi while keeping model parameters fixed also changed the prediction error, showing that the estimates depended on assumptions about ligand composition."
+      "body": "<p style=\"text-align:left;\">在未参与拟合的新混合组合中，双通道还原预设Mi密度的均方根误差约为3.01 J2/100 cm³，低于两个单通道模型，说明两路颜色在当前模拟条件下提供了互补信息。风险阈值附近仍有分级偏差，因此模型同时检查输入范围，并提示跨阈值的不确定结果。</p>"
     },
     {
       "_template": "heading",
-      "text": "Learn | Examining Errors at Low Densities and Near Risk Thresholds",
       "level": 4,
-      "attributes": "#learn-examining-errors-at-low-densities-and-near-risk-thresholds toc=\"Learn | Examining Errors at Low Densities and Near Risk Thresholds\""
+      "text": "<strong>Learn｜把密度误差与风险判断结合起来</strong>",
+      "attributes": "#src-Project-Engineering-50 toc=\"Learn｜把密度误差与风险判断结合起来\""
     },
     {
       "_template": "text",
-      "body": "Near the Eco risk thresholds, even a small density-prediction error can assign a sample to an adjacent risk category. Subsequent experiments should therefore assess overall prediction error, increase sampling near the thresholds, and separately examine background-only samples and samples with low target densities. Experimental calibration will vary target and background abundance independently, with separate batches used to evaluate whether two channels improve density estimation."
+      "body": "<p style=\"text-align:left;\">模拟连接了ODE显色、手机颜色特征与Mi密度估计，并将评价从整体误差延伸到风险判断：低密度误差是否可接受，还需考虑其是否改变风险档位。后续将用实测混合样本校准手机颜色关系，以独立批次检验双通道模型的密度估计与风险分级表现。</p>"
     },
     {
       "_template": "text",
-      "body": "The model derivation is complete, while calibration with project wet-lab data is still underway. In the next iteration, we will calibrate parameters using actual construct information and measurements and assess whether additional mechanisms, such as response delays, are needed."
+      "body": "<p style=\"text-align:left;\"><br></p>"
+    },
+    {
+      "_template": "text",
+      "body": "</section>"
+    },
+    {
+      "_template": "text",
+      "body": "<section class=\"author-manuscript\" lang=\"zh\">"
     },
     {
       "_template": "heading",
-      "text": "DBTL-3 | Feedback from Practical and Societal Needs",
       "level": 2,
-      "attributes": "#dbtl-3-feedback-from-practical-and-societal-needs toc=\"DBTL-3 | Feedback from Practical and Societal Needs\""
+      "text": "<strong>DBTL-3｜社会现实意义反馈</strong>",
+      "attributes": "#src-Project-Engineering-53 toc=\"DBTL-3｜社会现实意义反馈\""
     },
     {
       "_template": "heading",
-      "text": "3.1 Economic Benefit Modeling and Refinement of Detection Requirements",
       "level": 3,
-      "attributes": "#economic-benefit-modeling-and-refinement-of-detection-requirements toc=\"Economic Benefit Modeling and Refinement of Detection Requirements\""
+      "text": "<strong>3.1 经济效益建模与检测需求修正</strong>",
+      "attributes": "#src-Project-Engineering-54 toc=\"3.1 经济效益建模与检测需求修正\""
     },
     {
       "_template": "heading",
-      "text": "Design | Defining the Decision-Making Value of Detection Information",
       "level": 4,
-      "attributes": "#design-defining-the-decision-making-value-of-detection-information toc=\"Design | Defining the Decision-Making Value of Detection Information\""
+      "text": "<strong>Design｜明确检测信息的决策价值</strong>",
+      "attributes": "#src-Project-Engineering-55 toc=\"Design｜明确检测信息的决策价值\""
     },
     {
       "_template": "text",
-      "body": "We wanted to determine whether nematode detection results could help growers choose appropriate management measures. We therefore compared testing costs with potentially avoidable losses and examined how detection information affected treatment choices and expected returns."
+      "body": "<p style=\"text-align:left;\">我们比较检测成本与可能避免的损失，考察检测信息如何影响农户的管理措施选择及预期收益。</p>"
     },
     {
       "_template": "heading",
-      "text": "Build | Establishing Cost Calculations and Management Scenarios",
       "level": 4,
-      "attributes": "#build-establishing-cost-calculations-and-management-scenarios toc=\"Build | Establishing Cost Calculations and Management Scenarios\""
+      "text": "<strong>Build｜建立成本核算与管理情景</strong>",
+      "attributes": "#src-Project-Engineering-57 toc=\"Build｜建立成本核算与管理情景\""
     },
     {
       "_template": "text",
-      "body": "We developed a general cost calculation framework that converts yield losses associated with nematode density into economic losses per unit area and compares costs and net returns across management scenarios. Preliminary analysis indicated that a simple negative or positive result could not adequately reflect differences in risk across densities. We therefore introduced low, medium, and high risk levels, corresponding to no targeted control, moderate-intensity treatment, and high-intensity treatment, respectively, to compare risk-based management with uniform treatment."
+      "body": "<p style=\"text-align:left;\">我们建立通用成本核算框架，将线虫密度对应的产量损失换算为单位面积经济损失，比较各管理情景的成本与净收益。初步分析提示，阴性或阳性结果难以反映不同密度下的风险，因此设置低、中、高三个风险等级，分别对应不进行专项防治、中等强度处理和高强度处理，比较风险分级管理与统一处理。</p>"
     },
     {
       "_template": "heading",
-      "text": "Test | Comparing the Added Benefit of Density Information",
       "level": 4,
-      "attributes": "#test-comparing-the-added-benefit-of-density-information toc=\"Test | Comparing the Added Benefit of Density Information\""
+      "text": "<strong>Test｜比较密度信息带来的额外收益</strong>",
+      "attributes": "#src-Project-Engineering-59 toc=\"Test｜比较密度信息带来的额外收益\""
     },
     {
       "_template": "text",
-      "body": "Using greenhouse tomatoes in Spain as an example, we compared treatment levels selected according to density with a uniform moderate-intensity treatment strategy. Under the example assumptions, density information helped adjust treatment intensity and provided additional expected net returns."
+      "body": "<p style=\"text-align:left;\">以西班牙设施番茄为例，在示例假设下，按密度选择处理等级比统一采用中等强度处理带来额外的预期净收益。</p>"
     },
     {
       "_template": "text",
-      "body": "This comparison clarified the control needed to assess the value of detection. Improvements relative to no control include the effect of treatment itself, while comparison with uniform treatment more directly examines whether detection information helps users make better management choices."
+      "body": "<p style=\"text-align:left;\">与完全不防治比较时，收益改善包含防治本身的效果；与统一处理比较，更能考察检测信息是否帮助使用者作出更合适的管理选择。</p>"
     },
     {
       "_template": "heading",
-      "text": "Learn | Feeding Management Needs Back into Detection Design",
       "level": 4,
-      "attributes": "#learn-feeding-management-needs-back-into-detection-design toc=\"Learn | Feeding Management Needs Back into Detection Design\""
+      "text": "<strong>Learn｜将管理需求反馈到检测设计</strong>",
+      "attributes": "#src-Project-Engineering-62 toc=\"Learn｜将管理需求反馈到检测设计\""
     },
     {
       "_template": "text",
-      "body": "The analysis refined our detection objectives: provide semiquantitative or quantitative information that supports risk classification, cover the key density ranges where management strategies change, and communicate sampling and measurement uncertainty when results fall close to classification thresholds."
+      "body": "<p style=\"text-align:left;\">据此，检测目标细化为提供支持风险分级的半定量或定量信息，覆盖管理方案改变的关键密度区间，并在阈值附近提示采样与测量的不确定性。</p>"
     },
     {
       "_template": "text",
-      "body": "Model outputs also expanded from a single return-on-investment metric to include measured density, expected yield loss, risk level, the treatment strategy in each scenario, testing costs, and comparisons of net returns. These outputs inform discussions of the product’s quantitative capability, sampling strategy, and application settings. We will update the model using detection performance and sampling error from wet-lab experiments, together with local prices, testing costs, and willingness to pay from HP research, to test whether these design requirements hold under practical conditions."
+      "body": "<p style=\"text-align:left;\">模型输出由单一投资回报率扩展至检测密度、预计产量损失、风险等级、情景中的处理方案、检测成本及净收益比较，为产品定量能力、采样方案和应用场景提供讨论依据。后续将结合湿实验的检测性能与采样误差，以及HP调研的当地价格、检测成本和支付意愿更新模型，检验这些设计要求在实际条件下是否成立。</p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"><br></p>"
+    },
+    {
+      "_template": "text",
+      "body": "</section>"
+    },
+    {
+      "_template": "text",
+      "body": "<p class=\"author-source-link\"><a href=\"/source-archive/#meeting-20261019\" data-source-document=\"meeting-20261019-90cea9447c0c\">Original submission (.docx)</a><span role=\"status\" aria-live=\"polite\"></span></p>"
+    },
+    {
+      "_template": "text",
+      "body": "<section class=\"author-manuscript\" lang=\"zh\">"
     },
     {
       "_template": "heading",
-      "text": "References",
-      "level": 2,
-      "attributes": "#references-2 toc=\"References\""
+      "level": 4,
+      "text": "<strong>3.1 使用需求与检测目标的细化</strong>",
+      "attributes": "#src-HP-Engineering-2 toc=\"3.1 使用需求与检测目标的细化\""
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"><strong>Design｜明确检测服务的农业决策</strong></p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\">当传感器产生颜色变化时，种植者接下来可以做什么？这个问题推动我们将工程酵母的可观察响应与实际农业需求联系起来。我们通过问卷、专家咨询与田间走访，了解谁会使用检测工具、何时检测更有意义，以及结果需要支持怎样的管理判断。</p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"><strong>Build｜收集使用需求与生产经验</strong></p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\">我们收集了 369 条问卷提交，与植保及相关领域专家交流，并走访天津乡语果蔬园和第六埠村蔬菜示范园。问卷帮助我们了解受访者对工具的期待，访谈与走访则将这些期待放回生产现场，进一步讨论检测时机、现有管理方式和日常操作负担。</p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"><strong>Test｜对照实际场景检查应用设想</strong></p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\">问卷中，操作简便、准确可靠和价格可负担是受访者关注的主要特征。专家建议将早期检测与种植前管理联系起来，使检测结果能够在安排生产时发挥作用。农户交流也提醒我们，线虫并非每块田地当前最突出的问题，检测需求需要结合当地作物、地块条件和管理经验判断。</p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"><strong>Learn｜将需求转化为评价要求</strong></p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\">这些反馈使我们对“早期预警”的理解更加具体：在能够影响管理选择的时间，提供使用者看得懂、用得上的信息。我们据此将操作流程和成本纳入评价，并与干实验的经济效益分析衔接，进一步考察风险分级需要怎样的信息精度，以及检测费用能否与可能获得的管理收益相匹配。</p>"
     },
     {
       "_template": "heading",
-      "text": "Docking and Receptor Recognition",
+      "level": 4,
+      "text": "<strong>3.2 土壤背景与信号组成的解释</strong>",
+      "attributes": "#src-HP-Engineering-11 toc=\"3.2 土壤背景与信号组成的解释\""
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"><strong>Design｜识别真实样品中的干扰因素</strong></p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\">样品进入检测体系时，也会带入土壤自身的颜色和复杂背景。庞志豪老师提醒我们，这些因素可能影响显色判读，ascr#3 与 ascr#18 的降解差异还可能改变测得的相对组成。结合刘倩老师关于基质干扰和分阶段验证的建议，我们进一步检查真实样品中的信号能否保留预期的信息。</p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"><strong>Build｜明确实验与模型需要检查的条件</strong></p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\">我们将问题分为两个层次：首先，观察到的颜色变化有多少来自传感响应，又可能受到哪些样品背景影响；其次，测得的蛔苷素组成与采样、保存及分子稳定性之间有何关系。这些问题进入工程讨论，为真实样品的对照设置、检测条件选择和模型假设检验提供方向。</p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"><strong>Test｜开展背景干扰与信号组成研究</strong></p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\">团队已围绕土壤背景干扰和信号组成开展相关工作，并保留相应记录。评价时，需要结合实际样品与对照检查基质对读数的影响，也需要关注信号组成变化是否会影响后续推断。两方面的证据共同决定显色结果应在什么条件下解释，以及哪些因素需要继续检验。</p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"><strong>Learn｜按证据层级解释检测结果</strong></p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\">我们进一步区分目标信号检出、信号组成、线虫种类与密度推断，以及病害风险判断。每向农业决策靠近一步，都需要相应的实验或模型依据。后续将结合相关记录逐层检验这些关系，明确哪些解释获得支持，并据此调整适用条件、分析假设和下一轮验证安排。</p>"
+    },
+    {
+      "_template": "heading",
+      "level": 4,
+      "text": "<strong>3.3 采样与完整使用流程的设计</strong>",
+      "attributes": "#src-HP-Engineering-20 toc=\"3.3 采样与完整使用流程的设计\""
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"><strong>Design｜将田间条件纳入检测流程</strong></p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\">一份土样从田间到产生读数，会经历采集、保存、运输和处理等多个环节。专家交流提醒我们，样品代表性、提取损失及储运条件都可能影响结果，工程酵母的环境释放和检测后处置也需要提前考虑。我们因此将设计视野扩展到采样、样品准备、传感反应、结果判读和检测后处理的完整过程。</p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"><strong>Build｜开展土样收集与采样指导</strong></p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\">团队组织土样收集并制作采样指导短片，帮助参与者了解采样要求。我们通过样品编号关联作物、地点、采集日期和处理历史等背景信息，使后续研究能够追溯土样来自怎样的生产环境，也为比较不同样品之间的差异保留线索。</p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"><strong>Test｜从现场实践检查流程要求</strong></p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\">田间走访与专家交流提示，不同地块和温室的条件存在差异，采样、保存及分开处理需要结合具体场景安排。现场经验也使我们关注采样说明是否清楚、背景信息是否完整。后续需进一步检验采样与处理差异对结果的影响，以及使用者能否按照说明完成操作和样品交接。</p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"><strong>Learn｜完善流程评价与安全要求</strong></p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\">我们将样品信息追溯、操作负担和检测后处置共同纳入后续评价，并从设备、耗材、步骤和储运要求等方面考察完整流程。下一阶段将结合实际检测体系，完善前处理与工程酵母安全处置要求，通过真实样品和操作记录判断流程的可用性，逐步明确需要改进的环节。</p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"><br></p>"
+    },
+    {
+      "_template": "text",
+      "body": "</section>"
+    },
+    {
+      "_template": "text",
+      "body": "<section class=\"author-manuscript\" lang=\"zh\">"
+    },
+    {
+      "_template": "heading",
       "level": 3,
-      "attributes": "#docking-and-receptor-recognition toc=\"Docking and Receptor Recognition\""
+      "text": "<strong>DBTL-4｜商业化探索与应用路径</strong>",
+      "attributes": "#src-HP-Engineering-30 toc=\"DBTL-4｜商业化探索与应用路径\""
     },
     {
       "_template": "text",
-      "body": "B01. Manosalva P, Manohar M, von Reuss SH, et al. Conserved nematode signalling molecules elicit plant defenses and pathogen resistance. *Nature Communications.* 2015;6:7795. DOI: [10.1038/ncomms8795](https://doi.org/10.1038/ncomms8795)."
+      "body": "<p style=\"text-align:left;\"><strong>Design｜明确应用对象与合作需求</strong></p>"
     },
     {
       "_template": "text",
-      "body": "B02. Kuo C-Y, Tay RJ, Lin H-C, et al. The nematode-trapping fungus Arthrobotrys oligospora detects prey pheromones via G protein-coupled receptors. *Nature Microbiology.* 2024;9:1738–1751. DOI: [10.1038/s41564-024-01679-w](https://doi.org/10.1038/s41564-024-01679-w)."
+      "body": "<p style=\"text-align:left;\">从实验室研究走向潜在应用，需要进一步回答：谁会使用这项检测，谁能帮助评价，以及持续研发需要哪些支持？我们围绕种植者、农场管理者及农业服务机构的使用场景，梳理检测成本、操作便利性和结果解释等要求，并将资源支持、应用建议及后续研发条件作为企业交流的重点。</p>"
     },
     {
       "_template": "text",
-      "body": "B03. Hu X, Hoffmann DS, Wang M, et al. GprC of the nematode-trapping fungus Arthrobotrys flagrans activates mitochondria and reprograms fungal cells for nematode hunting. *Nature Microbiology.* 2024;9:1752–1763. DOI: [10.1038/s41564-024-01731-9](https://doi.org/10.1038/s41564-024-01731-9)."
+      "body": "<p style=\"text-align:left;\"><strong>Build｜形成企业沟通与路演材料</strong></p>"
     },
     {
       "_template": "text",
-      "body": "B04. AutoDock Vina developers. *AutoDock Vina Documentation: Frequently Asked Questions.* Accessed October 7, 2026. Relevant entries: “How accurate is AutoDock Vina?”; “How big should the search space be?”; “Why do I not get the correct bound conformation?”"
+      "body": "<p style=\"text-align:left;\">团队准备企业合作邀请书、项目书和项目介绍 PPT，将农业问题、传感设想、当前工作和所需支持集中呈现，让潜在合作方能够理解项目正在解决什么问题、已有怎样的基础，以及可以从哪些方面参与。我们通过邮件及校友企业渠道建立联系，并在取得初步联系后开展项目介绍和路演。</p>"
     },
     {
       "_template": "text",
-      "body": "B05. Bouysset C, Fiorucci S. ProLIF: a library to encode molecular interactions as fingerprints. *Journal of Cheminformatics.* 2021;13:72. DOI: [10.1186/s13321-021-00548-6](https://doi.org/10.1186/s13321-021-00548-6)."
+      "body": "<p style=\"text-align:left;\"><strong>Test｜开展交流并落实资源支持</strong></p>"
     },
     {
       "_template": "text",
-      "body": "B06. Meeko authors, Forli Lab. *Meeko Documentation: Exporting docking results.* Accessed October 7, 2026. Relevant content: SMILES and index mapping in PDBQT files, SDF export, and dependence on structural metadata."
+      "body": "<p style=\"text-align:left;\">我们与多家企业代表讨论应用设想和合作可能，并获得包括 ExCell Bio 在内的赞助支持。这一阶段通过实际沟通探索合作机会、落实研究资源。交流记录分别保留企业提出的建议、表达的合作兴趣及已确认的支持，为后续联系提供依据，也帮助团队区分已经落实的合作与仍需继续讨论的方向。</p>"
     },
     {
       "_template": "text",
-      "body": "B07. Abramson J, Adler J, Dunger J, et al. Accurate structure prediction of biomolecular interactions with AlphaFold 3. *Nature.* 2024;630:493–500. DOI: [10.1038/s41586-024-07487-w](https://doi.org/10.1038/s41586-024-07487-w)."
+      "body": "<p style=\"text-align:left;\"><strong>Learn｜明确下一阶段的合作路径</strong></p>"
     },
     {
       "_template": "text",
-      "body": "B08. Katoh K, Standley DM. MAFFT multiple sequence alignment software version 7: improvements in performance and usability. *Molecular Biology and Evolution.* 2013;30(4):772–780. DOI: [10.1093/molbev/mst010](https://doi.org/10.1093/molbev/mst010)."
+      "body": "<p style=\"text-align:left;\">企业交流为持续研究提供了资源，也促使我们进一步梳理应用验证所需的条件。后续拟围绕样品获取、原型评价和真实场景验证，对接农业企业、农场及技术服务机构。推进合作时，需要明确评价目标和各方责任，并结合检测性能、操作与储运要求、安全处置等问题，逐步形成更具体的应用与合作方案。</p>"
     },
     {
       "_template": "text",
-      "body": "B09. Edgar RC. Muscle5: High-accuracy alignment ensembles enable unbiased assessments of sequence homology and phylogeny. *Nature Communications.* 2022;13:6968. DOI: [10.1038/s41467-022-34630-w](https://doi.org/10.1038/s41467-022-34630-w)."
+      "body": "</section>"
     },
     {
       "_template": "text",
-      "body": "B10. Zhang C, Shine M, Pyle AM, Zhang Y. US-align: universal structure alignments of proteins, nucleic acids, and macromolecular complexes. *Nature Methods.* 2022;19:1109–1115. DOI: [10.1038/s41592-022-01585-1](https://doi.org/10.1038/s41592-022-01585-1)."
-    },
-    {
-      "_template": "text",
-      "body": "B11. Söding J. Protein homology detection by HMM–HMM comparison. *Bioinformatics.* 2005;21(7):951–960. DOI: [10.1093/bioinformatics/bti125](https://doi.org/10.1093/bioinformatics/bti125)."
-    },
-    {
-      "_template": "text",
-      "body": "B12. Reliability and reproducibility checklist for molecular dynamics simulations. Editorial. *Communications Biology.* 2023;6:268. DOI: [10.1038/s42003-023-04653-0](https://doi.org/10.1038/s42003-023-04653-0)."
-    },
-    {
-      "_template": "text",
-      "body": "[1] Hsueh Y-P, Mahanti P, Schroeder FC, Sternberg PW. Nematode-Trapping Fungi Eavesdrop on Nematode Pheromones. *Current Biology.* 2013;23:83–86. [Article](https://doi.org/10.1016/j.cub.2012.11.035)"
-    },
-    {
-      "_template": "text",
-      "body": "[2] Kuo C-Y, et al. The nematode-trapping fungus Arthrobotrys oligospora detects prey pheromones via G protein-coupled receptors. *Nature Microbiology.* 2024;9:1738–1751. [Article](https://doi.org/10.1038/s41564-024-01679-w)"
-    },
-    {
-      "_template": "text",
-      "body": "[3] Hu X, et al. GprC of the nematode-trapping fungus Arthrobotrys flagrans activates mitochondria and reprograms fungal cells for nematode hunting. *Nature Microbiology.* 2024;9:1752–1763. [Article](https://doi.org/10.1038/s41564-024-01731-9)"
-    },
-    {
-      "_template": "text",
-      "body": "[4] Trott O, Olson AJ. AutoDock Vina: Improving the speed and accuracy of docking with a new scoring function, efficient optimization, and multithreading. *Journal of Computational Chemistry.* 2010;31:455–461. [Article](https://doi.org/10.1002/jcc.21334)"
-    },
-    {
-      "_template": "text",
-      "body": "[5] Eberhardt J, Santos-Martins D, Tillack AF, Forli S. AutoDock Vina 1.2.0: New Docking Methods, Expanded Force Field, and Python Bindings. *Journal of Chemical Information and Modeling.* 2021;61:3891–3898. [Article](https://doi.org/10.1021/acs.jcim.1c00203)"
-    },
-    {
-      "_template": "text",
-      "body": "[6] Bouysset C, Fiorucci S. ProLIF: a library to encode molecular interactions as fingerprints. *Journal of Cheminformatics.* 2021;13:72. [Article](https://doi.org/10.1186/s13321-021-00548-6)"
-    },
-    {
-      "_template": "heading",
-      "text": "MD and Membrane System Simulations",
-      "level": 3,
-      "attributes": "#md-and-membrane-system-simulations toc=\"MD and Membrane System Simulations\""
-    },
-    {
-      "_template": "text",
-      "body": "[7] Huang J, et al. CHARMM36m: an improved force field for folded and intrinsically disordered proteins. *Nature Methods.* 2017;14:71–73. [Article](https://doi.org/10.1038/nmeth.4067)"
-    },
-    {
-      "_template": "text",
-      "body": "[8] Feng S, Park S, Choi YK, Im W. CHARMM-GUI Membrane Builder: Past, Current, and Future Developments and Applications. *Journal of Chemical Theory and Computation.* 2023;19:2161–2185. [Article](https://doi.org/10.1021/acs.jctc.2c01246)"
-    },
-    {
-      "_template": "heading",
-      "text": "ODE Modeling and Signal Output",
-      "level": 3,
-      "attributes": "#ode-modeling-and-signal-output toc=\"ODE Modeling and Signal Output\""
-    },
-    {
-      "_template": "text",
-      "body": "[9] Yi T-M, Kitano H, Simon MI. A quantitative characterization of the yeast heterotrimeric G protein cycle. *Proceedings of the National Academy of Sciences.* 2003;100:10764–10769. [Article](https://doi.org/10.1073/pnas.1834247100)"
-    },
-    {
-      "_template": "text",
-      "body": "[10] Kofahl B, Klipp E. Modelling the dynamics of the yeast pheromone pathway. *Yeast.* 2004;21:831–850. [Article](https://doi.org/10.1002/yea.1122)"
-    },
-    {
-      "_template": "text",
-      "body": "[11] Shaw WM, et al. Engineering a Model Cell for Rational Tuning of GPCR Signaling. *Cell.* 2019;177:782–796.e27. [Article](https://doi.org/10.1016/j.cell.2019.02.023)"
-    },
-    {
-      "_template": "text",
-      "body": "[12] Fan C, Yuan J. Reshaping the yeast galactose regulon via GPCR signaling cascade. *Cell Reports Methods.* 2023;3:100647. [Article](https://doi.org/10.1016/j.crmeth.2023.100647)"
-    },
-    {
-      "_template": "text",
-      "body": "[13] Fan C, He N, Yuan J. Cascaded amplifying circuit enables sensitive detection of fungal pathogens. *Biosensors and Bioelectronics.* 2024;250:116058. [Article](https://doi.org/10.1016/j.bios.2024.116058)"
-    },
-    {
-      "_template": "heading",
-      "text": "Economic Benefit Modeling and Management Decisions",
-      "level": 3,
-      "attributes": "#economic-benefit-modeling-and-management-decisions toc=\"Economic Benefit Modeling and Management Decisions\""
-    },
-    {
-      "_template": "text",
-      "body": "[14] FAO. Nematode population dynamics, threshold levels and estimation of crop losses. [Original source](https://www.fao.org/4/V9978E/v9978e07.htm)"
-    },
-    {
-      "_template": "text",
-      "body": "[15] UC Statewide Integrated Pest Management Program. Root-Knot Nematode: Tomato Pest Management Guidelines."
+      "body": "<span id=\"dbtl-1-engineering-the-signal-response-pathway\" aria-hidden=\"true\"></span>\n<span id=\"the-first-cycle-dry-lab\" aria-hidden=\"true\"></span>\n<span id=\"design-defining-the-receptor-screening-objective\" aria-hidden=\"true\"></span>\n<span id=\"build-establishing-receptor-comparisons-and-literature-references\" aria-hidden=\"true\"></span>\n<span id=\"test-comparing-with-the-literature-and-refining-the-docking-workflow\" aria-hidden=\"true\"></span>\n<span id=\"learn-selecting-receptors-for-further-engineering\" aria-hidden=\"true\"></span>\n<span id=\"dbtl-2-engineering-receptor-specificity-and-developing-pathway-models\" aria-hidden=\"true\"></span>\n<span id=\"mutation-design-and-screening-guided-by-contact-differences\" aria-hidden=\"true\"></span>\n<span id=\"design-identifying-engineering-sites-from-wt-contact-differences\" aria-hidden=\"true\"></span>\n<span id=\"build-generating-mutant-models-and-consistent-controls\" aria-hidden=\"true\"></span>\n<span id=\"test-iterating-substitutions-using-score-and-contact-feedback\" aria-hidden=\"true\"></span>\n<span id=\"learn-selecting-candidates-for-dynamic-testing\" aria-hidden=\"true\"></span>\n<span id=\"investigating-candidate-dynamics-in-a-membrane-environment\" aria-hidden=\"true\"></span>\n<span id=\"design-examining-docking-candidates-in-the-membrane\" aria-hidden=\"true\"></span>\n<span id=\"build-preparing-full-length-receptors-and-membrane-systems\" aria-hidden=\"true\"></span>\n<span id=\"test-tracking-ligand-motion-and-contact-changes\" aria-hidden=\"true\"></span>\n<span id=\"learn-reinterpreting-mutation-effects-from-the-trajectories\" aria-hidden=\"true\"></span>\n<span id=\"ode-connecting-receptor-signaling-to-colorimetric-output\" aria-hidden=\"true\"></span>\n<span id=\"design-building-a-minimal-model-from-biological-principles\" aria-hidden=\"true\"></span>\n<span id=\"build-adapting-the-shared-pathway-and-colorimetric-output\" aria-hidden=\"true\"></span>\n<span id=\"test-checking-computational-consistency-and-response-range\" aria-hidden=\"true\"></span>\n<span id=\"learn-prioritizing-project-specific-inputs-and-outputs\" aria-hidden=\"true\"></span>\n<span id=\"two-channel-model-estimating-target-density-from-paired-color-readouts\" aria-hidden=\"true\"></span>\n<span id=\"design-estimating-mi-density-with-an-unknown-background-population\" aria-hidden=\"true\"></span>\n<span id=\"build-constructing-mixed-samples-and-a-density-regression-model\" aria-hidden=\"true\"></span>\n<span id=\"test-comparing-one-and-two-channels-with-new-mixed-samples\" aria-hidden=\"true\"></span>\n<span id=\"learn-examining-errors-at-low-densities-and-near-risk-thresholds\" aria-hidden=\"true\"></span>\n<span id=\"dbtl-3-feedback-from-practical-and-societal-needs\" aria-hidden=\"true\"></span>\n<span id=\"economic-benefit-modeling-and-refinement-of-detection-requirements\" aria-hidden=\"true\"></span>\n<span id=\"design-defining-the-decision-making-value-of-detection-information\" aria-hidden=\"true\"></span>\n<span id=\"build-establishing-cost-calculations-and-management-scenarios\" aria-hidden=\"true\"></span>\n<span id=\"test-comparing-the-added-benefit-of-density-information\" aria-hidden=\"true\"></span>\n<span id=\"learn-feeding-management-needs-back-into-detection-design\" aria-hidden=\"true\"></span>\n<span id=\"references-2\" aria-hidden=\"true\"></span>\n<span id=\"docking-and-receptor-recognition\" aria-hidden=\"true\"></span>\n<span id=\"md-and-membrane-system-simulations\" aria-hidden=\"true\"></span>\n<span id=\"ode-modeling-and-signal-output\" aria-hidden=\"true\"></span>\n<span id=\"economic-benefit-modeling-and-management-decisions\" aria-hidden=\"true\"></span>"
     }
   ],
   "description": "",

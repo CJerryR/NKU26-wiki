@@ -168,418 +168,264 @@
       "attributes": "#dry-lab toc=\"Dry Lab\""
     },
     {
-      "_template": "heading",
-      "text": "Docking: Engineering for Two Ligands and Cross-Receptor Residue Analysis",
-      "level": 3,
-      "attributes": "#docking-engineering-for-two-ligands-and-cross-receptor-residue-analysis toc=\"Docking: Engineering for Two Ligands and Cross-Receptor Residue Analysis\""
-    },
-    {
-      "_template": "heading",
-      "text": "1.1 Receptor Engineering Guided by Contacts with Two Ligands",
-      "level": 4,
-      "attributes": "#receptor-engineering-guided-by-contacts-with-two-ligands toc=\"Receptor Engineering Guided by Contacts with Two Ligands\""
+      "_template": "text",
+      "body": "<p class=\"author-source-link\"><a href=\"/source-archive/#meeting-20261019\" data-source-document=\"meeting-20261019-93884c4d3dba\">Original submission (.docx)</a><span role=\"status\" aria-live=\"polite\"></span></p>"
     },
     {
       "_template": "text",
-      "body": "We developed a stepwise screening approach for engineering a receptor’s recognition of two ligands, using contact differences to identify candidate sites and successive substitutions to evaluate them. We first compare the contact distributions of the wild-type (WT) receptor with both ligands and select candidate positions for alanine substitution. We then combine single-mutant scores with contact changes to select sites for saturation scanning and compare how different side chains affect the two ligands."
-    },
-    {
-      "_template": "text",
-      "body": "Screening uses the difference between the docking-score changes for the two ligands relative to WT:"
-    },
-    {
-      "_template": "equation",
-      "latex": "\\Delta\\Delta G= \\bigl(G_{\\mathrm{mut},18}-G_{\\mathrm{WT},18}\\bigr) - \\bigl(G_{\\mathrm{mut},3}-G_{\\mathrm{WT},3}\\bigr)"
-    },
-    {
-      "_template": "text",
-      "body": "Here, $G$ denotes the Vina docking score. A positive $\\Delta\\Delta G$ indicates a shift toward ascr#3 relative to WT, while a negative value indicates a shift toward ascr#18. After grouping candidates by direction, we examine both scores separately to determine whether the shift results from a lower score for the target ligand, a higher score for the other ligand, or both. These distinctions guide candidate selection and the design of combined substitutions."
-    },
-    {
-      "_template": "text",
-      "body": "Most tested combinations did not further improve the better parent’s target-ligand score or increase the difference between the two ligands, so subsequent work continued to focus on single-mutant candidates. This exploration highlights the need to compare combinations with both WT and their single-mutant parents to determine whether the original direction is retained and whether the combination provides an additional benefit."
-    },
-    {
-      "_template": "text",
-      "body": "Contact analysis supports both site selection and candidate review. We compare ligand positions and contacts between mutants and WT to examine the structural basis of score differences. This process led us to select V368R and N84V for further study. For example, N84V had a lower ascr#18 score and a higher ascr#3 score than WT. Although no direct contact at position 84 was detected in the selected poses, ascr#18 gained ionic and hydrogen-bond-type contacts involving R189, together with a hydrophobic contact at W338. This observation indicates that candidate review should consider the contact network surrounding the ligand."
-    },
-    {
-      "_template": "text",
-      "body": "Other teams can apply this screening approach by combining scores for both ligands, contact comparisons with WT, and comparisons of combinations with their parents to develop testable engineering hypotheses. Binding capability and selectivity can then be evaluated experimentally. The design iterations are described in Engineering, and the score and contact evidence is presented in Model/Docking."
+      "body": "<section class=\"author-manuscript\" lang=\"zh\">"
     },
     {
       "_template": "heading",
-      "text": "1.2 Tools for Checking Docking Inputs and Exporting Poses",
-      "level": 4,
-      "attributes": "#tools-for-checking-docking-inputs-and-exporting-poses toc=\"Tools for Checking Docking Inputs and Exporting Poses\""
-    },
-    {
-      "_template": "text",
-      "body": "We found that inconsistent coordinate references between receptor structures and search boxes can alter the region actually searched, while loss of chemical information during format conversion can affect interaction identification. To address these issues, we developed an input-checking and pose-export workflow. Structural superposition places the receptor, ligand, and search box in a common coordinate reference, and the search region is checked against membrane orientation and the structural segments actually retained."
-    },
-    {
-      "_template": "text",
-      "body": "An atom-mapping verification tool checks the correspondence of atoms, coordinates, and structures between the original SDF and the docking PDBQT files. A pose-export tool reconstructs SDF files using the complete Meeko structural metadata retained in PDBQT, preserving docking poses and chemical information such as formal charges for subsequent contact analysis."
-    },
-    {
-      "_template": "text",
-      "body": "We will release the tools, instructions, and accompanying ascr#18 and ascr#3 examples on GitHub. Other teams can reproduce the checking and export workflow, then substitute their own data to verify search locations, atom correspondence, and the chemical information in pose files."
-    },
-    {
-      "_template": "heading",
-      "text": "1.3 Cross-Receptor Residue Analysis",
-      "level": 4,
-      "attributes": "#cross-receptor-residue-analysis toc=\"Cross-Receptor Residue Analysis\""
-    },
-    {
-      "_template": "text",
-      "body": "Gpr2, Gpr3, GprC, and the Caenorhabditis elegans receptors DAF-37 and SRBC-64 are GPCRs involved in ascaroside sensing, providing functionally relevant references for comparing ligand-contact regions and candidate residues. Drawing on the receptor structure comparisons of Hu et al., we combined contact bias between the two ligands with residue correspondence to inform pose interpretation and the selection of engineering sites."
-    },
-    {
-      "_template": "text",
-      "body": "We used five predicted models for each receptor, pairing the contact frequencies of ascr#18 and ascr#3 within each model. Sequence alignment and structural mapping were then used to examine positional correspondence, while recording whether each residue was present in the actual construct. The TM6 tryptophans of the three fungal receptors—Gpr2 W338, Gpr3 W306, and GprC W388—showed both contact differences favoring ascr#18 and support for sequence and structural correspondence. These positions therefore provide candidates for parallel substitutions across receptors."
-    },
-    {
-      "_template": "text",
-      "body": "Other teams can use this approach to combine contact bias, positional correspondence, and construct status, distinguishing sites suitable for parallel comparisons across receptors from sites that require testing within an individual receptor. Detailed methods and results are available in Model/Docking."
-    },
-    {
-      "_template": "heading",
-      "text": "MD: Joint Analysis of Receptor Motion and Local Ligand Behavior",
-      "level": 3,
-      "attributes": "#md-joint-analysis-of-receptor-motion-and-local-ligand-behavior toc=\"MD: Joint Analysis of Receptor Motion and Local Ligand Behavior\""
-    },
-    {
-      "_template": "text",
-      "body": "Docking provides candidate binding poses for receptor engineering. We further used molecular dynamics (MD) simulations to examine how these poses persist or adjust in a membrane environment and organized the analysis of receptor conformational changes, ligand positions, and contacts into a reusable workflow."
-    },
-    {
-      "_template": "text",
-      "body": "The workflow tracks ligand motion relative to the receptor or a local pocket while recording the retention of existing contacts and formation of new ones. Analysis of Gpr3 R167Y–ascr#3 showed that local contacts can persist despite global receptor displacement. Gpr2 V368R–ascr#3 illustrated how ligand repositioning can be accompanied by the loss of initial contacts and the formation of new ones."
-    },
-    {
-      "_template": "text",
-      "body": "We will make the analysis tools, instructions, and example results available on GitHub. Other teams studying membrane receptors can apply this analysis to their own trajectories, using displacement curves and contact statistics to identify residues that maintain contact and periods of contact rearrangement. The corresponding conformations can then help explain the ligand’s dynamic behavior."
-    },
-    {
-      "_template": "heading",
-      "text": "ODE: A Full-Pathway Model from Receptor Signaling to Colorimetric Output",
-      "level": 3,
-      "attributes": "#ode-a-full-pathway-model-from-receptor-signaling-to-colorimetric-output toc=\"ODE: A Full-Pathway Model from Receptor Signaling to Colorimetric Output\""
-    },
-    {
-      "_template": "text",
-      "body": "We developed a full-pathway ODE model for our yeast GPCR biosensing system, connecting effective receptor input, intracellular signal transduction, and colorimetric output. The model reuses the yeast pathway structure from Supady Model B and the publicly available materials of TU Delft’s 2012 iGEM team, incorporates our project’s color-development module, and calculates signaling activity and color over time."
-    },
-    {
-      "_template": "text",
-      "body": "We documented the shared pathway parameters separately from project-specific input and output settings, recording parameter meanings, units, sources, and assumptions. Under fixed construct conditions, sTF regulation, GAL production rate, and color generation were combined into one effective colorimetric equation. Conservation of total molecular amounts was used to eliminate redundant states in the shared pathway. The accompanying equation descriptions and computational consistency checks help users understand and adapt the model."
-    },
-    {
-      "_template": "text",
-      "body": "A simulated two-sensor fitting example further demonstrates how the shared pathway parameters can be retained while adjusting each sensor’s effective input scale and color-production gain to approach predefined colorimetric endpoints. Parameter records distinguish source values, assumed values, and values fitted to simulated targets, helping users identify which parameters require recalibration with their own experimental data."
-    },
-    {
-      "_template": "text",
-      "body": "Other teams can run the accompanying code and example configurations, reproduce the reference outputs, and assess applicability to their own chassis and reporter systems before adjusting the input-output relationships. Model development is described in Engineering; the complete equations, parameter sources, and simulation results are available in Model/ODE."
-    },
-    {
-      "_template": "heading",
-      "text": "Eco: Economic Benefit Analysis from Detection Results to Management Strategies",
-      "level": 3,
-      "attributes": "#eco-economic-benefit-analysis-from-detection-results-to-management-strategies toc=\"Eco: Economic Benefit Analysis from Detection Results to Management Strategies\""
-    },
-    {
-      "_template": "text",
-      "body": "We developed an economic benefit model connecting pathogen or pest density, crop yield loss, and management costs. It compares three scenarios: no testing and no treatment, uniform treatment without testing, and risk-based treatment following testing. The model estimates yield losses from the density-yield relationship, then combines product prices, testing costs, treatment costs, and treatment efficacy to calculate the expected net return of each strategy."
-    },
-    {
-      "_template": "text",
-      "body": "Model parameters are organized separately from report content so that users can substitute local crop prices, testing costs, treatment costs, risk thresholds, and treatment efficacy. Settings with an established density-yield relationship support comparisons of economic returns. Settings with risk thresholds alone provide risk indications, with the analysis extended as more data become available."
-    },
-    {
-      "_template": "text",
-      "body": "The accompanying example of greenhouse tomatoes in Spain and the southern root-knot nematode demonstrates how to combine a yield-loss relationship fitted from published data, three risk levels, and per-unit-area cost calculations to compare management strategies under specified conditions."
-    },
-    {
-      "_template": "text",
-      "body": "Other teams can start from this example, substitute density-yield relationships appropriate to their own crops and target organisms, and add local cost data to compare the management benefits of detection information. Parameters can then be updated using experimental or field data. Complete methods, parameter sources, and scenario results are available in Model/Eco."
-    },
-    {
-      "_template": "text",
-      "body": "<span id=\"human-practices\" aria-hidden=\"true\"></span>\n<span id=\"hp-contribution-resources-for-connecting-synthetic-biology-with-real-world-questions\" aria-hidden=\"true\"></span>\n<span id=\"hp-contribution-agricultural-awareness-and-needs-questionnaire\" aria-hidden=\"true\"></span>\n<span id=\"hp-contribution-stakeholder-interviews-and-feedback-records\" aria-hidden=\"true\"></span>\n<span id=\"hp-contribution-sampling-guidance-and-context-records\" aria-hidden=\"true\"></span>\n<span id=\"hp-contribution-educational-courses-and-supporting-materials\" aria-hidden=\"true\"></span>\n<span id=\"hp-contribution-sponsorship-and-partnership-documentation\" aria-hidden=\"true\"></span>\n<span id=\"hp-contribution-making-the-resources-usable\" aria-hidden=\"true\"></span>"
-    },
-    {
-      "_template": "heading",
-      "text": "Resources for Connecting Synthetic Biology with Real World Questions",
-      "level": 3,
-      "attributes": "#hp-contribution-source-41 toc=\"Resources for Connecting Synthetic Biology with Real World Questions\""
-    },
-    {
-      "_template": "text",
-      "body": "Our Human Practices contribution extends beyond an account of our own activities. We developed educational materials, survey tools, sampling guidance, and engagement documents that can support future teams working at the interface of synthetic biology and agriculture."
-    },
-    {
-      "_template": "text",
-      "body": "These resources serve different purposes. Questionnaires help teams investigate knowledge and expectations. Interview materials support conversations about technical feasibility and use conditions. Educational resources support scientific learning. Partnership documents help student teams define responsibilities and communicate their work accurately."
-    },
-    {
-      "_template": "text",
-      "body": "No template replaces local knowledge, ethical review, scientific validation, or institutional authorization. Their value lies in making a process easier to understand, adapt, and document."
-    },
-    {
-      "_template": "heading",
-      "text": "Agricultural Awareness and Needs Questionnaire",
-      "level": 3,
-      "attributes": "#hp-contribution-source-45 toc=\"Agricultural Awareness and Needs Questionnaire\""
-    },
-    {
-      "_template": "text",
-      "body": "Our questionnaire connects the project's early laboratory questions with public understanding of nematodes and agricultural testing. It explores awareness, information sources, expectations of testing, and interpretation of possible results."
-    },
-    {
-      "_template": "text",
-      "body": "Future teams can adapt the question structure by first identifying their intended respondents and the decisions that the answers might inform. They should then review terminology, pilot the questions, document recruitment channels, and define valid-response criteria before analysis."
-    },
-    {
-      "_template": "text",
-      "body": "Results should be reported with the relevant denominator for each question, including missing responses. A questionnaire circulated through university or outreach networks describes the participating sample; it should not automatically be presented as representative of farmers or a national population."
-    },
-    {
-      "_template": "text",
-      "body": "An important reusable feature is the connection between questions and decisions: what did the team need to learn, why was each question asked, and which answer could change a design priority?"
-    },
-    {
-      "_template": "heading",
-      "text": "Stakeholder Interviews and Feedback Records",
-      "level": 3,
-      "attributes": "#hp-contribution-source-50 toc=\"Stakeholder Interviews and Feedback Records\""
-    },
-    {
-      "_template": "text",
-      "body": "Our engagement materials cover agricultural, scientific, and industry perspectives. Technical discussions address candidate signals, background interference, controls, sample conditions, and possible routes to further validation. Partnership discussions address the purpose of support, realistic deliverables, communication responsibilities, and longer-term collaboration."
-    },
-    {
-      "_template": "text",
-      "body": "Teams using these materials should prepare a short project explanation, clarify the purpose of the conversation, obtain permission for recording and publication, and separate direct statements from the team's interpretation. Confidential information should be removed from public records."
-    },
-    {
-      "_template": "text",
-      "body": "The accompanying feedback-recording framework follows four stages: feedback, decision, project change, and verification. Each entry should identify the source and context of the feedback, the reasoning behind accepting or rejecting it, the affected document or design version, and the evidence available to assess the change."
-    },
-    {
-      "_template": "text",
-      "body": "Where verification has not occurred, the record should state the next test rather than imply that the feedback has already improved technical performance."
-    },
-    {
-      "_template": "heading",
-      "text": "Sampling Guidance and Context Records",
-      "level": 3,
-      "attributes": "#hp-contribution-source-55 toc=\"Sampling Guidance and Context Records\""
-    },
-    {
-      "_template": "text",
-      "body": "Our sampling guidance video and recording approach help connect a soil sample with its agricultural background. Useful records include sample identification, crop context, collection location, collection date, handling, and storage."
-    },
-    {
-      "_template": "text",
-      "body": "These materials support consistent documentation and communication with participants. They do not constitute a universally validated protocol for every nematode, soil type, or analytical method. Future users should adapt collection and preservation procedures to their target analyte and institutional requirements."
-    },
-    {
-      "_template": "text",
-      "body": "Collecting a sample creates an opportunity for research; it does not establish the presence of a particular nematode or demonstrate field performance."
-    },
-    {
-      "_template": "heading",
-      "text": "Educational Courses and Supporting Materials",
-      "level": 3,
-      "attributes": "#hp-contribution-source-59 toc=\"Educational Courses and Supporting Materials\""
-    },
-    {
-      "_template": "text",
-      "body": "We developed three course themes: The Great Nematode Chase, The Signal Discovery Challenge, and Small Lives, Shared Responsibility. The theoretical and experimental course themes include versions for primary-school and junior-secondary learners; the responsibility-focused course is designed for primary-school learners."
-    },
-    {
-      "_template": "text",
-      "body": "Supporting materials include lesson presentations, illustrated materials, posters, leaflets, postcards, and activity sheets. The collection provides a starting point for discussing agricultural nematodes, biological signals, scientific inquiry, and responsible innovation."
-    },
-    {
-      "_template": "text",
-      "body": "To reuse a course, educators should select the appropriate age version, review the learning objectives, prepare the required materials, and adapt examples to local agricultural contexts. Activities should distinguish observation from interpretation and invite learners to question the proposed technology."
-    },
-    {
-      "_template": "text",
-      "body": "The term “experimental course” describes a teaching format and does not imply that learners handled genetically modified organisms. Any practical activity requires a separate assessment of its materials and setting."
-    },
-    {
-      "_template": "heading",
-      "text": "Sponsorship and Partnership Documentation",
-      "level": 3,
-      "attributes": "#hp-contribution-source-64 toc=\"Sponsorship and Partnership Documentation\""
-    },
-    {
-      "_template": "text",
-      "body": "Our sponsorship work provides a framework for organizing initial contact, meeting preparation, discussion records, follow-up actions, and proposed support arrangements. It also addresses how a student team can describe possible acknowledgements and other deliverables without overstating its authority or technical progress."
-    },
-    {
-      "_template": "text",
-      "body": "A reusable partnership workflow begins with identifying suitable organizations and their reasons for engagement. Teams should then agree on a meeting purpose, document expectations, assess which commitments they can fulfill, obtain institutional authorization where necessary, and keep a record of delivery."
-    },
-    {
-      "_template": "text",
-      "body": "Recognition and activity support should be separated from scientific conclusions and competition outcomes. A sponsor's support does not validate a technology, and an award cannot be guaranteed as a sponsorship benefit."
-    },
-    {
-      "_template": "heading",
-      "text": "Making the Resources Usable",
-      "level": 3,
-      "attributes": "#hp-contribution-source-68 toc=\"Making the Resources Usable\""
-    },
-    {
-      "_template": "text",
-      "body": "Reusable resources need more than a file name. Each public item should identify its purpose, intended users, version, required preparation, instructions, limitations, authorship, and permitted use."
-    },
-    {
-      "_template": "text",
-      "body": "Our contribution combines the materials with the reasoning needed to use them responsibly. Future teams can adapt the process while preserving the distinction between a useful conversation, a documented decision, and a scientifically validated result."
-    },
-    {
-      "_template": "heading",
-      "text": "References",
       "level": 2,
-      "attributes": "#references toc=\"References\""
+      "text": "1. <strong>Docking：双配体改造与跨受体残基分析</strong>",
+      "attributes": "#src-Project-Contribution-1 toc=\"1. Docking：双配体改造与跨受体残基分析\""
     },
     {
       "_template": "heading",
-      "text": "Docking and Receptor Recognition",
       "level": 3,
-      "attributes": "#docking-and-receptor-recognition toc=\"Docking and Receptor Recognition\""
+      "text": "<strong>1.1 双配体接触引导的受体改造</strong>",
+      "attributes": "#src-Project-Contribution-2 toc=\"1.1 双配体接触引导的受体改造\""
     },
     {
       "_template": "text",
-      "body": "B01. Manosalva P, Manohar M, von Reuss SH, et al. Conserved nematode signalling molecules elicit plant defenses and pathogen resistance. *Nature Communications.* 2015;6:7795. DOI: [10.1038/ncomms8795](https://doi.org/10.1038/ncomms8795)."
+      "body": "<p style=\"text-align:left;\">针对同一受体的双配体识别改造，我们整理了一套由接触差异提出位点、通过逐步替换筛选候选的方法。首先比较野生型（WT）与两种配体的接触分布，选择候选位置开展丙氨酸替换；再结合单点评分与接触变化，对选定位点进行饱和扫描，比较不同侧链带来的双配体差异。</p>"
     },
     {
       "_template": "text",
-      "body": "B02. Kuo C-Y, Tay RJ, Lin H-C, et al. The nematode-trapping fungus Arthrobotrys oligospora detects prey pheromones via G protein-coupled receptors. *Nature Microbiology.* 2024;9:1738–1751. DOI: [10.1038/s41564-024-01679-w](https://doi.org/10.1038/s41564-024-01679-w)."
+      "body": "<p style=\"text-align:left;\">筛选采用相对WT的双配体评分变化之差：</p>"
     },
     {
       "_template": "text",
-      "body": "B03. Hu X, Hoffmann DS, Wang M, et al. GprC of the nematode-trapping fungus Arthrobotrys flagrans activates mitochondria and reprograms fungal cells for nematode hunting. *Nature Microbiology.* 2024;9:1752–1763. DOI: [10.1038/s41564-024-01731-9](https://doi.org/10.1038/s41564-024-01731-9)."
+      "body": "<p style=\"text-align:left;\"><span class=\"katex-display\"><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mi mathvariant=\"normal\">Δ</mi><mi mathvariant=\"normal\">Δ</mi><mi>G</mi><mo>=</mo><mo fence=\"true\" stretchy=\"true\" minsize=\"1.2em\" maxsize=\"1.2em\">(</mo><msub><mi>G</mi><mrow><mrow><mi mathvariant=\"normal\">m</mi><mi mathvariant=\"normal\">u</mi><mi mathvariant=\"normal\">t</mi></mrow><mo separator=\"true\">,</mo><mn>18</mn></mrow></msub><mo>−</mo><msub><mi>G</mi><mrow><mrow><mi mathvariant=\"normal\">W</mi><mi mathvariant=\"normal\">T</mi></mrow><mo separator=\"true\">,</mo><mn>18</mn></mrow></msub><mo fence=\"true\" stretchy=\"true\" minsize=\"1.2em\" maxsize=\"1.2em\">)</mo><mo>−</mo><mo fence=\"true\" stretchy=\"true\" minsize=\"1.2em\" maxsize=\"1.2em\">(</mo><msub><mi>G</mi><mrow><mrow><mi mathvariant=\"normal\">m</mi><mi mathvariant=\"normal\">u</mi><mi mathvariant=\"normal\">t</mi></mrow><mo separator=\"true\">,</mo><mn>3</mn></mrow></msub><mo>−</mo><msub><mi>G</mi><mrow><mrow><mi mathvariant=\"normal\">W</mi><mi mathvariant=\"normal\">T</mi></mrow><mo separator=\"true\">,</mo><mn>3</mn></mrow></msub><mo fence=\"true\" stretchy=\"true\" minsize=\"1.2em\" maxsize=\"1.2em\">)</mo></mrow><annotation encoding=\"application/x-tex\"> \\Delta\\Delta G= \\bigl(G_{\\mathrm{mut},18}-G_{\\mathrm{WT},18}\\bigr) - \\bigl(G_{\\mathrm{mut},3}-G_{\\mathrm{WT},3}\\bigr) </annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.6833em;\"></span><span class=\"mord\">ΔΔ</span><span class=\"mord mathnormal\">G</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:1.2em;vertical-align:-0.35em;\"></span><span class=\"mopen\"><span class=\"delimsizing size1\">(</span></span><span class=\"mord\"><span class=\"mord mathnormal\">G</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:0em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\"><span class=\"mord mathrm mtight\">mut</span></span><span class=\"mpunct mtight\">,</span><span class=\"mord mtight\">18</span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.2861em;\"><span></span></span></span></span></span></span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span><span class=\"mbin\">−</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span></span><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:1.2em;vertical-align:-0.35em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\">G</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3283em;\"><span style=\"top:-2.55em;margin-left:0em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\"><span class=\"mord mathrm mtight\">WT</span></span><span class=\"mpunct mtight\">,</span><span class=\"mord mtight\">18</span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.2861em;\"><span></span></span></span></span></span></span><span class=\"mclose\"><span class=\"delimsizing size1\">)</span></span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span><span class=\"mbin\">−</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span></span><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:1.2em;vertical-align:-0.35em;\"></span><span class=\"mopen\"><span class=\"delimsizing size1\">(</span></span><span class=\"mord\"><span class=\"mord mathnormal\">G</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:0em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\"><span class=\"mord mathrm mtight\">mut</span></span><span class=\"mpunct mtight\">,</span><span class=\"mord mtight\">3</span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.2861em;\"><span></span></span></span></span></span></span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span><span class=\"mbin\">−</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span></span><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:1.2em;vertical-align:-0.35em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\">G</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3283em;\"><span style=\"top:-2.55em;margin-left:0em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\"><span class=\"mord mathrm mtight\">WT</span></span><span class=\"mpunct mtight\">,</span><span class=\"mord mtight\">3</span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.2861em;\"><span></span></span></span></span></span></span><span class=\"mclose\"><span class=\"delimsizing size1\">)</span></span></span></span></span></span></p>"
     },
     {
       "_template": "text",
-      "body": "B04. AutoDock Vina developers. *AutoDock Vina Documentation: Frequently Asked Questions.* Accessed October 7, 2026. Relevant entries: “How accurate is AutoDock Vina?”; “How big should the search space be?”; “Why do I not get the correct bound conformation?”"
+      "body": "<p style=\"text-align:left;\">其中，<math xmlns=\"http://www.w3.org/1998/Math/MathML\" aria-label=\"G\"><mrow><mi>G</mi></mrow></math>表示Vina对接评分。ΔΔG为正表示相对WT向ascr#3偏移，为负表示向ascr#18偏移。按方向分组后，我们分别检查两项评分，区分偏向来自目标配体评分降低、另一配体评分升高，还是两者同时发生，据此选择候选并设计组合替换。</p>"
     },
     {
       "_template": "text",
-      "body": "B05. Bouysset C, Fiorucci S. ProLIF: a library to encode molecular interactions as fingerprints. *Journal of Cheminformatics.* 2021;13:72. DOI: [10.1186/s13321-021-00548-6](https://doi.org/10.1186/s13321-021-00548-6)."
+      "body": "<p style=\"text-align:left;\">多数受测组合未进一步改善较优亲本的目标配体评分或扩大双配体差异，后续研究继续聚焦单点候选。这一尝试提示，评价组合时需要同时与WT和各单点亲本比较，判断原有方向是否保留、是否获得额外收益。</p>"
     },
     {
       "_template": "text",
-      "body": "B06. Meeko authors, Forli Lab. *Meeko Documentation: Exporting docking results.* Accessed October 7, 2026. Relevant content: SMILES and index mapping in PDBQT files, SDF export, and dependence on structural metadata."
+      "body": "<p style=\"text-align:left;\">接触分析贯穿选点与候选复核。我们比较突变体与WT的配体位置及接触变化，检查评分差异的结构依据，最终选定V368R和N84V开展后续研究。以N84V为例，其ascr#18评分相对WT降低、ascr#3评分升高；所选姿态中84位自身未检出直接接触，但ascr#18新增了R189相关离子及氢键类型接触和W338疏水接触，提示复核应覆盖配体周围的接触网络。</p>"
     },
     {
       "_template": "text",
-      "body": "B07. Abramson J, Adler J, Dunger J, et al. Accurate structure prediction of biomolecular interactions with AlphaFold 3. *Nature.* 2024;630:493–500. DOI: [10.1038/s41586-024-07487-w](https://doi.org/10.1038/s41586-024-07487-w)."
-    },
-    {
-      "_template": "text",
-      "body": "B08. Katoh K, Standley DM. MAFFT multiple sequence alignment software version 7: improvements in performance and usability. *Molecular Biology and Evolution.* 2013;30(4):772–780. DOI: [10.1093/molbev/mst010](https://doi.org/10.1093/molbev/mst010)."
-    },
-    {
-      "_template": "text",
-      "body": "B09. Edgar RC. Muscle5: High-accuracy alignment ensembles enable unbiased assessments of sequence homology and phylogeny. *Nature Communications.* 2022;13:6968. DOI: [10.1038/s41467-022-34630-w](https://doi.org/10.1038/s41467-022-34630-w)."
-    },
-    {
-      "_template": "text",
-      "body": "B10. Zhang C, Shine M, Pyle AM, Zhang Y. US-align: universal structure alignments of proteins, nucleic acids, and macromolecular complexes. *Nature Methods.* 2022;19:1109–1115. DOI: [10.1038/s41592-022-01585-1](https://doi.org/10.1038/s41592-022-01585-1)."
-    },
-    {
-      "_template": "text",
-      "body": "B11. Söding J. Protein homology detection by HMM–HMM comparison. *Bioinformatics.* 2005;21(7):951–960. DOI: [10.1093/bioinformatics/bti125](https://doi.org/10.1093/bioinformatics/bti125)."
-    },
-    {
-      "_template": "text",
-      "body": "B12. Reliability and reproducibility checklist for molecular dynamics simulations. Editorial. *Communications Biology.* 2023;6:268. DOI: [10.1038/s42003-023-04653-0](https://doi.org/10.1038/s42003-023-04653-0)."
-    },
-    {
-      "_template": "text",
-      "body": "[1] Hsueh Y-P, Mahanti P, Schroeder FC, Sternberg PW. Nematode-Trapping Fungi Eavesdrop on Nematode Pheromones. *Current Biology.* 2013;23:83–86. [Article](https://doi.org/10.1016/j.cub.2012.11.035)"
-    },
-    {
-      "_template": "text",
-      "body": "[2] Kuo C-Y, et al. The nematode-trapping fungus Arthrobotrys oligospora detects prey pheromones via G protein-coupled receptors. *Nature Microbiology.* 2024;9:1738–1751. [Article](https://doi.org/10.1038/s41564-024-01679-w)"
-    },
-    {
-      "_template": "text",
-      "body": "[3] Hu X, et al. GprC of the nematode-trapping fungus Arthrobotrys flagrans activates mitochondria and reprograms fungal cells for nematode hunting. *Nature Microbiology.* 2024;9:1752–1763. [Article](https://doi.org/10.1038/s41564-024-01731-9)"
-    },
-    {
-      "_template": "text",
-      "body": "[4] Trott O, Olson AJ. AutoDock Vina: Improving the speed and accuracy of docking with a new scoring function, efficient optimization, and multithreading. *Journal of Computational Chemistry.* 2010;31:455–461. [Article](https://doi.org/10.1002/jcc.21334)"
-    },
-    {
-      "_template": "text",
-      "body": "[5] Eberhardt J, Santos-Martins D, Tillack AF, Forli S. AutoDock Vina 1.2.0: New Docking Methods, Expanded Force Field, and Python Bindings. *Journal of Chemical Information and Modeling.* 2021;61:3891–3898. [Article](https://doi.org/10.1021/acs.jcim.1c00203)"
-    },
-    {
-      "_template": "text",
-      "body": "[6] Bouysset C, Fiorucci S. ProLIF: a library to encode molecular interactions as fingerprints. *Journal of Cheminformatics.* 2021;13:72. [Article](https://doi.org/10.1186/s13321-021-00548-6)"
+      "body": "<p style=\"text-align:left;\">其他队伍可以沿用这一筛选方法，结合双配体评分、WT接触对照及组合亲本比较，提出可检验的改造假说，结合能力与选择性由后续实验评估。具体迭代见Engineering，评分及接触证据见Model／Docking。</p>"
     },
     {
       "_template": "heading",
-      "text": "MD and Membrane System Simulations",
       "level": 3,
-      "attributes": "#md-and-membrane-system-simulations toc=\"MD and Membrane System Simulations\""
+      "text": "<strong>1.2 对接输入检查与姿态导出工具</strong>",
+      "attributes": "#src-Project-Contribution-10 toc=\"1.2 对接输入检查与姿态导出工具\""
     },
     {
       "_template": "text",
-      "body": "[7] Huang J, et al. CHARMM36m: an improved force field for folded and intrinsically disordered proteins. *Nature Methods.* 2017;14:71–73. [Article](https://doi.org/10.1038/nmeth.4067)"
+      "body": "<p style=\"text-align:left;\">我们发现，受体结构与搜索框的坐标参照不一致会影响实际搜索位置，格式转换中化学信息的丢失则会影响相互作用识别。围绕这两类问题，我们整理了输入检查与姿态导出流程：通过结构叠合统一受体、配体和搜索框的坐标参照，并结合膜方向与实际保留区段检查搜索区域。</p>"
     },
     {
       "_template": "text",
-      "body": "[8] Feng S, Park S, Choi YK, Im W. CHARMM-GUI Membrane Builder: Past, Current, and Future Developments and Applications. *Journal of Chemical Theory and Computation.* 2023;19:2161–2185. [Article](https://doi.org/10.1021/acs.jctc.2c01246)"
+      "body": "<p style=\"text-align:left;\">原子映射检查工具用于核对原始SDF与对接PDBQT中的原子、坐标及结构对应关系；姿态导出工具利用PDBQT中完整保留的Meeko结构元数据恢复SDF，保留对接姿态及形式电荷等化学信息，供后续接触分析使用。</p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\">我们将通过GitHub公开工具、使用说明及ascr#18和ascr#3的配套示例。其他队伍可以复现检查与导出流程，再换入自己的数据，核对搜索位置、原子对应关系及姿态文件的化学信息。</p>"
     },
     {
       "_template": "heading",
-      "text": "ODE Modeling and Signal Output",
       "level": 3,
-      "attributes": "#ode-modeling-and-signal-output toc=\"ODE Modeling and Signal Output\""
+      "text": "<strong>1.3 跨受体残基分析</strong>",
+      "attributes": "#src-Project-Contribution-14 toc=\"1.3 跨受体残基分析\""
     },
     {
       "_template": "text",
-      "body": "[9] Yi T-M, Kitano H, Simon MI. A quantitative characterization of the yeast heterotrimeric G protein cycle. *Proceedings of the National Academy of Sciences.* 2003;100:10764–10769. [Article](https://doi.org/10.1073/pnas.1834247100)"
+      "body": "<p style=\"text-align:left;\">Gpr2、Gpr3、GprC以及秀丽隐杆线虫的DAF-37、SRBC-64均是参与蛔苷素感知的GPCR，为比较配体接触区域和候选残基提供了功能相关的参照。参考Hu等人的受体结构比较，我们结合双配体接触偏向与残基位置对应，为对接姿态解释和改造位点选择提供线索。</p>"
     },
     {
       "_template": "text",
-      "body": "[10] Kofahl B, Klipp E. Modelling the dynamics of the yeast pheromone pathway. *Yeast.* 2004;21:831–850. [Article](https://doi.org/10.1002/yea.1122)"
+      "body": "<p style=\"text-align:left;\">每种受体采用五个预测模型，在同一模型内配对ascr#18与ascr#3的接触频率，再通过序列比对和结构映射检验位置对应，同时记录实际构建体中的残基保留情况。三种真菌受体的TM6色氨酸——Gpr2 W338、Gpr3 W306和GprC W388——兼具偏向ascr#18的接触差异与序列、结构对应支持，可作为跨受体平行替换的比较位置。</p>"
     },
     {
       "_template": "text",
-      "body": "[11] Shaw WM, et al. Engineering a Model Cell for Rational Tuning of GPCR Signaling. *Cell.* 2019;177:782–796.e27. [Article](https://doi.org/10.1016/j.cell.2019.02.023)"
+      "body": "<p style=\"text-align:left;\">其他队伍可以沿用这一方法，联合接触偏向、位置对应和构建体状态，区分适合跨受体平行比较的位置与需要在单个受体内检验的位置。详细方法和结果见Model／Docking。</p>"
     },
     {
       "_template": "text",
-      "body": "[12] Fan C, Yuan J. Reshaping the yeast galactose regulon via GPCR signaling cascade. *Cell Reports Methods.* 2023;3:100647. [Article](https://doi.org/10.1016/j.crmeth.2023.100647)"
-    },
-    {
-      "_template": "text",
-      "body": "[13] Fan C, He N, Yuan J. Cascaded amplifying circuit enables sensitive detection of fungal pathogens. *Biosensors and Bioelectronics.* 2024;250:116058. [Article](https://doi.org/10.1016/j.bios.2024.116058)"
+      "body": "<p style=\"text-align:left;\"><br></p>"
     },
     {
       "_template": "heading",
-      "text": "Economic Benefit Modeling and Management Decisions",
-      "level": 3,
-      "attributes": "#economic-benefit-modeling-and-management-decisions toc=\"Economic Benefit Modeling and Management Decisions\""
+      "level": 2,
+      "text": "2. <strong>MD：受体运动与配体局部行为的联合分析</strong>",
+      "attributes": "#src-Project-Contribution-19 toc=\"2. MD：受体运动与配体局部行为的联合分析\""
     },
     {
       "_template": "text",
-      "body": "[14] FAO. Nematode population dynamics, threshold levels and estimation of crop losses. [Original source](https://www.fao.org/4/V9978E/v9978e07.htm)"
+      "body": "<p style=\"text-align:left;\">对接为受体改造提供了候选结合姿态。我们进一步通过分子动力学（molecular dynamics，MD）模拟，考察这些姿态在膜环境中的保持与调整，并将受体构象变化、配体位置和接触变化的分析整理为可复用流程。</p>"
     },
     {
       "_template": "text",
-      "body": "[15] UC Statewide Integrated Pest Management Program. Root-Knot Nematode: Tomato Pest Management Guidelines."
+      "body": "<p style=\"text-align:left;\">流程以受体或局部口袋为参照追踪配体运动，同时记录原有接触的保留和新接触的形成。Gpr3 R167Y–ascr#3的分析展示了受体整体偏移时局部接触仍可保留；Gpr2 V368R–ascr#3则展示了配体重新定位时，原有接触减少与新接触形成相伴的过程。</p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\">我们将把分析工具、使用说明和示例结果整理至GitHub。其他开展膜受体研究的队伍可以用自己的轨迹复现这一分析，从位置变化曲线和接触统计中找出持续接触的残基及发生重排的时段，再结合相应构象解释配体的动态行为。</p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"><br></p>"
+    },
+    {
+      "_template": "heading",
+      "level": 2,
+      "text": "3. <strong>ODE与双通道模型：从显色模拟到密度估计</strong>",
+      "attributes": "#src-Project-Contribution-24 toc=\"3. ODE与双通道模型：从显色模拟到密度估计\""
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\">我们围绕酵母GPCR生物传感系统，建立了连接有效受体输入、胞内信号传递与显色输出的ODE模型。模型复用Supady Model B及TU Delft 2012 iGEM公开材料中的酵母通路结构，接入项目显色模块，计算信号活性和色素浓度随时间的变化。</p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\">我们将公共通路参数与项目输入、输出配置分开整理，记录参数的含义、单位和来源。固定构建条件下，sTF调控、GAL产率与颜色产生关系被合并为一个有效显色方程；公共通路通过分子总量守恒消去重复状态，形成六个独立动态方程。使用者可以保留公共通路，针对自身受体和报告系统校准接口参数。</p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\">在此基础上，我们用ODE生成混合线虫样本的两路色素输出，依据文献关系模拟手机RGB读数中蓝色通道（B）相对空白的变化，再拟合双通道模型的三系数回归方程，在背景虫数量未知时估计南方根结线虫密度。ODE提供通路响应及模拟训练数据，双通道模型建立配对颜色与目标密度之间的对应关系。</p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\">代码、冻结配置与示例数据已提交至GitHub。其他队伍可以复现计算流程，替换配体释放假设、传感器响应和读色方式，再用实测数据开展校准。当前示例展示了理想模拟条件下的模型衔接，实际手机读色与生物样本表现仍需实验检验。模型迭代见Engineering，完整方程、参数来源及结果见Model／ODE。</p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"><br></p>"
+    },
+    {
+      "_template": "heading",
+      "level": 2,
+      "text": "4. <strong>Eco：从检测结果到管理方案的经济效益分析</strong>",
+      "attributes": "#src-Project-Contribution-30 toc=\"4. Eco：从检测结果到管理方案的经济效益分析\""
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\">我们建立了连接病原或害虫密度、作物产量损失与管理成本的经济效益模型，比较未检测且不处理、未检测但统一处理、检测后分级处理三种情景。模型根据密度与产量的关系估算减产损失，再结合产品价格、检测费用及处理成本与效果，计算各方案的预计净收益。</p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\">我们将模型参数与报告内容分开整理，便于使用者替换当地作物价格、检测成本、处理成本、风险阈值和处理效果。具有密度—产量关系的场景可开展收益比较；只有风险阈值的场景则提供风险提示，随数据补充扩展分析。</p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\">配套的西班牙设施番茄与南方根结线虫示例，展示了如何将文献拟合的产量损失关系、三级风险划分和单位面积成本核算组合起来，比较不同管理方案在设定条件下的经济结果。</p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\">其他队伍可以从示例出发，换入适用于自身作物和目标生物的密度—产量关系及当地成本数据，比较检测信息带来的管理收益，并根据实验或田间数据更新参数。完整方法、参数来源及情景结果见Model／Eco。</p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"><br></p>"
+    },
+    {
+      "_template": "text",
+      "body": "</section>"
+    },
+    {
+      "_template": "heading",
+      "level": 2,
+      "text": "Human Practices",
+      "attributes": "#human-practices"
+    },
+    {
+      "_template": "text",
+      "body": "<p class=\"author-source-link\"><a href=\"/source-archive/#meeting-20261019\" data-source-document=\"meeting-20261019-0511db20fff1\">Original submission (.docx)</a><span role=\"status\" aria-live=\"polite\"></span></p>"
+    },
+    {
+      "_template": "text",
+      "body": "<section class=\"author-manuscript\" lang=\"zh\">"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\">我们的 HP 工作留下了可供后续团队参考的课程与传播材料、调研方法、采样指导和企业沟通文件。这些资源分别支持科普教学、使用需求分析、现场信息记录及社会资源联络，帮助其他团队从已有经验出发，结合自己的项目开展工作。</p>"
+    },
+    {
+      "_template": "heading",
+      "level": 4,
+      "text": "1. <strong>分龄课程与公共传播材料</strong>",
+      "attributes": "#src-HP-Contribution-2 toc=\"1. 分龄课程与公共传播材料\""
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\">我们围绕线虫与农业、生物信号和科学责任设计了三套课程：The Nematode Hunt 从植物与病害现象切入，介绍线虫与根部、土壤的关系；Exploring Biological Signals 通过输入、感知和输出解释生物传感；Small Lives and Everyday Contributions 将微观生命与责任、合作和日常贡献联系起来。前两套分别提供小学版和初中版，第三套面向小学生。</p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\">其他 iGEM 团队、教师和公益支教组织可以按学段选用课程，再根据当地常见作物和课堂条件调整图片、案例及活动。课程保留了从观察现象到解释信号的学习顺序，便于将农业问题与合成生物学联系起来；实施前需结合教案、学生年龄和场地条件确认材料与安全安排。</p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\">绘本、海报、传单和明信片进一步支持课堂外的科普。使用者可以围绕一个明确主题选择素材，例如用根部与土壤的图示解释地下病害，或用输入与输出说明传感原理。我们与向阳计划合作的经验，也为课程落地提供参考：提前与教学伙伴沟通受众、材料准备、实施分工和反馈方式，让课程设计适应实际课堂。</p>"
+    },
+    {
+      "_template": "heading",
+      "level": 4,
+      "text": "2. <strong>面向项目问题的调研与反馈整理方法</strong>",
+      "attributes": "#src-HP-Contribution-6 toc=\"2. 面向项目问题的调研与反馈整理方法\""
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\">我们围绕农业线虫认知和检测需求设计问卷，收集了 369 条提交，并结合专家访谈与农户交流理解具体使用场景。可供借鉴的方法，是先明确项目尚需回答的问题，再选择适合提供信息的人群：公众描述认知与工具期待，农户介绍生产和操作经验，专家帮助检查检测原理、样品条件及结果解释。</p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\">其他团队可以沿用这一思路，将技术问题改写为受访者容易理解的场景和提问，并根据目标群体调整措辞。统计时，应保留样本来源、调查时段、题型和每道题的分母，清楚说明多选题的口径。本项目的调查结果反映所触达群体的认知与期待，新的项目应结合自身目标用户重新收集和解释需求信息。</p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\">专家交流经验还可用于建立反馈追踪记录。其他团队可按“项目问题、来源及日期、主要反馈、团队讨论、后续方向”整理意见；当反馈促成实验、模型或材料修改时，再补充对应版本与结果。这样可以追踪一条建议如何进入项目，也便于团队在后续讨论中找到尚待回答的问题。公开调研材料时，应依据授权范围处理个人信息，以适宜分享的问卷、汇总结果或主题摘要供他人参考。</p>"
+    },
+    {
+      "_template": "heading",
+      "level": 4,
+      "text": "3. <strong>田间采样指导与背景信息记录</strong>",
+      "attributes": "#src-HP-Contribution-10 toc=\"3. 田间采样指导与背景信息记录\""
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\">团队组织土样收集并制作采样指导短片，通过样品编号关联作物、采集地点、日期及处理历史等信息。这些材料帮助采集者理解要求，也让研究人员在接收土样后能够追溯来源，将后续观察与具体农业背景联系起来。</p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\">计划收集农业或环境样品的团队，可以参考“采样指导—统一编号—背景记录—交接核对”的组织方式。使用前先与实验负责人确认目标样品及采集、运输条件，再据此调整指导内容；交接时核对样品标签与记录，保留缺失信息或异常情况。具体采样方案仍需结合研究对象、土壤类型和后续检测方法确定，并单独评估样品的代表性。</p>"
+    },
+    {
+      "_template": "heading",
+      "level": 4,
+      "text": "4. <strong>企业联络与项目路演材料</strong>",
+      "attributes": "#src-HP-Contribution-13 toc=\"4. 企业联络与项目路演材料\""
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\">我们准备了企业合作邀请书、项目书和项目介绍 PPT，用于初次联系、进一步交流和项目路演。材料集中呈现团队背景、农业问题、研究思路、当前工作及所需支持，为学生团队向外部合作方解释项目、提出合作需求提供参考。</p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\">其他团队可以从明确联络目的开始，选择与项目或所需资源相关的企业，在简短邮件中说明联系原因，再提供项目介绍。取得回应后，围绕对方关注的问题准备演示，并记录需要补充的材料与下一步安排。改编时，应更新项目进展和资源需求，使用可公开的图片与数据，并按实际确认情况分别记录建议、合作兴趣和已落实支持。</p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\">上述资源的具体内容与使用说明见 Human Practices 页面。复用时请注明 NKU-China 2026 及对应材料来源，并结合新项目的受众、研究条件和合作对象进行调整；第三方素材的使用条件需另行核对。</p>"
+    },
+    {
+      "_template": "text",
+      "body": "</section>"
+    },
+    {
+      "_template": "text",
+      "body": "<span id=\"docking-engineering-for-two-ligands-and-cross-receptor-residue-analysis\" aria-hidden=\"true\"></span>\n<span id=\"receptor-engineering-guided-by-contacts-with-two-ligands\" aria-hidden=\"true\"></span>\n<span id=\"tools-for-checking-docking-inputs-and-exporting-poses\" aria-hidden=\"true\"></span>\n<span id=\"cross-receptor-residue-analysis\" aria-hidden=\"true\"></span>\n<span id=\"md-joint-analysis-of-receptor-motion-and-local-ligand-behavior\" aria-hidden=\"true\"></span>\n<span id=\"ode-a-full-pathway-model-from-receptor-signaling-to-colorimetric-output\" aria-hidden=\"true\"></span>\n<span id=\"eco-economic-benefit-analysis-from-detection-results-to-management-strategies\" aria-hidden=\"true\"></span>\n<span id=\"hp-contribution-source-41\" aria-hidden=\"true\"></span>\n<span id=\"hp-contribution-source-45\" aria-hidden=\"true\"></span>\n<span id=\"hp-contribution-source-50\" aria-hidden=\"true\"></span>\n<span id=\"hp-contribution-source-55\" aria-hidden=\"true\"></span>\n<span id=\"hp-contribution-source-59\" aria-hidden=\"true\"></span>\n<span id=\"hp-contribution-source-64\" aria-hidden=\"true\"></span>\n<span id=\"hp-contribution-source-68\" aria-hidden=\"true\"></span>\n<span id=\"docking-and-receptor-recognition\" aria-hidden=\"true\"></span>\n<span id=\"md-and-membrane-system-simulations\" aria-hidden=\"true\"></span>\n<span id=\"ode-modeling-and-signal-output\" aria-hidden=\"true\"></span>\n<span id=\"economic-benefit-modeling-and-management-decisions\" aria-hidden=\"true\"></span>"
     }
   ],
   "description": "",
