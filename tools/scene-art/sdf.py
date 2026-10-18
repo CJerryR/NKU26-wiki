@@ -176,6 +176,8 @@ class Part:
     material: str = 'iris'          # 'iris' | 'amber'
     tone: float = 0.0               # brightness offset for this part (-.2 .. .2)
     texture: Callable[[Vec, Vec], Vec] | None = None  # (points, normals) -> brightness offset
+    bound: tuple | None = None      # (centre, radius) enclosing the part; filled in by render()
+    group: int = -1                 # parts placed together (one object) share a group
 
 
 @dataclass
@@ -187,8 +189,14 @@ class Prop:
     azimuth: float = 0.0
     blend: float = 0.0              # smooth-union radius across parts
     center: Sequence[float] = (0, 0, 0)
-    crop: bool = True               # False: keep the full square frame, so parts rendered
-                                    # on one shared frame (lid/base, puzzle pieces) line up
+    crop: bool = True               # False: keep the full frame, so parts rendered on one
+                                    # shared frame (lid/base, puzzle pieces) line up
+    aspect: float = 1.0             # frame width / height (islands are wide)
+    unit: float | None = None       # length that sets AO / shadow / step sizes (default: extent).
+                                    # Islands keep 0.7, the scale single props were made at.
+    cull: bool = False              # per-part bounding spheres: needed for many-object islands
+    ground: float | None = None     # y of an invisible floor that only receives a soft shadow
+    ground_strength: float = 0.42
 
 
 def _scene(parts: list[Part], blend: float):
@@ -200,11 +208,65 @@ def _scene(parts: list[Part], blend: float):
     return dist
 
 
+def _bound(sdf, centre, half, n=44):
+    """Bounding sphere of a part's solid, from a grid around `centre` (+-half).
+    Grid points within one cell of the surface count, so thin parts are kept."""
+    g = np.linspace(-half, half, n)
+    X, Y, Z = np.meshgrid(g, g, g, indexing='ij')
+    P = np.asarray(centre, float) + np.stack([X.ravel(), Y.ravel(), Z.ravel()], 1)
+    step = 2 * half / (n - 1)
+    m = sdf(P) < step * 0.9
+    if not m.any():
+        return np.asarray(centre, float), 0.0
+    Q = P[m]
+    c = (Q.min(0) + Q.max(0)) / 2
+    return c, float(np.linalg.norm(Q - c, axis=1).max() + step)
+
+
+def _culled(parts: list[Part], margin: float):
+    """min over parts with two-level sphere culling: an object (parts placed
+    together) far from a point costs one sphere distance; inside it, each part
+    far from the point costs its own sphere. Sphere distances never exceed the
+    true distance, so marching stays safe."""
+    C = np.array([np.asarray(pt.bound[0], float) for pt in parts]); Rr = np.array([pt.bound[1] for pt in parts])
+    by = {}
+    for i, pt in enumerate(parts):
+        by.setdefault(pt.group if pt.group >= 0 else -(i + 1), []).append(i)
+    groups = []
+    for idx in by.values():
+        lo = (C[idx] - Rr[idx, None]).min(0); hi = (C[idx] + Rr[idx, None]).max(0)
+        gc = (lo + hi) / 2
+        groups.append((gc, float(np.max(np.linalg.norm(C[idx] - gc, axis=1) + Rr[idx])), idx))
+
+    def each(p, i):
+        db = np.linalg.norm(p - C[i], axis=1) - Rr[i]
+        m = db < margin
+        if m.any():
+            db[m] = parts[i].sdf(p[m])
+        return db
+
+    def dist(p):
+        d = np.full(len(p), np.inf)
+        for gc, gr, idx in groups:
+            dg = np.linalg.norm(p - gc, axis=1) - gr
+            m = dg < margin
+            if m.any():
+                sub = p[m]; dd = np.full(len(sub), np.inf)
+                for i in idx:
+                    dd = np.minimum(dd, each(sub, i))
+                dg[m] = dd
+            d = np.minimum(d, dg)
+        return d
+    return dist, each
+
+
 def render(prop: Prop, size=900, supersample=2, pad=12) -> Image.Image:
-    """Render to an RGBA image whose long edge is about `size` px, cropped."""
+    """Render to an RGBA image `size` px wide (height size / aspect), cropped
+    to the silhouette unless prop.crop is False."""
     W = size * supersample
+    H = max(1, round(W / prop.aspect))
     parts = prop.parts
-    dist = _scene(parts, prop.blend)
+    u = prop.unit or prop.extent
 
     # camera basis (orthographic): forward looks at the centre from above-front
     el, az = math.radians(prop.elevation), math.radians(prop.azimuth)
@@ -214,14 +276,39 @@ def render(prop: Prop, size=900, supersample=2, pad=12) -> Image.Image:
     ctr = np.asarray(prop.center, float)
 
     xs = (np.arange(W) + 0.5) / W * 2 - 1
-    gx, gy = np.meshgrid(xs, -xs)
-    gx = gx.ravel() * prop.extent; gy = gy.ravel() * prop.extent
+    ys = (np.arange(H) + 0.5) / H * 2 - 1
+    gx, gy = np.meshgrid(xs, -ys)
+    gx = gx.ravel() * prop.extent; gy = gy.ravel() * prop.extent / prop.aspect
     origin = ctr[None, :] + gx[:, None] * right + gy[:, None] * up - fwd * 6.0
     n = origin.shape[0]
 
     t = np.zeros(n); hit = np.zeros(n, bool); alive = np.ones(n, bool)
-    eps = prop.extent * 4e-4
-    for _ in range(220):
+    if prop.cull:
+        half = prop.extent * 1.25 + 0.3
+        for pt in parts:
+            if pt.bound is None:
+                pt.bound = _bound(pt.sdf, ctr, half)
+        parts = [pt for pt in parts if pt.bound[1] > 0]
+        dist, each = _culled(parts, margin=0.28 * u)
+        # rays that miss every bounding sphere are background: never march them
+        C = np.array([pt.bound[0] for pt in parts]); Rr = np.array([pt.bound[1] for pt in parts])
+        tmin = np.full(n, np.inf); tmax = np.zeros(n)
+        for c, r in zip(C, Rr):
+            oc = c[None, :] - origin
+            b = oc @ fwd
+            d2 = np.einsum('ij,ij->i', oc, oc) - b * b
+            ok = d2 < r * r
+            hw = np.sqrt(np.maximum(r * r - d2, 0))
+            tmin = np.where(ok, np.minimum(tmin, b - hw), tmin)
+            tmax = np.where(ok, np.maximum(tmax, b + hw), tmax)
+        alive = np.isfinite(tmin)
+        t = np.where(alive, np.maximum(tmin - 0.01, 0), 0)
+        tend = tmax + 0.01
+    else:
+        dist = _scene(parts, prop.blend)
+        each = lambda p, i: parts[i].sdf(p)
+    eps = u * 4e-4
+    for _ in range(260):
         idx = np.nonzero(alive)[0]
         if idx.size == 0:
             break
@@ -231,13 +318,13 @@ def render(prop: Prop, size=900, supersample=2, pad=12) -> Image.Image:
         hit[idx[done]] = True
         t[idx] += np.maximum(d, eps * 0.5) * 0.85
         alive[idx[done]] = False
-        alive[idx[t[idx] > 12.0]] = False
+        alive[idx[t[idx] > (tend[idx] if prop.cull else 12.0)]] = False
 
     hidx = np.nonzero(hit)[0]
     p = origin[hidx] + t[hidx, None] * fwd
 
     # normals
-    h = prop.extent * 1.5e-3
+    h = u * 1.5e-3
     nrm = np.stack([
         dist(p + [h, 0, 0]) - dist(p - [h, 0, 0]),
         dist(p + [0, h, 0]) - dist(p - [0, h, 0]),
@@ -246,32 +333,35 @@ def render(prop: Prop, size=900, supersample=2, pad=12) -> Image.Image:
     nrm /= np.maximum(length(nrm), 1e-9)[:, None]
 
     # material of the closest part
-    dp = np.stack([part.sdf(p) for part in parts], axis=1)
+    dp = np.stack([each(p, i) for i in range(len(parts))], axis=1)
     which = np.argmin(dp, axis=1)
 
     # lights in camera space: key upper-left-front, fill right-back
     key = norm(-0.62 * right + 0.78 * up - 0.45 * fwd)
     fill = norm(0.8 * right + 0.1 * up + 0.4 * fwd)
 
+    def soft_shadow(q0, nn):
+        sh = np.ones(len(q0)); st = np.full(len(q0), u * 0.02)
+        steps, cap = (26, 0.17) if prop.cull else (40, 0.12)   # islands: fewer, longer steps
+        for _ in range(steps):
+            q = q0 + nn * eps * 4 + st[:, None] * key
+            dd = dist(q)
+            sh = np.minimum(sh, np.clip(10.0 * dd / st, 0, 1))
+            st += np.clip(dd, u * 0.01, u * cap)
+        return sh
+
+    def occlusion(q0, nn):
+        ao = np.zeros(len(q0))
+        for i in range(1, 6):
+            hh = u * 0.035 * i
+            ao += (hh - dist(q0 + nn * hh)) / (2 ** i)
+        return np.clip(1 - 2.2 * ao / u, 0.25, 1)
+
     ndl = nrm @ key
     wrap = np.clip((ndl + 0.35) / 1.35, 0, 1) ** 1.25
     fil = np.clip(nrm @ fill, 0, 1)
-
-    # soft shadow toward the key light
-    sh = np.ones(len(hidx)); st = np.full(len(hidx), prop.extent * 0.02)
-    for _ in range(40):
-        q = p + nrm * eps * 4 + st[:, None] * key
-        d = dist(q)
-        sh = np.minimum(sh, np.clip(10.0 * d / st, 0, 1))
-        st += np.clip(d, prop.extent * 0.01, prop.extent * 0.12)
-    sh = 0.45 + 0.55 * sh
-
-    # ambient occlusion
-    ao = np.zeros(len(hidx))
-    for i in range(1, 6):
-        hh = prop.extent * 0.035 * i
-        ao += (hh - dist(p + nrm * hh)) / (2 ** i)
-    ao = np.clip(1 - 2.2 * ao / prop.extent, 0.25, 1)
+    sh = 0.45 + 0.55 * soft_shadow(p, nrm)
+    ao = occlusion(p, nrm)
 
     # rim from camera (soft clay sheen at the silhouette)
     rim = np.clip(1 + (nrm @ fwd), 0, 1) ** 3
@@ -294,20 +384,63 @@ def render(prop: Prop, size=900, supersample=2, pad=12) -> Image.Image:
     img = np.zeros((n, 4))
     img[hidx, :3] = rgb
     img[hidx, 3] = 255
-    img = img.reshape(W, W, 4).astype(np.uint8)
+
+    if prop.ground is not None and fwd[1] < 0:
+        # invisible floor: only the soft shadow and contact darkening the island casts
+        g = np.nonzero(~hit)[0]
+        tg = (prop.ground - origin[g, 1]) / fwd[1]
+        pg = origin[g] + tg[:, None] * fwd
+        if prop.cull:   # only near the island
+            near = np.zeros(len(g), bool)
+            for c, r in zip(C, Rr):
+                near |= np.hypot(pg[:, 0] - c[0], pg[:, 2] - c[2]) < r + 0.35 * u
+            g, pg = g[near], pg[near]
+        upv = np.tile(v3(0, 1, 0), (len(pg), 1))
+        vis = soft_shadow(pg, upv) * occlusion(pg, upv)
+        a = prop.ground_strength * np.clip(1 - vis, 0, 1) ** 1.15
+        a[a < 0.03] = 0
+        # A soft floor shadow must fade before the camera boundary; otherwise
+        # transparent sprites show a rectangular shadow edge on dark pages.
+        edge_px = np.minimum.reduce([g % W, W - 1 - g % W, g // W, H - 1 - g // W])
+        fade = np.clip(edge_px / max(12, round(W * 0.035)), 0, 1)
+        a *= fade * fade * (3 - 2 * fade)
+        img[g, :3] = (0x2c, 0x1d, 0x4f)
+        img[g, 3] = a * 255
+
+    img = img.reshape(H, W, 4).astype(np.uint8)
     im = Image.fromarray(img, 'RGBA')
     if supersample > 1:
         # premultiply so edges stay clean when averaging
         arr = np.asarray(im).astype(np.float64)
         a = arr[..., 3:4] / 255
         arr[..., :3] *= a
-        small = Image.fromarray(arr.astype(np.uint8), 'RGBA').resize((size, size), Image.Resampling.BOX)
-        s = np.asarray(small).astype(np.float64)
-        a = np.maximum(s[..., 3:4] / 255, 1e-6)
-        s[..., :3] = np.clip(s[..., :3] / a, 0, 255)
-        im = Image.fromarray(s.astype(np.uint8), 'RGBA')
+        small = Image.fromarray(arr.astype(np.uint8), 'RGBA').resize((size, max(1, round(size / prop.aspect))), Image.Resampling.BOX)
+        s_ = np.asarray(small).astype(np.float64)
+        a = np.maximum(s_[..., 3:4] / 255, 1e-6)
+        s_[..., :3] = np.clip(s_[..., :3] / a, 0, 255)
+        im = Image.fromarray(s_.astype(np.uint8), 'RGBA')
     bbox = im.getbbox() if prop.crop else None
     if bbox:
         l, t_, r, b = bbox
-        im = im.crop((max(0, l - pad), max(0, t_ - pad), min(size, r + pad), min(size, b + pad)))
+        im = im.crop((max(0, l - pad), max(0, t_ - pad), min(im.width, r + pad), min(im.height, b + pad)))
     return im
+
+
+_GROUP = [0]
+
+
+def place(parts, at=(0, 0, 0), yaw=0.0, pitch=0.0, roll=0.0, s=1.0, tone=0.0, origin=(0, 0, 0)):
+    """Move library parts into an island: scale s about `origin`, rotate, then put
+    `origin` at `at`. Textures see local coordinates; tone shifts the brightness
+    (individual variation inside a crowd)."""
+    R = rot(yaw, pitch, roll); t = np.asarray(at, float); o = np.asarray(origin, float)
+    _GROUP[0] += 1
+    out = []
+    for part in (parts.parts if isinstance(parts, Prop) else parts):
+        f = part.sdf
+        g = (lambda f: (lambda p: f(((p - t) @ R) / s + o) * s))(f)
+        tex = None
+        if part.texture is not None:
+            tex = (lambda tf: (lambda p, nn: tf(((p - t) @ R) / s + o, nn @ R)))(part.texture)
+        out.append(Part(g, part.material, part.tone + tone, tex, None, _GROUP[0]))
+    return out

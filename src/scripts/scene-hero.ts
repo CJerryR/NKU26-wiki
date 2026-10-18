@@ -49,6 +49,7 @@ export function initSceneHero(): void {
 
   let active: HTMLElement | null = null, layers: Layer[] = [];
   let canvasW = 1600, u = 1, top = 0, span = 1;
+  let navClearance = 104, titleHeight = 0, stageHeight = 0;
   let titleCfg = { y: 0, toY: -200, toScale: 0.65 };
   let px = 0, py = 0, tx = 0, ty = 0, visible = true, raf = 0, ticking = false;
   const fine = matchMedia('(pointer: fine)').matches;
@@ -67,7 +68,10 @@ export function initSceneHero(): void {
       });
     }
     top = root.getBoundingClientRect().top + scrollY;
-    span = Math.max(1, root.offsetHeight - stage.offsetHeight);
+    stageHeight = stage.offsetHeight;
+    span = Math.max(1, root.offsetHeight - stageHeight);
+    navClearance = (parseFloat(getComputedStyle(root).getPropertyValue('--nav-h')) || 84) + 20;
+    titleHeight = title?.offsetHeight ?? 0;
   };
 
   const render = () => {
@@ -85,8 +89,14 @@ export function initSceneHero(): void {
     }
     if (title) {
       const k = ease(clamp((p - 0.06) / 0.62));
-      const dy = (titleCfg.toY - titleCfg.y) * k * u;
-      const sc = lerp(1, titleCfg.toScale, k);
+      let dy = (titleCfg.toY - titleCfg.y) * k * u;
+      // Keep expanded headings prominent instead of shrinking to 56–70%.
+      const endScale = Math.max(titleCfg.toScale, canvasW === 900 ? 0.88 : 0.86);
+      const sc = lerp(1, endScale, k);
+      // Keep the pinned title below the fixed navigation, including short screens.
+      const minCenter = navClearance + titleHeight * sc / 2;
+      const center = stageHeight / 2 + titleCfg.y * u + dy;
+      dy += Math.max(0, minCenter - center);
       title.style.transform = `translate(-50%, calc(-50% + ${dy.toFixed(2)}px)) scale(${sc.toFixed(4)})`;
     }
     if (floor) floor.style.opacity = (1 - ease(clamp((p - 0.45) / 0.4))).toFixed(3);
@@ -119,6 +129,7 @@ export function initSceneHero(): void {
   addEventListener('resize', remeasure, { passive: true });
   addEventListener('orientationchange', remeasure, { passive: true });
   addEventListener('pageshow', remeasure);
+  if (title) new ResizeObserver(remeasure).observe(title);
   new IntersectionObserver((entries) => {
     visible = entries.some((e) => e.isIntersecting);
     if (visible) render();

@@ -1,8 +1,15 @@
 {
-  "version": "8.6.0",
-  "label": "V8.6",
-  "prepared_at": "2026-10-18T04:57:21.677231+08:00",
-  "media": "51 files on official iGEM Uploads; 1 video on iGEM Video Universe, moderation pending",
+  "version": "8.7.0",
+  "label": "V8.7",
+  "prepared_at": "2026-10-18T12:54:16+08:00",
+  "media": "40 scene atlases and 2 Results images mapped to official CDN; 41 new uploads and 1 identical-hash reuse",
   "release_kind": "stage",
-  "team_content_review": "pending"
+  "team_content_review": "pending",
+  "published_baseline": {
+    "version": "8.6.0",
+    "commit": "16770d5c28ddf7bc41f8d90445c44d80a28801d5",
+    "published_at_local": "2026-10-18 05:04:34"
+  },
+  "release_id": "v8.7-20261018-125416",
+  "source_fingerprint": "f2d6d821e91f7da47c296f85bee43b8a13c64a406055ca08e86754836748ee3b"
 }

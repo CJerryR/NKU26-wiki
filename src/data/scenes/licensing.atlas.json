@@ -1,0 +1,98 @@
+{
+  "desktop": {
+    "file": "licensing-desktop.webp",
+    "size": [
+      1864,
+      578
+    ],
+    "bytes": 122356,
+    "quality": 86,
+    "hash": "2b0025d96fb4",
+    "frames": {
+      "i-contrib-docs": [
+        1313,
+        0,
+        551,
+        277
+      ],
+      "i-gears": [
+        655,
+        318,
+        459,
+        253
+      ],
+      "i-library": [
+        0,
+        0,
+        809,
+        314
+      ],
+      "i-lic-code": [
+        813,
+        0,
+        496,
+        299
+      ],
+      "i-lock-closed": [
+        1118,
+        318,
+        275,
+        218
+      ],
+      "i-lock-open": [
+        0,
+        318,
+        289,
+        260
+      ],
+      "i-paperwork": [
+        293,
+        318,
+        358,
+        257
+      ]
+    }
+  },
+  "mobile": {
+    "file": "licensing-mobile.webp",
+    "size": [
+      955,
+      467
+    ],
+    "bytes": 55308,
+    "quality": 86,
+    "hash": "b1ac54a0da7f",
+    "frames": {
+      "i-library": [
+        287,
+        264,
+        488,
+        189
+      ],
+      "i-lic-code": [
+        293,
+        0,
+        383,
+        231
+      ],
+      "i-lock-closed": [
+        680,
+        0,
+        275,
+        218
+      ],
+      "i-lock-open": [
+        0,
+        0,
+        289,
+        260
+      ],
+      "i-paperwork": [
+        0,
+        264,
+        283,
+        203
+      ]
+    }
+  }
+}

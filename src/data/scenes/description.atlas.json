@@ -2,84 +2,108 @@
   "desktop": {
     "file": "description-desktop.webp",
     "size": [
-      1394,
-      961
+      1979,
+      1323
     ],
-    "bytes": 57198,
+    "bytes": 266062,
     "quality": 86,
-    "hash": "2ca7580ba2a1",
+    "hash": "efcb42c67661",
     "frames": {
-      "nematode": [
-        436,
-        666,
-        464,
-        132
+      "i-desc-roots": [
+        1050,
+        0,
+        694,
+        491
       ],
-      "roots": [
+      "i-desc-sensor": [
+        1468,
+        1010,
+        511,
+        218
+      ],
+      "i-field": [
+        775,
+        645,
+        848,
+        321
+      ],
+      "i-molecules": [
+        886,
+        1010,
+        578,
+        266
+      ],
+      "i-nematodes": [
         0,
+        645,
+        771,
+        361
+      ],
+      "i-soil-bed": [
         0,
-        344,
-        662
+        1010,
+        882,
+        313
       ],
       "soil-left": [
-        348,
+        0,
         0,
         521,
         641
       ],
       "soil-right": [
-        873,
+        525,
         0,
         521,
         641
-      ],
-      "strip": [
-        0,
-        666,
-        432,
-        295
       ]
     }
   },
   "mobile": {
     "file": "description-mobile.webp",
     "size": [
-      1297,
-      908
+      1513,
+      880
     ],
-    "bytes": 76020,
+    "bytes": 156246,
     "quality": 86,
-    "hash": "af8b74d880df",
+    "hash": "30ef075e9a0f",
     "frames": {
-      "nematode": [
-        400,
-        637,
-        468,
-        133
+      "i-desc-roots": [
+        932,
+        0,
+        581,
+        411
       ],
-      "roots": [
+      "i-desc-sensor": [
+        1103,
+        572,
+        378,
+        161
+      ],
+      "i-molecules": [
+        661,
+        572,
+        438,
+        202
+      ],
+      "i-nematodes": [
         0,
-        0,
-        329,
-        633
+        572,
+        657,
+        308
       ],
       "soil-left": [
-        333,
         0,
-        480,
-        591
+        0,
+        462,
+        568
       ],
       "soil-right": [
-        817,
+        466,
         0,
-        480,
-        591
-      ],
-      "strip": [
-        0,
-        637,
-        396,
-        271
+        462,
+        568
       ]
     }
   }

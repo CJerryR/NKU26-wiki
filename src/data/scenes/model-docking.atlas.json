@@ -2,90 +2,90 @@
   "desktop": {
     "file": "model-docking-desktop.webp",
     "size": [
-      1604,
-      1880
+      836,
+      1562
     ],
-    "bytes": 211566,
+    "bytes": 152834,
     "quality": 86,
-    "hash": "e21799d02ac7",
+    "hash": "45d6f7ccfba4",
     "frames": {
-      "ligand-a": [
-        936,
-        1580,
-        432,
-        152
-      ],
-      "ligand-b": [
-        532,
-        1580,
-        400,
-        224
-      ],
-      "membrane": [
-        1044,
-        790,
-        560,
-        409
-      ],
-      "molecule-cloud": [
+      "i-dock-ligand-a": [
         0,
-        1580,
-        528,
-        300
+        1454,
+        222,
+        108
       ],
-      "receptor-left": [
+      "i-dock-ligand-b": [
+        226,
+        1454,
+        297,
+        69
+      ],
+      "i-dock-receptor": [
         0,
         0,
-        1040,
-        786
+        506,
+        764
       ],
-      "receptor-right": [
+      "i-dock-receptors": [
         0,
-        790,
-        1040,
-        786
+        1151,
+        545,
+        299
+      ],
+      "i-molecules": [
+        0,
+        768,
+        822,
+        379
+      ],
+      "i-waters": [
+        549,
+        1151,
+        287,
+        195
       ]
     }
   },
   "mobile": {
     "file": "model-docking-mobile.webp",
     "size": [
-      1267,
-      1424
+      487,
+      1178
     ],
-    "bytes": 139588,
+    "bytes": 101412,
     "quality": 86,
-    "hash": "a2846fdded0f",
+    "hash": "682e8c43d634",
     "frames": {
-      "ligand-a": [
-        261,
-        1280,
-        304,
-        107
-      ],
-      "ligand-b": [
+      "i-dock-ligand-a": [
         0,
-        1280,
-        257,
-        144
+        997,
+        222,
+        108
       ],
-      "membrane": [
-        846,
-        640,
-        421,
-        308
+      "i-dock-ligand-b": [
+        0,
+        1109,
+        297,
+        69
       ],
-      "receptor-left": [
+      "i-dock-receptor": [
         0,
         0,
-        842,
-        636
+        359,
+        542
       ],
-      "receptor-right": [
+      "i-dock-receptors": [
         0,
-        640,
-        842,
-        636
+        775,
+        397,
+        218
+      ],
+      "i-molecules": [
+        0,
+        546,
+        487,
+        225
       ]
     }
   }

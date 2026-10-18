@@ -1,0 +1,80 @@
+{
+  "desktop": {
+    "file": "model-md-desktop.webp",
+    "size": [
+      1450,
+      782
+    ],
+    "bytes": 152504,
+    "quality": 86,
+    "hash": "fd67866b511c",
+    "frames": {
+      "i-dock-receptors": [
+        0,
+        483,
+        545,
+        299
+      ],
+      "i-md-ligand": [
+        1142,
+        483,
+        191,
+        89
+      ],
+      "i-md-slab": [
+        0,
+        0,
+        948,
+        479
+      ],
+      "i-molecules": [
+        549,
+        483,
+        589,
+        272
+      ],
+      "i-waters": [
+        952,
+        0,
+        498,
+        338
+      ]
+    }
+  },
+  "mobile": {
+    "file": "model-md-mobile.webp",
+    "size": [
+      948,
+      847
+    ],
+    "bytes": 113532,
+    "quality": 86,
+    "hash": "b1142b20e3e0",
+    "frames": {
+      "i-md-ligand": [
+        0,
+        773,
+        159,
+        74
+      ],
+      "i-md-slab": [
+        0,
+        0,
+        948,
+        479
+      ],
+      "i-molecules": [
+        0,
+        483,
+        621,
+        286
+      ],
+      "i-waters": [
+        625,
+        483,
+        319,
+        217
+      ]
+    }
+  }
+}

@@ -9,6 +9,7 @@
      enter(dir, info) called on arrival; return ms to wait (info.cut = no scroll)
      ff()    finish a running step at once
      cutIn   arrive without scrolling when coming from the previous page
+     cutOut  return to the previous page without scrolling (aligned handoff)
      tall    height in viewports when pages are not snapped (narrow screens)
    v6 stop rules (each page decides where it holds the reader):
      canLeave()  return false to hold the reader on this page (blocked() is
@@ -245,7 +246,7 @@
       cur = i; atFoot = false;
       st = st0 != null ? st0 : dir < 0 ? to.steps : 0;
       call(to, 'set', st, dir);
-      var cut = !!to.sp.cutIn && dir > 0 && adjacent && !H.reduced;
+      var cut = adjacent && !H.reduced && (dir > 0 ? !!to.sp.cutIn : !!from.sp.cutOut);
       busy = true; dots();
       var slow = dir > 0 && adjacent && to.sp.inMs;
       scrollToY(top(i), cut ? 0 : (slow ? to.sp.inMs : PAGE_MS) / Math.sqrt(inputSpeed), function () {

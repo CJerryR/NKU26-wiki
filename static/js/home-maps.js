@@ -726,6 +726,8 @@
     H.hpWarm = function () { visible = true; dirty = true; kick(); };
     H.scene('hp', {
       get cutIn() { return !!(H.ascrStory && H.ascrStory.handsOver()); },
+      // The final traces map aligns with this map in both directions.
+      get cutOut() { return !!(H.ascrStory && H.ascrStory.handsOver()); },
       steps: 2,
       set: function (i) { show(i); },
       step: function (i) { show(i); return 700; }

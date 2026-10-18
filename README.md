@@ -1,8 +1,8 @@
-# NKU-China Wiki V8.6 — NemaKlear
+# NKU-China Wiki V8.7 — NemaKlear
 
 2026 NKU-China（队伍编号 6303）的 Wiki 源码，使用 Astro 5 和 Tina。首页讲述从土壤线虫到双通道检测的故事，内页按 Project、Wet Lab、Model、Human Practices、Team 组织。
 
-当前版本为 **V8.6（含后续调整）**，本次发布准备于 2026-10-18。包含本地快照 `7226db2`、三页 3D 开场试点 `02a4397`、页脚赞助标志、导航悬停修复及评审工具。新增 51 项媒体已迁移官方 CDN；Results 延时录像已提交 Video Universe，等待官方审核。部署结果以本次 GitLab Pages 流水线及发布回执为准。
+当前版本为 **V8.7（阶段发布）**，新增整套开场组团、裁切修复、标题字号调整和正文图表更新。上一发布基线为北京时间 2026-10-18 05:04:34 发布的 V8.6，main 提交 `16770d5c`，Pages 流水线 `#763461` 通过。团队内容终审和原稿缺项继续保留。
 
 - [源码仓库](https://gitlab.igem.org/2026/nku-china)
 - [正式 Wiki](https://2026.igem.wiki/nku-china/)
@@ -37,7 +37,8 @@ npm run preview   # 预览构建产物，地址以终端输出为准
 | 临时改动清单弹窗与开关 | `src/components/site/ChangeNotice.astro`、`src/data/review-tools.ts` |
 | 内页布局和组件 | `src/layouts/`、`src/components/` |
 | 开场构图与图集地址 | `src/data/scenes/`、`src/data/scenes.ts` |
-| 三页 3D 试点源模型 | `tools/scene-art/pilot.py`、`tools/scene-art/mesh.py` |
+| 当前开场组团与构图生成 | `tools/scene-art/islands.py`、`tools/scene-art/pages.py` |
+| 源图取景与边缘检查 | `tools/scene-art/camera-frames.json`、`tools/audit_scene_frames.py` |
 | Eco 比较器配置 | `src/data/model-eco.json` |
 | 正文和组件样式 | `src/styles/` |
 | 素材 CDN 映射 | `content/cdn-assets.json` |
@@ -53,8 +54,8 @@ npm run preview   # 预览构建产物，地址以终端输出为准
 - Model：总览和 Docking、MD、ODE、Eco 四章；Eco 比较器按给定密度计算收益，不运行旧版 ODE 预测器。
 - 第三轮正文：已接入模型稿、HP 稿、Docking 新图和 Results DBTL-3 补充，仍待团队终审。
 - Team 与 Attributions：各 25 张成员或个人贡献卡片。
-- 十二个内页已有滚动开场，支持桌面、手机和减少动态效果；最新三页为 Docking、Awards、Acknowledgements。
-- Awards 和 Acknowledgements 目前只有标题、开场及站内入口，正文待补，暂不进入搜索。
+- 18 个正式内页已有滚动开场，另保留 Awards、Acknowledgements 两套可选构图；V8.7 已合入 checkpoint 08，替换旧版开场素材。40 张图集均已映射官方 CDN，其中 39 张为本轮上传、1 张复用相同哈希的既有素材。
+- Awards 和 Acknowledgements 采用可选配置，正文未补齐前不生成正式页面或导航入口；开场素材已准备。
 - 内页支持昼夜模式，点击左下角侦探切换并记住选择；故事首页保留自己的配色。
 - 正文已按页添加术语和关键句强调，标注样式全站共用，写法见 [正文语义标注规范](docs/正文语义标注规范.md)。
 - 页面主标题统一使用正式名称，Model 各章及 HP 页面已修正。
@@ -64,7 +65,7 @@ npm run preview   # 预览构建产物，地址以终端输出为准
 
 Protocols 已并入 Experiments，Part Collection 已并入 Parts；原地址保留兼容入口。Model 1/2 也保留旧入口。Licensing、Awards 和 Acknowledgements 正文仍为空，尚待供稿。
 
-新增页面时，在 `content/wiki/` 建立 JSON，设置标题、地址及正文块，再按需修改 `src/data/nav.ts`；构建会生成 Markdown 和静态页面。开场配置见 [页面开场说明](docs/页面开场-使用说明.md)，最新三页见 [3D 试点说明](docs/3D-pilot-20261018.md)。
+新增页面时，在 `content/wiki/` 建立 JSON，设置标题、地址及正文块，再按需修改 `src/data/nav.ts`；构建会生成 Markdown 和静态页面。开场配置见 [页面开场说明](docs/页面开场-使用说明.md)，先前三页试点见 [3D 试点说明](docs/3D-pilot-20261018.md)；当前组团版见 [checkpoint 08 合并说明](docs/scene-checkpoint08-合并说明.md)。
 
 ## 检查与发布
 
@@ -85,7 +86,7 @@ npm run verify
 npm run audit:publication
 ```
 
-技术审计允许阶段版空页；最终内容检查还要求正式供稿和团队审核完成。当前 Licensing、Awards、Acknowledgements 缺稿，团队终审未完成，不能将技术检查通过记作内容验收通过。
+技术审计允许阶段版空页；最终内容检查还要求正式供稿和团队审核完成。当前 Licensing 缺稿，团队终审未完成；Awards、Acknowledgements 留在可选目录。技术检查通过不表示内容终审完成。
 
 GitLab Pages 在 main 上运行部署回归、构建和技术审计，发布 `public/`。构建会裁剪未使用素材，保留实际引用的文件与组件依赖，并把站内链接改为相对地址。
 
@@ -93,7 +94,9 @@ GitLab Pages 在 main 上运行部署回归、构建和技术审计，发布 `pu
 
 ## 素材与待办
 
-已迁移素材的真实地址及核验记录在 `content/cdn-assets.json`。本次迁移包括 24 张开场图集、第三轮模型图、Docking/Results 新图、两张赞助商标志及校徽动画，共 51 项。校徽动画转为无损 WebP，62 帧逐帧核对一致。Results 延时录像使用官方 Video Universe 嵌入，待审核期间暂不能播放。原稿、制作副本及本地媒体保留，未从源码档案删除。
+V8.6 已迁移的 51 项素材记录在 `content/cdn-assets.json`，包括当时的 24 张开场图集、模型与 Results 科研图、赞助标志和校徽动画。Results 延时录像已提交 Video Universe，发布回执记录为待审核。
+
+V8.7 的 40 张开场图集及两张 Results 高清图已完成官方 CDN 迁移：新增 41 项、复用 1 项。平台将两张科研图转换为 AVIF，其中 4368×4368 的原图按比例缩为 4000×4000；原始文件仍保存在本地。40 张 WebP 图集与本地源文件哈希一致。地址与原始哈希见 [图集清单](docs/待上传图集清单.csv)。
 
 当前还需补齐 Docking 图 3、C1–C3、Results 缺表缺图，以及成员照片和可公开教育资源；具体缺项以最新供稿台账为准，不沿用旧版待办数量。
 
@@ -101,9 +104,25 @@ GitLab Pages 在 main 上运行部署回归、构建和技术审计，发布 `pu
 
 ## 版本改动
 
-已补查早期 GitHub 历史，记录截至 2026-10-18；V8.6 本次按阶段版本发布，团队内容审核状态保留。
+记录截至 2026-10-18；V8.7 按阶段版本发布，内容终审状态保留。发布回执见工作区 `outputs/V8.7发布-20261018/`，V8.6 历史回执保留。
 
 时间按版本说明、本地对话、Git 历史和交付记录核对；本地对话能确认的接入、构建与预览时间分别注明，不将收到文件或推送时间当作原始编写起点。早期分支与时间依据见 [版本历史考据](docs/版本历史考据.md)。
+
+### V8.7 改动：
+
+改动时间：2026-10-18（北京时间，阶段发布）
+
+1. 放大开场滚动终态的标题，桌面至少保留原字号的 86%，手机至少保留 88%。
+2. 修复根系等开场组团在源图边缘被截断的问题。
+3. 修复深色模式下开场投影出现矩形断边的问题。
+4. 修复信封装饰线越出画布的问题。
+5. 接入 checkpoint 08 的 20 套开场组团，重新生成 40 张横竖版图集。
+6. Awards 移入可选目录，缺稿期间不生成页面、导航或搜索入口。
+7. Acknowledgements 移入可选目录，缺稿期间不生成页面、导航或搜索入口。
+8. 为 Results 的 43 个 DBTL 小标题补上对应实验主题。
+9. 为 Engineering 的 6 个 DBTL 小标题补上对应工程任务。
+10. 修复 HP 地图返回 ascaroside 故事时的转场，使正反方向连续衔接。
+11. 将 Results 图 3.1.3 换为两张高清原图，保留分图图注和总图注。
 
 ### V8.6 改动：
 

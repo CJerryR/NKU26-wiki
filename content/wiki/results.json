@@ -28,9 +28,9 @@
     },
     {
       "_template": "heading",
-      "text": "Design",
+      "text": "Design | Planning GPR2 Expression and Localization Tests",
       "level": 4,
-      "attributes": "#design toc=\"Design\""
+      "attributes": "#design toc=\"Design | Planning GPR2 Expression and Localization Tests\""
     },
     {
       "_template": "text",
@@ -54,9 +54,9 @@
     },
     {
       "_template": "heading",
-      "text": "Build",
+      "text": "Build | Integrating the GPR2-sfGFP Expression Cassette",
       "level": 4,
-      "attributes": "#build toc=\"Build\""
+      "attributes": "#build toc=\"Build | Integrating the GPR2-sfGFP Expression Cassette\""
     },
     {
       "_template": "text",
@@ -80,9 +80,9 @@
     },
     {
       "_template": "heading",
-      "text": "Test",
+      "text": "Test | Observing GPR2-sfGFP Fluorescence",
       "level": 4,
-      "attributes": "#test toc=\"Test\""
+      "attributes": "#test toc=\"Test | Observing GPR2-sfGFP Fluorescence\""
     },
     {
       "_template": "text",
@@ -98,9 +98,9 @@
     },
     {
       "_template": "heading",
-      "text": "Learn",
+      "text": "Learn | Identifying the Need for Localization Controls",
       "level": 4,
-      "attributes": "#learn toc=\"Learn\""
+      "attributes": "#learn toc=\"Learn | Identifying the Need for Localization Controls\""
     },
     {
       "_template": "text",
@@ -114,9 +114,9 @@
     },
     {
       "_template": "heading",
-      "text": "Design and Build",
+      "text": "Design and Build | Preparing Cell-Wall and Membrane Staining Controls",
       "level": 4,
-      "attributes": "#design-and-build toc=\"Design and Build\""
+      "attributes": "#design-and-build toc=\"Design and Build | Preparing Cell-Wall and Membrane Staining Controls\""
     },
     {
       "_template": "text",
@@ -132,9 +132,9 @@
     },
     {
       "_template": "heading",
-      "text": "Test",
+      "text": "Test | Comparing GFP with Cell-Wall and Membrane Signals",
       "level": 4,
-      "attributes": "#test-2 toc=\"Test\""
+      "attributes": "#test-2 toc=\"Test | Comparing GFP with Cell-Wall and Membrane Signals\""
     },
     {
       "_template": "text",
@@ -162,9 +162,9 @@
     },
     {
       "_template": "heading",
-      "text": "Learn",
+      "text": "Learn | Assessing GPR2 Plasma-Membrane Localization",
       "level": 4,
-      "attributes": "#learn-2 toc=\"Learn\""
+      "attributes": "#learn-2 toc=\"Learn | Assessing GPR2 Plasma-Membrane Localization\""
     },
     {
       "_template": "text",
@@ -198,9 +198,9 @@
     },
     {
       "_template": "heading",
-      "text": "Design",
+      "text": "Design | Planning Gal80 Knockout",
       "level": 4,
-      "attributes": "#design-2 toc=\"Design\""
+      "attributes": "#design-2 toc=\"Design | Planning Gal80 Knockout\""
     },
     {
       "_template": "text",
@@ -208,9 +208,9 @@
     },
     {
       "_template": "heading",
-      "text": "Build",
+      "text": "Build | Assembling the Gal80 Knockout Cassette",
       "level": 4,
-      "attributes": "#build-2 toc=\"Build\""
+      "attributes": "#build-2 toc=\"Build | Assembling the Gal80 Knockout Cassette\""
     },
     {
       "_template": "text",
@@ -226,9 +226,9 @@
     },
     {
       "_template": "heading",
-      "text": "Test",
+      "text": "Test | Verifying Gal80 Knockout Transformants",
       "level": 4,
-      "attributes": "#test-3 toc=\"Test\""
+      "attributes": "#test-3 toc=\"Test | Verifying Gal80 Knockout Transformants\""
     },
     {
       "_template": "text",
@@ -244,9 +244,9 @@
     },
     {
       "_template": "heading",
-      "text": "Learn",
+      "text": "Learn | Advancing to Synthetic Transcription Factor Construction",
       "level": 4,
-      "attributes": "#learn-3 toc=\"Learn\""
+      "attributes": "#learn-3 toc=\"Learn | Advancing to Synthetic Transcription Factor Construction\""
     },
     {
       "_template": "text",
@@ -264,9 +264,9 @@
     },
     {
       "_template": "heading",
-      "text": "Design",
+      "text": "Design | Planning STE12 Knockout and sTF Integration",
       "level": 4,
-      "attributes": "#design-3 toc=\"Design\""
+      "attributes": "#design-3 toc=\"Design | Planning STE12 Knockout and sTF Integration\""
     },
     {
       "_template": "text",
@@ -294,9 +294,9 @@
     },
     {
       "_template": "heading",
-      "text": "Build",
+      "text": "Build | Assembling STE12 Knockout and sTF Constructs",
       "level": 4,
-      "attributes": "#build-3 toc=\"Build\""
+      "attributes": "#build-3 toc=\"Build | Assembling STE12 Knockout and sTF Constructs\""
     },
     {
       "_template": "text",
@@ -336,9 +336,9 @@
     },
     {
       "_template": "heading",
-      "text": "Test",
+      "text": "Test | Checking STE12 Knockout Transformants",
       "level": 4,
-      "attributes": "#test-4 toc=\"Test\""
+      "attributes": "#test-4 toc=\"Test | Checking STE12 Knockout Transformants\""
     },
     {
       "_template": "text",
@@ -354,9 +354,9 @@
     },
     {
       "_template": "heading",
-      "text": "Learn",
+      "text": "Learn | Switching to CRISPR-Cas9 Gene Editing",
       "level": 4,
-      "attributes": "#learn-4 toc=\"Learn\""
+      "attributes": "#learn-4 toc=\"Learn | Switching to CRISPR-Cas9 Gene Editing\""
     },
     {
       "_template": "text",
@@ -374,9 +374,9 @@
     },
     {
       "_template": "heading",
-      "text": "Design",
+      "text": "Design | Planning Betaxanthin Expression Verification",
       "level": 4,
-      "attributes": "#design-4 toc=\"Design\""
+      "attributes": "#design-4 toc=\"Design | Planning Betaxanthin Expression Verification\""
     },
     {
       "_template": "text",
@@ -384,9 +384,9 @@
     },
     {
       "_template": "heading",
-      "text": "Build",
+      "text": "Build | Troubleshooting the Betaxanthin Expression Plasmid",
       "level": 4,
-      "attributes": "#build-4 toc=\"Build\""
+      "attributes": "#build-4 toc=\"Build | Troubleshooting the Betaxanthin Expression Plasmid\""
     },
     {
       "_template": "text",
@@ -406,9 +406,9 @@
     },
     {
       "_template": "heading",
-      "text": "Test",
+      "text": "Test | Examining Gene Integration and Yellow Coloration",
       "level": 4,
-      "attributes": "#test-5 toc=\"Test\""
+      "attributes": "#test-5 toc=\"Test | Examining Gene Integration and Yellow Coloration\""
     },
     {
       "_template": "text",
@@ -454,9 +454,9 @@
     },
     {
       "_template": "heading",
-      "text": "Design",
+      "text": "Design | Planning Cas9, sgRNA and Donor DNA Constructs",
       "level": 4,
-      "attributes": "#design-5 toc=\"Design\""
+      "attributes": "#design-5 toc=\"Design | Planning Cas9, sgRNA and Donor DNA Constructs\""
     },
     {
       "_template": "text",
@@ -464,9 +464,9 @@
     },
     {
       "_template": "heading",
-      "text": "Build",
+      "text": "Build | Assembling CRISPR-Cas9 Editing Components",
       "level": 4,
-      "attributes": "#build-5 toc=\"Build\""
+      "attributes": "#build-5 toc=\"Build | Assembling CRISPR-Cas9 Editing Components\""
     },
     {
       "_template": "text",
@@ -554,9 +554,9 @@
     },
     {
       "_template": "heading",
-      "text": "Test",
+      "text": "Test | Verifying Cas9 Transformation and Genome Editing",
       "level": 4,
-      "attributes": "#test-6 toc=\"Test\""
+      "attributes": "#test-6 toc=\"Test | Verifying Cas9 Transformation and Genome Editing\""
     },
     {
       "_template": "text",
@@ -604,9 +604,9 @@
     },
     {
       "_template": "heading",
-      "text": "Learn",
+      "text": "Learn | Advancing to GPR2 Mutant Characterization",
       "level": 4,
-      "attributes": "#learn-5 toc=\"Learn\""
+      "attributes": "#learn-5 toc=\"Learn | Advancing to GPR2 Mutant Characterization\""
     },
     {
       "_template": "text",
@@ -620,9 +620,9 @@
     },
     {
       "_template": "heading",
-      "text": "Design",
+      "text": "Design | Planning GPR2 Mutant Strain Construction",
       "level": 4,
-      "attributes": "#design-6 toc=\"Design\""
+      "attributes": "#design-6 toc=\"Design | Planning GPR2 Mutant Strain Construction\""
     },
     {
       "_template": "text",
@@ -638,9 +638,9 @@
     },
     {
       "_template": "heading",
-      "text": "Build and Test",
+      "text": "Build and Test | Constructing and Verifying GPR2 Mutant Plasmids",
       "level": 4,
-      "attributes": "#build-and-test toc=\"Build and Test\""
+      "attributes": "#build-and-test toc=\"Build and Test | Constructing and Verifying GPR2 Mutant Plasmids\""
     },
     {
       "_template": "text",
@@ -660,9 +660,9 @@
     },
     {
       "_template": "heading",
-      "text": "Learn",
+      "text": "Learn | Identifying the Need for Test-Strip Productization",
       "level": 4,
-      "attributes": "#learn-6 toc=\"Learn\""
+      "attributes": "#learn-6 toc=\"Learn | Identifying the Need for Test-Strip Productization\""
     },
     {
       "_template": "text",
@@ -726,7 +726,7 @@
     },
     {
       "_template": "text",
-      "body": "**Design**"
+      "body": "**Design | Defining Substrate Selection Criteria**"
     },
     {
       "_template": "text",
@@ -738,7 +738,7 @@
     },
     {
       "_template": "text",
-      "body": "**Build and Test**"
+      "body": "**Build and Test | Comparing Cell Recovery Across Substrates**"
     },
     {
       "_template": "text",
@@ -752,7 +752,7 @@
     },
     {
       "_template": "text",
-      "body": "**Learn**"
+      "body": "**Learn | Retaining Filter Paper and Revising the Recovery Assay**"
     },
     {
       "_template": "text",
@@ -774,7 +774,7 @@
     },
     {
       "_template": "text",
-      "body": "**Design**"
+      "body": "**Design | Optimizing Elution and Expanding Substrate Candidates**"
     },
     {
       "_template": "text",
@@ -786,7 +786,7 @@
     },
     {
       "_template": "text",
-      "body": "**Build and Test**"
+      "body": "**Build and Test | Evaluating Adsorption-Corrected Cell Recovery**"
     },
     {
       "_template": "text",
@@ -823,7 +823,7 @@
     },
     {
       "_template": "text",
-      "body": "**Learn**"
+      "body": "**Learn | Selecting GF/B and Identifying Spotting Constraints**"
     },
     {
       "_template": "text",
@@ -845,7 +845,7 @@
     },
     {
       "_template": "text",
-      "body": "**Design**"
+      "body": "**Design | Planning Surface Barriers and Protectant Optimization**"
     },
     {
       "_template": "text",
@@ -857,7 +857,7 @@
     },
     {
       "_template": "text",
-      "body": "**Build and Test**"
+      "body": "**Build and Test | Evaluating Surface Treatment and Freeze-Drying**"
     },
     {
       "_template": "text",
@@ -877,13 +877,15 @@
       "body": "To verify the protective effect of the modified protectant, we performed dehydration kinetics and full-process freeze-drying tests. The results demonstrated that the new sodium-alginate-based protectant forms an intact thin-film matrix after drying to effectively prevent collapse. Its gentle and uniform dehydration rate avoids physical damage to yeast cell membranes caused by drastic water loss, thereby greatly improving the structural integrity and viability of cells during lyophilization (Figure 3.1.3)."
     },
     {
-      "_template": "image",
-      "src": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-e2be3f101f5e-fig3-1-3.avif",
-      "alt": "Figure 3.1.3. Rapid water-loss test (a) and water-loss rate curve (b).",
-      "body": "**Figure 3.1.3.** Rapid water-loss test (a) and water-loss rate curve (b).",
-      "layout": "full",
-      "imageWidth": "wide",
-      "scale": "85"
+      "_template": "gallery",
+      "body": "",
+      "left": "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-429a2f899f67-fig3-1-3a-hd.avif",
+      "leftAlt": "Rapid water-loss test apparatus.",
+      "leftCaption": "**(a)** Rapid water-loss test.",
+      "right": "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-86797ed4c424-fig3-1-3b-hd.avif",
+      "rightAlt": "Water-loss rate curve.",
+      "rightCaption": "**(b)** Water-loss rate curve.",
+      "afterBody": "**Figure 3.1.3.** Rapid water-loss test (a) and water-loss rate curve (b)."
     },
     {
       "_template": "text",
@@ -913,7 +915,7 @@
     },
     {
       "_template": "text",
-      "body": "**Learn**"
+      "body": "**Learn | Combining Surface Treatment, Protectant and Spotting Improvements**"
     },
     {
       "_template": "text",
@@ -941,7 +943,7 @@
     },
     {
       "_template": "text",
-      "body": "**Design**"
+      "body": "**Design | Planning Reactivation Conditions and Medium Screening**"
     },
     {
       "_template": "text",
@@ -953,7 +955,7 @@
     },
     {
       "_template": "text",
-      "body": "**Build and Test**"
+      "body": "**Build and Test | Recording Reactivation over 113 Hours**"
     },
     {
       "_template": "text",
@@ -965,7 +967,7 @@
     },
     {
       "_template": "text",
-      "body": "**Learn**"
+      "body": "**Learn | Identifying Oxygen Availability as a Reactivation Constraint**"
     },
     {
       "_template": "text",
@@ -983,7 +985,7 @@
     },
     {
       "_template": "text",
-      "body": "**Design**"
+      "body": "**Design | Planning Medium Optimization for Faster Coloration**"
     },
     {
       "_template": "text",
@@ -991,7 +993,7 @@
     },
     {
       "_template": "text",
-      "body": "**Build and Test**"
+      "body": "**Build and Test | Comparing Medium Components and Color Development**"
     },
     {
       "_template": "text",
@@ -1003,7 +1005,7 @@
     },
     {
       "_template": "text",
-      "body": "**Learn**"
+      "body": "**Learn | Selecting a Reactivation and Coloration Formulation**"
     },
     {
       "_template": "text",
@@ -1017,7 +1019,7 @@
     },
     {
       "_template": "text",
-      "body": "**Design**"
+      "body": "**Design | Planning a Holder for Oxygen Supply and Portability**"
     },
     {
       "_template": "text",
@@ -1037,7 +1039,7 @@
     },
     {
       "_template": "text",
-      "body": "**Build and Test**"
+      "body": "**Build and Test | Fabricating and Evaluating the Printed Holder**"
     },
     {
       "_template": "text",
@@ -1058,7 +1060,7 @@
     },
     {
       "_template": "text",
-      "body": "**Learn**"
+      "body": "**Learn | Assessing Holder Performance and Remaining Validation Needs**"
     },
     {
       "_template": "text",

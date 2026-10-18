@@ -2,66 +2,96 @@
   "desktop": {
     "file": "model-desktop.webp",
     "size": [
-      672,
-      853
+      671,
+      2372
     ],
-    "bytes": 43706,
+    "bytes": 213288,
     "quality": 86,
-    "hash": "be67aea270da",
+    "hash": "6f53f0dcfb11",
     "frames": {
-      "field": [
+      "i-gears": [
         0,
-        390,
-        483,
-        238
+        839,
+        671,
+        370
       ],
-      "helix": [
+      "i-model-dock": [
         0,
         0,
-        108,
-        386
+        496,
+        441
       ],
-      "ligand": [
-        112,
+      "i-model-eco": [
         0,
-        560,
-        259
+        1551,
+        655,
+        321
       ],
-      "ribbon": [
+      "i-model-md": [
         0,
-        632,
-        520,
-        221
+        445,
+        663,
+        390
+      ],
+      "i-model-ode": [
+        0,
+        1213,
+        606,
+        334
+      ],
+      "i-molecules": [
+        0,
+        1876,
+        559,
+        258
+      ],
+      "i-waters": [
+        0,
+        2138,
+        345,
+        234
       ]
     }
   },
   "mobile": {
     "file": "model-mobile.webp",
     "size": [
-      655,
-      611
+      559,
+      1375
     ],
-    "bytes": 35240,
+    "bytes": 126958,
     "quality": 86,
-    "hash": "98795fba04df",
+    "hash": "b1a33a0b16a4",
     "frames": {
-      "helix": [
+      "i-model-dock": [
         0,
         0,
-        108,
-        386
+        369,
+        328
       ],
-      "ligand": [
-        112,
+      "i-model-eco": [
         0,
-        543,
-        252
+        1139,
+        482,
+        236
       ],
-      "ribbon": [
+      "i-model-md": [
         0,
-        390,
-        519,
-        221
+        332,
+        490,
+        288
+      ],
+      "i-model-ode": [
+        0,
+        886,
+        451,
+        249
+      ],
+      "i-molecules": [
+        0,
+        624,
+        559,
+        258
       ]
     }
   }

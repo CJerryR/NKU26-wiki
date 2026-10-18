@@ -88,7 +88,7 @@
   .scene__set--desktop { display: none; }
   .scene__set--mobile { display: block; }
   .scene__floor { top: calc(50% + 560 * var(--u)); width: calc(900 * var(--u)); height: calc(200 * var(--u)); }
-  .scene__h1 { font-size: var(--title-size-m, clamp(44px, 13vw, 76px)); }
+  .scene__h1 { font-size: min(var(--title-size-m, clamp(44px, 13vw, 76px)), var(--h1-cap, 76px)); }
   .scene__cue { bottom: calc(92px + env(safe-area-inset-bottom, 0px)); } /* clear of the phone outline bar */
   .scene__skip:not(:focus-visible) { opacity: 0; pointer-events: none; }
 }

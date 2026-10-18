@@ -2,84 +2,90 @@
   "desktop": {
     "file": "experiments-desktop.webp",
     "size": [
-      861,
-      1126
+      780,
+      1492
     ],
-    "bytes": 68900,
+    "bytes": 133152,
     "quality": 86,
-    "hash": "26121982e5bc",
+    "hash": "7cab99731703",
     "frames": {
       "dish-base": [
-        459,
-        851,
-        402,
-        261
+        416,
+        1019,
+        364,
+        236
       ],
       "dish-lid": [
         0,
-        851,
-        455,
-        275
+        1019,
+        412,
+        249
       ],
-      "pipette": [
+      "i-bench": [
         0,
-        0,
-        294,
-        500
+        420,
+        766,
+        302
       ],
-      "thermocycler": [
-        298,
+      "i-exp-instruments": [
         0,
-        480,
-        344
+        726,
+        644,
+        289
       ],
-      "tube-rack": [
+      "i-plates": [
         0,
-        504,
-        612,
-        343
+        0,
+        678,
+        416
+      ],
+      "i-yeast": [
+        0,
+        1272,
+        526,
+        220
       ]
     }
   },
   "mobile": {
     "file": "experiments-mobile.webp",
     "size": [
-      1226,
-      673
+      582,
+      1203
     ],
-    "bytes": 61368,
+    "bytes": 81404,
     "quality": 86,
-    "hash": "efba8fb86275",
+    "hash": "e1e1412cf488",
     "frames": {
       "dish-base": [
-        238,
         0,
-        481,
-        312
+        0,
+        462,
+        299
       ],
       "dish-lid": [
-        723,
         0,
-        503,
-        304
+        303,
+        484,
+        293
       ],
-      "pipette": [
+      "i-bench": [
         0,
-        0,
-        234,
-        398
+        600,
+        582,
+        229
       ],
-      "thermocycler": [
+      "i-exp-instruments": [
         0,
-        402,
-        377,
-        271
+        833,
+        458,
+        206
       ],
-      "tube-rack": [
-        381,
-        402,
-        463,
-        260
+      "i-yeast": [
+        0,
+        1043,
+        383,
+        160
       ]
     }
   }

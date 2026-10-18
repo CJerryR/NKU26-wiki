@@ -1,0 +1,98 @@
+{
+  "desktop": {
+    "file": "model-ode-desktop.webp",
+    "size": [
+      2267,
+      645
+    ],
+    "bytes": 168042,
+    "quality": 86,
+    "hash": "d79d048e0fcf",
+    "frames": {
+      "i-gears": [
+        1230,
+        339,
+        474,
+        261
+      ],
+      "i-molecules": [
+        1708,
+        339,
+        559,
+        258
+      ],
+      "i-ode-flask-a": [
+        462,
+        0,
+        457,
+        333
+      ],
+      "i-ode-flask-b": [
+        0,
+        0,
+        458,
+        335
+      ],
+      "i-ode-phone": [
+        0,
+        339,
+        524,
+        306
+      ],
+      "i-soil-bed": [
+        923,
+        0,
+        882,
+        313
+      ],
+      "i-yeast": [
+        528,
+        339,
+        698,
+        292
+      ]
+    }
+  },
+  "mobile": {
+    "file": "model-ode-mobile.webp",
+    "size": [
+      1127,
+      497
+    ],
+    "bytes": 86292,
+    "quality": 86,
+    "hash": "8300c606c9a8",
+    "frames": {
+      "i-molecules": [
+        0,
+        258,
+        518,
+        239
+      ],
+      "i-ode-flask-a": [
+        785,
+        0,
+        342,
+        249
+      ],
+      "i-ode-flask-b": [
+        439,
+        0,
+        342,
+        250
+      ],
+      "i-ode-phone": [
+        0,
+        0,
+        435,
+        254
+      ],
+      "i-yeast": [
+        522,
+        258,
+        531,
+        222
+      ]
+    }
+  }
+}

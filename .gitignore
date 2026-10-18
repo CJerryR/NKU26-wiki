@@ -152,3 +152,24 @@ static/video/round3-results/Video3.2.1.mp4
 /static/img/uploads/round3/fig-3-3-net-timecourse.png
 /static/img/uploads/round3/fig-3-4-signal-space.png
 /static/img/uploads/round3/fig-3-5-prediction-comparison-wiki.png
+
+# V8.7 media use official CDN; local originals and sprite caches remain archived.
+/assets/scenes/*/i-*.png
+/static/img/scenes/education-desktop.webp
+/static/img/scenes/education-mobile.webp
+/static/img/scenes/human-practices-desktop.webp
+/static/img/scenes/human-practices-mobile.webp
+/static/img/scenes/licensing-desktop.webp
+/static/img/scenes/licensing-mobile.webp
+/static/img/scenes/members-desktop.webp
+/static/img/scenes/members-mobile.webp
+/static/img/scenes/model-eco-desktop.webp
+/static/img/scenes/model-eco-mobile.webp
+/static/img/scenes/model-md-desktop.webp
+/static/img/scenes/model-md-mobile.webp
+/static/img/scenes/model-ode-desktop.webp
+/static/img/scenes/model-ode-mobile.webp
+/static/img/scenes/safety-desktop.webp
+/static/img/scenes/safety-mobile.webp
+/static/img/uploads/round3-results/Fig3.1.3a-hd.jpg
+/static/img/uploads/round3-results/Fig3.1.3b-hd.png

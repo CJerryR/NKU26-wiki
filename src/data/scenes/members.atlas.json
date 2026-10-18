@@ -1,0 +1,92 @@
+{
+  "desktop": {
+    "file": "members-desktop.webp",
+    "size": [
+      1546,
+      1162
+    ],
+    "bytes": 189806,
+    "quality": 86,
+    "hash": "3014128e0434",
+    "frames": {
+      "i-stars": [
+        973,
+        852,
+        364,
+        184
+      ],
+      "i-team-adv": [
+        869,
+        439,
+        433,
+        400
+      ],
+      "i-team-dry": [
+        0,
+        439,
+        865,
+        409
+      ],
+      "i-team-hp": [
+        0,
+        0,
+        911,
+        435
+      ],
+      "i-team-visual": [
+        915,
+        0,
+        631,
+        423
+      ],
+      "i-team-wet": [
+        0,
+        852,
+        969,
+        310
+      ]
+    }
+  },
+  "mobile": {
+    "file": "members-mobile.webp",
+    "size": [
+      991,
+      901
+    ],
+    "bytes": 127192,
+    "quality": 86,
+    "hash": "eda9483571ef",
+    "frames": {
+      "i-team-adv": [
+        648,
+        314,
+        308,
+        285
+      ],
+      "i-team-dry": [
+        0,
+        314,
+        644,
+        305
+      ],
+      "i-team-hp": [
+        0,
+        623,
+        583,
+        278
+      ],
+      "i-team-visual": [
+        587,
+        623,
+        404,
+        271
+      ],
+      "i-team-wet": [
+        0,
+        0,
+        969,
+        310
+      ]
+    }
+  }
+}

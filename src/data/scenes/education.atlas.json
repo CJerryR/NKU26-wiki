@@ -1,0 +1,104 @@
+{
+  "desktop": {
+    "file": "education-desktop.webp",
+    "size": [
+      1548,
+      1410
+    ],
+    "bytes": 154322,
+    "quality": 86,
+    "hash": "a1c26826be81",
+    "frames": {
+      "i-crowd": [
+        576,
+        0,
+        921,
+        465
+      ],
+      "i-edu-board": [
+        0,
+        0,
+        572,
+        618
+      ],
+      "i-edu-class": [
+        563,
+        622,
+        774,
+        386
+      ],
+      "i-edu-micro": [
+        0,
+        622,
+        559,
+        425
+      ],
+      "i-edu-wing-l": [
+        0,
+        1051,
+        270,
+        359
+      ],
+      "i-edu-wing-r": [
+        274,
+        1051,
+        270,
+        359
+      ],
+      "i-library": [
+        988,
+        1051,
+        560,
+        217
+      ],
+      "i-stars": [
+        548,
+        1051,
+        436,
+        220
+      ]
+    }
+  },
+  "mobile": {
+    "file": "education-mobile.webp",
+    "size": [
+      588,
+      1425
+    ],
+    "bytes": 57042,
+    "quality": 86,
+    "hash": "1ad7fcaba9c1",
+    "frames": {
+      "i-edu-board": [
+        0,
+        0,
+        508,
+        549
+      ],
+      "i-edu-class": [
+        0,
+        875,
+        588,
+        293
+      ],
+      "i-edu-micro": [
+        0,
+        1172,
+        333,
+        253
+      ],
+      "i-edu-wing-l": [
+        0,
+        553,
+        239,
+        318
+      ],
+      "i-edu-wing-r": [
+        243,
+        553,
+        239,
+        318
+      ]
+    }
+  }
+}

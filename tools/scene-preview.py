@@ -19,10 +19,21 @@ process.stdout.write(ts.transpileModule(src,{compilerOptions:{target:ts.ScriptTa
 css = ''.join((REPO / f).read_text() for f in ('src/styles/tokens.css', 'src/styles/page.css', 'src/styles/scene-hero.css'))
 pct = lambda n: f'{round(n, 4)}%'
 
+def h1cap(t):   # mirrors SceneHero.astro
+    n = max(len(w) for w in t.replace('*', '').split())
+    return f' style="--h1-cap:calc(88vw / {n * 0.56:.2f})"' if n > 11 else ''
+
 def page_html(page):
     L = json.loads((REPO / f'src/data/scenes/{page}.json').read_text())
     A = json.loads((REPO / f'src/data/scenes/{page}.atlas.json').read_text())
-    W = json.loads((REPO / f'content/wiki/{page}.json').read_text())
+    wp = REPO / f'content/wiki/{page}.json'
+    if wp.exists():
+        W = json.loads(wp.read_text())
+    else:   # optional outline page (src/content/optional/<page>.md): read title/crumbs from its frontmatter
+        import re as _re
+        fm = (REPO / f'src/content/optional/{page}.md').read_text()
+        t = _re.search(r'^title:\s*"?([^"\n]+)"?', fm, _re.M).group(1)
+        W = {'title': t, 'heading': t, 'crumbs': ['Team', t]}
     crumbs = W.get('crumbs') or [W['title']]
     eyebrow = L.get('eyebrow') or (crumbs[0] if len(crumbs) > 1 else '')
     sets = []
@@ -49,7 +60,7 @@ def page_html(page):
 <section class="scene" data-scene data-tone="light" aria-labelledby="page-title" style="--ty-d:{d.get('y', 0)};--ty-m:{m.get('y', 0)}"><div class="scene__stage">
 <div class="scene__floor" aria-hidden="true" data-scene-floor></div>{''.join(sets)}
 <nav class="crumbs scene__crumbs" aria-label="Breadcrumb"><ol><li><a href="#">Home</a></li>{crumb}</ol></nav>
-<div class="scene__title" data-scene-title>{f'<p class="scene__eyebrow">{eyebrow}</p>' if eyebrow else ''}<h1 id="page-title" class="scene__h1">{html.escape(W.get('heading') or W['title'])}</h1><span class="scene__pill" aria-hidden="true"></span></div>
+<div class="scene__title" data-scene-title>{f'<p class="scene__eyebrow">{eyebrow}</p>' if eyebrow else ''}<h1 id="page-title" class="scene__h1"{h1cap(W.get('heading') or W['title'])}>{html.escape(W.get('heading') or W['title'])}</h1><span class="scene__pill" aria-hidden="true"></span></div>
 <div class="scene__cue" aria-hidden="true" data-scene-cue><span>Scroll to open</span><i></i></div><a class="scene__skip" href="#content">Skip intro</a></div></section>
 <div id="content" tabindex="-1" class="doc"><h2>Article starts here</h2><p>{'Body text. ' * 300}</p></div></main>
 <script type="module" src="/tmp-h/scene-hero.js"></script></body></html>"""

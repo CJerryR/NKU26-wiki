@@ -36,11 +36,11 @@ Receptor selection requires consideration of both computational results and the 
 
 Informed by results from the prior cycle, this iteration characterizes **heterologous expression and proper plasma membrane localization** of GPR2, establishing proof of feasibility for downstream chassis engineering.
 
-#### Design {#design toc="Design"}
+#### Design | Planning GPR2 Expression and Localization Verification {#design toc="Design | Planning GPR2 Expression and Localization Verification"}
 
 To validate heterologous expression and proper plasma membrane localization of GPR2 in our host strain *S. cerevisiae* `CEN.PK2-1C`, we adopted the following experimental pipeline: assembly of the GPR2-sfGFP expression plasmid, gene knock-in mediated by yeast homologous recombination (HR), and fluorescence microscopy to characterize protein expression and subcellular localization. See Wet Lab-Results- DBTL-1 for detailed design and experimental protocols.
 
-#### Build {#build toc="Build"}
+#### Build | Integrating the GPR2-sfGFP Expression Cassette {#build toc="Build | Integrating the GPR2-sfGFP Expression Cassette"}
 
 Via homologous recombination (HR), we integrated the constitutive *GPR2-sfGFP* expression cassette into the `CEN.PK2-1C` genome (Figure 1).
 
@@ -52,7 +52,7 @@ Figure 1 Yeast transformation of GPR2‑sfGFP construct
 
 :::
 
-#### Test {#test toc="Test"}
+#### Test | Comparing GFP with Cell-Wall and Membrane Staining {#test toc="Test | Comparing GFP with Cell-Wall and Membrane Staining"}
 
 Following gene knock-in, we visualized three groups of yeast under fluorescence microscopy: unstained cells (Figure 2), cell wall-stained yeast (Figure 3), and plasma membrane-stained yeast (Figure 4).
 
@@ -86,7 +86,7 @@ Figure 4 FM4‑64 staining of yeast cells
 
 :::
 
-#### Learn {#learn toc="Learn"}
+#### Learn | Assessing GPR2 Localization for Chassis Engineering {#learn toc="Learn | Assessing GPR2 Localization for Chassis Engineering"}
 
 Collectively, these data confirm heterologous expression and proper plasma membrane localization of GPR2 in `CEN.PK2-1C`, laying an essential foundation for our chassis engineering. We therefore advance to the next cycle to assemble the full signal-responsive engineered strain.
 
@@ -94,7 +94,7 @@ Collectively, these data confirm heterologous expression and proper plasma membr
 
 Building upon findings from prior iterations, this cycle launches the chassis engineering of our signal-responsive pathway.
 
-#### Design {#design-2 toc="Design"}
+#### Design | Planning the Ascaroside-Responsive Yeast Pathway {#design-2 toc="Design | Planning the Ascaroside-Responsive Yeast Pathway"}
 
 Referring to previous work reported by Fan et al. [1][2], we assembled the ascaroside-sensitive yeast biosensor according to the pipeline illustrated in Figure 1.
 
@@ -106,7 +106,7 @@ Figure 1 Schematic Diagram of Yeast Biosensor Construction Pipeline
 
 :::
 
-#### Build {#build-2 toc="Build"}
+#### Build | Assembling the Signal-Responsive Yeast Chassis {#build-2 toc="Build | Assembling the Signal-Responsive Yeast Chassis"}
 
 First, we knocked out the *Gal80* gene in `CEN.PK2-1C` to obtain the engineered strain `NKU-Y02` (Figure 2), which eliminates endogenous signal interference in this pathway.
 

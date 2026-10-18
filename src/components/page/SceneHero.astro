@@ -37,6 +37,8 @@ function layerStyle(l: SceneLayer, atlas: AtlasSet): string {
 const motion = (l: SceneLayer) => JSON.stringify({ f: l.from, t: l.to, w: l.win ?? [0, 1], d: l.depth ?? 0 });
 const kinds: SceneKind[] = ['desktop', 'mobile'];
 const d = scene.sets.desktop.set.title ?? {}, m = scene.sets.mobile.set.title ?? {};
+const longest = Math.max(...(heading ?? title).replace(/[*_`]/g, '').split(/\s+/).map((w) => w.length));
+const h1Cap = longest > 11 ? `calc(88vw / ${(longest * 0.56).toFixed(2)})` : null;
 const stageVars = [
   `--ty-d:${d.y ?? 0}`, `--ty-m:${m.y ?? 0}`,
   ...(d.fontSize ? [`--title-size-d:calc(${d.fontSize} * var(--u))`] : []),
@@ -67,7 +69,7 @@ const stageVars = [
     </nav>
     <div class="scene__title" data-scene-title>
       {eyebrow && <p class="scene__eyebrow">{eyebrow}</p>}
-      <h1 id="page-title" class="scene__h1" set:html={inlineMd(heading ?? title)} />
+      <h1 id="page-title" class="scene__h1" style={h1Cap ? `--h1-cap:${h1Cap}` : undefined} set:html={inlineMd(heading ?? title)} />
       <span class="scene__pill" aria-hidden="true"></span>
     </div>
     <div class="scene__cue" aria-hidden="true" data-scene-cue><span>Scroll to open</span><i></i></div>

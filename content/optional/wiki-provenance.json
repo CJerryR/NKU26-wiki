@@ -1,0 +1,23 @@
+{
+  "note": "Preserved optional-page provenance. Restore entries to content/wiki-provenance.json when promoting these pages.",
+  "pages": [
+    {
+      "slug": "awards",
+      "status": "3d-pilot-only-copy-deferred-by-user",
+      "team_copy_received": false,
+      "team_review_approved": false,
+      "integration_gate1_approved": false,
+      "sources": [],
+      "note": "2026-10-18: user requested only the 3D opening; body, prizes, names and affiliations intentionally left blank."
+    },
+    {
+      "slug": "acknowledgements",
+      "status": "3d-pilot-only-copy-deferred-by-user",
+      "team_copy_received": false,
+      "team_review_approved": false,
+      "integration_gate1_approved": false,
+      "sources": [],
+      "note": "2026-10-18: user requested only the 3D opening; body, prizes, names and affiliations intentionally left blank."
+    }
+  ]
+}

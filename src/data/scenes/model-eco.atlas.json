@@ -1,0 +1,98 @@
+{
+  "desktop": {
+    "file": "model-eco-desktop.webp",
+    "size": [
+      1944,
+      1027
+    ],
+    "bytes": 280898,
+    "quality": 86,
+    "hash": "12eaa905b921",
+    "frames": {
+      "i-crowd": [
+        1277,
+        433,
+        650,
+        328
+      ],
+      "i-eco-coins": [
+        0,
+        798,
+        446,
+        229
+      ],
+      "i-eco-fields": [
+        0,
+        0,
+        855,
+        429
+      ],
+      "i-field": [
+        859,
+        0,
+        1085,
+        411
+      ],
+      "i-nematodes": [
+        0,
+        433,
+        771,
+        361
+      ],
+      "i-paperwork": [
+        775,
+        433,
+        498,
+        357
+      ],
+      "i-soil-bed": [
+        450,
+        798,
+        553,
+        196
+      ]
+    }
+  },
+  "mobile": {
+    "file": "model-eco-mobile.webp",
+    "size": [
+      865,
+      1184
+    ],
+    "bytes": 151872,
+    "quality": 80,
+    "hash": "221e2a48137e",
+    "frames": {
+      "i-crowd": [
+        0,
+        710,
+        514,
+        260
+      ],
+      "i-eco-coins": [
+        0,
+        974,
+        409,
+        210
+      ],
+      "i-eco-fields": [
+        0,
+        0,
+        745,
+        374
+      ],
+      "i-field": [
+        0,
+        378,
+        865,
+        328
+      ],
+      "i-paperwork": [
+        518,
+        710,
+        321,
+        230
+      ]
+    }
+  }
+}

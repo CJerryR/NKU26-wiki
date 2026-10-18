@@ -2,78 +2,102 @@
   "desktop": {
     "file": "results-desktop.webp",
     "size": [
-      620,
-      930
+      1745,
+      1027
     ],
-    "bytes": 39838,
+    "bytes": 267718,
     "quality": 86,
-    "hash": "3230d626de9a",
+    "hash": "1efb11a35c8b",
     "frames": {
-      "membrane": [
-        0,
-        518,
-        522,
-        412
+      "i-bench": [
+        955,
+        397,
+        766,
+        302
       ],
-      "strip-amber": [
-        84,
-        0,
-        80,
-        514
+      "i-molecules": [
+        1186,
+        732,
+        559,
+        258
       ],
-      "strip-neutral": [
+      "i-nematodes": [
+        852,
         0,
-        0,
-        80,
-        514
+        771,
+        361
       ],
-      "yeast": [
-        168,
+      "i-plates": [
         0,
-        452,
-        445
+        732,
+        480,
+        295
+      ],
+      "i-res-membrane": [
+        0,
+        397,
+        951,
+        331
+      ],
+      "i-res-strips-amber": [
+        426,
+        0,
+        422,
+        393
+      ],
+      "i-res-strips-neutral": [
+        0,
+        0,
+        422,
+        393
+      ],
+      "i-yeast": [
+        484,
+        732,
+        698,
+        292
       ]
     }
   },
   "mobile": {
     "file": "results-mobile.webp",
     "size": [
-      578,
-      1123
+      1181,
+      596
     ],
-    "bytes": 67364,
+    "bytes": 120980,
     "quality": 86,
-    "hash": "68304ee7dfee",
+    "hash": "0faec36c9fd5",
     "frames": {
-      "membrane": [
+      "i-plates": [
+        802,
         0,
-        518,
-        472,
-        373
+        379,
+        233
       ],
-      "plate": [
-        0,
-        895,
-        410,
-        228
+      "i-res-membrane": [
+        535,
+        374,
+        632,
+        220
       ],
-      "strip-amber": [
-        84,
+      "i-res-strips-amber": [
+        401,
         0,
-        80,
-        514
+        397,
+        370
       ],
-      "strip-neutral": [
+      "i-res-strips-neutral": [
         0,
         0,
-        80,
-        514
+        397,
+        370
       ],
-      "yeast": [
-        168,
+      "i-yeast": [
         0,
-        410,
-        404
+        374,
+        531,
+        222
       ]
     }
   }

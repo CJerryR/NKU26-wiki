@@ -1,0 +1,98 @@
+{
+  "desktop": {
+    "file": "safety-desktop.webp",
+    "size": [
+      872,
+      2372
+    ],
+    "bytes": 134696,
+    "quality": 86,
+    "hash": "0d74992e301e",
+    "frames": {
+      "i-bench": [
+        0,
+        2165,
+        524,
+        207
+      ],
+      "i-paperwork": [
+        503,
+        1878,
+        358,
+        257
+      ],
+      "i-safe-body": [
+        0,
+        0,
+        872,
+        856
+      ],
+      "i-safe-ppe": [
+        0,
+        860,
+        577,
+        368
+      ],
+      "i-safe-sash": [
+        0,
+        1878,
+        499,
+        283
+      ],
+      "i-safe-transport": [
+        0,
+        1232,
+        637,
+        346
+      ],
+      "i-yeast": [
+        0,
+        1582,
+        698,
+        292
+      ]
+    }
+  },
+  "mobile": {
+    "file": "safety-mobile.webp",
+    "size": [
+      882,
+      1270
+    ],
+    "bytes": 66918,
+    "quality": 86,
+    "hash": "845fcb376a5f",
+    "frames": {
+      "i-bench": [
+        384,
+        1064,
+        428,
+        169
+      ],
+      "i-safe-body": [
+        0,
+        0,
+        805,
+        790
+      ],
+      "i-safe-ppe": [
+        0,
+        794,
+        417,
+        266
+      ],
+      "i-safe-sash": [
+        421,
+        794,
+        461,
+        261
+      ],
+      "i-safe-transport": [
+        0,
+        1064,
+        380,
+        206
+      ]
+    }
+  }
+}

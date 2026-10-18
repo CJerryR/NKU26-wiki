@@ -366,24 +366,6 @@
         "Full supplied ODE prototype is not embedded; Python service and r04/r01 versus r07/r04 versions remain separate",
         "Team final review"
       ]
-    },
-    {
-      "slug": "awards",
-      "status": "3d-pilot-only-copy-deferred-by-user",
-      "team_copy_received": false,
-      "team_review_approved": false,
-      "integration_gate1_approved": false,
-      "sources": [],
-      "note": "2026-10-18: user requested only the 3D opening; body, prizes, names and affiliations intentionally left blank."
-    },
-    {
-      "slug": "acknowledgements",
-      "status": "3d-pilot-only-copy-deferred-by-user",
-      "team_copy_received": false,
-      "team_review_approved": false,
-      "integration_gate1_approved": false,
-      "sources": [],
-      "note": "2026-10-18: user requested only the 3D opening; body, prizes, names and affiliations intentionally left blank."
     }
   ],
   "round2_note": "Local Tina integration of supplied English copy and assets. Human Practices Chinese manuscript remains archive-only. No final team review or publication approval is asserted."

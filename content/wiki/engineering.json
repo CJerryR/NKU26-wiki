@@ -74,9 +74,9 @@
     },
     {
       "_template": "heading",
-      "text": "Design",
+      "text": "Design | Planning GPR2 Expression and Localization Verification",
       "level": 4,
-      "attributes": "#design toc=\"Design\""
+      "attributes": "#design toc=\"Design | Planning GPR2 Expression and Localization Verification\""
     },
     {
       "_template": "text",
@@ -84,9 +84,9 @@
     },
     {
       "_template": "heading",
-      "text": "Build",
+      "text": "Build | Integrating the GPR2-sfGFP Expression Cassette",
       "level": 4,
-      "attributes": "#build toc=\"Build\""
+      "attributes": "#build toc=\"Build | Integrating the GPR2-sfGFP Expression Cassette\""
     },
     {
       "_template": "text",
@@ -102,9 +102,9 @@
     },
     {
       "_template": "heading",
-      "text": "Test",
+      "text": "Test | Comparing GFP with Cell-Wall and Membrane Staining",
       "level": 4,
-      "attributes": "#test toc=\"Test\""
+      "attributes": "#test toc=\"Test | Comparing GFP with Cell-Wall and Membrane Staining\""
     },
     {
       "_template": "text",
@@ -148,9 +148,9 @@
     },
     {
       "_template": "heading",
-      "text": "Learn",
+      "text": "Learn | Assessing GPR2 Localization for Chassis Engineering",
       "level": 4,
-      "attributes": "#learn toc=\"Learn\""
+      "attributes": "#learn toc=\"Learn | Assessing GPR2 Localization for Chassis Engineering\""
     },
     {
       "_template": "text",
@@ -168,9 +168,9 @@
     },
     {
       "_template": "heading",
-      "text": "Design",
+      "text": "Design | Planning the Ascaroside-Responsive Yeast Pathway",
       "level": 4,
-      "attributes": "#design-2 toc=\"Design\""
+      "attributes": "#design-2 toc=\"Design | Planning the Ascaroside-Responsive Yeast Pathway\""
     },
     {
       "_template": "text",
@@ -186,9 +186,9 @@
     },
     {
       "_template": "heading",
-      "text": "Build",
+      "text": "Build | Assembling the Signal-Responsive Yeast Chassis",
       "level": 4,
-      "attributes": "#build-2 toc=\"Build\""
+      "attributes": "#build-2 toc=\"Build | Assembling the Signal-Responsive Yeast Chassis\""
     },
     {
       "body": "First, we knocked out the *Gal80* gene in `CEN.PK2-1C` to obtain the engineered strain `NKU-Y02` (Figure 2), which eliminates endogenous signal interference in this pathway.",

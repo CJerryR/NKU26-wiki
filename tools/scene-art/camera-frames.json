@@ -1,0 +1,66 @@
+{
+  "eng-learn": {
+    "extent": 1.5606,
+    "checkpoint08_extent": 0.85
+  },
+  "edu-board": {
+    "extent": 1.6524,
+    "checkpoint08_extent": 0.9
+  },
+  "gears": {
+    "extent": 1.4688,
+    "checkpoint08_extent": 0.8
+  },
+  "field": {
+    "extent": 1.836,
+    "checkpoint08_extent": 1.0
+  },
+  "crowd": {
+    "extent": 1.4688,
+    "checkpoint08_extent": 0.8
+  },
+  "ode-phone": {
+    "extent": 1.2852000000000001,
+    "checkpoint08_extent": 0.7
+  },
+  "edu-micro": {
+    "extent": 1.377,
+    "checkpoint08_extent": 0.75
+  },
+  "desc-roots": {
+    "extent": 1.4688,
+    "checkpoint08_extent": 0.8
+  },
+  "safe-sash": {
+    "extent": 1.5606,
+    "checkpoint08_extent": 0.85
+  },
+  "res-membrane": {
+    "extent": 1.7442000000000002,
+    "checkpoint08_extent": 0.95
+  },
+  "env-open": {
+    "extent": 0.77112,
+    "checkpoint08_extent": 0.42
+  },
+  "env-closed": {
+    "extent": 0.77112,
+    "checkpoint08_extent": 0.42
+  },
+  "hp-farmers": {
+    "extent": 1.5606,
+    "checkpoint08_extent": 0.85
+  },
+  "md-slab": {
+    "extent": 1.9278,
+    "checkpoint08_extent": 1.05
+  },
+  "molecules": {
+    "extent": 1.6524,
+    "checkpoint08_extent": 0.9
+  },
+  "safe-body": {
+    "extent": 1.5606,
+    "checkpoint08_extent": 0.85
+  }
+}

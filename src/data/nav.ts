@@ -53,8 +53,8 @@ export const primaryNav: NavItem[] = [
     kind: 'group', id: 'team', label: 'Team', narrow: true, items: [
       { page: 'members', label: 'Members', blurb: 'The people behind the project' },
       { page: 'attributions', label: 'Attributions', blurb: 'Who did what' },
-      { page: 'awards', label: 'Awards' },
-      { page: 'acknowledgements', label: 'Acknowledgements' },
+      { page: 'awards', label: 'Awards', blurb: 'Recognition the team has received', optional: true },
+      { page: 'acknowledgements', label: 'Acknowledgements', blurb: 'People and places we thank', optional: true },
       { page: 'sponsors', label: 'Sponsors & Partners', blurb: 'Who supports the project', optional: true },
     ],
   },

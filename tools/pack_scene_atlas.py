@@ -32,8 +32,8 @@ OUT = ROOT / 'static' / 'img' / 'scenes'
 
 # atlas px per design px, max sheet edge, byte budget
 SETS = {
-    'desktop': {'density': 1.6, 'max_edge': 2048, 'budget': 450_000},
-    'mobile': {'density': 1.3, 'max_edge': 1536, 'budget': 250_000},
+    'desktop': {'density': 1.45, 'max_edge': 2560, 'budget': 290_000},
+    'mobile': {'density': 1.25, 'max_edge': 2048, 'budget': 165_000},
 }
 GAP = 4
 
@@ -81,9 +81,7 @@ def pack(page: str, kind: str, layout: dict) -> dict:
         if not src.exists():
             sys.exit(f'missing source {src.relative_to(ROOT)}')
         im = Image.open(src).convert('RGBA')
-        # Animated pieces sharing a camera frame must retain transparent margins.
-        if prop not in layout.get('sharedFrames', []):
-            im = im.crop(im.getbbox())
+        im = im.crop(im.getbbox())
         w = min(round(target_w), im.width)  # never upscale
         images[prop] = im.resize((w, round(im.height * w / im.width)), Image.Resampling.LANCZOS)
 
