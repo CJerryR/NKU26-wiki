@@ -25,7 +25,7 @@ export interface SceneLayer {
 export interface SceneTitle { fontSize?: number; y?: number; toY?: number; toScale?: number }
 export interface SceneSet { canvas: [number, number]; title?: SceneTitle; layers: SceneLayer[] }
 export interface SceneLayout { page: string; enabled: boolean; eyebrow?: string; desktop: SceneSet; mobile: SceneSet }
-export interface AtlasSet { file: string; size: [number, number]; hash: string; frames: Record<string, [number, number, number, number]> }
+export interface AtlasSet { file: string; size: [number, number]; hash: string; preview?: string; frames: Record<string, [number, number, number, number]> }
 export interface SceneAtlas { desktop: AtlasSet; mobile: AtlasSet }
 
 export type SceneKind = 'desktop' | 'mobile';

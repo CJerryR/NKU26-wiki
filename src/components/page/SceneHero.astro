@@ -38,6 +38,7 @@ function layerStyle(l: SceneLayer, atlas: AtlasSet): string {
 }
 const motion = (l: SceneLayer) => JSON.stringify({ f: l.from, t: l.to, w: l.win ?? [0, 1], d: l.depth ?? 0 });
 const kinds: SceneKind[] = ['desktop', 'mobile'];
+const hasPreview = kinds.every(kind => !!scene.sets[kind].atlas.preview);
 const d = scene.sets.desktop.set.title ?? {}, m = scene.sets.mobile.set.title ?? {};
 const longest = Math.max(...(heading ?? title).replace(/[*_`]/g, '').split(/\s+/).map((w) => w.length));
 const h1Cap = longest > 11 ? `calc(88vw / ${(longest * 0.56).toFixed(2)})` : null;
@@ -48,7 +49,7 @@ const stageVars = [
   ...(m.fontSize ? [`--title-size-m:calc(${m.fontSize} * var(--u))`] : []),
 ].join(';');
 ---
-<section class="scene" data-scene data-scene-ground={GROUND_URL} data-scene-sky={SKY_URL} data-scene-portrait={PORTRAIT_QUERY} data-tone="dark" aria-labelledby="page-title" style={stageVars}>
+<section class:list={['scene', { 'scene--preview': hasPreview }]} data-scene data-scene-preview={hasPreview ? 'true' : undefined} data-scene-ground={GROUND_URL} data-scene-sky={SKY_URL} data-scene-portrait={PORTRAIT_QUERY} data-tone="dark" aria-labelledby="page-title" style={stageVars}>
   <div class="scene__stage">
     <div class="scene__floor" aria-hidden="true" data-scene-floor></div>
     <div class="scene__ground" aria-hidden="true"></div>
@@ -58,7 +59,7 @@ const stageVars = [
         <div class={`scene__set scene__set--${kind}`} aria-hidden="true" data-scene-set={kind}
           data-canvas={set.canvas.join(",")} data-src={url}
           data-title={JSON.stringify({ y: set.title?.y ?? 0, toY: set.title?.toY ?? -200, toScale: set.title?.toScale ?? 0.65 })}
-          style={`--cw:${set.canvas[0]};--ch:${set.canvas[1]};--atlas:url(${url})`}>
+          style={`--cw:${set.canvas[0]};--ch:${set.canvas[1]};--atlas:url(${url});--atlas-preview:url(${atlas.preview || url})`}>
           {[...set.layers].sort((a, b) => (a.z ?? 1) - (b.z ?? 1)).map((l) => (
             <div class="scene__layer" data-scene-layer={l.id} data-motion={motion(l)} style={layerStyle(l, atlas)}></div>
           ))}
@@ -77,7 +78,7 @@ const stageVars = [
       <span class="scene__pill" aria-hidden="true"></span>
     </div>
   </div>
-  <noscript><style>.scene { height: auto !important; } .scene__stage { position: relative !important; } .scene-tear { --tear: 0px !important; }</style></noscript>
+  <noscript><style>.scene { height: auto !important; } .scene__stage { position: relative !important; } .scene-tear { --tear: 0px !important; } .scene--preview .scene__layer { background-image: var(--atlas) !important; }</style></noscript>
 </section>
 <script is:inline set:html={sceneLoading} />
 <div class="scene-tear" data-tone="light" aria-hidden="true"></div>

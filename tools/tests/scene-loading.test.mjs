@@ -7,10 +7,11 @@ const classes = (...initial) => {
   const values = new Set(initial);
   return { add: (...v) => v.forEach(x => values.add(x)), remove: v => values.delete(v), contains: v => values.has(v) };
 };
-function boot({ mobile = false, loading = true } = {}) {
+function boot({ mobile = false, loading = true, preview = false } = {}) {
   const html = { classList: classes(...(loading ? ['scene-loading'] : [])) };
-  const root = { classList: classes(), dataset: { scenePortrait: '(max-aspect-ratio: 4/5)', sceneGround: 'ground.webp', sceneSky: 'sky.webp' },
+  const root = { classList: classes(...(preview ? ['scene--preview'] : [])), dataset: { scenePortrait: '(max-aspect-ratio: 4/5)', sceneGround: 'ground.webp', sceneSky: 'sky.webp' },
     querySelector: selector => ({ dataset: { src: selector.includes('mobile') ? 'mobile.webp' : 'desktop.webp' } }) };
+  if (preview) root.dataset.scenePreview = 'true';
   const images = [], timers = [];
   class Image {
     constructor() { images.push(this); }
@@ -22,7 +23,7 @@ function boot({ mobile = false, loading = true } = {}) {
 }
 async function loaded(image) { const result = image.onload(); image.decodeOK(); await result; }
 const settle = () => new Promise(resolve => setImmediate(resolve));
-test('title waits for every visible asset to decode; inactive desktop atlas is not requested on mobile', async () => {
+test('high-resolution reveal waits for decoding; inactive desktop atlas is not requested on mobile', async () => {
   const t = boot({ mobile: true });
   assert.deepEqual(t.images.map(i => i.src), ['mobile.webp', 'ground.webp', 'sky.webp']);
   await loaded(t.images[0]); await loaded(t.images[1]);
@@ -52,4 +53,22 @@ test('cached composition can reveal immediately and an inactive bootstrap does n
   const t = boot(); await Promise.all(t.images.map(loaded)); await settle();
   assert.ok(!t.html.classList.contains('scene-loading'));
   assert.equal(boot({ loading: false }).images.length, 0);
+});
+
+test('inline composition survives slow loading and upgrades when the atlas arrives later', async () => {
+  const t = boot({ preview: true });
+  t.timers[0]();
+  assert.ok(t.root.classList.contains('scene--preview'));
+  assert.ok(!t.root.classList.contains('scene--noart'));
+  assert.ok(!t.html.classList.contains('scene-loading'));
+  await Promise.all(t.images.map(loaded)); await settle();
+  assert.ok(!t.root.classList.contains('scene--preview'));
+  assert.ok(!t.root.classList.contains('scene--noart'));
+});
+test('a broken CDN atlas keeps the inline composition visible', async () => {
+  const t = boot({ preview: true }); t.images[0].onerror();
+  await loaded(t.images[1]); await loaded(t.images[2]); await settle();
+  assert.ok(t.root.classList.contains('scene--preview'));
+  assert.ok(!t.root.classList.contains('scene--noart'));
+  assert.ok(!t.html.classList.contains('scene-loading'));
 });

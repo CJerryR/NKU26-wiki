@@ -14,6 +14,7 @@ a new ?v= hash. Layouts are never touched. Needs NumPy and Pillow.
 from __future__ import annotations
 
 import argparse
+import base64
 import hashlib
 import io
 import json
@@ -28,6 +29,14 @@ import scene2d as S  # noqa: E402
 
 BUDGET = {'desktop': 290_000, 'mobile': 165_000}   # same budgets as tools/pack_scene_atlas.py
 QUALITIES = (86, 82, 78, 74, 70, 66, 62, 58, 54, 50, 46, 42, 38, 34, 30, 26, 22)
+
+
+def preview(sheet: Image.Image) -> str:
+    scale = min(1.0, 240 / max(sheet.size))
+    small = S.resize_rgba(sheet, (max(1, round(sheet.width * scale)), max(1, round(sheet.height * scale))))
+    buf = io.BytesIO()
+    small.save(buf, 'WEBP', quality=35, method=6)
+    return 'data:image/webp;base64,' + base64.b64encode(buf.getvalue()).decode('ascii')
 
 
 def encode(sheet: Image.Image, budget: int) -> tuple[bytes, int]:
@@ -58,6 +67,7 @@ def compose(page: str, quiet: bool = False) -> Counter:
         data, q = encode(sheet, BUDGET[kind])
         (S.OUT / a['file']).write_bytes(data)
         a.update(bytes=len(data), quality=q, hash=hashlib.sha256(data).hexdigest()[:12],
+                 preview=preview(sheet),
                  style='handcut-v10 ' + ', '.join(f'{k} {v}' for k, v in sorted(used.items())))
         total.update(used)
         if not quiet:

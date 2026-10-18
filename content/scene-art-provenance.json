@@ -91,5 +91,6 @@
   "canonical_props": 91,
   "team_scientific_content_review": "remains pending",
   "import_processing": "Existing gpt_ingest sprite extraction/registration; nearly opaque matte paper alpha >=0.95 normalized to opaque for lossless alpha compression; transparent gaps and antialiased edges retained",
-  "atlas_checks": "41 scene tests passed; all 40 atlases within unchanged 290000/165000 byte budgets; canonical frames/layout coordinates unchanged"
+  "atlas_checks": "41 scene tests passed; all 40 atlases within unchanged 290000/165000 byte budgets; canonical frames/layout coordinates unchanged",
+  "first_paint": "Inline 240px atlas previews preserve complete composition while CDN images load; upgraded after decode, including loads arriving after timeout"
 }

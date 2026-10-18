@@ -35,7 +35,7 @@ export function initSceneHero(): void {
     if (!url || probed.has(url)) return;
     probed.add(url);
     const img = new Image();
-    img.onerror = () => root.classList.add('scene--noart');
+    img.onerror = () => { if (!root.dataset.scenePreview) root.classList.add('scene--noart'); };
     img.src = url;
   };
 

@@ -34,9 +34,8 @@
 }
 .scene--live .scene__layer { will-change: transform, opacity; }
 .scene--noart .scene__set, .scene--noart .scene__floor { display: none; }
-/* Reveal the first-screen composition in one paint, after image decoding. */
-.scene-loading .scene__set, .scene-loading .scene__title,
-.scene-loading .scene__ground, .scene-loading .scene__crumbs { visibility: hidden; }
+/* Inline atlas preview gives the title its complete composition immediately. */
+.scene--preview .scene__layer { background-image: var(--atlas-preview, var(--atlas)); }
 .scene--noground .scene__ground { display: none; }
 
 /* text */

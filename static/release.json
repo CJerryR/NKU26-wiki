@@ -1,7 +1,7 @@
 {
   "version": "10.1.0",
   "label": "V10.1 - AI illustrated opening scenes",
-  "prepared_at": "2026-10-18T19:35:34.196913+08:00",
+  "prepared_at": "2026-10-18T22:18:02.731680+08:00",
   "media": "84 unchanged original images plus 4 user-authorized GPS-only cleaned images; all decoded frames unchanged; 12 complete historical source documents",
   "release_kind": "stage",
   "team_content_review": "Scientific final review pending; source-version choices authorized by user",
@@ -11,7 +11,7 @@
     "published_at_local": "2026-10-18 05:04:34"
   },
   "release_id": "v10.1-ai-scenes-20261018",
-  "mobile_layout_check": "390px Members: CDN atlas rendered, no horizontal overflow; desktop Description opening and paper transition visually checked",
+  "mobile_layout_check": "390px Members rendered without overflow; desktop Description, Parts/plasmid, Attributions/puzzle checked; 4 second delayed CDN uses inline preview then upgrades",
   "source_fidelity": {
     "original_source_files_verified": 80,
     "original_pdf_files_verified": 18,

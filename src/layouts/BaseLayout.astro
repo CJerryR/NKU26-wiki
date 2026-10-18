@@ -35,7 +35,8 @@ const { title, description = site.description, current, skipTo = '#main', preloa
         // Reading must remain available even if the scene bootstrap fails.
         window.setTimeout(() => {
           if (!document.documentElement.classList.contains('scene-loading')) return;
-          document.querySelector('[data-scene]')?.classList.add('scene--noart', 'scene--noground', 'scene--nosky');
+          const scene = document.querySelector('[data-scene]');
+          if (scene && !scene.dataset.scenePreview) scene.classList.add('scene--noart', 'scene--noground', 'scene--nosky');
           document.documentElement.classList.remove('scene-loading');
         }, 3500);
       </script>
