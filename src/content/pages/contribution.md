@@ -8,6 +8,7 @@ crumbs:
 route: contribution
 search: true
 description: ''
+preserveAuthorFormatting: true
 meta: {}
 draft: false
 hidden: false
@@ -18,15 +19,15 @@ We want them to start from where we stopped—and go further.
 
 ## 1 Wet Lab {#wet-lab toc="Wet Lab"}
 
-Our Wet Lab work supports not only the construction and validation of the yeast biosensor in this project. More importantly, we intend to make the genetic parts, engineered strains, plasmids, donor DNA, experimental protocols and practical experience generated during our research available as **public resources for future iGEM teams** to reference, reuse and extend.
+<p>Our Wet Lab work supports not only the construction and validation of the yeast biosensor in this project. More importantly, we intend to make the genetic parts, engineered strains, plasmids, donor DNA, experimental protocols and practical experience generated during our research available as public resources for future iGEM teams to reference, reuse and extend. </p>
 
 These contributions allow subsequent teams to build on our established resources and experience, rather than constructing comparable yeast engineering systems entirely from scratch.
 
 ### 1.1 Parts and Collections {#parts-and-collections toc="Parts and Collections"}
 
-In this project, we have submitted **39 Parts and 4 Collections** to the iGEM Registry ([https://registry.igem.org/organisations/igem/6303](https://registry.igem.org/organisations/igem/6303)). These submissions cover multiple modules including yeast chassis construction, genome editing, tool plasmids, sgRNA, receptor expression and functional components of biosensors.
+In this project, we have submitted 39 Parts and 4 Collections to the iGEM Registry ([https://registry.igem.org/organisations/igem/6303](https://registry.igem.org/organisations/igem/6303)). These submissions cover multiple modules including yeast chassis construction, genome editing, tool plasmids, sgRNA, receptor expression and functional components of biosensors.
 
-Among all submitted parts, we designed and constructed **10 plasmids** (Table 1). These plasmids serve as core components of our project and also provide direct references for future teams undertaking similar yeast strain construction work.
+<p>Among all submitted parts, we designed and constructed 10 plasmids (Table 1). These plasmids serve as core components of our project and also provide direct references for future teams undertaking similar yeast strain construction work.</p>
 
 <div class="wiki-toolkit-block"><wiki-toolkit data-type="datatable" data-props="{&quot;_template&quot;:&quot;datatable&quot;,&quot;title&quot;:&quot;Table 1 Plasmids designed and constructed in this project&quot;,&quot;csv&quot;:&quot;Name,Number,Description\npRS315-TEF1p-GPR2-sfGFP,BBa_260J9X0X,For knock-in of the constitutively expressed GPR2 gene fused with sfGFP\npRS315-MjDOD-BvCYP76AD5,BBa_26PGUFWX,For knock-in of constitutively expressed betaxanthin-related genes and serves as a template for constructing inducible recombinant fragments\npRS315-sTF,BBa_2687EQID,For storage of recombinant fragments for knock-in of the synthetic transcription factor (sTF)\np414-Cas9-Leu,BBa_262NU08K,Cas9-carrying plasmid with altered nutritional selection marker\np426-SNR52p-gGal4-SUP4t,BBa_269ZKY8C,Carries gRNA sequence targeting the Gal4 gene\np426-SNR52p-gSTE12-SUP4t,BBa_2612RHXO,Carries gRNA sequence targeting the STE12 gene\np426-SNR52p-gSTE2-SUP4t,BBa_26TQ18PN,Carries gRNA sequence targeting the STE2 gene\npRS315-TEF1p-GPR2,BBa_26ZT9H48,For knock-in of the constitutively expressed GPR2 gene\npRS315-TEF1p-GPR2-N84V,BBa_2628FZFH,For knock-in of the constitutively expressed N84V-mutated GPR2 gene\npRS315-TEF1p-GPR2-V368R,BBa_26XA2JFQ,For knock-in of the constitutively expressed V368R-mutated GPR2 gene\n&quot;}"><div class="wiki-toolkit-fallback"><p><strong>Table 1 Plasmids designed and constructed in this project</strong></p><div class="table-wrap"><table><thead><tr><th>Name</th><th>Number</th><th>Description</th></tr></thead><tbody><tr><td>pRS315-TEF1p-GPR2-sfGFP</td><td>BBa_260J9X0X</td><td>For knock-in of the constitutively expressed GPR2 gene fused with sfGFP</td></tr><tr><td>pRS315-MjDOD-BvCYP76AD5</td><td>BBa_26PGUFWX</td><td>For knock-in of constitutively expressed betaxanthin-related genes and serves as a template for constructing inducible recombinant fragments</td></tr><tr><td>pRS315-sTF</td><td>BBa_2687EQID</td><td>For storage of recombinant fragments for knock-in of the synthetic transcription factor (sTF)</td></tr><tr><td>p414-Cas9-Leu</td><td>BBa_262NU08K</td><td>Cas9-carrying plasmid with altered nutritional selection marker</td></tr><tr><td>p426-SNR52p-gGal4-SUP4t</td><td>BBa_269ZKY8C</td><td>Carries gRNA sequence targeting the Gal4 gene</td></tr><tr><td>p426-SNR52p-gSTE12-SUP4t</td><td>BBa_2612RHXO</td><td>Carries gRNA sequence targeting the STE12 gene</td></tr><tr><td>p426-SNR52p-gSTE2-SUP4t</td><td>BBa_26TQ18PN</td><td>Carries gRNA sequence targeting the STE2 gene</td></tr><tr><td>pRS315-TEF1p-GPR2</td><td>BBa_26ZT9H48</td><td>For knock-in of the constitutively expressed GPR2 gene</td></tr><tr><td>pRS315-TEF1p-GPR2-N84V</td><td>BBa_2628FZFH</td><td>For knock-in of the constitutively expressed N84V-mutated GPR2 gene</td></tr><tr><td>pRS315-TEF1p-GPR2-V368R</td><td>BBa_26XA2JFQ</td><td>For knock-in of the constitutively expressed V368R-mutated GPR2 gene</td></tr></tbody></table></div></div><noscript><style>.wiki-toolkit-fallback{display:block!important}wiki-toolkit:not(:defined){min-height:0;border:0;background:none;animation:none}</style><p>Enable JavaScript to use the interactive controls.</p></noscript></wiki-toolkit></div>
 
@@ -36,7 +37,7 @@ Meanwhile, we have also established the following four Collections with clearly 
 
 This Collection contains key genetic parts for the engineering construction of yeast biosensor chassis, including parts related to chassis modification and functional module integration.
 
-With this Collection, we aim to provide a clear resource entry for future teams working on the engineering modification of *Saccharomyces cerevisiae*, allowing them to conveniently reference our chassis construction strategy.
+<p>With this Collection, we aim to provide a clear resource entry for future teams working on the engineering modification of <em>Saccharomyces cerevisiae</em>, allowing them to conveniently reference our chassis construction strategy.</p>
 
 #### Tool Plasmid Family {#tool-plasmid-family toc="Tool Plasmid Family"}
 
@@ -68,7 +69,7 @@ Figure 1 Workflow of engineered strain construction
 
 :::
 
-We consider strain construction itself to be an important Contribution. Rather than merely providing a final strain, we place greater emphasis on documenting the **stepwise construction process**.
+<p>We consider strain construction itself to be an important Contribution. Rather than merely providing a final strain, we place greater emphasis on documenting the stepwise construction process. </p>
 
 Therefore, we preserve the construction logic and genetic modification information of strains at different stages, offering references for future teams to reconstruct or further modify these strains according to their own requirements.
 
@@ -76,7 +77,7 @@ Therefore, we preserve the construction logic and genetic modification informati
 
 During project implementation, we systematically compiled the major Wet Lab methods involved in this project (Wet Lab-Experiments). We believe that Wet Lab Contribution should not only demonstrate successful experimental results. So we documented not only standard experimental protocols but also the practical experience accumulated throughout our experiments.
 
-During practical experiments, we also encountered difficulties including problematic PCR amplification, fluctuating yeast transformation efficiency and failed one-step cloning. Therefore, we compiled these experiences into **Troubleshooting & Lessons Learned**, aiming to convert the "cost of failures" into readily usable experience for future teams.
+<p>During practical experiments, we also encountered difficulties including problematic PCR amplification, fluctuating yeast transformation efficiency and failed one-step cloning. Therefore, we compiled these experiences into <strong>Troubleshooting &amp; Lessons Learned</strong>, aiming to convert the "cost of failures" into readily usable experience for future teams.</p>
 
 <figure class="wiki-media wiki-media--pdf"><div class="wiki-media__bar"><span class="wiki-media__kind">PDF</span><span class="wiki-media__title">Troubleshooting &amp; Lessons Learned</span><a class="wiki-media__action" href="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-cbf9a8013583-troubleshooting.pdf" target="_blank" rel="noopener noreferrer">Open PDF / Download</a></div><iframe class="wiki-media__frame" src="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-cbf9a8013583-troubleshooting.pdf" title="Troubleshooting &amp; Lessons Learned" loading="lazy" style="height:650px" referrerpolicy="no-referrer"></iframe></figure>
 

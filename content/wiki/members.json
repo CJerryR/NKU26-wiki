@@ -316,5 +316,6 @@
         }
       ]
     }
-  ]
+  ],
+  "preserveAuthorFormatting": true
 }

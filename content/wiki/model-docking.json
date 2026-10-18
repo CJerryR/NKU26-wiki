@@ -408,5 +408,6 @@
       "_template": "text",
       "body": "<span id=\"docking-references\" aria-hidden=\"true\"></span><span id=\"docking-reference-1\" aria-hidden=\"true\"></span><span id=\"docking-reference-2\" aria-hidden=\"true\"></span>"
     }
-  ]
+  ],
+  "preserveAuthorFormatting": true
 }

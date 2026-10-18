@@ -1,3 +1,4 @@
+import { initOriginalImages } from './original-images';
 import './toolkit';
 import { initPersonCards } from './person-cards';
 /** Entry point for every inner page (bundled by Astro). */
@@ -14,6 +15,7 @@ import { initSmooth } from './smooth';
 import { initWorkflow } from './workflow';
 
 function start(): void {
+  initOriginalImages();
   initGlass();
   initLiquidGlass();
   initNav();

@@ -8,6 +8,7 @@ crumbs:
   - Team
   - Members
 search: true
+preserveAuthorFormatting: true
 meta: {}
 draft: false
 hidden: false

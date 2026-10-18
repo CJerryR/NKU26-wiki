@@ -8,6 +8,7 @@ crumbs:
 route: model-ode
 search: true
 description: ''
+preserveAuthorFormatting: true
 meta: {}
 draft: false
 hidden: false
@@ -16,7 +17,7 @@ hidden: false
 Translation not proofread.
 :::
 
-## 3. ODE and the two-channel model | From signal response to target-density estimation {#ode-introduction toc="3. ODE and the two-channel model | From signal response to target-density estimation"}
+## ODE and the two-channel model | From signal response to target-density estimation {#ode-introduction toc="ODE and the two-channel model | From signal response to target-density estimation"}
 
 After receptors recognize ascarosides, the detection result still requires two transformations: how intracellular signaling forms a readable color, and how color reflects target-nematode density. When southern root-knot nematodes and free-living nematodes coexist, an increase in a single color may come from an increase in the target or from a change in the background.
 

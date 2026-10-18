@@ -8,6 +8,7 @@ crumbs:
   - Project
   - Description
 search: true
+preserveAuthorFormatting: true
 meta: {}
 draft: false
 hidden: false
@@ -16,25 +17,25 @@ hidden: false
 
 ### 1.1 Silent Killers Underground: The Urgent Threat of Plant-Parasitic Nematodes {#11-silent-killers-underground-the-urgent-threat-of-plant-parasitic-nematodes toc="Plant-Parasitic Nematodes"}
 
-**Plant-parasitic nematodes** are among the most destructive pathogens in global agricultural production. Widely distributed in cultivated soils, they parasitize plant roots, disrupt nutrient uptake pathways and trigger secondary diseases, posing severe threats to crop yield and quality. Statistically, plant-parasitic nematodes cause up to 157 billion dollars in annual crop losses worldwide across more than 20 major cash crops\[1]. Among them, sedentary endoparasitic nematodes represent the most harmful group due to their unique parasitic lifestyle, strong dispersal capacity and difficult control\[2]. As two representative species, Heterodera glycines and Meloidogyne incognita exhibit typical taxonomic and biological features. They continuously endanger the production of globally critical crops and serve as core model organisms for research on soil nematode management (Figure 1).
+<p>Plant-parasitic nematodes are among the most destructive pathogens in global agricultural production. Widely distributed in cultivated soils, they parasitize plant roots, disrupt nutrient uptake pathways and trigger secondary diseases, posing severe threats to crop yield and quality. Statistically, plant-parasitic nematodes cause up to 157 billion dollars in annual crop losses worldwide across more than 20 major cash crops<sup>[1]</sup>. Among them, sedentary endoparasitic nematodes represent the most harmful group due to their unique parasitic lifestyle, strong dispersal capacity and difficult control<sup>[2]</sup>. As two representative species, <em>Heterodera glycines</em> and <em>Meloidogyne incognita</em> exhibit typical taxonomic and biological features. They continuously endanger the production of globally critical crops and serve as core model organisms for research on soil nematode management (Figure 1).</p>
 
 :::figure{scale=70}
 
 ![Figure 1. Symptoms of two major plant-parasitic nematodes on soybean roots. (a) Meloidogyne incognita: obvious root galls formed on infected soybean roots. (b) Heterodera glycines: white lemon-shaped mature females protruding from soybean roots (arrows). Note that soybean cyst nematode does not form root galls.](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-a69f0a5adee6-fig1.avif)
 
-Figure 1. Symptoms of two major plant-parasitic nematodes on soybean roots. (a) Meloidogyne incognita: obvious root galls formed on infected soybean roots. (b) Heterodera glycines: white lemon-shaped mature females protruding from soybean roots (arrows). Note that soybean cyst nematode does not form root galls. Source: Management of Plant-Parasitic Nematodes in Florida Soybean Production (NG018), UF/IFAS EDIS. Used for educational demonstration only.
+<p><strong>Figure 1. Symptoms of two major plant-parasitic nematodes on soybean roots. </strong>(a) <em>Meloidogyne incognita</em>: obvious root galls formed on infected soybean roots. (b) <em>Heterodera glycines</em>: white lemon-shaped mature females protruding from soybean roots (arrows). Note that soybean cyst nematode does not form root galls. Source: <em>Management of Plant-Parasitic Nematodes in Florida Soybean Production</em> (NG018), UF/IFAS EDIS. Used for educational demonstration only.</p>
 
 :::
 
-Plant-parasitic nematodes of these two species exert substantial economic and ecological impacts. Heterodera glycines specifically parasitizes legumes such as soybean and common bean. After **second-stage juveniles (J2)** invade host roots, they secrete effectors to induce syncytial feeding sites, which leads to root lignification, stunting and chlorosis of plants. In heavily infested fields, soybean yield losses can reach 30%–80% or even total crop failure. The cysts of this nematode can remain dormant in soil for more than 10 years, serving as persistent primary inoculum sources that are hard to eradicate, making it the most devastating disease in major soybean-producing regions worldwide\[3].
+<p>Plant-parasitic nematodes of these two species exert substantial economic and ecological impacts. <em>Heterodera glycines</em> specifically parasitizes legumes such as soybean and common bean. After second-stage juveniles (J2) invade host roots, they secrete effectors to induce syncytial feeding sites, which leads to root lignification, stunting and chlorosis of plants. In heavily infested fields, soybean yield losses can reach 30%–80% or even total crop failure. The cysts of this nematode can remain dormant in soil for more than 10 years, serving as persistent primary inoculum sources that are hard to eradicate, making it the most devastating disease in major soybean-producing regions worldwide<sup>[3]</sup>.</p>
 
-As a polyphagous sedentary endoparasitic nematode, Meloidogyne incognita infects over 3000 plant species including vegetables, grain and cash crops such as tomato, cucumber, cotton and maize\[4]. Losses caused by this nematode are especially severe in protected agriculture due to continuous cropping obstacles. Notably, M. incognita secretes secondary metabolites such as 6-methoxybenzoxazolin-2-one to modulate the rhizosphere microbiome, improving its host-finding capacity and further expanding its damage range\[5].
+<p>As a polyphagous sedentary endoparasitic nematode, <em>Meloidogyne incognita</em> infects over 3000 plant species including vegetables, grain and cash crops such as tomato, cucumber, cotton and maize<sup>[4]</sup>. Losses caused by this nematode are especially severe in protected agriculture due to continuous cropping obstacles. Notably, <em>M. incognita</em> secretes secondary metabolites such as 6-methoxybenzoxazolin-2-one to modulate the rhizosphere microbiome, improving its host-finding capacity and further expanding its damage range<sup>[5]</sup>.</p>
 
 Co-infection by these two nematodes elevates the risk of complex soil-borne disease outbreaks and creates a “dual stress” on crop production. Therefore, systematic identification of detection and control targets for the two nematodes will not only enrich nematode management tools, but also provide universal strategies for eco-friendly control of nematode diseases in global agriculture.
 
 ### 1.2 Control Dilemma: The Critical Weakness of Current Nematode Control Systems {#control-dilemma toc="Control Dilemma"}
 
-Current major management strategies for nematode diseases include chemical fumigation, non-fumigant nematicides, novel nematicides, biological control, resistant cultivar breeding, and crop rotation. To maximize the efficacy of these control approaches while lowering their environmental risks, multiple detection technologies for plant-parasitic nematodes have been developed\[6]. Nevertheless, these methods generally suffer from **delayed detection, high cost, poor portability**, and heavy reliance on professional operators (Table 1).
+<p>Current major management strategies for nematode diseases include chemical fumigation, non-fumigant nematicides, novel nematicides, biological control, resistant cultivar breeding, and crop rotation. To maximize the efficacy of these control approaches while lowering their environmental risks, multiple detection technologies for plant-parasitic nematodes have been developed<sup>[6]</sup>. Nevertheless, these methods generally suffer from delayed detection, high cost, poor portability, and heavy reliance on professional operators (Table 1).</p>
 
 | Method                        | Cost     | Early-Warning Capacity | Portability | Professional Dependence |
 | ----------------------------- | -------- | ---------------------- | ----------- | ----------------------- |
@@ -52,33 +53,31 @@ Table 1. Comparison of detection methods for plant-parasitic nematodes
 
 ### 1.3 Dawn Breaks: Nematophagous Fungi Fuel Innovation in Nematode Detection {#nematophagous-fungi toc="Nematophagous Fungi"}
 
-Previous studies revealed that **ascaroside #18 (ascr#18)** acts as the dominant ascaroside across multiple genera of plant-parasitic nematodes (Figure 2).
+<p>Previous studies revealed that ascaroside #18 (ascr#18) acts as the dominant ascaroside across multiple genera of plant-parasitic nematodes (Figure 2). In contrast, larvae of free-living nematodes such as <em>Caenorhabditis elegans</em> mainly produce ascaroside #3 (ascr#3) and ascaroside #5 (ascr#5) (Figure 3)<sup>[7]</sup>.</p>
 
 :::figure
 
 ![Figure 2. Ascaroside profiles in plant-parasitic nematodes.](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-4aaded62bc25-fig2.avif)
 
-Figure 2. Ascaroside profiles in plant-parasitic nematodes. Source: Manosalva P, et al. (2015), Nature Communications, DOI:10.1038/ncomms8795.
+<p><strong>Figure 2. Ascaroside profiles in plant-parasitic nematodes. </strong>Source: Manosalva P, et al. (2015), <em>Nature Communications</em>, DOI:10.1038/ncomms8795.</p>
 
 :::
-
-In contrast, larvae of free-living nematodes such as Caenorhabditis elegans mainly produce **ascaroside #3 (ascr#3)** and ascaroside #5 (ascr#5) (Figure 3)\[7].
 
 :::figure
 
 ![Figure 3. Ascaroside profiles in free-living nematodes.](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-cdf748e96338-fig3.avif)
 
-Figure 3. Ascaroside profiles in free-living nematodes. Source: Lee D, et al. (2023), Proceedings of the National Academy of Sciences, DOI:10.1073/pnas.2221150120.
+<p><strong>Figure 3. Ascaroside profiles in free-living nematodes. </strong>Source: Lee D, et al. (2023), <em>Proceedings of the National Academy of Sciences</em>, DOI:10.1073/pnas.2221150120.</p>
 
 :::
 
-Recent studies demonstrate that the G protein-coupled receptor (GPCR) GPR2 from the nematode-trapping fungus Arthrobotrys oligospora can sense ascaroside #3 (ascr#3). It triggers a MAPK cascade to activate downstream gene expression and ultimately initiate predatory behavior (Figure 4) \[8]. This inspired our idea: we could repurpose this receptor to achieve early warning of plant-parasitic nematodes!
+<p>Recent studies demonstrate that the G protein-coupled receptor (GPCR) GPR2 from the nematode-trapping fungus <em>Arthrobotrys oligospora</em> can sense ascaroside #3 (ascr#3). It triggers a MAPK cascade to activate downstream gene expression and ultimately initiate predatory behavior (Figure 4)<sup> [8]</sup>. This inspired our idea: we could repurpose this receptor to achieve early warning of plant-parasitic nematodes!</p>
 
 :::figure
 
 ![Figure 4. GPCR-mediated prey pheromone sensing pathway in the nematode-trapping fungus Arthrobotrys oligospora.](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-df028eb5874f-fig4.avif)
 
-Figure 4. GPCR-mediated prey pheromone sensing pathway in the nematode-trapping fungus Arthrobotrys oligospora. Source: Kuo C-Y, et al. (2024), Nature Microbiology, DOI:10.1038/s41564-024-01647-4.
+<p><strong>Figure 4. GPCR-mediated prey pheromone sensing pathway in the nematode-trapping fungus </strong><strong><em>Arthrobotrys oligospora</em></strong><strong>. </strong>Source: Kuo C-Y, et al. (2024), <em>Nature Microbiology</em>, DOI:10.1038/s41564-024-01647-4.</p>
 
 :::
 
@@ -157,7 +156,7 @@ Figure 5. Schematic of ascaroside-specific yeast biosensor construction. Drawn w
 
 :::
 
-Literature shows that Saccharomyces cerevisiae serves as an excellent platform for GPCR display. With only two native GPCR signaling systems that are readily knockable, it is stable, fast-growing and easy to manipulate. Prior work has established yeast biosensing platforms to express heterologous G protein-coupled receptors (GPCRs) on yeast cell surfaces and produce visual readouts\[9]. We adopt similar strategies to display engineered GPR proteins and achieve visual signal output via betaxanthin.
+<p>Literature shows that <em>Saccharomyces cerevisiae</em> serves as an excellent platform for GPCR display. With only two native GPCR signaling systems that are readily knockable, it is stable, fast-growing and easy to manipulate. Prior work has established yeast biosensing platforms to express heterologous G protein-coupled receptors (GPCRs) on yeast cell surfaces and produce visual readouts<sup>[9]</sup>. We adopt similar strategies to display engineered GPR proteins and achieve visual signal output via betaxanthin.</p>
 
 A freeze-dried yeast color card is a proposed product format. Its feasibility depends on preservation, reactivation, containment, signal consistency, storage, and disposal. Freeze-drying must not be assumed to eliminate viable engineered cells. A manageable workflow with limited equipment is a development target; field performance, shelf life, turnaround time, and final cost remain to be established.
 
@@ -193,7 +192,7 @@ We build on a reported yeast signaling chassis with cascade amplification and in
 4. Abad P, Gouzy J, Aury J M, et al. Genome sequence of the metazoan plant-parasitic nematode meloidogyne incognita\[J]. Nature Biotechnology, 2008, 26(8): 909-915.
 5. Wu Z, Liu Z, Wang W, et al. Root-knot nematode meloidogyne incognita uses secondary-metabolite-mediated soil microbiome shifts to locate host plants\[J]. Nature Plants, 2026, 12(2): 337-355.
 6. Pun, T. B., Thapa Magar, R., Koech, R., Owen, K. J., & Adorada, D. L. (2024). Emerging Trends and Technologies Used for the Identification, Detection, and Characterisation of Plant-Parasitic Nematode Infestation in Crops. Plants, 13(21), 3041. [https://doi.org/10.3390/plants13213041](https://doi.org/10.3390/plants13213041).
-7. Manosalva, P., Manohar, M., von Reuss, S. et al. Conserved nematode signalling molecules elicit plant defenses and pathogen resistance. Nat Commun 6, 7795 (2015). [https://doi.org/10.1038/ncomms8795](https://doi.org/10.1038/ncomms8795).
+7. <span>Manosalva, P., Manohar, M., von Reuss, S. <em>et al.</em> Conserved nematode signalling molecules elicit plant defenses and pathogen resistance. <em>Nat Commun</em> <strong>6</strong>, 7795 (2015). <a href="https://doi.org/10.1038/ncomms8795">https://doi.org/10.1038/ncomms8795</a>. </span>
 8. Kuo, CY., Tay, R.J., Lin, HC. et al. The nematode-trapping fungus Arthrobotrys oligospora detects prey pheromones via G protein-coupled receptors. Nat Microbiol 9, 1738–1751 (2024). [https://doi.org/10.1038/s41564-024-01679-w](https://doi.org/10.1038/s41564-024-01679-w).
 9. Cong Fan, Nike He, Jifeng Yuan, Cascaded amplifying circuit enables sensitive detection of fungal pathogens, Biosensors and Bioelectronics, Volume 250, 2024, 116058, ISSN 0956-5663, [https://doi.org/10.1016/j.bios.2024.116058](https://doi.org/10.1016/j.bios.2024.116058).
 

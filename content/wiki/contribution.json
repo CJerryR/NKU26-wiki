@@ -26,7 +26,7 @@
     },
     {
       "_template": "text",
-      "body": "Our Wet Lab work supports not only the construction and validation of the yeast biosensor in this project. More importantly, we intend to make the genetic parts, engineered strains, plasmids, donor DNA, experimental protocols and practical experience generated during our research available as **public resources for future iGEM teams** to reference, reuse and extend."
+      "body": "<p>Our Wet Lab work supports not only the construction and validation of the yeast biosensor in this project. More importantly, we intend to make the genetic parts, engineered strains, plasmids, donor DNA, experimental protocols and practical experience generated during our research available as public resources for future iGEM teams to reference, reuse and extend. </p>"
     },
     {
       "_template": "text",
@@ -40,11 +40,11 @@
     },
     {
       "_template": "text",
-      "body": "In this project, we have submitted **39 Parts and 4 Collections** to the iGEM Registry ([https://registry.igem.org/organisations/igem/6303](https://registry.igem.org/organisations/igem/6303)). These submissions cover multiple modules including yeast chassis construction, genome editing, tool plasmids, sgRNA, receptor expression and functional components of biosensors."
+      "body": "In this project, we have submitted 39 Parts and 4 Collections to the iGEM Registry ([https://registry.igem.org/organisations/igem/6303](https://registry.igem.org/organisations/igem/6303)). These submissions cover multiple modules including yeast chassis construction, genome editing, tool plasmids, sgRNA, receptor expression and functional components of biosensors."
     },
     {
       "_template": "text",
-      "body": "Among all submitted parts, we designed and constructed **10 plasmids** (Table 1). These plasmids serve as core components of our project and also provide direct references for future teams undertaking similar yeast strain construction work."
+      "body": "<p>Among all submitted parts, we designed and constructed 10 plasmids (Table 1). These plasmids serve as core components of our project and also provide direct references for future teams undertaking similar yeast strain construction work.</p>"
     },
     {
       "_template": "datatable",
@@ -67,7 +67,7 @@
     },
     {
       "_template": "text",
-      "body": "With this Collection, we aim to provide a clear resource entry for future teams working on the engineering modification of *Saccharomyces cerevisiae*, allowing them to conveniently reference our chassis construction strategy."
+      "body": "<p>With this Collection, we aim to provide a clear resource entry for future teams working on the engineering modification of <em>Saccharomyces cerevisiae</em>, allowing them to conveniently reference our chassis construction strategy.</p>"
     },
     {
       "_template": "heading",
@@ -131,7 +131,7 @@
     },
     {
       "_template": "text",
-      "body": "We consider strain construction itself to be an important Contribution. Rather than merely providing a final strain, we place greater emphasis on documenting the **stepwise construction process**."
+      "body": "<p>We consider strain construction itself to be an important Contribution. Rather than merely providing a final strain, we place greater emphasis on documenting the stepwise construction process. </p>"
     },
     {
       "_template": "text",
@@ -149,7 +149,7 @@
     },
     {
       "_template": "text",
-      "body": "During practical experiments, we also encountered difficulties including problematic PCR amplification, fluctuating yeast transformation efficiency and failed one-step cloning. Therefore, we compiled these experiences into **Troubleshooting & Lessons Learned**, aiming to convert the \"cost of failures\" into readily usable experience for future teams."
+      "body": "<p>During practical experiments, we also encountered difficulties including problematic PCR amplification, fluctuating yeast transformation efficiency and failed one-step cloning. Therefore, we compiled these experiences into <strong>Troubleshooting &amp; Lessons Learned</strong>, aiming to convert the \"cost of failures\" into readily usable experience for future teams.</p>"
     },
     {
       "_template": "pdf",
@@ -582,5 +582,6 @@
       "body": "[15] UC Statewide Integrated Pest Management Program. Root-Knot Nematode: Tomato Pest Management Guidelines."
     }
   ],
-  "description": ""
+  "description": "",
+  "preserveAuthorFormatting": true
 }

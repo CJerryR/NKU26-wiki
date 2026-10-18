@@ -8,6 +8,7 @@ crumbs:
 route: education
 search: true
 description: ''
+preserveAuthorFormatting: true
 meta: {}
 draft: false
 hidden: false

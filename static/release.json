@@ -1,16 +1,28 @@
 {
   "version": "8.7.0",
-  "label": "V8.7 — author material restoration",
-  "prepared_at": "2026-10-18T16:01:25.288984+08:00",
-  "media": "18 original-runtime resources verified byte-for-byte on official CDN",
+  "label": "V8.7 — source fidelity restoration",
+  "prepared_at": "2026-10-18T16:58:04.178469+08:00",
+  "media": "18 byte-verified browser runtime resources; 127 official JSON chunks restore 84 unchanged author images; 4 original images await GPS metadata decision",
   "release_kind": "stage",
-  "team_content_review": "pending; author conflicts frozen",
+  "team_content_review": "pending; submission conflicts frozen",
   "published_baseline": {
     "version": "8.6.0",
     "commit": "16770d5c28ddf7bc41f8d90445c44d80a28801d5",
     "published_at_local": "2026-10-18 05:04:34"
   },
-  "release_id": "v8.7-faithful-20261018-1601",
-  "source_fingerprint": "f36c2b5e8c6b78e2775316b90895be78984e3c77fa3247b4d7528138667e6e95",
-  "mobile_layout_check": "26 HTML routes; 320/375/390/430px light and 390px dark; shared search label corrected"
+  "release_id": "v8.7-source-fidelity-20261018-165804",
+  "source_fingerprint": "b8b4441c3f2d35871df3a936a578c0e6761e5ff7bcf5214e79c1c90bc7e9fa0a",
+  "mobile_layout_check": "390px iframe: no horizontal overflow; source emphasis and original image verified; other widths retain prior checks",
+  "source_fidelity": {
+    "original_source_files_verified": 80,
+    "original_pdf_files_verified": 18,
+    "restored_original_image_files": 84,
+    "original_image_files_held": 4,
+    "source_tables": 10,
+    "source_table_cells": 297,
+    "ode_parameter_rows": 42,
+    "submission_conflicts": "pending user decisions",
+    "video": "blocked by Video Universe; moderator review required",
+    "dedicated_feishu_sources": "Contribution, Description and Engineering currently show deleted; retained last received snapshots"
+  }
 }

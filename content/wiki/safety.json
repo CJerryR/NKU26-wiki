@@ -18,7 +18,7 @@
     },
     {
       "_template": "text",
-      "body": "Biosafety is an essential component of project design. For our Nemaklear project, we carried out safety design in three main aspects: **biomaterial safety, laboratory operation safety, and productization & application safety**."
+      "body": "<p>Biosafety is an essential component of project design. For our Nemaklear project, we carried out safety design in three main aspects: biomaterial safety, laboratory operation safety, and productization &amp; application safety.</p>"
     },
     {
       "_template": "heading",
@@ -28,7 +28,7 @@
     },
     {
       "_template": "text",
-      "body": "In our project design, we adopted a dual strategy combining **auxotrophic markers and suicide genes** to strengthen our biosafety control system."
+      "body": "<p>In our project design, we adopted a dual strategy combining auxotrophic markers and suicide genes to strengthen our biosafety control system.</p>"
     },
     {
       "_template": "text",
@@ -45,7 +45,7 @@
     },
     {
       "_template": "text",
-      "body": "Secondly, we adopted the previously designed engineered yeast suicide switch, where the **doxycycline-inducible Tet-On system** drives Bax-mediated mitochondrial apoptosis (https://2025.igem.wiki/nku-china/safety-and-security). It achieves strict and precise control of cell survival time and has the characteristics of \"leak-free, high-sensitivity\" (Figure 2)."
+      "body": "Secondly, we adopted the previously designed engineered yeast suicide switch, where the doxycycline-inducible Tet-On system drives Bax-mediated mitochondrial apoptosis (https://2025.igem.wiki/nku-china/safety-and-security). It achieves strict and precise control of cell survival time and has the characteristics of \"leak-free, high-sensitivity\" (Figure 2)."
     },
     {
       "_template": "image",
@@ -64,7 +64,7 @@
     },
     {
       "_template": "text",
-      "body": "All experimental operators of this project have received specialized **laboratory safety training** at Nankai University and strictly follow standard operating procedures, including wearing full **personal protective equipment (PPE)** and conducting experiments inside biosafety cabinets. All experimental waste is disposed of in accordance with regulations for biohazardous waste to prevent leakage of biological materials."
+      "body": "<p>All experimental operators of this project have received specialized laboratory safety training at Nankai University and strictly follow standard operating procedures, including wearing full personal protective equipment (PPE) and conducting experiments inside biosafety cabinets. All experimental waste is disposed of in accordance with regulations for biohazardous waste to prevent leakage of biological materials.</p>"
     },
     {
       "_template": "image",
@@ -86,11 +86,11 @@
     },
     {
       "_template": "text",
-      "body": "The kit features an easy operation workflow, so field users can operate following instructions without professional microbiology training. The test strip substrate **physically immobilizes yeast cells**, further limiting the spread of engineered yeast."
+      "body": "<p>The kit features an easy operation workflow, so field users can operate following instructions without professional microbiology training. The test strip substrate physically immobilizes yeast cells, further limiting the spread of engineered yeast. </p>"
     },
     {
       "_template": "text",
-      "body": "After use, test strips and supporting consumables can be **collected and inactivated uniformly**, minimizing the risk of engineered yeast escaping into the natural environment."
+      "body": "<p>After use, test strips and supporting consumables can be collected and inactivated uniformly, minimizing the risk of engineered yeast escaping into the natural environment.<strong> </strong></p>"
     },
     {
       "_template": "heading",
@@ -132,7 +132,7 @@
     },
     {
       "_template": "text",
-      "body": "Meanwhile, all team members participating in experiments have taken and passed the **2026 laboratory safety access examination** of Nankai University and obtained corresponding qualification certificates. We achieved 100% qualified access, and all members are eligible to carry out wet-lab experiments."
+      "body": "<p>Meanwhile, all team members participating in experiments have taken and passed the 2026 laboratory safety access examination of Nankai University and obtained corresponding qualification certificates. We achieved 100% qualified access, and all members are eligible to carry out wet-lab experiments.</p>"
     },
     {
       "_template": "image",
@@ -166,7 +166,8 @@
     },
     {
       "_template": "text",
-      "body": "Meanwhile, the laboratory adheres to the highest safety standards and adopts meticulous measures to prevent the spread of hazardous chemicals and biomaterials. All experimental waste, including discarded microbial cultures, chemicals and consumables, is **strictly sorted, inactivated and collected centrally**. These wastes are managed by designated personnel of the school and sent to qualified institutions for standardized disposal, which eliminates environmental pollution and biosafety risks and ensures safe and compliant scientific research."
+      "body": "<p>Meanwhile, the laboratory adheres to the highest safety standards and adopts meticulous measures to prevent the spread of hazardous chemicals and biomaterials. All experimental waste, including discarded microbial cultures, chemicals and consumables, is strictly sorted, inactivated and collected centrally. These wastes are managed by designated personnel of the school and sent to qualified institutions for standardized disposal, which eliminates environmental pollution and biosafety risks and ensures safe and compliant scientific research.</p>"
     }
-  ]
+  ],
+  "preserveAuthorFormatting": true
 }

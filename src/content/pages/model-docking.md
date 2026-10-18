@@ -8,6 +8,7 @@ crumbs:
 route: model-docking
 search: true
 description: ''
+preserveAuthorFormatting: true
 meta: {}
 draft: false
 hidden: false

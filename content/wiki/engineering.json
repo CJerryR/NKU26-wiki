@@ -70,7 +70,7 @@
     },
     {
       "_template": "text",
-      "body": "Informed by results from the prior cycle, this iteration characterizes **heterologous expression and proper plasma membrane localization** of GPR2, establishing proof of feasibility for downstream chassis engineering."
+      "body": "<p>Informed by results from the prior cycle, this iteration characterizes heterologous expression and proper plasma membrane localization of GPR2, establishing proof of feasibility for downstream chassis engineering.</p>"
     },
     {
       "_template": "heading",
@@ -80,7 +80,7 @@
     },
     {
       "_template": "text",
-      "body": "To validate heterologous expression and proper plasma membrane localization of GPR2 in our host strain *S. cerevisiae* `CEN.PK2-1C`, we adopted the following experimental pipeline: assembly of the GPR2-sfGFP expression plasmid, gene knock-in mediated by yeast homologous recombination (HR), and fluorescence microscopy to characterize protein expression and subcellular localization. See Wet Lab-Results- DBTL-1 for detailed design and experimental protocols."
+      "body": "<p>To validate heterologous expression and proper plasma membrane localization of GPR2 in our host strain <em>S. cerevisiae</em> CEN.PK2-1C, we adopted the following experimental pipeline: assembly of the GPR2-sfGFP expression plasmid, gene knock-in mediated by yeast homologous recombination (HR), and fluorescence microscopy to characterize protein expression and subcellular localization. See Wet Lab-Results- DBTL-1 for detailed design and experimental protocols.</p>"
     },
     {
       "_template": "heading",
@@ -90,7 +90,7 @@
     },
     {
       "_template": "text",
-      "body": "Via homologous recombination (HR), we integrated the constitutive *GPR2-sfGFP* expression cassette into the `CEN.PK2-1C` genome (Figure 1)."
+      "body": "<p>Via homologous recombination (HR), we integrated the constitutive <em>GPR2-sfGFP</em> expression cassette into the CEN.PK2-1C genome (Figure 1).</p>"
     },
     {
       "_template": "image",
@@ -154,7 +154,7 @@
     },
     {
       "_template": "text",
-      "body": "Collectively, these data confirm heterologous expression and proper plasma membrane localization of GPR2 in `CEN.PK2-1C`, laying an essential foundation for our chassis engineering. We therefore advance to the next cycle to assemble the full signal-responsive engineered strain."
+      "body": "<p>Collectively, these data confirm heterologous expression and proper plasma membrane localization of GPR2 in CEN.PK2-1C, laying an essential foundation for our chassis engineering. We therefore advance to the next cycle to assemble the full signal-responsive engineered strain.</p>"
     },
     {
       "_template": "heading",
@@ -174,7 +174,7 @@
     },
     {
       "_template": "text",
-      "body": "Referring to previous work reported by Fan et al. [1][2], we assembled the ascaroside-sensitive yeast biosensor according to the pipeline illustrated in Figure 1."
+      "body": "<p>Referring to previous work reported by Fan et al. <sup>[1][2]</sup>, we assembled the ascaroside-sensitive yeast biosensor according to the pipeline illustrated in Figure 1. </p>"
     },
     {
       "_template": "image",
@@ -191,7 +191,7 @@
       "attributes": "#build-2 toc=\"Build | Assembling the Signal-Responsive Yeast Chassis\""
     },
     {
-      "body": "First, we knocked out the *Gal80* gene in `CEN.PK2-1C` to obtain the engineered strain `NKU-Y02` (Figure 2), which eliminates endogenous signal interference in this pathway.",
+      "body": "<p>First, we knocked out the <em>Gal80</em> gene in CEN.PK2-1C to obtain the engineered strain NKU-Y02 (Figure 2), which eliminates endogenous signal interference in this pathway. </p>",
       "left": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-9ec82d42de33-r2-9ec82d42de33-engineering-r2-eng-003.webp",
       "leftAlt": "Figure 2 Knockout of the *Gal80* Gene",
       "leftCaption": "Figure 2 Knockout of the *Gal80* Gene",
@@ -203,11 +203,11 @@
     },
     {
       "_template": "text",
-      "body": "Subsequently, we introduced MjDOD and BvCYP76AD5 driven by the bidirectional Gal1/10 promoter into `NKU-Y05` to generate the engineered strain `NKU-Y06` (Figure 4), realizing the visualization of signal output."
+      "body": "<p>Subsequently, we introduced MjDOD and BvCYP76AD5 driven by the bidirectional Gal1/10 promoter into NKU-Y05 to generate the engineered strain NKU-Y06 (Figure 4), realizing the visualization of signal output.</p>"
     },
     {
       "_template": "text",
-      "body": "Finally, we transformed the constitutive *GPR2* expression cassette into `NKU-Y06` to obtain the engineered strain `NKU-Y07` (Figure 5), completing the preliminary construction of the full engineered strain system and advancing the project to the testing phase."
+      "body": "<p>Finally, we transformed the constitutive <em>GPR2</em> expression cassette into NKU-Y06 to obtain the engineered strain NKU-Y07 (Figure 5), completing the preliminary construction of the full engineered strain system and advancing the project to the testing phase.</p>"
     },
     {
       "_template": "heading",
@@ -648,5 +648,6 @@
       "body": "[15] UC Statewide Integrated Pest Management Program. Root-Knot Nematode: Tomato Pest Management Guidelines."
     }
   ],
-  "description": ""
+  "description": "",
+  "preserveAuthorFormatting": true
 }

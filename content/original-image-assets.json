@@ -1,0 +1,1053 @@
+{
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-12cdb6f517ca-contribution.avif": {
+    "mime_type": "image/png",
+    "original_name": "流程图-菌株构建.png",
+    "source_dimensions": [
+      4225,
+      1894
+    ],
+    "sha256": "12cdb6f517caf882c6884ff6d8958cfd961dbd6ef687ef8686fce19f1b96377f",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-12cdb6f517ca-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-a69f0a5adee6-fig1.avif": {
+    "mime_type": "image/png",
+    "original_name": "Fig1.png",
+    "source_dimensions": [
+      1691,
+      834
+    ],
+    "sha256": "a69f0a5adee6f4388f1af9d34b39e64ce03cd699c6e3b54448ac5d2837e3ceb5",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-a69f0a5adee6-00.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-a69f0a5adee6-01.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-a69f0a5adee6-02.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-4aaded62bc25-fig2.avif": {
+    "mime_type": "image/png",
+    "original_name": "Fig2.png",
+    "source_dimensions": [
+      2211,
+      534
+    ],
+    "sha256": "4aaded62bc250e8fcbb73675af88a44c0a68fdd1da7850eb7bdb1d5775c04a6b",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-4aaded62bc25-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-cdf748e96338-fig3.avif": {
+    "mime_type": "image/png",
+    "original_name": "Fig3.png",
+    "source_dimensions": [
+      977,
+      300
+    ],
+    "sha256": "cdf748e963387f9347f476a705287826eb307c4560cc582736bcccb3989a9c30",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-cdf748e96338-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-df028eb5874f-fig4.avif": {
+    "mime_type": "image/png",
+    "original_name": "Fig4.png",
+    "source_dimensions": [
+      649,
+      612
+    ],
+    "sha256": "df028eb5874f500f7c538015e36500925e91db7d6f473d3f4b7d743e12f2738a",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-df028eb5874f-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-8314b17ab26f-fig5.avif": {
+    "mime_type": "image/png",
+    "original_name": "Fig5.png",
+    "source_dimensions": [
+      554,
+      283
+    ],
+    "sha256": "8314b17ab26f1f9ba87aff027df61e215347a9a202c62a2b0eaaa4cebe76dc17",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-8314b17ab26f-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-ad5d098cc617-fig1-3-2.avif": {
+    "mime_type": "image/png",
+    "original_name": "FIg1.3.2.png",
+    "source_dimensions": [
+      633,
+      467
+    ],
+    "sha256": "ad5d098cc61772025d525f3a7b033e2a009b2ff9fa99c1a9b714fff737485f59",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-ad5d098cc617-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-f9ddc932c78a-fig1-3-3.avif": {
+    "mime_type": "image/png",
+    "original_name": "Fig1.3.3.png",
+    "source_dimensions": [
+      863,
+      259
+    ],
+    "sha256": "f9ddc932c78a10176688cd8a58523da3793d79069609fcda16ce8dee9c1ec68d",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-f9ddc932c78a-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-03753b902e9a-fig1-3-4.avif": {
+    "mime_type": "image/png",
+    "original_name": "Fig1.3.4.png",
+    "source_dimensions": [
+      827,
+      435
+    ],
+    "sha256": "03753b902e9a1e9a948a4efcbfe936c8e5ee68c33f28129d0108769d93ad31ab",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-03753b902e9a-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-322c60bc159e-chang-wang.avif": {
+    "mime_type": "image/jpeg",
+    "original_name": "Wang Chang.jpg",
+    "source_dimensions": [
+      1728,
+      2368
+    ],
+    "sha256": "322c60bc159e7e5692efc4dde6fc2b062e2b615df598d97cf22691bb2995d1b4",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-322c60bc159e-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-e8eae705159b-chen-feiyue.avif": {
+    "mime_type": "image/jpeg",
+    "original_name": "Chen Feiyue.jpg",
+    "source_dimensions": [
+      2448,
+      3264
+    ],
+    "sha256": "e8eae705159b1473c7d3b2df82342929c60d792220ff44b0b1d8955acef8a6ef",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-e8eae705159b-00.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-e8eae705159b-01.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-e8eae705159b-02.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-8fa16e16e7a4-fu-xinya.avif": {
+    "mime_type": "image/jpeg",
+    "original_name": "Fu Xinya.jpg",
+    "source_dimensions": [
+      2736,
+      3648
+    ],
+    "sha256": "8fa16e16e7a49200917b22225a954fc9d71b1fc0cd905c0d0f47c7bd96f2c93a",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-8fa16e16e7a4-00.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-8fa16e16e7a4-01.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-8fa16e16e7a4-02.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-8fa16e16e7a4-03.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-f0001fee5950-huang-xinqi.avif": {
+    "mime_type": "image/jpeg",
+    "original_name": "Huang Xinqi.jpg",
+    "source_dimensions": [
+      3264,
+      2448
+    ],
+    "sha256": "f0001fee59508653008c41fc912182861823fca8b95fe3664b62a517ccbb9402",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-f0001fee5950-00.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-f0001fee5950-01.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-f0001fee5950-02.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-120e8273aa67-ivy-liu.avif": {
+    "mime_type": "image/jpeg",
+    "original_name": "Ivy Liu.jpg",
+    "source_dimensions": [
+      1279,
+      1706
+    ],
+    "sha256": "120e8273aa67bb31925fe5774a57dd6799f3faab78ec113f5a67d235729552c2",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-120e8273aa67-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-001ba276229e-shizhao-zheng.avif": {
+    "mime_type": "image/jpeg",
+    "original_name": "Zheng Shizhao.jpg",
+    "source_dimensions": [
+      3072,
+      4096
+    ],
+    "sha256": "001ba276229ed126610e34f1ba4ca8aabcbd4fde76094b30e7f2b8a9aa68d421",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-001ba276229e-00.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-001ba276229e-01.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-0f149e57e32b-shulan-ye.avif": {
+    "mime_type": "image/jpeg",
+    "original_name": "叶书兰.jpg",
+    "source_dimensions": [
+      4032,
+      3024
+    ],
+    "sha256": "0f149e57e32beef5df30583481cba0e999d5156424de0bcf83418e9a9afbda0a",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-0f149e57e32b-00.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-0f149e57e32b-01.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-0f149e57e32b-02.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-0f149e57e32b-03.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-08d95b754ff3-wang-qinghua.avif": {
+    "mime_type": "image/jpeg",
+    "original_name": "Wang Qinghua.jpg",
+    "source_dimensions": [
+      2048,
+      1536
+    ],
+    "sha256": "08d95b754ff344e4802dfcc67485eeead729346b15bfc6c2eafbe68807836185",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-08d95b754ff3-00.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-08d95b754ff3-01.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-08d95b754ff3-02.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-456cf76f9557-yanmei-song.avif": {
+    "mime_type": "image/jpeg",
+    "original_name": "宋滟镁.jpg",
+    "source_dimensions": [
+      2391,
+      3348
+    ],
+    "sha256": "456cf76f9557f0a23e6dafe82e7d91d3b9df94b79b634f7655beb0247f7c8561",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-456cf76f9557-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-ddac5d034258-zhanning-zhang.avif": {
+    "mime_type": "image/jpeg",
+    "original_name": "张展宁.jpg",
+    "source_dimensions": [
+      2316,
+      3088
+    ],
+    "sha256": "ddac5d0342584a652dae4bf5c8ac430a19fcd3c3e82ce8f4550233b6ef66e684",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-ddac5d034258-00.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-ddac5d034258-01.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-ddac5d034258-02.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-7db5eeb70e57-zhiyuan-guan.avif": {
+    "mime_type": "image/jpeg",
+    "original_name": "关志远.jpg",
+    "source_dimensions": [
+      1030,
+      1546
+    ],
+    "sha256": "7db5eeb70e5752b4776f48f8f14f7453b7b6260c759c1388bb2d622d22ba1de8",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-7db5eeb70e57-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-491794815e37-ziyi-peng.avif": {
+    "mime_type": "image/jpeg",
+    "original_name": "Peng Ziyi.jpg",
+    "source_dimensions": [
+      1728,
+      2432
+    ],
+    "sha256": "491794815e37f7b6a55c754f9ff1998422780693f9ad545e6efaaa04e0b4453a",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-491794815e37-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-6a3e31c31a57-fig1-1.avif": {
+    "mime_type": "image/png",
+    "original_name": "Fig1.1.png",
+    "source_dimensions": [
+      2336,
+      1528
+    ],
+    "sha256": "6a3e31c31a57e899555b8787d1203a0d0d396299d729144d828137917b025477",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-6a3e31c31a57-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-b9bf38820eb8-fig1-2.avif": {
+    "mime_type": "image/png",
+    "original_name": "Fig1.2.png",
+    "source_dimensions": [
+      2005,
+      1401
+    ],
+    "sha256": "b9bf38820eb89a29961c6b1a1a368abbbd42fc03791b1e53bb88605dbe85cd42",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-b9bf38820eb8-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-b5c833268081-fig1-3.avif": {
+    "mime_type": "image/png",
+    "original_name": "Fig1.3.png",
+    "source_dimensions": [
+      1393,
+      1027
+    ],
+    "sha256": "b5c833268081a26cbbdd05fa8d50eda6d1ca5a5c24ee572736da16ce7c1c0034",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-b5c833268081-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-66d05c9efec6-fig1-4.avif": {
+    "mime_type": "image/png",
+    "original_name": "Fig1.4.png",
+    "source_dimensions": [
+      1899,
+      569
+    ],
+    "sha256": "66d05c9efec618bc72ac7c0f486941ebe76f3385c917487d6fb80a88e70745f1",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-66d05c9efec6-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-ecc5dd246c41-fig1-5.avif": {
+    "mime_type": "image/png",
+    "original_name": "Fig1.5.png",
+    "source_dimensions": [
+      2103,
+      1105
+    ],
+    "sha256": "ecc5dd246c41f1552a7b8658589af29eb84b50c22f30803344f1d454521cb936",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-ecc5dd246c41-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-54bc3d3f3bd3-fig2-1-1.avif": {
+    "mime_type": "image/png",
+    "original_name": "Fig2.1.1.png",
+    "source_dimensions": [
+      2045,
+      661
+    ],
+    "sha256": "54bc3d3f3bd356ce8c9210504b3c3e33587e463becdae2af01b378fcba3a2ff7",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-54bc3d3f3bd3-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-f79bf47f490c-fig2-1-2.avif": {
+    "mime_type": "image/png",
+    "original_name": "Fig2.1.2.png",
+    "source_dimensions": [
+      2211,
+      1125
+    ],
+    "sha256": "f79bf47f490c9e56b81dda7edaa2005c208b97372f1f18fd4d5b5efae7d1544d",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-f79bf47f490c-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-e8d85e8ac64b-fig2-2-1.avif": {
+    "mime_type": "image/png",
+    "original_name": "Fig2.2.1.png",
+    "source_dimensions": [
+      2008,
+      1758
+    ],
+    "sha256": "e8d85e8ac64b215ac95ca31df480df91dbb486cef5e1961216852bcb6f32d489",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-e8d85e8ac64b-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-c9dd0c23eba9-fig2-2-2.avif": {
+    "mime_type": "image/png",
+    "original_name": "Fig2.2.2.png",
+    "source_dimensions": [
+      1697,
+      633
+    ],
+    "sha256": "c9dd0c23eba948ef56eb7c565bf865b89136ffd7683465f9563edd3ae299822a",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-c9dd0c23eba9-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-dd7eb6cbc85b-fig2-2-3.avif": {
+    "mime_type": "image/png",
+    "original_name": "Fig2.2.3.png",
+    "source_dimensions": [
+      2457,
+      639
+    ],
+    "sha256": "dd7eb6cbc85bc8751ae63c8fc39526d3e570cf43a3146a8cc009e8a2a1d3dbe6",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-dd7eb6cbc85b-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-ff3d00fb6194-fig2-2-4.avif": {
+    "mime_type": "image/png",
+    "original_name": "Fig2.2.4.png",
+    "source_dimensions": [
+      2076,
+      1789
+    ],
+    "sha256": "ff3d00fb619444334d582dc3129dc8eea32eb41d460b389e1bad2db7dda664cc",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-ff3d00fb6194-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-3b0197d8eb0c-fig2-2-5.avif": {
+    "mime_type": "image/png",
+    "original_name": "Fig2.2.5.png",
+    "source_dimensions": [
+      1732,
+      853
+    ],
+    "sha256": "3b0197d8eb0c762b2cc2e6ff71264935ca98f0f20a2e87d644882470b86ca3e7",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-3b0197d8eb0c-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-1e5da6928b73-fig2-3-1.avif": {
+    "mime_type": "image/png",
+    "original_name": "Fig2.3.1.png",
+    "source_dimensions": [
+      2434,
+      2097
+    ],
+    "sha256": "1e5da6928b7347b833db71d58699f356d12c26f38d963d6a738b6fc68e1fc5ab",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-1e5da6928b73-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-bad380137ce7-fig2-3-2.avif": {
+    "mime_type": "image/png",
+    "original_name": "Fig2.3.2.png",
+    "source_dimensions": [
+      2378,
+      1039
+    ],
+    "sha256": "bad380137ce7301ae84b1c9b8d84db7d361c3a46e1f11fadbf8bd4bdda8d6239",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-bad380137ce7-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-b80d515be3c2-fig2-3-3.avif": {
+    "mime_type": "image/png",
+    "original_name": "Fig2.3.3.png",
+    "source_dimensions": [
+      1931,
+      650
+    ],
+    "sha256": "b80d515be3c214b5ae831db560580d5e23a87c7eb5aa1713f3c99144cccbc2b4",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-b80d515be3c2-00.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-b80d515be3c2-01.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-e034ba0dffbf-fig2-4-1.avif": {
+    "mime_type": "image/png",
+    "original_name": "Fig2.4.1.png",
+    "source_dimensions": [
+      2188,
+      979
+    ],
+    "sha256": "e034ba0dffbfa6ff56b2e2e5cb8b6d9e17ec130aa3cc2893fb8900da52ba112c",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-e034ba0dffbf-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-2e431ac99756-fig2-4-10.avif": {
+    "mime_type": "image/png",
+    "original_name": "Fig2.4.10.png",
+    "source_dimensions": [
+      2373,
+      743
+    ],
+    "sha256": "2e431ac997566149d4a75899bd10fa7d5cddeefd33ffd9a03748974264dfca03",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-2e431ac99756-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-a4204d900f23-fig2-4-11.avif": {
+    "mime_type": "image/png",
+    "original_name": "Fig2.4.11.png",
+    "source_dimensions": [
+      1515,
+      345
+    ],
+    "sha256": "a4204d900f2389f9fff81bfef4556214e3ca1fe1b0b59ccddea0c67f75bda985",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-a4204d900f23-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-520027082450-fig2-4-2.avif": {
+    "mime_type": "image/png",
+    "original_name": "Fig2.4.2.png",
+    "source_dimensions": [
+      2241,
+      1542
+    ],
+    "sha256": "520027082450c536a999ea683858cd2df5693cbd73ebca40b82de8f6a08f6246",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-520027082450-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-35c2440a69e2-fig2-4-3.avif": {
+    "mime_type": "image/png",
+    "original_name": "Fig2.4.3.png",
+    "source_dimensions": [
+      1902,
+      676
+    ],
+    "sha256": "35c2440a69e2b1dfcec7a4cb831f39ce8239216ff959deb1d392d988e5074610",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-35c2440a69e2-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-d982a8b520ff-fig2-4-4.avif": {
+    "mime_type": "image/png",
+    "original_name": "Fig2.4.4.png",
+    "source_dimensions": [
+      1916,
+      1573
+    ],
+    "sha256": "d982a8b520ffc2a957e7a0f21db9888183aabc2c319997722941f8e528b5329d",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-d982a8b520ff-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-69de44f60d1c-fig2-4-5.avif": {
+    "mime_type": "image/png",
+    "original_name": "Fig2.4.5.png",
+    "source_dimensions": [
+      1373,
+      1390
+    ],
+    "sha256": "69de44f60d1c3fd33266154392db4dde19fed8ca5d66877c44fd12a46347190d",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-69de44f60d1c-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-d5131d0a322f-fig2-4-6.avif": {
+    "mime_type": "image/png",
+    "original_name": "Fig2.4.6.png",
+    "source_dimensions": [
+      1443,
+      1347
+    ],
+    "sha256": "d5131d0a322fed436ed4f00a9257d5de9f6aa09ae15870ad535f553dba239af8",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-d5131d0a322f-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-3fc8bdc1eede-fig2-4-7.avif": {
+    "mime_type": "image/png",
+    "original_name": "Fig2.4.7.png",
+    "source_dimensions": [
+      1395,
+      899
+    ],
+    "sha256": "3fc8bdc1eede7096ce04589985cc1cab883b9e4a2fd5b984bc44cc9f1ae5e2b9",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-3fc8bdc1eede-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-b849be4108e2-fig2-4-8.avif": {
+    "mime_type": "image/png",
+    "original_name": "Fig2.4.8.png",
+    "source_dimensions": [
+      1804,
+      1783
+    ],
+    "sha256": "b849be4108e20dfd34c406a05cfa6acd554f16b0ef207408fb6ff19d55d94f65",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-b849be4108e2-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-17c9afd1d0d7-fig2-4-9.avif": {
+    "mime_type": "image/png",
+    "original_name": "Fig2.4.9.png",
+    "source_dimensions": [
+      2096,
+      1105
+    ],
+    "sha256": "17c9afd1d0d700df2a680ec6f70a77316dcde661b6b4e22c489fd05575caa8c9",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-17c9afd1d0d7-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-0626938f4f22-r2-0626938f4f22-fig4.avif": {
+    "mime_type": "image/png",
+    "original_name": "Fig4.png",
+    "source_dimensions": [
+      2208,
+      1675
+    ],
+    "sha256": "0626938f4f225e16c27bdd8609f1fd53d86001096fb6d0a484deef37d52fb45d",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-0626938f4f22-00.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-0626938f4f22-01.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-0626938f4f22-02.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-3dcf1a9d6eb4-r2-07dd27072c49-fig6.avif": {
+    "mime_type": "image/png",
+    "original_name": "r2-07dd27072c49-fig6.png",
+    "source_dimensions": [
+      3515,
+      1655
+    ],
+    "sha256": "3dcf1a9d6eb4d50588e17d3acaaf880fe064e5e7b52cdcbf11059efdfba882db",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-3dcf1a9d6eb4-00.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-3dcf1a9d6eb4-01.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-3dcf1a9d6eb4-02.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-3dcf1a9d6eb4-03.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-3dcf1a9d6eb4-04.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-3dcf1a9d6eb4-05.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-10dfc2855aa3-r2-10dfc2855aa3-engineering-r2-eng-004.webp": {
+    "mime_type": "image/webp",
+    "original_name": "04-Project-Engineering-Fourth-Cycle-Wet-Lab-Figure-3.webp",
+    "source_dimensions": [
+      750,
+      604
+    ],
+    "sha256": "10dfc2855aa34039217511b1df8781eb2070c8a034461c621c967f2fab43f8ff",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-10dfc2855aa3-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-28480e6cf5ad-r2-28480e6cf5ad-fig2-5-2.avif": {
+    "mime_type": "image/png",
+    "original_name": "Fig2.5.2.png",
+    "source_dimensions": [
+      1982,
+      1869
+    ],
+    "sha256": "28480e6cf5ad335fe0afb6f63e35fe775359200739c5b979e6cff79747cd6e3c",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-28480e6cf5ad-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-54382c8e77e7-r2-54382c8e77e7-fig1.avif": {
+    "mime_type": "image/png",
+    "original_name": "Fig1.png",
+    "source_dimensions": [
+      2278,
+      831
+    ],
+    "sha256": "54382c8e77e7e3ebea154e1eb51283aaa98b7c3043efbe3c44ecf681c5a7551e",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-54382c8e77e7-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-5c10cfcd0e4c-r2-5c10cfcd0e4c-fig2-5-1.avif": {
+    "mime_type": "image/png",
+    "original_name": "Fig2.5.1.png",
+    "source_dimensions": [
+      1773,
+      979
+    ],
+    "sha256": "5c10cfcd0e4c68733f56b2c36b92a46a32aca2e54134d4c3f6015dd6e8e81a59",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-5c10cfcd0e4c-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-616aeb24f5f8-r2-616aeb24f5f8-fig5.avif": {
+    "mime_type": "image/png",
+    "original_name": "Fig5.png",
+    "source_dimensions": [
+      3474,
+      2292
+    ],
+    "sha256": "616aeb24f5f82f3e6bf141c441dc02e1bd2b9a720735b911c8a130d4865b8a10",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-616aeb24f5f8-00.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-616aeb24f5f8-01.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-616aeb24f5f8-02.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-616aeb24f5f8-03.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-66c1379247d8-r2-66c1379247d8-fig2-4-12.avif": {
+    "mime_type": "image/png",
+    "original_name": "Fig2.4.12.png",
+    "source_dimensions": [
+      1979,
+      1175
+    ],
+    "sha256": "66c1379247d8c8797300d463e172b1c14432027cfd74379c0ed3ab067804e274",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-66c1379247d8-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-9ec82d42de33-r2-9ec82d42de33-engineering-r2-eng-003.webp": {
+    "mime_type": "image/webp",
+    "original_name": "03-Project-Engineering-Fourth-Cycle-Wet-Lab-Figure-2.webp",
+    "source_dimensions": [
+      750,
+      382
+    ],
+    "sha256": "9ec82d42de33ce5a4b8321de1f2204cf2a918d0a5c1ee08a5c31a6abd4f0c646",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-9ec82d42de33-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-cfa8f763f0dd-r2-cfa8f763f0dd-fig2.avif": {
+    "mime_type": "image/png",
+    "original_name": "Fig2.png",
+    "source_dimensions": [
+      1040,
+      582
+    ],
+    "sha256": "cfa8f763f0dd9b6bffc08cd7ec8e0f51b92277afaf8d94100968d7ec8c2c2c08",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-cfa8f763f0dd-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-d2f6a13810e7-r2-d2f6a13810e7-engineering-r2-eng-002.webp": {
+    "mime_type": "image/webp",
+    "original_name": "02-Project-Engineering-Fourth-Cycle-Wet-Lab-Figure-1.webp",
+    "source_dimensions": [
+      750,
+      161
+    ],
+    "sha256": "d2f6a13810e703e4c81ec4906bbe49d719d1fe7544e3c2dc0d16a6247749f5b3",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-d2f6a13810e7-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-e81fa7011e20-r2-e81fa7011e20-engineering-r2-eng-001.webp": {
+    "mime_type": "image/webp",
+    "original_name": "01-Project-Engineering-Third-Cycle-Wet-Lab-Figure-1.webp",
+    "source_dimensions": [
+      750,
+      524
+    ],
+    "sha256": "e81fa7011e207bd936b535a0bef918722aa9b6e8a9ba04659b896105b4e89aee",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-e81fa7011e20-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-fb3b2741b5dc-r2-fb3b2741b5dc-fig3.avif": {
+    "mime_type": "image/png",
+    "original_name": "Fig3.png",
+    "source_dimensions": [
+      831,
+      371
+    ],
+    "sha256": "fb3b2741b5dcdf5fa59cd49ccc41da78afcd2b6df2646a4e73276bd6152cf326",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-fb3b2741b5dc-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-8067bba1941d-fig-3-2-density-response.avif": {
+    "mime_type": "image/png",
+    "original_name": "fig-3-2-density-response.png",
+    "source_dimensions": [
+      4200,
+      2280
+    ],
+    "sha256": "8067bba1941d37a34073fa4ba28b112ec1e063c77ee32f31edda1608cc8fd217",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-8067bba1941d-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-0bdc26ce6e27-fig-3-3-net-timecourse.avif": {
+    "mime_type": "image/png",
+    "original_name": "fig-3-3-net-timecourse.png",
+    "source_dimensions": [
+      4200,
+      2280
+    ],
+    "sha256": "0bdc26ce6e2703fccf35a55f634e0cde0b1d2e0cb288ca39b26aa531c6da9ad1",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-0bdc26ce6e27-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-2b72620e598d-fig-3-4-signal-space.avif": {
+    "mime_type": "image/png",
+    "original_name": "fig-3-4-signal-space.png",
+    "source_dimensions": [
+      3600,
+      2760
+    ],
+    "sha256": "2b72620e598dd1e745a8bb8cba1b1a54474feecb08045a999dc95f2c713ee336",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-2b72620e598d-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-9fee4e88d157-fig-3-5-prediction-comparison-wiki.avif": {
+    "mime_type": "image/png",
+    "original_name": "fig-3-5-prediction-comparison-wiki.png",
+    "source_dimensions": [
+      4800,
+      2340
+    ],
+    "sha256": "9fee4e88d157942beb7823735b366a318a2c50857e17467e23bcc83f517b11ea",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-9fee4e88d157-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-08befb7e1df2-docking-source-01.avif": {
+    "mime_type": "image/png",
+    "original_name": "image1.png",
+    "source_dimensions": [
+      1132,
+      1800
+    ],
+    "sha256": "08befb7e1df2c5b9462bc24e965c5944e879fe16c51b811c7b46cc6dd2a8047f",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-08befb7e1df2-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-c4d04847c0b3-docking-source-02.avif": {
+    "mime_type": "image/png",
+    "original_name": "image2.png",
+    "source_dimensions": [
+      4000,
+      3000
+    ],
+    "sha256": "c4d04847c0b38233b009b46e22743475f8ef4a10282585ec1fb05da5a6615ba7",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-c4d04847c0b3-00.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-c4d04847c0b3-01.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-c4d04847c0b3-02.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-a42c709871dd-docking-source-03.avif": {
+    "mime_type": "image/png",
+    "original_name": "image3.png",
+    "source_dimensions": [
+      2400,
+      2382
+    ],
+    "sha256": "a42c709871dd64c2da35e73101e82fedfc223124f9d9f61cf818fbad3ff8eac4",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-a42c709871dd-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-bd6f41305f4d-docking-source-04.avif": {
+    "mime_type": "image/png",
+    "original_name": "image4.png",
+    "source_dimensions": [
+      4000,
+      3000
+    ],
+    "sha256": "bd6f41305f4d5911876494088c233e1596485c40c58d02ef17e97af8d7e0f194",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-bd6f41305f4d-00.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-bd6f41305f4d-01.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-bd6f41305f4d-02.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-2e0dde6cfeee-docking-source-05.avif": {
+    "mime_type": "image/png",
+    "original_name": "image5.png",
+    "source_dimensions": [
+      2400,
+      2312
+    ],
+    "sha256": "2e0dde6cfeeec5c766a74da8c8135bc4136a9e0ef926d1e1142bb355a580ff09",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-2e0dde6cfeee-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-290633cd2c70-docking-source-07.avif": {
+    "mime_type": "image/png",
+    "original_name": "image7.png",
+    "source_dimensions": [
+      4000,
+      3000
+    ],
+    "sha256": "290633cd2c70ae1ef4bab3d1b6d5bd92ea5d1d767932d35022a8d215097bcc78",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-290633cd2c70-00.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-290633cd2c70-01.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-290633cd2c70-02.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-290633cd2c70-03.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-fdc859343d6f-docking-source-08.avif": {
+    "mime_type": "image/png",
+    "original_name": "image8.png",
+    "source_dimensions": [
+      1709,
+      2400
+    ],
+    "sha256": "fdc859343d6f2bc78154fe8230db84cbcd56cfb6cb67408e05f71e0875754660",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-fdc859343d6f-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-1239c64d4af0-docking-source-09.avif": {
+    "mime_type": "image/png",
+    "original_name": "image9.png",
+    "source_dimensions": [
+      4000,
+      3000
+    ],
+    "sha256": "1239c64d4af05ba8de6dfa7807f2b3c89ecc0a71d599d3b34598c1d91a1f7b39",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-1239c64d4af0-00.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-1239c64d4af0-01.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-1239c64d4af0-02.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-1239c64d4af0-03.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-c89c70191520-docking-source-10.avif": {
+    "mime_type": "image/png",
+    "original_name": "image10.png",
+    "source_dimensions": [
+      2400,
+      1536
+    ],
+    "sha256": "c89c701915202d1b430be058c93392d3b06b76df232bb525439708337dcf1676",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-c89c70191520-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-ed8369c53675-docking-source-11.avif": {
+    "mime_type": "image/png",
+    "original_name": "image11.png",
+    "source_dimensions": [
+      2666,
+      2000
+    ],
+    "sha256": "ed8369c53675bd1f91228ba42f9c2168c35799957eec3c6df7171439a37aafe9",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-ed8369c53675-00.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-ed8369c53675-01.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-9b84a8b736bb-docking-source-12.avif": {
+    "mime_type": "image/png",
+    "original_name": "image12.png",
+    "source_dimensions": [
+      2400,
+      1546
+    ],
+    "sha256": "9b84a8b736bba3d69f568b2877059a32658c63fb6a194a69c00764806528a127",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-9b84a8b736bb-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-a7066f8f852e-docking-source-13.avif": {
+    "mime_type": "image/png",
+    "original_name": "image13.png",
+    "source_dimensions": [
+      2666,
+      2000
+    ],
+    "sha256": "a7066f8f852e01e51ee5220c2db603f163737be193a1bd09cbe77ababa423706",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-a7066f8f852e-00.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-a7066f8f852e-01.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-848ee038bf41-docking-source-14.avif": {
+    "mime_type": "image/png",
+    "original_name": "image14.png",
+    "source_dimensions": [
+      2400,
+      1867
+    ],
+    "sha256": "848ee038bf4146f4101da3ee06b464da1bc29e2e9e7304831fddf3dd23355fc9",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-848ee038bf41-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-bbf52d6e8540-docking-source-15.avif": {
+    "mime_type": "image/png",
+    "original_name": "image15.png",
+    "source_dimensions": [
+      1823,
+      602
+    ],
+    "sha256": "bbf52d6e854000ffd327b7e147417385b9add3981365cb9e3f9ac00e86f64c75",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-bbf52d6e8540-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-f41bd79ce2d8-fig3-1-1.avif": {
+    "mime_type": "image/jpeg",
+    "original_name": "Fig3.1.1.jpg",
+    "source_dimensions": [
+      1706,
+      1279
+    ],
+    "sha256": "f41bd79ce2d8d2afba3ec0e4ae508f2d683e63aaddc0a6367aef9a8cf62a2b59",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-f41bd79ce2d8-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-06c56594b1d7-fig3-1-2.avif": {
+    "mime_type": "image/png",
+    "original_name": "Fig3.1.2.png",
+    "source_dimensions": [
+      1096,
+      662
+    ],
+    "sha256": "06c56594b1d78b22594a5f009ef52608001f1b5d0684d2086095b4998c61b489",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-06c56594b1d7-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-48ee38c731e9-fig3-1-4.avif": {
+    "mime_type": "image/jpeg",
+    "original_name": "Fig3.1.4.jpg",
+    "source_dimensions": [
+      1260,
+      1680
+    ],
+    "sha256": "48ee38c731e997714b5f7d3814bc8cb155cc543c89d67bfd0d3dfe54b4c6eb9a",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-48ee38c731e9-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-ea1a49677396-fig3-1-5.avif": {
+    "mime_type": "image/jpeg",
+    "original_name": "Fig3.1.5.jpg",
+    "source_dimensions": [
+      3072,
+      3072
+    ],
+    "sha256": "ea1a496773964a222ed67ccaa75f2c2a793e056a1bd3cae26e253de3ee321422",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-ea1a49677396-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-429a2f899f67-fig3-1-3a-hd.avif": {
+    "mime_type": "image/jpeg",
+    "original_name": "Fig3.1.3a-hd.jpg",
+    "source_dimensions": [
+      4368,
+      4368
+    ],
+    "sha256": "429a2f899f679b430bd5c64c1854b2725d865f8badd69e7906eaecd11f3aae42",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-429a2f899f67-00.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-429a2f899f67-01.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-429a2f899f67-02.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-429a2f899f67-03.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-86797ed4c424-fig3-1-3b-hd.avif": {
+    "mime_type": "image/png",
+    "original_name": "Fig3.1.3b-hd.png",
+    "source_dimensions": [
+      1280,
+      1024
+    ],
+    "sha256": "86797ed4c424de723b33e3e1dc533c6103d9f1fab18e95cf82053919d38c7f87",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-86797ed4c424-00.json"
+    ]
+  }
+}

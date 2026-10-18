@@ -12,7 +12,7 @@
   "search": true,
   "blocks": [
     {
-      "body": "This page summarizes all **Parts and Collections** submitted in this project.\n",
+      "body": "<p>This page summarizes all Parts and Collections submitted in this project.</p>",
       "_template": "text"
     },
     {
@@ -29,8 +29,937 @@
     },
     {
       "title": "Basic Parts",
-      "csv": "Name,Part Number,Type,Description\nGal80 5’ homology region,BBa_26L2KJQX,Homologous Region,This part is designed for the assembly of Gal80 knockout cassette\nGal80 3’ homology region,BBa_26BZN7AE,Homologous Region,This part is designed for the assembly of Gal80 knockout cassette\nGPR2 cDNA,BBa_26P7J5V3,CDNA Match,This cDNA encodes GPR2 from the nematode-trapping fungus Orbilia oligospora\nSTE2 5’ homology region,BBa_260V498D,Homologous Region,This part is designed to replace yeast STE2 with GPR2-sfGFP through homologous recombination (HR)\nSTE2 3’ homology region,BBa_260VULNA,Homologous Region,This part is designed to replace yeast STE2 with GPR2-sfGFP through homologous recombination (HR)\nsfGFP,BBa_26MAY2X6,CDS,Superfolder green fluorescent protein (sfGFP) serves as a fluorescent reporter to assist in determining the subcellular localization of GPR2 in yeast cells\nGAL1 and GAL10 bidirectional promoters,BBa_26TDFVI3,Promoter,\"The GAL1/GAL10 bidirectional promoters are derived from Saccharomyces cerevisiae, enabling galactose-inducible bidirectional gene expression in yeast\"\npRS315 backbone,BBa_26R6CTVF,Plasmid,\"This vector for one-step cloning carries the ampicillin resistance gene and restriction sites, allowing autonomous replication in E. coli\"\nGal4 3‘ homology region,BBa_26KPW3LZ,Homologous Region,This part is designed to replace yeast Gal4 with DOD-CYP76AD5 through homologous recombination (HR).\nGal4 5‘ homology region,BBa_26T1QDYX,Homologous Region,This part is designed to replace yeast Gal4 with DOD-CYP76AD5 through homologous recombination (HR)\nMjDOD,BBa_26ITFFZ0,CDNA Match,\"This gene encodes L-DOPA dioxygenase, which oxidizes L-DOPA to betalamic acid\"\nBvCYP76AD5,BBa_26CD571A,CDNA Match,\"This gene encodes tyrosine hydroxylase/cyclase, which converts L-tyrosine into L-DOPA\"\np414-TEF1p-Cas9-CYC1t,BBa_26RDB5XU,Circular Plasmid,\"This construct contains Cas9 CDS and Trp marker, which drives constitutive Cas9 expression in yeast for CRISPR editing.\"\nSTE12 5' homology region,BBa_26CG7I8I,Homologous Region,This part is designed to insert sTF into yeast through homologous recombination (HR)\nSTE12 3' homology region,BBa_26BLOJK0,Homologous Region,This part is designed to insert sTF into yeast through homologous recombination (HR)\np406TEF1,BBa_26Y1JMT1,Circular Plasmid,\"This part contains the TEF1 promoter, CYC1 terminator and URA3 marker gene for amplification of these components.\"\np426-SNR52p-gRNA.CAN1.Y-SUP4t,BBa_266EBQE1,Circular Plasmid,\"This part is a yeast sgRNA expression vector containing the SNR52 promoter and SUP4 terminator, which enables efficient sgRNA transcription and assists CRISPR-Cas9-mediated genome editing in yeast\"\np414-Cas9-Leu,BBa_262NU08K,Plasmid,This part is a yeast Cas9 expression vector whose  original nutritional selection marker has been replaced by LEU2\ngSTE12,BBa_26VBBFVU,GRNA Gene,This part contains the DNA template for gSTE12 gRNA\ngGal4,BBa_26AIA84W,GRNA Gene,This part contains the DNA template for gGal4 gRNA\ngSTE2,BBa_26U6Z74A,GRNA Gene,This part contains the DNA template for gSTE2 gRNA\nGPR2（N84V） cDNA,BBa_26YCPMQN,CDNA Match,This part contains the mutant cDNA sequence of GPR2\nGPR2（V368R） cDNA,BBa_2683TK6Y,CDNA Match,This part contains the mutant cDNA sequence of GPR2\np426-SNR52p-gSTE2-SUP4t,BBa_26TQ18PN,Plasmid,This part contains the DNA sequence encoding gRNA that targets the STE2 gene\np426-SNR52p-gSTE12-SUP4t,BBa_2612RHXO,Plasmid,This part contains the DNA sequence encoding gRNA that targets the STE12 gene\np426-SNR52p-gGal4-SUP4t,BBa_269ZKY8C,Plasmid,This part contains the DNA sequence encoding gRNA that targets the Gal4 gene\npScCEN-ADH1-FMN(yeast)-Myc-6×His,BBa_26RANQPA,Plasmid,\"This part is the pScCEN plasmid backbone carrying the ADH1 promoter, yeast-derived FMN gene, Myc tag and 6×His tag\"\n",
-      "_template": "datatable"
+      "csv": "Name,Part Number,Type,Description\nGal80 5’ homology region,BBa_26L2KJQX,Homologous Region,This part is designed for the assembly of Gal80 knockout cassette\nGal80 3’ homology region,BBa_26BZN7AE,Homologous Region,This part is designed for the assembly of Gal80 knockout cassette\nGPR2 cDNA,BBa_26P7J5V3,CDNA Match,This cDNA encodes GPR2 from the nematode-trapping fungus Orbilia oligospora\nSTE2 5’ homology region,BBa_260V498D,Homologous Region,This part is designed to replace yeast STE2 with GPR2-sfGFP through homologous recombination (HR)\nSTE2 3’ homology region,BBa_260VULNA,Homologous Region,This part is designed to replace yeast STE2 with GPR2-sfGFP through homologous recombination (HR)\nsfGFP,BBa_26MAY2X6,CDS,Superfolder green fluorescent protein (sfGFP) serves as a fluorescent reporter to assist in determining the subcellular localization of GPR2 in yeast cells\nGAL1 and GAL10 bidirectional promoters,BBa_26TDFVI3,Promoter,\"The GAL1/GAL10 bidirectional promoters are derived from Saccharomyces cerevisiae, enabling galactose-inducible bidirectional gene expression in yeast\"\npRS315 backbone,BBa_26R6CTVF,Plasmid,\"This vector for one-step cloning carries the ampicillin resistance gene and restriction sites, allowing autonomous replication in E. coli\"\nGal4 3‘ homology region,BBa_26KPW3LZ,Homologous Region,This part is designed to replace yeast Gal4 with DOD-CYP76AD5 through homologous recombination (HR).\nGal4 5‘ homology region,BBa_26T1QDYX,Homologous Region,This part is designed to replace yeast Gal4 with DOD-CYP76AD5 through homologous recombination (HR)\nMjDOD,BBa_26ITFFZ0,CDNA Match,\"This gene encodes L-DOPA dioxygenase, which oxidizes L-DOPA to betalamic acid\"\nBvCYP76AD5,BBa_26CD571A,CDNA Match,\"This gene encodes tyrosine hydroxylase/cyclase, which converts L-tyrosine into L-DOPA\"\np414-TEF1p-Cas9-CYC1t,BBa_26RDB5XU,Circular Plasmid,\"This construct contains Cas9 CDS and Trp marker, which drives constitutive Cas9 expression in yeast for CRISPR editing.\"\nSTE12 5' homology region,BBa_26CG7I8I,Homologous Region,This part is designed to insert sTF into yeast through homologous recombination (HR)\nSTE12 3' homology region,BBa_26BLOJK0,Homologous Region,This part is designed to insert sTF into yeast through homologous recombination (HR)\np406TEF1,BBa_26Y1JMT1,Circular Plasmid,\"This part contains the TEF1 promoter, CYC1 terminator and URA3 marker gene for amplification of these components.\"\np426-SNR52p-gRNA.CAN1.Y-SUP4t,BBa_266EBQE1,Circular Plasmid,\"This part is a yeast sgRNA expression vector containing the SNR52 promoter and SUP4 terminator, which enables efficient sgRNA transcription and assists CRISPR-Cas9-mediated genome editing in yeast\"\np414-Cas9-Leu,BBa_262NU08K,Plasmid,This part is a yeast Cas9 expression vector whose  original nutritional selection marker has been replaced by LEU2 \ngSTE12,BBa_26VBBFVU,GRNA Gene,This part contains the DNA template for gSTE12 gRNA\ngGal4,BBa_26AIA84W,GRNA Gene,This part contains the DNA template for gGal4 gRNA\ngSTE2,BBa_26U6Z74A,GRNA Gene,This part contains the DNA template for gSTE2 gRNA\nGPR2（N84V） cDNA,BBa_26YCPMQN,CDNA Match,This part contains the mutant cDNA sequence of GPR2\nGPR2（V368R） cDNA,BBa_2683TK6Y,CDNA Match,This part contains the mutant cDNA sequence of GPR2\np426-SNR52p-gSTE2-SUP4t,BBa_26TQ18PN,Plasmid,This part contains the DNA sequence encoding gRNA that targets the STE2 gene\np426-SNR52p-gSTE12-SUP4t,BBa_2612RHXO,Plasmid,This part contains the DNA sequence encoding gRNA that targets the STE12 gene\np426-SNR52p-gGal4-SUP4t,BBa_269ZKY8C,Plasmid,This part contains the DNA sequence encoding gRNA that targets the Gal4 gene\npScCEN-ADH1-FMN(yeast)-Myc-6×His,BBa_26RANQPA,Plasmid,\"This part is the pScCEN plasmid backbone carrying the ADH1 promoter, yeast-derived FMN gene, Myc tag and 6×His tag\"\n",
+      "_template": "datatable",
+      "sourceCellRuns": [
+        [
+          [
+            {
+              "text": "Name",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Part Number",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Type",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Description",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Gal80 5’ homology region",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_26L2KJQX",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Homologous Region",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "This part is designed for the assembly of Gal80 knockout cassette",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Gal80 3’ homology region",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_26BZN7AE",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Homologous Region",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "This part is designed for the assembly of Gal80 knockout cassette",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "GPR2 cDNA",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_26P7J5V3",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "CDNA Match",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "This cDNA encodes GPR2 from the nematode-trapping fungus ",
+              "format": []
+            },
+            {
+              "text": "Orbilia",
+              "format": [
+                "i"
+              ]
+            },
+            {
+              "text": " ",
+              "format": [
+                "i"
+              ]
+            },
+            {
+              "text": "oligospora",
+              "format": [
+                "i"
+              ]
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "STE2 5",
+              "format": []
+            },
+            {
+              "text": "’",
+              "format": []
+            },
+            {
+              "text": " homology region",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_260V498D",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Homologous Region",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "This part is designed to replace yeast STE2 with GPR2-sfGFP through homologous recombination (HR)",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "STE2 3",
+              "format": []
+            },
+            {
+              "text": "’",
+              "format": []
+            },
+            {
+              "text": " homology region",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_260VULNA",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Homologous Region",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "This part is designed to replace yeast STE2 with GPR2-sfGFP through homologous recombination (HR)",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "sfGFP",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_26MAY2X6",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "CDS",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Superfolder green fluorescent protein (sfGFP) serves as a fluorescent reporter to assist in determining the subcellular localization of GPR2 in yeast cells",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "GAL1 and GAL10 ",
+              "format": []
+            },
+            {
+              "text": "bidirectional promoters",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_26TDFVI3",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Promoter",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "The GAL1/GAL10 bidirectional promoters are ",
+              "format": []
+            },
+            {
+              "text": "derived from Saccharomyces cerevisiae, enabling galactose-inducible bidirectional gene expression in yeast",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "pRS315 backbone",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_26R6CTVF",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Plasmid",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "This vector for one-step cloning carries the ampicillin resistance gene and restriction sites, allowing autonomous replication in E. coli",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Gal4 3",
+              "format": []
+            },
+            {
+              "text": "‘",
+              "format": []
+            },
+            {
+              "text": " homology region",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_26KPW3LZ",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Homologous Region",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "This part is designed to replace yeast Gal4 with DOD-CYP76AD5 through homologous recombination (HR).",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Gal4 5",
+              "format": []
+            },
+            {
+              "text": "‘",
+              "format": []
+            },
+            {
+              "text": " homology region",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_26T1QDYX",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Homologous Region",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "This part is designed to replace yeast Gal4 with DOD-CYP76AD5 through homologous recombination (HR)",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "MjDOD",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_26ITFFZ0",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "CDNA Match",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "This gene",
+              "format": []
+            },
+            {
+              "text": " ",
+              "format": []
+            },
+            {
+              "text": "encodes L-DOPA dioxygenase, which oxidizes L-DOPA to ",
+              "format": []
+            },
+            {
+              "text": "betalamic",
+              "format": []
+            },
+            {
+              "text": " acid",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "BvCYP76AD5",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_26CD571A",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "CDNA Match",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "This gene encodes tyrosine hydroxylase/cyclase, which converts L-tyrosine into L-DOPA",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "p414-TEF1p-Cas9-CYC1t",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_26RDB5XU",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Circular Plasmid",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "This construct contains Cas9 CDS and ",
+              "format": []
+            },
+            {
+              "text": "Trp",
+              "format": []
+            },
+            {
+              "text": " marker, which drives constitutive Cas9 expression in yeast for CRISPR editing.",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "STE12 5' homology region",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_26CG7I8I",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Homologous Region",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "This part is designed to insert ",
+              "format": []
+            },
+            {
+              "text": "sTF",
+              "format": []
+            },
+            {
+              "text": " into yeast through homologous recombination (HR)",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "STE12 3' homology region",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_26BLOJK0",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Homologous Region",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "This part is designed to insert ",
+              "format": []
+            },
+            {
+              "text": "sTF",
+              "format": []
+            },
+            {
+              "text": " into yeast through homologous recombination (HR)",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "p406TEF1",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_26Y1JMT1",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Circular Plasmid",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "This part contains the TEF1 promoter, CYC1 terminator and URA3 marker gene for amplification of these components.",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "p426-SNR52p-gRNA.CAN1.Y-SUP4t",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_266EBQE1",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Circular Plasmid",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "This part is a yeast sgRNA expression vector containing the SNR52 promoter and SUP4 terminator, which enables efficient sgRNA transcription and assists CRISPR-Cas9-mediated genome editing in yeast",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "p414-Cas9-Leu",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_262NU08K",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Plasmid",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "This part is a yeast Cas9 expression vector ",
+              "format": []
+            },
+            {
+              "text": "whose",
+              "format": []
+            },
+            {
+              "text": " ",
+              "format": []
+            },
+            {
+              "text": " ",
+              "format": []
+            },
+            {
+              "text": "original nutritional selection marker has been replaced by LEU2 ",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "gSTE12",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_26VBBFVU",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "GRNA Gene",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "This part contains the DNA template for gSTE12 gRNA",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "gGal4",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_26AIA84W",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "GRNA Gene",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "This part contains the DNA template for g",
+              "format": []
+            },
+            {
+              "text": "Gal4",
+              "format": []
+            },
+            {
+              "text": " gRNA",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "gSTE2",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_26U6Z74A",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "GRNA Gene",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "This part contains the DNA template for gSTE2 gRNA",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "GPR2",
+              "format": []
+            },
+            {
+              "text": "（",
+              "format": []
+            },
+            {
+              "text": "N84V",
+              "format": []
+            },
+            {
+              "text": "）",
+              "format": []
+            },
+            {
+              "text": " cDNA",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_26YCPMQN",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "CDNA Match",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "This part contains the mutant cDNA sequence of GPR",
+              "format": []
+            },
+            {
+              "text": "2",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "GPR2",
+              "format": []
+            },
+            {
+              "text": "（",
+              "format": []
+            },
+            {
+              "text": "V368R",
+              "format": []
+            },
+            {
+              "text": "）",
+              "format": []
+            },
+            {
+              "text": " cDNA",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_2683TK6Y",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "CDNA Match",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "This part contains the mutant cDNA sequence of GPR2",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "p426-SNR52p-gSTE2-SUP4t",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_26TQ18PN",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Plasmid",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "This part contains the DNA sequence encoding gRNA that targets the ",
+              "format": []
+            },
+            {
+              "text": "STE2",
+              "format": []
+            },
+            {
+              "text": " gene",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "p426-SNR52p-gSTE12-SUP4t",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_2612RHXO",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Plasmid",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "This part contains the DNA sequence encoding gRNA that targets the",
+              "format": []
+            },
+            {
+              "text": " STE12 ",
+              "format": []
+            },
+            {
+              "text": "gene",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "p426-SNR52p-gGal4-SUP4t",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_269ZKY8C",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Plasmid",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "This part contains the DNA sequence encoding gRNA that targets the Gal4 gene",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "pScCEN-ADH1-FMN(yeast)-Myc-6",
+              "format": []
+            },
+            {
+              "text": "×",
+              "format": []
+            },
+            {
+              "text": "His",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_26RANQPA",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Plasmid",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "This part is the ",
+              "format": []
+            },
+            {
+              "text": "pScCEN",
+              "format": []
+            },
+            {
+              "text": " plasmid backbone carrying the ADH1 promoter, yeast-derived FMN gene, ",
+              "format": []
+            },
+            {
+              "text": "Myc",
+              "format": []
+            },
+            {
+              "text": " tag and 6×His tag",
+              "format": []
+            }
+          ]
+        ]
+      ],
+      "sourceTableSourceId": "SRC020"
     },
     {
       "text": "Composite Parts",
@@ -40,8 +969,472 @@
     },
     {
       "title": "Composite Parts",
-      "csv": "Name,Part Number,Type,Description\nKOGAL80,BBa_26OPIZCX,Assembly Component,This cassette is used for knocking out the Gal80 gene in the yeast genome via homologous recombination (HR)\nTRP1 marker gene,BBa_26WLH0UL,CDS,\"The Trp1 gene encodes an enzyme involved in Trp biosynthesis, serving as a nutritional selection marker for yeast.\"\nLEU2 marker gene,BBa_26DW2ZT7,CDS,\"The LEU2 gene encodes an enzyme involved in Leu biosynthesis, serving as a nutritional selection marker for yeast.\"\npRS315-TEF1p-GPR2-sfGFP,BBa_260J9X0X,Plasmid,\nUra3 marker gene,BBa_26OPQ6RW,CDS,\"The Ura3 gene encodes an enzyme involved in uracil biosynthesis, serving as a nutritional selection marker for yeast.\"\npRS315-MjDOD-BvCYP76AD5,BBa_26PGUFWX,Plasmid,\"This part contains betaxanthin-related genes, with homology arms for the knock-in of constitutively expressed betaxanthin biosynthetic genes\"\nGal1/10bp-Betaxanthin Expression Cassette,BBa_2697LAQW,Assembly Component,This part contains the betaxanthin biosynthetic genes (MjDOD and BvCYP76AD5) under the control of the Gal1/10 bidirectional promoter\npRS315-sTF,BBa_2687EQID,Plasmid,This part is used for amplifying the homologous recombination fragment for sTF assembly\nsTF Expression Cassette,BBa_26IOTMOF,Assembly Component,This part is designed for CRISPR-Cas9-mediated knock-in to express sTF in yeast\npRS315-TEF1p-GPR2,BBa_26ZT9H48,Plasmid,This part is designed for CRISPR-Cas9-mediated knock-in of the constitutively expressed GPR2 gene\npRS315-TEF1p-GPR2-N84V,BBa_2628FZFH,Plasmid,This part is designed for CRISPR-Cas9-mediated knock-in of the constitutively expressed GPR2 gene with N84V mutation\npRS315-TEF1p-GPR2-V368R,BBa_26XA2JFQ,Plasmid,This part is designed for CRISPR-Cas9-mediated knock-in of the constitutively expressed GPR2 gene with V368R mutation",
-      "_template": "datatable"
+      "csv": "Name,Part Number,Type,Description\nKOGAL80,BBa_26OPIZCX,Assembly Component,This cassette is used for knocking out the Gal80 gene in the yeast genome via homologous recombination (HR)\nTRP1 marker gene,BBa_26WLH0UL,CDS,\"The Trp1 gene encodes an enzyme involved in Trp  biosynthesis, serving as a nutritional selection marker for yeast.\"\nLEU2 marker gene,BBa_26DW2ZT7,CDS,\"The LEU2 gene encodes an enzyme involved in Leu  biosynthesis, serving as a nutritional selection marker for yeast.\"\npRS315-TEF1p-GPR2-sfGFP,BBa_260J9X0X,Plasmid,\nUra3 marker gene,BBa_26OPQ6RW,CDS,\"The Ura3 gene encodes an enzyme involved in uracil\n biosynthesis, serving as a nutritional selection marker for yeast.\"\npRS315-MjDOD-BvCYP76AD5,BBa_26PGUFWX,Plasmid,\"This part contains betaxanthin-related genes, with homology arms for the knock-in of constitutively expressed betaxanthin biosynthetic genes\"\nGal1/10bp-Betaxanthin Expression Cassette,BBa_2697LAQW,Assembly Component,This part contains the betaxanthin biosynthetic genes (MjDOD and BvCYP76AD5) under the control of the Gal1/10 bidirectional promoter\npRS315-sTF,BBa_2687EQID,Plasmid,This part is used for amplifying the homologous recombination fragment for sTF assembly\nsTF Expression Cassette,BBa_26IOTMOF,Assembly Component,This part is designed for CRISPR-Cas9-mediated knock-in to express sTF in yeast\npRS315-TEF1p-GPR2,BBa_26ZT9H48,Plasmid,This part is designed for CRISPR‑Cas9‑mediated knock‑in of the constitutively expressed GPR2 gene\npRS315-TEF1p-GPR2-N84V,BBa_2628FZFH,Plasmid,This part is designed for CRISPR‑Cas9‑mediated knock‑in of the constitutively expressed GPR2 gene with N84V mutation\npRS315-TEF1p-GPR2-V368R,BBa_26XA2JFQ,Plasmid,This part is designed for CRISPR‑Cas9‑mediated knock‑in of the constitutively expressed GPR2 gene with V368R mutation\n",
+      "_template": "datatable",
+      "sourceCellRuns": [
+        [
+          [
+            {
+              "text": "Name",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Part Number",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Type",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Description",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "KOGAL80",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_26OPIZCX",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Assembly Component",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "T",
+              "format": []
+            },
+            {
+              "text": "his cassette is used for knocking out the Gal80 gene in the yeast genome via homologous recombination (HR)",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "TRP1 marker gene",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_26WLH0UL",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "CDS",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "The",
+              "format": []
+            },
+            {
+              "text": " Trp1",
+              "format": []
+            },
+            {
+              "text": " gene encodes an enzyme involved in ",
+              "format": []
+            },
+            {
+              "text": "Trp",
+              "format": []
+            },
+            {
+              "text": " ",
+              "format": []
+            },
+            {
+              "text": " biosynthesis, serving as a nutritional selection marker for yeast.",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "LEU2 marker gene",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_26DW2ZT7",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "CDS",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "The LEU2 gene encodes an enzyme involved in ",
+              "format": []
+            },
+            {
+              "text": "Leu ",
+              "format": []
+            },
+            {
+              "text": " biosynthesis, serving as a nutritional selection marker for yeast.",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "pRS315-TEF1p-GPR2-sfGFP",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_260J9X0X",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Plasmid",
+              "format": []
+            }
+          ],
+          []
+        ],
+        [
+          [
+            {
+              "text": "Ura3 marker gene",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_26OPQ6RW",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "CDS",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "The ",
+              "format": []
+            },
+            {
+              "text": "Ura3",
+              "format": []
+            },
+            {
+              "text": " gene encodes an enzyme involved in ",
+              "format": []
+            },
+            {
+              "text": "uracil",
+              "format": []
+            },
+            {
+              "text": "\n",
+              "format": []
+            },
+            {
+              "text": " biosynthesis, serving as a ",
+              "format": []
+            },
+            {
+              "text": "nutritional selection marker for yeast.",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "pRS315-MjDOD-BvCYP76AD5",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_26PGUFWX",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Plasmid",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "This part contains betaxanthin-related genes, with homology arms for the knock-in of constitutively expressed betaxanthin biosynthetic genes",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Gal1/10bp-Betaxanthin Expression Cassette",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_2697LAQW",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Assembly Component",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "This part contains the betaxanthin biosynthetic genes (",
+              "format": []
+            },
+            {
+              "text": "MjDOD",
+              "format": []
+            },
+            {
+              "text": " and BvCYP76AD5) under the control of the Gal1/10 bidirectional promoter",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "pRS315-sTF",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_2687EQID",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Plasmid",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "T",
+              "format": []
+            },
+            {
+              "text": "his part is used for amplifying the homologous recombination fragment for ",
+              "format": []
+            },
+            {
+              "text": "sTF",
+              "format": []
+            },
+            {
+              "text": " assembly",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "sTF Expression Cassette",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_26IOTMOF",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Assembly Component",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "This part is designed for CRISPR-Cas9-mediated knock-in to express ",
+              "format": []
+            },
+            {
+              "text": "sTF",
+              "format": []
+            },
+            {
+              "text": " in yeast",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "pRS315-TEF1p-GPR2",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_26ZT9H48",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Plasmid",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "This part is designed for CRISPR",
+              "format": []
+            },
+            {
+              "text": "‑Cas9",
+              "format": []
+            },
+            {
+              "text": "‑mediated knock",
+              "format": []
+            },
+            {
+              "text": "‑in of the constitutively expressed GPR2 gene",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "pRS315-TEF1p-GPR2-N84V",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_2628FZFH",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Plasmid",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "This part is designed for CRISPR",
+              "format": []
+            },
+            {
+              "text": "‑Cas9",
+              "format": []
+            },
+            {
+              "text": "‑mediated knock",
+              "format": []
+            },
+            {
+              "text": "‑in of the constitutively expressed GPR2 gene with N84V mutation",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "pRS315-TEF1p-GPR2-V368R",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_26XA2JFQ",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Plasmid",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "This part is designed for CRISPR",
+              "format": []
+            },
+            {
+              "text": "‑Cas9",
+              "format": []
+            },
+            {
+              "text": "‑mediated knock",
+              "format": []
+            },
+            {
+              "text": "‑in of the constitutively expressed GPR2 gene with ",
+              "format": []
+            },
+            {
+              "text": "V368R",
+              "format": []
+            },
+            {
+              "text": " mutation",
+              "format": []
+            }
+          ]
+        ]
+      ],
+      "sourceTableSourceId": "SRC020"
     },
     {
       "text": "2 Collections",
@@ -52,7 +1445,81 @@
     {
       "_template": "datatable",
       "title": "Collections",
-      "csv": "Name,Description\nChassis Strain Construction Collection,This collection contains all the parts used to construct chassis strains in our project\nTool Plasmid Family,This collection contains all tool plasmids used in this project\nsgRNA Family,This collection contains all sgRNAs used in this project\nGPR2 variant family,This collection contains cDNA sequences of GPR2 and its variants\n"
+      "csv": "Name,Description\nChassis Strain Construction Collection,This collection contains all the parts used to construct chassis strains in our project\nTool Plasmid Family,This collection contains all tool plasmids used in this project\nsgRNA Family,This collection contains all sgRNAs used in this project\nGPR2 variant family,This collection contains cDNA sequences of GPR2 and its variants\n",
+      "sourceCellRuns": [
+        [
+          [
+            {
+              "text": "Name",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Description",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Chassis Strain Construction Collection",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "This collection contains all the parts used to construct chassis strains in our project",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Tool Plasmid Family",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "This collection contains all tool plasmids used in this project",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "sgRNA Family",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "This collection contains all sgRNAs used in this project",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "GPR2 variant family",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "This collection contains cDNA sequences of GPR2 and its variants",
+              "format": []
+            }
+          ]
+        ]
+      ],
+      "sourceTableSourceId": "SRC020"
     }
-  ]
+  ],
+  "preserveAuthorFormatting": true
 }

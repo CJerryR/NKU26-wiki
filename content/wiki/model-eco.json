@@ -201,5 +201,6 @@
       "_template": "text",
       "body": "<span id=\"eco-references\" aria-hidden=\"true\"></span>"
     }
-  ]
+  ],
+  "preserveAuthorFormatting": true
 }

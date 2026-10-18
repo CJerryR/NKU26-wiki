@@ -682,5 +682,6 @@
         }
       ]
     }
-  ]
+  ],
+  "preserveAuthorFormatting": true
 }

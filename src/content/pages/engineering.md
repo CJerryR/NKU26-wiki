@@ -8,6 +8,7 @@ crumbs:
 route: engineering
 search: true
 description: ''
+preserveAuthorFormatting: true
 meta: {}
 draft: false
 hidden: false
@@ -34,15 +35,15 @@ Receptor selection requires consideration of both computational results and the 
 
 ### 1.3 The Third Cycle——Wet Lab {#the-third-cycle-wet-lab toc="The Third Cycle——Wet Lab"}
 
-Informed by results from the prior cycle, this iteration characterizes **heterologous expression and proper plasma membrane localization** of GPR2, establishing proof of feasibility for downstream chassis engineering.
+<p>Informed by results from the prior cycle, this iteration characterizes heterologous expression and proper plasma membrane localization of GPR2, establishing proof of feasibility for downstream chassis engineering.</p>
 
 #### 1.3.1 Design {#design toc="Design | Planning GPR2 Expression and Localization Verification"}
 
-To validate heterologous expression and proper plasma membrane localization of GPR2 in our host strain *S. cerevisiae* `CEN.PK2-1C`, we adopted the following experimental pipeline: assembly of the GPR2-sfGFP expression plasmid, gene knock-in mediated by yeast homologous recombination (HR), and fluorescence microscopy to characterize protein expression and subcellular localization. See Wet Lab-Results- DBTL-1 for detailed design and experimental protocols.
+<p>To validate heterologous expression and proper plasma membrane localization of GPR2 in our host strain <em>S. cerevisiae</em> CEN.PK2-1C, we adopted the following experimental pipeline: assembly of the GPR2-sfGFP expression plasmid, gene knock-in mediated by yeast homologous recombination (HR), and fluorescence microscopy to characterize protein expression and subcellular localization. See Wet Lab-Results- DBTL-1 for detailed design and experimental protocols.</p>
 
 #### 1.3.2 Build {#build toc="Build | Integrating the GPR2-sfGFP Expression Cassette"}
 
-Via homologous recombination (HR), we integrated the constitutive *GPR2-sfGFP* expression cassette into the `CEN.PK2-1C` genome (Figure 1).
+<p>Via homologous recombination (HR), we integrated the constitutive <em>GPR2-sfGFP</em> expression cassette into the CEN.PK2-1C genome (Figure 1).</p>
 
 :::figure
 
@@ -88,7 +89,7 @@ Figure 4 FM4‑64 staining of yeast cells
 
 #### 1.3.4 Learn {#learn toc="Learn | Assessing GPR2 Localization for Chassis Engineering"}
 
-Collectively, these data confirm heterologous expression and proper plasma membrane localization of GPR2 in `CEN.PK2-1C`, laying an essential foundation for our chassis engineering. We therefore advance to the next cycle to assemble the full signal-responsive engineered strain.
+<p>Collectively, these data confirm heterologous expression and proper plasma membrane localization of GPR2 in CEN.PK2-1C, laying an essential foundation for our chassis engineering. We therefore advance to the next cycle to assemble the full signal-responsive engineered strain.</p>
 
 ### 1.3 The Fourth Cycle——Wet Lab {#the-fourth-cycle-wet-lab toc="The Fourth Cycle——Wet Lab"}
 
@@ -96,7 +97,7 @@ Building upon findings from prior iterations, this cycle launches the chassis en
 
 #### 1.4.1 Design {#design-2 toc="Design | Planning the Ascaroside-Responsive Yeast Pathway"}
 
-Referring to previous work reported by Fan et al. [1][2], we assembled the ascaroside-sensitive yeast biosensor according to the pipeline illustrated in Figure 1.
+<p>Referring to previous work reported by Fan et al. <sup>[1][2]</sup>, we assembled the ascaroside-sensitive yeast biosensor according to the pipeline illustrated in Figure 1. </p>
 
 :::figure
 
@@ -108,7 +109,7 @@ Figure 1 Schematic Diagram of Yeast Biosensor Construction Pipeline
 
 #### 1.4.2 Build {#build-2 toc="Build | Assembling the Signal-Responsive Yeast Chassis"}
 
-First, we knocked out the *Gal80* gene in `CEN.PK2-1C` to obtain the engineered strain `NKU-Y02` (Figure 2), which eliminates endogenous signal interference in this pathway.
+<p>First, we knocked out the <em>Gal80</em> gene in CEN.PK2-1C to obtain the engineered strain NKU-Y02 (Figure 2), which eliminates endogenous signal interference in this pathway. </p>
 
 ::::figures
 
@@ -132,9 +133,9 @@ Figure 3 Construction of Synthetic Transcription Factor
 
 Subsequently, we fused the PRD domain of Ste12 (216–688 aa) with the DBD domain of Gal4 (1–147 aa) to construct a synthetic transcription factor (sTF). This construct was transformed into NKU-Y05, yielding strain NKU-Y05 (Figure 3) and enabling the coupling of GPCR-activated signaling with the GAL pathway.
 
-Subsequently, we introduced MjDOD and BvCYP76AD5 driven by the bidirectional Gal1/10 promoter into `NKU-Y05` to generate the engineered strain `NKU-Y06` (Figure 4), realizing the visualization of signal output.
+<p>Subsequently, we introduced MjDOD and BvCYP76AD5 driven by the bidirectional Gal1/10 promoter into NKU-Y05 to generate the engineered strain NKU-Y06 (Figure 4), realizing the visualization of signal output.</p>
 
-Finally, we transformed the constitutive *GPR2* expression cassette into `NKU-Y06` to obtain the engineered strain `NKU-Y07` (Figure 5), completing the preliminary construction of the full engineered strain system and advancing the project to the testing phase.
+<p>Finally, we transformed the constitutive <em>GPR2</em> expression cassette into NKU-Y06 to obtain the engineered strain NKU-Y07 (Figure 5), completing the preliminary construction of the full engineered strain system and advancing the project to the testing phase.</p>
 
 #### 1.4.3 Test {#wet-lab-fourth-test toc="1.4.3 Test"}
 

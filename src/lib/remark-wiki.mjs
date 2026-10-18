@@ -27,12 +27,13 @@ const LEAVES = new Set(['figure']);
 export default function remarkWiki(options = {}) {
   const figureDir = options.figureDir || path.resolve(process.cwd(), 'src/figures');
   return function transformer(tree, file) {
-    const ctx = { figureDir, file };
+    const preserveFormatting = file?.data?.astro?.frontmatter?.preserveAuthorFormatting === true;
+    const ctx = { figureDir, file, preserveFormatting };
     restoreDirectives(tree, ctx);
     eachNode(tree, (node) => { if (node.type === 'heading') readHeadingAttributes(node); });
-    scientificTypography(tree);
+    if (!preserveFormatting) scientificTypography(tree);
     transformBlocks(tree, ctx);
-    wrapTablesAndImages(tree);
+    wrapTablesAndImages(tree, preserveFormatting);
     renderInlineMath(tree);
     finalize(tree, file);
   };
@@ -359,11 +360,15 @@ function figure(node, ctx) {
   let caption = label ? [...label.children] : null;
   const last = body[body.length - 1];
   if (!caption && last && last.type === 'paragraph' && (media.length > 0 || body.length > 1)) caption = body.pop().children;
+  if (!caption && ctx.preserveFormatting && last?.type === 'html' && (media.length > 0 || body.length > 1)) {
+    const authored = last.value.match(/^<p>([\s\S]*)<\/p>$/);
+    if (authored) { body.pop(); caption = [raw(authored[1])]; }
+  }
   if (!caption && a.caption) caption = [text(a.caption)];
   media.push(...body);
   const kids = [el('div', { className: ['figure__media'] }, media)];
   if (caption || a.credit) {
-    const cap = caption ? captionLead([...caption]) : [];
+    const cap = caption ? (ctx.preserveFormatting ? [...caption] : captionLead([...caption])) : [];
     if (a.credit) cap.push(el('span', { className: ['figure__credit'] }, [text(a.credit)]));
     kids.push(el('figcaption', {}, cap));
   }
@@ -465,19 +470,19 @@ function localPngSize(url) {
   } catch { return {}; }
 }
 
-function wrapTablesAndImages(node) {
+function wrapTablesAndImages(node, preserveFormatting = false) {
   if (!node.children) return;
   // R1-I03: a "Table N." paragraph right before a table is its caption, styled like a figure caption
   node.children.forEach((c, i) => {
     const next = node.children[i + 1];
     const prev = node.children[i - 1];
     if (c.type === 'paragraph' && ((next && next.type === 'table') || (prev && prev.type === 'table')) && /^Table\s+S?\d+[A-Za-z]?[.:]/.test(toText(c).trim())) {
-      c.children = captionLead(c.children);
+      if (!preserveFormatting) c.children = captionLead(c.children);
       c.data = { ...(c.data || {}), hProperties: { ...((c.data || {}).hProperties || {}), className: ['table-caption'] } };
     }
   });
   node.children = node.children.map((c) => {
-    wrapTablesAndImages(c);
+    wrapTablesAndImages(c, preserveFormatting);
     if (c.type === 'image') {
       c.data = c.data || {};
       const dimensions = localPngSize(c.url);

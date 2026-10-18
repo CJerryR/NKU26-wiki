@@ -8,6 +8,7 @@ crumbs:
 route: human-practices
 search: true
 description: ''
+preserveAuthorFormatting: true
 meta: {}
 draft: false
 hidden: false

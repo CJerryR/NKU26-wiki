@@ -20,10 +20,123 @@
     {
       "title": "Table 1 Biological Materials",
       "csv": "Name,Description,Source,Identifier\nTrans5α Chemically Competent Cell,Mainly used for plasmid transformation and cloning,TransGen Biotech,Cat. No. CD201-01\nSaccharomyces cerevisiae CEN.PK2-1C,\"Biological materials for genetic modification, mainly applied in heterologous GPCR display and the construction of ascaroside-specific biosensors\",Biobw ,Strain No. bio-116324\n",
-      "_template": "datatable"
+      "_template": "datatable",
+      "sourceCellRuns": [
+        [
+          [
+            {
+              "text": "Name",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Description",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Source",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "I",
+              "format": []
+            },
+            {
+              "text": "dentifier",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Trans5α ",
+              "format": [
+                "i"
+              ]
+            },
+            {
+              "text": "Chemically Competent Cell",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Mainly used for plasmid transformation and cloning",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "TransGen",
+              "format": []
+            },
+            {
+              "text": " Biotech",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Cat. No. CD201-01",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Saccharomyces cerevisiae",
+              "format": [
+                "i"
+              ]
+            },
+            {
+              "text": " CEN.PK2-1C",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Biological materials for genetic modification, mainly applied in heterologous GPCR display and the construction of ",
+              "format": []
+            },
+            {
+              "text": "ascaroside",
+              "format": []
+            },
+            {
+              "text": "-specific biosensors",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Biobw",
+              "format": []
+            },
+            {
+              "text": " ",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Strain No. bio-116324",
+              "format": []
+            }
+          ]
+        ]
+      ],
+      "sourceTableSourceId": "SRC056"
     },
     {
-      "body": "This section documents the biological materials and experimental methods used in wet-lab work, and summarizes the **designed sgRNA sequences, constructed plasmids and engineered strains** generated in our project.\n",
+      "body": "<p>This section documents the biological materials and experimental methods used in wet-lab work, and summarizes the designed sgRNA sequences, constructed plasmids and engineered strains generated in our project.</p>",
       "_template": "text"
     },
     {
@@ -39,7 +152,7 @@
       "_template": "heading"
     },
     {
-      "body": "**PCR Amplification** Using Phanta Max Super-Fidelity DNA Polymerase.\n",
+      "body": "<p>PCR Amplification Using Phanta Max Super-Fidelity DNA Polymerase.</p>",
       "_template": "text"
     },
     {
@@ -56,7 +169,7 @@
       "_template": "heading"
     },
     {
-      "body": "**DNA Recovery** Using FastPure Gel DNA Extraction Mini Kit.\n",
+      "body": "<p>DNA Recovery Using FastPure Gel DNA Extraction Mini Kit.</p>",
       "_template": "text"
     },
     {
@@ -72,7 +185,7 @@
       "_template": "heading"
     },
     {
-      "body": "**Plasmid DNA Extraction** Using Fast Plasmid Miniprep Kit.\n",
+      "body": "<p>Plasmid DNA Extraction Using Fast Plasmid Miniprep Kit.</p>",
       "_template": "text"
     },
     {
@@ -88,7 +201,7 @@
       "_template": "heading"
     },
     {
-      "body": "Construction of Homologous Recombination Constructs Using **Double-Joint PCR (DJ-PCR)**.\n",
+      "body": "<p>Construction of Homologous Recombination Constructs Using Double-Joint PCR (DJ-PCR).</p>",
       "_template": "text"
     },
     {
@@ -104,7 +217,7 @@
       "_template": "heading"
     },
     {
-      "body": "**Multi-Fragment and Vector Seamless Assembly** Using pEASY Pro Seamless Cloning and Assembly Kit.\n",
+      "body": "<p>Multi-Fragment and Vector Seamless Assembly Using pEASY Pro Seamless Cloning and Assembly Kit.</p>",
       "_template": "text"
     },
     {
@@ -120,7 +233,7 @@
       "_template": "heading"
     },
     {
-      "body": "**Chemical Transformation** of Trans5α Chemically Competent Cells.\n",
+      "body": "<p>Chemical Transformation of Trans5α Chemically Competent Cells.</p>",
       "_template": "text"
     },
     {
@@ -136,7 +249,7 @@
       "_template": "heading"
     },
     {
-      "body": "**Yeast Transformation** Using S.c. EasyComp™ Transformation Kit.\n",
+      "body": "<p>Yeast Transformation Using S.c. EasyComp™ Transformation Kit.</p>",
       "_template": "text"
     },
     {
@@ -168,7 +281,7 @@
       "_template": "heading"
     },
     {
-      "body": "**Colony PCR Amplification** Using 2×TransFast Taq PCR SuperMix (+dye).\n",
+      "body": "<p>Colony PCR Amplification Using 2×TransFast Taq PCR SuperMix (+dye).</p>",
       "_template": "text"
     },
     {
@@ -248,7 +361,7 @@
       "_template": "heading"
     },
     {
-      "body": "**Observation of Fluorescent Molecules** Using Fluorescence Microscopy.\n",
+      "body": "<p>Observation of Fluorescent Molecules Using Fluorescence Microscopy.</p>",
       "_template": "text"
     },
     {
@@ -287,9 +400,9 @@
     },
     {
       "_template": "heading",
-      "text": "Development of a Hydrophobic Vapor-Deposition Coating Process for Test Strips",
+      "text": "2.17 Development of a Hydrophobic Vapor-Deposition Coating Process for Test Strips",
       "level": 3,
-      "attributes": "#hydrophobic-vapor-deposition-coating toc=\"Development of a Hydrophobic Vapor-Deposition Coating Process for Test Strips\""
+      "attributes": "#hydrophobic-vapor-deposition-coating toc=\"2.17 Development of a Hydrophobic Vapor-Deposition Coating Process for Test Strips\""
     },
     {
       "_template": "pdf",
@@ -310,13 +423,326 @@
       "_template": "heading"
     },
     {
-      "body": "In this project, we designed and constructed a total of **10 plasmids**, as shown in the table below.\n",
+      "body": "<p>In this project, we designed and constructed a total of 10 plasmids, as shown in the table below.</p>",
       "_template": "text"
     },
     {
       "title": "Table 2 Plasmids designed and constructed in this project",
       "csv": "Name,Number,Description\npRS315-TEF1p-GPR2-sfGFP,BBa_260J9X0X,For knock-in of the constitutively expressed GPR2 gene fused with sfGFP\npRS315-MjDOD-BvCYP76AD5,BBa_26PGUFWX,For knock-in of constitutively expressed betaxanthin-related genes and serves as a template for constructing inducible recombinant fragments\npRS315-sTF,BBa_2687EQID,For storage of recombinant fragments for knock-in of the synthetic transcription factor (sTF)\np414-Cas9-Leu,BBa_262NU08K,Cas9-carrying plasmid with altered nutritional selection marker\np426-SNR52p-gGal4-SUP4t,BBa_269ZKY8C,Carries gRNA sequence targeting the Gal4 gene\np426-SNR52p-gSTE12-SUP4t,BBa_2612RHXO,Carries gRNA sequence targeting the STE12 gene\np426-SNR52p-gSTE2-SUP4t,BBa_26TQ18PN,Carries gRNA sequence targeting the STE2 gene\npRS315-TEF1p-GPR2,BBa_26ZT9H48,For knock-in of the constitutively expressed GPR2 gene\npRS315-TEF1p-GPR2-N84V,BBa_2628FZFH,For knock-in of the constitutively expressed N84V-mutated GPR2 gene\npRS315-TEF1p-GPR2-V368R,BBa_26XA2JFQ,For knock-in of the constitutively expressed V368R-mutated GPR2 gene\n",
-      "_template": "datatable"
+      "_template": "datatable",
+      "sourceCellRuns": [
+        [
+          [
+            {
+              "text": "Name",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Number",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Description",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "pRS315-TEF1p-GPR2-sfGFP",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_260J9X0X",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "For knock-in of the constitutively expressed ",
+              "format": []
+            },
+            {
+              "text": "GPR2",
+              "format": [
+                "i"
+              ]
+            },
+            {
+              "text": " gene fused with ",
+              "format": []
+            },
+            {
+              "text": "sfGFP",
+              "format": [
+                "i"
+              ]
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "pRS315-MjDOD-BvCYP76AD5",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_26PGUFWX",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "For knock-in of constitutively expressed betaxanthin-related genes and serves as a template for constructing inducible recombinant fragments",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "pRS315-sTF",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_2687EQID",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "For storage of recombinant fragments for knock-in of the synthetic transcription factor (",
+              "format": []
+            },
+            {
+              "text": "sTF",
+              "format": []
+            },
+            {
+              "text": ")",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "p414-Cas9-Leu",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_262NU08K",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Cas9",
+              "format": [
+                "i"
+              ]
+            },
+            {
+              "text": "-carrying plasmid with altered nutritional selection marker",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "p426-SNR52p-gGal4-SUP4t",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_269ZKY8C",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Carries gRNA sequence targeting the ",
+              "format": []
+            },
+            {
+              "text": "Gal4",
+              "format": [
+                "i"
+              ]
+            },
+            {
+              "text": " gene",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "p426-SNR52p-gSTE12-SUP4t",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_2612RHXO",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Carries gRNA sequence targeting the ",
+              "format": []
+            },
+            {
+              "text": "STE12",
+              "format": [
+                "i"
+              ]
+            },
+            {
+              "text": " gene",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "p426-SNR52p-gSTE2-SUP4t",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_26TQ18PN",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Carries gRNA sequence targeting the ",
+              "format": []
+            },
+            {
+              "text": "STE2",
+              "format": [
+                "i"
+              ]
+            },
+            {
+              "text": " gene",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "pRS315-TEF1p-GPR2",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_26ZT9H48",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "For knock-in of the constitutively expressed ",
+              "format": []
+            },
+            {
+              "text": "GPR2",
+              "format": [
+                "i"
+              ]
+            },
+            {
+              "text": " gene",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "pRS315-TEF1p-GPR2-N84V",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_2628FZFH",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "For knock-in of the constitutively expressed N84V-mutated ",
+              "format": []
+            },
+            {
+              "text": "GPR2",
+              "format": [
+                "i"
+              ]
+            },
+            {
+              "text": " gene",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "pRS315-TEF1p-GPR2-V368R",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "BBa_26XA2JFQ",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "For knock-in of the constitutively expressed V368R-mutated ",
+              "format": []
+            },
+            {
+              "text": "GPR2",
+              "format": [
+                "i"
+              ]
+            },
+            {
+              "text": " gene",
+              "format": []
+            }
+          ]
+        ]
+      ],
+      "sourceTableSourceId": "SRC030"
     },
     {
       "text": "3.2 Strain Construction",
@@ -325,7 +751,7 @@
       "_template": "heading"
     },
     {
-      "body": "In this project, we constructed a total of **9 yeast strains**. The workflow and summary table are displayed below.\n",
+      "body": "<p>In this project, we constructed a total of 9 yeast strains. The workflow and summary table are displayed below. </p>",
       "_template": "text"
     },
     {
@@ -340,7 +766,224 @@
     {
       "title": "Table 3 Strains designed and constructed in this project",
       "csv": "Number,Description\nNKU-Y01,\"Matα; ura3-52, trp1-289, leu2-3,112,his3Δ1; MAL2-8c; SUC2（Saccharomyces cerevisiae CEN.PK2-1C）\"\nNKU-Y02,Strain CEN.PK2-1C derivative with ΔGal80\nNKU-Y03,Strain NKU-Y02 derivative with -GPR2-sfGFP\nNKU-Y04,Strain NKU-Y02 transformed with pRS315-MjDOD-BvCYP76AD5\nNKU-Y05,Strain NKU-Y02 derivative with -sTF\nNKU-Y06,Strain NKU-Y05 derivative with -MjDOD :  -BvCYP76AD5\nNKU-Y07,Strain NKU-Y06 derivative with -GPR2\nNKU-Y08,Strain NKU-Y06 derivative with -GPR2-N84V\nNKU-Y09,Strain NKU-Y06 derivative with -GPR2-V368R\n",
-      "_template": "datatable"
+      "_template": "datatable",
+      "sourceCellRuns": [
+        [
+          [
+            {
+              "text": "Number",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Description",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "NKU-Y01",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Matα; ura3-52, trp1-289, leu2-3,112,his3Δ1; MAL2-8c; SUC2",
+              "format": []
+            },
+            {
+              "text": "（",
+              "format": []
+            },
+            {
+              "text": "Saccharomyces cerevisiae",
+              "format": [
+                "i"
+              ]
+            },
+            {
+              "text": " CEN.PK2-1C",
+              "format": []
+            },
+            {
+              "text": "）",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "NKU-Y02",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Strain CEN.PK2-1C derivative with ",
+              "format": []
+            },
+            {
+              "text": "ΔGal80",
+              "format": [
+                "i"
+              ]
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "NKU-Y03",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Strain NKU-Y02 derivative with ",
+              "format": []
+            },
+            {
+              "text": "-GPR2-sfGFP",
+              "format": [
+                "i"
+              ]
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "NKU-Y04",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Strain NKU-Y02 transformed with pRS315-MjDOD-BvCYP76AD5",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "NKU-Y05",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Strain NKU-Y02 derivative with ",
+              "format": []
+            },
+            {
+              "text": "-sTF",
+              "format": [
+                "i"
+              ]
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "NKU-Y06",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Strain NKU-Y05 derivative with ",
+              "format": []
+            },
+            {
+              "text": "-MjDOD :  ",
+              "format": [
+                "i"
+              ]
+            },
+            {
+              "text": "-BvCYP76AD5",
+              "format": [
+                "i"
+              ]
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "NKU-Y07",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Strain NKU-Y06 derivative with ",
+              "format": []
+            },
+            {
+              "text": "-GPR2",
+              "format": [
+                "i"
+              ]
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "NKU-Y08",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Strain NKU-Y06 derivative with ",
+              "format": []
+            },
+            {
+              "text": "-GPR2-",
+              "format": [
+                "i"
+              ]
+            },
+            {
+              "text": "N84V",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "NKU-Y09",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Strain NKU-Y06 derivative with ",
+              "format": []
+            },
+            {
+              "text": "-GPR2-",
+              "format": [
+                "i"
+              ]
+            },
+            {
+              "text": "V368R",
+              "format": []
+            }
+          ]
+        ]
+      ],
+      "sourceTableSourceId": "SRC030"
     },
     {
       "text": "3.3 sgRNA Design",
@@ -351,7 +994,67 @@
     {
       "title": "Table 4 sgRNA designed and constructed in this project",
       "csv": "Name,Sequence\ngSTE12,gcgaagttgaagaatcgcta\ngGal4,ggatggatcgaccataaagc\ngSTE2,ggatgcattattagcagccg\n",
-      "_template": "datatable"
+      "_template": "datatable",
+      "sourceCellRuns": [
+        [
+          [
+            {
+              "text": "Name",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Sequence",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "gSTE12",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "gcgaagttgaagaatcgcta",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "gGal4",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "ggatggatcgaccataaagc",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "gSTE2",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "ggatgcattattagcagccg",
+              "format": []
+            }
+          ]
+        ]
+      ],
+      "sourceTableSourceId": "SRC030"
     }
-  ]
+  ],
+  "preserveAuthorFormatting": true
 }

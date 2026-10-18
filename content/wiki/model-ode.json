@@ -17,9 +17,9 @@
     },
     {
       "_template": "heading",
-      "text": "3. ODE and the two-channel model | From signal response to target-density estimation",
+      "text": "ODE and the two-channel model | From signal response to target-density estimation",
       "level": 2,
-      "attributes": "#ode-introduction toc=\"3. ODE and the two-channel model | From signal response to target-density estimation\""
+      "attributes": "#ode-introduction toc=\"ODE and the two-channel model | From signal response to target-density estimation\""
     },
     {
       "_template": "text",
@@ -417,5 +417,6 @@
       "_template": "text",
       "body": "[7] [Stücheli et al. (2020), Nucleic Acids Research, 48, e67; phone color quantification and Figure 4.](https://doi.org/10.1093/nar/gkaa342)"
     }
-  ]
+  ],
+  "preserveAuthorFormatting": true
 }

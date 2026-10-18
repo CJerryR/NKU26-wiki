@@ -21,14 +21,30 @@ function cell(value, header = '') {
   }
   return value;
 }
-export function renderTable(target, headers, rows, { name = 'data', pageSize = 25 } = {}) {
+function sourceCell(value, runs) {
+  if (!Array.isArray(runs)) return value;
+  const original = runs.map(r => r.text || '').join('');
+  if (original.trim() !== value.trim()) throw new Error('Original table cell text does not match its CSV value.');
+  const nodes = runs.map(run => {
+    let node = document.createTextNode(run.text || '');
+    for (const [flag, tag] of [['superscript','sup'],['subscript','sub'],['u','u'],['i','em'],['b','strong']]) {
+      if (run.format?.includes(flag)) node = h(tag, null, node);
+    }
+    const href = run.href && safeHref(run.href);
+    return href ? h('a', { href, ...linkProps(href) }, node) : node;
+  });
+  return h('span', { style: { fontWeight: 'normal', whiteSpace: 'pre-wrap' } }, nodes);
+}
+export function renderTable(target, headers, rows, { name = 'data', pageSize = 25, sourceCellRuns } = {}) {
+  const originalRows = new Map(rows.map((row, index) => [row, sourceCellRuns?.[index + 1]]));
+  const originalValues = cells => cells.map(runs => runs.map(r => r.text || '').join(''));
   const numeric = headers.map((_, k) => isNumericColumn(rows, k));
   let sort = -1; let asc = true; let page = 0; let query = '';
   const status = h('span', { class: 'muted small', 'aria-live': 'polite' });
   const box = searchBox('Filter table', (v) => { query = v; page = 0; draw(); });
   const tbody = h('tbody');
   const ths = headers.map((label, k) => {
-    const b = h('button', { type: 'button', class: 'dt__sort' }, h('span', { text: label }), icon('down', 'i dt__arrow'));
+    const b = h('button', { type: 'button', class: 'dt__sort' }, sourceCellRuns ? sourceCell(label, sourceCellRuns[0]?.[k]) : h('span', { text: label }), icon('down', 'i dt__arrow'));
     const th = h('th', { scope: 'col', 'aria-sort': 'none', class: numeric[k] ? 'num' : '' }, b);
     b.addEventListener('click', () => { asc = sort === k ? !asc : true; sort = k; page = 0; draw(); });
     return th;
@@ -38,7 +54,7 @@ export function renderTable(target, headers, rows, { name = 'data', pageSize = 2
   const pageText = h('span', { class: 'muted small' });
   const pager = h('div', { class: 'dt__pager' }, prev, pageText, next);
   let current = rows;
-  const exportCsv = button('Download CSV', { cls: 'btn btn--quiet', icon: 'download', onClick: () => saveBlob(new Blob([`\uFEFF${toCSV(headers, current)}`], { type: 'text/csv;charset=utf-8' }), `${name}.csv`) });
+  const exportCsv = button('Download CSV', { cls: 'btn btn--quiet', icon: 'download', onClick: () => saveBlob(new Blob([`\uFEFF${toCSV(sourceCellRuns ? originalValues(sourceCellRuns[0]) : headers, sourceCellRuns ? current.map(row => originalValues(originalRows.get(row))) : current)}`], { type: 'text/csv;charset=utf-8' }), `${name}.csv`) });
   function draw() {
     const q = query.trim().toLowerCase();
     let result = q ? rows.filter((r) => r.join(' ').toLowerCase().includes(q)) : rows;
@@ -55,7 +71,7 @@ export function renderTable(target, headers, rows, { name = 'data', pageSize = 2
     page = Math.max(0, Math.min(page, pages - 1));
     const visibleRows = result.slice(page * pageSize, page * pageSize + pageSize);
     swap(tbody, ...visibleRows.map(r => h('tr', null,
-      r.map((v, k) => h('td', { class: numeric[k] ? 'num' : '' }, cell(v, headers[k]))))));
+      r.map((v, k) => h('td', { class: numeric[k] ? 'num' : '' }, sourceCellRuns ? sourceCell(v, originalRows.get(r)?.[k]) : cell(v, headers[k]))))));
     if (!result.length) tbody.append(h('tr', null, h('td', { colspan: headers.length, class: 'dt__none', text: 'No matching rows.' })));
     status.textContent = q ? `${result.length} / ${rows.length} rows` : `${rows.length} rows`;
     pageText.textContent = `Page ${page + 1} / ${pages}`;
@@ -77,7 +93,7 @@ async function datatable(d, ctx) {
   const text = await csvText(d, ctx, '请选择 CSV 文件或粘贴数据，首行为列名。');
   if (text == null) return;
   const { headers, rows } = table(text);
-  renderTable(ctx.body, headers, rows, { name: d.title || 'table' });
+  renderTable(ctx.body, headers, rows, { name: d.title || 'table', sourceCellRuns: d.sourceCellRuns });
 }
 
 /* ================================================================ charts */

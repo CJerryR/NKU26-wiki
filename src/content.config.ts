@@ -19,6 +19,7 @@ const pages = defineCollection({
     hidden: z.boolean().default(false),
     draft: z.boolean().default(false),
     search: z.boolean().default(true),
+    preserveAuthorFormatting: z.boolean().default(false),
   }),
 });
 
