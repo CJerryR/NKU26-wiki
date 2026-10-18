@@ -5,9 +5,9 @@
       1548,
       1410
     ],
-    "bytes": 245540,
-    "quality": 86,
-    "hash": "cd3ed976df28",
+    "bytes": 266750,
+    "quality": 82,
+    "hash": "9b1918b8434d",
     "frames": {
       "i-crowd": [
         576,
@@ -58,7 +58,7 @@
         220
       ]
     },
-    "style": "handcut-v10 auto 8"
+    "style": "handcut-v10 gpt 8"
   },
   "mobile": {
     "file": "education-mobile.webp",
@@ -66,9 +66,9 @@
       588,
       1425
     ],
-    "bytes": 139386,
+    "bytes": 146818,
     "quality": 86,
-    "hash": "f07df2f3ba54",
+    "hash": "1d3de0748ebd",
     "frames": {
       "i-edu-board": [
         0,
@@ -101,6 +101,6 @@
         318
       ]
     },
-    "style": "handcut-v10 auto 5"
+    "style": "handcut-v10 gpt 5"
   }
 }

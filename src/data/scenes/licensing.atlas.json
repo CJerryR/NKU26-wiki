@@ -5,9 +5,9 @@
       1864,
       578
     ],
-    "bytes": 150580,
+    "bytes": 190838,
     "quality": 86,
-    "hash": "54be4bf4299a",
+    "hash": "48201d18548d",
     "frames": {
       "i-contrib-docs": [
         1313,
@@ -52,7 +52,7 @@
         257
       ]
     },
-    "style": "handcut-v10 auto 7"
+    "style": "handcut-v10 gpt 7"
   },
   "mobile": {
     "file": "licensing-mobile.webp",
@@ -60,9 +60,9 @@
       955,
       467
     ],
-    "bytes": 74108,
+    "bytes": 83600,
     "quality": 86,
-    "hash": "7f5dc47d2574",
+    "hash": "120020b6cc75",
     "frames": {
       "i-library": [
         287,
@@ -95,6 +95,6 @@
         203
       ]
     },
-    "style": "handcut-v10 auto 5"
+    "style": "handcut-v10 gpt 5"
   }
 }

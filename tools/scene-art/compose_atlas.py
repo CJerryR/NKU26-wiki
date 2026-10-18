@@ -27,7 +27,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import scene2d as S  # noqa: E402
 
 BUDGET = {'desktop': 290_000, 'mobile': 165_000}   # same budgets as tools/pack_scene_atlas.py
-QUALITIES = (86, 82, 78, 74, 70, 66, 62, 58, 54)
+QUALITIES = (86, 82, 78, 74, 70, 66, 62, 58, 54, 50, 46, 42, 38, 34, 30, 26, 22)
 
 
 def encode(sheet: Image.Image, budget: int) -> tuple[bytes, int]:
@@ -38,6 +38,8 @@ def encode(sheet: Image.Image, budget: int) -> tuple[bytes, int]:
         data = buf.getvalue()
         if len(data) <= budget:
             break
+    if len(data) > budget:
+        raise ValueError(f'Atlas cannot fit its {budget} byte budget: {len(data)} bytes')
     return data, q
 
 

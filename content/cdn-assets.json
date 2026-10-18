@@ -1,6 +1,6 @@
 {
-  "verified_at": "2026-10-18T18:32:08.799683+08:00",
-  "scope": "V10: 41 scene WebP assets HTTP and exact source hash verified; older assets retain dated verification.",
+  "verified_at": "2026-10-18T19:45:36.862653+08:00",
+  "scope": "V10.1 AI opening illustrations: 40 updated atlases HTTP and SHA-256 verified; other entries retain dated records.",
   "assets": [
     {
       "path": "fonts/fraunces-italic.woff2",
@@ -4011,258 +4011,6 @@
       }
     },
     {
-      "path": "img/scenes/acknowledgements-desktop.webp",
-      "source_sha256": "2ecf0c208aa856b33506ad5d2c2081620c804cbefefd43dd647397af2f9cea60",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-2ecf0c208aa8-acknowledgements-desktop.webp",
-      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
-      "http_verification": {
-        "checked_at": "2026-10-18T18:32:08.799683+08:00",
-        "status": 200,
-        "content_type": "image/webp",
-        "nonempty": true
-      },
-      "referenced_in_build": true,
-      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
-    },
-    {
-      "path": "img/scenes/acknowledgements-mobile.webp",
-      "source_sha256": "54a256f96d9d7413e4c98948f8d164a62b910cae114f307c46086c8ce3996d0f",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-54a256f96d9d-acknowledgements-mobile.webp",
-      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
-      "http_verification": {
-        "checked_at": "2026-10-18T18:32:08.799683+08:00",
-        "status": 200,
-        "content_type": "image/webp",
-        "nonempty": true
-      },
-      "referenced_in_build": true,
-      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
-    },
-    {
-      "path": "img/scenes/attributions-desktop.webp",
-      "source_sha256": "36b6e44f4119de8a9ab3301ad25ffa1988004f1f91c7269b7cbd356f5270f6e9",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-36b6e44f4119-attributions-desktop.webp",
-      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
-      "http_verification": {
-        "checked_at": "2026-10-18T18:32:08.799683+08:00",
-        "status": 200,
-        "content_type": "image/webp",
-        "nonempty": true
-      },
-      "referenced_in_build": true,
-      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
-    },
-    {
-      "path": "img/scenes/attributions-mobile.webp",
-      "source_sha256": "990b8c2b7e502520c151cd38e12b14edbbfe1a607b37abf18fdd05df24a591f0",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-990b8c2b7e50-attributions-mobile.webp",
-      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
-      "http_verification": {
-        "checked_at": "2026-10-18T18:32:08.799683+08:00",
-        "status": 200,
-        "content_type": "image/webp",
-        "nonempty": true
-      },
-      "referenced_in_build": true,
-      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
-    },
-    {
-      "path": "img/scenes/awards-desktop.webp",
-      "source_sha256": "51c37f48cc6149aa11a457d48435a0b5a6cd76c89271f52605f1b562d20ef20d",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-51c37f48cc61-awards-desktop.webp",
-      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
-      "http_verification": {
-        "checked_at": "2026-10-18T18:32:08.799683+08:00",
-        "status": 200,
-        "content_type": "image/webp",
-        "nonempty": true
-      },
-      "referenced_in_build": true,
-      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
-    },
-    {
-      "path": "img/scenes/awards-mobile.webp",
-      "source_sha256": "dcc0ab13e34b3ff942c9b6389409ac65c7d6f510fec201fd59cd69535c65c91e",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-dcc0ab13e34b-awards-mobile.webp",
-      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
-      "http_verification": {
-        "checked_at": "2026-10-18T18:32:08.799683+08:00",
-        "status": 200,
-        "content_type": "image/webp",
-        "nonempty": true
-      },
-      "referenced_in_build": true,
-      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
-    },
-    {
-      "path": "img/scenes/background-desktop.webp",
-      "source_sha256": "133f4a6dfc1ee26b8218d166889fd39ad0f32bcde135524502d9e4ef2692858a",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-133f4a6dfc1e-background-desktop.webp",
-      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
-      "http_verification": {
-        "checked_at": "2026-10-18T18:32:08.799683+08:00",
-        "status": 200,
-        "content_type": "image/webp",
-        "nonempty": true
-      },
-      "referenced_in_build": true,
-      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
-    },
-    {
-      "path": "img/scenes/background-mobile.webp",
-      "source_sha256": "872bb7161e802a01bde5a9963856e019c9e9d7ccc956c3444eb12d1a83c83b6b",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-872bb7161e80-background-mobile.webp",
-      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
-      "http_verification": {
-        "checked_at": "2026-10-18T18:32:08.799683+08:00",
-        "status": 200,
-        "content_type": "image/webp",
-        "nonempty": true
-      },
-      "referenced_in_build": true,
-      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
-    },
-    {
-      "path": "img/scenes/contribution-desktop.webp",
-      "source_sha256": "39d8de9cb6b79a08f1db9b5968af6364394c031180a32f87eea0e53a13ca39ad",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-39d8de9cb6b7-contribution-desktop.webp",
-      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
-      "http_verification": {
-        "checked_at": "2026-10-18T18:32:08.799683+08:00",
-        "status": 200,
-        "content_type": "image/webp",
-        "nonempty": true
-      },
-      "referenced_in_build": true,
-      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
-    },
-    {
-      "path": "img/scenes/contribution-mobile.webp",
-      "source_sha256": "0a6c3a2a637364fb8f1488b9988b41ed4edc65da2eba7a5884a091bfe29193f0",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-0a6c3a2a6373-contribution-mobile.webp",
-      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
-      "http_verification": {
-        "checked_at": "2026-10-18T18:32:08.799683+08:00",
-        "status": 200,
-        "content_type": "image/webp",
-        "nonempty": true
-      },
-      "referenced_in_build": true,
-      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
-    },
-    {
-      "path": "img/scenes/description-desktop.webp",
-      "source_sha256": "766cc7a513bd243a420c70827845079498930d99512a2cae48b604c46da41e10",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-766cc7a513bd-description-desktop.webp",
-      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
-      "http_verification": {
-        "checked_at": "2026-10-18T18:32:08.799683+08:00",
-        "status": 200,
-        "content_type": "image/webp",
-        "nonempty": true
-      },
-      "referenced_in_build": true,
-      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
-    },
-    {
-      "path": "img/scenes/description-mobile.webp",
-      "source_sha256": "b3251d2df0b9bbaef354f96824a500fa6d7be4c12b1adec004dbb132be33135c",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-b3251d2df0b9-description-mobile.webp",
-      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
-      "http_verification": {
-        "checked_at": "2026-10-18T18:32:08.799683+08:00",
-        "status": 200,
-        "content_type": "image/webp",
-        "nonempty": true
-      },
-      "referenced_in_build": true,
-      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
-    },
-    {
-      "path": "img/scenes/education-desktop.webp",
-      "source_sha256": "cd3ed976df2872210c59216458bf16385a1529fa747fbed07c1c408a82848542",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-cd3ed976df28-education-desktop.webp",
-      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
-      "http_verification": {
-        "checked_at": "2026-10-18T18:32:08.799683+08:00",
-        "status": 200,
-        "content_type": "image/webp",
-        "nonempty": true
-      },
-      "referenced_in_build": true,
-      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
-    },
-    {
-      "path": "img/scenes/education-mobile.webp",
-      "source_sha256": "f07df2f3ba54f039de79ce49c2c7a9851e251f79be038025d5b3eb5edc57d95c",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-f07df2f3ba54-education-mobile.webp",
-      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
-      "http_verification": {
-        "checked_at": "2026-10-18T18:32:08.799683+08:00",
-        "status": 200,
-        "content_type": "image/webp",
-        "nonempty": true
-      },
-      "referenced_in_build": true,
-      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
-    },
-    {
-      "path": "img/scenes/engineering-desktop.webp",
-      "source_sha256": "c3bf781d52e96031211c22e7958e18aec82aa43677608face4e4345dec98715b",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-c3bf781d52e9-engineering-desktop.webp",
-      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
-      "http_verification": {
-        "checked_at": "2026-10-18T18:32:08.799683+08:00",
-        "status": 200,
-        "content_type": "image/webp",
-        "nonempty": true
-      },
-      "referenced_in_build": true,
-      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
-    },
-    {
-      "path": "img/scenes/engineering-mobile.webp",
-      "source_sha256": "1b70657f105a34623effb2094afa6ff2ea6a336e3cb1f71e589537af710616b5",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-1b70657f105a-engineering-mobile.webp",
-      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
-      "http_verification": {
-        "checked_at": "2026-10-18T18:32:08.799683+08:00",
-        "status": 200,
-        "content_type": "image/webp",
-        "nonempty": true
-      },
-      "referenced_in_build": true,
-      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
-    },
-    {
-      "path": "img/scenes/experiments-desktop.webp",
-      "source_sha256": "fd956188062b5e9bf390409928a4498413a73da2895736e3e1f4d1dde2ff223d",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-fd956188062b-experiments-desktop.webp",
-      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
-      "http_verification": {
-        "checked_at": "2026-10-18T18:32:08.799683+08:00",
-        "status": 200,
-        "content_type": "image/webp",
-        "nonempty": true
-      },
-      "referenced_in_build": true,
-      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
-    },
-    {
-      "path": "img/scenes/experiments-mobile.webp",
-      "source_sha256": "48bb8b6c63a6dcb874584ba165f54b6e9bd05ee85d40c2dbd190197195a39f30",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-48bb8b6c63a6-experiments-mobile.webp",
-      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
-      "http_verification": {
-        "checked_at": "2026-10-18T18:32:08.799683+08:00",
-        "status": 200,
-        "content_type": "image/webp",
-        "nonempty": true
-      },
-      "referenced_in_build": true,
-      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
-    },
-    {
       "path": "img/scenes/ground-strip.webp",
       "source_sha256": "75721912e3cc5dc91e8995e6f70d4303b83b46c1bc3e0948878842756a66bd3b",
       "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-75721912e3cc-ground-strip.webp",
@@ -4277,312 +4025,564 @@
       "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
     },
     {
-      "path": "img/scenes/human-practices-desktop.webp",
-      "source_sha256": "401a10a1370c76408a24427f2d39efadc4ebf4f0472f4233d1b1de3f564c68fd",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-401a10a1370c-human-practices-desktop.webp",
-      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "path": "img/scenes/acknowledgements-desktop.webp",
+      "source_sha256": "3a033b97fd5691e25fdcd1fce4bc68b7d6fba849f0f8d5d89e5407049822a97e",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-3a033b97fd56-acknowledgements-desktop.webp",
+      "verification": "HTTP 200; exact uploaded/source SHA-256 match",
       "http_verification": {
-        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "checked_at": "2026-10-18T19:45:36.862653+08:00",
         "status": 200,
         "content_type": "image/webp",
         "nonempty": true
       },
       "referenced_in_build": true,
-      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+      "source": "OpenAI built-in image generation in Codex; team layout/style references; content/scene-art-provenance.json"
     },
     {
-      "path": "img/scenes/human-practices-mobile.webp",
-      "source_sha256": "c2de5daa97b7afff471ebe441c73986375594e9c29a3654c503b91c9385187f0",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-c2de5daa97b7-human-practices-mobile.webp",
-      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "path": "img/scenes/attributions-desktop.webp",
+      "source_sha256": "a2c05d975859cc8ef8a9d46abf5ca3e958eabda9bd6553d43f8e479322143cf2",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-a2c05d975859-attributions-desktop.webp",
+      "verification": "HTTP 200; exact uploaded/source SHA-256 match",
       "http_verification": {
-        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "checked_at": "2026-10-18T19:45:36.862653+08:00",
         "status": 200,
         "content_type": "image/webp",
         "nonempty": true
       },
       "referenced_in_build": true,
-      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+      "source": "OpenAI built-in image generation in Codex; team layout/style references; content/scene-art-provenance.json"
+    },
+    {
+      "path": "img/scenes/awards-desktop.webp",
+      "source_sha256": "85ed66bc463c0d7643533a19d4d9750f9caf12e98906882f3604a0f8597f21dc",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-85ed66bc463c-awards-desktop.webp",
+      "verification": "HTTP 200; exact uploaded/source SHA-256 match",
+      "http_verification": {
+        "checked_at": "2026-10-18T19:45:36.862653+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "OpenAI built-in image generation in Codex; team layout/style references; content/scene-art-provenance.json"
+    },
+    {
+      "path": "img/scenes/background-desktop.webp",
+      "source_sha256": "c095340d2b08f047a2a7d4c85c391c460c5b47e8e19ed73a8c5f9a33696bbf7b",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-c095340d2b08-background-desktop.webp",
+      "verification": "HTTP 200; exact uploaded/source SHA-256 match",
+      "http_verification": {
+        "checked_at": "2026-10-18T19:45:36.862653+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "OpenAI built-in image generation in Codex; team layout/style references; content/scene-art-provenance.json"
+    },
+    {
+      "path": "img/scenes/contribution-desktop.webp",
+      "source_sha256": "bdbda6a9a903b70ff66b55e81a3bb87e85e203b0ed94313d664fc00b050c807c",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-bdbda6a9a903-contribution-desktop.webp",
+      "verification": "HTTP 200; exact uploaded/source SHA-256 match",
+      "http_verification": {
+        "checked_at": "2026-10-18T19:45:36.862653+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "OpenAI built-in image generation in Codex; team layout/style references; content/scene-art-provenance.json"
+    },
+    {
+      "path": "img/scenes/description-desktop.webp",
+      "source_sha256": "432bd2b29cdee2c6ef3b3189e085d16b2c6930ab5aa5ba9270717681fa397eac",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-432bd2b29cde-description-desktop.webp",
+      "verification": "HTTP 200; exact uploaded/source SHA-256 match",
+      "http_verification": {
+        "checked_at": "2026-10-18T19:45:36.862653+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "OpenAI built-in image generation in Codex; team layout/style references; content/scene-art-provenance.json"
+    },
+    {
+      "path": "img/scenes/education-desktop.webp",
+      "source_sha256": "9b1918b8434d9a997c9ac556636256dccef304b6e1cc4b241c0e834c571a1c76",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-9b1918b8434d-education-desktop.webp",
+      "verification": "HTTP 200; exact uploaded/source SHA-256 match",
+      "http_verification": {
+        "checked_at": "2026-10-18T19:45:36.862653+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "OpenAI built-in image generation in Codex; team layout/style references; content/scene-art-provenance.json"
+    },
+    {
+      "path": "img/scenes/engineering-desktop.webp",
+      "source_sha256": "c42f3e40925fac7562fd0182fa51388708dd03cea7571c12a0bf077cfffb0672",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-c42f3e40925f-engineering-desktop.webp",
+      "verification": "HTTP 200; exact uploaded/source SHA-256 match",
+      "http_verification": {
+        "checked_at": "2026-10-18T19:45:36.862653+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "OpenAI built-in image generation in Codex; team layout/style references; content/scene-art-provenance.json"
+    },
+    {
+      "path": "img/scenes/experiments-desktop.webp",
+      "source_sha256": "8ac661ad85ce1b871e5231ccef393a16309c32e537dc3bbbff0cc4f62a1790bf",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-8ac661ad85ce-experiments-desktop.webp",
+      "verification": "HTTP 200; exact uploaded/source SHA-256 match",
+      "http_verification": {
+        "checked_at": "2026-10-18T19:45:36.862653+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "OpenAI built-in image generation in Codex; team layout/style references; content/scene-art-provenance.json"
+    },
+    {
+      "path": "img/scenes/human-practices-desktop.webp",
+      "source_sha256": "a81cf6847a23257833c774030080279fc83fb8a30f326facaf35f43e823d0ec9",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-a81cf6847a23-human-practices-desktop.webp",
+      "verification": "HTTP 200; exact uploaded/source SHA-256 match",
+      "http_verification": {
+        "checked_at": "2026-10-18T19:45:36.862653+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "OpenAI built-in image generation in Codex; team layout/style references; content/scene-art-provenance.json"
     },
     {
       "path": "img/scenes/licensing-desktop.webp",
-      "source_sha256": "54be4bf4299a53e20f163ffaed1603db4d4cc6d8a6eeb415b7a9963af9d53c56",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-54be4bf4299a-licensing-desktop.webp",
-      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "source_sha256": "48201d18548d940c46305b65a66787a0e7a7c65f792f029cfdd15a6d1f0f055d",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-48201d18548d-licensing-desktop.webp",
+      "verification": "HTTP 200; exact uploaded/source SHA-256 match",
       "http_verification": {
-        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "checked_at": "2026-10-18T19:45:36.862653+08:00",
         "status": 200,
         "content_type": "image/webp",
         "nonempty": true
       },
       "referenced_in_build": true,
-      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
-    },
-    {
-      "path": "img/scenes/licensing-mobile.webp",
-      "source_sha256": "7f5dc47d2574b3bb2c94cebe958ad5f3c66b76eb22179f1b9a5dc8c8c5d7899b",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-7f5dc47d2574-licensing-mobile.webp",
-      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
-      "http_verification": {
-        "checked_at": "2026-10-18T18:32:08.799683+08:00",
-        "status": 200,
-        "content_type": "image/webp",
-        "nonempty": true
-      },
-      "referenced_in_build": true,
-      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+      "source": "OpenAI built-in image generation in Codex; team layout/style references; content/scene-art-provenance.json"
     },
     {
       "path": "img/scenes/members-desktop.webp",
-      "source_sha256": "cba6262409795190f667219a0398affe92c8e14ce4703fcd18e4cd2b0af39efa",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-cba626240979-members-desktop.webp",
-      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "source_sha256": "0e8520a73d2cc05862e171ae33978f47251ab0882be245512cdf7b99959185ca",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-0e8520a73d2c-members-desktop.webp",
+      "verification": "HTTP 200; exact uploaded/source SHA-256 match",
       "http_verification": {
-        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "checked_at": "2026-10-18T19:45:36.862653+08:00",
         "status": 200,
         "content_type": "image/webp",
         "nonempty": true
       },
       "referenced_in_build": true,
-      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
-    },
-    {
-      "path": "img/scenes/members-mobile.webp",
-      "source_sha256": "a15a8a4d65651f626210c98987e54c17b3f430ee82eef05d567c1b702b620ff9",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-a15a8a4d6565-members-mobile.webp",
-      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
-      "http_verification": {
-        "checked_at": "2026-10-18T18:32:08.799683+08:00",
-        "status": 200,
-        "content_type": "image/webp",
-        "nonempty": true
-      },
-      "referenced_in_build": true,
-      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+      "source": "OpenAI built-in image generation in Codex; team layout/style references; content/scene-art-provenance.json"
     },
     {
       "path": "img/scenes/model-desktop.webp",
-      "source_sha256": "1a3e1d61334201e425997fd1659469d805ff7a7e0907d3a7aa38798cf507a16d",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-1a3e1d613342-model-desktop.webp",
-      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "source_sha256": "af019c657181ab9ee8b1b590d640b174de70af6f613875020b9ae14f3f2524c1",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-af019c657181-model-desktop.webp",
+      "verification": "HTTP 200; exact uploaded/source SHA-256 match",
       "http_verification": {
-        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "checked_at": "2026-10-18T19:45:36.862653+08:00",
         "status": 200,
         "content_type": "image/webp",
         "nonempty": true
       },
       "referenced_in_build": true,
-      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+      "source": "OpenAI built-in image generation in Codex; team layout/style references; content/scene-art-provenance.json"
     },
     {
       "path": "img/scenes/model-docking-desktop.webp",
-      "source_sha256": "9b8956e15d8e8711712d3d72bac7e1fcf9f369eacabe688e89efd61905acc5ad",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-9b8956e15d8e-model-docking-desktop.webp",
-      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "source_sha256": "3c1b40d2893a3b8e1119245d3d08adbc7ae109a336b33f4a7ebd40f088bf68cd",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-3c1b40d2893a-model-docking-desktop.webp",
+      "verification": "HTTP 200; exact uploaded/source SHA-256 match",
       "http_verification": {
-        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "checked_at": "2026-10-18T19:45:36.862653+08:00",
         "status": 200,
         "content_type": "image/webp",
         "nonempty": true
       },
       "referenced_in_build": true,
-      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
-    },
-    {
-      "path": "img/scenes/model-docking-mobile.webp",
-      "source_sha256": "15b8eda50260418047343be68c6a663f399e8b40dd43ae0d5a5ec92c884cf0f7",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-15b8eda50260-model-docking-mobile.webp",
-      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
-      "http_verification": {
-        "checked_at": "2026-10-18T18:32:08.799683+08:00",
-        "status": 200,
-        "content_type": "image/webp",
-        "nonempty": true
-      },
-      "referenced_in_build": true,
-      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+      "source": "OpenAI built-in image generation in Codex; team layout/style references; content/scene-art-provenance.json"
     },
     {
       "path": "img/scenes/model-eco-desktop.webp",
-      "source_sha256": "bacbabb8b8108a8ef7bbd03e7c47551b9bc6f565456ca0ff267dedeed58b4f59",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-bacbabb8b810-model-eco-desktop.webp",
-      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "source_sha256": "1713ec27cecf431cd516f6f50c924c27568e7ec89b5a525fa800e09f7510945b",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-1713ec27cecf-model-eco-desktop.webp",
+      "verification": "HTTP 200; exact uploaded/source SHA-256 match",
       "http_verification": {
-        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "checked_at": "2026-10-18T19:45:36.862653+08:00",
         "status": 200,
         "content_type": "image/webp",
         "nonempty": true
       },
       "referenced_in_build": true,
-      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
-    },
-    {
-      "path": "img/scenes/model-eco-mobile.webp",
-      "source_sha256": "4848548257476f993f30296332193ac1c6a9e1403ed41eb353b723b3854f2784",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-484854825747-model-eco-mobile.webp",
-      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
-      "http_verification": {
-        "checked_at": "2026-10-18T18:32:08.799683+08:00",
-        "status": 200,
-        "content_type": "image/webp",
-        "nonempty": true
-      },
-      "referenced_in_build": true,
-      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+      "source": "OpenAI built-in image generation in Codex; team layout/style references; content/scene-art-provenance.json"
     },
     {
       "path": "img/scenes/model-md-desktop.webp",
-      "source_sha256": "baacba0eaefca182b9cad5fc9c7e5aab4f6876c6541629df1fd552f0b0500ddb",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-baacba0eaefc-model-md-desktop.webp",
-      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "source_sha256": "487326e2f7bdb174a0eeb2e61d1d994913d910ff7e00c8749adc8abbcb139cb5",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-487326e2f7bd-model-md-desktop.webp",
+      "verification": "HTTP 200; exact uploaded/source SHA-256 match",
       "http_verification": {
-        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "checked_at": "2026-10-18T19:45:36.862653+08:00",
         "status": 200,
         "content_type": "image/webp",
         "nonempty": true
       },
       "referenced_in_build": true,
-      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
-    },
-    {
-      "path": "img/scenes/model-md-mobile.webp",
-      "source_sha256": "ba8baae3711088c1bdd90eba804bba0c74f01271033c1814cfea977054f4ad7b",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-ba8baae37110-model-md-mobile.webp",
-      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
-      "http_verification": {
-        "checked_at": "2026-10-18T18:32:08.799683+08:00",
-        "status": 200,
-        "content_type": "image/webp",
-        "nonempty": true
-      },
-      "referenced_in_build": true,
-      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
-    },
-    {
-      "path": "img/scenes/model-mobile.webp",
-      "source_sha256": "9a4092339ed3fa96fd79bcd1e4d75fe0dd7373b0a08c81fc7c269687bc45eb68",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-9a4092339ed3-model-mobile.webp",
-      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
-      "http_verification": {
-        "checked_at": "2026-10-18T18:32:08.799683+08:00",
-        "status": 200,
-        "content_type": "image/webp",
-        "nonempty": true
-      },
-      "referenced_in_build": true,
-      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+      "source": "OpenAI built-in image generation in Codex; team layout/style references; content/scene-art-provenance.json"
     },
     {
       "path": "img/scenes/model-ode-desktop.webp",
-      "source_sha256": "ea6b25f8778a46b246de170883153a2596f82b04918c49a3fcd9589916097d3f",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-ea6b25f8778a-model-ode-desktop.webp",
-      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "source_sha256": "9bdd926e8a1f404b434665bf93c0c82fdd8d20c4f3f6eb40d30b091d4d3b65c0",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-9bdd926e8a1f-model-ode-desktop.webp",
+      "verification": "HTTP 200; exact uploaded/source SHA-256 match",
       "http_verification": {
-        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "checked_at": "2026-10-18T19:45:36.862653+08:00",
         "status": 200,
         "content_type": "image/webp",
         "nonempty": true
       },
       "referenced_in_build": true,
-      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
-    },
-    {
-      "path": "img/scenes/model-ode-mobile.webp",
-      "source_sha256": "b10240f2b78f6e8f8cb4d46e8c6909a54b0d0e7e21492162e904cc8422ffa43f",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-b10240f2b78f-model-ode-mobile.webp",
-      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
-      "http_verification": {
-        "checked_at": "2026-10-18T18:32:08.799683+08:00",
-        "status": 200,
-        "content_type": "image/webp",
-        "nonempty": true
-      },
-      "referenced_in_build": true,
-      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+      "source": "OpenAI built-in image generation in Codex; team layout/style references; content/scene-art-provenance.json"
     },
     {
       "path": "img/scenes/parts-desktop.webp",
-      "source_sha256": "a1136d2432845f4ad9200624ee188868bbe4686ee9687e97ee09e98e79e23239",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-a1136d243284-parts-desktop.webp",
-      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "source_sha256": "e2166e2f0777747feb0cdda399be5930dfca28ce482c1550037e2830977c75f0",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-e2166e2f0777-parts-desktop.webp",
+      "verification": "HTTP 200; exact uploaded/source SHA-256 match",
       "http_verification": {
-        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "checked_at": "2026-10-18T19:45:36.862653+08:00",
         "status": 200,
         "content_type": "image/webp",
         "nonempty": true
       },
       "referenced_in_build": true,
-      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
-    },
-    {
-      "path": "img/scenes/parts-mobile.webp",
-      "source_sha256": "c7359f52ebe4488745c1758c0dbeab3eecfd82756475a2ae4ff80a6f41994894",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-c7359f52ebe4-parts-mobile.webp",
-      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
-      "http_verification": {
-        "checked_at": "2026-10-18T18:32:08.799683+08:00",
-        "status": 200,
-        "content_type": "image/webp",
-        "nonempty": true
-      },
-      "referenced_in_build": true,
-      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+      "source": "OpenAI built-in image generation in Codex; team layout/style references; content/scene-art-provenance.json"
     },
     {
       "path": "img/scenes/results-desktop.webp",
-      "source_sha256": "28ab213408314bf5579058687a26cc2f571f890db4f964d4294cf2f037e92a27",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-28ab21340831-results-desktop.webp",
-      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "source_sha256": "707292c2fbac194622a1d8435c0b5e6830817ef957a16bb4205de257044616cb",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-707292c2fbac-results-desktop.webp",
+      "verification": "HTTP 200; exact uploaded/source SHA-256 match",
       "http_verification": {
-        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "checked_at": "2026-10-18T19:45:36.862653+08:00",
         "status": 200,
         "content_type": "image/webp",
         "nonempty": true
       },
       "referenced_in_build": true,
-      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
-    },
-    {
-      "path": "img/scenes/results-mobile.webp",
-      "source_sha256": "d400d8ce4bbec4c8449ecf16caee3d2677094f6e950f8bbafcb15d6efbfee1aa",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-d400d8ce4bbe-results-mobile.webp",
-      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
-      "http_verification": {
-        "checked_at": "2026-10-18T18:32:08.799683+08:00",
-        "status": 200,
-        "content_type": "image/webp",
-        "nonempty": true
-      },
-      "referenced_in_build": true,
-      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+      "source": "OpenAI built-in image generation in Codex; team layout/style references; content/scene-art-provenance.json"
     },
     {
       "path": "img/scenes/safety-desktop.webp",
-      "source_sha256": "3122cd5e8b1e4b442fc2009aa8113fda9431c2f497287a3f09154b3e0d3c44e6",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-3122cd5e8b1e-safety-desktop.webp",
-      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "source_sha256": "ec01a36617f8ece6cecbf117c5f245d82dc1e1ba9bb47de615e25675c257c501",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-ec01a36617f8-safety-desktop.webp",
+      "verification": "HTTP 200; exact uploaded/source SHA-256 match",
       "http_verification": {
-        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "checked_at": "2026-10-18T19:45:36.862653+08:00",
         "status": 200,
         "content_type": "image/webp",
         "nonempty": true
       },
       "referenced_in_build": true,
-      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+      "source": "OpenAI built-in image generation in Codex; team layout/style references; content/scene-art-provenance.json"
+    },
+    {
+      "path": "img/scenes/acknowledgements-mobile.webp",
+      "source_sha256": "8d7adaff263c0808d2ca8cb129febe4a0bdb5772273484433f32182887c6010f",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-8d7adaff263c-acknowledgements-mobile.webp",
+      "verification": "HTTP 200; exact uploaded/source SHA-256 match",
+      "http_verification": {
+        "checked_at": "2026-10-18T19:45:36.862653+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "OpenAI built-in image generation in Codex; team layout/style references; content/scene-art-provenance.json"
+    },
+    {
+      "path": "img/scenes/attributions-mobile.webp",
+      "source_sha256": "a627a30177ee0464fb6188789c114ce307b39f44afc3413c3102e4215bc21db4",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-a627a30177ee-attributions-mobile.webp",
+      "verification": "HTTP 200; exact uploaded/source SHA-256 match",
+      "http_verification": {
+        "checked_at": "2026-10-18T19:45:36.862653+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "OpenAI built-in image generation in Codex; team layout/style references; content/scene-art-provenance.json"
+    },
+    {
+      "path": "img/scenes/awards-mobile.webp",
+      "source_sha256": "b9939330ece4422ca1a3a6fe5d2d1a18ddece5df852e870dc862920304228c94",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-b9939330ece4-awards-mobile.webp",
+      "verification": "HTTP 200; exact uploaded/source SHA-256 match",
+      "http_verification": {
+        "checked_at": "2026-10-18T19:45:36.862653+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "OpenAI built-in image generation in Codex; team layout/style references; content/scene-art-provenance.json"
+    },
+    {
+      "path": "img/scenes/background-mobile.webp",
+      "source_sha256": "aea720a2df2871ac5e50b5b3b33553a972649b3da1fedd382d26133ac4b6ab3b",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-aea720a2df28-background-mobile.webp",
+      "verification": "HTTP 200; exact uploaded/source SHA-256 match",
+      "http_verification": {
+        "checked_at": "2026-10-18T19:45:36.862653+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "OpenAI built-in image generation in Codex; team layout/style references; content/scene-art-provenance.json"
+    },
+    {
+      "path": "img/scenes/contribution-mobile.webp",
+      "source_sha256": "d3eb6aa22123ddb48482d5875ae6f4b9ab70138426736d00688223b0cb8fbe9b",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-d3eb6aa22123-contribution-mobile.webp",
+      "verification": "HTTP 200; exact uploaded/source SHA-256 match",
+      "http_verification": {
+        "checked_at": "2026-10-18T19:45:36.862653+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "OpenAI built-in image generation in Codex; team layout/style references; content/scene-art-provenance.json"
+    },
+    {
+      "path": "img/scenes/description-mobile.webp",
+      "source_sha256": "1a86519c6badc2a9da039f2451adf39c2b5c8c27ffbb6c4916492a8775a6096a",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-1a86519c6bad-description-mobile.webp",
+      "verification": "HTTP 200; exact uploaded/source SHA-256 match",
+      "http_verification": {
+        "checked_at": "2026-10-18T19:45:36.862653+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "OpenAI built-in image generation in Codex; team layout/style references; content/scene-art-provenance.json"
+    },
+    {
+      "path": "img/scenes/education-mobile.webp",
+      "source_sha256": "1d3de0748ebd78ab2ec5153f7d99ee3313d5ed9acc9cf3f12da139be27d73700",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-1d3de0748ebd-education-mobile.webp",
+      "verification": "HTTP 200; exact uploaded/source SHA-256 match",
+      "http_verification": {
+        "checked_at": "2026-10-18T19:45:36.862653+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "OpenAI built-in image generation in Codex; team layout/style references; content/scene-art-provenance.json"
+    },
+    {
+      "path": "img/scenes/engineering-mobile.webp",
+      "source_sha256": "aa44eb7b643b7b0344b88a6f77750cd4e1d7ba08b30663fffdc4dd20140dec94",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-aa44eb7b643b-engineering-mobile.webp",
+      "verification": "HTTP 200; exact uploaded/source SHA-256 match",
+      "http_verification": {
+        "checked_at": "2026-10-18T19:45:36.862653+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "OpenAI built-in image generation in Codex; team layout/style references; content/scene-art-provenance.json"
+    },
+    {
+      "path": "img/scenes/experiments-mobile.webp",
+      "source_sha256": "5cfff77c95965d2ca6201e23bb4ceba1c9e699b4ae2df2369e7a6b44a717c872",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-5cfff77c9596-experiments-mobile.webp",
+      "verification": "HTTP 200; exact uploaded/source SHA-256 match",
+      "http_verification": {
+        "checked_at": "2026-10-18T19:45:36.862653+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "OpenAI built-in image generation in Codex; team layout/style references; content/scene-art-provenance.json"
+    },
+    {
+      "path": "img/scenes/human-practices-mobile.webp",
+      "source_sha256": "9e69b32087e9fb579a566d88e02e279b0780e3d9e19bb468101b1028cda93ad3",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-9e69b32087e9-human-practices-mobile.webp",
+      "verification": "HTTP 200; exact uploaded/source SHA-256 match",
+      "http_verification": {
+        "checked_at": "2026-10-18T19:45:36.862653+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "OpenAI built-in image generation in Codex; team layout/style references; content/scene-art-provenance.json"
+    },
+    {
+      "path": "img/scenes/licensing-mobile.webp",
+      "source_sha256": "120020b6cc75a0d31a2107a6ebb2e9b015f5b8306e381702d267268dd8674fcb",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-120020b6cc75-licensing-mobile.webp",
+      "verification": "HTTP 200; exact uploaded/source SHA-256 match",
+      "http_verification": {
+        "checked_at": "2026-10-18T19:45:36.862653+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "OpenAI built-in image generation in Codex; team layout/style references; content/scene-art-provenance.json"
+    },
+    {
+      "path": "img/scenes/members-mobile.webp",
+      "source_sha256": "267e94093ec4463516d4a58fd32682303daa9ac8c0c6f5095568b154d2aa9565",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-267e94093ec4-members-mobile.webp",
+      "verification": "HTTP 200; exact uploaded/source SHA-256 match",
+      "http_verification": {
+        "checked_at": "2026-10-18T19:45:36.862653+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "OpenAI built-in image generation in Codex; team layout/style references; content/scene-art-provenance.json"
+    },
+    {
+      "path": "img/scenes/model-docking-mobile.webp",
+      "source_sha256": "4ce2de321b00047499efd9a84eee6f99999102b2efce7d48fe97e71d878bbc5c",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-4ce2de321b00-model-docking-mobile.webp",
+      "verification": "HTTP 200; exact uploaded/source SHA-256 match",
+      "http_verification": {
+        "checked_at": "2026-10-18T19:45:36.862653+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "OpenAI built-in image generation in Codex; team layout/style references; content/scene-art-provenance.json"
+    },
+    {
+      "path": "img/scenes/model-eco-mobile.webp",
+      "source_sha256": "c607b16ea67dd4eea9eead108cef93ff342681d3c07890db9e673c94ed22c5d9",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-c607b16ea67d-model-eco-mobile.webp",
+      "verification": "HTTP 200; exact uploaded/source SHA-256 match",
+      "http_verification": {
+        "checked_at": "2026-10-18T19:45:36.862653+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "OpenAI built-in image generation in Codex; team layout/style references; content/scene-art-provenance.json"
+    },
+    {
+      "path": "img/scenes/model-md-mobile.webp",
+      "source_sha256": "6383161e4ab8d04eff0992bd3ab898cc5c71805327985027e5583fbc330151e7",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-6383161e4ab8-model-md-mobile.webp",
+      "verification": "HTTP 200; exact uploaded/source SHA-256 match",
+      "http_verification": {
+        "checked_at": "2026-10-18T19:45:36.862653+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "OpenAI built-in image generation in Codex; team layout/style references; content/scene-art-provenance.json"
+    },
+    {
+      "path": "img/scenes/model-mobile.webp",
+      "source_sha256": "3600b1125cb4edc714f0a86b4e50666c58859f63c27fc22f3fd29b322840ce23",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-3600b1125cb4-model-mobile.webp",
+      "verification": "HTTP 200; exact uploaded/source SHA-256 match",
+      "http_verification": {
+        "checked_at": "2026-10-18T19:45:36.862653+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "OpenAI built-in image generation in Codex; team layout/style references; content/scene-art-provenance.json"
+    },
+    {
+      "path": "img/scenes/model-ode-mobile.webp",
+      "source_sha256": "35262a000a00510dbfab0127e6509cefdc70a1f562681b0a6311182cedbfbc14",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-35262a000a00-model-ode-mobile.webp",
+      "verification": "HTTP 200; exact uploaded/source SHA-256 match",
+      "http_verification": {
+        "checked_at": "2026-10-18T19:45:36.862653+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "OpenAI built-in image generation in Codex; team layout/style references; content/scene-art-provenance.json"
+    },
+    {
+      "path": "img/scenes/parts-mobile.webp",
+      "source_sha256": "18ef89186bc87219f868958f5894defa69007809b995023a41b9944f07beea16",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-18ef89186bc8-parts-mobile.webp",
+      "verification": "HTTP 200; exact uploaded/source SHA-256 match",
+      "http_verification": {
+        "checked_at": "2026-10-18T19:45:36.862653+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "OpenAI built-in image generation in Codex; team layout/style references; content/scene-art-provenance.json"
+    },
+    {
+      "path": "img/scenes/results-mobile.webp",
+      "source_sha256": "2dec54f0c415cf1284334ea72c436f803e7c24530fb155a78725620b4275ad5d",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-2dec54f0c415-results-mobile.webp",
+      "verification": "HTTP 200; exact uploaded/source SHA-256 match",
+      "http_verification": {
+        "checked_at": "2026-10-18T19:45:36.862653+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "OpenAI built-in image generation in Codex; team layout/style references; content/scene-art-provenance.json"
     },
     {
       "path": "img/scenes/safety-mobile.webp",
-      "source_sha256": "2e0668d39928f8acef03c33f58ae86d18c526cce74688f434a6b4e3fe11e35db",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-2e0668d39928-safety-mobile.webp",
-      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "source_sha256": "1d8cb6e4c5658deeee1ec6496f1b0f4f825d70c2aa30e8240a7b4fa567f3ef0c",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-1d8cb6e4c565-safety-mobile.webp",
+      "verification": "HTTP 200; exact uploaded/source SHA-256 match",
       "http_verification": {
-        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "checked_at": "2026-10-18T19:45:36.862653+08:00",
         "status": 200,
         "content_type": "image/webp",
         "nonempty": true
       },
       "referenced_in_build": true,
-      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+      "source": "OpenAI built-in image generation in Codex; team layout/style references; content/scene-art-provenance.json"
     }
   ]
 }

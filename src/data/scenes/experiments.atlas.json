@@ -5,9 +5,9 @@
       780,
       1492
     ],
-    "bytes": 143314,
+    "bytes": 197024,
     "quality": 86,
-    "hash": "fd956188062b",
+    "hash": "8ac661ad85ce",
     "frames": {
       "dish-base": [
         416,
@@ -46,7 +46,7 @@
         220
       ]
     },
-    "style": "handcut-v10 auto 6"
+    "style": "handcut-v10 gpt 6"
   },
   "mobile": {
     "file": "experiments-mobile.webp",
@@ -54,9 +54,9 @@
       582,
       1203
     ],
-    "bytes": 107198,
+    "bytes": 134408,
     "quality": 86,
-    "hash": "48bb8b6c63a6",
+    "hash": "5cfff77c9596",
     "frames": {
       "dish-base": [
         0,
@@ -89,6 +89,6 @@
         160
       ]
     },
-    "style": "handcut-v10 auto 5"
+    "style": "handcut-v10 gpt 5"
   }
 }

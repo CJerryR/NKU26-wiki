@@ -52,6 +52,10 @@ def read_rgba(path: Path) -> tuple[np.ndarray, str]:
         how = 'alpha'
     else:
         arr, how = remove_background(arr[..., :3]), 'background removed'
+    # Matte paper has no translucent interior. Near-opaque model noise otherwise
+    # bloats WebP's lossless alpha plane even at low RGB quality. Keep genuine
+    # transparent gaps and antialiased edges, snap only nearly solid pixels.
+    arr[..., 3] = np.where(arr[..., 3] >= .95, 1.0, arr[..., 3])
     # GPT likes soft drop shadows: semi-transparent and dark -> gone
     lum = arr[..., :3] @ np.array([.299, .587, .114], np.float32)
     shadow = (arr[..., 3] < .6) & (lum < .25)

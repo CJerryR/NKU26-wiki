@@ -5,9 +5,9 @@
       1512,
       748
     ],
-    "bytes": 115184,
+    "bytes": 161604,
     "quality": 86,
-    "hash": "51c37f48cc61",
+    "hash": "85ed66bc463c",
     "frames": {
       "i-awd-trophy": [
         925,
@@ -40,7 +40,7 @@
         243
       ]
     },
-    "style": "handcut-v10 auto 5"
+    "style": "handcut-v10 gpt 5"
   },
   "mobile": {
     "file": "awards-mobile.webp",
@@ -48,9 +48,9 @@
       521,
       760
     ],
-    "bytes": 69004,
+    "bytes": 74704,
     "quality": 86,
-    "hash": "dcc0ab13e34b",
+    "hash": "b9939330ece4",
     "frames": {
       "i-awd-trophy": [
         0,
@@ -77,6 +77,6 @@
         204
       ]
     },
-    "style": "handcut-v10 auto 4"
+    "style": "handcut-v10 gpt 4"
   }
 }

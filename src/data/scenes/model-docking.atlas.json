@@ -5,9 +5,9 @@
       836,
       1562
     ],
-    "bytes": 136112,
+    "bytes": 218260,
     "quality": 86,
-    "hash": "9b8956e15d8e",
+    "hash": "3c1b40d2893a",
     "frames": {
       "i-dock-ligand-a": [
         0,
@@ -46,7 +46,7 @@
         195
       ]
     },
-    "style": "handcut-v10 auto 6"
+    "style": "handcut-v10 gpt 6"
   },
   "mobile": {
     "file": "model-docking-mobile.webp",
@@ -54,9 +54,9 @@
       487,
       1178
     ],
-    "bytes": 108668,
+    "bytes": 128752,
     "quality": 86,
-    "hash": "15b8eda50260",
+    "hash": "4ce2de321b00",
     "frames": {
       "i-dock-ligand-a": [
         0,
@@ -89,6 +89,6 @@
         225
       ]
     },
-    "style": "handcut-v10 auto 5"
+    "style": "handcut-v10 gpt 5"
   }
 }

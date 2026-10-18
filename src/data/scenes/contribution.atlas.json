@@ -5,9 +5,9 @@
       2039,
       608
     ],
-    "bytes": 172354,
+    "bytes": 253606,
     "quality": 86,
-    "hash": "39d8de9cb6b7",
+    "hash": "bdbda6a9a903",
     "frames": {
       "block-cds": [
         1690,
@@ -64,7 +64,7 @@
         216
       ]
     },
-    "style": "handcut-v10 auto 9"
+    "style": "handcut-v10 gpt 9"
   },
   "mobile": {
     "file": "contribution-mobile.webp",
@@ -72,9 +72,9 @@
       522,
       1018
     ],
-    "bytes": 79498,
+    "bytes": 109782,
     "quality": 86,
-    "hash": "0a6c3a2a6373",
+    "hash": "d3eb6aa22123",
     "frames": {
       "block-cds": [
         251,
@@ -107,6 +107,6 @@
         216
       ]
     },
-    "style": "handcut-v10 auto 5"
+    "style": "handcut-v10 gpt 5"
   }
 }
