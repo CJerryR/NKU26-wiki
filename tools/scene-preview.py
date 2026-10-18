@@ -11,9 +11,10 @@ REPO = Path(__file__).resolve().parents[1]; OUT = Path(os.environ.get('SCENE_PRE
 args = [a for a in sys.argv[1:] if not a.startswith('--')]
 vps = [tuple(map(int, v.split('x'))) for v in (sys.argv[sys.argv.index('--vp') + 1] if '--vp' in sys.argv else '1440x900,390x844').split(',')]
 args = [a for a in args if 'x' not in a or not a.replace('x', '').replace(',', '').isdigit()]
-js = subprocess.run(['node', '-e', """const ts=require('typescript');
-const src=require('fs').readFileSync('src/scripts/scene-hero.ts','utf8');
-process.stdout.write(ts.transpileModule(src,{compilerOptions:{target:ts.ScriptTarget.ES2020,module:ts.ModuleKind.ESNext}}).outputText)"""],
+js = subprocess.run(['node', '-e', """const src=require('fs').readFileSync('src/scripts/scene-hero.ts','utf8');
+let out; try { const ts=require('typescript'); out=ts.transpileModule(src,{compilerOptions:{target:ts.ScriptTarget.ES2020,module:ts.ModuleKind.ESNext}}).outputText; }
+catch { out=require('node:module').stripTypeScriptTypes(src); }  // Node ≥22.13 fallback when typescript is not installed
+process.stdout.write(out)"""],
                     cwd=REPO, capture_output=True, text=True, check=True).stdout
 (OUT / 'scene-hero.js').write_text(js + '\ninitSceneHero();\n')
 css = ''.join((REPO / f).read_text() for f in ('src/styles/tokens.css', 'src/styles/page.css', 'src/styles/scene-hero.css'))
@@ -54,14 +55,14 @@ def page_html(page):
     d, m = L['desktop'].get('title', {}), L['mobile'].get('title', {})
     crumb = ''.join(f'<li>{html.escape(c)}</li>' for c in crumbs)
     return f"""<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<style>{css} *{{box-sizing:border-box}} body{{margin:0;background:var(--paper)}} .fake-nav{{position:fixed;top:0;left:0;right:0;height:64px;background:rgba(36,28,43,.10);z-index:50;border-bottom:1px dashed rgba(82,58,140,.5)}}
+<style>@font-face{{font-family:'Spline Sans';src:url(/static/fonts/spline-variable.woff2) format('woff2');font-weight:300 700}}@font-face{{font-family:'Space Mono';src:url(/static/fonts/spacemono-400.woff2) format('woff2')}}{css} *{{box-sizing:border-box}} body{{margin:0;background:var(--paper)}} .fake-nav{{position:fixed;top:0;left:0;right:0;height:64px;background:rgba(36,28,43,.10);z-index:50;border-bottom:1px dashed rgba(82,58,140,.5)}}
 #content{{min-height:1600px;padding:60px 8vw;font:17px/1.6 system-ui;color:#3a2f45}}</style></head><body>
 <div class="fake-nav"></div><main id="main">
-<section class="scene" data-scene data-tone="light" aria-labelledby="page-title" style="--ty-d:{d.get('y', 0)};--ty-m:{m.get('y', 0)}">{(REPO / 'src/components/page/ScenePalette.astro').read_text()}<div class="scene__stage">
-<div class="scene__floor" aria-hidden="true" data-scene-floor></div>{''.join(sets)}
+<section class="scene" data-scene data-tone="dark" aria-labelledby="page-title" style="--ground:url(/img/scenes/ground-strip.webp);--sky:url(/img/home-opening/opening-sky.webp);--ty-d:{d.get('y', 0)};--ty-m:{m.get('y', 0)}"><div class="scene__stage">
+<div class="scene__floor" aria-hidden="true" data-scene-floor></div><div class=\"scene__ground\"></div>{''.join(sets)}
 <nav class="crumbs scene__crumbs" aria-label="Breadcrumb"><ol><li><a href="#">Home</a></li>{crumb}</ol></nav>
 <div class="scene__title" data-scene-title>{f'<p class="scene__eyebrow">{eyebrow}</p>' if eyebrow else ''}<h1 id="page-title" class="scene__h1"{h1cap(W.get('heading') or W['title'])}>{html.escape(W.get('heading') or W['title'])}</h1><span class="scene__pill" aria-hidden="true"></span></div>
-<div class="scene__cue" aria-hidden="true" data-scene-cue><span>Scroll to open</span><i></i></div><a class="scene__skip" href="#content">Skip intro</a></div></section>
+<div class="scene__cue" aria-hidden="true" data-scene-cue><span>Scroll to open</span><i></i></div><a class="scene__skip" href="#content">Skip intro</a></div></section><div class="scene-tear" data-tone="light" aria-hidden="true"></div>
 <div id="content" tabindex="-1" class="doc"><h2>Article starts here</h2><p>{'Body text. ' * 300}</p></div></main>
 <script type="module" src="/tmp-h/scene-hero.js"></script></body></html>"""
 
@@ -69,6 +70,7 @@ class H(http.server.SimpleHTTPRequestHandler):
     def translate_path(self, path):
         p = path.split('?')[0]
         if p.startswith('/tmp-h/'): return str(OUT / p[7:])
+        if p.startswith('/img/'): return str(REPO / 'static' / p[1:])
         if p.startswith('/static/'): return str(REPO / p[1:])
         return str(OUT / p.lstrip('/'))
     def log_message(self, *a): pass
@@ -87,7 +89,7 @@ with sync_playwright() as pw:
             pg.on('response', lambda r: errs.append(f'{r.status} {r.url}') if r.status >= 400 else None)
             pg.goto(f'http://127.0.0.1:{port}/{page}.html', wait_until='networkidle')
             rng = pg.evaluate("document.querySelector('.scene').offsetHeight - innerHeight")
-            for p in (0, 0.5, 1):
+            for p in (0, 0.5, 0.8, 1, 1.3):
                 pg.evaluate(f'window.scrollTo(0, {round(rng * p)})'); pg.wait_for_timeout(700)
                 pg.screenshot(path=str(OUT / f'{page}-{vw}x{vh}-p{int(p * 100)}.png'))
             print(page, f'{vw}x{vh}', 'range', rng, 'errors:', errs or 'none')

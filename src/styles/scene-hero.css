@@ -4,16 +4,9 @@
  * alone; the script only adds motion. Landscape uses a 1600×900 canvas,
  * portrait (max-aspect-ratio: 4/5) a 900×1600 one. */
 .scene {
-  --scene-purple: var(--brand); /* existing NKU brand: #7e0c6e */
-  --scene-purple-accent: #a33a91;
   --u: calc(min(100vw, 100svh * 16 / 9) / 1600);
   --ty: var(--ty-d);
   position: relative; height: 180svh; background: var(--paper);
-}
-.scene__palette { position: absolute; pointer-events: none; }
-html[data-theme='dark'] .scene {
-  --scene-purple: #e6b4d9;
-  --scene-purple-accent: #d890c7;
 }
 .scene__stage {
   position: sticky; top: 0; height: 100svh; overflow: hidden; isolation: isolate;
@@ -38,7 +31,6 @@ html[data-theme='dark'] .scene {
   background-image: var(--atlas); background-repeat: no-repeat;
   transform: rotate(var(--r)) scale(var(--s)); opacity: var(--o);
   backface-visibility: hidden;
-  filter: url(#scene-nankai-purple);
 }
 .scene--live .scene__layer { will-change: transform, opacity; }
 .scene--noart .scene__set, .scene--noart .scene__floor { display: none; }
@@ -63,10 +55,10 @@ html[data-theme='dark'] .scene {
 }
 .scene__h1 {
   margin: 0; font-family: var(--font-display); font-weight: 600; font-size: var(--title-size-d, clamp(48px, 7.4vw, 124px));
-  line-height: .98; letter-spacing: -.02em; color: var(--scene-purple); text-wrap: balance;
+  line-height: .98; letter-spacing: -.02em; color: var(--iris-deep); text-wrap: balance;
   text-shadow: 0 0 18px var(--paper), 0 0 36px var(--paper);
 }
-.scene__h1 em { font-style: normal; color: var(--scene-purple-accent); }
+.scene__h1 em { font-style: normal; color: var(--iris); }
 .scene__pill { display: block; width: 76px; height: 8px; margin: 22px auto 0; border-radius: 99px; background: var(--amber); }
 .prose .scene-intro { margin: 0 0 2rem; font-size: clamp(18px, 1.6vw, 21px); line-height: 1.6; color: var(--ink-2); }
 
@@ -107,3 +99,54 @@ html[data-theme='dark'] .scene {
   .scene__stage { position: relative; }
   .scene__cue i { animation: none; }
 }
+
+/* ===== V9 flat night-soil opening ==========================================
+ * Same stage, same props; the paper-and-clay look gives way to the homepage's
+ * night sky, the team's own soil strip and cut-paper props (V10: hand-cut,
+ * tools/scene-art/). The hand-over to the article is .scene-tear, below. */
+.scene__stage {
+  background: var(--sky) center bottom / cover no-repeat, #1b0f22;
+}
+.scene__stage::after { /* fine grain, as on the homepage */
+  content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none; opacity: .5; mix-blend-mode: soft-light;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+}
+.scene__floor { display: none; }
+.scene__ground {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 36%; z-index: 0; pointer-events: none;
+  background: var(--ground) 0 100% / auto 100% repeat-x;
+}
+.scene__set { z-index: 1; }
+.scene__crumbs, .scene__title, .scene__cue, .scene__skip { z-index: 3; }
+.scene__crumbs ol, .scene__crumbs a, .scene__crumbs [aria-current='page'] { color: var(--cream-2); }
+.scene__crumbs a:hover { color: var(--cream); }
+.scene__eyebrow { color: var(--cream-3); }
+.scene__h1 { /* as the homepage title: cream, medium weight, a soft shadow to read over passing props */
+  color: #f4e3b1; font-weight: 560; letter-spacing: -.03em;
+  text-shadow: 0 2px 0 rgba(12, 4, 18, .35), 0 6px 40px rgba(10, 4, 16, .6);
+}
+.scene__h1 em { color: #f8b95a; }
+.scene__cue { color: var(--cream-2); text-shadow: 0 1px 8px rgba(12, 4, 18, .9); }
+.scene__skip { color: var(--cream-2); background: rgba(28, 14, 38, .88); border-color: rgba(244, 236, 221, .22); }
+.scene__skip:hover, .scene__skip:focus-visible { color: var(--cream); border-color: var(--amber); }
+@media (max-aspect-ratio: 4/5) { .scene__ground { height: 24%; } }
+
+/* ===== V10: the article's paper comes up over the soil =======================
+ * A full-width strip of the article's paper (var(--paper), so the night theme
+ * follows) with a scissor-cut top edge, placed right after the scene and pulled up
+ * over the last part of the pinned scroll by a negative margin. During the final
+ * ~20% of the pinned scroll it rises over the soil at exactly the scroll's speed, and
+ * once the stage lets go it simply carries on as the page: no script, nothing to
+ * fall out of step, and the props finish opening before it reaches them. */
+.scene-tear {
+  --tear: 15svh;
+  position: relative; z-index: 2; height: var(--tear); margin-top: calc(-1 * var(--tear));
+  background: var(--paper); pointer-events: none;
+  filter: drop-shadow(0 -3px 0 rgba(12, 4, 18, .32));
+}
+.scene-tear::before {
+  content: ''; position: absolute; left: 0; right: 0; bottom: calc(100% - 1px); height: 20px; background: inherit;
+  clip-path: polygon(0 100%, 0.0% 15px, 5.4% 12px, 11.0% 4px, 17.1% 4px, 21.4% 5px, 25.4% 13px, 29.6% 6px, 33.9% 15px, 40.8% 10px, 48.2% 11px, 56.5% 16px, 60.2% 5px, 65.2% 9px, 69.6% 4px, 75.9% 16px, 79.9% 12px, 86.7% 8px, 92.7% 15px, 98.2% 10px, 100% 13px, 100% 100%);
+}
+@media (max-aspect-ratio: 4/5) { .scene-tear { --tear: 11svh; } }
+@media (prefers-reduced-motion: reduce) { .scene-tear { --tear: 0px; } }

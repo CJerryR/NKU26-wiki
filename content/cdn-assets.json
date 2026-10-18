@@ -1,6 +1,6 @@
 {
-  "verified_at": "2026-10-18T12:53:33.857767+08:00",
-  "scope": "V8.7 updated media: HTTP, decoding and hash verification; earlier entries retain their dated verification records.",
+  "verified_at": "2026-10-18T18:32:08.799683+08:00",
+  "scope": "V10: 41 scene WebP assets HTTP and exact source hash verified; older assets retain dated verification.",
   "assets": [
     {
       "path": "fonts/fraunces-italic.woff2",
@@ -3491,676 +3491,6 @@
       "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
     },
     {
-      "path": "img/scenes/acknowledgements-desktop.webp",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-1d9f4976b2e1-acknowledgements-desktop.webp",
-      "source_sha256": "1d9f4976b2e1d94fb841d1a1baad825fa08f545595a0150599f6e7837318405d",
-      "cdn_sha256": "ffda496b49ca1c3214617b7630507d2f0259290660b23d2777e69f3b91c2ba96",
-      "bytes": 111114,
-      "content_type": "image/webp",
-      "dimensions": [
-        629,
-        1772
-      ],
-      "source_dimensions": [
-        629,
-        1772
-      ],
-      "checked_at": "2026-10-18T04:55:57.870929+08:00",
-      "verification": "HTTP 200 and image decode verified; WebP byte identity verified where applicable; browser validation follows.",
-      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/V8.7发布-20261018/upload-files/v87-1d9f4976b2e1-acknowledgements-desktop.webp",
-      "upload_name": "v87-1d9f4976b2e1-acknowledgements-desktop.webp",
-      "verified_at": "2026-10-18T12:53:33.857767+08:00",
-      "http_status": 200,
-      "cdn_bytes": 111114,
-      "platform_resized": false,
-      "referenced_in_build": false,
-      "browser_verification": {
-        "status": "not-verified"
-      }
-    },
-    {
-      "path": "img/scenes/acknowledgements-mobile.webp",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-5620805cce9c-acknowledgements-mobile.webp",
-      "source_sha256": "5620805cce9cf0b946fa226a935bacd744014eb04bf32a217d33ab011467bd0f",
-      "cdn_sha256": "1b42b8336d5daa875b08bc77595a54a96268cd21dfa75af19c2a27d9b7118a62",
-      "bytes": 37972,
-      "content_type": "image/webp",
-      "dimensions": [
-        338,
-        859
-      ],
-      "source_dimensions": [
-        338,
-        859
-      ],
-      "checked_at": "2026-10-18T04:55:57.723363+08:00",
-      "verification": "HTTP 200 and image decode verified; WebP byte identity verified where applicable; browser validation follows.",
-      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/V8.7发布-20261018/upload-files/v87-5620805cce9c-acknowledgements-mobile.webp",
-      "upload_name": "v87-5620805cce9c-acknowledgements-mobile.webp",
-      "verified_at": "2026-10-18T12:53:33.857767+08:00",
-      "http_status": 200,
-      "cdn_bytes": 37972,
-      "platform_resized": false,
-      "referenced_in_build": false,
-      "browser_verification": {
-        "status": "not-verified"
-      }
-    },
-    {
-      "path": "img/scenes/attributions-desktop.webp",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-8a893f37f949-attributions-desktop.webp",
-      "source_sha256": "8a893f37f949d700a230ddc4dec378ff1d9c0192eabaf476781b045da2217010",
-      "cdn_sha256": "071a5bc41ed94764aec5353ece39cc9af8f9fd9e66341bc954abcf082e076a80",
-      "bytes": 124294,
-      "content_type": "image/webp",
-      "dimensions": [
-        1508,
-        591
-      ],
-      "source_dimensions": [
-        1508,
-        591
-      ],
-      "checked_at": "2026-10-18T04:55:57.624491+08:00",
-      "verification": "HTTP 200 and image decode verified; WebP byte identity verified where applicable; browser validation follows.",
-      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/V8.7发布-20261018/upload-files/v87-8a893f37f949-attributions-desktop.webp",
-      "upload_name": "v87-8a893f37f949-attributions-desktop.webp",
-      "verified_at": "2026-10-18T12:53:33.857767+08:00",
-      "http_status": 200,
-      "cdn_bytes": 124294,
-      "platform_resized": false,
-      "referenced_in_build": true,
-      "browser_verification": {
-        "status": "not-verified"
-      }
-    },
-    {
-      "path": "img/scenes/attributions-mobile.webp",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-e27bf13e692c-attributions-mobile.webp",
-      "source_sha256": "e27bf13e692cf15c58f7367afd697132d1d90747d3e1a0ed1b10e907eb385b94",
-      "cdn_sha256": "2c62556b175bb568d9fd53c77ba2e7fc9ec81c307d2d2d9c0c0acff003d2fd19",
-      "bytes": 77580,
-      "content_type": "image/webp",
-      "dimensions": [
-        581,
-        712
-      ],
-      "source_dimensions": [
-        581,
-        712
-      ],
-      "checked_at": "2026-10-18T04:55:57.624439+08:00",
-      "verification": "HTTP 200 and image decode verified; WebP byte identity verified where applicable; browser validation follows.",
-      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/V8.7发布-20261018/upload-files/v87-e27bf13e692c-attributions-mobile.webp",
-      "upload_name": "v87-e27bf13e692c-attributions-mobile.webp",
-      "verified_at": "2026-10-18T12:53:33.857767+08:00",
-      "http_status": 200,
-      "cdn_bytes": 77580,
-      "platform_resized": false,
-      "referenced_in_build": true,
-      "browser_verification": {
-        "status": "not-verified"
-      }
-    },
-    {
-      "path": "img/scenes/awards-desktop.webp",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-f2a55e7ba095-awards-desktop.webp",
-      "source_sha256": "f2a55e7ba095e98067e1ec5b0bb76bc7d01b3a7f36d23e2e8d40f20583b1424e",
-      "cdn_sha256": "cf4f0acb30509e4e63d4cae6c6d9921b83dc10e6f0bdb200dd4af1818a7185b6",
-      "bytes": 108930,
-      "content_type": "image/webp",
-      "dimensions": [
-        1512,
-        748
-      ],
-      "source_dimensions": [
-        1512,
-        748
-      ],
-      "checked_at": "2026-10-18T04:55:57.935377+08:00",
-      "verification": "HTTP 200 and image decode verified; WebP byte identity verified where applicable; browser validation follows.",
-      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/V8.7发布-20261018/upload-files/v87-f2a55e7ba095-awards-desktop.webp",
-      "upload_name": "v87-f2a55e7ba095-awards-desktop.webp",
-      "verified_at": "2026-10-18T12:53:33.857767+08:00",
-      "http_status": 200,
-      "cdn_bytes": 108930,
-      "platform_resized": false,
-      "referenced_in_build": false,
-      "browser_verification": {
-        "status": "not-verified"
-      }
-    },
-    {
-      "path": "img/scenes/awards-mobile.webp",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-518cdc7c7ade-awards-mobile.webp",
-      "source_sha256": "518cdc7c7ade36027612a4f651152bdd9925a818d40b084c70a8ae4247f226da",
-      "cdn_sha256": "886ada3d303514f8144d7639aa6c3a6146ca710615df3ad698eeabec675fdc22",
-      "bytes": 49982,
-      "content_type": "image/webp",
-      "dimensions": [
-        521,
-        760
-      ],
-      "source_dimensions": [
-        521,
-        760
-      ],
-      "checked_at": "2026-10-18T04:55:59.446776+08:00",
-      "verification": "HTTP 200 and image decode verified; WebP byte identity verified where applicable; browser validation follows.",
-      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/V8.7发布-20261018/upload-files/v87-518cdc7c7ade-awards-mobile.webp",
-      "upload_name": "v87-518cdc7c7ade-awards-mobile.webp",
-      "verified_at": "2026-10-18T12:53:33.857767+08:00",
-      "http_status": 200,
-      "cdn_bytes": 49982,
-      "platform_resized": false,
-      "referenced_in_build": false,
-      "browser_verification": {
-        "status": "not-verified"
-      }
-    },
-    {
-      "path": "img/scenes/background-desktop.webp",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-9e19502ab17d-background-desktop.webp",
-      "source_sha256": "9e19502ab17da7660a17aed1756fb0fad6c3236fcba56a21ced37c86ed8f425b",
-      "cdn_sha256": "2c6e40e28b7a32b4781e15d794ed96df5d8dc6a8b07ad965655f9a249c8ece10",
-      "bytes": 282294,
-      "content_type": "image/webp",
-      "dimensions": [
-        1695,
-        1361
-      ],
-      "source_dimensions": [
-        1695,
-        1361
-      ],
-      "checked_at": "2026-10-18T04:55:59.373516+08:00",
-      "verification": "HTTP 200 and image decode verified; WebP byte identity verified where applicable; browser validation follows.",
-      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/V8.7发布-20261018/upload-files/v87-9e19502ab17d-background-desktop.webp",
-      "upload_name": "v87-9e19502ab17d-background-desktop.webp",
-      "verified_at": "2026-10-18T12:53:33.857767+08:00",
-      "http_status": 200,
-      "cdn_bytes": 282294,
-      "platform_resized": false,
-      "referenced_in_build": true,
-      "browser_verification": {
-        "status": "not-verified"
-      }
-    },
-    {
-      "path": "img/scenes/background-mobile.webp",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-97433cab4fa5-background-mobile.webp",
-      "source_sha256": "97433cab4fa585cae47e66c035c255a220e80a45860182659166e5385e0ef4af",
-      "cdn_sha256": "aacf9a056dd1e5d4bd18858a3a31ad0c006b18eefc0b35005b3597d9a3514c8b",
-      "bytes": 81806,
-      "content_type": "image/webp",
-      "dimensions": [
-        1035,
-        576
-      ],
-      "source_dimensions": [
-        1035,
-        576
-      ],
-      "checked_at": "2026-10-18T04:55:59.516603+08:00",
-      "verification": "HTTP 200 and image decode verified; WebP byte identity verified where applicable; browser validation follows.",
-      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/V8.7发布-20261018/upload-files/v87-97433cab4fa5-background-mobile.webp",
-      "upload_name": "v87-97433cab4fa5-background-mobile.webp",
-      "verified_at": "2026-10-18T12:53:33.857767+08:00",
-      "http_status": 200,
-      "cdn_bytes": 81806,
-      "platform_resized": false,
-      "referenced_in_build": true,
-      "browser_verification": {
-        "status": "not-verified"
-      }
-    },
-    {
-      "path": "img/scenes/contribution-desktop.webp",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-b1dcfd215fc9-contribution-desktop.webp",
-      "source_sha256": "b1dcfd215fc937b7a19886f69dd2d230a28a6b057b86d5f807695d1998a3c279",
-      "cdn_sha256": "5528f9bff332a75241ca579b48cca04f6f5f7121f19734a6b5c73ec0fd3e6527",
-      "bytes": 118734,
-      "content_type": "image/webp",
-      "dimensions": [
-        2039,
-        608
-      ],
-      "source_dimensions": [
-        2039,
-        608
-      ],
-      "checked_at": "2026-10-18T04:55:59.448034+08:00",
-      "verification": "HTTP 200 and image decode verified; WebP byte identity verified where applicable; browser validation follows.",
-      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/V8.7发布-20261018/upload-files/v87-b1dcfd215fc9-contribution-desktop.webp",
-      "upload_name": "v87-b1dcfd215fc9-contribution-desktop.webp",
-      "verified_at": "2026-10-18T12:53:33.857767+08:00",
-      "http_status": 200,
-      "cdn_bytes": 118734,
-      "platform_resized": false,
-      "referenced_in_build": true,
-      "browser_verification": {
-        "status": "not-verified"
-      }
-    },
-    {
-      "path": "img/scenes/contribution-mobile.webp",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-b27e379b4c03-contribution-mobile.webp",
-      "source_sha256": "b27e379b4c033013b6532cc2c4ff63b9fe94e26879b5956e77dc0ba11501eed1",
-      "cdn_sha256": "b27e379b4c033013b6532cc2c4ff63b9fe94e26879b5956e77dc0ba11501eed1",
-      "bytes": 24386,
-      "content_type": "image/webp",
-      "dimensions": [
-        522,
-        1018
-      ],
-      "source_dimensions": [
-        522,
-        1018
-      ],
-      "checked_at": "2026-10-18T04:55:59.440159+08:00",
-      "verification": "HTTP 200 and image decode verified; WebP byte identity verified where applicable; browser validation follows.",
-      "verified_at": "2026-10-18T12:53:33.857767+08:00",
-      "http_status": 200,
-      "cdn_bytes": 24386,
-      "platform_resized": false,
-      "referenced_in_build": true,
-      "browser_verification": {
-        "status": "not-verified"
-      }
-    },
-    {
-      "path": "img/scenes/description-desktop.webp",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-efcb42c67661-description-desktop.webp",
-      "source_sha256": "efcb42c676614e659f9ebb76f64330f6760f6e9388af1a7e4172c428b142c21c",
-      "cdn_sha256": "2ca7580ba2a145f54ce1ece98b8413b08c3206b7198ba0c5e99e179741cc44eb",
-      "bytes": 266062,
-      "content_type": "image/webp",
-      "dimensions": [
-        1979,
-        1323
-      ],
-      "source_dimensions": [
-        1979,
-        1323
-      ],
-      "checked_at": "2026-10-18T04:56:00.426932+08:00",
-      "verification": "HTTP 200 and image decode verified; WebP byte identity verified where applicable; browser validation follows.",
-      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/V8.7发布-20261018/upload-files/v87-efcb42c67661-description-desktop.webp",
-      "upload_name": "v87-efcb42c67661-description-desktop.webp",
-      "verified_at": "2026-10-18T12:53:33.857767+08:00",
-      "http_status": 200,
-      "cdn_bytes": 266062,
-      "platform_resized": false,
-      "referenced_in_build": true,
-      "browser_verification": {
-        "status": "not-verified"
-      }
-    },
-    {
-      "path": "img/scenes/description-mobile.webp",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-30ef075e9a0f-description-mobile.webp",
-      "source_sha256": "30ef075e9a0fb4423ff2efd53d23cb02f364192e92c179c71583fb0ef93afa06",
-      "cdn_sha256": "af8b74d880df104dab117a79690719f7c62a8814b2849def93ca106e25cb2807",
-      "bytes": 156246,
-      "content_type": "image/webp",
-      "dimensions": [
-        1513,
-        880
-      ],
-      "source_dimensions": [
-        1513,
-        880
-      ],
-      "checked_at": "2026-10-18T04:56:01.275586+08:00",
-      "verification": "HTTP 200 and image decode verified; WebP byte identity verified where applicable; browser validation follows.",
-      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/V8.7发布-20261018/upload-files/v87-30ef075e9a0f-description-mobile.webp",
-      "upload_name": "v87-30ef075e9a0f-description-mobile.webp",
-      "verified_at": "2026-10-18T12:53:33.857767+08:00",
-      "http_status": 200,
-      "cdn_bytes": 156246,
-      "platform_resized": false,
-      "referenced_in_build": true,
-      "browser_verification": {
-        "status": "not-verified"
-      }
-    },
-    {
-      "path": "img/scenes/engineering-desktop.webp",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-a41a167937f7-engineering-desktop.webp",
-      "source_sha256": "a41a167937f71e6049d9d486f1621aab46816a452ee1176d8d7b5a3e34bafc6d",
-      "cdn_sha256": "f0f5d73b177fea76a92ebd25870cb736a4b8c502efcaeed0e4ef4e5c964565f2",
-      "bytes": 222532,
-      "content_type": "image/webp",
-      "dimensions": [
-        766,
-        2424
-      ],
-      "source_dimensions": [
-        766,
-        2424
-      ],
-      "checked_at": "2026-10-18T04:56:01.276843+08:00",
-      "verification": "HTTP 200 and image decode verified; WebP byte identity verified where applicable; browser validation follows.",
-      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/V8.7发布-20261018/upload-files/v87-a41a167937f7-engineering-desktop.webp",
-      "upload_name": "v87-a41a167937f7-engineering-desktop.webp",
-      "verified_at": "2026-10-18T12:53:33.857767+08:00",
-      "http_status": 200,
-      "cdn_bytes": 222532,
-      "platform_resized": false,
-      "referenced_in_build": true,
-      "browser_verification": {
-        "status": "not-verified"
-      }
-    },
-    {
-      "path": "img/scenes/engineering-mobile.webp",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-f8bdb3d8e368-engineering-mobile.webp",
-      "source_sha256": "f8bdb3d8e3685bc41f6c5aba7c1cdda266de099d13d359d0e10a0a7c317b1561",
-      "cdn_sha256": "40b04d8f0ba993ab278c74554e0f755b71acdab477877d67585322aaa7c33fd6",
-      "bytes": 101500,
-      "content_type": "image/webp",
-      "dimensions": [
-        503,
-        1186
-      ],
-      "source_dimensions": [
-        503,
-        1186
-      ],
-      "checked_at": "2026-10-18T04:56:01.275517+08:00",
-      "verification": "HTTP 200 and image decode verified; WebP byte identity verified where applicable; browser validation follows.",
-      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/V8.7发布-20261018/upload-files/v87-f8bdb3d8e368-engineering-mobile.webp",
-      "upload_name": "v87-f8bdb3d8e368-engineering-mobile.webp",
-      "verified_at": "2026-10-18T12:53:33.857767+08:00",
-      "http_status": 200,
-      "cdn_bytes": 101500,
-      "platform_resized": false,
-      "referenced_in_build": true,
-      "browser_verification": {
-        "status": "not-verified"
-      }
-    },
-    {
-      "path": "img/scenes/experiments-desktop.webp",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-7cab99731703-experiments-desktop.webp",
-      "source_sha256": "7cab997317034050fd1fb2e66726a3c3738c06734d9687ce89c6de3e44156f89",
-      "cdn_sha256": "26121982e5bc7e30596252ccc905ac1efc40cd4400ff43a5c970ab1e3e8af449",
-      "bytes": 133152,
-      "content_type": "image/webp",
-      "dimensions": [
-        780,
-        1492
-      ],
-      "source_dimensions": [
-        780,
-        1492
-      ],
-      "checked_at": "2026-10-18T04:56:01.277673+08:00",
-      "verification": "HTTP 200 and image decode verified; WebP byte identity verified where applicable; browser validation follows.",
-      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/V8.7发布-20261018/upload-files/v87-7cab99731703-experiments-desktop.webp",
-      "upload_name": "v87-7cab99731703-experiments-desktop.webp",
-      "verified_at": "2026-10-18T12:53:33.857767+08:00",
-      "http_status": 200,
-      "cdn_bytes": 133152,
-      "platform_resized": false,
-      "referenced_in_build": true,
-      "browser_verification": {
-        "status": "not-verified"
-      }
-    },
-    {
-      "path": "img/scenes/experiments-mobile.webp",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-e1e1412cf488-experiments-mobile.webp",
-      "source_sha256": "e1e1412cf488b24b902e340e509f7c5b54d20bbeab2d2ddb95039fa7ded19cff",
-      "cdn_sha256": "efba8fb86275f43ad039e0ebf53b4a9bfc2de4a6ae6ae07c316dcd39f454566c",
-      "bytes": 81404,
-      "content_type": "image/webp",
-      "dimensions": [
-        582,
-        1203
-      ],
-      "source_dimensions": [
-        582,
-        1203
-      ],
-      "checked_at": "2026-10-18T04:56:01.586514+08:00",
-      "verification": "HTTP 200 and image decode verified; WebP byte identity verified where applicable; browser validation follows.",
-      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/V8.7发布-20261018/upload-files/v87-e1e1412cf488-experiments-mobile.webp",
-      "upload_name": "v87-e1e1412cf488-experiments-mobile.webp",
-      "verified_at": "2026-10-18T12:53:33.857767+08:00",
-      "http_status": 200,
-      "cdn_bytes": 81404,
-      "platform_resized": false,
-      "referenced_in_build": true,
-      "browser_verification": {
-        "status": "not-verified"
-      }
-    },
-    {
-      "path": "img/scenes/model-desktop.webp",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-6f53f0dcfb11-model-desktop.webp",
-      "source_sha256": "6f53f0dcfb112acaacadd61c4c8411ad986ca80af4578e31eddfc4bb3326f1ee",
-      "cdn_sha256": "be67aea270da3e0b49f997cd805c8cba26802fde5657fab9ffd6f43233e533b0",
-      "bytes": 213288,
-      "content_type": "image/webp",
-      "dimensions": [
-        671,
-        2372
-      ],
-      "source_dimensions": [
-        671,
-        2372
-      ],
-      "checked_at": "2026-10-18T04:56:01.803830+08:00",
-      "verification": "HTTP 200 and image decode verified; WebP byte identity verified where applicable; browser validation follows.",
-      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/V8.7发布-20261018/upload-files/v87-6f53f0dcfb11-model-desktop.webp",
-      "upload_name": "v87-6f53f0dcfb11-model-desktop.webp",
-      "verified_at": "2026-10-18T12:53:33.857767+08:00",
-      "http_status": 200,
-      "cdn_bytes": 213288,
-      "platform_resized": false,
-      "referenced_in_build": true,
-      "browser_verification": {
-        "status": "not-verified"
-      }
-    },
-    {
-      "path": "img/scenes/model-docking-desktop.webp",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-45d6f7ccfba4-model-docking-desktop.webp",
-      "source_sha256": "45d6f7ccfba474adf79baa38919c9721939fe9c2c3b56ae032f19e33478f3a08",
-      "cdn_sha256": "e21799d02ac7177ab57875d9d8ca185703277ee068941a71a7a87ce914ef80e4",
-      "bytes": 152834,
-      "content_type": "image/webp",
-      "dimensions": [
-        836,
-        1562
-      ],
-      "source_dimensions": [
-        836,
-        1562
-      ],
-      "checked_at": "2026-10-18T04:56:02.949136+08:00",
-      "verification": "HTTP 200 and image decode verified; WebP byte identity verified where applicable; browser validation follows.",
-      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/V8.7发布-20261018/upload-files/v87-45d6f7ccfba4-model-docking-desktop.webp",
-      "upload_name": "v87-45d6f7ccfba4-model-docking-desktop.webp",
-      "verified_at": "2026-10-18T12:53:33.857767+08:00",
-      "http_status": 200,
-      "cdn_bytes": 152834,
-      "platform_resized": false,
-      "referenced_in_build": true,
-      "browser_verification": {
-        "status": "not-verified"
-      }
-    },
-    {
-      "path": "img/scenes/model-docking-mobile.webp",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-682e8c43d634-model-docking-mobile.webp",
-      "source_sha256": "682e8c43d634ae691cecbb88237cb2cbb34bd824eb0f32765dcc63fd7f5b13f6",
-      "cdn_sha256": "a2846fdded0fcdbb13390b4fd89c411e25f9525eeee8a2d57bc35e739dcf4d19",
-      "bytes": 101412,
-      "content_type": "image/webp",
-      "dimensions": [
-        487,
-        1178
-      ],
-      "source_dimensions": [
-        487,
-        1178
-      ],
-      "checked_at": "2026-10-18T04:56:02.921754+08:00",
-      "verification": "HTTP 200 and image decode verified; WebP byte identity verified where applicable; browser validation follows.",
-      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/V8.7发布-20261018/upload-files/v87-682e8c43d634-model-docking-mobile.webp",
-      "upload_name": "v87-682e8c43d634-model-docking-mobile.webp",
-      "verified_at": "2026-10-18T12:53:33.857767+08:00",
-      "http_status": 200,
-      "cdn_bytes": 101412,
-      "platform_resized": false,
-      "referenced_in_build": true,
-      "browser_verification": {
-        "status": "not-verified"
-      }
-    },
-    {
-      "path": "img/scenes/model-mobile.webp",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-b1a33a0b16a4-model-mobile.webp",
-      "source_sha256": "b1a33a0b16a49736f47a367ff95d1482e815fbf05c146aaeeccaf2297e43451a",
-      "cdn_sha256": "98795fba04df256690f877fdffc095fec1657fd829ba37b468cc5514ce67cd93",
-      "bytes": 126958,
-      "content_type": "image/webp",
-      "dimensions": [
-        559,
-        1375
-      ],
-      "source_dimensions": [
-        559,
-        1375
-      ],
-      "checked_at": "2026-10-18T04:56:02.660060+08:00",
-      "verification": "HTTP 200 and image decode verified; WebP byte identity verified where applicable; browser validation follows.",
-      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/V8.7发布-20261018/upload-files/v87-b1a33a0b16a4-model-mobile.webp",
-      "upload_name": "v87-b1a33a0b16a4-model-mobile.webp",
-      "verified_at": "2026-10-18T12:53:33.857767+08:00",
-      "http_status": 200,
-      "cdn_bytes": 126958,
-      "platform_resized": false,
-      "referenced_in_build": true,
-      "browser_verification": {
-        "status": "not-verified"
-      }
-    },
-    {
-      "path": "img/scenes/parts-desktop.webp",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-2546d25ce820-parts-desktop.webp",
-      "source_sha256": "2546d25ce820e7d4f936f8ec8b1d2a98d94b264744b26745e3362f351ddb7d03",
-      "cdn_sha256": "753a7f10d36cf96c7fdc155a2e67cf973af0f0da1b3bbaaa11e929b40b238367",
-      "bytes": 163046,
-      "content_type": "image/webp",
-      "dimensions": [
-        671,
-        2247
-      ],
-      "source_dimensions": [
-        671,
-        2247
-      ],
-      "checked_at": "2026-10-18T04:56:02.639877+08:00",
-      "verification": "HTTP 200 and image decode verified; WebP byte identity verified where applicable; browser validation follows.",
-      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/V8.7发布-20261018/upload-files/v87-2546d25ce820-parts-desktop.webp",
-      "upload_name": "v87-2546d25ce820-parts-desktop.webp",
-      "verified_at": "2026-10-18T12:53:33.857767+08:00",
-      "http_status": 200,
-      "cdn_bytes": 163046,
-      "platform_resized": false,
-      "referenced_in_build": true,
-      "browser_verification": {
-        "status": "not-verified"
-      }
-    },
-    {
-      "path": "img/scenes/parts-mobile.webp",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-0c8a191c00aa-parts-mobile.webp",
-      "source_sha256": "0c8a191c00aaff470d3130fccb35132b7c24f3b56a09dcc6e0d573c50e217376",
-      "cdn_sha256": "dc5f6ce1e976db03cbd29d77ce4e8450243f95320cf02ea1042bbfa8f972c1a5",
-      "bytes": 33460,
-      "content_type": "image/webp",
-      "dimensions": [
-        619,
-        757
-      ],
-      "source_dimensions": [
-        619,
-        757
-      ],
-      "checked_at": "2026-10-18T04:56:02.929261+08:00",
-      "verification": "HTTP 200 and image decode verified; WebP byte identity verified where applicable; browser validation follows.",
-      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/V8.7发布-20261018/upload-files/v87-0c8a191c00aa-parts-mobile.webp",
-      "upload_name": "v87-0c8a191c00aa-parts-mobile.webp",
-      "verified_at": "2026-10-18T12:53:33.857767+08:00",
-      "http_status": 200,
-      "cdn_bytes": 33460,
-      "platform_resized": false,
-      "referenced_in_build": true,
-      "browser_verification": {
-        "status": "not-verified"
-      }
-    },
-    {
-      "path": "img/scenes/results-desktop.webp",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-1efb11a35c8b-results-desktop.webp",
-      "source_sha256": "1efb11a35c8b0dbeba7a605490c963f629480526af67e816100aed28d8546e4d",
-      "cdn_sha256": "3230d626de9a45534f637d26114f5b2b23fecb64253fad2b2e599f50e9c16f9e",
-      "bytes": 267718,
-      "content_type": "image/webp",
-      "dimensions": [
-        1745,
-        1027
-      ],
-      "source_dimensions": [
-        1745,
-        1027
-      ],
-      "checked_at": "2026-10-18T04:56:03.101457+08:00",
-      "verification": "HTTP 200 and image decode verified; WebP byte identity verified where applicable; browser validation follows.",
-      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/V8.7发布-20261018/upload-files/v87-1efb11a35c8b-results-desktop.webp",
-      "upload_name": "v87-1efb11a35c8b-results-desktop.webp",
-      "verified_at": "2026-10-18T12:53:33.857767+08:00",
-      "http_status": 200,
-      "cdn_bytes": 267718,
-      "platform_resized": false,
-      "referenced_in_build": true,
-      "browser_verification": {
-        "status": "not-verified"
-      }
-    },
-    {
-      "path": "img/scenes/results-mobile.webp",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-0faec36c9fd5-results-mobile.webp",
-      "source_sha256": "0faec36c9fd5ff5cd898c1945e6dc9d228a10d5abcb21d0ffe4651d3175fbaa0",
-      "cdn_sha256": "68304ee7dfee1ca1078af23c112dc0249684ecbabcd426c8998fe9332d99f2a5",
-      "bytes": 120980,
-      "content_type": "image/webp",
-      "dimensions": [
-        1181,
-        596
-      ],
-      "source_dimensions": [
-        1181,
-        596
-      ],
-      "checked_at": "2026-10-18T04:56:04.032944+08:00",
-      "verification": "HTTP 200 and image decode verified; WebP byte identity verified where applicable; browser validation follows.",
-      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/V8.7发布-20261018/upload-files/v87-0faec36c9fd5-results-mobile.webp",
-      "upload_name": "v87-0faec36c9fd5-results-mobile.webp",
-      "verified_at": "2026-10-18T12:53:33.857767+08:00",
-      "http_status": 200,
-      "cdn_bytes": 120980,
-      "platform_resized": false,
-      "referenced_in_build": true,
-      "browser_verification": {
-        "status": "not-verified"
-      }
-    },
-    {
       "path": "img/sponsors/excell.png",
       "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-6b6833027f6c-excell.avif",
       "source_sha256": "6b6833027f6c057531e7a181865d5490a71df6b71b1670e91e3fbd065f772e02",
@@ -4629,422 +3959,6 @@
       "verification": "HTTP 200; decoded image aspect ratio matches source; official image conversion may resize; unchanged WebP files hash matched; browser pending"
     },
     {
-      "path": "img/scenes/education-desktop.webp",
-      "source_sha256": "a1c26826be81abd443ae2580fe1622fb50f70017ba95251cecb75a2210007be1",
-      "bytes": 154322,
-      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/V8.7发布-20261018/upload-files/v87-a1c26826be81-education-desktop.webp",
-      "upload_name": "v87-a1c26826be81-education-desktop.webp",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-a1c26826be81-education-desktop.webp",
-      "verified_at": "2026-10-18T12:53:33.857767+08:00",
-      "http_status": 200,
-      "content_type": "image/webp",
-      "cdn_bytes": 154322,
-      "dimensions": [
-        1548,
-        1410
-      ],
-      "source_dimensions": [
-        1548,
-        1410
-      ],
-      "platform_resized": false,
-      "verification": "HTTP 200 and image decode verified; WebP byte identity verified where applicable; browser validation follows.",
-      "referenced_in_build": true,
-      "browser_verification": {
-        "status": "not-verified"
-      }
-    },
-    {
-      "path": "img/scenes/education-mobile.webp",
-      "source_sha256": "1ad7fcaba9c1ca6997986c3dc137c51416d8baa22bc89948c0ed442a06506699",
-      "bytes": 57042,
-      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/V8.7发布-20261018/upload-files/v87-1ad7fcaba9c1-education-mobile.webp",
-      "upload_name": "v87-1ad7fcaba9c1-education-mobile.webp",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-1ad7fcaba9c1-education-mobile.webp",
-      "verified_at": "2026-10-18T12:53:33.857767+08:00",
-      "http_status": 200,
-      "content_type": "image/webp",
-      "cdn_bytes": 57042,
-      "dimensions": [
-        588,
-        1425
-      ],
-      "source_dimensions": [
-        588,
-        1425
-      ],
-      "platform_resized": false,
-      "verification": "HTTP 200 and image decode verified; WebP byte identity verified where applicable; browser validation follows.",
-      "referenced_in_build": true,
-      "browser_verification": {
-        "status": "not-verified"
-      }
-    },
-    {
-      "path": "img/scenes/human-practices-desktop.webp",
-      "source_sha256": "82ddafe64673f1b5375773a79b9f71be515d776174582d500c10f5ffa848592f",
-      "bytes": 258040,
-      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/V8.7发布-20261018/upload-files/v87-82ddafe64673-human-practices-desktop.webp",
-      "upload_name": "v87-82ddafe64673-human-practices-desktop.webp",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-82ddafe64673-human-practices-desktop.webp",
-      "verified_at": "2026-10-18T12:53:33.857767+08:00",
-      "http_status": 200,
-      "content_type": "image/webp",
-      "cdn_bytes": 258040,
-      "dimensions": [
-        1859,
-        1217
-      ],
-      "source_dimensions": [
-        1859,
-        1217
-      ],
-      "platform_resized": false,
-      "verification": "HTTP 200 and image decode verified; WebP byte identity verified where applicable; browser validation follows.",
-      "referenced_in_build": true,
-      "browser_verification": {
-        "status": "not-verified"
-      }
-    },
-    {
-      "path": "img/scenes/human-practices-mobile.webp",
-      "source_sha256": "318ed638accb6468ed21680c4b2edce8fa0f8f137c8b7ebd701868253877fcde",
-      "bytes": 105600,
-      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/V8.7发布-20261018/upload-files/v87-318ed638accb-human-practices-mobile.webp",
-      "upload_name": "v87-318ed638accb-human-practices-mobile.webp",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-318ed638accb-human-practices-mobile.webp",
-      "verified_at": "2026-10-18T12:53:33.857767+08:00",
-      "http_status": 200,
-      "content_type": "image/webp",
-      "cdn_bytes": 105600,
-      "dimensions": [
-        1226,
-        535
-      ],
-      "source_dimensions": [
-        1226,
-        535
-      ],
-      "platform_resized": false,
-      "verification": "HTTP 200 and image decode verified; WebP byte identity verified where applicable; browser validation follows.",
-      "referenced_in_build": true,
-      "browser_verification": {
-        "status": "not-verified"
-      }
-    },
-    {
-      "path": "img/scenes/licensing-desktop.webp",
-      "source_sha256": "2b0025d96fb4871d33f76d25b7c56dc18cb58f6dda954f6d88e09fc96b7d10c0",
-      "bytes": 122356,
-      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/V8.7发布-20261018/upload-files/v87-2b0025d96fb4-licensing-desktop.webp",
-      "upload_name": "v87-2b0025d96fb4-licensing-desktop.webp",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-2b0025d96fb4-licensing-desktop.webp",
-      "verified_at": "2026-10-18T12:53:33.857767+08:00",
-      "http_status": 200,
-      "content_type": "image/webp",
-      "cdn_bytes": 122356,
-      "dimensions": [
-        1864,
-        578
-      ],
-      "source_dimensions": [
-        1864,
-        578
-      ],
-      "platform_resized": false,
-      "verification": "HTTP 200 and image decode verified; WebP byte identity verified where applicable; browser validation follows.",
-      "referenced_in_build": true,
-      "browser_verification": {
-        "status": "not-verified"
-      }
-    },
-    {
-      "path": "img/scenes/licensing-mobile.webp",
-      "source_sha256": "b1ac54a0da7f881e122504fd51f9148bd2ad946cb3752574d626556c00fb2cb4",
-      "bytes": 55308,
-      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/V8.7发布-20261018/upload-files/v87-b1ac54a0da7f-licensing-mobile.webp",
-      "upload_name": "v87-b1ac54a0da7f-licensing-mobile.webp",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-b1ac54a0da7f-licensing-mobile.webp",
-      "verified_at": "2026-10-18T12:53:33.857767+08:00",
-      "http_status": 200,
-      "content_type": "image/webp",
-      "cdn_bytes": 55308,
-      "dimensions": [
-        955,
-        467
-      ],
-      "source_dimensions": [
-        955,
-        467
-      ],
-      "platform_resized": false,
-      "verification": "HTTP 200 and image decode verified; WebP byte identity verified where applicable; browser validation follows.",
-      "referenced_in_build": true,
-      "browser_verification": {
-        "status": "not-verified"
-      }
-    },
-    {
-      "path": "img/scenes/members-desktop.webp",
-      "source_sha256": "3014128e0434f4dc3357608ea9db730eb11b7fba79a7e9dcbf65a2989a171d1e",
-      "bytes": 189806,
-      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/V8.7发布-20261018/upload-files/v87-3014128e0434-members-desktop.webp",
-      "upload_name": "v87-3014128e0434-members-desktop.webp",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-3014128e0434-members-desktop.webp",
-      "verified_at": "2026-10-18T12:53:33.857767+08:00",
-      "http_status": 200,
-      "content_type": "image/webp",
-      "cdn_bytes": 189806,
-      "dimensions": [
-        1546,
-        1162
-      ],
-      "source_dimensions": [
-        1546,
-        1162
-      ],
-      "platform_resized": false,
-      "verification": "HTTP 200 and image decode verified; WebP byte identity verified where applicable; browser validation follows.",
-      "referenced_in_build": true,
-      "browser_verification": {
-        "status": "not-verified"
-      }
-    },
-    {
-      "path": "img/scenes/members-mobile.webp",
-      "source_sha256": "eda9483571efeabdb8c4bf89a0114eef4e2e608f5cbcec92c9f5c3193678e616",
-      "bytes": 127192,
-      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/V8.7发布-20261018/upload-files/v87-eda9483571ef-members-mobile.webp",
-      "upload_name": "v87-eda9483571ef-members-mobile.webp",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-eda9483571ef-members-mobile.webp",
-      "verified_at": "2026-10-18T12:53:33.857767+08:00",
-      "http_status": 200,
-      "content_type": "image/webp",
-      "cdn_bytes": 127192,
-      "dimensions": [
-        991,
-        901
-      ],
-      "source_dimensions": [
-        991,
-        901
-      ],
-      "platform_resized": false,
-      "verification": "HTTP 200 and image decode verified; WebP byte identity verified where applicable; browser validation follows.",
-      "referenced_in_build": true,
-      "browser_verification": {
-        "status": "not-verified"
-      }
-    },
-    {
-      "path": "img/scenes/model-eco-desktop.webp",
-      "source_sha256": "12eaa905b921d4d7414cd94a32d4750ee2137d1b03c88a3010e642d905757b6e",
-      "bytes": 280898,
-      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/V8.7发布-20261018/upload-files/v87-12eaa905b921-model-eco-desktop.webp",
-      "upload_name": "v87-12eaa905b921-model-eco-desktop.webp",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-12eaa905b921-model-eco-desktop.webp",
-      "verified_at": "2026-10-18T12:53:33.857767+08:00",
-      "http_status": 200,
-      "content_type": "image/webp",
-      "cdn_bytes": 280898,
-      "dimensions": [
-        1944,
-        1027
-      ],
-      "source_dimensions": [
-        1944,
-        1027
-      ],
-      "platform_resized": false,
-      "verification": "HTTP 200 and image decode verified; WebP byte identity verified where applicable; browser validation follows.",
-      "referenced_in_build": true,
-      "browser_verification": {
-        "status": "not-verified"
-      }
-    },
-    {
-      "path": "img/scenes/model-eco-mobile.webp",
-      "source_sha256": "221e2a48137e66a4a0e3ea1e01f6ae69f0bd0c6129187923275c9d4dc3edc7b3",
-      "bytes": 151872,
-      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/V8.7发布-20261018/upload-files/v87-221e2a48137e-model-eco-mobile.webp",
-      "upload_name": "v87-221e2a48137e-model-eco-mobile.webp",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-221e2a48137e-model-eco-mobile.webp",
-      "verified_at": "2026-10-18T12:53:33.857767+08:00",
-      "http_status": 200,
-      "content_type": "image/webp",
-      "cdn_bytes": 151872,
-      "dimensions": [
-        865,
-        1184
-      ],
-      "source_dimensions": [
-        865,
-        1184
-      ],
-      "platform_resized": false,
-      "verification": "HTTP 200 and image decode verified; WebP byte identity verified where applicable; browser validation follows.",
-      "referenced_in_build": true,
-      "browser_verification": {
-        "status": "not-verified"
-      }
-    },
-    {
-      "path": "img/scenes/model-md-desktop.webp",
-      "source_sha256": "fd67866b511c3ff374ada84034d3072e88b363d44d90f5c3411bc29c20c8e003",
-      "bytes": 152504,
-      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/V8.7发布-20261018/upload-files/v87-fd67866b511c-model-md-desktop.webp",
-      "upload_name": "v87-fd67866b511c-model-md-desktop.webp",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-fd67866b511c-model-md-desktop.webp",
-      "verified_at": "2026-10-18T12:53:33.857767+08:00",
-      "http_status": 200,
-      "content_type": "image/webp",
-      "cdn_bytes": 152504,
-      "dimensions": [
-        1450,
-        782
-      ],
-      "source_dimensions": [
-        1450,
-        782
-      ],
-      "platform_resized": false,
-      "verification": "HTTP 200 and image decode verified; WebP byte identity verified where applicable; browser validation follows.",
-      "referenced_in_build": true,
-      "browser_verification": {
-        "status": "not-verified"
-      }
-    },
-    {
-      "path": "img/scenes/model-md-mobile.webp",
-      "source_sha256": "b1142b20e3e0312cbedf34649539cbac4c9e4de0cbcdf56443b03a34c86ca4a7",
-      "bytes": 113532,
-      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/V8.7发布-20261018/upload-files/v87-b1142b20e3e0-model-md-mobile.webp",
-      "upload_name": "v87-b1142b20e3e0-model-md-mobile.webp",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-b1142b20e3e0-model-md-mobile.webp",
-      "verified_at": "2026-10-18T12:53:33.857767+08:00",
-      "http_status": 200,
-      "content_type": "image/webp",
-      "cdn_bytes": 113532,
-      "dimensions": [
-        948,
-        847
-      ],
-      "source_dimensions": [
-        948,
-        847
-      ],
-      "platform_resized": false,
-      "verification": "HTTP 200 and image decode verified; WebP byte identity verified where applicable; browser validation follows.",
-      "referenced_in_build": true,
-      "browser_verification": {
-        "status": "not-verified"
-      }
-    },
-    {
-      "path": "img/scenes/model-ode-desktop.webp",
-      "source_sha256": "d79d048e0fcf5aaaa1038eb325bce847baceb826034fc88ea4562ecc63cca66b",
-      "bytes": 168042,
-      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/V8.7发布-20261018/upload-files/v87-d79d048e0fcf-model-ode-desktop.webp",
-      "upload_name": "v87-d79d048e0fcf-model-ode-desktop.webp",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-d79d048e0fcf-model-ode-desktop.webp",
-      "verified_at": "2026-10-18T12:53:33.857767+08:00",
-      "http_status": 200,
-      "content_type": "image/webp",
-      "cdn_bytes": 168042,
-      "dimensions": [
-        2267,
-        645
-      ],
-      "source_dimensions": [
-        2267,
-        645
-      ],
-      "platform_resized": false,
-      "verification": "HTTP 200 and image decode verified; WebP byte identity verified where applicable; browser validation follows.",
-      "referenced_in_build": true,
-      "browser_verification": {
-        "status": "not-verified"
-      }
-    },
-    {
-      "path": "img/scenes/model-ode-mobile.webp",
-      "source_sha256": "8300c606c9a82808f1bc417302a721d6778c790a39fc5a4853310e275fab7204",
-      "bytes": 86292,
-      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/V8.7发布-20261018/upload-files/v87-8300c606c9a8-model-ode-mobile.webp",
-      "upload_name": "v87-8300c606c9a8-model-ode-mobile.webp",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-8300c606c9a8-model-ode-mobile.webp",
-      "verified_at": "2026-10-18T12:53:33.857767+08:00",
-      "http_status": 200,
-      "content_type": "image/webp",
-      "cdn_bytes": 86292,
-      "dimensions": [
-        1127,
-        497
-      ],
-      "source_dimensions": [
-        1127,
-        497
-      ],
-      "platform_resized": false,
-      "verification": "HTTP 200 and image decode verified; WebP byte identity verified where applicable; browser validation follows.",
-      "referenced_in_build": true,
-      "browser_verification": {
-        "status": "not-verified"
-      }
-    },
-    {
-      "path": "img/scenes/safety-desktop.webp",
-      "source_sha256": "0d74992e301e3a38cef28e18d7ca6aa5813925813b4767fd26bafa3f70ba234e",
-      "bytes": 134696,
-      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/V8.7发布-20261018/upload-files/v87-0d74992e301e-safety-desktop.webp",
-      "upload_name": "v87-0d74992e301e-safety-desktop.webp",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-0d74992e301e-safety-desktop.webp",
-      "verified_at": "2026-10-18T12:53:33.857767+08:00",
-      "http_status": 200,
-      "content_type": "image/webp",
-      "cdn_bytes": 134696,
-      "dimensions": [
-        872,
-        2372
-      ],
-      "source_dimensions": [
-        872,
-        2372
-      ],
-      "platform_resized": false,
-      "verification": "HTTP 200 and image decode verified; WebP byte identity verified where applicable; browser validation follows.",
-      "referenced_in_build": true,
-      "browser_verification": {
-        "status": "not-verified"
-      }
-    },
-    {
-      "path": "img/scenes/safety-mobile.webp",
-      "source_sha256": "845fcb376a5fe67b622073b6c3ad8bfc299081e039acff230ecf15251de7d5da",
-      "bytes": 66918,
-      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/V8.7发布-20261018/upload-files/v87-845fcb376a5f-safety-mobile.webp",
-      "upload_name": "v87-845fcb376a5f-safety-mobile.webp",
-      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-845fcb376a5f-safety-mobile.webp",
-      "verified_at": "2026-10-18T12:53:33.857767+08:00",
-      "http_status": 200,
-      "content_type": "image/webp",
-      "cdn_bytes": 66918,
-      "dimensions": [
-        882,
-        1270
-      ],
-      "source_dimensions": [
-        882,
-        1270
-      ],
-      "platform_resized": false,
-      "verification": "HTTP 200 and image decode verified; WebP byte identity verified where applicable; browser validation follows.",
-      "referenced_in_build": true,
-      "browser_verification": {
-        "status": "not-verified"
-      }
-    },
-    {
       "path": "img/uploads/round3-results/Fig3.1.3a-hd.jpg",
       "source_sha256": "429a2f899f679b430bd5c64c1854b2725d865f8badd69e7906eaecd11f3aae42",
       "bytes": 5093898,
@@ -5095,6 +4009,580 @@
       "browser_verification": {
         "status": "not-verified"
       }
+    },
+    {
+      "path": "img/scenes/acknowledgements-desktop.webp",
+      "source_sha256": "2ecf0c208aa856b33506ad5d2c2081620c804cbefefd43dd647397af2f9cea60",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-2ecf0c208aa8-acknowledgements-desktop.webp",
+      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "http_verification": {
+        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+    },
+    {
+      "path": "img/scenes/acknowledgements-mobile.webp",
+      "source_sha256": "54a256f96d9d7413e4c98948f8d164a62b910cae114f307c46086c8ce3996d0f",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-54a256f96d9d-acknowledgements-mobile.webp",
+      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "http_verification": {
+        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+    },
+    {
+      "path": "img/scenes/attributions-desktop.webp",
+      "source_sha256": "36b6e44f4119de8a9ab3301ad25ffa1988004f1f91c7269b7cbd356f5270f6e9",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-36b6e44f4119-attributions-desktop.webp",
+      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "http_verification": {
+        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+    },
+    {
+      "path": "img/scenes/attributions-mobile.webp",
+      "source_sha256": "990b8c2b7e502520c151cd38e12b14edbbfe1a607b37abf18fdd05df24a591f0",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-990b8c2b7e50-attributions-mobile.webp",
+      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "http_verification": {
+        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+    },
+    {
+      "path": "img/scenes/awards-desktop.webp",
+      "source_sha256": "51c37f48cc6149aa11a457d48435a0b5a6cd76c89271f52605f1b562d20ef20d",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-51c37f48cc61-awards-desktop.webp",
+      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "http_verification": {
+        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+    },
+    {
+      "path": "img/scenes/awards-mobile.webp",
+      "source_sha256": "dcc0ab13e34b3ff942c9b6389409ac65c7d6f510fec201fd59cd69535c65c91e",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-dcc0ab13e34b-awards-mobile.webp",
+      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "http_verification": {
+        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+    },
+    {
+      "path": "img/scenes/background-desktop.webp",
+      "source_sha256": "133f4a6dfc1ee26b8218d166889fd39ad0f32bcde135524502d9e4ef2692858a",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-133f4a6dfc1e-background-desktop.webp",
+      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "http_verification": {
+        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+    },
+    {
+      "path": "img/scenes/background-mobile.webp",
+      "source_sha256": "872bb7161e802a01bde5a9963856e019c9e9d7ccc956c3444eb12d1a83c83b6b",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-872bb7161e80-background-mobile.webp",
+      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "http_verification": {
+        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+    },
+    {
+      "path": "img/scenes/contribution-desktop.webp",
+      "source_sha256": "39d8de9cb6b79a08f1db9b5968af6364394c031180a32f87eea0e53a13ca39ad",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-39d8de9cb6b7-contribution-desktop.webp",
+      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "http_verification": {
+        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+    },
+    {
+      "path": "img/scenes/contribution-mobile.webp",
+      "source_sha256": "0a6c3a2a637364fb8f1488b9988b41ed4edc65da2eba7a5884a091bfe29193f0",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-0a6c3a2a6373-contribution-mobile.webp",
+      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "http_verification": {
+        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+    },
+    {
+      "path": "img/scenes/description-desktop.webp",
+      "source_sha256": "766cc7a513bd243a420c70827845079498930d99512a2cae48b604c46da41e10",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-766cc7a513bd-description-desktop.webp",
+      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "http_verification": {
+        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+    },
+    {
+      "path": "img/scenes/description-mobile.webp",
+      "source_sha256": "b3251d2df0b9bbaef354f96824a500fa6d7be4c12b1adec004dbb132be33135c",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-b3251d2df0b9-description-mobile.webp",
+      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "http_verification": {
+        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+    },
+    {
+      "path": "img/scenes/education-desktop.webp",
+      "source_sha256": "cd3ed976df2872210c59216458bf16385a1529fa747fbed07c1c408a82848542",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-cd3ed976df28-education-desktop.webp",
+      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "http_verification": {
+        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+    },
+    {
+      "path": "img/scenes/education-mobile.webp",
+      "source_sha256": "f07df2f3ba54f039de79ce49c2c7a9851e251f79be038025d5b3eb5edc57d95c",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-f07df2f3ba54-education-mobile.webp",
+      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "http_verification": {
+        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+    },
+    {
+      "path": "img/scenes/engineering-desktop.webp",
+      "source_sha256": "c3bf781d52e96031211c22e7958e18aec82aa43677608face4e4345dec98715b",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-c3bf781d52e9-engineering-desktop.webp",
+      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "http_verification": {
+        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+    },
+    {
+      "path": "img/scenes/engineering-mobile.webp",
+      "source_sha256": "1b70657f105a34623effb2094afa6ff2ea6a336e3cb1f71e589537af710616b5",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-1b70657f105a-engineering-mobile.webp",
+      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "http_verification": {
+        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+    },
+    {
+      "path": "img/scenes/experiments-desktop.webp",
+      "source_sha256": "fd956188062b5e9bf390409928a4498413a73da2895736e3e1f4d1dde2ff223d",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-fd956188062b-experiments-desktop.webp",
+      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "http_verification": {
+        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+    },
+    {
+      "path": "img/scenes/experiments-mobile.webp",
+      "source_sha256": "48bb8b6c63a6dcb874584ba165f54b6e9bd05ee85d40c2dbd190197195a39f30",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-48bb8b6c63a6-experiments-mobile.webp",
+      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "http_verification": {
+        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+    },
+    {
+      "path": "img/scenes/ground-strip.webp",
+      "source_sha256": "75721912e3cc5dc91e8995e6f70d4303b83b46c1bc3e0948878842756a66bd3b",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-75721912e3cc-ground-strip.webp",
+      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "http_verification": {
+        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+    },
+    {
+      "path": "img/scenes/human-practices-desktop.webp",
+      "source_sha256": "401a10a1370c76408a24427f2d39efadc4ebf4f0472f4233d1b1de3f564c68fd",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-401a10a1370c-human-practices-desktop.webp",
+      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "http_verification": {
+        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+    },
+    {
+      "path": "img/scenes/human-practices-mobile.webp",
+      "source_sha256": "c2de5daa97b7afff471ebe441c73986375594e9c29a3654c503b91c9385187f0",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-c2de5daa97b7-human-practices-mobile.webp",
+      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "http_verification": {
+        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+    },
+    {
+      "path": "img/scenes/licensing-desktop.webp",
+      "source_sha256": "54be4bf4299a53e20f163ffaed1603db4d4cc6d8a6eeb415b7a9963af9d53c56",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-54be4bf4299a-licensing-desktop.webp",
+      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "http_verification": {
+        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+    },
+    {
+      "path": "img/scenes/licensing-mobile.webp",
+      "source_sha256": "7f5dc47d2574b3bb2c94cebe958ad5f3c66b76eb22179f1b9a5dc8c8c5d7899b",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-7f5dc47d2574-licensing-mobile.webp",
+      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "http_verification": {
+        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+    },
+    {
+      "path": "img/scenes/members-desktop.webp",
+      "source_sha256": "cba6262409795190f667219a0398affe92c8e14ce4703fcd18e4cd2b0af39efa",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-cba626240979-members-desktop.webp",
+      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "http_verification": {
+        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+    },
+    {
+      "path": "img/scenes/members-mobile.webp",
+      "source_sha256": "a15a8a4d65651f626210c98987e54c17b3f430ee82eef05d567c1b702b620ff9",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-a15a8a4d6565-members-mobile.webp",
+      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "http_verification": {
+        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+    },
+    {
+      "path": "img/scenes/model-desktop.webp",
+      "source_sha256": "1a3e1d61334201e425997fd1659469d805ff7a7e0907d3a7aa38798cf507a16d",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-1a3e1d613342-model-desktop.webp",
+      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "http_verification": {
+        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+    },
+    {
+      "path": "img/scenes/model-docking-desktop.webp",
+      "source_sha256": "9b8956e15d8e8711712d3d72bac7e1fcf9f369eacabe688e89efd61905acc5ad",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-9b8956e15d8e-model-docking-desktop.webp",
+      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "http_verification": {
+        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+    },
+    {
+      "path": "img/scenes/model-docking-mobile.webp",
+      "source_sha256": "15b8eda50260418047343be68c6a663f399e8b40dd43ae0d5a5ec92c884cf0f7",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-15b8eda50260-model-docking-mobile.webp",
+      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "http_verification": {
+        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+    },
+    {
+      "path": "img/scenes/model-eco-desktop.webp",
+      "source_sha256": "bacbabb8b8108a8ef7bbd03e7c47551b9bc6f565456ca0ff267dedeed58b4f59",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-bacbabb8b810-model-eco-desktop.webp",
+      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "http_verification": {
+        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+    },
+    {
+      "path": "img/scenes/model-eco-mobile.webp",
+      "source_sha256": "4848548257476f993f30296332193ac1c6a9e1403ed41eb353b723b3854f2784",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-484854825747-model-eco-mobile.webp",
+      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "http_verification": {
+        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+    },
+    {
+      "path": "img/scenes/model-md-desktop.webp",
+      "source_sha256": "baacba0eaefca182b9cad5fc9c7e5aab4f6876c6541629df1fd552f0b0500ddb",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-baacba0eaefc-model-md-desktop.webp",
+      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "http_verification": {
+        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+    },
+    {
+      "path": "img/scenes/model-md-mobile.webp",
+      "source_sha256": "ba8baae3711088c1bdd90eba804bba0c74f01271033c1814cfea977054f4ad7b",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-ba8baae37110-model-md-mobile.webp",
+      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "http_verification": {
+        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+    },
+    {
+      "path": "img/scenes/model-mobile.webp",
+      "source_sha256": "9a4092339ed3fa96fd79bcd1e4d75fe0dd7373b0a08c81fc7c269687bc45eb68",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-9a4092339ed3-model-mobile.webp",
+      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "http_verification": {
+        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+    },
+    {
+      "path": "img/scenes/model-ode-desktop.webp",
+      "source_sha256": "ea6b25f8778a46b246de170883153a2596f82b04918c49a3fcd9589916097d3f",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-ea6b25f8778a-model-ode-desktop.webp",
+      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "http_verification": {
+        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+    },
+    {
+      "path": "img/scenes/model-ode-mobile.webp",
+      "source_sha256": "b10240f2b78f6e8f8cb4d46e8c6909a54b0d0e7e21492162e904cc8422ffa43f",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-b10240f2b78f-model-ode-mobile.webp",
+      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "http_verification": {
+        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+    },
+    {
+      "path": "img/scenes/parts-desktop.webp",
+      "source_sha256": "a1136d2432845f4ad9200624ee188868bbe4686ee9687e97ee09e98e79e23239",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-a1136d243284-parts-desktop.webp",
+      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "http_verification": {
+        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+    },
+    {
+      "path": "img/scenes/parts-mobile.webp",
+      "source_sha256": "c7359f52ebe4488745c1758c0dbeab3eecfd82756475a2ae4ff80a6f41994894",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-c7359f52ebe4-parts-mobile.webp",
+      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "http_verification": {
+        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+    },
+    {
+      "path": "img/scenes/results-desktop.webp",
+      "source_sha256": "28ab213408314bf5579058687a26cc2f571f890db4f964d4294cf2f037e92a27",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-28ab21340831-results-desktop.webp",
+      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "http_verification": {
+        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+    },
+    {
+      "path": "img/scenes/results-mobile.webp",
+      "source_sha256": "d400d8ce4bbec4c8449ecf16caee3d2677094f6e950f8bbafcb15d6efbfee1aa",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-d400d8ce4bbe-results-mobile.webp",
+      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "http_verification": {
+        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+    },
+    {
+      "path": "img/scenes/safety-desktop.webp",
+      "source_sha256": "3122cd5e8b1e4b442fc2009aa8113fda9431c2f497287a3f09154b3e0d3c44e6",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-3122cd5e8b1e-safety-desktop.webp",
+      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "http_verification": {
+        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
+    },
+    {
+      "path": "img/scenes/safety-mobile.webp",
+      "source_sha256": "2e0668d39928f8acef03c33f58ae86d18c526cce74688f434a6b4e3fe11e35db",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-0/v10-2e0668d39928-safety-mobile.webp",
+      "verification": "HTTP 200; uploaded WebP bytes exactly match source SHA-256",
+      "http_verification": {
+        "checked_at": "2026-10-18T18:32:08.799683+08:00",
+        "status": 200,
+        "content_type": "image/webp",
+        "nonempty": true
+      },
+      "referenced_in_build": true,
+      "source": "V10 procedural handcut decorative scene assets; original team illustration supplies ground strip"
     }
   ]
 }

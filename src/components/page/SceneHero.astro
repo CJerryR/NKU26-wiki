@@ -13,9 +13,9 @@
  * Two compositions (landscape, portrait) are rendered; the hidden one's atlas
  * is never downloaded because its layers sit inside a display:none parent.
  */
+import { GROUND_URL, SKY_URL } from '../../data/scenes';
 import type { ResolvedScene, SceneKind, SceneLayer, AtlasSet } from '../../data/scenes';
 import { inlineMd } from '../../lib/text';
-import ScenePalette from './ScenePalette.astro';
 
 interface Props { scene: ResolvedScene; title: string; heading?: string; crumbs: string[] }
 const { scene, title, heading, crumbs } = Astro.props;
@@ -41,15 +41,16 @@ const d = scene.sets.desktop.set.title ?? {}, m = scene.sets.mobile.set.title ??
 const longest = Math.max(...(heading ?? title).replace(/[*_`]/g, '').split(/\s+/).map((w) => w.length));
 const h1Cap = longest > 11 ? `calc(88vw / ${(longest * 0.56).toFixed(2)})` : null;
 const stageVars = [
+  `--ground:url(${GROUND_URL})`, `--sky:url(${SKY_URL})`,
   `--ty-d:${d.y ?? 0}`, `--ty-m:${m.y ?? 0}`,
   ...(d.fontSize ? [`--title-size-d:calc(${d.fontSize} * var(--u))`] : []),
   ...(m.fontSize ? [`--title-size-m:calc(${m.fontSize} * var(--u))`] : []),
 ].join(';');
 ---
-<section class="scene" data-scene data-tone="light" aria-labelledby="page-title" style={stageVars}>
-  <ScenePalette />
+<section class="scene" data-scene data-tone="dark" aria-labelledby="page-title" style={stageVars}>
   <div class="scene__stage">
     <div class="scene__floor" aria-hidden="true" data-scene-floor></div>
+    <div class="scene__ground" aria-hidden="true"></div>
     {kinds.map((kind) => {
       const { set, atlas, url } = scene.sets[kind];
       return (
@@ -77,5 +78,6 @@ const stageVars = [
     <div class="scene__cue" aria-hidden="true" data-scene-cue><span>Scroll to open</span><i></i></div>
     <a class="scene__skip" href="#content">Skip intro</a>
   </div>
-  <noscript><style>.scene { height: auto !important; } .scene__stage { position: relative !important; }</style></noscript>
+  <noscript><style>.scene { height: auto !important; } .scene__stage { position: relative !important; } .scene-tear { --tear: 0px !important; }</style></noscript>
 </section>
+<div class="scene-tear" data-tone="light" aria-hidden="true"></div>

@@ -5,9 +5,9 @@
       2039,
       608
     ],
-    "bytes": 118734,
+    "bytes": 172354,
     "quality": 86,
-    "hash": "b1dcfd215fc9",
+    "hash": "39d8de9cb6b7",
     "frames": {
       "block-cds": [
         1690,
@@ -63,7 +63,8 @@
         522,
         216
       ]
-    }
+    },
+    "style": "handcut-v10 auto 9"
   },
   "mobile": {
     "file": "contribution-mobile.webp",
@@ -71,9 +72,9 @@
       522,
       1018
     ],
-    "bytes": 24386,
+    "bytes": 79498,
     "quality": 86,
-    "hash": "b27e379b4c03",
+    "hash": "0a6c3a2a6373",
     "frames": {
       "block-cds": [
         251,
@@ -105,6 +106,7 @@
         522,
         216
       ]
-    }
+    },
+    "style": "handcut-v10 auto 5"
   }
 }

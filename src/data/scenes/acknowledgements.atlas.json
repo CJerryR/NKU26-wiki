@@ -5,9 +5,9 @@
       629,
       1772
     ],
-    "bytes": 111114,
+    "bytes": 129770,
     "quality": 86,
-    "hash": "1d9f4976b2e1",
+    "hash": "2ecf0c208aa8",
     "frames": {
       "i-ack-flowers": [
         0,
@@ -51,7 +51,8 @@
         436,
         220
       ]
-    }
+    },
+    "style": "handcut-v10 auto 7"
   },
   "mobile": {
     "file": "acknowledgements-mobile.webp",
@@ -59,9 +60,9 @@
       338,
       859
     ],
-    "bytes": 37972,
+    "bytes": 56600,
     "quality": 86,
-    "hash": "5620805cce9c",
+    "hash": "54a256f96d9d",
     "frames": {
       "i-ack-flowers": [
         0,
@@ -87,6 +88,7 @@
         310,
         206
       ]
-    }
+    },
+    "style": "handcut-v10 auto 4"
   }
 }

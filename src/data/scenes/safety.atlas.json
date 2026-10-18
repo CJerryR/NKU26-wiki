@@ -5,9 +5,9 @@
       872,
       2372
     ],
-    "bytes": 134696,
+    "bytes": 207638,
     "quality": 86,
-    "hash": "0d74992e301e",
+    "hash": "3122cd5e8b1e",
     "frames": {
       "i-bench": [
         0,
@@ -51,7 +51,8 @@
         698,
         292
       ]
-    }
+    },
+    "style": "handcut-v10 auto 7"
   },
   "mobile": {
     "file": "safety-mobile.webp",
@@ -59,9 +60,9 @@
       882,
       1270
     ],
-    "bytes": 66918,
+    "bytes": 140724,
     "quality": 86,
-    "hash": "845fcb376a5f",
+    "hash": "2e0668d39928",
     "frames": {
       "i-bench": [
         384,
@@ -93,6 +94,7 @@
         380,
         206
       ]
-    }
+    },
+    "style": "handcut-v10 auto 5"
   }
 }

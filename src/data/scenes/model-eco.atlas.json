@@ -5,9 +5,9 @@
       1944,
       1027
     ],
-    "bytes": 280898,
+    "bytes": 226018,
     "quality": 86,
-    "hash": "12eaa905b921",
+    "hash": "bacbabb8b810",
     "frames": {
       "i-crowd": [
         1277,
@@ -51,7 +51,8 @@
         553,
         196
       ]
-    }
+    },
+    "style": "handcut-v10 auto 7"
   },
   "mobile": {
     "file": "model-eco-mobile.webp",
@@ -59,9 +60,9 @@
       865,
       1184
     ],
-    "bytes": 151872,
-    "quality": 80,
-    "hash": "221e2a48137e",
+    "bytes": 155044,
+    "quality": 86,
+    "hash": "484854825747",
     "frames": {
       "i-crowd": [
         0,
@@ -93,6 +94,7 @@
         321,
         230
       ]
-    }
+    },
+    "style": "handcut-v10 auto 5"
   }
 }

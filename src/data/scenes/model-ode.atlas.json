@@ -5,9 +5,9 @@
       2267,
       645
     ],
-    "bytes": 168042,
+    "bytes": 149748,
     "quality": 86,
-    "hash": "d79d048e0fcf",
+    "hash": "ea6b25f8778a",
     "frames": {
       "i-gears": [
         1230,
@@ -51,7 +51,8 @@
         698,
         292
       ]
-    }
+    },
+    "style": "handcut-v10 auto 7"
   },
   "mobile": {
     "file": "model-ode-mobile.webp",
@@ -59,9 +60,9 @@
       1127,
       497
     ],
-    "bytes": 86292,
+    "bytes": 88706,
     "quality": 86,
-    "hash": "8300c606c9a8",
+    "hash": "b10240f2b78f",
     "frames": {
       "i-molecules": [
         0,
@@ -93,6 +94,7 @@
         531,
         222
       ]
-    }
+    },
+    "style": "handcut-v10 auto 5"
   }
 }

@@ -5,9 +5,9 @@
       766,
       2424
     ],
-    "bytes": 222532,
+    "bytes": 190482,
     "quality": 86,
-    "hash": "a41a167937f7",
+    "hash": "c3bf781d52e9",
     "frames": {
       "i-bench": [
         0,
@@ -51,7 +51,8 @@
         678,
         416
       ]
-    }
+    },
+    "style": "handcut-v10 auto 7"
   },
   "mobile": {
     "file": "engineering-mobile.webp",
@@ -59,9 +60,9 @@
       503,
       1186
     ],
-    "bytes": 101500,
+    "bytes": 111056,
     "quality": 86,
-    "hash": "f8bdb3d8e368",
+    "hash": "1b70657f105a",
     "frames": {
       "i-eng-build": [
         0,
@@ -93,6 +94,7 @@
         484,
         267
       ]
-    }
+    },
+    "style": "handcut-v10 auto 5"
   }
 }

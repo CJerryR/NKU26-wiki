@@ -5,9 +5,9 @@
       1859,
       1217
     ],
-    "bytes": 258040,
+    "bytes": 240466,
     "quality": 86,
-    "hash": "82ddafe64673",
+    "hash": "401a10a1370c",
     "frames": {
       "i-bubble-a": [
         1186,
@@ -57,7 +57,8 @@
         882,
         313
       ]
-    }
+    },
+    "style": "handcut-v10 auto 8"
   },
   "mobile": {
     "file": "human-practices-mobile.webp",
@@ -65,9 +66,9 @@
       1226,
       535
     ],
-    "bytes": 105600,
+    "bytes": 109042,
     "quality": 86,
-    "hash": "318ed638accb",
+    "hash": "c2de5daa97b7",
     "frames": {
       "i-bubble-a": [
         519,
@@ -99,6 +100,7 @@
         527,
         322
       ]
-    }
+    },
+    "style": "handcut-v10 auto 5"
   }
 }
