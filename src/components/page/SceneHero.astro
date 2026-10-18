@@ -13,7 +13,8 @@
  * Two compositions (landscape, portrait) are rendered; the hidden one's atlas
  * is never downloaded because its layers sit inside a display:none parent.
  */
-import { GROUND_URL, SKY_URL } from '../../data/scenes';
+import { GROUND_URL, SKY_URL, PORTRAIT_QUERY } from '../../data/scenes';
+import sceneLoading from '../../scripts/scene-loading.js?raw';
 import type { ResolvedScene, SceneKind, SceneLayer, AtlasSet } from '../../data/scenes';
 import { inlineMd } from '../../lib/text';
 
@@ -47,7 +48,7 @@ const stageVars = [
   ...(m.fontSize ? [`--title-size-m:calc(${m.fontSize} * var(--u))`] : []),
 ].join(';');
 ---
-<section class="scene" data-scene data-tone="dark" aria-labelledby="page-title" style={stageVars}>
+<section class="scene" data-scene data-scene-ground={GROUND_URL} data-scene-sky={SKY_URL} data-scene-portrait={PORTRAIT_QUERY} data-tone="dark" aria-labelledby="page-title" style={stageVars}>
   <div class="scene__stage">
     <div class="scene__floor" aria-hidden="true" data-scene-floor></div>
     <div class="scene__ground" aria-hidden="true"></div>
@@ -80,4 +81,5 @@ const stageVars = [
   </div>
   <noscript><style>.scene { height: auto !important; } .scene__stage { position: relative !important; } .scene-tear { --tear: 0px !important; }</style></noscript>
 </section>
+<script is:inline set:html={sceneLoading} />
 <div class="scene-tear" data-tone="light" aria-hidden="true"></div>

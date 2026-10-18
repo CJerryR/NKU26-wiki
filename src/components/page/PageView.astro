@@ -4,7 +4,7 @@ import { render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from './PageHero.astro';
 import SceneHero from './SceneHero.astro';
-import { getScene, PORTRAIT_QUERY } from '../../data/scenes';
+import { getScene, PORTRAIT_QUERY, GROUND_URL, SKY_URL } from '../../data/scenes';
 import Toc from './Toc.astro';
 import PagePager from './PagePager.astro';
 import NemaKlearOriginal from './NemaKlearOriginal.astro';
@@ -36,6 +36,8 @@ const description = data.description ?? (data.sub ? stripMd(data.sub) : undefine
 // Scroll-opened hero where this page has an enabled scene; the SVG title bar otherwise.
 const scene = getScene(entry.id);
 const preload = scene ? [
+  { href: SKY_URL, media: 'all' },
+  { href: GROUND_URL, media: 'all' },
   { href: scene.sets.desktop.url, media: `not all and ${PORTRAIT_QUERY}` },
   { href: scene.sets.mobile.url, media: PORTRAIT_QUERY },
 ] : [];

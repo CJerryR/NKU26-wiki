@@ -28,6 +28,18 @@ const { title, description = site.description, current, skipTo = '#main', preloa
     <title>{`${title} / ${site.title}`}</title>
     <meta name="description" content={description} />
     <meta name="theme-color" content="#191222" />
+    {preload.length > 0 && <>
+      <link rel="preconnect" href="https://static.igem.wiki" />
+      <script is:inline>
+        document.documentElement.classList.add('scene-loading');
+        // Reading must remain available even if the scene bootstrap fails.
+        window.setTimeout(() => {
+          if (!document.documentElement.classList.contains('scene-loading')) return;
+          document.querySelector('[data-scene]')?.classList.add('scene--noart', 'scene--noground', 'scene--nosky');
+          document.documentElement.classList.remove('scene-loading');
+        }, 3500);
+      </script>
+    </>}
     <!-- Day / night before the first paint, so a night page never flashes paper (key: src/scripts/theme.ts) -->
     <script is:inline>try{if(localStorage.getItem('nku26-theme')==='dark')document.documentElement.setAttribute('data-theme','dark')}catch(e){}</script>
     <link rel="stylesheet" href="/widgets/vendor/katex/katex.min.css" />
