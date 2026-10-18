@@ -68,7 +68,7 @@ const sheet = mobileNav.map((g) => ({ ...g, items: g.items.map(link).filter((l) 
           <a class:list={['lnav__link', { 'is-current': item.current }]} href={item.href} aria-current={item.current ? 'page' : undefined}>{item.label}</a>
         ))}
       </nav>
-      <button type="button" class="lnav__search" data-search-open aria-haspopup="dialog" aria-controls="site-search" aria-expanded="false">
+      <button type="button" class="lnav__search" data-search-open aria-label="Search" aria-haspopup="dialog" aria-controls="site-search" aria-expanded="false">
         <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5" /><line x1="20" y1="20" x2="16" y2="16" /></svg>
         <span>Search</span>
       </button>
