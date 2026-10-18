@@ -21,7 +21,6 @@ import { inlineMd } from '../../lib/text';
 interface Props { scene: ResolvedScene; title: string; heading?: string; crumbs: string[] }
 const { scene, title, heading, crumbs } = Astro.props;
 const trail = crumbs.length ? crumbs : [title];
-const eyebrow = scene.eyebrow ?? (crumbs.length > 1 ? crumbs[0] : undefined);
 
 const pct = (n: number) => `${+n.toFixed(4)}%`;
 function layerStyle(l: SceneLayer, atlas: AtlasSet): string {
@@ -73,9 +72,7 @@ const stageVars = [
       </ol>
     </nav>
     <div class="scene__title" data-scene-title>
-      {eyebrow && <p class="scene__eyebrow">{eyebrow}</p>}
       <h1 id="page-title" class="scene__h1" style={h1Cap ? `--h1-cap:${h1Cap}` : undefined} set:html={inlineMd(heading ?? title)} />
-      <span class="scene__pill" aria-hidden="true"></span>
     </div>
   </div>
   <noscript><style>.scene { height: auto !important; } .scene__stage { position: relative !important; } .scene-tear { --tear: 0px !important; } .scene--preview .scene__layer { background-image: var(--atlas) !important; }</style></noscript>
