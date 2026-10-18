@@ -1,7 +1,7 @@
 {
-  "version": "10.0.1",
-  "label": "V10.0.1 - synchronized scene loading",
-  "prepared_at": "2026-10-18T18:58:23.316368+08:00",
+  "version": "10.0.2",
+  "label": "V10.0.2 - simplified scene opening",
+  "prepared_at": "2026-10-18T19:03:08.756785+08:00",
   "media": "84 unchanged original images plus 4 user-authorized GPS-only cleaned images; all decoded frames unchanged; 12 complete historical source documents",
   "release_kind": "stage",
   "team_content_review": "Scientific final review pending; source-version choices authorized by user",
@@ -10,7 +10,7 @@
     "commit": "16770d5c28ddf7bc41f8d90445c44d80a28801d5",
     "published_at_local": "2026-10-18 05:04:34"
   },
-  "release_id": "v10.0.1-scene-loading-20261018",
+  "release_id": "v10.0.2-no-opening-cues-20261018",
   "mobile_layout_check": "390px Members: CDN atlas rendered, no horizontal overflow; desktop Description opening and paper transition visually checked",
   "source_fidelity": {
     "original_source_files_verified": 80,

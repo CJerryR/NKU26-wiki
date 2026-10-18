@@ -27,7 +27,6 @@ export function initSceneHero(): void {
   const stage = root.querySelector<HTMLElement>('.scene__stage')!;
   const title = root.querySelector<HTMLElement>('[data-scene-title]');
   const floor = root.querySelector<HTMLElement>('[data-scene-floor]');
-  const cue = root.querySelector<HTMLElement>('[data-scene-cue]');
   const sets = Array.from(root.querySelectorAll<HTMLElement>('[data-scene-set]'));
 
   const probed = new Set<string>();
@@ -100,7 +99,6 @@ export function initSceneHero(): void {
       title.style.transform = `translate(-50%, calc(-50% + ${dy.toFixed(2)}px)) scale(${sc.toFixed(4)})`;
     }
     if (floor) floor.style.opacity = (1 - ease(clamp((p - 0.45) / 0.4))).toFixed(3);
-    if (cue) cue.style.opacity = (1 - clamp(p / 0.08)).toFixed(3);
   };
 
   const loop = () => {
