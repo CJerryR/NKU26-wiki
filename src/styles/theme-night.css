@@ -206,20 +206,8 @@ html.theme-switching::view-transition-old(root), html.theme-switching::view-tran
   }
 }
 
-/* Local additions after the delivery snapshot: EcoExplorer and Description's
-   workflow. Keep the figure's light drawing surface and its dark labels. */
+/* Description workflow and supplied figures. */
 @media screen {
-  html[data-theme='dark'] .eco-explorer {
-    background: linear-gradient(135deg, var(--paper-hi), var(--paper-2));
-  }
-  html[data-theme='dark'] .eco-explorer input[type=number],
-  html[data-theme='dark'] .eco-explorer button,
-  html[data-theme='dark'] .eco-explorer__comparisons > div {
-    color: var(--ink); background: var(--paper-hi); border-color: var(--line);
-  }
-  html[data-theme='dark'] .eco-explorer button:hover { background: var(--iris-wash); border-color: var(--iris); }
-  html[data-theme='dark'] .eco-explorer__comparisons strong { color: var(--iris-deep); }
-  html[data-theme='dark'] .eco-explorer__error { color: var(--tk-error-ink); background: var(--tk-error-bg); }
   html[data-theme='dark'] .wf .lf__tab[aria-pressed='true'] { background: var(--paper-hi); }
   html[data-theme='dark'] .wf .lf__stage { --ink: #241c2b; --ink-2: #574e5d; }
   html[data-theme='dark'] .wf .lf-card { color: var(--tk-ink); background: var(--tk-paper); }

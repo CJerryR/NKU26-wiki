@@ -14,7 +14,7 @@ hidden: false
 ---
 ## DBTL-1 | Engineering the Signal Response Pathway {#dbtl-1-engineering-the-signal-response-pathway toc="DBTL-1 | Engineering the Signal Response Pathway"}
 
-### Receptor Screening and Target Selection {#the-first-cycle-dry-lab toc="Receptor Screening and Target Selection"}
+### 1.1 Receptor Screening and Target Selection {#the-first-cycle-dry-lab toc="Receptor Screening and Target Selection"}
 
 #### Design | Defining the Receptor Screening Objective {#design-defining-the-receptor-screening-objective toc="Design | Defining the Receptor Screening Objective"}
 
@@ -32,15 +32,15 @@ We examined scores, ligand positions, and residue contacts to assess whether doc
 
 Receptor selection requires consideration of both computational results and the conditions for heterologous use. GprC has been reported to show plasma membrane- and mitochondria-associated localization. Because this could increase the complexity of localization and pathway integration in yeast, we did not include GprC in this round of engineering, while retaining it as a structural reference. Subsequent mutant screening focused on Gpr2, with studies of Gpr3 and its mutants continuing alongside it.
 
-### The Third Cycle——Wet Lab {#the-third-cycle-wet-lab toc="The Third Cycle——Wet Lab"}
+### 1.3 The Third Cycle——Wet Lab {#the-third-cycle-wet-lab toc="The Third Cycle——Wet Lab"}
 
 Informed by results from the prior cycle, this iteration characterizes **heterologous expression and proper plasma membrane localization** of GPR2, establishing proof of feasibility for downstream chassis engineering.
 
-#### Design | Planning GPR2 Expression and Localization Verification {#design toc="Design | Planning GPR2 Expression and Localization Verification"}
+#### 1.3.1 Design {#design toc="Design | Planning GPR2 Expression and Localization Verification"}
 
 To validate heterologous expression and proper plasma membrane localization of GPR2 in our host strain *S. cerevisiae* `CEN.PK2-1C`, we adopted the following experimental pipeline: assembly of the GPR2-sfGFP expression plasmid, gene knock-in mediated by yeast homologous recombination (HR), and fluorescence microscopy to characterize protein expression and subcellular localization. See Wet Lab-Results- DBTL-1 for detailed design and experimental protocols.
 
-#### Build | Integrating the GPR2-sfGFP Expression Cassette {#build toc="Build | Integrating the GPR2-sfGFP Expression Cassette"}
+#### 1.3.2 Build {#build toc="Build | Integrating the GPR2-sfGFP Expression Cassette"}
 
 Via homologous recombination (HR), we integrated the constitutive *GPR2-sfGFP* expression cassette into the `CEN.PK2-1C` genome (Figure 1).
 
@@ -52,7 +52,7 @@ Figure 1 Yeast transformation of GPR2‑sfGFP construct
 
 :::
 
-#### Test | Comparing GFP with Cell-Wall and Membrane Staining {#test toc="Test | Comparing GFP with Cell-Wall and Membrane Staining"}
+#### 1.3.3 Test {#test toc="Test | Comparing GFP with Cell-Wall and Membrane Staining"}
 
 Following gene knock-in, we visualized three groups of yeast under fluorescence microscopy: unstained cells (Figure 2), cell wall-stained yeast (Figure 3), and plasma membrane-stained yeast (Figure 4).
 
@@ -86,15 +86,15 @@ Figure 4 FM4‑64 staining of yeast cells
 
 :::
 
-#### Learn | Assessing GPR2 Localization for Chassis Engineering {#learn toc="Learn | Assessing GPR2 Localization for Chassis Engineering"}
+#### 1.3.4 Learn {#learn toc="Learn | Assessing GPR2 Localization for Chassis Engineering"}
 
 Collectively, these data confirm heterologous expression and proper plasma membrane localization of GPR2 in `CEN.PK2-1C`, laying an essential foundation for our chassis engineering. We therefore advance to the next cycle to assemble the full signal-responsive engineered strain.
 
-### The Fourth Cycle——Wet Lab {#the-fourth-cycle-wet-lab toc="The Fourth Cycle——Wet Lab"}
+### 1.3 The Fourth Cycle——Wet Lab {#the-fourth-cycle-wet-lab toc="The Fourth Cycle——Wet Lab"}
 
 Building upon findings from prior iterations, this cycle launches the chassis engineering of our signal-responsive pathway.
 
-#### Design | Planning the Ascaroside-Responsive Yeast Pathway {#design-2 toc="Design | Planning the Ascaroside-Responsive Yeast Pathway"}
+#### 1.4.1 Design {#design-2 toc="Design | Planning the Ascaroside-Responsive Yeast Pathway"}
 
 Referring to previous work reported by Fan et al. [1][2], we assembled the ascaroside-sensitive yeast biosensor according to the pipeline illustrated in Figure 1.
 
@@ -106,7 +106,7 @@ Figure 1 Schematic Diagram of Yeast Biosensor Construction Pipeline
 
 :::
 
-#### Build | Assembling the Signal-Responsive Yeast Chassis {#build-2 toc="Build | Assembling the Signal-Responsive Yeast Chassis"}
+#### 1.4.2 Build {#build-2 toc="Build | Assembling the Signal-Responsive Yeast Chassis"}
 
 First, we knocked out the *Gal80* gene in `CEN.PK2-1C` to obtain the engineered strain `NKU-Y02` (Figure 2), which eliminates endogenous signal interference in this pathway.
 
@@ -136,6 +136,14 @@ Subsequently, we introduced MjDOD and BvCYP76AD5 driven by the bidirectional Gal
 
 Finally, we transformed the constitutive *GPR2* expression cassette into `NKU-Y06` to obtain the engineered strain `NKU-Y07` (Figure 5), completing the preliminary construction of the full engineered strain system and advancing the project to the testing phase.
 
+#### 1.4.3 Test {#wet-lab-fourth-test toc="1.4.3 Test"}
+
+这部分后续给出。
+
+#### 1.4.4 Learn {#wet-lab-fourth-learn toc="1.4.4 Learn"}
+
+这部分后续给出。
+
 ### References {#references toc="References"}
 
 Fan C, Yuan J. Reshaping the yeast galactose regulon via GPCR signaling cascade. Cell Rep Methods. 2023 Dec 18;3(12):100647. doi: 10.1016/j.crmeth.2023.100647. Epub 2023 Nov 20. PMID: 37989311; PMCID: PMC10753199.
@@ -144,7 +152,7 @@ Cong Fan, Nike He, Jifeng Yuan, Cascaded amplifying circuit enables sensitive de
 
 ## DBTL-2 | Engineering Receptor Specificity and Developing Pathway Models {#dbtl-2-engineering-receptor-specificity-and-developing-pathway-models toc="DBTL-2 | Engineering Receptor Specificity and Developing Pathway Models"}
 
-### Mutation Design and Screening Guided by Contact Differences {#mutation-design-and-screening-guided-by-contact-differences toc="Mutation Design and Screening Guided by Contact Differences"}
+### 2.1 Mutation Design and Screening Guided by Contact Differences {#mutation-design-and-screening-guided-by-contact-differences toc="Mutation Design and Screening Guided by Contact Differences"}
 
 #### Design | Identifying Engineering Sites from WT Contact Differences {#design-identifying-engineering-sites-from-wt-contact-differences toc="Design | Identifying Engineering Sites from WT Contact Differences"}
 
@@ -164,7 +172,7 @@ After obtaining single-mutant candidates, we explored combined mutations. Parent
 
 Score differentiation and contact analysis led us to select N84V and V368R. Relative to WT from the same batch, N84V had a lower ascr#18 score and a higher ascr#3 score, while V368R showed the opposite pattern. These results defined the next questions: would the selected ligand poses persist in full-length receptors within a membrane environment, and would the predicted contacts remain or rearrange? Both mutants and WT therefore proceeded to MD comparisons.
 
-### Investigating Candidate Dynamics in a Membrane Environment {#investigating-candidate-dynamics-in-a-membrane-environment toc="Investigating Candidate Dynamics in a Membrane Environment"}
+### 2.2 Investigating Candidate Dynamics in a Membrane Environment {#investigating-candidate-dynamics-in-a-membrane-environment toc="Investigating Candidate Dynamics in a Membrane Environment"}
 
 #### Design | Examining Docking Candidates in the Membrane {#design-examining-docking-candidates-in-the-membrane toc="Design | Examining Docking Candidates in the Membrane"}
 
@@ -186,7 +194,7 @@ In V368R–ascr#3, the ligand moved away from its initial position toward Arg345
 
 The MD results prompted us to revisit the contact-based interpretation of docking. A ligand may maintain its position through persistent contacts, or it may leave its initial pose and establish contacts elsewhere. Assessing mutation effects therefore requires examining both ligand motion and internal receptor changes. Each system currently has only **one trajectory**, so the sequence of contact changes requires testing through replicate simulations, while actual recognition capability requires experimental confirmation.
 
-### ODE: Connecting Receptor Signaling to Colorimetric Output {#ode-connecting-receptor-signaling-to-colorimetric-output toc="ODE: Connecting Receptor Signaling to Colorimetric Output"}
+### 2.3 ODE: Connecting Receptor Signaling to Colorimetric Output {#ode-connecting-receptor-signaling-to-colorimetric-output toc="ODE: Connecting Receptor Signaling to Colorimetric Output"}
 
 #### Design | Building a Minimal Model from Biological Principles {#design-building-a-minimal-model-from-biological-principles toc="Design | Building a Minimal Model from Biological Principles"}
 
@@ -204,7 +212,7 @@ We ran the models before and after simplification with identical inputs and para
 
 We retained the source parameters of the shared pathway and focused on adjusting the effective input scale and color-production gain, using simulated endpoint fitting to explore distinguishable output ranges. Actual readout times and response ranges still require dose-response and time-course measurements. This work also established the next direction for configuring the two sensors.
 
-### Two-Channel Model: Estimating Target Density from Paired Color Readouts {#two-channel-model-estimating-target-density-from-paired-color-readouts toc="Two-Channel Model: Estimating Target Density from Paired Color Readouts"}
+### 2.4 Two-Channel Model: Estimating Target Density from Paired Color Readouts {#two-channel-model-estimating-target-density-from-paired-color-readouts toc="Two-Channel Model: Estimating Target Density from Paired Color Readouts"}
 
 #### Design | Estimating Mi Density with an Unknown Background Population {#design-estimating-mi-density-with-an-unknown-background-population toc="Design | Estimating Mi Density with an Unknown Background Population"}
 
@@ -226,7 +234,7 @@ The model derivation is complete, while **calibration with project wet-lab data 
 
 ## DBTL-3 | Feedback from Practical and Societal Needs {#dbtl-3-feedback-from-practical-and-societal-needs toc="DBTL-3 | Feedback from Practical and Societal Needs"}
 
-### Economic Benefit Modeling and Refinement of Detection Requirements {#economic-benefit-modeling-and-refinement-of-detection-requirements toc="Economic Benefit Modeling and Refinement of Detection Requirements"}
+### 3.1 Economic Benefit Modeling and Refinement of Detection Requirements {#economic-benefit-modeling-and-refinement-of-detection-requirements toc="Economic Benefit Modeling and Refinement of Detection Requirements"}
 
 #### Design | Defining the Decision-Making Value of Detection Information {#design-defining-the-decision-making-value-of-detection-information toc="Design | Defining the Decision-Making Value of Detection Information"}
 

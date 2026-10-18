@@ -57,7 +57,7 @@ def page_html(page):
 <style>{css} *{{box-sizing:border-box}} body{{margin:0;background:var(--paper)}} .fake-nav{{position:fixed;top:0;left:0;right:0;height:64px;background:rgba(36,28,43,.10);z-index:50;border-bottom:1px dashed rgba(82,58,140,.5)}}
 #content{{min-height:1600px;padding:60px 8vw;font:17px/1.6 system-ui;color:#3a2f45}}</style></head><body>
 <div class="fake-nav"></div><main id="main">
-<section class="scene" data-scene data-tone="light" aria-labelledby="page-title" style="--ty-d:{d.get('y', 0)};--ty-m:{m.get('y', 0)}"><div class="scene__stage">
+<section class="scene" data-scene data-tone="light" aria-labelledby="page-title" style="--ty-d:{d.get('y', 0)};--ty-m:{m.get('y', 0)}">{(REPO / 'src/components/page/ScenePalette.astro').read_text()}<div class="scene__stage">
 <div class="scene__floor" aria-hidden="true" data-scene-floor></div>{''.join(sets)}
 <nav class="crumbs scene__crumbs" aria-label="Breadcrumb"><ol><li><a href="#">Home</a></li>{crumb}</ol></nav>
 <div class="scene__title" data-scene-title>{f'<p class="scene__eyebrow">{eyebrow}</p>' if eyebrow else ''}<h1 id="page-title" class="scene__h1"{h1cap(W.get('heading') or W['title'])}>{html.escape(W.get('heading') or W['title'])}</h1><span class="scene__pill" aria-hidden="true"></span></div>

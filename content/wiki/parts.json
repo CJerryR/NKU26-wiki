@@ -16,13 +16,13 @@
       "_template": "text"
     },
     {
-      "text": "Parts",
+      "text": "1 Parts",
       "level": 2,
       "attributes": "#parts toc=\"Parts\"",
       "_template": "heading"
     },
     {
-      "text": "Basic Parts",
+      "text": "1.1 Basic Parts",
       "level": 3,
       "attributes": "#basic-parts toc=\"Basic Parts\"",
       "_template": "heading"
@@ -44,7 +44,7 @@
       "_template": "datatable"
     },
     {
-      "text": "Collections",
+      "text": "2 Collections",
       "level": 2,
       "attributes": "#collections toc=\"Collections\"",
       "_template": "heading"

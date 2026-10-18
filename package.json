@@ -15,12 +15,13 @@
     "verify": "npm run build && npm run audit",
     "predev": "node tools/prepare-viewers.mjs",
     "predev:cloud": "node tools/prepare-viewers.mjs",
-    "prebuild": "node tools/prepare-viewers.mjs && node tools/apply-cdn-fonts.mjs",
+    "prebuild": "node tools/prepare-viewers.mjs && node tools/apply-cdn-fonts.mjs && node tools/prepare-nemaklear.mjs",
     "test:captions": "node --test tools/tests/caption-panels.test.mjs",
     "test:media": "node --test tools/tests/media-blocks.test.mjs",
     "test:theme": "node --test tools/tests/theme.test.mjs",
     "test:deployment": "node --test tools/tests/assets.test.mjs && python3 -m unittest discover -s tools/tests -p \"test_*.py\"",
-    "test:homepage": "node --test tools/tests/field-camera.test.mjs tools/tests/opening-fallback.test.mjs tools/tests/glass-refraction.test.mjs tools/tests/story-wheel.test.mjs"
+    "test:homepage": "node --test tools/tests/field-camera.test.mjs tools/tests/opening-fallback.test.mjs tools/tests/glass-refraction.test.mjs tools/tests/story-wheel.test.mjs",
+    "prepare:nemaklear": "node tools/prepare-nemaklear.mjs"
   },
   "dependencies": {
     "@astrojs/markdown-remark": "^6.3.11",
@@ -35,6 +36,7 @@
     "katex": "^0.18.9",
     "papaparse": "^5.7.0",
     "pdfjs-dist": "^6.3.289",
+    "pyodide": "314.0.7",
     "remark-directive": "^3.0.0 || ^4.0.0",
     "remark-gfm": "^4.0.1",
     "remark-parse": "^11.0.0",

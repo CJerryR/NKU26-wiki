@@ -39,7 +39,8 @@ npm run preview   # 预览构建产物，地址以终端输出为准
 | 开场构图与图集地址 | `src/data/scenes/`、`src/data/scenes.ts` |
 | 当前开场组团与构图生成 | `tools/scene-art/islands.py`、`tools/scene-art/pages.py` |
 | 源图取景与边缘检查 | `tools/scene-art/camera-frames.json`、`tools/audit_scene_frames.py` |
-| Eco 比较器配置 | `src/data/model-eco.json` |
+| 作者完整模型程序 | `vendor/nemaklear-original/`（原件哈希保持） |
+| 浏览器运行适配 | `src/nemaklear/`、`tools/prepare-nemaklear.mjs` |
 | 正文和组件样式 | `src/styles/` |
 | 素材 CDN 映射 | `content/cdn-assets.json` |
 | 供稿来源与审核状态 | `content/wiki-provenance.json` |
@@ -451,3 +452,9 @@ V8.7 的 40 张开场图集及两张 Results 高清图已完成官方 CDN 迁移
 3. 补充 Team、Engineering、Attributions 页面入口。
 
 依据：[GitHub 版本记录](https://github.com/CJerryR/NKU26-wiki/commit/699f3f881d42c88ba567d3c52644002383fee9c6)。
+
+## 2026-10-18 原稿恢复与完整模型接入（本地，未发布）
+
+已移除简化EcoExplorer，改为作者原网页、原Python模型及原报告在Web Worker中运行。构建过程校验原包64个文件，另外生成资源路径与计算传输适配。四章英文标注“翻译未校对”。交稿冲突保持原状，见工作区outputs/原稿恢复与完整组件-20261018/待用户判断的冲突.json。
+
+运行环境：原要求的本机Python3.14/NumPy2.5.1/SciPy1.18.0通过12项原测试；浏览器Pyodide314.0.7使用Python3.14.2/NumPy2.4.6/SciPy1.18.0，同样通过12项原测试，环境差异保留记录，不改原requirements。新运行时及原图资源须完成官方CDN迁移和大小检查后才能发布；本次未推送。

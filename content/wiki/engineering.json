@@ -18,7 +18,7 @@
     },
     {
       "_template": "heading",
-      "text": "Receptor Screening and Target Selection",
+      "text": "1.1 Receptor Screening and Target Selection",
       "level": 3,
       "attributes": "#the-first-cycle-dry-lab toc=\"Receptor Screening and Target Selection\""
     },
@@ -64,7 +64,7 @@
     },
     {
       "_template": "heading",
-      "text": "The Third Cycle——Wet Lab",
+      "text": "1.3 The Third Cycle——Wet Lab",
       "level": 3,
       "attributes": "#the-third-cycle-wet-lab toc=\"The Third Cycle——Wet Lab\""
     },
@@ -74,7 +74,7 @@
     },
     {
       "_template": "heading",
-      "text": "Design | Planning GPR2 Expression and Localization Verification",
+      "text": "1.3.1 Design",
       "level": 4,
       "attributes": "#design toc=\"Design | Planning GPR2 Expression and Localization Verification\""
     },
@@ -84,7 +84,7 @@
     },
     {
       "_template": "heading",
-      "text": "Build | Integrating the GPR2-sfGFP Expression Cassette",
+      "text": "1.3.2 Build",
       "level": 4,
       "attributes": "#build toc=\"Build | Integrating the GPR2-sfGFP Expression Cassette\""
     },
@@ -102,7 +102,7 @@
     },
     {
       "_template": "heading",
-      "text": "Test | Comparing GFP with Cell-Wall and Membrane Staining",
+      "text": "1.3.3 Test",
       "level": 4,
       "attributes": "#test toc=\"Test | Comparing GFP with Cell-Wall and Membrane Staining\""
     },
@@ -148,7 +148,7 @@
     },
     {
       "_template": "heading",
-      "text": "Learn | Assessing GPR2 Localization for Chassis Engineering",
+      "text": "1.3.4 Learn",
       "level": 4,
       "attributes": "#learn toc=\"Learn | Assessing GPR2 Localization for Chassis Engineering\""
     },
@@ -158,7 +158,7 @@
     },
     {
       "_template": "heading",
-      "text": "The Fourth Cycle——Wet Lab",
+      "text": "1.3 The Fourth Cycle——Wet Lab",
       "level": 3,
       "attributes": "#the-fourth-cycle-wet-lab toc=\"The Fourth Cycle——Wet Lab\""
     },
@@ -168,7 +168,7 @@
     },
     {
       "_template": "heading",
-      "text": "Design | Planning the Ascaroside-Responsive Yeast Pathway",
+      "text": "1.4.1 Design",
       "level": 4,
       "attributes": "#design-2 toc=\"Design | Planning the Ascaroside-Responsive Yeast Pathway\""
     },
@@ -186,7 +186,7 @@
     },
     {
       "_template": "heading",
-      "text": "Build | Assembling the Signal-Responsive Yeast Chassis",
+      "text": "1.4.2 Build",
       "level": 4,
       "attributes": "#build-2 toc=\"Build | Assembling the Signal-Responsive Yeast Chassis\""
     },
@@ -211,6 +211,26 @@
     },
     {
       "_template": "heading",
+      "text": "1.4.3 Test",
+      "level": 4,
+      "attributes": "#wet-lab-fourth-test toc=\"1.4.3 Test\""
+    },
+    {
+      "_template": "text",
+      "body": "这部分后续给出。"
+    },
+    {
+      "_template": "heading",
+      "text": "1.4.4 Learn",
+      "level": 4,
+      "attributes": "#wet-lab-fourth-learn toc=\"1.4.4 Learn\""
+    },
+    {
+      "_template": "text",
+      "body": "这部分后续给出。"
+    },
+    {
+      "_template": "heading",
       "text": "References",
       "level": 3,
       "attributes": "#references toc=\"References\""
@@ -231,7 +251,7 @@
     },
     {
       "_template": "heading",
-      "text": "Mutation Design and Screening Guided by Contact Differences",
+      "text": "2.1 Mutation Design and Screening Guided by Contact Differences",
       "level": 3,
       "attributes": "#mutation-design-and-screening-guided-by-contact-differences toc=\"Mutation Design and Screening Guided by Contact Differences\""
     },
@@ -281,7 +301,7 @@
     },
     {
       "_template": "heading",
-      "text": "Investigating Candidate Dynamics in a Membrane Environment",
+      "text": "2.2 Investigating Candidate Dynamics in a Membrane Environment",
       "level": 3,
       "attributes": "#investigating-candidate-dynamics-in-a-membrane-environment toc=\"Investigating Candidate Dynamics in a Membrane Environment\""
     },
@@ -335,7 +355,7 @@
     },
     {
       "_template": "heading",
-      "text": "ODE: Connecting Receptor Signaling to Colorimetric Output",
+      "text": "2.3 ODE: Connecting Receptor Signaling to Colorimetric Output",
       "level": 3,
       "attributes": "#ode-connecting-receptor-signaling-to-colorimetric-output toc=\"ODE: Connecting Receptor Signaling to Colorimetric Output\""
     },
@@ -381,7 +401,7 @@
     },
     {
       "_template": "heading",
-      "text": "Two-Channel Model: Estimating Target Density from Paired Color Readouts",
+      "text": "2.4 Two-Channel Model: Estimating Target Density from Paired Color Readouts",
       "level": 3,
       "attributes": "#two-channel-model-estimating-target-density-from-paired-color-readouts toc=\"Two-Channel Model: Estimating Target Density from Paired Color Readouts\""
     },
@@ -437,7 +457,7 @@
     },
     {
       "_template": "heading",
-      "text": "Economic Benefit Modeling and Refinement of Detection Requirements",
+      "text": "3.1 Economic Benefit Modeling and Refinement of Detection Requirements",
       "level": 3,
       "attributes": "#economic-benefit-modeling-and-refinement-of-detection-requirements toc=\"Economic Benefit Modeling and Refinement of Detection Requirements\""
     },

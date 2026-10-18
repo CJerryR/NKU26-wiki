@@ -83,6 +83,12 @@ export async function finalizeAssets(directory = 'public') {
   if ([...reachable].some((f) => f.startsWith('widgets/'))) files.filter((f) => f.startsWith('widgets/') && /license|copyright|ofl/i.test(path.posix.basename(f))).forEach((f) => reachable.add(f));
   const removed = files.filter((f) => !reachable.has(f) && (MEDIA.test(f) || f.startsWith('widgets/')));
   await Promise.all(removed.map((f) => fs.unlink(path.join(root, f))));
+  // Byte-verified resources served from the explicit official CDN mapping.
+  const mappingPath=path.resolve('content/nemaklear-cdn.json');
+  if (await fs.stat(mappingPath).then(()=>true,()=>false)) {
+    const mapping=JSON.parse(await fs.readFile(mappingPath,'utf8'));
+    for(const file of Object.keys(mapping))await fs.unlink(path.join(root,file)).catch(e=>{if(e.code!=='ENOENT')throw e;});
+  }
   return { removed: removed.length, keptMedia: files.filter((f) => MEDIA.test(f) && reachable.has(f)), widgetRuntime };
 }
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

@@ -15,6 +15,7 @@
  */
 import type { ResolvedScene, SceneKind, SceneLayer, AtlasSet } from '../../data/scenes';
 import { inlineMd } from '../../lib/text';
+import ScenePalette from './ScenePalette.astro';
 
 interface Props { scene: ResolvedScene; title: string; heading?: string; crumbs: string[] }
 const { scene, title, heading, crumbs } = Astro.props;
@@ -46,6 +47,7 @@ const stageVars = [
 ].join(';');
 ---
 <section class="scene" data-scene data-tone="light" aria-labelledby="page-title" style={stageVars}>
+  <ScenePalette />
   <div class="scene__stage">
     <div class="scene__floor" aria-hidden="true" data-scene-floor></div>
     {kinds.map((kind) => {

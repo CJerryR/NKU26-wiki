@@ -12,7 +12,7 @@
   "search": true,
   "blocks": [
     {
-      "text": "Biological Materials",
+      "text": "1 Biological Materials",
       "level": 2,
       "attributes": "#biological-materials toc=\"Biological Materials\"",
       "_template": "heading"
@@ -27,13 +27,13 @@
       "_template": "text"
     },
     {
-      "text": "Protocol",
+      "text": "2 Protocol",
       "level": 2,
       "attributes": "#protocol toc=\"Protocol\"",
       "_template": "heading"
     },
     {
-      "text": "PCR Amplification",
+      "text": "2.1 PCR Amplification",
       "level": 3,
       "attributes": "#protocol-pcr-amplification toc=\"PCR Amplification\"",
       "_template": "heading"
@@ -43,14 +43,14 @@
       "_template": "text"
     },
     {
-      "title": "PCR Amplification",
+      "title": "（PDF“1.PCR Amplification”）",
       "height": 650,
       "caption": "",
       "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-3539c6074fb1-protocol-01.pdf",
       "_template": "pdf"
     },
     {
-      "text": "DNA Recovery",
+      "text": "2.2 DNA Recovery",
       "level": 3,
       "attributes": "#protocol-dna-recovery toc=\"DNA Recovery\"",
       "_template": "heading"
@@ -60,13 +60,13 @@
       "_template": "text"
     },
     {
-      "title": "DNA Recovery",
+      "title": "（PDF“2.DNA Recovery”）",
       "height": 650,
       "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-154647698e67-protocol-02.pdf",
       "_template": "pdf"
     },
     {
-      "text": "Plasmid DNA Extraction",
+      "text": "2.3 Plasmid DNA Extraction",
       "level": 3,
       "attributes": "#protocol-plasmid-dna-extraction toc=\"Plasmid DNA Extraction\"",
       "_template": "heading"
@@ -76,13 +76,13 @@
       "_template": "text"
     },
     {
-      "title": "Plasmid DNA Extraction",
+      "title": "（PDF“3.Plasmid DNA Extraction”）",
       "height": 650,
       "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-df98a0af0943-protocol-03.pdf",
       "_template": "pdf"
     },
     {
-      "text": "Double-Joint PCR",
+      "text": "2.4 Double-Joint PCR",
       "level": 3,
       "attributes": "#protocol-double-joint-pcr toc=\"Double-Joint PCR\"",
       "_template": "heading"
@@ -92,13 +92,13 @@
       "_template": "text"
     },
     {
-      "title": "Double-Joint PCR",
+      "title": "（PDF“4.Double-Joint PCR”）",
       "height": 650,
       "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-730ddb351ab0-protocol-04.pdf",
       "_template": "pdf"
     },
     {
-      "text": "One Step Cloning",
+      "text": "2.5 One Step Cloning",
       "level": 3,
       "attributes": "#protocol-one-step-cloning toc=\"One Step Cloning\"",
       "_template": "heading"
@@ -108,13 +108,13 @@
       "_template": "text"
     },
     {
-      "title": "One Step Cloning",
+      "title": "（PDF“5.Multi-Fragment and Vector Seamless Assembly”）",
       "height": 650,
       "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-915625f7b4c9-protocol-05.pdf",
       "_template": "pdf"
     },
     {
-      "text": "Chemical Transformation of Trans5α",
+      "text": "2.6 Chemical Transformation of Trans5α",
       "level": 3,
       "attributes": "#protocol-chemical-transformation-of-trans5 toc=\"Chemical Transformation of Trans5α\"",
       "_template": "heading"
@@ -124,13 +124,13 @@
       "_template": "text"
     },
     {
-      "title": "Chemical Transformation of Trans5α",
+      "title": "（PDF“6.Chemical Transformation of Trans5α Chemically Competent Cells”）",
       "height": 650,
       "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-c810ddc4deed-protocol-06.pdf",
       "_template": "pdf"
     },
     {
-      "text": "Yeast Transformation",
+      "text": "2.7 Yeast Transformation",
       "level": 3,
       "attributes": "#protocol-yeast-transformation toc=\"Yeast Transformation\"",
       "_template": "heading"
@@ -140,13 +140,13 @@
       "_template": "text"
     },
     {
-      "title": "Yeast Transformation",
+      "title": "（PDF“7.Yeast Transformation”）",
       "height": 650,
       "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-94e1d5b82d0f-protocol-07.pdf",
       "_template": "pdf"
     },
     {
-      "text": "Agarose Gel Electrophoresis",
+      "text": "2.8 Agarose Gel Electrophoresis",
       "level": 3,
       "attributes": "#protocol-agarose-gel-electrophoresis toc=\"Agarose Gel Electrophoresis\"",
       "_template": "heading"
@@ -156,13 +156,13 @@
       "_template": "text"
     },
     {
-      "title": "Agarose Gel Electrophoresis",
+      "title": "（PDF“8.Agarose Gel Electrophoresis”）",
       "height": 650,
       "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-4bee1bb6f8a3-protocol-08.pdf",
       "_template": "pdf"
     },
     {
-      "text": "Colony PCR Amplification",
+      "text": "2.9 Colony PCR Amplification",
       "level": 3,
       "attributes": "#protocol-colony-pcr-amplification toc=\"Colony PCR Amplification\"",
       "_template": "heading"
@@ -172,13 +172,13 @@
       "_template": "text"
     },
     {
-      "title": "Colony PCR Amplification",
+      "title": "（PDF“9.Colony PCR Amplification”）",
       "height": 650,
       "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-c2aebd95ee12-protocol-09.pdf",
       "_template": "pdf"
     },
     {
-      "text": "Restriction Enzyme Digestion Reaction",
+      "text": "2.10 Restriction Enzyme Digestion Reaction",
       "level": 3,
       "attributes": "#protocol-restriction-enzyme-digestion-reaction toc=\"Restriction Enzyme Digestion Reaction\"",
       "_template": "heading"
@@ -188,13 +188,13 @@
       "_template": "text"
     },
     {
-      "title": "Restriction Enzyme Digestion Reaction",
+      "title": "（PDF“10.Restriction Enzyme Digestion Reaction”）",
       "height": 650,
       "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-6c92e753b05a-protocol-10.pdf",
       "_template": "pdf"
     },
     {
-      "text": "Preparation of Common Antibiotics and Culture Media",
+      "text": "2.11 Preparation of Common Antibiotics and Culture Media",
       "level": 3,
       "attributes": "#protocol-preparation-of-common-antibiotics-and-culture-media toc=\"Preparation of Common Antibiotics and Culture Media\"",
       "_template": "heading"
@@ -204,13 +204,13 @@
       "_template": "text"
     },
     {
-      "title": "Preparation of Common Antibiotics and Culture Media",
+      "title": "（PDF“11.Preparation of Common Antibiotics and Culture Media”）",
       "height": 650,
       "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-05ccf4cb7bd5-protocol-11.pdf",
       "_template": "pdf"
     },
     {
-      "text": "Preservation and Recovery of Glycerol Stocks",
+      "text": "2.12 Preservation and Recovery of Glycerol Stocks",
       "level": 3,
       "attributes": "#protocol-preservation-and-recovery-of-glycerol-stocks toc=\"Preservation and Recovery of Glycerol Stocks\"",
       "_template": "heading"
@@ -220,13 +220,13 @@
       "_template": "text"
     },
     {
-      "title": "Preservation and Recovery of Glycerol Stocks",
+      "title": "（PDF“12.Preservation and Recovery of Glycerol Stocks”）",
       "height": 650,
       "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-fa5162f5aaca-protocol-12.pdf",
       "_template": "pdf"
     },
     {
-      "text": "Extraction of Yeast Genomic DNA",
+      "text": "2.13 Extraction of Yeast Genomic DNA",
       "level": 3,
       "attributes": "#protocol-extraction-of-yeast-genomic-dna toc=\"Extraction of Yeast Genomic DNA\"",
       "_template": "heading"
@@ -236,13 +236,13 @@
       "_template": "text"
     },
     {
-      "title": "Extraction of Yeast Genomic DNA",
+      "title": "（PDF“13.Extraction of Yeast Genomic DNA”）",
       "height": 650,
       "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-01699080a847-protocol-13.pdf",
       "_template": "pdf"
     },
     {
-      "text": "Observation of Fluorescent Molecules",
+      "text": "2.14 Observation of Fluorescent Molecules",
       "level": 3,
       "attributes": "#protocol-observation-of-fluorescent-molecules toc=\"Observation of Fluorescent Molecules\"",
       "_template": "heading"
@@ -252,25 +252,25 @@
       "_template": "text"
     },
     {
-      "title": "Observation of Fluorescent Molecules",
+      "title": "（PDF“14.Observation of Fluorescent Molecules Using Fluores”）",
       "height": 650,
       "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-8d474be66ea7-protocol-14.pdf",
       "_template": "pdf"
     },
     {
-      "text": "Preparation of Viable Yeast Detection Test Strips via Lyophilization",
+      "text": "2.15 Preparation of Viable Yeast Detection Test Strips via Lyophilization",
       "level": 3,
       "attributes": "#protocol-preparation-of-viable-yeast-detection-test-strips-via-lyophilization toc=\"Preparation of Viable Yeast Detection Test Strips via Lyophilization\"",
       "_template": "heading"
     },
     {
-      "title": "Preparation of Viable Yeast Detection Test Strips via Lyophilization",
+      "title": "（PDF“15.Preparation of Viable Yeast Detection Test Strips via Lyophilization”）",
       "height": 650,
       "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-3b75e8981471-protocol-15.pdf",
       "_template": "pdf"
     },
     {
-      "text": "One Step Cloning 2.0",
+      "text": "2.16 One Step Cloning 2.0",
       "level": 3,
       "attributes": "#protocol-one-step-cloning-2-0 toc=\"One Step Cloning 2.0\"",
       "_template": "heading"
@@ -280,7 +280,7 @@
       "_template": "text"
     },
     {
-      "title": "One Step Cloning 2.0",
+      "title": "（PDF“16.Multi-Fragment and Vector Assembly 2.0”）",
       "height": 650,
       "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-cb70639f0cf2-protocol-16.pdf",
       "_template": "pdf"
@@ -298,13 +298,13 @@
       "height": 650
     },
     {
-      "text": "Summary of Experimental Design",
+      "text": "3 Summary of Experimental Design",
       "level": 2,
       "attributes": "#summary-of-experimental-design toc=\"Summary of Experimental Design\"",
       "_template": "heading"
     },
     {
-      "text": "Plasmid Construction",
+      "text": "3.1 Plasmid Construction",
       "level": 3,
       "attributes": "#plasmid-construction toc=\"Plasmid Construction\"",
       "_template": "heading"
@@ -319,7 +319,7 @@
       "_template": "datatable"
     },
     {
-      "text": "Strain Construction",
+      "text": "3.2 Strain Construction",
       "level": 3,
       "attributes": "#strain-construction toc=\"Strain Construction\"",
       "_template": "heading"
@@ -343,7 +343,7 @@
       "_template": "datatable"
     },
     {
-      "text": "sgRNA Design",
+      "text": "3.3 sgRNA Design",
       "level": 3,
       "attributes": "#sgrna-design toc=\"sgRNA Design\"",
       "_template": "heading"

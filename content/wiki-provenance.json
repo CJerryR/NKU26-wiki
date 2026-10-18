@@ -298,7 +298,7 @@
       "status": "round3-material-integrated-awaiting-final-review",
       "round3_local_integrated_at": "2026-10-17T23:41:27+08:00",
       "round3_source_language": "zh-CN",
-      "round3_translation": "English layout translation; original numerical values and qualifications retained; team review pending",
+      "round3_translation": "Translation not proofread — user explicitly permits translation with visible label on 2026-10-18",
       "round3_sources": [
         "https://nankai.feishu.cn/wiki/DpJYwOJNjiievKkVuaFcLBD8npf"
       ],
@@ -319,7 +319,7 @@
       "status": "round3-material-integrated-awaiting-final-review",
       "round3_local_integrated_at": "2026-10-17T23:41:27+08:00",
       "round3_source_language": "zh-CN",
-      "round3_translation": "English layout translation; original numerical values and qualifications retained; team review pending",
+      "round3_translation": "Translation not proofread — user explicitly permits translation with visible label on 2026-10-18",
       "round3_sources": [
         "https://nankai.feishu.cn/wiki/QDKtwTMxjiSQoBkLSNrc69v0nSf"
       ],
@@ -338,7 +338,7 @@
       "status": "round3-material-integrated-awaiting-final-review",
       "round3_local_integrated_at": "2026-10-17T23:41:27+08:00",
       "round3_source_language": "zh-CN",
-      "round3_translation": "English layout translation; original numerical values and qualifications retained; team review pending",
+      "round3_translation": "Translation not proofread — user explicitly permits translation with visible label on 2026-10-18",
       "round3_sources": [
         "https://nankai.feishu.cn/wiki/B4SIwNdxBiAz43klba3cuiaDnIc"
       ],
@@ -357,16 +357,23 @@
       "status": "round3-material-integrated-awaiting-final-review",
       "round3_local_integrated_at": "2026-10-17T23:41:27+08:00",
       "round3_source_language": "zh-CN",
-      "round3_translation": "English layout translation; original numerical values and qualifications retained; team review pending",
+      "round3_translation": "Translation not proofread — user explicitly permits translation with visible label on 2026-10-18",
       "round3_sources": [
         "https://nankai.feishu.cn/wiki/ZnBZwIndPiFHKpkoZB0cyNugn9j"
       ],
       "round3_archive": "outputs/第三轮内容更新-20261017",
       "round3_open_items": [
-        "Full supplied ODE prototype is not embedded; Python service and r04/r01 versus r07/r04 versions remain separate",
-        "Team final review"
-      ]
+        "Author-source calibration-policy conflict: leave both definitions unchanged pending user decision",
+        "Official CDN migration of full browser-Python runtime and original figure resources",
+        "Author review of untranslated/conflicting passages and unproofread English"
+      ],
+      "original_program_integration": "Author Python, source parameters and report renderer unchanged; browser transport only"
     }
   ],
-  "round2_note": "Local Tina integration of supplied English copy and assets. Human Practices Chinese manuscript remains archive-only. No final team review or publication approval is asserted."
+  "round2_note": "Local Tina integration of supplied English copy and assets. Human Practices Chinese manuscript remains archive-only. No final team review or publication approval is asserted.",
+  "restoration_2026_10_18": {
+    "status": "local-only, conflicts frozen",
+    "conflict_record": "outputs/原稿恢复与完整组件-20261018/待用户判断的冲突.json",
+    "publication": "not-pushed"
+  }
 }

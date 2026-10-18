@@ -668,10 +668,13 @@
   var FRAG_SOIL = [
     'precision highp float;',
     'uniform sampler2D uA; uniform sampler2D uD; uniform vec2 uTex;',
-    'uniform vec2 uL; uniform float uR; uniform float uOn; uniform vec3 uLC; uniform float uTime; uniform float uGall; uniform float uAmb; uniform float uArt;',
+    'uniform vec2 uL; uniform float uR; uniform float uOn; uniform vec3 uLC; uniform float uTime; uniform float uGall; uniform float uAmb; uniform float uArt; uniform float uSoilTop;',
     'varying vec2 vUv; varying vec2 vW;',
     'float hash(vec2 p){ return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453); }',
     'void main(){',
+    // Keep the procedural soil below the painting's lower blend strip.
+    // Its original horizon otherwise protrudes through transparent sky pixels.
+    '  if (uArt > 0.5 && vW.y > uSoilTop) discard;',
     '  vec3 alb = texture2D(uA, vUv).rgb; vec3 dat = texture2D(uD, vUv).rgb;',
     '  if (dat.b > 0.9) { if (uArt > 0.5) discard; gl_FragColor = vec4(alb * mix(0.08, 1.0, uAmb), 1.0); return; }',
     '  float hl = texture2D(uD, vUv - vec2(uTex.x, 0.0)).r; float hr = texture2D(uD, vUv + vec2(uTex.x, 0.0)).r;',
@@ -883,7 +886,8 @@
     var soil = new T.Mesh(new T.PlaneGeometry(L.PW, L.PH), new T.ShaderMaterial({
       uniforms: {
         uA: { value: tA }, uD: { value: tD }, uTex: { value: new T.Vector2(1 / L.texW, 1 / L.texH) },
-        uL: U.uL, uR: U.uR, uOn: U.uOn, uLC: U.uLC, uTime: U.uTime, uGall: U.uGall, uAmb: U.uAmb, uArt: U.uArt
+        uL: U.uL, uR: U.uR, uOn: U.uOn, uLC: U.uLC, uTime: U.uTime, uGall: U.uGall, uAmb: U.uAmb, uArt: U.uArt,
+        uSoilTop: { value: L.art.y - L.art.h / 2 + L.art.h * 0.09 }
       },
       vertexShader: VERT_WORLD, fragmentShader: FRAG_SOIL
     }));

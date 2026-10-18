@@ -1,8 +1,8 @@
 {
   "title": "Description",
   "heading": "Description",
-  "sub": "The agricultural problem, the sensing concept, and the needs that shape its development.",
-  "description": "The agricultural problem, the sensing concept, and the needs that shape its development.",
+  "sub": "",
+  "description": "",
   "route": "description",
   "crumbs": [
     "Project",
@@ -12,13 +12,13 @@
   "search": true,
   "blocks": [
     {
-      "text": "Background",
+      "text": "1 Background",
       "level": 2,
       "attributes": "#background toc=\"Background\"",
       "_template": "heading"
     },
     {
-      "text": "Silent Killers Underground: The Urgent Threat of Plant-Parasitic Nematodes",
+      "text": "1.1 Silent Killers Underground: The Urgent Threat of Plant-Parasitic Nematodes",
       "level": 3,
       "attributes": "#11-silent-killers-underground-the-urgent-threat-of-plant-parasitic-nematodes toc=\"Plant-Parasitic Nematodes\"",
       "_template": "heading"
@@ -48,7 +48,7 @@
       "_template": "text"
     },
     {
-      "text": "Control Dilemma: The Critical Weakness of Current Nematode Control Systems",
+      "text": "1.2 Control Dilemma: The Critical Weakness of Current Nematode Control Systems",
       "level": 3,
       "attributes": "#control-dilemma toc=\"Control Dilemma\"",
       "_template": "heading"
@@ -66,7 +66,7 @@
       "_template": "text"
     },
     {
-      "text": "Dawn Breaks: Nematophagous Fungi Fuel Innovation in Nematode Detection",
+      "text": "1.3 Dawn Breaks: Nematophagous Fungi Fuel Innovation in Nematode Detection",
       "level": 3,
       "attributes": "#nematophagous-fungi toc=\"Nematophagous Fungi\"",
       "_template": "heading"
@@ -103,20 +103,18 @@
       "_template": "image"
     },
     {
-      "_template": "heading",
-      "text": "Agricultural needs and responsible screening",
-      "level": 2,
-      "attributes": "#hp-social-needs toc=\"Human Practices\""
+      "_template": "text",
+      "body": "<span id=\"hp-social-needs\" aria-hidden=\"true\"></span>\n<span id=\"hp-description-nemaklear-making-underground-risks-visible\" aria-hidden=\"true\"></span>\n<span id=\"hp-description-understanding-the-need-beyond-the-laboratory\" aria-hidden=\"true\"></span>\n<span id=\"hp-description-from-user-needs-to-design-priorities\" aria-hidden=\"true\"></span>\n<span id=\"hp-description-why-ascarosides\" aria-hidden=\"true\"></span>\n<span id=\"hp-description-what-we-have-built-and-what-comes-next\" aria-hidden=\"true\"></span>"
     },
     {
       "_template": "heading",
       "text": "NemaKlear Making Underground Risks Visible",
       "level": 3,
-      "attributes": "#hp-description-nemaklear-making-underground-risks-visible toc=\"NemaKlear Making Underground Risks Visible\""
+      "attributes": "#hp-description-source-16 toc=\"NemaKlear Making Underground Risks Visible\""
     },
     {
       "_template": "text",
-      "body": "Plant-parasitic nematodes present a difficult agricultural challenge: damage develops around roots and within soil, where it is not readily visible. Yellowing, wilting, and reduced growth may alert growers to a problem, but these symptoms can also arise from water stress, nutrient deficiencies, or other diseases. Recognizing an abnormal plant is therefore different from **identifying its cause**."
+      "body": "Plant-parasitic nematodes present a difficult agricultural challenge: damage develops around roots and within soil, where it is not readily visible. Yellowing, wilting, and reduced growth may alert growers to a problem, but these symptoms can also arise from water stress, nutrient deficiencies, or other diseases. Recognizing an abnormal plant is therefore different from identifying its cause."
     },
     {
       "_template": "text",
@@ -124,17 +122,17 @@
     },
     {
       "_template": "text",
-      "body": "Our motivation is practical. A screening tool should help users decide when **a sample deserves further investigation**, communicate uncertainty clearly, and fit into existing agricultural advisory services. Detecting a signal is only one part of that task."
+      "body": "Our motivation is practical. A screening tool should help users decide when a sample deserves further investigation, communicate uncertainty clearly, and fit into existing agricultural advisory services. Detecting a signal is only one part of that task."
     },
     {
       "_template": "heading",
       "text": "Understanding the Need Beyond the Laboratory",
       "level": 3,
-      "attributes": "#hp-description-understanding-the-need-beyond-the-laboratory toc=\"Understanding the Need Beyond the Laboratory\""
+      "attributes": "#hp-description-source-20 toc=\"Understanding the Need Beyond the Laboratory\""
     },
     {
       "_template": "text",
-      "body": "We approached this problem through three connected Human Practices workstreams: **Research and Field Engagement**, **Education and Public Engagement**, and **Sponsorship and Translation Planning**."
+      "body": "We approached this problem through three connected Human Practices workstreams: Research and Field Engagement, Education and Public Engagement, and Sponsorship and Translation Planning."
     },
     {
       "_template": "text",
@@ -152,7 +150,7 @@
       "_template": "heading",
       "text": "From User Needs to Design Priorities",
       "level": 3,
-      "attributes": "#hp-description-from-user-needs-to-design-priorities toc=\"From User Needs to Design Priorities\""
+      "attributes": "#hp-description-source-25 toc=\"From User Needs to Design Priorities\""
     },
     {
       "_template": "text",
@@ -160,7 +158,7 @@
     },
     {
       "_template": "text",
-      "body": "We therefore identified several design priorities: **a manageable sampling workflow**; limited dependence on specialized equipment; a readable output; clear instructions; and an appropriate route to professional confirmation. Time, cost, training requirements, and storage conditions must be assessed across the entire workflow."
+      "body": "We therefore identified several design priorities: a manageable sampling workflow; limited dependence on specialized equipment; a readable output; clear instructions; and an appropriate route to professional confirmation. Time, cost, training requirements, and storage conditions must be assessed across the entire workflow."
     },
     {
       "_template": "text",
@@ -174,11 +172,11 @@
       "_template": "heading",
       "text": "Why Ascarosides",
       "level": 3,
-      "attributes": "#hp-description-why-ascarosides toc=\"Why Ascarosides\""
+      "attributes": "#hp-description-source-30 toc=\"Why Ascarosides\""
     },
     {
       "_template": "text",
-      "body": "Ascarosides are nematode-associated signaling molecules. Published research has identified ascr#18 in several plant-parasitic nematode species, providing a rationale for investigating these molecules as candidate inputs.[HP1](#hp-ref-1) However, ascr#18 is also produced by nematodes outside this group, and ascarosides can be transformed by plants and other organisms.[2,3]"
+      "body": "Ascarosides are nematode-associated signaling molecules. Published research has identified ascr#18 in several plant-parasitic nematode species, providing a rationale for investigating these molecules as candidate inputs.[1] However, ascr#18 is also produced by nematodes outside this group, and ascarosides can be transformed by plants and other organisms.[2,3]"
     },
     {
       "_template": "text",
@@ -186,13 +184,13 @@
     },
     {
       "_template": "text",
-      "body": "Our proposed architecture connects candidate ascaroside inputs to an engineered yeast sensing pathway involving GPR2 and G-protein-mediated signaling, with a **betaxanthin-based visual output**. Each connection requires its own evidence: ligand response, pathway function, background activity, output performance, and behavior in relevant samples. The [design section](#project-design), [Engineering](/engineering/), [Model](/model/), and [Results](/results/) pages describe the corresponding technical work."
+      "body": "Our proposed architecture connects candidate ascaroside inputs to an engineered yeast sensing pathway involving GPR2 and G-protein-mediated signaling, with a betaxanthin-based visual output. Each connection requires its own evidence: ligand response, pathway function, background activity, output performance, and behavior in relevant samples. The Design, Engineering, Model, and Results pages describe the corresponding technical work."
     },
     {
       "_template": "heading",
       "text": "What We Have Built and What Comes Next",
       "level": 3,
-      "attributes": "#hp-description-what-we-have-built-and-what-comes-next toc=\"What We Have Built and What Comes Next\""
+      "attributes": "#hp-description-source-34 toc=\"What We Have Built and What Comes Next\""
     },
     {
       "_template": "text",
@@ -200,7 +198,7 @@
     },
     {
       "_template": "text",
-      "body": "A freeze-dried yeast color card is a proposed product format. Its feasibility depends on further work on **preservation, reactivation, containment, signal consistency, storage, and disposal**. Freeze-drying must not be assumed to eliminate viable engineered cells."
+      "body": "A freeze-dried yeast color card is a proposed product format. Its feasibility depends on further work on preservation, reactivation, containment, signal consistency, storage, and disposal. Freeze-drying must not be assumed to eliminate viable engineered cells."
     },
     {
       "_template": "text",
@@ -208,10 +206,10 @@
     },
     {
       "_template": "text",
-      "body": "Our intended contribution is an evidence-based route from an agricultural problem to a testable screening concept. **NemaKlear remains a research prototype** whose value and limitations must be evaluated together."
+      "body": "Our intended contribution is an evidence-based route from an agricultural problem to a testable screening concept. NemaKlear remains a research prototype whose value and limitations must be evaluated together."
     },
     {
-      "text": "Project Design & Strategy",
+      "text": "2 Project Design & Strategy",
       "level": 2,
       "attributes": "#project-design toc=\"Project Design & Strategy\"",
       "_template": "heading"
@@ -228,7 +226,7 @@
       "body": ""
     },
     {
-      "text": "Wet Lab",
+      "text": "2.1 Wet Lab",
       "level": 3,
       "attributes": "#wet-lab toc=\"Wet Lab\"",
       "_template": "heading"
@@ -255,7 +253,7 @@
       "_template": "text"
     },
     {
-      "text": "Dry Lab",
+      "text": "2.2 Dry Lab",
       "level": 3,
       "attributes": "#dry-lab toc=\"Dry Lab\"",
       "_template": "heading"
@@ -281,7 +279,7 @@
       "body": "Together, these four areas connect molecular design, system responses, and application needs. Through candidate validation, model calibration, and use-scenario analysis, we collaborate with Wet Lab and Human Practices to advance the project. Detailed methods and results are available on the [Model page](/model/)."
     },
     {
-      "text": "Innovative Strategies",
+      "text": "3 Innovative Strategies",
       "level": 2,
       "attributes": "#innovative-strategies toc=\"Innovative Strategies\"",
       "_template": "heading"
@@ -307,7 +305,7 @@
       "_template": "text"
     },
     {
-      "text": "References",
+      "text": "4 References",
       "level": 2,
       "attributes": "#references toc=\"References\"",
       "_template": "heading"
@@ -318,25 +316,41 @@
     },
     {
       "_template": "heading",
-      "text": "Human Practices references",
-      "level": 3,
-      "attributes": "#hp-description-references toc=\"Human Practices references\""
+      "text": "References and Supporting Evidence",
+      "level": 2,
+      "attributes": "#hp-original-references toc=\"References and Supporting Evidence\""
     },
     {
       "_template": "text",
-      "body": "<span id=\"hp-ref-1\"></span>**HP1.** Conserved nematode signalling molecules elicit plant defenses and pathogen resistance. *Nature Communications* (2015). [Source](https://doi.org/10.1038/ncomms8795)"
+      "body": "[1] Conserved nematode signalling molecules elicit plant defenses and pathogen resistance. Nature Communications (2015)."
     },
     {
       "_template": "text",
-      "body": "<span id=\"hp-ref-2\"></span>**HP2.** Plant metabolism of nematode pheromones mediates plant-nematode interactions. *Nature Communications* (2020). [Source](https://doi.org/10.1038/s41467-019-14104-2)"
+      "body": "https://doi.org/10.1038/ncomms8795"
     },
     {
       "_template": "text",
-      "body": "<span id=\"hp-ref-3\"></span>**HP3.** Nematode Signaling Molecules Are Extensively Metabolized by Animals, Plants, and Microorganisms. [Source](https://pmc.ncbi.nlm.nih.gov/articles/PMC8590397/)"
+      "body": "[2] Plant metabolism of nematode pheromones mediates plant-nematode interactions. Nature Communications (2020)."
     },
     {
       "_template": "text",
-      "body": "Follow the [Integrated Human Practices record](/human-practices/) for the engagement process and [Education](/education/) for classroom work and its evaluation."
+      "body": "https://doi.org/10.1038/s41467-019-14104-2"
+    },
+    {
+      "_template": "text",
+      "body": "[3] Nematode Signaling Molecules Are Extensively Metabolized by Animals, Plants, and Microorganisms."
+    },
+    {
+      "_template": "text",
+      "body": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8590397/"
+    },
+    {
+      "_template": "text",
+      "body": "[4] Nankai University Xiangyang Initiative, 2026 Summer Teaching-Support Program Evaluation Report. Internal project source."
+    },
+    {
+      "_template": "text",
+      "body": "Team evidence supporting these pages includes questionnaire versions and response records; Tianjin agricultural visit records; anonymized expert and industry discussion summaries; inter-team exchange records; sampling guidance and sample records; course materials and teaching-partner records; and partnership planning documents. Technical performance claims should be read alongside the experimental and modeling evidence on the corresponding project pages."
     }
   ]
 }

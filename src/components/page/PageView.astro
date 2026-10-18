@@ -7,7 +7,7 @@ import SceneHero from './SceneHero.astro';
 import { getScene, PORTRAIT_QUERY } from '../../data/scenes';
 import Toc from './Toc.astro';
 import PagePager from './PagePager.astro';
-import EcoExplorer from './EcoExplorer.astro';
+import NemaKlearOriginal from './NemaKlearOriginal.astro';
 import { readingOrder } from '../../data/nav';
 import { getPages, byId, pageHref, submittedPages, type PageEntry } from '../../lib/pages';
 import { inlineMd, stripMd } from '../../lib/text';
@@ -49,7 +49,7 @@ const preload = scene ? [
     <article class="doc__body prose" data-doc>
       {scene && data.sub && <p class="scene-intro" set:html={inlineMd(data.sub)} />}
       <Content />
-      {entry.id === 'model-eco' && <EcoExplorer />}
+      {entry.id === 'model-eco' && <NemaKlearOriginal />}
     </article>
   </div>
   <PagePager prev={prev} next={next} />

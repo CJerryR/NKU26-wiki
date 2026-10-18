@@ -1,7 +1,7 @@
 {
   "title": "Integrated Human Practices",
   "heading": "Integrated Human Practices",
-  "sub": "How agricultural, scientific, public and industry perspectives changed the questions we ask.",
+  "sub": "",
   "crumbs": [
     "Human Practices",
     "Integrated Human Practices"
@@ -11,10 +11,14 @@
   "search": true,
   "blocks": [
     {
+      "_template": "text",
+      "body": "<span id=\"ihp-listening-changed-the-questions-we-asked\" aria-hidden=\"true\"></span>\n<span id=\"ihp-choosing-whose-perspectives-to-include\" aria-hidden=\"true\"></span>\n<span id=\"ihp-questionnaires-from-laboratory-questions-to-public-responses\" aria-hidden=\"true\"></span>\n<span id=\"ihp-agricultural-visits-understanding-the-whole-workflow\" aria-hidden=\"true\"></span>\n<span id=\"ihp-integration-case-1-soil-complexity-and-the-limits-of-specificity\" aria-hidden=\"true\"></span>\n<span id=\"ihp-integration-case-1-soil-complexity-and-the-limits-of-specificity-feedback\" aria-hidden=\"true\"></span>\n<span id=\"ihp-integration-case-1-soil-complexity-and-the-limits-of-specificity-decision\" aria-hidden=\"true\"></span>\n<span id=\"ihp-integration-case-1-soil-complexity-and-the-limits-of-specificity-project-change\" aria-hidden=\"true\"></span>\n<span id=\"ihp-integration-case-1-soil-complexity-and-the-limits-of-specificity-verification-and-next-step\" aria-hidden=\"true\"></span>\n<span id=\"ihp-integration-case-2-user-needs-and-readable-results\" aria-hidden=\"true\"></span>\n<span id=\"ihp-integration-case-2-user-needs-and-readable-results-feedback\" aria-hidden=\"true\"></span>\n<span id=\"ihp-integration-case-2-user-needs-and-readable-results-decision\" aria-hidden=\"true\"></span>\n<span id=\"ihp-integration-case-2-user-needs-and-readable-results-project-change\" aria-hidden=\"true\"></span>\n<span id=\"ihp-integration-case-2-user-needs-and-readable-results-verification-and-next-step\" aria-hidden=\"true\"></span>\n<span id=\"ihp-integration-case-3-partnership-expectations-and-responsible-commitments\" aria-hidden=\"true\"></span>\n<span id=\"ihp-integration-case-3-partnership-expectations-and-responsible-commitments-feedback\" aria-hidden=\"true\"></span>\n<span id=\"ihp-integration-case-3-partnership-expectations-and-responsible-commitments-decision\" aria-hidden=\"true\"></span>\n<span id=\"ihp-integration-case-3-partnership-expectations-and-responsible-commitments-project-change\" aria-hidden=\"true\"></span>\n<span id=\"ihp-integration-case-3-partnership-expectations-and-responsible-commitments-verification-and-next-step\" aria-hidden=\"true\"></span>\n<span id=\"ihp-responsibility-safety-and-environmental-considerations\" aria-hidden=\"true\"></span>\n<span id=\"ihp-what-human-practices-changed\" aria-hidden=\"true\"></span>\n<span id=\"ihp-related-work\" aria-hidden=\"true\"></span>"
+    },
+    {
       "_template": "heading",
       "text": "Listening Changed the Questions We Asked",
       "level": 2,
-      "attributes": "#ihp-listening-changed-the-questions-we-asked toc=\"Listening\""
+      "attributes": "#ihp-source-73 toc=\"Listening Changed the Questions We Asked\""
     },
     {
       "_template": "text",
@@ -30,25 +34,25 @@
     },
     {
       "_template": "text",
-      "body": "Our approach follows a continuing sequence: **listen, interpret, decide, revise, and evaluate**. We distinguish a change in our priorities or documentation from a demonstrated improvement in sensor performance."
+      "body": "Our approach follows a continuing sequence: listen, interpret, decide, revise, and evaluate. We distinguish a change in our priorities or documentation from a demonstrated improvement in sensor performance."
     },
     {
       "_template": "heading",
       "text": "Choosing Whose Perspectives to Include",
       "level": 2,
-      "attributes": "#ihp-choosing-whose-perspectives-to-include toc=\"Stakeholders\""
+      "attributes": "#ihp-source-78 toc=\"Choosing Whose Perspectives to Include\""
     },
     {
       "_template": "text",
-      "body": "**Growers and agricultural practitioners** helped us understand observation, sampling, and crop-management decisions. **Plant-protection and academic specialists** provided perspectives on biological interpretation, candidate signals, controls, and validation."
+      "body": "Growers and agricultural practitioners helped us understand observation, sampling, and crop-management decisions. Plant-protection and academic specialists provided perspectives on biological interpretation, candidate signals, controls, and validation."
     },
     {
       "_template": "text",
-      "body": "**Other iGEM teams** offered opportunities to compare research approaches and Human Practices methods. We exchanged ideas with teams from Zhengzhou University, Peking University, Tsinghua University, China Agricultural University, and the University of Science and Technology of China."
+      "body": "Other iGEM teams offered opportunities to compare research approaches and Human Practices methods. We exchanged ideas with teams from Zhengzhou University, Peking University, Tsinghua University, China Agricultural University, and the University of Science and Technology of China."
     },
     {
       "_template": "text",
-      "body": "**Industry participants** helped us consider technical development, partnership expectations, and the practical conditions of future translation. **Students and members of the public** revealed questions that scientific explanations can overlook, including what a result means and why uncertainty matters."
+      "body": "Industry participants helped us consider technical development, partnership expectations, and the practical conditions of future translation. Students and members of the public revealed questions that scientific explanations can overlook, including what a result means and why uncertainty matters."
     },
     {
       "_template": "text",
@@ -58,7 +62,7 @@
       "_template": "heading",
       "text": "Questionnaires From Laboratory Questions to Public Responses",
       "level": 2,
-      "attributes": "#ihp-questionnaires-from-laboratory-questions-to-public-responses toc=\"Questionnaire\""
+      "attributes": "#ihp-source-83 toc=\"Questionnaires From Laboratory Questions to Public Responses\""
     },
     {
       "_template": "text",
@@ -66,7 +70,7 @@
     },
     {
       "_template": "text",
-      "body": "The questionnaire was circulated through team communication channels and the Xiangyang teaching-support network. This broadened participation while also introducing **sampling limitations**. The responses describe the people who participated, rather than a statistically representative population of agricultural users."
+      "body": "The questionnaire was circulated through team communication channels and the Xiangyang teaching-support network. This broadened participation while also introducing sampling limitations. The responses describe the people who participated, rather than a statistically representative population of agricultural users."
     },
     {
       "_template": "text",
@@ -76,7 +80,7 @@
       "_template": "heading",
       "text": "Agricultural Visits Understanding the Whole Workflow",
       "level": 2,
-      "attributes": "#ihp-agricultural-visits-understanding-the-whole-workflow toc=\"Agricultural visits\""
+      "attributes": "#ihp-source-87 toc=\"Agricultural Visits Understanding the Whole Workflow\""
     },
     {
       "_template": "text",
@@ -88,7 +92,7 @@
     },
     {
       "_template": "text",
-      "body": "The visit broadened our understanding of usability. “Easy to use” must include **sampling location, timing, preparation, controls, result interpretation**, and access to follow-up advice. It cannot be reduced to the simplicity of a color readout."
+      "body": "The visit broadened our understanding of usability. “Easy to use” must include sampling location, timing, preparation, controls, result interpretation, and access to follow-up advice. It cannot be reduced to the simplicity of a color readout."
     },
     {
       "_template": "text",
@@ -98,13 +102,13 @@
       "_template": "heading",
       "text": "Integration Case 1 Soil Complexity and the Limits of Specificity",
       "level": 2,
-      "attributes": "#ihp-integration-case-1-soil-complexity-and-the-limits-of-specificity toc=\"Case 1 · Specificity\""
+      "attributes": "#ihp-source-92 toc=\"Integration Case 1 Soil Complexity and the Limits of Specificity\""
     },
     {
       "_template": "heading",
       "text": "Feedback",
       "level": 3,
-      "attributes": "#ihp-integration-case-1-soil-complexity-and-the-limits-of-specificity-feedback toc=\"Feedback\""
+      "attributes": "#ihp-source-93 toc=\"Feedback\""
     },
     {
       "_template": "text",
@@ -114,17 +118,17 @@
       "_template": "heading",
       "text": "Decision",
       "level": 3,
-      "attributes": "#ihp-integration-case-1-soil-complexity-and-the-limits-of-specificity-decision toc=\"Decision\""
+      "attributes": "#ihp-source-95 toc=\"Decision\""
     },
     {
       "_template": "text",
-      "body": "We identified **matrix effects and biological specificity** as separate questions from signal generation. A response in a simplified system would not, by itself, establish usefulness in agricultural soil."
+      "body": "We identified matrix effects and biological specificity as separate questions from signal generation. A response in a simplified system would not, by itself, establish usefulness in agricultural soil."
     },
     {
       "_template": "heading",
       "text": "Project Change",
       "level": 3,
-      "attributes": "#ihp-integration-case-1-soil-complexity-and-the-limits-of-specificity-project-change toc=\"Project Change\""
+      "attributes": "#ihp-source-97 toc=\"Project Change\""
     },
     {
       "_template": "text",
@@ -138,7 +142,7 @@
       "_template": "heading",
       "text": "Verification and Next Step",
       "level": 3,
-      "attributes": "#ihp-integration-case-1-soil-complexity-and-the-limits-of-specificity-verification-and-next-step toc=\"Verification and Next Step\""
+      "attributes": "#ihp-source-100 toc=\"Verification and Next Step\""
     },
     {
       "_template": "text",
@@ -152,13 +156,13 @@
       "_template": "heading",
       "text": "Integration Case 2 User Needs and Readable Results",
       "level": 2,
-      "attributes": "#ihp-integration-case-2-user-needs-and-readable-results toc=\"Case 2 · Readable results\""
+      "attributes": "#ihp-source-103 toc=\"Integration Case 2 User Needs and Readable Results\""
     },
     {
       "_template": "heading",
       "text": "Feedback",
       "level": 3,
-      "attributes": "#ihp-integration-case-2-user-needs-and-readable-results-feedback toc=\"Feedback\""
+      "attributes": "#ihp-source-104 toc=\"Feedback\""
     },
     {
       "_template": "text",
@@ -168,7 +172,7 @@
       "_template": "heading",
       "text": "Decision",
       "level": 3,
-      "attributes": "#ihp-integration-case-2-user-needs-and-readable-results-decision toc=\"Decision\""
+      "attributes": "#ihp-source-106 toc=\"Decision\""
     },
     {
       "_template": "text",
@@ -178,7 +182,7 @@
       "_template": "heading",
       "text": "Project Change",
       "level": 3,
-      "attributes": "#ihp-integration-case-2-user-needs-and-readable-results-project-change toc=\"Project Change\""
+      "attributes": "#ihp-source-108 toc=\"Project Change\""
     },
     {
       "_template": "text",
@@ -186,13 +190,13 @@
     },
     {
       "_template": "text",
-      "body": "A future interpretation guide should explain **valid, invalid, positive, negative, and uncertain outcomes**. Any risk categories must be supported by calibration rather than visual appearance alone."
+      "body": "A future interpretation guide should explain valid, invalid, positive, negative, and uncertain outcomes. Any risk categories must be supported by calibration rather than visual appearance alone."
     },
     {
       "_template": "heading",
       "text": "Verification and Next Step",
       "level": 3,
-      "attributes": "#ihp-integration-case-2-user-needs-and-readable-results-verification-and-next-step toc=\"Verification and Next Step\""
+      "attributes": "#ihp-source-111 toc=\"Verification and Next Step\""
     },
     {
       "_template": "text",
@@ -206,13 +210,13 @@
       "_template": "heading",
       "text": "Integration Case 3 Partnership Expectations and Responsible Commitments",
       "level": 2,
-      "attributes": "#ihp-integration-case-3-partnership-expectations-and-responsible-commitments toc=\"Case 3 · Partnerships\""
+      "attributes": "#ihp-source-114 toc=\"Integration Case 3 Partnership Expectations and Responsible Commitments\""
     },
     {
       "_template": "heading",
       "text": "Feedback",
       "level": 3,
-      "attributes": "#ihp-integration-case-3-partnership-expectations-and-responsible-commitments-feedback toc=\"Feedback\""
+      "attributes": "#ihp-source-115 toc=\"Feedback\""
     },
     {
       "_template": "text",
@@ -222,17 +226,17 @@
       "_template": "heading",
       "text": "Decision",
       "level": 3,
-      "attributes": "#ihp-integration-case-3-partnership-expectations-and-responsible-commitments-decision toc=\"Decision\""
+      "attributes": "#ihp-source-117 toc=\"Decision\""
     },
     {
       "_template": "text",
-      "body": "We separated **support for team activities** from scientific validation and competition results. Partnership commitments must remain within the team's capacity and institutional authorization."
+      "body": "We separated support for team activities from scientific validation and competition results. Partnership commitments must remain within the team's capacity and institutional authorization."
     },
     {
       "_template": "heading",
       "text": "Project Change",
       "level": 3,
-      "attributes": "#ihp-integration-case-3-partnership-expectations-and-responsible-commitments-project-change toc=\"Project Change\""
+      "attributes": "#ihp-source-119 toc=\"Project Change\""
     },
     {
       "_template": "text",
@@ -246,11 +250,11 @@
       "_template": "heading",
       "text": "Verification and Next Step",
       "level": 3,
-      "attributes": "#ihp-integration-case-3-partnership-expectations-and-responsible-commitments-verification-and-next-step toc=\"Verification and Next Step\""
+      "attributes": "#ihp-source-122 toc=\"Verification and Next Step\""
     },
     {
       "_template": "text",
-      "body": "The appropriate evidence for this integration is a **documented agreement and a record of delivery**. A proposal or conversation alone does not demonstrate that a partnership has been completed."
+      "body": "The appropriate evidence for this integration is a documented agreement and a record of delivery. A proposal or conversation alone does not demonstrate that a partnership has been completed."
     },
     {
       "_template": "text",
@@ -260,15 +264,15 @@
       "_template": "heading",
       "text": "Responsibility Safety and Environmental Considerations",
       "level": 2,
-      "attributes": "#ihp-responsibility-safety-and-environmental-considerations toc=\"Responsibility\""
+      "attributes": "#ihp-source-125 toc=\"Responsibility Safety and Environmental Considerations\""
     },
     {
       "_template": "text",
-      "body": "We considered how a screening system could cause harm as well as offer benefits. False reassurance could delay professional diagnosis; false positives could contribute to unnecessary treatment. Our intended use therefore includes **confirmation and contextual interpretation** rather than automatic treatment recommendations."
+      "body": "We considered how a screening system could cause harm as well as offer benefits. False reassurance could delay professional diagnosis; false positives could contribute to unnecessary treatment. Our intended use therefore includes confirmation and contextual interpretation rather than automatic treatment recommendations."
     },
     {
       "_template": "text",
-      "body": "**Containment, handling, and disposal** are central to the yeast-based concept. Freeze-drying is a preservation method, not evidence of inactivation. Any future field-facing format requires appropriate containment, risk assessment, authorization, and waste-management procedures."
+      "body": "Containment, handling, and disposal are central to the yeast-based concept. Freeze-drying is a preservation method, not evidence of inactivation. Any future field-facing format requires appropriate containment, risk assessment, authorization, and waste-management procedures."
     },
     {
       "_template": "text",
@@ -276,17 +280,17 @@
     },
     {
       "_template": "text",
-      "body": "For questionnaires, interviews, classroom activities, and public documentation, **participant privacy and appropriate consent** are essential. Particular care is required when publishing images or work involving minors. Sponsorship and collaboration should be acknowledged transparently while preserving scientific independence."
+      "body": "For questionnaires, interviews, classroom activities, and public documentation, participant privacy and appropriate consent are essential. Particular care is required when publishing images or work involving minors. Sponsorship and collaboration should be acknowledged transparently while preserving scientific independence."
     },
     {
       "_template": "heading",
       "text": "What Human Practices Changed",
       "level": 2,
-      "attributes": "#ihp-what-human-practices-changed toc=\"What changed\""
+      "attributes": "#ihp-source-130 toc=\"What Human Practices Changed\""
     },
     {
       "_template": "text",
-      "body": "Human Practices changed how we define the project's task. Our focus expanded from producing a visible response to asking whether the **sampling process, signal interpretation, containment, and follow-up pathway** could support responsible use."
+      "body": "Human Practices changed how we define the project's task. Our focus expanded from producing a visible response to asking whether the sampling process, signal interpretation, containment, and follow-up pathway could support responsible use."
     },
     {
       "_template": "text",
@@ -294,14 +298,42 @@
     },
     {
       "_template": "heading",
-      "text": "Related project work",
+      "text": "References and Supporting Evidence",
       "level": 2,
-      "attributes": "#ihp-related-work toc=\"Related work\""
+      "attributes": "#hp-original-references toc=\"References and Supporting Evidence\""
     },
     {
       "_template": "text",
-      "body": "Read the [social needs and screening concept](/description/#hp-social-needs), [Engineering](/engineering/), [Model](/model/), [Results](/results/), and [Safety](/safety-and-security/) alongside these accounts. Our [Human Practices resources](/contribution/#human-practices) and [Education](/education/) page describe material others can adapt."
+      "body": "[1] Conserved nematode signalling molecules elicit plant defenses and pathogen resistance. Nature Communications (2015)."
+    },
+    {
+      "_template": "text",
+      "body": "https://doi.org/10.1038/ncomms8795"
+    },
+    {
+      "_template": "text",
+      "body": "[2] Plant metabolism of nematode pheromones mediates plant-nematode interactions. Nature Communications (2020)."
+    },
+    {
+      "_template": "text",
+      "body": "https://doi.org/10.1038/s41467-019-14104-2"
+    },
+    {
+      "_template": "text",
+      "body": "[3] Nematode Signaling Molecules Are Extensively Metabolized by Animals, Plants, and Microorganisms."
+    },
+    {
+      "_template": "text",
+      "body": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8590397/"
+    },
+    {
+      "_template": "text",
+      "body": "[4] Nankai University Xiangyang Initiative, 2026 Summer Teaching-Support Program Evaluation Report. Internal project source."
+    },
+    {
+      "_template": "text",
+      "body": "Team evidence supporting these pages includes questionnaire versions and response records; Tianjin agricultural visit records; anonymized expert and industry discussion summaries; inter-team exchange records; sampling guidance and sample records; course materials and teaching-partner records; and partnership planning documents. Technical performance claims should be read alongside the experimental and modeling evidence on the corresponding project pages."
     }
   ],
-  "description": "Stakeholder engagement, three integration cases, and the evidence needed to assess the resulting changes."
+  "description": ""
 }

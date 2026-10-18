@@ -16,13 +16,13 @@ We do not want future teams to start from zero.
 
 We want them to start from where we stopped—and go further.
 
-## Wet Lab {#wet-lab toc="Wet Lab"}
+## 1 Wet Lab {#wet-lab toc="Wet Lab"}
 
 Our Wet Lab work supports not only the construction and validation of the yeast biosensor in this project. More importantly, we intend to make the genetic parts, engineered strains, plasmids, donor DNA, experimental protocols and practical experience generated during our research available as **public resources for future iGEM teams** to reference, reuse and extend.
 
 These contributions allow subsequent teams to build on our established resources and experience, rather than constructing comparable yeast engineering systems entirely from scratch.
 
-### Parts and Collections {#parts-and-collections toc="Parts and Collections"}
+### 1.1 Parts and Collections {#parts-and-collections toc="Parts and Collections"}
 
 In this project, we have submitted **39 Parts and 4 Collections** to the iGEM Registry ([https://registry.igem.org/organisations/igem/6303](https://registry.igem.org/organisations/igem/6303)). These submissions cover multiple modules including yeast chassis construction, genome editing, tool plasmids, sgRNA, receptor expression and functional components of biosensors.
 
@@ -56,7 +56,7 @@ These parts serve as essential components for constructing our yeast GPCR sensin
 
 In summary, beyond submitting individual Parts, we have built Collections grouped by function and application scenarios. This allows future teams to rapidly locate the core components required for their projects.
 
-### Strain Contribution {#strain-contribution toc="Strain Contribution"}
+### 1.2 Strain Contribution {#strain-contribution toc="Strain Contribution"}
 
 We designed the workflow for engineered strain construction (Figure 1), covering different stages from chassis modification to final functional validation.
 
@@ -72,7 +72,7 @@ We consider strain construction itself to be an important Contribution. Rather t
 
 Therefore, we preserve the construction logic and genetic modification information of strains at different stages, offering references for future teams to reconstruct or further modify these strains according to their own requirements.
 
-### Experimental Methods and Practical Experience {#experimental-methods-and-practical-experience toc="Experimental Methods and Practical Experience"}
+### 1.3 Experimental Methods and Practical Experience {#experimental-methods-and-practical-experience toc="Experimental Methods and Practical Experience"}
 
 During project implementation, we systematically compiled the major Wet Lab methods involved in this project (Wet Lab-Experiments). We believe that Wet Lab Contribution should not only demonstrate successful experimental results. So we documented not only standard experimental protocols but also the practical experience accumulated throughout our experiments.
 
@@ -86,7 +86,7 @@ In this way, for future teams performing yeast engineering experiments for the f
 
 ### Docking: Engineering for Two Ligands and Cross-Receptor Residue Analysis {#docking-engineering-for-two-ligands-and-cross-receptor-residue-analysis toc="Docking: Engineering for Two Ligands and Cross-Receptor Residue Analysis"}
 
-#### Receptor Engineering Guided by Contacts with Two Ligands {#receptor-engineering-guided-by-contacts-with-two-ligands toc="Receptor Engineering Guided by Contacts with Two Ligands"}
+#### 1.1 Receptor Engineering Guided by Contacts with Two Ligands {#receptor-engineering-guided-by-contacts-with-two-ligands toc="Receptor Engineering Guided by Contacts with Two Ligands"}
 
 We developed a **stepwise screening approach** for engineering a receptor’s recognition of two ligands, using contact differences to identify candidate sites and successive substitutions to evaluate them. We first compare the contact distributions of the wild-type (WT) receptor with both ligands and select candidate positions for alanine substitution. We then combine single-mutant scores with contact changes to select sites for saturation scanning and compare how different side chains affect the two ligands.
 
@@ -102,7 +102,7 @@ Contact analysis supports both site selection and candidate review. We compare l
 
 Other teams can apply this screening approach by combining scores for both ligands, contact comparisons with WT, and comparisons of combinations with their parents to develop **testable engineering hypotheses**. Binding capability and selectivity can then be evaluated experimentally. The design iterations are described in Engineering, and the score and contact evidence is presented in Model/Docking.
 
-#### Tools for Checking Docking Inputs and Exporting Poses {#tools-for-checking-docking-inputs-and-exporting-poses toc="Tools for Checking Docking Inputs and Exporting Poses"}
+#### 1.2 Tools for Checking Docking Inputs and Exporting Poses {#tools-for-checking-docking-inputs-and-exporting-poses toc="Tools for Checking Docking Inputs and Exporting Poses"}
 
 We found that inconsistent coordinate references between receptor structures and search boxes can alter the region actually searched, while loss of chemical information during format conversion can affect interaction identification. To address these issues, we developed an input-checking and pose-export workflow. Structural superposition places the receptor, ligand, and search box in a common coordinate reference, and the search region is checked against membrane orientation and the structural segments actually retained.
 
@@ -110,7 +110,7 @@ An **atom-mapping verification tool** checks the correspondence of atoms, coordi
 
 We will release the tools, instructions, and accompanying ascr#18 and ascr#3 examples on GitHub. Other teams can reproduce the checking and export workflow, then substitute their own data to verify search locations, atom correspondence, and the chemical information in pose files.
 
-#### Cross-Receptor Residue Analysis {#cross-receptor-residue-analysis toc="Cross-Receptor Residue Analysis"}
+#### 1.3 Cross-Receptor Residue Analysis {#cross-receptor-residue-analysis toc="Cross-Receptor Residue Analysis"}
 
 Gpr2, Gpr3, GprC, and the Caenorhabditis elegans receptors DAF-37 and SRBC-64 are GPCRs involved in ascaroside sensing, providing functionally relevant references for comparing ligand-contact regions and candidate residues. Drawing on the receptor structure comparisons of Hu et al., we combined contact bias between the two ligands with residue correspondence to inform pose interpretation and the selection of engineering sites.
 
@@ -146,17 +146,24 @@ The accompanying example of greenhouse tomatoes in Spain and the southern root-k
 
 Other teams can start from this example, substitute density-yield relationships appropriate to their own crops and target organisms, and add local cost data to compare the management benefits of detection information. Parameters can then be updated using experimental or field data. Complete methods, parameter sources, and scenario results are available in Model/Eco.
 
-## Human Practices {#human-practices toc="Human Practices"}
+<span id="human-practices" aria-hidden="true"></span>
+<span id="hp-contribution-resources-for-connecting-synthetic-biology-with-real-world-questions" aria-hidden="true"></span>
+<span id="hp-contribution-agricultural-awareness-and-needs-questionnaire" aria-hidden="true"></span>
+<span id="hp-contribution-stakeholder-interviews-and-feedback-records" aria-hidden="true"></span>
+<span id="hp-contribution-sampling-guidance-and-context-records" aria-hidden="true"></span>
+<span id="hp-contribution-educational-courses-and-supporting-materials" aria-hidden="true"></span>
+<span id="hp-contribution-sponsorship-and-partnership-documentation" aria-hidden="true"></span>
+<span id="hp-contribution-making-the-resources-usable" aria-hidden="true"></span>
 
-### Resources for Connecting Synthetic Biology with Real World Questions {#hp-contribution-resources-for-connecting-synthetic-biology-with-real-world-questions toc="Resources for Connecting Synthetic Biology with Real World Questions"}
+### Resources for Connecting Synthetic Biology with Real World Questions {#hp-contribution-source-41 toc="Resources for Connecting Synthetic Biology with Real World Questions"}
 
-Our Human Practices contribution extends beyond an account of our own activities. We developed **educational materials, survey tools, sampling guidance, and engagement documents** that can support future teams working at the interface of synthetic biology and agriculture.
+Our Human Practices contribution extends beyond an account of our own activities. We developed educational materials, survey tools, sampling guidance, and engagement documents that can support future teams working at the interface of synthetic biology and agriculture.
 
 These resources serve different purposes. Questionnaires help teams investigate knowledge and expectations. Interview materials support conversations about technical feasibility and use conditions. Educational resources support scientific learning. Partnership documents help student teams define responsibilities and communicate their work accurately.
 
 No template replaces local knowledge, ethical review, scientific validation, or institutional authorization. Their value lies in making a process easier to understand, adapt, and document.
 
-### Agricultural Awareness and Needs Questionnaire {#hp-contribution-agricultural-awareness-and-needs-questionnaire toc="Agricultural Awareness and Needs Questionnaire"}
+### Agricultural Awareness and Needs Questionnaire {#hp-contribution-source-45 toc="Agricultural Awareness and Needs Questionnaire"}
 
 Our questionnaire connects the project's early laboratory questions with public understanding of nematodes and agricultural testing. It explores awareness, information sources, expectations of testing, and interpretation of possible results.
 
@@ -164,29 +171,29 @@ Future teams can adapt the question structure by first identifying their intende
 
 Results should be reported with the relevant denominator for each question, including missing responses. A questionnaire circulated through university or outreach networks describes the participating sample; it should not automatically be presented as representative of farmers or a national population.
 
-An important reusable feature is the **connection between questions and decisions**: what did the team need to learn, why was each question asked, and which answer could change a design priority?
+An important reusable feature is the connection between questions and decisions: what did the team need to learn, why was each question asked, and which answer could change a design priority?
 
-### Stakeholder Interviews and Feedback Records {#hp-contribution-stakeholder-interviews-and-feedback-records toc="Stakeholder Interviews and Feedback Records"}
+### Stakeholder Interviews and Feedback Records {#hp-contribution-source-50 toc="Stakeholder Interviews and Feedback Records"}
 
 Our engagement materials cover agricultural, scientific, and industry perspectives. Technical discussions address candidate signals, background interference, controls, sample conditions, and possible routes to further validation. Partnership discussions address the purpose of support, realistic deliverables, communication responsibilities, and longer-term collaboration.
 
 Teams using these materials should prepare a short project explanation, clarify the purpose of the conversation, obtain permission for recording and publication, and separate direct statements from the team's interpretation. Confidential information should be removed from public records.
 
-The accompanying feedback-recording framework follows four stages: **feedback, decision, project change, and verification**. Each entry should identify the source and context of the feedback, the reasoning behind accepting or rejecting it, the affected document or design version, and the evidence available to assess the change.
+The accompanying feedback-recording framework follows four stages: feedback, decision, project change, and verification. Each entry should identify the source and context of the feedback, the reasoning behind accepting or rejecting it, the affected document or design version, and the evidence available to assess the change.
 
 Where verification has not occurred, the record should state the next test rather than imply that the feedback has already improved technical performance.
 
-### Sampling Guidance and Context Records {#hp-contribution-sampling-guidance-and-context-records toc="Sampling Guidance and Context Records"}
+### Sampling Guidance and Context Records {#hp-contribution-source-55 toc="Sampling Guidance and Context Records"}
 
-Our sampling guidance video and recording approach help connect a soil sample with its agricultural background. Useful records include **sample identification, crop context, collection location, collection date, handling, and storage**.
+Our sampling guidance video and recording approach help connect a soil sample with its agricultural background. Useful records include sample identification, crop context, collection location, collection date, handling, and storage.
 
 These materials support consistent documentation and communication with participants. They do not constitute a universally validated protocol for every nematode, soil type, or analytical method. Future users should adapt collection and preservation procedures to their target analyte and institutional requirements.
 
 Collecting a sample creates an opportunity for research; it does not establish the presence of a particular nematode or demonstrate field performance.
 
-### Educational Courses and Supporting Materials {#hp-contribution-educational-courses-and-supporting-materials toc="Educational Courses and Supporting Materials"}
+### Educational Courses and Supporting Materials {#hp-contribution-source-59 toc="Educational Courses and Supporting Materials"}
 
-We developed **three course themes**: The Great Nematode Chase, The Signal Discovery Challenge, and Small Lives, Shared Responsibility. The theoretical and experimental course themes include versions for primary-school and junior-secondary learners; the responsibility-focused course is designed for primary-school learners.
+We developed three course themes: The Great Nematode Chase, The Signal Discovery Challenge, and Small Lives, Shared Responsibility. The theoretical and experimental course themes include versions for primary-school and junior-secondary learners; the responsibility-focused course is designed for primary-school learners.
 
 Supporting materials include lesson presentations, illustrated materials, posters, leaflets, postcards, and activity sheets. The collection provides a starting point for discussing agricultural nematodes, biological signals, scientific inquiry, and responsible innovation.
 
@@ -194,7 +201,7 @@ To reuse a course, educators should select the appropriate age version, review t
 
 The term “experimental course” describes a teaching format and does not imply that learners handled genetically modified organisms. Any practical activity requires a separate assessment of its materials and setting.
 
-### Sponsorship and Partnership Documentation {#hp-contribution-sponsorship-and-partnership-documentation toc="Sponsorship and Partnership Documentation"}
+### Sponsorship and Partnership Documentation {#hp-contribution-source-64 toc="Sponsorship and Partnership Documentation"}
 
 Our sponsorship work provides a framework for organizing initial contact, meeting preparation, discussion records, follow-up actions, and proposed support arrangements. It also addresses how a student team can describe possible acknowledgements and other deliverables without overstating its authority or technical progress.
 
@@ -202,13 +209,11 @@ A reusable partnership workflow begins with identifying suitable organizations a
 
 Recognition and activity support should be separated from scientific conclusions and competition outcomes. A sponsor's support does not validate a technology, and an award cannot be guaranteed as a sponsorship benefit.
 
-### Making the Resources Usable {#hp-contribution-making-the-resources-usable toc="Making the Resources Usable"}
+### Making the Resources Usable {#hp-contribution-source-68 toc="Making the Resources Usable"}
 
-Reusable resources need more than a file name. Each public item should identify its **purpose, intended users, version, required preparation, instructions, limitations, authorship, and permitted use**.
+Reusable resources need more than a file name. Each public item should identify its purpose, intended users, version, required preparation, instructions, limitations, authorship, and permitted use.
 
 Our contribution combines the materials with the reasoning needed to use them responsibly. Future teams can adapt the process while preserving the distinction between a useful conversation, a documented decision, and a scientifically validated result.
-
-See the [engagement and integration cases](/human-practices/) and [education program](/education/) for how these resources were used. Public download links will be added when release-ready versions and permissions are available.
 
 ## References {#references toc="References"}
 

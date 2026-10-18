@@ -12,13 +12,13 @@ meta: {}
 draft: false
 hidden: false
 ---
-## DBTL-1: Heterologous Expression and Transmembrane Localization Verification of GPR2 {#dbtl-1-heterologous-expression-and-transmembrane-localization-verification-of-gpr2 toc="DBTL-1: Heterologous Expression and Transmembrane Localization Verification of GPR2"}
+## 1 DBTL-1: Heterologous Expression and Transmembrane Localization Verification of GPR2 {#dbtl-1-heterologous-expression-and-transmembrane-localization-verification-of-gpr2 toc="DBTL-1: Heterologous Expression and Transmembrane Localization Verification of GPR2"}
 
 In this cycle, we performed **heterologous expression and transmembrane localization verification** of GPR2. The construction strategy of verification strains and detection methods were iteratively optimized. The final results met our expectations, laying a foundation for the next DBTL cycle.
 
-### The First Cycle {#the-first-cycle toc="The First Cycle"}
+### 1.1 The First Cycle {#the-first-cycle toc="The First Cycle"}
 
-#### Design | Planning GPR2 Expression and Localization Tests {#design toc="Design | Planning GPR2 Expression and Localization Tests"}
+#### 1.1.1 Design {#design toc="Design | Planning GPR2 Expression and Localization Tests"}
 
 Based on the dry-lab screening results, we selected GPR2 as the receptor for display. To confirm that GPR2 can be **heterologously expressed and correctly localized** to the plasma membrane in our desired strain `CEN.PK2-1C`, we devised an experimental workflow consisting of "construction of the GPR2-sfGFP heterologous-expression plasmid — gene knock-in via yeast endogenous homologous recombination (HR) — assessment of expression and localization using fluorescence microscopy".
 
@@ -30,7 +30,7 @@ b. The constitutive TEF1 promoter was employed to drive gene expression. The cDN
 
 c. The *Leu2* auxotrophic marker was used for transformant selection.
 
-#### Build | Integrating the GPR2-sfGFP Expression Cassette {#build toc="Build | Integrating the GPR2-sfGFP Expression Cassette"}
+#### 1.1.2 Build {#build toc="Build | Integrating the GPR2-sfGFP Expression Cassette"}
 
 Firstly, the GPR2‑sfGFP heterologous expression plasmid was successfully assembled by one‑step cloning (Figure 1). The plasmid was then linearized and transformed into yeast. Positive transformants were validated to yield yeast strains carrying correctly knock‑in GPR2‑sfGFP (Figure 2).
 
@@ -50,7 +50,7 @@ Figure 2. Yeast transformation of GPR2-sfGFP. a, Schematic diagram of yeast homo
 
 :::
 
-#### Test | Observing GPR2-sfGFP Fluorescence {#test toc="Test | Observing GPR2-sfGFP Fluorescence"}
+#### 1.1.3 Test {#test toc="Test | Observing GPR2-sfGFP Fluorescence"}
 
 Upon examining GPR2-sfGFP-transformed yeast cells by fluorescence microscopy, we detected intense green fluorescent signals (Figure 3).
 
@@ -62,13 +62,13 @@ Figure 3. Fluorescence microscopy results
 
 :::
 
-#### Learn | Identifying the Need for Localization Controls {#learn toc="Learn | Identifying the Need for Localization Controls"}
+#### 1.1.4 Learn {#learn toc="Learn | Identifying the Need for Localization Controls"}
 
 While Figure 3 indicates that GPR2 is heterologously expressed and appears to localize to the plasma membrane, definitive evidence for authentic plasma-membrane localization remains absent. We therefore moved on to the next DBTL cycle.
 
-### The Second Cycle {#the-second-cycle toc="The Second Cycle"}
+### 1.2 The Second Cycle {#the-second-cycle toc="The Second Cycle"}
 
-#### Design and Build | Preparing Cell-Wall and Membrane Staining Controls {#design-and-build toc="Design and Build | Preparing Cell-Wall and Membrane Staining Controls"}
+#### 1.2.1 Design and Build {#design-and-build toc="Design and Build | Preparing Cell-Wall and Membrane Staining Controls"}
 
 To further confirm that GPR2 correctly localizes to the plasma membrane, we designed two sets of experiments:
 
@@ -76,7 +76,7 @@ a. Staining of the yeast cell wall with the cell-wall dye Calcofluor‑White (CF
 
 b. Staining of the yeast plasma membrane with the plasma-membrane dye FM4-64.
 
-#### Test | Comparing GFP with Cell-Wall and Membrane Signals {#test-2 toc="Test | Comparing GFP with Cell-Wall and Membrane Signals"}
+#### 1.2.2 Test {#test-2 toc="Test | Comparing GFP with Cell-Wall and Membrane Signals"}
 
 With cell-wall staining, we found that the fluorescence signal of GPR2-sfGFP barely overlapped with the CFW signal and resided on the inner side of the cell wall (Figure 4).
 
@@ -98,7 +98,7 @@ Figure 5. FM4‑64 staining of yeast cells
 
 :::
 
-#### Learn | Assessing GPR2 Plasma-Membrane Localization {#learn-2 toc="Learn | Assessing GPR2 Plasma-Membrane Localization"}
+#### 1.2.3 Learn {#learn-2 toc="Learn | Assessing GPR2 Plasma-Membrane Localization"}
 
 Taken together, these results confirm that `CEN.PK2-1C` can achieve heterologous expression and proper plasma-membrane localization of GPR2, which is an essential prerequisite for chassis-strain construction based on this host.
 
@@ -106,17 +106,17 @@ Taken together, these results confirm that `CEN.PK2-1C` can achieve heterologous
 
 Vida TA, Emr SD. A new vital stain for visualizing vacuolar membrane dynamics and endocytosis in yeast. J Cell Biol. 1995 Mar;128(5):779-92. doi: 10.1083/jcb.128.5.779. PMID: 7533169; PMCID: PMC2120394.
 
-## DBTL-2: Engineering Construction of Ascaroside-Responsive Yeast Chassis {#dbtl-2-engineering-construction-of-ascaroside-responsive-yeast-chassis toc="DBTL-2: Engineering Construction of Ascaroside-Responsive Yeast Chassis"}
+## 2 DBTL-2: Engineering Construction of Ascaroside-Responsive Yeast Chassis {#dbtl-2-engineering-construction-of-ascaroside-responsive-yeast-chassis toc="DBTL-2: Engineering Construction of Ascaroside-Responsive Yeast Chassis"}
 
 Building on the results of the previous cycle, we officially carried out the engineering construction of an ascaroside-responsive yeast chassis in this cycle. The strains constructed in this phase can be directly applied to product packaging and hardware development in the next research cycle.
 
-### The First Cycle {#the-first-cycle-2 toc="The First Cycle"}
+### 2.1 The First Cycle {#the-first-cycle-2 toc="The First Cycle"}
 
-#### Design | Planning Gal80 Knockout {#design-2 toc="Design | Planning Gal80 Knockout"}
+#### 2.1.1 Design {#design-2 toc="Design | Planning Gal80 Knockout"}
 
 Based on the results of DBTL-1 and literature references [1][2], we performed chassis modification on the `CEN.PK2-1C` strain. Firstly, we designed the knockout of the response-interfering gene *Gal80* (Figure 2.a) to relieve the repression of Gal gene expression by *Gal80*. We knocked out the *Gal80* gene via yeast homologous recombination (HR). Approximately 1 kb sequences flanking the upstream and downstream regions of the *Gal80* coding sequence were used as homologous arms for the knockout cassette, and Trp was adopted as the auxotrophic marker for transformant screening.
 
-#### Build | Assembling the Gal80 Knockout Cassette {#build-2 toc="Build | Assembling the Gal80 Knockout Cassette"}
+#### 2.1.2 Build {#build-2 toc="Build | Assembling the Gal80 Knockout Cassette"}
 
 Firstly, we amplified the upstream and downstream homologous arms (5F is 1255 bp and 3F is 1406 bp.) of *Gal80* from the genomic DNA of `CEN.PK2-1C` strain and the Trp auxotrophic marker element (1081bp) from the `pRS314` plasmid. The *Gal80* knockout cassette was successfully assembled via Double-joint PCR (Figure 1).
 
@@ -128,7 +128,7 @@ Figure 1. Construction of Gal80 knockout cassette KOGal80. a, PCR amplification 
 
 :::
 
-#### Test | Verifying Gal80 Knockout Transformants {#test-3 toc="Test | Verifying Gal80 Knockout Transformants"}
+#### 2.1.3 Test {#test-3 toc="Test | Verifying Gal80 Knockout Transformants"}
 
 Subsequently, we transformed the cassette into yeast cells. After genomic DNA extraction and transformant verification, yeast strains with successful *Gal80* knockout were obtained (Figure 2).
 
@@ -140,15 +140,15 @@ Figure 2. Gal80 Gene Knockout. a, Schematic diagram of yeast homologous recombin
 
 :::
 
-#### Learn | Advancing to Synthetic Transcription Factor Construction {#learn-3 toc="Learn | Advancing to Synthetic Transcription Factor Construction"}
+#### 2.1.4 Learn {#learn-3 toc="Learn | Advancing to Synthetic Transcription Factor Construction"}
 
 The response-interfering gene was knocked out in this round. According to the order of the signal transduction pathway, we next need to construct the synthetic transcription factor sTF, and therefore we proceed to the next cycle.
 
-### The Second Cycle {#the-second-cycle-2 toc="The Second Cycle"}
+### 2.2 The Second Cycle {#the-second-cycle-2 toc="The Second Cycle"}
 
 To efficiently construct the yeast chassis strain, this cycle was performed concurrently with the third cycle.
 
-#### Design | Planning STE12 Knockout and sTF Integration {#design-3 toc="Design | Planning STE12 Knockout and sTF Integration"}
+#### 2.2.1 Design {#design-3 toc="Design | Planning STE12 Knockout and sTF Integration"}
 
 To construct the sTF, we designed an experimental workflow including *STE12* gene knockout, recombinant `pRS315-sTF` plasmid construction, sTF gene knock-in via yeast homologous recombination (HR), and transformant verification.
 
@@ -166,7 +166,7 @@ Figure 1. Plasmid map of the homologous recombination plasmid `pRS315-sTF`.
 
 :::
 
-#### Build | Assembling STE12 Knockout and sTF Constructs {#build-3 toc="Build | Assembling STE12 Knockout and sTF Constructs"}
+#### 2.2.2 Build {#build-3 toc="Build | Assembling STE12 Knockout and sTF Constructs"}
 
 Firstly, we amplified the upstream and downstream homologous arms of *STE12* from the genomic DNA of strain `CEN.PK2-1C` (5F: 1082 bp, 3F: 1031 bp). Meanwhile, the His auxotrophic marker (1061 bp) was amplified from plasmid `pRS313`. The STE12 knockout cassette was successfully assembled via Double-joint PCR (Figure 2).
 
@@ -198,7 +198,7 @@ Figure 4. The second attempt to construct the `pRS315-sTF` plasmid. a, Sequencin
 
 :::
 
-#### Test | Checking STE12 Knockout Transformants {#test-4 toc="Test | Checking STE12 Knockout Transformants"}
+#### 2.2.3 Test {#test-4 toc="Test | Checking STE12 Knockout Transformants"}
 
 Next, we first attempted to knock out the *STE12* gene. Despite three repeated trials, we failed to obtain positive results, and all transformants indicated unsuccessful knockout (Figure 5). Combined with identical issues encountered in the constitutive pigment expression verification of Cycle 3, we decided to redesign our experimental strategy.
 
@@ -210,19 +210,19 @@ Figure 5. Schematic diagram of *STE12* gene knockout and transformant verificati
 
 :::
 
-#### Learn | Switching to CRISPR-Cas9 Gene Editing {#learn-4 toc="Learn | Switching to CRISPR-Cas9 Gene Editing"}
+#### 2.2.4 Learn {#learn-4 toc="Learn | Switching to CRISPR-Cas9 Gene Editing"}
 
 After literature review, we hypothesized that the failure of gene knockout stemmed from the low efficiency of homologous recombination (HR), which was unsuitable for multiple rounds of genetic modification. Therefore, we adopted the **CRISPR-Cas9** system[3][4] for gene editing. Together with Cycle 3, we advanced into Cycle 4.
 
-### The Third Cycle {#the-third-cycle toc="The Third Cycle"}
+### 2.3 The Third Cycle {#the-third-cycle toc="The Third Cycle"}
 
 This cycle was actually carried out in parallel with Cycle 2. The Learn section is largely consistent with that of Cycle 2 and will not be elaborated here.
 
-#### Design | Planning Betaxanthin Expression Verification {#design-4 toc="Design | Planning Betaxanthin Expression Verification"}
+#### 2.3.1 Design {#design-4 toc="Design | Planning Betaxanthin Expression Verification"}
 
 After constructing the strain carrying sTF, the next step was to introduce genes encoding inducibly expressed betaxanthin synthases. Since these two genes originate from plants, we designed a verification experiment to confirm that the two enzymes could be expressed in yeast and catalyze betaxanthin production. Accordingly, we constructed the homologous recombination plasmid `pRS315-MjDOD-BvCYP76AD5` with a design similar to `pRS315-sTF` (Figure 1.a) and transformed it into yeast (Figure 2.a) to observe color development.
 
-#### Build | Troubleshooting the Betaxanthin Expression Plasmid {#build-4 toc="Build | Troubleshooting the Betaxanthin Expression Plasmid"}
+#### 2.3.2 Build {#build-4 toc="Build | Troubleshooting the Betaxanthin Expression Plasmid"}
 
 After successfully amplifying the required fragments via PCR, we encountered a problem that plagued us for nearly one month: **11 attempts** of plasmid construction using one-step cloning all failed. We faced a variety of issues, including no colony growth after transformation, fully negative bands in colony PCR, incorrect plasmid double digestion results, and erroneous sequencing data. Each time one problem was solved, another emerged, severely delaying our experimental progress.
 
@@ -236,7 +236,7 @@ Figure 1. Construction of `pRS315-MjDOD-BvCYP76AD5` plasmid. a, Plasmid map of `
 
 :::
 
-#### Test | Examining Gene Integration and Yellow Coloration {#test-5 toc="Test | Examining Gene Integration and Yellow Coloration"}
+#### 2.3.3 Test {#test-5 toc="Test | Examining Gene Integration and Yellow Coloration"}
 
 Subsequently, we linearized plasmid `pRS315-MjDOD-BvCYP76AD5` and transformed it into yeast. Similar to the results from Cycle 2, we failed to achieve correct knock-in of the betaxanthin synthase genes for constitutive expression (Figure 2). However, we observed obvious yellow color in the transformed yeast (Figure 3). We hypothesized that the plasmid underwent **self-circularization** and existed episomally inside yeast cells.
 
@@ -258,7 +258,7 @@ Figure 3. Yeast producing betaxanthin.
 
 This result further demonstrated that homologous recombination (HR) had low efficiency and was not suitable for multiple rounds of genetic modification. Therefore, this cycle, together with Cycle 2, proceeded to Cycle 4.
 
-### The Fourth Cycle {#the-fourth-cycle toc="The Fourth Cycle"}
+### 2.4 The Fourth Cycle {#the-fourth-cycle toc="The Fourth Cycle"}
 
 Based on previous results, we adopted CRISPR-Cas9 for gene editing. The existing Cas9-carrying plasmid (`p414-TEF1p-Cas9-CYC1t`) uses Trp as its auxotrophic marker, which overlaps with the marker applied in our initial *Gal80* knockout. Therefore, we first replaced the auxotrophic marker of this plasmid with Leu (Figure 1). In addition, according to available references, we also needed to construct plasmids expressing specific sgRNAs (Figure 3) and corresponding donor DNA[3] (Figure 7, Figure 8). Thus, we formally started this cycle.
 
@@ -270,11 +270,11 @@ Figure 1. Map of auxotrophic marker replacement for `p414-Cas9` plasmid.
 
 :::
 
-#### Design | Planning Cas9, sgRNA and Donor DNA Constructs {#design-5 toc="Design | Planning Cas9, sgRNA and Donor DNA Constructs"}
+#### 2.4.1 Design {#design-5 toc="Design | Planning Cas9, sgRNA and Donor DNA Constructs"}
 
 We needed to construct three types of components: the Cas9 plasmid with replaced auxotrophic marker, plasmids expressing specific sgRNAs, and donor DNA. Consistent with our previous strategy, we assembled the required plasmids via one-step cloning. Notably, we initially intended to use Quick-Change PCR for sgRNA plasmid construction. However, we encountered great difficulty in whole-plasmid amplification during practical operation. Consequently, we still adopted one-step cloning to build this plasmid.
 
-#### Build | Assembling CRISPR-Cas9 Editing Components {#build-5 toc="Build | Assembling CRISPR-Cas9 Editing Components"}
+#### 2.4.2 Build {#build-5 toc="Build | Assembling CRISPR-Cas9 Editing Components"}
 
 First, we constructed the Cas9 plasmid with replaced auxotrophic marker (Figure 1), and the construction was highly successful (Figure 2).
 
@@ -322,7 +322,7 @@ Figure 6. Construction of `p426-SNR52p-gSTE2-SUP4t` plasmid.
 
 :::
 
-Finally, we constructed the corresponding donor DNA. The sTF fragment was amplified from plasmid `pRS315sTF` ([https://registry.igem.org/parts/bba26iotmof](https://registry.igem.org/parts/bba%E2%80%9126iotmof)). The gene fragment of betaxanthin synthase induced by the bidirectional Gal1/10 promoter ([https://registry.igem.org/parts/bba2697laqw](https://registry.igem.org/parts/bba%E2%80%912697laqw)) was first amplified from plasmid `pRS315MjDODBvCYP76AD5`, followed by DoubleJoint PCR amplification, using the same method as our previous fragment construction (Figure 7).
+Finally, we constructed the corresponding donor DNA. The sTF fragment was amplified from plasmid pRS315‑sTF (https://registry.igem.org/parts/bba‑26iotmof). The gene fragment of betaxanthin synthase induced by the bidirectional Gal1/10 promoter (https://registry.igem.org/parts/bba‑2697laqw) was first amplified from plasmid pRS315‑MjDOD‑BvCYP76AD5, followed by Double‑Joint PCR amplification, using the same method as our previous fragment construction (Figure 7).
 
 :::figure
 
@@ -350,7 +350,7 @@ Figure 9. Construction of `pRS315-TEF1p-GPR2` plasmid.
 
 :::
 
-#### Test | Verifying Cas9 Transformation and Genome Editing {#test-6 toc="Test | Verifying Cas9 Transformation and Genome Editing"}
+#### 2.4.3 Test {#test-6 toc="Test | Verifying Cas9 Transformation and Genome Editing"}
 
 With these components ready, we proceeded to yeast transformation.
 
@@ -384,17 +384,19 @@ Subsequently, we co-transformed the `p426-SNR52p-gGal4-SUP4t` plasmid together w
 
 :::
 
-Finally, we co-transformed the `p426-SNR52p-gSTE2-SUP4t` plasmid and linearized `pRS315-TEF1p-GPR2` plasmid. The *GPR2* gene was successfully recombined into the *STE2* locus.
+Finally, we co-transformed the p426-SNR52p-gSTE2-SUP4t plasmid and linearized pRS315-TEF1p-GPR2 plasmid. The GPR2 gene was successfully recombined into the STE2 locus (Figure 13).
 
-#### Learn | Advancing to GPR2 Mutant Characterization {#learn-5 toc="Learn | Advancing to GPR2 Mutant Characterization"}
+Figure 13. Schematic diagram of GPR2 transformation (a) and transformant validation (b).（占位）
+
+#### 2.4.4 Learn {#learn-5 toc="Learn | Advancing to GPR2 Mutant Characterization"}
 
 So far, the chassis engineered yeast strain of our project has been constructed. Meanwhile, the dry lab finished the modification of GPR2 mutants. We therefore moved to the next cycle to characterize the screened GPR2 mutants.
 
-### The Fifth Cycle {#the-fifth-cycle toc="The Fifth Cycle"}
+### 2.5 The Fifth Cycle {#the-fifth-cycle toc="The Fifth Cycle"}
 
-#### Design | Planning GPR2 Mutant Strain Construction {#design-6 toc="Design | Planning GPR2 Mutant Strain Construction"}
+#### 2.5.1 Design {#design-6 toc="Design | Planning GPR2 Mutant Strain Construction"}
 
-Based on the results from previous cycles and dry lab, we still used one-step cloning to construct plasmids for transformation (Figure 1). Strain `NKU-Y06` ([Wet Lab — Experiments — Strain Construction](/experiments/#strain-construction)) was utilized for genetic modification.
+Based on the results from previous cycles and dry lab, we still used one-step cloning to construct plasmids for transformation (Figure 1). Strain NKU-Y06 (Wet Lab-Experiments-Strain Construction) was utilized for genetic modification.
 
 :::figure
 
@@ -404,7 +406,7 @@ Based on the results from previous cycles and dry lab, we still used one-step cl
 
 :::
 
-#### Build and Test | Constructing and Verifying GPR2 Mutant Plasmids {#build-and-test toc="Build and Test | Constructing and Verifying GPR2 Mutant Plasmids"}
+#### 2.5.2 Build and Test {#build-and-test toc="Build and Test | Constructing and Verifying GPR2 Mutant Plasmids"}
 
 We successfully constructed two plasmids, `pRS315-TEF1p-GPR2-N84V` and `pRS315-TEF1p-GPR2-V368R`, via one-step cloning. Sequencing verified that their sequences were correct (Figure 2).
 
@@ -416,9 +418,11 @@ We successfully constructed two plasmids, `pRS315-TEF1p-GPR2-N84V` and `pRS315-T
 
 :::
 
-Subsequently, we mixed the `p426-SNR52p-gSTE2-SUP4t` plasmid with each of the two plasmids mentioned above and co-transformed them into strain `NKU-Y06`. The recombination locus was identical to that used for GPR2 knock-in. After transformant validation, we successfully obtained two strains carrying GPR2 mutants.
+Subsequently, we mixed the p426-SNR52p-gSTE2-SUP4t plasmid with each of the two plasmids mentioned above and co-transformed them into strain NKU-Y06. The recombination locus was identical to that used for GPR2 knock-in. After transformant validation, we successfully obtained two strains carrying GPR2 mutants (Figure 3).
 
-#### Learn | Identifying the Need for Test-Strip Productization {#learn-6 toc="Learn | Identifying the Need for Test-Strip Productization"}
+Figure 3. Transformant validation of GPR2 (a), GPR2-N84V (b), and GPR2-V368R (c).（占位）
+
+#### 2.5.3 Learn {#learn-6 toc="Learn | Identifying the Need for Test-Strip Productization"}
 
 This cycle is hereby concluded. The strains constructed in this cycle can only function under laboratory conditions. For field applications, product formulation and packaging of the strains are required. Therefore, we proceeded to the third major DBTL cycle.
 
@@ -436,93 +440,95 @@ Mans R, Wijsman M, Daran-Lapujade P, Daran JM. A protocol for introduction of mu
 
 Building upon the engineered chassis strain constructed in previous DBTL cycles, we turned to another key project objective: developing an affordable, convenient, and user-friendly colorimetric detection platform. To achieve this, we executed subsequent engineering cycles focused on cell immobilization and test-strip productization. This section details two overarching DBTL cycles—test-strip formulation using engineered yeast and on-strip colorimetric development—each encompassing several sub-iterative cycles that drive continuous optimization.
 
-<div id="the-first-cycle-test-strip-formulation-processing" aria-hidden="true"></div>
+<span id="dbtl-3-test-strip-development-and-productization" aria-hidden="true"></span>
+<span id="results-3-1" aria-hidden="true"></span>
+<span id="results-3-1-1" aria-hidden="true"></span>
+<span id="results-3-1-2" aria-hidden="true"></span>
+<span id="results-3-1-3" aria-hidden="true"></span>
+<span id="results-3-2" aria-hidden="true"></span>
+<span id="results-3-2-1" aria-hidden="true"></span>
+<span id="results-3-2-2" aria-hidden="true"></span>
+<span id="results-3-2-3" aria-hidden="true"></span>
 
-### 3.1 Test-Strip Formulation and Processing {#results-3-1 toc="3.1 Formulation"}
+### 3.1 The First Cycle: Test-Strip Formulation & Processing {#results-3-1 toc="3.1 The First Cycle: Test-Strip Formulation & Processing"}
 
-To create an accessible, rapid, and low-cost live-cell test strip, we developed a **standardized, transferable workflow** for yeast cell immobilization and freeze-drying. This major cycle comprises three sub-iterative DBTL cycles: **Substrate Selection, Elution Method Refinement & Final Substrate Screening, and Surface Modification & Spotting Optimization**.
+To create an accessible, rapid, and low-cost live-cell test strip, we developed a standardized, transferable workflow for yeast cell immobilization and freeze-drying. This major cycle comprises three sub-iterative DBTL cycles: Substrate Selection, Surface Modification & Spotting Optimization, and Elution Method Refinement.
 
-#### 3.1.1 Sub-cycle 1: Preliminary Substrate Screening {#results-3-1-1 toc="Substrate screening"}
+#### 3.1.1 Sub-cycle 1: Preliminary Substrate Screening {#results-3-1-1 toc="3.1.1 Sub-cycle 1: Preliminary Substrate Screening"}
 
-<div id="sub-cycle-1-substrate-selection" aria-hidden="true"></div>
-
-**Design | Defining Substrate Selection Criteria**
+#### 3.1.1.1 Design {#results-stage-3-1-1-1 toc="3.1.1.1 Design"}
 
 We propose that an ideal test strip substrate should possess high cell loading capacity, excellent mechanical stability, good batch-to-batch reproducibility, and biocompatibility during freeze-drying and reactivation. On this basis, we selected four representative candidate substrates: qualitative filter paper, laboratory tissue, lens cleaning paper, and weighing paper.
 
 We adopted the first-generation lyoprotectant (glucose-free YPD supplemented with sucrose) and performed comparative evaluation via the "freeze-drying – cell elution – plate counting" workflow for preliminary substrate screening.
 
-**Build and Test | Comparing Cell Recovery Across Substrates**
+3.1.1.2 Build and Test
 
 Cells were suspended in the protectant and spotted onto each substrate. After pre-freezing, freeze-drying, reactivation and elution, samples were spread on agar plates to count viable colonies (Table 1).
 
-<div class="wiki-toolkit-block"><wiki-toolkit data-type="datatable" data-props="{&quot;_template&quot;:&quot;datatable&quot;,&quot;title&quot;:&quot;Table 3.1.1. Substrate properties and preparation performance&quot;,&quot;csv&quot;:&quot;Paper Type,Cell Recovery,Performance Characteristics\nQualitative filter paper,8%,\&quot;Easy to cut, structurally stable, relatively uniform liquid absorption\&quot;\nWeighing paper,27%,\&quot;Highly hydrophobic surface, poor liquid wettability; bulges form after freeze-drying\&quot;\nLens cleaning paper,3%,\&quot;Extremely thin and fragile, inconvenient for handling, poor cell-loading capacity\&quot;\nLaboratory tissue,10%,Poor homogeneity and structural consistency; difficult to standardize specifications\n&quot;,&quot;caption&quot;:&quot;Values reproduced from the supplied Results 2.0 manuscript.&quot;}"><div class="wiki-toolkit-fallback"><p><strong>Table 3.1.1. Substrate properties and preparation performance</strong></p><div class="table-wrap"><table><thead><tr><th>Paper Type</th><th>Cell Recovery</th><th>Performance Characteristics</th></tr></thead><tbody><tr><td>Qualitative filter paper</td><td>8%</td><td>Easy to cut, structurally stable, relatively uniform liquid absorption</td></tr><tr><td>Weighing paper</td><td>27%</td><td>Highly hydrophobic surface, poor liquid wettability; bulges form after freeze-drying</td></tr><tr><td>Lens cleaning paper</td><td>3%</td><td>Extremely thin and fragile, inconvenient for handling, poor cell-loading capacity</td></tr><tr><td>Laboratory tissue</td><td>10%</td><td>Poor homogeneity and structural consistency; difficult to standardize specifications</td></tr></tbody></table></div></div><noscript><style>.wiki-toolkit-fallback{display:block!important}wiki-toolkit:not(:defined){min-height:0;border:0;background:none;animation:none}</style><p>Enable JavaScript to use the interactive controls.</p></noscript></wiki-toolkit></div>
+<div class="wiki-toolkit-block"><wiki-toolkit data-type="datatable" data-props="{&quot;_template&quot;:&quot;datatable&quot;,&quot;title&quot;:&quot;Table 1. Substrate properties and preparation performance&quot;,&quot;csv&quot;:&quot;Paper Type,Cell Recovery,Performance Characteristics\nQualitative filter paper,8%,\&quot;Easy to cut, structurally stable, relatively uniform liquid absorption\&quot;\nWeighing paper,27%,\&quot;Highly hydrophobic surface, poor liquid wettability; bulges form after freeze-drying\&quot;\nLens cleaning paper,3%,\&quot;Extremely thin and fragile, inconvenient for handling, poor cell-loading capacity\&quot;\nLaboratory tissue,10%,Poor homogeneity and structural consistency; difficult to standardize specifications\n&quot;}"><div class="wiki-toolkit-fallback"><p><strong>Table 1. Substrate properties and preparation performance</strong></p><div class="table-wrap"><table><thead><tr><th>Paper Type</th><th>Cell Recovery</th><th>Performance Characteristics</th></tr></thead><tbody><tr><td>Qualitative filter paper</td><td>8%</td><td>Easy to cut, structurally stable, relatively uniform liquid absorption</td></tr><tr><td>Weighing paper</td><td>27%</td><td>Highly hydrophobic surface, poor liquid wettability; bulges form after freeze-drying</td></tr><tr><td>Lens cleaning paper</td><td>3%</td><td>Extremely thin and fragile, inconvenient for handling, poor cell-loading capacity</td></tr><tr><td>Laboratory tissue</td><td>10%</td><td>Poor homogeneity and structural consistency; difficult to standardize specifications</td></tr></tbody></table></div></div><noscript><style>.wiki-toolkit-fallback{display:block!important}wiki-toolkit:not(:defined){min-height:0;border:0;background:none;animation:none}</style><p>Enable JavaScript to use the interactive controls.</p></noscript></wiki-toolkit></div>
 
-**Learn | Retaining Filter Paper and Revising the Recovery Assay**
+#### 3.1.2.3 Learn {#results-stage-3-1-2-3 toc="3.1.2.3 Learn"}
 
 Lens cleaning paper and laboratory tissue were eliminated due to poor processability and reproducibility. Weighing paper was discarded for unsatisfactory cell loading caused by its inherent physical properties. Qualitative filter paper was temporarily retained as the test strip substrate owing to its superior processability and acceptable cell-loading capacity. Nevertheless, qualitative filter paper suffers from lateral wicking, which leads to irregular spot boundaries and uneven cell distribution. We will address this issue in subsequent DBTL cycles.
 
-Furthermore, since the recovery efficiency of eluted cells is affected by substrate adsorption capacity, evaluating cell recovery solely by **colony counting introduces bias**. Therefore, we will optimize the elution method in the next cycle.
+Furthermore, since the recovery efficiency of eluted cells is affected by substrate adsorption capacity, evaluating cell recovery solely by colony counting introduces bias. Therefore, we will optimize the elution method in the next cycle.
 
-#### 3.1.2 Sub-cycle 2: Elution Optimization and Final Substrate Screening {#results-3-1-2 toc="Elution and substrate"}
+#### 3.1.2 Sub-cycle 2: Elution Optimization & Final Substrate Screening {#results-3-1-2 toc="3.1.2 Sub-cycle 2: Elution Optimization & Final Substrate Screening"}
 
-<div id="sub-cycle-3-elution-method-refinement-final-substrate-selection" aria-hidden="true"></div>
+#### 3.1.2.1 Design {#results-stage-3-1-2-1 toc="3.1.2.1 Design"}
 
-**Design | Optimizing Elution and Expanding Substrate Candidates**
+To eliminate interference from substrate adsorption on measured cell recovery, we redesigned the elution protocol. Isotonic PBS buffer supplemented with 0.05% Tween 80 was used as eluent to reduce non-specific binding between cells and substrate fibers. Meanwhile, 3 mm glass grinding beads were introduced for mechanical disruption to further improve elution efficiency.
 
-To eliminate interference from substrate adsorption on measured cell recovery, we redesigned the elution protocol. Isotonic PBS buffer supplemented with **0.05% Tween 80** was used as eluent to reduce non-specific binding between cells and substrate fibers. Meanwhile, 3 mm glass grinding beads were introduced for mechanical disruption to further improve elution efficiency.
+In this cycle, we used qualitative filter paper as the control group and introduced three new candidate substrates: thin glass fiber filter paper (Whatman™ GF/A), thick glass fiber filter paper (Whatman™ GF/B), and cellulose acetate filter paper. The improved elution assay was applied for rigorous screening.
 
-In this cycle, we used qualitative filter paper as the control group and introduced three new candidate substrates: thin glass fiber filter paper (Whatman™ GF/A), thick glass fiber filter paper (**Whatman™ GF/B**), and cellulose acetate filter paper. The improved elution assay was applied for rigorous screening.
-
-**Build and Test | Evaluating Adsorption-Corrected Cell Recovery**
+3.1.2.2 Build and Test
 
 Before evaluating the cell recovery of test strips, we first eliminated the interference of physical substrate adsorption on cell elution efficiency. To this end, we adopted the modified eluent and elution protocol to directly elute non-freeze-dried strips and spread the cell suspension. With qualitative filter paper set as the reference (100%), we measured the initial cell recovery of each candidate substrate, which was defined as the adsorption correction factor for subsequent analysis (Table 2).
 
-<div class="wiki-toolkit-block"><wiki-toolkit data-type="datatable" data-props="{&quot;_template&quot;:&quot;datatable&quot;,&quot;title&quot;:&quot;Table 3.1.2. Initial elution efficiency and substrate adsorption correction factors&quot;,&quot;csv&quot;:&quot;Metrics,Control,GF/A,GF/B,Cellulose acetate\nCell recovery,100%,76%,88%,50%\nAdsorption correction factor,1,0.76,0.88,0.5\n&quot;,&quot;caption&quot;:&quot;Values reproduced from the supplied Results 2.0 manuscript.&quot;}"><div class="wiki-toolkit-fallback"><p><strong>Table 3.1.2. Initial elution efficiency and substrate adsorption correction factors</strong></p><div class="table-wrap"><table><thead><tr><th>Metrics</th><th>Control</th><th>GF/A</th><th>GF/B</th><th>Cellulose acetate</th></tr></thead><tbody><tr><td>Cell recovery</td><td>100%</td><td>76%</td><td>88%</td><td>50%</td></tr><tr><td>Adsorption correction factor</td><td>1</td><td>0.76</td><td>0.88</td><td>0.5</td></tr></tbody></table></div></div><noscript><style>.wiki-toolkit-fallback{display:block!important}wiki-toolkit:not(:defined){min-height:0;border:0;background:none;animation:none}</style><p>Enable JavaScript to use the interactive controls.</p></noscript></wiki-toolkit></div>
+<div class="wiki-toolkit-block"><wiki-toolkit data-type="datatable" data-props="{&quot;_template&quot;:&quot;datatable&quot;,&quot;title&quot;:&quot;Table 2. Initial elution efficiency and substrate adsorption correction factors&quot;,&quot;csv&quot;:&quot;Metrics,Control,GF/A,GF/B,Cellulose acetate\nCell recovery,100%,76%,88%,50%\nAdsorption correction factor,1,0.76,0.88,0.5\n&quot;}"><div class="wiki-toolkit-fallback"><p><strong>Table 2. Initial elution efficiency and substrate adsorption correction factors</strong></p><div class="table-wrap"><table><thead><tr><th>Metrics</th><th>Control</th><th>GF/A</th><th>GF/B</th><th>Cellulose acetate</th></tr></thead><tbody><tr><td>Cell recovery</td><td>100%</td><td>76%</td><td>88%</td><td>50%</td></tr><tr><td>Adsorption correction factor</td><td>1</td><td>0.76</td><td>0.88</td><td>0.5</td></tr></tbody></table></div></div><noscript><style>.wiki-toolkit-fallback{display:block!important}wiki-toolkit:not(:defined){min-height:0;border:0;background:none;animation:none}</style><p>Enable JavaScript to use the interactive controls.</p></noscript></wiki-toolkit></div>
 
-Next, we prepared freeze-dried test strip samples with these newly introduced substrates. A copper sulfate solution wicking test was performed to independently characterize their water absorption and liquid-holding capacity qualitatively (Figure 3.1.1).
+Next, we prepared freeze-dried test strip samples with these newly introduced substrates. A copper sulfate solution wicking test was performed to independently characterize their water absorption and liquid-holding capacity qualitatively (Figure 1).
 
 :::figure{scale=70}
 
-![Figure 3.1.1. Water-absorption test.](https://static.igem.wiki/teams/6303/wiki/v8-6/v86-f41bd79ce2d8-fig3-1-1.avif)
+![Figure 1. Water-absorption test](https://static.igem.wiki/teams/6303/wiki/v8-6/v86-f41bd79ce2d8-fig3-1-1.avif)
 
-**Figure 3.1.1.** Water-absorption test.
+Figure 1. Water-absorption test
 
 :::
 
 We further processed the test strip samples using the optimized elution method. The adsorption-corrected cell recovery, coefficient of variation (CV), and key performance features of each substrate were comprehensively evaluated and compared with the qualitative filter paper control group (Table 3).
 
-<div class="wiki-toolkit-block"><wiki-toolkit data-type="datatable" data-props="{&quot;_template&quot;:&quot;datatable&quot;,&quot;title&quot;:&quot;Table 3.1.3. Adsorption-corrected recovery and substrate performance&quot;,&quot;csv&quot;:&quot;Paper Type,Cell Recovery,CV,Key Performance Characteristics\nGF/B,3.4%,86.6%,\&quot;Slightly low toughness, strong liquid-holding capacity, remains flat without deformation after freeze-drying\&quot;\nGF/A,23.7%,65.6%,\&quot;Slightly low toughness, moderate liquid-holding capacity\&quot;\nCellulose acetate,38.0%,55.0%,\&quot;Brittle, prone to static electricity, weak liquid-holding capacity\&quot;\nQualitative filter paper,-,-,\&quot;Easy to cut, high toughness, moderate liquid-holding capacity\&quot;\n&quot;,&quot;caption&quot;:&quot;Values reproduced from the supplied Results 2.0 manuscript.&quot;}"><div class="wiki-toolkit-fallback"><p><strong>Table 3.1.3. Adsorption-corrected recovery and substrate performance</strong></p><div class="table-wrap"><table><thead><tr><th>Paper Type</th><th>Cell Recovery</th><th>CV</th><th>Key Performance Characteristics</th></tr></thead><tbody><tr><td>GF/B</td><td>3.4%</td><td>86.6%</td><td>Slightly low toughness, strong liquid-holding capacity, remains flat without deformation after freeze-drying</td></tr><tr><td>GF/A</td><td>23.7%</td><td>65.6%</td><td>Slightly low toughness, moderate liquid-holding capacity</td></tr><tr><td>Cellulose acetate</td><td>38.0%</td><td>55.0%</td><td>Brittle, prone to static electricity, weak liquid-holding capacity</td></tr><tr><td>Qualitative filter paper</td><td>-</td><td>-</td><td>Easy to cut, high toughness, moderate liquid-holding capacity</td></tr></tbody></table></div></div><noscript><style>.wiki-toolkit-fallback{display:block!important}wiki-toolkit:not(:defined){min-height:0;border:0;background:none;animation:none}</style><p>Enable JavaScript to use the interactive controls.</p></noscript></wiki-toolkit></div>
+<div class="wiki-toolkit-block"><wiki-toolkit data-type="datatable" data-props="{&quot;_template&quot;:&quot;datatable&quot;,&quot;title&quot;:&quot;Table 3. Optimized elution method and elution rate benchmark&quot;,&quot;csv&quot;:&quot;Paper Type,Cell Recovery,CV,Key Performance Characteristics\nGF/B,3.4%,86.6%,\&quot;Slightly low toughness, strong liquid-holding capacity, remains flat without deformation after freeze-drying\&quot;\nGF/A,23.7%,65.6%,\&quot;Slightly low toughness, moderate liquid-holding capacity\&quot;\nCellulose acetate,38.0%,55.0%,\&quot;Brittle, prone to static electricity, weak liquid-holding capacity\&quot;\nQualitative filter paper,-,-,\&quot;Easy to cut, high toughness, moderate liquid-holding capacity\&quot;\n&quot;}"><div class="wiki-toolkit-fallback"><p><strong>Table 3. Optimized elution method and elution rate benchmark</strong></p><div class="table-wrap"><table><thead><tr><th>Paper Type</th><th>Cell Recovery</th><th>CV</th><th>Key Performance Characteristics</th></tr></thead><tbody><tr><td>GF/B</td><td>3.4%</td><td>86.6%</td><td>Slightly low toughness, strong liquid-holding capacity, remains flat without deformation after freeze-drying</td></tr><tr><td>GF/A</td><td>23.7%</td><td>65.6%</td><td>Slightly low toughness, moderate liquid-holding capacity</td></tr><tr><td>Cellulose acetate</td><td>38.0%</td><td>55.0%</td><td>Brittle, prone to static electricity, weak liquid-holding capacity</td></tr><tr><td>Qualitative filter paper</td><td>-</td><td>-</td><td>Easy to cut, high toughness, moderate liquid-holding capacity</td></tr></tbody></table></div></div><noscript><style>.wiki-toolkit-fallback{display:block!important}wiki-toolkit:not(:defined){min-height:0;border:0;background:none;animation:none}</style><p>Enable JavaScript to use the interactive controls.</p></noscript></wiki-toolkit></div>
 
-**Learn | Selecting GF/B and Identifying Spotting Constraints**
+#### 3.1.2.3 Learn {#results-stage-3-1-2-3-2 toc="3.1.2.3 Learn"}
 
 Combining all experimental results, Whatman™ GF/B thick glass fiber filter paper was selected as the final substrate for our test strips. Although qualitative filter paper exhibited higher cell recovery in small-scale counting assays, GF/B possesses substantially superior liquid-holding capacity compared with other candidates. It rapidly absorbs high-viscosity protectant without bead formation on the surface, which makes it well suited for freeze-drying. Moreover, it avoids powdering or curling after lyophilization, showing great practical engineering value.
 
 Through this cycle, we established a novel evaluation system for test strip elution and selected a suitable substrate using this platform. Accordingly, we proceeded to the next cycle to further address lateral wicking and uneven cell distribution on the strips.
 
-#### 3.1.3 Sub-cycle 3: Surface Modification and Spotting Optimization {#results-3-1-3 toc="Surface and spotting"}
+#### 3.1.3 Sub-cycle 2: Surface Modification & Spotting Optimization {#results-3-1-3 toc="3.1.3 Sub-cycle 2: Surface Modification & Spotting Optimization"}
 
-<div id="sub-cycle-2-surface-modification-spotting-optimization" aria-hidden="true"></div>
+#### 3.1.3.1 Design {#results-stage-3-1-3-1 toc="3.1.3.1 Design"}
 
-**Design | Planning Surface Barriers and Protectant Optimization**
+To solve the problems of lateral wicking and uneven cell distribution, we aimed to construct distinct hydrophilic/hydrophobic boundaries within the substrate. We proposed using adhesive labels as masking templates. By vapor deposition of ergo.® 5300 instant adhesive, locally defined circular hydrophilic spotting zones were fabricated on filter paper.
 
-To solve the problems of lateral wicking and uneven cell distribution, we aimed to construct distinct **hydrophilic/hydrophobic boundaries** within the substrate. We proposed using adhesive labels as masking templates. By vapor deposition of ergo.® 5300 instant adhesive, locally defined circular hydrophilic spotting zones were fabricated on filter paper.
+To reduce uneven distribution caused by cell sedimentation, we optimized the protectant formulation. Sodium alginate was introduced to increase viscosity; trehalose and glycerol provided more reliable lyoprotection. Sodium glutamate was supplemented for antioxidation and cell membrane stabilization. Mannitol replaced sucrose to fill the sodium alginate matrix after freeze-drying and prevent powdering. Furthermore, to address large spotting variability arising from high-viscosity protectant residue in pipette tips, we designed a vacuum filtration-assisted spotting device.
 
-To reduce uneven distribution caused by cell sedimentation, we optimized the protectant formulation. **Sodium alginate** was introduced to increase viscosity; trehalose and glycerol provided more reliable lyoprotection. Sodium glutamate was supplemented for antioxidation and cell membrane stabilization. Mannitol replaced sucrose to fill the sodium alginate matrix after freeze-drying and prevent powdering. Furthermore, to address large spotting variability arising from high-viscosity protectant residue in pipette tips, we designed a vacuum filtration-assisted spotting device.
+3.1.3.2 Build and Test
 
-**Build and Test | Evaluating Surface Treatment and Freeze-Drying**
-
-To effectively suppress lateral liquid spreading, we developed a reusable hydrophobic coating fumigation device. Using masking templates and cyanoacrylate (adhesive) vapor fumigation, we successfully fabricated well-defined 5 mm hydrophilic detection zones surrounded by outer hydrophobic barriers on filter paper (Figure 3.1.2).
+To effectively suppress lateral liquid spreading, we developed a reusable hydrophobic coating fumigation device. Using masking templates and cyanoacrylate (adhesive) vapor fumigation, we successfully fabricated well-defined 5 mm hydrophilic detection zones surrounded by outer hydrophobic barriers on filter paper (Figure 2).
 
 :::figure{scale=85}
 
-![Figure 3.1.2. Fumigation coating setup (a), hydrophobicity demonstration (b), and circular hydrophilic zone (c).](https://static.igem.wiki/teams/6303/wiki/v8-6/v86-06c56594b1d7-fig3-1-2.avif)
+![Figure 2. Fumigation coating setup (a), hydrophobicity demonstration (b), and circular hydrophilic zone (c)](https://static.igem.wiki/teams/6303/wiki/v8-6/v86-06c56594b1d7-fig3-1-2.avif)
 
-**Figure 3.1.2.** Fumigation coating setup (a), hydrophobicity demonstration (b), and circular hydrophilic zone (c).
+Figure 2. Fumigation coating setup (a), hydrophobicity demonstration (b), and circular hydrophilic zone (c)
 
 :::
 
-To verify the protective effect of the modified protectant, we performed dehydration kinetics and full-process freeze-drying tests. The results demonstrated that the new sodium-alginate-based protectant forms an intact thin-film matrix after drying to effectively prevent collapse. Its gentle and uniform dehydration rate avoids physical damage to yeast cell membranes caused by drastic water loss, thereby greatly improving the structural integrity and viability of cells during lyophilization (Figure 3.1.3).
+To verify the protective effect of the modified protectant, we performed dehydration kinetics and full-process freeze-drying tests. The results demonstrated that the new sodium-alginate-based protectant forms an intact thin-film matrix after drying to effectively prevent collapse. Its gentle and uniform dehydration rate avoids physical damage to yeast cell membranes caused by drastic water loss, thereby greatly improving the structural integrity and viability of cells during lyophilization (Figure 3).
 
 ::::figures
 
@@ -544,104 +550,100 @@ To verify the protective effect of the modified protectant, we performed dehydra
 
 ::::
 
-**Figure 3.1.3.** Rapid water-loss test (a) and water-loss rate curve (b).
+Figure 3.1.3. Rapid water loss test (a) and water loss rate curve (b)
 
-In addition, we designed and built a custom **vacuum filtration spotting fixture**. This device rapidly draws the high-viscosity protectant suspension into the substrate. It greatly improves spotting efficiency and quantitative precision, and enables standardized control of cell loading per strip by accurate adjustment of sample volume (Figure 3.1.4).
-
-:::figure{scale=70}
-
-![Figure 3.1.4. Photograph of the vacuum-assisted spotting setup.](https://static.igem.wiki/teams/6303/wiki/v8-6/v86-48ee38c731e9-fig3-1-4.avif)
-
-**Figure 3.1.4.** Photograph of the vacuum-assisted spotting setup.
-
-:::
-
-Combined with all the above methods and techniques, we fabricated a batch of cell-loaded freeze-dried test strips available for subsequent experiments (Figure 3.1.5).
+In addition, we designed and built a custom vacuum filtration spotting fixture. This device rapidly draws the high-viscosity protectant suspension into the substrate. It greatly improves spotting efficiency and quantitative precision, and enables standardized control of cell loading per strip by accurate adjustment of sample volume (Figure 4).
 
 :::figure{scale=70}
 
-![Figure 3.1.5. Cell-loaded freeze-dried test strips.](https://static.igem.wiki/teams/6303/wiki/v8-6/v86-ea1a49677396-fig3-1-5.avif)
+![Figure 4. Schematic of the spotting process](https://static.igem.wiki/teams/6303/wiki/v8-6/v86-48ee38c731e9-fig3-1-4.avif)
 
-**Figure 3.1.5.** Cell-loaded freeze-dried test strips.
+Figure 4. Schematic of the spotting process
 
 :::
 
-**Learn | Combining Surface Treatment, Protectant and Spotting Improvements**
+Combined with all the above methods and techniques, we fabricated a batch of cell-loaded freeze-dried test strips available for subsequent experiments (Figure 5).
+
+:::figure{scale=70}
+
+![Figure 5. Demonstration of cell-loaded test strips](https://static.igem.wiki/teams/6303/wiki/v8-6/v86-ea1a49677396-fig3-1-5.avif)
+
+Figure 5. Demonstration of cell-loaded test strips
+
+:::
+
+#### 3.1.3.3 Learn {#results-stage-3-1-3-3 toc="3.1.3.3 Learn"}
 
 Combining vapor-deposited hydrophobic coating and optimized lyoprotectant, cells were successfully confined within uniform circular zones. The vacuum-assisted spotting device eliminated liquid residue in pipette tips and enabled controllable and quantitative cell loading on test strips.
 
-Through these three sub-cycles, we established a **standardized, highly reproducible workflow** covering substrate pretreatment, protectant preparation and semi-automated spotting loading. Viable freeze-dried yeast test strips as shown in Figure 3.1.5 were successfully fabricated.
+Through these three sub-cycles, we established a standardized, highly reproducible workflow covering substrate pretreatment, protectant preparation and semi-automated spotting loading. Viable freeze-dried yeast test strips as shown in Figure 5 were successfully fabricated.
 
-### 3.2 On-Strip Color Development and Productization {#results-3-2 toc="3.2 Color development"}
+### 3.2 The Second Cycle: On-Strip Color Development & Productization {#results-3-2 toc="3.2 The Second Cycle: On-Strip Color Development & Productization"}
 
-After the cell immobilization procedure, we moved forward to the **in-situ reactivation and signal output** stage on test strips. Using engineered chromogenic yeast strains, this major DBTL cycle addressed three progressive bottlenecks sequentially: reactivation condition optimization, coloration rate enhancement, and hardware productization and packaging.
+After the cell immobilization procedure, we moved forward to the in-situ reactivation and signal output stage on test strips. Using engineered chromogenic yeast strains, this major DBTL cycle addressed three progressive bottlenecks sequentially: reactivation condition optimization, coloration rate enhancement, and hardware productization and packaging.
 
-#### 3.2.1 Sub-cycle 1: Reactivation Optimization {#results-3-2-1 toc="Reactivation"}
+#### 3.2.1 Sub-cycle 1: Reactivation Optimization {#results-3-2-1 toc="3.2.1 Sub-cycle 1: Reactivation Optimization"}
 
-**Design | Planning Reactivation Conditions and Medium Screening**
+#### 3.2.1.1 Design {#results-stage-3-2-1-1 toc="3.2.1.1 Design"}
 
 To achieve direct visual detection without elution, freeze-dried cells must efficiently exit dormancy upon contact with liquid. We first immersed the Whatman™ GF/B test strips loaded with engineered cells in YNB-free SC selective medium to evaluate the feasibility of in-situ reactivation.
 
 Meanwhile, we performed a preliminary investigation into the rehydration medium formulation for engineered strains. Using single-variable controlled experiments, we evaluated the effects of basal reactivation media (YNB-free SC selective medium versus isotonic PBS) and lysine supplementation (supplemented vs. non-supplemented groups) on strain reactivation and colorimetric performance.
 
-**Build and Test | Recording Reactivation over 113 Hours**
+3.2.1.2 Build and Test
 
 We constructed a time-lapse imaging system adapted for yeast culture conditions and performed continuous observation and recording of the reactivation process of cell-loaded paper strips for 113 hours. The time-lapse results are shown below:
 
 <figure class="results-timelapse"><iframe title="NKU-China: On-strip yeast reactivation over 113 hours (2026)" width="560" height="315" loading="lazy" allowfullscreen src="https://video.igem.org/videos/embed/fFXuDzig2DWKhQPFLW2mnM" allow="fullscreen" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" style="border: 0px;"></iframe><figcaption><strong>Video 3.2.1.</strong> Time-lapse recording of cell-loaded test-strip reactivation over 113 hours. <a href="https://video.igem.org/w/fFXuDzig2DWKhQPFLW2mnM">Watch on iGEM Video Universe</a>. Playback is pending iGEM moderation.</figcaption></figure>
 
-**Learn | Identifying Oxygen Availability as a Reactivation Constraint**
+#### 3.2.1.3 Learn {#results-stage-3-2-1-3 toc="3.2.1.3 Learn"}
 
-Based on the above experiments, we concluded that YNB-free SC medium outperformed isotonic PBS as the basal reactivation medium. Meanwhile, lysine supplementation was verified to substantially promote yeast color development. Accordingly, we adopted "**SC medium supplemented with lysine**" as the basal reactivation formulation for subsequent experiments.
+Based on the above experiments, we concluded that YNB-free SC medium outperformed isotonic PBS as the basal reactivation medium. Meanwhile, lysine supplementation was verified to substantially promote yeast color development. Accordingly, we adopted "SC medium supplemented with lysine" as the basal reactivation formulation for subsequent experiments.
 
-Reactivation experiments revealed that color development on test strips proceeds through three phases: **lag phase, coloration phase and plateau phase**. The prolonged lag phase fails to meet our requirement for rapid detection. Correlation analysis between strip geometry and coloration sites indicated that full submersion leads to severe internal hypoxia, which inhibits cell reactivation, extends the lag phase and reduces coloration rate. Therefore, efficient reactivation relies not only on nutrient supply but also sufficient aeration. This guides our next optimization: improving the **gas-liquid interface** via physical structural design to enhance oxygen availability and shorten the lag phase.
+Reactivation experiments revealed that color development on test strips proceeds through three phases: lag phase, coloration phase and plateau phase. The prolonged lag phase fails to meet our requirement for rapid detection. Correlation analysis between strip geometry and coloration sites indicated that full submersion leads to severe internal hypoxia, which inhibits cell reactivation, extends the lag phase and reduces coloration rate. Therefore, efficient reactivation relies not only on nutrient supply but also sufficient aeration. This guides our next optimization: improving the gas-liquid interface via physical structural design to enhance oxygen availability and shorten the lag phase.
 
-#### 3.2.2 Sub-cycle 2: Coloration Acceleration {#results-3-2-2 toc="Coloration"}
+#### 3.2.2 Sub-cycle 2: Coloration Acceleration {#results-3-2-2 toc="3.2.2 Sub-cycle 2: Coloration Acceleration"}
 
-**Design | Planning Medium Optimization for Faster Coloration**
+#### 3.2.2.1 Design {#results-stage-3-2-2-1 toc="3.2.2.1 Design"}
 
 To overcome the bottlenecks of slow coloration and low contrast, we systematically optimized the reactivation medium formulation. Targeting key limiting factors in the betaxanthin biosynthetic pathway, we designed controlled experiments across four dimensions: tyrosine concentration, glucose concentration and glucose-sucrose ratio, antioxidant protectants, and novel amine donors.
 
-**Build and Test | Comparing Medium Components and Color Development**
+3.2.2.2 Build and Test
 
-First, since tyrosine uptake is regulated by cell membrane permeability, we evaluated the synergistic effect of tyrosine concentration and surfactants, while retaining lysine to sustain its reactivation-promoting effect. Second, to balance metabolic flux between cell reactivation/growth and pigment synthesis, we modulated glucose concentration and the glucose-sucrose ratio. Third, to mitigate oxidative fading of betaxanthin, ascorbic acid was supplemented as an antioxidant protectant. Finally, **6-aminoindole (6-AI)** was tested as a novel amine donor to modify chromophores and improve visual contrast (Table 3.2.1).
+First, since tyrosine uptake is regulated by cell membrane permeability, we evaluated the synergistic effect of tyrosine concentration and surfactants, while retaining lysine to sustain its reactivation-promoting effect. Second, to balance metabolic flux between cell reactivation/growth and pigment synthesis, we modulated glucose concentration and the glucose-sucrose ratio. Third, to mitigate oxidative fading of betaxanthin, ascorbic acid was supplemented as an antioxidant protectant. Finally, 6-aminoindole (6-AI) was tested as a novel amine donor to modify chromophores and improve visual contrast (Table 1).
 
-*Table 3.2.1: the formulation-screening table is pending in the supplied manuscript.*
+Parallel tracking in multi-well plates revealed that these components exerted remarkable synergistic effects on promoting cell reactivation, shortening the lag phase and enhancing color contrast (Figure 1).
 
-Parallel tracking in multi-well plates revealed that these components exerted remarkable synergistic effects on promoting cell reactivation, shortening the lag phase and enhancing color contrast (Figure 3.2.1).
-
-*Figure 3.2.1: the coloration-acceleration comparison figure is pending in the supplied manuscript.*
-
-**Learn | Selecting a Reactivation and Coloration Formulation**
+#### 3.2.2.3 Learn {#results-stage-3-2-2-3 toc="3.2.2.3 Learn"}
 
 Through systematic screening of these multi-factor variables, we identified an optimized reactivation formulation supporting rapid coloration. Our results showed that YNB-amino-acid-free SC selective medium supplemented with 5% glucose provided optimal energy and carbon skeletons. The combined addition of lysine and tyrosine greatly boosted precursor uptake and cell reactivation. 6-aminoindole (6-AI), acting as a novel amine donor, improved the visual distinguishability of pigments. Moreover, trace Tween 80 surfactant enhanced liquid wettability on paper substrates and cell membrane permeability. This optimized formula resolved the slow reactivation bottleneck and substantially accelerated strip coloration. With this, we established a complete "efficient reactivation – rapid coloration" system, laying a solid foundation for subsequent integration with 3D-printed hardware packaging.
 
-#### 3.2.3 Sub-cycle 3: Hardware Integration for Productization {#results-3-2-3 toc="Hardware"}
+#### 3.2.3 Sub-cycle 3: Hardware integration for productization {#results-3-2-3 toc="3.2.3 Sub-cycle 3: Hardware integration for productization"}
 
-**Design | Planning a Holder for Oxygen Supply and Portability**
+#### 3.2.3.1 Design {#results-stage-3-2-3-1 toc="3.2.3.1 Design"}
 
 Previous experiments demonstrated that oxygen availability at the gas-liquid interface serves as the key bottleneck limiting coloration rate. To balance portability for on-site detection and stable oxygen supply, we designed a custom 3D-printed test strip holder. This hardware design addresses three core engineering requirements:
 
-**Thin liquid layer and oxygen diffusion**: Shallow liquid reservoirs and supporting platforms confine the test strip at the optimal gas-liquid interface to avoid hypoxia caused by full submersion.
+Thin liquid layer and oxygen diffusion: Shallow liquid reservoirs and supporting platforms confine the test strip at the optimal gas-liquid interface to avoid hypoxia caused by full submersion.
 
-**Evaporation control and semi-enclosed space**: A semi-closed chamber with micro air vents maintains internal humidity to suppress liquid evaporation while ensuring sufficient gas exchange.
+Evaporation control and semi-enclosed space: A semi-closed chamber with micro air vents maintains internal humidity to suppress liquid evaporation while ensuring sufficient gas exchange.
 
-**Mechanical fixation and microfluidic loading**: Combined inclined sample inlet channels and positioning grooves prevent the washing-off of freeze-dried cells during sample loading and avoid liquid overflow.
+Mechanical fixation and microfluidic loading: Combined inclined sample inlet channels and positioning grooves prevent the washing-off of freeze-dried cells during sample loading and avoid liquid overflow.
 
-**Build and Test | Fabricating and Evaluating the Printed Holder**
+3.2.3.2 Build and Test
 
-Guided by the above design objectives, we carried out hardware fabrication and functional tests. For 3D modeling and manufacturing, geometric models were built with CAD software. High-precision FDM 3D printing using PLA material was applied to fabricate the portable device, which consists of a base reservoir and a breathable top cover (Figure 3.2.2).
+Guided by the above design objectives, we carried out hardware fabrication and functional tests. For 3D modeling and manufacturing, geometric models were built with CAD software. High-precision FDM 3D printing using PLA material was applied to fabricate the portable device, which consists of a base reservoir and a breathable top cover (Figure 2).
 
 :::figure{scale=70}
 
-![Figure 3.2.2. Photograph of the 3D-printed test strip holder.](https://static.igem.wiki/teams/6303/wiki/v8-6/v86-b5b9b9256085-fig3-2-2.avif)
+![Figure 2. Photograph of the 3D-printed test strip holder](https://static.igem.wiki/teams/6303/wiki/v8-6/v86-b5b9b9256085-fig3-2-2.avif)
 
-**Figure 3.2.2.** Photograph of the 3D-printed test strip holder.
+Figure 2. Photograph of the 3D-printed test strip holder
 
 :::
 
 For functional performance validation, the cell-laden test strip was placed inside the holder, followed by reactivation medium loading. Tests demonstrated that this structure maintained the reactivation medium as a thin liquid layer of approximately 1 mm. Compared with open petri dishes, the sealed chamber reduced liquid evaporation rate by more than 60%. Meanwhile, the micro air vents on the top cover ensured adequate oxygen supply and greatly improved the uniformity of coloration on the strip.
 
-**Learn | Assessing Holder Performance and Remaining Validation Needs**
+#### 3.2.3.3 Learn {#results-stage-3-2-3-3 toc="3.2.3.3 Learn"}
 
 The 3D-printed strip holder addresses the physical constraint of full submersion by controlling liquid-layer thickness and the chamber microenvironment. These tests support further development of a portable yeast test-strip format. **Performance under agricultural sampling conditions and end-to-end sensing remain to be evaluated**.

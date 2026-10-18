@@ -4,9 +4,16 @@
  * alone; the script only adds motion. Landscape uses a 1600×900 canvas,
  * portrait (max-aspect-ratio: 4/5) a 900×1600 one. */
 .scene {
+  --scene-purple: var(--brand); /* existing NKU brand: #7e0c6e */
+  --scene-purple-accent: #a33a91;
   --u: calc(min(100vw, 100svh * 16 / 9) / 1600);
   --ty: var(--ty-d);
   position: relative; height: 180svh; background: var(--paper);
+}
+.scene__palette { position: absolute; pointer-events: none; }
+html[data-theme='dark'] .scene {
+  --scene-purple: #e6b4d9;
+  --scene-purple-accent: #d890c7;
 }
 .scene__stage {
   position: sticky; top: 0; height: 100svh; overflow: hidden; isolation: isolate;
@@ -31,6 +38,7 @@
   background-image: var(--atlas); background-repeat: no-repeat;
   transform: rotate(var(--r)) scale(var(--s)); opacity: var(--o);
   backface-visibility: hidden;
+  filter: url(#scene-nankai-purple);
 }
 .scene--live .scene__layer { will-change: transform, opacity; }
 .scene--noart .scene__set, .scene--noart .scene__floor { display: none; }
@@ -55,10 +63,10 @@
 }
 .scene__h1 {
   margin: 0; font-family: var(--font-display); font-weight: 600; font-size: var(--title-size-d, clamp(48px, 7.4vw, 124px));
-  line-height: .98; letter-spacing: -.02em; color: var(--iris-deep); text-wrap: balance;
+  line-height: .98; letter-spacing: -.02em; color: var(--scene-purple); text-wrap: balance;
   text-shadow: 0 0 18px var(--paper), 0 0 36px var(--paper);
 }
-.scene__h1 em { font-style: normal; color: var(--iris); }
+.scene__h1 em { font-style: normal; color: var(--scene-purple-accent); }
 .scene__pill { display: block; width: 76px; height: 8px; margin: 22px auto 0; border-radius: 99px; background: var(--amber); }
 .prose .scene-intro { margin: 0 0 2rem; font-size: clamp(18px, 1.6vw, 21px); line-height: 1.6; color: var(--ink-2); }
 

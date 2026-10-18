@@ -12,7 +12,7 @@
   "blocks": [
     {
       "_template": "heading",
-      "text": "DBTL-1: Heterologous Expression and Transmembrane Localization Verification of GPR2",
+      "text": "1 DBTL-1: Heterologous Expression and Transmembrane Localization Verification of GPR2",
       "level": 2,
       "attributes": "#dbtl-1-heterologous-expression-and-transmembrane-localization-verification-of-gpr2 toc=\"DBTL-1: Heterologous Expression and Transmembrane Localization Verification of GPR2\""
     },
@@ -22,13 +22,13 @@
     },
     {
       "_template": "heading",
-      "text": "The First Cycle",
+      "text": "1.1 The First Cycle",
       "level": 3,
       "attributes": "#the-first-cycle toc=\"The First Cycle\""
     },
     {
       "_template": "heading",
-      "text": "Design | Planning GPR2 Expression and Localization Tests",
+      "text": "1.1.1 Design",
       "level": 4,
       "attributes": "#design toc=\"Design | Planning GPR2 Expression and Localization Tests\""
     },
@@ -54,7 +54,7 @@
     },
     {
       "_template": "heading",
-      "text": "Build | Integrating the GPR2-sfGFP Expression Cassette",
+      "text": "1.1.2 Build",
       "level": 4,
       "attributes": "#build toc=\"Build | Integrating the GPR2-sfGFP Expression Cassette\""
     },
@@ -80,7 +80,7 @@
     },
     {
       "_template": "heading",
-      "text": "Test | Observing GPR2-sfGFP Fluorescence",
+      "text": "1.1.3 Test",
       "level": 4,
       "attributes": "#test toc=\"Test | Observing GPR2-sfGFP Fluorescence\""
     },
@@ -98,7 +98,7 @@
     },
     {
       "_template": "heading",
-      "text": "Learn | Identifying the Need for Localization Controls",
+      "text": "1.1.4 Learn",
       "level": 4,
       "attributes": "#learn toc=\"Learn | Identifying the Need for Localization Controls\""
     },
@@ -108,13 +108,13 @@
     },
     {
       "_template": "heading",
-      "text": "The Second Cycle",
+      "text": "1.2 The Second Cycle",
       "level": 3,
       "attributes": "#the-second-cycle toc=\"The Second Cycle\""
     },
     {
       "_template": "heading",
-      "text": "Design and Build | Preparing Cell-Wall and Membrane Staining Controls",
+      "text": "1.2.1 Design and Build",
       "level": 4,
       "attributes": "#design-and-build toc=\"Design and Build | Preparing Cell-Wall and Membrane Staining Controls\""
     },
@@ -132,7 +132,7 @@
     },
     {
       "_template": "heading",
-      "text": "Test | Comparing GFP with Cell-Wall and Membrane Signals",
+      "text": "1.2.2 Test",
       "level": 4,
       "attributes": "#test-2 toc=\"Test | Comparing GFP with Cell-Wall and Membrane Signals\""
     },
@@ -162,7 +162,7 @@
     },
     {
       "_template": "heading",
-      "text": "Learn | Assessing GPR2 Plasma-Membrane Localization",
+      "text": "1.2.3 Learn",
       "level": 4,
       "attributes": "#learn-2 toc=\"Learn | Assessing GPR2 Plasma-Membrane Localization\""
     },
@@ -182,7 +182,7 @@
     },
     {
       "_template": "heading",
-      "text": "DBTL-2: Engineering Construction of Ascaroside-Responsive Yeast Chassis",
+      "text": "2 DBTL-2: Engineering Construction of Ascaroside-Responsive Yeast Chassis",
       "level": 2,
       "attributes": "#dbtl-2-engineering-construction-of-ascaroside-responsive-yeast-chassis toc=\"DBTL-2: Engineering Construction of Ascaroside-Responsive Yeast Chassis\""
     },
@@ -192,13 +192,13 @@
     },
     {
       "_template": "heading",
-      "text": "The First Cycle",
+      "text": "2.1 The First Cycle",
       "level": 3,
       "attributes": "#the-first-cycle-2 toc=\"The First Cycle\""
     },
     {
       "_template": "heading",
-      "text": "Design | Planning Gal80 Knockout",
+      "text": "2.1.1 Design",
       "level": 4,
       "attributes": "#design-2 toc=\"Design | Planning Gal80 Knockout\""
     },
@@ -208,7 +208,7 @@
     },
     {
       "_template": "heading",
-      "text": "Build | Assembling the Gal80 Knockout Cassette",
+      "text": "2.1.2 Build",
       "level": 4,
       "attributes": "#build-2 toc=\"Build | Assembling the Gal80 Knockout Cassette\""
     },
@@ -226,7 +226,7 @@
     },
     {
       "_template": "heading",
-      "text": "Test | Verifying Gal80 Knockout Transformants",
+      "text": "2.1.3 Test",
       "level": 4,
       "attributes": "#test-3 toc=\"Test | Verifying Gal80 Knockout Transformants\""
     },
@@ -244,7 +244,7 @@
     },
     {
       "_template": "heading",
-      "text": "Learn | Advancing to Synthetic Transcription Factor Construction",
+      "text": "2.1.4 Learn",
       "level": 4,
       "attributes": "#learn-3 toc=\"Learn | Advancing to Synthetic Transcription Factor Construction\""
     },
@@ -254,7 +254,7 @@
     },
     {
       "_template": "heading",
-      "text": "The Second Cycle",
+      "text": "2.2 The Second Cycle",
       "level": 3,
       "attributes": "#the-second-cycle-2 toc=\"The Second Cycle\""
     },
@@ -264,7 +264,7 @@
     },
     {
       "_template": "heading",
-      "text": "Design | Planning STE12 Knockout and sTF Integration",
+      "text": "2.2.1 Design",
       "level": 4,
       "attributes": "#design-3 toc=\"Design | Planning STE12 Knockout and sTF Integration\""
     },
@@ -294,7 +294,7 @@
     },
     {
       "_template": "heading",
-      "text": "Build | Assembling STE12 Knockout and sTF Constructs",
+      "text": "2.2.2 Build",
       "level": 4,
       "attributes": "#build-3 toc=\"Build | Assembling STE12 Knockout and sTF Constructs\""
     },
@@ -336,7 +336,7 @@
     },
     {
       "_template": "heading",
-      "text": "Test | Checking STE12 Knockout Transformants",
+      "text": "2.2.3 Test",
       "level": 4,
       "attributes": "#test-4 toc=\"Test | Checking STE12 Knockout Transformants\""
     },
@@ -354,7 +354,7 @@
     },
     {
       "_template": "heading",
-      "text": "Learn | Switching to CRISPR-Cas9 Gene Editing",
+      "text": "2.2.4 Learn",
       "level": 4,
       "attributes": "#learn-4 toc=\"Learn | Switching to CRISPR-Cas9 Gene Editing\""
     },
@@ -364,7 +364,7 @@
     },
     {
       "_template": "heading",
-      "text": "The Third Cycle",
+      "text": "2.3 The Third Cycle",
       "level": 3,
       "attributes": "#the-third-cycle toc=\"The Third Cycle\""
     },
@@ -374,7 +374,7 @@
     },
     {
       "_template": "heading",
-      "text": "Design | Planning Betaxanthin Expression Verification",
+      "text": "2.3.1 Design",
       "level": 4,
       "attributes": "#design-4 toc=\"Design | Planning Betaxanthin Expression Verification\""
     },
@@ -384,7 +384,7 @@
     },
     {
       "_template": "heading",
-      "text": "Build | Troubleshooting the Betaxanthin Expression Plasmid",
+      "text": "2.3.2 Build",
       "level": 4,
       "attributes": "#build-4 toc=\"Build | Troubleshooting the Betaxanthin Expression Plasmid\""
     },
@@ -406,7 +406,7 @@
     },
     {
       "_template": "heading",
-      "text": "Test | Examining Gene Integration and Yellow Coloration",
+      "text": "2.3.3 Test",
       "level": 4,
       "attributes": "#test-5 toc=\"Test | Examining Gene Integration and Yellow Coloration\""
     },
@@ -436,7 +436,7 @@
     },
     {
       "_template": "heading",
-      "text": "The Fourth Cycle",
+      "text": "2.4 The Fourth Cycle",
       "level": 3,
       "attributes": "#the-fourth-cycle toc=\"The Fourth Cycle\""
     },
@@ -454,7 +454,7 @@
     },
     {
       "_template": "heading",
-      "text": "Design | Planning Cas9, sgRNA and Donor DNA Constructs",
+      "text": "2.4.1 Design",
       "level": 4,
       "attributes": "#design-5 toc=\"Design | Planning Cas9, sgRNA and Donor DNA Constructs\""
     },
@@ -464,7 +464,7 @@
     },
     {
       "_template": "heading",
-      "text": "Build | Assembling CRISPR-Cas9 Editing Components",
+      "text": "2.4.2 Build",
       "level": 4,
       "attributes": "#build-5 toc=\"Build | Assembling CRISPR-Cas9 Editing Components\""
     },
@@ -522,7 +522,7 @@
     },
     {
       "_template": "text",
-      "body": "Finally, we constructed the corresponding donor DNA. The sTF fragment was amplified from plasmid `pRS315sTF` ([https://registry.igem.org/parts/bba26iotmof](https://registry.igem.org/parts/bba%E2%80%9126iotmof)). The gene fragment of betaxanthin synthase induced by the bidirectional Gal1/10 promoter ([https://registry.igem.org/parts/bba2697laqw](https://registry.igem.org/parts/bba%E2%80%912697laqw)) was first amplified from plasmid `pRS315MjDODBvCYP76AD5`, followed by DoubleJoint PCR amplification, using the same method as our previous fragment construction (Figure 7)."
+      "body": "Finally, we constructed the corresponding donor DNA. The sTF fragment was amplified from plasmid pRS315‑sTF (https://registry.igem.org/parts/bba‑26iotmof). The gene fragment of betaxanthin synthase induced by the bidirectional Gal1/10 promoter (https://registry.igem.org/parts/bba‑2697laqw) was first amplified from plasmid pRS315‑MjDOD‑BvCYP76AD5, followed by Double‑Joint PCR amplification, using the same method as our previous fragment construction (Figure 7)."
     },
     {
       "_template": "image",
@@ -554,7 +554,7 @@
     },
     {
       "_template": "heading",
-      "text": "Test | Verifying Cas9 Transformation and Genome Editing",
+      "text": "2.4.3 Test",
       "level": 4,
       "attributes": "#test-6 toc=\"Test | Verifying Cas9 Transformation and Genome Editing\""
     },
@@ -600,11 +600,15 @@
     },
     {
       "_template": "text",
-      "body": "Finally, we co-transformed the `p426-SNR52p-gSTE2-SUP4t` plasmid and linearized `pRS315-TEF1p-GPR2` plasmid. The *GPR2* gene was successfully recombined into the *STE2* locus."
+      "body": "Finally, we co-transformed the p426-SNR52p-gSTE2-SUP4t plasmid and linearized pRS315-TEF1p-GPR2 plasmid. The GPR2 gene was successfully recombined into the STE2 locus (Figure 13)."
+    },
+    {
+      "_template": "text",
+      "body": "Figure 13. Schematic diagram of GPR2 transformation (a) and transformant validation (b).（占位）"
     },
     {
       "_template": "heading",
-      "text": "Learn | Advancing to GPR2 Mutant Characterization",
+      "text": "2.4.4 Learn",
       "level": 4,
       "attributes": "#learn-5 toc=\"Learn | Advancing to GPR2 Mutant Characterization\""
     },
@@ -614,19 +618,19 @@
     },
     {
       "_template": "heading",
-      "text": "The Fifth Cycle",
+      "text": "2.5 The Fifth Cycle",
       "level": 3,
       "attributes": "#the-fifth-cycle toc=\"The Fifth Cycle\""
     },
     {
       "_template": "heading",
-      "text": "Design | Planning GPR2 Mutant Strain Construction",
+      "text": "2.5.1 Design",
       "level": 4,
       "attributes": "#design-6 toc=\"Design | Planning GPR2 Mutant Strain Construction\""
     },
     {
       "_template": "text",
-      "body": "Based on the results from previous cycles and dry lab, we still used one-step cloning to construct plasmids for transformation (Figure 1). Strain `NKU-Y06` ([Wet Lab — Experiments — Strain Construction](/experiments/#strain-construction)) was utilized for genetic modification."
+      "body": "Based on the results from previous cycles and dry lab, we still used one-step cloning to construct plasmids for transformation (Figure 1). Strain NKU-Y06 (Wet Lab-Experiments-Strain Construction) was utilized for genetic modification."
     },
     {
       "_template": "image",
@@ -638,7 +642,7 @@
     },
     {
       "_template": "heading",
-      "text": "Build and Test | Constructing and Verifying GPR2 Mutant Plasmids",
+      "text": "2.5.2 Build and Test",
       "level": 4,
       "attributes": "#build-and-test toc=\"Build and Test | Constructing and Verifying GPR2 Mutant Plasmids\""
     },
@@ -656,11 +660,15 @@
     },
     {
       "_template": "text",
-      "body": "Subsequently, we mixed the `p426-SNR52p-gSTE2-SUP4t` plasmid with each of the two plasmids mentioned above and co-transformed them into strain `NKU-Y06`. The recombination locus was identical to that used for GPR2 knock-in. After transformant validation, we successfully obtained two strains carrying GPR2 mutants."
+      "body": "Subsequently, we mixed the p426-SNR52p-gSTE2-SUP4t plasmid with each of the two plasmids mentioned above and co-transformed them into strain NKU-Y06. The recombination locus was identical to that used for GPR2 knock-in. After transformant validation, we successfully obtained two strains carrying GPR2 mutants (Figure 3)."
+    },
+    {
+      "_template": "text",
+      "body": "Figure 3. Transformant validation of GPR2 (a), GPR2-N84V (b), and GPR2-V368R (c).（占位）"
     },
     {
       "_template": "heading",
-      "text": "Learn | Identifying the Need for Test-Strip Productization",
+      "text": "2.5.3 Learn",
       "level": 4,
       "attributes": "#learn-6 toc=\"Learn | Identifying the Need for Test-Strip Productization\""
     },
@@ -702,31 +710,29 @@
     },
     {
       "_template": "text",
-      "body": "<div id=\"the-first-cycle-test-strip-formulation-processing\" aria-hidden=\"true\"></div>"
+      "body": "<span id=\"dbtl-3-test-strip-development-and-productization\" aria-hidden=\"true\"></span>\n<span id=\"results-3-1\" aria-hidden=\"true\"></span>\n<span id=\"results-3-1-1\" aria-hidden=\"true\"></span>\n<span id=\"results-3-1-2\" aria-hidden=\"true\"></span>\n<span id=\"results-3-1-3\" aria-hidden=\"true\"></span>\n<span id=\"results-3-2\" aria-hidden=\"true\"></span>\n<span id=\"results-3-2-1\" aria-hidden=\"true\"></span>\n<span id=\"results-3-2-2\" aria-hidden=\"true\"></span>\n<span id=\"results-3-2-3\" aria-hidden=\"true\"></span>"
     },
     {
       "_template": "heading",
+      "text": "3.1 The First Cycle: Test-Strip Formulation & Processing",
       "level": 3,
-      "text": "3.1 Test-Strip Formulation and Processing",
-      "attributes": "#results-3-1 toc=\"3.1 Formulation\""
+      "attributes": "#results-3-1 toc=\"3.1 The First Cycle: Test-Strip Formulation & Processing\""
     },
     {
       "_template": "text",
-      "body": "To create an accessible, rapid, and low-cost live-cell test strip, we developed a **standardized, transferable workflow** for yeast cell immobilization and freeze-drying. This major cycle comprises three sub-iterative DBTL cycles: **Substrate Selection, Elution Method Refinement & Final Substrate Screening, and Surface Modification & Spotting Optimization**."
+      "body": "To create an accessible, rapid, and low-cost live-cell test strip, we developed a standardized, transferable workflow for yeast cell immobilization and freeze-drying. This major cycle comprises three sub-iterative DBTL cycles: Substrate Selection, Surface Modification & Spotting Optimization, and Elution Method Refinement."
     },
     {
       "_template": "heading",
-      "level": 4,
       "text": "3.1.1 Sub-cycle 1: Preliminary Substrate Screening",
-      "attributes": "#results-3-1-1 toc=\"Substrate screening\""
+      "level": 4,
+      "attributes": "#results-3-1-1 toc=\"3.1.1 Sub-cycle 1: Preliminary Substrate Screening\""
     },
     {
-      "_template": "text",
-      "body": "<div id=\"sub-cycle-1-substrate-selection\" aria-hidden=\"true\"></div>"
-    },
-    {
-      "_template": "text",
-      "body": "**Design | Defining Substrate Selection Criteria**"
+      "_template": "heading",
+      "text": "3.1.1.1 Design",
+      "level": 4,
+      "attributes": "#results-stage-3-1-1-1 toc=\"3.1.1.1 Design\""
     },
     {
       "_template": "text",
@@ -738,7 +744,7 @@
     },
     {
       "_template": "text",
-      "body": "**Build and Test | Comparing Cell Recovery Across Substrates**"
+      "body": "3.1.1.2 Build and Test"
     },
     {
       "_template": "text",
@@ -746,13 +752,14 @@
     },
     {
       "_template": "datatable",
-      "title": "Table 3.1.1. Substrate properties and preparation performance",
-      "csv": "Paper Type,Cell Recovery,Performance Characteristics\nQualitative filter paper,8%,\"Easy to cut, structurally stable, relatively uniform liquid absorption\"\nWeighing paper,27%,\"Highly hydrophobic surface, poor liquid wettability; bulges form after freeze-drying\"\nLens cleaning paper,3%,\"Extremely thin and fragile, inconvenient for handling, poor cell-loading capacity\"\nLaboratory tissue,10%,Poor homogeneity and structural consistency; difficult to standardize specifications\n",
-      "caption": "Values reproduced from the supplied Results 2.0 manuscript."
+      "title": "Table 1. Substrate properties and preparation performance",
+      "csv": "Paper Type,Cell Recovery,Performance Characteristics\nQualitative filter paper,8%,\"Easy to cut, structurally stable, relatively uniform liquid absorption\"\nWeighing paper,27%,\"Highly hydrophobic surface, poor liquid wettability; bulges form after freeze-drying\"\nLens cleaning paper,3%,\"Extremely thin and fragile, inconvenient for handling, poor cell-loading capacity\"\nLaboratory tissue,10%,Poor homogeneity and structural consistency; difficult to standardize specifications\n"
     },
     {
-      "_template": "text",
-      "body": "**Learn | Retaining Filter Paper and Revising the Recovery Assay**"
+      "_template": "heading",
+      "text": "3.1.2.3 Learn",
+      "level": 4,
+      "attributes": "#results-stage-3-1-2-3 toc=\"3.1.2.3 Learn\""
     },
     {
       "_template": "text",
@@ -760,33 +767,31 @@
     },
     {
       "_template": "text",
-      "body": "Furthermore, since the recovery efficiency of eluted cells is affected by substrate adsorption capacity, evaluating cell recovery solely by **colony counting introduces bias**. Therefore, we will optimize the elution method in the next cycle."
+      "body": "Furthermore, since the recovery efficiency of eluted cells is affected by substrate adsorption capacity, evaluating cell recovery solely by colony counting introduces bias. Therefore, we will optimize the elution method in the next cycle."
     },
     {
       "_template": "heading",
+      "text": "3.1.2 Sub-cycle 2: Elution Optimization & Final Substrate Screening",
       "level": 4,
-      "text": "3.1.2 Sub-cycle 2: Elution Optimization and Final Substrate Screening",
-      "attributes": "#results-3-1-2 toc=\"Elution and substrate\""
+      "attributes": "#results-3-1-2 toc=\"3.1.2 Sub-cycle 2: Elution Optimization & Final Substrate Screening\""
+    },
+    {
+      "_template": "heading",
+      "text": "3.1.2.1 Design",
+      "level": 4,
+      "attributes": "#results-stage-3-1-2-1 toc=\"3.1.2.1 Design\""
     },
     {
       "_template": "text",
-      "body": "<div id=\"sub-cycle-3-elution-method-refinement-final-substrate-selection\" aria-hidden=\"true\"></div>"
+      "body": "To eliminate interference from substrate adsorption on measured cell recovery, we redesigned the elution protocol. Isotonic PBS buffer supplemented with 0.05% Tween 80 was used as eluent to reduce non-specific binding between cells and substrate fibers. Meanwhile, 3 mm glass grinding beads were introduced for mechanical disruption to further improve elution efficiency."
     },
     {
       "_template": "text",
-      "body": "**Design | Optimizing Elution and Expanding Substrate Candidates**"
+      "body": "In this cycle, we used qualitative filter paper as the control group and introduced three new candidate substrates: thin glass fiber filter paper (Whatman™ GF/A), thick glass fiber filter paper (Whatman™ GF/B), and cellulose acetate filter paper. The improved elution assay was applied for rigorous screening."
     },
     {
       "_template": "text",
-      "body": "To eliminate interference from substrate adsorption on measured cell recovery, we redesigned the elution protocol. Isotonic PBS buffer supplemented with **0.05% Tween 80** was used as eluent to reduce non-specific binding between cells and substrate fibers. Meanwhile, 3 mm glass grinding beads were introduced for mechanical disruption to further improve elution efficiency."
-    },
-    {
-      "_template": "text",
-      "body": "In this cycle, we used qualitative filter paper as the control group and introduced three new candidate substrates: thin glass fiber filter paper (Whatman™ GF/A), thick glass fiber filter paper (**Whatman™ GF/B**), and cellulose acetate filter paper. The improved elution assay was applied for rigorous screening."
-    },
-    {
-      "_template": "text",
-      "body": "**Build and Test | Evaluating Adsorption-Corrected Cell Recovery**"
+      "body": "3.1.2.2 Build and Test"
     },
     {
       "_template": "text",
@@ -794,19 +799,18 @@
     },
     {
       "_template": "datatable",
-      "title": "Table 3.1.2. Initial elution efficiency and substrate adsorption correction factors",
-      "csv": "Metrics,Control,GF/A,GF/B,Cellulose acetate\nCell recovery,100%,76%,88%,50%\nAdsorption correction factor,1,0.76,0.88,0.5\n",
-      "caption": "Values reproduced from the supplied Results 2.0 manuscript."
+      "title": "Table 2. Initial elution efficiency and substrate adsorption correction factors",
+      "csv": "Metrics,Control,GF/A,GF/B,Cellulose acetate\nCell recovery,100%,76%,88%,50%\nAdsorption correction factor,1,0.76,0.88,0.5\n"
     },
     {
       "_template": "text",
-      "body": "Next, we prepared freeze-dried test strip samples with these newly introduced substrates. A copper sulfate solution wicking test was performed to independently characterize their water absorption and liquid-holding capacity qualitatively (Figure 3.1.1)."
+      "body": "Next, we prepared freeze-dried test strip samples with these newly introduced substrates. A copper sulfate solution wicking test was performed to independently characterize their water absorption and liquid-holding capacity qualitatively (Figure 1)."
     },
     {
       "_template": "image",
       "src": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-f41bd79ce2d8-fig3-1-1.avif",
-      "alt": "Figure 3.1.1. Water-absorption test.",
-      "body": "**Figure 3.1.1.** Water-absorption test.",
+      "alt": "Figure 1. Water-absorption test",
+      "body": "Figure 1. Water-absorption test",
       "layout": "full",
       "imageWidth": "wide",
       "scale": "70"
@@ -817,13 +821,14 @@
     },
     {
       "_template": "datatable",
-      "title": "Table 3.1.3. Adsorption-corrected recovery and substrate performance",
-      "csv": "Paper Type,Cell Recovery,CV,Key Performance Characteristics\nGF/B,3.4%,86.6%,\"Slightly low toughness, strong liquid-holding capacity, remains flat without deformation after freeze-drying\"\nGF/A,23.7%,65.6%,\"Slightly low toughness, moderate liquid-holding capacity\"\nCellulose acetate,38.0%,55.0%,\"Brittle, prone to static electricity, weak liquid-holding capacity\"\nQualitative filter paper,-,-,\"Easy to cut, high toughness, moderate liquid-holding capacity\"\n",
-      "caption": "Values reproduced from the supplied Results 2.0 manuscript."
+      "title": "Table 3. Optimized elution method and elution rate benchmark",
+      "csv": "Paper Type,Cell Recovery,CV,Key Performance Characteristics\nGF/B,3.4%,86.6%,\"Slightly low toughness, strong liquid-holding capacity, remains flat without deformation after freeze-drying\"\nGF/A,23.7%,65.6%,\"Slightly low toughness, moderate liquid-holding capacity\"\nCellulose acetate,38.0%,55.0%,\"Brittle, prone to static electricity, weak liquid-holding capacity\"\nQualitative filter paper,-,-,\"Easy to cut, high toughness, moderate liquid-holding capacity\"\n"
     },
     {
-      "_template": "text",
-      "body": "**Learn | Selecting GF/B and Identifying Spotting Constraints**"
+      "_template": "heading",
+      "text": "3.1.2.3 Learn",
+      "level": 4,
+      "attributes": "#results-stage-3-1-2-3-2 toc=\"3.1.2.3 Learn\""
     },
     {
       "_template": "text",
@@ -835,46 +840,44 @@
     },
     {
       "_template": "heading",
+      "text": "3.1.3 Sub-cycle 2: Surface Modification & Spotting Optimization",
       "level": 4,
-      "text": "3.1.3 Sub-cycle 3: Surface Modification and Spotting Optimization",
-      "attributes": "#results-3-1-3 toc=\"Surface and spotting\""
+      "attributes": "#results-3-1-3 toc=\"3.1.3 Sub-cycle 2: Surface Modification & Spotting Optimization\""
+    },
+    {
+      "_template": "heading",
+      "text": "3.1.3.1 Design",
+      "level": 4,
+      "attributes": "#results-stage-3-1-3-1 toc=\"3.1.3.1 Design\""
     },
     {
       "_template": "text",
-      "body": "<div id=\"sub-cycle-2-surface-modification-spotting-optimization\" aria-hidden=\"true\"></div>"
+      "body": "To solve the problems of lateral wicking and uneven cell distribution, we aimed to construct distinct hydrophilic/hydrophobic boundaries within the substrate. We proposed using adhesive labels as masking templates. By vapor deposition of ergo.® 5300 instant adhesive, locally defined circular hydrophilic spotting zones were fabricated on filter paper."
     },
     {
       "_template": "text",
-      "body": "**Design | Planning Surface Barriers and Protectant Optimization**"
+      "body": "To reduce uneven distribution caused by cell sedimentation, we optimized the protectant formulation. Sodium alginate was introduced to increase viscosity; trehalose and glycerol provided more reliable lyoprotection. Sodium glutamate was supplemented for antioxidation and cell membrane stabilization. Mannitol replaced sucrose to fill the sodium alginate matrix after freeze-drying and prevent powdering. Furthermore, to address large spotting variability arising from high-viscosity protectant residue in pipette tips, we designed a vacuum filtration-assisted spotting device."
     },
     {
       "_template": "text",
-      "body": "To solve the problems of lateral wicking and uneven cell distribution, we aimed to construct distinct **hydrophilic/hydrophobic boundaries** within the substrate. We proposed using adhesive labels as masking templates. By vapor deposition of ergo.® 5300 instant adhesive, locally defined circular hydrophilic spotting zones were fabricated on filter paper."
+      "body": "3.1.3.2 Build and Test"
     },
     {
       "_template": "text",
-      "body": "To reduce uneven distribution caused by cell sedimentation, we optimized the protectant formulation. **Sodium alginate** was introduced to increase viscosity; trehalose and glycerol provided more reliable lyoprotection. Sodium glutamate was supplemented for antioxidation and cell membrane stabilization. Mannitol replaced sucrose to fill the sodium alginate matrix after freeze-drying and prevent powdering. Furthermore, to address large spotting variability arising from high-viscosity protectant residue in pipette tips, we designed a vacuum filtration-assisted spotting device."
-    },
-    {
-      "_template": "text",
-      "body": "**Build and Test | Evaluating Surface Treatment and Freeze-Drying**"
-    },
-    {
-      "_template": "text",
-      "body": "To effectively suppress lateral liquid spreading, we developed a reusable hydrophobic coating fumigation device. Using masking templates and cyanoacrylate (adhesive) vapor fumigation, we successfully fabricated well-defined 5 mm hydrophilic detection zones surrounded by outer hydrophobic barriers on filter paper (Figure 3.1.2)."
+      "body": "To effectively suppress lateral liquid spreading, we developed a reusable hydrophobic coating fumigation device. Using masking templates and cyanoacrylate (adhesive) vapor fumigation, we successfully fabricated well-defined 5 mm hydrophilic detection zones surrounded by outer hydrophobic barriers on filter paper (Figure 2)."
     },
     {
       "_template": "image",
       "src": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-06c56594b1d7-fig3-1-2.avif",
-      "alt": "Figure 3.1.2. Fumigation coating setup (a), hydrophobicity demonstration (b), and circular hydrophilic zone (c).",
-      "body": "**Figure 3.1.2.** Fumigation coating setup (a), hydrophobicity demonstration (b), and circular hydrophilic zone (c).",
+      "alt": "Figure 2. Fumigation coating setup (a), hydrophobicity demonstration (b), and circular hydrophilic zone (c)",
+      "body": "Figure 2. Fumigation coating setup (a), hydrophobicity demonstration (b), and circular hydrophilic zone (c)",
       "layout": "full",
       "imageWidth": "wide",
       "scale": "85"
     },
     {
       "_template": "text",
-      "body": "To verify the protective effect of the modified protectant, we performed dehydration kinetics and full-process freeze-drying tests. The results demonstrated that the new sodium-alginate-based protectant forms an intact thin-film matrix after drying to effectively prevent collapse. Its gentle and uniform dehydration rate avoids physical damage to yeast cell membranes caused by drastic water loss, thereby greatly improving the structural integrity and viability of cells during lyophilization (Figure 3.1.3)."
+      "body": "To verify the protective effect of the modified protectant, we performed dehydration kinetics and full-process freeze-drying tests. The results demonstrated that the new sodium-alginate-based protectant forms an intact thin-film matrix after drying to effectively prevent collapse. Its gentle and uniform dehydration rate avoids physical damage to yeast cell membranes caused by drastic water loss, thereby greatly improving the structural integrity and viability of cells during lyophilization (Figure 3)."
     },
     {
       "_template": "gallery",
@@ -885,37 +888,39 @@
       "right": "https://static.igem.wiki/teams/6303/wiki/v8-7/v87-86797ed4c424-fig3-1-3b-hd.avif",
       "rightAlt": "Water-loss rate curve.",
       "rightCaption": "**(b)** Water-loss rate curve.",
-      "afterBody": "**Figure 3.1.3.** Rapid water-loss test (a) and water-loss rate curve (b)."
+      "afterBody": "Figure 3.1.3. Rapid water loss test (a) and water loss rate curve (b)"
     },
     {
       "_template": "text",
-      "body": "In addition, we designed and built a custom **vacuum filtration spotting fixture**. This device rapidly draws the high-viscosity protectant suspension into the substrate. It greatly improves spotting efficiency and quantitative precision, and enables standardized control of cell loading per strip by accurate adjustment of sample volume (Figure 3.1.4)."
+      "body": "In addition, we designed and built a custom vacuum filtration spotting fixture. This device rapidly draws the high-viscosity protectant suspension into the substrate. It greatly improves spotting efficiency and quantitative precision, and enables standardized control of cell loading per strip by accurate adjustment of sample volume (Figure 4)."
     },
     {
       "_template": "image",
       "src": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-48ee38c731e9-fig3-1-4.avif",
-      "alt": "Figure 3.1.4. Photograph of the vacuum-assisted spotting setup.",
-      "body": "**Figure 3.1.4.** Photograph of the vacuum-assisted spotting setup.",
+      "alt": "Figure 4. Schematic of the spotting process",
+      "body": "Figure 4. Schematic of the spotting process",
       "layout": "full",
       "imageWidth": "wide",
       "scale": "70"
     },
     {
       "_template": "text",
-      "body": "Combined with all the above methods and techniques, we fabricated a batch of cell-loaded freeze-dried test strips available for subsequent experiments (Figure 3.1.5)."
+      "body": "Combined with all the above methods and techniques, we fabricated a batch of cell-loaded freeze-dried test strips available for subsequent experiments (Figure 5)."
     },
     {
       "_template": "image",
       "src": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-ea1a49677396-fig3-1-5.avif",
-      "alt": "Figure 3.1.5. Cell-loaded freeze-dried test strips.",
-      "body": "**Figure 3.1.5.** Cell-loaded freeze-dried test strips.",
+      "alt": "Figure 5. Demonstration of cell-loaded test strips",
+      "body": "Figure 5. Demonstration of cell-loaded test strips",
       "layout": "full",
       "imageWidth": "wide",
       "scale": "70"
     },
     {
-      "_template": "text",
-      "body": "**Learn | Combining Surface Treatment, Protectant and Spotting Improvements**"
+      "_template": "heading",
+      "text": "3.1.3.3 Learn",
+      "level": 4,
+      "attributes": "#results-stage-3-1-3-3 toc=\"3.1.3.3 Learn\""
     },
     {
       "_template": "text",
@@ -923,27 +928,29 @@
     },
     {
       "_template": "text",
-      "body": "Through these three sub-cycles, we established a **standardized, highly reproducible workflow** covering substrate pretreatment, protectant preparation and semi-automated spotting loading. Viable freeze-dried yeast test strips as shown in Figure 3.1.5 were successfully fabricated."
+      "body": "Through these three sub-cycles, we established a standardized, highly reproducible workflow covering substrate pretreatment, protectant preparation and semi-automated spotting loading. Viable freeze-dried yeast test strips as shown in Figure 5 were successfully fabricated."
     },
     {
       "_template": "heading",
+      "text": "3.2 The Second Cycle: On-Strip Color Development & Productization",
       "level": 3,
-      "text": "3.2 On-Strip Color Development and Productization",
-      "attributes": "#results-3-2 toc=\"3.2 Color development\""
+      "attributes": "#results-3-2 toc=\"3.2 The Second Cycle: On-Strip Color Development & Productization\""
     },
     {
       "_template": "text",
-      "body": "After the cell immobilization procedure, we moved forward to the **in-situ reactivation and signal output** stage on test strips. Using engineered chromogenic yeast strains, this major DBTL cycle addressed three progressive bottlenecks sequentially: reactivation condition optimization, coloration rate enhancement, and hardware productization and packaging."
+      "body": "After the cell immobilization procedure, we moved forward to the in-situ reactivation and signal output stage on test strips. Using engineered chromogenic yeast strains, this major DBTL cycle addressed three progressive bottlenecks sequentially: reactivation condition optimization, coloration rate enhancement, and hardware productization and packaging."
     },
     {
       "_template": "heading",
-      "level": 4,
       "text": "3.2.1 Sub-cycle 1: Reactivation Optimization",
-      "attributes": "#results-3-2-1 toc=\"Reactivation\""
+      "level": 4,
+      "attributes": "#results-3-2-1 toc=\"3.2.1 Sub-cycle 1: Reactivation Optimization\""
     },
     {
-      "_template": "text",
-      "body": "**Design | Planning Reactivation Conditions and Medium Screening**"
+      "_template": "heading",
+      "text": "3.2.1.1 Design",
+      "level": 4,
+      "attributes": "#results-stage-3-2-1-1 toc=\"3.2.1.1 Design\""
     },
     {
       "_template": "text",
@@ -955,7 +962,7 @@
     },
     {
       "_template": "text",
-      "body": "**Build and Test | Recording Reactivation over 113 Hours**"
+      "body": "3.2.1.2 Build and Test"
     },
     {
       "_template": "text",
@@ -966,26 +973,30 @@
       "body": "<figure class=\"results-timelapse\"><iframe title=\"NKU-China: On-strip yeast reactivation over 113 hours (2026)\" width=\"560\" height=\"315\" loading=\"lazy\" allowfullscreen src=\"https://video.igem.org/videos/embed/fFXuDzig2DWKhQPFLW2mnM\" allow=\"fullscreen\" sandbox=\"allow-same-origin allow-scripts allow-popups allow-forms\" style=\"border: 0px;\"></iframe><figcaption><strong>Video 3.2.1.</strong> Time-lapse recording of cell-loaded test-strip reactivation over 113 hours. <a href=\"https://video.igem.org/w/fFXuDzig2DWKhQPFLW2mnM\">Watch on iGEM Video Universe</a>. Playback is pending iGEM moderation.</figcaption></figure>"
     },
     {
-      "_template": "text",
-      "body": "**Learn | Identifying Oxygen Availability as a Reactivation Constraint**"
+      "_template": "heading",
+      "text": "3.2.1.3 Learn",
+      "level": 4,
+      "attributes": "#results-stage-3-2-1-3 toc=\"3.2.1.3 Learn\""
     },
     {
       "_template": "text",
-      "body": "Based on the above experiments, we concluded that YNB-free SC medium outperformed isotonic PBS as the basal reactivation medium. Meanwhile, lysine supplementation was verified to substantially promote yeast color development. Accordingly, we adopted \"**SC medium supplemented with lysine**\" as the basal reactivation formulation for subsequent experiments."
+      "body": "Based on the above experiments, we concluded that YNB-free SC medium outperformed isotonic PBS as the basal reactivation medium. Meanwhile, lysine supplementation was verified to substantially promote yeast color development. Accordingly, we adopted \"SC medium supplemented with lysine\" as the basal reactivation formulation for subsequent experiments."
     },
     {
       "_template": "text",
-      "body": "Reactivation experiments revealed that color development on test strips proceeds through three phases: **lag phase, coloration phase and plateau phase**. The prolonged lag phase fails to meet our requirement for rapid detection. Correlation analysis between strip geometry and coloration sites indicated that full submersion leads to severe internal hypoxia, which inhibits cell reactivation, extends the lag phase and reduces coloration rate. Therefore, efficient reactivation relies not only on nutrient supply but also sufficient aeration. This guides our next optimization: improving the **gas-liquid interface** via physical structural design to enhance oxygen availability and shorten the lag phase."
+      "body": "Reactivation experiments revealed that color development on test strips proceeds through three phases: lag phase, coloration phase and plateau phase. The prolonged lag phase fails to meet our requirement for rapid detection. Correlation analysis between strip geometry and coloration sites indicated that full submersion leads to severe internal hypoxia, which inhibits cell reactivation, extends the lag phase and reduces coloration rate. Therefore, efficient reactivation relies not only on nutrient supply but also sufficient aeration. This guides our next optimization: improving the gas-liquid interface via physical structural design to enhance oxygen availability and shorten the lag phase."
     },
     {
       "_template": "heading",
-      "level": 4,
       "text": "3.2.2 Sub-cycle 2: Coloration Acceleration",
-      "attributes": "#results-3-2-2 toc=\"Coloration\""
+      "level": 4,
+      "attributes": "#results-3-2-2 toc=\"3.2.2 Sub-cycle 2: Coloration Acceleration\""
     },
     {
-      "_template": "text",
-      "body": "**Design | Planning Medium Optimization for Faster Coloration**"
+      "_template": "heading",
+      "text": "3.2.2.1 Design",
+      "level": 4,
+      "attributes": "#results-stage-3-2-2-1 toc=\"3.2.2.1 Design\""
     },
     {
       "_template": "text",
@@ -993,19 +1004,21 @@
     },
     {
       "_template": "text",
-      "body": "**Build and Test | Comparing Medium Components and Color Development**"
+      "body": "3.2.2.2 Build and Test"
     },
     {
       "_template": "text",
-      "body": "First, since tyrosine uptake is regulated by cell membrane permeability, we evaluated the synergistic effect of tyrosine concentration and surfactants, while retaining lysine to sustain its reactivation-promoting effect. Second, to balance metabolic flux between cell reactivation/growth and pigment synthesis, we modulated glucose concentration and the glucose-sucrose ratio. Third, to mitigate oxidative fading of betaxanthin, ascorbic acid was supplemented as an antioxidant protectant. Finally, **6-aminoindole (6-AI)** was tested as a novel amine donor to modify chromophores and improve visual contrast (Table 3.2.1).\n\n*Table 3.2.1: the formulation-screening table is pending in the supplied manuscript.*"
+      "body": "First, since tyrosine uptake is regulated by cell membrane permeability, we evaluated the synergistic effect of tyrosine concentration and surfactants, while retaining lysine to sustain its reactivation-promoting effect. Second, to balance metabolic flux between cell reactivation/growth and pigment synthesis, we modulated glucose concentration and the glucose-sucrose ratio. Third, to mitigate oxidative fading of betaxanthin, ascorbic acid was supplemented as an antioxidant protectant. Finally, 6-aminoindole (6-AI) was tested as a novel amine donor to modify chromophores and improve visual contrast (Table 1)."
     },
     {
       "_template": "text",
-      "body": "Parallel tracking in multi-well plates revealed that these components exerted remarkable synergistic effects on promoting cell reactivation, shortening the lag phase and enhancing color contrast (Figure 3.2.1).\n\n*Figure 3.2.1: the coloration-acceleration comparison figure is pending in the supplied manuscript.*"
+      "body": "Parallel tracking in multi-well plates revealed that these components exerted remarkable synergistic effects on promoting cell reactivation, shortening the lag phase and enhancing color contrast (Figure 1)."
     },
     {
-      "_template": "text",
-      "body": "**Learn | Selecting a Reactivation and Coloration Formulation**"
+      "_template": "heading",
+      "text": "3.2.2.3 Learn",
+      "level": 4,
+      "attributes": "#results-stage-3-2-2-3 toc=\"3.2.2.3 Learn\""
     },
     {
       "_template": "text",
@@ -1013,13 +1026,15 @@
     },
     {
       "_template": "heading",
+      "text": "3.2.3 Sub-cycle 3: Hardware integration for productization",
       "level": 4,
-      "text": "3.2.3 Sub-cycle 3: Hardware Integration for Productization",
-      "attributes": "#results-3-2-3 toc=\"Hardware\""
+      "attributes": "#results-3-2-3 toc=\"3.2.3 Sub-cycle 3: Hardware integration for productization\""
     },
     {
-      "_template": "text",
-      "body": "**Design | Planning a Holder for Oxygen Supply and Portability**"
+      "_template": "heading",
+      "text": "3.2.3.1 Design",
+      "level": 4,
+      "attributes": "#results-stage-3-2-3-1 toc=\"3.2.3.1 Design\""
     },
     {
       "_template": "text",
@@ -1027,29 +1042,29 @@
     },
     {
       "_template": "text",
-      "body": "**Thin liquid layer and oxygen diffusion**: Shallow liquid reservoirs and supporting platforms confine the test strip at the optimal gas-liquid interface to avoid hypoxia caused by full submersion."
+      "body": "Thin liquid layer and oxygen diffusion: Shallow liquid reservoirs and supporting platforms confine the test strip at the optimal gas-liquid interface to avoid hypoxia caused by full submersion."
     },
     {
       "_template": "text",
-      "body": "**Evaporation control and semi-enclosed space**: A semi-closed chamber with micro air vents maintains internal humidity to suppress liquid evaporation while ensuring sufficient gas exchange."
+      "body": "Evaporation control and semi-enclosed space: A semi-closed chamber with micro air vents maintains internal humidity to suppress liquid evaporation while ensuring sufficient gas exchange."
     },
     {
       "_template": "text",
-      "body": "**Mechanical fixation and microfluidic loading**: Combined inclined sample inlet channels and positioning grooves prevent the washing-off of freeze-dried cells during sample loading and avoid liquid overflow."
+      "body": "Mechanical fixation and microfluidic loading: Combined inclined sample inlet channels and positioning grooves prevent the washing-off of freeze-dried cells during sample loading and avoid liquid overflow."
     },
     {
       "_template": "text",
-      "body": "**Build and Test | Fabricating and Evaluating the Printed Holder**"
+      "body": "3.2.3.2 Build and Test"
     },
     {
       "_template": "text",
-      "body": "Guided by the above design objectives, we carried out hardware fabrication and functional tests. For 3D modeling and manufacturing, geometric models were built with CAD software. High-precision FDM 3D printing using PLA material was applied to fabricate the portable device, which consists of a base reservoir and a breathable top cover (Figure 3.2.2)."
+      "body": "Guided by the above design objectives, we carried out hardware fabrication and functional tests. For 3D modeling and manufacturing, geometric models were built with CAD software. High-precision FDM 3D printing using PLA material was applied to fabricate the portable device, which consists of a base reservoir and a breathable top cover (Figure 2)."
     },
     {
       "_template": "image",
       "src": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-b5b9b9256085-fig3-2-2.avif",
-      "alt": "Figure 3.2.2. Photograph of the 3D-printed test strip holder.",
-      "body": "**Figure 3.2.2.** Photograph of the 3D-printed test strip holder.",
+      "alt": "Figure 2. Photograph of the 3D-printed test strip holder",
+      "body": "Figure 2. Photograph of the 3D-printed test strip holder",
       "layout": "full",
       "imageWidth": "wide",
       "scale": "70"
@@ -1059,8 +1074,10 @@
       "body": "For functional performance validation, the cell-laden test strip was placed inside the holder, followed by reactivation medium loading. Tests demonstrated that this structure maintained the reactivation medium as a thin liquid layer of approximately 1 mm. Compared with open petri dishes, the sealed chamber reduced liquid evaporation rate by more than 60%. Meanwhile, the micro air vents on the top cover ensured adequate oxygen supply and greatly improved the uniformity of coloration on the strip."
     },
     {
-      "_template": "text",
-      "body": "**Learn | Assessing Holder Performance and Remaining Validation Needs**"
+      "_template": "heading",
+      "text": "3.2.3.3 Learn",
+      "level": 4,
+      "attributes": "#results-stage-3-2-3-3 toc=\"3.2.3.3 Learn\""
     },
     {
       "_template": "text",

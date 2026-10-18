@@ -1,0 +1,13 @@
+<svg class="scene__palette" xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true" focusable="false">
+  <defs>
+    <!-- Warm only blue-dominant purple; gold, neutral highlights and alpha stay intact.
+         Keep source atlases unchanged: this is applied once at display time. -->
+    <filter id="scene-nankai-purple" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  -6 0 6 0 0" result="purple-mask" />
+      <feColorMatrix in="SourceGraphic" type="hueRotate" values="38" result="warm" />
+      <feComposite in="warm" in2="purple-mask" operator="in" result="warm-purple" />
+      <feComposite in="SourceGraphic" in2="purple-mask" operator="out" result="other-colors" />
+      <feComposite in="warm-purple" in2="other-colors" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" />
+    </filter>
+  </defs>
+</svg>
