@@ -1,0 +1,102 @@
+{
+  "frozen_at": "2026-10-15",
+  "sources": [
+    {
+      "source": "research/2026-10-10-dual-channel-main/src/modeling/economic/eco_model_pkg/config.py",
+      "copy": "vendor/src/modeling/economic/eco_model_pkg/config.py",
+      "sha256": "eb5d1f4f6fec7f70a14c683cdd0e414880c9f9f3521e5930aa557c9237f98d6f"
+    },
+    {
+      "source": "research/2026-10-10-dual-channel-main/src/modeling/economic/eco_model_pkg/__init__.py",
+      "copy": "vendor/src/modeling/economic/eco_model_pkg/__init__.py",
+      "sha256": "946057489227a1e9dd1f4f298ccd9be8ee3ee7b1d7b8a111cfc0bbf5e4deecff"
+    },
+    {
+      "source": "research/2026-10-10-dual-channel-main/src/modeling/economic/eco_model_pkg/loss.py",
+      "copy": "vendor/src/modeling/economic/eco_model_pkg/loss.py",
+      "sha256": "7e82d842f5008bbb90cb9698e5db3f22073f8913fcc4c89942174da6c01befc1"
+    },
+    {
+      "source": "research/2026-10-10-dual-channel-main/src/modeling/economic/eco_model_pkg/cli.py",
+      "copy": "vendor/src/modeling/economic/eco_model_pkg/cli.py",
+      "sha256": "29849f091f3d4d5d1995b8ad4efb745861ef667119b1d69439441cc92c0bedd1"
+    },
+    {
+      "source": "research/2026-10-10-dual-channel-main/src/modeling/economic/eco_model_pkg/economics.py",
+      "copy": "vendor/src/modeling/economic/eco_model_pkg/economics.py",
+      "sha256": "81f866b115593a24e73b3bde81ecfa7d42656dbee8679223a88857ea43b48261"
+    },
+    {
+      "source": "research/2026-10-10-dual-channel-main/src/modeling/economic/eco_model_pkg/break_even.py",
+      "copy": "vendor/src/modeling/economic/eco_model_pkg/break_even.py",
+      "sha256": "2ee62f99dc26aaf26579c56350c52df5e6a9ff68b2a779d03c1729bc768976df"
+    },
+    {
+      "source": "research/2026-10-10-dual-channel-main/src/modeling/economic/eco_model_pkg/reporting.py",
+      "copy": "vendor/src/modeling/economic/eco_model_pkg/reporting.py",
+      "sha256": "58acf6f67dc6093b24ba9149201d507b5411e6ed56cb0a24a5da7c4621161bf6"
+    },
+    {
+      "source": "research/2026-10-10-dual-channel-main/src/modeling/dual_channel/calibration.py",
+      "copy": "vendor/src/modeling/dual_channel/calibration.py",
+      "sha256": "0234f5391403ce3750e170622e4d2644994283b397590f212ee7efcfa6abd351"
+    },
+    {
+      "source": "ode-v1/model/src/modeling/ode/literature_core.py",
+      "copy": "vendor/literature_core.py",
+      "sha256": "6885f380d9259fd87940110d399cdf5b041be8a63c801e9b6c17f363be31a05e"
+    },
+    {
+      "source": "ode-v1/model/experiments/ode-model/configs/literature_core_source.json",
+      "copy": "data/core-source.json",
+      "sha256": "4a8dece503509b10e7d1e7fd91be54ccaca6dc4075a937e7b3c732d96a06407b"
+    },
+    {
+      "source": "research/2026-10-13-paired-matrix-v4/matrix.json",
+      "copy": "data/matrix.json",
+      "sha256": "a63c78699fa1b9d5f4489834753c3f381151875add529d4501edbb6a07d08ff2"
+    },
+    {
+      "source": "ode-v1/calibration/2026-10-13-dual-channel/r01/model.json",
+      "copy": "data/calibration.json",
+      "sha256": "9b94200466ecd7a7781866535b7e3b0324270a41587545864fcea6c77277fb40"
+    },
+    {
+      "source": "research/2026-10-10-dual-channel-main/experiments/economic/configs/eco_model_example_model.json",
+      "copy": "data/eco.json",
+      "sha256": "0ba3b5e18ae29d320ede8a8a51d21f39d57a681ad279a3a0f67b76688086e7e3"
+    },
+    {
+      "source": "ode-v1/calibration/2026-10-13-synthetic-endpoints/r04/channel3.json",
+      "copy": "data/channel3.json",
+      "sha256": "53f1eddd2649ff37a7956874739fd01361c62acc3fa2950533a9d67cf151f165"
+    },
+    {
+      "source": "ode-v1/calibration/2026-10-13-synthetic-endpoints/r04/channel18.json",
+      "copy": "data/channel18.json",
+      "sha256": "2027d34e038a1c42a5063a950f4e8ba7338202400c923eb9553e5ceded811964"
+    },
+    {
+      "source": "ode-v1/calibration/2026-10-13-synthetic-endpoints/r04/timecourses.csv",
+      "copy": "data/timecourses.csv",
+      "sha256": "95703cc57fdbf32884d7775c2fe655399fcd9606510518b21bf95399d2ccbff1"
+    },
+    {
+      "source": "ode-v1/calibration/2026-10-13-synthetic-endpoints/r04/endpoints.csv",
+      "copy": "data/endpoints.csv",
+      "sha256": "4a64ce177e93daf044d82c5797740da1f36c90b1ff975fa5f3a71e10bbd48c8f"
+    },
+    {
+      "source": "ode-v1/calibration/2026-10-13-synthetic-endpoints/r04/summary.json",
+      "copy": "data/summary.json",
+      "sha256": "f25aa2195b2b7401590b2cc6078f007e79beeb134cf02e6f0e052f51f384bc43"
+    },
+    {
+      "source": "ode-v1/predict_risk.py",
+      "copy": "bridge.py",
+      "source_sha256": "421d5a8a2024fc88eedb0b0f00a419d64a6b55580be7f15d3c88104667e310d3",
+      "adaptation": "Only package-relative import and default data paths changed",
+      "copy_sha256": "f50d2645e37702b4962493ba6eb34e6002ec9b4d247e117970a25468c7a7261d"
+    }
+  ]
+}
