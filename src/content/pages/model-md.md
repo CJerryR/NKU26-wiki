@@ -77,16 +77,7 @@ MD added different structural explanations for the two candidates: in N84V–asc
 
 These observations make the next questions more specific: whether the local positioning of N84V persists in replicate simulations, whether the rearrangement process in V368R recurs, and how these behaviors are related to the mutations. Each system currently has only one trajectory, and the starting conformations differ; the effects of the mutations on actual binding and selectivity still require further simulations and experimental evaluation.
 
-## 原英文稿（2026-10-10） {#source-english-20261010 toc="原英文稿（2026-10-10）"}
+<span id="source-english-20261010" aria-hidden="true"></span>
+<span id="original-model-block-80" aria-hidden="true"></span>
 
-### Gpr3 R167Y: Coexistence of Global Displacement and Local Contacts {#original-model-block-80 toc="Gpr3 R167Y: Coexistence of Global Displacement and Local Contacts"}
-
-This analysis uses one 200 ns trajectory of Gpr3 R167Y–ascr#3. A matched WT and independent replicate results are still missing. Local analysis uses a 15-residue cluster defined by the docking interaction fingerprint (IFP) as its reference. Distances were calculated using mass-weighted centers of mass, and retention of the nine initial contacts was tracked.
-
-After 100 ns, the receptor backbone deviated substantially from the initial structure, while the ligand remained close to this residue cluster and retained some initial contacts (Table 6).
-
-The residue-level initial-contact occupancy of ARG175–ASCR402 was 1.0, meaning that this contact persisted across all analyzed frames of the trajectory. The specific hydrogen bond ARG175–H → ASCR402 had an occupancy of 0.4140, representing the fraction of frames in which the corresponding atoms met the hydrogen-bond criteria. These statistics describe residue-level contact and the geometry of a specific atomic interaction, respectively. ASCR402 is the ligand’s residue identifier.
-
-In Table 6, RMSD, local distance, and the fraction of initial contacts retained use the time window ≥100 ns. Both maximum-occupancy statistics use the full trajectory.
-
-In Gpr3 R167Y–ascr#3, receptor backbone displacement occurred alongside retention of local ligand contacts. The ARG175 residue-level contact persisted, while the specific hydrogen bond examined formed in only some frames.
+[Historical source documents / 历史原稿](/source-archive/)

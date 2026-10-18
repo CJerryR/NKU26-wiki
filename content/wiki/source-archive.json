@@ -1,0 +1,110 @@
+{
+  "title": "Historical Source Documents",
+  "heading": "Historical Source Documents / 历史原稿",
+  "sub": "",
+  "crumbs": [
+    "Team",
+    "Historical sources"
+  ],
+  "route": "source-archive",
+  "search": false,
+  "preserveAuthorFormatting": true,
+  "description": "Complete earlier submissions in their original file formats.",
+  "meta": [],
+  "blocks": [
+    {
+      "_template": "text",
+      "body": "These earlier submissions are retained in full, in their original file formats. Current chapters use the latest received revisions. Download an original file to read its complete contents and preserve its original formatting.\n\n旧稿按收到时的文件完整保留；当前正文采用最新修订稿。下载原件可查看全部内容及原始格式。"
+    },
+    {
+      "_template": "heading",
+      "level": 2,
+      "text": "Model",
+      "attributes": "#model"
+    },
+    {
+      "_template": "text",
+      "body": "<section id=\"model-zh-20261010\"><h3>Model｜zh — 2026-10-10</h3><p>Model｜zh.md · MD</p><p><a href=\"https://static.igem.wiki/teams/6303/wiki/v8-7/history-f571b4a3f25a-00.json\" data-source-document=\"model-zh-20261010\" download=\"Model｜zh.md\">Download complete original / 下载完整原件</a> <span role=\"status\" aria-live=\"polite\"></span></p></section>"
+    },
+    {
+      "_template": "text",
+      "body": "<section id=\"model-en-20261010\"><h3>Model｜en — 2026-10-10</h3><p>Model｜en.md · MD</p><p><a href=\"https://static.igem.wiki/teams/6303/wiki/v8-7/history-4d559e4e16de-00.json\" data-source-document=\"model-en-20261010\" download=\"Model｜en.md\">Download complete original / 下载完整原件</a> <span role=\"status\" aria-live=\"polite\"></span></p></section>"
+    },
+    {
+      "_template": "heading",
+      "level": 2,
+      "text": "Dry Lab / Project",
+      "attributes": "#dry-lab-project"
+    },
+    {
+      "_template": "text",
+      "body": "<section id=\"project-zh-20261010\"><h3>Project｜zh — 2026-10-10</h3><p>Project｜zh.md · MD</p><p><a href=\"https://static.igem.wiki/teams/6303/wiki/v8-7/history-1d544164348a-00.json\" data-source-document=\"project-zh-20261010\" download=\"Project｜zh.md\">Download complete original / 下载完整原件</a> <span role=\"status\" aria-live=\"polite\"></span></p></section>"
+    },
+    {
+      "_template": "text",
+      "body": "<section id=\"project-en-20261010\"><h3>Project｜en — 2026-10-10</h3><p>Project｜en.md · MD</p><p><a href=\"https://static.igem.wiki/teams/6303/wiki/v8-7/history-27eda495fdef-00.json\" data-source-document=\"project-en-20261010\" download=\"Project｜en.md\">Download complete original / 下载完整原件</a> <span role=\"status\" aria-live=\"polite\"></span></p></section>"
+    },
+    {
+      "_template": "text",
+      "body": "<section id=\"dry-project-zh-earlier\"><h3>Drylab Wiki｜Project - zh</h3><p>Drylab Wiki｜Project - zh.docx · DOCX</p><p><a href=\"https://static.igem.wiki/teams/6303/wiki/v8-7/history-0e82e40e849c-00.json\" data-source-document=\"dry-project-zh-earlier\" download=\"Drylab Wiki｜Project - zh.docx\">Download complete original / 下载完整原件</a> <span role=\"status\" aria-live=\"polite\"></span></p></section>"
+    },
+    {
+      "_template": "text",
+      "body": "<section id=\"dry-project-en-earlier\"><h3>Drylab Wiki｜Project - eg</h3><p>Drylab Wiki｜Project - eg.docx · DOCX</p><p><a href=\"https://static.igem.wiki/teams/6303/wiki/v8-7/history-2420e6f5ce76-00.json\" data-source-document=\"dry-project-en-earlier\" download=\"Drylab Wiki｜Project - eg.docx\">Download complete original / 下载完整原件</a> <span role=\"status\" aria-live=\"polite\"></span></p></section>"
+    },
+    {
+      "_template": "heading",
+      "level": 2,
+      "text": "Human Practices / Education",
+      "attributes": "#human-practices-education"
+    },
+    {
+      "_template": "text",
+      "body": "<section id=\"education-earlier\"><h3>Best Education 页面修订稿 — 旧版</h3><p>Best-Education-page-revised-draft(1).docx · DOCX</p><p><a href=\"https://static.igem.wiki/teams/6303/wiki/v8-7/history-413399393cd2-00.json\" data-source-document=\"education-earlier\" download=\"Best-Education-page-revised-draft(1).docx\">Download complete original / 下载完整原件</a> <span role=\"status\" aria-live=\"polite\"></span></p></section>"
+    },
+    {
+      "_template": "heading",
+      "level": 2,
+      "text": "Human Practices",
+      "attributes": "#human-practices"
+    },
+    {
+      "_template": "text",
+      "body": "<section id=\"hp-earlier\"><h3>HP wiki 语料库整合版 — 旧版</h3><p>HP wiki 语料库整合版.docx · DOCX</p><p><a href=\"https://static.igem.wiki/teams/6303/wiki/v8-7/history-d51793eaaa17-00.json\" data-source-document=\"hp-earlier\" download=\"HP wiki 语料库整合版.docx\">Download complete original / 下载完整原件</a> <span role=\"status\" aria-live=\"polite\"></span></p></section>"
+    },
+    {
+      "_template": "heading",
+      "level": 2,
+      "text": "Human Practices / Sponsorship",
+      "attributes": "#human-practices-sponsorship"
+    },
+    {
+      "_template": "text",
+      "body": "<section id=\"sponsorship-earlier\"><h3>赞助语料库 — 旧版</h3><p>赞助语料库.docx · DOCX</p><p><a href=\"https://static.igem.wiki/teams/6303/wiki/v8-7/history-d98a33e8c911-00.json\" data-source-document=\"sponsorship-earlier\" download=\"赞助语料库.docx\">Download complete original / 下载完整原件</a> <span role=\"status\" aria-live=\"polite\"></span></p></section>"
+    },
+    {
+      "_template": "heading",
+      "level": 2,
+      "text": "Human Practices / Research",
+      "attributes": "#human-practices-research"
+    },
+    {
+      "_template": "text",
+      "body": "<section id=\"hp-research-earlier\"><h3>HP调研 — 旧版</h3><p>HP调研.docx · DOCX</p><p><a href=\"https://static.igem.wiki/teams/6303/wiki/v8-7/history-e2f9fdd383b7-00.json\" data-source-document=\"hp-research-earlier\" download=\"HP调研.docx\">Download complete original / 下载完整原件</a> <span role=\"status\" aria-live=\"polite\"></span></p></section>"
+    },
+    {
+      "_template": "heading",
+      "level": 2,
+      "text": "Engineering",
+      "attributes": "#engineering"
+    },
+    {
+      "_template": "text",
+      "body": "<section id=\"engineering-zh-earlier\"><h3>Engineering 3.0 — 中文旧稿</h3><p>Engineering 中文版3.0.docx · DOCX</p><p><a href=\"https://static.igem.wiki/teams/6303/wiki/v8-7/history-304de21bcca1-00.json\" data-source-document=\"engineering-zh-earlier\" download=\"Engineering 中文版3.0.docx\">Download complete original / 下载完整原件</a> <span role=\"status\" aria-live=\"polite\"></span></p></section>"
+    },
+    {
+      "_template": "text",
+      "body": "<section id=\"engineering-en-earlier\"><h3>Engineering 3.0 — English earlier submission</h3><p>Engineering 英文版3.0.docx · DOCX</p><p><a href=\"https://static.igem.wiki/teams/6303/wiki/v8-7/history-5b747ff0fc87-00.json\" data-source-document=\"engineering-en-earlier\" download=\"Engineering 英文版3.0.docx\">Download complete original / 下载完整原件</a> <span role=\"status\" aria-live=\"polite\"></span></p></section>"
+    }
+  ]
+}

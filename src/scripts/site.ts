@@ -1,3 +1,4 @@
+import { initSourceArchive } from './source-archive';
 import { initOriginalImages } from './original-images';
 import './toolkit';
 import { initPersonCards } from './person-cards';
@@ -16,6 +17,7 @@ import { initWorkflow } from './workflow';
 
 function start(): void {
   initOriginalImages();
+  initSourceArchive();
   initGlass();
   initLiquidGlass();
   initNav();

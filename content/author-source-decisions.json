@@ -1,0 +1,42 @@
+{
+  "source": "Human answers received in this conversation on 2026-10-18",
+  "C01_C02_C03": "Restore each page author source; preserve disagreements",
+  "C05": "Explicitly authorized Field Detective -> NemaKlear substitution",
+  "C04_C06": "Latest received revision in main text; complete older sources in separate history area",
+  "GPS": "Remove GPS metadata only from the four named images; preserve original local files and decoded pixels",
+  "source_policy": "Keep each author document wording, including disagreements; latest revision in main text; older complete source files in archive.",
+  "gps_exceptions": [
+    {
+      "original_name": "Kuang Yinzi.jpg",
+      "original_sha256": "73eaaceee28d1c0206c54c0948e5ddcef0265c34ce4cef9c4002aa08c6c5a351",
+      "sanitized_sha256": "0387e10357e0d53ff4ae58486d7a5c2b0306fb38ec39e0496800f28ee62c34ad",
+      "gps_tags_remaining": 0,
+      "all_frame_pixels_identical": true,
+      "original_unchanged": true
+    },
+    {
+      "original_name": "杨若希.JPG",
+      "original_sha256": "5667764dc7f74dce5cc1ecb4cf79284f35414be04cf5705de7c4af0f06eb8104",
+      "sanitized_sha256": "2498ade0c5bd0b406eab5b8ee5afb76221bbd9e529888296d5474133d0506bfd",
+      "gps_tags_remaining": 0,
+      "all_frame_pixels_identical": true,
+      "original_unchanged": true
+    },
+    {
+      "original_name": "Luo Yuanwen.jpg",
+      "original_sha256": "270ecf6f2522a2e107e28ecbf38e7398f3f598c9e0d8a79b5d106065e3b13e59",
+      "sanitized_sha256": "0bfc2a234d65e5dfe713fd2b1d20ffc76bf9f2111fb94ddd753cc8372889e0f4",
+      "gps_tags_remaining": 0,
+      "all_frame_pixels_identical": true,
+      "original_unchanged": true
+    },
+    {
+      "original_name": "Fig3.2.2.jpg",
+      "original_sha256": "b5b9b9256085a81d0516adcb30603fbe6636c3560f53cc8500fba1e274a4470f",
+      "sanitized_sha256": "88ac480d868f85f7d570356d0d43e8812fb4473b2be3438776c013ad0d40a653",
+      "gps_tags_remaining": 0,
+      "all_frame_pixels_identical": true,
+      "original_unchanged": true
+    }
+  ]
+}

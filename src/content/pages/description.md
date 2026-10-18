@@ -158,15 +158,15 @@ Figure 5. Schematic of ascaroside-specific yeast biosensor construction. Drawn w
 
 <p>Literature shows that <em>Saccharomyces cerevisiae</em> serves as an excellent platform for GPCR display. With only two native GPCR signaling systems that are readily knockable, it is stable, fast-growing and easy to manipulate. Prior work has established yeast biosensing platforms to express heterologous G protein-coupled receptors (GPCRs) on yeast cell surfaces and produce visual readouts<sup>[9]</sup>. We adopt similar strategies to display engineered GPR proteins and achieve visual signal output via betaxanthin.</p>
 
-A freeze-dried yeast color card is a proposed product format. Its feasibility depends on preservation, reactivation, containment, signal consistency, storage, and disposal. Freeze-drying must not be assumed to eliminate viable engineered cells. A manageable workflow with limited equipment is a development target; field performance, shelf life, turnaround time, and final cost remain to be established.
+<p>Meanwhile, <em>Saccharomyces cerevisiae</em> features strong robustness, controllable genetics and established biosafety for humans, supporting cost-effective large-scale production. These properties lay critical foundations for fabricating freeze-dried yeast color strips. Requiring no extra equipment for detection, freeze-dried yeast color strips align well with our project goals. Thus, our final product is the freeze-dried yeast color strip.</p>
 
 Detailed experimental design and results can be found in [Wet Lab-Results](/results/)
 
 ### 2.2 Dry Lab {#dry-lab toc="Dry Lab"}
 
-Our dry-lab work addresses three connected questions: how to select and engineer receptors that recognize ascarosides, how to convert recognition signals into a colorimetric output, and how detection results can support practical field management decisions. Four areas of computational work—**molecular docking**, molecular dynamics simulations, ODE signaling pathway modeling, and **economic benefit modeling**—inform our project design.
+Our dry-lab work addresses three connected questions: how to select and engineer receptors that recognize ascarosides, how to convert recognition signals into a colorimetric output, and how detection results can support practical field management decisions. Four areas of computational work—molecular docking, molecular dynamics simulations, ODE signaling pathway modeling, and economic benefit modeling—inform our project design.
 
-At the receptor-recognition level, molecular docking helps us compare Gpr2, Gpr3, and GprC. Focusing on Gpr2, we identify interaction hotspots and design mutations, using changes in scores and interactions to explore differences in the recognition of ascaroside #3 and ascaroside #18. **Molecular dynamics simulations** examine the behavior of selected systems over time, tracking changes in ligand position and key contacts to provide further evidence for the structural hypotheses proposed through docking.
+At the receptor-recognition level, molecular docking helps us compare Gpr2, Gpr3, and GprC. Focusing on Gpr2, we identify interaction hotspots and design mutations, using changes in scores and interactions to explore differences in the recognition of ascaroside #3 and ascaroside #18. Molecular dynamics simulations examine the behavior of selected systems over time, tracking changes in ligand position and key contacts to provide further evidence for the structural hypotheses proposed through docking.
 
 At the signal-output level, ODE modeling connects receptor activation, intracellular signal transduction, and color development. We select model complexity according to pathway mechanisms and the data available from wet-lab experiments, combine intermediate steps that are difficult to measure separately, and retain parameters for subsequent experimental calibration. This allows us to progressively develop a model that can explain the system’s response.
 
@@ -178,11 +178,11 @@ Together, these four areas connect molecular design, system responses, and appli
 
 ### Early-Warning Strategy for Plant-Parasitic Nematode Infestations {#early-warning-strategy-for-plant-parasitic-nematode-infestations toc="Early-Warning Strategy"}
 
-We investigate whether candidate ascaroside inputs can support an early-screening concept with a readable color output. Low cost, simple operation, and useful warning are **development goals**. Future risk categories require calibration against reference methods and relevant agricultural conditions; **a color change alone** cannot determine whether pesticide treatment is necessary.
+<p>Unlike conventional detection methods, our strategy features early warning, low cost and simple operation. This approach sensitively detects ascarosides and outputs pest risk levels via colorimetric readout on test strips. Designed for end users, our product holds broad application prospects and research value.</p>
 
 ### Strategy for Reconstructing Ascaroside-Specific Yeast Biosensors {#strategy-for-reconstructing-ascaroside-specific-yeast-biosensors toc="Ascaroside-Specific Yeast Biosensors"}
 
-We build on a reported yeast signaling chassis with cascade amplification and investigate engineered receptors as inputs to a betaxanthin-based readout. Ligand response, background activity, pathway function, and output performance each require their own evidence. Qualitative or semi-quantitative use in agricultural samples remains subject to calibration and validation; docking and modeling do not establish field specificity.
+<p>We utilize a reported yeast sensing circuit chassis with signal cascade amplification capacity. The intact intracellular signal-amplifying module is retained. Only the ascaroside-specific receptor, independently designed by our team, is replaced on the yeast cell surface. This enables specific recognition of ascarosides, qualitative detection of ascaroside presence/absence and semi-quantitative measurement. It further expands the application scenarios of this yeast sensing platform for plant pest detection.</p>
 
 ## 4 References {#references toc="References"}
 

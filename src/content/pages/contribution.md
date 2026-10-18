@@ -89,7 +89,7 @@ In this way, for future teams performing yeast engineering experiments for the f
 
 #### 1.1 Receptor Engineering Guided by Contacts with Two Ligands {#receptor-engineering-guided-by-contacts-with-two-ligands toc="Receptor Engineering Guided by Contacts with Two Ligands"}
 
-We developed a **stepwise screening approach** for engineering a receptor’s recognition of two ligands, using contact differences to identify candidate sites and successive substitutions to evaluate them. We first compare the contact distributions of the wild-type (WT) receptor with both ligands and select candidate positions for alanine substitution. We then combine single-mutant scores with contact changes to select sites for saturation scanning and compare how different side chains affect the two ligands.
+We developed a stepwise screening approach for engineering a receptor’s recognition of two ligands, using contact differences to identify candidate sites and successive substitutions to evaluate them. We first compare the contact distributions of the wild-type (WT) receptor with both ligands and select candidate positions for alanine substitution. We then combine single-mutant scores with contact changes to select sites for saturation scanning and compare how different side chains affect the two ligands.
 
 Screening uses the difference between the docking-score changes for the two ligands relative to WT:
 
@@ -101,13 +101,13 @@ Most tested combinations did not further improve the better parent’s target-li
 
 Contact analysis supports both site selection and candidate review. We compare ligand positions and contacts between mutants and WT to examine the structural basis of score differences. This process led us to select V368R and N84V for further study. For example, N84V had a lower ascr#18 score and a higher ascr#3 score than WT. Although no direct contact at position 84 was detected in the selected poses, ascr#18 gained ionic and hydrogen-bond-type contacts involving R189, together with a hydrophobic contact at W338. This observation indicates that candidate review should consider the contact network surrounding the ligand.
 
-Other teams can apply this screening approach by combining scores for both ligands, contact comparisons with WT, and comparisons of combinations with their parents to develop **testable engineering hypotheses**. Binding capability and selectivity can then be evaluated experimentally. The design iterations are described in Engineering, and the score and contact evidence is presented in Model/Docking.
+Other teams can apply this screening approach by combining scores for both ligands, contact comparisons with WT, and comparisons of combinations with their parents to develop testable engineering hypotheses. Binding capability and selectivity can then be evaluated experimentally. The design iterations are described in Engineering, and the score and contact evidence is presented in Model/Docking.
 
 #### 1.2 Tools for Checking Docking Inputs and Exporting Poses {#tools-for-checking-docking-inputs-and-exporting-poses toc="Tools for Checking Docking Inputs and Exporting Poses"}
 
 We found that inconsistent coordinate references between receptor structures and search boxes can alter the region actually searched, while loss of chemical information during format conversion can affect interaction identification. To address these issues, we developed an input-checking and pose-export workflow. Structural superposition places the receptor, ligand, and search box in a common coordinate reference, and the search region is checked against membrane orientation and the structural segments actually retained.
 
-An **atom-mapping verification tool** checks the correspondence of atoms, coordinates, and structures between the original SDF and the docking PDBQT files. A **pose-export tool** reconstructs SDF files using the complete Meeko structural metadata retained in PDBQT, preserving docking poses and chemical information such as formal charges for subsequent contact analysis.
+An atom-mapping verification tool checks the correspondence of atoms, coordinates, and structures between the original SDF and the docking PDBQT files. A pose-export tool reconstructs SDF files using the complete Meeko structural metadata retained in PDBQT, preserving docking poses and chemical information such as formal charges for subsequent contact analysis.
 
 We will release the tools, instructions, and accompanying ascr#18 and ascr#3 examples on GitHub. Other teams can reproduce the checking and export workflow, then substitute their own data to verify search locations, atom correspondence, and the chemical information in pose files.
 
@@ -121,7 +121,7 @@ Other teams can use this approach to combine contact bias, positional correspond
 
 ### MD: Joint Analysis of Receptor Motion and Local Ligand Behavior {#md-joint-analysis-of-receptor-motion-and-local-ligand-behavior toc="MD: Joint Analysis of Receptor Motion and Local Ligand Behavior"}
 
-Docking provides candidate binding poses for receptor engineering. We further used **molecular dynamics (MD) simulations** to examine how these poses persist or adjust in a membrane environment and organized the analysis of receptor conformational changes, ligand positions, and contacts into a reusable workflow.
+Docking provides candidate binding poses for receptor engineering. We further used molecular dynamics (MD) simulations to examine how these poses persist or adjust in a membrane environment and organized the analysis of receptor conformational changes, ligand positions, and contacts into a reusable workflow.
 
 The workflow tracks ligand motion relative to the receptor or a local pocket while recording the retention of existing contacts and formation of new ones. Analysis of Gpr3 R167Y–ascr#3 showed that local contacts can persist despite global receptor displacement. Gpr2 V368R–ascr#3 illustrated how ligand repositioning can be accompanied by the loss of initial contacts and the formation of new ones.
 
@@ -129,9 +129,9 @@ We will make the analysis tools, instructions, and example results available on 
 
 ### ODE: A Full-Pathway Model from Receptor Signaling to Colorimetric Output {#ode-a-full-pathway-model-from-receptor-signaling-to-colorimetric-output toc="ODE: A Full-Pathway Model from Receptor Signaling to Colorimetric Output"}
 
-We developed a **full-pathway ODE model** for our yeast GPCR biosensing system, connecting effective receptor input, intracellular signal transduction, and colorimetric output. The model reuses the yeast pathway structure from Supady Model B and the publicly available materials of TU Delft’s 2012 iGEM team, incorporates our project’s color-development module, and calculates signaling activity and color over time.
+We developed a full-pathway ODE model for our yeast GPCR biosensing system, connecting effective receptor input, intracellular signal transduction, and colorimetric output. The model reuses the yeast pathway structure from Supady Model B and the publicly available materials of TU Delft’s 2012 iGEM team, incorporates our project’s color-development module, and calculates signaling activity and color over time.
 
-We documented the **shared pathway parameters** separately from **project-specific input and output settings**, recording parameter meanings, units, sources, and assumptions. Under fixed construct conditions, sTF regulation, GAL production rate, and color generation were combined into one effective colorimetric equation. Conservation of total molecular amounts was used to eliminate redundant states in the shared pathway. The accompanying equation descriptions and computational consistency checks help users understand and adapt the model.
+We documented the shared pathway parameters separately from project-specific input and output settings, recording parameter meanings, units, sources, and assumptions. Under fixed construct conditions, sTF regulation, GAL production rate, and color generation were combined into one effective colorimetric equation. Conservation of total molecular amounts was used to eliminate redundant states in the shared pathway. The accompanying equation descriptions and computational consistency checks help users understand and adapt the model.
 
 A simulated two-sensor fitting example further demonstrates how the shared pathway parameters can be retained while adjusting each sensor’s effective input scale and color-production gain to approach predefined colorimetric endpoints. Parameter records distinguish source values, assumed values, and values fitted to simulated targets, helping users identify which parameters require recalibration with their own experimental data.
 
@@ -139,9 +139,9 @@ Other teams can run the accompanying code and example configurations, reproduce 
 
 ### Eco: Economic Benefit Analysis from Detection Results to Management Strategies {#eco-economic-benefit-analysis-from-detection-results-to-management-strategies toc="Eco: Economic Benefit Analysis from Detection Results to Management Strategies"}
 
-We developed an economic benefit model connecting pathogen or pest density, crop yield loss, and management costs. It compares **three scenarios**: no testing and no treatment, uniform treatment without testing, and risk-based treatment following testing. The model estimates yield losses from the density-yield relationship, then combines product prices, testing costs, treatment costs, and treatment efficacy to calculate the expected net return of each strategy.
+We developed an economic benefit model connecting pathogen or pest density, crop yield loss, and management costs. It compares three scenarios: no testing and no treatment, uniform treatment without testing, and risk-based treatment following testing. The model estimates yield losses from the density-yield relationship, then combines product prices, testing costs, treatment costs, and treatment efficacy to calculate the expected net return of each strategy.
 
-Model parameters are organized separately from report content so that users can **substitute local crop prices**, testing costs, treatment costs, risk thresholds, and treatment efficacy. Settings with an established density-yield relationship support comparisons of economic returns. Settings with risk thresholds alone provide risk indications, with the analysis extended as more data become available.
+Model parameters are organized separately from report content so that users can substitute local crop prices, testing costs, treatment costs, risk thresholds, and treatment efficacy. Settings with an established density-yield relationship support comparisons of economic returns. Settings with risk thresholds alone provide risk indications, with the analysis extended as more data become available.
 
 The accompanying example of greenhouse tomatoes in Spain and the southern root-knot nematode demonstrates how to combine a yield-loss relationship fitted from published data, three risk levels, and per-unit-area cost calculations to compare management strategies under specified conditions.
 

@@ -13,7 +13,7 @@
   "blocks": [
     {
       "_template": "text",
-      "body": "Turning **chemical signals released by nematodes** into detection information that supports agricultural management requires connecting receptor recognition, intracellular signal transduction, and colorimetric output, then interpreting the crop risks and management choices associated with the results."
+      "body": "Turning chemical signals released by nematodes into detection information that supports agricultural management requires connecting receptor recognition, intracellular signal transduction, and colorimetric output, then interpreting the crop risks and management choices associated with the results."
     },
     {
       "_template": "heading",
@@ -33,7 +33,7 @@
     },
     {
       "_template": "text",
-      "body": "This project aims to establish **two channels based on differential responses** to ascr#18 and ascr#3 and to investigate how the two responses and their ratio relate to plant-parasitic nematode abundance. Quantitative interpretation of the signals requires consideration of species, developmental stage, and sampling conditions, together with **concentration-to-readout calibration**."
+      "body": "This project aims to establish two channels based on differential responses to ascr#18 and ascr#3 and to investigate how the two responses and their ratio relate to plant-parasitic nematode abundance. Quantitative interpretation of the signals requires consideration of species, developmental stage, and sampling conditions, together with concentration-to-readout calibration."
     },
     {
       "_template": "heading",
@@ -43,7 +43,7 @@
     },
     {
       "_template": "text",
-      "body": "Nematode-trapping fungi can sense ascarosides and initiate processes associated with predation. [1] The **G protein-coupled receptors (GPCRs)** considered in this project include Gpr2, Gpr3, and GprC. Their sensing functions and downstream signaling have been investigated in different fungal systems. [B02, B03]"
+      "body": "Nematode-trapping fungi can sense ascarosides and initiate processes associated with predation. [1] The G protein-coupled receptors (GPCRs) considered in this project include Gpr2, Gpr3, and GprC. Their sensing functions and downstream signaling have been investigated in different fungal systems. [B02, B03]"
     },
     {
       "_template": "text",
@@ -59,7 +59,7 @@
     },
     {
       "_template": "text",
-      "body": "This project aims to connect recognition signals from natural receptors to the yeast pheromone **mitogen-activated protein kinase (MAPK) pathway**. Establishing this connection requires examining receptor localization in yeast and coupling to G proteins."
+      "body": "This project aims to connect recognition signals from natural receptors to the yeast pheromone mitogen-activated protein kinase (MAPK) pathway. Establishing this connection requires examining receptor localization in yeast and coupling to G proteins."
     },
     {
       "_template": "heading",
@@ -69,7 +69,7 @@
     },
     {
       "_template": "text",
-      "body": "Designing differential responses to two ligands requires further investigation of which receptor positions the two ascarosides may contact and whether changing the relevant side chains can affect recognition. Molecular docking generates candidate poses for a given receptor structure, search region, and ligand chemical state, then ranks them using an approximate scoring function. **Interaction fingerprints (IFPs)** describe the contacting residues and interaction types within these candidate poses. Combining scores with contact distributions allows us to propose substitution hypotheses aimed at differences between the two ligands. [B04, B05; 4–5]"
+      "body": "Designing differential responses to two ligands requires further investigation of which receptor positions the two ascarosides may contact and whether changing the relevant side chains can affect recognition. Molecular docking generates candidate poses for a given receptor structure, search region, and ligand chemical state, then ranks them using an approximate scoring function. Interaction fingerprints (IFPs) describe the contacting residues and interaction types within these candidate poses. Combining scores with contact distributions allows us to propose substitution hypotheses aimed at differences between the two ligands. [B04, B05; 4–5]"
     },
     {
       "_template": "text",
@@ -91,7 +91,7 @@
     },
     {
       "_template": "text",
-      "body": "**Molecular dynamics (MD)** uses a force field to describe molecular interactions and simulate molecular motion over a defined period. Combining protein force fields with membrane-system construction methods allows receptor–ligand conformational changes to be studied in a lipid bilayer, solvent, and ionic environment. [7–8] Within the selected starting systems and sampling scope, this project examines these changes by jointly analyzing receptor motion and local ligand behavior. [B12]"
+      "body": "Molecular dynamics (MD) uses a force field to describe molecular interactions and simulate molecular motion over a defined period. Combining protein force fields with membrane-system construction methods allows receptor–ligand conformational changes to be studied in a lipid bilayer, solvent, and ionic environment. [7–8] Within the selected starting systems and sampling scope, this project examines these changes by jointly analyzing receptor motion and local ligand behavior. [B12]"
     },
     {
       "_template": "heading",
@@ -105,7 +105,7 @@
     },
     {
       "_template": "text",
-      "body": "This project uses **ordinary differential equations (ODEs)** and effective response relationships to connect receptor activation with color development. Modeling requires selecting which dynamic steps to retain according to the research question and the observations available from experiments, while combining intermediate processes that are difficult to measure separately. Published models provide reaction structures that can inform the model, while specific parameters are calibrated using the project’s constructs and experimental readouts."
+      "body": "This project uses ordinary differential equations (ODEs) and effective response relationships to connect receptor activation with color development. Modeling requires selecting which dynamic steps to retain according to the research question and the observations available from experiments, while combining intermediate processes that are difficult to measure separately. Published models provide reaction structures that can inform the model, while specific parameters are calibrated using the project’s constructs and experimental readouts."
     },
     {
       "_template": "heading",
@@ -115,11 +115,11 @@
     },
     {
       "_template": "text",
-      "body": "The practical value of detection information depends on whether it helps users **select appropriate management measures**. The relationship between nematode population density and crop losses can support risk assessment. Resources on root-knot nematode management in tomatoes further connect expected yield losses, crop value, and treatment costs to compare management options. [14–15]"
+      "body": "The practical value of detection information depends on whether it helps users select appropriate management measures. The relationship between nematode population density and crop losses can support risk assessment. Resources on root-knot nematode management in tomatoes further connect expected yield losses, crop value, and treatment costs to compare management options. [14–15]"
     },
     {
       "_template": "text",
-      "body": "Economic evaluation requires comparing testing costs, management measures, and potentially avoidable losses within the same scenario, while accounting for differences in **region, crop, and conditions of use**. [16] On this basis, the project examines whether detection information helps distinguish risk levels and adjust management measures, and feeds requirements for detection capability, sampling strategy, and result presentation back into system design."
+      "body": "Economic evaluation requires comparing testing costs, management measures, and potentially avoidable losses within the same scenario, while accounting for differences in region, crop, and conditions of use. [16] On this basis, the project examines whether detection information helps distinguish risk levels and adjust management measures, and feeds requirements for detection capability, sampling strategy, and result presentation back into system design."
     },
     {
       "_template": "heading",
@@ -259,5 +259,6 @@
       "_template": "text",
       "body": "[15] UC Statewide Integrated Pest Management Program. Root-Knot Nematode: Tomato Pest Management Guidelines."
     }
-  ]
+  ],
+  "preserveAuthorFormatting": true
 }

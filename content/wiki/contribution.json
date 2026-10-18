@@ -181,7 +181,7 @@
     },
     {
       "_template": "text",
-      "body": "We developed a **stepwise screening approach** for engineering a receptor’s recognition of two ligands, using contact differences to identify candidate sites and successive substitutions to evaluate them. We first compare the contact distributions of the wild-type (WT) receptor with both ligands and select candidate positions for alanine substitution. We then combine single-mutant scores with contact changes to select sites for saturation scanning and compare how different side chains affect the two ligands."
+      "body": "We developed a stepwise screening approach for engineering a receptor’s recognition of two ligands, using contact differences to identify candidate sites and successive substitutions to evaluate them. We first compare the contact distributions of the wild-type (WT) receptor with both ligands and select candidate positions for alanine substitution. We then combine single-mutant scores with contact changes to select sites for saturation scanning and compare how different side chains affect the two ligands."
     },
     {
       "_template": "text",
@@ -205,7 +205,7 @@
     },
     {
       "_template": "text",
-      "body": "Other teams can apply this screening approach by combining scores for both ligands, contact comparisons with WT, and comparisons of combinations with their parents to develop **testable engineering hypotheses**. Binding capability and selectivity can then be evaluated experimentally. The design iterations are described in Engineering, and the score and contact evidence is presented in Model/Docking."
+      "body": "Other teams can apply this screening approach by combining scores for both ligands, contact comparisons with WT, and comparisons of combinations with their parents to develop testable engineering hypotheses. Binding capability and selectivity can then be evaluated experimentally. The design iterations are described in Engineering, and the score and contact evidence is presented in Model/Docking."
     },
     {
       "_template": "heading",
@@ -219,7 +219,7 @@
     },
     {
       "_template": "text",
-      "body": "An **atom-mapping verification tool** checks the correspondence of atoms, coordinates, and structures between the original SDF and the docking PDBQT files. A **pose-export tool** reconstructs SDF files using the complete Meeko structural metadata retained in PDBQT, preserving docking poses and chemical information such as formal charges for subsequent contact analysis."
+      "body": "An atom-mapping verification tool checks the correspondence of atoms, coordinates, and structures between the original SDF and the docking PDBQT files. A pose-export tool reconstructs SDF files using the complete Meeko structural metadata retained in PDBQT, preserving docking poses and chemical information such as formal charges for subsequent contact analysis."
     },
     {
       "_template": "text",
@@ -251,7 +251,7 @@
     },
     {
       "_template": "text",
-      "body": "Docking provides candidate binding poses for receptor engineering. We further used **molecular dynamics (MD) simulations** to examine how these poses persist or adjust in a membrane environment and organized the analysis of receptor conformational changes, ligand positions, and contacts into a reusable workflow."
+      "body": "Docking provides candidate binding poses for receptor engineering. We further used molecular dynamics (MD) simulations to examine how these poses persist or adjust in a membrane environment and organized the analysis of receptor conformational changes, ligand positions, and contacts into a reusable workflow."
     },
     {
       "_template": "text",
@@ -269,11 +269,11 @@
     },
     {
       "_template": "text",
-      "body": "We developed a **full-pathway ODE model** for our yeast GPCR biosensing system, connecting effective receptor input, intracellular signal transduction, and colorimetric output. The model reuses the yeast pathway structure from Supady Model B and the publicly available materials of TU Delft’s 2012 iGEM team, incorporates our project’s color-development module, and calculates signaling activity and color over time."
+      "body": "We developed a full-pathway ODE model for our yeast GPCR biosensing system, connecting effective receptor input, intracellular signal transduction, and colorimetric output. The model reuses the yeast pathway structure from Supady Model B and the publicly available materials of TU Delft’s 2012 iGEM team, incorporates our project’s color-development module, and calculates signaling activity and color over time."
     },
     {
       "_template": "text",
-      "body": "We documented the **shared pathway parameters** separately from **project-specific input and output settings**, recording parameter meanings, units, sources, and assumptions. Under fixed construct conditions, sTF regulation, GAL production rate, and color generation were combined into one effective colorimetric equation. Conservation of total molecular amounts was used to eliminate redundant states in the shared pathway. The accompanying equation descriptions and computational consistency checks help users understand and adapt the model."
+      "body": "We documented the shared pathway parameters separately from project-specific input and output settings, recording parameter meanings, units, sources, and assumptions. Under fixed construct conditions, sTF regulation, GAL production rate, and color generation were combined into one effective colorimetric equation. Conservation of total molecular amounts was used to eliminate redundant states in the shared pathway. The accompanying equation descriptions and computational consistency checks help users understand and adapt the model."
     },
     {
       "_template": "text",
@@ -291,11 +291,11 @@
     },
     {
       "_template": "text",
-      "body": "We developed an economic benefit model connecting pathogen or pest density, crop yield loss, and management costs. It compares **three scenarios**: no testing and no treatment, uniform treatment without testing, and risk-based treatment following testing. The model estimates yield losses from the density-yield relationship, then combines product prices, testing costs, treatment costs, and treatment efficacy to calculate the expected net return of each strategy."
+      "body": "We developed an economic benefit model connecting pathogen or pest density, crop yield loss, and management costs. It compares three scenarios: no testing and no treatment, uniform treatment without testing, and risk-based treatment following testing. The model estimates yield losses from the density-yield relationship, then combines product prices, testing costs, treatment costs, and treatment efficacy to calculate the expected net return of each strategy."
     },
     {
       "_template": "text",
-      "body": "Model parameters are organized separately from report content so that users can **substitute local crop prices**, testing costs, treatment costs, risk thresholds, and treatment efficacy. Settings with an established density-yield relationship support comparisons of economic returns. Settings with risk thresholds alone provide risk indications, with the analysis extended as more data become available."
+      "body": "Model parameters are organized separately from report content so that users can substitute local crop prices, testing costs, treatment costs, risk thresholds, and treatment efficacy. Settings with an established density-yield relationship support comparisons of economic returns. Settings with risk thresholds alone provide risk indications, with the analysis extended as more data become available."
     },
     {
       "_template": "text",

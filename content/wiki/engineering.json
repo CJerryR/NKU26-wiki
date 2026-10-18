@@ -50,7 +50,7 @@
     },
     {
       "_template": "text",
-      "body": "We examined scores, ligand positions, and residue contacts to assess whether docking poses agreed with the available literature evidence. The analysis revealed that inconsistent coordinate references could misplace search regions and that loss of formal charges during format conversion could affect the identification of charged contacts. We therefore added **structural alignment, search-region review, and chemical-information checks**, progressively refining the docking and contact-analysis workflow."
+      "body": "We examined scores, ligand positions, and residue contacts to assess whether docking poses agreed with the available literature evidence. The analysis revealed that inconsistent coordinate references could misplace search regions and that loss of formal charges during format conversion could affect the identification of charged contacts. We therefore added structural alignment, search-region review, and chemical-information checks, progressively refining the docking and contact-analysis workflow."
     },
     {
       "_template": "heading",
@@ -263,7 +263,7 @@
     },
     {
       "_template": "text",
-      "body": "To investigate the differential recognition of ascr#18 and ascr#3 by Gpr2, we compared the WT receptor’s contact distributions with both ligands. Residues showing **contact differences** were selected as candidate sites, and alanine substitutions were used to examine how each position affected the two-ligand profile."
+      "body": "To investigate the differential recognition of ascr#18 and ascr#3 by Gpr2, we compared the WT receptor’s contact distributions with both ligands. Residues showing contact differences were selected as candidate sites, and alanine substitutions were used to examine how each position affected the two-ligand profile."
     },
     {
       "_template": "heading",
@@ -283,7 +283,7 @@
     },
     {
       "_template": "text",
-      "body": "We selected candidates from single-site alanine scanning, used score changes and contact analysis to guide additional side-chain substitutions, and performed **saturation scanning** at selected sites. Candidates were grouped as favoring ascr#3 or ascr#18 according to the difference between the two ligands’ score changes relative to WT. We then examined both scores separately to determine whether the shift resulted from a lower score for the target ligand, a higher score for the other ligand, or both. Contact comparisons with WT helped identify the associated changes in ligand position and interactions."
+      "body": "We selected candidates from single-site alanine scanning, used score changes and contact analysis to guide additional side-chain substitutions, and performed saturation scanning at selected sites. Candidates were grouped as favoring ascr#3 or ascr#18 according to the difference between the two ligands’ score changes relative to WT. We then examined both scores separately to determine whether the shift resulted from a lower score for the target ligand, a higher score for the other ligand, or both. Contact comparisons with WT helped identify the associated changes in ligand position and interactions."
     },
     {
       "_template": "text",
@@ -323,7 +323,7 @@
     },
     {
       "_template": "text",
-      "body": "We placed each docking pose into its corresponding full-length receptor, checked for spatial clashes between the ligand and restored segments, and adjusted local lid regions where overlaps occurred. During rebuilding, we found that some approaches also changed the backbone outside the loop or the initial ligand pose. We therefore **restricted adjustments to the lid region** while retaining the remaining coordinates of each system. After these checks, each of the six complexes was placed in a POPC lipid bilayer with solvent and ions."
+      "body": "We placed each docking pose into its corresponding full-length receptor, checked for spatial clashes between the ligand and restored segments, and adjusted local lid regions where overlaps occurred. During rebuilding, we found that some approaches also changed the backbone outside the loop or the initial ligand pose. We therefore restricted adjustments to the lid region while retaining the remaining coordinates of each system. After these checks, each of the six complexes was placed in a POPC lipid bilayer with solvent and ions."
     },
     {
       "_template": "heading",
@@ -351,7 +351,7 @@
     },
     {
       "_template": "text",
-      "body": "The MD results prompted us to revisit the contact-based interpretation of docking. A ligand may maintain its position through persistent contacts, or it may leave its initial pose and establish contacts elsewhere. Assessing mutation effects therefore requires examining both ligand motion and internal receptor changes. Each system currently has only **one trajectory**, so the sequence of contact changes requires testing through replicate simulations, while actual recognition capability requires experimental confirmation."
+      "body": "The MD results prompted us to revisit the contact-based interpretation of docking. A ligand may maintain its position through persistent contacts, or it may leave its initial pose and establish contacts elsewhere. Assessing mutation effects therefore requires examining both ligand motion and internal receptor changes. Each system currently has only one trajectory, so the sequence of contact changes requires testing through replicate simulations, while actual recognition capability requires experimental confirmation."
     },
     {
       "_template": "heading",
@@ -367,7 +367,7 @@
     },
     {
       "_template": "text",
-      "body": "Using the biological principles of receptor activation, signal transduction, and color development, we established a **minimal, lumped model**. Ligand L served as the input to six functional nodes: receptor R, G protein, MAPK, sTF, GAL production rate, and color. The model used three dynamic equations and three algebraic relationships. Analysis showed that several internal parameters lacked project-specific measurements and could not be determined separately from the final color output alone. We therefore investigated reusable models from the literature and previous iGEM teams."
+      "body": "Using the biological principles of receptor activation, signal transduction, and color development, we established a minimal, lumped model. Ligand L served as the input to six functional nodes: receptor R, G protein, MAPK, sTF, GAL production rate, and color. The model used three dynamic equations and three algebraic relationships. Analysis showed that several internal parameters lacked project-specific measurements and could not be determined separately from the final color output alone. We therefore investigated reusable models from the literature and previous iGEM teams."
     },
     {
       "_template": "heading",
@@ -377,7 +377,7 @@
     },
     {
       "_template": "text",
-      "body": "Using the publicly available reaction structures of Supady Model B and TU Delft 2012, we incorporated G protein, scaffold, Fus3, and feedback modules. Under fixed construct conditions, we combined sTF regulation, GAL production rate, and color generation. Conservation of total molecular amounts was then used to eliminate redundant states in the shared pathway, yielding **six independent dynamic equations**."
+      "body": "Using the publicly available reaction structures of Supady Model B and TU Delft 2012, we incorporated G protein, scaffold, Fus3, and feedback modules. Under fixed construct conditions, we combined sTF regulation, GAL production rate, and color generation. Conservation of total molecular amounts was then used to eliminate redundant states in the shared pathway, yielding six independent dynamic equations."
     },
     {
       "_template": "heading",
@@ -423,7 +423,7 @@
     },
     {
       "_template": "text",
-      "body": "We used Mi densities of 0, 40, and 120 J2/100 cm³, corresponding to the low-, medium-, and high-risk categories in the current Eco example. These were crossed with three independently varying background levels to produce nine simulated combinations. After defining assumptions about ligand release and the mapping to colorimetric output, we fitted the two ODE models separately and used their **blank-corrected color outputs** to build a density regression model with three coefficients."
+      "body": "We used Mi densities of 0, 40, and 120 J2/100 cm³, corresponding to the low-, medium-, and high-risk categories in the current Eco example. These were crossed with three independently varying background levels to produce nine simulated combinations. After defining assumptions about ligand release and the mapping to colorimetric output, we fitted the two ODE models separately and used their blank-corrected color outputs to build a density regression model with three coefficients."
     },
     {
       "_template": "heading",
@@ -433,7 +433,7 @@
     },
     {
       "_template": "text",
-      "body": "After fitting, we defined **twelve additional combinations** of target and background abundance. Colors were generated through the ODE models, and we compared how well one or two channels recovered the predefined Mi densities. The two-channel model produced smaller errors in these simulated combinations, but some low-density samples yielded negative estimates, indicating that bias remained when the target signal was weak. Changing the assumed ratio of the two ligands released by Mi while keeping model parameters fixed also changed the prediction error, showing that the estimates depended on assumptions about ligand composition."
+      "body": "After fitting, we defined twelve additional combinations of target and background abundance. Colors were generated through the ODE models, and we compared how well one or two channels recovered the predefined Mi densities. The two-channel model produced smaller errors in these simulated combinations, but some low-density samples yielded negative estimates, indicating that bias remained when the target signal was weak. Changing the assumed ratio of the two ligands released by Mi while keeping model parameters fixed also changed the prediction error, showing that the estimates depended on assumptions about ligand composition."
     },
     {
       "_template": "heading",
@@ -443,11 +443,11 @@
     },
     {
       "_template": "text",
-      "body": "**Near the Eco risk thresholds**, even a small density-prediction error can assign a sample to an adjacent risk category. Subsequent experiments should therefore assess overall prediction error, increase sampling near the thresholds, and separately examine background-only samples and samples with low target densities. Experimental calibration will vary target and background abundance independently, with separate batches used to evaluate whether two channels improve density estimation."
+      "body": "Near the Eco risk thresholds, even a small density-prediction error can assign a sample to an adjacent risk category. Subsequent experiments should therefore assess overall prediction error, increase sampling near the thresholds, and separately examine background-only samples and samples with low target densities. Experimental calibration will vary target and background abundance independently, with separate batches used to evaluate whether two channels improve density estimation."
     },
     {
       "_template": "text",
-      "body": "The model derivation is complete, while **calibration with project wet-lab data is still underway**. In the next iteration, we will calibrate parameters using actual construct information and measurements and assess whether additional mechanisms, such as response delays, are needed."
+      "body": "The model derivation is complete, while calibration with project wet-lab data is still underway. In the next iteration, we will calibrate parameters using actual construct information and measurements and assess whether additional mechanisms, such as response delays, are needed."
     },
     {
       "_template": "heading",
@@ -493,7 +493,7 @@
     },
     {
       "_template": "text",
-      "body": "This comparison clarified the control needed to assess the value of detection. Improvements relative to no control include the effect of treatment itself, while **comparison with uniform treatment** more directly examines whether detection information helps users make better management choices."
+      "body": "This comparison clarified the control needed to assess the value of detection. Improvements relative to no control include the effect of treatment itself, while comparison with uniform treatment more directly examines whether detection information helps users make better management choices."
     },
     {
       "_template": "heading",
@@ -503,7 +503,7 @@
     },
     {
       "_template": "text",
-      "body": "The analysis refined our detection objectives: provide semiquantitative or quantitative information that supports risk classification, cover the key density ranges where management strategies change, and communicate **sampling and measurement uncertainty** when results fall close to classification thresholds."
+      "body": "The analysis refined our detection objectives: provide semiquantitative or quantitative information that supports risk classification, cover the key density ranges where management strategies change, and communicate sampling and measurement uncertainty when results fall close to classification thresholds."
     },
     {
       "_template": "text",

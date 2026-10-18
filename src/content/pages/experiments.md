@@ -65,7 +65,7 @@ hidden: false
 
 ### 2.8 Agarose Gel Electrophoresis {#protocol-agarose-gel-electrophoresis toc="Agarose Gel Electrophoresis"}
 
-**Agarose Gel Electrophoresis**.
+Agarose Gel Electrophoresis.
 
 <figure class="wiki-media wiki-media--pdf"><div class="wiki-media__bar"><span class="wiki-media__kind">PDF</span><span class="wiki-media__title">（PDF“8.Agarose Gel Electrophoresis”）</span><a class="wiki-media__action" href="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-4bee1bb6f8a3-protocol-08.pdf" target="_blank" rel="noopener noreferrer">Open PDF / Download</a></div><iframe class="wiki-media__frame" src="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-4bee1bb6f8a3-protocol-08.pdf" title="（PDF“8.Agarose Gel Electrophoresis”）" loading="lazy" style="height:650px" referrerpolicy="no-referrer"></iframe></figure>
 
@@ -77,7 +77,7 @@ hidden: false
 
 ### 2.10 Restriction Enzyme Digestion Reaction {#protocol-restriction-enzyme-digestion-reaction toc="Restriction Enzyme Digestion Reaction"}
 
-**Restriction Enzyme Digestion Reaction**.
+Restriction Enzyme Digestion Reaction.
 
 <figure class="wiki-media wiki-media--pdf"><div class="wiki-media__bar"><span class="wiki-media__kind">PDF</span><span class="wiki-media__title">（PDF“10.Restriction Enzyme Digestion Reaction”）</span><a class="wiki-media__action" href="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-6c92e753b05a-protocol-10.pdf" target="_blank" rel="noopener noreferrer">Open PDF / Download</a></div><iframe class="wiki-media__frame" src="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-6c92e753b05a-protocol-10.pdf" title="（PDF“10.Restriction Enzyme Digestion Reaction”）" loading="lazy" style="height:650px" referrerpolicy="no-referrer"></iframe></figure>
 
@@ -95,7 +95,7 @@ Preservation and Recovery of Glycerol Stocks.
 
 ### 2.13 Extraction of Yeast Genomic DNA {#protocol-extraction-of-yeast-genomic-dna toc="Extraction of Yeast Genomic DNA"}
 
-**Extraction of Yeast Genomic DNA**.
+Extraction of Yeast Genomic DNA.
 
 <figure class="wiki-media wiki-media--pdf"><div class="wiki-media__bar"><span class="wiki-media__kind">PDF</span><span class="wiki-media__title">（PDF“13.Extraction of Yeast Genomic DNA”）</span><a class="wiki-media__action" href="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-01699080a847-protocol-13.pdf" target="_blank" rel="noopener noreferrer">Open PDF / Download</a></div><iframe class="wiki-media__frame" src="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-01699080a847-protocol-13.pdf" title="（PDF“13.Extraction of Yeast Genomic DNA”）" loading="lazy" style="height:650px" referrerpolicy="no-referrer"></iframe></figure>
 

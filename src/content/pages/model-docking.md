@@ -153,82 +153,11 @@ Figure 6 | Literature reference for predicted ascaroside pockets in different re
 
 This extension takes the site-selection method from two-ligand comparisons within a single receptor to cross-receptor analysis: contact differences identify candidate positions, sequence and structural correspondence assess comparability between positions, and construct records verify the objects actually analyzed. Original scores, per-pose contact tables, model identifiers, WT sources and structural-processing records jointly provide a basis for review, and allow other researchers to apply this analytical approach to their own receptor and ligand systems.
 
-## 原英文稿（2026-10-10） {#source-english-20261010 toc="原英文稿（2026-10-10）"}
+<span id="source-english-20261010" aria-hidden="true"></span>
+<span id="original-model-block-36" aria-hidden="true"></span>
+<span id="original-model-block-45" aria-hidden="true"></span>
+<span id="original-model-block-49" aria-hidden="true"></span>
+<span id="original-model-block-54" aria-hidden="true"></span>
+<span id="original-model-block-68" aria-hidden="true"></span>
 
-### Comparison Set and Contact Frequencies {#original-model-block-36 toc="Comparison Set and Contact Frequencies"}
-
-The core contact analysis included Gpr2 and Gpr3 from *Arthrobotrys oligospora*, GprC from *Arthrobotrys flagrans*, and DAF-37 and SRBC-64 from *Caenorhabditis elegans*. The inclusion of nematode receptors drew on the structural and chimeric-receptor studies of Hu et al. and was intended to investigate recurring contact positions among receptors with low sequence similarity. [B03]
-
-Five AlphaFold 3 (AF3) predicted models were used for each receptor. Each model was docked separately with ascr#18 and ascr#3, giving 50 receptor-model–ligand combinations. [B07] Gpr2 and Gpr3 used deletion constructs designated deltaN, while GprC, DAF-37, and SRBC-64 used WT constructs. Residue positions retained full-length numbering, and contact statistics included only positions actually present in the docking structures.
-
-For a given receptor model, ligand, residue, and contact type, contact frequency was defined as the number of valid poses showing the contact divided by the total number of valid poses in that group. The two ligands were paired within each receptor model, and the direction and magnitude of the differences were then summarized across the five models. Throughout the tables:
-
-<div class="wiki-toolkit-block"><wiki-toolkit data-type="equation" data-props="{&quot;_template&quot;:&quot;equation&quot;,&quot;latex&quot;:&quot;\\Delta f=f(\\mathrm{ascr#18})-f(\\mathrm{ascr#3}).&quot;}"><div class="wiki-toolkit-fallback"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>f</mi><mo>=</mo><mi>f</mi><mo stretchy="false">(</mo><mrow><mi mathvariant="normal">a</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">#</mi><mn>18</mn></mrow><mo stretchy="false">)</mo><mo>−</mo><mi>f</mi><mo stretchy="false">(</mo><mrow><mi mathvariant="normal">a</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">#</mi><mn>3</mn></mrow><mo stretchy="false">)</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\Delta f=f(\mathrm{ascr\#18})-f(\mathrm{ascr\#3}).</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord">Δ</span><span class="mord mathnormal" style="margin-right:0.1076em;">f</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.1076em;">f</span><span class="mopen">(</span><span class="mord"><span class="mord mathrm">ascr#18</span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.1076em;">f</span><span class="mopen">(</span><span class="mord"><span class="mord mathrm">ascr#3</span></span><span class="mclose">)</span><span class="mord">.</span></span></span></span></span></div><noscript><style>.wiki-toolkit-fallback{display:block!important}wiki-toolkit:not(:defined){min-height:0;border:0;background:none;animation:none}</style><p>Enable JavaScript to use the interactive controls.</p></noscript></wiki-toolkit></div>
-
-Positive values indicate a higher contact frequency for ascr#18, and negative values indicate a higher frequency for ascr#3. This frequency describes contact occurrence within the set of valid docking poses; the five AF3 models represent predicted conformations.
-
-### Differential Contacts with Two Ligands in the Three Fungal Receptors {#original-model-block-45 toc="Differential Contacts with Two Ligands in the Three Fungal Receptors"}
-
-Gpr2 W338, Gpr3 W306, and GprC W388 all showed contact differences favoring ascr#18, but the consistency of this bias varied across models. Hydrophobic contacts at Gpr2 W338 were more frequent for ascr#18 in all five paired models, whereas the same contact type at Gpr3 W306 showed this pattern in 3/5 models. For GprC W388, the counts were 4/5 for van der Waals contacts and 3/5 for hydrophobic contacts. The three positions therefore shared the direction of contact bias while retaining differences between receptors and contact types (Table 1).
-
-Hydrophobic denotes hydrophobic contacts identified according to the rules used, while VdWContact denotes contacts meeting the geometric criteria for van der Waals contacts. For Gpr3 W306, the “support count in the original report” is 4/5, whereas the number of paired models with a higher frequency for ascr#18 is 3/5. These are different fields. Median Δf describes a difference in contact frequency, not binding energy. Gaps in the records for the set included in the median and the pose denominators are discussed in the statistical definitions in Model/Docking Section 1.1.
-
-These results identify the three tryptophans as candidate sites for differential contacts with the two ligands. However, ligand bias within a receptor is insufficient to establish whether the sites correspond across receptors. We therefore compared the existing contact results with sequence and structural mapping.
-
-### Support for TM6 Positional Correspondence and Disagreement in the Nematode Receptors {#original-model-block-49 toc="Support for TM6 Positional Correspondence and Disagreement in the Nematode Receptors"}
-
-Gpr2 W338, Gpr3 W306, and GprC W388 were assigned to TM6 by both topology-prediction methods. In full-length multiple sequence alignments (MSAs), both MAFFT L-INS-i and MUSCLE super5 placed the three tryptophans in the same column. When any of these positions was used to query the other two fungal receptors, US-align returned the corresponding tryptophan in all 25 predicted-structure combinations for each relevant receptor pair. All three positions also mapped to position 226 of the Phyre2 fold reference c7xmsA. These consistent results support a hypothesis of positional homology within TM6 among the three fungal receptors. [B08, B09, B10]
-
-When the analysis was extended to nematode receptors, sequence and structural mapping identified different corresponding positions. MAFFT placed DAF-37 W301 and SRBC-64 F235 in the same column as the three fungal tryptophans. MUSCLE retained DAF-37 W301 but produced a gap for SRBC-64. In contrast, structural mapping using the three fungal tryptophans as queries returned DAF-37 N299 and SRBC-64 S228. This disagreement concerns specific residues, rather than simply higher or lower alignment scores: the aromatic-residue column in the sequence alignment was not supported by the same structural correspondence.
-
-Table 2 presents three distinct levels of analysis. The five target receptors are used to compare correspondence of the same candidate position across receptors. Each receptor’s own set of homologous sequences is used to examine residue retention within that receptor family. The 25 structural combinations for each receptor pair come from 5 × 5 pairings of the predicted models. W338, W306, and W388 have high exact-W proportions within their respective homologous-sequence sets, but these are not proportions of shared tryptophan across the five target receptors.
-
-HHalign sequence-model comparisons support overall homology among the fungal receptors, but direct mapping at this site covers only W338 ↔ W306 and does not return GprC W388. [B11] Considering both MSAs, structural mapping, and the fold reference together, the most consistent correspondence currently covers the three fungal receptors. A shared aromatic recognition position in TM6 across all five receptors has not been established. Inputs, filtering commands, and mapping scope for each method are retained in Methods Table A.
-
-### GprC N56 and Other Receptor-Specific Contacts {#original-model-block-54 toc="GprC N56 and Other Receptor-Specific Contacts"}
-
-A representative candidate favoring ascr#3 is the HBAcceptor contact at GprC N56. Both ligands can contact this position in all five models. The frequency is higher for ascr#3 in three paired models, with a median Δf of −0.222. This difference describes how the two ligands contact the same receptor; it is not a contact position exclusive to ascr#3.
-
-Cross-receptor correspondence for N56 is sensitive to the alignment algorithm. Within GprC’s own homologous sequences, N is retained in 15/34 sequences, and the chemical class used in the analysis is retained in 16/34. This level of retention differs from that of the three TM6 tryptophans. The GprC N2.53A mutant studied by Hu et al. showed no detectable loss of function in the trap-formation readout, and the team mapped that literature position to N56 in the full-length sequence. [B03, Figure 4] This functional readout differs from the relative response to ascr#3 versus ascr#18. The effect of N56A on the relative responses to the two ligands remains to be tested.
-
-Gpr3 Y172 and SRBC-64 F161 also show contacts favoring ascr#18 within their respective receptors, but support for cross-receptor correspondence is weaker. At other positions, absence results from the construct itself: some full-length positions in Gpr2/Gpr3 corresponding to GprC W155/W157 lie within the current deltaN deletion regions and therefore did not contribute to contact statistics for the corresponding docking structures (Table 3).
-
-For N56, the original report recorded a median difference of +0.222 in the direction of the favored ligand. Under the common ascr#18-minus-ascr#3 direction used in this table, it is −0.222. Candidates are retained from the existing report; the implementation of the 0.20 threshold and the set included in the median remain subject to the statistical definitions discussed in Model/Docking Section 1.1.
-
-`NA_construct_absent` indicates that the residue is absent from the docking structure, while an MSA gap indicates a gap in an alignment column. A residue that is present but makes no contact and a failed calculation are recorded as separate states. Preserving these distinctions allows N56, Y172, and F161 to be discussed as differential contacts within individual receptors, while cross-receptor contact comparisons for W155/W157 remain constrained by the actual deleted regions.
-
-### Atom-Record Integrity and Formal Charges {#original-model-block-68 toc="Atom-Record Integrity and Formal Charges"}
-
-Torsion processing of ascr#18 once inadvertently deleted atoms, leaving the docking input structure incomplete. After the procedure was changed to remove only BRANCH/ENDBRANCH torsion-branch records, the regenerated PDBQT file contained 26 atom records instead of 15. These values refer to atom-record counts in the file.
-
-Formal charges were also lost during conversion from PDBQT back to SDF, causing Anionic/Cationic contacts, which depend on identifying charged chemical groups, to lose their correct chemical meaning. ProLIF interaction fingerprints (IFPs) identify contacts using chemical types and distance and angle criteria. Identical spatial coordinates are therefore insufficient to preserve identical contact classifications. [B05]
-
-The corresponding chemical checks preserve the chemical state specified in the original SDF, explicit atom mapping, and post-docking coordinates. Pose export reconstructs SDF files using the SMILES and index mappings stored by Meeko in PDBQT remarks and depends on complete retention of the structural metadata written during preparation. [B06] Historical records also showed systematic score shifts when WT used a single-stage search and mutants used a two-stage search. Spatial region, search protocol, and chemical state must therefore be checked together within a comparison.
-
-N84Y/V368N illustrated another type of benefit. Relative to the N84Y single mutant, the scores for the two ligands decreased by 0.590 and 0.612 kcal/mol, respectively, while (D) changed by only −0.022 kcal/mol. This combination improved both scores while largely retaining the original difference, showing that ranking designs solely by the magnitude of the difference can overlook useful candidates.
-
-B01. Manosalva P, Manohar M, von Reuss SH, et al. Conserved nematode signalling molecules elicit plant defenses and pathogen resistance. *Nature Communications.* 2015;6:7795. DOI: [10.1038/ncomms8795](https://doi.org/10.1038/ncomms8795).
-
-B02. Kuo C-Y, Tay RJ, Lin H-C, et al. The nematode-trapping fungus Arthrobotrys oligospora detects prey pheromones via G protein-coupled receptors. *Nature Microbiology.* 2024;9:1738–1751. DOI: [10.1038/s41564-024-01679-w](https://doi.org/10.1038/s41564-024-01679-w).
-
-B03. Hu X, Hoffmann DS, Wang M, et al. GprC of the nematode-trapping fungus Arthrobotrys flagrans activates mitochondria and reprograms fungal cells for nematode hunting. *Nature Microbiology.* 2024;9:1752–1763. DOI: [10.1038/s41564-024-01731-9](https://doi.org/10.1038/s41564-024-01731-9).
-
-B04. AutoDock Vina developers. *AutoDock Vina Documentation: Frequently Asked Questions.* Accessed October 7, 2026. Relevant entries: “How accurate is AutoDock Vina?”; “How big should the search space be?”; “Why do I not get the correct bound conformation?”
-
-B05. Bouysset C, Fiorucci S. ProLIF: a library to encode molecular interactions as fingerprints. *Journal of Cheminformatics.* 2021;13:72. DOI: [10.1186/s13321-021-00548-6](https://doi.org/10.1186/s13321-021-00548-6).
-
-B06. Meeko authors, Forli Lab. *Meeko Documentation: Exporting docking results.* Accessed October 7, 2026. Relevant content: SMILES and index mapping in PDBQT files, SDF export, and dependence on structural metadata.
-
-B07. Abramson J, Adler J, Dunger J, et al. Accurate structure prediction of biomolecular interactions with AlphaFold 3. *Nature.* 2024;630:493–500. DOI: [10.1038/s41586-024-07487-w](https://doi.org/10.1038/s41586-024-07487-w).
-
-B08. Katoh K, Standley DM. MAFFT multiple sequence alignment software version 7: improvements in performance and usability. *Molecular Biology and Evolution.* 2013;30(4):772–780. DOI: [10.1093/molbev/mst010](https://doi.org/10.1093/molbev/mst010).
-
-B09. Edgar RC. Muscle5: High-accuracy alignment ensembles enable unbiased assessments of sequence homology and phylogeny. *Nature Communications.* 2022;13:6968. DOI: [10.1038/s41467-022-34630-w](https://doi.org/10.1038/s41467-022-34630-w).
-
-B10. Zhang C, Shine M, Pyle AM, Zhang Y. US-align: universal structure alignments of proteins, nucleic acids, and macromolecular complexes. *Nature Methods.* 2022;19:1109–1115. DOI: [10.1038/s41592-022-01585-1](https://doi.org/10.1038/s41592-022-01585-1).
-
-B11. Söding J. Protein homology detection by HMM–HMM comparison. *Bioinformatics.* 2005;21(7):951–960. DOI: [10.1093/bioinformatics/bti125](https://doi.org/10.1093/bioinformatics/bti125).
-
-B12. Reliability and reproducibility checklist for molecular dynamics simulations. Editorial. *Communications Biology.* 2023;6:268. DOI: [10.1038/s42003-023-04653-0](https://doi.org/10.1038/s42003-023-04653-0).
-
-<span id="docking-references" aria-hidden="true"></span><span id="docking-reference-1" aria-hidden="true"></span><span id="docking-reference-2" aria-hidden="true"></span>
+[Historical source documents / 历史原稿](/source-archive/)

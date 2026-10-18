@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import argparse
 import html
+import hashlib
 import json
 import re
 import sys
@@ -188,12 +189,47 @@ def outside_code(body: str) -> list[str]:
     return lines
 
 
-def check_text(label: str, source: str, failures: list[str]) -> None:
+def author_review_fragments(root: Path, slug: str, source: str, failures: list[str]) -> list[str]:
+    """Recognize only exact, user-authorized source excerpts; never approve their science."""
+    path = root / "content" / "author-verbatim-review.json"
+    if not path.exists():
+        return []
+    try:
+        records = json.loads(path.read_text(encoding="utf-8"))
+        fragments = []
+        for record in records:
+            if record["page"] != slug:
+                continue
+            fragment = record["fragment"]
+            valid = (record.get("user_authorized_preservation") is True
+                     and record.get("scientific_review_approved") is False
+                     and re.fullmatch(r"[0-9a-f]{64}", record["source_file_sha256"])
+                     and hashlib.sha256(fragment.encode()).hexdigest() == record["fragment_sha256"]
+                     and fragment and source.count(fragment) == 1)
+            if not valid:
+                failures.append(f"{slug}: author-preservation record no longer matches the exact source excerpt")
+            else:
+                fragments.append(fragment)
+        return fragments
+    except (OSError, ValueError, KeyError, TypeError):
+        failures.append("content/author-verbatim-review.json: invalid source-preservation record")
+        return []
+
+
+def check_text(label: str, source: str, failures: list[str],
+               review_fragments: list[str] | None = None,
+               review_blockers: list[str] | None = None) -> None:
     for name, pattern in FORBIDDEN_PATTERNS:
         if pattern.search(source):
             failures.append(f"{label}: {name}")
+    claim_source = source
+    for fragment in review_fragments or []:
+        claim_source = claim_source.replace(fragment, "", 1)
+        for name, pattern in OVERCLAIM_PATTERNS:
+            if has_unnegated_match(fragment, pattern) and review_blockers is not None:
+                review_blockers.append(f"{label}: {name} in verbatim author source; preserved by user decision; scientific review required")
     for name, pattern in OVERCLAIM_PATTERNS:
-        if has_unnegated_match(source, pattern):
+        if has_unnegated_match(claim_source, pattern):
             failures.append(f"{label}: {name}")
 
 
@@ -214,7 +250,7 @@ def audit_source(root: Path, path: Path, icons: set[str], failures: list[str], b
         failures.append(f"{rel}: frontmatter sub must be a string")
     if "meta" in fm and not isinstance(fm["meta"], dict):
         failures.append(f"{rel}: frontmatter meta must be a map")
-    check_text(str(rel), text, failures)
+    check_text(str(rel), text, failures, author_review_fragments(root, path.stem, text, failures), blockers)
 
     lines = outside_code(body)
     ids = []

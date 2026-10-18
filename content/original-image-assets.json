@@ -1049,5 +1049,62 @@
     "chunks": [
       "https://static.igem.wiki/teams/6303/wiki/v8-7/original-86797ed4c424-00.json"
     ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-73eaaceee28d-kuang-yinzi.avif": {
+    "sha256": "0387e10357e0d53ff4ae58486d7a5c2b0306fb38ec39e0496800f28ee62c34ad",
+    "mime_type": "image/jpeg",
+    "original_name": "Kuang Yinzi.jpg",
+    "source_dimensions": [
+      3120,
+      4160
+    ],
+    "authorized_change": "GPS metadata removed only; original locally retained; decoded pixels of every frame verified unchanged",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-gps-clean-0387e10357e0-00.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-gps-clean-0387e10357e0-01.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-5667764dc7f7-ruoxi-yang.avif": {
+    "sha256": "2498ade0c5bd0b406eab5b8ee5afb76221bbd9e529888296d5474133d0506bfd",
+    "mime_type": "image/jpeg",
+    "original_name": "杨若希.JPG",
+    "source_dimensions": [
+      2316,
+      3088
+    ],
+    "authorized_change": "GPS metadata removed only; original locally retained; decoded pixels of every frame verified unchanged",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-gps-clean-2498ade0c5bd-00.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-gps-clean-2498ade0c5bd-01.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-gps-clean-2498ade0c5bd-02.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-gps-clean-2498ade0c5bd-03.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-270ecf6f2522-yuanwen-luo.avif": {
+    "sha256": "0bfc2a234d65e5dfe713fd2b1d20ffc76bf9f2111fb94ddd753cc8372889e0f4",
+    "mime_type": "image/jpeg",
+    "original_name": "Luo Yuanwen.jpg",
+    "source_dimensions": [
+      3264,
+      2448
+    ],
+    "authorized_change": "GPS metadata removed only; original locally retained; decoded pixels of every frame verified unchanged",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-gps-clean-0bfc2a234d65-00.json"
+    ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-b5b9b9256085-fig3-2-2.avif": {
+    "sha256": "88ac480d868f85f7d570356d0d43e8812fb4473b2be3438776c013ad0d40a653",
+    "mime_type": "image/jpeg",
+    "original_name": "Fig3.2.2.jpg",
+    "source_dimensions": [
+      3072,
+      3072
+    ],
+    "authorized_change": "GPS metadata removed only; original locally retained; decoded pixels of every frame verified unchanged",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-gps-clean-88ac480d868f-00.json",
+      "https://static.igem.wiki/teams/6303/wiki/v8-7/original-gps-clean-88ac480d868f-01.json"
+    ]
   }
 }

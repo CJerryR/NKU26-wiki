@@ -368,6 +368,27 @@
         "Author review of untranslated/conflicting passages and unproofread English"
       ],
       "original_program_integration": "Author Python, source parameters and report renderer unchanged; browser transport only"
+    },
+    {
+      "slug": "source-archive",
+      "status": "complete-original-files-retained-as-historical-submissions",
+      "team_copy_received": true,
+      "team_review_approved": false,
+      "integration_gate1_approved": true,
+      "sources": [
+        "Model｜zh.md",
+        "Model｜en.md",
+        "Project｜zh.md",
+        "Project｜en.md",
+        "Drylab Wiki｜Project - zh.docx",
+        "Drylab Wiki｜Project - eg.docx",
+        "Best-Education-page-revised-draft(1).docx",
+        "HP wiki 语料库整合版.docx",
+        "赞助语料库.docx",
+        "HP调研.docx",
+        "Engineering 中文版3.0.docx",
+        "Engineering 英文版3.0.docx"
+      ]
     }
   ],
   "round2_note": "Local Tina integration of supplied English copy and assets. Human Practices Chinese manuscript remains archive-only. No final team review or publication approval is asserted.",
@@ -375,5 +396,12 @@
     "status": "local-only, conflicts frozen",
     "conflict_record": "outputs/原稿恢复与完整组件-20261018/待用户判断的冲突.json",
     "publication": "not-pushed"
+  },
+  "author_fidelity_decisions": {
+    "date": "2026-10-18",
+    "record": "content/author-source-decisions.json",
+    "user_authorized": true,
+    "scientific_final_review_approved": false,
+    "summary": "Restore author wording even across conflicting documents; NemaKlear name exception authorized; latest main text and complete older sources archived; only GPS metadata removed from four named images"
   }
 }

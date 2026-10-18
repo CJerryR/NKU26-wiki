@@ -379,9 +379,9 @@ Figure 11. Schematic diagram of sTF Expression Cassette transformation.
 
 :::figure
 
-![Figure 12. Schematic diagram of Gal1/10bp-Betaxanthin Expression Cassette transformation (a) and transformant validation (b).](https://static.igem.wiki/teams/6303/wiki/v8-0/v85-66c1379247d8-r2-66c1379247d8-fig2-4-12.avif)
+![Figure 2. Schematic diagram of Gal1/10bp-Betaxanthin Expression Cassette transformation (a) and transformant validation (b).](https://static.igem.wiki/teams/6303/wiki/v8-0/v85-66c1379247d8-r2-66c1379247d8-fig2-4-12.avif)
 
-**Figure 12.** Schematic diagram of Gal1/10bp-Betaxanthin Expression Cassette transformation (a) and transformant validation (b).
+<p><strong>Figure 2</strong><strong>.</strong><strong> Schematic diagram of Gal1/10bp-Betaxanthin Expression Cassette transformation (a) and transformant validation (b).</strong></p>
 
 :::
 
@@ -647,4 +647,4 @@ For functional performance validation, the cell-laden test strip was placed insi
 
 #### 3.2.3.3 Learn {#results-stage-3-2-3-3 toc="3.2.3.3 Learn"}
 
-The 3D-printed strip holder addresses the physical constraint of full submersion by controlling liquid-layer thickness and the chamber microenvironment. These tests support further development of a portable yeast test-strip format. **Performance under agricultural sampling conditions and end-to-end sensing remain to be evaluated**.
+<p>This 3D-printed strip holder successfully overcomes the physical bottleneck of hypoxia caused by full submersion of test strips, converting our yeast biosensor into a deployable physical product. By precisely tuning liquid layer thickness and the chamber microenvironment, the hardware enables rapid and reproducible colorimetric signal output, laying a solid foundation for our final portable, intuitive, field-ready yeast test-strip detection device.</p>

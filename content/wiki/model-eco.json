@@ -53,7 +53,7 @@
     },
     {
       "_template": "text",
-      "body": "The simulated interface retains a point estimate and **regression prediction interval**. When the interval crosses a grading boundary, scenarios on either side show how treatment choice and income comparisons may change. Negative density, unsupported observations and estimates outside the economic model's domain cannot supply a valid report. Calibration-range handling must also be stated for each implementation. The current interval describes formal uncertainty in a simulated regression; coverage for real measurements remains to be tested."
+      "body": "The current simulated interface retains both a density point estimate and its regression prediction interval. When the interval crosses a management-tier boundary, the program calculates scenarios on both sides of the boundary to show how treatment choices and income comparisons may change. Results with negative density, outside the calibration range, or outside the range supported by the economic model are stopped from being passed downstream. The current interval reflects the formal uncertainty of the simulated regression; its coverage for actual measurements still needs to be tested through calibration with real samples and readings."
     },
     {
       "_template": "heading",
