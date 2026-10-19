@@ -120,5 +120,13 @@
     "content": "Each page retains its title and latest manuscript",
     "browser_checks": 54,
     "viewport_count": 6
+  },
+  "responsive_openings": {
+    "pages": 24,
+    "viewports": 27,
+    "browser_checks": 1296,
+    "validation": "docs/scene-responsive-validation.json",
+    "illustration_files": "unchanged",
+    "scientific_content": "unchanged"
   }
 }
