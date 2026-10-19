@@ -87,6 +87,8 @@ IDENTIFIERS = '''Gpr2|Gpr3|GprC|GPR2|GPR3|GPR|Gpa2|GPA1|Gpa1|GPR2-sfGFP|GPR2‑s
 PROPER = set('iGEM GPCR GPCRs GPR2 GPR3 Gpr2 Gpr3 GprC GPA1 GPA2 GPA1/GPR2 MAPK DNA RNA cDNA sgRNA sgRNAs gRNA sfGFP GFP sTF ODE ODEs MD IFP RMSD RMSE PCR qPCR DJ-PCR CRISPR Cas9 DBTL PI HP RGB PDBQT SDF POPC CFW GAL LAMP RPA NGS CNN CDS YNB SC PBS YPD STE12 STE2 TEF1 CYC1 GAL1 GAL10 Leu2 Mi Ce S.c NKU-China NemaKlear Nemaklear Nankai ChatGPT AutoDock Vina SwissDock AlphaFold Meeko GitHub ProLIF ImageJ Whatman Trans5α Phanta Max Super-Fidelity FastPure Fast ClonExpress Ultra EasyComp TransFast Taq SuperMix pEASY Pro Gal80 Gal4 Gal1 GPR'.split())
 PROPER.update('Saccharomyces Heterodera Arthrobotrys Caenorhabditis Meloidogyne Escherichia'.split())
 PROPER.update('PDF HTML CSV JSON HTTP HTTPS URL SQL API AI'.split())
+# Preserve source-author names and organization names under sentence case.
+PROPER.update('Yurong Yao Qian Liu Zhihao Pang Anthropic Google Isomorphic Labs ExCell Bio'.split())
 PROPER.update(t['abbreviation'] for t in TERMS)
 PROPER.update(t['plural'] for t in TERMS if t['plural'])
 
