@@ -2,7 +2,7 @@
 
 2026 NKU-China（队伍编号 6303）的 Wiki 源码，使用 Astro 5 和 Tina。首页讲述从土壤线虫到双通道检测的故事，内页按 Project、Wet Lab、Model、Human Practices、Team 组织。
 
-当前版本为 **V10.2.1（开场标题与土壤视差，阶段发布）**。按团队完整飞书原稿接入 Overview、Integrated Human Practices、Education、Investigation 和 Industry Engagement and Support。保留原文、原图和原图号，统一图注及引用排版；缺图和课程下载原文件留待团队补齐，内容终审状态保持待完成。内页开场标题放大并下调最终位置，土壤以慢于正文的速度上移；首页沿用此前版本。
+当前版本为 **V10.2.2（开场标题与土壤视差，阶段发布）**。按团队完整飞书原稿接入 Overview、Integrated Human Practices、Education、Investigation 和 Industry Engagement and Support。保留原文、原图和原图号，统一图注及引用排版；缺图和课程下载原文件留待团队补齐，内容终审状态保持待完成。内页开场标题放大并下调最终位置，土壤以慢于正文的速度上移；首页沿用此前版本。
 
 - [源码仓库](https://gitlab.igem.org/2026/nku-china)
 - [正式 Wiki](https://2026.igem.wiki/nku-china/)
@@ -105,6 +105,18 @@ V8.7 的 40 张开场图集及两张 Results 高清图已完成官方 CDN 迁移
 
 ## 版本改动
 
+### V10.2.2 改动：
+改动时间：2026-10-19（北京时间，合并 V10.0.2 首页评审包，首页评审合并发布）
+
+1. 页脚可以向上滚回：鼠标停在页脚上时，滚轮和方向键交给翻页；展开 Credits 时自动对齐底部；地图读数卡等面板滚到头后再翻页，不再卡住。
+2. 中国地图下潜改为两段连续镜头（约2.0秒和2.6秒），去掉“How do nematodes infect plants?”问题页，从土壤直接衔接The hidden threat；镜头运行中再推一次可加快。
+3. “Guide my light”改为一条连续平滑路径，约1.3–2.2秒找到线虫，沿途依次点亮信号点；找到后0.45秒即可继续。
+4. 页脚南开校徽动画的中文手写句换成英文，书写节奏、淡出与其余画面保持原样；原文件为static/img/shell/nankai-seal-en.webp，已上传官方CDN并替换页脚地址。
+5. 左上角与页脚队名改为NKU-China，首屏标题上方和页脚加入“iGEM 2026 · Team 6303”。
+6. 页脚新增南开大学生命科学学院、SnapGene、GenScript；标志文件放入static/img/sponsors/（nku-life-sciences、snapgene、genscript）后自动显示，缺图时显示名称。
+7. 关系图换为修改版（中心NEMA KLEAR，去掉彩色渐变底），节点与箭头按.ai，筛选按钮改为Design → Build → Test → Learn，“Play the loop”沿循环走一圈。
+8. 试纸动画重画：试纸改为带手柄和反应区的试纸条，酵母滴上后反应区变黄；试剂盒落到地图上才出现涟漪，并留下一个常亮的定位点，结尾不再只剩空白地图。
+
 ### V10.2.1 改动：
 
 改动时间：2026-10-19（北京时间，阶段发布）
@@ -149,6 +161,7 @@ V8.7 的 40 张开场图集及两张 Results 高清图已完成官方 CDN 迁移
 1. 根据两份成员修订稿同步 Members 与 Attributions，共 27 位，更新姓名、标签、年级、学校、简介和具体贡献。
 2. 按原稿调整组织层级和顺序，PI 与 Advisor 分列；保留已有照片、人物锚点与卡片交互。
 3. 原件、旧稿和中英文差异留档；团队终审状态保留待完成。
+
 
 ### V10.1 改动：
 改动时间：2026-10-18（北京时间，阶段发布）

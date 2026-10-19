@@ -1,8 +1,9 @@
 /* NKU homepage v6 — 04 one China map, then the flight into the soil.
  * The glowing 3D map, the three scales and the lens transitions are the 3D v3
  * build, kept as they were. What changed: no layer panel (both nematodes are
- * on the one map), and the pager plays the flight in paced steps with stops at
- * the field and before the question. Records come from js/home-maps-data.js;
+ * on the one map), and the pager plays the flight in two continuous shots:
+ * map to field, then field through the lens into the soil (v10.0.2: no more
+ * stops at the plant, the lens or a question card). Records come from js/home-maps-data.js;
  * markers sit at schematic points inside provinces, not at detection sites. */
 (function () {
   'use strict';
@@ -165,14 +166,13 @@
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit2d);
   };
 
-  /* the pager drives the flight: stop, merge, high altitude to field, field
-   * to roots, roots, question. Each step has a fixed pace and cannot be
-   * skipped with a fast scroll. */
+  /* the pager drives the flight in two shots: the map settles into the field
+   * overview, then one move from the field past the plant and through the
+   * lens into the soil by the roots. v10.0.2: was four 3-second stops ending
+   * on a question card. A second push while a shot runs hurries it. */
   var LAYERED = sec.getAttribute('data-layers') === 'on';
   NK.chinaLayered = LAYERED;
-  // Hold only complete shots: map, overview, plant, soil, roots/question.
-  // The lens transition (q .60–.68) plays through instead of freezing half open.
-  var DUR = LAYERED ? [0, 1300, 1300, 1300, 3000, 3000, 3000, 3000] : [0, 3000, 3000, 3000, 3000];
+  var DUR = LAYERED ? [0, 1300, 1300, 1300, 2000, 2600] : [0, 2000, 2600];
   var DESCENT = LAYERED ? 5 : 2;
   var LAST = DUR.length - 1, curStep = 0;
   /* the big number counts up once the title is in, like US$173 billion on the world map */
@@ -198,12 +198,13 @@
   NK.chinaDriver = function (fn) { drive = fn; };
   function to(i, ms, dir) {
     var d = drive(i, ms, dir);
-    stage.style.setProperty('--qo', i >= LAST ? '1' : '0');
+    stage.style.setProperty('--qo', '0');
     sec.setAttribute('data-fo', LAYERED && i >= 1 && i <= 3 ? String(i - 1) : '-1');
-    if (d === null) { sec.classList.toggle('is-q', i >= LAST); stage.style.setProperty('--merge', i >= DESCENT - 1 && i > 0 ? '1' : '0'); }
+    if (d === null) { sec.classList.remove('is-q'); stage.style.setProperty('--merge', i >= DESCENT - 1 && i > 0 ? '1' : '0'); }
   }
   H0.scene('china', {
-    steps: LAST, tall: LAYERED ? 9 : 6, cutIn: true, noSkip: true, pacedWheel: true,
+    steps: LAST, tall: LAYERED ? 9 : 4, cutIn: true, pacedWheel: true,
+    accelerate: function (ms) { return NK.chinaAccelerate ? NK.chinaAccelerate(ms) : 0; },
     set: function (i) { curStep = i; to(i, 0); if (i === 0) sec.classList.add('is-pre'); if (!sec.classList.contains('is-handoff')) { NK.chinaArr = 1; stage.style.setProperty('--arrive', '1'); } },
     step: function (i, dir) {
       if (i === 0) sec.classList.remove('is-pre');
@@ -1520,10 +1521,31 @@
     if (q < 0.68) { p = (q - 0.6) / 0.08; return { a: 1, ta: 1 + p * 0.2, b: 2, tb: -0.12 * (1 - p), p: p }; }
     return { a: 2, ta: NK.clamp((q - 0.68) / 0.22, 0, 1) };
   }
-  // q .60 is the complete plant close-up; q .68 is the fully opened soil view.
-  var flightStops = [0.468, 0.6, 0.68, 0.9].map(function (q, i) {
-    return { ex: 0, fo: -1, merge: 1, q: q, qo: i === 3 ? 1 : 0 };
+  // Two shots: the field overview (q refitted to the screen in fitFieldStop),
+  // then past the plant close-up (q .60) and the lens (q .68) into the soil.
+  var flightStops = [0.468, 0.9].map(function (q) {
+    return { ex: 0, fo: -1, merge: 1, q: q, qo: 0 };
   });
+  /* A move that crosses the lens follows a monotone curve with these time
+     marks instead of one ease on q: the plant close-up and the opening lens
+     keep about a quarter of the shot each, and the move still starts and
+     ends at rest. Reverse travel runs the same curve backwards. */
+  function qWarp(q0, q1) {
+    var lo = Math.min(q0, q1), hi = Math.max(q0, q1);
+    if (lo > 0.6 || hi < 0.68) return null;
+    var P = [[0, lo], [0.38, 0.6], [0.62, 0.68], [1, hi]], M = [0];
+    for (var i = 1; i < P.length - 1; i++) {
+      var d0 = (P[i][1] - P[i - 1][1]) / (P[i][0] - P[i - 1][0]), d1 = (P[i + 1][1] - P[i][1]) / (P[i + 1][0] - P[i][0]);
+      M.push(d0 > 0 && d1 > 0 ? 2 / (1 / d0 + 1 / d1) : 0);
+    }
+    M.push(0);
+    return function (u) {
+      var v = NK.clamp(q0 < q1 ? u : 1 - u, 0, 1), i = 1;
+      while (i < P.length - 1 && v > P[i][0]) i++;
+      var h = P[i][0] - P[i - 1][0], s = (v - P[i - 1][0]) / h, s2 = s * s, s3 = s2 * s;
+      return (2 * s3 - 3 * s2 + 1) * P[i - 1][1] + (s3 - 2 * s2 + s) * h * M[i - 1] + (-2 * s3 + 3 * s2) * P[i][1] + (s3 - s2) * h * M[i];
+    };
+  }
   var STATES = (NK.chinaLayered ? [
     { ex: 1, fo: -1, merge: 0, q: 0, qo: 0 },
     { ex: 1, fo: 0, merge: 0, q: 0, qo: 0 },
@@ -1590,7 +1612,7 @@
     var s = STATES[Math.max(0, Math.min(STATES.length - 1, i))];
     if (!ms) { tw = null; KEYS.forEach(function (key) { Z[key] = s[key]; }); return true; }
     var a0 = copyZ();
-    tw = { a: a0, b: s, t0: performance.now(), dur: ms, win: plan(a0, s, dir !== -1) };
+    tw = { a: a0, b: s, t0: performance.now(), dur: ms, win: plan(a0, s, dir !== -1), qmap: qWarp(a0.q, s.q) };
     return true;
   });
   var tmp = new T.Vector3();
@@ -1603,8 +1625,9 @@
     if (tw) {
       /* the map settles into the flight first, then the flight runs (in reverse the other way round); the question comes in at the end */
       var k = NK.clamp((performance.now() - tw.t0) / tw.dur, 0, 1), a = tw.a, b = tw.b, win = tw.win;
-      var seg = function (sp) { return sp && sp[1] > sp[0] ? NK.easeInOut(NK.clamp((k - sp[0]) / (sp[1] - sp[0]), 0, 1)) : 1; };
-      KEYS.forEach(function (key) { Z[key] = NK.lerp(a[key], b[key], seg(win[key] || [0, 1])); });
+      var raw = function (sp) { return sp && sp[1] > sp[0] ? NK.clamp((k - sp[0]) / (sp[1] - sp[0]), 0, 1) : 1; };
+      var seg = function (sp) { return NK.easeInOut(raw(sp)); };
+      KEYS.forEach(function (key) { Z[key] = key === 'q' && tw.qmap ? tw.qmap(raw(win.q || [0, 1])) : NK.lerp(a[key], b[key], seg(win[key] || [0, 1])); });
       if (k >= 1) tw = null;
     }
     NK.chinaEx = Z.ex; NK.chinaFo = Z.fo;

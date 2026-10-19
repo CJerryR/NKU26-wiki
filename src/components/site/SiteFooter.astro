@@ -11,11 +11,12 @@ const columns = footerNav.map((col) => ({
     return entry ? { label: l.label, href: pageHref(entry) } : null;
   }).filter((l): l is { label: string; href: string } => l !== null),
 }));
-const sponsors = site.sponsors.map((s) => ({ ...s, url: site.safeUrl(s.url), logo: site.safeUrl(s.logo) }));
+// A sponsor whose logo file has not arrived yet shows its name instead (site.logoUrl).
+const sponsors = site.sponsors.map((s) => ({ ...s, url: site.safeUrl(s.url), logo: site.logoUrl(s.logo) }));
 const friends = site.friends.map((s) => ({ ...s, url: site.safeUrl(s.url) }));
 ---
 <footer class="site-footer" data-tone="dark" data-free-scroll>
-  <div class="site-footer__seal" aria-hidden="true"><img src="https://static.igem.wiki/teams/6303/wiki/v8-6/v86-a8e96b14b89e-nankai-seal.webp" alt="" width="648" height="216" loading="lazy" /></div>
+  <div class="site-footer__seal" aria-hidden="true"><img src="https://static.igem.wiki/teams/6303/wiki/v8-6/nankai-seal-en.webp" alt="" width="648" height="216" loading="lazy" /></div>
   <div class="site-footer__edge" aria-hidden="true">
     <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
       <path class="edge-layer-front" d="M0,0 H1440 V80 C1250,111 1040,65 760,88 C480,110 260,60 0,82 Z" />
@@ -26,9 +27,9 @@ const friends = site.friends.map((s) => ({ ...s, url: site.safeUrl(s.url) }));
   <div class="site-footer__inner">
     <div class="site-footer__brand">
       <div class="site-footer__identity">
-      <a href="/index.html" class="site-footer__logo" aria-label="NKU26 NemaKlear home">
+      <a href="/index.html" class="site-footer__logo" aria-label="NKU-China NemaKlear home">
         <img src="https://static.igem.wiki/teams/6303/wiki/v8-0/v8-3439b58a1e73-nku-mark.svg" alt="" width="30" height="39" loading="lazy" />
-        <span><b>NKU26</b><em>NemaKlear</em></span>
+        <span><b>NKU-China</b><em>NemaKlear</em></span>
       </a>
       <p><b>{site.team}</b></p>
       </div>
@@ -69,7 +70,7 @@ const friends = site.friends.map((s) => ({ ...s, url: site.safeUrl(s.url) }));
     <span><a href="https://katex.org/">KaTeX</a> rendering and fonts: <a href="/widgets/vendor/katex/LICENSE">MIT</a></span>
     <span>AI assistance: OpenAI GPT-6 (implementation and checks); earlier local records credit GPT-5. Human review of final project content remains pending. Decorative artwork is illustrative, not scientific evidence.</span>
     <span>Inner-page opening illustrations: generated with OpenAI image generation in Codex, using team-provided artwork and layouts as references. These are decorative illustrations, not experimental images or model results.</span>
-    <span data-institutional-credit="nankai-university"><a href="https://www.nankai.edu.cn/">Nankai University emblem</a>; animation recovered from the <a href="https://github.com/CJerryR/NKU26-wiki/blob/e283a55/img/nankai-seal.gif">earlier team Wiki</a>. Institutional marks are excluded from CC BY 4.0.</span>
+    <span data-institutional-credit="nankai-university"><a href="https://www.nankai.edu.cn/">Nankai University emblem</a>; animation recovered from the <a href="https://github.com/CJerryR/NKU26-wiki/blob/e283a55/img/nankai-seal.gif">earlier team Wiki</a>, its caption rewritten in English. Institutional marks are excluded from CC BY 4.0.</span>
     <span>Basemaps: Natural Earth (public domain); China: Standard Map of China, GS(2022)4308. Project component and system validation remain open.</span>
     </div>
   </details>
@@ -79,7 +80,7 @@ const friends = site.friends.map((s) => ({ ...s, url: site.safeUrl(s.url) }));
         {sponsors.map((s) => {
           const Tag = s.url ? 'a' : 'div';
           return <li><Tag class="site-footer__sponsor" href={s.url || undefined}>
-            {s.logo ? <img src={s.logo} alt={s.logoAlt || s.name} width="160" height="64" loading="lazy" /> : <b>{s.name}</b>}
+            {s.logo ? <img src={s.logo} alt={s.logoAlt || s.name} width="160" height="64" loading="lazy" /> : <b class="site-footer__sponsor-name" title={s.logoAlt || s.name}>{s.short || s.name}</b>}
           </Tag></li>;
         })}
       </ul>

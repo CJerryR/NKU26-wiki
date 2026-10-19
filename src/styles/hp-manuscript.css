@@ -11,8 +11,11 @@
 .hp-manuscript .hp-photo-group--three{grid-template-columns:repeat(3,minmax(0,1fr))}
 .hp-manuscript .hp-photo-item{min-width:0}
 .hp-manuscript .hp-image-label{font-size:.82rem;line-height:1.5;margin:0 0 .55rem;font-weight:400}
-.hp-manuscript figcaption{font-family:inherit;font-size:.88rem;font-weight:400;line-height:1.65;text-align:left;margin-top:.75rem;color:inherit;opacity:.88;overflow-wrap:anywhere}
+.hp-manuscript figcaption{font-family:inherit;font-size:.88rem;font-weight:400;line-height:1.65;text-align:center;margin-top:.75rem;color:inherit;opacity:.88;overflow-wrap:anywhere}
 .hp-manuscript .hp-download-label{font-size:.95rem}
 .hp-references p{font-size:.9rem;line-height:1.7;margin-block:.6rem;overflow-wrap:anywhere}
 .hp-references p:has(a){padding-left:1.5rem}
 @media(max-width:700px){.hp-manuscript .hp-photo-group,.hp-manuscript .hp-photo-group--three{grid-template-columns:minmax(0,1fr)}.hp-chapter-nav{gap:.65rem 1rem}.hp-manuscript figcaption{font-size:.86rem}}
+/* Unnumbered, non-link feature rows have one content column, not the optional index slot. */
+.hp-manuscript .feature:not(:has(>.feature__idx,>.feature__go)){grid-template-columns:minmax(0,1fr)}
+.hp-manuscript .feature__main{min-width:0}

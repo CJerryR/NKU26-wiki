@@ -2,16 +2,17 @@
   <div class="wrap">
     <div class="lp__head">
       <h2 class="h-display" id="loop-title" data-split>From the field to the bench, and back again</h2>
-      <div class="lp__filters" role="group" aria-label="Highlight a question">
-        <button type="button" data-q="wet" aria-pressed="false">Can we see it?</button>
-        <button type="button" data-q="dry" aria-pressed="false">Can we explain it?</button>
-        <button type="button" data-q="hp" aria-pressed="false">Can we use it to decide?</button>
+      <!-- v10.0.2: the revised relationship diagram (关系图_修改.ai), read as one Design → Build → Test → Learn cycle -->
+      <div class="lp__filters" role="group" aria-label="Highlight one stage of the cycle">
+        <button type="button" data-q="design" aria-pressed="false"><i aria-hidden="true"></i>Design</button><span class="lp__then" aria-hidden="true"></span>
+        <button type="button" data-q="build" aria-pressed="false"><i aria-hidden="true"></i>Build</button><span class="lp__then" aria-hidden="true"></span>
+        <button type="button" data-q="test" aria-pressed="false"><i aria-hidden="true"></i>Test</button><span class="lp__then" aria-hidden="true"></span>
+        <button type="button" data-q="learn" aria-pressed="false"><i aria-hidden="true"></i>Learn</button><span class="lp__then lp__then--back" aria-hidden="true"></span>
         <button type="button" class="lp__play" data-lp-play>Play the loop</button>
       </div>
     </div>
     <div class="lp__board" data-lp-board>
-      <i class="lp__wash lp__wash--dry"></i><i class="lp__wash lp__wash--hp"></i><i class="lp__wash lp__wash--wet"></i><i class="lp__wash lp__wash--core"></i>
-      <svg class="lp__svg" data-lp-svg viewBox="0 0 1200 620" role="img" aria-label="How the dry lab, Human Practices and the wet lab feed each other, with society and our project at the centre"></svg>
+      <svg class="lp__svg" data-lp-svg viewBox="0 0 1200 620" role="img" aria-label="One cycle of design, build, test and learn: data and models shape the NEMA KLEAR sensor, bench tests on real soil samples raise questions for experts, and surveys and teaching bring society back in, with society at the centre"></svg>
       <div class="lp__card" data-lp-card hidden></div>
     </div>
   </div>
