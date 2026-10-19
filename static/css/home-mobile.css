@@ -90,7 +90,6 @@
   /* What we built: the three pairs stack; each pair stays side by side so the drawings stay large. */
   .ex--one .bt__grid--wwb{grid-template-columns:minmax(0,1fr);row-gap:26px;max-width:720px}
   .ex--one .bt__card--wwb{font-size:15px}
-  .ex--one .bt__card--wwb>span:not(.bt__art){font-size:13px;line-height:1.45}
   .ex--one .ex__title{font-size:30px;line-height:1.15}
   .ex--one .ex__lede{font-size:15px;line-height:1.6}
   .ex--one .ex__grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
@@ -130,6 +129,5 @@
 @media (max-width:360px){
   .bt__group{column-gap:10px}
   .ex--one .bt__card--wwb{font-size:14px}
-  .ex--one .bt__card--wwb>span:not(.bt__art){font-size:12.5px}
   .cz__sw-btn{padding-inline:9px;font-size:12px}
 }

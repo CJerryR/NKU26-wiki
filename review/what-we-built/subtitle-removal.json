@@ -1,0 +1,16 @@
+{
+  "request": "Remove all six explanatory subtitles marked by the user; focus on team artwork",
+  "parent_commit": "3784b8563b700aef352b1395e366c8bbdbb61584",
+  "scope": [
+    "src/home/sections/explore.html",
+    "static/css/home-round1.css",
+    "static/css/home-mobile.css"
+  ],
+  "validation": {
+    "build": "pass;30 pages",
+    "diff_check": "pass",
+    "browser": "6 cards,0 subtitles,6 images loaded,0 horizontal overflow; desktop visually checked"
+  },
+  "screenshot": "/Users/cjrmacbook/.codex/claude-web-collab/nku26-wiki/what-we-built/screenshots/no-subtitles-desktop.png",
+  "publication": "not-published"
+}

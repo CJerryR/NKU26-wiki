@@ -323,8 +323,8 @@ html.is-paged .th3{--th-gr:max(64px,(100% - 1300px) / 2)}
 .ex--one .ex__path li{gap:0}
 .ex--one .ex__built{margin-bottom:26px}
 .ex__built-title{margin:0 0 12px;font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(243,234,242,.55)}
-/* What we built: three pairs of cards (Wet Lab, Dry Lab, Human Practices). Each card is a title,
-   one line of text and the team's illustration. The illustration file already holds its own dark
+/* What we built: three pairs of cards (Wet Lab, Dry Lab, Human Practices). Each card is a title
+   and the team's illustration. The illustration file already holds its own dark
    panel plus the space below it where figures step out of the frame, so the card itself has no
    background, clipping or fixed height; art sits on the card's bottom edge so panels line up. */
 .ex__built-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 18px;margin:0 0 12px}
@@ -336,7 +336,6 @@ html.is-paged .th3{--th-gr:max(64px,(100% - 1300px) / 2)}
 .ex--one .bt__card--wwb:hover{box-shadow:none}
 .ex--one .bt__card--wwb:focus-visible{outline:2px solid #c79bff;outline-offset:6px}
 .ex--one .bt__card--wwb b{display:block;font-size:inherit;font-weight:600;line-height:1.25;letter-spacing:0}
-.ex--one .bt__card--wwb>span:not(.bt__art){display:block;margin-top:3px;font-size:12.5px;line-height:1.4;opacity:.74}
 .ex--one .bt__card--wwb .bt__art{position:relative;inset:auto;z-index:auto;display:block;margin-top:auto;padding-top:10px;width:100%;height:auto;opacity:1;overflow:visible;background:none}
 .ex--one .bt__card--wwb .bt__art img{display:block;width:100%;height:auto;max-height:var(--wwb-art-max,none);object-fit:contain;object-position:50% 0;transition:transform .35s var(--ease-o,ease),opacity .35s ease}
 .ex--one .bt__card--wwb:is(:hover,:focus-visible) .bt__art img{transform:translateY(-3px)}
@@ -378,7 +377,6 @@ html:not(.is-paged) .home .ex--one .ex__main{padding-left:0;padding-top:0}
   .ex--one .ex__built{margin-bottom:20px}
   .ex--one .bt__grid--wwb{row-gap:12px}
   .ex--one .bt__card--wwb{font-size:14px}
-  .ex--one .bt__card--wwb>span:not(.bt__art){font-size:11.5px}
   .bt__group-title{margin-bottom:8px}
   .ex--one .ex__lede{margin-bottom:12px}
   .ex--one .ex__grid a{min-height:62px}
@@ -389,7 +387,6 @@ html:not(.is-paged) .home .ex--one .ex__main{padding-left:0;padding-top:0}
   .ex--one .ex__path li{padding-top:22px}
   .ex--one .ex__path li b{font-size:14px}
   .ex--one .bt__card--wwb{font-size:13px}
-  .ex--one .bt__card--wwb>span:not(.bt__art){display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
   .ex--one .bt__card--wwb .bt__art{padding-top:6px}
   html.is-paged .home .ex--one .bt__grid--wwb{--wwb-art-max:96px}
   .ex--one .ex__grid a{min-height:54px;padding-block:9px;gap:5px}
@@ -398,7 +395,6 @@ html:not(.is-paged) .home .ex--one .ex__main{padding-left:0;padding-top:0}
   .ex--one .ex__grid{grid-template-columns:repeat(4,minmax(0,1fr))}
   html.is-paged .home .ex--one .ex__grid{grid-template-columns:repeat(8,minmax(0,1fr))}
   .ex--one .bt__card--wwb{font-size:14px}
-  .ex--one .bt__card--wwb>span:not(.bt__art){font-size:11.5px}
 }
 @media (max-width:700px){
   .ex--one .ex__grid{grid-template-columns:repeat(2,minmax(0,1fr))}
