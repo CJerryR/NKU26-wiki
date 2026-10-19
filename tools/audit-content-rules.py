@@ -77,7 +77,12 @@ def main():
             calendar_date=re.match(r'^\d{1,2}\s+(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{4}\b',label)
             if not calendar_date and re.match(r'^\s*(?:\d+(?:\.\d+)*[.)]?|[IVX]+[.)])\s+',label):failures.append(f'{slug}: h2 still numbered: {label[:100]}')
         for section in (n for n in article.walk() if n.has('doc-section') and n.attrs.get('data-num')):
-            children=[n for n in section.walk() if n.tag=='h3' and not any(n.inside(cls=c) for c in ('cards','card','timeline','features','member-grid','credit-grid','person-name','wf'))]
+            if section.parent and section.parent.inside(cls='doc-section'):failures.append(f'{slug}: chapter {section.attrs["data-num"]} is nested inside another chapter')
+            def belongs(n):
+                parent=n.parent
+                while parent and not parent.has('doc-section'):parent=parent.parent
+                return parent is section
+            children=[n for n in section.walk() if n.tag=='h3' and belongs(n) and not any(n.inside(cls=c) for c in ('cards','card','timeline','features','member-grid','credit-grid','person-name','wf'))]
             chapter=int(section.attrs['data-num'])
             for ordinal,n in enumerate(children,1):
                 expected=f'{chapter}.{ordinal} '

@@ -1,9 +1,9 @@
 ---
 title: Overview
 heading: Overview
-sub: Connecting Our Research with Society
+sub: Connecting our research with society
 crumbs:
-  - Human Practices
+  - Human practices
   - Overview
 route: hp-overview
 search: true
@@ -13,7 +13,7 @@ meta: {}
 draft: false
 hidden: false
 ---
-<nav class="hp-chapter-nav" aria-label="Human Practices chapters"><a href="/hp-overview/">Overview</a><a href="/human-practices/">Integrated Human Practices</a><a href="/education/">Education</a><a href="/hp-investigation/">Investigation</a><a href="/hp-industry/">Industry Engagement and Support</a></nav><section class="hp-manuscript" lang="en">
+<nav class="hp-chapter-nav" aria-label="Human Practices chapters"><a href="/hp-overview/">Overview</a><a href="/human-practices/">Integrated human practices</a><a href="/education/">Education</a><a href="/hp-investigation/">Investigation</a><a href="/hp-industry/">Industry engagement and support</a></nav><section class="hp-manuscript" lang="en">
 
 <p data-hp-source-paragraph="42" class="hp-inpage-nav">On this page  <a href="#hp-source-44">Explore HP</a>  /  <a href="#hp-source-57">Agricultural challenge</a>  /  <a href="#hp-source-61">Our network</a>  /  <a href="#hp-source-64">Resources</a></p>
 
@@ -23,29 +23,29 @@ hidden: false
 
 :::
 
-## Explore Our Human Practices {#hp-source-44}
+## Explore our human practices {#hp-source-44}
 
 :::cards{cols="2"}
 
-### iHP  Bringing Feedback into Research {#hp-source-45}
+### iHP  bringing feedback into research {#hp-source-45}
 
 <p data-hp-source-paragraph="46">Insights from our wet-lab and dry-lab work shaped the initial questionnaire, while responses informed discussions about research priorities. Expert interviews and university exchanges raised further questions about soil interference, signal stability, controls, and sampling. This page explains how these inputs relate to our research and how other teams can adapt our approach.</p>
 
 <p data-hp-source-paragraph="47"><a href="/human-practices/"><strong>Explore feedback and research →</strong></a></p>
 
-### Education  From Classrooms to the Public {#hp-source-48}
+### Education  from classrooms to the public {#hp-source-48}
 
 <p data-hp-source-paragraph="49">We developed three courses on agricultural nematodes, biological signals, and scientific responsibility. Working through teaching partnerships, including Nankai University’s Xiangyang Program, we brought these topics to learners and created picture books, posters, leaflets, postcards, and a sampling guidance video. Age-appropriate versions connect unfamiliar life below ground with everyday experiences of agriculture.</p>
 
 <p data-hp-source-paragraph="50"><a href="/education/"><strong>Explore courses and outreach →</strong></a></p>
 
-### Investigation  Exploring Real-World Use {#hp-source-51}
+### Investigation  exploring real-world use {#hp-source-51}
 
 <p data-hp-source-paragraph="52">Our summer fieldwork connected museum visits, interviews with three experts, university and iGEM team exchanges, farm visits in Tianjin, and soil collection. This page introduces the people we met, the questions we discussed, and what we learned as we moved from published information to real settings.</p>
 
 <p data-hp-source-paragraph="53"><a href="/hp-investigation/"><strong>Explore interviews and fieldwork →</strong></a></p>
 
-### Industry Engagement and Support {#hp-source-54}
+### Industry engagement and support {#hp-source-54}
 
 <p data-hp-source-paragraph="55">We reached out to companies and alumni, prepared partnership materials, and held meetings to seek advice on potential applications and commercialization. This process brought sponsorship support and helped us develop a reusable approach to industry outreach.</p>
 
@@ -53,26 +53,24 @@ hidden: false
 
 :::
 
-## Starting with a Hidden Agricultural Threat {#hp-source-57}
+## Starting with a hidden agricultural threat {#hp-source-57}
 
-<p data-hp-source-paragraph="58"><strong>Plant-parasitic nematodes live in soil and roots, but symptoms above ground do not always reveal their cause. </strong>When crops turn yellow, wilt, or grow poorly, growers must distinguish water stress, nutrient problems, and pests or diseases. They also need to know when testing can still inform management. These practical questions motivated our project on early warning of agricultural nematode threats.</p>
+<p data-hp-source-paragraph="58"><strong>Plant-parasitic nematodes (PPNs) live in soil and roots, but symptoms above ground do not always reveal their cause. </strong>When crops turn yellow, wilt, or grow poorly, growers must distinguish water stress, nutrient problems, and pests or diseases. They also need to know when testing can still inform management. These practical questions motivated our project on early warning of agricultural nematode threats.</p>
 
-<p data-hp-source-paragraph="59">Our project explores engineered yeast that responds to nematode-associated ascaroside signals and produces a visible output. Human Practices connects this concept with agricultural production, diagnostic expertise, public understanding, and potential use. We explain our project to others and bring their questions back into team discussions.</p>
+<p data-hp-source-paragraph="59">Our project explores engineered yeast that responds to nematode-associated ascaroside signals and produces a visible output. <strong>Human Practices (HP)</strong> connects this concept with agricultural production, diagnostic expertise, public understanding, and potential use. We explain our project to others and bring their questions back into team discussions.</p>
 
-## Bringing Different Experiences into the Project {#hp-source-61}
+## Bringing different experiences into the project {#hp-source-61}
 
 <p data-hp-source-paragraph="62"><strong>Farm visits helped us understand where testing might fit into agricultural routines.</strong><strong> </strong>Plant protection specialists and academic experts challenged us to consider detection timing, representative samples, and the assumptions behind our approach. Exchanges with universities and other iGEM teams provided opportunities to compare experimental designs and research routes. Our questionnaire explored public understanding of nematodes and testing, while teaching and outreach introduced underground disease and synthetic biology to wider audiences.</p>
 
 <p data-hp-source-paragraph="63">We also collected soil samples, prepared sampling guidance, and discussed the resources needed for continued work with industry contacts and sponsors. Together, these activities addressed a shared question: if a test is to move beyond the laboratory, whose needs should it address, in what settings, and with what information?</p>
 
-## Resources for Continued Use {#hp-source-64}
+## Resources for continued use {#hp-source-64}
 
 :::note
 
 <p data-hp-source-paragraph="65"><strong>Our work produced a questionnaire and statistical notes, interview records, sampling guidance, age-adapted lesson plans, and outreach materials.</strong><strong> </strong>These resources support our own research and offer practical examples for other teams: deriving survey questions from project questions, retaining field context alongside samples, and documenting teaching and feedback across partnerships. Relevant materials are presented in the resource sections of each page.</p>
 
 :::
-
-<p data-hp-source-paragraph="66"><a href="/hp-overview/">Back to HP Overview</a>   ·   <a href="/human-practices/">Next: iHP</a></p>
 
 </section>

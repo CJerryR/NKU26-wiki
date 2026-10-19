@@ -5,13 +5,13 @@ sub: ''
 description: ''
 route: protocols
 crumbs:
-  - Wet Lab
+  - Wet lab
   - Protocols
 search: false
 hidden: true
 meta: {}
 draft: false
 ---
-## Experimental Protocols {#experimental-protocols toc="Experimental Protocols"}
+## Experimental protocols {#experimental-protocols toc="Experimental protocols"}
 
 All experimental protocols are available in [Experiments — Protocol](/experiments/#protocol).

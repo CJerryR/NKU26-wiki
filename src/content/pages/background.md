@@ -15,47 +15,47 @@ hidden: false
 ---
 Turning chemical signals released by nematodes into detection information that supports agricultural management requires connecting receptor recognition, intracellular signal transduction, and colorimetric output, then interpreting the crop risks and management choices associated with the results.
 
-## Docking: From Natural Sensing Mechanisms to Receptor Engineering {#docking-from-natural-sensing-mechanisms-to-receptor-engineering toc="Docking: From Natural Sensing Mechanisms to Receptor Engineering"}
+## Docking: from natural sensing mechanisms to receptor engineering {#docking-from-natural-sensing-mechanisms-to-receptor-engineering toc="Docking: from natural sensing mechanisms to receptor engineering"}
 
-### Ascaroside Signals and the Two-Channel Design {#ascaroside-signals-and-the-two-channel-design toc="Ascaroside Signals and the Two-Channel Design"}
+### 1.1 Ascaroside signals and the two-channel design {#ascaroside-signals-and-the-two-channel-design toc="Ascaroside signals and the two-channel design"}
 
-Ascarosides are a group of chemical signals released by nematodes. Manosalva et al. detected ascr#18 in cultures of several plant-parasitic nematode species. It was prominent in the secretion profiles of the infective juveniles of the root-knot nematodes examined, while its detection differed in adult samples. Ascr#18 is also not exclusive to plant-parasitic nematodes. [B01]
+Ascarosides are a group of chemical signals released by nematodes. Manosalva et al. detected <strong>ascaroside #18 (ascr#18)</strong> in cultures of several <strong>plant-parasitic nematode (PPN)</strong> species. It was prominent in the secretion profiles of the infective juveniles of the root-knot nematodes examined, while its detection differed in adult samples. ascr#18 is also not exclusive to PPNs. [B01]
 
-This project aims to establish two channels based on differential responses to ascr#18 and ascr#3 and to investigate how the two responses and their ratio relate to plant-parasitic nematode abundance. Quantitative interpretation of the signals requires consideration of species, developmental stage, and sampling conditions, together with concentration-to-readout calibration.
+This project aims to establish two channels based on differential responses to ascr#18 and <strong>ascaroside #3 (ascr#3)</strong> and to investigate how the two responses and their ratio relate to PPN abundance. Quantitative interpretation of the signals requires consideration of species, developmental stage, and sampling conditions, together with concentration-to-readout calibration.
 
-### Sensing, Localization, and Signaling Connections of Fungal Receptors {#sensing-localization-and-signaling-connections-of-fungal-receptors toc="Sensing, Localization, and Signaling Connections of Fungal Receptors"}
+### 1.2 Sensing, localization, and signaling connections of fungal receptors {#sensing-localization-and-signaling-connections-of-fungal-receptors toc="Sensing, localization, and signaling connections of fungal receptors"}
 
-Nematode-trapping fungi can sense ascarosides and initiate processes associated with predation. [1] The G protein-coupled receptors (GPCRs) considered in this project include Gpr2, Gpr3, and GprC. Their sensing functions and downstream signaling have been investigated in different fungal systems. [B02, B03]
+Nematode-trapping fungi can sense ascarosides and initiate processes associated with predation. [1] The <strong>G protein-coupled receptors (GPCRs)</strong> considered in this project include Gpr2, Gpr3, and GprC. Their sensing functions and downstream signaling have been investigated in different fungal systems. [B02, B03]
 
-Kuo et al. studied Gpr2 and Gpr3 in the nematode-trapping fungus *Arthrobotrys oligospora*. Both ascr#3 and ascr#7 induced internalization of these receptors. Following overexpression of GPR2 or GPR3, trap formation induced by either ascaroside was higher than in the corresponding WT controls. [B02, Figures 2 and 3]
+Kuo et al. studied Gpr2 and Gpr3 in the nematode-trapping fungus <strong><em>Arthrobotrys oligospora</em> (<em>A. oligospora</em>)</strong>. Both ascr#3 and <strong>ascaroside #7 (ascr#7)</strong> induced internalization of these receptors. Following overexpression of GPR2 or GPR3, trap formation induced by either ascaroside was higher than in the corresponding <strong>wild type (WT)</strong> controls. [B02, Figures 2 and 3]
 
-The study also used heterologous coexpression and co-immunoprecipitation in *Saccharomyces cerevisiae* to observe interactions of Gpr2 and Gpr3 with Gpa2. In the fungus, constitutively active Gpa2 (Q208L) increased trap formation in the gpr2 deletion strain under ascr#3 and ascr#7 exposure, whereas the corresponding comparisons in the gpr3 deletion background showed no significant increase. [B02, Figure 4]
+The study also used heterologous coexpression and co-immunoprecipitation in <strong><em>Saccharomyces cerevisiae</em> (<em>S.c</em>)</strong> to observe interactions of Gpr2 and Gpr3 with Gpa2. In the fungus, constitutively active Gpa2 (Q208L) increased trap formation in the gpr2 deletion strain under ascr#3 and ascr#7 exposure, whereas the corresponding comparisons in the gpr3 deletion background showed no significant increase. [B02, Figure 4]
 
-Hu et al. observed differences in GprC localization in *Arthrobotrys flagrans* depending on expression conditions and hyphal region. Under the strong oliC promoter, GprC–GFP predominantly showed mitochondrial localization. Under the native promoter, mitochondrial signals were visible at hyphal tips, while plasma membrane localization was observed in regions farther from the tips. The study also found that nematode exposure increased the oxygen consumption rate of WT, whereas gprC or gasA deletion strains did not show the corresponding oxygen consumption response. [B03, Figures 2 and 3]
+Hu et al. observed differences in GprC localization in <strong><em>Arthrobotrys flagrans</em> (<em>A. flagrans</em>)</strong> depending on expression conditions and hyphal region. The fusion uses <strong>green fluorescent protein (GFP)</strong> as a localization reporter. Under the strong oliC promoter, GprC–GFP predominantly showed mitochondrial localization. Under the native promoter, mitochondrial signals were visible at hyphal tips, while plasma membrane localization was observed in regions farther from the tips. The study also found that nematode exposure increased the oxygen consumption rate of WT, whereas gprC or gasA deletion strains did not show the corresponding oxygen consumption response. [B03, Figures 2 and 3]
 
-This project aims to connect recognition signals from natural receptors to the yeast pheromone mitogen-activated protein kinase (MAPK) pathway. Establishing this connection requires examining receptor localization in yeast and coupling to G proteins.
+This project aims to connect recognition signals from natural receptors to the yeast pheromone <strong>mitogen-activated protein kinase (MAPK)</strong> pathway. Establishing this connection requires examining receptor localization in yeast and coupling to <strong>guanine nucleotide-binding proteins (G proteins)</strong>.
 
-### Engineering Differential Responses to Two Ligands and Comparing Receptor Structures {#engineering-differential-responses-to-two-ligands-and-comparing-receptor-structures toc="Engineering Differential Responses to Two Ligands and Comparing Receptor Structures"}
+### 1.3 Engineering differential responses to two ligands and comparing receptor structures {#engineering-differential-responses-to-two-ligands-and-comparing-receptor-structures toc="Engineering differential responses to two ligands and comparing receptor structures"}
 
-Designing differential responses to two ligands requires further investigation of which receptor positions the two ascarosides may contact and whether changing the relevant side chains can affect recognition. Molecular docking generates candidate poses for a given receptor structure, search region, and ligand chemical state, then ranks them using an approximate scoring function. Interaction fingerprints (IFPs) describe the contacting residues and interaction types within these candidate poses. Combining scores with contact distributions allows us to propose substitution hypotheses aimed at differences between the two ligands. [B04, B05; 4–5]
+Designing differential responses to two ligands requires further investigation of which receptor positions the two ascarosides may contact and whether changing the relevant side chains can affect recognition. Molecular docking generates candidate poses for a given receptor structure, search region, and ligand chemical state, then ranks them using an approximate scoring function. <strong>Interaction fingerprints (IFPs)</strong> describe the contacting residues and interaction types within these candidate poses. Combining scores with contact distributions allows us to propose substitution hypotheses aimed at differences between the two ligands. [B04, B05; 4–5]
 
-Cross-receptor comparison also involves identifying structural correspondence despite low sequence similarity. DAF-37 and SRBC-64 come from *Caenorhabditis elegans* and have low overall sequence similarity to the fungal receptors in this project. Hu et al. combined transmembrane helices TM1–4 from nematode receptors with TM5–7 from GprC and tested the resulting constructs in an *A. flagrans* gprC deletion background. Chimeric receptors containing segments from SRBC-64, SRBC-66, or DAF-38 restored trap formation, whereas the construct containing the DAF-37 segment did not produce the same recovery. [B03, Figure 4]
+Cross-receptor comparison also involves identifying structural correspondence despite low sequence similarity. DAF-37 and SRBC-64 come from <strong><em>Caenorhabditis elegans</em> (<em>Ce</em>)</strong> and have low overall sequence similarity to the fungal receptors in this project. Hu et al. combined transmembrane helices TM1–4 from nematode receptors with TM5–7 from GprC and tested the resulting constructs in an <em>A. flagrans</em> gprC deletion background. Chimeric receptors containing segments from SRBC-64, SRBC-66, or DAF-38 restored trap formation, whereas the construct containing the DAF-37 segment did not produce the same recovery. [B03, Figure 4]
 
 We included DAF-37 and SRBC-64 alongside Gpr2, Gpr3, and GprC to investigate whether recurring ligand-contact positions could be identified among receptors with low sequence similarity and whether these positions could be mapped to one another in sequence and structure.
 
-## MD: From Binding Poses to Dynamic Behavior {#md-from-binding-poses-to-dynamic-behavior toc="MD: From Binding Poses to Dynamic Behavior"}
+## MD: from binding poses to dynamic behavior {#md-from-binding-poses-to-dynamic-behavior toc="MD: from binding poses to dynamic behavior"}
 
 Static poses generated by docking provide starting points for dynamic studies. For membrane receptors, it is also necessary to examine how ligand position changes with receptor motion and whether contacts in the candidate poses persist or rearrange.
 
-Molecular dynamics (MD) uses a force field to describe molecular interactions and simulate molecular motion over a defined period. Combining protein force fields with membrane-system construction methods allows receptor–ligand conformational changes to be studied in a lipid bilayer, solvent, and ionic environment. [7–8] Within the selected starting systems and sampling scope, this project examines these changes by jointly analyzing receptor motion and local ligand behavior. [B12]
+<strong>Molecular dynamics (MD)</strong> uses a force field to describe molecular interactions and simulate molecular motion over a defined period. Combining protein force fields with membrane-system construction methods allows receptor–ligand conformational changes to be studied in a lipid bilayer, solvent, and ionic environment. [7–8] Within the selected starting systems and sampling scope, this project examines these changes by jointly analyzing receptor motion and local ligand behavior. [B12]
 
-## ODE: From Receptor Activation to a Colorimetric Response {#ode-from-receptor-activation-to-a-colorimetric-response toc="ODE: From Receptor Activation to a Colorimetric Response"}
+## ODE: from receptor activation to a colorimetric response {#ode-from-receptor-activation-to-a-colorimetric-response toc="ODE: from receptor activation to a colorimetric response"}
 
-Ligand recognition is the starting point of the sensor response, while colorimetric output also depends on the G protein cycle, downstream signaling, and the reporter module. Quantitative studies of the yeast G protein cycle and pheromone pathway provide kinetic models for these processes. GPCR engineering studies further show that the configurations of the receptor, G protein, and output modules jointly influence the system response. [9–11] Research connecting GPCR signaling to GAL output through synthetic transcription factors provides further guidance for constructing a signaling chain from receptor activation to color development. [12–13]
+Ligand recognition is the starting point of the sensor response, while colorimetric output also depends on the G protein cycle, downstream signaling, and the reporter module. Quantitative studies of the yeast G protein cycle and pheromone pathway provide kinetic models for these processes. GPCR engineering studies further show that the configurations of the receptor, G protein, and output modules jointly influence the system response. [9–11] Research connecting GPCR signaling to GAL output through <strong>synthetic transcription factors (sTFs)</strong> provides further guidance for constructing a signaling chain from receptor activation to color development. [12–13]
 
-This project uses ordinary differential equations (ODEs) and effective response relationships to connect receptor activation with color development. Modeling requires selecting which dynamic steps to retain according to the research question and the observations available from experiments, while combining intermediate processes that are difficult to measure separately. Published models provide reaction structures that can inform the model, while specific parameters are calibrated using the project’s constructs and experimental readouts.
+This project uses <strong>ordinary differential equations (ODEs)</strong> and effective response relationships to connect receptor activation with color development. Modeling requires selecting which dynamic steps to retain according to the research question and the observations available from experiments, while combining intermediate processes that are difficult to measure separately. Published models provide reaction structures that can inform the model, while specific parameters are calibrated using the project’s constructs and experimental readouts.
 
-## Economic Benefit Modeling: From Detection Information to Management Decisions {#economic-benefit-modeling-from-detection-information-to-management-decisions toc="Economic Benefit Modeling: From Detection Information to Management Decisions"}
+## Economic benefit modeling: from detection information to management decisions {#economic-benefit-modeling-from-detection-information-to-management-decisions toc="Economic benefit modeling: from detection information to management decisions"}
 
 The practical value of detection information depends on whether it helps users select appropriate management measures. The relationship between nematode population density and crop losses can support risk assessment. Resources on root-knot nematode management in tomatoes further connect expected yield losses, crop value, and treatment costs to compare management options. [14–15]
 
@@ -63,7 +63,7 @@ Economic evaluation requires comparing testing costs, management measures, and p
 
 ## References {#references toc="References"}
 
-### Docking and Receptor Recognition {#docking-and-receptor-recognition toc="Docking and Receptor Recognition"}
+### 5.1 Docking and receptor recognition {#docking-and-receptor-recognition toc="Docking and receptor recognition"}
 
 B01. Manosalva P, Manohar M, von Reuss SH, et al. Conserved nematode signalling molecules elicit plant defenses and pathogen resistance. *Nature Communications.* 2015;6:7795. DOI: [10.1038/ncomms8795](https://doi.org/10.1038/ncomms8795).
 
@@ -101,13 +101,13 @@ B12. Reliability and reproducibility checklist for molecular dynamics simulation
 
 [6] Bouysset C, Fiorucci S. ProLIF: a library to encode molecular interactions as fingerprints. *Journal of Cheminformatics.* 2021;13:72. [Article](https://doi.org/10.1186/s13321-021-00548-6)
 
-### MD and Membrane System Simulations {#md-and-membrane-system-simulations toc="MD and Membrane System Simulations"}
+### 5.2 MD and membrane system simulations {#md-and-membrane-system-simulations toc="MD and membrane system simulations"}
 
 [7] Huang J, et al. CHARMM36m: an improved force field for folded and intrinsically disordered proteins. *Nature Methods.* 2017;14:71–73. [Article](https://doi.org/10.1038/nmeth.4067)
 
 [8] Feng S, Park S, Choi YK, Im W. CHARMM-GUI Membrane Builder: Past, Current, and Future Developments and Applications. *Journal of Chemical Theory and Computation.* 2023;19:2161–2185. [Article](https://doi.org/10.1021/acs.jctc.2c01246)
 
-### ODE Modeling and Signal Output {#ode-modeling-and-signal-output toc="ODE Modeling and Signal Output"}
+### 5.3 ODE modeling and signal output {#ode-modeling-and-signal-output toc="ODE modeling and signal output"}
 
 [9] Yi T-M, Kitano H, Simon MI. A quantitative characterization of the yeast heterotrimeric G protein cycle. *Proceedings of the National Academy of Sciences.* 2003;100:10764–10769. [Article](https://doi.org/10.1073/pnas.1834247100)
 
@@ -119,7 +119,7 @@ B12. Reliability and reproducibility checklist for molecular dynamics simulation
 
 [13] Fan C, He N, Yuan J. Cascaded amplifying circuit enables sensitive detection of fungal pathogens. *Biosensors and Bioelectronics.* 2024;250:116058. [Article](https://doi.org/10.1016/j.bios.2024.116058)
 
-### Economic Benefit Modeling and Management Decisions {#economic-benefit-modeling-and-management-decisions toc="Economic Benefit Modeling and Management Decisions"}
+### 5.4 Economic benefit modeling and management decisions {#economic-benefit-modeling-and-management-decisions toc="Economic benefit modeling and management decisions"}
 
 [14] FAO. Nematode population dynamics, threshold levels and estimation of crop losses. [Original source](https://www.fao.org/4/V9978E/v9978e07.htm)
 

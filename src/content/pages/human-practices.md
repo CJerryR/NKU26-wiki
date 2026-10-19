@@ -1,10 +1,10 @@
 ---
-title: Integrated Human Practices
-heading: Integrated Human Practices
-sub: Bringing Real-World Perspectives into Research
+title: Integrated human practices
+heading: Integrated human practices
+sub: Bringing real-world perspectives into research
 crumbs:
-  - Human Practices
-  - Integrated Human Practices
+  - Human practices
+  - Integrated human practices
 route: human-practices
 search: true
 preserveAuthorFormatting: true
@@ -13,23 +13,23 @@ meta: {}
 draft: false
 hidden: false
 ---
-<nav class="hp-chapter-nav" aria-label="Human Practices chapters"><a href="/hp-overview/">Overview</a><a href="/human-practices/">Integrated Human Practices</a><a href="/education/">Education</a><a href="/hp-investigation/">Investigation</a><a href="/hp-industry/">Industry Engagement and Support</a></nav><section class="hp-manuscript" lang="en">
+<nav class="hp-chapter-nav" aria-label="Human Practices chapters"><a href="/hp-overview/">Overview</a><a href="/human-practices/">Integrated human practices</a><a href="/education/">Education</a><a href="/hp-investigation/">Investigation</a><a href="/hp-industry/">Industry engagement and support</a></nav><section class="hp-manuscript" lang="en">
 
 <span id="ihp-listening-changed-the-questions-we-asked" aria-hidden="true"></span><span id="ihp-choosing-whose-perspectives-to-include" aria-hidden="true"></span><span id="ihp-questionnaires-from-laboratory-questions-to-public-responses" aria-hidden="true"></span><span id="ihp-agricultural-visits-understanding-the-whole-workflow" aria-hidden="true"></span><span id="ihp-integration-case-1-soil-complexity-and-the-limits-of-specificity" aria-hidden="true"></span><span id="ihp-integration-case-1-soil-complexity-and-the-limits-of-specificity-feedback" aria-hidden="true"></span><span id="ihp-integration-case-1-soil-complexity-and-the-limits-of-specificity-decision" aria-hidden="true"></span><span id="ihp-integration-case-1-soil-complexity-and-the-limits-of-specificity-project-change" aria-hidden="true"></span><span id="ihp-integration-case-1-soil-complexity-and-the-limits-of-specificity-verification-and-next-step" aria-hidden="true"></span><span id="ihp-integration-case-2-user-needs-and-readable-results" aria-hidden="true"></span><span id="ihp-integration-case-2-user-needs-and-readable-results-feedback" aria-hidden="true"></span><span id="ihp-integration-case-2-user-needs-and-readable-results-decision" aria-hidden="true"></span><span id="ihp-integration-case-2-user-needs-and-readable-results-project-change" aria-hidden="true"></span><span id="ihp-integration-case-2-user-needs-and-readable-results-verification-and-next-step" aria-hidden="true"></span><span id="ihp-integration-case-3-partnership-expectations-and-responsible-commitments" aria-hidden="true"></span><span id="ihp-integration-case-3-partnership-expectations-and-responsible-commitments-feedback" aria-hidden="true"></span><span id="ihp-integration-case-3-partnership-expectations-and-responsible-commitments-decision" aria-hidden="true"></span><span id="ihp-integration-case-3-partnership-expectations-and-responsible-commitments-project-change" aria-hidden="true"></span><span id="ihp-integration-case-3-partnership-expectations-and-responsible-commitments-verification-and-next-step" aria-hidden="true"></span><span id="ihp-responsibility-safety-and-environmental-considerations" aria-hidden="true"></span><span id="ihp-what-human-practices-changed" aria-hidden="true"></span><span id="ihp-related-work" aria-hidden="true"></span><span id="ihp-source-73" aria-hidden="true"></span><span id="ihp-source-78" aria-hidden="true"></span><span id="ihp-source-83" aria-hidden="true"></span><span id="ihp-source-87" aria-hidden="true"></span><span id="ihp-source-92" aria-hidden="true"></span><span id="ihp-source-93" aria-hidden="true"></span><span id="ihp-source-95" aria-hidden="true"></span><span id="ihp-source-97" aria-hidden="true"></span><span id="ihp-source-100" aria-hidden="true"></span><span id="ihp-source-103" aria-hidden="true"></span><span id="ihp-source-104" aria-hidden="true"></span><span id="ihp-source-106" aria-hidden="true"></span><span id="ihp-source-108" aria-hidden="true"></span><span id="ihp-source-111" aria-hidden="true"></span><span id="ihp-source-114" aria-hidden="true"></span><span id="ihp-source-115" aria-hidden="true"></span><span id="ihp-source-117" aria-hidden="true"></span><span id="ihp-source-119" aria-hidden="true"></span><span id="ihp-source-122" aria-hidden="true"></span><span id="ihp-source-125" aria-hidden="true"></span><span id="ihp-source-130" aria-hidden="true"></span>
 
 <p data-hp-source-paragraph="68" class="hp-inpage-nav">On this page  <a href="#hp-source-69">From response to use</a>  /  <a href="#hp-source-73">Questionnaire feedback</a>  /  <a href="#hp-source-88">Detection timing</a>  /  <a href="#hp-source-92">Soil and signals</a>  /  <a href="#hp-source-97">Sampling and usability</a>  /  <a href="#hp-source-102">Lessons to adapt</a></p>
 
-## From a Detectable Response to a Usable Test {#hp-source-69}
+## From a detectable response to a usable test {#hp-source-69}
 
 :::lead
 
 <p data-hp-source-paragraph="70">Our initial experimental question was whether engineered yeast could sense candidate ascaroside signals and convert that response into a visible color. Surveys, expert interviews, university exchanges, and farm visits expanded this into more specific questions: when should testing take place, how might soil alter the signal, is a sample representative, and how would a user interpret the result?</p>
 
-<p data-hp-source-paragraph="71"><strong>Our Human Practices and laboratory research therefore inform each other. </strong>Wet-lab and dry-lab insights help frame survey and interview questions; responses and professional advice add evidence for discussions about targets, models, controls, and conditions of use. The following sections trace these connections. Full accounts of the activities appear on the Investigation page.</p>
+<p data-hp-source-paragraph="71"><strong>Our Human Practices (HP) and laboratory research therefore inform each other. </strong>Wet-lab and dry-lab insights help frame survey and interview questions; responses and professional advice add evidence for discussions about targets, models, controls, and conditions of use. The following sections trace these connections. Full accounts of the activities appear on the Investigation page.</p>
 
 :::
 
-## A Two-Way Link Between the Questionnaire and Research {#hp-source-73}
+## A two-way link between the questionnaire and research {#hp-source-73}
 
 <p data-hp-source-paragraph="74"><strong>Our questionnaire on agricultural nematodes and detection needs was developed alongside the research. </strong>Drawing on existing wet-lab and dry-lab findings and the proposed application, we asked about awareness of underground disease, expectations of testing, and interpretation of results. Team networks and teaching partnerships helped extend its reach.</p>
 
@@ -39,7 +39,7 @@ hidden: false
 
 <p data-hp-source-paragraph="77">We collected 369 questionnaire submissions between April 14 and August 6, 2026. Self-reported locations spanned 23 provincial-level regions and 56 distinct city or district entries. Team channels and teaching partnerships helped bring agricultural nematodes into wider public discussion.</p>
 
-<p data-hp-source-paragraph="78">Of the 369 respondents, 197 (53.4%) had either never heard of plant-parasitic nematodes or had heard the term without knowing the details. This helped define our educational starting point: explain what nematodes are and why their damage can be difficult to recognize before introducing the detection concept.</p>
+<p data-hp-source-paragraph="78">Of the 369 respondents, 197 (53.4%) had either never heard of <strong>plant-parasitic nematodes (PPNs)</strong> or had heard the term without knowing the details. This helped define our educational starting point: explain what nematodes are and why their damage can be difficult to recognize before introducing the detection concept.</p>
 
 <p data-hp-source-paragraph="79">When asked to select up to three features of an ideal testing tool, 261 respondents chose ease of use (70.7%), 208 chose accuracy and reliability (56.4%), and 199 chose affordability (53.9%). These responses made usability, trustworthy results, and accessible cost priorities in our discussions of potential use. Percentages use all 369 responses to this multiple-choice question as the denominator.</p>
 
@@ -73,7 +73,7 @@ hidden: false
 
 :::
 
-## Question One  How Early Is Early Enough {#hp-source-88}
+## Question one  how early is early enough {#hp-source-88}
 
 <p data-hp-source-paragraph="89"><strong>Qian Liu directed our discussion toward decisions made before planting. </strong>For nematode diseases that require preventive management, detection before obvious above-ground symptoms may still be too late to guide action. Testing needs to be considered alongside the intended crop, soil conditions, and subsequent management. Yurong Yao’s account of hidden root damage and practical barriers to testing added agricultural context to this discussion.</p>
 
@@ -85,9 +85,9 @@ hidden: false
 
 :::
 
-## Question Two  How Does Soil Affect Signals and Color {#hp-source-92}
+## Question two  how does soil affect signals and color {#hp-source-92}
 
-<p data-hp-source-paragraph="93"><strong>Zhihao Pang noted that differences in soil background color could affect visual interpretation.</strong><strong> </strong>He also raised a question for the model: if ascr#3 and ascr#18 degrade at different rates in soil, would their measured relative abundance still represent the original signal composition? This prompted us to consider environmental processes when interpreting ratios in soil.</p>
+<p data-hp-source-paragraph="93"><strong>Zhihao Pang noted that differences in soil background color could affect visual interpretation.</strong><strong> </strong>He also raised a question for the model: if <strong>ascaroside #3 (ascr#3)</strong> and <strong>ascaroside #18 (ascr#18)</strong> degrade at different rates in soil, would their measured relative abundance still represent the original signal composition? This prompted us to consider environmental processes when interpreting ratios in soil.</p>
 
 <p data-hp-source-paragraph="94">This feedback prompted us to consider the soil environment when discussing signal interpretation. Signal stability, background interference, and differences between laboratory and field conditions are shared considerations for the wet-lab and dry-lab teams.</p>
 
@@ -97,7 +97,7 @@ hidden: false
 
 :::
 
-## Question Three  What Makes a Sample Meaningful and a Test Usable {#hp-source-97}
+## Question three  what makes a sample meaningful and a test usable {#hp-source-97}
 
 <p data-hp-source-paragraph="98"><strong>Yurong Yao described uneven nematode distribution within fields, differences between greenhouses, and the importance of sample transport, storage, separate handling, and disposal. </strong>Qian Liu also emphasized that representativeness, losses during separation and extraction, and matrix inhibition affect interpretation. A result from one sample cannot automatically describe an entire field.</p>
 
@@ -109,15 +109,15 @@ hidden: false
 
 :::
 
-## Lessons for Our Research and Other Teams {#hp-source-102}
+## Lessons for our research and other teams {#hp-source-102}
 
 :::features
 
-### Inputs to Our Wet-Lab and Dry-Lab Work {#hp-source-103}
+### Inputs to our wet-lab and dry-lab work {#hp-source-103}
 
 <p data-hp-source-paragraph="104">HP provides our wet-lab and dry-lab teams with information about needs, professional perspectives, and application settings. The questionnaire describes public understanding and expectations of a test; experts add perspectives on timing, samples, and usability; university exchanges offer comparisons of experimental approaches; and farm visits provide local agricultural context. Together, these inputs support discussions of research direction and potential value.</p>
 
-### Practices Other Teams Can Adapt {#hp-source-105}
+### Practices other teams can adapt {#hp-source-105}
 
 <p data-hp-source-paragraph="106">First, retain the link between an experimental question, a survey question, the responses, and the resulting research discussion. Other teams can begin with their own technical assumptions when designing a questionnaire, rather than distributing a general awareness survey and looking for a connection afterward.</p>
 
@@ -129,13 +129,11 @@ hidden: false
 
 :::
 
-<p data-hp-source-paragraph="111"><a href="/hp-overview/">Back to HP Overview</a>   ·   <a href="/education/">Next: Education</a></p>
-
 </section>
 
 <section class="hp-references">
 
-## References and Supporting Evidence {#hp-original-references toc="References and Supporting Evidence"}
+## References and supporting evidence {#hp-original-references toc="References and supporting evidence"}
 
 :::refs
 

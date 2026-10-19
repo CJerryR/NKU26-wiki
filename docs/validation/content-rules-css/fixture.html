@@ -1,0 +1,131 @@
+<!doctype html><meta charset="utf-8"><style>:root{--font-body:"Spline Sans",sans-serif}.doc{width:1040px}.prose{margin:0}body{margin:0}/* Shared article rules. Load after local manuscript and mobile styles so all
+   content pages use one reading measure, including pages without submissions. */
+main:has(.doc) { --measure: 65rem; --bleed: 0px; }
+.doc .prose {
+  min-width: 0;
+  width: 100%;
+  max-width: 65rem;
+  font-family: var(--font-body);
+  --article-font-size: 18px;
+  --article-line-height: 1.65;
+  font-size: var(--article-font-size);
+  font-weight: 380;
+  line-height: var(--article-line-height);
+  letter-spacing: .005em;
+}
+.doc .doc-section + .doc-section { margin-top: clamp(56px, 5vw, 76px); }
+
+/* Manuscript HTML contains inline typography. These important declarations
+   replace only its presentation; emphasis and scientific italics stay intact. */
+.doc .prose h2 {
+  font-family: var(--font-body) !important;
+  font-size: clamp(28px, 2.3vw, 34px) !important;
+  font-weight: 560 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -.012em !important;
+  margin-bottom: .65em !important;
+  text-align: start !important;
+}
+.doc .prose h3:not(.person-name > *) {
+  font-family: var(--font-body) !important;
+  font-size: 24px !important;
+  font-weight: 560 !important;
+  line-height: 1.3 !important;
+  letter-spacing: -.005em !important;
+  margin-top: 1.65em !important;
+  margin-bottom: .65em !important;
+  text-align: start !important;
+}
+.doc .prose :is(h2, h3):not(.person-name > *) :is(span, strong, b, em, i) {
+  font-family: inherit !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+  letter-spacing: inherit !important;
+}
+
+/* Ordinary text shares the outer boundary of its adjacent blocks. Special
+   component text keeps its own inset, type size and alignment. */
+.doc .prose p:not(:where(
+  figcaption *, table *, blockquote *, .callout *, .refs *, .hp-references *,
+  .figure__media *, .wiki-media *, .stat *, .person *,
+  .timeline__when, .hp-image-label, .hp-download-label, .table-caption,
+  .docking-caption-only *, .figure__credit, .figure__missing,
+  .person__role, .person-name__cn, .member-card__role, .credit-card__role, .author-source-link
+)) {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-inline: 0 !important;
+  padding-inline: 0 !important;
+  margin-block: 1.1em;
+  font-family: var(--font-body) !important;
+  font-size: var(--article-font-size) !important;
+  font-weight: 380 !important;
+  line-height: var(--article-line-height) !important;
+  letter-spacing: .005em !important;
+  white-space: normal !important;
+  text-align: justify !important;
+  text-align-last: start !important;
+  text-wrap: wrap;
+}
+
+/* Only typographic spans inside ordinary paragraphs inherit the article metrics.
+   Scientific emphasis, scripts, code and semantic annotations retain their styling. */
+.doc .prose p:not(:where(
+  figcaption *, table *, blockquote *, .callout *, .refs *, .hp-references *,
+  .figure__media *, .wiki-media *, .stat *, .person *,
+  .timeline__when, .hp-image-label, .hp-download-label, .table-caption,
+  .docking-caption-only *, .figure__credit, .figure__missing,
+  .person__role, .person-name__cn, .member-card__role, .credit-card__role, .author-source-link
+)) span[style]:not(:where(
+  sub *, sup *, code *, kbd *, mark *, [data-annotation], [data-annotation] *,
+  .katex, .katex *, .annotation, .annotation *
+)) {
+  font-family: inherit !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+  letter-spacing: inherit !important;
+  white-space: normal !important;
+  text-align: inherit !important;
+  text-align-last: inherit !important;
+}
+.doc .prose h2 + p { margin-top: 0; }
+.doc .prose :is(figcaption, .table-caption, .docking-caption-only) { text-align-last: auto; }
+.doc .prose :is(.callout, .cards, .figure, .table-wrap, .wiki-media, wiki-toolkit) {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+/* Figure frames contain the complete image, including panel labels. */
+.doc .prose .figure > .figure__media:not(:has(> .table-wrap)) {
+  background: #fff !important;
+  border: 1px solid var(--line) !important;
+  border-radius: var(--figure-radius, 18px) !important;
+  padding: var(--figure-pad, clamp(14px, 2.2vw, 26px)) !important;
+}
+.doc .prose .figure__media img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin-inline: auto;
+}
+.doc .prose .hp-source-figure > a,
+.doc .prose .hp-photo-group,
+.doc .prose .docking-panel-scroll {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--figure-radius, 18px);
+  padding: clamp(14px, 2.2vw, 26px);
+}
+
+/* Labels printed within a white photographic panel keep dark ink in both themes. */
+.doc .prose .hp-photo-group .hp-image-label { color: #241c2b; }
+
+@media (max-width: 640px) {
+  .doc { width: min(100% - 40px, 65rem); }
+  .doc .prose { --article-font-size: 17.5px; --article-line-height: 1.7; }
+  .doc .prose h2 { font-size: 28px !important; }
+  .doc .prose h3:not(.person-name > *) { font-size: 21px !important; }
+}
+</style><main><div class="doc" data-page="test"><article class="prose"><section class="doc-section"><h2>Background</h2><p id="after-h2">Paragraph</p><h3 id="h3">1.1 Details</h3><p id="body"><span id="author-span" style="font-size:36px;font-family:serif;line-height:3;white-space:pre-wrap">Scientific text</span> <strong id="bold">Bold</strong> <em id="species">Saccharomyces cerevisiae</em> H<sub id="sub">2</sub>O <sup id="sup">[1]</sup><code><span id="code-span" style="font-size:13px">GPR2</span></code></p><div class="callout"><div class="callout__body"><p><span id="callout-span" style="font-size:15px">Note</span></p></div></div><figure><figcaption><span id="caption-span" style="font-size:14px">Caption</span></figcaption></figure><table><tr><td><p><span id="table-span" style="font-size:12px">Cell</span></p></td></tr></table></section></article></div></main><pre id="result"></pre><script>const pick=(id)=>{const s=getComputedStyle(document.getElementById(id));return {fontSize:s.fontSize,fontFamily:s.fontFamily,lineHeight:s.lineHeight,whiteSpace:s.whiteSpace,fontWeight:s.fontWeight,fontStyle:s.fontStyle,marginTop:s.marginTop}};document.getElementById('result').textContent=JSON.stringify(Object.fromEntries(['author-span','body','after-h2','h3','bold','species','sub','sup','code-span','callout-span','caption-span','table-span'].map(id=>[id,pick(id)])));</script>

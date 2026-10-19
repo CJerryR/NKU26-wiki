@@ -1,10 +1,10 @@
 ---
-title: Molecular Dynamics
-heading: Molecular Dynamics
+title: Molecular dynamics
+heading: Molecular dynamics
 sub: ''
 crumbs:
   - Model
-  - Molecular Dynamics
+  - Molecular dynamics
 route: model-md
 search: true
 description: ''
@@ -15,29 +15,27 @@ hidden: false
 ---
 <div class="reading-layout" lang="en">
 
-<p class="author-source-link"><a href="/source-archive/#meeting-20261019" data-source-document="meeting-20261019-a689408f0daa">Original submission (.docx)</a><span role="status" aria-live="polite"></span></p>
-
 <section class="author-manuscript" lang="en">
 
-## Molecular Dynamics | Ligand positioning and contact changes in a membrane environment {#src-Model-Molecular-Dynamics-1 toc="Molecular Dynamics | Ligand positioning and contact changes in a membrane environment"}
+## Molecular dynamics | ligand positioning and contact changes in a membrane environment {#src-Model-Molecular-Dynamics-1 toc="Molecular dynamics | ligand positioning and contact changes in a membrane environment"}
 
 :::lead
 
-<p style="text-align:left;"> Docking provided candidate binding poses for N84V and V368R. We then performed molecular dynamics (MD) simulations to examine how these poses adjust in a membrane environment and which receptor–ligand contacts persist. </p>
+<p> Docking provided candidate binding poses for N84V and V368R. We then performed <strong>molecular dynamics (MD)</strong> simulations to examine how these poses adjust in a membrane environment and which receptor–ligand contacts persist. </p>
 
 :::
 
-### 2.1 Building six membrane systems from docking poses {#src-Model-Molecular-Dynamics-3 toc="2.1 Building six membrane systems from docking poses"}
+### 1.1 Building six membrane systems from docking poses {#src-Model-Molecular-Dynamics-3 toc="Building six membrane systems from docking poses"}
 
-<p style="text-align:left;"> Pairing WT, N84V, and V368R with ascr#18 and ascr#3 produced six complexes. Each started from its own docking pose, with the ligand restored to the corresponding full-length receptor. We addressed clashes involving restored segments, the ligand, and surrounding structures, then placed complexes in POPC lipid bilayers with solvent and ions. </p>
+<p> Pairing <strong>wild type (WT)</strong>, N84V, and V368R with <strong>ascaroside #18 (ascr#18)</strong> and <strong>ascaroside #3 (ascr#3)</strong> produced six complexes. Each started from its own docking pose, with the ligand restored to the corresponding full-length receptor. We addressed clashes involving restored segments, the ligand, and surrounding structures, then placed complexes in <strong>1-palmitoyl-2-oleoyl-sn-glycero-3-phosphocholine (POPC)</strong> lipid bilayers with solvent and ions. </p>
 
-<p style="text-align:left;"> Systems underwent energy minimization, gradual constant-volume heating to 303.15 K, and brief constant-temperature pre-equilibration. Staged pressure equilibration at 1 bar progressively weakened positional and dihedral restraints, allowing receptor, ligand, lipids, and solvent to relax together. Further preparation simulations without restraints checked temperature, density, membrane-plane area, and box height. Each system then completed one 100 ns production simulation. </p>
+<p> Systems underwent energy minimization, gradual constant-volume heating to 303.15 K, and brief constant-temperature pre-equilibration. Staged pressure equilibration at 1 bar progressively weakened positional and dihedral restraints, allowing receptor, ligand, lipids, and solvent to relax together. Further preparation simulations without restraints checked temperature, density, membrane-plane area, and box height. Each system then completed one 100 ns production simulation. </p>
 
-### 2.2 Observing ligand motion relative to the local pocket {#src-Model-Molecular-Dynamics-6 toc="2.2 Observing ligand motion relative to the local pocket"}
+### 1.2 Observing ligand motion relative to the local pocket {#src-Model-Molecular-Dynamics-6 toc="Observing ligand motion relative to the local pocket"}
 
-<p style="text-align:left;"> To distinguish overall receptor motion from ligand movement within the pocket, we aligned trajectories using a common set of pocket backbone atoms across all six systems and calculated ligand heavy-atom root mean square deviation (RMSD) relative to each system's production-start frame. Whole-receptor and transmembrane helical-core alignments provided additional reference comparisons. </p>
+<p> To distinguish overall receptor motion from ligand movement within the pocket, we aligned trajectories using a common set of pocket backbone atoms across all six systems and calculated ligand heavy-atom <strong>root mean square deviation (RMSD)</strong> relative to each system's production-start frame. Whole-receptor and transmembrane helical-core alignments provided additional reference comparisons. </p>
 
-<p style="text-align:left;"> The primary comparison window was 50–100 ns for all six systems to reduce early relaxation effects; full trajectories tracked contact formation, loss, and ligand relocation. RMSD describes deviation from each ligand's own starting pose; contact occupancy is the fraction of sampled frames satisfying contact criteria within the window. </p>
+<p> The primary comparison window was 50–100 ns for all six systems to reduce early relaxation effects; full trajectories tracked contact formation, loss, and ligand relocation. RMSD describes deviation from each ligand's own starting pose; contact occupancy is the fraction of sampled frames satisfying contact criteria within the window. </p>
 
 :::figure
 
@@ -47,13 +45,13 @@ hidden: false
 
 :::
 
-<p style="text-align:left;"> Pocket and transmembrane-core alignment curves were similar, whereas whole-receptor alignment differed substantially. Motion elsewhere in the receptor therefore affects ligand RMSD readings; local references make pose changes within the binding region easier to distinguish. </p>
+<p> Pocket and transmembrane-core alignment curves were similar, whereas whole-receptor alignment differed substantially. Motion elsewhere in the receptor therefore affects ligand RMSD readings; local references make pose changes within the binding region easier to distinguish. </p>
 
-### 2.3 N84V–ascr#18: persistent Arg189 anchoring of the ligand carboxylate {#src-Model-Molecular-Dynamics-12 toc="2.3 N84V–ascr#18: persistent Arg189 anchoring of the ligand carboxylate"}
+### 1.3 N84V–ascr#18: persistent Arg189 anchoring of the ligand carboxylate {#src-Model-Molecular-Dynamics-12 toc="N84V–ascr#18: persistent Arg189 anchoring of the ligand carboxylate"}
 
-<p style="text-align:left;"> In N84V–ascr#18, Arg189 remained in persistent contact with the terminal ligand carboxylate. The modeled Arg189 guanidinium group is positively charged and the ligand carboxylate negatively charged; their close contact is consistent with a salt bridge and has hydrogen-bond geometry. Salt-bridge electrostatics and geometry inform interpretation of the charged terminus's position. [1] </p>
+<p> In N84V–ascr#18, Arg189 remained in persistent contact with the terminal ligand carboxylate. The modeled Arg189 guanidinium group is positively charged and the ligand carboxylate negatively charged; their close contact is consistent with a salt bridge and has hydrogen-bond geometry. Salt-bridge electrostatics and geometry inform interpretation of the charged terminus's position. [1] </p>
 
-<p style="text-align:left;"> During 50–100 ns, the minimum distance between Arg189 guanidinium nitrogen and ligand carboxylate oxygen was ≤4 Å in every sampled frame, giving 100% contact occupancy; 93.6% of sampled frames contained at least one hydrogen bond. Hydrogen bonds required donor–acceptor distance ≤3.0 Å and D–H–A angle ≥150°. Under the same criteria, neither N84V–ascr#3 nor WT–ascr#18 showed Arg189–ligand carboxylate hydrogen bonds during this interval. </p>
+<p> During 50–100 ns, the minimum distance between Arg189 guanidinium nitrogen and ligand carboxylate oxygen was ≤4 Å in every sampled frame, giving 100% contact occupancy; 93.6% of sampled frames contained at least one hydrogen bond. Hydrogen bonds required donor–acceptor distance ≤3.0 Å and D–H–A angle ≥150°. Under the same criteria, neither N84V–ascr#3 nor WT–ascr#18 showed Arg189–ligand carboxylate hydrogen bonds during this interval. </p>
 
 :::figure
 
@@ -63,33 +61,33 @@ hidden: false
 
 :::
 
-<p style="text-align:left;"> Persistent contact accompanied smaller ligand displacement. After pocket alignment, mean ligand RMSD in the second half was lower for N84V–ascr#18 than for WT–ascr#18 and N84V–ascr#3; transmembrane-core alignment retained this relationship. The Arg189 salt bridge and its hydrogen bonds offer a mechanistic clue for positional retention of ascr#18 in this conformation. </p>
+<p> Persistent contact accompanied smaller ligand displacement. After pocket alignment, mean ligand RMSD in the second half was lower for N84V–ascr#18 than for WT–ascr#18 and N84V–ascr#3; transmembrane-core alignment retained this relationship. The Arg189 salt bridge and its hydrogen bonds offer a mechanistic clue for positional retention of ascr#18 in this conformation. </p>
 
 <p style="text-align:center;"><strong> Click the image to view the complete spreadsheet </strong></p>
 
-### 2.4 V368R–ascr#3: a stable mechanistic explanation remains unresolved {#src-Model-Molecular-Dynamics-20 toc="2.4 V368R–ascr#3: a stable mechanistic explanation remains unresolved"}
+### 1.4 V368R–ascr#3: a stable mechanistic explanation remains unresolved {#src-Model-Molecular-Dynamics-20 toc="V368R–ascr#3: a stable mechanistic explanation remains unresolved"}
 
-<p style="text-align:left;"> In the original V368R–ascr#3 trajectory, the ligand left its initial position and its carboxylate was subsequently anchored by Arg345. Meanwhile, the charged end of Arg368 moved away from Asp70, prompting us to examine links between local receptor changes and ligand relocation. However, WT–ascr#3 and V368R–ascr#18 also showed persistent Arg345–ligand contacts. Arg345 therefore provides an anchoring position available to multiple systems and cannot explain enhanced ascr#3 preference in V368R. </p>
+<p> In the original V368R–ascr#3 trajectory, the ligand left its initial position and its carboxylate was subsequently anchored by Arg345. Meanwhile, the charged end of Arg368 moved away from Asp70, prompting us to examine links between local receptor changes and ligand relocation. However, WT–ascr#3 and V368R–ascr#18 also showed persistent Arg345–ligand contacts. Arg345 therefore provides an anchoring position available to multiple systems and cannot explain enhanced ascr#3 preference in V368R. </p>
 
-<p style="text-align:left;"> To seek other stabilizing interactions, we designed two V368R–ascr#3 starting conformations and ran 100 ns MD for each. One placed the carboxylate near mutation-introduced Arg368 to test direct anchoring; the other placed it near Arg189, following N84V–ascr#18. Both trajectories lost their preset contacts early and later mainly adopted Arg345 anchoring, without a new persistent anchoring pattern. </p>
+<p> To seek other stabilizing interactions, we designed two V368R–ascr#3 starting conformations and ran 100 ns MD for each. One placed the carboxylate near mutation-introduced Arg368 to test direct anchoring; the other placed it near Arg189, following N84V–ascr#18. Both trajectories lost their preset contacts early and later mainly adopted Arg345 anchoring, without a new persistent anchoring pattern. </p>
 
-<p style="text-align:left;"> Whole-receptor screening of direct salt bridges, hydrogen bonds, and combined contacts found that Asp89 anchored the ascr#3 sugar ring in the Arg189-start trajectory. This hydrogen bond occurred frequently during 20–50 ns but mostly disappeared in the second half. Arg368–Asp70 contact persisted before and after hydrogen-bond formation and loss, without a corresponding change accompanying sugar-ring motion. A static ascr#18 model could also accommodate the same sugar-ring position. Asp89 thus supplied a transient binding pose, but no stable clue explaining V368R–ascr#3 preference. </p>
+<p> Whole-receptor screening of direct salt bridges, hydrogen bonds, and combined contacts found that Asp89 anchored the ascr#3 sugar ring in the Arg189-start trajectory. This hydrogen bond occurred frequently during 20–50 ns but mostly disappeared in the second half. Arg368–Asp70 contact persisted before and after hydrogen-bond formation and loss, without a corresponding change accompanying sugar-ring motion. A static ascr#18 model could also accommodate the same sugar-ring position. Asp89 thus supplied a transient binding pose, but no stable clue explaining V368R–ascr#3 preference. </p>
 
 :::note[Evidence and limitations]
 
-<p style="text-align:left;"><strong> Additional simulations and analyses still found no mechanistic clue comparable to persistent Arg189 anchoring in N84V–ascr#18. The structural mechanism underlying Vina-predicted enhanced ascr#3 preference in V368R requires further study. </strong></p>
+<p><strong> Additional simulations and analyses still found no mechanistic clue comparable to persistent Arg189 anchoring in N84V–ascr#18. The structural mechanism underlying Vina-predicted enhanced ascr#3 preference in V368R requires further study. </strong></p>
 
 :::
 
-### 2.5 Mechanistic interpretations of the two candidates {#src-Model-Molecular-Dynamics-25 toc="2.5 Mechanistic interpretations of the two candidates"}
+### 1.5 Mechanistic interpretations of the two candidates {#src-Model-Molecular-Dynamics-25 toc="Mechanistic interpretations of the two candidates"}
 
-<p style="text-align:left;"> N84V MD results provide structural clues for the Vina-predicted ascr#18 preference: Arg189 persistently anchors the ligand carboxylate through salt-bridge and hydrogen-bond contacts, while the ligand moves less within the local pocket. This offers a specific explanation for retention of the ascr#18 binding pose. </p>
+<p> N84V MD results provide structural clues for the Vina-predicted ascr#18 preference: Arg189 persistently anchors the ligand carboxylate through salt-bridge and hydrogen-bond contacts, while the ligand moves less within the local pocket. This offers a specific explanation for retention of the ascr#18 binding pose. </p>
 
-<p style="text-align:left;"> V368R lacks comparable mechanistic clues. Neither additional trajectory retained preset Arg368 or Arg189 contacts, late Arg345 contacts also occurred in controls, and the newly identified Asp89 hydrogen bond persisted only during part of the trajectory. Current MD therefore does not explain Vina-predicted enhanced ascr#3 preference in V368R; its structural mechanism requires further study. </p>
+<p> V368R lacks comparable mechanistic clues. Neither additional trajectory retained preset Arg368 or Arg189 contacts, late Arg345 contacts also occurred in controls, and the newly identified Asp89 hydrogen bond persisted only during part of the trajectory. Current MD therefore does not explain Vina-predicted enhanced ascr#3 preference in V368R; its structural mechanism requires further study. </p>
 
-### References {#src-Model-Molecular-Dynamics-28 toc="References"}
+## References {#src-Model-Molecular-Dynamics-28 toc="References"}
 
-<p style="text-align:left;">[1] Donald, J. E., Kulp, D. W., &amp; DeGrado, W. F. (2011). Salt bridges: Geometrically specific, designable interactions. <em>Proteins: Structure, Function, and Bioinformatics</em>, 79(3), 898–915. <a href="https://doi.org/10.1002/prot.22927">https://doi.org/10.1002/prot.22927</a></p>
+<p>[1] Donald, J. E., Kulp, D. W., &amp; DeGrado, W. F. (2011). Salt bridges: Geometrically specific, designable interactions. <em>Proteins: Structure, Function, and Bioinformatics</em>, 79(3), 898–915. <a href="https://doi.org/10.1002/prot.22927">https://doi.org/10.1002/prot.22927</a></p>
 
 </section>
 

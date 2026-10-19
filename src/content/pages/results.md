@@ -3,7 +3,7 @@ title: Results
 heading: Results
 sub: ''
 crumbs:
-  - Wet Lab
+  - Wet lab
   - Results
 route: results
 search: true
@@ -15,25 +15,25 @@ hidden: false
 ---
 <div class="reading-layout" lang="en">
 
-## 1 DBTL-1: Heterologous Expression and Transmembrane Localization Verification of GPR2 {#dbtl-1-heterologous-expression-and-transmembrane-localization-verification-of-gpr2 toc="DBTL-1: Heterologous Expression and Transmembrane Localization Verification of GPR2"}
+## DBTL-1: heterologous expression and transmembrane localization verification of GPR2 {#dbtl-1-heterologous-expression-and-transmembrane-localization-verification-of-gpr2 toc="DBTL-1: heterologous expression and transmembrane localization verification of GPR2"}
 
-<p>In this cycle, we performed heterologous expression and transmembrane localization verification of GPR2. The construction strategy of verification strains and detection methods were iteratively optimized. The final results met our expectations, laying a foundation for the next DBTL cycle.</p>
+<p>In this cycle, we performed heterologous expression and transmembrane localization verification of GPR2. The construction strategy of verification strains and detection methods were iteratively optimized. The final results met our expectations, laying a foundation for the next <strong>design–build–test–learn (DBTL)</strong> cycle.</p>
 
-### 1.1 The First Cycle {#the-first-cycle toc="The First Cycle"}
+### 1.1 The first cycle {#the-first-cycle toc="The first cycle"}
 
-#### 1.1.1 Design {#design toc="Design | Planning GPR2 Expression and Localization Tests"}
+#### 1.1.1 Design {#design toc="Design | planning GPR2 expression and localization tests"}
 
-<p>Based on the dry-lab screening results, we selected GPR2 as the receptor for display. To confirm that GPR2 can be heterologously expressed and correctly localized to the plasma membrane in our desired strain CEN.PK2‑1C, we devised an experimental workflow consisting of "construction of the GPR2‑sfGFP heterologous‑expression plasmid — gene knock‑in via yeast endogenous homologous recombination (HR) — assessment of expression and localization using fluorescence microscopy".</p>
+<p>Based on the dry-lab screening results, we selected GPR2 as the receptor for display. To confirm that GPR2 can be heterologously expressed and correctly localized to the plasma membrane in our desired strain CEN.PK2‑1C, we devised an experimental workflow consisting of "construction of the GPR2‑sfGFP heterologous‑expression plasmid — gene knock‑in via yeast endogenous <strong>homologous recombination (HR)</strong> — assessment of expression and localization using fluorescence microscopy".</p>
 
 For plasmid construction (Figure 1.a), our design rationale was as follows:
 
-<p>a. The upstream and downstream sequences of the <em>STE2</em> CDS were utilized as the 5′‑homology arm and 3′‑homology arm to facilitate gene knock‑in via yeast endogenous homologous recombination (HR).</p>
+<p>a. The upstream and downstream sequences of the <em>STE2</em> <strong>coding sequence (CDS)</strong> were utilized as the 5′‑homology arm and 3′‑homology arm to facilitate gene knock‑in via yeast endogenous HR.</p>
 
-<p>b. The constitutive TEF1 promoter was employed to drive gene expression. The cDNA sequence of <em>GPR2</em> was fused to the <em>sfGFP</em> sequence via a flexible linker for observation under fluorescence microscopy, followed by the CYC1 terminator.</p>
+<p>b. The constitutive TEF1 promoter was employed to drive gene expression. The <strong>complementary DNA (cDNA)</strong> sequence of <em>GPR2</em> was fused to the <em><strong>superfolder green fluorescent protein (sfGFP)</strong></em> sequence via a flexible linker for observation under fluorescence microscopy, followed by the CYC1 terminator.</p>
 
 <p>c. The <em>Leu2</em> auxotrophic marker was used for transformant selection.</p>
 
-#### 1.1.2 Build {#build toc="Build | Integrating the GPR2-sfGFP Expression Cassette"}
+#### 1.1.2 Build {#build toc="Build | integrating the GPR2-sfGFP expression cassette"}
 
 Firstly, the GPR2‑sfGFP heterologous expression plasmid was successfully assembled by one‑step cloning (Figure 1). The plasmid was then linearized and transformed into yeast. Positive transformants were validated to yield yeast strains carrying correctly knock‑in GPR2‑sfGFP (Figure 2).
 
@@ -41,7 +41,7 @@ Firstly, the GPR2‑sfGFP heterologous expression plasmid was successfully assem
 
 ![Figure 1. Construction of the plasmid for heterologous expression of GPR2-sfGFP. a, Plasmid map of the pRS315-GPR2-sfGFP construct for heterologous GPR2-sfGFP expression. b, Colony PCR results during plasmid construction. Sample T3 showed the expected positive band, and this colony was selected for plasmid extraction. c, Double restriction digestion verification of pRS315-GPR2-sfGFP, with band sizes consistent with theoretical expectations.](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-6a3e31c31a57-fig1-1.avif)
 
-<p><strong>Figure 1. Construction of the plasmid for heterologous expression of GPR2-sfGFP.</strong> <strong>a</strong>, Plasmid map of the pRS315-GPR2-sfGFP construct for heterologous GPR2-sfGFP expression. <strong>b</strong>, Colony PCR results during plasmid construction. Sample T3 showed the expected positive band, and this colony was selected for plasmid extraction. <strong>c</strong>, Double restriction digestion verification of pRS315-GPR2-sfGFP, with band sizes consistent with theoretical expectations.</p>
+<p><strong>Figure 1. Construction of the plasmid for heterologous expression of GPR2-sfGFP.</strong> <strong>a</strong>, Plasmid map of the pRS315-GPR2-sfGFP construct for heterologous GPR2-sfGFP expression. <strong>b</strong>, Colony <strong>polymerase chain reaction (PCR)</strong> results during plasmid construction. Sample T3 showed the expected positive band, and this colony was selected for plasmid extraction. <strong>c</strong>, Double restriction digestion verification of pRS315-GPR2-sfGFP, with band sizes consistent with theoretical expectations.</p>
 
 :::
 
@@ -49,11 +49,11 @@ Firstly, the GPR2‑sfGFP heterologous expression plasmid was successfully assem
 
 ![Figure 2. Yeast transformation of GPR2-sfGFP. a, Schematic diagram of yeast homologous recombination (HR). b, Verification results of transformants, confirming that GPR2-sfGFP was correctly integrated into the STE2 locus of the yeast genome.](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-b9bf38820eb8-fig1-2.avif)
 
-Figure 2. Yeast transformation of GPR2-sfGFP. a, Schematic diagram of yeast homologous recombination (HR). b, Verification results of transformants, confirming that GPR2-sfGFP was correctly integrated into the STE2 locus of the yeast genome.
+Figure 2. Yeast transformation of GPR2-sfGFP. a, Schematic diagram of yeast HR. b, Verification results of transformants, confirming that GPR2-sfGFP was correctly integrated into the STE2 locus of the yeast genome.
 
 :::
 
-#### 1.1.3 Test {#test toc="Test | Observing GPR2-sfGFP Fluorescence"}
+#### 1.1.3 Test {#test toc="Test | observing GPR2-sfGFP fluorescence"}
 
 <p>Upon examining GPR2‑sfGFP‑transformed yeast cells by fluorescence microscopy, we detected intense green fluorescent signals (Figure 3).</p>
 
@@ -65,21 +65,21 @@ Figure 3. Fluorescence microscopy results
 
 :::
 
-#### 1.1.4 Learn {#learn toc="Learn | Identifying the Need for Localization Controls"}
+#### 1.1.4 Learn {#learn toc="Learn | identifying the need for localization controls"}
 
 <p>While Figure 3 indicates that GPR2 is heterologously expressed and appears to localize to the plasma membrane, definitive evidence for authentic plasma‑membrane localization remains absent. We therefore moved on to the next DBTL cycle.</p>
 
-### 1.2 The Second Cycle {#the-second-cycle toc="The Second Cycle"}
+### 1.2 The second cycle {#the-second-cycle toc="The second cycle"}
 
-#### 1.2.1 Design and Build {#design-and-build toc="Design and Build | Preparing Cell-Wall and Membrane Staining Controls"}
+#### 1.2.1 Design and build {#design-and-build toc="Design and build | preparing cell-wall and membrane staining controls"}
 
 To further confirm that GPR2 correctly localizes to the plasma membrane, we designed two sets of experiments:
 
-a. Staining of the yeast cell wall with the cell-wall dye Calcofluor‑White (CFW);
+a. Staining of the yeast cell wall with the cell-wall dye <strong>Calcofluor White (CFW)</strong>;
 
 <p>b. Staining of the yeast plasma membrane with the plasma‑membrane dye FM4‑64.</p>
 
-#### 1.2.2 Test {#test-2 toc="Test | Comparing GFP with Cell-Wall and Membrane Signals"}
+#### 1.2.2 Test {#test-2 toc="Test | comparing GFP with cell-wall and membrane signals"}
 
 <p>With cell‑wall staining, we found that the fluorescence signal of GPR2‑sfGFP barely overlapped with the CFW signal and resided on the inner side of the cell wall (Figure 4).</p>
 
@@ -87,7 +87,7 @@ a. Staining of the yeast cell wall with the cell-wall dye Calcofluor‑White (CF
 
 ![Figure 4. Calcofluor‑White (CFW) staining of yeast cells](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-66d05c9efec6-fig1-4.avif)
 
-Figure 4. Calcofluor‑White (CFW) staining of yeast cells
+Figure 4. CFW staining of yeast cells
 
 :::
 
@@ -101,37 +101,37 @@ Figure 5. FM4‑64 staining of yeast cells
 
 :::
 
-#### 1.2.3 Learn {#learn-2 toc="Learn | Assessing GPR2 Plasma-Membrane Localization"}
+#### 1.2.3 Learn {#learn-2 toc="Learn | assessing GPR2 plasma-membrane localization"}
 
 <p>Taken together, these results confirm that CEN.PK2‑1C can achieve heterologous expression and proper plasma‑membrane localization of GPR2, which is an essential prerequisite for chassis‑strain construction based on this host.</p>
 
-### Reference {#reference toc="Reference"}
+### 1.3 Reference {#reference toc="Reference"}
 
 Vida TA, Emr SD. A new vital stain for visualizing vacuolar membrane dynamics and endocytosis in yeast. J Cell Biol. 1995 Mar;128(5):779-92. doi: 10.1083/jcb.128.5.779. PMID: 7533169; PMCID: PMC2120394.
 
-## 2 DBTL-2: Engineering Construction of Ascaroside-Responsive Yeast Chassis {#dbtl-2-engineering-construction-of-ascaroside-responsive-yeast-chassis toc="DBTL-2: Engineering Construction of Ascaroside-Responsive Yeast Chassis"}
+## DBTL-2: engineering construction of ascaroside-responsive yeast chassis {#dbtl-2-engineering-construction-of-ascaroside-responsive-yeast-chassis toc="DBTL-2: engineering construction of ascaroside-responsive yeast chassis"}
 
 Building on the results of the previous cycle, we officially carried out the engineering construction of an ascaroside-responsive yeast chassis in this cycle. The strains constructed in this phase can be directly applied to product packaging and hardware development in the next research cycle.
 
-### 2.1 The First Cycle {#the-first-cycle-2 toc="The First Cycle"}
+### 2.1 The first cycle {#the-first-cycle-2 toc="The first cycle"}
 
-#### 2.1.1 Design {#design-2 toc="Design | Planning Gal80 Knockout"}
+#### 2.1.1 Design {#design-2 toc="Design | planning Gal80 knockout"}
 
-<p>Based on the results of DBTL-1 and literature references<sup> [1][2]</sup>, we performed chassis modification on the CEN.PK2-1C strain. Firstly, we designed the knockout of the response-interfering gene <em>Gal80</em> (Figure 2.a) to relieve the repression of Gal gene expression by <em>Gal80</em>. We knocked out the <em>Gal80</em> gene via yeast homologous recombination (HR). Approximately 1 kb sequences flanking the upstream and downstream regions of the <em>Gal80</em> coding sequence were used as homologous arms for the knockout cassette, and Trp was adopted as the auxotrophic marker for transformant screening.</p>
+<p>Based on the results of DBTL-1 and literature references<sup> [1][2]</sup>, we performed chassis modification on the CEN.PK2-1C strain. Firstly, we designed the knockout of the response-interfering gene <em>Gal80</em> (Figure 2.a) to relieve the repression of Gal gene expression by <em>Gal80</em>. We knocked out the <em>Gal80</em> gene via yeast HR. Approximately 1 kb sequences flanking the upstream and downstream regions of the <em>Gal80</em> CDS were used as homologous arms for the knockout cassette, and Trp was adopted as the auxotrophic marker for transformant screening.</p>
 
-#### 2.1.2 Build {#build-2 toc="Build | Assembling the Gal80 Knockout Cassette"}
+#### 2.1.2 Build {#build-2 toc="Build | assembling the Gal80 knockout cassette"}
 
-<p>Firstly, we amplified the upstream and downstream homologous arms (5F is 1255 bp and 3F is 1406 bp.) of <em>Gal80</em> from the genomic DNA of CEN.PK2-1C strain and the Trp auxotrophic marker element (1081bp) from the pRS314 plasmid. The <em>Gal80</em> knockout cassette was successfully assembled via Double-joint PCR (Figure 1).</p>
+<p>Firstly, we amplified the upstream and downstream homologous arms (5F is 1255 bp and 3F is 1406 bp.) of <em>Gal80</em> from the genomic <strong>deoxyribonucleic acid (DNA)</strong> of CEN.PK2-1C strain and the Trp auxotrophic marker element (1081bp) from the pRS314 plasmid. The <em>Gal80</em> knockout cassette was successfully assembled via <strong>double-joint PCR (DJ-PCR)</strong> (Figure 1).</p>
 
 :::figure
 
 ![Figure 1. Construction of Gal80 knockout cassette KOGal80. a, PCR amplification of the three fragments constituting KOGal80. b, KOGal80 cassette assembled by Double-joint PCR.](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-54bc3d3f3bd3-fig2-1-1.avif)
 
-Figure 1. Construction of Gal80 knockout cassette KOGal80. a, PCR amplification of the three fragments constituting KOGal80. b, KOGal80 cassette assembled by Double-joint PCR.
+Figure 1. Construction of Gal80 knockout cassette KOGal80. a, PCR amplification of the three fragments constituting KOGal80. b, KOGal80 cassette assembled by DJ-PCR.
 
 :::
 
-#### 2.1.3 Test {#test-3 toc="Test | Verifying Gal80 Knockout Transformants"}
+#### 2.1.3 Test {#test-3 toc="Test | verifying Gal80 knockout transformants"}
 
 <p>Subsequently, we transformed the cassette into yeast cells. After genomic DNA extraction and transformant verification, yeast strains with successful <em>Gal80</em> knockout were obtained (Figure 2).</p>
 
@@ -139,49 +139,49 @@ Figure 1. Construction of Gal80 knockout cassette KOGal80. a, PCR amplification 
 
 ![Figure 2. Gal80 Gene Knockout. a, Schematic diagram of yeast homologous recombination (HR). b, Transformant verification results, confirming the successful knockout of the *Gal80* gene.](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-f79bf47f490c-fig2-1-2.avif)
 
-<p><strong>Figure 2. Gal80 Gene Knockout. a</strong>, Schematic diagram of yeast homologous recombination (HR). <strong>b</strong>, Transformant verification results, confirming the successful knockout of the <em>Gal80</em> gene.</p>
+<p><strong>Figure 2. Gal80 gene knockout. a</strong>, Schematic diagram of yeast HR. <strong>b</strong>, Transformant verification results, confirming the successful knockout of the <em>Gal80</em> gene.</p>
 
 :::
 
-#### 2.1.4 Learn {#learn-3 toc="Learn | Advancing to Synthetic Transcription Factor Construction"}
+#### 2.1.4 Learn {#learn-3 toc="Learn | advancing to synthetic transcription factor construction"}
 
-The response-interfering gene was knocked out in this round. According to the order of the signal transduction pathway, we next need to construct the synthetic transcription factor sTF, and therefore we proceed to the next cycle.
+The response-interfering gene was knocked out in this round. According to the order of the signal transduction pathway, we next need to construct the <strong>synthetic transcription factor (sTF)</strong>, and therefore we proceed to the next cycle. Its fusion components contain the <strong>DNA-binding domain (DBD)</strong> of Gal4 and the <strong>pheromone-responsive domain (PRD)</strong> of STE12.
 
-### 2.2 The Second Cycle {#the-second-cycle-2 toc="The Second Cycle"}
+### 2.2 The second cycle {#the-second-cycle-2 toc="The second cycle"}
 
 To efficiently construct the yeast chassis strain, this cycle was performed concurrently with the third cycle.
 
-#### 2.2.1 Design {#design-3 toc="Design | Planning STE12 Knockout and sTF Integration"}
+#### 2.2.1 Design {#design-3 toc="Design | planning STE12 knockout and sTF integration"}
 
-<p>To construct the sTF, we designed an experimental workflow including<em> STE12 </em>gene knockout, recombinant pRS315-sTF plasmid construction, sTF gene knock-in via yeast homologous recombination (HR), and transformant verification. </p>
+<p>To construct the sTF, we designed an experimental workflow including<em> STE12 </em>gene knockout, recombinant pRS315-sTF plasmid construction, sTF gene knock-in via yeast HR, and transformant verification. </p>
 
 Details are as follows:
 
 <p>a. Sequences of approximately 1 kb upstream and downstream of the <em>STE12 </em>gene were selected as the homologous arms of the knockout cassette, and His was used as the auxotrophic marker for subsequent transformant screening and validation (Figure 5.a).</p>
 
-<p> b. The upstream and downstream sequences of the <em>STE12</em> gene were used as the 5′ homologous arm (identical to the 5′ homologous arm of KOSTE12) and 3′ homologous arm, respectively. Between the two homologous arms, the synthetic transcription factor sTF fused by Gal4-DBD and STE12-PRD<sup> [1]</sup>, together with the Leu auxotrophic marker, was inserted to generate the homologous recombination plasmid pRS315-sTF (Figure 1).</p>
+<p> b. The upstream and downstream sequences of the <em>STE12</em> gene were used as the 5′ homologous arm (identical to the 5′ homologous arm of KOSTE12) and 3′ homologous arm, respectively. Between the two homologous arms, the sTF fused by Gal4-DBD and STE12-PRD<sup> [1]</sup>, together with the Leu auxotrophic marker, was inserted to generate the HR plasmid pRS315-sTF (Figure 1).</p>
 
 :::figure
 
 ![Figure 1. Plasmid map of the homologous recombination plasmid pRS315-sTF.](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-e8d85e8ac64b-fig2-2-1.avif)
 
-<p><strong>Figure 1. Plasmid map of the homologous recombination plasmid pRS315-sTF.</strong></p>
+<p><strong>Figure 1. Plasmid map of the HR plasmid pRS315-sTF.</strong></p>
 
 :::
 
-#### 2.2.2 Build {#build-3 toc="Build | Assembling STE12 Knockout and sTF Constructs"}
+#### 2.2.2 Build {#build-3 toc="Build | assembling STE12 knockout and sTF constructs"}
 
-<p>Firstly, we amplified the upstream and downstream homologous arms of<em> STE12</em> from the genomic DNA of strain CEN.PK2-1C (5F: 1082 bp, 3F: 1031 bp). Meanwhile, the His auxotrophic marker (1061 bp) was amplified from plasmid pRS313. The STE12 knockout cassette was successfully assembled via Double-joint PCR (Figure 2).</p>
+<p>Firstly, we amplified the upstream and downstream homologous arms of<em> STE12</em> from the genomic DNA of strain CEN.PK2-1C (5F: 1082 bp, 3F: 1031 bp). Meanwhile, the His auxotrophic marker (1061 bp) was amplified from plasmid pRS313. The STE12 knockout cassette was successfully assembled via DJ-PCR (Figure 2).</p>
 
 :::figure
 
 ![Figure 2. Construction of the STE12 knockout cassette KOSTE12. a, PCR amplification results of the three fragments constituting KOSTE12. b, The KOSTE12 knockout cassette assembled by Double-joint PCR.](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-c9dd0c23eba9-fig2-2-2.avif)
 
-Figure 2. Construction of the STE12 knockout cassette KOSTE12. a, PCR amplification results of the three fragments constituting KOSTE12. b, The KOSTE12 knockout cassette assembled by Double-joint PCR.
+Figure 2. Construction of the STE12 knockout cassette KOSTE12. a, PCR amplification results of the three fragments constituting KOSTE12. b, The KOSTE12 knockout cassette assembled by DJ-PCR.
 
 :::
 
-<p>Meanwhile, we designed and constructed the homologous recombination plasmid pRS315-sTF. However, after fragment amplification, one-step cloning, colony PCR and plasmid extraction, the double digestion result did not meet our expectation (Figure 3).</p>
+<p>Meanwhile, we designed and constructed the HR plasmid pRS315-sTF. However, after fragment amplification, one-step cloning, colony PCR and plasmid extraction, the double digestion result did not meet our expectation (Figure 3).</p>
 
 :::figure
 
@@ -191,7 +191,7 @@ Figure 2. Construction of the STE12 knockout cassette KOSTE12. a, PCR amplificat
 
 :::
 
-<p>Plasmid sequencing revealed that the KOSTE12-3F fragment failed to assemble (Figure 4.a). We suspected that lab power outage during the experiment impaired the activity of the one-step cloning enzyme and the competence of <em>E. coli</em> competent cells. Therefore, we re-performed the experiment based on the previously constructed plasmid and obtained correct digestion and sequencing results (Figure 4).</p>
+<p>Plasmid sequencing revealed that the KOSTE12-3F fragment failed to assemble (Figure 4.a). We suspected that lab power outage during the experiment impaired the activity of the one-step cloning enzyme and the competence of <strong><em>Escherichia coli</em> (<em>E. coli</em>)</strong> competent cells. Therefore, we re-performed the experiment based on the previously constructed plasmid and obtained correct digestion and sequencing results (Figure 4).</p>
 
 :::figure
 
@@ -201,7 +201,7 @@ Figure 2. Construction of the STE12 knockout cassette KOSTE12. a, PCR amplificat
 
 :::
 
-#### 2.2.3 Test {#test-4 toc="Test | Checking STE12 Knockout Transformants"}
+#### 2.2.3 Test {#test-4 toc="Test | checking STE12 knockout transformants"}
 
 <p>Next, we first attempted to knock out the <em>STE12</em> gene. Despite three repeated trials, we failed to obtain positive results, and all transformants indicated unsuccessful knockout (Figure 5). Combined with identical issues encountered in the constitutive pigment expression verification of Cycle 3, we decided to redesign our experimental strategy.</p>
 
@@ -213,19 +213,19 @@ Figure 2. Construction of the STE12 knockout cassette KOSTE12. a, PCR amplificat
 
 :::
 
-#### 2.2.4 Learn {#learn-4 toc="Learn | Switching to CRISPR-Cas9 Gene Editing"}
+#### 2.2.4 Learn {#learn-4 toc="Learn | switching to CRISPR-Cas9 gene editing"}
 
-<p>After literature review, we hypothesized that the failure of gene knockout stemmed from the low efficiency of homologous recombination (HR), which was unsuitable for multiple rounds of genetic modification. Therefore, we adopted the CRISPR-Cas9 system<sup>[3][4] </sup>for gene editing. Together with Cycle 3, we advanced into Cycle 4.</p>
+<p>After literature review, we hypothesized that the failure of gene knockout stemmed from the low efficiency of HR, which was unsuitable for multiple rounds of genetic modification. Therefore, we adopted the <strong>clustered regularly interspaced short palindromic repeats–CRISPR-associated protein 9 (CRISPR-Cas9)</strong> system<sup>[3][4] </sup>for gene editing. Together with Cycle 3, we advanced into Cycle 4.</p>
 
-### 2.3 The Third Cycle {#the-third-cycle toc="The Third Cycle"}
+### 2.3 The third cycle {#the-third-cycle toc="The third cycle"}
 
 This cycle was actually carried out in parallel with Cycle 2. The Learn section is largely consistent with that of Cycle 2 and will not be elaborated here.
 
-#### 2.3.1 Design {#design-4 toc="Design | Planning Betaxanthin Expression Verification"}
+#### 2.3.1 Design {#design-4 toc="Design | planning betaxanthin expression verification"}
 
-<p>After constructing the strain carrying sTF, the next step was to introduce genes encoding inducibly expressed betaxanthin synthases. Since these two genes originate from plants, we designed a verification experiment to confirm that the two enzymes could be expressed in yeast and catalyze betaxanthin production. Accordingly, we constructed the homologous recombination plasmid pRS315-MjDOD-BvCYP76AD5 with a design similar to pRS315-sTF (Figure 1.a) and transformed it into yeast (Figure 2.a) to observe color development.</p>
+<p>After constructing the strain carrying sTF, the next step was to introduce genes encoding inducibly expressed betaxanthin synthases. Since these two genes originate from plants, we designed a verification experiment to confirm that the two enzymes could be expressed in yeast and catalyze betaxanthin production. Accordingly, we constructed the HR plasmid pRS315-MjDOD-BvCYP76AD5 with a design similar to pRS315-sTF (Figure 1.a) and transformed it into yeast (Figure 2.a) to observe color development.</p>
 
-#### 2.3.2 Build {#build-4 toc="Build | Troubleshooting the Betaxanthin Expression Plasmid"}
+#### 2.3.2 Build {#build-4 toc="Build | troubleshooting the betaxanthin expression plasmid"}
 
 <p>After successfully amplifying the required fragments via PCR, we encountered a problem that plagued us for nearly one month: 11 attempts of plasmid construction using one-step cloning all failed. We faced a variety of issues, including no colony growth after transformation, fully negative bands in colony PCR, incorrect plasmid double digestion results, and erroneous sequencing data. Each time one problem was solved, another emerged, severely delaying our experimental progress.</p>
 
@@ -239,7 +239,7 @@ This cycle was actually carried out in parallel with Cycle 2. The Learn section 
 
 :::
 
-#### 2.3.3 Test {#test-5 toc="Test | Examining Gene Integration and Yellow Coloration"}
+#### 2.3.3 Test {#test-5 toc="Test | examining gene integration and yellow coloration"}
 
 <p>Subsequently, we linearized plasmid pRS315-MjDOD-BvCYP76AD5 and transformed it into yeast. Similar to the results from Cycle 2, we failed to achieve correct knock-in of the betaxanthin synthase genes for constitutive expression (Figure 2). However, we observed obvious yellow color in the transformed yeast (Figure 3). We hypothesized that the plasmid underwent self-circularization and existed episomally inside yeast cells.</p>
 
@@ -259,11 +259,11 @@ Figure 3. Yeast producing betaxanthin.
 
 :::
 
-This result further demonstrated that homologous recombination (HR) had low efficiency and was not suitable for multiple rounds of genetic modification. Therefore, this cycle, together with Cycle 2, proceeded to Cycle 4.
+This result further demonstrated that HR had low efficiency and was not suitable for multiple rounds of genetic modification. Therefore, this cycle, together with Cycle 2, proceeded to Cycle 4.
 
-### 2.4 The Fourth Cycle {#the-fourth-cycle toc="The Fourth Cycle"}
+### 2.4 The fourth cycle {#the-fourth-cycle toc="The fourth cycle"}
 
-<p>Based on previous results, we adopted CRISPR-Cas9 for gene editing. The existing Cas9-carrying plasmid (p414-TEF1p-Cas9-CYC1t) uses Trp as its auxotrophic marker, which overlaps with the marker applied in our initial <em>Gal80</em> knockout. Therefore, we first replaced the auxotrophic marker of this plasmid with Leu (Figure 1). In addition, according to available references, we also needed to construct plasmids expressing specific sgRNAs (Figure 3) and corresponding donor DNA<sup>[3]</sup> (Figure 7, Figure 8). Thus, we formally started this cycle.</p>
+<p>Based on previous results, we adopted CRISPR-Cas9 for gene editing. The existing Cas9-carrying plasmid (p414-TEF1p-Cas9-CYC1t) uses Trp as its auxotrophic marker, which overlaps with the marker applied in our initial <em>Gal80</em> knockout. Therefore, we first replaced the auxotrophic marker of this plasmid with <strong>leucine (Leu)</strong> (Figure 1). The guide molecules consist of <strong>ribonucleic acid (RNA)</strong>. In addition, according to available references, we also needed to construct plasmids expressing specific <strong>single-guide RNAs (sgRNAs)</strong> (Figure 3) and corresponding donor DNA<sup>[3]</sup> (Figure 7, Figure 8). Thus, we formally started this cycle.</p>
 
 :::figure
 
@@ -273,11 +273,11 @@ This result further demonstrated that homologous recombination (HR) had low effi
 
 :::
 
-#### 2.4.1 Design {#design-5 toc="Design | Planning Cas9, sgRNA and Donor DNA Constructs"}
+#### 2.4.1 Design {#design-5 toc="Design | planning Cas9, sgRNA and donor DNA constructs"}
 
 <p>We needed to construct three types of components: the Cas9 plasmid with replaced auxotrophic marker, plasmids expressing specific sgRNAs, and donor DNA. Consistent with our previous strategy, we assembled the required plasmids via one-step cloning. Notably, we initially intended to use Quick‑Change PCR for sgRNA plasmid construction. However, we encountered great difficulty in whole-plasmid amplification during practical operation. Consequently, we still adopted one-step cloning to build this plasmid.</p>
 
-#### 2.4.2 Build {#build-5 toc="Build | Assembling CRISPR-Cas9 Editing Components"}
+#### 2.4.2 Build {#build-5 toc="Build | assembling CRISPR-Cas9 editing components"}
 
 First, we constructed the Cas9 plasmid with replaced auxotrophic marker (Figure 1), and the construction was highly successful (Figure 2).
 
@@ -325,7 +325,7 @@ First, we constructed the Cas9 plasmid with replaced auxotrophic marker (Figure 
 
 :::
 
-Finally, we constructed the corresponding donor DNA. The sTF fragment was amplified from plasmid pRS315‑sTF (https://registry.igem.org/parts/bba‑26iotmof). The gene fragment of betaxanthin synthase induced by the bidirectional Gal1/10 promoter (https://registry.igem.org/parts/bba‑2697laqw) was first amplified from plasmid pRS315‑MjDOD‑BvCYP76AD5, followed by Double‑Joint PCR amplification, using the same method as our previous fragment construction (Figure 7).
+Finally, we constructed the corresponding donor DNA. The sTF fragment was amplified from plasmid pRS315‑sTF (https://registry.igem.org/parts/bba‑26iotmof). The gene fragment of betaxanthin synthase induced by the bidirectional Gal1/10 promoter (https://registry.igem.org/parts/bba‑2697laqw) was first amplified from plasmid pRS315‑MjDOD‑BvCYP76AD5, followed by DJ-PCR amplification, using the same method as our previous fragment construction (Figure 7).
 
 :::figure
 
@@ -353,7 +353,7 @@ Figure 7. Fragment construction of Gal1/10bp-Betaxanthin Expression Cassette (a)
 
 :::
 
-#### 2.4.3 Test {#test-6 toc="Test | Verifying Cas9 Transformation and Genome Editing"}
+#### 2.4.3 Test {#test-6 toc="Test | verifying Cas9 transformation and genome editing"}
 
 With these components ready, we proceeded to yeast transformation.
 
@@ -391,13 +391,13 @@ Figure 11. Schematic diagram of sTF Expression Cassette transformation.
 
 Figure 13. Schematic diagram of GPR2 transformation (a) and transformant validation (b). (Placeholder)
 
-#### 2.4.4 Learn {#learn-5 toc="Learn | Advancing to GPR2 Mutant Characterization"}
+#### 2.4.4 Learn {#learn-5 toc="Learn | advancing to GPR2 mutant characterization"}
 
 So far, the chassis engineered yeast strain of our project has been constructed. Meanwhile, the dry lab finished the modification of GPR2 mutants. We therefore moved to the next cycle to characterize the screened GPR2 mutants.
 
-### 2.5 The Fifth Cycle {#the-fifth-cycle toc="The Fifth Cycle"}
+### 2.5 The fifth cycle {#the-fifth-cycle toc="The fifth cycle"}
 
-#### 2.5.1 Design {#design-6 toc="Design | Planning GPR2 Mutant Strain Construction"}
+#### 2.5.1 Design {#design-6 toc="Design | planning GPR2 mutant strain construction"}
 
 Based on the results from previous cycles and dry lab, we still used one-step cloning to construct plasmids for transformation (Figure 1). Strain NKU-Y06 (Wet Lab-Experiments-Strain Construction) was utilized for genetic modification.
 
@@ -409,7 +409,7 @@ Based on the results from previous cycles and dry lab, we still used one-step cl
 
 :::
 
-#### 2.5.2 Build and Test {#build-and-test toc="Build and Test | Constructing and Verifying GPR2 Mutant Plasmids"}
+#### 2.5.2 Build and test {#build-and-test toc="Build and test | constructing and verifying GPR2 mutant plasmids"}
 
 <p>We successfully constructed two plasmids, pRS315-TEF1p-GPR2-N84V and pRS315-TEF1p-GPR2-V368R, via one-step cloning. Sequencing verified that their sequences were correct (Figure 2).</p>
 
@@ -425,11 +425,11 @@ Subsequently, we mixed the p426-SNR52p-gSTE2-SUP4t plasmid with each of the two 
 
 Figure 3. Transformant validation of GPR2 (a), GPR2-N84V (b), and GPR2-V368R (c). (Placeholder)
 
-#### 2.5.3 Learn {#learn-6 toc="Learn | Identifying the Need for Test-Strip Productization"}
+#### 2.5.3 Learn {#learn-6 toc="Learn | identifying the need for test-strip productization"}
 
 This cycle is hereby concluded. The strains constructed in this cycle can only function under laboratory conditions. For field applications, product formulation and packaging of the strains are required. Therefore, we proceeded to the third major DBTL cycle.
 
-### References {#references toc="References"}
+### 2.6 References {#references toc="References"}
 
 Fan C, Yuan J. Reshaping the yeast galactose regulon via GPCR signaling cascade. Cell Rep Methods. 2023 Dec 18;3(12):100647. doi: 10.1016/j.crmeth.2023.100647. Epub 2023 Nov 20. PMID: 37989311; PMCID: PMC10753199.
 
@@ -439,15 +439,13 @@ James E. DiCarlo, Julie E. Norville, Prashant Mali, Xavier Rios, John Aach, Geor
 
 Mans R, Wijsman M, Daran-Lapujade P, Daran JM. A protocol for introduction of multiple genetic modifications in Saccharomyces cerevisiae using CRISPR/Cas9. FEMS Yeast Res. 2018 Nov 1;18(7):foy063. doi: 10.1093/femsyr/foy063. PMID: 29860374; PMCID: PMC6074844.
 
-<p class="author-source-link"><a href="/source-archive/#meeting-20261019" data-source-document="meeting-20261019-552fb139c19f">Original submission (.docx)</a><span role="status" aria-live="polite"></span></p>
+## DBTL-3: test strip development and productization {#dbtl-3-test-strip-development-and-productization}
 
 <section class="author-manuscript" lang="en">
 
-## 3 DBTL-3: Test Strip Development and Productization {#dbtl-3-test-strip-development-and-productization}
+<p style="text-align:justify;">Building upon the successful construction of engineered chassis strains through previous DBTL cycles, and integrating feedback from <strong>Human Practices (HP)</strong> surveys alongside practical application scenarios, we shifted our focus to another core objective of the project: developing a low-cost, user-friendly, and intuitive colorimetric detection platform. Therefore, this section focuses on the fabrication process and color development workflow of the engineered yeast-based test strips, encompassing three sub-cycles: substrate determination, immobilization optimization, and color development rate optimization. </p>
 
-<p style="text-align:justify;">Building upon the successful construction of engineered chassis strains through previous DBTL cycles, and integrating feedback from Human Practices (HP) surveys alongside practical application scenarios, we shifted our focus to another core objective of the project: developing a low-cost, user-friendly, and intuitive colorimetric detection platform. Therefore, this section focuses on the fabrication process and color development workflow of the engineered yeast-based test strips, encompassing three sub-cycles: substrate determination, immobilization optimization, and color development rate optimization. </p>
-
-### 3.1 Cycle 1: Substrate Determination {#results-3-1}
+### 3.1 Cycle 1: substrate determination {#results-3-1}
 
 <p style="text-align:justify;">We reason that an ideal test strip substrate should possess high cell-loading capacity, excellent mechanical stability, reliable batch-to-batch consistency, and favorable water-retaining properties. Therefore, we initiate this cycle.</p>
 
@@ -455,7 +453,7 @@ Mans R, Wijsman M, Daran-Lapujade P, Daran JM. A protocol for introduction of mu
 
 <p style="text-align:justify;">Based on the criteria, we select seven candidate substrates with representative properties: qualitative filter paper(Cellulose), weighing paper (sulfite paper), lens cleaning paper(Cotton fiber), laboratory wipes(Virgin wood pulp), thin glass fiber filter paper (Whatman™ GF/A), thick glass fiber filter paper (Whatman™ GF/B), and cellulose acetate filter paper.</p>
 
-<p style="text-align:justify;">We suspend the cells in the protectant (glucose-free YPD + sucrose) and spot them onto each substrate. Following pre-freezing, lyophilization, recovery, and elution, the samples are plated for colony counting (defined as cell elution rate) to evaluate the binding affinity between each substrate and the yeast cells.</p>
+<p style="text-align:justify;">We suspend the cells in the protectant (glucose-free <strong>yeast extract–peptone–dextrose (YPD)</strong> + sucrose) and spot them onto each substrate. Following pre-freezing, lyophilization, recovery, and elution, the samples are plated for colony counting (defined as cell elution rate) to evaluate the binding affinity between each substrate and the yeast cells.</p>
 
 <p style="text-align:justify;">Subsequently, for the substrates demonstrating superior properties, we conduct copper sulfate solution wicking experiments to evaluate their water absorption capacity.</p>
 
@@ -481,7 +479,7 @@ Mans R, Wijsman M, Daran-Lapujade P, Daran JM. A protocol for introduction of mu
 
 <p style="text-align:justify;">Through this cycle, we have identified a suitable substrate material for the test strip. Next, we need to explore appropriate immobilization methods to lay a solid foundation for visual color development, leading us into the next cycle.</p>
 
-### 3.2 Cycle 2: Immobilization Optimization {#results-3-2}
+### 3.2 Cycle 2: immobilization optimization {#results-3-2}
 
 <p style="text-align:justify;">Following the selection of the test strip substrate, efficiently, uniformly, and precisely immobilizing yeast cells onto the strip becomes critical to ensuring detection reproducibility. Traditional direct spotting often leads to lateral leakage, while high-viscosity cell suspensions are difficult to disperse evenly and quantify accurately. </p>
 
@@ -525,13 +523,13 @@ Mans R, Wijsman M, Daran-Lapujade P, Daran JM. A protocol for introduction of mu
 
 <p style="text-align:justify;">In this cycle, combining gas-phase hydrophobic coating with the refined lyophilization protectant successfully confines the cells within a uniform circular area; the vacuum-assisted spotting device eliminates liquid residue inside pipette tips, achieving controlled and quantitative cell-loading on the test strips; and we have successfully prepared freeze-dried live-cell test strips, as shown in Figure 3.1.5. Next, we officially proceed to optimize the color development rate of the test strips.</p>
 
-### 3.3 Cycle 3: Color Development Rate Optimization {#results-3-3}
+### 3.3 Cycle 3: color development rate optimization {#results-3-3}
 
 <p style="text-align:justify;">After completing the fabrication of the freeze-dried test strips, we require them to undergo rapid resuscitation and color development; therefore, we initiate this cycle.</p>
 
 <p style="text-align:left;">Design</p>
 
-<p style="text-align:justify;">To meet the requirements of rapid detection, freeze-dried cells must quickly emerge from their dormant state upon contact with liquid. First, to evaluate the feasibility of resuscitation, we immerse the freeze-dried test strips into YNB-free SC medium and PBS solution, respectively, and assess the impact of the amine donor tryptophan on color development stability. Next, focusing on the key limiting factors of the betaxanthin biosynthesis pathway, we systematically evaluate the effects of tyrosine concentration (precursor), surfactants (precursor amino acid uptake), antioxidant protectants, and glucose concentration (carbon source).</p>
+<p style="text-align:justify;">To meet the requirements of rapid detection, freeze-dried cells must quickly emerge from their dormant state upon contact with liquid. First, to evaluate the feasibility of resuscitation, we immerse the freeze-dried test strips into <strong>yeast nitrogen base (YNB)</strong>-free <strong>synthetic complete (SC)</strong> medium and <strong>phosphate-buffered saline (PBS)</strong> solution, respectively, and assess the impact of the amine donor <strong>tryptophan (Trp)</strong> on color development stability. Next, focusing on the key limiting factors of the betaxanthin biosynthesis pathway, we systematically evaluate the effects of <strong>tyrosine (Tyr)</strong> concentration (precursor), surfactants (precursor amino acid uptake), antioxidant protectants, and glucose concentration (carbon source).</p>
 
 <p style="text-align:left;">Build &amp; Test</p>
 
@@ -539,15 +537,15 @@ Mans R, Wijsman M, Daran-Lapujade P, Daran JM. A protocol for introduction of mu
 
 <figure class="results-timelapse"><iframe title="Video 1. Observation of test strip resuscitation over 113 h" src="https://video.igem.org/videos/embed/fFXuDzig2DWKhQPFLW2mnM" allow="fullscreen" loading="lazy" sandbox="allow-scripts allow-same-origin" style="width:100%;aspect-ratio:16/9;border:0"></iframe><p style="text-align:center;"><strong>Video 1. Observation of test strip resuscitation over 113 h</strong>（<strong> Insert video </strong><strong>“Video3.2.1”</strong>）</p></figure>
 
-<p style="text-align:justify;">Subsequently, we carry out multiple control experiments to further explore the optimal conditions for test strip color development, performing RGB blue-channel grayscale quantification using ImageJ (Figure 6).</p>
+<p style="text-align:justify;">Subsequently, we carry out multiple control experiments to further explore the optimal conditions for test strip color development, performing <strong>red–green–blue (RGB)</strong> blue-channel grayscale quantification using ImageJ (Figure 6).</p>
 
 <iframe class="author-screening-figure" title="Reactivation medium screening" src="/embeds/results-20261019/index.html" loading="lazy" sandbox="allow-scripts" style="width:100%;height:980px;border:0"></iframe><p style="text-align:center;"><strong>Figure 6. Control experiments for color development conditions.</strong> </p>
 
 <p style="text-align:left;">Learn</p>
 
-<p style="text-align:justify;">We observe that YNB-free SC medium as a resuscitation solution performs significantly better than PBS solution, and the amine donor tryptophan stabilizes yeast color development.</p>
+<p style="text-align:justify;">We observe that YNB-free SC medium as a resuscitation solution performs significantly better than PBS solution, and the amine donor Trp stabilizes yeast color development.</p>
 
-<p style="text-align:justify;">The results of the color development condition control experiments further indicate that based on YNB-free SC selective medium, adding 2% glucose provides energy and a carbon source, tyrosine promotes precursor uptake and resuscitation, the surfactant (Tween 80) improves wettability and cell membrane permeability, and antioxidants protect betaxanthin stability. This optimized formulation overcomes the bottleneck of slow resuscitation in earlier stages and significantly accelerates the test strip color development rate.</p>
+<p style="text-align:justify;">The results of the color development condition control experiments further indicate that based on YNB-free SC selective medium, adding 2% glucose provides energy and a carbon source, Tyr promotes precursor uptake and resuscitation, the surfactant (Tween 80) improves wettability and cell membrane permeability, and antioxidants protect betaxanthin stability. This optimized formulation overcomes the bottleneck of slow resuscitation in earlier stages and significantly accelerates the test strip color development rate.</p>
 
 <p style="text-align:justify;">Meanwhile, considering the field application scenarios of our product, we design a 3D-printed test strip cassette to hold the test strip (Figure 7), making the detection workflow simpler and more convenient.</p>
 
@@ -557,7 +555,7 @@ Mans R, Wijsman M, Daran-Lapujade P, Daran JM. A protocol for introduction of mu
 
 <p style="text-align:justify;">At this point, we have closed the loop on test strip fabrication and application, establishing a solid foundation for subsequent on-site rapid detection of soil samples.</p>
 
-<p style="text-align:left;"><strong>References</strong></p>
+### 3.4 References {#results-dbtl3-references}
 
 <p style="text-align:left;">Rachel A. Miller, Galen Brown, Elsa Barron, Jamie L. Luther, Marya Lieberman, Holly V. Goodson; Development of a paper-immobilized yeast biosensor for the detection of physiological concentrations of doxycycline in technology-limited settings. <em>Anal. Methods</em> 2020; 12 (16): 2123–2132. <a href="https://doi.org/10.1039/d0ay00001a">https://doi.org/10.1039/d0ay00001a</a></p>
 

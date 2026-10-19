@@ -1,10 +1,10 @@
 ---
-title: Industry Engagement and Support
-heading: Industry Engagement and Support
-sub: Exploring Applications and Building Connections
+title: Industry engagement and support
+heading: Industry engagement and support
+sub: Exploring applications and building connections
 crumbs:
-  - Human Practices
-  - Industry Engagement and Support
+  - Human practices
+  - Industry engagement and support
 route: hp-industry
 search: true
 preserveAuthorFormatting: true
@@ -13,9 +13,7 @@ meta: {}
 draft: false
 hidden: false
 ---
-<nav class="hp-chapter-nav" aria-label="Human Practices chapters"><a href="/hp-overview/">Overview</a><a href="/human-practices/">Integrated Human Practices</a><a href="/education/">Education</a><a href="/hp-investigation/">Investigation</a><a href="/hp-industry/">Industry Engagement and Support</a></nav><section class="hp-manuscript" lang="en">
-
-<p data-hp-source-paragraph="227"><a href="/hp-overview/#hp-source-54">Overview entry  Industry Engagement and Support → Explore our industry outreach</a></p>
+<nav class="hp-chapter-nav" aria-label="Human Practices chapters"><a href="/hp-overview/">Overview</a><a href="/human-practices/">Integrated human practices</a><a href="/education/">Education</a><a href="/hp-investigation/">Investigation</a><a href="/hp-industry/">Industry engagement and support</a></nav><section class="hp-manuscript" lang="en">
 
 :::lead
 
@@ -31,7 +29,7 @@ hidden: false
 
 ## Preparing materials for industry discussions {#hp-source-233}
 
-<p data-hp-source-paragraph="234">We prepared a corporate partnership invitation and a project presentation to communicate our work clearly. The invitation brought together our team background, project rationale, application needs, possible forms of collaboration, and follow-up arrangements. The presentation provided a visual introduction to the sensor concept, our Human Practices activities, and potential applications. Together, they supported both detailed review and meeting presentations.</p>
+<p data-hp-source-paragraph="234">We prepared a corporate partnership invitation and a project presentation to communicate our work clearly. The invitation brought together our team background, project rationale, application needs, possible forms of collaboration, and follow-up arrangements. The presentation provided a visual introduction to the sensor concept, our <strong>Human Practices (HP)</strong> activities, and potential applications. Together, they supported both detailed review and meeting presentations.</p>
 
 <p data-hp-source-paragraph="235">The invitation outlined possible financial sponsorship, in-kind or service support, and industry engagement, alongside a proposed cooperation process and partner recognition. The presentation explored a field-testing concept for potential users such as agricultural input companies, large farms, and crop protection service providers, as well as longer-term possibilities for a broader sensing platform. These were directions for discussion and exploration; product development requires further research and validation.</p>
 
@@ -70,7 +68,5 @@ hidden: false
 <p data-hp-source-paragraph="249">For other student teams, industry engagement can begin with a concrete question: what do we hope to learn from a company, and what help are we seeking? Recording consultation, expressions of interest, and confirmed support separately makes progress easier to communicate and helps acknowledge each contribution accurately.</p>
 
 :::
-
-<p data-hp-source-paragraph="250"><a href="/hp-overview/">Back to HP Overview</a>  |  <a href="/human-practices/">Explore needs and feedback in iHP</a>  |  <a href="/hp-industry/#hp-source-233">View outreach materials</a></p>
 
 </section>

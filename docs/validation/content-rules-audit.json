@@ -1,0 +1,2310 @@
+{
+  "base": "e205f4a5c5ade14f1c38e6836a2b41521b20bf5e",
+  "page_count": 26,
+  "passed": true,
+  "failures": [],
+  "pages": [
+    {
+      "page": "attributions",
+      "route": "public/attributions/index.html",
+      "h2": 3,
+      "h3": 6,
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Team PI & advisor",
+          "id": "team-pi-advisor"
+        },
+        {
+          "level": "h3",
+          "text": "1.1 PI",
+          "id": "pi"
+        },
+        {
+          "level": "h4",
+          "text": "Jie Fan",
+          "id": "jie-fan"
+        },
+        {
+          "level": "h5",
+          "text": "Tasks",
+          "id": null
+        },
+        {
+          "level": "h5",
+          "text": "Specific tasks",
+          "id": null
+        },
+        {
+          "level": "h3",
+          "text": "1.2 Advisor",
+          "id": "advisors"
+        },
+        {
+          "level": "h4",
+          "text": "Peng-Lin Wei",
+          "id": "peng-lin-wei"
+        },
+        {
+          "level": "h5",
+          "text": "Tasks",
+          "id": null
+        },
+        {
+          "level": "h5",
+          "text": "Specific tasks",
+          "id": null
+        },
+        {
+          "level": "h4",
+          "text": "Churchill Zhu",
+          "id": "zhiyi-zhu"
+        },
+        {
+          "level": "h5",
+          "text": "Tasks",
+          "id": null
+        },
+        {
+          "level": "h5",
+          "text": "Specific tasks",
+          "id": null
+        },
+        {
+          "level": "h4",
+          "text": "Roy Zhang",
+          "id": "zhanning-zhang-advisor"
+        },
+        {
+          "level": "h5",
+          "text": "Tasks",
+          "id": null
+        },
+        {
+          "level": "h5",
+          "text": "Specific tasks",
+          "id": null
+        },
+        {
+          "level": "h2",
+          "text": "Student members",
+          "id": "student-members"
+        },
+        {
+          "level": "h3",
+          "text": "2.1 Student leaders",
+          "id": "student-leaders"
+        },
+        {
+          "level": "h4",
+          "text": "Fu Xinya",
+          "id": "fu-xinya"
+        },
+        {
+          "level": "h5",
+          "text": "Tasks",
+          "id": null
+        },
+        {
+          "level": "h5",
+          "text": "Specific tasks",
+          "id": null
+        },
+        {
+          "level": "h4",
+          "text": "Yang Ruoxi",
+          "id": "ruoxi-yang-student-leader"
+        },
+        {
+          "level": "h5",
+          "text": "Tasks",
+          "id": null
+        },
+        {
+          "level": "h5",
+          "text": "Specific tasks",
+          "id": null
+        },
+        {
+          "level": "h3",
+          "text": "2.2 Student team members",
+          "id": "student-team-members"
+        },
+        {
+          "level": "h4",
+          "text": "Wet lab",
+          "id": "wet-lab"
+        },
+        {
+          "level": "h5",
+          "text": "Zhang Hongbo",
+          "id": "zhang-hongbo"
+        },
+        {
+          "level": "h6",
+          "text": "Tasks",
+          "id": null
+        },
+        {
+          "level": "h6",
+          "text": "Specific tasks",
+          "id": null
+        },
+        {
+          "level": "h5",
+          "text": "Wang Chang",
+          "id": "chang-wang"
+        },
+        {
+          "level": "h6",
+          "text": "Tasks",
+          "id": null
+        },
+        {
+          "level": "h6",
+          "text": "Specific tasks",
+          "id": null
+        },
+        {
+          "level": "h5",
+          "text": "Liu Yifei",
+          "id": "ivy-liu"
+        },
+        {
+          "level": "h6",
+          "text": "Tasks",
+          "id": null
+        },
+        {
+          "level": "h6",
+          "text": "Specific tasks",
+          "id": null
+        },
+        {
+          "level": "h5",
+          "text": "Kuang Yinzi",
+          "id": "kuang-yinzi"
+        },
+        {
+          "level": "h6",
+          "text": "Tasks",
+          "id": null
+        },
+        {
+          "level": "h6",
+          "text": "Specific tasks",
+          "id": null
+        },
+        {
+          "level": "h5",
+          "text": "Luo Yuanwen",
+          "id": "yuanwen-luo"
+        },
+        {
+          "level": "h6",
+          "text": "Tasks",
+          "id": null
+        },
+        {
+          "level": "h6",
+          "text": "Specific tasks",
+          "id": null
+        },
+        {
+          "level": "h5",
+          "text": "Wang Qinghua",
+          "id": "wang-qinghua"
+        },
+        {
+          "level": "h6",
+          "text": "Tasks",
+          "id": null
+        },
+        {
+          "level": "h6",
+          "text": "Specific tasks",
+          "id": null
+        },
+        {
+          "level": "h5",
+          "text": "Zheng Shizhao",
+          "id": "shizhao-zheng"
+        },
+        {
+          "level": "h6",
+          "text": "Tasks",
+          "id": null
+        },
+        {
+          "level": "h6",
+          "text": "Specific tasks",
+          "id": null
+        },
+        {
+          "level": "h5",
+          "text": "Peng Ziyi",
+          "id": "ziyi-peng"
+        },
+        {
+          "level": "h6",
+          "text": "Tasks",
+          "id": null
+        },
+        {
+          "level": "h6",
+          "text": "Specific tasks",
+          "id": null
+        },
+        {
+          "level": "h4",
+          "text": "Dry lab",
+          "id": "dry-lab"
+        },
+        {
+          "level": "h5",
+          "text": "Chen Feiyue",
+          "id": "chen-feiyue"
+        },
+        {
+          "level": "h6",
+          "text": "Tasks",
+          "id": null
+        },
+        {
+          "level": "h6",
+          "text": "Specific tasks",
+          "id": null
+        },
+        {
+          "level": "h5",
+          "text": "Huang Xinqi",
+          "id": "huang-xinqi"
+        },
+        {
+          "level": "h6",
+          "text": "Tasks",
+          "id": null
+        },
+        {
+          "level": "h6",
+          "text": "Specific tasks",
+          "id": null
+        },
+        {
+          "level": "h5",
+          "text": "Song Yanmei",
+          "id": "yanmei-song-student"
+        },
+        {
+          "level": "h6",
+          "text": "Tasks",
+          "id": null
+        },
+        {
+          "level": "h6",
+          "text": "Specific tasks",
+          "id": null
+        },
+        {
+          "level": "h5",
+          "text": "Ye Shulan",
+          "id": "shulan-ye-student"
+        },
+        {
+          "level": "h6",
+          "text": "Tasks",
+          "id": null
+        },
+        {
+          "level": "h6",
+          "text": "Specific tasks",
+          "id": null
+        },
+        {
+          "level": "h5",
+          "text": "Guan Zhiyuan",
+          "id": "zhiyuan-guan-student"
+        },
+        {
+          "level": "h6",
+          "text": "Tasks",
+          "id": null
+        },
+        {
+          "level": "h6",
+          "text": "Specific tasks",
+          "id": null
+        },
+        {
+          "level": "h4",
+          "text": "Human practices（HP）",
+          "id": "human-practices"
+        },
+        {
+          "level": "h5",
+          "text": "Ma Peisong",
+          "id": "ma-peisong"
+        },
+        {
+          "level": "h6",
+          "text": "Tasks",
+          "id": null
+        },
+        {
+          "level": "h6",
+          "text": "Specific tasks",
+          "id": null
+        },
+        {
+          "level": "h5",
+          "text": "Song Xinying",
+          "id": "song-xinying"
+        },
+        {
+          "level": "h6",
+          "text": "Tasks",
+          "id": null
+        },
+        {
+          "level": "h6",
+          "text": "Specific tasks",
+          "id": null
+        },
+        {
+          "level": "h5",
+          "text": "Chen Yuxin",
+          "id": "chen-yuxin"
+        },
+        {
+          "level": "h6",
+          "text": "Tasks",
+          "id": null
+        },
+        {
+          "level": "h6",
+          "text": "Specific tasks",
+          "id": null
+        },
+        {
+          "level": "h5",
+          "text": "Chen Jiarui",
+          "id": "chen-jiarui"
+        },
+        {
+          "level": "h6",
+          "text": "Tasks",
+          "id": null
+        },
+        {
+          "level": "h6",
+          "text": "Specific tasks",
+          "id": null
+        },
+        {
+          "level": "h5",
+          "text": "Kaiben Zhang",
+          "id": "kaiben-zhang"
+        },
+        {
+          "level": "h6",
+          "text": "Tasks",
+          "id": null
+        },
+        {
+          "level": "h6",
+          "text": "Specific tasks",
+          "id": null
+        },
+        {
+          "level": "h5",
+          "text": "Han Xinyu",
+          "id": "han-xinyu"
+        },
+        {
+          "level": "h6",
+          "text": "Tasks",
+          "id": null
+        },
+        {
+          "level": "h6",
+          "text": "Specific tasks",
+          "id": null
+        },
+        {
+          "level": "h2",
+          "text": "Other members",
+          "id": "visual-design"
+        },
+        {
+          "level": "h3",
+          "text": "Bai Ruitong",
+          "id": "ruitong-bai"
+        },
+        {
+          "level": "h4",
+          "text": "Tasks",
+          "id": null
+        },
+        {
+          "level": "h4",
+          "text": "Specific tasks",
+          "id": null
+        },
+        {
+          "level": "h3",
+          "text": "Chen Yiling",
+          "id": "yiling-chen"
+        },
+        {
+          "level": "h4",
+          "text": "Tasks",
+          "id": null
+        },
+        {
+          "level": "h4",
+          "text": "Specific tasks",
+          "id": null
+        }
+      ]
+    },
+    {
+      "page": "background",
+      "route": "public/background/index.html",
+      "h2": 5,
+      "h3": 7,
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Docking: from natural sensing mechanisms to receptor engineering",
+          "id": "docking-from-natural-sensing-mechanisms-to-receptor-engineering"
+        },
+        {
+          "level": "h3",
+          "text": "1.1 Ascaroside signals and the two-channel design",
+          "id": "ascaroside-signals-and-the-two-channel-design"
+        },
+        {
+          "level": "h3",
+          "text": "1.2 Sensing, localization, and signaling connections of fungal receptors",
+          "id": "sensing-localization-and-signaling-connections-of-fungal-receptors"
+        },
+        {
+          "level": "h3",
+          "text": "1.3 Engineering differential responses to two ligands and comparing receptor structures",
+          "id": "engineering-differential-responses-to-two-ligands-and-comparing-receptor-structures"
+        },
+        {
+          "level": "h2",
+          "text": "MD: from binding poses to dynamic behavior",
+          "id": "md-from-binding-poses-to-dynamic-behavior"
+        },
+        {
+          "level": "h2",
+          "text": "ODE: from receptor activation to a colorimetric response",
+          "id": "ode-from-receptor-activation-to-a-colorimetric-response"
+        },
+        {
+          "level": "h2",
+          "text": "Economic benefit modeling: from detection information to management decisions",
+          "id": "economic-benefit-modeling-from-detection-information-to-management-decisions"
+        },
+        {
+          "level": "h2",
+          "text": "References",
+          "id": "references"
+        },
+        {
+          "level": "h3",
+          "text": "5.1 Docking and receptor recognition",
+          "id": "docking-and-receptor-recognition"
+        },
+        {
+          "level": "h3",
+          "text": "5.2 MD and membrane system simulations",
+          "id": "md-and-membrane-system-simulations"
+        },
+        {
+          "level": "h3",
+          "text": "5.3 ODE modeling and signal output",
+          "id": "ode-modeling-and-signal-output"
+        },
+        {
+          "level": "h3",
+          "text": "5.4 Economic benefit modeling and management decisions",
+          "id": "economic-benefit-modeling-and-management-decisions"
+        }
+      ]
+    },
+    {
+      "page": "contribution",
+      "route": "public/contribution/index.html",
+      "h2": 3,
+      "h3": 11,
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Wet lab",
+          "id": "wet-lab"
+        },
+        {
+          "level": "h3",
+          "text": "1.1 Parts and collections",
+          "id": "parts-and-collections"
+        },
+        {
+          "level": "h4",
+          "text": "Chassis strain construction collection",
+          "id": "chassis-strain-construction-collection"
+        },
+        {
+          "level": "h4",
+          "text": "Tool plasmid family",
+          "id": "tool-plasmid-family"
+        },
+        {
+          "level": "h4",
+          "text": "sgRNA family",
+          "id": "sgrna-family"
+        },
+        {
+          "level": "h4",
+          "text": "GPR2 variant family",
+          "id": "gpr2-variant-family"
+        },
+        {
+          "level": "h3",
+          "text": "1.2 Strain contribution",
+          "id": "strain-contribution"
+        },
+        {
+          "level": "h3",
+          "text": "1.3 Experimental methods and practical experience",
+          "id": "experimental-methods-and-practical-experience"
+        },
+        {
+          "level": "h2",
+          "text": "Dry lab",
+          "id": "dry-lab"
+        },
+        {
+          "level": "h3",
+          "text": "2.1 Docking: dual-ligand engineering and cross-receptor residue analysis",
+          "id": "src-Project-Contribution-1"
+        },
+        {
+          "level": "h4",
+          "text": "Dual-ligand contact-guided receptor engineering",
+          "id": "src-Project-Contribution-2"
+        },
+        {
+          "level": "h4",
+          "text": "Docking input checks and pose-export tools",
+          "id": "src-Project-Contribution-10"
+        },
+        {
+          "level": "h4",
+          "text": "Cross-receptor residue analysis",
+          "id": "src-Project-Contribution-14"
+        },
+        {
+          "level": "h3",
+          "text": "2.2 MD: jointly analyzing receptor motion and local ligand behavior",
+          "id": "src-Project-Contribution-19"
+        },
+        {
+          "level": "h3",
+          "text": "2.3 ODE and dual-channel models: from color simulations to density estimation",
+          "id": "src-Project-Contribution-24"
+        },
+        {
+          "level": "h3",
+          "text": "2.4 Eco: economic analysis from detection results to management strategies",
+          "id": "src-Project-Contribution-30"
+        },
+        {
+          "level": "h2",
+          "text": "Human practices",
+          "id": "human-practices"
+        },
+        {
+          "level": "h3",
+          "text": "3.1 Age-adapted courses and public outreach materials",
+          "id": "src-HP-Contribution-2"
+        },
+        {
+          "level": "h3",
+          "text": "3.2 Project-focused investigation and feedback methods",
+          "id": "src-HP-Contribution-6"
+        },
+        {
+          "level": "h3",
+          "text": "3.3 Field sampling guidance and background records",
+          "id": "src-HP-Contribution-10"
+        },
+        {
+          "level": "h3",
+          "text": "3.4 Enterprise outreach and project-pitch materials",
+          "id": "src-HP-Contribution-13"
+        }
+      ]
+    },
+    {
+      "page": "description",
+      "route": "public/description/index.html",
+      "h2": 4,
+      "h3": 7,
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Background",
+          "id": "background"
+        },
+        {
+          "level": "h3",
+          "text": "1.1 Silent killers underground: the urgent threat of plant-parasitic nematodes",
+          "id": "11-silent-killers-underground-the-urgent-threat-of-plant-parasitic-nematodes"
+        },
+        {
+          "level": "h3",
+          "text": "1.2 Control dilemma: the critical weakness of current nematode control systems",
+          "id": "control-dilemma"
+        },
+        {
+          "level": "h3",
+          "text": "1.3 Dawn breaks: nematophagous fungi fuel innovation in nematode detection",
+          "id": "nematophagous-fungi"
+        },
+        {
+          "level": "h2",
+          "text": "Project design & strategy",
+          "id": "project-design"
+        },
+        {
+          "level": "h3",
+          "text": "2.1 Wet lab",
+          "id": "wet-lab"
+        },
+        {
+          "level": "h3",
+          "text": "2.2 Dry lab",
+          "id": "dry-lab"
+        },
+        {
+          "level": "h2",
+          "text": "Innovative strategies",
+          "id": "innovative-strategies"
+        },
+        {
+          "level": "h3",
+          "text": "3.1 Early-warning strategy for plant-parasitic nematode infestations",
+          "id": "early-warning-strategy-for-plant-parasitic-nematode-infestations"
+        },
+        {
+          "level": "h3",
+          "text": "3.2 Strategy for reconstructing ascaroside-specific yeast biosensors",
+          "id": "strategy-for-reconstructing-ascaroside-specific-yeast-biosensors"
+        },
+        {
+          "level": "h2",
+          "text": "References",
+          "id": "references"
+        }
+      ]
+    },
+    {
+      "page": "education",
+      "route": "public/education/index.html",
+      "h2": 7,
+      "h3": 4,
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Connecting soil life with agriculture and synthetic biology",
+          "id": "hp-source-115"
+        },
+        {
+          "level": "h2",
+          "text": "Three courses form a learning pathway",
+          "id": "hp-source-120"
+        },
+        {
+          "level": "h3",
+          "text": "Science course  the nematode hunt",
+          "id": "hp-source-122"
+        },
+        {
+          "level": "h3",
+          "text": "Experimental science course  exploring biological signals",
+          "id": "hp-source-127"
+        },
+        {
+          "level": "h3",
+          "text": "Values and responsibility course  small lives and everyday contributions",
+          "id": "hp-source-132"
+        },
+        {
+          "level": "h2",
+          "text": "Adapting the same theme for different ages",
+          "id": "hp-source-136"
+        },
+        {
+          "level": "h2",
+          "text": "Bringing the courses into classrooms through teaching partnerships",
+          "id": "hp-source-140"
+        },
+        {
+          "level": "h2",
+          "text": "Using feedback to improve future teaching",
+          "id": "hp-source-150"
+        },
+        {
+          "level": "h2",
+          "text": "Beyond the classroom  outreach and reusable resources",
+          "id": "hp-source-155"
+        },
+        {
+          "level": "h3",
+          "text": "6.1 Download our teaching materials",
+          "id": "hp-source-158"
+        },
+        {
+          "level": "h2",
+          "text": "References and supporting evidence",
+          "id": "hp-original-references"
+        }
+      ]
+    },
+    {
+      "page": "engineering",
+      "route": "public/engineering/index.html",
+      "h2": 4,
+      "h3": 12,
+      "headings": [
+        {
+          "level": "h2",
+          "text": "DBTL-1 | engineering the signal-response pathway",
+          "id": "src-Project-Engineering-1"
+        },
+        {
+          "level": "h3",
+          "text": "1.1 Receptor screening and selection of study targets",
+          "id": "src-Project-Engineering-2"
+        },
+        {
+          "level": "h4",
+          "text": "Design | defining receptor-screening objectives",
+          "id": "src-Project-Engineering-3"
+        },
+        {
+          "level": "h4",
+          "text": "Build | establishing receptor and literature comparisons",
+          "id": "src-Project-Engineering-5"
+        },
+        {
+          "level": "h4",
+          "text": "Test | comparing with literature and refining the docking workflow",
+          "id": "src-Project-Engineering-7"
+        },
+        {
+          "level": "h4",
+          "text": "Learn | selecting receptors for further engineering",
+          "id": "src-Project-Engineering-9"
+        },
+        {
+          "level": "h3",
+          "text": "1.2 The third cycle——wet lab",
+          "id": "the-third-cycle-wet-lab"
+        },
+        {
+          "level": "h4",
+          "text": "1.2.1 Design",
+          "id": "design"
+        },
+        {
+          "level": "h4",
+          "text": "1.2.2 Build",
+          "id": "build"
+        },
+        {
+          "level": "h4",
+          "text": "1.2.3 Test",
+          "id": "test"
+        },
+        {
+          "level": "h4",
+          "text": "1.2.4 Learn",
+          "id": "learn"
+        },
+        {
+          "level": "h3",
+          "text": "1.3 The fourth cycle——wet lab",
+          "id": "the-fourth-cycle-wet-lab"
+        },
+        {
+          "level": "h4",
+          "text": "1.3.1 Design",
+          "id": "design-2"
+        },
+        {
+          "level": "h4",
+          "text": "1.3.2 Build",
+          "id": "build-2"
+        },
+        {
+          "level": "h4",
+          "text": "1.3.3 Test",
+          "id": "wet-lab-fourth-test"
+        },
+        {
+          "level": "h4",
+          "text": "1.3.4 Learn",
+          "id": "wet-lab-fourth-learn"
+        },
+        {
+          "level": "h3",
+          "text": "1.4 References",
+          "id": "references"
+        },
+        {
+          "level": "h2",
+          "text": "DBTL-2 | engineering receptor specificity and constructing pathway models",
+          "id": "src-Project-Engineering-12"
+        },
+        {
+          "level": "h3",
+          "text": "2.1 Contact-guided mutant design and screening",
+          "id": "src-Project-Engineering-13"
+        },
+        {
+          "level": "h4",
+          "text": "Design | proposing engineering sites from WT contact differences",
+          "id": "src-Project-Engineering-14"
+        },
+        {
+          "level": "h4",
+          "text": "Build | constructing mutant models and consistent controls",
+          "id": "src-Project-Engineering-16"
+        },
+        {
+          "level": "h4",
+          "text": "Test | iterating substitutions using score and contact feedback",
+          "id": "src-Project-Engineering-18"
+        },
+        {
+          "level": "h4",
+          "text": "Learn | selecting candidates for dynamic testing",
+          "id": "src-Project-Engineering-21"
+        },
+        {
+          "level": "h3",
+          "text": "2.2 Examining selected candidates in a membrane environment",
+          "id": "src-Project-Engineering-23"
+        },
+        {
+          "level": "h4",
+          "text": "Design | testing the membrane behavior of docking-selected candidates",
+          "id": "src-Project-Engineering-24"
+        },
+        {
+          "level": "h4",
+          "text": "Build | preparing full-length receptors and membrane systems",
+          "id": "src-Project-Engineering-26"
+        },
+        {
+          "level": "h4",
+          "text": "Test | tracking ligand motion and contact changes",
+          "id": "src-Project-Engineering-28"
+        },
+        {
+          "level": "h4",
+          "text": "Learn | reinterpreting mutation effects from trajectories",
+          "id": "src-Project-Engineering-32"
+        },
+        {
+          "level": "h3",
+          "text": "2.3 ODE: connecting receptor signals to color output",
+          "id": "src-Project-Engineering-34"
+        },
+        {
+          "level": "h4",
+          "text": "Design | building a minimal model from biological principles",
+          "id": "src-Project-Engineering-35"
+        },
+        {
+          "level": "h4",
+          "text": "Build | adapting the shared pathway and color-output interface",
+          "id": "src-Project-Engineering-37"
+        },
+        {
+          "level": "h4",
+          "text": "Test | adjusting the response range using simulated endpoints",
+          "id": "src-Project-Engineering-39"
+        },
+        {
+          "level": "h4",
+          "text": "Learn | distinguishing pathway mechanisms from interface calibration",
+          "id": "src-Project-Engineering-41"
+        },
+        {
+          "level": "h3",
+          "text": "2.4 Dual-channel model: estimating target density from paired colors",
+          "id": "src-Project-Engineering-43"
+        },
+        {
+          "level": "h4",
+          "text": "Design | estimating Mi density with unknown background abundance",
+          "id": "src-Project-Engineering-44"
+        },
+        {
+          "level": "h4",
+          "text": "Build | connecting mixed samples, ODEs, and smartphone readouts",
+          "id": "src-Project-Engineering-46"
+        },
+        {
+          "level": "h4",
+          "text": "Test | comparing single- and dual-channel models on new combinations",
+          "id": "src-Project-Engineering-48"
+        },
+        {
+          "level": "h4",
+          "text": "Learn | connecting density error to risk assessment",
+          "id": "src-Project-Engineering-50"
+        },
+        {
+          "level": "h2",
+          "text": "DBTL-3 | feedback from societal relevance",
+          "id": "src-Project-Engineering-53"
+        },
+        {
+          "level": "h3",
+          "text": "3.1 Economic modeling and refinement of detection requirements",
+          "id": "src-Project-Engineering-54"
+        },
+        {
+          "level": "h4",
+          "text": "Design | defining the decision value of detection information",
+          "id": "src-Project-Engineering-55"
+        },
+        {
+          "level": "h4",
+          "text": "Build | establishing cost accounting and management scenarios",
+          "id": "src-Project-Engineering-57"
+        },
+        {
+          "level": "h4",
+          "text": "Test | comparing the additional returns from density information",
+          "id": "src-Project-Engineering-59"
+        },
+        {
+          "level": "h4",
+          "text": "Learn | feeding management requirements back into detection design",
+          "id": "src-Project-Engineering-62"
+        },
+        {
+          "level": "h3",
+          "text": "3.2 Refining user needs and detection objectives",
+          "id": "src-HP-Engineering-2"
+        },
+        {
+          "level": "h4",
+          "text": "Design | identifying the agricultural decisions detection should support",
+          "id": "design--identifying-the-agricultural-decisions-detection-should-support"
+        },
+        {
+          "level": "h4",
+          "text": "Build | gathering user needs and production experience",
+          "id": "build--gathering-user-needs-and-production-experience"
+        },
+        {
+          "level": "h4",
+          "text": "Test | examining application concepts against real scenarios",
+          "id": "test--examining-application-concepts-against-real-scenarios"
+        },
+        {
+          "level": "h4",
+          "text": "Learn | translating needs into evaluation requirements",
+          "id": "learn--translating-needs-into-evaluation-requirements"
+        },
+        {
+          "level": "h3",
+          "text": "3.3 Interpreting soil background and signal composition",
+          "id": "src-HP-Engineering-11"
+        },
+        {
+          "level": "h4",
+          "text": "Design | identifying interference in real samples",
+          "id": "design--identifying-interference-in-real-samples"
+        },
+        {
+          "level": "h4",
+          "text": "Build | defining conditions for experimental and model checks",
+          "id": "build--defining-conditions-for-experimental-and-model-checks"
+        },
+        {
+          "level": "h4",
+          "text": "Test | studying background interference and signal composition",
+          "id": "test--studying-background-interference-and-signal-composition"
+        },
+        {
+          "level": "h4",
+          "text": "Learn | interpreting detection results according to evidence level",
+          "id": "learn--interpreting-detection-results-according-to-evidence-level"
+        },
+        {
+          "level": "h3",
+          "text": "3.4 Designing sampling and the complete workflow",
+          "id": "src-HP-Engineering-20"
+        },
+        {
+          "level": "h4",
+          "text": "Design | incorporating field conditions into detection workflows",
+          "id": "design--incorporating-field-conditions-into-detection-workflows"
+        },
+        {
+          "level": "h4",
+          "text": "Build | collecting soil samples and preparing sampling guidance",
+          "id": "build--collecting-soil-samples-and-preparing-sampling-guidance"
+        },
+        {
+          "level": "h4",
+          "text": "Test | assessing workflow requirements through field practice",
+          "id": "test--assessing-workflow-requirements-through-field-practice"
+        },
+        {
+          "level": "h4",
+          "text": "Learn | improving workflow evaluation and safety requirements",
+          "id": "learn--improving-workflow-evaluation-and-safety-requirements"
+        },
+        {
+          "level": "h2",
+          "text": "DBTL-4 | commercialization exploration and application pathways",
+          "id": "src-HP-Engineering-30"
+        },
+        {
+          "level": "h4",
+          "text": "Design | identifying intended users and collaboration needs",
+          "id": "design--identifying-intended-users-and-collaboration-needs"
+        },
+        {
+          "level": "h4",
+          "text": "Build | preparing enterprise outreach and pitch materials",
+          "id": "build--preparing-enterprise-outreach-and-pitch-materials"
+        },
+        {
+          "level": "h4",
+          "text": "Test | holding discussions and securing resources",
+          "id": "test--holding-discussions-and-securing-resources"
+        },
+        {
+          "level": "h4",
+          "text": "Learn | defining the next collaboration pathway",
+          "id": "learn--defining-the-next-collaboration-pathway"
+        }
+      ]
+    },
+    {
+      "page": "experiments",
+      "route": "public/experiments/index.html",
+      "h2": 3,
+      "h3": 20,
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Biological materials",
+          "id": "biological-materials"
+        },
+        {
+          "level": "h2",
+          "text": "Protocol",
+          "id": "protocol"
+        },
+        {
+          "level": "h3",
+          "text": "2.1 PCR amplification",
+          "id": "protocol-pcr-amplification"
+        },
+        {
+          "level": "h3",
+          "text": "2.2 DNA recovery",
+          "id": "protocol-dna-recovery"
+        },
+        {
+          "level": "h3",
+          "text": "2.3 Plasmid DNA extraction",
+          "id": "protocol-plasmid-dna-extraction"
+        },
+        {
+          "level": "h3",
+          "text": "2.4 Double-joint PCR",
+          "id": "protocol-double-joint-pcr"
+        },
+        {
+          "level": "h3",
+          "text": "2.5 One step cloning",
+          "id": "protocol-one-step-cloning"
+        },
+        {
+          "level": "h3",
+          "text": "2.6 Chemical transformation of Trans5α",
+          "id": "protocol-chemical-transformation-of-trans5"
+        },
+        {
+          "level": "h3",
+          "text": "2.7 Yeast transformation",
+          "id": "protocol-yeast-transformation"
+        },
+        {
+          "level": "h3",
+          "text": "2.8 Agarose gel electrophoresis",
+          "id": "protocol-agarose-gel-electrophoresis"
+        },
+        {
+          "level": "h3",
+          "text": "2.9 Colony PCR amplification",
+          "id": "protocol-colony-pcr-amplification"
+        },
+        {
+          "level": "h3",
+          "text": "2.10 Restriction enzyme digestion reaction",
+          "id": "protocol-restriction-enzyme-digestion-reaction"
+        },
+        {
+          "level": "h3",
+          "text": "2.11 Preparation of common antibiotics and culture media",
+          "id": "protocol-preparation-of-common-antibiotics-and-culture-media"
+        },
+        {
+          "level": "h3",
+          "text": "2.12 Preservation and recovery of glycerol stocks",
+          "id": "protocol-preservation-and-recovery-of-glycerol-stocks"
+        },
+        {
+          "level": "h3",
+          "text": "2.13 Extraction of yeast genomic DNA",
+          "id": "protocol-extraction-of-yeast-genomic-dna"
+        },
+        {
+          "level": "h3",
+          "text": "2.14 Observation of fluorescent molecules",
+          "id": "protocol-observation-of-fluorescent-molecules"
+        },
+        {
+          "level": "h3",
+          "text": "2.15 Preparation of viable yeast detection test strips via lyophilization",
+          "id": "protocol-preparation-of-viable-yeast-detection-test-strips-via-lyophilization"
+        },
+        {
+          "level": "h3",
+          "text": "2.16 One step cloning 2.0",
+          "id": "protocol-one-step-cloning-2-0"
+        },
+        {
+          "level": "h3",
+          "text": "2.17 Development of a hydrophobic vapor-deposition coating process for test strips",
+          "id": "hydrophobic-vapor-deposition-coating"
+        },
+        {
+          "level": "h2",
+          "text": "Summary of experimental design",
+          "id": "summary-of-experimental-design"
+        },
+        {
+          "level": "h3",
+          "text": "3.1 Plasmid construction",
+          "id": "plasmid-construction"
+        },
+        {
+          "level": "h3",
+          "text": "3.2 Strain construction",
+          "id": "strain-construction"
+        },
+        {
+          "level": "h3",
+          "text": "3.3 sgRNA design",
+          "id": "sgrna-design"
+        }
+      ]
+    },
+    {
+      "page": "hp-industry",
+      "route": "public/hp-industry/index.html",
+      "h2": 5,
+      "h3": 0,
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Starting with email outreach",
+          "id": "hp-source-229"
+        },
+        {
+          "level": "h2",
+          "text": "Preparing materials for industry discussions",
+          "id": "hp-source-233"
+        },
+        {
+          "level": "h2",
+          "text": "Moving from presentations to dialogue",
+          "id": "hp-source-239"
+        },
+        {
+          "level": "h2",
+          "text": "Confirmed support from ExCell Bio",
+          "id": "hp-source-242"
+        },
+        {
+          "level": "h2",
+          "text": "Developing a reusable outreach process",
+          "id": "hp-source-247"
+        }
+      ]
+    },
+    {
+      "page": "hp-investigation",
+      "route": "public/hp-investigation/index.html",
+      "h2": 5,
+      "h3": 6,
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Taking project questions into the field",
+          "id": "hp-source-168"
+        },
+        {
+          "level": "h2",
+          "text": "Museum visits  learning how science reaches the public",
+          "id": "hp-source-171"
+        },
+        {
+          "level": "h3",
+          "text": "National Natural History Museum of China  soil life in context",
+          "id": "hp-source-172"
+        },
+        {
+          "level": "h3",
+          "text": "China Agricultural Museum  placing detection in agricultural practice",
+          "id": "hp-source-174"
+        },
+        {
+          "level": "h3",
+          "text": "Beijing Academy of Agriculture and Forestry Sciences  communicating research",
+          "id": "hp-source-176"
+        },
+        {
+          "level": "h2",
+          "text": "Expert interviews  three professional perspectives",
+          "id": "hp-source-185"
+        },
+        {
+          "level": "h3",
+          "text": "Yurong Yao  Institute of Plant Protection at Tianjin Academy of Agricultural Sciences",
+          "id": "hp-source-186"
+        },
+        {
+          "level": "h3",
+          "text": "Qian Liu  College of Plant Protection at China Agricultural University",
+          "id": "hp-source-192"
+        },
+        {
+          "level": "h3",
+          "text": "Zhihao Pang  Beijing Forestry University",
+          "id": "hp-source-198"
+        },
+        {
+          "level": "h2",
+          "text": "iGEM team exchanges: sharing research and human practices experience",
+          "id": "hp-source-204"
+        },
+        {
+          "level": "h2",
+          "text": "Farm visits and soil collection in Tianjin",
+          "id": "hp-source-216"
+        }
+      ]
+    },
+    {
+      "page": "hp-overview",
+      "route": "public/hp-overview/index.html",
+      "h2": 4,
+      "h3": 4,
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Explore our human practices",
+          "id": "hp-source-44"
+        },
+        {
+          "level": "h3",
+          "text": "iHP  bringing feedback into research",
+          "id": "hp-source-45"
+        },
+        {
+          "level": "h3",
+          "text": "Education  from classrooms to the public",
+          "id": "hp-source-48"
+        },
+        {
+          "level": "h3",
+          "text": "Investigation  exploring real-world use",
+          "id": "hp-source-51"
+        },
+        {
+          "level": "h3",
+          "text": "Industry engagement and support",
+          "id": "hp-source-54"
+        },
+        {
+          "level": "h2",
+          "text": "Starting with a hidden agricultural threat",
+          "id": "hp-source-57"
+        },
+        {
+          "level": "h2",
+          "text": "Bringing different experiences into the project",
+          "id": "hp-source-61"
+        },
+        {
+          "level": "h2",
+          "text": "Resources for continued use",
+          "id": "hp-source-64"
+        }
+      ]
+    },
+    {
+      "page": "human-practices",
+      "route": "public/human-practices/index.html",
+      "h2": 7,
+      "h3": 2,
+      "headings": [
+        {
+          "level": "h2",
+          "text": "From a detectable response to a usable test",
+          "id": "hp-source-69"
+        },
+        {
+          "level": "h2",
+          "text": "A two-way link between the questionnaire and research",
+          "id": "hp-source-73"
+        },
+        {
+          "level": "h2",
+          "text": "Question one  how early is early enough",
+          "id": "hp-source-88"
+        },
+        {
+          "level": "h2",
+          "text": "Question two  how does soil affect signals and color",
+          "id": "hp-source-92"
+        },
+        {
+          "level": "h2",
+          "text": "Question three  what makes a sample meaningful and a test usable",
+          "id": "hp-source-97"
+        },
+        {
+          "level": "h2",
+          "text": "Lessons for our research and other teams",
+          "id": "hp-source-102"
+        },
+        {
+          "level": "h3",
+          "text": "Inputs to our wet-lab and dry-lab work",
+          "id": "hp-source-103"
+        },
+        {
+          "level": "h3",
+          "text": "Practices other teams can adapt",
+          "id": "hp-source-105"
+        },
+        {
+          "level": "h2",
+          "text": "References and supporting evidence",
+          "id": "hp-original-references"
+        }
+      ]
+    },
+    {
+      "page": "licensing",
+      "route": "public/licensing/index.html",
+      "h2": 0,
+      "h3": 0,
+      "headings": []
+    },
+    {
+      "page": "members",
+      "route": "public/team/index.html",
+      "h2": 3,
+      "h3": 6,
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Team PI & advisor",
+          "id": "team-pi-advisor"
+        },
+        {
+          "level": "h3",
+          "text": "1.1 PI",
+          "id": "pi"
+        },
+        {
+          "level": "h4",
+          "text": "Jie Fan",
+          "id": "jie-fan-name"
+        },
+        {
+          "level": "h3",
+          "text": "1.2 Advisor",
+          "id": "advisors"
+        },
+        {
+          "level": "h4",
+          "text": "Peng-Lin Wei",
+          "id": "peng-lin-wei-name"
+        },
+        {
+          "level": "h4",
+          "text": "Churchill Zhu",
+          "id": "zhiyi-zhu-name"
+        },
+        {
+          "level": "h4",
+          "text": "Roy Zhang",
+          "id": "zhanning-zhang-advisor-name"
+        },
+        {
+          "level": "h2",
+          "text": "Student members",
+          "id": "student-members"
+        },
+        {
+          "level": "h3",
+          "text": "2.1 Student leaders",
+          "id": "student-leaders"
+        },
+        {
+          "level": "h4",
+          "text": "Fu Xinya",
+          "id": "fu-xinya-name"
+        },
+        {
+          "level": "h4",
+          "text": "Yang Ruoxi",
+          "id": "ruoxi-yang-student-leader-name"
+        },
+        {
+          "level": "h3",
+          "text": "2.2 Student team members",
+          "id": "student-team-members"
+        },
+        {
+          "level": "h4",
+          "text": "Wet lab",
+          "id": "wet-lab"
+        },
+        {
+          "level": "h5",
+          "text": "Zhang Hongbo",
+          "id": "zhang-hongbo-name"
+        },
+        {
+          "level": "h5",
+          "text": "Wang Chang",
+          "id": "chang-wang-name"
+        },
+        {
+          "level": "h5",
+          "text": "Liu Yifei",
+          "id": "ivy-liu-name"
+        },
+        {
+          "level": "h5",
+          "text": "Kuang Yinzi",
+          "id": "kuang-yinzi-name"
+        },
+        {
+          "level": "h5",
+          "text": "Luo Yuanwen",
+          "id": "yuanwen-luo-name"
+        },
+        {
+          "level": "h5",
+          "text": "Wang Qinghua",
+          "id": "wang-qinghua-name"
+        },
+        {
+          "level": "h5",
+          "text": "Zheng Shizhao",
+          "id": "shizhao-zheng-name"
+        },
+        {
+          "level": "h5",
+          "text": "Peng Ziyi",
+          "id": "ziyi-peng-name"
+        },
+        {
+          "level": "h4",
+          "text": "Dry lab",
+          "id": "dry-lab"
+        },
+        {
+          "level": "h5",
+          "text": "Chen Feiyue",
+          "id": "chen-feiyue-name"
+        },
+        {
+          "level": "h5",
+          "text": "Huang Xinqi",
+          "id": "huang-xinqi-name"
+        },
+        {
+          "level": "h5",
+          "text": "Song Yanmei",
+          "id": "yanmei-song-student-name"
+        },
+        {
+          "level": "h5",
+          "text": "Ye Shulan",
+          "id": "shulan-ye-student-name"
+        },
+        {
+          "level": "h5",
+          "text": "Guan Zhiyuan",
+          "id": "zhiyuan-guan-student-name"
+        },
+        {
+          "level": "h4",
+          "text": "Human practices（HP）",
+          "id": "human-practices"
+        },
+        {
+          "level": "h5",
+          "text": "Ma Peisong",
+          "id": "ma-peisong-name"
+        },
+        {
+          "level": "h5",
+          "text": "Song Xinying",
+          "id": "song-xinying-name"
+        },
+        {
+          "level": "h5",
+          "text": "Chen Yuxin",
+          "id": "chen-yuxin-name"
+        },
+        {
+          "level": "h5",
+          "text": "Chen Jiarui",
+          "id": "chen-jiarui-name"
+        },
+        {
+          "level": "h5",
+          "text": "Kaiben Zhang",
+          "id": "kaiben-zhang-name"
+        },
+        {
+          "level": "h5",
+          "text": "Han Xinyu",
+          "id": "han-xinyu-name"
+        },
+        {
+          "level": "h2",
+          "text": "Other members",
+          "id": "visual-design"
+        },
+        {
+          "level": "h3",
+          "text": "Bai Ruitong",
+          "id": "ruitong-bai-name"
+        },
+        {
+          "level": "h3",
+          "text": "Chen Yiling",
+          "id": "yiling-chen-name"
+        }
+      ]
+    },
+    {
+      "page": "model-1",
+      "route": "public/pages/model-1.html",
+      "h2": 1,
+      "h3": 0,
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Current chapter",
+          "id": "current-chapter"
+        }
+      ]
+    },
+    {
+      "page": "model-2",
+      "route": "public/pages/model-2.html",
+      "h2": 1,
+      "h3": 0,
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Current chapter",
+          "id": "current-chapter"
+        }
+      ]
+    },
+    {
+      "page": "model-docking",
+      "route": "public/model-docking/index.html",
+      "h2": 2,
+      "h3": 7,
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Docking | from differential ligand contacts to receptor-engineering hypotheses",
+          "id": "src-Model-Docking-1"
+        },
+        {
+          "level": "h3",
+          "text": "1.1 Establishing a common structural and docking basis for dual-ligand comparisons",
+          "id": "src-Model-Docking-5"
+        },
+        {
+          "level": "h3",
+          "text": "1.2 Combining contact frequencies and individual poses to propose initial engineering sites",
+          "id": "src-Model-Docking-14"
+        },
+        {
+          "level": "h3",
+          "text": "1.3 Expanding from selected substitutions to saturation scanning",
+          "id": "src-Model-Docking-29"
+        },
+        {
+          "level": "h3",
+          "text": "1.4 Examining both scores separately to identify the source of candidate shifts",
+          "id": "src-Model-Docking-34"
+        },
+        {
+          "level": "h3",
+          "text": "1.5 Testing whether single-site effects persist in combinations",
+          "id": "src-Model-Docking-48"
+        },
+        {
+          "level": "h3",
+          "text": "1.6 Narrowing four priority candidates to two subjects for dynamic analysis",
+          "id": "src-Model-Docking-55"
+        },
+        {
+          "level": "h3",
+          "text": "1.7 Extended analysis: identifying contact positions for parallel testing across receptors",
+          "id": "src-Model-Docking-73"
+        },
+        {
+          "level": "h2",
+          "text": "References",
+          "id": "src-Model-Docking-81"
+        }
+      ]
+    },
+    {
+      "page": "model-eco",
+      "route": "public/model-eco/index.html",
+      "h2": 2,
+      "h3": 6,
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Eco | from color readouts to management decisions",
+          "id": "src-Model-Eco-1"
+        },
+        {
+          "level": "h3",
+          "text": "1.1 Exploring the connection from color to returns in the interactive app",
+          "id": "src-Model-Eco-4"
+        },
+        {
+          "level": "h3",
+          "text": "1.2 Connecting color development and economic analysis through density",
+          "id": "src-Model-Eco-15"
+        },
+        {
+          "level": "h3",
+          "text": "1.3 Calculating yield loss and net returns from nematode density",
+          "id": "src-Model-Eco-21"
+        },
+        {
+          "level": "h3",
+          "text": "1.4 Using two baselines to distinguish control benefits from information value",
+          "id": "src-Model-Eco-28"
+        },
+        {
+          "level": "h3",
+          "text": "1.5 When density information is worth obtaining",
+          "id": "src-Model-Eco-40"
+        },
+        {
+          "level": "h3",
+          "text": "1.6 Feeding economic comparisons back into detection design",
+          "id": "src-Model-Eco-52"
+        },
+        {
+          "level": "h2",
+          "text": "References",
+          "id": "src-Model-Eco-57"
+        }
+      ]
+    },
+    {
+      "page": "model-md",
+      "route": "public/model-md/index.html",
+      "h2": 2,
+      "h3": 5,
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Molecular dynamics | ligand positioning and contact changes in a membrane environment",
+          "id": "src-Model-Molecular-Dynamics-1"
+        },
+        {
+          "level": "h3",
+          "text": "1.1 Building six membrane systems from docking poses",
+          "id": "src-Model-Molecular-Dynamics-3"
+        },
+        {
+          "level": "h3",
+          "text": "1.2 Observing ligand motion relative to the local pocket",
+          "id": "src-Model-Molecular-Dynamics-6"
+        },
+        {
+          "level": "h3",
+          "text": "1.3 N84V–ascr#18: persistent Arg189 anchoring of the ligand carboxylate",
+          "id": "src-Model-Molecular-Dynamics-12"
+        },
+        {
+          "level": "h3",
+          "text": "1.4 V368R–ascr#3: a stable mechanistic explanation remains unresolved",
+          "id": "src-Model-Molecular-Dynamics-20"
+        },
+        {
+          "level": "h3",
+          "text": "1.5 Mechanistic interpretations of the two candidates",
+          "id": "src-Model-Molecular-Dynamics-25"
+        },
+        {
+          "level": "h2",
+          "text": "References",
+          "id": "src-Model-Molecular-Dynamics-28"
+        }
+      ]
+    },
+    {
+      "page": "model-ode",
+      "route": "public/model-ode/index.html",
+      "h2": 2,
+      "h3": 7,
+      "headings": [
+        {
+          "level": "h2",
+          "text": "ODE and dual-channel models | from signal response to target density estimation",
+          "id": "src-Model-ODE-1"
+        },
+        {
+          "level": "h3",
+          "text": "1.1 Starting from a minimal model to identify essential dynamics",
+          "id": "src-Model-ODE-7"
+        },
+        {
+          "level": "h3",
+          "text": "1.2 Connecting the published shared pathway to an effective color equation",
+          "id": "src-Model-ODE-19"
+        },
+        {
+          "level": "h3",
+          "text": "1.3 Varying target and background independently to construct dual-sensor inputs",
+          "id": "src-Model-ODE-35"
+        },
+        {
+          "level": "h3",
+          "text": "1.4 Adjusting input and output interfaces with simulated color targets",
+          "id": "src-Model-ODE-45"
+        },
+        {
+          "level": "h3",
+          "text": "1.5 Converting pigment concentrations into simulated smartphone color features",
+          "id": "src-Model-ODE-62"
+        },
+        {
+          "level": "h3",
+          "text": "1.6 Using paired colors to estimate target density",
+          "id": "src-Model-ODE-74"
+        },
+        {
+          "level": "h3",
+          "text": "1.7 Parameter tables",
+          "id": "src-Model-ODE-97"
+        },
+        {
+          "level": "h2",
+          "text": "References and resources",
+          "id": "src-Model-ODE-115"
+        }
+      ]
+    },
+    {
+      "page": "model",
+      "route": "public/model/index.html",
+      "h2": 1,
+      "h3": 4,
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Model",
+          "id": "model-overview"
+        },
+        {
+          "level": "h3",
+          "text": "Docking | identifying engineering directions for differential responses to two ligands",
+          "id": "docking--identifying-engineering-directions-for-differential-responses-to-two-ligands"
+        },
+        {
+          "level": "h3",
+          "text": "Molecular dynamics | observing candidate poses in a membrane environment",
+          "id": "molecular-dynamics--observing-candidate-poses-in-a-membrane-environment"
+        },
+        {
+          "level": "h3",
+          "text": "ODE and dual-channel models | from signal input to target density estimation",
+          "id": "ode-and-dual-channel-models--from-signal-input-to-target-density-estimation"
+        },
+        {
+          "level": "h3",
+          "text": "Eco | evaluating the practical value of density information",
+          "id": "eco--evaluating-the-practical-value-of-density-information"
+        }
+      ]
+    },
+    {
+      "page": "part-collection",
+      "route": "public/part-collection/index.html",
+      "h2": 1,
+      "h3": 0,
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Now part of parts and collections",
+          "id": "moved"
+        }
+      ]
+    },
+    {
+      "page": "parts",
+      "route": "public/parts/index.html",
+      "h2": 2,
+      "h3": 2,
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Parts",
+          "id": "parts"
+        },
+        {
+          "level": "h3",
+          "text": "1.1 Basic parts",
+          "id": "basic-parts"
+        },
+        {
+          "level": "h3",
+          "text": "1.2 Composite parts",
+          "id": "composite-parts"
+        },
+        {
+          "level": "h2",
+          "text": "Collections",
+          "id": "collections"
+        }
+      ]
+    },
+    {
+      "page": "protocols",
+      "route": "public/protocols/index.html",
+      "h2": 1,
+      "h3": 0,
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Experimental protocols",
+          "id": "experimental-protocols"
+        }
+      ]
+    },
+    {
+      "page": "results",
+      "route": "public/results/index.html",
+      "h2": 3,
+      "h3": 13,
+      "headings": [
+        {
+          "level": "h2",
+          "text": "DBTL-1: heterologous expression and transmembrane localization verification of GPR2",
+          "id": "dbtl-1-heterologous-expression-and-transmembrane-localization-verification-of-gpr2"
+        },
+        {
+          "level": "h3",
+          "text": "1.1 The first cycle",
+          "id": "the-first-cycle"
+        },
+        {
+          "level": "h4",
+          "text": "1.1.1 Design",
+          "id": "design"
+        },
+        {
+          "level": "h4",
+          "text": "1.1.2 Build",
+          "id": "build"
+        },
+        {
+          "level": "h4",
+          "text": "1.1.3 Test",
+          "id": "test"
+        },
+        {
+          "level": "h4",
+          "text": "1.1.4 Learn",
+          "id": "learn"
+        },
+        {
+          "level": "h3",
+          "text": "1.2 The second cycle",
+          "id": "the-second-cycle"
+        },
+        {
+          "level": "h4",
+          "text": "1.2.1 Design and build",
+          "id": "design-and-build"
+        },
+        {
+          "level": "h4",
+          "text": "1.2.2 Test",
+          "id": "test-2"
+        },
+        {
+          "level": "h4",
+          "text": "1.2.3 Learn",
+          "id": "learn-2"
+        },
+        {
+          "level": "h3",
+          "text": "1.3 Reference",
+          "id": "reference"
+        },
+        {
+          "level": "h2",
+          "text": "DBTL-2: engineering construction of ascaroside-responsive yeast chassis",
+          "id": "dbtl-2-engineering-construction-of-ascaroside-responsive-yeast-chassis"
+        },
+        {
+          "level": "h3",
+          "text": "2.1 The first cycle",
+          "id": "the-first-cycle-2"
+        },
+        {
+          "level": "h4",
+          "text": "2.1.1 Design",
+          "id": "design-2"
+        },
+        {
+          "level": "h4",
+          "text": "2.1.2 Build",
+          "id": "build-2"
+        },
+        {
+          "level": "h4",
+          "text": "2.1.3 Test",
+          "id": "test-3"
+        },
+        {
+          "level": "h4",
+          "text": "2.1.4 Learn",
+          "id": "learn-3"
+        },
+        {
+          "level": "h3",
+          "text": "2.2 The second cycle",
+          "id": "the-second-cycle-2"
+        },
+        {
+          "level": "h4",
+          "text": "2.2.1 Design",
+          "id": "design-3"
+        },
+        {
+          "level": "h4",
+          "text": "2.2.2 Build",
+          "id": "build-3"
+        },
+        {
+          "level": "h4",
+          "text": "2.2.3 Test",
+          "id": "test-4"
+        },
+        {
+          "level": "h4",
+          "text": "2.2.4 Learn",
+          "id": "learn-4"
+        },
+        {
+          "level": "h3",
+          "text": "2.3 The third cycle",
+          "id": "the-third-cycle"
+        },
+        {
+          "level": "h4",
+          "text": "2.3.1 Design",
+          "id": "design-4"
+        },
+        {
+          "level": "h4",
+          "text": "2.3.2 Build",
+          "id": "build-4"
+        },
+        {
+          "level": "h4",
+          "text": "2.3.3 Test",
+          "id": "test-5"
+        },
+        {
+          "level": "h3",
+          "text": "2.4 The fourth cycle",
+          "id": "the-fourth-cycle"
+        },
+        {
+          "level": "h4",
+          "text": "2.4.1 Design",
+          "id": "design-5"
+        },
+        {
+          "level": "h4",
+          "text": "2.4.2 Build",
+          "id": "build-5"
+        },
+        {
+          "level": "h4",
+          "text": "2.4.3 Test",
+          "id": "test-6"
+        },
+        {
+          "level": "h4",
+          "text": "2.4.4 Learn",
+          "id": "learn-5"
+        },
+        {
+          "level": "h3",
+          "text": "2.5 The fifth cycle",
+          "id": "the-fifth-cycle"
+        },
+        {
+          "level": "h4",
+          "text": "2.5.1 Design",
+          "id": "design-6"
+        },
+        {
+          "level": "h4",
+          "text": "2.5.2 Build and test",
+          "id": "build-and-test"
+        },
+        {
+          "level": "h4",
+          "text": "2.5.3 Learn",
+          "id": "learn-6"
+        },
+        {
+          "level": "h3",
+          "text": "2.6 References",
+          "id": "references"
+        },
+        {
+          "level": "h2",
+          "text": "DBTL-3: test strip development and productization",
+          "id": "dbtl-3-test-strip-development-and-productization"
+        },
+        {
+          "level": "h3",
+          "text": "3.1 Cycle 1: substrate determination",
+          "id": "results-3-1"
+        },
+        {
+          "level": "h3",
+          "text": "3.2 Cycle 2: immobilization optimization",
+          "id": "results-3-2"
+        },
+        {
+          "level": "h3",
+          "text": "3.3 Cycle 3: color development rate optimization",
+          "id": "results-3-3"
+        },
+        {
+          "level": "h3",
+          "text": "3.4 References",
+          "id": "results-dbtl3-references"
+        }
+      ]
+    },
+    {
+      "page": "safety",
+      "route": "public/safety-and-security/index.html",
+      "h2": 2,
+      "h3": 6,
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Project safety",
+          "id": "project-safety"
+        },
+        {
+          "level": "h3",
+          "text": "1.1 Biomaterial safety",
+          "id": "biomaterial-safety"
+        },
+        {
+          "level": "h3",
+          "text": "1.2 Laboratory operation safety",
+          "id": "laboratory-operation-safety"
+        },
+        {
+          "level": "h3",
+          "text": "1.3 Productization & application safety",
+          "id": "productization-application-safety"
+        },
+        {
+          "level": "h2",
+          "text": "Lab safety",
+          "id": "lab-safety"
+        },
+        {
+          "level": "h3",
+          "text": "2.1 Safety regulations",
+          "id": "safety-regulations"
+        },
+        {
+          "level": "h3",
+          "text": "2.2 Safety education",
+          "id": "safety-education"
+        },
+        {
+          "level": "h3",
+          "text": "2.3 Daily management",
+          "id": "daily-management"
+        }
+      ]
+    },
+    {
+      "page": "source-archive",
+      "route": "public/source-archive/index.html",
+      "h2": 8,
+      "h3": 13,
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Model",
+          "id": "model"
+        },
+        {
+          "level": "h3",
+          "text": "1.1 Model｜zh — 2026-10-10",
+          "id": null
+        },
+        {
+          "level": "h3",
+          "text": "1.2 Model｜en — 2026-10-10",
+          "id": null
+        },
+        {
+          "level": "h2",
+          "text": "Dry lab / project",
+          "id": "dry-lab-project"
+        },
+        {
+          "level": "h3",
+          "text": "2.1 Project｜zh — 2026-10-10",
+          "id": null
+        },
+        {
+          "level": "h3",
+          "text": "2.2 Project｜en — 2026-10-10",
+          "id": null
+        },
+        {
+          "level": "h3",
+          "text": "2.3 Drylab wiki｜project - zh",
+          "id": null
+        },
+        {
+          "level": "h3",
+          "text": "2.4 Drylab wiki｜project - eg",
+          "id": null
+        },
+        {
+          "level": "h2",
+          "text": "Human practices / education",
+          "id": "human-practices-education"
+        },
+        {
+          "level": "h3",
+          "text": "3.1 Best education 页面修订稿 — 旧版",
+          "id": null
+        },
+        {
+          "level": "h2",
+          "text": "Human practices",
+          "id": "human-practices"
+        },
+        {
+          "level": "h3",
+          "text": "4.1 HP wiki 语料库整合版 — 旧版",
+          "id": null
+        },
+        {
+          "level": "h2",
+          "text": "Human practices / sponsorship",
+          "id": "human-practices-sponsorship"
+        },
+        {
+          "level": "h3",
+          "text": "5.1 赞助语料库 — 旧版",
+          "id": null
+        },
+        {
+          "level": "h2",
+          "text": "Human practices / research",
+          "id": "human-practices-research"
+        },
+        {
+          "level": "h3",
+          "text": "6.1 HP调研 — 旧版",
+          "id": null
+        },
+        {
+          "level": "h2",
+          "text": "Engineering",
+          "id": "engineering"
+        },
+        {
+          "level": "h3",
+          "text": "7.1 Engineering 3.0 — 中文旧稿",
+          "id": null
+        },
+        {
+          "level": "h3",
+          "text": "7.2 Engineering 3.0 — English earlier submission",
+          "id": null
+        },
+        {
+          "level": "h2",
+          "text": "19 October 2026 meeting update / 19日凌晨会后更新",
+          "id": "meeting-20261019"
+        },
+        {
+          "level": "h3",
+          "text": "8.1 HP project — 2026-10-19",
+          "id": null
+        }
+      ]
+    }
+  ]
+}

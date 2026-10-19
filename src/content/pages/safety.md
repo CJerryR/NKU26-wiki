@@ -4,7 +4,7 @@ heading: Safety
 sub: ''
 route: safety-and-security
 crumbs:
-  - Wet Lab
+  - Wet lab
   - Safety
 search: true
 preserveAuthorFormatting: true
@@ -12,15 +12,15 @@ meta: {}
 draft: false
 hidden: false
 ---
-## 1 Project Safety {#project-safety toc="Project Safety"}
+## Project safety {#project-safety toc="Project safety"}
 
 <p>Biosafety is an essential component of project design. For our Nemaklear project, we carried out safety design in three main aspects: biomaterial safety, laboratory operation safety, and productization &amp; application safety.</p>
 
-### 1.1 Biomaterial Safety {#biomaterial-safety toc="Biomaterial Safety"}
+### 1.1 Biomaterial safety {#biomaterial-safety toc="Biomaterial safety"}
 
 <p>In our project design, we adopted a dual strategy combining auxotrophic markers and suicide genes to strengthen our biosafety control system.</p>
 
-First, we used yeast with four auxotrophies as the chassis strain for this project (Figure 1). After a series of genetic modifications, the engineered yeast cannot survive in environments lacking histidine and leucine. Therefore, the engineered yeast constructed in our project can only survive under laboratory conditions, which effectively prevents the environmental escape of genetically modified yeast.
+First, we used yeast with four auxotrophies as the chassis strain for this project (Figure 1). After a series of genetic modifications, the engineered yeast cannot survive in environments lacking <strong>histidine (His)</strong> and <strong>leucine (Leu)</strong>. Therefore, the engineered yeast constructed in our project can only survive under laboratory conditions, which effectively prevents the environmental escape of genetically modified yeast.
 
 :::figure{scale=85}
 
@@ -40,9 +40,9 @@ Secondly, we adopted the previously designed engineered yeast suicide switch, wh
 
 :::
 
-### 1.2 Laboratory Operation Safety {#laboratory-operation-safety toc="Laboratory Operation Safety"}
+### 1.2 Laboratory operation safety {#laboratory-operation-safety toc="Laboratory operation safety"}
 
-<p>All experimental operators of this project have received specialized laboratory safety training at Nankai University and strictly follow standard operating procedures, including wearing full personal protective equipment (PPE) and conducting experiments inside biosafety cabinets. All experimental waste is disposed of in accordance with regulations for biohazardous waste to prevent leakage of biological materials.</p>
+<p>All experimental operators of this project have received specialized laboratory safety training at Nankai University and strictly follow standard operating procedures, including wearing full <strong>personal protective equipment (PPE)</strong> and conducting experiments inside biosafety cabinets. All experimental waste is disposed of in accordance with regulations for biohazardous waste to prevent leakage of biological materials.</p>
 
 :::figure
 
@@ -52,7 +52,7 @@ Secondly, we adopted the previously designed engineered yeast suicide switch, wh
 
 :::
 
-### 1.3 Productization & Application Safety {#productization-application-safety toc="Productization & Application Safety"}
+### 1.3 Productization & application safety {#productization-application-safety toc="Productization & application safety"}
 
 For productization and field application safety, our final product is a kit equipped with freeze-dried yeast test strips. Freeze-dried yeast powder can be transported at room temperature without losing activity. Besides, the risk of leakage and contamination from this type of yeast is relatively low.
 
@@ -60,11 +60,11 @@ For productization and field application safety, our final product is a kit equi
 
 <p>After use, test strips and supporting consumables can be collected and inactivated uniformly, minimizing the risk of engineered yeast escaping into the natural environment.<strong> </strong></p>
 
-## 2 Lab Safety {#lab-safety toc="Lab Safety"}
+## Lab safety {#lab-safety toc="Lab safety"}
 
 Laboratory safety is a core component of the iGEM project. We have implemented multiple measures to ensure biosafety protection for every participant working in our iGEM laboratory.
 
-### 2.1 Safety Regulations {#safety-regulations toc="Safety Regulations"}
+### 2.1 Safety regulations {#safety-regulations toc="Safety regulations"}
 
 All laboratories supporting our iGEM project fall under the university’s strict multi-dimensional safety supervision system. They consistently pass regular comprehensive assessments and unscheduled random audits, laying a solid foundation for safe experimentation. Inspections cover all key operational elements: routine maintenance and standardized equipment use, compliant water/electrical piping with routine leak tests, properly maintained fire equipment, unblocked emergency routes, and intact emergency showers and eyewash stations. Such rigorous controls ensure our infrastructure and management meet and surpass applicable safety codes, forming a stable, compliant safety framework to advance our synthetic biology work.
 
@@ -76,7 +76,7 @@ All laboratories supporting our iGEM project fall under the university’s stric
 
 :::
 
-### 2.2 Safety Education {#safety-education toc="Safety Education"}
+### 2.2 Safety education {#safety-education toc="Safety education"}
 
 Before the official launch of wet-lab experiments, our faculty advisor and laboratory safety officer jointly delivered systematic laboratory safety training for the team. The training covered general laboratory safety guidelines, biosafety requirements and chemical management regulations. Special sessions were arranged for hazardous equipment used in our project, such as autoclaves, high-speed centrifuges and high-throughput homogenizers, focusing on standard operating procedures, hazard identification, emergency response protocols and prohibited operations. Through this comprehensive safety education, all experimental members systematically learned and mastered the complete set of laboratory safety regulations. They are able to actively identify potential safety hazards in experimental workflows and establish solid biosafety awareness to ensure safe and controllable wet-lab operations throughout the project.
 
@@ -92,7 +92,7 @@ Before the official launch of wet-lab experiments, our faculty advisor and labor
 
 Note: Due to space limitations, only the certificates of partial members are displayed here. All team members have passed the assessment.
 
-### 2.3 Daily Management {#daily-management toc="Daily Management"}
+### 2.3 Daily management {#daily-management toc="Daily management"}
 
 Senior students are appointed as laboratory safety officers. They continuously remind all researchers of safety precautions during experiments and urge researchers to develop good experimental habits. Safety warning signs and detailed operation instructions are posted on all laboratory instruments, providing effective hazard alerts.
 
