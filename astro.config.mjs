@@ -15,6 +15,8 @@ export default defineConfig({
   // Files copied to the site untouched: the story homepage's scripts and
   // styles (static/css, static/js), images and fonts.
   publicDir: './static',
+  // Worktrees can share node_modules, but must never share rendered-content caches.
+  cacheDir: './.astro-cache',
   // iGEM's GitLab CI publishes whatever ends up in public/.
   outDir: './public',
   // Keeps the v6 addresses: pages/description.html, model/index.html, ...
