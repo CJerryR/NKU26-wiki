@@ -167,10 +167,9 @@
     "svg_bytes_preserved": true
   },
   "first_publication": {
-    "commit": "6c25e6b128934d54a3b0c6614b2b2a9c676332e9",
-    "pipeline_id": 774839,
-    "pages_job": 1872092,
-    "published_at_beijing": "2026-10-20 03:57:51"
+    "commit": "e58ffd3ee80c08bb31972bb9bbffb48777c2f520",
+    "pipeline_id": 775034,
+    "published_at_beijing": "2026-10-20 04:42:34"
   },
   "recent_combined_release": {
     "task_commits": {
@@ -188,6 +187,7 @@
     "deferred_by_user": [
       "Engineering Figure 5",
       "Docking Figure 6 retains existing matching crop"
-    ]
+    ],
+    "publication_time_beijing": "2026-10-20 04:42:34"
   }
 }
