@@ -16,3 +16,6 @@
 .hp-references p{font-size:.9rem;line-height:1.7;margin-block:.6rem;overflow-wrap:anywhere}
 .hp-references p:has(a){padding-left:1.5rem}
 @media(max-width:700px){.hp-manuscript .hp-photo-group,.hp-manuscript .hp-photo-group--three{grid-template-columns:minmax(0,1fr)}.hp-chapter-nav{gap:.65rem 1rem}.hp-manuscript figcaption{font-size:.86rem}}
+/* Unnumbered, non-link feature rows have one content column, not the optional index slot. */
+.hp-manuscript .feature:not(:has(>.feature__idx,>.feature__go)){grid-template-columns:minmax(0,1fr)}
+.hp-manuscript .feature__main{min-width:0}
