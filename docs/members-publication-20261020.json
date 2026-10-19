@@ -1,0 +1,122 @@
+{
+  "task": "ruoxi-members-review",
+  "publication_authorized": true,
+  "authorization": "User: 全部上线这个是合照",
+  "scope": "27 received individual portraits and the user-supplied full team group photo on Members only",
+  "baseline": "05a37e74e035bef492dd007e024edfdbccece1b0",
+  "source_path": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/tasks/ruoxi-members-review",
+  "group_photo": {
+    "source": "/var/folders/yk/3w04nh0d6658qrrtx51ccdh80000gn/T/codex-clipboard-f1df331e-60ee-4e53-991c-c54002f575d9.jpg",
+    "staged_original": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/ruoxi-members-review/release-20261020/source-originals/team-group.jpg",
+    "sha256": "c66c4601fe63b66e1f869356bdcb65a0429b5b35497e9331f610e3c329567134",
+    "bytes": 1573506,
+    "user_confirmed_as_group_photo": true,
+    "original_bytes_unchanged": true,
+    "publication_authorized": true,
+    "authorization": "User: 全部上线这个是合照",
+    "recorded_at": "2026-10-20T02:34:30+08:00"
+  },
+  "portrait_count": 27,
+  "images_total": 28,
+  "local_validation": {
+    "build": "pass",
+    "technical_audit": "pass",
+    "deployment_regression": "pass",
+    "group_photo": "pass: 3006x2004 original, full 3:2 ratio, 390/1440 light/dark",
+    "portraits": "27 photos and flip checks passed in prior portrait validation; unchanged in this group-photo step",
+    "browser": {
+      "results": [
+        {
+          "width": 390,
+          "theme": "light",
+          "photo": {
+            "width": 320,
+            "height": 213.328125,
+            "naturalWidth": 3006,
+            "naturalHeight": 2004,
+            "src": "../img/uploads/members-20261020/team-group.jpg",
+            "figureText": "NKU-China 2026 team"
+          },
+          "memberCards": 27,
+          "placeholders": 0,
+          "horizontalOverflow": false,
+          "flipAndEscape": true
+        },
+        {
+          "width": 390,
+          "theme": "dark",
+          "photo": {
+            "width": 320,
+            "height": 213.328125,
+            "naturalWidth": 3006,
+            "naturalHeight": 2004,
+            "src": "../img/uploads/members-20261020/team-group.jpg",
+            "figureText": "NKU-China 2026 team"
+          },
+          "memberCards": 27,
+          "placeholders": 0,
+          "horizontalOverflow": false,
+          "flipAndEscape": true
+        },
+        {
+          "width": 1440,
+          "theme": "light",
+          "photo": {
+            "width": 986,
+            "height": 657.328125,
+            "naturalWidth": 3006,
+            "naturalHeight": 2004,
+            "src": "../img/uploads/members-20261020/team-group.jpg",
+            "figureText": "NKU-China 2026 team"
+          },
+          "memberCards": 27,
+          "placeholders": 0,
+          "horizontalOverflow": false,
+          "flipAndEscape": true
+        },
+        {
+          "width": 1440,
+          "theme": "dark",
+          "photo": {
+            "width": 986,
+            "height": 657.328125,
+            "naturalWidth": 3006,
+            "naturalHeight": 2004,
+            "src": "../img/uploads/members-20261020/team-group.jpg",
+            "figureText": "NKU-China 2026 team"
+          },
+          "memberCards": 27,
+          "placeholders": 0,
+          "horizontalOverflow": false,
+          "flipAndEscape": true
+        }
+      ],
+      "errors": []
+    },
+    "cdn_browser": "PASS desktop 1470x715; all 54 front/back image instances loaded; 27 Enter/Escape flips; full group ratio; no overflow"
+  },
+  "cdn_upload": {
+    "uploaded": 28,
+    "pending": 0,
+    "mapping": "docs/members-portraits-20261020.json",
+    "evidence": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/ruoxi-members-review/release-20261020/cdn-upload-progress.json",
+    "http_images_verified": 28,
+    "card_image_instances_loaded": 54,
+    "flips_verified": 27,
+    "compression": "Official AVIF conversion; three PNG upload copies are quality-95 WebP, original files retained"
+  },
+  "publication": "CDN migrated; not yet published",
+  "integration": "pending validated task commit",
+  "release": "pending integration candidate",
+  "next_steps": [
+    "Upload 28 prepared images through official Uploads and record actual returned URLs",
+    "Migrate all 28 references, validate rendered assets and rebuild small artifact",
+    "Commit final task, lock integration, merge against freshly fetched main, validate exact candidate",
+    "Lock release, build accepted candidate, re-fetch main, push only from release and verify Pages and online files"
+  ],
+  "recorded_at": "2026-10-20T02:45:06.302937+08:00",
+  "artifact_zip_bytes": 4979961,
+  "original_content_check": "All non-image Members content identical to official main",
+  "original_archive": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/ruoxi-members-review/release-20261020/source-originals",
+  "repository_transport": "CDN-only source commit; binary original history retained on local backup branch after server rejected oversized pack"
+}

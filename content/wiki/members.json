@@ -12,6 +12,14 @@
   "search": true,
   "blocks": [
     {
+      "_template": "image",
+      "src": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-c66c4601fe63-team-group.avif",
+      "alt": "NKU-China 2026 team group photo",
+      "body": "<p>NKU-China 2026 team</p>",
+      "accompanyingBody": "",
+      "scale": "100"
+    },
+    {
       "_template": "heading",
       "text": "Team PI & Advisor",
       "level": 2,
@@ -29,7 +37,7 @@
       "items": [
         {
           "anchor": "jie-fan",
-          "image": "",
+          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-51f36c46393e-jie-fan.avif",
           "name": "Jie Fan",
           "role": "PI",
           "cohort": "",
@@ -50,7 +58,7 @@
       "items": [
         {
           "anchor": "peng-lin-wei",
-          "image": "",
+          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-e3d156de3188-peng-lin-wei.avif",
           "name": "Peng-Lin Wei",
           "role": "Advisor",
           "cohort": "",
@@ -59,7 +67,7 @@
         },
         {
           "anchor": "zhiyi-zhu",
-          "image": "",
+          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-55d47fb05e33-zhiyi-zhu.webp",
           "name": "Churchill Zhu",
           "role": "Advisor",
           "cohort": "2023",
@@ -68,7 +76,7 @@
         },
         {
           "anchor": "zhanning-zhang-advisor",
-          "image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-ddac5d034258-zhanning-zhang.avif",
+          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-4df9d0d545a6-zhanning-zhang-advisor.avif",
           "name": "Roy Zhang",
           "role": "Advisor",
           "cohort": "",
@@ -95,7 +103,7 @@
       "items": [
         {
           "anchor": "fu-xinya",
-          "image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-8fa16e16e7a4-fu-xinya.avif",
+          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-ae3a88a3c4e4-fu-xinya.avif",
           "name": "Fu Xinya",
           "role": "Project Management/ Part Design",
           "cohort": "2024",
@@ -104,7 +112,7 @@
         },
         {
           "anchor": "ruoxi-yang-student-leader",
-          "image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-5667764dc7f7-ruoxi-yang.avif",
+          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-881c648ce453-ruoxi-yang-student-leader.avif",
           "name": "Yang Ruoxi",
           "role": "Project Management/ Model Development",
           "cohort": "2024",
@@ -131,7 +139,7 @@
       "items": [
         {
           "anchor": "zhang-hongbo",
-          "image": "",
+          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-9d6558058ad8-zhang-hongbo.avif",
           "name": "Zhang Hongbo",
           "role": "Part Design",
           "cohort": "2022",
@@ -140,7 +148,7 @@
         },
         {
           "anchor": "chang-wang",
-          "image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-322c60bc159e-chang-wang.avif",
+          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-ae94ff6b24d4-chang-wang.avif",
           "name": "Wang Chang",
           "role": "Part Design/ Visual Design",
           "cohort": "2024",
@@ -149,7 +157,7 @@
         },
         {
           "anchor": "ivy-liu",
-          "image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-120e8273aa67-ivy-liu.avif",
+          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-992aff1ba991-ivy-liu.avif",
           "name": "Liu Yifei",
           "role": "Part Design",
           "cohort": "2024",
@@ -158,7 +166,7 @@
         },
         {
           "anchor": "kuang-yinzi",
-          "image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-73eaaceee28d-kuang-yinzi.avif",
+          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-ba9c6abb4187-kuang-yinzi.avif",
           "name": "Kuang Yinzi",
           "role": "Part Design",
           "cohort": "2025",
@@ -167,7 +175,7 @@
         },
         {
           "anchor": "yuanwen-luo",
-          "image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-270ecf6f2522-yuanwen-luo.avif",
+          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-1da0b9a76767-yuanwen-luo.avif",
           "name": "Luo Yuanwen",
           "role": "Part Design",
           "cohort": "2024",
@@ -176,7 +184,7 @@
         },
         {
           "anchor": "wang-qinghua",
-          "image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-08d95b754ff3-wang-qinghua.avif",
+          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-774958f356d4-wang-qinghua.avif",
           "name": "Wang Qinghua",
           "role": "Part Design",
           "cohort": "2024",
@@ -185,7 +193,7 @@
         },
         {
           "anchor": "shizhao-zheng",
-          "image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-001ba276229e-shizhao-zheng.avif",
+          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-f56ca1b7ea8f-shizhao-zheng.avif",
           "name": "Zheng Shizhao",
           "role": "Part Design",
           "cohort": "2024",
@@ -194,7 +202,7 @@
         },
         {
           "anchor": "ziyi-peng",
-          "image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-491794815e37-ziyi-peng.avif",
+          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-247bfac32f74-ziyi-peng.avif",
           "name": "Peng Ziyi",
           "role": "Part Design",
           "cohort": "2024",
@@ -215,7 +223,7 @@
       "items": [
         {
           "anchor": "chen-feiyue",
-          "image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-e8eae705159b-chen-feiyue.avif",
+          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-7b58a4e68b93-chen-feiyue.avif",
           "name": "Chen Feiyue",
           "role": "Model Development/ Part Design",
           "cohort": "2024",
@@ -224,7 +232,7 @@
         },
         {
           "anchor": "huang-xinqi",
-          "image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-f0001fee5950-huang-xinqi.avif",
+          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-6526de2fbc0d-huang-xinqi.avif",
           "name": "Huang Xinqi",
           "role": "Model Development/ Part Design",
           "cohort": "2024",
@@ -233,7 +241,7 @@
         },
         {
           "anchor": "yanmei-song-student",
-          "image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-456cf76f9557-yanmei-song.avif",
+          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-a784ce285468-yanmei-song-student.avif",
           "name": "Song Yanmei",
           "role": "Model Development",
           "cohort": "2024",
@@ -242,7 +250,7 @@
         },
         {
           "anchor": "shulan-ye-student",
-          "image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-0f149e57e32b-shulan-ye.avif",
+          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-6a5c4dd18fc6-shulan-ye-student.avif",
           "name": "Ye Shulan",
           "role": "Model Development",
           "cohort": "2024",
@@ -251,7 +259,7 @@
         },
         {
           "anchor": "zhiyuan-guan-student",
-          "image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-7db5eeb70e57-zhiyuan-guan.avif",
+          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-52efbbeea4ff-zhiyuan-guan-student.avif",
           "name": "Guan Zhiyuan",
           "role": "Model Development",
           "cohort": "2024",
@@ -272,7 +280,7 @@
       "items": [
         {
           "anchor": "ma-peisong",
-          "image": "",
+          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-d65119ebfc39-ma-peisong.avif",
           "name": "Ma Peisong",
           "role": "Human practice",
           "cohort": "",
@@ -281,7 +289,7 @@
         },
         {
           "anchor": "song-xinying",
-          "image": "",
+          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-ec682215f511-song-xinying.avif",
           "name": "Song Xinying",
           "role": "Human practice",
           "cohort": "2025",
@@ -290,7 +298,7 @@
         },
         {
           "anchor": "chen-yuxin",
-          "image": "",
+          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-9e2514ef0ecf-chen-yuxin.avif",
           "name": "Chen Yuxin",
           "role": "Human practice/ Visual Design",
           "cohort": "2024",
@@ -299,7 +307,7 @@
         },
         {
           "anchor": "chen-jiarui",
-          "image": "",
+          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-dbfd4ebd1944-chen-jiarui.avif",
           "name": "Chen Jiarui",
           "role": "Human practice/wiki coding",
           "cohort": "2025",
@@ -308,7 +316,7 @@
         },
         {
           "anchor": "kaiben-zhang",
-          "image": "",
+          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-8dd3dc2ff751-kaiben-zhang.avif",
           "name": "Kaiben Zhang",
           "role": "Human practice",
           "cohort": "2023",
@@ -317,7 +325,7 @@
         },
         {
           "anchor": "han-xinyu",
-          "image": "",
+          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-51693fa112fd-han-xinyu.avif",
           "name": "Han Xinyu",
           "role": "Human practice",
           "cohort": "2025",
@@ -338,7 +346,7 @@
       "items": [
         {
           "anchor": "ruitong-bai",
-          "image": "",
+          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-98a8c11b1b6d-ruitong-bai.webp",
           "name": "Bai Ruitong",
           "role": "Visual Design",
           "cohort": "2024",
@@ -347,7 +355,7 @@
         },
         {
           "anchor": "yiling-chen",
-          "image": "",
+          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-adbd83b941a2-yiling-chen.webp",
           "name": "Chen Yiling",
           "role": "Visual Design",
           "cohort": "2024",
