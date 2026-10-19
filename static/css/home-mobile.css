@@ -81,9 +81,9 @@
   .ex--one .ex__path ol{gap:24px 20px}
   .ex__path li b{font-size:16px;line-height:1.35}
   .ex__path li span{font-size:14px;line-height:1.45}
-  .ex--one .bt__grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-  .ex--one .bt__card{height:auto;min-height:250px;grid-template-rows:auto auto minmax(110px,1fr);gap:10px;padding:14px}
-  .ex--one .bt__card em{font-size:10.5px;white-space:normal;line-height:1.4}
+  /* What we built: the three pairs stack; each pair stays side by side so the drawings stay large. */
+  .ex--one .bt__grid--wwb{grid-template-columns:minmax(0,1fr);row-gap:26px;max-width:720px}
+  .ex--one .bt__card--wwb{font-size:15px}
   .ex--one .ex__title{font-size:30px;line-height:1.15}
   .ex--one .ex__lede{font-size:15px;line-height:1.6}
   .ex--one .ex__grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
@@ -121,7 +121,7 @@
   .cz__read-body{max-height:none;overflow:visible}
 }
 @media (max-width:360px){
-  .ex--one .bt__grid{grid-template-columns:minmax(0,1fr)}
-  .ex--one .bt__card{min-height:260px}
+  .bt__group{column-gap:10px}
+  .ex--one .bt__card--wwb{font-size:14px}
   .cz__sw-btn{padding-inline:9px;font-size:12px}
 }

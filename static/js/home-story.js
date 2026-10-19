@@ -452,6 +452,7 @@
 
   /* ================= 09 BUILT ================= */
   function built() {
+    builtArt();
     H.$$('[data-art]').forEach(function (card) {
       var cv = H.$('canvas', card), kind = card.getAttribute('data-art'), ctx, w, h, hover = false, vis = false, t0 = performance.now(), r = H.rand(kind.length * 7);
       if (!cv) return; // SVG data-art slots are not legacy canvas cards.
@@ -509,6 +510,29 @@
       size(); addEventListener('resize', size);
       H.visibleLoop(card, draw, function (v) { vis = v; });
     });
+  }
+
+  /* What we built team artwork: the six illustrations are lazy in the markup (the section is last),
+     then fetched in idle time after the page has loaded, so they are ready before a paged jump or a
+     fast scroll reaches them. Each image fades in once decoded; without this script they simply show. */
+  function builtArt() {
+    var grid = H.$('[data-wwb]'); if (!grid) return;
+    var imgs = H.$$('.bt__art img', grid); if (!imgs.length) return;
+    var waiting = 0;
+    imgs.forEach(function (img) {
+      if (img.complete && img.naturalWidth) { img.classList.add('is-ready'); return; }
+      waiting++;
+      var done = function () {
+        img.classList.add('is-ready');
+        if (--waiting <= 0) grid.classList.remove('is-loading-art');
+      };
+      img.addEventListener('load', done, { once: true });
+      img.addEventListener('error', done, { once: true });
+    });
+    if (waiting && !H.reduced) grid.classList.add('is-loading-art');
+    var warm = function () { imgs.forEach(function (img) { if (img.loading === 'lazy') img.loading = 'eager'; }); };
+    var idle = function () { if (window.requestIdleCallback) requestIdleCallback(warm, { timeout: 4000 }); else setTimeout(warm, 1500); };
+    if (document.readyState === 'complete') idle(); else addEventListener('load', idle, { once: true });
   }
 
   /* ================= 10 EXPLORE ================= */
