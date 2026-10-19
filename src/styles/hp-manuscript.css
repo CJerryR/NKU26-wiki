@@ -11,7 +11,7 @@
 .hp-manuscript .hp-photo-group--three{grid-template-columns:repeat(3,minmax(0,1fr))}
 .hp-manuscript .hp-photo-item{min-width:0}
 .hp-manuscript .hp-image-label{font-size:.82rem;line-height:1.5;margin:0 0 .55rem;font-weight:400}
-.hp-manuscript figcaption{font-family:inherit;font-size:.88rem;font-weight:400;line-height:1.65;text-align:left;margin-top:.75rem;color:inherit;opacity:.88;overflow-wrap:anywhere}
+.hp-manuscript figcaption{font-family:inherit;font-size:.88rem;font-weight:400;line-height:1.65;text-align:center;margin-top:.75rem;color:inherit;opacity:.88;overflow-wrap:anywhere}
 .hp-manuscript .hp-download-label{font-size:.95rem}
 .hp-references p{font-size:.9rem;line-height:1.7;margin-block:.6rem;overflow-wrap:anywhere}
 .hp-references p:has(a){padding-left:1.5rem}

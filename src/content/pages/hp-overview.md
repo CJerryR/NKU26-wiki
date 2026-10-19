@@ -17,9 +17,15 @@ hidden: false
 
 <p data-hp-source-paragraph="42" class="hp-inpage-nav">On this page  <a href="#hp-source-44">Explore HP</a>  /  <a href="#hp-source-57">Agricultural challenge</a>  /  <a href="#hp-source-61">Our network</a>  /  <a href="#hp-source-64">Resources</a></p>
 
+:::lead
+
 <p data-hp-source-paragraph="43">Our work begins with a question: how can we provide earlier warning of agricultural nematode threats? Through surveys, dialogue, education, and collaboration, we connect our project with the situations in which it might be used. Explore our work through the four pathways below.</p>
 
+:::
+
 ## Explore Our Human Practices {#hp-source-44}
+
+:::cards{cols="2"}
 
 ### iHP  Bringing Feedback into Research {#hp-source-45}
 
@@ -45,6 +51,8 @@ hidden: false
 
 <p data-hp-source-paragraph="56"><a href="/hp-industry/"><strong>Explore Our Industry Engagement</strong><strong> →</strong></a></p>
 
+:::
+
 ## Starting with a Hidden Agricultural Threat {#hp-source-57}
 
 <p data-hp-source-paragraph="58"><strong>Plant-parasitic nematodes live in soil and roots, but symptoms above ground do not always reveal their cause. </strong>When crops turn yellow, wilt, or grow poorly, growers must distinguish water stress, nutrient problems, and pests or diseases. They also need to know when testing can still inform management. These practical questions motivated our project on early warning of agricultural nematode threats.</p>
@@ -59,7 +67,11 @@ hidden: false
 
 ## Resources for Continued Use {#hp-source-64}
 
+:::note
+
 <p data-hp-source-paragraph="65"><strong>Our work produced a questionnaire and statistical notes, interview records, sampling guidance, age-adapted lesson plans, and outreach materials.</strong><strong> </strong>These resources support our own research and offer practical examples for other teams: deriving survey questions from project questions, retaining field context alongside samples, and documenting teaching and feedback across partnerships. Relevant materials are presented in the resource sections of each page.</p>
+
+:::
 
 <p data-hp-source-paragraph="66"><a href="/hp-overview/">Back to HP Overview</a>   ·   <a href="/human-practices/">Next: iHP</a></p>
 

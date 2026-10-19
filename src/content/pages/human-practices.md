@@ -21,9 +21,13 @@ hidden: false
 
 ## From a Detectable Response to a Usable Test {#hp-source-69}
 
+:::lead
+
 <p data-hp-source-paragraph="70">Our initial experimental question was whether engineered yeast could sense candidate ascaroside signals and convert that response into a visible color. Surveys, expert interviews, university exchanges, and farm visits expanded this into more specific questions: when should testing take place, how might soil alter the signal, is a sample representative, and how would a user interpret the result?</p>
 
 <p data-hp-source-paragraph="71"><strong>Our Human Practices and laboratory research therefore inform each other. </strong>Wet-lab and dry-lab insights help frame survey and interview questions; responses and professional advice add evidence for discussions about targets, models, controls, and conditions of use. The following sections trace these connections. Full accounts of the activities appear on the Investigation page.</p>
+
+:::
 
 ## A Two-Way Link Between the Questionnaire and Research {#hp-source-73}
 
@@ -39,13 +43,35 @@ hidden: false
 
 <p data-hp-source-paragraph="79">When asked to select up to three features of an ideal testing tool, 261 respondents chose ease of use (70.7%), 208 chose accuracy and reliability (56.4%), and 199 chose affordability (53.9%). These responses made usability, trustworthy results, and accessible cost priorities in our discussions of potential use. Percentages use all 369 responses to this multiple-choice question as the denominator.</p>
 
+:::note
+
 <p data-hp-source-paragraph="80">The questionnaire mainly reached students and people working in research or education, with many submissions from Shandong and Tianjin. We use it to understand the awareness and expectations of the people reached, alongside expert advice and growers’ accounts of specific needs.</p>
 
-<figure class="hp-source-figure"><div class="hp-photo-group"><div class="hp-photo-item"><div data-hp-source-paragraph="82"><a href="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-ad4e36ac9e1bffd1-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-ad4e36ac9e1bffd1-00.json" alt="Geographic distribution of 369 survey responses across 23 provincial-level regions in China" loading="lazy" width="552" height="387"></a></div></div></div><figcaption data-hp-source-paragraph="83">Figure 3. Geographic distribution of 369 survey responses across 23 provincial-level regions in China</figcaption></figure>
+:::
 
-<figure class="hp-source-figure"><div class="hp-photo-group"><div class="hp-photo-item"><div data-hp-source-paragraph="84"><a href="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-52a800871779717b-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-52a800871779717b-00.json" alt="Respondent Awareness of Plant-Parasitic Nematodes (e.g., Root-Knot and Cyst Nematodes): Questionnaire Data" loading="lazy" width="552" height="274"></a></div></div></div><figcaption data-hp-source-paragraph="85">Figure 4. Respondent Awareness of Plant-Parasitic Nematodes (e.g., Root-Knot and Cyst Nematodes): Questionnaire Data</figcaption></figure>
+:::figure
 
-<figure class="hp-source-figure"><div class="hp-photo-group"><div class="hp-photo-item"><div data-hp-source-paragraph="86"><a href="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-5c1fee7fe2781c23-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-5c1fee7fe2781c23-00.json" alt="Desired Features of an Ideal Nematode Detection Tool as Rated by Participants: Questionnaire Data" loading="lazy" width="552" height="302"></a></div></div></div><figcaption data-hp-source-paragraph="87">Figure 5. Desired Features of an Ideal Nematode Detection Tool as Rated by Participants: Questionnaire Data</figcaption></figure>
+<div class="hp-photo-item"><div data-hp-source-paragraph="82"><a href="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-ad4e36ac9e1bffd1-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-ad4e36ac9e1bffd1-00.json" alt="Geographic distribution of 369 survey responses across 23 provincial-level regions in China" loading="lazy" width="552" height="387"></a></div></div>
+
+<p><span data-hp-source-paragraph="83">Figure 3. Geographic distribution of 369 survey responses across 23 provincial-level regions in China</span></p>
+
+:::
+
+:::figure
+
+<div class="hp-photo-item"><div data-hp-source-paragraph="84"><a href="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-52a800871779717b-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-52a800871779717b-00.json" alt="Respondent Awareness of Plant-Parasitic Nematodes (e.g., Root-Knot and Cyst Nematodes): Questionnaire Data" loading="lazy" width="552" height="274"></a></div></div>
+
+<p><span data-hp-source-paragraph="85">Figure 4. Respondent Awareness of Plant-Parasitic Nematodes (e.g., Root-Knot and Cyst Nematodes): Questionnaire Data</span></p>
+
+:::
+
+:::figure
+
+<div class="hp-photo-item"><div data-hp-source-paragraph="86"><a href="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-5c1fee7fe2781c23-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-5c1fee7fe2781c23-00.json" alt="Desired Features of an Ideal Nematode Detection Tool as Rated by Participants: Questionnaire Data" loading="lazy" width="552" height="302"></a></div></div>
+
+<p><span data-hp-source-paragraph="87">Figure 5. Desired Features of an Ideal Nematode Detection Tool as Rated by Participants: Questionnaire Data</span></p>
+
+:::
 
 ## Question One  How Early Is Early Enough {#hp-source-88}
 
@@ -53,7 +79,11 @@ hidden: false
 
 <p data-hp-source-paragraph="90">This prompted us to define “early” more precisely: when should a sample be collected, which decision should the result inform, and how long can the user wait? These discussions help our wet-lab and dry-lab teams relate detection goals to potential use.</p>
 
+:::note
+
 <p data-hp-source-paragraph="91">Pre-planting screening consequently became an important setting for evaluating potential value. The contribution of HP was to clarify the timing and decision that testing should serve, rather than judging usefulness by readout speed alone.</p>
+
+:::
 
 ## Question Two  How Does Soil Affect Signals and Color {#hp-source-92}
 
@@ -61,7 +91,11 @@ hidden: false
 
 <p data-hp-source-paragraph="94">This feedback prompted us to consider the soil environment when discussing signal interpretation. Signal stability, background interference, and differences between laboratory and field conditions are shared considerations for the wet-lab and dry-lab teams.</p>
 
+:::note
+
 <p data-hp-source-paragraph="95">Qian Liu also suggested progressing from simpler sample conditions to real field samples. Her advice informed discussions of validation priorities and helped us understand the relationship between a laboratory response and potential field use.</p>
+
+:::
 
 ## Question Three  What Makes a Sample Meaningful and a Test Usable {#hp-source-97}
 
@@ -69,9 +103,15 @@ hidden: false
 
 <p data-hp-source-paragraph="99">Our soil collection and sampling guidance therefore need to retain sample identifiers, crop, location, date, and treatment history. These records allow later experiments to compare sample conditions and help the dry-lab team distinguish information suitable for analysis from differences that need separate consideration.</p>
 
+:::note
+
 <p data-hp-source-paragraph="100">For end users, Yao emphasized affordability and straightforward interpretation, while Pang recommended minimizing operational steps. Together, their advice extended portability from a device feature to the whole workflow: sampling, preparation, reaction, interpretation, and post-test handling all need to be practical.</p>
 
+:::
+
 ## Lessons for Our Research and Other Teams {#hp-source-102}
+
+:::features
 
 ### Inputs to Our Wet-Lab and Dry-Lab Work {#hp-source-103}
 
@@ -86,6 +126,8 @@ hidden: false
 <p data-hp-source-paragraph="108">Third, when teaching or outreach partnerships extend a survey’s reach, record course participation and questionnaire participation separately. Other teams can adapt this collaborative approach while maintaining clear definitions for each set of participation statistics.</p>
 
 <p data-hp-source-paragraph="109">Other teams can document feedback using these fields: project question, stakeholder and date, main finding, team discussion, and follow-up direction. Source records can remain within the team, while public pages present thematic summaries with sensitive information removed. This provides a practical way to connect different sources of feedback with project discussions.</p>
+
+:::
 
 <p data-hp-source-paragraph="111"><a href="/hp-overview/">Back to HP Overview</a>   ·   <a href="/education/">Next: Education</a></p>
 
@@ -114,6 +156,8 @@ These records describe soil collection and provenance; no ascaroside measurement
 
 ## References and Supporting Evidence {#hp-original-references toc="References and Supporting Evidence"}
 
+:::refs
+
 [1] Conserved nematode signalling molecules elicit plant defenses and pathogen resistance. Nature Communications (2015).
 
 https://doi.org/10.1038/ncomms8795
@@ -129,5 +173,7 @@ https://pmc.ncbi.nlm.nih.gov/articles/PMC8590397/
 [4] Nankai University Xiangyang Initiative, 2026 Summer Teaching-Support Program Evaluation Report. Internal project source.
 
 Team evidence supporting these pages includes questionnaire versions and response records; Tianjin agricultural visit records; anonymized expert and industry discussion summaries; inter-team exchange records; sampling guidance and sample records; course materials and teaching-partner records; and partnership planning documents. Technical performance claims should be read alongside the experimental and modeling evidence on the corresponding project pages.
+
+:::
 
 </section>
