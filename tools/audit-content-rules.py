@@ -73,13 +73,21 @@ def main():
         heading_nodes=[n for n in article.walk() if n.tag in ('h2','h3','h4','h5','h6')]
         h2=[n for n in heading_nodes if n.tag=='h2'];h3=[n for n in heading_nodes if n.tag=='h3']
         for n in h2:
-            if re.match(r'^\s*(?:\d+(?:\.\d+)*[.)]?|[IVX]+[.)])\s+',n.text()):failures.append(f'{slug}: h2 still numbered: {n.text()[:100]}')
+            label=n.text().strip()
+            calendar_date=re.match(r'^\d{1,2}\s+(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{4}\b',label)
+            if not calendar_date and re.match(r'^\s*(?:\d+(?:\.\d+)*[.)]?|[IVX]+[.)])\s+',label):failures.append(f'{slug}: h2 still numbered: {label[:100]}')
+        for section in (n for n in article.walk() if n.has('doc-section') and n.attrs.get('data-num')):
+            children=[n for n in section.walk() if n.tag=='h3' and not any(n.inside(cls=c) for c in ('cards','card','timeline','features','member-grid','credit-grid','person-name','wf'))]
+            chapter=int(section.attrs['data-num'])
+            for ordinal,n in enumerate(children,1):
+                expected=f'{chapter}.{ordinal} '
+                if not n.text().strip().startswith(expected):failures.append(f'{slug}: expected h3 {expected.strip()}: {n.text()[:100]}')
         nonarchive=slug!='source-archive'
         if nonarchive:
             for n in nodes:
                 if n.tag=='a' and ('source-archive' in n.attrs.get('href','') or 'data-source-document' in n.attrs): failures.append(f'{slug}: manuscript/archive link remains: {n.text()[:80]}')
                 if n.tag not in ('script','style') and not any(isinstance(c,Node) for c in n.children):
-                    if re.search(r'Historical source documents|Original submission|历史原稿|历史文档',n.text(),re.I): failures.append(f'{slug}: historical document text remains: {n.text()[:80]}')
+                    if re.search(r'Historical source documents|Original submission|历史原稿|历史文档|历史资料',n.text(),re.I): failures.append(f'{slug}: historical document text remains: {n.text()[:80]}')
             for n in article.walk():
                 if n.tag=='p' and re.search(r'Back to HP Overview|Next:\s*(?:Education|iHP|Investigation)',n.text(),re.I):failures.append(f'{slug}: duplicate body paging remains')
         ids=Counter(n.attrs['id'] for n in nodes if 'id' in n.attrs)
