@@ -338,6 +338,7 @@
 .prose .credit-card__topic { color: var(--ink); font-weight: 620; }
 
 .credit-card__more { display: flex; flex-direction: column; }
+.credit-card__more[hidden] { display: none; }
 .credit-card__more > .credit-card__list { margin-top: .6em; }
 .credit-card__more > summary {
   order: 1; align-self: flex-start; display: inline-flex; align-items: center; gap: 6px;
