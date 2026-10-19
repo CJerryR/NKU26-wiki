@@ -321,6 +321,13 @@
   function loop() {
     var sec = H.$('[data-loop]'); if (!sec) return;
     var svg = H.$('[data-lp-svg]', sec), board = H.$('[data-lp-board]', sec), card = H.$('[data-lp-card]', sec);
+    board.tabIndex = 0;
+    board.setAttribute('role', 'region');
+    board.setAttribute('aria-label', 'Field and laboratory feedback diagram. Scroll horizontally to explore.');
+    var swipeHint = document.createElement('p');
+    swipeHint.className = 'lp__mobile-hint';
+    swipeHint.textContent = 'Swipe sideways to explore the full diagram. Tap a step to read its role.';
+    board.insertAdjacentElement('afterend', swipeHint);
     /* grid from the team's sketch (B11): dry lab | HP (questionnaire · centre · teaching/interviews) | wet lab */
     var C = [130, 370, 600, 840, 1110], R = [140, 310, 460], BOT = 566;
     var N = {
@@ -382,6 +389,10 @@
       g.addEventListener('pointerleave', function () { if (!playing) { focus(null); card.hidden = true; } });
       g.addEventListener('click', function () { focus([k]); show(k); });
       g.addEventListener('focus', function () { focus([k]); show(k); });
+      g.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); focus([k]); show(k); }
+        if (event.key === 'Escape') { focus(null); card.hidden = true; }
+      });
     });
     /* drawing the connections is this page's step */
     var drawn = false, dtm = [];
@@ -408,10 +419,11 @@
       });
     }
     function show(k) {
-      var n = N[k], r = board.getBoundingClientRect(), sx = r.width / 1200, sy = r.height / 620;
+      var n = N[k], r = board.getBoundingClientRect(), drawing = svg.getBoundingClientRect(), sx = drawing.width / 1200, sy = drawing.height / 620;
       card.innerHTML = '<b>' + n[2] + '</b>' + n[4] + '<em>' + QUESTION[n[3]] + '</em>';
       var b = box(k), x = n[0] * sx, y = b.b * sy + 10; card.hidden = false;
-      card.style.left = H.clamp(x - 125, 0, r.width - 250) + 'px'; card.style.top = H.clamp(y, 0, r.height - 110) + 'px';
+      card.style.left = H.clamp(x - 125, board.scrollLeft, board.scrollLeft + Math.max(0, r.width - 250)) + 'px';
+      card.style.top = H.clamp(y, 0, drawing.height - 110) + 'px';
     }
     H.$$('[data-q]', sec).forEach(function (b) {
       b.addEventListener('click', function () {

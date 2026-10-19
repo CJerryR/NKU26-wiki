@@ -47,9 +47,11 @@ npm run preview   # 预览构建产物，地址以终端输出为准
 
 `src/content/pages/*.md` 由正文 JSON 导出，不直接修改。Tina 保存后，如需同步普通页面预览，可运行 `node tools/export-tina.mjs`；正式构建会自动导出。正文写法见 [内容编辑说明](src/content/README.md)。
 
-工作区中的 `NKU26-wiki-v8.0`、`NKU26-wiki-v8.0-content` 和 `outputs/` 是历史副本与交付记录；当前开发和部署使用本目录。
+本地存在历史副本和并行任务，目录日期及 README 标题不代表源码已同步。选目录前先核对工作区根目录的 `WORKSPACE.json`、聊天归属、分支与 HEAD；任务修改、联合合并和上线分别使用 `workspace/tasks/<任务>/`、`workspace/integration/`、`workspace/release/`。旧 `outputs/` 内仍有待合并成果，保留原位，不作为新任务基线。
 
 ## 当前功能与页面
+
+本地手机适配（未发布）：基于 V10.2.1 最新开屏，优化全站触控导航、搜索与目录、正文及模型控件；首页增加独立的 `home-mobile.css`，覆盖矮屏和横屏，并修复流程图横滑后的提示卡定位。夜空、剪纸素材、开场滚动、原稿及科研数据保持不变。浏览器尺寸验收不替代 iOS/Android 真机检查。
 
 - 首页：树木根系首屏、世界案例地图、中国物种地图、四阶段土壤故事、ascaroside 检测故事、HP 数据地图及末页入口。
 - Model：总览和 Docking、MD、ODE、Eco 四章；Eco 比较器按给定密度计算收益，不运行旧版 ODE 预测器。
