@@ -4,6 +4,7 @@
  * Runtime fetches use only local files or the team's explicit iGEM asset mapping.
  */
 import fs from 'node:fs/promises';import path from 'node:path';import crypto from 'node:crypto';import zlib from 'node:zlib';
+import {transform} from 'esbuild';
 const root=process.cwd(), source=path.join(root,'vendor/nemaklear-original'),dest=path.join(root,'static/widgets/nemaklear');
 const runtime=path.join(root,'node_modules/pyodide');const cache=path.resolve(root,'../../tmp/nemaklear-browser-runtime/package');
 const sha=b=>crypto.createHash('sha256').update(b).digest('hex');
@@ -43,4 +44,11 @@ for(const [file,object] of [['worker.js','globalThis'],['bridge.js','window']]){
  // bridge.js is a classic script, so use its captured script base URL.
  let replacement=mappedFetch(object);if(object==='window')replacement=replacement.replace('import.meta.url','base');
  s=s.replace(`${object}.fetch.bind(${object})`,replacement);await fs.writeFile(p,s);
+}
+// Compact deployment copies only. Original vendor files and their hashes stay intact.
+// Preserve module exports, string-addressed runtime names and license notices.
+for(const file of ['runtime/pyodide-core.js','runtime/pyodide-loader.js','worker.js','bridge.js']){
+ const p=path.join(dest,file),input=await fs.readFile(p,'utf8');
+ const output=await transform(input,{loader:'js',minify:true,legalComments:'inline',target:'es2020'});
+ await fs.writeFile(p,output.code);
 }
