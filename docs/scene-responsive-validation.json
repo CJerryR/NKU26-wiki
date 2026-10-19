@@ -1,0 +1,199 @@
+{
+  "validation_id": "scene-responsive-20261019-final",
+  "baseline_commit": "57eef5b31c39ff050d8b4eb754af66612f737c2e",
+  "browser": "Chrome viewport emulation",
+  "viewports": [
+    [
+      320,
+      568
+    ],
+    [
+      360,
+      640
+    ],
+    [
+      375,
+      667
+    ],
+    [
+      390,
+      844
+    ],
+    [
+      414,
+      896
+    ],
+    [
+      430,
+      932
+    ],
+    [
+      568,
+      320
+    ],
+    [
+      667,
+      375
+    ],
+    [
+      844,
+      390
+    ],
+    [
+      768,
+      1024
+    ],
+    [
+      820,
+      1180
+    ],
+    [
+      1024,
+      768
+    ],
+    [
+      1099,
+      800
+    ],
+    [
+      1100,
+      800
+    ],
+    [
+      1280,
+      720
+    ],
+    [
+      1366,
+      768
+    ],
+    [
+      1440,
+      900
+    ],
+    [
+      1536,
+      864
+    ],
+    [
+      1920,
+      1080
+    ],
+    [
+      2560,
+      1440
+    ],
+    [
+      3440,
+      1440
+    ],
+    [
+      3840,
+      2160
+    ],
+    [
+      800,
+      1000
+    ],
+    [
+      801,
+      1000
+    ],
+    [
+      1366,
+      640
+    ],
+    [
+      1366,
+      641
+    ],
+    [
+      1920,
+      600
+    ]
+  ],
+  "scene_pages": [
+    "/attributions/",
+    "/background/",
+    "/contribution/",
+    "/description/",
+    "/education/",
+    "/engineering/",
+    "/experiments/",
+    "/human-practices/",
+    "/licensing/",
+    "/model-docking/",
+    "/model-eco/",
+    "/model-md/",
+    "/model-ode/",
+    "/model/",
+    "/parts/",
+    "/results/",
+    "/safety-and-security/",
+    "/team/"
+  ],
+  "plain_pages": [
+    "hp-industry",
+    "hp-investigation",
+    "hp-overview",
+    "part-collection",
+    "protocols",
+    "source-archive"
+  ],
+  "checks": {
+    "scene_states": 972,
+    "plain_first_screens": 162,
+    "css_only_first_screens": 162,
+    "failures": 0,
+    "phase_positions_checked": true
+  },
+  "css_only_viewports": [
+    [
+      320,
+      568
+    ],
+    [
+      390,
+      844
+    ],
+    [
+      768,
+      1024
+    ],
+    [
+      844,
+      390
+    ],
+    [
+      1366,
+      640
+    ],
+    [
+      1920,
+      1080
+    ],
+    [
+      3840,
+      2160
+    ],
+    [
+      1366,
+      641
+    ],
+    [
+      1920,
+      600
+    ]
+  ],
+  "raw_evidence": "tmp/scene-qa/ (local screenshots and measured DOM bounds)",
+  "runtime_source_sha256": {
+    "src/components/page/SceneHero.astro": "57324fb9944916806f66aebec0b89d47601535cb7265e5cf354de5ed514ef032",
+    "src/lib/scene-framing.ts": "db407ec553fea45d322aa237fc549dfe2e0747e4fdffbcf2f0fa51821fd134df",
+    "src/scripts/scene-hero.ts": "9d8f17c5d79974c5fec7632f0c2b682ad499212c0cfd4ceb35b33bdc8cdd9e2d",
+    "src/scripts/scene-loading.js": "5e2b984fe6e8f3741bb2211fb33088d76b424881e12bcb343985c6bd4c07b502",
+    "src/styles/scene-hero.css": "8525379343949c0c4472e00ca568b1864eb179573fba60e0b32277c02030eb10",
+    "src/styles/page.css": "33f6e8a80fc5a81c61cd23aa8d6a9ffe8f91db3ac2cc7abc73e09690a1866592"
+  },
+  "source_path": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/tasks/scene-motion",
+  "preview_port": 8931
+}

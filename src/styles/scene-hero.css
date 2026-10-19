@@ -6,6 +6,7 @@
 .scene {
   --u: calc(min(100vw, 100svh * 16 / 9) / 1600);
   --ty: var(--ty-d);
+  --scene-art-bottom: clamp(18px, 3svh, 36px);
   position: relative; height: 180svh; background: var(--paper);
 }
 .scene__stage {
@@ -19,12 +20,22 @@
   transform: translate(-50%, -50%); border-radius: 50%; pointer-events: none; z-index: 0;
   background: radial-gradient(closest-side, rgba(36, 28, 43, .16), rgba(36, 28, 43, .06) 55%, transparent);
 }
+.scene__composition {
+  position: absolute; inset: calc(var(--nav-h) + 18px) 0 var(--scene-art-bottom);
+  display: flex; flex-direction: column; gap: 24px; z-index: 1;
+}
+.scene__art { position: relative; flex: 1; min-height: 0; container-type: size; }
 .scene__set {
-  position: absolute; left: 50%; top: 50%; z-index: 1; pointer-events: none;
-  width: calc(var(--cw) * var(--u)); height: calc(var(--ch) * var(--u)); transform: translate(-50%, -50%);
+  --art-origin-y: clamp(40cqh, calc(100cqh - 50svh + var(--scene-art-bottom)), 60cqh);
+  --art-half-width: calc(50cqw - clamp(16px, 2vw, 36px));
+  --art-unit: min(var(--u), calc(var(--art-half-width) / var(--frame-left)), calc(var(--art-half-width) / var(--frame-right)), calc(var(--art-origin-y) / var(--frame-top)), calc((100cqh - var(--art-origin-y)) / var(--frame-bottom)));
+  position: absolute; left: 50%; top: var(--art-origin-y); z-index: 1; pointer-events: none;
+  width: calc(var(--cw) * var(--art-unit)); height: calc(var(--ch) * var(--art-unit));
+  transform: translate(-50%, -50%);
 }
 .scene__set--mobile { display: none; }
 .scene__layer {
+  --u: var(--art-unit);
   position: absolute; z-index: var(--z);
   left: calc(50% + (var(--x) - var(--w) / 2) * var(--u)); top: calc(50% + (var(--y) - var(--h) / 2) * var(--u));
   width: calc(var(--w) * var(--u)); height: calc(var(--h) * var(--u));
@@ -33,15 +44,18 @@
   backface-visibility: hidden;
 }
 .scene--live .scene__layer { will-change: transform, opacity; }
+.scene--live .scene__set { will-change: transform; }
 .scene--noart .scene__set, .scene--noart .scene__floor { display: none; }
 /* Inline atlas preview gives the title its complete composition immediately. */
 .scene--preview .scene__layer { background-image: var(--atlas-preview, var(--atlas)); }
+.scene[data-scene-preview] .scene__set:not([data-scene-atlas-ready]) .scene__layer { background-image: var(--atlas-preview, var(--atlas)); }
 .scene--noground .scene__ground { display: none; }
 
 /* text */
 .scene__crumbs {
-  position: absolute; z-index: 3; top: calc(var(--nav-h) + 18px);
-  left: max(22px, calc((100% - (var(--rail) + var(--gutter) + var(--measure) + var(--bleed))) / 2));
+  position: relative; z-index: 3; flex: none; align-self: flex-start;
+  margin-left: max(22px, calc((100% - (var(--rail) + var(--gutter) + var(--measure) + var(--bleed))) / 2));
+  max-width: calc(100% - 44px);
 }
 .scene__crumbs ol { color: var(--ink-3); }
 .scene__crumbs a { color: var(--ink-2); }
@@ -74,6 +88,16 @@
   .scene__set--mobile { display: block; }
   .scene__floor { top: calc(50% + 560 * var(--u)); width: calc(900 * var(--u)); height: calc(200 * var(--u)); }
   .scene__h1 { font-size: min(var(--title-size-m, clamp(44px, 13vw, 76px)), var(--h1-cap, 76px)); }
+}
+
+/* Phone landscape and short desktop windows: give the title its own column. */
+@media (max-width: 1099px) {
+  .scene { --scene-art-bottom: calc(80px + env(safe-area-inset-bottom, 0px)); }
+}
+@media (max-height: 640px) and (min-width: 560px) and (min-aspect-ratio: 4/5) {
+  .scene__art { margin-left: 44%; }
+  .scene__title { left: 22%; width: calc(44% - 36px); top: calc(var(--nav-h) + 64px); transform: translateX(-50%); }
+  .scene__h1 { font-size: min(clamp(26px, 5vw, 52px), calc((44vw - 44px) / var(--title-word-factor))); }
 }
 
 /* reduced motion: the closed composition as a still hero, nothing pinned */

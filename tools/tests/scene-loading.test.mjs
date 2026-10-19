@@ -9,8 +9,9 @@ const classes = (...initial) => {
 };
 function boot({ mobile = false, loading = true, preview = false } = {}) {
   const html = { classList: classes(...(loading ? ['scene-loading'] : [])) };
+  const atlases = { mobile: { dataset: { src: 'mobile.webp' } }, desktop: { dataset: { src: 'desktop.webp' } } };
   const root = { classList: classes(...(preview ? ['scene--preview'] : [])), dataset: { scenePortrait: '(max-aspect-ratio: 4/5)', sceneGround: 'ground.webp', sceneSky: 'sky.webp' },
-    querySelector: selector => ({ dataset: { src: selector.includes('mobile') ? 'mobile.webp' : 'desktop.webp' } }) };
+    querySelector: selector => atlases[selector.includes('mobile') ? 'mobile' : 'desktop'] };
   if (preview) root.dataset.scenePreview = 'true';
   const images = [], timers = [];
   class Image {
@@ -19,7 +20,7 @@ function boot({ mobile = false, loading = true, preview = false } = {}) {
   }
   vm.runInNewContext(source, { document: { documentElement: html, querySelector: () => root }, matchMedia: () => ({ matches: mobile }), Image,
     setTimeout: callback => { timers.push(callback); return timers.length - 1; }, clearTimeout: id => { timers[id] = () => {}; } });
-  return { html, root, images, timers };
+  return { html, root, images, timers, atlases };
 }
 async function loaded(image) { const result = image.onload(); image.decodeOK(); await result; }
 const settle = () => new Promise(resolve => setImmediate(resolve));
@@ -71,4 +72,11 @@ test('a broken CDN atlas keeps the inline composition visible', async () => {
   assert.ok(t.root.classList.contains('scene--preview'));
   assert.ok(!t.root.classList.contains('scene--noart'));
   assert.ok(!t.html.classList.contains('scene-loading'));
+});
+
+test('decoding one orientation keeps the other orientation on its inline preview', async () => {
+  const t = boot({ preview: true });
+  await Promise.all(t.images.map(loaded)); await settle();
+  assert.equal(t.atlases.desktop.dataset.sceneAtlasReady, 'true');
+  assert.equal(t.atlases.mobile.dataset.sceneAtlasReady, undefined);
 });

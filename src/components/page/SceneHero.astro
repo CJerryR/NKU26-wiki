@@ -17,6 +17,7 @@ import { GROUND_URL, SKY_URL, PORTRAIT_QUERY } from '../../data/scenes';
 import sceneLoading from '../../scripts/scene-loading.js?raw';
 import type { ResolvedScene, SceneKind, SceneLayer, AtlasSet } from '../../data/scenes';
 import { inlineMd } from '../../lib/text';
+import { sampleScene } from '../../lib/scene-framing';
 
 interface Props { scene: ResolvedScene; title: string; heading?: string; crumbs: string[] }
 const { scene, title, heading, crumbs } = Astro.props;
@@ -38,12 +39,21 @@ function layerStyle(l: SceneLayer, atlas: AtlasSet): string {
 const motion = (l: SceneLayer) => JSON.stringify({ f: l.from, t: l.to, w: l.win ?? [0, 1], d: l.depth ?? 0 });
 const kinds: SceneKind[] = ['desktop', 'mobile'];
 const hasPreview = kinds.every(kind => !!scene.sets[kind].atlas.preview);
+const frameStyle = (kind: SceneKind) => {
+  const { set, atlas } = scene.sets[kind];
+  const { bounds } = sampleScene(set.layers.map(l => ({
+    width: l.w, height: l.w * atlas.frames[l.prop][3] / atlas.frames[l.prop][2],
+    depth: l.depth ?? 0, from: l.from, to: l.to, window: l.win ?? [0, 1],
+  })), 0);
+  return `--frame-left:${Math.max(1, -bounds.left)};--frame-right:${Math.max(1, bounds.left + bounds.width)};--frame-top:${Math.max(1, -bounds.top)};--frame-bottom:${Math.max(1, bounds.top + bounds.height)}`;
+};
 const d = scene.sets.desktop.set.title ?? {}, m = scene.sets.mobile.set.title ?? {};
 const longest = Math.max(...(heading ?? title).replace(/[*_`]/g, '').split(/\s+/).map((w) => w.length));
 const h1Cap = longest > 11 ? `calc(88vw / ${(longest * 0.56).toFixed(2)})` : null;
 const stageVars = [
   `--ground:url(${GROUND_URL})`, `--sky:url(${SKY_URL})`,
   `--ty-d:${d.y ?? 0}`, `--ty-m:${m.y ?? 0}`,
+  `--title-word-factor:${(longest * 0.56).toFixed(2)}`,
   ...(d.fontSize ? [`--title-size-d:calc(${d.fontSize} * var(--u))`] : []),
   ...(m.fontSize ? [`--title-size-m:calc(${m.fontSize} * var(--u))`] : []),
 ].join(';');
@@ -52,30 +62,34 @@ const stageVars = [
   <div class="scene__stage">
     <div class="scene__floor" aria-hidden="true" data-scene-floor></div>
     <div class="scene__ground" aria-hidden="true"></div>
-    {kinds.map((kind) => {
-      const { set, atlas, url } = scene.sets[kind];
-      return (
-        <div class={`scene__set scene__set--${kind}`} aria-hidden="true" data-scene-set={kind}
-          data-canvas={set.canvas.join(",")} data-src={url}
-          data-title={JSON.stringify({ y: set.title?.y ?? 0, toY: set.title?.toY ?? -200, toScale: set.title?.toScale ?? 0.65 })}
-          style={`--cw:${set.canvas[0]};--ch:${set.canvas[1]};--atlas:url(${url});--atlas-preview:url(${atlas.preview || url})`}>
-          {[...set.layers].sort((a, b) => (a.z ?? 1) - (b.z ?? 1)).map((l) => (
-            <div class="scene__layer" data-scene-layer={l.id} data-motion={motion(l)} style={layerStyle(l, atlas)}></div>
-          ))}
-        </div>
-      );
-    })}
+    <div class="scene__composition">
     <nav class="crumbs scene__crumbs" aria-label="Breadcrumb">
       <ol>
         <li><a href="/index.html">Home</a></li>
         {trail.map((c, i) => <li aria-current={i === trail.length - 1 ? 'page' : undefined}>{c}</li>)}
       </ol>
     </nav>
+    <div class="scene__art">
+    {kinds.map((kind) => {
+      const { set, atlas, url } = scene.sets[kind];
+      return (
+        <div class={`scene__set scene__set--${kind}`} aria-hidden="true" data-scene-set={kind}
+          data-canvas={set.canvas.join(",")} data-src={url}
+          data-title={JSON.stringify({ y: set.title?.y ?? 0, toY: set.title?.toY ?? -200, toScale: set.title?.toScale ?? 0.65 })}
+          style={`--cw:${set.canvas[0]};--ch:${set.canvas[1]};${frameStyle(kind)};--atlas:url(${url});--atlas-preview:url(${atlas.preview || url})`}>
+          {[...set.layers].sort((a, b) => (a.z ?? 1) - (b.z ?? 1)).map((l) => (
+            <div class="scene__layer" data-scene-layer={l.id} data-motion={motion(l)} style={layerStyle(l, atlas)}></div>
+          ))}
+        </div>
+      );
+    })}
+    </div>
+    </div>
     <div class="scene__title" data-scene-title>
       <h1 id="page-title" class="scene__h1" style={h1Cap ? `--h1-cap:${h1Cap}` : undefined} set:html={inlineMd(heading ?? title)} />
     </div>
   </div>
-  <noscript><style>.scene { height: auto !important; } .scene__stage { position: relative !important; } .scene-tear { --tear: 0px !important; } .scene--preview .scene__layer { background-image: var(--atlas) !important; }</style></noscript>
+  <noscript><style>.scene { height: auto !important; } .scene__stage { position: relative !important; } .scene-tear { --tear: 0px !important; } .scene[data-scene-preview] .scene__layer { background-image: var(--atlas) !important; }</style></noscript>
 </section>
 <script is:inline set:html={sceneLoading} />
 <div class="scene-tear" data-tone="light" aria-hidden="true"></div>

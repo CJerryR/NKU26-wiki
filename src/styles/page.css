@@ -98,3 +98,11 @@
   .hero__facts { gap: 8px; }
   .chip { padding: 8px 13px 9px; font-size: 13.5px; }
 }
+
+/* Keep long page names readable above the mobile outline in short windows. */
+@media (max-height: 640px) and (min-width: 560px) {
+  .hero { padding-top: calc(var(--nav-h) + 18px); }
+  .hero__inner { padding-bottom: 24px; }
+  .hero__title { max-width: 100%; margin-top: 12px; font-size: clamp(28px, 4vw, 44px); }
+  .hero__sub { margin-top: 14px; font-size: 16px; line-height: 1.45; }
+}

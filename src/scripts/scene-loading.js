@@ -16,7 +16,10 @@
     finished = true;
     for (const asset of assets) {
       if (asset.fallback === 'scene--noart' && root.dataset.scenePreview) {
-        if (asset.ready) root.classList.remove('scene--preview');
+        if (asset.ready) {
+          if (atlas) atlas.dataset.sceneAtlasReady = 'true';
+          root.classList.remove('scene--preview');
+        }
       } else if (asset.ready) {
         root.classList.remove(asset.fallback);
       } else {
