@@ -47,7 +47,7 @@ for(const [file,object] of [['worker.js','globalThis'],['bridge.js','window']]){
 }
 // Compact deployment copies only. Original vendor files and their hashes stay intact.
 // Preserve module exports, string-addressed runtime names and license notices.
-for(const file of ['runtime/pyodide-core.js','runtime/pyodide-loader.js','worker.js','bridge.js']){
+for(const file of ['runtime/pyodide-core.js','runtime/pyodide-loader.js']){
  const p=path.join(dest,file),input=await fs.readFile(p,'utf8');
  const output=await transform(input,{loader:'js',minify:true,legalComments:'inline',target:'es2020'});
  await fs.writeFile(p,output.code);
