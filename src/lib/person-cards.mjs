@@ -13,7 +13,20 @@
 // Line breaks render as spaces in HTML anyway; folding them keeps a blank line typed into a
 // Tina textarea from ending the raw HTML block early.
 const esc = (s) => String(s ?? '').replace(/\s*\n\s*/g, ' ').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const paragraphs = (s) => String(s || '').split(/\n\s*\n/).map(t => t.trim()).filter(Boolean).map(t => `<p>${esc(t)}</p>`).join('');
+// The agreed species names/aliases are plain Tina text, not author-supplied HTML.
+// Escape first and add only our own <em> tags. Identifier/path boundaries keep
+// chemical formulae (CeCl3), filenames and material IDs (pRS315-Mi) untouched.
+const speciesNames = [
+  'Saccharomyces cerevisiae', 'S.c',
+  'Meloidogyne incognita', 'Mi',
+  'Caenorhabditis elegans', 'Ce',
+  'Heterodera glycines', 'H. glycines',
+  'Arthrobotrys oligospora', 'A. oligospora',
+];
+const speciesPattern = speciesNames.map(s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
+const speciesText = new RegExp(`(?<![\\p{L}\\p{N}_./#-])(?:${speciesPattern})(?![\\p{L}\\p{N}_/#-]|\\.[\\p{L}\\p{N}_])`, 'gu');
+const scientificText = s => esc(s).replace(speciesText, value => `<em>${value}</em>`);
+const paragraphs = (s) => String(s || '').split(/\n\s*\n/).map(t => t.trim()).filter(Boolean).map(t => `<p>${scientificText(t)}</p>`).join('');
 const slug = s => String(s || '').toLowerCase().replace(/[^a-z0-9-]/g, '-').replace(/-+/g,'-').replace(/^-|-$/g,'') || 'member';
 // Optional portraits can only use site-relative or HTTPS image paths.
 const photoSrc = p => /^(?:https:\/\/|\/(?!\/))/.test(p.image || '') ? p.image : '';
@@ -30,7 +43,7 @@ const portrait = (p, cls) => {
   return src ? `<div class="${cls}"><img src="${esc(src)}" alt="${esc(p.name)}" loading="lazy" decoding="async"></div>` : emptyPortrait(cls);
 };
 /* "Analysis: did X" — the category before the colon is set in bold; the text is unchanged. */
-const topic = t => { const m = /^([^:：\n]{2,40}[:：])\s+/.exec(t); return m ? `<strong class="credit-card__topic">${esc(m[1])}</strong> ${esc(t.slice(m[0].length))}` : esc(t); };
+const topic = t => { const m = /^([^:：\n]{2,40}[:：])\s+/.exec(t); return m ? `<strong class="credit-card__topic">${scientificText(m[1])}</strong> ${scientificText(t.slice(m[0].length))}` : scientificText(t); };
 const nameBlock = (p, id, level = 3) => `<div class="person-name"><h${level} id="${id}">${esc(p.name)}</h${level}>${p.chineseName ? `<p class="person-name__cn" lang="zh">${esc(p.chineseName)}</p>` : ''}</div>`;
 
 /* The photo sits in a glass frame. On the back it is decoration (the name is printed beside it). */
