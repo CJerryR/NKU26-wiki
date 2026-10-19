@@ -12,6 +12,10 @@
   "search": true,
   "blocks": [
     {
+      "_template": "text",
+      "body": "<div class=\"reading-layout\" lang=\"en\">"
+    },
+    {
       "text": "1 Background",
       "level": 2,
       "attributes": "#background toc=\"Background\"",
@@ -104,7 +108,7 @@
     },
     {
       "_template": "text",
-      "body": "<section class=\"author-manuscript\" lang=\"zh\">"
+      "body": "<section class=\"author-manuscript\" lang=\"en\">"
     },
     {
       "_template": "text",
@@ -190,7 +194,7 @@
     },
     {
       "_template": "text",
-      "body": "<section class=\"author-manuscript\" lang=\"zh\">"
+      "body": "<section class=\"author-manuscript\" lang=\"en\">"
     },
     {
       "_template": "text",
@@ -199,10 +203,6 @@
     {
       "_template": "text",
       "body": "<p style=\"text-align:left;\"> For receptor recognition, <strong> molecular docking </strong> helps compare Gpr2, Gpr3, and GprC, identify Gpr2 hotspots, and design mutations. Score and interaction changes explore differences in recognition of ascaroside 3 and ascaroside 18. <strong> molecular dynamics simulations </strong> further examine dynamic behavior in selected systems, tracking ligand positioning and key contacts over time to supplement structural hypotheses from docking. </p>"
-    },
-    {
-      "_template": "text",
-      "body": "<p style=\"text-align:left;\"><br></p>"
     },
     {
       "_template": "text",
@@ -258,7 +258,7 @@
     },
     {
       "_template": "text",
-      "body": "<span id=\"hp-description-source-16\" aria-hidden=\"true\"></span>\n<span id=\"hp-description-source-20\" aria-hidden=\"true\"></span>\n<span id=\"hp-description-source-25\" aria-hidden=\"true\"></span>\n<span id=\"hp-description-source-30\" aria-hidden=\"true\"></span>\n<span id=\"hp-description-source-34\" aria-hidden=\"true\"></span>\n<span id=\"hp-original-references\" aria-hidden=\"true\"></span>"
+      "body": "</div>"
     }
   ],
   "preserveAuthorFormatting": true

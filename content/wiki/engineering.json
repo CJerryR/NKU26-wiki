@@ -12,28 +12,32 @@
   "blocks": [
     {
       "_template": "text",
+      "body": "<div class=\"reading-layout\" lang=\"en\">"
+    },
+    {
+      "_template": "text",
       "body": "<p class=\"author-source-link\"><a href=\"/source-archive/#meeting-20261019\" data-source-document=\"meeting-20261019-1564a7b1bf5d\">Original submission (.docx)</a><span role=\"status\" aria-live=\"polite\"></span></p>"
     },
     {
       "_template": "text",
-      "body": "<section class=\"author-manuscript\" lang=\"zh\">"
+      "body": "<section class=\"author-manuscript\" lang=\"en\">"
     },
     {
       "_template": "heading",
       "level": 2,
-      "text": "<strong> DBTL-1 | Engineering the signal-response pathway </strong>",
+      "text": "DBTL-1 | Engineering the signal-response pathway",
       "attributes": "#src-Project-Engineering-1 toc=\"DBTL-1 | Engineering the signal-response pathway\""
     },
     {
       "_template": "heading",
       "level": 3,
-      "text": "<strong> 1.1 Receptor screening and selection of study targets </strong>",
+      "text": "1.1 Receptor screening and selection of study targets",
       "attributes": "#src-Project-Engineering-2 toc=\"1.1 Receptor screening and selection of study targets\""
     },
     {
       "_template": "heading",
       "level": 4,
-      "text": "<strong> Design | Defining receptor-screening objectives </strong>",
+      "text": "Design | Defining receptor-screening objectives",
       "attributes": "#src-Project-Engineering-3 toc=\"Design | Defining receptor-screening objectives\""
     },
     {
@@ -43,7 +47,7 @@
     {
       "_template": "heading",
       "level": 4,
-      "text": "<strong> Build | Establishing receptor and literature comparisons </strong>",
+      "text": "Build | Establishing receptor and literature comparisons",
       "attributes": "#src-Project-Engineering-5 toc=\"Build | Establishing receptor and literature comparisons\""
     },
     {
@@ -53,7 +57,7 @@
     {
       "_template": "heading",
       "level": 4,
-      "text": "<strong> Test | Comparing with literature and refining the docking workflow </strong>",
+      "text": "Test | Comparing with literature and refining the docking workflow",
       "attributes": "#src-Project-Engineering-7 toc=\"Test | Comparing with literature and refining the docking workflow\""
     },
     {
@@ -63,16 +67,14 @@
     {
       "_template": "heading",
       "level": 4,
-      "text": "<strong> Learn | Selecting receptors for further engineering </strong>",
+      "text": "Learn | Selecting receptors for further engineering",
       "attributes": "#src-Project-Engineering-9 toc=\"Learn | Selecting receptors for further engineering\""
     },
     {
-      "_template": "text",
+      "_template": "layout",
+      "kind": "note",
+      "label": "Interpretation and next steps",
       "body": "<p style=\"text-align:left;\"> Reported plasma-membrane and mitochondria-associated localization of GprC could complicate localization and pathway integration in yeast. We therefore excluded it from this engineering round but retained it as a structural reference. Considering computational behavior and heterologous application conditions, subsequent mutant screening focused on Gpr2 while retaining studies of Gpr3 and its mutants. </p>"
-    },
-    {
-      "_template": "text",
-      "body": "<p style=\"text-align:left;\"><br></p>"
     },
     {
       "_template": "text",
@@ -169,7 +171,9 @@
       "attributes": "#learn toc=\"Learn | Assessing GPR2 Localization for Chassis Engineering\""
     },
     {
-      "_template": "text",
+      "_template": "layout",
+      "kind": "note",
+      "label": "Interpretation and next steps",
       "body": "<p>Collectively, these data confirm heterologous expression and proper plasma membrane localization of GPR2 in CEN.PK2-1C, laying an essential foundation for our chassis engineering. We therefore advance to the next cycle to assemble the full signal-responsive engineered strain.</p>"
     },
     {
@@ -261,24 +265,24 @@
     },
     {
       "_template": "text",
-      "body": "<section class=\"author-manuscript\" lang=\"zh\">"
+      "body": "<section class=\"author-manuscript\" lang=\"en\">"
     },
     {
       "_template": "heading",
       "level": 2,
-      "text": "<strong> DBTL-2 | Engineering receptor specificity and constructing pathway models </strong>",
+      "text": "DBTL-2 | Engineering receptor specificity and constructing pathway models",
       "attributes": "#src-Project-Engineering-12 toc=\"DBTL-2 | Engineering receptor specificity and constructing pathway models\""
     },
     {
       "_template": "heading",
       "level": 3,
-      "text": "<strong> 2.1 Contact-guided mutant design and screening </strong>",
+      "text": "2.1 Contact-guided mutant design and screening",
       "attributes": "#src-Project-Engineering-13 toc=\"2.1 Contact-guided mutant design and screening\""
     },
     {
       "_template": "heading",
       "level": 4,
-      "text": "<strong> Design | Proposing engineering sites from WT contact differences </strong>",
+      "text": "Design | Proposing engineering sites from WT contact differences",
       "attributes": "#src-Project-Engineering-14 toc=\"Design | Proposing engineering sites from WT contact differences\""
     },
     {
@@ -288,7 +292,7 @@
     {
       "_template": "heading",
       "level": 4,
-      "text": "<strong> Build | Constructing mutant models and consistent controls </strong>",
+      "text": "Build | Constructing mutant models and consistent controls",
       "attributes": "#src-Project-Engineering-16 toc=\"Build | Constructing mutant models and consistent controls\""
     },
     {
@@ -298,7 +302,7 @@
     {
       "_template": "heading",
       "level": 4,
-      "text": "<strong> Test | Iterating substitutions using score and contact feedback </strong>",
+      "text": "Test | Iterating substitutions using score and contact feedback",
       "attributes": "#src-Project-Engineering-18 toc=\"Test | Iterating substitutions using score and contact feedback\""
     },
     {
@@ -312,23 +316,25 @@
     {
       "_template": "heading",
       "level": 4,
-      "text": "<strong> Learn | Selecting candidates for dynamic testing </strong>",
+      "text": "Learn | Selecting candidates for dynamic testing",
       "attributes": "#src-Project-Engineering-21 toc=\"Learn | Selecting candidates for dynamic testing\""
     },
     {
-      "_template": "text",
+      "_template": "layout",
+      "kind": "note",
+      "label": "Interpretation and next steps",
       "body": "<p style=\"text-align:left;\"> Combining score differentiation and contact analysis, we selected N84V and V368R. Relative to the same WT batch, N84V lowered the ascr#18 score and raised the ascr#3 score; V368R showed the opposite direction. Both mutants and WT then entered dynamic comparisons in a membrane environment. </p>"
     },
     {
       "_template": "heading",
       "level": 3,
-      "text": "<strong> 2.2 Examining selected candidates in a membrane environment </strong>",
+      "text": "2.2 Examining selected candidates in a membrane environment",
       "attributes": "#src-Project-Engineering-23 toc=\"2.2 Examining selected candidates in a membrane environment\""
     },
     {
       "_template": "heading",
       "level": 4,
-      "text": "<strong> Design | Testing the membrane behavior of docking-selected candidates </strong>",
+      "text": "Design | Testing the membrane behavior of docking-selected candidates",
       "attributes": "#src-Project-Engineering-24 toc=\"Design | Testing the membrane behavior of docking-selected candidates\""
     },
     {
@@ -338,7 +344,7 @@
     {
       "_template": "heading",
       "level": 4,
-      "text": "<strong> Build | Preparing full-length receptors and membrane systems </strong>",
+      "text": "Build | Preparing full-length receptors and membrane systems",
       "attributes": "#src-Project-Engineering-26 toc=\"Build | Preparing full-length receptors and membrane systems\""
     },
     {
@@ -348,7 +354,7 @@
     {
       "_template": "heading",
       "level": 4,
-      "text": "<strong> Test | Tracking ligand motion and contact changes </strong>",
+      "text": "Test | Tracking ligand motion and contact changes",
       "attributes": "#src-Project-Engineering-28 toc=\"Test | Tracking ligand motion and contact changes\""
     },
     {
@@ -366,23 +372,25 @@
     {
       "_template": "heading",
       "level": 4,
-      "text": "<strong> Learn | Reinterpreting mutation effects from trajectories </strong>",
+      "text": "Learn | Reinterpreting mutation effects from trajectories",
       "attributes": "#src-Project-Engineering-32 toc=\"Learn | Reinterpreting mutation effects from trajectories\""
     },
     {
-      "_template": "text",
+      "_template": "layout",
+      "kind": "note",
+      "label": "Interpretation and next steps",
       "body": "<p style=\"text-align:left;\"> MD showed that ligands can retain initial contacts or relocate and form persistent new contacts. Interpreting mutation effects requires combining ligand motion, internal receptor changes, and WT controls. Each system currently has only one trajectory and a different starting pose; contact and rearrangement reproducibility require further testing, and their relationship to actual recognition requires experiments. </p>"
     },
     {
       "_template": "heading",
       "level": 3,
-      "text": "<strong> 2.3 ODE: connecting receptor signals to color output </strong>",
+      "text": "2.3 ODE: connecting receptor signals to color output",
       "attributes": "#src-Project-Engineering-34 toc=\"2.3 ODE: connecting receptor signals to color output\""
     },
     {
       "_template": "heading",
       "level": 4,
-      "text": "<strong> Design | Building a minimal model from biological principles </strong>",
+      "text": "Design | Building a minimal model from biological principles",
       "attributes": "#src-Project-Engineering-35 toc=\"Design | Building a minimal model from biological principles\""
     },
     {
@@ -392,7 +400,7 @@
     {
       "_template": "heading",
       "level": 4,
-      "text": "<strong> Build | Adapting the shared pathway and color-output interface </strong>",
+      "text": "Build | Adapting the shared pathway and color-output interface",
       "attributes": "#src-Project-Engineering-37 toc=\"Build | Adapting the shared pathway and color-output interface\""
     },
     {
@@ -402,7 +410,7 @@
     {
       "_template": "heading",
       "level": 4,
-      "text": "<strong> Test | Adjusting the response range using simulated endpoints </strong>",
+      "text": "Test | Adjusting the response range using simulated endpoints",
       "attributes": "#src-Project-Engineering-39 toc=\"Test | Adjusting the response range using simulated endpoints\""
     },
     {
@@ -412,23 +420,25 @@
     {
       "_template": "heading",
       "level": 4,
-      "text": "<strong> Learn | Distinguishing pathway mechanisms from interface calibration </strong>",
+      "text": "Learn | Distinguishing pathway mechanisms from interface calibration",
       "attributes": "#src-Project-Engineering-41 toc=\"Learn | Distinguishing pathway mechanisms from interface calibration\""
     },
     {
-      "_template": "text",
+      "_template": "layout",
+      "kind": "note",
+      "label": "Interpretation and next steps",
       "body": "<p style=\"text-align:left;\"> Literature structures describe signal transmission, while input scales and color parameters adapt the model to particular constructs and measurement conditions. Simulation fitting identified a distinguishable output range and revealed deviations under weak stimulation. Subsequent experiments need dose responses, blanks, and time courses to determine real parameters and usable color-readout ranges. </p>"
     },
     {
       "_template": "heading",
       "level": 3,
-      "text": "<strong> 2.4 Dual-channel model: estimating target density from paired colors </strong>",
+      "text": "2.4 Dual-channel model: estimating target density from paired colors",
       "attributes": "#src-Project-Engineering-43 toc=\"2.4 Dual-channel model: estimating target density from paired colors\""
     },
     {
       "_template": "heading",
       "level": 4,
-      "text": "<strong> Design | Estimating Mi density with unknown background abundance </strong>",
+      "text": "Design | Estimating Mi density with unknown background abundance",
       "attributes": "#src-Project-Engineering-44 toc=\"Design | Estimating Mi density with unknown background abundance\""
     },
     {
@@ -438,7 +448,7 @@
     {
       "_template": "heading",
       "level": 4,
-      "text": "<strong> Build | Connecting mixed samples, ODEs, and smartphone readouts </strong>",
+      "text": "Build | Connecting mixed samples, ODEs, and smartphone readouts",
       "attributes": "#src-Project-Engineering-46 toc=\"Build | Connecting mixed samples, ODEs, and smartphone readouts\""
     },
     {
@@ -448,7 +458,7 @@
     {
       "_template": "heading",
       "level": 4,
-      "text": "<strong> Test | Comparing single- and dual-channel models on new combinations </strong>",
+      "text": "Test | Comparing single- and dual-channel models on new combinations",
       "attributes": "#src-Project-Engineering-48 toc=\"Test | Comparing single- and dual-channel models on new combinations\""
     },
     {
@@ -458,16 +468,14 @@
     {
       "_template": "heading",
       "level": 4,
-      "text": "<strong> Learn | Connecting density error to risk assessment </strong>",
+      "text": "Learn | Connecting density error to risk assessment",
       "attributes": "#src-Project-Engineering-50 toc=\"Learn | Connecting density error to risk assessment\""
     },
     {
-      "_template": "text",
+      "_template": "layout",
+      "kind": "note",
+      "label": "Interpretation and next steps",
       "body": "<p style=\"text-align:left;\"> The simulation connected ODE color development, smartphone color features, and Mi density estimation, extending evaluation from overall error to risk assessment: acceptability of low-density error also depends on whether it changes the risk tier. We will calibrate smartphone color relationships with measured mixed samples and evaluate density estimation and risk classification on independent batches. </p>"
-    },
-    {
-      "_template": "text",
-      "body": "<p style=\"text-align:left;\"><br></p>"
     },
     {
       "_template": "text",
@@ -475,24 +483,24 @@
     },
     {
       "_template": "text",
-      "body": "<section class=\"author-manuscript\" lang=\"zh\">"
+      "body": "<section class=\"author-manuscript\" lang=\"en\">"
     },
     {
       "_template": "heading",
       "level": 2,
-      "text": "<strong> DBTL-3 | Feedback from societal relevance </strong>",
+      "text": "DBTL-3 | Feedback from societal relevance",
       "attributes": "#src-Project-Engineering-53 toc=\"DBTL-3 | Feedback from societal relevance\""
     },
     {
       "_template": "heading",
       "level": 3,
-      "text": "<strong> 3.1 Economic modeling and refinement of detection requirements </strong>",
+      "text": "3.1 Economic modeling and refinement of detection requirements",
       "attributes": "#src-Project-Engineering-54 toc=\"3.1 Economic modeling and refinement of detection requirements\""
     },
     {
       "_template": "heading",
       "level": 4,
-      "text": "<strong> Design | Defining the decision value of detection information </strong>",
+      "text": "Design | Defining the decision value of detection information",
       "attributes": "#src-Project-Engineering-55 toc=\"Design | Defining the decision value of detection information\""
     },
     {
@@ -502,7 +510,7 @@
     {
       "_template": "heading",
       "level": 4,
-      "text": "<strong> Build | Establishing cost accounting and management scenarios </strong>",
+      "text": "Build | Establishing cost accounting and management scenarios",
       "attributes": "#src-Project-Engineering-57 toc=\"Build | Establishing cost accounting and management scenarios\""
     },
     {
@@ -512,7 +520,7 @@
     {
       "_template": "heading",
       "level": 4,
-      "text": "<strong> Test | Comparing the additional returns from density information </strong>",
+      "text": "Test | Comparing the additional returns from density information",
       "attributes": "#src-Project-Engineering-59 toc=\"Test | Comparing the additional returns from density information\""
     },
     {
@@ -526,20 +534,18 @@
     {
       "_template": "heading",
       "level": 4,
-      "text": "<strong> Learn | Feeding management requirements back into detection design </strong>",
+      "text": "Learn | Feeding management requirements back into detection design",
       "attributes": "#src-Project-Engineering-62 toc=\"Learn | Feeding management requirements back into detection design\""
     },
     {
-      "_template": "text",
+      "_template": "layout",
+      "kind": "note",
+      "label": "Interpretation and next steps",
       "body": "<p style=\"text-align:left;\"> We refined the detection goal to provide semiquantitative or quantitative information supporting risk tiers, cover key density ranges where management changes, and indicate sampling and measurement uncertainty near thresholds. </p>"
     },
     {
       "_template": "text",
       "body": "<p style=\"text-align:left;\"> Model outputs expanded from a single return-on-investment metric to detected density, estimated yield loss, risk tier, scenario-specific treatment, testing costs, and net-return comparisons, informing discussion of quantitative capability, sampling, and applications. Subsequent updates will combine wet-lab detection performance and sampling error with local prices, testing costs, and willingness to pay from HP research to test these requirements under real conditions. </p>"
-    },
-    {
-      "_template": "text",
-      "body": "<p style=\"text-align:left;\"><br></p>"
     },
     {
       "_template": "text",
@@ -551,12 +557,12 @@
     },
     {
       "_template": "text",
-      "body": "<section class=\"author-manuscript\" lang=\"zh\">"
+      "body": "<section class=\"author-manuscript\" lang=\"en\">"
     },
     {
       "_template": "heading",
       "level": 4,
-      "text": "<strong> 3.1 Refining user needs and detection objectives </strong>",
+      "text": "3.1 Refining user needs and detection objectives",
       "attributes": "#src-HP-Engineering-2 toc=\"3.1 Refining user needs and detection objectives\""
     },
     {
@@ -594,7 +600,7 @@
     {
       "_template": "heading",
       "level": 4,
-      "text": "<strong> 3.2 Interpreting soil background and signal composition </strong>",
+      "text": "3.2 Interpreting soil background and signal composition",
       "attributes": "#src-HP-Engineering-11 toc=\"3.2 Interpreting soil background and signal composition\""
     },
     {
@@ -632,7 +638,7 @@
     {
       "_template": "heading",
       "level": 4,
-      "text": "<strong> 3.3 Designing sampling and the complete workflow </strong>",
+      "text": "3.3 Designing sampling and the complete workflow",
       "attributes": "#src-HP-Engineering-20 toc=\"3.3 Designing sampling and the complete workflow\""
     },
     {
@@ -669,20 +675,16 @@
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\"><br></p>"
-    },
-    {
-      "_template": "text",
       "body": "</section>"
     },
     {
       "_template": "text",
-      "body": "<section class=\"author-manuscript\" lang=\"zh\">"
+      "body": "<section class=\"author-manuscript\" lang=\"en\">"
     },
     {
       "_template": "heading",
       "level": 3,
-      "text": "<strong> DBTL-4 | Commercialization exploration and application pathways </strong>",
+      "text": "DBTL-4 | Commercialization exploration and application pathways",
       "attributes": "#src-HP-Engineering-30 toc=\"DBTL-4 | Commercialization exploration and application pathways\""
     },
     {
@@ -723,7 +725,7 @@
     },
     {
       "_template": "text",
-      "body": "<span id=\"dbtl-1-engineering-the-signal-response-pathway\" aria-hidden=\"true\"></span>\n<span id=\"the-first-cycle-dry-lab\" aria-hidden=\"true\"></span>\n<span id=\"design-defining-the-receptor-screening-objective\" aria-hidden=\"true\"></span>\n<span id=\"build-establishing-receptor-comparisons-and-literature-references\" aria-hidden=\"true\"></span>\n<span id=\"test-comparing-with-the-literature-and-refining-the-docking-workflow\" aria-hidden=\"true\"></span>\n<span id=\"learn-selecting-receptors-for-further-engineering\" aria-hidden=\"true\"></span>\n<span id=\"dbtl-2-engineering-receptor-specificity-and-developing-pathway-models\" aria-hidden=\"true\"></span>\n<span id=\"mutation-design-and-screening-guided-by-contact-differences\" aria-hidden=\"true\"></span>\n<span id=\"design-identifying-engineering-sites-from-wt-contact-differences\" aria-hidden=\"true\"></span>\n<span id=\"build-generating-mutant-models-and-consistent-controls\" aria-hidden=\"true\"></span>\n<span id=\"test-iterating-substitutions-using-score-and-contact-feedback\" aria-hidden=\"true\"></span>\n<span id=\"learn-selecting-candidates-for-dynamic-testing\" aria-hidden=\"true\"></span>\n<span id=\"investigating-candidate-dynamics-in-a-membrane-environment\" aria-hidden=\"true\"></span>\n<span id=\"design-examining-docking-candidates-in-the-membrane\" aria-hidden=\"true\"></span>\n<span id=\"build-preparing-full-length-receptors-and-membrane-systems\" aria-hidden=\"true\"></span>\n<span id=\"test-tracking-ligand-motion-and-contact-changes\" aria-hidden=\"true\"></span>\n<span id=\"learn-reinterpreting-mutation-effects-from-the-trajectories\" aria-hidden=\"true\"></span>\n<span id=\"ode-connecting-receptor-signaling-to-colorimetric-output\" aria-hidden=\"true\"></span>\n<span id=\"design-building-a-minimal-model-from-biological-principles\" aria-hidden=\"true\"></span>\n<span id=\"build-adapting-the-shared-pathway-and-colorimetric-output\" aria-hidden=\"true\"></span>\n<span id=\"test-checking-computational-consistency-and-response-range\" aria-hidden=\"true\"></span>\n<span id=\"learn-prioritizing-project-specific-inputs-and-outputs\" aria-hidden=\"true\"></span>\n<span id=\"two-channel-model-estimating-target-density-from-paired-color-readouts\" aria-hidden=\"true\"></span>\n<span id=\"design-estimating-mi-density-with-an-unknown-background-population\" aria-hidden=\"true\"></span>\n<span id=\"build-constructing-mixed-samples-and-a-density-regression-model\" aria-hidden=\"true\"></span>\n<span id=\"test-comparing-one-and-two-channels-with-new-mixed-samples\" aria-hidden=\"true\"></span>\n<span id=\"learn-examining-errors-at-low-densities-and-near-risk-thresholds\" aria-hidden=\"true\"></span>\n<span id=\"dbtl-3-feedback-from-practical-and-societal-needs\" aria-hidden=\"true\"></span>\n<span id=\"economic-benefit-modeling-and-refinement-of-detection-requirements\" aria-hidden=\"true\"></span>\n<span id=\"design-defining-the-decision-making-value-of-detection-information\" aria-hidden=\"true\"></span>\n<span id=\"build-establishing-cost-calculations-and-management-scenarios\" aria-hidden=\"true\"></span>\n<span id=\"test-comparing-the-added-benefit-of-density-information\" aria-hidden=\"true\"></span>\n<span id=\"learn-feeding-management-needs-back-into-detection-design\" aria-hidden=\"true\"></span>\n<span id=\"references-2\" aria-hidden=\"true\"></span>\n<span id=\"docking-and-receptor-recognition\" aria-hidden=\"true\"></span>\n<span id=\"md-and-membrane-system-simulations\" aria-hidden=\"true\"></span>\n<span id=\"ode-modeling-and-signal-output\" aria-hidden=\"true\"></span>\n<span id=\"economic-benefit-modeling-and-management-decisions\" aria-hidden=\"true\"></span>"
+      "body": "</div>"
     }
   ],
   "description": "",

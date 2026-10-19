@@ -13,7 +13,7 @@
   "blocks": [
     {
       "_template": "text",
-      "body": "<div data-nemaklear-original></div>"
+      "body": "<div class=\"reading-layout\" lang=\"en\">"
     },
     {
       "_template": "text",
@@ -21,16 +21,17 @@
     },
     {
       "_template": "text",
-      "body": "<section class=\"author-manuscript\" lang=\"zh\">"
+      "body": "<section class=\"author-manuscript\" lang=\"en\">"
     },
     {
       "_template": "heading",
       "level": 2,
-      "text": "4. <strong> Eco | From color readouts to management decisions </strong>",
+      "text": "4.  Eco | From color readouts to management decisions",
       "attributes": "#src-Model-Eco-1 toc=\"4. Eco | From color readouts to management decisions\""
     },
     {
-      "_template": "text",
+      "_template": "layout",
+      "kind": "lead",
       "body": "<p style=\"text-align:left;\"> We developed the <strong> NemaKlear interactive web app </strong> to connect ODE color simulations, dual-channel density estimation, and economic analysis. Readers can choose simulated soil samples or enter paired absorbance readings, view target nematode density, and compare single-season net returns under different management strategies. </p>"
     },
     {
@@ -40,7 +41,7 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "<strong> 4.1 Exploring the connection from color to returns in the interactive app </strong>",
+      "text": "4.1 Exploring the connection from color to returns in the interactive app",
       "attributes": "#src-Model-Eco-4 toc=\"4.1 Exploring the connection from color to returns in the interactive app\""
     },
     {
@@ -86,7 +87,7 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "<strong> 4.2 Connecting color development and economic analysis through density </strong>",
+      "text": "4.2 Connecting color development and economic analysis through density",
       "attributes": "#src-Model-Eco-15 toc=\"4.2 Connecting color development and economic analysis through density\""
     },
     {
@@ -112,7 +113,7 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "<strong> 4.3 Calculating yield loss and net returns from nematode density </strong>",
+      "text": "4.3 Calculating yield loss and net returns from nematode density",
       "attributes": "#src-Model-Eco-21 toc=\"4.3 Calculating yield loss and net returns from nematode density\""
     },
     {
@@ -142,7 +143,7 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "<strong> 4.4 Using two baselines to distinguish control benefits from information value </strong>",
+      "text": "4.4 Using two baselines to distinguish control benefits from information value",
       "attributes": "#src-Model-Eco-28 toc=\"4.4 Using two baselines to distinguish control benefits from information value\""
     },
     {
@@ -151,19 +152,11 @@
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\"><br></p>"
-    },
-    {
-      "_template": "text",
       "body": "<p style=\"text-align:center;\"><strong> Click the image to view the complete spreadsheet </strong></p>"
     },
     {
       "_template": "text",
       "body": "<p style=\"text-align:left;\"> Tiered treatment follows the preset rules below, with treatment information from reference <a href=\"https://doi.org/10.3390/plants11202774\">2</a>。</p>"
-    },
-    {
-      "_template": "text",
-      "body": "<p style=\"text-align:left;\"><br></p>"
     },
     {
       "_template": "text",
@@ -192,16 +185,12 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "<strong> 4.5 When density information is worth obtaining </strong>",
+      "text": "4.5 When density information is worth obtaining",
       "attributes": "#src-Model-Eco-40 toc=\"4.5 When density information is worth obtaining\""
     },
     {
       "_template": "text",
       "body": "<p style=\"text-align:left;\"> At a density of <strong>100 J2/100 cm³</strong>, with all other parameters at the example settings, the model gives the following results: </p>"
-    },
-    {
-      "_template": "text",
-      "body": "<p style=\"text-align:left;\"><br></p>"
     },
     {
       "_template": "text",
@@ -236,13 +225,15 @@
       "body": "<p style=\"text-align:left;\"> We further varied testing cost, treatment cost, treatment efficacy, and crop selling price separately to examine sensitivity of both return differences. When tiered and uniform treatment use the same measure, shared cost and efficacy parameters change together to maintain consistent comparison conditions. </p>"
     },
     {
-      "_template": "text",
+      "_template": "layout",
+      "kind": "note",
+      "label": "Evidence and limitations",
       "body": "<p style=\"text-align:left;\"> These are conditional calculations under specified density, cost, and efficacy assumptions. Current density prediction intervals reflect formal uncertainty in simulated regression; empirical coverage still requires real samples and readout calibration. Interval endpoints and adjacent-density scenarios illustrate economic effects of altered judgments; the resulting return range is not a confidence interval for returns. Real detection errors may change treatment choices, and their economic effects require evaluation against measured error distributions. </p>"
     },
     {
       "_template": "heading",
       "level": 3,
-      "text": "<strong> 4.6 Feeding economic comparisons back into detection design </strong>",
+      "text": "4.6 Feeding economic comparisons back into detection design",
       "attributes": "#src-Model-Eco-52 toc=\"4.6 Feeding economic comparisons back into detection design\""
     },
     {
@@ -264,7 +255,7 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "<strong>References</strong>",
+      "text": "References",
       "attributes": "#src-Model-Eco-57 toc=\"References\""
     },
     {
@@ -277,15 +268,11 @@
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\"><br></p>"
-    },
-    {
-      "_template": "text",
       "body": "</section>"
     },
     {
       "_template": "text",
-      "body": "<span id=\"eco-introduction\" aria-hidden=\"true\"></span>\n<span id=\"eco-interface\" aria-hidden=\"true\"></span>\n<span id=\"eco-economics\" aria-hidden=\"true\"></span>\n<span id=\"eco-baselines\" aria-hidden=\"true\"></span>\n<span id=\"eco-example\" aria-hidden=\"true\"></span>\n<span id=\"eco-design\" aria-hidden=\"true\"></span>\n<span id=\"eco-explorer\" aria-hidden=\"true\"></span>"
+      "body": "</div>"
     }
   ],
   "preserveAuthorFormatting": true

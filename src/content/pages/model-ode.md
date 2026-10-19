@@ -13,23 +13,33 @@ meta: {}
 draft: false
 hidden: false
 ---
+<div class="reading-layout" lang="en">
+
 <p class="author-source-link"><a href="/source-archive/#meeting-20261019" data-source-document="meeting-20261019-2bfa8e09f424">Original submission (.docx)</a><span role="status" aria-live="polite"></span></p>
 
-<section class="author-manuscript" lang="zh">
+<section class="author-manuscript" lang="en">
 
-## <strong> ODE and Dual-Channel Models | From signal response to target density estimation </strong> {#src-Model-ODE-1 toc="ODE and Dual-Channel Models | From signal response to target density estimation"}
+## ODE and Dual-Channel Models | From signal response to target density estimation {#src-Model-ODE-1 toc="ODE and Dual-Channel Models | From signal response to target density estimation"}
+
+:::lead
 
 <p style="text-align:left;"> After receptor recognition of ascarosides, two further conversions are needed: intracellular signals must produce readable colors, and colors must indicate target nematode density. When southern root-knot and free-living nematodes coexist, stronger color may reflect more targets or a change in background. </p>
+
+:::
 
 <p style="text-align:left;"> We developed connected models for these questions. The ODE describes effective receptor input, the shared yeast pathway, and color development, generating simulated responses for mixed samples. The dual-channel model uses paired colors to estimate target density with unknown background abundance. Model development progressively clarified the tasks: first preserve input differences in pathway output, then test whether those differences distinguish target from background. </p>
 
 <p style="text-align:left;"> Throughout this chapter, nematode density is expressed as individuals / 100 cm³ soil. </p>
 
+:::figure
+
 <p style="text-align:center;"><a href="https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-b85fb2a7b67c6d57-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-b85fb2a7b67c6d57-00.json" alt="" loading="lazy" width="552" height="310"></a></p>
 
-<div class="author-table-scroll"><table class="author-table"><colgroup><col style="width:100.0000%"></colgroup><tbody><tr><td colspan="1"><p style="text-align:left;"><strong> Figure 3-1 | Sequential calibration of the ODE and dual-channel models. </strong><br> The upper section shows mixture design, ODE calibration, and dual-channel regression; the lower section shows the future route to estimating Mi density from paired smartphone readouts. Preset color targets calibrate the ODE, while regression uses color features converted from actual ODE outputs. </p></td></tr></tbody></table></div>
+<strong> Figure 3-1 | Sequential calibration of the ODE and dual-channel models. </strong><br> The upper section shows mixture design, ODE calibration, and dual-channel regression; the lower section shows the future route to estimating Mi density from paired smartphone readouts. Preset color targets calibrate the ODE, while regression uses color features converted from actual ODE outputs.
 
-#### <strong> 3.1 Starting from a minimal model to identify essential dynamics </strong> {#src-Model-ODE-7 toc="3.1 Starting from a minimal model to identify essential dynamics"}
+:::
+
+#### 3.1 Starting from a minimal model to identify essential dynamics {#src-Model-ODE-7 toc="3.1 Starting from a minimal model to identify essential dynamics"}
 
 <p style="text-align:left;"> We initially built a minimal model along the ligand–receptor–G protein–MAPK–sTF–GAL–color pathway. The synthetic-transcription-factor design linking yeast GPCR signaling to the GAL system follows Fan and Yuan; the cascade-amplification design leading to betaxanthin output follows subsequent work by Fan et al. The equations below are our effective descriptions of these functional stages. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10753199/">[8]</a> <a href="https://pubmed.ncbi.nlm.nih.gov/38281368/">[5]</a></p>
 
@@ -53,7 +63,7 @@ hidden: false
 
 <p style="text-align:left;"> We therefore reconsidered model detail: for yeast signaling pathways with published quantitative models, we reused reaction structures and parameters; for project-specific color production lacking independent observations, we retained an effective description and focused calibration on input and output interfaces. </p>
 
-#### <strong> 3.2 Connecting the published shared pathway to an effective color equation </strong> {#src-Model-ODE-19 toc="3.2 Connecting the published shared pathway to an effective color equation"}
+#### 3.2 Connecting the published shared pathway to an effective color equation {#src-Model-ODE-19 toc="3.2 Connecting the published shared pathway to an effective color equation"}
 
 <p style="text-align:left;"> Using Supady Model B and public TU Delft 2012 iGEM materials, we reconstructed the G protein cycle, scaffold module, Fus3 activation, and feedback. Compared with the initial two normalized signaling variables, the new shared core retains source-model reactions and records internal rates separately from project-specific adaptation parameters. <a href="https://rumo.biologie.hu-berlin.de/tbp/images/Theses/bsc_supady.pdf">[1]</a> <a href="https://2012.igem.org/Team:TU-Delft/Modeling/SingleCellModel">[2]</a></p>
 
@@ -85,15 +95,13 @@ hidden: false
 
 <p style="text-align:left;"> The five shared-core equations and one color equation thus form a six-state model. We checked computational consistency before and after combining output relationships and between the six-state implementation and a reaction implementation retaining all states. Conservation reduces redundant states, while the merged color equation lets endpoint data primarily constrain a small number of effective parameters. The interface connecting Fus3 activity to project color production still requires experimental calibration. </p>
 
-#### <strong> 3.3 Varying target and background independently to construct dual-sensor inputs </strong> {#src-Model-ODE-35 toc="3.3 Varying target and background independently to construct dual-sensor inputs"}
+#### 3.3 Varying target and background independently to construct dual-sensor inputs {#src-Model-ODE-35 toc="3.3 Varying target and background independently to construct dual-sensor inputs"}
 
 <p style="text-align:left;"> Applying the pathway to mixed soil samples first requires specifying nematode contributions to input. We use the southern root-knot nematode <em>Meloidogyne incognita</em> (Mi) as target and Caenorhabditis elegans <em>Caenorhabditis elegans</em> (Ce) as background, retaining both ascr#3 and ascr#18 in the simulation. </p>
 
 <p style="text-align:left;"> Published work shows that Ce ascaroside release and composition depend on culture conditions and developmental state; Manosalva et al. observed ascr#18 dominance in the root-knot nematode samples analyzed. These findings support assigning different secretion compositions. <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0017804">[3]</a> <a href="https://www.nature.com/articles/ncomms8795">[4]</a></p>
 
 <p style="text-align:left;"> To examine effects of composition and sensor preference on paired responses, we used the following simulation settings. Here, <math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="q3、q18"><mrow><msub><mrow><mi>q</mi></mrow><mrow><mi>3</mi></mrow></msub><mi>、</mi><msub><mrow><mi>q</mi></mrow><mrow><mi>18</mi></mrow></msub></mrow></math> denotes the per-nematode release rate of the corresponding ligand, and <math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="w3、w18"><mrow><msub><mrow><mi>w</mi></mrow><mrow><mi>3</mi></mrow></msub><mi>、</mi><msub><mrow><mi>w</mi></mrow><mrow><mi>18</mi></mrow></msub></mrow></math> denotes the input weights of the two ligands for the same sensor. </p>
-
-<p style="text-align:left;"><br></p>
 
 <p style="text-align:center;"><strong> Click the image to view the complete spreadsheet </strong></p>
 
@@ -105,7 +113,7 @@ hidden: false
 
 <p style="text-align:left;"> This design also defines experimental calibration: vary target and background independently, record paired colors for the same sample, and include blanks and different background levels. Real data can progressively replace release assumptions, response weights, and smartphone observation relationships. </p>
 
-#### <strong> 3.4 Adjusting input and output interfaces with simulated color targets </strong> {#src-Model-ODE-45 toc="3.4 Adjusting input and output interfaces with simulated color targets"}
+#### 3.4 Adjusting input and output interfaces with simulated color targets {#src-Model-ODE-45 toc="3.4 Adjusting input and output interfaces with simulated color targets"}
 
 <p style="text-align:left;"> Initial simulations produced similar endpoint colors across stimulus strengths. We therefore recognized that producing color also requires checking whether the pathway preserves sufficient input differences. </p>
 
@@ -115,7 +123,11 @@ hidden: false
 
 <p style="text-align:left;"> The adjusted ODE broadly followed preset color changes, but weak-stimulus responses remained below linear targets. We next tested whether these low-end deviations hindered target-density estimation. Subsequent training therefore used actual ODE colors, carrying these deviations into dual-channel evaluation. </p>
 
+:::note[Calibration and training]
+
 <p style="text-align:left;"><strong> Preset color endpoints calibrate the ODE; actual ODE outputs train the dual-channel model. </strong></p>
+
+:::
 
 <p style="text-align:left;"> To connect with the smartphone-readout example, we then set 8 h total-pigment targets to 0.07–0.56 mg/mL indicaxanthin equivalents. This interval lies within the nonzero indicaxanthin standard concentrations reported by Stücheli et al.; the 0.07 mg/mL blank and the overall target interval were selected by our project. <a href="https://academic.oup.com/nar/article/48/12/e67/5838858">[7]</a></p>
 
@@ -123,9 +135,13 @@ hidden: false
 
 <p style="text-align:left;"> Current actual P3 and P18 endpoints span approximately 0.070–0.543 and 0.070–0.480 mg/mL, with 18-point endpoint-fit RMSEs of 0.009688 and 0.009656 mg/mL, respectively. Rescaling changed output magnitude while retaining response shape and relative deviations. Actual yeast background and induced yields require experiments. </p>
 
+:::figure
+
 <p style="text-align:center;"><a href="https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-556696deeb745a5b-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-556696deeb745a5b-00.json" alt="" loading="lazy" width="552" height="299"></a></p>
 
-<div class="author-table-scroll"><table class="author-table"><colgroup><col style="width:100.0000%"></colgroup><tbody><tr><td colspan="1"><p style="text-align:left;"><strong> Figure 3-2 | ODE color fits at different background densities. </strong><br> A and B show P3 and P18, respectively. Colors distinguish Ce background densities; dashed lines with crosses indicate preset targets, solid lines with circles show 8 h total-pigment ODE outputs, and gray dotted lines indicate blanks. </p></td></tr></tbody></table></div>
+<strong> Figure 3-2 | ODE color fits at different background densities. </strong><br> A and B show P3 and P18, respectively. Colors distinguish Ce background densities; dashed lines with crosses indicate preset targets, solid lines with circles show 8 h total-pigment ODE outputs, and gray dotted lines indicate blanks.
+
+:::
 
 <p style="text-align:left;"> Beyond endpoints, we examined pigment accumulation for blanks, target-only, background-only, and mixed samples. Their (Mi, Ce) densities were (0, 0), (120, 0), (0, 200), and (120, 200), respectively, all in individuals / 100 cm³ soil. </p>
 
@@ -135,11 +151,15 @@ hidden: false
 
 <p style="text-align:left;"> Different inputs produce different color trajectories through the shared pathway. Calibration in this round used 8 h endpoints; early curves are model projections under fixed parameters. </p>
 
+:::figure
+
 <p style="text-align:center;"><a href="https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-06918bc66dedec7f-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-06918bc66dedec7f-00.json" alt="" loading="lazy" width="552" height="299"></a></p>
 
-<div class="author-table-scroll"><table class="author-table"><colgroup><col style="width:100.0000%"></colgroup><tbody><tr><td colspan="1"><p style="text-align:left;"><strong> Figure 3-3 | Net pigment accumulation in representative mixtures. </strong><br> A and B show simulated time courses for blank, Mi-only, Ce-only, and mixed samples in P3 and P18. Net pigment is output after subtracting the same channel's matched blank at each time point. </p></td></tr></tbody></table></div>
+<strong> Figure 3-3 | Net pigment accumulation in representative mixtures. </strong><br> A and B show simulated time courses for blank, Mi-only, Ce-only, and mixed samples in P3 and P18. Net pigment is output after subtracting the same channel's matched blank at each time point.
 
-#### <strong> 3.5 Converting pigment concentrations into simulated smartphone color features </strong> {#src-Model-ODE-62 toc="3.5 Converting pigment concentrations into simulated smartphone color features"}
+:::
+
+#### 3.5 Converting pigment concentrations into simulated smartphone color features {#src-Model-ODE-62 toc="3.5 Converting pigment concentrations into simulated smartphone color features"}
 
 <p style="text-align:left;"> The intended product reads color using smartphone images, so we established an observation relationship between pigment concentration and image features. Stücheli et al. quantified indicaxanthin from smartphone RGB blue-channel images using a light-shielding box, blue background, and cuvettes, providing a reference for this conversion. <a href="https://academic.oup.com/nar/article/48/12/e67/5838858">[7]</a></p>
 
@@ -163,15 +183,19 @@ hidden: false
 
 <p style="text-align:left;"> The ODE calculates pigment formation; the smartphone relationship describes its readout. Separating them allows the observation interface to be updated independently when actual smartphone calibration becomes available, followed by evaluation of density-estimation effects. </p>
 
-#### <strong> 3.6 Using paired colors to estimate target density </strong> {#src-Model-ODE-74 toc="3.6 Using paired colors to estimate target density"}
+#### 3.6 Using paired colors to estimate target density {#src-Model-ODE-74 toc="3.6 Using paired colors to estimate target density"}
 
 <p style="text-align:left;"> With the ODE and smartphone conversion fixed, we generated 45 paired readouts from different Mi and Ce density combinations. Mi densities were 0, 5, 10, 20, 40, 60, 80, 100, and 120; Ce densities were 0, 40, 80, 140, and 200, all in individuals / 100 cm³ soil. </p>
 
 <p style="text-align:left;"> Each sample is a point in two-dimensional color space, with the P3 readout <math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="x3"><mrow><msub><mrow><mi>x</mi></mrow><mrow><mi>3</mi></mrow></msub></mrow></math> on the horizontal axis and the P18 readout <math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="x18"><mrow><msub><mrow><mi>x</mi></mrow><mrow><mi>18</mi></mrow></msub></mrow></math> on the vertical axis. This space shows how paired colors change when Ce increases at fixed Mi or Mi increases at fixed Ce. Their different directions support distinguishing target and background from paired readouts. </p>
 
+:::figure
+
 <p style="text-align:center;"><a href="https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-543f0d38ad341206-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-543f0d38ad341206-00.json" alt="" loading="lazy" width="552" height="423"></a></p>
 
-<div class="author-table-scroll"><table class="author-table"><colgroup><col style="width:100.0000%"></colgroup><tbody><tr><td colspan="1"><p style="text-align:left;"><strong> Figure 3-4 | Mixtures in dual-channel color space. </strong><br> The horizontal and vertical axes are simulated smartphone color indices for P3 and P18. Point color indicates Mi density. Solid lines connect fixed-Mi samples and dashed lines fixed-Ce samples; arrows indicate changes as Mi or Ce increases. </p></td></tr></tbody></table></div>
+<strong> Figure 3-4 | Mixtures in dual-channel color space. </strong><br> The horizontal and vertical axes are simulated smartphone color indices for P3 and P18. Point color indicates Mi density. Solid lines connect fixed-Mi samples and dashed lines fixed-Ce samples; arrows indicate changes as Mi or Ce increases.
+
+:::
 
 <p style="text-align:left;"> Using the two color features as inputs and known Mi density as the training label, we established the dual-channel model: </p>
 
@@ -193,33 +217,37 @@ c-1 5-5 9-11 9h-2L532 67 19 159h-2c-5 0-9-4-11-9l-5-22c-1-6 2-12 8-13z"/></svg><
 
 <p style="text-align:left;"> To test whether the second channel adds information, we created 19 additional mixtures excluded from fitting and compared both single-channel models with the dual-channel model using the same training and test split. </p>
 
-<p style="text-align:left;"><br></p>
-
 <p style="text-align:center;"><strong> Click the image to view the complete spreadsheet </strong></p>
 
 <p style="text-align:left;"> Under current simulation conditions, paired channels reduced target-density estimation error. Each channel responds to both target and background, so similar colors may represent different mixtures. Different response weights in the two channels give regression more discriminatory information from paired colors. </p>
 
+:::figure
+
 <p style="text-align:center;"><a href="https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-c5587156db2d0d1e-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-c5587156db2d0d1e-00.json" alt="" loading="lazy" width="552" height="299"></a></p>
 
-<div class="author-table-scroll"><table class="author-table"><colgroup><col style="width:100.0000%"></colgroup><tbody><tr><td colspan="1"><p style="text-align:left;"><strong> Figure 3-5 | Mi density prediction and single- versus dual-channel comparisons. </strong><br> A: known versus predicted Mi density for the dual-channel model; the dashed line indicates ideal prediction. B: RMSEs of P3-only, P18-only, and dual-channel models on the same simulated test set. </p></td></tr></tbody></table></div>
+<strong> Figure 3-5 | Mi density prediction and single- versus dual-channel comparisons. </strong><br> A: known versus predicted Mi density for the dual-channel model; the dashed line indicates ideal prediction. B: RMSEs of P3-only, P18-only, and dual-channel models on the same simulated test set.
+
+:::
 
 <p style="text-align:left;"> For example, a simulated Mi = 40, Ce = 80 sample produced blank-relative blue-channel ratios of approximately 0.854 and 0.879, yielding an Mi estimate of approximately 39.72 individuals / 100 cm³ soil. The dual-channel input does not require Ce density; the prediction subsequently enters the medium-risk tier under the Eco example rules. This connects mixtures, pathway color development, smartphone features, and target-density estimates. </p>
 
 <p style="text-align:left;"> We also examined samples near risk thresholds. Some small density deviations change tiers, so the interface checks calibration ranges and indicates adjacent scenarios when estimated intervals cross thresholds. Current intervals use regression residuals; their coverage in measured samples remains to be validated. </p>
 
+:::note[Evidence and limitations]
+
 <p style="text-align:left;"> These results come from noise-free simulations using the same ODE generator and demonstrate internal estimation performance under the specified secretion profiles, sensor responses, and readout relationship. Test mixtures mainly cover zero-target conditions and example tier thresholds, so performance reflects those combinations. Density predictions were essentially unchanged after adding the smartphone interface, indicating that the new observation representation retained the original information. </p>
+
+:::
 
 <p style="text-align:left;"> The ODE and dual-channel model now have distinct roles: the former calculates paired colors from mixed inputs; the latter estimates Mi density from those colors. Code, parameter sources, frozen configurations, and examples support reproduction and provide an interface for measured paired data. The next Eco chapter considers how density information affects management and expected returns. </p>
 
-#### <strong> 3.7 Parameter tables </strong> {#src-Model-ODE-97 toc="3.7 Parameter tables"}
+#### 3.7 Parameter tables {#src-Model-ODE-97 toc="3.7 Parameter tables"}
 
 <p style="text-align:left;"> The following tables summarize shared-pathway, color-module, and dual-channel interpretation parameters, distinguishing published model values, project settings, analytical conversions, and simulation fits. </p>
 
 <p style="text-align:left;"><strong> Table 3-1 Shared-pathway parameters </strong></p>
 
 <p style="text-align:left;"> Shared-pathway rates retain Supady Model B estimates, checked against the Delft supplement. They are source-model parameters, not independently measured constants for our strain. <a href="https://rumo.biologie.hu-berlin.de/tbp/images/Theses/bsc_supady.pdf">[1]</a> <a href="https://static.igem.org/mediawiki/2012/0/05/ReducedModelDetails.pdf">[2]</a></p>
-
-<p style="text-align:left;"><br></p>
 
 <p style="text-align:center;"><strong> Click the image to view the complete spreadsheet </strong></p>
 
@@ -229,15 +257,11 @@ c-1 5-5 9-11 9h-2L532 67 19 159h-2c-5 0-9-4-11-9l-5-22c-1-6 2-12 8-13z"/></svg><
 
 <p style="text-align:left;"> Where channel values differ, P3 is followed by P18; otherwise a shared value is listed. Simulation conditions appear in the [mixed-sample configuration](/Users/yangruoxi/Documents/ChatGPT/ODE-Research-Lab/research/2026-10-17-phone-readout-v7/results/matrix.json). </p>
 
-<p style="text-align:left;"><br></p>
-
 <p style="text-align:center;"><strong> Click the image to view the complete spreadsheet </strong></p>
 
 <p style="text-align:left;"> Pigment concentrations in the table are indicaxanthin equivalents. <math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="G"><mrow><mi>G</mi></mrow></math> is used to construct calibration targets, <math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="a"><mrow><mi>a</mi></mrow></math> is used in dynamic calculations in the sixth equation, and <math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="KL"><mrow><msub><mrow><mi>K</mi></mrow><mrow><mi>L</mi></mrow></msub></mrow></math> denotes the effective response scale for normalized input. </p>
 
 <p style="text-align:left;"><strong> Table 3-3 Smartphone observation and dual-channel parameters </strong></p>
-
-<p style="text-align:left;"><br></p>
 
 <p style="text-align:center;"><strong> Click the image to view the complete spreadsheet </strong></p>
 
@@ -247,7 +271,7 @@ c-1 5-5 9-11 9h-2L532 67 19 159h-2c-5 0-9-4-11-9l-5-22c-1-6 2-12 8-13z"/></svg><
 
 <p style="text-align:left;"> The coefficients above apply to this input definition and output southern root-knot nematode density. The published slope uncertainty is ±0.01; the current deterministic simulation uses its central value without propagating that uncertainty. </p>
 
-#### <strong> References and resources </strong> {#src-Model-ODE-115 toc="References and resources"}
+#### References and resources {#src-Model-ODE-115 toc="References and resources"}
 
 <p style="text-align:left;">[1] Supady, A. (2009). <em>Theoretical and computational analysis of negative feedback mechanisms and the dose-response alignment in the pheromone signalling pathway of the yeast Saccharomyces cerevisiae</em>. Bachelor’s thesis, Humboldt-Universität zu Berlin. <a href="https://rumo.biologie.hu-berlin.de/tbp/images/Theses/bsc_supady.pdf"> Original PDF </a>. We use Model B; reactions, parameters, and initial conditions appear on PDF pages 48–49. </p>
 
@@ -267,12 +291,4 @@ c-1 5-5 9-11 9h-2L532 67 19 159h-2c-5 0-9-4-11-9l-5-22c-1-6 2-12 8-13z"/></svg><
 
 </section>
 
-<span id="ode-introduction" aria-hidden="true"></span>
-<span id="ode-minimal" aria-hidden="true"></span>
-<span id="ode-core" aria-hidden="true"></span>
-<span id="ode-mixtures" aria-hidden="true"></span>
-<span id="ode-calibration" aria-hidden="true"></span>
-<span id="ode-phone" aria-hidden="true"></span>
-<span id="ode-regression" aria-hidden="true"></span>
-<span id="ode-parameters" aria-hidden="true"></span>
-<span id="ode-references" aria-hidden="true"></span>
+</div>

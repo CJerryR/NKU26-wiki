@@ -13,6 +13,8 @@ meta: {}
 draft: false
 hidden: false
 ---
+<div class="reading-layout" lang="en">
+
 ## 1 DBTL-1: Heterologous Expression and Transmembrane Localization Verification of GPR2 {#dbtl-1-heterologous-expression-and-transmembrane-localization-verification-of-gpr2 toc="DBTL-1: Heterologous Expression and Transmembrane Localization Verification of GPR2"}
 
 <p>In this cycle, we performed heterologous expression and transmembrane localization verification of GPR2. The construction strategy of verification strains and detection methods were iteratively optimized. The final results met our expectations, laying a foundation for the next DBTL cycle.</p>
@@ -441,11 +443,11 @@ Mans R, Wijsman M, Daran-Lapujade P, Daran JM. A protocol for introduction of mu
 
 <section class="author-manuscript" lang="en">
 
-## <strong>3 DBTL-3: Test Strip Development and Productization</strong> {#dbtl-3-test-strip-development-and-productization}
+## 3 DBTL-3: Test Strip Development and Productization {#dbtl-3-test-strip-development-and-productization}
 
 <p style="text-align:justify;">Building upon the successful construction of engineered chassis strains through previous DBTL cycles, and integrating feedback from Human Practices (HP) surveys alongside practical application scenarios, we shifted our focus to another core objective of the project: developing a low-cost, user-friendly, and intuitive colorimetric detection platform. Therefore, this section focuses on the fabrication process and color development workflow of the engineered yeast-based test strips, encompassing three sub-cycles: substrate determination, immobilization optimization, and color development rate optimization. </p>
 
-### <strong>3.1 Cycle 1: Substrate Determination</strong> {#results-3-1}
+### 3.1 Cycle 1: Substrate Determination {#results-3-1}
 
 <p style="text-align:justify;">We reason that an ideal test strip substrate should possess high cell-loading capacity, excellent mechanical stability, reliable batch-to-batch consistency, and favorable water-retaining properties. Therefore, we initiate this cycle.</p>
 
@@ -567,25 +569,6 @@ Mans R, Wijsman M, Daran-Lapujade P, Daran JM. A protocol for introduction of mu
 
 <p style="text-align:left;">Poirier I, Marechal PA, Richard S, Gervais P. Saccharomyces cerevisiae viability is strongly dependant on rehydration kinetics and the temperature of dried cells. J Appl Microbiol. 1999;86(1):87-92. doi:10.1046/j.1365-2672.1999.00638.x.</p>
 
-<p style="text-align:left;"><br></p>
-
 </section>
 
-<span id="results-3-1-1" aria-hidden="true"></span>
-<span id="results-stage-3-1-1-1" aria-hidden="true"></span>
-<span id="results-stage-3-1-2-3" aria-hidden="true"></span>
-<span id="results-3-1-2" aria-hidden="true"></span>
-<span id="results-stage-3-1-2-1" aria-hidden="true"></span>
-<span id="results-stage-3-1-2-3-2" aria-hidden="true"></span>
-<span id="results-3-1-3" aria-hidden="true"></span>
-<span id="results-stage-3-1-3-1" aria-hidden="true"></span>
-<span id="results-stage-3-1-3-3" aria-hidden="true"></span>
-<span id="results-3-2-1" aria-hidden="true"></span>
-<span id="results-stage-3-2-1-1" aria-hidden="true"></span>
-<span id="results-stage-3-2-1-3" aria-hidden="true"></span>
-<span id="results-3-2-2" aria-hidden="true"></span>
-<span id="results-stage-3-2-2-1" aria-hidden="true"></span>
-<span id="results-stage-3-2-2-3" aria-hidden="true"></span>
-<span id="results-3-2-3" aria-hidden="true"></span>
-<span id="results-stage-3-2-3-1" aria-hidden="true"></span>
-<span id="results-stage-3-2-3-3" aria-hidden="true"></span>
+</div>

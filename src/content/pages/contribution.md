@@ -13,9 +13,15 @@ meta: {}
 draft: false
 hidden: false
 ---
+<div class="reading-layout" lang="en">
+
+:::lead
+
 We do not want future teams to start from zero.
 
 We want them to start from where we stopped—and go further.
+
+:::
 
 ## 1 Wet Lab {#wet-lab toc="Wet Lab"}
 
@@ -87,11 +93,11 @@ In this way, for future teams performing yeast engineering experiments for the f
 
 <p class="author-source-link"><a href="/source-archive/#meeting-20261019" data-source-document="meeting-20261019-93884c4d3dba">Original submission (.docx)</a><span role="status" aria-live="polite"></span></p>
 
-<section class="author-manuscript" lang="zh">
+<section class="author-manuscript" lang="en">
 
-## 1. <strong> Docking: dual-ligand engineering and cross-receptor residue analysis </strong> {#src-Project-Contribution-1 toc="1. Docking: dual-ligand engineering and cross-receptor residue analysis"}
+## 1.  Docking: dual-ligand engineering and cross-receptor residue analysis {#src-Project-Contribution-1 toc="1. Docking: dual-ligand engineering and cross-receptor residue analysis"}
 
-### <strong> 1.1 Dual-ligand contact-guided receptor engineering </strong> {#src-Project-Contribution-2 toc="1.1 Dual-ligand contact-guided receptor engineering"}
+### 1.1 Dual-ligand contact-guided receptor engineering {#src-Project-Contribution-2 toc="1.1 Dual-ligand contact-guided receptor engineering"}
 
 <p style="text-align:left;"> For engineering recognition of two ligands by one receptor, we assembled a method that proposes sites from contact differences and screens candidates through progressive substitutions. WT contact distributions for both ligands first identify positions for alanine substitution; single-mutant score and contact changes then guide saturation scanning to compare side-chain-dependent dual-ligand differences. </p>
 
@@ -105,9 +111,13 @@ In this way, for future teams performing yeast engineering experiments for the f
 
 <p style="text-align:left;"> Contact analysis spans site selection and candidate review. Comparing mutant and WT ligand positions and contact changes examines structural clues behind score differences; V368R and N84V were selected for further study. N84V, for example, lowered the ascr#18 score and raised the ascr#3 score relative to WT. Position 84 itself had no direct contact in the selected poses, but ascr#18 gained R189-associated ionic- and hydrogen-bond-type contacts and a W338 hydrophobic contact, indicating that review should cover the surrounding contact network. </p>
 
+:::note[Reuse and validation]
+
 <p style="text-align:left;"> Other teams can reuse this screening method, combining dual-ligand scores, WT contact controls, and comparisons with combination parents to propose testable engineering hypotheses. Binding and selectivity require subsequent experiments. Iterations appear in Engineering; score and contact evidence appears in Model / Docking. </p>
 
-### <strong> 1.2 Docking input checks and pose-export tools </strong> {#src-Project-Contribution-10 toc="1.2 Docking input checks and pose-export tools"}
+:::
+
+### 1.2 Docking input checks and pose-export tools {#src-Project-Contribution-10 toc="1.2 Docking input checks and pose-export tools"}
 
 <p style="text-align:left;"> We found that inconsistent coordinate references between receptor structures and search boxes affect actual search positions, while loss of chemical information during conversion affects interaction identification. Our input-check and pose-export workflow aligns receptors, ligands, and search boxes to a common reference and checks search regions against membrane orientation and retained segments. </p>
 
@@ -115,7 +125,7 @@ In this way, for future teams performing yeast engineering experiments for the f
 
 <p style="text-align:left;"> We will publish tools, instructions, and matching ascr#18 and ascr#3 examples on GitHub. Other teams can reproduce the checking and export workflow, then substitute their own data to verify search positions, atom correspondence, and chemical information in pose files. </p>
 
-### <strong> 1.3 Cross-receptor residue analysis </strong> {#src-Project-Contribution-14 toc="1.3 Cross-receptor residue analysis"}
+### 1.3 Cross-receptor residue analysis {#src-Project-Contribution-14 toc="1.3 Cross-receptor residue analysis"}
 
 <p style="text-align:left;"> Gpr2, Gpr3, GprC, and the Caenorhabditis elegans receptors DAF-37 and SRBC-64 are GPCRs involved in ascaroside sensing, offering functionally related references for comparing ligand-contact regions and candidate residues. Following Hu et al.'s receptor-structure comparisons, we combined dual-ligand contact bias with positional correspondence to inform docking-pose interpretation and engineering-site selection. </p>
 
@@ -123,9 +133,7 @@ In this way, for future teams performing yeast engineering experiments for the f
 
 <p style="text-align:left;"> Other teams can combine contact bias, positional correspondence, and construct status to distinguish sites suitable for parallel cross-receptor comparison from those requiring tests within individual receptors. Detailed methods and results appear in Model / Docking. </p>
 
-<p style="text-align:left;"><br></p>
-
-## 2. <strong> MD: jointly analyzing receptor motion and local ligand behavior </strong> {#src-Project-Contribution-19 toc="2. MD: jointly analyzing receptor motion and local ligand behavior"}
+## 2.  MD: jointly analyzing receptor motion and local ligand behavior {#src-Project-Contribution-19 toc="2. MD: jointly analyzing receptor motion and local ligand behavior"}
 
 <p style="text-align:left;"> Docking provided candidate binding poses for receptor engineering. We further used molecular dynamics (MD) simulations to examine pose retention and adjustment in membranes and organized analyses of receptor conformations, ligand positions, and contacts into a reusable workflow. </p>
 
@@ -133,9 +141,7 @@ In this way, for future teams performing yeast engineering experiments for the f
 
 <p style="text-align:left;"> We will organize analysis tools, instructions, and example results on GitHub. Other membrane-receptor teams can reproduce the analysis with their own trajectories, identify persistently contacting residues and rearrangement intervals from position curves and contact statistics, and interpret ligand dynamics using corresponding conformations. </p>
 
-<p style="text-align:left;"><br></p>
-
-## 3. <strong> ODE and dual-channel models: from color simulations to density estimation </strong> {#src-Project-Contribution-24 toc="3. ODE and dual-channel models: from color simulations to density estimation"}
+## 3.  ODE and dual-channel models: from color simulations to density estimation {#src-Project-Contribution-24 toc="3. ODE and dual-channel models: from color simulations to density estimation"}
 
 <p style="text-align:left;"> We developed an ODE model for a yeast GPCR biosensor, connecting effective receptor input, intracellular signaling, and color output. It reuses yeast pathway structures from Supady Model B and public TU Delft 2012 iGEM materials, incorporates our color module, and calculates time-dependent signal activity and pigment concentrations. </p>
 
@@ -143,11 +149,13 @@ In this way, for future teams performing yeast engineering experiments for the f
 
 <p style="text-align:left;"> We then used the ODE to generate paired pigment outputs for mixed nematode samples, simulated smartphone RGB blue-channel (B) changes relative to blanks using a literature relationship, and fitted a three-coefficient dual-channel regression to estimate southern root-knot nematode density with unknown background abundance. The ODE supplies pathway responses and simulated training data; the dual-channel model maps paired colors to target density. </p>
 
+:::note[Reuse and validation]
+
 <p style="text-align:left;"> Code, frozen configurations, and example data have been committed to GitHub. Other teams can reproduce the workflow, replace ligand-release assumptions, sensor responses, and readout methods, and calibrate with measured data. The current example demonstrates model integration under ideal simulated conditions; real smartphone readouts and biological samples still require experimental evaluation. Iterations appear in Engineering; full equations, parameter sources, and results appear in Model / ODE. </p>
 
-<p style="text-align:left;"><br></p>
+:::
 
-## 4. <strong> Eco: economic analysis from detection results to management strategies </strong> {#src-Project-Contribution-30 toc="4. Eco: economic analysis from detection results to management strategies"}
+## 4.  Eco: economic analysis from detection results to management strategies {#src-Project-Contribution-30 toc="4. Eco: economic analysis from detection results to management strategies"}
 
 <p style="text-align:left;"> We developed an economic model connecting pathogen or pest density, crop yield loss, and management costs. It compares no testing and no treatment, no testing with uniform treatment, and testing followed by tiered treatment. Density–yield relationships estimate losses; product prices, testing costs, and treatment costs and efficacy then determine expected net returns. </p>
 
@@ -155,9 +163,11 @@ In this way, for future teams performing yeast engineering experiments for the f
 
 <p style="text-align:left;"> The Spanish protected-tomato and southern root-knot nematode example combines a literature-fitted yield-loss relationship, three risk tiers, and per-area cost accounting to compare economic outcomes of management options under specified conditions. </p>
 
+:::note[Reuse and validation]
+
 <p style="text-align:left;"> Other teams can start from this example, substitute density–yield relationships for their crops and target organisms and local costs, compare management benefits of detection information, and update parameters with experimental or field data. Full methods, sources, and scenario results appear in Model / Eco. </p>
 
-<p style="text-align:left;"><br></p>
+:::
 
 </section>
 
@@ -165,11 +175,11 @@ In this way, for future teams performing yeast engineering experiments for the f
 
 <p class="author-source-link"><a href="/source-archive/#meeting-20261019" data-source-document="meeting-20261019-0511db20fff1">Original submission (.docx)</a><span role="status" aria-live="polite"></span></p>
 
-<section class="author-manuscript" lang="zh">
+<section class="author-manuscript" lang="en">
 
 <p style="text-align:left;"> Our HP work provides courses and outreach materials, investigation methods, sampling guidance, and enterprise communication documents for future teams. These resources support science education, user-needs analysis, field records, and social-resource outreach, helping others adapt existing experience to their own projects. </p>
 
-#### 1. <strong> Age-adapted courses and public outreach materials </strong> {#src-HP-Contribution-2 toc="1. Age-adapted courses and public outreach materials"}
+#### 1.  Age-adapted courses and public outreach materials {#src-HP-Contribution-2 toc="1. Age-adapted courses and public outreach materials"}
 
 <p style="text-align:left;"> We designed three courses on nematodes and agriculture, biological signals, and scientific responsibility. The Nematode Hunt introduces nematodes' relationships with roots and soil through plants and disease; Exploring Biological Signals explains biosensing through input, sensing, and output; Small Lives and Everyday Contributions connects microscopic life with responsibility, cooperation, and everyday contributions. The first two have primary and junior-secondary versions; the third targets primary students. </p>
 
@@ -177,7 +187,7 @@ In this way, for future teams performing yeast engineering experiments for the f
 
 <p style="text-align:left;"> Picture books, posters, leaflets, and postcards extend outreach beyond classrooms. Users can select materials around a clear theme, such as root and soil diagrams for underground disease or inputs and outputs for sensing principles. Our collaboration with the Xiangyang Program also offers practical guidance: agree on audiences, materials, responsibilities, and feedback with teaching partners in advance so courses fit real classrooms. </p>
 
-#### 2. <strong> Project-focused investigation and feedback methods </strong> {#src-HP-Contribution-6 toc="2. Project-focused investigation and feedback methods"}
+#### 2.  Project-focused investigation and feedback methods {#src-HP-Contribution-6 toc="2. Project-focused investigation and feedback methods"}
 
 <p style="text-align:left;"> We designed a questionnaire on agricultural nematode awareness and detection needs, collected 369 submissions, and combined expert interviews with grower discussions to understand applications. The reusable approach is to first define unanswered project questions and then choose appropriate informants: the public describes awareness and tool expectations, growers provide production and operational experience, and experts examine detection principles, sample conditions, and interpretation. </p>
 
@@ -185,13 +195,13 @@ In this way, for future teams performing yeast engineering experiments for the f
 
 <p style="text-align:left;"> Expert discussions can also inform feedback-tracking records. Teams can organize comments by project question, source and date, main feedback, team discussion, and next steps, adding corresponding versions and results when feedback changes experiments, models, or materials. This traces how advice enters a project and identifies open questions. Public research materials should handle personal information within authorized limits and share suitable questionnaires, aggregate results, or thematic summaries. </p>
 
-#### 3. <strong> Field sampling guidance and background records </strong> {#src-HP-Contribution-10 toc="3. Field sampling guidance and background records"}
+#### 3.  Field sampling guidance and background records {#src-HP-Contribution-10 toc="3. Field sampling guidance and background records"}
 
 <p style="text-align:left;"> The team organized soil collection and produced a sampling-guidance video, linking crops, collection locations, dates, and treatment histories through sample identifiers. These materials explain requirements to collectors and let researchers trace provenance and connect later observations with agricultural contexts. </p>
 
 <p style="text-align:left;"> Teams collecting agricultural or environmental samples can follow the sequence of sampling guidance, consistent identifiers, background records, and handover checks. First confirm target samples and collection and transport conditions with the experimental lead, then adapt guidance. Check labels against records at handover and retain missing-information or anomaly records. Specific sampling plans must reflect study organisms, soil types, and downstream methods, with representativeness assessed separately. </p>
 
-#### 4. <strong> Enterprise outreach and project-pitch materials </strong> {#src-HP-Contribution-13 toc="4. Enterprise outreach and project-pitch materials"}
+#### 4.  Enterprise outreach and project-pitch materials {#src-HP-Contribution-13 toc="4. Enterprise outreach and project-pitch materials"}
 
 <p style="text-align:left;"> We prepared enterprise collaboration invitations, project proposals, and presentation slides for initial contact, further discussions, and pitches. They summarize the team, agricultural problem, research approach, current work, and needed support, offering references for student teams explaining projects and collaboration needs to external partners. </p>
 
@@ -201,21 +211,4 @@ In this way, for future teams performing yeast engineering experiments for the f
 
 </section>
 
-<span id="docking-engineering-for-two-ligands-and-cross-receptor-residue-analysis" aria-hidden="true"></span>
-<span id="receptor-engineering-guided-by-contacts-with-two-ligands" aria-hidden="true"></span>
-<span id="tools-for-checking-docking-inputs-and-exporting-poses" aria-hidden="true"></span>
-<span id="cross-receptor-residue-analysis" aria-hidden="true"></span>
-<span id="md-joint-analysis-of-receptor-motion-and-local-ligand-behavior" aria-hidden="true"></span>
-<span id="ode-a-full-pathway-model-from-receptor-signaling-to-colorimetric-output" aria-hidden="true"></span>
-<span id="eco-economic-benefit-analysis-from-detection-results-to-management-strategies" aria-hidden="true"></span>
-<span id="hp-contribution-source-41" aria-hidden="true"></span>
-<span id="hp-contribution-source-45" aria-hidden="true"></span>
-<span id="hp-contribution-source-50" aria-hidden="true"></span>
-<span id="hp-contribution-source-55" aria-hidden="true"></span>
-<span id="hp-contribution-source-59" aria-hidden="true"></span>
-<span id="hp-contribution-source-64" aria-hidden="true"></span>
-<span id="hp-contribution-source-68" aria-hidden="true"></span>
-<span id="docking-and-receptor-recognition" aria-hidden="true"></span>
-<span id="md-and-membrane-system-simulations" aria-hidden="true"></span>
-<span id="ode-modeling-and-signal-output" aria-hidden="true"></span>
-<span id="economic-benefit-modeling-and-management-decisions" aria-hidden="true"></span>
+</div>

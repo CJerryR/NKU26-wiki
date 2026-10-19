@@ -13,19 +13,23 @@ meta: {}
 draft: false
 hidden: false
 ---
-<div data-nemaklear-original></div>
+<div class="reading-layout" lang="en">
 
 <p class="author-source-link"><a href="/source-archive/#meeting-20261019" data-source-document="meeting-20261019-cf8e375550b3">Original submission (.docx)</a><span role="status" aria-live="polite"></span></p>
 
-<section class="author-manuscript" lang="zh">
+<section class="author-manuscript" lang="en">
 
-## 4. <strong> Eco | From color readouts to management decisions </strong> {#src-Model-Eco-1 toc="4. Eco | From color readouts to management decisions"}
+## 4.  Eco | From color readouts to management decisions {#src-Model-Eco-1 toc="4. Eco | From color readouts to management decisions"}
+
+:::lead
 
 <p style="text-align:left;"> We developed the <strong> NemaKlear interactive web app </strong> to connect ODE color simulations, dual-channel density estimation, and economic analysis. Readers can choose simulated soil samples or enter paired absorbance readings, view target nematode density, and compare single-season net returns under different management strategies. </p>
 
+:::
+
 <p style="text-align:left;"> The app lets us directly explore a question: <strong> When growers already have the option of uniform treatment, how much additional return can knowledge of nematode density provide? </strong> The Eco model therefore connects density with potential yield loss, treatment costs, and testing costs to examine when density information changes management choices and whether that change covers the costs of acquiring information and adjusting treatment. </p>
 
-### <strong> 4.1 Exploring the connection from color to returns in the interactive app </strong> {#src-Model-Eco-4 toc="4.1 Exploring the connection from color to returns in the interactive app"}
+### 4.1 Exploring the connection from color to returns in the interactive app {#src-Model-Eco-4 toc="4.1 Exploring the connection from color to returns in the interactive app"}
 
 <p style="text-align:left;"> In NemaKlear, readers can follow model outputs through color response → density estimation → management choice → economic outcome. </p>
 
@@ -47,7 +51,7 @@ hidden: false
 
 <p style="text-align:left;"> The app also provides a full report for reviewing parameters and sensitivity analyses and downloading calculations for verification. </p>
 
-### <strong> 4.2 Connecting color development and economic analysis through density </strong> {#src-Model-Eco-15 toc="4.2 Connecting color development and economic analysis through density"}
+### 4.2 Connecting color development and economic analysis through density {#src-Model-Eco-15 toc="4.2 Connecting color development and economic analysis through density"}
 
 <p style="text-align:left;"> The ODE, dual-channel model, and Eco perform three sequential tasks. The ODE describes how receptor input generates color through intracellular pathways; the dual-channel model uses paired color features to estimate southern root-knot nematode density when background nematodes also contribute; Eco combines density estimates with production and management parameters to calculate economic outcomes. </p>
 
@@ -59,7 +63,7 @@ hidden: false
 
 <p style="text-align:left;"> The interface retains both density point estimates and regression prediction intervals. When an interval crosses a management-tier boundary, the program calculates scenarios on both sides to show possible changes in treatment choices and returns. Negative densities and results outside calibration or economic-model support ranges are not passed downstream; the page explains calibration status and applicability conditions. </p>
 
-### <strong> 4.3 Calculating yield loss and net returns from nematode density </strong> {#src-Model-Eco-21 toc="4.3 Calculating yield loss and net returns from nematode density"}
+### 4.3 Calculating yield loss and net returns from nematode density {#src-Model-Eco-21 toc="4.3 Calculating yield loss and net returns from nematode density"}
 
 <p style="text-align:left;"> We use Spanish protected tomato production and the southern root-knot nematode as an example, calculating returns per hectare per production season from preplanting density. </p>
 
@@ -73,17 +77,13 @@ hidden: false
 
 <p style="text-align:left;"> The model combines yield relationships and economic parameters from different studies into a reproducible literature-based scenario. Testing cost is provisionally set to <strong>5 EUR/ha</strong> as a team assumption. Sources are retained for published prices, treatment costs, and converted efficacy so these can be updated for actual application conditions. </p>
 
-### <strong> 4.4 Using two baselines to distinguish control benefits from information value </strong> {#src-Model-Eco-28 toc="4.4 Using two baselines to distinguish control benefits from information value"}
+### 4.4 Using two baselines to distinguish control benefits from information value {#src-Model-Eco-28 toc="4.4 Using two baselines to distinguish control benefits from information value"}
 
 <p style="text-align:left;"> Higher returns after testing can reflect both control itself and density-based treatment adjustment. We therefore define three management scenarios to separate these contributions. </p>
-
-<p style="text-align:left;"><br></p>
 
 <p style="text-align:center;"><strong> Click the image to view the complete spreadsheet </strong></p>
 
 <p style="text-align:left;"> Tiered treatment follows the preset rules below, with treatment information from reference <a href="https://doi.org/10.3390/plants11202774">2</a>。</p>
-
-<p style="text-align:left;"><br></p>
 
 <p style="text-align:center;"><strong> Click the image to view the complete spreadsheet </strong></p>
 
@@ -97,11 +97,9 @@ hidden: false
 
 <p style="text-align:left;"> The first evaluates the entire testing-and-tiered-treatment package; the second evaluates the conditional value of using density information to adjust action when uniform treatment is already available. Separating the baselines helps identify whether increased returns arise from implementing control or changing treatment after obtaining information. </p>
 
-### <strong> 4.5 When density information is worth obtaining </strong> {#src-Model-Eco-40 toc="4.5 When density information is worth obtaining"}
+### 4.5 When density information is worth obtaining {#src-Model-Eco-40 toc="4.5 When density information is worth obtaining"}
 
 <p style="text-align:left;"> At a density of <strong>100 J2/100 cm³</strong>, with all other parameters at the example settings, the model gives the following results: </p>
-
-<p style="text-align:left;"><br></p>
 
 <p style="text-align:center;"><strong> Click the image to view the complete spreadsheet </strong></p>
 
@@ -119,9 +117,13 @@ hidden: false
 
 <p style="text-align:left;"> We further varied testing cost, treatment cost, treatment efficacy, and crop selling price separately to examine sensitivity of both return differences. When tiered and uniform treatment use the same measure, shared cost and efficacy parameters change together to maintain consistent comparison conditions. </p>
 
+:::note[Evidence and limitations]
+
 <p style="text-align:left;"> These are conditional calculations under specified density, cost, and efficacy assumptions. Current density prediction intervals reflect formal uncertainty in simulated regression; empirical coverage still requires real samples and readout calibration. Interval endpoints and adjacent-density scenarios illustrate economic effects of altered judgments; the resulting return range is not a confidence interval for returns. Real detection errors may change treatment choices, and their economic effects require evaluation against measured error distributions. </p>
 
-### <strong> 4.6 Feeding economic comparisons back into detection design </strong> {#src-Model-Eco-52 toc="4.6 Feeding economic comparisons back into detection design"}
+:::
+
+### 4.6 Feeding economic comparisons back into detection design {#src-Model-Eco-52 toc="4.6 Feeding economic comparisons back into detection design"}
 
 <p style="text-align:left;"> Eco focuses detection design on density ranges where management choices may change. Semiquantitative or quantitative information can support management tiers when different densities imply different treatments. Near boundaries, estimation bias may alter choices, making these ranges priorities for calibration and evaluation. </p>
 
@@ -131,20 +133,12 @@ hidden: false
 
 <p style="text-align:left;"> For reproducibility and updates, parameter configurations are stored separately from calculation code, with example inputs and regenerable reports. Existing automated checks cover density–loss calculations, cost accounting, and consistency of comparison baselines; real application benefits still require local validation. Other researchers can replace crops, prices, and treatment parameters to assess their detection systems under specific management conditions. </p>
 
-### <strong>References</strong> {#src-Model-Eco-57 toc="References"}
+### References {#src-Model-Eco-57 toc="References"}
 
 <p style="text-align:left;">[1] Expósito, A., Pujolà, M., Achaerandio, I., Giné, A., Escudero, N., Fullana, A. M., Cunquero, M., Loza-Alvarez, P., &amp; Sorribas, F. J. (2020). Tomato and Melon <em>Meloidogyne</em> Resistant Rootstocks Improve Crop Yield but Melon Fruit Quality Is Influenced by the Cropping Season. <em>Frontiers in Plant Science, 11</em>, 560024. <a href="https://doi.org/10.3389/fpls.2020.560024">DOI: 10.3389/fpls.2020.560024</a></p>
 
 <p style="text-align:left;">[2] Talavera-Rubia, M., Vela-Delgado, M. D., &amp; Verdejo-Lucas, S. (2022). A Cost-Benefit Analysis of Soil Disinfestation Methods against Root-Knot Nematodes in Mediterranean Intensive Horticulture. <em>Plants, 11</em>(20), 2774. <a href="https://doi.org/10.3390/plants11202774">DOI: 10.3390/plants11202774</a></p>
 
-<p style="text-align:left;"><br></p>
-
 </section>
 
-<span id="eco-introduction" aria-hidden="true"></span>
-<span id="eco-interface" aria-hidden="true"></span>
-<span id="eco-economics" aria-hidden="true"></span>
-<span id="eco-baselines" aria-hidden="true"></span>
-<span id="eco-example" aria-hidden="true"></span>
-<span id="eco-design" aria-hidden="true"></span>
-<span id="eco-explorer" aria-hidden="true"></span>
+</div>

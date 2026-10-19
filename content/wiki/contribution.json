@@ -12,11 +12,12 @@
   "blocks": [
     {
       "_template": "text",
-      "body": "We do not want future teams to start from zero."
+      "body": "<div class=\"reading-layout\" lang=\"en\">"
     },
     {
-      "_template": "text",
-      "body": "We want them to start from where we stopped—and go further."
+      "_template": "layout",
+      "kind": "lead",
+      "body": "We do not want future teams to start from zero.\n\nWe want them to start from where we stopped—and go further."
     },
     {
       "_template": "heading",
@@ -173,18 +174,18 @@
     },
     {
       "_template": "text",
-      "body": "<section class=\"author-manuscript\" lang=\"zh\">"
+      "body": "<section class=\"author-manuscript\" lang=\"en\">"
     },
     {
       "_template": "heading",
       "level": 2,
-      "text": "1. <strong> Docking: dual-ligand engineering and cross-receptor residue analysis </strong>",
+      "text": "1.  Docking: dual-ligand engineering and cross-receptor residue analysis",
       "attributes": "#src-Project-Contribution-1 toc=\"1. Docking: dual-ligand engineering and cross-receptor residue analysis\""
     },
     {
       "_template": "heading",
       "level": 3,
-      "text": "<strong> 1.1 Dual-ligand contact-guided receptor engineering </strong>",
+      "text": "1.1 Dual-ligand contact-guided receptor engineering",
       "attributes": "#src-Project-Contribution-2 toc=\"1.1 Dual-ligand contact-guided receptor engineering\""
     },
     {
@@ -212,13 +213,15 @@
       "body": "<p style=\"text-align:left;\"> Contact analysis spans site selection and candidate review. Comparing mutant and WT ligand positions and contact changes examines structural clues behind score differences; V368R and N84V were selected for further study. N84V, for example, lowered the ascr#18 score and raised the ascr#3 score relative to WT. Position 84 itself had no direct contact in the selected poses, but ascr#18 gained R189-associated ionic- and hydrogen-bond-type contacts and a W338 hydrophobic contact, indicating that review should cover the surrounding contact network. </p>"
     },
     {
-      "_template": "text",
+      "_template": "layout",
+      "kind": "note",
+      "label": "Reuse and validation",
       "body": "<p style=\"text-align:left;\"> Other teams can reuse this screening method, combining dual-ligand scores, WT contact controls, and comparisons with combination parents to propose testable engineering hypotheses. Binding and selectivity require subsequent experiments. Iterations appear in Engineering; score and contact evidence appears in Model / Docking. </p>"
     },
     {
       "_template": "heading",
       "level": 3,
-      "text": "<strong> 1.2 Docking input checks and pose-export tools </strong>",
+      "text": "1.2 Docking input checks and pose-export tools",
       "attributes": "#src-Project-Contribution-10 toc=\"1.2 Docking input checks and pose-export tools\""
     },
     {
@@ -236,7 +239,7 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "<strong> 1.3 Cross-receptor residue analysis </strong>",
+      "text": "1.3 Cross-receptor residue analysis",
       "attributes": "#src-Project-Contribution-14 toc=\"1.3 Cross-receptor residue analysis\""
     },
     {
@@ -252,13 +255,9 @@
       "body": "<p style=\"text-align:left;\"> Other teams can combine contact bias, positional correspondence, and construct status to distinguish sites suitable for parallel cross-receptor comparison from those requiring tests within individual receptors. Detailed methods and results appear in Model / Docking. </p>"
     },
     {
-      "_template": "text",
-      "body": "<p style=\"text-align:left;\"><br></p>"
-    },
-    {
       "_template": "heading",
       "level": 2,
-      "text": "2. <strong> MD: jointly analyzing receptor motion and local ligand behavior </strong>",
+      "text": "2.  MD: jointly analyzing receptor motion and local ligand behavior",
       "attributes": "#src-Project-Contribution-19 toc=\"2. MD: jointly analyzing receptor motion and local ligand behavior\""
     },
     {
@@ -274,13 +273,9 @@
       "body": "<p style=\"text-align:left;\"> We will organize analysis tools, instructions, and example results on GitHub. Other membrane-receptor teams can reproduce the analysis with their own trajectories, identify persistently contacting residues and rearrangement intervals from position curves and contact statistics, and interpret ligand dynamics using corresponding conformations. </p>"
     },
     {
-      "_template": "text",
-      "body": "<p style=\"text-align:left;\"><br></p>"
-    },
-    {
       "_template": "heading",
       "level": 2,
-      "text": "3. <strong> ODE and dual-channel models: from color simulations to density estimation </strong>",
+      "text": "3.  ODE and dual-channel models: from color simulations to density estimation",
       "attributes": "#src-Project-Contribution-24 toc=\"3. ODE and dual-channel models: from color simulations to density estimation\""
     },
     {
@@ -296,17 +291,15 @@
       "body": "<p style=\"text-align:left;\"> We then used the ODE to generate paired pigment outputs for mixed nematode samples, simulated smartphone RGB blue-channel (B) changes relative to blanks using a literature relationship, and fitted a three-coefficient dual-channel regression to estimate southern root-knot nematode density with unknown background abundance. The ODE supplies pathway responses and simulated training data; the dual-channel model maps paired colors to target density. </p>"
     },
     {
-      "_template": "text",
+      "_template": "layout",
+      "kind": "note",
+      "label": "Reuse and validation",
       "body": "<p style=\"text-align:left;\"> Code, frozen configurations, and example data have been committed to GitHub. Other teams can reproduce the workflow, replace ligand-release assumptions, sensor responses, and readout methods, and calibrate with measured data. The current example demonstrates model integration under ideal simulated conditions; real smartphone readouts and biological samples still require experimental evaluation. Iterations appear in Engineering; full equations, parameter sources, and results appear in Model / ODE. </p>"
-    },
-    {
-      "_template": "text",
-      "body": "<p style=\"text-align:left;\"><br></p>"
     },
     {
       "_template": "heading",
       "level": 2,
-      "text": "4. <strong> Eco: economic analysis from detection results to management strategies </strong>",
+      "text": "4.  Eco: economic analysis from detection results to management strategies",
       "attributes": "#src-Project-Contribution-30 toc=\"4. Eco: economic analysis from detection results to management strategies\""
     },
     {
@@ -322,12 +315,10 @@
       "body": "<p style=\"text-align:left;\"> The Spanish protected-tomato and southern root-knot nematode example combines a literature-fitted yield-loss relationship, three risk tiers, and per-area cost accounting to compare economic outcomes of management options under specified conditions. </p>"
     },
     {
-      "_template": "text",
+      "_template": "layout",
+      "kind": "note",
+      "label": "Reuse and validation",
       "body": "<p style=\"text-align:left;\"> Other teams can start from this example, substitute density–yield relationships for their crops and target organisms and local costs, compare management benefits of detection information, and update parameters with experimental or field data. Full methods, sources, and scenario results appear in Model / Eco. </p>"
-    },
-    {
-      "_template": "text",
-      "body": "<p style=\"text-align:left;\"><br></p>"
     },
     {
       "_template": "text",
@@ -345,7 +336,7 @@
     },
     {
       "_template": "text",
-      "body": "<section class=\"author-manuscript\" lang=\"zh\">"
+      "body": "<section class=\"author-manuscript\" lang=\"en\">"
     },
     {
       "_template": "text",
@@ -354,7 +345,7 @@
     {
       "_template": "heading",
       "level": 4,
-      "text": "1. <strong> Age-adapted courses and public outreach materials </strong>",
+      "text": "1.  Age-adapted courses and public outreach materials",
       "attributes": "#src-HP-Contribution-2 toc=\"1. Age-adapted courses and public outreach materials\""
     },
     {
@@ -372,7 +363,7 @@
     {
       "_template": "heading",
       "level": 4,
-      "text": "2. <strong> Project-focused investigation and feedback methods </strong>",
+      "text": "2.  Project-focused investigation and feedback methods",
       "attributes": "#src-HP-Contribution-6 toc=\"2. Project-focused investigation and feedback methods\""
     },
     {
@@ -390,7 +381,7 @@
     {
       "_template": "heading",
       "level": 4,
-      "text": "3. <strong> Field sampling guidance and background records </strong>",
+      "text": "3.  Field sampling guidance and background records",
       "attributes": "#src-HP-Contribution-10 toc=\"3. Field sampling guidance and background records\""
     },
     {
@@ -404,7 +395,7 @@
     {
       "_template": "heading",
       "level": 4,
-      "text": "4. <strong> Enterprise outreach and project-pitch materials </strong>",
+      "text": "4.  Enterprise outreach and project-pitch materials",
       "attributes": "#src-HP-Contribution-13 toc=\"4. Enterprise outreach and project-pitch materials\""
     },
     {
@@ -425,7 +416,7 @@
     },
     {
       "_template": "text",
-      "body": "<span id=\"docking-engineering-for-two-ligands-and-cross-receptor-residue-analysis\" aria-hidden=\"true\"></span>\n<span id=\"receptor-engineering-guided-by-contacts-with-two-ligands\" aria-hidden=\"true\"></span>\n<span id=\"tools-for-checking-docking-inputs-and-exporting-poses\" aria-hidden=\"true\"></span>\n<span id=\"cross-receptor-residue-analysis\" aria-hidden=\"true\"></span>\n<span id=\"md-joint-analysis-of-receptor-motion-and-local-ligand-behavior\" aria-hidden=\"true\"></span>\n<span id=\"ode-a-full-pathway-model-from-receptor-signaling-to-colorimetric-output\" aria-hidden=\"true\"></span>\n<span id=\"eco-economic-benefit-analysis-from-detection-results-to-management-strategies\" aria-hidden=\"true\"></span>\n<span id=\"hp-contribution-source-41\" aria-hidden=\"true\"></span>\n<span id=\"hp-contribution-source-45\" aria-hidden=\"true\"></span>\n<span id=\"hp-contribution-source-50\" aria-hidden=\"true\"></span>\n<span id=\"hp-contribution-source-55\" aria-hidden=\"true\"></span>\n<span id=\"hp-contribution-source-59\" aria-hidden=\"true\"></span>\n<span id=\"hp-contribution-source-64\" aria-hidden=\"true\"></span>\n<span id=\"hp-contribution-source-68\" aria-hidden=\"true\"></span>\n<span id=\"docking-and-receptor-recognition\" aria-hidden=\"true\"></span>\n<span id=\"md-and-membrane-system-simulations\" aria-hidden=\"true\"></span>\n<span id=\"ode-modeling-and-signal-output\" aria-hidden=\"true\"></span>\n<span id=\"economic-benefit-modeling-and-management-decisions\" aria-hidden=\"true\"></span>"
+      "body": "</div>"
     }
   ],
   "description": "",

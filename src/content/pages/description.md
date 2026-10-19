@@ -13,6 +13,8 @@ meta: {}
 draft: false
 hidden: false
 ---
+<div class="reading-layout" lang="en">
+
 ## 1 Background {#background toc="Background"}
 
 ### 1.1 Silent Killers Underground: The Urgent Threat of Plant-Parasitic Nematodes {#11-silent-killers-underground-the-urgent-threat-of-plant-parasitic-nematodes toc="Plant-Parasitic Nematodes"}
@@ -83,7 +85,7 @@ Table 1. Comparison of detection methods for plant-parasitic nematodes
 
 <p class="author-source-link"><a href="/source-archive/#meeting-20261019" data-source-document="meeting-20261019-aabe053205e9">Original submission (.docx)</a><span role="status" aria-live="polite"></span></p>
 
-<section class="author-manuscript" lang="zh">
+<section class="author-manuscript" lang="en">
 
 <p style="text-align:left;"> Human Practices addresses a central question: how can nematode detection respond to real agricultural needs? For Field Detective's concept of engineered yeast sensing ascarosides and producing observable outputs, we used questionnaires, expert interviews, and field practice to clarify applications and design requirements. Education, outreach, and industry discussions connected the project with potential users and the public. </p>
 
@@ -131,13 +133,11 @@ Detailed experimental design and results can be found in [Wet Lab-Results](/resu
 
 <p class="author-source-link"><a href="/source-archive/#meeting-20261019" data-source-document="meeting-20261019-d8c0f0af5a28">Original submission (.docx)</a><span role="status" aria-live="polite"></span></p>
 
-<section class="author-manuscript" lang="zh">
+<section class="author-manuscript" lang="en">
 
 <p style="text-align:left;"> Our dry-lab work addresses three connected questions: how to select and engineer ascaroside-recognizing receptors, how to convert recognition signals into color outputs, and how detection results can support field management. Molecular docking, molecular dynamics simulations, ODE signaling models, and economic modeling provide computational support for project design. </p>
 
 <p style="text-align:left;"> For receptor recognition, <strong> molecular docking </strong> helps compare Gpr2, Gpr3, and GprC, identify Gpr2 hotspots, and design mutations. Score and interaction changes explore differences in recognition of ascaroside 3 and ascaroside 18. <strong> molecular dynamics simulations </strong> further examine dynamic behavior in selected systems, tracking ligand positioning and key contacts over time to supplement structural hypotheses from docking. </p>
-
-<p style="text-align:left;"><br></p>
 
 <p style="text-align:left;"> For signal output, <strong> ODE modeling </strong> connects receptor input, intracellular signaling, and color development. We reused published pathways and calibrated input–output interfaces with simulated data, then converted paired pigment outputs into simulated smartphone RGB blue-channel features to fit <strong> the three-coefficient regression equation of the dual-channel model </strong>. This model estimates southern root-knot nematode density with unknown background abundance, providing input for risk tiers. Real samples and smartphone imaging data will support subsequent experimental calibration. </p>
 
@@ -169,9 +169,4 @@ Detailed experimental design and results can be found in [Wet Lab-Results](/resu
 8. Kuo, CY., Tay, R.J., Lin, HC. et al. The nematode-trapping fungus Arthrobotrys oligospora detects prey pheromones via G protein-coupled receptors. Nat Microbiol 9, 1738–1751 (2024). [https://doi.org/10.1038/s41564-024-01679-w](https://doi.org/10.1038/s41564-024-01679-w).
 9. Cong Fan, Nike He, Jifeng Yuan, Cascaded amplifying circuit enables sensitive detection of fungal pathogens, Biosensors and Bioelectronics, Volume 250, 2024, 116058, ISSN 0956-5663, [https://doi.org/10.1016/j.bios.2024.116058](https://doi.org/10.1016/j.bios.2024.116058).
 
-<span id="hp-description-source-16" aria-hidden="true"></span>
-<span id="hp-description-source-20" aria-hidden="true"></span>
-<span id="hp-description-source-25" aria-hidden="true"></span>
-<span id="hp-description-source-30" aria-hidden="true"></span>
-<span id="hp-description-source-34" aria-hidden="true"></span>
-<span id="hp-original-references" aria-hidden="true"></span>
+</div>

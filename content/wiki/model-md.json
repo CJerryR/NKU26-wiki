@@ -13,26 +13,31 @@
   "blocks": [
     {
       "_template": "text",
+      "body": "<div class=\"reading-layout\" lang=\"en\">"
+    },
+    {
+      "_template": "text",
       "body": "<p class=\"author-source-link\"><a href=\"/source-archive/#meeting-20261019\" data-source-document=\"meeting-20261019-a689408f0daa\">Original submission (.docx)</a><span role=\"status\" aria-live=\"polite\"></span></p>"
     },
     {
       "_template": "text",
-      "body": "<section class=\"author-manuscript\" lang=\"zh\">"
+      "body": "<section class=\"author-manuscript\" lang=\"en\">"
     },
     {
       "_template": "heading",
       "level": 2,
-      "text": "<strong> Molecular Dynamics | Ligand positioning and contact changes in a membrane environment </strong>",
+      "text": "Molecular Dynamics | Ligand positioning and contact changes in a membrane environment",
       "attributes": "#src-Model-Molecular-Dynamics-1 toc=\"Molecular Dynamics | Ligand positioning and contact changes in a membrane environment\""
     },
     {
-      "_template": "text",
+      "_template": "layout",
+      "kind": "lead",
       "body": "<p style=\"text-align:left;\"> Docking provided candidate binding poses for N84V and V368R. We then performed molecular dynamics (MD) simulations to examine how these poses adjust in a membrane environment and which receptor–ligand contacts persist. </p>"
     },
     {
       "_template": "heading",
       "level": 3,
-      "text": "<strong> 2.1 Building six membrane systems from docking poses </strong>",
+      "text": "2.1 Building six membrane systems from docking poses",
       "attributes": "#src-Model-Molecular-Dynamics-3 toc=\"2.1 Building six membrane systems from docking poses\""
     },
     {
@@ -46,7 +51,7 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "<strong> 2.2 Observing ligand motion relative to the local pocket </strong>",
+      "text": "2.2 Observing ligand motion relative to the local pocket",
       "attributes": "#src-Model-Molecular-Dynamics-6 toc=\"2.2 Observing ligand motion relative to the local pocket\""
     },
     {
@@ -58,12 +63,9 @@
       "body": "<p style=\"text-align:left;\"> The primary comparison window was 50–100 ns for all six systems to reduce early relaxation effects; full trajectories tracked contact formation, loss, and ligand relocation. RMSD describes deviation from each ligand's own starting pose; contact occupancy is the fraction of sampled frames satisfying contact criteria within the window. </p>"
     },
     {
-      "_template": "text",
-      "body": "<p style=\"text-align:center;\"><a href=\"https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-d5f1716f681b7d35-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-d5f1716f681b7d35-00.json\" alt=\"\" loading=\"lazy\" width=\"552\" height=\"319\"></a></p>"
-    },
-    {
-      "_template": "text",
-      "body": "<div class=\"author-table-scroll\"><table class=\"author-table\"><colgroup><col style=\"width:100.0000%\"></colgroup><tbody><tr><td colspan=\"1\"><p style=\"text-align:left;\"><strong> Figure 1 | Ligand heavy-atom RMSD under different structural alignments. </strong> Trajectories are aligned by the whole receptor, transmembrane helical core, or local pocket backbone and referenced to their own production-start structures. Curves are 1 ns centered moving averages of data sampled every 100 ps; shading marks the 50–100 ns comparison window. Each system contains one 100 ns trajectory. </p></td></tr></tbody></table></div>"
+      "_template": "layout",
+      "kind": "figure",
+      "body": "<p style=\"text-align:center;\"><a href=\"https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-d5f1716f681b7d35-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-d5f1716f681b7d35-00.json\" alt=\"\" loading=\"lazy\" width=\"552\" height=\"319\"></a></p>\n\n<strong> Figure 1 | Ligand heavy-atom RMSD under different structural alignments. </strong> Trajectories are aligned by the whole receptor, transmembrane helical core, or local pocket backbone and referenced to their own production-start structures. Curves are 1 ns centered moving averages of data sampled every 100 ps; shading marks the 50–100 ns comparison window. Each system contains one 100 ns trajectory."
     },
     {
       "_template": "text",
@@ -72,7 +74,7 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "<strong> 2.3 N84V–ascr#18: persistent Arg189 anchoring of the ligand carboxylate </strong>",
+      "text": "2.3 N84V–ascr#18: persistent Arg189 anchoring of the ligand carboxylate",
       "attributes": "#src-Model-Molecular-Dynamics-12 toc=\"2.3 N84V–ascr#18: persistent Arg189 anchoring of the ligand carboxylate\""
     },
     {
@@ -84,20 +86,13 @@
       "body": "<p style=\"text-align:left;\"> During 50–100 ns, the minimum distance between Arg189 guanidinium nitrogen and ligand carboxylate oxygen was ≤4 Å in every sampled frame, giving 100% contact occupancy; 93.6% of sampled frames contained at least one hydrogen bond. Hydrogen bonds required donor–acceptor distance ≤3.0 Å and D–H–A angle ≥150°. Under the same criteria, neither N84V–ascr#3 nor WT–ascr#18 showed Arg189–ligand carboxylate hydrogen bonds during this interval. </p>"
     },
     {
-      "_template": "text",
-      "body": "<p style=\"text-align:center;\"><a href=\"https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-f0178ce121bafde0-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-f0178ce121bafde0-00.json\" alt=\"\" loading=\"lazy\" width=\"552\" height=\"251\"></a></p>"
-    },
-    {
-      "_template": "text",
-      "body": "<div class=\"author-table-scroll\"><table class=\"author-table\"><colgroup><col style=\"width:100.0000%\"></colgroup><tbody><tr><td colspan=\"1\"><p style=\"text-align:left;\"><strong> Figure 2 | Contacts between Arg189 and the ascr#18 carboxylate in Gpr2 N84V. </strong> (a) Snapshot at 64.64 ns; the dashed line indicates an Arg189–ligand hydrogen bond with a donor–acceptor distance of 2.77 Å. (b) Hydrogen-bond occupancy during 50–100 ns: 93.6% for N84V–ascr#18 and 0% for WT–ascr#18 and N84V–ascr#3. Sampling was every 100 ps, using the criteria described in the text. </p></td></tr></tbody></table></div>"
+      "_template": "layout",
+      "kind": "figure",
+      "body": "<p style=\"text-align:center;\"><a href=\"https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-f0178ce121bafde0-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-f0178ce121bafde0-00.json\" alt=\"\" loading=\"lazy\" width=\"552\" height=\"251\"></a></p>\n\n<strong> Figure 2 | Contacts between Arg189 and the ascr#18 carboxylate in Gpr2 N84V. </strong> (a) Snapshot at 64.64 ns; the dashed line indicates an Arg189–ligand hydrogen bond with a donor–acceptor distance of 2.77 Å. (b) Hydrogen-bond occupancy during 50–100 ns: 93.6% for N84V–ascr#18 and 0% for WT–ascr#18 and N84V–ascr#3. Sampling was every 100 ps, using the criteria described in the text."
     },
     {
       "_template": "text",
       "body": "<p style=\"text-align:left;\"> Persistent contact accompanied smaller ligand displacement. After pocket alignment, mean ligand RMSD in the second half was lower for N84V–ascr#18 than for WT–ascr#18 and N84V–ascr#3; transmembrane-core alignment retained this relationship. The Arg189 salt bridge and its hydrogen bonds offer a mechanistic clue for positional retention of ascr#18 in this conformation. </p>"
-    },
-    {
-      "_template": "text",
-      "body": "<p style=\"text-align:left;\"><br></p>"
     },
     {
       "_template": "text",
@@ -106,7 +101,7 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "<strong> 2.4 V368R–ascr#3: a stable mechanistic explanation remains unresolved </strong>",
+      "text": "2.4 V368R–ascr#3: a stable mechanistic explanation remains unresolved",
       "attributes": "#src-Model-Molecular-Dynamics-20 toc=\"2.4 V368R–ascr#3: a stable mechanistic explanation remains unresolved\""
     },
     {
@@ -122,13 +117,15 @@
       "body": "<p style=\"text-align:left;\"> Whole-receptor screening of direct salt bridges, hydrogen bonds, and combined contacts found that Asp89 anchored the ascr#3 sugar ring in the Arg189-start trajectory. This hydrogen bond occurred frequently during 20–50 ns but mostly disappeared in the second half. Arg368–Asp70 contact persisted before and after hydrogen-bond formation and loss, without a corresponding change accompanying sugar-ring motion. A static ascr#18 model could also accommodate the same sugar-ring position. Asp89 thus supplied a transient binding pose, but no stable clue explaining V368R–ascr#3 preference. </p>"
     },
     {
-      "_template": "text",
+      "_template": "layout",
+      "kind": "note",
+      "label": "Evidence and limitations",
       "body": "<p style=\"text-align:left;\"><strong> Additional simulations and analyses still found no mechanistic clue comparable to persistent Arg189 anchoring in N84V–ascr#18. The structural mechanism underlying Vina-predicted enhanced ascr#3 preference in V368R requires further study. </strong></p>"
     },
     {
       "_template": "heading",
       "level": 3,
-      "text": "<strong> 2.5 Mechanistic interpretations of the two candidates </strong>",
+      "text": "2.5 Mechanistic interpretations of the two candidates",
       "attributes": "#src-Model-Molecular-Dynamics-25 toc=\"2.5 Mechanistic interpretations of the two candidates\""
     },
     {
@@ -142,7 +139,7 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "<strong>References</strong>",
+      "text": "References",
       "attributes": "#src-Model-Molecular-Dynamics-28 toc=\"References\""
     },
     {
@@ -155,7 +152,7 @@
     },
     {
       "_template": "text",
-      "body": "<span id=\"md-introduction\" aria-hidden=\"true\"></span>\n<span id=\"md-systems\" aria-hidden=\"true\"></span>\n<span id=\"md-pocket-rmsd\" aria-hidden=\"true\"></span>\n<span id=\"md-n84v\" aria-hidden=\"true\"></span>\n<span id=\"md-v368r\" aria-hidden=\"true\"></span>\n<span id=\"md-next-steps\" aria-hidden=\"true\"></span>"
+      "body": "</div>"
     }
   ],
   "preserveAuthorFormatting": true
