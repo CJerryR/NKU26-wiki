@@ -327,6 +327,13 @@
   function loop() {
     var sec = H.$('[data-loop]'); if (!sec) return;
     var svg = H.$('[data-lp-svg]', sec), board = H.$('[data-lp-board]', sec), card = H.$('[data-lp-card]', sec);
+    board.tabIndex = 0;
+    board.setAttribute('role', 'region');
+    board.setAttribute('aria-label', 'Field and laboratory feedback diagram. Scroll horizontally to explore.');
+    var swipeHint = document.createElement('p');
+    swipeHint.className = 'lp__mobile-hint';
+    swipeHint.textContent = 'Swipe sideways to explore the full diagram. Tap a step to read its role.';
+    board.insertAdjacentElement('afterend', swipeHint);
     var K = 1200 / 1230;
     function X(x) { return (x - 273) * K; }
     function Y(y) { return (y - 103) * K + 36; }
@@ -374,7 +381,10 @@
       g.addEventListener('click', function () { if (!drawn) drawAll(true, true); focus([k]); show(k); });
       g.addEventListener('focus', function () { if (!drawn) drawAll(true, true); focus([k]); show(k); });
       g.addEventListener('blur', function () { if (!playing && !pinned) { focus(null); card.hidden = true; } });
-      g.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); focus([k]); show(k); } });
+      g.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); focus([k]); show(k); }
+        if (e.key === 'Escape') { focus(null); card.hidden = true; }
+      });
     });
     /* label boxes, trimmed to the letters (the text box carries the font's
        leading); a dotted label also owns the space of its dot */
@@ -472,13 +482,14 @@
       });
     }
     function show(k) {
-      var n = N[k], r = board.getBoundingClientRect(), sx = r.width / 1200, sy = r.height / 620, b = B[k];
+      // The SVG can extend beyond its horizontal scroll viewport on phones.
+      var n = N[k], drawing = svg.getBoundingClientRect(), sx = drawing.width / 1200, sy = drawing.height / 620, b = B[k];
       var st = STAGE[n[3]];
       card.innerHTML = '<b>' + n[2] + '</b>' + n[4] + '<em class="lp__stage lp__stage--' + n[3] + '">' + (n[3] === 'core' ? 'At the centre of the cycle' : st[0] + ': ' + st[1]) + '</em>';
       card.hidden = false;
       var cw = card.offsetWidth || 250, ch = card.offsetHeight || 110, x = b.cx * sx, below = b.b * sy + 12, above = b.t * sy - ch - 12;
-      card.style.left = H.clamp(x - cw / 2, 0, r.width - cw) + 'px';
-      card.style.top = (below + ch <= r.height || above < 0 ? H.clamp(below, 0, r.height - ch) : above) + 'px';
+      card.style.left = H.clamp(x - cw / 2, board.scrollLeft, board.scrollLeft + Math.max(0, board.clientWidth - cw)) + 'px';
+      card.style.top = (below + ch <= drawing.height || above < 0 ? H.clamp(below, 0, Math.max(0, drawing.height - ch)) : above) + 'px';
     }
     var stageBtns = H.$$('[data-q]', sec);
     stageBtns.forEach(function (b) {

@@ -139,3 +139,15 @@
 @media (prefers-reduced-motion: reduce) {
   .toc__film, .toc__pill { transition: none !important; }
 }
+
+
+@media (max-width: 1099px) {
+  .toc__pill { color: var(--glass-ink, var(--ink)); }
+  .toc__panel { max-height: min(66dvh, calc(100dvh - 190px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px)), 560px); }
+  .toc__close { width: 44px; height: 44px; top: -8px; }
+  .toc__top { min-height: 44px; margin-block: 4px 0; }
+}
+@media (max-width: 640px) {
+  .toc { right: max(12px, env(safe-area-inset-right, 0px)); }
+  .toc__panel { left: max(12px, env(safe-area-inset-left, 0px)); right: max(12px, env(safe-area-inset-right, 0px)); }
+}
