@@ -165,5 +165,11 @@
     "cdn_map": "docs/what-we-built-approved-cdn-20261020.json",
     "illustrations": 6,
     "svg_bytes_preserved": true
+  },
+  "first_publication": {
+    "commit": "6c25e6b128934d54a3b0c6614b2b2a9c676332e9",
+    "pipeline_id": 774839,
+    "pages_job": 1872092,
+    "published_at_beijing": "2026-10-20 03:57:51"
   }
 }
