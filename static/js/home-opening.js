@@ -19,22 +19,25 @@
   var fxCv = root.querySelector('[data-op-fx]');
   var hero = root.querySelector('[data-op-hero]');
   var artwork = root.querySelector('[data-op-art]');
+  var foreground = root.querySelector('[data-op-foreground]');
+  var foregroundRenderer = null, foregroundScene = null, foregroundMesh = null;
   var hudLine = root.querySelector('[data-op-line]');
   var labelsEl = root.querySelector('[data-op-labels]');
+  var clueEl = root.querySelector('[data-op-clue]');
   var guideBtn = root.querySelector('[data-op-guide]');
   var focusEl = root.querySelector('[data-op-focus]');
   var T = window.THREE;
 
   var COPY = {
-    scan: NK.coarse ? 'Tap the soil to move your light.' : 'Move your light through the soil.',
-    soil: 'Only soil here. Look for a flicker of cyan.',
+    scan: NK.coarse ? 'Tap the cyan glow on the left to start.' : 'Move your light to the cyan glow on the left.',
+    soil: 'Follow the next cyan glow through the soil.',
     pebble: 'A pebble. Keep looking.',
     root: 'Healthy roots, reaching down for water.',
     sick: 'This root looks swollen and knotted.',
     ghost: 'A free-living nematode, just passing through.',
     detected: 'Signal detected!',
     trail: 'The fluorescent signals seem to form a trail.',
-    hint: 'Look for the flickering cyan glow.',
+    hint: 'Start at the cyan glow on the left.',
     roots: 'The plant\u2019s roots are under severe attack!',
     found: 'Nematodes are behind it!',
     blocked: 'Not yet. Follow the signals to what is hiding here.',
@@ -136,6 +139,11 @@
       artwork.style.opacity = String(1 - hp);
       artwork.style.visibility = hp >= 1 ? 'hidden' : 'visible';
     }
+    // CSS artwork remains available before WebGL loads and in fallback mode.
+    if (foreground && !foregroundMesh) {
+      foreground.style.opacity = String(1 - hp);
+      foreground.style.visibility = hp >= 1 ? 'hidden' : 'visible';
+    }
     var under = d > 0.9;
     if (under !== heroUnder) { heroUnder = under; root.classList.toggle('is-under', under); }
   }
@@ -212,6 +220,22 @@
   var DPR = Math.min(window.devicePixelRatio || 1, NK.coarse ? 1.5 : 1.8);
   renderer.setPixelRatio(DPR);
 
+  // A WebGL mesh cannot occlude an HTML heading in another stacking layer.
+  // Render just the painted alpha foreground above that heading, with the
+  // same camera/material as the soil scene. No separate image crop or motion.
+  if (foreground) {
+    try {
+      foregroundRenderer = new T.WebGLRenderer({ canvas: foreground, alpha: true, antialias: true, powerPreference: 'low-power' });
+      foregroundRenderer.setClearColor(0x000000, 0);
+      foregroundRenderer.setPixelRatio(DPR);
+      foregroundScene = new T.Scene();
+    } catch (err) {
+      if (foregroundRenderer) foregroundRenderer.dispose();
+      foregroundRenderer = null;
+      root.classList.add('is-foreground-unavailable');
+    }
+  }
+
   var scene = new T.Scene();
   var camera = new T.PerspectiveCamera(32, 1, 0.5, 400);
   var HALF_TAN = Math.tan(16 * Math.PI / 180);
@@ -229,6 +253,8 @@
     uGall: { value: 0 },
     uPx: { value: 800 },
     uHint: { value: 0 },
+    uLead: { value: new T.Vector2() },
+    uLeadOn: { value: 0 },
     uArt: { value: 0 },
     uFade: { value: 0 }
   };
@@ -710,10 +736,16 @@
    * drawn soil over uFeather (a fraction of its height). */
   var FRAG_ART = [
     'precision highp float;',
-    'uniform sampler2D uMap; uniform vec2 uL; uniform float uR; uniform float uOn; uniform vec3 uLC; uniform float uAmb; uniform float uFade; uniform float uFeather;',
+    'uniform sampler2D uMap; uniform vec2 uL; uniform float uR; uniform float uOn; uniform vec3 uLC; uniform float uAmb; uniform float uFade; uniform float uFeather; uniform float uLayer; uniform float uPortrait;',
     'varying vec2 vUv; varying vec2 vW;',
     'void main(){',
     '  vec4 tx = texture2D(uMap, vUv);',
+    // Image-space split: grass and the small left sprout can overlap letters;
+    // tall trees stay behind them. Both passes partition the same source
+    // texels, so translucent paint edges are never composited twice.
+    '  float front = max(step(vUv.y, 0.39), (1.0 - uPortrait) * step(0.24, vUv.x) * step(vUv.x, 0.34) * step(vUv.y, 0.46));',
+    '  if (uLayer > 1.5 && front < 0.5) discard;',
+    '  if (uLayer > 0.5 && uLayer < 1.5 && front > 0.5) discard;',
     '  float a = tx.a * uFade * smoothstep(0.0, uFeather, vUv.y);',
     '  if (a < 0.004) discard;',
     '  float under = 1.0 - smoothstep(-0.3, 0.3, vW.y);',
@@ -744,7 +776,7 @@
 
   var VERT_PTS = [
     'attribute float aSize; attribute float aPhase; attribute float aState; attribute float aT0;',
-    'uniform float uTime; uniform float uPx; uniform float uHint; uniform float uFlick; uniform vec2 uL; uniform float uR;',
+    'uniform float uTime; uniform float uPx; uniform float uHint; uniform float uFlick; uniform vec2 uL; uniform float uR; uniform vec2 uLead; uniform float uLeadOn;',
     'varying float vA; varying float vPulse; varying float vState;',
     'void main(){',
     '  vec4 mv = modelViewMatrix * vec4(position, 1.0); gl_Position = projectionMatrix * mv;',
@@ -757,8 +789,11 @@
     '  if (aState > 0.5 && aState < 1.5) a = flick * clamp(age / 0.7, 0.0, 1.0) * (1.0 + uHint * 0.6) * (0.5 + 0.5 * litP);',
     '  else if (aState > 1.5 && aState < 2.5) { a = 0.92 + 0.08 * sin(uTime * 2.0 + aPhase * 6.0); vPulse = clamp(1.0 - age / 1.2, 0.0, 1.0); }',
     '  else if (aState > 2.5) a = 0.34 * clamp(0.5 + 0.5 * sin(uTime * (0.6 + aPhase) + aPhase * 30.0), 0.0, 1.0) * flick * litP;',
+    // Only the next undiscovered node gets the stronger beacon, outside the flashlight too.
+    '  float lead = uLeadOn * (1.0 - smoothstep(0.45, 0.85, length(wp.xy - uLead))) * step(0.5, aState) * step(aState, 1.5);',
+    '  a += lead * (0.7 + uHint * 0.3) * clamp(age / 0.7, 0.0, 1.0);',
     '  vA = a; vState = aState;',
-    '  gl_PointSize = aSize * uPx / -mv.z * (1.0 + vPulse * 2.2 + uHint * 0.5 * step(0.5, aState) * step(aState, 1.5));',
+    '  gl_PointSize = aSize * uPx / -mv.z * (1.0 + lead * 0.65 + vPulse * 2.2 + uHint * 0.5 * step(0.5, aState) * step(aState, 1.5));',
     '}'
   ].join('\n');
   var FRAG_PTS = [
@@ -849,6 +884,7 @@
   /* ---------------- build / rebuild ---------------- */
   function dispose() {
     if (!built) return;
+    if (foregroundMesh) { foregroundScene.remove(foregroundMesh); foregroundMesh.material.dispose(); foregroundMesh = null; }
     built.list.forEach(function (o) {
       scene.remove(o);
       if (o.geometry) o.geometry.dispose();
@@ -862,6 +898,7 @@
     return new T.ShaderMaterial({
       uniforms: {
         uTime: U.uTime, uPx: U.uPx, uHint: extra && extra.hint ? U.uHint : { value: 0 },
+        uLead: U.uLead, uLeadOn: extra && extra.hint ? U.uLeadOn : { value: 0 },
         uFlick: { value: NK.reduced ? 0 : 1 }, uCol: { value: new T.Color(color) }, uL: U.uL, uR: U.uR
       },
       vertexShader: VERT_PTS, fragmentShader: FRAG_PTS,
@@ -1072,15 +1109,27 @@
     sky.position.set(0, L.top + 2 - skyH / 2, -0.6);
     sky.renderOrder = -1;
     var ground = new T.Mesh(new T.PlaneGeometry(A.w, A.h), new T.ShaderMaterial({
-      uniforms: { uMap: { value: tArt }, uL: U.uL, uR: U.uR, uOn: U.uOn, uLC: U.uLC, uAmb: U.uAmb, uFade: U.uFade, uFeather: { value: 0.09 } },
+      uniforms: { uMap: { value: tArt }, uL: U.uL, uR: U.uR, uOn: U.uOn, uLC: U.uLC, uAmb: U.uAmb, uFade: U.uFade, uFeather: { value: 0.09 }, uLayer: { value: 0 }, uPortrait: { value: L.portrait ? 1 : 0 } },
       vertexShader: VERT_WORLD, fragmentShader: FRAG_ART, transparent: true, depthWrite: false
     }));
     ground.position.set(A.x, A.y, 0.02);
     ground.renderOrder = 0.5;
+    if (foregroundScene) {
+      foregroundMesh = ground.clone();
+      foregroundMesh.material = new T.ShaderMaterial({
+        uniforms: Object.assign({}, ground.material.uniforms, { uLayer: { value: 2 } }),
+        vertexShader: VERT_WORLD, fragmentShader: FRAG_ART, transparent: true, depthWrite: false
+      });
+      foregroundScene.add(foregroundMesh);
+      foreground.style.opacity = '1';
+      foreground.style.visibility = 'visible';
+      root.classList.add('has-foreground-canvas');
+    }
     scene.add(sky); scene.add(ground);
     built.list.push(sky, ground);
     built.textures.push(tSky, tArt);
     built.art = true;
+    built.ground = ground;
     U.uArt.value = 1;
     artLook = makeArtLookup(ac);
     if (!art.shown) { art.shown = true; art.fadeT = NK.reduced || D.v > 0.5 ? -1e9 : performance.now(); }
@@ -1288,6 +1337,7 @@
     W = Math.max(1, Math.round(r.width));
     H = Math.max(1, Math.round(r.height));
     renderer.setSize(W, H, false);
+    if (foregroundRenderer) foregroundRenderer.setSize(W, H, false);
     fctx = H0.fit(fxCv, W, H, 1.5);
     camera.aspect = W / H;
     camera.updateProjectionMatrix();
@@ -1376,7 +1426,9 @@
     slowFor = emaDt > 0.024 ? slowFor + dt : 0;
     if (slowFor > 2 && DPR > 1) {
       DPR = Math.max(1, Math.round((DPR - 0.3) * 10) / 10); slowFor = 0;
-      renderer.setPixelRatio(DPR); resize(false);
+      renderer.setPixelRatio(DPR);
+      if (foregroundRenderer) foregroundRenderer.setPixelRatio(DPR);
+      resize(false);
     }
   }
   var heroFrameKey = null;
@@ -1453,7 +1505,20 @@
       if (Math.hypot(L.nem.x - light.x, L.nem.y - light.y) < R * 0.6 && S.roots) onFound(t);
       if (!S.detected && t - S.tExplore > 7 && !S.hinted) { S.hinted = true; nudge(); }
     }
-    U.uHint.value = S.hinted && !S.detected ? 0.5 + 0.5 * Math.sin(t * 3) : 0;
+    // Show the starting point immediately, then carry the cue along the trail.
+    var nextClue = S.exploring && !S.found && !guide && S.detected < L.nodes.length;
+    U.uLeadOn.value = nextClue ? 1 : 0;
+    U.uHint.value = nextClue ? (NK.reduced ? 0.6 : 0.5 + 0.5 * Math.sin(t * 2)) : 0;
+    if (nextClue) U.uLead.value.set(L.nodes[S.detected].x, L.nodes[S.detected].y);
+    if (clueEl) {
+      clueEl.hidden = !nextClue;
+      if (nextClue) {
+        var clue = toScreen(L.nodes[S.detected].x, L.nodes[S.detected].y);
+        clueEl.textContent = S.detected ? '\u2191 Follow the glow' : '\u2191 Start here';
+        clueEl.style.left = NK.clamp(clue.x, 84, W - 84).toFixed(1) + 'px';
+        clueEl.style.top = NK.clamp(clue.y + 26, 90, H - 190).toFixed(1) + 'px';
+      }
+    }
 
     built.nemU.uShow.value = S.found ? NK.smooth(0, 0.6, t - S.foundT) : 0;
     built.nemU.uWig.value = S.found ? 0.03 + 0.06 * Math.max(0, 1 - (t - S.foundT) / 2.5) : 0.018;
@@ -1478,6 +1543,14 @@
       bigLabel.style.transform = 'translate(' + bx.toFixed(1) + 'px,' + (s.y - 40).toFixed(1) + 'px)';
     }
     describe(t);
+    // The same foreground is drawn exactly once. Once the heading is fully
+    // transparent, hand it back to the soil scene for flashlight shading.
+    var aboveTitle = !!foregroundMesh && d < 0.5;
+    if (built.ground) built.ground.material.uniforms.uLayer.value = aboveTitle ? 1 : 0;
+    if (foregroundRenderer && foregroundMesh) {
+      foreground.hidden = !aboveTitle;
+      if (aboveTitle) foregroundRenderer.render(foregroundScene, camera);
+    }
     renderer.render(scene, camera);
     if (built.art && U.uFade.value >= 1 && artwork) artwork.hidden = true;
     drawFx(t, ls, rad, d, warmK);

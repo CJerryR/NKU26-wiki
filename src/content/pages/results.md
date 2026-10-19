@@ -537,7 +537,7 @@ Mans R, Wijsman M, Daran-Lapujade P, Daran JM. A protocol for introduction of mu
 
 <p style="text-align:justify;">First, we complete a continuous observation and recording of freeze-dried test strip resuscitation via time-lapse photography (Video 1).</p>
 
-<figure class="results-timelapse"><iframe title="Video 1. Observation of test strip resuscitation over 113 h" src="https://video.igem.org/videos/embed/vwRYoammvjP4TanUWTm7yy?start=0s&amp;stop=70s" allow="fullscreen" loading="lazy" sandbox="allow-scripts allow-same-origin" style="width:100%;aspect-ratio:16/9;border:0"></iframe><p>Playback is pending iGEM moderation.</p><p style="text-align:center;"><strong>Video 1. Observation of test strip resuscitation over 113 h</strong>（<strong> Insert video </strong><strong>“Video3.2.1”</strong>）</p></figure>
+<figure class="results-timelapse"><iframe title="Video 1. Observation of test strip resuscitation over 113 h" src="https://video.igem.org/videos/embed/fFXuDzig2DWKhQPFLW2mnM" allow="fullscreen" loading="lazy" sandbox="allow-scripts allow-same-origin" style="width:100%;aspect-ratio:16/9;border:0"></iframe><p style="text-align:center;"><strong>Video 1. Observation of test strip resuscitation over 113 h</strong>（<strong> Insert video </strong><strong>“Video3.2.1”</strong>）</p></figure>
 
 <p style="text-align:justify;">Subsequently, we carry out multiple control experiments to further explore the optimal conditions for test strip color development, performing RGB blue-channel grayscale quantification using ImageJ (Figure 6).</p>
 

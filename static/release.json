@@ -1,7 +1,7 @@
 {
-  "version": "10.2.5",
-  "label": "Integrated mobile layouts, attribution cards, footer logos and navigation fixes",
-  "prepared_at": "2026-10-19T21:30:00+08:00",
+  "version": "10.2.8",
+  "label": "Four interactive DBTL cycles and six official CDN homepage illustrations",
+  "prepared_at": "2026-10-20T02:50:43.394202+08:00",
   "media": "84 unchanged original images plus 4 user-authorized GPS-only cleaned images; all decoded frames unchanged; 12 complete historical source documents",
   "release_kind": "stage",
   "team_content_review": "Scientific final review pending; source-version choices authorized by user",
@@ -10,7 +10,7 @@
     "commit": "16770d5c28ddf7bc41f8d90445c44d80a28801d5",
     "published_at_local": "2026-10-18 05:04:34"
   },
-  "release_id": "v10.2.5-pending-four-20261019",
+  "release_id": "recent-all-20261020-v10.2.8",
   "mobile_layout_check": "390px Members rendered without overflow; desktop Description, Parts/plasmid, Attributions/puzzle checked; 4 second delayed CDN uses inline preview then upgrades",
   "source_fidelity": {
     "original_source_files_verified": 80,
@@ -21,7 +21,7 @@
     "source_table_cells": 297,
     "ode_parameter_rows": 42,
     "submission_conflicts": "Resolved by explicit user instructions; original disagreements preserved",
-    "video": "Existing upload remains blocked by Video Universe; moderator review required",
+    "video": "Results embeds the original published Video Universe record fFXuDzig2DWKhQPFLW2mnM",
     "dedicated_feishu_sources": "Three dedicated revision links previously showed deleted; original live formatting still cannot be reread",
     "gps_clean_image_files": 4,
     "historical_original_documents": 12,
@@ -30,8 +30,8 @@
     "source_decisions": "content/author-source-decisions.json"
   },
   "previous_release": {
-    "commit": "936ad5046969b2e8de30b5d03813af330023a920",
-    "version": "10.2.4"
+    "version": "10.2.7",
+    "commit": "109a1bbd23d29b83a40081c0031fddfe24f6cd08"
   },
   "visual_stage": "AI-generated handcut illustrations; 16 sheets, 91 canonical props",
   "meeting_update": {
@@ -42,7 +42,7 @@
     "official_transport_files_verified": 75,
     "new_original_images_byte_verified": 18,
     "source_language": "Revised Project/Model prose translated from Chinese to English; original documents retained; author English for HP and Results 3.0",
-    "video": "Results 3.0 original 1:10 video uploaded; automatic block pending moderator review",
+    "video": "Results uses the original published video record",
     "hp_project_original": "Complete local original unchanged; public DOCX copy removes GPS metadata only, authorized by user; text, formatting and image pixels preserved",
     "readme_production_notes": "Preserved locally. Background deletion, auto renumbering and model-title translation not executed without direct user authorization."
   },
@@ -136,5 +136,28 @@
     "navigation_and_tooltip": "5fc5ff8670b69224da023c27926159fcf033b87f",
     "footer_media": "Three supplied logos on official iGEM CDN; SVG bytes preserved after removing XML declaration; PNG converted to AVIF by official service",
     "paper_background": "Independent preview excluded; no completed background commit"
+  },
+  "recent_changes": {
+    "opening_foreground": "8662575565fc2ff5e8fdfe07bf77afa3557f5e93",
+    "opening_signals": "ded3b8542adbb673c327e3e7c756fdf03531890d",
+    "footer_cleanup": "446882a12f0df1922d912621be8b98d7b2446f50",
+    "hp_soil_cleanup": "02559760ae38ff6b20399d88a12a15d975b7ad98",
+    "layout_rules_document": "dd6f3c321f48130735c29418a5c7e2c4b38f7556",
+    "what_we_built": "Not included: six images await official CDN upload",
+    "video_and_new_member_assets": "27 portraits and one group photo included; video remains a separate task"
+  },
+  "member_portraits": {
+    "portraits": 27,
+    "group_photos": 1,
+    "hosting": "Official iGEM Uploads CDN",
+    "originals": "Byte-identical source files retained; three large PNG files use quality-95 WebP upload copies at original dimensions",
+    "biographies": "Existing text, names, order and fields preserved"
+  },
+  "homepage_dbtl": {
+    "source_commit": "d5e53b09f4e75dc6a1b830539e45aac11a132cbc",
+    "cycles": 4,
+    "body": "Supplied module lists and detail links preserved; no new scientific prose invented",
+    "cdn_map": "docs/home-built-cdn-20261020.json",
+    "cdn_images": 6
   }
 }

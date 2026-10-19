@@ -1,0 +1,736 @@
+{
+  "task": "ruoxi-members-review",
+  "owner_thread": "01a154da-d1ca-77a0-af41-db78a27f3014",
+  "checked_at": "2026-10-20T00:03:00+08:00",
+  "source_path": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/tasks/ruoxi-members-review",
+  "base_commit": "2dd2e28c990c2ceb2ce63c22d923247c4297295f",
+  "scope": "Members audit only; no Attributions, global styling, paper background, integration or release edits",
+  "source_access": {
+    "requested_document": "https://nankai.feishu.cn/wiki/B1ekwYZdLiN6IDkkq8Cc6WMynKg",
+    "latest_online_document_read": false,
+    "failure": "Web reader returned Internal Error; independent IAB navigation timed out. Shared native Feishu not used as instructed.",
+    "reference": "https://2024.igem.wiki/heidelberg/team",
+    "reference_read": true
+  },
+  "evidence_files": [
+    {
+      "path": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/Team成员与贡献更新-20261019/01-原始交付/Member_Introductions_Separated(1).docx",
+      "sha256": "77e8ef1bbea08a7ebe131c604097359048cf8763d2fd3232ad086b6c8cf77e01",
+      "bytes": 42623
+    },
+    {
+      "path": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/Team成员与贡献更新-20261019/02-全文读取/parsed-introductions.json",
+      "sha256": "6ee5ef4451e80a4252e4bd17f271815eb29d57808cd49d13d6a7b09be1c328c2",
+      "bytes": 14777
+    },
+    {
+      "path": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/Team成员与贡献更新-20261019/02-全文读取/Member_Introductions_Separated(1).txt",
+      "sha256": "9ffc32ddded75cdb92a03ffccf1e72c2319d3a53e6b5cddafdf870adc3908ee5",
+      "bytes": 20598
+    },
+    {
+      "path": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/范洁简介修订-20261019/用户指定简介.txt",
+      "sha256": "05fa6da37abccde430df6612280ce797832839e50c91ff8bc9cdf543a86449b5",
+      "bytes": 494
+    },
+    {
+      "path": "/Users/cjrmacbook/Downloads/Team-members.zip",
+      "sha256": "f2c7d9f68fe9eb78b9f8a7821b201ec0ff29b82bf4f27b1ce5f1447c724bb9ba",
+      "bytes": 23757814
+    },
+    {
+      "path": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/tasks/ruoxi-members-review/content/wiki/members.json",
+      "sha256": "5d6eeff6fe6c1a9d974cf7b419ffe912987eaeafed55dd92818e9e5237a637d7",
+      "bytes": 19023
+    },
+    {
+      "path": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/tasks/ruoxi-members-review/content/original-image-assets.json",
+      "sha256": "1a8404168036987ce20e2f9aa62fea57ba463579dcc53ab27e458b9ce33ce28d",
+      "bytes": 65283
+    },
+    {
+      "path": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/tasks/ruoxi-members-review/content/source-archive.json",
+      "sha256": "efdf1354c7f61b217fe0fc8d734a5331cc4399a2e85d90c96bccaff746ec8997",
+      "bytes": 18454
+    }
+  ],
+  "already_implemented": {
+    "members": 27,
+    "source_fields_match": true,
+    "introduction_original_matches": 26,
+    "later_user_biography_overrides": 1,
+    "current_original_portraits": 15,
+    "production_and_local_member_html_text_equal": true,
+    "member_ids_in_production_equal_source": true,
+    "front_fields": "English Name / Label / supplied Grade / two supplied University fields; Chinese names intentionally removed by later user request",
+    "portrait_integrity": {
+      "byte_identical_originals": 14,
+      "authorized_gps_only_public_copies": 1,
+      "gps_copy_name": "Yang Ruoxi",
+      "gps_evidence": "outputs/原稿一致性授权落实-20261018/gps-removal-verification.json"
+    },
+    "already_published_commits": {
+      "natural_portrait_ratio": "a4106cbeac9f0cee6f262a018f09ea02eca34f59",
+      "source_fields_compact": "5c634c0ed9e678851e2befeacb9d21d9bf8ebc19",
+      "fan_bio_override": "8a89bc79874ee9ee1efc1901d9a15ce7e62cbb1b"
+    }
+  },
+  "remaining": [
+    {
+      "item": "Specified new purple-uniform group photograph",
+      "state": "absent from Members content and production Members image tags",
+      "blocking_source": "Exact original and provenance of photo immediately before quoted Feishu reply",
+      "next_step": "Obtain exact original read-only; add native figure before member groups preserving every person; verify desktop/mobile crop"
+    },
+    {
+      "item": "Latest members attachment shown as 123.0MB",
+      "state": "not found in inspected Feishu Downloads, normal Downloads or received-source indexes",
+      "available_old_archive_bytes": 23757814,
+      "next_step": "Obtain exact archive and compare inventory to existing photo mappings; do not substitute old Team-members.zip"
+    },
+    {
+      "item": "12 portrait placeholders",
+      "names": [
+        "Jie Fan",
+        "Peng-Lin Wei",
+        "Churchill Zhu",
+        "Zhang Hongbo",
+        "Ma Peisong",
+        "Song Xinying",
+        "Chen Yuxin",
+        "Chen Jiarui",
+        "Kaiben Zhang",
+        "Han Xinyu",
+        "Bai Ruitong",
+        "Chen Yiling"
+      ],
+      "state": "confirmed placeholders; new archive needed to determine whether missing photos were supplied"
+    }
+  ],
+  "rejected_photo_candidates": [
+    {
+      "path": "/Users/cjrmacbook/Downloads/活动合照.jpg",
+      "sha256": "0365337d1b93c2594684e25dce076b9d5ee0ec77ef5e92e0df434eee1a48ab26",
+      "reason": "Four people at outreach school with volunteer flag"
+    },
+    {
+      "path": "/Users/cjrmacbook/Downloads/活动合照 (1).jpg",
+      "sha256": "7eb3978071119056597f251c2b8a18c20e8db53c8701b74fb65a33636c0d3965",
+      "reason": "Children and volunteers at community event"
+    }
+  ],
+  "source_archive_members_entries": [],
+  "per_member": [
+    {
+      "name": "Jie Fan",
+      "anchor": "jie-fan",
+      "source_fields_match": {
+        "name": true,
+        "role": true,
+        "cohort": true,
+        "university": true,
+        "introduction": true
+      },
+      "biography_source": "later explicit user paragraph",
+      "photo": null
+    },
+    {
+      "name": "Peng-Lin Wei",
+      "anchor": "peng-lin-wei",
+      "source_fields_match": {
+        "name": true,
+        "role": true,
+        "cohort": true,
+        "university": true,
+        "introduction": true
+      },
+      "biography_source": "2026-10-19 received Introduction English section",
+      "photo": null
+    },
+    {
+      "name": "Churchill Zhu",
+      "anchor": "zhiyi-zhu",
+      "source_fields_match": {
+        "name": true,
+        "role": true,
+        "cohort": true,
+        "university": true,
+        "introduction": true
+      },
+      "biography_source": "2026-10-19 received Introduction English section",
+      "photo": null
+    },
+    {
+      "name": "Roy Zhang",
+      "anchor": "zhanning-zhang-advisor",
+      "source_fields_match": {
+        "name": true,
+        "role": true,
+        "cohort": true,
+        "university": true,
+        "introduction": true
+      },
+      "biography_source": "2026-10-19 received Introduction English section",
+      "photo": {
+        "original_name": "张展宁.jpg",
+        "sha256": "ddac5d0342584a652dae4bf5c8ac430a19fcd3c3e82ce8f4550233b6ef66e684",
+        "source": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/v8.0/已收材料-2026-10-09/project-teams+干实验微信旧稿快照__日期未显示/原稿/Teams/张展宁.jpg",
+        "dimensions": [
+          2316,
+          3088
+        ],
+        "matches_original_manifest": true,
+        "authorized_change": null
+      }
+    },
+    {
+      "name": "Fu Xinya",
+      "anchor": "fu-xinya",
+      "source_fields_match": {
+        "name": true,
+        "role": true,
+        "cohort": true,
+        "university": true,
+        "introduction": true
+      },
+      "biography_source": "2026-10-19 received Introduction English section",
+      "photo": {
+        "original_name": "Fu Xinya.jpg",
+        "sha256": "8fa16e16e7a49200917b22225a954fc9d71b1fc0cd905c0d0f47c7bd96f2c93a",
+        "source": "/Users/cjrmacbook/Downloads/Team-members.zip!/Team-members/附件/Fu Xinya.jpg",
+        "dimensions": [
+          2736,
+          3648
+        ],
+        "matches_original_manifest": true,
+        "authorized_change": null
+      }
+    },
+    {
+      "name": "Yang Ruoxi",
+      "anchor": "ruoxi-yang-student-leader",
+      "source_fields_match": {
+        "name": true,
+        "role": true,
+        "cohort": true,
+        "university": true,
+        "introduction": true
+      },
+      "biography_source": "2026-10-19 received Introduction English section",
+      "photo": {
+        "original_name": "杨若希.JPG",
+        "sha256": "2498ade0c5bd0b406eab5b8ee5afb76221bbd9e529888296d5474133d0506bfd",
+        "source": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/原稿一致性授权落实-20261018/gps-clean-images/杨若希.JPG",
+        "dimensions": [
+          2316,
+          3088
+        ],
+        "matches_original_manifest": true,
+        "authorized_change": "GPS metadata removed only; original locally retained; decoded pixels of every frame verified unchanged"
+      }
+    },
+    {
+      "name": "Zhang Hongbo",
+      "anchor": "zhang-hongbo",
+      "source_fields_match": {
+        "name": true,
+        "role": true,
+        "cohort": true,
+        "university": true,
+        "introduction": true
+      },
+      "biography_source": "2026-10-19 received Introduction English section",
+      "photo": null
+    },
+    {
+      "name": "Wang Chang",
+      "anchor": "chang-wang",
+      "source_fields_match": {
+        "name": true,
+        "role": true,
+        "cohort": true,
+        "university": true,
+        "introduction": true
+      },
+      "biography_source": "2026-10-19 received Introduction English section",
+      "photo": {
+        "original_name": "Wang Chang.jpg",
+        "sha256": "322c60bc159e7e5692efc4dde6fc2b062e2b615df598d97cf22691bb2995d1b4",
+        "source": "/Users/cjrmacbook/Downloads/Team-members.zip!/Team-members/附件/Wang Chang.jpg",
+        "dimensions": [
+          1728,
+          2368
+        ],
+        "matches_original_manifest": true,
+        "authorized_change": null
+      }
+    },
+    {
+      "name": "Liu Yifei",
+      "anchor": "ivy-liu",
+      "source_fields_match": {
+        "name": true,
+        "role": true,
+        "cohort": true,
+        "university": true,
+        "introduction": true
+      },
+      "biography_source": "2026-10-19 received Introduction English section",
+      "photo": {
+        "original_name": "Ivy Liu.jpg",
+        "sha256": "120e8273aa67bb31925fe5774a57dd6799f3faab78ec113f5a67d235729552c2",
+        "source": "/Users/cjrmacbook/Downloads/Team-members.zip!/Team-members/附件/Ivy Liu.jpg",
+        "dimensions": [
+          1279,
+          1706
+        ],
+        "matches_original_manifest": true,
+        "authorized_change": null
+      }
+    },
+    {
+      "name": "Kuang Yinzi",
+      "anchor": "kuang-yinzi",
+      "source_fields_match": {
+        "name": true,
+        "role": true,
+        "cohort": true,
+        "university": true,
+        "introduction": true
+      },
+      "biography_source": "2026-10-19 received Introduction English section",
+      "photo": {
+        "original_name": "Kuang Yinzi.jpg",
+        "sha256": "0387e10357e0d53ff4ae58486d7a5c2b0306fb38ec39e0496800f28ee62c34ad",
+        "source": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/原稿一致性授权落实-20261018/gps-clean-images/Kuang Yinzi.jpg",
+        "dimensions": [
+          3120,
+          4160
+        ],
+        "matches_original_manifest": true,
+        "authorized_change": "GPS metadata removed only; original locally retained; decoded pixels of every frame verified unchanged"
+      }
+    },
+    {
+      "name": "Luo Yuanwen",
+      "anchor": "yuanwen-luo",
+      "source_fields_match": {
+        "name": true,
+        "role": true,
+        "cohort": true,
+        "university": true,
+        "introduction": true
+      },
+      "biography_source": "2026-10-19 received Introduction English section",
+      "photo": {
+        "original_name": "Luo Yuanwen.jpg",
+        "sha256": "0bfc2a234d65e5dfe713fd2b1d20ffc76bf9f2111fb94ddd753cc8372889e0f4",
+        "source": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/原稿一致性授权落实-20261018/gps-clean-images/Luo Yuanwen.jpg",
+        "dimensions": [
+          3264,
+          2448
+        ],
+        "matches_original_manifest": true,
+        "authorized_change": "GPS metadata removed only; original locally retained; decoded pixels of every frame verified unchanged"
+      }
+    },
+    {
+      "name": "Wang Qinghua",
+      "anchor": "wang-qinghua",
+      "source_fields_match": {
+        "name": true,
+        "role": true,
+        "cohort": true,
+        "university": true,
+        "introduction": true
+      },
+      "biography_source": "2026-10-19 received Introduction English section",
+      "photo": {
+        "original_name": "Wang Qinghua.jpg",
+        "sha256": "08d95b754ff344e4802dfcc67485eeead729346b15bfc6c2eafbe68807836185",
+        "source": "/Users/cjrmacbook/Downloads/Team-members.zip!/Team-members/附件/Wang Qinghua.jpg",
+        "dimensions": [
+          2048,
+          1536
+        ],
+        "matches_original_manifest": true,
+        "authorized_change": null
+      }
+    },
+    {
+      "name": "Zheng Shizhao",
+      "anchor": "shizhao-zheng",
+      "source_fields_match": {
+        "name": true,
+        "role": true,
+        "cohort": true,
+        "university": true,
+        "introduction": true
+      },
+      "biography_source": "2026-10-19 received Introduction English section",
+      "photo": {
+        "original_name": "Zheng Shizhao.jpg",
+        "sha256": "001ba276229ed126610e34f1ba4ca8aabcbd4fde76094b30e7f2b8a9aa68d421",
+        "source": "/Users/cjrmacbook/Downloads/Team-members.zip!/Team-members/附件/Zheng Shizhao.jpg",
+        "dimensions": [
+          3072,
+          4096
+        ],
+        "matches_original_manifest": true,
+        "authorized_change": null
+      }
+    },
+    {
+      "name": "Peng Ziyi",
+      "anchor": "ziyi-peng",
+      "source_fields_match": {
+        "name": true,
+        "role": true,
+        "cohort": true,
+        "university": true,
+        "introduction": true
+      },
+      "biography_source": "2026-10-19 received Introduction English section",
+      "photo": {
+        "original_name": "Peng Ziyi.jpg",
+        "sha256": "491794815e37f7b6a55c754f9ff1998422780693f9ad545e6efaaa04e0b4453a",
+        "source": "/Users/cjrmacbook/Downloads/Team-members.zip!/Team-members/附件/Peng Ziyi.jpg",
+        "dimensions": [
+          1728,
+          2432
+        ],
+        "matches_original_manifest": true,
+        "authorized_change": null
+      }
+    },
+    {
+      "name": "Chen Feiyue",
+      "anchor": "chen-feiyue",
+      "source_fields_match": {
+        "name": true,
+        "role": true,
+        "cohort": true,
+        "university": true,
+        "introduction": true
+      },
+      "biography_source": "2026-10-19 received Introduction English section",
+      "photo": {
+        "original_name": "Chen Feiyue.jpg",
+        "sha256": "e8eae705159b1473c7d3b2df82342929c60d792220ff44b0b1d8955acef8a6ef",
+        "source": "/Users/cjrmacbook/Downloads/Team-members.zip!/Team-members/附件/Chen Feiyue.jpg",
+        "dimensions": [
+          2448,
+          3264
+        ],
+        "matches_original_manifest": true,
+        "authorized_change": null
+      }
+    },
+    {
+      "name": "Huang Xinqi",
+      "anchor": "huang-xinqi",
+      "source_fields_match": {
+        "name": true,
+        "role": true,
+        "cohort": true,
+        "university": true,
+        "introduction": true
+      },
+      "biography_source": "2026-10-19 received Introduction English section",
+      "photo": {
+        "original_name": "Huang Xinqi.jpg",
+        "sha256": "f0001fee59508653008c41fc912182861823fca8b95fe3664b62a517ccbb9402",
+        "source": "/Users/cjrmacbook/Downloads/Team-members.zip!/Team-members/附件/Huang Xinqi.jpg",
+        "dimensions": [
+          3264,
+          2448
+        ],
+        "matches_original_manifest": true,
+        "authorized_change": null
+      }
+    },
+    {
+      "name": "Song Yanmei",
+      "anchor": "yanmei-song-student",
+      "source_fields_match": {
+        "name": true,
+        "role": true,
+        "cohort": true,
+        "university": true,
+        "introduction": true
+      },
+      "biography_source": "2026-10-19 received Introduction English section",
+      "photo": {
+        "original_name": "宋滟镁.jpg",
+        "sha256": "456cf76f9557f0a23e6dafe82e7d91d3b9df94b79b634f7655beb0247f7c8561",
+        "source": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/v8.0/已收材料-2026-10-09/project-teams+干实验微信旧稿快照__日期未显示/原稿/Teams/宋滟镁.jpg",
+        "dimensions": [
+          2391,
+          3348
+        ],
+        "matches_original_manifest": true,
+        "authorized_change": null
+      }
+    },
+    {
+      "name": "Ye Shulan",
+      "anchor": "shulan-ye-student",
+      "source_fields_match": {
+        "name": true,
+        "role": true,
+        "cohort": true,
+        "university": true,
+        "introduction": true
+      },
+      "biography_source": "2026-10-19 received Introduction English section",
+      "photo": {
+        "original_name": "叶书兰.jpg",
+        "sha256": "0f149e57e32beef5df30583481cba0e999d5156424de0bcf83418e9a9afbda0a",
+        "source": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/v8.0/已收材料-2026-10-09/project-teams+干实验微信旧稿快照__日期未显示/原稿/Teams/叶书兰.jpg",
+        "dimensions": [
+          4032,
+          3024
+        ],
+        "matches_original_manifest": true,
+        "authorized_change": null
+      }
+    },
+    {
+      "name": "Guan Zhiyuan",
+      "anchor": "zhiyuan-guan-student",
+      "source_fields_match": {
+        "name": true,
+        "role": true,
+        "cohort": true,
+        "university": true,
+        "introduction": true
+      },
+      "biography_source": "2026-10-19 received Introduction English section",
+      "photo": {
+        "original_name": "关志远.jpg",
+        "sha256": "7db5eeb70e5752b4776f48f8f14f7453b7b6260c759c1388bb2d622d22ba1de8",
+        "source": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/outputs/v8.0/已收材料-2026-10-09/project-teams+干实验微信旧稿快照__日期未显示/原稿/Teams/关志远.jpg",
+        "dimensions": [
+          1030,
+          1546
+        ],
+        "matches_original_manifest": true,
+        "authorized_change": null
+      }
+    },
+    {
+      "name": "Ma Peisong",
+      "anchor": "ma-peisong",
+      "source_fields_match": {
+        "name": true,
+        "role": true,
+        "cohort": true,
+        "university": true,
+        "introduction": true
+      },
+      "biography_source": "2026-10-19 received Introduction English section",
+      "photo": null
+    },
+    {
+      "name": "Song Xinying",
+      "anchor": "song-xinying",
+      "source_fields_match": {
+        "name": true,
+        "role": true,
+        "cohort": true,
+        "university": true,
+        "introduction": true
+      },
+      "biography_source": "2026-10-19 received Introduction English section",
+      "photo": null
+    },
+    {
+      "name": "Chen Yuxin",
+      "anchor": "chen-yuxin",
+      "source_fields_match": {
+        "name": true,
+        "role": true,
+        "cohort": true,
+        "university": true,
+        "introduction": true
+      },
+      "biography_source": "2026-10-19 received Introduction English section",
+      "photo": null
+    },
+    {
+      "name": "Chen Jiarui",
+      "anchor": "chen-jiarui",
+      "source_fields_match": {
+        "name": true,
+        "role": true,
+        "cohort": true,
+        "university": true,
+        "introduction": true
+      },
+      "biography_source": "2026-10-19 received Introduction English section",
+      "photo": null
+    },
+    {
+      "name": "Kaiben Zhang",
+      "anchor": "kaiben-zhang",
+      "source_fields_match": {
+        "name": true,
+        "role": true,
+        "cohort": true,
+        "university": true,
+        "introduction": true
+      },
+      "biography_source": "2026-10-19 received Introduction English section",
+      "photo": null
+    },
+    {
+      "name": "Han Xinyu",
+      "anchor": "han-xinyu",
+      "source_fields_match": {
+        "name": true,
+        "role": true,
+        "cohort": true,
+        "university": true,
+        "introduction": true
+      },
+      "biography_source": "2026-10-19 received Introduction English section",
+      "photo": null
+    },
+    {
+      "name": "Bai Ruitong",
+      "anchor": "ruitong-bai",
+      "source_fields_match": {
+        "name": true,
+        "role": true,
+        "cohort": true,
+        "university": true,
+        "introduction": true
+      },
+      "biography_source": "2026-10-19 received Introduction English section",
+      "photo": null
+    },
+    {
+      "name": "Chen Yiling",
+      "anchor": "yiling-chen",
+      "source_fields_match": {
+        "name": true,
+        "role": true,
+        "cohort": true,
+        "university": true,
+        "introduction": true
+      },
+      "biography_source": "2026-10-19 received Introduction English section",
+      "photo": null
+    }
+  ],
+  "preview": {
+    "url": "http://127.0.0.1:50382/team/",
+    "port": 50382,
+    "source_path": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/tasks/ruoxi-members-review",
+    "source_head": "2dd2e28c990c2ceb2ce63c22d923247c4297295f",
+    "note": "Unmodified official Members page, independently built"
+  },
+  "publication": "not-published; no functional change made in this audit",
+  "validation": {
+    "build": "pass",
+    "technical_audit": "pass; existing content final-review state retained",
+    "browser": {
+      "passed": true,
+      "cases": [
+        {
+          "width": 320,
+          "theme": "light",
+          "flips_checked": 3,
+          "evidence": "preliminary-browser.log (successful case before subsequent animation timing assertion)"
+        },
+        {
+          "width": 320,
+          "theme": "dark",
+          "flips_checked": 3,
+          "evidence": "preliminary-browser.log (successful case before subsequent animation timing assertion)"
+        },
+        {
+          "width": 390,
+          "theme": "light",
+          "flips_checked": 27,
+          "evidence": "preliminary-browser.log (successful case before subsequent animation timing assertion)"
+        },
+        {
+          "width": 390,
+          "theme": "dark",
+          "flips_checked": 3,
+          "evidence": "preliminary-browser.log (successful case before subsequent animation timing assertion)"
+        },
+        {
+          "width": 768,
+          "theme": "light",
+          "flips_checked": 3,
+          "evidence": "preliminary-browser.log (successful case before subsequent animation timing assertion)"
+        },
+        {
+          "width": 768,
+          "theme": "dark",
+          "flips_checked": 3,
+          "evidence": "browser-dark.json"
+        },
+        {
+          "width": 1440,
+          "theme": "dark",
+          "flips_checked": 27,
+          "evidence": "browser-dark.json"
+        },
+        {
+          "width": 1440,
+          "theme": "light",
+          "flips_checked": 3,
+          "evidence": "browser-check.json"
+        }
+      ],
+      "all_27_text_and_portrait_ratio_checked_each_case": true,
+      "full_touch_case": "390px / light / 27 profiles: tap to back, tap to front",
+      "full_keyboard_case": "1440px / dark / 27 profiles: Enter to back, Escape to front; Space sampled on Fu Xinya",
+      "limitations": [
+        "Chromium touch emulation; physical phone and Safari were not tested",
+        "Latest new group photo crop cannot be tested until exact source arrives"
+      ],
+      "harness_corrections": [
+        "Measure inner portrait pixels instead of decorative padded frame",
+        "Ignore automatically inserted heading anchor text when comparing names",
+        "Measure face fit after 750ms flip / 650ms height transition completes"
+      ],
+      "details_files": [
+        "browser-dark.json",
+        "browser-check.json",
+        "browser-remaining.log",
+        "browser-light.log",
+        "preliminary-browser.log"
+      ]
+    },
+    "source_audit": "pass: 27 profiles, 14 original photos + 1 authorized GPS-only copy, published and local member text equal",
+    "source_history_commits_are_ancestors_of_base": true,
+    "evidence_path": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/ruoxi-members-review"
+  },
+  "follow_up_20261020": {
+    "latest_attachment_found": "/Users/cjrmacbook/Downloads/members",
+    "portrait_count": 27,
+    "filled_placeholders": 12,
+    "replaced_old_portraits": 15,
+    "new_preview": "http://127.0.0.1:51015/team/",
+    "current_base_commit": "05a37e74e035bef492dd007e024edfdbccece1b0",
+    "plan": "docs/members-portraits-20261020.json",
+    "remaining": [
+      "new group-photo original",
+      "official CDN migration before publication"
+    ],
+    "note": "Earlier source-audit fields are historical; the attachment and placeholder blockers are resolved."
+  },
+  "latest_publication_status": {
+    "publication_authorized": true,
+    "cdn_uploaded": 28,
+    "validation": "pass",
+    "publication": "published V10.2.7",
+    "first_pipeline": 774538,
+    "publication_time_beijing": "2026-10-20 02:49:22",
+    "report": "docs/members-publication-20261020.json"
+  }
+}

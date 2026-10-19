@@ -318,217 +318,140 @@
   }
 
   /* ================= 08 LOOP ================= */
-  /* v10.0.2: the team's revised relationship diagram (关系图_修改.ai): the
-     same nodes and arrows, NEMA KLEAR and Society at the centre, without the
-     coloured wash, read as one Design → Build → Test → Learn cycle. Places
-     are the artboard's (pt, scaled into the 1200 × 620 board); every arrow
-     end is measured from its rendered label, so the arrows clear the text
-     whatever font metrics the browser has. */
+  /* 08 loop: the four DBTL cycles of dbtl.svg. A click zooms a cycle into the left
+     of the board and opens its text beside it (requested by the wet-lab team). On wide
+     screens the board grows a little, the cycle takes all the height it can and the
+     text card sits next to it, top-aligned with the cycle's frame. */
   function loop() {
     var sec = H.$('[data-loop]'); if (!sec) return;
-    var svg = H.$('[data-lp-svg]', sec), board = H.$('[data-lp-board]', sec), card = H.$('[data-lp-card]', sec);
-    board.tabIndex = 0;
-    board.setAttribute('role', 'region');
-    board.setAttribute('aria-label', 'Field and laboratory feedback diagram. Scroll horizontally to explore.');
-    var swipeHint = document.createElement('p');
-    swipeHint.className = 'lp__mobile-hint';
-    swipeHint.textContent = 'Swipe sideways to explore the full diagram. Tap a step to read its role.';
-    board.insertAdjacentElement('afterend', swipeHint);
-    var K = 1200 / 1230;
-    function X(x) { return (x - 273) * K; }
-    function Y(y) { return (y - 103) * K + 36; }
-    var STAGE = {
-      design: ['Design', 'models and data shape the sensor'],
-      build: ['Build', 'the sensor itself'],
-      test: ['Test', 'real soil on the bench'],
-      learn: ['Learn', 'what people and fields tell us'],
-      core: ['Society', 'the centre of the cycle']
-    };
-    // key: artboard x, y (label centre, pt), label, stage, what it is
-    var N = {
-      data: [404, 163.5, 'Data', 'design', 'Soil and survey data used to tune the models.'],
-      eco: [406, 331, 'Eco model', 'design', 'Estimates where and when the product could make economic sense.'],
-      ode: [406, 470, 'ODE model', 'design', 'Links ascaroside input to pigment output over time.'],
-      soil: [865, 163.5, 'Soil survey', 'learn', 'Public soil sampling that feeds both labs.'],
-      survey: [609.5, 268.5, 'Questionnaire', 'learn', 'Growers’ needs and intentions, for the Eco model.'],
-      society: [865, 336.5, 'Society', 'core', 'The people and fields the project serves.'],
-      kit: [865, 473, 'NEMA KLEAR', 'build', 'The sensor, its workflow and its limits.'],
-      teach: [1268.5, 331, 'Teaching', 'learn', 'Classes and outreach that bring questions back.'],
-      expert: [1280, 465.5, 'Expert interviews', 'learn', 'Agronomists and testers shape how results are used.'],
-      samples: [1366, 163.5, 'Samples', 'test', 'Real soil samples to test against.'],
-      bench: [1364, 603, 'Bench tests', 'test', 'Does the yeast respond, and can we read the colour?']
-    };
-    var defs = el('defs', {}, svg);
-    var mk = el('marker', { id: 'lp-arrow', viewBox: '0 0 10 10', refX: 9, refY: 5, markerWidth: 6.2, markerHeight: 6.2, orient: 'auto-start-reverse' }, defs);
-    el('path', { d: 'M0,.8 L10,5 L0,9.2 Z', class: 'lp__tip' }, mk);
-    var hg = el('radialGradient', { id: 'lp-halo' }, defs);
-    el('stop', { offset: 0, 'stop-color': '#f4a7c8', 'stop-opacity': .5 }, hg);
-    el('stop', { offset: .6, 'stop-color': '#f4a7c8', 'stop-opacity': .16 }, hg);
-    el('stop', { offset: 1, 'stop-color': '#f4a7c8', 'stop-opacity': 0 }, hg);
-    el('rect', { class: 'lp__panel', x: .75, y: 36, width: 1198.5, height: 548, rx: 58 }, svg);
-    el('ellipse', { class: 'lp__halo', cx: X(865), cy: Y(402), rx: 220, ry: 205, fill: 'url(#lp-halo)' }, svg);
-    var eg = el('g', { class: 'lp__edges' }, svg), ng = el('g', { class: 'lp__nodes' }, svg);
-    var nodes = {}, B = {};
-    Object.keys(N).forEach(function (k) {
-      var n = N[k], big = k === 'society' || k === 'kit';
-      var g = el('g', { class: 'node node--' + n[3] + (big ? ' node--big' : ''), tabindex: 0, role: 'button', 'aria-label': n[2] + ' (' + STAGE[n[3]][0] + '): ' + n[4] }, ng);
-      var hit = el('rect', { class: 'hit', rx: 12 }, g);
-      var dot = big ? null : el('circle', { class: 'dot', r: 4.5 }, g);
-      var tx = el('text', { x: X(n[0]).toFixed(1), y: Y(n[1]).toFixed(1), dy: '.35em', 'text-anchor': 'middle' }, g); tx.textContent = n[2];
-      nodes[k] = { g: g, hit: hit, dot: dot, text: tx };
-      g.addEventListener('pointerenter', function () { if (drawn && !playing) { focus([k]); show(k); } });
-      g.addEventListener('pointerleave', function () { if (!playing && !pinned) { focus(null); card.hidden = true; } });
-      g.addEventListener('click', function () { if (!drawn) drawAll(true, true); focus([k]); show(k); });
-      g.addEventListener('focus', function () { if (!drawn) drawAll(true, true); focus([k]); show(k); });
-      g.addEventListener('blur', function () { if (!playing && !pinned) { focus(null); card.hidden = true; } });
-      g.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); focus([k]); show(k); }
-        if (e.key === 'Escape') { focus(null); card.hidden = true; }
-      });
-    });
-    /* label boxes, trimmed to the letters (the text box carries the font's
-       leading); a dotted label also owns the space of its dot */
-    function measure() {
-      Object.keys(N).forEach(function (k) {
-        var o = nodes[k], b = null;
-        try { b = o.text.getBBox(); } catch (e) {}
-        if (!b || !b.width) { var w = N[k][2].length * 12; b = { x: X(N[k][0]) - w / 2, y: Y(N[k][1]) - 15, width: w, height: 30 }; }
-        var trim = b.height * 0.14, dx = o.dot ? 17 : 0;
-        B[k] = { x0: b.x, l: b.x - dx, r: b.x + b.width, t: b.y + trim, b: b.y + b.height - trim, cx: b.x + b.width / 2, cy: b.y + b.height / 2, w: b.width };
-        o.hit.setAttribute('x', (b.x - 10 - dx).toFixed(1)); o.hit.setAttribute('y', (b.y - 5).toFixed(1));
-        o.hit.setAttribute('width', (b.width + 20 + dx).toFixed(1)); o.hit.setAttribute('height', (b.height + 10).toFixed(1));
-        if (o.dot) { o.dot.setAttribute('cx', (b.x - 10).toFixed(1)); o.dot.setAttribute('cy', (b.y + b.height / 2).toFixed(1)); }
-      });
+    var board = H.$('[data-lp-board]', sec), svg = board && H.$('svg.dbtl', board);
+    if (!svg) return;
+    var panel = H.$('[data-lp-panel]', sec), body = H.$('[data-lp-body]', sec), more = H.$('[data-lp-more]', sec), tabs = H.$$('[data-lp-tab]', sec);
+    var cycles = H.$$('.dbtl-cycle', svg), parts = H.$$('[data-c]', svg), bridges = H.$$('[data-bridge]', svg);
+    var v0 = svg.getAttribute('viewBox').split(/[\s,]+/).map(Number), FULL = { x: v0[0], y: v0[1], w: v0[2], h: v0[3] };
+    var cur = { x: FULL.x, y: FULL.y, w: FULL.w, h: FULL.h }, active = 0, raf = 0, hovered = 0;
+    var wide = window.matchMedia('(min-width: 960px)'), GAP = 28, PAD = 14;
+    var KIND = { dry: ['Dry Lab', '#53509d'], wet: ['Wet Lab', '#c57925'], hp: ['Human Practices', '#ab3045'] };
+    var texts = {}; H.$$('[data-lp-text]', sec).forEach(function (t) { texts[t.getAttribute('data-lp-text')] = t; });
+
+    function frame(c) {
+      var r = H.$('.dbtl-cycle[data-c="' + c + '"] .dbtl-cycle__frame', svg);
+      return { x: +r.getAttribute('x'), y: +r.getAttribute('y'), w: +r.getAttribute('width'), h: +r.getAttribute('height') };
     }
-    var G = 10, GV = 6;
-    function hz(a, b, lab) { var A = B[a], C = B[b], right = C.cx > A.cx, y = (A.cy + C.cy) / 2; return { pts: [[right ? A.r + G : A.l - G, y], [right ? C.l - G : C.r + G, y]], lab: lab }; }
-    function vt(a, b, x, lab) { var A = B[a], C = B[b], down = C.cy > A.cy; return { pts: [[x, down ? A.b + GV : A.t - GV], [x, down ? C.t - GV : C.b + GV]], lab: lab }; }
-    // out of a sideways, then up or down into b
-    function hv(a, b, x, lab) { var A = B[a], C = B[b], down = C.cy > A.cy; return { pts: [[x < A.cx ? A.l - G : A.r + G, A.cy], [x, A.cy], [x, down ? C.t - GV : C.b + GV]], lab: lab }; }
-    // out of a upwards or downwards, then sideways into b
-    function vh(a, b, x, lab) { var A = B[a], C = B[b], up = C.cy < A.cy; return { pts: [[x, up ? A.t - GV : A.b + GV], [x, C.cy], [C.cx > x ? C.l - G : C.r + G, C.cy]], lab: lab }; }
-    // drawn in cycle order: design, build, test, learn, then the centre
-    var E = [
-      ['data', 'eco', 'adjusts', function () { return vt('data', 'eco', B.eco.cx - B.eco.w * 0.17, { pos: 'left' }); }],
-      ['ode', 'kit', 'optimises', function () { return hz('ode', 'kit', { pos: 'above' }); }],
-      ['ode', 'bench', 'simulation analysis', function () { return vh('ode', 'bench', B.ode.x0 + B.ode.w * 0.37, { seg: 1, pos: 'above', at: 0.2 }); }],
-      ['bench', 'samples', 'tested', function () { return vt('bench', 'samples', B.samples.cx + B.samples.w * 0.38, { pos: 'right' }); }],
-      ['bench', 'expert', 'raises questions', function () { return vt('bench', 'expert', (B.expert.cx + B.bench.cx) / 2 + 10, { pos: 'left' }); }],
-      ['expert', 'kit', 'guidance', function () { return hz('expert', 'kit', { pos: 'above', at: 0.42 }); }],
-      ['soil', 'data', 'provides', function () { return hz('soil', 'data', { pos: 'above' }); }],
-      ['soil', 'samples', 'provides', function () { return hz('soil', 'samples', { pos: 'above', at: 0.55 }); }],
-      ['survey', 'eco', 'supports', function () { return hv('survey', 'eco', B.eco.cx - B.eco.w * 0.05, { seg: 0, pos: 'above', at: 0.5 }); }],
-      ['society', 'soil', 'participates', function () { return vt('society', 'soil', B.society.cx, { pos: 'right' }); }],
-      ['society', 'survey', 'fills in', function () { return vh('society', 'survey', B.society.cx - B.society.w * 0.12, { seg: 1, pos: 'above', at: 0.45 }); }],
-      ['teach', 'society', 'feedback', function () { return hz('teach', 'society', { pos: 'above', at: 0.42 }); }],
-      ['eco', 'society', 'predicts', function () { return hz('eco', 'society', { pos: 'below', at: 0.45 }); }],
-      ['society', 'kit', 'decides', function () { return vt('society', 'kit', B.society.cx + 10, { pos: 'right', big: true }); }],
-      ['kit', 'society', 'applied', function () { return vt('kit', 'society', B.society.cx - 10, { pos: 'left', big: true }); }]
-    ];
-    function pathD(pts) {
-      if (pts.length === 2) return 'M' + pts[0][0].toFixed(1) + ',' + pts[0][1].toFixed(1) + 'L' + pts[1][0].toFixed(1) + ',' + pts[1][1].toFixed(1);
-      var p = pts[0], c = pts[1], q = pts[2], r = 12;
-      var ux = Math.sign(c[0] - p[0]), uy = Math.sign(c[1] - p[1]), vx = Math.sign(q[0] - c[0]), vy = Math.sign(q[1] - c[1]);
-      return 'M' + p[0].toFixed(1) + ',' + p[1].toFixed(1) + 'L' + (c[0] - ux * r).toFixed(1) + ',' + (c[1] - uy * r).toFixed(1) +
-        'Q' + c[0].toFixed(1) + ',' + c[1].toFixed(1) + ' ' + (c[0] + vx * r).toFixed(1) + ',' + (c[1] + vy * r).toFixed(1) + 'L' + q[0].toFixed(1) + ',' + q[1].toFixed(1);
+    /* viewBox that centres box in a W x Hh stage, at the stage's own aspect */
+    function fit(box, W, Hh) {
+      var s = Math.min(W / box.w, Hh / box.h), w = W / s, h = Hh / s;
+      return { x: box.x + box.w / 2 - w / 2, y: box.y + box.h / 2 - h / 2, w: w, h: h };
     }
-    function labelAt(r) {
-      var sp = r.lab, p = r.pts[sp.seg || 0], q = r.pts[(sp.seg || 0) + 1], at = sp.at == null ? 0.5 : sp.at;
-      var x = p[0] + (q[0] - p[0]) * at, y = p[1] + (q[1] - p[1]) * at, off = sp.big ? 14 : 10;
-      if (sp.pos === 'above') return [x, y - off, 'middle'];
-      if (sp.pos === 'below') return [x, y + off + 13, 'middle'];
-      return [sp.pos === 'left' ? x - off : x + off, y + (sp.big ? 8 : 6), sp.pos === 'left' ? 'end' : 'start'];
-    }
-    var edges = E.map(function (e, i) {
-      var g = el('g', { class: 'edge' + (e[2] === 'applied' || e[2] === 'decides' ? ' edge--big' : '') }, eg);
-      var path = el('path', {}, g), flow = el('path', { class: 'flow' }, g), tx = el('text', {}, g); tx.textContent = e[2];
-      return { g: g, path: path, flow: flow, text: tx, a: e[0], b: e[1], route: e[3], L: 300, i: i };
-    });
-    var drawn = false, dtm = [], playing = false, pinned = false;
+    /* where everything goes for the current state, at the board's final size */
     function layout() {
-      measure();
-      edges.forEach(function (e) {
-        var r = e.route(), d = pathD(r.pts), lp = labelAt(r);
-        e.path.setAttribute('d', d); e.flow.setAttribute('d', d);
-        e.text.setAttribute('x', lp[0].toFixed(1)); e.text.setAttribute('y', lp[1].toFixed(1)); e.text.setAttribute('text-anchor', lp[2]);
-        e.L = e.path.getTotalLength ? Math.ceil(e.path.getTotalLength()) + 2 : 300;
-        e.path.style.strokeDasharray = e.L;
-        if (!drawn) e.path.style.strokeDashoffset = e.L;
+      var W = board.clientWidth || 1;
+      if (!wide.matches) {
+        var Hs = svg.getBoundingClientRect().height || 1;
+        if (!active) return { vb: fit(FULL, W, Hs) };
+        var b = frame(active), p = 7;
+        return { vb: fit({ x: b.x - p, y: b.y - p, w: b.w + 2 * p, h: b.h + 2 * p }, W, Hs) };
+      }
+      var hOver = W * FULL.h / FULL.w;
+      if (!active) return { h: hOver, vb: { x: FULL.x, y: FULL.y, w: FULL.w, h: FULL.h } };
+      var paged = document.documentElement.classList.contains('is-paged');
+      var Hb = Math.max(hOver, Math.min(W * 255 / 476, window.innerHeight - (paged ? 236 : 110)));
+      var F = frame(active), pMin = H.clamp(W * .33, 340, 440);
+      var s = Math.min((W - pMin - GAP - 2 * PAD) / F.w, (Hb - 2 * PAD) / F.h);
+      var fw = F.w * s, fh = F.h * s, pw = Math.min(540, W - PAD - fw - GAP);
+      var x0 = Math.max(0, (W - (PAD + fw + GAP + pw)) / 2) + PAD, y0 = (Hb - fh) / 2;
+      return { h: Hb, vb: { x: F.x - x0 / s, y: F.y - y0 / s, w: W / s, h: Hb / s },
+        panel: { left: x0 + fw + GAP, top: y0, width: pw, max: Hb - y0 - PAD } };
+    }
+    function place(L, jump) {
+      var P = L.panel, props = { '--pl': P && P.left, '--pt': P && P.top, '--pw': P && P.width, '--ph': P && P.max };
+      if (jump) panel.classList.add('is-jump');
+      Object.keys(props).forEach(function (k) { if (props[k] == null) panel.style.removeProperty(k); else panel.style.setProperty(k, props[k].toFixed(1) + 'px'); });
+      if (jump) { void panel.offsetWidth; panel.classList.remove('is-jump'); }
+    }
+    function apply(v) { cur = v; svg.setAttribute('viewBox', [v.x, v.y, v.w, v.h].map(function (n) { return n.toFixed(2); }).join(' ')); }
+    function settle() { var L = layout(); place(L, true); board.style.height = L.h ? L.h.toFixed(1) + 'px' : ''; apply(L.vb); }
+    function fly() {
+      cancelAnimationFrame(raf); raf = 0;
+      var L = layout(); place(L);
+      if (H.reduced) { settle(); return; }
+      var from = cur, h0 = board.offsetHeight, h1 = L.h, t0 = performance.now();
+      if (!h1) board.style.height = '';
+      raf = requestAnimationFrame(function tick(now) {
+        var k = H.clamp((now - t0) / 780, 0, 1), e = H.ease(k), to = h1 ? L.vb : layout().vb;
+        if (h1) board.style.height = H.lerp(h0, h1, e).toFixed(1) + 'px';
+        apply({ x: H.lerp(from.x, to.x, e), y: H.lerp(from.y, to.y, e), w: H.lerp(from.w, to.w, e), h: H.lerp(from.h, to.h, e) });
+        raf = k < 1 ? requestAnimationFrame(tick) : 0;
       });
     }
-    layout();
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
-    /* drawing the connections is this page's step */
-    function drawAll(on, instant) {
-      dtm.forEach(clearTimeout); dtm = []; drawn = on;
-      board.classList.toggle('is-drawn', on);
-      edges.forEach(function (e, i) {
-        var delay = instant || !on ? 0 : i * 105;
-        e.path.style.transition = instant ? 'none' : 'stroke-dashoffset .5s cubic-bezier(.3,.7,.2,1) ' + delay + 'ms';
-        e.text.style.transitionDelay = instant ? '0ms' : (delay + 260) + 'ms';
-        e.path.style.strokeDashoffset = on ? 0 : e.L;
-        e.path.removeAttribute('marker-end');
-        if (on) { if (instant) e.path.setAttribute('marker-end', 'url(#lp-arrow)'); else dtm.push(setTimeout(function () { e.path.setAttribute('marker-end', 'url(#lp-arrow)'); }, delay + 430)); }
+    function dim(c) {
+      parts.forEach(function (e) { e.classList.toggle('is-dim', !!c && e.getAttribute('data-c') !== String(c)); });
+      bridges.forEach(function (e) {
+        var on = !!c && e.getAttribute('data-bridge').split(' ').indexOf(String(c)) >= 0;
+        e.classList.toggle('is-dim', !!c && !on); e.classList.toggle('is-half', on);
       });
     }
-    function focus(keys, onlyEdges) {
-      board.classList.toggle('is-focus', !!keys);
-      H.$$('.is-hl', svg).forEach(function (x) { x.classList.remove('is-hl'); });
-      if (!keys) return;
-      keys.forEach(function (k) { nodes[k].g.classList.add('is-hl'); });
-      edges.forEach(function (e) {
-        var hit = onlyEdges ? onlyEdges.indexOf(e) >= 0 : (keys.indexOf(e.a) >= 0 || keys.indexOf(e.b) >= 0);
-        if (hit) { e.g.classList.add('is-hl'); nodes[e.a].g.classList.add('is-hl'); nodes[e.b].g.classList.add('is-hl'); }
-      });
+    function hover(c) {
+      if (c === hovered || active) return; hovered = c;
+      cycles.forEach(function (g) { g.classList.toggle('is-hover', g.getAttribute('data-c') === String(c)); });
+      dim(c);
     }
-    function show(k) {
-      // The SVG can extend beyond its horizontal scroll viewport on phones.
-      var n = N[k], drawing = svg.getBoundingClientRect(), sx = drawing.width / 1200, sy = drawing.height / 620, b = B[k];
-      var st = STAGE[n[3]];
-      card.innerHTML = '<b>' + n[2] + '</b>' + n[4] + '<em class="lp__stage lp__stage--' + n[3] + '">' + (n[3] === 'core' ? 'At the centre of the cycle' : st[0] + ': ' + st[1]) + '</em>';
-      card.hidden = false;
-      var cw = card.offsetWidth || 250, ch = card.offsetHeight || 110, x = b.cx * sx, below = b.b * sy + 12, above = b.t * sy - ch - 12;
-      card.style.left = H.clamp(x - cw / 2, board.scrollLeft, board.scrollLeft + Math.max(0, board.clientWidth - cw)) + 'px';
-      card.style.top = (below + ch <= drawing.height || above < 0 ? H.clamp(below, 0, Math.max(0, drawing.height - ch)) : above) + 'px';
+    function fill(c) {
+      var src = texts[c], desc = src && H.$('[data-lp-desc]', src), link = src && H.$('a[href]', src);
+      body.innerHTML = '';
+      if (desc && desc.textContent.trim()) body.innerHTML = desc.innerHTML;
+      else {
+        var ul = document.createElement('ul'); ul.className = 'lp__mods';
+        H.$$('.dbtl-node[data-c="' + c + '"]', svg).forEach(function (n) {
+          var kinds = n.getAttribute('data-kind').split(' ').filter(function (k) { return KIND[k]; });
+          var li = document.createElement('li'), mark = document.createElement('i'), name = document.createElement('b'), tag = document.createElement('em');
+          mark.className = 'lp__kind'; mark.setAttribute('aria-hidden', 'true');
+          mark.style.setProperty('--a', KIND[kinds[0]][1]); if (kinds[1]) mark.style.setProperty('--b', KIND[kinds[1]][1]);
+          name.textContent = n.getAttribute('data-name');
+          tag.textContent = kinds.map(function (k) { return KIND[k][0]; }).join(' and ');
+          li.appendChild(mark); li.appendChild(name); li.appendChild(tag); ul.appendChild(li);
+        });
+        body.appendChild(ul);
+      }
+      if (link) { more.setAttribute('href', link.getAttribute('href')); more.hidden = false; } else more.hidden = true;
+      body.scrollTop = 0;
     }
-    var stageBtns = H.$$('[data-q]', sec);
-    stageBtns.forEach(function (b) {
-      b.addEventListener('click', function () {
-        if (!drawn) drawAll(true, true);
-        var on = b.getAttribute('aria-pressed') !== 'true';
-        stageBtns.forEach(function (o) { o.setAttribute('aria-pressed', 'false'); });
-        b.setAttribute('aria-pressed', on ? 'true' : 'false'); card.hidden = true; pinned = on;
-        var q = b.getAttribute('data-q');
-        focus(on ? Object.keys(N).filter(function (k) { return N[k][3] === q; }) : null);
+    function show(c) {
+      c = +c || 0; if (c === active) return;
+      var opening = !active && c;
+      active = c; hovered = 0;
+      if (opening) place(layout(), true);   // the card appears where it belongs, without sliding there
+      board.classList.toggle('is-focus', !!c);
+      tabs.forEach(function (t) { t.setAttribute('aria-pressed', String(+t.getAttribute('data-lp-tab') === c)); });
+      cycles.forEach(function (g) {
+        var on = g.getAttribute('data-c') === String(c);
+        g.classList.toggle('is-on', on); g.classList.remove('is-hover'); g.setAttribute('aria-pressed', String(on));
       });
+      dim(c);
+      if (c) fill(c);
+      fly();
+    }
+    var pick = function (e) { var g = e.target.closest && e.target.closest('[data-c]'); return g ? +g.getAttribute('data-c') : 0; };
+    svg.addEventListener('click', function (e) { var c = pick(e); if (c) show(c); });
+    svg.addEventListener('pointerover', function (e) { if (e.pointerType !== 'touch') hover(pick(e)); });
+    svg.addEventListener('pointerleave', function () { hover(0); });
+    cycles.forEach(function (g) {
+      g.setAttribute('aria-pressed', 'false');
+      g.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); show(+g.getAttribute('data-c')); } });
     });
-    function live(stage) { stageBtns.forEach(function (o) { o.classList.toggle('is-live', o.getAttribute('data-q') === stage); }); }
-    // play the loop: one trip round the cycle, design → build → test → learn → society → build
-    var seq = [['ode', 'kit'], ['ode', 'bench'], ['bench', 'samples'], ['bench', 'expert'], ['expert', 'kit'], ['kit', 'society'], ['society', 'survey'], ['survey', 'eco'], ['eco', 'society'], ['society', 'kit']];
-    var dot = el('circle', { r: 7, class: 'lp__dot', opacity: 0 }, svg), playBtn = H.$('[data-lp-play]', sec);
-    playBtn.addEventListener('click', function () {
-      if (playing) return; playing = true; pinned = false; playBtn.setAttribute('aria-pressed', 'true');
-      stageBtns.forEach(function (o) { o.setAttribute('aria-pressed', 'false'); });
-      if (!drawn) drawAll(true, true); var i = 0;
-      (function step() {
-        if (i >= seq.length || !drawn) { playing = false; playBtn.removeAttribute('aria-pressed'); dot.setAttribute('opacity', 0); live(null); focus(null); card.hidden = true; return; }
-        var e = edges.filter(function (x) { return x.a === seq[i][0] && x.b === seq[i][1]; })[0];
-        focus([e.a, e.b], [e]); show(e.b); live(N[e.b][3] === 'core' ? N[e.a][3] : N[e.b][3]);
-        var L = e.path.getTotalLength(), s0 = performance.now(), ms = H.reduced ? 0 : 760; dot.setAttribute('opacity', 1);
-        (function mv(now) { var k = ms ? H.clamp((now - s0) / ms, 0, 1) : 1, p = e.path.getPointAtLength(L * H.ease(k)); dot.setAttribute('cx', p.x); dot.setAttribute('cy', p.y); if (k < 1) requestAnimationFrame(mv); else { i++; setTimeout(step, H.reduced ? 900 : 260); } })(s0);
-      })();
+    tabs.forEach(function (t) { t.addEventListener('click', function () { show(+t.getAttribute('data-lp-tab')); }); });
+    H.$$('[data-lp-step]', sec).forEach(function (b) {
+      b.addEventListener('click', function () { var n = cycles.length; show((((active || 1) - 1 + +b.getAttribute('data-lp-step')) % n + n) % n + 1); });
     });
-    H.scene('loop', {
-      steps: 1,
-      set: function (i) { drawAll(i > 0, true); if (!i) { focus(null); card.hidden = true; } },
-      step: function (i) { drawAll(i > 0, false); return i ? edges.length * 105 + 520 : 300; },
-      ff: function () { drawAll(true, true); }
-    });
+    H.$('[data-lp-close]', sec).addEventListener('click', function () { show(0); var t = tabs[0]; if (t) t.focus(); });
+    sec.addEventListener('keydown', function (e) { if (e.key === 'Escape' && active) show(0); });
+    window.addEventListener('resize', function () { if (!raf) settle(); });
+    if (wide.addEventListener) wide.addEventListener('change', settle);
+    settle();
   }
 
   /* ================= 09 BUILT ================= */
   function built() {
-    builtArt();
     H.$$('[data-art]').forEach(function (card) {
       var cv = H.$('canvas', card), kind = card.getAttribute('data-art'), ctx, w, h, hover = false, vis = false, t0 = performance.now(), r = H.rand(kind.length * 7);
       if (!cv) return; // SVG data-art slots are not legacy canvas cards.
@@ -586,29 +509,6 @@
       size(); addEventListener('resize', size);
       H.visibleLoop(card, draw, function (v) { vis = v; });
     });
-  }
-
-  /* What we built team artwork: the six illustrations are lazy in the markup (the section is last),
-     then fetched in idle time after the page has loaded, so they are ready before a paged jump or a
-     fast scroll reaches them. Each image fades in once decoded; without this script they simply show. */
-  function builtArt() {
-    var grid = H.$('[data-wwb]'); if (!grid) return;
-    var imgs = H.$$('.bt__art img', grid); if (!imgs.length) return;
-    var waiting = 0;
-    imgs.forEach(function (img) {
-      if (img.complete && img.naturalWidth) { img.classList.add('is-ready'); return; }
-      waiting++;
-      var done = function () {
-        img.classList.add('is-ready');
-        if (--waiting <= 0) grid.classList.remove('is-loading-art');
-      };
-      img.addEventListener('load', done, { once: true });
-      img.addEventListener('error', done, { once: true });
-    });
-    if (waiting && !H.reduced) grid.classList.add('is-loading-art');
-    var warm = function () { imgs.forEach(function (img) { if (img.loading === 'lazy') img.loading = 'eager'; }); };
-    var idle = function () { if (window.requestIdleCallback) requestIdleCallback(warm, { timeout: 4000 }); else setTimeout(warm, 1500); };
-    if (document.readyState === 'complete') idle(); else addEventListener('load', idle, { once: true });
   }
 
   /* ================= 10 EXPLORE ================= */
