@@ -36,6 +36,11 @@
       "label": "Human Practices",
       "status": "existing"
     },
+    "model-docking": {
+      "source": "model-docking",
+      "label": "Docking",
+      "status": "existing"
+    },
     "education": {
       "source": "education",
       "label": "Education",
