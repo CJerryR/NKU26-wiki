@@ -1,0 +1,23 @@
+/* Presentation overrides only; the archived author application stays intact. */
+@media (max-width: 650px) {
+  main { padding-inline: 12px; }
+  .panel, .resultbody { padding: 18px 14px; }
+  .workspace, .workspace > *, .chartgrid > *, .eco-stats > *, .figuregrid > * { min-width: 0; }
+  h2, h3, p, label, .notice, .hint { overflow-wrap: anywhere; }
+  .badge { max-width: 100%; white-space: normal; line-height: 1.5; }
+  input[type=number], select { font-size: 16px; min-height: 44px; }
+  button, .tabs button, summary, .textbutton { min-height: 44px; }
+  .densityline { flex-wrap: wrap; }
+  .grade { min-width: 0; max-width: 100%; }
+  .big, html[lang=en] .big { font-size: clamp(40px, 12vw, 60px); letter-spacing: -2px; overflow-wrap: anywhere; }
+  .interval { flex-wrap: wrap; gap: 6px 12px; }
+  .reportbar { padding: 14px; gap: 12px; }
+  .eco-plan { flex-wrap: wrap; }
+  .eco-stat, .cost-chart { padding: 18px 14px; }
+  .cost-row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 55px; gap: 8px; }
+  .cost-row > * { min-width: 0; overflow-wrap: anywhere; }
+  .curve-choice { flex-wrap: wrap; }
+  .curve-choice select { max-width: 100%; }
+  .chart { padding: 14px 8px 8px; }
+  .eco-table-wrap { overscroll-behavior-x: contain; scrollbar-width: thin; }
+}

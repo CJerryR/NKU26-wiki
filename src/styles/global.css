@@ -27,3 +27,4 @@
 
 /* Semantic inline annotations share the page’s day/night state. */
 @import './annotations.css';
+@import './mobile-content.css';
