@@ -281,7 +281,8 @@
 .credit-card {
   --r: 24px; --pad: 10px;
   position: relative; display: grid; grid-template-columns: clamp(164px, 27%, 212px) minmax(0, 1fr);
-  column-gap: clamp(18px, 2.8vw, 30px); padding: var(--pad);
+  /* Match the tile's top/left inset and its gap to the contribution column. */
+  column-gap: var(--pad); padding: var(--pad);
   border-radius: var(--r); background: var(--paper-hi); color: var(--ink);
   box-shadow: inset 0 0 0 1px rgb(36 28 43 / .07), 0 22px 40px -34px rgb(40 24 54 / .6), 0 1px 2px rgb(40 24 54 / .05);
 }
@@ -338,6 +339,7 @@
 .prose .credit-card__topic { color: var(--ink); font-weight: 620; }
 
 .credit-card__more { display: flex; flex-direction: column; }
+.credit-card__more[hidden] { display: none; }
 .credit-card__more > .credit-card__list { margin-top: .6em; }
 .credit-card__more > summary {
   order: 1; align-self: flex-start; display: inline-flex; align-items: center; gap: 6px;
