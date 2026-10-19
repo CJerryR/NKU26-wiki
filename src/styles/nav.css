@@ -87,7 +87,7 @@
 .lnav__group { position: relative; }
 .lnav__drop {
   position: absolute; top: calc(100% + 18px); left: 50%; width: 520px; padding: 10px; border-radius: 26px;
-  visibility: hidden; box-shadow: none;
+  visibility: hidden; pointer-events: none; box-shadow: none;
   transform: translate(-50%, -8px) scale(.96); transform-origin: 50% 0;
   transition: var(--glass-transition), transform .45s var(--nav-ease), visibility 0s .45s;
 }
@@ -95,7 +95,7 @@
 .lnav__drop::before { content: ''; position: absolute; left: 0; right: 0; top: -20px; height: 20px; }
 .lnav__drop--narrow { width: 300px; }
 .lnav__group.is-open .lnav__drop {
-  visibility: visible; box-shadow: var(--glass-shadow); transform: translate(-50%, 0) scale(1);
+  visibility: visible; pointer-events: auto; box-shadow: var(--glass-shadow); transform: translate(-50%, 0) scale(1);
   transition: var(--glass-transition), transform .5s var(--nav-ease), visibility 0s;
 }
 .lnav__group.is-open .lnav__drop > *, .lnav__group.is-open .lnav__drop::after { opacity: 1; }

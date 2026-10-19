@@ -155,7 +155,9 @@ export function initNav(): void {
       dragging = false;
       if (links.hasPointerCapture(e.pointerId)) links.releasePointerCapture(e.pointerId);
       if (cancelled) { moveTo(rest()); return; }
-      const i = nearest(x + w / 2);
+      // The spring can still be over the previous tab on a quick release.
+      // Selection follows the pointer; the film is only a visual effect.
+      const i = nearest(localX(e));
       hovered = i;
       moveTo(i);
       const item = items[i];
