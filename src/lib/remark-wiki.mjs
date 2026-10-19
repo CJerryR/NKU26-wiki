@@ -544,7 +544,8 @@ function finalize(tree, file) {
       h.data.tocText = a.toc || toText(h);
       toc.push({ depth: 2, id, text: h.data.tocText, num });
     } else if (h.depth === 3 && 'toc' in a) {
-      const num = numberedSection ? `${n}.${++sub}` : undefined;
+      const sectionNum = numberedSection ? `${n}.${++sub}` : undefined;
+      const num = 'toc-unnumbered' in a ? undefined : sectionNum;
       toc.push({ depth: h.depth, id, text: a.toc || toText(h), num });
     }
   }
