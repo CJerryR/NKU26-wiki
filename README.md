@@ -55,7 +55,7 @@ npm run dev
 | 浏览器模型适配 | `src/nemaklear/`、`tools/prepare-nemaklear.mjs` |
 | 素材地址与供稿来源 | `content/cdn-assets.json`、`content/wiki-provenance.json` |
 | 首页成果配图的原件与 CDN 映射 | `assets/source-images/home-built-20261020/`、`docs/what-we-built-approved-cdn-20261020.json` |
-| 最新正文配图的原件与 CDN 映射 | `assets/source-images/recent-20261020/`、`docs/recent-assets-cdn-20261020.json` |
+| 最新正文配图的 CDN 映射与原件记录 | `docs/recent-assets-cdn-20261020.json`；PNG 原件保存在本地发布归档 |
 | 版本清单与弹窗 | `README.md`、`src/components/site/ChangeNotice.astro` |
 
 `content/wiki/*.json` 是正式正文源，`src/content/pages/*.md` 由导出工具生成。不要只改生成的 Markdown；Tina 保存后可运行 `node tools/export-tina.mjs` 同步，构建时也会自动导出。
@@ -100,7 +100,7 @@ Licensing 独立页当前没有正文，现有许可与 AI 使用说明位于页
 
 ### V10.2.11 改动：
 
-发布时间：待部署完成后回填（北京时间）
+发布时间：2026-10-20 04:42:34（北京时间）
 
 1. 按最新英文稿更新 Description、Engineering 和 Contribution。
 2. 更新 Model 总览流程图和 Docking 高清图。
