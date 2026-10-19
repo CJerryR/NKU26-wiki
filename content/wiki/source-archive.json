@@ -167,6 +167,10 @@
     {
       "_template": "text",
       "body": "<p><a href=\"#meeting-20261019\" data-source-document=\"meeting-20261019-552fb139c19f\">Results-修改3.0英文.docx</a><span role=\"status\" aria-live=\"polite\"></span></p>"
+    },
+    {
+      "_template": "text",
+      "body": "<section id=\"hp-project-public-20261019\"><h3>HP Project — 2026-10-19</h3><p><a href=\"#hp-project-public-20261019\" data-source-document=\"hp-project-public-20261019-55d45e6067eb\">Download HP_Project.docx / 下载 HP 公开副本</a><span role=\"status\" aria-live=\"polite\"></span></p><p>This public copy removes GPS metadata only. Text, image pixels and document formatting are unchanged. The complete received original is retained locally.<br>公开副本仅清除 GPS 元数据；文字、图片像素和文档排版保持不变。收到的完整原件另存于本地。</p></section>"
     }
   ]
 }

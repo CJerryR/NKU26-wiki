@@ -362,5 +362,33 @@
       "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-source-552fb139c19fcb41-01.json"
     ],
     "source_file_unchanged": true
+  },
+  {
+    "id": "hp-project-public-20261019-55d45e6067eb",
+    "title": "HP Project — 2026-10-19 (GPS-only public copy)",
+    "category": "19 October meeting update",
+    "original_name": "HP_Project.docx",
+    "sha256": "55d45e6067ebc1a5cf73a8ad2410d753c677da539036661ecad737feece934c9",
+    "bytes": 19604976,
+    "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/hp-public-gps-55d45e6067ebc1a5-00.json",
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/hp-public-gps-55d45e6067ebc1a5-01.json",
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/hp-public-gps-55d45e6067ebc1a5-02.json",
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/hp-public-gps-55d45e6067ebc1a5-03.json",
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/hp-public-gps-55d45e6067ebc1a5-04.json",
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/hp-public-gps-55d45e6067ebc1a5-05.json",
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/hp-public-gps-55d45e6067ebc1a5-06.json",
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/hp-public-gps-55d45e6067ebc1a5-07.json",
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/hp-public-gps-55d45e6067ebc1a5-08.json",
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/hp-public-gps-55d45e6067ebc1a5-09.json",
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/hp-public-gps-55d45e6067ebc1a5-10.json",
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/hp-public-gps-55d45e6067ebc1a5-11.json",
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/hp-public-gps-55d45e6067ebc1a5-12.json",
+      "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/hp-public-gps-55d45e6067ebc1a5-13.json"
+    ],
+    "source_file_unchanged": false,
+    "local_original_sha256": "419cb1a3a86c362e3e256913b92deae945fff4afcb26c6527df910603f3ccd95",
+    "publication_copy_changes": "User authorized GPS metadata removal only from word/media/image6.jpeg; every XML/rels part unchanged, decoded pixels and non-GPS EXIF unchanged."
   }
 ]
