@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import siteJson from './site.json';
 
-export interface FooterItem { name: string; short?: string; url?: string; note?: string; logo?: string; logoAlt?: string }
+export interface FooterItem { name: string; short?: string; url?: string; note?: string; logo?: string; logoAlt?: string; logoBackground?: 'dark'; logoWide?: boolean }
 
 const json = siteJson as { source_repository_url?: string; sponsors?: FooterItem[]; friends?: FooterItem[] };
 
