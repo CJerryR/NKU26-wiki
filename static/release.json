@@ -1,7 +1,7 @@
 {
-  "version": "10.2.6",
-  "label": "Opening exploration, foreground layering, footer and HP cleanup",
-  "prepared_at": "2026-10-20T02:05:26.230894+08:00",
+  "version": "10.2.7",
+  "label": "Members portraits and full team group photo",
+  "prepared_at": "2026-10-20T02:43:35.904829+08:00",
   "media": "84 unchanged original images plus 4 user-authorized GPS-only cleaned images; all decoded frames unchanged; 12 complete historical source documents",
   "release_kind": "stage",
   "team_content_review": "Scientific final review pending; source-version choices authorized by user",
@@ -10,7 +10,7 @@
     "commit": "16770d5c28ddf7bc41f8d90445c44d80a28801d5",
     "published_at_local": "2026-10-18 05:04:34"
   },
-  "release_id": "recent-changes-20261020-v10.2.6",
+  "release_id": "members-20261020-v10.2.7",
   "mobile_layout_check": "390px Members rendered without overflow; desktop Description, Parts/plasmid, Attributions/puzzle checked; 4 second delayed CDN uses inline preview then upgrades",
   "source_fidelity": {
     "original_source_files_verified": 80,
@@ -145,6 +145,13 @@
     "hp_soil_cleanup": "02559760ae38ff6b20399d88a12a15d975b7ad98",
     "layout_rules_document": "dd6f3c321f48130735c29418a5c7e2c4b38f7556",
     "what_we_built": "Not included: six images await official CDN upload",
-    "video_and_new_member_assets": "Not included; separate tasks remain pending"
+    "video_and_new_member_assets": "27 portraits and one group photo included; video remains a separate task"
+  },
+  "member_portraits": {
+    "portraits": 27,
+    "group_photos": 1,
+    "hosting": "Official iGEM Uploads CDN",
+    "originals": "Byte-identical source files retained; three large PNG files use quality-95 WebP upload copies at original dimensions",
+    "biographies": "Existing text, names, order and fields preserved"
   }
 }

@@ -1,0 +1,45 @@
+最新状态：28张图片已上传官方 CDN 并完成引用迁移；27张个人卡片与完整合照通过加载、比例、翻转和构建验收。准备 V10.2.7 的 integration/release 发布。历史审计记录见下文，最新状态以 docs/members-publication-20261020.json 为准。
+
+2026-10-20 续核：已在 /Users/cjrmacbook/Downloads/members 找到已解压文件夹。
+27 张个人照共 129,013,305 bytes；另有 .DS_Store 6,148 bytes，整个文件夹约 123MiB。
+已补齐 12 处占位并替换 15 张旧照；原件字节、姓名、简介、分组和 Attributions 保持不变。
+当前预览：http://127.0.0.1:51015/team/
+验证：构建及技术内容审计通过；390px 浅色与 1440px 深色各 27 张卡片翻转往返通过；另两种主题各抽查 3 张。27 人文案、3:4 照片及整页宽度均通过。触摸为 Chromium 模拟。
+当前官方基线：05a37e74e035bef492dd007e024edfdbccece1b0
+此前“123MB 附件未找到”和“12 处占位待补”已解决。
+新团队合照不在该文件夹中，仍待确认原件。
+新照片目前使用本地文件；上线前需完成官方 CDN 迁移并核对真实 URL。
+逐人映射和哈希见 docs/members-portraits-20261020.json。本轮未上传、合并或发布。
+
+下文保留初次审计历史，不代表当前照片状态。
+
+Members 卡片与合照核对
+
+任务：ruoxi-members-review
+源码：/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/tasks/ruoxi-members-review
+基线：2dd2e28c990c2ceb2ce63c22d923247c4297295f（本轮创建时 fetch，结束前已再次 fetch 确认）
+预览：http://127.0.0.1:50382/team/（端口 50382；官方源码的独立本地构建）
+状态：本地来源审计；未改 Members 功能，未合并、未发布。
+
+已落实，无需重做：
+27 人、分组与顺序、Name / Label / 原稿列出的 Grade 和两位成员的 University 均一致。
+26 人简介与 10 月 19 日收到的 Introduction 英文原稿一致；范洁老师保留用户后来指定的简介。
+15 张照片的姓名与实名收稿文件映射一致。14 张原件 SHA256 匹配；杨若希照片匹配获授权仅去除 GPS 的公开副本。
+已发布页面与本地源码的 27 人顺序和成员文本一致。
+中文名和额外专业字段是后续用户要求删除，不能照旧飞书要求补回。
+旧纸艺背景已被用户放弃；本轮没有采用。Attributions 和全局视觉未改。
+
+待补，不视为已完成：
+1. 指定的紫色队服新团队合照：当前 Members 正文与线上均缺；本地没有确认其消息归属的原件，不能进行准确裁切验收。
+2. 消息显示 123.0MB 的 members 附件：已查飞书下载目录、普通下载目录及本地收稿索引，未找到对应附件。现有 Team-members.zip 为 23,757,814 bytes，是旧稿，不冒充最新。
+3. 仍有 12 个照片占位：Jie Fan、Peng-Lin Wei、Churchill Zhu、Zhang Hongbo、Ma Peisong、Song Xinying、Chen Yuxin、Chen Jiarui、Kaiben Zhang、Han Xinyu、Bai Ruitong、Chen Yiling。未见新附件前，不能判定是未交稿还是实现遗漏。
+4. 飞书当前原文直读失败；本轮使用的 10 月 19 日原件和旧快照均已标出来源及校验值，不宣称为最新在线正文。
+
+排除误用：
+活动合照.jpg 是学校志愿活动四人照；活动合照 (1).jpg 是社区活动儿童与志愿者照。均不符指定全队紫衣合照。
+
+验证：构建和技术内容审计通过；320/390/768/1440px 深浅主题下 27 人文案、字段、3:4 照片及页面宽度通过；390px 浅色 27 人触摸翻转往返、1440px 深色 27 人 Enter/Escape 通过，Space 抽查通过。其他尺寸/主题抽查 3 张翻转卡。触摸为 Chromium 模拟，未声称实机或 Safari 验收。详见同名 JSON 的 validation 字段。
+完整证据：/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/ruoxi-members-review
+可复核来源：同名 JSON 内含原件哈希、逐人字段检查、照片映射、线上快照和待补项。
+
+后续接入：取得指定合照原件及其消息上下文、123MB 附件后，先比对照片清单，再在本任务内容源加入全队合照和有确定归属的照片；逐张验证人名对应、全员裁切、390px 手机与桌面展示。之后按任务提交 → integration 验收 → 经授权 release 的流程处理。
