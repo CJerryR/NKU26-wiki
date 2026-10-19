@@ -194,6 +194,18 @@
         "source": "Direct user-provided English paragraph on 2026-10-19",
         "record": "outputs/范洁简介修订-20261019/用户指定简介.txt",
         "scope": "Jie Fan introduction only; team final-review state unchanged"
+      },
+      "english_source_fields_revision_20261019": {
+        "source": "Member_Introductions_Separated(1).docx English section; direct user instruction",
+        "front_fields": [
+          "Name",
+          "Label",
+          "Grade when supplied",
+          "University when supplied"
+        ],
+        "removed": "Chinese names and old-source major metadata",
+        "biography": "Original author introductions retained; user-provided Jie Fan replacement retained",
+        "scope": "Members only"
       }
     },
     {

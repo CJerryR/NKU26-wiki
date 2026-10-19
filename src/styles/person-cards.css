@@ -226,24 +226,26 @@
 
 /* Front metadata follows the compact name / role / cohort layout. */
 .member-card__front .member-card__info { margin-bottom: 0; }
-.member-card__back-content > .member-card__facts { margin-bottom: 22px; }
 @container member (max-width: 479px) {
   .member-card__front { grid-template-columns: 45% minmax(0, 1fr); gap: 14px; }
   .doc .prose .member-card__front .person-name > :is(h3,h4,h5) { font-size: 21px; line-height: 1.2; }
   .doc .prose .member-card__front .person-name__cn { font-size: 12px; line-height: 1.35; margin-top: 3px; }
   .doc .prose .member-card__front .member-card__role { font-size: 15px; line-height: 1.35; margin-bottom: 10px; padding-bottom: 8px; }
   .member-card__front .member-card__facts dt { font-size: 11px; margin-bottom: 4px; }
-  .member-card__front .member-card__facts dd { font-size: 17px; line-height: 1.35; padding-right: 42px; }
+  .member-card__front .member-card__facts { gap: 8px; }
+  .member-card__front .member-card__facts dd { font-size: 14px; line-height: 1.35; }
+  .member-card__front .member-card__facts > div:last-child dd { padding-right: 42px; }
 }
 
 @container member (max-width: 319px) {
+  .member-card__front .member-card__facts { gap: 4px; }
   .member-card__front { --pad: 14px; }
   .member-card__front .person-name { margin-bottom: 6px; }
   .doc .prose .member-card__front .person-name > :is(h3,h4,h5) { font-size: 18px; }
   .doc .prose .member-card__front .person-name__cn { font-size: 11px; }
   .doc .prose .member-card__front .member-card__role { font-size: 12.5px; margin-bottom: 8px; padding-bottom: 6px; }
   .member-card__front .member-card__facts dt { font-size: 10px; margin-bottom: 2px; }
-  .member-card__front .member-card__facts dd { font-size: 15px; }
+  .member-card__front .member-card__facts dd { font-size: 13px; }
 }
 
 /* the flip button: one round glass control, in the bottom band of both faces */
