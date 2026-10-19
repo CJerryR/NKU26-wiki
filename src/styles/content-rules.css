@@ -26,7 +26,7 @@ main:has(.doc) { --measure: 65rem; --bleed: 0px; }
   margin-bottom: .65em !important;
   text-align: start !important;
 }
-.doc .prose h3 {
+.doc .prose h3:not(.person-name > *) {
   font-family: var(--font-body) !important;
   font-size: 24px !important;
   font-weight: 560 !important;
@@ -36,7 +36,7 @@ main:has(.doc) { --measure: 65rem; --bleed: 0px; }
   margin-bottom: .65em !important;
   text-align: start !important;
 }
-.doc .prose :is(h2, h3) :is(span, strong, b, em, i) {
+.doc .prose :is(h2, h3):not(.person-name > *) :is(span, strong, b, em, i) {
   font-family: inherit !important;
   font-size: inherit !important;
   font-weight: inherit !important;
@@ -51,7 +51,7 @@ main:has(.doc) { --measure: 65rem; --bleed: 0px; }
   .figure__media *, .wiki-media *, .stat *, .person *,
   .timeline__when, .hp-image-label, .hp-download-label, .table-caption,
   .docking-caption-only *, .figure__credit, .figure__missing,
-  .person__role, .author-source-link
+  .person__role, .person-name__cn, .member-card__role, .credit-card__role, .author-source-link
 )) {
   width: 100% !important;
   max-width: 100% !important;
@@ -102,5 +102,5 @@ main:has(.doc) { --measure: 65rem; --bleed: 0px; }
   .doc { width: min(100% - 40px, 65rem); }
   .doc .prose { --article-font-size: 17.5px; --article-line-height: 1.7; }
   .doc .prose h2 { font-size: 28px !important; }
-  .doc .prose h3 { font-size: 21px !important; }
+  .doc .prose h3:not(.person-name > *) { font-size: 21px !important; }
 }

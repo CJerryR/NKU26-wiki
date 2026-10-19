@@ -6,7 +6,7 @@
  * One round glass button turns the card; without scripting both faces are shown, one under
  * the other.
  * Credits: a ledger row. A portrait tile with a liquid-glass nameplate sits beside the Tasks
- * chips and the numbered Specific Tasks; everything after the first opens in <details>.
+ * chips and the numbered Specific tasks; everything after the first opens in <details>.
  *
  * The markup is one line on purpose: a blank line would end the raw HTML block in Markdown.
  */
@@ -70,6 +70,6 @@ export function renderCreditGrid(block) {
     return `<article class="credit-card" aria-labelledby="${id}"><div class="credit-card__id">${portrait(p, 'credit-card__photo')}`
       + `${glass('credit-card__plate')}${nameBlock(p, id, Math.max(3, Math.min(5, block.headingLevel || 3)))}${p.role ? `<p class="credit-card__role">${esc(p.role)}</p>` : ''}</div></div>`
       + `<div class="credit-card__body">${tasks.length ? `<h${Math.max(4, Math.min(6, (block.headingLevel || 3) + 1))} class="credit-card__label">Tasks</h${Math.max(4, Math.min(6, (block.headingLevel || 3) + 1))}><ul class="credit-card__tasks">${tasks.map(t => `<li>${esc(t)}</li>`).join('')}</ul>` : ''}`
-      + `${details.length ? `<h${Math.max(4, Math.min(6, (block.headingLevel || 3) + 1))} class="credit-card__label">Specific Tasks</h${Math.max(4, Math.min(6, (block.headingLevel || 3) + 1))}>${list(details.slice(0, shown), 1)}${more}` : ''}</div></article>`;
+      + `${details.length ? `<h${Math.max(4, Math.min(6, (block.headingLevel || 3) + 1))} class="credit-card__label">Specific tasks</h${Math.max(4, Math.min(6, (block.headingLevel || 3) + 1))}>${list(details.slice(0, shown), 1)}${more}` : ''}</div></article>`;
   }).join('')}</div>`;
 }
