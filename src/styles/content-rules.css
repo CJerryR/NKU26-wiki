@@ -98,6 +98,9 @@ main:has(.doc) { --measure: 65rem; --bleed: 0px; }
   padding: clamp(14px, 2.2vw, 26px);
 }
 
+/* Labels printed within a white photographic panel keep dark ink in both themes. */
+.doc .prose .hp-photo-group .hp-image-label { color: #241c2b; }
+
 @media (max-width: 640px) {
   .doc { width: min(100% - 40px, 65rem); }
   .doc .prose { --article-font-size: 17.5px; --article-line-height: 1.7; }
