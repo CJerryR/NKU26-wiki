@@ -10,7 +10,7 @@
 | background | 5 | 7 | 17 | 15 |
 | contribution | 3 | 11 | 22 | 12 |
 | description | 4 | 7 | 22 | 22 |
-| engineering | 4 | 12 | 25 | 19 |
+| engineering | 4 | 12 | 26 | 19 |
 | experiments | 3 | 20 | 8 | 7 |
 | members | 3 | 4 | 5 | 2 |
 | parts | 2 | 2 | 11 | 1 |
@@ -178,6 +178,7 @@
 | safety | personal protective equipment | PPE | `blocks[9].body` |
 | contribution | transmembrane helix 6 | TM6 | `blocks[49].body` |
 | contribution | tryptophan residues | Trp | `blocks[49].body` |
+| engineering | deoxyribonucleic acid | DNA | `blocks[36].afterBody` |
 
 ## 待确认缩写：全量去重清单
 
@@ -358,3 +359,5 @@ Gpr2/GPR2、GPA1、GAL80、基因与蛋白符号、株系、荧光染料商品�
 第二次运行 `python3 tools/apply-rules-wet.py --apply` 返回已匹配结果、不写文件，证明不会重复展开术语或重复添加章节号。对本代理修改文件运行 `git diff --check` 通过。统一导出、构建、浏览器验收和后续发布由父代理执行。
 
 跨组复核补充：Contribution 的第六跨膜螺旋与色氨酸残基首次写为 `Transmembrane helix 6 (TM6) tryptophan residues (Trp)`，后续使用 TM6/Trp；精确残基 Gpr2 W338、Gpr3 W306、GprC W388 保持。
+
+跨组复核补充：Engineering gallery 的 DBD 定义之前增加 DNA 术语释义，首次写为 `deoxyribonucleic acid (DNA)`；DBD、PRD 和准确构建体名称保持。

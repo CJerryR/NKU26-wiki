@@ -2109,7 +2109,7 @@
     "engineering": {
       "route": "engineering",
       "before_sha256": "863d1dbbb8063f849a29b871e26854814f9da3b22a4638905b25fb6b7723a7c0",
-      "after_sha256": "a601281997f2191fc8c47ec459414e5de808fd4bc88e6863f3fbe309670a27a5",
+      "after_sha256": "ddcbce6a9341d84d0fce98b9d5937560308e6f85a290e8b3757aef2c42d9dbcb",
       "heading_changes": [
         {
           "before": "DBTL-1 | Engineering the signal-response pathway",
@@ -2581,6 +2581,13 @@
           "first_position": "blocks[100].body",
           "count": 1,
           "source": "project team designation"
+        },
+        {
+          "full": "deoxyribonucleic acid",
+          "abbreviation": "DNA",
+          "first_position": "blocks[36].afterBody",
+          "count": 2,
+          "source": "established scientific nomenclature"
         }
       ],
       "pending": [

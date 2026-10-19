@@ -349,6 +349,8 @@ def apply(regenerate=False):
                 for k in ['body','leftCaption','rightCaption']:
                     if k in b:
                         b[k]=b[k].replace('Schematic Diagram of Yeast Biosensor Construction Pipeline','Schematic diagram of yeast biosensor construction pipeline').replace('*Gal80* Gene','*Gal80* gene')
+                if b.get('_template')=='gallery' and 'DNA-binding domain' in b.get('afterBody',''):
+                    b['afterBody']='In the domain terminology below, deoxyribonucleic acid (DNA) is abbreviated as DNA. '+b['afterBody']
         if page == 'background':
             b=next(b for b in data['blocks'] if 'Under the strong oliC promoter' in b.get('body',''))
             b['body']=b['body'].replace('Under the strong oliC promoter','The fusion uses GFP as a localization reporter. Under the strong oliC promoter')
