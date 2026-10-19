@@ -21,7 +21,7 @@
     "source_table_cells": 297,
     "ode_parameter_rows": 42,
     "submission_conflicts": "Resolved by explicit user instructions; original disagreements preserved",
-    "video": "Original published record preserved; authorized replacement with latest 70-second source rejected because upload quota is 0 B",
+    "video": "Results embeds the original published Video Universe record fFXuDzig2DWKhQPFLW2mnM",
     "dedicated_feishu_sources": "Three dedicated revision links previously showed deleted; original live formatting still cannot be reread",
     "gps_clean_image_files": 4,
     "historical_original_documents": 12,
@@ -42,7 +42,7 @@
     "official_transport_files_verified": 75,
     "new_original_images_byte_verified": 18,
     "source_language": "Revised Project/Model prose translated from Chinese to English; original documents retained; author English for HP and Results 3.0",
-    "video": "Results 3.0 original 1:10 video uploaded; automatic block pending moderator review",
+    "video": "Results uses the original published video record",
     "hp_project_original": "Complete local original unchanged; public DOCX copy removes GPS metadata only, authorized by user; text, formatting and image pixels preserved",
     "readme_production_notes": "Preserved locally. Background deletion, auto renumbering and model-title translation not executed without direct user authorization."
   },
@@ -159,17 +159,5 @@
     "body": "Supplied module lists and detail links preserved; no new scientific prose invented",
     "cdn_map": "docs/home-built-cdn-20261020.json",
     "cdn_images": 6
-  },
-  "video_replacement": {
-    "checked_at": "2026-10-20T03:01:27.211609+08:00",
-    "record_id": "fFXuDzig2DWKhQPFLW2mnM",
-    "replacement_seconds": 70.287,
-    "original_seconds": 112,
-    "user_confirmed_permanent_replacement": true,
-    "status": "rejected-by-platform-quota",
-    "quota_bytes": 0,
-    "platform_message": "上传此视频会超过你的限额（视频大小：81 MB，已用：0 B，限额：0 B）",
-    "replacement_completed": false,
-    "new_video_created": false
   }
 }
