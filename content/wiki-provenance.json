@@ -18,7 +18,14 @@
         "Member_Formatted.docx",
         "2026-10-16 user supplied HP captain introduction and five contributions"
       ],
-      "round2_local_integrated_at": "2026-10-16"
+      "round2_local_integrated_at": "2026-10-16",
+      "member_revision_20261019": {
+        "source": "Member_Attributions_Detailed(1).docx",
+        "members": 27,
+        "language": "author English; Chinese names from parallel Chinese section",
+        "source_record": "outputs/Team成员与贡献更新-20261019/00-原件清单.json",
+        "status": "source text integrated; team final review pending"
+      }
     },
     {
       "slug": "contribution",
@@ -163,7 +170,14 @@
         "Member_Formatted.docx",
         "2026-10-16 user supplied HP captain introduction and five contributions"
       ],
-      "round2_local_integrated_at": "2026-10-16"
+      "round2_local_integrated_at": "2026-10-16",
+      "member_revision_20261019": {
+        "source": "Member_Introductions_Separated(1).docx",
+        "members": 27,
+        "language": "author English; Chinese names from parallel Chinese section",
+        "source_record": "outputs/Team成员与贡献更新-20261019/00-原件清单.json",
+        "status": "source text integrated; team final review pending"
+      }
     },
     {
       "slug": "model-1",

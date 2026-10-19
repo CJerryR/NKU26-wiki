@@ -17,13 +17,16 @@ const identityFields: TinaField[] = [
   {type:'string',name:'role',label:'分组 / 职责'},
 ];
 const memberCards: Template = {name:'membergrid',label:'成员翻转卡片',fields:[
+  {type:'number',name:'headingLevel',label:'人物标题层级'},
   {type:'object',name:'items',label:'成员',list:true,fields:[...identityFields,
+    {type:'string',name:'university',label:'学校（按原稿）'},
     {type:'string',name:'major',label:'专业 / 研究领域'},
     {type:'string',name:'cohort',label:'年级（按原稿）'},
     {type:'string',name:'introduction',label:'卡片背面介绍',ui:{component:'textarea'}},
   ],ui:{itemProps:item=>({label:item.name || '成员'})}},
 ]};
 const personalCredits: Template = {name:'creditgrid',label:'个人贡献卡片',fields:[
+  {type:'number',name:'headingLevel',label:'人物标题层级'},
   {type:'object',name:'items',label:'成员',list:true,fields:[...identityFields,
     {type:'string',name:'tasks',label:'Tasks（逗号分隔）',ui:{component:'textarea'}},
     {type:'object',name:'specificTasks',label:'Specific Tasks',list:true,fields:[

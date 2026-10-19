@@ -31,7 +31,7 @@ const portrait = (p, cls) => {
 };
 /* "Analysis: did X" — the category before the colon is set in bold; the text is unchanged. */
 const topic = t => { const m = /^([^:：\n]{2,40}[:：])\s+/.exec(t); return m ? `<strong class="credit-card__topic">${esc(m[1])}</strong> ${esc(t.slice(m[0].length))}` : esc(t); };
-const nameBlock = (p, id) => `<div class="person-name"><h3 id="${id}">${esc(p.name)}</h3>${p.chineseName ? `<p class="person-name__cn" lang="zh">${esc(p.chineseName)}</p>` : ''}</div>`;
+const nameBlock = (p, id, level = 3) => `<div class="person-name"><h${level} id="${id}">${esc(p.name)}</h${level}>${p.chineseName ? `<p class="person-name__cn" lang="zh">${esc(p.chineseName)}</p>` : ''}</div>`;
 
 /* The photo sits in a glass frame. On the back it is decoration (the name is printed beside it). */
 const memberPhoto = (p, alt) => {
@@ -43,10 +43,10 @@ const turn = '<svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><pat
 export function renderMemberGrid(block) {
   return `<div class="member-grid">${(block.items || []).map(p => {
     const id = slug(p.anchor || p.name), intro = paragraphs(p.introduction);
-    const facts = [['Field of study', p.major], ['Year / cohort', p.cohort]].filter(([, v]) => String(v || '').trim());
+    const facts = [['University', p.university], ['Field of study', p.major], ['Year / cohort', p.cohort]].filter(([, v]) => String(v || '').trim());
     const role = p.role ? `<p class="member-card__role">${esc(p.role)}</p>` : '';
     const dl = facts.length ? `<dl class="member-card__facts">${facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>` : '';
-    const front = `<div class="member-card__face member-card__front"><div class="member-card__identity">${memberPhoto(p, p.name)}</div><div class="member-card__info">${nameBlock(p, `${id}-name`)}${role}${dl}</div></div>`;
+    const front = `<div class="member-card__face member-card__front"><div class="member-card__identity">${memberPhoto(p, p.name)}</div><div class="member-card__info">${nameBlock(p, `${id}-name`, Math.max(3, Math.min(5, block.headingLevel || 3)))}${role}${dl}</div></div>`;
     // Nothing to turn over to: a single face, no button.
     if (!intro) return `<article class="member-card" id="${id}" aria-labelledby="${id}-name"><div class="member-card__inner">${front}</div></article>`;
     const backName = `<div class="member-card__back-name">${esc(p.name)}${p.chineseName ? `<span lang="zh">${esc(p.chineseName)}</span>` : ''}</div>`;
@@ -67,8 +67,8 @@ export function renderCreditGrid(block) {
     const list = (items, start) => `<ol class="credit-card__list"${start > 1 ? ` start="${start}"` : ''}>${items.map((t, i) => `<li value="${start + i}">${topic(t)}</li>`).join('')}</ol>`;
     const more = rest.length ? `<details class="credit-card__more"><summary><span class="credit-card__show">Show ${rest.length} more</span><span class="credit-card__hide">Show less</span>${chevron}</summary>${list(rest, shown + 1)}</details>` : '';
     return `<article class="credit-card" aria-labelledby="${id}"><div class="credit-card__id">${portrait(p, 'credit-card__photo')}`
-      + `${glass('credit-card__plate')}${nameBlock(p, id)}${p.role ? `<p class="credit-card__role">${esc(p.role)}</p>` : ''}</div></div>`
-      + `<div class="credit-card__body">${tasks.length ? `<h4 class="credit-card__label">Tasks</h4><ul class="credit-card__tasks">${tasks.map(t => `<li>${esc(t)}</li>`).join('')}</ul>` : ''}`
-      + `${details.length ? `<h4 class="credit-card__label">Specific Tasks</h4>${list(details.slice(0, shown), 1)}${more}` : ''}</div></article>`;
+      + `${glass('credit-card__plate')}${nameBlock(p, id, Math.max(3, Math.min(5, block.headingLevel || 3)))}${p.role ? `<p class="credit-card__role">${esc(p.role)}</p>` : ''}</div></div>`
+      + `<div class="credit-card__body">${tasks.length ? `<h${Math.max(4, Math.min(6, (block.headingLevel || 3) + 1))} class="credit-card__label">Tasks</h${Math.max(4, Math.min(6, (block.headingLevel || 3) + 1))}><ul class="credit-card__tasks">${tasks.map(t => `<li>${esc(t)}</li>`).join('')}</ul>` : ''}`
+      + `${details.length ? `<h${Math.max(4, Math.min(6, (block.headingLevel || 3) + 1))} class="credit-card__label">Specific Tasks</h${Math.max(4, Math.min(6, (block.headingLevel || 3) + 1))}>${list(details.slice(0, shown), 1)}${more}` : ''}</div></article>`;
   }).join('')}</div>`;
 }
