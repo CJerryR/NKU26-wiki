@@ -387,7 +387,7 @@ Figure 11. Schematic diagram of sTF Expression Cassette transformation.
 
 <p>Finally, we co-transformed the p426-SNR52p-gSTE2-SUP4t plasmid and linearized pRS315-TEF1p-GPR2 plasmid. The <em>GPR2</em> gene was successfully recombined into the <em>STE2</em> locus (Figure 13).</p>
 
-Figure 13. Schematic diagram of GPR2 transformation (a) and transformant validation (b).（占位）
+Figure 13. Schematic diagram of GPR2 transformation (a) and transformant validation (b). (Placeholder)
 
 #### 2.4.4 Learn {#learn-5 toc="Learn | Advancing to GPR2 Mutant Characterization"}
 
@@ -421,7 +421,7 @@ Based on the results from previous cycles and dry lab, we still used one-step cl
 
 Subsequently, we mixed the p426-SNR52p-gSTE2-SUP4t plasmid with each of the two plasmids mentioned above and co-transformed them into strain NKU-Y06. The recombination locus was identical to that used for GPR2 knock-in. After transformant validation, we successfully obtained two strains carrying GPR2 mutants (Figure 3).
 
-Figure 3. Transformant validation of GPR2 (a), GPR2-N84V (b), and GPR2-V368R (c).（占位）
+Figure 3. Transformant validation of GPR2 (a), GPR2-N84V (b), and GPR2-V368R (c). (Placeholder)
 
 #### 2.5.3 Learn {#learn-6 toc="Learn | Identifying the Need for Test-Strip Productization"}
 
@@ -461,7 +461,7 @@ Mans R, Wijsman M, Daran-Lapujade P, Daran JM. A protocol for introduction of mu
 
 <p style="text-align:justify;">First, we evaluate the cell-binding capacity of each substrate. The results are summarized in Table 1 below:</p>
 
-<div class="author-table-scroll"><table class="author-table"><colgroup><col style="width:20.4792%"><col style="width:22.1767%"><col style="width:57.3441%"></colgroup><tbody><tr><td colspan="1"><p style="text-align:center;">Substrate Type</p></td><td colspan="1"><p style="text-align:center;"><strong>cell elution rate</strong></p></td><td colspan="1"><p style="text-align:center;"><strong>Performance Characteristics</strong></p></td></tr><tr><td colspan="1"><p style="text-align:center;">Cellulose</p></td><td colspan="1"><p style="text-align:center;">8%</p></td><td colspan="1"><p style="text-align:center;">Easy to cut, stable structure, relatively uniform liquid absorption</p></td></tr><tr><td colspan="1"><p style="text-align:center;">sulfite paper</p></td><td colspan="1"><p style="text-align:center;">27%</p></td><td colspan="1"><p style="text-align:center;">Strongly hydrophobic surface, extremely poor liquid absorption, forms surface bulges after lyophilization</p></td></tr><tr><td colspan="1"><p style="text-align:center;">Cotton fiber</p></td><td colspan="1"><p style="text-align:center;">3%</p></td><td colspan="1"><p style="text-align:center;">Extremely thin and soft, difficult to handle, poor cell-loading capacity</p></td></tr><tr><td colspan="1"><p style="text-align:center;">Virgin wood pulp</p></td><td colspan="1"><p style="text-align:center;">10%</p></td><td colspan="1"><p style="text-align:center;">Poor uniformity, inconsistent physical structure, difficult to standardize specifications</p></td></tr><tr><td colspan="1"><p style="text-align:center;">GF/B</p></td><td colspan="1"><p style="text-align:center;">3.4%</p></td><td colspan="1"><p style="text-align:center;">High liquid-loading capacity</p></td></tr><tr><td colspan="1"><p style="text-align:center;">GF/A</p></td><td colspan="1"><p style="text-align:center;">23.7%</p></td><td colspan="1"><p style="text-align:center;">Slightly lower toughness, moderate liquid-loading capacity</p></td></tr><tr><td colspan="1"><p style="text-align:center;">醋酸纤维</p></td><td colspan="1"><p style="text-align:center;">38.0%</p></td><td colspan="1"><p style="text-align:center;">Brittle, susceptible to static electricity, low liquid-loading capacity</p></td></tr></tbody></table></div>
+<div class="author-table-scroll"><table class="author-table"><colgroup><col style="width:20.4792%"><col style="width:22.1767%"><col style="width:57.3441%"></colgroup><tbody><tr><td colspan="1"><p style="text-align:center;">Substrate Type</p></td><td colspan="1"><p style="text-align:center;"><strong>cell elution rate</strong></p></td><td colspan="1"><p style="text-align:center;"><strong>Performance Characteristics</strong></p></td></tr><tr><td colspan="1"><p style="text-align:center;">Cellulose</p></td><td colspan="1"><p style="text-align:center;">8%</p></td><td colspan="1"><p style="text-align:center;">Easy to cut, stable structure, relatively uniform liquid absorption</p></td></tr><tr><td colspan="1"><p style="text-align:center;">sulfite paper</p></td><td colspan="1"><p style="text-align:center;">27%</p></td><td colspan="1"><p style="text-align:center;">Strongly hydrophobic surface, extremely poor liquid absorption, forms surface bulges after lyophilization</p></td></tr><tr><td colspan="1"><p style="text-align:center;">Cotton fiber</p></td><td colspan="1"><p style="text-align:center;">3%</p></td><td colspan="1"><p style="text-align:center;">Extremely thin and soft, difficult to handle, poor cell-loading capacity</p></td></tr><tr><td colspan="1"><p style="text-align:center;">Virgin wood pulp</p></td><td colspan="1"><p style="text-align:center;">10%</p></td><td colspan="1"><p style="text-align:center;">Poor uniformity, inconsistent physical structure, difficult to standardize specifications</p></td></tr><tr><td colspan="1"><p style="text-align:center;">GF/B</p></td><td colspan="1"><p style="text-align:center;">3.4%</p></td><td colspan="1"><p style="text-align:center;">High liquid-loading capacity</p></td></tr><tr><td colspan="1"><p style="text-align:center;">GF/A</p></td><td colspan="1"><p style="text-align:center;">23.7%</p></td><td colspan="1"><p style="text-align:center;">Slightly lower toughness, moderate liquid-loading capacity</p></td></tr><tr><td colspan="1"><p style="text-align:center;"> Cellulose acetate </p></td><td colspan="1"><p style="text-align:center;">38.0%</p></td><td colspan="1"><p style="text-align:center;">Brittle, susceptible to static electricity, low liquid-loading capacity</p></td></tr></tbody></table></div>
 
 <p style="text-align:center;"><strong>Table 1.</strong><strong>Evaluation of cell-binding capacity across candidate substrates</strong></p>
 
@@ -469,7 +469,7 @@ Mans R, Wijsman M, Daran-Lapujade P, Daran JM. A protocol for introduction of mu
 
 <figure><a href="https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-e772d8a4854f55e5-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-e772d8a4854f55e5-00.json" alt="" loading="lazy"></a></figure>
 
-<p style="text-align:center;"><strong>Figure 1. </strong><strong>Water absorption capacity evaluation of selected substrates</strong>（<strong>插入图片</strong><strong>“Fig3.1.1”</strong>）</p>
+<p style="text-align:center;"><strong>Figure 1. </strong><strong>Water absorption capacity evaluation of selected substrates</strong>（<strong> Insert image </strong><strong>“Fig3.1.1”</strong>）</p>
 
 <p style="text-align:left;">The results demonstrate that GF/B not only exhibits strong binding capacity with yeast cells but also possesses superior water absorption ability.Learn</p>
 
@@ -535,7 +535,7 @@ Mans R, Wijsman M, Daran-Lapujade P, Daran JM. A protocol for introduction of mu
 
 <p style="text-align:justify;">First, we complete a continuous observation and recording of freeze-dried test strip resuscitation via time-lapse photography (Video 1).</p>
 
-<figure class="results-timelapse"><iframe title="Video 1. Observation of test strip resuscitation over 113 h" src="https://video.igem.org/videos/embed/vwRYoammvjP4TanUWTm7yy?start=0s&amp;stop=70s" allow="fullscreen" loading="lazy" sandbox="allow-scripts allow-same-origin" style="width:100%;aspect-ratio:16/9;border:0"></iframe><p>Playback is pending iGEM moderation.</p><p style="text-align:center;"><strong>Video 1. Observation of test strip resuscitation over 113 h</strong>（<strong>插入视频</strong><strong>“Video3.2.1”</strong>）</p></figure>
+<figure class="results-timelapse"><iframe title="Video 1. Observation of test strip resuscitation over 113 h" src="https://video.igem.org/videos/embed/vwRYoammvjP4TanUWTm7yy?start=0s&amp;stop=70s" allow="fullscreen" loading="lazy" sandbox="allow-scripts allow-same-origin" style="width:100%;aspect-ratio:16/9;border:0"></iframe><p>Playback is pending iGEM moderation.</p><p style="text-align:center;"><strong>Video 1. Observation of test strip resuscitation over 113 h</strong>（<strong> Insert video </strong><strong>“Video3.2.1”</strong>）</p></figure>
 
 <p style="text-align:justify;">Subsequently, we carry out multiple control experiments to further explore the optimal conditions for test strip color development, performing RGB blue-channel grayscale quantification using ImageJ (Figure 6).</p>
 
@@ -551,7 +551,7 @@ Mans R, Wijsman M, Daran-Lapujade P, Daran JM. A protocol for introduction of mu
 
 <figure><a href="https://static.igem.wiki/teams/6303/wiki/v8-6/v86-b5b9b9256085-fig3-2-2.avif" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/v8-6/v86-b5b9b9256085-fig3-2-2.avif" alt="" loading="lazy"></a></figure>
 
-<p style="text-align:center;"><strong>Figure 7.</strong> <strong>3D-printed test strip cassette</strong><strong>（</strong><strong>插入图片</strong><strong>“Fig3.2.2”</strong><strong>）</strong></p>
+<p style="text-align:center;"><strong>Figure 7.</strong> <strong>3D-printed test strip cassette</strong><strong>（</strong><strong> Insert image </strong><strong>“Fig3.2.2”</strong><strong>）</strong></p>
 
 <p style="text-align:justify;">At this point, we have closed the loop on test strip fabrication and application, establishing a solid foundation for subsequent on-site rapid detection of soil samples.</p>
 

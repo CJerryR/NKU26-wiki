@@ -85,17 +85,17 @@ Table 1. Comparison of detection methods for plant-parasitic nematodes
 
 <section class="author-manuscript" lang="zh">
 
-<p style="text-align:left;">Human Practices 围绕一个核心问题展开：如何让线虫检测回应真实的农业需求。针对 Field Detective 利用工程酵母感知蛔苷素并产生可观察输出的设想，我们通过问卷、专家访谈和田间实践明确使用场景与设计要求，并结合教育传播和产业交流，推动项目与潜在使用者及公众建立联系。</p>
+<p style="text-align:left;"> Human Practices addresses a central question: how can nematode detection respond to real agricultural needs? For Field Detective's concept of engineered yeast sensing ascarosides and producing observable outputs, we used questionnaires, expert interviews, and field practice to clarify applications and design requirements. Education, outreach, and industry discussions connected the project with potential users and the public. </p>
 
-<p style="text-align:left;">在需求识别层面，我们收集了 369 条问卷提交。受访者对理想检测工具的期待集中于操作简便、准确可靠和价格可负担；53.4% 的受访者对植物寄生线虫缺乏了解。这些结果分别为检测流程设计和科普内容提供了起点。我们进一步走访天津乡语果蔬园和第六埠村蔬菜示范园，了解病害管理与生产经验，结合当地作物和地块条件判断具体需求。</p>
+<p style="text-align:left;"> For needs assessment, we collected 369 questionnaire submissions. Respondents prioritized ease of use, accuracy and reliability, and affordability; 53.4% lacked knowledge of plant-parasitic nematodes. These results informed detection-workflow design and science communication. Visits to Tianjin Xiangyu Fruit and Vegetable Garden and the Diliubu Village Vegetable Demonstration Garden explored disease management and production experience, assessing specific needs against local crops and field conditions. </p>
 
-<p style="text-align:left;">在项目设计层面，与姚玉荣、刘倩和庞志豪三位老师的交流，帮助我们将早期检测与种植前管理决策联系起来，并识别采样代表性、土壤背景色、蛔苷素稳定性及工程酵母处置等问题。团队据此将关注范围扩展到采样、检测、判读和检测后处理的完整流程，开展土样收集并制作采样指导短片，为实验和建模提出需要检验的条件。</p>
+<p style="text-align:left;"> For project design, discussions with 姚玉荣, 刘倩, and 庞志豪 connected early detection with preplanting decisions and identified sampling representativeness, soil background color, ascaroside stability, and engineered-yeast disposal as concerns. The team expanded its focus to sampling, testing, interpretation, and post-test handling, organized soil collection, and produced sampling guidance, identifying conditions for experimental and modeling tests. </p>
 
-<p style="text-align:left;">在教育与传播层面，我们围绕线虫与农业、生物信号和科学责任设计三套课程，按小学与初中学段调整内容，并依托南开大学向阳计划开展教学与科普活动。绘本、海报及其他传播材料进一步帮助公众理解地下病害和生物传感。课程从认识现象逐步引向信号与结果解释，回应问卷所反映的认知需求。</p>
+<p style="text-align:left;"> For education and outreach, we designed three courses on nematodes and agriculture, biological signals, and scientific responsibility, adapting content for primary and junior-secondary students. Teaching and outreach took place through Nankai University's Xiangyang Program. Picture books, posters, and other materials helped explain underground disease and biosensing. Courses progressed from recognizing phenomena to interpreting signals and results, addressing knowledge needs identified in the questionnaire. </p>
 
-<p style="text-align:left;">在社会支持与产业交流层面，我们准备合作邀请书、项目书和路演材料，与企业讨论应用设想、潜在用户及后续研发条件，并获得包括 ExCell Bio 在内的赞助支持。这些交流为持续研究提供资源，也帮助我们梳理未来开展样品获取、原型评价和实际场景验证所需的合作条件。</p>
+<p style="text-align:left;"> For social support and industry engagement, we prepared invitations, proposals, and pitch materials to discuss applications, potential users, and further research with enterprises, receiving sponsorship from organizations including ExCell Bio. These exchanges provided resources and clarified collaboration conditions for future sample access, prototype evaluation, and real-world validation. </p>
 
-<p style="text-align:left;">上述工作将使用需求、专业意见与公众沟通纳入项目推进过程，并与湿实验和干实验共同细化验证方向。后续将结合真实样品与技术数据，检验传感输出与线虫信息之间的关系，以及检测流程在实际农业场景中的可用性。详细调研、活动记录与反馈见 Human Practices 页面。</p>
+<p style="text-align:left;"> This work integrated user needs, professional advice, and public communication into project development and refined validation priorities with the wet and dry labs. Real samples and technical data will subsequently test relationships between sensor output and nematode information and the usability of the workflow in agricultural settings. Detailed investigations, activity records, and feedback appear on the Human Practices page. </p>
 
 </section>
 
@@ -133,17 +133,17 @@ Detailed experimental design and results can be found in [Wet Lab-Results](/resu
 
 <section class="author-manuscript" lang="zh">
 
-<p style="text-align:left;">干实验围绕三个相互衔接的问题展开：如何选择和改造识别蛔苷素的受体，如何将识别信号转化为显色输出，以及检测结果如何支持田间实际管理决策。我们通过分子对接、分子动力学模拟、ODE 信号通路建模和经济效益建模四条线，为项目设计提供计算依据。</p>
+<p style="text-align:left;"> Our dry-lab work addresses three connected questions: how to select and engineer ascaroside-recognizing receptors, how to convert recognition signals into color outputs, and how detection results can support field management. Molecular docking, molecular dynamics simulations, ODE signaling models, and economic modeling provide computational support for project design. </p>
 
-<p style="text-align:left;">在受体识别层面，<strong>分子对接</strong>帮助我们比较 Gpr2、Gpr3 和 GprC，并围绕 Gpr2 识别热点、设计突变，结合评分与相互作用变化，探索其对蛔苷素3和蛔苷素18的识别差异。<strong>分子动力学模拟</strong>进一步关注选定体系中的动态行为，考察配体定位与关键接触如何随时间变化，为对接提出的结构假说补充证据。</p>
+<p style="text-align:left;"> For receptor recognition, <strong> molecular docking </strong> helps compare Gpr2, Gpr3, and GprC, identify Gpr2 hotspots, and design mutations. Score and interaction changes explore differences in recognition of ascaroside 3 and ascaroside 18. <strong> molecular dynamics simulations </strong> further examine dynamic behavior in selected systems, tracking ligand positioning and key contacts over time to supplement structural hypotheses from docking. </p>
 
 <p style="text-align:left;"><br></p>
 
-<p style="text-align:left;">在信号输出层面，<strong>ODE建模</strong>将受体输入、胞内信号传递与显色过程连接起来。我们复用文献通路，通过模拟数据校准输入输出接口，再将两路色素输出转换为模拟手机RGB中的蓝通道颜色特征，用于拟合<strong>双通道模型的三系数回归方程</strong>。模型据此在背景虫数量未知时估计南方根结线虫密度，为风险分级提供输入。真实样本与手机拍摄数据将用于后续实验校准。</p>
+<p style="text-align:left;"> For signal output, <strong> ODE modeling </strong> connects receptor input, intracellular signaling, and color development. We reused published pathways and calibrated input–output interfaces with simulated data, then converted paired pigment outputs into simulated smartphone RGB blue-channel features to fit <strong> the three-coefficient regression equation of the dual-channel model </strong>. This model estimates southern root-knot nematode density with unknown background abundance, providing input for risk tiers. Real samples and smartphone imaging data will support subsequent experimental calibration. </p>
 
-<p style="text-align:left;">在实际应用层面，<strong>经济效益建模</strong>关注“检测到信号之后，使用者可以如何行动”。通过比较不同风险等级与管理情景下的成本和收益，我们评估检测信息的决策价值，并提出对定量能力、检测范围和结果呈现的需求。后续将结合 HP 调研和湿实验数据，进一步完善应用评价。</p>
+<p style="text-align:left;"> For practical application, <strong> economic modeling </strong> examines what users can do after detecting a signal. Comparing costs and returns across risk tiers and management scenarios evaluates the decision value of detection information and identifies requirements for quantitative capability, detection range, and result presentation. Subsequent application evaluation will incorporate HP research and wet-lab data. </p>
 
-<p style="text-align:left;">四条计算线共同连接分子设计、系统响应与应用需求，并通过候选验证、模型校准和使用情景分析，与 Wet Lab 和 Human Practices 协作推进项目。详细方法与结果见 Model 页面。</p>
+<p style="text-align:left;"> Together, these four computational strands connect molecular design, system response, and application needs, supporting collaboration with Wet Lab and Human Practices through candidate validation, model calibration, and use-scenario analysis. Detailed methods and results appear on the Model page. </p>
 
 </section>
 

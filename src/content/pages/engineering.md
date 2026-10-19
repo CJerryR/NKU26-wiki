@@ -17,25 +17,25 @@ hidden: false
 
 <section class="author-manuscript" lang="zh">
 
-## <strong>DBTL-1｜信号响应通路的工程化构建</strong> {#src-Project-Engineering-1 toc="DBTL-1｜信号响应通路的工程化构建"}
+## <strong> DBTL-1 | Engineering the signal-response pathway </strong> {#src-Project-Engineering-1 toc="DBTL-1 | Engineering the signal-response pathway"}
 
-### <strong>1.1 受体筛选与研究对象确定</strong> {#src-Project-Engineering-2 toc="1.1 受体筛选与研究对象确定"}
+### <strong> 1.1 Receptor screening and selection of study targets </strong> {#src-Project-Engineering-2 toc="1.1 Receptor screening and selection of study targets"}
 
-#### <strong>Design｜确定受体筛选目标</strong> {#src-Project-Engineering-3 toc="Design｜确定受体筛选目标"}
+#### <strong> Design | Defining receptor-screening objectives </strong> {#src-Project-Engineering-3 toc="Design | Defining receptor-screening objectives"}
 
-<p style="text-align:left;">为构建区分ascr#18与ascr#3的酵母传感器，我们筛选可进一步改造的识别元件。文献报道，捕食线虫真菌的Gpr2、Gpr3和GprC是参与蛔苷素感知的G蛋白偶联受体（GPCR）。我们将三者纳入候选，兼顾配体识别、酵母中的定位及通路衔接条件。</p>
+<p style="text-align:left;"> To build a yeast sensor that distinguishes ascr#18 from ascr#3, we screened recognition elements for further engineering. The literature identifies Gpr2, Gpr3, and GprC from nematode-trapping fungi as G protein-coupled receptors (GPCRs) involved in ascaroside sensing. We included all three as candidates, considering ligand recognition, localization in yeast, and pathway coupling. </p>
 
-#### <strong>Build｜建立受体比较与文献对照</strong> {#src-Project-Engineering-5 toc="Build｜建立受体比较与文献对照"}
+#### <strong> Build | Establishing receptor and literature comparisons </strong> {#src-Project-Engineering-5 toc="Build | Establishing receptor and literature comparisons"}
 
-<p style="text-align:left;">准备三种受体的预测结构与蛔苷素配体后，我们分别参考GprC文献的AutoDock Vina及Gpr2、Gpr3文献的SwissDock方法开展对接探索，以文献中的口袋位置和关键残基为参照。</p>
+<p style="text-align:left;"> After preparing predicted structures of the three receptors and ascaroside ligands, we explored docking using AutoDock Vina as reported for GprC and SwissDock as reported for Gpr2 and Gpr3, with published pocket positions and key residues as references. </p>
 
-#### <strong>Test｜对照文献并修正对接流程</strong> {#src-Project-Engineering-7 toc="Test｜对照文献并修正对接流程"}
+#### <strong> Test | Comparing with literature and refining the docking workflow </strong> {#src-Project-Engineering-7 toc="Test | Comparing with literature and refining the docking workflow"}
 
-<p style="text-align:left;">结合评分、配体位置和残基接触对照文献线索后，我们发现坐标参照不一致会使搜索区域错配，格式转换中的形式电荷丢失会影响带电接触识别，因此加入结构对齐、搜索区域复核及化学信息检查，修正对接与接触分析流程。</p>
+<p style="text-align:left;"> Comparing scores, ligand positions, and residue contacts with literature clues revealed that inconsistent coordinate references could misplace search regions, while loss of formal charges during format conversion could affect charged-contact identification. We therefore refined docking and contact analysis by adding structural alignment, search-region verification, and chemical-information checks. </p>
 
-#### <strong>Learn｜确定后续改造对象</strong> {#src-Project-Engineering-9 toc="Learn｜确定后续改造对象"}
+#### <strong> Learn | Selecting receptors for further engineering </strong> {#src-Project-Engineering-9 toc="Learn | Selecting receptors for further engineering"}
 
-<p style="text-align:left;">文献报道GprC具有质膜及线粒体相关定位，可能增加酵母中的定位与通路整合复杂度，因此本轮未将其纳入工程改造，但保留为结构比较参照。综合计算表现与异源应用条件，后续突变筛选聚焦Gpr2，并保留Gpr3及其突变体研究。</p>
+<p style="text-align:left;"> Reported plasma-membrane and mitochondria-associated localization of GprC could complicate localization and pathway integration in yeast. We therefore excluded it from this engineering round but retained it as a structural reference. Considering computational behavior and heterologous application conditions, subsequent mutant screening focused on Gpr2 while retaining studies of Gpr3 and its mutants. </p>
 
 <p style="text-align:left;"><br></p>
 
@@ -147,11 +147,11 @@ Subsequently, we fused the PRD domain of Ste12 (216–688 aa) with the DBD domai
 
 #### 1.4.3 Test {#wet-lab-fourth-test toc="1.4.3 Test"}
 
-这部分后续给出。
+This section will be provided later.
 
 #### 1.4.4 Learn {#wet-lab-fourth-learn toc="1.4.4 Learn"}
 
-这部分后续给出。
+This section will be provided later.
 
 ### References {#references toc="References"}
 
@@ -161,85 +161,85 @@ Cong Fan, Nike He, Jifeng Yuan, Cascaded amplifying circuit enables sensitive de
 
 <section class="author-manuscript" lang="zh">
 
-## <strong>DBTL-2｜受体特异性工程改造与通路模型构建</strong> {#src-Project-Engineering-12 toc="DBTL-2｜受体特异性工程改造与通路模型构建"}
+## <strong> DBTL-2 | Engineering receptor specificity and constructing pathway models </strong> {#src-Project-Engineering-12 toc="DBTL-2 | Engineering receptor specificity and constructing pathway models"}
 
-### <strong>2.1 接触差异引导的突变设计与筛选</strong> {#src-Project-Engineering-13 toc="2.1 接触差异引导的突变设计与筛选"}
+### <strong> 2.1 Contact-guided mutant design and screening </strong> {#src-Project-Engineering-13 toc="2.1 Contact-guided mutant design and screening"}
 
-#### <strong>Design｜从WT接触差异提出改造位点</strong> {#src-Project-Engineering-14 toc="Design｜从WT接触差异提出改造位点"}
+#### <strong> Design | Proposing engineering sites from WT contact differences </strong> {#src-Project-Engineering-14 toc="Design | Proposing engineering sites from WT contact differences"}
 
-<p style="text-align:left;">我们比较Gpr2野生型（WT）与ascr#18、ascr#3的接触分布，选择接触存在差异的残基进行丙氨酸替换，考察其对双配体表现的影响。</p>
+<p style="text-align:left;"> We compared contact distributions of Gpr2 wild type (WT) with ascr#18 and ascr#3, selecting residues with differential contacts for alanine substitution to examine effects on dual-ligand behavior. </p>
 
-#### <strong>Build｜构建突变模型与统一对照</strong> {#src-Project-Engineering-16 toc="Build｜构建突变模型与统一对照"}
+#### <strong> Build | Constructing mutant models and consistent controls </strong> {#src-Project-Engineering-16 toc="Build | Constructing mutant models and consistent controls"}
 
-<p style="text-align:left;">根据替换方案生成突变序列并用AlphaFold 3预测结构；WT与突变体保留原始残基编号，对齐至共同坐标参照，统一结构准备、配体输入及对接搜索设置，以比较评分和接触变化。</p>
+<p style="text-align:left;"> We generated mutant sequences and predicted structures with AlphaFold 3. WT and mutants retained original residue numbering and were aligned to a common coordinate reference, with consistent structural preparation, ligand inputs, and docking search settings for score and contact comparisons. </p>
 
-#### <strong>Test｜根据评分与接触反馈迭代替换</strong> {#src-Project-Engineering-18 toc="Test｜根据评分与接触反馈迭代替换"}
+#### <strong> Test | Iterating substitutions using score and contact feedback </strong> {#src-Project-Engineering-18 toc="Test | Iterating substitutions using score and contact feedback"}
 
-<p style="text-align:left;">从单点丙氨酸扫描中筛选候选后，我们结合评分与接触分析补充侧链替换，并对选定位点开展饱和扫描。以两种配体各自相对WT的评分变化之差划分ascr#3或ascr#18偏向，再分别检查评分，区分目标配体评分降低、另一配体评分升高或两者兼有；与WT的接触对照用于检查对应的配体位置及相互作用线索。</p>
+<p style="text-align:left;"> After screening single-site alanine mutants, we supplemented side-chain substitutions using score and contact analyses and performed saturation scanning at selected sites. The difference between each ligand's score change relative to WT classified shifts toward ascr#3 or ascr#18. We then inspected the scores separately to distinguish a lower target-ligand score, a higher score for the other ligand, or both. Contact comparisons with WT examined corresponding ligand positions and interaction clues. </p>
 
-<p style="text-align:left;">随后按偏向方向与评分变化方式选择单点亲本，尝试组合以检验各替换作用能否共同保留。与WT及各亲本比较后，多数受测组合未进一步改善较优亲本的目标评分或扩大双配体差异，后续因此聚焦单点候选。</p>
+<p style="text-align:left;"> We then selected single-mutant parents by shift direction and score-change pattern and tested combinations to determine whether their effects persisted together. Compared with WT and each parent, most tested combinations did not further improve the better parent's target score or enlarge dual-ligand differences, so subsequent work focused on single mutants. </p>
 
-#### <strong>Learn｜确定候选并转入动态检验</strong> {#src-Project-Engineering-21 toc="Learn｜确定候选并转入动态检验"}
+#### <strong> Learn | Selecting candidates for dynamic testing </strong> {#src-Project-Engineering-21 toc="Learn | Selecting candidates for dynamic testing"}
 
-<p style="text-align:left;">结合评分分化与接触分析，我们选定N84V和V368R：相对同批WT，N84V的ascr#18评分降低、ascr#3评分升高，V368R方向相反。两种突变体与WT随后进入膜环境中的动态比较。</p>
+<p style="text-align:left;"> Combining score differentiation and contact analysis, we selected N84V and V368R. Relative to the same WT batch, N84V lowered the ascr#18 score and raised the ascr#3 score; V368R showed the opposite direction. Both mutants and WT then entered dynamic comparisons in a membrane environment. </p>
 
-### <strong>2.2 在膜环境中考察选定候选的动态行为</strong> {#src-Project-Engineering-23 toc="2.2 在膜环境中考察选定候选的动态行为"}
+### <strong> 2.2 Examining selected candidates in a membrane environment </strong> {#src-Project-Engineering-23 toc="2.2 Examining selected candidates in a membrane environment"}
 
-#### <strong>Design｜检查对接筛选结果在膜中的表现</strong> {#src-Project-Engineering-24 toc="Design｜检查对接筛选结果在膜中的表现"}
+#### <strong> Design | Testing the membrane behavior of docking-selected candidates </strong> {#src-Project-Engineering-24 toc="Design | Testing the membrane behavior of docking-selected candidates"}
 
-<p style="text-align:left;">我们对WT、N84V和V368R分别与两种配体构成的六个复合物开展分子动力学（MD）模拟，检查进入膜环境后配体是否仍停留在预测口袋，以及原有接触能否维持。</p>
+<p style="text-align:left;"> We performed molecular dynamics (MD) simulations of six complexes formed by WT, N84V, and V368R with each ligand, examining whether ligands remained in their predicted pockets and whether original contacts persisted in a membrane environment. </p>
 
-#### <strong>Build｜准备全长受体与膜体系</strong> {#src-Project-Engineering-26 toc="Build｜准备全长受体与膜体系"}
+#### <strong> Build | Preparing full-length receptors and membrane systems </strong> {#src-Project-Engineering-26 toc="Build | Preparing full-length receptors and membrane systems"}
 
-<p style="text-align:left;">将对接姿态与对应全长受体对齐至共同坐标参照，检查配体与恢复片段的冲突并调整重叠的局部盖子区（lid）。部分重建方案同时改变了环外骨架或配体起点，因此调整范围收窄至lid，保留各组自身的其余坐标，再将六个复合物分别置于POPC脂质双层、溶剂和离子环境中。</p>
+<p style="text-align:left;"> We aligned docked poses and their full-length receptors to a common coordinate reference, checked ligand clashes with restored segments, and adjusted the overlapping local lid region. Some reconstruction schemes also altered the backbone outside the loop or the ligand starting position, so adjustments were restricted to the lid while retaining each system's remaining coordinates. Each of the six complexes was then placed in a POPC lipid bilayer with solvent and ions. </p>
 
-#### <strong>Test｜追踪配体移动及接触变化</strong> {#src-Project-Engineering-28 toc="Test｜追踪配体移动及接触变化"}
+#### <strong> Test | Tracking ligand motion and contact changes </strong> {#src-Project-Engineering-28 toc="Test | Tracking ligand motion and contact changes"}
 
-<p style="text-align:left;">六组各完成一条100 ns轨迹。我们以局部口袋为参照，区分受体整体运动与配体在口袋内的移动，并比较接触随时间的变化及代表构象。</p>
+<p style="text-align:left;"> Each system completed one 100 ns trajectory. Using the local pocket as reference, we distinguished overall receptor motion from ligand movement within the pocket and compared time-dependent contacts and representative conformations. </p>
 
-<p style="text-align:left;">轨迹后半程，N84V–ascr#18相对自身起始姿态的偏离小于WT–ascr#18和N84V–ascr#3。其起点已有的Arg189接触得到保持：50–100 ns内，Arg189与ascr#18羧酸端的氢键占有率为93.6%，另两组同期均未检出该氢键。该持续接触为配体的位置保持提供了可能解释。</p>
+<p style="text-align:left;"> In the second half of the trajectories, N84V–ascr#18 deviated less from its own starting pose than WT–ascr#18 and N84V–ascr#3. Its initial Arg189 contact persisted: during 50–100 ns, hydrogen-bond occupancy between Arg189 and the ascr#18 carboxylate end was 93.6%, while neither comparison system showed that hydrogen bond in the same interval. This persistent contact offers a possible explanation for positional retention. </p>
 
-<p style="text-align:left;">V368R–ascr#3离开初始位置并转向Arg345附近。Arg368带电末端从Asp70移开，与配体开始接触Arg345发生在相近时段；V368R–ascr#18中，Arg368与Asp70则持续保持近距离。Arg345与配体羧酸端的接触也见于WT–ascr#3和V368R–ascr#18，因此该接触本身尚不能解释V368R的ascr#3评分偏向。</p>
+<p style="text-align:left;"> V368R–ascr#3 left its initial position and moved toward Arg345. The charged end of Arg368 moved away from Asp70 around the time the ligand began contacting Arg345; in V368R–ascr#18, Arg368 and Asp70 remained close. Arg345 contacts with the ligand carboxylate also occurred in WT–ascr#3 and V368R–ascr#18, so this contact alone cannot yet explain the ascr#3 score bias of V368R. </p>
 
-#### <strong>Learn｜根据轨迹重新理解突变作用</strong> {#src-Project-Engineering-32 toc="Learn｜根据轨迹重新理解突变作用"}
+#### <strong> Learn | Reinterpreting mutation effects from trajectories </strong> {#src-Project-Engineering-32 toc="Learn | Reinterpreting mutation effects from trajectories"}
 
-<p style="text-align:left;">MD显示，配体可保持初始接触，也可重新定位并形成持续接触；解释突变作用需结合配体运动、受体内部变化和WT对照。当前每组仅一条轨迹且起点不同，后续需检验接触与重排的可重复性，并通过实验判断其与实际识别能力的关系。</p>
+<p style="text-align:left;"> MD showed that ligands can retain initial contacts or relocate and form persistent new contacts. Interpreting mutation effects requires combining ligand motion, internal receptor changes, and WT controls. Each system currently has only one trajectory and a different starting pose; contact and rearrangement reproducibility require further testing, and their relationship to actual recognition requires experiments. </p>
 
-### <strong>2.3 ODE：连接受体信号与显色输出</strong> {#src-Project-Engineering-34 toc="2.3 ODE：连接受体信号与显色输出"}
+### <strong> 2.3 ODE: connecting receptor signals to color output </strong> {#src-Project-Engineering-34 toc="2.3 ODE: connecting receptor signals to color output"}
 
-#### <strong>Design｜从生物学原理建立最小模型</strong> {#src-Project-Engineering-35 toc="Design｜从生物学原理建立最小模型"}
+#### <strong> Design | Building a minimal model from biological principles </strong> {#src-Project-Engineering-35 toc="Design | Building a minimal model from biological principles"}
 
-<p style="text-align:left;">我们最初以配体为输入，将受体、G蛋白、MAPK、sTF、GAL产率与颜色串联为最小模型。多个内部参数缺少项目测量依据，也难以仅凭最终颜色分别确定，因此转向文献与往届iGEM的公开模型，寻找可复用的通路结构和参数。</p>
+<p style="text-align:left;"> We initially used ligand input to connect the receptor, G protein, MAPK, sTF, GAL productivity, and color in a minimal model. Several internal parameters lacked project-specific measurements and could not readily be identified separately from final color alone. We therefore turned to published and previous iGEM models for reusable pathway structures and parameters. </p>
 
-#### <strong>Build｜适配公共通路与显色接口</strong> {#src-Project-Engineering-37 toc="Build｜适配公共通路与显色接口"}
+#### <strong> Build | Adapting the shared pathway and color-output interface </strong> {#src-Project-Engineering-37 toc="Build | Adapting the shared pathway and color-output interface"}
 
-<p style="text-align:left;">依据Supady Model B与TU Delft 2012的公开反应结构，我们接入G蛋白、支架、Fus3及反馈模块；在固定构建条件下合并sTF调控、GAL产率与产色关系，并以分子总量守恒消去重复状态，形成六个独立动态方程。两个传感器共享公共通路，分别设置有效输入尺度与产色增益。</p>
+<p style="text-align:left;"> Based on the public reaction structures of Supady Model B and TU Delft 2012, we incorporated G protein, scaffold, Fus3, and feedback modules. Under fixed construct conditions, we combined sTF regulation, GAL productivity, and color production and eliminated redundant states through molecular-total conservation, yielding six independent dynamic equations. The two sensors share the pathway but have separate effective input scales and color-production gains. </p>
 
-#### <strong>Test｜用模拟终点调整响应范围</strong> {#src-Project-Engineering-39 toc="Test｜用模拟终点调整响应范围"}
+#### <strong> Test | Adjusting the response range using simulated endpoints </strong> {#src-Project-Engineering-39 toc="Test | Adjusting the response range using simulated endpoints"}
 
-<p style="text-align:left;">通过计算一致性检查后，我们发现初始参数下不同刺激的颜色过于接近。因此，保留公共通路参数，独立改变目标虫与背景虫密度，构造模拟显色目标，拟合两个传感器的输入尺度与产色增益；再按手机读色示例调整产色尺度与基础产色，重新积分核对输出。</p>
+<p style="text-align:left;"> After computational consistency checks, we found that colors from different stimuli were too similar under the initial parameters. Keeping shared pathway parameters fixed, we varied target and background nematode densities independently, constructed simulated color targets, and fitted input scales and color-production gains for both sensors. We then adjusted color scale and basal production using a smartphone-readout example and reintegrated to verify outputs. </p>
 
-#### <strong>Learn｜区分通路机制与接口校准</strong> {#src-Project-Engineering-41 toc="Learn｜区分通路机制与接口校准"}
+#### <strong> Learn | Distinguishing pathway mechanisms from interface calibration </strong> {#src-Project-Engineering-41 toc="Learn | Distinguishing pathway mechanisms from interface calibration"}
 
-<p style="text-align:left;">文献结构描述信号传递，输入尺度与显色参数适配具体构建和测量条件。模拟拟合帮助找到可区分的输出范围，也暴露了弱刺激区偏差。后续实验需同时测量剂量响应、空白和时间曲线，以确定真实参数与可用读色范围。</p>
+<p style="text-align:left;"> Literature structures describe signal transmission, while input scales and color parameters adapt the model to particular constructs and measurement conditions. Simulation fitting identified a distinguishable output range and revealed deviations under weak stimulation. Subsequent experiments need dose responses, blanks, and time courses to determine real parameters and usable color-readout ranges. </p>
 
-### <strong>2.4 双通道模型：从配对颜色估计目标密度</strong> {#src-Project-Engineering-43 toc="2.4 双通道模型：从配对颜色估计目标密度"}
+### <strong> 2.4 Dual-channel model: estimating target density from paired colors </strong> {#src-Project-Engineering-43 toc="2.4 Dual-channel model: estimating target density from paired colors"}
 
-#### <strong>Design｜在背景数量未知时估计Mi密度</strong> {#src-Project-Engineering-44 toc="Design｜在背景数量未知时估计Mi密度"}
+#### <strong> Design | Estimating Mi density with unknown background abundance </strong> {#src-Project-Engineering-44 toc="Design | Estimating Mi density with unknown background abundance"}
 
-<p style="text-align:left;">南方根结线虫（Mi）与秀丽隐杆线虫（Ce）均可能贡献ascr#3和ascr#18。我们设计两路配体偏好不同、保留交叉响应的传感器，利用同一样本的配对颜色，在Ce数量未知时估计Mi密度。</p>
+<p style="text-align:left;"> Both the southern root-knot nematode (Mi) and Caenorhabditis elegans (Ce) may contribute ascr#3 and ascr#18. We designed two sensors with different ligand preferences and retained cross-responses, using paired colors from the same sample to estimate Mi density without knowing Ce abundance. </p>
 
-#### <strong>Build｜连接混合样本、ODE与手机读色</strong> {#src-Project-Engineering-46 toc="Build｜连接混合样本、ODE与手机读色"}
+#### <strong> Build | Connecting mixed samples, ODEs, and smartphone readouts </strong> {#src-Project-Engineering-46 toc="Build | Connecting mixed samples, ODEs, and smartphone readouts"}
 
-<p style="text-align:left;">我们独立改变目标虫与背景虫密度，在统一释放总量假设下设置两种虫的不同配体组成。固定校准后的ODE，计算混合样本的两路色素输出，按文献关系转换为模拟手机RGB蓝通道读数；再对各通道相对空白的颜色比值取负对数，拟合三系数回归方程，将配对颜色映射至Mi密度。</p>
+<p style="text-align:left;"> We varied target and background densities independently and assigned different ligand compositions under an equal-total-release assumption. With the calibrated ODE fixed, we calculated paired pigment outputs from mixed samples and converted them to simulated smartphone RGB blue-channel readouts using a literature relationship. Negative logarithms of each channel's color ratio relative to its blank were then used to fit a three-coefficient regression mapping paired colors to Mi density. </p>
 
-#### <strong>Test｜在新组合中比较单、双通道</strong> {#src-Project-Engineering-48 toc="Test｜在新组合中比较单、双通道"}
+#### <strong> Test | Comparing single- and dual-channel models on new combinations </strong> {#src-Project-Engineering-48 toc="Test | Comparing single- and dual-channel models on new combinations"}
 
-<p style="text-align:left;">在未参与拟合的新混合组合中，双通道还原预设Mi密度的均方根误差约为3.01 J2/100 cm³，低于两个单通道模型，说明两路颜色在当前模拟条件下提供了互补信息。风险阈值附近仍有分级偏差，因此模型同时检查输入范围，并提示跨阈值的不确定结果。</p>
+<p style="text-align:left;"> For new mixtures excluded from fitting, the dual-channel model recovered the preset Mi density with a root mean squared error of approximately 3.01 J2/100 cm³, lower than either single-channel model. The two colors thus supplied complementary information under the current simulation conditions. Classification deviations remained near risk thresholds, so the model also checks input ranges and flags uncertain results that cross thresholds. </p>
 
-#### <strong>Learn｜把密度误差与风险判断结合起来</strong> {#src-Project-Engineering-50 toc="Learn｜把密度误差与风险判断结合起来"}
+#### <strong> Learn | Connecting density error to risk assessment </strong> {#src-Project-Engineering-50 toc="Learn | Connecting density error to risk assessment"}
 
-<p style="text-align:left;">模拟连接了ODE显色、手机颜色特征与Mi密度估计，并将评价从整体误差延伸到风险判断：低密度误差是否可接受，还需考虑其是否改变风险档位。后续将用实测混合样本校准手机颜色关系，以独立批次检验双通道模型的密度估计与风险分级表现。</p>
+<p style="text-align:left;"> The simulation connected ODE color development, smartphone color features, and Mi density estimation, extending evaluation from overall error to risk assessment: acceptability of low-density error also depends on whether it changes the risk tier. We will calibrate smartphone color relationships with measured mixed samples and evaluate density estimation and risk classification on independent batches. </p>
 
 <p style="text-align:left;"><br></p>
 
@@ -247,29 +247,29 @@ Cong Fan, Nike He, Jifeng Yuan, Cascaded amplifying circuit enables sensitive de
 
 <section class="author-manuscript" lang="zh">
 
-## <strong>DBTL-3｜社会现实意义反馈</strong> {#src-Project-Engineering-53 toc="DBTL-3｜社会现实意义反馈"}
+## <strong> DBTL-3 | Feedback from societal relevance </strong> {#src-Project-Engineering-53 toc="DBTL-3 | Feedback from societal relevance"}
 
-### <strong>3.1 经济效益建模与检测需求修正</strong> {#src-Project-Engineering-54 toc="3.1 经济效益建模与检测需求修正"}
+### <strong> 3.1 Economic modeling and refinement of detection requirements </strong> {#src-Project-Engineering-54 toc="3.1 Economic modeling and refinement of detection requirements"}
 
-#### <strong>Design｜明确检测信息的决策价值</strong> {#src-Project-Engineering-55 toc="Design｜明确检测信息的决策价值"}
+#### <strong> Design | Defining the decision value of detection information </strong> {#src-Project-Engineering-55 toc="Design | Defining the decision value of detection information"}
 
-<p style="text-align:left;">我们比较检测成本与可能避免的损失，考察检测信息如何影响农户的管理措施选择及预期收益。</p>
+<p style="text-align:left;"> We compared testing costs with potentially avoided losses to examine how detection information affects growers' management choices and expected returns. </p>
 
-#### <strong>Build｜建立成本核算与管理情景</strong> {#src-Project-Engineering-57 toc="Build｜建立成本核算与管理情景"}
+#### <strong> Build | Establishing cost accounting and management scenarios </strong> {#src-Project-Engineering-57 toc="Build | Establishing cost accounting and management scenarios"}
 
-<p style="text-align:left;">我们建立通用成本核算框架，将线虫密度对应的产量损失换算为单位面积经济损失，比较各管理情景的成本与净收益。初步分析提示，阴性或阳性结果难以反映不同密度下的风险，因此设置低、中、高三个风险等级，分别对应不进行专项防治、中等强度处理和高强度处理，比较风险分级管理与统一处理。</p>
+<p style="text-align:left;"> We established a general cost-accounting framework that converts density-dependent yield losses into economic losses per unit area and compares costs and net returns across management scenarios. Preliminary analysis suggested that negative or positive results alone cannot reflect risk at different densities. We therefore defined low, medium, and high risk tiers, corresponding to no targeted control, moderate treatment, and intensive treatment, and compared tiered management with uniform treatment. </p>
 
-#### <strong>Test｜比较密度信息带来的额外收益</strong> {#src-Project-Engineering-59 toc="Test｜比较密度信息带来的额外收益"}
+#### <strong> Test | Comparing the additional returns from density information </strong> {#src-Project-Engineering-59 toc="Test | Comparing the additional returns from density information"}
 
-<p style="text-align:left;">以西班牙设施番茄为例，在示例假设下，按密度选择处理等级比统一采用中等强度处理带来额外的预期净收益。</p>
+<p style="text-align:left;"> Using Spanish protected tomato production as an example, density-based treatment tiers generated additional expected net returns over uniform moderate treatment under the example assumptions. </p>
 
-<p style="text-align:left;">与完全不防治比较时，收益改善包含防治本身的效果；与统一处理比较，更能考察检测信息是否帮助使用者作出更合适的管理选择。</p>
+<p style="text-align:left;"> Compared with no control, improved returns include the effects of control itself. Comparison with uniform treatment better examines whether detection information helps users make more appropriate management choices. </p>
 
-#### <strong>Learn｜将管理需求反馈到检测设计</strong> {#src-Project-Engineering-62 toc="Learn｜将管理需求反馈到检测设计"}
+#### <strong> Learn | Feeding management requirements back into detection design </strong> {#src-Project-Engineering-62 toc="Learn | Feeding management requirements back into detection design"}
 
-<p style="text-align:left;">据此，检测目标细化为提供支持风险分级的半定量或定量信息，覆盖管理方案改变的关键密度区间，并在阈值附近提示采样与测量的不确定性。</p>
+<p style="text-align:left;"> We refined the detection goal to provide semiquantitative or quantitative information supporting risk tiers, cover key density ranges where management changes, and indicate sampling and measurement uncertainty near thresholds. </p>
 
-<p style="text-align:left;">模型输出由单一投资回报率扩展至检测密度、预计产量损失、风险等级、情景中的处理方案、检测成本及净收益比较，为产品定量能力、采样方案和应用场景提供讨论依据。后续将结合湿实验的检测性能与采样误差，以及HP调研的当地价格、检测成本和支付意愿更新模型，检验这些设计要求在实际条件下是否成立。</p>
+<p style="text-align:left;"> Model outputs expanded from a single return-on-investment metric to detected density, estimated yield loss, risk tier, scenario-specific treatment, testing costs, and net-return comparisons, informing discussion of quantitative capability, sampling, and applications. Subsequent updates will combine wet-lab detection performance and sampling error with local prices, testing costs, and willingness to pay from HP research to test these requirements under real conditions. </p>
 
 <p style="text-align:left;"><br></p>
 
@@ -279,59 +279,59 @@ Cong Fan, Nike He, Jifeng Yuan, Cascaded amplifying circuit enables sensitive de
 
 <section class="author-manuscript" lang="zh">
 
-#### <strong>3.1 使用需求与检测目标的细化</strong> {#src-HP-Engineering-2 toc="3.1 使用需求与检测目标的细化"}
+#### <strong> 3.1 Refining user needs and detection objectives </strong> {#src-HP-Engineering-2 toc="3.1 Refining user needs and detection objectives"}
 
-<p style="text-align:left;"><strong>Design｜明确检测服务的农业决策</strong></p>
+<p style="text-align:left;"><strong> Design | Identifying the agricultural decisions detection should support </strong></p>
 
-<p style="text-align:left;">当传感器产生颜色变化时，种植者接下来可以做什么？这个问题推动我们将工程酵母的可观察响应与实际农业需求联系起来。我们通过问卷、专家咨询与田间走访，了解谁会使用检测工具、何时检测更有意义，以及结果需要支持怎样的管理判断。</p>
+<p style="text-align:left;"> When a sensor changes color, what can a grower do next? This question connected the observable response of engineered yeast with practical agricultural needs. Through questionnaires, expert consultation, and field visits, we explored who would use a detection tool, when testing would be most useful, and which management decisions results should support. </p>
 
-<p style="text-align:left;"><strong>Build｜收集使用需求与生产经验</strong></p>
+<p style="text-align:left;"><strong> Build | Gathering user needs and production experience </strong></p>
 
-<p style="text-align:left;">我们收集了 369 条问卷提交，与植保及相关领域专家交流，并走访天津乡语果蔬园和第六埠村蔬菜示范园。问卷帮助我们了解受访者对工具的期待，访谈与走访则将这些期待放回生产现场，进一步讨论检测时机、现有管理方式和日常操作负担。</p>
+<p style="text-align:left;"> We collected 369 questionnaire submissions, consulted experts in plant protection and related fields, and visited Tianjin Xiangyu Fruit and Vegetable Garden and the Diliubu Village Vegetable Demonstration Garden. Questionnaires identified tool expectations; interviews and visits placed those expectations in production settings to discuss testing time, existing management, and routine operational burdens. </p>
 
-<p style="text-align:left;"><strong>Test｜对照实际场景检查应用设想</strong></p>
+<p style="text-align:left;"><strong> Test | Examining application concepts against real scenarios </strong></p>
 
-<p style="text-align:left;">问卷中，操作简便、准确可靠和价格可负担是受访者关注的主要特征。专家建议将早期检测与种植前管理联系起来，使检测结果能够在安排生产时发挥作用。农户交流也提醒我们，线虫并非每块田地当前最突出的问题，检测需求需要结合当地作物、地块条件和管理经验判断。</p>
+<p style="text-align:left;"> Respondents prioritized ease of use, accuracy and reliability, and affordability. Experts recommended connecting early detection with preplanting management so results could inform production planning. Grower discussions also reminded us that nematodes are not currently the dominant problem in every field; demand must be assessed against local crops, field conditions, and management experience. </p>
 
-<p style="text-align:left;"><strong>Learn｜将需求转化为评价要求</strong></p>
+<p style="text-align:left;"><strong> Learn | Translating needs into evaluation requirements </strong></p>
 
-<p style="text-align:left;">这些反馈使我们对“早期预警”的理解更加具体：在能够影响管理选择的时间，提供使用者看得懂、用得上的信息。我们据此将操作流程和成本纳入评价，并与干实验的经济效益分析衔接，进一步考察风险分级需要怎样的信息精度，以及检测费用能否与可能获得的管理收益相匹配。</p>
+<p style="text-align:left;"> This feedback made early warning more concrete: provide understandable, usable information at a time when it can influence management choices. We incorporated workflow and cost into evaluation and linked these with dry-lab economic analysis to examine the precision needed for risk tiers and whether testing costs match potential management benefits. </p>
 
-#### <strong>3.2 土壤背景与信号组成的解释</strong> {#src-HP-Engineering-11 toc="3.2 土壤背景与信号组成的解释"}
+#### <strong> 3.2 Interpreting soil background and signal composition </strong> {#src-HP-Engineering-11 toc="3.2 Interpreting soil background and signal composition"}
 
-<p style="text-align:left;"><strong>Design｜识别真实样品中的干扰因素</strong></p>
+<p style="text-align:left;"><strong> Design | Identifying interference in real samples </strong></p>
 
-<p style="text-align:left;">样品进入检测体系时，也会带入土壤自身的颜色和复杂背景。庞志豪老师提醒我们，这些因素可能影响显色判读，ascr#3 与 ascr#18 的降解差异还可能改变测得的相对组成。结合刘倩老师关于基质干扰和分阶段验证的建议，我们进一步检查真实样品中的信号能否保留预期的信息。</p>
+<p style="text-align:left;"> Samples introduce soil color and complex backgrounds into the detection system. 庞志豪 noted that these factors could affect color interpretation and that differential degradation of ascr#3 and ascr#18 might alter measured relative composition. Together with 刘倩's advice on matrix interference and staged validation, this prompted us to examine whether signals from real samples retain the intended information. </p>
 
-<p style="text-align:left;"><strong>Build｜明确实验与模型需要检查的条件</strong></p>
+<p style="text-align:left;"><strong> Build | Defining conditions for experimental and model checks </strong></p>
 
-<p style="text-align:left;">我们将问题分为两个层次：首先，观察到的颜色变化有多少来自传感响应，又可能受到哪些样品背景影响；其次，测得的蛔苷素组成与采样、保存及分子稳定性之间有何关系。这些问题进入工程讨论，为真实样品的对照设置、检测条件选择和模型假设检验提供方向。</p>
+<p style="text-align:left;"> We separated two questions: how much observed color change comes from sensor response, and which sample backgrounds may affect it; and how measured ascaroside composition relates to sampling, storage, and molecular stability. These questions entered engineering discussions and guided real-sample controls, detection conditions, and tests of model assumptions. </p>
 
-<p style="text-align:left;"><strong>Test｜开展背景干扰与信号组成研究</strong></p>
+<p style="text-align:left;"><strong> Test | Studying background interference and signal composition </strong></p>
 
-<p style="text-align:left;">团队已围绕土壤背景干扰和信号组成开展相关工作，并保留相应记录。评价时，需要结合实际样品与对照检查基质对读数的影响，也需要关注信号组成变化是否会影响后续推断。两方面的证据共同决定显色结果应在什么条件下解释，以及哪些因素需要继续检验。</p>
+<p style="text-align:left;"> The team has undertaken work on soil-background interference and signal composition and retained corresponding records. Evaluation needs actual samples and controls to assess matrix effects on readouts and whether composition changes affect subsequent inference. Together, these lines of evidence determine the conditions under which color results should be interpreted and which factors need further testing. </p>
 
-<p style="text-align:left;"><strong>Learn｜按证据层级解释检测结果</strong></p>
+<p style="text-align:left;"><strong> Learn | Interpreting detection results according to evidence level </strong></p>
 
-<p style="text-align:left;">我们进一步区分目标信号检出、信号组成、线虫种类与密度推断，以及病害风险判断。每向农业决策靠近一步，都需要相应的实验或模型依据。后续将结合相关记录逐层检验这些关系，明确哪些解释获得支持，并据此调整适用条件、分析假设和下一轮验证安排。</p>
+<p style="text-align:left;"> We further distinguished target-signal detection, signal composition, inference of nematode species and density, and disease-risk assessment. Each step toward agricultural decisions requires corresponding experimental or model support. We will test these relationships against relevant records, identify supported interpretations, and refine applicability conditions, analytical assumptions, and the next validation round. </p>
 
-#### <strong>3.3 采样与完整使用流程的设计</strong> {#src-HP-Engineering-20 toc="3.3 采样与完整使用流程的设计"}
+#### <strong> 3.3 Designing sampling and the complete workflow </strong> {#src-HP-Engineering-20 toc="3.3 Designing sampling and the complete workflow"}
 
-<p style="text-align:left;"><strong>Design｜将田间条件纳入检测流程</strong></p>
+<p style="text-align:left;"><strong> Design | Incorporating field conditions into detection workflows </strong></p>
 
-<p style="text-align:left;">一份土样从田间到产生读数，会经历采集、保存、运输和处理等多个环节。专家交流提醒我们，样品代表性、提取损失及储运条件都可能影响结果，工程酵母的环境释放和检测后处置也需要提前考虑。我们因此将设计视野扩展到采样、样品准备、传感反应、结果判读和检测后处理的完整过程。</p>
+<p style="text-align:left;"> A soil sample passes through collection, storage, transport, and processing before producing a readout. Expert discussions highlighted effects of representativeness, extraction losses, and storage and transport, as well as the need to consider environmental release and post-test disposal of engineered yeast. We therefore expanded design to the entire process of sampling, preparation, sensor reaction, interpretation, and post-test handling. </p>
 
-<p style="text-align:left;"><strong>Build｜开展土样收集与采样指导</strong></p>
+<p style="text-align:left;"><strong> Build | Collecting soil samples and preparing sampling guidance </strong></p>
 
-<p style="text-align:left;">团队组织土样收集并制作采样指导短片，帮助参与者了解采样要求。我们通过样品编号关联作物、地点、采集日期和处理历史等背景信息，使后续研究能够追溯土样来自怎样的生产环境，也为比较不同样品之间的差异保留线索。</p>
+<p style="text-align:left;"> The team organized soil collection and produced a sampling-guidance video to explain requirements. Sample identifiers link crops, locations, collection dates, and treatment histories, making production contexts traceable and retaining clues for comparing samples. </p>
 
-<p style="text-align:left;"><strong>Test｜从现场实践检查流程要求</strong></p>
+<p style="text-align:left;"><strong> Test | Assessing workflow requirements through field practice </strong></p>
 
-<p style="text-align:left;">田间走访与专家交流提示，不同地块和温室的条件存在差异，采样、保存及分开处理需要结合具体场景安排。现场经验也使我们关注采样说明是否清楚、背景信息是否完整。后续需进一步检验采样与处理差异对结果的影响，以及使用者能否按照说明完成操作和样品交接。</p>
+<p style="text-align:left;"> Field visits and expert discussions indicated differences between fields and greenhouses, requiring context-specific sampling, storage, and separate processing. Practical experience also highlighted clarity of instructions and completeness of background information. Further work must test how sampling and processing differences affect results and whether users can follow instructions for operations and sample handover. </p>
 
-<p style="text-align:left;"><strong>Learn｜完善流程评价与安全要求</strong></p>
+<p style="text-align:left;"><strong> Learn | Improving workflow evaluation and safety requirements </strong></p>
 
-<p style="text-align:left;">我们将样品信息追溯、操作负担和检测后处置共同纳入后续评价，并从设备、耗材、步骤和储运要求等方面考察完整流程。下一阶段将结合实际检测体系，完善前处理与工程酵母安全处置要求，通过真实样品和操作记录判断流程的可用性，逐步明确需要改进的环节。</p>
+<p style="text-align:left;"> We included sample traceability, operational burden, and post-test disposal in subsequent evaluation and considered equipment, consumables, steps, storage, and transport across the workflow. The next stage will refine pretreatment and safe engineered-yeast disposal for the actual detection system, using real samples and operational records to assess usability and identify improvements. </p>
 
 <p style="text-align:left;"><br></p>
 
@@ -339,23 +339,23 @@ Cong Fan, Nike He, Jifeng Yuan, Cascaded amplifying circuit enables sensitive de
 
 <section class="author-manuscript" lang="zh">
 
-### <strong>DBTL-4｜商业化探索与应用路径</strong> {#src-HP-Engineering-30 toc="DBTL-4｜商业化探索与应用路径"}
+### <strong> DBTL-4 | Commercialization exploration and application pathways </strong> {#src-HP-Engineering-30 toc="DBTL-4 | Commercialization exploration and application pathways"}
 
-<p style="text-align:left;"><strong>Design｜明确应用对象与合作需求</strong></p>
+<p style="text-align:left;"><strong> Design | Identifying intended users and collaboration needs </strong></p>
 
-<p style="text-align:left;">从实验室研究走向潜在应用，需要进一步回答：谁会使用这项检测，谁能帮助评价，以及持续研发需要哪些支持？我们围绕种植者、农场管理者及农业服务机构的使用场景，梳理检测成本、操作便利性和结果解释等要求，并将资源支持、应用建议及后续研发条件作为企业交流的重点。</p>
+<p style="text-align:left;"> Moving from laboratory research toward potential application requires answering who will use the test, who can help evaluate it, and what support continued development requires. We outlined testing costs, ease of use, and result interpretation for growers, farm managers, and agricultural service providers, focusing enterprise discussions on resources, application advice, and subsequent research conditions. </p>
 
-<p style="text-align:left;"><strong>Build｜形成企业沟通与路演材料</strong></p>
+<p style="text-align:left;"><strong> Build | Preparing enterprise outreach and pitch materials </strong></p>
 
-<p style="text-align:left;">团队准备企业合作邀请书、项目书和项目介绍 PPT，将农业问题、传感设想、当前工作和所需支持集中呈现，让潜在合作方能够理解项目正在解决什么问题、已有怎样的基础，以及可以从哪些方面参与。我们通过邮件及校友企业渠道建立联系，并在取得初步联系后开展项目介绍和路演。</p>
+<p style="text-align:left;"> The team prepared collaboration invitations, project proposals, and presentation slides outlining the agricultural problem, sensor concept, current work, and required support. These materials explain the problem being addressed, existing foundations, and possible participation. We established contact through email and alumni enterprise networks and delivered project presentations and pitches after initial contact. </p>
 
-<p style="text-align:left;"><strong>Test｜开展交流并落实资源支持</strong></p>
+<p style="text-align:left;"><strong> Test | Holding discussions and securing resources </strong></p>
 
-<p style="text-align:left;">我们与多家企业代表讨论应用设想和合作可能，并获得包括 ExCell Bio 在内的赞助支持。这一阶段通过实际沟通探索合作机会、落实研究资源。交流记录分别保留企业提出的建议、表达的合作兴趣及已确认的支持，为后续联系提供依据，也帮助团队区分已经落实的合作与仍需继续讨论的方向。</p>
+<p style="text-align:left;"> We discussed applications and collaboration with representatives of several enterprises and received sponsorship from organizations including ExCell Bio. This stage explored opportunities and secured research resources through practical communication. Records distinguish enterprise advice, expressed interest, and confirmed support, informing follow-up and separating established collaboration from directions requiring further discussion. </p>
 
-<p style="text-align:left;"><strong>Learn｜明确下一阶段的合作路径</strong></p>
+<p style="text-align:left;"><strong> Learn | Defining the next collaboration pathway </strong></p>
 
-<p style="text-align:left;">企业交流为持续研究提供了资源，也促使我们进一步梳理应用验证所需的条件。后续拟围绕样品获取、原型评价和真实场景验证，对接农业企业、农场及技术服务机构。推进合作时，需要明确评价目标和各方责任，并结合检测性能、操作与储运要求、安全处置等问题，逐步形成更具体的应用与合作方案。</p>
+<p style="text-align:left;"> Enterprise discussions supported continued research and clarified conditions needed for application validation. We plan to connect with agricultural enterprises, farms, and technical service providers for sample access, prototype evaluation, and real-world validation. Collaboration will require defined evaluation goals and responsibilities and increasingly specific plans addressing detection performance, operation, storage, transport, and safe disposal. </p>
 
 </section>
 

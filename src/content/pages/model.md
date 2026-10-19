@@ -19,17 +19,17 @@ hidden: false
 
 <section class="author-manuscript" lang="zh">
 
-<p style="text-align:left;">如何将土壤中的线虫化学信号转化为有用的检测信息？我们的干实验围绕这一问题，连接受体改造、动态结构分析、信号与显色模拟，以及经济效益评价，逐步探索从蛔苷素识别到农业管理的路径。</p>
+<p style="text-align:left;"> How can nematode chemical signals in soil be converted into useful detection information? Our dry-lab work addresses this question by connecting receptor engineering, dynamic structural analysis, signal and color-development simulations, and economic evaluation, progressively exploring a path from ascaroside recognition to agricultural management. </p>
 
-<p style="text-align:left;"><strong>Docking｜寻找双配体差异响应的改造方向</strong><br>我们比较受体与 ascr#18、ascr#3 的对接评分和接触分布，通过丙氨酸替换、饱和扫描及组合测试筛选候选，选取分别向两种配体偏移的 Gpr2 N84V 和 V368R 开展后续研究。跨受体的序列与结构比较进一步提供可平行检验的残基位置。</p>
+<p style="text-align:left;"><strong> Docking | Identifying engineering directions for differential responses to two ligands </strong><br> We compared receptor docking scores and contact distributions for ascr#18 and ascr#3, screening candidates through alanine substitutions, saturation scanning, and combination tests. We selected Gpr2 N84V and V368R, which showed shifts toward different ligands, for further study. Cross-receptor sequence and structural comparisons provided additional residue positions for parallel testing. </p>
 
-<p style="text-align:left;"><strong>Molecular Dynamics｜观察候选姿态在膜环境中的变化</strong><br>以对接构象为起点，我们在膜环境中模拟受体—配体复合物，联合分析受体运动、配体定位与接触重排。这些动态观察帮助解释候选的结构行为，并将静态对接线索转化为更具体的实验问题。</p>
+<p style="text-align:left;"><strong> Molecular Dynamics | Observing candidate poses in a membrane environment </strong><br> Starting from docked conformations, we simulated receptor–ligand complexes in a membrane environment and jointly analyzed receptor motion, ligand positioning, and contact rearrangements. These dynamic observations help interpret candidate structural behavior and turn static docking clues into more specific experimental questions. </p>
 
-<p style="text-align:left;"><strong>ODE 与双通道模型｜从信号输入到目标密度估计</strong><br>我们用 ODE 连接有效受体输入、酵母信号通路与显色过程，再将模拟色素输出转换为手机颜色特征。双通道模型利用两路互补响应，探索在背景线虫数量未知时估计南方根结线虫密度的方法，为实测标定提供框架。</p>
+<p style="text-align:left;"><strong> ODE and Dual-Channel Models | From signal input to target density estimation </strong><br> We used ODEs to connect effective receptor input, yeast signaling, and color development, then converted simulated pigment outputs into smartphone color features. Using two complementary responses, the dual-channel model explores how to estimate southern root-knot nematode density when background nematode abundance is unknown, providing a framework for experimental calibration. </p>
 
-<p style="text-align:left;"><strong>Eco｜评价密度信息的应用价值</strong><br>以目标密度为接口，经济模型连接潜在产量损失、检测费用与处理成本，比较不处理、统一处理和检测后分级处理的净收益，考察检测信息何时能够改变管理选择并带来收益。</p>
+<p style="text-align:left;"><strong> Eco | Evaluating the practical value of density information </strong><br> Using target density as the interface, the economic model connects potential yield loss, testing costs, and treatment costs. It compares net returns from no treatment, uniform treatment, and testing followed by tiered treatment to examine when detection information can change management choices and generate benefits. </p>
 
-<p style="text-align:left;">四部分共同构成一条研究路径：<strong>受体改造提出识别假说，动态模拟补充结构解释，信号与双通道模型探索密度解读，经济模型评价信息价值。</strong> 其中，Docking 与 MD 为传感器设计提供依据；ODE、双通道模型与 Eco 则通过显色和密度接口衔接，并将管理分级对精度的需求反馈到后续检测标定。</p>
+<p style="text-align:left;"> Together, the four components form a research pathway: <strong> Receptor engineering proposes recognition hypotheses; dynamic simulations add structural interpretations; signaling and dual-channel models explore density inference; and the economic model evaluates the value of information. </strong> Docking and MD inform sensor design. ODEs, the dual-channel model, and Eco connect through color-development and density interfaces, while the precision needed for management tiers feeds back into subsequent detection calibration. </p>
 
 </section>
 

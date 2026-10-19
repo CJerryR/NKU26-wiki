@@ -22,30 +22,16 @@
     {
       "_template": "heading",
       "level": 2,
-      "text": "1. <strong>Docking｜从双配体接触差异到受体改造假说</strong>",
-      "attributes": "#src-Model-Docking-1 toc=\"1. Docking｜从双配体接触差异到受体改造假说\""
+      "text": "1. <strong> Docking | From differential ligand contacts to receptor-engineering hypotheses </strong>",
+      "attributes": "#src-Model-Docking-1 toc=\"1. Docking | From differential ligand contacts to receptor-engineering hypotheses\""
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\">为了构建能够区分 ascr#18 与 ascr#3 的传感系统，我们希望获得分别偏向两种配体的受体候选。分子对接帮助我们从预测结构中寻找改造线索：两种配体接触哪些残基，改变相关侧链后评分和接触如何变化，以及哪些候选值得进入进一步研究。</p>"
+      "body": "<p style=\"text-align:left;\"> To build a sensing system that distinguishes ascr#18 from ascr#3, we sought receptor candidates biased toward each ligand. Molecular docking helped us identify engineering clues in predicted structures: which residues contact each ligand, how scores and contacts change after side-chain substitutions, and which candidates warrant further study. </p>"
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\">围绕这些问题，我们逐步建立比较条件，由野生型（WT）的接触差异提出位点，再通过丙氨酸替换、侧链扫描和组合测试调整设计。评分用于比较候选的双配体表现，接触分析则帮助提出结构解释。每一轮结果都成为下一轮设计的依据。</p>"
-    },
-    {
-      "_template": "text",
-      "body": "<p style=\"text-align:left;\"><br></p>"
-    },
-    {
-      "_template": "heading",
-      "level": 3,
-      "text": "<strong>1.1 建立结构与对接条件，使双配体比较有共同基础</strong>",
-      "attributes": "#src-Model-Docking-5 toc=\"1.1 建立结构与对接条件，使双配体比较有共同基础\""
-    },
-    {
-      "_template": "text",
-      "body": "<div class=\"author-table-scroll\"><table class=\"author-table\"><colgroup><col style=\"width:65.2494%\"><col style=\"width:34.7506%\"></colgroup><tbody><tr><td colspan=\"1\"><p style=\"text-align:left;\">我们首先将参与蛔苷素感知的真菌 GPCR——Gpr2、Gpr3 [1] 和 GprC [2]——纳入研究，准备预测结构与配体，并结合相关文献中的口袋位置、关键残基和对接方法开展探索。受体选择同时考虑其在酵母中的应用条件。由于文献报道的 GprC 质膜及线粒体相关定位 [2] 可能增加异源定位与通路整合的复杂度，后续改造以 Gpr2 为重点，保留 Gpr3 及其突变体研究，并将 GprC 用作结构比较参照。</p><p style=\"text-align:left;\">初步对接的检查促使我们修正了两类输入问题。结构与搜索框的坐标参照不一致，会使实际搜索区域偏离预期位置；格式转换中丢失形式电荷等化学信息，则会影响后续带电接触的识别。这些发现使输入核对成为分析流程的一部分。</p><p style=\"text-align:left;\">我们通过结构叠合统一受体、配体和搜索框的坐标参照，并结合膜方向与实际保留区段复核搜索区域。配体文件则通过原子映射检查，核对原始 SDF 与对接 PDBQT 的原子、坐标及结构对应关系。在 PDBQT 完整保留 Meeko 结构元数据的条件下，我们恢复包含对接姿态和形式电荷等信息的 SDF，用于接触分析。[4]</p><p style=\"text-align:left;\">后续突变比较采用一致的配体输入与搜索设置，保留原始残基编号，使评分与残基接触能够对应追踪。文献信息用于确定研究背景和结构参照，输入检查用于核对计算条件，双配体对接结果则用于提出并筛选改造假说。</p></td><td colspan=\"1\"><p style=\"text-align:center;\"><a href=\"https://static.igem.wiki/teams/6303/wiki/v8-6/v86-08befb7e1df2-docking-source-01.avif\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/v8-6/v86-08befb7e1df2-docking-source-01.avif\" alt=\"\" loading=\"lazy\" width=\"175\" height=\"279\"></a></p><div class=\"author-table-scroll\"><table class=\"author-table\"><colgroup><col style=\"width:100.0000%\"></colgroup><tbody><tr><td colspan=\"1\"><p style=\"text-align:left;\"><strong>图1｜Gpr2 WT 全长预测结构。 </strong>展示 AlphaFold 3 预测模型 model_0 的整体结构。[3]</p></td></tr></tbody></table></div><p style=\"\"><br></p></td></tr></tbody></table></div>"
+      "body": "<p style=\"text-align:left;\"> We progressively established comparison conditions, proposed sites from wild-type (WT) contact differences, and refined designs through alanine substitutions, side-chain scanning, and combination tests. Scores compared candidate behavior across the two ligands, while contact analysis supported structural interpretations. Each round informed the next design. </p>"
     },
     {
       "_template": "text",
@@ -54,12 +40,26 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "<strong>1.2 结合接触频率与具体姿态，提出初始改造位置</strong>",
-      "attributes": "#src-Model-Docking-14 toc=\"1.2 结合接触频率与具体姿态，提出初始改造位置\""
+      "text": "<strong> 1.1 Establishing a common structural and docking basis for dual-ligand comparisons </strong>",
+      "attributes": "#src-Model-Docking-5 toc=\"1.1 Establishing a common structural and docking basis for dual-ligand comparisons\""
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\">初始选点结合了两个观察尺度。首先，我们统计不同受体预测模型及其对接姿态中的残基接触频率，关注反复参与配体接触的位置，并比较其在两种配体中的出现情况。其次，我们在 model_0 中检查双配体的具体接触差异，关注在所分析姿态中仅对某一种配体检出的接触及其相互作用类型。</p>"
+      "body": "<div class=\"author-table-scroll\"><table class=\"author-table\"><colgroup><col style=\"width:65.2494%\"><col style=\"width:34.7506%\"></colgroup><tbody><tr><td colspan=\"1\"><p style=\"text-align:left;\"> We initially included the fungal GPCRs Gpr2, Gpr3 [1], and GprC [2], which participate in ascaroside sensing. We prepared predicted structures and ligands and explored pocket locations, key residues, and docking methods reported in the literature. Receptor selection also considered their use in yeast. Because the reported plasma-membrane and mitochondria-associated localization of GprC [2] could complicate heterologous localization and pathway integration, subsequent engineering focused on Gpr2, retained studies of Gpr3 and its mutants, and used GprC as a structural reference. </p><p style=\"text-align:left;\"> Inspection of preliminary docking revealed two types of input problems. Inconsistent coordinate references for structures and search boxes displaced the actual search region from its intended location. Loss of chemical information, such as formal charges, during format conversion affected the identification of charged contacts. These findings made input verification part of our analytical workflow. </p><p style=\"text-align:left;\"> We unified coordinate references for receptors, ligands, and search boxes through structural alignment, then checked search regions against membrane orientation and the segments actually retained. Atom mapping verified correspondence between the original SDF and docking PDBQT files in atoms, coordinates, and structure. Where PDBQT files fully retained Meeko structural metadata, we recovered SDF files containing docked poses and formal charges for contact analysis. [4] </p><p style=\"text-align:left;\"> Subsequent mutant comparisons used consistent ligand inputs and search settings and retained original residue numbering so that scores and residue contacts could be traced together. Literature informed the research context and structural references; input checks verified computational conditions; and dual-ligand docking results supported the proposal and screening of engineering hypotheses. </p></td><td colspan=\"1\"><p style=\"text-align:center;\"><a href=\"https://static.igem.wiki/teams/6303/wiki/v8-6/v86-08befb7e1df2-docking-source-01.avif\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/v8-6/v86-08befb7e1df2-docking-source-01.avif\" alt=\"\" loading=\"lazy\" width=\"175\" height=\"279\"></a></p><div class=\"author-table-scroll\"><table class=\"author-table\"><colgroup><col style=\"width:100.0000%\"></colgroup><tbody><tr><td colspan=\"1\"><p style=\"text-align:left;\"><strong> Figure 1 | Predicted full-length structure of Gpr2 WT. </strong> Overall structure of the AlphaFold 3 prediction model_0. [3] </p></td></tr></tbody></table></div><p style=\"\"><br></p></td></tr></tbody></table></div>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"><br></p>"
+    },
+    {
+      "_template": "heading",
+      "level": 3,
+      "text": "<strong> 1.2 Combining contact frequencies and individual poses to propose initial engineering sites </strong>",
+      "attributes": "#src-Model-Docking-14 toc=\"1.2 Combining contact frequencies and individual poses to propose initial engineering sites\""
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> Initial site selection combined two observational scales. First, we counted residue contact frequencies across receptor prediction models and their docked poses, focusing on recurrent ligand-contacting positions and comparing their occurrence for the two ligands. Second, we examined specific contact differences in model_0, focusing on contacts detected for only one ligand in the analyzed poses and their interaction types. </p>"
     },
     {
       "_template": "text",
@@ -71,41 +71,19 @@
     },
     {
       "_template": "text",
-      "body": "<div class=\"author-table-scroll\"><table class=\"author-table\"><colgroup><col style=\"width:100.0000%\"></colgroup><tbody><tr><td colspan=\"1\"><p style=\"text-align:left;\"><strong>图2｜Gpr2 WT 与两种配体的预测对接姿态。</strong> （a）ascr#3；（b）ascr#18。展示各自的最低评分姿态及周围口袋残基。</p></td></tr></tbody></table></div>"
+      "body": "<div class=\"author-table-scroll\"><table class=\"author-table\"><colgroup><col style=\"width:100.0000%\"></colgroup><tbody><tr><td colspan=\"1\"><p style=\"text-align:left;\"><strong> Figure 2 | Predicted docking poses of Gpr2 WT with the two ligands. </strong> (a) ascr#3; (b) ascr#18. The lowest-scoring pose for each ligand and surrounding pocket residues are shown. </p></td></tr></tbody></table></div>"
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\">这两类信息具有互补作用。跨模型和姿态的统计描述接触在所分析构象集合中的出现情况；具体姿态的对照则帮助定位差异，并提出可以通过侧链替换检验的问题。</p>"
+      "body": "<p style=\"text-align:left;\"> These two types of information are complementary. Statistics across models and poses describe contact occurrence in the analyzed conformational ensemble; individual pose comparisons locate differences and suggest questions that side-chain substitutions can test. </p>"
     },
     {
       "_template": "text",
-      "body": "<div class=\"author-table-scroll\"><table class=\"author-table\"><colgroup><col style=\"width:71.4700%\"><col style=\"width:28.5300%\"></colgroup><tbody><tr><td colspan=\"1\"><p style=\"text-align:left;\">据此，我们围绕候选位置开展丙氨酸替换，考察简化侧链后，两种配体的评分和接触如何变化。初轮单点包括 N84、L90、V110、R181、R345、W338 和 V368。我们生成对应突变序列，使用 AlphaFold 3 [3] 预测结构，再完成结构准备、对接及与 WT 的接触比较。</p><div class=\"author-table-scroll\"><table class=\"author-table\"><colgroup><col style=\"width:100.0000%\"></colgroup><tbody><tr><td colspan=\"1\"><p style=\"text-align:left;\"><strong>图3｜Gpr2 初始改造候选位点的空间分布。</strong> 在全长预测结构上标示 N84、L90、V110、R181、W338、R345 和 V368。</p></td></tr></tbody></table></div><p style=\"\"><br></p></td><td colspan=\"1\"><p style=\"text-align:center;\"><a href=\"https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-b40381b8776ddda7-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-b40381b8776ddda7-00.json\" alt=\"\" loading=\"lazy\" width=\"141\" height=\"106\"></a></p></td></tr></tbody></table></div>"
+      "body": "<div class=\"author-table-scroll\"><table class=\"author-table\"><colgroup><col style=\"width:71.4700%\"><col style=\"width:28.5300%\"></colgroup><tbody><tr><td colspan=\"1\"><p style=\"text-align:left;\"> We therefore introduced alanine substitutions at candidate positions to examine how simplifying side chains affected scores and contacts for both ligands. The first round covered N84, L90, V110, R181, R345, W338, and V368. We generated mutant sequences, predicted structures with AlphaFold 3 [3], and performed structural preparation, docking, and contact comparisons with WT. </p><div class=\"author-table-scroll\"><table class=\"author-table\"><colgroup><col style=\"width:100.0000%\"></colgroup><tbody><tr><td colspan=\"1\"><p style=\"text-align:left;\"><strong> Figure 3 | Spatial distribution of initial Gpr2 engineering sites. </strong> N84, L90, V110, R181, W338, R345, and V368 are marked on the predicted full-length structure. </p></td></tr></tbody></table></div><p style=\"\"><br></p></td><td colspan=\"1\"><p style=\"text-align:center;\"><a href=\"https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-b40381b8776ddda7-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-b40381b8776ddda7-00.json\" alt=\"\" loading=\"lazy\" width=\"141\" height=\"106\"></a></p></td></tr></tbody></table></div>"
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\">初轮结果显示，N84A、V110A 和 V368A 在当时的结构与 WT 参照下均表现出 ascr#3 评分降低、ascr#18 评分升高。这使 N84、V110 和 V368 成为继续比较侧链替换的核心位置；W338 和 R181 的评分及接触变化则保留了进一步探索的价值。对接由此将初始接触线索转化为下一轮可检验的替换方案。</p>"
-    },
-    {
-      "_template": "text",
-      "body": "<p style=\"text-align:left;\"><br></p>"
-    },
-    {
-      "_template": "heading",
-      "level": 3,
-      "text": "<strong>1.3 由少数替换扩展到饱和扫描</strong>",
-      "attributes": "#src-Model-Docking-29 toc=\"1.3 由少数替换扩展到饱和扫描\""
-    },
-    {
-      "_template": "text",
-      "body": "<p style=\"text-align:left;\">丙氨酸扫描帮助我们缩小了研究范围，同时提出了新的问题：在同一位置上，不同侧链是否会产生不同方向的双配体变化？</p>"
-    },
-    {
-      "_template": "text",
-      "body": "<p style=\"text-align:left;\">综合前期丙氨酸扫描的评分、接触分析及补充侧链替换结果，我们选定 N84、V110、V368 和 W338 开展饱和扫描。四个位点各包含十九种替换，共形成七十六种单突变设计，用于系统比较不同侧链对双配体评分与接触分布的影响。</p>"
-    },
-    {
-      "_template": "text",
-      "body": "<p style=\"text-align:left;\">饱和扫描显示，同一位置上的不同替换可以形成不同的评分偏移。例如，N84V 的 ascr#18 评分降低、ascr#3 评分升高，而 N84Y 呈相反方向。接触差异提出了值得探索的位置，具体候选还需要通过侧链替换后的双配体结果确定。</p>"
+      "body": "<p style=\"text-align:left;\"> In the first round, N84A, V110A, and V368A all showed lower ascr#3 scores and higher ascr#18 scores under the structures and WT references used at that stage. N84, V110, and V368 therefore became core sites for further side-chain comparisons; score and contact changes at W338 and R181 also warranted exploration. Docking thus converted initial contact clues into testable substitutions for the next round. </p>"
     },
     {
       "_template": "text",
@@ -114,12 +92,34 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "<strong>1.4 拆开两项评分，比较候选的偏移来源</strong>",
-      "attributes": "#src-Model-Docking-34 toc=\"1.4 拆开两项评分，比较候选的偏移来源\""
+      "text": "<strong> 1.3 Expanding from selected substitutions to saturation scanning </strong>",
+      "attributes": "#src-Model-Docking-29 toc=\"1.3 Expanding from selected substitutions to saturation scanning\""
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\">我们以两种配体相对 WT 的评分变化之差描述候选的偏移方向。令 (G) 表示 AutoDock Vina 对接评分 [5]，分别定义：</p>"
+      "body": "<p style=\"text-align:left;\"> Alanine scanning narrowed our scope while raising a new question: could different side chains at the same position shift dual-ligand behavior in different directions? </p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> Combining earlier alanine-scan scores, contact analyses, and additional side-chain substitutions, we selected N84, V110, V368, and W338 for saturation scanning. Nineteen substitutions at each of four sites produced seventy-six single-mutant designs to systematically compare side-chain effects on dual-ligand scores and contact distributions. </p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> Saturation scanning showed that substitutions at the same position could produce different score shifts. For example, N84V lowered the ascr#18 score and raised the ascr#3 score, whereas N84Y showed the opposite direction. Contact differences identified positions worth exploring, but specific candidates required dual-ligand evaluation after side-chain substitution. </p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"><br></p>"
+    },
+    {
+      "_template": "heading",
+      "level": 3,
+      "text": "<strong> 1.4 Examining both scores separately to identify the source of candidate shifts </strong>",
+      "attributes": "#src-Model-Docking-34 toc=\"1.4 Examining both scores separately to identify the source of candidate shifts\""
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> We described the direction of a candidate shift using the difference between the two ligands' score changes relative to WT. Let (G) denote the AutoDock Vina docking score [5], and define: </p>"
     },
     {
       "_template": "text",
@@ -127,7 +127,7 @@
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\">并计算：</p>"
+      "body": "<p style=\"text-align:left;\"> Then calculate: </p>"
     },
     {
       "_template": "text",
@@ -135,65 +135,35 @@
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\">负的 <math xmlns=\"http://www.w3.org/1998/Math/MathML\" aria-label=\"ΔG\"><mrow><mi>Δ</mi><mi>G</mi></mrow></math> 表示该配体评分低于 WT。按此定义，正的 <math xmlns=\"http://www.w3.org/1998/Math/MathML\" aria-label=\"ΔΔG\"><mrow><mi>ΔΔ</mi><mi>G</mi></mrow></math> 表示相对 WT 向 ascr#3 偏移，负值表示向 ascr#18 偏移。该指标描述对接评分差异，用于候选比较；实际结合能力与选择性需要实验评估。</p>"
+      "body": "<p style=\"text-align:left;\"> A negative <math xmlns=\"http://www.w3.org/1998/Math/MathML\" aria-label=\"ΔG\"><mrow><mi>Δ</mi><mi>G</mi></mrow></math> indicates a lower score than WT for that ligand. Under this definition, a positive <math xmlns=\"http://www.w3.org/1998/Math/MathML\" aria-label=\"ΔΔG\"><mrow><mi>ΔΔ</mi><mi>G</mi></mrow></math> indicates a shift toward ascr#3 relative to WT, whereas a negative value indicates a shift toward ascr#18. This metric describes docking-score differences for candidate comparison; actual binding and selectivity require experimental evaluation. </p>"
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\">偏移方向确定后，我们继续检查两项评分各自的变化。目标配体评分降低、另一配体评分升高，以及两者同时发生，都可能产生相同方向的 <math xmlns=\"http://www.w3.org/1998/Math/MathML\" aria-label=\"ΔΔG\"><mrow><mi>ΔΔ</mi><mi>G</mi></mrow></math>，但对应不同的候选特征。</p>"
+      "body": "<p style=\"text-align:left;\"> After identifying the shift direction, we examined each score separately. A lower target-ligand score, a higher score for the other ligand, or both can produce the same direction of <math xmlns=\"http://www.w3.org/1998/Math/MathML\" aria-label=\"ΔΔG\"><mrow><mi>ΔΔ</mi><mi>G</mi></mrow></math>, but represent different candidate characteristics. </p>"
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\">饱和扫描后的首批重点接触复核包括 N84V、V110C、V110M 和 V368R。四者采用同一批 WT 作为参照，其 ascr#18、ascr#3 评分分别为 −6.492、−6.625 kcal/mol。</p>"
-    },
-    {
-      "_template": "text",
-      "body": "<p style=\"text-align:left;\"><br></p>"
-    },
-    {
-      "_template": "text",
-      "body": "<p style=\"text-align:center;\"><strong>点击图片可查看完整电子表格</strong></p>"
-    },
-    {
-      "_template": "text",
-      "body": "<p style=\"text-align:left;\">表中评分及差值单位均为 kcal/mol，负差值表示评分降低。</p>"
-    },
-    {
-      "_template": "text",
-      "body": "<p style=\"text-align:left;\">N84V 和 V110C 都向 ascr#18 偏移，但变化来源不同。V110C 的两项评分共同降低，其中 ascr#18 降低更多；N84V 则同时表现出 ascr#18 评分降低和 ascr#3 评分升高。因此，V110C 对 ascr#18 的评分改善更大，而 N84V 的双配体评分分化更大。</p>"
-    },
-    {
-      "_template": "text",
-      "body": "<p style=\"text-align:left;\">V110M 与 V368R 都向 ascr#3 偏移。V110M 的 ascr#3 评分接近 WT，其偏移主要来自 ascr#18 评分升高；V368R 则同时表现出 ascr#3 评分降低和 ascr#18 评分升高。将两项变化分别展开，使我们能够根据双配体分化的研究目标选择候选，并据此设计组合。</p>"
+      "body": "<p style=\"text-align:left;\"> The first priority candidates for contact review after saturation scanning were N84V, V110C, V110M, and V368R. All four used the same WT batch as reference, with scores of −6.492 and −6.625 kcal/mol for ascr#18 and ascr#3, respectively. </p>"
     },
     {
       "_template": "text",
       "body": "<p style=\"text-align:left;\"><br></p>"
     },
     {
-      "_template": "heading",
-      "level": 3,
-      "text": "<strong>1.5 通过组合测试，检验单点变化能否共同保留</strong>",
-      "attributes": "#src-Model-Docking-48 toc=\"1.5 通过组合测试，检验单点变化能否共同保留\""
+      "_template": "text",
+      "body": "<p style=\"text-align:center;\"><strong> Click the image to view the complete spreadsheet </strong></p>"
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\">单点结果进一步引出了组合设计：同方向的替换能否扩大评分差异？分别降低一种配体评分、提高另一种配体评分的替换，能否在同一受体中保留各自表现？</p>"
+      "body": "<p style=\"text-align:left;\"> All scores and differences in the table are in kcal/mol; negative differences indicate lower scores. </p>"
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\">我们根据候选的偏移方向和评分变化方式构建组合，并同时与 WT 和各单点亲本比较。与 WT 的对照回答原有方向是否保留；与亲本的对照则检验组合是否带来额外收益。</p>"
+      "body": "<p style=\"text-align:left;\"> N84V and V110C both shifted toward ascr#18, but for different reasons. V110C lowered both scores, with a larger decrease for ascr#18; N84V lowered the ascr#18 score while raising the ascr#3 score. Thus, V110C produced a larger ascr#18 score improvement, whereas N84V produced greater differentiation between the two ligand scores. </p>"
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\">N84V 与 V110C 的组合提供了一个具体例子。两种单点都向 ascr#18 偏移，因此我们希望组合能够兼顾 N84V 的双配体分化与 V110C 的 ascr#18 评分改善。实际结果中，组合的 (\\Delta G_{18}) 为 −0.081、(\\Delta G_{3}) 为 −0.411 kcal/mol，(\\Delta\\Delta G) 转为 +0.330 kcal/mol：ascr#3 的评分降低更多，原有的 ascr#18 方向未能保留。</p>"
-    },
-    {
-      "_template": "text",
-      "body": "<p style=\"text-align:left;\">接触复核进一步显示，该组合的 ascr#18 姿态仍保留 R189 离子类型接触和 W338 疏水接触，但其评分较 V110C 单点升高了 0.480 kcal/mol。这提示，部分关键接触的保留需要结合完整姿态与其他接触变化解释，单点评分变化也需要通过组合计算重新检验。</p>"
-    },
-    {
-      "_template": "text",
-      "body": "<p style=\"text-align:left;\">多数受测组合未进一步改善较优亲本的目标配体评分或扩大双配体差异。这一结果使后续研究继续聚焦单点候选，并将组合评价明确为对 WT、各单点亲本和完整接触网络的联合比较。</p>"
+      "body": "<p style=\"text-align:left;\"> V110M and V368R both shifted toward ascr#3. The ascr#3 score of V110M remained close to WT, so its shift mainly reflected a higher ascr#18 score. V368R both lowered the ascr#3 score and raised the ascr#18 score. Separating these changes allowed us to select candidates according to our goal of dual-ligand differentiation and design combinations accordingly. </p>"
     },
     {
       "_template": "text",
@@ -202,16 +172,46 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "<strong>1.6 从四个重点候选收敛到两个动态研究对象</strong>",
-      "attributes": "#src-Model-Docking-55 toc=\"1.6 从四个重点候选收敛到两个动态研究对象\""
+      "text": "<strong> 1.5 Testing whether single-site effects persist in combinations </strong>",
+      "attributes": "#src-Model-Docking-48 toc=\"1.5 Testing whether single-site effects persist in combinations\""
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\">结合评分分化与接触复核，我们从四个重点候选中选择 N84V 和 V368R 进入后续 MD 研究。两者分别呈现方向相反的双向评分变化，为进一步比较 ascr#18 与 ascr#3 的结构行为提供了两组代表候选。</p>"
+      "body": "<p style=\"text-align:left;\"> Single-site results prompted combination designs: could substitutions with the same shift direction enlarge score differences? Could substitutions that lower one ligand's score and raise the other's retain their respective effects in the same receptor? </p>"
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\">N84V 的接触分析尤其说明了检查周围残基网络的必要性。在所选对接姿态中，84 位自身未检出直接配体接触；相对同批 WT，ascr#18 新增了 R189 相关离子及氢键类型接触，以及 W338 疏水接触。这些变化使我们将解释重点放在配体位置和周围接触的共同变化上，并进一步提出：这些接触能否在动态环境中维持，是否与配体定位有关？</p>"
+      "body": "<p style=\"text-align:left;\"> We constructed combinations based on candidate shift directions and patterns of score change, comparing them with both WT and each single-mutant parent. WT comparisons tested whether the original direction persisted; parent comparisons tested whether combining mutations offered additional benefits. </p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> The N84V–V110C combination illustrates this approach. Both single mutants shifted toward ascr#18, so we hoped to combine N84V's dual-ligand differentiation with V110C's ascr#18 score improvement. In fact, the combination had (\\Delta G_{18}) = −0.081 and (\\Delta G_{3}) = −0.411 kcal/mol, with (\\Delta\\Delta G) shifting to +0.330 kcal/mol: the ascr#3 score decreased more, and the original ascr#18 direction was not retained. </p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> Contact review showed that the combination's ascr#18 pose retained an R189-associated ionic-type contact and a W338 hydrophobic contact, yet its score was 0.480 kcal/mol higher than that of V110C alone. Retention of some key contacts therefore needs interpretation alongside the complete pose and other contact changes; single-site score effects also require reassessment in combination calculations. </p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> Most tested combinations did not further improve the better parent's target-ligand score or enlarge the dual-ligand difference. Subsequent work therefore continued to focus on single mutants, with combination evaluation explicitly comparing WT, each single-mutant parent, and the complete contact network. </p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"><br></p>"
+    },
+    {
+      "_template": "heading",
+      "level": 3,
+      "text": "<strong> 1.6 Narrowing four priority candidates to two subjects for dynamic analysis </strong>",
+      "attributes": "#src-Model-Docking-55 toc=\"1.6 Narrowing four priority candidates to two subjects for dynamic analysis\""
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> Combining score differentiation and contact review, we selected N84V and V368R from the four priority candidates for subsequent MD studies. Their opposite bidirectional score changes provided two representative candidates for comparing the structural behavior of ascr#18 and ascr#3. </p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> N84V contact analysis particularly highlighted the need to inspect the surrounding residue network. In the selected docking poses, position 84 itself had no detected direct ligand contact; relative to the same WT batch, ascr#18 gained R189-associated ionic- and hydrogen-bond-type contacts and a W338 hydrophobic contact. These changes directed our interpretation toward concurrent changes in ligand position and surrounding contacts, raising further questions: can these contacts persist dynamically, and are they associated with ligand positioning? </p>"
     },
     {
       "_template": "text",
@@ -223,11 +223,11 @@
     },
     {
       "_template": "text",
-      "body": "<div class=\"author-table-scroll\"><table class=\"author-table\"><colgroup><col style=\"width:100.0000%\"></colgroup><tbody><tr><td colspan=\"1\"><p style=\"text-align:left;\"><strong>图4｜Gpr2 N84V 与两种配体的预测对接姿态。 </strong>（a）ascr#3；（b）ascr#18。展示各自的最低评分姿态及周围口袋残基。</p></td></tr></tbody></table></div>"
+      "body": "<div class=\"author-table-scroll\"><table class=\"author-table\"><colgroup><col style=\"width:100.0000%\"></colgroup><tbody><tr><td colspan=\"1\"><p style=\"text-align:left;\"><strong> Figure 4 | Predicted docking poses of Gpr2 N84V with the two ligands. </strong> (a) ascr#3; (b) ascr#18. The lowest-scoring pose for each ligand and surrounding pocket residues are shown. </p></td></tr></tbody></table></div>"
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\">V368R 则提供了另一种值得检验的情况。虽然替换引入了精氨酸，其所选姿态中，R368 仅对 ascr#18 检出近距离接触，未检出 R368 自身的离子类型接触；两种配体都出现了新增的 K364 相关离子及氢键类型接触。因此，对 V368R 的解释同样需要考察突变位置周围的结构和接触网络，以及这些变化与双配体评分之间的关系。</p>"
+      "body": "<p style=\"text-align:left;\"> V368R offered another case worth testing. Although the substitution introduced arginine, R368 showed a close contact only with ascr#18 in the selected poses, with no ionic-type contact involving R368 itself. Both ligands gained K364-associated ionic- and hydrogen-bond-type contacts. Interpreting V368R therefore also requires examining the structure and contact network around the mutation and their relationship to dual-ligand scores. </p>"
     },
     {
       "_template": "text",
@@ -239,11 +239,11 @@
     },
     {
       "_template": "text",
-      "body": "<div class=\"author-table-scroll\"><table class=\"author-table\"><colgroup><col style=\"width:100.0000%\"></colgroup><tbody><tr><td colspan=\"1\"><p style=\"text-align:left;\"><strong>图5｜Gpr2 V368R 与两种配体的预测对接姿态。</strong>（a）ascr#3；（b）ascr#18。展示各自的最低评分姿态及周围口袋残基。</p></td></tr></tbody></table></div>"
+      "body": "<div class=\"author-table-scroll\"><table class=\"author-table\"><colgroup><col style=\"width:100.0000%\"></colgroup><tbody><tr><td colspan=\"1\"><p style=\"text-align:left;\"><strong> Figure 5 | Predicted docking poses of Gpr2 V368R with the two ligands. </strong> (a) ascr#3; (b) ascr#18. The lowest-scoring pose for each ligand and surrounding pocket residues are shown. </p></td></tr></tbody></table></div>"
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\">对接由此把候选筛选推进为动态问题：在全长受体的膜环境中，配体是否保持初始位置，哪些接触持续存在，哪些发生重排？我们将 WT、N84V 和 V368R 分别与两种配体配对，形成六组体系开展 MD 比较。后续动态分析将检验这些结构线索，并帮助修正对候选作用方式的理解。</p>"
+      "body": "<p style=\"text-align:left;\"> Docking thus advanced candidate screening into dynamic questions: in a full-length receptor within a membrane environment, does the ligand retain its initial position, which contacts persist, and which rearrange? Pairing WT, N84V, and V368R with each ligand produced six systems for MD comparison. Subsequent dynamic analysis will test these structural clues and help refine our understanding of candidate behavior. </p>"
     },
     {
       "_template": "text",
@@ -252,20 +252,20 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "<strong>1.7 扩展分析：跨受体寻找可平行检验的接触位置</strong>",
-      "attributes": "#src-Model-Docking-73 toc=\"1.7 扩展分析：跨受体寻找可平行检验的接触位置\""
+      "text": "<strong> 1.7 Extended analysis: identifying contact positions for parallel testing across receptors </strong>",
+      "attributes": "#src-Model-Docking-73 toc=\"1.7 Extended analysis: identifying contact positions for parallel testing across receptors\""
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\">在 Gpr2 候选研究之外，我们将 Gpr3、GprC，以及秀丽隐杆线虫的 DAF-37、SRBC-64 纳入比较，探索功能相关受体中是否存在值得平行研究的接触位置。Hu 等人的研究通过不同受体的对接模型比较蛔苷素口袋，为这一分析提供了参考。[2]</p>"
+      "body": "<p style=\"text-align:left;\"> Beyond Gpr2 candidates, we compared Gpr3, GprC, and the Caenorhabditis elegans receptors DAF-37 and SRBC-64 to explore contact positions worth studying in parallel across functionally related receptors. Hu et al.'s comparison of ascaroside pockets using docking models of different receptors informed this analysis. [2] </p>"
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\">每种受体采用五个预测模型，在同一模型内配对比较 ascr#18 与 ascr#3 的接触频率，再通过序列比对与结构映射检查残基位置的对应关系。同时记录相关残基在实际构建体中的保留情况，使接触分析、位置对应与所用结构保持一致。</p>"
+      "body": "<p style=\"text-align:left;\"> For each receptor, five predicted models were used to compare ascr#18 and ascr#3 contact frequencies within each model. Sequence alignment and structural mapping then checked positional correspondence. We also recorded whether relevant residues were retained in the actual constructs, keeping contact analysis, positional correspondence, and the structures used consistent. </p>"
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\">三种真菌受体的 TM6 色氨酸——Gpr2 W338、Gpr3 W306 和 GprC W388——同时具有偏向 ascr#18 的接触差异，以及序列和结构位置对应的支持。这些结果使它们成为值得开展跨受体平行替换比较的位置，后续可通过对应位置的替换检验其作用是否具有相似性。</p>"
+      "body": "<p style=\"text-align:left;\"> TM6 tryptophans in the three fungal receptors—Gpr2 W338, Gpr3 W306, and GprC W388—showed contact differences biased toward ascr#18, supported by sequence and structural positional correspondence. These results identify sites for parallel cross-receptor substitution comparisons; substitutions at corresponding positions can subsequently test whether their roles are similar. </p>"
     },
     {
       "_template": "text",
@@ -273,11 +273,11 @@
     },
     {
       "_template": "text",
-      "body": "<div class=\"author-table-scroll\"><table class=\"author-table\"><colgroup><col style=\"width:100.0000%\"></colgroup><tbody><tr><td colspan=\"1\"><p style=\"text-align:left;\"><strong>图6｜GprC、SRBC-64 和 DAF-37 的蛔苷素预测结合口袋。 </strong>各受体展示五种蛔苷素的对接结果，每种配体包含五个姿态。裁切自 Hu et al.（2024）Fig. 5a–c。[2]</p></td></tr></tbody></table></div>"
+      "body": "<div class=\"author-table-scroll\"><table class=\"author-table\"><colgroup><col style=\"width:100.0000%\"></colgroup><tbody><tr><td colspan=\"1\"><p style=\"text-align:left;\"><strong> Figure 6 | Predicted ascaroside-binding pockets of GprC, SRBC-64, and DAF-37. </strong> Docking results for five ascarosides are shown for each receptor, with five poses per ligand. Cropped from Hu et al. (2024), Fig. 5a–c. [2] </p></td></tr></tbody></table></div>"
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\">这一扩展将选点方法从单个受体内的双配体比较延伸到跨受体分析：接触差异用于发现候选位置，序列与结构对应用于判断位置之间的可比性，构建体记录则用于核对实际分析对象。原始评分、逐姿态接触表、模型编号、WT 来源及结构处理记录共同提供复查依据，也便于其他研究者在自己的受体与配体体系中应用这一分析思路。</p>"
+      "body": "<p style=\"text-align:left;\"> This extension broadens site selection from dual-ligand comparison within one receptor to cross-receptor analysis: contact differences identify candidate positions, sequence and structural correspondence assess their comparability, and construct records verify the actual objects analyzed. Raw scores, per-pose contact tables, model identifiers, WT provenance, and structural-processing records support review and help other researchers apply this approach to their own receptor–ligand systems. </p>"
     },
     {
       "_template": "text",
