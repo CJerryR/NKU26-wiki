@@ -31,7 +31,7 @@ We began by establishing comparable docking conditions, then used contact differ
 
 :::figure
 
-![Figure 1. Predicted full-length structure of Gpr2 WT](https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-1-fa6200a22b.webp)
+[![Figure 1. Predicted full-length structure of Gpr2 WT](https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-1-fa6200a22b.webp)](https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-1-fa6200a22b.webp "Open full-resolution image")
 
 **Figure 1. Predicted full-length structure of Gpr2 WT.** Overall structure of model_0 generated with AlphaFold 3 \[3].
 
@@ -55,7 +55,7 @@ We selected initial mutation sites at two levels. First, we measured residue con
 
 :::figure
 
-![Figure 2. Predicted docking poses and pocket environments of Gpr2 WT](https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-2-7a7d9d242a.webp)
+[![Figure 2. Predicted docking poses and pocket environments of Gpr2 WT](https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-2-7a7d9d242a.webp)](https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-2-7a7d9d242a.webp "Open full-resolution image")
 
 **Figure 2. Predicted docking poses and pocket environments of Gpr2 WT.** (a, b) ascr#3; (c, d) ascr#18. Each pair shows a 3D pocket view and the corresponding Maestro 2D interaction diagram \[6] for the lowest-scoring pose. In the 3D views, the receptor is shown as a purple cartoon, pocket residues as yellow sticks, and ascr#3 and ascr#18 in cyan and magenta, respectively. Original residue numbering is retained.
 
@@ -67,7 +67,7 @@ These analyses provided complementary information. Contact frequencies showed ho
 
 :::figure
 
-![Figure 3. Initial mutation sites in Gpr2](https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-3-9b303eb053.webp)
+[![Figure 3. Initial mutation sites in Gpr2](https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-3-9b303eb053.webp)](https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-3-9b303eb053.webp "Open full-resolution image")
 
 **Figure 3. Initial mutation sites in Gpr2.** N84, L90, V110, R181, W338, R345, and V368 are highlighted on the predicted full-length structure.
 
@@ -111,7 +111,7 @@ After saturation scanning, we prioritized N84V, V110C, V110M, and V368R for deta
 
 **Table 1. Docking scores and WT-relative changes for four prioritized Gpr2 variants.**
 
-<div class="model-table-scroll" tabindex="0"><table class="model-source-table"><thead><tr><th scope="col">Variant</th><th scope="col">(G_{18})</th><th scope="col">(G_{3})</th><th scope="col">(\Delta G_{18})</th><th scope="col">(\Delta G_{3})</th><th scope="col">(\Delta\Delta G)</th></tr></thead><tbody><tr><td>N84V</td><td>−6.856</td><td>−6.264</td><td>−0.364</td><td>0.361</td><td>−0.725</td></tr><tr><td>V110C</td><td>−7.053</td><td>−6.719</td><td>−0.561</td><td>−0.094</td><td>−0.467</td></tr><tr><td>V110M</td><td>−6.066</td><td>−6.629</td><td>0.426</td><td>−0.004</td><td>0.43</td></tr><tr><td>V368R</td><td>−6.293</td><td>−7.013</td><td>0.199</td><td>−0.388</td><td>0.587</td></tr></tbody></table></div>
+<div class="model-table-scroll" tabindex="0"><table class="model-source-table"><thead><tr><th scope="col">Variant</th><th scope="col"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>G</mi><mn>18</mn></msub></mrow><annotation encoding="application/x-tex">G_{18}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">18</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></th><th scope="col"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>G</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">G_{3}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></th><th scope="col"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>G</mi><mn>18</mn></msub></mrow><annotation encoding="application/x-tex">\Delta G_{18}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord">Δ</span><span class="mord"><span class="mord mathnormal">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">18</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></th><th scope="col"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>G</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">\Delta G_{3}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord">Δ</span><span class="mord"><span class="mord mathnormal">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></th><th scope="col"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi mathvariant="normal">Δ</mi><mi>G</mi></mrow><annotation encoding="application/x-tex">\Delta\Delta G</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.6833em;"></span><span class="mord">ΔΔ</span><span class="mord mathnormal">G</span></span></span></span></th></tr></thead><tbody><tr><td>N84V</td><td>−6.856</td><td>−6.264</td><td>−0.364</td><td>0.361</td><td>−0.725</td></tr><tr><td>V110C</td><td>−7.053</td><td>−6.719</td><td>−0.561</td><td>−0.094</td><td>−0.467</td></tr><tr><td>V110M</td><td>−6.066</td><td>−6.629</td><td>0.426</td><td>−0.004</td><td>0.43</td></tr><tr><td>V368R</td><td>−6.293</td><td>−7.013</td><td>0.199</td><td>−0.388</td><td>0.587</td></tr></tbody></table></div>
 
 All values are in kcal/mol. Negative changes indicate lower scores than WT.
 
@@ -143,7 +143,7 @@ N84V highlighted the importance of the surrounding residue network. In the selec
 
 :::figure
 
-![Figure 4. Predicted docking poses and pocket environments of Gpr2 N84V](https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-4-0e18ad3b0f.webp)
+[![Figure 4. Predicted docking poses and pocket environments of Gpr2 N84V](https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-4-0e18ad3b0f.webp)](https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-4-0e18ad3b0f.webp "Open full-resolution image")
 
 **Figure 4. Predicted docking poses and pocket environments of Gpr2 N84V.** (a, b) ascr#3; (c, d) ascr#18. Each pair shows a 3D pocket view and the corresponding Maestro 2D interaction diagram for the lowest-scoring pose. Colors follow Figure 2, and residue numbering matches WT.
 
@@ -153,7 +153,7 @@ V368R raised a different question. Although the substitution introduced an argin
 
 :::figure
 
-![Figure 5. Predicted docking poses and pocket environments of Gpr2 V368R](https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-5-1e38205eaf.webp)
+[![Figure 5. Predicted docking poses and pocket environments of Gpr2 V368R](https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-5-1e38205eaf.webp)](https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-5-1e38205eaf.webp "Open full-resolution image")
 
 **Figure 5. Predicted docking poses and pocket environments of Gpr2 V368R.** (a, b) ascr#3; (c, d) ascr#18. Each pair shows a 3D pocket view and the corresponding Maestro 2D interaction diagram for the lowest-scoring pose. Colors follow Figure 2, and residue numbering matches WT.
 
@@ -173,7 +173,7 @@ For each receptor, we used five predicted models and compared contact frequencie
 
 :::figure
 
-![Figure 6. Predicted ascaroside-binding pockets in GprC, SRBC-64, and DAF-37](https://static.igem.wiki/teams/6303/wiki/v8-6/v86-bbf52d6e8540-docking-source-15.avif)
+[![Figure 6. Predicted ascaroside-binding pockets in GprC, SRBC-64, and DAF-37](https://static.igem.wiki/teams/6303/wiki/v8-6/v86-bbf52d6e8540-docking-source-15.avif)](https://static.igem.wiki/teams/6303/wiki/v8-6/v86-bbf52d6e8540-docking-source-15.avif "Open full-resolution image")
 
 **Figure 6. Predicted ascaroside-binding pockets in GprC, SRBC-64, and DAF-37.** Each receptor shows five docking poses for each of five ascarosides. Cropped from Hu et al. (2024), Figure 5a–c \[2], under the [Creative Commons Attribution 4.0 International license](https://creativecommons.org/licenses/by/4.0/).
 

@@ -4590,6 +4590,97 @@
       "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/nankai-seal-en.webp",
       "verification": "Official Uploads table URL; HTTP 200; exact uploaded WebP SHA-256 verified",
       "verified_at": "2026-10-19T14:56:04.339598+08:00"
+    },
+    {
+      "path": "static/img/model-refresh-20261020/model-51cd59b3873b.webp",
+      "source_sha256": "51cd59b3873b05d70105139824633d19f81b3f23311f2928c9cf6dbda861f203",
+      "upload_sha256": "9ac8b23f53bbd64a41c647d5005504f36fdfab6bd72884ce6afbe9369f4a6889",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/model-51cd59b3873b.webp",
+      "verification": "Official Uploads URL; HTTP 200; byte-identical lossless WebP; decoded pixels exactly match original PNG",
+      "verified_at": "2026-10-20T05:17:29.200387+08:00",
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/model-refresh-20261020/model-5d23c4029c73.webp",
+      "source_sha256": "5d23c4029c73b251f13fde8738e0f45efb4cb105e66b5546ff4817dec08dbe86",
+      "upload_sha256": "5ad4856c213d40cb877c61d41ccb90f12ff04982bc6939e3f924eeae46e2323a",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/model-5d23c4029c73.webp",
+      "verification": "Official Uploads URL; HTTP 200; byte-identical lossless WebP; decoded pixels exactly match original PNG",
+      "verified_at": "2026-10-20T05:17:29.200387+08:00",
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/model-refresh-20261020/model-924062c2f7ac.webp",
+      "source_sha256": "924062c2f7acff5f90a83ae3c73728dd73040a7d99e18350ef1d272c823a988f",
+      "upload_sha256": "00406039faf5bcd1280f05d47079817563ffdf7e92eb2266e62a3ad41169a27c",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/model-924062c2f7ac.webp",
+      "verification": "Official Uploads URL; HTTP 200; byte-identical lossless WebP; decoded pixels exactly match original PNG",
+      "verified_at": "2026-10-20T05:17:29.200387+08:00",
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/model-refresh-20261020/model-b9a0bc880ff5.webp",
+      "source_sha256": "b9a0bc880ff5129b50d1b453bcaf5c0de037859870266f10621b89f46793e954",
+      "upload_sha256": "7b8914fb98dc0fbac97414284ea8b492eb8dc43d3343ed2cf0df89f568e60573",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/model-b9a0bc880ff5.webp",
+      "verification": "Official Uploads URL; HTTP 200; byte-identical lossless WebP; decoded pixels exactly match original PNG",
+      "verified_at": "2026-10-20T05:17:29.200387+08:00",
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/model-refresh-20261020/model-md-4665546c7178.webp",
+      "source_sha256": "4665546c7178b9e4f274bf861178d55129e22e1c06f41e4c4f72c8d146a74fd2",
+      "upload_sha256": "f3b5f6407184c43ac1e874cebf1bac2522b5568d7478bfcb9914c8648a71634f",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/model-md-4665546c7178.webp",
+      "verification": "Official Uploads URL; HTTP 200; byte-identical lossless WebP; decoded pixels exactly match original PNG",
+      "verified_at": "2026-10-20T05:17:29.200387+08:00",
+      "dimensions": {
+        "width": 2598,
+        "height": 1083
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/model-refresh-20261020/model-md-ec8e6e576326.webp",
+      "source_sha256": "ec8e6e5763262f755efbef7d7254d1cd8ce593fd2527db02723acc8ea0398312",
+      "upload_sha256": "00d7bf04e201b341270825688123365fe27c71b7ed0b3046d2e2b00e3fa31359",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/model-md-ec8e6e576326.webp",
+      "verification": "Official Uploads URL; HTTP 200; byte-identical lossless WebP; decoded pixels exactly match original PNG",
+      "verified_at": "2026-10-20T05:17:29.200387+08:00",
+      "dimensions": {
+        "width": 2721,
+        "height": 1360
+      },
+      "referenced_in_build": true
+    },
+    {
+      "path": "static/img/model-refresh-20261020/model-ode-8b54481155b3.webp",
+      "source_sha256": "8b54481155b3aba7c8b3531a7f9fb7690c92128dc264ee8bf6a36707df30c5db",
+      "upload_sha256": "10f1fd7ea2885396c2a60c16efbf7dfdebcfba38901ef6bfb5e2dc0c45cdbd54",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/model-ode-8b54481155b3.webp",
+      "verification": "Official Uploads URL; HTTP 200; byte-identical lossless WebP; decoded pixels exactly match original PNG",
+      "verified_at": "2026-10-20T05:17:29.200387+08:00",
+      "dimensions": {
+        "width": 1672,
+        "height": 941
+      },
+      "referenced_in_build": false
     }
   ]
 }

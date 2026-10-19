@@ -1,7 +1,7 @@
 {
-  "version": "10.2.12",
-  "label": "Footer social media entry placeholders",
-  "prepared_at": "2026-10-20T04:48:32+08:00",
+  "version": "10.2.13",
+  "label": "Latest author Model overview docking and molecular dynamics",
+  "prepared_at": "2026-10-20T05:16:30+08:00",
   "media": "84 unchanged original images plus 4 user-authorized GPS-only cleaned images; all decoded frames unchanged; 12 complete historical source documents",
   "release_kind": "stage",
   "team_content_review": "Scientific final review pending; source-version choices authorized by user",
@@ -10,7 +10,7 @@
     "commit": "16770d5c28ddf7bc41f8d90445c44d80a28801d5",
     "published_at_local": "2026-10-18 05:04:34"
   },
-  "release_id": "footer-socials-20261020-v10.2.12",
+  "release_id": "model-refresh-20261020-v10.2.13",
   "mobile_layout_check": "390px Members rendered without overflow; desktop Description, Parts/plasmid, Attributions/puzzle checked; 4 second delayed CDN uses inline preview then upgrades",
   "source_fidelity": {
     "original_source_files_verified": 80,
@@ -205,5 +205,20 @@
     "task_commit": "af40ccf0336f42bd0842c21046643c220a734105",
     "scope": "Remove automatic 2.17 from the hydrophobic coating TOC item; preserve body heading 2.17",
     "original_batch": "V10.2.11 includes Engineering replacement, sobl.svg and all five Wet Lab changes"
+  },
+  "model_refresh": {
+    "sources": "docs/model-refresh-20261020/source-manifest.json",
+    "updated_pages": [
+      "model",
+      "model-docking",
+      "model-md"
+    ],
+    "latest_author_text_blocks_checked": 94,
+    "pending_latest_manuscripts": [
+      "model-ode: incomplete equations in live source",
+      "model-eco: empty treatment-rules table in live source"
+    ],
+    "published_existing_complete_ode_eco_retained": true,
+    "runtime": "Earlier iframe loading and SHA256-verified package cache; unchanged author calculations; first startup and ODE solving still take time"
   }
 }

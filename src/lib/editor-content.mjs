@@ -28,7 +28,8 @@ export function blocksToMarkdown(blocks = []) {
       case 'layout': return `:::${block.kind}${label}${attrs}\n\n${body}\n\n:::`;
       case 'image': {
         const scale = ['85', '70', '55'].includes(String(block.scale || '')) ? `{scale=${block.scale}}` : '';
-        const figure = `:::figure${scale}\n\n${img(block.src, block.alt)}\n\n${body}\n\n:::`;
+        const media = block.openOriginal ? `[${img(block.src, block.alt)}](${block.src} "Open full-resolution image")` : img(block.src, block.alt);
+        const figure = `:::figure${scale}\n\n${media}\n\n${body}\n\n:::`;
         const accompanying = markdown(block.accompanyingBody).trim();
         if (!accompanying) return figure;
         if (block.layout === 'stack') return `${accompanying}\n\n${figure}`;   // R1-I03: text above, figure below

@@ -50,6 +50,7 @@
       "body": "**Figure 1. Predicted full-length structure of Gpr2 WT.** Overall structure of model_0 generated with AlphaFold 3 \\[3].",
       "layout": "right",
       "imageWidth": "wide",
+      "openOriginal": true,
       "accompanyingBody": "We initially examined three fungal G protein-coupled receptors (GPCRs) involved in ascaroside sensing: Gpr2 and Gpr3 \\[1], and GprC \\[2]. We prepared predicted receptor structures and ligands, using published pocket locations, key residues, and docking methods as references. We also considered their use in yeast. GprC has been reported at both the plasma membrane and mitochondria in its native fungal host \\[2]. We considered this a potential complication for localization and pathway integration in yeast, so we focused subsequent engineering on Gpr2, continued to investigate Gpr3 and its variants, and retained GprC as a structural reference."
     },
     {
@@ -84,7 +85,8 @@
       "alt": "Figure 2. Predicted docking poses and pocket environments of Gpr2 WT",
       "body": "**Figure 2. Predicted docking poses and pocket environments of Gpr2 WT.** (a, b) ascr#3; (c, d) ascr#18. Each pair shows a 3D pocket view and the corresponding Maestro 2D interaction diagram \\[6] for the lowest-scoring pose. In the 3D views, the receptor is shown as a purple cartoon, pocket residues as yellow sticks, and ascr#3 and ascr#18 in cyan and magenta, respectively. Original residue numbering is retained.",
       "layout": "full",
-      "imageWidth": "wide"
+      "imageWidth": "wide",
+      "openOriginal": true
     },
     {
       "_template": "text",
@@ -97,6 +99,7 @@
       "body": "**Figure 3. Initial mutation sites in Gpr2.** N84, L90, V110, R181, W338, R345, and V368 are highlighted on the predicted full-length structure.",
       "layout": "right",
       "imageWidth": "wide",
+      "openOriginal": true,
       "accompanyingBody": "We then replaced candidate residues with alanine to examine how simplifying each side chain changed the scores and contacts for both ligands. The initial sites were N84, L90, V110, R181, W338, R345, and V368. For each substitution, we generated a mutant sequence, predicted its structure with AlphaFold 3 \\[3], and carried out structure preparation, docking, and contact comparisons with WT."
     },
     {
@@ -173,7 +176,7 @@
     },
     {
       "_template": "text",
-      "body": "<div class=\"model-table-scroll\" tabindex=\"0\"><table class=\"model-source-table\"><thead><tr><th scope=\"col\">Variant</th><th scope=\"col\">(G_{18})</th><th scope=\"col\">(G_{3})</th><th scope=\"col\">(\\Delta G_{18})</th><th scope=\"col\">(\\Delta G_{3})</th><th scope=\"col\">(\\Delta\\Delta G)</th></tr></thead><tbody><tr><td>N84V</td><td>−6.856</td><td>−6.264</td><td>−0.364</td><td>0.361</td><td>−0.725</td></tr><tr><td>V110C</td><td>−7.053</td><td>−6.719</td><td>−0.561</td><td>−0.094</td><td>−0.467</td></tr><tr><td>V110M</td><td>−6.066</td><td>−6.629</td><td>0.426</td><td>−0.004</td><td>0.43</td></tr><tr><td>V368R</td><td>−6.293</td><td>−7.013</td><td>0.199</td><td>−0.388</td><td>0.587</td></tr></tbody></table></div>"
+      "body": "<div class=\"model-table-scroll\" tabindex=\"0\"><table class=\"model-source-table\"><thead><tr><th scope=\"col\">Variant</th><th scope=\"col\"><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>G</mi><mn>18</mn></msub></mrow><annotation encoding=\"application/x-tex\">G_{18}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8333em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\">G</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:0em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">18</span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span></th><th scope=\"col\"><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>G</mi><mn>3</mn></msub></mrow><annotation encoding=\"application/x-tex\">G_{3}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8333em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\">G</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:0em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">3</span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span></th><th scope=\"col\"><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">Δ</mi><msub><mi>G</mi><mn>18</mn></msub></mrow><annotation encoding=\"application/x-tex\">\\Delta G_{18}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8333em;vertical-align:-0.15em;\"></span><span class=\"mord\">Δ</span><span class=\"mord\"><span class=\"mord mathnormal\">G</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:0em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">18</span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span></th><th scope=\"col\"><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">Δ</mi><msub><mi>G</mi><mn>3</mn></msub></mrow><annotation encoding=\"application/x-tex\">\\Delta G_{3}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8333em;vertical-align:-0.15em;\"></span><span class=\"mord\">Δ</span><span class=\"mord\"><span class=\"mord mathnormal\">G</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:0em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">3</span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span></th><th scope=\"col\"><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">Δ</mi><mi mathvariant=\"normal\">Δ</mi><mi>G</mi></mrow><annotation encoding=\"application/x-tex\">\\Delta\\Delta G</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.6833em;\"></span><span class=\"mord\">ΔΔ</span><span class=\"mord mathnormal\">G</span></span></span></span></th></tr></thead><tbody><tr><td>N84V</td><td>−6.856</td><td>−6.264</td><td>−0.364</td><td>0.361</td><td>−0.725</td></tr><tr><td>V110C</td><td>−7.053</td><td>−6.719</td><td>−0.561</td><td>−0.094</td><td>−0.467</td></tr><tr><td>V110M</td><td>−6.066</td><td>−6.629</td><td>0.426</td><td>−0.004</td><td>0.43</td></tr><tr><td>V368R</td><td>−6.293</td><td>−7.013</td><td>0.199</td><td>−0.388</td><td>0.587</td></tr></tbody></table></div>"
     },
     {
       "_template": "text",
@@ -241,7 +244,8 @@
       "alt": "Figure 4. Predicted docking poses and pocket environments of Gpr2 N84V",
       "body": "**Figure 4. Predicted docking poses and pocket environments of Gpr2 N84V.** (a, b) ascr#3; (c, d) ascr#18. Each pair shows a 3D pocket view and the corresponding Maestro 2D interaction diagram for the lowest-scoring pose. Colors follow Figure 2, and residue numbering matches WT.",
       "layout": "full",
-      "imageWidth": "wide"
+      "imageWidth": "wide",
+      "openOriginal": true
     },
     {
       "_template": "text",
@@ -253,7 +257,8 @@
       "alt": "Figure 5. Predicted docking poses and pocket environments of Gpr2 V368R",
       "body": "**Figure 5. Predicted docking poses and pocket environments of Gpr2 V368R.** (a, b) ascr#3; (c, d) ascr#18. Each pair shows a 3D pocket view and the corresponding Maestro 2D interaction diagram for the lowest-scoring pose. Colors follow Figure 2, and residue numbering matches WT.",
       "layout": "full",
-      "imageWidth": "wide"
+      "imageWidth": "wide",
+      "openOriginal": true
     },
     {
       "_template": "text",
@@ -284,6 +289,7 @@
       "body": "**Figure 6. Predicted ascaroside-binding pockets in GprC, SRBC-64, and DAF-37.** Each receptor shows five docking poses for each of five ascarosides. Cropped from Hu et al. (2024), Figure 5a–c \\[2], under the [Creative Commons Attribution 4.0 International license](https://creativecommons.org/licenses/by/4.0/).",
       "layout": "right",
       "imageWidth": "wide",
+      "openOriginal": true,
       "accompanyingBody": "Three TM6 tryptophans—Gpr2 W338, Gpr3 W306, and GprC W388—showed contact differences favoring ascr#18 and corresponding positions supported by both sequence and structural comparisons. These residues became candidates for parallel substitutions across the fungal receptors, allowing future tests of whether they play similar roles."
     },
     {

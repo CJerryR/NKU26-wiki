@@ -39,7 +39,7 @@ The 50–100 ns interval was used as the primary comparison window for all six s
 
 :::figure
 
-![Figure 1 | Ligand heavy-atom RMSD under three structural alignment schemes. Trajectories were aligned using the whole receptor, the transmembrane helical core, or the local pocket backbone, with each trajectory referenced to its own initial production structure](https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-d5f1716f681b7d35-00.json)
+[![Figure 1 | Ligand heavy-atom RMSD under three structural alignment schemes. Trajectories were aligned using the whole receptor, the transmembrane helical core, or the local pocket backbone, with each trajectory referenced to its own initial production structure](https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-d5f1716f681b7d35-00.json)](https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-d5f1716f681b7d35-00.json "Open full-resolution image")
 
 **Figure 1 | Ligand heavy-atom RMSD under three structural alignment schemes.** Trajectories were aligned using the whole receptor, the transmembrane helical core, or the local pocket backbone, with each trajectory referenced to its own initial production structure. Curves show a 1 ns centered moving average of data sampled every 100 ps. Shading marks the 50–100 ns comparison window. Each system is represented by one 100 ns trajectory.
 
@@ -57,7 +57,7 @@ During 50–100 ns, the minimum distance between an Arg189 guanidinium nitrogen 
 
 :::figure
 
-![Figure 2 | Arg189–carboxylate interactions in the Gpr2 N84V–ascr#18 complex. (a) Simulation snapshot at 64.64 ns](https://static.igem.wiki/teams/6303/wiki/release-20261020/model-md-4665546c7178.webp)
+[![Figure 2 | Arg189–carboxylate interactions in the Gpr2 N84V–ascr#18 complex. (a) Simulation snapshot at 64.64 ns](https://static.igem.wiki/teams/6303/wiki/release-20261020/model-md-4665546c7178.webp)](https://static.igem.wiki/teams/6303/wiki/release-20261020/model-md-4665546c7178.webp "Open full-resolution image")
 
 **Figure 2 | Arg189–carboxylate interactions in the Gpr2 N84V–ascr#18 complex.** (a) Simulation snapshot at 64.64 ns. The receptor is shown as purple ribbons; ascr#18 and Arg189 are shown as sticks with magenta and yellow carbon atoms, respectively. The dashed line indicates an Arg189–carboxylate hydrogen bond with a donor–acceptor distance of 2.77 Å. (b) Occupancy of at least one Arg189–carboxylate hydrogen bond during 50–100 ns: 93.6% for N84V–ascr#18 and 0% for WT–ascr#18 and N84V–ascr#3. Frames were sampled every 100 ps, using the hydrogen-bond criteria defined in the text.
 
@@ -75,7 +75,7 @@ To identify other stabilizing interactions, we designed two alternative starting
 
 :::figure
 
-![Figure 3 | Changes in ligand anchoring in V368R–ascr#3 simulations initiated from two alternative poses. (a,b) Time-dependent salt-bridge occupancies for the Arg368-directed (a) and Arg189-directed (b) starting poses](https://static.igem.wiki/teams/6303/wiki/release-20261020/model-md-ec8e6e576326.webp)
+[![Figure 3 | Changes in ligand anchoring in V368R–ascr#3 simulations initiated from two alternative poses. (a,b) Time-dependent salt-bridge occupancies for the Arg368-directed (a) and Arg189-directed (b) starting poses](https://static.igem.wiki/teams/6303/wiki/release-20261020/model-md-ec8e6e576326.webp)](https://static.igem.wiki/teams/6303/wiki/release-20261020/model-md-ec8e6e576326.webp "Open full-resolution image")
 
 **Figure 3 | Changes in ligand anchoring in V368R–ascr#3 simulations initiated from two alternative poses.** (a,b) Time-dependent salt-bridge occupancies for the Arg368-directed (a) and Arg189-directed (b) starting poses. Each panel compares the designed Arg368–carboxylate or Arg189–carboxylate contact with the Arg345–carboxylate contact. Shading marks the 50–100 ns comparison window. (c) Arg345–carboxylate contact occupancies during 50–100 ns in the two additional trajectories and the WT–ascr#3, V368R–ascr#18, and original V368R–ascr#3 trajectories. Bars indicate salt-bridge occupancy using a distance cutoff of ≤4 Å; diamonds indicate the occupancy of short, near-linear hydrogen bonds. Each starting pose was simulated for 100 ns.
 

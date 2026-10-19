@@ -18,7 +18,8 @@ const hash = s => crypto.createHash('sha256').update(s).digest('hex');
 const unescape = s => s.replace(/\\([\\`*{}\[\]()#+\-.!_>&|])/g,'$1');
 const math = s => katex.renderToString(s,{displayMode:true,throwOnError:true,output:'htmlAndMathml'});
 function tableHtml(rows) {
-  return '<div class="model-table-scroll" tabindex="0"><table class="model-source-table"><thead><tr>'+rows[0].map(v=>'<th scope="col">'+esc(v??'')+'</th>').join('')+'</tr></thead><tbody>'+rows.slice(1).map(row=>'<tr>'+row.map(v=>'<td>'+esc(v??'')+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>';
+  const cell=v=>String(v??'').split(/(\([^()]*[\\_^][^()]*\))/g).map(s=>/^\([^()]*[\\_^][^()]*\)$/.test(s)?katex.renderToString(s.slice(1,-1),{throwOnError:true,output:'htmlAndMathml'}):esc(s)).join('');
+  return '<div class="model-table-scroll" tabindex="0"><table class="model-source-table"><thead><tr>'+rows[0].map(v=>'<th scope="col">'+cell(v)+'</th>').join('')+'</tr></thead><tbody>'+rows.slice(1).map(row=>'<tr>'+row.map(v=>'<td>'+cell(v)+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>';
 }
 const config = [
  ['model','Model -_ Overview (1)','Model -_ Overview.md'],
@@ -66,7 +67,7 @@ for (const [slug,folder,name] of config) {
     const existing=original.blocks.find(b=>b.body?.includes('Figure 6'))?.body;
     const found=existing?.match(/src="([^"]+)"/);if(found)src=found[1];
    }
-   const block={_template:'image',src,alt:plain(caption).split('. ').slice(0,2).join('. '),body:processor.stringify({type:'root',children:caption.children}).trim(),layout:'full',imageWidth:'wide'};
+   const block={_template:'image',src,alt:plain(caption).split('. ').slice(0,2).join('. '),body:processor.stringify({type:'root',children:caption.children}).trim(),layout:'full',imageWidth:'wide',openOriginal:true};
    if(a.dimensions[0]<a.dimensions[1]*1.1 && blocks.at(-1)?._template==='text'&&!blocks.at(-1).body.startsWith('<')) {
     block.accompanyingBody=blocks.pop().body;block.layout='right';block.imageWidth='wide';
    }
