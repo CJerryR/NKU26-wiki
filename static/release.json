@@ -159,5 +159,11 @@
     "body": "Supplied module lists and detail links preserved; no new scientific prose invented",
     "cdn_map": "docs/home-built-cdn-20261020.json",
     "cdn_images": 6
+  },
+  "first_publication": {
+    "commit": "e205f4a5c5ade14f1c38e6836a2b41521b20bf5e",
+    "pipeline_id": 774671,
+    "pages_job": 1871740,
+    "published_at_beijing": "2026-10-20 03:17:31"
   }
 }
