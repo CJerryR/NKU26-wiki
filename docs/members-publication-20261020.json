@@ -105,18 +105,20 @@
     "flips_verified": 27,
     "compression": "Official AVIF conversion; three PNG upload copies are quality-95 WebP, original files retained"
   },
-  "publication": "CDN migrated; not yet published",
-  "integration": "pending validated task commit",
-  "release": "pending integration candidate",
-  "next_steps": [
-    "Upload 28 prepared images through official Uploads and record actual returned URLs",
-    "Migrate all 28 references, validate rendered assets and rebuild small artifact",
-    "Commit final task, lock integration, merge against freshly fetched main, validate exact candidate",
-    "Lock release, build accepted candidate, re-fetch main, push only from release and verify Pages and online files"
-  ],
+  "publication": "published V10.2.7",
+  "integration": "validated CDN-only candidate",
+  "release": "pushed from workspace/release; official Pages successful",
+  "next_steps": [],
   "recorded_at": "2026-10-20T02:45:06.302937+08:00",
   "artifact_zip_bytes": 4979961,
   "original_content_check": "All non-image Members content identical to official main",
   "original_archive": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/ruoxi-members-review/release-20261020/source-originals",
-  "repository_transport": "CDN-only source commit; binary original history retained on local backup branch after server rejected oversized pack"
+  "repository_transport": "CDN-only source commit; binary original history retained on local backup branch after server rejected oversized pack",
+  "first_successful_deployment": {
+    "commit": "109a1bbd23d29b83a40081c0031fddfe24f6cd08",
+    "pipeline": 774538,
+    "finished_at": "2026-10-19T18:49:22.445Z",
+    "publication_time_beijing": "2026-10-20 02:49:22",
+    "online_files_verified": 133
+  }
 }

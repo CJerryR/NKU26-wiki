@@ -728,7 +728,9 @@
     "publication_authorized": true,
     "cdn_uploaded": 28,
     "validation": "pass",
-    "publication": "integration and release pending",
+    "publication": "published V10.2.7",
+    "first_pipeline": 774538,
+    "publication_time_beijing": "2026-10-20 02:49:22",
     "report": "docs/members-publication-20261020.json"
   }
 }
