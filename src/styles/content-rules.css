@@ -68,7 +68,28 @@ main:has(.doc) { --measure: 65rem; --bleed: 0px; }
   text-align-last: start !important;
   text-wrap: wrap;
 }
-.doc .prose :is(h2, h3) + p { margin-top: 0; }
+
+/* Only typographic spans inside ordinary paragraphs inherit the article metrics.
+   Scientific emphasis, scripts, code and semantic annotations retain their styling. */
+.doc .prose p:not(:where(
+  figcaption *, table *, blockquote *, .callout *, .refs *, .hp-references *,
+  .figure__media *, .wiki-media *, .stat *, .person *,
+  .timeline__when, .hp-image-label, .hp-download-label, .table-caption,
+  .docking-caption-only *, .figure__credit, .figure__missing,
+  .person__role, .person-name__cn, .member-card__role, .credit-card__role, .author-source-link
+)) span[style]:not(:where(
+  sub *, sup *, code *, kbd *, mark *, [data-annotation], [data-annotation] *,
+  .katex, .katex *, .annotation, .annotation *
+)) {
+  font-family: inherit !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+  letter-spacing: inherit !important;
+  white-space: normal !important;
+  text-align: inherit !important;
+  text-align-last: inherit !important;
+}
+.doc .prose h2 + p { margin-top: 0; }
 .doc .prose :is(figcaption, .table-caption, .docking-caption-only) { text-align-last: auto; }
 .doc .prose :is(.callout, .cards, .figure, .table-wrap, .wiki-media, wiki-toolkit) {
   width: 100%;
