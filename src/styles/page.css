@@ -59,15 +59,7 @@
 
 .doc-section { position: relative; }
 .doc-section + .doc-section { margin-top: clamp(76px, 9vw, 116px); }
-/* big, faint section number in the left margin — slides under the glass outline */
-@media (min-width: 1100px) {
-  .doc-section[data-num]::before {
-    content: attr(data-num); position: absolute; top: -.16em; right: calc(100% + var(--gutter) + 18px);
-    font-family: var(--font-display); font-weight: 600; font-size: clamp(92px, 7.6vw, 132px); line-height: 1;
-    letter-spacing: -.035em; font-variant-numeric: lining-nums; color: var(--iris); opacity: .16; pointer-events: none;
-  }
-  .doc-section:only-of-type::before { content: none; }
-}
+/* Section numbering belongs to the outline; keep decorative digits out of its rail. */
 
 /* ---------------------------------------------------- previous / next */
 .pager {
