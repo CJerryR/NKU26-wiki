@@ -8,7 +8,7 @@
   "originals_unchanged": true,
   "only_member_image_fields_changed": true,
   "attributions_unchanged": true,
-  "publication": "CDN migrated; awaiting integration and release",
+  "publication": "published V10.2.7",
   "group_photo": {
     "source": "user attachment explicitly confirmed as group photo",
     "staged_original": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/ruoxi-members-review/release-20261020/source-originals/team-group.jpg",
@@ -484,5 +484,15 @@
   },
   "group_photo_previous_missing_status": "resolved by supplied image",
   "original_archive": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/ruoxi-members-review/release-20261020/source-originals",
-  "repository_transport": "CDN-only source commit; binary original history retained on local backup branch after server rejected oversized pack"
+  "repository_transport": "CDN-only source commit; binary original history retained on local backup branch after server rejected oversized pack",
+  "first_successful_deployment": {
+    "commit": "109a1bbd23d29b83a40081c0031fddfe24f6cd08",
+    "pipeline": 774538,
+    "finished_at": "2026-10-19T18:49:22.445Z",
+    "publication_time_beijing": "2026-10-20 02:49:22",
+    "online_files_verified": 133
+  },
+  "integration": "validated CDN-only candidate",
+  "release": "pushed from workspace/release; official Pages successful",
+  "next_steps": []
 }
