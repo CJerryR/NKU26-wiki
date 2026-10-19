@@ -8,7 +8,7 @@
 | --- | ---: | ---: | ---: | ---: |
 | attributions | 3 | 4 | 13 | 12 |
 | background | 5 | 7 | 17 | 15 |
-| contribution | 3 | 11 | 20 | 12 |
+| contribution | 3 | 11 | 22 | 12 |
 | description | 4 | 7 | 22 | 22 |
 | engineering | 4 | 12 | 25 | 19 |
 | experiments | 3 | 20 | 8 | 7 |
@@ -176,6 +176,8 @@
 | safety | histidine | His | `blocks[4].body` |
 | safety | leucine | Leu | `blocks[4].body` |
 | safety | personal protective equipment | PPE | `blocks[9].body` |
+| contribution | transmembrane helix 6 | TM6 | `blocks[49].body` |
+| contribution | tryptophan residues | Trp | `blocks[49].body` |
 
 ## 待确认缩写：全量去重清单
 
@@ -354,3 +356,5 @@ Gpr2/GPR2、GPA1、GAL80、基因与蛋白符号、株系、荧光染料商品�
 `python3 tools/apply-rules-wet.py --audit` 通过 12 页逐页校验：结果 SHA-256 与术语表一致；CSV、sourceCellRuns、图片/成员照片/姓名、科研媒体链接等保护字段与基线完全相同；全部原有显式 anchor 保留；34 个 h2 无前置编号，86 个 h3 按章连续；引用条目原文不变；移除 7 个原稿入口；无嵌套 strong。
 
 第二次运行 `python3 tools/apply-rules-wet.py --apply` 返回已匹配结果、不写文件，证明不会重复展开术语或重复添加章节号。对本代理修改文件运行 `git diff --check` 通过。统一导出、构建、浏览器验收和后续发布由父代理执行。
+
+跨组复核补充：Contribution 的第六跨膜螺旋与色氨酸残基首次写为 `Transmembrane helix 6 (TM6) tryptophan residues (Trp)`，后续使用 TM6/Trp；精确残基 Gpr2 W338、Gpr3 W306、GprC W388 保持。

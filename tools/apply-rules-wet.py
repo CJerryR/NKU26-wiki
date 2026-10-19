@@ -64,7 +64,8 @@ term('personal protective equipment', 'PPE')
 term('second-stage juvenile', 'J2', plural='J2')
 term('guanine nucleotide-binding protein', 'G protein', 'G-protein', plural='G proteins')
 for full, short in [('alanine','Ala'),('arginine','Arg'),('tryptophan','Trp'),('tyrosine','Tyr'),('histidine','His'),('leucine','Leu')]:
-    term(full, short, source='standard amino-acid three-letter code')
+    term(full, short, *(['tryptophans','tryptophan residues'] if full=='tryptophan' else []), source='standard amino-acid three-letter code')
+term('transmembrane helix 6', 'TM6', source='standard transmembrane-helix positional nomenclature')
 term('Human Practices', 'HP', source='project team designation')
 term('principal investigator', 'PI', plural='PIs')
 term('artificial intelligence', 'AI')
@@ -196,6 +197,8 @@ def transform_prose(text, state, location, text_only=False):
         def replace(m):
             t, plural = LOOKUP[m.group().casefold()]
             full, abbr = t['full'], t['plural'] if plural else t['abbreviation']
+            if t['abbreviation']=='Trp' and m.group().casefold() in {'tryptophans','tryptophan residues'}:
+                full='tryptophan residues'
             if plural:
                 full += 's'
             # Keep exact fusion/construct/file identities. Definitions are made

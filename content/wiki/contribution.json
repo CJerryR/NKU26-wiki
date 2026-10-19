@@ -244,7 +244,7 @@
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\"> Five prediction models per receptor provide paired ascr#18 and ascr#3 contact frequencies within each model. Sequence alignment and structural mapping test positional correspondence, alongside records of residues retained in actual constructs. TM6 tryptophans in the three fungal receptors—Gpr2 W338, Gpr3 W306, and GprC W388—combine ascr#18-biased contact differences with sequence and structural correspondence and can serve as positions for parallel cross-receptor substitutions. </p>"
+      "body": "<p style=\"text-align:left;\"> Five prediction models per receptor provide paired ascr#18 and ascr#3 contact frequencies within each model. Sequence alignment and structural mapping test positional correspondence, alongside records of residues retained in actual constructs. <strong>Transmembrane helix 6 (TM6)</strong> <strong>tryptophan residues (Trp)</strong> in the three fungal receptors—Gpr2 W338, Gpr3 W306, and GprC W388—combine ascr#18-biased contact differences with sequence and structural correspondence and can serve as positions for parallel cross-receptor substitutions. </p>"
     },
     {
       "_template": "text",

@@ -992,7 +992,7 @@
     "contribution": {
       "route": "contribution",
       "before_sha256": "2a019f67bb0a4caf31938a3d584b171d850e8928bb68fedbbf5255ddc583b704",
-      "after_sha256": "a6a84aeb8fc497079493c58b87309feea099eaaa6b2c17cd986cfabbf4c951b2",
+      "after_sha256": "45ad2740e0c71c7facf97835e2e6a5b6f78349ee68f2ed7204012b64aa301768",
       "heading_changes": [
         {
           "before": "1 Wet Lab",
@@ -1239,6 +1239,20 @@
           "first_position": "blocks[68].body",
           "count": 2,
           "source": "project team designation"
+        },
+        {
+          "full": "transmembrane helix 6",
+          "abbreviation": "TM6",
+          "first_position": "blocks[49].body",
+          "count": 1,
+          "source": "standard transmembrane-helix positional nomenclature"
+        },
+        {
+          "full": "tryptophan residues",
+          "abbreviation": "Trp",
+          "first_position": "blocks[49].body",
+          "count": 1,
+          "source": "standard amino-acid three-letter code"
         }
       ],
       "pending": [
@@ -1525,7 +1539,6 @@
         "iGEM": "blocks[3].body",
         "DAF": "blocks[48].body",
         "SRBC": "blocks[48].body",
-        "TM6": "blocks[49].body",
         "TU": "blocks[56].body",
         "GAL": "blocks[57].body",
         "NKU": "blocks[83].body"
@@ -1544,10 +1557,6 @@
         "SRBC": {
           "position": "blocks[48].body",
           "decision": "SRBC-64/SRBC-66准确受体标识的分词片段"
-        },
-        "TM6": {
-          "position": "blocks[49].body",
-          "decision": "跨膜螺旋位置标识，保留编号"
         },
         "TU": {
           "position": "blocks[56].body",
