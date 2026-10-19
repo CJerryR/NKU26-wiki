@@ -1,0 +1,75 @@
+{
+  "status": "pass",
+  "pages": {
+    "attributions": {
+      "h2": 3,
+      "h3": 4,
+      "definitions": 13
+    },
+    "background": {
+      "h2": 5,
+      "h3": 7,
+      "definitions": 17
+    },
+    "contribution": {
+      "h2": 3,
+      "h3": 11,
+      "definitions": 20
+    },
+    "description": {
+      "h2": 4,
+      "h3": 7,
+      "definitions": 22
+    },
+    "engineering": {
+      "h2": 4,
+      "h3": 12,
+      "definitions": 25
+    },
+    "experiments": {
+      "h2": 3,
+      "h3": 20,
+      "definitions": 8
+    },
+    "members": {
+      "h2": 3,
+      "h3": 4,
+      "definitions": 5
+    },
+    "parts": {
+      "h2": 2,
+      "h3": 2,
+      "definitions": 11
+    },
+    "part-collection": {
+      "h2": 1,
+      "h3": 0,
+      "definitions": 0
+    },
+    "protocols": {
+      "h2": 1,
+      "h3": 0,
+      "definitions": 0
+    },
+    "results": {
+      "h2": 3,
+      "h3": 13,
+      "definitions": 25
+    },
+    "safety": {
+      "h2": 2,
+      "h3": 6,
+      "definitions": 3
+    }
+  },
+  "checks": [
+    "recorded output hashes",
+    "exact scientific fields",
+    "continuous h3",
+    "no h2 numeric prefix",
+    "stable anchors",
+    "exact reference entries",
+    "no source entries",
+    "no nested strong"
+  ]
+}

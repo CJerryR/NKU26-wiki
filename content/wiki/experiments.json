@@ -5,20 +5,24 @@
   "description": "",
   "route": "experiments",
   "crumbs": [
-    "Wet Lab",
+    "Wet lab",
     "Experiments"
   ],
   "meta": [],
   "search": true,
   "blocks": [
     {
-      "text": "1 Biological Materials",
+      "text": "Biological materials",
       "level": 2,
-      "attributes": "#biological-materials toc=\"Biological Materials\"",
+      "attributes": "#biological-materials toc=\"Biological materials\"",
       "_template": "heading"
     },
     {
-      "title": "Table 1 Biological Materials",
+      "body": "<p>This section documents the biological materials and experimental methods used in wet-lab work. <strong>Deoxyribonucleic acid (DNA)</strong> and <strong>ribonucleic acid (RNA)</strong> are the nucleic acids represented in the sequence entries. We summarize the designed <strong>single-guide RNA (sgRNA)</strong> sequences, constructed plasmids and engineered strains generated in our project. <strong>Polymerase chain reaction (PCR)</strong> underpins the cloning workflows described below. The chassis species is <strong><em>Saccharomyces cerevisiae</em> (<em>S.c</em>)</strong>; <strong><em>Escherichia coli</em> (<em>E. coli</em>)</strong> is used for plasmid propagation.</p>",
+      "_template": "text"
+    },
+    {
+      "title": "Table 1 biological materials",
       "csv": "Name,Description,Source,Identifier\nTrans5α Chemically Competent Cell,Mainly used for plasmid transformation and cloning,TransGen Biotech,Cat. No. CD201-01\nSaccharomyces cerevisiae CEN.PK2-1C,\"Biological materials for genetic modification, mainly applied in heterologous GPCR display and the construction of ascaroside-specific biosensors\",Biobw ,Strain No. bio-116324\n",
       "_template": "datatable",
       "sourceCellRuns": [
@@ -136,19 +140,15 @@
       "sourceTableSourceId": "SRC056"
     },
     {
-      "body": "<p>This section documents the biological materials and experimental methods used in wet-lab work, and summarizes the designed sgRNA sequences, constructed plasmids and engineered strains generated in our project.</p>",
-      "_template": "text"
-    },
-    {
-      "text": "2 Protocol",
+      "text": "Protocol",
       "level": 2,
       "attributes": "#protocol toc=\"Protocol\"",
       "_template": "heading"
     },
     {
-      "text": "2.1 PCR Amplification",
+      "text": "2.1 PCR amplification",
       "level": 3,
-      "attributes": "#protocol-pcr-amplification toc=\"PCR Amplification\"",
+      "attributes": "#protocol-pcr-amplification toc=\"PCR amplification\"",
       "_template": "heading"
     },
     {
@@ -156,16 +156,16 @@
       "_template": "text"
     },
     {
-      "title": "（PDF“1.PCR Amplification”）",
+      "title": "PCR amplification (PDF)",
       "height": 650,
       "caption": "",
       "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-3539c6074fb1-protocol-01.pdf",
       "_template": "pdf"
     },
     {
-      "text": "2.2 DNA Recovery",
+      "text": "2.2 DNA recovery",
       "level": 3,
-      "attributes": "#protocol-dna-recovery toc=\"DNA Recovery\"",
+      "attributes": "#protocol-dna-recovery toc=\"DNA recovery\"",
       "_template": "heading"
     },
     {
@@ -173,15 +173,15 @@
       "_template": "text"
     },
     {
-      "title": "（PDF“2.DNA Recovery”）",
+      "title": "DNA recovery (PDF)",
       "height": 650,
       "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-154647698e67-protocol-02.pdf",
       "_template": "pdf"
     },
     {
-      "text": "2.3 Plasmid DNA Extraction",
+      "text": "2.3 Plasmid DNA extraction",
       "level": 3,
-      "attributes": "#protocol-plasmid-dna-extraction toc=\"Plasmid DNA Extraction\"",
+      "attributes": "#protocol-plasmid-dna-extraction toc=\"Plasmid DNA extraction\"",
       "_template": "heading"
     },
     {
@@ -189,31 +189,31 @@
       "_template": "text"
     },
     {
-      "title": "（PDF“3.Plasmid DNA Extraction”）",
+      "title": "Plasmid DNA extraction (PDF)",
       "height": 650,
       "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-df98a0af0943-protocol-03.pdf",
       "_template": "pdf"
     },
     {
-      "text": "2.4 Double-Joint PCR",
+      "text": "2.4 Double-joint PCR",
       "level": 3,
-      "attributes": "#protocol-double-joint-pcr toc=\"Double-Joint PCR\"",
+      "attributes": "#protocol-double-joint-pcr toc=\"Double-joint PCR\"",
       "_template": "heading"
     },
     {
-      "body": "<p>Construction of Homologous Recombination Constructs Using Double-Joint PCR (DJ-PCR).</p>",
+      "body": "<p>Construction of <strong>homologous recombination (HR)</strong> Constructs Using <strong>double-joint PCR (DJ-PCR)</strong>.</p>",
       "_template": "text"
     },
     {
-      "title": "（PDF“4.Double-Joint PCR”）",
+      "title": "Double-joint PCR (PDF)",
       "height": 650,
       "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-730ddb351ab0-protocol-04.pdf",
       "_template": "pdf"
     },
     {
-      "text": "2.5 One Step Cloning",
+      "text": "2.5 One step cloning",
       "level": 3,
-      "attributes": "#protocol-one-step-cloning toc=\"One Step Cloning\"",
+      "attributes": "#protocol-one-step-cloning toc=\"One step cloning\"",
       "_template": "heading"
     },
     {
@@ -221,15 +221,15 @@
       "_template": "text"
     },
     {
-      "title": "（PDF“5.Multi-Fragment and Vector Seamless Assembly”）",
+      "title": "One step cloning (PDF)",
       "height": 650,
       "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-915625f7b4c9-protocol-05.pdf",
       "_template": "pdf"
     },
     {
-      "text": "2.6 Chemical Transformation of Trans5α",
+      "text": "2.6 Chemical transformation of Trans5α",
       "level": 3,
-      "attributes": "#protocol-chemical-transformation-of-trans5 toc=\"Chemical Transformation of Trans5α\"",
+      "attributes": "#protocol-chemical-transformation-of-trans5 toc=\"Chemical transformation of Trans5α\"",
       "_template": "heading"
     },
     {
@@ -237,15 +237,15 @@
       "_template": "text"
     },
     {
-      "title": "（PDF“6.Chemical Transformation of Trans5α Chemically Competent Cells”）",
+      "title": "Chemical transformation of Trans5α (PDF)",
       "height": 650,
       "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-c810ddc4deed-protocol-06.pdf",
       "_template": "pdf"
     },
     {
-      "text": "2.7 Yeast Transformation",
+      "text": "2.7 Yeast transformation",
       "level": 3,
-      "attributes": "#protocol-yeast-transformation toc=\"Yeast Transformation\"",
+      "attributes": "#protocol-yeast-transformation toc=\"Yeast transformation\"",
       "_template": "heading"
     },
     {
@@ -253,15 +253,15 @@
       "_template": "text"
     },
     {
-      "title": "（PDF“7.Yeast Transformation”）",
+      "title": "Yeast transformation (PDF)",
       "height": 650,
       "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-94e1d5b82d0f-protocol-07.pdf",
       "_template": "pdf"
     },
     {
-      "text": "2.8 Agarose Gel Electrophoresis",
+      "text": "2.8 Agarose gel electrophoresis",
       "level": 3,
-      "attributes": "#protocol-agarose-gel-electrophoresis toc=\"Agarose Gel Electrophoresis\"",
+      "attributes": "#protocol-agarose-gel-electrophoresis toc=\"Agarose gel electrophoresis\"",
       "_template": "heading"
     },
     {
@@ -269,15 +269,15 @@
       "_template": "text"
     },
     {
-      "title": "（PDF“8.Agarose Gel Electrophoresis”）",
+      "title": "Agarose gel electrophoresis (PDF)",
       "height": 650,
       "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-4bee1bb6f8a3-protocol-08.pdf",
       "_template": "pdf"
     },
     {
-      "text": "2.9 Colony PCR Amplification",
+      "text": "2.9 Colony PCR amplification",
       "level": 3,
-      "attributes": "#protocol-colony-pcr-amplification toc=\"Colony PCR Amplification\"",
+      "attributes": "#protocol-colony-pcr-amplification toc=\"Colony PCR amplification\"",
       "_template": "heading"
     },
     {
@@ -285,15 +285,15 @@
       "_template": "text"
     },
     {
-      "title": "（PDF“9.Colony PCR Amplification”）",
+      "title": "Colony PCR amplification (PDF)",
       "height": 650,
       "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-c2aebd95ee12-protocol-09.pdf",
       "_template": "pdf"
     },
     {
-      "text": "2.10 Restriction Enzyme Digestion Reaction",
+      "text": "2.10 Restriction enzyme digestion reaction",
       "level": 3,
-      "attributes": "#protocol-restriction-enzyme-digestion-reaction toc=\"Restriction Enzyme Digestion Reaction\"",
+      "attributes": "#protocol-restriction-enzyme-digestion-reaction toc=\"Restriction enzyme digestion reaction\"",
       "_template": "heading"
     },
     {
@@ -301,15 +301,15 @@
       "_template": "text"
     },
     {
-      "title": "（PDF“10.Restriction Enzyme Digestion Reaction”）",
+      "title": "Restriction enzyme digestion reaction (PDF)",
       "height": 650,
       "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-6c92e753b05a-protocol-10.pdf",
       "_template": "pdf"
     },
     {
-      "text": "2.11 Preparation of Common Antibiotics and Culture Media",
+      "text": "2.11 Preparation of common antibiotics and culture media",
       "level": 3,
-      "attributes": "#protocol-preparation-of-common-antibiotics-and-culture-media toc=\"Preparation of Common Antibiotics and Culture Media\"",
+      "attributes": "#protocol-preparation-of-common-antibiotics-and-culture-media toc=\"Preparation of common antibiotics and culture media\"",
       "_template": "heading"
     },
     {
@@ -317,15 +317,15 @@
       "_template": "text"
     },
     {
-      "title": "（PDF“11.Preparation of Common Antibiotics and Culture Media”）",
+      "title": "Preparation of common antibiotics and culture media (PDF)",
       "height": 650,
       "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-05ccf4cb7bd5-protocol-11.pdf",
       "_template": "pdf"
     },
     {
-      "text": "2.12 Preservation and Recovery of Glycerol Stocks",
+      "text": "2.12 Preservation and recovery of glycerol stocks",
       "level": 3,
-      "attributes": "#protocol-preservation-and-recovery-of-glycerol-stocks toc=\"Preservation and Recovery of Glycerol Stocks\"",
+      "attributes": "#protocol-preservation-and-recovery-of-glycerol-stocks toc=\"Preservation and recovery of glycerol stocks\"",
       "_template": "heading"
     },
     {
@@ -333,15 +333,15 @@
       "_template": "text"
     },
     {
-      "title": "（PDF“12.Preservation and Recovery of Glycerol Stocks”）",
+      "title": "Preservation and recovery of glycerol stocks (PDF)",
       "height": 650,
       "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-fa5162f5aaca-protocol-12.pdf",
       "_template": "pdf"
     },
     {
-      "text": "2.13 Extraction of Yeast Genomic DNA",
+      "text": "2.13 Extraction of yeast genomic DNA",
       "level": 3,
-      "attributes": "#protocol-extraction-of-yeast-genomic-dna toc=\"Extraction of Yeast Genomic DNA\"",
+      "attributes": "#protocol-extraction-of-yeast-genomic-dna toc=\"Extraction of yeast genomic DNA\"",
       "_template": "heading"
     },
     {
@@ -349,15 +349,15 @@
       "_template": "text"
     },
     {
-      "title": "（PDF“13.Extraction of Yeast Genomic DNA”）",
+      "title": "Extraction of yeast genomic DNA (PDF)",
       "height": 650,
       "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-01699080a847-protocol-13.pdf",
       "_template": "pdf"
     },
     {
-      "text": "2.14 Observation of Fluorescent Molecules",
+      "text": "2.14 Observation of fluorescent molecules",
       "level": 3,
-      "attributes": "#protocol-observation-of-fluorescent-molecules toc=\"Observation of Fluorescent Molecules\"",
+      "attributes": "#protocol-observation-of-fluorescent-molecules toc=\"Observation of fluorescent molecules\"",
       "_template": "heading"
     },
     {
@@ -365,27 +365,27 @@
       "_template": "text"
     },
     {
-      "title": "（PDF“14.Observation of Fluorescent Molecules Using Fluores”）",
+      "title": "Observation of fluorescent molecules (PDF)",
       "height": 650,
       "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-8d474be66ea7-protocol-14.pdf",
       "_template": "pdf"
     },
     {
-      "text": "2.15 Preparation of Viable Yeast Detection Test Strips via Lyophilization",
+      "text": "2.15 Preparation of viable yeast detection test strips via lyophilization",
       "level": 3,
-      "attributes": "#protocol-preparation-of-viable-yeast-detection-test-strips-via-lyophilization toc=\"Preparation of Viable Yeast Detection Test Strips via Lyophilization\"",
+      "attributes": "#protocol-preparation-of-viable-yeast-detection-test-strips-via-lyophilization toc=\"Preparation of viable yeast detection test strips via lyophilization\"",
       "_template": "heading"
     },
     {
-      "title": "（PDF“15.Preparation of Viable Yeast Detection Test Strips via Lyophilization”）",
+      "title": "Preparation of viable yeast detection test strips via lyophilization (PDF)",
       "height": 650,
       "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-3b75e8981471-protocol-15.pdf",
       "_template": "pdf"
     },
     {
-      "text": "2.16 One Step Cloning 2.0",
+      "text": "2.16 One step cloning 2.0",
       "level": 3,
-      "attributes": "#protocol-one-step-cloning-2-0 toc=\"One Step Cloning 2.0\"",
+      "attributes": "#protocol-one-step-cloning-2-0 toc=\"One step cloning 2.0\"",
       "_template": "heading"
     },
     {
@@ -393,33 +393,33 @@
       "_template": "text"
     },
     {
-      "title": "（PDF“16.Multi-Fragment and Vector Assembly 2.0”）",
+      "title": "One step cloning 2.0 (PDF)",
       "height": 650,
       "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-cb70639f0cf2-protocol-16.pdf",
       "_template": "pdf"
     },
     {
       "_template": "heading",
-      "text": "2.17 Development of a Hydrophobic Vapor-Deposition Coating Process for Test Strips",
+      "text": "2.17 Development of a hydrophobic vapor-deposition coating process for test strips",
       "level": 3,
-      "attributes": "#hydrophobic-vapor-deposition-coating toc=\"2.17 Development of a Hydrophobic Vapor-Deposition Coating Process for Test Strips\""
+      "attributes": "#hydrophobic-vapor-deposition-coating toc=\"Development of a hydrophobic vapor-deposition coating process for test strips\""
     },
     {
       "_template": "pdf",
-      "title": "Development of a Hydrophobic Vapor-Deposition Coating Process for Test Strips",
+      "title": "Development of a hydrophobic vapor-deposition coating process for test strips (PDF)",
       "file": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-adda730d2ef5-r2-adda730d2ef5-protocol-17-hydrophobic-coating.pdf",
       "height": 650
     },
     {
-      "text": "3 Summary of Experimental Design",
+      "text": "Summary of experimental design",
       "level": 2,
-      "attributes": "#summary-of-experimental-design toc=\"Summary of Experimental Design\"",
+      "attributes": "#summary-of-experimental-design toc=\"Summary of experimental design\"",
       "_template": "heading"
     },
     {
-      "text": "3.1 Plasmid Construction",
+      "text": "3.1 Plasmid construction",
       "level": 3,
-      "attributes": "#plasmid-construction toc=\"Plasmid Construction\"",
+      "attributes": "#plasmid-construction toc=\"Plasmid construction\"",
       "_template": "heading"
     },
     {
@@ -427,7 +427,7 @@
       "_template": "text"
     },
     {
-      "title": "Table 2 Plasmids designed and constructed in this project",
+      "title": "Table 2 plasmids designed and constructed in this project",
       "csv": "Name,Number,Description\npRS315-TEF1p-GPR2-sfGFP,BBa_260J9X0X,For knock-in of the constitutively expressed GPR2 gene fused with sfGFP\npRS315-MjDOD-BvCYP76AD5,BBa_26PGUFWX,For knock-in of constitutively expressed betaxanthin-related genes and serves as a template for constructing inducible recombinant fragments\npRS315-sTF,BBa_2687EQID,For storage of recombinant fragments for knock-in of the synthetic transcription factor (sTF)\np414-Cas9-Leu,BBa_262NU08K,Cas9-carrying plasmid with altered nutritional selection marker\np426-SNR52p-gGal4-SUP4t,BBa_269ZKY8C,Carries gRNA sequence targeting the Gal4 gene\np426-SNR52p-gSTE12-SUP4t,BBa_2612RHXO,Carries gRNA sequence targeting the STE12 gene\np426-SNR52p-gSTE2-SUP4t,BBa_26TQ18PN,Carries gRNA sequence targeting the STE2 gene\npRS315-TEF1p-GPR2,BBa_26ZT9H48,For knock-in of the constitutively expressed GPR2 gene\npRS315-TEF1p-GPR2-N84V,BBa_2628FZFH,For knock-in of the constitutively expressed N84V-mutated GPR2 gene\npRS315-TEF1p-GPR2-V368R,BBa_26XA2JFQ,For knock-in of the constitutively expressed V368R-mutated GPR2 gene\n",
       "_template": "datatable",
       "sourceCellRuns": [
@@ -745,9 +745,9 @@
       "sourceTableSourceId": "SRC030"
     },
     {
-      "text": "3.2 Strain Construction",
+      "text": "3.2 Strain construction",
       "level": 3,
-      "attributes": "#strain-construction toc=\"Strain Construction\"",
+      "attributes": "#strain-construction toc=\"Strain construction\"",
       "_template": "heading"
     },
     {
@@ -764,7 +764,7 @@
       "_template": "image"
     },
     {
-      "title": "Table 3 Strains designed and constructed in this project",
+      "title": "Table 3 strains designed and constructed in this project",
       "csv": "Number,Description\nNKU-Y01,\"Matα; ura3-52, trp1-289, leu2-3,112,his3Δ1; MAL2-8c; SUC2（Saccharomyces cerevisiae CEN.PK2-1C）\"\nNKU-Y02,Strain CEN.PK2-1C derivative with ΔGal80\nNKU-Y03,Strain NKU-Y02 derivative with -GPR2-sfGFP\nNKU-Y04,Strain NKU-Y02 transformed with pRS315-MjDOD-BvCYP76AD5\nNKU-Y05,Strain NKU-Y02 derivative with -sTF\nNKU-Y06,Strain NKU-Y05 derivative with -MjDOD :  -BvCYP76AD5\nNKU-Y07,Strain NKU-Y06 derivative with -GPR2\nNKU-Y08,Strain NKU-Y06 derivative with -GPR2-N84V\nNKU-Y09,Strain NKU-Y06 derivative with -GPR2-V368R\n",
       "_template": "datatable",
       "sourceCellRuns": [
@@ -986,9 +986,9 @@
       "sourceTableSourceId": "SRC030"
     },
     {
-      "text": "3.3 sgRNA Design",
+      "text": "3.3 sgRNA design",
       "level": 3,
-      "attributes": "#sgrna-design toc=\"sgRNA Design\"",
+      "attributes": "#sgrna-design toc=\"sgRNA design\"",
       "_template": "heading"
     },
     {

@@ -17,63 +17,63 @@
     },
     {
       "_template": "heading",
-      "text": "Docking: From Natural Sensing Mechanisms to Receptor Engineering",
+      "text": "Docking: from natural sensing mechanisms to receptor engineering",
       "level": 2,
-      "attributes": "#docking-from-natural-sensing-mechanisms-to-receptor-engineering toc=\"Docking: From Natural Sensing Mechanisms to Receptor Engineering\""
+      "attributes": "#docking-from-natural-sensing-mechanisms-to-receptor-engineering toc=\"Docking: from natural sensing mechanisms to receptor engineering\""
     },
     {
       "_template": "heading",
-      "text": "Ascaroside Signals and the Two-Channel Design",
+      "text": "1.1 Ascaroside signals and the two-channel design",
       "level": 3,
-      "attributes": "#ascaroside-signals-and-the-two-channel-design toc=\"Ascaroside Signals and the Two-Channel Design\""
+      "attributes": "#ascaroside-signals-and-the-two-channel-design toc=\"Ascaroside signals and the two-channel design\""
     },
     {
       "_template": "text",
-      "body": "Ascarosides are a group of chemical signals released by nematodes. Manosalva et al. detected ascr#18 in cultures of several plant-parasitic nematode species. It was prominent in the secretion profiles of the infective juveniles of the root-knot nematodes examined, while its detection differed in adult samples. Ascr#18 is also not exclusive to plant-parasitic nematodes. [B01]"
+      "body": "Ascarosides are a group of chemical signals released by nematodes. Manosalva et al. detected <strong>ascaroside #18 (ascr#18)</strong> in cultures of several <strong>plant-parasitic nematode (PPN)</strong> species. It was prominent in the secretion profiles of the infective juveniles of the root-knot nematodes examined, while its detection differed in adult samples. ascr#18 is also not exclusive to PPNs. [B01]"
     },
     {
       "_template": "text",
-      "body": "This project aims to establish two channels based on differential responses to ascr#18 and ascr#3 and to investigate how the two responses and their ratio relate to plant-parasitic nematode abundance. Quantitative interpretation of the signals requires consideration of species, developmental stage, and sampling conditions, together with concentration-to-readout calibration."
+      "body": "This project aims to establish two channels based on differential responses to ascr#18 and <strong>ascaroside #3 (ascr#3)</strong> and to investigate how the two responses and their ratio relate to PPN abundance. Quantitative interpretation of the signals requires consideration of species, developmental stage, and sampling conditions, together with concentration-to-readout calibration."
     },
     {
       "_template": "heading",
-      "text": "Sensing, Localization, and Signaling Connections of Fungal Receptors",
+      "text": "1.2 Sensing, localization, and signaling connections of fungal receptors",
       "level": 3,
-      "attributes": "#sensing-localization-and-signaling-connections-of-fungal-receptors toc=\"Sensing, Localization, and Signaling Connections of Fungal Receptors\""
+      "attributes": "#sensing-localization-and-signaling-connections-of-fungal-receptors toc=\"Sensing, localization, and signaling connections of fungal receptors\""
     },
     {
       "_template": "text",
-      "body": "Nematode-trapping fungi can sense ascarosides and initiate processes associated with predation. [1] The G protein-coupled receptors (GPCRs) considered in this project include Gpr2, Gpr3, and GprC. Their sensing functions and downstream signaling have been investigated in different fungal systems. [B02, B03]"
+      "body": "Nematode-trapping fungi can sense ascarosides and initiate processes associated with predation. [1] The <strong>G protein-coupled receptors (GPCRs)</strong> considered in this project include Gpr2, Gpr3, and GprC. Their sensing functions and downstream signaling have been investigated in different fungal systems. [B02, B03]"
     },
     {
       "_template": "text",
-      "body": "Kuo et al. studied Gpr2 and Gpr3 in the nematode-trapping fungus *Arthrobotrys oligospora*. Both ascr#3 and ascr#7 induced internalization of these receptors. Following overexpression of GPR2 or GPR3, trap formation induced by either ascaroside was higher than in the corresponding WT controls. [B02, Figures 2 and 3]"
+      "body": "Kuo et al. studied Gpr2 and Gpr3 in the nematode-trapping fungus <strong><em>Arthrobotrys oligospora</em> (<em>A. oligospora</em>)</strong>. Both ascr#3 and <strong>ascaroside #7 (ascr#7)</strong> induced internalization of these receptors. Following overexpression of GPR2 or GPR3, trap formation induced by either ascaroside was higher than in the corresponding <strong>wild type (WT)</strong> controls. [B02, Figures 2 and 3]"
     },
     {
       "_template": "text",
-      "body": "The study also used heterologous coexpression and co-immunoprecipitation in *Saccharomyces cerevisiae* to observe interactions of Gpr2 and Gpr3 with Gpa2. In the fungus, constitutively active Gpa2 (Q208L) increased trap formation in the gpr2 deletion strain under ascr#3 and ascr#7 exposure, whereas the corresponding comparisons in the gpr3 deletion background showed no significant increase. [B02, Figure 4]"
+      "body": "The study also used heterologous coexpression and co-immunoprecipitation in <strong><em>Saccharomyces cerevisiae</em> (<em>S.c</em>)</strong> to observe interactions of Gpr2 and Gpr3 with Gpa2. In the fungus, constitutively active Gpa2 (Q208L) increased trap formation in the gpr2 deletion strain under ascr#3 and ascr#7 exposure, whereas the corresponding comparisons in the gpr3 deletion background showed no significant increase. [B02, Figure 4]"
     },
     {
       "_template": "text",
-      "body": "Hu et al. observed differences in GprC localization in *Arthrobotrys flagrans* depending on expression conditions and hyphal region. Under the strong oliC promoter, GprC–GFP predominantly showed mitochondrial localization. Under the native promoter, mitochondrial signals were visible at hyphal tips, while plasma membrane localization was observed in regions farther from the tips. The study also found that nematode exposure increased the oxygen consumption rate of WT, whereas gprC or gasA deletion strains did not show the corresponding oxygen consumption response. [B03, Figures 2 and 3]"
+      "body": "Hu et al. observed differences in GprC localization in <strong><em>Arthrobotrys flagrans</em> (<em>A. flagrans</em>)</strong> depending on expression conditions and hyphal region. The fusion uses <strong>green fluorescent protein (GFP)</strong> as a localization reporter. Under the strong oliC promoter, GprC–GFP predominantly showed mitochondrial localization. Under the native promoter, mitochondrial signals were visible at hyphal tips, while plasma membrane localization was observed in regions farther from the tips. The study also found that nematode exposure increased the oxygen consumption rate of WT, whereas gprC or gasA deletion strains did not show the corresponding oxygen consumption response. [B03, Figures 2 and 3]"
     },
     {
       "_template": "text",
-      "body": "This project aims to connect recognition signals from natural receptors to the yeast pheromone mitogen-activated protein kinase (MAPK) pathway. Establishing this connection requires examining receptor localization in yeast and coupling to G proteins."
+      "body": "This project aims to connect recognition signals from natural receptors to the yeast pheromone <strong>mitogen-activated protein kinase (MAPK)</strong> pathway. Establishing this connection requires examining receptor localization in yeast and coupling to <strong>guanine nucleotide-binding proteins (G proteins)</strong>."
     },
     {
       "_template": "heading",
-      "text": "Engineering Differential Responses to Two Ligands and Comparing Receptor Structures",
+      "text": "1.3 Engineering differential responses to two ligands and comparing receptor structures",
       "level": 3,
-      "attributes": "#engineering-differential-responses-to-two-ligands-and-comparing-receptor-structures toc=\"Engineering Differential Responses to Two Ligands and Comparing Receptor Structures\""
+      "attributes": "#engineering-differential-responses-to-two-ligands-and-comparing-receptor-structures toc=\"Engineering differential responses to two ligands and comparing receptor structures\""
     },
     {
       "_template": "text",
-      "body": "Designing differential responses to two ligands requires further investigation of which receptor positions the two ascarosides may contact and whether changing the relevant side chains can affect recognition. Molecular docking generates candidate poses for a given receptor structure, search region, and ligand chemical state, then ranks them using an approximate scoring function. Interaction fingerprints (IFPs) describe the contacting residues and interaction types within these candidate poses. Combining scores with contact distributions allows us to propose substitution hypotheses aimed at differences between the two ligands. [B04, B05; 4–5]"
+      "body": "Designing differential responses to two ligands requires further investigation of which receptor positions the two ascarosides may contact and whether changing the relevant side chains can affect recognition. Molecular docking generates candidate poses for a given receptor structure, search region, and ligand chemical state, then ranks them using an approximate scoring function. <strong>Interaction fingerprints (IFPs)</strong> describe the contacting residues and interaction types within these candidate poses. Combining scores with contact distributions allows us to propose substitution hypotheses aimed at differences between the two ligands. [B04, B05; 4–5]"
     },
     {
       "_template": "text",
-      "body": "Cross-receptor comparison also involves identifying structural correspondence despite low sequence similarity. DAF-37 and SRBC-64 come from *Caenorhabditis elegans* and have low overall sequence similarity to the fungal receptors in this project. Hu et al. combined transmembrane helices TM1–4 from nematode receptors with TM5–7 from GprC and tested the resulting constructs in an *A. flagrans* gprC deletion background. Chimeric receptors containing segments from SRBC-64, SRBC-66, or DAF-38 restored trap formation, whereas the construct containing the DAF-37 segment did not produce the same recovery. [B03, Figure 4]"
+      "body": "Cross-receptor comparison also involves identifying structural correspondence despite low sequence similarity. DAF-37 and SRBC-64 come from <strong><em>Caenorhabditis elegans</em> (<em>Ce</em>)</strong> and have low overall sequence similarity to the fungal receptors in this project. Hu et al. combined transmembrane helices TM1–4 from nematode receptors with TM5–7 from GprC and tested the resulting constructs in an <em>A. flagrans</em> gprC deletion background. Chimeric receptors containing segments from SRBC-64, SRBC-66, or DAF-38 restored trap formation, whereas the construct containing the DAF-37 segment did not produce the same recovery. [B03, Figure 4]"
     },
     {
       "_template": "text",
@@ -81,9 +81,9 @@
     },
     {
       "_template": "heading",
-      "text": "MD: From Binding Poses to Dynamic Behavior",
+      "text": "MD: from binding poses to dynamic behavior",
       "level": 2,
-      "attributes": "#md-from-binding-poses-to-dynamic-behavior toc=\"MD: From Binding Poses to Dynamic Behavior\""
+      "attributes": "#md-from-binding-poses-to-dynamic-behavior toc=\"MD: from binding poses to dynamic behavior\""
     },
     {
       "_template": "text",
@@ -91,27 +91,27 @@
     },
     {
       "_template": "text",
-      "body": "Molecular dynamics (MD) uses a force field to describe molecular interactions and simulate molecular motion over a defined period. Combining protein force fields with membrane-system construction methods allows receptor–ligand conformational changes to be studied in a lipid bilayer, solvent, and ionic environment. [7–8] Within the selected starting systems and sampling scope, this project examines these changes by jointly analyzing receptor motion and local ligand behavior. [B12]"
+      "body": "<strong>Molecular dynamics (MD)</strong> uses a force field to describe molecular interactions and simulate molecular motion over a defined period. Combining protein force fields with membrane-system construction methods allows receptor–ligand conformational changes to be studied in a lipid bilayer, solvent, and ionic environment. [7–8] Within the selected starting systems and sampling scope, this project examines these changes by jointly analyzing receptor motion and local ligand behavior. [B12]"
     },
     {
       "_template": "heading",
-      "text": "ODE: From Receptor Activation to a Colorimetric Response",
+      "text": "ODE: from receptor activation to a colorimetric response",
       "level": 2,
-      "attributes": "#ode-from-receptor-activation-to-a-colorimetric-response toc=\"ODE: From Receptor Activation to a Colorimetric Response\""
+      "attributes": "#ode-from-receptor-activation-to-a-colorimetric-response toc=\"ODE: from receptor activation to a colorimetric response\""
     },
     {
       "_template": "text",
-      "body": "Ligand recognition is the starting point of the sensor response, while colorimetric output also depends on the G protein cycle, downstream signaling, and the reporter module. Quantitative studies of the yeast G protein cycle and pheromone pathway provide kinetic models for these processes. GPCR engineering studies further show that the configurations of the receptor, G protein, and output modules jointly influence the system response. [9–11] Research connecting GPCR signaling to GAL output through synthetic transcription factors provides further guidance for constructing a signaling chain from receptor activation to color development. [12–13]"
+      "body": "Ligand recognition is the starting point of the sensor response, while colorimetric output also depends on the G protein cycle, downstream signaling, and the reporter module. Quantitative studies of the yeast G protein cycle and pheromone pathway provide kinetic models for these processes. GPCR engineering studies further show that the configurations of the receptor, G protein, and output modules jointly influence the system response. [9–11] Research connecting GPCR signaling to GAL output through <strong>synthetic transcription factors (sTFs)</strong> provides further guidance for constructing a signaling chain from receptor activation to color development. [12–13]"
     },
     {
       "_template": "text",
-      "body": "This project uses ordinary differential equations (ODEs) and effective response relationships to connect receptor activation with color development. Modeling requires selecting which dynamic steps to retain according to the research question and the observations available from experiments, while combining intermediate processes that are difficult to measure separately. Published models provide reaction structures that can inform the model, while specific parameters are calibrated using the project’s constructs and experimental readouts."
+      "body": "This project uses <strong>ordinary differential equations (ODEs)</strong> and effective response relationships to connect receptor activation with color development. Modeling requires selecting which dynamic steps to retain according to the research question and the observations available from experiments, while combining intermediate processes that are difficult to measure separately. Published models provide reaction structures that can inform the model, while specific parameters are calibrated using the project’s constructs and experimental readouts."
     },
     {
       "_template": "heading",
-      "text": "Economic Benefit Modeling: From Detection Information to Management Decisions",
+      "text": "Economic benefit modeling: from detection information to management decisions",
       "level": 2,
-      "attributes": "#economic-benefit-modeling-from-detection-information-to-management-decisions toc=\"Economic Benefit Modeling: From Detection Information to Management Decisions\""
+      "attributes": "#economic-benefit-modeling-from-detection-information-to-management-decisions toc=\"Economic benefit modeling: from detection information to management decisions\""
     },
     {
       "_template": "text",
@@ -129,9 +129,9 @@
     },
     {
       "_template": "heading",
-      "text": "Docking and Receptor Recognition",
+      "text": "5.1 Docking and receptor recognition",
       "level": 3,
-      "attributes": "#docking-and-receptor-recognition toc=\"Docking and Receptor Recognition\""
+      "attributes": "#docking-and-receptor-recognition toc=\"Docking and receptor recognition\""
     },
     {
       "_template": "text",
@@ -207,9 +207,9 @@
     },
     {
       "_template": "heading",
-      "text": "MD and Membrane System Simulations",
+      "text": "5.2 MD and membrane system simulations",
       "level": 3,
-      "attributes": "#md-and-membrane-system-simulations toc=\"MD and Membrane System Simulations\""
+      "attributes": "#md-and-membrane-system-simulations toc=\"MD and membrane system simulations\""
     },
     {
       "_template": "text",
@@ -221,9 +221,9 @@
     },
     {
       "_template": "heading",
-      "text": "ODE Modeling and Signal Output",
+      "text": "5.3 ODE modeling and signal output",
       "level": 3,
-      "attributes": "#ode-modeling-and-signal-output toc=\"ODE Modeling and Signal Output\""
+      "attributes": "#ode-modeling-and-signal-output toc=\"ODE modeling and signal output\""
     },
     {
       "_template": "text",
@@ -247,9 +247,9 @@
     },
     {
       "_template": "heading",
-      "text": "Economic Benefit Modeling and Management Decisions",
+      "text": "5.4 Economic benefit modeling and management decisions",
       "level": 3,
-      "attributes": "#economic-benefit-modeling-and-management-decisions toc=\"Economic Benefit Modeling and Management Decisions\""
+      "attributes": "#economic-benefit-modeling-and-management-decisions toc=\"Economic benefit modeling and management decisions\""
     },
     {
       "_template": "text",

@@ -16,35 +16,35 @@
       "body": "<div class=\"reading-layout\" lang=\"en\">"
     },
     {
-      "text": "1 Background",
+      "text": "Background",
       "level": 2,
       "attributes": "#background toc=\"Background\"",
       "_template": "heading"
     },
     {
-      "text": "1.1 Silent Killers Underground: The Urgent Threat of Plant-Parasitic Nematodes",
+      "text": "1.1 Silent killers underground: the urgent threat of plant-parasitic nematodes",
       "level": 3,
-      "attributes": "#11-silent-killers-underground-the-urgent-threat-of-plant-parasitic-nematodes toc=\"Plant-Parasitic Nematodes\"",
+      "attributes": "#11-silent-killers-underground-the-urgent-threat-of-plant-parasitic-nematodes toc=\"Plant-parasitic nematodes\"",
       "_template": "heading"
     },
     {
-      "body": "<p>Plant-parasitic nematodes are among the most destructive pathogens in global agricultural production. Widely distributed in cultivated soils, they parasitize plant roots, disrupt nutrient uptake pathways and trigger secondary diseases, posing severe threats to crop yield and quality. Statistically, plant-parasitic nematodes cause up to 157 billion dollars in annual crop losses worldwide across more than 20 major cash crops<sup>[1]</sup>. Among them, sedentary endoparasitic nematodes represent the most harmful group due to their unique parasitic lifestyle, strong dispersal capacity and difficult control<sup>[2]</sup>. As two representative species, <em>Heterodera glycines</em> and <em>Meloidogyne incognita</em> exhibit typical taxonomic and biological features. They continuously endanger the production of globally critical crops and serve as core model organisms for research on soil nematode management (Figure 1).</p>",
+      "body": "<p><strong>Plant-parasitic nematodes (PPNs)</strong> are among the most destructive pathogens in global agricultural production. Widely distributed in cultivated soils, they parasitize plant roots, disrupt nutrient uptake pathways and trigger secondary diseases, posing severe threats to crop yield and quality. Statistically, PPNs cause up to 157 billion dollars in annual crop losses worldwide across more than 20 major cash crops<sup>[1]</sup>. Among them, sedentary endoparasitic nematodes represent the most harmful group due to their unique parasitic lifestyle, strong dispersal capacity and difficult control<sup>[2]</sup>. As two representative species, <strong><em>Heterodera glycines</em> (<em>H. glycines</em>)</strong> and <strong><em>Meloidogyne incognita</em> (<em>Mi</em>)</strong> exhibit typical taxonomic and biological features. They continuously endanger the production of globally critical crops and serve as core model organisms for research on soil nematode management (Figure 1).</p>",
       "_template": "text"
     },
     {
       "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-a69f0a5adee6-fig1.avif",
       "alt": "Figure 1. Symptoms of two major plant-parasitic nematodes on soybean roots. (a) Meloidogyne incognita: obvious root galls formed on infected soybean roots. (b) Heterodera glycines: white lemon-shaped mature females protruding from soybean roots (arrows). Note that soybean cyst nematode does not form root galls.",
-      "body": "<p><strong>Figure 1. Symptoms of two major plant-parasitic nematodes on soybean roots. </strong>(a) <em>Meloidogyne incognita</em>: obvious root galls formed on infected soybean roots. (b) <em>Heterodera glycines</em>: white lemon-shaped mature females protruding from soybean roots (arrows). Note that soybean cyst nematode does not form root galls. Source: <em>Management of Plant-Parasitic Nematodes in Florida Soybean Production</em> (NG018), UF/IFAS EDIS. Used for educational demonstration only.</p>",
+      "body": "<p><strong>Figure 1. Symptoms of two major PPNs on soybean roots. </strong>(a) <em>Mi</em>: obvious root galls formed on infected soybean roots. (b) <em>H. glycines</em>: white lemon-shaped mature females protruding from soybean roots (arrows). Note that soybean cyst nematode does not form root galls. Source: <em>Management of Plant-Parasitic Nematodes in Florida Soybean Production</em> (NG018), UF/IFAS EDIS. Used for educational demonstration only.</p>",
       "accompanyingBody": "",
       "_template": "image",
       "scale": "70"
     },
     {
-      "body": "<p>Plant-parasitic nematodes of these two species exert substantial economic and ecological impacts. <em>Heterodera glycines</em> specifically parasitizes legumes such as soybean and common bean. After second-stage juveniles (J2) invade host roots, they secrete effectors to induce syncytial feeding sites, which leads to root lignification, stunting and chlorosis of plants. In heavily infested fields, soybean yield losses can reach 30%–80% or even total crop failure. The cysts of this nematode can remain dormant in soil for more than 10 years, serving as persistent primary inoculum sources that are hard to eradicate, making it the most devastating disease in major soybean-producing regions worldwide<sup>[3]</sup>.</p>",
+      "body": "<p>PPNs of these two species exert substantial economic and ecological impacts. <em>H. glycines</em> specifically parasitizes legumes such as soybean and common bean. After <strong>second-stage juveniles (J2)</strong> invade host roots, they secrete effectors to induce syncytial feeding sites, which leads to root lignification, stunting and chlorosis of plants. In heavily infested fields, soybean yield losses can reach 30%–80% or even total crop failure. The cysts of this nematode can remain dormant in soil for more than 10 years, serving as persistent primary inoculum sources that are hard to eradicate, making it the most devastating disease in major soybean-producing regions worldwide<sup>[3]</sup>.</p>",
       "_template": "text"
     },
     {
-      "body": "<p>As a polyphagous sedentary endoparasitic nematode, <em>Meloidogyne incognita</em> infects over 3000 plant species including vegetables, grain and cash crops such as tomato, cucumber, cotton and maize<sup>[4]</sup>. Losses caused by this nematode are especially severe in protected agriculture due to continuous cropping obstacles. Notably, <em>M. incognita</em> secretes secondary metabolites such as 6-methoxybenzoxazolin-2-one to modulate the rhizosphere microbiome, improving its host-finding capacity and further expanding its damage range<sup>[5]</sup>.</p>",
+      "body": "<p>As a polyphagous sedentary endoparasitic nematode, <em>Mi</em> infects over 3000 plant species including vegetables, grain and cash crops such as tomato, cucumber, cotton and maize<sup>[4]</sup>. Losses caused by this nematode are especially severe in protected agriculture due to continuous cropping obstacles. Notably, <em>Mi</em> secretes secondary metabolites such as 6-methoxybenzoxazolin-2-one to modulate the rhizosphere microbiome, improving its host-finding capacity and further expanding its damage range<sup>[5]</sup>.</p>",
       "_template": "text"
     },
     {
@@ -52,37 +52,41 @@
       "_template": "text"
     },
     {
-      "text": "1.2 Control Dilemma: The Critical Weakness of Current Nematode Control Systems",
+      "text": "1.2 Control dilemma: the critical weakness of current nematode control systems",
       "level": 3,
-      "attributes": "#control-dilemma toc=\"Control Dilemma\"",
+      "attributes": "#control-dilemma toc=\"Control dilemma\"",
       "_template": "heading"
     },
     {
-      "body": "<p>Current major management strategies for nematode diseases include chemical fumigation, non-fumigant nematicides, novel nematicides, biological control, resistant cultivar breeding, and crop rotation. To maximize the efficacy of these control approaches while lowering their environmental risks, multiple detection technologies for plant-parasitic nematodes have been developed<sup>[6]</sup>. Nevertheless, these methods generally suffer from delayed detection, high cost, poor portability, and heavy reliance on professional operators (Table 1).</p>",
+      "body": "<p>Current major management strategies for nematode diseases include chemical fumigation, non-fumigant nematicides, novel nematicides, biological control, resistant cultivar breeding, and crop rotation. To maximize the efficacy of these control approaches while lowering their environmental risks, multiple detection technologies for PPNs have been developed<sup>[6]</sup>. Nevertheless, these methods generally suffer from delayed detection, high cost, poor portability, and heavy reliance on professional operators (Table 1).</p>",
       "_template": "text"
+    },
+    {
+      "_template": "text",
+      "body": "<p>The methods compared below include <strong>polymerase chain reaction (PCR)</strong>, <strong>quantitative polymerase chain reaction (qPCR)</strong>, <strong>next-generation sequencing (NGS)</strong>, <strong>loop-mediated isothermal amplification (LAMP)</strong>, <strong>recombinase polymerase amplification (RPA)</strong>, and <strong>convolutional neural network (CNN)</strong> approaches.</p>"
     },
     {
       "body": "| Method                        | Cost     | Early-Warning Capacity | Portability | Professional Dependence |\n| ----------------------------- | -------- | ---------------------- | ----------- | ----------------------- |\n| Morphological Methods         | low      | poor                   | moderate    | high                    |\n| Biochemical Methods           | moderate | poor                   | low         | high                    |\n| PCR / qPCR                    | high     | poor                   | low         | high                    |\n| NGS and Metabarcoding         | high     | poor                   | low         | high                    |\n| LAMP / RPA                    | moderate | poor                   | high        | high                    |\n| Conventional Image Processing | moderate | poor                   | moderate    | high                    |\n| Deep Learning / CNN           | high     | poor                   | moderate    | high                    |\n| Hyperspectral Imaging         | high     | poor                   | low         | high                    |\n| Remote Sensing                | high     | poor                   | low         | high                    |\n",
       "_template": "text"
     },
     {
-      "body": "Table 1. Comparison of detection methods for plant-parasitic nematodes\n",
+      "body": "Table 1. Comparison of detection methods for PPNs\n",
       "_template": "text"
     },
     {
-      "text": "1.3 Dawn Breaks: Nematophagous Fungi Fuel Innovation in Nematode Detection",
+      "text": "1.3 Dawn breaks: nematophagous fungi fuel innovation in nematode detection",
       "level": 3,
-      "attributes": "#nematophagous-fungi toc=\"Nematophagous Fungi\"",
+      "attributes": "#nematophagous-fungi toc=\"Nematophagous fungi\"",
       "_template": "heading"
     },
     {
-      "body": "<p>Previous studies revealed that ascaroside #18 (ascr#18) acts as the dominant ascaroside across multiple genera of plant-parasitic nematodes (Figure 2). In contrast, larvae of free-living nematodes such as <em>Caenorhabditis elegans</em> mainly produce ascaroside #3 (ascr#3) and ascaroside #5 (ascr#5) (Figure 3)<sup>[7]</sup>.</p>",
+      "body": "<p>Previous studies revealed that <strong>ascaroside #18 (ascr#18)</strong> acts as the dominant ascaroside across multiple genera of PPNs (Figure 2). In contrast, larvae of free-living nematodes such as <strong><em>Caenorhabditis elegans</em> (<em>Ce</em>)</strong> mainly produce <strong>ascaroside #3 (ascr#3)</strong> and <strong>ascaroside #5 (ascr#5)</strong> (Figure 3)<sup>[7]</sup>.</p>",
       "_template": "text"
     },
     {
       "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-4aaded62bc25-fig2.avif",
       "alt": "Figure 2. Ascaroside profiles in plant-parasitic nematodes.",
-      "body": "<p><strong>Figure 2. Ascaroside profiles in plant-parasitic nematodes. </strong>Source: Manosalva P, et al. (2015), <em>Nature Communications</em>, DOI:10.1038/ncomms8795.</p>",
+      "body": "<p><strong>Figure 2. Ascaroside profiles in PPNs. </strong>Source: Manosalva P, et al. (2015), <em>Nature Communications</em>, DOI:10.1038/ncomms8795.</p>",
       "accompanyingBody": "",
       "_template": "image"
     },
@@ -96,15 +100,11 @@
     {
       "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-df028eb5874f-fig4.avif",
       "alt": "Figure 4. GPCR-mediated prey pheromone sensing pathway in the nematode-trapping fungus Arthrobotrys oligospora.",
-      "body": "<p><strong>Figure 4. GPCR-mediated prey pheromone sensing pathway in the nematode-trapping fungus </strong><strong><em>Arthrobotrys oligospora</em></strong><strong>. </strong>Source: Kuo C-Y, et al. (2024), <em>Nature Microbiology</em>, DOI:10.1038/s41564-024-01647-4.</p>",
+      "body": "<p><strong>Figure 4. GPCR-mediated prey pheromone sensing pathway in the nematode-trapping fungus </strong><strong><em>A. oligospora</em></strong><strong>. </strong>Source: Kuo C-Y, et al. (2024), <em>Nature Microbiology</em>, DOI:10.1038/s41564-024-01647-4.</p>",
       "layout": "stack",
       "imageWidth": "medium",
-      "accompanyingBody": "<p>Recent studies demonstrate that the G protein-coupled receptor (GPCR) GPR2 from the nematode-trapping fungus <em>Arthrobotrys oligospora</em> can sense ascaroside #3 (ascr#3). It triggers a MAPK cascade to activate downstream gene expression and ultimately initiate predatory behavior (Figure 4)<sup> [8]</sup>. This inspired our idea: we could repurpose this receptor to achieve early warning of plant-parasitic nematodes!</p>",
+      "accompanyingBody": "<p>Recent studies demonstrate that the <strong>G protein-coupled receptor (GPCR)</strong> GPR2 from the nematode-trapping fungus <strong><em>Arthrobotrys oligospora</em> (<em>A. oligospora</em>)</strong> can sense ascr#3. It triggers a <strong>mitogen-activated protein kinase (MAPK)</strong> cascade to activate downstream gene expression and ultimately initiate predatory behavior (Figure 4)<sup> [8]</sup>. This inspired our idea: we could repurpose this receptor to achieve early warning of PPNs!</p>",
       "_template": "image"
-    },
-    {
-      "_template": "text",
-      "body": "<p class=\"author-source-link\"><a href=\"/source-archive/#meeting-20261019\" data-source-document=\"meeting-20261019-aabe053205e9\">Original submission (.docx)</a><span role=\"status\" aria-live=\"polite\"></span></p>"
     },
     {
       "_template": "text",
@@ -112,11 +112,11 @@
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\"> Human Practices addresses a central question: how can nematode detection respond to real agricultural needs? For Field Detective's concept of engineered yeast sensing ascarosides and producing observable outputs, we used questionnaires, expert interviews, and field practice to clarify applications and design requirements. Education, outreach, and industry discussions connected the project with potential users and the public. </p>"
+      "body": "<p style=\"text-align:left;\"> <strong>Human Practices (HP)</strong> addresses a central question: how can nematode detection respond to real agricultural needs? For Field Detective's concept of engineered yeast sensing ascarosides and producing observable outputs, we used questionnaires, expert interviews, and field practice to clarify applications and design requirements. Education, outreach, and industry discussions connected the project with potential users and the public. </p>"
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\"> For needs assessment, we collected 369 questionnaire submissions. Respondents prioritized ease of use, accuracy and reliability, and affordability; 53.4% lacked knowledge of plant-parasitic nematodes. These results informed detection-workflow design and science communication. Visits to Tianjin Xiangyu Fruit and Vegetable Garden and the Diliubu Village Vegetable Demonstration Garden explored disease management and production experience, assessing specific needs against local crops and field conditions. </p>"
+      "body": "<p style=\"text-align:left;\"> For needs assessment, we collected 369 questionnaire submissions. Respondents prioritized ease of use, accuracy and reliability, and affordability; 53.4% lacked knowledge of PPNs. These results informed detection-workflow design and science communication. Visits to Tianjin Xiangyu Fruit and Vegetable Garden and the Diliubu Village Vegetable Demonstration Garden explored disease management and production experience, assessing specific needs against local crops and field conditions. </p>"
     },
     {
       "_template": "text",
@@ -132,16 +132,16 @@
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\"> This work integrated user needs, professional advice, and public communication into project development and refined validation priorities with the wet and dry labs. Real samples and technical data will subsequently test relationships between sensor output and nematode information and the usability of the workflow in agricultural settings. Detailed investigations, activity records, and feedback appear on the Human Practices page. </p>"
+      "body": "<p style=\"text-align:left;\"> This work integrated user needs, professional advice, and public communication into project development and refined validation priorities with the wet and dry labs. Real samples and technical data will subsequently test relationships between sensor output and nematode information and the usability of the workflow in agricultural settings. Detailed investigations, activity records, and feedback appear on the HP page. </p>"
     },
     {
       "_template": "text",
       "body": "</section>"
     },
     {
-      "text": "2 Project Design & Strategy",
+      "text": "Project design & strategy",
       "level": 2,
-      "attributes": "#project-design toc=\"Project Design & Strategy\"",
+      "attributes": "#project-design toc=\"Project design & strategy\"",
       "_template": "heading"
     },
     {
@@ -156,9 +156,9 @@
       "body": ""
     },
     {
-      "text": "2.1 Wet Lab",
+      "text": "2.1 Wet lab",
       "level": 3,
-      "attributes": "#wet-lab toc=\"Wet Lab\"",
+      "attributes": "#wet-lab toc=\"Wet lab\"",
       "_template": "heading"
     },
     {
@@ -167,15 +167,15 @@
       "body": "Figure 5. Schematic of ascaroside-specific yeast biosensor construction. Drawn with assistance from ChatGPT.\n",
       "layout": "stack",
       "imageWidth": "wide",
-      "accompanyingBody": "Based on dry-lab screening results, the wet-lab team will build yeast biosensors for the detection of various ascarosides (Figure 5). Experiments using HP-collected soil samples will supply data to support dry-lab ODE modeling. Our final deliverable is a freeze-dried yeast test strip for real-world use.\n",
+      "accompanyingBody": "Based on dry-lab screening results, the wet-lab team will build yeast biosensors for the detection of various ascarosides (Figure 5). Experiments using HP-collected soil samples will supply data to support dry-lab <strong>ordinary differential equation (ODE)</strong> modeling. Our final deliverable is a freeze-dried yeast test strip for real-world use.\n",
       "_template": "image"
     },
     {
-      "body": "<p>Literature shows that <em>Saccharomyces cerevisiae</em> serves as an excellent platform for GPCR display. With only two native GPCR signaling systems that are readily knockable, it is stable, fast-growing and easy to manipulate. Prior work has established yeast biosensing platforms to express heterologous G protein-coupled receptors (GPCRs) on yeast cell surfaces and produce visual readouts<sup>[9]</sup>. We adopt similar strategies to display engineered GPR proteins and achieve visual signal output via betaxanthin.</p>",
+      "body": "<p>Literature shows that <strong><em>Saccharomyces cerevisiae</em> (<em>S.c</em>)</strong> serves as an excellent platform for GPCR display. With only two native GPCR signaling systems that are readily knockable, it is stable, fast-growing and easy to manipulate. Prior work has established yeast biosensing platforms to express heterologous GPCRs on yeast cell surfaces and produce visual readouts<sup>[9]</sup>. We adopt similar strategies to display engineered GPR proteins and achieve visual signal output via betaxanthin.</p>",
       "_template": "text"
     },
     {
-      "body": "<p>Meanwhile, <em>Saccharomyces cerevisiae</em> features strong robustness, controllable genetics and established biosafety for humans, supporting cost-effective large-scale production. These properties lay critical foundations for fabricating freeze-dried yeast color strips. Requiring no extra equipment for detection, freeze-dried yeast color strips align well with our project goals. Thus, our final product is the freeze-dried yeast color strip.</p>",
+      "body": "<p>Meanwhile, <em>S.c</em> features strong robustness, controllable genetics and established biosafety for humans, supporting cost-effective large-scale production. These properties lay critical foundations for fabricating freeze-dried yeast color strips. Requiring no extra equipment for detection, freeze-dried yeast color strips align well with our project goals. Thus, our final product is the freeze-dried yeast color strip.</p>",
       "_template": "text"
     },
     {
@@ -183,14 +183,10 @@
       "_template": "text"
     },
     {
-      "text": "2.2 Dry Lab",
+      "text": "2.2 Dry lab",
       "level": 3,
-      "attributes": "#dry-lab toc=\"Dry Lab\"",
+      "attributes": "#dry-lab toc=\"Dry lab\"",
       "_template": "heading"
-    },
-    {
-      "_template": "text",
-      "body": "<p class=\"author-source-link\"><a href=\"/source-archive/#meeting-20261019\" data-source-document=\"meeting-20261019-d8c0f0af5a28\">Original submission (.docx)</a><span role=\"status\" aria-live=\"polite\"></span></p>"
     },
     {
       "_template": "text",
@@ -198,15 +194,15 @@
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\"> Our dry-lab work addresses three connected questions: how to select and engineer ascaroside-recognizing receptors, how to convert recognition signals into color outputs, and how detection results can support field management. Molecular docking, molecular dynamics simulations, ODE signaling models, and economic modeling provide computational support for project design. </p>"
+      "body": "<p style=\"text-align:left;\"> Our dry-lab work addresses three connected questions: how to select and engineer ascaroside-recognizing receptors, how to convert recognition signals into color outputs, and how detection results can support field management. Molecular docking, <strong>molecular dynamics (MD)</strong> simulations, ODE signaling models, and economic modeling provide computational support for project design. </p>"
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\"> For receptor recognition, <strong> molecular docking </strong> helps compare Gpr2, Gpr3, and GprC, identify Gpr2 hotspots, and design mutations. Score and interaction changes explore differences in recognition of ascaroside 3 and ascaroside 18. <strong> molecular dynamics simulations </strong> further examine dynamic behavior in selected systems, tracking ligand positioning and key contacts over time to supplement structural hypotheses from docking. </p>"
+      "body": "<p style=\"text-align:left;\"> For receptor recognition, <strong> molecular docking </strong> helps compare Gpr2, Gpr3, and GprC, identify Gpr2 hotspots, and design mutations. Score and interaction changes explore differences in recognition of ascr#3 and ascr#18. <strong> MD simulations </strong> further examine dynamic behavior in selected systems, tracking ligand positioning and key contacts over time to supplement structural hypotheses from docking. </p>"
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\"> For signal output, <strong> ODE modeling </strong> connects receptor input, intracellular signaling, and color development. We reused published pathways and calibrated input–output interfaces with simulated data, then converted paired pigment outputs into simulated smartphone RGB blue-channel features to fit <strong> the three-coefficient regression equation of the dual-channel model </strong>. This model estimates southern root-knot nematode density with unknown background abundance, providing input for risk tiers. Real samples and smartphone imaging data will support subsequent experimental calibration. </p>"
+      "body": "<p style=\"text-align:left;\"> For signal output, <strong> ODE modeling </strong> connects receptor input, intracellular signaling, and color development. We reused published pathways and calibrated input–output interfaces with simulated data, then converted paired pigment outputs into simulated smartphone <strong>red–green–blue (RGB)</strong> blue-channel features to fit <strong> the three-coefficient regression equation of the dual-channel model </strong>. This model estimates <em>Mi</em> density with unknown background abundance, providing input for risk tiers. Real samples and smartphone imaging data will support subsequent experimental calibration. </p>"
     },
     {
       "_template": "text",
@@ -214,22 +210,22 @@
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\"> Together, these four computational strands connect molecular design, system response, and application needs, supporting collaboration with Wet Lab and Human Practices through candidate validation, model calibration, and use-scenario analysis. Detailed methods and results appear on the Model page. </p>"
+      "body": "<p style=\"text-align:left;\"> Together, these four computational strands connect molecular design, system response, and application needs, supporting collaboration with Wet Lab and HP through candidate validation, model calibration, and use-scenario analysis. Detailed methods and results appear on the Model page. </p>"
     },
     {
       "_template": "text",
       "body": "</section>"
     },
     {
-      "text": "3 Innovative Strategies",
+      "text": "Innovative strategies",
       "level": 2,
-      "attributes": "#innovative-strategies toc=\"Innovative Strategies\"",
+      "attributes": "#innovative-strategies toc=\"Innovative strategies\"",
       "_template": "heading"
     },
     {
-      "text": "Early-Warning Strategy for Plant-Parasitic Nematode Infestations",
+      "text": "3.1 Early-warning strategy for plant-parasitic nematode infestations",
       "level": 3,
-      "attributes": "#early-warning-strategy-for-plant-parasitic-nematode-infestations toc=\"Early-Warning Strategy\"",
+      "attributes": "#early-warning-strategy-for-plant-parasitic-nematode-infestations toc=\"Early-warning strategy\"",
       "_template": "heading"
     },
     {
@@ -237,9 +233,9 @@
       "_template": "text"
     },
     {
-      "text": "Strategy for Reconstructing Ascaroside-Specific Yeast Biosensors",
+      "text": "3.2 Strategy for reconstructing ascaroside-specific yeast biosensors",
       "level": 3,
-      "attributes": "#strategy-for-reconstructing-ascaroside-specific-yeast-biosensors toc=\"Ascaroside-Specific Yeast Biosensors\"",
+      "attributes": "#strategy-for-reconstructing-ascaroside-specific-yeast-biosensors toc=\"Ascaroside-specific yeast biosensors\"",
       "_template": "heading"
     },
     {
@@ -247,7 +243,7 @@
       "_template": "text"
     },
     {
-      "text": "4 References",
+      "text": "References",
       "level": 2,
       "attributes": "#references toc=\"References\"",
       "_template": "heading"

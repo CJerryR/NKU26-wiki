@@ -5,7 +5,7 @@
   "description": "",
   "route": "protocols",
   "crumbs": [
-    "Wet Lab",
+    "Wet lab",
     "Protocols"
   ],
   "meta": [],
@@ -13,9 +13,9 @@
   "blocks": [
     {
       "_template": "heading",
-      "text": "Experimental Protocols",
+      "text": "Experimental protocols",
       "level": 2,
-      "attributes": "#experimental-protocols toc=\"Experimental Protocols\""
+      "attributes": "#experimental-protocols toc=\"Experimental protocols\""
     },
     {
       "_template": "text",

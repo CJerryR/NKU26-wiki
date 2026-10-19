@@ -4,7 +4,7 @@
   "sub": "",
   "route": "safety-and-security",
   "crumbs": [
-    "Wet Lab",
+    "Wet lab",
     "Safety"
   ],
   "meta": [],
@@ -12,9 +12,9 @@
   "blocks": [
     {
       "_template": "heading",
-      "text": "1 Project Safety",
+      "text": "Project safety",
       "level": 2,
-      "attributes": "#project-safety toc=\"Project Safety\""
+      "attributes": "#project-safety toc=\"Project safety\""
     },
     {
       "_template": "text",
@@ -22,9 +22,9 @@
     },
     {
       "_template": "heading",
-      "text": "1.1 Biomaterial Safety",
+      "text": "1.1 Biomaterial safety",
       "level": 3,
-      "attributes": "#biomaterial-safety toc=\"Biomaterial Safety\""
+      "attributes": "#biomaterial-safety toc=\"Biomaterial safety\""
     },
     {
       "_template": "text",
@@ -32,7 +32,7 @@
     },
     {
       "_template": "text",
-      "body": "First, we used yeast with four auxotrophies as the chassis strain for this project (Figure 1). After a series of genetic modifications, the engineered yeast cannot survive in environments lacking histidine and leucine. Therefore, the engineered yeast constructed in our project can only survive under laboratory conditions, which effectively prevents the environmental escape of genetically modified yeast."
+      "body": "First, we used yeast with four auxotrophies as the chassis strain for this project (Figure 1). After a series of genetic modifications, the engineered yeast cannot survive in environments lacking <strong>histidine (His)</strong> and <strong>leucine (Leu)</strong>. Therefore, the engineered yeast constructed in our project can only survive under laboratory conditions, which effectively prevents the environmental escape of genetically modified yeast."
     },
     {
       "_template": "image",
@@ -58,13 +58,13 @@
     },
     {
       "_template": "heading",
-      "text": "1.2 Laboratory Operation Safety",
+      "text": "1.2 Laboratory operation safety",
       "level": 3,
-      "attributes": "#laboratory-operation-safety toc=\"Laboratory Operation Safety\""
+      "attributes": "#laboratory-operation-safety toc=\"Laboratory operation safety\""
     },
     {
       "_template": "text",
-      "body": "<p>All experimental operators of this project have received specialized laboratory safety training at Nankai University and strictly follow standard operating procedures, including wearing full personal protective equipment (PPE) and conducting experiments inside biosafety cabinets. All experimental waste is disposed of in accordance with regulations for biohazardous waste to prevent leakage of biological materials.</p>"
+      "body": "<p>All experimental operators of this project have received specialized laboratory safety training at Nankai University and strictly follow standard operating procedures, including wearing full <strong>personal protective equipment (PPE)</strong> and conducting experiments inside biosafety cabinets. All experimental waste is disposed of in accordance with regulations for biohazardous waste to prevent leakage of biological materials.</p>"
     },
     {
       "_template": "image",
@@ -76,9 +76,9 @@
     },
     {
       "_template": "heading",
-      "text": "1.3 Productization & Application Safety",
+      "text": "1.3 Productization & application safety",
       "level": 3,
-      "attributes": "#productization-application-safety toc=\"Productization & Application Safety\""
+      "attributes": "#productization-application-safety toc=\"Productization & application safety\""
     },
     {
       "_template": "text",
@@ -94,9 +94,9 @@
     },
     {
       "_template": "heading",
-      "text": "2 Lab Safety",
+      "text": "Lab safety",
       "level": 2,
-      "attributes": "#lab-safety toc=\"Lab Safety\""
+      "attributes": "#lab-safety toc=\"Lab safety\""
     },
     {
       "_template": "text",
@@ -104,9 +104,9 @@
     },
     {
       "_template": "heading",
-      "text": "2.1 Safety Regulations",
+      "text": "2.1 Safety regulations",
       "level": 3,
-      "attributes": "#safety-regulations toc=\"Safety Regulations\""
+      "attributes": "#safety-regulations toc=\"Safety regulations\""
     },
     {
       "_template": "text",
@@ -122,9 +122,9 @@
     },
     {
       "_template": "heading",
-      "text": "2.2 Safety Education",
+      "text": "2.2 Safety education",
       "level": 3,
-      "attributes": "#safety-education toc=\"Safety Education\""
+      "attributes": "#safety-education toc=\"Safety education\""
     },
     {
       "_template": "text",
@@ -148,9 +148,9 @@
     },
     {
       "_template": "heading",
-      "text": "2.3 Daily Management",
+      "text": "2.3 Daily management",
       "level": 3,
-      "attributes": "#daily-management toc=\"Daily Management\""
+      "attributes": "#daily-management toc=\"Daily management\""
     },
     {
       "_template": "text",
