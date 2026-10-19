@@ -12,7 +12,7 @@
 
 | 栏目 | 内容 |
 | --- | --- |
-| Home | 土壤与线虫故事、世界案例地图、中国物种地图、检测流程、HP 数据地图和页面入口 |
+| Home | 土壤与线虫故事、世界与中国地图、检测流程、HP 数据地图、四组 DBTL 交互和六张成果卡片 |
 | Project | Description、Engineering、Contribution、Background |
 | Wet Lab | Parts and Collections、Experiments、Results、Safety |
 | Model | Overview、Molecular Docking、Molecular Dynamics、ODE and Two-channel Sensing、Economic Benefit |
@@ -24,7 +24,7 @@
 
 模型页面接入作者完整程序，支持原始读数输入、ODE 曲线、双通道估计、经济策略比较及报告下载。Python 计算在浏览器中运行，无需部署 Python 后端。
 
-Members 与 Attributions 各收录 27 位成员，贡献页保留 137 条个人贡献。页脚集中展示团队导航、南开校徽、支持单位、许可与 AI 使用说明。未启用的可选页面不生成导航入口。
+Members 与 Attributions 各收录 27 位成员；Members 展示新版个人照片与完整团队合照，贡献页保留 137 条个人贡献。页脚集中展示团队导航、南开校徽、支持单位、许可与 AI 使用说明。未启用的可选页面不生成导航入口。
 
 ## 本地运行
 
@@ -55,6 +55,7 @@ npm run dev
 | 作者原始模型程序 | `vendor/nemaklear-original/` |
 | 浏览器模型适配 | `src/nemaklear/`、`tools/prepare-nemaklear.mjs` |
 | 素材地址与供稿来源 | `content/cdn-assets.json`、`content/wiki-provenance.json` |
+| 首页成果配图的原件与 CDN 映射 | `assets/source-images/home-built-20261020/`、`docs/home-built-cdn-20261020.json` |
 | 版本清单与弹窗 | `README.md`、`src/components/site/ChangeNotice.astro` |
 
 `content/wiki/*.json` 是正式正文源，`src/content/pages/*.md` 由导出工具生成。不要只改生成的 Markdown；Tina 保存后可运行 `node tools/export-tina.mjs` 同步，构建时也会自动导出。
@@ -95,7 +96,7 @@ Licensing 独立页当前没有正文，现有许可与 AI 使用说明位于页
 
 改动时间：2026-10-20（北京时间）
 
-发布时间：待本次部署完成后补录
+发布时间：2026-10-20 02:55:50（北京时间）
 
 1. 首页 DBTL 总览更新为四组循环。
 2. 点击循环可放大框图，显示模块列表和详情入口。
@@ -112,9 +113,9 @@ Licensing 独立页当前没有正文，现有许可与 AI 使用说明位于页
 
 发布时间：2026-10-20 02:49:22（北京时间）
 
-1. 更新 Members 全部27张个人照片，补齐原有照片空位。
+1. 更新 Members 的 27 张个人照片，补齐照片空位。
 2. 在 Members 顶部加入完整团队合照，按原比例显示。
-3. 将这28张图片迁移至官方 iGEM CDN，保留原始文件与来源记录。
+3. 将 28 张照片迁移至官方 iGEM CDN，保留原件与来源记录。
 
 ### V10.2.6 改动：
 
