@@ -1,0 +1,18 @@
+[
+  {
+    "path": "public/index.html",
+    "problems": []
+  },
+  {
+    "path": "public/component-library/index.html",
+    "problems": []
+  },
+  {
+    "path": "public/pages/part-collection.html",
+    "problems": []
+  },
+  {
+    "path": "public/pages/protocols.html",
+    "problems": []
+  }
+]

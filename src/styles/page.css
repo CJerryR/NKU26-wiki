@@ -54,6 +54,8 @@
   width: min(100% - 44px, var(--doc-w)); margin: 0 auto; padding: clamp(24px, 3vw, 40px) 0 clamp(72px, 9vw, 120px);
 }
 .doc__body { grid-column: 2; grid-row: 1; min-width: 0; }
+/* Author review: prose and figures share a narrower reading column on every page. */
+.doc, .pager { --measure: 42rem; --bleed: 0px; }
 .doc--no-toc { grid-template-columns: minmax(0, 1fr); width: min(100% - 44px, calc(var(--measure) + var(--bleed))); }
 .doc--no-toc .doc__body { grid-column: 1; }
 

@@ -1,0 +1,122 @@
+[
+  {
+    "page": "model",
+    "original_blocks": 9,
+    "final_blocks": 8,
+    "defined_terms": 5,
+    "pending_terms": 16,
+    "baseline_sha256": "ec8f6e9e4e407a6ffd6449d7128dfd73ad73eb988cf8b78211b11b7d15a69df3",
+    "result_sha256": "68f35710694eaadf03731263152d2a39ec19332b30e11e206fb628c5d35b4481",
+    "validation": "PASS: JSON, protected HTML/MathML/tables/code, image URLs, anchors, reference entries, review metadata, heading numbering, source/navigation removal"
+  },
+  {
+    "page": "model-1",
+    "original_blocks": 2,
+    "final_blocks": 2,
+    "defined_terms": 0,
+    "pending_terms": 1,
+    "baseline_sha256": "5bcc944dfef12908c7e971b85456f619230ce12b79def99109b75cc4938f6419",
+    "result_sha256": "1095329f987225fb84776c49115d4adb016eefb3f2277c899c445f8b6a1c959c",
+    "validation": "PASS: JSON, protected HTML/MathML/tables/code, image URLs, anchors, reference entries, review metadata, heading numbering, source/navigation removal"
+  },
+  {
+    "page": "model-2",
+    "original_blocks": 2,
+    "final_blocks": 2,
+    "defined_terms": 1,
+    "pending_terms": 0,
+    "baseline_sha256": "9eba07384dcb51de8101478ae656a30b4fc6d9ae874a66a2973bd4ad541a549b",
+    "result_sha256": "e525a59325efbbdf98fbc6dd16f91daf85d224647ce44d162dc9399a7755ba30",
+    "validation": "PASS: JSON, protected HTML/MathML/tables/code, image URLs, anchors, reference entries, review metadata, heading numbering, source/navigation removal"
+  },
+  {
+    "page": "model-docking",
+    "original_blocks": 62,
+    "final_blocks": 61,
+    "defined_terms": 12,
+    "pending_terms": 23,
+    "baseline_sha256": "fa4af6bf39f0abe499df84baeaacc1cc5e9f39872911b640713e781fe8acec9d",
+    "result_sha256": "419ddb55cd7488a0a776cfbfd56aaa3633177125161b14e718985fd2de3d114b",
+    "validation": "PASS: JSON, protected HTML/MathML/tables/code, image URLs, anchors, reference entries, review metadata, heading numbering, source/navigation removal"
+  },
+  {
+    "page": "model-md",
+    "original_blocks": 31,
+    "final_blocks": 30,
+    "defined_terms": 6,
+    "pending_terms": 16,
+    "baseline_sha256": "d179965357a8fac07fa56c863a0f8745b9aa6913c7f629a5e83888d6f48d86a5",
+    "result_sha256": "6e71881051733f2872dcd20adb95160bf977af026db67ea48c4f0d33c245a763",
+    "validation": "PASS: JSON, protected HTML/MathML/tables/code, image URLs, anchors, reference entries, review metadata, heading numbering, source/navigation removal"
+  },
+  {
+    "page": "model-ode",
+    "original_blocks": 118,
+    "final_blocks": 117,
+    "defined_terms": 12,
+    "pending_terms": 27,
+    "baseline_sha256": "e7619034535bc606444ff736a9583a0702eed7aaada6291db032a1f533c4e484",
+    "result_sha256": "eeb9afc751e98502fd7500f901943df2c00912d81bd79c70c63c2cbfe71e387c",
+    "validation": "PASS: JSON, protected HTML/MathML/tables/code, image URLs, anchors, reference entries, review metadata, heading numbering, source/navigation removal"
+  },
+  {
+    "page": "model-eco",
+    "original_blocks": 61,
+    "final_blocks": 60,
+    "defined_terms": 2,
+    "pending_terms": 20,
+    "baseline_sha256": "df132ac111f359292c6fdd3544cfcbe9f3b7d2525b01c4b3845f56f5dd492ac7",
+    "result_sha256": "a4b91130a36895ba09b4eab65438e77cb0976f4995efdb4c7759829c470894a8",
+    "validation": "PASS: JSON, protected HTML/MathML/tables/code, image URLs, anchors, reference entries, review metadata, heading numbering, source/navigation removal"
+  },
+  {
+    "page": "hp-overview",
+    "original_blocks": 15,
+    "final_blocks": 14,
+    "defined_terms": 2,
+    "pending_terms": 10,
+    "baseline_sha256": "d68f1a6b34664ccfa26b5259cbb1af580c1df653a3353cbdf2faa67b1c50f9d8",
+    "result_sha256": "b672b5acfa39bcff6532d8f053245fec13eabd02e0373f8486f8393be6d11bb2",
+    "validation": "PASS: JSON, protected HTML/MathML/tables/code, image URLs, anchors, reference entries, review metadata, heading numbering, source/navigation removal"
+  },
+  {
+    "page": "hp-investigation",
+    "original_blocks": 23,
+    "final_blocks": 22,
+    "defined_terms": 5,
+    "pending_terms": 19,
+    "baseline_sha256": "5b0ab07dc69d4d9c3233a49cc7e4391599b46b8281d67c024c22aeefbe032b72",
+    "result_sha256": "a267a77adde80a354b66786cd88f3484890fc4fb43e280eddaf92925aa55b5c3",
+    "validation": "PASS: JSON, protected HTML/MathML/tables/code, image URLs, anchors, reference entries, review metadata, heading numbering, source/navigation removal"
+  },
+  {
+    "page": "hp-industry",
+    "original_blocks": 20,
+    "final_blocks": 18,
+    "defined_terms": 1,
+    "pending_terms": 2,
+    "baseline_sha256": "3b7db00f1a83e6a1bb1dc7b7d012a17bba07ad15247b4d0ee542ecbb9aec452d",
+    "result_sha256": "b6f741813dc25dea95cb5c41bbac9d591071281429636c6d219e8ff3fccfe14e",
+    "validation": "PASS: JSON, protected HTML/MathML/tables/code, image URLs, anchors, reference entries, review metadata, heading numbering, source/navigation removal"
+  },
+  {
+    "page": "human-practices",
+    "original_blocks": 36,
+    "final_blocks": 35,
+    "defined_terms": 4,
+    "pending_terms": 11,
+    "baseline_sha256": "4206fdcaea0d7b420829e923c964db591284f95f4fd1ba556a49461cfea48767",
+    "result_sha256": "b44241dbe927a7a206b81b9748437341347fe2e167e36f08359bf60d4e9125f7",
+    "validation": "PASS: JSON, protected HTML/MathML/tables/code, image URLs, anchors, reference entries, review metadata, heading numbering, source/navigation removal"
+  },
+  {
+    "page": "education",
+    "original_blocks": 28,
+    "final_blocks": 27,
+    "defined_terms": 1,
+    "pending_terms": 6,
+    "baseline_sha256": "6482d6c3f0457e2ca123df0431fd7658d9e5494871ee23c62255807953e050c2",
+    "result_sha256": "860a8fc30a9421cdda9594243738a96842fb06b37dfe215ca5dd6f04d9b9f613",
+    "validation": "PASS: JSON, protected HTML/MathML/tables/code, image URLs, anchors, reference entries, review metadata, heading numbering, source/navigation removal"
+  }
+]

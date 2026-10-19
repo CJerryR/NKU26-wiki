@@ -1,11 +1,12 @@
 ---
 /** One shared reminder across the homepage and every article. */
 import { readFileSync } from 'node:fs';
+import { visibleHistory } from '../../lib/history-visibility.mjs';
 
 const readmePath = `${process.cwd()}/README.md`;
 const readme = readFileSync(readmePath, 'utf8');
 const history = readme.split('## 版本改动')[1] ?? '';
-const versions = [...history.matchAll(/### (V[\d.]+) 改动：\s*([\s\S]*?)(?=### |$)/g)]
+const versions = visibleHistory([...history.matchAll(/### (V[\d.]+) 改动：\s*([\s\S]*?)(?=### |$)/g)]
   .map(([, version, body]) => ({
     version,
     publishedAt: body.match(/^发布时间[：:]\s*(.+)$/m)?.[1] ?? '',
@@ -13,7 +14,8 @@ const versions = [...history.matchAll(/### (V[\d.]+) 改动：\s*([\s\S]*?)(?=##
     entries: [...body.matchAll(/^(\d+)\. (.+)$/gm)]
       .map(([, number, text]) => ({ number, text })),
   }))
-  .sort((a, b) => b.version.localeCompare(a.version, undefined, { numeric: true }));
+  .sort((a, b) => b.version.localeCompare(a.version, undefined, { numeric: true })),
+  /\/source-archive\/?$/.test(Astro.url.pathname));
 
 ---
 <dialog id="change-notice" class="change-notice lg-glass" data-glass="panel" data-tone="light" data-change-notice aria-labelledby="change-notice-title" lang="zh-CN">

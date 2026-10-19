@@ -50,8 +50,8 @@ const preload = scene ? [
     <Toc items={toc} title={data.title} />
     <article class="doc__body prose" data-doc>
       {scene && data.sub && <p class="scene-intro" set:html={inlineMd(data.sub)} />}
-      <Content />
       {entry.id === 'model-eco' && <NemaKlearOriginal />}
+      <Content />
     </article>
   </div>
   <PagePager prev={prev} next={next} />

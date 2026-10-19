@@ -1,0 +1,854 @@
+diff --git a/content/wiki/attributions.json b/content/wiki/attributions.json
+index a93d132..ed5951c 100644
+--- a/content/wiki/attributions.json
++++ b/content/wiki/attributions.json
+@@ -33,13 +33,19 @@
+           "name": "Jie Fan",
+           "chineseName": "范洁",
+           "role": "Project Management",
+-          "tasks": "Conceptualization, Project Administration",
++          "tasks": "Conceptualization, Project Administration, Safety, Fundraising",
+           "specificTasks": [
+             {
+-              "text": "Conceptualization: Provided scientific guidance to help the team define research priorities and refine the project’s scientific rationale."
++              "text": "Conceptualization: Provided scientific guidance on project selection and design, helping the team assess the feasibility of the ascaroside-responsive yeast biosensor, define research objectives, and refine the experimental strategy."
+             },
+             {
+-              "text": "Project Administration: Oversaw project development and guided planning and coordination across research, experimentation, data analysis, and presentation, helping the team communicate its findings clearly."
++              "text": "Project Administration: Reviewed project progress at key stages, advised on research priorities, and helped coordinate institutional resources. Supported the team in addressing research challenges and keeping project activities aligned with its scientific objectives."
++            },
++            {
++              "text": "Safety: Provided oversight of project safety, guiding the team’s assessment of risks associated with engineered microorganisms, nematodes, and environmental samples. Advised on safety documentation and the application of institutional laboratory safety requirements to the team’s work."
++            },
++            {
++              "text": "Fundraising: Supported funding applications by reviewing proposals and communicating the project’s scientific goals and resource needs to potential funding sources."
+             }
+           ]
+         }
+@@ -64,13 +70,13 @@
+           "tasks": "Conceptualization, Investigation, Project Administration",
+           "specificTasks": [
+             {
+-              "text": "Conceptualization: Advised the team on research ideas across dry-lab and wet-lab work, helping refine the project’s research approach."
++              "text": "Conceptualization: Advised on dry-lab and wet-lab research ideas to help refine the project’s research approach."
+             },
+             {
+-              "text": "Investigation: Provided guidance on experimental design for dry-lab and wet-lab research."
++              "text": "Investigation: Provided guidance on experimental design for dry-lab and wet-lab studies."
+             },
+             {
+-              "text": "Project Administration: Supported coordination between dry-lab and wet-lab research, helping the team refine research plans and address issues arising during project development."
++              "text": "Project Administration: Supported coordination between dry-lab and wet-lab work, helping refine research plans and address issues during project development."
+             }
+           ]
+         },
+@@ -83,13 +89,13 @@
+           "tasks": "Conceptualization, Project Administration, Other",
+           "specificTasks": [
+             {
+-              "text": "Conceptualization: Participated in early discussions on project topic selection. Drawing on experience leading NKU-China 2025, provided feedback on the feasibility and suitability of candidate topics for iGEM and shared lessons from the previous year’s project design process."
++              "text": "Conceptualization: Contributed to early topic-selection discussions and assessed candidate topics’ feasibility and suitability for iGEM, drawing on experience leading NKU-China 2025."
+             },
+             {
+-              "text": "Project Administration: Introduced new team members to the iGEM workflow, key timelines, and deliverable requirements, including the Wiki, presentation, and judging preparation. Attended some regular team meetings and contributed to discussions when available. Participated in selected exchanges between the team and instructors, helping communicate information and feedback."
++              "text": "Project Administration: Introduced members to iGEM workflows, deadlines, and deliverables, including the Wiki, presentation, and judging preparation; attended selected team meetings and helped communicate feedback between the team and instructors."
+             },
+             {
+-              "text": "Other: Provided occasional advice on experimental planning, team coordination, and competition preparation based on experience from the 2025 season. Answered team members’ questions and offered logistical assistance for team activities when needed."
++              "text": "Other: Offered occasional advice on experimental planning, team coordination, and competition preparation, answered members’ questions, and provided logistical support when needed."
+             }
+           ]
+         },
+@@ -105,22 +111,22 @@
+               "text": "Background Research: Reviewed relevant literature to inform project topic selection and the overall design of the dry-lab studies, with a focus on receptor–ligand recognition, structure-guided mutation exploration, and molecular simulation."
+             },
+             {
+-              "text": "Conceptualization: Designed and refined the molecular docking workflow, including strategies for receptor comparison and exploratory mutation analysis. Took primary responsibility for the overall design of the molecular dynamics studies."
++              "text": "Conceptualization: Designed and refined the molecular docking workflow, including strategies for receptor comparison and exploratory mutation analysis. Took primary responsibility for the overall design of the molecular dynamics studies;"
+             },
+             {
+-              "text": "Investigation: Independently carried out the early molecular docking studies, including receptor comparisons and exploratory mutation analysis. Identified and corrected problems in receptor structure alignment and docking settings through structural inspection and input checks. Worked with Ruoxi Yang on the later docking calculations and molecular dynamics simulation system preparation."
++              "text": "Investigation: Independently carried out the early molecular docking studies, including receptor comparisons and exploratory mutation analysis. Identified and corrected problems in receptor structure alignment and docking settings through structural inspection and input checks. Worked with Ruoxi Yang on the later docking calculations and molecular dynamics simulation system preparation;"
+             },
+             {
+-              "text": "Data Curation: Worked with Ruoxi Yang to organize docking results, interaction fingerprint (IFP) data, cross-receptor residue mappings, and residue annotations, preparing structured datasets for comparative analysis and visualization."
++              "text": "Data Curation: Worked with Ruoxi Yang to organize docking results, interaction fingerprint (IFP) data, cross-receptor residue mappings, and residue annotations for comparative analysis."
+             },
+             {
+-              "text": "Analysis: Developed supporting analysis tools with Ruoxi Yang and collaborated on the later docking analyses, comparing docking scores, predicted binding poses, and residue-level interaction patterns across receptors and structural models. Jointly analyzed molecular dynamics trajectories to characterize receptor conformational changes, ligand motion, and the persistence of receptor–ligand contacts."
++              "text": "Analysis: Developed analysis tools with Ruoxi Yang, compared docking scores, poses, and residue interactions, and jointly analyzed molecular dynamics trajectories for receptor and ligand motion and contact persistence."
+             },
+             {
+-              "text": "Visualization: Prepared structural visualizations of docking poses and predicted receptor–ligand interactions, together with residue-level IFP plots to compare contact patterns and support interpretation of receptor–ligand recognition. Generated visualizations of molecular dynamics post-analysis results, including root-mean-square deviation (RMSD) profiles and residue-level contact statistics, to illustrate receptor and ligand motion and the temporal behavior of local interactions."
++              "text": "Visualization: Produced docking-pose visualizations, residue-level IFP plots, and molecular dynamics figures, including root-mean-square deviation (RMSD) profiles and contact statistics."
+             },
+             {
+-              "text": "Writing: Documented the docking and molecular dynamics workflows, results, and their interpretation. Wrote and revised the content of the Model page for the team Wiki."
++              "text": "Writing: Documented docking and molecular dynamics methods, results, and interpretations, and wrote and revised the Wiki Model page."
+             }
+           ]
+         }
+@@ -151,37 +157,37 @@
+           "tasks": "Analysis, Conceptualization, Background Research, Investigation, Data Curation, Notebook/record keeping, Project Administration, Fundraising, Public Engagement, Visualization, Writing",
+           "specificTasks": [
+             {
+-              "text": "Analysis: Processed and analyzed most of the experimental data, as well as most of the project-related data reviewed during background research."
++              "text": "Analysis: Processed and analyzed most experimental data and most project-related data examined during background research."
+             },
+             {
+-              "text": "Conceptualization: Built the overall project framework and iteratively refined the project design."
++              "text": "Conceptualization: Developed the overall project framework and iteratively refined the project design."
+             },
+             {
+-              "text": "Background Research: Searched, compiled, and summarized background literature and studied past outstanding iGEM projects."
++              "text": "Background Research: Compiled and summarized background literature and reviewed outstanding projects from previous iGEM seasons."
+             },
+             {
+-              "text": "Investigation: Completed wet-lab experimental designs and participated in hands-on wet-lab experiments while coordinating, managing, and scheduling wet-lab work."
++              "text": "Investigation: Designed wet-lab experiments, participated in experimental work, and coordinated wet-lab schedules and progress."
+             },
+             {
+-              "text": "Data Curation: Annotated all genetic parts and submitted them to the iGEM Parts Registry, summarized and updated the Wiki PARTS section, and established and maintained the team’s shared document repository for literature and resources."
++              "text": "Data Curation: Annotated and submitted all genetic parts to the iGEM Parts Registry, updated the Wiki Parts section, and maintained the team’s shared literature and resource repository."
+             },
+             {
+-              "text": "Notebook/record keeping: Maintained lab notebooks and wrote nearly all experimental records."
++              "text": "Notebook/record keeping: Maintained laboratory notebooks and wrote nearly all experimental records."
+             },
+             {
+-              "text": "Project Administration: As the student team leader and wet-lab lead, oversaw the whole project, contributed to its core work, and coordinated collaboration with the dry-lab and Human Practices teams."
++              "text": "Project Administration: Served as student team leader and wet-lab lead, overseeing project activities and coordinating with the dry-lab and Human Practices teams."
+             },
+             {
+-              "text": "Fundraising: Created PPTs for sponsorship and academic exchange for HP revision, and helped polish the sponsorship letter."
++              "text": "Fundraising: Prepared sponsorship and academic-exchange presentations for further revision by the Human Practices team, and helped revise the sponsorship letter."
+             },
+             {
+-              "text": "Public Engagement: Presented our project at multiple intercollegiate and expert meetings."
++              "text": "Public Engagement: Presented the project at multiple intercollegiate exchanges and expert meetings."
+             },
+             {
+-              "text": "Visualization: Optimized visualization, generating figures for project design and experimental results."
++              "text": "Visualization: Created and refined figures illustrating project design and experimental results."
+             },
+             {
+-              "text": "Writing: Authored Wiki sections for Wet Lab, Description, Contribution, Attributions, Background and Engineering and so on."
++              "text": "Writing: Wrote Wiki content, including Wet Lab, Description, Contribution, Attributions, Background, and Engineering sections."
+             }
+           ]
+         },
+@@ -191,7 +197,7 @@
+           "name": "Yang Ruoxi",
+           "chineseName": "杨若希",
+           "role": "Project Management",
+-          "tasks": "Analysis, Conceptualization, Background Research, Investigation, Data Curation, Notebook/record keeping, Project Administration, Fundraising, Visualization, Writing, Safety, Public Engagement, Other, Wiki Coding",
++          "tasks": "Analysis, Conceptualization, Background Research, Investigation, Data Curation, Notebook/record keeping, Project Administration, Fundraising, Visualization, Writing, Safety, Public Engagement, Other",
+           "specificTasks": [
+             {
+               "text": "Analysis: Helped interpret receptor–ascaroside docking and structural modeling results to inform candidate selection and experimental planning."
+@@ -206,7 +212,7 @@
+               "text": "Investigation: Participated in wet-lab experiments and data collection for the engineered yeast biosensor."
+             },
+             {
+-              "text": "Data Curation: Organized computational results and associated conditions and source files for team review and Wiki preparation."
++              "text": "Data Curation: Organized computational results, associated conditions, and source files for team review and Wiki preparation."
+             },
+             {
+               "text": "Notebook/record keeping: Participated in maintaining wet-lab experimental records."
+@@ -215,10 +221,10 @@
+               "text": "Project Administration: Coordinated team responsibilities, schedules, and progress across wet lab, dry lab, Human Practices, and external collaborations."
+             },
+             {
+-              "text": "Fundraising: Coordinated the sponsorship process, organizing outreach by email and phone to alumni and companies, preparation of sponsorship materials, and completion of sponsorship contracts."
++              "text": "Fundraising: Coordinated sponsorship outreach to alumni and companies by email and phone, preparation of sponsorship materials, and completion of sponsorship contracts."
+             },
+             {
+-              "text": "Visualization: Contributed to Wiki, slide, and other visual materials, and recruited students with relevant design expertise."
++              "text": "Visualization: Contributed to Wiki, presentation, and other visual materials, and recruited students with relevant design expertise."
+             },
+             {
+               "text": "Writing: Helped draft and revise project descriptions, presentation scripts, and Wiki content."
+@@ -227,13 +233,10 @@
+               "text": "Safety: Helped organize safety documentation and review risks associated with engineered yeast, nematodes, and environmental samples."
+             },
+             {
+-              "text": "Public Engagement: Participated in Human Practices activities, to communicate the project and gather perspectives on agricultural needs."
++              "text": "Public Engagement: Participated in Human Practices activities to communicate the project and gather perspectives on agricultural needs."
+             },
+             {
+               "text": "Other: Communicated with PIs and advisors to obtain feedback and coordinate research support."
+-            },
+-            {
+-              "text": "Wiki Coding: Revised existing Wiki code to support content updates and improve page presentation."
+             }
+           ]
+         }
+@@ -255,6 +258,43 @@
+       "_template": "creditgrid",
+       "headingLevel": 5,
+       "items": [
++        {
++          "anchor": "chen-feiyue",
++          "image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-e8eae705159b-chen-feiyue.avif",
++          "name": "Chen Feiyue",
++          "chineseName": "陈费月",
++          "role": "Model Development",
++          "tasks": "Analysis, Conceptualization, Background Research, Investigation, Notebook/record keeping, Visualization, Writing, Project Administration, Software",
++          "specificTasks": [
++            {
++              "text": "Analysis: Reviewed previous gold-medal iGEM projects and compiled published experimental data, including GPA1 and GPR2 engineering data, to guide experimental design."
++            },
++            {
++              "text": "Conceptualization: Participated in early brainstorming and literature review to help select a freeze-dried test-strip format for the yeast biosensor."
++            },
++            {
++              "text": "Background Research: Reviewed yeast biosensor formats, freeze-dried strip preparation, and the structures of GPR2, GPA1, ascr#3, and ascr#18 to support mutation prediction and docking."
++            },
++            {
++              "text": "Investigation: Conducted docking studies of predicted GPR2 and GPA1 mutants from March to May; from June to October, participated in primer design, plasmid construction and extraction, yeast transformation and validation, membrane staining, fluorescence microscopy, and related data analysis."
++            },
++            {
++              "text": "Notebook/record keeping: Helped prepare experimental records and process result figures."
++            },
++            {
++              "text": "Visualization: Contributed to team logo design and produced its first draft."
++            },
++            {
++              "text": "Writing: Prepared the English version of the Wiki experimental protocols from the Chinese version written by Xinya Fu."
++            },
++            {
++              "text": "Project Administration: Coordinated dry-lab members and workflows from March to May, and supported wet-lab management and daily experimental scheduling from June to October."
++            },
++            {
++              "text": "Software: Tested code used for molecular docking."
++            }
++          ]
++        },
+         {
+           "anchor": "zhang-hongbo",
+           "image": "",
+@@ -264,10 +304,10 @@
+           "tasks": "Conceptualization, Background Research",
+           "specificTasks": [
+             {
+-              "text": "Conceptualization: Actively participated in multiple initial brainstorming sessions during the early stage of the competition. Contributed to the discussion of the project topic and helped determine specific experimental directions, ensuring the rationality and feasibility of the overall project framework."
++              "text": "Conceptualization: Participated in early brainstorming and topic-selection discussions, helping define experimental directions and assess the project framework’s feasibility."
+             },
+             {
+-              "text": "Background Research: Conducted background investigation for the project during the early phase. Contributed to the collection and analysis of foundational information, providing support for the establishment of the project's overall design."
++              "text": "Background Research: Collected and analyzed background information during the early project stage to support the overall design."
+             }
+           ]
+         },
+@@ -280,37 +320,37 @@
+           "tasks": "Conceptualization, Background Research, Investigation, Visualization, Writing, Public Engagement, Analysis, Data Curation, Notebook/record keeping, Software, Other",
+           "specificTasks": [
+             {
+-              "text": "Conceptualization: Contributed to the origination and design of core project concepts, and proposed concept‑driven refinements throughout wet‑lab optimization."
++              "text": "Conceptualization: Contributed to core project concepts and proposed design refinements during wet-lab optimization."
+             },
+             {
+-              "text": "Background Research: Performed background investigation and literature review during the project design phase."
++              "text": "Background Research: Conducted background research and literature review during project design."
+             },
+             {
+-              "text": "Investigation: Participated in wet-lab protocol design, yeast test-paper fabrication, and product-oriented development. Helped plan and carry out test strip product development during the middle and late project stages, supported core experimental operations, and contributed to iterative protocol optimization based on experimental results."
++              "text": "Investigation: Helped design wet-lab protocols and develop yeast-based test strips during the middle and late project stages, participating in fabrication, experimental work, and protocol optimization."
+             },
+             {
+-              "text": "Visualization: Led the team’s visual identity and outreach graphic work, covering the team logo, project icon, Wiki artwork, mascot and creative merchandise design, and the layout and production of science outreach materials."
++              "text": "Visualization: Led visual identity and outreach graphics work, including the team logo, project icon, Wiki artwork, mascot, merchandise, and science outreach materials."
+             },
+             {
+-              "text": "Writing: Drafted and supplied sections for the project Wiki, alongside reviewing and translating Wiki content."
++              "text": "Writing: Drafted Wiki sections and participated in reviewing and translating Wiki content."
+             },
+             {
+-              "text": "Public Engagement: Participated in inter-university and cross-team exchanges and led an interview with a scholar in the relevant research field. Assisted coordination with Human Practices on the soil-related collaboration and contributed design and communication materials throughout the project."
++              "text": "Public Engagement: Participated in inter-university exchanges, led a scholar interview, supported soil-related collaboration with the Human Practices team, and contributed communication materials."
+             },
+             {
+-              "text": "Analysis: Supported the compilation and analysis of experimental data during test strip product development and used the results to help refine subsequent experimental protocols."
++              "text": "Analysis: Helped analyze test-strip development data and used the results to refine subsequent experiments."
+             },
+             {
+-              "text": "Data Curation: Helped compile and organize experimental data from test strip product development."
++              "text": "Data Curation: Compiled and organized experimental data from test-strip development."
+             },
+             {
+-              "text": "Notebook/record keeping: Participated in documenting experimental progress during test strip product development."
++              "text": "Notebook/record keeping: Helped document experimental progress during test-strip development."
+             },
+             {
+-              "text": "Software: Completed 3D digital modeling of the test strip carrier module."
++              "text": "Software: Created the 3D digital model of the test-strip carrier module."
+             },
+             {
+-              "text": "Other: Participated in constructing the time-lapse imaging platform, developing the hydrophobic filter paper preparation protocol, and verifying hardware functionality. Fabricated the test strip carrier module."
++              "text": "Other: Helped build the time-lapse imaging platform, develop hydrophobic filter-paper preparation methods, and verify hardware functionality, and fabricated the test-strip carrier module."
+             }
+           ]
+         },
+@@ -326,10 +366,10 @@
+               "text": "Analysis: Contributed to the analysis of multiple experimental datasets."
+             },
+             {
+-              "text": "Background Research: Reviewed relevant literature and compiled information regarding the yeast GAL1-GAL10 bidirectional promoter."
++              "text": "Background Research: Reviewed literature and compiled information on the yeast GAL1–GAL10 bidirectional promoter."
+             },
+             {
+-              "text": "Investigation: Performed wet-lab experiments, including yeast transformation, transformant validation, and plasmid construction."
++              "text": "Investigation: Performed yeast transformation, transformant validation, and plasmid construction."
+             }
+           ]
+         },
+@@ -342,10 +382,10 @@
+           "tasks": "Analysis, Investigation",
+           "specificTasks": [
+             {
+-              "text": "Analysis: Assisted in analyzing wet-lab experimental results related to the construction of genetic elements."
++              "text": "Analysis: Helped analyze wet-lab results related to genetic part construction."
+             },
+             {
+-              "text": "Investigation: Performed wet-lab experiments and contributed to the construction of genetic elements."
++              "text": "Investigation: Performed wet-lab experiments and contributed to genetic part construction."
+             }
+           ]
+         },
+@@ -358,19 +398,19 @@
+           "tasks": "Background Research, Investigation, Conceptualization, Notebook/record keeping, Public Engagement",
+           "specificTasks": [
+             {
+-              "text": "Background Research: Reviewed relevant literature on lateral flow test strip development, focusing on sample preparation methods, strip assembly procedures, and performance evaluation approaches to inform downstream development and productization."
++              "text": "Background Research: Reviewed literature on lateral flow test strips, focusing on sample preparation, strip assembly, and performance evaluation."
+             },
+             {
+-              "text": "Investigation: Participated in bacterial strain construction and routine wet-lab operations during the middle and late project stages. Supported lateral flow test strip development, including sample preparation, strip assembly, and performance validation."
++              "text": "Investigation: Participated in strain construction and routine wet-lab work during the middle and late project stages, and supported test-strip sample preparation, assembly, and performance validation."
+             },
+             {
+-              "text": "Conceptualization: Participated in early conceptual discussions to help shape the project framework and contributed to planning downstream test strip development and productization."
++              "text": "Conceptualization: Contributed to early project discussions and planning for test-strip development and practical application."
+             },
+             {
+-              "text": "Notebook/record keeping: Assisted with experimental record-keeping during test strip product development."
++              "text": "Notebook/record keeping: Helped maintain experimental records during test-strip development."
+             },
+             {
+-              "text": "Public Engagement: Joined the summer volunteer teaching program in Miyun, Beijing, delivering in-person science outreach to local students on the project concept, green agriculture, and plant-parasitic nematodes."
++              "text": "Public Engagement: Taught local students in Miyun, Beijing, about the project, green agriculture, and plant-parasitic nematodes through a summer volunteer teaching program."
+             }
+           ]
+         },
+@@ -383,19 +423,19 @@
+           "tasks": "Conceptualization, Background Research, Investigation, Fundraising, Public Engagement",
+           "specificTasks": [
+             {
+-              "text": "Conceptualization: Participated in the initial project conception phase. Reviewed and analyzed relevant peer-reviewed literature to assess the rationality and feasibility of our nematode-monitoring project, and provided preliminary inputs for establishing the overall project framework."
++              "text": "Conceptualization: Contributed to early project discussions and used published research to assess the rationale and feasibility of the nematode-monitoring concept."
+             },
+             {
+-              "text": "Background Research: Performed background literature collation for the nematode-monitoring project. Compiled and organized publicly available research resources, which offered reference information to inform the team’s overall project design."
++              "text": "Background Research: Compiled and organized background literature on nematode monitoring to inform project design."
+             },
+             {
+-              "text": "Investigation: Carried out routine wet-lab work, completing basic experimental operations and lab-related on-site tasks."
++              "text": "Investigation: Participated in routine wet-lab experiments and related laboratory tasks."
+             },
+             {
+-              "text": "Fundraising: Assisted with sorting sponsorship-related materials and funding application documents. Prepared inquiry templates for potential sponsors and took part in internal team discussions about feasible fundraising approaches."
++              "text": "Fundraising: Organized sponsorship and funding-application materials, prepared sponsor inquiry templates, and contributed to fundraising discussions."
+             },
+             {
+-              "text": "Public Engagement: Took part in two offline public-engagement events hosted by the team. Contributed to on-site work during activities and supported the team’s science-popularization outreach work."
++              "text": "Public Engagement: Supported on-site activities and science outreach at two public-engagement events organized by the team."
+             }
+           ]
+         },
+@@ -408,34 +448,34 @@
+           "tasks": "Analysis, Conceptualization, Background Research, Investigation, Data Curation, Notebook/record keeping, Project Administration, Fundraising, Public Engagement, Hardware",
+           "specificTasks": [
+             {
+-              "text": "Analysis: Aggregated and analyzed experimental data from his work. He carried out analysis for test‑strip substrate material selection, evaluated constructed test‑strip performance, and processed feedback from time‑lapse imaging observations, which guided iterative updates to downstream experimental protocols."
++              "text": "Analysis: Analyzed substrate-selection data, test-strip performance, and time-lapse imaging observations to guide experimental improvements."
+             },
+             {
+-              "text": "Conceptualization: Co‑led brainstorming and conceptual discussions in the project to help shape the overall project framework."
++              "text": "Conceptualization: Co-led brainstorming and conceptual discussions to shape the overall project framework."
+             },
+             {
+-              "text": "Background Research: Systematically performed background research and literature review to establish a solid academic foundation for the project framework."
++              "text": "Background Research: Reviewed background literature to inform the project framework and research approach."
+             },
+             {
+-              "text": "Investigation: Oversaw the planning and implementation of wet‑lab test‑strip development and led its core experimental work. His hands‑on experiments covered filter‑paper substrate screening, yeast‑loaded test‑strip construction, performance assessment, and iterative method optimization."
++              "text": "Investigation: Led test-strip development and core experiments, including filter-paper screening, yeast-loaded strip construction, performance evaluation, and method optimization."
+             },
+             {
+-              "text": "Data Curation: Completed aggregation of experimental data generated from his experimental components."
++              "text": "Data Curation: Compiled experimental data from the modules under his responsibility."
+             },
+             {
+-              "text": "Notebook/record keeping: Sustained thorough lab records throughout all his experimental workflows."
++              "text": "Notebook/record keeping: Maintained detailed records throughout his experimental work."
+             },
+             {
+-              "text": "Project Administration: Coordinated with the Human Practices team to advance soil‑project collaboration."
++              "text": "Project Administration: Coordinated with the Human Practices team on soil-project collaboration."
+             },
+             {
+-              "text": "Fundraising: Engaged in online and offline fundraising efforts, including attending relevant online meetings, developing and negotiating fundraising proposals, participating in on‑site outreach communications, and liaising with biotech enterprises such as ExCell Bio to facilitate partnership talks and secure resource support."
++              "text": "Fundraising: Participated in online and in-person sponsorship meetings, developed and discussed proposals, and liaised with companies including ExCell Bio to pursue partnerships and resource support."
+             },
+             {
+-              "text": "Public Engagement: Joined the summer volunteer teaching program in Lincheng, Hebei, delivering in-person science outreach to local rural students on the project concept, green agriculture principles, and plant-parasitic nematodes."
++              "text": "Public Engagement: Taught rural students in Lincheng, Hebei, about the project, green agriculture, and plant-parasitic nematodes through a summer volunteer teaching program."
+             },
+             {
+-              "text": "Hardware: Led the construction of the time‑lapse imaging platform for test‑strip R&D, optimized hydrophobic filter‑paper preparation protocols, and completed hardware‑system assembly and functional verification."
++              "text": "Hardware: Led construction of the time-lapse imaging platform, optimized hydrophobic filter-paper preparation, and completed hardware assembly and functional verification."
+             }
+           ]
+         },
+@@ -448,16 +488,16 @@
+           "tasks": "Investigation, Data Curation, Notebook/record keeping, Background Research",
+           "specificTasks": [
+             {
+-              "text": "Investigation: Review of ascaroside chemistry and existing detection methods; design and testing of strip prototypes for improved sensitivity and specificity."
++              "text": "Investigation: Designed and tested strip prototypes to improve sensitivity and specificity."
+             },
+             {
+-              "text": "Data Curation: Organization and standardization of experimental data—sample preparation, assay conditions, strip readouts, and controls—into structured records for analysis and reuse."
++              "text": "Data Curation: Organized sample preparation details, assay conditions, strip readouts, and controls into structured experimental records."
+             },
+             {
+-              "text": "Notebook/record keeping: Maintenance of dated laboratory records covering protocols, observations, deviations, and troubleshooting to ensure reproducibility."
++              "text": "Notebook/record keeping: Maintained dated laboratory records of protocols, observations, deviations, and troubleshooting."
+             },
+             {
+-              "text": "Background Research: Participated in background research and literature review during the initial project phase, providing foundational support for shaping the project framework."
++              "text": "Background Research: Contributed to early background research, including ascaroside chemistry and existing detection methods, to inform project design."
+             }
+           ]
+         }
+@@ -473,43 +513,6 @@
+       "_template": "creditgrid",
+       "headingLevel": 5,
+       "items": [
+-        {
+-          "anchor": "chen-feiyue",
+-          "image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-e8eae705159b-chen-feiyue.avif",
+-          "name": "Chen Feiyue",
+-          "chineseName": "陈费月",
+-          "role": "Model Development",
+-          "tasks": "Analysis, Conceptualization, Background Research, Investigation, Notebook/record keeping, Visualization, Writing, Project Administration, Software",
+-          "specificTasks": [
+-            {
+-              "text": "Analysis: Reviewed past gold-winning iGEM projects, compiled reported experimental data from relevant literature to guide experimental design (e.g., data for engineering GPA1 and GPR2 proteins)."
+-            },
+-            {
+-              "text": "Conceptualization: Participated in early project brainstorming. Reviewed literature to define the final form of the yeast biosensor (freeze-dried test strip)."
+-            },
+-            {
+-              "text": "Background Research: Summarized formats of yeast biosensors and protocols for freeze-dried test strip preparation. Researched structures of GPR2, GPA1, ascaroside 3 and ascaroside 18, providing data support for GPR2/GPA1 mutation prediction and molecular docking."
+-            },
+-            {
+-              "text": "Investigation: (Mar–May) Worked on dry-lab tasks, mainly molecular docking of predicted GPR2 and GPA1 mutants. (Jun–Oct) Participated in wet laboratory work, including primer design, plasmid construction and extraction, yeast transformation and transformant validation, membrane staining and observation under fluorescence microscope, as well as related data analysis."
+-            },
+-            {
+-              "text": "Notebook/record keeping: Participated in composing experimental records and processing result figures."
+-            },
+-            {
+-              "text": "Visualization: Participated in team logo design and finished the first draft of the team logo."
+-            },
+-            {
+-              "text": "Writing: Completed the English manuscript of experimental protocols for the team Wiki (the Chinese version was written by Xinya Fu)."
+-            },
+-            {
+-              "text": "Project Administration: (Mar–May) Coordinated dry-lab members and planned workflows. (Jun–Oct) Assisted wet-lab team management and helped with designing daily experimental schedules."
+-            },
+-            {
+-              "text": "Software: Tested the code used for molecular docking."
+-            }
+-          ]
+-        },
+         {
+           "anchor": "huang-xinqi",
+           "image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-f0001fee5950-huang-xinqi.avif",
+@@ -519,22 +522,22 @@
+           "tasks": "Analysis, Conceptualization, Background Research, Investigation, Public Engagement, Software",
+           "specificTasks": [
+             {
+-              "text": "Analysis: Searched for and sorted out literature resources to supply parameters and data for ODE modeling."
++              "text": "Analysis: Examined literature sources to identify parameters and data for ODE modeling."
+             },
+             {
+-              "text": "Conceptualization: Explored research directions and screened viable pigment pathways to formulate the project's technical roadmap."
++              "text": "Conceptualization: Explored research directions and selected candidate pigment pathways to help define the technical approach."
+             },
+             {
+-              "text": "Background Research: Conducted literature research and quantitatively analyzed the relationships among ascarosides, pigment concentration, and nematode abundance."
++              "text": "Background Research: Reviewed literature and quantitatively examined relationships among ascarosides, pigment concentration, and nematode abundance."
+             },
+             {
+-              "text": "Investigation: Performed daily experimental operations, including plasmid construction and the construction of pigment-expressing yeast."
++              "text": "Investigation: Performed routine experiments, including plasmid construction and engineering pigment-expressing yeast."
+             },
+             {
+-              "text": "Public Engagement: Participated in project publicity and volunteer activities to engage the broader community and promote synthetic biology."
++              "text": "Public Engagement: Participated in project outreach and volunteer activities to communicate synthetic biology to the public."
+             },
+             {
+-              "text": "Software: Researched and developed ordinary differential equation (ODE) models to simulate the dynamics of the project."
++              "text": "Software: Developed ordinary differential equation (ODE) models to simulate the project’s dynamic processes."
+             }
+           ]
+         },
+@@ -547,16 +550,16 @@
+           "tasks": "Software, Data Curation, Visualization, Conceptualization",
+           "specificTasks": [
+             {
+-              "text": "Software: Completed all coding for the economic model, translating the model framework into a computational implementation. Implemented subsequent model improvements and updated the code to incorporate refinements to the framework and parameters."
++              "text": "Software: Wrote all code for the economic model and updated its implementation as the framework and parameters were refined."
+             },
+             {
+-              "text": "Data Curation: Contributed to supplementing and refining the model parameters, helping complete the parameter set and update parameter values used in the computational implementation."
++              "text": "Data Curation: Helped complete and refine the parameter set and update values used in the model."
+             },
+             {
+-              "text": "Visualization: Completed the visualization of model results, presenting the computational outputs in graphical form to support interpretation and communicate the findings clearly."
++              "text": "Visualization: Created figures presenting economic model outputs to support interpretation and communication of results."
+             },
+             {
+-              "text": "Conceptualization: Co-designed the economic model framework, contributing to the development of its overall structure and the mathematical representation of the economic relationships considered in the model."
++              "text": "Conceptualization: Co-designed the economic model’s structure and mathematical representation of economic relationships."
+             }
+           ]
+         },
+@@ -569,19 +572,19 @@
+           "tasks": "Background Research, Data Curation, Analysis, Writing, Conceptualization",
+           "specificTasks": [
+             {
+-              "text": "Background Research: Conducted literature searches and screened relevant sources to identify parameters for the economic model."
++              "text": "Background Research: Searched and screened literature to identify parameters for the economic model."
+             },
+             {
+-              "text": "Data Curation: Compiled and organized literature-based parameters and determined their values for use in the model."
++              "text": "Data Curation: Compiled literature-derived parameters and determined values for use in the model."
+             },
+             {
+-              "text": "Analysis: Assessed the applicability of the selected parameters and identified opportunities to refine the model logic and mathematical formulation based on literature evidence."
++              "text": "Analysis: Evaluated parameter suitability and identified evidence-based improvements to the model’s logic and mathematical formulation."
+             },
+             {
+-              "text": "Writing: Contributed to written explanations of parameter selection and evidence-based recommendations for model refinement."
++              "text": "Writing: Helped explain parameter selection and document recommendations for model refinement."
+             },
+             {
+-              "text": "Conceptualization: Co-designed the economic model framework and proposed evidence-based refinements to its logic and mathematical formulation."
++              "text": "Conceptualization: Co-designed the economic model framework and proposed refinements based on literature evidence."
+             }
+           ]
+         },
+@@ -594,22 +597,22 @@
+           "tasks": "Conceptualization, Background Research, Analysis, Software, Data Curation, Writing",
+           "specificTasks": [
+             {
+-              "text": "Conceptualization: Contributed to developing the project concept and overall research strategy. Identified a potential implementation pathway by connecting the intended biosensor response with mechanisms and approaches described in existing research."
++              "text": "Conceptualization: Helped develop the project concept and research strategy by connecting the intended biosensor response with mechanisms and approaches described in the literature."
+             },
+             {
+-              "text": "Background Research: Reviewed literature on the project background, ascaroside sensing, and relevant yeast signalling mechanisms to inform project design and the development of the ordinary differential equation (ODE) model."
++              "text": "Background Research: Reviewed ascaroside sensing and yeast signaling mechanisms to inform project design and ODE model development."
+             },
+             {
+-              "text": "Analysis: Analyzed the biological mechanisms underlying the response from ascaroside signal reception to fluorescence output in engineered yeast. Used the ODE model to quantitatively describe these dynamics and analyzed simulation results to understand the system’s behaviour."
++              "text": "Analysis: Used the ODE model to analyze the dynamics linking ascaroside reception to fluorescence output in engineered yeast and interpreted simulation results."
+             },
+             {
+-              "text": "Software: Implemented the ODE model in code and performed numerical simulations to examine the dynamic processes connecting signal reception with fluorescence output."
++              "text": "Software: Implemented the ODE model and ran numerical simulations of signal reception and fluorescence output."
+             },
+             {
+-              "text": "Data Curation: Compiled and organized literature-derived parameter values, model parameters, and simulation results to support model development and analysis."
++              "text": "Data Curation: Organized literature-derived parameters, model parameters, and simulation results."
+             },
+             {
+-              "text": "Writing: Wrote the ODE modelling summary, explaining the modelling approach, mathematical formulation, simulation results, and their interpretation."
++              "text": "Writing: Wrote the ODE modeling summary, covering methods, mathematical formulation, simulation results, and interpretation."
+             }
+           ]
+         }
+@@ -634,19 +637,19 @@
+           "tasks": "Project Administration, Investigation, Public Engagement, Writing, Notebook/record keeping",
+           "specificTasks": [
+             {
+-              "text": "Project Administration: Developed the overall Human Practices plan, coordinated task allocation, and monitored progress throughout the season. Organized regular group meetings to review challenges and coordinate next steps."
++              "text": "Project Administration: Developed the Human Practices plan, coordinated responsibilities and progress, and organized regular meetings to review challenges and next steps."
+             },
+             {
+-              "text": "Investigation: Planned and conducted interviews with stakeholders to identify practical needs and gather feedback, using these findings to inform refinements to the project design."
++              "text": "Investigation: Planned and conducted stakeholder interviews, using feedback on practical needs to inform project design."
+             },
+             {
+-              "text": "Public Engagement: Organized synthetic biology outreach and science education activities for different audiences, and summarized the project’s societal relevance based on Human Practices activities."
++              "text": "Public Engagement: Organized synthetic biology outreach and science education for different audiences, and summarized the project’s societal relevance."
+             },
+             {
+-              "text": "Writing: Wrote, revised, and proofread Human Practices Wiki content, and coordinated the preparation of HP-related video scripts and judging presentation materials."
++              "text": "Writing: Wrote and revised Human Practices Wiki content and coordinated preparation of HP video scripts and judging presentation materials."
+             },
+             {
+-              "text": "Notebook/record keeping: Compiled and organized records and materials from all Human Practices activities to support activity reviews, project reporting, and Wiki preparation."
++              "text": "Notebook/record keeping: Compiled records and materials from all Human Practices activities for review, reporting, and Wiki preparation."
+             }
+           ]
+         },
+@@ -659,13 +662,13 @@
+           "tasks": "Public Engagement, Visualization, Writing",
+           "specificTasks": [
+             {
+-              "text": "Public Engagement: Collected information through surveys to support Human Practices activities. Developed science education lessons for volunteer teaching to make scientific concepts accessible to students."
++              "text": "Public Engagement: Collected survey responses for Human Practices activities and developed science lessons for volunteer teaching."
+             },
+             {
+-              "text": "Visualization: Designed posters and created vector graphics for project publicity and science communication. Documented key team activities and contributed visual materials for outreach."
++              "text": "Visualization: Designed posters and vector graphics, documented key team activities, and prepared visual materials for science outreach."
+             },
+             {
+-              "text": "Writing: Created content for the team’s WeChat official account to introduce the project and support public awareness and science outreach."
++              "text": "Writing: Wrote content for the team’s WeChat official account to introduce the project and communicate scientific concepts."
+             }
+           ]
+         },
+@@ -678,16 +681,16 @@
+           "tasks": "Fundraising, Public Engagement, Visualization, Writing",
+           "specificTasks": [
+             {
+-              "text": "Fundraising: Assisted in contacting potential sponsors and communicating the team’s project and sponsorship needs."
++              "text": "Fundraising: Helped contact potential sponsors and communicate the project and sponsorship needs."
+             },
+             {
+-              "text": "Public Engagement: Participated in Human Practices activities, including contacting and coordinating intercollegiate exchanges with other iGEM teams, and contributed to the operation and content management of the team’s Bilibili account."
++              "text": "Public Engagement: Helped coordinate exchanges with other iGEM teams and manage the team’s Bilibili account and content."
+             },
+             {
+-              "text": "Visualization: Took primary responsibility for the project video, including overall concept development, visual and content design, filming, footage organization, and video editing; also contributed to the design and production of promotional materials for the project and Human Practices activities."
++              "text": "Visualization: Led project video production, including concept development, visual and content design, filming, footage organization, and editing, and contributed to project and HP promotional materials."
+             },
+             {
+-              "text": "Writing: Organized Human Practices materials and contributed to the drafting, compilation, and revision of Wiki content."
++              "text": "Writing: Organized Human Practices materials and helped draft, compile, and revise Wiki content."
+             }
+           ]
+         },
+@@ -700,13 +703,13 @@
+           "tasks": "Background Research, Wiki Coding, Public Engagement",
+           "specificTasks": [
+             {
+-              "text": "Background Research: Gather global infection data and research papers on the southern root-knot nematode (Meloidogyne incognita)."
++              "text": "Background Research: Collected global infection data and research literature on the southern root-knot nematode, *Meloidogyne incognita*."
+             },
+             {
+-              "text": "Wiki Coding: Took full ownership of the wiki: designed the homepage, optimized interactions and built the webpage framework, optimized all interactions, and populated each group’s content into the respective pages."
++              "text": "Wiki Coding: Led Wiki implementation, including the homepage, site framework, interaction improvements, and integration of each group’s content into the relevant pages."
+             },
+             {
+-              "text": "Public Engagement: Participated in social practice, and produced social media posts and video recordings."
++              "text": "Public Engagement: Participated in social practice activities and produced social media posts and video recordings."
+             }
+           ]
+         },
+@@ -719,16 +722,16 @@
+           "tasks": "Project Administration, Investigation, Writing, Public Engagement",
+           "specificTasks": [
+             {
+-              "text": "Project Administration: Led the planning, coordination, and delivery of outreach activities, including field visits, farmer interviews, and exchanges with university teams."
++              "text": "Project Administration: Led planning and coordination of field visits, farmer interviews, and exchanges with university teams."
+             },
+             {
+-              "text": "Investigation: Participated in farmer and expert interviews to understand agricultural needs and practical considerations relevant to the project."
++              "text": "Investigation: Participated in farmer and expert interviews to understand agricultural needs and practical considerations for the project."
+             },
+             {
+               "text": "Writing: Compiled fieldwork and interview records and contributed to research reports, fieldwork summaries, interview reports, and outreach articles."
+             },
+             {
+-              "text": "Public Engagement: Led the planning of science education activities, contributed to course and educational material development, and coordinated delivery with summer volunteer teaching teams."
++              "text": "Public Engagement: Led science education planning, helped develop courses and teaching materials, and coordinated delivery with summer volunteer teaching teams."
+             }
+           ]
+         },
+@@ -741,16 +744,16 @@
+           "tasks": "Public Engagement, Visualization, Writing, Other",
+           "specificTasks": [
+             {
+-              "text": "Public Engagement: Developing popular science courses, typesetting WeChat official account posts, and running the Xiaohongshu outreach account."
++              "text": "Public Engagement: Developed science education courses, formatted WeChat official account posts, and managed the Xiaohongshu outreach account."
+             },
+             {
+-              "text": "Visualization: Designing mascots and cultural derivatives, drawing illustrations for the Wiki, and recording promotional videos."
++              "text": "Visualization: Designed mascots and related merchandise, illustrated Wiki content, and recorded promotional videos."
+             },
+             {
+-              "text": "Writing: Composing social media post copy and popular science outreach materials."
++              "text": "Writing: Wrote social media posts and science outreach materials."
+             },
+             {
+-              "text": "Other: Coordinating inter-university communication activities, promoting questionnaires and collecting soil samples."
++              "text": "Other: Coordinated inter-university exchanges, distributed questionnaires, and collected soil samples."
+             }
+           ]
+         }
+@@ -775,7 +778,7 @@
+           "tasks": "Visualization",
+           "specificTasks": [
+             {
+-              "text": "Visualization: Contributed to refining the project logo, adjusting visual details to support a clear and recognizable team identity. Contributed to the project mascot’s design, helping develop its appearance in keeping with the team’s visual style. Contributed to the visual design of Wiki pages, helping maintain consistency in layout, graphic elements, and overall presentation. Helped teammates with biology backgrounds translate scientific ideas into clear, cohesive visuals and provided design guidance to maintain a consistent visual identity across project materials."
++              "text": "Visualization: Refined the project logo and contributed to mascot and Wiki page design; guided biology teammates in translating scientific ideas into clear visuals and maintained consistency across project materials."
+             }
+           ]
+         },
+@@ -788,11 +791,141 @@
+           "tasks": "Visualization",
+           "specificTasks": [
+             {
+-              "text": "Visualization: Took responsibility for the Wiki’s overall visual and user experience design, developing its layout and interactive presentation to make the content clear, accessible, and engaging. Designed the project mascot and logo to establish a recognizable visual identity for the team. Helped guide and produce visual materials across the project, supporting a consistent visual style across the Wiki and other project communications."
++              "text": "Visualization: Led the Wiki’s overall visual and user experience design, created the project mascot and logo, and helped guide and produce visual materials with a consistent style."
+             }
+           ]
+         }
+       ]
++    },
++    {
++      "_template": "heading",
++      "text": "AI tool use",
++      "level": 2,
++      "attributes": "#ai-tool-use toc=\"AI tool use\""
++    },
++    {
++      "_template": "text",
++      "body": "AI tools supported our literature research, dry-lab software development, protein structure prediction, writing, and visual communication. Team members defined the research questions, reviewed AI-assisted outputs, and decided how to use them in the project."
++    },
++    {
++      "_template": "heading",
++      "text": "ChatGPT — OpenAI",
++      "level": 3,
++      "attributes": "#chatgpt-openai toc=\"ChatGPT — OpenAI\""
++    },
++    {
++      "_template": "text",
++      "body": "**Models:** GPT-5.6 Sol, GPT-5.6 Terra, GPT-5.6 Luna; GPT-6.1 Sol, GPT-6.1 Terra, GPT-6.1 Luna; GPT-6 Astra.\n\n**Tasks:** Background Research, Software, Visualization, Writing\n\n**Background Research:** Used ChatGPT to help locate project-related literature, explore relevant research topics, and organize background information. It supported the team in working through concepts and methods related to the biosensor and its computational studies; scientific statements and references were checked against original publications.\n\n**Software:** Used ChatGPT extensively during dry-lab software development, with substantial portions of the code developed through AI assistance. Team members guided the intended methods, ran and tested the code, and reviewed relevant sections to assess whether the implementation matched the research objectives.\n\n**Visualization:** Used ChatGPT to refine Wiki layouts, assist with writing and revising plotting code, and directly generate visual assets for Wiki presentation. Team members reviewed and tested the plotting code and ran it on real project data or outputs from the team’s computational workflows. They reviewed the resulting plots and adapted visual materials to the project’s scientific content and design. Directly AI-generated visual assets are labelled on the Wiki.\n\n**Writing:** Team members supplied research text they had already written, together with outlines, experimental records, or notes. ChatGPT was used mainly to polish language, translate text, and organize the presentation of that content. The members responsible for each section checked the revised text against the underlying research and records to preserve scientific meaning and accurately describe the work performed."
++    },
++    {
++      "_template": "heading",
++      "text": "Claude — Anthropic",
++      "level": 3,
++      "attributes": "#claude-anthropic toc=\"Claude — Anthropic\""
++    },
++    {
++      "_template": "text",
++      "body": "**Models:** Claude Opus 4.7; Claude Opus 5; Claude Opus 5.5; Claude Fable 5.\n\n**Tasks:** Wiki Coding, Writing\n\n**Wiki Coding:** Used Claude to assist with writing Wiki code and identifying and fixing bugs. Team members reviewed and tested the resulting changes to check that they supported the intended page content and functionality.\n\n**Writing:** Used Claude to translate text written by team members, standardize formatting, and improve grammar and readability. The relevant contributors reviewed the revised text to ensure that scientific terminology, meaning, and descriptions of the work remained accurate."
++    },
++    {
++      "_template": "heading",
++      "text": "DeepSeek — DeepSeek-AI",
++      "level": 3,
++      "attributes": "#deepseek-deepseek-ai toc=\"DeepSeek — DeepSeek-AI\""
++    },
++    {
++      "_template": "text",
++      "body": "**Models:** DeepSeek-V4; DeepSeek-V4.1.\n\n**Tasks:** Background Research\n\nUsed DeepSeek to support the reading and interpretation of scientific literature and to develop background knowledge relevant to the project. Its explanations helped the team work through unfamiliar concepts, while original publications remained the basis for checking scientific statements and references."
++    },
++    {
++      "_template": "heading",
++      "text": "Doubao — ByteDance",
++      "level": 3,
++      "attributes": "#doubao-bytedance toc=\"Doubao — ByteDance\""
++    },
++    {
++      "_template": "text",
++      "body": "**Models:** Doubao-Seed-2.0; Doubao-Seed-2.1.\n\n**Tasks:** Background Research\n\nUsed Doubao to assist with understanding scientific papers and reviewing project-related background information. Team members checked the resulting explanations against the source literature before using them in research discussions or written materials."
++    },
++    {
++      "_template": "heading",
++      "text": "AlphaFold 3 — Google DeepMind and Isomorphic Labs",
++      "level": 3,
++      "attributes": "#alphafold-3-google-deepmind-and-isomorphic-labs toc=\"AlphaFold 3 — Google DeepMind and Isomorphic Labs\""
++    },
++    {
++      "_template": "text",
++      "body": "**Tasks:** Investigation, Analysis\n\n**Structure prediction:** The team locally deployed AlphaFold 3 using model parameters released by Google DeepMind and the reference databases provided through the official setup workflow for GPCR structure prediction. The predicted structures were used in downstream molecular docking with AutoDock Vina and molecular dynamics simulations with GROMACS. Team members configured and ran the workflow and reviewed its outputs as part of the project’s computational work. Detailed parameters and the computational workflow are documented on our Wiki Model page, in our public GitHub repository, and in our team repository on the official iGEM GitLab."
++    },
++    {
++      "_template": "heading",
++      "text": "Human review and responsibility",
++      "level": 3,
++      "attributes": "#human-review-responsibility toc=\"Human review and responsibility\""
++    },
++    {
++      "_template": "text",
++      "body": "Team leaders or advisors reviewed key interpretations and conclusions before inclusion in project materials. The team retained final responsibility for the methods, use of AI-assisted outputs, and accuracy and integrity of the submitted work."
++    },
++    {
++      "_template": "heading",
++      "text": "iGEM & partner offers",
++      "level": 2,
++      "attributes": "#igem-partner-offers toc=\"iGEM & partner offers\""
++    },
++    {
++      "_template": "text",
++      "body": "The following table records our use of resources offered through iGEM and its partners, including how they supported the project or why they were not used.\n\n| Offer | Used | Details |\n| --- | --- | --- |\n| iGEM Distribution Kit | No | The kit did not contain materials suitable for the project’s wet-lab experiments. |\n| IDT Partner Offer | No | The offer was not relevant to the project’s needs. |\n| Twist Partner Offer | No | The offer was not relevant to the project’s needs. |\n| GenScript Partner Offer | Yes | We used GenScript’s FLASH Gene offer to order CYP76AD5 (1,506 bp) and DOD (804 bp), codon-optimized for expression in *Saccharomyces cerevisiae*, with free gene synthesis and subcloning into pUC57. The constructs were intended for downstream cloning and experimental evaluation. |\n| Anthropic Partner Offer | No | The offer/resource was unavailable in our region. |\n\nWe also used GenScript’s GenSmart™ Design tool to generate plasmid maps and visualize the arrangement of genetic elements in our constructs, supporting experimental planning and project documentation.\n\nThe Anthropic entry concerns access to the partner offer. Our use of Claude as an AI tool is documented separately under AI Tool Use."
++    },
++    {
++      "_template": "heading",
++      "text": "External contributions",
++      "level": 2,
++      "attributes": "#external-contributions toc=\"External contributions\""
++    },
++    {
++      "_template": "text",
++      "body": "External advisors contributed expertise on agricultural needs, nematode detection, and practical considerations for field use. Their feedback helped the team examine the project’s intended application and identify questions requiring further evaluation. Financial support is acknowledged separately below."
++    },
++    {
++      "_template": "heading",
++      "text": "Yurong Yao",
++      "level": 3,
++      "attributes": "#yurong-yao toc=\"Yurong Yao\""
++    },
++    {
++      "_template": "text",
++      "body": "**Institution Type:** Academic\n**Relationship to the Team:** External Advisor\n\n**Project Guidance:** Provided feedback on the agricultural relevance of the nematode early-warning project, emphasizing affordable detection, simple operation, and the practical needs of vegetable growers.\n\n**Technical Consultation:** Explained the capabilities and limitations of existing nematode identification methods. Advised on soil sampling, sample transport and storage, separate sample handling, and treatment before disposal, helping the team consider the full workflow surrounding detection."
++    },
++    {
++      "_template": "heading",
++      "text": "Qian Liu",
++      "level": 3,
++      "attributes": "#qian-liu toc=\"Qian Liu\""
++    },
++    {
++      "_template": "text",
++      "body": "**Institution Type:** Academic\n**Relationship to the Team:** External Advisor\n\n**Project Guidance:** Advised the team to define early detection around pre-planting decisions and connect results to the intended crop and management needs. Discussed the scope and limitations of interpreting ascaroside signals as indicators of nematode presence or density.\n\n**Technical Consultation:** Explained morphological and molecular identification approaches and highlighted sample representativeness, soil-matrix interference, negative controls, and cross-reactivity testing as important considerations for evaluating the proposed biosensor."
++    },
++    {
++      "_template": "heading",
++      "text": "Zhihao Pang",
++      "level": 3,
++      "attributes": "#zhihao-pang toc=\"Zhihao Pang\""
++    },
++    {
++      "_template": "text",
++      "body": "**Institution Type:** Academic\n**Relationship to the Team:** External Advisor\n\n**Project Guidance:** Critically reviewed the proposed field-use scenario and encouraged the team to focus on portability, minimal equipment requirements, and simpler operating steps. Recommended gathering direct evidence from affected fields and feedback from intended users.\n\n**Technical Consultation:** Identified soil background color and potentially different degradation rates of ascr#3 and ascr#18 as factors requiring evaluation. Raised concerns about the environmental release of engineered yeast, prompting consideration of safety alongside practical usability."
++    },
++    {
++      "_template": "heading",
++      "text": "ExCell Bio",
++      "level": 3,
++      "attributes": "#excell-bio toc=\"ExCell Bio\""
++    },
++    {
++      "_template": "text",
++      "body": "**Institution Type:** Industry\n**Relationship to the Team:** Sponsor\n\n**Financial Support:** Provided financial sponsorship to support the team’s iGEM project."
+     }
+   ],
+   "preserveAuthorFormatting": true

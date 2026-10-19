@@ -53,9 +53,8 @@
   /* Portrait scene cameras already have a drawing above a separate caption. */
   .as--tall .as__frame{top:80px;height:42%;width:100%;max-height:350px}
   .as--tall .as__cap{left:18px;right:18px;top:calc(100% + 20px)}
-  .as--tall .as__cap h3{font-size:24px;line-height:1.18}
+  .as--tall .as__cap h3,.as--tall .as__cap .as__title{font-size:26px;line-height:1.12}
   .as--tall .as__cap p{font-size:16px;line-height:1.55}
-  .as--tall .as__title{font-size:30px;line-height:1.1}
   .as--tall .as__fine{font-size:12px!important}
 
   .hp2{height:auto;min-height:100svh}

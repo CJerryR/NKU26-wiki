@@ -1,7 +1,7 @@
 {
-  "version": "10.2.10",
-  "label": "Restore exact approved What we built illustration layout",
-  "prepared_at": "2026-10-20T03:41:46.975577+08:00",
+  "version": "10.2.11",
+  "label": "Latest manuscripts, contributions, content rules and homepage guidance",
+  "prepared_at": "2026-10-20T04:24:59.216124+08:00",
   "media": "84 unchanged original images plus 4 user-authorized GPS-only cleaned images; all decoded frames unchanged; 12 complete historical source documents",
   "release_kind": "stage",
   "team_content_review": "Scientific final review pending; source-version choices authorized by user",
@@ -10,7 +10,7 @@
     "commit": "16770d5c28ddf7bc41f8d90445c44d80a28801d5",
     "published_at_local": "2026-10-18 05:04:34"
   },
-  "release_id": "what-we-built-approved-20261020-v10.2.10",
+  "release_id": "recent-all-20261020-v10.2.11",
   "mobile_layout_check": "390px Members rendered without overflow; desktop Description, Parts/plasmid, Attributions/puzzle checked; 4 second delayed CDN uses inline preview then upgrades",
   "source_fidelity": {
     "original_source_files_verified": 80,
@@ -30,8 +30,8 @@
     "source_decisions": "content/author-source-decisions.json"
   },
   "previous_release": {
-    "version": "10.2.9",
-    "commit": "95bb4e144428707e49c4f91062596b3410e804c0"
+    "version": "10.2.10",
+    "commit": "96c2653f2fd716e1e1576728e8e7d87a6841f921"
   },
   "visual_stage": "AI-generated handcut illustrations; 16 sheets, 91 canonical props",
   "meeting_update": {
@@ -171,5 +171,23 @@
     "pipeline_id": 774839,
     "pages_job": 1872092,
     "published_at_beijing": "2026-10-20 03:57:51"
+  },
+  "recent_combined_release": {
+    "task_commits": {
+      "content_rules": "62ca4bbf3a26e4b89aa9473ee4f590f2338ed652",
+      "home_review": "83c09fda332f2dfb241a922ecaa9f3e7993b810f",
+      "attributions": "35e1ce271f3e83abc82e65e39c56200dcd698481",
+      "model_figure": "6d0f05d7fba57bbf45a67001ffbb810f1a001e13",
+      "senior_feedback": "94f799f35db05ad9d1a76e65f5262ed8bb3fcb39",
+      "ruoxi_requirements": "8740c9f59cab82b2d6479896bde74eb304e154df"
+    },
+    "cdn_map": "docs/recent-assets-cdn-20261020.json",
+    "engineering_missing_figure": "Figure 5 source not provided; original caption retained",
+    "scientific_review": "Existing team review status retained",
+    "cdn_images": 17,
+    "deferred_by_user": [
+      "Engineering Figure 5",
+      "Docking Figure 6 retains existing matching crop"
+    ]
   }
 }

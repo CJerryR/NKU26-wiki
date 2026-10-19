@@ -1,10 +1,10 @@
 {
-  "title": "Integrated Human Practices",
-  "heading": "Integrated Human Practices",
-  "sub": "Bringing Real-World Perspectives into Research",
+  "title": "Integrated human practices",
+  "heading": "Integrated human practices",
+  "sub": "Bringing real-world perspectives into research",
   "crumbs": [
-    "Human Practices",
-    "Integrated Human Practices"
+    "Human practices",
+    "Integrated human practices"
   ],
   "route": "human-practices",
   "search": true,
@@ -14,7 +14,7 @@
   "blocks": [
     {
       "_template": "text",
-      "body": "<nav class=\"hp-chapter-nav\" aria-label=\"Human Practices chapters\"><a href=\"/hp-overview/\">Overview</a><a href=\"/human-practices/\">Integrated Human Practices</a><a href=\"/education/\">Education</a><a href=\"/hp-investigation/\">Investigation</a><a href=\"/hp-industry/\">Industry Engagement and Support</a></nav><section class=\"hp-manuscript\" lang=\"en\">"
+      "body": "<nav class=\"hp-chapter-nav\" aria-label=\"Human Practices chapters\"><a href=\"/hp-overview/\">Overview</a><a href=\"/human-practices/\">Integrated human practices</a><a href=\"/education/\">Education</a><a href=\"/hp-investigation/\">Investigation</a><a href=\"/hp-industry/\">Industry engagement and support</a></nav><section class=\"hp-manuscript\" lang=\"en\">"
     },
     {
       "_template": "text",
@@ -26,18 +26,18 @@
     },
     {
       "_template": "heading",
-      "text": "From a Detectable Response to a Usable Test",
+      "text": "From a detectable response to a usable test",
       "level": 2,
       "attributes": "#hp-source-69"
     },
     {
       "_template": "layout",
       "kind": "lead",
-      "body": "<p data-hp-source-paragraph=\"70\">Our initial experimental question was whether engineered yeast could sense candidate ascaroside signals and convert that response into a visible color. Surveys, expert interviews, university exchanges, and farm visits expanded this into more specific questions: when should testing take place, how might soil alter the signal, is a sample representative, and how would a user interpret the result?</p>\n\n<p data-hp-source-paragraph=\"71\"><strong>Our Human Practices and laboratory research therefore inform each other. </strong>Wet-lab and dry-lab insights help frame survey and interview questions; responses and professional advice add evidence for discussions about targets, models, controls, and conditions of use. The following sections trace these connections. Full accounts of the activities appear on the Investigation page.</p>"
+      "body": "<p data-hp-source-paragraph=\"70\">Our initial experimental question was whether engineered yeast could sense candidate ascaroside signals and convert that response into a visible color. Surveys, expert interviews, university exchanges, and farm visits expanded this into more specific questions: when should testing take place, how might soil alter the signal, is a sample representative, and how would a user interpret the result?</p>\n\n<p data-hp-source-paragraph=\"71\"><strong>Our Human Practices (HP) and laboratory research therefore inform each other. </strong>Wet-lab and dry-lab insights help frame survey and interview questions; responses and professional advice add evidence for discussions about targets, models, controls, and conditions of use. The following sections trace these connections. Full accounts of the activities appear on the Investigation page.</p>"
     },
     {
       "_template": "heading",
-      "text": "A Two-Way Link Between the Questionnaire and Research",
+      "text": "A two-way link between the questionnaire and research",
       "level": 2,
       "attributes": "#hp-source-73"
     },
@@ -59,7 +59,7 @@
     },
     {
       "_template": "text",
-      "body": "<p data-hp-source-paragraph=\"78\">Of the 369 respondents, 197 (53.4%) had either never heard of plant-parasitic nematodes or had heard the term without knowing the details. This helped define our educational starting point: explain what nematodes are and why their damage can be difficult to recognize before introducing the detection concept.</p>"
+      "body": "<p data-hp-source-paragraph=\"78\">Of the 369 respondents, 197 (53.4%) had either never heard of <strong>plant-parasitic nematodes (PPNs)</strong> or had heard the term without knowing the details. This helped define our educational starting point: explain what nematodes are and why their damage can be difficult to recognize before introducing the detection concept.</p>"
     },
     {
       "_template": "text",
@@ -87,7 +87,7 @@
     },
     {
       "_template": "heading",
-      "text": "Question One  How Early Is Early Enough",
+      "text": "Question one  how early is early enough",
       "level": 2,
       "attributes": "#hp-source-88"
     },
@@ -106,13 +106,13 @@
     },
     {
       "_template": "heading",
-      "text": "Question Two  How Does Soil Affect Signals and Color",
+      "text": "Question two  how does soil affect signals and color",
       "level": 2,
       "attributes": "#hp-source-92"
     },
     {
       "_template": "text",
-      "body": "<p data-hp-source-paragraph=\"93\"><strong>Zhihao Pang noted that differences in soil background color could affect visual interpretation.</strong><strong> </strong>He also raised a question for the model: if ascr#3 and ascr#18 degrade at different rates in soil, would their measured relative abundance still represent the original signal composition? This prompted us to consider environmental processes when interpreting ratios in soil.</p>"
+      "body": "<p data-hp-source-paragraph=\"93\"><strong>Zhihao Pang noted that differences in soil background color could affect visual interpretation.</strong><strong> </strong>He also raised a question for the model: if <strong>ascaroside #3 (ascr#3)</strong> and <strong>ascaroside #18 (ascr#18)</strong> degrade at different rates in soil, would their measured relative abundance still represent the original signal composition? This prompted us to consider environmental processes when interpreting ratios in soil.</p>"
     },
     {
       "_template": "text",
@@ -125,7 +125,7 @@
     },
     {
       "_template": "heading",
-      "text": "Question Three  What Makes a Sample Meaningful and a Test Usable",
+      "text": "Question three  what makes a sample meaningful and a test usable",
       "level": 2,
       "attributes": "#hp-source-97"
     },
@@ -144,18 +144,14 @@
     },
     {
       "_template": "heading",
-      "text": "Lessons for Our Research and Other Teams",
+      "text": "Lessons for our research and other teams",
       "level": 2,
       "attributes": "#hp-source-102"
     },
     {
       "_template": "layout",
       "kind": "features",
-      "body": "### Inputs to Our Wet-Lab and Dry-Lab Work {#hp-source-103}\n\n<p data-hp-source-paragraph=\"104\">HP provides our wet-lab and dry-lab teams with information about needs, professional perspectives, and application settings. The questionnaire describes public understanding and expectations of a test; experts add perspectives on timing, samples, and usability; university exchanges offer comparisons of experimental approaches; and farm visits provide local agricultural context. Together, these inputs support discussions of research direction and potential value.</p>\n\n### Practices Other Teams Can Adapt {#hp-source-105}\n\n<p data-hp-source-paragraph=\"106\">First, retain the link between an experimental question, a survey question, the responses, and the resulting research discussion. Other teams can begin with their own technical assumptions when designing a questionnaire, rather than distributing a general awareness survey and looking for a connection afterward.</p>\n\n<p data-hp-source-paragraph=\"107\">Second, record interview insights, sample context, and experimental questions separately, then connect them with a shared identifier. For environmental or agricultural projects, this makes it possible to trace a research question to the exchange that prompted it and to understand the setting of the sample being discussed.</p>\n\n<p data-hp-source-paragraph=\"108\">Third, when teaching or outreach partnerships extend a survey’s reach, record course participation and questionnaire participation separately. Other teams can adapt this collaborative approach while maintaining clear definitions for each set of participation statistics.</p>\n\n<p data-hp-source-paragraph=\"109\">Other teams can document feedback using these fields: project question, stakeholder and date, main finding, team discussion, and follow-up direction. Source records can remain within the team, while public pages present thematic summaries with sensitive information removed. This provides a practical way to connect different sources of feedback with project discussions.</p>"
-    },
-    {
-      "_template": "text",
-      "body": "<p data-hp-source-paragraph=\"111\"><a href=\"/hp-overview/\">Back to HP Overview</a>   ·   <a href=\"/education/\">Next: Education</a></p>"
+      "body": "### Inputs to our wet-lab and dry-lab work {#hp-source-103}\n\n<p data-hp-source-paragraph=\"104\">HP provides our wet-lab and dry-lab teams with information about needs, professional perspectives, and application settings. The questionnaire describes public understanding and expectations of a test; experts add perspectives on timing, samples, and usability; university exchanges offer comparisons of experimental approaches; and farm visits provide local agricultural context. Together, these inputs support discussions of research direction and potential value.</p>\n\n### Practices other teams can adapt {#hp-source-105}\n\n<p data-hp-source-paragraph=\"106\">First, retain the link between an experimental question, a survey question, the responses, and the resulting research discussion. Other teams can begin with their own technical assumptions when designing a questionnaire, rather than distributing a general awareness survey and looking for a connection afterward.</p>\n\n<p data-hp-source-paragraph=\"107\">Second, record interview insights, sample context, and experimental questions separately, then connect them with a shared identifier. For environmental or agricultural projects, this makes it possible to trace a research question to the exchange that prompted it and to understand the setting of the sample being discussed.</p>\n\n<p data-hp-source-paragraph=\"108\">Third, when teaching or outreach partnerships extend a survey’s reach, record course participation and questionnaire participation separately. Other teams can adapt this collaborative approach while maintaining clear definitions for each set of participation statistics.</p>\n\n<p data-hp-source-paragraph=\"109\">Other teams can document feedback using these fields: project question, stakeholder and date, main finding, team discussion, and follow-up direction. Source records can remain within the team, while public pages present thematic summaries with sensitive information removed. This provides a practical way to connect different sources of feedback with project discussions.</p>"
     },
     {
       "_template": "text",
@@ -167,9 +163,9 @@
     },
     {
       "_template": "heading",
-      "text": "References and Supporting Evidence",
+      "text": "References and supporting evidence",
       "level": 2,
-      "attributes": "#hp-original-references toc=\"References and Supporting Evidence\""
+      "attributes": "#hp-original-references toc=\"References and supporting evidence\""
     },
     {
       "_template": "layout",

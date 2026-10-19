@@ -1,0 +1,326 @@
+{
+  "assets": [
+    {
+      "source": "static/img/senior-feedback-20261020/engineering-figure-1.png",
+      "original_sha256": "b7206774cdaeb1b92fc854bc6a29a799d29be3d47a0dee8ee6e0e11ebbbc2489",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/tasks/readme/tmp/release-recent-20261020/upload/engineering-figure-1-b7206774cd.webp",
+      "upload_name": "engineering-figure-1-b7206774cd.webp",
+      "upload_sha256": "f06a0f9a652248f65adffc06157ea008aee32ba328d84385e4293980bd646608",
+      "pixel_identical": true,
+      "bytes": 793930,
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/engineering-figure-1-b7206774cd.webp",
+      "cdn_byte_verified": true,
+      "retained_original": "assets/source-images/recent-20261020/engineering-figure-1.png",
+      "original_archive": "workspace/evidence/recent-combined-release-20261020/source-originals/engineering-figure-1.png",
+      "retained_original_scope": "Local source task and workspace evidence archive; excluded from remote Git due 11 MiB pack limit"
+    },
+    {
+      "source": "static/img/senior-feedback-20261020/engineering-figure-2.png",
+      "original_sha256": "627df6af357f09bd1b67adaebc37f2166c1ddffabac895a38631790838acbadf",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/tasks/readme/tmp/release-recent-20261020/upload/engineering-figure-2-627df6af35.webp",
+      "upload_name": "engineering-figure-2-627df6af35.webp",
+      "upload_sha256": "e1f1eaa1ef1c5ae6e915c677c1daa6afc0e98bfda9628e6ffeec2f26d546fbf5",
+      "pixel_identical": true,
+      "bytes": 395994,
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/engineering-figure-2-627df6af35.webp",
+      "cdn_byte_verified": true,
+      "retained_original": "assets/source-images/recent-20261020/engineering-figure-2.png",
+      "original_archive": "workspace/evidence/recent-combined-release-20261020/source-originals/engineering-figure-2.png",
+      "retained_original_scope": "Local source task and workspace evidence archive; excluded from remote Git due 11 MiB pack limit"
+    },
+    {
+      "source": "static/img/senior-feedback-20261020/engineering-figure-3.png",
+      "original_sha256": "5f5e319acc5ed5fefaf22a245f1b7827d50537868ada18a7d306ffc343888519",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/tasks/readme/tmp/release-recent-20261020/upload/engineering-figure-3-5f5e319acc.webp",
+      "upload_name": "engineering-figure-3-5f5e319acc.webp",
+      "upload_sha256": "20a1d3af4f3043485c55bf06a590674fa81fe1a5d3ba87645f426f29683b948c",
+      "pixel_identical": true,
+      "bytes": 99424,
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/engineering-figure-3-5f5e319acc.webp",
+      "cdn_byte_verified": true,
+      "retained_original": "assets/source-images/recent-20261020/engineering-figure-3.png",
+      "original_archive": "workspace/evidence/recent-combined-release-20261020/source-originals/engineering-figure-3.png",
+      "retained_original_scope": "Local source task and workspace evidence archive; excluded from remote Git due 11 MiB pack limit"
+    },
+    {
+      "source": "static/img/senior-feedback-20261020/engineering-figure-4.png",
+      "original_sha256": "f4de7549d88d0baee39797fcd09aa9fa31be049494276fd952e272dd5d146d21",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/tasks/readme/tmp/release-recent-20261020/upload/engineering-figure-4-f4de7549d8.webp",
+      "upload_name": "engineering-figure-4-f4de7549d8.webp",
+      "upload_sha256": "27386c19793971897cf8ae4c9a3e2637a8a55e7a795c63d11396fe852db6a434",
+      "pixel_identical": true,
+      "bytes": 472752,
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/engineering-figure-4-f4de7549d8.webp",
+      "cdn_byte_verified": true,
+      "retained_original": "assets/source-images/recent-20261020/engineering-figure-4.png",
+      "original_archive": "workspace/evidence/recent-combined-release-20261020/source-originals/engineering-figure-4.png",
+      "retained_original_scope": "Local source task and workspace evidence archive; excluded from remote Git due 11 MiB pack limit"
+    },
+    {
+      "source": "static/img/senior-feedback-20261020/engineering-figure-6.png",
+      "original_sha256": "82a0893b5b1b4e11a0c5c449b332900a83c91666fac4cb937ac07787d5d67c7d",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/tasks/readme/tmp/release-recent-20261020/upload/engineering-figure-6-82a0893b5b.webp",
+      "upload_name": "engineering-figure-6-82a0893b5b.webp",
+      "upload_sha256": "d0d865c0ceb3e37760e05d7fa315fe1c60c377ef0b9d95a28e346c04a1613578",
+      "pixel_identical": true,
+      "bytes": 939478,
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/engineering-figure-6-82a0893b5b.webp",
+      "cdn_byte_verified": true,
+      "retained_original": "assets/source-images/recent-20261020/engineering-figure-6.png",
+      "original_archive": "workspace/evidence/recent-combined-release-20261020/source-originals/engineering-figure-6.png",
+      "retained_original_scope": "Local source task and workspace evidence archive; excluded from remote Git due 11 MiB pack limit"
+    },
+    {
+      "source": "static/img/model-overview/overview-8d8c7cc2c80c.png",
+      "original_sha256": "8d8c7cc2c80c567e130ce9c5f2c71c51cdff4ab64b7d52688d5f5e3671f743d8",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/tasks/readme/tmp/release-recent-20261020/upload/overview-8d8c7cc2c80c-8d8c7cc2c8.webp",
+      "upload_name": "overview-8d8c7cc2c80c-8d8c7cc2c8.webp",
+      "upload_sha256": "9aad8623a025fb4375eb7762ca49176e94a1185b3481af23a05ed40e574fc3af",
+      "pixel_identical": true,
+      "bytes": 1029620,
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/overview-8d8c7cc2c80c-8d8c7cc2c8.webp",
+      "cdn_byte_verified": true,
+      "retained_original": "assets/source-images/recent-20261020/overview-8d8c7cc2c80c.png",
+      "original_archive": "workspace/evidence/recent-combined-release-20261020/source-originals/overview-8d8c7cc2c80c.png",
+      "retained_original_scope": "Local source task and workspace evidence archive; excluded from remote Git due 11 MiB pack limit"
+    },
+    {
+      "source": "static/img/ruoxi-20261020/contribution-figure-1.png",
+      "original_sha256": "e88a84496c75510f0267b6d3f1c7a6847b642baf38d5d7657c989870a97c8c23",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/tasks/readme/tmp/release-recent-20261020/upload/contribution-figure-1-e88a84496c.webp",
+      "upload_name": "contribution-figure-1-e88a84496c.webp",
+      "upload_sha256": "6100fe1d7899690b17ca201cc4bc25a8c1bbb615b63b2b2e8934cacd171957db",
+      "pixel_identical": true,
+      "bytes": 101030,
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-1-e88a84496c.webp",
+      "cdn_byte_verified": true,
+      "retained_original": "assets/source-images/recent-20261020/contribution-figure-1.png",
+      "original_archive": "workspace/evidence/recent-combined-release-20261020/source-originals/contribution-figure-1.png",
+      "retained_original_scope": "Local source task and workspace evidence archive; excluded from remote Git due 11 MiB pack limit"
+    },
+    {
+      "source": "static/img/ruoxi-20261020/contribution-figure-2.png",
+      "original_sha256": "652cbf31ef0115fc97de01a68803ebfb22323a7701f508d4a7e971fe5ef2ec43",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/tasks/readme/tmp/release-recent-20261020/upload/contribution-figure-2-652cbf31ef.webp",
+      "upload_name": "contribution-figure-2-652cbf31ef.webp",
+      "upload_sha256": "9a1faede2514c268f646550805e88f6a0a68ee3e53e810a7875309d88b3fbb3e",
+      "pixel_identical": true,
+      "bytes": 765340,
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-2-652cbf31ef.webp",
+      "cdn_byte_verified": true,
+      "retained_original": "assets/source-images/recent-20261020/contribution-figure-2.png",
+      "original_archive": "workspace/evidence/recent-combined-release-20261020/source-originals/contribution-figure-2.png",
+      "retained_original_scope": "Local source task and workspace evidence archive; excluded from remote Git due 11 MiB pack limit"
+    },
+    {
+      "source": "static/img/ruoxi-20261020/contribution-figure-3.png",
+      "original_sha256": "7b0274039463219b243df366defa1e0dd916d44c06ea734ccec339f3e69ed6c0",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/tasks/readme/tmp/release-recent-20261020/upload/contribution-figure-3-7b02740394.webp",
+      "upload_name": "contribution-figure-3-7b02740394.webp",
+      "upload_sha256": "1e25a2819bad00374e493fd758811b9aa82157fa8141f79fec19c04da1cf3f76",
+      "pixel_identical": true,
+      "bytes": 802312,
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-3-7b02740394.webp",
+      "cdn_byte_verified": true,
+      "retained_original": "assets/source-images/recent-20261020/contribution-figure-3.png",
+      "original_archive": "workspace/evidence/recent-combined-release-20261020/source-originals/contribution-figure-3.png",
+      "retained_original_scope": "Local source task and workspace evidence archive; excluded from remote Git due 11 MiB pack limit"
+    },
+    {
+      "source": "static/img/ruoxi-20261020/contribution-figure-4.png",
+      "original_sha256": "2b6f00755b3f384755e98c2bbfb6c84d8e3c758bffb3a6a641350b84e5050106",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/tasks/readme/tmp/release-recent-20261020/upload/contribution-figure-4-2b6f00755b.webp",
+      "upload_name": "contribution-figure-4-2b6f00755b.webp",
+      "upload_sha256": "70a22ea8910bc863c6a6af4a1b90745455fb9c37dbaccec43a359e76ff01fda5",
+      "pixel_identical": true,
+      "bytes": 8319706,
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-4-2b6f00755b.webp",
+      "cdn_byte_verified": true,
+      "retained_original": "assets/source-images/recent-20261020/contribution-figure-4.png",
+      "original_archive": "workspace/evidence/recent-combined-release-20261020/source-originals/contribution-figure-4.png",
+      "retained_original_scope": "Local source task and workspace evidence archive; excluded from remote Git due 11 MiB pack limit"
+    },
+    {
+      "source": "static/img/ruoxi-20261020/contribution-figure-5.png",
+      "original_sha256": "7d72a4f737089d1cd0575c3c9f442329d04105bb10a96bc8832bceef4e4b7acc",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/tasks/readme/tmp/release-recent-20261020/upload/contribution-figure-5-7d72a4f737.webp",
+      "upload_name": "contribution-figure-5-7d72a4f737.webp",
+      "upload_sha256": "c7f49a5972c5e592e38ed9b0eb4fad1f7c9a1294216453a056ed117409914cd1",
+      "pixel_identical": true,
+      "bytes": 6676888,
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-5-7d72a4f737.webp",
+      "cdn_byte_verified": true,
+      "retained_original": "assets/source-images/recent-20261020/contribution-figure-5.png",
+      "original_archive": "workspace/evidence/recent-combined-release-20261020/source-originals/contribution-figure-5.png",
+      "retained_original_scope": "Local source task and workspace evidence archive; excluded from remote Git due 11 MiB pack limit"
+    },
+    {
+      "source": "static/img/ruoxi-20261020/description-workflow.png",
+      "original_sha256": "81434cea99113a9ddcfb2fbf6fcc1520537ef73eb65855c4c539cdc6e70274b3",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/tasks/readme/tmp/release-recent-20261020/upload/description-workflow-81434cea99.webp",
+      "upload_name": "description-workflow-81434cea99.webp",
+      "upload_sha256": "44e061829fcec87a849b4e9bcb79c943a08bd6a87640d0d6bdd495a8408f4444",
+      "pixel_identical": true,
+      "bytes": 81626,
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/description-workflow-81434cea99.webp",
+      "cdn_byte_verified": true,
+      "retained_original": "assets/source-images/recent-20261020/description-workflow.png",
+      "original_archive": "workspace/evidence/recent-combined-release-20261020/source-originals/description-workflow.png",
+      "retained_original_scope": "Local source task and workspace evidence archive; excluded from remote Git due 11 MiB pack limit"
+    },
+    {
+      "source": "static/img/ruoxi-20261020/docking-figure-1.png",
+      "original_sha256": "fa6200a22b1a87b9fe2f6e0461dc25e9cbbe7914f87785cee4a4cda8248db05e",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/tasks/readme/tmp/release-recent-20261020/upload/docking-figure-1-fa6200a22b.webp",
+      "upload_name": "docking-figure-1-fa6200a22b.webp",
+      "upload_sha256": "3df0116752ebea5e686e5c2fde78868af333cfa543e4ebd7b63bf8be06cc481e",
+      "pixel_identical": true,
+      "bytes": 653370,
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-1-fa6200a22b.webp",
+      "cdn_byte_verified": true,
+      "retained_original": "assets/source-images/recent-20261020/docking-figure-1.png",
+      "original_archive": "workspace/evidence/recent-combined-release-20261020/source-originals/docking-figure-1.png",
+      "retained_original_scope": "Local source task and workspace evidence archive; excluded from remote Git due 11 MiB pack limit"
+    },
+    {
+      "source": "static/img/ruoxi-20261020/docking-figure-2.png",
+      "original_sha256": "7a7d9d242aed7a723ba118e8c5fcf8e3ec126d20d8e395f0c0eb46b631c62975",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/tasks/readme/tmp/release-recent-20261020/upload/docking-figure-2-7a7d9d242a.webp",
+      "upload_name": "docking-figure-2-7a7d9d242a.webp",
+      "upload_sha256": "ae98c6e9d9c029bc209e1d1df8aef2c486b574f29e305977d2b96fd83b246c17",
+      "pixel_identical": true,
+      "bytes": 3817226,
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-2-7a7d9d242a.webp",
+      "cdn_byte_verified": true,
+      "retained_original": "assets/source-images/recent-20261020/docking-figure-2.png",
+      "original_archive": "workspace/evidence/recent-combined-release-20261020/source-originals/docking-figure-2.png",
+      "retained_original_scope": "Local source task and workspace evidence archive; excluded from remote Git due 11 MiB pack limit"
+    },
+    {
+      "source": "static/img/ruoxi-20261020/docking-figure-3.png",
+      "original_sha256": "9b303eb0531f0a914f48cf27be0a277e4b7a851fcaa272ee4105e74e14bfcd3d",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/tasks/readme/tmp/release-recent-20261020/upload/docking-figure-3-9b303eb053.webp",
+      "upload_name": "docking-figure-3-9b303eb053.webp",
+      "upload_sha256": "38993b18d6bc35e3db8de58909a978d18db92d8fc18f8096027ccffdc3aaed46",
+      "pixel_identical": true,
+      "bytes": 736200,
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-3-9b303eb053.webp",
+      "cdn_byte_verified": true,
+      "retained_original": "assets/source-images/recent-20261020/docking-figure-3.png",
+      "original_archive": "workspace/evidence/recent-combined-release-20261020/source-originals/docking-figure-3.png",
+      "retained_original_scope": "Local source task and workspace evidence archive; excluded from remote Git due 11 MiB pack limit"
+    },
+    {
+      "source": "static/img/ruoxi-20261020/docking-figure-4.png",
+      "original_sha256": "0e18ad3b0fcdfd1a2082e3d4ffab7efbb584c55376476612598d787edc8a09cc",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/tasks/readme/tmp/release-recent-20261020/upload/docking-figure-4-0e18ad3b0f.webp",
+      "upload_name": "docking-figure-4-0e18ad3b0f.webp",
+      "upload_sha256": "abde13b2d1b663c0f4396c544b158259e60de003404577224b1e45a38dcdd47f",
+      "pixel_identical": true,
+      "bytes": 4511062,
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-4-0e18ad3b0f.webp",
+      "cdn_byte_verified": true,
+      "retained_original": "assets/source-images/recent-20261020/docking-figure-4.png",
+      "original_archive": "workspace/evidence/recent-combined-release-20261020/source-originals/docking-figure-4.png",
+      "retained_original_scope": "Local source task and workspace evidence archive; excluded from remote Git due 11 MiB pack limit"
+    },
+    {
+      "source": "static/img/ruoxi-20261020/docking-figure-5.png",
+      "original_sha256": "1e38205eafe13ebba8bff4f25184732f9d7630299f30d3d98846e8272fc261e6",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/tasks/readme/tmp/release-recent-20261020/upload/docking-figure-5-1e38205eaf.webp",
+      "upload_name": "docking-figure-5-1e38205eaf.webp",
+      "upload_sha256": "57301f94366f063db6e1ff9746fed90c73ac4fdd739df589f3828ca9ee338c44",
+      "pixel_identical": true,
+      "bytes": 3824022,
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-5-1e38205eaf.webp",
+      "cdn_byte_verified": true,
+      "retained_original": "assets/source-images/recent-20261020/docking-figure-5.png",
+      "original_archive": "workspace/evidence/recent-combined-release-20261020/source-originals/docking-figure-5.png",
+      "retained_original_scope": "Local source task and workspace evidence archive; excluded from remote Git due 11 MiB pack limit"
+    }
+  ],
+  "scientific_image_conversion": "Lossless WebP with exact RGBA pixel equality; original PNGs retained",
+  "source_migrations": [
+    {
+      "path": "static/img/ruoxi-20261020/contribution-figure-1.png",
+      "url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-1-e88a84496c.webp",
+      "sha256": "e88a84496c75510f0267b6d3f1c7a6847b642baf38d5d7657c989870a97c8c23"
+    },
+    {
+      "path": "static/img/ruoxi-20261020/contribution-figure-2.png",
+      "url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-2-652cbf31ef.webp",
+      "sha256": "652cbf31ef0115fc97de01a68803ebfb22323a7701f508d4a7e971fe5ef2ec43"
+    },
+    {
+      "path": "static/img/ruoxi-20261020/contribution-figure-3.png",
+      "url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-3-7b02740394.webp",
+      "sha256": "7b0274039463219b243df366defa1e0dd916d44c06ea734ccec339f3e69ed6c0"
+    },
+    {
+      "path": "static/img/ruoxi-20261020/contribution-figure-4.png",
+      "url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-4-2b6f00755b.webp",
+      "sha256": "2b6f00755b3f384755e98c2bbfb6c84d8e3c758bffb3a6a641350b84e5050106"
+    },
+    {
+      "path": "static/img/ruoxi-20261020/contribution-figure-5.png",
+      "url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-5-7d72a4f737.webp",
+      "sha256": "7d72a4f737089d1cd0575c3c9f442329d04105bb10a96bc8832bceef4e4b7acc"
+    },
+    {
+      "path": "static/img/ruoxi-20261020/description-workflow.png",
+      "url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/description-workflow-81434cea99.webp",
+      "sha256": "81434cea99113a9ddcfb2fbf6fcc1520537ef73eb65855c4c539cdc6e70274b3"
+    },
+    {
+      "path": "static/img/ruoxi-20261020/docking-figure-1.png",
+      "url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-1-fa6200a22b.webp",
+      "sha256": "fa6200a22b1a87b9fe2f6e0461dc25e9cbbe7914f87785cee4a4cda8248db05e"
+    },
+    {
+      "path": "static/img/ruoxi-20261020/docking-figure-2.png",
+      "url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-2-7a7d9d242a.webp",
+      "sha256": "7a7d9d242aed7a723ba118e8c5fcf8e3ec126d20d8e395f0c0eb46b631c62975"
+    },
+    {
+      "path": "static/img/ruoxi-20261020/docking-figure-3.png",
+      "url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-3-9b303eb053.webp",
+      "sha256": "9b303eb0531f0a914f48cf27be0a277e4b7a851fcaa272ee4105e74e14bfcd3d"
+    },
+    {
+      "path": "static/img/ruoxi-20261020/docking-figure-4.png",
+      "url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-4-0e18ad3b0f.webp",
+      "sha256": "0e18ad3b0fcdfd1a2082e3d4ffab7efbb584c55376476612598d787edc8a09cc"
+    },
+    {
+      "path": "static/img/ruoxi-20261020/docking-figure-5.png",
+      "url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-5-1e38205eaf.webp",
+      "sha256": "1e38205eafe13ebba8bff4f25184732f9d7630299f30d3d98846e8272fc261e6"
+    },
+    {
+      "path": "static/img/ruoxi-20261020/engineering-figure-1.png",
+      "url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/engineering-figure-1-b7206774cd.webp",
+      "sha256": "b7206774cdaeb1b92fc854bc6a29a799d29be3d47a0dee8ee6e0e11ebbbc2489"
+    },
+    {
+      "path": "static/img/ruoxi-20261020/engineering-figure-2.png",
+      "url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/engineering-figure-2-627df6af35.webp",
+      "sha256": "627df6af357f09bd1b67adaebc37f2166c1ddffabac895a38631790838acbadf"
+    },
+    {
+      "path": "static/img/ruoxi-20261020/engineering-figure-3.png",
+      "url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/engineering-figure-3-5f5e319acc.webp",
+      "sha256": "5f5e319acc5ed5fefaf22a245f1b7827d50537868ada18a7d306ffc343888519"
+    },
+    {
+      "path": "static/img/ruoxi-20261020/engineering-figure-4.png",
+      "url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/engineering-figure-4-f4de7549d8.webp",
+      "sha256": "f4de7549d88d0baee39797fcd09aa9fa31be049494276fd952e272dd5d146d21"
+    },
+    {
+      "path": "static/img/ruoxi-20261020/engineering-figure-6.png",
+      "url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/engineering-figure-6-82a0893b5b.webp",
+      "sha256": "82a0893b5b1b4e11a0c5c449b332900a83c91666fac4cb937ac07787d5d67c7d"
+    }
+  ],
+  "originals_repository_policy": "Original PNG files retained in the local task branch and workspace evidence archive. Public site uses pixel-identical lossless WebP on official iGEM CDN."
+}

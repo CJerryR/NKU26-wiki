@@ -25,6 +25,26 @@
         "language": "author English; Chinese names from parallel Chinese section",
         "source_record": "outputs/Team成员与贡献更新-20261019/00-原件清单.json",
         "status": "source text integrated; team final review pending"
+      },
+      "feishu_revision_20261020": {
+        "source": "https://nankai.feishu.cn/wiki/ATIgwNcmziiwtPkEYvycd5ZYnjg",
+        "source_sha256": "9a4c1348b6ca644f880464ae427c5830b7e24a827aff13f73afe90c3d4b6e6a0",
+        "source_message_time": "2026-10-20 02:02 +08:00",
+        "record": "review/attributions-20261020/source-comparison.json",
+        "members": 27,
+        "specific_tasks": 138,
+        "added_sections": [
+          "AI tool use",
+          "iGEM & partner offers",
+          "External contributions"
+        ],
+        "status": "integrated locally; team final review pending",
+        "partner_offer_table": {
+          "rows": 5,
+          "columns": 3,
+          "source": "Live source screenshot; verified against original Word export context",
+          "record": "review/attributions-20261020/offers-table.json"
+        }
       }
     },
     {
@@ -55,7 +75,11 @@
       "meeting_20261019_received": true,
       "meeting_20261019_source_language_preserved": true,
       "meeting_20261019_status": "original manuscripts integrated; publication validation pending",
-      "meeting_20261019_record": "outputs/19日凌晨会后更新-20261019/00-全部原件SHA256.json"
+      "meeting_20261019_record": "outputs/19日凌晨会后更新-20261019/00-全部原件SHA256.json",
+      "latest_manuscript_source": "https://nankai.feishu.cn/wiki/Lj8SwIzkKiQgBzkecpNcRB4qnUc",
+      "latest_source_language": "en",
+      "latest_translation": "Original English manuscript, no machine translation applied",
+      "previous_body_archive": "docs/archived-content/20261020-before-0330/contribution.json"
     },
     {
       "slug": "description",
@@ -79,7 +103,13 @@
       "meeting_20261019_received": true,
       "meeting_20261019_source_language_preserved": true,
       "meeting_20261019_status": "original manuscripts integrated; publication validation pending",
-      "meeting_20261019_record": "outputs/19日凌晨会后更新-20261019/00-全部原件SHA256.json"
+      "meeting_20261019_record": "outputs/19日凌晨会后更新-20261019/00-全部原件SHA256.json",
+      "latest_requirement_at": "2026-10-20 03:30",
+      "latest_requirement_source": "https://nankai.feishu.cn/wiki/WYASwetLiiOyTskR0VecKEFrnUb",
+      "latest_manuscript_source": "https://nankai.feishu.cn/wiki/TMcWwNEceipgotkQWyGc3aPrnUf",
+      "previous_body_archive": "docs/archived-content/20261020-before-0330/description.json",
+      "latest_source_language": "en",
+      "latest_translation": "Original English manuscript, no machine translation applied"
     },
     {
       "slug": "education",
@@ -125,7 +155,22 @@
       "meeting_20261019_received": true,
       "meeting_20261019_source_language_preserved": true,
       "meeting_20261019_status": "original manuscripts integrated; publication validation pending",
-      "meeting_20261019_record": "outputs/19日凌晨会后更新-20261019/00-全部原件SHA256.json"
+      "meeting_20261019_record": "outputs/19日凌晨会后更新-20261019/00-全部原件SHA256.json",
+      "latest_author_replacement_20261020": {
+        "source_url": "https://nankai.feishu.cn/wiki/KNqGwhJ7Ti73Fqk2v6LckeTCnid",
+        "source_export": "Project -_ Engineering.zip",
+        "source_markdown_sha256": "888b1a10b6d9e34645ee69be15831223aa91a6ba762262e8b61cdc1a967365db",
+        "receipt": "docs/engineering-replacement-20261020.json",
+        "author_svg_retained": true,
+        "source_figure5_image_missing": true,
+        "status": "integrated-local-awaiting-final-review-and-source-figure5"
+      },
+      "latest_requirement_at": "2026-10-20 03:30",
+      "latest_requirement_source": "https://nankai.feishu.cn/wiki/WYASwetLiiOyTskR0VecKEFrnUb",
+      "latest_manuscript_source": "https://nankai.feishu.cn/wiki/KNqGwhJ7Ti73Fqk2v6LckeTCnid",
+      "previous_body_archive": "docs/archived-content/20261020-before-0330/engineering.json",
+      "latest_source_language": "en",
+      "latest_translation": "Original English manuscript, no machine translation applied"
     },
     {
       "slug": "experiments",
@@ -352,7 +397,11 @@
       "integration_gate1_approved": true,
       "sources": [
         "outputs/v8.0/已收材料-2026-10-09/project-model+干实验飞书迭代快照__2026-10-10/Project｜en.md"
-      ]
+      ],
+      "latest_requirement_at": "2026-10-20 03:30",
+      "latest_requirement_source": "https://nankai.feishu.cn/wiki/WYASwetLiiOyTskR0VecKEFrnUb",
+      "latest_manuscript_source": "Moved original Background section and references 1–8 from Description per latest author instruction",
+      "previous_body_archive": "docs/archived-content/20261020-before-0330/background.json"
     },
     {
       "slug": "model-docking",
@@ -377,7 +426,26 @@
       "meeting_20261019_received": true,
       "meeting_20261019_source_language_preserved": true,
       "meeting_20261019_status": "original manuscripts integrated; publication validation pending",
-      "meeting_20261019_record": "outputs/19日凌晨会后更新-20261019/00-全部原件SHA256.json"
+      "meeting_20261019_record": "outputs/19日凌晨会后更新-20261019/00-全部原件SHA256.json",
+      "latest_figure_revision": {
+        "source": "https://nankai.feishu.cn/wiki/DpJYwOJNjiievKkVuaFcLBD8npf",
+        "received_at": "2026-10-20",
+        "figures_updated": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "captions_updated": [
+          2,
+          4,
+          5
+        ],
+        "raw_originals_preserved": true,
+        "figure6": "Existing approved a–c crop retained; latest full-figure/caption inconsistency awaits author clarification",
+        "team_review_approved": false
+      }
     },
     {
       "slug": "model-md",
@@ -400,7 +468,12 @@
       "meeting_20261019_received": true,
       "meeting_20261019_source_language_preserved": true,
       "meeting_20261019_status": "original manuscripts integrated; publication validation pending",
-      "meeting_20261019_record": "outputs/19日凌晨会后更新-20261019/00-全部原件SHA256.json"
+      "meeting_20261019_record": "outputs/19日凌晨会后更新-20261019/00-全部原件SHA256.json",
+      "latest_source_audit": {
+        "source": "https://nankai.feishu.cn/wiki/QDKtwTMxjiSQoBkLSNrc69v0nSf",
+        "audited_at": "2026-10-20",
+        "result": "Two original PNGs byte-identical to integrated originals; current translated text and captions retained"
+      }
     },
     {
       "slug": "model-ode",

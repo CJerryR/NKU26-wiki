@@ -1,0 +1,135 @@
+{
+  "source": "Home.md from official Feishu export Home.zip, supplied by coordinating chat",
+  "source_archive": "workspace/evidence/ruoxi-requirements-20261020/Home.zip",
+  "source_screenshots": 10,
+  "source_complete": true,
+  "baseline_commit": "95bb4e144428707e49c4f91062596b3410e804c0",
+  "previous_round": "ded3b8542adbb673c327e3e7c756fdf03531890d, published in10.2.6",
+  "publication": "local candidate; not published",
+  "requirements": [
+    {
+      "id": "HOME-01",
+      "request": "左侧起点与后续相邻荧光更明显",
+      "kind": "建议",
+      "state": "already-published",
+      "implementation": "保留ded3b85的即时Start here、下一节点亮度与尺寸增强、Follow the glow",
+      "evidence": "V10.2.6发布回执明确包含ded3b85；本轮浏览器Start here仍出现"
+    },
+    {
+      "id": "HOME-02",
+      "request": "更强地引导鼠标移到左边",
+      "kind": "要做",
+      "state": "already-published",
+      "implementation": "保留左侧起点标记、明确左侧文案与触屏Tap文案",
+      "evidence": "同HOME-01，未重复改写寻路"
+    },
+    {
+      "id": "HOME-03",
+      "request": "找到虫后通过下钻、固定光圈或整体提亮引导继续scroll",
+      "kind": "备选建议",
+      "state": "implemented-local",
+      "implementation": "采用固定光圈+逐渐提亮土壤+显著Scroll down to continue；不叠加新下钻动作；ArrowDown交回翻页，更新辅助技术说明",
+      "files": [
+        "static/js/home-opening.js",
+        "src/home/sections/opening.html",
+        "static/css/home-v6.css"
+      ],
+      "evidence": "found-lit.png；两项输入回归；发现后下滚进入world"
+    },
+    {
+      "id": "HOME-04",
+      "request": "引导点击世界地图紫色点",
+      "kind": "明确修改",
+      "state": "implemented-local",
+      "implementation": "地图图例增加高对比Click a purple dot指引，保留原有点击、悬停及键盘案例卡",
+      "files": [
+        "src/home/sections/world.html",
+        "static/css/home-v6.css"
+      ],
+      "evidence": "实际点击United States紫点打开对应案例"
+    },
+    {
+      "id": "HOME-05",
+      "request": "Closer to home一行大字，下一行The nematode threat in China",
+      "kind": "明确修改",
+      "state": "implemented-local",
+      "implementation": "中国威胁地图标题与副标题分层，更新分区导航名；标题宽度与字号适配，保留统计和数据来源",
+      "files": [
+        "src/home/sections/china.html",
+        "static/css/home-v6.css"
+      ],
+      "evidence": "china-location.png；390×844标题/卡片/切换条不重叠"
+    },
+    {
+      "id": "HOME-06",
+      "request": "HuangHuaiHai Plain多停1–2秒或用引导明确地图位置",
+      "kind": "备选建议",
+      "state": "implemented-local",
+      "implementation": "采用定位引导：地图总览时持续显示原场景投影位置的黄淮海平原标注及引导线，直到开始下潜；注明illustrative field；未延长或破坏已验收连续镜头",
+      "files": [
+        "src/home/sections/china.html",
+        "static/js/home-zoom3d.js",
+        "static/css/home-v6.css"
+      ],
+      "evidence": "china-location.png；地图静止时label opacity=1"
+    },
+    {
+      "id": "HOME-07",
+      "request": "标题字号统一、位置随文字大小自适应",
+      "kind": "明确修改",
+      "state": "implemented-local",
+      "implementation": "依据23.25.37、23.26.07、23.26.38三张截图定位到traces动画首帧与后续帧；7个h2/h3共用字号；ResizeObserver测量字幕高度并限制桌面文字框边界；手机统一26px",
+      "files": [
+        "static/css/home-ascr.css",
+        "static/css/home-mobile.css",
+        "static/js/home-ascr-story.js"
+      ],
+      "evidence": "桌面7个标题均26.1154px；390px各26px；首帧/受体帧已操作；保留其他章节既有层级"
+    },
+    {
+      "id": "HOME-08",
+      "request": "吉祥物若为回顶须明确标注",
+      "kind": "明确修改，替代方案可选",
+      "state": "implemented-local",
+      "implementation": "在既有按钮上增加可见↑ Back to top标签，保留原回顶行为",
+      "files": [
+        "src/home/mascot.html",
+        "static/css/shell.css"
+      ],
+      "evidence": "从Our reach点击按钮返回opening，标签在激活前可见"
+    },
+    {
+      "id": "HOME-09",
+      "request": "HP地图标题改为Our reach / across China",
+      "kind": "明确修改",
+      "state": "implemented-local",
+      "implementation": "严格分两行显示并更新分区导航与可访问标题文本空格，HP数据和分层保持",
+      "files": [
+        "src/home/sections/hp.html",
+        "static/css/home-v6.css"
+      ],
+      "evidence": "hp-title.png"
+    },
+    {
+      "id": "HOME-10",
+      "request": "统一color拼写",
+      "kind": "明确修改",
+      "state": "implemented-local",
+      "implementation": "三个可见文案改为color：世界地图图例、Signal in/color out、A color is where the next step starts；不改SVG、卡片或DBTL结构/素材",
+      "files": [
+        "src/home/sections/world.html",
+        "src/home/sections/traces.html",
+        "src/home/sections/explore.html"
+      ],
+      "evidence": "可见首页源中无colour；仅代码注释和内部函数仍有历史拼法"
+    }
+  ],
+  "preserved": [
+    "What We Built card structure, six images and data",
+    "DBTL structure and source SVG",
+    "scientific content and source JSON",
+    "existing guide path, timings and map flight"
+  ],
+  "evidence_directory": "workspace/evidence/ruoxi-home-review/full-review",
+  "initial_synced_baseline": "e205f4a5c5ade14f1c38e6836a2b41521b20bf5e"
+}

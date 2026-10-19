@@ -1,0 +1,741 @@
+{
+  "title": "Engineering",
+  "heading": "Engineering",
+  "sub": "",
+  "crumbs": [
+    "Project",
+    "Engineering"
+  ],
+  "route": "engineering",
+  "meta": [],
+  "search": true,
+  "blocks": [
+    {
+      "_template": "text",
+      "body": "<div class=\"reading-layout\" lang=\"en\">"
+    },
+    {
+      "_template": "text",
+      "body": "<p class=\"author-source-link\"><a href=\"/source-archive/#meeting-20261019\" data-source-document=\"meeting-20261019-1564a7b1bf5d\">Original submission (.docx)</a><span role=\"status\" aria-live=\"polite\"></span></p>"
+    },
+    {
+      "_template": "text",
+      "body": "<section class=\"author-manuscript\" lang=\"en\">"
+    },
+    {
+      "_template": "image",
+      "src": "https://static.igem.wiki/teams/6303/wiki/engineering-20261020/sobl-e530246a44cd.svg",
+      "alt": "Gene circuit overview showing GPR2 membrane-localization verification, GAL pathway engineering, and the synthetic transcription factor.",
+      "body": "",
+      "layout": "full",
+      "imageWidth": "wide"
+    },
+    {
+      "_template": "heading",
+      "level": 2,
+      "text": "DBTL-1 | Engineering the signal-response pathway",
+      "attributes": "#src-Project-Engineering-1 toc=\"DBTL-1 | Engineering the signal-response pathway\""
+    },
+    {
+      "_template": "heading",
+      "level": 3,
+      "text": "1.1 Receptor screening and selection of study targets",
+      "attributes": "#src-Project-Engineering-2 toc=\"1.1 Receptor screening and selection of study targets\""
+    },
+    {
+      "_template": "heading",
+      "level": 4,
+      "text": "Design | Defining receptor-screening objectives",
+      "attributes": "#src-Project-Engineering-3 toc=\"Design | Defining receptor-screening objectives\""
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> To build a yeast sensor that distinguishes ascr#18 from ascr#3, we screened recognition elements for further engineering. The literature identifies Gpr2, Gpr3, and GprC from nematode-trapping fungi as G protein-coupled receptors (GPCRs) involved in ascaroside sensing. We included all three as candidates, considering ligand recognition, localization in yeast, and pathway coupling. </p>"
+    },
+    {
+      "_template": "heading",
+      "level": 4,
+      "text": "Build | Establishing receptor and literature comparisons",
+      "attributes": "#src-Project-Engineering-5 toc=\"Build | Establishing receptor and literature comparisons\""
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> After preparing predicted structures of the three receptors and ascaroside ligands, we explored docking using AutoDock Vina as reported for GprC and SwissDock as reported for Gpr2 and Gpr3, with published pocket positions and key residues as references. </p>"
+    },
+    {
+      "_template": "heading",
+      "level": 4,
+      "text": "Test | Comparing with literature and refining the docking workflow",
+      "attributes": "#src-Project-Engineering-7 toc=\"Test | Comparing with literature and refining the docking workflow\""
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> Comparing scores, ligand positions, and residue contacts with literature clues revealed that inconsistent coordinate references could misplace search regions, while loss of formal charges during format conversion could affect charged-contact identification. We therefore refined docking and contact analysis by adding structural alignment, search-region verification, and chemical-information checks. </p>"
+    },
+    {
+      "_template": "heading",
+      "level": 4,
+      "text": "Learn | Selecting receptors for further engineering",
+      "attributes": "#src-Project-Engineering-9 toc=\"Learn | Selecting receptors for further engineering\""
+    },
+    {
+      "_template": "layout",
+      "kind": "note",
+      "label": "Interpretation and next steps",
+      "body": "<p style=\"text-align:left;\"> Reported plasma-membrane and mitochondria-associated localization of GprC could complicate localization and pathway integration in yeast. We therefore excluded it from this engineering round but retained it as a structural reference. Considering computational behavior and heterologous application conditions, subsequent mutant screening focused on Gpr2 while retaining studies of Gpr3 and its mutants. </p>"
+    },
+    {
+      "_template": "text",
+      "body": "</section>"
+    },
+    {
+      "_template": "heading",
+      "text": "1.3 The Third Cycle——Wet Lab",
+      "level": 3,
+      "attributes": "#the-third-cycle-wet-lab toc=\"The Third Cycle——Wet Lab\""
+    },
+    {
+      "_template": "text",
+      "body": "<p>Informed by results from the prior cycle, this iteration characterizes heterologous expression and proper plasma membrane localization of GPR2, establishing proof of feasibility for downstream chassis engineering.</p>"
+    },
+    {
+      "_template": "heading",
+      "text": "1.3.1 Design",
+      "level": 4,
+      "attributes": "#design toc=\"Design | Planning GPR2 Expression and Localization Verification\""
+    },
+    {
+      "_template": "text",
+      "body": "<p>To validate heterologous expression and proper plasma membrane localization of GPR2 in our host strain <em>S. cerevisiae</em> CEN.PK2-1C, we adopted the following experimental pipeline: assembly of the GPR2-sfGFP expression plasmid, gene knock-in mediated by yeast homologous recombination (HR), and fluorescence microscopy to characterize protein expression and subcellular localization. See Wet Lab-Results- DBTL-1 for detailed design and experimental protocols.</p>"
+    },
+    {
+      "_template": "heading",
+      "text": "1.3.2 Build",
+      "level": 4,
+      "attributes": "#build toc=\"Build | Integrating the GPR2-sfGFP Expression Cassette\""
+    },
+    {
+      "_template": "text",
+      "body": "<p>Via homologous recombination (HR), we integrated the constitutive <em>GPR2-sfGFP</em> expression cassette into the CEN.PK2-1C genome (Figure 1).</p>"
+    },
+    {
+      "_template": "image",
+      "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-e81fa7011e20-r2-e81fa7011e20-engineering-r2-eng-001.webp",
+      "alt": "Figure 1 Yeast transformation of GPR2‑sfGFP construct",
+      "body": "Figure 1 Yeast transformation of GPR2‑sfGFP construct",
+      "layout": "full",
+      "imageWidth": "medium"
+    },
+    {
+      "_template": "heading",
+      "text": "1.3.3 Test",
+      "level": 4,
+      "attributes": "#test toc=\"Test | Comparing GFP with Cell-Wall and Membrane Staining\""
+    },
+    {
+      "_template": "text",
+      "body": "Following gene knock-in, we visualized three groups of yeast under fluorescence microscopy: unstained cells (Figure 2), cell wall-stained yeast (Figure 3), and plasma membrane-stained yeast (Figure 4)."
+    },
+    {
+      "_template": "text",
+      "body": "Distinct GFP fluorescence signals were detected at the cell periphery in unstained yeast."
+    },
+    {
+      "_template": "image",
+      "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-ad5d098cc617-fig1-3-2.avif",
+      "alt": "Figure 2 Fluorescence microscopy results",
+      "body": "Figure 2 Fluorescence microscopy results",
+      "layout": "full",
+      "imageWidth": "medium"
+    },
+    {
+      "_template": "text",
+      "body": "For CFW-labelled yeast, the green GFP signal localizes to the cytoplasmic side of the blue CFW fluorescence."
+    },
+    {
+      "_template": "image",
+      "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-f9ddc932c78a-fig1-3-3.avif",
+      "alt": "Figure 3 Calcofluor‑White (CFW) staining of yeast cells",
+      "body": "Figure 3 Calcofluor‑White (CFW) staining of yeast cells",
+      "layout": "full",
+      "imageWidth": "medium"
+    },
+    {
+      "_template": "text",
+      "body": "In FM4-64-labelled yeast, the green GFP fluorescence and red FM4-64 signal co-localize on the vacuolar membrane following endocytosis."
+    },
+    {
+      "_template": "image",
+      "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-03753b902e9a-fig1-3-4.avif",
+      "alt": "Figure 4 FM4‑64 staining of yeast cells",
+      "body": "Figure 4 FM4‑64 staining of yeast cells",
+      "layout": "full",
+      "imageWidth": "medium"
+    },
+    {
+      "_template": "heading",
+      "text": "1.3.4 Learn",
+      "level": 4,
+      "attributes": "#learn toc=\"Learn | Assessing GPR2 Localization for Chassis Engineering\""
+    },
+    {
+      "_template": "layout",
+      "kind": "note",
+      "label": "Interpretation and next steps",
+      "body": "<p>Collectively, these data confirm heterologous expression and proper plasma membrane localization of GPR2 in CEN.PK2-1C, laying an essential foundation for our chassis engineering. We therefore advance to the next cycle to assemble the full signal-responsive engineered strain.</p>"
+    },
+    {
+      "_template": "heading",
+      "text": "1.3 The Fourth Cycle——Wet Lab",
+      "level": 3,
+      "attributes": "#the-fourth-cycle-wet-lab toc=\"The Fourth Cycle——Wet Lab\""
+    },
+    {
+      "_template": "text",
+      "body": "Building upon findings from prior iterations, this cycle launches the chassis engineering of our signal-responsive pathway."
+    },
+    {
+      "_template": "heading",
+      "text": "1.4.1 Design",
+      "level": 4,
+      "attributes": "#design-2 toc=\"Design | Planning the Ascaroside-Responsive Yeast Pathway\""
+    },
+    {
+      "_template": "text",
+      "body": "<p>Referring to previous work reported by Fan et al. <sup>[1][2]</sup>, we assembled the ascaroside-sensitive yeast biosensor according to the pipeline illustrated in Figure 1. </p>"
+    },
+    {
+      "_template": "image",
+      "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-d2f6a13810e7-r2-d2f6a13810e7-engineering-r2-eng-002.webp",
+      "alt": "Figure 1 Schematic Diagram of Yeast Biosensor Construction Pipeline",
+      "body": "Figure 1 Schematic Diagram of Yeast Biosensor Construction Pipeline",
+      "layout": "full",
+      "imageWidth": "medium"
+    },
+    {
+      "_template": "heading",
+      "text": "1.4.2 Build",
+      "level": 4,
+      "attributes": "#build-2 toc=\"Build | Assembling the Signal-Responsive Yeast Chassis\""
+    },
+    {
+      "body": "<p>First, we knocked out the <em>Gal80</em> gene in CEN.PK2-1C to obtain the engineered strain NKU-Y02 (Figure 2), which eliminates endogenous signal interference in this pathway. </p>",
+      "left": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-9ec82d42de33-r2-9ec82d42de33-engineering-r2-eng-003.webp",
+      "leftAlt": "Figure 2 Knockout of the *Gal80* Gene",
+      "leftCaption": "Figure 2 Knockout of the *Gal80* Gene",
+      "right": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-10dfc2855aa3-r2-10dfc2855aa3-engineering-r2-eng-004.webp",
+      "rightAlt": "Figure 3 Construction of Synthetic Transcription Factor",
+      "rightCaption": "Figure 3 Construction of Synthetic Transcription Factor",
+      "afterBody": "Subsequently, we fused the PRD domain of Ste12 (216–688 aa) with the DBD domain of Gal4 (1–147 aa) to construct a synthetic transcription factor (sTF). This construct was transformed into NKU-Y05, yielding strain NKU-Y05 (Figure 3) and enabling the coupling of GPCR-activated signaling with the GAL pathway.",
+      "_template": "gallery"
+    },
+    {
+      "_template": "text",
+      "body": "<p>Subsequently, we introduced MjDOD and BvCYP76AD5 driven by the bidirectional Gal1/10 promoter into NKU-Y05 to generate the engineered strain NKU-Y06 (Figure 4), realizing the visualization of signal output.</p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p>Finally, we transformed the constitutive <em>GPR2</em> expression cassette into NKU-Y06 to obtain the engineered strain NKU-Y07 (Figure 5), completing the preliminary construction of the full engineered strain system and advancing the project to the testing phase.</p>"
+    },
+    {
+      "_template": "heading",
+      "text": "1.4.3 Test",
+      "level": 4,
+      "attributes": "#wet-lab-fourth-test toc=\"1.4.3 Test\""
+    },
+    {
+      "_template": "text",
+      "body": "This section will be provided later."
+    },
+    {
+      "_template": "heading",
+      "text": "1.4.4 Learn",
+      "level": 4,
+      "attributes": "#wet-lab-fourth-learn toc=\"1.4.4 Learn\""
+    },
+    {
+      "_template": "text",
+      "body": "This section will be provided later."
+    },
+    {
+      "_template": "heading",
+      "text": "References",
+      "level": 3,
+      "attributes": "#references toc=\"References\""
+    },
+    {
+      "_template": "text",
+      "body": "Fan C, Yuan J. Reshaping the yeast galactose regulon via GPCR signaling cascade. Cell Rep Methods. 2023 Dec 18;3(12):100647. doi: 10.1016/j.crmeth.2023.100647. Epub 2023 Nov 20. PMID: 37989311; PMCID: PMC10753199."
+    },
+    {
+      "_template": "text",
+      "body": "Cong Fan, Nike He, Jifeng Yuan, Cascaded amplifying circuit enables sensitive detection of fungal pathogens, Biosensors and Bioelectronics, Volume 250, 2024, 116058, ISSN 0956-5663, [https://doi.org/10.1016/j.bios.2024.116058](https://doi.org/10.1016/j.bios.2024.116058)."
+    },
+    {
+      "_template": "text",
+      "body": "<section class=\"author-manuscript\" lang=\"en\">"
+    },
+    {
+      "_template": "heading",
+      "level": 2,
+      "text": "DBTL-2 | Engineering receptor specificity and constructing pathway models",
+      "attributes": "#src-Project-Engineering-12 toc=\"DBTL-2 | Engineering receptor specificity and constructing pathway models\""
+    },
+    {
+      "_template": "heading",
+      "level": 3,
+      "text": "2.1 Contact-guided mutant design and screening",
+      "attributes": "#src-Project-Engineering-13 toc=\"2.1 Contact-guided mutant design and screening\""
+    },
+    {
+      "_template": "heading",
+      "level": 4,
+      "text": "Design | Proposing engineering sites from WT contact differences",
+      "attributes": "#src-Project-Engineering-14 toc=\"Design | Proposing engineering sites from WT contact differences\""
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> We compared contact distributions of Gpr2 wild type (WT) with ascr#18 and ascr#3, selecting residues with differential contacts for alanine substitution to examine effects on dual-ligand behavior. </p>"
+    },
+    {
+      "_template": "heading",
+      "level": 4,
+      "text": "Build | Constructing mutant models and consistent controls",
+      "attributes": "#src-Project-Engineering-16 toc=\"Build | Constructing mutant models and consistent controls\""
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> We generated mutant sequences and predicted structures with AlphaFold 3. WT and mutants retained original residue numbering and were aligned to a common coordinate reference, with consistent structural preparation, ligand inputs, and docking search settings for score and contact comparisons. </p>"
+    },
+    {
+      "_template": "heading",
+      "level": 4,
+      "text": "Test | Iterating substitutions using score and contact feedback",
+      "attributes": "#src-Project-Engineering-18 toc=\"Test | Iterating substitutions using score and contact feedback\""
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> After screening single-site alanine mutants, we supplemented side-chain substitutions using score and contact analyses and performed saturation scanning at selected sites. The difference between each ligand's score change relative to WT classified shifts toward ascr#3 or ascr#18. We then inspected the scores separately to distinguish a lower target-ligand score, a higher score for the other ligand, or both. Contact comparisons with WT examined corresponding ligand positions and interaction clues. </p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> We then selected single-mutant parents by shift direction and score-change pattern and tested combinations to determine whether their effects persisted together. Compared with WT and each parent, most tested combinations did not further improve the better parent's target score or enlarge dual-ligand differences, so subsequent work focused on single mutants. </p>"
+    },
+    {
+      "_template": "heading",
+      "level": 4,
+      "text": "Learn | Selecting candidates for dynamic testing",
+      "attributes": "#src-Project-Engineering-21 toc=\"Learn | Selecting candidates for dynamic testing\""
+    },
+    {
+      "_template": "layout",
+      "kind": "note",
+      "label": "Interpretation and next steps",
+      "body": "<p style=\"text-align:left;\"> Combining score differentiation and contact analysis, we selected N84V and V368R. Relative to the same WT batch, N84V lowered the ascr#18 score and raised the ascr#3 score; V368R showed the opposite direction. Both mutants and WT then entered dynamic comparisons in a membrane environment. </p>"
+    },
+    {
+      "_template": "heading",
+      "level": 3,
+      "text": "2.2 Examining selected candidates in a membrane environment",
+      "attributes": "#src-Project-Engineering-23 toc=\"2.2 Examining selected candidates in a membrane environment\""
+    },
+    {
+      "_template": "heading",
+      "level": 4,
+      "text": "Design | Testing the membrane behavior of docking-selected candidates",
+      "attributes": "#src-Project-Engineering-24 toc=\"Design | Testing the membrane behavior of docking-selected candidates\""
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> We performed molecular dynamics (MD) simulations of six complexes formed by WT, N84V, and V368R with each ligand, examining whether ligands remained in their predicted pockets and whether original contacts persisted in a membrane environment. </p>"
+    },
+    {
+      "_template": "heading",
+      "level": 4,
+      "text": "Build | Preparing full-length receptors and membrane systems",
+      "attributes": "#src-Project-Engineering-26 toc=\"Build | Preparing full-length receptors and membrane systems\""
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> We aligned docked poses and their full-length receptors to a common coordinate reference, checked ligand clashes with restored segments, and adjusted the overlapping local lid region. Some reconstruction schemes also altered the backbone outside the loop or the ligand starting position, so adjustments were restricted to the lid while retaining each system's remaining coordinates. Each of the six complexes was then placed in a POPC lipid bilayer with solvent and ions. </p>"
+    },
+    {
+      "_template": "heading",
+      "level": 4,
+      "text": "Test | Tracking ligand motion and contact changes",
+      "attributes": "#src-Project-Engineering-28 toc=\"Test | Tracking ligand motion and contact changes\""
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> Each system completed one 100 ns trajectory. Using the local pocket as reference, we distinguished overall receptor motion from ligand movement within the pocket and compared time-dependent contacts and representative conformations. </p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> In the second half of the trajectories, N84V–ascr#18 deviated less from its own starting pose than WT–ascr#18 and N84V–ascr#3. Its initial Arg189 contact persisted: during 50–100 ns, hydrogen-bond occupancy between Arg189 and the ascr#18 carboxylate end was 93.6%, while neither comparison system showed that hydrogen bond in the same interval. This persistent contact offers a possible explanation for positional retention. </p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> V368R–ascr#3 left its initial position and moved toward Arg345. The charged end of Arg368 moved away from Asp70 around the time the ligand began contacting Arg345; in V368R–ascr#18, Arg368 and Asp70 remained close. Arg345 contacts with the ligand carboxylate also occurred in WT–ascr#3 and V368R–ascr#18, so this contact alone cannot yet explain the ascr#3 score bias of V368R. </p>"
+    },
+    {
+      "_template": "heading",
+      "level": 4,
+      "text": "Learn | Reinterpreting mutation effects from trajectories",
+      "attributes": "#src-Project-Engineering-32 toc=\"Learn | Reinterpreting mutation effects from trajectories\""
+    },
+    {
+      "_template": "layout",
+      "kind": "note",
+      "label": "Interpretation and next steps",
+      "body": "<p style=\"text-align:left;\"> MD showed that ligands can retain initial contacts or relocate and form persistent new contacts. Interpreting mutation effects requires combining ligand motion, internal receptor changes, and WT controls. Each system currently has only one trajectory and a different starting pose; contact and rearrangement reproducibility require further testing, and their relationship to actual recognition requires experiments. </p>"
+    },
+    {
+      "_template": "heading",
+      "level": 3,
+      "text": "2.3 ODE: connecting receptor signals to color output",
+      "attributes": "#src-Project-Engineering-34 toc=\"2.3 ODE: connecting receptor signals to color output\""
+    },
+    {
+      "_template": "heading",
+      "level": 4,
+      "text": "Design | Building a minimal model from biological principles",
+      "attributes": "#src-Project-Engineering-35 toc=\"Design | Building a minimal model from biological principles\""
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> We initially used ligand input to connect the receptor, G protein, MAPK, sTF, GAL productivity, and color in a minimal model. Several internal parameters lacked project-specific measurements and could not readily be identified separately from final color alone. We therefore turned to published and previous iGEM models for reusable pathway structures and parameters. </p>"
+    },
+    {
+      "_template": "heading",
+      "level": 4,
+      "text": "Build | Adapting the shared pathway and color-output interface",
+      "attributes": "#src-Project-Engineering-37 toc=\"Build | Adapting the shared pathway and color-output interface\""
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> Based on the public reaction structures of Supady Model B and TU Delft 2012, we incorporated G protein, scaffold, Fus3, and feedback modules. Under fixed construct conditions, we combined sTF regulation, GAL productivity, and color production and eliminated redundant states through molecular-total conservation, yielding six independent dynamic equations. The two sensors share the pathway but have separate effective input scales and color-production gains. </p>"
+    },
+    {
+      "_template": "heading",
+      "level": 4,
+      "text": "Test | Adjusting the response range using simulated endpoints",
+      "attributes": "#src-Project-Engineering-39 toc=\"Test | Adjusting the response range using simulated endpoints\""
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> After computational consistency checks, we found that colors from different stimuli were too similar under the initial parameters. Keeping shared pathway parameters fixed, we varied target and background nematode densities independently, constructed simulated color targets, and fitted input scales and color-production gains for both sensors. We then adjusted color scale and basal production using a smartphone-readout example and reintegrated to verify outputs. </p>"
+    },
+    {
+      "_template": "heading",
+      "level": 4,
+      "text": "Learn | Distinguishing pathway mechanisms from interface calibration",
+      "attributes": "#src-Project-Engineering-41 toc=\"Learn | Distinguishing pathway mechanisms from interface calibration\""
+    },
+    {
+      "_template": "layout",
+      "kind": "note",
+      "label": "Interpretation and next steps",
+      "body": "<p style=\"text-align:left;\"> Literature structures describe signal transmission, while input scales and color parameters adapt the model to particular constructs and measurement conditions. Simulation fitting identified a distinguishable output range and revealed deviations under weak stimulation. Subsequent experiments need dose responses, blanks, and time courses to determine real parameters and usable color-readout ranges. </p>"
+    },
+    {
+      "_template": "heading",
+      "level": 3,
+      "text": "2.4 Dual-channel model: estimating target density from paired colors",
+      "attributes": "#src-Project-Engineering-43 toc=\"2.4 Dual-channel model: estimating target density from paired colors\""
+    },
+    {
+      "_template": "heading",
+      "level": 4,
+      "text": "Design | Estimating Mi density with unknown background abundance",
+      "attributes": "#src-Project-Engineering-44 toc=\"Design | Estimating Mi density with unknown background abundance\""
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> Both the southern root-knot nematode (Mi) and Caenorhabditis elegans (Ce) may contribute ascr#3 and ascr#18. We designed two sensors with different ligand preferences and retained cross-responses, using paired colors from the same sample to estimate Mi density without knowing Ce abundance. </p>"
+    },
+    {
+      "_template": "heading",
+      "level": 4,
+      "text": "Build | Connecting mixed samples, ODEs, and smartphone readouts",
+      "attributes": "#src-Project-Engineering-46 toc=\"Build | Connecting mixed samples, ODEs, and smartphone readouts\""
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> We varied target and background densities independently and assigned different ligand compositions under an equal-total-release assumption. With the calibrated ODE fixed, we calculated paired pigment outputs from mixed samples and converted them to simulated smartphone RGB blue-channel readouts using a literature relationship. Negative logarithms of each channel's color ratio relative to its blank were then used to fit a three-coefficient regression mapping paired colors to Mi density. </p>"
+    },
+    {
+      "_template": "heading",
+      "level": 4,
+      "text": "Test | Comparing single- and dual-channel models on new combinations",
+      "attributes": "#src-Project-Engineering-48 toc=\"Test | Comparing single- and dual-channel models on new combinations\""
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> For new mixtures excluded from fitting, the dual-channel model recovered the preset Mi density with a root mean squared error of approximately 3.01 J2/100 cm³, lower than either single-channel model. The two colors thus supplied complementary information under the current simulation conditions. Classification deviations remained near risk thresholds, so the model also checks input ranges and flags uncertain results that cross thresholds. </p>"
+    },
+    {
+      "_template": "heading",
+      "level": 4,
+      "text": "Learn | Connecting density error to risk assessment",
+      "attributes": "#src-Project-Engineering-50 toc=\"Learn | Connecting density error to risk assessment\""
+    },
+    {
+      "_template": "layout",
+      "kind": "note",
+      "label": "Interpretation and next steps",
+      "body": "<p style=\"text-align:left;\"> The simulation connected ODE color development, smartphone color features, and Mi density estimation, extending evaluation from overall error to risk assessment: acceptability of low-density error also depends on whether it changes the risk tier. We will calibrate smartphone color relationships with measured mixed samples and evaluate density estimation and risk classification on independent batches. </p>"
+    },
+    {
+      "_template": "text",
+      "body": "</section>"
+    },
+    {
+      "_template": "text",
+      "body": "<section class=\"author-manuscript\" lang=\"en\">"
+    },
+    {
+      "_template": "heading",
+      "level": 2,
+      "text": "DBTL-3 | Feedback from societal relevance",
+      "attributes": "#src-Project-Engineering-53 toc=\"DBTL-3 | Feedback from societal relevance\""
+    },
+    {
+      "_template": "heading",
+      "level": 3,
+      "text": "3.1 Economic modeling and refinement of detection requirements",
+      "attributes": "#src-Project-Engineering-54 toc=\"3.1 Economic modeling and refinement of detection requirements\""
+    },
+    {
+      "_template": "heading",
+      "level": 4,
+      "text": "Design | Defining the decision value of detection information",
+      "attributes": "#src-Project-Engineering-55 toc=\"Design | Defining the decision value of detection information\""
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> We compared testing costs with potentially avoided losses to examine how detection information affects growers' management choices and expected returns. </p>"
+    },
+    {
+      "_template": "heading",
+      "level": 4,
+      "text": "Build | Establishing cost accounting and management scenarios",
+      "attributes": "#src-Project-Engineering-57 toc=\"Build | Establishing cost accounting and management scenarios\""
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> We established a general cost-accounting framework that converts density-dependent yield losses into economic losses per unit area and compares costs and net returns across management scenarios. Preliminary analysis suggested that negative or positive results alone cannot reflect risk at different densities. We therefore defined low, medium, and high risk tiers, corresponding to no targeted control, moderate treatment, and intensive treatment, and compared tiered management with uniform treatment. </p>"
+    },
+    {
+      "_template": "heading",
+      "level": 4,
+      "text": "Test | Comparing the additional returns from density information",
+      "attributes": "#src-Project-Engineering-59 toc=\"Test | Comparing the additional returns from density information\""
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> Using Spanish protected tomato production as an example, density-based treatment tiers generated additional expected net returns over uniform moderate treatment under the example assumptions. </p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> Compared with no control, improved returns include the effects of control itself. Comparison with uniform treatment better examines whether detection information helps users make more appropriate management choices. </p>"
+    },
+    {
+      "_template": "heading",
+      "level": 4,
+      "text": "Learn | Feeding management requirements back into detection design",
+      "attributes": "#src-Project-Engineering-62 toc=\"Learn | Feeding management requirements back into detection design\""
+    },
+    {
+      "_template": "layout",
+      "kind": "note",
+      "label": "Interpretation and next steps",
+      "body": "<p style=\"text-align:left;\"> We refined the detection goal to provide semiquantitative or quantitative information supporting risk tiers, cover key density ranges where management changes, and indicate sampling and measurement uncertainty near thresholds. </p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> Model outputs expanded from a single return-on-investment metric to detected density, estimated yield loss, risk tier, scenario-specific treatment, testing costs, and net-return comparisons, informing discussion of quantitative capability, sampling, and applications. Subsequent updates will combine wet-lab detection performance and sampling error with local prices, testing costs, and willingness to pay from HP research to test these requirements under real conditions. </p>"
+    },
+    {
+      "_template": "text",
+      "body": "</section>"
+    },
+    {
+      "_template": "text",
+      "body": "<p class=\"author-source-link\"><a href=\"/source-archive/#meeting-20261019\" data-source-document=\"meeting-20261019-90cea9447c0c\">Original submission (.docx)</a><span role=\"status\" aria-live=\"polite\"></span></p>"
+    },
+    {
+      "_template": "text",
+      "body": "<section class=\"author-manuscript\" lang=\"en\">"
+    },
+    {
+      "_template": "heading",
+      "level": 4,
+      "text": "3.1 Refining user needs and detection objectives",
+      "attributes": "#src-HP-Engineering-2 toc=\"3.1 Refining user needs and detection objectives\""
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"><strong> Design | Identifying the agricultural decisions detection should support </strong></p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> When a sensor changes color, what can a grower do next? This question connected the observable response of engineered yeast with practical agricultural needs. Through questionnaires, expert consultation, and field visits, we explored who would use a detection tool, when testing would be most useful, and which management decisions results should support. </p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"><strong> Build | Gathering user needs and production experience </strong></p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> We collected 369 questionnaire submissions, consulted experts in plant protection and related fields, and visited Tianjin Xiangyu Fruit and Vegetable Garden and the Diliubu Village Vegetable Demonstration Garden. Questionnaires identified tool expectations; interviews and visits placed those expectations in production settings to discuss testing time, existing management, and routine operational burdens. </p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"><strong> Test | Examining application concepts against real scenarios </strong></p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> Respondents prioritized ease of use, accuracy and reliability, and affordability. Experts recommended connecting early detection with preplanting management so results could inform production planning. Grower discussions also reminded us that nematodes are not currently the dominant problem in every field; demand must be assessed against local crops, field conditions, and management experience. </p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"><strong> Learn | Translating needs into evaluation requirements </strong></p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> This feedback made early warning more concrete: provide understandable, usable information at a time when it can influence management choices. We incorporated workflow and cost into evaluation and linked these with dry-lab economic analysis to examine the precision needed for risk tiers and whether testing costs match potential management benefits. </p>"
+    },
+    {
+      "_template": "heading",
+      "level": 4,
+      "text": "3.2 Interpreting soil background and signal composition",
+      "attributes": "#src-HP-Engineering-11 toc=\"3.2 Interpreting soil background and signal composition\""
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"><strong> Design | Identifying interference in real samples </strong></p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> Samples introduce soil color and complex backgrounds into the detection system. 庞志豪 noted that these factors could affect color interpretation and that differential degradation of ascr#3 and ascr#18 might alter measured relative composition. Together with 刘倩's advice on matrix interference and staged validation, this prompted us to examine whether signals from real samples retain the intended information. </p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"><strong> Build | Defining conditions for experimental and model checks </strong></p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> We separated two questions: how much observed color change comes from sensor response, and which sample backgrounds may affect it; and how measured ascaroside composition relates to sampling, storage, and molecular stability. These questions entered engineering discussions and guided real-sample controls, detection conditions, and tests of model assumptions. </p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"><strong> Test | Studying background interference and signal composition </strong></p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> The team has undertaken work on soil-background interference and signal composition and retained corresponding records. Evaluation needs actual samples and controls to assess matrix effects on readouts and whether composition changes affect subsequent inference. Together, these lines of evidence determine the conditions under which color results should be interpreted and which factors need further testing. </p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"><strong> Learn | Interpreting detection results according to evidence level </strong></p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> We further distinguished target-signal detection, signal composition, inference of nematode species and density, and disease-risk assessment. Each step toward agricultural decisions requires corresponding experimental or model support. We will test these relationships against relevant records, identify supported interpretations, and refine applicability conditions, analytical assumptions, and the next validation round. </p>"
+    },
+    {
+      "_template": "heading",
+      "level": 4,
+      "text": "3.3 Designing sampling and the complete workflow",
+      "attributes": "#src-HP-Engineering-20 toc=\"3.3 Designing sampling and the complete workflow\""
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"><strong> Design | Incorporating field conditions into detection workflows </strong></p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> A soil sample passes through collection, storage, transport, and processing before producing a readout. Expert discussions highlighted effects of representativeness, extraction losses, and storage and transport, as well as the need to consider environmental release and post-test disposal of engineered yeast. We therefore expanded design to the entire process of sampling, preparation, sensor reaction, interpretation, and post-test handling. </p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"><strong> Build | Collecting soil samples and preparing sampling guidance </strong></p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> The team organized soil collection and produced a sampling-guidance video to explain requirements. Sample identifiers link crops, locations, collection dates, and treatment histories, making production contexts traceable and retaining clues for comparing samples. </p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"><strong> Test | Assessing workflow requirements through field practice </strong></p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> Field visits and expert discussions indicated differences between fields and greenhouses, requiring context-specific sampling, storage, and separate processing. Practical experience also highlighted clarity of instructions and completeness of background information. Further work must test how sampling and processing differences affect results and whether users can follow instructions for operations and sample handover. </p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"><strong> Learn | Improving workflow evaluation and safety requirements </strong></p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> We included sample traceability, operational burden, and post-test disposal in subsequent evaluation and considered equipment, consumables, steps, storage, and transport across the workflow. The next stage will refine pretreatment and safe engineered-yeast disposal for the actual detection system, using real samples and operational records to assess usability and identify improvements. </p>"
+    },
+    {
+      "_template": "text",
+      "body": "</section>"
+    },
+    {
+      "_template": "text",
+      "body": "<section class=\"author-manuscript\" lang=\"en\">"
+    },
+    {
+      "_template": "heading",
+      "level": 3,
+      "text": "DBTL-4 | Commercialization exploration and application pathways",
+      "attributes": "#src-HP-Engineering-30 toc=\"DBTL-4 | Commercialization exploration and application pathways\""
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"><strong> Design | Identifying intended users and collaboration needs </strong></p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> Moving from laboratory research toward potential application requires answering who will use the test, who can help evaluate it, and what support continued development requires. We outlined testing costs, ease of use, and result interpretation for growers, farm managers, and agricultural service providers, focusing enterprise discussions on resources, application advice, and subsequent research conditions. </p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"><strong> Build | Preparing enterprise outreach and pitch materials </strong></p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> The team prepared collaboration invitations, project proposals, and presentation slides outlining the agricultural problem, sensor concept, current work, and required support. These materials explain the problem being addressed, existing foundations, and possible participation. We established contact through email and alumni enterprise networks and delivered project presentations and pitches after initial contact. </p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"><strong> Test | Holding discussions and securing resources </strong></p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> We discussed applications and collaboration with representatives of several enterprises and received sponsorship from organizations including ExCell Bio. This stage explored opportunities and secured research resources through practical communication. Records distinguish enterprise advice, expressed interest, and confirmed support, informing follow-up and separating established collaboration from directions requiring further discussion. </p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"><strong> Learn | Defining the next collaboration pathway </strong></p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p style=\"text-align:left;\"> Enterprise discussions supported continued research and clarified conditions needed for application validation. We plan to connect with agricultural enterprises, farms, and technical service providers for sample access, prototype evaluation, and real-world validation. Collaboration will require defined evaluation goals and responsibilities and increasingly specific plans addressing detection performance, operation, storage, transport, and safe disposal. </p>"
+    },
+    {
+      "_template": "text",
+      "body": "</section>"
+    },
+    {
+      "_template": "text",
+      "body": "</div>"
+    }
+  ],
+  "description": "",
+  "preserveAuthorFormatting": true
+}

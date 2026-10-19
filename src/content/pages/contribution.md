@@ -15,200 +15,144 @@ hidden: false
 ---
 <div class="reading-layout" lang="en">
 
-:::lead
+<p class="manuscript-title">Contribution</p>
 
-We do not want future teams to start from zero.
+NemaKlear brings together yeast engineering, computational modeling, and work with communities and agricultural stakeholders\. Along the way, we developed resources that other teams can build on: genetic parts, experimental guidance, analysis methods, and educational materials\.
 
-We want them to start from where we stopped—and go further.
+This page introduces those resources and links to their detailed documentation\. Whether you are building a yeast biosensor, interpreting a mixed signal, or planning a sampling project, the sections below offer starting points you can adapt to your own work\.
 
-:::
+## Biological parts and experimental resources {#contribution-1-biological-parts-and-experimental-resources toc="Biological parts and experimental resources"}
 
-## 1 Wet Lab {#wet-lab toc="Wet Lab"}
+### 1.1 Parts and collections {#contribution-1-1-parts-and-collections toc="Parts and collections"}
 
-<p>Our Wet Lab work supports not only the construction and validation of the yeast biosensor in this project. More importantly, we intend to make the genetic parts, engineered strains, plasmids, donor DNA, experimental protocols and practical experience generated during our research available as public resources for future iGEM teams to reference, reuse and extend. </p>
+We submitted 39 Parts and four Collections to the iGEM Registry, covering yeast chassis construction, editing tools, <strong>guide RNAs (gRNAs)</strong>, and GPR2 variants\. Organizing these components by function gives future teams a clearer route to finding parts for related yeast\-engineering projects\.
 
-These contributions allow subsequent teams to build on our established resources and experience, rather than constructing comparable yeast engineering systems entirely from scratch.
+The collections bring together sequence and design information that teams can use when planning their own constructs\. Detailed part descriptions and identifiers are listed on our Parts page\.
 
-### 1.1 Parts and Collections {#parts-and-collections toc="Parts and Collections"}
+[Browse Parts and Collections](/parts/) · [Visit Our Registry Entries](https://registry.igem.org/organisations/igem/6303)
 
-In this project, we have submitted 39 Parts and 4 Collections to the iGEM Registry ([https://registry.igem.org/organisations/igem/6303](https://registry.igem.org/organisations/igem/6303)). These submissions cover multiple modules including yeast chassis construction, genome editing, tool plasmids, sgRNA, receptor expression and functional components of biosensors.
+### 1.2 Documented strain construction {#contribution-1-2-documented-strain-construction toc="Documented strain construction"}
 
-<p>Among all submitted parts, we designed and constructed 10 plasmids (Table 1). These plasmids serve as core components of our project and also provide direct references for future teams undertaking similar yeast strain construction work.</p>
+We documented the construction of our engineered yeast through successive genetic modifications, including receptor expression, pathway engineering, and pigment\-production modules\. The documentation presents the construction strategy, genetic modifications, and available verification results\.
 
-<div class="wiki-toolkit-block"><wiki-toolkit data-type="datatable" data-props="{&quot;_template&quot;:&quot;datatable&quot;,&quot;title&quot;:&quot;Table 1 Plasmids designed and constructed in this project&quot;,&quot;csv&quot;:&quot;Name,Number,Description\npRS315-TEF1p-GPR2-sfGFP,BBa_260J9X0X,For knock-in of the constitutively expressed GPR2 gene fused with sfGFP\npRS315-MjDOD-BvCYP76AD5,BBa_26PGUFWX,For knock-in of constitutively expressed betaxanthin-related genes and serves as a template for constructing inducible recombinant fragments\npRS315-sTF,BBa_2687EQID,For storage of recombinant fragments for knock-in of the synthetic transcription factor (sTF)\np414-Cas9-Leu,BBa_262NU08K,Cas9-carrying plasmid with altered nutritional selection marker\np426-SNR52p-gGal4-SUP4t,BBa_269ZKY8C,Carries gRNA sequence targeting the Gal4 gene\np426-SNR52p-gSTE12-SUP4t,BBa_2612RHXO,Carries gRNA sequence targeting the STE12 gene\np426-SNR52p-gSTE2-SUP4t,BBa_26TQ18PN,Carries gRNA sequence targeting the STE2 gene\npRS315-TEF1p-GPR2,BBa_26ZT9H48,For knock-in of the constitutively expressed GPR2 gene\npRS315-TEF1p-GPR2-N84V,BBa_2628FZFH,For knock-in of the constitutively expressed N84V-mutated GPR2 gene\npRS315-TEF1p-GPR2-V368R,BBa_26XA2JFQ,For knock-in of the constitutively expressed V368R-mutated GPR2 gene\n&quot;}"><div class="wiki-toolkit-fallback"><p><strong>Table 1 Plasmids designed and constructed in this project</strong></p><div class="table-wrap"><table><thead><tr><th>Name</th><th>Number</th><th>Description</th></tr></thead><tbody><tr><td>pRS315-TEF1p-GPR2-sfGFP</td><td>BBa_260J9X0X</td><td>For knock-in of the constitutively expressed GPR2 gene fused with sfGFP</td></tr><tr><td>pRS315-MjDOD-BvCYP76AD5</td><td>BBa_26PGUFWX</td><td>For knock-in of constitutively expressed betaxanthin-related genes and serves as a template for constructing inducible recombinant fragments</td></tr><tr><td>pRS315-sTF</td><td>BBa_2687EQID</td><td>For storage of recombinant fragments for knock-in of the synthetic transcription factor (sTF)</td></tr><tr><td>p414-Cas9-Leu</td><td>BBa_262NU08K</td><td>Cas9-carrying plasmid with altered nutritional selection marker</td></tr><tr><td>p426-SNR52p-gGal4-SUP4t</td><td>BBa_269ZKY8C</td><td>Carries gRNA sequence targeting the Gal4 gene</td></tr><tr><td>p426-SNR52p-gSTE12-SUP4t</td><td>BBa_2612RHXO</td><td>Carries gRNA sequence targeting the STE12 gene</td></tr><tr><td>p426-SNR52p-gSTE2-SUP4t</td><td>BBa_26TQ18PN</td><td>Carries gRNA sequence targeting the STE2 gene</td></tr><tr><td>pRS315-TEF1p-GPR2</td><td>BBa_26ZT9H48</td><td>For knock-in of the constitutively expressed GPR2 gene</td></tr><tr><td>pRS315-TEF1p-GPR2-N84V</td><td>BBa_2628FZFH</td><td>For knock-in of the constitutively expressed N84V-mutated GPR2 gene</td></tr><tr><td>pRS315-TEF1p-GPR2-V368R</td><td>BBa_26XA2JFQ</td><td>For knock-in of the constitutively expressed V368R-mutated GPR2 gene</td></tr></tbody></table></div></div><noscript><style>.wiki-toolkit-fallback{display:block!important}wiki-toolkit:not(:defined){min-height:0;border:0;background:none;animation:none}</style><p>Enable JavaScript to use the interactive controls.</p></noscript></wiki-toolkit></div>
+Teams developing similar biosensors can use this documentation to plan an assembly strategy, identify relevant intermediate constructs, and choose verification steps for their own strains\.
 
-Meanwhile, we have also established the following four Collections with clearly defined functional roles:
-
-#### Chassis Strain Construction Collection {#chassis-strain-construction-collection toc="Chassis Strain Construction Collection"}
-
-This Collection contains key genetic parts for the engineering construction of yeast biosensor chassis, including parts related to chassis modification and functional module integration.
-
-<p>With this Collection, we aim to provide a clear resource entry for future teams working on the engineering modification of <em>Saccharomyces cerevisiae</em>, allowing them to conveniently reference our chassis construction strategy.</p>
-
-#### Tool Plasmid Family {#tool-plasmid-family toc="Tool Plasmid Family"}
-
-This Collection systematically organizes the tool plasmids and associated genetic parts utilized in this project.
-
-By centrally assembling these scattered tool components, we aim to reduce the effort required for future teams to locate similar tools, and enable these resources to be readily recombined for diverse yeast engineering projects.
-
-#### sgRNA Family {#sgrna-family toc="sgRNA Family"}
-
-This Collection contains the sgRNA genes used in this project, providing sequence and design references for future teams conducting similar yeast genome editing work.
-
-#### GPR2 variant family {#gpr2-variant-family toc="GPR2 variant family"}
-
-This Collection contains the cDNA sequences of the key Gpr2 receptor and its mutants utilized in our project.
-
-These parts serve as essential components for constructing our yeast GPCR sensing system. They also hold potential for further applications in receptor engineering, ligand response research and the development of yeast biosensors.
-
-In summary, beyond submitting individual Parts, we have built Collections grouped by function and application scenarios. This allows future teams to rapidly locate the core components required for their projects.
-
-### 1.2 Strain Contribution {#strain-contribution toc="Strain Contribution"}
-
-We designed the workflow for engineered strain construction (Figure 1), covering different stages from chassis modification to final functional validation.
+[Explore the Construction Results](/results/)
 
 :::figure
 
-![Figure 1 Workflow of engineered strain construction](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-12cdb6f517ca-contribution.avif)
+![Figure 1. A documented route to yeast strain construction.](https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-1-e88a84496c.webp)
 
-Figure 1 Workflow of engineered strain construction
-
-:::
-
-<p>We consider strain construction itself to be an important Contribution. Rather than merely providing a final strain, we place greater emphasis on documenting the stepwise construction process. </p>
-
-Therefore, we preserve the construction logic and genetic modification information of strains at different stages, offering references for future teams to reconstruct or further modify these strains according to their own requirements.
-
-### 1.3 Experimental Methods and Practical Experience {#experimental-methods-and-practical-experience toc="Experimental Methods and Practical Experience"}
-
-During project implementation, we systematically compiled the major Wet Lab methods involved in this project (Wet Lab-Experiments). We believe that Wet Lab Contribution should not only demonstrate successful experimental results. So we documented not only standard experimental protocols but also the practical experience accumulated throughout our experiments.
-
-<p>During practical experiments, we also encountered difficulties including problematic PCR amplification, fluctuating yeast transformation efficiency and failed one-step cloning. Therefore, we compiled these experiences into <strong>Troubleshooting &amp; Lessons Learned</strong>, aiming to convert the "cost of failures" into readily usable experience for future teams.</p>
-
-<figure class="wiki-media wiki-media--pdf"><div class="wiki-media__bar"><span class="wiki-media__kind">PDF</span><span class="wiki-media__title">Troubleshooting &amp; Lessons Learned</span><a class="wiki-media__action" href="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-cbf9a8013583-troubleshooting.pdf" target="_blank" rel="noopener noreferrer">Open PDF / Download</a></div><iframe class="wiki-media__frame" src="https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-cbf9a8013583-troubleshooting.pdf" title="Troubleshooting &amp; Lessons Learned" loading="lazy" style="height:650px" referrerpolicy="no-referrer"></iframe></figure>
-
-In this way, for future teams performing yeast engineering experiments for the first time, this information can help them get started with engineered strain construction more rapidly, instead of merely obtaining an isolated protocol.
-
-## Dry Lab {#dry-lab toc="Dry Lab"}
-
-<p class="author-source-link"><a href="/source-archive/#meeting-20261019" data-source-document="meeting-20261019-93884c4d3dba">Original submission (.docx)</a><span role="status" aria-live="polite"></span></p>
-
-<section class="author-manuscript" lang="en">
-
-## 1.  Docking: dual-ligand engineering and cross-receptor residue analysis {#src-Project-Contribution-1 toc="1. Docking: dual-ligand engineering and cross-receptor residue analysis"}
-
-### 1.1 Dual-ligand contact-guided receptor engineering {#src-Project-Contribution-2 toc="1.1 Dual-ligand contact-guided receptor engineering"}
-
-<p style="text-align:left;"> For engineering recognition of two ligands by one receptor, we assembled a method that proposes sites from contact differences and screens candidates through progressive substitutions. WT contact distributions for both ligands first identify positions for alanine substitution; single-mutant score and contact changes then guide saturation scanning to compare side-chain-dependent dual-ligand differences. </p>
-
-<p style="text-align:left;"> Screening uses the difference between dual-ligand score changes relative to WT: </p>
-
-<p style="text-align:left;"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi mathvariant="normal">Δ</mi><mi>G</mi><mo>=</mo><mo fence="true" stretchy="true" minsize="1.2em" maxsize="1.2em">(</mo><msub><mi>G</mi><mrow><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi></mrow><mo separator="true">,</mo><mn>18</mn></mrow></msub><mo>−</mo><msub><mi>G</mi><mrow><mrow><mi mathvariant="normal">W</mi><mi mathvariant="normal">T</mi></mrow><mo separator="true">,</mo><mn>18</mn></mrow></msub><mo fence="true" stretchy="true" minsize="1.2em" maxsize="1.2em">)</mo><mo>−</mo><mo fence="true" stretchy="true" minsize="1.2em" maxsize="1.2em">(</mo><msub><mi>G</mi><mrow><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi></mrow><mo separator="true">,</mo><mn>3</mn></mrow></msub><mo>−</mo><msub><mi>G</mi><mrow><mrow><mi mathvariant="normal">W</mi><mi mathvariant="normal">T</mi></mrow><mo separator="true">,</mo><mn>3</mn></mrow></msub><mo fence="true" stretchy="true" minsize="1.2em" maxsize="1.2em">)</mo></mrow><annotation encoding="application/x-tex"> \Delta\Delta G= \bigl(G_{\mathrm{mut},18}-G_{\mathrm{WT},18}\bigr) - \bigl(G_{\mathrm{mut},3}-G_{\mathrm{WT},3}\bigr) </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.6833em;"></span><span class="mord">ΔΔ</span><span class="mord mathnormal">G</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1.2em;vertical-align:-0.35em;"></span><span class="mopen"><span class="delimsizing size1">(</span></span><span class="mord"><span class="mord mathnormal">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathrm mtight">mut</span></span><span class="mpunct mtight">,</span><span class="mord mtight">18</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1.2em;vertical-align:-0.35em;"></span><span class="mord"><span class="mord mathnormal">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathrm mtight">WT</span></span><span class="mpunct mtight">,</span><span class="mord mtight">18</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing size1">)</span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1.2em;vertical-align:-0.35em;"></span><span class="mopen"><span class="delimsizing size1">(</span></span><span class="mord"><span class="mord mathnormal">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathrm mtight">mut</span></span><span class="mpunct mtight">,</span><span class="mord mtight">3</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1.2em;vertical-align:-0.35em;"></span><span class="mord"><span class="mord mathnormal">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathrm mtight">WT</span></span><span class="mpunct mtight">,</span><span class="mord mtight">3</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing size1">)</span></span></span></span></span></span></p>
-
-<p style="text-align:left;"> Here, <math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="G"><mrow><mi>G</mi></mrow></math> denotes the Vina docking score. Positive ΔΔG indicates a shift toward ascr#3 relative to WT, and negative ΔΔG a shift toward ascr#18. After grouping by direction, we inspect both scores separately to distinguish a lower target-ligand score, a higher score for the other ligand, or both, then select candidates and design combinations accordingly. </p>
-
-<p style="text-align:left;"> Most tested combinations did not further improve the better parent's target-ligand score or enlarge dual-ligand differences, so subsequent work continued to focus on single mutants. This trial highlights the need to compare combinations with WT and each single-mutant parent to assess retention of the original direction and any additional benefit. </p>
-
-<p style="text-align:left;"> Contact analysis spans site selection and candidate review. Comparing mutant and WT ligand positions and contact changes examines structural clues behind score differences; V368R and N84V were selected for further study. N84V, for example, lowered the ascr#18 score and raised the ascr#3 score relative to WT. Position 84 itself had no direct contact in the selected poses, but ascr#18 gained R189-associated ionic- and hydrogen-bond-type contacts and a W338 hydrophobic contact, indicating that review should cover the surrounding contact network. </p>
-
-:::note[Reuse and validation]
-
-<p style="text-align:left;"> Other teams can reuse this screening method, combining dual-ligand scores, WT contact controls, and comparisons with combination parents to propose testable engineering hypotheses. Binding and selectivity require subsequent experiments. Iterations appear in Engineering; score and contact evidence appears in Model / Docking. </p>
+**Figure 1\. A documented route to yeast strain construction\.** The workflow summarizes the genetic modifications connecting our chassis and receptor variants\.
 
 :::
 
-### 1.2 Docking input checks and pose-export tools {#src-Project-Contribution-10 toc="1.2 Docking input checks and pose-export tools"}
+### 1.3 Protocols and troubleshooting {#contribution-1-3-protocols-and-troubleshooting toc="Protocols and troubleshooting"}
 
-<p style="text-align:left;"> We found that inconsistent coordinate references between receptor structures and search boxes affect actual search positions, while loss of chemical information during conversion affects interaction identification. Our input-check and pose-export workflow aligns receptors, ligands, and search boxes to a common reference and checks search regions against membrane orientation and retained segments. </p>
+Our experimental resources include the main protocols used in the project and a troubleshooting guide covering difficulties encountered during <strong>polymerase chain reaction (PCR)</strong>, yeast transformation, and cloning\.
 
-<p style="text-align:left;"> The atom-mapping tool checks atomic, coordinate, and structural correspondence between original SDF and docking PDBQT files. The pose-export tool uses fully retained Meeko structural metadata in PDBQT files to recover SDF files preserving docked poses and chemical information such as formal charges for subsequent contact analysis. </p>
+Together, these materials give future teams both an experimental starting point and practical examples of what to check when a procedure does not work as expected\.
 
-<p style="text-align:left;"> We will publish tools, instructions, and matching ascr#18 and ascr#3 examples on GitHub. Other teams can reproduce the checking and export workflow, then substitute their own data to verify search positions, atom correspondence, and chemical information in pose files. </p>
+[View Experimental Protocols](/experiments/) · [Read the Troubleshooting Guide](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-cbf9a8013583-troubleshooting.pdf)
 
-### 1.3 Cross-receptor residue analysis {#src-Project-Contribution-14 toc="1.3 Cross-receptor residue analysis"}
+## Computational methods and modeling tools {#contribution-2-computational-methods-and-modeling-tools toc="Computational methods and modeling tools"}
 
-<p style="text-align:left;"> Gpr2, Gpr3, GprC, and the Caenorhabditis elegans receptors DAF-37 and SRBC-64 are GPCRs involved in ascaroside sensing, offering functionally related references for comparing ligand-contact regions and candidate residues. Following Hu et al.'s receptor-structure comparisons, we combined dual-ligand contact bias with positional correspondence to inform docking-pose interpretation and engineering-site selection. </p>
+Our computational work addresses questions that extend beyond NemaKlear: how to compare receptor candidates, examine ligand behavior, interpret combined sensor outputs, and assess the value of a screening result\. Each workflow offers methods that can be adapted to another system with appropriate inputs and validation\.
 
-<p style="text-align:left;"> Five prediction models per receptor provide paired ascr#18 and ascr#3 contact frequencies within each model. Sequence alignment and structural mapping test positional correspondence, alongside records of residues retained in actual constructs. TM6 tryptophans in the three fungal receptors—Gpr2 W338, Gpr3 W306, and GprC W388—combine ascr#18-biased contact differences with sequence and structural correspondence and can serve as positions for parallel cross-receptor substitutions. </p>
+### 2.1 Receptor design and docking checks {#contribution-2-1-receptor-design-and-docking-checks toc="Receptor design and docking checks"}
 
-<p style="text-align:left;"> Other teams can combine contact bias, positional correspondence, and construct status to distinguish sites suitable for parallel cross-receptor comparison from those requiring tests within individual receptors. Detailed methods and results appear in Model / Docking. </p>
+We organized a receptor\-design workflow around comparisons between two ligands\. It combines contact\-guided site selection, side\-chain scanning, separate inspection of each ligand’s score, and comparisons between combined mutants and their single\-mutant parents\. Cross\-receptor analysis adds sequence and structural correspondence to the assessment of candidate positions\.
 
-## 2.  MD: jointly analyzing receptor motion and local ligand behavior {#src-Project-Contribution-19 toc="2. MD: jointly analyzing receptor motion and local ligand behavior"}
+We also documented input checks and pose\-export procedures for keeping coordinate references, atom mappings, and chemical information consistent\. These methods can help other teams develop testable receptor\-engineering hypotheses and prepare docking outputs for further analysis\.
 
-<p style="text-align:left;"> Docking provided candidate binding poses for receptor engineering. We further used molecular dynamics (MD) simulations to examine pose retention and adjustment in membranes and organized analyses of receptor conformations, ligand positions, and contacts into a reusable workflow. </p>
+[Explore the Docking Workflow](/model-docking/)
 
-<p style="text-align:left;"> The workflow tracks ligand motion relative to the receptor or local pocket while recording retention of original contacts and formation of new ones. Gpr3 R167Y–ascr#3 illustrates retention of local contacts despite overall receptor displacement; Gpr2 V368R–ascr#3 illustrates loss of original contacts and formation of new ones during ligand relocation. </p>
+:::figure
 
-<p style="text-align:left;"> We will organize analysis tools, instructions, and example results on GitHub. Other membrane-receptor teams can reproduce the analysis with their own trajectories, identify persistently contacting residues and rearrangement intervals from position curves and contact statistics, and interpret ligand dynamics using corresponding conformations. </p>
+![Figure 2. Mapping candidate sites for receptor engineering.](https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-2-652cbf31ef.webp)
 
-## 3.  ODE and dual-channel models: from color simulations to density estimation {#src-Project-Contribution-24 toc="3. ODE and dual-channel models: from color simulations to density estimation"}
-
-<p style="text-align:left;"> We developed an ODE model for a yeast GPCR biosensor, connecting effective receptor input, intracellular signaling, and color output. It reuses yeast pathway structures from Supady Model B and public TU Delft 2012 iGEM materials, incorporates our color module, and calculates time-dependent signal activity and pigment concentrations. </p>
-
-<p style="text-align:left;"> We organized shared pathway parameters separately from project input and output configurations, recording meanings, units, and sources. Under fixed construct conditions, sTF regulation, GAL productivity, and color production are combined into one effective color equation. Molecular-total conservation eliminates redundant pathway states, yielding six independent dynamic equations. Users can retain the common pathway and calibrate interfaces for their own receptors and reporters. </p>
-
-<p style="text-align:left;"> We then used the ODE to generate paired pigment outputs for mixed nematode samples, simulated smartphone RGB blue-channel (B) changes relative to blanks using a literature relationship, and fitted a three-coefficient dual-channel regression to estimate southern root-knot nematode density with unknown background abundance. The ODE supplies pathway responses and simulated training data; the dual-channel model maps paired colors to target density. </p>
-
-:::note[Reuse and validation]
-
-<p style="text-align:left;"> Code, frozen configurations, and example data have been committed to GitHub. Other teams can reproduce the workflow, replace ligand-release assumptions, sensor responses, and readout methods, and calibrate with measured data. The current example demonstrates model integration under ideal simulated conditions; real smartphone readouts and biological samples still require experimental evaluation. Iterations appear in Engineering; full equations, parameter sources, and results appear in Model / ODE. </p>
+**Figure 2\. Mapping candidate sites for receptor engineering\.** Highlighted residues were selected for further substitution studies through comparisons of predicted ligand contacts\.
 
 :::
 
-## 4.  Eco: economic analysis from detection results to management strategies {#src-Project-Contribution-30 toc="4. Eco: economic analysis from detection results to management strategies"}
+### 2.2 Ligand motion and contact analysis {#contribution-2-2-ligand-motion-and-contact-analysis toc="Ligand motion and contact analysis"}
 
-<p style="text-align:left;"> We developed an economic model connecting pathogen or pest density, crop yield loss, and management costs. It compares no testing and no treatment, no testing with uniform treatment, and testing followed by tiered treatment. Density–yield relationships estimate losses; product prices, testing costs, and treatment costs and efficacy then determine expected net returns. </p>
+We combined ligand\-position measurements with contact analysis to examine receptor–ligand behavior during <strong>molecular dynamics (MD)</strong> simulations\. Comparing whole\-receptor, transmembrane\-core, and local\-pocket alignment helps distinguish overall receptor movement from changes near the binding site\.
 
-<p style="text-align:left;"> We organized model parameters separately from report content so users can replace local crop prices, testing and treatment costs, risk thresholds, and treatment efficacy. Scenarios with density–yield relationships support return comparisons; those with only risk thresholds provide risk alerts and can be expanded as data become available. </p>
+Other teams can apply this approach to identify persistent contacts, periods of ligand relocation, and interactions worth investigating further\. The analysis connects motion curves with the molecular structures behind them\.
 
-<p style="text-align:left;"> The Spanish protected-tomato and southern root-knot nematode example combines a literature-fitted yield-loss relationship, three risk tiers, and per-area cost accounting to compare economic outcomes of management options under specified conditions. </p>
+[Explore the MD Analysis](/model-md/#src-Model-Molecular-Dynamics-6)
 
-:::note[Reuse and validation]
+### 2.3 Signal-to-color and two-channel modeling {#contribution-2-3-signal-to-color-and-two-channel-modeling toc="Signal-to-color and two-channel modeling"}
 
-<p style="text-align:left;"> Other teams can start from this example, substitute density–yield relationships for their crops and target organisms and local costs, compare management benefits of detection information, and update parameters with experimental or field data. Full methods, sources, and scenario results appear in Model / Eco. </p>
+We developed a connected modeling workflow that follows effective receptor input through yeast signaling and pigment production to paired color features and target\-density estimation\. The signaling core builds on Supady Model B and public TU Delft 2012 iGEM materials, with project\-specific input and output relationships added around it\.
+
+Separating shared pathway parameters from sensor and reporter settings makes the framework easier to adapt\. Other teams can use the documented equations, parameter sources, and simulated examples to explore their own sensing systems, then calibrate the relevant relationships with experimental measurements\.
+
+:::figure
+
+![Figure 3. From signal response to density estimation.](https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-3-7b02740394.webp)
+
+**Figure 3\. From signal response to density estimation\.** The workflow connects pathway modeling, simulated colors, and paired\-readout analysis\. Generated with OpenAI GPT Image 2\.
 
 :::
 
-</section>
+[Explore the <strong>ordinary differential equation (ODE)</strong> and Two\-Channel Models](/model-ode/#src-Model-ODE-1)
 
-## Human Practices {#human-practices}
+### 2.4 Economic evaluation of screening {#contribution-2-4-economic-evaluation-of-screening toc="Economic evaluation of screening"}
 
-<p class="author-source-link"><a href="/source-archive/#meeting-20261019" data-source-document="meeting-20261019-0511db20fff1">Original submission (.docx)</a><span role="status" aria-live="polite"></span></p>
+Our economic model connects target density, crop losses, and management costs to compare three scenarios: no testing and no treatment, uniform treatment without testing, and treatment guided by screening results\. These comparisons help examine when additional information changes a management choice and whether the expected benefit covers its cost\.
 
-<section class="author-manuscript" lang="en">
+The framework separates parameters from calculations, allowing users to substitute crop\-specific loss relationships, local prices, testing costs, and treatment assumptions\. A worked example provides a starting point for evaluating another agricultural screening project with suitable local data\.
 
-<p style="text-align:left;"> Our HP work provides courses and outreach materials, investigation methods, sampling guidance, and enterprise communication documents for future teams. These resources support science education, user-needs analysis, field records, and social-resource outreach, helping others adapt existing experience to their own projects. </p>
+[Explore the Economic Model](/model-eco/)
 
-#### 1.  Age-adapted courses and public outreach materials {#src-HP-Contribution-2 toc="1. Age-adapted courses and public outreach materials"}
+## Educational and engagement resources {#contribution-3-educational-and-engagement-resources toc="Educational and engagement resources"}
 
-<p style="text-align:left;"> We designed three courses on nematodes and agriculture, biological signals, and scientific responsibility. The Nematode Hunt introduces nematodes' relationships with roots and soil through plants and disease; Exploring Biological Signals explains biosensing through input, sensing, and output; Small Lives and Everyday Contributions connects microscopic life with responsibility, cooperation, and everyday contributions. The first two have primary and junior-secondary versions; the third targets primary students. </p>
+Our <strong>Human Practices (HP)</strong> work produced materials and organizational approaches that can support other teams in teaching, understanding user needs, and coordinating field sampling\. The documentation also outlines a way to record stakeholder feedback, team discussions, and follow\-up actions\.
 
-<p style="text-align:left;"> Other iGEM teams, teachers, and volunteer teaching organizations can select courses by age group and adapt images, examples, and activities to local crops and classroom conditions. The progression from observing phenomena to interpreting signals connects agricultural questions with synthetic biology. Materials and safety arrangements should be checked against lesson plans, student ages, and venue conditions before delivery. </p>
+### 3.1 Age-adapted educational materials {#contribution-3-1-age-adapted-educational-materials toc="Age-adapted educational materials"}
 
-<p style="text-align:left;"> Picture books, posters, leaflets, and postcards extend outreach beyond classrooms. Users can select materials around a clear theme, such as root and soil diagrams for underground disease or inputs and outputs for sensing principles. Our collaboration with the Xiangyang Program also offers practical guidance: agree on audiences, materials, responsibilities, and feedback with teaching partners in advance so courses fit real classrooms. </p>
+We developed three courses linking nematodes, agriculture, biological signals, and scientific responsibility\. Age\-adapted materials, picture books, and other outreach resources offer different ways to introduce these ideas to younger audiences\.
 
-#### 2.  Project-focused investigation and feedback methods {#src-HP-Contribution-6 toc="2. Project-focused investigation and feedback methods"}
+Teams and educators can draw on the learning goals, activity sequences, and visual materials, adapting them to local crops, classroom conditions, and learners’ ages\.
 
-<p style="text-align:left;"> We designed a questionnaire on agricultural nematode awareness and detection needs, collected 369 submissions, and combined expert interviews with grower discussions to understand applications. The reusable approach is to first define unanswered project questions and then choose appropriate informants: the public describes awareness and tool expectations, growers provide production and operational experience, and experts examine detection principles, sample conditions, and interpretation. </p>
+[Explore Educational Materials](/education/)
 
-<p style="text-align:left;"> Other teams can translate technical questions into accessible scenarios and adapt wording to target groups. Analysis should retain sample sources, survey dates, question types, and per-question denominators and explain multiple-response calculations. Our findings reflect the groups reached; new projects should collect and interpret needs for their own intended users. </p>
+:::figure
 
-<p style="text-align:left;"> Expert discussions can also inform feedback-tracking records. Teams can organize comments by project question, source and date, main feedback, team discussion, and next steps, adding corresponding versions and results when feedback changes experiments, models, or materials. This traces how advice enters a project and identifies open questions. Public research materials should handle personal information within authorized limits and share suitable questionnaires, aggregate results, or thematic summaries. </p>
+![Figure 4. Bringing nematode science into the classroom.](https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-4-2b6f00755b.webp)
 
-#### 3.  Field sampling guidance and background records {#src-HP-Contribution-10 toc="3. Field sampling guidance and background records"}
+**Figure 4\. Bringing nematode science into the classroom\.** Our teaching materials support classroom activities through the Xiangyang Program partnership\.
 
-<p style="text-align:left;"> The team organized soil collection and produced a sampling-guidance video, linking crops, collection locations, dates, and treatment histories through sample identifiers. These materials explain requirements to collectors and let researchers trace provenance and connect later observations with agricultural contexts. </p>
+:::
 
-<p style="text-align:left;"> Teams collecting agricultural or environmental samples can follow the sequence of sampling guidance, consistent identifiers, background records, and handover checks. First confirm target samples and collection and transport conditions with the experimental lead, then adapt guidance. Check labels against records at handover and retain missing-information or anomaly records. Specific sampling plans must reflect study organisms, soil types, and downstream methods, with representativeness assessed separately. </p>
+### 3.2 Stakeholder research and feedback methods {#contribution-3-2-stakeholder-research-and-feedback-methods toc="Stakeholder research and feedback methods"}
 
-#### 4.  Enterprise outreach and project-pitch materials {#src-HP-Contribution-13 toc="4. Enterprise outreach and project-pitch materials"}
+Our documentation shows how project questions can guide questionnaires, expert discussions, and conversations with growers\. It also describes a way to trace feedback from its source through team discussion to subsequent design decisions\.
 
-<p style="text-align:left;"> We prepared enterprise collaboration invitations, project proposals, and presentation slides for initial contact, further discussions, and pitches. They summarize the team, agricultural problem, research approach, current work, and needed support, offering references for student teams explaining projects and collaboration needs to external partners. </p>
+Other teams can adapt this approach to organize their own engagement and keep track of how it informs their work\. Project\-introduction and industry\-communication materials provide additional examples of explaining a research idea and presenting a specific request for support\.
 
-<p style="text-align:left;"> Other teams can first define their outreach purpose, select enterprises relevant to the project or resources, explain the reason for contact in a short email, and provide an introduction. After receiving a response, prepare a presentation around the partner's interests and record additional materials and next steps. Adaptations should update project progress and resource needs, use publicly shareable images and data, and distinguish advice, interest, and confirmed support according to actual confirmations. </p>
+[Explore Integrated HP](/human-practices/) · [Explore Industry Engagement](/hp-industry/)
 
-<p style="text-align:left;"> Resource details and instructions appear on the Human Practices page. Please credit NKU-China 2026 and the corresponding sources when reusing materials and adapt them to the new project's audience, research conditions, and partners. Check third-party material terms separately. </p>
+:::figure
 
-</section>
+![Figure 5. Learning from growers’ experience.](https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-5-7d72a4f737.webp)
+
+**Figure 5\. Learning from growers’ experience\.** Conversations during farm visits helped us relate testing needs to local crops and management practices\.
+
+:::
+
+### 3.3 Sampling guidance and sample records {#contribution-3-3-sampling-guidance-and-sample-records toc="Sampling guidance and sample records"}
+
+Our soil\-collection work combined a sampling guidance video with sample identifiers and records of crop, location, collection date, and treatment history\. This approach links each sample to the agricultural setting from which it came\.
+
+Teams organizing environmental sampling can use this as a reference for coordinating instructions, labeling, background records, and handover checks, then adapt the sampling conditions to their research questions\.
+
+[Explore Field Investigation](/hp-investigation/)
+
+## Building on these resources {#contribution-building-on-these-resources toc="Building on these resources"}
+
+The linked pages explain the methods, examples, and supporting evidence behind each contribution\. When adapting the materials, please credit NKU\-China 2026 and the relevant original sources, and check the usage terms of any third\-party content\. We hope these resources help future teams begin with useful references and carry the work further\.
 
 </div>

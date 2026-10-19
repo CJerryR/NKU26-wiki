@@ -1,10 +1,10 @@
 {
-  "title": "Part Collection",
-  "heading": "Part Collection",
+  "title": "Part collection",
+  "heading": "Part collection",
   "sub": "",
   "crumbs": [
-    "Wet Lab",
-    "Part Collection"
+    "Wet lab",
+    "Part collection"
   ],
   "meta": [],
   "search": false,
@@ -13,7 +13,7 @@
   "hidden": true,
   "blocks": [
     {
-      "text": "Now part of Parts and Collections",
+      "text": "Now part of parts and collections",
       "level": 2,
       "attributes": "#moved toc=\"Moved\"",
       "_template": "heading"

@@ -1,0 +1,123 @@
+{
+  "source": "Project -> Engineering, 20 October latest author document",
+  "source_markdown_sha256": "888b1a10b6d9e34645ee69be15831223aa91a6ba762262e8b61cdc1a967365db",
+  "author_svg_retained": {
+    "_template": "image",
+    "src": "https://static.igem.wiki/teams/6303/wiki/engineering-20261020/sobl-e530246a44cd.svg",
+    "alt": "Gene circuit overview showing GPR2 membrane-localization verification, GAL pathway engineering, and the synthetic transcription factor.",
+    "body": "",
+    "layout": "full",
+    "imageWidth": "wide"
+  },
+  "headings": [
+    {
+      "original": "Goal 1: Building the Biosensor",
+      "text": "Building the biosensor"
+    },
+    {
+      "original": "Iteration 1.1 — Improving Receptor Localization Tests",
+      "text": "1.1 Improving receptor localization tests"
+    },
+    {
+      "original": "Iteration 1.2 — Revising the Genome-Editing Strategy",
+      "text": "1.2 Revising the genome-editing strategy"
+    },
+    {
+      "original": "Goal 2: Making the Readout Informative",
+      "text": "Making the readout informative"
+    },
+    {
+      "original": "Iteration 2.1 — Developing Receptor Variants with Different Predicted Preferences",
+      "text": "2.1 Developing receptor variants with different predicted preferences"
+    },
+    {
+      "original": "Iteration 2.2 — Investigating How Candidate Receptors Hold Their Ligands",
+      "text": "2.2 Investigating how candidate receptors hold their ligands"
+    },
+    {
+      "original": "Iteration 2.3 — Revising the Signal-to-Color Model",
+      "text": "2.3 Revising the signal-to-color model"
+    },
+    {
+      "original": "Iteration 2.4 — Testing Paired Readouts",
+      "text": "2.4 Testing paired readouts"
+    },
+    {
+      "original": "Goal 3: Engineering a Usable Test Format",
+      "text": "Engineering a usable test format"
+    },
+    {
+      "original": "Iteration 3.1 — Choosing the Paper Substrate",
+      "text": "3.1 Choosing the paper substrate"
+    },
+    {
+      "original": "Iteration 3.2 — Controlling Cell Placement and Loading",
+      "text": "3.2 Controlling cell placement and loading"
+    },
+    {
+      "original": "Iteration 3.3 — Improving Conditions for Color Development",
+      "text": "3.3 Improving conditions for color development"
+    },
+    {
+      "original": "Goal 4: Refining the Project for Agricultural Use",
+      "text": "Refining the project for agricultural use"
+    },
+    {
+      "original": "Iteration 4.1 — Defining When and Why to Use the Kit",
+      "text": "4.1 Defining when and why to use the kit"
+    },
+    {
+      "original": "Iteration 4.2 — Defining What a Color Result Can Tell the User",
+      "text": "4.2 Defining what a color result can tell the user"
+    },
+    {
+      "original": "Iteration 4.3 — Extending the Design to the Whole Testing Process",
+      "text": "4.3 Extending the design to the whole testing process"
+    },
+    {
+      "original": "The Next DBTL Cycle — Bringing the System Together",
+      "text": "The next DBTL cycle — bringing the system together"
+    }
+  ],
+  "figures": [
+    {
+      "source": "图片和附件/image%201.png",
+      "source_position": 1,
+      "figure": 1,
+      "file": "static/img/senior-feedback-20261020/engineering-figure-1.png",
+      "sha256": "b7206774cdaeb1b92fc854bc6a29a799d29be3d47a0dee8ee6e0e11ebbbc2489"
+    },
+    {
+      "source": "图片和附件/image%203.png",
+      "source_position": 2,
+      "figure": 2,
+      "file": "static/img/senior-feedback-20261020/engineering-figure-2.png",
+      "sha256": "627df6af357f09bd1b67adaebc37f2166c1ddffabac895a38631790838acbadf"
+    },
+    {
+      "source": "图片和附件/image%202.png",
+      "source_position": 3,
+      "figure": 3,
+      "file": "static/img/senior-feedback-20261020/engineering-figure-3.png",
+      "sha256": "5f5e319acc5ed5fefaf22a245f1b7827d50537868ada18a7d306ffc343888519"
+    },
+    {
+      "source": "图片和附件/image%204.png",
+      "source_position": 5,
+      "figure": 4,
+      "file": "static/img/senior-feedback-20261020/engineering-figure-4.png",
+      "sha256": "f4de7549d88d0baee39797fcd09aa9fa31be049494276fd952e272dd5d146d21"
+    },
+    {
+      "source": "图片和附件/image.png",
+      "source_position": 6,
+      "figure": 6,
+      "file": "static/img/senior-feedback-20261020/engineering-figure-6.png",
+      "sha256": "82a0893b5b1b4e11a0c5c449b332900a83c91666fac4cb937ac07787d5d67c7d"
+    }
+  ],
+  "missing_source_figure": 5,
+  "original_figure_5_caption_retained": true,
+  "original_manuscript_archived": true,
+  "publication": "not-published"
+}

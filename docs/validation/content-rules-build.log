@@ -1,0 +1,91 @@
+
+> nku26-wiki@10.2.9 prebuild
+> node tools/prepare-viewers.mjs && node tools/apply-cdn-fonts.mjs && node tools/prepare-nemaklear.mjs
+
+Prepared local protein and PDF viewer assets.
+Applied official CDN URLs to 20 locked KaTeX font declarations.
+NemaKlear: 64 author files verified; original Python executed in browser; NumPy 2.4.6, SciPy 1.18.0.
+
+> nku26-wiki@10.2.9 build
+> node tools/export-tina.mjs && astro build && node tools/restore-original-images.mjs && node tools/finalize-stage-assets.mjs
+
+Exported Tina content to Markdown for static build and content audit.
+03:55:58 [content] Syncing content
+03:55:58 [WARN] [glob-loader] Duplicate id "attributions" found in /Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/tasks/bug-rules/src/content/pages/attributions.md. Later items with the same id will overwrite earlier ones.
+03:56:00 [WARN] [glob-loader] Duplicate id "contribution" found in /Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/tasks/bug-rules/src/content/pages/contribution.md. Later items with the same id will overwrite earlier ones.
+03:56:00 [WARN] [glob-loader] Duplicate id "engineering" found in /Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/tasks/bug-rules/src/content/pages/engineering.md. Later items with the same id will overwrite earlier ones.
+03:56:01 [WARN] [glob-loader] Duplicate id "results" found in /Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/tasks/bug-rules/src/content/pages/results.md. Later items with the same id will overwrite earlier ones.
+03:56:03 [content] Synced content
+03:56:03 [types] Generated 17.61s
+03:56:03 [build] output: "static"
+03:56:03 [build] mode: "static"
+03:56:03 [build] directory: /Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/tasks/bug-rules/public/
+03:56:03 [build] Collecting build info...
+03:56:03 [build] ✓ Completed in 17.72s.
+03:56:04 [build] Building static entrypoints...
+03:56:21 [vite] ✓ built in 16.86s
+03:56:21 [build] ✓ Completed in 17.20s.
+
+ building client (vite) 
+03:56:21 [vite] transforming...
+03:56:32 [vite] ✓ 36 modules transformed.
+03:56:32 [vite] rendering chunks...
+03:56:32 [vite] computing gzip size...
+03:56:32 [vite] public/_astro/HomeLayout.astro_astro_type_script_index_0_lang.BFVAoDeC.js      0.26 kB │ gzip:  0.22 kB
+03:56:32 [vite] public/_astro/ChangeNotice.astro_astro_type_script_index_0_lang.CEq45AMX.js    1.53 kB │ gzip:  0.68 kB
+03:56:32 [vite] public/_astro/media.DZPFLtFs.js                                                5.08 kB │ gzip:  2.37 kB
+03:56:32 [vite] public/_astro/content.CppAaSg-.js                                              5.82 kB │ gzip:  2.72 kB
+03:56:32 [vite] public/_astro/liquid-glass.BuYwiOj-.js                                         6.91 kB │ gzip:  3.11 kB
+03:56:32 [vite] public/_astro/bio.PlX5ZPYH.js                                                  8.17 kB │ gzip:  3.64 kB
+03:56:32 [vite] public/_astro/narrative.B-ROtH7G.js                                           11.06 kB │ gzip:  4.86 kB
+03:56:32 [vite] public/_astro/search.c8I1FrXm.js                                              19.92 kB │ gzip:  7.85 kB
+03:56:32 [vite] public/_astro/data.QKnj5k_p.js                                                28.62 kB │ gzip: 12.31 kB
+03:56:32 [vite] public/_astro/BaseLayout.astro_astro_type_script_index_0_lang.Bi5wrPpY.js    180.06 kB │ gzip: 44.93 kB
+03:56:32 [vite] public/_astro/katex.B9rO5sNH.js                                              261.72 kB │ gzip: 77.59 kB
+03:56:32 [vite] ✓ built in 11.20s
+
+ generating static routes 
+03:56:32 ▶ src/pages/[route]/index.astro
+03:56:32   ├─ /attributions/index.html (+696ms) 
+03:56:33   ├─ /background/index.html (+254ms) 
+03:56:33   ├─ /contribution/index.html (+455ms) 
+03:56:34   ├─ /description/index.html (+387ms) 
+03:56:34   ├─ /education/index.html (+171ms) 
+03:56:34   ├─ /engineering/index.html (+148ms) 
+03:56:34   ├─ /experiments/index.html (+497ms) 
+03:56:35   ├─ /hp-industry/index.html (+1.96s) 
+03:56:37   ├─ /hp-investigation/index.html (+210ms) 
+03:56:37   ├─ /hp-overview/index.html (+107ms) 
+03:56:37   ├─ /human-practices/index.html (+123ms) 
+03:56:37   ├─ /licensing/index.html (+60ms) 
+03:56:37   ├─ /team/index.html (+56ms) 
+03:56:37   ├─ /model/index.html (+62ms) 
+03:56:37   ├─ /model-docking/index.html (+49ms) 
+03:56:37   ├─ /model-eco/index.html (+48ms) 
+03:56:37   ├─ /model-md/index.html (+48ms) 
+03:56:37   ├─ /model-ode/index.html (+52ms) 
+03:56:38   ├─ /part-collection/index.html (+54ms) 
+03:56:38   ├─ /parts/index.html (+56ms) 
+03:56:38   ├─ /protocols/index.html (+53ms) 
+03:56:38   ├─ /results/index.html (+81ms) 
+03:56:38   ├─ /safety-and-security/index.html (+450ms) 
+03:56:38   └─ /source-archive/index.html (+140ms) 
+03:56:38 ▶ src/pages/component-library/index.astro
+03:56:38   └─ /component-library/index.html (+123ms) 
+03:56:39 ▶ src/pages/index.astro
+03:56:39   └─ /index.html (+165ms) 
+03:56:39 λ src/pages/js/search-data.js.ts
+03:56:39   └─ /js/search-data.js (+130ms) 
+03:56:39 ▶ src/pages/pages/[slug].astro
+03:56:39   ├─ /pages/model-1.html (+79ms) 
+03:56:39   ├─ /pages/model-2.html (+134ms) 
+03:56:39   ├─ /pages/part-collection.html (+51ms) 
+03:56:39   └─ /pages/protocols.html (+62ms) 
+03:56:39 ✓ Completed in 7.14s.
+
+03:56:40 [nku-relative-links] relative links written in 31 files
+03:56:40 [nku-compact-scripts] Homepage/search scripts: 1382166 → 1168495 bytes (before compression)
+03:56:40 [build] 30 page(s) built in 54.51s
+03:56:40 [build] Complete!
+Author images: 120 instances reserve original dimensions; original bytes verified before display.
+Asset dependency check: 518 unused files removed; 21 required local media retained; widget runtime active.

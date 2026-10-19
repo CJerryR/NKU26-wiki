@@ -6,14 +6,27 @@
  * One round glass button turns the card; without scripting both faces are shown, one under
  * the other.
  * Credits: a ledger row. A portrait tile with a liquid-glass nameplate sits beside the Tasks
- * chips and the numbered Specific Tasks; everything after the first opens in <details>.
+ * chips and the numbered Specific tasks; everything after the first opens in <details>.
  *
  * The markup is one line on purpose: a blank line would end the raw HTML block in Markdown.
  */
 // Line breaks render as spaces in HTML anyway; folding them keeps a blank line typed into a
 // Tina textarea from ending the raw HTML block early.
 const esc = (s) => String(s ?? '').replace(/\s*\n\s*/g, ' ').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const paragraphs = (s) => String(s || '').split(/\n\s*\n/).map(t => t.trim()).filter(Boolean).map(t => `<p>${esc(t)}</p>`).join('');
+// The agreed species names/aliases are plain Tina text, not author-supplied HTML.
+// Escape first and add only our own <em> tags. Identifier/path boundaries keep
+// chemical formulae (CeCl3), filenames and material IDs (pRS315-Mi) untouched.
+const speciesNames = [
+  'Saccharomyces cerevisiae', 'S.c',
+  'Meloidogyne incognita', 'Mi',
+  'Caenorhabditis elegans', 'Ce',
+  'Heterodera glycines', 'H. glycines',
+  'Arthrobotrys oligospora', 'A. oligospora',
+];
+const speciesPattern = speciesNames.map(s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
+const speciesText = new RegExp(`(?<![\\p{L}\\p{N}_./#-])(?:${speciesPattern})(?![\\p{L}\\p{N}_/#-]|\\.[\\p{L}\\p{N}_])`, 'gu');
+const scientificText = s => esc(s).replace(new RegExp(`\\*(${speciesPattern})\\*`, 'gu'), '$1').replace(speciesText, value => `<em>${value}</em>`);
+const paragraphs = (s) => String(s || '').split(/\n\s*\n/).map(t => t.trim()).filter(Boolean).map(t => `<p>${scientificText(t)}</p>`).join('');
 const slug = s => String(s || '').toLowerCase().replace(/[^a-z0-9-]/g, '-').replace(/-+/g,'-').replace(/^-|-$/g,'') || 'member';
 // Optional portraits can only use site-relative or HTTPS image paths.
 const photoSrc = p => /^(?:https:\/\/|\/(?!\/))/.test(p.image || '') ? p.image : '';
@@ -30,7 +43,7 @@ const portrait = (p, cls) => {
   return src ? `<div class="${cls}"><img src="${esc(src)}" alt="${esc(p.name)}" loading="lazy" decoding="async"></div>` : emptyPortrait(cls);
 };
 /* "Analysis: did X" — the category before the colon is set in bold; the text is unchanged. */
-const topic = t => { const m = /^([^:：\n]{2,40}[:：])\s+/.exec(t); return m ? `<strong class="credit-card__topic">${esc(m[1])}</strong> ${esc(t.slice(m[0].length))}` : esc(t); };
+const topic = t => { const m = /^([^:：\n]{2,40}[:：])\s+/.exec(t); return m ? `<strong class="credit-card__topic">${scientificText(m[1])}</strong> ${scientificText(t.slice(m[0].length))}` : scientificText(t); };
 const nameBlock = (p, id, level = 3) => `<div class="person-name"><h${level} id="${id}">${esc(p.name)}</h${level}>${p.chineseName ? `<p class="person-name__cn" lang="zh">${esc(p.chineseName)}</p>` : ''}</div>`;
 
 /* The photo sits in a glass frame. On the back it is decoration (the name is printed beside it). */
@@ -70,6 +83,6 @@ export function renderCreditGrid(block) {
     return `<article class="credit-card" aria-labelledby="${id}"><div class="credit-card__id">${portrait(p, 'credit-card__photo')}`
       + `${glass('credit-card__plate')}${nameBlock(p, id, Math.max(3, Math.min(5, block.headingLevel || 3)))}${p.role ? `<p class="credit-card__role">${esc(p.role)}</p>` : ''}</div></div>`
       + `<div class="credit-card__body">${tasks.length ? `<h${Math.max(4, Math.min(6, (block.headingLevel || 3) + 1))} class="credit-card__label">Tasks</h${Math.max(4, Math.min(6, (block.headingLevel || 3) + 1))}><ul class="credit-card__tasks">${tasks.map(t => `<li>${esc(t)}</li>`).join('')}</ul>` : ''}`
-      + `${details.length ? `<h${Math.max(4, Math.min(6, (block.headingLevel || 3) + 1))} class="credit-card__label">Specific Tasks</h${Math.max(4, Math.min(6, (block.headingLevel || 3) + 1))}>${list(details.slice(0, shown), 1)}${more}` : ''}</div></article>`;
+      + `${details.length ? `<h${Math.max(4, Math.min(6, (block.headingLevel || 3) + 1))} class="credit-card__label">Specific tasks</h${Math.max(4, Math.min(6, (block.headingLevel || 3) + 1))}>${list(details.slice(0, shown), 1)}${more}` : ''}</div></article>`;
   }).join('')}</div>`;
 }

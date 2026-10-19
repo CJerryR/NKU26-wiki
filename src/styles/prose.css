@@ -20,6 +20,7 @@
 .prose h4 { margin-bottom: .35em; font-size: 19px; font-weight: 600; line-height: 1.3; }
 .prose h5 { font-size: 17px; font-weight: 600; }
 .prose p { text-wrap: pretty; }
+.prose :is(figcaption, figcaption p, .table-caption) { text-align: left !important; }
 .prose a:not(.stretched-link):not(.heading-anchor) {
   color: var(--iris-deep); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px;
   text-decoration-color: color-mix(in srgb, var(--iris) 38%, transparent); transition: text-decoration-color .2s, color .2s;

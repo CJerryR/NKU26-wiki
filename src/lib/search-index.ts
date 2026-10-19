@@ -6,7 +6,8 @@ import { markdownToText, sectionsFromMarkdown, stripMd } from './text';
 export function buildSearchIndex(pages: PageEntry[]) {
   const entries = [homeSearchEntry(pages)];
   for (const page of pages) {
-    if (page.data.hidden || !page.data.search) continue;
+    // Historical originals remain directly accessible, but are not search results.
+    if (page.id === 'source-archive' || page.data.route === 'source-archive' || page.data.hidden || !page.data.search) continue;
     const url = pagePath(page);
     const body = page.body ?? '';
     const title = page.data.title;

@@ -381,6 +381,15 @@
       c.style.setProperty('--cx', (p[0] / 12.8) + '%'); c.style.setProperty('--cy', (p[1] / 7.2) + '%'); c.style.setProperty('--cw', (p[2] / 12.8) + '%');
     });
 
+    // Font loading and viewport changes may wrap a title onto another line.
+    // Keep the caption inside the frame using its actual text height.
+    var captionObserver = new ResizeObserver(function (entries) {
+      entries.forEach(function (entry) {
+        entry.target.style.setProperty('--cap-height', Math.ceil(entry.target.offsetHeight + 8) + 'px');
+      });
+    });
+    caps.forEach(function (c) { captionObserver.observe(c); });
+
     jump(0);
     function relayout() {
       var L = tallMq.matches ? 'tall' : 'wide';

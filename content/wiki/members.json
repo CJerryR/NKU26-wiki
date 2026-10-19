@@ -21,13 +21,13 @@
     },
     {
       "_template": "heading",
-      "text": "Team PI & Advisor",
+      "text": "Team PI & advisor",
       "level": 2,
-      "attributes": "#team-pi-advisor toc=\"Team PI & Advisor\""
+      "attributes": "#team-pi-advisor toc=\"Team PI & advisor\""
     },
     {
       "_template": "heading",
-      "text": "PI",
+      "text": "1.1 PI",
       "level": 3,
       "attributes": "#pi toc=\"PI\""
     },
@@ -42,13 +42,13 @@
           "role": "PI",
           "cohort": "",
           "university": "",
-          "introduction": "Prof. Jie Fan of Nankai University serves as the principal investigator of our team, providing scientific vision and strategic guidance throughout the project. Her research centers on microbial secondary metabolism, chemical interactions between species, and synthetic biology-based construction of microbial chassis. She helps the team translate biological questions into feasible engineering strategies and keeps experimental design, data analysis, and project communication closely aligned."
+          "introduction": "Prof. Jie Fan of Nankai University serves as the principal investigator (PI) of our team, providing scientific vision and strategic guidance throughout the project. Her research centers on microbial secondary metabolism, chemical interactions between species, and synthetic biology-based construction of microbial chassis. She helps the team translate biological questions into feasible engineering strategies and keeps experimental design, data analysis, and project communication closely aligned."
         }
       ]
     },
     {
       "_template": "heading",
-      "text": "Advisor",
+      "text": "1.2 Advisor",
       "level": 3,
       "attributes": "#advisors toc=\"Advisor\""
     },
@@ -72,7 +72,7 @@
           "role": "Advisor",
           "cohort": "2023",
           "university": "",
-          "introduction": "Churchill Zhu led NKU-China 2025 through the full iGEM season last year. This year, he has returned as an advisor, standing one step behind the team instead of at the front. Still a Dionysus in human form—warm, open, always up for a genuine conversation, and forever ready to help. His reverence for life hasn’t changed, nor has his belief that studying it pushes the frontier of human knowledge and feeds the flame of civilization. This year, he is helping a new crew push it a little further—passing on what last season taught him and learning from them in return."
+          "introduction": "Churchill Zhu led NKU-China 2025 through the full iGEM season last year. This year, he has returned as an advisor, standing one step behind the team instead of at the front. Still a Dionysus in human form—warm, open, always up for a genuine conversation, and forever ready to help. histidine (His) reverence for life hasn’t changed, nor has His belief that studying it pushes the frontier of human knowledge and feeds the flame of civilization. This year, he is helping a new crew push it a little further—passing on what last season taught him and learning from them in return."
         },
         {
           "anchor": "zhanning-zhang-advisor",
@@ -81,21 +81,21 @@
           "role": "Advisor",
           "cohort": "",
           "university": "",
-          "introduction": "Roy Zhang coordinates our team’s dry-lab work, with a particular focus on molecular dynamics simulations and molecular docking. He provides guidance on the overall direction of dry-lab research, helping us refine computational strategies and address challenges in modeling and analysis."
+          "introduction": "Roy Zhang coordinates our team’s dry-lab work, with a particular focus on molecular dynamics (MD) simulations and molecular docking. He provides guidance on the overall direction of dry-lab research, helping us refine computational strategies and address challenges in modeling and analysis."
         }
       ]
     },
     {
       "_template": "heading",
-      "text": "Student Members",
+      "text": "Student members",
       "level": 2,
-      "attributes": "#student-members toc=\"Student Members\""
+      "attributes": "#student-members toc=\"Student members\""
     },
     {
       "_template": "heading",
-      "text": "Student Leaders",
+      "text": "2.1 Student leaders",
       "level": 3,
-      "attributes": "#student-leaders toc=\"Student Leaders\""
+      "attributes": "#student-leaders toc=\"Student leaders\""
     },
     {
       "_template": "membergrid",
@@ -105,7 +105,7 @@
           "anchor": "fu-xinya",
           "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-ae3a88a3c4e4-fu-xinya.avif",
           "name": "Fu Xinya",
-          "role": "Project Management/ Part Design",
+          "role": "Project management/ part design",
           "cohort": "2024",
           "university": "",
           "introduction": "Hello, I'm Fu Xinya. I enjoy hiking and reading, and I make time for both outdoor adventures and quiet moments with a book. I'm meticulous, resilient, and responsible in my approach to everyday challenges. My favourite snacks are yogurt and dried cranberries, and if I had to pick an animal to represent me, it would be the red panda."
@@ -114,7 +114,7 @@
           "anchor": "ruoxi-yang-student-leader",
           "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-881c648ce453-ruoxi-yang-student-leader.avif",
           "name": "Yang Ruoxi",
-          "role": "Project Management/ Model Development",
+          "role": "Project management/ model development",
           "cohort": "2024",
           "university": "",
           "introduction": "I'm Yang Ruoxi. I love art, music, and film, and I enjoy exploring different forms of expression. I sometimes spend my free time analyzing lyrics and reading horoscopes, and I'm interested in astrology. These interests offer a glimpse into what catches my attention outside my academic work."
@@ -123,15 +123,15 @@
     },
     {
       "_template": "heading",
-      "text": "Student Team Members",
+      "text": "2.2 Student team members",
       "level": 3,
-      "attributes": "#student-team-members toc=\"Student Team Members\""
+      "attributes": "#student-team-members toc=\"Student team members\""
     },
     {
       "_template": "heading",
-      "text": "Wet Lab",
+      "text": "Wet lab",
       "level": 4,
-      "attributes": "#wet-lab toc=\"Wet Lab\""
+      "attributes": "#wet-lab toc=\"Wet lab\""
     },
     {
       "_template": "membergrid",
@@ -141,7 +141,7 @@
           "anchor": "zhang-hongbo",
           "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-9d6558058ad8-zhang-hongbo.avif",
           "name": "Zhang Hongbo",
-          "role": "Part Design",
+          "role": "Part design",
           "cohort": "2022",
           "university": "",
           "introduction": "I'm Zhang Hongbo, a first-year Ph.D. student. This is my second time participating in iGEM, which has given me valuable experience in early-stage project design and teamwork. I love playing volleyball and growing plants, hobbies that cultivate my patience and team spirit. I am highly collaborative and proactive. During the early stages of the competition, I actively engaged in multiple discussions to determine the project topic and specific experimental directions."
@@ -150,7 +150,7 @@
           "anchor": "chang-wang",
           "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-ae94ff6b24d4-chang-wang.avif",
           "name": "Wang Chang",
-          "role": "Part Design/ Visual Design",
+          "role": "Part design/ visual design",
           "cohort": "2024",
           "university": "",
           "introduction": "I’m Wang Chang, a nature enthusiast and an avid arthropod fan! My thoughts leap from one idea to another, and I’m full of unpredictable bursts of passion and a dash of good humour. I enjoy drawing, reading books, and rolling d20s down in the dungeons. Occasionally, I wish I could be a moth."
@@ -159,7 +159,7 @@
           "anchor": "ivy-liu",
           "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-992aff1ba991-ivy-liu.avif",
           "name": "Liu Yifei",
-          "role": "Part Design",
+          "role": "Part design",
           "cohort": "2024",
           "university": "",
           "introduction": "Hello, I'm Liu Yifei, but you can also call me Ivy. I enjoy sports, travelling, and meeting new people. I'm open-minded and energetic, and I love exploring unfamiliar places and making new connections. An energy bar and orange juice are my go-to snacks."
@@ -168,7 +168,7 @@
           "anchor": "kuang-yinzi",
           "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-ba9c6abb4187-kuang-yinzi.avif",
           "name": "Kuang Yinzi",
-          "role": "Part Design",
+          "role": "Part design",
           "cohort": "2025",
           "university": "",
           "introduction": "I'm Kuang Yinzi. I'm introverted and slow to warm up, but I become easygoing once I'm comfortable. My biggest hobby is playing video games. In sports, I like table tennis and badminton, enjoying the focused, back-and-forth rhythm of a match. When relaxing, I also listen to music and scroll through short videos. I'm also interested in synthetic biology, drawn to the combination of biology and engineering, and hope to learn more about it in the future."
@@ -177,7 +177,7 @@
           "anchor": "yuanwen-luo",
           "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-1da0b9a76767-yuanwen-luo.avif",
           "name": "Luo Yuanwen",
-          "role": "Part Design",
+          "role": "Part design",
           "cohort": "2024",
           "university": "",
           "introduction": "I enjoy making crafts and trying different foods. Curious and attentive to detail, I like learning new things and working with others. My hobbies give me the chance to create something by hand and discover something new."
@@ -186,7 +186,7 @@
           "anchor": "wang-qinghua",
           "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-774958f356d4-wang-qinghua.avif",
           "name": "Wang Qinghua",
-          "role": "Part Design",
+          "role": "Part design",
           "cohort": "2024",
           "university": "",
           "introduction": "I'm Wang Qinghua. I love wandering outdoors and observing tiny creatures that are easy to overlook. I find beauty in living things and am endlessly curious about the natural world. I'm warm and proactive, and I enjoy exploring my surroundings. Lemon candy and oolong tea are among my favourite treats."
@@ -195,7 +195,7 @@
           "anchor": "shizhao-zheng",
           "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-f56ca1b7ea8f-shizhao-zheng.avif",
           "name": "Zheng Shizhao",
-          "role": "Part Design",
+          "role": "Part design",
           "cohort": "2024",
           "university": "",
           "introduction": "Zheng Shizhao is a well‑rounded cross‑discipline talent with Schrödinger‑like energy levels. He plays football, table tennis, roller skating and volleyball, a seasoned football veteran with decent skills. He enjoys erhu and diverse music styles, and is lately hooked on old Cantonese songs. An ambivert brimming with quirky ideas, he brings both surprises and occasional headaches to the team."
@@ -204,7 +204,7 @@
           "anchor": "ziyi-peng",
           "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-247bfac32f74-ziyi-peng.avif",
           "name": "Peng Ziyi",
-          "role": "Part Design",
+          "role": "Part design",
           "cohort": "2024",
           "university": "",
           "introduction": "Hello, I'm Ziyi Peng, a 2024 Biological Sciences Boling Class student at Nankai University. Beyond my passion for biology, I'm a Minecraft enthusiast actively building our campus MC club, a sweet tooth, and a music lover who enjoys playing various instruments. Excited to join iGEM and connect with fellow science enthusiasts!"
@@ -213,9 +213,9 @@
     },
     {
       "_template": "heading",
-      "text": "Dry Lab",
+      "text": "Dry lab",
       "level": 4,
-      "attributes": "#dry-lab toc=\"Dry Lab\""
+      "attributes": "#dry-lab toc=\"Dry lab\""
     },
     {
       "_template": "membergrid",
@@ -225,7 +225,7 @@
           "anchor": "chen-feiyue",
           "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-7b58a4e68b93-chen-feiyue.avif",
           "name": "Chen Feiyue",
-          "role": "Model Development/ Part Design",
+          "role": "Model development/ part design",
           "cohort": "2024",
           "university": "",
           "introduction": "I enjoy playing basketball and exploring open-source tools. Patient and attentive to detail, I like working through questions carefully and discovering how things work. Dark chocolate and black coffee are my favourite companions, and if I had to choose an animal to represent me, it would be the owl."
@@ -234,7 +234,7 @@
           "anchor": "huang-xinqi",
           "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-6526de2fbc0d-huang-xinqi.avif",
           "name": "Huang Xinqi",
-          "role": "Model Development/ Part Design",
+          "role": "Model development/ part design",
           "cohort": "2024",
           "university": "",
           "introduction": "I enjoy reading novels and jogging, making time for both imagined worlds and the outdoors. Calm and thoughtful, I value the friendships I've formed with my teammates. Milk tea and mixed nuts are my go-to treats, and I identify with the sea turtle."
@@ -243,7 +243,7 @@
           "anchor": "yanmei-song-student",
           "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-a784ce285468-yanmei-song-student.avif",
           "name": "Song Yanmei",
-          "role": "Model Development",
+          "role": "Model development",
           "cohort": "2024",
           "university": "",
           "introduction": "I enjoy science-fiction films and expressing imaginative ideas through painting. My interest in science goes hand in hand with my love of art, giving me different ways to explore what intrigues me. I'm analytical and creative, and I enjoy working with others."
@@ -252,7 +252,7 @@
           "anchor": "shulan-ye-student",
           "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-6a5c4dd18fc6-shulan-ye-student.avif",
           "name": "Ye Shulan",
-          "role": "Model Development",
+          "role": "Model development",
           "cohort": "2024",
           "university": "",
           "introduction": "I've loved volleyball for a long time and wish I had more chances to get on the court. I'm also a big foodie and an avid city walker, always happy to discover a new street or something delicious. My favourite snack is potato chips, and I haven't decided on an animal to represent me yet."
@@ -261,7 +261,7 @@
           "anchor": "zhiyuan-guan-student",
           "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-52efbbeea4ff-zhiyuan-guan-student.avif",
           "name": "Guan Zhiyuan",
-          "role": "Model Development",
+          "role": "Model development",
           "cohort": "2024",
           "university": "",
           "introduction": "Hi everyone, I’m Guan Zhiyuan! I enjoy exploring unfamiliar things and trying something new. I also love a good book, especially psychology books and novels. I have plenty of hobbies, though I’m more of a curious beginner than an expert in any of them."
@@ -270,9 +270,9 @@
     },
     {
       "_template": "heading",
-      "text": "Human Practices（HP）",
+      "text": "Human practices（HP）",
       "level": 4,
-      "attributes": "#human-practices toc=\"Human Practices（HP）\""
+      "attributes": "#human-practices toc=\"Human practices（HP）\""
     },
     {
       "_template": "membergrid",
@@ -285,7 +285,7 @@
           "role": "Human practice",
           "cohort": "",
           "university": "",
-          "introduction": "I’m the Human Practices captain of NKU-iGEM and a master’s student in Biology and Medicine at Nankai University. Drawing on my academic background, I work to connect our research with societal needs and encourage dialogue between the team and the wider community."
+          "introduction": "I’m the Human Practices (HP) captain of NKU-iGEM and a master’s student in Biology and Medicine at Nankai University. Drawing on my academic background, I work to connect our research with societal needs and encourage dialogue between the team and the wider community."
         },
         {
           "anchor": "song-xinying",
@@ -300,7 +300,7 @@
           "anchor": "chen-yuxin",
           "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-9e2514ef0ecf-chen-yuxin.avif",
           "name": "Chen Yuxin",
-          "role": "Human practice/ Visual Design",
+          "role": "Human practice/ visual design",
           "cohort": "2024",
           "university": "",
           "introduction": "For me, music and visuals are closely connected. I love anime music, enjoy singing, and often spend my free time creating MAD edits in Adobe After Effects. I'm gentle and optimistic, and I enjoy capturing moments and expressing my ideas through visual storytelling."
@@ -312,7 +312,7 @@
           "role": "Human practice/wiki coding",
           "cohort": "2025",
           "university": "",
-          "introduction": "I'm Chen Jiarui, a computer science student and a self-described night owl. I enjoy experimenting with AI tools and playing Valorant, and I joke that waking up is much harder than falling asleep. My favourite snack is salted chips, and if I had to choose an animal to represent me, it would be a dog."
+          "introduction": "I'm Chen Jiarui, a computer science student and a self-described night owl. I enjoy experimenting with artificial intelligence (AI) tools and playing Valorant, and I joke that waking up is much harder than falling asleep. My favourite snack is salted chips, and if I had to choose an animal to represent me, it would be a dog."
         },
         {
           "anchor": "kaiben-zhang",
@@ -330,15 +330,15 @@
           "role": "Human practice",
           "cohort": "2025",
           "university": "",
-          "introduction": "As a creative team member working on Human Practices and visual design, I enjoy illustration, exploring nature, and crafting in my spare time. I specialize in turning complex scientific concepts into intuitive visuals and accessible science communication. Detail-oriented, I create engaging outreach materials that connect research with the public. Ultimately, I hope to make science more approachable to everyone."
+          "introduction": "As a creative team member working on HP and visual design, I enjoy illustration, exploring nature, and crafting in my spare time. I specialize in turning complex scientific concepts into intuitive visuals and accessible science communication. Detail-oriented, I create engaging outreach materials that connect research with the public. Ultimately, I hope to make science more approachable to everyone."
         }
       ]
     },
     {
       "_template": "heading",
-      "text": "Other Members",
+      "text": "Other members",
       "level": 2,
-      "attributes": "#visual-design toc=\"Other Members\""
+      "attributes": "#visual-design toc=\"Other members\""
     },
     {
       "_template": "membergrid",
@@ -348,7 +348,7 @@
           "anchor": "ruitong-bai",
           "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-98a8c11b1b6d-ruitong-bai.webp",
           "name": "Bai Ruitong",
-          "role": "Visual Design",
+          "role": "Visual design",
           "cohort": "2024",
           "university": "Xiamen University",
           "introduction": "I’m Blinda, an undergraduate student in Visual Communication Design. I enjoy getting lost in words and films—or simply letting my mind wander. Patient and approachable, I enjoy exchanging ideas with others and exploring different ways to express them. My imagination often takes me in unexpected directions, while my attention to detail helps me give those ideas a clear visual form."
@@ -357,7 +357,7 @@
           "anchor": "yiling-chen",
           "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-adbd83b941a2-yiling-chen.webp",
           "name": "Chen Yiling",
-          "role": "Visual Design",
+          "role": "Visual design",
           "cohort": "2024",
           "university": "China Academy of Art",
           "introduction": "As a Digital Interaction major, I enjoy exploring how visuals and interactive experiences shape the way people connect with ideas. I am attentive to detail and thoughtful in my approach, while bringing enthusiasm and creative energy to collaborative work. Curious about fields beyond design, I welcome opportunities to learn from people with different backgrounds and explore new ways to express ideas."
