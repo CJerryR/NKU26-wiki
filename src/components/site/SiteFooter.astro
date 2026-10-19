@@ -79,7 +79,7 @@ const friends = site.friends.map((s) => ({ ...s, url: site.safeUrl(s.url) }));
       <ul>
         {sponsors.map((s) => {
           const Tag = s.url ? 'a' : 'div';
-          return <li><Tag class="site-footer__sponsor" href={s.url || undefined}>
+          return <li data-logo-wide={s.logoWide || undefined}><Tag class="site-footer__sponsor" data-logo-background={s.logoBackground} href={s.url || undefined}>
             {s.logo ? <img src={s.logo} alt={s.logoAlt || s.name} width="160" height="64" loading="lazy" /> : <b class="site-footer__sponsor-name" title={s.logoAlt || s.name}>{s.short || s.name}</b>}
           </Tag></li>;
         })}
