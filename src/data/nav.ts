@@ -1,6 +1,6 @@
 /**
  * The site map, in one place. It follows the team's wiki outline:
- * Project / Wet Lab / Model / Human Practices / Team.
+ * Project / Wet lab / Model / Human practices / Team.
  * Links point at page ids (the Markdown file names in src/content/pages), so
  * a page's address lives only in its own frontmatter. The top bar, the phone
  * menu, the footer and the previous/next links are all built from here.
@@ -24,8 +24,8 @@ export const primaryNav: NavItem[] = [
     ],
   },
   {
-    kind: 'group', id: 'wetlab', label: 'Wet Lab', items: [
-      { page: 'parts', label: 'Parts and Collections', blurb: 'Every part, and the collections they form' },
+    kind: 'group', id: 'wetlab', label: 'Wet lab', items: [
+      { page: 'parts', label: 'Parts and collections', blurb: 'Every part, and the collections they form' },
       { page: 'experiments', label: 'Experiments', blurb: 'What each experiment tests' },
       { page: 'notebook', label: 'Notebook', blurb: 'Dated bench records', optional: true },
       { page: 'results', label: 'Results', blurb: 'What the bench has shown so far' },
@@ -36,18 +36,18 @@ export const primaryNav: NavItem[] = [
     kind: 'group', id: 'model', label: 'Model', narrow: true, items: [
       { page: 'model', label: 'Overview', blurb: 'How the models fit together' },
       { page: 'model-docking', label: 'Docking', blurb: 'Two-ligand contacts and receptor candidates' },
-      { page: 'model-md', label: 'Molecular Dynamics', blurb: 'Ligand motion and persistent contacts' },
-      { page: 'model-ode', label: 'ODE & Two-channel', blurb: 'Signal dynamics and density estimation' },
-      { page: 'model-eco', label: 'Economic Benefit', blurb: 'When density information changes a decision' },
+      { page: 'model-md', label: 'Molecular dynamics', blurb: 'Ligand motion and persistent contacts' },
+      { page: 'model-ode', label: 'ODE & two-channel', blurb: 'Signal dynamics and density estimation' },
+      { page: 'model-eco', label: 'Economic benefit', blurb: 'When density information changes a decision' },
     ],
   },
   {
-    kind: 'group', id: 'hp', label: 'Human Practices', narrow: true, items: [
-      { page: 'hp-overview', label: 'Overview', blurb: 'Connecting Our Research with Society' },
-      { page: 'human-practices', label: 'Integrated Human Practices', blurb: 'Bringing Real-World Perspectives into Research' },
-      { page: 'education', label: 'Education', blurb: 'Making Synthetic Biology and our project Accessible' },
-      { page: 'hp-investigation', label: 'Investigation', blurb: 'Exploring Agriculture through Visits and Dialogue' },
-      { page: 'hp-industry', label: 'Industry Engagement and Support', blurb: 'Exploring Applications and Building Connections' },
+    kind: 'group', id: 'hp', label: 'Human practices', narrow: true, items: [
+      { page: 'hp-overview', label: 'Overview', blurb: 'Connecting our research with society' },
+      { page: 'human-practices', label: 'Integrated human practices', blurb: 'Bringing real-world perspectives into research' },
+      { page: 'education', label: 'Education', blurb: 'Making synthetic biology and our project accessible' },
+      { page: 'hp-investigation', label: 'Investigation', blurb: 'Exploring agriculture through visits and dialogue' },
+      { page: 'hp-industry', label: 'Industry engagement and support', blurb: 'Exploring applications and building connections' },
       { page: 'sustainability', label: 'Sustainability', blurb: 'Soil health and the SDGs', optional: true },
       { page: 'collaborations', label: 'Collaboration', blurb: 'Work done with other teams', optional: true },
     ],
@@ -58,7 +58,7 @@ export const primaryNav: NavItem[] = [
       { page: 'attributions', label: 'Attributions', blurb: 'Who did what' },
       { page: 'awards', label: 'Awards', blurb: 'Recognition the team has received', optional: true },
       { page: 'acknowledgements', label: 'Acknowledgements', blurb: 'People and places we thank', optional: true },
-      { page: 'sponsors', label: 'Sponsors & Partners', blurb: 'Who supports the project', optional: true },
+      { page: 'sponsors', label: 'Sponsors & partners', blurb: 'Who supports the project', optional: true },
     ],
   },
 ];

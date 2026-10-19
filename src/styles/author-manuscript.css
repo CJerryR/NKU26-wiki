@@ -1,6 +1,6 @@
 /* Original manuscript grouping and ratios; no automatic emphasis or numbering. */
 .prose .author-manuscript{min-width:0;font-family:inherit;overflow-wrap:anywhere}
-.prose .author-manuscript p{white-space:pre-wrap;margin-block:1em}
+.prose .author-manuscript p{white-space:normal;margin-block:1.1em}
 .prose .author-manuscript img{max-width:100%;height:auto;object-fit:contain}
 .prose .author-table-scroll{overflow-x:auto;max-width:100%;margin-block:1.5em}
 .prose .author-table{border-collapse:collapse;width:100%;table-layout:fixed}
@@ -16,7 +16,7 @@
 
 /* Tina reading layouts retain the source text while separating prose and evidence. */
 .prose .reading-layout{min-width:0;overflow-wrap:anywhere}
-.prose .reading-layout p{max-width:74ch;white-space:normal}
+.prose .reading-layout p{max-width:100%;white-space:normal}
 .prose .reading-layout :is(h2,h3,h4){text-wrap:pretty}
 .prose .reading-layout .lead{margin-block:1.5rem 2rem}
 .prose .reading-layout .callout{margin-block:1.8rem}

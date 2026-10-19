@@ -28,3 +28,6 @@
 /* Semantic inline annotations share the page’s day/night state. */
 @import './annotations.css';
 @import './mobile-content.css';
+
+/* Approved article typography and shared content boundaries. */
+@import './content-rules.css';

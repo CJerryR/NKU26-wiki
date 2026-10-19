@@ -49,7 +49,6 @@ const friends = site.friends.map((s) => ({ ...s, url: site.safeUrl(s.url) }));
     <a href="https://www.nankai.edu.cn/">Nankai University</a>
     <a href="https://igem.org/">iGEM</a>
     <a href="/licensing/">Licensing &amp; AI use</a>
-    <a href="/source-archive/">Historical source documents</a>
     {site.repository && <a href={site.repository}>GitLab source code</a>}
   </nav>
   {friends.length > 0 && (
