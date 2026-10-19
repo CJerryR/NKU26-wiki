@@ -4583,6 +4583,13 @@
       },
       "referenced_in_build": true,
       "source": "OpenAI built-in image generation in Codex; team layout/style references; content/scene-art-provenance.json"
+    },
+    {
+      "path": "img/shell/nankai-seal-en.webp",
+      "source_sha256": "495f251d2cb402038abcdada9f4efd3d83000ff732cfe4f2c41f647074609723",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/v8-6/nankai-seal-en.webp",
+      "verification": "Official Uploads table URL; HTTP 200; exact uploaded WebP SHA-256 verified",
+      "verified_at": "2026-10-19T14:56:04.339598+08:00"
     }
   ]
 }

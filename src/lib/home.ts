@@ -15,7 +15,7 @@ const HOME_DIR = path.resolve(process.cwd(), 'src/home');
    its last step hands the map to 'hp'. v8.6: the dry lab / wet lab page ('Our work') moved to the
    Description page, and 'built' + 'explore' are one page, so the home ends traces, hp, loop, explore. */
 export const HOME_SECTIONS = ['opening', 'world', 'china', 'threat', 'traces', 'hp', 'loop', 'explore'];
-export const HOME_DESCRIPTION = 'NemaKlear by NKU26-China explores how engineered yeast could translate nematode chemical clues into an early risk signal. Follow the trail from soil to science.';
+export const HOME_DESCRIPTION = 'NemaKlear by NKU-China (iGEM 2026, Team 6303) explores how engineered yeast could translate nematode chemical clues into an early risk signal. Follow the trail from soil to science.';
 
 const read = (rel: string) => fs.readFileSync(path.join(HOME_DIR, rel), 'utf8');
 

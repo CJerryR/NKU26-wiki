@@ -173,10 +173,10 @@
         spot: { o: 1, d: 850, t: 450 },
         strip: { x: 548, y: 548, s: 0.42, o: 0, via: [470, 330], d: 1400, t: 1100, od: 2300, ot: 300 },
         lblStrip: { o: 0, d: 1200, t: 300 },
-        box: { x: 935, y: 250, s: 0.16, o: 0, d: 2500, t: 1100, od: 3100, ot: 500, fx: 'pulse', fxd: 2300 },
+        box: { x: 935, y: 250, s: 0.16, o: 0, d: 2500, t: 1000, od: 3280, ot: 260, fx: 'pulse', fxd: 2300 },
         lblBox: { o: 0, d: 2400, t: 300 },
-        map: { fx: 'pulse', fxd: 3400 },
-        ping: { o: 1, d: 3300, t: 100, fx: 'ripple', fxd: 3420 }
+        map: { fx: 'pulse', fxd: 3450 },
+        ping: { o: 1, d: 3400, t: 220, fx: 'ripple', fxd: 3420 }
       } },
       /* 13 · slide 5: the map takes Human Practices' place (computed in mapTarget) */
       { cam: [300, 60, 680, 620], set: {

@@ -75,7 +75,14 @@ html.is-paged[data-motion="idle"] .as__rail li.is-next::before{animation:as-next
 .as-tag{fill:rgba(243,235,224,.92);font-family:var(--sans);font-weight:600;font-size:17px;letter-spacing:.01em}
 .as-tag--ink{fill:#2c1233}
 .as-strip{fill:#fbf6ee;stroke:#d9cdbb;stroke-width:2}
-.as-spot{fill:#ffcf3a}
+.as-spot{fill:#ffcf3a;filter:drop-shadow(0 0 7px rgba(255,207,58,.7))}
+/* v10.0.2: a test strip that reads as one (grip, paper, reaction pad), and the beacon the kit leaves on the map */
+.as-strip__grip{fill:#e4d7c3}
+.as-strip__ridge{fill:none;stroke:#cbbba3;stroke-width:2;stroke-linecap:round}
+.as-strip__pad{fill:#efe4cf;stroke:#cdbda4;stroke-width:1.5}
+.as-pin{fill:#ffd45a;stroke:#fff3c4;stroke-width:1.5;vector-effect:non-scaling-stroke;filter:drop-shadow(0 0 6px rgba(255,212,90,.95))}
+.as-pin__halo{fill:rgba(255,212,90,.2);transform-box:fill-box;transform-origin:center;animation:as-breathe 2.4s ease-in-out infinite}
+@keyframes as-breathe{50%{opacity:.35;transform:scale(1.45)}}
 .as-note{fill:rgba(243,235,224,.78);font-family:var(--hand);font-style:normal;font-size:19px}
 .as-box__top{fill:#efe6f6}
 .as-box__side{fill:#b9a6cf}
@@ -107,4 +114,4 @@ html.is-paged[data-motion="idle"] .as__rail li.is-next::before{animation:as-next
 .as--tall .as-mol{font-size:34px}
 .as--tall .as-q{font-size:32px}
 .as--tall .as-note,.as--tall .as-label--gold{font-size:28px}
-@media (prefers-reduced-motion:reduce){.as__cap,.as__rail li,.as__rail li::before,.as__rail li::after{transition:none}[data-o].is-pulse>g,[data-o].is-ripple .as-ping,html.is-paged[data-motion="idle"] .as__rail li.is-next::before{animation:none}}
+@media (prefers-reduced-motion:reduce){.as__cap,.as__rail li,.as__rail li::before,.as__rail li::after{transition:none}[data-o].is-pulse>g,[data-o].is-ripple .as-ping,.as-pin__halo,html.is-paged[data-motion="idle"] .as__rail li.is-next::before{animation:none}}

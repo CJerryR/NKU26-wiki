@@ -318,128 +318,199 @@
   }
 
   /* ================= 08 LOOP ================= */
+  /* v10.0.2: the team's revised relationship diagram (关系图_修改.ai): the
+     same nodes and arrows, NEMA KLEAR and Society at the centre, without the
+     coloured wash, read as one Design → Build → Test → Learn cycle. Places
+     are the artboard's (pt, scaled into the 1200 × 620 board); every arrow
+     end is measured from its rendered label, so the arrows clear the text
+     whatever font metrics the browser has. */
   function loop() {
     var sec = H.$('[data-loop]'); if (!sec) return;
     var svg = H.$('[data-lp-svg]', sec), board = H.$('[data-lp-board]', sec), card = H.$('[data-lp-card]', sec);
-    /* grid from the team's sketch (B11): dry lab | HP (questionnaire · centre · teaching/interviews) | wet lab */
-    var C = [130, 370, 600, 840, 1110], R = [140, 310, 460], BOT = 566;
-    var N = {
-      data: [C[0], R[0], 'Data', 'dry', 'Soil and survey data used to tune the models.'],
-      eco: [C[0], R[1], 'Eco model', 'dry', 'Estimates where and when the product could make economic sense.'],
-      ode: [C[0], R[2], 'ODE model', 'dry', 'Links ascaroside input to pigment output over time.'],
-      soil: [C[2], R[0], 'Soil survey', 'hp', 'Public soil sampling that feeds both labs.'],
-      survey: [C[1], R[1], 'Questionnaire', 'hp', 'Growers’ needs and intentions, for the Eco model.'],
-      society: [C[2], R[1], 'Society', 'core', 'The people and fields the project serves.'],
-      project: [C[2], R[2], 'Our project', 'core', 'The sensor, its workflow and its limits.'],
-      teach: [C[3], R[1], 'Teaching', 'hp', 'Classes and outreach that bring questions back.'],
-      expert: [C[3], R[2], 'Expert interviews', 'hp', 'Agronomists and testers shape how results are used.'],
-      samples: [C[4], R[0], 'Samples', 'wet', 'Real soil samples to test against.'],
-      bench: [C[4], R[2], 'Bench tests', 'wet', 'Does the yeast respond, and can we read the colour?']
+    var K = 1200 / 1230;
+    function X(x) { return (x - 273) * K; }
+    function Y(y) { return (y - 103) * K + 36; }
+    var STAGE = {
+      design: ['Design', 'models and data shape the sensor'],
+      build: ['Build', 'the sensor itself'],
+      test: ['Test', 'real soil on the bench'],
+      learn: ['Learn', 'what people and fields tell us'],
+      core: ['Society', 'the centre of the cycle']
     };
-    function box(k) { var n = N[k], core = n[3] === 'core', w = n[2].length * (core ? 9.8 : 8.6) + (core ? 30 : 26); return { x: n[0], y: n[1], w: w, h: 40, l: n[0] - w / 2, r: n[0] + w / 2, t: n[1] - 20, b: n[1] + 20 }; }
-    var G = 7; // gap between a line end and a node
-    /* each edge: from, to, label, route. Routes are orthogonal so nothing crosses. */
-    function hz(a, b, y, lab) { var A = box(a), B = box(b), x0 = A.x < B.x ? A.r + G : A.l - G, x1 = A.x < B.x ? B.l - G : B.r + G; return { d: 'M' + x0 + ',' + y + 'H' + x1, lx: (x0 + x1) / 2, ly: y - 9, anchor: 'middle' }; }
-    function vt(a, b, x, side, lab) { var A = box(a), B = box(b), y0 = A.y < B.y ? A.b + G : A.t - G, y1 = A.y < B.y ? B.t - G : B.b + G; return { d: 'M' + x + ',' + y0 + 'V' + y1, lx: x + side * 9, ly: (y0 + y1) / 2 + 5, anchor: side > 0 ? 'start' : 'end' }; }
-    function under(a, b, y, xa, xb) { var A = box(a), B = box(b), r = 14; xa = xa == null ? A.x : xa; xb = xb == null ? B.x : xb; var y0 = A.b + G, y1 = B.b + G, dir = xb > xa ? 1 : -1;
-      return { d: 'M' + xa + ',' + y0 + 'V' + (y - r) + 'Q' + xa + ',' + y + ' ' + (xa + dir * r) + ',' + y + 'H' + (xb - dir * r) + 'Q' + xb + ',' + y + ' ' + xb + ',' + (y - r) + 'V' + y1, lx: (xa + xb) / 2, ly: y + 20, anchor: 'middle' }; }
-    var E = [
-      ['soil', 'samples', 'provides', hz('soil', 'samples', R[0])],
-      ['soil', 'data', 'provides', hz('soil', 'data', R[0])],
-      ['samples', 'bench', 'tested', vt('samples', 'bench', C[4], 1)],
-      ['data', 'eco', 'adjusts', vt('data', 'eco', C[0], 1)],
-      ['bench', 'expert', 'raises questions', hz('bench', 'expert', R[2])],
-      ['ode', 'bench', 'simulation analysis', under('ode', 'bench', BOT)],
-      ['expert', 'project', 'guidance', hz('expert', 'project', R[2])],
-      ['ode', 'project', 'optimises', hz('ode', 'project', R[2])],
-      ['teach', 'society', 'feedback', hz('teach', 'society', R[1])],
-      ['society', 'survey', 'fills in', hz('society', 'survey', R[1])],
-      ['survey', 'eco', 'supports', hz('survey', 'eco', R[1])],
-      ['eco', 'society', 'predicts', under('eco', 'society', R[1] + 64, C[0] + 26, C[2] - 26)],
-      ['society', 'project', 'decides', vt('society', 'project', C[2] + 14, 1)],
-      ['project', 'society', 'applied', vt('project', 'society', C[2] - 14, -1)]
-    ];
-    var QUESTION = { wet: 'Can we see it?', dry: 'Can we explain it?', hp: 'Can we use it to decide?', core: 'The centre of the loop' };
-    var defs = el('defs', {}, svg), mk = el('marker', { id: 'lp-arrow', viewBox: '0 0 10 10', refX: 8.5, refY: 5, markerWidth: 7, markerHeight: 7, orient: 'auto-start-reverse' }, defs);
-    el('path', { d: 'M1,1.5 L8.5,5 L1,8.5', fill: 'none', stroke: '#c8374f', 'stroke-width': 1.6, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, mk);
-    [['Dry lab', C[0], 56], ['Human Practices', C[2], 50], ['Wet lab', C[4], 56]].forEach(function (c) { var tx = el('text', { x: c[1], y: c[2], 'text-anchor': 'middle', class: 'col' }, svg); tx.textContent = c[0]; });
-    var eg = el('g', {}, svg), ng = el('g', {}, svg);
-    var edges = E.map(function (e, i) {
-      var g = el('g', { class: 'edge' }, eg), r = e[3];
-      var path = el('path', { d: r.d }, g); el('path', { d: r.d, class: 'flow' }, g);
-      var tx = el('text', { x: r.lx, y: r.ly, 'text-anchor': r.anchor }, g); tx.textContent = e[2];
-      var L = path.getTotalLength ? path.getTotalLength() : 300;
-      path.style.strokeDasharray = L; path.style.strokeDashoffset = L;
-      return { g: g, path: path, text: tx, a: e[0], b: e[1], L: L, i: i };
-    });
-    var nodes = {};
+    // key: artboard x, y (label centre, pt), label, stage, what it is
+    var N = {
+      data: [404, 163.5, 'Data', 'design', 'Soil and survey data used to tune the models.'],
+      eco: [406, 331, 'Eco model', 'design', 'Estimates where and when the product could make economic sense.'],
+      ode: [406, 470, 'ODE model', 'design', 'Links ascaroside input to pigment output over time.'],
+      soil: [865, 163.5, 'Soil survey', 'learn', 'Public soil sampling that feeds both labs.'],
+      survey: [609.5, 268.5, 'Questionnaire', 'learn', 'Growers’ needs and intentions, for the Eco model.'],
+      society: [865, 336.5, 'Society', 'core', 'The people and fields the project serves.'],
+      kit: [865, 473, 'NEMA KLEAR', 'build', 'The sensor, its workflow and its limits.'],
+      teach: [1268.5, 331, 'Teaching', 'learn', 'Classes and outreach that bring questions back.'],
+      expert: [1280, 465.5, 'Expert interviews', 'learn', 'Agronomists and testers shape how results are used.'],
+      samples: [1366, 163.5, 'Samples', 'test', 'Real soil samples to test against.'],
+      bench: [1364, 603, 'Bench tests', 'test', 'Does the yeast respond, and can we read the colour?']
+    };
+    var defs = el('defs', {}, svg);
+    var mk = el('marker', { id: 'lp-arrow', viewBox: '0 0 10 10', refX: 9, refY: 5, markerWidth: 6.2, markerHeight: 6.2, orient: 'auto-start-reverse' }, defs);
+    el('path', { d: 'M0,.8 L10,5 L0,9.2 Z', class: 'lp__tip' }, mk);
+    var hg = el('radialGradient', { id: 'lp-halo' }, defs);
+    el('stop', { offset: 0, 'stop-color': '#f4a7c8', 'stop-opacity': .5 }, hg);
+    el('stop', { offset: .6, 'stop-color': '#f4a7c8', 'stop-opacity': .16 }, hg);
+    el('stop', { offset: 1, 'stop-color': '#f4a7c8', 'stop-opacity': 0 }, hg);
+    el('rect', { class: 'lp__panel', x: .75, y: 36, width: 1198.5, height: 548, rx: 58 }, svg);
+    el('ellipse', { class: 'lp__halo', cx: X(865), cy: Y(402), rx: 220, ry: 205, fill: 'url(#lp-halo)' }, svg);
+    var eg = el('g', { class: 'lp__edges' }, svg), ng = el('g', { class: 'lp__nodes' }, svg);
+    var nodes = {}, B = {};
     Object.keys(N).forEach(function (k) {
-      var n = N[k], b = box(k), g = el('g', { class: 'node' + (n[3] === 'core' ? ' core' : ''), tabindex: 0, role: 'button', 'aria-label': n[2] + ': ' + n[4] }, ng);
-      el('rect', { x: b.l, y: b.t, width: b.w, height: b.h, rx: 20 }, g);
-      var tx = el('text', { x: b.x, y: b.y + 6, 'text-anchor': 'middle' }, g); tx.textContent = n[2];
-      nodes[k] = g;
-      g.addEventListener('pointerenter', function () { if (drawn) { focus([k]); show(k); } });
-      g.addEventListener('pointerleave', function () { if (!playing) { focus(null); card.hidden = true; } });
-      g.addEventListener('click', function () { focus([k]); show(k); });
-      g.addEventListener('focus', function () { focus([k]); show(k); });
+      var n = N[k], big = k === 'society' || k === 'kit';
+      var g = el('g', { class: 'node node--' + n[3] + (big ? ' node--big' : ''), tabindex: 0, role: 'button', 'aria-label': n[2] + ' (' + STAGE[n[3]][0] + '): ' + n[4] }, ng);
+      var hit = el('rect', { class: 'hit', rx: 12 }, g);
+      var dot = big ? null : el('circle', { class: 'dot', r: 4.5 }, g);
+      var tx = el('text', { x: X(n[0]).toFixed(1), y: Y(n[1]).toFixed(1), dy: '.35em', 'text-anchor': 'middle' }, g); tx.textContent = n[2];
+      nodes[k] = { g: g, hit: hit, dot: dot, text: tx };
+      g.addEventListener('pointerenter', function () { if (drawn && !playing) { focus([k]); show(k); } });
+      g.addEventListener('pointerleave', function () { if (!playing && !pinned) { focus(null); card.hidden = true; } });
+      g.addEventListener('click', function () { if (!drawn) drawAll(true, true); focus([k]); show(k); });
+      g.addEventListener('focus', function () { if (!drawn) drawAll(true, true); focus([k]); show(k); });
+      g.addEventListener('blur', function () { if (!playing && !pinned) { focus(null); card.hidden = true; } });
+      g.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); focus([k]); show(k); } });
     });
+    /* label boxes, trimmed to the letters (the text box carries the font's
+       leading); a dotted label also owns the space of its dot */
+    function measure() {
+      Object.keys(N).forEach(function (k) {
+        var o = nodes[k], b = null;
+        try { b = o.text.getBBox(); } catch (e) {}
+        if (!b || !b.width) { var w = N[k][2].length * 12; b = { x: X(N[k][0]) - w / 2, y: Y(N[k][1]) - 15, width: w, height: 30 }; }
+        var trim = b.height * 0.14, dx = o.dot ? 17 : 0;
+        B[k] = { x0: b.x, l: b.x - dx, r: b.x + b.width, t: b.y + trim, b: b.y + b.height - trim, cx: b.x + b.width / 2, cy: b.y + b.height / 2, w: b.width };
+        o.hit.setAttribute('x', (b.x - 10 - dx).toFixed(1)); o.hit.setAttribute('y', (b.y - 5).toFixed(1));
+        o.hit.setAttribute('width', (b.width + 20 + dx).toFixed(1)); o.hit.setAttribute('height', (b.height + 10).toFixed(1));
+        if (o.dot) { o.dot.setAttribute('cx', (b.x - 10).toFixed(1)); o.dot.setAttribute('cy', (b.y + b.height / 2).toFixed(1)); }
+      });
+    }
+    var G = 10, GV = 6;
+    function hz(a, b, lab) { var A = B[a], C = B[b], right = C.cx > A.cx, y = (A.cy + C.cy) / 2; return { pts: [[right ? A.r + G : A.l - G, y], [right ? C.l - G : C.r + G, y]], lab: lab }; }
+    function vt(a, b, x, lab) { var A = B[a], C = B[b], down = C.cy > A.cy; return { pts: [[x, down ? A.b + GV : A.t - GV], [x, down ? C.t - GV : C.b + GV]], lab: lab }; }
+    // out of a sideways, then up or down into b
+    function hv(a, b, x, lab) { var A = B[a], C = B[b], down = C.cy > A.cy; return { pts: [[x < A.cx ? A.l - G : A.r + G, A.cy], [x, A.cy], [x, down ? C.t - GV : C.b + GV]], lab: lab }; }
+    // out of a upwards or downwards, then sideways into b
+    function vh(a, b, x, lab) { var A = B[a], C = B[b], up = C.cy < A.cy; return { pts: [[x, up ? A.t - GV : A.b + GV], [x, C.cy], [C.cx > x ? C.l - G : C.r + G, C.cy]], lab: lab }; }
+    // drawn in cycle order: design, build, test, learn, then the centre
+    var E = [
+      ['data', 'eco', 'adjusts', function () { return vt('data', 'eco', B.eco.cx - B.eco.w * 0.17, { pos: 'left' }); }],
+      ['ode', 'kit', 'optimises', function () { return hz('ode', 'kit', { pos: 'above' }); }],
+      ['ode', 'bench', 'simulation analysis', function () { return vh('ode', 'bench', B.ode.x0 + B.ode.w * 0.37, { seg: 1, pos: 'above', at: 0.2 }); }],
+      ['bench', 'samples', 'tested', function () { return vt('bench', 'samples', B.samples.cx + B.samples.w * 0.38, { pos: 'right' }); }],
+      ['bench', 'expert', 'raises questions', function () { return vt('bench', 'expert', (B.expert.cx + B.bench.cx) / 2 + 10, { pos: 'left' }); }],
+      ['expert', 'kit', 'guidance', function () { return hz('expert', 'kit', { pos: 'above', at: 0.42 }); }],
+      ['soil', 'data', 'provides', function () { return hz('soil', 'data', { pos: 'above' }); }],
+      ['soil', 'samples', 'provides', function () { return hz('soil', 'samples', { pos: 'above', at: 0.55 }); }],
+      ['survey', 'eco', 'supports', function () { return hv('survey', 'eco', B.eco.cx - B.eco.w * 0.05, { seg: 0, pos: 'above', at: 0.5 }); }],
+      ['society', 'soil', 'participates', function () { return vt('society', 'soil', B.society.cx, { pos: 'right' }); }],
+      ['society', 'survey', 'fills in', function () { return vh('society', 'survey', B.society.cx - B.society.w * 0.12, { seg: 1, pos: 'above', at: 0.45 }); }],
+      ['teach', 'society', 'feedback', function () { return hz('teach', 'society', { pos: 'above', at: 0.42 }); }],
+      ['eco', 'society', 'predicts', function () { return hz('eco', 'society', { pos: 'below', at: 0.45 }); }],
+      ['society', 'kit', 'decides', function () { return vt('society', 'kit', B.society.cx + 10, { pos: 'right', big: true }); }],
+      ['kit', 'society', 'applied', function () { return vt('kit', 'society', B.society.cx - 10, { pos: 'left', big: true }); }]
+    ];
+    function pathD(pts) {
+      if (pts.length === 2) return 'M' + pts[0][0].toFixed(1) + ',' + pts[0][1].toFixed(1) + 'L' + pts[1][0].toFixed(1) + ',' + pts[1][1].toFixed(1);
+      var p = pts[0], c = pts[1], q = pts[2], r = 12;
+      var ux = Math.sign(c[0] - p[0]), uy = Math.sign(c[1] - p[1]), vx = Math.sign(q[0] - c[0]), vy = Math.sign(q[1] - c[1]);
+      return 'M' + p[0].toFixed(1) + ',' + p[1].toFixed(1) + 'L' + (c[0] - ux * r).toFixed(1) + ',' + (c[1] - uy * r).toFixed(1) +
+        'Q' + c[0].toFixed(1) + ',' + c[1].toFixed(1) + ' ' + (c[0] + vx * r).toFixed(1) + ',' + (c[1] + vy * r).toFixed(1) + 'L' + q[0].toFixed(1) + ',' + q[1].toFixed(1);
+    }
+    function labelAt(r) {
+      var sp = r.lab, p = r.pts[sp.seg || 0], q = r.pts[(sp.seg || 0) + 1], at = sp.at == null ? 0.5 : sp.at;
+      var x = p[0] + (q[0] - p[0]) * at, y = p[1] + (q[1] - p[1]) * at, off = sp.big ? 14 : 10;
+      if (sp.pos === 'above') return [x, y - off, 'middle'];
+      if (sp.pos === 'below') return [x, y + off + 13, 'middle'];
+      return [sp.pos === 'left' ? x - off : x + off, y + (sp.big ? 8 : 6), sp.pos === 'left' ? 'end' : 'start'];
+    }
+    var edges = E.map(function (e, i) {
+      var g = el('g', { class: 'edge' + (e[2] === 'applied' || e[2] === 'decides' ? ' edge--big' : '') }, eg);
+      var path = el('path', {}, g), flow = el('path', { class: 'flow' }, g), tx = el('text', {}, g); tx.textContent = e[2];
+      return { g: g, path: path, flow: flow, text: tx, a: e[0], b: e[1], route: e[3], L: 300, i: i };
+    });
+    var drawn = false, dtm = [], playing = false, pinned = false;
+    function layout() {
+      measure();
+      edges.forEach(function (e) {
+        var r = e.route(), d = pathD(r.pts), lp = labelAt(r);
+        e.path.setAttribute('d', d); e.flow.setAttribute('d', d);
+        e.text.setAttribute('x', lp[0].toFixed(1)); e.text.setAttribute('y', lp[1].toFixed(1)); e.text.setAttribute('text-anchor', lp[2]);
+        e.L = e.path.getTotalLength ? Math.ceil(e.path.getTotalLength()) + 2 : 300;
+        e.path.style.strokeDasharray = e.L;
+        if (!drawn) e.path.style.strokeDashoffset = e.L;
+      });
+    }
+    layout();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
     /* drawing the connections is this page's step */
-    var drawn = false, dtm = [];
     function drawAll(on, instant) {
       dtm.forEach(clearTimeout); dtm = []; drawn = on;
       board.classList.toggle('is-drawn', on);
       edges.forEach(function (e, i) {
-        var delay = instant || !on ? 0 : i * 170;
-        e.path.style.transition = instant ? 'none' : 'stroke-dashoffset .55s cubic-bezier(.3,.7,.2,1) ' + delay + 'ms';
-        e.text.style.transitionDelay = instant ? '0ms' : (delay + 280) + 'ms';
+        var delay = instant || !on ? 0 : i * 105;
+        e.path.style.transition = instant ? 'none' : 'stroke-dashoffset .5s cubic-bezier(.3,.7,.2,1) ' + delay + 'ms';
+        e.text.style.transitionDelay = instant ? '0ms' : (delay + 260) + 'ms';
         e.path.style.strokeDashoffset = on ? 0 : e.L;
         e.path.removeAttribute('marker-end');
-        if (on) { if (instant) e.path.setAttribute('marker-end', 'url(#lp-arrow)'); else dtm.push(setTimeout(function () { e.path.setAttribute('marker-end', 'url(#lp-arrow)'); }, delay + 480)); }
+        if (on) { if (instant) e.path.setAttribute('marker-end', 'url(#lp-arrow)'); else dtm.push(setTimeout(function () { e.path.setAttribute('marker-end', 'url(#lp-arrow)'); }, delay + 430)); }
       });
     }
     function focus(keys, onlyEdges) {
       board.classList.toggle('is-focus', !!keys);
       H.$$('.is-hl', svg).forEach(function (x) { x.classList.remove('is-hl'); });
       if (!keys) return;
-      keys.forEach(function (k) { nodes[k].classList.add('is-hl'); });
+      keys.forEach(function (k) { nodes[k].g.classList.add('is-hl'); });
       edges.forEach(function (e) {
         var hit = onlyEdges ? onlyEdges.indexOf(e) >= 0 : (keys.indexOf(e.a) >= 0 || keys.indexOf(e.b) >= 0);
-        if (hit) { e.g.classList.add('is-hl'); nodes[e.a].classList.add('is-hl'); nodes[e.b].classList.add('is-hl'); }
+        if (hit) { e.g.classList.add('is-hl'); nodes[e.a].g.classList.add('is-hl'); nodes[e.b].g.classList.add('is-hl'); }
       });
     }
     function show(k) {
-      var n = N[k], r = board.getBoundingClientRect(), sx = r.width / 1200, sy = r.height / 620;
-      card.innerHTML = '<b>' + n[2] + '</b>' + n[4] + '<em>' + QUESTION[n[3]] + '</em>';
-      var b = box(k), x = n[0] * sx, y = b.b * sy + 10; card.hidden = false;
-      card.style.left = H.clamp(x - 125, 0, r.width - 250) + 'px'; card.style.top = H.clamp(y, 0, r.height - 110) + 'px';
+      var n = N[k], r = board.getBoundingClientRect(), sx = r.width / 1200, sy = r.height / 620, b = B[k];
+      var st = STAGE[n[3]];
+      card.innerHTML = '<b>' + n[2] + '</b>' + n[4] + '<em class="lp__stage lp__stage--' + n[3] + '">' + (n[3] === 'core' ? 'At the centre of the cycle' : st[0] + ': ' + st[1]) + '</em>';
+      card.hidden = false;
+      var cw = card.offsetWidth || 250, ch = card.offsetHeight || 110, x = b.cx * sx, below = b.b * sy + 12, above = b.t * sy - ch - 12;
+      card.style.left = H.clamp(x - cw / 2, 0, r.width - cw) + 'px';
+      card.style.top = (below + ch <= r.height || above < 0 ? H.clamp(below, 0, r.height - ch) : above) + 'px';
     }
-    H.$$('[data-q]', sec).forEach(function (b) {
+    var stageBtns = H.$$('[data-q]', sec);
+    stageBtns.forEach(function (b) {
       b.addEventListener('click', function () {
         if (!drawn) drawAll(true, true);
         var on = b.getAttribute('aria-pressed') !== 'true';
-        H.$$('[data-q]', sec).forEach(function (o) { o.setAttribute('aria-pressed', 'false'); });
-        b.setAttribute('aria-pressed', on ? 'true' : 'false'); card.hidden = true;
+        stageBtns.forEach(function (o) { o.setAttribute('aria-pressed', 'false'); });
+        b.setAttribute('aria-pressed', on ? 'true' : 'false'); card.hidden = true; pinned = on;
         var q = b.getAttribute('data-q');
         focus(on ? Object.keys(N).filter(function (k) { return N[k][3] === q; }) : null);
       });
     });
-    // play the loop: a field question travels through the labs and back to society
-    var seq = [['soil', 'samples'], ['samples', 'bench'], ['bench', 'expert'], ['expert', 'project'], ['project', 'society'], ['society', 'survey'], ['survey', 'eco'], ['eco', 'society'], ['society', 'project']];
-    var dot = el('circle', { r: 7, class: 'lp__dot', opacity: 0 }, svg), playing = false;
-    H.$('[data-lp-play]', sec).addEventListener('click', function () {
-      if (playing) return; playing = true; if (!drawn) drawAll(true, true); var i = 0;
+    function live(stage) { stageBtns.forEach(function (o) { o.classList.toggle('is-live', o.getAttribute('data-q') === stage); }); }
+    // play the loop: one trip round the cycle, design → build → test → learn → society → build
+    var seq = [['ode', 'kit'], ['ode', 'bench'], ['bench', 'samples'], ['bench', 'expert'], ['expert', 'kit'], ['kit', 'society'], ['society', 'survey'], ['survey', 'eco'], ['eco', 'society'], ['society', 'kit']];
+    var dot = el('circle', { r: 7, class: 'lp__dot', opacity: 0 }, svg), playBtn = H.$('[data-lp-play]', sec);
+    playBtn.addEventListener('click', function () {
+      if (playing) return; playing = true; pinned = false; playBtn.setAttribute('aria-pressed', 'true');
+      stageBtns.forEach(function (o) { o.setAttribute('aria-pressed', 'false'); });
+      if (!drawn) drawAll(true, true); var i = 0;
       (function step() {
-        if (i >= seq.length) { playing = false; dot.setAttribute('opacity', 0); focus(null); card.hidden = true; return; }
+        if (i >= seq.length || !drawn) { playing = false; playBtn.removeAttribute('aria-pressed'); dot.setAttribute('opacity', 0); live(null); focus(null); card.hidden = true; return; }
         var e = edges.filter(function (x) { return x.a === seq[i][0] && x.b === seq[i][1]; })[0];
-        focus([e.a, e.b], [e]); show(e.b);
-        var L = e.L, s0 = performance.now(); dot.setAttribute('opacity', 1);
-        (function mv(now) { var k = H.clamp((now - s0) / 900, 0, 1), p = e.path.getPointAtLength(L * H.ease(k)); dot.setAttribute('cx', p.x); dot.setAttribute('cy', p.y); if (k < 1) requestAnimationFrame(mv); else { i++; setTimeout(step, 200); } })(s0);
+        focus([e.a, e.b], [e]); show(e.b); live(N[e.b][3] === 'core' ? N[e.a][3] : N[e.b][3]);
+        var L = e.path.getTotalLength(), s0 = performance.now(), ms = H.reduced ? 0 : 760; dot.setAttribute('opacity', 1);
+        (function mv(now) { var k = ms ? H.clamp((now - s0) / ms, 0, 1) : 1, p = e.path.getPointAtLength(L * H.ease(k)); dot.setAttribute('cx', p.x); dot.setAttribute('cy', p.y); if (k < 1) requestAnimationFrame(mv); else { i++; setTimeout(step, H.reduced ? 900 : 260); } })(s0);
       })();
     });
     H.scene('loop', {
       steps: 1,
-      set: function (i) { drawAll(i > 0, true); },
-      step: function (i) { drawAll(i > 0, false); return i ? edges.length * 170 + 560 : 300; },
+      set: function (i) { drawAll(i > 0, true); if (!i) { focus(null); card.hidden = true; } },
+      step: function (i) { drawAll(i > 0, false); return i ? edges.length * 105 + 520 : 300; },
       ff: function () { drawAll(true, true); }
     });
   }

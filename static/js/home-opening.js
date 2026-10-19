@@ -168,7 +168,7 @@
         descendTo(0, 1300); return 1300;
       },
       ff: function () { D.t0 = -1e9; if (api.refresh) api.refresh(); },
-      canLeave: function () { return S.found && performance.now() - S.foundAt > 900; },
+      canLeave: function () { return S.found && performance.now() - S.foundAt > 450; },
       blocked: function () {
         if (!S.exploring) return;
         S.blockedN++;
@@ -1208,14 +1208,50 @@
     if (guideBtn) guideBtn.classList.remove('is-nudge');
     guide = null;
   }
+  /* v10.0.2: "Guide my light" is one continuous sweep, a smooth curve through
+   * the signals still hidden, the damaged root and the nematode, in about two
+   * seconds whatever the distance. It used to stop and start at every signal
+   * (about 3 units/s), which took ten seconds or more. Signals light up as the
+   * sweep passes them, even when a slow frame jumps past their circle. */
   function startGuide() {
     if (!L || S.found) return;
-    var pts = [{ x: light.x, y: light.y }];
-    for (var i = S.detected; i < L.nodes.length; i++) pts.push(L.nodes[i]);
-    pts.push(L.target, L.nem);
-    guide = { pts: pts, seg: 0, t: 0 };
+    var pts = [{ x: light.x, y: light.y }], kind = [null];
+    for (var i = S.detected; i < L.nodes.length; i++) { pts.push(L.nodes[i]); kind.push(i); }
+    pts.push(L.target, L.nem); kind.push('roots', 'nem');
+    var path = [], len = [0], marks = [], SUB = 14;
+    for (var s = 0; s < pts.length - 1; s++) {
+      var p0 = pts[Math.max(0, s - 1)], p1 = pts[s], p2 = pts[s + 1], p3 = pts[Math.min(pts.length - 1, s + 2)];
+      for (var k = 0; k < SUB; k++) {
+        var u = k / SUB, u2 = u * u, u3 = u2 * u;
+        path.push({
+          x: 0.5 * (2 * p1.x + (p2.x - p0.x) * u + (2 * p0.x - 5 * p1.x + 4 * p2.x - p3.x) * u2 + (3 * p1.x - p0.x - 3 * p2.x + p3.x) * u3),
+          y: 0.5 * (2 * p1.y + (p2.y - p0.y) * u + (2 * p0.y - 5 * p1.y + 4 * p2.y - p3.y) * u2 + (3 * p1.y - p0.y - 3 * p2.y + p3.y) * u3)
+        });
+      }
+    }
+    path.push({ x: L.nem.x, y: L.nem.y });
+    for (var j = 1; j < path.length; j++) len.push(len[j - 1] + Math.hypot(path[j].x - path[j - 1].x, path[j].y - path[j - 1].y));
+    for (s = 1; s < kind.length; s++) marks.push({ at: len[Math.min(len.length - 1, s * SUB)], kind: kind[s] });
+    var total = Math.max(0.5, len[len.length - 1]);
+    guide = { path: path, len: len, marks: marks, next: 0, total: total, dur: NK.clamp(0.9 + total / 30, 1.3, 2.2), t: 0 };
     S.userMoved = true;
     ptr.seen = false;
+    if (guideBtn) guideBtn.classList.remove('is-nudge');
+  }
+  function guideStep(t, dt) {
+    guide.t = Math.min(1, guide.t + dt / guide.dur);
+    var at = guide.total * NK.easeInOut(guide.t), j = 1, P = guide.path, Ln = guide.len;
+    while (j < Ln.length - 1 && Ln[j] < at) j++;
+    var u = NK.clamp((at - Ln[j - 1]) / Math.max(1e-6, Ln[j] - Ln[j - 1]), 0, 1);
+    light.tx = NK.lerp(P[j - 1].x, P[j].x, u);
+    light.ty = NK.lerp(P[j - 1].y, P[j].y, u);
+    var R = U.uR.value;
+    while (guide && guide.next < guide.marks.length && at >= guide.marks[guide.next].at - R * 0.5) {
+      var m = guide.marks[guide.next++];
+      if (typeof m.kind === 'number') { if (built.nodeState[m.kind] < 2) detect(m.kind, t); }
+      else if (m.kind === 'roots') onRoots(t);
+    }
+    if (guide && guide.t >= 1) { if (!S.roots) onRoots(t); onFound(t); }
   }
   if (guideBtn) guideBtn.addEventListener('click', startGuide);
 
@@ -1380,16 +1416,7 @@
 
     /* light motion */
     if (guide) {
-      var a0 = guide.pts[guide.seg], a1 = guide.pts[guide.seg + 1];
-      if (!a1) guide = null;
-      else {
-        var segLen = Math.max(0.3, Math.hypot(a1.x - a0.x, a1.y - a0.y));
-        guide.t += dt * 3.2 / segLen;
-        var e = NK.easeInOut(Math.min(1, guide.t));
-        light.tx = NK.lerp(a0.x, a1.x, e) + Math.sin(t * 3) * 0.08;
-        light.ty = NK.lerp(a0.y, a1.y, e) + Math.cos(t * 2.4) * 0.08;
-        if (guide.t >= 1) { guide.seg++; guide.t = 0; }
-      }
+      if (exploring) guideStep(t, dt);
     } else if (ptr.seen) {
       var w = toWorld(ptr.x, ptr.y); light.tx = w.x; light.ty = w.y;
     } else if (!S.userMoved || !exploring) {
@@ -1402,7 +1429,7 @@
         light.tx = wv.x; light.ty = wv.y;
       }
     }
-    var ease = 1 - Math.exp(-dt * (guide ? 14 : (ptr.seen ? 10 : 3)));
+    var ease = 1 - Math.exp(-dt * (guide ? 22 : (ptr.seen ? 10 : 3)));
     light.x += (light.tx - light.x) * ease;
     light.y += (light.ty - light.y) * ease;
     var yMin = camY - L.Hx / 2 - 0.5, yMax = camY + L.Hx / 2 + 0.5;

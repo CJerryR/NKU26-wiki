@@ -261,7 +261,7 @@
     var acc = 0, used = false, boosted = false, lastWheel = 0, lastDelta = 0;
     var samples = [], lastAction = 0;
     function onWheel(e) {
-      if (!paged || e.ctrlKey || e.metaKey || e.shiftKey || Math.abs(e.deltaX) > Math.abs(e.deltaY) || blocked(e.target)) return;
+      if (!paged || e.ctrlKey || e.metaKey || e.shiftKey || Math.abs(e.deltaX) > Math.abs(e.deltaY) || blocked(e.target, e.deltaY)) return;
       var now = performance.now(), d = e.deltaY * (e.deltaMode === 1 ? 16 : e.deltaMode === 2 ? innerHeight : 1), a = Math.abs(d);
       if (!a) return;
       e.preventDefault(); touched();
@@ -271,7 +271,17 @@
         if (busy) {
           // Keep one deliberate request, not every inertia event. Let the current
           // transition finish instead of snapping its objects to the final frame.
-          if (!leaving && A.mode !== 'tween') pendingStory = { page: cur, dir: intent.dir, speed: intent.speed, time: now };
+          if (!leaving && A.mode !== 'tween') {
+            var again = pendingStory && pendingStory.page === cur && pendingStory.dir === intent.dir;
+            pendingStory = { page: cur, dir: intent.dir, speed: intent.speed, time: now };
+            // v10.0.2: a second push while one is already waiting hurries the
+            // running shot (scenes that can, such as the China flight); the
+            // waiting step still follows it.
+            if (again && intent.dir === activeDir && pages[cur].sp.accelerate) {
+              var left = call(pages[cur], 'accelerate', 420);
+              if (left > 0 && performance.now() + left < doneAt) lock(left);
+            }
+          }
           return;
         }
         pendingStory = null; inputSpeed = intent.speed; turns++;
@@ -323,16 +333,35 @@
         d > 0 ? next() : prev();
       } else if (!internal) pullBy(d, 14);
     }
-    function blocked(t) {
+    /* v10.0.2: a free-scroll area keeps the wheel or keys only while it can
+       still scroll that way itself. The footer never scrolls here (the page
+       does not scroll natively in this mode), so from the footer the reader
+       goes back up instead of being stuck on the last stop. */
+    function canScroll(t, dy) {
+      for (var n = t; n && n.nodeType === 1 && n !== document.body; n = n.parentElement) {
+        if (n.scrollHeight > n.clientHeight + 1 && /(auto|scroll)/.test(getComputedStyle(n).overflowY) &&
+            (dy < 0 ? n.scrollTop > 0 : n.scrollTop + n.clientHeight < n.scrollHeight - 1)) return true;
+        if (n.hasAttribute('data-free-scroll')) break;
+      }
+      return false;
+    }
+    function blocked(t, dy) {
       if (root.classList.contains('search-open')) return true;
       if (document.querySelector('.cnfocus:not([hidden]), dialog[open]')) return true;
-      return t && t.closest && t.closest('[data-free-scroll], .lnav__drop, .lnav__sheet');
+      if (!t || !t.closest) return false;
+      if (t.closest('.lnav__drop, .lnav__sheet')) return true;
+      var free = t.closest('[data-free-scroll]');
+      if (!free || free.classList.contains('site-footer')) return false;
+      // case cards stay put while open; other panels hand on what they cannot use
+      if (dy == null || !dy || free.closest('[data-flipcard]')) return true;
+      return canScroll(t, dy);
     }
     function onKey(e) {
-      if (!paged || e.altKey || e.ctrlKey || e.metaKey || blocked(e.target)) return;
+      if (!paged || e.altKey || e.ctrlKey || e.metaKey) return;
       var tg = e.target, tag = tg && tg.tagName;
       if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || (tg && tg.isContentEditable)) return;
       var k = e.key, dn = k === 'ArrowDown' || k === 'PageDown' || (k === ' ' && !e.shiftKey), up = k === 'ArrowUp' || k === 'PageUp' || (k === ' ' && e.shiftKey);
+      if (blocked(e.target, dn ? 1 : up ? -1 : 0)) return;
       if ((k === ' ' || k === 'Enter') && tg && tg.closest && tg.closest('button, a, [role="button"]')) return;
       if (dn || up || k === 'Home' || k === 'End') e.preventDefault(); else return;
       touched(); pendingStory = null;
@@ -371,6 +400,12 @@
     }, { passive: true });
     addEventListener('wheel', onWheel, { passive: false });
     addEventListener('keydown', onKey);
+    // v10.0.2: opening the footer's credits makes the last stop taller; keep its end in view
+    document.addEventListener('toggle', function (e) {
+      var t = e.target;
+      if (!paged || !atFoot || !t || !t.closest || !t.closest('.site-footer')) return;
+      bottom = maxY(); if (!busy) scrollToY(maxY(), 420);
+    }, true);
     // Keep the reader's scene and stop while CSS switches between snapped and
     // native layouts. A stale URL hash describes the initial link, not this stop.
     var rz, layoutChanging = false, resizeAnchor = null;
