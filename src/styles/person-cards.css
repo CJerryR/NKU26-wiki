@@ -209,14 +209,8 @@
 .doc .prose .member-card__bio p { margin: 0; max-width: none; font-size: inherit; line-height: inherit; text-wrap: pretty; }
 .doc .prose .member-card__bio p + p { margin-top: 1em; }
 
-/* Front photo fills the entire content height: top, bottom and left share --pad. */
-.member-card__front .member-card__identity { align-self: stretch; display: flex; }
-.member-card__front .member-card__photo { position: relative; align-self: stretch; }
-.member-card__front .member-card__photo::before { content: ''; display: block; aspect-ratio: 3 / 4; }
-.member-card__front .member-card__photo img,
-.member-card__front .member-card__blank {
-  position: absolute; inset: 3px; width: calc(100% - 6px); height: calc(100% - 6px); aspect-ratio: auto;
-}
+/* Keep front portraits at the shared 3:4 crop, independent of the information column height. */
+.member-card__front .member-card__identity { align-self: start; }
 
 /* Keep the front photo beside all information, even on narrow screens. */
 @container member (max-width: 479px) {

@@ -1,6 +1,6 @@
 {
-  "version": "10.1.5",
-  "label": "Jie Fan biography revision supplied by user",
+  "version": "10.1.6",
+  "label": "Natural 3:4 member portraits",
   "prepared_at": "2026-10-19T11:51:16+08:00",
   "media": "84 unchanged original images plus 4 user-authorized GPS-only cleaned images; all decoded frames unchanged; 12 complete historical source documents",
   "release_kind": "stage",
@@ -10,7 +10,7 @@
     "commit": "16770d5c28ddf7bc41f8d90445c44d80a28801d5",
     "published_at_local": "2026-10-18 05:04:34"
   },
-  "release_id": "jie-fan-biography-20261019",
+  "release_id": "member-portrait-ratio-20261019",
   "mobile_layout_check": "390px Members rendered without overflow; desktop Description, Parts/plasmid, Attributions/puzzle checked; 4 second delayed CDN uses inline preview then upgrades",
   "source_fidelity": {
     "original_source_files_verified": 80,
