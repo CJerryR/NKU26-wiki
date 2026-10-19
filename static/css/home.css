@@ -268,12 +268,13 @@
 .dbtl-cycle.is-hover .dbtl-cycle__frame,.dbtl-cycle.is-on .dbtl-cycle__frame{fill-opacity:.92;stroke:var(--plum);stroke-width:1.1}
 .dbtl-cycle:focus-visible .dbtl-cycle__frame{stroke:var(--plum);stroke-width:1.8}
 .lp__board:not(.is-focus) .dbtl .is-dim{opacity:.42}
-.lp__board.is-focus .dbtl .is-dim{opacity:.12}
+.lp__board.is-focus .dbtl .is-dim{opacity:.08}
 .lp__board.is-focus .dbtl .is-half{opacity:.55}
 .lp__board.is-focus .dbtl-legend{opacity:.3}
-.lp__panel{position:absolute;top:0;right:0;bottom:0;width:41%;display:flex;flex-direction:column;padding:clamp(22px,2.3vw,34px) clamp(22px,2.3vw,34px) 18px;border-radius:22px;background:#fffaf0;box-shadow:0 30px 60px -36px rgba(70,30,80,.5),inset 0 0 0 1px rgba(126,12,110,.13);opacity:0;visibility:hidden;transform:translateX(26px);transition:opacity .3s,transform .45s var(--ease-o),visibility 0s .45s}
-.lp__board.is-focus .lp__panel{opacity:1;visibility:visible;transform:none;transition:opacity .45s .22s,transform .7s .16s var(--ease-o),visibility 0s}
-.lp__panel-body{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;font-size:16.5px;line-height:1.62;color:var(--ink)}
+.lp__panel{--io:cubic-bezier(.65,0,.35,1);position:absolute;left:var(--pl,59%);top:var(--pt,0px);width:var(--pw,41%);max-height:var(--ph,100%);display:flex;flex-direction:column;padding:clamp(22px,2.3vw,34px) clamp(22px,2.3vw,34px) 18px;border-radius:22px;background:#fffaf0;box-shadow:0 30px 60px -36px rgba(70,30,80,.5),inset 0 0 0 1px rgba(126,12,110,.13);opacity:0;visibility:hidden;transform:translateX(26px);transition:opacity .3s,transform .45s var(--ease-o),visibility 0s .45s,left .78s var(--io),top .78s var(--io),width .78s var(--io),max-height .78s var(--io)}
+.lp__board.is-focus .lp__panel{opacity:1;visibility:visible;transform:none;transition:opacity .45s .22s,transform .7s .16s var(--ease-o),visibility 0s,left .78s var(--io),top .78s var(--io),width .78s var(--io),max-height .78s var(--io)}
+.lp__panel.is-jump{transition:none}
+.lp__panel-body{flex:0 1 auto;min-height:0;overflow:auto;overscroll-behavior:contain;font-size:16.5px;line-height:1.62;color:var(--ink)}
 .lp__panel-body > *{animation:lpIn .5s var(--ease-o) both}
 .lp__panel-body p{margin:0}.lp__panel-body p + p{margin-top:.85em}
 @keyframes lpIn{from{opacity:0;transform:translateY(8px)}}
@@ -299,7 +300,7 @@
   .lp__board{width:100%;aspect-ratio:auto}
   .lp__stage{position:relative;aspect-ratio:476/210;transition:aspect-ratio .5s var(--ease-o)}
   .lp__board.is-focus .lp__stage{aspect-ratio:1.15}
-  .lp__panel{position:relative;width:auto;display:none;margin-top:14px;transform:none}
+  .lp__panel{position:relative;left:auto;top:auto;width:auto;max-height:none;display:none;margin-top:14px;transform:none}
   .lp__board.is-focus .lp__panel{display:flex}
 }
 @media (prefers-reduced-motion:reduce){

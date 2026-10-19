@@ -319,16 +319,18 @@
 
   /* ================= 08 LOOP ================= */
   /* 08 loop: the four DBTL cycles of dbtl.svg. A click zooms a cycle into the left
-     of the board and opens its text on the right (requested by the wet-lab team). */
+     of the board and opens its text beside it (requested by the wet-lab team). On wide
+     screens the board grows a little, the cycle takes all the height it can and the
+     text card sits next to it, top-aligned with the cycle's frame. */
   function loop() {
     var sec = H.$('[data-loop]'); if (!sec) return;
     var board = H.$('[data-lp-board]', sec), svg = board && H.$('svg.dbtl', board);
     if (!svg) return;
-    var body = H.$('[data-lp-body]', sec), more = H.$('[data-lp-more]', sec), tabs = H.$$('[data-lp-tab]', sec);
+    var panel = H.$('[data-lp-panel]', sec), body = H.$('[data-lp-body]', sec), more = H.$('[data-lp-more]', sec), tabs = H.$$('[data-lp-tab]', sec);
     var cycles = H.$$('.dbtl-cycle', svg), parts = H.$$('[data-c]', svg), bridges = H.$$('[data-bridge]', svg);
     var v0 = svg.getAttribute('viewBox').split(/[\s,]+/).map(Number), FULL = { x: v0[0], y: v0[1], w: v0[2], h: v0[3] };
     var cur = { x: FULL.x, y: FULL.y, w: FULL.w, h: FULL.h }, active = 0, raf = 0, hovered = 0;
-    var wide = window.matchMedia('(min-width: 960px)');
+    var wide = window.matchMedia('(min-width: 960px)'), GAP = 28, PAD = 14;
     var KIND = { dry: ['Dry Lab', '#53509d'], wet: ['Wet Lab', '#c57925'], hp: ['Human Practices', '#ab3045'] };
     var texts = {}; H.$$('[data-lp-text]', sec).forEach(function (t) { texts[t.getAttribute('data-lp-text')] = t; });
 
@@ -336,24 +338,48 @@
       var r = H.$('.dbtl-cycle[data-c="' + c + '"] .dbtl-cycle__frame', svg);
       return { x: +r.getAttribute('x'), y: +r.getAttribute('y'), w: +r.getAttribute('width'), h: +r.getAttribute('height') };
     }
-    /* viewBox that puts box in the middle of the left `share` of the stage, at the stage's own aspect */
-    function fit(box, W, Hh, share) {
-      var s = Math.min(W * share / box.w, Hh / box.h), w = W / s, h = Hh / s;
-      return { x: box.x + box.w / 2 - W * share / 2 / s, y: box.y + box.h / 2 - h / 2, w: w, h: h };
+    /* viewBox that centres box in a W x Hh stage, at the stage's own aspect */
+    function fit(box, W, Hh) {
+      var s = Math.min(W / box.w, Hh / box.h), w = W / s, h = Hh / s;
+      return { x: box.x + box.w / 2 - w / 2, y: box.y + box.h / 2 - h / 2, w: w, h: h };
     }
-    function target() {
-      var r = svg.getBoundingClientRect(), W = r.width || 1, Hh = r.height || 1;
-      if (!active) return fit(FULL, W, Hh, 1);
-      var b = frame(active), p = 7;
-      return fit({ x: b.x - p, y: b.y - p, w: b.w + 2 * p, h: b.h + 2 * p }, W, Hh, wide.matches ? .57 : 1);
+    /* where everything goes for the current state, at the board's final size */
+    function layout() {
+      var W = board.clientWidth || 1;
+      if (!wide.matches) {
+        var Hs = svg.getBoundingClientRect().height || 1;
+        if (!active) return { vb: fit(FULL, W, Hs) };
+        var b = frame(active), p = 7;
+        return { vb: fit({ x: b.x - p, y: b.y - p, w: b.w + 2 * p, h: b.h + 2 * p }, W, Hs) };
+      }
+      var hOver = W * FULL.h / FULL.w;
+      if (!active) return { h: hOver, vb: { x: FULL.x, y: FULL.y, w: FULL.w, h: FULL.h } };
+      var paged = document.documentElement.classList.contains('is-paged');
+      var Hb = Math.max(hOver, Math.min(W * 255 / 476, window.innerHeight - (paged ? 236 : 110)));
+      var F = frame(active), pMin = H.clamp(W * .33, 340, 440);
+      var s = Math.min((W - pMin - GAP - 2 * PAD) / F.w, (Hb - 2 * PAD) / F.h);
+      var fw = F.w * s, fh = F.h * s, pw = Math.min(540, W - PAD - fw - GAP);
+      var x0 = Math.max(0, (W - (PAD + fw + GAP + pw)) / 2) + PAD, y0 = (Hb - fh) / 2;
+      return { h: Hb, vb: { x: F.x - x0 / s, y: F.y - y0 / s, w: W / s, h: Hb / s },
+        panel: { left: x0 + fw + GAP, top: y0, width: pw, max: Hb - y0 - PAD } };
+    }
+    function place(L, jump) {
+      var P = L.panel, props = { '--pl': P && P.left, '--pt': P && P.top, '--pw': P && P.width, '--ph': P && P.max };
+      if (jump) panel.classList.add('is-jump');
+      Object.keys(props).forEach(function (k) { if (props[k] == null) panel.style.removeProperty(k); else panel.style.setProperty(k, props[k].toFixed(1) + 'px'); });
+      if (jump) { void panel.offsetWidth; panel.classList.remove('is-jump'); }
     }
     function apply(v) { cur = v; svg.setAttribute('viewBox', [v.x, v.y, v.w, v.h].map(function (n) { return n.toFixed(2); }).join(' ')); }
+    function settle() { var L = layout(); place(L, true); board.style.height = L.h ? L.h.toFixed(1) + 'px' : ''; apply(L.vb); }
     function fly() {
       cancelAnimationFrame(raf); raf = 0;
-      if (H.reduced) { apply(target()); return; }
-      var from = cur, t0 = performance.now();
+      var L = layout(); place(L);
+      if (H.reduced) { settle(); return; }
+      var from = cur, h0 = board.offsetHeight, h1 = L.h, t0 = performance.now();
+      if (!h1) board.style.height = '';
       raf = requestAnimationFrame(function tick(now) {
-        var k = H.clamp((now - t0) / 780, 0, 1), e = H.ease(k), to = target();
+        var k = H.clamp((now - t0) / 780, 0, 1), e = H.ease(k), to = h1 ? L.vb : layout().vb;
+        if (h1) board.style.height = H.lerp(h0, h1, e).toFixed(1) + 'px';
         apply({ x: H.lerp(from.x, to.x, e), y: H.lerp(from.y, to.y, e), w: H.lerp(from.w, to.w, e), h: H.lerp(from.h, to.h, e) });
         raf = k < 1 ? requestAnimationFrame(tick) : 0;
       });
@@ -392,7 +418,9 @@
     }
     function show(c) {
       c = +c || 0; if (c === active) return;
+      var opening = !active && c;
       active = c; hovered = 0;
+      if (opening) place(layout(), true);   // the card appears where it belongs, without sliding there
       board.classList.toggle('is-focus', !!c);
       tabs.forEach(function (t) { t.setAttribute('aria-pressed', String(+t.getAttribute('data-lp-tab') === c)); });
       cycles.forEach(function (g) {
@@ -417,9 +445,9 @@
     });
     H.$('[data-lp-close]', sec).addEventListener('click', function () { show(0); var t = tabs[0]; if (t) t.focus(); });
     sec.addEventListener('keydown', function (e) { if (e.key === 'Escape' && active) show(0); });
-    window.addEventListener('resize', function () { if (!raf) apply(target()); });
-    if (wide.addEventListener) wide.addEventListener('change', function () { apply(target()); });
-    apply(target());
+    window.addEventListener('resize', function () { if (!raf) settle(); });
+    if (wide.addEventListener) wide.addEventListener('change', settle);
+    settle();
   }
 
   /* ================= 09 BUILT ================= */
