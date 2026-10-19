@@ -7,19 +7,6 @@
 import { initLiquidGlass } from './liquid-glass';
 const resizeCleanup = new WeakMap<HTMLElement, () => void>();
 
-let frontFrame = 0;
-function syncFrontSizes(): void {
-  if (frontFrame) return;
-  frontFrame = requestAnimationFrame(() => {
-    frontFrame = 0;
-    const fronts = [...document.querySelectorAll<HTMLElement>('.member-card__front')];
-    // Measure natural content first, so the common height can shrink after a resize/edit.
-    fronts.forEach(front => { front.style.minHeight = ''; });
-    const height = Math.max(0, ...fronts.map(front => front.offsetHeight));
-    fronts.forEach(front => { front.style.minHeight = `${height}px`; });
-  });
-}
-
 function wire(card: HTMLElement): void {
   if (card.classList.contains('is-ready')) return;
   const front = card.querySelector<HTMLElement>('.member-card__front');
@@ -58,20 +45,7 @@ function wire(card: HTMLElement): void {
   // Natural face sizes update after responsive reflow, fonts and Tina content edits.
   const resize = new ResizeObserver(fit);
   resize.observe(front); resize.observe(back);
-  let width = -1;
-  const frontSize = new ResizeObserver(entries => {
-    for (const entry of entries) {
-      if (entry.target !== card || entry.contentRect.width !== width) {
-        if (entry.target === card) width = entry.contentRect.width;
-        syncFrontSizes();
-      }
-    }
-  });
-  frontSize.observe(card);
-  const info = front.querySelector<HTMLElement>('.member-card__info');
-  if (info) frontSize.observe(info);
-  syncFrontSizes();
-  resizeCleanup.set(card, () => { resize.disconnect(); frontSize.disconnect(); syncFrontSizes(); });
+  resizeCleanup.set(card, () => { resize.disconnect(); });
 
   button.addEventListener('click', () => turn(!card.classList.contains('is-flipped')));
   // The whole card turns, except when the reader is selecting text or using a control.
