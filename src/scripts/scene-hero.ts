@@ -26,7 +26,9 @@ export function initSceneHero(): void {
   if (!root) return;
   const stage = root.querySelector<HTMLElement>('.scene__stage')!;
   const title = root.querySelector<HTMLElement>('[data-scene-title]');
+  const crumbs = root.querySelector<HTMLElement>('.scene__crumbs');
   const floor = root.querySelector<HTMLElement>('[data-scene-floor]');
+  const ground = root.querySelector<HTMLElement>('.scene__ground');
   const sets = Array.from(root.querySelectorAll<HTMLElement>('[data-scene-set]'));
 
   const probed = new Set<string>();
@@ -69,12 +71,18 @@ export function initSceneHero(): void {
     top = root.getBoundingClientRect().top + scrollY;
     stageHeight = stage.offsetHeight;
     span = Math.max(1, root.offsetHeight - stageHeight);
-    navClearance = (parseFloat(getComputedStyle(root).getPropertyValue('--nav-h')) || 84) + 20;
+    // Overscan below the stage keeps soil under the paper as the ground rises.
+    ground?.style.setProperty('--ground-travel', `${(span * 0.28).toFixed(2)}px`);
+    navClearance = Math.max(
+      (parseFloat(getComputedStyle(root).getPropertyValue('--nav-h')) || 84) + 20,
+      crumbs ? crumbs.offsetTop + crumbs.offsetHeight + 24 : 0,
+    );
     titleHeight = title?.offsetHeight ?? 0;
   };
 
   const render = () => {
-    const p = clamp((scrollY - top) / span);
+    const distance = Math.max(0, scrollY - top);
+    const p = clamp(distance / span);
     for (const { el, m } of layers) {
       const [a, b] = m.w;
       const k = ease(clamp((p - a) / Math.max(1e-3, b - a)));
@@ -88,15 +96,20 @@ export function initSceneHero(): void {
     }
     if (title) {
       const k = ease(clamp((p - 0.06) / 0.62));
-      let dy = (titleCfg.toY - titleCfg.y) * k * u;
-      // Keep expanded headings prominent instead of shrinking to 56–70%.
-      const endScale = Math.max(titleCfg.toScale, canvasW === 900 ? 0.88 : 0.86);
+      // Keep the opened title almost full size, in the upper third of the stage.
+      const endScale = Math.max(titleCfg.toScale, 0.98);
       const sc = lerp(1, endScale, k);
-      // Keep the pinned title below the fixed navigation, including short screens.
       const minCenter = navClearance + titleHeight * sc / 2;
-      const center = stageHeight / 2 + titleCfg.y * u + dy;
-      dy += Math.max(0, minCenter - center);
+      const startCenter = stageHeight / 2 + titleCfg.y * u;
+      const endCenter = Math.max(navClearance + titleHeight * endScale / 2, Math.min(startCenter, stageHeight * 0.34));
+      const center = Math.max(minCenter, lerp(startCenter, endCenter, k));
+      const dy = center - startCenter;
       title.style.transform = `translate(-50%, calc(-50% + ${dy.toFixed(2)}px)) scale(${sc.toFixed(4)})`;
+    }
+    if (ground) {
+      // Paper moves at scroll speed. Soil moves at 28%, even after sticky releases.
+      const stageExit = Math.max(0, distance - span);
+      ground.style.transform = `translate3d(0, ${(stageExit - distance * 0.28).toFixed(2)}px, 0)`;
     }
     if (floor) floor.style.opacity = (1 - ease(clamp((p - 0.45) / 0.4))).toFixed(3);
   };

@@ -2,7 +2,7 @@
 
 2026 NKU-China（队伍编号 6303）的 Wiki 源码，使用 Astro 5 和 Tina。首页讲述从土壤线虫到双通道检测的故事，内页按 Project、Wet Lab、Model、Human Practices、Team 组织。
 
-当前版本为 **V10.2.0（HP五页原稿更新，阶段发布）**。按团队完整飞书原稿接入 Overview、Integrated Human Practices、Education、Investigation 和 Industry Engagement and Support。保留原文、原图和原图号，统一图注及引用排版；缺图和课程下载原文件留待团队补齐，内容终审状态保持待完成。首页及其他栏目沿用此前版本。
+当前版本为 **V10.2.1（开场标题与土壤视差，阶段发布）**。按团队完整飞书原稿接入 Overview、Integrated Human Practices、Education、Investigation 和 Industry Engagement and Support。保留原文、原图和原图号，统一图注及引用排版；缺图和课程下载原文件留待团队补齐，内容终审状态保持待完成。内页开场标题放大并下调最终位置，土壤以慢于正文的速度上移；首页沿用此前版本。
 
 - [源码仓库](https://gitlab.igem.org/2026/nku-china)
 - [正式 Wiki](https://2026.igem.wiki/nku-china/)
@@ -104,6 +104,14 @@ V8.7 的 40 张开场图集及两张 Results 高清图已完成官方 CDN 迁移
 素材来源和署名见 [素材登记表](docs/素材登记表.csv)。保留原始 LICENSE、页脚 CC BY 4.0、源码链接与 AI 使用说明，发布前补齐内容审核、素材许可和官方 Attributions Form。
 
 ## 版本改动
+
+### V10.2.1 改动：
+
+改动时间：2026-10-19（北京时间，阶段发布）
+
+1. 内页开场标题滚动后保留至少98%大小，最终位置下调至画面上方约三分之一处，并避让导航与面包屑。
+2. 土壤以正文约28%的速度上移；开场解除固定后保持速度衔接，白色正文较快升起并盖过土壤。
+3. 检查4种页面、8种横竖屏尺寸的160个滚动位置；减少动态效果模式继续使用静态开场。
 
 ### V10.2.0 改动：
 

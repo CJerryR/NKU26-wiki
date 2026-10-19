@@ -96,9 +96,12 @@
 }
 .scene__floor { display: none; }
 .scene__ground {
-  position: absolute; left: 0; right: 0; bottom: 0; height: 36%; z-index: 0; pointer-events: none;
+  --ground-height: 36%;
+  position: absolute; left: 0; right: 0; bottom: calc(-1 * var(--ground-travel, 0px));
+  height: calc(var(--ground-height) + var(--ground-travel, 0px)); z-index: 0; pointer-events: none;
   background: var(--ground) 0 100% / auto 100% repeat-x;
 }
+.scene--live .scene__ground { will-change: transform; }
 .scene__set { z-index: 1; }
 .scene__crumbs, .scene__title { z-index: 3; }
 .scene__crumbs ol, .scene__crumbs a, .scene__crumbs [aria-current='page'] { color: var(--cream-2); }
@@ -108,7 +111,7 @@
   text-shadow: 0 2px 0 rgba(12, 4, 18, .35), 0 6px 40px rgba(10, 4, 16, .6);
 }
 .scene__h1 em { color: #f8b95a; }
-@media (max-aspect-ratio: 4/5) { .scene__ground { height: 24%; } }
+@media (max-aspect-ratio: 4/5) { .scene__ground { --ground-height: 24%; } }
 
 /* ===== V10: the article's paper comes up over the soil =======================
  * A full-width strip of the article's paper (var(--paper), so the night theme
