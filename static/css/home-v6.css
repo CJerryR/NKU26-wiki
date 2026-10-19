@@ -219,15 +219,14 @@
 .hp__flag i{width:7px;height:7px;border-radius:50%;background:#ffd66b}
 .tip em{display:block;margin-top:2px;font-style:normal;font-size:11px;font-weight:600;color:#9a6a00}
 
-/* ---------- 08 built: 3D-version icons on the V3 cards ---------- */
-.bt__card .bt__art{position:absolute;inset:0;z-index:-1;display:block;opacity:1;font-size:0;background:linear-gradient(135deg,#221430,#130a19)}
-.bt__art svg{position:absolute;right:-2%;top:4%;width:82%;height:auto;transition:transform .6s var(--ease-o)}
-.bt__card:hover .bt__art svg{transform:translateY(-4px) scale(1.03)}
-.bt-float{animation:btFloat 4s ease-in-out infinite}
-
-@keyframes btFloat{50%{transform:translateY(-5px)}}
-
-@media (prefers-reduced-motion:reduce){.bt-float{}}
+/* ---------- 09 built: illustrated cards (wwb.svg) ---------- */
+.bt__card .bt__art{position:absolute;inset:0;z-index:-2;display:block;width:100%;height:100%;object-fit:cover;object-position:50% 55%;transition:transform .7s var(--ease-o)}
+.bt__card::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(180deg,rgba(19,9,27,.8) 0%,rgba(19,9,27,.46) 26%,rgba(19,9,27,0) 52%)}
+.bt__card:hover .bt__art{transform:scale(1.04)}
+.bt__card small{display:block;margin-bottom:5px;font-size:12px;font-weight:600;letter-spacing:.01em;color:#e6d4ff}
+.bt__card span{opacity:.86}
+.bt__card:focus-visible{outline:3px solid var(--plum);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.bt__card .bt__art{transition:none}.bt__card:hover .bt__art{transform:none}}
 
 /* v6 fixes after the first screenshot pass */
 .th .th__cap{bottom:auto;padding:0;border-radius:0;background:none;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none}
