@@ -27,7 +27,7 @@ hidden: false
 
 NemaKlear aims to make nematode screening easier to use through a yeast\-based test kit\. Reaching that goal means connecting several steps: sensing nematode signals, turning them into color, interpreting that color, and preparing cells in a practical test format\.
 
-We used DBTL \(DBTL\) to improve these connections\. Bench experiments tested our biological constructs and materials\. Computational models helped us develop receptor candidates and explore how to interpret mixed signals\. <strong>Human Practices (HP)</strong> kept practical concerns—ease of use, cost, and useful information—in view as the project developed\.
+We used DBTL to improve these connections\. Bench experiments tested our biological constructs and materials\. Computational models helped us develop receptor candidates and explore how to interpret mixed signals\. <strong>Human Practices (HP)</strong> kept practical concerns—ease of use, cost, and useful information—in view as the project developed\.
 
 The following iterations follow three engineering questions: Can we build the biosensor? Can its output help distinguish target from background? Can we turn it into a usable test?
 
