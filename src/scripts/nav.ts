@@ -182,6 +182,13 @@ export function initNav(): void {
     if (open) { paintPanel(sheet); glassFor(sheet).refresh(); }
   };
   toggle?.addEventListener('click', () => setSheet(!!sheet?.hidden));
+  // Dismiss the phone sheet when continuing to another page or control.
+  document.addEventListener('click', (e) => {
+    if (!sheet || sheet.hidden) return;
+    const target = e.target as Element;
+    if (!bar.contains(target) || target.closest('a, [data-search-open]')) setSheet(false);
+  });
+  matchMedia('(max-width: 1000px)').addEventListener('change', () => setSheet(false));
   document.addEventListener('keydown', (e) => {
     if (e.key !== 'Escape') return;
     const open = groups.find((g) => g.classList.contains('is-open'));

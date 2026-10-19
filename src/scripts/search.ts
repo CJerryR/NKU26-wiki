@@ -76,6 +76,15 @@ export function initSearch(): void {
   let loading: Promise<Doc[]> | null = null;
   let lastFocus: HTMLElement | null = null;
   let activeIdx = -1;
+  const fitViewport = () => {
+    if (modal.hidden) return;
+    const viewport = window.visualViewport;
+    modal.style.setProperty('--search-viewport-height', `${viewport?.height ?? innerHeight}px`);
+    modal.style.setProperty('--search-viewport-top', `${viewport?.offsetTop ?? 0}px`);
+  };
+  window.visualViewport?.addEventListener('resize', fitViewport);
+  window.visualViewport?.addEventListener('scroll', fitViewport);
+  window.addEventListener('resize', fitViewport, { passive: true });
 
   const load = (): Promise<Doc[]> => {
     if (docs) return Promise.resolve(docs);
@@ -121,6 +130,7 @@ export function initSearch(): void {
     if (!modal.hidden) return;
     lastFocus = document.activeElement as HTMLElement;
     modal.hidden = false;
+    fitViewport();
     document.documentElement.classList.add('search-open');
     openers.forEach((b) => b.setAttribute('aria-expanded', 'true'));
     if (panel) {

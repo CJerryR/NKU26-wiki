@@ -1,0 +1,27 @@
+/* Phone reading refinements. Wide scientific material keeps its own scroller. */
+@media (max-width: 680px) {
+  .prose :is(.doc-section, .card, .callout__body, .details__body, .feature__main, .person__info) { min-width: 0; }
+  .prose :is(p, li, h2, h3, h4, h5, figcaption, .card, .stat) { overflow-wrap: anywhere; }
+  .prose pre { max-width: 100%; padding: 16px; font-size: 13px; }
+  .prose :is(.table-wrap, .author-table-scroll, .docking-panel-scroll, .katex-display) { overscroll-behavior-x: contain; }
+  .prose :is(.table-wrap, .author-table-scroll) { scrollbar-width: thin; }
+  .prose :is(th, td) { padding: 10px 12px; }
+  .prose .table-wrap { border-radius: 12px; }
+  .prose .card { padding: 18px; border-radius: 16px; }
+  .prose .callout { grid-template-columns: 20px minmax(0, 1fr); gap: 10px; }
+  .prose .callout__icon svg { width: 20px; height: 20px; }
+  .prose .details summary { min-height: 48px; padding: 14px 16px; }
+  .prose .details summary::after { flex: none; }
+  .prose .details__body { padding: 0 16px 16px; }
+  .prose .refs li { padding-left: 34px; }
+  .prose .lead p { font-size: 18px; }
+  .wiki-media__bar { gap: 8px; padding: 10px 12px; }
+  .wiki-media__title { white-space: normal; overflow-wrap: anywhere; line-height: 1.4; }
+  .prose .wiki-media__action { height: auto; min-height: 44px; padding-block: 8px; }
+  .wiki-media__frame { max-width: 100%; }
+  .hp-chapter-nav { gap: 6px 10px; padding-block: 10px; }
+  .hp-chapter-nav a { display: inline-flex; align-items: center; min-height: 44px; padding-block: 6px; }
+  .hp-manuscript .hp-source-figure { margin-block: 1.4rem 1.8rem; }
+  .hp-manuscript .hp-photo-group { gap: 1rem; }
+  .hp-references p:has(a) { padding-left: .75rem; }
+}

@@ -1,6 +1,7 @@
 /* Transport only. Author app.js, eco.js, i18n.js and all Python calculations remain unchanged. */
 (()=>{
  const base=new URL('./',document.currentScript.src),nativeFetch=window.fetch.bind(window),worker=new Worker(new URL('worker.js',base),{type:'module'});
+ const mobileSheet=document.createElement('link');mobileSheet.rel='stylesheet';mobileSheet.href=new URL('mobile.css',base).href;document.head.append(mobileSheet);
  nativeFetch(new URL('asset-index.json',base)).catch(()=>{});
  let sequence=0;const jobs=new Map();
  worker.onmessage=({data})=>{if(data.type==='ready'){document.documentElement.dataset.nemaklearRuntime='ready';return;}const job=jobs.get(data.id);if(!job)return;jobs.delete(data.id);data.error?job.reject(Error(data.error)):job.resolve(data.response);};
