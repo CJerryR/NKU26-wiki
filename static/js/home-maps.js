@@ -369,7 +369,7 @@
    * Survey   = province choropleth, 5 classes, boundaries from the Standard
    *            Map of China GS(2022)4303; outline + South China Sea GS(2022)4308.
    * Teaching = 8 sites, circle AREA proportional to students signed up.
-   * Soil     = 6 sampling sites, bar HEIGHT proportional to samples (linear).
+   * Soil     = logged source areas, bar HEIGHT mapped to log2(samples + 1).
    * Projection is unchanged (the ascaroside story hands its outline over). */
   var HP = window.NKU_HP;
   var CLS = ['#6b2a8f', '#b03a86', '#e65a62', '#fb9b5f', '#fde6a3'];   // magma-like, dark -> light = few -> many
@@ -391,6 +391,8 @@
     var cvs = KINDS.map(function (k) { return H.$('canvas[data-layer="' + k + '"]', sec); });
     var tabs = H.$$('[data-hp-tab]', sec);
     var SV = HP.survey, TS = HP.teach.sites, SS = HP.soil.sites;
+    var SMAX = Math.max.apply(null, SS.map(function (s) { return s.n; }));
+    function soilHeightFraction(n) { return Math.log1p(n) / Math.log1p(SMAX); }
     var BY = {}; SV.byProvince.forEach(function (p) { BY[p.en] = p; });
     var BR = SV.breaks;
     function cls(n) { if (!n) return -1; for (var i = 0; i < BR.length; i++) if (n >= BR[i][0] && (BR[i][1] == null || n <= BR[i][1])) return i; return BR.length - 1; }
@@ -402,7 +404,7 @@
     var STAT = [
       fmtN(SV.responses) + ' responses \u00b7 ' + SV.byProvince.length + ' provinces',
       TS.length + ' sites \u00b7 \u2248' + HP.teach.total + ' students',
-      nSites(SS) + ' samples \u00b7 ' + SS.length + ' sites \u00b7 ' + Object.keys(soilProv).length + ' provinces'
+      nSites(SS) + ' soil samples collected \u00b7 ' + Object.keys(soilProv).length + ' provinces'
     ];
     STAT.forEach(function (t, i) { var el = H.$('[data-hp-stat="' + i + '"]', sec); if (el) el.textContent = t; });
     var counts = BR.map(function () { return 0; }); SV.byProvince.forEach(function (p) { counts[cls(p.n)]++; });
@@ -412,13 +414,14 @@
         '<span class="hp2__chip"><i class="is-none"></i>none</span></span>',
       '<span class="hp2__lgt">Circle area = students signed up</span><span class="hp2__sizes">' +
         [10, 50, 130].map(function (n) { var d = Math.round(26 * Math.sqrt(n / 130)); return '<span><i style="width:' + d + 'px;height:' + d + 'px"></i>' + n + '</span>'; }).join('') + '</span>',
-      '<span class="hp2__lgt">Bar height = samples at the site (1\u201325)</span><span class="hp2__bars"><span><i style="height:3px"></i>1</span><span><i style="height:6px"></i>5</span><span><i style="height:26px"></i>25</span></span>'
+      '<span class="hp2__lgt">Bar height: log<sub>2</sub>(samples + 1)</span><span class="hp2__bars">' +
+        [1, 3, 5, 25, SMAX].map(function (n) { return '<span><i style="height:' + (26 * soilHeightFraction(n)).toFixed(1) + 'px"></i>' + n + '</span>'; }).join('') + '</span>'
     ];
     LEG.forEach(function (h, i) { var el = H.$('[data-hp-legend="' + i + '"]', sec); if (el) el.innerHTML = h; });
     var NOTE = [
       'Questionnaire, ' + SV.first + ' to ' + SV.last + ' (n = ' + SV.responses + '), self-reported province',
       'Team sign-up sheet; markers at county or district seats',
-      'Soil log, records 1\u20136; ascaroside not yet measured'
+      'Soil collection records updated 19 Oct 2026. Tibet is a regional aggregate; markers indicate approximate source areas.'
     ];
     var noteEl = H.$('[data-hp-note]', sec);
     /* the same records as text, for screen readers */
@@ -561,8 +564,7 @@
         label(c, L.t, best.x + 2, best.y + H2 / 2, 'left', 12, col);
       });
     }
-    /* ---------- soil: one bar per site, linear in samples ---------- */
-    var SMAX = Math.max.apply(null, SS.map(function (s) { return s.n; }));
+    /* ---------- soil: one bar per source area; log2(n + 1) keeps small counts visible ---------- */
 
     function makeLayer(kind, cv) {
       var ctx = null, introT = -1, m = { kind: kind, cv: cv, hot: null, fadeUntil: 0 }, tpts = [], mesh = [];
@@ -644,7 +646,7 @@
           c.stroke();
           var HB = V.hmax * 0.9, col = '#9aa7ff', tops = [];
           SS.slice().sort(function (a, b) { return b.ll[1] - a.ll[1]; }).forEach(function (s, i) {
-            var k = H.ease(H.clamp((it * 1.8 - i * 0.08) * 2, 0, 1)), q = P3(s.ll[0], s.ll[1]), hh = Math.max(3, s.n / SMAX * HB) * k;
+            var k = H.ease(H.clamp((it * 1.8 - i * 0.08) * 2, 0, 1)), q = P3(s.ll[0], s.ll[1]), hh = Math.max(3, soilHeightFraction(s.n) * HB) * k;
             var near = mouse && Math.abs(mouse[0] - q[0]) < 9 && mouse[1] < q[1] + 7 && mouse[1] > q[1] - hh - 18; if (near) hot = { s: s };
             c.fillStyle = 'rgba(255,255,255,.55)'; c.beginPath(); c.ellipse(q[0], q[1], 5, 2.2, 0, 0, 6.29); c.fill();
             var g = c.createLinearGradient(0, q[1], 0, q[1] - hh); g.addColorStop(0, col + '55'); g.addColorStop(1, col);

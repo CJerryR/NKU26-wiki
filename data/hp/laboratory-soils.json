@@ -1,0 +1,100 @@
+{
+  "title": "Additional soil collection records",
+  "received": "2026-10-19",
+  "source": "User-supplied laboratory soil summary image",
+  "total": 255,
+  "records": [
+    {
+      "id": "lab-1",
+      "regionZh": "吉林白城",
+      "region": "Baicheng, Jilin",
+      "n": 3,
+      "substratesZh": "草原土、大豆单作土、大豆连作土",
+      "substrates": "Grassland soil; soybean monoculture soil; continuous soybean cropping soil",
+      "collectorsZh": "史晓梦",
+      "province": "Jilin"
+    },
+    {
+      "id": "lab-2",
+      "regionZh": "黑龙江黑河",
+      "region": "Heihe, Heilongjiang",
+      "n": 3,
+      "substratesZh": "草原土、大豆单作土、大豆连作土",
+      "substrates": "Grassland soil; soybean monoculture soil; continuous soybean cropping soil",
+      "collectorsZh": "史晓梦",
+      "province": "Heilongjiang"
+    },
+    {
+      "id": "lab-3",
+      "regionZh": "云南昆明",
+      "region": "Kunming, Yunnan",
+      "n": 4,
+      "substratesZh": "草原土、烟草短期连作土、烟草长期连作土、菜园土",
+      "substrates": "Grassland soil; short-term continuous tobacco cropping soil; long-term continuous tobacco cropping soil; vegetable garden soil",
+      "collectorsZh": "赵晓静",
+      "province": "Yunnan"
+    },
+    {
+      "id": "lab-4",
+      "regionZh": "云南玉溪",
+      "region": "Yuxi, Yunnan",
+      "n": 4,
+      "substratesZh": "草原土、烟草短期连作土、烟草长期连作土、菜园土",
+      "substrates": "Grassland soil; short-term continuous tobacco cropping soil; long-term continuous tobacco cropping soil; vegetable garden soil",
+      "collectorsZh": "赵晓静",
+      "province": "Yunnan"
+    },
+    {
+      "id": "lab-5",
+      "regionZh": "黑龙江哈尔滨",
+      "region": "Harbin, Heilongjiang",
+      "n": 3,
+      "substratesZh": "菜园土",
+      "substrates": "Vegetable garden soil",
+      "collectorsZh": "赵佳敏",
+      "province": "Heilongjiang"
+    },
+    {
+      "id": "lab-6",
+      "regionZh": "四川成都",
+      "region": "Chengdu, Sichuan",
+      "n": 3,
+      "substratesZh": "菜园土",
+      "substrates": "Vegetable garden soil",
+      "collectorsZh": "赵佳敏",
+      "province": "Sichuan"
+    },
+    {
+      "id": "lab-7",
+      "regionZh": "广西南宁",
+      "region": "Nanning, Guangxi",
+      "n": 3,
+      "substratesZh": "菜园土",
+      "substrates": "Vegetable garden soil",
+      "collectorsZh": "赵佳敏",
+      "province": "Guangxi"
+    },
+    {
+      "id": "lab-8",
+      "regionZh": "西藏",
+      "region": "Tibet",
+      "n": 124,
+      "substratesZh": "高原草甸土、高山泥石滩土、雪山土、湿地土、青稞田土",
+      "substrates": "Plateau meadow soil; alpine debris-flat soil; snow-mountain soil; wetland soil; highland barley field soil",
+      "collectorsZh": "邓巍、刘彤瑶",
+      "province": "Tibet"
+    },
+    {
+      "id": "lab-9",
+      "regionZh": "西藏",
+      "region": "Tibet",
+      "n": 108,
+      "substratesZh": "高原草甸土、沙地草甸土、湿地土、沼泽地土、盐湖边土、盐碱地土、玉米、青稞、萝卜、土豆、小麦、藜麦、燕麦、油菜田土",
+      "substrates": "Plateau meadow soil; sandy meadow soil; wetland soil; marsh soil; salt-lake shore soil; saline-alkali soil; field soils for maize, highland barley, radish, potato, wheat, quinoa, oats and rapeseed",
+      "collectorsZh": "贾怡丹",
+      "province": "Tibet"
+    }
+  ],
+  "precision": "City names describe source regions, not exact sampling sites. Tibet has region-level information only.",
+  "countingNote": "These 255 collected soil samples supplement the original 34 collected samples; all use the same sample category, as clarified by the user on 19 October 2026."
+}

@@ -1,97 +1,237 @@
 {
- "title": "Soil sample log (土样登记表)",
- "source": "Team soil sample log, records 1–6 (records 7–16 are still empty)",
- "precision": "Markers sit at the county / district / city named in the log (≈10–30 km).",
- "pending": "Ascaroside (蛔甘素) content: not yet measured for any sample.",
- "sites": [
-  {
-   "id": 1,
-   "place": "Yuncheng County, Heze, Shandong",
-   "placeZh": "山东省菏泽市郓城县",
-   "province": "Shandong",
-   "n": 25,
-   "soil": "several types",
-   "soilZh": "多种",
-   "cover": "farmland, orchards, urban green space",
-   "coverZh": "农田，果园，城市绿地",
-   "ll": [
-    115.94,
-    35.6
-   ],
-   "prec": "county",
-   "short": "Yuncheng"
+  "title": "Collected soil samples (已收集土壤样本)",
+  "source": "Team soil sample log records 1–6 (34 samples), plus laboratory inventory received 19 October 2026 (255 samples).",
+  "precision": "Original markers use the named county, district or city. Laboratory city markers indicate source cities only; the Tibet marker is a schematic regional anchor, not a sampling location.",
+  "pending": "The original 34-sample log lists ascaroside content as not yet measured. The laboratory inventory provides no ascaroside measurements.",
+  "sites": [
+    {
+      "id": 1,
+      "place": "Yuncheng County, Heze, Shandong",
+      "placeZh": "山东省菏泽市郓城县",
+      "province": "Shandong",
+      "n": 25,
+      "soil": "several types",
+      "soilZh": "多种",
+      "cover": "farmland, orchards, urban green space",
+      "coverZh": "农田，果园，城市绿地",
+      "ll": [
+        115.94,
+        35.6
+      ],
+      "prec": "county",
+      "short": "Yuncheng"
+    },
+    {
+      "id": 2,
+      "place": "Getuo Village, Hunyuan County, Datong, Shanxi",
+      "placeZh": "山西省大同市浑源县圪坨村",
+      "province": "Shanxi",
+      "n": 1,
+      "soil": "loess",
+      "soilZh": "黄土",
+      "ll": [
+        113.7,
+        39.7
+      ],
+      "prec": "county",
+      "short": "Hunyuan"
+    },
+    {
+      "id": 3,
+      "place": "Qingdao, Shandong",
+      "placeZh": "山东省青岛市",
+      "province": "Shandong",
+      "n": 5,
+      "ll": [
+        120.38,
+        36.07
+      ],
+      "prec": "city",
+      "short": "Qingdao"
+    },
+    {
+      "id": 4,
+      "place": "Haozhuang, Lincheng County, Xingtai, Hebei",
+      "placeZh": "河北省邢台市临城县郝庄",
+      "province": "Hebei",
+      "n": 1,
+      "ll": [
+        114.5,
+        37.44
+      ],
+      "prec": "county",
+      "link": "also a teaching site (Hebei · Lincheng)",
+      "short": "Lincheng"
+    },
+    {
+      "id": 5,
+      "place": "Fengman District, Jilin City, Jilin",
+      "placeZh": "吉林省吉林市丰满区",
+      "province": "Jilin",
+      "n": 1,
+      "cover": "urban green space",
+      "coverZh": "城市绿地",
+      "ll": [
+        126.56,
+        43.82
+      ],
+      "prec": "district",
+      "short": "Jilin"
+    },
+    {
+      "id": 6,
+      "place": "Duliying Village, Fengning Manchu Autonomous County, Chengde, Hebei",
+      "placeZh": "河北省承德市丰宁满族自治县独立营村",
+      "province": "Hebei",
+      "n": 1,
+      "cover": "mountain land",
+      "coverZh": "山地",
+      "ll": [
+        116.65,
+        41.21
+      ],
+      "prec": "county",
+      "short": "Fengning"
+    },
+    {
+      "id": "lab-1",
+      "place": "Baicheng, Jilin",
+      "placeZh": "吉林白城",
+      "province": "Jilin",
+      "n": 3,
+      "soil": "Grassland soil; soybean monoculture soil; continuous soybean cropping soil",
+      "soilZh": "草原土、大豆单作土、大豆连作土",
+      "collectorsZh": "史晓梦",
+      "ll": [
+        122.84,
+        45.62
+      ],
+      "prec": "city",
+      "short": "Baicheng",
+      "link": "Soil collection record; city-level source region, not an exact sampling site"
+    },
+    {
+      "id": "lab-2",
+      "place": "Heihe, Heilongjiang",
+      "placeZh": "黑龙江黑河",
+      "province": "Heilongjiang",
+      "n": 3,
+      "soil": "Grassland soil; soybean monoculture soil; continuous soybean cropping soil",
+      "soilZh": "草原土、大豆单作土、大豆连作土",
+      "collectorsZh": "史晓梦",
+      "ll": [
+        127.5,
+        50.25
+      ],
+      "prec": "city",
+      "short": "Heihe",
+      "link": "Soil collection record; city-level source region, not an exact sampling site"
+    },
+    {
+      "id": "lab-3",
+      "place": "Kunming, Yunnan",
+      "placeZh": "云南昆明",
+      "province": "Yunnan",
+      "n": 4,
+      "soil": "Grassland soil; short-term continuous tobacco cropping soil; long-term continuous tobacco cropping soil; vegetable garden soil",
+      "soilZh": "草原土、烟草短期连作土、烟草长期连作土、菜园土",
+      "collectorsZh": "赵晓静",
+      "ll": [
+        102.71,
+        25.04
+      ],
+      "prec": "city",
+      "short": "Kunming",
+      "link": "Soil collection record; city-level source region, not an exact sampling site"
+    },
+    {
+      "id": "lab-4",
+      "place": "Yuxi, Yunnan",
+      "placeZh": "云南玉溪",
+      "province": "Yunnan",
+      "n": 4,
+      "soil": "Grassland soil; short-term continuous tobacco cropping soil; long-term continuous tobacco cropping soil; vegetable garden soil",
+      "soilZh": "草原土、烟草短期连作土、烟草长期连作土、菜园土",
+      "collectorsZh": "赵晓静",
+      "ll": [
+        102.55,
+        24.35
+      ],
+      "prec": "city",
+      "short": "Yuxi",
+      "link": "Soil collection record; city-level source region, not an exact sampling site"
+    },
+    {
+      "id": "lab-5",
+      "place": "Harbin, Heilongjiang",
+      "placeZh": "黑龙江哈尔滨",
+      "province": "Heilongjiang",
+      "n": 3,
+      "soil": "Vegetable garden soil",
+      "soilZh": "菜园土",
+      "collectorsZh": "赵佳敏",
+      "ll": [
+        126.53,
+        45.8
+      ],
+      "prec": "city",
+      "short": "Harbin",
+      "link": "Soil collection record; city-level source region, not an exact sampling site"
+    },
+    {
+      "id": "lab-6",
+      "place": "Chengdu, Sichuan",
+      "placeZh": "四川成都",
+      "province": "Sichuan",
+      "n": 3,
+      "soil": "Vegetable garden soil",
+      "soilZh": "菜园土",
+      "collectorsZh": "赵佳敏",
+      "ll": [
+        104.07,
+        30.57
+      ],
+      "prec": "city",
+      "short": "Chengdu",
+      "link": "Soil collection record; city-level source region, not an exact sampling site"
+    },
+    {
+      "id": "lab-7",
+      "place": "Nanning, Guangxi",
+      "placeZh": "广西南宁",
+      "province": "Guangxi",
+      "n": 3,
+      "soil": "Vegetable garden soil",
+      "soilZh": "菜园土",
+      "collectorsZh": "赵佳敏",
+      "ll": [
+        108.37,
+        22.82
+      ],
+      "prec": "city",
+      "short": "Nanning",
+      "link": "Soil collection record; city-level source region, not an exact sampling site"
+    },
+    {
+      "id": "lab-tibet",
+      "place": "Tibet (regional aggregate)",
+      "placeZh": "西藏（区域汇总）",
+      "province": "Tibet",
+      "n": 232,
+      "ll": [
+        88.4,
+        31.5
+      ],
+      "prec": "region",
+      "short": "Tibet",
+      "link": "Soil collection record: 124 + 108 samples. Schematic regional anchor; exact sampling locations not supplied."
+    }
+  ],
+  "inventoryTotals": {
+    "existingLog": 34,
+    "laboratory": 255,
+    "combinedRecords": 289,
+    "overlapChecked": false
   },
-  {
-   "id": 2,
-   "place": "Getuo Village, Hunyuan County, Datong, Shanxi",
-   "placeZh": "山西省大同市浑源县圪坨村",
-   "province": "Shanxi",
-   "n": 1,
-   "soil": "loess",
-   "soilZh": "黄土",
-   "ll": [
-    113.7,
-    39.7
-   ],
-   "prec": "county",
-   "short": "Hunyuan"
-  },
-  {
-   "id": 3,
-   "place": "Qingdao, Shandong",
-   "placeZh": "山东省青岛市",
-   "province": "Shandong",
-   "n": 5,
-   "ll": [
-    120.38,
-    36.07
-   ],
-   "prec": "city",
-   "short": "Qingdao"
-  },
-  {
-   "id": 4,
-   "place": "Haozhuang, Lincheng County, Xingtai, Hebei",
-   "placeZh": "河北省邢台市临城县郝庄",
-   "province": "Hebei",
-   "n": 1,
-   "ll": [
-    114.5,
-    37.44
-   ],
-   "prec": "county",
-   "link": "also a teaching site (Hebei · Lincheng)",
-   "short": "Lincheng"
-  },
-  {
-   "id": 5,
-   "place": "Fengman District, Jilin City, Jilin",
-   "placeZh": "吉林省吉林市丰满区",
-   "province": "Jilin",
-   "n": 1,
-   "cover": "urban green space",
-   "coverZh": "城市绿地",
-   "ll": [
-    126.56,
-    43.82
-   ],
-   "prec": "district",
-   "short": "Jilin"
-  },
-  {
-   "id": 6,
-   "place": "Duliying Village, Fengning Manchu Autonomous County, Chengde, Hebei",
-   "placeZh": "河北省承德市丰宁满族自治县独立营村",
-   "province": "Hebei",
-   "n": 1,
-   "cover": "mountain land",
-   "coverZh": "山地",
-   "ll": [
-    116.65,
-    41.21
-   ],
-   "prec": "county",
-   "short": "Fengning"
-  }
- ]
+  "countingNote": "All records describe collected soil samples. The total combines the original 34 samples and the additional 255 samples, as clarified by the user on 19 October 2026."
 }

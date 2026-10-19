@@ -74,6 +74,25 @@ The visit broadened our understanding of usability. “Easy to use” must inclu
 
 Soil collection and our sampling guidance video extended this work by retaining sample context for subsequent research. Sample collection itself is not evidence of field detection performance.
 
+### Soil programme: collected soil samples {#soil-programme-laboratory-inventory}
+
+The soil programme records **289 collected soil samples across nine provincial-level regions**. The updated collection summary supplied on 19 October 2026 adds 255 samples in nine records to the original 34 samples. These are all collected soil samples. The table below details the additional 255 samples, including two Tibet batches of 124 and 108 samples. City names describe source regions, and the Tibet records do not identify individual sampling locations.
+
+| Source region | Samples | Isolation substrate / soil source | Collectors |
+| --- | ---: | --- | --- |
+| Baicheng, Jilin | 3 | Grassland soil; soybean monoculture soil; continuous soybean cropping soil | 史晓梦 |
+| Heihe, Heilongjiang | 3 | Grassland soil; soybean monoculture soil; continuous soybean cropping soil | 史晓梦 |
+| Kunming, Yunnan | 4 | Grassland soil; short-term continuous tobacco cropping soil; long-term continuous tobacco cropping soil; vegetable garden soil | 赵晓静 |
+| Yuxi, Yunnan | 4 | Grassland soil; short-term continuous tobacco cropping soil; long-term continuous tobacco cropping soil; vegetable garden soil | 赵晓静 |
+| Harbin, Heilongjiang | 3 | Vegetable garden soil | 赵佳敏 |
+| Chengdu, Sichuan | 3 | Vegetable garden soil | 赵佳敏 |
+| Nanning, Guangxi | 3 | Vegetable garden soil | 赵佳敏 |
+| Tibet | 124 | Plateau meadow soil; alpine debris-flat soil; snow-mountain soil; wetland soil; highland barley field soil | 邓巍、刘彤瑶 |
+| Tibet | 108 | Plateau meadow soil; sandy meadow soil; wetland soil; marsh soil; salt-lake shore soil; saline-alkali soil; field soils for maize, highland barley, radish, potato, wheat, quinoa, oats and rapeseed | 贾怡丹 |
+| **Additional samples** | **255** | | |
+
+These records describe soil collection and provenance; no ascaroside measurements or field detection results were supplied in the updated summary.
+
 ## Integration Case 1 Soil Complexity and the Limits of Specificity {#ihp-source-92 toc="Integration Case 1 Soil Complexity and the Limits of Specificity"}
 
 ### Feedback {#ihp-source-93 toc="Feedback"}
