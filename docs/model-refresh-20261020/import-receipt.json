@@ -1,0 +1,440 @@
+[
+  {
+    "slug": "model",
+    "source": "Model -_ Overview.md",
+    "sha256": "f672667fe4b68863eb66712c0af6bfde82958f82d809074e73e303d114fc57ac",
+    "blocks": 15,
+    "source_nodes": [
+      {
+        "source_type": "heading",
+        "text": "Model Overview"
+      },
+      {
+        "source_type": "paragraph",
+        "text": "How can nematode chemical signals in soil help guide agricultural management? Our modeling work explores this question from receptor recognition to color readout, target nematode density, and treatment decisions. Four complementary components support sensor design, experimental calibration, and assessment of the potential value of detection."
+      },
+      {
+        "source_type": "paragraph",
+        "text": ""
+      },
+      {
+        "source_type": "paragraph",
+        "text": ""
+      },
+      {
+        "source_type": "paragraph",
+        "text": ""
+      },
+      {
+        "source_type": "paragraph",
+        "text": ""
+      },
+      {
+        "source_type": "blockquote",
+        "text": "Generated with OpenAI GPT Image 2."
+      },
+      {
+        "source_type": "heading",
+        "text": "Molecular Docking | Identifying receptor variants for differential recognition"
+      },
+      {
+        "source_type": "paragraph",
+        "text": "We compared how Gpr2 variants interact with two ascarosides, ascr#18 and ascr#3, using docking scores and receptor–ligand contacts. These comparisons guided the selection of N84V and V368R for further study as candidates with contrasting predicted ligand preferences."
+      },
+      {
+        "source_type": "heading",
+        "text": "Molecular Dynamics | Exploring receptor–ligand behavior in a membrane"
+      },
+      {
+        "source_type": "paragraph",
+        "text": "Starting from docked poses, we simulated receptor–ligand complexes in a membrane environment to examine receptor motion, ligand positioning, and changes in molecular contacts. These simulations provide structural clues for interpreting the candidates and formulating hypotheses for experimental testing."
+      },
+      {
+        "source_type": "heading",
+        "text": "ODE & Dual-Channel Modeling | Linking color readouts to nematode density"
+      },
+      {
+        "source_type": "paragraph",
+        "text": "Our ordinary differential equation (ODE) model connects receptor input to yeast signaling and pigment production, with simulated pigment outputs translated into smartphone color features. The dual-channel model combines two complementary sensor responses to explore density estimation for the southern root-knot nematode (Meloidogyne incognita) when background nematode abundance is unknown. Together, these models provide a framework for experimental calibration."
+      },
+      {
+        "source_type": "heading",
+        "text": "Economic Benefit | Assessing when detection informs treatment"
+      },
+      {
+        "source_type": "paragraph",
+        "text": "Using target nematode density as an input, we compare net returns from no treatment, uniform treatment, and treatment selected by density category after testing. By accounting for potential yield loss, testing costs, and treatment costs, the model examines when density information could improve management decisions under the modeled conditions."
+      },
+      {
+        "source_type": "paragraph",
+        "text": "Docking and molecular dynamics guide receptor design and experimental questions. ODE and dual-channel modeling explore how sensor responses can be interpreted as density estimates, which then serve as inputs to economic scenarios. In turn, the density categories used for treatment help define the measurement precision needed for future calibration."
+      }
+    ],
+    "formulae": [],
+    "table_count": 0
+  },
+  {
+    "slug": "model-docking",
+    "source": "Model -_ Docking.md",
+    "sha256": "4fee5e5bef85ff780262b7575841f3396bb4e661a83fd4c5fc50bc81a75c6796",
+    "blocks": 68,
+    "source_nodes": [
+      {
+        "source_type": "heading",
+        "text": "Docking: Screening Receptor Variants for Ascaroside Discrimination"
+      },
+      {
+        "source_type": "paragraph",
+        "text": "To build a sensor that distinguishes ascr#18 from ascr#3, we sought receptor variants with different preferences for the two ligands. Molecular docking helped us identify starting points for receptor engineering: which residues contact each ligand, how side-chain substitutions affect docking scores and contacts, and which variants merit further study."
+      },
+      {
+        "source_type": "paragraph",
+        "text": "We began by establishing comparable docking conditions, then used contact differences in wild-type (WT) receptors to select mutation sites. Alanine substitutions, saturation scans, and combination tests guided successive rounds of design. Docking scores supported candidate comparisons, while contact analysis helped us develop structural explanations and plan the next round."
+      },
+      {
+        "source_type": "heading",
+        "text": "1.1 Receptor Selection and Docking Setup"
+      },
+      {
+        "source_type": "paragraph",
+        "text": "We initially examined three fungal G protein-coupled receptors (GPCRs) involved in ascaroside sensing: Gpr2 and Gpr3 [1], and GprC [2]. We prepared predicted receptor structures and ligands, using published pocket locations, key residues, and docking methods as references. We also considered their use in yeast. GprC has been reported at both the plasma membrane and mitochondria in its native fungal host [2]. We considered this a potential complication for localization and pathway integration in yeast, so we focused subsequent engineering on Gpr2, continued to investigate Gpr3 and its variants, and retained GprC as a structural reference."
+      },
+      {
+        "source_type": "paragraph",
+        "text": ""
+      },
+      {
+        "source_type": "paragraph",
+        "text": "Initial checks revealed two input problems. Inconsistent coordinate frames between receptor structures and docking boxes displaced the search region from the intended pocket. Loss of chemical information, including formal charges, during format conversion also affected the identification of charged contacts. These findings made input validation a routine part of the workflow."
+      },
+      {
+        "source_type": "paragraph",
+        "text": "We used structural superposition to place receptors, ligands, and docking boxes in a common coordinate frame, then checked the search region against membrane orientation and the receptor segments retained for docking. Atom mapping was used to check atom identities and coordinate correspondence between the original ligand SDF files and the PDBQT files. When the required Meeko metadata were retained in the PDBQT output, we exported the docked poses to SDF while restoring the original bond orders and formal charges for contact analysis [4]."
+      },
+      {
+        "source_type": "paragraph",
+        "text": "Subsequent mutant comparisons used consistent ligand inputs and search settings. Original residue numbering was preserved so that docking scores could be traced to residue contacts. Published studies guided receptor selection and structural comparisons; input checks established consistent computational conditions; and docking with both ligands guided the design and screening of variants."
+      },
+      {
+        "source_type": "heading",
+        "text": "1.2 Contact-Based Site Selection and Alanine Scanning"
+      },
+      {
+        "source_type": "paragraph",
+        "text": "We selected initial mutation sites at two levels. First, we measured residue contact frequencies across predicted receptor models and their docked poses, identifying recurring contacts and comparing their occurrence between the two ligands. Second, we examined the poses in model_0 to identify contacts detected for only one ligand and classify their interaction types."
+      },
+      {
+        "source_type": "paragraph",
+        "text": ""
+      },
+      {
+        "source_type": "paragraph",
+        "text": "These analyses provided complementary information. Contact frequencies showed how often a residue contacted a ligand within the sampled conformations, while individual poses helped locate differences and identify side chains to test."
+      },
+      {
+        "source_type": "paragraph",
+        "text": "We then replaced candidate residues with alanine to examine how simplifying each side chain changed the scores and contacts for both ligands. The initial sites were N84, L90, V110, R181, W338, R345, and V368. For each substitution, we generated a mutant sequence, predicted its structure with AlphaFold 3 [3], and carried out structure preparation, docking, and contact comparisons with WT."
+      },
+      {
+        "source_type": "paragraph",
+        "text": ""
+      },
+      {
+        "source_type": "paragraph",
+        "text": "Using the structures and WT reference from this initial round, N84A, V110A, and V368A all produced lower scores for ascr#3 and higher scores for ascr#18. We therefore prioritized N84, V110, and V368 for further side-chain comparisons. Score and contact changes at W338 and R181 also warranted further investigation. These results turned the initial contact observations into specific substitutions to test."
+      },
+      {
+        "source_type": "heading",
+        "text": "1.3 Saturation Scanning at Four Sites"
+      },
+      {
+        "source_type": "paragraph",
+        "text": "The alanine scan narrowed the search and raised a further question: could different side chains at the same position shift the scores in different directions?"
+      },
+      {
+        "source_type": "paragraph",
+        "text": "Based on the alanine scan, contact analysis, and additional side-chain substitutions, we selected N84, V110, V368, and W338 for saturation scanning. Testing all 19 alternatives at each site produced 76 single-mutant designs, allowing us to compare how side-chain identity affected scores and contact patterns for the two ligands."
+      },
+      {
+        "source_type": "paragraph",
+        "text": "Different substitutions at the same position produced distinct score shifts. For example, N84V lowered the score for ascr#18 and raised it for ascr#3, whereas N84Y showed the opposite pattern. Contact differences helped identify promising positions, but the results for both ligands were needed to select individual variants."
+      },
+      {
+        "source_type": "heading",
+        "text": "1.4 Comparing Score Changes for Both Ligands"
+      },
+      {
+        "source_type": "paragraph",
+        "text": "We described each variant’s shift using the difference between its WT-relative score changes for the two ligands. Let (G) denote the AutoDock Vina docking score [5]:"
+      },
+      {
+        "source_type": "paragraph",
+        "text": "<span class=\"katex-display\"><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mi mathvariant=\"normal\">Δ</mi><msub><mi>G</mi><mn>18</mn></msub><mo>=</mo><msub><mi>G</mi><mrow><mrow><mi mathvariant=\"normal\">m</mi><mi mathvariant=\"normal\">u</mi><mi mathvariant=\"normal\">t</mi></mrow><mo separator=\"true\">,</mo><mn>18</mn></mrow></msub><mo>−</mo><msub><mi>G</mi><mrow><mrow><mi mathvariant=\"normal\">W</mi><mi mathvariant=\"normal\">T</mi></mrow><mo separator=\"true\">,</mo><mn>18</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">\\Delta G_{18}=G_{\\mathrm{mut},18}-G_{\\mathrm{WT},18}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8333em;vertical-align:-0.15em;\"></span><span class=\"mord\">Δ</span><span class=\"mord\"><span class=\"mord mathnormal\">G</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:0em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">18</span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.9694em;vertical-align:-0.2861em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\">G</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:0em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\"><span class=\"mord mathrm mtight\">mut</span></span><span class=\"mpunct mtight\">,</span><span class=\"mord mtight\">18</span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.2861em;\"><span></span></span></span></span></span></span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span><span class=\"mbin\">−</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span></span><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.9694em;vertical-align:-0.2861em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\">G</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3283em;\"><span style=\"top:-2.55em;margin-left:0em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\"><span class=\"mord mathrm mtight\">WT</span></span><span class=\"mpunct mtight\">,</span><span class=\"mord mtight\">18</span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.2861em;\"><span></span></span></span></span></span></span></span></span></span></span>"
+      },
+      {
+        "source_type": "paragraph",
+        "text": "<span class=\"katex-display\"><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mi mathvariant=\"normal\">Δ</mi><msub><mi>G</mi><mn>3</mn></msub><mo>=</mo><msub><mi>G</mi><mrow><mrow><mi mathvariant=\"normal\">m</mi><mi mathvariant=\"normal\">u</mi><mi mathvariant=\"normal\">t</mi></mrow><mo separator=\"true\">,</mo><mn>3</mn></mrow></msub><mo>−</mo><msub><mi>G</mi><mrow><mrow><mi mathvariant=\"normal\">W</mi><mi mathvariant=\"normal\">T</mi></mrow><mo separator=\"true\">,</mo><mn>3</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">\\Delta G_{3}=G_{\\mathrm{mut},3}-G_{\\mathrm{WT},3}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8333em;vertical-align:-0.15em;\"></span><span class=\"mord\">Δ</span><span class=\"mord\"><span class=\"mord mathnormal\">G</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:0em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">3</span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.9694em;vertical-align:-0.2861em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\">G</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:0em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\"><span class=\"mord mathrm mtight\">mut</span></span><span class=\"mpunct mtight\">,</span><span class=\"mord mtight\">3</span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.2861em;\"><span></span></span></span></span></span></span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span><span class=\"mbin\">−</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span></span><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.9694em;vertical-align:-0.2861em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\">G</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3283em;\"><span style=\"top:-2.55em;margin-left:0em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\"><span class=\"mord mathrm mtight\">WT</span></span><span class=\"mpunct mtight\">,</span><span class=\"mord mtight\">3</span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.2861em;\"><span></span></span></span></span></span></span></span></span></span></span>"
+      },
+      {
+        "source_type": "paragraph",
+        "text": "We then calculated:"
+      },
+      {
+        "source_type": "paragraph",
+        "text": "<span class=\"katex-display\"><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mi mathvariant=\"normal\">Δ</mi><mi mathvariant=\"normal\">Δ</mi><mi>G</mi><mo>=</mo><mi mathvariant=\"normal\">Δ</mi><msub><mi>G</mi><mn>18</mn></msub><mo>−</mo><mi mathvariant=\"normal\">Δ</mi><msub><mi>G</mi><mn>3</mn></msub></mrow><annotation encoding=\"application/x-tex\">\\Delta\\Delta G=\\Delta G_{18}-\\Delta G_{3}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.6833em;\"></span><span class=\"mord\">ΔΔ</span><span class=\"mord mathnormal\">G</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8333em;vertical-align:-0.15em;\"></span><span class=\"mord\">Δ</span><span class=\"mord\"><span class=\"mord mathnormal\">G</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:0em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">18</span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span><span class=\"mbin\">−</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span></span><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8333em;vertical-align:-0.15em;\"></span><span class=\"mord\">Δ</span><span class=\"mord\"><span class=\"mord mathnormal\">G</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:0em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">3</span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span></span>"
+      },
+      {
+        "source_type": "paragraph",
+        "text": "A negative (\\Delta G) indicates a lower score than WT for that ligand. Under this definition, a positive (\\Delta\\Delta G) indicates a shift toward ascr#3 relative to WT, whereas a negative value indicates a shift toward ascr#18. These quantities describe docking-score changes rather than thermodynamic binding free-energy changes. Binding affinity and selectivity require experimental evaluation."
+      },
+      {
+        "source_type": "paragraph",
+        "text": "We also examined the two score changes separately. A lower score for the target ligand, a higher score for the other ligand, or both could produce a shift in the same direction, but would imply different candidate profiles."
+      },
+      {
+        "source_type": "paragraph",
+        "text": "After saturation scanning, we prioritized N84V, V110C, V110M, and V368R for detailed contact analysis. All four were compared with the same WT reference, whose scores were −6.492 kcal/mol for ascr#18 and −6.625 kcal/mol for ascr#3."
+      },
+      {
+        "source_type": "paragraph",
+        "text": "Table 1. Docking scores and WT-relative changes for four prioritized Gpr2 variants."
+      },
+      {
+        "source_type": "paragraph",
+        "text": "All values are in kcal/mol. Negative changes indicate lower scores than WT."
+      },
+      {
+        "source_type": "paragraph",
+        "text": "N84V and V110C both shifted toward ascr#18, but for different reasons. V110C lowered the scores for both ligands, with a larger decrease for ascr#18. N84V lowered the score for ascr#18 while raising it for ascr#3. V110C therefore produced the greater improvement in the ascr#18 score, whereas N84V produced the larger WT-relative score shift between the ligands."
+      },
+      {
+        "source_type": "paragraph",
+        "text": "V110M and V368R both shifted toward ascr#3. For V110M, the ascr#3 score remained close to WT, so the shift was driven mainly by a higher ascr#18 score. V368R combined a lower ascr#3 score with a higher ascr#18 score. Examining the components separately helped us choose candidates for ligand discrimination and design combinations."
+      },
+      {
+        "source_type": "heading",
+        "text": "1.5 Testing Mutation Combinations"
+      },
+      {
+        "source_type": "paragraph",
+        "text": "The single-mutant results led us to test whether substitutions with similar score shifts could be combined. Could a combination increase the difference between the ligands? Could a substitution that lowered one ligand’s score retain its effect alongside another that raised the other ligand’s score?"
+      },
+      {
+        "source_type": "paragraph",
+        "text": "We designed combinations based on the direction and components of each score shift, then compared them with WT and both single-mutant parents. Comparisons with WT showed whether the original direction was retained; comparisons with the parents showed whether the combination offered an additional improvement."
+      },
+      {
+        "source_type": "paragraph",
+        "text": "The N84V/V110C double mutant illustrates this approach. Both single mutants shifted toward ascr#18, so we aimed to combine the larger score separation of N84V with the greater improvement in the ascr#18 score of V110C. The double mutant instead yielded (\\Delta G_{18}=-0.081) kcal/mol and (\\Delta G_{3}=-0.411) kcal/mol, giving (\\Delta\\Delta G=+0.330) kcal/mol. The ascr#3 score decreased more, reversing the direction observed in the single mutants."
+      },
+      {
+        "source_type": "paragraph",
+        "text": "Contact analysis showed that the ascr#18 pose retained an ionic contact with R189 and a hydrophobic contact with W338. Nevertheless, its score was 0.480 kcal/mol higher than that of V110C. Retaining these contacts was therefore insufficient to explain the overall score: the complete pose and surrounding contact network also needed to be considered."
+      },
+      {
+        "source_type": "paragraph",
+        "text": "Most tested combinations failed to improve the target-ligand score of the better parent or increase the score separation between the ligands. We therefore continued to focus on single mutants and evaluated combinations against WT, their individual parents, and the full contact network."
+      },
+      {
+        "source_type": "heading",
+        "text": "1.6 Selecting N84V and V368R for Molecular Dynamics"
+      },
+      {
+        "source_type": "paragraph",
+        "text": "Based on score separation and contact analysis, we selected N84V and V368R from the four prioritized variants for molecular dynamics (MD) simulations. Each lowered the score for one ligand and raised it for the other, with opposite directions of preference in the docking results. They provided two contrasting candidates for studying the structural behavior of ascr#18 and ascr#3."
+      },
+      {
+        "source_type": "paragraph",
+        "text": "N84V highlighted the importance of the surrounding residue network. In the selected poses, residue 84 itself made no detected direct contact with either ligand. Compared with the WT reference from the same batch, the ascr#18 pose gained ionic and hydrogen-bond contacts involving R189, together with a hydrophobic contact involving W338. We therefore focused on changes in ligand position and neighboring contacts, and asked whether these contacts would persist during MD and help maintain the ligand’s position."
+      },
+      {
+        "source_type": "paragraph",
+        "text": ""
+      },
+      {
+        "source_type": "paragraph",
+        "text": "V368R raised a different question. Although the substitution introduced an arginine, R368 showed a close contact only with ascr#18 in the selected poses, and no ionic contact involving R368 was detected. Both ligands gained ionic and hydrogen-bond contacts involving K364. Interpreting V368R therefore required examining the local structure and contact network around the mutation, together with the scores for both ligands."
+      },
+      {
+        "source_type": "paragraph",
+        "text": ""
+      },
+      {
+        "source_type": "paragraph",
+        "text": "Docking thus led to questions about dynamics: would the ligands retain their initial positions in full-length receptors embedded in a membrane, and which contacts would persist or rearrange? We paired WT, N84V, and V368R with each ligand to form six systems for MD comparison. These simulations would test the structural hypotheses and refine our interpretation of the variants."
+      },
+      {
+        "source_type": "heading",
+        "text": "1.7 Mapping Contact Sites Across Receptors"
+      },
+      {
+        "source_type": "paragraph",
+        "text": "We extended the analysis to Gpr3, GprC, and the Caenorhabditis elegans receptors DAF-37 and SRBC-64 to identify corresponding contact positions for parallel testing. Hu et al.’s comparison of predicted ascaroside pockets across receptors provided a reference for this analysis [2]."
+      },
+      {
+        "source_type": "paragraph",
+        "text": "For each receptor, we used five predicted models and compared contact frequencies for ascr#18 and ascr#3 within each model. Sequence alignment and structural mapping were then used to examine residue correspondence. We also recorded whether each residue was retained in the actual docking construct, linking contact analysis and positional mapping to the structures used."
+      },
+      {
+        "source_type": "paragraph",
+        "text": "Three TM6 tryptophans—Gpr2 W338, Gpr3 W306, and GprC W388—showed contact differences favoring ascr#18 and corresponding positions supported by both sequence and structural comparisons. These residues became candidates for parallel substitutions across the fungal receptors, allowing future tests of whether they play similar roles."
+      },
+      {
+        "source_type": "paragraph",
+        "text": ""
+      },
+      {
+        "source_type": "paragraph",
+        "text": "This extension applied the site-selection approach across receptors. Contact differences identified candidate residues, sequence and structural correspondence supported positional comparisons, and construct records linked the results to the structures analyzed. Raw scores, pose-level contact tables, model identifiers, WT references, and structure-processing records provide a basis for reviewing the analysis and adapting the approach to other receptor–ligand systems."
+      },
+      {
+        "source_type": "heading",
+        "text": "References"
+      },
+      {
+        "source_type": "paragraph",
+        "text": "[1] Kuo, C.-Y., Tay, R. J., Lin, H.-C., et al. (2024). The nematode-trapping fungus Arthrobotrys oligospora detects prey pheromones via G protein-coupled receptors. Nature Microbiology, 9, 1738–1751. https://doi.org/10.1038/s41564-024-01679-w"
+      },
+      {
+        "source_type": "paragraph",
+        "text": "[2] Hu, X., Hoffmann, D. S., Wang, M., et al. (2024). GprC of the nematode-trapping fungus Arthrobotrys flagrans activates mitochondria and reprograms fungal cells for nematode hunting. Nature Microbiology, 9, 1752–1763. https://doi.org/10.1038/s41564-024-01731-9"
+      },
+      {
+        "source_type": "paragraph",
+        "text": "[3] Abramson, J., et al. (2024). Accurate structure prediction of biomolecular interactions with AlphaFold 3. Nature, 630, 493–500. https://doi.org/10.1038/s41586-024-07487-w"
+      },
+      {
+        "source_type": "paragraph",
+        "text": "[4] AutoDock Vina developers. AutoDock Vina documentation: Basic docking, Section 4.c, “Exporting results to SDF.” https://autodock-vina.readthedocs.io/en/latest/docking_basic.html. Accessed 20 October 2026."
+      },
+      {
+        "source_type": "paragraph",
+        "text": "[5] Trott, O., & Olson, A. J. (2010). AutoDock Vina: Improving the speed and accuracy of docking with a new scoring function, efficient optimization, and multithreading. Journal of Computational Chemistry, 31, 455–461. https://doi.org/10.1002/jcc.21334"
+      },
+      {
+        "source_type": "paragraph",
+        "text": "[6] Schrödinger. Maestro. https://www.schrodinger.com/platform/products/maestro/. Accessed 20 October 2026."
+      }
+    ],
+    "formulae": [
+      "\\Delta G_{18}=G_{\\mathrm{mut},18}-G_{\\mathrm{WT},18}",
+      "\\Delta G_{3}=G_{\\mathrm{mut},3}-G_{\\mathrm{WT},3}",
+      "\\Delta\\Delta G=\\Delta G_{18}-\\Delta G_{3}"
+    ],
+    "table_count": 1
+  },
+  {
+    "slug": "model-md",
+    "source": "Model -_ Molecular Dynamics.md",
+    "sha256": "005234d6e5b598c0c8b03cb7fd69445419c3f39895a89fc5e8d2ebcca4f3ab1e",
+    "blocks": 35,
+    "source_nodes": [
+      {
+        "source_type": "heading",
+        "text": "Molecular Dynamics: Ligand Positioning and Contact Changes in a Membrane Environment"
+      },
+      {
+        "source_type": "paragraph",
+        "text": "Molecular docking provided candidate binding poses for the Gpr2 variants N84V and V368R. We subsequently performed molecular dynamics (MD) simulations to examine how these poses adjusted in a membrane environment and which receptor–ligand contacts persisted."
+      },
+      {
+        "source_type": "heading",
+        "text": "2.1 Constructing Six Membrane Systems from Docking Poses"
+      },
+      {
+        "source_type": "paragraph",
+        "text": "We paired wild-type (WT) Gpr2, N84V, and V368R with ascr#18 and ascr#3 to generate six receptor–ligand complexes. Each complex was constructed from its own docking pose by placing the ligand in the corresponding full-length receptor and resolving steric clashes involving the restored receptor segments, the ligand, and neighboring structures. Each complex was then embedded in a POPC lipid bilayer, solvated, and supplemented with ions."
+      },
+      {
+        "source_type": "paragraph",
+        "text": "The systems underwent energy minimization, followed by gradual heating to 303.15 K at constant volume and a brief period at the target temperature. Pressure equilibration was then performed in successive stages at 1 bar, with positional and dihedral restraints progressively relaxed to allow the receptor, ligand, lipids, and solvent to relax together. Additional unrestrained preparatory simulations were then performed while monitoring temperature, density, membrane-plane area, and box height. Each of the six systems subsequently underwent a single 100 ns production simulation."
+      },
+      {
+        "source_type": "heading",
+        "text": "2.2 Tracking Ligand Motion Relative to the Local Binding Pocket"
+      },
+      {
+        "source_type": "paragraph",
+        "text": "To distinguish overall receptor motion from ligand movement within the pocket, we aligned the trajectories using a common set of pocket backbone atoms across all six systems. We then calculated ligand heavy-atom root-mean-square deviation (RMSD) relative to the first production frame of each respective trajectory. Whole-receptor alignment and alignment to the transmembrane helical core were also used to compare the results obtained with different structural references."
+      },
+      {
+        "source_type": "paragraph",
+        "text": "The 50–100 ns interval was used as the primary comparison window for all six systems to reduce the influence of early conformational relaxation. Full trajectories were also examined to track contact formation and loss and ligand repositioning. RMSD describes the extent to which a ligand deviates from its own starting pose, whereas contact occupancy is the fraction of sampled frames within the analysis window that satisfy the specified contact criterion."
+      },
+      {
+        "source_type": "paragraph",
+        "text": ""
+      },
+      {
+        "source_type": "paragraph",
+        "text": "The RMSD curves obtained after pocket alignment and transmembrane helical-core alignment were similar, whereas whole-receptor alignment yielded markedly different profiles. This indicates that motion in other receptor regions affects ligand RMSD measurements. Using local structural elements as the reference therefore provides a clearer view of ligand pose changes within the binding region."
+      },
+      {
+        "source_type": "heading",
+        "text": "2.3 N84V–ascr#18: Persistent Anchoring of the Ligand Carboxylate by Arg189"
+      },
+      {
+        "source_type": "paragraph",
+        "text": "In N84V–ascr#18, Arg189 maintained persistent contact with the ligand’s terminal carboxylate. In the simulation model, the Arg189 guanidinium group was positively charged and the ligand carboxylate was negatively charged. Their close association was consistent with a salt bridge and included contacts meeting the geometric criteria for hydrogen bonding. The electrostatic and geometric properties of salt bridges provide a basis for interpreting the positioning of this charged ligand terminus [1]."
+      },
+      {
+        "source_type": "paragraph",
+        "text": "During 50–100 ns, the minimum distance between an Arg189 guanidinium nitrogen and a ligand carboxylate oxygen was ≤4 Å in every sampled frame, corresponding to a contact occupancy of 100%. At least one hydrogen bond between these groups was present in 93.6% of sampled frames. Hydrogen bonds were defined by a donor–acceptor distance ≤3.0 Å and a donor–hydrogen–acceptor (D–H–A) angle ≥150°. Under the same criteria, no Arg189–carboxylate hydrogen bonds were detected in N84V–ascr#3 or WT–ascr#18 during this interval (Figure 2)."
+      },
+      {
+        "source_type": "paragraph",
+        "text": ""
+      },
+      {
+        "source_type": "paragraph",
+        "text": "Persistent contact was accompanied by a smaller deviation from the initial ligand pose. After pocket alignment, the mean ligand RMSD of N84V–ascr#18 during 50–100 ns was lower than those of WT–ascr#18 and N84V–ascr#3. This relationship was retained after alignment to the transmembrane helical core. The persistent Arg189 salt bridge, together with its associated hydrogen bonding, provides a mechanistic clue to how ascr#18 maintains its position in this conformation."
+      },
+      {
+        "source_type": "heading",
+        "text": "2.4 V368R–ascr#3: The Structural Basis for the Predicted Preference Remains Unresolved"
+      },
+      {
+        "source_type": "paragraph",
+        "text": "In the original V368R–ascr#3 trajectory, the ligand moved away from its initial position, and its carboxylate subsequently became anchored by Arg345. At the same time, the charged end of the Arg368 side chain moved away from Asp70, prompting us to examine the relationship between local receptor rearrangements and ligand repositioning. However, persistent Arg345–ligand contacts were also observed in WT–ascr#3 and V368R–ascr#18. Arg345 therefore provides an anchoring site accessible to multiple systems, and this shared contact does not explain the enhanced preference of V368R for ascr#3 predicted by Vina."
+      },
+      {
+        "source_type": "paragraph",
+        "text": "To identify other stabilizing interactions, we designed two alternative starting poses for V368R–ascr#3 and performed a 100 ns MD simulation for each. In one pose, the ligand carboxylate was positioned near the introduced Arg368 to test whether this residue could directly anchor the ligand. In the other, the carboxylate was positioned near Arg189, following the anchoring arrangement observed in N84V–ascr#18. Both trajectories lost their designed contacts early in the simulation and were dominated by Arg345-mediated anchoring in the later stages, without establishing a new persistent anchoring mode (Figure 3a,b). During 50–100 ns, the Arg345–carboxylate salt-bridge occupancies were 100.00% and 93.42% in the Arg368-directed and Arg189-directed trajectories, respectively (Figure 3c)."
+      },
+      {
+        "source_type": "paragraph",
+        "text": ""
+      },
+      {
+        "source_type": "paragraph",
+        "text": "A receptor-wide screen for direct salt bridges, hydrogen bonds, and combinations of contacts identified a transient interaction between Asp89 and the ascr#3 sugar ring in the trajectory initiated near Arg189. This hydrogen bond occurred frequently during 20–50 ns but was largely absent during the second half of the simulation. In this trajectory, the Arg368–Asp70 contact persisted across the formation and subsequent loss of the Asp89–ligand hydrogen bond, without changes corresponding to sugar-ring movement. A static model containing ascr#18 could also accommodate the sugar ring at the same position. Thus, Asp89 supported a transient binding pose but did not provide a persistent interaction pattern that explained the predicted preference of V368R for ascr#3."
+      },
+      {
+        "source_type": "paragraph",
+        "text": "The additional simulations and subsequent analyses did not identify a mechanistic clue comparable to the persistent Arg189-mediated anchoring observed in N84V–ascr#18. The structural basis for the enhanced preference of V368R for ascr#3 predicted by Vina remains to be elucidated."
+      },
+      {
+        "source_type": "heading",
+        "text": "2.5 Mechanistic Interpretations of the Two Candidates"
+      },
+      {
+        "source_type": "paragraph",
+        "text": "The MD results for N84V provide a structural clue to the Vina-predicted preference for ascr#18. Arg189 persistently anchored the ligand carboxylate through a salt bridge with associated hydrogen bonding, while the ligand showed a smaller deviation from its initial pose within the local pocket. These observations provide a specific explanation for how ascr#18 maintained its binding pose."
+      },
+      {
+        "source_type": "paragraph",
+        "text": "A comparable mechanistic clue has not yet emerged for V368R. The two additional simulations failed to maintain the designed Arg368 or Arg189 contacts, and the Arg345 contacts that predominated later were also observed in control systems. The newly identified Asp89 hydrogen bond persisted only during part of the trajectory. Thus, the current MD results do not explain the enhanced preference of V368R for ascr#3 predicted by Vina, and its structural basis requires further investigation."
+      },
+      {
+        "source_type": "heading",
+        "text": "References"
+      },
+      {
+        "source_type": "paragraph",
+        "text": "[1] Donald, J. E., Kulp, D. W., & DeGrado, W. F. (2011). Salt bridges: Geometrically specific, designable interactions. Proteins: Structure, Function, and Bioinformatics, 79(3), 898–915. https://doi.org/10.1002/prot.22927"
+      }
+    ],
+    "formulae": [],
+    "table_count": 0
+  }
+]

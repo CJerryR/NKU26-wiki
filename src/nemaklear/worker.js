@@ -5,15 +5,28 @@ let py,invoke;const pending=new Map();
 const ready=(async()=>{
  const manifest=await(await nativeFetch(new URL('runtime-manifest.json',base))).json();
  const entries=new Map(manifest.files.map(f=>[f.name,f]));
+ const cache=typeof caches==='undefined'?null:await caches.open('nemaklear-verified-runtime-v1').catch(()=>null);
+ const verify=async(bytes,entry)=>{
+  const digest=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))).map(x=>x.toString(16).padStart(2,'0')).join('');
+  if(digest!==entry.sha256)throw Error(`Runtime checksum failed: ${entry.name}`);
+  return bytes;
+ };
  async function binary(entry){
   if(!payloads.has(entry.name))payloads.set(entry.name,(async()=>{
+   const key=new URL(`verified-${entry.sha256}`,base).href;
+   const stored=await cache?.match(key).catch(()=>null);
+   if(stored){try{return await verify(new Uint8Array(await stored.arrayBuffer()),entry);}catch{await cache.delete(key);}}
    const parts=await Promise.all(entry.chunks.map(async f=>(await(await nativeFetch(new URL(f,base))).json()).data));
    const encoded=atob(parts.join('')),zipped=Uint8Array.from(encoded,c=>c.charCodeAt(0));
    const bytes=new Uint8Array(await new Response(new Blob([zipped]).stream().pipeThrough(new DecompressionStream('gzip'))).arrayBuffer());
-   const digest=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))).map(x=>x.toString(16).padStart(2,'0')).join('');
-   if(digest!==entry.sha256)throw Error(`Runtime checksum failed: ${entry.name}`);return bytes;
+   await verify(bytes,entry);
+   if(cache)await cache.put(key,new Response(bytes)).catch(()=>{});
+   return bytes;
   })());return payloads.get(entry.name);
  }
+ // Fetch independent, hash-verified packages together while Python initializes.
+ const warmup=Promise.all(manifest.files.map(binary));
+ warmup.catch(()=>{}); // loadPyodide reports the same failed payload when requested.
  globalThis.fetch=async(input,init)=>{
   const url=new URL(typeof input==='string'||input instanceof URL?input:input.url,base);
   const entry=url.origin===base.origin?entries.get(url.pathname.split('/').pop()):null;

@@ -302,7 +302,14 @@
       "meeting_20261019_received": true,
       "meeting_20261019_source_language_preserved": true,
       "meeting_20261019_status": "original manuscripts integrated; publication validation pending",
-      "meeting_20261019_record": "outputs/19日凌晨会后更新-20261019/00-全部原件SHA256.json"
+      "meeting_20261019_record": "outputs/19日凌晨会后更新-20261019/00-全部原件SHA256.json",
+      "model_revision_20261020": {
+        "source": "https://nankai.feishu.cn/wiki/A1UAwoARjiKiWVk7DFEcAvTEnlf",
+        "language": "author English, verbatim",
+        "local_source": "docs/model-refresh-20261020",
+        "scope": "Latest author text, captions, original figures and original embedded workbook values; layout only. Prior Figure6 a–c crop retained in accordance with existing user disposition.",
+        "team_review_approved": false
+      }
     },
     {
       "slug": "part-collection",
@@ -445,6 +452,13 @@
         "raw_originals_preserved": true,
         "figure6": "Existing approved a–c crop retained; latest full-figure/caption inconsistency awaits author clarification",
         "team_review_approved": false
+      },
+      "model_revision_20261020": {
+        "source": "https://nankai.feishu.cn/wiki/Djx3w6tNiiFvLwkBPrLcWJ8Ansg",
+        "language": "author English, verbatim",
+        "local_source": "docs/model-refresh-20261020",
+        "scope": "Latest author text, captions, original figures and original embedded workbook values; layout only. Prior Figure6 a–c crop retained in accordance with existing user disposition.",
+        "team_review_approved": false
       }
     },
     {
@@ -473,6 +487,13 @@
         "source": "https://nankai.feishu.cn/wiki/QDKtwTMxjiSQoBkLSNrc69v0nSf",
         "audited_at": "2026-10-20",
         "result": "Two original PNGs byte-identical to integrated originals; current translated text and captions retained"
+      },
+      "model_revision_20261020": {
+        "source": "https://nankai.feishu.cn/wiki/VX6yweWwnioUkpkvrvgcRfA8nOg",
+        "language": "author English, verbatim",
+        "local_source": "docs/model-refresh-20261020",
+        "scope": "Latest author text, captions, original figures and original embedded workbook values; layout only. Prior Figure6 a–c crop retained in accordance with existing user disposition.",
+        "team_review_approved": false
       }
     },
     {
