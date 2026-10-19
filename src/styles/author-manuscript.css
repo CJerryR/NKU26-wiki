@@ -13,3 +13,21 @@
 
 .prose .author-table td{font-weight:400;color:inherit}
 .prose .author-table:has(tr > td:only-child){min-width:0}
+
+/* Tina reading layouts retain the source text while separating prose and evidence. */
+.prose .reading-layout{min-width:0;overflow-wrap:anywhere}
+.prose .reading-layout p{max-width:74ch;white-space:normal}
+.prose .reading-layout :is(h2,h3,h4){text-wrap:pretty}
+.prose .reading-layout .lead{margin-block:1.5rem 2rem}
+.prose .reading-layout .callout{margin-block:1.8rem}
+.prose .reading-layout .figure{margin:2rem 0}
+.prose .reading-layout .figure figcaption{max-width:74ch;margin-inline:auto;text-align:center}
+.prose .reading-layout .figure figcaption p{margin-block:.4em;text-align:center}
+.prose .reading-layout .figure__media p{max-width:100%;margin:0}
+.prose .reading-layout .figure__media :is(a,img){max-width:100%}
+.prose .reading-layout .figure__media img{display:block;height:auto;object-fit:contain;margin-inline:auto}
+.prose .reading-layout .cards{align-items:start}
+@media(max-width:640px){
+  .prose .reading-layout .lead p{font-size:18px;line-height:1.7}
+  .prose .reading-layout .figure{margin-block:1.5rem}
+}

@@ -11,6 +11,10 @@
   "search": true,
   "blocks": [
     {
+      "_template": "text",
+      "body": "<div class=\"reading-layout\" lang=\"en\">"
+    },
+    {
       "_template": "heading",
       "text": "1 DBTL-1: Heterologous Expression and Transmembrane Localization Verification of GPR2",
       "level": 2,
@@ -604,7 +608,7 @@
     },
     {
       "_template": "text",
-      "body": "Figure 13. Schematic diagram of GPR2 transformation (a) and transformant validation (b).（占位）"
+      "body": "Figure 13. Schematic diagram of GPR2 transformation (a) and transformant validation (b). (Placeholder)"
     },
     {
       "_template": "heading",
@@ -664,7 +668,7 @@
     },
     {
       "_template": "text",
-      "body": "Figure 3. Transformant validation of GPR2 (a), GPR2-N84V (b), and GPR2-V368R (c).（占位）"
+      "body": "Figure 3. Transformant validation of GPR2 (a), GPR2-N84V (b), and GPR2-V368R (c). (Placeholder)"
     },
     {
       "_template": "heading",
@@ -709,7 +713,7 @@
     {
       "_template": "heading",
       "level": 2,
-      "text": "<strong>3 DBTL-3: Test Strip Development and Productization</strong>",
+      "text": "3 DBTL-3: Test Strip Development and Productization",
       "attributes": "#dbtl-3-test-strip-development-and-productization"
     },
     {
@@ -719,7 +723,7 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "<strong>3.1 Cycle 1: Substrate Determination</strong>",
+      "text": "3.1 Cycle 1: Substrate Determination",
       "attributes": "#results-3-1"
     },
     {
@@ -752,7 +756,7 @@
     },
     {
       "_template": "text",
-      "body": "<div class=\"author-table-scroll\"><table class=\"author-table\"><colgroup><col style=\"width:20.4792%\"><col style=\"width:22.1767%\"><col style=\"width:57.3441%\"></colgroup><tbody><tr><td colspan=\"1\"><p style=\"text-align:center;\">Substrate Type</p></td><td colspan=\"1\"><p style=\"text-align:center;\"><strong>cell elution rate</strong></p></td><td colspan=\"1\"><p style=\"text-align:center;\"><strong>Performance Characteristics</strong></p></td></tr><tr><td colspan=\"1\"><p style=\"text-align:center;\">Cellulose</p></td><td colspan=\"1\"><p style=\"text-align:center;\">8%</p></td><td colspan=\"1\"><p style=\"text-align:center;\">Easy to cut, stable structure, relatively uniform liquid absorption</p></td></tr><tr><td colspan=\"1\"><p style=\"text-align:center;\">sulfite paper</p></td><td colspan=\"1\"><p style=\"text-align:center;\">27%</p></td><td colspan=\"1\"><p style=\"text-align:center;\">Strongly hydrophobic surface, extremely poor liquid absorption, forms surface bulges after lyophilization</p></td></tr><tr><td colspan=\"1\"><p style=\"text-align:center;\">Cotton fiber</p></td><td colspan=\"1\"><p style=\"text-align:center;\">3%</p></td><td colspan=\"1\"><p style=\"text-align:center;\">Extremely thin and soft, difficult to handle, poor cell-loading capacity</p></td></tr><tr><td colspan=\"1\"><p style=\"text-align:center;\">Virgin wood pulp</p></td><td colspan=\"1\"><p style=\"text-align:center;\">10%</p></td><td colspan=\"1\"><p style=\"text-align:center;\">Poor uniformity, inconsistent physical structure, difficult to standardize specifications</p></td></tr><tr><td colspan=\"1\"><p style=\"text-align:center;\">GF/B</p></td><td colspan=\"1\"><p style=\"text-align:center;\">3.4%</p></td><td colspan=\"1\"><p style=\"text-align:center;\">High liquid-loading capacity</p></td></tr><tr><td colspan=\"1\"><p style=\"text-align:center;\">GF/A</p></td><td colspan=\"1\"><p style=\"text-align:center;\">23.7%</p></td><td colspan=\"1\"><p style=\"text-align:center;\">Slightly lower toughness, moderate liquid-loading capacity</p></td></tr><tr><td colspan=\"1\"><p style=\"text-align:center;\">醋酸纤维</p></td><td colspan=\"1\"><p style=\"text-align:center;\">38.0%</p></td><td colspan=\"1\"><p style=\"text-align:center;\">Brittle, susceptible to static electricity, low liquid-loading capacity</p></td></tr></tbody></table></div>"
+      "body": "<div class=\"author-table-scroll\"><table class=\"author-table\"><colgroup><col style=\"width:20.4792%\"><col style=\"width:22.1767%\"><col style=\"width:57.3441%\"></colgroup><tbody><tr><td colspan=\"1\"><p style=\"text-align:center;\">Substrate Type</p></td><td colspan=\"1\"><p style=\"text-align:center;\"><strong>cell elution rate</strong></p></td><td colspan=\"1\"><p style=\"text-align:center;\"><strong>Performance Characteristics</strong></p></td></tr><tr><td colspan=\"1\"><p style=\"text-align:center;\">Cellulose</p></td><td colspan=\"1\"><p style=\"text-align:center;\">8%</p></td><td colspan=\"1\"><p style=\"text-align:center;\">Easy to cut, stable structure, relatively uniform liquid absorption</p></td></tr><tr><td colspan=\"1\"><p style=\"text-align:center;\">sulfite paper</p></td><td colspan=\"1\"><p style=\"text-align:center;\">27%</p></td><td colspan=\"1\"><p style=\"text-align:center;\">Strongly hydrophobic surface, extremely poor liquid absorption, forms surface bulges after lyophilization</p></td></tr><tr><td colspan=\"1\"><p style=\"text-align:center;\">Cotton fiber</p></td><td colspan=\"1\"><p style=\"text-align:center;\">3%</p></td><td colspan=\"1\"><p style=\"text-align:center;\">Extremely thin and soft, difficult to handle, poor cell-loading capacity</p></td></tr><tr><td colspan=\"1\"><p style=\"text-align:center;\">Virgin wood pulp</p></td><td colspan=\"1\"><p style=\"text-align:center;\">10%</p></td><td colspan=\"1\"><p style=\"text-align:center;\">Poor uniformity, inconsistent physical structure, difficult to standardize specifications</p></td></tr><tr><td colspan=\"1\"><p style=\"text-align:center;\">GF/B</p></td><td colspan=\"1\"><p style=\"text-align:center;\">3.4%</p></td><td colspan=\"1\"><p style=\"text-align:center;\">High liquid-loading capacity</p></td></tr><tr><td colspan=\"1\"><p style=\"text-align:center;\">GF/A</p></td><td colspan=\"1\"><p style=\"text-align:center;\">23.7%</p></td><td colspan=\"1\"><p style=\"text-align:center;\">Slightly lower toughness, moderate liquid-loading capacity</p></td></tr><tr><td colspan=\"1\"><p style=\"text-align:center;\"> Cellulose acetate </p></td><td colspan=\"1\"><p style=\"text-align:center;\">38.0%</p></td><td colspan=\"1\"><p style=\"text-align:center;\">Brittle, susceptible to static electricity, low liquid-loading capacity</p></td></tr></tbody></table></div>"
     },
     {
       "_template": "text",
@@ -768,7 +772,7 @@
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:center;\"><strong>Figure 1. </strong><strong>Water absorption capacity evaluation of selected substrates</strong>（<strong>插入图片</strong><strong>“Fig3.1.1”</strong>）</p>"
+      "body": "<p style=\"text-align:center;\"><strong>Figure 1. </strong><strong>Water absorption capacity evaluation of selected substrates</strong>（<strong> Insert image </strong><strong>“Fig3.1.1”</strong>）</p>"
     },
     {
       "_template": "text",
@@ -904,7 +908,7 @@
     },
     {
       "_template": "text",
-      "body": "<figure class=\"results-timelapse\"><iframe title=\"Video 1. Observation of test strip resuscitation over 113 h\" src=\"https://video.igem.org/videos/embed/vwRYoammvjP4TanUWTm7yy?start=0s&amp;stop=70s\" allow=\"fullscreen\" loading=\"lazy\" sandbox=\"allow-scripts allow-same-origin\" style=\"width:100%;aspect-ratio:16/9;border:0\"></iframe><p>Playback is pending iGEM moderation.</p><p style=\"text-align:center;\"><strong>Video 1. Observation of test strip resuscitation over 113 h</strong>（<strong>插入视频</strong><strong>“Video3.2.1”</strong>）</p></figure>"
+      "body": "<figure class=\"results-timelapse\"><iframe title=\"Video 1. Observation of test strip resuscitation over 113 h\" src=\"https://video.igem.org/videos/embed/vwRYoammvjP4TanUWTm7yy?start=0s&amp;stop=70s\" allow=\"fullscreen\" loading=\"lazy\" sandbox=\"allow-scripts allow-same-origin\" style=\"width:100%;aspect-ratio:16/9;border:0\"></iframe><p>Playback is pending iGEM moderation.</p><p style=\"text-align:center;\"><strong>Video 1. Observation of test strip resuscitation over 113 h</strong>（<strong> Insert video </strong><strong>“Video3.2.1”</strong>）</p></figure>"
     },
     {
       "_template": "text",
@@ -936,7 +940,7 @@
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:center;\"><strong>Figure 7.</strong> <strong>3D-printed test strip cassette</strong><strong>（</strong><strong>插入图片</strong><strong>“Fig3.2.2”</strong><strong>）</strong></p>"
+      "body": "<p style=\"text-align:center;\"><strong>Figure 7.</strong> <strong>3D-printed test strip cassette</strong><strong>（</strong><strong> Insert image </strong><strong>“Fig3.2.2”</strong><strong>）</strong></p>"
     },
     {
       "_template": "text",
@@ -968,15 +972,11 @@
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\"><br></p>"
-    },
-    {
-      "_template": "text",
       "body": "</section>"
     },
     {
       "_template": "text",
-      "body": "<span id=\"results-3-1-1\" aria-hidden=\"true\"></span>\n<span id=\"results-stage-3-1-1-1\" aria-hidden=\"true\"></span>\n<span id=\"results-stage-3-1-2-3\" aria-hidden=\"true\"></span>\n<span id=\"results-3-1-2\" aria-hidden=\"true\"></span>\n<span id=\"results-stage-3-1-2-1\" aria-hidden=\"true\"></span>\n<span id=\"results-stage-3-1-2-3-2\" aria-hidden=\"true\"></span>\n<span id=\"results-3-1-3\" aria-hidden=\"true\"></span>\n<span id=\"results-stage-3-1-3-1\" aria-hidden=\"true\"></span>\n<span id=\"results-stage-3-1-3-3\" aria-hidden=\"true\"></span>\n<span id=\"results-3-2-1\" aria-hidden=\"true\"></span>\n<span id=\"results-stage-3-2-1-1\" aria-hidden=\"true\"></span>\n<span id=\"results-stage-3-2-1-3\" aria-hidden=\"true\"></span>\n<span id=\"results-3-2-2\" aria-hidden=\"true\"></span>\n<span id=\"results-stage-3-2-2-1\" aria-hidden=\"true\"></span>\n<span id=\"results-stage-3-2-2-3\" aria-hidden=\"true\"></span>\n<span id=\"results-3-2-3\" aria-hidden=\"true\"></span>\n<span id=\"results-stage-3-2-3-1\" aria-hidden=\"true\"></span>\n<span id=\"results-stage-3-2-3-3\" aria-hidden=\"true\"></span>"
+      "body": "</div>"
     }
   ],
   "description": "",
