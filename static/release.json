@@ -199,7 +199,7 @@
       "bilibili"
     ],
     "links": "Reserved; team account URLs not supplied",
-    "icons": "Simple Icons 16.0.0 inline SVG; CC0 1.0; no external runtime assets"
+    "icons": "Simple Icons 16.0.0 in shared CSS SVG masks; CC0 1.0; no external runtime assets"
   },
   "senior_feedback_toc_fix": {
     "task_commit": "af40ccf0336f42bd0842c21046643c220a734105",
