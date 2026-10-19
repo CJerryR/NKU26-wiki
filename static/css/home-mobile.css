@@ -74,7 +74,8 @@
   .lp__head .h-display{font-size:32px;line-height:1.14}
   .lp__filters{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
   .lp__filters button{font-size:13px;line-height:1.35;padding:11px 10px}
-  .lp__filters .lp__play{margin-left:0}
+  .lp__filters .lp__then{display:none}
+  .lp__filters .lp__play{margin-left:0;grid-column:1 / -1}
   .lp__board{width:100%;aspect-ratio:auto;overflow:auto;overscroll-behavior-x:contain;padding-bottom:14px;border-radius:14px;scrollbar-width:thin;scrollbar-color:var(--plum) transparent}
   .lp__board:focus-visible{outline:2px solid var(--plum);outline-offset:4px}
   .lp__svg{min-width:820px;display:block;height:auto}
