@@ -19,6 +19,8 @@
   var fxCv = root.querySelector('[data-op-fx]');
   var hero = root.querySelector('[data-op-hero]');
   var artwork = root.querySelector('[data-op-art]');
+  var foreground = root.querySelector('[data-op-foreground]');
+  var foregroundRenderer = null, foregroundScene = null, foregroundMesh = null;
   var hudLine = root.querySelector('[data-op-line]');
   var labelsEl = root.querySelector('[data-op-labels]');
   var guideBtn = root.querySelector('[data-op-guide]');
@@ -136,6 +138,11 @@
       artwork.style.opacity = String(1 - hp);
       artwork.style.visibility = hp >= 1 ? 'hidden' : 'visible';
     }
+    // CSS artwork remains available before WebGL loads and in fallback mode.
+    if (foreground && !foregroundMesh) {
+      foreground.style.opacity = String(1 - hp);
+      foreground.style.visibility = hp >= 1 ? 'hidden' : 'visible';
+    }
     var under = d > 0.9;
     if (under !== heroUnder) { heroUnder = under; root.classList.toggle('is-under', under); }
   }
@@ -211,6 +218,22 @@
   renderer.setClearColor(0x050208, 1);
   var DPR = Math.min(window.devicePixelRatio || 1, NK.coarse ? 1.5 : 1.8);
   renderer.setPixelRatio(DPR);
+
+  // A WebGL mesh cannot occlude an HTML heading in another stacking layer.
+  // Render just the painted alpha foreground above that heading, with the
+  // same camera/material as the soil scene. No separate image crop or motion.
+  if (foreground) {
+    try {
+      foregroundRenderer = new T.WebGLRenderer({ canvas: foreground, alpha: true, antialias: true, powerPreference: 'low-power' });
+      foregroundRenderer.setClearColor(0x000000, 0);
+      foregroundRenderer.setPixelRatio(DPR);
+      foregroundScene = new T.Scene();
+    } catch (err) {
+      if (foregroundRenderer) foregroundRenderer.dispose();
+      foregroundRenderer = null;
+      root.classList.add('is-foreground-unavailable');
+    }
+  }
 
   var scene = new T.Scene();
   var camera = new T.PerspectiveCamera(32, 1, 0.5, 400);
@@ -710,10 +733,16 @@
    * drawn soil over uFeather (a fraction of its height). */
   var FRAG_ART = [
     'precision highp float;',
-    'uniform sampler2D uMap; uniform vec2 uL; uniform float uR; uniform float uOn; uniform vec3 uLC; uniform float uAmb; uniform float uFade; uniform float uFeather;',
+    'uniform sampler2D uMap; uniform vec2 uL; uniform float uR; uniform float uOn; uniform vec3 uLC; uniform float uAmb; uniform float uFade; uniform float uFeather; uniform float uLayer; uniform float uPortrait;',
     'varying vec2 vUv; varying vec2 vW;',
     'void main(){',
     '  vec4 tx = texture2D(uMap, vUv);',
+    // Image-space split: grass and the small left sprout can overlap letters;
+    // tall trees stay behind them. Both passes partition the same source
+    // texels, so translucent paint edges are never composited twice.
+    '  float front = max(step(vUv.y, 0.39), (1.0 - uPortrait) * step(0.24, vUv.x) * step(vUv.x, 0.34) * step(vUv.y, 0.46));',
+    '  if (uLayer > 1.5 && front < 0.5) discard;',
+    '  if (uLayer > 0.5 && uLayer < 1.5 && front > 0.5) discard;',
     '  float a = tx.a * uFade * smoothstep(0.0, uFeather, vUv.y);',
     '  if (a < 0.004) discard;',
     '  float under = 1.0 - smoothstep(-0.3, 0.3, vW.y);',
@@ -849,6 +878,7 @@
   /* ---------------- build / rebuild ---------------- */
   function dispose() {
     if (!built) return;
+    if (foregroundMesh) { foregroundScene.remove(foregroundMesh); foregroundMesh.material.dispose(); foregroundMesh = null; }
     built.list.forEach(function (o) {
       scene.remove(o);
       if (o.geometry) o.geometry.dispose();
@@ -1072,15 +1102,27 @@
     sky.position.set(0, L.top + 2 - skyH / 2, -0.6);
     sky.renderOrder = -1;
     var ground = new T.Mesh(new T.PlaneGeometry(A.w, A.h), new T.ShaderMaterial({
-      uniforms: { uMap: { value: tArt }, uL: U.uL, uR: U.uR, uOn: U.uOn, uLC: U.uLC, uAmb: U.uAmb, uFade: U.uFade, uFeather: { value: 0.09 } },
+      uniforms: { uMap: { value: tArt }, uL: U.uL, uR: U.uR, uOn: U.uOn, uLC: U.uLC, uAmb: U.uAmb, uFade: U.uFade, uFeather: { value: 0.09 }, uLayer: { value: 0 }, uPortrait: { value: L.portrait ? 1 : 0 } },
       vertexShader: VERT_WORLD, fragmentShader: FRAG_ART, transparent: true, depthWrite: false
     }));
     ground.position.set(A.x, A.y, 0.02);
     ground.renderOrder = 0.5;
+    if (foregroundScene) {
+      foregroundMesh = ground.clone();
+      foregroundMesh.material = new T.ShaderMaterial({
+        uniforms: Object.assign({}, ground.material.uniforms, { uLayer: { value: 2 } }),
+        vertexShader: VERT_WORLD, fragmentShader: FRAG_ART, transparent: true, depthWrite: false
+      });
+      foregroundScene.add(foregroundMesh);
+      foreground.style.opacity = '1';
+      foreground.style.visibility = 'visible';
+      root.classList.add('has-foreground-canvas');
+    }
     scene.add(sky); scene.add(ground);
     built.list.push(sky, ground);
     built.textures.push(tSky, tArt);
     built.art = true;
+    built.ground = ground;
     U.uArt.value = 1;
     artLook = makeArtLookup(ac);
     if (!art.shown) { art.shown = true; art.fadeT = NK.reduced || D.v > 0.5 ? -1e9 : performance.now(); }
@@ -1288,6 +1330,7 @@
     W = Math.max(1, Math.round(r.width));
     H = Math.max(1, Math.round(r.height));
     renderer.setSize(W, H, false);
+    if (foregroundRenderer) foregroundRenderer.setSize(W, H, false);
     fctx = H0.fit(fxCv, W, H, 1.5);
     camera.aspect = W / H;
     camera.updateProjectionMatrix();
@@ -1376,7 +1419,9 @@
     slowFor = emaDt > 0.024 ? slowFor + dt : 0;
     if (slowFor > 2 && DPR > 1) {
       DPR = Math.max(1, Math.round((DPR - 0.3) * 10) / 10); slowFor = 0;
-      renderer.setPixelRatio(DPR); resize(false);
+      renderer.setPixelRatio(DPR);
+      if (foregroundRenderer) foregroundRenderer.setPixelRatio(DPR);
+      resize(false);
     }
   }
   var heroFrameKey = null;
@@ -1478,6 +1523,14 @@
       bigLabel.style.transform = 'translate(' + bx.toFixed(1) + 'px,' + (s.y - 40).toFixed(1) + 'px)';
     }
     describe(t);
+    // The same foreground is drawn exactly once. Once the heading is fully
+    // transparent, hand it back to the soil scene for flashlight shading.
+    var aboveTitle = !!foregroundMesh && d < 0.5;
+    if (built.ground) built.ground.material.uniforms.uLayer.value = aboveTitle ? 1 : 0;
+    if (foregroundRenderer && foregroundMesh) {
+      foreground.hidden = !aboveTitle;
+      if (aboveTitle) foregroundRenderer.render(foregroundScene, camera);
+    }
     renderer.render(scene, camera);
     if (built.art && U.uFade.value >= 1 && artwork) artwork.hidden = true;
     drawFx(t, ls, rad, d, warmK);

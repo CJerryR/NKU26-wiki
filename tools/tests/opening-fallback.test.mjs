@@ -4,8 +4,8 @@ import fs from 'node:fs';
 import vm from 'node:vm';
 test('no-WebGL opening artwork returns after scene/viewport restoration', () => {
   const classes=()=>{ const values=new Set(); return {add(...names){names.forEach(n=>values.add(n));},remove(...names){names.forEach(n=>values.delete(n));},toggle(n,on){if(on??!values.has(n))values.add(n);else values.delete(n);},contains:n=>values.has(n)}; };
-  const hero={style:{}}, art={style:{}}, stage={style:{setProperty(){}},addEventListener(){}}, hud={classList:classes(),offsetWidth:1,textContent:'',className:''};
-  const nodes={'.op__stage':stage,'[data-op-hero]':hero,'[data-op-art]':art,'[data-op-line]':hud,'[data-op-guide]':null,'[data-op-focus]':null,'[data-op-gl]':{style:{}}};
+  const hero={style:{}}, art={style:{}}, foreground={style:{}}, stage={style:{setProperty(){}},addEventListener(){}}, hud={classList:classes(),offsetWidth:1,textContent:'',className:''};
+  const nodes={'.op__stage':stage,'[data-op-hero]':hero,'[data-op-art]':art,'[data-op-foreground]':foreground,'[data-op-line]':hud,'[data-op-guide]':null,'[data-op-focus]':null,'[data-op-gl]':{style:{}}};
   const root={classList:classes(),querySelector:s=>nodes[s]||null};
   let scene;
   const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
@@ -17,4 +17,7 @@ test('no-WebGL opening artwork returns after scene/viewport restoration', () => 
   scene.set(1); assert.equal(root.classList.contains('is-exploring'),true); assert.equal(art.style.opacity,'0'); assert.equal(art.style.visibility,'hidden');
   scene.set(0); assert.equal(root.classList.contains('is-exploring'),false); assert.equal(art.style.opacity,'1'); assert.equal(art.style.visibility,'visible');
   assert.equal(hero.style.opacity,'1');
+  assert.equal(foreground.style.opacity,'1');
+  scene.set(1); assert.equal(foreground.style.visibility,'hidden'); assert.equal(foreground.style.opacity,'0');
+  scene.set(0); assert.equal(foreground.style.visibility,'visible'); assert.equal(foreground.style.opacity,'1');
 });
