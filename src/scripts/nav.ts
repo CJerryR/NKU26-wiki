@@ -155,7 +155,9 @@ export function initNav(): void {
       dragging = false;
       if (links.hasPointerCapture(e.pointerId)) links.releasePointerCapture(e.pointerId);
       if (cancelled) { moveTo(rest()); return; }
-      const i = nearest(x + w / 2);
+      // The spring can still be over the previous tab on a quick release.
+      // Selection follows the pointer; the film is only a visual effect.
+      const i = nearest(localX(e));
       hovered = i;
       moveTo(i);
       const item = items[i];
@@ -182,6 +184,13 @@ export function initNav(): void {
     if (open) { paintPanel(sheet); glassFor(sheet).refresh(); }
   };
   toggle?.addEventListener('click', () => setSheet(!!sheet?.hidden));
+  // Dismiss the phone sheet when continuing to another page or control.
+  document.addEventListener('click', (e) => {
+    if (!sheet || sheet.hidden) return;
+    const target = e.target as Element;
+    if (!bar.contains(target) || target.closest('a, [data-search-open]')) setSheet(false);
+  });
+  matchMedia('(max-width: 1000px)').addEventListener('change', () => setSheet(false));
   document.addEventListener('keydown', (e) => {
     if (e.key !== 'Escape') return;
     const open = groups.find((g) => g.classList.contains('is-open'));

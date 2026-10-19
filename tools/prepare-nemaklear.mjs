@@ -8,7 +8,7 @@ const root=process.cwd(), source=path.join(root,'vendor/nemaklear-original'),des
 const runtime=path.join(root,'node_modules/pyodide');const cache=path.resolve(root,'../../tmp/nemaklear-browser-runtime/package');
 const sha=b=>crypto.createHash('sha256').update(b).digest('hex');
 await fs.mkdir(dest,{recursive:true});await fs.cp(path.join(source,'app/public'),dest,{recursive:true});
-for(const file of ['bridge.js','worker.js'])await fs.copyFile(path.join(root,'src/nemaklear',file),path.join(dest,file));
+for(const file of ['bridge.js','worker.js','mobile.css'])await fs.copyFile(path.join(root,'src/nemaklear',file),path.join(dest,file));
 // Presentation copy only: scientific source files in vendor retain all original hashes.
 const index=await fs.readFile(path.join(source,'app/public/index.html'),'utf8');
 await fs.writeFile(path.join(dest,'index.html'),index.replace(/(src|href)="\/(?!\/)/g,'$1="./').replace('<script src="./i18n.js">','<script src="./bridge.js"></script><script src="./i18n.js">'));

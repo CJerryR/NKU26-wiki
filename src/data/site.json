@@ -14,18 +14,21 @@
     {
       "name": "College of Life Sciences, Nankai University",
       "short": "Nankai University · College of Life Sciences",
-      "logo": "/img/sponsors/nku-life-sciences.png",
-      "logoAlt": "College of Life Sciences, Nankai University 南开大学生命科学学院"
+      "logo": "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/footer-9018a680d377-nku-life-sciences.avif",
+      "logoAlt": "College of Life Sciences, Nankai University 南开大学生命科学学院",
+      "logoBackground": "dark",
+      "logoWide": true
     },
     {
       "name": "SnapGene",
-      "logo": "/img/sponsors/snapgene.png",
+      "logo": "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/footer-df21c8dc8812-snapgene.svg",
       "logoAlt": "SnapGene"
     },
     {
       "name": "GenScript",
-      "logo": "/img/sponsors/genscript.png",
-      "logoAlt": "GenScript 金斯瑞"
+      "logo": "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/footer-5e23fcad41c9-genscript.svg",
+      "logoAlt": "GenScript 金斯瑞",
+      "logoBackground": "dark"
     }
   ],
   "friends": []

@@ -1,74 +1,67 @@
-# NKU-China Wiki V10.2.4 — NemaKlear
+# NKU-China 2026 Wiki — NemaKlear
 
-2026 NKU-China（队伍编号 6303）的 Wiki 源码，使用 Astro 5 和 Tina。首页讲述从土壤线虫到双通道检测的故事，内页按 Project、Wet Lab、Model、Human Practices、Team 组织。
+南开大学 NKU-China 团队参加 iGEM 2026 的项目网站，队伍编号 **6303**。网站围绕农业线虫与双通道检测方案，展示项目设计、实验结果、模型、人类实践和团队工作。
 
-当前版本为 **V10.2.4（三个 HP 章节共用 iHP 开场，阶段发布）**。Overview、Investigation 和 Industry Engagement and Support 复用 iHP 的图集、构图与滚动动画，保留各自标题和最新正文。开场按完整道具边界适配屏幕，保留组团相对位置，避让导航、面包屑和手机大纲；矮屏使用分栏。正文、原图和首页沿用已发布的 V10.2.3，团队内容终审状态保持待完成。
+当前正式站版本为 **V10.2.5**，已于 **2026-10-19 22:00:18（北京时间）**完成发布。本文按正式站功能和源码编写，版本记录见文末。
 
-- [源码仓库](https://gitlab.igem.org/2026/nku-china)
-- [正式 Wiki](https://2026.igem.wiki/nku-china/)
+- [正式网站](https://2026.igem.wiki/nku-china/)
+- [GitLab 源码](https://gitlab.igem.org/2026/nku-china)
+- [GitHub 历史版本](https://github.com/CJerryR/NKU26-wiki)
+
+## 页面与功能
+
+| 栏目 | 内容 |
+| --- | --- |
+| Home | 土壤与线虫故事、世界案例地图、中国物种地图、检测流程、HP 数据地图和页面入口 |
+| Project | Description、Engineering、Contribution、Background |
+| Wet Lab | Parts and Collections、Experiments、Results、Safety |
+| Model | Overview、Molecular Docking、Molecular Dynamics、ODE and Two-channel Sensing、Economic Benefit |
+| Human Practices | Overview、Integrated Human Practices、Education、Investigation、Industry Engagement and Support |
+| Team | Members、Attributions |
+| Historical Source Documents | 原始交稿、历史版本和可下载原件 |
+
+首页采用分段交互叙事，内页使用剪纸插画开场。网站提供全站搜索、浮动目录、昼夜模式、桌面与手机布局；横屏和矮屏单独适配。
+
+模型页面接入作者完整程序，支持原始读数输入、ODE 曲线、双通道估计、经济策略比较及报告下载。Python 计算在浏览器中运行，无需部署 Python 后端。
+
+Members 与 Attributions 各收录 27 位成员，贡献页保留 137 条个人贡献。页脚集中展示团队导航、南开校徽、支持单位、许可与 AI 使用说明。未启用的可选页面不生成导航入口。
 
 ## 本地运行
 
-使用 Node.js 22 和 Python 3，依赖版本由 `package-lock.json` 锁定。
+使用 **Node.js 22** 和 **Python 3**。网站基于 Astro 5 与 Tina，依赖版本由 `package-lock.json` 锁定。
 
 ```bash
 npm ci --no-audit --no-fund
 npm run dev
 ```
 
-页面预览：<http://127.0.0.1:3000/>；Tina 后台：<http://127.0.0.1:3000/admin/index.html>。启动时还会使用 4101、9101 端口。
+- 页面预览：<http://127.0.0.1:3000/>
+- Tina 编辑器：<http://127.0.0.1:3000/admin/index.html>
+- Tina 服务还会使用 4101、9101 端口。
 
-```bash
-npm run verify    # 导出正文、构建 public/ 并运行技术审计
-npm run preview   # 预览构建产物，地址以终端输出为准
-```
+## 内容与源码
 
-## 编辑位置
-
-| 内容 | 文件 |
+| 修改内容 | 位置 |
 | --- | --- |
-| 正文、图注、表格、成员及贡献卡片 | `content/wiki/*.json` |
-| Tina 字段和组件模板 | `tina/config.ts`、`tina/toolkit.ts` |
-| 首页各段 | `src/home/sections/` |
+| 正文、图注、表格、成员与贡献 | `content/wiki/*.json` |
+| Tina 字段与组件模板 | `tina/config.ts`、`tina/toolkit.ts` |
+| 首页分区 | `src/home/sections/` |
 | 首页交互与样式 | `static/js/`、`static/css/` |
-| 导航、页脚链接和阅读顺序 | `src/data/nav.ts` |
-| 页脚布局与样式 | `src/components/site/SiteFooter.astro`、`src/styles/footer.css` |
-| 赞助商标志及资料 | `src/data/site.json`、`static/img/sponsors/` |
-| 临时改动清单弹窗与开关 | `src/components/site/ChangeNotice.astro`、`src/data/review-tools.ts` |
-| 内页布局和组件 | `src/layouts/`、`src/components/` |
-| 开场构图与图集地址 | `src/data/scenes/`、`src/data/scenes.ts` |
-| 当前开场组团与构图生成 | `tools/scene-art/islands.py`、`tools/scene-art/pages.py` |
-| 源图取景与边缘检查 | `tools/scene-art/camera-frames.json`、`tools/audit_scene_frames.py` |
-| 作者完整模型程序 | `vendor/nemaklear-original/`（原件哈希保持） |
-| 浏览器运行适配 | `src/nemaklear/`、`tools/prepare-nemaklear.mjs` |
-| 正文和组件样式 | `src/styles/` |
-| 素材 CDN 映射 | `content/cdn-assets.json` |
-| 供稿来源与审核状态 | `content/wiki-provenance.json` |
+| 导航、页脚链接与阅读顺序 | `src/data/nav.ts` |
+| 页脚与支持单位 | `src/components/site/SiteFooter.astro`、`src/data/site.json` |
+| 内页布局与公共组件 | `src/layouts/`、`src/components/` |
+| 开场场景与图集 | `src/data/scenes/`、`src/data/scenes.ts` |
+| 正文、主题与手机样式 | `src/styles/` |
+| 作者原始模型程序 | `vendor/nemaklear-original/` |
+| 浏览器模型适配 | `src/nemaklear/`、`tools/prepare-nemaklear.mjs` |
+| 素材地址与供稿来源 | `content/cdn-assets.json`、`content/wiki-provenance.json` |
+| 版本清单与弹窗 | `README.md`、`src/components/site/ChangeNotice.astro` |
 
-`src/content/pages/*.md` 由正文 JSON 导出，不直接修改。Tina 保存后，如需同步普通页面预览，可运行 `node tools/export-tina.mjs`；正式构建会自动导出。正文写法见 [内容编辑说明](src/content/README.md)。
+`content/wiki/*.json` 是正式正文源，`src/content/pages/*.md` 由导出工具生成。不要只改生成的 Markdown；Tina 保存后可运行 `node tools/export-tina.mjs` 同步，构建时也会自动导出。
 
-源码位置与任务归属以工作区根目录的 `WORKSPACE.json` 和聊天登记为准；修改使用各自任务目录，正式部署统一经过 integration 与 release。
+正文写法见 [内容编辑说明](src/content/README.md)和[正文语义标注规范](docs/正文语义标注规范.md)。图表、公式、原始图片和作者模型按交稿维护，科学内容与许可由团队审核。
 
-## 当前功能与页面
-
-- 首页：树木根系首屏、世界案例地图、中国物种地图、四阶段土壤故事、ascaroside 检测故事、HP 数据地图及末页入口。
-- Model：总览和 Docking、MD、ODE、Eco 四章，接入作者完整模型、ODE 计算、经济策略比较及报告下载。
-- 第三轮正文：已接入模型稿、HP 稿、Docking 新图和 Results DBTL-3 补充，仍待团队终审。
-- Team 与 Attributions：各 27 张成员或个人贡献卡片，收录 137 条个人贡献。
-- 18 个正式内页已有滚动开场，另保留 Awards、Acknowledgements 两套可选构图；V8.7 已合入 checkpoint 08，替换旧版开场素材。40 张图集均已映射官方 CDN，其中 39 张为本轮上传、1 张复用相同哈希的既有素材。
-- Awards 和 Acknowledgements 采用可选配置，正文未补齐前不生成正式页面或导航入口；开场素材已准备。
-- 内页支持昼夜模式，点击左下角侦探切换并记住选择；故事首页保留自己的配色。
-- 正文已按页添加术语和关键句强调，标注样式全站共用，写法见 [正文语义标注规范](docs/正文语义标注规范.md)。
-- 页面主标题统一使用正式名称，Model 各章及 HP 页面已修正。
-- 首页和内页共用页脚，导航与顶栏同步，保留南开校徽动画、署名和许可说明。
-- 页脚加入 ExCell（依科赛）和 Solarbio 标志，保留用户提供的原图。
-- 临时评审工具从本 README 读取版本清单，首次打开时提醒；导航旁的圆形按钮可重新打开，也可隐藏本轮工具。
-
-Protocols 已并入 Experiments，Part Collection 已并入 Parts；原地址保留兼容入口。Model 1/2 也保留旧入口。Licensing、Awards 和 Acknowledgements 正文仍为空，尚待供稿。
-
-新增页面时，在 `content/wiki/` 建立 JSON，设置标题、地址及正文块，再按需修改 `src/data/nav.ts`；构建会生成 Markdown 和静态页面。开场配置见 [页面开场说明](docs/页面开场-使用说明.md)，先前三页试点见 [3D 试点说明](docs/3D-pilot-20261018.md)；当前组团版见 [checkpoint 08 合并说明](docs/scene-checkpoint08-合并说明.md)。
-
-## 检查与发布
+## 检查与部署
 
 ```bash
 npm run test:homepage
@@ -80,31 +73,41 @@ node --test tools/tests/scenes.test.mjs
 npm run verify
 ```
 
-按修改范围选择检查；发布前运行部署回归、构建和技术审计。最终内容检查单独执行：
+`npm run verify` 导出正文、构建静态页面并执行技术审计，产物位于 `public/`。`npm run preview` 可预览构建结果，地址以终端输出为准。团队内容验收检查单独使用 `npm run audit:publication`；技术检查通过不代替内容审定。
 
-```bash
-npm run audit:publication
-```
+GitLab Pages 从默认分支 `main` 读取源码，执行部署回归、构建和技术审计后发布 `public/`。构建会校验资源依赖、裁剪未引用素材并处理站内相对地址。
 
-技术审计允许阶段版空页；最终内容检查还要求正式供稿和团队审核完成。当前 Licensing 缺稿，团队终审未完成；Awards、Acknowledgements 留在可选目录。技术检查通过不表示内容终审完成。
+本地协作遵循工作区根目录的 `AGENTS.md`、`WORKSPACE.json` 和聊天任务登记：任务目录修改，integration 合并验收，release 构建发布；历史副本保留原位。正式源码和版本以官方 GitLab `main` 及发布回执为准。
 
-GitLab Pages 在 main 上运行部署回归、构建和技术审计，发布 `public/`。构建会裁剪未使用素材，保留实际引用的文件与组件依赖，并把站内链接改为相对地址。
+## 素材、许可与发布记录
 
-临时评审工具由 `src/data/review-tools.ts` 的 `SHOW_REVIEW_TOOLS` 控制；正式发布前设为 `false` 可同时关闭弹窗和导航入口。README 改动清单在构建时读入，修改后需重新构建才能更新预览。
+图片、字体和开场图集使用官方 iGEM 素材地址，视频使用 iGEM Video Universe。作者原件、素材哈希、图集和来源记录分别见 `content/`、[素材登记表](docs/素材登记表.csv)及[开场图集清单](docs/待上传图集清单.csv)。
 
-## 素材与待办
+页脚保留 CC BY 4.0、源码链接、素材署名和 AI 使用说明；校徽、机构与企业标志按各自权利使用。AI 插画用于页面装饰，不作为实验图像或模型结果。
 
-V8.6 已迁移的 51 项素材记录在 `content/cdn-assets.json`，包括当时的 24 张开场图集、模型与 Results 科研图、赞助标志和校徽动画。Results 延时录像已提交 Video Universe，发布回执记录为待审核。
+Results 视频于 2026-10-19 再次核对：旧版 1 分 52 秒视频在 Video Universe 显示“已发布”；当前页面引用的新版 1 分 10 秒视频链接返回 404，媒体库未列出该视频，原因尚未确认。新版视频的公开播放仍需处理，不记为审核通过。
 
-V8.7 的 40 张开场图集及两张 Results 高清图已完成官方 CDN 迁移：新增 41 项、复用 1 项。平台将两张科研图转换为 AVIF，其中 4368×4368 的原图按比例缩为 4000×4000；原始文件仍保存在本地。40 张 WebP 图集与本地源文件哈希一致。地址与原始哈希见 [图集清单](docs/待上传图集清单.csv)。
-
-当前还需补齐 Docking 图 3、C1–C3、Results 缺表缺图，以及成员照片和可公开教育资源；具体缺项以最新供稿台账为准，不沿用旧版待办数量。
-
-素材来源和署名见 [素材登记表](docs/素材登记表.csv)。保留原始 LICENSE、页脚 CC BY 4.0、源码链接与 AI 使用说明，发布前补齐内容审核、素材许可和官方 Attributions Form。
+Licensing 独立页当前没有正文，现有许可与 AI 使用说明位于页脚；Awards、Acknowledgements 等可选页面未启用。后续新增材料以实际交稿和团队确认结果更新，不使用空链接冒充可下载文件。
 
 ## 版本改动
 
 版本按新到旧排列，每项只记一件改动。发布时间均为北京时间，取 Pages 流水线成功完成时间，精确到秒；无发布记录的版本注明未记录。
+
+### V10.2.5 改动：
+
+改动时间：2026-10-19（北京时间）
+
+发布时间：2026-10-19 22:00:18（北京时间）
+
+1. 完善手机触控导航、搜索、大纲和正文布局。
+2. 首页增加手机、矮屏和横屏适配。
+3. 修复流程图横滑后提示卡的位置。
+4. 贡献卡片按头像高度容纳默认条目，并保留展开阅读。
+5. 统一贡献卡片的内边距和间距。
+6. 页脚补齐南开大学生命科学学院、SnapGene 和 GenScript 标志。
+7. 页脚标志迁移至官方 iGEM 素材地址。
+8. 修复顶部菜单跨栏目切换。
+9. 移除首页动画的原生悬浮提示。
 
 ### V10.2.4 改动：
 

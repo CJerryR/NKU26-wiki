@@ -38,13 +38,13 @@
 .site-footer__col ul { margin-top: 16px; display: grid; gap: 8px; }
 .site-footer__col a { display: inline-block; padding-block: 3px; font-size: 16px; font-weight: 500; line-height: 1.5; overflow-wrap: normal; transition: color .2s; }
 .site-footer__resources { display: flex; flex-wrap: wrap; gap: 14px 32px; padding: 24px 0; border-top: 1px solid var(--line-loam); font-size: 16px; font-weight: 600; }
-/* Compact sponsor marks beside the bottom credits, without a separate showcase.
-   v10.0.2: five partners, three to a row, the last row to the right. A partner
-   whose logo file has not arrived shows its name on the same white tile. */
+/* Keep the wide institutional wordmark legible above two columns of partners. */
 .site-footer__sponsors { grid-column: 2; grid-row: 1 / span 2; width: 444px; max-width: 100%; justify-self: end; }
 .site-footer__sponsors ul { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 12px; }
-.site-footer__sponsors li { min-width: 0; flex: 0 0 calc((100% - 24px) / 3); }
+.site-footer__sponsors li { min-width: 0; flex: 0 0 calc((100% - 12px) / 2); }
+.site-footer__sponsors li[data-logo-wide] { flex-basis: 100%; order: -1; }
 .site-footer__sponsor { display: grid; place-items: center; box-sizing: border-box; width: 100%; height: 60px; padding: 7px 10px; border-radius: 6px; background: #fff; }
+.site-footer__sponsor[data-logo-background="dark"] { background: #152430; }
 .site-footer__sponsor img { display: block; width: 100%; height: 46px; object-fit: contain; }
 .site-footer__sponsor-name { font: 700 13px/1.15 var(--font-body); color: #2a1d33; text-align: center; letter-spacing: -.005em; text-wrap: balance; }
 .site-footer__friends { margin-bottom: 24px; }
@@ -73,3 +73,17 @@
 }
 @media (max-width: 360px) { .site-footer__inner { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce), print { .site-footer__seal { display: none; } }
+
+
+@media (max-width: 760px) {
+  .site-footer { padding-bottom: calc(100px + env(safe-area-inset-bottom, 0px)); }
+  .site-footer__inner, .site-footer__resources, .site-footer__friends, .site-footer__bottom { width: calc(100% - 40px); }
+  .site-footer__inner { gap: 28px 20px; padding-bottom: 28px; }
+  .site-footer__col ul { gap: 0; margin-top: 10px; }
+  .site-footer__col a { display: flex; align-items: center; min-height: 44px; padding-block: 8px; line-height: 1.4; overflow-wrap: anywhere; }
+  .site-footer__resources { gap: 0 20px; padding-block: 16px; }
+  .site-footer__resources a, .site-footer__friends a { display: inline-flex; align-items: center; min-height: 44px; }
+  .site-footer__credits { overflow-wrap: anywhere; }
+  .site-footer__credits summary { display: list-item; min-height: 44px; padding-block: 10px; }
+  .site-footer__sponsors { justify-self: start; }
+}

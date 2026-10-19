@@ -45,3 +45,18 @@
 @media(prefers-reduced-motion:reduce){.site-search[data-search] .site-search__panel,.site-search[data-search] .site-search__panel > *{transition:none}}
 @media(prefers-reduced-transparency:reduce){.site-search[data-search] .site-search__panel{--lg-tint-bg:rgb(251 248 241 / .97)}.site-search[data-search] .site-search__panel[data-tone='dark']{--lg-tint-bg:rgb(36 24 48 / .97)}}
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.site-search[data-search] .site-search__panel{--lg-tint-bg:rgb(251 248 241 / .97)}.site-search[data-search] .site-search__panel[data-tone='dark']{--lg-tint-bg:rgb(36 24 48 / .97)}}
+
+/* Use the visual viewport so the phone keyboard cannot cover results. */
+.site-search[data-search] { top: var(--search-viewport-top, 0px); bottom: auto; height: var(--search-viewport-height, 100dvh); box-sizing: border-box; }
+.site-search[data-search] .site-search__panel { min-height: 0; max-height: 100%; box-sizing: border-box; }
+.site-search[data-search] .site-search__result { overflow-wrap: anywhere; }
+@media (max-width: 640px), (max-height: 500px) {
+  .site-search[data-search] { padding: max(12px, env(safe-area-inset-top, 0px)) max(10px, env(safe-area-inset-right, 0px)) max(12px, env(safe-area-inset-bottom, 0px)) max(10px, env(safe-area-inset-left, 0px)); }
+  .site-search[data-search] .site-search__panel { padding: 12px; border-radius: 22px; --lg-radius: 22px; }
+  .site-search[data-search] .site-search__head { padding-bottom: 8px; }
+  .site-search[data-search] .site-search__head h2 { font-size: 20px; }
+  .site-search[data-search] .site-search__close { width: 44px; height: 44px; }
+  .site-search[data-search] .site-search__box { height: 50px; padding-inline: 12px; }
+  .site-search[data-search] .site-search__box input { font-size: 16px; }
+  .site-search[data-search] .site-search__meta { padding-block: 10px 6px; line-height: 1.4; }
+}
