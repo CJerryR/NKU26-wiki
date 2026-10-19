@@ -52,13 +52,13 @@ const friends = site.friends.map((s) => ({ ...s, url: site.safeUrl(s.url) }));
     <a href="/licensing/">Licensing &amp; AI use</a>
     {site.repository && <a href={site.repository}>GitLab source code</a>}
     <span class="site-footer__socials" role="group" aria-label="Team social media">
-      {socialIcons.map(({ key, label, color, path }) => {
+      {socialIcons.map(({ key, label, color }) => {
         const configured = site.safeUrl(site.socialLinks[key]);
         const href = /^https:\/\//i.test(configured) ? configured : '';
-        return <a class="site-footer__social" href={href || undefined} role="link"
+        return <a class="site-footer__social" data-platform={key} href={href || undefined} role="link"
           aria-label={label} aria-disabled={href ? undefined : 'true'}
           title={href ? label : `${label} · Coming soon`} style={`--social-color: ${color}`}>
-          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d={path} /></svg>
+          <span class="site-footer__social-mark" aria-hidden="true"></span>
         </a>;
       })}
     </span>
