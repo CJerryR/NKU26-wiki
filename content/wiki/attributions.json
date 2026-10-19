@@ -703,7 +703,7 @@
           "tasks": "Background research, Wiki coding, Public engagement",
           "specificTasks": [
             {
-              "text": "Background research: Collected global infection data and research literature on the Meloidogyne incognita (Mi), Mi."
+              "text": "Background research: Collected global infection data and research literature on the Meloidogyne incognita (Mi)."
             },
             {
               "text": "Wiki coding: Led Wiki implementation, including the homepage, site framework, interaction improvements, and integration of each group’s content into the relevant pages."
@@ -819,9 +819,9 @@
     },
     {
       "_template": "heading",
-      "text": "4.2 Claude — anthropic",
+      "text": "4.2 Claude — Anthropic",
       "level": 3,
-      "attributes": "#claude-anthropic toc=\"Claude — anthropic\""
+      "attributes": "#claude-anthropic toc=\"Claude — Anthropic\""
     },
     {
       "_template": "text",
@@ -849,9 +849,9 @@
     },
     {
       "_template": "heading",
-      "text": "4.5 AlphaFold 3 — google DeepMind and isomorphic labs",
+      "text": "4.5 AlphaFold 3 — Google DeepMind and Isomorphic Labs",
       "level": 3,
-      "attributes": "#alphafold-3-google-deepmind-and-isomorphic-labs toc=\"AlphaFold 3 — google DeepMind and isomorphic labs\""
+      "attributes": "#alphafold-3-google-deepmind-and-isomorphic-labs toc=\"AlphaFold 3 — Google DeepMind and Isomorphic Labs\""
     },
     {
       "_template": "text",
@@ -889,9 +889,9 @@
     },
     {
       "_template": "heading",
-      "text": "6.1 Yurong yao",
+      "text": "6.1 Yurong Yao",
       "level": 3,
-      "attributes": "#yurong-yao toc=\"Yurong yao\""
+      "attributes": "#yurong-yao toc=\"Yurong Yao\""
     },
     {
       "_template": "text",
@@ -899,9 +899,9 @@
     },
     {
       "_template": "heading",
-      "text": "6.2 Qian liu",
+      "text": "6.2 Qian Liu",
       "level": 3,
-      "attributes": "#qian-liu toc=\"Qian liu\""
+      "attributes": "#qian-liu toc=\"Qian Liu\""
     },
     {
       "_template": "text",
@@ -909,9 +909,9 @@
     },
     {
       "_template": "heading",
-      "text": "6.3 Zhihao pang",
+      "text": "6.3 Zhihao Pang",
       "level": 3,
-      "attributes": "#zhihao-pang toc=\"Zhihao pang\""
+      "attributes": "#zhihao-pang toc=\"Zhihao Pang\""
     },
     {
       "_template": "text",
@@ -919,9 +919,9 @@
     },
     {
       "_template": "heading",
-      "text": "6.4 ExCell bio",
+      "text": "6.4 ExCell Bio",
       "level": 3,
-      "attributes": "#excell-bio toc=\"ExCell bio\""
+      "attributes": "#excell-bio toc=\"ExCell Bio\""
     },
     {
       "_template": "text",

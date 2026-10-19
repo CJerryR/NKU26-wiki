@@ -95,7 +95,7 @@
     },
     {
       "_template": "text",
-      "body": "We have worked along this chain by examining receptor expression and localization, engineering the yeast host, and constructing the pigment\\-production module\\. Alongside these experiments, an <strong>ordinary differential equation (ODE)</strong> \\(ODE\\) model describes how an input signal develops into color over time\\. It helps us examine whether different inputs can produce distinguishable outputs and identify the dose\\-response measurements, blanks, and time courses needed for calibration\\. [Explore our experimental work →](/results/) · [Explore our signaling model →](/model-ode/)"
+      "body": "We have worked along this chain by examining receptor expression and localization, engineering the yeast host, and constructing the pigment\\-production module\\. Alongside these experiments, an <strong>ordinary differential equation (ODE)</strong> model describes how an input signal develops into color over time\\. It helps us examine whether different inputs can produce distinguishable outputs and identify the dose\\-response measurements, blanks, and time courses needed for calibration\\. [Explore our experimental work →](/results/) · [Explore our signaling model →](/model-ode/)"
     },
     {
       "_template": "text",
