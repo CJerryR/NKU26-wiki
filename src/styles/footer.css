@@ -37,7 +37,11 @@
 .site-footer__col h2, .site-footer__friends h2 { font: 750 19px/1.35 var(--font-body); color: var(--cream); letter-spacing: -.01em; }
 .site-footer__col ul { margin-top: 16px; display: grid; gap: 8px; }
 .site-footer__col a { display: inline-block; padding-block: 3px; font-size: 16px; font-weight: 500; line-height: 1.5; overflow-wrap: normal; transition: color .2s; }
-.site-footer__resources { display: flex; flex-wrap: wrap; gap: 14px 32px; padding: 24px 0; border-top: 1px solid var(--line-loam); font-size: 16px; font-weight: 600; }
+.site-footer__resources { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 32px; padding: 24px 0; border-top: 1px solid var(--line-loam); font-size: 16px; font-weight: 600; }
+.site-footer__socials { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 10px; margin-left: auto; }
+.site-footer__resources .site-footer__social { display: inline-flex; justify-content: center; align-items: center; flex: 0 0 44px; width: 44px; height: 44px; padding: 0; border-radius: 11px; background: var(--social-color); color: #fff; }
+.site-footer__social svg { display: block; width: 24px; height: 24px; }
+.site-footer__social[aria-disabled="true"] { cursor: default; }
 /* Keep the wide institutional wordmark legible above two columns of partners. */
 .site-footer__sponsors { grid-column: 2; grid-row: 1 / span 2; width: 444px; max-width: 100%; justify-self: end; }
 .site-footer__sponsors ul { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 12px; }
@@ -67,6 +71,7 @@
   .site-footer__brand { grid-template-columns: 1fr; gap: 24px; padding-bottom: 28px; }
   .site-footer__about .site-footer__tagline { font-size: 22px; }
   .site-footer__resources { gap: 16px 28px; }
+  .site-footer__socials { margin-left: 0; }
   .site-footer__bottom { grid-template-columns: minmax(0, 1fr); }
   .site-footer__sponsors { grid-column: 1; grid-row: 2; justify-self: end; width: 100%; }
   .site-footer__credits { grid-row: 3; }

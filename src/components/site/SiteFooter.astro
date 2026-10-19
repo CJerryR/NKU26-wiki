@@ -1,6 +1,7 @@
 ---
 import { footerNav } from '../../data/nav';
 import { site } from '../../data/site';
+import { socialIcons } from '../../data/social-icons';
 import { getPages, byId, pageHref } from '../../lib/pages';
 
 const ids = byId(await getPages());
@@ -50,6 +51,17 @@ const friends = site.friends.map((s) => ({ ...s, url: site.safeUrl(s.url) }));
     <a href="https://igem.org/">iGEM</a>
     <a href="/licensing/">Licensing &amp; AI use</a>
     {site.repository && <a href={site.repository}>GitLab source code</a>}
+    <span class="site-footer__socials" role="group" aria-label="Team social media">
+      {socialIcons.map(({ key, label, color, path }) => {
+        const configured = site.safeUrl(site.socialLinks[key]);
+        const href = /^https:\/\//i.test(configured) ? configured : '';
+        return <a class="site-footer__social" href={href || undefined} role="link"
+          aria-label={label} aria-disabled={href ? undefined : 'true'}
+          title={href ? label : `${label} · Coming soon`} style={`--social-color: ${color}`}>
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d={path} /></svg>
+        </a>;
+      })}
+    </span>
   </nav>
   {friends.length > 0 && (
     <section class="site-footer__friends" aria-label="Friend teams">
@@ -65,6 +77,7 @@ const friends = site.friends.map((s) => ({ ...s, url: site.safeUrl(s.url) }));
     <summary>Credits, licenses &amp; AI use</summary>
     <div>
     <span>Fraunces, Spline Sans &amp; Space Mono: SIL OFL 1.1 &middot; Three.js: MIT</span>
+    <span>Social icons: <a href="https://simpleicons.org/">Simple Icons 16.0.0</a>, <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a>. Brand names and logos belong to their respective owners.</span>
     <span><a href="https://katex.org/">KaTeX</a> rendering and fonts: <a href="/widgets/vendor/katex/LICENSE">MIT</a></span>
     <span>AI assistance: OpenAI GPT-6 (implementation and checks); earlier local records credit GPT-5. Human review of final project content remains pending. Decorative artwork is illustrative, not scientific evidence.</span>
     <span>Inner-page opening illustrations: generated with OpenAI image generation in Codex, using team-provided artwork and layouts as references. These are decorative illustrations, not experimental images or model results.</span>
