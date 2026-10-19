@@ -1,9 +1,9 @@
 {
   "title": "Education",
   "heading": "Education",
-  "sub": "Making Synthetic Biology and our project Accessible",
+  "sub": "Making synthetic biology and our project accessible",
   "crumbs": [
-    "Human Practices",
+    "Human practices",
     "Education"
   ],
   "route": "education",
@@ -14,7 +14,7 @@
   "blocks": [
     {
       "_template": "text",
-      "body": "<nav class=\"hp-chapter-nav\" aria-label=\"Human Practices chapters\"><a href=\"/hp-overview/\">Overview</a><a href=\"/human-practices/\">Integrated Human Practices</a><a href=\"/education/\">Education</a><a href=\"/hp-investigation/\">Investigation</a><a href=\"/hp-industry/\">Industry Engagement and Support</a></nav><section class=\"hp-manuscript\" lang=\"en\">"
+      "body": "<nav class=\"hp-chapter-nav\" aria-label=\"Human Practices chapters\"><a href=\"/hp-overview/\">Overview</a><a href=\"/human-practices/\">Integrated human practices</a><a href=\"/education/\">Education</a><a href=\"/hp-investigation/\">Investigation</a><a href=\"/hp-industry/\">Industry engagement and support</a></nav><section class=\"hp-manuscript\" lang=\"en\">"
     },
     {
       "_template": "text",
@@ -26,7 +26,7 @@
     },
     {
       "_template": "heading",
-      "text": "Connecting Soil Life with Agriculture and Synthetic Biology",
+      "text": "Connecting soil life with agriculture and synthetic biology",
       "level": 2,
       "attributes": "#hp-source-115"
     },
@@ -37,23 +37,23 @@
     },
     {
       "_template": "layout",
-      "body": "<div class=\"hp-photo-item\"><div data-hp-source-paragraph=\"118\"><a href=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-13a73d34a9ecf8e5-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-13a73d34a9ecf8e5-00.json\" alt=\"Team members deliver the interactive lecture &quot;The Great Nematode Hunt&quot; to students at Lincheng, Hebei, introducing plant-parasitic nematodes and crop diseases.\" loading=\"lazy\" width=\"422\" height=\"316\"></a></div></div>\n\n<p><span data-hp-source-paragraph=\"119\">Figure 9. Team members deliver the interactive lecture &quot;The Great Nematode Hunt&quot; to students at Lincheng, Hebei, introducing plant-parasitic nematodes and crop diseases.</span></p>",
+      "body": "<div class=\"hp-photo-item\"><div data-hp-source-paragraph=\"118\"><a href=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-13a73d34a9ecf8e5-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-13a73d34a9ecf8e5-00.json\" alt=\"Team members deliver the interactive lecture &quot;The Great Nematode Hunt&quot; to students at Lincheng, Hebei, introducing plant-parasitic nematodes and crop diseases.\" loading=\"lazy\" width=\"422\" height=\"316\"></a></div></div>\n\n<p><span data-hp-source-paragraph=\"119\">Figure 9. Team members deliver the interactive lecture &quot;The Great Nematode Hunt&quot; to students at Lincheng, Hebei, introducing <strong>plant-parasitic nematodes (PPNs)</strong> and crop diseases.</span></p>",
       "kind": "figure"
     },
     {
       "_template": "heading",
-      "text": "Three Courses Form a Learning Pathway",
+      "text": "Three courses form a learning pathway",
       "level": 2,
       "attributes": "#hp-source-120"
     },
     {
       "_template": "layout",
       "kind": "timeline",
-      "body": "### Science Course  The Nematode Hunt {#hp-source-122}\n\n<p data-hp-source-paragraph=\"123\">This course introduces nematodes and their relationships with plants and agriculture. Learners connect above-ground symptoms with roots and soil conditions. Alongside the problems caused by plant-parasitic nematodes, the course introduces the diversity of soil life, avoiding the impression that all nematodes are pests to be eliminated.</p>\n\n<p data-hp-source-paragraph=\"124\">The course helps learners recognize the problem. Starting with familiar crops and symptoms, they explore possible underground causes and learn to distinguish observation from explanation.</p>\n\n<figure class=\"hp-source-figure figure\"><div class=\"figure__media hp-photo-group\"><div class=\"hp-photo-item\"><div data-hp-source-paragraph=\"125\"><a href=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-5a52c4e610ccfab2-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-5a52c4e610ccfab2-00.json\" alt=\"Science Literacy Lesson: “The Great Nematode Hunt”\" loading=\"lazy\" width=\"425\" height=\"238\"></a></div></div></div><figcaption data-hp-source-paragraph=\"126\">Figure 10. Science Literacy Lesson: “The Great Nematode Hunt”</figcaption></figure>\n\n### Experimental Science Course  Exploring Biological Signals {#hp-source-127}\n\n<p data-hp-source-paragraph=\"128\">Organized around input, sensing, and output, this course uses age-appropriate activities to explore how living systems perceive signals and how an invisible change can become observable. It connects with our engineered-yeast concept and creates opportunities to discuss controls, conditions, and alternative explanations.</p>\n\n<p data-hp-source-paragraph=\"129\">The course helps learners understand the method: observe a result, propose an explanation, and consider which comparisons would support it. Materials and procedures follow the lesson plan for each age group.</p>\n\n<figure class=\"hp-source-figure figure\"><div class=\"figure__media hp-photo-group\"><div class=\"hp-photo-item\"><div data-hp-source-paragraph=\"130\"><a href=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-dd2db285bf0e40b4-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-dd2db285bf0e40b4-00.json\" alt=\"Hands-On Science Lesson: “The Signal Discovery Challenge”\" loading=\"lazy\" width=\"424\" height=\"238\"></a></div></div></div><figcaption data-hp-source-paragraph=\"131\">Figure 11. Hands-On Science Lesson: “The Signal Discovery Challenge”</figcaption></figure>\n\n### Values and Responsibility Course  Small Lives and Everyday Contributions {#hp-source-132}\n\n<p data-hp-source-paragraph=\"133\">This course connects microscopic life with careful observation, cooperation, and everyday contributions. It invites learners to recognize work in research and agricultural service that often goes unnoticed. Scientific themes lead into discussions of responsibility and personal growth, including respect for life, persistence in inquiry, and contributing to shared needs.</p>\n\n<figure class=\"hp-source-figure figure\"><div class=\"figure__media hp-photo-group\"><div class=\"hp-photo-item\"><div data-hp-source-paragraph=\"134\"><a href=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-1514f1beb82cfb58-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-1514f1beb82cfb58-00.json\" alt=\"Science and Social Responsibility Lesson: “Tiny Lives Shine, and We Grow through Everyday Dedication”\" loading=\"lazy\" width=\"424\" height=\"238\"></a></div></div></div><figcaption data-hp-source-paragraph=\"135\">Figure 12. Science and Social Responsibility Lesson: “Tiny Lives Shine, and We Grow through Everyday Dedication”</figcaption></figure>"
+      "body": "### Science course  the nematode hunt {#hp-source-122}\n\n<p data-hp-source-paragraph=\"123\">This course introduces nematodes and their relationships with plants and agriculture. Learners connect above-ground symptoms with roots and soil conditions. Alongside the problems caused by PPNs, the course introduces the diversity of soil life, avoiding the impression that all nematodes are pests to be eliminated.</p>\n\n<p data-hp-source-paragraph=\"124\">The course helps learners recognize the problem. Starting with familiar crops and symptoms, they explore possible underground causes and learn to distinguish observation from explanation.</p>\n\n<figure class=\"hp-source-figure figure\"><div class=\"figure__media hp-photo-group\"><div class=\"hp-photo-item\"><div data-hp-source-paragraph=\"125\"><a href=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-5a52c4e610ccfab2-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-5a52c4e610ccfab2-00.json\" alt=\"Science Literacy Lesson: “The Great Nematode Hunt”\" loading=\"lazy\" width=\"425\" height=\"238\"></a></div></div></div><figcaption data-hp-source-paragraph=\"126\">Figure 10. Science Literacy Lesson: “The Great Nematode Hunt”</figcaption></figure>\n\n### Experimental science course  exploring biological signals {#hp-source-127}\n\n<p data-hp-source-paragraph=\"128\">Organized around input, sensing, and output, this course uses age-appropriate activities to explore how living systems perceive signals and how an invisible change can become observable. It connects with our engineered-yeast concept and creates opportunities to discuss controls, conditions, and alternative explanations.</p>\n\n<p data-hp-source-paragraph=\"129\">The course helps learners understand the method: observe a result, propose an explanation, and consider which comparisons would support it. Materials and procedures follow the lesson plan for each age group.</p>\n\n<figure class=\"hp-source-figure figure\"><div class=\"figure__media hp-photo-group\"><div class=\"hp-photo-item\"><div data-hp-source-paragraph=\"130\"><a href=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-dd2db285bf0e40b4-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-dd2db285bf0e40b4-00.json\" alt=\"Hands-On Science Lesson: “The Signal Discovery Challenge”\" loading=\"lazy\" width=\"424\" height=\"238\"></a></div></div></div><figcaption data-hp-source-paragraph=\"131\">Figure 11. Hands-On Science Lesson: “The Signal Discovery Challenge”</figcaption></figure>\n\n### Values and responsibility course  small lives and everyday contributions {#hp-source-132}\n\n<p data-hp-source-paragraph=\"133\">This course connects microscopic life with careful observation, cooperation, and everyday contributions. It invites learners to recognize work in research and agricultural service that often goes unnoticed. Scientific themes lead into discussions of responsibility and personal growth, including respect for life, persistence in inquiry, and contributing to shared needs.</p>\n\n<figure class=\"hp-source-figure figure\"><div class=\"figure__media hp-photo-group\"><div class=\"hp-photo-item\"><div data-hp-source-paragraph=\"134\"><a href=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-1514f1beb82cfb58-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-1514f1beb82cfb58-00.json\" alt=\"Science and Social Responsibility Lesson: “Tiny Lives Shine, and We Grow through Everyday Dedication”\" loading=\"lazy\" width=\"424\" height=\"238\"></a></div></div></div><figcaption data-hp-source-paragraph=\"135\">Figure 12. Science and Social Responsibility Lesson: “Tiny Lives Shine, and We Grow through Everyday Dedication”</figcaption></figure>"
     },
     {
       "_template": "heading",
-      "text": "Adapting the Same Theme for Different Ages",
+      "text": "Adapting the same theme for different ages",
       "level": 2,
       "attributes": "#hp-source-136"
     },
@@ -65,7 +65,7 @@
     },
     {
       "_template": "heading",
-      "text": "Bringing the Courses into Classrooms Through Teaching Partnerships",
+      "text": "Bringing the courses into classrooms through teaching partnerships",
       "level": 2,
       "attributes": "#hp-source-140"
     },
@@ -87,7 +87,7 @@
     },
     {
       "_template": "heading",
-      "text": "Using Feedback to Improve Future Teaching",
+      "text": "Using feedback to improve future teaching",
       "level": 2,
       "attributes": "#hp-source-150"
     },
@@ -98,7 +98,7 @@
     },
     {
       "_template": "heading",
-      "text": "Beyond the Classroom  Outreach and Reusable Resources",
+      "text": "Beyond the classroom  outreach and reusable resources",
       "level": 2,
       "attributes": "#hp-source-155"
     },
@@ -112,7 +112,7 @@
     },
     {
       "_template": "heading",
-      "text": "Download Our Teaching Materials",
+      "text": "6.1 Download our teaching materials",
       "level": 3,
       "attributes": "#hp-source-158"
     },
@@ -120,10 +120,6 @@
       "_template": "layout",
       "kind": "note",
       "body": "<p data-hp-source-paragraph=\"159\">Our three courses are available in Chinese, including primary-school and junior-secondary versions of the science and experimental science courses. Educators can use the materials as references and adapt them to their learners and local teaching conditions.</p>\n\n<p data-hp-source-paragraph=\"160\" class=\"hp-download-label\"><strong>Download The Nematode Hunt — Chinese materials</strong></p>\n\n<p data-hp-source-paragraph=\"161\" class=\"hp-download-label\"><strong>Download Exploring Biological Signals — Chinese materials</strong></p>\n\n<p data-hp-source-paragraph=\"162\" class=\"hp-download-label\"><strong>Download Small Lives and Everyday Contributions — Chinese materials</strong></p>"
-    },
-    {
-      "_template": "text",
-      "body": "<p data-hp-source-paragraph=\"165\"><a href=\"/hp-overview/\">Back to HP Overview</a>   ·   <a href=\"/hp-investigation/\">Next: Investigation</a></p>"
     },
     {
       "_template": "text",
@@ -135,9 +131,9 @@
     },
     {
       "_template": "heading",
-      "text": "References and Supporting Evidence",
+      "text": "References and supporting evidence",
       "level": 2,
-      "attributes": "#hp-original-references toc=\"References and Supporting Evidence\""
+      "attributes": "#hp-original-references toc=\"References and supporting evidence\""
     },
     {
       "_template": "layout",
