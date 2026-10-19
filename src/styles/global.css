@@ -1,3 +1,4 @@
+@import "./hp-manuscript.css";
 @import "./author-manuscript.css";
 /* Inner-page design system. Order matters: tokens → base → material → shell → page → content. */
 @import './fonts.css';

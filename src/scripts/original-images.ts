@@ -15,11 +15,22 @@ const scheduled=new WeakMap<HTMLImageElement,string>();
 const roots=new WeakSet<Node>();
 const observers:MutationObserver[]=[];
 const placeholder='data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
+let transfers=0;const transferQueue:Array<()=>void>=[];
+async function envelope(url:string):Promise<{encoding:string;source_sha256:string;data:string}>{
+ if(transfers<3)transfers++;else await new Promise<void>(resolve=>transferQueue.push(resolve));
+ try{
+  for(let attempt=0;;attempt++){
+   try{const response=await fetch(url);if(!response.ok)throw Error(`Author image resource HTTP ${response.status}`);return await response.json();}
+   catch(error){if(attempt>=2)throw error;await new Promise(resolve=>setTimeout(resolve,300*(attempt+1)));}
+  }
+ }finally{const next=transferQueue.shift();if(next)next();else transfers--;}
+}
 async function originalUrl(key:string):Promise<string>{
  if(!cache.has(key))cache.set(key,withSlot(async()=>{
   const entry=manifest[key];
-  const encoded=(await Promise.all(entry.chunks.map(async url=>{const r=await fetch(url);if(!r.ok)throw Error(`Author image resource HTTP ${r.status}`);const d=await r.json();if(d.encoding!=='gzip+base64'||d.source_sha256!==entry.sha256)throw Error('Author image envelope identity mismatch');return d.data as string;}))).join('');
-  const compressed=Uint8Array.from(atob(encoded),c=>c.charCodeAt(0));
+  const encoded=(await Promise.all(entry.chunks.map(async url=>{const d=await envelope(url);if(d.encoding!=='gzip+base64'||d.source_sha256!==entry.sha256)throw Error('Author image envelope identity mismatch');return d.data as string;}))).join('');
+  const binary=atob(encoded),compressed=new Uint8Array(binary.length);
+  for(let i=0;i<binary.length;i++)compressed[i]=binary.charCodeAt(i);
   const bytes=await new Response(new Blob([compressed]).stream().pipeThrough(new DecompressionStream('gzip'))).arrayBuffer();
   const digest=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))).map(x=>x.toString(16).padStart(2,'0')).join('');
   if(digest!==entry.sha256)throw Error('Author image checksum mismatch');

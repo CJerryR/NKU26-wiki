@@ -7,7 +7,7 @@ export const submittedPages = new Set([
   'description', 'attributions', 'members', 'experiments', 'protocols',
   'contribution', 'engineering', 'results', 'parts', 'part-collection', 'model', 'background',
   'model-docking', 'model-md', 'model-ode', 'model-eco',
-  'human-practices', 'education', 'safety',
+  'hp-overview', 'hp-investigation', 'hp-industry', 'human-practices', 'education', 'safety',
   'education', 'safety',
   'education', 'safety',
 ]);

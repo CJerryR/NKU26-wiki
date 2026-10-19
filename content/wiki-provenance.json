@@ -83,7 +83,7 @@
     },
     {
       "slug": "education",
-      "status": "round3-hp-material-integrated-awaiting-final-review",
+      "status": "hp-five-page-source-integrated-awaiting-final-review",
       "team_copy_received": true,
       "team_review_approved": false,
       "round2_local_integrated_at": "2026-10-16",
@@ -99,7 +99,13 @@
         "Public evidence records, dates and permissions for activity photos and anonymized records",
         "Author final review; no publication in this update",
         "Lesson-specific evaluation remains a future step; overall program feedback is kept separate"
-      ]
+      ],
+      "sources": [
+        "Human Practice部分.docx",
+        "https://nankai.feishu.cn/docx/Z7xydvXMRoOYItxEfIpcULjsnDk"
+      ],
+      "hp_five_page_source_sha256": "a0d089057e88f3731991b2dfd981beb484235a3fc11c89701eeafb68daff39f6",
+      "hp_five_page_missing_images_record": "制作备注与缺图.json"
     },
     {
       "slug": "engineering",
@@ -137,7 +143,7 @@
     },
     {
       "slug": "human-practices",
-      "status": "round3-hp-material-integrated-awaiting-final-review",
+      "status": "hp-five-page-source-integrated-awaiting-final-review",
       "team_copy_received": true,
       "team_review_approved": false,
       "round3_hp_local_integrated_at": "2026-10-18T00:21:33+08:00",
@@ -148,7 +154,13 @@
       "round3_hp_open_items": [
         "Public evidence records, dates and permissions for activity photos and anonymized records",
         "Author final review; no publication in this update"
-      ]
+      ],
+      "sources": [
+        "Human Practice部分.docx",
+        "https://nankai.feishu.cn/docx/Z7xydvXMRoOYItxEfIpcULjsnDk"
+      ],
+      "hp_five_page_source_sha256": "a0d089057e88f3731991b2dfd981beb484235a3fc11c89701eeafb68daff39f6",
+      "hp_five_page_missing_images_record": "制作备注与缺图.json"
     },
     {
       "slug": "licensing",
@@ -448,6 +460,42 @@
       "meeting_20261019_source_language_preserved": true,
       "meeting_20261019_status": "original manuscripts integrated; publication validation pending",
       "meeting_20261019_record": "outputs/19日凌晨会后更新-20261019/00-全部原件SHA256.json"
+    },
+    {
+      "slug": "hp-overview",
+      "status": "hp-five-page-source-integrated-awaiting-final-review",
+      "team_copy_received": true,
+      "team_review_approved": false,
+      "sources": [
+        "Human Practice部分.docx",
+        "https://nankai.feishu.cn/docx/Z7xydvXMRoOYItxEfIpcULjsnDk"
+      ],
+      "hp_five_page_source_sha256": "a0d089057e88f3731991b2dfd981beb484235a3fc11c89701eeafb68daff39f6",
+      "hp_five_page_missing_images_record": "制作备注与缺图.json"
+    },
+    {
+      "slug": "hp-investigation",
+      "status": "hp-five-page-source-integrated-awaiting-final-review",
+      "team_copy_received": true,
+      "team_review_approved": false,
+      "sources": [
+        "Human Practice部分.docx",
+        "https://nankai.feishu.cn/docx/Z7xydvXMRoOYItxEfIpcULjsnDk"
+      ],
+      "hp_five_page_source_sha256": "a0d089057e88f3731991b2dfd981beb484235a3fc11c89701eeafb68daff39f6",
+      "hp_five_page_missing_images_record": "制作备注与缺图.json"
+    },
+    {
+      "slug": "hp-industry",
+      "status": "hp-five-page-source-integrated-awaiting-final-review",
+      "team_copy_received": true,
+      "team_review_approved": false,
+      "sources": [
+        "Human Practice部分.docx",
+        "https://nankai.feishu.cn/docx/Z7xydvXMRoOYItxEfIpcULjsnDk"
+      ],
+      "hp_five_page_source_sha256": "a0d089057e88f3731991b2dfd981beb484235a3fc11c89701eeafb68daff39f6",
+      "hp_five_page_missing_images_record": "制作备注与缺图.json"
     }
   ],
   "round2_note": "Local Tina integration of supplied English copy and assets. Human Practices Chinese manuscript remains archive-only. No final team review or publication approval is asserted.",

@@ -43,8 +43,11 @@ export const primaryNav: NavItem[] = [
   },
   {
     kind: 'group', id: 'hp', label: 'Human Practices', narrow: true, items: [
-      { page: 'human-practices', label: 'Integrated Human Practices', blurb: 'Growers, experts and what changed' },
-      { page: 'education', label: 'Education', blurb: 'Classes and outreach across China' },
+      { page: 'hp-overview', label: 'Overview', blurb: 'Connecting Our Research with Society' },
+      { page: 'human-practices', label: 'Integrated Human Practices', blurb: 'Bringing Real-World Perspectives into Research' },
+      { page: 'education', label: 'Education', blurb: 'Making Synthetic Biology and our project Accessible' },
+      { page: 'hp-investigation', label: 'Investigation', blurb: 'Exploring Agriculture through Visits and Dialogue' },
+      { page: 'hp-industry', label: 'Industry Engagement and Support', blurb: 'Exploring Applications and Building Connections' },
       { page: 'sustainability', label: 'Sustainability', blurb: 'Soil health and the SDGs', optional: true },
       { page: 'collaborations', label: 'Collaboration', blurb: 'Work done with other teams', optional: true },
     ],
