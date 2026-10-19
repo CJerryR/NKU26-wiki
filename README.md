@@ -2,7 +2,7 @@
 
 2026 NKU-China（队伍编号 6303）的 Wiki 源码，使用 Astro 5 和 Tina。首页讲述从土壤线虫到双通道检测的故事，内页按 Project、Wet Lab、Model、Human Practices、Team 组织。
 
-当前版本为 **V10.2.3（内页开场逐分辨率适配，阶段发布）**。开场按完整道具边界适配屏幕，保留组团相对位置，避让导航、面包屑和手机大纲；矮屏使用分栏。正文、原图和首页沿用 V10.2.2，团队内容终审状态保持待完成。
+当前版本为 **V10.2.4（三个 HP 章节共用 iHP 开场，阶段发布）**。Overview、Investigation 和 Industry Engagement and Support 复用 iHP 的图集、构图与滚动动画，保留各自标题和最新正文。开场按完整道具边界适配屏幕，保留组团相对位置，避让导航、面包屑和手机大纲；矮屏使用分栏。正文、原图和首页沿用已发布的 V10.2.3，团队内容终审状态保持待完成。
 
 - [源码仓库](https://gitlab.igem.org/2026/nku-china)
 - [正式 Wiki](https://2026.igem.wiki/nku-china/)
