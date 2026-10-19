@@ -4,7 +4,7 @@
   "task": "ruoxi-requirements",
   "owner_thread": "01a154d7-5702-7b10-9faa-694636d967a9",
   "scope": "若希私聊及其分享文档/附件；不包含其他联系人的私聊",
-  "coverage_complete": false,
+  "coverage_complete": true,
   "chat_history_coverage_complete": true,
   "chat_history_boundary": {
     "oldest_accessible": "8月12日",
@@ -12,11 +12,7 @@
     "expanded_replies": 4,
     "exclusion": "已撤回消息正文不在可访问范围"
   },
-  "coverage_remaining": [
-    "Engineering Figure 5缺图，用户已确认先保留现状，后续收新原图再处理",
-    "Docking Figure 6全图/裁图注冲突，用户已确认保留原有匹配裁图",
-    "十六张本轮原图及独立Model Overview新图的正式CDN迁移尚待完成"
-  ],
+  "coverage_remaining": [],
   "own_delivery_receipt": "workspace/registry/tasks/ruoxi-requirements.json",
   "baseline": "96c2653f2fd716e1e1576728e8e7d87a6841f921",
   "sources": {
@@ -198,9 +194,11 @@
       "area": "Docking",
       "source": "readme",
       "request": "Docking占位图后续给出，需要一轮替换",
-      "status": "implemented-local",
+      "status": "published",
       "implementation": "已取得最新完整导出，图1–5更换原始高清PNG，图2/4/5译入四联图的新图注；其他正文、数据表、公式和锚点不变；图6沿用匹配原图注的已批准裁图，见N12",
-      "owner_task": "ruoxi-requirements"
+      "owner_task": "ruoxi-requirements",
+      "previous_status": "implemented-local",
+      "published_commit": "e58ffd3ee80c08bb31972bb9bbffb48777c2f520"
     },
     {
       "id": "R05",
@@ -225,18 +223,22 @@
       "area": "Eco",
       "source": "readme",
       "request": "网页插件放到页面最上面",
-      "status": "implemented-local",
+      "status": "published",
       "implementation": "完整作者NemaKlear组件由正文后移到Content之前，计算逻辑和正文不改",
-      "owner_task": "ruoxi-requirements"
+      "owner_task": "ruoxi-requirements",
+      "previous_status": "implemented-local",
+      "published_commit": "e58ffd3ee80c08bb31972bb9bbffb48777c2f520"
     },
     {
       "id": "R08",
       "area": "Model",
       "source": "readme",
       "request": "去掉Model重复作者标题编号；最新03:39截图明确大标题不编号、正文两级",
-      "status": "implemented-local",
+      "status": "published",
       "implementation": "四章清除27个数字前缀；总述不占编号、正文小节提升为章节，旧锚点和所有非标题科研块保持。大号数字仅附于二级章节",
-      "owner_task": "ruoxi-requirements"
+      "owner_task": "ruoxi-requirements",
+      "previous_status": "implemented-local",
+      "published_commit": "e58ffd3ee80c08bb31972bb9bbffb48777c2f520"
     },
     {
       "id": "R09",
@@ -270,72 +272,88 @@
       "area": "首页",
       "source": "home",
       "request": "找到虫后通过下钻、固定探索光标或提亮等方式引导继续下滚",
-      "status": "completed-local-candidate",
+      "status": "published",
       "implementation": "原任务已逐条实施；构建、技术审计及23项首页测试通过，桌面/390×844复核通过",
-      "owner_task": "ruoxi-home-review"
+      "owner_task": "ruoxi-home-review",
+      "previous_status": "completed-local-candidate",
+      "published_commit": "e58ffd3ee80c08bb31972bb9bbffb48777c2f520"
     },
     {
       "id": "H04",
       "area": "首页",
       "source": "home",
       "request": "世界地图紫色案例点添加点击引导",
-      "status": "completed-local-candidate",
+      "status": "published",
       "implementation": "原任务已逐条实施；构建、技术审计及23项首页测试通过，桌面/390×844复核通过",
-      "owner_task": "ruoxi-home-review"
+      "owner_task": "ruoxi-home-review",
+      "previous_status": "completed-local-candidate",
+      "published_commit": "e58ffd3ee80c08bb31972bb9bbffb48777c2f520"
     },
     {
       "id": "H05",
       "area": "首页",
       "source": "home",
       "request": "中国地图标题改为Closer to home大字及The nematode threat in China副标题",
-      "status": "completed-local-candidate",
+      "status": "published",
       "implementation": "原任务已逐条实施；构建、技术审计及23项首页测试通过，桌面/390×844复核通过",
-      "owner_task": "ruoxi-home-review"
+      "owner_task": "ruoxi-home-review",
+      "previous_status": "completed-local-candidate",
+      "published_commit": "e58ffd3ee80c08bb31972bb9bbffb48777c2f520"
     },
     {
       "id": "H06",
       "area": "首页",
       "source": "home",
       "request": "HuangHuaiHai Plain停留多一两秒或加强地图位置提示",
-      "status": "completed-local-candidate",
+      "status": "published",
       "implementation": "原任务已逐条实施；构建、技术审计及23项首页测试通过，桌面/390×844复核通过",
-      "owner_task": "ruoxi-home-review"
+      "owner_task": "ruoxi-home-review",
+      "previous_status": "completed-local-candidate",
+      "published_commit": "e58ffd3ee80c08bb31972bb9bbffb48777c2f520"
     },
     {
       "id": "H07",
       "area": "首页",
       "source": "home",
       "request": "化学信号各帧标题字号统一，位置随尺寸自适应",
-      "status": "completed-local-candidate",
+      "status": "published",
       "implementation": "原任务已逐条实施；构建、技术审计及23项首页测试通过，桌面/390×844复核通过",
-      "owner_task": "ruoxi-home-review"
+      "owner_task": "ruoxi-home-review",
+      "previous_status": "completed-local-candidate",
+      "published_commit": "e58ffd3ee80c08bb31972bb9bbffb48777c2f520"
     },
     {
       "id": "H08",
       "area": "首页",
       "source": "home",
       "request": "左下吉祥物的返回顶部功能明确标注，避免误触回顶",
-      "status": "completed-local-candidate",
+      "status": "published",
       "implementation": "原任务已逐条实施；构建、技术审计及23项首页测试通过，桌面/390×844复核通过",
-      "owner_task": "ruoxi-home-review"
+      "owner_task": "ruoxi-home-review",
+      "previous_status": "completed-local-candidate",
+      "published_commit": "e58ffd3ee80c08bb31972bb9bbffb48777c2f520"
     },
     {
       "id": "H09",
       "area": "首页",
       "source": "home",
       "request": "分布页标题改为Our reach和across China",
-      "status": "completed-local-candidate",
+      "status": "published",
       "implementation": "原任务已逐条实施；构建、技术审计及23项首页测试通过，桌面/390×844复核通过",
-      "owner_task": "ruoxi-home-review"
+      "owner_task": "ruoxi-home-review",
+      "previous_status": "completed-local-candidate",
+      "published_commit": "e58ffd3ee80c08bb31972bb9bbffb48777c2f520"
     },
     {
       "id": "H10",
       "area": "首页",
       "source": "home",
       "request": "标题统一使用color拼写",
-      "status": "completed-local-candidate",
+      "status": "published",
       "implementation": "原任务已逐条实施；构建、技术审计及23项首页测试通过，桌面/390×844复核通过",
-      "owner_task": "ruoxi-home-review"
+      "owner_task": "ruoxi-home-review",
+      "previous_status": "completed-local-candidate",
+      "published_commit": "e58ffd3ee80c08bb31972bb9bbffb48777c2f520"
     },
     {
       "id": "P01",
@@ -378,12 +396,14 @@
       "area": "Model",
       "source": "overview",
       "request": "Overview这里新增一张图",
-      "status": "completed-local-candidate-cdn-pending",
-      "implementation": "6d0f05d7：原图放引言后/Docking前，无独立图注并补alt；已验收，官方CDN迁移待完成",
+      "status": "published",
+      "implementation": "原图放引言后/Docking前，无独立图注并补alt；官方CDN迁移和线上部署完成，原图无损保留。",
       "owner_task": "ruoxi-model-figure",
       "supersedes": [
         "R03"
-      ]
+      ],
+      "previous_status": "completed-local-candidate-cdn-pending",
+      "published_commit": "e58ffd3ee80c08bb31972bb9bbffb48777c2f520"
     },
     {
       "id": "T01",
@@ -408,9 +428,11 @@
       "area": "Attributions",
       "source": "chat",
       "request": "先前稍后补attribution，02:02通知Attributions改好了",
-      "status": "completed-local-candidate",
+      "status": "published",
       "implementation": "原任务已更新27人138条贡献、AI使用、15单元格合作资源表与外部贡献；桌面/手机及构建通过，详见任务登记",
-      "owner_task": "ruoxi-members-review"
+      "owner_task": "ruoxi-members-review",
+      "previous_status": "completed-local-candidate",
+      "published_commit": "e58ffd3ee80c08bb31972bb9bbffb48777c2f520"
     },
     {
       "id": "V01",
@@ -435,75 +457,91 @@
       "area": "最新Project",
       "source": "project_new",
       "request": "保留四页，顺序Description、Background、Engineering、Contribution；Description背景独立迁移",
-      "status": "implemented-local",
+      "status": "published",
       "implementation": "最新03:30说明覆盖R01；原背景三节与参考文献1–8移到Background，旧正文完整归档",
       "owner_task": "ruoxi-requirements",
       "supersedes": [
         "R01"
-      ]
+      ],
+      "previous_status": "implemented-local",
+      "published_commit": "e58ffd3ee80c08bb31972bb9bbffb48777c2f520"
     },
     {
       "id": "N02",
       "area": "最新Project",
       "source": "description_new",
       "request": "采用新的英文Description及流程图",
-      "status": "implemented-local",
+      "status": "published",
       "implementation": "全部原文段落、强调、科研限制和内部跳转保留，1张PNG字节一致；旧稿归档",
-      "owner_task": "ruoxi-requirements"
+      "owner_task": "ruoxi-requirements",
+      "previous_status": "implemented-local",
+      "published_commit": "e58ffd3ee80c08bb31972bb9bbffb48777c2f520"
     },
     {
       "id": "N03",
       "area": "最新Project",
       "source": "engineering_new",
       "request": "采用新的英文Engineering，四个Goal及迭代",
-      "status": "implemented-local",
+      "status": "published",
       "implementation": "全文接入、五张PNG字节一致，六段图注完整，AI生成说明保留；旧稿归档",
-      "owner_task": "ruoxi-requirements"
+      "owner_task": "ruoxi-requirements",
+      "previous_status": "implemented-local",
+      "published_commit": "e58ffd3ee80c08bb31972bb9bbffb48777c2f520"
     },
     {
       "id": "N04",
       "area": "排版",
       "source": "project_new",
       "request": "图注统一左对齐",
-      "status": "implemented-local",
+      "status": "published",
       "implementation": "公共figcaption和表图注左对齐，覆盖reading-layout与HP居中旧规则，保留图注文字",
-      "owner_task": "ruoxi-requirements"
+      "owner_task": "ruoxi-requirements",
+      "previous_status": "implemented-local",
+      "published_commit": "e58ffd3ee80c08bb31972bb9bbffb48777c2f520"
     },
     {
       "id": "N05",
       "area": "参考文献",
       "source": "project_new",
       "request": "Background参考文献独立整理，后续正文编号调整",
-      "status": "implemented-local",
+      "status": "published",
       "implementation": "背景使用对应原始1–8条；新Description/Engineering原文无文献列表，不保留旧稿悬空编号",
-      "owner_task": "ruoxi-requirements"
+      "owner_task": "ruoxi-requirements",
+      "previous_status": "implemented-local",
+      "published_commit": "e58ffd3ee80c08bb31972bb9bbffb48777c2f520"
     },
     {
       "id": "N06",
       "area": "姓名",
       "source": "project_new",
       "request": "Yurong Yao、Qian Liu、Zhihao Pang，不要中文姓名",
-      "status": "implemented-local",
+      "status": "published",
       "implementation": "新英文稿替换包含中文姓名的旧段落；其他HP页面对应姓名已为英文",
-      "owner_task": "ruoxi-requirements"
+      "owner_task": "ruoxi-requirements",
+      "previous_status": "implemented-local",
+      "published_commit": "e58ffd3ee80c08bb31972bb9bbffb48777c2f520"
     },
     {
       "id": "N07",
       "area": "排版",
       "source": "project_new",
       "request": "正文与图片边界对齐，所有页面文字过宽需收窄",
-      "status": "implemented-local",
+      "status": "published",
       "implementation": "公共阅读栏42rem，取消宽屏额外bleed；正文和图件共享边界，手机保持流式布局",
-      "owner_task": "ruoxi-requirements"
+      "owner_task": "ruoxi-requirements",
+      "previous_status": "implemented-local",
+      "published_commit": "e58ffd3ee80c08bb31972bb9bbffb48777c2f520"
     },
     {
       "id": "N08",
       "area": "标题编号",
       "source": "project_new",
       "request": "页大标题和总述不编号，实际二级章节1/2/3及三级1.1/1.2；大数字只对应二级",
-      "status": "implemented-local",
+      "status": "published",
       "implementation": "新增unnumbered总述支持，二级序号与三级目录序号分开；Model总述不占号、原锚点保留，不给四级嵌套标题大号编号",
-      "owner_task": "ruoxi-requirements"
+      "owner_task": "ruoxi-requirements",
+      "previous_status": "implemented-local",
+      "published_commit": "e58ffd3ee80c08bb31972bb9bbffb48777c2f520"
     },
     {
       "id": "N09",
@@ -519,9 +557,11 @@
       "area": "新素材",
       "source": "description_new",
       "request": "Project十一张与Docking五张新原图的正式CDN迁移",
-      "status": "local-assets-ready-cdn-pending",
-      "implementation": "十六张原始PNG已用于本地候选，字节哈希留证；正式发布前迁移官方CDN并重验",
-      "owner_task": "ruoxi-requirements"
+      "status": "published",
+      "implementation": "本轮十六张原图和独立Overview原图均已迁至官方CDN；无损WebP与原始PNG逐像素一致，原稿保留在任务目录及证据归档。",
+      "owner_task": "ruoxi-requirements",
+      "previous_status": "local-assets-ready-cdn-pending",
+      "published_commit": "e58ffd3ee80c08bb31972bb9bbffb48777c2f520"
     },
     {
       "id": "N12",
@@ -537,9 +577,11 @@
       "area": "最新Project",
       "source": "contribution_new",
       "request": "采用Project全部完成通知补发的英文Contribution",
-      "status": "implemented-local",
+      "status": "published",
       "implementation": "完整英文稿及五张原图接入，原有数字只在标题/目录各显示一次；内部链接规范化，AI生成说明保留，旧稿归档",
-      "owner_task": "ruoxi-requirements"
+      "owner_task": "ruoxi-requirements",
+      "previous_status": "implemented-local",
+      "published_commit": "e58ffd3ee80c08bb31972bb9bbffb48777c2f520"
     }
   ],
   "task_results": {
@@ -547,7 +589,7 @@
       "source_path": "workspace/tasks/ruoxi-home-review",
       "base_commit": "2dd2e28c990c2ceb2ce63c22d923247c4297295f",
       "result_commit": "83c09fda332f2dfb241a922ecaa9f3e7993b810f",
-      "status": "complete-full-home-review-not-published",
+      "status": "published",
       "preview": {
         "url": "http://127.0.0.1:8892/",
         "port": 8892,
@@ -566,13 +608,15 @@
       "publication": {
         "status": "not-published",
         "candidate_commit": "83c09fda332f2dfb241a922ecaa9f3e7993b810f"
-      }
+      },
+      "previous_status": "complete-full-home-review-not-published",
+      "publication_commit": "e58ffd3ee80c08bb31972bb9bbffb48777c2f520"
     },
     "ruoxi-members-review": {
       "source_path": "workspace/tasks/ruoxi-members-review",
       "base_commit": "95bb4e144428707e49c4f91062596b3410e804c0",
       "result_commit": "35e1ce271f3e83abc82e65e39c56200dcd698481",
-      "status": "attributions-completed-local-not-published",
+      "status": "published",
       "preview": {
         "source_path": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/tasks/ruoxi-members-review",
         "url": "http://127.0.0.1:51015/attributions/#student-leaders",
@@ -593,13 +637,15 @@
         "report": "workspace/evidence/ruoxi-members-review/attributions-20261020/handoff.json",
         "artifact_zip_estimate_bytes": 4995781
       },
-      "publication": "Attributions revision not published; previous Members photo release preserved"
+      "publication": "Attributions revision not published; previous Members photo release preserved",
+      "previous_status": "attributions-completed-local-not-published",
+      "publication_commit": "e58ffd3ee80c08bb31972bb9bbffb48777c2f520"
     },
     "ruoxi-model-figure": {
       "source_path": "workspace/tasks/ruoxi-model-figure",
       "base_commit": "95bb4e144428707e49c4f91062596b3410e804c0",
       "result_commit": "6d0f05d7fba57bbf45a67001ffbb810f1a001e13",
-      "status": "completed-local-candidate-cdn-pending",
+      "status": "published",
       "preview": {
         "url": "http://127.0.0.1:8946/model/#model-overview",
         "port": 8946,
@@ -617,7 +663,9 @@
         "cdn": "pending official upload and real mapping",
         "zip_estimate_bytes": 6629480
       },
-      "publication": "not-published"
+      "publication": "not-published",
+      "previous_status": "completed-local-candidate-cdn-pending",
+      "publication_commit": "e58ffd3ee80c08bb31972bb9bbffb48777c2f520"
     },
     "ruoxi-video-review": {
       "source_path": "workspace/tasks/ruoxi-video-review",
@@ -665,5 +713,22 @@
       "What We Built/DBTL素材由既有任务负责，禁止重复实施"
     ],
     "publication": "本轮实现与候选不等于上线；未擅自推main"
+  },
+  "user_deferred": [
+    "Engineering Figure 5缺图，用户已确认先保留现状，后续收新原图再处理",
+    "Docking Figure 6全图/裁图注冲突，用户已确认保留原有匹配裁图"
+  ],
+  "publication": {
+    "feature_commit": "e58ffd3ee80c08bb31972bb9bbffb48777c2f520",
+    "version": "10.2.11",
+    "pipeline": 775034,
+    "pipeline_status": "success",
+    "published_at_beijing": "2026-10-20 04:42:34",
+    "cdn_manifest": "docs/recent-assets-cdn-20261020.json",
+    "cdn_new_images": 17,
+    "own_16_source_pngs_pixel_identical": true,
+    "user_authorization": "上线这些改动",
+    "verification": "workspace/evidence/ruoxi-requirements-20261020/release-confirmation/online-check.json",
+    "typography_followup": "This source revision restores six proper-name headings and removes two duplicate acronym definitions; final deployment recorded in the task registry."
   }
 }

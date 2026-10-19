@@ -4,7 +4,7 @@ import siteJson from './site.json';
 
 export interface FooterItem { name: string; short?: string; url?: string; note?: string; logo?: string; logoAlt?: string; logoBackground?: 'dark'; logoWide?: boolean }
 
-const json = siteJson as { source_repository_url?: string; sponsors?: FooterItem[]; friends?: FooterItem[] };
+const json = siteJson as { source_repository_url?: string; social_links?: Partial<Record<'wechat' | 'xiaohongshu' | 'x' | 'youtube' | 'bilibili', string>>; sponsors?: FooterItem[]; friends?: FooterItem[] };
 
 function safeUrl(url?: string): string {
   const u = String(url ?? '').trim();
@@ -35,6 +35,7 @@ export const site = {
   repository: safeUrl(process.env.CI_PROJECT_URL || process.env.IGEM_SOURCE_REPOSITORY || json.source_repository_url),
   sponsors: (json.sponsors ?? []).filter((s) => s && s.name),
   friends: (json.friends ?? []).filter((s) => s && s.name),
+  socialLinks: json.social_links ?? {},
   safeUrl,
   logoUrl,
 };
