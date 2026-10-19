@@ -1,7 +1,7 @@
 {
-  "version": "10.1.4",
-  "label": "Team members and attributions — 19 October source revision",
-  "prepared_at": "2026-10-19T11:32:04+08:00",
+  "version": "10.1.5",
+  "label": "Jie Fan biography revision supplied by user",
+  "prepared_at": "2026-10-19T11:51:16+08:00",
   "media": "84 unchanged original images plus 4 user-authorized GPS-only cleaned images; all decoded frames unchanged; 12 complete historical source documents",
   "release_kind": "stage",
   "team_content_review": "Scientific final review pending; source-version choices authorized by user",
@@ -10,7 +10,7 @@
     "commit": "16770d5c28ddf7bc41f8d90445c44d80a28801d5",
     "published_at_local": "2026-10-18 05:04:34"
   },
-  "release_id": "team-members-attributions-20261019",
+  "release_id": "jie-fan-biography-20261019",
   "mobile_layout_check": "390px Members rendered without overflow; desktop Description, Parts/plasmid, Attributions/puzzle checked; 4 second delayed CDN uses inline preview then upgrades",
   "source_fidelity": {
     "original_source_files_verified": 80,
@@ -52,5 +52,9 @@
     "source_documents": 2,
     "source_text": "English introductions, labels, grades, universities and contributions preserved",
     "review": "Team final review pending"
+  },
+  "jie_fan_biography": {
+    "source": "Direct user-provided English paragraph",
+    "verbatim": true
   }
 }
