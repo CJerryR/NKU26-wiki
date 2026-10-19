@@ -703,14 +703,14 @@
       "body": "Mans R, Wijsman M, Daran-Lapujade P, Daran JM. A protocol for introduction of multiple genetic modifications in Saccharomyces cerevisiae using CRISPR/Cas9. FEMS Yeast Res. 2018 Nov 1;18(7):foy063. doi: 10.1093/femsyr/foy063. PMID: 29860374; PMCID: PMC6074844."
     },
     {
-      "_template": "text",
-      "body": "<section class=\"author-manuscript\" lang=\"en\">"
-    },
-    {
       "_template": "heading",
       "level": 2,
       "text": "DBTL-3: test strip development and productization",
       "attributes": "#dbtl-3-test-strip-development-and-productization"
+    },
+    {
+      "_template": "text",
+      "body": "<section class=\"author-manuscript\" lang=\"en\">"
     },
     {
       "_template": "text",

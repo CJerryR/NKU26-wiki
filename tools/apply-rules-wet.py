@@ -338,6 +338,12 @@ def apply(regenerate=False):
             for b in data['blocks']:
                 if 'Figure 2. Gal80 Gene Knockout' in b.get('body',''):
                     b['body']=b['body'].replace('Figure 2. Gal80 Gene Knockout','Figure 2. Gal80 gene knockout')
+            # The automatic doc-section closes at an h2 boundary. A raw author
+            # section opened before that h2 would consume the automatic closing
+            # tag and nest the next chapter inside the preceding chapter.
+            for i in range(len(data['blocks'])-1):
+                if data['blocks'][i].get('body')=='<section class="author-manuscript" lang="en">' and data['blocks'][i+1].get('_template')=='heading' and data['blocks'][i+1].get('level')==2:
+                    data['blocks'][i],data['blocks'][i+1]=data['blocks'][i+1],data['blocks'][i]
         if page == 'engineering':
             b=next(b for b in data['blocks'] if 'Both the southern root-knot nematode' in b.get('body',''))
             b['body'] += '<p>Nematode density is expressed as counts of second-stage juveniles (J2) per 100 cm³.</p>'
@@ -442,9 +448,18 @@ def audit():
                     title=unnumber(plain(b.get('text','')))
                     started=bool(re.fullmatch(r'References?',title,re.I)) or (started and b['level']>2)
                 elif re.fullmatch(r'\s*(?:<[^>]+>)*References?(?:</[^>]+>)*\s*',b.get('body',''),re.I):started=True
-                elif started and not source_entry(b):out.append(b)
+                elif started and not source_entry(b) and not re.fullmatch(r'\s*</?(?:section|div)\b[^>]*>\s*',b.get('body','')):out.append(b)
             return out
         assert bibliography(current)==bibliography(original),f'{page}: reference text changed'
+        if page=='results':
+            author_sections=0
+            for b in current['blocks']:
+                if b.get('_template')=='heading' and b.get('level')==2:
+                    assert author_sections==0,'results: raw author section crosses an h2 boundary'
+                body=b.get('body','')
+                if re.fullmatch(r'\s*<section class="author-manuscript"[^>]*>\s*',body):author_sections+=1
+                elif body.strip()=='</section>':author_sections-=1
+            assert author_sections==0,'results: unbalanced raw author section'
         for obj,key,_,_ in visible_fields(current):
             value=obj[key]
             assert not re.search(r'author-source-link|data-source-document|/source-archive/',value),f'{page}: source entry remains'

@@ -361,3 +361,7 @@ Gpr2/GPR2、GPA1、GAL80、基因与蛋白符号、株系、荧光染料商品�
 跨组复核补充：Contribution 的第六跨膜螺旋与色氨酸残基首次写为 `Transmembrane helix 6 (TM6) tryptophan residues (Trp)`，后续使用 TM6/Trp；精确残基 Gpr2 W338、Gpr3 W306、GprC W388 保持。
 
 跨组复核补充：Engineering gallery 的 DBD 定义之前增加 DNA 术语释义，首次写为 `deoxyribonucleic acid (DNA)`；DBD、PRD 和准确构建体名称保持。
+
+## Results 一级章节 DOM 结构修复
+
+将 DBTL-3 的 `author-manuscript` 开标签从 H2 前移到 H2 后；不改任何文字、图表、代码、anchor、链接或引用。此前原始 section 消耗了自动章节的闭标签，使章节 03 嵌套在章节 02 内，导致相邻一级章节间距失效。通过 `node tools/apply-rules-wet.mjs` 使用生产同款 Markdown 处理器在内存渲染，并由 parse5 检查真实 DOM：3 个 `doc-section` 同属 `reading-layout`，互为兄弟；全部可见文字及科研媒体、链接、标题属性保持完全相同。该验证不导出 Markdown、不构建网站，证据见 `术语表-wet-structure-validation.json`。

@@ -3743,7 +3743,7 @@
     "results": {
       "route": "results",
       "before_sha256": "2e68df4762cd468724de8737f922a1f991233bc41504d84d527ff882af94c12f",
-      "after_sha256": "af5675ddda693e1a63ce4b5447854cedb2ea2bb60075e74e644fe507c7bb9110",
+      "after_sha256": "ad2071c5d1045fd1a29a37a2ea5b71190cfeee18e9285e17f93ecceb0c901129",
       "heading_changes": [
         {
           "before": "1 DBTL-1: Heterologous Expression and Transmembrane Localization Verification of GPR2",
@@ -5107,7 +5107,8 @@
           "position": "blocks[156].body",
           "decision": "试剂化学名氧化态"
         }
-      }
+      },
+      "structure_fix": "Move the raw author-manuscript opener immediately after DBTL-3 h2 so automatic doc-section siblings stay balanced; no visible content changed."
     },
     "safety": {
       "route": "safety-and-security",
