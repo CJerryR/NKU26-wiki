@@ -92,8 +92,16 @@ function urlFor(atlas: AtlasSet): string {
   return url.startsWith('/') ? `${url}?v=${atlas.hash}` : url;
 }
 
+// New HP chapters share iHP's opening until their own scene is supplied.
+// A page-specific layout takes priority, including an explicitly disabled one.
+const SHARED_SCENES: Record<string, string> = {
+  'hp-overview': 'human-practices',
+  'hp-investigation': 'human-practices',
+  'hp-industry': 'human-practices',
+};
+
 export function getScene(page: string): ResolvedScene | null {
-  const entry = SCENES[page];
+  const entry = SCENES[page] ?? SCENES[SHARED_SCENES[page]];
   if (!entry || !entry.layout.enabled) return null;
   const { layout, atlas } = entry;
   const sets = {} as ResolvedScene['sets'];
