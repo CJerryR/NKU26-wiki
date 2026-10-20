@@ -1,11 +1,12 @@
 /* Transport only. Author app.js, eco.js, i18n.js and all Python calculations remain unchanged. */
 (()=>{
  const base=new URL('./',document.currentScript.src),nativeFetch=window.fetch.bind(window),worker=new Worker(new URL('worker.js',base),{type:'module'});
+ document.documentElement.dataset.nemaklearRuntimeStartedAt=String(performance.now());
  const mobileSheet=document.createElement('link');mobileSheet.rel='stylesheet';mobileSheet.href=new URL('mobile.css',base).href;document.head.append(mobileSheet);
  nativeFetch(new URL('asset-index.json',base)).catch(()=>{});
  let sequence=0;const jobs=new Map();
- worker.onmessage=({data})=>{if(data.type==='ready'){document.documentElement.dataset.nemaklearRuntime='ready';return;}const job=jobs.get(data.id);if(!job)return;jobs.delete(data.id);data.error?job.reject(Error(data.error)):job.resolve(data.response);};
- worker.onerror=e=>{for(const job of jobs.values())job.reject(Error(e.message||'Original Python runtime failed to load.'));jobs.clear();document.documentElement.dataset.nemaklearRuntime='error';};
+ worker.onmessage=({data})=>{if(data.type==='progress'){document.documentElement.dataset.nemaklearRuntimePhase=data.phase;window.dispatchEvent(new CustomEvent('nemaklear:runtime',{detail:data}));return;}if(data.type==='ready'){document.documentElement.dataset.nemaklearRuntime='ready';document.documentElement.dataset.nemaklearRuntimePhase='ready';window.dispatchEvent(new CustomEvent('nemaklear:runtime',{detail:data}));return;}const job=jobs.get(data.id);if(!job)return;jobs.delete(data.id);data.error?job.reject(Error(data.error)):job.resolve(data.response);};
+ worker.onerror=e=>{for(const job of jobs.values())job.reject(Error(e.message||'Original Python runtime failed to load.'));jobs.clear();document.documentElement.dataset.nemaklearRuntime='error';document.documentElement.dataset.nemaklearRuntimePhase='error';window.dispatchEvent(new CustomEvent('nemaklear:runtime',{detail:{type:'error',phase:'error'}}));};
  function request(method,url,payload,signal,type){return new Promise((resolve,reject)=>{const id=++sequence;if(signal?.aborted)return reject(new DOMException('Aborted','AbortError'));jobs.set(id,{resolve,reject});signal?.addEventListener('abort',()=>{jobs.delete(id);reject(new DOMException('Aborted','AbortError'));},{once:true});worker.postMessage({id,method,url,payload,type});});}
  window.fetch=async(input,init={})=>{const u=new URL(typeof input==='string'||input instanceof URL?input:input.url,location.href);if(u.origin===location.origin&&/^\/(?:api|report)\//.test(u.pathname)){const r=await request(init.method||'GET',u.pathname+u.search,init.body||'',init.signal);return new Response(typeof r.body==='string'?r.body:JSON.stringify(r.body),{status:r.status,headers:{'Content-Type':r.contentType}});}return nativeFetch(input,init);};
  // Use the supplied relative figure paths on both / and /nku-china/ deployments.

@@ -42,7 +42,7 @@ class DOM(HTMLParser):
 MODEL_MODULE_TITLES = {
     '#model-section-1': 'Molecular Docking',
     '#model-section-2': 'Molecular Dynamics',
-    '#model-section-3': 'ODE & Dual-channel modeling',
+    '#model-section-3': 'ODE & Dual-Channel Modeling',
     '#model-section-4': 'Economic Benefit',
 }
 

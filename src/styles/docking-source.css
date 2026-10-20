@@ -1,5 +1,5 @@
 /* Preserve the supplied Docking manuscript's compositions and original panel proportions. */
-.doc[data-page="model-docking"] .figure-text--right { grid-template-columns:minmax(0,5402fr) minmax(0,2877fr); gap:20px; }
+.doc[data-page="model-docking"] .figure-text--right:not(.figure-text--wrap) { grid-template-columns:minmax(0,5402fr) minmax(0,2877fr); gap:20px; }
 .doc[data-page="model-docking"] .figure__media { padding:0 !important; border:0 !important; border-radius:0 !important; box-shadow:none !important; background:none !important; }
 .doc[data-page="model-docking"] .figure__media img { border-radius:0; object-fit:contain; }
 .docking-source-figure { margin:1.5em 0; width:100%; min-width:0; }
@@ -12,6 +12,6 @@
 .docking-caption-only p + p { margin-top:.5em; }
 .docking-panel-scroll:focus-visible { outline:2px solid var(--iris); outline-offset:4px; }
 @media(max-width:700px) {
-  .doc[data-page="model-docking"] .figure-text--right { grid-template-columns:minmax(0,1fr); }
+  .doc[data-page="model-docking"] .figure-text--right:not(.figure-text--wrap) { grid-template-columns:minmax(0,1fr); }
   .docking-panel-row { min-width:680px; }
 }

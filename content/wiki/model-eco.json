@@ -29,7 +29,7 @@
     },
     {
       "_template": "html",
-      "title": "NemaKlear: ODE, Dual-channel modeling and economic analysis",
+      "title": "NemaKlear: ODE, dual-channel modeling and economic analysis",
       "file": "/widgets/nemaklear/index.html",
       "scripts": true,
       "height": 900

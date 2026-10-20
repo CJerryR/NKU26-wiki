@@ -28,7 +28,7 @@ test('Eco app follows the source introduction and precedes the first section', (
  assert.ok(app<blocks.findIndex(b=>b._template==='heading'));
  const apps=blocks.filter(b=>b._template==='html'&&b.file==='/widgets/nemaklear/index.html');
  assert.equal(apps.length,1);
- assert.equal(apps[0].title,'NemaKlear: ODE, Dual-channel modeling and economic analysis');
+ assert.equal(apps[0].title,'NemaKlear: ODE, dual-channel modeling and economic analysis');
  assert.equal(apps[0].scripts,true);
  assert.equal(apps[0].height,900);
  assert.ok(!blocks.some(b=>b.body?.includes('data-nemaklear-original')));

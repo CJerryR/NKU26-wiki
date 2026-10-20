@@ -18,7 +18,7 @@ class ContentRulesHeadingTests(unittest.TestCase):
         examples = (
             ("#model-section-1", "Molecular Docking: identifying receptor variants for differential recognition"),
             ("#model-section-2", "Molecular Dynamics: exploring receptor–ligand behavior in a membrane"),
-            ("#model-section-3", "ODE & Dual-channel modeling: linking color readouts to nematode density"),
+            ("#model-section-3", "ODE & Dual-Channel Modeling: linking color readouts to nematode density"),
             ("#model-section-4", "Economic Benefit: assessing when detection informs treatment"),
         )
         for anchor, label in examples:

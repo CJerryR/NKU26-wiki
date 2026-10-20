@@ -70,5 +70,35 @@
     "change": "Theme-aware solid table surface,16pxroundedcontainer,clearouterborder,lavendertableheader,subtlealternatingrows andcolumnseparators. Table data andmath unchanged.",
     "validation": "30-page buildPASS;desktoplight/darkcomputedtable/headercolorsdistinct;390pxmobilehorizontal scroll staysinsidetablewith no pageoverflow.",
     "preview": "http://127.0.0.1:58106/model-ode/#model-ode-section-3"
+  },
+  "review_followup": {
+    "baseline": "8a523c317650d115d5db006f4e75ed127dcb02f9",
+    "project_dependency": "43399c5339b3aabdc4a366c0e990001fb78a3bad",
+    "patch": "/Users/cjrmacbook/Documents/NKU26-model-review-20261021/changes.patch",
+    "patch_sha256": "0cc6eddd5b641d1e1fefff878eae92263c312095ccf49f617c1fd378e20939fa",
+    "scope": [
+      "Shared Project Tina wrap-left/wrap-right implementation; Docking Figure 1 and 3 complete figures wrap related prose; horizontal scientific figures remain full width",
+      "Review typography, six math-export parentheses, table caption, phone left alignment, MD own and alt labels",
+      "Restore pre-existing source terminology per Project rule; preserve ODE Sensing manuscript title and Figure/Table 3-x numbering",
+      "Compact Eco embed shows input and density result with real startup phases and elapsed time; full standalone app retains detailed panels"
+    ],
+    "limits": [
+      "No measured startup speedup claimed; first load still prepares Python runtime",
+      "Existing Eco 4.4 treatment-rules source table is empty and awaits team content",
+      "Scientific review metadata retained; technical validation is not scientific approval",
+      "Tina schema and lock verified locally; cloud save not exercised"
+    ],
+    "validation_status": "passed",
+    "validation": {
+      "build": "npm run verify PASS; 34 generated routes. Content audit exits 0 with 26 existing incomplete-content warnings; no zero-warning claim.",
+      "structure": "26 pages PASS; zero failures",
+      "captions": "90 captions PASS; zero failures",
+      "tests": "16 focused Node + 46 deployment Node + 20 Python tests PASS",
+      "browser": "1364px desktop: complete 40% figure floats with 28px gutter/16px bottom margin, body display contents and lines return to 928px full width. 390px: float none, body order0/figure order1, 20px gap, left alignment, zero horizontal overflow. Table1 14px/400.",
+      "eco": "Actual default sample Done:124.22; interval98.75–149.68 and calibration warning retained. Embed only input/result visible; full page includes ODE/Eco/gallery.",
+      "dbtl": "engineering.json, narrative.js, toolkit.css unchanged from followup baseline",
+      "shared": "Five shared implementation/schema files and shared image-wrap test use exact Project43399c5 implementation; Model old grid CSS scoped to non-wrap only."
+    },
+    "evidence_directory": "workspace/evidence/model-layout"
   }
 }

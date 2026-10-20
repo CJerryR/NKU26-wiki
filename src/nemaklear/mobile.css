@@ -1,4 +1,19 @@
 /* Presentation overrides only; the archived author application stays intact. */
+.wiki-embed main { padding-top: 10px; padding-bottom: 12px; }
+.wiki-embed [hidden] { display: none !important; }
+.wiki-embed .workspace { grid-template-columns: minmax(260px, .9fr) minmax(0, 1.35fr); gap: 16px; }
+.wiki-embed .results { min-width: 0; padding-top: 0; }
+.wiki-embed .resultbody { min-height: 0; padding: 20px; }
+.wiki-embed .inputs { padding: 20px; }
+.wiki-embed .embed-startup { margin: 8px 0; color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; }
+.wiki-embed .embed-startup[hidden] { display: none; }
+@media (max-width: 760px) {
+  .wiki-embed main { padding: 8px 14px 12px; }
+  .wiki-embed .workspace { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .wiki-embed .inputs, .wiki-embed .resultbody { padding: 17px 14px; }
+  .wiki-embed .results { padding-top: 0; }
+  .wiki-embed .method { margin-top: 10px; padding-top: 12px; }
+}
 @media (max-width: 650px) {
   main { padding-inline: 12px; }
   .panel, .resultbody { padding: 18px 14px; }

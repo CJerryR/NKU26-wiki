@@ -21,7 +21,7 @@ hidden: false
 
 :::manuscriptTitle
 
-Molecular Docking: Screening Receptor Variants for Ascaroside Discrimination
+Molecular Docking: screening receptor variants for ascaroside discrimination
 
 :::
 
@@ -33,7 +33,7 @@ We began by establishing comparable docking conditions, then used contact differ
 
 ## Receptor selection and docking setup {#model-docking-section-1 toc="Receptor selection and docking setup"}
 
-::::figuretext{side=right width=medium}
+::::figuretext{side=right width=medium flow=wrap}
 
 :::figure
 
@@ -45,13 +45,13 @@ Figure 1. Full-length Gpr2 WT structure predicted locally with AlphaFold 3 <sup>
 
 We initially examined three fungal <strong>G protein-coupled receptors (GPCRs)</strong> involved in ascaroside sensing: Gpr2 and Gpr3 <sup>[1]</sup>, and GprC <sup>[2]</sup>. We prepared receptor and ligand inputs using published pocket locations, contact residues and docking procedures as references. The AlphaFold 3 receptor structures used in docking and molecular dynamics were predicted locally with the official model parameters and reference databases <sup>[3]</sup>. We also considered their use in yeast. GprC has been reported at both the plasma membrane and mitochondria in its native fungal host <sup>[2]</sup>. We considered this a potential complication for localization and pathway integration in yeast, so we focused subsequent engineering on Gpr2, continued to investigate Gpr3 and its variants, and retained GprC as a structural reference.
 
-::::
-
 Initial checks revealed two input problems. Inconsistent coordinate frames between receptor structures and docking boxes displaced the search region from the intended pocket. Loss of chemical information, including formal charges, during format conversion also affected the identification of charged contacts. These findings made input validation a routine part of the workflow.
 
 We used structural superposition to place receptors, ligands, and docking boxes in a common coordinate frame, then checked the search region against membrane orientation and the receptor segments retained for docking. Atom mapping was used to check atom identities and coordinate correspondence between the original ligand SDF files and the PDBQT files. When the required Meeko metadata were retained in the PDBQT output, we exported the docked poses to SDF while restoring the original bond orders and formal charges for contact analysis <sup>[4]</sup>.
 
 Subsequent mutant comparisons used consistent ligand inputs and search settings. Original residue numbering was preserved so that docking scores could be traced to residue contacts. Published studies guided receptor selection and structural comparisons; input checks established consistent computational conditions; and docking with both ligands guided the design and screening of variants.
+
+::::
 
 <span id="src-Model-Docking-14" aria-hidden="true"></span>
 
@@ -69,7 +69,7 @@ Figure 2. Predicted docking poses and pocket environments of Gpr2 WT. (a, b) asc
 
 These analyses provided complementary information. Contact frequencies showed how often a residue contacted a ligand within the sampled conformations, while individual poses helped locate differences and identify side chains to test.
 
-::::figuretext{side=right width=medium}
+::::figuretext{side=right width=medium flow=wrap}
 
 :::figure
 
@@ -81,9 +81,9 @@ Figure 3. Initial mutation sites in Gpr2. N84, L90, V110, R181, W338, R345, and 
 
 We then replaced candidate residues with Ala to examine how simplifying each side chain changed the scores and contacts for both ligands. The initial sites were N84, L90, V110, R181, W338, R345, and V368. For each substitution, we generated a mutant sequence, predicted its structure with AlphaFold 3 <sup>[3]</sup>, and carried out structure preparation, docking, and contact comparisons with WT.
 
-::::
-
 Using the structures and WT reference from this initial round, N84A, V110A, and V368A all produced lower scores for ascr#3 and higher scores for ascr#18. We therefore prioritized N84, V110, and V368 for further side-chain comparisons. Score and contact changes at W338 and R181 also warranted further investigation. These results turned the initial contact observations into specific substitutions to test.
+
+::::
 
 <span id="src-Model-Docking-29" aria-hidden="true"></span>
 
@@ -99,7 +99,7 @@ Different substitutions at the same position produced distinct score shifts. For
 
 ## Comparing score changes for both ligands {#model-docking-section-4 toc="Comparing score changes for both ligands"}
 
-We described each variant’s shift using the difference between its WT-relative score changes for the two ligands. Let (G) denote the AutoDock Vina docking score <sup>[5]</sup>:
+We described each variant’s shift using the difference between its WT-relative score changes for the two ligands. Let $G$ denote the AutoDock Vina docking score <sup>[5]</sup>:
 
 <div class="model-equation"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>G</mi><mn>18</mn></msub><mo>=</mo><msub><mi>G</mi><mrow><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi></mrow><mo separator="true">,</mo><mn>18</mn></mrow></msub><mo>−</mo><msub><mi>G</mi><mrow><mrow><mi mathvariant="normal">W</mi><mi mathvariant="normal">T</mi></mrow><mo separator="true">,</mo><mn>18</mn></mrow></msub></mrow><annotation encoding="application/x-tex">&#92;Delta G&#95;{18}=G&#95;{&#92;mathrm{mut},18}-G&#95;{&#92;mathrm{WT},18}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord">Δ</span><span class="mord"><span class="mord mathnormal">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">18</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathrm mtight">mut</span></span><span class="mpunct mtight">,</span><span class="mord mtight">18</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathrm mtight">WT</span></span><span class="mpunct mtight">,</span><span class="mord mtight">18</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span></span></div>
 
@@ -109,7 +109,7 @@ We then calculated:
 
 <div class="model-equation"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi mathvariant="normal">Δ</mi><mi>G</mi><mo>=</mo><mi mathvariant="normal">Δ</mi><msub><mi>G</mi><mn>18</mn></msub><mo>−</mo><mi mathvariant="normal">Δ</mi><msub><mi>G</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">&#92;Delta&#92;Delta G=&#92;Delta G&#95;{18}-&#92;Delta G&#95;{3}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.6833em;"></span><span class="mord">ΔΔ</span><span class="mord mathnormal">G</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord">Δ</span><span class="mord"><span class="mord mathnormal">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">18</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord">Δ</span><span class="mord"><span class="mord mathnormal">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></div>
 
-A negative ($\Delta G$) indicates a lower score than WT for that ligand. Under this definition, a positive ($\Delta\Delta G$) indicates a shift toward ascr#3 relative to WT, whereas a negative value indicates a shift toward ascr#18. These quantities describe docking-score changes rather than thermodynamic binding free-energy changes. Binding affinity and selectivity require experimental evaluation.
+A negative $\Delta G$ indicates a lower score than WT for that ligand. Under this definition, a positive $\Delta\Delta G$ indicates a shift toward ascr#3 relative to WT, whereas a negative value indicates a shift toward ascr#18. These quantities describe docking-score changes rather than thermodynamic binding free-energy changes. Binding affinity and selectivity require experimental evaluation.
 
 We also examined the two score changes separately. A lower score for the target ligand, a higher score for the other ligand, or both could produce a shift in the same direction, but would imply different candidate profiles.
 
@@ -133,7 +133,7 @@ The single-mutant results led us to test whether substitutions with similar scor
 
 We designed combinations based on the direction and components of each score shift, then compared them with WT and both single-mutant parents. Comparisons with WT showed whether the original direction was retained; comparisons with the parents showed whether the combination offered an additional improvement.
 
-The N84V/V110C double mutant illustrates this approach. Both single mutants shifted toward ascr#18, so we aimed to combine the larger score separation of N84V with the greater improvement in the ascr#18 score of V110C. The double mutant instead yielded ($\Delta G_{18}=-0.081$) kcal/mol and ($\Delta G_{3}=-0.411$) kcal/mol, giving ($\Delta\Delta G=+0.330$) kcal/mol. The ascr#3 score decreased more, reversing the direction observed in the single mutants.
+The N84V/V110C double mutant illustrates this approach. Both single mutants shifted toward ascr#18, so we aimed to combine the larger score separation of N84V with the greater improvement in the ascr#18 score of V110C. The double mutant instead yielded $\Delta G_{18}=-0.081$ kcal/mol and $\Delta G_{3}=-0.411$ kcal/mol, giving $\Delta\Delta G=+0.330$ kcal/mol. The ascr#3 score decreased more, reversing the direction observed in the single mutants.
 
 Contact analysis showed that the ascr#18 pose retained an ionic contact with R189 and a hydrophobic contact with W338. Nevertheless, its score was 0.480 kcal/mol higher than that of V110C. Retaining these contacts was therefore insufficient to explain the overall score: the complete pose and surrounding contact network also needed to be considered.
 

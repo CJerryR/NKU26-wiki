@@ -9,10 +9,10 @@
 .model-manuscript .model-chapter-links img { width:100%;height:auto;aspect-ratio:1;object-fit:contain;border-radius:10px; }
 .model-manuscript .model-chapter-links span { font-size:14px;line-height:1.4;font-weight:600; }
 .model-manuscript .model-chapter-links + blockquote { margin-block:12px 32px;padding:0;border:0;font-size:13px;line-height:1.5;color:var(--ink-2); }
-.doc .prose .model-manuscript .figure-text { align-items:start;gap:24px;margin-block:24px; }
-.doc .prose .model-manuscript .figure-text--right { grid-template-columns:minmax(0,1fr) minmax(0,44%); }
-.doc .prose .model-manuscript .figure-text > .figure { margin:0; }
-.doc .prose .model-manuscript .figure-text__body > :first-child { margin-top:0; }
+.doc .prose .model-manuscript .figure-text:not(.figure-text--wrap) { align-items:start;gap:24px;margin-block:24px; }
+.doc .prose .model-manuscript .figure-text--right:not(.figure-text--wrap) { grid-template-columns:minmax(0,1fr) minmax(0,44%); }
+.doc .prose .model-manuscript .figure-text:not(.figure-text--wrap) > .figure { margin:0; }
+.doc .prose .model-manuscript .figure-text:not(.figure-text--wrap) .figure-text__body > :first-child { margin-top:0; }
 .doc .prose .model-manuscript .figure__media img { width:auto;max-width:100%;height:auto;max-height:none; }
 .doc .prose .model-manuscript figcaption { max-width:100%;margin-inline:0;text-align:left; }
 /* Keep Model data tables distinct from the manuscript's paper background. */
@@ -32,7 +32,7 @@
 .model-source-table td:first-child { font-weight:500; }
 .model-manuscript .katex-display { max-width:100%;overflow:auto;padding-block:10px; }
 @media(max-width:760px) {
- .doc .prose .model-manuscript .figure-text--right { grid-template-columns:minmax(0,1fr); }
+ .doc .prose .model-manuscript .figure-text--right:not(.figure-text--wrap) { grid-template-columns:minmax(0,1fr); }
  .model-manuscript .model-chapter-links { grid-template-columns:repeat(2,minmax(0,1fr));gap:12px; }
  .model-manuscript .model-chapter-links img { max-width:150px; }
 }
@@ -40,16 +40,16 @@
 
 /* Keep submitted Model prose readable while figures share its outer edges. */
 .doc[data-page^="model"] .prose { max-width:58rem; justify-self:start; }
-.doc .prose .model-manuscript .figure-text--right { grid-template-columns:minmax(0,1fr) minmax(0,34%); }
-.doc .prose .model-manuscript .figure-text__body { min-width:0; }
-.doc .prose .model-manuscript .figure-text--right > .figure-text__body { grid-column:1;grid-row:1; }
-.doc .prose .model-manuscript .figure-text--right > .figure { grid-column:2;grid-row:1; }
+.doc .prose .model-manuscript .figure-text--right:not(.figure-text--wrap) { grid-template-columns:minmax(0,1fr) minmax(0,34%); }
+.doc .prose .model-manuscript .figure-text:not(.figure-text--wrap) .figure-text__body { min-width:0; }
+.doc .prose .model-manuscript .figure-text--right:not(.figure-text--wrap) > .figure-text__body { grid-column:1;grid-row:1; }
+.doc .prose .model-manuscript .figure-text--right:not(.figure-text--wrap) > .figure { grid-column:2;grid-row:1; }
 .model-manuscript .katex-display { display:block;text-align:center; }
 .model-manuscript .wiki-media--application { margin-block:28px;min-width:0; }
 @media(max-width:760px) {
- .doc .prose .model-manuscript .figure-text--right { grid-template-columns:minmax(0,1fr); }
- .doc .prose .model-manuscript .figure-text--right > .figure-text__body,
- .doc .prose .model-manuscript .figure-text--right > .figure { grid-column:auto;grid-row:auto; }
+ .doc .prose .model-manuscript .figure-text--right:not(.figure-text--wrap) { grid-template-columns:minmax(0,1fr); }
+ .doc .prose .model-manuscript .figure-text--right:not(.figure-text--wrap) > .figure-text__body,
+ .doc .prose .model-manuscript .figure-text--right:not(.figure-text--wrap) > .figure { grid-column:auto;grid-row:auto; }
 }
 
 /* The submitted overview is a row of illustrations, with no card containers. */
@@ -61,3 +61,18 @@
 .model-manuscript .model-equation .katex-display { margin:0; }
 
 /* Scientific image blocks inherit the same framed Tina figure treatment as Project. */
+
+/* A table title sitting directly above a Model table reads as a caption, like figure captions. */
+.doc .prose .model-manuscript p:has(> strong:only-child):has(+ .model-table-scroll) {
+  margin: 28px 0 -12px !important;
+  font-size: 14px !important;
+  line-height: 1.55 !important;
+  text-align: left !important;
+  color: var(--ink-3);
+}
+.doc .prose .model-manuscript p:has(> strong:only-child):has(+ .model-table-scroll) > strong { font-weight: 400; color: inherit; }
+
+/* Narrow columns leave wide gaps when justified, so Model prose is left-aligned on phones. */
+@media(max-width:760px) {
+  .doc .prose .model-manuscript p:not(.manuscript-title) { text-align: left !important; }
+}

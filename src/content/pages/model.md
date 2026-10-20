@@ -25,21 +25,21 @@ Model Overview
 
 How can nematode chemical signals in soil help guide agricultural management? Our modeling work explores this question from receptor recognition to color readout, target nematode density, and treatment decisions. Four complementary components support sensor design, experimental calibration, and assessment of the potential value of detection.
 
-<nav class="model-chapter-links" aria-label="Model chapters"><a href="/model-docking/"><img src="https://static.igem.wiki/teams/6303/wiki/release-20261020/model-b9a0bc880ff5.webp" width="1024" height="1024" alt="" loading="lazy" decoding="async"><span>Molecular Docking</span></a><a href="/model-md/"><img src="https://static.igem.wiki/teams/6303/wiki/release-20261020/model-924062c2f7ac.webp" width="1024" height="1024" alt="" loading="lazy" decoding="async"><span>Molecular Dynamics</span></a><a href="/model-ode/"><img src="https://static.igem.wiki/teams/6303/wiki/release-20261020/model-51cd59b3873b.webp" width="1024" height="1024" alt="" loading="lazy" decoding="async"><span>ODE &amp; Dual-channel modeling</span></a><a href="/model-eco/"><img src="https://static.igem.wiki/teams/6303/wiki/release-20261020/model-5d23c4029c73.webp" width="1024" height="1024" alt="" loading="lazy" decoding="async"><span>Economic Benefit</span></a></nav>
+<nav class="model-chapter-links" aria-label="Model chapters"><a href="/model-docking/"><img src="https://static.igem.wiki/teams/6303/wiki/release-20261020/model-b9a0bc880ff5.webp" width="1024" height="1024" alt="" loading="lazy" decoding="async"><span>Molecular Docking</span></a><a href="/model-md/"><img src="https://static.igem.wiki/teams/6303/wiki/release-20261020/model-924062c2f7ac.webp" width="1024" height="1024" alt="" loading="lazy" decoding="async"><span>Molecular Dynamics</span></a><a href="/model-ode/"><img src="https://static.igem.wiki/teams/6303/wiki/release-20261020/model-51cd59b3873b.webp" width="1024" height="1024" alt="" loading="lazy" decoding="async"><span>ODE &amp; Dual-Channel Modeling</span></a><a href="/model-eco/"><img src="https://static.igem.wiki/teams/6303/wiki/release-20261020/model-5d23c4029c73.webp" width="1024" height="1024" alt="" loading="lazy" decoding="async"><span>Economic Benefit</span></a></nav>
 
 > Generated with OpenAI GPT Image 2.
 
 ## Molecular Docking: identifying receptor variants for differential recognition {#model-section-1 toc="Molecular Docking: identifying receptor variants for differential recognition"}
 
-We compared how Gpr2 variants interact with two ascarosides, ascr#18 and ascr#3, using docking scores and receptor–ligand contacts. These comparisons guided the selection of N84V and V368R for further study as candidates with contrasting predicted ligand preferences.
+We compared how Gpr2 variants interact with two ascarosides, <strong>ascaroside #18 (ascr#18)</strong> and <strong>ascaroside #3 (ascr#3)</strong>, using docking scores and receptor–ligand contacts. These comparisons guided the selection of N84V and V368R for further study as candidates with contrasting predicted ligand preferences.
 
 ## Molecular Dynamics: exploring receptor–ligand behavior in a membrane {#model-section-2 toc="Molecular Dynamics: exploring receptor–ligand behavior in a membrane"}
 
 Starting from docked poses, we simulated receptor–ligand complexes in a membrane environment to examine receptor motion, ligand positioning, and changes in molecular contacts. These simulations provide structural clues for interpreting the candidates and formulating hypotheses for experimental testing.
 
-## ODE & Dual-channel modeling: linking color readouts to nematode density {#model-section-3 toc="ODE & Dual-channel modeling: linking color readouts to nematode density"}
+## ODE & Dual-Channel Modeling: linking color readouts to nematode density {#model-section-3 toc="ODE & Dual-Channel Modeling: linking color readouts to nematode density"}
 
-Our <strong>ordinary differential equation (ODE)</strong> model connects receptor input to yeast signaling and pigment production, with simulated pigment outputs translated into smartphone color features. The dual-channel model combines two complementary sensor responses to explore density estimation for the southern root-knot nematode (<em>Meloidogyne incognita</em>) when background nematode abundance is unknown. Together, these models provide a framework for experimental calibration.
+Our <strong>ordinary differential equation (ODE)</strong> model connects receptor input to yeast signaling and pigment production, with simulated pigment outputs translated into smartphone color features. The dual-channel model combines two complementary sensor responses to explore density estimation for the southern root-knot nematode (<strong><em>Meloidogyne incognita</em> (<em>Mi</em>)</strong>) when background nematode abundance is unknown. Together, these models provide a framework for experimental calibration.
 
 ## Economic Benefit: assessing when detection informs treatment {#model-section-4 toc="Economic Benefit: assessing when detection informs treatment"}
 

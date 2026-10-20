@@ -9,10 +9,10 @@ const root=process.cwd(), source=path.join(root,'vendor/nemaklear-original'),des
 const runtime=path.join(root,'node_modules/pyodide');const cache=path.resolve(root,'../../tmp/nemaklear-browser-runtime/package');
 const sha=b=>crypto.createHash('sha256').update(b).digest('hex');
 await fs.mkdir(dest,{recursive:true});await fs.cp(path.join(source,'app/public'),dest,{recursive:true});
-for(const file of ['bridge.js','worker.js','mobile.css'])await fs.copyFile(path.join(root,'src/nemaklear',file),path.join(dest,file));
+for(const file of ['bridge.js','worker.js','mobile.css','embed-view.js'])await fs.copyFile(path.join(root,'src/nemaklear',file),path.join(dest,file));
 // Presentation copy only: scientific source files in vendor retain all original hashes.
 const index=await fs.readFile(path.join(source,'app/public/index.html'),'utf8');
-await fs.writeFile(path.join(dest,'index.html'),index.replace(/(src|href)="\/(?!\/)/g,'$1="./').replace('<script src="./i18n.js">','<script src="./bridge.js"></script><script src="./i18n.js">'));
+await fs.writeFile(path.join(dest,'index.html'),index.replace(/(src|href)="\/(?!\/)/g,'$1="./').replace('<script src="./i18n.js">','<script src="./bridge.js"></script><script src="./i18n.js">').replace('</body>','<script src="./embed-view.js"></script></body>'));
 const files=[];
 async function scan(dir,prefix=''){for(const e of await fs.readdir(dir,{withFileTypes:true})){const rel=path.posix.join(prefix,e.name),full=path.join(dir,e.name);if(e.isDirectory())await scan(full,rel);else if(/\.(py|json|csv)$/.test(e.name)){const b=await fs.readFile(full);files.push({path:rel,sha256:sha(b),text:b.toString('utf8')});}}}
 const publicFiles=[];async function publicScan(dir,prefix=''){for(const e of await fs.readdir(dir,{withFileTypes:true})){const rel=path.posix.join(prefix,e.name);if(e.isDirectory())await publicScan(path.join(dir,e.name),rel);else if(rel.startsWith('figures/'))publicFiles.push(rel);}}await publicScan(path.join(source,'app/public'));await fs.writeFile(path.join(dest,'asset-index.json'),JSON.stringify(publicFiles));

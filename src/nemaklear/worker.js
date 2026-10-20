@@ -3,6 +3,7 @@ import createPyodideModule from './runtime/pyodide-core.js';
 const base=new URL('./runtime/',import.meta.url),nativeFetch=globalThis.fetch.bind(globalThis),payloads=new Map();
 let py,invoke;const pending=new Map();
 const ready=(async()=>{
+ postMessage({type:'progress',phase:'loading-runtime'});
  const manifest=await(await nativeFetch(new URL('runtime-manifest.json',base))).json();
  const entries=new Map(manifest.files.map(f=>[f.name,f]));
  const cache=typeof caches==='undefined'?null:await caches.open('nemaklear-verified-runtime-v1').catch(()=>null);
@@ -37,6 +38,7 @@ const ready=(async()=>{
  };
  const lock=await(await nativeFetch(new URL('pyodide-lock.json',base))).json();
  py=await loadPyodide({indexURL:base.href,packageBaseUrl:base.href,lockFileContents:lock,createPyodideModule,packages:['numpy','scipy']});
+ postMessage({type:'progress',phase:'preparing-model'});
  const sources=await(await nativeFetch(new URL('source-files.json',import.meta.url))).json();
  for(const file of sources.files){const dest='/submission/app/'+file.path;py.FS.mkdirTree(dest.slice(0,dest.lastIndexOf('/')));py.FS.writeFile(dest,file.text);}
  await py.runPythonAsync(`import sys, json, io\nsys.dont_write_bytecode=True\nsys.path.insert(0,'/submission/app')\nimport server\ndef wiki_request(method, url, payload):\n    handler=object.__new__(server.Handler)\n    handler.path=url\n    encoded=payload.encode('utf-8')\n    handler.headers={'Content-Length':str(len(encoded)), 'Host':'local-browser'}\n    handler.rfile=io.BytesIO(encoded)\n    response={}\n    def capture(code, content, content_type='application/json; charset=utf-8'):\n        response.update(status=code,body=content,contentType=content_type)\n    handler.send=capture\n    if method=='POST':\n        handler.do_POST()\n    else:\n        handler.do_GET()\n    return json.dumps(response,ensure_ascii=False,allow_nan=False)\n`);
