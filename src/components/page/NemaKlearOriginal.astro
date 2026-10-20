@@ -1,18 +1,17 @@
 ---
-/** The author-supplied page, with Python running in a dedicated browser worker. */
+/** Resize the trusted author application rendered from a Tina HTML block. */
 ---
-<div data-nemaklear-frame>
-  <iframe data-original-src="widgets/nemaklear/index.html?embed=1" title="NemaKlear — original ODE, two-channel and Eco application" loading="eager" style="width:100%;min-height:900px;border:0;display:block" allow="clipboard-write"></iframe>
-</div>
 <script>
- const mount=document.querySelector<HTMLElement>('[data-nemaklear-frame]');
- const frame=mount?.querySelector<HTMLIFrameElement>('iframe');
- if(mount&&frame){
-  document.querySelector('[data-nemaklear-original]')?.append(mount);
-  const source=frame.dataset.originalSrc!;
-  // Respect the team's base path in a built static site.
-  const root=new URL('../',location.href);frame.src=new URL(source.replace(/^\//,''),root).href;
-  frame.addEventListener('load',()=>frame.contentWindow?.postMessage({type:'nemaklear:init'},location.origin));
-  window.addEventListener('message',e=>{if(e.source!==frame.contentWindow||e.origin!==location.origin||e.data?.type!=='nemaklear:height')return;const h=Number(e.data.height);if(Number.isFinite(h)&&h>0)frame.style.height=`${Math.ceil(h)+2}px`;});
+ const frames=Array.from(document.querySelectorAll<HTMLIFrameElement>('iframe[data-nemaklear-app]'));
+ for(const frame of frames){
+  const initialize=()=>frame.contentWindow?.postMessage({type:'nemaklear:init'},location.origin);
+  frame.addEventListener('load',initialize);
+  initialize();
  }
+ window.addEventListener('message',e=>{
+  if(e.origin!==location.origin||e.data?.type!=='nemaklear:height')return;
+  const frame=frames.find(frame=>e.source===frame.contentWindow);
+  const height=Number(e.data.height);
+  if(frame&&Number.isFinite(height)&&height>0)frame.style.height=`${Math.ceil(height)+2}px`;
+ });
 </script>

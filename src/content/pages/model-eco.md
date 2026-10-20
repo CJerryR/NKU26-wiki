@@ -13,136 +13,116 @@ meta: {}
 draft: false
 hidden: false
 ---
-<div class="reading-layout" lang="en">
+<div class="reading-layout model-manuscript" lang="en">
 
-<section class="author-manuscript" lang="en">
+:::manuscriptTitle
 
-<span id="src-Model-Eco-1" class="legacy-section-anchor" aria-hidden="true"></span>
-
-:::lead
-
-Economic Benefit | from color readouts to management decisions
+Eco: from color readouts to management decisions
 
 :::
 
-:::lead
+<strong>When growers can already apply a uniform treatment, how much additional benefit can nematode density information provide?</strong>
 
-<p> We developed the <strong> NemaKlear interactive web app </strong> to connect <strong>ordinary differential equation (ODE)</strong> color simulations, dual-channel density estimation, and economic analysis. Readers can choose simulated soil samples or enter paired absorbance readings, view target nematode density, and compare single-season net returns under different management strategies. </p>
+We developed the NemaKlear interactive web tool to explore this question. It connects ODE simulations of color development, dual-channel density estimation, and economic analysis. Users can select simulated soil samples or enter paired absorbance readings, estimate target nematode density, and compare net income across management strategies for a single growing season.
 
-:::
+<figure class="wiki-media wiki-media--html wiki-media--application"><div class="wiki-media__bar"><span class="wiki-media__kind">Model explorer</span><span class="wiki-media__title">NemaKlear: ODE, Dual-channel modeling and economic analysis</span><a class="wiki-media__action" href="/widgets/nemaklear/index.html" target="_blank" rel="noopener noreferrer">Open full page</a></div><iframe class="wiki-media__frame" data-nemaklear-app src="/widgets/nemaklear/index.html?embed=1" title="NemaKlear: ODE, Dual-channel modeling and economic analysis" loading="eager" allow="clipboard-write; fullscreen" style="height:900px" referrerpolicy="no-referrer"></iframe></figure>
 
-<p> The app lets us directly explore a question: <strong> When growers already have the option of uniform treatment, how much additional return can knowledge of nematode density provide? </strong> The Eco model therefore connects density with potential yield loss, treatment costs, and testing costs to examine when density information changes management choices and whether that change covers the costs of acquiring information and adjusting treatment. </p>
+Eco links density to potential yield loss, treatment costs, and testing costs. It examines when density information changes a management decision and whether the resulting benefit covers the cost of testing and adjusting treatment.
 
-## Exploring the connection from color to returns in the interactive app {#src-Model-Eco-4 toc="Exploring the connection from color to returns in the interactive app"}
+## Exploring the path from color to net income {#src-Model-Eco-4 toc="Exploring the path from color to net income"}
 
-<p> In NemaKlear, readers can follow model outputs through color response → density estimation → management choice → economic outcome. </p>
+NemaKlear follows a four-step workflow:
 
-<p> The app offers two input modes: </p>
+<strong>Color response → Density estimate → Management choice → Economic outcome</strong>
 
-<p> **Simulated soil samples:** select samples to observe time-dependent paired color development and corresponding density estimates. </p>
+The tool offers two input modes:
 
-<p> **Manual readings:** enter paired A480 readings for direct density estimation. ODE curves in this mode are shown as references. </p>
+<strong>Simulated soil samples:</strong> Select a sample to explore color development over time in both channels and the corresponding density estimate.
 
-<p> After estimating density, the app displays the management tier, potential yield loss, and net-return tables and curves for no testing and no treatment, no testing with uniform treatment, and testing followed by tiered treatment. Readers can compare tiered treatment against both baselines and switch between the density point estimate, prediction-interval endpoints, and adjacent scenarios when tier boundaries are crossed to see how density judgments affect treatment choices. </p>
+<strong>Manual readings:</strong> Enter paired absorbance readings at 480 nm (A480) to estimate density directly. In this mode, ODE curves are displayed for reference.
 
-<p> Three questions guide exploration: </p>
+The results bring together the management tier, potential yield loss, and net-income tables and curves for three scenarios: no testing and no control, uniform treatment without testing, and test-guided treatment. Users can compare the density point estimate with the prediction-interval endpoints and, when the interval crosses a management threshold, inspect scenarios on either side.
 
-<p> At low densities, can testing help reduce unnecessary treatment? </p>
+These comparisons show how testing may reduce unnecessary treatment at low densities, add a cost when it leaves treatment unchanged, or support a more effective treatment at higher densities. A full report provides model parameters, sensitivity analyses, and downloadable results for further review.
 
-<p> When tiered and uniform treatment are identical, how does testing cost affect net returns? </p>
+## Connecting color readouts and economics through density {#src-Model-Eco-15 toc="Connecting color readouts and economics through density"}
 
-<p> At high densities, can additional benefits of intensified treatment cover its added costs? </p>
+The three models perform consecutive tasks. The ODE model describes how receptor input produces a color response through intracellular signaling. The dual-channel model uses paired color features to estimate the density of the southern root-knot nematode, <em>Meloidogyne incognita</em>, while accounting for signals contributed by background nematodes. Eco then combines the density estimate with crop and management parameters to calculate economic outcomes.
 
-<p> The app also provides a full report for reviewing parameters and sensitivity analyses and downloading calculations for verification. </p>
+For simulated soil samples, the calculation proceeds as follows:
 
-## Connecting color development and economic analysis through density {#src-Model-Eco-15 toc="Connecting color development and economic analysis through density"}
+<strong>ODE color output → Endpoint absorbance and blank correction → Dual-channel density regression → Economic comparison of management scenarios</strong>
 
-<p> The ODE, dual-channel model, and Eco perform three sequential tasks. The ODE describes how receptor input generates color through intracellular pathways; the dual-channel model uses paired color features to estimate southern root-knot nematode density when background nematodes also contribute; Eco combines density estimates with production and management parameters to calculate economic outcomes. </p>
+Density is expressed as second-stage juveniles per 100 cm³ of soil (J2/100 cm³). Both readings undergo the same processing used for calibration. Unit and applicability checks are performed before the regression output enters Eco. Economic parameters come independently from literature and scenario assumptions; density connects the color readout to the economic calculation.
 
-<p> For simulated soil samples, the calculation proceeds as follows: </p>
+The interface retains both the density point estimate and its regression prediction interval. If the interval crosses a management threshold, the tool evaluates scenarios on both sides to show how treatment choice and net income may change. Negative estimates and values outside the calibration or economic model range are blocked from further calculation. The interface also displays the calibration status and applicable conditions.
 
-<p><strong> ODE color output → endpoint absorbance and blank correction → dual-channel density regression → Eco management-scenario comparison. </strong></p>
+## Calculating yield loss and net income {#src-Model-Eco-21 toc="Calculating yield loss and net income"}
 
-<p> Density is standardized as <strong>second-stage juveniles (J2)</strong> per 100 cm³ soil (J2/100 cm³). Paired readings are processed consistently with calibration, and regression results enter Eco after unit and applicability checks. Economic parameters come independently from literature and scenario settings; density connects color and returns. </p>
+Our demonstration considers protected tomato production in Spain affected by <em>M. incognita</em>. It uses pre-plant nematode density and calculates net income per hectare for one growing season.
 
-<p> The interface retains both density point estimates and regression prediction intervals. When an interval crosses a management-tier boundary, the program calculates scenarios on both sides to show possible changes in treatment choices and returns. Negative densities and results outside calibration or economic-model support ranges are not passed downstream; the page explains calibration status and applicability conditions. </p>
+We describe the relationship between density and relative yield using a Seinhorst model, with parameters from the spring experiment on ungrafted tomato reported by Expósito et al. (2020) <sup>[1]</sup>. Below the tolerance density, predicted relative yield remains at its baseline level. Above this density, relative yield declines toward a lower limit. In our example, the converted tolerance density is <strong>6 J2/100 cm³</strong> and the minimum relative yield is <strong>0.34</strong>.
 
-## Calculating yield loss and net returns from nematode density {#src-Model-Eco-21 toc="Calculating yield loss and net returns from nematode density"}
+The economic calculation is:
 
-<p> We use Spanish protected tomato production and the southern root-knot nematode as an example, calculating returns per hectare per production season from preplanting density. </p>
+<strong>Seasonal net income = Revenue after residual nematode damage − Base production cost − Treatment cost − Testing cost</strong>
 
-<p> Density and relative yield are linked by the Seinhorst loss relationship, parameterized from Expósito et al.'s (2020) fit for a spring trial of ungrafted tomato. Below the tolerance level, yield remains normal in the model; above it, relative yield decreases toward a lower limit as density rises. The converted tolerance density in this example is <strong>6 J2/100 cm³</strong>, and the minimum relative yield is <strong>0.34</strong>。<a href="https://doi.org/10.3389/fpls.2020.560024">1</a></p>
+Economic and treatment inputs draw on Talavera-Rubia et al. (2022) <sup>[2]</sup>. To represent treatment effects, we first apply the reported population-reduction rates at a reference density of <strong>100 J2/100 cm³</strong>. We then use the density–yield relationship to calculate the fraction of yield loss avoided. This fraction is held constant across density scenarios, a simplifying assumption of the demonstration.
 
-<p> The model then incorporates crop selling price, base production cost, treatment cost, and treatment efficacy to calculate: </p>
+The model combines yield relationships and economic parameters from different studies into a reproducible literature-based scenario. Testing costs are set at <strong>EUR 5/ha</strong> as a team assumption. Sources for prices, treatment costs, and derived treatment effects are retained so that these inputs can be updated for a specific application.
 
-<p><strong> Single-season net return = sales revenue after residual nematode losses − base production cost − treatment cost − testing cost. </strong></p>
+## Comparing test-guided treatment with two baselines {#src-Model-Eco-28 toc="Comparing test-guided treatment with two baselines"}
 
-<p> Economic and treatment information follows Talavera-Rubia et al. (2022). <a href="https://doi.org/10.3390/plants11202774">2</a> We first convert the published population-reduction rate into the fraction of loss avoided using the density–yield relationship at a reference density of 100 J2/100 cm³, then keep that fraction fixed across density scenarios. Thus, <strong> a density-independent fraction of loss avoided </strong> is a simplifying assumption of this example. </p>
+An increase in income after testing can reflect both the benefit of nematode control and the benefit of choosing treatment using density information. To distinguish these effects, we compare three scenarios:
 
-<p> The model combines yield relationships and economic parameters from different studies into a reproducible literature-based scenario. Testing cost is provisionally set to <strong>5 EUR/ha</strong> as a team assumption. Sources are retained for published prices, treatment costs, and converted efficacy so these can be updated for actual application conditions. </p>
+<div class="model-table-scroll" tabindex="0"><table class="model-source-table"><thead><tr><th scope="col">Scenario</th><th scope="col">Management approach</th></tr></thead><tbody><tr><td>No testing, no control</td><td>No additional nematode-specific treatment</td></tr><tr><td>No testing, uniform treatment</td><td>The same fluopyram program is applied regardless of density</td></tr><tr><td>Test-guided treatment</td><td>The density estimate determines whether to use no dedicated control, a medium-tier treatment, or a high-tier treatment</td></tr></tbody></table></div>
 
-## Using two baselines to distinguish control benefits from information value {#src-Model-Eco-28 toc="Using two baselines to distinguish control benefits from information value"}
+The test-guided scenario follows the preset rules below. Treatment options are drawn from the literature <sup>[2]</sup>.
 
-<p> Higher returns after testing can reflect both control itself and density-based treatment adjustment. We therefore define three management scenarios to separate these contributions. </p>
+The management thresholds of <strong>10 and 80 J2/100 cm³</strong> are preset decision rules. They serve a different purpose from the yield model’s tolerance density of <strong>6 J2/100 cm³</strong>. The model separately compares the net income of all candidate treatments to check whether the preset choice matches the highest-income option under the current parameters.
 
-<p style="text-align:center;"><strong> Click the image to view the complete spreadsheet </strong></p>
+We calculate two net-income differences:
 
-<p> Tiered treatment follows the preset rules below, with treatment information from reference <a href="https://doi.org/10.3390/plants11202774">2</a>。</p>
+<strong>Benefit relative to no control</strong>= Net income with test-guided treatment − Net income without testing or control.
 
-<p style="text-align:center;"><strong> Click the image to view the complete spreadsheet </strong></p>
+<strong>Benefit relative to uniform treatment</strong>= Net income with test-guided treatment − Net income with uniform treatment without testing.
 
-<p> Here, 10 and 80 J2/100 cm³ are preset management-tier boundaries, whereas 6 J2/100 cm³ is the yield curve's tolerance density; they serve different purposes. The model separately compares net returns for candidate strategies to check whether the preset tiers match the highest-return option under current parameters. </p>
+The first comparison evaluates the combined testing-and-control program. The second measures the conditional additional benefit of using density information when uniform treatment is already available. Reporting both makes the source of the economic benefit explicit.
 
-<p> We calculate two return differences: </p>
+## When is density information worth obtaining? {#src-Model-Eco-40 toc="When is density information worth obtaining?"}
 
-<p><strong> Net-return improvement over no treatment </strong><br> = net return from testing followed by tiered treatment − net return from no testing and no treatment. </p>
+At <strong>100 J2/100 cm³</strong>, with all other inputs held at their example values, the model gives:
 
-<p><strong> Net-return improvement over uniform treatment </strong><br> = net return from testing followed by tiered treatment − net return from no testing with uniform treatment. </p>
+<div class="model-table-scroll" tabindex="0"><table class="model-source-table"><thead><tr><th scope="col">Comparison baseline</th><th scope="col">Increase in seasonal net income with test-guided treatment</th></tr></thead><tbody><tr><td>No testing, no control</td><td>EUR 17,028.48/ha</td></tr><tr><td>No testing, uniform treatment</td><td>EUR 496.26/ha</td></tr></tbody></table></div>
 
-<p> The first evaluates the entire testing-and-tiered-treatment package; the second evaluates the conditional value of using density information to adjust action when uniform treatment is already available. Separating the baselines helps identify whether increased returns arise from implementing control or changing treatment after obtaining information. </p>
+The <strong>EUR 17,028.48/ha</strong> increase represents the benefit of the combined program relative to leaving nematodes untreated. The <strong>EUR 496.26/ha</strong> increase represents the additional benefit of changing treatment relative to the uniform-treatment baseline. In this scenario, the extra losses avoided by the high-tier treatment cover both the additional treatment expense and the testing cost.
 
-## When density information is worth obtaining {#src-Model-Eco-40 toc="When density information is worth obtaining"}
+The role of density information changes across the density range:
 
-<p> At a density of <strong>100 J2/100 cm³</strong>, with all other parameters at the example settings, the model gives the following results: </p>
+<strong>At low densities,</strong> testing may help avoid unnecessary treatment.
 
-<p style="text-align:center;"><strong> Click the image to view the complete spreadsheet </strong></p>
+<strong>At intermediate densities,</strong> test-guided and uniform management use the same treatment. Their net-income difference is <strong>−EUR 5/ha</strong>, equal to the added testing cost.
 
-<p> The differences answer distinct questions. The 17,028.48 EUR/ha represents improvement of the full testing-and-control package over no treatment; the 496.26 EUR/ha represents additional net return from adjusting treatment relative to the existing uniform-treatment option. In this scenario, extra losses avoided by stronger treatment cover the additional treatment and testing costs. </p>
+<strong>At high densities,</strong> a more effective treatment is worthwhile when the additional losses avoided exceed its additional cost, including testing.
 
-<p> The role of information changes with density: </p>
+We also vary testing costs, treatment costs, treatment effects, and crop prices individually to examine the sensitivity of both comparisons. When the two strategies use the same treatment, shared cost and efficacy parameters change together to keep the comparison consistent.
 
-<p> **At low densities,** testing may help reduce unnecessary treatment. </p>
+These calculations are conditional on the specified density, costs, and treatment effects. The current density prediction interval describes uncertainty in the simulated regression; its coverage requires validation using real samples and measured readouts. Evaluating interval endpoints and neighboring density scenarios shows how economic results depend on the density estimate. The resulting range of net incomes is not a confidence interval for economic benefit. Assessing the economic consequences of actual testing errors will require measured error distributions and their effects on treatment selection.
 
-<p> **At intermediate densities,** tiered and uniform treatment use the same strategy, and their return difference is <strong>−5 EUR/ha</strong>, the additional testing cost. </p>
+## Using economic analysis to inform detection design {#src-Model-Eco-52 toc="Using economic analysis to inform detection design"}
 
-<p> **At high densities,** the value of intensified treatment depends on whether extra avoided losses cover added costs. </p>
+Eco identifies density ranges where measurement can change a management decision. Semiquantitative or quantitative readouts are useful when they distinguish between ranges that call for different treatments. Estimates near management thresholds deserve particular attention because an error can change the selected treatment and its economic outcome.
 
-<p> Evaluating detection value therefore requires examining both <strong> whether density information changes management choices and whether those changes improve net returns </strong>。</p>
+The interface therefore presents the density estimate, management tier, and both economic comparisons together. When the estimated range crosses a threshold, neighboring scenarios show how strongly the conclusion depends on density estimation.
 
-<p> We further varied testing cost, treatment cost, treatment efficacy, and crop selling price separately to examine sensitivity of both return differences. When tiered and uniform treatment use the same measure, shared cost and efficacy parameters change together to maintain consistent comparison conditions. </p>
+Future work will calibrate density estimates using real samples and smartphone readouts, while application-focused research will update sampling coverage, testing costs per hectare, and management parameters. These data will help establish whether the readout can distinguish the relevant density ranges at a reasonable cost.
 
-:::note[Evidence and limitations]
-
-<p> These are conditional calculations under specified density, cost, and efficacy assumptions. Current density prediction intervals reflect formal uncertainty in simulated regression; empirical coverage still requires real samples and readout calibration. Interval endpoints and adjacent-density scenarios illustrate economic effects of altered judgments; the resulting return range is not a confidence interval for returns. Real detection errors may change treatment choices, and their economic effects require evaluation against measured error distributions. </p>
-
-:::
-
-## Feeding economic comparisons back into detection design {#src-Model-Eco-52 toc="Feeding economic comparisons back into detection design"}
-
-<p> Eco focuses detection design on density ranges where management choices may change. Semiquantitative or quantitative information can support management tiers when different densities imply different treatments. Near boundaries, estimation bias may alter choices, making these ranges priorities for calibration and evaluation. </p>
-
-<p> The app reflects this need by retaining density estimates, corresponding management tiers, and return comparisons against both baselines, while showing adjacent scenarios when estimated ranges cross tier boundaries. This helps readers judge the dependence of conclusions on density estimates. </p>
-
-<p> We will calibrate density estimates using real samples and smartphone readouts and update sampling coverage, per-hectare testing costs, and management parameters through application research. These data will test whether readouts distinguish relevant density ranges and whether obtaining that information is affordable. </p>
-
-<p> For reproducibility and updates, parameter configurations are stored separately from calculation code, with example inputs and regenerable reports. Existing automated checks cover density–loss calculations, cost accounting, and consistency of comparison baselines; real application benefits still require local validation. Other researchers can replace crops, prices, and treatment parameters to assess their detection systems under specific management conditions. </p>
+To support reuse, we store parameter configurations separately from the calculation code and provide example inputs and reports that can be regenerated. Existing automated checks cover density–loss calculations, cost accounting, and consistency between comparison baselines. Local data are still needed to evaluate practical economic benefits. Researchers can adapt the framework by replacing crop, price, and treatment parameters to assess detection strategies under their own management conditions.
 
 ## References {#src-Model-Eco-57 toc="References"}
 
-<p>[1] Expósito, A., Pujolà, M., Achaerandio, I., Giné, A., Escudero, N., Fullana, A. M., Cunquero, M., Loza-Alvarez, P., &amp; Sorribas, F. J. (2020). Tomato and Melon <em>Meloidogyne</em> Resistant Rootstocks Improve Crop Yield but Melon Fruit Quality Is Influenced by the Cropping Season. <em>Frontiers in Plant Science, 11</em>, 560024. <a href="https://doi.org/10.3389/fpls.2020.560024">DOI: 10.3389/fpls.2020.560024</a></p>
+[1] Expósito, A., Pujolà, M., Achaerandio, I., Giné, A., Escudero, N., Fullana, A. M., Cunquero, M., Loza-Alvarez, P., &amp; Sorribas, F. J. (2020). Tomato and Melon <em>Meloidogyne</em> Resistant Rootstocks Improve Crop Yield but Melon Fruit Quality Is Influenced by the Cropping Season. <em>Frontiers in Plant Science, 11</em>, 560024. https://doi.org/10.3389/fpls.2020.560024
 
-<p>[2] Talavera-Rubia, M., Vela-Delgado, M. D., &amp; Verdejo-Lucas, S. (2022). A Cost-Benefit Analysis of Soil Disinfestation Methods against Root-Knot Nematodes in Mediterranean Intensive Horticulture. <em>Plants, 11</em>(20), 2774. <a href="https://doi.org/10.3390/plants11202774">DOI: 10.3390/plants11202774</a></p>
-
-</section>
+[2] Talavera-Rubia, M., Vela-Delgado, M. D., &amp; Verdejo-Lucas, S. (2022). A Cost-Benefit Analysis of Soil Disinfestation Methods against Root-Knot Nematodes in Mediterranean Intensive Horticulture. <em>Plants, 11</em>(20), 2774. https://doi.org/10.3390/plants11202774
 
 </div>

@@ -1,0 +1,74 @@
+{
+  "task": "model-layout",
+  "source_path": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/tasks/model-layout",
+  "base_commit": "9e9fa070857d872d29a4759c53c9e362ed9c70ab",
+  "source_documents": [
+    {
+      "path": "/Users/cjrmacbook/Documents/Model.docx",
+      "sha256": "55e6ae1bd9f5f697c27e427bf8077b6fc8062e6e18f48015bb4788606c93a5f5"
+    },
+    {
+      "path": "/Users/cjrmacbook/Documents/Model -_ Economic Benefit (1).docx",
+      "sha256": "e9977691ecbe67f0d62c94ac48c2adaff05115fe4d6587b30fbbb1f338983bda"
+    },
+    {
+      "path": "/Users/cjrmacbook/Documents/Model -_ ODE and Dual-Channel Model (1).docx",
+      "sha256": "f2df086adea9fea90281c1a1333ea4eb83f057d3ddf3dde55b21494a79754912"
+    }
+  ],
+  "scope": [
+    "Five Model pages relaid out as flat manuscripts, per final Project instructions",
+    "Manuscript text and figure placement checked by three Luna subagents; unsolicited glossary expansions removed where source is supplied",
+    "Plain illustration row, Project-style framed Tina scientific figures, text first in mobile pairs",
+    "16 centered static formulas retain original editable Tina LaTeX; no Model wiki-toolkit cards",
+    "Docking1.1 and figure1 caption, MD2.1 updated only per explicitly supplied source",
+    "Eco source text and two verified Feishu tables restored; app follows introduction",
+    "Dual-channel naming and colon separators; site sentence-case headings and automatic numbering retained"
+  ],
+  "validation": {
+    "build": "npm run verify PASS; final flat-media rebuild PASS and final audit PASS",
+    "structure": "26 pages PASS",
+    "captions": "87 captions PASS",
+    "targeted_tests": "15 tests PASS",
+    "deployment_tests": "46 Node tests PASS",
+    "python_tests": "17 tests PASS",
+    "browser": "Five pages at1364px and390px,light/dark;zero overflow or missingTOC targets;zero Model wiki-toolkit cards. Docking3 andODE13 plain equations. Desktop light inspections also cover source figure placements.",
+    "new_media": "4 exact latest-document scientific images uploaded through official UI;all HTTP200 andbyte-identical to upload hashes;browser naturaldimensions verified",
+    "tina": "Reused Project manuscriptTitle andoriginalSrc schema andlock;title/image fields preserved;Tina cloud submission not exercised",
+    "scientific_metadata": "Existing source/teamreview metadata preserved;technical checks do not imply scientific finalapproval"
+  },
+  "known_source_gap": "Economic Benefit treatment-rules spreadsheet is blank in the latest DOCX and current Feishu rendering. Two other tables verified visually and restored. No rules or values invented.",
+  "performance": "No changes to archived scientific app or calculations. Earlier exploratory cache edit was withdrawn following user clarification; runtime response improvement not claimed.",
+  "preview": {
+    "task": "model-layout",
+    "port": 58106,
+    "url": "http://127.0.0.1:58106/model-eco/#content",
+    "output_directory": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/tasks/model-layout/public"
+  },
+  "publication": "not published;handoff to unified releasebot required",
+  "shared_components": "Minimal relevant Project rendering/schema changes reused without importing Project page contents;releasebot should preserve its already-merged equivalents.",
+  "figure_frame_followup": {
+    "request": "Restore same Tina image frames as Project while retaining flat manuscript flow",
+    "change": "Removed Model-only frame suppression. Scientific figures now inherit Project shared figure media padding,border,roundedcorners and theme colors. Source imageblocks remain editable inTina.",
+    "validation": "30-page build PASS;MD3frames each show1pxborder/26pxdesktop padding/18pxradius;mobile390px uses14pxpadding with no horizontaloverflow;body andfigurepositions unchanged."
+  },
+  "html_component_followup": {
+    "request": "Restore actual editable Tina webpage component for the Eco application",
+    "source_block": {
+      "template": "html",
+      "file": "/widgets/nemaklear/index.html",
+      "scripts": true,
+      "height": 900
+    },
+    "position": "Immediately after the source introductory application paragraph",
+    "change": "Replaced raw placeholder/template mount with existing Tina HTML template. Author app direct iframe preserves same-origin Worker calculations;other HTML files retain existing isolated viewer. Template helper onlyresizes actual Tina frame;no duplicateiframe.",
+    "validation": "8 media/contentregressiontests PASS;npmrunverify PASS;26page structure PASS;browser confirmed oneHTMLcomponent,editable sourcefields,relativeappurl,nooverflow,and successful defaultsample124.22 J2/100cm³ withstatusDone.",
+    "editing_limit": "Contentfields andschema verified;Tina cloudsave not exercised."
+  },
+  "table_contrast_followup": {
+    "request": "Separate Model tables visually from the page background",
+    "change": "Theme-aware solid table surface,16pxroundedcontainer,clearouterborder,lavendertableheader,subtlealternatingrows andcolumnseparators. Table data andmath unchanged.",
+    "validation": "30-page buildPASS;desktoplight/darkcomputedtable/headercolorsdistinct;390pxmobilehorizontal scroll staysinsidetablewith no pageoverflow.",
+    "preview": "http://127.0.0.1:58106/model-ode/#model-ode-section-3"
+  }
+}

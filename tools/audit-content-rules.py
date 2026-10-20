@@ -42,7 +42,7 @@ class DOM(HTMLParser):
 MODEL_MODULE_TITLES = {
     '#model-section-1': 'Molecular Docking',
     '#model-section-2': 'Molecular Dynamics',
-    '#model-section-3': 'ODE & dual-channel sensing',
+    '#model-section-3': 'ODE & Dual-channel modeling',
     '#model-section-4': 'Economic Benefit',
 }
 
@@ -65,7 +65,7 @@ def heading_sentence_case_violation(slug, label, attributes, level, sentence_cas
         anchor = attributes.split()[0] if attributes.split() else ''
         prefix = MODEL_MODULE_TITLES.get(anchor)
         if prefix:
-            if not label.startswith(prefix + ' | '):
+            if not label.startswith(prefix + ': '):
                 return True
             normalized = sentence_case(label)
             normalized_prefix = sentence_case(prefix)

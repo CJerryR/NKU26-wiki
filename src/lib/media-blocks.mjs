@@ -19,6 +19,15 @@ export function renderMediaBlock(block, type) {
     return `<figure class="wiki-media wiki-media--${type} wiki-media--empty"><div class="wiki-media__empty"><strong>${escape(title)}</strong><span>${HINTS[type]}</span></div>${caption(block)}</figure>`;
   }
 
+  // The trusted multi-file NemaKlear application needs its same-origin Worker
+  // and verified Python packages. Keep it in the existing editable HTML template,
+  // without passing it through the single-file sandbox viewer.
+  const file = String(block.file).trim();
+  if (type === 'html' && block.scripts === true && /^\/widgets\/nemaklear\/index\.html(?:\?embed=1)?$/.test(file)) {
+    const source = file.includes('?') ? file : `${file}?embed=1`;
+    return `<figure class="wiki-media wiki-media--html wiki-media--application"><div class="wiki-media__bar"><span class="wiki-media__kind">Model explorer</span><span class="wiki-media__title">${escape(title)}</span><a class="wiki-media__action" href="${escape(file)}" target="_blank" rel="noopener noreferrer">Open full page</a></div><iframe class="wiki-media__frame" data-nemaklear-app src="${escape(source)}" title="${escape(title)}" loading="eager" allow="clipboard-write; fullscreen" style="height:${height}px" referrerpolicy="no-referrer"></iframe>${caption(block)}</figure>`;
+  }
+
   // PDF: the visitor's browser draws its own reader; we only add a title bar with
   // open / download so devices without inline PDF support can still read it.
   // The bar sits above the frame: on phones that show no inline PDF (e.g. Android

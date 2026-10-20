@@ -21,3 +21,19 @@ test('PDF block: caption, escaping, height clamp and unsafe URL', () => {
   assert.match(renderMediaBlock({ file: 'javascript:alert(1)' }, 'pdf'), /wiki-media__invalid/);
   assert.match(renderMediaBlock({}, 'pdf'), /wiki-media--empty/);
 });
+
+test('Trusted multi-file author app is an editable HTML block with a direct same-origin frame', () => {
+  const html=renderMediaBlock({title:'NemaKlear',file:'/widgets/nemaklear/index.html',scripts:true,height:900},'html');
+  assert.match(html,/class="wiki-media wiki-media--html wiki-media--application"/);
+  assert.match(html,/data-nemaklear-app src="\/widgets\/nemaklear\/index.html\?embed=1"/);
+  assert.match(html,/Open full page/);
+  assert.ok(!html.includes('/widgets/html.html?'));
+  assert.ok(!html.includes('sandbox='));
+});
+test('Other HTML files and script-disabled author app retain the existing isolated viewer', () => {
+  for(const block of [{file:'/embeds/example/index.html',scripts:true},{file:'/widgets/nemaklear/index.html',scripts:false},{file:'https://external.example/widgets/nemaklear/index.html',scripts:true}]) {
+    const html=renderMediaBlock(block,'html');
+    assert.match(html,/src="\/widgets\/html.html\?/);
+    assert.ok(!html.includes('data-nemaklear-app'));
+  }
+});

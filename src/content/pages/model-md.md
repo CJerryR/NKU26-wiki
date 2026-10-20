@@ -19,7 +19,7 @@ hidden: false
 
 <span id="model-md-section-0" class="legacy-section-anchor" aria-hidden="true"></span>
 
-:::lead
+:::manuscriptTitle
 
 Molecular Dynamics: ligand positioning and contact changes in a membrane environment
 
@@ -31,7 +31,9 @@ Molecular docking provided candidate binding poses for the Gpr2 variants N84V an
 
 ## Constructing six membrane systems from docking poses {#model-md-section-1 toc="Constructing six membrane systems from docking poses"}
 
-We paired <strong>wild type (WT)</strong> Gpr2, N84V, and V368R with <strong>ascaroside #18 (ascr#18)</strong> and <strong>ascaroside #3 (ascr#3)</strong> to generate six receptor–ligand complexes. Each complex was constructed from its own docking pose by placing the ligand in the corresponding full-length receptor and resolving steric clashes involving the restored receptor segments, the ligand, and neighboring structures. Each complex was then embedded in a <strong>1-palmitoyl-2-oleoyl-sn-glycero-3-phosphocholine (POPC)</strong> lipid bilayer, solvated, and supplemented with ions.
+We assembled six receptor–ligand systems by pairing wild-type (WT) Gpr2, N84V and V368R with ascr#18 and ascr#3. The AlphaFold 3 structures used in this workflow were generated locally with the official model parameters and reference databases. For each system, its docking pose was transferred into the corresponding full-length receptor, and steric clashes involving the restored receptor segments, the ligand and neighboring structures were resolved.
+
+Each complex was then embedded in a <strong>1-palmitoyl-2-oleoyl-sn-glycero-3-phosphocholine (POPC)</strong> lipid bilayer, solvated, and supplemented with ions.
 
 The systems underwent energy minimization, followed by gradual heating to 303.15 K at constant volume and a brief period at the target temperature. Pressure equilibration was then performed in successive stages at 1 bar, with positional and dihedral restraints progressively relaxed to allow the receptor, ligand, lipids, and solvent to relax together. Additional unrestrained preparatory simulations were then performed while monitoring temperature, density, membrane-plane area, and box height. Each of the six systems subsequently underwent a single 100 ns production simulation.
 
