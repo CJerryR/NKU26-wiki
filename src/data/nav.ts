@@ -35,10 +35,10 @@ export const primaryNav: NavItem[] = [
   {
     kind: 'group', id: 'model', label: 'Model', narrow: true, items: [
       { page: 'model', label: 'Overview', blurb: 'How the models fit together' },
-      { page: 'model-docking', label: 'Docking', blurb: 'Two-ligand contacts and receptor candidates' },
-      { page: 'model-md', label: 'Molecular dynamics', blurb: 'Ligand motion and persistent contacts' },
-      { page: 'model-ode', label: 'ODE & two-channel', blurb: 'Signal dynamics and density estimation' },
-      { page: 'model-eco', label: 'Economic benefit', blurb: 'When density information changes a decision' },
+      { page: 'model-docking', label: 'Molecular Docking', blurb: 'Two-ligand contacts and receptor candidates' },
+      { page: 'model-md', label: 'Molecular Dynamics', blurb: 'Ligand motion and persistent contacts' },
+      { page: 'model-ode', label: 'ODE & dual-channel sensing', blurb: 'Signal dynamics and density estimation' },
+      { page: 'model-eco', label: 'Economic Benefit', blurb: 'When density information changes a decision' },
     ],
   },
   {

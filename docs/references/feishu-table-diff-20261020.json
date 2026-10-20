@@ -1,0 +1,231 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-10-20",
+  "purpose": "Read-only comparison of four tables in the Feishu change document against the official website source baseline. This is a partial visual/text comparison; it is not a claim that every cell was verified word-for-word.",
+  "baseline": {
+    "workspace": "workspace/main",
+    "version": "V10.2.18",
+    "commit": "5bb0322ced0703d2a8469ea24a60bde8209ff7ad",
+    "pipeline_id": 777158,
+    "source_files": [
+      "workspace/main/content/wiki/experiments.json",
+      "workspace/main/content/wiki/parts.json"
+    ]
+  },
+  "feishu_source": {
+    "url": "https://nankai.feishu.cn/wiki/NTaOwfMYOiKZTSkWvWWcX3BSnWd",
+    "document_title": "表格修改",
+    "author_visible": "付欣雅",
+    "last_edit_indicator_visible": "3 小时前",
+    "access": "Accessible in the existing authorized browser session; tables rendered as embedded images.",
+    "export_ui": "The native Feishu menu export completed; the resulting PDF is archived at export_record.local_path.",
+    "comments_visible": 0,
+    "export_record": {
+      "format": "PDF",
+      "scope": "仅正文",
+      "method": "飞书原生界面：菜单「下载为」→「PDF」→导出设置「仅正文」；未使用打印到PDF或外部服务。",
+      "exported_at_local": "2026-10-20 15:11:05 CST",
+      "file": "表格修改-飞书导出-20261020.pdf",
+      "pages": 13,
+      "sha256": "f6612eb29395cc9a4edcfd876b13c623dd38057d1aeb32953d637a9e92644aef",
+      "render_check": "渲染检查封面第1页、Strains第2页、Basic parts第4页、Composite parts第10页、Collections第13页；标题与表格均可读，表格在分页处可能拆行/续页。",
+      "local_path": "/Users/cjrmacbook/.codex/claude-web-collab/nku26-wiki/afternoon-review/inputs/表格修改-飞书导出-20261020.pdf"
+    }
+  },
+  "table_inventory": [
+    {
+      "section": "Experiments-Summary of experimental design-Strain construction",
+      "official_table_title": "Strains designed and constructed in this project",
+      "official_source": "workspace/main/content/wiki/experiments.json",
+      "official_row_count": 9,
+      "first_row": "NKU-Y01",
+      "last_row": "NKU-Y09",
+      "comparison_coverage": "通过13页原生PDF逐页渲染/OCR并与官方source对照，9行均已读；Y01–Y09的行号和主要说明均可辨认。字符级Unicode标点和斜体格式不完全依赖OCR判定。",
+      "findings": [
+        {
+          "row_id": "NKU-Y03",
+          "field": "Description",
+          "official_text": "Strain NKU-Y02 derivative with -GPR2-sfGFP",
+          "feishu_text": "Strain NKU-Y02 derivative with TEF1p-GPR2-sfGFP",
+          "classification": "scientific_identity_change_requires_user_review",
+          "reason": "Adds a promoter/construct identity detail; do not substitute without scientific owner confirmation.",
+          "certainty": "confirmed_from_visible_Feishu_text_and_official_source"
+        },
+        {
+          "row_id": "NKU-Y05",
+          "field": "Description",
+          "official_text": "Strain NKU-Y02 derivative with -sTF",
+          "feishu_text": "Strain NKU-Y02 derivative with STE12p-sTF",
+          "classification": "scientific_identity_change_requires_user_review",
+          "reason": "Adds a promoter/construct identity detail; do not substitute without scientific owner confirmation.",
+          "certainty": "confirmed_from_visible_Feishu_text_and_official_source"
+        },
+        {
+          "row_id": "NKU-Y06",
+          "field": "Description",
+          "official_text": "Strain NKU-Y05 derivative with -MjDOD : -BvCYP76AD5",
+          "feishu_text": "Strain NKU-Y05 derivative with Gal1p-MjDOD : Gal10p-BvCYP76AD5",
+          "classification": "scientific_identity_change_requires_user_review",
+          "reason": "Adds promoter labels and changes construct description; confirmation required.",
+          "certainty": "confirmed_from_visible_Feishu_text_and_official_source"
+        },
+        {
+          "row_id": "NKU-Y07",
+          "field": "Description",
+          "official_text": "Strain NKU-Y06 derivative with -GPR2",
+          "feishu_text": "Strain NKU-Y06 derivative with TEF1p-GPR2",
+          "classification": "scientific_identity_change_requires_user_review",
+          "reason": "Adds a promoter/construct identity detail; do not substitute without scientific owner confirmation.",
+          "certainty": "confirmed_from_visible_Feishu_text_and_official_source"
+        },
+        {
+          "row_id": "NKU-Y08",
+          "field": "Description",
+          "official_text": "Strain NKU-Y06 derivative with -GPR2-N84V",
+          "feishu_text": "Strain NKU-Y06 derivative with TEF1p-GPR2-N84V",
+          "classification": "scientific_identity_change_requires_user_review",
+          "reason": "Adds a promoter/construct identity detail; do not substitute without scientific owner confirmation.",
+          "certainty": "confirmed_from_visible_Feishu_text_and_official_source"
+        },
+        {
+          "row_id": "NKU-Y09",
+          "field": "Description",
+          "official_text": "Strain NKU-Y06 derivative with -GPR2-V368R",
+          "feishu_text": "Strain NKU-Y06 derivative with TEF1p-GPR2-V368R",
+          "classification": "scientific_identity_change_requires_user_review",
+          "reason": "Adds TEF1p promoter identity to the construct description; require scientific owner confirmation before adoption.",
+          "certainty": "confirmed_from_exported_PDF_page_3_visual_and_OCR_plus_official_source"
+        }
+      ],
+      "verified_matches": [
+        {
+          "row_id": "NKU-Y01",
+          "result": "visible content matches official source; punctuation/italic styling not byte-verified"
+        },
+        {
+          "row_id": "NKU-Y02",
+          "result": "matches official source"
+        },
+        {
+          "row_id": "NKU-Y04",
+          "result": "matches official source"
+        }
+      ]
+    },
+    {
+      "section": "Parts and collections-1.1 Basic parts",
+      "official_table_title": "Basic parts",
+      "official_source": "workspace/main/content/wiki/parts.json",
+      "official_row_count": 27,
+      "first_row": "Gal80 5’ homology region",
+      "last_row": "pScCEN-ADH1-FMN(yeast)-Myc-6×His",
+      "comparison_coverage": "All 27 rows across PDF pages 4–9 were visually/OCR reviewed against the official CSV. After normalizing PDF line wraps and whitespace, no wording difference was identified in names, IDs, types, or descriptions. OCR is not reliable for exact Unicode prime/× glyphs, apostrophe style, and italics; this is content-level rather than byte-for-byte typographic verification.",
+      "findings": [],
+      "conclusion": "All 27 table rows were compared at the wording/content level; no textual change requiring edit was identified. Character-level punctuation/style differences remain unconfirmed.",
+      "noted_non_difference": "The visible type spelling 'CDNA Match' also occurs in the official source; it is not a delta in this comparison.",
+      "reviewed_row_count": 27,
+      "comparison_method": "Exported PDF pages 4–9, visual review assisted by local on-device Vision OCR, compared row-by-row to `workspace/main/content/wiki/parts.json` Basic parts CSV."
+    },
+    {
+      "section": "Parts and collections-1.2 Composite parts",
+      "official_table_title": "Composite parts",
+      "official_source": "workspace/main/content/wiki/parts.json",
+      "official_row_count": 12,
+      "first_row": "KOGAL80",
+      "last_row": "pRS315-TEF1p-GPR2-V368R",
+      "comparison_coverage": "All 12 rows across PDF pages 10–12 were visually/OCR reviewed against the official CSV. Names, identifiers, types, and descriptions match at content level except the added description documented below. OCR cannot establish exact Unicode hyphen glyphs/italics.",
+      "findings": [
+        {
+          "row_id": "BBa_260J9X0X",
+          "part_name": "pRS315-TEF1p-GPR2-sfGFP",
+          "field": "Description",
+          "official_text": "",
+          "feishu_text": "This part contains the GPR2 cDNA sequence fused to sfGFP via a flexible linker, with homology arms for the knock-in of the constitutively expressed GPR2-sfGFP fusion gene.",
+          "classification": "scientific_construct_description_addition_requires_user_review",
+          "reason": "Adds a scientific construct description not present in the official source; requires scientific owner review before adoption.",
+          "certainty": "confirmed_from_visible_Feishu_text_and_official_source"
+        }
+      ],
+      "other_checked_entries": [
+        "KOGAL80",
+        "TRP1/LEU2 marker",
+        "Ura3",
+        "pRS315-MjDOD-BvCYP76AD5",
+        "Gal1/10bp-Betaxanthin Expression Cassette",
+        "pRS315-sTF",
+        "sTF Expression Cassette",
+        "GPR2 variant plasmids"
+      ],
+      "other_checked_result": "Visible names/IDs/order appeared to match the official source.",
+      "reviewed_row_count": 12,
+      "comparison_method": "Exported PDF pages 10–12, visual review assisted by local on-device Vision OCR, compared row-by-row to `workspace/main/content/wiki/parts.json` Composite parts CSV."
+    },
+    {
+      "section": "Parts and collections-Collections",
+      "official_table_title": "Collections",
+      "official_source": "workspace/main/content/wiki/parts.json",
+      "official_row_count": 4,
+      "comparison_coverage": "All 4 rows and descriptions on PDF page 13 visually checked against official source text; wording matches.",
+      "findings": [],
+      "rows_checked": [
+        {
+          "name": "Chassis Strain Construction Collection",
+          "official_text": "This collection contains all the parts used to construct chassis strains in our project",
+          "feishu_text": "This collection contains all the parts used to construct chassis strains in our project",
+          "result": "match"
+        },
+        {
+          "name": "Tool Plasmid Family",
+          "official_text": "This collection contains all tool plasmids used in this project",
+          "feishu_text": "This collection contains all tool plasmids used in this project",
+          "result": "match"
+        },
+        {
+          "name": "sgRNA Family",
+          "official_text": "This collection contains all sgRNAs used in this project",
+          "feishu_text": "This collection contains all sgRNAs used in this project",
+          "result": "match"
+        },
+        {
+          "name": "GPR2 variant family",
+          "official_text": "This collection contains cDNA sequences of GPR2 and its variants",
+          "feishu_text": "This collection contains cDNA sequences of GPR2 and its variants",
+          "result": "match"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "The Feishu source tables are rendered as images. The downloaded PDF also stores those tables as page graphics; pypdf text extraction returns no table-cell text. Local Vision OCR and visual page review were used; OCR typography is not proof of byte-for-byte equality.",
+    "Basic parts (27 rows) and Composite parts (12 rows) were fully reviewed at content/wording level after normalizing line breaks/whitespace. Exact Unicode punctuation, prime glyphs, × glyphs, and italics are not asserted where OCR could normalize them.",
+    "Strains Y03, Y05–Y09 contain promoter/construct description differences requiring scientific owner review. Composite BBa_260J9X0X adds a scientific construct description requiring review. None were implemented.",
+    "PDF export was done with the normal Feishu interface, body-only. No external service was used. Pagination may split table rows or continue descriptions onto the next page.",
+    "Only this JSON comparison record remains in the task source tree; the three original PDF files are preserved under the external Claude handoff run inputs directory. No source tables were edited."
+  ],
+  "other_feishu_reference_pdfs": [
+    {
+      "title": "Project｜zh",
+      "url": "https://nankai.feishu.cn/wiki/MLQYw7658itBRgkj3rUcJcIrn7d?from=auth_notice&hash=6a11b3f22398e67e9fdf548bf5c40991",
+      "visible_last_modified": "2026-10-10 11:41",
+      "exported_at_local": "2026-10-20 15:14:33 CST",
+      "file": "Project-zh-飞书导出-20261020.pdf",
+      "pages": 12,
+      "sha256": "f51398ab04bf7ce3f66f36fd48192a49e6307b2a499148bb5ff499dcfd758402",
+      "scope": "仅正文",
+      "contents_verified": "PDF全文可检索且有正常正文排版；Engineering始于第3页，包含2.1–2.5；第6–7页包含2.4 ODE Model的Design/Build/Test/Learn与2.5 Eco Model的Design/Build/Test/Learn。未发现独立标题“DBTL-3”或顶层“Results”；Engineering及DBTL相关正文已包含，不另导Engineering副本。",
+      "local_path": "/Users/cjrmacbook/.codex/claude-web-collab/nku26-wiki/afternoon-review/inputs/Project-zh-飞书导出-20261020.pdf"
+    },
+    {
+      "title": "Model｜zh",
+      "url": "https://nankai.feishu.cn/wiki/STtMw7JlWiUeJLkIIWmckfibnMR?from=auth_notice&hash=afc6162dcd149780754751f2ad3e0680",
+      "visible_last_modified": "2026-10-10 11:42",
+      "exported_at_local": "2026-10-20 15:15:32 CST",
+      "file": "Model-zh-飞书导出-20261020.pdf",
+      "pages": 16,
+      "sha256": "d605d696a3d3b72188eb3c173722915f7be8a6449319d923cbfaf4cb5a0251d7",
+      "scope": "仅正文",
+      "contents_verified": "第1页包含Model Overview与章节目录，后续正文按Docking、MD、ODE、Eco展开；第5页含可读数据表。标题、正文表格均在导出中。",
+      "local_path": "/Users/cjrmacbook/.codex/claude-web-collab/nku26-wiki/afternoon-review/inputs/Model-zh-飞书导出-20261020.pdf"
+    }
+  ]
+}

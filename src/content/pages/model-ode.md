@@ -1,10 +1,10 @@
 ---
-title: ODE and two-channel sensing
-heading: ODE and two-channel sensing
+title: ODE & dual-channel sensing
+heading: ODE & dual-channel sensing
 sub: ''
 crumbs:
   - Model
-  - ODE and two-channel sensing
+  - ODE & dual-channel sensing
 route: model-ode
 search: true
 description: ''
@@ -21,7 +21,7 @@ hidden: false
 
 :::lead
 
-ODE and dual-channel sensing: from signal response to target density estimation
+ODE & dual-channel sensing: from signal response to target density estimation
 
 :::
 

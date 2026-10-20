@@ -1,10 +1,10 @@
 ---
-title: Molecular dynamics
-heading: Molecular dynamics
+title: Molecular Dynamics
+heading: Molecular Dynamics
 sub: ''
 crumbs:
   - Model
-  - Molecular dynamics
+  - Molecular Dynamics
 route: model-md
 search: true
 description: ''
@@ -21,7 +21,7 @@ hidden: false
 
 :::lead
 
-Molecular dynamics: ligand positioning and contact changes in a membrane environment
+Molecular Dynamics: ligand positioning and contact changes in a membrane environment
 
 :::
 
