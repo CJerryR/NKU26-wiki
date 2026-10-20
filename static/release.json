@@ -1,5 +1,5 @@
 {
-  "version": "10.2.35",
+  "version": "10.2.36",
   "label": "Engineering scroll-linked half-ring DBTL cycles",
   "prepared_at": "2026-10-21T05:02:59.579051+08:00",
   "media": "84 unchanged original images plus 4 user-authorized GPS-only cleaned images; all decoded frames unchanged; 12 complete historical source documents",
@@ -436,5 +436,13 @@
     "review": "Existing scientific/teamreview flags retained",
     "schema_followup": "e634ecbbd2bba3ba1d0419908b65c894176553f4",
     "tina": "Actualgeneratedschema lock includes optionalcycle.display anditems.icon;all14arcinputs andoldwheelinput validated"
+  },
+  "project_model_wrap": {
+    "source_commits": [
+      "43399c5339b3aabdc4a366c0e990001fb78a3bad",
+      "7f14643af903a71beff5838e1e5c853de6b8bfa0"
+    ],
+    "scope": "Shared embedded figure wrapping;Model review and compact Eco embed;DBTL unchanged",
+    "previous": "8a523c317650d115d5db006f4e75ed127dcb02f9"
   }
 }

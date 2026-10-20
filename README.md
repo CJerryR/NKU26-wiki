@@ -1,3 +1,7 @@
+## V10.2.36
+
+Project/Model share embedded figure wrapping;Model review fixes and compact Eco embed. Engineering DBTL and Project comparison retained.
+
 # NKU-China 2026 Wiki — NemaKlear
 
 南开大学 NKU-China 团队参加 iGEM 2026 的项目网站，队伍编号 **6303**。网站围绕农业线虫与双通道检测方案，展示项目设计、实验结果、模型、人类实践和团队工作。

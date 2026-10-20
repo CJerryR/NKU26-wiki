@@ -1,6 +1,6 @@
 {
   "name": "nku26-wiki",
-  "version": "10.2.35",
+  "version": "10.2.36",
   "private": true,
   "type": "module",
   "description": "NKU-China 2026 Wiki (NemaKlear): Astro and Tina, interactive homepage, model chapters, scroll-opened pages and day/night reading.",
