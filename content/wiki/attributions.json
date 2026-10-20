@@ -15,7 +15,7 @@
       "_template": "heading",
       "text": "Team member contributions",
       "level": 2,
-      "attributes": "#team-member-contributions toc=\"Team member contributions\""
+      "attributes": "#team-member-contributions notoc"
     },
     {
       "_template": "heading",
@@ -59,9 +59,9 @@
     },
     {
       "_template": "heading",
-      "text": "3.1 Student leaders",
+      "text": "Student leaders",
       "level": 3,
-      "attributes": "#student-leaders toc=\"Student leaders\""
+      "attributes": "#student-leaders toc=\"Student leaders\" toc-unnumbered"
     },
     {
       "_template": "creditgrid",
@@ -163,9 +163,9 @@
     },
     {
       "_template": "heading",
-      "text": "3.2 Student team members",
+      "text": "Student team members",
       "level": 3,
-      "attributes": "#student-team-members toc=\"Student team members\""
+      "attributes": "#student-team-members toc=\"Student team members\" toc-unnumbered"
     },
     {
       "_template": "heading",
@@ -686,9 +686,9 @@
     },
     {
       "_template": "heading",
-      "text": "4.1 Advisors",
+      "text": "Advisors",
       "level": 3,
-      "attributes": "#advisors toc=\"Advisors\""
+      "attributes": "#advisors toc=\"Advisors\" toc-unnumbered"
     },
     {
       "_template": "creditgrid",
@@ -767,9 +767,9 @@
     },
     {
       "_template": "heading",
-      "text": "4.2 Others",
+      "text": "Others",
       "level": 3,
-      "attributes": "#others toc=\"Others\""
+      "attributes": "#others toc=\"Others\" toc-unnumbered"
     },
     {
       "_template": "creditgrid",

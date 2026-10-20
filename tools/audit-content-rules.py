@@ -121,7 +121,11 @@ def main():
                 return parent is section
             children=[n for n in section.walk() if n.tag=='h3' and belongs(n) and not any(n.inside(cls=c) for c in ('cards','card','timeline','features','member-grid','credit-grid','person-name','wf'))]
             chapter=int(section.attrs['data-num'])
+            unnumbered_children = {re.search(r'#([^ ]+)', b.get('attributes', '')).group(1) for b in doc['blocks']
+                if b.get('_template') == 'heading' and 'toc-unnumbered' in b.get('attributes', '') and re.search(r'#([^ ]+)', b.get('attributes', ''))}
             for ordinal,n in enumerate(children,1):
+                if n.attrs.get('id') in unnumbered_children:
+                    continue
                 expected=f'{chapter}.{ordinal} '
                 if not n.text().strip().startswith(expected):failures.append(f'{slug}: expected h3 {expected.strip()}: {n.text()[:100]}')
         nonarchive=slug!='source-archive'
