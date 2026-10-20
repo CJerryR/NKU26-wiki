@@ -1,6 +1,7 @@
 import { toolkitNames } from './toolkit-specs.mjs';
 import Papa from 'papaparse';
 import katex from 'katex';
+import { displayTableHeader, hasDisplayTableHeader } from './table-display.mjs';
 
 export const toolkitTypes = new Set(toolkitNames);
 
@@ -39,7 +40,9 @@ function sourceCellHtml(value, runs, inlineFormatting = false) {
   const original = runs.map(r => r.text || '').join('');
   if (original !== value) throw new Error('Original table cell text does not match CSV.');
   return '<span style="font-weight:400;white-space:pre-wrap">' + runs.map(run => {
-    let text = esc(run.text || '');
+    let text = run.latex
+      ? katex.renderToString(String(run.latex).replace(/(?<!\\)#/g, '\\#'), { throwOnError: false, trust: false, strict: 'ignore', output: 'htmlAndMathml', maxExpand: 500, maxSize: 20 })
+      : esc(run.text || '');
     for (const [flag, tag] of [['superscript','sup'],['subscript','sub'],['u','u'],['i','em'],['b','strong']]) {
       if (run.format?.includes(flag)) text = `<${tag}>${text}</${tag}>`;
     }
@@ -59,13 +62,15 @@ function cycleFallback(block) {
 }
 export function renderToolkit(block, type) {
   const props = esc(JSON.stringify({ ...block, _template: type }));
-  const heading = block.title ? `<p><strong>${esc(block.title)}</strong></p>` : '';
+  const heading = block.title ? (type === 'datatable'
+    ? `<p class="table-caption">${esc(block.title)}</p>`
+    : `<p><strong>${esc(block.title)}</strong></p>`) : '';
   let body = lines(block).join('');
   if (type === 'cycle') {
     body = cycleFallback(block);
   } else if (type === 'datatable' && block.csv) {
     const rows = Papa.parse(block.csv, { skipEmptyLines: true }).data;
-    body = `<div class="table-wrap"><table><thead><tr>${(rows[0] || []).map((cell, k) => `<th>${sourceCellHtml(cell, block.sourceCellRuns?.[0]?.[k], block.inlineFormatting)}</th>`).join('')}</tr></thead><tbody>${rows.slice(1).map((row, i) => `<tr>${row.map((cell, k) => `<td>${sourceCellHtml(cell, block.sourceCellRuns?.[i + 1]?.[k], block.inlineFormatting)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+    body = `<div class="table-wrap"><table><thead><tr>${(rows[0] || []).map((cell, k) => `<th>${hasDisplayTableHeader(cell) ? esc(displayTableHeader(cell)) : sourceCellHtml(cell, block.sourceCellRuns?.[0]?.[k], block.inlineFormatting)}</th>`).join('')}</tr></thead><tbody>${rows.slice(1).map((row, k) => `<tr>${row.map((cell, j) => `<td>${sourceCellHtml(cell, block.sourceCellRuns?.[k + 1]?.[j], block.inlineFormatting)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
   } else if (type === 'equation' && block.latex) {
     body = katex.renderToString(block.latex.replace(/(?<!\\)#/g, '\\#'), { displayMode: true, throwOnError: false, output: 'htmlAndMathml' });
   }

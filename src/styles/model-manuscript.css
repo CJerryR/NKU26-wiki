@@ -38,8 +38,7 @@
 }
 @media(prefers-reduced-motion:reduce) { .model-chapter-links a { transition:none; } }
 
-/* Keep submitted Model prose readable while figures share its outer edges. */
-.doc[data-page^="model"] .prose { max-width:58rem; justify-self:start; }
+/* Submitted Model figures and equations retain their scientific layout. */
 .doc .prose .model-manuscript .figure-text--right:not(.figure-text--wrap) { grid-template-columns:minmax(0,1fr) minmax(0,34%); }
 .doc .prose .model-manuscript .figure-text:not(.figure-text--wrap) .figure-text__body { min-width:0; }
 .doc .prose .model-manuscript .figure-text--right:not(.figure-text--wrap) > .figure-text__body { grid-column:1;grid-row:1; }
@@ -51,6 +50,7 @@
  .doc .prose .model-manuscript .figure-text--right:not(.figure-text--wrap) > .figure-text__body,
  .doc .prose .model-manuscript .figure-text--right:not(.figure-text--wrap) > .figure { grid-column:auto;grid-row:auto; }
 }
+
 
 /* The submitted overview is a row of illustrations, with no card containers. */
 .model-manuscript .model-chapter-links a { padding:0;border:0;border-radius:0;background:none; }
@@ -71,8 +71,3 @@
   color: var(--ink-3);
 }
 .doc .prose .model-manuscript p:has(> strong:only-child):has(+ .model-table-scroll) > strong { font-weight: 400; color: inherit; }
-
-/* Narrow columns leave wide gaps when justified, so Model prose is left-aligned on phones. */
-@media(max-width:760px) {
-  .doc .prose .model-manuscript p:not(.manuscript-title) { text-align: left !important; }
-}

@@ -9,5 +9,46 @@
   "route": "licensing",
   "meta": [],
   "search": true,
-  "blocks": []
+  "blocks": [
+    {
+      "_template": "heading",
+      "text": "Content license",
+      "level": 2,
+      "attributes": "#content-license toc=\"Content license\""
+    },
+    {
+      "_template": "text",
+      "body": "The site footer identifies NKU iGEM Team material as available under <a href=\"https://creativecommons.org/licenses/by/4.0/\">CC BY 4.0</a>. The Nankai University emblem is excluded from that license. Third-party material retains the terms stated by its source."
+    },
+    {
+      "_template": "heading",
+      "text": "AI use and human review",
+      "level": 2,
+      "attributes": "#ai-use-and-human-review toc=\"AI use and human review\""
+    },
+    {
+      "_template": "text",
+      "body": "<strong>Artificial intelligence (AI)</strong> tools, including OpenAI Codex, assisted Wiki development with code, debugging, code review, and translation of team-written text. The site footer credits Claude Opus 4.7, 4.8, 5.0, and 5.5, and OpenAI GPT-6 Astra, GPT-6.1 Sol, and GPT-6 Luna for that work. Project tools, tasks, and review responsibilities are described in [Attributions → AI tool use](/attributions/#ai-tool-use). Human review of final project content remains pending."
+    },
+    {
+      "_template": "heading",
+      "text": "Decorative and evidentiary figures",
+      "level": 2,
+      "attributes": "#decorative-and-evidentiary-figures toc=\"Decorative and evidentiary figures\""
+    },
+    {
+      "_template": "text",
+      "body": "Inner-page opening illustrations were generated with OpenAI gpt-image-2.5 using team-provided artwork and layouts as references. They are released under CC BY 4.0 and are decorative, not experimental images or model results. Evidentiary figures present project observations or analyses. Reused material remains subject to its source license; figure captions identify direct AI-generated visual assets when applicable."
+    },
+    {
+      "_template": "heading",
+      "text": "Attributions form",
+      "level": 2,
+      "attributes": "#attributions-form toc=\"Attributions form\""
+    },
+    {
+      "_template": "text",
+      "body": "The [Attributions page](/attributions/) records team-member contributions, external contributions, and AI tool use. It provides the public contribution record associated with the iGEM Attributions Form."
+    }
+  ]
 }

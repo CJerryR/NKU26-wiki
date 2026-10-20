@@ -14,24 +14,32 @@ rules_spec.loader.exec_module(rules)
 
 
 class ContentRulesHeadingTests(unittest.TestCase):
-    def test_approved_model_module_names_keep_exact_project_casing(self):
+    def test_approved_model_module_names_use_fixed_sentence_case(self):
         examples = (
-            ("#model-section-1", "Molecular Docking: identifying receptor variants for differential recognition"),
-            ("#model-section-2", "Molecular Dynamics: exploring receptor–ligand behavior in a membrane"),
-            ("#model-section-3", "ODE & Dual-Channel Modeling: linking color readouts to nematode density"),
-            ("#model-section-4", "Economic Benefit: assessing when detection informs treatment"),
+            ("#model-section-1", "Molecular docking: identifying receptor variants for differential recognition"),
+            ("#model-section-2", "Molecular dynamics: exploring receptor–ligand behavior in a membrane"),
+            ("#model-section-3", "ODE and dual-channel model: linking color readouts to nematode density"),
+            ("#model-section-4", "Economic benefit: assessing when detection informs treatment"),
         )
         for anchor, label in examples:
             with self.subTest(label=label):
                 self.assertFalse(audit.heading_sentence_case_violation("model", label, anchor, 2, rules.sentence_case))
 
     def test_model_subtitles_still_require_sentence_case(self):
-        label = "Molecular Docking: Identifying Receptor Variants"
+        label = "Molecular docking: Identifying Receptor Variants"
         self.assertTrue(audit.heading_sentence_case_violation("model", label, "#model-section-1", 2, rules.sentence_case))
 
     def test_wrong_module_casing_is_not_exempt(self):
-        label = "Molecular docking: identifying receptor variants"
+        label = "Molecular Docking: identifying receptor variants"
         self.assertTrue(audit.heading_sentence_case_violation("model", label, "#model-section-1", 2, rules.sentence_case))
+
+
+    def test_new_fixed_model_names_are_required(self):
+        for label in (
+            "Molecular Docking: identifying receptor variants",
+            "ODE & Dual-Channel Modeling: linking color readouts to density",
+        ):
+            self.assertTrue(audit.heading_sentence_case_violation("model", label, "#model-section-1", 2, rules.sentence_case))
 
     def test_other_title_case_headings_are_still_rejected(self):
         label = "Genetic Engineering: identifying receptor variants"

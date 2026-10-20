@@ -122,7 +122,7 @@ main:has(.doc), .doc, .pager { --measure: 65rem; --bleed: 0px; }
   background: #fff !important;
   border: 1px solid var(--line) !important;
   border-radius: var(--figure-radius, 18px) !important;
-  padding: var(--figure-pad, clamp(14px, 2.2vw, 26px)) !important;
+  padding: 26px !important;
 }
 .doc .prose .figure__media img {
   max-width: 100%;
@@ -136,7 +136,7 @@ main:has(.doc), .doc, .pager { --measure: 65rem; --bleed: 0px; }
   background: #fff;
   border: 1px solid var(--line);
   border-radius: var(--figure-radius, 18px);
-  padding: clamp(14px, 2.2vw, 26px);
+  padding: 26px;
 }
 
 /* Labels printed within a white photographic panel keep dark ink in both themes. */
@@ -147,6 +147,17 @@ main:has(.doc), .doc, .pager { --measure: 65rem; --bleed: 0px; }
   .doc .prose { --article-font-size: 17.5px; --article-line-height: 1.7; }
   .doc .prose h2 { font-size: 28px !important; }
   .doc .prose h3:not(.person-name > *) { font-size: 21px !important; }
+  .doc .prose .figure > .figure__media:not(:has(> .table-wrap)),
+  .doc .prose .hp-source-figure > a,
+  .doc .prose .hp-photo-group,
+  .doc .prose .docking-panel-scroll { padding: 14px !important; }
+}
+
+@media (max-width: 760px) {
+  .doc .prose .figure > .figure__media:not(:has(> .table-wrap)),
+  .doc .prose .hp-source-figure > a,
+  .doc .prose .hp-photo-group,
+  .doc .prose .docking-panel-scroll { padding: 14px !important; }
 }
 
 /* One figure-caption contract across authored and structured image blocks. */
@@ -175,3 +186,30 @@ main:has(.doc), .doc, .pager { --measure: 65rem; --bleed: 0px; }
 }
 .doc .prose :is(figcaption, .figure-caption, .docking-caption-only) p { margin: 0 !important; }
 .doc .prose :is(figcaption, .figure-caption, .docking-caption-only) strong:first-child { margin-right: 0; }
+
+/* Table captions precede tables and use the same quiet label style as figure captions. */
+.doc .prose .table-caption {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 0 12px !important;
+  padding: 0 !important;
+  font-family: var(--font-body) !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 1.55 !important;
+  text-align: left !important;
+  text-align-last: auto !important;
+  letter-spacing: normal !important;
+}
+.doc .prose .table-caption :is(p, span, a, em, i, strong, b) {
+  font-family: inherit !important;
+  font-size: inherit !important;
+  font-weight: 400 !important;
+  line-height: inherit !important;
+  text-align: left !important;
+  letter-spacing: normal !important;
+}
+.doc .prose .table-wrap { border-radius: 16px; }
+.doc .prose :is(ul, ol), .doc .prose li,
+.doc .prose li :is(p, ul, ol) { text-align: left !important; }

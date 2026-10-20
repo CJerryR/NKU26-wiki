@@ -568,15 +568,20 @@ function localPngSize(url) {
 
 function wrapTablesAndImages(node, preserveFormatting = false) {
   if (!node.children) return;
-  // R1-I03: a "Table N." paragraph right before a table is its caption, styled like a figure caption
-  node.children.forEach((c, i) => {
+  // R1-I03: table labels always render above their table and share figure-caption styling.
+  for (let i = 0; i < node.children.length; i += 1) {
+    const c = node.children[i];
     const next = node.children[i + 1];
     const prev = node.children[i - 1];
-    if (c.type === 'paragraph' && ((next && next.type === 'table') || (prev && prev.type === 'table')) && /^Table\s+S?\d+[A-Za-z]?[.:]/.test(toText(c).trim())) {
-      if (!preserveFormatting) c.children = tableCaptionLead(c.children);
-      c.data = { ...(c.data || {}), hProperties: { ...((c.data || {}).hProperties || {}), className: ['table-caption'] } };
+    if (c.type !== 'paragraph' || !((next && next.type === 'table') || (prev && prev.type === 'table')) || !/^Table\s+S?\d+[A-Za-z]?[.:]/.test(toText(c).trim())) continue;
+    if (!preserveFormatting) c.children = tableCaptionLead(c.children);
+    c.data = { ...(c.data || {}), hProperties: { ...((c.data || {}).hProperties || {}), className: ['table-caption'] } };
+    if (prev?.type === 'table') {
+      node.children[i - 1] = c;
+      node.children[i] = prev;
+      i += 1;
     }
-  });
+  }
   node.children = node.children.map((c) => {
     wrapTablesAndImages(c, preserveFormatting);
     if (c.type === 'image') {

@@ -40,7 +40,7 @@
     },
     {
       "_template": "text",
-      "body": "We submitted 39 Parts and four Collections to the iGEM Registry, covering yeast chassis construction, editing tools, <strong>guide RNAs (gRNAs)</strong>, and GPR2 variants. Organizing these components by function gives future teams a clearer route to finding parts for related yeast-engineering projects."
+      "body": "We submitted 39 Parts and four Collections to the iGEM Registry, covering yeast chassis construction, editing tools, <strong>guide RNAs</strong>, and GPR2 variants. Organizing these components by function gives future teams a clearer route to finding parts for related yeast-engineering projects."
     },
     {
       "_template": "text",
@@ -71,7 +71,7 @@
     {
       "_template": "image",
       "src": "https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-1-e88a84496c.webp",
-      "alt": "Figure 1. A documented route to yeast strain construction.",
+      "alt": "A documented route to yeast strain construction.",
       "body": "Figure 1. A documented route to yeast strain construction. The workflow summarizes the genetic modifications connecting our chassis and receptor variants.",
       "openOriginal": true
     },
@@ -83,7 +83,7 @@
     },
     {
       "_template": "text",
-      "body": "Our experimental resources include the main protocols used in the project and a troubleshooting guide covering difficulties encountered during <strong>polymerase chain reaction (PCR)</strong>, yeast transformation, and cloning."
+      "body": "Our experimental resources include the main protocols used in the project and a troubleshooting guide covering difficulties encountered during <strong>polymerase chain reaction</strong>, yeast transformation, and cloning."
     },
     {
       "_template": "text",
@@ -112,7 +112,7 @@
     {
       "_template": "image",
       "src": "https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-3-9b303eb053.webp",
-      "alt": "Figure 2. Mapping candidate sites for receptor engineering.",
+      "alt": "Mapping candidate sites for receptor engineering.",
       "body": "Figure 2. Mapping candidate sites for receptor engineering. Highlighted residues were selected for further substitution studies through comparisons of predicted ligand contacts.",
       "layout": "wrap-right",
       "imageWidth": "medium",
@@ -127,7 +127,7 @@
     },
     {
       "_template": "text",
-      "body": "We combined ligand-position measurements with contact analysis to examine receptor–ligand behavior during <strong>molecular dynamics (MD)</strong> simulations. Comparing whole-receptor, transmembrane-core, and local-pocket alignment helps distinguish overall receptor movement from changes near the binding site."
+      "body": "We combined ligand-position measurements with contact analysis to examine receptor–ligand behavior during <strong>molecular dynamics</strong> simulations. Comparing whole-receptor, transmembrane-core, and local-pocket alignment helps distinguish overall receptor movement from changes near the binding site."
     },
     {
       "_template": "text",
@@ -135,7 +135,7 @@
     },
     {
       "_template": "text",
-      "body": "[Explore the MD Analysis](/model-md/#src-Model-Molecular-Dynamics-6)"
+      "body": "[Explore the Molecular dynamics analysis](/model-md/#src-Model-Molecular-Dynamics-6)"
     },
     {
       "_template": "heading",
@@ -154,13 +154,13 @@
     {
       "_template": "image",
       "src": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-64-b07ff15b9548.webp",
-      "alt": "Figure 3. From signal response to density estimation.",
+      "alt": "From signal response to density estimation.",
       "body": "Figure 3. From signal response to density estimation. The workflow connects pathway modeling, simulated colors, and paired-readout analysis. Generated with OpenAI GPT Image 2.",
       "openOriginal": true
     },
     {
       "_template": "text",
-      "body": "[Explore the <strong>ordinary differential equation (ODE)</strong> and Dual-Channel Models](/model-ode/#src-Model-ODE-1)"
+      "body": "[Explore the <strong>ordinary differential equation</strong> and dual-channel models](/model-ode/#src-Model-ODE-1)"
     },
     {
       "_template": "heading",
@@ -188,7 +188,7 @@
     },
     {
       "_template": "text",
-      "body": "Our <strong>Human Practices (HP)</strong> work produced materials and organizational approaches that can support other teams in teaching, understanding user needs, and coordinating field sampling. The documentation also outlines a way to record stakeholder feedback, team discussions, and follow-up actions."
+      "body": "Our <strong>Human Practices</strong> work produced materials and organizational approaches that can support other teams in teaching, understanding user needs, and coordinating field sampling. The documentation also outlines a way to record stakeholder feedback, team discussions, and follow-up actions."
     },
     {
       "_template": "heading",
@@ -199,7 +199,7 @@
     {
       "_template": "image",
       "src": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-65-2b6f00755b3f-preview.webp",
-      "alt": "Figure 4. Bringing nematode science into the classroom.",
+      "alt": "Bringing nematode science into the classroom.",
       "body": "Figure 4. Bringing nematode science into the classroom. Our teaching materials support classroom activities through the Xiangyang Program partnership.",
       "layout": "wrap-right",
       "imageWidth": "medium",
@@ -216,7 +216,7 @@
     {
       "_template": "image",
       "src": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-66-7d72a4f73708-preview.webp",
-      "alt": "Figure 5. Learning from growers’ experience.",
+      "alt": "Learning from growers’ experience.",
       "body": "Figure 5. Learning from growers’ experience. Conversations during farm visits helped us relate testing needs to local crops and management practices.",
       "layout": "wrap-right",
       "imageWidth": "medium",

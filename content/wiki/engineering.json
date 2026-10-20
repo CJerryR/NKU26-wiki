@@ -16,7 +16,7 @@
     },
     {
       "_template": "manuscriptTitle",
-      "manuscript": "Engineering NemaKlear: **design–build–test–learn (DBTL)**"
+      "manuscript": "Engineering NemaKlear: Design–Build–Test–Learn (DBTL)"
     },
     {
       "_template": "text",
@@ -29,7 +29,7 @@
     {
       "_template": "image",
       "src": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-20-55bd4422e309.webp",
-      "alt": "Figure 1. Engineering yeast to turn nematode signals into color. Modular GPR2-mediated sensing connects to the yeast signaling pathway, a synthetic transcription factor, and GAL-driven amplification for yellow betaxanthin production.",
+      "alt": "Engineering yeast to turn nematode signals into color. Modular GPR2-mediated sensing connects to the yeast signaling pathway, a synthetic transcription factor, and GAL-driven amplification for yellow betaxanthin production.",
       "body": "Figure 1. Engineering yeast to turn nematode signals into color. Our modular design connects GPR2-mediated sensing to the yeast signaling pathway, a synthetic transcription factor, and GAL-driven amplification, leading to yellow betaxanthin production.",
       "layout": "full",
       "imageWidth": "wide",
@@ -70,11 +70,11 @@
       "items": [
         {
           "design": "We added staining references to examine the receptor’s position relative to the cell boundary and membrane structures.",
-          "build": "We stained GPR2–sfGFP-expressing yeast with **Calcofluor White (CFW)** and FM4-64, then compared the fluorescence channels and merged images.",
+          "build": "We stained GPR2–sfGFP-expressing yeast with Calcofluor White and FM4-64, then compared the fluorescence channels and merged images.",
           "test": "The staining comparisons provided spatial context for the green signal. They allowed us to examine its distribution more closely than receptor fluorescence alone.",
           "learn": "**We established a clearer way to assess receptor localization.** Reference staining added spatial context to the expression images and strengthened our receptor-evaluation workflow. Further localization and response measurements will help connect receptor placement to sensing function.",
           "icon": "https://static.igem.wiki/teams/6303/wiki/dbtl-arc-20261021/dbtl-icon-1-1-551725462b.svg",
-          "testAlt": "Figure 2. Examining receptor localization.",
+          "testAlt": "Examining receptor localization.",
           "testCaption": "Figure 2. Examining receptor localization. GPR2–sfGFP fluorescence is compared with FM4-64 staining and merged images. Scale bars: 10 μm.",
           "testImage": "https://static.igem.wiki/teams/6303/wiki/release-20261020/engineering-figure-2-627df6af35.webp"
         }
@@ -96,8 +96,8 @@
       "display": "arc",
       "items": [
         {
-          "design": "We revised the editing workflow to use Cas9-assisted integration. This also required compatible selection markers, **guide RNAs (gRNAs)**, and donor **deoxyribonucleic acid (DNA)** for the target sites.",
-          "build": "We replaced the Cas9 plasmid’s Trp selection marker with **leucine (Leu)** and prepared the gRNA and donor constructs for pathway assembly.",
+          "design": "We revised the editing workflow to use Cas9-assisted integration. This also required compatible selection markers, guide RNA, and donor deoxyribonucleic acid for the target sites.",
+          "build": "We replaced the Cas9 plasmid’s Trp selection marker with leucine and prepared the guide RNAs and donor constructs for pathway assembly.",
           "test": "Transformant verification supported the intended integration of the synthetic transcription-factor module and the GAL-controlled pigment-production cassette in the revised workflow.",
           "learn": "**The revised editing workflow yielded genetically verified pathway components.** Combining targeted integration with genotyping gave us a better-defined chassis for receptor and reporter studies. The next step is to characterize how these components function together in response to ligands.",
           "icon": "https://static.igem.wiki/teams/6303/wiki/dbtl-arc-20261021/dbtl-icon-1-2-081675b259.svg"
@@ -162,8 +162,8 @@
       "display": "arc",
       "items": [
         {
-          "design": "We compared **wild type (WT)** GPR2, N84V, and V368R with both ligands to look for persistent interactions that could help explain their docking-score differences.",
-          "build": "We prepared six receptor–ligand systems and ran **molecular dynamics (MD)** simulations. Observations from the initial V368R–ascr#3 trajectory then guided two additional starting poses near Arg368 and Arg189.",
+          "design": "We compared wild type GPR2, N84V, and V368R with both ligands to look for persistent interactions that could help explain their docking-score differences.",
+          "build": "We prepared six receptor–ligand systems and ran molecular dynamics simulations. Observations from the initial V368R–ascr#3 trajectory then guided two additional starting poses near Arg368 and Arg189.",
           "test": "In the N84V–ascr#18 simulation, Arg189 maintained contact with the ligand’s carboxylate group throughout the main comparison window, providing a persistent anchoring interaction. In contrast, the additional V368R simulations lost their preset contacts and mainly adopted Arg345 anchoring, which also occurred in other systems.",
           "learn": "**We identified a persistent ligand-anchoring interaction in the N84V–ascr#18 simulation.** This provided a specific structural hypothesis for follow-up testing and helped distinguish the evidence available for the two candidates. Further simulations and ligand-response measurements will test how reproducible this N84V interaction is and investigate the mechanism behind V368R’s predicted preference.",
           "icon": "https://static.igem.wiki/teams/6303/wiki/dbtl-arc-20261021/dbtl-icon-2-2-e779dfc58c.svg"
@@ -210,12 +210,12 @@
       "display": "arc",
       "items": [
         {
-          "design": "We designed simulated mixtures in which target and background densities varied independently, and compared one-channel and two-channel predictions.",
-          "build": "We converted **ordinary differential equation (ODE)** pigment outputs into simulated blue-channel image features and used the paired features to estimate target nematode density.",
+          "design": "We designed simulated mixtures in which target and background densities varied independently, and compared single-channel and dual-channel predictions.",
+          "build": "We converted ordinary differential equation pigment outputs into simulated blue-channel image features and used the paired features to estimate target nematode density.",
           "test": "On the same simulated test set, paired readouts gave lower prediction errors than either channel alone. Tests near the example risk thresholds also showed that small density errors could change the assigned risk category.",
-          "learn": "**Paired readouts improved target-density estimation in simulated mixtures.** This supported the two-channel design, while the economic model connected prediction errors to their practical consequences. Validation with measured colors will need particular attention to samples near risk thresholds, where small errors can change the interpretation.",
+          "learn": "**Paired readouts improved target-density estimation in simulated mixtures.** This supported the dual-channel design, while the economic model connected prediction errors to their practical consequences. Validation with measured colors will need particular attention to samples near risk thresholds, where small errors can change the interpretation.",
           "icon": "https://static.igem.wiki/teams/6303/wiki/dbtl-arc-20261021/dbtl-icon-2-3-1050c1465f.svg",
-          "testAlt": "Figure 3. Comparing one and two readouts.",
+          "testAlt": "Comparing one and two readouts.",
           "testCaption": "Figure 3. Comparing one and two readouts. Paired readouts improved target-density prediction on the simulated test set.",
           "testImage": "https://static.igem.wiki/teams/6303/wiki/release-20261020/engineering-figure-3-5f5e319acc.webp"
         }
@@ -236,7 +236,8 @@
           "design": "We asked when knowing target density could improve management decisions, comparing screening-guided management with no treatment and uniform treatment without testing.",
           "build": "Using protected tomato cultivation in Spain as a worked example, we linked density estimates, crop losses, treatment effects, and costs to expected seasonal net returns.",
           "test": "Screening could add value by avoiding unnecessary treatment or guiding a more effective response. When it led to the same treatment as the uniform strategy, it simply added testing costs. Sensitivity analysis examined how these comparisons changed with economic and treatment assumptions.",
-          "learn": "**We connected detection performance to potential management value.** This made affordable testing and accuracy near management thresholds clear priorities for sensor development. Measured detection errors and local agricultural data will help refine these priorities."
+          "learn": "**We connected detection performance to potential management value.** This made affordable testing and accuracy near management thresholds clear priorities for sensor development. Measured detection errors and local agricultural data will help refine these priorities.",
+          "icon": "https://static.igem.wiki/teams/6303/wiki/release-20261020/model-5d23c4029c73.webp"
         }
       ]
     },
@@ -246,7 +247,7 @@
     },
     {
       "_template": "text",
-      "body": "Our [Docking](/model-docking/), [MD](/model-md/), and [ODE \\& Dual-channel](/model-ode/) pages provide the detailed analyses behind these iterations."
+      "body": "Our [Docking](/model-docking/), [Molecular dynamics](/model-md/), and [ordinary differential equation and dual-channel model](/model-ode/) pages provide the detailed analyses behind these iterations."
     },
     {
       "_template": "heading",
@@ -319,7 +320,7 @@
       "items": [
         {
           "design": "We examined recovery media and additives that could affect nutrient supply, wetting, and pigment stability.",
-          "build": "We compared recovery in **synthetic complete (SC)** medium and **phosphate-buffered saline (PBS)**, then tested glucose, **tyrosine (Tyr)**, Tween 80, and ascorbic acid conditions. We quantified color using blue-channel image values.",
+          "build": "We compared recovery in synthetic complete medium and phosphate-buffered saline, then tested glucose, **tyrosine (Tyr)**, Tween 80, and ascorbic acid conditions. We quantified color using blue-channel image values.",
           "test": "Color development varied across treatments. Several Tyr–Tween 80 combinations and ascorbic acid treatments produced stronger yellow signals than the reference, while changing glucose concentration did not consistently improve the signal.",
           "learn": "**We identified formulation conditions that strengthened the yellow readout.** These comparisons gave us a basis for refining the recovery solution alongside the strip itself. Further testing will assess whether the improved color development is consistent across prepared strips.",
           "icon": "https://static.igem.wiki/teams/6303/wiki/dbtl-arc-20261021/dbtl-icon-3-2-98fef27083.svg",
@@ -345,7 +346,7 @@
           "build": "We fabricated unit cassettes and positioned the strips from Iteration 3.2 for wetting from below. The design also includes reference colors on the casing for image correction; modular assembly remains the next construction step.",
           "test": "In the loading test, a single pour wetted all four regions evenly from below, with no observed liquid crossing the hydrophobic boundaries.",
           "learn": "**The prototype supported a simpler loading step while maintaining distinct wetting regions.** This provided a practical basis for the three-action workflow. Further testing will evaluate the assembled device, control responses, and operation with real soil extracts.",
-          "designAlt": "Figure 5. A test card designed for simpler use.",
+          "designAlt": "A test card designed for simpler use.",
           "designCaption": "Figure 5. A test card designed for simpler use. The proposed workflow combines loading the soil extract, checking the quality-control region, and photographing the result, with dedicated control and sample regions and a color reference on the casing. Generated with OpenAI GPT Image 2.",
           "designImage": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-55-4c447ce9cb96.webp",
           "icon": "https://static.igem.wiki/teams/6303/wiki/dbtl-arc-20261021/dbtl-icon-3-4-8b58b1bec1.svg"
@@ -442,7 +443,7 @@
           "build": "We organized soil collection and produced a sampling guidance video. Sample identifiers linked soil samples to information such as crop, location, collection date, and treatment history, giving subsequent studies a record of their agricultural context.",
           "test": "Field visits and expert discussions highlighted differences between plots and greenhouses, as well as the need for clear sampling instructions, complete background information, and appropriate handling of separate samples. This review broadened our evaluation beyond the strip to equipment, consumables, storage, and handover requirements.",
           "learn": "**We developed a traceable sampling approach and a fuller set of workflow requirements.** These provided a basis for assessing whether the kit could fit practical use. The next step is to test the complete process with real samples and users, including preparation, handling, and disposal instructions.",
-          "buildAlt": "Figure 6. From soil collection to disposal.",
+          "buildAlt": "From soil collection to disposal.",
           "buildCaption": "Figure 6. From soil collection to disposal. The workflow brings sampling, recording, transport, laboratory handling, and disposal into one view. Generated with OpenAI GPT Image 2.",
           "buildImage": "https://static.igem.wiki/teams/6303/wiki/release-20261020/engineering-figure-6-82a0893b5b.webp",
           "icon": "https://static.igem.wiki/teams/6303/wiki/dbtl-arc-20261021/dbtl-icon-4-3-789a4a9758.svg"

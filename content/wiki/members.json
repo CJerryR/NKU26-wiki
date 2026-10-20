@@ -27,7 +27,7 @@
     },
     {
       "_template": "heading",
-      "text": "PI",
+      "text": "1.1 PI",
       "level": 3,
       "attributes": "#pi toc=\"PI\" toc-unnumbered"
     },
@@ -51,7 +51,7 @@
     },
     {
       "_template": "heading",
-      "text": "Advisor",
+      "text": "1.2 Advisor",
       "level": 3,
       "attributes": "#advisors toc=\"Advisor\" toc-unnumbered"
     },
@@ -105,7 +105,7 @@
     },
     {
       "_template": "heading",
-      "text": "Student leaders",
+      "text": "2.1 Student leaders",
       "level": 3,
       "attributes": "#student-leaders toc=\"Student leaders\" toc-unnumbered"
     },
@@ -120,7 +120,7 @@
           "role": "Student Leader",
           "academicStatus": "Undergraduate · 2024 Entry",
           "university": "",
-          "group": "Dry Lab",
+          "group": "Dry lab",
           "tags": "Team Coordination · Modeling · Outreach",
           "outsideTheLab": "Art · Music · Film",
           "introduction": "Ruoxi mainly works on dry lab and, as team leader, helps connect people, coordinate work, and keep things moving. Outside iGEM, her interests span art, music, and film. She enjoys exploring different forms of expression, unpacking song lyrics, and occasionally taking a closer look at birth charts."
@@ -132,8 +132,8 @@
           "role": "Team Leader",
           "academicStatus": "Undergraduate · 2024 Entry",
           "university": "",
-          "group": "Wet Lab",
-          "tags": "Team Coordination · Experimental Design · Wet Lab",
+          "group": "Wet lab",
+          "tags": "Team Coordination · Experimental Design · Wet lab",
           "outsideTheLab": "Hiking · Reading",
           "introduction": "Xinya enjoys both a good hiking trail and a quiet afternoon with a book. Meticulous, resilient, and responsible, she brings a steady approach to everyday challenges. Yogurt and dried cranberries are her favorite treats, and the red panda is her animal of choice."
         }
@@ -141,7 +141,7 @@
     },
     {
       "_template": "heading",
-      "text": "Student team members",
+      "text": "2.2 Student team members",
       "level": 3,
       "attributes": "#student-team-members toc=\"Student team members\" toc-unnumbered"
     },
@@ -162,8 +162,8 @@
           "role": "",
           "academicStatus": "Undergraduate · 2024 Entry",
           "university": "",
-          "group": "Wet Lab",
-          "tags": "Wet Lab · Modeling",
+          "group": "Wet lab",
+          "tags": "Wet lab · Modeling",
           "outsideTheLab": "Basketball · Open-Source Tools",
           "introduction": "Feiyue enjoys basketball, exploring open-source tools, and figuring out how things work. Patient and attentive to detail, Feiyue likes taking the time to work through a question properly. Dark chocolate and black coffee are favorite companions, with the owl as a personal mascot."
         },
@@ -174,10 +174,10 @@
           "role": "",
           "academicStatus": "Undergraduate · 2024 Entry",
           "university": "",
-          "group": "Wet Lab",
-          "tags": "Wet Lab · Hardware · Visual Design",
+          "group": "Wet lab",
+          "tags": "Wet lab · Hardware · Visual Design",
           "outsideTheLab": "Drawing · Reading · Tabletop RPGs",
-          "introduction": "Chang is a nature enthusiast with a particular fondness for arthropods. Full of wandering ideas, sudden bursts of enthusiasm, and good humor, Chang enjoys drawing, reading, and rolling d20s in dungeons. Occasionally, being a moth sounds like a perfectly reasonable alternative."
+          "introduction": "Chang is a nature enthusiast with a particular fondness for arthropods. Full of wandering ideas, sudden bursts of enthusiasm, and good humor, Chang enjoys drawing, reading, and rolling d20s in dungeons. Occasionally, being a moth sounds like a reasonable alternative."
         },
         {
           "anchor": "shizhao-zheng",
@@ -186,8 +186,8 @@
           "role": "",
           "academicStatus": "Undergraduate · 2024 Entry",
           "university": "",
-          "group": "Wet Lab",
-          "tags": "Wet Lab · Hardware",
+          "group": "Wet lab",
+          "tags": "Wet lab · Hardware",
           "outsideTheLab": "Football · Erhu · Cantonese Songs",
           "introduction": "Shizhao has wide-ranging interests and self-described “Schrödinger-like” energy levels. A longtime football enthusiast, he also enjoys table tennis, roller skating, and volleyball. His musical tastes span erhu and, lately, old Cantonese songs. His quirky ideas bring the team plenty of surprises—and the occasional puzzled look."
         },
@@ -198,8 +198,8 @@
           "role": "",
           "academicStatus": "Undergraduate · 2024 Entry",
           "university": "",
-          "group": "Wet Lab",
-          "tags": "Wet Lab",
+          "group": "Wet lab",
+          "tags": "Wet lab",
           "outsideTheLab": "Sports · Travel",
           "introduction": "Yifei, also known as Ivy, enjoys sports, traveling, and meeting new people. Open-minded and energetic, Ivy is always happy to explore an unfamiliar place or make a new connection. An energy bar and orange juice are the go-to combination."
         },
@@ -210,8 +210,8 @@
           "role": "",
           "academicStatus": "Undergraduate · 2025 Entry",
           "university": "",
-          "group": "Wet Lab",
-          "tags": "Wet Lab",
+          "group": "Wet lab",
+          "tags": "Wet lab",
           "outsideTheLab": "Gaming · Table Tennis · Badminton",
           "introduction": "Yinzi may take a little time to warm up, but is easygoing once comfortable. Video games are a favorite pastime, alongside table tennis, badminton, and music. The meeting of biology and engineering sparked Yinzi’s interest in synthetic biology, with plenty more still to explore."
         },
@@ -222,7 +222,7 @@
           "role": "",
           "academicStatus": "PhD Student · 2025 Entry",
           "university": "",
-          "group": "Wet Lab",
+          "group": "Wet lab",
           "tags": "Experimental Design",
           "outsideTheLab": "Volleyball · Growing Plants",
           "introduction": "Hongbo is a PhD student returning for a second iGEM season. Collaborative and proactive, Hongbo brings experience in early project design and a willingness to join the discussion. Away from research, volleyball and growing plants offer two different ways to practice patience and teamwork."
@@ -234,8 +234,8 @@
           "role": "",
           "academicStatus": "Undergraduate · 2024 Entry",
           "university": "",
-          "group": "Wet Lab",
-          "tags": "Wet Lab · Outreach",
+          "group": "Wet lab",
+          "tags": "Wet lab · Outreach",
           "outsideTheLab": "Crafts · Food",
           "introduction": "Yuanwen enjoys making crafts, trying different foods, and learning something new. Curious and attentive to detail, Yuanwen is equally happy creating something by hand or exchanging ideas with others. There is always another craft to try or a new dish to discover."
         },
@@ -246,8 +246,8 @@
           "role": "",
           "academicStatus": "Undergraduate · 2024 Entry",
           "university": "",
-          "group": "Wet Lab",
-          "tags": "Wet Lab · Outreach",
+          "group": "Wet lab",
+          "tags": "Wet lab · Outreach",
           "outsideTheLab": "Nature Walks · Wildlife Watching",
           "introduction": "Qinghua loves wandering outdoors and noticing the tiny creatures others might walk past. Warm, proactive, and curious about the natural world, Qinghua finds plenty to admire in living things. Lemon candy and oolong tea round out the list of favorites."
         },
@@ -258,8 +258,8 @@
           "role": "",
           "academicStatus": "Undergraduate · 2024 Entry",
           "university": "",
-          "group": "Wet Lab",
-          "tags": "Wet Lab",
+          "group": "Wet lab",
+          "tags": "Wet lab",
           "outsideTheLab": "Minecraft · Music",
           "introduction": "Ziyi studies Biological Sciences in Nankai’s Boling Class and is a keen Minecraft player helping build the campus MC club. Beyond biology, Ziyi enjoys sweets, music, and playing different instruments. iGEM offers another welcome opportunity to meet people who share that enthusiasm for science."
         }
@@ -282,7 +282,7 @@
           "role": "",
           "academicStatus": "Undergraduate · 2024 Entry",
           "university": "",
-          "group": "Dry Lab",
+          "group": "Dry lab",
           "tags": "Modeling",
           "outsideTheLab": "Psychology · Novels",
           "introduction": "Zhiyuan likes exploring unfamiliar subjects and giving new things a try. Psychology books and novels are particular favorites, alongside a growing collection of hobbies. Rather than claiming expertise in all of them, Zhiyuan is happy to be a curious beginner with another question to ask."
@@ -294,7 +294,7 @@
           "role": "",
           "academicStatus": "Undergraduate · 2024 Entry",
           "university": "",
-          "group": "Dry Lab",
+          "group": "Dry lab",
           "tags": "Modeling",
           "outsideTheLab": "Sci-Fi Films · Painting",
           "introduction": "Yanmei enjoys science-fiction films and bringing imaginative ideas to life through painting. Science and art both offer room to explore whatever catches Yanmei’s curiosity. Analytical, creative, and fond of collaboration, Yanmei enjoys sharing ideas and working through them with others."
@@ -306,7 +306,7 @@
           "role": "",
           "academicStatus": "Undergraduate · 2024 Entry",
           "university": "",
-          "group": "Dry Lab",
+          "group": "Dry lab",
           "tags": "Modeling",
           "outsideTheLab": "Volleyball · City Walks · Food",
           "introduction": "Shulan is a longtime volleyball fan who would happily spend more time on the court. A food lover and enthusiastic city walker, Shulan also enjoys discovering unfamiliar streets and something delicious along the way. Potato chips remain a reliable favorite."
@@ -318,8 +318,8 @@
           "role": "",
           "academicStatus": "Undergraduate · 2024 Entry",
           "university": "",
-          "group": "Dry Lab",
-          "tags": "Modeling · Wet Lab",
+          "group": "Dry lab",
+          "tags": "Modeling · Wet lab",
           "outsideTheLab": "Novels · Jogging",
           "introduction": "Xinqi enjoys novels and jogging, making room for both imagined worlds and time outdoors. Calm and thoughtful, Xinqi values the friendships formed with teammates. Milk tea and mixed nuts are favorite treats, and the sea turtle is the animal Xinqi identifies with most."
         }
@@ -327,9 +327,9 @@
     },
     {
       "_template": "heading",
-      "text": "Human practices（HP）",
+      "text": "Human Practices (HP)",
       "level": 4,
-      "attributes": "#human-practices toc=\"Human practices（HP）\""
+      "attributes": "#human-practices toc=\"Human Practices (HP)\""
     },
     {
       "_template": "membergrid",

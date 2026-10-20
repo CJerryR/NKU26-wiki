@@ -14,19 +14,19 @@ hidden: false
 ---
 ## Project safety {#project-safety toc="Project safety"}
 
-<p>Biosafety is an essential component of project design. For our Nemaklear project, we carried out safety design in three main aspects: biomaterial safety, laboratory operation safety, and productization &amp; application safety.</p>
+<p>Biosafety is an essential component of project design. For our NemaKlear project, we carried out safety design in three main aspects: biomaterial safety, laboratory operation safety, and productization and application safety.</p>
 
 ### 1.1 Biomaterial safety {#biomaterial-safety toc="Biomaterial safety"}
 
 <p>In our project design, we adopted a dual strategy combining auxotrophic markers and suicide genes to strengthen our biosafety control system.</p>
 
-First, we used yeast with four auxotrophies as the chassis strain for this project (Figure 1). After a series of genetic modifications, the engineered yeast cannot survive in environments lacking <strong>histidine (His)</strong> and <strong>leucine (Leu)</strong>. Therefore, the engineered yeast constructed in our project can only survive under laboratory conditions, which effectively prevents the environmental escape of genetically modified yeast.
+First, we used yeast with four auxotrophies as the chassis strain for this project (Figure 1). After a series of genetic modifications, the engineered yeast cannot survive in environments lacking <strong>histidine</strong> and <strong>leucine</strong>. Therefore, the engineered yeast constructed in our project can only survive under laboratory conditions, which effectively prevents the environmental escape of genetically modified yeast.
 
 :::figure{scale=85}
 
-![Figure 1. CEN.PK2‑1C strain with four auxotrophies](https://static.igem.wiki/teams/6303/wiki/v8-0/v85-54382c8e77e7-r2-54382c8e77e7-fig1.avif)
+![CEN.PK2-1C strain with four auxotrophies](https://static.igem.wiki/teams/6303/wiki/v8-0/v85-54382c8e77e7-r2-54382c8e77e7-fig1.avif)
 
-Figure 1. CEN.PK2‑1c strain with four auxotrophies
+Figure 1. CEN.PK2-1C strain with four auxotrophies.
 
 :::
 
@@ -36,23 +36,23 @@ Secondly, we adopted the previously designed engineered yeast suicide switch, wh
 
 ![Tet-On and Bax suicide-system design](https://static.igem.wiki/teams/6303/wiki/v8-0/v85-cfa8f763f0dd-r2-cfa8f763f0dd-fig2.avif)
 
-Figure 2. The design of suicide system
+Figure 2. Tet-On and Bax suicide-system design.
 
 :::
 
 ### 1.2 Laboratory operation safety {#laboratory-operation-safety toc="Laboratory operation safety"}
 
-<p>All experimental operators of this project have received specialized laboratory safety training at Nankai University and strictly follow standard operating procedures, including wearing full <strong>personal protective equipment (PPE)</strong> and conducting experiments inside biosafety cabinets. All experimental waste is disposed of in accordance with regulations for biohazardous waste to prevent leakage of biological materials.</p>
+<p>All experimental operators of this project have received specialized laboratory safety training at Nankai University and strictly follow standard operating procedures, including wearing full <strong>personal protective equipment</strong> and conducting experiments inside biosafety cabinets. All experimental waste is disposed of in accordance with regulations for biohazardous waste to prevent leakage of biological materials.</p>
 
 :::figure
 
 ![Laboratory work with personal protective equipment](https://static.igem.wiki/teams/6303/wiki/v8-0/v85-fb3b2741b5dc-r2-fb3b2741b5dc-fig3.avif)
 
-
+Figure 3. Laboratory work with personal protective equipment.
 
 :::
 
-### 1.3 Productization & application safety {#productization-application-safety toc="Productization & application safety"}
+### 1.3 Productization and application safety {#productization-application-safety toc="Productization & application safety"}
 
 For productization and field application safety, our final product is a kit equipped with freeze-dried yeast test strips. Freeze-dried yeast powder can be transported at room temperature without losing activity. Besides, the risk of leakage and contamination from this type of yeast is relatively low.
 
@@ -72,7 +72,7 @@ All laboratories supporting our iGEM project fall under the university’s stric
 
 ![Laboratory safety facilities and inspection records](https://static.igem.wiki/teams/6303/wiki/v8-0/v85-0626938f4f22-r2-0626938f4f22-fig4.avif)
 
-
+Figure 4. Laboratory safety facilities and inspection records.
 
 :::
 
@@ -86,7 +86,7 @@ Before the official launch of wet-lab experiments, our faculty advisor and labor
 
 ![Team laboratory safety examination certificates](https://static.igem.wiki/teams/6303/wiki/v8-0/v85-616aeb24f5f8-r2-616aeb24f5f8-fig5.avif)
 
-
+Figure 5. Team laboratory safety examination certificates.
 
 :::
 
@@ -100,7 +100,7 @@ Senior students are appointed as laboratory safety officers. They continuously r
 
 ![Laboratory safety signs and management records](https://static.igem.wiki/teams/6303/wiki/v8-0/v85-3dcf1a9d6eb4-r2-07dd27072c49-fig6.avif)
 
-
+Figure 6. Laboratory safety signs and management records.
 
 :::
 

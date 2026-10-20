@@ -23,13 +23,12 @@
   aspect-ratio: var(--figure-ratio);
 }
 .prose .figure > .figure__media:has(> .table-wrap) { padding: 0; border: 0; border-radius: 0; background: none; box-shadow: none; }
-@media (max-width: 640px) { .prose { --figure-radius: 14px; } }
 .figure__media > p { margin: 0; }
-.figure figcaption, .table-caption { font-size: 14px; line-height: 1.6; color: var(--ink-2); }
-.figure figcaption strong, .table-caption strong { color: var(--ink); font-weight: 650; }
+.figure figcaption, .table-caption { font-size: 14px; line-height: 1.55; color: var(--ink-2); font-weight: 400; }
+.figure figcaption strong, .table-caption strong { color: inherit; font-weight: 400; }
 .figure figcaption strong:first-child, .table-caption strong:first-child { margin-right: .15em; }
-.table-caption { margin: 12px 0 0; max-width: calc(var(--measure) + var(--bleed)); }
-.table-wrap + .table-caption { margin-top: 12px; }
+.table-caption { margin: 0 0 12px; max-width: calc(var(--measure) + var(--bleed)); text-align: left; }
+.table-wrap + .table-caption { margin: 0 0 12px; }
 /* I01: citation numbers as superscripts that do not open up the line spacing */
 sup.cite { font-size: .72em; line-height: 0; vertical-align: super; margin-left: .06em; color: var(--iris-deep, var(--ink-2)); font-variant-numeric: lining-nums; white-space: nowrap; }
 
@@ -39,7 +38,7 @@ sup.cite { font-size: .72em; line-height: 0; vertical-align: super; margin-left:
 @media (max-width: 640px) { .prose .figure.figure--scaled > .figure__media img { max-width: 100%; } }
 
 /* I04: two framed figures side by side, frames stretched to the taller one; stacked on narrow screens */
-.figure-pair { --figure-pad: clamp(10px, 1.5vw, 18px); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+.figure-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(14px, 2vw, 24px); align-items: stretch; margin: 1.6em 0; }
 .figure-pair > .figure { margin: 0; min-width: 0; display: flex; flex-direction: column; }
 .figure-pair > .figure > .figure__media { flex: 1 1 auto; display: grid; place-items: center; }

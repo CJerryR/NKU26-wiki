@@ -59,7 +59,7 @@
     },
     {
       "_template": "heading",
-      "text": "Student leaders",
+      "text": "2.1 Student leaders",
       "level": 3,
       "attributes": "#student-leaders toc=\"Student leaders\" toc-unnumbered"
     },
@@ -155,7 +155,7 @@
               "text": "Visualization: Created and refined figures illustrating project design and experimental results."
             },
             {
-              "text": "Writing: Wrote Wiki content, including Wet Lab, Description, Contribution, Attributions, Background, and Engineering sections."
+              "text": "Writing: Wrote Wiki content, including Wet lab, Description, Contribution, Attributions, Background, and Engineering sections."
             }
           ]
         }
@@ -163,15 +163,15 @@
     },
     {
       "_template": "heading",
-      "text": "Student team members",
+      "text": "2.2 Student team members",
       "level": 3,
       "attributes": "#student-team-members toc=\"Student team members\" toc-unnumbered"
     },
     {
       "_template": "heading",
-      "text": "Wet Lab",
+      "text": "Wet lab",
       "level": 4,
-      "attributes": "#wet-lab toc=\"Wet Lab\""
+      "attributes": "#wet-lab toc=\"Wet lab\""
     },
     {
       "_template": "creditgrid",
@@ -424,9 +424,9 @@
     },
     {
       "_template": "heading",
-      "text": "Dry Lab",
+      "text": "Dry lab",
       "level": 4,
-      "attributes": "#dry-lab toc=\"Dry Lab\""
+      "attributes": "#dry-lab toc=\"Dry lab\""
     },
     {
       "_template": "creditgrid",
@@ -539,9 +539,9 @@
     },
     {
       "_template": "heading",
-      "text": "HP",
+      "text": "Human Practices (HP)",
       "level": 4,
-      "attributes": "#human-practices toc=\"HP\""
+      "attributes": "#human-practices toc=\"Human Practices (HP)\""
     },
     {
       "_template": "creditgrid",
@@ -686,7 +686,7 @@
     },
     {
       "_template": "heading",
-      "text": "Advisors",
+      "text": "3.1 Advisors",
       "level": 3,
       "attributes": "#advisors toc=\"Advisors\" toc-unnumbered"
     },
@@ -767,7 +767,7 @@
     },
     {
       "_template": "heading",
-      "text": "Others",
+      "text": "3.2 Others",
       "level": 3,
       "attributes": "#others toc=\"Others\" toc-unnumbered"
     },
@@ -811,7 +811,7 @@
     },
     {
       "_template": "text",
-      "body": "AI tools supported our literature research, dry-lab software development, protein structure prediction, writing, and visual communication. Team members defined the research questions, reviewed AI-assisted outputs, and decided how to use them in the project."
+      "body": "<strong>artificial intelligence (AI)</strong> tools supported our literature research, dry-lab software development, protein structure prediction, writing, and visual communication. Team members defined the research questions, reviewed AI-assisted outputs, and decided how to use them in the project."
     },
     {
       "_template": "heading",

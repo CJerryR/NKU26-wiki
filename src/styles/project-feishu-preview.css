@@ -2,14 +2,14 @@
    content pages use one reading measure, including pages without submissions. */
 /* Set the shared measure on the actual grid as well as its parent. Local
    declarations on .doc must never shrink the inherited article measure.
-   52rem keeps an 18px line near 90 characters (review 2026-10-21: 65rem read too wide). */
-body:has([data-project-preview]) main:has(.doc), body:has([data-project-preview]) .doc, body:has([data-project-preview]) .pager { --measure: 52rem; --bleed: 0px; }
+   all preview pages follow the same 65rem measure as shared wiki content. */
+body:has([data-project-preview]) main:has(.doc), body:has([data-project-preview]) .doc, body:has([data-project-preview]) .pager { --measure: 65rem; --bleed: 0px; }
 /* Person-card pages (Members, Attributions) are laid out for the earlier 65rem grid. */
 body:has([data-project-preview]) main:has(.member-grid, .credit-grid), body:has([data-project-preview]) .doc:has(.member-grid, .credit-grid), body:has([data-project-preview]) main:has(.member-grid, .credit-grid) .pager { --measure: 65rem; }
 body:has([data-project-preview]) .doc .prose {
   min-width: 0;
   width: 100%;
-  max-width: var(--measure, 52rem);
+  max-width: var(--measure, 65rem);
   font-family: var(--font-body);
   --article-font-size: 18px;
   --article-line-height: 1.65;
@@ -121,7 +121,7 @@ body:has([data-project-preview]) .doc .prose .figure > .figure__media:not(:has(>
   background: #fff !important;
   border: 1px solid var(--line) !important;
   border-radius: var(--figure-radius, 18px) !important;
-  padding: var(--figure-pad, clamp(14px, 2.2vw, 26px)) !important;
+  padding: 26px !important;
 }
 body:has([data-project-preview]) .doc .prose .figure__media img {
   max-width: 100%;
@@ -135,17 +135,24 @@ body:has([data-project-preview]) .doc .prose .docking-panel-scroll {
   background: #fff;
   border: 1px solid var(--line);
   border-radius: var(--figure-radius, 18px);
-  padding: clamp(14px, 2.2vw, 26px);
+  padding: 26px;
 }
 
 /* Labels printed within a white photographic panel keep dark ink in both themes. */
 body:has([data-project-preview]) .doc .prose .hp-photo-group .hp-image-label { color: #241c2b; }
 
 @media (max-width: 640px) {
-  body:has([data-project-preview]) .doc { width: min(100% - 40px, 52rem); }
+  body:has([data-project-preview]) .doc { width: min(100% - 40px, 65rem); }
   body:has([data-project-preview]) .doc .prose { --article-font-size: 17.5px; --article-line-height: 1.7; }
   body:has([data-project-preview]) .doc .prose h2 { font-size: 28px !important; }
   body:has([data-project-preview]) .doc .prose h3:not(.person-name > *) { font-size: 21px !important; }
+}
+
+@media (max-width: 760px) {
+  body:has([data-project-preview]) .doc .prose .figure > .figure__media:not(:has(> .table-wrap)),
+  body:has([data-project-preview]) .doc .prose .hp-source-figure > a,
+  body:has([data-project-preview]) .doc .prose .hp-photo-group,
+  body:has([data-project-preview]) .doc .prose .docking-panel-scroll { padding: 14px !important; }
 }
 
 /* One figure-caption contract across authored and structured image blocks. */
@@ -176,3 +183,16 @@ body:has([data-project-preview]) .doc .prose :is(figcaption, .figure-caption, .d
 body:has([data-project-preview]) .doc .prose :is(figcaption, .figure-caption, .docking-caption-only) strong:first-child { margin-right: 0; }
 
 body:has([data-project-preview]) .project-preview-bar {position:relative;z-index:30;display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding:16px 24px;margin-top:100px;background:var(--paper);color:var(--ink);border-block:1px solid var(--line);}
+
+body:has([data-project-preview]) .doc .prose .table-caption {
+  display: block; width: 100%; max-width: 100%; margin: 0 0 12px !important; padding: 0 !important;
+  font-family: var(--font-body) !important; font-size: 14px !important; font-weight: 400 !important;
+  line-height: 1.55 !important; text-align: left !important; text-align-last: auto !important; letter-spacing: normal !important;
+}
+body:has([data-project-preview]) .doc .prose .table-caption :is(p, span, a, em, i, strong, b) {
+  font-family: inherit !important; font-size: inherit !important; font-weight: 400 !important;
+  line-height: inherit !important; text-align: left !important; letter-spacing: normal !important;
+}
+body:has([data-project-preview]) .doc .prose .table-wrap { border-radius: 16px; }
+body:has([data-project-preview]) .doc .prose :is(ul, ol), body:has([data-project-preview]) .doc .prose li,
+body:has([data-project-preview]) .doc .prose li :is(p, ul, ol) { text-align: left !important; }

@@ -1,10 +1,10 @@
 {
-  "title": "Economic Benefit",
-  "heading": "Economic Benefit",
+  "title": "Economic benefit",
+  "heading": "Economic benefit",
   "sub": "",
   "crumbs": [
     "Model",
-    "Economic Benefit"
+    "Economic benefit"
   ],
   "route": "model-eco",
   "search": true,
@@ -25,7 +25,7 @@
     },
     {
       "_template": "text",
-      "body": "We developed the NemaKlear interactive web tool to explore this question. It connects ODE simulations of color development, dual-channel density estimation, and economic analysis. Users can select simulated soil samples or enter paired absorbance readings, estimate target nematode density, and compare net income across management strategies for a single growing season."
+      "body": "We developed the NemaKlear interactive web tool to explore this question. It connects <strong>ordinary differential equation (ODE)</strong> simulations of color development, dual-channel density estimation, and economic analysis. Users can select simulated soil samples or enter paired absorbance readings, estimate target nematode density, and compare net income across management strategies for a single growing season."
     },
     {
       "_template": "text",
@@ -96,7 +96,7 @@
     },
     {
       "_template": "text",
-      "body": "Density is expressed as second-stage juveniles per 100 cm³ of soil (J2/100 cm³). Both readings undergo the same processing used for calibration. Unit and applicability checks are performed before the regression output enters Eco. Economic parameters come independently from literature and scenario assumptions; density connects the color readout to the economic calculation."
+      "body": "Density is expressed as **second-stage juveniles (J2)** per 100 cm³ of soil (J2/100 cm³). Both readings undergo the same processing used for calibration. Unit and applicability checks are performed before the regression output enters Eco. Economic parameters come independently from literature and scenario assumptions; density connects the color readout to the economic calculation."
     },
     {
       "_template": "text",
@@ -143,8 +143,67 @@
       "body": "An increase in income after testing can reflect both the benefit of nematode control and the benefit of choosing treatment using density information. To distinguish these effects, we compare three scenarios:"
     },
     {
-      "_template": "text",
-      "body": "<div class=\"model-table-scroll\" tabindex=\"0\"><table class=\"model-source-table\"><thead><tr><th scope=\"col\">Scenario</th><th scope=\"col\">Management approach</th></tr></thead><tbody><tr><td>No testing, no control</td><td>No additional nematode-specific treatment</td></tr><tr><td>No testing, uniform treatment</td><td>The same fluopyram program is applied regardless of density</td></tr><tr><td>Test-guided treatment</td><td>The density estimate determines whether to use no dedicated control, a medium-tier treatment, or a high-tier treatment</td></tr></tbody></table></div>"
+      "_template": "datatable",
+      "title": "",
+      "csv": "Scenario,Management approach\n\"No testing, no control\",No additional nematode-specific treatment\n\"No testing, uniform treatment\",The same fluopyram program is applied regardless of density\nTest-guided treatment,\"The density estimate determines whether to use no dedicated control, a medium-tier treatment, or a high-tier treatment\"",
+      "sourceCellRuns": [
+        [
+          [
+            {
+              "text": "Scenario",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Management approach",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "No testing, no control",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "No additional nematode-specific treatment",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "No testing, uniform treatment",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "The same fluopyram program is applied regardless of density",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Test-guided treatment",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "The density estimate determines whether to use no dedicated control, a medium-tier treatment, or a high-tier treatment",
+              "format": []
+            }
+          ]
+        ]
+      ]
     },
     {
       "_template": "text",
@@ -181,8 +240,53 @@
       "body": "At <strong>100 J2/100 cm³</strong>, with all other inputs held at their example values, the model gives:"
     },
     {
-      "_template": "text",
-      "body": "<div class=\"model-table-scroll\" tabindex=\"0\"><table class=\"model-source-table\"><thead><tr><th scope=\"col\">Comparison baseline</th><th scope=\"col\">Increase in seasonal net income with test-guided treatment</th></tr></thead><tbody><tr><td>No testing, no control</td><td>EUR 17,028.48/ha</td></tr><tr><td>No testing, uniform treatment</td><td>EUR 496.26/ha</td></tr></tbody></table></div>"
+      "_template": "datatable",
+      "title": "",
+      "csv": "Comparison baseline,Increase in seasonal net income with test-guided treatment\n\"No testing, no control\",\"EUR 17,028.48/ha\"\n\"No testing, uniform treatment\",EUR 496.26/ha",
+      "sourceCellRuns": [
+        [
+          [
+            {
+              "text": "Comparison baseline",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Increase in seasonal net income with test-guided treatment",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "No testing, no control",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "EUR 17,028.48/ha",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "No testing, uniform treatment",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "EUR 496.26/ha",
+              "format": []
+            }
+          ]
+        ]
+      ]
     },
     {
       "_template": "text",

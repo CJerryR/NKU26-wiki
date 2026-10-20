@@ -1,10 +1,10 @@
 ---
-title: Economic Benefit
-heading: Economic Benefit
+title: Economic benefit
+heading: Economic benefit
 sub: ''
 crumbs:
   - Model
-  - Economic Benefit
+  - Economic benefit
 route: model-eco
 search: true
 description: ''
@@ -23,7 +23,7 @@ Eco: from color readouts to management decisions
 
 <strong>When growers can already apply a uniform treatment, how much additional benefit can nematode density information provide?</strong>
 
-We developed the NemaKlear interactive web tool to explore this question. It connects ODE simulations of color development, dual-channel density estimation, and economic analysis. Users can select simulated soil samples or enter paired absorbance readings, estimate target nematode density, and compare net income across management strategies for a single growing season.
+We developed the NemaKlear interactive web tool to explore this question. It connects <strong>ordinary differential equation (ODE)</strong> simulations of color development, dual-channel density estimation, and economic analysis. Users can select simulated soil samples or enter paired absorbance readings, estimate target nematode density, and compare net income across management strategies for a single growing season.
 
 The public economic-model code calculates conditional cash flows for the Spanish protected-tomato example from density, yield-loss, treatment, and testing-cost inputs. [Explore the economic-model code →](https://gitlab.igem.org/2026/software/nku-china/modeling/-/blob/main/studies/economic-model/README.md)
 
@@ -55,7 +55,7 @@ For simulated soil samples, the calculation proceeds as follows:
 
 <strong>ODE color output → Endpoint absorbance and blank correction → Dual-channel density regression → Economic comparison of management scenarios</strong>
 
-Density is expressed as second-stage juveniles per 100 cm³ of soil (J2/100 cm³). Both readings undergo the same processing used for calibration. Unit and applicability checks are performed before the regression output enters Eco. Economic parameters come independently from literature and scenario assumptions; density connects the color readout to the economic calculation.
+Density is expressed as **second-stage juveniles (J2)** per 100 cm³ of soil (J2/100 cm³). Both readings undergo the same processing used for calibration. Unit and applicability checks are performed before the regression output enters Eco. Economic parameters come independently from literature and scenario assumptions; density connects the color readout to the economic calculation.
 
 The interface retains both the density point estimate and its regression prediction interval. If the interval crosses a management threshold, the tool evaluates scenarios on both sides to show how treatment choice and net income may change. Negative estimates and values outside the calibration or economic model range are blocked from further calculation. The interface also displays the calibration status and applicable conditions.
 
@@ -77,7 +77,7 @@ The model combines yield relationships and economic parameters from different st
 
 An increase in income after testing can reflect both the benefit of nematode control and the benefit of choosing treatment using density information. To distinguish these effects, we compare three scenarios:
 
-<div class="model-table-scroll" tabindex="0"><table class="model-source-table"><thead><tr><th scope="col">Scenario</th><th scope="col">Management approach</th></tr></thead><tbody><tr><td>No testing, no control</td><td>No additional nematode-specific treatment</td></tr><tr><td>No testing, uniform treatment</td><td>The same fluopyram program is applied regardless of density</td></tr><tr><td>Test-guided treatment</td><td>The density estimate determines whether to use no dedicated control, a medium-tier treatment, or a high-tier treatment</td></tr></tbody></table></div>
+<div class="wiki-toolkit-block"><wiki-toolkit data-type="datatable" data-props="{&quot;_template&quot;:&quot;datatable&quot;,&quot;title&quot;:&quot;&quot;,&quot;csv&quot;:&quot;Scenario,Management approach\n\&quot;No testing, no control\&quot;,No additional nematode-specific treatment\n\&quot;No testing, uniform treatment\&quot;,The same fluopyram program is applied regardless of density\nTest-guided treatment,\&quot;The density estimate determines whether to use no dedicated control, a medium-tier treatment, or a high-tier treatment\&quot;&quot;,&quot;sourceCellRuns&quot;:[[[{&quot;text&quot;:&quot;Scenario&quot;,&quot;format&quot;:[]}],[{&quot;text&quot;:&quot;Management approach&quot;,&quot;format&quot;:[]}]],[[{&quot;text&quot;:&quot;No testing, no control&quot;,&quot;format&quot;:[]}],[{&quot;text&quot;:&quot;No additional nematode-specific treatment&quot;,&quot;format&quot;:[]}]],[[{&quot;text&quot;:&quot;No testing, uniform treatment&quot;,&quot;format&quot;:[]}],[{&quot;text&quot;:&quot;The same fluopyram program is applied regardless of density&quot;,&quot;format&quot;:[]}]],[[{&quot;text&quot;:&quot;Test-guided treatment&quot;,&quot;format&quot;:[]}],[{&quot;text&quot;:&quot;The density estimate determines whether to use no dedicated control, a medium-tier treatment, or a high-tier treatment&quot;,&quot;format&quot;:[]}]]]}"><div class="wiki-toolkit-fallback"><div class="table-wrap"><table><thead><tr><th><span style="font-weight:400;white-space:pre-wrap">Scenario</span></th><th><span style="font-weight:400;white-space:pre-wrap">Management approach</span></th></tr></thead><tbody><tr><td><span style="font-weight:400;white-space:pre-wrap">No testing, no control</span></td><td><span style="font-weight:400;white-space:pre-wrap">No additional nematode-specific treatment</span></td></tr><tr><td><span style="font-weight:400;white-space:pre-wrap">No testing, uniform treatment</span></td><td><span style="font-weight:400;white-space:pre-wrap">The same fluopyram program is applied regardless of density</span></td></tr><tr><td><span style="font-weight:400;white-space:pre-wrap">Test-guided treatment</span></td><td><span style="font-weight:400;white-space:pre-wrap">The density estimate determines whether to use no dedicated control, a medium-tier treatment, or a high-tier treatment</span></td></tr></tbody></table></div></div><noscript><style>.wiki-toolkit-fallback{display:block!important}wiki-toolkit:not(:defined){min-height:0;border:0;background:none;animation:none}</style><p>Enable JavaScript to use the interactive controls.</p></noscript></wiki-toolkit></div>
 
 The test-guided scenario follows the preset rules below. Treatment options are drawn from the literature <sup>[2]</sup>.
 
@@ -95,7 +95,7 @@ The first comparison evaluates the combined testing-and-control program. The sec
 
 At <strong>100 J2/100 cm³</strong>, with all other inputs held at their example values, the model gives:
 
-<div class="model-table-scroll" tabindex="0"><table class="model-source-table"><thead><tr><th scope="col">Comparison baseline</th><th scope="col">Increase in seasonal net income with test-guided treatment</th></tr></thead><tbody><tr><td>No testing, no control</td><td>EUR 17,028.48/ha</td></tr><tr><td>No testing, uniform treatment</td><td>EUR 496.26/ha</td></tr></tbody></table></div>
+<div class="wiki-toolkit-block"><wiki-toolkit data-type="datatable" data-props="{&quot;_template&quot;:&quot;datatable&quot;,&quot;title&quot;:&quot;&quot;,&quot;csv&quot;:&quot;Comparison baseline,Increase in seasonal net income with test-guided treatment\n\&quot;No testing, no control\&quot;,\&quot;EUR 17,028.48/ha\&quot;\n\&quot;No testing, uniform treatment\&quot;,EUR 496.26/ha&quot;,&quot;sourceCellRuns&quot;:[[[{&quot;text&quot;:&quot;Comparison baseline&quot;,&quot;format&quot;:[]}],[{&quot;text&quot;:&quot;Increase in seasonal net income with test-guided treatment&quot;,&quot;format&quot;:[]}]],[[{&quot;text&quot;:&quot;No testing, no control&quot;,&quot;format&quot;:[]}],[{&quot;text&quot;:&quot;EUR 17,028.48/ha&quot;,&quot;format&quot;:[]}]],[[{&quot;text&quot;:&quot;No testing, uniform treatment&quot;,&quot;format&quot;:[]}],[{&quot;text&quot;:&quot;EUR 496.26/ha&quot;,&quot;format&quot;:[]}]]]}"><div class="wiki-toolkit-fallback"><div class="table-wrap"><table><thead><tr><th><span style="font-weight:400;white-space:pre-wrap">Comparison baseline</span></th><th><span style="font-weight:400;white-space:pre-wrap">Increase in seasonal net income with test-guided treatment</span></th></tr></thead><tbody><tr><td><span style="font-weight:400;white-space:pre-wrap">No testing, no control</span></td><td><span style="font-weight:400;white-space:pre-wrap">EUR 17,028.48/ha</span></td></tr><tr><td><span style="font-weight:400;white-space:pre-wrap">No testing, uniform treatment</span></td><td><span style="font-weight:400;white-space:pre-wrap">EUR 496.26/ha</span></td></tr></tbody></table></div></div><noscript><style>.wiki-toolkit-fallback{display:block!important}wiki-toolkit:not(:defined){min-height:0;border:0;background:none;animation:none}</style><p>Enable JavaScript to use the interactive controls.</p></noscript></wiki-toolkit></div>
 
 The <strong>EUR 17,028.48/ha</strong> increase represents the benefit of the combined program relative to leaving nematodes untreated. The <strong>EUR 496.26/ha</strong> increase represents the additional benefit of changing treatment relative to the uniform-treatment baseline. In this scenario, the extra losses avoided by the high-tier treatment cover both the additional treatment expense and the testing cost.
 

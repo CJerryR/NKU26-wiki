@@ -1,5 +1,6 @@
 import { h, s, rich, has, icon, button, segmented, chips, searchBox, copyButton, empty, asset, safeHref, linkProps,
   table, toCSV, toNum, fmt, color, ramp, inkOn, saveBlob, copyText, reduced, swap } from './core.js';
+import { displayTableHeader, hasDisplayTableHeader } from '../../lib/table-display.mjs';
 
 const FONT = "'Spline Sans', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif";
 const INK = '#241c2b'; const INK3 = '#6c6373'; const GRID = '#e6ddcc'; const PAPER = '#fbf8f1';
@@ -38,12 +39,18 @@ function cell(value, header = '', inlineFormatting = false) {
   }
   return value;
 }
-function sourceCell(value, runs) {
+function sourceCell(value, runs, katex = null) {
   if (!Array.isArray(runs)) return value;
   const original = runs.map(r => r.text || '').join('');
   if (original.trim() !== value.trim()) throw new Error('Original table cell text does not match its CSV value.');
   const nodes = runs.map(run => {
-    let node = document.createTextNode(run.text || '');
+    let node;
+    if (run.latex && katex) {
+      const math = h('span', { class: 'dt__math' });
+      try { katex.render(String(run.latex).replace(/(?<!\\)#/g, '\\#'), math, { throwOnError: true, trust: false, strict: 'ignore', maxExpand: 500, maxSize: 20 }); }
+      catch { math.textContent = run.text || ''; }
+      node = math;
+    } else node = document.createTextNode(run.text || '');
     for (const [flag, tag] of [['superscript','sup'],['subscript','sub'],['u','u'],['i','em'],['b','strong']]) {
       if (run.format?.includes(flag)) node = h(tag, null, node);
     }
@@ -52,7 +59,7 @@ function sourceCell(value, runs) {
   });
   return h('span', { style: { fontWeight: 'normal', whiteSpace: 'pre-wrap' } }, nodes);
 }
-export function renderTable(target, headers, rows, { name = 'data', pageSize = 25, sourceCellRuns, inlineFormatting = false } = {}) {
+export function renderTable(target, headers, rows, { name = 'data', pageSize = 25, sourceCellRuns, inlineFormatting = false, katex = null } = {}) {
   const originalRows = new Map(rows.map((row, index) => [row, sourceCellRuns?.[index + 1]]));
   const originalValues = cells => cells.map(runs => runs.map(r => r.text || '').join(''));
   const numeric = headers.map((_, k) => isNumericColumn(rows, k));
@@ -61,7 +68,11 @@ export function renderTable(target, headers, rows, { name = 'data', pageSize = 2
   const box = searchBox('Filter table', (v) => { query = v; page = 0; draw(); });
   const tbody = h('tbody');
   const ths = headers.map((label, k) => {
-    const b = h('button', { type: 'button', class: 'dt__sort' }, sourceCellRuns ? sourceCell(label, sourceCellRuns[0]?.[k]) : inlineFormatting ? formattedCell(label) : h('span', { text: label }), icon('down', 'i dt__arrow'));
+    const shownLabel = hasDisplayTableHeader(label) ? displayTableHeader(label) : label;
+    const display = hasDisplayTableHeader(label)
+      ? h('span', { text: shownLabel })
+      : sourceCellRuns ? sourceCell(label, sourceCellRuns[0]?.[k], katex) : inlineFormatting ? formattedCell(label) : h('span', { text: label });
+    const b = h('button', { type: 'button', class: 'dt__sort' }, display, icon('down', 'i dt__arrow'));
     const th = h('th', { scope: 'col', 'aria-sort': 'none', class: numeric[k] ? 'num' : '' }, b);
     b.addEventListener('click', () => { asc = sort === k ? !asc : true; sort = k; page = 0; draw(); });
     return th;
@@ -89,7 +100,7 @@ export function renderTable(target, headers, rows, { name = 'data', pageSize = 2
     page = Math.max(0, Math.min(page, pages - 1));
     const visibleRows = result.slice(page * pageSize, page * pageSize + pageSize);
     swap(tbody, ...visibleRows.map(r => h('tr', null,
-      r.map((v, k) => h('td', { class: numeric[k] ? 'num' : '' }, sourceCellRuns ? sourceCell(v, originalRows.get(r)?.[k]) : cell(v, headers[k], inlineFormatting))))));
+      r.map((v, k) => h('td', { class: numeric[k] ? 'num' : '' }, sourceCellRuns ? sourceCell(v, originalRows.get(r)?.[k], katex) : cell(v, headers[k], inlineFormatting))))));
     if (!result.length) tbody.append(h('tr', null, h('td', { colspan: headers.length, class: 'dt__none', text: 'No matching rows.' })));
     status.textContent = q ? `${result.length} / ${rows.length} rows` : `${rows.length} rows`;
     pageText.textContent = `Page ${page + 1} / ${pages}`;
@@ -111,7 +122,14 @@ async function datatable(d, ctx) {
   const text = await csvText(d, ctx, '请选择 CSV 文件或粘贴数据，首行为列名。');
   if (text == null) return;
   const { headers, rows } = table(text);
-  renderTable(ctx.body, headers, rows, { name: d.title || 'table', sourceCellRuns: d.sourceCellRuns, inlineFormatting: d.inlineFormatting });
+  const hasLatex = d.sourceCellRuns?.some(row => row?.some(cell => cell?.some(run => run?.latex)));
+  let katex = null;
+  if (hasLatex) {
+    katexCss(ctx.root);
+    try { katex = await loadKatex(); } catch { katex = null; }
+    if (!ctx.active()) return;
+  }
+  renderTable(ctx.body, headers, rows, { name: d.title || 'table', sourceCellRuns: d.sourceCellRuns, inlineFormatting: d.inlineFormatting, katex });
 }
 
 /* ================================================================ charts */

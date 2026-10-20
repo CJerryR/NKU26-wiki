@@ -1,0 +1,124 @@
+{
+  "task": "subpage-rules",
+  "base_commit": "fd9b5a6e3c5ff568966c81ac691db61046568a2f",
+  "source_path": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/tasks/subpage-rules",
+  "modification_model": "gpt-6-luna",
+  "final_review": "parent agent",
+  "specification_copy": "docs/文案规范.md",
+  "specification_sha256": "4b4094ae0972e0453c58c562ec29f765fe47af8e6ebb8b4e17106d28e30029a9",
+  "source_pages_audited": 26,
+  "source_pages_modified": [
+    "attributions",
+    "background",
+    "contribution",
+    "description",
+    "education",
+    "engineering",
+    "experiments",
+    "hp-industry",
+    "hp-investigation",
+    "hp-overview",
+    "human-practices",
+    "licensing",
+    "members",
+    "model-docking",
+    "model-eco",
+    "model-md",
+    "model-ode",
+    "model",
+    "parts",
+    "results",
+    "safety"
+  ],
+  "scientific_source_hashes": {
+    "attributions.json": "328edeec32436157a6e91744a649d010e0d0d4de97bea6b93049391028eeb430",
+    "background.json": "b3f5c9b331c08c25061b156a52799f53ddbbe4f85be880ffdd4ee1701b010d87",
+    "contribution.json": "1b5f5f126c1a3dba8135c82ef0f787e6442ad43d69715ede73f3c719f7e82ad0",
+    "description.json": "dff45943b57bd1a297f0d97bf00e6d18fc60ea318ed1a69d81e5775135a9e3a7",
+    "education.json": "9f7b198f263e4c10065954b250149ba022dc3891fbbbec2ae20a11c507a6e147",
+    "engineering.json": "ed270b16239721f986ab10b4d2361ae9b9126c061062a8992ec0f128a6dc5e3b",
+    "experiments.json": "d6ef4cf63e443c8f175626befe0fedac833e74dc429983a43a902021ea2dc00c",
+    "hp-industry.json": "888bc6a31231496d43bc3e48c5bc5cc828339d616fb135690d6c754254c6ac1f",
+    "hp-investigation.json": "55f32fee39791e724885ef0d69812abc2b4bb9883275b132903278ef56ae96ca",
+    "hp-overview.json": "57701764df8b5e1c2c17eca10d5abb534997c79f7892ac242ac759f182407335",
+    "human-practices.json": "4df1bd08e119bd9b692335bd72e20b406f0bde24bb6253d443a3bb7271ce6817",
+    "licensing.json": "a2d3bf1551a40f6c93d988b7118459d9b8924b522a7195d9c9069f37555bd553",
+    "members.json": "ddb1b664b29fa3350afd6079323cae9e376379107361ee7f48dbf59cafcc4713",
+    "model-1.json": "1095329f987225fb84776c49115d4adb016eefb3f2277c899c445f8b6a1c959c",
+    "model-2.json": "e525a59325efbbdf98fbc6dd16f91daf85d224647ce44d162dc9399a7755ba30",
+    "model-docking.json": "50d2259edd70656d56610c04c7fbff8a80b4330210afb54c37e751a983f53c67",
+    "model-eco.json": "1d16dcc54fb46f470430694c2d6a05ca056b39443e9d97ea920f5f58f420f10d",
+    "model-md.json": "cc04a5daf020459bfa76363a831411db95e7ba45fdf5c0548762e292de0ab964",
+    "model-ode.json": "453cda3cf7ae1bd75a30a07e821c44a6b8f3898844c4ee25af1a0eca93ad8150",
+    "model.json": "0a358f4e488a2f61cbc53967a72eff14ced48c84eb1450f74cb449cfed99271c",
+    "part-collection.json": "0740607465c32db935b0fc556aada2f3edc0de4dd7fa8ba895d2e98e4c74a21e",
+    "parts.json": "c7624674af32d5ff56e8c0e6f19ee5ecf6d7b3ab2d088a6a9ff68e18995fa68e",
+    "protocols.json": "71944d26dbf241ecd6200fd975464c0eddcc7ed927092c80b8b833d0a2de21ee",
+    "results.json": "8a3162a6fed1f7bd0c8b5adb1aa7f933fcdad5915455d6127081e5d3622bf9ba",
+    "safety.json": "6815fced8f8d82ef65c5128fb16c22be2329a6ce6bb29168201e155a48b8e57e",
+    "source-archive.json": "07d1336e601643b5323e4405be94e0243924a7b938ee5edc0967957333c32f01"
+  },
+  "validation": {
+    "npm_run_verify": "PASS; existing final team content-review blockers preserved",
+    "npm_run_audit": "PASS",
+    "content_rules_pages": 26,
+    "figure_captions": 94,
+    "node_tests": 192,
+    "python_tests": 27,
+    "git_diff_check": "PASS",
+    "raw_html_table_conversions": 9,
+    "preserved_table_latex_runs": 70,
+    "preexisting_csv_values": "unchanged",
+    "equations_material_identifiers_media_urls_anchors_review_metadata": "protected; permitted typography and citation mappings explicitly recorded in content-rules-audit.json",
+    "media_reference_notes": [
+      "All existing scientific image URLs retained across source representation changes.",
+      "Two Results Registry URLs repaired by replacing U+2011 with ASCII hyphens, as explicitly required by the specification.",
+      "Engineering 2.5 reuses the already published Economic benefit icon; no new media upload or Git media file."
+    ]
+  },
+  "browser": {
+    "port": 8986,
+    "source_head_before_commit": "fd9b5a6e3c5ff568966c81ac691db61046568a2f + this task working changes",
+    "dimensions": [
+      [
+        1440,
+        900
+      ],
+      [
+        390,
+        844
+      ]
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "page_theme_size_combinations": 104,
+    "body_visual_captures": 104,
+    "horizontal_overflow_failures": 0,
+    "mobile_wrap_order_failures": 0,
+    "datatable_math_mismatches": 0,
+    "datatable_component_errors": [],
+    "desktop_article_width_px": 1040,
+    "mobile_article_width_px": 339,
+    "mobile_scrollbar_note": "390px viewport has 379px CSS client width in this browser; article has 20px margins on both sides.",
+    "engineering_final_frames": {
+      "desktop_padding": "26px",
+      "mobile_padding": "14px",
+      "radius": "18px",
+      "white_background_both_themes": true,
+      "stable_overflow_failures": 0
+    },
+    "formula_table_interaction": "Docking filtering to N84V and sorting Variant descending passed; all five header formulas remained rendered.",
+    "economic_default_result": "Default sample completed without a manual Run action; Done and 124.22 observed.",
+    "comparison_pages": "Three preserved Project comparison pages checked at both widths: 65rem desktop; no horizontal overflow.",
+    "evidence_root": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/subpage-rules/browser"
+  },
+  "pending_source_owner_items": [
+    "Parts original CSV uses Orbilia oligospora; no species-identity substitution performed.",
+    "S.c. EasyComp™ is retained as an exact source product name pending owner confirmation.",
+    "Existing photo/portrait and AI-source permission records are preserved; this formatting task does not certify new permissions.",
+    "Gene/protein identity and scientific claims were not reinterpreted; final team scientific review remains pending."
+  ],
+  "publication": "not-published; hand off committed result through release queue"
+}

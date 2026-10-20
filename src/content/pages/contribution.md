@@ -29,7 +29,7 @@ This page introduces those resources and links to their detailed documentation. 
 
 ### 1.1 Parts and collections {#contribution-1-1-parts-and-collections toc="Parts and collections" toc-unnumbered}
 
-We submitted 39 Parts and four Collections to the iGEM Registry, covering yeast chassis construction, editing tools, <strong>guide RNAs (gRNAs)</strong>, and GPR2 variants. Organizing these components by function gives future teams a clearer route to finding parts for related yeast-engineering projects.
+We submitted 39 Parts and four Collections to the iGEM Registry, covering yeast chassis construction, editing tools, <strong>guide RNAs</strong>, and GPR2 variants. Organizing these components by function gives future teams a clearer route to finding parts for related yeast-engineering projects.
 
 The collections bring together sequence and design information that teams can use when planning their own constructs. Detailed part descriptions and identifiers are listed on our Parts page.
 
@@ -45,7 +45,7 @@ Teams developing similar biosensors can use this documentation to plan an assemb
 
 :::figure
 
-[![Figure 1. A documented route to yeast strain construction.](https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-1-e88a84496c.webp)](https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-1-e88a84496c.webp "Open full-resolution image")
+[![A documented route to yeast strain construction.](https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-1-e88a84496c.webp)](https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-1-e88a84496c.webp "Open full-resolution image")
 
 Figure 1. A documented route to yeast strain construction. The workflow summarizes the genetic modifications connecting our chassis and receptor variants.
 
@@ -53,7 +53,7 @@ Figure 1. A documented route to yeast strain construction. The workflow summariz
 
 ### 1.3 Protocols and troubleshooting {#contribution-1-3-protocols-and-troubleshooting toc="Protocols and troubleshooting" toc-unnumbered}
 
-Our experimental resources include the main protocols used in the project and a troubleshooting guide covering difficulties encountered during <strong>polymerase chain reaction (PCR)</strong>, yeast transformation, and cloning.
+Our experimental resources include the main protocols used in the project and a troubleshooting guide covering difficulties encountered during <strong>polymerase chain reaction</strong>, yeast transformation, and cloning.
 
 Together, these materials give future teams both an experimental starting point and practical examples of what to check when a procedure does not work as expected.
 
@@ -69,7 +69,7 @@ Our computational work addresses questions that extend beyond NemaKlear: how to 
 
 :::figure
 
-[![Figure 2. Mapping candidate sites for receptor engineering.](https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-3-9b303eb053.webp)](https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-3-9b303eb053.webp "Open full-resolution image")
+[![Mapping candidate sites for receptor engineering.](https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-3-9b303eb053.webp)](https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-3-9b303eb053.webp "Open full-resolution image")
 
 Figure 2. Mapping candidate sites for receptor engineering. Highlighted residues were selected for further substitution studies through comparisons of predicted ligand contacts.
 
@@ -85,11 +85,11 @@ We also documented input checks and pose-export procedures for keeping coordinat
 
 ### 2.2 Ligand motion and contact analysis {#contribution-2-2-ligand-motion-and-contact-analysis toc="Ligand motion and contact analysis" toc-unnumbered}
 
-We combined ligand-position measurements with contact analysis to examine receptor–ligand behavior during <strong>molecular dynamics (MD)</strong> simulations. Comparing whole-receptor, transmembrane-core, and local-pocket alignment helps distinguish overall receptor movement from changes near the binding site.
+We combined ligand-position measurements with contact analysis to examine receptor–ligand behavior during <strong>molecular dynamics</strong> simulations. Comparing whole-receptor, transmembrane-core, and local-pocket alignment helps distinguish overall receptor movement from changes near the binding site.
 
 Other teams can apply this approach to identify persistent contacts, periods of ligand relocation, and interactions worth investigating further. The analysis connects motion curves with the molecular structures behind them.
 
-[Explore the MD Analysis](/model-md/#src-Model-Molecular-Dynamics-6)
+[Explore the Molecular dynamics analysis](/model-md/#src-Model-Molecular-Dynamics-6)
 
 ### 2.3 Signal-to-color and dual-channel modeling {#contribution-2-3-signal-to-color-and-two-channel-modeling toc="Signal-to-color and dual-channel modeling" toc-unnumbered}
 
@@ -99,13 +99,13 @@ Separating shared pathway parameters from sensor and reporter settings makes the
 
 :::figure
 
-[![Figure 3. From signal response to density estimation.](https://static.igem.wiki/teams/6303/wiki/project-20261021/project-64-b07ff15b9548.webp)](https://static.igem.wiki/teams/6303/wiki/project-20261021/project-64-b07ff15b9548.webp "Open full-resolution image")
+[![From signal response to density estimation.](https://static.igem.wiki/teams/6303/wiki/project-20261021/project-64-b07ff15b9548.webp)](https://static.igem.wiki/teams/6303/wiki/project-20261021/project-64-b07ff15b9548.webp "Open full-resolution image")
 
 Figure 3. From signal response to density estimation. The workflow connects pathway modeling, simulated colors, and paired-readout analysis. Generated with OpenAI GPT Image 2.
 
 :::
 
-[Explore the <strong>ordinary differential equation (ODE)</strong> and Dual-Channel Models](/model-ode/#src-Model-ODE-1)
+[Explore the <strong>ordinary differential equation</strong> and dual-channel models](/model-ode/#src-Model-ODE-1)
 
 ### 2.4 Economic evaluation of screening {#contribution-2-4-economic-evaluation-of-screening toc="Economic evaluation of screening" toc-unnumbered}
 
@@ -117,7 +117,7 @@ The framework separates parameters from calculations, allowing users to substitu
 
 ## Educational and engagement resources {#contribution-3-educational-and-engagement-resources toc="Educational and engagement resources"}
 
-Our <strong>Human Practices (HP)</strong> work produced materials and organizational approaches that can support other teams in teaching, understanding user needs, and coordinating field sampling. The documentation also outlines a way to record stakeholder feedback, team discussions, and follow-up actions.
+Our <strong>Human Practices</strong> work produced materials and organizational approaches that can support other teams in teaching, understanding user needs, and coordinating field sampling. The documentation also outlines a way to record stakeholder feedback, team discussions, and follow-up actions.
 
 ### 3.1 Age-adapted educational materials {#contribution-3-1-age-adapted-educational-materials toc="Age-adapted educational materials" toc-unnumbered}
 
@@ -125,7 +125,7 @@ Our <strong>Human Practices (HP)</strong> work produced materials and organizati
 
 :::figure
 
-[![Figure 4. Bringing nematode science into the classroom.](https://static.igem.wiki/teams/6303/wiki/project-20261021/project-65-2b6f00755b3f-preview.webp)](https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-4-2b6f00755b.webp "Open full-resolution image")
+[![Bringing nematode science into the classroom.](https://static.igem.wiki/teams/6303/wiki/project-20261021/project-65-2b6f00755b3f-preview.webp)](https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-4-2b6f00755b.webp "Open full-resolution image")
 
 Figure 4. Bringing nematode science into the classroom. Our teaching materials support classroom activities through the Xiangyang Program partnership.
 
@@ -145,7 +145,7 @@ Teams and educators can draw on the learning goals, activity sequences, and visu
 
 :::figure
 
-[![Figure 5. Learning from growers’ experience.](https://static.igem.wiki/teams/6303/wiki/project-20261021/project-66-7d72a4f73708-preview.webp)](https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-5-7d72a4f737.webp "Open full-resolution image")
+[![Learning from growers’ experience.](https://static.igem.wiki/teams/6303/wiki/project-20261021/project-66-7d72a4f73708-preview.webp)](https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-5-7d72a4f737.webp "Open full-resolution image")
 
 Figure 5. Learning from growers’ experience. Conversations during farm visits helped us relate testing needs to local crops and management practices.
 

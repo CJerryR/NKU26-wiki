@@ -1,10 +1,10 @@
 {
-  "title": "ODE & Dual-Channel Modeling",
-  "heading": "ODE & Dual-Channel Modeling",
+  "title": "ODE and dual-channel model",
+  "heading": "ODE and dual-channel model",
   "sub": "",
   "crumbs": [
     "Model",
-    "ODE & Dual-Channel Modeling"
+    "ODE and dual-channel model"
   ],
   "route": "model-ode",
   "search": true,
@@ -25,11 +25,11 @@
     },
     {
       "_template": "manuscriptTitle",
-      "manuscript": "ODE & Dual-Channel Sensing: from signal response to target density estimation"
+      "manuscript": "ODE and dual-channel model: from signal response to target density estimation"
     },
     {
       "_template": "text",
-      "body": "When <strong><em>Meloidogyne incognita</em> (<em>Mi</em>)</strong> and free-living nematodes occur together, a stronger color signal may reflect an increase in either the target population or the background population. This ambiguity motivates our dual-channel approach: two sensors with different response profiles may provide information that a single color reading cannot resolve."
+      "body": "When <strong><em>Meloidogyne incognita</em></strong> and free-living nematodes occur together, a stronger color signal may reflect an increase in either the target population or the background population. This ambiguity motivates our dual-channel approach: two sensors with different response profiles may provide information that a single color reading cannot resolve."
     },
     {
       "_template": "text",
@@ -46,8 +46,8 @@
     {
       "_template": "image",
       "src": "https://static.igem.wiki/teams/6303/wiki/release-20261020/model-ode-8b54481155b3.webp",
-      "alt": "Figure 3-1. Sequential calibration workflow for the ODE and dual-channel models.\nThe upper panel shows mixed-sample design, ODE calibration, and dual-channel regression",
-      "body": "Figure 3-1. Sequential calibration workflow for the ODE and dual-channel models.\nThe upper panel shows mixed-sample design, ODE calibration, and dual-channel regression. The lower panel shows the intended workflow for estimating <em>Mi</em> density from paired smartphone readings. Prescribed pigment targets are used to calibrate the ODE, while regression uses color features calculated from the actual ODE outputs. Generated with OpenAI GPT Image 2.",
+      "alt": "Sequential calibration workflow for the ODE and dual-channel models.\nThe upper panel shows mixed-sample design, ODE calibration, and dual-channel regression",
+      "body": "Figure 1. Sequential calibration workflow for the ODE and dual-channel models.\nThe upper panel shows mixed-sample design, ODE calibration, and dual-channel regression. The lower panel shows the intended workflow for estimating <em>M. incognita</em> density from paired smartphone readings. Prescribed pigment targets are used to calibrate the ODE, while regression uses color features calculated from the actual ODE outputs. Generated with OpenAI GPT Image 2.",
       "layout": "full",
       "imageWidth": "wide",
       "openOriginal": true
@@ -68,11 +68,11 @@
     },
     {
       "_template": "text",
-      "body": "**Ligand → receptor → <strong>guanine nucleotide-binding protein (G protein)</strong> → <strong>mitogen-activated protein kinase (MAPK)</strong> → <strong>synthetic transcription factor (sTF)</strong> → GAL output → pigment accumulation**"
+      "body": "**Ligand → receptor → <strong>guanine nucleotide-binding protein (G protein)</strong> → <strong>mitogen-activated protein kinase</strong> → <strong>synthetic transcription factor (sTF)</strong> → GAL output → pigment accumulation**"
     },
     {
       "_template": "text",
-      "body": "The connection between yeast <strong>G protein-coupled receptor (GPCR)</strong> signaling and the GAL system was informed by Fan and Yuan <sup>[8]</sup>, while the cascaded amplification and betaxanthin output design drew on Fan and colleagues <sup>[5]</sup>. Our initial formulation used three ODEs for G protein activity, MAPK activity, and color accumulation, together with algebraic relationships for receptor response, sTF activity, and GAL output."
+      "body": "The connection between yeast <strong>G protein-coupled receptor</strong> signaling and the GAL system was informed by Fan and Yuan <sup>[1]</sup>, while the cascaded amplification and betaxanthin output design drew on Fan and colleagues <sup>[2]</sup>. Our initial formulation used three ODEs for G protein activity, MAPK activity, and color accumulation, together with algebraic relationships for receptor response, sTF activity, and GAL output."
     },
     {
       "_template": "text",
@@ -90,7 +90,7 @@
     },
     {
       "_template": "text",
-      "body": "The signaling core was reconstructed from Supady’s Model B and the TU Delft 2012 iGEM modeling materials <sup>[1,2]</sup>. We reused their reaction framework for the G protein cycle, scaffold module, Fus3 activation, and feedback processes, together with the corresponding source-model parameters. We then connected this core to our project-specific effective ligand input and pigment-production equation. Conservation relationships reduce the core to five independent states; adding pigment accumulation gives the six-state model described below."
+      "body": "The signaling core was reconstructed from Supady’s Model B and the TU Delft 2012 iGEM modeling materials <sup>[3, 4]</sup>. We reused their reaction framework for the G protein cycle, scaffold module, Fus3 activation, and feedback processes, together with the corresponding source-model parameters. We then connected this core to our project-specific effective ligand input and pigment-production equation. Conservation relationships reduce the core to five independent states; adding pigment accumulation gives the six-state model described below."
     },
     {
       "_template": "text",
@@ -122,7 +122,7 @@
     },
     {
       "_template": "text",
-      "body": "During reconstruction, we expressed the active-Fus3 derivative as activation minus inactivation, consistent with the reaction directions and conservation relationships. We also assigned <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>k</mi><mn>91</mn></msub></mrow><annotation encoding=\"application/x-tex\">k\\_{91}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8444em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0315em;\">k</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0315em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">91</span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span> the unit <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>μ</mi><msup><mi mathvariant=\"normal\">M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><msup><mi mathvariant=\"normal\">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">\\mu\\mathrm{M}^{-1}\\mathrm{s}^{-1}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:1.0085em;vertical-align:-0.1944em;\"></span><span class=\"mord mathnormal\">μ</span><span class=\"mord\"><span class=\"mord mathrm\">M</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">−</span><span class=\"mord mtight\">1</span></span></span></span></span></span></span></span></span><span class=\"mord\"><span class=\"mord mathrm\">s</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">−</span><span class=\"mord mtight\">1</span></span></span></span></span></span></span></span></span></span></span></span>, as required by its bimolecular reaction term. These choices address the derivative-sign and unit inconsistencies identified in the Delft supplement <sup>[2]</sup>."
+      "body": "During reconstruction, we expressed the active-Fus3 derivative as activation minus inactivation, consistent with the reaction directions and conservation relationships. We also assigned <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>k</mi><mn>91</mn></msub></mrow><annotation encoding=\"application/x-tex\">k\\_{91}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8444em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0315em;\">k</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0315em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">91</span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span> the unit <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>μ</mi><msup><mi mathvariant=\"normal\">M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><msup><mi mathvariant=\"normal\">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">\\mu\\mathrm{M}^{-1}\\mathrm{s}^{-1}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:1.0085em;vertical-align:-0.1944em;\"></span><span class=\"mord mathnormal\">μ</span><span class=\"mord\"><span class=\"mord mathrm\">M</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">−</span><span class=\"mord mtight\">1</span></span></span></span></span></span></span></span></span><span class=\"mord\"><span class=\"mord mathrm\">s</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">−</span><span class=\"mord mtight\">1</span></span></span></span></span></span></span></span></span></span></span></span>, as required by its bimolecular reaction term. These choices address the derivative-sign and unit inconsistencies identified in the Delft supplement <sup>[4]</sup>."
     },
     {
       "_template": "text",
@@ -160,23 +160,162 @@
     },
     {
       "_template": "text",
-      "body": "To apply the pathway model to mixed soil samples, we first defined how nematodes contribute to the ligand input. We used <em>Mi</em> as the target and <strong><em>Caenorhabditis elegans</em> (<em>Ce</em>)</strong> as the background, retaining both <strong>ascaroside #3 (ascr#3)</strong> and <strong>ascaroside #18 (ascr#18)</strong> in the simulation."
+      "body": "To apply the pathway model to mixed soil samples, we first defined how nematodes contribute to the ligand input. We used <em>M. incognita</em> as the target and <strong><em>Caenorhabditis elegans</em></strong> as the background, retaining both <strong>ascaroside #3 (ascr#3)</strong> and <strong>ascaroside #18 (ascr#18)</strong> in the simulation."
     },
     {
       "_template": "text",
-      "body": "Previous studies show that <em>Ce</em> ascaroside secretion depends on culture conditions and developmental stage <sup>[3]</sup>. Manosalva and colleagues reported that ascr#18 predominated in the root-knot nematode samples they examined <sup>[4]</sup>. These findings provide qualitative support for exploring different secretion profiles."
+      "body": "Previous studies show that <em>C. elegans</em> ascaroside secretion depends on culture conditions and developmental stage <sup>[5]</sup>. Manosalva and colleagues reported that ascr#18 predominated in the root-knot nematode samples they examined <sup>[6]</sup>. These findings provide qualitative support for exploring different secretion profiles."
     },
     {
       "_template": "text",
       "body": "We used the following assumptions to examine how secretion composition and sensor preference affect paired responses. Here, <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>q</mi><mn>3</mn></msub></mrow><annotation encoding=\"application/x-tex\">q_3</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.625em;vertical-align:-0.1944em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0359em;\">q</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">3</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span> and <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>q</mi><mn>18</mn></msub></mrow><annotation encoding=\"application/x-tex\">q\\_{18}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.625em;vertical-align:-0.1944em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0359em;\">q</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">18</span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span> denote per-individual ligand-release rates, while <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>w</mi><mn>3</mn></msub></mrow><annotation encoding=\"application/x-tex\">w_3</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.5806em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0269em;\">w</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0269em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">3</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span> and <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>w</mi><mn>18</mn></msub></mrow><annotation encoding=\"application/x-tex\">w\\_{18}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.5806em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0269em;\">w</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0269em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">18</span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span> denote a sensor’s input weights for the two ligands."
     },
     {
-      "_template": "text",
-      "body": "<div class=\"model-table-scroll\" tabindex=\"0\"><table class=\"model-source-table\"><thead><tr><th scope=\"col\">Simulation setting</th><th scope=\"col\">Value</th><th scope=\"col\">Basis</th></tr></thead><tbody><tr><td>Combined per-individual release of the two ligands</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>q</mi><mn>3</mn></msub><mo>+</mo><msub><mi>q</mi><mn>18</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">q&#95;3+q&#95;{18}=1</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.7778em;vertical-align:-0.1944em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0359em;\">q</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">3</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span><span class=\"mbin\">+</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span></span><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.625em;vertical-align:-0.1944em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0359em;\">q</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">18</span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.6444em;\"></span><span class=\"mord\">1</span></span></span></span> fmol individual<span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mrow></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">^{-1}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8141em;\"></span><span class=\"mord\"><span></span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">−</span><span class=\"mord mtight\">1</span></span></span></span></span></span></span></span></span></span></span></span> h<span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mrow></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">^{-1}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8141em;\"></span><span class=\"mord\"><span></span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">−</span><span class=\"mord mtight\">1</span></span></span></span></span></span></span></span></span></span></span></span> for both Mi and Ce</td><td>Common simulation scale selected for this project</td></tr><tr><td>Ligand-release ratios</td><td>Mi: <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>q</mi><mn>3</mn></msub><mo>:</mo><msub><mi>q</mi><mn>18</mn></msub><mo>=</mo><mn>1</mn><mo>:</mo><mn>10</mn></mrow><annotation encoding=\"application/x-tex\">q&#95;3:q&#95;{18}=1:10</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.625em;vertical-align:-0.1944em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0359em;\">q</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">3</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">:</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.625em;vertical-align:-0.1944em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0359em;\">q</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">18</span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.6444em;\"></span><span class=\"mord\">1</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">:</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.6444em;\"></span><span class=\"mord\">10</span></span></span></span>; Ce: <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>q</mi><mn>3</mn></msub><mo>:</mo><msub><mi>q</mi><mn>18</mn></msub><mo>=</mo><mn>10</mn><mo>:</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">q&#95;3:q&#95;{18}=10:1</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.625em;vertical-align:-0.1944em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0359em;\">q</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">3</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">:</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.625em;vertical-align:-0.1944em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0359em;\">q</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">18</span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.6444em;\"></span><span class=\"mord\">10</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">:</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.6444em;\"></span><span class=\"mord\">1</span></span></span></span></td><td>Literature provides qualitative context <sup>[3,4]</sup>; exact ratios are project assumptions</td></tr><tr><td>Sensor-response weights</td><td>P3: <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">(</mo><msub><mi>w</mi><mn>3</mn></msub><mo separator=\"true\">,</mo><msub><mi>w</mi><mn>18</mn></msub><mo stretchy=\"false\">)</mo><mo>=</mo><mo stretchy=\"false\">(</mo><mn>2</mn><mi mathvariant=\"normal\">/</mi><mn>3</mn><mo separator=\"true\">,</mo><mn>1</mn><mi mathvariant=\"normal\">/</mi><mn>3</mn><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(w&#95;3,w&#95;{18})=(2/3,1/3)</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:1em;vertical-align:-0.25em;\"></span><span class=\"mopen\">(</span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0269em;\">w</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0269em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">3</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span><span class=\"mpunct\">,</span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0269em;\">w</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0269em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">18</span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span><span class=\"mclose\">)</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:1em;vertical-align:-0.25em;\"></span><span class=\"mopen\">(</span><span class=\"mord\">2/3</span><span class=\"mpunct\">,</span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mord\">1/3</span><span class=\"mclose\">)</span></span></span></span>; P18: ((1/3,2/3))</td><td>Complementary weights assigned according to the candidate preference directions</td></tr></tbody></table></div>"
+      "_template": "datatable",
+      "title": "",
+      "csv": "Simulation setting,Value,Basis\nCombined per-individual release of the two ligands,q_3+q_{18}=1 fmol individual^{-1} h^{-1} for both Mi and Ce,Common simulation scale selected for this project\nLigand-release ratios,Mi: q_3:q_{18}=1:10; Ce: q_3:q_{18}=10:1,\"Literature provides qualitative context [5, 6]; exact ratios are project assumptions\"\nSensor-response weights,\"P3: (w_3,w_{18})=(2/3,1/3); P18: ((1/3,2/3))\",Complementary weights assigned according to the candidate preference directions",
+      "sourceCellRuns": [
+        [
+          [
+            {
+              "text": "Simulation setting",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Value",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Basis",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Combined per-individual release of the two ligands",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "q_3+q_{18}=1",
+              "format": [],
+              "latex": "q_3+q_{18}=1"
+            },
+            {
+              "text": " fmol individual",
+              "format": []
+            },
+            {
+              "text": "^{-1}",
+              "format": [],
+              "latex": "^{-1}"
+            },
+            {
+              "text": " h",
+              "format": []
+            },
+            {
+              "text": "^{-1}",
+              "format": [],
+              "latex": "^{-1}"
+            },
+            {
+              "text": " for both Mi and Ce",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Common simulation scale selected for this project",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Ligand-release ratios",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Mi: ",
+              "format": []
+            },
+            {
+              "text": "q_3:q_{18}=1:10",
+              "format": [],
+              "latex": "q_3:q_{18}=1:10"
+            },
+            {
+              "text": "; Ce: ",
+              "format": []
+            },
+            {
+              "text": "q_3:q_{18}=10:1",
+              "format": [],
+              "latex": "q_3:q_{18}=10:1"
+            }
+          ],
+          [
+            {
+              "text": "Literature provides qualitative context ",
+              "format": []
+            },
+            {
+              "text": "[5, 6]",
+              "format": [
+                "superscript"
+              ]
+            },
+            {
+              "text": "; exact ratios are project assumptions",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Sensor-response weights",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "P3: ",
+              "format": []
+            },
+            {
+              "text": "(w_3,w_{18})=(2/3,1/3)",
+              "format": [],
+              "latex": "(w_3,w_{18})=(2/3,1/3)"
+            },
+            {
+              "text": "; P18: ((1/3,2/3))",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Complementary weights assigned according to the candidate preference directions",
+              "format": []
+            }
+          ]
+        ]
+      ]
     },
     {
       "_template": "text",
-      "body": "These ratios describe the composition of ascr#3 and ascr#18, rather than the complete ascaroside profile. The <em>Mi</em> contribution of ascr#3 and the exact release ratios of both species remain assumptions requiring paired quantitative measurements."
+      "body": "These ratios describe the composition of ascr#3 and ascr#18, rather than the complete ascaroside profile. The <em>M. incognita</em> contribution of ascr#3 and the exact release ratios of both species remain assumptions requiring paired quantitative measurements."
     },
     {
       "_template": "text",
@@ -210,11 +349,11 @@
     },
     {
       "_template": "text",
-      "body": "To cover low densities, illustrative classification thresholds, and higher densities, we crossed six <em>Mi</em> levels with three <em>Ce</em> backgrounds, giving 18 synthetic pigment targets:"
+      "body": "To cover low densities, illustrative classification thresholds, and higher densities, we crossed six <em>M. incognita</em> levels with three <em>C. elegans</em> backgrounds, giving 18 synthetic pigment targets:"
     },
     {
       "_template": "text",
-      "body": "* **<em>Mi</em>:** 0, 5, 10, 40, 80, and 120 individuals per 100 cm³ of soil.\n\n* **<em>Ce</em>:** 0, 80, and 200 individuals per 100 cm³ of soil."
+      "body": "* **<em>M. incognita</em>:** 0, 5, 10, 40, 80, and 120 individuals per 100 cm³ of soil.\n\n* **<em>C. elegans</em>:** 0, 80, and 200 individuals per 100 cm³ of soil."
     },
     {
       "_template": "text",
@@ -243,8 +382,8 @@
     {
       "_template": "image",
       "src": "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-556696deeb745a5b-00.json",
-      "alt": "Figure 3-2. ODE pigment calibration at different background densities.\nPanels A and B show P3 and P18, respectively",
-      "body": "Figure 3-2. ODE pigment calibration at different background densities.\nPanels A and B show P3 and P18, respectively. Colors distinguish <em>Ce</em> background densities. Dashed lines with crosses indicate prescribed pigment targets, solid lines with circles indicate simulated 8 h total pigment concentrations, and gray dotted lines indicate the blank.",
+      "alt": "ODE pigment calibration at different background densities.\nPanels A and B show P3 and P18, respectively",
+      "body": "Figure 2. ODE pigment calibration at different background densities.\nPanels A and B show P3 and P18, respectively. Colors distinguish <em>C. elegans</em> background densities. Dashed lines with crosses indicate prescribed pigment targets, solid lines with circles indicate simulated 8 h total pigment concentrations, and gray dotted lines indicate the blank.",
       "layout": "full",
       "imageWidth": "wide",
       "openOriginal": true
@@ -268,8 +407,8 @@
     {
       "_template": "image",
       "src": "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-06918bc66dedec7f-00.json",
-      "alt": "Figure 3-3. Net pigment accumulation in representative mixed samples.\nPanels A and B show simulated time courses for blank, Mi-only, Ce-only, and mixed samples in P3 and P18",
-      "body": "Figure 3-3. Net pigment accumulation in representative mixed samples.\nPanels A and B show simulated time courses for blank, <em>Mi</em>-only, <em>Ce</em>-only, and mixed samples in P3 and P18. Net pigment is calculated by subtracting the matched channel blank at each time point.",
+      "alt": "Net pigment accumulation in representative mixed samples.\nPanels A and B show simulated time courses for blank, <em>M. incognita</em>-only, <em>C. elegans</em>-only, and mixed samples in P3 and P18",
+      "body": "Figure 3. Net pigment accumulation in representative mixed samples.\nPanels A and B show simulated time courses for blank, <em>M. incognita</em>-only, <em>C. elegans</em>-only, and mixed samples in P3 and P18. Net pigment is calculated by subtracting the matched channel blank at each time point.",
       "layout": "full",
       "imageWidth": "wide",
       "openOriginal": true
@@ -286,7 +425,7 @@
     },
     {
       "_template": "text",
-      "body": "The proposed readout uses smartphone images, so we introduced an observation relationship between pigment concentration and image features. Stücheli and colleagues quantified indicaxanthin using the <strong>red–green–blue (RGB)</strong> blue channel of smartphone images acquired with a light-shielding box, blue background, and cuvettes <sup>[7]</sup>."
+      "body": "The proposed readout uses smartphone images, so we introduced an observation relationship between pigment concentration and image features. Stücheli and colleagues quantified indicaxanthin using the <strong>red–green–blue</strong> blue channel of smartphone images acquired with a light-shielding box, blue background, and cuvettes <sup>[7]</sup>."
     },
     {
       "_template": "text",
@@ -318,7 +457,7 @@
     },
     {
       "_template": "text",
-      "body": "The internal ODE pigment concentration <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>C</mi></mrow><annotation encoding=\"application/x-tex\">C</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.6833em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.0715em;\">C</span></span></span></span>, expressed in <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>μ</mi><mi mathvariant=\"normal\">M</mi></mrow><annotation encoding=\"application/x-tex\">\\mu\\mathrm{M}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8778em;vertical-align:-0.1944em;\"></span><span class=\"mord mathnormal\">μ</span><span class=\"mord mathrm\">M</span></span></span></span>, is converted to mass concentration using the indicaxanthin molar mass of 308.29 g/mol <sup>[6]</sup>:"
+      "body": "The internal ODE pigment concentration <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>C</mi></mrow><annotation encoding=\"application/x-tex\">C</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.6833em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.0715em;\">C</span></span></span></span>, expressed in <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>μ</mi><mi mathvariant=\"normal\">M</mi></mrow><annotation encoding=\"application/x-tex\">\\mu\\mathrm{M}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8778em;vertical-align:-0.1944em;\"></span><span class=\"mord mathnormal\">μ</span><span class=\"mord mathrm\">M</span></span></span></span>, is converted to mass concentration using the indicaxanthin molar mass of 308.29 g/mol <sup>[8]</sup>:"
     },
     {
       "_template": "equation",
@@ -344,28 +483,28 @@
     },
     {
       "_template": "text",
-      "body": "With the ODE and smartphone observation relationship fixed, we generated 45 paired readings by crossing different <em>Mi</em> and <em>Ce</em> densities:"
+      "body": "With the ODE and smartphone observation relationship fixed, we generated 45 paired readings by crossing different <em>M. incognita</em> and <em>C. elegans</em> densities:"
     },
     {
       "_template": "text",
-      "body": "* **<em>Mi</em>:** 0, 5, 10, 20, 40, 60, 80, 100, and 120 individuals per 100 cm³ of soil.\n\n* **<em>Ce</em>:** 0, 40, 80, 140, and 200 individuals per 100 cm³ of soil."
+      "body": "* **<em>M. incognita</em>:** 0, 5, 10, 20, 40, 60, 80, 100, and 120 individuals per 100 cm³ of soil.\n\n* **<em>C. elegans</em>:** 0, 40, 80, 140, and 200 individuals per 100 cm³ of soil."
     },
     {
       "_template": "text",
-      "body": "Each sample corresponds to a point in a two-dimensional color space, with the P3 feature <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>x</mi><mn>3</mn></msub></mrow><annotation encoding=\"application/x-tex\">x_3</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.5806em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\">x</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:0em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">3</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span> on the horizontal axis and the P18 feature <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>x</mi><mn>18</mn></msub></mrow><annotation encoding=\"application/x-tex\">x\\_{18}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.5806em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\">x</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:0em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">18</span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span> on the vertical axis. This space allows us to compare the effects of increasing <em>Ce</em> at fixed <em>Mi</em> and increasing <em>Mi</em> at fixed <em>Ce</em>. Differences between these directions provide a basis for using paired readings to distinguish target and background contributions."
+      "body": "Each sample corresponds to a point in a two-dimensional color space, with the P3 feature <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>x</mi><mn>3</mn></msub></mrow><annotation encoding=\"application/x-tex\">x_3</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.5806em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\">x</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:0em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">3</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span> on the horizontal axis and the P18 feature <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>x</mi><mn>18</mn></msub></mrow><annotation encoding=\"application/x-tex\">x\\_{18}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.5806em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\">x</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:0em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">18</span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span> on the vertical axis. This space allows us to compare the effects of increasing <em><em>C. elegans</em></em> at fixed <em>M. incognita</em> and increasing <em>M. incognita</em> at fixed <em><em>C. elegans</em></em>. Differences between these directions provide a basis for using paired readings to distinguish target and background contributions."
     },
     {
       "_template": "image",
       "src": "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-543f0d38ad341206-00.json",
-      "alt": "Figure 3-4. Distribution of mixed samples in dual-channel color space.\nThe horizontal and vertical axes show the simulated P3 and P18 smartphone color indices",
-      "body": "Figure 3-4. Distribution of mixed samples in dual-channel color space.\nThe horizontal and vertical axes show the simulated P3 and P18 smartphone color indices. Point color indicates <em>Mi</em> density. Solid lines connect samples with fixed <em>Mi</em> density, while dashed lines connect samples with fixed <em>Ce</em> density. Arrows indicate the directions of increasing <em>Mi</em> or <em>Ce</em> density.",
+      "alt": "Distribution of mixed samples in dual-channel color space.\nThe horizontal and vertical axes show the simulated P3 and P18 smartphone color indices",
+      "body": "Figure 4. Distribution of mixed samples in dual-channel color space.\nThe horizontal and vertical axes show the simulated P3 and P18 smartphone color indices. Point color indicates <em>M. incognita</em> density. Solid lines connect samples with fixed <em>M. incognita</em> density, while dashed lines connect samples with fixed <em>C. elegans</em> density. Arrows indicate the directions of increasing <em>M. incognita</em> or <em>C. elegans</em> density.",
       "layout": "full",
       "imageWidth": "wide",
       "openOriginal": true
     },
     {
       "_template": "text",
-      "body": "Using the two color features as predictors and known <em>Mi</em> density as the training label, we fitted:"
+      "body": "Using the two color features as predictors and known <em>M. incognita</em> density as the training label, we fitted:"
     },
     {
       "_template": "equation",
@@ -373,11 +512,11 @@
     },
     {
       "_template": "text",
-      "body": "The intercept <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>β</mi><mn>0</mn></msub></mrow><annotation encoding=\"application/x-tex\">\\beta_0</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8889em;vertical-align:-0.1944em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0528em;\">β</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0528em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">0</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span> describes the overall offset, while <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>β</mi><mn>3</mn></msub></mrow><annotation encoding=\"application/x-tex\">\\beta_3</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8889em;vertical-align:-0.1944em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0528em;\">β</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0528em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">3</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span> and <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>β</mi><mn>18</mn></msub></mrow><annotation encoding=\"application/x-tex\">\\beta\\_{18}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8889em;vertical-align:-0.1944em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0528em;\">β</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0528em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">18</span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span> jointly determine the contribution of the two channels. Ordinary least squares was used to find one set of three coefficients that minimized the sum of squared differences between predicted and known <em>Mi</em> densities across the training samples."
+      "body": "The intercept <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>β</mi><mn>0</mn></msub></mrow><annotation encoding=\"application/x-tex\">\\beta_0</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8889em;vertical-align:-0.1944em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0528em;\">β</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0528em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">0</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span> describes the overall offset, while <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>β</mi><mn>3</mn></msub></mrow><annotation encoding=\"application/x-tex\">\\beta_3</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8889em;vertical-align:-0.1944em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0528em;\">β</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0528em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">3</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span> and <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>β</mi><mn>18</mn></msub></mrow><annotation encoding=\"application/x-tex\">\\beta\\_{18}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8889em;vertical-align:-0.1944em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0528em;\">β</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0528em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">18</span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span> jointly determine the contribution of the two channels. Ordinary least squares was used to find one set of three coefficients that minimized the sum of squared differences between predicted and known <em>M. incognita</em> densities across the training samples."
     },
     {
       "_template": "text",
-      "body": "<em>Ce</em> density was used to construct background variation during training. Prediction requires only the two color readings, allowing target density to be estimated without supplying the background count."
+      "body": "<em>C. elegans</em> density was used to construct background variation during training. Prediction requires only the two color readings, allowing target density to be estimated without supplying the background count."
     },
     {
       "_template": "text",
@@ -400,8 +539,91 @@
       "body": "To assess the contribution of the second channel, we compared P3-only, P18-only, and dual-channel regression using the same training set and 19 additional simulated mixtures excluded from regression fitting. Their evaluation RMSEs were 36.591, 28.429, and 3.008 individuals per 100 cm³ of soil, respectively. The lower dual-channel error indicates that the paired responses helped distinguish target and background contributions under the assumed conditions. All evaluation mixtures were generated by the same deterministic ODE model."
     },
     {
-      "_template": "text",
-      "body": "<div class=\"model-table-scroll\" tabindex=\"0\"><table class=\"model-source-table\"><thead><tr><th scope=\"col\">Regression model</th><th scope=\"col\">Training RMSE, 45 mixtures</th><th scope=\"col\">Evaluation RMSE, 19 mixtures</th></tr></thead><tbody><tr><td>P3 only</td><td>39.511</td><td>36.591</td></tr><tr><td>P18 only</td><td>29.138</td><td>28.429</td></tr><tr><td>P3 and P18</td><td>3.924</td><td>3.008</td></tr></tbody></table></div>"
+      "_template": "datatable",
+      "title": "",
+      "csv": "Regression model,\"Training RMSE, 45 mixtures\",\"Evaluation RMSE, 19 mixtures\"\nP3 only,39.511,36.591\nP18 only,29.138,28.429\nP3 and P18,3.924,3.008",
+      "sourceCellRuns": [
+        [
+          [
+            {
+              "text": "Regression model",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Training RMSE, 45 mixtures",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Evaluation RMSE, 19 mixtures",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "P3 only",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "39.511",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "36.591",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "P18 only",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "29.138",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "28.429",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "P3 and P18",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "3.924",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "3.008",
+              "format": []
+            }
+          ]
+        ]
+      ]
     },
     {
       "_template": "text",
@@ -410,15 +632,15 @@
     {
       "_template": "image",
       "src": "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-c5587156db2d0d1e-00.json",
-      "alt": "Figure 3-5. Mi density predictions and comparison of single- and dual-channel models.\nPanel A compares known and predicted Mi densities for the dual-channel model; the dashed line indicates ideal agreement",
-      "body": "Figure 3-5. <em>Mi</em> Density predictions and comparison of single- and dual-channel models.\nPanel A compares known and predicted <em>Mi</em> densities for the dual-channel model; the dashed line indicates ideal agreement. Panel B compares the RMSEs of P3-only, P18-only, and dual-channel models on the same simulated evaluation set.",
+      "alt": "<em>M. incognita</em> density predictions and comparison of single- and dual-channel models.\nPanel A compares known and predicted <em>M. incognita</em> densities for the dual-channel model; the dashed line indicates ideal agreement",
+      "body": "Figure 5. <em>M. incognita</em> density predictions and comparison of single- and dual-channel models.\nPanel A compares known and predicted <em>M. incognita</em> densities for the dual-channel model; the dashed line indicates ideal agreement. Panel B compares the RMSEs of P3-only, P18-only, and dual-channel models on the same simulated evaluation set.",
       "layout": "full",
       "imageWidth": "wide",
       "openOriginal": true
     },
     {
       "_template": "text",
-      "body": "For example, a simulated sample with <em>Mi</em> = 40 and <em>Ce</em> = 80 produced blue-channel ratios relative to the respective blanks of approximately 0.854 and 0.879. The model estimated <em>Mi</em> density at approximately 39.72 individuals per 100 cm³ of soil. <em>Ce</em> density was not required as a prediction input. Under the Eco model’s illustrative rules, the estimate falls in the medium-risk category. This example connects the mixed sample, pathway-driven pigment production, smartphone color features, and target-density estimate."
+      "body": "For example, a simulated sample with <em>M. incognita</em> = 40 and <em>C. elegans</em> = 80 produced blue-channel ratios relative to the respective blanks of approximately 0.854 and 0.879. The model estimated <em>M. incognita</em> density at approximately 39.72 individuals per 100 cm³ of soil. <em>C. elegans</em> density was not required as a prediction input. Under the Eco model’s illustrative rules, the estimate falls in the medium-risk category. This example connects the mixed sample, pathway-driven pigment production, smartphone color features, and target-density estimate."
     },
     {
       "_template": "text",
@@ -430,7 +652,7 @@
     },
     {
       "_template": "text",
-      "body": "The ODE and dual-channel models therefore serve complementary roles: the ODE calculates how mixed inputs produce paired color outputs, and the regression uses those outputs to estimate <em>Mi</em> density. The code, parameter sources, fixed configurations, and example data support reproducibility and provide an interface for future paired experimental measurements. The Eco model then examines how density information may affect management choices and expected benefits."
+      "body": "The ODE and dual-channel models therefore serve complementary roles: the ODE calculates how mixed inputs produce paired color outputs, and the regression uses those outputs to estimate <em>M. incognita</em> density. The code, parameter sources, fixed configurations, and example data support reproducibility and provide an interface for future paired experimental measurements. The Eco model then examines how density information may affect management choices and expected benefits."
     },
     {
       "_template": "text",
@@ -456,15 +678,744 @@
     },
     {
       "_template": "text",
-      "body": "<strong>Table 3-1. Signaling-core parameters</strong>"
+      "body": "<p class=\"table-caption\">Table 1. Signaling-core parameters</p>"
     },
     {
       "_template": "text",
-      "body": "The core rate constants follow the estimated values in Supady’s Model B and were cross-checked against the Delft supplement <sup>[1,2]</sup>. They are parameters of the source model, rather than independently measured constants for the project strain."
+      "body": "The core rate constants follow the estimated values in Supady’s Model B and were cross-checked against the Delft supplement <sup>[3, 4]</sup>. They are parameters of the source model, rather than independently measured constants for the project strain."
     },
     {
-      "_template": "text",
-      "body": "<div class=\"model-table-scroll\" tabindex=\"0\"><table class=\"model-source-table\"><thead><tr><th scope=\"col\">Category</th><th scope=\"col\">Parameter</th><th scope=\"col\">Value</th><th scope=\"col\">Unit</th><th scope=\"col\">Meaning and source</th></tr></thead><tbody><tr><td>G-protein cycle</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>k</mi><mn>4</mn></msub></mrow><annotation encoding=\"application/x-tex\">k&#95;4</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8444em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0315em;\">k</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0315em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">4</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span></td><td>1.259</td><td>s<span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mrow></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">^{-1}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8141em;\"></span><span class=\"mord\"><span></span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">−</span><span class=\"mord mtight\">1</span></span></span></span></span></span></span></span></span></span></span></span></td><td>Basal Gα–GTP hydrolysis rate; source-model value <sup>[1,2]</sup></td></tr><tr><td>G-protein cycle</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>k</mi><mn>41</mn></msub></mrow><annotation encoding=\"application/x-tex\">k&#95;{41}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8444em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0315em;\">k</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0315em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">41</span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span></td><td>1.124</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>μ</mi><msup><mi mathvariant=\"normal\">M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><msup><mi mathvariant=\"normal\">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">&#92;mu&#92;mathrm{M}^{-1}&#92;mathrm{s}^{-1}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:1.0085em;vertical-align:-0.1944em;\"></span><span class=\"mord mathnormal\">μ</span><span class=\"mord\"><span class=\"mord mathrm\">M</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">−</span><span class=\"mord mtight\">1</span></span></span></span></span></span></span></span></span><span class=\"mord\"><span class=\"mord mathrm\">s</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">−</span><span class=\"mord mtight\">1</span></span></span></span></span></span></span></span></span></span></span></span></td><td>Activated-Sst2-associated GTP hydrolysis coefficient <sup>[1,2]</sup></td></tr><tr><td>G-protein cycle</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>k</mi><mn>5</mn></msub></mrow><annotation encoding=\"application/x-tex\">k&#95;5</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8444em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0315em;\">k</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0315em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">5</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span></td><td>0.002</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>μ</mi><msup><mi mathvariant=\"normal\">M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><msup><mi mathvariant=\"normal\">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">&#92;mu&#92;mathrm{M}^{-1}&#92;mathrm{s}^{-1}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:1.0085em;vertical-align:-0.1944em;\"></span><span class=\"mord mathnormal\">μ</span><span class=\"mord\"><span class=\"mord mathrm\">M</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">−</span><span class=\"mord mtight\">1</span></span></span></span></span></span></span></span></span><span class=\"mord\"><span class=\"mord mathrm\">s</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">−</span><span class=\"mord mtight\">1</span></span></span></span></span></span></span></span></span></span></span></span></td><td>G-protein heterotrimer reassembly coefficient <sup>[1,2]</sup></td></tr><tr><td>Scaffold module</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>k</mi><mn>6</mn></msub></mrow><annotation encoding=\"application/x-tex\">k&#95;6</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8444em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0315em;\">k</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0315em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">6</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span></td><td>0.021</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>μ</mi><msup><mi mathvariant=\"normal\">M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><msup><mi mathvariant=\"normal\">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">&#92;mu&#92;mathrm{M}^{-1}&#92;mathrm{s}^{-1}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:1.0085em;vertical-align:-0.1944em;\"></span><span class=\"mord mathnormal\">μ</span><span class=\"mord\"><span class=\"mord mathrm\">M</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">−</span><span class=\"mord mtight\">1</span></span></span></span></span></span></span></span></span><span class=\"mord\"><span class=\"mord mathrm\">s</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">−</span><span class=\"mord mtight\">1</span></span></span></span></span></span></span></span></span></span></span></span></td><td>Scaffold complex assembly coefficient <sup>[1,2]</sup></td></tr><tr><td>Scaffold module</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>k</mi><mn>7</mn></msub></mrow><annotation encoding=\"application/x-tex\">k&#95;7</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8444em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0315em;\">k</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0315em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">7</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span></td><td>0.004</td><td>s<span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mrow></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">^{-1}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8141em;\"></span><span class=\"mord\"><span></span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">−</span><span class=\"mord mtight\">1</span></span></span></span></span></span></span></span></span></span></span></span></td><td>Basal scaffold complex dissociation rate <sup>[1,2]</sup></td></tr><tr><td>Scaffold module</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>k</mi><mn>71</mn></msub></mrow><annotation encoding=\"application/x-tex\">k&#95;{71}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8444em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0315em;\">k</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0315em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">71</span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span></td><td>0.261</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>μ</mi><msup><mi mathvariant=\"normal\">M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><msup><mi mathvariant=\"normal\">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">&#92;mu&#92;mathrm{M}^{-1}&#92;mathrm{s}^{-1}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:1.0085em;vertical-align:-0.1944em;\"></span><span class=\"mord mathnormal\">μ</span><span class=\"mord\"><span class=\"mord mathrm\">M</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">−</span><span class=\"mord mtight\">1</span></span></span></span></span></span></span></span></span><span class=\"mord\"><span class=\"mord mathrm\">s</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">−</span><span class=\"mord mtight\">1</span></span></span></span></span></span></span></span></span></span></span></span></td><td>Activated-Sst2-associated scaffold dissociation coefficient <sup>[1,2]</sup></td></tr><tr><td>Fus3 activation</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>k</mi><mn>8</mn></msub></mrow><annotation encoding=\"application/x-tex\">k&#95;8</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8444em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0315em;\">k</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0315em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">8</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span></td><td>0.818</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>μ</mi><msup><mi mathvariant=\"normal\">M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><msup><mi mathvariant=\"normal\">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">&#92;mu&#92;mathrm{M}^{-1}&#92;mathrm{s}^{-1}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:1.0085em;vertical-align:-0.1944em;\"></span><span class=\"mord mathnormal\">μ</span><span class=\"mord\"><span class=\"mord mathrm\">M</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">−</span><span class=\"mord mtight\">1</span></span></span></span></span></span></span></span></span><span class=\"mord\"><span class=\"mord mathrm\">s</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">−</span><span class=\"mord mtight\">1</span></span></span></span></span></span></span></span></span></span></span></span></td><td>Fus3 activation coefficient <sup>[1,2]</sup></td></tr><tr><td>Fus3 inactivation</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>k</mi><mn>9</mn></msub></mrow><annotation encoding=\"application/x-tex\">k&#95;9</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8444em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0315em;\">k</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0315em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">9</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span></td><td>0</td><td>s<span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mrow></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">^{-1}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8141em;\"></span><span class=\"mord\"><span></span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">−</span><span class=\"mord mtight\">1</span></span></span></span></span></span></span></span></span></span></span></span></td><td>Basal inactivation term; Supady Model B value <sup>[1]</sup></td></tr><tr><td>Fus3 inactivation</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>k</mi><mn>91</mn></msub></mrow><annotation encoding=\"application/x-tex\">k&#95;{91}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8444em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0315em;\">k</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0315em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">91</span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span></td><td>0.017</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>μ</mi><msup><mi mathvariant=\"normal\">M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><msup><mi mathvariant=\"normal\">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">&#92;mu&#92;mathrm{M}^{-1}&#92;mathrm{s}^{-1}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:1.0085em;vertical-align:-0.1944em;\"></span><span class=\"mord mathnormal\">μ</span><span class=\"mord\"><span class=\"mord mathrm\">M</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">−</span><span class=\"mord mtight\">1</span></span></span></span></span></span></span></span></span><span class=\"mord\"><span class=\"mord mathrm\">s</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">−</span><span class=\"mord mtight\">1</span></span></span></span></span></span></span></span></span></span></span></span></td><td>Sst2-associated Fus3 inactivation coefficient; source value with unit derived from the reaction term <sup>[1,2]</sup></td></tr><tr><td>Feedback regulation</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>k</mi><mn>10</mn></msub></mrow><annotation encoding=\"application/x-tex\">k&#95;{10}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8444em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0315em;\">k</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0315em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">10</span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span></td><td>0.342</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>μ</mi><msup><mi mathvariant=\"normal\">M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><msup><mi mathvariant=\"normal\">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">&#92;mu&#92;mathrm{M}^{-1}&#92;mathrm{s}^{-1}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:1.0085em;vertical-align:-0.1944em;\"></span><span class=\"mord mathnormal\">μ</span><span class=\"mord\"><span class=\"mord mathrm\">M</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">−</span><span class=\"mord mtight\">1</span></span></span></span></span></span></span></span></span><span class=\"mord\"><span class=\"mord mathrm\">s</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">−</span><span class=\"mord mtight\">1</span></span></span></span></span></span></span></span></span></span></span></span></td><td>Active-Fus3-associated Sst2 state-transition coefficient <sup>[1,2]</sup></td></tr><tr><td>Feedback regulation</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>k</mi><mn>11</mn></msub></mrow><annotation encoding=\"application/x-tex\">k&#95;{11}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8444em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0315em;\">k</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0315em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">11</span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span></td><td>0.643</td><td>s<span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mrow></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">^{-1}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8141em;\"></span><span class=\"mord\"><span></span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">−</span><span class=\"mord mtight\">1</span></span></span></span></span></span></span></span></span></span></span></span></td><td>Recovery rate of the activated Sst2 state <sup>[1,2]</sup></td></tr><tr><td>Conserved pools</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>T</mi><mi>α</mi></msub><mo separator=\"true\">,</mo><msub><mi>T</mi><mi>β</mi></msub></mrow><annotation encoding=\"application/x-tex\">T&#95;&#92;alpha,T&#95;&#92;beta</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.9694em;vertical-align:-0.2861em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.1389em;\">T</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.1514em;\"><span style=\"top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mathnormal mtight\" style=\"margin-right:0.0037em;\">α</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span><span class=\"mpunct\">,</span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.1389em;\">T</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3361em;\"><span style=\"top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mathnormal mtight\" style=\"margin-right:0.0528em;\">β</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.2861em;\"><span></span></span></span></span></span></span></span></span></span></td><td>1.667 each</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>μ</mi><mi mathvariant=\"normal\">M</mi></mrow><annotation encoding=\"application/x-tex\">&#92;mu&#92;mathrm{M}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8778em;vertical-align:-0.1944em;\"></span><span class=\"mord mathnormal\">μ</span><span class=\"mord mathrm\">M</span></span></span></span></td><td>Total Gα and Gβγ concentrations, calculated from source initial conditions <sup>[1,2]</sup></td></tr><tr><td>Conserved pools</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>T</mi><mi>S</mi></msub></mrow><annotation encoding=\"application/x-tex\">T&#95;S</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8333em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.1389em;\">T</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3283em;\"><span style=\"top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mathnormal mtight\" style=\"margin-right:0.0576em;\">S</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span></td><td>0.036</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>μ</mi><mi mathvariant=\"normal\">M</mi></mrow><annotation encoding=\"application/x-tex\">&#92;mu&#92;mathrm{M}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8778em;vertical-align:-0.1944em;\"></span><span class=\"mord mathnormal\">μ</span><span class=\"mord mathrm\">M</span></span></span></span></td><td>Total scaffold concentration <sup>[1,2]</sup></td></tr><tr><td>Conserved pools</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>T</mi><mi>F</mi></msub></mrow><annotation encoding=\"application/x-tex\">T&#95;F</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8333em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.1389em;\">T</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3283em;\"><span style=\"top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mathnormal mtight\" style=\"margin-right:0.1389em;\">F</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span></td><td>0.686</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>μ</mi><mi mathvariant=\"normal\">M</mi></mrow><annotation encoding=\"application/x-tex\">&#92;mu&#92;mathrm{M}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8778em;vertical-align:-0.1944em;\"></span><span class=\"mord mathnormal\">μ</span><span class=\"mord mathrm\">M</span></span></span></span></td><td>Total Fus3 concentration <sup>[1,2]</sup></td></tr><tr><td>Conserved pools</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>T</mi><mi>Z</mi></msub></mrow><annotation encoding=\"application/x-tex\">T&#95;Z</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8333em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.1389em;\">T</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3283em;\"><span style=\"top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mathnormal mtight\" style=\"margin-right:0.0715em;\">Z</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span></td><td>0.505</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>μ</mi><mi mathvariant=\"normal\">M</mi></mrow><annotation encoding=\"application/x-tex\">&#92;mu&#92;mathrm{M}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8778em;vertical-align:-0.1944em;\"></span><span class=\"mord mathnormal\">μ</span><span class=\"mord mathrm\">M</span></span></span></span></td><td>Total Sst2 concentration <sup>[1,2]</sup></td></tr><tr><td>Initial conditions</td><td>(H(0))</td><td>1.667</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>μ</mi><mi mathvariant=\"normal\">M</mi></mrow><annotation encoding=\"application/x-tex\">&#92;mu&#92;mathrm{M}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8778em;vertical-align:-0.1944em;\"></span><span class=\"mord mathnormal\">μ</span><span class=\"mord mathrm\">M</span></span></span></span></td><td>Initial G-protein heterotrimer concentration <sup>[1,2]</sup></td></tr><tr><td>Initial conditions</td><td>(A(0),Q(0),F^(0),Z^(0))</td><td>0 each</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>μ</mi><mi mathvariant=\"normal\">M</mi></mrow><annotation encoding=\"application/x-tex\">&#92;mu&#92;mathrm{M}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8778em;vertical-align:-0.1944em;\"></span><span class=\"mord mathnormal\">μ</span><span class=\"mord mathrm\">M</span></span></span></span></td><td>Initial values of the remaining independent core states <sup>[1,2]</sup></td></tr></tbody></table></div>"
+      "_template": "datatable",
+      "title": "",
+      "csv": "Category,Parameter,Value,Unit,Meaning and source\nG-protein cycle,k_4,1.259,s^{-1},\"Basal Gα–GTP hydrolysis rate; source-model value [3, 4]\"\nG-protein cycle,k_{41},1.124,\\mu\\mathrm{M}^{-1}\\mathrm{s}^{-1},\"Activated-Sst2-associated GTP hydrolysis coefficient [3, 4]\"\nG-protein cycle,k_5,0.002,\\mu\\mathrm{M}^{-1}\\mathrm{s}^{-1},\"G-protein heterotrimer reassembly coefficient [3, 4]\"\nScaffold module,k_6,0.021,\\mu\\mathrm{M}^{-1}\\mathrm{s}^{-1},\"Scaffold complex assembly coefficient [3, 4]\"\nScaffold module,k_7,0.004,s^{-1},\"Basal scaffold complex dissociation rate [3, 4]\"\nScaffold module,k_{71},0.261,\\mu\\mathrm{M}^{-1}\\mathrm{s}^{-1},\"Activated-Sst2-associated scaffold dissociation coefficient [3, 4]\"\nFus3 activation,k_8,0.818,\\mu\\mathrm{M}^{-1}\\mathrm{s}^{-1},\"Fus3 activation coefficient [3, 4]\"\nFus3 inactivation,k_9,0,s^{-1},Basal inactivation term; Supady Model B value [3]\nFus3 inactivation,k_{91},0.017,\\mu\\mathrm{M}^{-1}\\mathrm{s}^{-1},\"Sst2-associated Fus3 inactivation coefficient; source value with unit derived from the reaction term [3, 4]\"\nFeedback regulation,k_{10},0.342,\\mu\\mathrm{M}^{-1}\\mathrm{s}^{-1},\"Active-Fus3-associated Sst2 state-transition coefficient [3, 4]\"\nFeedback regulation,k_{11},0.643,s^{-1},\"Recovery rate of the activated Sst2 state [3, 4]\"\nConserved pools,\"T_\\alpha,T_\\beta\",1.667 each,\\mu\\mathrm{M},\"Total Gα and Gβγ concentrations, calculated from source initial conditions [3, 4]\"\nConserved pools,T_S,0.036,\\mu\\mathrm{M},\"Total scaffold concentration [3, 4]\"\nConserved pools,T_F,0.686,\\mu\\mathrm{M},\"Total Fus3 concentration [3, 4]\"\nConserved pools,T_Z,0.505,\\mu\\mathrm{M},\"Total Sst2 concentration [3, 4]\"\nInitial conditions,(H(0)),1.667,\\mu\\mathrm{M},\"Initial G-protein heterotrimer concentration [3, 4]\"\nInitial conditions,\"(A(0),Q(0),F^(0),Z^(0))\",0 each,\\mu\\mathrm{M},\"Initial values of the remaining independent core states [3, 4]\"",
+      "sourceCellRuns": [
+        [
+          [
+            {
+              "text": "Category",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Parameter",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Value",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Unit",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Meaning and source",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "G-protein cycle",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "k_4",
+              "format": [],
+              "latex": "k_4"
+            }
+          ],
+          [
+            {
+              "text": "1.259",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "s",
+              "format": []
+            },
+            {
+              "text": "^{-1}",
+              "format": [],
+              "latex": "^{-1}"
+            }
+          ],
+          [
+            {
+              "text": "Basal Gα–GTP hydrolysis rate; source-model value ",
+              "format": []
+            },
+            {
+              "text": "[3, 4]",
+              "format": [
+                "superscript"
+              ]
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "G-protein cycle",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "k_{41}",
+              "format": [],
+              "latex": "k_{41}"
+            }
+          ],
+          [
+            {
+              "text": "1.124",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "\\mu\\mathrm{M}^{-1}\\mathrm{s}^{-1}",
+              "format": [],
+              "latex": "\\mu\\mathrm{M}^{-1}\\mathrm{s}^{-1}"
+            }
+          ],
+          [
+            {
+              "text": "Activated-Sst2-associated GTP hydrolysis coefficient ",
+              "format": []
+            },
+            {
+              "text": "[3, 4]",
+              "format": [
+                "superscript"
+              ]
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "G-protein cycle",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "k_5",
+              "format": [],
+              "latex": "k_5"
+            }
+          ],
+          [
+            {
+              "text": "0.002",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "\\mu\\mathrm{M}^{-1}\\mathrm{s}^{-1}",
+              "format": [],
+              "latex": "\\mu\\mathrm{M}^{-1}\\mathrm{s}^{-1}"
+            }
+          ],
+          [
+            {
+              "text": "G-protein heterotrimer reassembly coefficient ",
+              "format": []
+            },
+            {
+              "text": "[3, 4]",
+              "format": [
+                "superscript"
+              ]
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Scaffold module",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "k_6",
+              "format": [],
+              "latex": "k_6"
+            }
+          ],
+          [
+            {
+              "text": "0.021",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "\\mu\\mathrm{M}^{-1}\\mathrm{s}^{-1}",
+              "format": [],
+              "latex": "\\mu\\mathrm{M}^{-1}\\mathrm{s}^{-1}"
+            }
+          ],
+          [
+            {
+              "text": "Scaffold complex assembly coefficient ",
+              "format": []
+            },
+            {
+              "text": "[3, 4]",
+              "format": [
+                "superscript"
+              ]
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Scaffold module",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "k_7",
+              "format": [],
+              "latex": "k_7"
+            }
+          ],
+          [
+            {
+              "text": "0.004",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "s",
+              "format": []
+            },
+            {
+              "text": "^{-1}",
+              "format": [],
+              "latex": "^{-1}"
+            }
+          ],
+          [
+            {
+              "text": "Basal scaffold complex dissociation rate ",
+              "format": []
+            },
+            {
+              "text": "[3, 4]",
+              "format": [
+                "superscript"
+              ]
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Scaffold module",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "k_{71}",
+              "format": [],
+              "latex": "k_{71}"
+            }
+          ],
+          [
+            {
+              "text": "0.261",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "\\mu\\mathrm{M}^{-1}\\mathrm{s}^{-1}",
+              "format": [],
+              "latex": "\\mu\\mathrm{M}^{-1}\\mathrm{s}^{-1}"
+            }
+          ],
+          [
+            {
+              "text": "Activated-Sst2-associated scaffold dissociation coefficient ",
+              "format": []
+            },
+            {
+              "text": "[3, 4]",
+              "format": [
+                "superscript"
+              ]
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Fus3 activation",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "k_8",
+              "format": [],
+              "latex": "k_8"
+            }
+          ],
+          [
+            {
+              "text": "0.818",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "\\mu\\mathrm{M}^{-1}\\mathrm{s}^{-1}",
+              "format": [],
+              "latex": "\\mu\\mathrm{M}^{-1}\\mathrm{s}^{-1}"
+            }
+          ],
+          [
+            {
+              "text": "Fus3 activation coefficient ",
+              "format": []
+            },
+            {
+              "text": "[3, 4]",
+              "format": [
+                "superscript"
+              ]
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Fus3 inactivation",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "k_9",
+              "format": [],
+              "latex": "k_9"
+            }
+          ],
+          [
+            {
+              "text": "0",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "s",
+              "format": []
+            },
+            {
+              "text": "^{-1}",
+              "format": [],
+              "latex": "^{-1}"
+            }
+          ],
+          [
+            {
+              "text": "Basal inactivation term; Supady Model B value ",
+              "format": []
+            },
+            {
+              "text": "[3]",
+              "format": [
+                "superscript"
+              ]
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Fus3 inactivation",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "k_{91}",
+              "format": [],
+              "latex": "k_{91}"
+            }
+          ],
+          [
+            {
+              "text": "0.017",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "\\mu\\mathrm{M}^{-1}\\mathrm{s}^{-1}",
+              "format": [],
+              "latex": "\\mu\\mathrm{M}^{-1}\\mathrm{s}^{-1}"
+            }
+          ],
+          [
+            {
+              "text": "Sst2-associated Fus3 inactivation coefficient; source value with unit derived from the reaction term ",
+              "format": []
+            },
+            {
+              "text": "[3, 4]",
+              "format": [
+                "superscript"
+              ]
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Feedback regulation",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "k_{10}",
+              "format": [],
+              "latex": "k_{10}"
+            }
+          ],
+          [
+            {
+              "text": "0.342",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "\\mu\\mathrm{M}^{-1}\\mathrm{s}^{-1}",
+              "format": [],
+              "latex": "\\mu\\mathrm{M}^{-1}\\mathrm{s}^{-1}"
+            }
+          ],
+          [
+            {
+              "text": "Active-Fus3-associated Sst2 state-transition coefficient ",
+              "format": []
+            },
+            {
+              "text": "[3, 4]",
+              "format": [
+                "superscript"
+              ]
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Feedback regulation",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "k_{11}",
+              "format": [],
+              "latex": "k_{11}"
+            }
+          ],
+          [
+            {
+              "text": "0.643",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "s",
+              "format": []
+            },
+            {
+              "text": "^{-1}",
+              "format": [],
+              "latex": "^{-1}"
+            }
+          ],
+          [
+            {
+              "text": "Recovery rate of the activated Sst2 state ",
+              "format": []
+            },
+            {
+              "text": "[3, 4]",
+              "format": [
+                "superscript"
+              ]
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Conserved pools",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "T_\\alpha,T_\\beta",
+              "format": [],
+              "latex": "T_\\alpha,T_\\beta"
+            }
+          ],
+          [
+            {
+              "text": "1.667 each",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "\\mu\\mathrm{M}",
+              "format": [],
+              "latex": "\\mu\\mathrm{M}"
+            }
+          ],
+          [
+            {
+              "text": "Total Gα and Gβγ concentrations, calculated from source initial conditions ",
+              "format": []
+            },
+            {
+              "text": "[3, 4]",
+              "format": [
+                "superscript"
+              ]
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Conserved pools",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "T_S",
+              "format": [],
+              "latex": "T_S"
+            }
+          ],
+          [
+            {
+              "text": "0.036",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "\\mu\\mathrm{M}",
+              "format": [],
+              "latex": "\\mu\\mathrm{M}"
+            }
+          ],
+          [
+            {
+              "text": "Total scaffold concentration ",
+              "format": []
+            },
+            {
+              "text": "[3, 4]",
+              "format": [
+                "superscript"
+              ]
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Conserved pools",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "T_F",
+              "format": [],
+              "latex": "T_F"
+            }
+          ],
+          [
+            {
+              "text": "0.686",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "\\mu\\mathrm{M}",
+              "format": [],
+              "latex": "\\mu\\mathrm{M}"
+            }
+          ],
+          [
+            {
+              "text": "Total Fus3 concentration ",
+              "format": []
+            },
+            {
+              "text": "[3, 4]",
+              "format": [
+                "superscript"
+              ]
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Conserved pools",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "T_Z",
+              "format": [],
+              "latex": "T_Z"
+            }
+          ],
+          [
+            {
+              "text": "0.505",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "\\mu\\mathrm{M}",
+              "format": [],
+              "latex": "\\mu\\mathrm{M}"
+            }
+          ],
+          [
+            {
+              "text": "Total Sst2 concentration ",
+              "format": []
+            },
+            {
+              "text": "[3, 4]",
+              "format": [
+                "superscript"
+              ]
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Initial conditions",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "(H(0))",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "1.667",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "\\mu\\mathrm{M}",
+              "format": [],
+              "latex": "\\mu\\mathrm{M}"
+            }
+          ],
+          [
+            {
+              "text": "Initial G-protein heterotrimer concentration ",
+              "format": []
+            },
+            {
+              "text": "[3, 4]",
+              "format": [
+                "superscript"
+              ]
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Initial conditions",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "(A(0),Q(0),F^(0),Z^(0))",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "0 each",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "\\mu\\mathrm{M}",
+              "format": [],
+              "latex": "\\mu\\mathrm{M}"
+            }
+          ],
+          [
+            {
+              "text": "Initial values of the remaining independent core states ",
+              "format": []
+            },
+            {
+              "text": "[3, 4]",
+              "format": [
+                "superscript"
+              ]
+            }
+          ]
+        ]
+      ]
     },
     {
       "_template": "text",
@@ -476,15 +1427,722 @@
     },
     {
       "_template": "text",
-      "body": "<strong>Table 3-2. Input and pigment-module parameters</strong>"
+      "body": "<p class=\"table-caption\">Table 2. Input and pigment-module parameters</p>"
     },
     {
       "_template": "text",
       "body": "Where channel values differ, P3 and P18 are listed separately. Shared values apply to both channels."
     },
     {
-      "_template": "text",
-      "body": "<div class=\"model-table-scroll\" tabindex=\"0\"><table class=\"model-source-table\"><thead><tr><th scope=\"col\">Category</th><th scope=\"col\">Parameter or condition</th><th scope=\"col\">Value</th><th scope=\"col\">Unit</th><th scope=\"col\">Meaning and basis</th></tr></thead><tbody><tr><td>Ligand release</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>q</mi><mn>3</mn></msub><mo>+</mo><msub><mi>q</mi><mn>18</mn></msub></mrow><annotation encoding=\"application/x-tex\">q&#95;3+q&#95;{18}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.7778em;vertical-align:-0.1944em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0359em;\">q</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">3</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span><span class=\"mbin\">+</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span></span><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.625em;vertical-align:-0.1944em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0359em;\">q</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">18</span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span></td><td>1 for both Mi and Ce</td><td>fmol individual<span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mrow></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">^{-1}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8141em;\"></span><span class=\"mord\"><span></span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">−</span><span class=\"mord mtight\">1</span></span></span></span></span></span></span></span></span></span></span></span> h<span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mrow></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">^{-1}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8141em;\"></span><span class=\"mord\"><span></span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">−</span><span class=\"mord mtight\">1</span></span></span></span></span></span></span></span></span></span></span></span></td><td>Combined release of the two ligands; project assumption</td></tr><tr><td>Ligand composition</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>q</mi><mn>3</mn></msub><mo>:</mo><msub><mi>q</mi><mn>18</mn></msub></mrow><annotation encoding=\"application/x-tex\">q&#95;3:q&#95;{18}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.625em;vertical-align:-0.1944em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0359em;\">q</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">3</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">:</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.625em;vertical-align:-0.1944em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0359em;\">q</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">18</span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span></td><td>Mi: 1:10; Ce: 10:1</td><td>Dimensionless</td><td>Assumed ratios; literature provides qualitative context <sup>[3,4]</sup></td></tr><tr><td>Sampling</td><td>Soil volume</td><td>100</td><td>cm³</td><td>Project setting</td></tr><tr><td>Sampling</td><td>Collection time</td><td>1</td><td>h</td><td>Project setting</td></tr><tr><td>Sampling</td><td>Effective collection volume</td><td>1</td><td>mL</td><td>Project setting</td></tr><tr><td>Sampling</td><td>Recovery fraction and dilution factor</td><td>1 each</td><td>Dimensionless</td><td>Idealized simulation settings</td></tr><tr><td>Channel input</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">(</mo><msub><mi>w</mi><mn>3</mn></msub><mo separator=\"true\">,</mo><msub><mi>w</mi><mn>18</mn></msub><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(w&#95;3,w&#95;{18})</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:1em;vertical-align:-0.25em;\"></span><span class=\"mopen\">(</span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0269em;\">w</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0269em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">3</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span><span class=\"mpunct\">,</span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0269em;\">w</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0269em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">18</span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span><span class=\"mclose\">)</span></span></span></span></td><td>P3: ((2/3,1/3)); P18: ((1/3,2/3))</td><td>Dimensionless</td><td>Assumed complementary weights; docking provides directional design clues</td></tr><tr><td>Channel input</td><td>Ligand normalization reference</td><td>1</td><td>nM</td><td>Project setting</td></tr><tr><td>Channel input</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>u</mi><mi>max</mi><mo>⁡</mo></msub></mrow><annotation encoding=\"application/x-tex\">u&#95;{&#92;max}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.5806em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\">u</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.1514em;\"><span style=\"top:-2.55em;margin-left:0em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mop mtight\"><span class=\"mtight\">m</span><span class=\"mtight\">a</span><span class=\"mtight\">x</span></span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span></td><td>1.206908</td><td>s<span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mrow></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">^{-1}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8141em;\"></span><span class=\"mord\"><span></span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">−</span><span class=\"mord mtight\">1</span></span></span></span></span></span></span></span></span></span></span></span></td><td>Input scale constructed from source <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>k</mi><mn>3</mn></msub><mo>=</mo><mn>0.724</mn><mtext> </mtext><mi>μ</mi><msup><mi mathvariant=\"normal\">M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><msup><mi mathvariant=\"normal\">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">k&#95;3=0.724&#92; &#92;mu&#92;mathrm{M}^{-1}&#92;mathrm{s}^{-1}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8444em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0315em;\">k</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0315em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">3</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:1.0085em;vertical-align:-0.1944em;\"></span><span class=\"mord\">0.724</span><span class=\"mspace\"> </span><span class=\"mord mathnormal\">μ</span><span class=\"mord\"><span class=\"mord mathrm\">M</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">−</span><span class=\"mord mtight\">1</span></span></span></span></span></span></span></span></span><span class=\"mord\"><span class=\"mord mathrm\">s</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">−</span><span class=\"mord mtight\">1</span></span></span></span></span></span></span></span></span></span></span></span> and initial receptor concentration <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>1.667</mn><mtext> </mtext><mi>μ</mi><mi mathvariant=\"normal\">M</mi></mrow><annotation encoding=\"application/x-tex\">1.667&#92; &#92;mu&#92;mathrm{M}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8778em;vertical-align:-0.1944em;\"></span><span class=\"mord\">1.667</span><span class=\"mspace\"> </span><span class=\"mord mathnormal\">μ</span><span class=\"mord mathrm\">M</span></span></span></span> <sup>[1,2]</sup></td></tr><tr><td>Channel input</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mi>L</mi></msub></mrow><annotation encoding=\"application/x-tex\">K&#95;L</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8333em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0715em;\">K</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3283em;\"><span style=\"top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mathnormal mtight\">L</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span></td><td>P3: 472207.031; P18: 417856.926</td><td>Dimensionless</td><td>Effective input scale fitted to synthetic endpoints</td></tr><tr><td>Pigment output</td><td>(a)</td><td>P3: 1033.644509; P18: 905.278000</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>μ</mi><mi mathvariant=\"normal\">M</mi><mo separator=\"true\">,</mo><msup><mi mathvariant=\"normal\">h</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">&#92;mu&#92;mathrm{M},&#92;mathrm{h}^{-1}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:1.0085em;vertical-align:-0.1944em;\"></span><span class=\"mord mathnormal\">μ</span><span class=\"mord mathrm\">M</span><span class=\"mpunct\">,</span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mord\"><span class=\"mord mathrm\">h</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">−</span><span class=\"mord mtight\">1</span></span></span></span></span></span></span></span></span></span></span></span></td><td>Stimulus-associated production rate; synthetic fit followed by analytical rescaling</td></tr><tr><td>Pigment output</td><td>(b)</td><td>44.152906</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>μ</mi><mi mathvariant=\"normal\">M</mi><mo separator=\"true\">,</mo><msup><mi mathvariant=\"normal\">h</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">&#92;mu&#92;mathrm{M},&#92;mathrm{h}^{-1}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:1.0085em;vertical-align:-0.1944em;\"></span><span class=\"mord mathnormal\">μ</span><span class=\"mord mathrm\">M</span><span class=\"mpunct\">,</span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mord\"><span class=\"mord mathrm\">h</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">−</span><span class=\"mord mtight\">1</span></span></span></span></span></span></span></span></span></span></span></span></td><td>Basal production rate derived from the assumed 8 h blank</td></tr><tr><td>Pigment output</td><td>(K)</td><td>0.120994</td><td>Dimensionless</td><td>Effective half-response scale derived from the merged output relationship and assumed state mapping</td></tr><tr><td>Pigment output</td><td>(n)</td><td>2</td><td>Dimensionless</td><td>Assumed Hill coefficient, held fixed during calibration</td></tr><tr><td>Pigment output</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>δ</mi></mrow><annotation encoding=\"application/x-tex\">&#92;delta</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.6944em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.0379em;\">δ</span></span></span></span></td><td>0.12</td><td>h<span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mrow></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">^{-1}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8141em;\"></span><span class=\"mord\"><span></span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">−</span><span class=\"mord mtight\">1</span></span></span></span></span></span></span></span></span></span></span></span></td><td>Assumed effective pigment-loss rate, held fixed during calibration</td></tr><tr><td>Initial condition</td><td>(C(0))</td><td>0</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>μ</mi><mi mathvariant=\"normal\">M</mi></mrow><annotation encoding=\"application/x-tex\">&#92;mu&#92;mathrm{M}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8778em;vertical-align:-0.1944em;\"></span><span class=\"mord mathnormal\">μ</span><span class=\"mord mathrm\">M</span></span></span></span></td><td>Assumed initial pigment-equivalent concentration</td></tr><tr><td>Endpoint setting</td><td>Readout time</td><td>8</td><td>h</td><td>Selected simulation endpoint</td></tr><tr><td>Endpoint setting</td><td>Blank concentration at 8 h</td><td>0.07</td><td>mg/mL</td><td>Project assumption</td></tr><tr><td>Endpoint setting</td><td>Common target-generation gain (G)</td><td>9299.754376</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>μ</mi><mi mathvariant=\"normal\">M</mi><mo separator=\"true\">,</mo><msup><mrow><mi mathvariant=\"normal\">n</mi><mi mathvariant=\"normal\">M</mi></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">&#92;mu&#92;mathrm{M},&#92;mathrm{nM}^{-1}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:1.0818em;vertical-align:-0.1944em;\"></span><span class=\"mord mathnormal\">μ</span><span class=\"mord mathrm\">M</span><span class=\"mpunct\">,</span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mord\"><span class=\"mord\"><span class=\"mord mathrm\">nM</span></span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8873em;\"><span style=\"top:-3.1362em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">−</span><span class=\"mord mtight\">1</span></span></span></span></span></span></span></span></span></span></span></span></td><td>Gain used to construct prescribed pigment endpoints, derived from the selected target range</td></tr></tbody></table></div>"
+      "_template": "datatable",
+      "title": "",
+      "csv": "Category,Parameter or condition,Value,Unit,Meaning and basis\nLigand release,q_3+q_{18},1 for both Mi and Ce,fmol individual^{-1} h^{-1},Combined release of the two ligands; project assumption\nLigand composition,q_3:q_{18},Mi: 1:10; Ce: 10:1,Dimensionless,\"Assumed ratios; literature provides qualitative context [5, 6]\"\nSampling,Soil volume,100,cm³,Project setting\nSampling,Collection time,1,h,Project setting\nSampling,Effective collection volume,1,mL,Project setting\nSampling,Recovery fraction and dilution factor,1 each,Dimensionless,Idealized simulation settings\nChannel input,\"(w_3,w_{18})\",\"P3: ((2/3,1/3)); P18: ((1/3,2/3))\",Dimensionless,Assumed complementary weights; docking provides directional design clues\nChannel input,Ligand normalization reference,1,nM,Project setting\nChannel input,u_{\\max},1.206908,s^{-1},\"Input scale constructed from source k_3=0.724\\ \\mu\\mathrm{M}^{-1}\\mathrm{s}^{-1} and initial receptor concentration 1.667\\ \\mu\\mathrm{M} [3, 4]\"\nChannel input,K_L,P3: 472207.031; P18: 417856.926,Dimensionless,Effective input scale fitted to synthetic endpoints\nPigment output,(a),P3: 1033.644509; P18: 905.278000,\"\\mu\\mathrm{M},\\mathrm{h}^{-1}\",Stimulus-associated production rate; synthetic fit followed by analytical rescaling\nPigment output,(b),44.152906,\"\\mu\\mathrm{M},\\mathrm{h}^{-1}\",Basal production rate derived from the assumed 8 h blank\nPigment output,(K),0.120994,Dimensionless,Effective half-response scale derived from the merged output relationship and assumed state mapping\nPigment output,(n),2,Dimensionless,\"Assumed Hill coefficient, held fixed during calibration\"\nPigment output,\\delta,0.12,h^{-1},\"Assumed effective pigment-loss rate, held fixed during calibration\"\nInitial condition,(C(0)),0,\\mu\\mathrm{M},Assumed initial pigment-equivalent concentration\nEndpoint setting,Readout time,8,h,Selected simulation endpoint\nEndpoint setting,Blank concentration at 8 h,0.07,mg/mL,Project assumption\nEndpoint setting,Common target-generation gain (G),9299.754376,\"\\mu\\mathrm{M},\\mathrm{nM}^{-1}\",\"Gain used to construct prescribed pigment endpoints, derived from the selected target range\"",
+      "sourceCellRuns": [
+        [
+          [
+            {
+              "text": "Category",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Parameter or condition",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Value",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Unit",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Meaning and basis",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Ligand release",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "q_3+q_{18}",
+              "format": [],
+              "latex": "q_3+q_{18}"
+            }
+          ],
+          [
+            {
+              "text": "1 for both Mi and Ce",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "fmol individual",
+              "format": []
+            },
+            {
+              "text": "^{-1}",
+              "format": [],
+              "latex": "^{-1}"
+            },
+            {
+              "text": " h",
+              "format": []
+            },
+            {
+              "text": "^{-1}",
+              "format": [],
+              "latex": "^{-1}"
+            }
+          ],
+          [
+            {
+              "text": "Combined release of the two ligands; project assumption",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Ligand composition",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "q_3:q_{18}",
+              "format": [],
+              "latex": "q_3:q_{18}"
+            }
+          ],
+          [
+            {
+              "text": "Mi: 1:10; Ce: 10:1",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Dimensionless",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Assumed ratios; literature provides qualitative context ",
+              "format": []
+            },
+            {
+              "text": "[5, 6]",
+              "format": [
+                "superscript"
+              ]
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Sampling",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Soil volume",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "100",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "cm³",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Project setting",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Sampling",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Collection time",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "1",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "h",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Project setting",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Sampling",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Effective collection volume",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "1",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "mL",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Project setting",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Sampling",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Recovery fraction and dilution factor",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "1 each",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Dimensionless",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Idealized simulation settings",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Channel input",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "(w_3,w_{18})",
+              "format": [],
+              "latex": "(w_3,w_{18})"
+            }
+          ],
+          [
+            {
+              "text": "P3: ((2/3,1/3)); P18: ((1/3,2/3))",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Dimensionless",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Assumed complementary weights; docking provides directional design clues",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Channel input",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Ligand normalization reference",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "1",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "nM",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Project setting",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Channel input",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "u_{\\max}",
+              "format": [],
+              "latex": "u_{\\max}"
+            }
+          ],
+          [
+            {
+              "text": "1.206908",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "s",
+              "format": []
+            },
+            {
+              "text": "^{-1}",
+              "format": [],
+              "latex": "^{-1}"
+            }
+          ],
+          [
+            {
+              "text": "Input scale constructed from source ",
+              "format": []
+            },
+            {
+              "text": "k_3=0.724\\ \\mu\\mathrm{M}^{-1}\\mathrm{s}^{-1}",
+              "format": [],
+              "latex": "k_3=0.724\\ \\mu\\mathrm{M}^{-1}\\mathrm{s}^{-1}"
+            },
+            {
+              "text": " and initial receptor concentration ",
+              "format": []
+            },
+            {
+              "text": "1.667\\ \\mu\\mathrm{M}",
+              "format": [],
+              "latex": "1.667\\ \\mu\\mathrm{M}"
+            },
+            {
+              "text": " ",
+              "format": []
+            },
+            {
+              "text": "[3, 4]",
+              "format": [
+                "superscript"
+              ]
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Channel input",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "K_L",
+              "format": [],
+              "latex": "K_L"
+            }
+          ],
+          [
+            {
+              "text": "P3: 472207.031; P18: 417856.926",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Dimensionless",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Effective input scale fitted to synthetic endpoints",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Pigment output",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "(a)",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "P3: 1033.644509; P18: 905.278000",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "\\mu\\mathrm{M},\\mathrm{h}^{-1}",
+              "format": [],
+              "latex": "\\mu\\mathrm{M},\\mathrm{h}^{-1}"
+            }
+          ],
+          [
+            {
+              "text": "Stimulus-associated production rate; synthetic fit followed by analytical rescaling",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Pigment output",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "(b)",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "44.152906",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "\\mu\\mathrm{M},\\mathrm{h}^{-1}",
+              "format": [],
+              "latex": "\\mu\\mathrm{M},\\mathrm{h}^{-1}"
+            }
+          ],
+          [
+            {
+              "text": "Basal production rate derived from the assumed 8 h blank",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Pigment output",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "(K)",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "0.120994",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Dimensionless",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Effective half-response scale derived from the merged output relationship and assumed state mapping",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Pigment output",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "(n)",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "2",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Dimensionless",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Assumed Hill coefficient, held fixed during calibration",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Pigment output",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "\\delta",
+              "format": [],
+              "latex": "\\delta"
+            }
+          ],
+          [
+            {
+              "text": "0.12",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "h",
+              "format": []
+            },
+            {
+              "text": "^{-1}",
+              "format": [],
+              "latex": "^{-1}"
+            }
+          ],
+          [
+            {
+              "text": "Assumed effective pigment-loss rate, held fixed during calibration",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Initial condition",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "(C(0))",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "0",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "\\mu\\mathrm{M}",
+              "format": [],
+              "latex": "\\mu\\mathrm{M}"
+            }
+          ],
+          [
+            {
+              "text": "Assumed initial pigment-equivalent concentration",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Endpoint setting",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Readout time",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "8",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "h",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Selected simulation endpoint",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Endpoint setting",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Blank concentration at 8 h",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "0.07",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "mg/mL",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Project assumption",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Endpoint setting",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Common target-generation gain (G)",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "9299.754376",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "\\mu\\mathrm{M},\\mathrm{nM}^{-1}",
+              "format": [],
+              "latex": "\\mu\\mathrm{M},\\mathrm{nM}^{-1}"
+            }
+          ],
+          [
+            {
+              "text": "Gain used to construct prescribed pigment endpoints, derived from the selected target range",
+              "format": []
+            }
+          ]
+        ]
+      ]
     },
     {
       "_template": "text",
@@ -496,11 +2154,273 @@
     },
     {
       "_template": "text",
-      "body": "<strong>Table 3-3. Smartphone observation and dual-channel regression parameters</strong>"
+      "body": "<p class=\"table-caption\">Table 3. Smartphone observation and dual-channel regression parameters</p>"
     },
     {
-      "_template": "text",
-      "body": "<div class=\"model-table-scroll\" tabindex=\"0\"><table class=\"model-source-table\"><thead><tr><th scope=\"col\">Category</th><th scope=\"col\">Parameter</th><th scope=\"col\">Value</th><th scope=\"col\">Unit</th><th scope=\"col\">Meaning and source</th></tr></thead><tbody><tr><td>Concentration conversion</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>M</mi><mi>W</mi></msub></mrow><annotation encoding=\"application/x-tex\">M&#95;W</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8333em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.109em;\">M</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3283em;\"><span style=\"top:-2.55em;margin-left:-0.109em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mathnormal mtight\" style=\"margin-right:0.1389em;\">W</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span></td><td>308.29</td><td>g mol<span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mrow></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">^{-1}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8141em;\"></span><span class=\"mord\"><span></span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">−</span><span class=\"mord mtight\">1</span></span></span></span></span></span></span></span></span></span></span></span></td><td>Indicaxanthin molar mass; PubChem <sup>[6]</sup></td></tr><tr><td>Concentration conversion</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>κ</mi></mrow><annotation encoding=\"application/x-tex\">&#92;kappa</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.4306em;\"></span><span class=\"mord mathnormal\">κ</span></span></span></span></td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>3.0829</mn><mo>×</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>4</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">3.0829&#92;times10^{-4}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.7278em;vertical-align:-0.0833em;\"></span><span class=\"mord\">3.0829</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span><span class=\"mbin\">×</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span></span><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8141em;\"></span><span class=\"mord\">1</span><span class=\"mord\"><span class=\"mord\">0</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">−</span><span class=\"mord mtight\">4</span></span></span></span></span></span></span></span></span></span></span></span></td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">(</mo><mrow><mi mathvariant=\"normal\">m</mi><mi mathvariant=\"normal\">g</mi><mi mathvariant=\"normal\">/</mi><mi mathvariant=\"normal\">m</mi><mi mathvariant=\"normal\">L</mi></mrow><mo stretchy=\"false\">)</mo><mi mathvariant=\"normal\">/</mi><mi>μ</mi><mi mathvariant=\"normal\">M</mi></mrow><annotation encoding=\"application/x-tex\">(&#92;mathrm{mg/mL})/&#92;mu&#92;mathrm{M}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:1em;vertical-align:-0.25em;\"></span><span class=\"mopen\">(</span><span class=\"mord\"><span class=\"mord mathrm\">mg/mL</span></span><span class=\"mclose\">)</span><span class=\"mord\">/</span><span class=\"mord mathnormal\">μ</span><span class=\"mord mathrm\">M</span></span></span></span></td><td>Conversion from molar to mass concentration, calculated from <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>M</mi><mi>W</mi></msub></mrow><annotation encoding=\"application/x-tex\">M&#95;W</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8333em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.109em;\">M</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3283em;\"><span style=\"top:-2.55em;margin-left:-0.109em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mathnormal mtight\" style=\"margin-right:0.1389em;\">W</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span></td></tr><tr><td>RGB observation</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>k</mi><mi>B</mi></msub></mrow><annotation encoding=\"application/x-tex\">k&#95;B</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8444em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0315em;\">k</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3283em;\"><span style=\"top:-2.55em;margin-left:-0.0315em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mathnormal mtight\" style=\"margin-right:0.0502em;\">B</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span></td><td>0.36</td><td>mL mg<span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mrow></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">^{-1}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8141em;\"></span><span class=\"mord\"><span></span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">−</span><span class=\"mord mtight\">1</span></span></span></span></span></span></span></span></span></span></span></span></td><td>Central published blue-channel calibration slope; transfer to this simulation is assumed <sup>[7]</sup></td></tr><tr><td>Dual-channel regression</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>β</mi><mn>0</mn></msub></mrow><annotation encoding=\"application/x-tex\">&#92;beta&#95;0</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8889em;vertical-align:-0.1944em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0528em;\">β</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0528em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">0</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span></td><td>4.335372</td><td>individuals per 100 cm³ of soil</td><td>Intercept fitted to 45 simulated paired readings</td></tr><tr><td>Dual-channel regression</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>β</mi><mn>3</mn></msub></mrow><annotation encoding=\"application/x-tex\">&#92;beta&#95;3</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8889em;vertical-align:-0.1944em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0528em;\">β</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0528em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">3</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span></td><td>−1207.944477</td><td>individuals per 100 cm³ of soil</td><td>Coefficient for the dimensionless P3 color index</td></tr><tr><td>Dual-channel regression</td><td><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>β</mi><mn>18</mn></msub></mrow><annotation encoding=\"application/x-tex\">&#92;beta&#95;{18}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8889em;vertical-align:-0.1944em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0528em;\">β</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0528em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">18</span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span></td><td>2109.880583</td><td>individuals per 100 cm³ of soil</td><td>Coefficient for the dimensionless P18 color index</td></tr></tbody></table></div>"
+      "_template": "datatable",
+      "title": "",
+      "csv": "Category,Parameter,Value,Unit,Meaning and source\nConcentration conversion,M_W,308.29,g mol^{-1},Indicaxanthin molar mass; PubChem [8]\nConcentration conversion,\\kappa,3.0829\\times10^{-4},(\\mathrm{mg/mL})/\\mu\\mathrm{M},\"Conversion from molar to mass concentration, calculated from M_W\"\nRGB observation,k_B,0.36,mL mg^{-1},Central published blue-channel calibration slope; transfer to this simulation is assumed [7]\nDual-channel regression,\\beta_0,4.335372,individuals per 100 cm³ of soil,Intercept fitted to 45 simulated paired readings\nDual-channel regression,\\beta_3,−1207.944477,individuals per 100 cm³ of soil,Coefficient for the dimensionless P3 color index\nDual-channel regression,\\beta_{18},2109.880583,individuals per 100 cm³ of soil,Coefficient for the dimensionless P18 color index",
+      "sourceCellRuns": [
+        [
+          [
+            {
+              "text": "Category",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Parameter",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Value",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Unit",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Meaning and source",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Concentration conversion",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "M_W",
+              "format": [],
+              "latex": "M_W"
+            }
+          ],
+          [
+            {
+              "text": "308.29",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "g mol",
+              "format": []
+            },
+            {
+              "text": "^{-1}",
+              "format": [],
+              "latex": "^{-1}"
+            }
+          ],
+          [
+            {
+              "text": "Indicaxanthin molar mass; PubChem ",
+              "format": []
+            },
+            {
+              "text": "[8]",
+              "format": [
+                "superscript"
+              ]
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Concentration conversion",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "\\kappa",
+              "format": [],
+              "latex": "\\kappa"
+            }
+          ],
+          [
+            {
+              "text": "3.0829\\times10^{-4}",
+              "format": [],
+              "latex": "3.0829\\times10^{-4}"
+            }
+          ],
+          [
+            {
+              "text": "(\\mathrm{mg/mL})/\\mu\\mathrm{M}",
+              "format": [],
+              "latex": "(\\mathrm{mg/mL})/\\mu\\mathrm{M}"
+            }
+          ],
+          [
+            {
+              "text": "Conversion from molar to mass concentration, calculated from ",
+              "format": []
+            },
+            {
+              "text": "M_W",
+              "format": [],
+              "latex": "M_W"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "RGB observation",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "k_B",
+              "format": [],
+              "latex": "k_B"
+            }
+          ],
+          [
+            {
+              "text": "0.36",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "mL mg",
+              "format": []
+            },
+            {
+              "text": "^{-1}",
+              "format": [],
+              "latex": "^{-1}"
+            }
+          ],
+          [
+            {
+              "text": "Central published blue-channel calibration slope; transfer to this simulation is assumed ",
+              "format": []
+            },
+            {
+              "text": "[7]",
+              "format": [
+                "superscript"
+              ]
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Dual-channel regression",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "\\beta_0",
+              "format": [],
+              "latex": "\\beta_0"
+            }
+          ],
+          [
+            {
+              "text": "4.335372",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "individuals per 100 cm³ of soil",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Intercept fitted to 45 simulated paired readings",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Dual-channel regression",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "\\beta_3",
+              "format": [],
+              "latex": "\\beta_3"
+            }
+          ],
+          [
+            {
+              "text": "−1207.944477",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "individuals per 100 cm³ of soil",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Coefficient for the dimensionless P3 color index",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Dual-channel regression",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "\\beta_{18}",
+              "format": [],
+              "latex": "\\beta_{18}"
+            }
+          ],
+          [
+            {
+              "text": "2109.880583",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "individuals per 100 cm³ of soil",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Coefficient for the dimensionless P18 color index",
+              "format": []
+            }
+          ]
+        ]
+      ]
     },
     {
       "_template": "text",
@@ -512,7 +2432,7 @@
     },
     {
       "_template": "text",
-      "body": "The coefficients apply to this input definition and return <em>Mi</em> density. The published slope uncertainty is ±0.01 mL/mg; the current deterministic simulation uses the central value without propagating that uncertainty."
+      "body": "The coefficients apply to this input definition and return <em>M. incognita</em> density. The published slope uncertainty is ±0.01 mL/mg; the current deterministic simulation uses the central value without propagating that uncertainty."
     },
     {
       "_template": "heading",
@@ -522,7 +2442,7 @@
     },
     {
       "_template": "text",
-      "body": "1. Supady, A. (2009). *Theoretical and computational analysis of negative feedback mechanisms and the dose-response alignment in the pheromone signalling pathway of the yeast Saccharomyces cerevisiae*. Bachelor’s thesis, Humboldt-Universität zu Berlin. Model B reactions, parameters, and initial conditions are given on PDF pages 48–49. [Original thesis](https://rumo.biologie.hu-berlin.de/tbp/images/Theses/bsc_supady.pdf).\n\n2. TU Delft iGEM Team. (2012). *Single Cell Model; Reduced Model Details*. Relevant source material: Tables 4.1–4.3 of the model supplement.\n\n3. Kaplan, F., Srinivasan, J., Mahanti, P., et al. (2011). Ascaroside Expression in *Caenorhabditis elegans* Is Strongly Dependent on Diet and Developmental Stage. *PLOS ONE*, 6(3), e17804. [doi:10.1371/journal.pone.0017804](https://doi.org/10.1371/journal.pone.0017804).\n\n4. Manosalva, P., Manohar, M., von Reuss, S. H., et al. (2015). Conserved nematode signalling molecules elicit plant defenses and pathogen resistance. *Nature Communications*, 6, 7795. Secretion-profile evidence is discussed in the first Results section, Supplementary Figure 1, and Supplementary Table 1. [doi:10.1038/ncomms8795](https://doi.org/10.1038/ncomms8795).\n\n5. Fan, C., He, N., & Yuan, J. (2024). Cascaded amplifying circuit enables sensitive detection of fungal pathogens. *Biosensors and Bioelectronics*, 250, 116058. This work informs the cascaded amplification and betaxanthin output design. Supplementary Figure S4 presents EGFP time courses. [doi:10.1016/j.bios.2024.116058](https://doi.org/10.1016/j.bios.2024.116058).\n\n6. National Center for Biotechnology Information. *PubChem Compound Summary for CID 6096870, Indicaxanthin*. The molar mass used here is 308.29 g/mol. [Compound record](https://pubchem.ncbi.nlm.nih.gov/compound/Indicaxanthin).\n\n7. Stücheli, P., Sieber, S., Fuchs, D. W., et al. (2020). Genetically encoded betaxanthin-based small-molecular fluorescent reporter for mammalian cells. *Nucleic Acids Research*, 48(12), e67. Smartphone quantification is described in “Smartphone-based betaxanthin quantification” and Figure 4. [doi:10.1093/nar/gkaa342](https://doi.org/10.1093/nar/gkaa342).\n\n8. Fan, C., & Yuan, J. (2023). Reshaping the yeast galactose regulon via GPCR signaling cascade. *Cell Reports Methods*, 3(12), 100647. This work informs the sTF composed of a Ste12-responsive domain and a Gal4 DNA-binding domain, and its connection to the GAL system. [doi:10.1016/j.crmeth.2023.100647](https://doi.org/10.1016/j.crmeth.2023.100647)."
+      "body": "1. Fan, C., & Yuan, J. (2023). Reshaping the yeast galactose regulon via GPCR signaling cascade. *Cell Reports Methods*, 3(12), 100647. This work informs the sTF composed of a Ste12-responsive domain and a Gal4 DNA-binding domain, and its connection to the GAL system. [doi:10.1016/j.crmeth.2023.100647](https://doi.org/10.1016/j.crmeth.2023.100647).\n\n2. Fan, C., He, N., & Yuan, J. (2024). Cascaded amplifying circuit enables sensitive detection of fungal pathogens. *Biosensors and Bioelectronics*, 250, 116058. This work informs the cascaded amplification and betaxanthin output design. Supplementary Figure S4 presents EGFP time courses. [doi:10.1016/j.bios.2024.116058](https://doi.org/10.1016/j.bios.2024.116058).\n\n3. Supady, A. (2009). *Theoretical and computational analysis of negative feedback mechanisms and the dose-response alignment in the pheromone signalling pathway of the yeast Saccharomyces cerevisiae*. Bachelor’s thesis, Humboldt-Universität zu Berlin. Model B reactions, parameters, and initial conditions are given on PDF pages 48–49. [Original thesis](https://rumo.biologie.hu-berlin.de/tbp/images/Theses/bsc_supady.pdf).\n\n4. TU Delft iGEM Team. (2012). *Single Cell Model; Reduced Model Details*. Relevant source material: Tables 4.1–4.3 of the model supplement.\n\n5. Kaplan, F., Srinivasan, J., Mahanti, P., et al. (2011). Ascaroside Expression in *Caenorhabditis elegans* Is Strongly Dependent on Diet and Developmental Stage. *PLOS ONE*, 6(3), e17804. [doi:10.1371/journal.pone.0017804](https://doi.org/10.1371/journal.pone.0017804).\n\n6. Manosalva, P., Manohar, M., von Reuss, S. H., et al. (2015). Conserved nematode signalling molecules elicit plant defenses and pathogen resistance. *Nature Communications*, 6, 7795. Secretion-profile evidence is discussed in the first Results section, Supplementary Figure 1, and Supplementary Table 1. [doi:10.1038/ncomms8795](https://doi.org/10.1038/ncomms8795).\n\n7. Stücheli, P., Sieber, S., Fuchs, D. W., et al. (2020). Genetically encoded betaxanthin-based small-molecular fluorescent reporter for mammalian cells. *Nucleic Acids Research*, 48(12), e67. Smartphone quantification is described in “Smartphone-based betaxanthin quantification” and Figure 4. [doi:10.1093/nar/gkaa342](https://doi.org/10.1093/nar/gkaa342).\n\n8. National Center for Biotechnology Information. *PubChem Compound Summary for CID 6096870, Indicaxanthin*. The molar mass used here is 308.29 g/mol. [Compound record](https://pubchem.ncbi.nlm.nih.gov/compound/Indicaxanthin)."
     },
     {
       "_template": "text",

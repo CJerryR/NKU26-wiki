@@ -3,7 +3,7 @@ title: Industry engagement and support
 heading: Industry engagement and support
 sub: Exploring applications and building connections
 crumbs:
-  - Human practices
+  - Human Practices
   - Industry engagement and support
 route: hp-industry
 search: false
@@ -13,11 +13,11 @@ hidden: true
 meta: {}
 draft: false
 ---
-<nav class="hp-chapter-nav" aria-label="Human Practices chapters"><a href="/hp-overview/">Overview</a><a href="/human-practices/">Integrated human practices</a><a href="/education/">Education</a><a href="/hp-investigation/">Investigation</a><a href="/hp-industry/">Industry engagement and support</a></nav><section class="hp-manuscript" lang="en">
+<nav class="hp-chapter-nav" aria-label="Human Practices chapters"><a href="/hp-overview/">Overview</a><a href="/human-practices/">Integrated Human Practices</a><a href="/education/">Education</a><a href="/hp-investigation/">Investigation</a><a href="/hp-industry/">Industry engagement and support</a></nav><section class="hp-manuscript" lang="en">
 
 :::lead
 
-<p data-hp-source-paragraph="228"><strong>From contacting alumni enterprises and preparing partnership materials to meeting companies and seeking commercialization advice, we made industry engagement part of our exploration of the project’s potential applications. Confirmed sponsorship supported our work, while the materials and outreach process we developed became valuable outcomes in their own right.</strong></p>
+<p data-hp-source-paragraph="228">From contacting alumni enterprises and preparing partnership materials to meeting companies and seeking commercialization advice, we made industry engagement part of our exploration of the project’s potential applications. Confirmed sponsorship supported our work, while the materials and outreach process we developed became <strong>valuable outcomes</strong> in their own right.</p>
 
 :::
 
@@ -29,11 +29,11 @@ draft: false
 
 ## Preparing materials for industry discussions {#hp-source-233}
 
-<p data-hp-source-paragraph="234">We prepared a corporate partnership invitation and a project presentation to communicate our work clearly. The invitation brought together our team background, project rationale, application needs, possible forms of collaboration, and follow-up arrangements. The presentation provided a visual introduction to the sensor concept, our <strong>Human Practices (HP)</strong> activities, and potential applications. Together, they supported both detailed review and meeting presentations.</p>
+<p data-hp-source-paragraph="234">We prepared a corporate partnership invitation and a project presentation to communicate our work clearly. The invitation brought together our team background, project rationale, application needs, possible forms of collaboration, and follow-up arrangements. The presentation provided a visual introduction to the sensor concept, our <strong>Human Practices</strong> activities, and potential applications. Together, they supported both detailed review and meeting presentations.</p>
 
 <p data-hp-source-paragraph="235">The invitation outlined possible financial sponsorship, in-kind or service support, and industry engagement, alongside a proposed cooperation process and partner recognition. The presentation explored a field-testing concept for potential users such as agricultural input companies, large farms, and crop protection service providers, as well as longer-term possibilities for a broader sensing platform. These were directions for discussion and exploration; product development requires further research and validation.</p>
 
-<figure class="hp-source-figure figure"><div class="figure__media hp-photo-group"><div class="hp-photo-item"><div data-hp-source-paragraph="236"><a href="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-f66508ce67d0aac7-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-f66508ce67d0aac7-00.json" alt="Materials prepared to introduce our project and discuss possible forms of collaboration." loading="lazy" width="552" height="388"></a></div></div><div class="hp-photo-item"><div data-hp-source-paragraph="237"><a href="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-5c1945b1d2e6de12-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-5c1945b1d2e6de12-00.json" alt="Materials prepared to introduce our project and discuss possible forms of collaboration." loading="lazy" width="552" height="779"></a></div></div></div><figcaption data-hp-source-paragraph="238">Figure 22. Materials prepared to introduce our project and discuss possible forms of collaboration.</figcaption></figure>
+<figure class="hp-source-figure figure"><div class="figure__media hp-photo-group"><div class="hp-photo-item"><div data-hp-source-paragraph="236"><a href="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-f66508ce67d0aac7-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-f66508ce67d0aac7-00.json" alt="Materials prepared to introduce our project and discuss possible forms of collaboration." loading="lazy" width="552" height="388"></a></div></div><div class="hp-photo-item"><div data-hp-source-paragraph="237"><a href="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-5c1945b1d2e6de12-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-5c1945b1d2e6de12-00.json" alt="Materials prepared to introduce our project and discuss possible forms of collaboration." loading="lazy" width="552" height="779"></a></div></div></div><figcaption data-hp-source-paragraph="238">Figure 1. Materials prepared to introduce our project and discuss possible forms of collaboration.</figcaption></figure>
 
 ## Moving from presentations to dialogue {#hp-source-239}
 
@@ -55,7 +55,7 @@ draft: false
 
 <div class="hp-photo-item"><div data-hp-source-paragraph="245"><a href="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-eb951d54da7d2978-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-eb951d54da7d2978-00.json" alt="ExCell Bio supports NKU-China’s research exploration and participation in iGEM." loading="lazy" width="274" height="460"></a></div></div>
 
-<p><span data-hp-source-paragraph="246">Figure 23. ExCell Bio supports NKU-China’s research exploration and participation in iGEM.</span></p>
+<p><span data-hp-source-paragraph="246">Figure 2. ExCell Bio supports NKU-China’s research exploration and participation in iGEM.</span></p>
 
 :::
 
@@ -63,7 +63,7 @@ draft: false
 
 :::lead
 
-<p data-hp-source-paragraph="248"><strong>Through this work, we developed a process that can inform future outreach: define the purpose of engagement, establish contact by email, share the invitation and project materials, hold discussions around company interests, and follow up on collaboration opportunities and support. The invitation, presentation, and communication records provide a foundation for this process.</strong></p>
+<p data-hp-source-paragraph="248">Through this work, we developed <strong>a process that can inform future outreach</strong>: define the purpose of engagement, establish contact by email, share the invitation and project materials, hold discussions around company interests, and follow up on collaboration opportunities and support. The invitation, presentation, and communication records provide a foundation for this process.</p>
 
 <p data-hp-source-paragraph="249">For other student teams, industry engagement can begin with a concrete question: what do we hope to learn from a company, and what help are we seeking? Recording consultation, expressions of interest, and confirmed support separately makes progress easier to communicate and helps acknowledge each contribution accurately.</p>
 

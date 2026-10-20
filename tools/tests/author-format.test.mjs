@@ -43,6 +43,42 @@ test('table fallback retains original per-character styles and exact cell text',
   assert.throws(()=>renderToolkit({...block,csv:'Part,Description\npRS315,CHANGED\n'},'datatable'),/does not match CSV/);
 });
 
+test('datatable renders only explicit source LaTeX runs as KaTeX while preserving CSV cell text', () => {
+  const block={_template:'datatable',csv:'Symbol,Value\nG_{18},2\n',sourceCellRuns:[
+    [[{text:'Symbol',format:['b']}],[{text:'Value',format:['b']}]],
+    [[{text:'G_{18}',format:[],latex:'G_{18}'}],[{text:'2',format:[]}]],
+  ]};
+  const html=renderToolkit(block,'datatable');
+  assert.match(html,/<span class="katex">/);
+  assert.match(html,/<annotation encoding="application\/x-tex">G_\{18\}<\/annotation>/);
+  assert.doesNotMatch(html,/<code>G_\{18\}<\/code>/);
+  assert.throws(()=>renderToolkit({...block,csv:'Symbol,Value\nG_{3},2\n'},'datatable'),/does not match CSV/);
+
+  const ordinary=renderToolkit({_template:'datatable',csv:'Material,ID\nGPR2_1,GPR2_1\n',sourceCellRuns:[
+    [[{text:'Material',format:[]}],[{text:'ID',format:[]}]],
+    [[{text:'GPR2_1',format:[]}],[{text:'GPR2_1',format:[]}]],
+  ]},'datatable');
+  assert.doesNotMatch(ordinary,/<span class="katex">/);
+});
+
+test('datatable display-only header casing leaves source runs and CSV untouched', () => {
+  const block={_template:'datatable',csv:'Part Number,Value\nBBa_K123,1\n',sourceCellRuns:[
+    [[{text:'Part Number',format:[]}],[{text:'Value',format:[]}]],
+    [[{text:'BBa_K123',format:[]}],[{text:'1',format:[]}]],
+  ]};
+  const html=renderToolkit(block,'datatable');
+  assert.match(html,/<th>Part number<\/th>/);
+  assert.match(html,/Part Number,Value\\nBBa_K123,1\\n/);
+  assert.match(html,/BBa_K123/);
+});
+
+test('legacy datatable headings receive only the approved display labels without source runs', () => {
+  const html=renderToolkit({_template:'datatable',csv:'Early-Warning Capacity,Professional Dependence\nHigh,Low\n'},'datatable');
+  assert.match(html,/<th>Early-warning capacity<\/th>/);
+  assert.match(html,/<th>Professional dependence<\/th>/);
+  assert.match(html,/Early-Warning Capacity,Professional Dependence\\n/);
+});
+
 test('Tina preview uses the author-format flag and keeps differently formatted caches separate', async () => {
   const source='Saccharomyces cerevisiae [1]. **Author emphasis**.';
   const authored=await renderEditorMarkdown(source,true);

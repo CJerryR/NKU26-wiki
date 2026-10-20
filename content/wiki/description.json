@@ -23,11 +23,11 @@
     },
     {
       "_template": "manuscriptTitle",
-      "manuscript": "NemaKlear: Making Nematode Screening Easier to Use"
+      "manuscript": "NemaKlear: making nematode screening easier to use"
     },
     {
       "_template": "text",
-      "body": "NemaKlear is developing a yeast-based biosensing kit for preliminary screening of agricultural nematode risk. Our approach uses engineered yeast to sense ascarosides, small molecules released by nematodes, and turn these chemical signals into a visible yellow color. By combining readings from two sensors with computational models, we explore how these signals could help assess the risk posed by <strong>plant-parasitic nematodes (PPNs)</strong>."
+      "body": "NemaKlear is developing a yeast-based biosensing kit for preliminary screening of agricultural nematode risk. Our approach uses engineered yeast to sense ascarosides, small molecules released by nematodes, and turn these chemical signals into a visible yellow color. By combining readings from two sensors with computational models, we explore how these signals could help assess the risk posed by <strong>plant-parasitic nematodes</strong>."
     },
     {
       "_template": "text",
@@ -83,7 +83,7 @@
     },
     {
       "_template": "text",
-      "body": "The idea begins with nematode-trapping fungi, which can sense chemical signals released by their prey. We chose one of their receptors, GPR2, as our main engineering target. Molecular docking helps us compare predicted positions and contacts of the two ascarosides within the receptor and propose mutations. <strong>Molecular dynamics (MD)</strong> simulations then let us examine how those contacts change in a membrane environment."
+      "body": "The idea begins with nematode-trapping fungi, which can sense chemical signals released by their prey. We chose one of their receptors, GPR2, as our main engineering target. Molecular docking helps us compare predicted positions and contacts of the two ascarosides within the receptor and propose mutations. <strong>molecular dynamics</strong> simulations then let us examine how those contacts change in a membrane environment."
     },
     {
       "_template": "text",
@@ -97,11 +97,11 @@
     },
     {
       "_template": "text",
-      "body": "To make recognition visible, we use baker’s yeast, <em>Saccharomyces cerevisiae</em>, as the host for a system connecting a foreign receptor, intracellular signaling, and production of the yellow pigment betaxanthin. In this design, a signal received by the receptor travels through the yeast signaling pathway. A <strong>synthetic transcription factor (sTF)</strong> links that pathway to pigment production, giving the system a visible output."
+      "body": "To make recognition visible, we use baker’s yeast, <em>Saccharomyces cerevisiae</em>, as the host for a system connecting a foreign receptor, intracellular signaling, and production of the yellow pigment betaxanthin. In this design, a signal received by the receptor travels through the yeast signaling pathway. A <strong>synthetic transcription factor</strong> links that pathway to pigment production, giving the system a visible output."
     },
     {
       "_template": "text",
-      "body": "We have worked along this chain by examining receptor expression and localization, engineering the yeast host, and constructing the pigment-production module. Alongside these experiments, an <strong>ordinary differential equation (ODE)</strong> model describes how an input signal develops into color over time. It helps us examine whether different inputs can produce distinguishable outputs and identify the dose-response measurements, blanks, and time courses needed for calibration. [Explore our experimental work →](/results/) · [Explore our signaling model →](/model-ode/)"
+      "body": "We have worked along this chain by examining receptor expression and localization, engineering the yeast host, and constructing the pigment-production module. Alongside these experiments, an <strong>ordinary differential equation</strong> model describes how an input signal develops into color over time. It helps us examine whether different inputs can produce distinguishable outputs and identify the dose-response measurements, blanks, and time courses needed for calibration. [Explore our experimental work →](/results/) · [Explore our signaling model →](/model-ode/)"
     },
     {
       "_template": "text",

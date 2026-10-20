@@ -1,0 +1,383 @@
+{
+  "caption_count": 94,
+  "passed": true,
+  "failures": [],
+  "captions": [
+    {
+      "page": "background",
+      "text": "Figure 1. Symptoms of two major PPNs on soybean roots. (a) M. incognita: obvious root galls formed on infected soybean roots. (b) H. glycines: white lemon-shaped mature females protruding from soybean roots (arrows). Note that soybean cyst nematode does not form root galls. Source: Management of Plant-Parasitic Nematodes in Florida Soybean Production (NG018), UF/IFAS EDIS. Used for educational demonstration only."
+    },
+    {
+      "page": "background",
+      "text": "Figure 2. Ascaroside profiles in PPNs. Source: Manosalva P, et al. (2015), Nature Communications, DOI:10.1038/ncomms8795."
+    },
+    {
+      "page": "background",
+      "text": "Figure 3. Ascaroside profiles in free-living nematodes. Source: Lee D, et al. (2023), Proceedings of the National Academy of Sciences, DOI:10.1073/pnas.2221150120."
+    },
+    {
+      "page": "background",
+      "text": "Figure 4. GPCR-mediated prey pheromone sensing pathway in the nematode-trapping fungus A. oligospora. Source: Kuo C-Y, et al. (2024), Nature Microbiology, DOI:10.1038/s41564-024-01679-w."
+    },
+    {
+      "page": "contribution",
+      "text": "Figure 1. A documented route to yeast strain construction. The workflow summarizes the genetic modifications connecting our chassis and receptor variants."
+    },
+    {
+      "page": "contribution",
+      "text": "Figure 2. Mapping candidate sites for receptor engineering. Highlighted residues were selected for further substitution studies through comparisons of predicted ligand contacts."
+    },
+    {
+      "page": "contribution",
+      "text": "Figure 3. From signal response to density estimation. The workflow connects pathway modeling, simulated colors, and paired-readout analysis. Generated with OpenAI GPT Image 2."
+    },
+    {
+      "page": "contribution",
+      "text": "Figure 4. Bringing nematode science into the classroom. Our teaching materials support classroom activities through the Xiangyang Program partnership."
+    },
+    {
+      "page": "contribution",
+      "text": "Figure 5. Learning from growers’ experience. Conversations during farm visits helped us relate testing needs to local crops and management practices."
+    },
+    {
+      "page": "description",
+      "text": "Figure 1. From nematode signals to practical screening. NemaKlear brings biosensor design, paired readouts, and kit development into a shared Design–Build–Test–Learn cycle. Agricultural needs and stakeholder feedback guide each revision toward a kit that is easy to use and helps inform decisions before planting. Generated with OpenAI GPT Image 2."
+    },
+    {
+      "page": "description",
+      "text": "Figure 2. Conversations with growers help us understand practical needs for nematode screening."
+    },
+    {
+      "page": "description",
+      "text": "Figure 3. Our discussion with Yurong Yao connects sampling and testing procedures with practical agricultural needs."
+    },
+    {
+      "page": "description",
+      "text": "Figure 4. Students explore soil nematodes and crop diseases through an interactive lesson."
+    },
+    {
+      "page": "education",
+      "text": "Figure 1. Team members deliver the interactive lecture \"The great nematode hunt\" to students in Lincheng, Hebei, introducing plant-parasitic nematodes and crop diseases."
+    },
+    {
+      "page": "education",
+      "text": "Figure 2. Science literacy lesson: “The great nematode hunt”."
+    },
+    {
+      "page": "education",
+      "text": "Figure 3. Hands-on science lesson: “The signal discovery challenge”."
+    },
+    {
+      "page": "education",
+      "text": "Figure 4. Science and social responsibility lesson: “Tiny lives shine, and we grow through everyday dedication”."
+    },
+    {
+      "page": "education",
+      "text": "Figure 5. Backed by the \"Xiangyang Program\" public welfare education service team, we have introduced nematode-themed courses into both school classrooms and local communities."
+    },
+    {
+      "page": "engineering",
+      "text": "Figure 1. Engineering yeast to turn nematode signals into color. Our modular design connects GPR2-mediated sensing to the yeast signaling pathway, a synthetic transcription factor, and GAL-driven amplification, leading to yellow betaxanthin production."
+    },
+    {
+      "page": "engineering",
+      "text": "Figure 2. Examining receptor localization. GPR2–sfGFP fluorescence is compared with FM4-64 staining and merged images. Scale bars: 10 μm."
+    },
+    {
+      "page": "engineering",
+      "text": "Figure 3. Comparing one and two readouts. Paired readouts improved target-density prediction on the simulated test set."
+    },
+    {
+      "page": "engineering",
+      "text": "Figure 4. Prototype test strips and colored solutions."
+    },
+    {
+      "page": "engineering",
+      "text": "Figure 5. A test card designed for simpler use. The proposed workflow combines loading the soil extract, checking the quality-control region, and photographing the result, with dedicated control and sample regions and a color reference on the casing. Generated with OpenAI GPT Image 2."
+    },
+    {
+      "page": "engineering",
+      "text": "Figure 6. From soil collection to disposal. The workflow brings sampling, recording, transport, laboratory handling, and disposal into one view. Generated with OpenAI GPT Image 2."
+    },
+    {
+      "page": "experiments",
+      "text": "Figure 1. Workflow of engineered strain construction"
+    },
+    {
+      "page": "hp-industry",
+      "text": "Figure 1. Materials prepared to introduce our project and discuss possible forms of collaboration."
+    },
+    {
+      "page": "hp-industry",
+      "text": "Figure 2. ExCell Bio supports NKU-China’s research exploration and participation in iGEM."
+    },
+    {
+      "page": "hp-investigation",
+      "text": "Figure 1. Museum visits broadened our perspectives on life, agriculture, and science communication."
+    },
+    {
+      "page": "hp-investigation",
+      "text": "Figure 2. An interview with Yurong Yao on nematode disease, sampling, and practical testing needs."
+    },
+    {
+      "page": "hp-investigation",
+      "text": "Figure 3. Discussion with Associate Professor Qian Liu from China Agricultural University on the scientific premises and application conditions of the project."
+    },
+    {
+      "page": "hp-investigation",
+      "text": "Figure 4. Discussion with Zhihao Pang on soil backgrounds, signal stability, and practical application."
+    },
+    {
+      "page": "hp-investigation",
+      "text": "Figure 5. Team exchanges address research approaches and HP."
+    },
+    {
+      "page": "hp-investigation",
+      "text": "Figure 6. Farm work and conversations connect crop management with growers’ experience of underground disease."
+    },
+    {
+      "page": "human-practices",
+      "text": "Figure 1. Geographic distribution of 369 survey responses across 23 provincial-level regions in China."
+    },
+    {
+      "page": "human-practices",
+      "text": "Figure 2. Respondent awareness of plant-parasitic nematodes (e.g., root-knot and cyst nematodes): questionnaire data"
+    },
+    {
+      "page": "human-practices",
+      "text": "Figure 3. Desired features of an ideal nematode detection tool as rated by participants: questionnaire data"
+    },
+    {
+      "page": "members",
+      "text": "NKU-China 2026 team"
+    },
+    {
+      "page": "model-docking",
+      "text": "Figure 1. Full-length Gpr2 WT structure predicted locally with AlphaFold 3 [1]. This structure is identified as model_0 in the docking analysis."
+    },
+    {
+      "page": "model-docking",
+      "text": "Figure 2. Predicted docking poses and pocket environments of Gpr2 WT. (a, b) ascr#3; (c, d) ascr#18. Each pair shows a 3D pocket view and the corresponding Maestro 2D interaction diagram [5] for the lowest-scoring pose. In the 3D views, the receptor is shown as a purple cartoon, pocket residues as yellow sticks, and ascr#3 and ascr#18 in cyan and magenta, respectively. Original residue numbering is retained."
+    },
+    {
+      "page": "model-docking",
+      "text": "Figure 3. Initial mutation sites in Gpr2. N84, L90, V110, R181, W338, R345, and V368 are highlighted on the predicted full-length structure."
+    },
+    {
+      "page": "model-docking",
+      "text": "Figure 4. Predicted docking poses and pocket environments of Gpr2 N84V. (a, b) ascr#3; (c, d) ascr#18. Each pair shows a 3D pocket view and the corresponding Maestro 2D interaction diagram for the lowest-scoring pose. Colors follow Figure 2, and residue numbering matches WT."
+    },
+    {
+      "page": "model-docking",
+      "text": "Figure 5. Predicted docking poses and pocket environments of Gpr2 V368R. (a, b) ascr#3; (c, d) ascr#18. Each pair shows a 3D pocket view and the corresponding Maestro 2D interaction diagram for the lowest-scoring pose. Colors follow Figure 2, and residue numbering matches WT."
+    },
+    {
+      "page": "model-docking",
+      "text": "Figure 6. Predicted ascaroside-binding pockets in GprC, SRBC-64, and DAF-37. Each receptor shows five docking poses for each of five ascarosides. Cropped from Hu et al. (2024), Figure 5a–c [3], under the Creative Commons Attribution 4.0 International license."
+    },
+    {
+      "page": "model-md",
+      "text": "Figure 1. Ligand heavy-atom RMSD under three structural alignment schemes. Trajectories were aligned using the whole receptor, the transmembrane helical core, or the local pocket backbone, with each trajectory referenced to its own initial production structure. Curves show a 1 ns centered moving average of data sampled every 100 ps. Shading marks the 50–100 ns comparison window. Each system is represented by one 100 ns trajectory."
+    },
+    {
+      "page": "model-md",
+      "text": "Figure 2. Arg189–carboxylate interactions in the Gpr2 N84V–ascr#18 complex. (a) Simulation snapshot at 64.64 ns. The receptor is shown as purple ribbons; ascr#18 and Arg189 are shown as sticks with magenta and yellow carbon atoms, respectively. The dashed line indicates an Arg189–carboxylate hydrogen bond with a donor–acceptor distance of 2.77 Å. (b) Occupancy of at least one Arg189–carboxylate hydrogen bond during 50–100 ns: 93.6% for N84V–ascr#18 and 0% for WT–ascr#18 and N84V–ascr#3. Frames were sampled every 100 ps, using the hydrogen-bond criteria defined in the text."
+    },
+    {
+      "page": "model-md",
+      "text": "Figure 3. Changes in ligand anchoring in V368R–ascr#3 simulations initiated from two alternative poses. (a,b) Time-dependent salt-bridge occupancies for the Arg368-directed (a) and Arg189-directed (b) starting poses. Each panel compares the designed Arg368–carboxylate or Arg189–carboxylate contact with the Arg345–carboxylate contact. Shading marks the 50–100 ns comparison window. (c) Arg345–carboxylate contact occupancies during 50–100 ns in the two additional trajectories and the WT–ascr#3, V368R–ascr#18, and original V368R–ascr#3 trajectories. Bars indicate salt-bridge occupancy using a distance cutoff of ≤4 Å; diamonds indicate the occupancy of short, near-linear hydrogen bonds. Each starting pose was simulated for 100 ns."
+    },
+    {
+      "page": "model-ode",
+      "text": "Figure 1. Sequential calibration workflow for the ODE and dual-channel models.\nThe upper panel shows mixed-sample design, ODE calibration, and dual-channel regression. The lower panel shows the intended workflow for estimating M. incognita density from paired smartphone readings. Prescribed pigment targets are used to calibrate the ODE, while regression uses color features calculated from the actual ODE outputs. Generated with OpenAI GPT Image 2."
+    },
+    {
+      "page": "model-ode",
+      "text": "Figure 2. ODE pigment calibration at different background densities.\nPanels A and B show P3 and P18, respectively. Colors distinguish C. elegans background densities. Dashed lines with crosses indicate prescribed pigment targets, solid lines with circles indicate simulated 8 h total pigment concentrations, and gray dotted lines indicate the blank."
+    },
+    {
+      "page": "model-ode",
+      "text": "Figure 3. Net pigment accumulation in representative mixed samples.\nPanels A and B show simulated time courses for blank, M. incognita-only, C. elegans-only, and mixed samples in P3 and P18. Net pigment is calculated by subtracting the matched channel blank at each time point."
+    },
+    {
+      "page": "model-ode",
+      "text": "Figure 4. Distribution of mixed samples in dual-channel color space.\nThe horizontal and vertical axes show the simulated P3 and P18 smartphone color indices. Point color indicates M. incognita density. Solid lines connect samples with fixed M. incognita density, while dashed lines connect samples with fixed C. elegans density. Arrows indicate the directions of increasing M. incognita or C. elegans density."
+    },
+    {
+      "page": "model-ode",
+      "text": "Figure 5. M. incognita density predictions and comparison of single- and dual-channel models.\nPanel A compares known and predicted M. incognita densities for the dual-channel model; the dashed line indicates ideal agreement. Panel B compares the RMSEs of P3-only, P18-only, and dual-channel models on the same simulated evaluation set."
+    },
+    {
+      "page": "results",
+      "text": "Figure 1. Construction of the plasmid for heterologous expression of GPR2-sfGFP. (a) Plasmid map of the pRS315-GPR2-sfGFP construct for heterologous GPR2-sfGFP expression. (b) Colony polymerase chain reaction (PCR) results during plasmid construction. Sample T3 showed the expected positive band, and this colony was selected for plasmid extraction. (c) Double restriction digestion verification of pRS315-GPR2-sfGFP, with band sizes consistent with theoretical expectations."
+    },
+    {
+      "page": "results",
+      "text": "Figure 2. Yeast transformation of GPR2-sfGFP. (a) Schematic diagram of yeast HR. (b) Verification results of transformants, confirming that GPR2-sfGFP was correctly integrated into the STE2 locus of the yeast genome."
+    },
+    {
+      "page": "results",
+      "text": "Figure 3. Fluorescence microscopy results"
+    },
+    {
+      "page": "results",
+      "text": "Figure 4. CFW staining of yeast cells"
+    },
+    {
+      "page": "results",
+      "text": "Figure 5. FM4-64 staining of yeast cells"
+    },
+    {
+      "page": "results",
+      "text": "Figure 6. Construction of Gal80 knockout cassette KOGal80. (a) PCR amplification of the three fragments constituting KOGal80. (b) KOGal80 cassette assembled by DJ-PCR."
+    },
+    {
+      "page": "results",
+      "text": "Figure 7. Gal80 gene knockout. (a) Schematic diagram of yeast HR. (b) Transformant verification results, confirming the successful knockout of the Gal80 gene."
+    },
+    {
+      "page": "results",
+      "text": "Figure 8. Plasmid map of the HR plasmid pRS315-sTF."
+    },
+    {
+      "page": "results",
+      "text": "Figure 9. Construction of the STE12 knockout cassette KOSTE12. (a) PCR amplification results of the three fragments constituting KOSTE12. (b) the KOSTE12 knockout cassette assembled by DJ-PCR."
+    },
+    {
+      "page": "results",
+      "text": "Figure 10. The first attempt to construct pRS315-sTF plasmid. (a) Colony PCR result. The No.6 colony was selected for plasmid extraction and subsequent double digestion, shown in panel (b) It was difficult to confirm the correctness of the plasmid from this result."
+    },
+    {
+      "page": "results",
+      "text": "Figure 11. The second attempt to construct the pRS315-sTF plasmid. (a) Sequencing result of the first trial, showing that the 3F fragment was not assembled. (b) Fragment amplification for the second plasmid construction. The fragment sizes from left to right are 3363 bp, 1620 bp, 1076 bp and 4301 bp. (c) Double digestion verification of pRS315-sTF, consistent with expectations. (d) Whole-plasmid sequencing result, confirming correct base sequences in key regions."
+    },
+    {
+      "page": "results",
+      "text": "Figure 12. Schematic diagram of STE12 gene knockout and transformant verification results, indicating unsuccessful knockout."
+    },
+    {
+      "page": "results",
+      "text": "Figure 13. Construction of pRS315-MjDOD-BvCYP76AD5 plasmid. (a) Plasmid map of pRS315-MjDOD-BvCYP76AD5. (b) Colony PCR identification for plasmid construction. Colony T5 was selected for plasmid extraction. (c) Double digestion verification of pRS315-MjDOD-BvCYP76AD5; the band sizes of digested products matched the theoretical expectation. (d) Whole-plasmid sequencing result, confirming correct base sequences in key regions."
+    },
+    {
+      "page": "results",
+      "text": "Figure 14. Schematic diagram of betaxanthin expression cassette transformation and transformant verification results, showing no insertion at the Gal4 locus."
+    },
+    {
+      "page": "results",
+      "text": "Figure 15. Yeast producing betaxanthin."
+    },
+    {
+      "page": "results",
+      "text": "Figure 16. Map of auxotrophic marker replacement for p414-Cas9 plasmid."
+    },
+    {
+      "page": "results",
+      "text": "Figure 17. Construction of p414-Cas9-Leu plasmid. (a) Colony PCR identification for plasmid construction. Colony T6 was selected for plasmid extraction. (b) Double digestion verification of p414-Cas9-Leu; the band sizes of digested products matched the theoretical expectation. (c) Whole-plasmid sequencing result, confirming correct base sequences in key regions."
+    },
+    {
+      "page": "results",
+      "text": "Figure 18. sgRNA expression plasmids. (a) Plasmid map of p426-SNR52p-gSTE12-SUP4t. (b) Plasmid map of p426-SNR52p-gGal4-SUP4t. (c) Plasmid map of p426-SNR52p-gSTE2-SUP4t."
+    },
+    {
+      "page": "results",
+      "text": "Figure 19. Construction of p426-SNR52p-gSTE12-SUP4t plasmid."
+    },
+    {
+      "page": "results",
+      "text": "Figure 20. Construction of p426-SNR52p-gGal4-SUP4t plasmid."
+    },
+    {
+      "page": "results",
+      "text": "Figure 21. Construction of p426-SNR52p-gSTE2-SUP4t plasmid."
+    },
+    {
+      "page": "results",
+      "text": "Figure 22. Fragment construction of Gal1/10bp-betaxanthin expression cassette (a) and sTF expression cassette (b)."
+    },
+    {
+      "page": "results",
+      "text": "Figure 23. Plasmid map of pRS315-TEF1p-GPR2."
+    },
+    {
+      "page": "results",
+      "text": "Figure 24. Construction of pRS315-TEF1p-GPR2 plasmid."
+    },
+    {
+      "page": "results",
+      "text": "Figure 25. Transformant verification of p414-Cas9-Leu (a) and sTF transformant verification (b)."
+    },
+    {
+      "page": "results",
+      "text": "Figure 26. Schematic diagram of sTF expression cassette transformation."
+    },
+    {
+      "page": "results",
+      "text": "Figure 27. Schematic diagram of Gal1/10bp-betaxanthin expression cassette transformation (a) and transformant validation (b)."
+    },
+    {
+      "page": "results",
+      "text": "Figure 28. Plasmid maps of pRS315-TEF1p-GPR2-N84V and pRS315-TEF1p-GPR2-V368R."
+    },
+    {
+      "page": "results",
+      "text": "Figure 29. Construction of pRS315-TEF1p-GPR2-N84V (a) and pRS315-TEF1p-GPR2-V368R (b). Whole-plasmid sequencing confirmed the correct base sequences in key regions."
+    },
+    {
+      "page": "results",
+      "text": "Figure 30. Water absorption capacity evaluation of selected substrates."
+    },
+    {
+      "page": "results",
+      "text": "Figure 31. Fumigation coating device (a), hydrophobic effect demonstration (b), circular hydrophilic zone demonstration (c). For (c), the surrounding experimental groups are created by placing the hydrophobic-treated test strips into solutions containing iron(III) chloride, cobalt(II) chloride, copper(II) sulfate, and manganese(II) chloride, respectively."
+    },
+    {
+      "page": "results",
+      "text": "Figure 32. Water loss rate curve."
+    },
+    {
+      "page": "results",
+      "text": "Figure 33. Photograph of the vacuum filtration spotting device."
+    },
+    {
+      "page": "results",
+      "text": "Figure 34. Overview of color-developing cell-loaded test strips."
+    },
+    {
+      "page": "results",
+      "text": "Video 1. Observation of test strip resuscitation over 113 h."
+    },
+    {
+      "page": "results",
+      "text": "Figure 35. Control experiments for color development conditions."
+    },
+    {
+      "page": "results",
+      "text": "Figure 36. 3D-printed test strip cassette."
+    },
+    {
+      "page": "safety",
+      "text": "Figure 1. CEN.PK2-1C strain with four auxotrophies."
+    },
+    {
+      "page": "safety",
+      "text": "Figure 2. Tet-On and Bax suicide-system design."
+    },
+    {
+      "page": "safety",
+      "text": "Figure 3. Laboratory work with personal protective equipment."
+    },
+    {
+      "page": "safety",
+      "text": "Figure 4. Laboratory safety facilities and inspection records."
+    },
+    {
+      "page": "safety",
+      "text": "Figure 5. Team laboratory safety examination certificates."
+    },
+    {
+      "page": "safety",
+      "text": "Figure 6. Laboratory safety signs and management records."
+    }
+  ]
+}
