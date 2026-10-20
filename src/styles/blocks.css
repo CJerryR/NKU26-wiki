@@ -178,6 +178,18 @@ a[data-page-off] { cursor: auto; color: inherit !important; text-decoration: non
 .figure-text__body > * + * { margin-top: 1em; }
 .figure-text__body > :first-child { margin-top: 0; }
 .figure-text__body > :last-child { margin-bottom: 0; }
+/* Project manuscripts: align the image frame with its paired opening paragraph.
+   The source's side-by-side compositions share the same article edges as full figures. */
+.doc:is([data-page="description"], [data-page="engineering"], [data-page="contribution"]) .reading-layout .figure-text {
+  margin-block: clamp(24px, 3vw, 36px);
+  column-gap: clamp(24px, 3vw, 36px);
+}
+.doc:is([data-page="description"], [data-page="engineering"], [data-page="contribution"]) .reading-layout .figure-text > .figure {
+  margin: 0;
+}
+.doc:is([data-page="description"], [data-page="engineering"], [data-page="contribution"]) .reading-layout .figure-text__body {
+  hyphens: auto;
+}
 @media (max-width: 760px) {
   .figure-text, .figure-text--right { grid-template-columns: minmax(0, 1fr); gap: 20px; }
   .figure-text--right > .figure, .figure-text--right > .figure-text__body { grid-column: auto; grid-row: auto; }

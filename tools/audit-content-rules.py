@@ -46,8 +46,21 @@ MODEL_MODULE_TITLES = {
     '#model-section-4': 'Economic Benefit',
 }
 
+# These Goal labels are required by the approved Engineering-page outline.
+# Keep the numbered prefix verbatim, then apply the ordinary sentence-case
+# rule only to the title text after the colon.
+ENGINEERING_GOAL_PREFIXES = {
+    f'#engineering-goal-{n}-{slug}': f'Goal {n}:'
+    for n, slug in (
+        (1, 'building-the-biosensor'),
+        (2, 'making-the-readout-informative'),
+        (3, 'engineering-a-usable-test-format'),
+        (4, 'refining-the-project-for-agricultural-use'),
+    )
+}
+
 def heading_sentence_case_violation(slug, label, attributes, level, sentence_case):
-    """Preserve exact approved Model prefixes while still checking subtitles."""
+    """Preserve approved module/Goal prefixes while checking their subtitles."""
     if slug == 'model' and level == 2:
         anchor = attributes.split()[0] if attributes.split() else ''
         prefix = MODEL_MODULE_TITLES.get(anchor)
@@ -59,6 +72,14 @@ def heading_sentence_case_violation(slug, label, attributes, level, sentence_cas
             if normalized.startswith(normalized_prefix):
                 normalized = prefix + normalized[len(normalized_prefix):]
             return normalized != label
+    if slug == 'engineering' and level == 2:
+        anchor = attributes.split()[0] if attributes.split() else ''
+        prefix = ENGINEERING_GOAL_PREFIXES.get(anchor)
+        if prefix:
+            if not label.startswith(prefix + ' '):
+                return True
+            suffix = label[len(prefix):].strip()
+            return not suffix or sentence_case(suffix) != suffix
     return sentence_case(label) != label
 
 def values(doc):

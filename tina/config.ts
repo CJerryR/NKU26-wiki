@@ -64,6 +64,9 @@ const templates: Template[] = [
     { type: 'number', name: 'level', label: '标题级别 (2–4)', required: true },
     { type: 'string', name: 'attributes', label: '锚点与目录设置', description: '已有值请保留；例如 #problem toc="The problem"' },
   ] },
+  { name: 'manuscriptTitle', label: '稿件主标题', fields: [
+    { type: 'rich-text', name: 'manuscript', label: '主标题文字', required: true, parser: { type: 'markdown' } },
+  ] },
   { name: 'text', label: '富文本 / 表格', fields: [body] },
   { name: 'layout', label: '排版模块', fields: [
     { type: 'string', name: 'kind', label: '类型', required: true, options: ['note', 'tip', 'warning', 'cards', 'cols', 'figure', 'timeline', 'features', 'stats', 'refs', 'details', 'people', 'lead', 'workflow'] },
@@ -73,6 +76,7 @@ const templates: Template[] = [
   ] },
   { name: 'image', label: '图片与图注', fields: [
     { type: 'image', name: 'src', label: '上传图片', required: true },
+    { type: 'image', name: 'originalSrc', label: '原图链接（可选）', description: '有压缩预览图时填入原始大图；点击查看完整原图会打开此地址。' },
     { type: 'string', name: 'alt', label: '图片说明', required: true },
     { type: 'boolean', name: 'openOriginal', label: '点击查看完整原图' },
     { ...body, label: '图注' },
@@ -149,6 +153,7 @@ export default defineConfig({
           const plain = (value: unknown) => String(value || '').replace(/<[^>]*>/g, '').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
           if (item._template === 'phase') return { label: `阶段｜${plain(item.body) || item.kind || ''}` };
           if (item._template === 'evidence') return { label: `图文｜${plain(item.figureCaption).slice(0, 48) || '实验图'}` };
+          if (item._template === 'manuscriptTitle') return { label: `稿件主标题｜${plain(item.manuscript).slice(0, 48) || '标题'}` };
           return { label: item.text || item.label || ({ text: '富文本', layout: item.kind, image: '图片', gallery: '双图' }[item._template] || '模块') };
         } } },
     ],

@@ -13,7 +13,7 @@
 | 栏目 | 内容 |
 | --- | --- |
 | Home | 土壤与线虫故事、世界与中国地图、检测流程、HP 数据地图、四组 DBTL 交互和六张成果卡片 |
-| Project | Description、Engineering、Contribution、Background |
+| Project | Description、Background、Engineering、Contribution |
 | Wet Lab | Parts and Collections、Experiments、Results、Safety |
 | Model | Overview、Molecular Docking、Molecular Dynamics、ODE and Two-channel Sensing、Economic Benefit |
 | Human Practices | Overview、Integrated Human Practices、Education、Investigation、Industry Engagement and Support |

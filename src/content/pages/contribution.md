@@ -15,7 +15,11 @@ hidden: false
 ---
 <div class="reading-layout" lang="en">
 
-<p class="manuscript-title">Contribution</p>
+:::manuscriptTitle
+
+Contribution
+
+:::
 
 NemaKlear brings together yeast engineering, computational modeling, and work with communities and agricultural stakeholders. Along the way, we developed resources that other teams can build on: genetic parts, experimental guidance, analysis methods, and educational materials.
 
@@ -41,7 +45,7 @@ Teams developing similar biosensors can use this documentation to plan an assemb
 
 :::figure
 
-![Figure 1. A documented route to yeast strain construction.](https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-1-e88a84496c.webp)
+[![Figure 1. A documented route to yeast strain construction.](https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-1-e88a84496c.webp)](https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-1-e88a84496c.webp "Open full-resolution image")
 
 Figure 1. A documented route to yeast strain construction. The workflow summarizes the genetic modifications connecting our chassis and receptor variants.
 
@@ -61,19 +65,23 @@ Our computational work addresses questions that extend beyond NemaKlear: how to 
 
 ### 2.1 Receptor design and docking checks {#contribution-2-1-receptor-design-and-docking-checks toc="Receptor design and docking checks" toc-unnumbered}
 
+::::figuretext{side=right width=wide}
+
+:::figure
+
+[![Figure 2. Mapping candidate sites for receptor engineering.](https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-3-9b303eb053.webp)](https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-3-9b303eb053.webp "Open full-resolution image")
+
+Figure 2. Mapping candidate sites for receptor engineering. Highlighted residues were selected for further substitution studies through comparisons of predicted ligand contacts.
+
+:::
+
 We organized a receptor-design workflow around comparisons between two ligands. It combines contact-guided site selection, side-chain scanning, separate inspection of each ligand’s score, and comparisons between combined mutants and their single-mutant parents. Cross-receptor analysis adds sequence and structural correspondence to the assessment of candidate positions.
 
 We also documented input checks and pose-export procedures for keeping coordinate references, atom mappings, and chemical information consistent. These methods can help other teams develop testable receptor-engineering hypotheses and prepare docking outputs for further analysis.
 
 [Explore the Docking Workflow](/model-docking/)
 
-:::figure
-
-![Figure 2. Mapping candidate sites for receptor engineering.](https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-2-652cbf31ef.webp)
-
-Figure 2. Mapping candidate sites for receptor engineering. Highlighted residues were selected for further substitution studies through comparisons of predicted ligand contacts.
-
-:::
+::::
 
 ### 2.2 Ligand motion and contact analysis {#contribution-2-2-ligand-motion-and-contact-analysis toc="Ligand motion and contact analysis" toc-unnumbered}
 
@@ -83,7 +91,7 @@ Other teams can apply this approach to identify persistent contacts, periods of 
 
 [Explore the MD Analysis](/model-md/#src-Model-Molecular-Dynamics-6)
 
-### 2.3 Signal-to-color and two-channel modeling {#contribution-2-3-signal-to-color-and-two-channel-modeling toc="Signal-to-color and two-channel modeling" toc-unnumbered}
+### 2.3 Signal-to-color and dual-channel modeling {#contribution-2-3-signal-to-color-and-two-channel-modeling toc="Signal-to-color and dual-channel modeling" toc-unnumbered}
 
 We developed a connected modeling workflow that follows effective receptor input through yeast signaling and pigment production to paired color features and target-density estimation. The signaling core builds on Supady Model B and public TU Delft 2012 iGEM materials, with project-specific input and output relationships added around it.
 
@@ -91,13 +99,13 @@ Separating shared pathway parameters from sensor and reporter settings makes the
 
 :::figure
 
-![Figure 3. From signal response to density estimation.](https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-3-7b02740394.webp)
+[![Figure 3. From signal response to density estimation.](https://static.igem.wiki/teams/6303/wiki/project-20261021/project-64-b07ff15b9548.webp)](https://static.igem.wiki/teams/6303/wiki/project-20261021/project-64-b07ff15b9548.webp "Open full-resolution image")
 
 Figure 3. From signal response to density estimation. The workflow connects pathway modeling, simulated colors, and paired-readout analysis. Generated with OpenAI GPT Image 2.
 
 :::
 
-[Explore the <strong>ordinary differential equation (ODE)</strong> and Two-Channel Models](/model-ode/#src-Model-ODE-1)
+[Explore the <strong>ordinary differential equation (ODE)</strong> and Dual-Channel Models](/model-ode/#src-Model-ODE-1)
 
 ### 2.4 Economic evaluation of screening {#contribution-2-4-economic-evaluation-of-screening toc="Economic evaluation of screening" toc-unnumbered}
 
@@ -113,35 +121,43 @@ Our <strong>Human Practices (HP)</strong> work produced materials and organizati
 
 ### 3.1 Age-adapted educational materials {#contribution-3-1-age-adapted-educational-materials toc="Age-adapted educational materials" toc-unnumbered}
 
+::::figuretext{side=right width=wide}
+
+:::figure
+
+[![Figure 4. Bringing nematode science into the classroom.](https://static.igem.wiki/teams/6303/wiki/project-20261021/project-65-2b6f00755b3f-preview.webp)](https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-4-2b6f00755b.webp "Open full-resolution image")
+
+Figure 4. Bringing nematode science into the classroom. Our teaching materials support classroom activities through the Xiangyang Program partnership.
+
+:::
+
 We developed three courses linking nematodes, agriculture, biological signals, and scientific responsibility. Age-adapted materials, picture books, and other outreach resources offer different ways to introduce these ideas to younger audiences.
 
 Teams and educators can draw on the learning goals, activity sequences, and visual materials, adapting them to local crops, classroom conditions, and learners’ ages.
 
 [Explore Educational Materials](/education/)
 
-:::figure
-
-![Figure 4. Bringing nematode science into the classroom.](https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-4-2b6f00755b.webp)
-
-Figure 4. Bringing nematode science into the classroom. Our teaching materials support classroom activities through the Xiangyang Program partnership.
-
-:::
+::::
 
 ### 3.2 Stakeholder research and feedback methods {#contribution-3-2-stakeholder-research-and-feedback-methods toc="Stakeholder research and feedback methods" toc-unnumbered}
+
+::::figuretext{side=right width=wide}
+
+:::figure
+
+[![Figure 5. Learning from growers’ experience.](https://static.igem.wiki/teams/6303/wiki/project-20261021/project-66-7d72a4f73708-preview.webp)](https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-5-7d72a4f737.webp "Open full-resolution image")
+
+Figure 5. Learning from growers’ experience. Conversations during farm visits helped us relate testing needs to local crops and management practices.
+
+:::
 
 Our documentation shows how project questions can guide questionnaires, expert discussions, and conversations with growers. It also describes a way to trace feedback from its source through team discussion to subsequent design decisions.
 
 Other teams can adapt this approach to organize their own engagement and keep track of how it informs their work. Project-introduction and industry-communication materials provide additional examples of explaining a research idea and presenting a specific request for support.
 
-[Explore Integrated HP](/human-practices/) · [Explore Industry Engagement](/hp-industry/)
+[Explore Integrated Human Practices](/human-practices/) · [Explore Industry Engagement](/hp-industry/)
 
-:::figure
-
-![Figure 5. Learning from growers’ experience.](https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-5-7d72a4f737.webp)
-
-Figure 5. Learning from growers’ experience. Conversations during farm visits helped us relate testing needs to local crops and management practices.
-
-:::
+::::
 
 ### 3.3 Sampling guidance and sample records {#contribution-3-3-sampling-guidance-and-sample-records toc="Sampling guidance and sample records" toc-unnumbered}
 

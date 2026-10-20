@@ -42,6 +42,34 @@ class ContentRulesHeadingTests(unittest.TestCase):
         self.assertTrue(audit.heading_sentence_case_violation("model", label, "#other-section", 2, rules.sentence_case))
         self.assertTrue(audit.heading_sentence_case_violation("model", label, "#model-section-1", 3, rules.sentence_case))
 
+    def test_required_engineering_goal_prefixes_keep_source_casing(self):
+        examples = (
+            ("#engineering-goal-1-building-the-biosensor", "Goal 1: Building the biosensor"),
+            ("#engineering-goal-2-making-the-readout-informative", "Goal 2: Making the readout informative"),
+            ("#engineering-goal-3-engineering-a-usable-test-format", "Goal 3: Engineering a usable test format"),
+            ("#engineering-goal-4-refining-the-project-for-agricultural-use", "Goal 4: Refining the project for agricultural use"),
+        )
+        for anchor, label in examples:
+            with self.subTest(label=label):
+                self.assertFalse(audit.heading_sentence_case_violation("engineering", label, anchor, 2, rules.sentence_case))
+
+    def test_engineering_goal_suffix_still_requires_sentence_case(self):
+        label = "Goal 1: Building the Biosensor"
+        self.assertTrue(audit.heading_sentence_case_violation(
+            "engineering", label, "#engineering-goal-1-building-the-biosensor", 2, rules.sentence_case
+        ))
+
+    def test_engineering_goal_exception_does_not_apply_to_other_headings(self):
+        self.assertTrue(audit.heading_sentence_case_violation(
+            "engineering", "Goal 1: Building the biosensor", "#other-goal", 2, rules.sentence_case
+        ))
+        self.assertTrue(audit.heading_sentence_case_violation(
+            "description", "Goal 1: Building the biosensor", "#engineering-goal-1-building-the-biosensor", 2, rules.sentence_case
+        ))
+        self.assertTrue(audit.heading_sentence_case_violation(
+            "engineering", "Goal 1: Building the biosensor", "#engineering-goal-1-building-the-biosensor", 3, rules.sentence_case
+        ))
+
 
 if __name__ == "__main__":
     unittest.main()

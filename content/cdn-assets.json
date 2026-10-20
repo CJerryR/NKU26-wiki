@@ -4681,6 +4681,206 @@
         "height": 941
       },
       "referenced_in_build": false
+    },
+    {
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-13-f3d4e306f432.webp",
+      "dimensions": {
+        "width": 1942,
+        "height": 809
+      },
+      "source_sha256": "f3d4e306f432efed3241b2ced65f9e50d97abe969a41efb177e7b36945a36885",
+      "path": "Project.docx/image13.png",
+      "scope": "project-refresh"
+    },
+    {
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-20-55bd4422e309.webp",
+      "dimensions": {
+        "width": 4000,
+        "height": 2250
+      },
+      "source_sha256": "55bd4422e3098e0379f6578a66a91e72046a6f3938e366dab3856f43950a0f92",
+      "path": "Project.docx/image20.png",
+      "scope": "project-refresh"
+    },
+    {
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-40-f25a55a93d29.webp",
+      "dimensions": {
+        "width": 4096,
+        "height": 3072
+      },
+      "source_sha256": "f25a55a93d29e2b4b9d034c403a39812c4ad69bb648f459c0fc1fd3ded3b23f0",
+      "path": "Project.docx/image40.png",
+      "scope": "project-refresh"
+    },
+    {
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-41-5a3f3ece2c07.webp",
+      "dimensions": {
+        "width": 4108,
+        "height": 1365
+      },
+      "source_sha256": "5a3f3ece2c070e669fe15b0f1ec1643b7199394f70991853a8897b874863caf6",
+      "path": "Project.docx/image41.png",
+      "scope": "project-refresh"
+    },
+    {
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-42-55185549437d.webp",
+      "dimensions": {
+        "width": 1248,
+        "height": 933
+      },
+      "source_sha256": "55185549437d1e27265812c9bd093f8e1633f52220ef32dcf246c4315ffe0dd1",
+      "path": "Project.docx/image42.png",
+      "scope": "project-refresh"
+    },
+    {
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/engineering-figure-2-627df6af35.webp",
+      "dimensions": {
+        "width": 2103,
+        "height": 1105
+      },
+      "source_sha256": "627df6af357f09bd1b67adaebc37f2166c1ddffabac895a38631790838acbadf",
+      "path": "Project.docx/image52.png",
+      "scope": "project-refresh"
+    },
+    {
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/engineering-figure-3-5f5e319acc.webp",
+      "dimensions": {
+        "width": 4200,
+        "height": 2280
+      },
+      "source_sha256": "5f5e319acc5ed5fefaf22a245f1b7827d50537868ada18a7d306ffc343888519",
+      "path": "Project.docx/image53.png",
+      "scope": "project-refresh"
+    },
+    {
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/engineering-figure-4-f4de7549d8.webp",
+      "dimensions": {
+        "width": 1096,
+        "height": 662
+      },
+      "source_sha256": "f4de7549d88d0baee39797fcd09aa9fa31be049494276fd952e272dd5d146d21",
+      "path": "Project.docx/image54.png",
+      "scope": "project-refresh"
+    },
+    {
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-55-4c447ce9cb96.webp",
+      "dimensions": {
+        "width": 1680,
+        "height": 1200
+      },
+      "source_sha256": "4c447ce9cb96f1b170a84742f11af416081a1110c1e3a9e74a21eda069fcf355",
+      "path": "Project.docx/image55.png",
+      "scope": "project-refresh"
+    },
+    {
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/engineering-figure-6-82a0893b5b.webp",
+      "dimensions": {
+        "width": 1407,
+        "height": 1118
+      },
+      "source_sha256": "82a0893b5b1b4e11a0c5c449b332900a83c91666fac4cb937ac07787d5d67c7d",
+      "path": "Project.docx/image56.png",
+      "scope": "project-refresh"
+    },
+    {
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-1-e88a84496c.webp",
+      "dimensions": {
+        "width": 4225,
+        "height": 1894
+      },
+      "source_sha256": "e88a84496c75510f0267b6d3f1c7a6847b642baf38d5d7657c989870a97c8c23",
+      "path": "Project.docx/image62.png",
+      "scope": "project-refresh"
+    },
+    {
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-3-9b303eb053.webp",
+      "dimensions": {
+        "width": 2079,
+        "height": 2079
+      },
+      "source_sha256": "9b303eb0531f0a914f48cf27be0a277e4b7a851fcaa272ee4105e74e14bfcd3d",
+      "path": "Project.docx/image63.png",
+      "scope": "project-refresh"
+    },
+    {
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-64-b07ff15b9548.webp",
+      "dimensions": {
+        "width": 2017,
+        "height": 780
+      },
+      "source_sha256": "b07ff15b95486e9be8b63ff91a9e279c6ec4d5ee3237fa5614e2f552cbf8b0c6",
+      "path": "Project.docx/image64.png",
+      "scope": "project-refresh"
+    },
+    {
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-4-2b6f00755b.webp",
+      "dimensions": {
+        "width": 4096,
+        "height": 3072
+      },
+      "source_sha256": "2b6f00755b3f384755e98c2bbfb6c84d8e3c758bffb3a6a641350b84e5050106",
+      "path": "Project.docx/image65.png",
+      "scope": "project-refresh"
+    },
+    {
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-5-7d72a4f737.webp",
+      "dimensions": {
+        "width": 4096,
+        "height": 3072
+      },
+      "source_sha256": "7d72a4f737089d1cd0575c3c9f442329d04105bb10a96bc8832bceef4e4b7acc",
+      "path": "Project.docx/image66.png",
+      "scope": "project-refresh"
+    },
+    {
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-40-f25a55a93d29-preview.webp",
+      "dimensions": {
+        "width": 1600,
+        "height": 1200
+      },
+      "source_sha256": "f25a55a93d29e2b4b9d034c403a39812c4ad69bb648f459c0fc1fd3ded3b23f0",
+      "path": "Project.docx/image40.png",
+      "scope": "project-refresh"
+    },
+    {
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-41-5a3f3ece2c07-preview.webp",
+      "dimensions": {
+        "width": 1600,
+        "height": 532
+      },
+      "source_sha256": "5a3f3ece2c070e669fe15b0f1ec1643b7199394f70991853a8897b874863caf6",
+      "path": "Project.docx/image41.png",
+      "scope": "project-refresh"
+    },
+    {
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-42-55185549437d-preview.webp",
+      "dimensions": {
+        "width": 1248,
+        "height": 933
+      },
+      "source_sha256": "55185549437d1e27265812c9bd093f8e1633f52220ef32dcf246c4315ffe0dd1",
+      "path": "Project.docx/image42.png",
+      "scope": "project-refresh"
+    },
+    {
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-65-2b6f00755b3f-preview.webp",
+      "dimensions": {
+        "width": 1600,
+        "height": 1200
+      },
+      "source_sha256": "2b6f00755b3f384755e98c2bbfb6c84d8e3c758bffb3a6a641350b84e5050106",
+      "path": "Project.docx/image65.png",
+      "scope": "project-refresh"
+    },
+    {
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-66-7d72a4f73708-preview.webp",
+      "dimensions": {
+        "width": 1600,
+        "height": 1200
+      },
+      "source_sha256": "7d72a4f737089d1cd0575c3c9f442329d04105bb10a96bc8832bceef4e4b7acc",
+      "path": "Project.docx/image66.png",
+      "scope": "project-refresh"
     }
   ]
 }

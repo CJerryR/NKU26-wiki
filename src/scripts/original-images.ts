@@ -76,6 +76,15 @@ export function initOriginalImages():void{
 
 /** Resolve the same verified original bytes for the page's overlay viewer. */
 export async function previewImageUrl(img: HTMLImageElement): Promise<string> {
+ // Tina can pair a smaller page image with a separate full-resolution original.
+ // Only image links qualify; navigation cards keep their normal destinations.
+ const link = img.closest<HTMLAnchorElement>('a[href]');
+ if (link) {
+  const target = new URL(link.href, location.href);
+  if (['http:', 'https:'].includes(target.protocol) && /\.(?:png|jpe?g|webp|gif|svg|avif)$/i.test(target.pathname)) {
+   return manifest[target.href] ? originalUrl(target.href) : target.href;
+  }
+ }
  const key = img.dataset.authorOriginal || img.getAttribute('src') || '';
  return manifest[key] ? originalUrl(key) : (img.currentSrc || img.src);
 }
