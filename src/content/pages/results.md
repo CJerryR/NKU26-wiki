@@ -437,7 +437,7 @@ Mans R, Wijsman M, Daran-Lapujade P, Daran JM. A protocol for introduction of mu
 
 <p style="text-align:justify;">Building upon the successful construction of engineered chassis strains through previous DBTL cycles, and integrating feedback from <strong>Human Practices (HP)</strong> surveys alongside practical application scenarios, we shifted our focus to another core objective of the project: developing a low-cost, user-friendly, and intuitive colorimetric detection platform. Therefore, this section focuses on the fabrication process and color development workflow of the engineered yeast-based test strips, encompassing three sub-cycles: substrate determination, immobilization optimization, and color development rate optimization. </p>
 
-### 3.1 Cycle 1: substrate determination {#results-3-1}
+### 3.1 Cycle 1: substrate determination {#results-3-1 toc="3.1 Cycle 1: substrate determination"}
 
 <p style="text-align:justify;">We reason that an ideal test strip substrate should possess high cell-loading capacity, excellent mechanical stability, reliable batch-to-batch consistency, and favorable water-retaining properties. Therefore, we initiate this cycle.</p>
 
@@ -491,7 +491,7 @@ Mans R, Wijsman M, Daran-Lapujade P, Daran JM. A protocol for introduction of mu
 
 <p style="text-align:justify;">Through this cycle, we have identified a suitable substrate material for the test strip. Next, we need to explore appropriate immobilization methods to lay a solid foundation for visual color development, leading us into the next cycle.</p>
 
-### 3.2 Cycle 2: immobilization optimization {#results-3-2}
+### 3.2 Cycle 2: immobilization optimization {#results-3-2 toc="3.2 Cycle 2: immobilization optimization"}
 
 <p style="text-align:justify;">Following the selection of the test strip substrate, efficiently, uniformly, and precisely immobilizing yeast cells onto the strip becomes critical to ensuring detection reproducibility. Traditional direct spotting often leads to lateral leakage, while high-viscosity cell suspensions are difficult to disperse evenly and quantify accurately. </p>
 
@@ -579,7 +579,7 @@ Mans R, Wijsman M, Daran-Lapujade P, Daran JM. A protocol for introduction of mu
 
 <p style="text-align:justify;">In this cycle, combining gas-phase hydrophobic coating with the refined lyophilization protectant successfully confines the cells within a uniform circular area; the vacuum-assisted spotting device eliminates liquid residue inside pipette tips, achieving controlled and quantitative cell-loading on the test strips; and we have successfully prepared freeze-dried live-cell test strips, as shown in Figure 3.1.5. Next, we officially proceed to optimize the color development rate of the test strips.</p>
 
-### 3.3 Cycle 3: color development rate optimization {#results-3-3}
+### 3.3 Cycle 3: color development rate optimization {#results-3-3 toc="3.3 Cycle 3: color development rate optimization"}
 
 <p style="text-align:justify;">After completing the fabrication of the freeze-dried test strips, we require them to undergo rapid resuscitation and color development; therefore, we initiate this cycle.</p>
 
