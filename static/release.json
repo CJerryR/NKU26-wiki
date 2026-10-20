@@ -369,7 +369,7 @@
     "new_media_uploads": 0
   },
   "project_refresh": {
-    "result_commit": "0cbf2ab703b5930d5a591f58624b6da494e6ae44",
+    "result_commit": "70470cd4883e06d0af0532183b8b946118cc2807",
     "scope": [
       "description",
       "engineering",
@@ -380,7 +380,8 @@
     "visible_stage_paragraphs": 56,
     "cycle_widgets": 0,
     "assets": "docs/project-refresh-assets.json",
-    "scientific_review": "Existing team review flags retained"
+    "scientific_review": "Existing team review flags retained",
+    "heading_case_followup": "9 Description headings retain original wording with global sentence-case formatting"
   },
   "home_checkpoint04": {
     "release_commit": "040a2d383e296148178f62b6156aad38b8cfc23d",
