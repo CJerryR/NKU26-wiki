@@ -15,7 +15,7 @@
       "_template": "heading",
       "text": "Team member contributions",
       "level": 2,
-      "attributes": "#team-member-contributions toc=\"Team member contributions\""
+      "attributes": "#team-member-contributions notoc"
     },
     {
       "_template": "heading",
@@ -59,9 +59,9 @@
     },
     {
       "_template": "heading",
-      "text": "3.1 Student leaders",
+      "text": "Student leaders",
       "level": 3,
-      "attributes": "#student-leaders toc=\"Student leaders\""
+      "attributes": "#student-leaders toc=\"Student leaders\" toc-unnumbered"
     },
     {
       "_template": "creditgrid",
@@ -163,19 +163,19 @@
     },
     {
       "_template": "heading",
-      "text": "3.2 Student team members",
+      "text": "Student team members",
       "level": 3,
-      "attributes": "#student-team-members toc=\"Student team members\""
+      "attributes": "#student-team-members toc=\"Student team members\" toc-unnumbered"
     },
     {
       "_template": "heading",
-      "text": "3.3 Student team members — wet lab",
-      "level": 3,
-      "attributes": "#wet-lab toc=\"Student team members — wet lab\""
+      "text": "Wet Lab",
+      "level": 4,
+      "attributes": "#wet-lab toc=\"Wet Lab\""
     },
     {
       "_template": "creditgrid",
-      "headingLevel": 4,
+      "headingLevel": 5,
       "items": [
         {
           "anchor": "chen-feiyue",
@@ -424,13 +424,13 @@
     },
     {
       "_template": "heading",
-      "text": "3.4 Student team members — dry lab",
-      "level": 3,
-      "attributes": "#dry-lab toc=\"Student team members — dry lab\""
+      "text": "Dry Lab",
+      "level": 4,
+      "attributes": "#dry-lab toc=\"Dry Lab\""
     },
     {
       "_template": "creditgrid",
-      "headingLevel": 4,
+      "headingLevel": 5,
       "items": [
         {
           "anchor": "zhiyuan-guan-student",
@@ -539,13 +539,13 @@
     },
     {
       "_template": "heading",
-      "text": "3.5 Student team members — human practices",
-      "level": 3,
-      "attributes": "#human-practices toc=\"Student team members — human practices\""
+      "text": "HP",
+      "level": 4,
+      "attributes": "#human-practices toc=\"HP\""
     },
     {
       "_template": "creditgrid",
-      "headingLevel": 4,
+      "headingLevel": 5,
       "items": [
         {
           "anchor": "ma-peisong",
@@ -686,9 +686,9 @@
     },
     {
       "_template": "heading",
-      "text": "4.1 Advisors",
+      "text": "Advisors",
       "level": 3,
-      "attributes": "#advisors toc=\"Advisors\""
+      "attributes": "#advisors toc=\"Advisors\" toc-unnumbered"
     },
     {
       "_template": "creditgrid",
@@ -767,9 +767,9 @@
     },
     {
       "_template": "heading",
-      "text": "4.2 Others",
+      "text": "Others",
       "level": 3,
-      "attributes": "#others toc=\"Others\""
+      "attributes": "#others toc=\"Others\" toc-unnumbered"
     },
     {
       "_template": "creditgrid",
