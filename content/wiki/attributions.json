@@ -169,13 +169,13 @@
     },
     {
       "_template": "heading",
-      "text": "3.3 Student team members — wet lab",
-      "level": 3,
+      "text": "Student team members — wet lab",
+      "level": 4,
       "attributes": "#wet-lab toc=\"Student team members — wet lab\""
     },
     {
       "_template": "creditgrid",
-      "headingLevel": 4,
+      "headingLevel": 5,
       "items": [
         {
           "anchor": "chen-feiyue",
@@ -424,13 +424,13 @@
     },
     {
       "_template": "heading",
-      "text": "3.4 Student team members — dry lab",
-      "level": 3,
+      "text": "Student team members — dry lab",
+      "level": 4,
       "attributes": "#dry-lab toc=\"Student team members — dry lab\""
     },
     {
       "_template": "creditgrid",
-      "headingLevel": 4,
+      "headingLevel": 5,
       "items": [
         {
           "anchor": "zhiyuan-guan-student",
@@ -539,13 +539,13 @@
     },
     {
       "_template": "heading",
-      "text": "3.5 Student team members — human practices",
-      "level": 3,
+      "text": "Student team members — human practices",
+      "level": 4,
       "attributes": "#human-practices toc=\"Student team members — human practices\""
     },
     {
       "_template": "creditgrid",
-      "headingLevel": 4,
+      "headingLevel": 5,
       "items": [
         {
           "anchor": "ma-peisong",
