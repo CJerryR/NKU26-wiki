@@ -149,6 +149,32 @@
       c.btn = b;
       marks.appendChild(b);
     });
+    /* 2026-10-21 (review HOME-04): one-time cue beside a case dot. The legend
+       on the left was too far from the dots; this sits on the map itself and
+       goes away for the visit as soon as any dot is hovered, focused or
+       clicked. */
+    var coach = null, coachDone = false;
+    try { coachDone = sessionStorage.getItem('nku-world-coach') === '1'; } catch (e) {}
+    function coachOff() {
+      if (coachDone) return; coachDone = true;
+      try { sessionStorage.setItem('nku-world-coach', '1'); } catch (e) {}
+      if (coach) coach.classList.remove('is-on');
+      sec.classList.add('is-coached');
+    }
+    function coachOn() {
+      if (coachDone || !(REG.cases || []).length) return;
+      if (!coach) {
+        var best = null;
+        REG.cases.forEach(function (c) { var x = (c.lon + 180) * 2.5 / 9; if (!best || Math.abs(x - 26) < Math.abs((best.lon + 180) * 2.5 / 9 - 26)) best = c; });
+        coach = document.createElement('p'); coach.className = 'world__coach'; coach.setAttribute('aria-hidden', 'true');
+        coach.textContent = matchMedia('(pointer: coarse)').matches ? 'Tap a dot to open a case' : 'Click a dot to open a case';
+        coach.style.left = ((best.lon + 180) * 2.5 / 9) + '%'; coach.style.top = ((84 - best.lat) * 2.5 / 3.5) + '%';
+        marks.appendChild(coach);
+        if (best.btn) best.btn.classList.add('is-coach');
+      }
+      setTimeout(function () { if (!coachDone && coach) coach.classList.add('is-on'); }, 1300);
+    }
+    H.$$('.wmark', marks).forEach(function (b) { ['pointerenter', 'focus', 'click'].forEach(function (ev) { b.addEventListener(ev, coachOff); }); });
     function scheduleClose(ms) { clearTimeout(closeT); if (hoverLocked) return; closeT = setTimeout(function () { if (!hoverLocked && !overCard && !overMark) closeCard(); }, ms == null ? 320 : ms); }
     function protectFlip(resumeHover) {
       clearTimeout(openT); clearTimeout(closeT); clearTimeout(hoverLockT);
@@ -345,7 +371,7 @@
       cancel: function () { dive(false); if (window.NK && NK.chinaCancelHandoff) NK.chinaCancelHandoff(); },
       inMs: 2000,   // v7.2: 2.8 s -> 2.0 s from the soil to the world map
       set: function (i, dir) { dive(false); if (dir < 0) openNow(); else closeNow(); },
-      enter: function () { dive(false); if (!opened) openNow(); return 300; },
+      enter: function () { dive(false); if (!opened) openNow(); coachOn(); return 300; },
       leave: function (dir, info) {
         closeCard();
         if (dir > 0 && info && info.to === 'china' && info.adjacent && innerWidth > 980) { if (window.NK && NK.chinaHandoff) NK.chinaHandoff(); dive(true); return 1900; }
@@ -358,7 +384,7 @@
       var s = performance.now();
       (function step(n) { var k = H.ease(H.clamp((n - s) / 1400, 0, 1)); el.textContent = 'US$' + Math.round(173 * k); if (k < 1) requestAnimationFrame(step); })(s);
     }
-    H.onView(sec, function (v) { visible = v; if (v && !opened && !(H.pager && H.pager.isPaged())) openNow(); });
+    H.onView(sec, function (v) { visible = v; if (v && !opened && !(H.pager && H.pager.isPaged())) openNow(); if (v) coachOn(); });
     size();
     var rz; addEventListener('resize', function () { clearTimeout(rz); rz = setTimeout(function () { size(); placeCard(); }, 120); });
     if (window.ResizeObserver) new ResizeObserver(function () { clearTimeout(rz); rz = setTimeout(size, 120); }).observe(cv);

@@ -1,0 +1,95 @@
+/* Homepage round 2 (2026-10-21). Loaded last, after home-mobile.css.
+   Kept in one file so the review diff stays readable; each block says why. */
+
+/* 1. One display size for the section titles (review HOME-07 follow-up:
+      "the same size, and fairly large"). Width sets the size; a short
+      window caps it so a 1536 x 730 laptop keeps the same proportions. */
+.home{--home-h2:min(clamp(34px,3.4vw,54px),7.2vh);--home-h3:min(clamp(28px,3.4cqw,48px),6.2vh)}
+.world__copy .world__title,
+.cz__head .h-display,
+.th__head .h-display,
+.hp2 .h-display{font-size:var(--home-h2)}
+/* "Closer to home" is one large line; the subtitle sits under it as before */
+.cz__head .h-display{line-height:1.02}
+/* traces: all seven caption titles share one size, raised to the scale of
+   the first frame instead of shrinking it to the others */
+.as:not(.as--tall) .as__cap h3,.as:not(.as--tall) .as__cap .as__title{font-size:var(--home-h3);line-height:1.08;letter-spacing:-.025em}
+@media (max-width:959px){
+  .home{--home-h2:clamp(28px,8.2vw,34px)}
+  .world__copy .world__title,.cz__head .h-display,.th__head .h-display,.hp2 .h-display{font-size:var(--home-h2)}
+}
+
+/* 2. The detective's "Back to top" label means nothing on the opening
+      itself, where the reader already is at the top. */
+.detective__action{transition:opacity .3s,transform .3s}
+html[data-page="opening"] .detective__action{opacity:0;transform:translate(-50%,4px)}
+
+/* 3. China flight, round 2: the stop on the Huang-Huai-Hai Plain marks the
+      place with a ring under its label; scroll input that has not yet
+      started a shot leans the map slightly, so a light push is felt. */
+.cz .nk-zoom__label{transition:opacity .3s,box-shadow .45s}
+.cz .nk-zoom__label.is-focus{box-shadow:0 0 0 4px rgba(255,227,163,.16),0 12px 30px rgba(0,0,0,.35)}
+.cz .nk-zoom__label.is-focus::before{content:"";position:absolute;left:50%;top:calc(100% + 22px);width:18px;height:18px;margin:-9px 0 0 -9px;border-radius:50%;border:2px solid #ffe3a3;animation:czPin 1.6s ease-out infinite}
+@keyframes czPin{0%{transform:scale(.45);opacity:.95}100%{transform:scale(2.8);opacity:0}}
+.cz__canvas{transform:scale(calc(1 + var(--lean,0) * .02));transform-origin:50% 55%;transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+@media (prefers-reduced-motion:reduce){.cz .nk-zoom__label.is-focus::before{animation:none;opacity:.7}.cz__canvas{transition:none}}
+
+/* 4. Soil scan: the flowing line from the light to the first cyan glow. */
+.op__leash{position:absolute;left:0;top:0;z-index:3;height:2px;margin-top:-1px;transform-origin:0 50%;pointer-events:none;opacity:0;transition:opacity .4s;
+  background:repeating-linear-gradient(90deg,rgba(111,243,222,.95) 0 9px,transparent 9px 19px);background-size:19px 2px;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 70px,#000 calc(100% - 10px),transparent);mask-image:linear-gradient(90deg,transparent 0,#000 70px,#000 calc(100% - 10px),transparent);
+  animation:opLeash .9s linear infinite;filter:drop-shadow(0 0 4px rgba(111,243,222,.7))}
+.op__leash.is-on{opacity:.9}
+@keyframes opLeash{to{background-position:19px 0}}
+.op6.is-found .op__leash{display:none}
+
+/* 5. World map: case dots read against the heat map (white rim), and a
+      one-time cue sits beside one dot until a dot is used. */
+.wmark::before{width:11px;height:11px;box-shadow:0 0 0 2.5px #fff,0 0 0 5px rgba(126,12,110,.28)}
+.wmark::after{border-width:2px;opacity:0}
+.world__coach{position:absolute;z-index:4;margin:0;transform:translate(16px,-50%);padding:7px 12px 7px 10px;border-radius:999px;background:var(--plum,#7e0c6e);color:#fff;font:600 13px/1.2 var(--sans);white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .45s,transform .45s}
+.world__coach::before{content:"";position:absolute;right:100%;top:50%;margin-top:-6px;border:6px solid transparent;border-right-color:var(--plum,#7e0c6e)}
+.world__coach.is-on{opacity:1;transform:translate(20px,-50%)}
+.wmark.is-coach::after{animation-duration:1.6s}
+.world.is-diving .world__coach{opacity:0}
+@media (prefers-reduced-motion:reduce){.op__leash{animation:none}}
+
+/* 6. Short desktop windows (1366 x 768 and 1280 x 720 screens leave about
+      580-625 px). The pager now runs from 560 px tall (was 600), so the
+      one-screen pages compress here instead of falling back to native
+      scrolling. Text columns scale as a block so their proportions stay. */
+@media (min-width:960px) and (max-height:660px){
+  .world__copy,.hp2__copy{zoom:.9}
+  .detective__btn{width:104px;height:106px}
+  html.is-paged .home .ex--one{padding-top:72px}
+  .ex--one .ex__built{margin-bottom:12px}
+  .ex--one .ex__grid a{min-height:46px;padding-block:7px;gap:4px}
+}
+@media (min-width:960px) and (max-height:600px){
+  .world__copy,.hp2__copy{zoom:.84}
+  .world__pin{padding-top:60px;padding-bottom:28px}
+  html.is-paged .home .ex--one{padding-top:64px}
+}
+
+/* 7. Phones. China: the title, subtitle and US$120 million+ come first
+      (they used to sit under the readout and start below a 664 px screen),
+      then the species switch, the map, and the readout at the bottom. The
+      switch's top is measured from the title by home-zoom3d.js. */
+@media (max-width:859px){
+  .cz[data-layers="off"] .cz__head,.cz__head{top:76px;bottom:auto}
+  .cz__bar{top:var(--czBarTop,196px)}
+  .cz__card,.cz__card.cz__read{top:auto;bottom:14px}
+  .cz__big{margin-top:4px}
+  .cz__big b{font-size:34px}
+}
+/* the detective is smaller on phones and drops its label (aria-label stays),
+   so it no longer covers the first words of captions at the bottom-left */
+@media (max-width:640px){
+  .detective__btn{width:62px;height:58px}
+  .detective__btn .detective__fig{height:100%}
+  .detective__action{display:none}
+}
+
+/* Keep the start action out of the title grid, preserving grass/letter overlap. */
+.op6 .op__start{position:absolute;right:clamp(18px,3vw,48px);bottom:max(24px,env(safe-area-inset-bottom));z-index:6;transition:opacity .3s,background .25s,border-color .25s}
+.op6.is-under .op__start{visibility:hidden;pointer-events:none}

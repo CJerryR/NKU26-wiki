@@ -149,8 +149,9 @@
       if (!narrow) x1 = W - 54;
       stage.style.setProperty('--fx0', Math.round(x0) + 'px');
       stage.style.setProperty('--fx1', Math.round(W - x1) + 'px');
-      if (narrow && head) stage.style.setProperty('--cardB', Math.round(H - (head.getBoundingClientRect().top - sr.top) + 10) + 'px');
-      else stage.style.removeProperty('--cardB');
+      // Round 2: phones read title -> switch -> map -> readout, top to bottom.
+      stage.style.removeProperty('--cardB');
+      if (narrow && head) stage.style.setProperty('--czBarTop', Math.round(head.getBoundingClientRect().bottom - sr.top + 10) + 'px');
       var y0 = narrow && bar ? bar.getBoundingClientRect().bottom - sr.top + 10 : 94;
       var y1 = narrow && card ? card.getBoundingClientRect().top - sr.top - 10 : H - 32;
       if (y1 - y0 < 120) y1 = y0 + 120;
@@ -172,8 +173,12 @@
    * on a question card. A second push while a shot runs hurries it. */
   var LAYERED = sec.getAttribute('data-layers') === 'on';
   NK.chinaLayered = LAYERED;
-  var DUR = LAYERED ? [0, 1300, 1300, 1300, 2000, 2600] : [0, 2000, 2600];
-  var DESCENT = LAYERED ? 5 : 2;
+  /* 2026-10-21 (round 2): the flight is three shots with a stop after each:
+   * the map tilts and leans toward the Huang-Huai-Hai Plain (its label holds
+   * there), then down to the field, then through the lens into the soil.
+   * Each shot needs its own scroll; the pager holds the reader after it. */
+  var DUR = LAYERED ? [0, 1300, 1300, 1300, 1700, 1800, 2600] : [0, 1700, 1800, 2600];
+  var DESCENT = LAYERED ? 6 : 3, HHH = DESCENT - 2;
   var LAST = DUR.length - 1, curStep = 0;
   /* the big number counts up once the title is in, like US$173 billion on the world map */
   var usd = sec.querySelector('[data-cz-usd]'), counted = false;
@@ -203,13 +208,17 @@
     if (d === null) { sec.classList.remove('is-q'); stage.style.setProperty('--merge', i >= DESCENT - 1 && i > 0 ? '1' : '0'); }
   }
   H0.scene('china', {
-    steps: LAST, tall: LAYERED ? 9 : 4, cutIn: true, pacedWheel: true,
-    accelerate: function (ms) { return NK.chinaAccelerate ? NK.chinaAccelerate(ms) : 0; },
+    steps: LAST, tall: LAYERED ? 10 : 5, cutIn: true,
+    // round 2: the pager's gesture gate drives this scene (no queued or hurried shots)
+    hold: 700, gateDelta: 40,
+    lean: function (f) { stage.style.setProperty('--lean', NK.clamp(f, -1, 1).toFixed(3)); },
     set: function (i) { curStep = i; to(i, 0); if (i === 0) sec.classList.add('is-pre'); if (!sec.classList.contains('is-handoff')) { NK.chinaArr = 1; stage.style.setProperty('--arrive', '1'); } },
     step: function (i, dir) {
       if (i === 0) sec.classList.remove('is-pre');
       curStep = i;
       // Match forward and reverse travel; input strength never changes damping.
+      // The SVG fallback has no camera to aim at the plain: skip that stop.
+      if (sec.classList.contains('is-2d') && i === HHH) { to(i, 0, dir); return -1; }
       var ms = sec.classList.contains('is-2d') ? 450 : DUR[dir < 0 ? i + 1 : i];
       to(i, ms, dir); return ms;
     },
@@ -1458,12 +1467,13 @@
     var x0 = W >= 860 ? pr.right - sr.left + 20 : 12, x1 = W >= 860 ? W - 54 : W - 12;
     stage.style.setProperty('--fx0', Math.round(x0) + 'px');
     stage.style.setProperty('--fx1', Math.round(W - x1) + 'px');
-    if (W < 860) stage.style.setProperty('--cardB', Math.round(H - (pr.top - sr.top) + 10) + 'px');
+    stage.style.removeProperty('--cardB');
+    // Round 2: on phones the title sits on top and the switch right under it.
+    if (W < 860) stage.style.setProperty('--czBarTop', Math.round(pr.bottom - sr.top + 10) + 'px');
     else {
-      stage.style.removeProperty('--cardB');
       stage.style.setProperty('--readTop', Math.round(pr.bottom - sr.top + 24) + 'px');
     }
-    var y0 = navH + 18, y1 = W >= 860 ? H - 32 : Math.max(navH + 170, pr.top - sr.top - 14);
+    var y0 = navH + 18, y1 = H - 32;
     if (W < 860 && barEl && barEl.offsetHeight) y0 = Math.max(y0, barEl.getBoundingClientRect().bottom - sr.top + 8);
     if (W < 860 && cardEl && cardEl.offsetHeight) y1 = Math.min(y1, cardEl.getBoundingClientRect().top - sr.top - 8);
     if (y1 - y0 < 160) y1 = y0 + 160;
@@ -1523,7 +1533,8 @@
   }
   // Two shots: the field overview (q refitted to the screen in fitFieldStop),
   // then past the plant close-up (q .60) and the lens (q .68) into the soil.
-  var flightStops = [0.468, 0.9].map(function (q) {
+  // q .115: map tilted, leaning toward the plain, label still on, field hidden
+  var flightStops = [0.115, 0.468, 0.9].map(function (q) {
     return { ex: 0, fo: -1, merge: 1, q: q, qo: 0 };
   });
   /* A move that crosses the lens follows a monotone curve with these time
@@ -1568,7 +1579,7 @@
   // Measure the actual projected plot after each camera/aspect change.
   function fitFieldStop() {
     if (!STATES || !Z || !LV || !LV[1] || !(W > 0 && H > 0)) return;
-    var index = NK.chinaLayered ? 4 : 1;
+    var index = NK.chinaLayered ? 5 : 2;
     var q = LV[1].fieldStop(), old = STATES[index].q;
     STATES[index].q = q;
     if (!tw && Math.abs(Z.q - old) < 1e-6) Z.q = q;
@@ -1650,6 +1661,7 @@
         }
       }
       steps.forEach(function (li, i) { li.classList.toggle('is-on', i === 0); li.classList.remove('is-done'); });
+      if (labelEl) labelEl.classList.remove('is-focus');
       chinaShown = true;
       return;
     }
@@ -1689,6 +1701,7 @@
     if (labelEl) {
       var show = ph.a === 0 && ph.b === undefined ? 1 - NK.smooth(0.3, 0.55, ph.ta) : 0;
       labelEl.style.opacity = show.toFixed(3);
+      labelEl.classList.toggle('is-focus', show > 0.9 && qCur > 0.04);
       if (show > 0) {
         tmp.copy(LV[0].label).project(LV[0].cam);
         labelEl.style.transform = 'translate(' + ((tmp.x * 0.5 + 0.5) * W).toFixed(0) + 'px,' + ((-tmp.y * 0.5 + 0.5) * H).toFixed(0) + 'px) translate(-50%,-120%)';
