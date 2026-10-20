@@ -1,0 +1,34 @@
+You are going to redraw one layout sheet for our iGEM team wiki (page: Human Practices Overview). Draw it on your own without asking me anything.
+
+ATTACHED
+- 00-style.png = STYLE REFERENCE: top, our team's own hand-cut paper illustration; bottom, props already drawn for the site. Copy technique, textures and palette. Do not copy their objects or composition.
+- OV1.png = LAYOUT SHEET: grey stand-ins on a plain light background showing where each object goes and its rough shape. The small number in the top-left corner is only the sheet number.
+
+TASK
+Make ONE new image that can be laid exactly over the layout sheet:
+1. Same canvas: 1536 x 1024 pixels, landscape.
+2. Same objects in the same places, at the same sizes, with the same outlines. Do not add, remove, merge, swap, turn or move any object. Keep the empty space between objects; no object may touch another. The four map quarters on the left stay four separate pieces with the same narrow gaps between them.
+3. Redraw every object in the style described below. The grey layout sheet only shows placement and rough shapes; it is a stand-in, do not copy its flat look.
+4. Background: fully transparent (PNG with alpha). If transparency is impossible, use one perfectly flat pure white #FFFFFF background with nothing else on it.
+5. Do not draw the sheet number. No text, letters, numbers, labels, logos, borders, frames, ground lines, floors or shadows anywhere.
+
+STYLE (match 00-style.png: our homepage art on top, our existing props below)
+- Flat hand-cut paper collage: every shape is cut from matte coloured paper with scissors, so its edges are straight, slightly irregular cuts with a few corners. No outlines, no ink lines.
+- Each shape is one flat paper colour. Sides and details are separate overlapping pieces of slightly darker or lighter paper. Very light volume as in the existing props, but no gradients, no airbrush, no glossy highlights, no 3D rendering, no drop shadows.
+- Texture as in the reference: oil-pastel or crayon scratches in a second, warmer colour running in one direction across each piece, a few dry-brush streaks, fine dark speckles and visible paper grain. Soil is speckled and dotted with small pale stones.
+- Simple, chunky, readable shapes. It must look like the same artist as the props in the bottom half of 00-style.png (envelope, speech bubbles, blackboard, field plot).
+- Palette, muted like the reference (never pure white, never black, never neon): olive #7B7639, dark olive #58542A, ochre #C88F35, mustard #B58D3A, rust #83403C, plum #6E4764, mauve #8D6B84, pale mauve #B59BB8, lilac #9479B8, orange #E88F46, amber #DFA340, cream #E6D7BB.
+
+OBJECTS on sheet OV1 (OV1.png)
+LEFT HALF - one unfolded paper field map, cut along its two fold lines into four quarters with narrow gaps; draw them as one continuous map so the field plots and crop rows line up across the gaps. Cream map paper. In each quarter, keep the empty area around the small dot as plain map paper (a picture will be placed there later); keep the dashed rust route that runs from the inner corner (the corner touching the centre of the map) to that dot:
+  a) top-left quarter: olive and mustard field plots with crop rows, a mauve torn corner at its outer corner.
+  b) top-right quarter: mustard and olive field plots with crop rows, a lilac torn corner at its outer corner.
+  c) bottom-left quarter: olive and mustard field plots with crop rows, a plum torn corner at its outer corner.
+  d) bottom-right quarter: ochre and mustard field plots with crop rows, a rust torn corner at its outer corner.
+RIGHT COLUMN, top to bottom:
+  e) a folded paper field map lying flat and closed, seen from above: a cream front cover with an olive corner piece, a mauve corner piece and a small plum circle with an amber four-point compass star, a visible centre fold, a few slightly darker cream map leaves peeking out along the right and bottom edges, and a rust paper band wrapped vertically around it.
+  f) a compass rose in the middle (an amber four-point star on a round plum paper disc with a small rust dot) with four dashed amber route lines curving out from it to the four corners of the object area; the dashes are separate small paper strips, nothing else.
+  g) a cream paper soil sample bag tied with a rust band, the lower half showing dark plum speckled soil through it, with an ochre-rimmed magnifying glass with a rust handle leaning against its right side.
+
+These are decorative illustrations only: no logos, no brand names, no text, no real people; any figures are simple faceless paper pawns.
+If the result is not usable, I will reply "重画 OV1"; then draw it again with the same rules.

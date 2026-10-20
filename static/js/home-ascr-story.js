@@ -29,7 +29,15 @@
    the pocket flies
    onto the monitor instead of behind it; the yeast slides pan left so its
    captions sit beside the cell; the worms undulate; the kit lands with a
-   ripple; the chapter rail shows progress inside a chapter. */
+   ripple; the chapter rail shows progress inside a chapter.
+   v10.3 (PPT "Ste20-Gpa1-MAPK-p-sTF", slide 5): the test-strip chapter now
+   follows the slide. The budding yeast (now with its vacuole) sits above a
+   NemaKlear strip whose window fills with yeast (11); the strip moves on, a
+   soil sample gives a drop of soil extract carrying ascr#18 (12); the drop
+   falls into the window, which turns yellow, and the warning comes up (13);
+   the strip goes into the kit, which flies to the map (14); the hand-over to
+   Human Practices is unchanged (15). Objects that fade in and out within one
+   step are two nested groups (box/boxIn, lblBox/lblBoxIn, drop/dropIn). */
 (function () {
   'use strict';
   var H = window.NKUH; if (!H) return;
@@ -56,6 +64,12 @@
     var REC_Y = { x: 374.5, y: 199.6, s: 0.475, r: -50 };     // receptor in the membrane
     var DOCK_Y = { x: 355.8, y: 169.9, s: 0.475, r: -50 };    // ascr#18 bound to it
     var STF_L = { x: 595.1, y: 504.6 }, STF_R = { x: 789.2, y: 504.6 };
+    /* slide 5: the yeast (263 x 207 at 84.7, 95.2), the strip before and after the
+       sample (342 x 75; the window 118.5 right of its centre), the map on the right
+       and the kit's landing point on it (same place on China as before) */
+    var YEAST5 = { x: 218.8, y: 195.9, s: 0.38 };
+    var STRIP1 = { x: 222.7, y: 425 }, STRIP2 = { x: 683, y: 350 }, WELL_X = 118.5;
+    var MAP5 = { x: 1110, y: 300, s: 5 }, PIN = { x: 1110 - 2.33 * 5, y: 300 + 5 * 5 };
     var STATES = [
       /* 0 · slide 1: two signals, two kinds of nematode */
       { cam: [330, 40, 620, 660], set: {
@@ -79,9 +93,14 @@
         gG: { x: 662.8, y: 287, o: 0 },
         arc: { x: 567.7, y: 242, o: 0 }, sig: { x: 676, y: 300, o: 0 }, out: { x: 760, y: 440, o: 0 },
         glow: { x: 1100, y: 300, o: 0 }, lblBx: { x: 1100, y: 310, o: 0 },
-        strip: { x: 260, y: 409, o: 0 }, spot: { x: 58, y: -4, o: 0 }, lblStrip: { x: 260, y: 470, o: 0 },
-        box: { x: 560, y: 556, s: 0.72, o: 0 }, lblBox: { x: 560, y: 660, o: 0 },
-        map: { x: 949, y: 220, s: 6, o: 0 }, ping: { x: 935, y: 250, o: 0 }
+        /* chapter 5, at their places on PPT slide 5 */
+        strip: { x: STRIP1.x, y: STRIP1.y, o: 0 }, wellY: { x: WELL_X, y: 0, o: 0 }, wellG: { x: WELL_X, y: 0, o: 0 },
+        lblStrip: { x: STRIP1.x, y: 492, o: 0 }, arrY: { o: 0 },
+        soil: { x: 531, y: 112, o: 0 }, arrS: { o: 0 },
+        drop: { x: 813, y: 150, s: 0.85, o: 0 }, dropIn: { o: 1 }, lblSoil: { x: 813, y: 214, o: 0 },
+        warn: { x: 602, y: 279, o: 0 },
+        box: { x: 683, y: 575, s: 0.7, o: 1 }, boxIn: { o: 0 }, lblBox: { x: 683, y: 672, o: 1 }, lblBoxIn: { o: 0 },
+        map: { x: MAP5.x, y: MAP5.y, s: MAP5.s, o: 0 }, ping: { x: PIN.x, y: PIN.y, o: 0 }
       } },
       /* 1 · the ratio */
       { cam: [330, 40, 620, 660], set: {
@@ -157,30 +176,49 @@
         out: { o: 1, d: 1300, t: 600 },
         glow: { o: 1, d: 1700, t: 700 }, lblBx: { o: 1, d: 1800, t: 600 }
       } },
-      /* 11 · slide 4 (Morph): the yeast shrinks and becomes the budding yeast; strip, kit and map */
-      { cam: [100, 20, 1080, 690], set: {
+      /* 11 · slides 4-5 (Morph): the yeast shrinks into the budding yeast at the top
+         left; below it the NemaKlear strip, and the yeast fills its window */
+      { cam: [20, 70, 400, 440], set: {
         m18: HIDE, rec: HIDE,
-        cell: { x: 290, y: 174, s: 0.34, t: 1300 },
+        cell: { x: YEAST5.x, y: YEAST5.y, s: YEAST5.s, t: 1300 },
         cellIn: { o: 0, d: 200, t: 900 }, nuc: { o: 0, d: 200, t: 700 }, bud: { o: 1, d: 200, t: 900 },
         dna: HIDE, prom: HIDE, gene: HIDE, tf: HIDE, gB: HIDE, ste20: HIDE, mapk: HIDE, gG: HIDE, sig: HIDE, arc: HIDE, out: HIDE, glow: HIDE, lblBx: HIDE,
-        strip: { o: 1, d: 500, t: 600 }, lblStrip: { o: 1, d: 700, t: 500 },
-        box: { o: 1, d: 700, t: 600 }, lblBox: { o: 1, d: 850, t: 500 },
-        map: { o: 1, d: 900, t: 700 }
+        strip: { o: 1, d: 600, t: 600 }, lblStrip: { o: 1, d: 800, t: 500 },
+        arrY: { o: 1, d: 950, t: 450 },
+        wellY: { o: 1, d: 1300, t: 600, fx: 'pulse', fxd: 1350 }
       } },
-      /* 12 · clicks 1-4: onto the strip, into the kit, out to the fields */
-      { cam: [100, 20, 1080, 690], set: {
-        cell: { x: 314, y: 392, s: 0.12, o: 0, t: 1100, od: 600, ot: 500 },
-        spot: { o: 1, d: 850, t: 450 },
-        strip: { x: 548, y: 548, s: 0.42, o: 0, via: [470, 330], d: 1400, t: 1100, od: 2300, ot: 300 },
-        lblStrip: { o: 0, d: 1200, t: 300 },
-        box: { x: 935, y: 250, s: 0.16, o: 0, d: 2500, t: 1000, od: 3280, ot: 260, fx: 'pulse', fxd: 2300 },
-        lblBox: { o: 0, d: 2400, t: 300 },
-        map: { fx: 'pulse', fxd: 3450 },
-        ping: { o: 1, d: 3400, t: 220, fx: 'ripple', fxd: 3420 }
+      /* 12 · slide 5, clicks 1-2: the strip moves on; a soil sample, and a drop of its extract */
+      { cam: [400, 0, 520, 440], set: {
+        arrY: { o: 0, t: 300 }, lblStrip: { o: 0, t: 300 },
+        strip: { x: STRIP2.x, y: STRIP2.y, via: [450, 440], t: 1200 },
+        soil: { o: 1, d: 450, t: 600 },
+        arrS: { o: 1, d: 1050, t: 400 },
+        drop: { o: 1, d: 1250, t: 500 }, lblSoil: { o: 1, d: 1400, t: 500 }
       } },
-      /* 13 · slide 5: the map takes Human Practices' place (computed in mapTarget) */
+      /* 13 · click 3: the drop falls into the window (2 s in the slide), shrinks away,
+         and the window turns yellow; click 4: the warning */
+      { cam: [400, 0, 520, 440], set: {
+        lblSoil: { o: 0, t: 300 }, arrS: { o: 0, t: 300 },
+        drop: { x: STRIP2.x + WELL_X, y: STRIP2.y, t: 1700 },
+        dropIn: { s: 0.12, o: 0, d: 1650, t: 650, od: 1750, ot: 450 },
+        wellG: { o: 1, d: 1900, t: 900, fx: 'pulse', fxd: 2000 },
+        warn: { o: 1, d: 2700, t: 500 }
+      } },
+      /* 14 · into the kit, and out to the fields */
+      { cam: [520, 170, 760, 530], set: {
+        warn: { o: 0, t: 300 },
+        /* kept dimmed for context on wide screens; on tall ones only a sliver would show */
+        cell: { o: 0.4, t: 600, P: { o: 0 } }, soil: { o: 0.4, t: 600, P: { o: 0 } },
+        boxIn: { o: 1, t: 600 }, lblBoxIn: { o: 1, d: 300, t: 500 },
+        strip: { x: 683, y: 560, s: 0.45, o: 0, d: 500, t: 1000, od: 1250, ot: 300 },
+        box: { x: PIN.x, y: PIN.y, s: 0.14, o: 0, via: [960, 590], d: 2100, t: 1000, od: 2850, ot: 260, fx: 'pulse', fxd: 1500 },
+        lblBox: { o: 0, d: 2000, t: 300 },
+        map: { o: 1, d: 300, t: 700, fx: 'pulse', fxd: 3150 },
+        ping: { o: 1, d: 3100, t: 220, fx: 'ripple', fxd: 3120 }
+      } },
+      /* 15 · the map takes Human Practices' place (computed in mapTarget) */
       { cam: [300, 60, 680, 620], set: {
-        map: { dyn: true, t: 1300 }, ping: HIDE
+        map: { dyn: true, t: 1300 }, ping: HIDE, cell: HIDE, soil: HIDE
       } }
     ];
     var N = STATES.length - 1;
@@ -403,7 +441,7 @@
     wormsAlive();
 
     H.scene('traces', {
-      steps: N, tall: 9,
+      steps: N, tall: 10,
       /* the chapter rail below the stage shows progress, and the global scroll
          cue would sit on top of it (it covered "Yeast") */
       noCue: true,

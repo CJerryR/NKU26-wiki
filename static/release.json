@@ -1,6 +1,6 @@
 {
-  "version": "10.2.16",
-  "label": "Consistent Project and Model typography, restored reading width and plain figure captions",
+  "version": "10.2.17",
+  "label": "Latest test-strip story and six redesigned subpage openings",
   "prepared_at": "2026-10-20T11:37:09.350033+08:00",
   "media": "84 unchanged original images plus 4 user-authorized GPS-only cleaned images; all decoded frames unchanged; 12 complete historical source documents",
   "release_kind": "stage",
@@ -10,7 +10,7 @@
     "commit": "16770d5c28ddf7bc41f8d90445c44d80a28801d5",
     "published_at_local": "2026-10-18 05:04:34"
   },
-  "release_id": "content-rules-captions-20261020-v10.2.16",
+  "release_id": "recent-midday-20261020",
   "mobile_layout_check": "390px Members rendered without overflow; desktop Description, Parts/plasmid, Attributions/puzzle checked; 4 second delayed CDN uses inline preview then upgrades",
   "source_fidelity": {
     "original_source_files_verified": 80,
@@ -244,5 +244,11 @@
     "article_measure": "65rem",
     "caption_style": "14px / 400 / 1.55, left aligned, 12px top margin, no bold",
     "scientific_review": "Existing team-review status retained; uncertain abbreviations remain full names"
+  },
+  "combined_midday": {
+    "home_test_strip": "0af0df777b218833f7df182b8ee275fffac1e991",
+    "subpage_opening": "ada6fa15a370694a5611db0404ba2cbdb305d18c",
+    "atlas_manifest": "docs/openings-cdn-20261020.json",
+    "atlas_count": 12
   }
 }

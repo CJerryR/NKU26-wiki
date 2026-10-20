@@ -439,6 +439,9 @@ PAGES = {'description': description, 'model': model, 'model-docking': docking, '
 
 
 def write(page):
+    cur = ROOT / 'src' / 'data' / 'scenes' / f'{page}.json'
+    if cur.exists() and 'subpage_openings.py' in json.loads(cur.read_text()).get('note', ''):
+        return 'skipped: owned by tools/scene-art/subpage_openings.py', ''
     dt, D, mt, M = PAGES[page]()
     if dt is None:   # legacy page: keep its tuned title settings
         dt, mt = LEGACY[page]['desktop']['title'], LEGACY[page]['mobile']['title']

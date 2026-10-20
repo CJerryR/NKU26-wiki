@@ -103,6 +103,34 @@ html.is-paged[data-motion="idle"] .as__rail li.is-next::before{animation:as-next
 [data-o].is-ripple .as-ping:nth-child(3){animation-delay:.36s}
 @keyframes as-ripple{0%{opacity:.95;transform:scale(.25)}100%{opacity:0;transform:scale(4.2)}}
 
+/* v10.3 — PPT slide 5: the NemaKlear strip with its reading window, the soil sample,
+   the drop of soil extract, the warning and the arrows between them */
+.as-card{fill:#fbf6ee;stroke:#d9cdbb;stroke-width:2}
+.as-card__name{fill:#8c7fa3;font-family:var(--sans);font-weight:700;font-size:23px;letter-spacing:-.015em}
+.as-card__win{fill:#f2eadf;stroke:#b6a896;stroke-width:2.5}
+.as-card__well{fill:#fffdf8;stroke:#e0d3c0;stroke-width:1.5}
+.as-well--yeast{fill:#f2ddab}
+.as-well__grain{fill:#d6b676}
+.as-well--on{fill:url(#as-wellG);filter:drop-shadow(0 0 8px rgba(255,201,40,.85))}
+.as-arrow{fill:none;stroke:#ffd45a;stroke-width:3;stroke-linecap:round;stroke-dasharray:1 8;opacity:.9}
+.as-arrow-head{fill:#ffd45a;opacity:.9}
+.as-stem{fill:none;stroke:#8db04a;stroke-width:7;stroke-linecap:round}
+.as-petiole path{fill:none;stroke:#8db04a;stroke-width:3.5;stroke-linecap:round}
+.as-leaf{fill:url(#as-leafG)}
+.as-leaf__rib{fill:none;stroke:#e6f2bd;stroke-width:2;stroke-linecap:round;opacity:.55}
+.as-root path{fill:none;stroke:#c79e5d;stroke-width:3;stroke-linecap:round}
+.as-wormlet path{fill:none;stroke:#f3ebe0;stroke-width:4.5;stroke-linecap:round}
+.as-wormlet--pp path{stroke:#9b56c9}
+.as-drop__hi{fill:none;stroke:#fff;stroke-width:4;stroke-linecap:round;opacity:.6}
+.as-warn__tri{fill:#ff5d68;stroke:#ff5d68;stroke-width:7;stroke-linejoin:round}
+.as-warn__bang{fill:#fff;font-family:var(--sans);font-weight:800;font-size:27px}
+.as-warn__txt{fill:#ffdfe2;font-family:var(--sans);font-weight:600;font-size:25px;letter-spacing:-.01em}
+/* the slide flashes the warning; here a calm, steady alarm */
+.as-warn__halo{fill:rgba(255,93,104,.3);transform-box:fill-box;transform-origin:center;animation:as-alarm 1.2s ease-in-out infinite}
+@keyframes as-alarm{50%{opacity:.2;transform:scale(1.55)}}
+.as--tall .as-warn__txt{font-size:31px}
+@media (prefers-reduced-motion:reduce){.as-warn__halo{animation:none}}
+
 /* ---------- tall screens: the slide on top, the words underneath ---------- */
 .as--tall .as__frame{left:0;top:clamp(64px,9vh,84px);width:100%;height:54%;aspect-ratio:auto;transform:none}
 .as--tall .as__cap{left:20px;right:20px;top:calc(100% + 14px);width:auto}

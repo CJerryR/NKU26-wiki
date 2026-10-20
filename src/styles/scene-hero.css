@@ -159,13 +159,13 @@
 
 /* Mobile polish on the current V10 opening; preserve its art and motion. */
 @media (max-width: 640px) {
-  .scene__crumbs { top: calc(var(--nav-h) + 14px + env(safe-area-inset-top, 0px)); left: 20px; right: 20px; }
+  .scene__crumbs { margin-left: 20px; margin-right: 20px; max-width: calc(100% - 40px); }
   .scene__crumbs ol { flex-wrap: wrap; row-gap: 4px; font-size: 12px; }
   .scene__title { width: calc(100% - 36px); }
   .scene__h1 { line-height: 1.06; overflow-wrap: anywhere; }
 }
 @media (max-height: 500px) and (orientation: landscape) and (max-width: 1000px) {
-  .scene__crumbs { top: calc(var(--nav-h) + 8px); right: 20px; }
-  .scene__title { width: calc(100% - 40px); }
+  .scene__crumbs { margin-left: 20px; margin-right: 20px; max-width: calc(100% - 40px); }
+  .scene__title { width: calc(44% - 36px); }
   .scene__h1 { font-size: min(var(--title-size-d, clamp(30px, 6vw, 48px)), var(--h1-cap, 48px), 14svh); line-height: 1.04; overflow-wrap: anywhere; }
 }

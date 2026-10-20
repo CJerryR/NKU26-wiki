@@ -31,16 +31,27 @@ export interface SceneAtlas { desktop: AtlasSet; mobile: AtlasSet }
 export type SceneKind = 'desktop' | 'mobile';
 export interface ResolvedScene { page: string; eyebrow?: string; sets: Record<SceneKind, { set: SceneSet; atlas: AtlasSet; url: string }> }
 
-/* One literal per atlas: replace with the static.igem.wiki address after upload. */
+/* One literal per uploaded atlas. Redesigned Project openings use local hashed
+ * files until their new atlases are uploaded; old CDN crops cannot be reused. */
 const ATLAS_URL: Record<string, string> = {
+  "description-desktop.webp": "https://static.igem.wiki/teams/6303/wiki/openings-20261020/description-desktop-a72dbb5987.webp",
+  "description-mobile.webp": "https://static.igem.wiki/teams/6303/wiki/openings-20261020/description-mobile-a6a6eae33f.webp",
+  "engineering-desktop.webp": "https://static.igem.wiki/teams/6303/wiki/openings-20261020/engineering-desktop-174fbd6436.webp",
+  "engineering-mobile.webp": "https://static.igem.wiki/teams/6303/wiki/openings-20261020/engineering-mobile-520e65f108.webp",
+  "contribution-desktop.webp": "https://static.igem.wiki/teams/6303/wiki/openings-20261020/contribution-desktop-551cfe7ca5.webp",
+  "contribution-mobile.webp": "https://static.igem.wiki/teams/6303/wiki/openings-20261020/contribution-mobile-e6ad22c432.webp",
+  "hp-overview-desktop.webp": "https://static.igem.wiki/teams/6303/wiki/openings-20261020/hp-overview-desktop-a8d5b02eca.webp",
+  "hp-overview-mobile.webp": "https://static.igem.wiki/teams/6303/wiki/openings-20261020/hp-overview-mobile-913bb8f016.webp",
+  "hp-investigation-desktop.webp": "https://static.igem.wiki/teams/6303/wiki/openings-20261020/hp-investigation-desktop-3d4a88c807.webp",
+  "hp-investigation-mobile.webp": "https://static.igem.wiki/teams/6303/wiki/openings-20261020/hp-investigation-mobile-5ee06e3c7f.webp",
+  "hp-industry-desktop.webp": "https://static.igem.wiki/teams/6303/wiki/openings-20261020/hp-industry-desktop-8beb53fbb3.webp",
+  "hp-industry-mobile.webp": "https://static.igem.wiki/teams/6303/wiki/openings-20261020/hp-industry-mobile-ada0d88023.webp",
+
   "acknowledgements-desktop.webp": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-3a033b97fd56-acknowledgements-desktop.webp",
   "attributions-desktop.webp": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-a2c05d975859-attributions-desktop.webp",
   "awards-desktop.webp": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-85ed66bc463c-awards-desktop.webp",
   "background-desktop.webp": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-c095340d2b08-background-desktop.webp",
-  "contribution-desktop.webp": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-bdbda6a9a903-contribution-desktop.webp",
-  "description-desktop.webp": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-432bd2b29cde-description-desktop.webp",
   "education-desktop.webp": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-9b1918b8434d-education-desktop.webp",
-  "engineering-desktop.webp": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-c42f3e40925f-engineering-desktop.webp",
   "experiments-desktop.webp": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-8ac661ad85ce-experiments-desktop.webp",
   "human-practices-desktop.webp": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-a81cf6847a23-human-practices-desktop.webp",
   "licensing-desktop.webp": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-48201d18548d-licensing-desktop.webp",
@@ -57,10 +68,7 @@ const ATLAS_URL: Record<string, string> = {
   "attributions-mobile.webp": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-a627a30177ee-attributions-mobile.webp",
   "awards-mobile.webp": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-b9939330ece4-awards-mobile.webp",
   "background-mobile.webp": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-aea720a2df28-background-mobile.webp",
-  "contribution-mobile.webp": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-d3eb6aa22123-contribution-mobile.webp",
-  "description-mobile.webp": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-1a86519c6bad-description-mobile.webp",
   "education-mobile.webp": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-1d3de0748ebd-education-mobile.webp",
-  "engineering-mobile.webp": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-aa44eb7b643b-engineering-mobile.webp",
   "experiments-mobile.webp": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-5cfff77c9596-experiments-mobile.webp",
   "human-practices-mobile.webp": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-9e69b32087e9-human-practices-mobile.webp",
   "licensing-mobile.webp": "https://static.igem.wiki/teams/6303/wiki/v8-0/v101-120020b6cc75-licensing-mobile.webp",
