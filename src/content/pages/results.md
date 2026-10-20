@@ -589,32 +589,28 @@ This cycle is hereby concluded. The strains constructed in this cycle can only f
 
 <p>At this point, we have closed the loop on test strip fabrication and application, establishing a solid foundation for subsequent on-site rapid detection of soil samples.</p>
 
-### 3.4 Cycle 4: from a strip to a test {#results-3-4 toc="Cycle 4: from a strip to a test"}
-
-#### Design {#results-3-4-design toc="Design"}
-
-A user does three things: pours in the soil leachate, looks at one spot, takes a photograph. Nothing else.There is no blank to prepare, no standard to add, no arithmetic at the end, because the judgment a trained operator would make now sits in the card, and the conversion sits in the software. Neither of them rests with the person holding it.
-
-The earlier cycles settled whether the color develops strongly enough to be read. This one asks whether that reading can be trusted. Five units do not make the color look better. They give every card its own evidence of reliability at the moment it is used, instead of a claim we established once in the laboratory and then assumed forever.
-
-The principle is simple, though the user never has to know it. One paper carries one 5 mm spot; five units sit side by side and make a single card. The first is a quality control: the same strain, loaded with saturating ligand, so it colors whatever the sample happens to be. It answers one question only, whether the card still works. No color means a defective card. Color means the failure, if there is one, lies somewhere else. The second carries a known amount of ligand, deliberately below saturation, so its color shifts with temperature and matrix and can rescale the reading to the conditions of the day. The third is a blank: the same chassis with its pigment pathway switched off. It takes away what the leachate brings, and the faint yellow of the cells themselves. The last two carry two strains with different receptor profiles, and give the model the pair of readings it needs.
-
-All five share one inlet. A single pour fills them together, so every spot sees the same liquid at the same moment. Reference colors are printed on the body, which lets the camera and the software handle the correction afterwards.
-
-For the user, that is where it ends: at the photograph. The group can also grow. If later work needs more signals resolved, units six and seven simply join the row.
-
-<iframe title="Five-unit test card design and reading guide" src="/embeds/results-cycle4-20261020/index.html" loading="lazy" sandbox="allow-scripts" style="width:100%;height:1050px;border:0"></iframe>
-
-#### Build and test {#results-3-4-build-test toc="Build & Test"}
-
-We plan to characterize the group first with ascariside solutions across a concentration range, then with soil leachate, and to build the recognition and analysis software on the images those tests produce. All of it belongs to the next stage.
-
-#### Learn {#results-3-4-learn toc="Learn"}
-
-What we want is not a cleverer strip but a different division of labor. The card takes on the judgment, and leaves the person nothing to get wrong. If a grower can pour, look and photograph, and a laboratory conclusion arrives at the field, then using it no longer depends on training. We are a long way from that day. The joining, the assembly, the first real leachate are all still ahead. But the shape of the path is clear, and we hope it is one that any soil, any season and any pair of hands could take, and that a color means the same thing every time it is seen.
-
-### 3.5 References {#results-dbtl3-references toc="References"}
+### 3.4 References {#results-dbtl3-references toc="References"}
 
 <p>6. Miller, R. A., Brown, G., Barron, E., Luther, J. L., Lieberman, M., &amp; Goodson, H. V. (2020). Development of a paper-immobilized yeast biosensor for the detection of physiological concentrations of doxycycline in technology-limited settings. <em>Analytical Methods</em>, <em>12</em>(16), 2123–2132. https://doi.org/10.1039/d0ay00001a</p>
+
+## Future work {#results-future-work toc="Future work"}
+
+<p>In our next phase of wet-lab validation, we plan to engineer yeast strains expressing distinct GPR2 receptor variants and perform quantitative assays to validate our dry-lab predictions. Using these experimental image datasets, we will perform systematic characterization across both pure ascaroside standards and authentic soil leachates to evaluate the strip's sensitivity, reproducibility, and matrix tolerance.</p>
+
+<p>On the engineering front, we aim to integrate these isolated reaction units into a single-pour test strip. We plan to incorporate five functional units on a single platform: a quality unit to confirm strip validity, a standard unit for calibration, a blank unit to subtract soil background color, and two sample units to profile specific soil ascarosides. Combined with printed reference tones and mobile image-processing software, the system is intended to correct for environmental lighting variations and matrix interference.</p>
+
+<p>Detailed design is as follows:</p>
+
+<p>Quality: Loaded with saturating ligand. Color confirms strip validity; no color means a defective strip.</p>
+
+<p>Standard: Loaded with a known sub-saturating ligand. Rescales readings against daily temperature and matrix variations.</p>
+
+<p>Blank: Uses a pigment-pathway-knockout strain to subtract background soil tint and cell autofluorescence.</p>
+
+<p>Samples 1 and 2: Express distinct GPR2 receptor variants to provide paired readings for profiling specific soil ascarosides.</p>
+
+<figure class="wiki-media wiki-media--html"><iframe class="wiki-media__frame" src="/widgets/html.html?title=Five-unit+test+card+design+and+reading+guide&amp;src=%2Fembeds%2Fresults-future-work-20261021%2Findex.html&amp;scripts=1" title="Five-unit test card design and reading guide" loading="lazy" allow="fullscreen" style="height:1050px" referrerpolicy="no-referrer"></iframe></figure>
+
+<p>Ultimately, our vision is to empower growers with an intuitive testing tool—requiring nothing more than a simple pour, an observation, and a photograph to bring reliable, real-time soil diagnostics directly to where it is needed most.</p>
 
 </div>
