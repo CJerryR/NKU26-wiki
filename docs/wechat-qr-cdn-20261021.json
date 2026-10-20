@@ -1,11 +1,40 @@
 {
-  "source_path": "static/img/social/igem-nku-wechat-qr.png",
-  "source_sha256": "df1d76e9b60195858e1f3f9855bdf33c1ebfb7d0116d6dd05c4e3c62a809e4c0",
-  "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/wechat-qr-df1d76e9b601.avif",
-  "cdn_sha256": "ab613957dc7be36b24b8d253fa5a2beef572a18c123197433e37141d70347345",
+  "source": "User supplied latest official WeChat QR image in release-bot chat, 2026-10-21",
+  "source_sha256": "9afe42163bfa401a519cd4c56b1795f3590e57f0930183f7bcd1e01b58c8e8c1",
+  "source_bytes": 149581,
+  "source_dimensions": [
+    1280,
+    1280
+  ],
+  "source_stored": "Outside Git: workspace/evidence/release-bot/20261021-initial/latest-qr/wechat-qr-latest-9afe42163bfa.jpg",
+  "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/wechat-qr-latest-9afe42163bfa.avif",
+  "cdn_sha256": "885c87abefdf0f5a1233caa051e4112295da37ab45c5adfe95f93310b8723bef",
+  "cdn_bytes": 28674,
+  "cdn_dimensions": [
+    1280,
+    1280
+  ],
   "http_status": 200,
   "content_type": "image/avif",
-  "checked_at": "2026-10-21T01:39:00+08:00",
-  "browser": "pending",
-  "scan_in_wechat": "not tested"
+  "platform_conversion": "Official upload platform converted original JPG to AVIF; dimensions and decoded QR destination verified",
+  "display_dimensions": [
+    144,
+    144
+  ],
+  "qr_decoded_target": "http://weixin.qq.com/r/mp/PBFaQr3ElODrrfkh90Qu",
+  "qr_decoder": "macOS Vision VNDetectBarcodesRequest; original JPG, new CDN AVIF and previous CDN AVIF all decode to the same URL",
+  "scan_in_wechat": "Not tested in the WeChat app; decoder equivalence verified",
+  "browser": "To be verified against integrated candidate by release bot",
+  "checked_at": "2026-10-21T01:46:26.191187+08:00",
+  "previous": {
+    "source_path": "static/img/social/igem-nku-wechat-qr.png",
+    "source_sha256": "df1d76e9b60195858e1f3f9855bdf33c1ebfb7d0116d6dd05c4e3c62a809e4c0",
+    "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/wechat-qr-df1d76e9b601.avif",
+    "cdn_sha256": "ab613957dc7be36b24b8d253fa5a2beef572a18c123197433e37141d70347345",
+    "http_status": 200,
+    "content_type": "image/avif",
+    "checked_at": "2026-10-21T01:39:00+08:00",
+    "browser": "pending",
+    "scan_in_wechat": "not tested"
+  }
 }
