@@ -1,0 +1,45 @@
+/* A viewport-sized top-layer viewer: the toolbar never scrolls with the image. */
+[data-image-preview] { cursor: zoom-in; }
+[data-image-preview]:focus-visible { outline: 3px solid var(--accent, #dca954); outline-offset: 4px; }
+html:has(.image-preview[open]) { scrollbar-gutter: stable; scroll-behavior: auto; }
+.image-preview {
+  position: fixed; inset: 0; box-sizing: border-box;
+  width: 100%; height: 100vh; height: 100dvh; max-width: none; max-height: none;
+  margin: 0; padding: 0; border: 0; border-radius: 0;
+  background: rgba(15, 14, 17, .94); color: #f8f5ef;
+  font-family: var(--sans, sans-serif); overflow: hidden;
+}
+.image-preview[open] { display: grid; grid-template-rows: auto minmax(0, 1fr); }
+.image-preview::backdrop { background: rgba(0, 0, 0, .7); }
+.image-preview__toolbar {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: max(10px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right)) 10px max(16px, env(safe-area-inset-left));
+  border-bottom: 1px solid #ffffff20; background: #232225;
+}
+.image-preview__title { font-size: 14px; font-weight: 600; }
+.image-preview__controls { display: flex; align-items: center; gap: 6px; }
+.image-preview__controls button {
+  display: inline-grid; place-items: center; min-width: 44px; min-height: 44px;
+  padding: 6px 10px; border: 1px solid #ffffff25; border-radius: 12px;
+  background: #ffffff12; color: #fff; font: inherit; cursor: pointer;
+}
+.image-preview__controls button:hover { background: #ffffff28; }
+.image-preview__controls button:focus-visible { outline: 2px solid #f3ca7b; outline-offset: 2px; }
+.image-preview__controls button:disabled { opacity: .35; cursor: default; }
+.image-preview__controls [data-preview-close] { font-size: 28px; line-height: 1; margin-left: 8px; }
+.image-preview__controls output { min-width: 52px; text-align: center; font-size: 13px; font-variant-numeric: tabular-nums; }
+.image-preview__stage {
+  display: grid; overflow: auto; overscroll-behavior: contain; padding: 16px;
+  min-width: 0; min-height: 0; box-sizing: border-box;
+}
+.image-preview__image {
+  display: block; max-width: none; max-height: none; object-fit: contain;
+  align-self: center; justify-self: center; margin: auto; user-select: none; background: #fff;
+}
+.image-preview__image[hidden], .image-preview__status[hidden] { display: none; }
+.image-preview__status { align-self: center; justify-self: center; color: #f8f5ef; }
+@media (max-width: 480px) {
+  .image-preview__title { display: none; }
+  .image-preview__controls { width: 100%; justify-content: flex-end; }
+}
+@media print { .image-preview { display: none !important; } }

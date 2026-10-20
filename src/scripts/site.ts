@@ -1,3 +1,4 @@
+import { initImagePreview } from './image-preview';
 import { initSourceArchive } from './source-archive';
 import { initOriginalImages } from './original-images';
 import './toolkit';
@@ -17,6 +18,7 @@ import { initWorkflow } from './workflow';
 
 function start(): void {
   initOriginalImages();
+  initImagePreview();
   initSourceArchive();
   initGlass();
   initLiquidGlass();

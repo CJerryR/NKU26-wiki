@@ -73,3 +73,9 @@ export function initOriginalImages():void{
  initRoot(document);
  customElements.whenDefined('wiki-toolkit').then(()=>{document.querySelectorAll('wiki-toolkit').forEach(el=>{if(el.shadowRoot)initRoot(el.shadowRoot);});});
 }
+
+/** Resolve the same verified original bytes for the page's overlay viewer. */
+export async function previewImageUrl(img: HTMLImageElement): Promise<string> {
+ const key = img.dataset.authorOriginal || img.getAttribute('src') || '';
+ return manifest[key] ? originalUrl(key) : (img.currentSrc || img.src);
+}
