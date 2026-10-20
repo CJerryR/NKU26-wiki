@@ -187,7 +187,7 @@ Figure 9. Construction of the STE12 knockout cassette KOSTE12. (a) PCR amplifica
 
 :::
 
-<p>Meanwhile, we designed and constructed the HR plasmid pRS315-sTF. However, after fragment amplification, one-step cloning, colony <strong>polymerase chain reaction (PCR)</strong> and plasmid extraction, the double digestion result did not meet our expectation (Figure 10).</p>
+<p>Meanwhile, we designed and constructed the HR plasmid pRS315-sTF. However, after fragment amplification, one-step cloning, colony polymerase chain reaction (PCR) and plasmid extraction, the double digestion result did not meet our expectation (Figure 10).</p>
 
 :::figure
 

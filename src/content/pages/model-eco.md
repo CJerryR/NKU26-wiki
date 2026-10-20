@@ -23,7 +23,7 @@ Eco: from color readouts to management decisions
 
 <strong>When growers can already apply a uniform treatment, how much additional benefit can nematode density information provide?</strong>
 
-We developed the NemaKlear interactive web tool to explore this question. It connects <strong>ordinary differential equation (ODE)</strong> simulations of color development, dual-channel density estimation, and economic analysis. Users can select simulated soil samples or enter paired absorbance readings, estimate target nematode density, and compare net income across management strategies for a single growing season.
+We developed the NemaKlear interactive web tool to explore this question. It connects ordinary differential equation (ODE) simulations of color development, dual-channel density estimation, and economic analysis. Users can select simulated soil samples or enter paired absorbance readings, estimate target nematode density, and compare net income across management strategies for a single growing season.
 
 The public economic-model code calculates conditional cash flows for the Spanish protected-tomato example from density, yield-loss, treatment, and testing-cost inputs. [Explore the economic-model code →](https://gitlab.igem.org/2026/software/nku-china/modeling/-/blob/main/studies/economic-model/README.md)
 

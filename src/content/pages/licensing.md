@@ -17,7 +17,7 @@ The site footer identifies NKU iGEM Team material as available under <a href="ht
 
 ## AI use and human review {#ai-use-and-human-review toc="AI use and human review"}
 
-<strong>Artificial intelligence (AI)</strong> tools, including OpenAI Codex, assisted Wiki development with code, debugging, code review, and translation of team-written text. The site footer credits Claude Opus 4.7, 4.8, 5.0, and 5.5, and OpenAI GPT-6 Astra, GPT-6.1 Sol, and GPT-6 Luna for that work. Project tools, tasks, and review responsibilities are described in [Attributions → AI tool use](/attributions/#ai-tool-use). Human review of final project content remains pending.
+Artificial intelligence (AI) tools, including OpenAI Codex, assisted Wiki development with code, debugging, code review, and translation of team-written text. The site footer credits Claude Opus 4.7, 4.8, 5.0, and 5.5, and OpenAI GPT-6 Astra, GPT-6.1 Sol, and GPT-6 Luna for that work. Project tools, tasks, and review responsibilities are described in [Attributions → AI tool use](/attributions/#ai-tool-use). Human review of final project content remains pending.
 
 ## Decorative and evidentiary figures {#decorative-and-evidentiary-figures toc="Decorative and evidentiary figures"}
 

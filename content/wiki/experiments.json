@@ -18,7 +18,7 @@
       "_template": "heading"
     },
     {
-      "body": "<p>This section documents the biological materials and experimental methods used in wet-lab work. Deoxyribonucleic acid (DNA) and ribonucleic acid are the nucleic acids represented in the sequence entries. We summarize the designed <strong>single-guide ribonucleic acid</strong> sequences, constructed plasmids and engineered strains generated in our project. Polymerase chain reaction (PCR) underpins the cloning workflows described below. The chassis species is <em>Saccharomyces cerevisiae</em>; <em>Escherichia coli</em> (<em>E. coli</em>) is used for plasmid propagation.</p>",
+      "body": "<p>This section documents the biological materials and experimental methods used in wet-lab work. Deoxyribonucleic acid (DNA) and ribonucleic acid are the nucleic acids represented in the sequence entries. We summarize the designed single-guide ribonucleic acid sequences, constructed plasmids and engineered strains generated in our project. Polymerase chain reaction (PCR) underpins the cloning workflows described below. The chassis species is <em>Saccharomyces cerevisiae</em>; <em>Escherichia coli</em> (<em>E. coli</em>) is used for plasmid propagation.</p>",
       "_template": "text"
     },
     {

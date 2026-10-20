@@ -25,7 +25,7 @@
     },
     {
       "_template": "text",
-      "body": "We developed the NemaKlear interactive web tool to explore this question. It connects <strong>ordinary differential equation (ODE)</strong> simulations of color development, dual-channel density estimation, and economic analysis. Users can select simulated soil samples or enter paired absorbance readings, estimate target nematode density, and compare net income across management strategies for a single growing season."
+      "body": "We developed the NemaKlear interactive web tool to explore this question. It connects ordinary differential equation (ODE) simulations of color development, dual-channel density estimation, and economic analysis. Users can select simulated soil samples or enter paired absorbance readings, estimate target nematode density, and compare net income across management strategies for a single growing season."
     },
     {
       "_template": "text",

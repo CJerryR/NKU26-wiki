@@ -51,7 +51,7 @@ hidden: false
 
 ## AI tool use {#ai-tool-use toc="AI tool use"}
 
-<strong>artificial intelligence (AI)</strong> tools supported our literature research, dry-lab software development, protein structure prediction, writing, and visual communication. Team members defined the research questions, reviewed AI-assisted outputs, and decided how to use them in the project.
+artificial intelligence (AI) tools supported our literature research, dry-lab software development, protein structure prediction, writing, and visual communication. Team members defined the research questions, reviewed AI-assisted outputs, and decided how to use them in the project.
 
 #### ChatGPT — OpenAI {#chatgpt-openai toc="ChatGPT — OpenAI"}
 
