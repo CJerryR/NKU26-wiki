@@ -37,6 +37,10 @@
     },
     {
       "_template": "text",
+      "body": "The public code includes cross-receptor docking and pose-contact analysis, plus tools for comparing mutant scores, contacts, and ligand-pose displacement. [Explore the cross-receptor docking tools →](https://gitlab.igem.org/2026/software/nku-china/modeling/-/blob/main/studies/receptor-engineering/receptor-comparison/README.md) · [Explore the mutation-screen tools →](https://gitlab.igem.org/2026/software/nku-china/modeling/-/blob/main/studies/receptor-engineering/mutant-screen/README.md)"
+    },
+    {
+      "_template": "text",
       "body": "<span id=\"src-Model-Docking-5\" aria-hidden=\"true\"></span>"
     },
     {

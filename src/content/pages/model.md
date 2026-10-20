@@ -25,6 +25,8 @@ Model Overview
 
 How can nematode chemical signals in soil help guide agricultural management? Our modeling work explores this question from receptor recognition to color readout, target nematode density, and treatment decisions. Four complementary components support sensor design, experimental calibration, and assessment of the potential value of detection.
 
+The public modeling repository contains the analysis code, input files, and reproducibility notes for these studies. [Explore the modeling code →](https://gitlab.igem.org/2026/software/nku-china/modeling)
+
 <nav class="model-chapter-links" aria-label="Model chapters"><a href="/model-docking/"><img src="https://static.igem.wiki/teams/6303/wiki/release-20261020/model-b9a0bc880ff5.webp" width="1024" height="1024" alt="" loading="lazy" decoding="async"><span>Molecular Docking</span></a><a href="/model-md/"><img src="https://static.igem.wiki/teams/6303/wiki/release-20261020/model-924062c2f7ac.webp" width="1024" height="1024" alt="" loading="lazy" decoding="async"><span>Molecular Dynamics</span></a><a href="/model-ode/"><img src="https://static.igem.wiki/teams/6303/wiki/release-20261020/model-51cd59b3873b.webp" width="1024" height="1024" alt="" loading="lazy" decoding="async"><span>ODE &amp; Dual-Channel Modeling</span></a><a href="/model-eco/"><img src="https://static.igem.wiki/teams/6303/wiki/release-20261020/model-5d23c4029c73.webp" width="1024" height="1024" alt="" loading="lazy" decoding="async"><span>Economic Benefit</span></a></nav>
 
 > Generated with OpenAI GPT Image 2.

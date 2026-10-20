@@ -33,6 +33,10 @@
     },
     {
       "_template": "text",
+      "body": "The public analysis code processes receptor and partner motion, local geometry, contacts, and polar interactions from trajectories. [Explore the molecular-dynamics analysis code →](https://gitlab.igem.org/2026/software/nku-china/modeling/-/blob/main/studies/receptor-engineering/molecular-dynamics/README.md)"
+    },
+    {
+      "_template": "text",
       "body": "<span id=\"src-Model-Molecular-Dynamics-3\" aria-hidden=\"true\"></span>"
     },
     {

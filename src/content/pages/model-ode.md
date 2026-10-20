@@ -31,6 +31,8 @@ We developed two connected models to examine this approach. An <strong>ordinary 
 
 Throughout this chapter, nematode density is expressed as individuals per 100 cm³ of soil.
 
+The public code provides the six-state pathway and effective color model, alongside a paired-channel synthetic calibration study for target-density estimation. [Explore the pathway model code →](https://gitlab.igem.org/2026/software/nku-china/modeling/-/blob/main/studies/signal-model/pathway/README.md) · [Explore the dual-channel study code →](https://gitlab.igem.org/2026/software/nku-china/modeling/-/blob/main/studies/signal-model/dual-channel/README.md)
+
 :::figure
 
 [![Figure 3-1. Sequential calibration workflow for the ODE and dual-channel models. The upper panel shows mixed-sample design, ODE calibration, and dual-channel regression](https://static.igem.wiki/teams/6303/wiki/release-20261020/model-ode-8b54481155b3.webp)](https://static.igem.wiki/teams/6303/wiki/release-20261020/model-ode-8b54481155b3.webp "Open full-resolution image")

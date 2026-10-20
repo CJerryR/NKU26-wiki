@@ -27,6 +27,8 @@ Molecular Dynamics: ligand positioning and contact changes in a membrane environ
 
 Molecular docking provided candidate binding poses for the Gpr2 variants N84V and V368R. We subsequently performed <strong>molecular dynamics (MD)</strong> simulations to examine how these poses adjusted in a membrane environment and which receptor–ligand contacts persisted.
 
+The public analysis code processes receptor and partner motion, local geometry, contacts, and polar interactions from trajectories. [Explore the molecular-dynamics analysis code →](https://gitlab.igem.org/2026/software/nku-china/modeling/-/blob/main/studies/receptor-engineering/molecular-dynamics/README.md)
+
 <span id="src-Model-Molecular-Dynamics-3" aria-hidden="true"></span>
 
 ## Constructing six membrane systems from docking poses {#model-md-section-1 toc="Constructing six membrane systems from docking poses"}

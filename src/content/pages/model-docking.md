@@ -29,6 +29,8 @@ To build a sensor that distinguishes ascr#18 from ascr#3, we sought receptor var
 
 We began by establishing comparable docking conditions, then used contact differences in wild-type (WT) receptors to select mutation sites. Alanine substitutions, saturation scans, and combination tests guided successive rounds of design. Docking scores supported candidate comparisons, while contact analysis helped us develop structural explanations and plan the next round.
 
+The public code includes cross-receptor docking and pose-contact analysis, plus tools for comparing mutant scores, contacts, and ligand-pose displacement. [Explore the cross-receptor docking tools →](https://gitlab.igem.org/2026/software/nku-china/modeling/-/blob/main/studies/receptor-engineering/receptor-comparison/README.md) · [Explore the mutation-screen tools →](https://gitlab.igem.org/2026/software/nku-china/modeling/-/blob/main/studies/receptor-engineering/mutant-screen/README.md)
+
 <span id="src-Model-Docking-5" aria-hidden="true"></span>
 
 ## Receptor selection and docking setup {#model-docking-section-1 toc="Receptor selection and docking setup"}
