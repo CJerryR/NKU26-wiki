@@ -1,0 +1,10 @@
+{
+  "source": "User supplied replacement JPEG in this chat",
+  "original_sha256": "20751c382bee0a6c489c7db093653b185d1686805b83dd11f0bc2bb4a9038465",
+  "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/results-spotting-device-20751c382bee.json",
+  "previous_url": "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-1020073bd61e1101-00.json",
+  "scope": "Results DBTL-3 Figure 4 spotting-device photograph; caption and surrounding prose unchanged",
+  "verification": "CDN JSON decoded bytes exactly equal supplied JPEG",
+  "publication": "not-published",
+  "original_archive": "workspace/evidence/results-cycle4-photo-v10.2.26-20261020/original-spotting-device.jpg (local workspace archive; image hosted on official CDN)"
+}

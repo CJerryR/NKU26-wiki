@@ -1,0 +1,322 @@
+<meta charset="utf-8">
+<style>
+  #nk-bt{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;
+    color:#241F19; font-size:13px; line-height:1.5; font-feature-settings:"tnum" 1;
+    background:#FBF6E8; border-radius:14px; padding:24px 32px 30px;
+    max-width:1040px; margin:0 auto; box-sizing:border-box;
+  }
+  #nk-bt *{box-sizing:border-box}
+  #nk-bt svg{display:block;height:auto;overflow:visible}
+  #nk-bt .bt-side{fill:#E7D9BC}
+  #nk-bt .bt-top{fill:#FCF8EE;stroke:#D9C9A8;stroke-width:1.1}
+  #nk-bt .bt-mod text{font-size:8.5px;font-weight:600;letter-spacing:1.5px;fill:#8A7C63;text-anchor:middle}
+  #nk-bt .bt-ghost{fill:none;stroke:#C9B48A;stroke-width:1.3;stroke-dasharray:6 6}
+  #nk-bt .bt-sec{margin-top:28px}
+
+  #nk-bt .bt-list{max-width:920px; margin:0 auto}
+  #nk-bt .bt-hint{text-align:right; font-size:9px; font-weight:600; letter-spacing:.16em;
+    text-transform:uppercase; color:#B6A688; margin:0 0 6px}
+
+  #nk-bt table.bt-tbl{width:100%; border-collapse:collapse; table-layout:fixed}
+  #nk-bt .bt-td{
+    vertical-align:middle; padding:14px 10px;
+    border-bottom:1px solid rgba(36,31,25,.10);
+  }
+  #nk-bt tr.bt-row{cursor:pointer; transition:background .18s ease}
+  #nk-bt tr.bt-row:hover td{background:#FFFDF6}
+  #nk-bt tr.bt-row.open td{background:#FFFDF6}
+
+  #nk-bt .bt-see{font-size:12.5px; color:#241F19; line-height:1.45}
+  #nk-bt .bt-see b{font-weight:600}
+  #nk-bt .bt-n{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:9.5px;color:#B6A688;letter-spacing:.1em;margin-right:6px}
+  #nk-bt .bt-do{font-size:11.5px; color:#4F4638; line-height:1.45}
+  #nk-bt .bt-do b{font-weight:600}
+
+  #nk-bt .bt-pill{display:inline-block;font-size:8.5px;font-weight:700;letter-spacing:.1em;
+    padding:3px 7px;border-radius:10px;text-transform:uppercase;white-space:nowrap}
+  #nk-bt .bt-ok{background:#D9E6C4;color:#47622F;border:1px solid #BFD29E}
+  #nk-bt .bt-no{background:#F3DCD5;color:#95382B;border:1px solid #E8C2B8}
+  #nk-bt .bt-pillrow span{display:block; margin-bottom:4px}
+
+  /* + / - indicator, no rotation */
+  #nk-bt .bt-chev{
+    text-align:center; color:#C1AC86; font-size:14px; line-height:1;
+    transition:color .18s ease;
+  }
+  #nk-bt .bt-chev .bt-minus{display:none}
+  #nk-bt tr.bt-row.open .bt-chev .bt-plus{display:none}
+  #nk-bt tr.bt-row.open .bt-chev .bt-minus{display:inline}
+  #nk-bt tr.bt-row.open .bt-chev{color:#C08A22}
+  #nk-bt tr.bt-row:hover .bt-chev{color:#A08155}
+
+  #nk-bt .bt-more p{
+    margin:0; padding:11px 15px; background:#FDF9EE;
+    border-left:2px solid #E0C79A; border-radius:0 8px 8px 0;
+    font-size:11.5px; line-height:1.65; color:#4F4638;
+  }
+  #nk-bt .bt-more b{color:#241F19;font-weight:600}
+
+  #nk-bt .bt-dust{animation:btDust 2.6s ease-in-out infinite}
+  #nk-bt .bt-dust:nth-of-type(2){animation-delay:.5s}
+  #nk-bt .bt-dust:nth-of-type(3){animation-delay:1s}
+  @keyframes btDust{0%,100%{opacity:.95}50%{opacity:.2}}
+  #nk-bt .bt-brush path{stroke-dasharray:4 4; animation:btBrush 1.8s linear infinite}
+  @keyframes btBrush{to{stroke-dashoffset:-16}}
+</style>
+
+<div id="nk-bt">
+
+  <!-- hero -->
+  <svg viewBox="0 0 1000 300" role="img" style="width:100%"
+       aria-label="One card formed from five joined cassettes with a printed reference strip, and an open bay at the right.">
+    <g transform="translate(36,40)">
+      <ellipse cx="464" cy="212" rx="452" ry="12" fill="#E5D8BC" opacity=".45"/>
+      <rect x="0" y="14" width="928" height="196" rx="24" fill="#E0CFA9"/>
+      <rect x="0" y="0" width="928" height="196" rx="24" fill="#F1E5CB"/>
+
+      <g fill="#DCCBA6">
+        <rect x="162.5" y="18" width="3" height="126" rx="1.5"/>
+        <rect x="312.5" y="18" width="3" height="126" rx="1.5"/>
+        <rect x="462.5" y="18" width="3" height="126" rx="1.5"/>
+        <rect x="612.5" y="18" width="3" height="126" rx="1.5"/>
+      </g>
+
+      <g transform="translate(18,18)"><g class="bt-mod">
+        <rect x="0" y="14" width="142" height="126" rx="16" class="bt-side"/>
+        <rect x="0" y="0" width="142" height="126" rx="16" class="bt-top"/>
+        <circle cx="71" cy="54" r="30" fill="#E2871C"/>
+        <text x="71" y="100">QUALITY</text>
+      </g></g>
+
+      <g transform="translate(168,18)"><g class="bt-mod">
+        <rect x="0" y="14" width="142" height="126" rx="16" class="bt-side"/>
+        <rect x="0" y="0" width="142" height="126" rx="16" class="bt-top"/>
+        <circle cx="71" cy="54" r="30" fill="#E9BE55"/>
+        <text x="71" y="100">STANDARD</text>
+      </g></g>
+
+      <g transform="translate(318,18)"><g class="bt-mod">
+        <rect x="0" y="14" width="142" height="126" rx="16" class="bt-side"/>
+        <rect x="0" y="0" width="142" height="126" rx="16" class="bt-top"/>
+        <circle cx="71" cy="54" r="30" fill="#FBFAF4" stroke="#D9C9A8"/>
+        <text x="71" y="100">BLANK</text>
+      </g></g>
+
+      <g transform="translate(468,18)"><g class="bt-mod">
+        <rect x="0" y="14" width="142" height="126" rx="16" class="bt-side"/>
+        <rect x="0" y="0" width="142" height="126" rx="16" class="bt-top"/>
+        <circle cx="71" cy="54" r="30" fill="#EFA94A"/>
+        <text x="71" y="100">SAMPLE 1</text>
+      </g></g>
+
+      <g transform="translate(618,18)"><g class="bt-mod">
+        <rect x="0" y="14" width="142" height="126" rx="16" class="bt-side"/>
+        <rect x="0" y="0" width="142" height="126" rx="16" class="bt-top"/>
+        <circle cx="71" cy="54" r="30" fill="#EFA94A"/>
+        <text x="71" y="100">SAMPLE 2</text>
+      </g></g>
+
+      <g transform="translate(768,18)">
+        <rect x="0" y="0" width="142" height="126" rx="16" class="bt-ghost"/>
+        <text x="71" y="76" style="font-size:26px" fill="#C9B48A" text-anchor="middle">+</text>
+        <text x="71" y="100" style="font-size:8.5px;font-weight:600;letter-spacing:1.5px;fill:#8A7C63;text-anchor:middle">OPEN</text>
+      </g>
+
+      <g stroke="#C9B48A" stroke-width="1">
+        <rect x="413" y="162" width="34" height="18" fill="#FBFAF4"/>
+        <rect x="447" y="162" width="34" height="18" fill="#E9BE55"/>
+        <rect x="481" y="162" width="34" height="18" fill="#E2871C"/>
+      </g>
+    </g>
+
+    <text x="36" y="272" style="font-size:13px;font-weight:600;letter-spacing:.09em;fill:#241F19">five units · one card · one pour</text>
+  </svg>
+
+  <!-- rows -->
+  <div class="bt-sec bt-list">
+    <div class="bt-hint">click a row for the reason</div>
+
+    <table class="bt-tbl">
+      <colgroup>
+        <col style="width:188px"><col><col style="width:112px"><col style="width:214px"><col style="width:22px">
+      </colgroup>
+      <tbody>
+
+        <tr class="bt-row" data-bt-row>
+          <td class="bt-td">
+            <svg viewBox="0 0 168 48" style="width:168px" aria-hidden="true">
+              <circle cx="16" cy="24" r="9" fill="#EDE3CE" stroke="#CBB894" stroke-dasharray="3 3"/>
+              <circle cx="50" cy="24" r="9" fill="#EDE3CE" stroke="#CBB894" stroke-dasharray="3 3"/>
+              <circle cx="84" cy="24" r="9" fill="#EDE3CE" stroke="#CBB894" stroke-dasharray="3 3"/>
+              <circle cx="118" cy="24" r="9" fill="#EDE3CE" stroke="#CBB894" stroke-dasharray="3 3"/>
+              <circle cx="152" cy="24" r="9" fill="#EDE3CE" stroke="#CBB894" stroke-dasharray="3 3"/>
+            </svg>
+          </td>
+          <td class="bt-td"><div class="bt-see"><span class="bt-n">01</span><b>Nothing lights up</b> — not even the quality spot</div></td>
+          <td class="bt-td"><span class="bt-pill bt-no">not usable</span></td>
+          <td class="bt-td"><div class="bt-do"><b>Discard the card.</b></div></td>
+          <td class="bt-td bt-chev"><span class="bt-plus">+</span><span class="bt-minus">–</span></td>
+        </tr>
+        <tr class="bt-detail" style="display:none">
+          <td colspan="5" style="padding:0 10px 16px">
+            <div class="bt-more"><p>The quality unit holds <b>saturating</b> ligand, so its colour does not depend on the sample or on the weather. If it stays blank, the cells never revived, the pathway did not survive, or the paper was never wetted — all failures on the card's side.</p></div>
+          </td>
+        </tr>
+
+        <tr class="bt-row" data-bt-row>
+          <td class="bt-td">
+            <svg viewBox="0 0 168 48" style="width:168px" aria-hidden="true">
+              <circle cx="16" cy="24" r="9" fill="#E2871C"/>
+              <circle cx="50" cy="24" r="9" fill="#FBFAF4" stroke="#CBB894" stroke-dasharray="3 3"/>
+              <circle cx="84" cy="24" r="9" fill="#FBFAF4" stroke="#D9C9A8"/>
+              <circle cx="118" cy="24" r="9" fill="#EFDCA8"/>
+              <circle cx="152" cy="24" r="9" fill="#EFDCA8"/>
+            </svg>
+          </td>
+          <td class="bt-td"><div class="bt-see"><span class="bt-n">02</span>Quality spot colours, <b>standard shows no colour at all</b></div></td>
+          <td class="bt-td"><span class="bt-pill bt-no">not usable</span></td>
+          <td class="bt-td"><div class="bt-do"><b>Discard the card.</b></div></td>
+          <td class="bt-td bt-chev"><span class="bt-plus">+</span><span class="bt-minus">–</span></td>
+        </tr>
+        <tr class="bt-detail" style="display:none">
+          <td colspan="5" style="padding:0 10px 16px">
+            <div class="bt-more"><p>The standard is the only spot whose answer is <b>known in advance</b>, so it is what turns a colour into a number under that day's conditions. Losing it is rare — it would mean the reagent was never deposited, or degraded in a unit stored too warm — but it cannot be worked around: with nothing to calibrate against, the card is silent. The quality spot cannot stand in, because it is saturated and only ever says "alive".</p></div>
+          </td>
+        </tr>
+
+        <tr class="bt-row" data-bt-row>
+          <td class="bt-td">
+            <svg viewBox="0 0 168 48" style="width:168px" aria-hidden="true">
+              <circle cx="16" cy="24" r="9" fill="#E2871C"/>
+              <circle cx="50" cy="24" r="9" fill="#E9BE55"/>
+              <circle cx="84" cy="24" r="9" fill="#EADFBF" stroke="#D9C9A8"/>
+              <circle cx="118" cy="24" r="9" fill="#E8A94F"/>
+              <circle cx="152" cy="24" r="9" fill="#E8A94F"/>
+              <rect x="0" y="2" width="168" height="44" rx="8" fill="#C9A227" opacity=".28"/>
+              <circle cx="158" cy="10" r="7" fill="#FFFDF6" stroke="#C9B48A"/>
+              <line x1="154.5" y1="10" x2="161.5" y2="10" stroke="#A08155" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </td>
+          <td class="bt-td"><div class="bt-see"><span class="bt-n">03</span><b>The whole card looks yellow</b>; blank darker than the paper</div></td>
+          <td class="bt-td"><span class="bt-pill bt-ok">usable</span></td>
+          <td class="bt-td"><div class="bt-do"><b>Photograph and upload.</b></div></td>
+          <td class="bt-td bt-chev"><span class="bt-plus">+</span><span class="bt-minus">–</span></td>
+        </tr>
+        <tr class="bt-detail" style="display:none">
+          <td colspan="5" style="padding:0 10px 16px">
+            <div class="bt-more"><p>Leachate and cells add a <b>common</b> background over every spot. Anything common is subtracted once by the software; the result is read as a <b>ratio</b>, so a uniform tint changes nothing. This is the case where the card looks wrong and is not.</p></div>
+          </td>
+        </tr>
+
+        <tr class="bt-row" data-bt-row>
+          <td class="bt-td">
+            <svg viewBox="0 0 168 48" style="width:168px" aria-hidden="true">
+              <circle cx="16" cy="24" r="9" fill="#E2871C"/>
+              <circle cx="50" cy="24" r="9" fill="#E9BE55"/>
+              <circle cx="84" cy="24" r="9" fill="#FBFAF4" stroke="#D9C9A8"/>
+              <circle cx="118" cy="24" r="9" fill="#EFA94A"/>
+              <circle cx="152" cy="24" r="9" fill="#F7DCB4"/>
+            </svg>
+          </td>
+          <td class="bt-td"><div class="bt-see"><span class="bt-n">04</span><b>The two samples differ clearly</b> in depth</div></td>
+          <td class="bt-td"><span class="bt-pill bt-ok">usable</span></td>
+          <td class="bt-td"><div class="bt-do"><b>Photograph and upload.</b></div></td>
+          <td class="bt-td bt-chev"><span class="bt-plus">+</span><span class="bt-minus">–</span></td>
+        </tr>
+        <tr class="bt-detail" style="display:none">
+          <td colspan="5" style="padding:0 10px 16px">
+            <div class="bt-more"><p>The two units carry receptors for <b>two different ascarosides</b>, released in different proportions by free-living and by plant-parasitic nematodes. The <b>difference is the measurement</b>, not a fault — which is why neither spot is judged on its own depth.</p></div>
+          </td>
+        </tr>
+
+        <tr class="bt-row" data-bt-row>
+          <td class="bt-td">
+            <svg viewBox="0 0 168 56" style="width:168px" aria-hidden="true">
+              <rect x="0" y="4" width="72" height="48" rx="9" fill="#FCF8EE" stroke="#D9C9A8"/>
+              <circle cx="36" cy="28" r="15" fill="#EFA94A"/>
+              <g class="bt-dust">
+                <circle cx="30" cy="22" r="2.4" fill="#8A7C63"/>
+                <circle cx="40" cy="30" r="2" fill="#8A7C63"/>
+                <circle cx="34" cy="33" r="1.7" fill="#8A7C63"/>
+              </g>
+              <g class="bt-brush" stroke="#A08155" stroke-width="1.4" fill="none" stroke-linecap="round">
+                <path d="M52 12c6 4 8 9 6 13"/>
+              </g>
+              <text x="58" y="46" style="font-size:9px;font-weight:700" fill="#4E6B33">✓</text>
+
+              <rect x="86" y="4" width="72" height="48" rx="9" fill="#FCF8EE" stroke="#D9C9A8"/>
+              <circle cx="122" cy="28" r="15" fill="#EFA94A"/>
+              <line x1="110" y1="17" x2="134" y2="39" stroke="#6B5B45" stroke-width="2" stroke-linecap="round"/>
+              <line x1="118" y1="20" x2="128" y2="20" stroke="#6B5B45" stroke-width="1.4" stroke-linecap="round" opacity=".7"/>
+              <text x="144" y="46" style="font-size:9px;font-weight:700" fill="#95382B">✕</text>
+            </svg>
+          </td>
+          <td class="bt-td"><div class="bt-see"><span class="bt-n">05</span>Dust or a fibre on a spot &nbsp;|&nbsp; ink or a scratch across it</div></td>
+          <td class="bt-td"><div class="bt-pillrow">
+            <span class="bt-pill bt-ok">brush off</span>
+            <span class="bt-pill bt-no">discard</span>
+          </div></td>
+          <td class="bt-td"><div class="bt-do"><b>Brush it off and re-shoot</b> / <b>discard.</b></div></td>
+          <td class="bt-td bt-chev"><span class="bt-plus">+</span><span class="bt-minus">–</span></td>
+        </tr>
+        <tr class="bt-detail" style="display:none">
+          <td colspan="5" style="padding:0 10px 16px">
+            <div class="bt-more"><p>A particle resting on the surface only <b>shades</b> the spot — it can be removed and the spot underneath is untouched. A stain or a cut has <b>entered the paper</b> and changed the cell layer, so the colour no longer reports what the cells did. Same appearance, different verdict: what matters is whether the damage sits <b>on</b> the card or <b>in</b> it.</p></div>
+          </td>
+        </tr>
+
+        <tr class="bt-row" data-bt-row>
+          <td class="bt-td" style="border-bottom:none">
+            <svg viewBox="0 0 168 56" style="width:168px" aria-hidden="true">
+              <rect x="0" y="0" width="110" height="56" rx="10" fill="#FCF8EE" stroke="#D9C9A8"/>
+              <rect x="14" y="16" width="26" height="18" fill="#F7F1E2" stroke="#DCCBA6"/>
+              <rect x="40" y="16" width="26" height="18" fill="#F4EAD4" stroke="#DCCBA6"/>
+              <rect x="66" y="16" width="26" height="18" fill="#F1E4C7" stroke="#DCCBA6"/>
+              <text x="92" y="46" style="font-size:9px;font-weight:700" fill="#95382B">✕</text>
+              <g stroke="#C08A22" stroke-width="1.2" stroke-linecap="round" opacity=".85">
+                <circle cx="126" cy="18" r="5" fill="none"/>
+                <path d="M126 8v-4M126 32v4M116 18h-4M140 18h4M119 11l-3-3M133 25l3 3M133 11l3-3M119 25l-3 3"/>
+              </g>
+            </svg>
+          </td>
+          <td class="bt-td" style="border-bottom:none"><div class="bt-see"><span class="bt-n">06</span><b>Reference strip has faded</b> — the three tones have flattened</div></td>
+          <td class="bt-td" style="border-bottom:none"><span class="bt-pill bt-no">not usable</span></td>
+          <td class="bt-td" style="border-bottom:none"><div class="bt-do"><b>Discard; store away from light.</b></div></td>
+          <td class="bt-td bt-chev" style="border-bottom:none"><span class="bt-plus">+</span><span class="bt-minus">–</span></td>
+        </tr>
+        <tr class="bt-detail" style="display:none">
+          <td colspan="5" style="padding:0 10px 16px">
+            <div class="bt-more"><p>The three patches are the only <b>fixed</b> reference in the photograph, and their values are known from the laboratory. Light does not shift them, it <b>flattens</b> them: the three tones drift toward one another, which is visible without any comparison — unlike a colour cast, which nobody can judge by eye without a reference. Once flat, they can no longer separate illumination from the card's own colour.</p></div>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  var root = document.getElementById('nk-bt');
+  if(!root) return;
+  var rows = root.querySelectorAll('tr[data-bt-row]');
+  rows.forEach(function(row){
+    row.addEventListener('click', function(){
+      var detail = row.nextElementSibling;
+      var open = detail.style.display !== 'none';
+      rows.forEach(function(r){
+        r.classList.remove('open');
+        if(r.nextElementSibling && r.nextElementSibling.classList.contains('bt-detail')){
+          r.nextElementSibling.style.display = 'none';
+        }
+      });
+      if(!open){
+        detail.style.display = '';
+        row.classList.add('open');
+      }
+    });
+  });
+})();
+</script>

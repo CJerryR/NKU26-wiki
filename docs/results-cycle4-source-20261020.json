@@ -1,0 +1,19 @@
+{
+  "source_url": "https://nankai.feishu.cn/wiki/E41twj1kxix4P8kTaNEcdbgsn4c",
+  "source_title": "result部分补充",
+  "author": "郑士钊",
+  "scope": "3.4 Cycle 4, seven verbatim paragraphs, original HTML attachment; References renumbered to 3.5 with original anchor retained",
+  "attachment": "result 新插图.html",
+  "attachment_sha256": "4698375184b0665b1c4515db1474fa5244c37fbe7dba723b9508655f1caf6b09",
+  "paragraphs": [
+    "A user does three things: pours in the soil leachate, looks at one spot, takes a photograph. Nothing else.There is no blank to prepare, no standard to add, no arithmetic at the end, because the judgement a trained operator would make now sits in the card, and the conversion sits in the software. Neither of them rests with the person holding it.",
+    "The earlier cycles settled whether the colour develops strongly enough to be read. This one asks whether that reading can be trusted. Five units do not make the colour look better. They give every card its own evidence of reliability at the moment it is used, instead of a claim we established once in the laboratory and then assumed forever.",
+    "The principle is simple, though the user never has to know it. One paper carries one 5 mm spot; five units sit side by side and make a single card. The first is a quality control: the same strain, loaded with saturating ligand, so it colours whatever the sample happens to be. It answers one question only, whether the card still works. No colour means a defective card. Colour means the failure, if there is one, lies somewhere else. The second carries a known amount of ligand, deliberately below saturation, so its colour shifts with temperature and matrix and can rescale the reading to the conditions of the day. The third is a blank: the same chassis with its pigment pathway switched off. It takes away what the leachate brings, and the faint yellow of the cells themselves. The last two carry two strains with different receptor profiles, and give the model the pair of readings it needs.",
+    "All five share one inlet. A single pour fills them together, so every spot sees the same liquid at the same moment. Reference colours are printed on the body, which lets the camera and the software handle the correction afterwards.",
+    "For the user, that is where it ends: at the photograph. The group can also grow. If later work needs more signals resolved, units six and seven simply join the row.",
+    "We plan to characterise the group first with ascariside solutions across a concentration range, then with soil leachate, and to build the recognition and analysis software on the images those tests produce. All of it belongs to the next stage.",
+    "What we want is not a cleverer strip but a different division of labour. The card takes on the judgement, and leaves the person nothing to get wrong. If a grower can pour, look and photograph, and a laboratory conclusion arrives at the field, then using it no longer depends on training. We are a long way from that day. The joining, the assembly, the first real leachate are all still ahead. But the shape of the path is clear, and we hope it is one that any soil, any season and any pair of hands could take, and that a colour means the same thing every time it is seen."
+  ],
+  "status": "Author wording preserved including future-work limits; existing scientific review status unchanged; layout deferred per user request",
+  "embedding_note": "Original attachment body retained; UTF-8 charset metadata prepended to prevent punctuation mojibake in standalone iframe."
+}

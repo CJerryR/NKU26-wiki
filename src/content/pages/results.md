@@ -525,7 +525,7 @@ Mans R, Wijsman M, Daran-Lapujade P, Daran JM. A protocol for introduction of mu
 
 <p>Additionally, we self-fabricate a vacuum filtration spotting device (Figure 4). This device can rapidly draw the high-viscosity protectant suspension into the interior of the test strip substrate, which not only significantly improves spotting efficiency but also achieves standardized control over the cell-loading amount per individual test strip.</p>
 
-[![](https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-1020073bd61e1101-00.json)](https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-1020073bd61e1101-00.json "Open full-resolution image")
+[![](https://static.igem.wiki/teams/6303/wiki/release-20261020/results-spotting-device-20751c382bee.json)](https://static.igem.wiki/teams/6303/wiki/release-20261020/results-spotting-device-20751c382bee.json "Open full-resolution image")
 
 :::caption
 
@@ -593,7 +593,31 @@ Mans R, Wijsman M, Daran-Lapujade P, Daran JM. A protocol for introduction of mu
 
 <p>At this point, we have closed the loop on test strip fabrication and application, establishing a solid foundation for subsequent on-site rapid detection of soil samples.</p>
 
-### 3.4 References {#results-dbtl3-references toc="References"}
+### 3.4 Cycle 4: from a strip to a test {#results-3-4 toc="Cycle 4: from a strip to a test"}
+
+#### 3.4.1 Design {#results-3-4-design toc="Design"}
+
+A user does three things: pours in the soil leachate, looks at one spot, takes a photograph. Nothing else.There is no blank to prepare, no standard to add, no arithmetic at the end, because the judgement a trained operator would make now sits in the card, and the conversion sits in the software. Neither of them rests with the person holding it.
+
+The earlier cycles settled whether the colour develops strongly enough to be read. This one asks whether that reading can be trusted. Five units do not make the colour look better. They give every card its own evidence of reliability at the moment it is used, instead of a claim we established once in the laboratory and then assumed forever.
+
+The principle is simple, though the user never has to know it. One paper carries one 5 mm spot; five units sit side by side and make a single card. The first is a quality control: the same strain, loaded with saturating ligand, so it colours whatever the sample happens to be. It answers one question only, whether the card still works. No colour means a defective card. Colour means the failure, if there is one, lies somewhere else. The second carries a known amount of ligand, deliberately below saturation, so its colour shifts with temperature and matrix and can rescale the reading to the conditions of the day. The third is a blank: the same chassis with its pigment pathway switched off. It takes away what the leachate brings, and the faint yellow of the cells themselves. The last two carry two strains with different receptor profiles, and give the model the pair of readings it needs.
+
+All five share one inlet. A single pour fills them together, so every spot sees the same liquid at the same moment. Reference colours are printed on the body, which lets the camera and the software handle the correction afterwards.
+
+For the user, that is where it ends: at the photograph. The group can also grow. If later work needs more signals resolved, units six and seven simply join the row.
+
+<iframe title="Five-unit test card design and reading guide" src="/embeds/results-cycle4-20261020/index.html" loading="lazy" sandbox="allow-scripts" style="width:100%;height:1050px;border:0"></iframe>
+
+#### 3.4.2 Build & Test {#results-3-4-build-test toc="Build & Test"}
+
+We plan to characterise the group first with ascariside solutions across a concentration range, then with soil leachate, and to build the recognition and analysis software on the images those tests produce. All of it belongs to the next stage.
+
+#### 3.4.3 Learn {#results-3-4-learn toc="Learn"}
+
+What we want is not a cleverer strip but a different division of labour. The card takes on the judgement, and leaves the person nothing to get wrong. If a grower can pour, look and photograph, and a laboratory conclusion arrives at the field, then using it no longer depends on training. We are a long way from that day. The joining, the assembly, the first real leachate are all still ahead. But the shape of the path is clear, and we hope it is one that any soil, any season and any pair of hands could take, and that a colour means the same thing every time it is seen.
+
+### 3.5 References {#results-dbtl3-references toc="References"}
 
 <p>Rachel A. Miller, Galen Brown, Elsa Barron, Jamie L. Luther, Marya Lieberman, Holly V. Goodson; Development of a paper-immobilized yeast biosensor for the detection of physiological concentrations of doxycycline in technology-limited settings. <em>Anal. Methods</em> 2020; 12 (16): 2123–2132. <a href="https://doi.org/10.1039/d0ay00001a">https://doi.org/10.1039/d0ay00001a</a></p>
 

@@ -1700,5 +1700,17 @@
     "chunks": [
       "https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-eb951d54da7d2978-00.json"
     ]
+  },
+  "https://static.igem.wiki/teams/6303/wiki/release-20261020/results-spotting-device-20751c382bee.json": {
+    "mime_type": "image/jpeg",
+    "original_name": "results-spotting-device-20751c382bee.jpg",
+    "source_dimensions": [
+      1260,
+      1673
+    ],
+    "sha256": "20751c382bee0a6c489c7db093653b185d1686805b83dd11f0bc2bb4a9038465",
+    "chunks": [
+      "https://static.igem.wiki/teams/6303/wiki/release-20261020/results-spotting-device-20751c382bee.json"
+    ]
   }
 }
