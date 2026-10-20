@@ -690,265 +690,266 @@
       "_template": "heading",
       "level": 2,
       "text": "DBTL-3: test strip development and productization",
-      "attributes": "#dbtl-3-test-strip-development-and-productization"
+      "attributes": "#dbtl-3-test-strip-development-and-productization toc=\"DBTL-3: test strip development and productization\""
     },
     {
       "_template": "text",
-      "body": "<section class=\"author-manuscript\" lang=\"en\">"
-    },
-    {
-      "_template": "text",
-      "body": "<p style=\"text-align:justify;\">Building upon the successful construction of engineered chassis strains through previous DBTL cycles, and integrating feedback from <strong>Human Practices (HP)</strong> surveys alongside practical application scenarios, we shifted our focus to another core objective of the project: developing a low-cost, user-friendly, and intuitive colorimetric detection platform. Therefore, this section focuses on the fabrication process and color development workflow of the engineered yeast-based test strips, encompassing three sub-cycles: substrate determination, immobilization optimization, and color development rate optimization. </p>"
+      "body": "<p>Building upon the successful construction of engineered chassis strains through previous DBTL cycles, and integrating feedback from <strong>Human Practices (HP)</strong> surveys alongside practical application scenarios, we shifted our focus to another core objective of the project: developing a low-cost, user-friendly, and intuitive colorimetric detection platform. Therefore, this section focuses on the fabrication process and color development workflow of the engineered yeast-based test strips, encompassing three sub-cycles: substrate determination, immobilization optimization, and color development rate optimization. </p>"
     },
     {
       "_template": "heading",
       "level": 3,
       "text": "3.1 Cycle 1: substrate determination",
-      "attributes": "#results-3-1 toc=\"3.1 Cycle 1: substrate determination\""
+      "attributes": "#results-3-1 toc=\"Cycle 1: substrate determination\""
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:justify;\">We reason that an ideal test strip substrate should possess high cell-loading capacity, excellent mechanical stability, reliable batch-to-batch consistency, and favorable water-retaining properties. Therefore, we initiate this cycle.</p>"
+      "body": "<p>We reason that an ideal test strip substrate should possess high cell-loading capacity, excellent mechanical stability, reliable batch-to-batch consistency, and favorable water-retaining properties. Therefore, we initiate this cycle.</p>"
     },
     {
-      "_template": "phase",
-      "kind": "design",
-      "body": "<p style=\"text-align:left;\">Design</p>"
-    },
-    {
-      "_template": "text",
-      "body": "<p style=\"text-align:justify;\">Based on the criteria, we select seven candidate substrates with representative properties: qualitative filter paper(Cellulose), weighing paper (sulfite paper), lens cleaning paper(Cotton fiber), laboratory wipes(Virgin wood pulp), thin glass fiber filter paper (Whatman™ GF/A), thick glass fiber filter paper (Whatman™ GF/B), and cellulose acetate filter paper.</p>"
+      "_template": "heading",
+      "level": 4,
+      "text": "3.1.1 Design",
+      "attributes": "#results-3-1-design toc=\"Design\""
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:justify;\">We suspend the cells in the protectant (glucose-free <strong>yeast extract–peptone–dextrose (YPD)</strong> + sucrose) and spot them onto each substrate. Following pre-freezing, lyophilization, recovery, and elution, the samples are plated for colony counting (defined as cell elution rate) to evaluate the binding affinity between each substrate and the yeast cells.</p>"
+      "body": "<p>Based on the criteria, we select seven candidate substrates with representative properties: qualitative filter paper(Cellulose), weighing paper (sulfite paper), lens cleaning paper(Cotton fiber), laboratory wipes(Virgin wood pulp), thin glass fiber filter paper (Whatman™ GF/A), thick glass fiber filter paper (Whatman™ GF/B), and cellulose acetate filter paper.</p>"
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:justify;\">Subsequently, for the substrates demonstrating superior properties, we conduct copper sulfate solution wicking experiments to evaluate their water absorption capacity.</p>"
-    },
-    {
-      "_template": "phase",
-      "kind": "build-test",
-      "body": "<p style=\"text-align:left;\">Build &amp; Test</p>"
+      "body": "<p>We suspend the cells in the protectant (glucose-free <strong>yeast extract–peptone–dextrose (YPD)</strong> + sucrose) and spot them onto each substrate. Following pre-freezing, lyophilization, recovery, and elution, the samples are plated for colony counting (defined as cell elution rate) to evaluate the binding affinity between each substrate and the yeast cells.</p>"
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:justify;\">First, we evaluate the cell-binding capacity of each substrate. The results are summarized in Table 1 below:</p>"
+      "body": "<p>Subsequently, for the substrates demonstrating superior properties, we conduct copper sulfate solution wicking experiments to evaluate their water absorption capacity.</p>"
+    },
+    {
+      "_template": "heading",
+      "level": 4,
+      "text": "3.1.2 Build & Test",
+      "attributes": "#results-3-1-build-test toc=\"Build & Test\""
     },
     {
       "_template": "text",
-      "body": "<div class=\"author-table-scroll\"><table class=\"author-table\"><colgroup><col style=\"width:20.4792%\"><col style=\"width:22.1767%\"><col style=\"width:57.3441%\"></colgroup><tbody><tr><td colspan=\"1\"><p style=\"text-align:center;\">Substrate Type</p></td><td colspan=\"1\"><p style=\"text-align:center;\"><strong>cell elution rate</strong></p></td><td colspan=\"1\"><p style=\"text-align:center;\"><strong>Performance Characteristics</strong></p></td></tr><tr><td colspan=\"1\"><p style=\"text-align:center;\">Cellulose</p></td><td colspan=\"1\"><p style=\"text-align:center;\">8%</p></td><td colspan=\"1\"><p style=\"text-align:center;\">Easy to cut, stable structure, relatively uniform liquid absorption</p></td></tr><tr><td colspan=\"1\"><p style=\"text-align:center;\">sulfite paper</p></td><td colspan=\"1\"><p style=\"text-align:center;\">27%</p></td><td colspan=\"1\"><p style=\"text-align:center;\">Strongly hydrophobic surface, extremely poor liquid absorption, forms surface bulges after lyophilization</p></td></tr><tr><td colspan=\"1\"><p style=\"text-align:center;\">Cotton fiber</p></td><td colspan=\"1\"><p style=\"text-align:center;\">3%</p></td><td colspan=\"1\"><p style=\"text-align:center;\">Extremely thin and soft, difficult to handle, poor cell-loading capacity</p></td></tr><tr><td colspan=\"1\"><p style=\"text-align:center;\">Virgin wood pulp</p></td><td colspan=\"1\"><p style=\"text-align:center;\">10%</p></td><td colspan=\"1\"><p style=\"text-align:center;\">Poor uniformity, inconsistent physical structure, difficult to standardize specifications</p></td></tr><tr><td colspan=\"1\"><p style=\"text-align:center;\">GF/B</p></td><td colspan=\"1\"><p style=\"text-align:center;\">3.4%</p></td><td colspan=\"1\"><p style=\"text-align:center;\">High liquid-loading capacity</p></td></tr><tr><td colspan=\"1\"><p style=\"text-align:center;\">GF/A</p></td><td colspan=\"1\"><p style=\"text-align:center;\">23.7%</p></td><td colspan=\"1\"><p style=\"text-align:center;\">Slightly lower toughness, moderate liquid-loading capacity</p></td></tr><tr><td colspan=\"1\"><p style=\"text-align:center;\"> Cellulose acetate </p></td><td colspan=\"1\"><p style=\"text-align:center;\">38.0%</p></td><td colspan=\"1\"><p style=\"text-align:center;\">Brittle, susceptible to static electricity, low liquid-loading capacity</p></td></tr></tbody></table></div>"
+      "body": "<p>First, we evaluate the cell-binding capacity of each substrate. The results are summarized in Table 1 below:</p>"
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:center;\"><strong>Table 1.</strong><strong>Evaluation of cell-binding capacity across candidate substrates</strong></p>"
+      "body": "<div class=\"author-table-scroll\"><table class=\"author-table\"><colgroup><col style=\"width:20.4792%\"><col style=\"width:22.1767%\"><col style=\"width:57.3441%\"></colgroup><tbody><tr><td colspan=\"1\"><p>Substrate Type</p></td><td colspan=\"1\"><p><strong>cell elution rate</strong></p></td><td colspan=\"1\"><p><strong>Performance Characteristics</strong></p></td></tr><tr><td colspan=\"1\"><p>Cellulose</p></td><td colspan=\"1\"><p>8%</p></td><td colspan=\"1\"><p>Easy to cut, stable structure, relatively uniform liquid absorption</p></td></tr><tr><td colspan=\"1\"><p>sulfite paper</p></td><td colspan=\"1\"><p>27%</p></td><td colspan=\"1\"><p>Strongly hydrophobic surface, extremely poor liquid absorption, forms surface bulges after lyophilization</p></td></tr><tr><td colspan=\"1\"><p>Cotton fiber</p></td><td colspan=\"1\"><p>3%</p></td><td colspan=\"1\"><p>Extremely thin and soft, difficult to handle, poor cell-loading capacity</p></td></tr><tr><td colspan=\"1\"><p>Virgin wood pulp</p></td><td colspan=\"1\"><p>10%</p></td><td colspan=\"1\"><p>Poor uniformity, inconsistent physical structure, difficult to standardize specifications</p></td></tr><tr><td colspan=\"1\"><p>GF/B</p></td><td colspan=\"1\"><p>3.4%</p></td><td colspan=\"1\"><p>High liquid-loading capacity</p></td></tr><tr><td colspan=\"1\"><p>GF/A</p></td><td colspan=\"1\"><p>23.7%</p></td><td colspan=\"1\"><p>Slightly lower toughness, moderate liquid-loading capacity</p></td></tr><tr><td colspan=\"1\"><p> Cellulose acetate </p></td><td colspan=\"1\"><p>38.0%</p></td><td colspan=\"1\"><p>Brittle, susceptible to static electricity, low liquid-loading capacity</p></td></tr></tbody></table></div>"
+    },
+    {
+      "_template": "text",
+      "body": "<p><strong>Table 1.</strong><strong>Evaluation of cell-binding capacity across candidate substrates</strong></p>"
     },
     {
       "_template": "evidence",
-      "body": "<p style=\"text-align:left;\">Considering both the cell-binding capacity and the physical properties of each material, we select three substrates—GF/B, GF/A, and cellulose acetate—for the copper sulfate solution wicking experiment (Figure 1).</p>",
+      "body": "<p>Considering both the cell-binding capacity and the physical properties of each material, we select three substrates—GF/B, GF/A, and cellulose acetate—for the copper sulfate solution wicking experiment (Figure 1).</p>",
       "src": "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-e772d8a4854f55e5-00.json",
       "openOriginal": true,
-      "afterBody": "<p style=\"text-align:left;\">The results demonstrate that GF/B not only exhibits strong binding capacity with yeast cells but also possesses superior water absorption ability.Learn</p>",
+      "afterBody": "<p>The results demonstrate that GF/B not only exhibits strong binding capacity with yeast cells but also possesses superior water absorption ability.Learn</p>",
       "place": "right",
       "size": "standard",
       "figureAlt": "",
-      "figureCaption": "<p style=\"text-align:center;\" class=\"figure-caption\">Figure 1. Water absorption capacity evaluation of selected substrates（ insert image “Fig3.1.1”）</p>"
+      "figureCaption": "<p class=\"figure-caption\">Figure 1. Water absorption capacity evaluation of selected substrates（ insert image “Fig3.1.1”）</p>"
     },
     {
-      "_template": "phase",
-      "kind": "learn",
-      "body": "<p style=\"text-align:justify;\">Learn</p>"
-    },
-    {
-      "_template": "text",
-      "body": "<p style=\"text-align:justify;\">Based on the combined experimental results, Whatman™ GF/B thick glass fiber filter paper is selected as the final substrate for the test strip. GF/B demonstrates a liquid-loading capacity far exceeding other materials, allowing it to instantly absorb high-viscosity protectants without surface beading.</p>"
+      "_template": "heading",
+      "level": 4,
+      "text": "3.1.3 Learn",
+      "attributes": "#results-3-1-learn toc=\"Learn\""
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:justify;\">Through this cycle, we have identified a suitable substrate material for the test strip. Next, we need to explore appropriate immobilization methods to lay a solid foundation for visual color development, leading us into the next cycle.</p>"
+      "body": "<p>Based on the combined experimental results, Whatman™ GF/B thick glass fiber filter paper is selected as the final substrate for the test strip. GF/B demonstrates a liquid-loading capacity far exceeding other materials, allowing it to instantly absorb high-viscosity protectants without surface beading.</p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p>Through this cycle, we have identified a suitable substrate material for the test strip. Next, we need to explore appropriate immobilization methods to lay a solid foundation for visual color development, leading us into the next cycle.</p>"
     },
     {
       "_template": "heading",
       "level": 3,
       "text": "3.2 Cycle 2: immobilization optimization",
-      "attributes": "#results-3-2 toc=\"3.2 Cycle 2: immobilization optimization\""
+      "attributes": "#results-3-2 toc=\"Cycle 2: immobilization optimization\""
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:justify;\">Following the selection of the test strip substrate, efficiently, uniformly, and precisely immobilizing yeast cells onto the strip becomes critical to ensuring detection reproducibility. Traditional direct spotting often leads to lateral leakage, while high-viscosity cell suspensions are difficult to disperse evenly and quantify accurately. </p>"
+      "body": "<p>Following the selection of the test strip substrate, efficiently, uniformly, and precisely immobilizing yeast cells onto the strip becomes critical to ensuring detection reproducibility. Traditional direct spotting often leads to lateral leakage, while high-viscosity cell suspensions are difficult to disperse evenly and quantify accurately. </p>"
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:justify;\">To address this, we optimize immobilization across two dimensions—physical spatial confinement and biochemical/hardware sample loading. By creating hydrophobic barrier masks, refining protectant formulations, and introducing a vacuum-assisted filtration device, we achieve high-efficiency, stable cell immobilization on the test strip.</p>"
+      "body": "<p>To address this, we optimize immobilization across two dimensions—physical spatial confinement and biochemical/hardware sample loading. By creating hydrophobic barrier masks, refining protectant formulations, and introducing a vacuum-assisted filtration device, we achieve high-efficiency, stable cell immobilization on the test strip.</p>"
     },
     {
-      "_template": "phase",
-      "kind": "design",
-      "body": "<p style=\"text-align:left;\">Design</p>"
-    },
-    {
-      "_template": "text",
-      "body": "<p style=\"text-align:justify;\">To refine the yeast cell immobilization process, we use adhesive masks to define the cell-immobilization zones and apply ergo.® 5300 instant adhesive vapor deposition to fabricate localized hydrophilic areas on the filter paper, thereby resolving issues such as lateral wicking and uneven cell distribution. </p>"
+      "_template": "heading",
+      "level": 4,
+      "text": "3.2.1 Design",
+      "attributes": "#results-3-2-design toc=\"Design\""
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:justify;\">Meanwhile, referencing literature<sup> [1]</sup>, we finalize the protectant formulation: sodium alginate (to increase viscosity), trehalose and glycerol (to provide cryoprotection), sodium glutamate (to protect cell membrane stability), and mannitol (to fill the sodium alginate matrix after lyophilization and prevent powdering). We also design a water loss experiment to verify the water-retaining efficacy of this protectant.</p>"
+      "body": "<p>To refine the yeast cell immobilization process, we use adhesive masks to define the cell-immobilization zones and apply ergo.® 5300 instant adhesive vapor deposition to fabricate localized hydrophilic areas on the filter paper, thereby resolving issues such as lateral wicking and uneven cell distribution. </p>"
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:justify;\">In addition, we design a vacuum-assisted filtration spotting device to resolve the issue of high-viscosity protectant residues.</p>"
+      "body": "<p>Meanwhile, referencing literature<sup> [1]</sup>, we finalize the protectant formulation: sodium alginate (to increase viscosity), trehalose and glycerol (to provide cryoprotection), sodium glutamate (to protect cell membrane stability), and mannitol (to fill the sodium alginate matrix after lyophilization and prevent powdering). We also design a water loss experiment to verify the water-retaining efficacy of this protectant.</p>"
     },
     {
-      "_template": "phase",
-      "kind": "build-test",
-      "body": "<p style=\"text-align:left;\">Build &amp; Test</p>"
+      "_template": "text",
+      "body": "<p>In addition, we design a vacuum-assisted filtration spotting device to resolve the issue of high-viscosity protectant residues.</p>"
+    },
+    {
+      "_template": "heading",
+      "level": 4,
+      "text": "3.2.2 Build & Test",
+      "attributes": "#results-3-2-build-test toc=\"Build & Test\""
     },
     {
       "_template": "evidence",
-      "body": "<p style=\"text-align:justify;\">First, we develop a hydrophobic coating fumigation device. Through mask shielding and cyanoacrylate vapor fumigation processes, we successfully fabricate test strips with a hydrophilic immobilization zone of 5 mm in diameter. The results demonstrate that the hydrophobic test strips exhibit good hydrophobic effects across different metal salt solutions (Figure 2), ensuring that our engineered bacteria are target-immobilized within the intended hydrophilic area.</p>",
+      "body": "<p>First, we develop a hydrophobic coating fumigation device. Through mask shielding and cyanoacrylate vapor fumigation processes, we successfully fabricate test strips with a hydrophilic immobilization zone of 5 mm in diameter. The results demonstrate that the hydrophobic test strips exhibit good hydrophobic effects across different metal salt solutions (Figure 2), ensuring that our engineered bacteria are target-immobilized within the intended hydrophilic area.</p>",
       "src": "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-c90ad92ed801865f-00.json",
       "openOriginal": true,
       "place": "below",
       "size": "wide",
       "figureAlt": "",
-      "figureCaption": "<p style=\"text-align:justify;\" class=\"figure-caption\">Figure 2. Fumigation coating device (a), hydrophobic effect demonstration (b), circular hydrophilic zone demonstration (c). For (c), the surrounding experimental groups are created by placing the hydrophobic-treated test strips into solutions containing iron(III) chloride, cobalt(II) chloride, copper(II) sulfate, and manganese(II) chloride, respectively.</p>"
+      "figureCaption": "<p class=\"figure-caption\">Figure 2. Fumigation coating device (a), hydrophobic effect demonstration (b), circular hydrophilic zone demonstration (c). For (c), the surrounding experimental groups are created by placing the hydrophobic-treated test strips into solutions containing iron(III) chloride, cobalt(II) chloride, copper(II) sulfate, and manganese(II) chloride, respectively.</p>"
     },
     {
       "_template": "evidence",
-      "body": "<p style=\"text-align:justify;\">Next, to verify the water-retaining performance of the protectant, we conduct dehydration kinetics and full-process lyophilization tests on it. The results show (Figure 3) that the new protectant forms a structurally intact film matrix after drying and effectively prevents collapse and powdering; furthermore, its smooth and uniform dehydration rate avoids physical damage to yeast cell membranes caused by severe water loss, thereby significantly enhancing cell structural integrity and survival rate during lyophilization.</p>",
+      "body": "<p>Next, to verify the water-retaining performance of the protectant, we conduct dehydration kinetics and full-process lyophilization tests on it. The results show (Figure 3) that the new protectant forms a structurally intact film matrix after drying and effectively prevents collapse and powdering; furthermore, its smooth and uniform dehydration rate avoids physical damage to yeast cell membranes caused by severe water loss, thereby significantly enhancing cell structural integrity and survival rate during lyophilization.</p>",
       "src": "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-eab5bea814fd5141-00.json",
       "openOriginal": true,
       "place": "right",
       "size": "standard",
       "figureAlt": "",
-      "figureCaption": "<p style=\"text-align:center;\" class=\"figure-caption\">Figure 3. Water loss rate curve.</p>"
+      "figureCaption": "<p class=\"figure-caption\">Figure 3. Water loss rate curve.</p>"
     },
     {
       "_template": "evidence",
-      "body": "<p style=\"text-align:justify;\">Additionally, we self-fabricate a vacuum filtration spotting device (Figure 4). This device can rapidly draw the high-viscosity protectant suspension into the interior of the test strip substrate, which not only significantly improves spotting efficiency but also achieves standardized control over the cell-loading amount per individual test strip.</p>",
+      "body": "<p>Additionally, we self-fabricate a vacuum filtration spotting device (Figure 4). This device can rapidly draw the high-viscosity protectant suspension into the interior of the test strip substrate, which not only significantly improves spotting efficiency but also achieves standardized control over the cell-loading amount per individual test strip.</p>",
       "src": "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-1020073bd61e1101-00.json",
       "openOriginal": true,
       "place": "left",
       "size": "standard",
       "figureAlt": "",
-      "figureCaption": "<p style=\"text-align:center;\" class=\"figure-caption\">Figure 4. Schematic of the spotting process</p>"
+      "figureCaption": "<p class=\"figure-caption\">Figure 4. Schematic of the spotting process</p>"
     },
     {
       "_template": "evidence",
-      "body": "<p style=\"text-align:justify;\">Integrating all the above methods and approaches, we prepare and obtain a batch of cell-loaded freeze-dried test strips available for downstream engineering (Figure 5).</p>",
+      "body": "<p>Integrating all the above methods and approaches, we prepare and obtain a batch of cell-loaded freeze-dried test strips available for downstream engineering (Figure 5).</p>",
       "src": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-ea1a49677396-fig3-1-5.avif",
       "openOriginal": true,
       "place": "below",
       "size": "standard",
       "figureAlt": "",
-      "figureCaption": "<p style=\"text-align:center;\" class=\"figure-caption\">Figure 5. Overview of color-developing cell-loaded test strips.</p>"
+      "figureCaption": "<p class=\"figure-caption\">Figure 5. Overview of color-developing cell-loaded test strips.</p>"
     },
     {
-      "_template": "phase",
-      "kind": "learn",
-      "body": "<p style=\"text-align:left;\">Learn</p>"
+      "_template": "heading",
+      "level": 4,
+      "text": "3.2.3 Learn",
+      "attributes": "#results-3-2-learn toc=\"Learn\""
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:justify;\">In this cycle, combining gas-phase hydrophobic coating with the refined lyophilization protectant successfully confines the cells within a uniform circular area; the vacuum-assisted spotting device eliminates liquid residue inside pipette tips, achieving controlled and quantitative cell-loading on the test strips; and we have successfully prepared freeze-dried live-cell test strips, as shown in Figure 5. Next, we officially proceed to optimize the color development rate of the test strips.</p>"
+      "body": "<p>In this cycle, combining gas-phase hydrophobic coating with the refined lyophilization protectant successfully confines the cells within a uniform circular area; the vacuum-assisted spotting device eliminates liquid residue inside pipette tips, achieving controlled and quantitative cell-loading on the test strips; and we have successfully prepared freeze-dried live-cell test strips, as shown in Figure 5. Next, we officially proceed to optimize the color development rate of the test strips.</p>"
     },
     {
       "_template": "heading",
       "level": 3,
       "text": "3.3 Cycle 3: color development rate optimization",
-      "attributes": "#results-3-3 toc=\"3.3 Cycle 3: color development rate optimization\""
+      "attributes": "#results-3-3 toc=\"Cycle 3: color development rate optimization\""
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:justify;\">After completing the fabrication of the freeze-dried test strips, we require them to undergo rapid resuscitation and color development; therefore, we initiate this cycle.</p>"
+      "body": "<p>After completing the fabrication of the freeze-dried test strips, we require them to undergo rapid resuscitation and color development; therefore, we initiate this cycle.</p>"
     },
     {
-      "_template": "phase",
-      "kind": "design",
-      "body": "<p style=\"text-align:left;\">Design</p>"
-    },
-    {
-      "_template": "text",
-      "body": "<p style=\"text-align:justify;\">To meet the requirements of rapid detection, freeze-dried cells must quickly emerge from their dormant state upon contact with liquid. First, to evaluate the feasibility of resuscitation, we immerse the freeze-dried test strips into <strong>yeast nitrogen base (YNB)</strong>-free <strong>synthetic complete (SC)</strong> medium and <strong>phosphate-buffered saline (PBS)</strong> solution, respectively, and assess the impact of the amine donor <strong>tryptophan (Trp)</strong> on color development stability. Next, focusing on the key limiting factors of the betaxanthin biosynthesis pathway, we systematically evaluate the effects of <strong>tyrosine (Tyr)</strong> concentration (precursor), surfactants (precursor amino acid uptake), antioxidant protectants, and glucose concentration (carbon source).</p>"
-    },
-    {
-      "_template": "phase",
-      "kind": "build-test",
-      "body": "<p style=\"text-align:left;\">Build &amp; Test</p>"
+      "_template": "heading",
+      "level": 4,
+      "text": "3.3.1 Design",
+      "attributes": "#results-3-3-design toc=\"Design\""
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:justify;\">First, we complete a continuous observation and recording of freeze-dried test strip resuscitation via time-lapse photography (Video 1).</p>"
+      "body": "<p>To meet the requirements of rapid detection, freeze-dried cells must quickly emerge from their dormant state upon contact with liquid. First, to evaluate the feasibility of resuscitation, we immerse the freeze-dried test strips into <strong>yeast nitrogen base (YNB)</strong>-free <strong>synthetic complete (SC)</strong> medium and <strong>phosphate-buffered saline (PBS)</strong> solution, respectively, and assess the impact of the amine donor <strong>tryptophan (Trp)</strong> on color development stability. Next, focusing on the key limiting factors of the betaxanthin biosynthesis pathway, we systematically evaluate the effects of <strong>tyrosine (Tyr)</strong> concentration (precursor), surfactants (precursor amino acid uptake), antioxidant protectants, and glucose concentration (carbon source).</p>"
+    },
+    {
+      "_template": "heading",
+      "level": 4,
+      "text": "3.3.2 Build & Test",
+      "attributes": "#results-3-3-build-test toc=\"Build & Test\""
     },
     {
       "_template": "text",
-      "body": "<figure class=\"results-timelapse\"><iframe title=\"Video 1. Observation of test strip resuscitation over 113 h\" src=\"https://video.igem.org/videos/embed/fFXuDzig2DWKhQPFLW2mnM\" allow=\"fullscreen\" loading=\"lazy\" sandbox=\"allow-scripts allow-same-origin\" style=\"width:100%;aspect-ratio:16/9;border:0\"></iframe><p style=\"text-align:center;\"><strong>Video 1. Observation of test strip resuscitation over 113 h</strong>（<strong> Insert video </strong><strong>“Video3.2.1”</strong>）</p></figure>"
+      "body": "<p>First, we complete a continuous observation and recording of freeze-dried test strip resuscitation via time-lapse photography (Video 1).</p>"
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:justify;\">Subsequently, we carry out multiple control experiments to further explore the optimal conditions for test strip color development, performing <strong>red–green–blue (RGB)</strong> blue-channel grayscale quantification using ImageJ (Figure 6).</p>"
+      "body": "<figure class=\"results-timelapse\"><iframe title=\"Video 1. Observation of test strip resuscitation over 113 h\" src=\"https://video.igem.org/videos/embed/fFXuDzig2DWKhQPFLW2mnM\" allow=\"fullscreen\" loading=\"lazy\" sandbox=\"allow-scripts allow-same-origin\" style=\"width:100%;aspect-ratio:16/9;border:0\"></iframe><p><strong>Video 1. Observation of test strip resuscitation over 113 h</strong>（<strong> Insert video </strong><strong>“Video3.2.1”</strong>）</p></figure>"
     },
     {
       "_template": "text",
-      "body": "<iframe class=\"author-screening-figure\" title=\"Reactivation medium screening\" src=\"/embeds/results-20261019/index.html\" loading=\"lazy\" sandbox=\"allow-scripts\" style=\"width:100%;height:980px;border:0\"></iframe><p style=\"text-align:center;\" class=\"figure-caption\">Figure 6. Control experiments for color development conditions. </p>"
-    },
-    {
-      "_template": "phase",
-      "kind": "learn",
-      "body": "<p style=\"text-align:left;\">Learn</p>"
+      "body": "<p>Subsequently, we carry out multiple control experiments to further explore the optimal conditions for test strip color development, performing <strong>red–green–blue (RGB)</strong> blue-channel grayscale quantification using ImageJ (Figure 6).</p>"
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:justify;\">We observe that YNB-free SC medium as a resuscitation solution performs significantly better than PBS solution, and the amine donor Trp stabilizes yeast color development.</p>"
+      "body": "<iframe class=\"author-screening-figure\" title=\"Reactivation medium screening\" src=\"/embeds/results-20261019/index.html\" loading=\"lazy\" sandbox=\"allow-scripts\" style=\"width:100%;height:980px;border:0\"></iframe><p class=\"figure-caption\">Figure 6. Control experiments for color development conditions. </p>"
+    },
+    {
+      "_template": "heading",
+      "level": 4,
+      "text": "3.3.3 Learn",
+      "attributes": "#results-3-3-learn toc=\"Learn\""
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:justify;\">The results of the color development condition control experiments further indicate that based on YNB-free SC selective medium, adding 2% glucose provides energy and a carbon source, Tyr promotes precursor uptake and resuscitation, the surfactant (Tween 80) improves wettability and cell membrane permeability, and antioxidants protect betaxanthin stability. This optimized formulation overcomes the bottleneck of slow resuscitation in earlier stages and significantly accelerates the test strip color development rate.</p>"
+      "body": "<p>We observe that YNB-free SC medium as a resuscitation solution performs significantly better than PBS solution, and the amine donor Trp stabilizes yeast color development.</p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p>The results of the color development condition control experiments further indicate that based on YNB-free SC selective medium, adding 2% glucose provides energy and a carbon source, Tyr promotes precursor uptake and resuscitation, the surfactant (Tween 80) improves wettability and cell membrane permeability, and antioxidants protect betaxanthin stability. This optimized formulation overcomes the bottleneck of slow resuscitation in earlier stages and significantly accelerates the test strip color development rate.</p>"
     },
     {
       "_template": "evidence",
-      "body": "<p style=\"text-align:justify;\">Meanwhile, considering the field application scenarios of our product, we design a 3D-printed test strip cassette to hold the test strip (Figure 7), making the detection workflow simpler and more convenient.</p>",
+      "body": "<p>Meanwhile, considering the field application scenarios of our product, we design a 3D-printed test strip cassette to hold the test strip (Figure 7), making the detection workflow simpler and more convenient.</p>",
       "src": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-b5b9b9256085-fig3-2-2.avif",
       "openOriginal": true,
       "place": "right",
       "size": "compact",
       "figureAlt": "",
-      "figureCaption": "<p style=\"text-align:center;\" class=\"figure-caption\">Figure 7. 3D-printed test strip cassette（ insert image “Fig3.2.2”）</p>"
+      "figureCaption": "<p class=\"figure-caption\">Figure 7. 3D-printed test strip cassette（ insert image “Fig3.2.2”）</p>"
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:justify;\">At this point, we have closed the loop on test strip fabrication and application, establishing a solid foundation for subsequent on-site rapid detection of soil samples.</p>"
+      "body": "<p>At this point, we have closed the loop on test strip fabrication and application, establishing a solid foundation for subsequent on-site rapid detection of soil samples.</p>"
     },
     {
       "_template": "heading",
       "level": 3,
       "text": "3.4 References",
-      "attributes": "#results-dbtl3-references"
+      "attributes": "#results-dbtl3-references toc=\"References\""
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\">Rachel A. Miller, Galen Brown, Elsa Barron, Jamie L. Luther, Marya Lieberman, Holly V. Goodson; Development of a paper-immobilized yeast biosensor for the detection of physiological concentrations of doxycycline in technology-limited settings. <em>Anal. Methods</em> 2020; 12 (16): 2123–2132. <a href=\"https://doi.org/10.1039/d0ay00001a\">https://doi.org/10.1039/d0ay00001a</a></p>"
+      "body": "<p>Rachel A. Miller, Galen Brown, Elsa Barron, Jamie L. Luther, Marya Lieberman, Holly V. Goodson; Development of a paper-immobilized yeast biosensor for the detection of physiological concentrations of doxycycline in technology-limited settings. <em>Anal. Methods</em> 2020; 12 (16): 2123–2132. <a href=\"https://doi.org/10.1039/d0ay00001a\">https://doi.org/10.1039/d0ay00001a</a></p>"
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\">Parbir S. Grewal, Cyrus Modavi, Zachary N. Russ, Nicholas C. Harris, John E. Dueber, Bioproduction of a betalain color palette in Saccharomyces cerevisiae, Metabolic Engineering, Volume 45, 2018, Pages 180-188, ISSN 1096-7176, <a href=\"https://doi.org/10.1016/j.ymben.2017.12.008\">https://doi.org/10.1016/j.ymben.2017.12.008</a>.</p>"
+      "body": "<p>Parbir S. Grewal, Cyrus Modavi, Zachary N. Russ, Nicholas C. Harris, John E. Dueber, Bioproduction of a betalain color palette in Saccharomyces cerevisiae, Metabolic Engineering, Volume 45, 2018, Pages 180-188, ISSN 1096-7176, <a href=\"https://doi.org/10.1016/j.ymben.2017.12.008\">https://doi.org/10.1016/j.ymben.2017.12.008</a>.</p>"
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\">Ostrov N, Jimenez M, Billerbeck S, et al. A modular yeast biosensor for low-cost point-of-care pathogen detection. Sci Adv. 2017;3(6):e1603221. doi:10.1126/sciadv.1603221.</p>"
+      "body": "<p>Ostrov N, Jimenez M, Billerbeck S, et al. A modular yeast biosensor for low-cost point-of-care pathogen detection. Sci Adv. 2017;3(6):e1603221. doi:10.1126/sciadv.1603221.</p>"
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\">Shin HJ, Park HH, Lim WK. Freeze-dried recombinant bacteria for on-site detection of phenolic compounds by color change. J Biotechnol. 2005;119(1):36-43. doi:10.1016/j.jbiotec.2005.06.002.</p>"
+      "body": "<p>Shin HJ, Park HH, Lim WK. Freeze-dried recombinant bacteria for on-site detection of phenolic compounds by color change. J Biotechnol. 2005;119(1):36-43. doi:10.1016/j.jbiotec.2005.06.002.</p>"
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\">Poirier I, Marechal PA, Richard S, Gervais P. Saccharomyces cerevisiae viability is strongly dependant on rehydration kinetics and the temperature of dried cells. J Appl Microbiol. 1999;86(1):87-92. doi:10.1046/j.1365-2672.1999.00638.x.</p>"
-    },
-    {
-      "_template": "text",
-      "body": "</section>"
+      "body": "<p>Poirier I, Marechal PA, Richard S, Gervais P. Saccharomyces cerevisiae viability is strongly dependant on rehydration kinetics and the temperature of dried cells. J Appl Microbiol. 1999;86(1):87-92. doi:10.1046/j.1365-2672.1999.00638.x.</p>"
     },
     {
       "_template": "text",
