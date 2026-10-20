@@ -2,6 +2,7 @@ import { toolkitTypes, renderToolkit } from './toolkit-blocks.mjs';
 import { renderMemberGrid, renderCreditGrid } from './person-cards.mjs';
 import { renderMediaBlock } from './media-blocks.mjs';
 import { serializeMDX } from '@tinacms/mdx';
+import katex from 'katex';
 
 export function markdown(value) {
   if (!value) return '';
@@ -11,24 +12,31 @@ export function markdown(value) {
   return result;
 }
 
-export function blocksToMarkdown(blocks = []) {
+export function blocksToMarkdown(blocks = [], { plainEquations = false } = {}) {
   return blocks.map((block) => {
     const body = markdown(block.body).trim();
     const attrs = block.attributes ? `{${block.attributes}}` : '';
     const label = block.label ? `[${block.label.replace(/[\[\]\n]/g, ' ')}]` : '';
     const img = (src, alt = '') => `![${alt.replace(/[\[\]\n]/g, ' ')}](${src})`;
     const template = block._template || block.__typename?.replace(/^WikiBlocks/, '').toLowerCase();
+    if (plainEquations && template === 'equation' && block.latex) {
+      const formula = katex.renderToString(block.latex, { displayMode: true, throwOnError: true, output: 'htmlAndMathml' })
+        .replace(/(<annotation[^>]*>)([\s\S]*?)(<\/annotation>)/g, (_, open, tex, close) => open + tex.replaceAll('\\', '&#92;').replaceAll('_', '&#95;').replaceAll('*', '&#42;').replaceAll('\n', '&#10;') + close);
+      return `<div class="model-equation">${formula}</div>`;
+    }
     if (toolkitTypes.has(template)) return renderToolkit(block, template);
     switch (template) {
       case 'membergrid': return renderMemberGrid(block);
       case 'creditgrid': return renderCreditGrid(block);
       case 'protein': case 'pdf': case 'html': return renderMediaBlock(block, template);
       case 'heading': return `${'#'.repeat(Math.max(2, Math.min(4, block.level || 2)))} ${block.text}${attrs ? ` ${attrs}` : ''}`;
+      case 'manuscriptTitle': case 'manuscripttitle': return `:::manuscriptTitle\n\n${markdown(block.manuscript).trim()}\n\n:::`;
       case 'text': return body;
       case 'layout': return `:::${block.kind}${label}${attrs}\n\n${body}\n\n:::`;
       case 'image': {
         const scale = ['85', '70', '55'].includes(String(block.scale || '')) ? `{scale=${block.scale}}` : '';
-        const media = block.openOriginal ? `[${img(block.src, block.alt)}](${block.src} "Open full-resolution image")` : img(block.src, block.alt);
+        const originalSrc = block.originalSrc || block.src;
+        const media = block.openOriginal ? `[${img(block.src, block.alt)}](${originalSrc} "Open full-resolution image")` : img(block.src, block.alt);
         const figure = `:::figure${scale}\n\n${media}\n\n${body}\n\n:::`;
         const accompanying = markdown(block.accompanyingBody).trim();
         if (!accompanying) return figure;
@@ -68,7 +76,7 @@ export function toEntry(id, document) {
   const { blocks, meta, _sys, _values, __typename, ...data } = document;
   if (data.route && !/^[a-z0-9][a-z0-9-]*$/.test(data.route)) throw new Error(`Invalid route: ${data.route}`);
   return {
-    id, collection: 'pages', body: blocksToMarkdown(blocks),
+    id, collection: 'pages', body: blocksToMarkdown(blocks, { plainEquations: /^model(?:-|$)/.test(id) }),
     data: { ...data, crumbs: data.crumbs || [], meta: Object.fromEntries((meta || []).map(({ key, value }) => [key, value])), draft: !!data.draft, hidden: !!data.hidden, search: data.search !== false },
   };
 }

@@ -1,10 +1,10 @@
 {
-  "title": "ODE & dual-channel sensing",
-  "heading": "ODE & dual-channel sensing",
+  "title": "ODE & Dual-channel modeling",
+  "heading": "ODE & Dual-channel modeling",
   "sub": "",
   "crumbs": [
     "Model",
-    "ODE & dual-channel sensing"
+    "ODE & Dual-channel modeling"
   ],
   "route": "model-ode",
   "search": true,
@@ -24,9 +24,8 @@
       "body": "<span id=\"model-ode-section-0\" class=\"legacy-section-anchor\" aria-hidden=\"true\"></span>"
     },
     {
-      "_template": "layout",
-      "kind": "lead",
-      "body": "ODE & dual-channel sensing: from signal response to target density estimation"
+      "_template": "manuscriptTitle",
+      "manuscript": "ODE & Dual-channel modeling: from signal response to target density estimation"
     },
     {
       "_template": "text",
@@ -448,10 +447,12 @@
       "body": "<span id=\"src-Model-ODE-115\" aria-hidden=\"true\"></span>"
     },
     {
-      "_template": "heading",
-      "level": 3,
-      "text": "7.1 Table 3-1. signaling-core parameters",
-      "attributes": "#model-ode-section-8 toc=\"Table 3-1. signaling-core parameters\" toc-unnumbered"
+      "_template": "text",
+      "body": "<span id=\"model-ode-section-8\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "_template": "text",
+      "body": "<strong>Table 3-1. Signaling-core parameters</strong>"
     },
     {
       "_template": "text",
@@ -466,10 +467,12 @@
       "body": "The Delft supplement lists the parameter corresponding to <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>k</mi><mn>91</mn></msub></mrow><annotation encoding=\"application/x-tex\">k\\_{91}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8444em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0315em;\">k</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0315em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">91</span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span> in s<span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mrow></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">^{-1}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8141em;\"></span><span class=\"mord\"><span></span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">−</span><span class=\"mord mtight\">1</span></span></span></span></span></span></span></span></span></span></span></span>, although its inactivation flux contains two concentration factors. We therefore use <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>μ</mi><msup><mi mathvariant=\"normal\">M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><msup><mi mathvariant=\"normal\">s</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">\\mu\\mathrm{M}^{-1}\\mathrm{s}^{-1}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:1.0085em;vertical-align:-0.1944em;\"></span><span class=\"mord mathnormal\">μ</span><span class=\"mord\"><span class=\"mord mathrm\">M</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">−</span><span class=\"mord mtight\">1</span></span></span></span></span></span></span></span></span><span class=\"mord\"><span class=\"mord mathrm\">s</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8141em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">−</span><span class=\"mord mtight\">1</span></span></span></span></span></span></span></span></span></span></span></span>, retaining the numerical value of 0.017."
     },
     {
-      "_template": "heading",
-      "level": 3,
-      "text": "7.2 Table 3-2. input and pigment-module parameters",
-      "attributes": "#model-ode-section-9 toc=\"Table 3-2. input and pigment-module parameters\" toc-unnumbered"
+      "_template": "text",
+      "body": "<span id=\"model-ode-section-9\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "_template": "text",
+      "body": "<strong>Table 3-2. Input and pigment-module parameters</strong>"
     },
     {
       "_template": "text",
@@ -484,10 +487,12 @@
       "body": "Pigment concentrations are expressed as indicaxanthin equivalents. <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>G</mi></mrow><annotation encoding=\"application/x-tex\">G</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.6833em;\"></span><span class=\"mord mathnormal\">G</span></span></span></span> is used to construct calibration targets, <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>a</mi></mrow><annotation encoding=\"application/x-tex\">a</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.4306em;\"></span><span class=\"mord mathnormal\">a</span></span></span></span> is used in the sixth ODE, and <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>K</mi><mi>L</mi></msub></mrow><annotation encoding=\"application/x-tex\">K_L</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8333em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0715em;\">K</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3283em;\"><span style=\"top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mathnormal mtight\">L</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span> is the effective response scale for the normalized input."
     },
     {
-      "_template": "heading",
-      "level": 3,
-      "text": "7.3 Table 3-3. smartphone observation and dual-channel regression parameters",
-      "attributes": "#model-ode-section-10 toc=\"Table 3-3. smartphone observation and dual-channel regression parameters\" toc-unnumbered"
+      "_template": "text",
+      "body": "<span id=\"model-ode-section-10\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "_template": "text",
+      "body": "<strong>Table 3-3. Smartphone observation and dual-channel regression parameters</strong>"
     },
     {
       "_template": "text",

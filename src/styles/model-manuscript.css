@@ -28,3 +28,33 @@
  .model-manuscript .model-chapter-links img { max-width:150px; }
 }
 @media(prefers-reduced-motion:reduce) { .model-chapter-links a { transition:none; } }
+
+/* Keep submitted Model prose readable while figures share its outer edges. */
+.doc[data-page^="model"] .prose { max-width:58rem; justify-self:start; }
+.doc .prose .model-manuscript .figure-text--right { grid-template-columns:minmax(0,1fr) minmax(0,34%); }
+.doc .prose .model-manuscript .figure-text__body { min-width:0; }
+.doc .prose .model-manuscript .figure-text--right > .figure-text__body { grid-column:1;grid-row:1; }
+.doc .prose .model-manuscript .figure-text--right > .figure { grid-column:2;grid-row:1; }
+.model-manuscript .katex-display { display:block;text-align:center; }
+.model-manuscript [data-nemaklear-original] { margin-block:28px;min-width:0; }
+@media(max-width:760px) {
+ .doc .prose .model-manuscript .figure-text--right { grid-template-columns:minmax(0,1fr); }
+ .doc .prose .model-manuscript .figure-text--right > .figure-text__body,
+ .doc .prose .model-manuscript .figure-text--right > .figure { grid-column:auto;grid-row:auto; }
+}
+
+/* The submitted overview is a row of illustrations, with no card containers. */
+.model-manuscript .model-chapter-links a { padding:0;border:0;border-radius:0;background:none; }
+.model-manuscript .model-chapter-links a:hover { transform:none; }
+.model-manuscript .model-chapter-links img { max-width:190px;border-radius:0; }
+.model-manuscript .model-chapter-links span { position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap; }
+.model-manuscript .model-equation { width:100%;margin-block:24px;overflow-x:auto; }
+.model-manuscript .model-equation .katex-display { margin:0; }
+
+.doc .prose .model-manuscript .figure__media img { border-radius:0; }
+/* Later shared figure rules use important declarations; the source manuscript
+   has unframed scientific plates, so keep this override scoped to Model. */
+.doc[data-page^="model"] .prose .model-manuscript .figure__media {
+ padding:0 !important;border:0 !important;border-radius:0 !important;
+ background:none !important;box-shadow:none !important;
+}
