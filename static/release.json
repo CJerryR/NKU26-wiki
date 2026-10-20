@@ -1,7 +1,7 @@
 {
   "version": "10.2.30",
   "label": "Members refresh, homepage and footer improvements, caption cleanup and Results note",
-  "prepared_at": "2026-10-21T01:39:00+08:00",
+  "prepared_at": "2026-10-21T01:47:16.101040+08:00",
   "media": "84 unchanged original images plus 4 user-authorized GPS-only cleaned images; all decoded frames unchanged; 12 complete historical source documents",
   "release_kind": "stage",
   "team_content_review": "Scientific final review pending; source-version choices authorized by user",
@@ -353,6 +353,14 @@
     ],
     "reconciliation": "Published heading hierarchy and latest wet-lab Table 3 source retained; equivalent already-published Home/subpage changes excluded; superseded Model figure not restored",
     "new_cdn_assets": 1,
-    "review": "Existing scientific and team review flags preserved"
+    "review": "Existing scientific and team review flags preserved",
+    "latest_wechat_qr": {
+      "source_sha256": "9afe42163bfa401a519cd4c56b1795f3590e57f0930183f7bcd1e01b58c8e8c1",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/wechat-qr-latest-9afe42163bfa.avif",
+      "decoded_target": "http://weixin.qq.com/r/mp/PBFaQr3ElODrrfkh90Qu",
+      "live_wechat_scan": "not tested"
+    },
+    "members_source_audit": "All 27 latest Feishu Front/Back fields and portrait mappings independently verified against live source; current published heading hierarchy retained",
+    "media_preflight": "All new commit history checked by tools/check-push-media.py; original media retained only in local evidence and task history"
   }
 }
