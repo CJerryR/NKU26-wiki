@@ -1,6 +1,7 @@
 /** Article images open over the current page, keeping its URL and reading position. */
 import { previewImageUrl } from './original-images';
 import { stopSmooth } from './smooth';
+import { glassFor } from './liquid-glass';
 
 export function initImagePreview(): void {
   if (document.getElementById('image-preview')) return;
@@ -11,13 +12,13 @@ export function initImagePreview(): void {
   dialog.className = 'image-preview';
   dialog.setAttribute('aria-label', 'Image preview');
   dialog.innerHTML = `<header class="image-preview__toolbar">
-    <span class="image-preview__title">Image preview</span>
+    <span class="image-preview__title lg-glass" data-glass="pill" data-tone="light"><span>Image preview</span></span>
     <div class="image-preview__controls">
-      <button type="button" data-preview-out aria-label="Zoom out" title="Zoom out">−</button>
-      <output aria-label="Zoom level">100%</output>
-      <button type="button" data-preview-in aria-label="Zoom in" title="Zoom in">+</button>
-      <button type="button" data-preview-fit>Fit</button>
-      <button type="button" data-preview-close aria-label="Close image preview" title="Close (Esc)">×</button>
+      <button type="button" class="lg-glass" data-glass="chip" data-tone="light" data-preview-out aria-label="Zoom out" title="Zoom out"><span aria-hidden="true">−</span></button>
+      <span class="image-preview__percentage lg-glass" data-glass="pill" data-tone="light"><output aria-label="Zoom level">100%</output></span>
+      <button type="button" class="lg-glass" data-glass="chip" data-tone="light" data-preview-in aria-label="Zoom in" title="Zoom in"><span aria-hidden="true">+</span></button>
+      <button type="button" class="lg-glass" data-glass="pill" data-tone="light" data-preview-fit><span>Fit</span></button>
+      <button type="button" class="lg-glass" data-glass="chip" data-tone="light" data-preview-close aria-label="Close image preview" title="Close (Esc)"><span aria-hidden="true">×</span></button>
     </div>
   </header>
   <div class="image-preview__stage" data-free-scroll>
@@ -76,6 +77,11 @@ export function initImagePreview(): void {
     status.textContent = 'Loading image…';
     image.alt = source.alt;
     dialog.showModal();
+    dialog.querySelectorAll<HTMLElement>('[data-glass]').forEach((control) => {
+      const glass = glassFor(control);
+      glass.refresh();
+      glass.materialize(240);
+    });
     close.focus({ preventScroll: true });
     try {
       const url = await previewImageUrl(source);
