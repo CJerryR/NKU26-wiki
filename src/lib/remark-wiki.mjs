@@ -22,7 +22,7 @@ const CONTAINERS = new Set([
   ...Object.keys(CALLOUT_TYPES), 'callout',
   'cards', 'cols', 'timeline', 'features', 'stats', 'refs', 'figure', 'figuretext', 'figures', 'details', 'people', 'lead', 'workflow',
   // C01 (component-design checkpoint-01): figure bound to the paragraphs around it, its caption slot, DBTL stage markers
-  'evidence', 'caption', 'phase',
+  'evidence', 'caption', 'phase', 'manuscriptTitle',
 ]);
 const LEAVES = new Set(['figure']);
 
@@ -237,6 +237,11 @@ function renderBlock(node, ctx) {
     case 'details': return details(node);
     case 'people': return people(node);
     case 'phase': return phase(node);
+    case 'manuscriptTitle': {
+      const content = takeLabel(node).rest;
+      const inline = content.flatMap((child) => child.type === 'paragraph' ? child.children || [] : [child]);
+      return [el('p', { className: ['manuscript-title'] }, inline)];
+    }
     // C01: a :::caption outside an evidence block has no figure to belong to, so its text stays in place
     case 'caption': return takeLabel(node).rest;
     default: return takeLabel(node).rest;
@@ -349,8 +354,10 @@ function figureText(node) {
   if (imageAt === -1) return children;
   const figure = children[imageAt];
   const body = children.filter((_, i) => i !== imageAt);
+  const media = el('div', { className: ['figure-text__body'] }, body);
+  const content = side === 'right' ? [media, figure] : [figure, media];
   return [el('div', { className: ['figure-text', `figure-text--${side}`, `figure-text--${width}`] }, [
-    figure, el('div', { className: ['figure-text__body'] }, body),
+    ...content,
   ])];
 }
 

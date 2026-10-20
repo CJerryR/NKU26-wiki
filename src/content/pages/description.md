@@ -15,7 +15,13 @@ hidden: false
 ---
 <div class="reading-layout" lang="en">
 
-<p class="manuscript-title">NemaKlear: making nematode screening easier to use</p>
+## Project overview {#description-project-overview toc="Project overview"}
+
+:::manuscriptTitle
+
+NemaKlear: Making Nematode Screening Easier to Use
+
+:::
 
 NemaKlear is developing a yeast-based biosensing kit for preliminary screening of agricultural nematode risk. Our approach uses engineered yeast to sense ascarosides, small molecules released by nematodes, and turn these chemical signals into a visible yellow color. By combining readings from two sensors with computational models, we explore how these signals could help assess the risk posed by <strong>plant-parasitic nematodes (PPNs)</strong>.
 
@@ -23,13 +29,11 @@ NemaKlear is developing a yeast-based biosensing kit for preliminary screening o
 
 :::figure
 
-![NemaKlear integrated workflow connecting Wet Lab, Dry Lab, Human Practices, two-channel interpretation and test-strip development.](https://static.igem.wiki/teams/6303/wiki/release-20261020/description-workflow-81434cea99.webp)
+[![Integrated workflow from nematode signals to practical screening, connecting biosensor design, paired readouts, test-kit development, and agricultural use.](https://static.igem.wiki/teams/6303/wiki/project-20261021/project-13-f3d4e306f432.webp)](https://static.igem.wiki/teams/6303/wiki/project-20261021/project-13-f3d4e306f432.webp "Open full-resolution image")
 
-Figure 1. NemaKlear’s integrated workflow. Wet Lab, Dry Lab, and Human Practices (HP) connect biosensor construction, two-channel interpretation, and test-strip development toward an easy-to-use nematode screening kit.
+Figure 1. From nematode signals to practical screening. NemaKlear brings biosensor design, paired readouts, and kit development into a shared Design–Build–Test–Learn cycle. Agricultural needs and stakeholder feedback guide each revision toward a kit that is easy to use and helps inform decisions before planting. Generated with OpenAI GPT Image 2.
 
 :::
-
-## Project overview {#description-project-overview toc="Project overview"}
 
 ### 1.1 Starting with the decision a grower needs to make {#description-starting-with-the-decision-a-grower-needs-to-make toc="Starting with the decision a grower needs to make" toc-unnumbered}
 
@@ -37,19 +41,39 @@ PPNs live in soil and roots. Symptoms above ground often give little indication 
 
 Established detection methods provide valuable information about nematodes, but their practical requirements can make routine testing difficult outside specialist settings. Microscopic identification relies on trained operators, while laboratory molecular testing often requires specialized equipment and sample preparation. NemaKlear focuses on making initial screening more accessible through a test-strip format supported by clear sampling, reading, and handling instructions. Our intended place is an accessible first step in a workflow that includes professional confirmation when needed. [Explore the scientific background →](/background/)
 
+::::figuretext{side=right width=wide}
+
+:::figure
+
+[![Team members speaking with growers at an agricultural site.](https://static.igem.wiki/teams/6303/wiki/project-20261021/project-40-f25a55a93d29-preview.webp)](https://static.igem.wiki/teams/6303/wiki/project-20261021/project-40-f25a55a93d29.webp "Open full-resolution image")
+
+Figure 2. Conversations with growers help us understand practical needs for nematode screening.
+
+:::
+
 Questionnaires, conversations with growers, and interviews with plant-protection experts helped us make this goal more concrete. Respondents valued straightforward operation, reliable results, and affordability. Experts also connected the timing of detection with decisions made before planting.
 
+::::
+
 These perspectives gave “early warning” a specific purpose: could information about nematode risk help growers plan planting and consider soil treatment? This question shapes what our sensors need to measure, how results should be presented, and how the testing process should work. [Explore the needs and feedback behind our design →](/human-practices/)
+
+:::figure
+
+[![Yurong Yao speaking with team members during an interview about practical agricultural needs.](https://static.igem.wiki/teams/6303/wiki/project-20261021/project-41-5a3f3ece2c07-preview.webp)](https://static.igem.wiki/teams/6303/wiki/project-20261021/project-41-5a3f3ece2c07.webp "Open full-resolution image")
+
+Figure 3. Our discussion with Yurong Yao connects sampling and testing procedures with practical agricultural needs.
+
+:::
 
 ### 1.2 Looking for chemical clues in the soil {#description-looking-for-chemical-clues-in-the-soil toc="Looking for chemical clues in the soil" toc-unnumbered}
 
 Nematodes release a family of small signaling molecules called ascarosides. We focus on two of them, <strong>ascaroside #3 (ascr#3)</strong> and <strong>ascaroside #18 (ascr#18)</strong>, and use differences in their relative abundance as a starting point for investigating signals from target and background nematodes.
 
-In real soil, several types of nematodes may contribute to the same chemical signals. We therefore designed a two-channel sensing approach: two sensors with different response preferences, tested against the same sample. We aim to learn more from their paired responses than either response could tell us alone. [Explore the basis of our two-signal approach →](/background/)
+In real soil, several types of nematodes may contribute to the same chemical signals. We therefore designed a dual-channel sensing approach: two sensors with different response preferences, tested against the same sample. We aim to learn more from their paired responses than either response could tell us alone. [Explore the basis of our two-signal approach →](/background/)
 
 The idea begins with nematode-trapping fungi, which can sense chemical signals released by their prey. We chose one of their receptors, GPR2, as our main engineering target. Molecular docking helps us compare predicted positions and contacts of the two ascarosides within the receptor and propose mutations. <strong>Molecular dynamics (MD)</strong> simulations then let us examine how those contacts change in a membrane environment.
 
-Together, these calculations provide specific hypotheses for receptor construction and response testing, keeping molecular design focused on the needs of the two-channel system. [Explore our receptor design →](/model-docking/)
+Together, these calculations provide specific hypotheses for receptor construction and response testing, keeping molecular design focused on the needs of the dual-channel system. [Explore our receptor design →](/model-docking/)
 
 ### 1.3 Turning chemical signals into readable color {#description-turning-chemical-signals-into-readable-color toc="Turning chemical signals into readable color" toc-unnumbered}
 
@@ -57,13 +81,13 @@ To make recognition visible, we use baker’s yeast, <strong><em>Saccharomyces c
 
 We have worked along this chain by examining receptor expression and localization, engineering the yeast host, and constructing the pigment-production module. Alongside these experiments, an <strong>ordinary differential equation (ODE)</strong> model describes how an input signal develops into color over time. It helps us examine whether different inputs can produce distinguishable outputs and identify the dose-response measurements, blanks, and time courses needed for calibration. [Explore our experimental work →](/results/) · [Explore our signaling model →](/model-ode/)
 
-To move toward a portable kit, we have also tested strip materials, cell immobilization, freeze-drying protection, and conditions for yeast revival and color development. We have made a holder for the strips. Each step addresses the same practical need: enabling biological sensing on a carrier that is easy to handle and read. [Explore our test strip development →](/results/)
+To move toward a portable kit, we have also tested strip materials, cell immobilization, freeze-drying protection, and conditions for yeast revival and color development. We have made a holder for the strips. Each step addresses the same practical need: enabling biological sensing on a carrier that is easy to handle and read. [Explore our test strip development →](/engineering/)
 
 ### 1.4 Making the color useful {#description-making-the-color-useful toc="Making the color useful" toc-unnumbered}
 
 A similar color intensity could arise from different combinations of target and background nematodes. We therefore analyze the two sensor responses together. Using simulations, we explore whether paired readings can estimate the density of the southern root-knot nematode when the number of background nematodes is unknown.
 
-This model connects receptor responses, signal transmission, and color readings, while providing a framework for future calibration with real mixed samples. [Explore our two-channel model →](/model-ode/)
+This model connects receptor responses, signal transmission, and color readings, while providing a framework for future calibration with real mixed samples. [Explore our dual-channel model →](/model-ode/)
 
 A density estimate raises another question: would knowing it change a management decision? Our economic model connects nematode density with potential yield loss, testing expenses, and treatment costs. It compares scenarios including no treatment, uniform treatment, and treatment adjusted to the detected risk level.
 
@@ -75,7 +99,19 @@ A low barrier to use depends on the whole testing process. Collecting a meaningf
 
 Expert discussions raised questions about representative sampling, soil background color, ascaroside stability, and disposal of engineered yeast. These questions entered our experimental and modeling discussions. Our soil collection and sampling guidance connect samples with information about crops, locations, and treatment histories, preparing the ground for testing under real environmental conditions. [Explore our field visits and expert discussions →](/hp-investigation/)
 
+::::figuretext{side=right width=wide}
+
+:::figure
+
+[![A classroom lesson about soil nematodes and crop diseases.](https://static.igem.wiki/teams/6303/wiki/project-20261021/project-42-55185549437d-preview.webp)](https://static.igem.wiki/teams/6303/wiki/project-20261021/project-42-55185549437d.webp "Open full-resolution image")
+
+Figure 4. Students explore soil nematodes and crop diseases through an interactive lesson.
+
+:::
+
 Through age-adapted lessons, picture books, and outreach activities, we also explain soil nematodes, biological signals, and the principles behind our test. These activities help audiences understand what evidence is needed to interpret an observation. Industry discussions let us explore potential users, application conditions, and partnerships needed for further development. The project continues to take shape through feedback from laboratory research, agricultural practice, and public engagement. [Explore our education activities →](/education/) · [Explore our industry engagement →](/hp-industry/)
+
+::::
 
 The path we are working toward runs from soil sampling, through biological sensing and color readings, to risk information that can support further confirmation and management discussions. Our next steps are to calibrate sensor responses and models with real samples and evaluate the usability of the complete workflow, bringing molecular recognition closer to the practical needs of the field.
 
@@ -85,7 +121,7 @@ The path we are working toward runs from soil sampling, through biological sensi
 
 Our sensing strategy combines two sensors with different response preferences for ascr#3 and ascr#18. Reading their responses together offers a way to investigate signals from samples containing both target and background nematodes.
 
-Receptor engineering explores how to create these complementary responses, while the two-channel model examines how paired readings could help estimate target nematode density. This connects molecular design with a central challenge of soil testing: extracting useful information from a mixture of biological signals. [Receptor engineering →](/model-docking/) · [Two-channel modeling →](/model-ode/)
+Receptor engineering explores how to create these complementary responses, while the dual-channel model examines how paired readings could help estimate target nematode density. This connects molecular design with a central challenge of soil testing: extracting useful information from a mixture of biological signals. [Receptor engineering →](/model-docking/) · [Dual-channel modeling →](/model-ode/)
 
 ### 2.2 A living sensor in an accessible test format {#description-a-living-sensor-in-an-accessible-test-format toc="A living sensor in an accessible test format" toc-unnumbered}
 

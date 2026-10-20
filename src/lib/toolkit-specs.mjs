@@ -70,6 +70,7 @@ export const toolkitSpecs = [
 
   /* ---------------------------------------------------------- iGEM narrative */
   { name: 'cycle', label: '工程循环 DBTL（多轮）', fields: [f.title,
+    select('presentation', '呈现方式', [{ label: '互动步骤（默认）', value: 'stepper' }, { label: '概览：Design–Build–Test 与图片并列', value: 'overview' }], '互动步骤保留原有 DBTL 阶段切换；概览模式同时展示 Design、Build、Test 和图片，并将 Learn 放在下方。'),
     select('language', '界面语言', [{ label: '中文（默认）', value: 'zh' }, { label: 'English', value: 'en' }]),
     list('items', '轮次', '轮次', [str('title', '轮次名称', '例如 Cycle 1 · 启动子筛选'), long('design', 'Design 设计', RICH), long('build', 'Build 构建', RICH), long('test', 'Test 测试', RICH), long('learn', 'Learn 学习 / 下一步', RICH), str('href', '详细数据链接'),
       ...['design', 'build', 'test', 'learn'].flatMap(phase => [file(`${phase}Image`, `${phase} 图片（可选）`), str(`${phase}Alt`, `${phase} 图片替代文字`), long(`${phase}Caption`, `${phase} 图注`, RICH)]),

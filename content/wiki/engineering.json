@@ -11,20 +11,12 @@
   "search": true,
   "blocks": [
     {
-      "_template": "image",
-      "src": "https://static.igem.wiki/teams/6303/wiki/engineering-20261020/engineering-circuit-border-dd989066b80d.avif",
-      "alt": "Gene circuit overview showing GPR2 membrane-localization verification, GAL pathway engineering, and the synthetic transcription factor.",
-      "body": "",
-      "layout": "full",
-      "imageWidth": "wide"
-    },
-    {
       "_template": "text",
       "body": "<div class=\"reading-layout\" lang=\"en\">"
     },
     {
-      "_template": "text",
-      "body": "<p class=\"manuscript-title\">Engineering NemaKlear: <strong>design–build–test–learn (DBTL)</strong></p>"
+      "_template": "manuscriptTitle",
+      "manuscript": "Engineering NemaKlear: **design–build–test–learn (DBTL)**"
     },
     {
       "_template": "text",
@@ -35,14 +27,17 @@
       "body": "We used DBTL to improve these connections. Bench experiments tested our biological constructs and materials. Computational models helped us develop receptor candidates and explore how to interpret mixed signals. <strong>Human Practices (HP)</strong> kept practical concerns—ease of use, cost, and useful information—in view as the project developed."
     },
     {
-      "_template": "text",
-      "body": "The following iterations follow three engineering questions: Can we build the biosensor? Can its output help distinguish target from background? Can we turn it into a usable test?"
+      "_template": "image",
+      "src": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-20-55bd4422e309.webp",
+      "alt": "Figure 1. Engineering yeast to turn nematode signals into color. Modular GPR2-mediated sensing connects to the yeast signaling pathway, a synthetic transcription factor, and GAL-driven amplification for yellow betaxanthin production.",
+      "body": "Figure 1. Engineering yeast to turn nematode signals into color. Our modular design connects GPR2-mediated sensing to the yeast signaling pathway, a synthetic transcription factor, and GAL-driven amplification, leading to yellow betaxanthin production.",
+      "layout": "full",
+      "imageWidth": "wide",
+      "openOriginal": true
     },
     {
-      "_template": "image",
-      "src": "https://static.igem.wiki/teams/6303/wiki/release-20261020/engineering-figure-1-b7206774cd.webp",
-      "alt": "Figure 1. Our DBTL approach.",
-      "body": "Figure 1. Our DBTL approach. Experimental results, model predictions, and practical requirements guide revisions to the biosensor, readout, and test format. Generated with OpenAI GPT Image 2."
+      "_template": "text",
+      "body": "The following iterations follow three engineering questions: Can we build the biosensor? Can its output help distinguish target from background? Can we turn it into a usable test?"
     },
     {
       "_template": "text",
@@ -51,8 +46,8 @@
     {
       "_template": "heading",
       "level": 2,
-      "text": "Building the biosensor",
-      "attributes": "#engineering-goal-1-building-the-biosensor toc=\"Building the biosensor\""
+      "text": "Goal 1: Building the biosensor",
+      "attributes": "#engineering-goal-1-building-the-biosensor toc=\"Goal 1: Building the biosensor\""
     },
     {
       "_template": "text",
@@ -116,8 +111,8 @@
     {
       "_template": "heading",
       "level": 2,
-      "text": "Making the readout informative",
-      "attributes": "#engineering-goal-2-making-the-readout-informative toc=\"Making the readout informative\""
+      "text": "Goal 2: Making the readout informative",
+      "attributes": "#engineering-goal-2-making-the-readout-informative toc=\"Goal 2: Making the readout informative\""
     },
     {
       "_template": "text",
@@ -215,14 +210,36 @@
       ]
     },
     {
+      "_template": "heading",
+      "level": 3,
+      "text": "2.5 Evaluating when screening adds value",
+      "attributes": "#engineering-iteration-2-5-evaluating-when-screening-adds-value toc=\"Evaluating when screening adds value\" toc-unnumbered"
+    },
+    {
+      "_template": "cycle",
+      "language": "en",
+      "items": [
+        {
+          "design": "We asked when knowing target density could improve management decisions, comparing screening-guided management with no treatment and uniform treatment without testing.",
+          "build": "Using protected tomato cultivation in Spain as a worked example, we linked density estimates, crop losses, treatment effects, and costs to expected seasonal net returns.",
+          "test": "Screening could add value by avoiding unnecessary treatment or guiding a more effective response. When it led to the same treatment as the uniform strategy, it simply added testing costs. Sensitivity analysis examined how these comparisons changed with economic and treatment assumptions.",
+          "learn": "**We connected detection performance to potential management value.** This made affordable testing and accuracy near management thresholds clear priorities for sensor development. Measured detection errors and local agricultural data will help refine these priorities."
+        }
+      ]
+    },
+    {
       "_template": "text",
-      "body": "Our [Docking](/model-docking/), [MD](/model-md/), and [ODE \\& Two-channel](/model-ode/) pages provide the detailed analyses behind these iterations."
+      "body": "[Explore the Economic Model](/model-eco/)"
+    },
+    {
+      "_template": "text",
+      "body": "Our [Docking](/model-docking/), [MD](/model-md/), and [ODE \\& Dual-channel](/model-ode/) pages provide the detailed analyses behind these iterations."
     },
     {
       "_template": "heading",
       "level": 2,
-      "text": "Engineering a usable test format",
-      "attributes": "#engineering-goal-3-engineering-a-usable-test-format toc=\"Engineering a usable test format\""
+      "text": "Goal 3: Engineering a usable test format",
+      "attributes": "#engineering-goal-3-engineering-a-usable-test-format toc=\"Goal 3: Engineering a usable test format\""
     },
     {
       "_template": "text",
@@ -264,9 +281,6 @@
           "design": "We combined hydrophobic barriers with a revised protectant formulation and vacuum-assisted loading.",
           "build": "We used masked vapor coating to leave circular hydrophilic regions on the paper, prepared the protectant mixture, and built a vacuum-assisted spotting device.",
           "test": "Colored solutions demonstrated the defined wetting regions. The revised loading workflow was used to prepare cell-loaded, freeze-dried strips for subsequent recovery tests.",
-          "testImage": "https://static.igem.wiki/teams/6303/wiki/release-20261020/engineering-figure-4-f4de7549d8.webp",
-          "testAlt": "Coating device and colored metal-salt solutions showing hydrophobic treatment and circular wetting regions.",
-          "testCaption": "Figure 4. Keeping liquid in the reaction area. The coating device and colored metal-salt solutions show how hydrophobic treatment defines circular wetting regions.",
           "learn": "**We established a preparation workflow and produced cell-loaded, freeze-dried strips.** Bringing the substrate, protective formulation, and loading device together allowed us to move from material selection to recovery testing. The next round focused on obtaining a readable color after rehydration."
         }
       ]
@@ -289,10 +303,34 @@
           "design": "We examined recovery media and additives that could affect nutrient supply, wetting, and pigment stability.",
           "build": "We compared recovery in **synthetic complete (SC)** medium and **phosphate-buffered saline (PBS)**, then tested glucose, **tyrosine (Tyr)**, Tween 80, and ascorbic acid conditions. We quantified color using blue-channel image values.",
           "test": "Color development varied across treatments. Several Tyr–Tween 80 combinations and ascorbic acid treatments produced stronger yellow signals than the reference, while changing glucose concentration did not consistently improve the signal.",
-          "testCaption": "Figure 5. Comparing color-development conditions. Blue-channel measurements show how different additives affect the yellow signal. Positive ΔB values indicate stronger yellow color relative to the reference.",
-          "learn": "**We identified formulation conditions that strengthened the yellow readout.** The comparisons gave us a basis for refining the recovery solution alongside the strip itself. Further testing will assess whether these improvements remain consistent across prepared strips and realistic samples."
+          "testCaption": "Figure 4. Prototype test strips and colored solutions.",
+          "learn": "**We identified formulation conditions that strengthened the yellow readout.** These comparisons gave us a basis for refining the recovery solution alongside the strip itself. Further testing will assess whether the improved color development is consistent across prepared strips.",
+          "testImage": "https://static.igem.wiki/teams/6303/wiki/release-20261020/engineering-figure-4-f4de7549d8.webp",
+          "testAlt": "Prototype test strips, a coating device, and colored solutions."
         }
       ]
+    },
+    {
+      "_template": "heading",
+      "level": 3,
+      "text": "3.4 Designing around three user actions",
+      "attributes": "#engineering-iteration-3-4-designing-around-three-user-actions toc=\"Designing around three user actions\" toc-unnumbered"
+    },
+    {
+      "_template": "cycle",
+      "language": "en",
+      "items": [
+        {
+          "design": "Once the soil extract is ready, we aim to simplify testing to three actions: load, wait and check the quality-control region, then photograph. We designed a card with quality-control, negative-control, positive-control, and sample regions, using the existing hydrophobic barriers and a reservoir beneath the strip for loading in one pour.",
+          "build": "We fabricated unit cassettes and positioned the strips from Iteration 3.2 for wetting from below. The design also includes reference colors on the casing for image correction; modular assembly remains the next construction step.",
+          "test": "In the loading test, a single pour wetted all four regions evenly from below, with no observed liquid crossing the hydrophobic boundaries.",
+          "testImage": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-55-4c447ce9cb96.webp",
+          "testAlt": "Figure 5. A test card designed for simpler use.",
+          "testCaption": "Figure 5. A test card designed for simpler use. The proposed workflow combines loading the soil extract, checking the quality-control region, and photographing the result, with dedicated control and sample regions and a color reference on the casing. Generated with OpenAI GPT Image 2.",
+          "learn": "**The prototype supported a simpler loading step while maintaining distinct wetting regions.** This provided a practical basis for the three-action workflow. Further testing will evaluate the assembled device, control responses, and operation with real soil extracts."
+        }
+      ],
+      "presentation": "overview"
     },
     {
       "_template": "text",
@@ -305,8 +343,8 @@
     {
       "_template": "heading",
       "level": 2,
-      "text": "Refining the project for agricultural use",
-      "attributes": "#engineering-goal-4-refining-the-project-for-agricultural-use toc=\"Refining the project for agricultural use\""
+      "text": "Goal 4: Refining the project for agricultural use",
+      "attributes": "#engineering-goal-4-refining-the-project-for-agricultural-use toc=\"Goal 4: Refining the project for agricultural use\""
     },
     {
       "_template": "text",
@@ -334,7 +372,7 @@
           "design": "We asked who might use the kit, when testing could influence management, and what information a grower would need from the result.",
           "build": "We collected 369 questionnaire submissions, consulted plant-protection and related experts, and visited vegetable-growing sites in Tianjin. We discussed expectations for testing alongside existing management practices and everyday workloads.",
           "test": "Respondents highlighted simple operation, reliable results, and affordability. Experts recommended connecting early detection to management before planting. Conversations with growers also showed that demand depends on local crops and field conditions, since nematodes are not the most pressing problem at every site.",
-          "learn": "**We refined NemaKlear’s positioning as an accessible screening tool for pre-planting management.** This gave us concrete criteria for evaluating the kit: manageable steps, affordable testing, and information that can inform a decision. We connected these requirements to the economic model to examine how testing costs and prediction accuracy affect potential management benefits; local costs and use scenarios will need further validation."
+          "learn": "**We refined NemaKlear’s positioning as an accessible screening tool for pre-planting management.** Stakeholder feedback made simple operation, affordable testing, and useful guidance central design requirements. The [Eco Model](/model-eco/) provided a way to examine the trade-offs behind these requirements, including when testing could change a management choice enough to justify its cost. Further engagement with growers and agricultural specialists will help ground these comparisons in local costs and practices."
         }
       ]
     },

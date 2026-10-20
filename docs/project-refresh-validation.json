@@ -1,0 +1,39 @@
+{
+  "task": "project-refresh",
+  "base_commit": "9e9fa070857d872d29a4759c53c9e362ed9c70ab",
+  "source_path": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/tasks/project-refresh",
+  "source_document": "/Users/cjrmacbook/Documents/Project.docx",
+  "scope": [
+    "Description full manuscript and4 figures",
+    "Engineering14 iterations,4 Goal labels,6 figures including short Figure4 caption",
+    "Contribution5 figures andsource-matched compositions",
+    "Background verified citation/reference repairs"
+  ],
+  "components": [
+    "editable manuscriptTitle with rich-text manuscript field",
+    "image originalSrc separate from optimized preview",
+    "right-side figure text first in mobile/accessibility reading order",
+    "cycle presentation overview supports DBT beside figure and Learn below",
+    "safe no-JS cycle fallback links and scientific italics"
+  ],
+  "validation": {
+    "build": "npm run verify: PASS;30 pages;26 existing content readiness/team review warnings retained",
+    "structure": "26 pages PASS",
+    "captions": "90 PASS",
+    "deployment_tests": "48 Node +17 Python PASS",
+    "targeted_tests": "13 manuscript/DBTL tests PASS;7 caption-panel and8 heading tests PASS",
+    "tina": "Local Tina schema/admin compilation passed; tracked Tina lock synchronized with generated schema/lookup/graphql, including existing membergrid fields from baseline config. Actual cloud credentials/publish not exercised.",
+    "browser": "four Project pages at1364px and390px;light/dark;no horizontal overflow;allTOC href targets exist",
+    "full_resolution_preview": "page1600x1200 preview opened4096x3072 original;overlay visibly loaded and closed retaining reading position",
+    "new_media": "7 new originals and5 photo derivatives uploaded;8 exact-source original assets reused;all20 CDN resources HTTP200 and byte-identical to recorded upload hash",
+    "figure4": "user relayed senior instruction to shorten caption to match supplied photo;implemented Figure4. Prototype test strips and colored solutions."
+  },
+  "preview": {
+    "port": 58068,
+    "url": "http://127.0.0.1:58068/description/",
+    "output": "public",
+    "source_path": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/tasks/project-refresh"
+  },
+  "publication": "not published;task commit to be handed to unified releasebot",
+  "scientific_review": "Existing team review status unchanged;technical verification is not scientific final approval"
+}

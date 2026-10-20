@@ -53,7 +53,8 @@ main:has(.doc), .doc, .pager { --measure: 65rem; --bleed: 0px; }
   .figure__media *, .wiki-media *, .stat *, .person *,
   .timeline__when, .hp-image-label, .hp-download-label, .table-caption,
   .docking-caption-only *, .figure__credit, .figure__missing,
-  .person__role, .person-name__cn, .member-card__role, .credit-card__role, .author-source-link
+  .person__role, .person-name__cn, .member-card__role, .credit-card__role, .author-source-link,
+  .manuscript-title
 )) {
   width: 100% !important;
   max-width: 100% !important;
@@ -69,6 +70,23 @@ main:has(.doc), .doc, .pager { --measure: 65rem; --bleed: 0px; }
   text-align: justify !important;
   text-align-last: start !important;
   text-wrap: wrap;
+}
+
+/* An authored manuscript title is intentionally a styled paragraph, not a
+   heading: it stays out of section numbering and the generated outline. */
+.doc .prose p.manuscript-title {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 1.15em 0 .8em !important;
+  padding: 0 !important;
+  font-family: var(--font-display) !important;
+  font-size: clamp(25px, 2.6vw, 35px) !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  letter-spacing: normal !important;
+  text-align: start !important;
+  text-align-last: auto !important;
+  text-wrap: pretty !important;
 }
 
 /* Only typographic spans inside ordinary paragraphs inherit the article metrics.

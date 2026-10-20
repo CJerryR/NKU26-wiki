@@ -17,7 +17,7 @@ hidden: false
 
 ## Silent killers underground: the urgent threat of plant-parasitic nematodes {#11-silent-killers-underground-the-urgent-threat-of-plant-parasitic-nematodes toc="Plant-parasitic nematodes"}
 
-<p><strong>Plant-parasitic nematodes (PPNs)</strong> are among the most destructive pathogens in global agricultural production. Widely distributed in cultivated soils, they parasitize plant roots, disrupt nutrient uptake pathways and trigger secondary diseases, posing severe threats to crop yield and quality. Statistically, PPNs cause up to 157 billion dollars in annual crop losses worldwide across more than 20 major cash crops<sup>[1]</sup>. Among them, sedentary endoparasitic nematodes represent the most harmful group due to their unique parasitic lifestyle, strong dispersal capacity and difficult control<sup>[2]</sup>. As two representative species, <strong><em>Heterodera glycines</em> (<em>H. glycines</em>)</strong> and <strong><em>Meloidogyne incognita</em> (<em>Mi</em>)</strong> exhibit typical taxonomic and biological features. They continuously endanger the production of globally critical crops and serve as core model organisms for research on soil nematode management (Figure 1).</p>
+<p><strong>Plant-parasitic nematodes (PPNs)</strong> are among the most destructive pathogens in global agricultural production. Widely distributed in cultivated soils, they parasitize plant roots, disrupt nutrient uptake pathways and trigger secondary diseases, posing severe threats to crop yield and quality. Statistically, PPNs cause up to 157 billion dollars in annual crop losses worldwide across more than 20 major cash crops<sup>[4]</sup>. Among them, sedentary endoparasitic nematodes represent the most harmful group due to their unique parasitic lifestyle, strong dispersal capacity and difficult control<sup>[2]</sup>. As two representative species, <strong><em>Heterodera glycines</em> (<em>H. glycines</em>)</strong> and <strong><em>Meloidogyne incognita</em> (<em>Mi</em>)</strong> exhibit typical taxonomic and biological features. They continuously endanger the production of globally critical crops and serve as core model organisms for research on soil nematode management (Figure 1).</p>
 
 :::figure{scale=70}
 
@@ -54,7 +54,7 @@ Table 1. Comparison of detection methods for PPNs
 
 ## Dawn breaks: nematophagous fungi fuel innovation in nematode detection {#nematophagous-fungi toc="Nematophagous fungi"}
 
-<p>Previous studies revealed that <strong>ascaroside #18 (ascr#18)</strong> acts as the dominant ascaroside across multiple genera of PPNs (Figure 2). In contrast, larvae of free-living nematodes such as <strong><em>Caenorhabditis elegans</em> (<em>Ce</em>)</strong> mainly produce <strong>ascaroside #3 (ascr#3)</strong> and <strong>ascaroside #5 (ascr#5)</strong> (Figure 3)<sup>[7]</sup>.</p>
+<p>Previous studies revealed that <strong>ascaroside #18 (ascr#18)</strong> acts as the dominant ascaroside across multiple genera of PPNs (Figure 2)<sup>[7]</sup>. In contrast, larvae of free-living nematodes such as <strong><em>Caenorhabditis elegans</em> (<em>Ce</em>)</strong> mainly produce <strong>ascaroside #3 (ascr#3)</strong> and <strong>ascaroside #5 (ascr#5)</strong> (Figure 3)<sup>[9]</sup>.</p>
 
 :::figure
 
@@ -78,7 +78,7 @@ Table 1. Comparison of detection methods for PPNs
 
 ![Figure 4. GPCR-mediated prey pheromone sensing pathway in the nematode-trapping fungus Arthrobotrys oligospora.](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-df028eb5874f-fig4.avif)
 
-<p>Figure 4. GPCR-mediated prey pheromone sensing pathway in the nematode-trapping fungus <em>A. oligospora</em>. Source: Kuo C-Y, et al. (2024), <em>Nature Microbiology</em>, DOI:10.1038/s41564-024-01647-4.</p>
+<p>Figure 4. GPCR-mediated prey pheromone sensing pathway in the nematode-trapping fungus <em>A. oligospora</em>. Source: Kuo C-Y, et al. (2024), <em>Nature Microbiology</em>, DOI:10.1038/s41564-024-01679-w.</p>
 
 :::
 
@@ -92,5 +92,6 @@ Table 1. Comparison of detection methods for PPNs
 6. Pun, T. B., Thapa Magar, R., Koech, R., Owen, K. J., & Adorada, D. L. (2024). Emerging Trends and Technologies Used for the Identification, Detection, and Characterisation of Plant-Parasitic Nematode Infestation in Crops. Plants, 13(21), 3041. [https://doi.org/10.3390/plants13213041](https://doi.org/10.3390/plants13213041).
 7. <span>Manosalva, P., Manohar, M., von Reuss, S. <em>et al.</em> Conserved nematode signalling molecules elicit plant defenses and pathogen resistance. <em>Nat Commun</em> <strong>6</strong>, 7795 (2015). <a href="https://doi.org/10.1038/ncomms8795">https://doi.org/10.1038/ncomms8795</a>. </span>
 8. Kuo, CY., Tay, R.J., Lin, HC. et al. The nematode-trapping fungus Arthrobotrys oligospora detects prey pheromones via G protein-coupled receptors. Nat Microbiol 9, 1738–1751 (2024). [https://doi.org/10.1038/s41564-024-01679-w](https://doi.org/10.1038/s41564-024-01679-w).
+9. Lee D, Fox BW, Fajardo Palomino D, et al. Natural genetic variation in the pheromone production of C. elegans. Proc Natl Acad Sci U S A. 2023;120(26):e2221150120. [https://doi.org/10.1073/pnas.2221150120](https://doi.org/10.1073/pnas.2221150120).
 
 </div>

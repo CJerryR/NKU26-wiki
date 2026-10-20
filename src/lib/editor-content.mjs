@@ -24,11 +24,13 @@ export function blocksToMarkdown(blocks = []) {
       case 'creditgrid': return renderCreditGrid(block);
       case 'protein': case 'pdf': case 'html': return renderMediaBlock(block, template);
       case 'heading': return `${'#'.repeat(Math.max(2, Math.min(4, block.level || 2)))} ${block.text}${attrs ? ` ${attrs}` : ''}`;
+      case 'manuscriptTitle': case 'manuscripttitle': return `:::manuscriptTitle\n\n${markdown(block.manuscript).trim()}\n\n:::`;
       case 'text': return body;
       case 'layout': return `:::${block.kind}${label}${attrs}\n\n${body}\n\n:::`;
       case 'image': {
         const scale = ['85', '70', '55'].includes(String(block.scale || '')) ? `{scale=${block.scale}}` : '';
-        const media = block.openOriginal ? `[${img(block.src, block.alt)}](${block.src} "Open full-resolution image")` : img(block.src, block.alt);
+        const originalSrc = block.originalSrc || block.src;
+        const media = block.openOriginal ? `[${img(block.src, block.alt)}](${originalSrc} "Open full-resolution image")` : img(block.src, block.alt);
         const figure = `:::figure${scale}\n\n${media}\n\n${body}\n\n:::`;
         const accompanying = markdown(block.accompanyingBody).trim();
         if (!accompanying) return figure;

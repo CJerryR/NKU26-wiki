@@ -1,0 +1,384 @@
+{
+  "source": "/Users/cjrmacbook/Documents/Project.docx",
+  "source_sha256": "446666c83a14884bf39ecb76d3bbac7dce8832ce411948586c0a66a241485977",
+  "source_archive": "workspace/evidence/project-refresh/word/media",
+  "assets": [
+    {
+      "document_image": "image13.png",
+      "source_sha256": "f3d4e306f432efed3241b2ced65f9e50d97abe969a41efb177e7b36945a36885",
+      "source_size": 1337476,
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/project-refresh/upload/project-13-f3d4e306f432.webp",
+      "upload_sha256": "b408b8fbd1a4428562412f63e5d2bc6ac1f52134f524d70350d170278016f6ec",
+      "upload_size": 797696,
+      "size": [
+        1942,
+        809
+      ],
+      "transformation": "lossless WebP; native dimensions; original retained",
+      "pixel_identical": true,
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-13-f3d4e306f432.webp",
+      "reused": false,
+      "http_status": 200,
+      "content_type": "image/webp",
+      "cdn_sha256": "b408b8fbd1a4428562412f63e5d2bc6ac1f52134f524d70350d170278016f6ec",
+      "cdn_bytes": 797696,
+      "cdn_byte_identical": true
+    },
+    {
+      "document_image": "image20.png",
+      "source_sha256": "55bd4422e3098e0379f6578a66a91e72046a6f3938e366dab3856f43950a0f92",
+      "source_size": 1688130,
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/project-refresh/upload/project-20-55bd4422e309.webp",
+      "upload_sha256": "4ba423a471706246a8f0cce34251449a71fce387ed788e8e1a62c299698d9efc",
+      "upload_size": 977920,
+      "size": [
+        4000,
+        2250
+      ],
+      "transformation": "lossless WebP; native dimensions; original retained",
+      "pixel_identical": true,
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-20-55bd4422e309.webp",
+      "reused": false,
+      "http_status": 200,
+      "content_type": "image/webp",
+      "cdn_sha256": "4ba423a471706246a8f0cce34251449a71fce387ed788e8e1a62c299698d9efc",
+      "cdn_bytes": 977920,
+      "cdn_byte_identical": true
+    },
+    {
+      "document_image": "image40.png",
+      "source_sha256": "f25a55a93d29e2b4b9d034c403a39812c4ad69bb648f459c0fc1fd3ded3b23f0",
+      "source_size": 13373980,
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/project-refresh/upload/project-40-f25a55a93d29.webp",
+      "upload_sha256": "ad6e043ceefb900860e9beaa75b9158896bddcb6157306e41fb92ca70e23bbb6",
+      "upload_size": 6945710,
+      "size": [
+        4096,
+        3072
+      ],
+      "transformation": "lossless WebP; native dimensions; original retained",
+      "pixel_identical": true,
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-40-f25a55a93d29.webp",
+      "reused": false,
+      "http_status": 200,
+      "content_type": "image/webp",
+      "cdn_sha256": "ad6e043ceefb900860e9beaa75b9158896bddcb6157306e41fb92ca70e23bbb6",
+      "cdn_bytes": 6945710,
+      "cdn_byte_identical": true
+    },
+    {
+      "document_image": "image41.png",
+      "source_sha256": "5a3f3ece2c070e669fe15b0f1ec1643b7199394f70991853a8897b874863caf6",
+      "source_size": 8073855,
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/project-refresh/upload/project-41-5a3f3ece2c07.webp",
+      "upload_sha256": "3667e40f4bdf8e1bb8afd653a3c44ae3d1cf54ef09a8bfc46a4cb1bec3bef0bf",
+      "upload_size": 5383154,
+      "size": [
+        4108,
+        1365
+      ],
+      "transformation": "lossless WebP; native dimensions; original retained",
+      "pixel_identical": true,
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-41-5a3f3ece2c07.webp",
+      "reused": false,
+      "http_status": 200,
+      "content_type": "image/webp",
+      "cdn_sha256": "3667e40f4bdf8e1bb8afd653a3c44ae3d1cf54ef09a8bfc46a4cb1bec3bef0bf",
+      "cdn_bytes": 5383154,
+      "cdn_byte_identical": true
+    },
+    {
+      "document_image": "image42.png",
+      "source_sha256": "55185549437d1e27265812c9bd093f8e1633f52220ef32dcf246c4315ffe0dd1",
+      "source_size": 1996280,
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/project-refresh/upload/project-42-55185549437d.webp",
+      "upload_sha256": "a7ed4e37f5e50be42d6bee5e11fa15062aa065e17c53d57db92e7d53a3d1cffe",
+      "upload_size": 1142244,
+      "size": [
+        1248,
+        933
+      ],
+      "transformation": "lossless WebP; native dimensions; original retained",
+      "pixel_identical": true,
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-42-55185549437d.webp",
+      "reused": false,
+      "http_status": 200,
+      "content_type": "image/webp",
+      "cdn_sha256": "a7ed4e37f5e50be42d6bee5e11fa15062aa065e17c53d57db92e7d53a3d1cffe",
+      "cdn_bytes": 1142244,
+      "cdn_byte_identical": true
+    },
+    {
+      "document_image": "image52.png",
+      "source_sha256": "627df6af357f09bd1b67adaebc37f2166c1ddffabac895a38631790838acbadf",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/engineering-figure-2-627df6af35.webp",
+      "upload_sha256": "e1f1eaa1ef1c5ae6e915c677c1daa6afc0e98bfda9628e6ffeec2f26d546fbf5",
+      "dimensions": [
+        2103,
+        1105
+      ],
+      "reused": true,
+      "http_status": 200,
+      "content_type": "image/webp",
+      "cdn_sha256": "e1f1eaa1ef1c5ae6e915c677c1daa6afc0e98bfda9628e6ffeec2f26d546fbf5",
+      "cdn_bytes": 395994,
+      "cdn_byte_identical": true
+    },
+    {
+      "document_image": "image53.png",
+      "source_sha256": "5f5e319acc5ed5fefaf22a245f1b7827d50537868ada18a7d306ffc343888519",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/engineering-figure-3-5f5e319acc.webp",
+      "upload_sha256": "20a1d3af4f3043485c55bf06a590674fa81fe1a5d3ba87645f426f29683b948c",
+      "dimensions": [
+        4200,
+        2280
+      ],
+      "reused": true,
+      "http_status": 200,
+      "content_type": "image/webp",
+      "cdn_sha256": "20a1d3af4f3043485c55bf06a590674fa81fe1a5d3ba87645f426f29683b948c",
+      "cdn_bytes": 99424,
+      "cdn_byte_identical": true
+    },
+    {
+      "document_image": "image55.png",
+      "source_sha256": "4c447ce9cb96f1b170a84742f11af416081a1110c1e3a9e74a21eda069fcf355",
+      "source_size": 153679,
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/project-refresh/upload/project-55-4c447ce9cb96.webp",
+      "upload_sha256": "ed948544c4b2dcf8461faff8ae17ea50aabeeda0271cc147fb210d8095eefa16",
+      "upload_size": 38770,
+      "size": [
+        1680,
+        1200
+      ],
+      "transformation": "lossless WebP; native dimensions; original retained",
+      "pixel_identical": true,
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-55-4c447ce9cb96.webp",
+      "reused": false,
+      "http_status": 200,
+      "content_type": "image/webp",
+      "cdn_sha256": "ed948544c4b2dcf8461faff8ae17ea50aabeeda0271cc147fb210d8095eefa16",
+      "cdn_bytes": 38770,
+      "cdn_byte_identical": true
+    },
+    {
+      "document_image": "image56.png",
+      "source_sha256": "82a0893b5b1b4e11a0c5c449b332900a83c91666fac4cb937ac07787d5d67c7d",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/engineering-figure-6-82a0893b5b.webp",
+      "upload_sha256": "d0d865c0ceb3e37760e05d7fa315fe1c60c377ef0b9d95a28e346c04a1613578",
+      "dimensions": [
+        1407,
+        1118
+      ],
+      "reused": true,
+      "http_status": 200,
+      "content_type": "image/webp",
+      "cdn_sha256": "d0d865c0ceb3e37760e05d7fa315fe1c60c377ef0b9d95a28e346c04a1613578",
+      "cdn_bytes": 939478,
+      "cdn_byte_identical": true
+    },
+    {
+      "document_image": "image62.png",
+      "source_sha256": "e88a84496c75510f0267b6d3f1c7a6847b642baf38d5d7657c989870a97c8c23",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-1-e88a84496c.webp",
+      "upload_sha256": "6100fe1d7899690b17ca201cc4bc25a8c1bbb615b63b2b2e8934cacd171957db",
+      "dimensions": [
+        4225,
+        1894
+      ],
+      "reused": true,
+      "http_status": 200,
+      "content_type": "image/webp",
+      "cdn_sha256": "6100fe1d7899690b17ca201cc4bc25a8c1bbb615b63b2b2e8934cacd171957db",
+      "cdn_bytes": 101030,
+      "cdn_byte_identical": true
+    },
+    {
+      "document_image": "image63.png",
+      "source_sha256": "9b303eb0531f0a914f48cf27be0a277e4b7a851fcaa272ee4105e74e14bfcd3d",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-3-9b303eb053.webp",
+      "upload_sha256": "38993b18d6bc35e3db8de58909a978d18db92d8fc18f8096027ccffdc3aaed46",
+      "dimensions": [
+        2079,
+        2079
+      ],
+      "reused": true,
+      "http_status": 200,
+      "content_type": "image/webp",
+      "cdn_sha256": "38993b18d6bc35e3db8de58909a978d18db92d8fc18f8096027ccffdc3aaed46",
+      "cdn_bytes": 736200,
+      "cdn_byte_identical": true
+    },
+    {
+      "document_image": "image64.png",
+      "source_sha256": "b07ff15b95486e9be8b63ff91a9e279c6ec4d5ee3237fa5614e2f552cbf8b0c6",
+      "source_size": 468794,
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/project-refresh/upload/project-64-b07ff15b9548.webp",
+      "upload_sha256": "81b3af1a91ada83ef1b37b7d40315649c5eae9c14aae58a233d583000b0be615",
+      "upload_size": 299166,
+      "size": [
+        2017,
+        780
+      ],
+      "transformation": "Lossless visible RGBA pixels; RGB values under fully transparent pixels normalized by WebP encoder; original retained.",
+      "pixel_identical": false,
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-64-b07ff15b9548.webp",
+      "reused": false,
+      "http_status": 200,
+      "content_type": "image/webp",
+      "cdn_sha256": "81b3af1a91ada83ef1b37b7d40315649c5eae9c14aae58a233d583000b0be615",
+      "cdn_bytes": 299166,
+      "cdn_byte_identical": true,
+      "visible_pixel_identical": true
+    },
+    {
+      "document_image": "image65.png",
+      "source_sha256": "2b6f00755b3f384755e98c2bbfb6c84d8e3c758bffb3a6a641350b84e5050106",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-4-2b6f00755b.webp",
+      "upload_sha256": "70a22ea8910bc863c6a6af4a1b90745455fb9c37dbaccec43a359e76ff01fda5",
+      "dimensions": [
+        4096,
+        3072
+      ],
+      "reused": true,
+      "http_status": 200,
+      "content_type": "image/webp",
+      "cdn_sha256": "70a22ea8910bc863c6a6af4a1b90745455fb9c37dbaccec43a359e76ff01fda5",
+      "cdn_bytes": 8319706,
+      "cdn_byte_identical": true
+    },
+    {
+      "document_image": "image66.png",
+      "source_sha256": "7d72a4f737089d1cd0575c3c9f442329d04105bb10a96bc8832bceef4e4b7acc",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-5-7d72a4f737.webp",
+      "upload_sha256": "c7f49a5972c5e592e38ed9b0eb4fad1f7c9a1294216453a056ed117409914cd1",
+      "dimensions": [
+        4096,
+        3072
+      ],
+      "reused": true,
+      "http_status": 200,
+      "content_type": "image/webp",
+      "cdn_sha256": "c7f49a5972c5e592e38ed9b0eb4fad1f7c9a1294216453a056ed117409914cd1",
+      "cdn_bytes": 6676888,
+      "cdn_byte_identical": true
+    },
+    {
+      "document_image": "image40.png",
+      "variant": "preview",
+      "source_sha256": "f25a55a93d29e2b4b9d034c403a39812c4ad69bb648f459c0fc1fd3ded3b23f0",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/project-refresh/upload/project-40-f25a55a93d29-preview.webp",
+      "upload_sha256": "e25af963eb6e5f751bc917aafa3f9a4034c5eb5a3996dcc4f8f2b81fd0d8d3d5",
+      "upload_size": 264034,
+      "size": [
+        1600,
+        1200
+      ],
+      "transformation": "photo-only 1600px preview; original unmodified and linked separately",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-40-f25a55a93d29-preview.webp",
+      "reused": false,
+      "http_status": 200,
+      "content_type": "image/webp",
+      "cdn_sha256": "e25af963eb6e5f751bc917aafa3f9a4034c5eb5a3996dcc4f8f2b81fd0d8d3d5",
+      "cdn_bytes": 264034,
+      "cdn_byte_identical": true
+    },
+    {
+      "document_image": "image41.png",
+      "variant": "preview",
+      "source_sha256": "5a3f3ece2c070e669fe15b0f1ec1643b7199394f70991853a8897b874863caf6",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/project-refresh/upload/project-41-5a3f3ece2c07-preview.webp",
+      "upload_sha256": "a2b666f45f03029a61d09c6fe8660f467539aecce9e56ec2269e457634321993",
+      "upload_size": 98772,
+      "size": [
+        1600,
+        532
+      ],
+      "transformation": "photo-only 1600px preview; original unmodified and linked separately",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-41-5a3f3ece2c07-preview.webp",
+      "reused": false,
+      "http_status": 200,
+      "content_type": "image/webp",
+      "cdn_sha256": "a2b666f45f03029a61d09c6fe8660f467539aecce9e56ec2269e457634321993",
+      "cdn_bytes": 98772,
+      "cdn_byte_identical": true
+    },
+    {
+      "document_image": "image42.png",
+      "variant": "preview",
+      "source_sha256": "55185549437d1e27265812c9bd093f8e1633f52220ef32dcf246c4315ffe0dd1",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/project-refresh/upload/project-42-55185549437d-preview.webp",
+      "upload_sha256": "e80492b4271654f30881792a9fd2e0c2f2998d21f60ca3154286ba9bb11a723d",
+      "upload_size": 175452,
+      "size": [
+        1248,
+        933
+      ],
+      "transformation": "photo-only 1600px preview; original unmodified and linked separately",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-42-55185549437d-preview.webp",
+      "reused": false,
+      "http_status": 200,
+      "content_type": "image/webp",
+      "cdn_sha256": "e80492b4271654f30881792a9fd2e0c2f2998d21f60ca3154286ba9bb11a723d",
+      "cdn_bytes": 175452,
+      "cdn_byte_identical": true
+    },
+    {
+      "document_image": "image65.png",
+      "variant": "preview",
+      "source_sha256": "2b6f00755b3f384755e98c2bbfb6c84d8e3c758bffb3a6a641350b84e5050106",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/project-refresh/upload/project-65-2b6f00755b3f-preview.webp",
+      "upload_sha256": "81b19a757690e6b3bd90af3c791e0c30fcf2f8d776c31258578073328e22d96a",
+      "upload_size": 165014,
+      "size": [
+        1600,
+        1200
+      ],
+      "transformation": "photo-only 1600px preview; original unmodified and linked separately",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-65-2b6f00755b3f-preview.webp",
+      "reused": false,
+      "http_status": 200,
+      "content_type": "image/webp",
+      "cdn_sha256": "81b19a757690e6b3bd90af3c791e0c30fcf2f8d776c31258578073328e22d96a",
+      "cdn_bytes": 165014,
+      "cdn_byte_identical": true
+    },
+    {
+      "document_image": "image66.png",
+      "variant": "preview",
+      "source_sha256": "7d72a4f737089d1cd0575c3c9f442329d04105bb10a96bc8832bceef4e4b7acc",
+      "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/project-refresh/upload/project-66-7d72a4f73708-preview.webp",
+      "upload_sha256": "d8a68db42040b9ef77862fce50ddc623b6e812ea9f58bee448709f2d33c2c0d9",
+      "upload_size": 418414,
+      "size": [
+        1600,
+        1200
+      ],
+      "transformation": "photo-only 1600px preview; original unmodified and linked separately",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-66-7d72a4f73708-preview.webp",
+      "reused": false,
+      "http_status": 200,
+      "content_type": "image/webp",
+      "cdn_sha256": "d8a68db42040b9ef77862fce50ddc623b6e812ea9f58bee448709f2d33c2c0d9",
+      "cdn_bytes": 418414,
+      "cdn_byte_identical": true
+    },
+    {
+      "document_image": "image54.png",
+      "source_sha256": "f4de7549d88d0baee39797fcd09aa9fa31be049494276fd952e272dd5d146d21",
+      "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/engineering-figure-4-f4de7549d8.webp",
+      "upload_sha256": "27386c19793971897cf8ae4c9a3e2637a8a55e7a795c63d11396fe852db6a434",
+      "cdn_byte_identical": true,
+      "http_status": 200,
+      "dimensions": [
+        1096,
+        662
+      ],
+      "reused": true,
+      "caption": "Figure 4. Prototype test strips and colored solutions.",
+      "caption_authorization": "User relayed senior request for a short caption fitting provided photo;2026-10-21"
+    }
+  ],
+  "authority": "URLs observed in official NKU-China6303 Uploads table; reused URLs matched exact original SHA256",
+  "review": "User supplied manuscript and requested shortened Figure4 caption matching photo; Photo54 restored with neutral caption approved for implementation20261021. Scientific final review flags retained."
+}

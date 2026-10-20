@@ -28,7 +28,50 @@ function sector(cx, cy, r0, r1, a0, a1) {
   const p = (r, a) => `${(cx + r * Math.cos(a)).toFixed(2)} ${(cy + r * Math.sin(a)).toFixed(2)}`;
   return `M${p(r1, a0)}A${r1} ${r1} 0 0 1 ${p(r1, a1)}L${p(r0, a1)}A${r0} ${r0} 0 0 0 ${p(r0, a0)}Z`;
 }
+function cycleOverview(d, { body }) {
+  const en = d.language === 'en';
+  const rounds = d.items || [];
+  if (!rounds.length) return body.append(empty('请添加至少一轮 Design–Build–Test–Learn。'));
+  const layout = h('div', { class: 'cyc cyc--overview' });
+  const seg = rounds.length > 1 ? segmented(rounds.map((it, i) => it.title || `Cycle ${i + 1}`), { label: en ? 'Select iteration' : '选择轮次', onSelect: draw }) : null;
+
+  function draw(index = 0) {
+    const round = rounds[index];
+    const main = h('div', { class: 'cyc__overview-main' }, ['design', 'build', 'test'].map((key) => {
+      const title = key[0].toUpperCase() + key.slice(1);
+      const content = has(round[key]) ? rich(round[key]) : h('p', { class: 'muted', text: en ? 'No content has been supplied for this stage.' : '这一阶段还没有填写内容。' });
+      const firstParagraph = content.matches?.('p') ? content : content.firstElementChild;
+      if (firstParagraph?.tagName === 'P') firstParagraph.prepend(h('strong', { text: `${title} - ` }));
+      return h('section', { class: 'cyc__overview-stage', 'data-dbtl-stage': key, role: 'group', 'aria-label': title }, content);
+    }));
+    const figures = ['design', 'build', 'test'].flatMap((key) => {
+      const src = round[`${key}Image`]; const caption = round[`${key}Caption`];
+      if (!src && !caption) return [];
+      let href = '';
+      try { href = src ? asset(src) : ''; } catch { href = ''; }
+      return [h('figure', { class: 'cyc__figure', 'data-dbtl-figure': key },
+        src && href ? h('a', { class: 'cyc__image', href, ...linkProps(href), 'aria-label': en ? `Open full-size ${key} image` : '打开原尺寸图片' }, h('img', { src: href, alt: round[`${key}Alt`] || '', loading: 'lazy', decoding: 'async' })) : null,
+        caption ? h('figcaption', null, rich(caption)) : null)];
+    });
+    const media = h('aside', { class: 'cyc__overview-media', 'aria-label': en ? 'Figures for Design, Build, and Test' : '设计、构建与测试配图' }, figures.length ? figures : h('p', { class: 'muted', text: en ? 'No figure has been supplied for this iteration.' : '本轮尚未添加配图。' }));
+    let learnHref = '';
+    try { learnHref = round.learnImage ? asset(round.learnImage) : ''; } catch { learnHref = ''; }
+    const learn = h('section', { class: 'cyc__overview-learn', 'data-dbtl-stage': 'learn' },
+      h('h4', { class: 'cyc__overview-label', text: 'Learn' }),
+      has(round.learn) ? rich(round.learn) : h('p', { class: 'muted', text: en ? 'No content has been supplied for this stage.' : '这一阶段还没有填写内容。' }),
+      round.learnCaption || learnHref ? h('figure', { class: 'cyc__figure' },
+        learnHref ? h('a', { class: 'cyc__image', href: learnHref, ...linkProps(learnHref), 'aria-label': en ? 'Open full-size Learn image' : '打开原尺寸图片' }, h('img', { src: learnHref, alt: round.learnAlt || '', loading: 'lazy', decoding: 'async' })) : null,
+        round.learnCaption ? h('figcaption', null, rich(round.learnCaption)) : null) : null,
+      goLink(round.href, en ? 'Detailed results' : '详细数据'));
+    swap(layout, main, media, learn);
+  }
+
+  if (seg) body.append(h('div', { class: 'seg-scroll' }, seg.el));
+  body.append(layout);
+  if (seg) seg.select(0); else draw(0);
+}
 function cycle(d, { body }) {
+  if (d.presentation === 'overview') return cycleOverview(d, { body });
   const en = d.language === 'en';
   const rounds = d.items || [];
   if (!rounds.length) return body.append(empty('请添加至少一轮 Design–Build–Test–Learn。'));
