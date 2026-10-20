@@ -1,0 +1,144 @@
+{
+  "schema_version": 1,
+  "captured_on": "2026-10-20",
+  "scope": "Project Description, Engineering, Contribution; Model Overview and all four module pages. Read-only source review and native PDF reference exports.",
+  "browser_method": "User-authorized existing Chrome session, operated via CUA UI; no browser profile/session files read.",
+  "exports": [
+    {
+      "title": "Project -> Description",
+      "source_url": "https://nankai.feishu.cn/wiki/TMcWwNEceipgotkQWyGc3aPrnUf",
+      "provenance_field": "pages.description.latest_manuscript_source",
+      "native_pdf_path": "/Users/cjrmacbook/.codex/claude-web-collab/nku26-wiki/afternoon-review/inputs/native-feishu/Project-Description-native-20261020.pdf",
+      "export_method": "Feishu document UI: … > 下载为 > PDF > 导出; “仅正文” selected. Not Chromium print-to-PDF.",
+      "captured_on": "2026-10-20",
+      "page_count": 5,
+      "size_bytes": 214110,
+      "sha256": "335c49f8bd93ee5ff0200f7a1752ffc708680a729aa12061627eb562da63fa9a",
+      "online_ui_checked": true,
+      "notes": "Project overview manuscript; Figure 1 diagram and caption visibly present."
+    },
+    {
+      "title": "Project -> Engineering",
+      "source_url": "https://nankai.feishu.cn/wiki/KNqGwhJ7Ti73Fqk2v6LckeTCnid",
+      "provenance_field": "pages.engineering.latest_author_replacement_20261020.source_url",
+      "native_pdf_path": "/Users/cjrmacbook/.codex/claude-web-collab/nku26-wiki/afternoon-review/inputs/native-feishu/Project-Engineering-native-20261020.pdf",
+      "export_method": "Feishu document UI: … > 下载为 > PDF > 导出; “仅正文” selected. Not Chromium print-to-PDF.",
+      "captured_on": "2026-10-20",
+      "page_count": 9,
+      "size_bytes": 3500662,
+      "sha256": "bed93bd869ced81bc715bda2f48aa43d6395cf851c73e7e7d4c6aa14ea125796",
+      "online_ui_checked": true,
+      "notes": "Latest author replacement source; TOC shows Goals 1–4, Iterations 1.1–4.3, Next DBTL; Figure 1 and Figure 6 observed in online page."
+    },
+    {
+      "title": "Project -> Contribution",
+      "source_url": "https://nankai.feishu.cn/wiki/Lj8SwIzkKiQgBzkecpNcRB4qnUc",
+      "provenance_field": "pages.contribution.latest_manuscript_source",
+      "native_pdf_path": "/Users/cjrmacbook/.codex/claude-web-collab/nku26-wiki/afternoon-review/inputs/native-feishu/Project-Contribution-native-20261020.pdf",
+      "export_method": "Feishu document UI: … > 下载为 > PDF > 导出; “仅正文” selected. Not Chromium print-to-PDF.",
+      "captured_on": "2026-10-20",
+      "page_count": 6,
+      "size_bytes": 5906843,
+      "sha256": "47c534e1815cafce6161e223c19a1948c32a64d6f96d54037f937521f1906af1",
+      "online_ui_checked": true,
+      "notes": "Latest manuscript source; visible TOC includes Parts and Collections, Documented Strain Construction, modeling resources and education resources."
+    },
+    {
+      "title": "Model -> Overview",
+      "source_url": "https://nankai.feishu.cn/wiki/A1UAwoARjiKiWVk7DFEcAvTEnlf",
+      "provenance_field": "pages.model.model_revision_20261020",
+      "native_pdf_path": "/Users/cjrmacbook/.codex/claude-web-collab/nku26-wiki/afternoon-review/inputs/native-feishu/Model-Overview-native-20261020.pdf",
+      "export_method": "Feishu document UI: … > 下载为 > PDF > 导出; “仅正文” selected. Not Chromium print-to-PDF.",
+      "captured_on": "2026-10-20",
+      "page_count": 2,
+      "size_bytes": 1655806,
+      "sha256": "8b972b00050fe07f289089e52b9f673b83f1f5a02ca056d71caa0a0b89919b12",
+      "online_ui_checked": true,
+      "notes": "Four overview images visibly present; image credit Generated with OpenAI GPT Image 2; four module titles shown."
+    },
+    {
+      "title": "Model -> Molecular Docking",
+      "source_url": "https://nankai.feishu.cn/wiki/Djx3w6tNiiFvLwkBPrLcWJ8Ansg",
+      "provenance_field": "pages.model-docking.model_revision_20261020",
+      "native_pdf_path": "/Users/cjrmacbook/.codex/claude-web-collab/nku26-wiki/afternoon-review/inputs/native-feishu/Model-Molecular-Docking-native-20261020.pdf",
+      "export_method": "Feishu document UI: … > 下载为 > PDF > 导出; “仅正文” selected. Not Chromium print-to-PDF.",
+      "captured_on": "2026-10-20",
+      "page_count": 8,
+      "size_bytes": 4764944,
+      "sha256": "9db248488c6b8c278559c3db76e4cf1546024144c314d12e4eebe1fe0a05d6fb",
+      "online_ui_checked": true,
+      "notes": "Latest manuscript source; separate earlier figure-update source https://nankai.feishu.cn/wiki/DpJYwOJNjiievKkVuaFcLBD8npf is not exported here."
+    },
+    {
+      "title": "Model -> Molecular Dynamics",
+      "source_url": "https://nankai.feishu.cn/wiki/VX6yweWwnioUkpkvrvgcRfA8nOg",
+      "provenance_field": "pages.model-md.model_revision_20261020",
+      "native_pdf_path": "/Users/cjrmacbook/.codex/claude-web-collab/nku26-wiki/afternoon-review/inputs/native-feishu/Model-Molecular-Dynamics-native-20261020.pdf",
+      "export_method": "Feishu document UI: … > 下载为 > PDF > 导出; “仅正文” selected. Not Chromium print-to-PDF.",
+      "captured_on": "2026-10-20",
+      "page_count": 5,
+      "size_bytes": 867505,
+      "sha256": "2cf3a3e4a9dc378c868c15adb25bbce53f7be9d851f2600b30ff5af0ac086c01",
+      "online_ui_checked": true,
+      "notes": "Latest manuscript source. Visible opening describes six membrane systems and 100 ns production simulations."
+    },
+    {
+      "title": "Model -> ODE and Dual-Channel Model",
+      "source_url": "https://nankai.feishu.cn/wiki/IyzXwn9wtiuCEmkZ89vcaMR2nSg",
+      "provenance_field": "pages.model-ode.model_refresh_20261020",
+      "native_pdf_path": "/Users/cjrmacbook/.codex/claude-web-collab/nku26-wiki/afternoon-review/inputs/native-feishu/Model-ODE-Dual-Channel-native-20261020.pdf",
+      "export_method": "Feishu document UI: … > 下载为 > PDF > 导出; “仅正文” selected. Not Chromium print-to-PDF.",
+      "captured_on": "2026-10-20",
+      "page_count": 19,
+      "size_bytes": 2946393,
+      "sha256": "eb0eea641f3c6795a4864cd8db00818e12481db796b644331c4e470fa359613a",
+      "online_ui_checked": true,
+      "notes": "Latest manuscript source. Visible opening includes Figure 3-1 workflow and caption."
+    },
+    {
+      "title": "Model -> Eco",
+      "source_url": "https://nankai.feishu.cn/wiki/ZnBZwIndPiFHKpkoZB0cyNugn9j",
+      "provenance_field": "pages.model-eco.model_refresh_20261020_pending",
+      "native_pdf_path": "/Users/cjrmacbook/.codex/claude-web-collab/nku26-wiki/afternoon-review/inputs/native-feishu/Model-Eco-native-20261020.pdf",
+      "export_method": "Feishu document UI: … > 下载为 > PDF > 导出; “仅正文” selected. Not Chromium print-to-PDF.",
+      "captured_on": "2026-10-20",
+      "page_count": 4,
+      "size_bytes": 505352,
+      "sha256": "f365a8691999cbfdc1fe35fad5530b01c8da236de6c910c2abe9ea0405091df8",
+      "online_ui_checked": true,
+      "notes": "Existing source only; provenance says latest source table is blank and pending author material. PDF is not represented as the missing/latest table source."
+    }
+  ],
+  "unavailable_or_pending": [
+    {
+      "page": "Project -> Results",
+      "source_url": null,
+      "reason": "No exact current Feishu URL is recorded in current wiki provenance; do not infer or guess."
+    },
+    {
+      "page": "Model -> Eco latest source table",
+      "source_url": null,
+      "reason": "Provenance field pages.model-eco.model_refresh_20261020_pending has no URL; source table remains pending. Existing Eco page PDF is included only as current-page context."
+    }
+  ],
+  "not_exported_alternate_sources": [
+    {
+      "page": "Model -> Molecular Docking figure update",
+      "source_url": "https://nankai.feishu.cn/wiki/DpJYwOJNjiievKkVuaFcLBD8npf",
+      "reason": "Older figure-update source; latest manuscript PDF was exported from Djx... source; not separately exported."
+    }
+  ],
+  "visual_review": [
+    {
+      "file": "Model-Overview-native-20261020.pdf",
+      "page": 1,
+      "result": "Rendered and visually checked; page contains title, overview paragraph, four complete illustrations, attribution and module content."
+    },
+    {
+      "file": "Project-Engineering-native-20261020.pdf",
+      "page": 2,
+      "result": "Rendered to confirm substantive page content; engineering overview flow diagram visually present."
+    }
+  ],
+  "limitations": "No complete text extraction was run because pdftotext and Python pypdf are unavailable in the default shell. Online UI DOM visibly confirmed page headings, opening text, TOC and specified figure captions. Other PDF pages have page-count and SHA-256 checks only."
+}

@@ -1,7 +1,7 @@
 {
-  "version": "10.2.21",
-  "label": "Wet lab table corrections and source scientific formatting",
-  "prepared_at": "2026-10-20T20:26:52+08:00",
+  "version": "10.2.22",
+  "label": "Results DBTL-3 cycle outline",
+  "prepared_at": "2026-10-20T21:04:52+08:00",
   "media": "84 unchanged original images plus 4 user-authorized GPS-only cleaned images; all decoded frames unchanged; 12 complete historical source documents",
   "release_kind": "stage",
   "team_content_review": "Scientific final review pending; source-version choices authorized by user",
@@ -10,7 +10,7 @@
     "commit": "16770d5c28ddf7bc41f8d90445c44d80a28801d5",
     "published_at_local": "2026-10-18 05:04:34"
   },
-  "release_id": "wetlab-tables-20261020-v10.2.21",
+  "release_id": "afternoon-review-results-cycle-toc-20261020-v10.2.22",
   "mobile_layout_check": "390px Members rendered without overflow; desktop Description, Parts/plasmid, Attributions/puzzle checked; 4 second delayed CDN uses inline preview then upgrades",
   "source_fidelity": {
     "original_source_files_verified": 80,
@@ -30,9 +30,8 @@
     "source_decisions": "content/author-source-decisions.json"
   },
   "previous_release": {
-    "version": "10.2.18",
-    "commit": "5bb0322ced0703d2a8469ea24a60bde8209ff7ad",
-    "published_at_beijing": "2026-10-20 12:26:16"
+    "version": "10.2.21",
+    "commit": "f1194f1ecc2ef547bb6a169df71ced3cdededb6f"
   },
   "visual_stage": "AI-generated handcut illustrations; 16 sheets, 91 canonical props",
   "meeting_update": {
@@ -302,5 +301,6 @@
     "text_cells_corrected": 7,
     "formatting": "Original scientific italics restored in all four tables",
     "source_commit": "4c5c5b8d1ed494db273a0c0e5a035d138751a007"
-  }
+  },
+  "change_scope": "Added explicit table-of-contents entries for Results DBTL-3 cycles 3.1, 3.2 and 3.3. Existing heading text, level, anchors, scientific content and figures are unchanged."
 }
