@@ -18,8 +18,8 @@
     {
       "_template": "heading",
       "level": 2,
-      "text": "Project Overview",
-      "attributes": "#description-project-overview toc=\"Project Overview\""
+      "text": "Project overview",
+      "attributes": "#description-project-overview toc=\"Project overview\""
     },
     {
       "_template": "manuscriptTitle",
@@ -44,8 +44,8 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "1.1 Starting with the Decision a Grower Needs to Make",
-      "attributes": "#description-starting-with-the-decision-a-grower-needs-to-make toc=\"Starting with the Decision a Grower Needs to Make\" toc-unnumbered"
+      "text": "1.1 Starting with the decision a grower needs to make",
+      "attributes": "#description-starting-with-the-decision-a-grower-needs-to-make toc=\"Starting with the decision a grower needs to make\" toc-unnumbered"
     },
     {
       "_template": "text",
@@ -82,8 +82,8 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "1.2 Looking for Chemical Clues in the Soil",
-      "attributes": "#description-looking-for-chemical-clues-in-the-soil toc=\"Looking for Chemical Clues in the Soil\" toc-unnumbered"
+      "text": "1.2 Looking for chemical clues in the soil",
+      "attributes": "#description-looking-for-chemical-clues-in-the-soil toc=\"Looking for chemical clues in the soil\" toc-unnumbered"
     },
     {
       "_template": "text",
@@ -104,8 +104,8 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "1.3 Turning Chemical Signals into Readable Color",
-      "attributes": "#description-turning-chemical-signals-into-readable-color toc=\"Turning Chemical Signals into Readable Color\" toc-unnumbered"
+      "text": "1.3 Turning chemical signals into readable color",
+      "attributes": "#description-turning-chemical-signals-into-readable-color toc=\"Turning chemical signals into readable color\" toc-unnumbered"
     },
     {
       "_template": "text",
@@ -122,8 +122,8 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "1.4 Making the Color Useful",
-      "attributes": "#description-making-the-color-useful toc=\"Making the Color Useful\" toc-unnumbered"
+      "text": "1.4 Making the color useful",
+      "attributes": "#description-making-the-color-useful toc=\"Making the color useful\" toc-unnumbered"
     },
     {
       "_template": "text",
@@ -144,8 +144,8 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "1.5 Bringing the Whole Process Back to the Field",
-      "attributes": "#description-bringing-the-whole-process-back-to-the-field toc=\"Bringing the Whole Process Back to the Field\" toc-unnumbered"
+      "text": "1.5 Bringing the whole process back to the field",
+      "attributes": "#description-bringing-the-whole-process-back-to-the-field toc=\"Bringing the whole process back to the field\" toc-unnumbered"
     },
     {
       "_template": "text",
@@ -179,8 +179,8 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "2.1 Two Responses to Understand a Mixed Signal",
-      "attributes": "#description-two-responses-to-understand-a-mixed-signal toc=\"Two Responses to Understand a Mixed Signal\" toc-unnumbered"
+      "text": "2.1 Two responses to understand a mixed signal",
+      "attributes": "#description-two-responses-to-understand-a-mixed-signal toc=\"Two responses to understand a mixed signal\" toc-unnumbered"
     },
     {
       "_template": "text",
@@ -193,8 +193,8 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "2.2 A Living Sensor in an Accessible Test Format",
-      "attributes": "#description-a-living-sensor-in-an-accessible-test-format toc=\"A Living Sensor in an Accessible Test Format\" toc-unnumbered"
+      "text": "2.2 A living sensor in an accessible test format",
+      "attributes": "#description-a-living-sensor-in-an-accessible-test-format toc=\"A living sensor in an accessible test format\" toc-unnumbered"
     },
     {
       "_template": "text",
@@ -211,8 +211,8 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "2.3 Designing Around the Decision That Follows",
-      "attributes": "#description-designing-around-the-decision-that-follows toc=\"Designing Around the Decision That Follows\" toc-unnumbered"
+      "text": "2.3 Designing around the decision that follows",
+      "attributes": "#description-designing-around-the-decision-that-follows toc=\"Designing around the decision that follows\" toc-unnumbered"
     },
     {
       "_template": "text",

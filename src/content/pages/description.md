@@ -15,7 +15,7 @@ hidden: false
 ---
 <div class="reading-layout" lang="en">
 
-## Project Overview {#description-project-overview toc="Project Overview"}
+## Project overview {#description-project-overview toc="Project overview"}
 
 :::manuscriptTitle
 
@@ -35,7 +35,7 @@ Figure 1. From nematode signals to practical screening. NemaKlear brings biosens
 
 :::
 
-### 1.1 Starting with the Decision a Grower Needs to Make {#description-starting-with-the-decision-a-grower-needs-to-make toc="Starting with the Decision a Grower Needs to Make" toc-unnumbered}
+### 1.1 Starting with the decision a grower needs to make {#description-starting-with-the-decision-a-grower-needs-to-make toc="Starting with the decision a grower needs to make" toc-unnumbered}
 
 PPNs live in soil and roots. Symptoms above ground often give little indication of what is happening below. For growers, a test is useful when it provides information in time to help with the next management decision.
 
@@ -65,7 +65,7 @@ Figure 3. Our discussion with Yurong Yao connects sampling and testing procedure
 
 :::
 
-### 1.2 Looking for Chemical Clues in the Soil {#description-looking-for-chemical-clues-in-the-soil toc="Looking for Chemical Clues in the Soil" toc-unnumbered}
+### 1.2 Looking for chemical clues in the soil {#description-looking-for-chemical-clues-in-the-soil toc="Looking for chemical clues in the soil" toc-unnumbered}
 
 Nematodes release a family of small signaling molecules called ascarosides. We focus on two of them, <strong>ascaroside #3 (ascr#3)</strong> and <strong>ascaroside #18 (ascr#18)</strong>, and use differences in their relative abundance as a starting point for investigating signals from target and background nematodes.
 
@@ -75,7 +75,7 @@ The idea begins with nematode-trapping fungi, which can sense chemical signals r
 
 Together, these calculations provide specific hypotheses for receptor construction and response testing, keeping molecular design focused on the needs of the dual-channel system. [Explore our receptor design →](/model-docking/)
 
-### 1.3 Turning Chemical Signals into Readable Color {#description-turning-chemical-signals-into-readable-color toc="Turning Chemical Signals into Readable Color" toc-unnumbered}
+### 1.3 Turning chemical signals into readable color {#description-turning-chemical-signals-into-readable-color toc="Turning chemical signals into readable color" toc-unnumbered}
 
 To make recognition visible, we use baker’s yeast, <em>Saccharomyces cerevisiae</em>, as the host for a system connecting a foreign receptor, intracellular signaling, and production of the yellow pigment betaxanthin. In this design, a signal received by the receptor travels through the yeast signaling pathway. A <strong>synthetic transcription factor (sTF)</strong> links that pathway to pigment production, giving the system a visible output.
 
@@ -83,7 +83,7 @@ We have worked along this chain by examining receptor expression and localizatio
 
 To move toward a portable kit, we have also tested strip materials, cell immobilization, freeze-drying protection, and conditions for yeast revival and color development. We have made a holder for the strips. Each step addresses the same practical need: enabling biological sensing on a carrier that is easy to handle and read. [Explore our test strip development →](/engineering/)
 
-### 1.4 Making the Color Useful {#description-making-the-color-useful toc="Making the Color Useful" toc-unnumbered}
+### 1.4 Making the color useful {#description-making-the-color-useful toc="Making the color useful" toc-unnumbered}
 
 A similar color intensity could arise from different combinations of target and background nematodes. We therefore analyze the two sensor responses together. Using simulations, we explore whether paired readings can estimate the density of the southern root-knot nematode when the number of background nematodes is unknown.
 
@@ -93,7 +93,7 @@ A density estimate raises another question: would knowing it change a management
 
 These comparisons feed back into the design of the test: which density ranges matter most, how much measurement error could change a decision, and whether the information is worth the cost of obtaining it. [Explore the value of detection information →](/model-eco/)
 
-### 1.5 Bringing the Whole Process Back to the Field {#description-bringing-the-whole-process-back-to-the-field toc="Bringing the Whole Process Back to the Field" toc-unnumbered}
+### 1.5 Bringing the whole process back to the field {#description-bringing-the-whole-process-back-to-the-field toc="Bringing the whole process back to the field" toc-unnumbered}
 
 A low barrier to use depends on the whole testing process. Collecting a meaningful sample, preparing it, reading the result, and safely disposing of the materials all need to be manageable.
 
@@ -117,13 +117,13 @@ The path we are working toward runs from soil sampling, through biological sensi
 
 ## Innovation {#description-innovation toc="Innovation"}
 
-### 2.1 Two Responses to Understand a Mixed Signal {#description-two-responses-to-understand-a-mixed-signal toc="Two Responses to Understand a Mixed Signal" toc-unnumbered}
+### 2.1 Two responses to understand a mixed signal {#description-two-responses-to-understand-a-mixed-signal toc="Two responses to understand a mixed signal" toc-unnumbered}
 
 Our sensing strategy combines two sensors with different response preferences for ascr#3 and ascr#18. Reading their responses together offers a way to investigate signals from samples containing both target and background nematodes.
 
 Receptor engineering explores how to create these complementary responses, while the dual-channel model examines how paired readings could help estimate target nematode density. This connects molecular design with a central challenge of soil testing: extracting useful information from a mixture of biological signals. [Receptor engineering →](/model-docking/) · [Dual-channel modeling →](/model-ode/)
 
-### 2.2 A Living Sensor in an Accessible Test Format {#description-a-living-sensor-in-an-accessible-test-format toc="A Living Sensor in an Accessible Test Format" toc-unnumbered}
+### 2.2 A living sensor in an accessible test format {#description-a-living-sensor-in-an-accessible-test-format toc="A living sensor in an accessible test format" toc-unnumbered}
 
 We bring fungal signal recognition, yeast signaling, and visible pigment production together in a paper-based format. The receptor provides the sensing element, the yeast pathway connects recognition to an output, and betaxanthin makes that output visible.
 
@@ -131,7 +131,7 @@ Work on cell immobilization, freeze-drying, revival, and the strip holder addres
 
 This goal guides both the development of the test strip and the evaluation of the complete workflow, including preparation, reading, cost, and disposal. [Test strip development →](/results/) · [User needs and workflow →](/human-practices/)
 
-### 2.3 Designing Around the Decision That Follows {#description-designing-around-the-decision-that-follows toc="Designing Around the Decision That Follows" toc-unnumbered}
+### 2.3 Designing around the decision that follows {#description-designing-around-the-decision-that-follows toc="Designing around the decision that follows" toc-unnumbered}
 
 We connect the development of the test with the question of what a user could do with its result. Human Practices identifies relevant settings and practical requirements. Modeling explores how paired readings might yield density information and when that information could change a management choice. These questions feed back into experimental calibration, readout design, and cost evaluation.
 

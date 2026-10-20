@@ -34,7 +34,9 @@
       "workspace/evidence/project-refresh/description-flat-review.json",
       "workspace/evidence/project-refresh/contribution-flat-review.json",
       "workspace/evidence/project-refresh/description-contribution-recheck-verify.log"
-    ]
+    ],
+    "heading_case_followup": "Description 9 headings and TOC labels restored to site sentence case; wording/order and flat layout unchanged. User requested flat document presentation, not verbatim title capitalization. Supersedes Title Case restoration recorded in preceding recheck.",
+    "heading_case_validation": "npm run verify PASS after heading-only correction; post-build python3 tools/audit-content-rules.py --structure-only PASS (26 pages, zero failures); git diff --check PASS."
   },
   "preview": {
     "port": 58068,
