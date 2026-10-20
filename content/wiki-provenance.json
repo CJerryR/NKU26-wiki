@@ -517,7 +517,16 @@
       "meeting_20261019_received": true,
       "meeting_20261019_source_language_preserved": true,
       "meeting_20261019_status": "original manuscripts integrated; publication validation pending",
-      "meeting_20261019_record": "outputs/19日凌晨会后更新-20261019/00-全部原件SHA256.json"
+      "meeting_20261019_record": "outputs/19日凌晨会后更新-20261019/00-全部原件SHA256.json",
+      "model_refresh_20261020": {
+        "source": "https://nankai.feishu.cn/wiki/IyzXwn9wtiuCEmkZ89vcaMR2nSg",
+        "local_manuscript": "docs/model-refresh-20261020/Model -_ ODE and Dual-Channel Model-restored.md",
+        "language": "Original author English",
+        "scope": "Latest prose, five figures, five embedded source tables; seven incomplete formula groups restored verbatim from old source by explicit user instruction",
+        "formula_receipt": "docs/model-refresh-20261020/ode-formula-restoration.json",
+        "team_review_approved": false,
+        "prepared_at": "2026-10-20T10:23:35+08:00"
+      }
     },
     {
       "slug": "model-eco",
@@ -540,7 +549,12 @@
       "meeting_20261019_received": true,
       "meeting_20261019_source_language_preserved": true,
       "meeting_20261019_status": "original manuscripts integrated; publication validation pending",
-      "meeting_20261019_record": "outputs/19日凌晨会后更新-20261019/00-全部原件SHA256.json"
+      "meeting_20261019_record": "outputs/19日凌晨会后更新-20261019/00-全部原件SHA256.json",
+      "model_refresh_20261020_pending": {
+        "latest_source_table": "Blank; user contacting member",
+        "previous_published_article_table": "Also absent; previous claim of a complete old table corrected",
+        "action": "Retain current Eco article until author table supplied"
+      }
     },
     {
       "slug": "source-archive",

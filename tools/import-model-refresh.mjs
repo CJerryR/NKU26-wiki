@@ -16,12 +16,32 @@ const esc = s => String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replac
 const text = body => ({_template:'text',body});
 const hash = s => crypto.createHash('sha256').update(s).digest('hex');
 const unescape = s => s.replace(/\\([\\`*{}\[\]()#+\-.!_>&|])/g,'$1');
-const math = s => katex.renderToString(s,{displayMode:true,throwOnError:true,output:'htmlAndMathml'});
+const odeOnly = process.argv.includes('--ode-only');
+const restoredFormulae = odeOnly ? JSON.parse(fs.readFileSync(path.join(source,'ode-formula-restoration.json'))).changes.map(c=>c.restored_tex) : [];
+function renderMath(s,displayMode=false) {
+ const html=katex.renderToString(s,{displayMode,throwOnError:true,output:'htmlAndMathml'});
+ // Prevent Markdown from interpreting TeX stars, escapes or blank lines inside
+ // the accessible annotation. Entities decode back to the identical TeX.
+ return html.replace(/(<annotation[^>]*>)([\s\S]*?)(<\/annotation>)/g,(_,a,t,z)=>a+t.replaceAll('\\','&#92;').replaceAll('*','&#42;').replaceAll('_','&#95;').replaceAll('\n','&#10;')+z);
+}
+const math = s => '<div class="model-equation">'+renderMath(s,true)+'</div>';
+function odeCell(value) {
+ const input=String(value??'');let out='',cursor=0;
+ for(let i=0;i<input.length;i++) {
+  if(input[i]!=='(')continue;
+  let depth=1,j=i+1;for(;j<input.length&&depth;j++){if(input[j]==='(')depth++;if(input[j]===')')depth--;}
+  if(depth)break;
+  const tex=input.slice(i+1,j-1);
+  if(/[\\_^=]/.test(tex)&&!/[\^]\(/.test(tex)) {out+=esc(input.slice(cursor,i))+renderMath(tex);cursor=j;}
+  i=j-1;
+ }
+ return out+esc(input.slice(cursor));
+}
 function tableHtml(rows) {
-  const cell=v=>String(v??'').split(/(\([^()]*[\\_^][^()]*\))/g).map(s=>/^\([^()]*[\\_^][^()]*\)$/.test(s)?katex.renderToString(s.slice(1,-1),{throwOnError:true,output:'htmlAndMathml'}):esc(s)).join('');
+  const cell=v=>odeOnly?odeCell(v):String(v??'').split(/(\([^()]*[\\_^][^()]*\))/g).map(s=>/^\([^()]*[\\_^][^()]*\)$/.test(s)?katex.renderToString(s.slice(1,-1),{throwOnError:true,output:'htmlAndMathml'}):esc(s)).join('');
   return '<div class="model-table-scroll" tabindex="0"><table class="model-source-table"><thead><tr>'+rows[0].map(v=>'<th scope="col">'+cell(v)+'</th>').join('')+'</tr></thead><tbody>'+rows.slice(1).map(row=>'<tr>'+row.map(v=>'<td>'+cell(v)+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>';
 }
-const config = [
+const config = odeOnly ? [['model-ode','Model -_ ODE and Dual-Channel Model','Model -_ ODE and Dual-Channel Model-restored.md']] : [
  ['model','Model -_ Overview (1)','Model -_ Overview.md'],
  ['model-docking','Model -_ Docking (1)','Model -_ Docking.md'],
  ['model-md','Model -_ Molecular Dynamics (1)','Model -_ Molecular Dynamics.md'],
@@ -35,7 +55,16 @@ for (const [slug,folder,name] of config) {
  const original=JSON.parse(fs.readFileSync(archive));
  let manuscript=fs.readFileSync(path.join(source,name),'utf8');
  const formulae=[];
- manuscript=manuscript.replace(/^\\\[\s*\n([\s\S]*?)^\\\]\s*$/gm,(_all,formula)=>{const tex=unescape(formula).trim();formulae.push(tex);return '\n\n'+math(tex)+'\n\n';});
+ manuscript=manuscript.replace(/^\\\[\s*\n([\s\S]*?)^\\\]\s*$/gm,(_all,formula)=>{const raw=formula.trim();const tex=restoredFormulae.includes(raw)?raw:unescape(raw);formulae.push(tex);return '\n\n'+math(tex)+'\n\n';});
+ if(slug==='model-ode') {
+  // Feishu escapes ordinary parentheses and TeX alike. Only render mathematical
+  // spans; retain prose parentheses, species abbreviations and citations verbatim.
+  manuscript=manuscript.replace(/\\\((.*?)\\\)/g,(all,value)=>{
+   const tex=unescape(value);
+   if(!/[\\_^=]/.test(tex)&&!/^([A-Z]|[bcmnajr])$/.test(tex))return all;
+   return renderMath(tex);
+  });
+ }
  const tree=processor.parse(manuscript);
  const nodes=tree.children.slice(1);
  const blocks=[text('<div class="reading-layout model-manuscript" lang="en">')];
@@ -77,7 +106,7 @@ for (const [slug,folder,name] of config) {
   } else blocks.push(text(md(n)));
   fidelity.push({source_type:n.type,text:value});
   for(const t of pendingTables) {
-   if(!t.used&&t.preceding_text===value) {
+   if(!t.used&&(t.preceding_text===value||(slug==='model-ode'&&value.startsWith(t.preceding_text.split(' Here,')[0])))) {
     if(t.empty) {
      // Pending explicit user disposition; leave this marker in the local candidate.
      blocks.push(text('<div data-model-source-table-missing="eco-rules"></div>'));
@@ -91,5 +120,5 @@ for (const [slug,folder,name] of config) {
  fs.writeFileSync(contentPath,JSON.stringify({...original,blocks,preserveAuthorFormatting:true},null,2)+'\n');
  report.push({slug,source:name,sha256:hash(fs.readFileSync(path.join(source,name))),blocks:blocks.length,source_nodes:fidelity,formulae,table_count:pendingTables.length});
 }
-fs.writeFileSync('docs/model-refresh-20261020/import-receipt.json',JSON.stringify(report,null,2)+'\n');
+fs.writeFileSync(odeOnly?'docs/model-refresh-20261020/ode-import-receipt.json':'docs/model-refresh-20261020/import-receipt.json',JSON.stringify(report,null,2)+'\n');
 console.log(report.map(({slug,blocks,table_count})=>({slug,blocks,table_count})));

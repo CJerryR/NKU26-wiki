@@ -38,5 +38,12 @@
       "all_frame_pixels_identical": true,
       "original_unchanged": true
     }
-  ]
+  ],
+  "ODE_20261020": {
+    "instruction": "把ODE缺的公式按旧版原样补回，ECO的规则表我联系一下成员。先保存本地，再用Tina排版，检查格式后上线。",
+    "scope": "7 missing/malformed formula groups only; remaining latest ODE manuscript unchanged",
+    "old_formula_source_commit": "5449c1e32ecdfb860ef9c77c5b60666f2d79c89a",
+    "manifest": "docs/model-refresh-20261020/ode-formula-restoration.json",
+    "eco": "Pending member source; no new rule table authored"
+  }
 }
