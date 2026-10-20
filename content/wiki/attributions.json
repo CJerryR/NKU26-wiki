@@ -169,9 +169,9 @@
     },
     {
       "_template": "heading",
-      "text": "Student team members — wet lab",
+      "text": "Wet Lab",
       "level": 4,
-      "attributes": "#wet-lab toc=\"Student team members — wet lab\""
+      "attributes": "#wet-lab toc=\"Wet Lab\""
     },
     {
       "_template": "creditgrid",
@@ -424,9 +424,9 @@
     },
     {
       "_template": "heading",
-      "text": "Student team members — dry lab",
+      "text": "Dry Lab",
       "level": 4,
-      "attributes": "#dry-lab toc=\"Student team members — dry lab\""
+      "attributes": "#dry-lab toc=\"Dry Lab\""
     },
     {
       "_template": "creditgrid",
@@ -539,9 +539,9 @@
     },
     {
       "_template": "heading",
-      "text": "Student team members — human practices",
+      "text": "HP",
       "level": 4,
-      "attributes": "#human-practices toc=\"Student team members — human practices\""
+      "attributes": "#human-practices toc=\"HP\""
     },
     {
       "_template": "creditgrid",
