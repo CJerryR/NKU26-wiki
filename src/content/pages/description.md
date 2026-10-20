@@ -37,11 +37,7 @@ Figure 1. From nematode signals to practical screening. NemaKlear brings biosens
 
 ### 1.1 Starting with the decision a grower needs to make {#description-starting-with-the-decision-a-grower-needs-to-make toc="Starting with the decision a grower needs to make" toc-unnumbered}
 
-PPNs live in soil and roots. Symptoms above ground often give little indication of what is happening below. For growers, a test is useful when it provides information in time to help with the next management decision.
-
-Established detection methods provide valuable information about nematodes, but their practical requirements can make routine testing difficult outside specialist settings. Microscopic identification relies on trained operators, while laboratory molecular testing often requires specialized equipment and sample preparation. NemaKlear focuses on making initial screening more accessible through a test-strip format supported by clear sampling, reading, and handling instructions. Our intended place is an accessible first step in a workflow that includes professional confirmation when needed. [Explore the scientific background →](/background/)
-
-::::figuretext{side=right width=wide}
+::::figuretext{side=right width=medium flow=wrap}
 
 :::figure
 
@@ -51,11 +47,15 @@ Figure 2. Conversations with growers help us understand practical needs for nema
 
 :::
 
+PPNs live in soil and roots. Symptoms above ground often give little indication of what is happening below. For growers, a test is useful when it provides information in time to help with the next management decision.
+
+Established detection methods provide valuable information about nematodes, but their practical requirements can make routine testing difficult outside specialist settings. Microscopic identification relies on trained operators, while laboratory molecular testing often requires specialized equipment and sample preparation. NemaKlear focuses on making initial screening more accessible through a test-strip format supported by clear sampling, reading, and handling instructions. Our intended place is an accessible first step in a workflow that includes professional confirmation when needed. [Explore the scientific background →](/background/)
+
 Questionnaires, conversations with growers, and interviews with plant-protection experts helped us make this goal more concrete. Respondents valued straightforward operation, reliable results, and affordability. Experts also connected the timing of detection with decisions made before planting.
 
-::::
-
 These perspectives gave “early warning” a specific purpose: could information about nematode risk help growers plan planting and consider soil treatment? This question shapes what our sensors need to measure, how results should be presented, and how the testing process should work. [Explore the needs and feedback behind our design →](/human-practices/)
+
+::::
 
 :::figure
 
@@ -95,11 +95,7 @@ These comparisons feed back into the design of the test: which density ranges ma
 
 ### 1.5 Bringing the whole process back to the field {#description-bringing-the-whole-process-back-to-the-field toc="Bringing the whole process back to the field" toc-unnumbered}
 
-A low barrier to use depends on the whole testing process. Collecting a meaningful sample, preparing it, reading the result, and safely disposing of the materials all need to be manageable.
-
-Expert discussions raised questions about representative sampling, soil background color, ascaroside stability, and disposal of engineered yeast. These questions entered our experimental and modeling discussions. Our soil collection and sampling guidance connect samples with information about crops, locations, and treatment histories, preparing the ground for testing under real environmental conditions. [Explore our field visits and expert discussions →](/hp-investigation/)
-
-::::figuretext{side=right width=wide}
+::::figuretext{side=right width=medium flow=wrap}
 
 :::figure
 
@@ -109,11 +105,15 @@ Figure 4. Students explore soil nematodes and crop diseases through an interacti
 
 :::
 
+A low barrier to use depends on the whole testing process. Collecting a meaningful sample, preparing it, reading the result, and safely disposing of the materials all need to be manageable.
+
+Expert discussions raised questions about representative sampling, soil background color, ascaroside stability, and disposal of engineered yeast. These questions entered our experimental and modeling discussions. Our soil collection and sampling guidance connect samples with information about crops, locations, and treatment histories, preparing the ground for testing under real environmental conditions. [Explore our field visits and expert discussions →](/hp-investigation/)
+
 Through age-adapted lessons, picture books, and outreach activities, we also explain soil nematodes, biological signals, and the principles behind our test. These activities help audiences understand what evidence is needed to interpret an observation. Industry discussions let us explore potential users, application conditions, and partnerships needed for further development. The project continues to take shape through feedback from laboratory research, agricultural practice, and public engagement. [Explore our education activities →](/education/) · [Explore our industry engagement →](/hp-industry/)
 
-::::
-
 The path we are working toward runs from soil sampling, through biological sensing and color readings, to risk information that can support further confirmation and management discussions. Our next steps are to calibrate sensor responses and models with real samples and evaluate the usability of the complete workflow, bringing molecular recognition closer to the practical needs of the field.
+
+::::
 
 ## Innovation {#description-innovation toc="Innovation"}
 

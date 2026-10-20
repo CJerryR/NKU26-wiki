@@ -65,7 +65,7 @@ Our computational work addresses questions that extend beyond NemaKlear: how to 
 
 ### 2.1 Receptor design and docking checks {#contribution-2-1-receptor-design-and-docking-checks toc="Receptor design and docking checks" toc-unnumbered}
 
-::::figuretext{side=right width=wide}
+::::figuretext{side=right width=medium flow=wrap}
 
 :::figure
 
@@ -121,7 +121,7 @@ Our <strong>Human Practices (HP)</strong> work produced materials and organizati
 
 ### 3.1 Age-adapted educational materials {#contribution-3-1-age-adapted-educational-materials toc="Age-adapted educational materials" toc-unnumbered}
 
-::::figuretext{side=right width=wide}
+::::figuretext{side=right width=medium flow=wrap}
 
 :::figure
 
@@ -141,7 +141,7 @@ Teams and educators can draw on the learning goals, activity sequences, and visu
 
 ### 3.2 Stakeholder research and feedback methods {#contribution-3-2-stakeholder-research-and-feedback-methods toc="Stakeholder research and feedback methods" toc-unnumbered}
 
-::::figuretext{side=right width=wide}
+::::figuretext{side=right width=medium flow=wrap}
 
 :::figure
 

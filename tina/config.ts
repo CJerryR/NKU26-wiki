@@ -80,10 +80,10 @@ const templates: Template[] = [
     { type: 'string', name: 'alt', label: '图片说明', required: true },
     { type: 'boolean', name: 'openOriginal', label: '点击查看完整原图' },
     { ...body, label: '图注' },
-    { type: 'string', name: 'layout', label: '图文版式', options: [{ label: '通栏图片', value: 'full' }, { label: '文字在上、图片在下', value: 'stack' }, { label: '左图右文', value: 'left' }, { label: '右图左文', value: 'right' }], description: '留空使用通栏；配套正文留空时也使用通栏。“文字在上、图片在下”把配套正文放在图片上方。' },
+    { type: 'string', name: 'layout', label: '图文版式', options: [{ label: '通栏图片', value: 'full' }, { label: '文字在上、图片在下', value: 'stack' }, { label: '左图右文', value: 'left' }, { label: '右图左文', value: 'right' }, { label: '左侧嵌入 · 文字环绕', value: 'wrap-left' }, { label: '右侧嵌入 · 文字环绕', value: 'wrap-right' }], description: '嵌入式将图片和图注作为整体，配套正文在旁环绕，超过图片高度后铺满下方。手机显示正文后显示图片。留空或配套正文为空时使用通栏。' },
     { type: 'string', name: 'scale', label: '图片显示比例', options: [{ label: '100%（默认）', value: '' }, { label: '85%', value: '85' }, { label: '70%', value: '70' }, { label: '55%', value: '55' }], description: '图片在白色图框中按此比例居中显示，左右留白。' },
-    { type: 'string', name: 'imageWidth', label: '图片列宽', options: [{ label: '窄（约 32%）', value: 'narrow' }, { label: '中（约 40%）', value: 'medium' }, { label: '宽（约 50%）', value: 'wide' }], description: '仅用于左右图文版式；手机自动上下排列。' },
-    { ...body, name: 'accompanyingBody', label: '配套正文' },
+    { type: 'string', name: 'imageWidth', label: '图片宽度', options: [{ label: '窄（约 32%）', value: 'narrow' }, { label: '中（约 40%）', value: 'medium' }, { label: '宽（约 50%）', value: 'wide' }], description: '用于左右并排和嵌入式环绕；手机自动上下排列。' },
+    { ...body, name: 'accompanyingBody', label: '配套正文', description: '嵌入式请放入相关的完整段落，可包含图片前后的正文；不要拆开 DBTL、表格等组件。' },
   ] },
   // C01 (component-design checkpoint-01): a figure kept beside the paragraphs that lead to it and read it.
   // Text is stored exactly as authored; order on the page is always 图前正文 → 图 → 图注 → 图后正文.

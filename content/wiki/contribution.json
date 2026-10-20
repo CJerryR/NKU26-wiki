@@ -114,8 +114,8 @@
       "src": "https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-3-9b303eb053.webp",
       "alt": "Figure 2. Mapping candidate sites for receptor engineering.",
       "body": "Figure 2. Mapping candidate sites for receptor engineering. Highlighted residues were selected for further substitution studies through comparisons of predicted ligand contacts.",
-      "layout": "right",
-      "imageWidth": "wide",
+      "layout": "wrap-right",
+      "imageWidth": "medium",
       "accompanyingBody": "We organized a receptor-design workflow around comparisons between two ligands. It combines contact-guided site selection, side-chain scanning, separate inspection of each ligand’s score, and comparisons between combined mutants and their single-mutant parents. Cross-receptor analysis adds sequence and structural correspondence to the assessment of candidate positions.\n\nWe also documented input checks and pose-export procedures for keeping coordinate references, atom mappings, and chemical information consistent. These methods can help other teams develop testable receptor-engineering hypotheses and prepare docking outputs for further analysis.\n\n[Explore the Docking Workflow](/model-docking/)",
       "openOriginal": true
     },
@@ -201,8 +201,8 @@
       "src": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-65-2b6f00755b3f-preview.webp",
       "alt": "Figure 4. Bringing nematode science into the classroom.",
       "body": "Figure 4. Bringing nematode science into the classroom. Our teaching materials support classroom activities through the Xiangyang Program partnership.",
-      "layout": "right",
-      "imageWidth": "wide",
+      "layout": "wrap-right",
+      "imageWidth": "medium",
       "accompanyingBody": "We developed three courses linking nematodes, agriculture, biological signals, and scientific responsibility. Age-adapted materials, picture books, and other outreach resources offer different ways to introduce these ideas to younger audiences.\n\nTeams and educators can draw on the learning goals, activity sequences, and visual materials, adapting them to local crops, classroom conditions, and learners’ ages.\n\n[Explore Educational Materials](/education/)",
       "originalSrc": "https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-4-2b6f00755b.webp",
       "openOriginal": true
@@ -218,8 +218,8 @@
       "src": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-66-7d72a4f73708-preview.webp",
       "alt": "Figure 5. Learning from growers’ experience.",
       "body": "Figure 5. Learning from growers’ experience. Conversations during farm visits helped us relate testing needs to local crops and management practices.",
-      "layout": "right",
-      "imageWidth": "wide",
+      "layout": "wrap-right",
+      "imageWidth": "medium",
       "accompanyingBody": "Our documentation shows how project questions can guide questionnaires, expert discussions, and conversations with growers. It also describes a way to trace feedback from its source through team discussion to subsequent design decisions.\n\nOther teams can adapt this approach to organize their own engagement and keep track of how it informs their work. Project-introduction and industry-communication materials provide additional examples of explaining a research idea and presenting a specific request for support.\n\n[Explore Integrated Human Practices](/human-practices/) · [Explore Industry Engagement](/hp-industry/)",
       "originalSrc": "https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-5-7d72a4f737.webp",
       "openOriginal": true

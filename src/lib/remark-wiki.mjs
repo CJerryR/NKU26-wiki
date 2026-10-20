@@ -355,8 +355,11 @@ function figureText(node) {
   const figure = children[imageAt];
   const body = children.filter((_, i) => i !== imageAt);
   const media = el('div', { className: ['figure-text__body'] }, body);
-  const content = side === 'right' ? [media, figure] : [figure, media];
-  return [el('div', { className: ['figure-text', `figure-text--${side}`, `figure-text--${width}`] }, [
+  const wrap = attrs.flow === 'wrap';
+  // A float must precede the text it wraps. Keep the complete figure (including
+  // its caption) together; the body remains one editable rich-text field.
+  const content = !wrap && side === 'right' ? [media, figure] : [figure, media];
+  return [el('div', { className: ['figure-text', `figure-text--${side}`, `figure-text--${width}`, ...(wrap ? ['figure-text--wrap'] : [])] }, [
     ...content,
   ])];
 }

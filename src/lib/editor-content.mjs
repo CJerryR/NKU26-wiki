@@ -41,9 +41,11 @@ export function blocksToMarkdown(blocks = [], { plainEquations = false } = {}) {
         const accompanying = markdown(block.accompanyingBody).trim();
         if (!accompanying) return figure;
         if (block.layout === 'stack') return `${accompanying}\n\n${figure}`;   // R1-I03: text above, figure below
-        if (!['left', 'right'].includes(block.layout)) return `${figure}\n\n${accompanying}`;
+        const wrap = ['wrap-left', 'wrap-right'].includes(block.layout);
+        if (!wrap && !['left', 'right'].includes(block.layout)) return `${figure}\n\n${accompanying}`;
         const width = ['narrow', 'medium', 'wide'].includes(block.imageWidth) ? block.imageWidth : 'medium';
-        return `::::figuretext{side=${block.layout} width=${width}}\n\n${figure}\n\n${accompanying}\n\n::::`;
+        const side = wrap ? block.layout.replace('wrap-', '') : block.layout;
+        return `::::figuretext{side=${side} width=${width}${wrap ? ' flow=wrap' : ''}}\n\n${figure}\n\n${accompanying}\n\n::::`;
       }
       // R1-I04: two framed figures side by side, each with its own caption (stacked on phones)
       case 'gallery': {

@@ -184,7 +184,7 @@ a[data-page-off] { cursor: auto; color: inherit !important; text-decoration: non
   margin-block: clamp(24px, 3vw, 36px);
   column-gap: clamp(24px, 3vw, 36px);
 }
-.doc:is([data-page="description"], [data-page="engineering"], [data-page="contribution"]) .reading-layout .figure-text > .figure {
+.doc:is([data-page="description"], [data-page="engineering"], [data-page="contribution"]) .reading-layout .figure-text:not(.figure-text--wrap) > .figure {
   margin: 0;
 }
 .doc:is([data-page="description"], [data-page="engineering"], [data-page="contribution"]) .reading-layout .figure-text__body {
@@ -193,6 +193,34 @@ a[data-page-off] { cursor: auto; color: inherit !important; text-decoration: non
 @media (max-width: 760px) {
   .figure-text, .figure-text--right { grid-template-columns: minmax(0, 1fr); gap: 20px; }
   .figure-text--right > .figure, .figure-text--right > .figure-text__body { grid-column: auto; grid-row: auto; }
+}
+
+/* Embedded figures: the caption shares the float; subsequent lines reclaim
+   the full text measure below it. The flow root keeps the next Tina block whole. */
+.doc .prose .figure-text--wrap {
+  display: flow-root;
+  margin-block: 28px;
+}
+.doc .prose .figure-text--wrap > .figure {
+  float: left;
+  width: var(--image-share);
+  margin: 0 28px 16px 0;
+  break-inside: avoid;
+}
+.doc .prose .figure-text--wrap.figure-text--right > .figure {
+  float: right;
+  margin: 0 0 16px 28px;
+}
+.doc .prose .figure-text--wrap > .figure-text__body { display: contents; }
+.doc .prose .figure-text--wrap > .figure-text__body > :first-child { margin-top: 0; }
+.doc .prose .figure-text--wrap > .figure-text__body > :last-child { margin-bottom: 0; }
+@media (max-width: 760px) {
+  .doc .prose .figure-text--wrap { display: flex; flex-direction: column; gap: 20px; }
+  .doc .prose .figure-text--wrap > .figure-text__body { display: block; order: 0; }
+  .doc .prose .figure-text--wrap > .figure,
+  .doc .prose .figure-text--wrap.figure-text--right > .figure {
+    float: none; width: 100%; margin: 0; order: 1;
+  }
 }
 
 /* Submitted pages: a wider, quieter reading surface within the V8.0 shell. */
