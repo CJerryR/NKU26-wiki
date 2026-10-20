@@ -29,7 +29,7 @@ This page introduces those resources and links to their detailed documentation. 
 
 ### 1.1 Parts and collections {#contribution-1-1-parts-and-collections toc="Parts and collections" toc-unnumbered}
 
-We submitted 39 Parts and four Collections to the iGEM Registry, covering yeast chassis construction, editing tools, <strong>guide RNAs</strong>, and GPR2 variants. Organizing these components by function gives future teams a clearer route to finding parts for related yeast-engineering projects.
+We submitted 39 Parts and four Collections to the iGEM Registry, covering yeast chassis construction, editing tools, guide RNAs, and GPR2 variants. Organizing these components by function gives future teams a clearer route to finding parts for related yeast-engineering projects.
 
 The collections bring together sequence and design information that teams can use when planning their own constructs. Detailed part descriptions and identifiers are listed on our Parts page.
 
@@ -53,7 +53,7 @@ Figure 1. A documented route to yeast strain construction. The workflow summariz
 
 ### 1.3 Protocols and troubleshooting {#contribution-1-3-protocols-and-troubleshooting toc="Protocols and troubleshooting" toc-unnumbered}
 
-Our experimental resources include the main protocols used in the project and a troubleshooting guide covering difficulties encountered during <strong>polymerase chain reaction</strong>, yeast transformation, and cloning.
+Our experimental resources include the main protocols used in the project and a troubleshooting guide covering difficulties encountered during polymerase chain reaction, yeast transformation, and cloning.
 
 Together, these materials give future teams both an experimental starting point and practical examples of what to check when a procedure does not work as expected.
 
@@ -85,7 +85,7 @@ We also documented input checks and pose-export procedures for keeping coordinat
 
 ### 2.2 Ligand motion and contact analysis {#contribution-2-2-ligand-motion-and-contact-analysis toc="Ligand motion and contact analysis" toc-unnumbered}
 
-We combined ligand-position measurements with contact analysis to examine receptor–ligand behavior during <strong>molecular dynamics</strong> simulations. Comparing whole-receptor, transmembrane-core, and local-pocket alignment helps distinguish overall receptor movement from changes near the binding site.
+We combined ligand-position measurements with contact analysis to examine receptor–ligand behavior during molecular dynamics simulations. Comparing whole-receptor, transmembrane-core, and local-pocket alignment helps distinguish overall receptor movement from changes near the binding site.
 
 Other teams can apply this approach to identify persistent contacts, periods of ligand relocation, and interactions worth investigating further. The analysis connects motion curves with the molecular structures behind them.
 
@@ -105,7 +105,7 @@ Figure 3. From signal response to density estimation. The workflow connects path
 
 :::
 
-[Explore the <strong>ordinary differential equation</strong> and dual-channel models](/model-ode/#src-Model-ODE-1)
+[Explore the ordinary differential equation and dual-channel models](/model-ode/#src-Model-ODE-1)
 
 ### 2.4 Economic evaluation of screening {#contribution-2-4-economic-evaluation-of-screening toc="Economic evaluation of screening" toc-unnumbered}
 
@@ -117,7 +117,7 @@ The framework separates parameters from calculations, allowing users to substitu
 
 ## Educational and engagement resources {#contribution-3-educational-and-engagement-resources toc="Educational and engagement resources"}
 
-Our <strong>Human Practices</strong> work produced materials and organizational approaches that can support other teams in teaching, understanding user needs, and coordinating field sampling. The documentation also outlines a way to record stakeholder feedback, team discussions, and follow-up actions.
+Our Human Practices work produced materials and organizational approaches that can support other teams in teaching, understanding user needs, and coordinating field sampling. The documentation also outlines a way to record stakeholder feedback, team discussions, and follow-up actions.
 
 ### 3.1 Age-adapted educational materials {#contribution-3-1-age-adapted-educational-materials toc="Age-adapted educational materials" toc-unnumbered}
 

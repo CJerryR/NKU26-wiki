@@ -23,7 +23,7 @@ NemaKlear: making nematode screening easier to use
 
 :::
 
-NemaKlear is developing a yeast-based biosensing kit for preliminary screening of agricultural nematode risk. Our approach uses engineered yeast to sense ascarosides, small molecules released by nematodes, and turn these chemical signals into a visible yellow color. By combining readings from two sensors with computational models, we explore how these signals could help assess the risk posed by <strong>plant-parasitic nematodes</strong>.
+NemaKlear is developing a yeast-based biosensing kit for preliminary screening of agricultural nematode risk. Our approach uses engineered yeast to sense ascarosides, small molecules released by nematodes, and turn these chemical signals into a visible yellow color. By combining readings from two sensors with computational models, we explore how these signals could help assess the risk posed by plant-parasitic nematodes.
 
 **Our central goal is to lower the practical barriers to testing.** We are developing a kit built around freeze-dried yeast test strips, with a straightforward workflow and an easy-to-read output. We want growers and agricultural service providers to obtain useful clues about nematode risk at key moments, including before planting, and use those clues to guide further diagnosis and management.
 
@@ -67,19 +67,19 @@ Figure 3. Our discussion with Yurong Yao connects sampling and testing procedure
 
 ### 1.2 Looking for chemical clues in the soil {#description-looking-for-chemical-clues-in-the-soil toc="Looking for chemical clues in the soil" toc-unnumbered}
 
-Nematodes release a family of small signaling molecules called ascarosides. We focus on two of them, <strong>ascaroside #3 (ascr#3)</strong> and <strong>ascaroside #18 (ascr#18)</strong>, and use differences in their relative abundance as a starting point for investigating signals from target and background nematodes.
+Nematodes release a family of small signaling molecules called ascarosides. We focus on two of them, ascaroside #3 (ascr#3) and ascaroside #18 (ascr#18), and use differences in their relative abundance as a starting point for investigating signals from target and background nematodes.
 
 In real soil, several types of nematodes may contribute to the same chemical signals. We therefore designed a dual-channel sensing approach: two sensors with different response preferences, tested against the same sample. We aim to learn more from their paired responses than either response could tell us alone. [Explore the basis of our two-signal approach →](/background/)
 
-The idea begins with nematode-trapping fungi, which can sense chemical signals released by their prey. We chose one of their receptors, GPR2, as our main engineering target. Molecular docking helps us compare predicted positions and contacts of the two ascarosides within the receptor and propose mutations. <strong>molecular dynamics</strong> simulations then let us examine how those contacts change in a membrane environment.
+The idea begins with nematode-trapping fungi, which can sense chemical signals released by their prey. We chose one of their receptors, GPR2, as our main engineering target. Molecular docking helps us compare predicted positions and contacts of the two ascarosides within the receptor and propose mutations. molecular dynamics simulations then let us examine how those contacts change in a membrane environment.
 
 Together, these calculations provide specific hypotheses for receptor construction and response testing, keeping molecular design focused on the needs of the dual-channel system. [Explore our receptor design →](/model-docking/)
 
 ### 1.3 Turning chemical signals into readable color {#description-turning-chemical-signals-into-readable-color toc="Turning chemical signals into readable color" toc-unnumbered}
 
-To make recognition visible, we use baker’s yeast, <em>Saccharomyces cerevisiae</em>, as the host for a system connecting a foreign receptor, intracellular signaling, and production of the yellow pigment betaxanthin. In this design, a signal received by the receptor travels through the yeast signaling pathway. A <strong>synthetic transcription factor</strong> links that pathway to pigment production, giving the system a visible output.
+To make recognition visible, we use baker’s yeast, <em>Saccharomyces cerevisiae</em>, as the host for a system connecting a foreign receptor, intracellular signaling, and production of the yellow pigment betaxanthin. In this design, a signal received by the receptor travels through the yeast signaling pathway. A synthetic transcription factor links that pathway to pigment production, giving the system a visible output.
 
-We have worked along this chain by examining receptor expression and localization, engineering the yeast host, and constructing the pigment-production module. Alongside these experiments, an <strong>ordinary differential equation</strong> model describes how an input signal develops into color over time. It helps us examine whether different inputs can produce distinguishable outputs and identify the dose-response measurements, blanks, and time courses needed for calibration. [Explore our experimental work →](/results/) · [Explore our signaling model →](/model-ode/)
+We have worked along this chain by examining receptor expression and localization, engineering the yeast host, and constructing the pigment-production module. Alongside these experiments, an ordinary differential equation model describes how an input signal develops into color over time. It helps us examine whether different inputs can produce distinguishable outputs and identify the dose-response measurements, blanks, and time courses needed for calibration. [Explore our experimental work →](/results/) · [Explore our signaling model →](/model-ode/)
 
 To move toward a portable kit, we have also tested strip materials, cell immobilization, freeze-drying protection, and conditions for yeast revival and color development. We have made a holder for the strips. Each step addresses the same practical need: enabling biological sensing on a carrier that is easy to handle and read. [Explore our test strip development →](/engineering/)
 

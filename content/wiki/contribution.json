@@ -40,7 +40,7 @@
     },
     {
       "_template": "text",
-      "body": "We submitted 39 Parts and four Collections to the iGEM Registry, covering yeast chassis construction, editing tools, <strong>guide RNAs</strong>, and GPR2 variants. Organizing these components by function gives future teams a clearer route to finding parts for related yeast-engineering projects."
+      "body": "We submitted 39 Parts and four Collections to the iGEM Registry, covering yeast chassis construction, editing tools, guide RNAs, and GPR2 variants. Organizing these components by function gives future teams a clearer route to finding parts for related yeast-engineering projects."
     },
     {
       "_template": "text",
@@ -83,7 +83,7 @@
     },
     {
       "_template": "text",
-      "body": "Our experimental resources include the main protocols used in the project and a troubleshooting guide covering difficulties encountered during <strong>polymerase chain reaction</strong>, yeast transformation, and cloning."
+      "body": "Our experimental resources include the main protocols used in the project and a troubleshooting guide covering difficulties encountered during polymerase chain reaction, yeast transformation, and cloning."
     },
     {
       "_template": "text",
@@ -127,7 +127,7 @@
     },
     {
       "_template": "text",
-      "body": "We combined ligand-position measurements with contact analysis to examine receptor–ligand behavior during <strong>molecular dynamics</strong> simulations. Comparing whole-receptor, transmembrane-core, and local-pocket alignment helps distinguish overall receptor movement from changes near the binding site."
+      "body": "We combined ligand-position measurements with contact analysis to examine receptor–ligand behavior during molecular dynamics simulations. Comparing whole-receptor, transmembrane-core, and local-pocket alignment helps distinguish overall receptor movement from changes near the binding site."
     },
     {
       "_template": "text",
@@ -160,7 +160,7 @@
     },
     {
       "_template": "text",
-      "body": "[Explore the <strong>ordinary differential equation</strong> and dual-channel models](/model-ode/#src-Model-ODE-1)"
+      "body": "[Explore the ordinary differential equation and dual-channel models](/model-ode/#src-Model-ODE-1)"
     },
     {
       "_template": "heading",
@@ -188,7 +188,7 @@
     },
     {
       "_template": "text",
-      "body": "Our <strong>Human Practices</strong> work produced materials and organizational approaches that can support other teams in teaching, understanding user needs, and coordinating field sampling. The documentation also outlines a way to record stakeholder feedback, team discussions, and follow-up actions."
+      "body": "Our Human Practices work produced materials and organizational approaches that can support other teams in teaching, understanding user needs, and coordinating field sampling. The documentation also outlines a way to record stakeholder feedback, team discussions, and follow-up actions."
     },
     {
       "_template": "heading",

@@ -29,7 +29,7 @@
     },
     {
       "_template": "text",
-      "body": "Molecular docking provided candidate binding poses for the Gpr2 variants N84V and V368R. We subsequently performed <strong>molecular dynamics (MD)</strong> simulations to examine how these poses adjusted in a membrane environment and which receptor–ligand contacts persisted."
+      "body": "Molecular docking provided candidate binding poses for the Gpr2 variants N84V and V368R. We subsequently performed molecular dynamics (MD) simulations to examine how these poses adjusted in a membrane environment and which receptor–ligand contacts persisted."
     },
     {
       "_template": "text",
@@ -51,7 +51,7 @@
     },
     {
       "_template": "text",
-      "body": "Each complex was then embedded in a <strong>1-palmitoyl-2-oleoyl-sn-glycero-3-phosphocholine (POPC)</strong> lipid bilayer, solvated, and supplemented with ions."
+      "body": "Each complex was then embedded in a 1-palmitoyl-2-oleoyl-sn-glycero-3-phosphocholine (POPC) lipid bilayer, solvated, and supplemented with ions."
     },
     {
       "_template": "text",
@@ -69,7 +69,7 @@
     },
     {
       "_template": "text",
-      "body": "To distinguish overall receptor motion from ligand movement within the pocket, we aligned the trajectories using a common set of pocket backbone atoms across all six systems. We then calculated ligand heavy-atom <strong>root mean square deviation (RMSD)</strong> relative to the first production frame of each respective trajectory. Whole-receptor alignment and alignment to the transmembrane helical core were also used to compare the results obtained with different structural references."
+      "body": "To distinguish overall receptor motion from ligand movement within the pocket, we aligned the trajectories using a common set of pocket backbone atoms across all six systems. We then calculated ligand heavy-atom root mean square deviation (RMSD) relative to the first production frame of each respective trajectory. Whole-receptor alignment and alignment to the transmembrane helical core were also used to compare the results obtained with different structural references."
     },
     {
       "_template": "text",

@@ -57,7 +57,7 @@ draft: false
 
 <p data-hp-source-paragraph="58"><strong>Plant-parasitic nematodes (plant-parasitic nematodes) live in soil and roots, but symptoms above ground do not always reveal their cause. </strong>When crops turn yellow, wilt, or grow poorly, growers must distinguish water stress, nutrient problems, and pests or diseases. They also need to know when testing can still inform management. These practical questions motivated our project on early warning of agricultural nematode threats.</p>
 
-<p data-hp-source-paragraph="59">Our project explores engineered yeast that responds to nematode-associated ascaroside signals and produces a visible output. <strong>Human Practices</strong> connects this concept with agricultural production, diagnostic expertise, public understanding, and potential use. We explain our project to others and bring their questions back into team discussions.</p>
+<p data-hp-source-paragraph="59">Our project explores engineered yeast that responds to nematode-associated ascaroside signals and produces a visible output. Human Practices connects this concept with agricultural production, diagnostic expertise, public understanding, and potential use. We explain our project to others and bring their questions back into team discussions.</p>
 
 ## Bringing different experiences into the project {#hp-source-61}
 

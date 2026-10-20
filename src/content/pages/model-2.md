@@ -12,4 +12,4 @@ draft: false
 ---
 ## Current chapter {#current-chapter toc="Current chapter"}
 
-The model chapters now have descriptive names. [Continue to <strong>molecular dynamics (MD)</strong>](/model-md/), or [open the model overview](/model/).
+The model chapters now have descriptive names. [Continue to molecular dynamics (MD)](/model-md/), or [open the model overview](/model/).

@@ -24,7 +24,7 @@
     },
     {
       "_template": "text",
-      "body": "We used DBTL to improve these connections. Bench experiments tested our biological constructs and materials. Computational models helped us develop receptor candidates and explore how to interpret mixed signals. <strong>Human Practices (HP)</strong> kept practical concerns—ease of use, cost, and useful information—in view as the project developed."
+      "body": "We used DBTL to improve these connections. Bench experiments tested our biological constructs and materials. Computational models helped us develop receptor candidates and explore how to interpret mixed signals. Human Practices (HP) kept practical concerns—ease of use, cost, and useful information—in view as the project developed."
     },
     {
       "_template": "image",
@@ -130,7 +130,7 @@
     },
     {
       "_template": "text",
-      "body": "We used successive rounds of receptor design to find variants with different predicted preferences for <strong>ascaroside #3 (ascr#3)</strong> and <strong>ascaroside #18 (ascr#18)</strong>. Each round narrowed the candidates and guided the next set of substitutions."
+      "body": "We used successive rounds of receptor design to find variants with different predicted preferences for ascaroside #3 (ascr#3) and ascaroside #18 (ascr#18). Each round narrowed the candidates and guided the next set of substitutions."
     },
     {
       "_template": "cycle",
@@ -138,7 +138,7 @@
       "display": "arc",
       "items": [
         {
-          "design": "We selected candidate sites from differences in the two ligands’ predicted contacts, then used **alanine (Ala)** substitutions to identify positions worth exploring further.",
+          "design": "We selected candidate sites from differences in the two ligands’ predicted contacts, then used alanine (Ala) substitutions to identify positions worth exploring further.",
           "build": "We expanded promising sites through side-chain scanning, generating a panel of mutant sequences and structural models. We also designed combinations to test whether useful single-site effects could be retained or improved.",
           "test": "Score and contact comparisons identified N84V, V110C, V110M, and V368R as priority candidates. N84V and V368R showed contrasting score shifts toward ascr#18 and ascr#3, respectively. Most tested combinations offered no further improvement over the better single-mutant parent, helping us focus subsequent work.",
           "learn": "**We developed a set of receptor-engineering candidates and prioritized N84V and V368R for further study.** Their contrasting predicted preferences provided a basis for exploring complementary sensing channels. Dynamic analysis and experimental ligand-response measurements were the next steps toward evaluating these designs.",
@@ -320,7 +320,7 @@
       "items": [
         {
           "design": "We examined recovery media and additives that could affect nutrient supply, wetting, and pigment stability.",
-          "build": "We compared recovery in synthetic complete medium and phosphate-buffered saline, then tested glucose, **tyrosine (Tyr)**, Tween 80, and ascorbic acid conditions. We quantified color using blue-channel image values.",
+          "build": "We compared recovery in synthetic complete medium and phosphate-buffered saline, then tested glucose, tyrosine (Tyr), Tween 80, and ascorbic acid conditions. We quantified color using blue-channel image values.",
           "test": "Color development varied across treatments. Several Tyr–Tween 80 combinations and ascorbic acid treatments produced stronger yellow signals than the reference, while changing glucose concentration did not consistently improve the signal.",
           "learn": "**We identified formulation conditions that strengthened the yellow readout.** These comparisons gave us a basis for refining the recovery solution alongside the strip itself. Further testing will assess whether the improved color development is consistent across prepared strips.",
           "icon": "https://static.igem.wiki/teams/6303/wiki/dbtl-arc-20261021/dbtl-icon-3-2-98fef27083.svg",

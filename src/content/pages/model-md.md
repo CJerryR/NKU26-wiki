@@ -25,7 +25,7 @@ Molecular dynamics: ligand positioning and contact changes in a membrane environ
 
 :::
 
-Molecular docking provided candidate binding poses for the Gpr2 variants N84V and V368R. We subsequently performed <strong>molecular dynamics (MD)</strong> simulations to examine how these poses adjusted in a membrane environment and which receptor–ligand contacts persisted.
+Molecular docking provided candidate binding poses for the Gpr2 variants N84V and V368R. We subsequently performed molecular dynamics (MD) simulations to examine how these poses adjusted in a membrane environment and which receptor–ligand contacts persisted.
 
 The public analysis code processes receptor and partner motion, local geometry, contacts, and polar interactions from trajectories. [Explore the molecular-dynamics analysis code →](https://gitlab.igem.org/2026/software/nku-china/modeling/-/blob/main/studies/receptor-engineering/molecular-dynamics/README.md)
 
@@ -35,7 +35,7 @@ The public analysis code processes receptor and partner motion, local geometry, 
 
 We assembled six receptor–ligand systems by pairing wild-type (WT) Gpr2, N84V and V368R with ascr#18 and ascr#3. The AlphaFold 3 structures used in this workflow were generated locally with the official model parameters and reference databases. For each system, its own docking pose was transferred into the corresponding full-length receptor, and steric clashes involving the restored receptor segments, the ligand and neighboring structures were resolved.
 
-Each complex was then embedded in a <strong>1-palmitoyl-2-oleoyl-sn-glycero-3-phosphocholine (POPC)</strong> lipid bilayer, solvated, and supplemented with ions.
+Each complex was then embedded in a 1-palmitoyl-2-oleoyl-sn-glycero-3-phosphocholine (POPC) lipid bilayer, solvated, and supplemented with ions.
 
 The systems underwent energy minimization, followed by gradual heating to 303.15 K at constant volume and a brief period at the target temperature. Pressure equilibration was then performed in successive stages at 1 bar, with positional and dihedral restraints progressively relaxed to allow the receptor, ligand, lipids, and solvent to relax together. Additional unrestrained preparatory simulations were then performed while monitoring temperature, density, membrane-plane area, and box height. Each of the six systems subsequently underwent a single 100 ns production simulation.
 
@@ -43,7 +43,7 @@ The systems underwent energy minimization, followed by gradual heating to 303.15
 
 ## Tracking ligand motion relative to the local binding pocket {#model-md-section-2 toc="Tracking ligand motion relative to the local binding pocket"}
 
-To distinguish overall receptor motion from ligand movement within the pocket, we aligned the trajectories using a common set of pocket backbone atoms across all six systems. We then calculated ligand heavy-atom <strong>root mean square deviation (RMSD)</strong> relative to the first production frame of each respective trajectory. Whole-receptor alignment and alignment to the transmembrane helical core were also used to compare the results obtained with different structural references.
+To distinguish overall receptor motion from ligand movement within the pocket, we aligned the trajectories using a common set of pocket backbone atoms across all six systems. We then calculated ligand heavy-atom root mean square deviation (RMSD) relative to the first production frame of each respective trajectory. Whole-receptor alignment and alignment to the transmembrane helical core were also used to compare the results obtained with different structural references.
 
 The 50–100 ns interval was used as the primary comparison window for all six systems to reduce the influence of early conformational relaxation. Full trajectories were also examined to track contact formation and loss and ligand repositioning. RMSD describes the extent to which a ligand deviates from its own starting pose, whereas contact occupancy is the fraction of sampled frames within the analysis window that satisfy the specified contact criterion.
 

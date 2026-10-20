@@ -1,0 +1,994 @@
+{
+  "date": "2026-10-21",
+  "policy": "2026-10-21 user override: standalone professional/proprietary term expansions and their abbreviations are no longer bolded. Only the bold wrapper is removed; source wording and nested markup are preserved.",
+  "total_removed": 120,
+  "by_page": {
+    "background.json": 17,
+    "contribution.json": 5,
+    "description.json": 6,
+    "engineering.json": 14,
+    "experiments.json": 8,
+    "hp-industry.json": 1,
+    "hp-investigation.json": 4,
+    "hp-overview.json": 1,
+    "human-practices.json": 3,
+    "model-2.json": 1,
+    "model-docking.json": 1,
+    "model-md.json": 3,
+    "model-ode.json": 12,
+    "model.json": 5,
+    "parts.json": 11,
+    "results.json": 24,
+    "safety.json": 3,
+    "attributions.json": 1
+  },
+  "changes": [
+    {
+      "page": "background.json",
+      "path": "$.blocks[2].body",
+      "term_definition": "Plant-parasitic nematodes (PPNs)",
+      "removed_markup": "<strong>Plant-parasitic nematodes (PPNs)</strong>",
+      "retained_markup": "Plant-parasitic nematodes (PPNs)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "background.json",
+      "path": "$.blocks[2].body",
+      "term_definition": "Heterodera glycines ( H. glycines )",
+      "removed_markup": "<strong><em>Heterodera glycines</em> (<em>H. glycines</em>)</strong>",
+      "retained_markup": "<em>Heterodera glycines</em> (<em>H. glycines</em>)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "background.json",
+      "path": "$.blocks[2].body",
+      "term_definition": "Meloidogyne incognita ( Mi )",
+      "removed_markup": "<strong><em>Meloidogyne incognita</em> (<em>Mi</em>)</strong>",
+      "retained_markup": "<em>Meloidogyne incognita</em> (<em>Mi</em>)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "background.json",
+      "path": "$.blocks[4].body",
+      "term_definition": "second-stage juveniles (J2)",
+      "removed_markup": "<strong>second-stage juveniles (J2)</strong>",
+      "retained_markup": "second-stage juveniles (J2)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "background.json",
+      "path": "$.blocks[9].body",
+      "term_definition": "polymerase chain reaction (PCR)",
+      "removed_markup": "**polymerase chain reaction (PCR)**",
+      "retained_markup": "polymerase chain reaction (PCR)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "background.json",
+      "path": "$.blocks[9].body",
+      "term_definition": "quantitative polymerase chain reaction (qPCR)",
+      "removed_markup": "**quantitative polymerase chain reaction (qPCR)**",
+      "retained_markup": "quantitative polymerase chain reaction (qPCR)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "background.json",
+      "path": "$.blocks[9].body",
+      "term_definition": "next-generation sequencing (NGS)",
+      "removed_markup": "**next-generation sequencing (NGS)**",
+      "retained_markup": "next-generation sequencing (NGS)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "background.json",
+      "path": "$.blocks[9].body",
+      "term_definition": "loop-mediated isothermal amplification (LAMP)",
+      "removed_markup": "**loop-mediated isothermal amplification (LAMP)**",
+      "retained_markup": "loop-mediated isothermal amplification (LAMP)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "background.json",
+      "path": "$.blocks[9].body",
+      "term_definition": "recombinase polymerase amplification (RPA)",
+      "removed_markup": "**recombinase polymerase amplification (RPA)**",
+      "retained_markup": "recombinase polymerase amplification (RPA)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "background.json",
+      "path": "$.blocks[9].body",
+      "term_definition": "convolutional neural network (CNN)",
+      "removed_markup": "**convolutional neural network (CNN)**",
+      "retained_markup": "convolutional neural network (CNN)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "background.json",
+      "path": "$.blocks[13].body",
+      "term_definition": "ascaroside #18 (ascr#18)",
+      "removed_markup": "<strong>ascaroside #18 (ascr#18)</strong>",
+      "retained_markup": "ascaroside #18 (ascr#18)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "background.json",
+      "path": "$.blocks[13].body",
+      "term_definition": "Caenorhabditis elegans ( Ce )",
+      "removed_markup": "<strong><em>Caenorhabditis elegans</em> (<em>Ce</em>)</strong>",
+      "retained_markup": "<em>Caenorhabditis elegans</em> (<em>Ce</em>)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "background.json",
+      "path": "$.blocks[13].body",
+      "term_definition": "ascaroside #3 (ascr#3)",
+      "removed_markup": "<strong>ascaroside #3 (ascr#3)</strong>",
+      "retained_markup": "ascaroside #3 (ascr#3)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "background.json",
+      "path": "$.blocks[13].body",
+      "term_definition": "ascaroside #5 (ascr#5)",
+      "removed_markup": "<strong>ascaroside #5 (ascr#5)</strong>",
+      "retained_markup": "ascaroside #5 (ascr#5)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "background.json",
+      "path": "$.blocks[16].accompanyingBody",
+      "term_definition": "G protein-coupled receptor (GPCR)",
+      "removed_markup": "<strong>G protein-coupled receptor (GPCR)</strong>",
+      "retained_markup": "G protein-coupled receptor (GPCR)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "background.json",
+      "path": "$.blocks[16].accompanyingBody",
+      "term_definition": "Arthrobotrys oligospora ( A. oligospora )",
+      "removed_markup": "<strong><em>Arthrobotrys oligospora</em> (<em>A. oligospora</em>)</strong>",
+      "retained_markup": "<em>Arthrobotrys oligospora</em> (<em>A. oligospora</em>)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "background.json",
+      "path": "$.blocks[16].accompanyingBody",
+      "term_definition": "mitogen-activated protein kinase (MAPK)",
+      "removed_markup": "<strong>mitogen-activated protein kinase (MAPK)</strong>",
+      "retained_markup": "mitogen-activated protein kinase (MAPK)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "contribution.json",
+      "path": "$.blocks[6].body",
+      "term_definition": "guide RNAs (gRNAs)",
+      "removed_markup": "<strong>guide RNAs (gRNAs)</strong>",
+      "retained_markup": "guide RNAs (gRNAs)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "contribution.json",
+      "path": "$.blocks[15].body",
+      "term_definition": "polymerase chain reaction (PCR)",
+      "removed_markup": "<strong>polymerase chain reaction (PCR)</strong>",
+      "retained_markup": "polymerase chain reaction (PCR)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "contribution.json",
+      "path": "$.blocks[23].body",
+      "term_definition": "molecular dynamics (MD)",
+      "removed_markup": "<strong>molecular dynamics (MD)</strong>",
+      "retained_markup": "molecular dynamics (MD)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "contribution.json",
+      "path": "$.blocks[30].body",
+      "term_definition": "ordinary differential equation (ODE)",
+      "removed_markup": "<strong>ordinary differential equation (ODE)</strong>",
+      "retained_markup": "ordinary differential equation (ODE)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "contribution.json",
+      "path": "$.blocks[36].body",
+      "term_definition": "Human Practices (HP)",
+      "removed_markup": "<strong>Human Practices (HP)</strong>",
+      "retained_markup": "Human Practices (HP)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "description.json",
+      "path": "$.blocks[3].body",
+      "term_definition": "plant-parasitic nematodes (PPNs)",
+      "removed_markup": "<strong>plant-parasitic nematodes (PPNs)</strong>",
+      "retained_markup": "plant-parasitic nematodes (PPNs)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "description.json",
+      "path": "$.blocks[10].body",
+      "term_definition": "ascaroside #3 (ascr#3)",
+      "removed_markup": "<strong>ascaroside #3 (ascr#3)</strong>",
+      "retained_markup": "ascaroside #3 (ascr#3)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "description.json",
+      "path": "$.blocks[10].body",
+      "term_definition": "ascaroside #18 (ascr#18)",
+      "removed_markup": "<strong>ascaroside #18 (ascr#18)</strong>",
+      "retained_markup": "ascaroside #18 (ascr#18)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "description.json",
+      "path": "$.blocks[12].body",
+      "term_definition": "Molecular dynamics (MD)",
+      "removed_markup": "<strong>Molecular dynamics (MD)</strong>",
+      "retained_markup": "Molecular dynamics (MD)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "description.json",
+      "path": "$.blocks[15].body",
+      "term_definition": "synthetic transcription factor (sTF)",
+      "removed_markup": "<strong>synthetic transcription factor (sTF)</strong>",
+      "retained_markup": "synthetic transcription factor (sTF)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "description.json",
+      "path": "$.blocks[16].body",
+      "term_definition": "ordinary differential equation (ODE)",
+      "removed_markup": "<strong>ordinary differential equation (ODE)</strong>",
+      "retained_markup": "ordinary differential equation (ODE)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "engineering.json",
+      "path": "$.blocks[3].body",
+      "term_definition": "Human Practices (HP)",
+      "removed_markup": "<strong>Human Practices (HP)</strong>",
+      "retained_markup": "Human Practices (HP)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "engineering.json",
+      "path": "$.blocks[11].items[0].build",
+      "term_definition": "Calcofluor White (CFW)",
+      "removed_markup": "**Calcofluor White (CFW)**",
+      "retained_markup": "Calcofluor White (CFW)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "engineering.json",
+      "path": "$.blocks[14].items[0].design",
+      "term_definition": "guide RNAs (gRNAs)",
+      "removed_markup": "**guide RNAs (gRNAs)**",
+      "retained_markup": "guide RNAs (gRNAs)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "engineering.json",
+      "path": "$.blocks[14].items[0].design",
+      "term_definition": "deoxyribonucleic acid (DNA)",
+      "removed_markup": "**deoxyribonucleic acid (DNA)**",
+      "retained_markup": "deoxyribonucleic acid (DNA)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "engineering.json",
+      "path": "$.blocks[14].items[0].build",
+      "term_definition": "leucine (Leu)",
+      "removed_markup": "**leucine (Leu)**",
+      "retained_markup": "leucine (Leu)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "engineering.json",
+      "path": "$.blocks[20].body",
+      "term_definition": "ascaroside #3 (ascr#3)",
+      "removed_markup": "<strong>ascaroside #3 (ascr#3)</strong>",
+      "retained_markup": "ascaroside #3 (ascr#3)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "engineering.json",
+      "path": "$.blocks[20].body",
+      "term_definition": "ascaroside #18 (ascr#18)",
+      "removed_markup": "<strong>ascaroside #18 (ascr#18)</strong>",
+      "retained_markup": "ascaroside #18 (ascr#18)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "engineering.json",
+      "path": "$.blocks[21].items[0].design",
+      "term_definition": "alanine (Ala)",
+      "removed_markup": "**alanine (Ala)**",
+      "retained_markup": "alanine (Ala)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "engineering.json",
+      "path": "$.blocks[24].items[0].design",
+      "term_definition": "wild type (WT)",
+      "removed_markup": "**wild type (WT)**",
+      "retained_markup": "wild type (WT)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "engineering.json",
+      "path": "$.blocks[24].items[0].build",
+      "term_definition": "molecular dynamics (MD)",
+      "removed_markup": "**molecular dynamics (MD)**",
+      "retained_markup": "molecular dynamics (MD)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "engineering.json",
+      "path": "$.blocks[30].items[0].build",
+      "term_definition": "ordinary differential equation (ODE)",
+      "removed_markup": "**ordinary differential equation (ODE)**",
+      "retained_markup": "ordinary differential equation (ODE)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "engineering.json",
+      "path": "$.blocks[44].items[0].build",
+      "term_definition": "synthetic complete (SC)",
+      "removed_markup": "**synthetic complete (SC)**",
+      "retained_markup": "synthetic complete (SC)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "engineering.json",
+      "path": "$.blocks[44].items[0].build",
+      "term_definition": "phosphate-buffered saline (PBS)",
+      "removed_markup": "**phosphate-buffered saline (PBS)**",
+      "retained_markup": "phosphate-buffered saline (PBS)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "engineering.json",
+      "path": "$.blocks[44].items[0].build",
+      "term_definition": "tyrosine (Tyr)",
+      "removed_markup": "**tyrosine (Tyr)**",
+      "retained_markup": "tyrosine (Tyr)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "experiments.json",
+      "path": "$.blocks[1].body",
+      "term_definition": "Deoxyribonucleic acid (DNA)",
+      "removed_markup": "<strong>Deoxyribonucleic acid (DNA)</strong>",
+      "retained_markup": "Deoxyribonucleic acid (DNA)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "experiments.json",
+      "path": "$.blocks[1].body",
+      "term_definition": "ribonucleic acid (RNA)",
+      "removed_markup": "<strong>ribonucleic acid (RNA)</strong>",
+      "retained_markup": "ribonucleic acid (RNA)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "experiments.json",
+      "path": "$.blocks[1].body",
+      "term_definition": "single-guide RNA (sgRNA)",
+      "removed_markup": "<strong>single-guide RNA (sgRNA)</strong>",
+      "retained_markup": "single-guide RNA (sgRNA)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "experiments.json",
+      "path": "$.blocks[1].body",
+      "term_definition": "Polymerase chain reaction (PCR)",
+      "removed_markup": "<strong>Polymerase chain reaction (PCR)</strong>",
+      "retained_markup": "Polymerase chain reaction (PCR)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "experiments.json",
+      "path": "$.blocks[1].body",
+      "term_definition": "Saccharomyces cerevisiae ( S.c )",
+      "removed_markup": "<strong><em>Saccharomyces cerevisiae</em> (<em>S.c</em>)</strong>",
+      "retained_markup": "<em>Saccharomyces cerevisiae</em> (<em>S.c</em>)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "experiments.json",
+      "path": "$.blocks[1].body",
+      "term_definition": "Escherichia coli ( E. coli )",
+      "removed_markup": "<strong><em>Escherichia coli</em> (<em>E. coli</em>)</strong>",
+      "retained_markup": "<em>Escherichia coli</em> (<em>E. coli</em>)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "experiments.json",
+      "path": "$.blocks[14].body",
+      "term_definition": "homologous recombination (HR)",
+      "removed_markup": "<strong>homologous recombination (HR)</strong>",
+      "retained_markup": "homologous recombination (HR)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "experiments.json",
+      "path": "$.blocks[14].body",
+      "term_definition": "double-joint PCR (DJ-PCR)",
+      "removed_markup": "<strong>double-joint PCR (DJ-PCR)</strong>",
+      "retained_markup": "double-joint PCR (DJ-PCR)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "hp-industry.json",
+      "path": "$.blocks[6].body",
+      "term_definition": "Human Practices (HP)",
+      "removed_markup": "<strong>Human Practices (HP)</strong>",
+      "retained_markup": "Human Practices (HP)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "hp-investigation.json",
+      "path": "$.blocks[5].body",
+      "term_definition": "plant-parasitic nematodes (PPNs)",
+      "removed_markup": "<strong>plant-parasitic nematodes (PPNs)</strong>",
+      "retained_markup": "plant-parasitic nematodes (PPNs)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "hp-investigation.json",
+      "path": "$.blocks[9].body",
+      "term_definition": "ascaroside #3 (ascr#3)",
+      "removed_markup": "<strong>ascaroside #3 (ascr#3)</strong>",
+      "retained_markup": "ascaroside #3 (ascr#3)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "hp-investigation.json",
+      "path": "$.blocks[9].body",
+      "term_definition": "ascaroside #18 (ascr#18)",
+      "removed_markup": "<strong>ascaroside #18 (ascr#18)</strong>",
+      "retained_markup": "ascaroside #18 (ascr#18)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "hp-investigation.json",
+      "path": "$.blocks[9].body",
+      "term_definition": "integrated Human Practices (iHP)",
+      "removed_markup": "<strong>integrated Human Practices (iHP)</strong>",
+      "retained_markup": "integrated Human Practices (iHP)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "hp-overview.json",
+      "path": "$.blocks[7].body",
+      "term_definition": "Human Practices (HP)",
+      "removed_markup": "<strong>Human Practices (HP)</strong>",
+      "retained_markup": "Human Practices (HP)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "human-practices.json",
+      "path": "$.blocks[10].body",
+      "term_definition": "plant-parasitic nematodes (PPNs)",
+      "removed_markup": "<strong>plant-parasitic nematodes (PPNs)</strong>",
+      "retained_markup": "plant-parasitic nematodes (PPNs)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "human-practices.json",
+      "path": "$.blocks[21].body",
+      "term_definition": "ascaroside #3 (ascr#3)",
+      "removed_markup": "<strong>ascaroside #3 (ascr#3)</strong>",
+      "retained_markup": "ascaroside #3 (ascr#3)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "human-practices.json",
+      "path": "$.blocks[21].body",
+      "term_definition": "ascaroside #18 (ascr#18)",
+      "removed_markup": "<strong>ascaroside #18 (ascr#18)</strong>",
+      "retained_markup": "ascaroside #18 (ascr#18)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "model-2.json",
+      "path": "$.blocks[1].body",
+      "term_definition": "molecular dynamics (MD)",
+      "removed_markup": "<strong>molecular dynamics (MD)</strong>",
+      "retained_markup": "molecular dynamics (MD)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "model-docking.json",
+      "path": "$.blocks[9].accompanyingBody",
+      "term_definition": "G protein-coupled receptors (GPCRs)",
+      "removed_markup": "<strong>G protein-coupled receptors (GPCRs)</strong>",
+      "retained_markup": "G protein-coupled receptors (GPCRs)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "model-md.json",
+      "path": "$.blocks[4].body",
+      "term_definition": "molecular dynamics (MD)",
+      "removed_markup": "<strong>molecular dynamics (MD)</strong>",
+      "retained_markup": "molecular dynamics (MD)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "model-md.json",
+      "path": "$.blocks[9].body",
+      "term_definition": "1-palmitoyl-2-oleoyl-sn-glycero-3-phosphocholine (POPC)",
+      "removed_markup": "<strong>1-palmitoyl-2-oleoyl-sn-glycero-3-phosphocholine (POPC)</strong>",
+      "retained_markup": "1-palmitoyl-2-oleoyl-sn-glycero-3-phosphocholine (POPC)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "model-md.json",
+      "path": "$.blocks[13].body",
+      "term_definition": "root mean square deviation (RMSD)",
+      "removed_markup": "<strong>root mean square deviation (RMSD)</strong>",
+      "retained_markup": "root mean square deviation (RMSD)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "model-ode.json",
+      "path": "$.blocks[4].body",
+      "term_definition": "Meloidogyne incognita ( Mi )",
+      "removed_markup": "<strong><em>Meloidogyne incognita</em> (<em>Mi</em>)</strong>",
+      "retained_markup": "<em>Meloidogyne incognita</em> (<em>Mi</em>)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "model-ode.json",
+      "path": "$.blocks[5].body",
+      "term_definition": "ordinary differential equation (ODE)",
+      "removed_markup": "<strong>ordinary differential equation (ODE)</strong>",
+      "retained_markup": "ordinary differential equation (ODE)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "model-ode.json",
+      "path": "$.blocks[13].body",
+      "term_definition": "G protein-coupled receptor (GPCR)",
+      "removed_markup": "<strong>G protein-coupled receptor (GPCR)</strong>",
+      "retained_markup": "G protein-coupled receptor (GPCR)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "model-ode.json",
+      "path": "$.blocks[20].body",
+      "term_definition": "guanosine diphosphate (GDP)",
+      "removed_markup": "<strong>guanosine diphosphate (GDP)</strong>",
+      "retained_markup": "guanosine diphosphate (GDP)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "model-ode.json",
+      "path": "$.blocks[34].body",
+      "term_definition": "Caenorhabditis elegans ( Ce )",
+      "removed_markup": "<strong><em>Caenorhabditis elegans</em> (<em>Ce</em>)</strong>",
+      "retained_markup": "<em>Caenorhabditis elegans</em> (<em>Ce</em>)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "model-ode.json",
+      "path": "$.blocks[34].body",
+      "term_definition": "ascaroside #3 (ascr#3)",
+      "removed_markup": "<strong>ascaroside #3 (ascr#3)</strong>",
+      "retained_markup": "ascaroside #3 (ascr#3)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "model-ode.json",
+      "path": "$.blocks[34].body",
+      "term_definition": "ascaroside #18 (ascr#18)",
+      "removed_markup": "<strong>ascaroside #18 (ascr#18)</strong>",
+      "retained_markup": "ascaroside #18 (ascr#18)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "model-ode.json",
+      "path": "$.blocks[62].body",
+      "term_definition": "red–green–blue (RGB)",
+      "removed_markup": "<strong>red–green–blue (RGB)</strong>",
+      "retained_markup": "red–green–blue (RGB)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "model-ode.json",
+      "path": "$.blocks[90].body",
+      "term_definition": "root mean square error (RMSE)",
+      "removed_markup": "<strong>root mean square error (RMSE)</strong>",
+      "retained_markup": "root mean square error (RMSE)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "model.json",
+      "path": "$.blocks[8].body",
+      "term_definition": "ascaroside #18 (ascr#18)",
+      "removed_markup": "<strong>ascaroside #18 (ascr#18)</strong>",
+      "retained_markup": "ascaroside #18 (ascr#18)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "model.json",
+      "path": "$.blocks[8].body",
+      "term_definition": "ascaroside #3 (ascr#3)",
+      "removed_markup": "<strong>ascaroside #3 (ascr#3)</strong>",
+      "retained_markup": "ascaroside #3 (ascr#3)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "model.json",
+      "path": "$.blocks[12].body",
+      "term_definition": "ordinary differential equation (ODE)",
+      "removed_markup": "<strong>ordinary differential equation (ODE)</strong>",
+      "retained_markup": "ordinary differential equation (ODE)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "model.json",
+      "path": "$.blocks[12].body",
+      "term_definition": "Meloidogyne incognita ( Mi )",
+      "removed_markup": "<strong><em>Meloidogyne incognita</em> (<em>Mi</em>)</strong>",
+      "retained_markup": "<em>Meloidogyne incognita</em> (<em>Mi</em>)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "model.json",
+      "path": "$.blocks[15].body",
+      "term_definition": "molecular dynamics (MD)",
+      "removed_markup": "<strong>molecular dynamics (MD)</strong>",
+      "retained_markup": "molecular dynamics (MD)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "parts.json",
+      "path": "$.blocks[0].body",
+      "term_definition": "Deoxyribonucleic acid (DNA)",
+      "removed_markup": "<strong>Deoxyribonucleic acid (DNA)</strong>",
+      "retained_markup": "Deoxyribonucleic acid (DNA)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "parts.json",
+      "path": "$.blocks[0].body",
+      "term_definition": "ribonucleic acid (RNA)",
+      "removed_markup": "<strong>ribonucleic acid (RNA)</strong>",
+      "retained_markup": "ribonucleic acid (RNA)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "parts.json",
+      "path": "$.blocks[0].body",
+      "term_definition": "complementary DNA (cDNA)",
+      "removed_markup": "<strong>complementary DNA (cDNA)</strong>",
+      "retained_markup": "complementary DNA (cDNA)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "parts.json",
+      "path": "$.blocks[0].body",
+      "term_definition": "coding sequence (CDS)",
+      "removed_markup": "<strong>coding sequence (CDS)</strong>",
+      "retained_markup": "coding sequence (CDS)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "parts.json",
+      "path": "$.blocks[0].body",
+      "term_definition": "homologous recombination (HR)",
+      "removed_markup": "<strong>homologous recombination (HR)</strong>",
+      "retained_markup": "homologous recombination (HR)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "parts.json",
+      "path": "$.blocks[0].body",
+      "term_definition": "clustered regularly interspaced short palindromic repeats–CRISPR-associated protein 9 (CRISPR-Cas9)",
+      "removed_markup": "<strong>clustered regularly interspaced short palindromic repeats–CRISPR-associated protein 9 (CRISPR-Cas9)</strong>",
+      "retained_markup": "clustered regularly interspaced short palindromic repeats–CRISPR-associated protein 9 (CRISPR-Cas9)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "parts.json",
+      "path": "$.blocks[0].body",
+      "term_definition": "single-guide RNA (sgRNA)",
+      "removed_markup": "<strong>single-guide RNA (sgRNA)</strong>",
+      "retained_markup": "single-guide RNA (sgRNA)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "parts.json",
+      "path": "$.blocks[0].body",
+      "term_definition": "guide RNA (gRNA)",
+      "removed_markup": "<strong>guide RNA (gRNA)</strong>",
+      "retained_markup": "guide RNA (gRNA)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "parts.json",
+      "path": "$.blocks[0].body",
+      "term_definition": "superfolder green fluorescent protein (sfGFP)",
+      "removed_markup": "<strong>superfolder green fluorescent protein (sfGFP)</strong>",
+      "retained_markup": "superfolder green fluorescent protein (sfGFP)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "parts.json",
+      "path": "$.blocks[0].body",
+      "term_definition": "Saccharomyces cerevisiae ( S.c )",
+      "removed_markup": "<strong><em>Saccharomyces cerevisiae</em> (<em>S.c</em>)</strong>",
+      "retained_markup": "<em>Saccharomyces cerevisiae</em> (<em>S.c</em>)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "parts.json",
+      "path": "$.blocks[0].body",
+      "term_definition": "Escherichia coli ( E. coli )",
+      "removed_markup": "<strong><em>Escherichia coli</em> (<em>E. coli</em>)</strong>",
+      "retained_markup": "<em>Escherichia coli</em> (<em>E. coli</em>)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "results.json",
+      "path": "$.blocks[2].body",
+      "term_definition": "design–build–test–learn (DBTL)",
+      "removed_markup": "<strong>design–build–test–learn (DBTL)</strong>",
+      "retained_markup": "design–build–test–learn (DBTL)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "results.json",
+      "path": "$.blocks[5].body",
+      "term_definition": "homologous recombination (HR)",
+      "removed_markup": "<strong>homologous recombination (HR)</strong>",
+      "retained_markup": "homologous recombination (HR)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "results.json",
+      "path": "$.blocks[7].body",
+      "term_definition": "coding sequence (CDS)",
+      "removed_markup": "<strong>coding sequence (CDS)</strong>",
+      "retained_markup": "coding sequence (CDS)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "results.json",
+      "path": "$.blocks[8].body",
+      "term_definition": "complementary DNA (cDNA)",
+      "removed_markup": "<strong>complementary DNA (cDNA)</strong>",
+      "retained_markup": "complementary DNA (cDNA)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "results.json",
+      "path": "$.blocks[8].body",
+      "term_definition": "superfolder green fluorescent protein (sfGFP)",
+      "removed_markup": "<strong>superfolder green fluorescent protein (sfGFP)</strong>",
+      "retained_markup": "superfolder green fluorescent protein (sfGFP)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "results.json",
+      "path": "$.blocks[23].body",
+      "term_definition": "Calcofluor White (CFW)",
+      "removed_markup": "<strong>Calcofluor White (CFW)</strong>",
+      "retained_markup": "Calcofluor White (CFW)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "results.json",
+      "path": "$.blocks[40].body",
+      "term_definition": "deoxyribonucleic acid (DNA)",
+      "removed_markup": "<strong>deoxyribonucleic acid (DNA)</strong>",
+      "retained_markup": "deoxyribonucleic acid (DNA)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "results.json",
+      "path": "$.blocks[40].body",
+      "term_definition": "double-joint PCR (DJ-PCR)",
+      "removed_markup": "<strong>double-joint PCR (DJ-PCR)</strong>",
+      "retained_markup": "double-joint PCR (DJ-PCR)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "results.json",
+      "path": "$.blocks[46].body",
+      "term_definition": "synthetic transcription factor (sTF)",
+      "removed_markup": "<strong>synthetic transcription factor (sTF)</strong>",
+      "retained_markup": "synthetic transcription factor (sTF)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "results.json",
+      "path": "$.blocks[46].body",
+      "term_definition": "DNA-binding domain (DBD)",
+      "removed_markup": "<strong>DNA-binding domain (DBD)</strong>",
+      "retained_markup": "DNA-binding domain (DBD)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "results.json",
+      "path": "$.blocks[46].body",
+      "term_definition": "pheromone-responsive domain (PRD)",
+      "removed_markup": "<strong>pheromone-responsive domain (PRD)</strong>",
+      "retained_markup": "pheromone-responsive domain (PRD)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "results.json",
+      "path": "$.blocks[60].body",
+      "term_definition": "Escherichia coli ( E. coli )",
+      "removed_markup": "<strong><em>Escherichia coli</em> (<em>E. coli</em>)</strong>",
+      "retained_markup": "<em>Escherichia coli</em> (<em>E. coli</em>)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "results.json",
+      "path": "$.blocks[66].body",
+      "term_definition": "clustered regularly interspaced short palindromic repeats–CRISPR-associated protein 9 (CRISPR-Cas9)",
+      "removed_markup": "<strong>clustered regularly interspaced short palindromic repeats–CRISPR-associated protein 9 (CRISPR-Cas9)</strong>",
+      "retained_markup": "clustered regularly interspaced short palindromic repeats–CRISPR-associated protein 9 (CRISPR-Cas9)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "results.json",
+      "path": "$.blocks[81].body",
+      "term_definition": "leucine (Leu)",
+      "removed_markup": "<strong>leucine (Leu)</strong>",
+      "retained_markup": "leucine (Leu)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "results.json",
+      "path": "$.blocks[81].body",
+      "term_definition": "ribonucleic acid (RNA)",
+      "removed_markup": "<strong>ribonucleic acid (RNA)</strong>",
+      "retained_markup": "ribonucleic acid (RNA)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "results.json",
+      "path": "$.blocks[81].body",
+      "term_definition": "single-guide RNAs (sgRNAs)",
+      "removed_markup": "<strong>single-guide RNAs (sgRNAs)</strong>",
+      "retained_markup": "single-guide RNAs (sgRNAs)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "results.json",
+      "path": "$.blocks[124].body",
+      "term_definition": "Human Practices (HP)",
+      "removed_markup": "<strong>Human Practices (HP)</strong>",
+      "retained_markup": "Human Practices (HP)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "results.json",
+      "path": "$.blocks[129].body",
+      "term_definition": "yeast extract–peptone–dextrose (YPD)",
+      "removed_markup": "<strong>yeast extract–peptone–dextrose (YPD)</strong>",
+      "retained_markup": "yeast extract–peptone–dextrose (YPD)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "results.json",
+      "path": "$.blocks[156].body",
+      "term_definition": "yeast nitrogen base (YNB)",
+      "removed_markup": "<strong>yeast nitrogen base (YNB)</strong>",
+      "retained_markup": "yeast nitrogen base (YNB)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "results.json",
+      "path": "$.blocks[156].body",
+      "term_definition": "synthetic complete (SC)",
+      "removed_markup": "<strong>synthetic complete (SC)</strong>",
+      "retained_markup": "synthetic complete (SC)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "results.json",
+      "path": "$.blocks[156].body",
+      "term_definition": "phosphate-buffered saline (PBS)",
+      "removed_markup": "<strong>phosphate-buffered saline (PBS)</strong>",
+      "retained_markup": "phosphate-buffered saline (PBS)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "results.json",
+      "path": "$.blocks[156].body",
+      "term_definition": "tryptophan (Trp)",
+      "removed_markup": "<strong>tryptophan (Trp)</strong>",
+      "retained_markup": "tryptophan (Trp)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "results.json",
+      "path": "$.blocks[156].body",
+      "term_definition": "tyrosine (Tyr)",
+      "removed_markup": "<strong>tyrosine (Tyr)</strong>",
+      "retained_markup": "tyrosine (Tyr)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "results.json",
+      "path": "$.blocks[160].body",
+      "term_definition": "red–green–blue (RGB)",
+      "removed_markup": "<strong>red–green–blue (RGB)</strong>",
+      "retained_markup": "red–green–blue (RGB)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "safety.json",
+      "path": "$.blocks[4].body",
+      "term_definition": "histidine (His)",
+      "removed_markup": "<strong>histidine (His)</strong>",
+      "retained_markup": "histidine (His)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "safety.json",
+      "path": "$.blocks[4].body",
+      "term_definition": "leucine (Leu)",
+      "removed_markup": "<strong>leucine (Leu)</strong>",
+      "retained_markup": "leucine (Leu)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "safety.json",
+      "path": "$.blocks[9].body",
+      "term_definition": "personal protective equipment (PPE)",
+      "removed_markup": "<strong>personal protective equipment (PPE)</strong>",
+      "retained_markup": "personal protective equipment (PPE)",
+      "reason": "Removed only the standalone term-definition bold wrapper; retained all source wording and nested scientific italics."
+    },
+    {
+      "page": "attributions.json",
+      "path": "$.blocks[34].csv",
+      "term_definition": "Saccharomyces cerevisiae (S.c)",
+      "removed_markup": "<strong><em>Saccharomyces cerevisiae</em> (<em>S.c</em>)</strong>",
+      "retained_markup": "<em>Saccharomyces cerevisiae</em> (<em>S.c</em>)",
+      "reason": "Removed the bold wrapper around the standalone scientific-name definition; retained inner italics and all CSV text."
+    },
+    {
+      "page": "model-ode.json",
+      "path": "$.blocks[12].body",
+      "term_definition": "guanine nucleotide-binding protein (G protein)",
+      "removed_markup": "<strong>guanine nucleotide-binding protein (G protein)</strong>",
+      "retained_markup": "guanine nucleotide-binding protein (G protein)",
+      "reason": "Removed redundant nested strong wrapper; the surrounding full pathway remains bold via Markdown **."
+    },
+    {
+      "page": "model-ode.json",
+      "path": "$.blocks[12].body",
+      "term_definition": "mitogen-activated protein kinase (MAPK)",
+      "removed_markup": "<strong>mitogen-activated protein kinase (MAPK)</strong>",
+      "retained_markup": "mitogen-activated protein kinase (MAPK)",
+      "reason": "Removed redundant nested strong wrapper; the surrounding full pathway remains bold via Markdown **."
+    },
+    {
+      "page": "model-ode.json",
+      "path": "$.blocks[12].body",
+      "term_definition": "synthetic transcription factor (sTF)",
+      "removed_markup": "<strong>synthetic transcription factor (sTF)</strong>",
+      "retained_markup": "synthetic transcription factor (sTF)",
+      "reason": "Removed redundant nested strong wrapper; the surrounding full pathway remains bold via Markdown **."
+    }
+  ],
+  "validation": {
+    "verify": "PASS",
+    "preservation": "Every JSON field equals parent after removing strong/** wrappers only",
+    "caption_audit": "90 PASS",
+    "content_rules": "One expected protected-field alert: attributions $.blocks[34].csv; parsed 6 rows, exactly one cell differs only by removed strong wrapper; all text and structure preserved",
+    "browser": "Model 1440/390 light/dark checked; no horizontal overflow; isolated term bold absent; remaining pages require combined release spot check"
+  }
+}

@@ -20,7 +20,7 @@ hidden: false
 
 <p>In our project design, we adopted a dual strategy combining auxotrophic markers and suicide genes to strengthen our biosafety control system.</p>
 
-First, we used yeast with four auxotrophies as the chassis strain for this project (Figure 1). After a series of genetic modifications, the engineered yeast cannot survive in environments lacking <strong>histidine</strong> and <strong>leucine</strong>. Therefore, the engineered yeast constructed in our project can only survive under laboratory conditions, which effectively prevents the environmental escape of genetically modified yeast.
+First, we used yeast with four auxotrophies as the chassis strain for this project (Figure 1). After a series of genetic modifications, the engineered yeast cannot survive in environments lacking histidine and leucine. Therefore, the engineered yeast constructed in our project can only survive under laboratory conditions, which effectively prevents the environmental escape of genetically modified yeast.
 
 :::figure{scale=85}
 
@@ -42,7 +42,7 @@ Figure 2. Tet-On and Bax suicide-system design.
 
 ### 1.2 Laboratory operation safety {#laboratory-operation-safety toc="Laboratory operation safety"}
 
-<p>All experimental operators of this project have received specialized laboratory safety training at Nankai University and strictly follow standard operating procedures, including wearing full <strong>personal protective equipment</strong> and conducting experiments inside biosafety cabinets. All experimental waste is disposed of in accordance with regulations for biohazardous waste to prevent leakage of biological materials.</p>
+<p>All experimental operators of this project have received specialized laboratory safety training at Nankai University and strictly follow standard operating procedures, including wearing full personal protective equipment and conducting experiments inside biosafety cabinets. All experimental waste is disposed of in accordance with regulations for biohazardous waste to prevent leakage of biological materials.</p>
 
 :::figure
 

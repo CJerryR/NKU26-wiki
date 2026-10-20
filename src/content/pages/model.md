@@ -33,7 +33,7 @@ The public modeling repository contains the analysis code, input files, and repr
 
 ## Molecular docking: identifying receptor variants for differential recognition {#model-section-1 toc="Molecular docking: identifying receptor variants for differential recognition"}
 
-We compared how Gpr2 variants interact with two ascarosides, <strong>ascaroside #18 (ascr#18)</strong> and <strong>ascaroside #3 (ascr#3)</strong>, using docking scores and receptor–ligand contacts. These comparisons guided the selection of N84V and V368R for further study as candidates with contrasting predicted ligand preferences.
+We compared how Gpr2 variants interact with two ascarosides, ascaroside #18 (ascr#18) and ascaroside #3 (ascr#3), using docking scores and receptor–ligand contacts. These comparisons guided the selection of N84V and V368R for further study as candidates with contrasting predicted ligand preferences.
 
 ## Molecular dynamics: exploring receptor–ligand behavior in a membrane {#model-section-2 toc="Molecular dynamics: exploring receptor–ligand behavior in a membrane"}
 
@@ -41,12 +41,12 @@ Starting from docked poses, we simulated receptor–ligand complexes in a membra
 
 ## ODE and dual-channel model: linking color readouts to nematode density {#model-section-3 toc="ODE and dual-channel model: linking color readouts to nematode density"}
 
-Our <strong>ordinary differential equation</strong> model connects receptor input to yeast signaling and pigment production, with simulated pigment outputs translated into smartphone color features. The dual-channel model combines two complementary sensor responses to explore density estimation for the southern root-knot nematode (<strong><em>Meloidogyne incognita</em></strong>) when background nematode abundance is unknown. Together, these models provide a framework for experimental calibration.
+Our ordinary differential equation model connects receptor input to yeast signaling and pigment production, with simulated pigment outputs translated into smartphone color features. The dual-channel model combines two complementary sensor responses to explore density estimation for the southern root-knot nematode (<em>Meloidogyne incognita</em>) when background nematode abundance is unknown. Together, these models provide a framework for experimental calibration.
 
 ## Economic benefit: assessing when detection informs treatment {#model-section-4 toc="Economic benefit: assessing when detection informs treatment"}
 
 Using target nematode density as an input, we compare net returns from no treatment, uniform treatment, and treatment selected by density category after testing. By accounting for potential yield loss, testing costs, and treatment costs, the model examines when density information could improve management decisions under the modeled conditions.
 
-Docking and <strong>molecular dynamics</strong> guide receptor design and experimental questions. ordinary differential equation and dual-channel modeling explore how sensor responses can be interpreted as density estimates, which then serve as inputs to economic scenarios. In turn, the density categories used for treatment help define the measurement precision needed for future calibration.
+Docking and molecular dynamics guide receptor design and experimental questions. ordinary differential equation and dual-channel modeling explore how sensor responses can be interpreted as density estimates, which then serve as inputs to economic scenarios. In turn, the density categories used for treatment help define the measurement precision needed for future calibration.
 
 </div>

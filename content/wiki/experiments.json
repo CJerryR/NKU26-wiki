@@ -18,7 +18,7 @@
       "_template": "heading"
     },
     {
-      "body": "<p>This section documents the biological materials and experimental methods used in wet-lab work. <strong>Deoxyribonucleic acid (DNA)</strong> and <strong>ribonucleic acid</strong> are the nucleic acids represented in the sequence entries. We summarize the designed <strong>single-guide ribonucleic acid</strong> sequences, constructed plasmids and engineered strains generated in our project. <strong>Polymerase chain reaction (PCR)</strong> underpins the cloning workflows described below. The chassis species is <em>Saccharomyces cerevisiae</em>; <strong><em>Escherichia coli</em> (<em>E. coli</em>)</strong> is used for plasmid propagation.</p>",
+      "body": "<p>This section documents the biological materials and experimental methods used in wet-lab work. Deoxyribonucleic acid (DNA) and ribonucleic acid are the nucleic acids represented in the sequence entries. We summarize the designed <strong>single-guide ribonucleic acid</strong> sequences, constructed plasmids and engineered strains generated in our project. Polymerase chain reaction (PCR) underpins the cloning workflows described below. The chassis species is <em>Saccharomyces cerevisiae</em>; <em>Escherichia coli</em> (<em>E. coli</em>) is used for plasmid propagation.</p>",
       "_template": "text"
     },
     {
@@ -201,7 +201,7 @@
       "_template": "heading"
     },
     {
-      "body": "<p>Construction of <strong>homologous recombination</strong> Constructs Using <strong>double-joint PCR</strong>.</p>",
+      "body": "<p>Construction of homologous recombination Constructs Using double-joint PCR.</p>",
       "_template": "text"
     },
     {

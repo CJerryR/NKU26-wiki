@@ -29,7 +29,7 @@ draft: false
 
 ## Preparing materials for industry discussions {#hp-source-233}
 
-<p data-hp-source-paragraph="234">We prepared a corporate partnership invitation and a project presentation to communicate our work clearly. The invitation brought together our team background, project rationale, application needs, possible forms of collaboration, and follow-up arrangements. The presentation provided a visual introduction to the sensor concept, our <strong>Human Practices</strong> activities, and potential applications. Together, they supported both detailed review and meeting presentations.</p>
+<p data-hp-source-paragraph="234">We prepared a corporate partnership invitation and a project presentation to communicate our work clearly. The invitation brought together our team background, project rationale, application needs, possible forms of collaboration, and follow-up arrangements. The presentation provided a visual introduction to the sensor concept, our Human Practices activities, and potential applications. Together, they supported both detailed review and meeting presentations.</p>
 
 <p data-hp-source-paragraph="235">The invitation outlined possible financial sponsorship, in-kind or service support, and industry engagement, alongside a proposed cooperation process and partner recognition. The presentation explored a field-testing concept for potential users such as agricultural input companies, large farms, and crop protection service providers, as well as longer-term possibilities for a broader sensing platform. These were directions for discussion and exploration; product development requires further research and validation.</p>
 

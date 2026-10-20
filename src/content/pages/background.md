@@ -17,7 +17,7 @@ hidden: false
 
 ## Silent killers underground: the urgent threat of plant-parasitic nematodes {#11-silent-killers-underground-the-urgent-threat-of-plant-parasitic-nematodes toc="Plant-parasitic nematodes"}
 
-<p><strong>Plant-parasitic nematodes (PPNs)</strong> are among the most destructive pathogens in global agricultural production. Widely distributed in cultivated soils, they parasitize plant roots, disrupt nutrient uptake pathways and trigger secondary diseases, posing severe threats to crop yield and quality. Statistically, PPNs cause up to 157 billion dollars in annual crop losses worldwide across more than 20 major cash crops<sup>[1]</sup>. Among them, sedentary endoparasitic nematodes represent the most harmful group due to their unique parasitic lifestyle, strong dispersal capacity and difficult control<sup>[2]</sup>. As two representative species, <strong><em>Heterodera glycines</em></strong> and <strong><em>Meloidogyne incognita</em></strong> exhibit typical taxonomic and biological features. They continuously endanger the production of globally critical crops and serve as core model organisms for research on soil nematode management (Figure 1).</p>
+<p>Plant-parasitic nematodes (PPNs) are among the most destructive pathogens in global agricultural production. Widely distributed in cultivated soils, they parasitize plant roots, disrupt nutrient uptake pathways and trigger secondary diseases, posing severe threats to crop yield and quality. Statistically, PPNs cause up to 157 billion dollars in annual crop losses worldwide across more than 20 major cash crops<sup>[1]</sup>. Among them, sedentary endoparasitic nematodes represent the most harmful group due to their unique parasitic lifestyle, strong dispersal capacity and difficult control<sup>[2]</sup>. As two representative species, <em>Heterodera glycines</em> and <em>Meloidogyne incognita</em> exhibit typical taxonomic and biological features. They continuously endanger the production of globally critical crops and serve as core model organisms for research on soil nematode management (Figure 1).</p>
 
 :::figure{scale=70}
 
@@ -27,7 +27,7 @@ hidden: false
 
 :::
 
-<p>PPNs of these two species exert substantial economic and ecological impacts. <em>H. glycines</em> specifically parasitizes legumes such as soybean and common bean. After <strong>second-stage juveniles</strong> invade host roots, they secrete effectors to induce syncytial feeding sites, which leads to root lignification, stunting and chlorosis of plants. In heavily infested fields, soybean yield losses can reach 30%–80% or even total crop failure. The cysts of this nematode can remain dormant in soil for more than 10 years, serving as persistent primary inoculum sources that are hard to eradicate, making it the most devastating disease in major soybean-producing regions worldwide<sup>[3]</sup>.</p>
+<p>PPNs of these two species exert substantial economic and ecological impacts. <em>H. glycines</em> specifically parasitizes legumes such as soybean and common bean. After second-stage juveniles invade host roots, they secrete effectors to induce syncytial feeding sites, which leads to root lignification, stunting and chlorosis of plants. In heavily infested fields, soybean yield losses can reach 30%–80% or even total crop failure. The cysts of this nematode can remain dormant in soil for more than 10 years, serving as persistent primary inoculum sources that are hard to eradicate, making it the most devastating disease in major soybean-producing regions worldwide<sup>[3]</sup>.</p>
 
 <p>As a polyphagous sedentary endoparasitic nematode, <em>M. incognita</em> infects over 3000 plant species including vegetables, grain and cash crops such as tomato, cucumber, cotton and maize<sup>[1]</sup>. Losses caused by this nematode are especially severe in protected agriculture due to continuous cropping obstacles. Notably, <em>M. incognita</em> secretes secondary metabolites such as 6-methoxybenzoxazolin-2-one to modulate the rhizosphere microbiome, improving its host-finding capacity and further expanding its damage range<sup>[4]</sup>.</p>
 
@@ -41,10 +41,10 @@ Co-infection by these two nematodes elevates the risk of complex soil-borne dise
 
 - polymerase chain reaction
 - quantitative polymerase chain reaction
-- **next-generation sequencing (NGS)**
-- **loop-mediated isothermal amplification (LAMP)**
-- **recombinase polymerase amplification (RPA)**
-- **convolutional neural network (CNN)**
+- next-generation sequencing (NGS)
+- loop-mediated isothermal amplification (LAMP)
+- recombinase polymerase amplification (RPA)
+- convolutional neural network (CNN)
 
 :::
 
@@ -54,7 +54,7 @@ Co-infection by these two nematodes elevates the risk of complex soil-borne dise
 
 ## Dawn breaks: nematophagous fungi fuel innovation in nematode detection {#nematophagous-fungi toc="Nematophagous fungi"}
 
-<p>Previous studies revealed that <strong>ascaroside #18 (ascr#18)</strong> acts as the dominant ascaroside across multiple genera of PPNs (Figure 2)<sup>[6]</sup>. In contrast, larvae of free-living nematodes such as <strong><em>Caenorhabditis elegans</em></strong> mainly produce <strong>ascaroside #3 (ascr#3)</strong> and <strong>ascaroside #5 (ascr#5)</strong> (Figure 3)<sup>[7]</sup>.</p>
+<p>Previous studies revealed that ascaroside #18 (ascr#18) acts as the dominant ascaroside across multiple genera of PPNs (Figure 2)<sup>[6]</sup>. In contrast, larvae of free-living nematodes such as <em>Caenorhabditis elegans</em> mainly produce ascaroside #3 (ascr#3) and ascaroside #5 (ascr#5) (Figure 3)<sup>[7]</sup>.</p>
 
 :::figure
 
@@ -72,7 +72,7 @@ Co-infection by these two nematodes elevates the risk of complex soil-borne dise
 
 :::
 
-<p>Recent studies demonstrate that the <strong>G protein-coupled receptor</strong> GPR2 from the nematode-trapping fungus <strong><em>Arthrobotrys oligospora</em></strong> can sense ascr#3. It triggers a <strong>mitogen-activated protein kinase</strong> cascade to activate downstream gene expression and ultimately initiate predatory behavior (Figure 4)<sup> [8]</sup>. This inspired our idea: we could repurpose this receptor to achieve early warning of PPNs!</p>
+<p>Recent studies demonstrate that the G protein-coupled receptor GPR2 from the nematode-trapping fungus <em>Arthrobotrys oligospora</em> can sense ascr#3. It triggers a mitogen-activated protein kinase cascade to activate downstream gene expression and ultimately initiate predatory behavior (Figure 4)<sup> [8]</sup>. This inspired our idea: we could repurpose this receptor to achieve early warning of PPNs!</p>
 
 :::figure
 
