@@ -1,7 +1,7 @@
 {
-  "version": "10.2.27",
-  "label": "Engineering circuit overview border correction",
-  "prepared_at": "2026-10-20T23:57:54+08:00",
+  "version": "10.2.28",
+  "label": "Attributions portraits, Feishu content and order, compact card layout",
+  "prepared_at": "2026-10-21T00:51:03+08:00",
   "media": "84 unchanged original images plus 4 user-authorized GPS-only cleaned images; all decoded frames unchanged; 12 complete historical source documents",
   "release_kind": "stage",
   "team_content_review": "Scientific final review pending; source-version choices authorized by user",
@@ -10,7 +10,7 @@
     "commit": "16770d5c28ddf7bc41f8d90445c44d80a28801d5",
     "published_at_local": "2026-10-18 05:04:34"
   },
-  "release_id": "engineering-image-v10.2.27",
+  "release_id": "attributions-20261021-v10.2.28",
   "mobile_layout_check": "390px Members rendered without overflow; desktop Description, Parts/plasmid, Attributions/puzzle checked; 4 second delayed CDN uses inline preview then upgrades",
   "source_fidelity": {
     "original_source_files_verified": 80,
@@ -302,7 +302,7 @@
     "formatting": "Original scientific italics restored in all four tables",
     "source_commit": "4c5c5b8d1ed494db273a0c0e5a035d138751a007"
   },
-  "change_scope": "Replace Engineering opening circuit overview with user-supplied corrected image including the complete lower panel border.",
+  "change_scope": "Attributions 27 portraits, 138 authored contribution items, latest Feishu names/order and English centered names with adaptive collapsed height",
   "dbtl3_figure_numbering": {
     "task_commit": "ea3836906fb18382a248845d234b82f848bb3cf8",
     "corrections": 2
@@ -326,5 +326,14 @@
     "source": "https://nankai.feishu.cn/wiki/E41twj1kxix4P8kTaNEcdbgsn4c",
     "paragraphs": 7,
     "review_status": "Existing review flags preserved; future work remains future work"
+  },
+  "attributions_refresh": {
+    "task_commit": "76db9d90a7bb7123b7701db773e0e889055de08e",
+    "members": 27,
+    "specific_tasks": 138,
+    "source": "https://nankai.feishu.cn/wiki/ATIgwNcmziiwtPkEYvycd5ZYnjg",
+    "photos": "existing verified official CDN",
+    "layout": "English names only, 22px centered, no nameplates; complete rows fit portrait/name height",
+    "publication_authorization": "User explicitly approved photos, content, order and layout publication in this chat"
   }
 }
