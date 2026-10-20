@@ -51,6 +51,8 @@ export const coreWord = {
   people: W([], { name: '人物', count: 3, fields: [['姓名', ''], ['角色', ''], ['照片文件名', '可空'], ['一句话简介', '']] }),
   lead: W([['导语', '1–2 句，概括本页最重要的问题与结论']]),
   figure: W([['图片 / SVG 文件名', ''], ['图注', 'Fig. 编号 + 说明'], ['来源 / 版权', '']]),
+  evidence: W([['图片文件名', '与附件一致'], ['图片说明（alt）', '一句话描述画面'], ['图注', '原文照录'], ['图前正文', '引出这张图的段落'], ['图后正文', '解读这张图的段落，可空'], ['版式与大小', '文左图右 / 图左文右 / 文上图下；小 / 中 / 大']]),
+  phase: W([['阶段', 'Design / Build / Test / Build & Test / Learn'], ['阶段名', '原文照录']]),
 };
 
 /* -------------------------------------------------------------- samples */
@@ -214,6 +216,19 @@ export const showcase = [
   entry('M09', '17', 'HTML 交互演示', ['干实验', 'HP', '设计'], '嵌入自制的小网页（参数滑块、交互模型、小游戏），在隔离环境运行。',
     [b('html', { title: 'Interactive explainer · 图形演示', file: `${img}interactive.html`, scripts: true, height: 560, caption: '自制参数交互示例，隔离运行，不是科学模拟器。' })],
     { mark: 'M09 HTML 交互｜model-demo/index.html', materials: '单文件 HTML，或整理好依赖文件的作品文件夹。' }),
+  // C01 (component-design checkpoint-01): figure + the text around it, and DBTL stage markers
+  entry('M10', null, '图文对照（实验图 + 相关正文）', ['湿实验', '干实验'], '图放在引出它、解读它的段落旁边；高度有上限，不再整屏通栏。手机上按 图前正文 → 图 → 图注 → 图后正文 顺序排列。',
+    [b('evidence', { body: 'We compare two layouts of the same sketch (Figure 1). 演示正文：这一段引出图片。', src: `${img}before.svg`, figureAlt: '人工绘制的几何示意图', openOriginal: true,
+        figureCaption: '**Figure 1.** Demonstration sketch. 演示图注，原文照录到这里。', afterBody: `The sketch shows how a figure sits beside the text that reads it. ${demo}`, place: 'right', size: 'standard' }),
+      b('evidence', { body: '多分图的宽图用“文上图下”，宽度由“图片大小”决定。', src: `${img}after.svg`, figureAlt: '人工绘制的几何示意图', figureCaption: '**Figure 2.** (a) Panel one. (b) Panel two. 演示图注。', place: 'below', size: 'wide' }),
+      b('phase', { kind: 'learn', body: 'Learn' }),
+      b('text', { body: `阶段标记之后的段落会归入同一阶段，直到下一个阶段标记或标题。${demo}` })],
+    { mark: 'M10 图文对照｜fig1.png｜文左图右｜中', materials: '原图、图片替代文字、图注；引出图的段落和解读图的段落各标明位置。' }),
+  entry('M11', null, 'DBTL 阶段标记', ['湿实验', '干实验'], '把 Design / Build / Test / Learn 段落标成带圆点的小标签；不新增标题、锚点或目录项。宽屏时圆点连成左侧细线。',
+    [b('phase', { kind: 'design', body: 'Design' }), b('text', { body: `设计依据与方案。${demo}` }),
+      b('phase', { kind: 'build-test', body: 'Build & Test' }), b('text', { body: `构建与测试过程。${demo}` }),
+      b('phase', { kind: 'learn', body: 'Learn' }), b('text', { body: `结论与下一轮的改进。${demo}` })],
+    { mark: 'M11 阶段标记｜Design / Build & Test / Learn', materials: '原稿中的阶段名，照录。' }),
 
   /* ============================================ L · 版式与导航 */
   
@@ -286,7 +301,7 @@ export const pages = [
   { id: 'education', tier: 'special', name: 'Best Education', zh: '教育与科普', path: '/education', groups: ['HP'], need: '受众与学习需求、活动设计、双向交流、评估证据与反思、可复用的教育资源、可及性。', use: [  'D05', 'M04', 'M07', 'P14',  ] },
   { id: 'description', tier: 'general', name: 'Description', zh: '项目描述', path: '/description', groups: ['全组', '设计'], need: '背景问题、我们的方案、整体思路，一页讲清项目是什么。', use: [  'M03', 'L07',  ] },
   { id: 'design', tier: 'general', name: 'Design', zh: '设计', path: '/design', groups: ['湿实验', '设计'], need: '设计思路、线路与元件选择依据。', use: ['P08', 'M06',  'M05', 'D08'] },
-  { id: 'results', tier: 'general', name: 'Results', zh: '实验结果 / 表征', path: '/results', groups: ['湿实验'], need: '实验结果与表征数据，附对照、重复与局限。', use: ['D01', 'D02', 'D07', 'M06', 'M04', 'D06', 'W05'] },
+  { id: 'results', tier: 'general', name: 'Results', zh: '实验结果 / 表征', path: '/results', groups: ['湿实验'], need: '实验结果与表征数据，附对照、重复与局限。', use: ['D01', 'D02', 'D07', 'M10', 'M11', 'M06', 'M04', 'D06', 'W05'] },
   { id: 'notebook', tier: 'general', name: 'Notebook & Protocols', zh: '实验记录与方法', path: '/notebook', groups: ['湿实验', '干实验'], need: '按时间记录进展；方法可复现。', use: ['P05',  'P14', 'L06'] },
   { id: 'safety', tier: 'general', name: 'Safety', zh: '安全', path: '/safety', groups: ['湿实验', 'HP'], need: '风险识别与应对，实验与使用中的安全措施。', use: ['P10', 'W05',  'W07'] },
   { id: 'implementation', tier: 'general', name: 'Implementation', zh: '实际应用（可并入 HP）', path: '/implementation', groups: ['HP', '干实验'], need: '目标用户、使用场景与流程、部署条件、风险与障碍。', use: ['L07', 'D08', 'P10', 'P03', 'W03'] },

@@ -441,7 +441,11 @@ Mans R, Wijsman M, Daran-Lapujade P, Daran JM. A protocol for introduction of mu
 
 <p style="text-align:justify;">We reason that an ideal test strip substrate should possess high cell-loading capacity, excellent mechanical stability, reliable batch-to-batch consistency, and favorable water-retaining properties. Therefore, we initiate this cycle.</p>
 
+:::phase{kind=design}
+
 <p style="text-align:left;">Design</p>
+
+:::
 
 <p style="text-align:justify;">Based on the criteria, we select seven candidate substrates with representative properties: qualitative filter paper(Cellulose), weighing paper (sulfite paper), lens cleaning paper(Cotton fiber), laboratory wipes(Virgin wood pulp), thin glass fiber filter paper (Whatman™ GF/A), thick glass fiber filter paper (Whatman™ GF/B), and cellulose acetate filter paper.</p>
 
@@ -449,7 +453,11 @@ Mans R, Wijsman M, Daran-Lapujade P, Daran JM. A protocol for introduction of mu
 
 <p style="text-align:justify;">Subsequently, for the substrates demonstrating superior properties, we conduct copper sulfate solution wicking experiments to evaluate their water absorption capacity.</p>
 
+:::phase{kind=build-test}
+
 <p style="text-align:left;">Build &amp; Test</p>
+
+:::
 
 <p style="text-align:justify;">First, we evaluate the cell-binding capacity of each substrate. The results are summarized in Table 1 below:</p>
 
@@ -457,15 +465,27 @@ Mans R, Wijsman M, Daran-Lapujade P, Daran JM. A protocol for introduction of mu
 
 <p style="text-align:center;"><strong>Table 1.</strong><strong>Evaluation of cell-binding capacity across candidate substrates</strong></p>
 
+::::evidence{place=right size=standard}
+
 <p style="text-align:left;">Considering both the cell-binding capacity and the physical properties of each material, we select three substrates—GF/B, GF/A, and cellulose acetate—for the copper sulfate solution wicking experiment (Figure 1).</p>
 
-<figure><a href="https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-e772d8a4854f55e5-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-e772d8a4854f55e5-00.json" alt="" loading="lazy"></a></figure>
+[![](https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-e772d8a4854f55e5-00.json)](https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-e772d8a4854f55e5-00.json "Open full-resolution image")
+
+:::caption
 
 <p style="text-align:center;" class="figure-caption">Figure 1. Water absorption capacity evaluation of selected substrates（ insert image “Fig3.1.1”）</p>
 
+:::
+
 <p style="text-align:left;">The results demonstrate that GF/B not only exhibits strong binding capacity with yeast cells but also possesses superior water absorption ability.Learn</p>
 
+::::
+
+:::phase{kind=learn}
+
 <p style="text-align:justify;">Learn</p>
+
+:::
 
 <p style="text-align:justify;">Based on the combined experimental results, Whatman™ GF/B thick glass fiber filter paper is selected as the final substrate for the test strip. GF/B demonstrates a liquid-loading capacity far exceeding other materials, allowing it to instantly absorb high-viscosity protectants without surface beading.</p>
 
@@ -477,7 +497,11 @@ Mans R, Wijsman M, Daran-Lapujade P, Daran JM. A protocol for introduction of mu
 
 <p style="text-align:justify;">To address this, we optimize immobilization across two dimensions—physical spatial confinement and biochemical/hardware sample loading. By creating hydrophobic barrier masks, refining protectant formulations, and introducing a vacuum-assisted filtration device, we achieve high-efficiency, stable cell immobilization on the test strip.</p>
 
+:::phase{kind=design}
+
 <p style="text-align:left;">Design</p>
+
+:::
 
 <p style="text-align:justify;">To refine the yeast cell immobilization process, we use adhesive masks to define the cell-immobilization zones and apply ergo.® 5300 instant adhesive vapor deposition to fabricate localized hydrophilic areas on the filter paper, thereby resolving issues such as lateral wicking and uneven cell distribution. </p>
 
@@ -485,33 +509,73 @@ Mans R, Wijsman M, Daran-Lapujade P, Daran JM. A protocol for introduction of mu
 
 <p style="text-align:justify;">In addition, we design a vacuum-assisted filtration spotting device to resolve the issue of high-viscosity protectant residues.</p>
 
+:::phase{kind=build-test}
+
 <p style="text-align:left;">Build &amp; Test</p>
+
+:::
+
+::::evidence{place=below size=wide}
 
 <p style="text-align:justify;">First, we develop a hydrophobic coating fumigation device. Through mask shielding and cyanoacrylate vapor fumigation processes, we successfully fabricate test strips with a hydrophilic immobilization zone of 5 mm in diameter. The results demonstrate that the hydrophobic test strips exhibit good hydrophobic effects across different metal salt solutions (Figure 2), ensuring that our engineered bacteria are target-immobilized within the intended hydrophilic area.</p>
 
-<figure><a href="https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-c90ad92ed801865f-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-c90ad92ed801865f-00.json" alt="" loading="lazy"></a></figure>
+[![](https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-c90ad92ed801865f-00.json)](https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-c90ad92ed801865f-00.json "Open full-resolution image")
+
+:::caption
 
 <p style="text-align:justify;" class="figure-caption">Figure 2. Fumigation coating device (a), hydrophobic effect demonstration (b), circular hydrophilic zone demonstration (c). For (c), the surrounding experimental groups are created by placing the hydrophobic-treated test strips into solutions containing iron(III) chloride, cobalt(II) chloride, copper(II) sulfate, and manganese(II) chloride, respectively.</p>
 
+:::
+
+::::
+
+::::evidence{place=right size=standard}
+
 <p style="text-align:justify;">Next, to verify the water-retaining performance of the protectant, we conduct dehydration kinetics and full-process lyophilization tests on it. The results show (Figure 3) that the new protectant forms a structurally intact film matrix after drying and effectively prevents collapse and powdering; furthermore, its smooth and uniform dehydration rate avoids physical damage to yeast cell membranes caused by severe water loss, thereby significantly enhancing cell structural integrity and survival rate during lyophilization.</p>
 
-<figure><a href="https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-eab5bea814fd5141-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-eab5bea814fd5141-00.json" alt="" loading="lazy"></a></figure>
+[![](https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-eab5bea814fd5141-00.json)](https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-eab5bea814fd5141-00.json "Open full-resolution image")
+
+:::caption
 
 <p style="text-align:center;" class="figure-caption">Figure 3. Water loss rate curve.</p>
 
+:::
+
+::::
+
+::::evidence{place=left size=standard}
+
 <p style="text-align:justify;">Additionally, we self-fabricate a vacuum filtration spotting device (Figure 4). This device can rapidly draw the high-viscosity protectant suspension into the interior of the test strip substrate, which not only significantly improves spotting efficiency but also achieves standardized control over the cell-loading amount per individual test strip.</p>
 
-<figure><a href="https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-1020073bd61e1101-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-1020073bd61e1101-00.json" alt="" loading="lazy"></a></figure>
+[![](https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-1020073bd61e1101-00.json)](https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-1020073bd61e1101-00.json "Open full-resolution image")
+
+:::caption
 
 <p style="text-align:center;" class="figure-caption">Figure 3.1.4. Schematic of the spotting process</p>
 
+:::
+
+::::
+
+::::evidence{place=below size=standard}
+
 <p style="text-align:justify;">Integrating all the above methods and approaches, we prepare and obtain a batch of cell-loaded freeze-dried test strips available for downstream engineering (Figure 5).</p>
 
-<figure><a href="https://static.igem.wiki/teams/6303/wiki/v8-6/v86-ea1a49677396-fig3-1-5.avif" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/v8-6/v86-ea1a49677396-fig3-1-5.avif" alt="" loading="lazy"></a></figure>
+[![](https://static.igem.wiki/teams/6303/wiki/v8-6/v86-ea1a49677396-fig3-1-5.avif)](https://static.igem.wiki/teams/6303/wiki/v8-6/v86-ea1a49677396-fig3-1-5.avif "Open full-resolution image")
+
+:::caption
 
 <p style="text-align:center;" class="figure-caption">Figure 5. Overview of color-developing cell-loaded test strips.</p>
 
+:::
+
+::::
+
+:::phase{kind=learn}
+
 <p style="text-align:left;">Learn</p>
+
+:::
 
 <p style="text-align:justify;">In this cycle, combining gas-phase hydrophobic coating with the refined lyophilization protectant successfully confines the cells within a uniform circular area; the vacuum-assisted spotting device eliminates liquid residue inside pipette tips, achieving controlled and quantitative cell-loading on the test strips; and we have successfully prepared freeze-dried live-cell test strips, as shown in Figure 3.1.5. Next, we officially proceed to optimize the color development rate of the test strips.</p>
 
@@ -519,11 +583,19 @@ Mans R, Wijsman M, Daran-Lapujade P, Daran JM. A protocol for introduction of mu
 
 <p style="text-align:justify;">After completing the fabrication of the freeze-dried test strips, we require them to undergo rapid resuscitation and color development; therefore, we initiate this cycle.</p>
 
+:::phase{kind=design}
+
 <p style="text-align:left;">Design</p>
+
+:::
 
 <p style="text-align:justify;">To meet the requirements of rapid detection, freeze-dried cells must quickly emerge from their dormant state upon contact with liquid. First, to evaluate the feasibility of resuscitation, we immerse the freeze-dried test strips into <strong>yeast nitrogen base (YNB)</strong>-free <strong>synthetic complete (SC)</strong> medium and <strong>phosphate-buffered saline (PBS)</strong> solution, respectively, and assess the impact of the amine donor <strong>tryptophan (Trp)</strong> on color development stability. Next, focusing on the key limiting factors of the betaxanthin biosynthesis pathway, we systematically evaluate the effects of <strong>tyrosine (Tyr)</strong> concentration (precursor), surfactants (precursor amino acid uptake), antioxidant protectants, and glucose concentration (carbon source).</p>
 
+:::phase{kind=build-test}
+
 <p style="text-align:left;">Build &amp; Test</p>
+
+:::
 
 <p style="text-align:justify;">First, we complete a continuous observation and recording of freeze-dried test strip resuscitation via time-lapse photography (Video 1).</p>
 
@@ -533,17 +605,29 @@ Mans R, Wijsman M, Daran-Lapujade P, Daran JM. A protocol for introduction of mu
 
 <iframe class="author-screening-figure" title="Reactivation medium screening" src="/embeds/results-20261019/index.html" loading="lazy" sandbox="allow-scripts" style="width:100%;height:980px;border:0"></iframe><p style="text-align:center;" class="figure-caption">Figure 6. Control experiments for color development conditions. </p>
 
+:::phase{kind=learn}
+
 <p style="text-align:left;">Learn</p>
+
+:::
 
 <p style="text-align:justify;">We observe that YNB-free SC medium as a resuscitation solution performs significantly better than PBS solution, and the amine donor Trp stabilizes yeast color development.</p>
 
 <p style="text-align:justify;">The results of the color development condition control experiments further indicate that based on YNB-free SC selective medium, adding 2% glucose provides energy and a carbon source, Tyr promotes precursor uptake and resuscitation, the surfactant (Tween 80) improves wettability and cell membrane permeability, and antioxidants protect betaxanthin stability. This optimized formulation overcomes the bottleneck of slow resuscitation in earlier stages and significantly accelerates the test strip color development rate.</p>
 
+::::evidence{place=right size=compact}
+
 <p style="text-align:justify;">Meanwhile, considering the field application scenarios of our product, we design a 3D-printed test strip cassette to hold the test strip (Figure 7), making the detection workflow simpler and more convenient.</p>
 
-<figure><a href="https://static.igem.wiki/teams/6303/wiki/v8-6/v86-b5b9b9256085-fig3-2-2.avif" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/v8-6/v86-b5b9b9256085-fig3-2-2.avif" alt="" loading="lazy"></a></figure>
+[![](https://static.igem.wiki/teams/6303/wiki/v8-6/v86-b5b9b9256085-fig3-2-2.avif)](https://static.igem.wiki/teams/6303/wiki/v8-6/v86-b5b9b9256085-fig3-2-2.avif "Open full-resolution image")
+
+:::caption
 
 <p style="text-align:center;" class="figure-caption">Figure 7. 3D-printed test strip cassette（ insert image “Fig3.2.2”）</p>
+
+:::
+
+::::
 
 <p style="text-align:justify;">At this point, we have closed the loop on test strip fabrication and application, establishing a solid foundation for subsequent on-site rapid detection of soil samples.</p>
 
