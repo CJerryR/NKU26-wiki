@@ -13,6 +13,12 @@ meta: {}
 draft: false
 hidden: false
 ---
+:::manuscriptTitle
+
+Our team: NKU-China 2026
+
+:::
+
 :::figure
 
 ![NKU-China 2026 team group photo](https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-c66c4601fe63-team-group.avif)

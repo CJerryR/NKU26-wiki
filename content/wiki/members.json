@@ -12,6 +12,10 @@
   "search": true,
   "blocks": [
     {
+      "_template": "manuscriptTitle",
+      "manuscript": "Our team: NKU-China 2026"
+    },
+    {
       "_template": "image",
       "src": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-c66c4601fe63-team-group.avif",
       "alt": "NKU-China 2026 team group photo",
