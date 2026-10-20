@@ -135,10 +135,13 @@ export function initImagePreview(): void {
       || link.href === img.currentSrc || link.href === img.src
       || link.getAttribute('href') === img.dataset.authorOriginal;
   }
-  function prepare(): void {
-    article!.querySelectorAll<HTMLImageElement>('img').forEach((img) => {
+  const observed = new WeakSet<Node>();
+  function prepare(root: Element | ShadowRoot = article!): void {
+    root.querySelectorAll<HTMLImageElement>('img').forEach((img) => {
       if (!eligible(img)) return;
       img.dataset.imagePreview = '';
+      // A component's shadow tree cannot inherit the article stylesheet.
+      img.style.cursor = 'zoom-in';
       if (!img.closest('a[href]')) {
         img.tabIndex = 0;
         img.setAttribute('role', 'button');
@@ -146,21 +149,28 @@ export function initImagePreview(): void {
         img.setAttribute('aria-label', `Preview image${img.alt ? `: ${img.alt}` : ''}`);
       }
     });
+    root.querySelectorAll('*').forEach((el) => { if (el.shadowRoot) prepare(el.shadowRoot); });
+    if (!observed.has(root)) {
+      observed.add(root);
+      new MutationObserver(() => prepare(root)).observe(root, { childList: true, subtree: true });
+    }
   }
   prepare();
-  new MutationObserver(prepare).observe(article, { childList: true, subtree: true });
+  customElements.whenDefined('wiki-toolkit').then(() => prepare());
   article.addEventListener('click', (event) => {
     if (event.button !== 0 || event.ctrlKey || event.metaKey || event.altKey || event.shiftKey) return;
     const target = event.target as Element;
-    const img = target.closest<HTMLImageElement>('img') || target.closest('a')?.querySelector<HTMLImageElement>('img');
+    const img = event.composedPath().find((node): node is HTMLImageElement => node instanceof HTMLImageElement)
+      || target.closest('a')?.querySelector<HTMLImageElement>('img');
     if (!img || !eligible(img)) return;
     event.preventDefault();
     void open(img, img.closest<HTMLAnchorElement>('a') || img);
   });
   article.addEventListener('keydown', (event) => {
-    if (!(event.target instanceof HTMLImageElement) || !eligible(event.target)) return;
+    const img = event.composedPath().find((node): node is HTMLImageElement => node instanceof HTMLImageElement);
+    if (!img || !eligible(img)) return;
     if (event.key !== 'Enter' && event.key !== ' ') return;
     event.preventDefault();
-    void open(event.target, event.target);
+    void open(img, img);
   });
 }
