@@ -64,19 +64,29 @@
       "body": "Green fluorescence showed that GPR2–sfGFP was expressed, but its location needed a clearer reference."
     },
     {
-      "_template": "cycle",
-      "language": "en",
-      "items": [
-        {
-          "design": "We added staining references to examine the receptor’s position relative to the cell boundary and membrane structures.",
-          "build": "We stained GPR2–sfGFP-expressing yeast with **Calcofluor White (CFW)** and FM4-64, then compared the fluorescence channels and merged images.",
-          "test": "The staining comparisons provided spatial context for the green signal. They allowed us to examine its distribution more closely than receptor fluorescence alone.",
-          "testImage": "https://static.igem.wiki/teams/6303/wiki/release-20261020/engineering-figure-2-627df6af35.webp",
-          "testAlt": "Figure 2. Examining receptor localization.",
-          "testCaption": "Figure 2. Examining receptor localization. GPR2–sfGFP fluorescence is compared with FM4-64 staining and merged images. Scale bars: 10 μm.",
-          "learn": "**We established a clearer way to assess receptor localization.** Reference staining added spatial context to the expression images and strengthened our receptor-evaluation workflow. Further localization and response measurements will help connect receptor placement to sensing function."
-        }
-      ]
+      "_template": "text",
+      "body": "**Design** - We added staining references to examine the receptor’s position relative to the cell boundary and membrane structures."
+    },
+    {
+      "_template": "text",
+      "body": "**Build** - We stained GPR2–sfGFP-expressing yeast with **Calcofluor White (CFW)** and FM4-64, then compared the fluorescence channels and merged images."
+    },
+    {
+      "_template": "text",
+      "body": "**Test** - The staining comparisons provided spatial context for the green signal. They allowed us to examine its distribution more closely than receptor fluorescence alone."
+    },
+    {
+      "_template": "image",
+      "src": "https://static.igem.wiki/teams/6303/wiki/release-20261020/engineering-figure-2-627df6af35.webp",
+      "alt": "Figure 2. Examining receptor localization.",
+      "body": "Figure 2. Examining receptor localization. GPR2–sfGFP fluorescence is compared with FM4-64 staining and merged images. Scale bars: 10 μm.",
+      "layout": "full",
+      "imageWidth": "wide",
+      "openOriginal": true
+    },
+    {
+      "_template": "text",
+      "body": "**Learn** - **We established a clearer way to assess receptor localization.** Reference staining added spatial context to the expression images and strengthened our receptor-evaluation workflow. Further localization and response measurements will help connect receptor placement to sensing function."
     },
     {
       "_template": "heading",
@@ -89,16 +99,20 @@
       "body": "Early homologous-recombination attempts did not consistently produce the intended edits. Some colonies produced yellow pigment even though verification did not confirm the planned insertion."
     },
     {
-      "_template": "cycle",
-      "language": "en",
-      "items": [
-        {
-          "design": "We revised the editing workflow to use Cas9-assisted integration. This also required compatible selection markers, **guide RNAs (gRNAs)**, and donor **deoxyribonucleic acid (DNA)** for the target sites.",
-          "build": "We replaced the Cas9 plasmid’s Trp selection marker with **leucine (Leu)** and prepared the gRNA and donor constructs for pathway assembly.",
-          "test": "Transformant verification supported the intended integration of the synthetic transcription-factor module and the GAL-controlled pigment-production cassette in the revised workflow.",
-          "learn": "**The revised editing workflow yielded genetically verified pathway components.** Combining targeted integration with genotyping gave us a better-defined chassis for receptor and reporter studies. The next step is to characterize how these components function together in response to ligands."
-        }
-      ]
+      "_template": "text",
+      "body": "**Design** - We revised the editing workflow to use Cas9-assisted integration. This also required compatible selection markers, **guide RNAs (gRNAs)**, and donor **deoxyribonucleic acid (DNA)** for the target sites."
+    },
+    {
+      "_template": "text",
+      "body": "**Build** - We replaced the Cas9 plasmid’s Trp selection marker with **leucine (Leu)** and prepared the gRNA and donor constructs for pathway assembly."
+    },
+    {
+      "_template": "text",
+      "body": "**Test** - Transformant verification supported the intended integration of the synthetic transcription-factor module and the GAL-controlled pigment-production cassette in the revised workflow."
+    },
+    {
+      "_template": "text",
+      "body": "**Learn** - **The revised editing workflow yielded genetically verified pathway components.** Combining targeted integration with genotyping gave us a better-defined chassis for receptor and reporter studies. The next step is to characterize how these components function together in response to ligands."
     },
     {
       "_template": "text",
@@ -129,16 +143,20 @@
       "body": "We used successive rounds of receptor design to find variants with different predicted preferences for <strong>ascaroside #3 (ascr#3)</strong> and <strong>ascaroside #18 (ascr#18)</strong>. Each round narrowed the candidates and guided the next set of substitutions."
     },
     {
-      "_template": "cycle",
-      "language": "en",
-      "items": [
-        {
-          "design": "We selected candidate sites from differences in the two ligands’ predicted contacts, then used **alanine (Ala)** substitutions to identify positions worth exploring further.",
-          "build": "We expanded promising sites through side-chain scanning, generating a panel of mutant sequences and structural models. We also designed combinations to test whether useful single-site effects could be retained or improved.",
-          "test": "Score and contact comparisons identified N84V, V110C, V110M, and V368R as priority candidates. N84V and V368R showed contrasting score shifts toward ascr#18 and ascr#3, respectively. Most tested combinations offered no further improvement over the better single-mutant parent, helping us focus subsequent work.",
-          "learn": "**We developed a set of receptor-engineering candidates and prioritized N84V and V368R for further study.** Their contrasting predicted preferences provided a basis for exploring complementary sensing channels. Dynamic analysis and experimental ligand-response measurements were the next steps toward evaluating these designs."
-        }
-      ]
+      "_template": "text",
+      "body": "**Design** - We selected candidate sites from differences in the two ligands’ predicted contacts, then used **alanine (Ala)** substitutions to identify positions worth exploring further."
+    },
+    {
+      "_template": "text",
+      "body": "**Build** - We expanded promising sites through side-chain scanning, generating a panel of mutant sequences and structural models. We also designed combinations to test whether useful single-site effects could be retained or improved."
+    },
+    {
+      "_template": "text",
+      "body": "**Test** - Score and contact comparisons identified N84V, V110C, V110M, and V368R as priority candidates. N84V and V368R showed contrasting score shifts toward ascr#18 and ascr#3, respectively. Most tested combinations offered no further improvement over the better single-mutant parent, helping us focus subsequent work."
+    },
+    {
+      "_template": "text",
+      "body": "**Learn** - **We developed a set of receptor-engineering candidates and prioritized N84V and V368R for further study.** Their contrasting predicted preferences provided a basis for exploring complementary sensing channels. Dynamic analysis and experimental ligand-response measurements were the next steps toward evaluating these designs."
     },
     {
       "_template": "heading",
@@ -151,16 +169,20 @@
       "body": "The docking results gave us candidate receptors and possible binding poses. We next examined how those contacts behaved over time in a membrane environment."
     },
     {
-      "_template": "cycle",
-      "language": "en",
-      "items": [
-        {
-          "design": "We compared **wild type (WT)** GPR2, N84V, and V368R with both ligands to look for persistent interactions that could help explain their docking-score differences.",
-          "build": "We prepared six receptor–ligand systems and ran **molecular dynamics (MD)** simulations. Observations from the initial V368R–ascr#3 trajectory then guided two additional starting poses near Arg368 and Arg189.",
-          "test": "In the N84V–ascr#18 simulation, Arg189 maintained contact with the ligand’s carboxylate group throughout the main comparison window, providing a persistent anchoring interaction. In contrast, the additional V368R simulations lost their preset contacts and mainly adopted Arg345 anchoring, which also occurred in other systems.",
-          "learn": "**We identified a persistent ligand-anchoring interaction in the N84V–ascr#18 simulation.** This provided a specific structural hypothesis for follow-up testing and helped distinguish the evidence available for the two candidates. Further simulations and ligand-response measurements will test how reproducible this N84V interaction is and investigate the mechanism behind V368R’s predicted preference."
-        }
-      ]
+      "_template": "text",
+      "body": "**Design** - We compared **wild type (WT)** GPR2, N84V, and V368R with both ligands to look for persistent interactions that could help explain their docking-score differences."
+    },
+    {
+      "_template": "text",
+      "body": "**Build** - We prepared six receptor–ligand systems and ran **molecular dynamics (MD)** simulations. Observations from the initial V368R–ascr#3 trajectory then guided two additional starting poses near Arg368 and Arg189."
+    },
+    {
+      "_template": "text",
+      "body": "**Test** - In the N84V–ascr#18 simulation, Arg189 maintained contact with the ligand’s carboxylate group throughout the main comparison window, providing a persistent anchoring interaction. In contrast, the additional V368R simulations lost their preset contacts and mainly adopted Arg345 anchoring, which also occurred in other systems."
+    },
+    {
+      "_template": "text",
+      "body": "**Learn** - **We identified a persistent ligand-anchoring interaction in the N84V–ascr#18 simulation.** This provided a specific structural hypothesis for follow-up testing and helped distinguish the evidence available for the two candidates. Further simulations and ligand-response measurements will test how reproducible this N84V interaction is and investigate the mechanism behind V368R’s predicted preference."
     },
     {
       "_template": "heading",
@@ -173,16 +195,20 @@
       "body": "Our first model followed the full pathway from receptor input to pigment output. It exposed a problem: several different parameter combinations could produce similar final colors."
     },
     {
-      "_template": "cycle",
-      "language": "en",
-      "items": [
-        {
-          "design": "We revised the model to separate a published yeast signaling core from the project-specific input and color-output relationships.",
-          "build": "We reconstructed the shared signaling reactions and connected them to an effective pigment-production equation. We then adjusted input sensitivity and output gain against simulated color targets.",
-          "test": "Early simulations produced similar endpoint colors across different inputs. After adjustment, the model better followed the intended response range, although weak-input responses still deviated from the targets.",
-          "learn": "**We built a simulation framework linking receptor input to distinguishable color outputs.** Separating the shared pathway from adjustable input and output relationships made calibration more manageable and supplied the outputs for density-estimation tests. Weak-input deviations and calibration against our yeast strains remain priorities for the next round."
-        }
-      ]
+      "_template": "text",
+      "body": "**Design** - We revised the model to separate a published yeast signaling core from the project-specific input and color-output relationships."
+    },
+    {
+      "_template": "text",
+      "body": "**Build** - We reconstructed the shared signaling reactions and connected them to an effective pigment-production equation. We then adjusted input sensitivity and output gain against simulated color targets."
+    },
+    {
+      "_template": "text",
+      "body": "**Test** - Early simulations produced similar endpoint colors across different inputs. After adjustment, the model better followed the intended response range, although weak-input responses still deviated from the targets."
+    },
+    {
+      "_template": "text",
+      "body": "**Learn** - **We built a simulation framework linking receptor input to distinguishable color outputs.** Separating the shared pathway from adjustable input and output relationships made calibration more manageable and supplied the outputs for density-estimation tests. Weak-input deviations and calibration against our yeast strains remain priorities for the next round."
     },
     {
       "_template": "heading",
@@ -195,19 +221,29 @@
       "body": "With a signal-to-color model in place, we asked whether two complementary readouts could help separate target abundance from background interference."
     },
     {
-      "_template": "cycle",
-      "language": "en",
-      "items": [
-        {
-          "design": "We designed simulated mixtures in which target and background densities varied independently, and compared one-channel and two-channel predictions.",
-          "build": "We converted **ordinary differential equation (ODE)** pigment outputs into simulated blue-channel image features and used the paired features to estimate target nematode density.",
-          "test": "On the same simulated test set, paired readouts gave lower prediction errors than either channel alone. Tests near the example risk thresholds also showed that small density errors could change the assigned risk category.",
-          "testImage": "https://static.igem.wiki/teams/6303/wiki/release-20261020/engineering-figure-3-5f5e319acc.webp",
-          "testAlt": "Figure 3. Comparing one and two readouts.",
-          "testCaption": "Figure 3. Comparing one and two readouts. Paired readouts improved target-density prediction on the simulated test set.",
-          "learn": "**Paired readouts improved target-density estimation in simulated mixtures.** This supported the two-channel design, while the economic model connected prediction errors to their practical consequences. Validation with measured colors will need particular attention to samples near risk thresholds, where small errors can change the interpretation."
-        }
-      ]
+      "_template": "text",
+      "body": "**Design** - We designed simulated mixtures in which target and background densities varied independently, and compared one-channel and two-channel predictions."
+    },
+    {
+      "_template": "text",
+      "body": "**Build** - We converted **ordinary differential equation (ODE)** pigment outputs into simulated blue-channel image features and used the paired features to estimate target nematode density."
+    },
+    {
+      "_template": "text",
+      "body": "**Test** - On the same simulated test set, paired readouts gave lower prediction errors than either channel alone. Tests near the example risk thresholds also showed that small density errors could change the assigned risk category."
+    },
+    {
+      "_template": "image",
+      "src": "https://static.igem.wiki/teams/6303/wiki/release-20261020/engineering-figure-3-5f5e319acc.webp",
+      "alt": "Figure 3. Comparing one and two readouts.",
+      "body": "Figure 3. Comparing one and two readouts. Paired readouts improved target-density prediction on the simulated test set.",
+      "layout": "full",
+      "imageWidth": "wide",
+      "openOriginal": true
+    },
+    {
+      "_template": "text",
+      "body": "**Learn** - **Paired readouts improved target-density estimation in simulated mixtures.** This supported the two-channel design, while the economic model connected prediction errors to their practical consequences. Validation with measured colors will need particular attention to samples near risk thresholds, where small errors can change the interpretation."
     },
     {
       "_template": "heading",
@@ -216,16 +252,20 @@
       "attributes": "#engineering-iteration-2-5-evaluating-when-screening-adds-value toc=\"Evaluating when screening adds value\" toc-unnumbered"
     },
     {
-      "_template": "cycle",
-      "language": "en",
-      "items": [
-        {
-          "design": "We asked when knowing target density could improve management decisions, comparing screening-guided management with no treatment and uniform treatment without testing.",
-          "build": "Using protected tomato cultivation in Spain as a worked example, we linked density estimates, crop losses, treatment effects, and costs to expected seasonal net returns.",
-          "test": "Screening could add value by avoiding unnecessary treatment or guiding a more effective response. When it led to the same treatment as the uniform strategy, it simply added testing costs. Sensitivity analysis examined how these comparisons changed with economic and treatment assumptions.",
-          "learn": "**We connected detection performance to potential management value.** This made affordable testing and accuracy near management thresholds clear priorities for sensor development. Measured detection errors and local agricultural data will help refine these priorities."
-        }
-      ]
+      "_template": "text",
+      "body": "**Design** - We asked when knowing target density could improve management decisions, comparing screening-guided management with no treatment and uniform treatment without testing."
+    },
+    {
+      "_template": "text",
+      "body": "**Build** - Using protected tomato cultivation in Spain as a worked example, we linked density estimates, crop losses, treatment effects, and costs to expected seasonal net returns."
+    },
+    {
+      "_template": "text",
+      "body": "**Test** - Screening could add value by avoiding unnecessary treatment or guiding a more effective response. When it led to the same treatment as the uniform strategy, it simply added testing costs. Sensitivity analysis examined how these comparisons changed with economic and treatment assumptions."
+    },
+    {
+      "_template": "text",
+      "body": "**Learn** - **We connected detection performance to potential management value.** This made affordable testing and accuracy near management thresholds clear priorities for sensor development. Measured detection errors and local agricultural data will help refine these priorities."
     },
     {
       "_template": "text",
@@ -252,16 +292,20 @@
       "attributes": "#engineering-iteration-3-1-choosing-the-paper-substrate toc=\"Choosing the paper substrate\" toc-unnumbered"
     },
     {
-      "_template": "cycle",
-      "language": "en",
-      "items": [
-        {
-          "design": "We looked for a substrate that could hold yeast and liquid while remaining easy to handle and consistent to prepare.",
-          "build": "We loaded yeast onto seven candidate materials and took them through freezing, drying, recovery, and elution. We then compared liquid uptake in three shortlisted substrates.",
-          "test": "The materials differed in cell retention, absorbency, and handling. GF/B glass-fiber paper combined favorable cell retention with high liquid-loading capacity.",
-          "learn": "**We selected GF/B as a suitable substrate for the test-strip prototype.** Its combination of cell retention, absorbency, and handling properties gave us a practical starting material. We then focused on controlling liquid spread and cell placement within a defined reaction area."
-        }
-      ]
+      "_template": "text",
+      "body": "**Design** - We looked for a substrate that could hold yeast and liquid while remaining easy to handle and consistent to prepare."
+    },
+    {
+      "_template": "text",
+      "body": "**Build** - We loaded yeast onto seven candidate materials and took them through freezing, drying, recovery, and elution. We then compared liquid uptake in three shortlisted substrates."
+    },
+    {
+      "_template": "text",
+      "body": "**Test** - The materials differed in cell retention, absorbency, and handling. GF/B glass-fiber paper combined favorable cell retention with high liquid-loading capacity."
+    },
+    {
+      "_template": "text",
+      "body": "**Learn** - **We selected GF/B as a suitable substrate for the test-strip prototype.** Its combination of cell retention, absorbency, and handling properties gave us a practical starting material. We then focused on controlling liquid spread and cell placement within a defined reaction area."
     },
     {
       "_template": "heading",
@@ -274,16 +318,20 @@
       "body": "Direct spotting allowed liquid to spread sideways, while viscous cell suspensions made consistent dispensing difficult."
     },
     {
-      "_template": "cycle",
-      "language": "en",
-      "items": [
-        {
-          "design": "We combined hydrophobic barriers with a revised protectant formulation and vacuum-assisted loading.",
-          "build": "We used masked vapor coating to leave circular hydrophilic regions on the paper, prepared the protectant mixture, and built a vacuum-assisted spotting device.",
-          "test": "Colored solutions demonstrated the defined wetting regions. The revised loading workflow was used to prepare cell-loaded, freeze-dried strips for subsequent recovery tests.",
-          "learn": "**We established a preparation workflow and produced cell-loaded, freeze-dried strips.** Bringing the substrate, protective formulation, and loading device together allowed us to move from material selection to recovery testing. The next round focused on obtaining a readable color after rehydration."
-        }
-      ]
+      "_template": "text",
+      "body": "**Design** - We combined hydrophobic barriers with a revised protectant formulation and vacuum-assisted loading."
+    },
+    {
+      "_template": "text",
+      "body": "**Build** - We used masked vapor coating to leave circular hydrophilic regions on the paper, prepared the protectant mixture, and built a vacuum-assisted spotting device."
+    },
+    {
+      "_template": "text",
+      "body": "**Test** - Colored solutions demonstrated the defined wetting regions. The revised loading workflow was used to prepare cell-loaded, freeze-dried strips for subsequent recovery tests."
+    },
+    {
+      "_template": "text",
+      "body": "**Learn** - **We established a preparation workflow and produced cell-loaded, freeze-dried strips.** Bringing the substrate, protective formulation, and loading device together allowed us to move from material selection to recovery testing. The next round focused on obtaining a readable color after rehydration."
     },
     {
       "_template": "heading",
@@ -296,19 +344,18 @@
       "body": "Preparing a dry strip was one step; obtaining a readable color after adding liquid was the next."
     },
     {
-      "_template": "cycle",
-      "language": "en",
-      "items": [
-        {
-          "design": "We examined recovery media and additives that could affect nutrient supply, wetting, and pigment stability.",
-          "build": "We compared recovery in **synthetic complete (SC)** medium and **phosphate-buffered saline (PBS)**, then tested glucose, **tyrosine (Tyr)**, Tween 80, and ascorbic acid conditions. We quantified color using blue-channel image values.",
-          "test": "Color development varied across treatments. Several Tyr–Tween 80 combinations and ascorbic acid treatments produced stronger yellow signals than the reference, while changing glucose concentration did not consistently improve the signal.",
-          "testCaption": "Figure 4. Prototype test strips and colored solutions.",
-          "learn": "**We identified formulation conditions that strengthened the yellow readout.** These comparisons gave us a basis for refining the recovery solution alongside the strip itself. Further testing will assess whether the improved color development is consistent across prepared strips.",
-          "testImage": "https://static.igem.wiki/teams/6303/wiki/release-20261020/engineering-figure-4-f4de7549d8.webp",
-          "testAlt": "Prototype test strips, a coating device, and colored solutions."
-        }
-      ]
+      "_template": "image",
+      "src": "https://static.igem.wiki/teams/6303/wiki/release-20261020/engineering-figure-4-f4de7549d8.webp",
+      "alt": "Prototype test strips, a coating device, and colored solutions.",
+      "body": "Figure 4. Prototype test strips and colored solutions.",
+      "layout": "right",
+      "imageWidth": "wide",
+      "openOriginal": true,
+      "accompanyingBody": "<p><strong>Design</strong> - We examined recovery media and additives that could affect nutrient supply, wetting, and pigment stability.</p>\n\n<p><strong>Build</strong> - We compared recovery in **synthetic complete (SC)** medium and **phosphate-buffered saline (PBS)**, then tested glucose, **tyrosine (Tyr)**, Tween 80, and ascorbic acid conditions. We quantified color using blue-channel image values.</p>\n\n<p><strong>Test</strong> - Color development varied across treatments. Several Tyr–Tween 80 combinations and ascorbic acid treatments produced stronger yellow signals than the reference, while changing glucose concentration did not consistently improve the signal.</p>"
+    },
+    {
+      "_template": "text",
+      "body": "**Learn** - **We identified formulation conditions that strengthened the yellow readout.** These comparisons gave us a basis for refining the recovery solution alongside the strip itself. Further testing will assess whether the improved color development is consistent across prepared strips."
     },
     {
       "_template": "heading",
@@ -317,20 +364,18 @@
       "attributes": "#engineering-iteration-3-4-designing-around-three-user-actions toc=\"Designing around three user actions\" toc-unnumbered"
     },
     {
-      "_template": "cycle",
-      "language": "en",
-      "items": [
-        {
-          "design": "Once the soil extract is ready, we aim to simplify testing to three actions: load, wait and check the quality-control region, then photograph. We designed a card with quality-control, negative-control, positive-control, and sample regions, using the existing hydrophobic barriers and a reservoir beneath the strip for loading in one pour.",
-          "build": "We fabricated unit cassettes and positioned the strips from Iteration 3.2 for wetting from below. The design also includes reference colors on the casing for image correction; modular assembly remains the next construction step.",
-          "test": "In the loading test, a single pour wetted all four regions evenly from below, with no observed liquid crossing the hydrophobic boundaries.",
-          "testImage": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-55-4c447ce9cb96.webp",
-          "testAlt": "Figure 5. A test card designed for simpler use.",
-          "testCaption": "Figure 5. A test card designed for simpler use. The proposed workflow combines loading the soil extract, checking the quality-control region, and photographing the result, with dedicated control and sample regions and a color reference on the casing. Generated with OpenAI GPT Image 2.",
-          "learn": "**The prototype supported a simpler loading step while maintaining distinct wetting regions.** This provided a practical basis for the three-action workflow. Further testing will evaluate the assembled device, control responses, and operation with real soil extracts."
-        }
-      ],
-      "presentation": "overview"
+      "_template": "image",
+      "src": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-55-4c447ce9cb96.webp",
+      "alt": "Figure 5. A test card designed for simpler use.",
+      "body": "Figure 5. A test card designed for simpler use. The proposed workflow combines loading the soil extract, checking the quality-control region, and photographing the result, with dedicated control and sample regions and a color reference on the casing. Generated with OpenAI GPT Image 2.",
+      "layout": "right",
+      "imageWidth": "wide",
+      "openOriginal": true,
+      "accompanyingBody": "<p><strong>Design</strong> - Once the soil extract is ready, we aim to simplify testing to three actions: load, wait and check the quality-control region, then photograph. We designed a card with quality-control, negative-control, positive-control, and sample regions, using the existing hydrophobic barriers and a reservoir beneath the strip for loading in one pour.</p>\n\n<p><strong>Build</strong> - We fabricated unit cassettes and positioned the strips from Iteration 3.2 for wetting from below. The design also includes reference colors on the casing for image correction; modular assembly remains the next construction step.</p>\n\n<p><strong>Test</strong> - In the loading test, a single pour wetted all four regions evenly from below, with no observed liquid crossing the hydrophobic boundaries.</p>"
+    },
+    {
+      "_template": "text",
+      "body": "**Learn** - **The prototype supported a simpler loading step while maintaining distinct wetting regions.** This provided a practical basis for the three-action workflow. Further testing will evaluate the assembled device, control responses, and operation with real soil extracts."
     },
     {
       "_template": "text",
@@ -365,16 +410,20 @@
       "body": "We began with the idea of early warning. Stakeholder feedback helped us connect that broad aim to a concrete agricultural decision."
     },
     {
-      "_template": "cycle",
-      "language": "en",
-      "items": [
-        {
-          "design": "We asked who might use the kit, when testing could influence management, and what information a grower would need from the result.",
-          "build": "We collected 369 questionnaire submissions, consulted plant-protection and related experts, and visited vegetable-growing sites in Tianjin. We discussed expectations for testing alongside existing management practices and everyday workloads.",
-          "test": "Respondents highlighted simple operation, reliable results, and affordability. Experts recommended connecting early detection to management before planting. Conversations with growers also showed that demand depends on local crops and field conditions, since nematodes are not the most pressing problem at every site.",
-          "learn": "**We refined NemaKlear’s positioning as an accessible screening tool for pre-planting management.** Stakeholder feedback made simple operation, affordable testing, and useful guidance central design requirements. The [Eco Model](/model-eco/) provided a way to examine the trade-offs behind these requirements, including when testing could change a management choice enough to justify its cost. Further engagement with growers and agricultural specialists will help ground these comparisons in local costs and practices."
-        }
-      ]
+      "_template": "text",
+      "body": "**Design** - We asked who might use the kit, when testing could influence management, and what information a grower would need from the result."
+    },
+    {
+      "_template": "text",
+      "body": "**Build** - We collected 369 questionnaire submissions, consulted plant-protection and related experts, and visited vegetable-growing sites in Tianjin. We discussed expectations for testing alongside existing management practices and everyday workloads."
+    },
+    {
+      "_template": "text",
+      "body": "**Test** - Respondents highlighted simple operation, reliable results, and affordability. Experts recommended connecting early detection to management before planting. Conversations with growers also showed that demand depends on local crops and field conditions, since nematodes are not the most pressing problem at every site."
+    },
+    {
+      "_template": "text",
+      "body": "**Learn** - **We refined NemaKlear’s positioning as an accessible screening tool for pre-planting management.** Stakeholder feedback made simple operation, affordable testing, and useful guidance central design requirements. The [Eco Model](/model-eco/) provided a way to examine the trade-offs behind these requirements, including when testing could change a management choice enough to justify its cost. Further engagement with growers and agricultural specialists will help ground these comparisons in local costs and practices."
     },
     {
       "_template": "heading",
@@ -387,16 +436,20 @@
       "body": "Moving toward real samples required us to examine how soil background and signal stability could affect the information carried by the readout."
     },
     {
-      "_template": "cycle",
-      "language": "en",
-      "items": [
-        {
-          "design": "We examined the assumptions connecting a color change to signal composition, nematode density, and agricultural risk.",
-          "build": "We organized the questions into two areas: how the sample matrix affects the observed color, and how collection, storage, and molecular stability affect the signals entering the sensor. These questions guided discussions of sample controls, testing conditions, and model assumptions.",
-          "test": "Expert review highlighted possible interference from soil color and differences in the degradation of ascr#3 and ascr#18. These factors could alter the readout or the measured signal proportions, making sample conditions important to both experiments and downstream interpretation.",
-          "learn": "**We established a clearer framework for validating the meaning of the readout.** Signal detection, signal composition, density estimation, and risk assessment became distinct steps with their own evidence requirements. This helped align experimental controls with modeling assumptions; real-sample studies will determine which relationships hold under different sampling and storage conditions."
-        }
-      ]
+      "_template": "text",
+      "body": "**Design** - We examined the assumptions connecting a color change to signal composition, nematode density, and agricultural risk."
+    },
+    {
+      "_template": "text",
+      "body": "**Build** - We organized the questions into two areas: how the sample matrix affects the observed color, and how collection, storage, and molecular stability affect the signals entering the sensor. These questions guided discussions of sample controls, testing conditions, and model assumptions."
+    },
+    {
+      "_template": "text",
+      "body": "**Test** - Expert review highlighted possible interference from soil color and differences in the degradation of ascr#3 and ascr#18. These factors could alter the readout or the measured signal proportions, making sample conditions important to both experiments and downstream interpretation."
+    },
+    {
+      "_template": "text",
+      "body": "**Learn** - **We established a clearer framework for validating the meaning of the readout.** Signal detection, signal composition, density estimation, and risk assessment became distinct steps with their own evidence requirements. This helped align experimental controls with modeling assumptions; real-sample studies will determine which relationships hold under different sampling and storage conditions."
     },
     {
       "_template": "heading",
@@ -409,19 +462,22 @@
       "body": "A low barrier to use depends on what happens before and after the sensing reaction as well as during it."
     },
     {
-      "_template": "cycle",
-      "language": "en",
-      "items": [
-        {
-          "design": "We expanded the workflow to include soil collection, sample preparation, storage and transport, result interpretation, and disposal. We considered sample traceability and safe handling of engineered yeast alongside operational convenience.",
-          "build": "We organized soil collection and produced a sampling guidance video. Sample identifiers linked soil samples to information such as crop, location, collection date, and treatment history, giving subsequent studies a record of their agricultural context.",
-          "buildImage": "https://static.igem.wiki/teams/6303/wiki/release-20261020/engineering-figure-6-82a0893b5b.webp",
-          "buildAlt": "Figure 6. From soil collection to disposal.",
-          "buildCaption": "Figure 6. From soil collection to disposal. The workflow brings sampling, recording, transport, laboratory handling, and disposal into one view. Generated with OpenAI GPT Image 2.",
-          "test": "Field visits and expert discussions highlighted differences between plots and greenhouses, as well as the need for clear sampling instructions, complete background information, and appropriate handling of separate samples. This review broadened our evaluation beyond the strip to equipment, consumables, storage, and handover requirements.",
-          "learn": "**We developed a traceable sampling approach and a fuller set of workflow requirements.** These provided a basis for assessing whether the kit could fit practical use. The next step is to test the complete process with real samples and users, including preparation, handling, and disposal instructions."
-        }
-      ]
+      "_template": "image",
+      "src": "https://static.igem.wiki/teams/6303/wiki/release-20261020/engineering-figure-6-82a0893b5b.webp",
+      "alt": "Figure 6. From soil collection to disposal.",
+      "body": "Figure 6. From soil collection to disposal. The workflow brings sampling, recording, transport, laboratory handling, and disposal into one view. Generated with OpenAI GPT Image 2.",
+      "layout": "right",
+      "imageWidth": "wide",
+      "openOriginal": true,
+      "accompanyingBody": "<p><strong>Design</strong> - We expanded the workflow to include soil collection, sample preparation, storage and transport, result interpretation, and disposal. We considered sample traceability and safe handling of engineered yeast alongside operational convenience.</p>\n\n<p><strong>Build</strong> - We organized soil collection and produced a sampling guidance video. Sample identifiers linked soil samples to information such as crop, location, collection date, and treatment history, giving subsequent studies a record of their agricultural context.</p>"
+    },
+    {
+      "_template": "text",
+      "body": "**Test** - Field visits and expert discussions highlighted differences between plots and greenhouses, as well as the need for clear sampling instructions, complete background information, and appropriate handling of separate samples. This review broadened our evaluation beyond the strip to equipment, consumables, storage, and handover requirements."
+    },
+    {
+      "_template": "text",
+      "body": "**Learn** - **We developed a traceable sampling approach and a fuller set of workflow requirements.** These provided a basis for assessing whether the kit could fit practical use. The next step is to test the complete process with real samples and users, including preparation, handling, and disposal instructions."
     },
     {
       "_template": "text",
