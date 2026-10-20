@@ -1,6 +1,6 @@
 /* Shared chrome of the protein / PDF / HTML viewers (loaded inside an iframe).
    Matches the wiki palette; fonts come from the site's /fonts folder. */
-@font-face{font-family:'Spline Sans';src:url('../fonts/spline-variable.woff2') format('woff2');font-weight:300 700;font-display:swap}
+@font-face{font-family:'Spline Sans';src:url('https://static.igem.wiki/teams/6303/wiki/v8-0/v8-64513365c2d8-spline-variable.woff2') format('woff2');font-weight:300 700;font-display:swap}
 :root{--ink:#241c2b;--ink-2:#4a4152;--ink-3:#6c6373;--paper:#f7f2e8;--paper-2:#efe6d6;--paper-hi:#fbf8f1;--iris:#6e4fb8;--iris-deep:#523a8c;--line:rgba(36,28,43,.12);font:14px/1.5 'Spline Sans',-apple-system,'PingFang SC','Microsoft YaHei',system-ui,sans-serif;color:var(--ink);background:var(--paper-hi)}
 *{box-sizing:border-box}body{margin:0}
 header{min-height:52px;display:flex;gap:6px;align-items:center;flex-wrap:wrap;padding:8px 10px 8px 16px;background:var(--paper-2);border-bottom:1px solid var(--line);color:var(--ink)}

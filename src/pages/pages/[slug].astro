@@ -10,5 +10,11 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
+const legacyArchive = ['model-1', 'model-2'].includes(entry.id);
+const { Content } = legacyArchive ? await entry.render() : { Content: null };
 ---
-<PageView entry={entry} />
+{legacyArchive ? (
+  <html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="robots" content="noindex"/><title>{entry.data.title} / NKU iGEM 2026</title></head>
+  <body><main><h1>{entry.data.heading}</h1><p>{entry.data.sub}</p><Content /></main></body></html>
+) : <PageView entry={entry} />}
+<style>main{max-width:65rem;margin:4rem auto;padding:1rem;font:1.1rem/1.65 system-ui,sans-serif}a{color:#523a8c}</style>
