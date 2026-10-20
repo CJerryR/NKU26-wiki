@@ -1,7 +1,7 @@
 {
-  "version": "10.2.15",
-  "label": "Latest ODE manuscript with authorized original formula restoration",
-  "prepared_at": "2026-10-20T10:22:25+08:00",
+  "version": "10.2.16",
+  "label": "Consistent Project and Model typography, restored reading width and plain figure captions",
+  "prepared_at": "2026-10-20T11:37:09.350033+08:00",
   "media": "84 unchanged original images plus 4 user-authorized GPS-only cleaned images; all decoded frames unchanged; 12 complete historical source documents",
   "release_kind": "stage",
   "team_content_review": "Scientific final review pending; source-version choices authorized by user",
@@ -10,7 +10,7 @@
     "commit": "16770d5c28ddf7bc41f8d90445c44d80a28801d5",
     "published_at_local": "2026-10-18 05:04:34"
   },
-  "release_id": "model-ode-restoration-20261020-v10.2.15",
+  "release_id": "content-rules-captions-20261020-v10.2.16",
   "mobile_layout_check": "390px Members rendered without overflow; desktop Description, Parts/plasmid, Attributions/puzzle checked; 4 second delayed CDN uses inline preview then upgrades",
   "source_fidelity": {
     "original_source_files_verified": 80,
@@ -30,8 +30,8 @@
     "source_decisions": "content/author-source-decisions.json"
   },
   "previous_release": {
-    "version": "10.2.14",
-    "commit": "b5af87a3870744198fca9b8097322f2dff3d7393"
+    "version": "10.2.15",
+    "commit": "c56e223f136804824dd9ba8cc11c24f8cdd03eb4"
   },
   "visual_stage": "AI-generated handcut illustrations; 16 sheets, 91 canonical props",
   "meeting_update": {
@@ -235,5 +235,14 @@
     ],
     "removed_link": "Standalone iGEM homepage link",
     "layout": "Reduced spacing; desktop sponsors in one row; mobile touch targets retained"
+  },
+  "content_rules_followup": {
+    "task_commit": "43a32691b446d5a36fac81019e9525872aebae8d",
+    "project_model_pages": 9,
+    "shared_content_pages": 26,
+    "figure_captions": 85,
+    "article_measure": "65rem",
+    "caption_style": "14px / 400 / 1.55, left aligned, 12px top margin, no bold",
+    "scientific_review": "Existing team-review status retained; uncertain abbreviations remain full names"
   }
 }
