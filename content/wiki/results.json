@@ -832,7 +832,7 @@
       "place": "left",
       "size": "standard",
       "figureAlt": "",
-      "figureCaption": "<p style=\"text-align:center;\" class=\"figure-caption\">Figure 3.1.4. Schematic of the spotting process</p>"
+      "figureCaption": "<p style=\"text-align:center;\" class=\"figure-caption\">Figure 4. Schematic of the spotting process</p>"
     },
     {
       "_template": "evidence",
@@ -851,7 +851,7 @@
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:justify;\">In this cycle, combining gas-phase hydrophobic coating with the refined lyophilization protectant successfully confines the cells within a uniform circular area; the vacuum-assisted spotting device eliminates liquid residue inside pipette tips, achieving controlled and quantitative cell-loading on the test strips; and we have successfully prepared freeze-dried live-cell test strips, as shown in Figure 3.1.5. Next, we officially proceed to optimize the color development rate of the test strips.</p>"
+      "body": "<p style=\"text-align:justify;\">In this cycle, combining gas-phase hydrophobic coating with the refined lyophilization protectant successfully confines the cells within a uniform circular area; the vacuum-assisted spotting device eliminates liquid residue inside pipette tips, achieving controlled and quantitative cell-loading on the test strips; and we have successfully prepared freeze-dried live-cell test strips, as shown in Figure 5. Next, we officially proceed to optimize the color development rate of the test strips.</p>"
     },
     {
       "_template": "heading",

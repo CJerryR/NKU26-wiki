@@ -551,7 +551,7 @@ Mans R, Wijsman M, Daran-Lapujade P, Daran JM. A protocol for introduction of mu
 
 :::caption
 
-<p style="text-align:center;" class="figure-caption">Figure 3.1.4. Schematic of the spotting process</p>
+<p style="text-align:center;" class="figure-caption">Figure 4. Schematic of the spotting process</p>
 
 :::
 
@@ -577,7 +577,7 @@ Mans R, Wijsman M, Daran-Lapujade P, Daran JM. A protocol for introduction of mu
 
 :::
 
-<p style="text-align:justify;">In this cycle, combining gas-phase hydrophobic coating with the refined lyophilization protectant successfully confines the cells within a uniform circular area; the vacuum-assisted spotting device eliminates liquid residue inside pipette tips, achieving controlled and quantitative cell-loading on the test strips; and we have successfully prepared freeze-dried live-cell test strips, as shown in Figure 3.1.5. Next, we officially proceed to optimize the color development rate of the test strips.</p>
+<p style="text-align:justify;">In this cycle, combining gas-phase hydrophobic coating with the refined lyophilization protectant successfully confines the cells within a uniform circular area; the vacuum-assisted spotting device eliminates liquid residue inside pipette tips, achieving controlled and quantitative cell-loading on the test strips; and we have successfully prepared freeze-dried live-cell test strips, as shown in Figure 5. Next, we officially proceed to optimize the color development rate of the test strips.</p>
 
 ### 3.3 Cycle 3: color development rate optimization {#results-3-3 toc="3.3 Cycle 3: color development rate optimization"}
 
