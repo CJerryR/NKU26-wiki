@@ -130,6 +130,10 @@
 .scene__crumbs, .scene__title { z-index: 3; }
 .scene__crumbs ol, .scene__crumbs a, .scene__crumbs [aria-current='page'] { color: var(--cream-2); }
 .scene__crumbs a:hover { color: var(--cream); }
+.scene__credit { /* AI-image disclosure beside the art (iGEM Wiki Requirements) */
+  position: absolute; z-index: 3; right: 16px; top: calc(var(--nav-h) + 16px); margin: 0;
+  font-size: 11px; line-height: 1.4; color: var(--cream-3); opacity: .8; pointer-events: none;
+}
 .scene__h1 { /* as the homepage title: cream, medium weight, a soft shadow to read over passing props */
   color: #f4e3b1; font-weight: 560; letter-spacing: -.03em;
   text-shadow: 0 2px 0 rgba(12, 4, 18, .35), 0 6px 40px rgba(10, 4, 16, .6);
