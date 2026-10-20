@@ -81,7 +81,7 @@ export function renderCreditGrid(block) {
     const list = (items, start) => `<ol class="credit-card__list"${start > 1 ? ` start="${start}"` : ''}>${items.map((t, i) => `<li value="${start + i}">${topic(t)}</li>`).join('')}</ol>`;
     const more = rest.length ? `<details class="credit-card__more"><summary><span class="credit-card__show">Show ${rest.length} more</span><span class="credit-card__hide">Show less</span>${chevron}</summary>${list(rest, shown + 1)}</details>` : '';
     return `<article class="credit-card" aria-labelledby="${id}"><div class="credit-card__id">${portrait(p, 'credit-card__photo')}`
-      + `${glass('credit-card__plate')}${nameBlock(p, id, Math.max(3, Math.min(5, block.headingLevel || 3)))}${p.role ? `<p class="credit-card__role">${esc(p.role)}</p>` : ''}</div></div>`
+      + `<div class="credit-card__name">${nameBlock({ ...p, chineseName: '' }, id, Math.max(3, Math.min(5, block.headingLevel || 3)))}${p.role ? `<p class="credit-card__role">${esc(p.role)}</p>` : ''}</div></div>`
       + `<div class="credit-card__body">${tasks.length ? `<h${Math.max(4, Math.min(6, (block.headingLevel || 3) + 1))} class="credit-card__label">Tasks</h${Math.max(4, Math.min(6, (block.headingLevel || 3) + 1))}><ul class="credit-card__tasks">${tasks.map(t => `<li>${esc(t)}</li>`).join('')}</ul>` : ''}`
       + `${details.length ? `<h${Math.max(4, Math.min(6, (block.headingLevel || 3) + 1))} class="credit-card__label">Specific tasks</h${Math.max(4, Math.min(6, (block.headingLevel || 3) + 1))}>${list(details.slice(0, shown), 1)}${more}` : ''}</div></article>`;
   }).join('')}</div>`;
