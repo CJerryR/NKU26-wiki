@@ -33,7 +33,7 @@ We began by establishing comparable docking conditions, then used contact differ
 
 [![Figure 1. Predicted full-length structure of Gpr2 WT](https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-1-fa6200a22b.webp)](https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-1-fa6200a22b.webp "Open full-resolution image")
 
-**Figure 1. Predicted full-length structure of Gpr2 WT.** Overall structure of model_0 generated with AlphaFold 3 \[3].
+Figure 1. Predicted full-length structure of Gpr2 WT. Overall structure of model_0 generated with AlphaFold 3 \[3].
 
 :::
 
@@ -57,7 +57,7 @@ We selected initial mutation sites at two levels. First, we measured residue con
 
 [![Figure 2. Predicted docking poses and pocket environments of Gpr2 WT](https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-2-7a7d9d242a.webp)](https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-2-7a7d9d242a.webp "Open full-resolution image")
 
-**Figure 2. Predicted docking poses and pocket environments of Gpr2 WT.** (a, b) ascr#3; (c, d) ascr#18. Each pair shows a 3D pocket view and the corresponding Maestro 2D interaction diagram \[6] for the lowest-scoring pose. In the 3D views, the receptor is shown as a purple cartoon, pocket residues as yellow sticks, and ascr#3 and ascr#18 in cyan and magenta, respectively. Original residue numbering is retained.
+Figure 2. Predicted docking poses and pocket environments of Gpr2 WT. (a, b) ascr#3; (c, d) ascr#18. Each pair shows a 3D pocket view and the corresponding Maestro 2D interaction diagram \[6] for the lowest-scoring pose. In the 3D views, the receptor is shown as a purple cartoon, pocket residues as yellow sticks, and ascr#3 and ascr#18 in cyan and magenta, respectively. Original residue numbering is retained.
 
 :::
 
@@ -69,7 +69,7 @@ These analyses provided complementary information. Contact frequencies showed ho
 
 [![Figure 3. Initial mutation sites in Gpr2](https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-3-9b303eb053.webp)](https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-3-9b303eb053.webp "Open full-resolution image")
 
-**Figure 3. Initial mutation sites in Gpr2.** N84, L90, V110, R181, W338, R345, and V368 are highlighted on the predicted full-length structure.
+Figure 3. Initial mutation sites in Gpr2. N84, L90, V110, R181, W338, R345, and V368 are highlighted on the predicted full-length structure.
 
 :::
 
@@ -145,7 +145,7 @@ N84V highlighted the importance of the surrounding residue network. In the selec
 
 [![Figure 4. Predicted docking poses and pocket environments of Gpr2 N84V](https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-4-0e18ad3b0f.webp)](https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-4-0e18ad3b0f.webp "Open full-resolution image")
 
-**Figure 4. Predicted docking poses and pocket environments of Gpr2 N84V.** (a, b) ascr#3; (c, d) ascr#18. Each pair shows a 3D pocket view and the corresponding Maestro 2D interaction diagram for the lowest-scoring pose. Colors follow Figure 2, and residue numbering matches WT.
+Figure 4. Predicted docking poses and pocket environments of Gpr2 N84V. (a, b) ascr#3; (c, d) ascr#18. Each pair shows a 3D pocket view and the corresponding Maestro 2D interaction diagram for the lowest-scoring pose. Colors follow Figure 2, and residue numbering matches WT.
 
 :::
 
@@ -155,7 +155,7 @@ V368R raised a different question. Although the substitution introduced an <stro
 
 [![Figure 5. Predicted docking poses and pocket environments of Gpr2 V368R](https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-5-1e38205eaf.webp)](https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-5-1e38205eaf.webp "Open full-resolution image")
 
-**Figure 5. Predicted docking poses and pocket environments of Gpr2 V368R.** (a, b) ascr#3; (c, d) ascr#18. Each pair shows a 3D pocket view and the corresponding Maestro 2D interaction diagram for the lowest-scoring pose. Colors follow Figure 2, and residue numbering matches WT.
+Figure 5. Predicted docking poses and pocket environments of Gpr2 V368R. (a, b) ascr#3; (c, d) ascr#18. Each pair shows a 3D pocket view and the corresponding Maestro 2D interaction diagram for the lowest-scoring pose. Colors follow Figure 2, and residue numbering matches WT.
 
 :::
 
@@ -175,7 +175,7 @@ For each receptor, we used five predicted models and compared contact frequencie
 
 [![Figure 6. Predicted ascaroside-binding pockets in GprC, SRBC-64, and DAF-37](https://static.igem.wiki/teams/6303/wiki/v8-6/v86-bbf52d6e8540-docking-source-15.avif)](https://static.igem.wiki/teams/6303/wiki/v8-6/v86-bbf52d6e8540-docking-source-15.avif "Open full-resolution image")
 
-**Figure 6. Predicted ascaroside-binding pockets in GprC, SRBC-64, and DAF-37.** Each receptor shows five docking poses for each of five ascarosides. Cropped from Hu et al. (2024), Figure 5a–c \[2], under the [Creative Commons Attribution 4.0 International license](https://creativecommons.org/licenses/by/4.0/).
+Figure 6. Predicted ascaroside-binding pockets in GprC, SRBC-64, and DAF-37. each receptor shows five docking poses for each of five ascarosides. Cropped from Hu et al. (2024), Figure 5a–c \[2], under the [Creative Commons Attribution 4.0 International license](https://creativecommons.org/licenses/by/4.0/).
 
 :::
 

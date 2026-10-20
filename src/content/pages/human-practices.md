@@ -53,7 +53,7 @@ hidden: false
 
 <div class="hp-photo-item"><div data-hp-source-paragraph="82"><a href="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-ad4e36ac9e1bffd1-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-ad4e36ac9e1bffd1-00.json" alt="Geographic distribution of 369 survey responses across 23 provincial-level regions in China" loading="lazy" width="552" height="387"></a></div></div>
 
-<p><span data-hp-source-paragraph="83">Figure 3. Geographic distribution of 369 survey responses across 23 provincial-level regions in China</span></p>
+<p class="figure-caption"><span data-hp-source-paragraph="83">Figure 3. Geographic distribution of 369 survey responses across 23 provincial-level regions in china</span></p>
 
 :::
 
@@ -61,7 +61,7 @@ hidden: false
 
 <div class="hp-photo-item"><div data-hp-source-paragraph="84"><a href="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-52a800871779717b-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-52a800871779717b-00.json" alt="Respondent Awareness of Plant-Parasitic Nematodes (e.g., Root-Knot and Cyst Nematodes): Questionnaire Data" loading="lazy" width="552" height="274"></a></div></div>
 
-<p><span data-hp-source-paragraph="85">Figure 4. Respondent Awareness of Plant-Parasitic Nematodes (e.g., Root-Knot and Cyst Nematodes): Questionnaire Data</span></p>
+<p class="figure-caption"><span data-hp-source-paragraph="85">Figure 4. Respondent awareness of plant-parasitic nematodes (e.g., root-knot and cyst nematodes): questionnaire data</span></p>
 
 :::
 
@@ -69,7 +69,7 @@ hidden: false
 
 <div class="hp-photo-item"><div data-hp-source-paragraph="86"><a href="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-5c1fee7fe2781c23-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-5c1fee7fe2781c23-00.json" alt="Desired Features of an Ideal Nematode Detection Tool as Rated by Participants: Questionnaire Data" loading="lazy" width="552" height="302"></a></div></div>
 
-<p><span data-hp-source-paragraph="87">Figure 5. Desired Features of an Ideal Nematode Detection Tool as Rated by Participants: Questionnaire Data</span></p>
+<p class="figure-caption"><span data-hp-source-paragraph="87">Figure 5. Desired features of an ideal nematode detection tool as rated by participants: questionnaire data</span></p>
 
 :::
 

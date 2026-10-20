@@ -38,7 +38,7 @@
       "_template": "image",
       "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-54382c8e77e7-r2-54382c8e77e7-fig1.avif",
       "alt": "Figure 1. CEN.PK2‑1C strain with four auxotrophies",
-      "body": "Figure 1. CEN.PK2‑1C strain with four auxotrophies",
+      "body": "Figure 1. CEN.PK2‑1c strain with four auxotrophies",
       "layout": "full",
       "imageWidth": "wide",
       "scale": "85"
@@ -51,7 +51,7 @@
       "_template": "image",
       "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v85-cfa8f763f0dd-r2-cfa8f763f0dd-fig2.avif",
       "alt": "Tet-On and Bax suicide-system design",
-      "body": "**Figure 2.** The design of suicide system",
+      "body": "Figure 2. The design of suicide system",
       "layout": "full",
       "imageWidth": "wide",
       "scale": "85"

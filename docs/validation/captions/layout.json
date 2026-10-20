@@ -1,0 +1,366 @@
+[
+  {
+    "page": "attributions",
+    "viewport": 1440,
+    "captions": 0,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "background",
+    "viewport": 1440,
+    "captions": 4,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "contribution",
+    "viewport": 1440,
+    "captions": 5,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "description",
+    "viewport": 1440,
+    "captions": 1,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "education",
+    "viewport": 1440,
+    "captions": 5,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "engineering",
+    "viewport": 1440,
+    "captions": 5,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "experiments",
+    "viewport": 1440,
+    "captions": 1,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "hp-industry",
+    "viewport": 1440,
+    "captions": 2,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "hp-investigation",
+    "viewport": 1440,
+    "captions": 6,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "hp-overview",
+    "viewport": 1440,
+    "captions": 0,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "human-practices",
+    "viewport": 1440,
+    "captions": 3,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "licensing",
+    "viewport": 1440,
+    "captions": 0,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "members",
+    "viewport": 1440,
+    "captions": 1,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "model-1",
+    "viewport": 1440,
+    "captions": 0,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "model-2",
+    "viewport": 1440,
+    "captions": 0,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "model-docking",
+    "viewport": 1440,
+    "captions": 6,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "model-eco",
+    "viewport": 1440,
+    "captions": 0,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "model-md",
+    "viewport": 1440,
+    "captions": 3,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "model-ode",
+    "viewport": 1440,
+    "captions": 5,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "model",
+    "viewport": 1440,
+    "captions": 0,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "part-collection",
+    "viewport": 1440,
+    "captions": 0,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "parts",
+    "viewport": 1440,
+    "captions": 0,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "protocols",
+    "viewport": 1440,
+    "captions": 0,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "results",
+    "viewport": 1440,
+    "captions": 36,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "safety",
+    "viewport": 1440,
+    "captions": 2,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "source-archive",
+    "viewport": 1440,
+    "captions": 0,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "attributions",
+    "viewport": 390,
+    "captions": 0,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "background",
+    "viewport": 390,
+    "captions": 4,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "contribution",
+    "viewport": 390,
+    "captions": 5,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "description",
+    "viewport": 390,
+    "captions": 1,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "education",
+    "viewport": 390,
+    "captions": 5,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "engineering",
+    "viewport": 390,
+    "captions": 5,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "experiments",
+    "viewport": 390,
+    "captions": 1,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "hp-industry",
+    "viewport": 390,
+    "captions": 2,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "hp-investigation",
+    "viewport": 390,
+    "captions": 6,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "hp-overview",
+    "viewport": 390,
+    "captions": 0,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "human-practices",
+    "viewport": 390,
+    "captions": 3,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "licensing",
+    "viewport": 390,
+    "captions": 0,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "members",
+    "viewport": 390,
+    "captions": 1,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "model-1",
+    "viewport": 390,
+    "captions": 0,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "model-2",
+    "viewport": 390,
+    "captions": 0,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "model-docking",
+    "viewport": 390,
+    "captions": 6,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "model-eco",
+    "viewport": 390,
+    "captions": 0,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "model-md",
+    "viewport": 390,
+    "captions": 3,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "model-ode",
+    "viewport": 390,
+    "captions": 5,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "model",
+    "viewport": 390,
+    "captions": 0,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "part-collection",
+    "viewport": 390,
+    "captions": 0,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "parts",
+    "viewport": 390,
+    "captions": 0,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "protocols",
+    "viewport": 390,
+    "captions": 0,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "results",
+    "viewport": 390,
+    "captions": 36,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "safety",
+    "viewport": 390,
+    "captions": 2,
+    "failures": [],
+    "overflow": false
+  },
+  {
+    "page": "source-archive",
+    "viewport": 390,
+    "captions": 0,
+    "failures": [],
+    "overflow": false
+  }
+]

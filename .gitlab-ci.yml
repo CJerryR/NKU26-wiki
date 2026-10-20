@@ -25,6 +25,7 @@ variables:
     - npm run test:deployment
     - npm run build
     - python3 tools/audit-content-rules.py --structure-only --output /tmp/content-rules-audit.json
+    - python3 tools/audit-figure-captions.py
     - npm run audit
   artifacts:
     paths:

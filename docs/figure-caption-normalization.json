@@ -1,0 +1,417 @@
+{
+  "baseline": "408a23a6aa148e89780b8f023890226688fd057f",
+  "pages": [
+    {
+      "page": "background",
+      "changes": [
+        {
+          "field": ".blocks[3].body",
+          "before": "<p><strong>Figure 1. Symptoms of two major PPNs on soybean roots. </strong>(a) <em>Mi</em>: obvious root galls formed on infected soybean roots. (b) <em>H. glycines</em>: white lemon-shaped mature females protruding from soybean roots (arrows). Note that soybean cyst nematode does not form root galls. Source: <em>Management of Plant-Parasitic Nematodes in Florida Soybean Production</em> (NG018), UF/IFAS EDIS. Used for educational demonstration only.</p>",
+          "after": "<p>Figure 1. Symptoms of two major PPNs on soybean roots. (a) <em>Mi</em>: obvious root galls formed on infected soybean roots. (b) <em>H. glycines</em>: white lemon-shaped mature females protruding from soybean roots (arrows). Note that soybean cyst nematode does not form root galls. Source: <em>Management of Plant-Parasitic Nematodes in Florida Soybean Production</em> (NG018), UF/IFAS EDIS. Used for educational demonstration only.</p>"
+        },
+        {
+          "field": ".blocks[13].body",
+          "before": "<p><strong>Figure 2. Ascaroside profiles in PPNs. </strong>Source: Manosalva P, et al. (2015), <em>Nature Communications</em>, DOI:10.1038/ncomms8795.</p>",
+          "after": "<p>Figure 2. Ascaroside profiles in ppns. Source: Manosalva P, et al. (2015), <em>Nature Communications</em>, DOI:10.1038/ncomms8795.</p>"
+        },
+        {
+          "field": ".blocks[14].body",
+          "before": "<p><strong>Figure 3. Ascaroside profiles in free-living nematodes. </strong>Source: Lee D, et al. (2023), <em>Proceedings of the National Academy of Sciences</em>, DOI:10.1073/pnas.2221150120.</p>",
+          "after": "<p>Figure 3. Ascaroside profiles in free-living nematodes. Source: Lee D, et al. (2023), <em>Proceedings of the National Academy of Sciences</em>, DOI:10.1073/pnas.2221150120.</p>"
+        },
+        {
+          "field": ".blocks[15].body",
+          "before": "<p><strong>Figure 4. GPCR-mediated prey pheromone sensing pathway in the nematode-trapping fungus </strong><strong><em>A. oligospora</em></strong><strong>. </strong>Source: Kuo C-Y, et al. (2024), <em>Nature Microbiology</em>, DOI:10.1038/s41564-024-01647-4.</p>",
+          "after": "<p>Figure 4. GPCR-mediated prey pheromone sensing pathway in the nematode-trapping fungus <em>A. oligospora</em>. Source: Kuo C-Y, et al. (2024), <em>Nature Microbiology</em>, DOI:10.1038/s41564-024-01647-4.</p>"
+        }
+      ]
+    },
+    {
+      "page": "contribution",
+      "changes": [
+        {
+          "field": ".blocks[13].body",
+          "before": "**Figure 1. A documented route to yeast strain construction.** The workflow summarizes the genetic modifications connecting our chassis and receptor variants.",
+          "after": "Figure 1. A documented route to yeast strain construction. The workflow summarizes the genetic modifications connecting our chassis and receptor variants."
+        },
+        {
+          "field": ".blocks[24].body",
+          "before": "**Figure 2. Mapping candidate sites for receptor engineering.** Highlighted residues were selected for further substitution studies through comparisons of predicted ligand contacts.",
+          "after": "Figure 2. Mapping candidate sites for receptor engineering. Highlighted residues were selected for further substitution studies through comparisons of predicted ligand contacts."
+        },
+        {
+          "field": ".blocks[32].body",
+          "before": "**Figure 3. From signal response to density estimation.** The workflow connects pathway modeling, simulated colors, and paired-readout analysis. Generated with OpenAI GPT Image 2.",
+          "after": "Figure 3. From signal response to density estimation. The workflow connects pathway modeling, simulated colors, and paired-readout analysis. Generated with OpenAI GPT Image 2."
+        },
+        {
+          "field": ".blocks[44].body",
+          "before": "**Figure 4. Bringing nematode science into the classroom.** Our teaching materials support classroom activities through the Xiangyang Program partnership.",
+          "after": "Figure 4. Bringing nematode science into the classroom. Our teaching materials support classroom activities through the Xiangyang Program partnership."
+        },
+        {
+          "field": ".blocks[49].body",
+          "before": "**Figure 5. Learning from growers’ experience.** Conversations during farm visits helped us relate testing needs to local crops and management practices.",
+          "after": "Figure 5. Learning from growers’ experience. Conversations during farm visits helped us relate testing needs to local crops and management practices."
+        }
+      ]
+    },
+    {
+      "page": "description",
+      "changes": [
+        {
+          "field": ".blocks[5].body",
+          "before": "**Figure 1. NemaKlear’s integrated workflow.** Wet Lab, Dry Lab, and <strong>Human Practices (HP)</strong> connect biosensor construction, two-channel interpretation, and test-strip development toward an easy-to-use nematode screening kit.",
+          "after": "Figure 1. NemaKlear’s integrated workflow. Wet Lab, Dry Lab, and Human Practices (HP) connect biosensor construction, two-channel interpretation, and test-strip development toward an easy-to-use nematode screening kit."
+        }
+      ]
+    },
+    {
+      "page": "education",
+      "changes": [
+        {
+          "field": ".blocks[5].body",
+          "before": "<div class=\"hp-photo-item\"><div data-hp-source-paragraph=\"118\"><a href=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-13a73d34a9ecf8e5-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-13a73d34a9ecf8e5-00.json\" alt=\"Team members deliver the interactive lecture &quot;The Great Nematode Hunt&quot; to students at Lincheng, Hebei, introducing plant-parasitic nematodes and crop diseases.\" loading=\"lazy\" width=\"422\" height=\"316\"></a></div></div>\n\n<p><span data-hp-source-paragraph=\"119\">Figure 9. Team members deliver the interactive lecture &quot;The Great Nematode Hunt&quot; to students at Lincheng, Hebei, introducing <strong>plant-parasitic nematodes (PPNs)</strong> and crop diseases.</span></p>",
+          "after": "<div class=\"hp-photo-item\"><div data-hp-source-paragraph=\"118\"><a href=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-13a73d34a9ecf8e5-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-13a73d34a9ecf8e5-00.json\" alt=\"Team members deliver the interactive lecture &quot;The Great Nematode Hunt&quot; to students at Lincheng, Hebei, introducing plant-parasitic nematodes and crop diseases.\" loading=\"lazy\" width=\"422\" height=\"316\"></a></div></div>\n\n<p class=\"figure-caption\"><span data-hp-source-paragraph=\"119\">Figure 9. Team members deliver the interactive lecture &quot;the great nematode hunt&quot; to students at lincheng, hebei, introducing plant-parasitic nematodes (PPNs) and crop diseases.</span></p>"
+        },
+        {
+          "field": ".blocks[7].body",
+          "before": "### Science course  the nematode hunt {#hp-source-122}\n\n<p data-hp-source-paragraph=\"123\">This course introduces nematodes and their relationships with plants and agriculture. Learners connect above-ground symptoms with roots and soil conditions. Alongside the problems caused by PPNs, the course introduces the diversity of soil life, avoiding the impression that all nematodes are pests to be eliminated.</p>\n\n<p data-hp-source-paragraph=\"124\">The course helps learners recognize the problem. Starting with familiar crops and symptoms, they explore possible underground causes and learn to distinguish observation from explanation.</p>\n\n<figure class=\"hp-source-figure figure\"><div class=\"figure__media hp-photo-group\"><div class=\"hp-photo-item\"><div data-hp-source-paragraph=\"125\"><a href=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-5a52c4e610ccfab2-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-5a52c4e610ccfab2-00.json\" alt=\"Science Literacy Lesson: “The Great Nematode Hunt”\" loading=\"lazy\" width=\"425\" height=\"238\"></a></div></div></div><figcaption data-hp-source-paragraph=\"126\">Figure 10. Science Literacy Lesson: “The Great Nematode Hunt”</figcaption></figure>\n\n### Experimental science course  exploring biological signals {#hp-source-127}\n\n<p data-hp-source-paragraph=\"128\">Organized around input, sensing, and output, this course uses age-appropriate activities to explore how living systems perceive signals and how an invisible change can become observable. It connects with our engineered-yeast concept and creates opportunities to discuss controls, conditions, and alternative explanations.</p>\n\n<p data-hp-source-paragraph=\"129\">The course helps learners understand the method: observe a result, propose an explanation, and consider which comparisons would support it. Materials and procedures follow the lesson plan for each age group.</p>\n\n<figure class=\"hp-source-figure figure\"><div class=\"figure__media hp-photo-group\"><div class=\"hp-photo-item\"><div data-hp-source-paragraph=\"130\"><a href=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-dd2db285bf0e40b4-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-dd2db285bf0e40b4-00.json\" alt=\"Hands-On Science Lesson: “The Signal Discovery Challenge”\" loading=\"lazy\" width=\"424\" height=\"238\"></a></div></div></div><figcaption data-hp-source-paragraph=\"131\">Figure 11. Hands-On Science Lesson: “The Signal Discovery Challenge”</figcaption></figure>\n\n### Values and responsibility course  small lives and everyday contributions {#hp-source-132}\n\n<p data-hp-source-paragraph=\"133\">This course connects microscopic life with careful observation, cooperation, and everyday contributions. It invites learners to recognize work in research and agricultural service that often goes unnoticed. Scientific themes lead into discussions of responsibility and personal growth, including respect for life, persistence in inquiry, and contributing to shared needs.</p>\n\n<figure class=\"hp-source-figure figure\"><div class=\"figure__media hp-photo-group\"><div class=\"hp-photo-item\"><div data-hp-source-paragraph=\"134\"><a href=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-1514f1beb82cfb58-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-1514f1beb82cfb58-00.json\" alt=\"Science and Social Responsibility Lesson: “Tiny Lives Shine, and We Grow through Everyday Dedication”\" loading=\"lazy\" width=\"424\" height=\"238\"></a></div></div></div><figcaption data-hp-source-paragraph=\"135\">Figure 12. Science and Social Responsibility Lesson: “Tiny Lives Shine, and We Grow through Everyday Dedication”</figcaption></figure>",
+          "after": "### Science course  the nematode hunt {#hp-source-122}\n\n<p data-hp-source-paragraph=\"123\">This course introduces nematodes and their relationships with plants and agriculture. Learners connect above-ground symptoms with roots and soil conditions. Alongside the problems caused by PPNs, the course introduces the diversity of soil life, avoiding the impression that all nematodes are pests to be eliminated.</p>\n\n<p data-hp-source-paragraph=\"124\">The course helps learners recognize the problem. Starting with familiar crops and symptoms, they explore possible underground causes and learn to distinguish observation from explanation.</p>\n\n<figure class=\"hp-source-figure figure\"><div class=\"figure__media hp-photo-group\"><div class=\"hp-photo-item\"><div data-hp-source-paragraph=\"125\"><a href=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-5a52c4e610ccfab2-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-5a52c4e610ccfab2-00.json\" alt=\"Science Literacy Lesson: “The Great Nematode Hunt”\" loading=\"lazy\" width=\"425\" height=\"238\"></a></div></div></div><figcaption data-hp-source-paragraph=\"126\">Figure 10. Science literacy lesson: “the great nematode hunt”</figcaption></figure>\n\n### Experimental science course  exploring biological signals {#hp-source-127}\n\n<p data-hp-source-paragraph=\"128\">Organized around input, sensing, and output, this course uses age-appropriate activities to explore how living systems perceive signals and how an invisible change can become observable. It connects with our engineered-yeast concept and creates opportunities to discuss controls, conditions, and alternative explanations.</p>\n\n<p data-hp-source-paragraph=\"129\">The course helps learners understand the method: observe a result, propose an explanation, and consider which comparisons would support it. Materials and procedures follow the lesson plan for each age group.</p>\n\n<figure class=\"hp-source-figure figure\"><div class=\"figure__media hp-photo-group\"><div class=\"hp-photo-item\"><div data-hp-source-paragraph=\"130\"><a href=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-dd2db285bf0e40b4-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-dd2db285bf0e40b4-00.json\" alt=\"Hands-On Science Lesson: “The Signal Discovery Challenge”\" loading=\"lazy\" width=\"424\" height=\"238\"></a></div></div></div><figcaption data-hp-source-paragraph=\"131\">Figure 11. Hands-on science lesson: “the signal discovery challenge”</figcaption></figure>\n\n### Values and responsibility course  small lives and everyday contributions {#hp-source-132}\n\n<p data-hp-source-paragraph=\"133\">This course connects microscopic life with careful observation, cooperation, and everyday contributions. It invites learners to recognize work in research and agricultural service that often goes unnoticed. Scientific themes lead into discussions of responsibility and personal growth, including respect for life, persistence in inquiry, and contributing to shared needs.</p>\n\n<figure class=\"hp-source-figure figure\"><div class=\"figure__media hp-photo-group\"><div class=\"hp-photo-item\"><div data-hp-source-paragraph=\"134\"><a href=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-1514f1beb82cfb58-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-1514f1beb82cfb58-00.json\" alt=\"Science and Social Responsibility Lesson: “Tiny Lives Shine, and We Grow through Everyday Dedication”\" loading=\"lazy\" width=\"424\" height=\"238\"></a></div></div></div><figcaption data-hp-source-paragraph=\"135\">Figure 12. Science and social responsibility lesson: “tiny lives shine, and we grow through everyday dedication”</figcaption></figure>"
+        },
+        {
+          "field": ".blocks[14].body",
+          "before": "<figure class=\"hp-source-figure figure\"><div class=\"figure__media hp-photo-group\"><div class=\"hp-photo-item\"><div data-hp-source-paragraph=\"144\"><a href=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-8614064ddef5885d-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-8614064ddef5885d-00.json\" alt=\"Backed by the &quot;Xiangyang Program&quot; public welfare education service team, we have introduced nematode-themed courses into both school classrooms and local communities.\" loading=\"lazy\" width=\"420\" height=\"315\"></a></div></div><div class=\"hp-photo-item\"><div data-hp-source-paragraph=\"145\"><a href=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-171c799fe043f752-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-171c799fe043f752-00.json\" alt=\"Backed by the &quot;Xiangyang Program&quot; public welfare education service team, we have introduced nematode-themed courses into both school classrooms and local communities.\" loading=\"lazy\" width=\"430\" height=\"242\"></a></div></div><div class=\"hp-photo-item\"><div data-hp-source-paragraph=\"146\"><a href=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-e418d1e629e3582c-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-e418d1e629e3582c-00.json\" alt=\"Backed by the &quot;Xiangyang Program&quot; public welfare education service team, we have introduced nematode-themed courses into both school classrooms and local communities.\" loading=\"lazy\" width=\"430\" height=\"323\"></a></div></div><div class=\"hp-photo-item\"><div data-hp-source-paragraph=\"147\"><a href=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-0c15d1e8a7365bb6-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-0c15d1e8a7365bb6-00.json\" alt=\"Backed by the &quot;Xiangyang Program&quot; public welfare education service team, we have introduced nematode-themed courses into both school classrooms and local communities.\" loading=\"lazy\" width=\"430\" height=\"323\"></a></div></div><div class=\"hp-photo-item\"><div data-hp-source-paragraph=\"148\"><a href=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-aab9ede81c148400-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-aab9ede81c148400-00.json\" alt=\"Backed by the &quot;Xiangyang Program&quot; public welfare education service team, we have introduced nematode-themed courses into both school classrooms and local communities.\" loading=\"lazy\" width=\"428\" height=\"321\"></a></div></div></div><figcaption data-hp-source-paragraph=\"149\">Figure 13. Backed by the &quot;Xiangyang Program&quot; public welfare education service team, we have introduced nematode-themed courses into both school classrooms and local communities.</figcaption></figure>",
+          "after": "<figure class=\"hp-source-figure figure\"><div class=\"figure__media hp-photo-group\"><div class=\"hp-photo-item\"><div data-hp-source-paragraph=\"144\"><a href=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-8614064ddef5885d-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-8614064ddef5885d-00.json\" alt=\"Backed by the &quot;Xiangyang Program&quot; public welfare education service team, we have introduced nematode-themed courses into both school classrooms and local communities.\" loading=\"lazy\" width=\"420\" height=\"315\"></a></div></div><div class=\"hp-photo-item\"><div data-hp-source-paragraph=\"145\"><a href=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-171c799fe043f752-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-171c799fe043f752-00.json\" alt=\"Backed by the &quot;Xiangyang Program&quot; public welfare education service team, we have introduced nematode-themed courses into both school classrooms and local communities.\" loading=\"lazy\" width=\"430\" height=\"242\"></a></div></div><div class=\"hp-photo-item\"><div data-hp-source-paragraph=\"146\"><a href=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-e418d1e629e3582c-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-e418d1e629e3582c-00.json\" alt=\"Backed by the &quot;Xiangyang Program&quot; public welfare education service team, we have introduced nematode-themed courses into both school classrooms and local communities.\" loading=\"lazy\" width=\"430\" height=\"323\"></a></div></div><div class=\"hp-photo-item\"><div data-hp-source-paragraph=\"147\"><a href=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-0c15d1e8a7365bb6-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-0c15d1e8a7365bb6-00.json\" alt=\"Backed by the &quot;Xiangyang Program&quot; public welfare education service team, we have introduced nematode-themed courses into both school classrooms and local communities.\" loading=\"lazy\" width=\"430\" height=\"323\"></a></div></div><div class=\"hp-photo-item\"><div data-hp-source-paragraph=\"148\"><a href=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-aab9ede81c148400-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-aab9ede81c148400-00.json\" alt=\"Backed by the &quot;Xiangyang Program&quot; public welfare education service team, we have introduced nematode-themed courses into both school classrooms and local communities.\" loading=\"lazy\" width=\"428\" height=\"321\"></a></div></div></div><figcaption data-hp-source-paragraph=\"149\">Figure 13. Backed by the &quot;xiangyang program&quot; public welfare education service team, we have introduced nematode-themed courses into both school classrooms and local communities.</figcaption></figure>"
+        }
+      ]
+    },
+    {
+      "page": "engineering",
+      "changes": [
+        {
+          "field": ".blocks[6].body",
+          "before": "**Figure 1. Our DBTL approach.** Experimental results, model predictions, and practical requirements guide revisions to the biosensor, readout, and test format. Generated with OpenAI GPT Image 2.",
+          "after": "Figure 1. Our DBTL approach. Experimental results, model predictions, and practical requirements guide revisions to the biosensor, readout, and test format. Generated with OpenAI GPT Image 2."
+        },
+        {
+          "field": ".blocks[15].body",
+          "before": "**Figure 2. Examining receptor localization.** GPR2–sfGFP fluorescence is compared with FM4-64 staining and merged images. Scale bars: 10 μm.",
+          "after": "Figure 2. Examining receptor localization. GPR2–sfGFP fluorescence is compared with FM4-64 staining and merged images. Scale bars: 10 μm."
+        },
+        {
+          "field": ".blocks[50].body",
+          "before": "**Figure 3. Comparing one and two readouts.** Paired readouts improved target-density prediction on the simulated test set.",
+          "after": "Figure 3. Comparing one and two readouts. Paired readouts improved target-density prediction on the simulated test set."
+        },
+        {
+          "field": ".blocks[65].body",
+          "before": "**Figure 4. Keeping liquid in the reaction area.** The coating device and colored metal-salt solutions show how hydrophobic treatment defines circular wetting regions.",
+          "after": "Figure 4. Keeping liquid in the reaction area. The coating device and colored metal-salt solutions show how hydrophobic treatment defines circular wetting regions."
+        },
+        {
+          "field": ".blocks[95].body",
+          "before": "**Figure 6. From soil collection to disposal.** The workflow brings sampling, recording, transport, laboratory handling, and disposal into one view. Generated with OpenAI GPT Image 2.",
+          "after": "Figure 6. From soil collection to disposal. The workflow brings sampling, recording, transport, laboratory handling, and disposal into one view. Generated with OpenAI GPT Image 2."
+        }
+      ]
+    },
+    {
+      "page": "experiments",
+      "changes": [
+        {
+          "field": ".blocks[59].body",
+          "before": "Figure 1 Workflow of engineered strain construction\n",
+          "after": "Figure 1. Workflow of engineered strain construction\n"
+        }
+      ]
+    },
+    {
+      "page": "hp-investigation",
+      "changes": [
+        {
+          "field": ".blocks[9].body",
+          "before": "### Yurong Yao  Institute of Plant Protection at Tianjin Academy of Agricultural Sciences {#hp-source-186}\n\n<p data-hp-source-paragraph=\"187\">On June 6, 2026, we interviewed Yurong Yao in person at the Institute of Plant Protection, Tianjin Academy of Agricultural Sciences. Starting with nematode disease in protected vegetable production, we discussed hidden underground damage, symptoms that resemble other problems, continuous cropping, and the operational and cost barriers to testing in agricultural practice.</p>\n\n<p data-hp-source-paragraph=\"188\">On sampling, Yao emphasized differences between locations and greenhouses and described practical requirements for transport, storage, separate handling, and post-test disposal. For a potential product, she stressed affordability, ease of operation, and an intuitive readout.</p>\n\n<p data-hp-source-paragraph=\"189\">This discussion brought sampling and the user workflow into our project considerations. It also helped us ask more specific questions in later surveys and farm visits: who would use a test, which procedures would be acceptable, and how could results inform agricultural management?</p>\n\n<figure class=\"hp-source-figure figure\"><div class=\"figure__media hp-photo-group\"><div class=\"hp-photo-item\"><div data-hp-source-paragraph=\"190\"><a href=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-3062023d1c20e5dd-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-3062023d1c20e5dd-00.json\" alt=\"An interview with Yurong Yao on nematode disease, sampling, and practical testing needs.\" loading=\"lazy\" width=\"552\" height=\"183\"></a></div></div></div><figcaption data-hp-source-paragraph=\"191\">Figure 17. An interview with Yurong Yao on nematode disease, sampling, and practical testing needs.</figcaption></figure>\n\n### Qian Liu  College of Plant Protection at China Agricultural University {#hp-source-192}\n\n<p data-hp-source-paragraph=\"193\">On August 18, Qian Liu discussed nematode identification, early detection, and validation with real samples. She explained the roles of morphological and molecular methods, stressed that identification claims must match their purpose and validation, and connected early detection with management decisions before planting.</p>\n\n<p data-hp-source-paragraph=\"194\">For our ascaroside-based approach, she advised establishing whether signal differences could support the proposed inference and distinguishing compound detection from conclusions about nematode species or density. We also discussed sample representativeness, extraction losses, matrix interference, controls, and staged validation.</p>\n\n<p data-hp-source-paragraph=\"195\">Liu also drew our attention to total testing cost, sample preparation, storage, and operational demands. Her advice helped us examine a field-oriented prototype from the perspective of diagnostic practice, beyond the speed of the final reaction.</p>\n\n<figure class=\"hp-source-figure figure\"><div class=\"figure__media hp-photo-group\"><div class=\"hp-photo-item\"><div data-hp-source-paragraph=\"196\"><a href=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-9014a2be938d2ee8-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-9014a2be938d2ee8-00.json\" alt=\"Discussion with Associate Professor Qian Liu from China Agricultural University on the Scientific Premises and Application Conditions of the Project\" loading=\"lazy\" width=\"504\" height=\"378\"></a></div></div></div><figcaption data-hp-source-paragraph=\"197\">Figure 18. Discussion with Associate Professor Qian Liu from China Agricultural University on the Scientific Premises and Application Conditions of the Project</figcaption></figure>\n\n### Zhihao Pang  Beijing Forestry University {#hp-source-198}\n\n<p data-hp-source-paragraph=\"199\">During our online discussion on August 18, Zhihao Pang examined the project through soil processes and potential use. He asked whether soil background color could affect interpretation and whether different degradation rates of <strong>ascaroside #3 (ascr#3)</strong> and <strong>ascaroside #18 (ascr#18)</strong> could change their measured relative composition.</p>\n\n<p data-hp-source-paragraph=\"200\">He also suggested obtaining observations from genuinely affected fields, speaking with potential users, and comparing portability and simpler procedures with existing sample-submission services. For engineered yeast, he raised concerns about environmental release and post-test handling.</p>\n\n<p data-hp-source-paragraph=\"201\">This exchange identified alternative explanations that we could examine: could the same color arise from different backgrounds, could degradation alter a measured ratio, and could a user complete the workflow? The connections between these questions and our wet-lab and dry-lab work are developed on the <strong>integrated Human Practices (iHP)</strong> page.</p>\n\n<figure class=\"hp-source-figure figure\"><div class=\"figure__media hp-photo-group\"><div class=\"hp-photo-item\"><div data-hp-source-paragraph=\"202\"><a href=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-4c131833840e8451-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-4c131833840e8451-00.json\" alt=\"Discussion with Zhihao Pang on Soil Backgrounds, Signal Stability and Practical Application\" loading=\"lazy\" width=\"552\" height=\"248\"></a></div></div></div><figcaption data-hp-source-paragraph=\"203\">Figure 19. Discussion with Zhihao Pang on Soil Backgrounds, Signal Stability and Practical Application</figcaption></figure>",
+          "after": "### Yurong Yao  Institute of Plant Protection at Tianjin Academy of Agricultural Sciences {#hp-source-186}\n\n<p data-hp-source-paragraph=\"187\">On June 6, 2026, we interviewed Yurong Yao in person at the Institute of Plant Protection, Tianjin Academy of Agricultural Sciences. Starting with nematode disease in protected vegetable production, we discussed hidden underground damage, symptoms that resemble other problems, continuous cropping, and the operational and cost barriers to testing in agricultural practice.</p>\n\n<p data-hp-source-paragraph=\"188\">On sampling, Yao emphasized differences between locations and greenhouses and described practical requirements for transport, storage, separate handling, and post-test disposal. For a potential product, she stressed affordability, ease of operation, and an intuitive readout.</p>\n\n<p data-hp-source-paragraph=\"189\">This discussion brought sampling and the user workflow into our project considerations. It also helped us ask more specific questions in later surveys and farm visits: who would use a test, which procedures would be acceptable, and how could results inform agricultural management?</p>\n\n<figure class=\"hp-source-figure figure\"><div class=\"figure__media hp-photo-group\"><div class=\"hp-photo-item\"><div data-hp-source-paragraph=\"190\"><a href=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-3062023d1c20e5dd-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-3062023d1c20e5dd-00.json\" alt=\"An interview with Yurong Yao on nematode disease, sampling, and practical testing needs.\" loading=\"lazy\" width=\"552\" height=\"183\"></a></div></div></div><figcaption data-hp-source-paragraph=\"191\">Figure 17. An interview with Yurong Yao on nematode disease, sampling, and practical testing needs.</figcaption></figure>\n\n### Qian Liu  College of Plant Protection at China Agricultural University {#hp-source-192}\n\n<p data-hp-source-paragraph=\"193\">On August 18, Qian Liu discussed nematode identification, early detection, and validation with real samples. She explained the roles of morphological and molecular methods, stressed that identification claims must match their purpose and validation, and connected early detection with management decisions before planting.</p>\n\n<p data-hp-source-paragraph=\"194\">For our ascaroside-based approach, she advised establishing whether signal differences could support the proposed inference and distinguishing compound detection from conclusions about nematode species or density. We also discussed sample representativeness, extraction losses, matrix interference, controls, and staged validation.</p>\n\n<p data-hp-source-paragraph=\"195\">Liu also drew our attention to total testing cost, sample preparation, storage, and operational demands. Her advice helped us examine a field-oriented prototype from the perspective of diagnostic practice, beyond the speed of the final reaction.</p>\n\n<figure class=\"hp-source-figure figure\"><div class=\"figure__media hp-photo-group\"><div class=\"hp-photo-item\"><div data-hp-source-paragraph=\"196\"><a href=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-9014a2be938d2ee8-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-9014a2be938d2ee8-00.json\" alt=\"Discussion with Associate Professor Qian Liu from China Agricultural University on the Scientific Premises and Application Conditions of the Project\" loading=\"lazy\" width=\"504\" height=\"378\"></a></div></div></div><figcaption data-hp-source-paragraph=\"197\">Figure 18. Discussion with associate professor Qian Liu from china agricultural university on the scientific premises and application conditions of the project</figcaption></figure>\n\n### Zhihao Pang  Beijing Forestry University {#hp-source-198}\n\n<p data-hp-source-paragraph=\"199\">During our online discussion on August 18, Zhihao Pang examined the project through soil processes and potential use. He asked whether soil background color could affect interpretation and whether different degradation rates of <strong>ascaroside #3 (ascr#3)</strong> and <strong>ascaroside #18 (ascr#18)</strong> could change their measured relative composition.</p>\n\n<p data-hp-source-paragraph=\"200\">He also suggested obtaining observations from genuinely affected fields, speaking with potential users, and comparing portability and simpler procedures with existing sample-submission services. For engineered yeast, he raised concerns about environmental release and post-test handling.</p>\n\n<p data-hp-source-paragraph=\"201\">This exchange identified alternative explanations that we could examine: could the same color arise from different backgrounds, could degradation alter a measured ratio, and could a user complete the workflow? The connections between these questions and our wet-lab and dry-lab work are developed on the <strong>integrated Human Practices (iHP)</strong> page.</p>\n\n<figure class=\"hp-source-figure figure\"><div class=\"figure__media hp-photo-group\"><div class=\"hp-photo-item\"><div data-hp-source-paragraph=\"202\"><a href=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-4c131833840e8451-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-4c131833840e8451-00.json\" alt=\"Discussion with Zhihao Pang on Soil Backgrounds, Signal Stability and Practical Application\" loading=\"lazy\" width=\"552\" height=\"248\"></a></div></div></div><figcaption data-hp-source-paragraph=\"203\">Figure 19. Discussion with Zhihao Pang on soil backgrounds, signal stability and practical application</figcaption></figure>"
+        }
+      ]
+    },
+    {
+      "page": "human-practices",
+      "changes": [
+        {
+          "field": ".blocks[13].body",
+          "before": "<div class=\"hp-photo-item\"><div data-hp-source-paragraph=\"82\"><a href=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-ad4e36ac9e1bffd1-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-ad4e36ac9e1bffd1-00.json\" alt=\"Geographic distribution of 369 survey responses across 23 provincial-level regions in China\" loading=\"lazy\" width=\"552\" height=\"387\"></a></div></div>\n\n<p><span data-hp-source-paragraph=\"83\">Figure 3. Geographic distribution of 369 survey responses across 23 provincial-level regions in China</span></p>",
+          "after": "<div class=\"hp-photo-item\"><div data-hp-source-paragraph=\"82\"><a href=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-ad4e36ac9e1bffd1-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-ad4e36ac9e1bffd1-00.json\" alt=\"Geographic distribution of 369 survey responses across 23 provincial-level regions in China\" loading=\"lazy\" width=\"552\" height=\"387\"></a></div></div>\n\n<p class=\"figure-caption\"><span data-hp-source-paragraph=\"83\">Figure 3. Geographic distribution of 369 survey responses across 23 provincial-level regions in china</span></p>"
+        },
+        {
+          "field": ".blocks[14].body",
+          "before": "<div class=\"hp-photo-item\"><div data-hp-source-paragraph=\"84\"><a href=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-52a800871779717b-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-52a800871779717b-00.json\" alt=\"Respondent Awareness of Plant-Parasitic Nematodes (e.g., Root-Knot and Cyst Nematodes): Questionnaire Data\" loading=\"lazy\" width=\"552\" height=\"274\"></a></div></div>\n\n<p><span data-hp-source-paragraph=\"85\">Figure 4. Respondent Awareness of Plant-Parasitic Nematodes (e.g., Root-Knot and Cyst Nematodes): Questionnaire Data</span></p>",
+          "after": "<div class=\"hp-photo-item\"><div data-hp-source-paragraph=\"84\"><a href=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-52a800871779717b-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-52a800871779717b-00.json\" alt=\"Respondent Awareness of Plant-Parasitic Nematodes (e.g., Root-Knot and Cyst Nematodes): Questionnaire Data\" loading=\"lazy\" width=\"552\" height=\"274\"></a></div></div>\n\n<p class=\"figure-caption\"><span data-hp-source-paragraph=\"85\">Figure 4. Respondent awareness of plant-parasitic nematodes (e.g., root-knot and cyst nematodes): questionnaire data</span></p>"
+        },
+        {
+          "field": ".blocks[15].body",
+          "before": "<div class=\"hp-photo-item\"><div data-hp-source-paragraph=\"86\"><a href=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-5c1fee7fe2781c23-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-5c1fee7fe2781c23-00.json\" alt=\"Desired Features of an Ideal Nematode Detection Tool as Rated by Participants: Questionnaire Data\" loading=\"lazy\" width=\"552\" height=\"302\"></a></div></div>\n\n<p><span data-hp-source-paragraph=\"87\">Figure 5. Desired Features of an Ideal Nematode Detection Tool as Rated by Participants: Questionnaire Data</span></p>",
+          "after": "<div class=\"hp-photo-item\"><div data-hp-source-paragraph=\"86\"><a href=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-5c1fee7fe2781c23-00.json\" target=\"_blank\" rel=\"noopener\"><img src=\"https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-5c1fee7fe2781c23-00.json\" alt=\"Desired Features of an Ideal Nematode Detection Tool as Rated by Participants: Questionnaire Data\" loading=\"lazy\" width=\"552\" height=\"302\"></a></div></div>\n\n<p class=\"figure-caption\"><span data-hp-source-paragraph=\"87\">Figure 5. Desired features of an ideal nematode detection tool as rated by participants: questionnaire data</span></p>"
+        }
+      ]
+    },
+    {
+      "page": "model-docking",
+      "changes": [
+        {
+          "field": ".blocks[7].body",
+          "before": "**Figure 1. Predicted full-length structure of Gpr2 WT.** Overall structure of model_0 generated with AlphaFold 3 \\[3].",
+          "after": "Figure 1. Predicted full-length structure of Gpr2 WT. Overall structure of model_0 generated with AlphaFold 3 \\[3]."
+        },
+        {
+          "field": ".blocks[14].body",
+          "before": "**Figure 2. Predicted docking poses and pocket environments of Gpr2 WT.** (a, b) ascr#3; (c, d) ascr#18. Each pair shows a 3D pocket view and the corresponding Maestro 2D interaction diagram \\[6] for the lowest-scoring pose. In the 3D views, the receptor is shown as a purple cartoon, pocket residues as yellow sticks, and ascr#3 and ascr#18 in cyan and magenta, respectively. Original residue numbering is retained.",
+          "after": "Figure 2. Predicted docking poses and pocket environments of Gpr2 WT. (a, b) ascr#3; (c, d) ascr#18. Each pair shows a 3D pocket view and the corresponding Maestro 2D interaction diagram \\[6] for the lowest-scoring pose. In the 3D views, the receptor is shown as a purple cartoon, pocket residues as yellow sticks, and ascr#3 and ascr#18 in cyan and magenta, respectively. Original residue numbering is retained."
+        },
+        {
+          "field": ".blocks[16].body",
+          "before": "**Figure 3. Initial mutation sites in Gpr2.** N84, L90, V110, R181, W338, R345, and V368 are highlighted on the predicted full-length structure.",
+          "after": "Figure 3. Initial mutation sites in Gpr2. N84, L90, V110, R181, W338, R345, and V368 are highlighted on the predicted full-length structure."
+        },
+        {
+          "field": ".blocks[49].body",
+          "before": "**Figure 4. Predicted docking poses and pocket environments of Gpr2 N84V.** (a, b) ascr#3; (c, d) ascr#18. Each pair shows a 3D pocket view and the corresponding Maestro 2D interaction diagram for the lowest-scoring pose. Colors follow Figure 2, and residue numbering matches WT.",
+          "after": "Figure 4. Predicted docking poses and pocket environments of Gpr2 N84V. (a, b) ascr#3; (c, d) ascr#18. Each pair shows a 3D pocket view and the corresponding Maestro 2D interaction diagram for the lowest-scoring pose. Colors follow Figure 2, and residue numbering matches WT."
+        },
+        {
+          "field": ".blocks[51].body",
+          "before": "**Figure 5. Predicted docking poses and pocket environments of Gpr2 V368R.** (a, b) ascr#3; (c, d) ascr#18. Each pair shows a 3D pocket view and the corresponding Maestro 2D interaction diagram for the lowest-scoring pose. Colors follow Figure 2, and residue numbering matches WT.",
+          "after": "Figure 5. Predicted docking poses and pocket environments of Gpr2 V368R. (a, b) ascr#3; (c, d) ascr#18. Each pair shows a 3D pocket view and the corresponding Maestro 2D interaction diagram for the lowest-scoring pose. Colors follow Figure 2, and residue numbering matches WT."
+        },
+        {
+          "field": ".blocks[57].body",
+          "before": "**Figure 6. Predicted ascaroside-binding pockets in GprC, SRBC-64, and DAF-37.** Each receptor shows five docking poses for each of five ascarosides. Cropped from Hu et al. (2024), Figure 5a–c \\[2], under the [Creative Commons Attribution 4.0 International license](https://creativecommons.org/licenses/by/4.0/).",
+          "after": "Figure 6. Predicted ascaroside-binding pockets in GprC, SRBC-64, and DAF-37. each receptor shows five docking poses for each of five ascarosides. Cropped from Hu et al. (2024), Figure 5a–c \\[2], under the [Creative Commons Attribution 4.0 International license](https://creativecommons.org/licenses/by/4.0/)."
+        }
+      ]
+    },
+    {
+      "page": "model-md",
+      "changes": [
+        {
+          "field": ".blocks[12].body",
+          "before": "**Figure 1 | Ligand heavy-atom RMSD under three structural alignment schemes.** Trajectories were aligned using the whole receptor, the transmembrane helical core, or the local pocket backbone, with each trajectory referenced to its own initial production structure. Curves show a 1 ns centered moving average of data sampled every 100 ps. Shading marks the 50–100 ns comparison window. Each system is represented by one 100 ns trajectory.",
+          "after": "Figure 1. Ligand heavy-atom RMSD under three structural alignment schemes. Trajectories were aligned using the whole receptor, the transmembrane helical core, or the local pocket backbone, with each trajectory referenced to its own initial production structure. Curves show a 1 ns centered moving average of data sampled every 100 ps. Shading marks the 50–100 ns comparison window. Each system is represented by one 100 ns trajectory."
+        },
+        {
+          "field": ".blocks[18].body",
+          "before": "**Figure 2 | Arg189–carboxylate interactions in the Gpr2 N84V–ascr#18 complex.** (a) Simulation snapshot at 64.64 ns. The receptor is shown as purple ribbons; ascr#18 and Arg189 are shown as sticks with magenta and yellow carbon atoms, respectively. The dashed line indicates an Arg189–carboxylate hydrogen bond with a donor–acceptor distance of 2.77 Å. (b) Occupancy of at least one Arg189–carboxylate hydrogen bond during 50–100 ns: 93.6% for N84V–ascr#18 and 0% for WT–ascr#18 and N84V–ascr#3. Frames were sampled every 100 ps, using the hydrogen-bond criteria defined in the text.",
+          "after": "Figure 2. Arg189–carboxylate interactions in the Gpr2 N84V–ascr#18 complex. (a) Simulation snapshot at 64.64 ns. The receptor is shown as purple ribbons; ascr#18 and Arg189 are shown as sticks with magenta and yellow carbon atoms, respectively. The dashed line indicates an Arg189–carboxylate hydrogen bond with a donor–acceptor distance of 2.77 Å. (b) Occupancy of at least one Arg189–carboxylate hydrogen bond during 50–100 ns: 93.6% for N84V–ascr#18 and 0% for WT–ascr#18 and N84V–ascr#3. Frames were sampled every 100 ps, using the hydrogen-bond criteria defined in the text."
+        },
+        {
+          "field": ".blocks[24].body",
+          "before": "**Figure 3 | Changes in ligand anchoring in V368R–ascr#3 simulations initiated from two alternative poses.** (a,b) Time-dependent salt-bridge occupancies for the Arg368-directed (a) and Arg189-directed (b) starting poses. Each panel compares the designed Arg368–carboxylate or Arg189–carboxylate contact with the Arg345–carboxylate contact. Shading marks the 50–100 ns comparison window. (c) Arg345–carboxylate contact occupancies during 50–100 ns in the two additional trajectories and the WT–ascr#3, V368R–ascr#18, and original V368R–ascr#3 trajectories. Bars indicate salt-bridge occupancy using a distance cutoff of ≤4 Å; diamonds indicate the occupancy of short, near-linear hydrogen bonds. Each starting pose was simulated for 100 ns.",
+          "after": "Figure 3. Changes in ligand anchoring in V368R–ascr#3 simulations initiated from two alternative poses. (a,b) Time-dependent salt-bridge occupancies for the Arg368-directed (a) and Arg189-directed (b) starting poses. Each panel compares the designed Arg368–carboxylate or Arg189–carboxylate contact with the Arg345–carboxylate contact. Shading marks the 50–100 ns comparison window. (c) Arg345–carboxylate contact occupancies during 50–100 ns in the two additional trajectories and the WT–ascr#3, V368R–ascr#18, and original V368R–ascr#3 trajectories. Bars indicate salt-bridge occupancy using a distance cutoff of ≤4 Å; diamonds indicate the occupancy of short, near-linear hydrogen bonds. Each starting pose was simulated for 100 ns."
+        }
+      ]
+    },
+    {
+      "page": "model-ode",
+      "changes": [
+        {
+          "field": ".blocks[6].body",
+          "before": "**Figure 3-1. Sequential calibration workflow for the ODE and dual-channel models.**\nThe upper panel shows mixed-sample design, ODE calibration, and dual-channel regression. The lower panel shows the intended workflow for estimating <em>Mi</em> density from paired smartphone readings. Prescribed pigment targets are used to calibrate the ODE, while regression uses color features calculated from the actual ODE outputs. Generated with OpenAI GPT Image 2.",
+          "after": "Figure 3-1. Sequential calibration workflow for the ODE and dual-channel models.\nThe upper panel shows mixed-sample design, ODE calibration, and dual-channel regression. The lower panel shows the intended workflow for estimating <em>Mi</em> density from paired smartphone readings. Prescribed pigment targets are used to calibrate the ODE, while regression uses color features calculated from the actual ODE outputs. Generated with OpenAI GPT Image 2."
+        },
+        {
+          "field": ".blocks[52].body",
+          "before": "**Figure 3-2. ODE pigment calibration at different background densities.**\nPanels A and B show P3 and P18, respectively. Colors distinguish <em>Ce</em> background densities. Dashed lines with crosses indicate prescribed pigment targets, solid lines with circles indicate simulated 8 h total pigment concentrations, and gray dotted lines indicate the blank.",
+          "after": "Figure 3-2. ODE pigment calibration at different background densities.\nPanels A and B show P3 and P18, respectively. Colors distinguish <em>Ce</em> background densities. Dashed lines with crosses indicate prescribed pigment targets, solid lines with circles indicate simulated 8 h total pigment concentrations, and gray dotted lines indicate the blank."
+        },
+        {
+          "field": ".blocks[57].body",
+          "before": "**Figure 3-3. Net pigment accumulation in representative mixed samples.**\nPanels A and B show simulated time courses for blank, <em>Mi</em>-only, <em>Ce</em>-only, and mixed samples in P3 and P18. Net pigment is calculated by subtracting the matched channel blank at each time point.",
+          "after": "Figure 3-3. Net pigment accumulation in representative mixed samples.\nPanels A and B show simulated time courses for blank, <em>Mi</em>-only, <em>Ce</em>-only, and mixed samples in P3 and P18. Net pigment is calculated by subtracting the matched channel blank at each time point."
+        },
+        {
+          "field": ".blocks[77].body",
+          "before": "**Figure 3-4. Distribution of mixed samples in dual-channel color space.**\nThe horizontal and vertical axes show the simulated P3 and P18 smartphone color indices. Point color indicates <em>Mi</em> density. Solid lines connect samples with fixed <em>Mi</em> density, while dashed lines connect samples with fixed <em>Ce</em> density. Arrows indicate the directions of increasing <em>Mi</em> or <em>Ce</em> density.",
+          "after": "Figure 3-4. Distribution of mixed samples in dual-channel color space.\nThe horizontal and vertical axes show the simulated P3 and P18 smartphone color indices. Point color indicates <em>Mi</em> density. Solid lines connect samples with fixed <em>Mi</em> density, while dashed lines connect samples with fixed <em>Ce</em> density. Arrows indicate the directions of increasing <em>Mi</em> or <em>Ce</em> density."
+        },
+        {
+          "field": ".blocks[89].body",
+          "before": "**Figure 3-5. <em>Mi</em> density predictions and comparison of single- and dual-channel models.**\nPanel A compares known and predicted <em>Mi</em> densities for the dual-channel model; the dashed line indicates ideal agreement. Panel B compares the RMSEs of P3-only, P18-only, and dual-channel models on the same simulated evaluation set.",
+          "after": "Figure 3-5. <em>Mi</em> Density predictions and comparison of single- and dual-channel models.\nPanel A compares known and predicted <em>Mi</em> densities for the dual-channel model; the dashed line indicates ideal agreement. Panel B compares the RMSEs of P3-only, P18-only, and dual-channel models on the same simulated evaluation set."
+        }
+      ]
+    },
+    {
+      "page": "results",
+      "changes": [
+        {
+          "field": ".blocks[12].body",
+          "before": "<p><strong>Figure 1. Construction of the plasmid for heterologous expression of GPR2-sfGFP.</strong> <strong>a</strong>, Plasmid map of the pRS315-GPR2-sfGFP construct for heterologous GPR2-sfGFP expression. <strong>b</strong>, Colony <strong>polymerase chain reaction (PCR)</strong> results during plasmid construction. Sample T3 showed the expected positive band, and this colony was selected for plasmid extraction. <strong>c</strong>, Double restriction digestion verification of pRS315-GPR2-sfGFP, with band sizes consistent with theoretical expectations.</p>",
+          "after": "<p>Figure 1. Construction of the plasmid for heterologous expression of GPR2-sfGFP. a, Plasmid map of the pRS315-GPR2-sfGFP construct for heterologous GPR2-sfGFP expression. b, Colony polymerase chain reaction (PCR) results during plasmid construction. Sample T3 showed the expected positive band, and this colony was selected for plasmid extraction. c, Double restriction digestion verification of pRS315-GPR2-sfGFP, with band sizes consistent with theoretical expectations.</p>"
+        },
+        {
+          "field": ".blocks[43].body",
+          "before": "<p><strong>Figure 2. Gal80 gene knockout. a</strong>, Schematic diagram of yeast HR. <strong>b</strong>, Transformant verification results, confirming the successful knockout of the <em>Gal80</em> gene.</p>",
+          "after": "<p>Figure 2. Gal80 gene knockout. a, Schematic diagram of yeast HR. b, Transformant verification results, confirming the successful knockout of the <em>Gal80</em> gene.</p>"
+        },
+        {
+          "field": ".blocks[53].body",
+          "before": "<p><strong>Figure 1. Plasmid map of the HR plasmid pRS315-sTF.</strong></p>",
+          "after": "<p>Figure 1. Plasmid map of the HR plasmid pRS315-sTF.</p>"
+        },
+        {
+          "field": ".blocks[56].body",
+          "before": "Figure 2. Construction of the STE12 knockout cassette KOSTE12. a, PCR amplification results of the three fragments constituting KOSTE12. b, The KOSTE12 knockout cassette assembled by DJ-PCR.",
+          "after": "Figure 2. Construction of the STE12 knockout cassette KOSTE12. a, PCR amplification results of the three fragments constituting KOSTE12. b, the KOSTE12 knockout cassette assembled by DJ-PCR."
+        },
+        {
+          "field": ".blocks[58].body",
+          "before": "<p><strong>Figure 3. The first attempt to construct pRS315-sTF plasmid.</strong> <strong>a</strong>, Colony PCR result. The No.6 colony was selected for plasmid extraction and subsequent double digestion, shown in panel <strong>b</strong>, It was difficult to confirm the correctness of the plasmid from this result.</p>",
+          "after": "<p>Figure 3. The first attempt to construct pRS315-sTF plasmid. a, Colony PCR result. The No.6 colony was selected for plasmid extraction and subsequent double digestion, shown in panel b, It was difficult to confirm the correctness of the plasmid from this result.</p>"
+        },
+        {
+          "field": ".blocks[60].body",
+          "before": "<p><strong>Figure 4. The second attempt to construct the pRS315-sTF plasmid.</strong> <strong>a</strong>, Sequencing result of the first trial, showing that the 3F fragment was not assembled. <strong>b</strong>, Fragment amplification for the second plasmid construction. The fragment sizes from left to right are 3363 bp, 1620 bp, 1076 bp and 4301 bp. <strong>c</strong>, Double digestion verification of pRS315-sTF, consistent with expectations. <strong>d</strong>, Whole-plasmid sequencing result, confirming correct base sequences in key regions.</p>",
+          "after": "<p>Figure 4. The second attempt to construct the pRS315-sTF plasmid. a, Sequencing result of the first trial, showing that the 3F fragment was not assembled. b, Fragment amplification for the second plasmid construction. The fragment sizes from left to right are 3363 bp, 1620 bp, 1076 bp and 4301 bp. c, Double digestion verification of pRS315-sTF, consistent with expectations. d, Whole-plasmid sequencing result, confirming correct base sequences in key regions.</p>"
+        },
+        {
+          "field": ".blocks[63].body",
+          "before": "<p><strong>Figure 5. Schematic diagram of </strong><strong><em>STE12</em></strong><strong> gene knockout and transformant verification results, indicating unsuccessful knockout.</strong></p>",
+          "after": "<p>Figure 5. Schematic diagram of <em>STE12</em> gene knockout and transformant verification results, indicating unsuccessful knockout.</p>"
+        },
+        {
+          "field": ".blocks[73].body",
+          "before": "<p><strong>Figure 1. Construction of pRS315-MjDOD-BvCYP76AD5 plasmid.</strong> <strong>a</strong>, Plasmid map of pRS315-MjDOD-BvCYP76AD5. <strong>b</strong>, Colony PCR identification for plasmid construction. Colony T5 was selected for plasmid extraction. <strong>c</strong>, Double digestion verification of pRS315-MjDOD-BvCYP76AD5; the band sizes of digested products matched the theoretical expectation. <strong>d</strong>, Whole-plasmid sequencing result, confirming correct base sequences in key regions.</p>",
+          "after": "<p>Figure 1. Construction of pRS315-MjDOD-BvCYP76AD5 plasmid. a, Plasmid map of pRS315-MjDOD-BvCYP76AD5. b, Colony PCR identification for plasmid construction. Colony T5 was selected for plasmid extraction. c, Double digestion verification of pRS315-MjDOD-BvCYP76AD5; the band sizes of digested products matched the theoretical expectation. d, Whole-plasmid sequencing result, confirming correct base sequences in key regions.</p>"
+        },
+        {
+          "field": ".blocks[76].body",
+          "before": "<p><strong>Figure 2. Schematic diagram of betaxanthin expression cassette transformation and transformant verification results, showing no insertion at the </strong><strong><em>Gal4</em></strong><strong> locus.</strong></p>",
+          "after": "<p>Figure 2. Schematic diagram of betaxanthin expression cassette transformation and transformant verification results, showing no insertion at the <em>Gal4</em> locus.</p>"
+        },
+        {
+          "field": ".blocks[81].body",
+          "before": "<p><strong>Figure 1. Map of auxotrophic marker replacement for p414-Cas9 plasmid.</strong></p>",
+          "after": "<p>Figure 1. Map of auxotrophic marker replacement for p414-Cas9 plasmid.</p>"
+        },
+        {
+          "field": ".blocks[86].body",
+          "before": "<p><strong>Figure 2. Construction of p414-Cas9-Leu plasmid.</strong> <strong>a</strong>, Colony PCR identification for plasmid construction. Colony T6 was selected for plasmid extraction. <strong>b</strong>, Double digestion verification of p414-Cas9-Leu; the band sizes of digested products matched the theoretical expectation. <strong>c</strong>, Whole-plasmid sequencing result, confirming correct base sequences in key regions.</p>",
+          "after": "<p>Figure 2. Construction of p414-Cas9-Leu plasmid. a, Colony PCR identification for plasmid construction. Colony T6 was selected for plasmid extraction. b, Double digestion verification of p414-Cas9-Leu; the band sizes of digested products matched the theoretical expectation. c, Whole-plasmid sequencing result, confirming correct base sequences in key regions.</p>"
+        },
+        {
+          "field": ".blocks[88].body",
+          "before": "<p><strong>Figure 3. sgRNA expression plasmids.</strong> <strong>a</strong>, Plasmid map of p426-SNR52p-gSTE12-SUP4t. <strong>b</strong>, Plasmid map of p426-SNR52p-gGal4-SUP4t. <strong>c</strong>, Plasmid map of p426-SNR52p-gSTE2-SUP4t.</p>",
+          "after": "<p>Figure 3. sgRNA expression plasmids. a, Plasmid map of p426-SNR52p-gSTE12-SUP4t. b, Plasmid map of p426-SNR52p-gGal4-SUP4t. c, Plasmid map of p426-SNR52p-gSTE2-SUP4t.</p>"
+        },
+        {
+          "field": ".blocks[90].body",
+          "before": "<p><strong>Figure 4. Construction of p426-SNR52p-gSTE12-SUP4t plasmid.</strong></p>",
+          "after": "<p>Figure 4. Construction of p426-SNR52p-gSTE12-SUP4t plasmid.</p>"
+        },
+        {
+          "field": ".blocks[91].body",
+          "before": "<p><strong>Figure 5. Construction of p426-SNR52p-gGal4-SUP4t plasmid.</strong></p>",
+          "after": "<p>Figure 5. Construction of p426-SNR52p-gGal4-SUP4t plasmid.</p>"
+        },
+        {
+          "field": ".blocks[92].body",
+          "before": "<p><strong>Figure 6. Construction of p426-SNR52p-gSTE2-SUP4t plasmid.</strong></p>",
+          "after": "<p>Figure 6. Construction of p426-SNR52p-gSTE2-SUP4t plasmid.</p>"
+        },
+        {
+          "field": ".blocks[94].body",
+          "before": "Figure 7. Fragment construction of Gal1/10bp-Betaxanthin Expression Cassette (a) and sTF Expression Cassette (b).",
+          "after": "Figure 7. Fragment construction of Gal1/10bp-betaxanthin expression cassette (a) and sTF expression cassette (b)."
+        },
+        {
+          "field": ".blocks[96].body",
+          "before": "<p><strong>Figure 8. Plasmid map of pRS315-TEF1p-GPR2.</strong></p>",
+          "after": "<p>Figure 8. Plasmid map of pRS315-TEF1p-GPR2.</p>"
+        },
+        {
+          "field": ".blocks[97].body",
+          "before": "<p><strong>Figure 9. Construction of pRS315-TEF1p-GPR2 plasmid.</strong></p>",
+          "after": "<p>Figure 9. Construction of pRS315-TEF1p-GPR2 plasmid.</p>"
+        },
+        {
+          "field": ".blocks[101].body",
+          "before": "<p><strong>Figure 10. Transformant verification of p414-Cas9-Leu (a) and sTF transformant verification (b).</strong></p>",
+          "after": "<p>Figure 10. Transformant verification of p414-Cas9-Leu (a) and sTF transformant verification (b).</p>"
+        },
+        {
+          "field": ".blocks[103].body",
+          "before": "Figure 11. Schematic diagram of sTF Expression Cassette transformation.",
+          "after": "Figure 11. Schematic diagram of sTF expression cassette transformation."
+        },
+        {
+          "field": ".blocks[105].body",
+          "before": "<p><strong>Figure 2</strong><strong>.</strong><strong> Schematic diagram of Gal1/10bp-Betaxanthin Expression Cassette transformation (a) and transformant validation (b).</strong></p>",
+          "after": "<p>Figure 2. Schematic diagram of Gal1/10bp-betaxanthin expression cassette transformation (a) and transformant validation (b).</p>"
+        },
+        {
+          "field": ".blocks[111].body",
+          "before": "<p><strong>Figure 1. Plasmid maps of pRS315-TEF1p-GPR2-N84V and pRS315-TEF1p-GPR2-V368R.</strong></p>",
+          "after": "<p>Figure 1. Plasmid maps of pRS315-TEF1p-GPR2-N84V and pRS315-TEF1p-GPR2-V368R.</p>"
+        },
+        {
+          "field": ".blocks[114].body",
+          "before": "<p><strong>Figure 2. Construction of pRS315-TEF1p-GPR2-N84V (a) and pRS315-TEF1p-GPR2-V368R (b). </strong>Whole-plasmid sequencing confirmed the correct base sequences in key regions.</p>",
+          "after": "<p>Figure 2. Construction of pRS315-TEF1p-GPR2-N84V (a) and pRS315-TEF1p-GPR2-V368R (b). Whole-plasmid sequencing confirmed the correct base sequences in key regions.</p>"
+        },
+        {
+          "field": ".blocks[137].body",
+          "before": "<p style=\"text-align:center;\"><strong>Figure 1. </strong><strong>Water absorption capacity evaluation of selected substrates</strong>（<strong> Insert image </strong><strong>“Fig3.1.1”</strong>）</p>",
+          "after": "<p style=\"text-align:center;\" class=\"figure-caption\">Figure 1. Water absorption capacity evaluation of selected substrates（ insert image “Fig3.1.1”）</p>"
+        },
+        {
+          "field": ".blocks[152].body",
+          "before": "<p style=\"text-align:justify;\">Figure 2. Fumigation coating device (a), hydrophobic effect demonstration (b), circular hydrophilic zone demonstration (c). For (c), the surrounding experimental groups are created by placing the hydrophobic-treated test strips into solutions containing iron(III) chloride, cobalt(II) chloride, copper(II) sulfate, and manganese(II) chloride, respectively.</p>",
+          "after": "<p style=\"text-align:justify;\" class=\"figure-caption\">Figure 2. Fumigation coating device (a), hydrophobic effect demonstration (b), circular hydrophilic zone demonstration (c). For (c), the surrounding experimental groups are created by placing the hydrophobic-treated test strips into solutions containing iron(III) chloride, cobalt(II) chloride, copper(II) sulfate, and manganese(II) chloride, respectively.</p>"
+        },
+        {
+          "field": ".blocks[155].body",
+          "before": "<p style=\"text-align:center;\">Figure3. Water loss rate curve.</p>",
+          "after": "<p style=\"text-align:center;\" class=\"figure-caption\">Figure 3. Water loss rate curve.</p>"
+        },
+        {
+          "field": ".blocks[158].body",
+          "before": "<p style=\"text-align:center;\">Figure 3.1.4. Schematic of the spotting process</p>",
+          "after": "<p style=\"text-align:center;\" class=\"figure-caption\">Figure 3.1.4. Schematic of the spotting process</p>"
+        },
+        {
+          "field": ".blocks[161].body",
+          "before": "<p style=\"text-align:center;\">Figure 5. Overview of color-developing cell-loaded test strips.</p>",
+          "after": "<p style=\"text-align:center;\" class=\"figure-caption\">Figure 5. Overview of color-developing cell-loaded test strips.</p>"
+        },
+        {
+          "field": ".blocks[172].body",
+          "before": "<iframe class=\"author-screening-figure\" title=\"Reactivation medium screening\" src=\"/embeds/results-20261019/index.html\" loading=\"lazy\" sandbox=\"allow-scripts\" style=\"width:100%;height:980px;border:0\"></iframe><p style=\"text-align:center;\"><strong>Figure 6. Control experiments for color development conditions.</strong> </p>",
+          "after": "<iframe class=\"author-screening-figure\" title=\"Reactivation medium screening\" src=\"/embeds/results-20261019/index.html\" loading=\"lazy\" sandbox=\"allow-scripts\" style=\"width:100%;height:980px;border:0\"></iframe><p style=\"text-align:center;\" class=\"figure-caption\">Figure 6. Control experiments for color development conditions. </p>"
+        },
+        {
+          "field": ".blocks[178].body",
+          "before": "<p style=\"text-align:center;\"><strong>Figure 7.</strong> <strong>3D-printed test strip cassette</strong><strong>（</strong><strong> Insert image </strong><strong>“Fig3.2.2”</strong><strong>）</strong></p>",
+          "after": "<p style=\"text-align:center;\" class=\"figure-caption\">Figure 7. 3D-printed test strip cassette（ insert image “Fig3.2.2”）</p>"
+        }
+      ]
+    },
+    {
+      "page": "safety",
+      "changes": [
+        {
+          "field": ".blocks[5].body",
+          "before": "Figure 1. CEN.PK2‑1C strain with four auxotrophies",
+          "after": "Figure 1. CEN.PK2‑1c strain with four auxotrophies"
+        },
+        {
+          "field": ".blocks[7].body",
+          "before": "**Figure 2.** The design of suicide system",
+          "after": "Figure 2. The design of suicide system"
+        }
+      ]
+    }
+  ],
+  "changed_fields": 69,
+  "protected_math_code_assets_data_links": "unchanged"
+}

@@ -43,7 +43,7 @@ Teams developing similar biosensors can use this documentation to plan an assemb
 
 ![Figure 1. A documented route to yeast strain construction.](https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-1-e88a84496c.webp)
 
-**Figure 1. A documented route to yeast strain construction.** The workflow summarizes the genetic modifications connecting our chassis and receptor variants.
+Figure 1. A documented route to yeast strain construction. The workflow summarizes the genetic modifications connecting our chassis and receptor variants.
 
 :::
 
@@ -71,7 +71,7 @@ We also documented input checks and pose-export procedures for keeping coordinat
 
 ![Figure 2. Mapping candidate sites for receptor engineering.](https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-2-652cbf31ef.webp)
 
-**Figure 2. Mapping candidate sites for receptor engineering.** Highlighted residues were selected for further substitution studies through comparisons of predicted ligand contacts.
+Figure 2. Mapping candidate sites for receptor engineering. Highlighted residues were selected for further substitution studies through comparisons of predicted ligand contacts.
 
 :::
 
@@ -93,7 +93,7 @@ Separating shared pathway parameters from sensor and reporter settings makes the
 
 ![Figure 3. From signal response to density estimation.](https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-3-7b02740394.webp)
 
-**Figure 3. From signal response to density estimation.** The workflow connects pathway modeling, simulated colors, and paired-readout analysis. Generated with OpenAI GPT Image 2.
+Figure 3. From signal response to density estimation. The workflow connects pathway modeling, simulated colors, and paired-readout analysis. Generated with OpenAI GPT Image 2.
 
 :::
 
@@ -123,7 +123,7 @@ Teams and educators can draw on the learning goals, activity sequences, and visu
 
 ![Figure 4. Bringing nematode science into the classroom.](https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-4-2b6f00755b.webp)
 
-**Figure 4. Bringing nematode science into the classroom.** Our teaching materials support classroom activities through the Xiangyang Program partnership.
+Figure 4. Bringing nematode science into the classroom. Our teaching materials support classroom activities through the Xiangyang Program partnership.
 
 :::
 
@@ -139,7 +139,7 @@ Other teams can adapt this approach to organize their own engagement and keep tr
 
 ![Figure 5. Learning from growers’ experience.](https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-5-7d72a4f737.webp)
 
-**Figure 5. Learning from growers’ experience.** Conversations during farm visits helped us relate testing needs to local crops and management practices.
+Figure 5. Learning from growers’ experience. Conversations during farm visits helped us relate testing needs to local crops and management practices.
 
 :::
 

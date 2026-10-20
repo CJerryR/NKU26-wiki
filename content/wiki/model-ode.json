@@ -41,7 +41,7 @@
       "_template": "image",
       "src": "https://static.igem.wiki/teams/6303/wiki/release-20261020/model-ode-8b54481155b3.webp",
       "alt": "Figure 3-1. Sequential calibration workflow for the ODE and dual-channel models.\nThe upper panel shows mixed-sample design, ODE calibration, and dual-channel regression",
-      "body": "**Figure 3-1. Sequential calibration workflow for the ODE and dual-channel models.**\nThe upper panel shows mixed-sample design, ODE calibration, and dual-channel regression. The lower panel shows the intended workflow for estimating <em>Mi</em> density from paired smartphone readings. Prescribed pigment targets are used to calibrate the ODE, while regression uses color features calculated from the actual ODE outputs. Generated with OpenAI GPT Image 2.",
+      "body": "Figure 3-1. Sequential calibration workflow for the ODE and dual-channel models.\nThe upper panel shows mixed-sample design, ODE calibration, and dual-channel regression. The lower panel shows the intended workflow for estimating <em>Mi</em> density from paired smartphone readings. Prescribed pigment targets are used to calibrate the ODE, while regression uses color features calculated from the actual ODE outputs. Generated with OpenAI GPT Image 2.",
       "layout": "full",
       "imageWidth": "wide",
       "openOriginal": true
@@ -238,7 +238,7 @@
       "_template": "image",
       "src": "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-556696deeb745a5b-00.json",
       "alt": "Figure 3-2. ODE pigment calibration at different background densities.\nPanels A and B show P3 and P18, respectively",
-      "body": "**Figure 3-2. ODE pigment calibration at different background densities.**\nPanels A and B show P3 and P18, respectively. Colors distinguish <em>Ce</em> background densities. Dashed lines with crosses indicate prescribed pigment targets, solid lines with circles indicate simulated 8 h total pigment concentrations, and gray dotted lines indicate the blank.",
+      "body": "Figure 3-2. ODE pigment calibration at different background densities.\nPanels A and B show P3 and P18, respectively. Colors distinguish <em>Ce</em> background densities. Dashed lines with crosses indicate prescribed pigment targets, solid lines with circles indicate simulated 8 h total pigment concentrations, and gray dotted lines indicate the blank.",
       "layout": "full",
       "imageWidth": "wide",
       "openOriginal": true
@@ -263,7 +263,7 @@
       "_template": "image",
       "src": "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-06918bc66dedec7f-00.json",
       "alt": "Figure 3-3. Net pigment accumulation in representative mixed samples.\nPanels A and B show simulated time courses for blank, Mi-only, Ce-only, and mixed samples in P3 and P18",
-      "body": "**Figure 3-3. Net pigment accumulation in representative mixed samples.**\nPanels A and B show simulated time courses for blank, <em>Mi</em>-only, <em>Ce</em>-only, and mixed samples in P3 and P18. Net pigment is calculated by subtracting the matched channel blank at each time point.",
+      "body": "Figure 3-3. Net pigment accumulation in representative mixed samples.\nPanels A and B show simulated time courses for blank, <em>Mi</em>-only, <em>Ce</em>-only, and mixed samples in P3 and P18. Net pigment is calculated by subtracting the matched channel blank at each time point.",
       "layout": "full",
       "imageWidth": "wide",
       "openOriginal": true
@@ -352,7 +352,7 @@
       "_template": "image",
       "src": "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-543f0d38ad341206-00.json",
       "alt": "Figure 3-4. Distribution of mixed samples in dual-channel color space.\nThe horizontal and vertical axes show the simulated P3 and P18 smartphone color indices",
-      "body": "**Figure 3-4. Distribution of mixed samples in dual-channel color space.**\nThe horizontal and vertical axes show the simulated P3 and P18 smartphone color indices. Point color indicates <em>Mi</em> density. Solid lines connect samples with fixed <em>Mi</em> density, while dashed lines connect samples with fixed <em>Ce</em> density. Arrows indicate the directions of increasing <em>Mi</em> or <em>Ce</em> density.",
+      "body": "Figure 3-4. Distribution of mixed samples in dual-channel color space.\nThe horizontal and vertical axes show the simulated P3 and P18 smartphone color indices. Point color indicates <em>Mi</em> density. Solid lines connect samples with fixed <em>Mi</em> density, while dashed lines connect samples with fixed <em>Ce</em> density. Arrows indicate the directions of increasing <em>Mi</em> or <em>Ce</em> density.",
       "layout": "full",
       "imageWidth": "wide",
       "openOriginal": true
@@ -405,7 +405,7 @@
       "_template": "image",
       "src": "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-c5587156db2d0d1e-00.json",
       "alt": "Figure 3-5. Mi density predictions and comparison of single- and dual-channel models.\nPanel A compares known and predicted Mi densities for the dual-channel model; the dashed line indicates ideal agreement",
-      "body": "**Figure 3-5. <em>Mi</em> density predictions and comparison of single- and dual-channel models.**\nPanel A compares known and predicted <em>Mi</em> densities for the dual-channel model; the dashed line indicates ideal agreement. Panel B compares the RMSEs of P3-only, P18-only, and dual-channel models on the same simulated evaluation set.",
+      "body": "Figure 3-5. <em>Mi</em> Density predictions and comparison of single- and dual-channel models.\nPanel A compares known and predicted <em>Mi</em> densities for the dual-channel model; the dashed line indicates ideal agreement. Panel B compares the RMSEs of P3-only, P18-only, and dual-channel models on the same simulated evaluation set.",
       "layout": "full",
       "imageWidth": "wide",
       "openOriginal": true

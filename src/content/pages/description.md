@@ -27,7 +27,7 @@ NemaKlear is developing a yeast-based biosensing kit for preliminary screening o
 
 ![NemaKlear integrated workflow connecting Wet Lab, Dry Lab, Human Practices, two-channel interpretation and test-strip development.](https://static.igem.wiki/teams/6303/wiki/release-20261020/description-workflow-81434cea99.webp)
 
-**Figure 1. NemaKlear’s integrated workflow.** Wet Lab, Dry Lab, and <strong>Human Practices (HP)</strong> connect biosensor construction, two-channel interpretation, and test-strip development toward an easy-to-use nematode screening kit.
+Figure 1. NemaKlear’s integrated workflow. Wet Lab, Dry Lab, and Human Practices (HP) connect biosensor construction, two-channel interpretation, and test-strip development toward an easy-to-use nematode screening kit.
 
 :::
 

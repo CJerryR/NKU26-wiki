@@ -135,7 +135,7 @@ Multi-Fragment and Vector Assembly Using ClonExpress Ultra One Step Cloning Kit 
 
 ![Figure 1 Workflow of engineered strain construction](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-12cdb6f517ca-contribution.avif)
 
-Figure 1 Workflow of engineered strain construction
+Figure 1. Workflow of engineered strain construction
 
 :::
 

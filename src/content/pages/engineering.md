@@ -35,7 +35,7 @@ The following iterations follow three engineering questions: Can we build the bi
 
 ![Figure 1. Our DBTL approach.](https://static.igem.wiki/teams/6303/wiki/release-20261020/engineering-figure-1-b7206774cd.webp)
 
-**Figure 1. Our DBTL approach.** Experimental results, model predictions, and practical requirements guide revisions to the biosensor, readout, and test format. Generated with OpenAI GPT Image 2.
+Figure 1. Our DBTL approach. Experimental results, model predictions, and practical requirements guide revisions to the biosensor, readout, and test format. Generated with OpenAI GPT Image 2.
 
 :::
 
@@ -59,7 +59,7 @@ Green fluorescence showed that GPR2–sfGFP was expressed, but its location need
 
 ![Figure 2. Examining receptor localization.](https://static.igem.wiki/teams/6303/wiki/release-20261020/engineering-figure-2-627df6af35.webp)
 
-**Figure 2. Examining receptor localization.** GPR2–sfGFP fluorescence is compared with FM4-64 staining and merged images. Scale bars: 10 μm.
+Figure 2. Examining receptor localization. GPR2–sfGFP fluorescence is compared with FM4-64 staining and merged images. Scale bars: 10 μm.
 
 :::
 
@@ -135,7 +135,7 @@ With a signal-to-color model in place, we asked whether two complementary readou
 
 ![Figure 3. Comparing one and two readouts.](https://static.igem.wiki/teams/6303/wiki/release-20261020/engineering-figure-3-5f5e319acc.webp)
 
-**Figure 3. Comparing one and two readouts.** Paired readouts improved target-density prediction on the simulated test set.
+Figure 3. Comparing one and two readouts. Paired readouts improved target-density prediction on the simulated test set.
 
 :::
 
@@ -171,7 +171,7 @@ Direct spotting allowed liquid to spread sideways, while viscous cell suspension
 
 ![Coating device and colored metal-salt solutions showing hydrophobic treatment and circular wetting regions.](https://static.igem.wiki/teams/6303/wiki/release-20261020/engineering-figure-4-f4de7549d8.webp)
 
-**Figure 4. Keeping liquid in the reaction area.** The coating device and colored metal-salt solutions show how hydrophobic treatment defines circular wetting regions.
+Figure 4. Keeping liquid in the reaction area. The coating device and colored metal-salt solutions show how hydrophobic treatment defines circular wetting regions.
 
 :::
 
@@ -238,7 +238,7 @@ A low barrier to use depends on what happens before and after the sensing reacti
 
 ![Figure 6. From soil collection to disposal.](https://static.igem.wiki/teams/6303/wiki/release-20261020/engineering-figure-6-82a0893b5b.webp)
 
-**Figure 6. From soil collection to disposal.** The workflow brings sampling, recording, transport, laboratory handling, and disposal into one view. Generated with OpenAI GPT Image 2.
+Figure 6. From soil collection to disposal. The workflow brings sampling, recording, transport, laboratory handling, and disposal into one view. Generated with OpenAI GPT Image 2.
 
 :::
 

@@ -23,7 +23,7 @@ hidden: false
 
 ![Figure 1. Symptoms of two major plant-parasitic nematodes on soybean roots. (a) Meloidogyne incognita: obvious root galls formed on infected soybean roots. (b) Heterodera glycines: white lemon-shaped mature females protruding from soybean roots (arrows). Note that soybean cyst nematode does not form root galls.](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-a69f0a5adee6-fig1.avif)
 
-<p><strong>Figure 1. Symptoms of two major PPNs on soybean roots. </strong>(a) <em>Mi</em>: obvious root galls formed on infected soybean roots. (b) <em>H. glycines</em>: white lemon-shaped mature females protruding from soybean roots (arrows). Note that soybean cyst nematode does not form root galls. Source: <em>Management of Plant-Parasitic Nematodes in Florida Soybean Production</em> (NG018), UF/IFAS EDIS. Used for educational demonstration only.</p>
+<p>Figure 1. Symptoms of two major PPNs on soybean roots. (a) <em>Mi</em>: obvious root galls formed on infected soybean roots. (b) <em>H. glycines</em>: white lemon-shaped mature females protruding from soybean roots (arrows). Note that soybean cyst nematode does not form root galls. Source: <em>Management of Plant-Parasitic Nematodes in Florida Soybean Production</em> (NG018), UF/IFAS EDIS. Used for educational demonstration only.</p>
 
 :::
 
@@ -59,7 +59,7 @@ Table 1. Comparison of detection methods for PPNs
 
 ![Figure 2. Ascaroside profiles in plant-parasitic nematodes.](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-4aaded62bc25-fig2.avif)
 
-<p><strong>Figure 2. Ascaroside profiles in PPNs. </strong>Source: Manosalva P, et al. (2015), <em>Nature Communications</em>, DOI:10.1038/ncomms8795.</p>
+<p>Figure 2. Ascaroside profiles in ppns. Source: Manosalva P, et al. (2015), <em>Nature Communications</em>, DOI:10.1038/ncomms8795.</p>
 
 :::
 
@@ -67,7 +67,7 @@ Table 1. Comparison of detection methods for PPNs
 
 ![Figure 3. Ascaroside profiles in free-living nematodes.](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-cdf748e96338-fig3.avif)
 
-<p><strong>Figure 3. Ascaroside profiles in free-living nematodes. </strong>Source: Lee D, et al. (2023), <em>Proceedings of the National Academy of Sciences</em>, DOI:10.1073/pnas.2221150120.</p>
+<p>Figure 3. Ascaroside profiles in free-living nematodes. Source: Lee D, et al. (2023), <em>Proceedings of the National Academy of Sciences</em>, DOI:10.1073/pnas.2221150120.</p>
 
 :::
 
@@ -77,7 +77,7 @@ Table 1. Comparison of detection methods for PPNs
 
 ![Figure 4. GPCR-mediated prey pheromone sensing pathway in the nematode-trapping fungus Arthrobotrys oligospora.](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-df028eb5874f-fig4.avif)
 
-<p><strong>Figure 4. GPCR-mediated prey pheromone sensing pathway in the nematode-trapping fungus </strong><strong><em>A. oligospora</em></strong><strong>. </strong>Source: Kuo C-Y, et al. (2024), <em>Nature Microbiology</em>, DOI:10.1038/s41564-024-01647-4.</p>
+<p>Figure 4. GPCR-mediated prey pheromone sensing pathway in the nematode-trapping fungus <em>A. oligospora</em>. Source: Kuo C-Y, et al. (2024), <em>Nature Microbiology</em>, DOI:10.1038/s41564-024-01647-4.</p>
 
 :::
 

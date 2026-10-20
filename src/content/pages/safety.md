@@ -26,7 +26,7 @@ First, we used yeast with four auxotrophies as the chassis strain for this proje
 
 ![Figure 1. CEN.PK2‑1C strain with four auxotrophies](https://static.igem.wiki/teams/6303/wiki/v8-0/v85-54382c8e77e7-r2-54382c8e77e7-fig1.avif)
 
-Figure 1. CEN.PK2‑1C strain with four auxotrophies
+Figure 1. CEN.PK2‑1c strain with four auxotrophies
 
 :::
 
@@ -36,7 +36,7 @@ Secondly, we adopted the previously designed engineered yeast suicide switch, wh
 
 ![Tet-On and Bax suicide-system design](https://static.igem.wiki/teams/6303/wiki/v8-0/v85-cfa8f763f0dd-r2-cfa8f763f0dd-fig2.avif)
 
-**Figure 2.** The design of suicide system
+Figure 2. The design of suicide system
 
 :::
 

@@ -130,3 +130,30 @@ main:has(.doc), .doc, .pager { --measure: 65rem; --bleed: 0px; }
   .doc .prose h2 { font-size: 28px !important; }
   .doc .prose h3:not(.person-name > *) { font-size: 21px !important; }
 }
+
+/* One figure-caption contract across authored and structured image blocks. */
+.doc .prose :is(figcaption, .figure-caption, .docking-caption-only) {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 12px 0 0 !important;
+  padding-inline: 0 !important;
+  font-family: var(--font-body) !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 1.55 !important;
+  text-align: left !important;
+  text-align-last: auto !important;
+  letter-spacing: normal !important;
+}
+.doc .prose :is(figcaption, .figure-caption, .docking-caption-only) :is(p, span, a, em, i, strong, b):not(:where(.katex *, math *)) {
+  font-family: inherit !important;
+  font-size: inherit !important;
+  font-weight: 400 !important;
+  line-height: inherit !important;
+  text-align: left !important;
+  text-align-last: auto !important;
+  letter-spacing: normal !important;
+}
+.doc .prose :is(figcaption, .figure-caption, .docking-caption-only) p { margin: 0 !important; }
+.doc .prose :is(figcaption, .figure-caption, .docking-caption-only) strong:first-child { margin-right: 0; }

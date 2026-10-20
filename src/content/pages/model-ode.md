@@ -29,7 +29,7 @@ Throughout this chapter, nematode density is expressed as individuals per 100 cm
 
 [![Figure 3-1. Sequential calibration workflow for the ODE and dual-channel models. The upper panel shows mixed-sample design, ODE calibration, and dual-channel regression](https://static.igem.wiki/teams/6303/wiki/release-20261020/model-ode-8b54481155b3.webp)](https://static.igem.wiki/teams/6303/wiki/release-20261020/model-ode-8b54481155b3.webp "Open full-resolution image")
 
-**Figure 3-1. Sequential calibration workflow for the ODE and dual-channel models.**
+Figure 3-1. Sequential calibration workflow for the ODE and dual-channel models.
 The upper panel shows mixed-sample design, ODE calibration, and dual-channel regression. The lower panel shows the intended workflow for estimating <em>Mi</em> density from paired smartphone readings. Prescribed pigment targets are used to calibrate the ODE, while regression uses color features calculated from the actual ODE outputs. Generated with OpenAI GPT Image 2.
 
 :::
@@ -130,7 +130,7 @@ The resulting P3 and P18 endpoints spanned approximately 0.070–0.543 and 0.070
 
 [![Figure 3-2. ODE pigment calibration at different background densities. Panels A and B show P3 and P18, respectively](https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-556696deeb745a5b-00.json)](https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-556696deeb745a5b-00.json "Open full-resolution image")
 
-**Figure 3-2. ODE pigment calibration at different background densities.**
+Figure 3-2. ODE pigment calibration at different background densities.
 Panels A and B show P3 and P18, respectively. Colors distinguish <em>Ce</em> background densities. Dashed lines with crosses indicate prescribed pigment targets, solid lines with circles indicate simulated 8 h total pigment concentrations, and gray dotted lines indicate the blank.
 
 :::
@@ -147,7 +147,7 @@ Different inputs produced different pigment-accumulation trajectories through th
 
 [![Figure 3-3. Net pigment accumulation in representative mixed samples. Panels A and B show simulated time courses for blank, Mi-only, Ce-only, and mixed samples in P3 and P18](https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-06918bc66dedec7f-00.json)](https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-06918bc66dedec7f-00.json "Open full-resolution image")
 
-**Figure 3-3. Net pigment accumulation in representative mixed samples.**
+Figure 3-3. Net pigment accumulation in representative mixed samples.
 Panels A and B show simulated time courses for blank, <em>Mi</em>-only, <em>Ce</em>-only, and mixed samples in P3 and P18. Net pigment is calculated by subtracting the matched channel blank at each time point.
 
 :::
@@ -196,7 +196,7 @@ Each sample corresponds to a point in a two-dimensional color space, with the P3
 
 [![Figure 3-4. Distribution of mixed samples in dual-channel color space. The horizontal and vertical axes show the simulated P3 and P18 smartphone color indices](https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-543f0d38ad341206-00.json)](https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-543f0d38ad341206-00.json "Open full-resolution image")
 
-**Figure 3-4. Distribution of mixed samples in dual-channel color space.**
+Figure 3-4. Distribution of mixed samples in dual-channel color space.
 The horizontal and vertical axes show the simulated P3 and P18 smartphone color indices. Point color indicates <em>Mi</em> density. Solid lines connect samples with fixed <em>Mi</em> density, while dashed lines connect samples with fixed <em>Ce</em> density. Arrows indicate the directions of increasing <em>Mi</em> or <em>Ce</em> density.
 
 :::
@@ -229,7 +229,7 @@ To assess the contribution of the second channel, we compared P3-only, P18-only,
 
 [![Figure 3-5. Mi density predictions and comparison of single- and dual-channel models. Panel A compares known and predicted Mi densities for the dual-channel model; the dashed line indicates ideal agreement](https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-c5587156db2d0d1e-00.json)](https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-c5587156db2d0d1e-00.json "Open full-resolution image")
 
-**Figure 3-5. <em>Mi</em> density predictions and comparison of single- and dual-channel models.**
+Figure 3-5. <em>Mi</em> Density predictions and comparison of single- and dual-channel models.
 Panel A compares known and predicted <em>Mi</em> densities for the dual-channel model; the dashed line indicates ideal agreement. Panel B compares the RMSEs of P3-only, P18-only, and dual-channel models on the same simulated evaluation set.
 
 :::
