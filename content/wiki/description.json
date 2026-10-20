@@ -16,241 +16,186 @@
       "body": "<div class=\"reading-layout\" lang=\"en\">"
     },
     {
-      "text": "Background",
+      "_template": "heading",
       "level": 2,
-      "attributes": "#background toc=\"Background\"",
-      "_template": "heading"
+      "text": "Project overview",
+      "attributes": "#description-project-overview toc=\"Project overview\" unnumbered"
     },
     {
-      "text": "1.1 Silent killers underground: the urgent threat of plant-parasitic nematodes",
-      "level": 3,
-      "attributes": "#11-silent-killers-underground-the-urgent-threat-of-plant-parasitic-nematodes toc=\"Plant-parasitic nematodes\"",
-      "_template": "heading"
+      "_template": "text",
+      "body": "<p class=\"manuscript-title\">NemaKlear: Making Nematode Screening Easier to Use</p>"
     },
     {
-      "body": "<p><strong>Plant-parasitic nematodes (PPNs)</strong> are among the most destructive pathogens in global agricultural production. Widely distributed in cultivated soils, they parasitize plant roots, disrupt nutrient uptake pathways and trigger secondary diseases, posing severe threats to crop yield and quality. Statistically, PPNs cause up to 157 billion dollars in annual crop losses worldwide across more than 20 major cash crops<sup>[1]</sup>. Among them, sedentary endoparasitic nematodes represent the most harmful group due to their unique parasitic lifestyle, strong dispersal capacity and difficult control<sup>[2]</sup>. As two representative species, <strong><em>Heterodera glycines</em> (<em>H. glycines</em>)</strong> and <strong><em>Meloidogyne incognita</em> (<em>Mi</em>)</strong> exhibit typical taxonomic and biological features. They continuously endanger the production of globally critical crops and serve as core model organisms for research on soil nematode management (Figure 1).</p>",
-      "_template": "text"
+      "_template": "text",
+      "body": "NemaKlear is developing a yeast\\-based biosensing kit for preliminary screening of agricultural nematode risk\\. Our approach uses engineered yeast to sense ascarosides, small molecules released by nematodes, and turn these chemical signals into a visible yellow color\\. By combining readings from two sensors with computational models, we explore how these signals could help assess the risk posed by plant\\-parasitic nematodes\\."
     },
     {
-      "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-a69f0a5adee6-fig1.avif",
-      "alt": "Figure 1. Symptoms of two major plant-parasitic nematodes on soybean roots. (a) Meloidogyne incognita: obvious root galls formed on infected soybean roots. (b) Heterodera glycines: white lemon-shaped mature females protruding from soybean roots (arrows). Note that soybean cyst nematode does not form root galls.",
-      "body": "<p><strong>Figure 1. Symptoms of two major PPNs on soybean roots. </strong>(a) <em>Mi</em>: obvious root galls formed on infected soybean roots. (b) <em>H. glycines</em>: white lemon-shaped mature females protruding from soybean roots (arrows). Note that soybean cyst nematode does not form root galls. Source: <em>Management of Plant-Parasitic Nematodes in Florida Soybean Production</em> (NG018), UF/IFAS EDIS. Used for educational demonstration only.</p>",
-      "accompanyingBody": "",
+      "_template": "text",
+      "body": "**Our central goal is to lower the practical barriers to testing\\.** We are developing a kit built around freeze\\-dried yeast test strips, with a straightforward workflow and an easy\\-to\\-read output\\. We want growers and agricultural service providers to obtain useful clues about nematode risk at key moments, including before planting, and use those clues to guide further diagnosis and management\\."
+    },
+    {
       "_template": "image",
-      "scale": "70"
+      "src": "https://static.igem.wiki/teams/6303/wiki/release-20261020/description-workflow-81434cea99.webp",
+      "alt": "NemaKlear integrated workflow connecting Wet Lab, Dry Lab, Human Practices, two-channel interpretation and test-strip development.",
+      "body": "**Figure 1\\. NemaKlear’s integrated workflow\\.** Wet Lab, Dry Lab, and <strong>Human Practices (HP)</strong> connect biosensor construction, two\\-channel interpretation, and test\\-strip development toward an easy\\-to\\-use nematode screening kit\\."
     },
     {
-      "body": "<p>PPNs of these two species exert substantial economic and ecological impacts. <em>H. glycines</em> specifically parasitizes legumes such as soybean and common bean. After <strong>second-stage juveniles (J2)</strong> invade host roots, they secrete effectors to induce syncytial feeding sites, which leads to root lignification, stunting and chlorosis of plants. In heavily infested fields, soybean yield losses can reach 30%–80% or even total crop failure. The cysts of this nematode can remain dormant in soil for more than 10 years, serving as persistent primary inoculum sources that are hard to eradicate, making it the most devastating disease in major soybean-producing regions worldwide<sup>[3]</sup>.</p>",
-      "_template": "text"
-    },
-    {
-      "body": "<p>As a polyphagous sedentary endoparasitic nematode, <em>Mi</em> infects over 3000 plant species including vegetables, grain and cash crops such as tomato, cucumber, cotton and maize<sup>[4]</sup>. Losses caused by this nematode are especially severe in protected agriculture due to continuous cropping obstacles. Notably, <em>Mi</em> secretes secondary metabolites such as 6-methoxybenzoxazolin-2-one to modulate the rhizosphere microbiome, improving its host-finding capacity and further expanding its damage range<sup>[5]</sup>.</p>",
-      "_template": "text"
-    },
-    {
-      "body": "Co-infection by these two nematodes elevates the risk of complex soil-borne disease outbreaks and creates a “dual stress” on crop production. Therefore, systematic identification of detection and control targets for the two nematodes will not only enrich nematode management tools, but also provide universal strategies for eco-friendly control of nematode diseases in global agriculture.\n",
-      "_template": "text"
-    },
-    {
-      "text": "1.2 Control dilemma: the critical weakness of current nematode control systems",
+      "_template": "heading",
       "level": 3,
-      "attributes": "#control-dilemma toc=\"Control dilemma\"",
-      "_template": "heading"
-    },
-    {
-      "body": "<p>Current major management strategies for nematode diseases include chemical fumigation, non-fumigant nematicides, novel nematicides, biological control, resistant cultivar breeding, and crop rotation. To maximize the efficacy of these control approaches while lowering their environmental risks, multiple detection technologies for PPNs have been developed<sup>[6]</sup>. Nevertheless, these methods generally suffer from delayed detection, high cost, poor portability, and heavy reliance on professional operators (Table 1).</p>",
-      "_template": "text"
+      "text": "Starting with the decision a grower needs to make",
+      "attributes": "#description-starting-with-the-decision-a-grower-needs-to-make toc=\"Starting with the decision a grower needs to make\""
     },
     {
       "_template": "text",
-      "body": "<p>The methods compared below include <strong>polymerase chain reaction (PCR)</strong>, <strong>quantitative polymerase chain reaction (qPCR)</strong>, <strong>next-generation sequencing (NGS)</strong>, <strong>loop-mediated isothermal amplification (LAMP)</strong>, <strong>recombinase polymerase amplification (RPA)</strong>, and <strong>convolutional neural network (CNN)</strong> approaches.</p>"
+      "body": "Plant\\-parasitic nematodes live in soil and roots\\. Symptoms above ground often give little indication of what is happening below\\. For growers, a test is useful when it provides information in time to help with the next management decision\\."
     },
     {
-      "body": "| Method                        | Cost     | Early-Warning Capacity | Portability | Professional Dependence |\n| ----------------------------- | -------- | ---------------------- | ----------- | ----------------------- |\n| Morphological Methods         | low      | poor                   | moderate    | high                    |\n| Biochemical Methods           | moderate | poor                   | low         | high                    |\n| PCR / qPCR                    | high     | poor                   | low         | high                    |\n| NGS and Metabarcoding         | high     | poor                   | low         | high                    |\n| LAMP / RPA                    | moderate | poor                   | high        | high                    |\n| Conventional Image Processing | moderate | poor                   | moderate    | high                    |\n| Deep Learning / CNN           | high     | poor                   | moderate    | high                    |\n| Hyperspectral Imaging         | high     | poor                   | low         | high                    |\n| Remote Sensing                | high     | poor                   | low         | high                    |\n",
-      "_template": "text"
+      "_template": "text",
+      "body": "Established detection methods provide valuable information about nematodes, but their practical requirements can make routine testing difficult outside specialist settings\\. Microscopic identification relies on trained operators, while laboratory molecular testing often requires specialized equipment and sample preparation\\. NemaKlear focuses on making initial screening more accessible through a test\\-strip format supported by clear sampling, reading, and handling instructions\\. Our intended place is an accessible first step in a workflow that includes professional confirmation when needed\\. [Explore the scientific background →](/background/)"
     },
     {
-      "body": "Table 1. Comparison of detection methods for PPNs\n",
-      "_template": "text"
+      "_template": "text",
+      "body": "Questionnaires, conversations with growers, and interviews with plant\\-protection experts helped us make this goal more concrete\\. Respondents valued straightforward operation, reliable results, and affordability\\. Experts also connected the timing of detection with decisions made before planting\\."
     },
     {
-      "text": "1.3 Dawn breaks: nematophagous fungi fuel innovation in nematode detection",
+      "_template": "text",
+      "body": "These perspectives gave “early warning” a specific purpose: could information about nematode risk help growers plan planting and consider soil treatment? This question shapes what our sensors need to measure, how results should be presented, and how the testing process should work\\. [Explore the needs and feedback behind our design →](/human-practices/)"
+    },
+    {
+      "_template": "heading",
       "level": 3,
-      "attributes": "#nematophagous-fungi toc=\"Nematophagous fungi\"",
-      "_template": "heading"
-    },
-    {
-      "body": "<p>Previous studies revealed that <strong>ascaroside #18 (ascr#18)</strong> acts as the dominant ascaroside across multiple genera of PPNs (Figure 2). In contrast, larvae of free-living nematodes such as <strong><em>Caenorhabditis elegans</em> (<em>Ce</em>)</strong> mainly produce <strong>ascaroside #3 (ascr#3)</strong> and <strong>ascaroside #5 (ascr#5)</strong> (Figure 3)<sup>[7]</sup>.</p>",
-      "_template": "text"
-    },
-    {
-      "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-4aaded62bc25-fig2.avif",
-      "alt": "Figure 2. Ascaroside profiles in plant-parasitic nematodes.",
-      "body": "<p><strong>Figure 2. Ascaroside profiles in PPNs. </strong>Source: Manosalva P, et al. (2015), <em>Nature Communications</em>, DOI:10.1038/ncomms8795.</p>",
-      "accompanyingBody": "",
-      "_template": "image"
-    },
-    {
-      "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-cdf748e96338-fig3.avif",
-      "alt": "Figure 3. Ascaroside profiles in free-living nematodes.",
-      "body": "<p><strong>Figure 3. Ascaroside profiles in free-living nematodes. </strong>Source: Lee D, et al. (2023), <em>Proceedings of the National Academy of Sciences</em>, DOI:10.1073/pnas.2221150120.</p>",
-      "accompanyingBody": "",
-      "_template": "image"
-    },
-    {
-      "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-df028eb5874f-fig4.avif",
-      "alt": "Figure 4. GPCR-mediated prey pheromone sensing pathway in the nematode-trapping fungus Arthrobotrys oligospora.",
-      "body": "<p><strong>Figure 4. GPCR-mediated prey pheromone sensing pathway in the nematode-trapping fungus </strong><strong><em>A. oligospora</em></strong><strong>. </strong>Source: Kuo C-Y, et al. (2024), <em>Nature Microbiology</em>, DOI:10.1038/s41564-024-01647-4.</p>",
-      "layout": "stack",
-      "imageWidth": "medium",
-      "accompanyingBody": "<p>Recent studies demonstrate that the <strong>G protein-coupled receptor (GPCR)</strong> GPR2 from the nematode-trapping fungus <strong><em>Arthrobotrys oligospora</em> (<em>A. oligospora</em>)</strong> can sense ascr#3. It triggers a <strong>mitogen-activated protein kinase (MAPK)</strong> cascade to activate downstream gene expression and ultimately initiate predatory behavior (Figure 4)<sup> [8]</sup>. This inspired our idea: we could repurpose this receptor to achieve early warning of PPNs!</p>",
-      "_template": "image"
+      "text": "Looking for chemical clues in the soil",
+      "attributes": "#description-looking-for-chemical-clues-in-the-soil toc=\"Looking for chemical clues in the soil\""
     },
     {
       "_template": "text",
-      "body": "<section class=\"author-manuscript\" lang=\"en\">"
+      "body": "Nematodes release a family of small signaling molecules called ascarosides\\. We focus on two of them, ascr\\#3 and ascr\\#18, and use differences in their relative abundance as a starting point for investigating signals from target and background nematodes\\."
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\"> <strong>Human Practices (HP)</strong> addresses a central question: how can nematode detection respond to real agricultural needs? For Field Detective's concept of engineered yeast sensing ascarosides and producing observable outputs, we used questionnaires, expert interviews, and field practice to clarify applications and design requirements. Education, outreach, and industry discussions connected the project with potential users and the public. </p>"
+      "body": "In real soil, several types of nematodes may contribute to the same chemical signals\\. We therefore designed a two\\-channel sensing approach: two sensors with different response preferences, tested against the same sample\\. We aim to learn more from their paired responses than either response could tell us alone\\. [Explore the basis of our two\\-signal approach →](/background/)"
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\"> For needs assessment, we collected 369 questionnaire submissions. Respondents prioritized ease of use, accuracy and reliability, and affordability; 53.4% lacked knowledge of PPNs. These results informed detection-workflow design and science communication. Visits to Tianjin Xiangyu Fruit and Vegetable Garden and the Diliubu Village Vegetable Demonstration Garden explored disease management and production experience, assessing specific needs against local crops and field conditions. </p>"
+      "body": "The idea begins with nematode\\-trapping fungi, which can sense chemical signals released by their prey\\. We chose one of their receptors, GPR2, as our main engineering target\\. Molecular docking helps us compare predicted positions and contacts of the two ascarosides within the receptor and propose mutations\\. <strong>Molecular dynamics (MD)</strong> simulations then let us examine how those contacts change in a membrane environment\\."
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\"> For project design, discussions with 姚玉荣, 刘倩, and 庞志豪 connected early detection with preplanting decisions and identified sampling representativeness, soil background color, ascaroside stability, and engineered-yeast disposal as concerns. The team expanded its focus to sampling, testing, interpretation, and post-test handling, organized soil collection, and produced sampling guidance, identifying conditions for experimental and modeling tests. </p>"
+      "body": "Together, these calculations provide specific hypotheses for receptor construction and response testing, keeping molecular design focused on the needs of the two\\-channel system\\. [Explore our receptor design →](/model-docking/)"
+    },
+    {
+      "_template": "heading",
+      "level": 3,
+      "text": "Turning chemical signals into readable color",
+      "attributes": "#description-turning-chemical-signals-into-readable-color toc=\"Turning chemical signals into readable color\""
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\"> For education and outreach, we designed three courses on nematodes and agriculture, biological signals, and scientific responsibility, adapting content for primary and junior-secondary students. Teaching and outreach took place through Nankai University's Xiangyang Program. Picture books, posters, and other materials helped explain underground disease and biosensing. Courses progressed from recognizing phenomena to interpreting signals and results, addressing knowledge needs identified in the questionnaire. </p>"
+      "body": "To make recognition visible, we use baker’s yeast, <strong><em>Saccharomyces cerevisiae</em> (<em>S.c</em>)</strong>, as the host for a system connecting a foreign receptor, intracellular signaling, and production of the yellow pigment betaxanthin\\. In this design, a signal received by the receptor travels through the yeast signaling pathway\\. A <strong>synthetic transcription factor (sTF)</strong> links that pathway to pigment production, giving the system a visible output\\."
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\"> For social support and industry engagement, we prepared invitations, proposals, and pitch materials to discuss applications, potential users, and further research with enterprises, receiving sponsorship from organizations including ExCell Bio. These exchanges provided resources and clarified collaboration conditions for future sample access, prototype evaluation, and real-world validation. </p>"
+      "body": "We have worked along this chain by examining receptor expression and localization, engineering the yeast host, and constructing the pigment\\-production module\\. Alongside these experiments, an <strong>ordinary differential equation (ODE)</strong> model describes how an input signal develops into color over time\\. It helps us examine whether different inputs can produce distinguishable outputs and identify the dose\\-response measurements, blanks, and time courses needed for calibration\\. [Explore our experimental work →](/results/) · [Explore our signaling model →](/model-ode/)"
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\"> This work integrated user needs, professional advice, and public communication into project development and refined validation priorities with the wet and dry labs. Real samples and technical data will subsequently test relationships between sensor output and nematode information and the usability of the workflow in agricultural settings. Detailed investigations, activity records, and feedback appear on the HP page. </p>"
+      "body": "To move toward a portable kit, we have also tested strip materials, cell immobilization, freeze\\-drying protection, and conditions for yeast revival and color development\\. We have made a holder for the strips\\. Each step addresses the same practical need: enabling biological sensing on a carrier that is easy to handle and read\\. [Explore our test strip development →](/results/)"
+    },
+    {
+      "_template": "heading",
+      "level": 3,
+      "text": "Making the color useful",
+      "attributes": "#description-making-the-color-useful toc=\"Making the color useful\""
     },
     {
       "_template": "text",
-      "body": "</section>"
+      "body": "A similar color intensity could arise from different combinations of target and background nematodes\\. We therefore analyze the two sensor responses together\\. Using simulations, we explore whether paired readings can estimate the density of the southern root\\-knot nematode when the number of background nematodes is unknown\\."
     },
     {
-      "text": "Project design & strategy",
+      "_template": "text",
+      "body": "This model connects receptor responses, signal transmission, and color readings, while providing a framework for future calibration with real mixed samples\\. [Explore our two\\-channel model →](/model-ode/)"
+    },
+    {
+      "_template": "text",
+      "body": "A density estimate raises another question: would knowing it change a management decision? Our economic model connects nematode density with potential yield loss, testing expenses, and treatment costs\\. It compares scenarios including no treatment, uniform treatment, and treatment adjusted to the detected risk level\\."
+    },
+    {
+      "_template": "text",
+      "body": "These comparisons feed back into the design of the test: which density ranges matter most, how much measurement error could change a decision, and whether the information is worth the cost of obtaining it\\. [Explore the value of detection information →](/model-eco/)"
+    },
+    {
+      "_template": "heading",
+      "level": 3,
+      "text": "Bringing the whole process back to the field",
+      "attributes": "#description-bringing-the-whole-process-back-to-the-field toc=\"Bringing the whole process back to the field\""
+    },
+    {
+      "_template": "text",
+      "body": "A low barrier to use depends on the whole testing process\\. Collecting a meaningful sample, preparing it, reading the result, and safely disposing of the materials all need to be manageable\\."
+    },
+    {
+      "_template": "text",
+      "body": "Expert discussions raised questions about representative sampling, soil background color, ascaroside stability, and disposal of engineered yeast\\. These questions entered our experimental and modeling discussions\\. Our soil collection and sampling guidance connect samples with information about crops, locations, and treatment histories, preparing the ground for testing under real environmental conditions\\. [Explore our field visits and expert discussions →](/hp-investigation/)"
+    },
+    {
+      "_template": "text",
+      "body": "Through age\\-adapted lessons, picture books, and outreach activities, we also explain soil nematodes, biological signals, and the principles behind our test\\. These activities help audiences understand what evidence is needed to interpret an observation\\. Industry discussions let us explore potential users, application conditions, and partnerships needed for further development\\. The project continues to take shape through feedback from laboratory research, agricultural practice, and public engagement\\. [Explore our education activities →](/education/) · [Explore our industry engagement →](/hp-industry/)"
+    },
+    {
+      "_template": "text",
+      "body": "The path we are working toward runs from soil sampling, through biological sensing and color readings, to risk information that can support further confirmation and management discussions\\. Our next steps are to calibrate sensor responses and models with real samples and evaluate the usability of the complete workflow, bringing molecular recognition closer to the practical needs of the field\\."
+    },
+    {
+      "_template": "heading",
       "level": 2,
-      "attributes": "#project-design toc=\"Project design & strategy\"",
-      "_template": "heading"
+      "text": "Innovation",
+      "attributes": "#description-innovation toc=\"Innovation\""
     },
     {
-      "body": "Based on the above background, we aim to construct yeast biosensors capable of specifically recognizing ascr#3 and ascr#18 through the collaboration of dry-lab, wet-lab and HP teams, to realize early warning for agricultural protection.\n",
-      "_template": "text"
-    },
-    {
-      "_template": "layout",
-      "kind": "workflow",
-      "label": "",
-      "attributes": "",
-      "body": ""
-    },
-    {
-      "text": "2.1 Wet lab",
+      "_template": "heading",
       "level": 3,
-      "attributes": "#wet-lab toc=\"Wet lab\"",
-      "_template": "heading"
+      "text": "1.1 Two responses to understand a mixed signal",
+      "attributes": "#description-two-responses-to-understand-a-mixed-signal toc=\"Two responses to understand a mixed signal\""
     },
     {
-      "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-8314b17ab26f-fig5.avif",
-      "alt": "Figure 5. Schematic of ascaroside-specific yeast biosensor construction. Drawn with assistance from ChatGPT.",
-      "body": "Figure 5. Schematic of ascaroside-specific yeast biosensor construction. Drawn with assistance from ChatGPT.\n",
-      "layout": "stack",
-      "imageWidth": "wide",
-      "accompanyingBody": "Based on dry-lab screening results, the wet-lab team will build yeast biosensors for the detection of various ascarosides (Figure 5). Experiments using HP-collected soil samples will supply data to support dry-lab <strong>ordinary differential equation (ODE)</strong> modeling. Our final deliverable is a freeze-dried yeast test strip for real-world use.\n",
-      "_template": "image"
+      "_template": "text",
+      "body": "Our sensing strategy combines two sensors with different response preferences for ascr\\#3 and ascr\\#18\\. Reading their responses together offers a way to investigate signals from samples containing both target and background nematodes\\."
     },
     {
-      "body": "<p>Literature shows that <strong><em>Saccharomyces cerevisiae</em> (<em>S.c</em>)</strong> serves as an excellent platform for GPCR display. With only two native GPCR signaling systems that are readily knockable, it is stable, fast-growing and easy to manipulate. Prior work has established yeast biosensing platforms to express heterologous GPCRs on yeast cell surfaces and produce visual readouts<sup>[9]</sup>. We adopt similar strategies to display engineered GPR proteins and achieve visual signal output via betaxanthin.</p>",
-      "_template": "text"
+      "_template": "text",
+      "body": "Receptor engineering explores how to create these complementary responses, while the two\\-channel model examines how paired readings could help estimate target nematode density\\. This connects molecular design with a central challenge of soil testing: extracting useful information from a mixture of biological signals\\. [Receptor engineering →](/model-docking/) · [Two\\-channel modeling →](/model-ode/)"
     },
     {
-      "body": "<p>Meanwhile, <em>S.c</em> features strong robustness, controllable genetics and established biosafety for humans, supporting cost-effective large-scale production. These properties lay critical foundations for fabricating freeze-dried yeast color strips. Requiring no extra equipment for detection, freeze-dried yeast color strips align well with our project goals. Thus, our final product is the freeze-dried yeast color strip.</p>",
-      "_template": "text"
-    },
-    {
-      "body": "Detailed experimental design and results can be found in [Wet Lab-Results](/results/)\n",
-      "_template": "text"
-    },
-    {
-      "text": "2.2 Dry lab",
+      "_template": "heading",
       "level": 3,
-      "attributes": "#dry-lab toc=\"Dry lab\"",
-      "_template": "heading"
+      "text": "1.2 A living sensor in an accessible test format",
+      "attributes": "#description-a-living-sensor-in-an-accessible-test-format toc=\"A living sensor in an accessible test format\""
     },
     {
       "_template": "text",
-      "body": "<section class=\"author-manuscript\" lang=\"en\">"
+      "body": "We bring fungal signal recognition, yeast signaling, and visible pigment production together in a paper\\-based format\\. The receptor provides the sensing element, the yeast pathway connects recognition to an output, and betaxanthin makes that output visible\\."
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\"> Our dry-lab work addresses three connected questions: how to select and engineer ascaroside-recognizing receptors, how to convert recognition signals into color outputs, and how detection results can support field management. Molecular docking, <strong>molecular dynamics (MD)</strong> simulations, ODE signaling models, and economic modeling provide computational support for project design. </p>"
+      "body": "Work on cell immobilization, freeze\\-drying, revival, and the strip holder addresses how this biological system can be handled as a practical test\\. **The intended advantage is a kit with a lower barrier to use:** a portable format, a visible readout, and procedures designed around the people who would collect samples and use the results\\."
     },
     {
       "_template": "text",
-      "body": "<p style=\"text-align:left;\"> For receptor recognition, <strong> molecular docking </strong> helps compare Gpr2, Gpr3, and GprC, identify Gpr2 hotspots, and design mutations. Score and interaction changes explore differences in recognition of ascr#3 and ascr#18. <strong> MD simulations </strong> further examine dynamic behavior in selected systems, tracking ligand positioning and key contacts over time to supplement structural hypotheses from docking. </p>"
+      "body": "This goal guides both the development of the test strip and the evaluation of the complete workflow, including preparation, reading, cost, and disposal\\. [Test strip development →](/results/) · [User needs and workflow →](/human-practices/)"
     },
     {
-      "_template": "text",
-      "body": "<p style=\"text-align:left;\"> For signal output, <strong> ODE modeling </strong> connects receptor input, intracellular signaling, and color development. We reused published pathways and calibrated input–output interfaces with simulated data, then converted paired pigment outputs into simulated smartphone <strong>red–green–blue (RGB)</strong> blue-channel features to fit <strong> the three-coefficient regression equation of the dual-channel model </strong>. This model estimates <em>Mi</em> density with unknown background abundance, providing input for risk tiers. Real samples and smartphone imaging data will support subsequent experimental calibration. </p>"
-    },
-    {
-      "_template": "text",
-      "body": "<p style=\"text-align:left;\"> For practical application, <strong> economic modeling </strong> examines what users can do after detecting a signal. Comparing costs and returns across risk tiers and management scenarios evaluates the decision value of detection information and identifies requirements for quantitative capability, detection range, and result presentation. Subsequent application evaluation will incorporate HP research and wet-lab data. </p>"
-    },
-    {
-      "_template": "text",
-      "body": "<p style=\"text-align:left;\"> Together, these four computational strands connect molecular design, system response, and application needs, supporting collaboration with Wet Lab and HP through candidate validation, model calibration, and use-scenario analysis. Detailed methods and results appear on the Model page. </p>"
-    },
-    {
-      "_template": "text",
-      "body": "</section>"
-    },
-    {
-      "text": "Innovative strategies",
-      "level": 2,
-      "attributes": "#innovative-strategies toc=\"Innovative strategies\"",
-      "_template": "heading"
-    },
-    {
-      "text": "3.1 Early-warning strategy for plant-parasitic nematode infestations",
+      "_template": "heading",
       "level": 3,
-      "attributes": "#early-warning-strategy-for-plant-parasitic-nematode-infestations toc=\"Early-warning strategy\"",
-      "_template": "heading"
+      "text": "1.3 Designing around the decision that follows",
+      "attributes": "#description-designing-around-the-decision-that-follows toc=\"Designing around the decision that follows\""
     },
     {
-      "body": "<p>Unlike conventional detection methods, our strategy features early warning, low cost and simple operation. This approach sensitively detects ascarosides and outputs pest risk levels via colorimetric readout on test strips. Designed for end users, our product holds broad application prospects and research value.</p>",
-      "_template": "text"
+      "_template": "text",
+      "body": "We connect the development of the test with the question of what a user could do with its result\\. HP identifies relevant settings and practical requirements\\. Modeling explores how paired readings might yield density information and when that information could change a management choice\\. These questions feed back into experimental calibration, readout design, and cost evaluation\\."
     },
     {
-      "text": "3.2 Strategy for reconstructing ascaroside-specific yeast biosensors",
-      "level": 3,
-      "attributes": "#strategy-for-reconstructing-ascaroside-specific-yeast-biosensors toc=\"Ascaroside-specific yeast biosensors\"",
-      "_template": "heading"
-    },
-    {
-      "body": "<p>We utilize a reported yeast sensing circuit chassis with signal cascade amplification capacity. The intact intracellular signal-amplifying module is retained. Only the ascaroside-specific receptor, independently designed by our team, is replaced on the yeast cell surface. This enables specific recognition of ascarosides, qualitative detection of ascaroside presence/absence and semi-quantitative measurement. It further expands the application scenarios of this yeast sensing platform for plant pest detection.</p>",
-      "_template": "text"
-    },
-    {
-      "text": "References",
-      "level": 2,
-      "attributes": "#references toc=\"References\"",
-      "_template": "heading"
-    },
-    {
-      "body": "1. Li J, Zou C, Xu J, et al. Molecular mechanisms of nematode-nematophagous microbe interactions: basis for biological control of plant-parasitic nematodes\\[J]. Annual Review of Phytopathology, 2015, 53(1): 67-95.\n2. Savary S, Willocquet L, Pethybridge S J, et al. The global burden of pathogens and pests on major food crops\\[J]. Nature Ecology & Evolution, 2019, 3(3): 431-439.\n3. Siddique S, Radakovic Z S, Hiltl C, et al. The genome and lifestage-specific transcriptomes of a plant-parasitic nematode and its host reveal susceptibility genes involved in trans-kingdom synthesis of vitamin B5\\[J]. Nature Communications, 2022, 13(1): 6190.\n4. Abad P, Gouzy J, Aury J M, et al. Genome sequence of the metazoan plant-parasitic nematode meloidogyne incognita\\[J]. Nature Biotechnology, 2008, 26(8): 909-915.\n5. Wu Z, Liu Z, Wang W, et al. Root-knot nematode meloidogyne incognita uses secondary-metabolite-mediated soil microbiome shifts to locate host plants\\[J]. Nature Plants, 2026, 12(2): 337-355.\n6. Pun, T. B., Thapa Magar, R., Koech, R., Owen, K. J., & Adorada, D. L. (2024). Emerging Trends and Technologies Used for the Identification, Detection, and Characterisation of Plant-Parasitic Nematode Infestation in Crops. Plants, 13(21), 3041. [https://doi.org/10.3390/plants13213041](https://doi.org/10.3390/plants13213041).\n7. <span>Manosalva, P., Manohar, M., von Reuss, S. <em>et al.</em> Conserved nematode signalling molecules elicit plant defenses and pathogen resistance. <em>Nat Commun</em> <strong>6</strong>, 7795 (2015). <a href=\"https://doi.org/10.1038/ncomms8795\">https://doi.org/10.1038/ncomms8795</a>. </span>\n8. Kuo, CY., Tay, R.J., Lin, HC. et al. The nematode-trapping fungus Arthrobotrys oligospora detects prey pheromones via G protein-coupled receptors. Nat Microbiol 9, 1738–1751 (2024). [https://doi.org/10.1038/s41564-024-01679-w](https://doi.org/10.1038/s41564-024-01679-w).\n9. Cong Fan, Nike He, Jifeng Yuan, Cascaded amplifying circuit enables sensitive detection of fungal pathogens, Biosensors and Bioelectronics, Volume 250, 2024, 116058, ISSN 0956-5663, [https://doi.org/10.1016/j.bios.2024.116058](https://doi.org/10.1016/j.bios.2024.116058).",
-      "_template": "text"
+      "_template": "text",
+      "body": "This approach gives us a concrete way to judge progress: can the proposed kit provide understandable information, at an accessible cost, at a time when it can help? By keeping that question central, we bring wet\\-lab engineering, computational modeling, and HP into the design of one usable screening approach\\. [Integrated HP →](/human-practices/) · [Economic evaluation →](/model-eco/)"
     },
     {
       "_template": "text",

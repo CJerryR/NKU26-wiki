@@ -531,17 +531,22 @@ function finalize(tree, file) {
   const rootH2 = new Set(tree.children.filter((c) => c.type === 'heading' && c.depth === 2));
   const toc = [];
   let n = 0;
+  let sub = 0;
+  let numberedSection = false;
   for (const h of headings) {
     const a = attrsOf(h);
     const id = h.data.hProperties.id;
     if (h.depth === 2 && rootH2.has(h) && !('notoc' in a)) {
-      n += 1;
-      const num = String(n).padStart(2, '0');
-      h.data.hProperties['data-num'] = num;
+      sub = 0;
+      numberedSection = !('unnumbered' in a);
+      const num = numberedSection ? String(++n).padStart(2, '0') : undefined;
+      if (num) h.data.hProperties['data-num'] = num;
       h.data.tocText = a.toc || toText(h);
       toc.push({ depth: 2, id, text: h.data.tocText, num });
-    } else if (h.depth >= 3 && 'toc' in a) {
-      toc.push({ depth: h.depth, id, text: a.toc || toText(h) });
+    } else if (h.depth === 3 && 'toc' in a) {
+      const sectionNum = numberedSection ? `${n}.${++sub}` : undefined;
+      const num = 'toc-unnumbered' in a ? undefined : sectionNum;
+      toc.push({ depth: h.depth, id, text: a.toc || toText(h), num });
     }
   }
 

@@ -25,7 +25,7 @@ const speciesNames = [
 ];
 const speciesPattern = speciesNames.map(s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
 const speciesText = new RegExp(`(?<![\\p{L}\\p{N}_./#-])(?:${speciesPattern})(?![\\p{L}\\p{N}_/#-]|\\.[\\p{L}\\p{N}_])`, 'gu');
-const scientificText = s => esc(s).replace(speciesText, value => `<em>${value}</em>`);
+const scientificText = s => esc(s).replace(new RegExp(`\\*(${speciesPattern})\\*`, 'gu'), '$1').replace(speciesText, value => `<em>${value}</em>`);
 const paragraphs = (s) => String(s || '').split(/\n\s*\n/).map(t => t.trim()).filter(Boolean).map(t => `<p>${scientificText(t)}</p>`).join('');
 const slug = s => String(s || '').toLowerCase().replace(/[^a-z0-9-]/g, '-').replace(/-+/g,'-').replace(/^-|-$/g,'') || 'member';
 // Optional portraits can only use site-relative or HTTPS image paths.

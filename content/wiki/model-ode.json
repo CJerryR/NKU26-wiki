@@ -23,7 +23,7 @@
       "_template": "heading",
       "level": 2,
       "text": "ODE and dual-channel models | from signal response to target density estimation",
-      "attributes": "#src-Model-ODE-1 toc=\"ODE and dual-channel models | from signal response to target density estimation\""
+      "attributes": "#src-Model-ODE-1 toc=\"ODE and dual-channel models | from signal response to target density estimation\" unnumbered"
     },
     {
       "_template": "layout",
@@ -46,7 +46,7 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "1.1 Starting from a minimal model to identify essential dynamics",
+      "text": "Starting from a minimal model to identify essential dynamics",
       "attributes": "#src-Model-ODE-7 toc=\"Starting from a minimal model to identify essential dynamics\""
     },
     {
@@ -96,7 +96,7 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "1.2 Connecting the published shared pathway to an effective color equation",
+      "text": "Connecting the published shared pathway to an effective color equation",
       "attributes": "#src-Model-ODE-19 toc=\"Connecting the published shared pathway to an effective color equation\""
     },
     {
@@ -162,7 +162,7 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "1.3 Varying target and background independently to construct dual-sensor inputs",
+      "text": "Varying target and background independently to construct dual-sensor inputs",
       "attributes": "#src-Model-ODE-35 toc=\"Varying target and background independently to construct dual-sensor inputs\""
     },
     {
@@ -200,7 +200,7 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "1.4 Adjusting input and output interfaces with simulated color targets",
+      "text": "Adjusting input and output interfaces with simulated color targets",
       "attributes": "#src-Model-ODE-45 toc=\"Adjusting input and output interfaces with simulated color targets\""
     },
     {
@@ -266,7 +266,7 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "1.5 Converting pigment concentrations into simulated smartphone color features",
+      "text": "Converting pigment concentrations into simulated smartphone color features",
       "attributes": "#src-Model-ODE-62 toc=\"Converting pigment concentrations into simulated smartphone color features\""
     },
     {
@@ -316,7 +316,7 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "1.6 Using paired colors to estimate target density",
+      "text": "Using paired colors to estimate target density",
       "attributes": "#src-Model-ODE-74 toc=\"Using paired colors to estimate target density\""
     },
     {
@@ -402,7 +402,7 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "1.7 Parameter tables",
+      "text": "Parameter tables",
       "attributes": "#src-Model-ODE-97 toc=\"Parameter tables\""
     },
     {

@@ -1,5 +1,12 @@
 {
   "source_repository_url": "https://gitlab.igem.org/2026/nku-china",
+  "social_links": {
+    "wechat": "",
+    "xiaohongshu": "",
+    "x": "",
+    "youtube": "",
+    "bilibili": ""
+  },
   "sponsors": [
     {
       "name": "ExCell",

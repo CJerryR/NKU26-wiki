@@ -1,0 +1,47 @@
+{
+  "task": "ruoxi-model-figure",
+  "source_url": "https://nankai.feishu.cn/wiki/XEYCwi8dMiiZhZkzU1Wc9rudnnh",
+  "source_archive": "Model -_ Overview.zip",
+  "source_archive_sha256": "28edae3e99a0ba59890f37cbbe87534c9e6c15c8f909e85e34478b667a687cd9",
+  "source_markdown_sha256": "c7cc4edf871875a2b556d562ed3116f3080bcbdd29fce9b04f9ad29443b2f6eb",
+  "source_image_entry": "图片和附件/image.png",
+  "placement": "After overview introduction and before Docking section, matching official Markdown export and coordinator visible-page observation.",
+  "caption": null,
+  "caption_note": "Official export contains only an image at this position; preserve absence of independent caption.",
+  "alt": "Modeling workflow from molecular recognition to management decisions: molecular docking and molecular dynamics inform receptor design; ODE and dual-channel models connect signal dynamics and paired color readouts to target density; the economic model compares management strategies, with structural feedback and calibration priorities.",
+  "preserve_existing_scientific_prose": true,
+  "team_content_review": "unchanged; not approved by this implementation",
+  "files": [
+    {
+      "path": "static/img/model-overview/overview-8d8c7cc2c80c.png",
+      "bytes": 1635240,
+      "sha256": "8d8c7cc2c80c567e130ce9c5f2c71c51cdff4ab64b7d52688d5f5e3671f743d8",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "upload_file": "static/img/model-overview/overview-8d8c7cc2c80c.png",
+      "upload_name": "overview-8d8c7cc2c80c.png",
+      "mime_type": "image/png",
+      "source_url": "https://nankai.feishu.cn/wiki/XEYCwi8dMiiZhZkzU1Wc9rudnnh",
+      "cdn_url": null,
+      "status": "prepared-local-candidate; official Uploads migration pending",
+      "runtime_references": [
+        "/img/model-overview/overview-8d8c7cc2c80c.png"
+      ],
+      "source_image_bytes_unchanged": true
+    }
+  ],
+  "base_commit": "95bb4e144428707e49c4f91062596b3410e804c0",
+  "validation": {
+    "build": "npm run build passed",
+    "content_audit": "npm run audit passed; team scientific review remains pending",
+    "source_integrity": "original ZIP image, source PNG and final built PNG have identical SHA-256; no image processing",
+    "prose_integrity": "removing the one new figure block restores baseline model JSON exactly",
+    "responsive": "1440x1000 and 390x844, light/dark; original aspect ratio, no page overflow, correct lead/figure/cards order, zero figcaptions",
+    "full_resolution": "mobile opens original PNG in new tab; native zoom changes displayed width from 390 to 1672 px",
+    "preview_port": 8946,
+    "upload_preflight": "source PNG plan hash and size valid; CDN not uploaded; local ZIP estimate 6629480 bytes exceeds 5000000-byte historical limit",
+    "publication": "not published; official CDN migration required before release"
+  }
+}

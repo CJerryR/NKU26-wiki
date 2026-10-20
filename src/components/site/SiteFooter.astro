@@ -1,6 +1,7 @@
 ---
 import { footerNav } from '../../data/nav';
 import { site } from '../../data/site';
+import { socialIcons } from '../../data/social-icons';
 import { getPages, byId, pageHref } from '../../lib/pages';
 
 const ids = byId(await getPages());
@@ -45,11 +46,25 @@ const friends = site.friends.map((s) => ({ ...s, url: site.safeUrl(s.url) }));
     ))}
   </div>
   <nav class="site-footer__resources" aria-label="Team and project resources">
-    <a href={site.teamPage}>Official team page</a>
+    <a class="site-footer__social" data-resource="team" href={site.teamPage} aria-label="Official team page" title="Official team page" style="--social-color: #7e3f8f">
+      <span class="site-footer__social-mark" aria-hidden="true"></span>
+    </a>
     <a href="https://www.nankai.edu.cn/">Nankai University</a>
-    <a href="https://igem.org/">iGEM</a>
     <a href="/licensing/">Licensing &amp; AI use</a>
-    {site.repository && <a href={site.repository}>GitLab source code</a>}
+    {site.repository && <a class="site-footer__social" data-resource="gitlab" href={site.repository} aria-label="GitLab source code" title="GitLab source code" style="--social-color: #fc6d26">
+      <span class="site-footer__social-mark" aria-hidden="true"></span>
+    </a>}
+    <span class="site-footer__socials" role="group" aria-label="Team social media">
+      {socialIcons.map(({ key, label, color }) => {
+        const configured = site.safeUrl(site.socialLinks[key]);
+        const href = /^https:\/\//i.test(configured) ? configured : '';
+        return <a class="site-footer__social" data-platform={key} href={href || undefined} role="link"
+          aria-label={label} aria-disabled={href ? undefined : 'true'}
+          title={href ? label : `${label} · Coming soon`} style={`--social-color: ${color}`}>
+          <span class="site-footer__social-mark" aria-hidden="true"></span>
+        </a>;
+      })}
+    </span>
   </nav>
   {friends.length > 0 && (
     <section class="site-footer__friends" aria-label="Friend teams">
@@ -65,6 +80,7 @@ const friends = site.friends.map((s) => ({ ...s, url: site.safeUrl(s.url) }));
     <summary>Credits, licenses &amp; AI use</summary>
     <div>
     <span>Fraunces, Spline Sans &amp; Space Mono: SIL OFL 1.1 &middot; Three.js: MIT</span>
+    <span>Social icons: <a href="https://simpleicons.org/">Simple Icons 16.0.0</a>, <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a>. Brand names and logos belong to their respective owners.</span>
     <span><a href="https://katex.org/">KaTeX</a> rendering and fonts: <a href="/widgets/vendor/katex/LICENSE">MIT</a></span>
     <span>AI assistance: OpenAI GPT-6 (implementation and checks); earlier local records credit GPT-5. Human review of final project content remains pending. Decorative artwork is illustrative, not scientific evidence.</span>
     <span>Inner-page opening illustrations: generated with OpenAI image generation in Codex, using team-provided artwork and layouts as references. These are decorative illustrations, not experimental images or model results.</span>

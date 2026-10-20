@@ -17,7 +17,7 @@ hidden: false
 
 <section class="author-manuscript" lang="en">
 
-## ODE and dual-channel models | from signal response to target density estimation {#src-Model-ODE-1 toc="ODE and dual-channel models | from signal response to target density estimation"}
+## ODE and dual-channel models | from signal response to target density estimation {#src-Model-ODE-1 toc="ODE and dual-channel models | from signal response to target density estimation" unnumbered}
 
 :::lead
 
@@ -37,7 +37,7 @@ hidden: false
 
 :::
 
-### 1.1 Starting from a minimal model to identify essential dynamics {#src-Model-ODE-7 toc="Starting from a minimal model to identify essential dynamics"}
+### Starting from a minimal model to identify essential dynamics {#src-Model-ODE-7 toc="Starting from a minimal model to identify essential dynamics"}
 
 <p> We initially built a minimal model along the ligand–receptor–<strong>guanine nucleotide-binding protein (G protein)</strong>–<strong>mitogen-activated protein kinase (MAPK)</strong>–<strong>synthetic transcription factor (sTF)</strong>–GAL–color pathway. The sTF design linking yeast <strong>G protein-coupled receptor (GPCR)</strong> signaling to the GAL system follows Fan and Yuan; the cascade-amplification design leading to betaxanthin output follows subsequent work by Fan et al. The equations below are our effective descriptions of these functional stages. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10753199/">[8]</a> <a href="https://pubmed.ncbi.nlm.nih.gov/38281368/">[5]</a></p>
 
@@ -61,7 +61,7 @@ hidden: false
 
 <p> We therefore reconsidered model detail: for yeast signaling pathways with published quantitative models, we reused reaction structures and parameters; for project-specific color production lacking independent observations, we retained an effective description and focused calibration on input and output interfaces. </p>
 
-### 1.2 Connecting the published shared pathway to an effective color equation {#src-Model-ODE-19 toc="Connecting the published shared pathway to an effective color equation"}
+### Connecting the published shared pathway to an effective color equation {#src-Model-ODE-19 toc="Connecting the published shared pathway to an effective color equation"}
 
 <p> Using Supady Model B and public TU Delft 2012 iGEM materials, we reconstructed the G protein cycle, scaffold module, Fus3 activation, and feedback. Compared with the initial two normalized signaling variables, the new shared core retains source-model reactions and records internal rates separately from project-specific adaptation parameters. <a href="https://rumo.biologie.hu-berlin.de/tbp/images/Theses/bsc_supady.pdf">[1]</a> <a href="https://2012.igem.org/Team:TU-Delft/Modeling/SingleCellModel">[2]</a></p>
 
@@ -93,7 +93,7 @@ hidden: false
 
 <p> The five shared-core equations and one color equation thus form a six-state model. We checked computational consistency before and after combining output relationships and between the six-state implementation and a reaction implementation retaining all states. Conservation reduces redundant states, while the merged color equation lets endpoint data primarily constrain a small number of effective parameters. The interface connecting Fus3 activity to project color production still requires experimental calibration. </p>
 
-### 1.3 Varying target and background independently to construct dual-sensor inputs {#src-Model-ODE-35 toc="Varying target and background independently to construct dual-sensor inputs"}
+### Varying target and background independently to construct dual-sensor inputs {#src-Model-ODE-35 toc="Varying target and background independently to construct dual-sensor inputs"}
 
 <p> Applying the pathway to mixed soil samples first requires specifying nematode contributions to input. We use the southern root-knot nematode <em>Mi</em> as target and <strong><em>Caenorhabditis elegans</em> (<em>Ce</em>)</strong> as background, retaining both <strong>ascaroside #3 (ascr#3)</strong> and <strong>ascaroside #18 (ascr#18)</strong> in the simulation. </p>
 
@@ -111,7 +111,7 @@ hidden: false
 
 <p> This design also defines experimental calibration: vary target and background independently, record paired colors for the same sample, and include blanks and different background levels. Real data can progressively replace release assumptions, response weights, and smartphone observation relationships. </p>
 
-### 1.4 Adjusting input and output interfaces with simulated color targets {#src-Model-ODE-45 toc="Adjusting input and output interfaces with simulated color targets"}
+### Adjusting input and output interfaces with simulated color targets {#src-Model-ODE-45 toc="Adjusting input and output interfaces with simulated color targets"}
 
 <p> Initial simulations produced similar endpoint colors across stimulus strengths. We therefore recognized that producing color also requires checking whether the pathway preserves sufficient input differences. </p>
 
@@ -157,7 +157,7 @@ hidden: false
 
 :::
 
-### 1.5 Converting pigment concentrations into simulated smartphone color features {#src-Model-ODE-62 toc="Converting pigment concentrations into simulated smartphone color features"}
+### Converting pigment concentrations into simulated smartphone color features {#src-Model-ODE-62 toc="Converting pigment concentrations into simulated smartphone color features"}
 
 <p> The intended product reads color using smartphone images, so we established an observation relationship between pigment concentration and image features. Stücheli et al. quantified indicaxanthin from smartphone <strong>red–green–blue (RGB)</strong> blue-channel images using a light-shielding box, blue background, and cuvettes, providing a reference for this conversion. <a href="https://academic.oup.com/nar/article/48/12/e67/5838858">[7]</a></p>
 
@@ -181,7 +181,7 @@ hidden: false
 
 <p> The ODE calculates pigment formation; the smartphone relationship describes its readout. Separating them allows the observation interface to be updated independently when actual smartphone calibration becomes available, followed by evaluation of density-estimation effects. </p>
 
-### 1.6 Using paired colors to estimate target density {#src-Model-ODE-74 toc="Using paired colors to estimate target density"}
+### Using paired colors to estimate target density {#src-Model-ODE-74 toc="Using paired colors to estimate target density"}
 
 <p> With the ODE and smartphone conversion fixed, we generated 45 paired readouts from different <em>Mi</em> and <em>Ce</em> density combinations. <em>Mi</em> densities were 0, 5, 10, 20, 40, 60, 80, 100, and 120; <em>Ce</em> densities were 0, 40, 80, 140, and 200, all in individuals / 100 cm³ soil. </p>
 
@@ -239,7 +239,7 @@ c-1 5-5 9-11 9h-2L532 67 19 159h-2c-5 0-9-4-11-9l-5-22c-1-6 2-12 8-13z"/></svg><
 
 <p> The ODE and dual-channel model now have distinct roles: the former calculates paired colors from mixed inputs; the latter estimates <em>Mi</em> density from those colors. Code, parameter sources, frozen configurations, and examples support reproduction and provide an interface for measured paired data. The next Eco chapter considers how density information affects management and expected returns. </p>
 
-### 1.7 Parameter tables {#src-Model-ODE-97 toc="Parameter tables"}
+### Parameter tables {#src-Model-ODE-97 toc="Parameter tables"}
 
 <p> The following tables summarize shared-pathway, color-module, and dual-channel interpretation parameters, distinguishing published model values, project settings, analytical conversions, and simulation fits. </p>
 

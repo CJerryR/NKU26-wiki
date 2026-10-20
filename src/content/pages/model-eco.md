@@ -17,7 +17,7 @@ hidden: false
 
 <section class="author-manuscript" lang="en">
 
-## Eco | from color readouts to management decisions {#src-Model-Eco-1 toc="Eco | from color readouts to management decisions"}
+## Eco | from color readouts to management decisions {#src-Model-Eco-1 toc="Eco | from color readouts to management decisions" unnumbered}
 
 :::lead
 
@@ -27,7 +27,7 @@ hidden: false
 
 <p> The app lets us directly explore a question: <strong> When growers already have the option of uniform treatment, how much additional return can knowledge of nematode density provide? </strong> The Eco model therefore connects density with potential yield loss, treatment costs, and testing costs to examine when density information changes management choices and whether that change covers the costs of acquiring information and adjusting treatment. </p>
 
-### 1.1 Exploring the connection from color to returns in the interactive app {#src-Model-Eco-4 toc="Exploring the connection from color to returns in the interactive app"}
+## Exploring the connection from color to returns in the interactive app {#src-Model-Eco-4 toc="Exploring the connection from color to returns in the interactive app"}
 
 <p> In NemaKlear, readers can follow model outputs through color response → density estimation → management choice → economic outcome. </p>
 
@@ -49,7 +49,7 @@ hidden: false
 
 <p> The app also provides a full report for reviewing parameters and sensitivity analyses and downloading calculations for verification. </p>
 
-### 1.2 Connecting color development and economic analysis through density {#src-Model-Eco-15 toc="Connecting color development and economic analysis through density"}
+## Connecting color development and economic analysis through density {#src-Model-Eco-15 toc="Connecting color development and economic analysis through density"}
 
 <p> The ODE, dual-channel model, and Eco perform three sequential tasks. The ODE describes how receptor input generates color through intracellular pathways; the dual-channel model uses paired color features to estimate southern root-knot nematode density when background nematodes also contribute; Eco combines density estimates with production and management parameters to calculate economic outcomes. </p>
 
@@ -61,7 +61,7 @@ hidden: false
 
 <p> The interface retains both density point estimates and regression prediction intervals. When an interval crosses a management-tier boundary, the program calculates scenarios on both sides to show possible changes in treatment choices and returns. Negative densities and results outside calibration or economic-model support ranges are not passed downstream; the page explains calibration status and applicability conditions. </p>
 
-### 1.3 Calculating yield loss and net returns from nematode density {#src-Model-Eco-21 toc="Calculating yield loss and net returns from nematode density"}
+## Calculating yield loss and net returns from nematode density {#src-Model-Eco-21 toc="Calculating yield loss and net returns from nematode density"}
 
 <p> We use Spanish protected tomato production and the southern root-knot nematode as an example, calculating returns per hectare per production season from preplanting density. </p>
 
@@ -75,7 +75,7 @@ hidden: false
 
 <p> The model combines yield relationships and economic parameters from different studies into a reproducible literature-based scenario. Testing cost is provisionally set to <strong>5 EUR/ha</strong> as a team assumption. Sources are retained for published prices, treatment costs, and converted efficacy so these can be updated for actual application conditions. </p>
 
-### 1.4 Using two baselines to distinguish control benefits from information value {#src-Model-Eco-28 toc="Using two baselines to distinguish control benefits from information value"}
+## Using two baselines to distinguish control benefits from information value {#src-Model-Eco-28 toc="Using two baselines to distinguish control benefits from information value"}
 
 <p> Higher returns after testing can reflect both control itself and density-based treatment adjustment. We therefore define three management scenarios to separate these contributions. </p>
 
@@ -95,7 +95,7 @@ hidden: false
 
 <p> The first evaluates the entire testing-and-tiered-treatment package; the second evaluates the conditional value of using density information to adjust action when uniform treatment is already available. Separating the baselines helps identify whether increased returns arise from implementing control or changing treatment after obtaining information. </p>
 
-### 1.5 When density information is worth obtaining {#src-Model-Eco-40 toc="When density information is worth obtaining"}
+## When density information is worth obtaining {#src-Model-Eco-40 toc="When density information is worth obtaining"}
 
 <p> At a density of <strong>100 J2/100 cm³</strong>, with all other parameters at the example settings, the model gives the following results: </p>
 
@@ -121,7 +121,7 @@ hidden: false
 
 :::
 
-### 1.6 Feeding economic comparisons back into detection design {#src-Model-Eco-52 toc="Feeding economic comparisons back into detection design"}
+## Feeding economic comparisons back into detection design {#src-Model-Eco-52 toc="Feeding economic comparisons back into detection design"}
 
 <p> Eco focuses detection design on density ranges where management choices may change. Semiquantitative or quantitative information can support management tiers when different densities imply different treatments. Near boundaries, estimation bias may alter choices, making these ranges priorities for calibration and evaluation. </p>
 

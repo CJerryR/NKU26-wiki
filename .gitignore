@@ -9,6 +9,7 @@ static/admin/
 .tina-static/
 public/
 .astro/
+.astro-cache/
 dist/
 .DS_Store
 __pycache__/

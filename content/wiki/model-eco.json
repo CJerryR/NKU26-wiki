@@ -23,7 +23,7 @@
       "_template": "heading",
       "level": 2,
       "text": "Eco | from color readouts to management decisions",
-      "attributes": "#src-Model-Eco-1 toc=\"Eco | from color readouts to management decisions\""
+      "attributes": "#src-Model-Eco-1 toc=\"Eco | from color readouts to management decisions\" unnumbered"
     },
     {
       "_template": "layout",
@@ -36,8 +36,8 @@
     },
     {
       "_template": "heading",
-      "level": 3,
-      "text": "1.1 Exploring the connection from color to returns in the interactive app",
+      "level": 2,
+      "text": "Exploring the connection from color to returns in the interactive app",
       "attributes": "#src-Model-Eco-4 toc=\"Exploring the connection from color to returns in the interactive app\""
     },
     {
@@ -82,8 +82,8 @@
     },
     {
       "_template": "heading",
-      "level": 3,
-      "text": "1.2 Connecting color development and economic analysis through density",
+      "level": 2,
+      "text": "Connecting color development and economic analysis through density",
       "attributes": "#src-Model-Eco-15 toc=\"Connecting color development and economic analysis through density\""
     },
     {
@@ -108,8 +108,8 @@
     },
     {
       "_template": "heading",
-      "level": 3,
-      "text": "1.3 Calculating yield loss and net returns from nematode density",
+      "level": 2,
+      "text": "Calculating yield loss and net returns from nematode density",
       "attributes": "#src-Model-Eco-21 toc=\"Calculating yield loss and net returns from nematode density\""
     },
     {
@@ -138,8 +138,8 @@
     },
     {
       "_template": "heading",
-      "level": 3,
-      "text": "1.4 Using two baselines to distinguish control benefits from information value",
+      "level": 2,
+      "text": "Using two baselines to distinguish control benefits from information value",
       "attributes": "#src-Model-Eco-28 toc=\"Using two baselines to distinguish control benefits from information value\""
     },
     {
@@ -180,8 +180,8 @@
     },
     {
       "_template": "heading",
-      "level": 3,
-      "text": "1.5 When density information is worth obtaining",
+      "level": 2,
+      "text": "When density information is worth obtaining",
       "attributes": "#src-Model-Eco-40 toc=\"When density information is worth obtaining\""
     },
     {
@@ -228,8 +228,8 @@
     },
     {
       "_template": "heading",
-      "level": 3,
-      "text": "1.6 Feeding economic comparisons back into detection design",
+      "level": 2,
+      "text": "Feeding economic comparisons back into detection design",
       "attributes": "#src-Model-Eco-52 toc=\"Feeding economic comparisons back into detection design\""
     },
     {

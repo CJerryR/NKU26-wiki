@@ -1642,7 +1642,7 @@
       renderer.render(LV[0].scene, LV[0].cam);
       chinaPhase(time, merge);
       if (labelEl) {
-        var hs = NK.smooth(0.6, 1, merge);
+        var hs = 1; // Keep the next field location visible before the reader starts the flight.
         labelEl.style.opacity = hs.toFixed(3);
         if (hs > 0) {
           tmp.copy(LV[0].label).project(LV[0].cam);

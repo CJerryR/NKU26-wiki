@@ -3,7 +3,7 @@
   --font-display: var(--font-body);
   --footer-before: var(--paper);
   position: relative; z-index: 1; isolation: isolate; overflow: hidden;
-  background: var(--loam-3); color: var(--cream-2); padding-bottom: 28px;
+  background: var(--loam-3); color: var(--cream-2); padding-bottom: 20px;
   font-family: var(--font-body); font-size: 16px; font-weight: 400; line-height: 1.6;
 }
 .site-footer a { color: inherit; text-decoration: none; }
@@ -13,7 +13,7 @@
 /* Original Subsurface footer artwork, recovered from the GitHub history. */
 .site-footer__seal { position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: .18; -webkit-mask: linear-gradient(180deg, rgb(0 0 0 / .18), #000 34%); mask: linear-gradient(180deg, rgb(0 0 0 / .18), #000 34%); }
 .site-footer__seal img { display: block; width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: center 30%; filter: saturate(1.08) contrast(1.04) brightness(1.12); }
-.site-footer__edge { position: relative; height: clamp(60px, 7vw, 108px); }
+.site-footer__edge { position: relative; height: clamp(40px, 4vw, 60px); }
 .site-footer__edge svg { display: block; width: 100%; height: 100%; }
 /* Offset soil layers end at separate curves; the front curve opens directly
    onto the animated footer background, with no rectangular strip below it. */
@@ -22,66 +22,82 @@
 .site-footer__edge .edge-top { fill: var(--footer-before); }
 .home .site-footer { --footer-before: var(--home-closing-surface); }
 .site-footer__inner, .site-footer__resources, .site-footer__friends, .site-footer__bottom { width: min(100% - 44px, 1240px); margin-inline: auto; }
-.site-footer__inner { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 36px; padding: 40px 0 44px; }
-.site-footer__brand { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(240px, .9fr) minmax(0, 2.1fr); align-items: start; gap: 48px; min-width: 0; padding-bottom: 32px; border-bottom: 1px solid var(--line-loam); }
+.site-footer__inner { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 20px 30px; padding: 20px 0 22px; }
+.site-footer__brand { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(240px, .9fr) minmax(0, 2.1fr); align-items: center; gap: 32px; min-width: 0; padding-bottom: 16px; border-bottom: 1px solid var(--line-loam); }
 .site-footer__identity, .site-footer__about { min-width: 0; }
 .site-footer__logo { display: inline-flex; align-items: center; gap: 12px; color: var(--cream); }
 .site-footer__logo img { width: 38px; height: 50px; }
 .site-footer__logo span { display: flex; flex-direction: column; line-height: 1.1; }
 .site-footer__logo b { font-size: 24px; font-weight: 750; color: var(--cream); }
 .site-footer__logo em { font-family: var(--font-body); font-size: 17px; font-weight: 600; color: var(--gold, var(--amber-soft)); }
-.site-footer__brand p { margin-top: 14px; max-width: 64ch; font-size: 16px; line-height: 1.65; }
+.site-footer__brand p { margin-top: 6px; max-width: 64ch; font-size: 16px; line-height: 1.65; }
 .site-footer__brand p b { color: var(--cream); font-weight: 700; }
 .site-footer__about .site-footer__tagline { margin-top: 0; font-size: 24px; font-weight: 650; line-height: 1.3; color: var(--cream); letter-spacing: -.015em; }
 .site-footer__col { min-width: 0; }
 .site-footer__col h2, .site-footer__friends h2 { font: 750 19px/1.35 var(--font-body); color: var(--cream); letter-spacing: -.01em; }
-.site-footer__col ul { margin-top: 16px; display: grid; gap: 8px; }
-.site-footer__col a { display: inline-block; padding-block: 3px; font-size: 16px; font-weight: 500; line-height: 1.5; overflow-wrap: normal; transition: color .2s; }
-.site-footer__resources { display: flex; flex-wrap: wrap; gap: 14px 32px; padding: 24px 0; border-top: 1px solid var(--line-loam); font-size: 16px; font-weight: 600; }
-/* Keep the wide institutional wordmark legible above two columns of partners. */
-.site-footer__sponsors { grid-column: 2; grid-row: 1 / span 2; width: 444px; max-width: 100%; justify-self: end; }
-.site-footer__sponsors ul { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 12px; }
-.site-footer__sponsors li { min-width: 0; flex: 0 0 calc((100% - 12px) / 2); }
-.site-footer__sponsors li[data-logo-wide] { flex-basis: 100%; order: -1; }
-.site-footer__sponsor { display: grid; place-items: center; box-sizing: border-box; width: 100%; height: 60px; padding: 7px 10px; border-radius: 6px; background: #fff; }
+.site-footer__col ul { margin-top: 10px; display: grid; gap: 2px; }
+.site-footer__col a { display: inline-block; padding-block: 2px; font-size: 16px; font-weight: 500; line-height: 1.5; overflow-wrap: normal; transition: color .2s; }
+.site-footer__resources { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; padding: 14px 0; border-top: 1px solid var(--line-loam); font-size: 16px; font-weight: 600; }
+.site-footer__socials { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 10px; margin-left: auto; }
+.site-footer__resources .site-footer__social { display: inline-flex; justify-content: center; align-items: center; flex: 0 0 44px; width: 44px; height: 44px; padding: 0; border-radius: 11px; background: var(--social-color); color: #fff; }
+.site-footer__social-mark { display: block; width: 24px; height: 24px; background: currentColor; -webkit-mask: var(--social-mark) center / contain no-repeat; mask: var(--social-mark) center / contain no-repeat; }
+.site-footer__social[data-platform="wechat"] { --social-mark: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M8.691%202.188C3.891%202.188%200%205.476%200%209.53c0%202.212%201.17%204.203%203.002%205.55a.59.59%200%200%201%20.213.665l-.39%201.48c-.019.07-.048.141-.048.213%200%20.163.13.295.29.295a.326.326%200%200%200%20.167-.054l1.903-1.114a.864.864%200%200%201%20.717-.098%2010.16%2010.16%200%200%200%202.837.403c.276%200%20.543-.027.811-.05-.857-2.578.157-4.972%201.932-6.446%201.703-1.415%203.882-1.98%205.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785%205.991c.642%200%201.162.529%201.162%201.18a1.17%201.17%200%200%201-1.162%201.178A1.17%201.17%200%200%201%204.623%207.17c0-.651.52-1.18%201.162-1.18zm5.813%200c.642%200%201.162.529%201.162%201.18a1.17%201.17%200%200%201-1.162%201.178%201.17%201.17%200%200%201-1.162-1.178c0-.651.52-1.18%201.162-1.18zm5.34%202.867c-1.797-.052-3.746.512-5.28%201.786-1.72%201.428-2.687%203.72-1.78%206.22.942%202.453%203.666%204.229%206.884%204.229.826%200%201.622-.12%202.361-.336a.722.722%200%200%201%20.598.082l1.584.926a.272.272%200%200%200%20.14.047c.134%200%20.24-.111.24-.247%200-.06-.023-.12-.038-.177l-.327-1.233a.582.582%200%200%201-.023-.156.49.49%200%200%201%20.201-.398C23.024%2018.48%2024%2016.82%2024%2014.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53%203.274c.535%200%20.969.44.969.982a.976.976%200%200%201-.969.983.976.976%200%200%201-.969-.983c0-.542.434-.982.97-.982zm4.844%200c.535%200%20.969.44.969.982a.976.976%200%200%201-.969.983.976.976%200%200%201-.969-.983c0-.542.434-.982.969-.982z%22%2F%3E%3C%2Fsvg%3E"); }
+.site-footer__social[data-platform="xiaohongshu"] { --social-mark: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M22.405%209.879c.002.016.01.02.07.019h.725a.797.797%200%200%200%20.78-.972.794.794%200%200%200-.884-.618.795.795%200%200%200-.692.794c0%20.101-.002.666.001.777zm-11.509%204.808c-.203.001-1.353.004-1.685.003a2.528%202.528%200%200%201-.766-.126.025.025%200%200%200-.03.014L7.7%2016.127a.025.025%200%200%200%20.01.032c.111.06.336.124.495.124.66.01%201.32.002%201.981%200%20.01%200%20.02-.006.023-.015l.712-1.545a.025.025%200%200%200-.024-.036zM.477%209.91c-.071%200-.076.002-.076.01a.834.834%200%200%200-.01.08c-.027.397-.038.495-.234%203.06-.012.24-.034.389-.135.607-.026.057-.033.042.003.112.046.092.681%201.523.787%201.74.008.015.011.02.017.02.008%200%20.033-.026.047-.044.147-.187.268-.391.371-.606.306-.635.44-1.325.486-1.706.014-.11.021-.22.03-.33l.204-2.616.022-.293c.003-.029%200-.033-.03-.034zm7.203%203.757a1.427%201.427%200%200%201-.135-.607c-.004-.084-.031-.39-.235-3.06a.443.443%200%200%200-.01-.082c-.004-.011-.052-.008-.076-.008h-1.48c-.03.001-.034.005-.03.034l.021.293c.076.982.153%201.964.233%202.946.05.4.186%201.085.487%201.706.103.215.223.419.37.606.015.018.037.051.048.049.02-.003.742-1.642.804-1.765.036-.07.03-.055.003-.112zm3.861-.913h-.872a.126.126%200%200%201-.116-.178l1.178-2.625a.025.025%200%200%200-.023-.035l-1.318-.003a.148.148%200%200%201-.135-.21l.876-1.954a.025.025%200%200%200-.023-.035h-1.56c-.01%200-.02.006-.024.015l-.926%202.068c-.085.169-.314.634-.399.938a.534.534%200%200%200-.02.191.46.46%200%200%200%20.23.378.981.981%200%200%200%20.46.119h.59c.041%200-.688%201.482-.834%201.972a.53.53%200%200%200-.023.172.465.465%200%200%200%20.23.398c.15.092.342.12.475.12l1.66-.001c.01%200%20.02-.006.023-.015l.575-1.28a.025.025%200%200%200-.024-.035zm-6.93-4.937H3.1a.032.032%200%200%200-.034.033c0%201.048-.01%202.795-.01%206.829%200%20.288-.269.262-.28.262h-.74c-.04.001-.044.004-.04.047.001.037.465%201.064.555%201.263.01.02.03.033.051.033.157.003.767.009.938-.014.153-.02.3-.06.438-.132.3-.156.49-.419.595-.765.052-.172.075-.353.075-.533.002-2.33%200-4.66-.007-6.991a.032.032%200%200%200-.032-.032zm11.784%206.896c0-.014-.01-.021-.024-.022h-1.465c-.048-.001-.049-.002-.05-.049v-4.66c0-.072-.005-.07.07-.07h.863c.08%200%20.075.004.075-.074V8.393c0-.082.006-.076-.08-.076h-3.5c-.064%200-.075-.006-.075.073v1.445c0%20.083-.006.077.08.077h.854c.075%200%20.07-.004.07.07v4.624c0%20.095.008.084-.085.084-.37%200-1.11-.002-1.304%200-.048.001-.06.03-.06.03l-.697%201.519s-.014.025-.008.036c.006.01.013.008.058.008%201.748.003%203.495.002%205.243.002.03-.001.034-.006.035-.033v-1.539zm4.177-3.43c0%20.013-.007.023-.02.024-.346.006-.692.004-1.037.004-.014-.002-.022-.01-.022-.024-.005-.434-.007-.869-.01-1.303%200-.072-.006-.071.07-.07l.733-.003c.041%200%20.081.002.12.015.093.025.16.107.165.204.006.431.002%201.153.001%201.153zm2.67.244a1.953%201.953%200%200%200-.883-.222h-.18c-.04-.001-.04-.003-.042-.04V10.21c0-.132-.007-.263-.025-.394a1.823%201.823%200%200%200-.153-.53%201.533%201.533%200%200%200-.677-.71%202.167%202.167%200%200%200-1-.258c-.153-.003-.567%200-.72%200-.07%200-.068.004-.068-.065V7.76c0-.031-.01-.041-.046-.039H17.93s-.016%200-.023.007c-.006.006-.008.012-.008.023v.546c-.008.036-.057.015-.082.022h-.95c-.022.002-.028.008-.03.032v1.481c0%20.09-.004.082.082.082h.913c.082%200%20.072.128.072.128V11.19s.003.117-.06.117h-1.482c-.068%200-.06.082-.06.082v1.445s-.01.068.064.068h1.457c.082%200%20.076-.006.076.079v3.225c0%20.088-.007.081.082.081h1.43c.09%200%20.082.007.082-.08v-3.27c0-.029.006-.035.033-.035l2.323-.003c.098%200%20.191.02.28.061a.46.46%200%200%201%20.274.407c.008.395.003.79.003%201.185%200%20.259-.107.367-.33.367h-1.218c-.023.002-.029.008-.028.033.184.437.374.871.57%201.303a.045.045%200%200%200%20.04.026c.17.005.34.002.51.003.15-.002.517.004.666-.01a2.03%202.03%200%200%200%20.408-.075c.59-.18.975-.698.976-1.313v-1.981c0-.128-.01-.254-.034-.38%200%20.078-.029-.641-.724-.998z%22%2F%3E%3C%2Fsvg%3E"); }
+.site-footer__social[data-platform="x"] { --social-mark: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M14.234%2010.162%2022.977%200h-2.072l-7.591%208.824L7.251%200H.258l9.168%2013.343L.258%2024H2.33l8.016-9.318L16.749%2024h6.993zm-2.837%203.299-.929-1.329L3.076%201.56h3.182l5.965%208.532.929%201.329%207.754%2011.09h-3.182z%22%2F%3E%3C%2Fsvg%3E"); }
+.site-footer__social[data-platform="youtube"] { --social-mark: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M23.498%206.186a3.016%203.016%200%200%200-2.122-2.136C19.505%203.545%2012%203.545%2012%203.545s-7.505%200-9.377.505A3.017%203.017%200%200%200%20.502%206.186C0%208.07%200%2012%200%2012s0%203.93.502%205.814a3.016%203.016%200%200%200%202.122%202.136c1.871.505%209.376.505%209.376.505s7.505%200%209.377-.505a3.015%203.015%200%200%200%202.122-2.136C24%2015.93%2024%2012%2024%2012s0-3.93-.502-5.814zM9.545%2015.568V8.432L15.818%2012l-6.273%203.568z%22%2F%3E%3C%2Fsvg%3E"); }
+.site-footer__social[data-platform="bilibili"] { --social-mark: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M17.813%204.653h.854c1.51.054%202.769.578%203.773%201.574%201.004.995%201.524%202.249%201.56%203.76v7.36c-.036%201.51-.556%202.769-1.56%203.773s-2.262%201.524-3.773%201.56H5.333c-1.51-.036-2.769-.556-3.773-1.56S.036%2018.858%200%2017.347v-7.36c.036-1.511.556-2.765%201.56-3.76%201.004-.996%202.262-1.52%203.773-1.574h.774l-1.174-1.12a1.234%201.234%200%200%201-.373-.906c0-.356.124-.658.373-.907l.027-.027c.267-.249.573-.373.92-.373.347%200%20.653.124.92.373L9.653%204.44c.071.071.134.142.187.213h4.267a.836.836%200%200%201%20.16-.213l2.853-2.747c.267-.249.573-.373.92-.373.347%200%20.662.151.929.4.267.249.391.551.391.907%200%20.355-.124.657-.373.906zM5.333%207.24c-.746.018-1.373.276-1.88.773-.506.498-.769%201.13-.786%201.894v7.52c.017.764.28%201.395.786%201.893.507.498%201.134.756%201.88.773h13.334c.746-.017%201.373-.275%201.88-.773.506-.498.769-1.129.786-1.893v-7.52c-.017-.765-.28-1.396-.786-1.894-.507-.497-1.134-.755-1.88-.773zM8%2011.107c.373%200%20.684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c0-.373.129-.689.386-.947.258-.257.574-.386.947-.386zm8%200c.373%200%20.684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c.017-.391.15-.711.4-.96.249-.249.56-.373.933-.373Z%22%2F%3E%3C%2Fsvg%3E"); }
+.site-footer__social[data-resource="team"] { --social-mark: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%3E%3Ccircle%20cx%3D%229%22%20cy%3D%227%22%20r%3D%223%22%2F%3E%3Cpath%20d%3D%22M3%2021v-3a6%206%200%200%201%2012%200v3M17%204a3%203%200%200%201%200%206M21%2021v-3a6%206%200%200%200-3-5%22%2F%3E%3C%2Fsvg%3E"); }
+.site-footer__social[data-resource="gitlab"] { --social-mark: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22m23.6004%209.5927-.0337-.0862L20.3.9814a.851.851%200%200%200-.3362-.405.8748.8748%200%200%200-.9997.0539.8748.8748%200%200%200-.29.4399l-2.2055%206.748H7.5375l-2.2057-6.748a.8573.8573%200%200%200-.29-.4412.8748.8748%200%200%200-.9997-.0537.8585.8585%200%200%200-.3362.4049L.4332%209.5015l-.0325.0862a6.0657%206.0657%200%200%200%202.0119%207.0105l.0113.0087.03.0213%204.976%203.7264%202.462%201.8633%201.4995%201.1321a1.0085%201.0085%200%200%200%201.2197%200l1.4995-1.1321%202.4619-1.8633%205.006-3.7489.0125-.01a6.0682%206.0682%200%200%200%202.0094-7.003z%22%2F%3E%3C%2Fsvg%3E"); }
+.site-footer__social[aria-disabled="true"] { cursor: default; }
+/* A single partner row keeps the desktop footer compact. */
+.site-footer__sponsors { grid-column: 1 / -1; grid-row: 2; width: 100%; min-width: 0; }
+.site-footer__sponsors ul { display: grid; grid-template-columns: 1.7fr repeat(4, minmax(0, 1fr)); gap: 10px; }
+.site-footer__sponsors li { min-width: 0; }
+.site-footer__sponsors li[data-logo-wide] { order: -1; }
+.site-footer__sponsor { display: grid; place-items: center; box-sizing: border-box; width: 100%; height: 48px; padding: 6px 10px; border-radius: 6px; background: #fff; }
 .site-footer__sponsor[data-logo-background="dark"] { background: #152430; }
-.site-footer__sponsor img { display: block; width: 100%; height: 46px; object-fit: contain; }
+.site-footer__sponsor img { display: block; width: 100%; height: 36px; object-fit: contain; }
 .site-footer__sponsor-name { font: 700 13px/1.15 var(--font-body); color: #2a1d33; text-align: center; letter-spacing: -.005em; text-wrap: balance; }
 .site-footer__friends { margin-bottom: 24px; }
 .site-footer__friends ul { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-top: 16px; font-size: 16px; }
 .site-footer__friends span { margin-left: 6px; color: var(--cream-3); }
-.site-footer__bottom { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px 36px; align-items: start; padding-top: 24px; border-top: 1px solid var(--line-loam); }
+.site-footer__bottom { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 14px 24px; align-items: start; padding-top: 14px; border-top: 1px solid var(--line-loam); }
 .site-footer__legal { grid-column: 1; grid-row: 1; display: flex; flex-wrap: wrap; gap: 10px 28px; font-size: 14px; color: var(--cream-2); }
-.site-footer__credits { grid-column: 1; grid-row: 2; min-width: 0; font-size: 14px; color: var(--cream-2); }
+.site-footer__credits { grid-column: 2; grid-row: 1; min-width: 0; font-size: 14px; color: var(--cream-2); }
+.site-footer__credits[open] { grid-column: 1 / -1; grid-row: 3; }
 .site-footer__credits summary { width: fit-content; cursor: pointer; font-weight: 600; }
 .site-footer__credits summary:hover { color: var(--cream); }
 .site-footer__credits > div { display: grid; gap: 8px; max-width: 100ch; padding-top: 14px; }
 .site-footer__credits a, .site-footer__legal a { text-decoration: underline; text-underline-offset: 3px; }
 .site-footer :focus-visible { outline: 2px solid var(--amber); outline-offset: 4px; }
 @media (max-width: 1100px) {
-  .site-footer__inner { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px 32px; }
-  .site-footer__brand { grid-template-columns: minmax(220px, .9fr) minmax(0, 1.6fr); gap: 32px; }
+  .site-footer__inner { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+  .site-footer__brand { grid-template-columns: minmax(220px, .9fr) minmax(0, 1.6fr); gap: 24px; }
+  .site-footer__sponsors ul { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+  .site-footer__sponsors li[data-logo-wide] { grid-column: 1 / -1; }
 }
 @media (max-width: 760px) {
-  .site-footer__inner { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 24px; padding-top: 32px; }
-  .site-footer__brand { grid-template-columns: 1fr; gap: 24px; padding-bottom: 28px; }
+  .site-footer__inner { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 20px; padding-top: 20px; }
+  .site-footer__brand { grid-template-columns: 1fr; gap: 12px; padding-bottom: 16px; }
   .site-footer__about .site-footer__tagline { font-size: 22px; }
-  .site-footer__resources { gap: 16px 28px; }
+  .site-footer__resources { gap: 12px 20px; }
+  .site-footer__socials { margin-left: 0; }
   .site-footer__bottom { grid-template-columns: minmax(0, 1fr); }
+  .site-footer__sponsors ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .site-footer__sponsors li[data-logo-wide] .site-footer__sponsor { height: 56px; }
   .site-footer__sponsors { grid-column: 1; grid-row: 2; justify-self: end; width: 100%; }
-  .site-footer__credits { grid-row: 3; }
+  .site-footer__credits { grid-column: 1; grid-row: 3; }
 }
-@media (max-width: 360px) { .site-footer__inner { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce), print { .site-footer__seal { display: none; } }
 
 
 @media (max-width: 760px) {
   .site-footer { padding-bottom: calc(100px + env(safe-area-inset-bottom, 0px)); }
   .site-footer__inner, .site-footer__resources, .site-footer__friends, .site-footer__bottom { width: calc(100% - 40px); }
-  .site-footer__inner { gap: 28px 20px; padding-bottom: 28px; }
+  .site-footer__inner { gap: 24px 20px; padding-bottom: 20px; }
   .site-footer__col ul { gap: 0; margin-top: 10px; }
   .site-footer__col a { display: flex; align-items: center; min-height: 44px; padding-block: 8px; line-height: 1.4; overflow-wrap: anywhere; }
-  .site-footer__resources { gap: 0 20px; padding-block: 16px; }
+  .site-footer__resources { gap: 12px 20px; padding-block: 14px; }
   .site-footer__resources a, .site-footer__friends a { display: inline-flex; align-items: center; min-height: 44px; }
   .site-footer__credits { overflow-wrap: anywhere; }
   .site-footer__credits summary { display: list-item; min-height: 44px; padding-block: 10px; }

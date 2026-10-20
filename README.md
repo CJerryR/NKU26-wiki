@@ -2,7 +2,7 @@
 
 南开大学 NKU-China 团队参加 iGEM 2026 的项目网站，队伍编号 **6303**。网站围绕农业线虫与双通道检测方案，展示项目设计、实验结果、模型、人类实践和团队工作。
 
-当前版本为 **V10.2.9**，精简首页六张成果卡片的说明文字，让团队配图更突出；保留新版 DBTL、成员照片和完整团队合照。本文按正式站功能和源码编写，发布时间及版本记录见文末。
+当前版本为 **V10.2.14**，精简页脚链接并收紧页脚布局。本文按正式站功能和源码编写，发布时间及版本记录见文末。
 
 - [正式网站](https://2026.igem.wiki/nku-china/)
 - [GitLab 源码](https://gitlab.igem.org/2026/nku-china)
@@ -18,13 +18,12 @@
 | Model | Overview、Molecular Docking、Molecular Dynamics、ODE and Two-channel Sensing、Economic Benefit |
 | Human Practices | Overview、Integrated Human Practices、Education、Investigation、Industry Engagement and Support |
 | Team | Members、Attributions |
-| Historical Source Documents | 原始交稿、历史版本和可下载原件 |
 
 首页采用分段交互叙事，内页使用剪纸插画开场。网站提供全站搜索、浮动目录、昼夜模式、桌面与手机布局；横屏和矮屏单独适配。
 
 模型页面接入作者完整程序，支持原始读数输入、ODE 曲线、双通道估计、经济策略比较及报告下载。Python 计算在浏览器中运行，无需部署 Python 后端。
 
-Members 与 Attributions 各收录 27 位成员；Members 展示新版个人照片与完整团队合照，贡献页保留 137 条个人贡献。页脚集中展示团队导航、南开校徽、支持单位、许可与 AI 使用说明。未启用的可选页面不生成导航入口。
+Members 与 Attributions 各收录 27 位成员；Members 展示新版个人照片与完整团队合照，贡献页收录 138 条个人贡献，并补齐合作方支持表。页脚集中展示团队导航、南开校徽、支持单位、许可与 AI 使用说明。未启用的可选页面不生成导航入口。
 
 ## 本地运行
 
@@ -55,7 +54,8 @@ npm run dev
 | 作者原始模型程序 | `vendor/nemaklear-original/` |
 | 浏览器模型适配 | `src/nemaklear/`、`tools/prepare-nemaklear.mjs` |
 | 素材地址与供稿来源 | `content/cdn-assets.json`、`content/wiki-provenance.json` |
-| 首页成果配图的原件与 CDN 映射 | `assets/source-images/home-built-20261020/`、`docs/home-built-cdn-20261020.json` |
+| 首页成果配图的原件与 CDN 映射 | `assets/source-images/home-built-20261020/`、`docs/what-we-built-approved-cdn-20261020.json` |
+| 最新正文配图的 CDN 映射与原件记录 | `docs/recent-assets-cdn-20261020.json`；PNG 原件保存在本地发布归档 |
 | 版本清单与弹窗 | `README.md`、`src/components/site/ChangeNotice.astro` |
 
 `content/wiki/*.json` 是正式正文源，`src/content/pages/*.md` 由导出工具生成。不要只改生成的 Markdown；Tina 保存后可运行 `node tools/export-tina.mjs` 同步，构建时也会自动导出。
@@ -90,9 +90,63 @@ Licensing 独立页当前没有正文，现有许可与 AI 使用说明位于页
 
 ## 版本改动
 
+### V10.2.14 改动：
+
+改动时间：2026-10-20 09:55:48（北京时间）
+
+1. Official team page 与 GitLab source code 改为圆角方形图标，移除单独的 iGEM 链接，并压缩页脚留白及合作方标志布局。
+
+### V10.2.13 改动：
+
+改动时间：2026-10-20 05:16:30（北京时间）
+
+1. 按若希最新英文原稿更新 Model Overview、Docking 和 Molecular Dynamics，保留正文、图注、数据及参考文献。
+2. Overview 四枚原图标链接至对应模型章节；桌面并排、手机四宫格。
+3. 竖图与对应段落并排，手机自动上下排列；横图完整显示并统一图注边界。
+4. 补回 Docking 原始数据表，新增 MD 分析图迁移至官方 CDN。
+5. Eco 模型提前加载并缓存已校验运行资源；计算源文件保持原样。
+
+本轮 ODE 最新稿的公式缺项与 Eco 空白规则表等待来源确认；两页正文保留现有完整版本，未用猜测补写。
+
+### V10.2.12 改动：
+
+改动时间：2026-10-20 04:48:32（北京时间）
+
+1. 页脚链接行增加微信公众号、小红书、X、YouTube、bilibili 的圆角方形图标，五个入口并排。
+
+### V10.2.11 改动：
+
+发布时间：2026-10-20 04:42:34（北京时间）
+
+1. 按最新英文稿更新 Description、Engineering 和 Contribution。
+2. 更新 Model 总览流程图和 Docking 高清图。
+3. 更新 Attributions 的 138 条个人贡献。
+4. 补齐合作方支持、外部贡献和 AI 使用说明。
+5. 统一正文宽度、字号、行距及段落对齐。
+6. 统一标题大小写、章节编号和目录层级。
+7. 统一术语首次释义、缩写和物种斜体。
+8. 图片完整等比显示，统一图片框和图注排版。
+9. 移除正文、导航、搜索和弹窗中的历史原稿入口。
+10. 首页找到线虫后固定照明，并提示继续下滚。
+11. 世界地图增加紫色案例点的点击提示。
+12. 调整中国地图和 HP 地图的标题及定位提示。
+13. 统一信号动画的标题字号，修正说明文字越界。
+14. 首页侦探按钮增加返回顶部提示。
+15. 修正实验菌株表述，补充 Parts Registry 链接。
+16. 移除 Results 中尚未完成的两段验证结果。
+17. 新增正文配图迁移至官方 CDN，保留原件与像素核对记录。
+
+### V10.2.10 改动：
+
+发布时间：2026-10-20 03:57:51（北京时间）
+
+1. 恢复用户明确确认的三组双卡布局；保留完整伸出画框的插图，去掉六段说明文字。
+2. 六张原版 SVG 上传官方 CDN，保持矢量文件字节一致；恢复 Modeling 标题。
+3. 仅修正 What we built 区域，保留最新 DBTL、成员与其他已合并修改。
+
 ### V10.2.9 改动：
 
-改动时间：2026-10-20 03:10:49（北京时间）
+发布时间：2026-10-20 03:17:31（北京时间）
 
 1. 移除首页六张成果卡片的说明小字，保留标题和团队配图。
 2. 调整卡片图片占用空间，保留最新官方 CDN 地址与页面链接。

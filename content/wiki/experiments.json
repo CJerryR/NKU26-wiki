@@ -402,7 +402,7 @@
       "_template": "heading",
       "text": "2.17 Development of a hydrophobic vapor-deposition coating process for test strips",
       "level": 3,
-      "attributes": "#hydrophobic-vapor-deposition-coating toc=\"Development of a hydrophobic vapor-deposition coating process for test strips\""
+      "attributes": "#hydrophobic-vapor-deposition-coating toc=\"Development of a hydrophobic vapor-deposition coating process for test strips\" toc-unnumbered"
     },
     {
       "_template": "pdf",
@@ -751,7 +751,7 @@
       "_template": "heading"
     },
     {
-      "body": "<p>In this project, we constructed a total of 9 yeast strains. The workflow and summary table are displayed below. </p>",
+      "body": "<p>In this project, we designed a total of 9 yeast strains. The workflow and summary table are displayed below. </p>",
       "_template": "text"
     },
     {

@@ -18,9 +18,9 @@ export const primaryNav: NavItem[] = [
   {
     kind: 'group', id: 'project', label: 'Project', narrow: true, items: [
       { page: 'description', label: 'Description', blurb: 'Why nematode signals, and what we propose' },
+      { page: 'background', label: 'Background', blurb: 'The pest, its cost and why it persists' },
       { page: 'engineering', label: 'Engineering', blurb: 'Design, build, test, learn' },
       { page: 'contribution', label: 'Contribution', blurb: 'What future teams can reuse' },
-      { page: 'background', label: 'Background', blurb: 'The pest, its cost and why it persists', optional: true },
     ],
   },
   {

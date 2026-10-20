@@ -387,10 +387,6 @@ Figure 11. Schematic diagram of sTF Expression Cassette transformation.
 
 :::
 
-<p>Finally, we co-transformed the p426-SNR52p-gSTE2-SUP4t plasmid and linearized pRS315-TEF1p-GPR2 plasmid. The <em>GPR2</em> gene was successfully recombined into the <em>STE2</em> locus (Figure 13).</p>
-
-Figure 13. Schematic diagram of GPR2 transformation (a) and transformant validation (b). (Placeholder)
-
 #### 2.4.4 Learn {#learn-5 toc="Learn | advancing to GPR2 mutant characterization"}
 
 So far, the chassis engineered yeast strain of our project has been constructed. Meanwhile, the dry lab finished the modification of GPR2 mutants. We therefore moved to the next cycle to characterize the screened GPR2 mutants.
@@ -420,10 +416,6 @@ Based on the results from previous cycles and dry lab, we still used one-step cl
 <p><strong>Figure 2. Construction of pRS315-TEF1p-GPR2-N84V (a) and pRS315-TEF1p-GPR2-V368R (b). </strong>Whole-plasmid sequencing confirmed the correct base sequences in key regions.</p>
 
 :::
-
-Subsequently, we mixed the p426-SNR52p-gSTE2-SUP4t plasmid with each of the two plasmids mentioned above and co-transformed them into strain NKU-Y06. The recombination locus was identical to that used for GPR2 knock-in. After transformant validation, we successfully obtained two strains carrying GPR2 mutants (Figure 3).
-
-Figure 3. Transformant validation of GPR2 (a), GPR2-N84V (b), and GPR2-V368R (c). (Placeholder)
 
 #### 2.5.3 Learn {#learn-6 toc="Learn | identifying the need for test-strip productization"}
 

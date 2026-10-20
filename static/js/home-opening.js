@@ -1250,6 +1250,7 @@
     S.detected = L.nodes.length;
     revealTrail(L.nodes.length + 1, t);
     root.classList.add('is-found');
+    if (focusEl) focusEl.setAttribute('aria-label', 'Nematode found. Scroll down or press Arrow Down to continue.');
     setLine('found', 'is-found', true);
     setTimeout(showBig, 450);
     NK.state.found = true;
@@ -1306,6 +1307,7 @@
 
   /* ---------------- input ---------------- */
   function pointerTo(e) {
+    if (S.found && S.exploring) return;
     var r = stageRect();
     ptr.x = e.clientX - r.left; ptr.y = e.clientY - r.top;
     pointerN.x = ptr.x / r.width; pointerN.y = ptr.y / r.height;
@@ -1317,6 +1319,7 @@
   stage.addEventListener('pointerleave', function () { ptr.seen = false; });
   if (focusEl) {
     focusEl.addEventListener('keydown', function (e) {
+      if (S.found && S.exploring) return; // ArrowDown continues the story after discovery.
       var step = 0.9, used = true;
       if (e.key === 'ArrowLeft') light.tx -= step;
       else if (e.key === 'ArrowRight') light.tx += step;
@@ -1462,12 +1465,15 @@
         if (!ptr.seen && !guide) { light.tx = L.nodes[0].x + 1.6; light.ty = L.nodes[0].y + 1.9; }
       }
     }
-    U.uAmb.value = 1 - NK.smooth(0.2, 0.85, d);
+    var foundReveal = S.found ? (NK.reduced ? 1 : NK.smooth(0, 1.2, t - S.foundT)) : 0;
+    U.uAmb.value = Math.max(1 - NK.smooth(0.2, 0.85, d), 0.65 * foundReveal * d);
     if (art.fadeT > -2e9 && built.art) U.uFade.value = NK.smooth(0, 700, performance.now() - art.fadeT);
     U.uOn.value = NK.lerp(0.8, 1, NK.smooth(0.3, 0.9, d));
 
     /* light motion */
-    if (guide) {
+    if (S.found && exploring) {
+      light.tx = L.nem.x; light.ty = L.nem.y;
+    } else if (guide) {
       if (exploring) guideStep(t, dt);
     } else if (ptr.seen) {
       var w = toWorld(ptr.x, ptr.y); light.tx = w.x; light.ty = w.y;

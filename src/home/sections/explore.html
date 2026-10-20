@@ -1,10 +1,10 @@
 <!-- v8.6: "What we built" and "Explore the wiki" are one page. Top: the timeline (moved up);
-     middle: the six results cards, with separate text and illustration rows; bottom: the eight doors in one row, with the
+     middle: six title-and-artwork cards in three pairs; bottom: the eight doors in one row, with the
      mascot at the left edge. -->
 <section class="ex ex--one" id="explore" data-nav-label="What we built, and the wiki" data-tone="dark" aria-labelledby="explore-title">
   <div class="wrap">
     <div class="ex__path" data-ex-path>
-      <p class="ex__path-title">A colour is where the next step starts</p>
+      <p class="ex__path-title">A color is where the next step starts</p>
       <ol>
         <li><b>Soil sampling</b></li>
         <li><b>Risk pre-screen</b></li>
@@ -14,15 +14,28 @@
       <i class="ex__beam" aria-hidden="true"></i>
     </div>
     <div class="ex__built">
-      <h2 class="ex__built-title" id="built-title">What we built</h2>
-<div class="bt__grid ex__built-grid" data-bt>
-      <a class="bt__card" href="{{HOME_URL:results}}"><img class="bt__art" src="https://static.igem.wiki/teams/6303/wiki/home-20261020/home-built-strain-construction.webp" alt="" width="878" height="616" loading="lazy" decoding="async"><small>Wet Lab</small><b>Strain construction</b></a>
-      <a class="bt__card" href="{{HOME_URL:results}}#dbtl-3-test-strip-development-and-productization"><img class="bt__art" src="https://static.igem.wiki/teams/6303/wiki/home-20261020/home-built-test-strip.webp" alt="" width="878" height="616" loading="lazy" decoding="async"><small>Wet Lab</small><b>Test strip development</b></a>
-      <a class="bt__card" href="{{HOME_URL:model}}#docking--identifying-engineering-directions-for-differential-responses-to-two-ligands"><img class="bt__art" src="https://static.igem.wiki/teams/6303/wiki/home-20261020/home-built-prediction.webp" alt="" width="878" height="616" loading="lazy" decoding="async"><small>Dry Lab</small><b>Prediction</b></a>
-      <a class="bt__card" href="{{HOME_URL:model}}#ode-and-dual-channel-models--from-signal-input-to-target-density-estimation"><img class="bt__art" src="https://static.igem.wiki/teams/6303/wiki/home-20261020/home-built-computational-report.webp" alt="" width="878" height="616" loading="lazy" decoding="async"><small>Dry Lab</small><b>Computational report</b></a>
-      <a class="bt__card" href="{{HOME_URL:human-practices}}"><img class="bt__art" src="https://static.igem.wiki/teams/6303/wiki/home-20261020/home-built-survey.webp" alt="" width="878" height="616" loading="lazy" decoding="async"><small>Human Practices</small><b>Survey</b></a>
-      <a class="bt__card" href="{{HOME_URL:education}}"><img class="bt__art" src="https://static.igem.wiki/teams/6303/wiki/home-20261020/home-built-education.webp" alt="" width="878" height="616" loading="lazy" decoding="async"><small>Human Practices</small><b>Education</b></a>
-    </div>
+      <div class="ex__built-head">
+        <h2 class="ex__built-title" id="built-title">What we built</h2>
+      </div>
+      <!-- Team artwork (materials/originals/wwb.svg), one self-contained SVG per card. Each canvas is the
+           drawn panel plus the room its figure needs below it, so no figure is cut. -->
+      <div class="bt__grid bt__grid--wwb ex__built-grid" data-bt data-wwb>
+        <div class="bt__group" role="group" aria-labelledby="bt-wet">
+          <h3 class="bt__group-title" id="bt-wet">Wet Lab</h3>
+          <a class="bt__card bt__card--wwb" href="{{HOME_URL:results}}"><b>Strain construction</b><span class="bt__art"><img src="https://static.igem.wiki/teams/6303/wiki/home-20261020/wwb-wetlab-strain-3a1bd18028.svg" width="908" height="770" alt="" loading="lazy" decoding="async" /></span></a>
+          <a class="bt__card bt__card--wwb" href="{{HOME_URL:engineering}}"><b>Test strip development</b><span class="bt__art"><img src="https://static.igem.wiki/teams/6303/wiki/home-20261020/wwb-wetlab-test-strip-e1ebb710ba.svg" width="908" height="770" alt="" loading="lazy" decoding="async" /></span></a>
+        </div>
+        <div class="bt__group" role="group" aria-labelledby="bt-dry">
+          <h3 class="bt__group-title" id="bt-dry">Dry Lab</h3>
+          <a class="bt__card bt__card--wwb bt__card--prediction" href="{{HOME_URL:model-docking}}"><b>Prediction</b><span class="bt__art"><img src="https://static.igem.wiki/teams/6303/wiki/home-20261020/wwb-drylab-prediction-b93156aeb6.svg" width="908" height="770" alt="" loading="lazy" decoding="async" /></span></a>
+          <a class="bt__card bt__card--wwb" href="{{HOME_URL:model}}"><b>Modeling</b><span class="bt__art"><img src="https://static.igem.wiki/teams/6303/wiki/home-20261020/wwb-drylab-modeling-bfe6956c11.svg" width="908" height="770" alt="" loading="lazy" decoding="async" /></span></a>
+        </div>
+        <div class="bt__group" role="group" aria-labelledby="bt-hp">
+          <h3 class="bt__group-title" id="bt-hp">Human Practices</h3>
+          <a class="bt__card bt__card--wwb" href="{{HOME_URL:human-practices}}"><b>Survey</b><span class="bt__art"><img src="https://static.igem.wiki/teams/6303/wiki/home-20261020/wwb-hp-survey-9d7df69557.svg" width="908" height="770" alt="" loading="lazy" decoding="async" /></span></a>
+          <a class="bt__card bt__card--wwb" href="{{HOME_URL:education}}"><b>Education</b><span class="bt__art"><img src="https://static.igem.wiki/teams/6303/wiki/home-20261020/wwb-hp-education-f88e864412.svg" width="908" height="770" alt="" loading="lazy" decoding="async" /></span></a>
+        </div>
+      </div>
     </div>
     <div class="ex__main">
       <div class="ex__mascot" data-ex-mascot aria-hidden="true"><img src="https://static.igem.wiki/teams/6303/wiki/v8-0/v8-7ef6f2e4ae30-mascot-lg.avif" width="589" height="538" alt="" loading="lazy" /></div>

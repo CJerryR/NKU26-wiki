@@ -603,14 +603,6 @@
       "imageWidth": "wide"
     },
     {
-      "_template": "text",
-      "body": "<p>Finally, we co-transformed the p426-SNR52p-gSTE2-SUP4t plasmid and linearized pRS315-TEF1p-GPR2 plasmid. The <em>GPR2</em> gene was successfully recombined into the <em>STE2</em> locus (Figure 13).</p>"
-    },
-    {
-      "_template": "text",
-      "body": "Figure 13. Schematic diagram of GPR2 transformation (a) and transformant validation (b). (Placeholder)"
-    },
-    {
       "_template": "heading",
       "text": "2.4.4 Learn",
       "level": 4,
@@ -661,14 +653,6 @@
       "body": "<p><strong>Figure 2. Construction of pRS315-TEF1p-GPR2-N84V (a) and pRS315-TEF1p-GPR2-V368R (b). </strong>Whole-plasmid sequencing confirmed the correct base sequences in key regions.</p>",
       "layout": "full",
       "imageWidth": "wide"
-    },
-    {
-      "_template": "text",
-      "body": "Subsequently, we mixed the p426-SNR52p-gSTE2-SUP4t plasmid with each of the two plasmids mentioned above and co-transformed them into strain NKU-Y06. The recombination locus was identical to that used for GPR2 knock-in. After transformant validation, we successfully obtained two strains carrying GPR2 mutants (Figure 3)."
-    },
-    {
-      "_template": "text",
-      "body": "Figure 3. Transformant validation of GPR2 (a), GPR2-N84V (b), and GPR2-V368R (c). (Placeholder)"
     },
     {
       "_template": "heading",
