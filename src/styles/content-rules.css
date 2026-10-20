@@ -16,6 +16,12 @@ main:has(.doc), .doc, .pager { --measure: 65rem; --bleed: 0px; }
   letter-spacing: .005em;
 }
 .doc .doc-section + .doc-section { margin-top: clamp(56px, 5vw, 76px); }
+/* A preface sits outside the first H2 wrapper (sometimes inside reading-layout); give
+   that first chapter the same separation as later chapters, while a page-opening
+   chapter remains flush after only a title, navigation, or legacy anchor. */
+.doc .prose :not(:where(.doc-section, .legacy-section-anchor, .manuscript-title, .hp-chapter-nav, nav, h1)):not(:has(.legacy-section-anchor)) ~ .doc-section:first-of-type {
+  margin-top: clamp(56px, 5vw, 76px);
+}
 
 /* Manuscript HTML contains inline typography. These important declarations
    replace only its presentation; emphasis and scientific italics stay intact. */
