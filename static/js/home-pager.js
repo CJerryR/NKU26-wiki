@@ -52,6 +52,35 @@
     };
   }
   // End wheel intent helper.
+  // Gesture gate helper.
+  /* Round 2 (2026-10-21). One physical gesture (a swipe and its momentum, or
+     a burst of wheel notches) keeps one id, whatever the device: it ends at a
+     reversal or a quiet gap. A main-thread stall inside momentum (the 3D
+     scenes) arrives as one large coalesced delta at the same rate and does not
+     split it; a renewed push after the momentum has decayed starts a new one. */
+  function makeGestureGate() {
+    var id = 0, t0 = 0, lastT = -Infinity, lastRate = 0, dir = 0, ema = 0, peak = 0, trough = 0, rise = 0;
+    return function (delta, now) {
+      var a = Math.abs(delta), d = delta > 0 ? 1 : -1, gap = now - lastT;
+      var rate = a / Math.max(16, gap), fresh = !id;
+      if (!fresh) {
+        if (gap > 420) fresh = true;
+        else if (gap > 140) fresh = !(d === dir && lastRate > 0.08 && rate >= lastRate * 0.35 && rate <= lastRate * 1.4);
+        if (!fresh && d !== dir && a >= 4) fresh = true;
+        if (!fresh) {
+          ema = ema * 0.5 + a * 0.5;
+          if (ema >= peak) { peak = trough = ema; rise = 0; }
+          else if (ema < trough) { trough = ema; rise = 0; }
+          else if (trough < peak * 0.6 && ema > trough * 1.8 + 5) { if (++rise >= 2) fresh = true; }
+          else rise = 0;
+        }
+      }
+      if (fresh) { id++; t0 = now; dir = d; ema = peak = trough = a; rise = 0; }
+      lastT = now; lastRate = rate;
+      return { id: id, start: t0, dir: dir };
+    };
+  }
+  // End gesture gate helper.
   var H = window.NKUH; if (!H) return;
   var scenes = {};
   H.scene = function (id, spec) { scenes[id] = spec; };
@@ -66,7 +95,7 @@
       return { el: el, id: el.id, sp: sp, steps: sp.steps || 0, label: el.getAttribute('data-nav-label') || el.id };
     });
     if (!pages.length) return;
-    var mq = matchMedia('(pointer: fine) and (min-width: 960px) and (min-height: 600px)');
+    var mq = matchMedia('(pointer: fine) and (min-width: 960px) and (min-height: 560px)');
     var paged = false, cur = 0, st = 0, busy = false, busyTimer = 0, atFoot = false, doneAt = 0, leaving = false, leaveTimer = 0;
     var html = root, PAGE_MS = 720;   // v7.2: 950 -> 720 ms per page
     /* v7.7: least starting speed of a move, in "page heights per duration"
@@ -106,7 +135,7 @@
         pg.dot.classList.toggle('is-next', i === nextDot);
       });
       var pg = pages[cur];
-      cue.classList.toggle('is-on', paged && !busy && st < pg.steps && !pg.sp.noCue);
+      cue.classList.toggle('is-on', paged && !busy && performance.now() >= holdUntil - 30 && st < pg.steps && !pg.sp.noCue);
       if (root.getAttribute('data-page') !== pg.id) { var det = document.querySelector('[data-detective]'); if (det) det.classList.remove('show-bubble'); }
       root.setAttribute('data-page', pg.id);
       root.setAttribute('data-step', String(st));
@@ -190,9 +219,23 @@
     function lock(ms) {
       doneAt = performance.now() + Math.max(0, ms);
       busy = true; clearTimeout(busyTimer); dots();
-      busyTimer = setTimeout(function () { busy = false; if (paged) { halt(); write(rest()); } dots(); armHint(); drainStoryInput(); }, Math.max(0, ms));
+      busyTimer = setTimeout(function () {
+        busy = false; if (paged) { halt(); write(rest()); }
+        releasedAt = performance.now();
+        var hold = pages[cur].sp.hold != null ? pages[cur].sp.hold : 320;
+        holdUntil = releasedAt + hold;
+        dots(); armHint(); drainStoryInput();
+        if (hold > 0) setTimeout(dots, hold + 20);
+      }, Math.max(0, ms));
     }
     var inputSpeed = 1, activeDir = 1;
+    /* Round 2: the 3D stretch (world map -> China flight -> hidden threat) is
+       gated. A gesture triggers at most one move; the next move needs a new
+       gesture that starts after the scene has come to rest, and each stop is
+       held for the scene's 'hold' ms first. Nothing is queued or hurried. */
+    var GATED = { world: 1, china: 1, threat: 1 };
+    var gate = makeGestureGate(), spent = 0, actedAt = -Infinity, releasedAt = -Infinity, holdUntil = 0;
+    var eligId = 0, gacc = 0, leanT = 0, leanPg = null;
     var storyWheel = makeStoryWheel(), pendingStory = null;
     function drainStoryInput() {
       var q = pendingStory; pendingStory = null;
@@ -265,6 +308,13 @@
       var now = performance.now(), d = e.deltaY * (e.deltaMode === 1 ? 16 : e.deltaMode === 2 ? innerHeight : 1), a = Math.abs(d);
       if (!a) return;
       e.preventDefault(); touched();
+      // Input time, not handler time: events queued behind a long 3D frame keep
+      // the time the hand made them (old engines use another clock: ignore it).
+      var ts = e.timeStamp > 0 && Math.abs(e.timeStamp - now) < 5000 ? e.timeStamp : now;
+      var g = gate(d, ts);
+      if (GATED[pages[cur].id]) { gatedWheel(d, ts, g); return; }
+      // The gesture that left the gated stretch cannot also drive the next page.
+      if (g.id === spent && ts < holdUntil + 600) return;
       if (pages[cur].id === 'traces' || pages[cur].sp.pacedWheel) {
         var intent = storyWheel(d, e.deltaMode, now);
         if (!intent) return;
@@ -332,6 +382,46 @@
         inputSpeed = 1 + force * 2.4;
         d > 0 ? next() : prev();
       } else if (!internal) pullBy(d, 14);
+    }
+    function lean(f) {
+      var pg = pages[cur];
+      clearTimeout(leanT);
+      if (leanPg && leanPg !== pg && leanPg.sp.lean) leanPg.sp.lean(0);
+      leanPg = pg;
+      if (!pg.sp.lean || H.reduced) return;
+      pg.sp.lean(f);
+      if (f) leanT = setTimeout(function () { pg.sp.lean(0); gacc = 0; }, 180);
+    }
+    // now = when the hand made this input (a queued event keeps its own time)
+    function gatedWheel(d, now, g) {
+      var pg = pages[cur];
+      if (busy) {
+        // A new gesture against the running scene may turn it back; nothing else
+        // (momentum, a second push the same way) changes a running shot.
+        if (leaving || A.mode === 'tween' || g.id === spent || g.start <= actedAt || g.dir === activeDir) return;
+        if (eligId !== g.id) { eligId = g.id; gacc = 0; }
+        gacc += d;
+        if (Math.abs(gacc) >= (pg.sp.gateDelta || 32) && (g.dir > 0 ? st < pg.steps : st > 0)) {
+          spent = g.id; actedAt = now; gacc = 0; clearTimeout(busyTimer); busy = false;
+          inputSpeed = 1; turns++; g.dir > 0 ? next() : prev();
+        }
+        return;
+      }
+      // (a push begun just before the scene settled still counts)
+      var fresh = g.id !== spent && g.start >= releasedAt - 150;
+      // Momentum stays spent even when it outlasts the camera hold.
+      // Only a new gesture may advance another shot.
+      if (now < holdUntil || !fresh) return;
+      if (eligId !== g.id) { eligId = g.id; gacc = 0; }
+      gacc += d;
+      var internal = d > 0 ? st < pg.steps : st > 0;
+      var need = internal ? (pg.sp.gateDelta || 32) : Math.max(56, pg.sp.leaveDelta || 0);
+      if (Math.abs(gacc) >= need) {
+        spent = g.id; actedAt = now; gacc = 0; lean(0);
+        inputSpeed = 1; turns++;
+        d > 0 ? next() : prev();
+      } else if (internal) lean(gacc / need);
+      else pullBy(d, 14);
     }
     /* v10.0.2: a free-scroll area keeps the wheel or keys only while it can
        still scroll that way itself. The footer never scrolls here (the page

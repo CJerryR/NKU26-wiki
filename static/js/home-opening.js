@@ -24,9 +24,34 @@
   var hudLine = root.querySelector('[data-op-line]');
   var labelsEl = root.querySelector('[data-op-labels]');
   var clueEl = root.querySelector('[data-op-clue]');
+  /* 2026-10-21 (review HOME-02, required): the pointer usually rests in the
+   * middle of the page while the trail starts on the left. A flowing dashed
+   * line runs from the light to the first cyan glow until it is found. */
+  var leashEl = null;
+  if (clueEl && clueEl.parentNode) {
+    leashEl = document.createElement('i');
+    leashEl.className = 'op__leash'; leashEl.setAttribute('aria-hidden', 'true');
+    clueEl.parentNode.insertBefore(leashEl, clueEl);
+  }
   var guideBtn = root.querySelector('[data-op-guide]');
   var focusEl = root.querySelector('[data-op-focus]');
   var T = window.THREE;
+
+  /* 2026-10-21: the hero button starts the story (the same move as the first
+   * scroll: down into the soil scan) instead of jumping to the wiki doors at
+   * the very bottom of the page. Without JavaScript it links to #world. */
+  var startLink = root.querySelector('[data-op-start]');
+  if (startLink) startLink.addEventListener('click', function (e) {
+    if (e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var P = H0.pager;
+    if (!P) return;
+    e.preventDefault();
+    if (P.isPaged()) { if (document.documentElement.getAttribute('data-page') === 'opening') P.next(); return; }
+    // Native scrolling (phones, narrow windows): the descent plays from the
+    // scroll position, so scroll to the point where the soil scan has opened.
+    var span = Math.max(0, root.offsetHeight - innerHeight);
+    window.scrollTo({ top: root.offsetTop + span * 0.72, behavior: H0.reduced ? 'auto' : 'smooth' });
+  });
 
   var COPY = {
     scan: NK.coarse ? 'Tap the cyan glow on the left to start.' : 'Move your light to the cyan glow on the left.',
@@ -131,6 +156,11 @@
     var hp = Math.round(NK.smooth(0, 0.5, d) * 400) / 400;
     if (hp !== heroHp) {
       heroHp = hp;
+      if (startLink) {
+        startLink.style.opacity = String(1 - hp);
+        startLink.style.visibility = hp >= 1 ? 'hidden' : 'visible';
+        startLink.style.pointerEvents = hp > 0 ? 'none' : 'auto';
+      }
       hero.style.opacity = String(1 - hp);
       hero.style.transform = 'translate3d(0,' + (-hp * 90).toFixed(1) + 'px,0) scale(' + (1 + hp * 0.1).toFixed(3) + ')';
       hero.style.filter = hp > 0.01 && hp < 0.99 ? 'blur(' + (hp * 6).toFixed(1) + 'px)' : 'none';
@@ -1509,7 +1539,7 @@
       }
       if (Math.hypot(L.target.x - light.x, L.target.y - light.y) < R * 0.95 && (S.detected >= 2 || guide)) onRoots(t);
       if (Math.hypot(L.nem.x - light.x, L.nem.y - light.y) < R * 0.6 && S.roots) onFound(t);
-      if (!S.detected && t - S.tExplore > 7 && !S.hinted) { S.hinted = true; nudge(); }
+      if (!S.detected && t - S.tExplore > 4 && !S.hinted) { S.hinted = true; nudge(); }
     }
     // Show the starting point immediately, then carry the cue along the trail.
     var nextClue = S.exploring && !S.found && !guide && S.detected < L.nodes.length;
@@ -1525,6 +1555,17 @@
         clueEl.style.top = NK.clamp(clue.y + 26, 90, H - 190).toFixed(1) + 'px';
       }
     }
+    var leashOn = !!leashEl && nextClue && S.detected === 0;
+    if (leashOn) {
+      var la = toScreen(light.x, light.y), lb = toScreen(L.nodes[0].x, L.nodes[0].y);
+      var ldx = lb.x - la.x, ldy = lb.y - la.y, llen = Math.sqrt(ldx * ldx + ldy * ldy);
+      leashOn = llen > 120;
+      if (leashOn) {
+        leashEl.style.width = (llen - 34).toFixed(0) + 'px';
+        leashEl.style.transform = 'translate(' + la.x.toFixed(1) + 'px,' + la.y.toFixed(1) + 'px) rotate(' + Math.atan2(ldy, ldx).toFixed(4) + 'rad)';
+      }
+    }
+    if (leashEl) leashEl.classList.toggle('is-on', leashOn);
 
     built.nemU.uShow.value = S.found ? NK.smooth(0, 0.6, t - S.foundT) : 0;
     built.nemU.uWig.value = S.found ? 0.03 + 0.06 * Math.max(0, 1 - (t - S.foundT) / 2.5) : 0.018;

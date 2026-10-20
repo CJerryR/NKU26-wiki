@@ -27,7 +27,7 @@ const { title, description, homeData } = Astro.props;
 // whenever the source changes so returning readers receive the current version.
 const staticAsset = (file: string) => `/${file}?v=${createHash('sha256')
   .update(readFileSync(`${process.cwd()}/static/${file}`)).digest('hex').slice(0, 16)}`;
-const styles = ['style', 'home', 'home-v6', 'shell', 'home-round1', 'home-ascr', 'home-mobile'];
+const styles = ['style', 'home', 'home-v6', 'shell', 'home-round1', 'home-ascr', 'home-mobile', 'home-r2'];
 const scripts = ['vendor/three.min', 'home-geo', 'home-land', 'home-geo3d', 'home-abundance', 'home-maps-data', 'home-hp-data', 'home-core', 'home-nk', 'home-pager', 'home-opening', 'home-maps', 'home-field-camera', 'home-zoom3d', 'home-threat-r1', 'home-ascr-story', 'home-story'];
 ---
 <!DOCTYPE html>

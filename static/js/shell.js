@@ -211,6 +211,22 @@
       if (H && H.pager && H.pager.top && H.pager.isPaged && H.pager.isPaged()) { H.pager.top(); return; }
       window.scrollTo({ top: 0, behavior: REDUCED ? 'auto' : 'smooth' });
     });
+    /* 2026-10-21: on the story homepage the top bar's Home link and logo do
+       what the detective does (back to the opening, no reload); before, Home
+       reloaded the page and rebuilt every scene. Modified clicks still open
+       a new tab as usual. */
+    if (home) doc.addEventListener('click', function (e) {
+      if (e.defaultPrevented || e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      var a = e.target && e.target.closest && e.target.closest('.lnav a[href], .lnav-scrim a[href]');
+      if (!a || a.hash) return;
+      var u; try { u = new URL(a.href, location.href); } catch (err) { return; }
+      var here = location.pathname.replace(/index\.html$/, ''), there = u.pathname.replace(/index\.html$/, '');
+      if (u.origin !== location.origin || here !== there) return;
+      e.preventDefault();
+      var H = window.NKUH;
+      if (H && H.pager && H.pager.top) H.pager.top();
+      else window.scrollTo({ top: 0, behavior: REDUCED ? 'auto' : 'smooth' });
+    });
     btn.addEventListener('pointerenter', function () { say(tips[ti++ % tips.length]); });
     btn.addEventListener('focus', function () { say(tips[ti++ % tips.length]); });
   }
