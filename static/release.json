@@ -1,7 +1,7 @@
 {
-  "version": "10.2.19",
-  "label": "DBTL-3 evidence components, phase markers, and verified heading labels",
-  "prepared_at": "2026-10-20T19:35:56+08:00",
+  "version": "10.2.20",
+  "label": "DBTL-3 evidence components, deep heading navigation, Model names, and AI credits",
+  "prepared_at": "2026-10-20T19:44:21+08:00",
   "media": "84 unchanged original images plus 4 user-authorized GPS-only cleaned images; all decoded frames unchanged; 12 complete historical source documents",
   "release_kind": "stage",
   "team_content_review": "Scientific final review pending; source-version choices authorized by user",
@@ -10,7 +10,7 @@
     "commit": "16770d5c28ddf7bc41f8d90445c44d80a28801d5",
     "published_at_local": "2026-10-18 05:04:34"
   },
-  "release_id": "dbtl3-components-20261020-v10.2.19",
+  "release_id": "combined-ai-credit-20261020-v10.2.20",
   "mobile_layout_check": "390px Members rendered without overflow; desktop Description, Parts/plasmid, Attributions/puzzle checked; 4 second delayed CDN uses inline preview then upgrades",
   "source_fidelity": {
     "original_source_files_verified": 80,
@@ -275,9 +275,18 @@
     "published_at_beijing": "2026-10-20 12:26:16"
   },
   "integration": {
-    "candidate_commit": "b4642cbb520f9b6a50e4e8145838ec73dc937189",
-    "task_commit": "f27abdb75c98b8ff46d93834bf8ba7e68b8aa997",
-    "baseline_commit": "5bb0322ced0703d2a8469ea24a60bde8209ff7ad"
+    "candidate_commit": "18cf3c63885cedb77cb5010e1fd99e5e786f33a5",
+    "source_commits": {
+      "afternoon-review-confirmed-labels-and-toc": "20e422291d9ae8988d9a4e43614c035948e38e70",
+      "afternoon-review-dbtl3-components": "f27abdb75c98b8ff46d93834bf8ba7e68b8aa997",
+      "ai-credit": "2aabd07022ac345625836801617df8b97ede2d97"
+    },
+    "baseline_commit": "8502ff5cb13ea3f626bf8d18a8dac96fb9e81e46"
+  },
+  "ai_credit": {
+    "source_task_commit": "2aabd07022ac345625836801617df8b97ede2d97",
+    "scope": "AI-development disclosure in site footer and illustration credit adjacent to inner-page scene artwork",
+    "illustration_license": "CC BY 4.0"
   },
   "dbtl3_components": {
     "scope": "Results DBTL-3 phase markers and evidence blocks; exact authored text, captions, image URLs, route, heading IDs, and TOC entries preserved",
