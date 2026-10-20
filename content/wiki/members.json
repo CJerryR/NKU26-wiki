@@ -27,9 +27,9 @@
     },
     {
       "_template": "heading",
-      "text": "1.1 PI",
+      "text": "PI",
       "level": 3,
-      "attributes": "#pi toc=\"PI\""
+      "attributes": "#pi toc=\"PI\" toc-unnumbered"
     },
     {
       "_template": "membergrid",
@@ -48,9 +48,9 @@
     },
     {
       "_template": "heading",
-      "text": "1.2 Advisor",
+      "text": "Advisor",
       "level": 3,
-      "attributes": "#advisors toc=\"Advisor\""
+      "attributes": "#advisors toc=\"Advisor\" toc-unnumbered"
     },
     {
       "_template": "membergrid",
@@ -93,9 +93,9 @@
     },
     {
       "_template": "heading",
-      "text": "2.1 Student leaders",
+      "text": "Student leaders",
       "level": 3,
-      "attributes": "#student-leaders toc=\"Student leaders\""
+      "attributes": "#student-leaders toc=\"Student leaders\" toc-unnumbered"
     },
     {
       "_template": "membergrid",
@@ -123,9 +123,9 @@
     },
     {
       "_template": "heading",
-      "text": "2.2 Student team members",
+      "text": "Student team members",
       "level": 3,
-      "attributes": "#student-team-members toc=\"Student team members\""
+      "attributes": "#student-team-members toc=\"Student team members\" toc-unnumbered"
     },
     {
       "_template": "heading",
