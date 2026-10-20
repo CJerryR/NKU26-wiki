@@ -21,6 +21,8 @@ const CALLOUT_TYPES = { note: 'note', important: 'note', tip: 'tip', warning: 'w
 const CONTAINERS = new Set([
   ...Object.keys(CALLOUT_TYPES), 'callout',
   'cards', 'cols', 'timeline', 'features', 'stats', 'refs', 'figure', 'figuretext', 'figures', 'details', 'people', 'lead', 'workflow',
+  // C01 (component-design checkpoint-01): figure bound to the paragraphs around it, its caption slot, DBTL stage markers
+  'evidence', 'caption', 'phase',
 ]);
 const LEAVES = new Set(['figure']);
 
@@ -172,11 +174,13 @@ function transformBlocks(node, ctx) {
   if (!node.children) return;
   const out = [];
   for (const child of node.children) {
+    // C01: an evidence block reads its own slots (text / image / figure caption / text) before they are transformed
+    if (child.type === 'containerDirective' && child.name === 'evidence') { out.push(...evidence(child, ctx)); continue; }
     transformBlocks(child, ctx);
     if (child.type === 'containerDirective' || child.type === 'leafDirective') out.push(...renderBlock(child, ctx));
     else out.push(child);
   }
-  node.children = out;
+  node.children = groupStages(out);
 }
 
 function takeLabel(node) {
@@ -232,6 +236,9 @@ function renderBlock(node, ctx) {
     case 'figures': return [el('div', { className: ['figure-pair'] }, takeLabel(node).rest)];
     case 'details': return details(node);
     case 'people': return people(node);
+    case 'phase': return phase(node);
+    // C01: a :::caption outside an evidence block has no figure to belong to, so its text stays in place
+    case 'caption': return takeLabel(node).rest;
     default: return takeLabel(node).rest;
   }
 }
@@ -379,6 +386,85 @@ function figure(node, ctx) {
   const props = { className: cls };
   if (scale >= 30 && scale < 100) { cls.push('figure--scaled'); props.style = `--fig-scale:${scale}%`; }
   return [el('figure', props, kids)];
+}
+
+/* C01 (component-design checkpoint-01) ------------------------- figure + its text
+ * ::::evidence{place=right|left|below size=compact|standard|wide}
+ *   paragraphs that lead to the figure        (optional)
+ *   [![alt](src)](src "…")  or  ![alt](src)   (the first image-only paragraph is the figure)
+ *   :::caption … :::                           (optional, the authored caption, unchanged)
+ *   paragraphs that read the figure            (optional)
+ * ::::
+ * DOM order is always text-before → figure → text-after, so phones, screen readers, search and
+ * copy/paste keep the source order; only the desktop grid places the figure beside the text. */
+const EVIDENCE_PLACES = new Set(['right', 'left', 'below']);
+const EVIDENCE_SIZES = new Set(['compact', 'standard', 'wide']);
+function isImageParagraph(node) {
+  if (node?.type !== 'paragraph') return false;
+  const kids = (node.children || []).filter((c) => !(c.type === 'text' && !c.value.trim()));
+  if (kids.length !== 1) return false;
+  const only = kids[0];
+  if (only.type === 'image') return true;
+  return only.type === 'link' && only.children?.length === 1 && only.children[0].type === 'image';
+}
+function evidence(node, ctx) {
+  const a = node.attributes || {};
+  const place = EVIDENCE_PLACES.has(a.place) ? a.place : 'right';
+  const size = EVIDENCE_SIZES.has(a.size) ? a.size : 'standard';
+  const kids = takeLabel(node).rest;
+  const transformed = (nodes) => { const wrap = { type: 'root', children: nodes }; transformBlocks(wrap, ctx); return wrap.children; };
+  const mediaAt = kids.findIndex(isImageParagraph);
+  if (mediaAt === -1) {
+    warn(ctx, 'An evidence block has no image; its text was shown without the figure layout.', node);
+    return transformed(kids);
+  }
+  const captionAt = kids.findIndex((c, i) => i > mediaAt && c.type === 'containerDirective' && c.name === 'caption');
+  const caption = captionAt === -1 ? null : transformed(takeLabel(kids[captionAt]).rest);
+  const before = transformed(kids.slice(0, mediaAt));
+  const after = transformed(kids.filter((_, i) => i > mediaAt && i !== captionAt));
+  const fig = [el('div', { className: ['figure__media'] }, kids[mediaAt].children)];
+  if (caption && caption.length) fig.push(el('figcaption', {}, captionLead(caption)));
+  const parts = [];
+  if (before.length) parts.push(el('div', { className: ['evidence__text', 'evidence__text--before'] }, before));
+  parts.push(el('figure', { className: ['figure', 'evidence__figure'] }, fig));
+  if (after.length) parts.push(el('div', { className: ['evidence__text', 'evidence__text--after'] }, after));
+  const cls = ['evidence', `evidence--${place}`, `evidence--${size}`];
+  if (!before.length) cls.push('evidence--no-before');
+  if (!after.length) cls.push('evidence--no-after');
+  return [el('div', { className: cls }, [el('div', { className: ['evidence__grid'] }, parts)])];
+}
+
+/* C01 ---------------------------------------------------------- DBTL stage markers
+ * :::phase{kind=design|build|test|build-test|learn|other} wraps the authored stage paragraph
+ * ("Design", "Build & Test", …) without changing it or turning it into a heading. Siblings that
+ * follow, up to the next stage marker, heading, rule or bare HTML tag, are grouped in one
+ * .dbtl-stage so the stage reads as a unit; headings, anchors and the outline are untouched. */
+const PHASE_KINDS = new Set(['design', 'build', 'test', 'build-test', 'learn', 'other']);
+function phase(node) {
+  const a = node.attributes || {};
+  const kind = PHASE_KINDS.has(a.kind) ? a.kind : 'other';
+  return [el('div', { className: ['dbtl-phase', `dbtl-phase--${kind}`], 'data-phase': kind }, takeLabel(node).rest)];
+}
+const isPhaseMarker = (n) => n?.type === 'wikiElement' && n.data?.hProperties?.className?.includes?.('dbtl-phase');
+// a lone opening or closing tag (<section …>, </div>) belongs to markup around the stage, never inside it
+const isStageBoundary = (n) => n.type === 'heading' || n.type === 'thematicBreak' || (n.type === 'html' && /^\s*<\/?[A-Za-z][^<>]*>\s*$/.test(n.value));
+function groupStages(children) {
+  if (!children.some(isPhaseMarker)) return children;
+  const out = [];
+  let stage = null;
+  for (const child of children) {
+    if (isPhaseMarker(child)) {
+      const kind = child.data.hProperties['data-phase'];
+      stage = el('div', { className: ['dbtl-stage', `dbtl-stage--${kind}`] }, [child]);
+      out.push(stage);
+    } else if (stage && !isStageBoundary(child)) {
+      stage.children.push(child);
+    } else {
+      stage = null;
+      out.push(child);
+    }
+  }
+  return out;
 }
 
 function details(node) {

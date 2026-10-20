@@ -32,5 +32,7 @@
 /* Approved article typography and shared content boundaries. */
 @import './content-rules.css';
 @import './model-manuscript.css';
+/* C01: figure + text (evidence) and DBTL stage markers; after the shared article rules. */
+@import './evidence.css';
 
 @import './image-preview.css';

@@ -1,0 +1,116 @@
+/* C01 (component-design checkpoint-01) — figure + its text, and DBTL stage markers.
+   Markup: src/lib/remark-wiki.mjs (evidence(), phase(), groupStages()); Tina: tina/config.ts.
+   Loaded after content-rules.css and model-manuscript.css so the shared article rules stay the
+   baseline: body text keeps its size, measure and justification; captions keep the one caption
+   contract; experimental figures keep their white card (dimmed at night by theme-night.css).
+   Only what this component adds lives here: the size caps, the image/text grid, the stage rail. */
+
+/* ------------------------------------------------------------ evidence */
+.prose .evidence {
+  --evidence-share: 42%;                       /* image column beside the text */
+  --evidence-below: 74%;                       /* image width when it sits under the text */
+  --evidence-max-h: min(56vh, 420px);          /* phones and narrow columns */
+  --figure-pad: clamp(10px, 1.6vw, 16px);
+  container: evidence / inline-size;
+  width: 100%; max-width: 100%; min-width: 0;
+  margin-block: clamp(26px, 3.2vw, 38px);
+}
+.prose .evidence--compact { --evidence-share: 34%; --evidence-below: 58%; }
+.prose .evidence--wide { --evidence-share: 50%; --evidence-below: 100%; }
+
+.prose .evidence__grid { display: grid; grid-template-columns: minmax(0, 1fr); row-gap: 16px; align-items: start; }
+.prose .evidence__text { min-width: 0; }
+.prose .evidence__text > :first-child { margin-top: 0 !important; }
+.prose .evidence__text > :last-child { margin-bottom: 0 !important; }
+
+.prose .evidence .figure.evidence__figure { margin: 0; min-width: 0; }
+.prose .evidence .figure.evidence__figure > .figure__media { display: grid; place-items: center; }
+.prose .evidence .figure.evidence__figure > .figure__media > a { display: block; max-width: 100%; }
+/* (0,5,1) after round1.css (0,4,1)/(0,5,1): the cap replaces min(78vh, 760px) for these figures only */
+.prose .evidence .figure.evidence__figure > .figure__media img {
+  display: block; width: auto; max-width: 100%; height: auto; max-height: var(--evidence-max-h);
+  margin-inline: auto; object-fit: contain;
+}
+.prose .evidence .figure.evidence__figure > .figure__media img[style*="--figure-ratio"] {
+  width: min(var(--figure-natural-width), 100%, calc(var(--evidence-max-h) * var(--figure-ratio)));
+}
+/* the caption is read with the image: a little closer than the shared 12px */
+.doc .prose .evidence .evidence__figure > figcaption { margin-top: 10px !important; }
+
+/* Wide enough for two columns (container, not viewport: the same rule holds with or without the outline). */
+@container evidence (min-width: 620px) {
+  .prose .evidence { --evidence-max-h: min(64vh, 520px); }
+  .prose .evidence--right > .evidence__grid,
+  .prose .evidence--left > .evidence__grid {
+    grid-template-rows: auto 1fr;
+    column-gap: clamp(26px, 4.5cqi, 48px); row-gap: 1.1em;
+  }
+  .prose .evidence--right > .evidence__grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, var(--evidence-share));
+    grid-template-areas: "before figure" "after figure";
+  }
+  .prose .evidence--left > .evidence__grid {
+    grid-template-columns: minmax(0, var(--evidence-share)) minmax(0, 1fr);
+    grid-template-areas: "figure before" "figure after";
+  }
+  .prose :is(.evidence--right, .evidence--left) .evidence__text--before { grid-area: before; }
+  .prose :is(.evidence--right, .evidence--left) .evidence__text--after { grid-area: after; }
+  .prose :is(.evidence--right, .evidence--left).evidence--no-before .evidence__text--after { grid-row: 1 / -1; }
+  /* The figure stays in view while its longer text scrolls past, then leaves with the block. */
+  .prose :is(.evidence--right, .evidence--left) .evidence__figure {
+    grid-area: figure; align-self: start; position: sticky; top: calc(var(--nav-h) + 20px);
+  }
+  /* Narrower justified column: let English words break so the text does not open up rivers. */
+  .prose :is(.evidence--right, .evidence--left) .evidence__text { hyphens: auto; }
+
+  .prose .evidence--below { --evidence-max-h: min(66vh, 580px); }
+  .prose .evidence--below > .evidence__grid { row-gap: 20px; }
+  .prose .evidence--below .evidence__figure { justify-self: center; width: var(--evidence-below); }
+}
+
+/* ------------------------------------------------------ DBTL stage marker */
+/* The authored paragraph ("Design", "Build & Test", "Learn") keeps its text and stays a paragraph;
+   it is set as a quiet label with a stage dot and a hairline, closer to the Feishu
+   "Design｜…" line than to a heading. Dot: ring = design, half = build / test, full = learn. */
+.prose .dbtl-phase {
+  position: relative; display: flex; align-items: center; gap: 12px;
+  margin: 2.1em 0 .85em; max-width: 100%;
+}
+.prose .dbtl-phase::before {
+  content: ''; flex: 0 0 auto; width: 11px; height: 11px; box-sizing: border-box;
+  border: 2px solid var(--iris); border-radius: 50%; background: var(--paper);
+}
+.prose :is(.dbtl-phase--build, .dbtl-phase--test, .dbtl-phase--build-test)::before { background: linear-gradient(90deg, var(--iris) 50%, var(--paper) 50%); }
+.prose .dbtl-phase--learn::before { background: var(--iris); }
+.prose .dbtl-phase--other::before { border-style: dotted; }
+.prose .dbtl-phase::after {
+  content: ''; flex: 1 1 auto; min-width: 24px; height: 1px;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--iris) 34%, transparent), var(--line) 38%, transparent);
+}
+/* (0,3,1)+ beats content-rules' article paragraph rule (0,2,1) */
+.doc .prose .dbtl-phase > p, .prose .dbtl-phase > p {
+  flex: 0 1 auto; width: auto !important; max-width: 100% !important; margin: 0 !important;
+  font-family: var(--font-body) !important; font-size: 15.5px !important; font-weight: 650 !important;
+  line-height: 1.3 !important; letter-spacing: .02em !important; color: var(--iris-deep);
+  text-align: left !important; text-align-last: auto !important;
+}
+.prose .dbtl-phase + * { margin-top: 0 !important; }
+
+/* Wide layouts: the dots sit on a thin rail in the left gutter, so the text edge never moves
+   and Design → Build & Test → Learn reads as one line down the cycle. */
+@media screen and (min-width: 1100px) {
+  .prose .dbtl-stage { position: relative; --stage-rail-x: -28px; }
+  .prose .dbtl-stage::before {
+    content: ''; position: absolute; left: var(--stage-rail-x); top: .9em; bottom: .2em; width: 2px; border-radius: 2px;
+    background: linear-gradient(to bottom, color-mix(in srgb, var(--iris) 30%, transparent), color-mix(in srgb, var(--iris) 3%, transparent));
+  }
+  .prose .dbtl-stage > .dbtl-phase::before { position: absolute; left: calc(var(--stage-rail-x) - 4.5px); top: 50%; transform: translateY(-50%); }
+  .prose .dbtl-stage > .dbtl-phase { gap: 0; }
+  .prose .dbtl-stage > .dbtl-phase > p { margin-right: 14px !important; }
+}
+
+@media print {
+  .prose .evidence .evidence__figure { position: static; }
+  .prose .dbtl-stage::before { display: none; }
+  .prose .evidence { break-inside: avoid; }
+}

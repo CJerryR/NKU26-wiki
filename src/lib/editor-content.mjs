@@ -44,6 +44,20 @@ export function blocksToMarkdown(blocks = []) {
         const after = markdown(block.afterBody).trim();
         return [body.trim(), pair, after].filter(Boolean).join('\n\n');
       }
+      // C01: DBTL stage marker; the authored stage paragraph is kept as written (not made a heading)
+      case 'phase': {
+        const kind = ['design', 'build', 'test', 'build-test', 'learn'].includes(block.kind) ? block.kind : 'other';
+        return `:::phase{kind=${kind}}\n\n${body}\n\n:::`;
+      }
+      // C01: one figure with the paragraphs that lead to it and read it; source order is preserved
+      case 'evidence': {
+        const place = ['right', 'left', 'below'].includes(block.place) ? block.place : 'right';
+        const size = ['compact', 'standard', 'wide'].includes(block.size) ? block.size : 'standard';
+        const media = block.openOriginal ? `[${img(block.src, block.figureAlt || '')}](${block.src} "Open full-resolution image")` : img(block.src, block.figureAlt || '');
+        const caption = markdown(block.figureCaption).trim();
+        const after = markdown(block.afterBody).trim();
+        return [`::::evidence{place=${place} size=${size}}`, body, media, caption && `:::caption\n\n${caption}\n\n:::`, after, '::::'].filter(Boolean).join('\n\n');
+      }
       default: throw new Error(`Unknown content block: ${block._template}`);
     }
   }).join('\n\n') + '\n';

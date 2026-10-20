@@ -127,6 +127,30 @@ description: "…"                        # 可选。给搜索引擎的摘要，
 
 **导语**：`:::lead`，放大显示的开头段落。
 
+**图文对照**（Tina「图文对照」模板导出的写法）：图放在引出它、解读它的段落旁边，图片高度有上限。
+
+```markdown
+::::evidence{place=right size=standard}
+
+引出这张图的段落（Figure 1）。
+
+[![图片说明](/img/fig1.png)](/img/fig1.png "Open full-resolution image")
+
+:::caption
+Figure 1. 图注，原文照录。
+:::
+
+解读这张图的段落（可省略）。
+
+::::
+```
+
+- `place`：`right` 文左图右（默认）、`left` 图左文右、`below` 文上图下。只影响宽栏；手机和窄栏始终按书写顺序排列。
+- `size`：`compact` / `standard`（默认）/ `wide`。并排时是图片占栏比例，文上图下时是图片宽度。
+- 第一段只含一张图片的段落就是这张图；`:::caption` 只在 `::::evidence` 里面才成为图注，放在别处时按普通文字显示。
+
+**DBTL 阶段标记**：`:::phase{kind=design}` 包住原稿里的阶段段落（`Design`、`Build & Test`、`Learn`），显示为带圆点的小标签，不是标题，不进目录。`kind` 可选 `design`、`build`、`test`、`build-test`、`learn`、`other`。之后的段落和图文对照归入这一阶段，直到下一个阶段标记、标题或 HTML 包裹标签。
+
 ## 5. 写错了会怎样
 
 写错不会导致整站构建失败：

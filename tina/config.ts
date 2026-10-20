@@ -77,6 +77,25 @@ const templates: Template[] = [
     { type: 'string', name: 'imageWidth', label: '图片列宽', options: [{ label: '窄（约 32%）', value: 'narrow' }, { label: '中（约 40%）', value: 'medium' }, { label: '宽（约 50%）', value: 'wide' }], description: '仅用于左右图文版式；手机自动上下排列。' },
     { ...body, name: 'accompanyingBody', label: '配套正文' },
   ] },
+  // C01 (component-design checkpoint-01): a figure kept beside the paragraphs that lead to it and read it.
+  // Text is stored exactly as authored; order on the page is always 图前正文 → 图 → 图注 → 图后正文.
+  { name: 'evidence', label: '图文对照（实验图 + 相关正文）',
+    ui: { defaultItem: { place: 'right', size: 'standard', openOriginal: true } },
+    fields: [
+      { ...body, label: '图前正文', description: '引出这张图的段落（通常写着“Figure N”）。原文照录；可留空。' },
+      { type: 'image', name: 'src', label: '实验图', required: true },
+      { type: 'string', name: 'figureAlt', label: '图片替代文字', description: '给读屏软件的一句话画面描述；原稿没有时可暂留空，由作者补写，不要猜测实验结果。' },
+      { type: 'boolean', name: 'openOriginal', label: '点击查看完整原图' },
+      { ...body, name: 'figureCaption', label: '图注', description: '原文照录，含 Figure 编号与分图说明。' },
+      { ...body, name: 'afterBody', label: '图后正文', description: '紧接着解读这张图的段落；可留空。' },
+      { type: 'string', name: 'place', label: '版式', options: [{ label: '文左图右（默认）', value: 'right' }, { label: '图左文右', value: 'left' }, { label: '文上图下', value: 'below' }], description: '桌面端生效；手机和窄栏始终按 图前正文 → 图 → 图后正文 顺序排列。多分图的宽图建议“文上图下”。' },
+      { type: 'string', name: 'size', label: '图片大小', options: [{ label: '小（约 1/3 栏）', value: 'compact' }, { label: '中（默认）', value: 'standard' }, { label: '大（约 1/2 栏 / 通栏）', value: 'wide' }], description: '并排时决定图片占栏比例；文上图下时决定图片宽度。图片高度都有上限，不会撑满屏幕。' },
+    ] },
+  // C01: DBTL stage marker. The stage paragraph stays a paragraph (no new heading, anchor or outline entry).
+  { name: 'phase', label: 'DBTL 阶段标记', ui: { defaultItem: { kind: 'design', body: 'Design' } }, fields: [
+    { type: 'string', name: 'kind', label: '阶段', required: true, options: [{ label: 'Design', value: 'design' }, { label: 'Build', value: 'build' }, { label: 'Test', value: 'test' }, { label: 'Build & Test', value: 'build-test' }, { label: 'Learn', value: 'learn' }, { label: '其他', value: 'other' }], description: '只决定标记样式；页面显示的文字来自下方“阶段名”。' },
+    { ...body, label: '阶段名', description: '原文照录，例如 Design、Build & Test。之后的正文和图文对照会归入这一阶段，直到下一个阶段标记或标题。' },
+  ] },
   { name: 'gallery', label: '双图并排', fields: [
     { ...body, label: '图组上方正文' },
     { type: 'image', name: 'left', label: '左图', required: true },
@@ -121,7 +140,13 @@ export default defineConfig({
       { type: 'boolean', name: 'search', label: '允许搜索' },
       { type: 'boolean', name: 'preserveAuthorFormatting', label: '保留原稿科学排版', description: '已导入的科研稿件请保留：避免自动改写作者强调、引用和科学符号。' },
       { type: 'object', name: 'blocks', label: '正文排版', list: true, templates,
-        ui: { itemProps: (item) => ({ label: item.text || item.label || ({ text: '富文本', layout: item.kind, image: '图片', gallery: '双图' }[item._template] || '模块') }) } },
+        ui: { itemProps: (item) => {
+          // C01: name stage markers and evidence blocks by their own text so they can be found in the block list
+          const plain = (value: unknown) => String(value || '').replace(/<[^>]*>/g, '').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
+          if (item._template === 'phase') return { label: `阶段｜${plain(item.body) || item.kind || ''}` };
+          if (item._template === 'evidence') return { label: `图文｜${plain(item.figureCaption).slice(0, 48) || '实验图'}` };
+          return { label: item.text || item.label || ({ text: '富文本', layout: item.kind, image: '图片', gallery: '双图' }[item._template] || '模块') };
+        } } },
     ],
   }] },
 });
