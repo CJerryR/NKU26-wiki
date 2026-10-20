@@ -1,7 +1,7 @@
 {
-  "version": "10.2.18",
-  "label": "In-page image preview with theme-aware liquid glass and reviewed manuscript components",
-  "prepared_at": "2026-10-20T12:16:42+08:00",
+  "version": "10.2.19",
+  "label": "DBTL-3 evidence components, phase markers, and verified heading labels",
+  "prepared_at": "2026-10-20T19:35:56+08:00",
   "media": "84 unchanged original images plus 4 user-authorized GPS-only cleaned images; all decoded frames unchanged; 12 complete historical source documents",
   "release_kind": "stage",
   "team_content_review": "Scientific final review pending; source-version choices authorized by user",
@@ -10,7 +10,7 @@
     "commit": "16770d5c28ddf7bc41f8d90445c44d80a28801d5",
     "published_at_local": "2026-10-18 05:04:34"
   },
-  "release_id": "image-preview-components-20261020-v10.2.18",
+  "release_id": "dbtl3-components-20261020-v10.2.19",
   "mobile_layout_check": "390px Members rendered without overflow; desktop Description, Parts/plasmid, Attributions/puzzle checked; 4 second delayed CDN uses inline preview then upgrades",
   "source_fidelity": {
     "original_source_files_verified": 80,
@@ -30,9 +30,9 @@
     "source_decisions": "content/author-source-decisions.json"
   },
   "previous_release": {
-    "version": "10.2.17",
-    "commit": "0ef203161d80ead05ed37e3d79408899ad99d245",
-    "published_at_beijing": "2026-10-20 11:54:59"
+    "version": "10.2.18",
+    "commit": "5bb0322ced0703d2a8469ea24a60bde8209ff7ad",
+    "published_at_beijing": "2026-10-20 12:26:16"
   },
   "visual_stage": "AI-generated handcut illustrations; 16 sheets, 91 canonical props",
   "meeting_update": {
@@ -273,5 +273,22 @@
     "commit": "837d21b402b81241df96c82c18d7e9e243feb501",
     "pipeline_id": 777123,
     "published_at_beijing": "2026-10-20 12:26:16"
+  },
+  "integration": {
+    "candidate_commit": "b4642cbb520f9b6a50e4e8145838ec73dc937189",
+    "task_commit": "f27abdb75c98b8ff46d93834bf8ba7e68b8aa997",
+    "baseline_commit": "5bb0322ced0703d2a8469ea24a60bde8209ff7ad"
+  },
+  "dbtl3_components": {
+    "scope": "Results DBTL-3 phase markers and evidence blocks; exact authored text, captions, image URLs, route, heading IDs, and TOC entries preserved",
+    "templates": [
+      "phase",
+      "evidence"
+    ],
+    "figure_count": 6,
+    "phase_marker_count": 9,
+    "stage_group_count": 9,
+    "validation": "DBTL-3 source fidelity, rendered text/images/headings/TOC, Tina schema, 7 component tests, 30-page build, and content audit passed",
+    "limits": "Screenshots use placeholder aspect-ratio illustrations in the attached checkpoint; final component layout has not received a separate scientific-content approval."
   }
 }
