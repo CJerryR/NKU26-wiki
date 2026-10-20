@@ -268,5 +268,10 @@
     "ode_equations": 13,
     "filterable_tables": 2,
     "source_policy": "Scientific content and original-review flags retained; plain figure captions preserved from V10.2.16"
+  },
+  "first_publication": {
+    "commit": "837d21b402b81241df96c82c18d7e9e243feb501",
+    "pipeline_id": 777123,
+    "published_at_beijing": "2026-10-20 12:26:16"
   }
 }
