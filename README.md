@@ -1,3 +1,7 @@
+## V10.2.38
+
+Subpage copy andtable normalization;Results Future work andlatestinteractiveattachment;term-only unbolding,chapterspacing andMembers title. V37 HP/Modellinks,EngineeringDBTL andProjectcomparisonpreserved.
+
 ## V10.2.37
 
 HP latest manuscripts, verified official CDN media and user-confirmed289/9;official Model code links. Existing Project/Model layout, DBTL andcomparison preserved.
