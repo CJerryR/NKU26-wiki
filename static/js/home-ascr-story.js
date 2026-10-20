@@ -115,7 +115,7 @@
         swap: HIDE, wormF: HIDE, wormP: HIDE, lblF: HIDE, lblP: HIDE, barF: HIDE, barP: HIDE, ratF: HIDE, ratP: HIDE, ask: HIDE,
         rec: { s: 1, o: 1, d: 300, t: 900 },
         // Reveal the upper layer only after the lower receptor has arrived.
-        recD: { o: 1, d: 1200, t: 500 }, fung: { s: 1, o: 1, d: 450, t: 900 }
+        recD: { o: 1, d: 1200, t: 500 }, fung: { s: 1, o: 1, d: 450, t: 900, P: { x: 550, y: 330, s: 1.5 } }
       } },
       /* 3 · PPT slide 1: ascr#3 slides into its pocket; 0.5 s in, the receptor's
          upper layer fades over 1 s, leaving the lower layer, the pocket and ascr#3 */

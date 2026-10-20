@@ -1,7 +1,7 @@
 {
-  "version": "10.2.23",
-  "label": "DBTL-3 figure numbering corrections",
-  "prepared_at": "2026-10-20T22:09:59+08:00",
+  "version": "10.2.24",
+  "label": "Homepage cited fungus microscopy",
+  "prepared_at": "2026-10-20T22:29:16+08:00",
   "media": "84 unchanged original images plus 4 user-authorized GPS-only cleaned images; all decoded frames unchanged; 12 complete historical source documents",
   "release_kind": "stage",
   "team_content_review": "Scientific final review pending; source-version choices authorized by user",
@@ -10,7 +10,7 @@
     "commit": "16770d5c28ddf7bc41f8d90445c44d80a28801d5",
     "published_at_local": "2026-10-18 05:04:34"
   },
-  "release_id": "wetlab-dbtl3-figure-numbering-20261020-v10.2.23",
+  "release_id": "home-literature-20261020-v10.2.24",
   "mobile_layout_check": "390px Members rendered without overflow; desktop Description, Parts/plasmid, Attributions/puzzle checked; 4 second delayed CDN uses inline preview then upgrades",
   "source_fidelity": {
     "original_source_files_verified": 80,
@@ -30,8 +30,8 @@
     "source_decisions": "content/author-source-decisions.json"
   },
   "previous_release": {
-    "version": "10.2.22",
-    "commit": "4a365dc03512cc5730e304eaa62314ac026c7b78"
+    "version": "10.2.23",
+    "commit": "2fd2312229302c6b6e65d6aba8945902bdd82dae"
   },
   "visual_stage": "AI-generated handcut illustrations; 16 sheets, 91 canonical props",
   "meeting_update": {
@@ -302,9 +302,16 @@
     "formatting": "Original scientific italics restored in all four tables",
     "source_commit": "4c5c5b8d1ed494db273a0c0e5a035d138751a007"
   },
-  "change_scope": "Correct DBTL-3 spotting-device caption from Figure 3.1.4 to Figure 4 and finished-strip reference from Figure 3.1.5 to Figure 5.",
+  "change_scope": "Replace homepage receptor chapter gold fungus schematic with Hsueh et al. 2013 Figure 1A microscopy comparison and English DOI attribution.",
   "dbtl3_figure_numbering": {
     "task_commit": "ea3836906fb18382a248845d234b82f848bb3cf8",
     "corrections": 2
+  },
+  "home_literature": {
+    "task_commit": "c2a0eb09b7495ef91aba27346e5e25a5653ac84b",
+    "cdn_manifest": "docs/home-literature-cdn-20261020.json",
+    "panels": "Figure 1A only; both comparison panels preserved",
+    "image_fidelity": "Lossless WebP decoded RGB pixels identical to supplied JPEG",
+    "publication_authorization": "User explicitly requested publication in task chat"
   }
 }

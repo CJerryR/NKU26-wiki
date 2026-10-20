@@ -148,3 +148,11 @@ html.is-paged[data-motion="idle"] .as__rail li.is-next::before{animation:as-next
 .as__cap h3,.as__cap .as__title{font-size:clamp(22px,2.6cqw,36px);font-weight:600;line-height:1.12;letter-spacing:-.02em;margin:0 0 .45em}
 .as:not(.as--tall) .as__cap{top:clamp(0px,var(--cy),calc(100% - var(--cap-height,0px)))}
 .as--tall .as__cap h3,.as--tall .as__cap .as__title{font-size:clamp(24px,6.5vw,32px)}
+
+/* Figure attribution follows the microscopy through the existing fungus transition. */
+.as-micro-source{fill:var(--as-ink);font-family:var(--sans);font-size:13px}
+[data-art="fungus-microscopy"] a{pointer-events:auto}
+[data-art="fungus-microscopy"] a:hover text{text-decoration:underline}
+
+.as--tall .as-micro-source{font-size:24px}
+.as--tall .as-micro-source + .as-micro-source{transform:translateY(10px)}
