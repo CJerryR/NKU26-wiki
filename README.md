@@ -2,7 +2,7 @@
 
 南开大学 NKU-China 团队参加 iGEM 2026 的项目网站，队伍编号 **6303**。网站围绕农业线虫与双通道检测方案，展示项目设计、实验结果、模型、人类实践和团队工作。
 
-当前版本为 **V10.2.31**，移除开屏标题内影响定位的快捷按钮，恢复草与幼苗遮住标题的效果；保留 V10.2.30 的 Members、高清二维码及其他更新。
+当前版本为 **V10.2.32**，更新 Project 最新原稿与配图，Engineering 采用 14 轮平铺正文；合并首页 checkpoint04 的分段手势引导、地图与独立 Start exploring 按钮，保留最新 Members 和高清公众号二维码。
 
 - [正式网站](https://2026.igem.wiki/nku-china/)
 - [GitLab 源码](https://gitlab.igem.org/2026/nku-china)
@@ -89,6 +89,14 @@ GitLab Pages 从默认分支 `main` 读取源码，执行部署回归、构建�
 Licensing 独立页当前没有正文，现有许可与 AI 使用说明位于页脚；Awards、Acknowledgements 等可选页面未启用。后续新增材料以实际交稿和团队确认结果更新，不使用空链接冒充可下载文件。
 
 ## 版本改动
+
+### V10.2.32 改动：
+
+发布状态：已准备，Pages 部署及线上核验见工作区发布回执。
+
+1. 按最新 Project.docx 更新 Description、Engineering、Contribution，修正 Background 引文；Engineering 14 轮、56 段阶段正文全部展开，配图按原稿位置与顺序呈现。
+2. 新配图使用已核验的官方 CDN，优化图可打开完整原图；保留正文格式、Tina 编辑能力和现有科研审核状态。
+3. 首页合并 checkpoint04：阶段手势门控、地图分步引导、响应式标题和手机中国地图顺序；Start exploring 独立放在开屏舞台右下，保留前景遮字与最新二维码。
 
 ### V10.2.31 改动：
 
