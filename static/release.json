@@ -1,7 +1,7 @@
 {
   "version": "10.2.22",
-  "label": "Results DBTL-3 cycle outline",
-  "prepared_at": "2026-10-20T21:04:52+08:00",
+  "label": "Results cycle outline and homepage wiki shortcut",
+  "prepared_at": "2026-10-20T21:27:54+08:00",
   "media": "84 unchanged original images plus 4 user-authorized GPS-only cleaned images; all decoded frames unchanged; 12 complete historical source documents",
   "release_kind": "stage",
   "team_content_review": "Scientific final review pending; source-version choices authorized by user",
@@ -302,5 +302,5 @@
     "formatting": "Original scientific italics restored in all four tables",
     "source_commit": "4c5c5b8d1ed494db273a0c0e5a035d138751a007"
   },
-  "change_scope": "Added explicit table-of-contents entries for Results DBTL-3 cycles 3.1, 3.2 and 3.3. Existing heading text, level, anchors, scientific content and figures are unchanged."
+  "change_scope": "Added explicit table-of-contents entries for Results DBTL-3 cycles 3.1, 3.2 and 3.3; added a hero link to the existing eight-link Explore the wiki navigation. Existing story-section order, destinations, and scientific content are unchanged."
 }
