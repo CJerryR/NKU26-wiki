@@ -47,6 +47,13 @@ details[open] > summary .acc__chev { background: var(--tk-fill, var(--k-iris)); 
 .cyc__arc[aria-pressed='true'] path { fill: var(--pc); }
 .cyc__arc.is-empty path { fill: var(--tk-paper, #fbf8f1); }
 .cyc__en { fill: color-mix(in srgb, var(--pc) var(--tk-mix-pct, 78%), var(--tk-mix-to, #241c2b)); }
+/* half-ring cycle (same order as toolkit.css); the hub stays white because the icons are drawn on white */
+.arc__seg path { fill: color-mix(in srgb, var(--pc) 14%, var(--tk-paper, #fbf8f1)); }
+.arc__seg text { fill: color-mix(in srgb, var(--pc) var(--tk-mix-pct, 80%), var(--tk-mix-to, #241c2b)); }
+.arc__seg:hover path { fill: color-mix(in srgb, var(--pc) 26%, var(--tk-paper, #fbf8f1)); }
+.arc__seg[aria-pressed='true'] path { fill: var(--pc); }
+.arc__seg[aria-pressed='true'] text { fill: #fff; }
+.arc__seg.is-empty path { fill: var(--tk-paper, #fbf8f1); }
 
 /* stakeholders */
 .sh__dot circle { stroke: var(--tk-paper, #fbf8f1); }

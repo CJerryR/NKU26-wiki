@@ -415,6 +415,60 @@ mark { border-radius: 3px; background: none; color: inherit; }
 .cyc__pfoot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--k-line2); }
 .cyc__pfoot .go { margin: 0; }
 
+/* ------------------------------------------------- cycle · half-ring (arc) */
+.arc { --pc: var(--k-iris); display: grid; gap: 18px; }
+.arc + .arc { margin-top: 34px; }
+.arc__rail { display: flex; align-items: center; gap: 14px; }
+.arc__ring { display: block; width: 116px; flex: none; overflow: visible; font-family: var(--k-font); }
+.arc__seg { cursor: pointer; outline: none; }
+.arc__seg path {
+  fill: color-mix(in srgb, var(--pc) 14%, #fbf8f1); stroke: color-mix(in srgb, var(--pc) 34%, transparent); stroke-width: 1;
+  transition: fill .3s, transform .45s var(--k-ease);
+}
+.arc__seg text { fill: color-mix(in srgb, var(--pc) 80%, #241c2b); font-size: 15px; font-weight: 650; pointer-events: none; transition: fill .3s, transform .45s var(--k-ease); }
+.arc__seg:hover path { fill: color-mix(in srgb, var(--pc) 26%, #fbf8f1); }
+.arc__seg[aria-pressed='true'] path { fill: var(--pc); stroke: var(--pc); transform: translate(var(--dx), var(--dy)); }
+.arc__seg[aria-pressed='true'] text { fill: #fff; transform: translate(var(--dx), var(--dy)); }
+.arc__seg.is-empty path { fill: #fbf8f1; stroke-dasharray: 4 3; }
+.arc__seg:focus-visible path { stroke: var(--k-ink); stroke-width: 2.5; }
+.arc__hub { fill: #fff; stroke: color-mix(in srgb, var(--pc) 30%, var(--k-line)); stroke-width: 1.5; filter: drop-shadow(0 6px 14px rgba(36, 28, 43, .12)); transition: stroke .3s; }
+.arc__word { fill: var(--tk-on-light, var(--k-ink)); font-size: 26px; font-weight: 700; letter-spacing: .04em; }
+/* The progress line only makes sense while the rail is pinned beside the text (wide layout). */
+.arc__step { display: none; color: color-mix(in srgb, var(--pc) 70%, var(--k-ink)); font-size: 13px; font-weight: 650; letter-spacing: .02em; transition: color .3s; }
+
+.arc__stages { display: grid; gap: 6px; min-width: 0; }
+.arc__stage { --pc: var(--k-iris); min-width: 0; padding: 14px 0 14px 18px; border-left: 3px solid color-mix(in srgb, var(--pc) 70%, transparent); transition: opacity .4s var(--k-ease), border-color .3s; }
+.arc__badge { display: inline-block; margin-bottom: 8px; padding: 3px 10px; border-radius: 999px; background: var(--pc); color: #fff; font-size: 12.5px; font-weight: 650; letter-spacing: .02em; }
+.tk--cycle .arc__stage > .rt {
+  font-size: var(--article-font-size, 18px); font-weight: 380; line-height: var(--article-line-height, 1.65); letter-spacing: .005em;
+  text-align: justify; text-align-last: start; hyphens: auto; margin-bottom: .9em;
+}
+.tk--cycle .arc__stage > .rt:last-of-type { margin-bottom: 0; }
+.arc__figure { margin-top: 1em; min-width: 0; }
+.arc__image { display: grid; place-items: center; padding: clamp(10px, 2cqi, 16px); border: 1px solid var(--k-line); border-radius: var(--k-r2); background: #fff; }
+.arc__image img { display: block; width: auto; max-width: 100%; height: auto; max-height: min(62vh, 520px); object-fit: contain; }
+.arc__figure figcaption { margin-top: 10px; font-size: 14px; font-weight: 400; line-height: 1.55; text-align: left; color: var(--k-ink3); }
+.arc__figure figcaption .rt { text-align: left; color: inherit; }
+.arc__stages > .go { margin: 6px 0 0 21px; }
+
+/* Wide enough for the rail beside the text: the half ring stays in view while the four stages pass. */
+@container tk (min-width: 600px) {
+  .arc { grid-template-columns: clamp(170px, 27cqi, 220px) minmax(0, 1fr); column-gap: clamp(22px, 4cqi, 36px); align-items: start; }
+  .arc__rail { position: sticky; top: calc(var(--nav-h, 88px) + 28px); flex-direction: column; align-items: stretch; gap: 10px; }
+  .arc__ring { width: 100%; }
+  .arc__step { display: block; text-align: center; }
+  .arc__stage { min-height: min(26vh, 220px); }
+  .arc.is-live .arc__stage:not(.is-on) { opacity: .42; }
+  .arc.is-live .arc__stage:not(.is-on) .arc__image { filter: saturate(.7); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .arc__seg path, .arc__seg text, .arc__stage, .arc__hub, .arc__step { transition: none; }
+}
+@media print {
+  .arc__rail { position: static; }
+  .arc.is-live .arc__stage:not(.is-on) { opacity: 1; }
+}
+
 /* ----------------------------------------------------------- feedback */
 .fb { display: grid; gap: 14px; list-style: none; margin: 0; padding: 0; }
 .fb__row { padding: 12px 14px 14px; border: 1px solid var(--k-line2); border-radius: var(--k-r2); background: var(--k-paper); }

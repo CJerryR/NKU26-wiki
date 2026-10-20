@@ -73,8 +73,10 @@ export const toolkitSpecs = [
     select('language', '界面语言', [{ label: '中文（默认）', value: 'zh' }, { label: 'English', value: 'en' }]),
     list('items', '轮次', '轮次', [str('title', '轮次名称', '例如 Cycle 1 · 启动子筛选'), long('design', 'Design 设计', RICH), long('build', 'Build 构建', RICH), long('test', 'Test 测试', RICH), long('learn', 'Learn 学习 / 下一步', RICH), str('href', '详细数据链接'),
       ...['design', 'build', 'test', 'learn'].flatMap(phase => [file(`${phase}Image`, `${phase} 图片（可选）`), str(`${phase}Alt`, `${phase} 图片替代文字`), long(`${phase}Caption`, `${phase} 图注`, RICH)]),
+      file('icon', '中心图标（半环模式，可选）', ['.svg', '.png', '.webp'], '显示在半环轮盘中心；留空时显示 DBTL。'),
     ]),
-    f.caption] },
+    f.caption,
+    select('display', '展示方式', [{ label: '环形轮盘（点击切换，默认）', value: 'wheel' }, { label: '半环轮盘（随页面滚动依次展开）', value: 'arc' }], '半环模式：左侧半环固定，右侧依次列出 Design / Build / Test / Learn，滚动到哪一段，半环就突出哪一段；手机上按顺序排列。')] },
   
   { name: 'stakeholders', label: '利益相关者矩阵', fields: [f.title,
     list('items', '利益相关者', '对象', [str('name', '名称 / 身份'), str('group', '类别', '例如 学界 / 产业 / 政府 / 公众 / 使用者。'), num('influence', '影响力（1–5）'), num('interest', '关注程度（1–5）'), long('text', '诉求 / 担忧 / 我们的回应', RICH), f.href]),

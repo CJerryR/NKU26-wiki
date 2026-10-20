@@ -1,4 +1,4 @@
-import { h, s, rich, has, icon, button, segmented, chips, empty, asset, safeHref, linkProps, list, clamp, initials, color, swap } from './core.js';
+import { h, s, rich, has, icon, button, segmented, chips, empty, asset, safeHref, linkProps, list, clamp, initials, color, swap, reduced } from './core.js';
 
 const goLink = (href, text) => {
   const url = safeHref(href);
@@ -28,7 +28,9 @@ function sector(cx, cy, r0, r1, a0, a1) {
   const p = (r, a) => `${(cx + r * Math.cos(a)).toFixed(2)} ${(cy + r * Math.sin(a)).toFixed(2)}`;
   return `M${p(r1, a0)}A${r1} ${r1} 0 0 1 ${p(r1, a1)}L${p(r0, a1)}A${r0} ${r0} 0 0 0 ${p(r0, a0)}Z`;
 }
-function cycle(d, { body }) {
+function cycle(d, ctx) {
+  if (d.display === 'arc') return arc(d, ctx);
+  const { body } = ctx;
   const en = d.language === 'en';
   const rounds = d.items || [];
   if (!rounds.length) return body.append(empty('请添加至少一轮 Design–Build–Test–Learn。'));
@@ -89,6 +91,83 @@ function cycle(d, { body }) {
   if (seg) body.append(h('div', { class: 'seg-scroll' }, seg.el));
   body.append(h('div', { class: 'cyc' }, ring, panel));
   go(0, 0);
+}
+
+/* ------------------------------------------------- cycle · half-ring (arc)
+ * A half ring of D / B / T / L stays beside the four stages while they scroll past; the stage
+ * crossing the middle of the viewport lights its segment and the others recede. Every stage is
+ * always in the document, so narrow screens, print and reduced motion simply read top to bottom. */
+function arc(d, { body, frame, onCleanup }) {
+  const en = d.language === 'en';
+  const rounds = d.items || [];
+  if (!rounds.length) return body.append(empty('请添加至少一轮 Design–Build–Test–Learn。'));
+  frame.classList.add('tk--bare');
+  const CX = 78; const CY = 160; const R0 = 86; const R1 = 150; const HUB = 72; const gap = 0.03;
+  rounds.forEach((round, ri) => {
+    const stages = []; const arcs = [];
+    const ring = s('svg', { class: 'arc__ring', viewBox: '0 0 232 320', role: 'group', 'aria-label': en ? 'DBTL stages' : '工程循环阶段' });
+    PHASES.forEach((ph, i) => {
+      const a0 = -Math.PI / 2 + (i * Math.PI) / 4 + gap; const a1 = a0 + Math.PI / 4 - gap * 2;
+      const mid = (a0 + a1) / 2; const lr = (R0 + R1) / 2;
+      const g = s('g', { class: 'arc__seg', tabindex: '0', role: 'button', 'aria-label': en ? ph.en : `${ph.en} ${ph.zh}`,
+        style: { '--pc': ph.c, '--dx': `${(7 * Math.cos(mid)).toFixed(2)}px`, '--dy': `${(7 * Math.sin(mid)).toFixed(2)}px` } },
+        s('path', { d: sector(CX, CY, R0, R1, a0, a1) }),
+        s('text', { x: CX + lr * Math.cos(mid), y: CY + lr * Math.sin(mid) + 1, 'text-anchor': 'middle', 'dominant-baseline': 'middle', text: ph.en }));
+      g.addEventListener('click', () => jump(i));
+      g.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); jump(i); } });
+      ring.append(g); arcs.push(g);
+    });
+    ring.append(s('circle', { class: 'arc__hub', cx: CX, cy: CY, r: HUB }));
+    let icon = null;
+    if (round.icon) { try { icon = asset(round.icon); } catch { icon = null; } }
+    if (icon) ring.append(s('image', { href: icon, x: CX - 58, y: CY - 38, width: 116, height: 76, preserveAspectRatio: 'xMidYMid meet' }));
+    else ring.append(s('text', { class: 'arc__word', x: CX, y: CY + 1, 'text-anchor': 'middle', 'dominant-baseline': 'middle', text: 'DBTL' }));
+    const step = h('p', { class: 'arc__step', 'aria-live': 'polite' });
+    const rail = h('div', { class: 'arc__rail' }, ring, step);
+
+    const list = h('div', { class: 'arc__stages' });
+    PHASES.forEach((ph, i) => {
+      const text = round[ph.key]; const src = round[`${ph.key}Image`]; const caption = round[`${ph.key}Caption`];
+      arcs[i].classList.toggle('is-empty', !has(text));
+      const stage = h('section', { class: 'arc__stage', style: { '--pc': ph.c }, 'aria-label': ph.en },
+        h('span', { class: 'arc__badge', text: en ? ph.en : `${ph.en} · ${ph.zh}` }),
+        has(text) ? rich(text) : h('p', { class: 'muted', text: en ? 'No content has been supplied for this stage.' : '这一阶段还没有填写内容。' }));
+      if (src || caption) stage.append(h('figure', { class: 'arc__figure' },
+        src ? h('a', { class: 'arc__image', href: asset(src), ...linkProps(asset(src)) }, h('img', { src: asset(src), alt: round[`${ph.key}Alt`] || '', loading: 'lazy', decoding: 'async' })) : null,
+        caption ? h('figcaption', null, rich(caption)) : null));
+      list.append(stage); stages.push(stage);
+    });
+    const more = goLink(round.href, en ? 'Detailed results' : '详细数据');
+    if (more) list.append(more);
+
+    const wrap = h('div', { class: 'arc' }, rail, list);
+    body.append(wrap);
+
+    let on = -1;
+    function light(i) {
+      if (i === on) return;
+      on = i;
+      arcs.forEach((g, k) => g.setAttribute('aria-pressed', String(k === i)));
+      stages.forEach((st, k) => st.classList.toggle('is-on', k === i));
+      rail.style.setProperty('--pc', PHASES[i].c);
+      step.textContent = `${en ? PHASES[i].en : `${PHASES[i].en} ${PHASES[i].zh}`} · ${i + 1}/4${rounds.length > 1 ? ` · ${round.title || `Cycle ${ri + 1}`}` : ''}`;
+    }
+    function jump(i) {
+      light(i);
+      stages[i].scrollIntoView({ behavior: reduced() ? 'auto' : 'smooth', block: 'center' });
+    }
+    light(0);
+    if (!('IntersectionObserver' in window)) return;
+    wrap.classList.add('is-live');
+    // A thin band just above the middle of the viewport decides which stage is being read.
+    const seen = new Set();
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) e.isIntersecting ? seen.add(stages.indexOf(e.target)) : seen.delete(stages.indexOf(e.target));
+      if (seen.size) light(Math.max(...seen));
+    }, { rootMargin: '-42% 0px -52% 0px' });
+    stages.forEach((st) => io.observe(st));
+    onCleanup(() => io.disconnect());
+  });
 }
 
 /* ============================================================== feedback */
