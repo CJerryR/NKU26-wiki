@@ -521,11 +521,11 @@ This cycle is hereby concluded. The strains constructed in this cycle can only f
 
 ::::
 
-::::figuretext{side=left width=medium flow=wrap}
+::::figuretext{side=left width=narrow flow=wrap}
 
 :::figure
 
-[![Photograph of the vacuum filtration spotting device.](https://static.igem.wiki/teams/6303/wiki/release-20261020/results-spotting-device-20751c382bee.json)](https://static.igem.wiki/teams/6303/wiki/release-20261020/results-spotting-device-20751c382bee.json "Open full-resolution image")
+[![A vacuum filtration spotting device used to load protectant suspension onto the test-strip substrate.](https://static.igem.wiki/teams/6303/wiki/release-20261020/results-spotting-device-20751c382bee.json)](https://static.igem.wiki/teams/6303/wiki/release-20261020/results-spotting-device-20751c382bee.json "Open full-resolution image")
 
 <p class="figure-caption">Figure 33. Photograph of the vacuum filtration spotting device.</p>
 

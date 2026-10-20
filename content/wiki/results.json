@@ -996,11 +996,11 @@
     {
       "_template": "image",
       "src": "https://static.igem.wiki/teams/6303/wiki/release-20261020/results-spotting-device-20751c382bee.json",
-      "alt": "Photograph of the vacuum filtration spotting device.",
+      "alt": "A vacuum filtration spotting device used to load protectant suspension onto the test-strip substrate.",
       "body": "<p class=\"figure-caption\">Figure 33. Photograph of the vacuum filtration spotting device.</p>",
       "accompanyingBody": "<p>Additionally, we self-fabricate a vacuum filtration spotting device (Figure 33). This device can rapidly draw the high-viscosity protectant suspension into the interior of the test strip substrate, which not only significantly improves spotting efficiency but also achieves standardized control over the cell-loading amount per individual test strip.</p>",
       "layout": "wrap-left",
-      "imageWidth": "medium",
+      "imageWidth": "narrow",
       "openOriginal": true
     },
     {
