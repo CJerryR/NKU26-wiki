@@ -368,7 +368,7 @@ function figure(node, ctx) {
   media.push(...body);
   const kids = [el('div', { className: ['figure__media'] }, media)];
   if (caption || a.credit) {
-    const cap = caption ? (ctx.preserveFormatting ? [...caption] : captionLead([...caption])) : [];
+    const cap = caption ? captionLead([...caption]) : [];
     if (a.credit) cap.push(el('span', { className: ['figure__credit'] }, [text(a.credit)]));
     kids.push(el('figcaption', {}, cap));
   }
@@ -477,7 +477,7 @@ function wrapTablesAndImages(node, preserveFormatting = false) {
     const next = node.children[i + 1];
     const prev = node.children[i - 1];
     if (c.type === 'paragraph' && ((next && next.type === 'table') || (prev && prev.type === 'table')) && /^Table\s+S?\d+[A-Za-z]?[.:]/.test(toText(c).trim())) {
-      if (!preserveFormatting) c.children = captionLead(c.children);
+      if (!preserveFormatting) c.children = tableCaptionLead(c.children);
       c.data = { ...(c.data || {}), hProperties: { ...((c.data || {}).hProperties || {}), className: ['table-caption'] } };
     }
   });
@@ -581,9 +581,8 @@ function finalize(tree, file) {
  *  - species and genus names in italics (a fixed list taken from the content);
  *  - citation numbers [1], [2, 3], [4–6] in running text as superscripts,
  *    except inside the References list itself;
- *  - in figure/table captions, the label and the first sentence in bold, and
- *    panel letters — (a), (b) and the Nature-style a, / b, labels — in bold
- *    (captionLead, boldPanels; F02 in checkpoint-10).                       */
+ *  - table caption emphasis stays with the existing table formatter;
+ *    figure captions use plain weight, preserving scientific inline nodes. */
 const SPECIES = [
   'Arthrobotrys oligospora', 'Arthrobotrys flagrans', 'Orbilia oligospora', 'Caenorhabditis elegans', 'Heterodera glycines',
   'Meloidogyne incognita', 'Saccharomyces cerevisiae', 'Escherichia coli', 'Globodera rostochiensis', 'Globodera pallida',
@@ -655,7 +654,7 @@ const PANEL_FIRST = new RegExp(`^\\s*(?:${PANEL_PAREN}|(?:${PANEL_GROUP})[,:)](?
 const maskMath = (value) => value.replace(/\$[^$\n]+\$/g, (m) => '\u0000'.repeat(m.length));
 
 /** Bold "Figure N." plus the caption's first sentence; bold panel letters. */
-export function captionLead(children) {
+function tableCaptionLead(children) {
   const isText = (c) => c && c.type === 'text';
   const out = [];
   const lead = [];
@@ -711,4 +710,14 @@ export function boldPanels(children, context = '') {
     ctx = hay;
   }
   return out;
+}
+
+/** Figure captions are plain weight, including authored lead/panel emphasis.
+ * Keep links, scientific italics, code, math and reference nodes intact. */
+export function captionLead(children) {
+  return children.flatMap(child => {
+    if (child.type === 'strong') return captionLead(child.children || []);
+    if (child.type === 'html') return [{...child,value:child.value.replace(/<\/?(?:strong|b)\b[^>]*>/gi,'')}];
+    return child.children ? [{...child,children:captionLead(child.children)}] : [child];
+  });
 }

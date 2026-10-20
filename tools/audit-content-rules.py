@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Audit every generated content page and protect scientific assets/data."""
 import argparse
+import importlib.util
 from collections import Counter
 import json
 from html.parser import HTMLParser
@@ -60,12 +61,23 @@ def archive_links(doc):
     return sorted(links,key=str)
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--base',default='e205f4a5c5ade14f1c38e6836a2b41521b20bf5e');parser.add_argument('--output',default='docs/content-rules-audit.json');args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--base',default='e205f4a5c5ade14f1c38e6836a2b41521b20bf5e');parser.add_argument('--output',default='docs/content-rules-audit.json');parser.add_argument('--structure-only',action='store_true');args=parser.parse_args()
+    reviewed_scope=set('description background engineering contribution model model-docking model-md model-ode model-eco'.split())
+    spec=importlib.util.spec_from_file_location('rules',Path('tools/apply-rules-wet.py'))
+    rules=importlib.util.module_from_spec(spec);spec.loader.exec_module(rules)
     failures=[];pages=[]
     for path in sorted(Path('content/wiki').glob('*.json')):
-        slug=path.stem;doc=json.loads(path.read_text());old=json.loads(subprocess.check_output(['git','show',f'{args.base}:{path}'],text=True))
-        if values(doc)!=values(old):failures.append(f'{slug}: scientific asset/data fields changed')
-        if slug=='source-archive' and archive_links(doc)!=archive_links(old):failures.append('source-archive: original download targets changed')
+        slug=path.stem;doc=json.loads(path.read_text())
+        if not args.structure_only:
+            old=json.loads(subprocess.check_output(['git','show',f'{args.base}:{path}'],text=True))
+            if values(doc)!=values(old):failures.append(f'{slug}: scientific asset/data fields changed')
+            if slug=='source-archive' and archive_links(doc)!=archive_links(old):failures.append('source-archive: original download targets changed')
+        if slug in reviewed_scope:
+            for block in doc['blocks']:
+                if block.get('_template')!='heading':continue
+                label=rules.unnumber(block['text'])
+                if rules.sentence_case(label)!=label:failures.append(f'{slug}: heading is not sentence case: {label}')
+                if re.search(r'(?:^|\s)unnumbered(?:\s|$)',block.get('attributes','')):failures.append(f'{slug}: chapter bypasses agreed outline numbering: {label}')
         generated=Path('public')/(doc['route']+'/index.html' if doc.get('route') else f'pages/{slug}.html')
         if not generated.exists(): failures.append(f'{slug}: generated page missing');continue
         dom=DOM(generated.read_text());nodes=list(dom.root.walk());article=next((n for n in nodes if n.tag=='article' and n.has('doc__body')),None)
@@ -76,6 +88,9 @@ def main():
             label=n.text().strip()
             calendar_date=re.match(r'^\d{1,2}\s+(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{4}\b',label)
             if not calendar_date and re.match(r'^\s*(?:\d+(?:\.\d+)*[.)]?|[IVX]+[.)])\s+',label):failures.append(f'{slug}: h2 still numbered: {label[:100]}')
+        if slug in reviewed_scope:
+            for item in (n for n in nodes if n.has('toc__item--3')):
+                if any(n.has('toc__num') for n in item.walk()):failures.append(f'{slug}: child outline item still displays a number: {item.text()[:80]}')
         for section in (n for n in article.walk() if n.has('doc-section') and n.attrs.get('data-num')):
             if section.parent and section.parent.inside(cls='doc-section'):failures.append(f'{slug}: chapter {section.attrs["data-num"]} is nested inside another chapter')
             def belongs(n):

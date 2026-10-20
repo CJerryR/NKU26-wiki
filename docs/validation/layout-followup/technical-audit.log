@@ -1,0 +1,33 @@
+
+> nku26-wiki@10.2.15 audit
+> python3 tools/audit_wiki_content.py --generated --generated-root public
+
+sources=26 sections=96 hidden=4 drafts=0
+CONTENT INCOMPLETE (26 warnings; empty stage pages are allowed)
+- src/content/pages/licensing.md: body is empty; team content is required before final submission
+- src/content/pages/attributions.md: supplied team material integrated; final team review pending
+- src/content/pages/background.md: supplied team material integrated; final team review pending
+- src/content/pages/contribution.md: supplied team material integrated; final team review pending
+- src/content/pages/description.md: supplied team material integrated; final team review pending
+- src/content/pages/education.md: supplied team material integrated; final team review pending
+- src/content/pages/engineering.md: supplied team material integrated; final team review pending
+- src/content/pages/experiments.md: supplied team material integrated; final team review pending
+- src/content/pages/hp-industry.md: supplied team material integrated; final team review pending
+- src/content/pages/hp-investigation.md: supplied team material integrated; final team review pending
+- src/content/pages/hp-overview.md: supplied team material integrated; final team review pending
+- src/content/pages/human-practices.md: supplied team material integrated; final team review pending
+- src/content/pages/members.md: supplied team material integrated; final team review pending
+- src/content/pages/model-1.md: supplied team material integrated; final team review pending
+- src/content/pages/model-2.md: supplied team material integrated; final team review pending
+- src/content/pages/model-docking.md: supplied team material integrated; final team review pending
+- src/content/pages/model-eco.md: supplied team material integrated; final team review pending
+- src/content/pages/model-md.md: supplied team material integrated; final team review pending
+- src/content/pages/model-ode.md: supplied team material integrated; final team review pending
+- src/content/pages/model.md: supplied team material integrated; final team review pending
+- src/content/pages/part-collection.md: supplied team material integrated; final team review pending
+- src/content/pages/parts.md: supplied team material integrated; final team review pending
+- src/content/pages/protocols.md: supplied team material integrated; final team review pending
+- src/content/pages/results.md: supplied team material integrated; final team review pending
+- src/content/pages/safety.md: supplied team material integrated; final team review pending
+- src/content/pages/source-archive.md: supplied team material integrated; final team review pending
+PASS (technical checks only; content readiness reported separately)

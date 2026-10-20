@@ -1,0 +1,1644 @@
+{
+  "schema_revision": 2,
+  "baseline": "6143316",
+  "scope": [
+    "description",
+    "background",
+    "engineering",
+    "contribution",
+    "model",
+    "model-docking",
+    "model-md",
+    "model-ode",
+    "model-eco"
+  ],
+  "pages": {
+    "description": {
+      "before_sha256": "a84162918956298ee4803d9aadd63df7f3e22811193d5c912cddb5a3f8e4d827",
+      "after_sha256": "d70eaba1d6cbd0c7b923a04f23b515b9be33bd78c053faf5bd9d9315a6b2c8d6",
+      "heading_changes": [
+        {
+          "before": {
+            "_template": "heading",
+            "level": 2,
+            "text": "Project overview",
+            "attributes": "#description-project-overview toc=\"Project overview\" unnumbered"
+          },
+          "after": {
+            "_template": "heading",
+            "level": 2,
+            "text": "Project overview",
+            "attributes": "#description-project-overview toc=\"Project overview\""
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 3,
+            "text": "Starting with the decision a grower needs to make",
+            "attributes": "#description-starting-with-the-decision-a-grower-needs-to-make toc=\"Starting with the decision a grower needs to make\""
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "1.1 Starting with the decision a grower needs to make",
+            "attributes": "#description-starting-with-the-decision-a-grower-needs-to-make toc=\"Starting with the decision a grower needs to make\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 3,
+            "text": "Looking for chemical clues in the soil",
+            "attributes": "#description-looking-for-chemical-clues-in-the-soil toc=\"Looking for chemical clues in the soil\""
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "1.2 Looking for chemical clues in the soil",
+            "attributes": "#description-looking-for-chemical-clues-in-the-soil toc=\"Looking for chemical clues in the soil\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 3,
+            "text": "Turning chemical signals into readable color",
+            "attributes": "#description-turning-chemical-signals-into-readable-color toc=\"Turning chemical signals into readable color\""
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "1.3 Turning chemical signals into readable color",
+            "attributes": "#description-turning-chemical-signals-into-readable-color toc=\"Turning chemical signals into readable color\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 3,
+            "text": "Making the color useful",
+            "attributes": "#description-making-the-color-useful toc=\"Making the color useful\""
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "1.4 Making the color useful",
+            "attributes": "#description-making-the-color-useful toc=\"Making the color useful\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 3,
+            "text": "Bringing the whole process back to the field",
+            "attributes": "#description-bringing-the-whole-process-back-to-the-field toc=\"Bringing the whole process back to the field\""
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "1.5 Bringing the whole process back to the field",
+            "attributes": "#description-bringing-the-whole-process-back-to-the-field toc=\"Bringing the whole process back to the field\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 3,
+            "text": "1.1 Two responses to understand a mixed signal",
+            "attributes": "#description-two-responses-to-understand-a-mixed-signal toc=\"Two responses to understand a mixed signal\""
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "2.1 Two responses to understand a mixed signal",
+            "attributes": "#description-two-responses-to-understand-a-mixed-signal toc=\"Two responses to understand a mixed signal\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 3,
+            "text": "1.2 A living sensor in an accessible test format",
+            "attributes": "#description-a-living-sensor-in-an-accessible-test-format toc=\"A living sensor in an accessible test format\""
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "2.2 A living sensor in an accessible test format",
+            "attributes": "#description-a-living-sensor-in-an-accessible-test-format toc=\"A living sensor in an accessible test format\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 3,
+            "text": "1.3 Designing around the decision that follows",
+            "attributes": "#description-designing-around-the-decision-that-follows toc=\"Designing around the decision that follows\""
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "2.3 Designing around the decision that follows",
+            "attributes": "#description-designing-around-the-decision-that-follows toc=\"Designing around the decision that follows\" toc-unnumbered"
+          }
+        }
+      ],
+      "terms": [
+        {
+          "full": "plant-parasitic nematodes",
+          "abbreviation": "PPN",
+          "first_position": "blocks[3].body",
+          "count": 2,
+          "source": "established scientific nomenclature"
+        },
+        {
+          "full": "Human Practices",
+          "abbreviation": "HP",
+          "first_position": "blocks[5].body",
+          "count": 4,
+          "source": "project team designation"
+        },
+        {
+          "full": "ascaroside #3",
+          "abbreviation": "ascr#3",
+          "first_position": "blocks[12].body",
+          "count": 2,
+          "source": "project ligand nomenclature; source literature"
+        },
+        {
+          "full": "ascaroside #18",
+          "abbreviation": "ascr#18",
+          "first_position": "blocks[12].body",
+          "count": 2,
+          "source": "project ligand nomenclature; source literature"
+        },
+        {
+          "full": "molecular dynamics",
+          "abbreviation": "MD",
+          "first_position": "blocks[14].body",
+          "count": 1,
+          "source": "established scientific nomenclature"
+        },
+        {
+          "full": "Saccharomyces cerevisiae",
+          "abbreviation": "S.c",
+          "first_position": "blocks[17].body",
+          "count": 1,
+          "source": "https://www.yeastgenome.org/; project-approved S.c abbreviation"
+        },
+        {
+          "full": "synthetic transcription factor",
+          "abbreviation": "sTF",
+          "first_position": "blocks[17].body",
+          "count": 1,
+          "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10753199/"
+        },
+        {
+          "full": "ordinary differential equation",
+          "abbreviation": "ODE",
+          "first_position": "blocks[18].body",
+          "count": 1,
+          "source": "established scientific nomenclature"
+        }
+      ],
+      "retained_full_terms_pending_owner": [
+        "plant-parasitic nematodes",
+        "nematode-trapping fungi",
+        "ascarosides",
+        "betaxanthin",
+        "biosensor",
+        "molecular docking",
+        "receptor engineering",
+        "color development",
+        "transcription factor",
+        "chemical signals",
+        "nematode density",
+        "sample preparation"
+      ],
+      "protected_material_unchanged": true,
+      "anchors_unchanged": true
+    },
+    "background": {
+      "before_sha256": "aca8dc163d398a1907b140d0f386840f428670d41a3dec1e04b0e61e5b3ad1af",
+      "after_sha256": "aca8dc163d398a1907b140d0f386840f428670d41a3dec1e04b0e61e5b3ad1af",
+      "heading_changes": [],
+      "terms": [
+        {
+          "full": "plant-parasitic nematodes",
+          "abbreviation": "PPN",
+          "first_position": "blocks[2].body",
+          "count": 9,
+          "source": "established scientific nomenclature"
+        },
+        {
+          "full": "Heterodera glycines",
+          "abbreviation": "H. glycines",
+          "first_position": "blocks[2].body",
+          "count": 3,
+          "source": "established scientific nomenclature"
+        },
+        {
+          "full": "Meloidogyne incognita",
+          "abbreviation": "Mi",
+          "first_position": "blocks[2].body",
+          "count": 4,
+          "source": "project ODE model notation Mi"
+        },
+        {
+          "full": "second-stage juveniles",
+          "abbreviation": "J2",
+          "first_position": "blocks[4].body",
+          "count": 1,
+          "source": "established scientific nomenclature"
+        },
+        {
+          "full": "ascaroside #18",
+          "abbreviation": "ascr#18",
+          "first_position": "blocks[12].body",
+          "count": 1,
+          "source": "project ligand nomenclature; source literature"
+        },
+        {
+          "full": "Caenorhabditis elegans",
+          "abbreviation": "Ce",
+          "first_position": "blocks[12].body",
+          "count": 1,
+          "source": "project ODE model notation Ce"
+        },
+        {
+          "full": "ascaroside #3",
+          "abbreviation": "ascr#3",
+          "first_position": "blocks[12].body",
+          "count": 2,
+          "source": "project ligand nomenclature; source literature"
+        },
+        {
+          "full": "ascaroside #5",
+          "abbreviation": "ascr#5",
+          "first_position": "blocks[12].body",
+          "count": 1,
+          "source": "project ligand nomenclature; source literature"
+        },
+        {
+          "full": "G protein-coupled receptor",
+          "abbreviation": "GPCR",
+          "first_position": "blocks[15].accompanyingBody",
+          "count": 2,
+          "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6476273/"
+        },
+        {
+          "full": "Arthrobotrys oligospora",
+          "abbreviation": "A. oligospora",
+          "first_position": "blocks[15].accompanyingBody",
+          "count": 2,
+          "source": "established scientific nomenclature"
+        },
+        {
+          "full": "mitogen-activated protein kinase",
+          "abbreviation": "MAPK",
+          "first_position": "blocks[15].accompanyingBody",
+          "count": 1,
+          "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10753199/"
+        }
+      ],
+      "retained_full_terms_pending_owner": [
+        "plant-parasitic nematodes",
+        "sedentary endoparasitic nematodes",
+        "metabarcoding",
+        "deep learning",
+        "hyperspectral imaging",
+        "remote sensing",
+        "nematicides",
+        "chemical fumigation",
+        "biological control",
+        "crop rotation",
+        "rhizosphere microbiome",
+        "syncytial feeding sites",
+        "chlorosis",
+        "6-methoxybenzoxazolin-2-one",
+        "nutrient uptake"
+      ],
+      "protected_material_unchanged": true,
+      "anchors_unchanged": true
+    },
+    "engineering": {
+      "before_sha256": "fd550ff5a33d3b07b8ca720172dd27f5d1d0cd8a7a1c37d101f763f561eda870",
+      "after_sha256": "575e1ef34ad42446511d45cacbb6d872e7b160ac04c841af4b831629f23cb703",
+      "heading_changes": [
+        {
+          "before": {
+            "_template": "heading",
+            "level": 3,
+            "text": "1.1 Improving receptor localization tests",
+            "attributes": "#engineering-iteration-1-1-improving-receptor-localization-tests toc=\"Improving receptor localization tests\""
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "1.1 Improving receptor localization tests",
+            "attributes": "#engineering-iteration-1-1-improving-receptor-localization-tests toc=\"Improving receptor localization tests\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 3,
+            "text": "1.2 Revising the genome-editing strategy",
+            "attributes": "#engineering-iteration-1-2-revising-the-genome-editing-strategy toc=\"Revising the genome-editing strategy\""
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "1.2 Revising the genome-editing strategy",
+            "attributes": "#engineering-iteration-1-2-revising-the-genome-editing-strategy toc=\"Revising the genome-editing strategy\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 3,
+            "text": "2.1 Developing receptor variants with different predicted preferences",
+            "attributes": "#engineering-iteration-2-1-developing-receptor-variants-with-different-predicted-preferences toc=\"Developing receptor variants with different predicted preferences\""
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "2.1 Developing receptor variants with different predicted preferences",
+            "attributes": "#engineering-iteration-2-1-developing-receptor-variants-with-different-predicted-preferences toc=\"Developing receptor variants with different predicted preferences\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 3,
+            "text": "2.2 Investigating how candidate receptors hold their ligands",
+            "attributes": "#engineering-iteration-2-2-investigating-how-candidate-receptors-hold-their-ligands toc=\"Investigating how candidate receptors hold their ligands\""
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "2.2 Investigating how candidate receptors hold their ligands",
+            "attributes": "#engineering-iteration-2-2-investigating-how-candidate-receptors-hold-their-ligands toc=\"Investigating how candidate receptors hold their ligands\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 3,
+            "text": "2.3 Revising the signal-to-color model",
+            "attributes": "#engineering-iteration-2-3-revising-the-signal-to-color-model toc=\"Revising the signal-to-color model\""
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "2.3 Revising the signal-to-color model",
+            "attributes": "#engineering-iteration-2-3-revising-the-signal-to-color-model toc=\"Revising the signal-to-color model\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 3,
+            "text": "2.4 Testing paired readouts",
+            "attributes": "#engineering-iteration-2-4-testing-paired-readouts toc=\"Testing paired readouts\""
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "2.4 Testing paired readouts",
+            "attributes": "#engineering-iteration-2-4-testing-paired-readouts toc=\"Testing paired readouts\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 3,
+            "text": "3.1 Choosing the paper substrate",
+            "attributes": "#engineering-iteration-3-1-choosing-the-paper-substrate toc=\"Choosing the paper substrate\""
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "3.1 Choosing the paper substrate",
+            "attributes": "#engineering-iteration-3-1-choosing-the-paper-substrate toc=\"Choosing the paper substrate\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 3,
+            "text": "3.2 Controlling cell placement and loading",
+            "attributes": "#engineering-iteration-3-2-controlling-cell-placement-and-loading toc=\"Controlling cell placement and loading\""
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "3.2 Controlling cell placement and loading",
+            "attributes": "#engineering-iteration-3-2-controlling-cell-placement-and-loading toc=\"Controlling cell placement and loading\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 3,
+            "text": "3.3 Improving conditions for color development",
+            "attributes": "#engineering-iteration-3-3-improving-conditions-for-color-development toc=\"Improving conditions for color development\""
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "3.3 Improving conditions for color development",
+            "attributes": "#engineering-iteration-3-3-improving-conditions-for-color-development toc=\"Improving conditions for color development\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 3,
+            "text": "4.1 Defining when and why to use the kit",
+            "attributes": "#engineering-iteration-4-1-defining-when-and-why-to-use-the-kit toc=\"Defining when and why to use the kit\""
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "4.1 Defining when and why to use the kit",
+            "attributes": "#engineering-iteration-4-1-defining-when-and-why-to-use-the-kit toc=\"Defining when and why to use the kit\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 3,
+            "text": "4.2 Defining what a color result can tell the user",
+            "attributes": "#engineering-iteration-4-2-defining-what-a-color-result-can-tell-the-user toc=\"Defining what a color result can tell the user\""
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "4.2 Defining what a color result can tell the user",
+            "attributes": "#engineering-iteration-4-2-defining-what-a-color-result-can-tell-the-user toc=\"Defining what a color result can tell the user\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 3,
+            "text": "4.3 Extending the design to the whole testing process",
+            "attributes": "#engineering-iteration-4-3-extending-the-design-to-the-whole-testing-process toc=\"Extending the design to the whole testing process\""
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "4.3 Extending the design to the whole testing process",
+            "attributes": "#engineering-iteration-4-3-extending-the-design-to-the-whole-testing-process toc=\"Extending the design to the whole testing process\" toc-unnumbered"
+          }
+        }
+      ],
+      "terms": [
+        {
+          "full": "design–build–test–learn",
+          "abbreviation": "DBTL",
+          "first_position": "blocks[2].body",
+          "count": 3,
+          "source": "established scientific nomenclature"
+        },
+        {
+          "full": "Human Practices",
+          "abbreviation": "HP",
+          "first_position": "blocks[4].body",
+          "count": 4,
+          "source": "project team designation"
+        },
+        {
+          "full": "Calcofluor White",
+          "abbreviation": "CFW",
+          "first_position": "blocks[13].body",
+          "count": 1,
+          "source": "https://tools.thermofisher.com/content/sfs/manuals/IFU21507.pdf"
+        },
+        {
+          "full": "guide RNAs",
+          "abbreviation": "gRNA",
+          "first_position": "blocks[19].body",
+          "count": 1,
+          "source": "established scientific nomenclature"
+        },
+        {
+          "full": "deoxyribonucleic acid",
+          "abbreviation": "DNA",
+          "first_position": "blocks[19].body",
+          "count": 1,
+          "source": "established scientific nomenclature"
+        },
+        {
+          "full": "leucine",
+          "abbreviation": "Leu",
+          "first_position": "blocks[20].body",
+          "count": 1,
+          "source": "standard amino-acid three-letter code"
+        },
+        {
+          "full": "ribonucleic acid",
+          "abbreviation": "RNA",
+          "first_position": "blocks[20].body",
+          "count": 1,
+          "source": "established scientific nomenclature"
+        },
+        {
+          "full": "ascaroside #3",
+          "abbreviation": "ascr#3",
+          "first_position": "blocks[28].body",
+          "count": 4,
+          "source": "project ligand nomenclature; source literature"
+        },
+        {
+          "full": "ascaroside #18",
+          "abbreviation": "ascr#18",
+          "first_position": "blocks[28].body",
+          "count": 5,
+          "source": "project ligand nomenclature; source literature"
+        },
+        {
+          "full": "alanine",
+          "abbreviation": "Ala",
+          "first_position": "blocks[29].body",
+          "count": 1,
+          "source": "standard amino-acid three-letter code"
+        },
+        {
+          "full": "wild type",
+          "abbreviation": "WT",
+          "first_position": "blocks[35].body",
+          "count": 1,
+          "source": "established scientific nomenclature"
+        },
+        {
+          "full": "molecular dynamics",
+          "abbreviation": "MD",
+          "first_position": "blocks[36].body",
+          "count": 2,
+          "source": "established scientific nomenclature"
+        },
+        {
+          "full": "ordinary differential equation",
+          "abbreviation": "ODE",
+          "first_position": "blocks[48].body",
+          "count": 2,
+          "source": "established scientific nomenclature"
+        },
+        {
+          "full": "synthetic complete",
+          "abbreviation": "SC",
+          "first_position": "blocks[70].body",
+          "count": 1,
+          "source": "established scientific nomenclature"
+        },
+        {
+          "full": "phosphate-buffered saline",
+          "abbreviation": "PBS",
+          "first_position": "blocks[70].body",
+          "count": 1,
+          "source": "established scientific nomenclature"
+        },
+        {
+          "full": "tyrosine",
+          "abbreviation": "Tyr",
+          "first_position": "blocks[70].body",
+          "count": 2,
+          "source": "standard amino-acid three-letter code"
+        }
+      ],
+      "retained_full_terms_pending_owner": [
+        "betaxanthin",
+        "biosensor",
+        "plasmid",
+        "tyrosine",
+        "glucose",
+        "Tween 80",
+        "ligand",
+        "color development",
+        "protectant",
+        "mutant",
+        "carboxylate",
+        "nematode density",
+        "sample preparation"
+      ],
+      "protected_material_unchanged": true,
+      "anchors_unchanged": true
+    },
+    "contribution": {
+      "before_sha256": "0314bd8c5214c73aeb51758a53b621bf1b33960f047a557c2170f2873ca34563",
+      "after_sha256": "6c0e42e4fcaee9eb98efd798b29025c32dfeb7f2eaa621c5f7525a64add0adf6",
+      "heading_changes": [
+        {
+          "before": {
+            "_template": "heading",
+            "level": 3,
+            "text": "1.1 Parts and collections",
+            "attributes": "#contribution-1-1-parts-and-collections toc=\"Parts and collections\""
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "1.1 Parts and collections",
+            "attributes": "#contribution-1-1-parts-and-collections toc=\"Parts and collections\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 3,
+            "text": "1.2 Documented strain construction",
+            "attributes": "#contribution-1-2-documented-strain-construction toc=\"Documented strain construction\""
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "1.2 Documented strain construction",
+            "attributes": "#contribution-1-2-documented-strain-construction toc=\"Documented strain construction\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 3,
+            "text": "1.3 Protocols and troubleshooting",
+            "attributes": "#contribution-1-3-protocols-and-troubleshooting toc=\"Protocols and troubleshooting\""
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "1.3 Protocols and troubleshooting",
+            "attributes": "#contribution-1-3-protocols-and-troubleshooting toc=\"Protocols and troubleshooting\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 3,
+            "text": "2.1 Receptor design and docking checks",
+            "attributes": "#contribution-2-1-receptor-design-and-docking-checks toc=\"Receptor design and docking checks\""
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "2.1 Receptor design and docking checks",
+            "attributes": "#contribution-2-1-receptor-design-and-docking-checks toc=\"Receptor design and docking checks\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 3,
+            "text": "2.2 Ligand motion and contact analysis",
+            "attributes": "#contribution-2-2-ligand-motion-and-contact-analysis toc=\"Ligand motion and contact analysis\""
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "2.2 Ligand motion and contact analysis",
+            "attributes": "#contribution-2-2-ligand-motion-and-contact-analysis toc=\"Ligand motion and contact analysis\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 3,
+            "text": "2.3 Signal-to-color and two-channel modeling",
+            "attributes": "#contribution-2-3-signal-to-color-and-two-channel-modeling toc=\"Signal-to-color and two-channel modeling\""
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "2.3 Signal-to-color and two-channel modeling",
+            "attributes": "#contribution-2-3-signal-to-color-and-two-channel-modeling toc=\"Signal-to-color and two-channel modeling\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 3,
+            "text": "2.4 Economic evaluation of screening",
+            "attributes": "#contribution-2-4-economic-evaluation-of-screening toc=\"Economic evaluation of screening\""
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "2.4 Economic evaluation of screening",
+            "attributes": "#contribution-2-4-economic-evaluation-of-screening toc=\"Economic evaluation of screening\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 3,
+            "text": "3.1 Age-adapted educational materials",
+            "attributes": "#contribution-3-1-age-adapted-educational-materials toc=\"Age-adapted educational materials\""
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "3.1 Age-adapted educational materials",
+            "attributes": "#contribution-3-1-age-adapted-educational-materials toc=\"Age-adapted educational materials\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 3,
+            "text": "3.2 Stakeholder research and feedback methods",
+            "attributes": "#contribution-3-2-stakeholder-research-and-feedback-methods toc=\"Stakeholder research and feedback methods\""
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "3.2 Stakeholder research and feedback methods",
+            "attributes": "#contribution-3-2-stakeholder-research-and-feedback-methods toc=\"Stakeholder research and feedback methods\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 3,
+            "text": "3.3 Sampling guidance and sample records",
+            "attributes": "#contribution-3-3-sampling-guidance-and-sample-records toc=\"Sampling guidance and sample records\""
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "3.3 Sampling guidance and sample records",
+            "attributes": "#contribution-3-3-sampling-guidance-and-sample-records toc=\"Sampling guidance and sample records\" toc-unnumbered"
+          }
+        }
+      ],
+      "terms": [
+        {
+          "full": "guide RNAs",
+          "abbreviation": "gRNA",
+          "first_position": "blocks[6].body",
+          "count": 1,
+          "source": "established scientific nomenclature"
+        },
+        {
+          "full": "polymerase chain reaction",
+          "abbreviation": "PCR",
+          "first_position": "blocks[15].body",
+          "count": 1,
+          "source": "https://www.genome.gov/genetics-glossary/Polymerase-Chain-Reaction-PCR"
+        },
+        {
+          "full": "molecular dynamics",
+          "abbreviation": "MD",
+          "first_position": "blocks[26].body",
+          "count": 2,
+          "source": "established scientific nomenclature"
+        },
+        {
+          "full": "ordinary differential equation",
+          "abbreviation": "ODE",
+          "first_position": "blocks[33].body",
+          "count": 1,
+          "source": "established scientific nomenclature"
+        },
+        {
+          "full": "Human Practices",
+          "abbreviation": "HP",
+          "first_position": "blocks[39].body",
+          "count": 2,
+          "source": "project team designation"
+        }
+      ],
+      "retained_full_terms_pending_owner": [
+        "biosensor",
+        "receptor engineering",
+        "ligand",
+        "genetic parts",
+        "mutant"
+      ],
+      "protected_material_unchanged": true,
+      "anchors_unchanged": true
+    },
+    "model": {
+      "before_sha256": "ad1fbbfba22a8bbb4eaab226c0f93cbab343bd7e1e0cbbd77c4582452cb2bfb3",
+      "after_sha256": "5f685c064c05da416deec6c74f09c48217ab1f9f7eb449bb01fa4316ba3047a3",
+      "heading_changes": [
+        {
+          "before": {
+            "_template": "heading",
+            "level": 2,
+            "text": "Model Overview",
+            "attributes": "#model-overview toc=\"Model Overview\" unnumbered"
+          },
+          "after": {
+            "_template": "heading",
+            "level": 2,
+            "text": "Model overview",
+            "attributes": "#model-overview toc=\"Model overview\""
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 3,
+            "text": "Molecular Docking | Identifying receptor variants for differential recognition",
+            "attributes": "#model-section-1 toc=\"Molecular Docking | Identifying receptor variants for differential recognition\" unnumbered"
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "1.1 Molecular docking | identifying receptor variants for differential recognition",
+            "attributes": "#model-section-1 toc=\"Molecular docking | identifying receptor variants for differential recognition\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 3,
+            "text": "Molecular Dynamics | Exploring receptor–ligand behavior in a membrane",
+            "attributes": "#model-section-2 toc=\"Molecular Dynamics | Exploring receptor–ligand behavior in a membrane\" unnumbered"
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "1.2 Molecular dynamics | exploring receptor–ligand behavior in a membrane",
+            "attributes": "#model-section-2 toc=\"Molecular dynamics | exploring receptor–ligand behavior in a membrane\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 3,
+            "text": "ODE & Dual-Channel Modeling | Linking color readouts to nematode density",
+            "attributes": "#model-section-3 toc=\"ODE & Dual-Channel Modeling | Linking color readouts to nematode density\" unnumbered"
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "1.3 ODE & dual-channel modeling | linking color readouts to nematode density",
+            "attributes": "#model-section-3 toc=\"ODE & dual-channel modeling | linking color readouts to nematode density\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 3,
+            "text": "Economic Benefit | Assessing when detection informs treatment",
+            "attributes": "#model-section-4 toc=\"Economic Benefit | Assessing when detection informs treatment\" unnumbered"
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "1.4 Economic benefit | assessing when detection informs treatment",
+            "attributes": "#model-section-4 toc=\"Economic benefit | assessing when detection informs treatment\" toc-unnumbered"
+          }
+        }
+      ],
+      "terms": [
+        {
+          "full": "ascaroside #18",
+          "abbreviation": "ascr#18",
+          "first_position": "blocks[6].body",
+          "count": 1,
+          "source": "project ligand nomenclature; source literature"
+        },
+        {
+          "full": "ascaroside #3",
+          "abbreviation": "ascr#3",
+          "first_position": "blocks[6].body",
+          "count": 1,
+          "source": "project ligand nomenclature; source literature"
+        },
+        {
+          "full": "ordinary differential equation",
+          "abbreviation": "ODE",
+          "first_position": "blocks[10].body",
+          "count": 2,
+          "source": "established scientific nomenclature"
+        },
+        {
+          "full": "Meloidogyne incognita",
+          "abbreviation": "Mi",
+          "first_position": "blocks[10].body",
+          "count": 1,
+          "source": "project ODE model notation Mi"
+        },
+        {
+          "full": "molecular dynamics",
+          "abbreviation": "MD",
+          "first_position": "blocks[13].body",
+          "count": 1,
+          "source": "established scientific nomenclature"
+        }
+      ],
+      "retained_full_terms_pending_owner": [
+        "ascarosides",
+        "ligand",
+        "receptor recognition",
+        "chemical signals",
+        "nematode density"
+      ],
+      "protected_material_unchanged": true,
+      "anchors_unchanged": true
+    },
+    "model-docking": {
+      "before_sha256": "05a49b840e0a1f5600c8747530380e642d2a78f7209065c76d14f8579007b593",
+      "after_sha256": "fe629408855b2379f3bdb455e8dc1e964350d4773c0b9934dbdf5de919420c55",
+      "heading_changes": [
+        {
+          "before": {
+            "_template": "heading",
+            "level": 2,
+            "text": "Docking: Screening Receptor Variants for Ascaroside Discrimination",
+            "attributes": "#model-docking-section-0 toc=\"Docking: Screening Receptor Variants for Ascaroside Discrimination\" unnumbered"
+          },
+          "after": {
+            "_template": "heading",
+            "level": 2,
+            "text": "Docking: screening receptor variants for ascaroside discrimination",
+            "attributes": "#model-docking-section-0 toc=\"Docking: screening receptor variants for ascaroside discrimination\""
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 2,
+            "text": "1.1 Receptor Selection and Docking Setup",
+            "attributes": "#model-docking-section-1 toc=\"1.1 Receptor Selection and Docking Setup\" unnumbered"
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "1.1 Receptor selection and docking setup",
+            "attributes": "#model-docking-section-1 toc=\"Receptor selection and docking setup\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 2,
+            "text": "1.2 Contact-Based Site Selection and Alanine Scanning",
+            "attributes": "#model-docking-section-2 toc=\"1.2 Contact-Based Site Selection and Alanine Scanning\" unnumbered"
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "1.2 Contact-based site selection and alanine scanning",
+            "attributes": "#model-docking-section-2 toc=\"Contact-based site selection and alanine scanning\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 2,
+            "text": "1.3 Saturation Scanning at Four Sites",
+            "attributes": "#model-docking-section-3 toc=\"1.3 Saturation Scanning at Four Sites\" unnumbered"
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "1.3 Saturation scanning at four sites",
+            "attributes": "#model-docking-section-3 toc=\"Saturation scanning at four sites\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 2,
+            "text": "1.4 Comparing Score Changes for Both Ligands",
+            "attributes": "#model-docking-section-4 toc=\"1.4 Comparing Score Changes for Both Ligands\" unnumbered"
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "1.4 Comparing score changes for both ligands",
+            "attributes": "#model-docking-section-4 toc=\"Comparing score changes for both ligands\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 2,
+            "text": "1.5 Testing Mutation Combinations",
+            "attributes": "#model-docking-section-5 toc=\"1.5 Testing Mutation Combinations\" unnumbered"
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "1.5 Testing mutation combinations",
+            "attributes": "#model-docking-section-5 toc=\"Testing mutation combinations\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 2,
+            "text": "1.6 Selecting N84V and V368R for Molecular Dynamics",
+            "attributes": "#model-docking-section-6 toc=\"1.6 Selecting N84V and V368R for Molecular Dynamics\" unnumbered"
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "1.6 Selecting N84V and V368R for molecular dynamics",
+            "attributes": "#model-docking-section-6 toc=\"Selecting N84V and V368R for molecular dynamics\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 2,
+            "text": "1.7 Mapping Contact Sites Across Receptors",
+            "attributes": "#model-docking-section-7 toc=\"1.7 Mapping Contact Sites Across Receptors\" unnumbered"
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "1.7 Mapping contact sites across receptors",
+            "attributes": "#model-docking-section-7 toc=\"Mapping contact sites across receptors\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 2,
+            "text": "References",
+            "attributes": "#model-docking-section-8 toc=\"References\" unnumbered"
+          },
+          "after": {
+            "_template": "heading",
+            "level": 2,
+            "text": "References",
+            "attributes": "#model-docking-section-8 toc=\"References\""
+          }
+        }
+      ],
+      "terms": [
+        {
+          "full": "ascaroside #18",
+          "abbreviation": "ascr#18",
+          "first_position": "blocks[3].body",
+          "count": 23,
+          "source": "project ligand nomenclature; source literature"
+        },
+        {
+          "full": "ascaroside #3",
+          "abbreviation": "ascr#3",
+          "first_position": "blocks[3].body",
+          "count": 16,
+          "source": "project ligand nomenclature; source literature"
+        },
+        {
+          "full": "wild type",
+          "abbreviation": "WT",
+          "first_position": "blocks[4].body",
+          "count": 21,
+          "source": "established scientific nomenclature"
+        },
+        {
+          "full": "alanine",
+          "abbreviation": "Ala",
+          "first_position": "blocks[4].body",
+          "count": 4,
+          "source": "standard amino-acid three-letter code"
+        },
+        {
+          "full": "G protein-coupled receptors",
+          "abbreviation": "GPCR",
+          "first_position": "blocks[7].accompanyingBody",
+          "count": 1,
+          "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6476273/"
+        },
+        {
+          "full": "structure-data format",
+          "abbreviation": "SDF",
+          "first_position": "blocks[9].body",
+          "count": 2,
+          "source": "https://meeko.readthedocs.io/en/develop/lig_overview.html"
+        },
+        {
+          "full": "Protein Data Bank format with partial charges and atom types",
+          "abbreviation": "PDBQT",
+          "first_position": "blocks[9].body",
+          "count": 2,
+          "source": "https://github.com/forlilab/Meeko/blob/develop/docs/source/pdbqt_spec.rst"
+        },
+        {
+          "full": "molecular dynamics",
+          "abbreviation": "MD",
+          "first_position": "blocks[47].body",
+          "count": 3,
+          "source": "established scientific nomenclature"
+        },
+        {
+          "full": "arginine",
+          "abbreviation": "Arg",
+          "first_position": "blocks[50].body",
+          "count": 1,
+          "source": "standard amino-acid three-letter code"
+        },
+        {
+          "full": "Caenorhabditis elegans",
+          "abbreviation": "Ce",
+          "first_position": "blocks[55].body",
+          "count": 1,
+          "source": "project ODE model notation Ce"
+        },
+        {
+          "full": "transmembrane helix 6",
+          "abbreviation": "TM6",
+          "first_position": "blocks[57].accompanyingBody",
+          "count": 1,
+          "source": "standard transmembrane-helix positional nomenclature"
+        },
+        {
+          "full": "tryptophan residues",
+          "abbreviation": "Trp",
+          "first_position": "blocks[57].accompanyingBody",
+          "count": 1,
+          "source": "standard amino-acid three-letter code"
+        }
+      ],
+      "retained_full_terms_pending_owner": [
+        "ascarosides",
+        "molecular docking",
+        "receptor engineering",
+        "ligand",
+        "hydrophobic contact",
+        "saturation scanning",
+        "mutant",
+        "mutation"
+      ],
+      "protected_material_unchanged": true,
+      "anchors_unchanged": true
+    },
+    "model-md": {
+      "before_sha256": "59505a404fac361953f4e20c35bee5c7faf51e9b8c4f2f1585008267e07bbfce",
+      "after_sha256": "15186afa10e0c67448bf650164c8a89275aff6081123c7698740fffb81ad6fc7",
+      "heading_changes": [
+        {
+          "before": {
+            "_template": "heading",
+            "level": 2,
+            "text": "Molecular Dynamics: Ligand Positioning and Contact Changes in a Membrane Environment",
+            "attributes": "#model-md-section-0 toc=\"Molecular Dynamics: Ligand Positioning and Contact Changes in a Membrane Environment\" unnumbered"
+          },
+          "after": {
+            "_template": "heading",
+            "level": 2,
+            "text": "Molecular dynamics: ligand positioning and contact changes in a membrane environment",
+            "attributes": "#model-md-section-0 toc=\"Molecular dynamics: ligand positioning and contact changes in a membrane environment\""
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 2,
+            "text": "2.1 Constructing Six Membrane Systems from Docking Poses",
+            "attributes": "#model-md-section-1 toc=\"2.1 Constructing Six Membrane Systems from Docking Poses\" unnumbered"
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "1.1 Constructing six membrane systems from docking poses",
+            "attributes": "#model-md-section-1 toc=\"Constructing six membrane systems from docking poses\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 2,
+            "text": "2.2 Tracking Ligand Motion Relative to the Local Binding Pocket",
+            "attributes": "#model-md-section-2 toc=\"2.2 Tracking Ligand Motion Relative to the Local Binding Pocket\" unnumbered"
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "1.2 Tracking ligand motion relative to the local binding pocket",
+            "attributes": "#model-md-section-2 toc=\"Tracking ligand motion relative to the local binding pocket\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 2,
+            "text": "2.3 N84V–ascr#18: Persistent Anchoring of the Ligand Carboxylate by Arg189",
+            "attributes": "#model-md-section-3 toc=\"2.3 N84V–ascr#18: Persistent Anchoring of the Ligand Carboxylate by Arg189\" unnumbered"
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "1.3 N84V–ascr#18: persistent anchoring of the ligand carboxylate by Arg189",
+            "attributes": "#model-md-section-3 toc=\"N84V–ascr#18: persistent anchoring of the ligand carboxylate by Arg189\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 2,
+            "text": "2.4 V368R–ascr#3: The Structural Basis for the Predicted Preference Remains Unresolved",
+            "attributes": "#model-md-section-4 toc=\"2.4 V368R–ascr#3: The Structural Basis for the Predicted Preference Remains Unresolved\" unnumbered"
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "1.4 V368R–ascr#3: the structural basis for the predicted preference remains unresolved",
+            "attributes": "#model-md-section-4 toc=\"V368R–ascr#3: the structural basis for the predicted preference remains unresolved\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 2,
+            "text": "2.5 Mechanistic Interpretations of the Two Candidates",
+            "attributes": "#model-md-section-5 toc=\"2.5 Mechanistic Interpretations of the Two Candidates\" unnumbered"
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "1.5 Mechanistic interpretations of the two candidates",
+            "attributes": "#model-md-section-5 toc=\"Mechanistic interpretations of the two candidates\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 2,
+            "text": "References",
+            "attributes": "#model-md-section-6 toc=\"References\" unnumbered"
+          },
+          "after": {
+            "_template": "heading",
+            "level": 2,
+            "text": "References",
+            "attributes": "#model-md-section-6 toc=\"References\""
+          }
+        }
+      ],
+      "terms": [
+        {
+          "full": "molecular dynamics",
+          "abbreviation": "MD",
+          "first_position": "blocks[3].body",
+          "count": 4,
+          "source": "established scientific nomenclature"
+        },
+        {
+          "full": "wild type",
+          "abbreviation": "WT",
+          "first_position": "blocks[6].body",
+          "count": 6,
+          "source": "established scientific nomenclature"
+        },
+        {
+          "full": "ascaroside #18",
+          "abbreviation": "ascr#18",
+          "first_position": "blocks[6].body",
+          "count": 17,
+          "source": "project ligand nomenclature; source literature"
+        },
+        {
+          "full": "ascaroside #3",
+          "abbreviation": "ascr#3",
+          "first_position": "blocks[6].body",
+          "count": 15,
+          "source": "project ligand nomenclature; source literature"
+        },
+        {
+          "full": "1-palmitoyl-2-oleoyl-sn-glycero-3-phosphocholine",
+          "abbreviation": "POPC",
+          "first_position": "blocks[6].body",
+          "count": 1,
+          "source": "https://www.sigmaaldrich.com/NZ/en/product/avanti/850457c"
+        },
+        {
+          "full": "root mean square deviation",
+          "abbreviation": "RMSD",
+          "first_position": "blocks[10].body",
+          "count": 6,
+          "source": "established scientific nomenclature"
+        }
+      ],
+      "retained_full_terms_pending_owner": [
+        "molecular docking",
+        "lipid bilayer",
+        "ligand",
+        "hydrogen bond",
+        "carboxylate"
+      ],
+      "protected_material_unchanged": true,
+      "anchors_unchanged": true
+    },
+    "model-ode": {
+      "before_sha256": "498da015c1e97f3b72e5fce84766b980789e5a4260b3096c0c5312d4ead13431",
+      "after_sha256": "046c820d31b3a4e355862b623e3168918292500779f60fef8569d3d6d6490be1",
+      "heading_changes": [
+        {
+          "before": {
+            "_template": "heading",
+            "level": 2,
+            "text": "ODE and Dual-Channel Sensing: From Signal Response to Target Density Estimation",
+            "attributes": "#model-ode-section-0 toc=\"ODE and Dual-Channel Sensing: From Signal Response to Target Density Estimation\" unnumbered"
+          },
+          "after": {
+            "_template": "heading",
+            "level": 2,
+            "text": "ODE and dual-channel sensing: from signal response to target density estimation",
+            "attributes": "#model-ode-section-0 toc=\"ODE and dual-channel sensing: from signal response to target density estimation\""
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 2,
+            "text": "3.1 Defining the signal-to-color model",
+            "attributes": "#model-ode-section-1 toc=\"3.1 Defining the signal-to-color model\" unnumbered"
+          },
+          "after": {
+            "_template": "heading",
+            "level": 2,
+            "text": "Defining the signal-to-color model",
+            "attributes": "#model-ode-section-1 toc=\"Defining the signal-to-color model\""
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 2,
+            "text": "3.2 Connecting a literature-based signaling core to pigment production",
+            "attributes": "#model-ode-section-2 toc=\"3.2 Connecting a literature-based signaling core to pigment production\" unnumbered"
+          },
+          "after": {
+            "_template": "heading",
+            "level": 2,
+            "text": "Connecting a literature-based signaling core to pigment production",
+            "attributes": "#model-ode-section-2 toc=\"Connecting a literature-based signaling core to pigment production\""
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 2,
+            "text": "3.3 Constructing dual-sensor inputs by varying target and background independently",
+            "attributes": "#model-ode-section-3 toc=\"3.3 Constructing dual-sensor inputs by varying target and background independently\" unnumbered"
+          },
+          "after": {
+            "_template": "heading",
+            "level": 2,
+            "text": "Constructing dual-sensor inputs by varying target and background independently",
+            "attributes": "#model-ode-section-3 toc=\"Constructing dual-sensor inputs by varying target and background independently\""
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 2,
+            "text": "3.4 Adjusting the input and output interfaces using simulated pigment targets",
+            "attributes": "#model-ode-section-4 toc=\"3.4 Adjusting the input and output interfaces using simulated pigment targets\" unnumbered"
+          },
+          "after": {
+            "_template": "heading",
+            "level": 2,
+            "text": "Adjusting the input and output interfaces using simulated pigment targets",
+            "attributes": "#model-ode-section-4 toc=\"Adjusting the input and output interfaces using simulated pigment targets\""
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 2,
+            "text": "3.5 Converting pigment concentration into simulated smartphone color features",
+            "attributes": "#model-ode-section-5 toc=\"3.5 Converting pigment concentration into simulated smartphone color features\" unnumbered"
+          },
+          "after": {
+            "_template": "heading",
+            "level": 2,
+            "text": "Converting pigment concentration into simulated smartphone color features",
+            "attributes": "#model-ode-section-5 toc=\"Converting pigment concentration into simulated smartphone color features\""
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 2,
+            "text": "3.6 Estimating target density from paired color readings",
+            "attributes": "#model-ode-section-6 toc=\"3.6 Estimating target density from paired color readings\" unnumbered"
+          },
+          "after": {
+            "_template": "heading",
+            "level": 2,
+            "text": "Estimating target density from paired color readings",
+            "attributes": "#model-ode-section-6 toc=\"Estimating target density from paired color readings\""
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 2,
+            "text": "3.7 Parameter tables",
+            "attributes": "#model-ode-section-7 toc=\"3.7 Parameter tables\" unnumbered"
+          },
+          "after": {
+            "_template": "heading",
+            "level": 2,
+            "text": "Parameter tables",
+            "attributes": "#model-ode-section-7 toc=\"Parameter tables\""
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 3,
+            "text": "Table 3-1. Signaling-core parameters",
+            "attributes": "#model-ode-section-8 toc=\"Table 3-1. Signaling-core parameters\" unnumbered"
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "8.1 Table 3-1. signaling-core parameters",
+            "attributes": "#model-ode-section-8 toc=\"Table 3-1. signaling-core parameters\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 3,
+            "text": "Table 3-2. Input and pigment-module parameters",
+            "attributes": "#model-ode-section-9 toc=\"Table 3-2. Input and pigment-module parameters\" unnumbered"
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "8.2 Table 3-2. input and pigment-module parameters",
+            "attributes": "#model-ode-section-9 toc=\"Table 3-2. input and pigment-module parameters\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 3,
+            "text": "Table 3-3. Smartphone observation and dual-channel regression parameters",
+            "attributes": "#model-ode-section-10 toc=\"Table 3-3. Smartphone observation and dual-channel regression parameters\" unnumbered"
+          },
+          "after": {
+            "_template": "heading",
+            "level": 3,
+            "text": "8.3 Table 3-3. smartphone observation and dual-channel regression parameters",
+            "attributes": "#model-ode-section-10 toc=\"Table 3-3. smartphone observation and dual-channel regression parameters\" toc-unnumbered"
+          }
+        },
+        {
+          "before": {
+            "_template": "heading",
+            "level": 2,
+            "text": "References and source materials",
+            "attributes": "#model-ode-section-11 toc=\"References and source materials\" unnumbered"
+          },
+          "after": {
+            "_template": "heading",
+            "level": 2,
+            "text": "References and source materials",
+            "attributes": "#model-ode-section-11 toc=\"References and source materials\""
+          }
+        }
+      ],
+      "terms": [
+        {
+          "full": "Meloidogyne incognita",
+          "abbreviation": "Mi",
+          "first_position": "blocks[3].body",
+          "count": 22,
+          "source": "project ODE model notation Mi"
+        },
+        {
+          "full": "ordinary differential equation",
+          "abbreviation": "ODE",
+          "first_position": "blocks[4].body",
+          "count": 21,
+          "source": "established scientific nomenclature"
+        },
+        {
+          "full": "guanine nucleotide-binding protein",
+          "abbreviation": "G protein",
+          "first_position": "blocks[10].body",
+          "count": 4,
+          "source": "established scientific nomenclature"
+        },
+        {
+          "full": "mitogen-activated protein kinase",
+          "abbreviation": "MAPK",
+          "first_position": "blocks[10].body",
+          "count": 2,
+          "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10753199/"
+        },
+        {
+          "full": "synthetic transcription factor",
+          "abbreviation": "sTF",
+          "first_position": "blocks[10].body",
+          "count": 3,
+          "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10753199/"
+        },
+        {
+          "full": "G protein-coupled receptor",
+          "abbreviation": "GPCR",
+          "first_position": "blocks[11].body",
+          "count": 1,
+          "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6476273/"
+        },
+        {
+          "full": "guanosine diphosphate",
+          "abbreviation": "GDP",
+          "first_position": "blocks[18].body",
+          "count": 1,
+          "source": "existing model glossary"
+        },
+        {
+          "full": "Caenorhabditis elegans",
+          "abbreviation": "Ce",
+          "first_position": "blocks[32].body",
+          "count": 15,
+          "source": "project ODE model notation Ce"
+        },
+        {
+          "full": "ascaroside #3",
+          "abbreviation": "ascr#3",
+          "first_position": "blocks[32].body",
+          "count": 4,
+          "source": "project ligand nomenclature; source literature"
+        },
+        {
+          "full": "ascaroside #18",
+          "abbreviation": "ascr#18",
+          "first_position": "blocks[32].body",
+          "count": 4,
+          "source": "project ligand nomenclature; source literature"
+        },
+        {
+          "full": "red–green–blue",
+          "abbreviation": "RGB",
+          "first_position": "blocks[60].body",
+          "count": 1,
+          "source": "established scientific nomenclature"
+        },
+        {
+          "full": "root mean square error",
+          "abbreviation": "RMSE",
+          "first_position": "blocks[88].body",
+          "count": 1,
+          "source": "established scientific nomenclature"
+        }
+      ],
+      "retained_full_terms_pending_owner": [
+        "betaxanthin",
+        "ligand",
+        "G protein cycle",
+        "galactose regulon",
+        "transcription factor",
+        "nematode density"
+      ],
+      "protected_material_unchanged": true,
+      "anchors_unchanged": true
+    },
+    "model-eco": {
+      "before_sha256": "cc5ef376e7d088a98b50f36f8f6a77223e107f316156f9bce37ea7e2bbf64119",
+      "after_sha256": "2136e8969c959210cfebc30ac05b4ba76cf86af93e7f61f2664c6caeaed21f2e",
+      "heading_changes": [
+        {
+          "before": {
+            "_template": "heading",
+            "level": 2,
+            "text": "Eco | from color readouts to management decisions",
+            "attributes": "#src-Model-Eco-1 toc=\"Eco | from color readouts to management decisions\" unnumbered"
+          },
+          "after": {
+            "_template": "heading",
+            "level": 2,
+            "text": "Eco | from color readouts to management decisions",
+            "attributes": "#src-Model-Eco-1 toc=\"Eco | from color readouts to management decisions\""
+          }
+        }
+      ],
+      "terms": [
+        {
+          "full": "ordinary differential equation",
+          "abbreviation": "ODE",
+          "first_position": "blocks[3].body",
+          "count": 5,
+          "source": "established scientific nomenclature"
+        },
+        {
+          "full": "second-stage juveniles",
+          "abbreviation": "J2",
+          "first_position": "blocks[20].body",
+          "count": 7,
+          "source": "established scientific nomenclature"
+        }
+      ],
+      "retained_full_terms_pending_owner": [
+        "color development",
+        "nematode density"
+      ],
+      "protected_material_unchanged": true,
+      "anchors_unchanged": true
+    }
+  }
+}

@@ -22,16 +22,16 @@
     {
       "_template": "heading",
       "level": 2,
-      "text": "Docking: Screening Receptor Variants for Ascaroside Discrimination",
-      "attributes": "#model-docking-section-0 toc=\"Docking: Screening Receptor Variants for Ascaroside Discrimination\" unnumbered"
+      "text": "Docking: screening receptor variants for ascaroside discrimination",
+      "attributes": "#model-docking-section-0 toc=\"Docking: screening receptor variants for ascaroside discrimination\""
     },
     {
       "_template": "text",
-      "body": "To build a sensor that distinguishes ascr#18 from ascr#3, we sought receptor variants with different preferences for the two ligands. Molecular docking helped us identify starting points for receptor engineering: which residues contact each ligand, how side-chain substitutions affect docking scores and contacts, and which variants merit further study."
+      "body": "To build a sensor that distinguishes <strong>ascaroside #18 (ascr#18)</strong> from <strong>ascaroside #3 (ascr#3)</strong>, we sought receptor variants with different preferences for the two ligands. Molecular docking helped us identify starting points for receptor engineering: which residues contact each ligand, how side-chain substitutions affect docking scores and contacts, and which variants merit further study."
     },
     {
       "_template": "text",
-      "body": "We began by establishing comparable docking conditions, then used contact differences in wild-type (WT) receptors to select mutation sites. Alanine substitutions, saturation scans, and combination tests guided successive rounds of design. Docking scores supported candidate comparisons, while contact analysis helped us develop structural explanations and plan the next round."
+      "body": "We began by establishing comparable docking conditions, then used contact differences in <strong>wild type (WT)</strong> receptors to select mutation sites. <strong>Alanine (Ala)</strong> substitutions, saturation scans, and combination tests guided successive rounds of design. Docking scores supported candidate comparisons, while contact analysis helped us develop structural explanations and plan the next round."
     },
     {
       "_template": "text",
@@ -39,19 +39,19 @@
     },
     {
       "_template": "heading",
-      "level": 2,
-      "text": "1.1 Receptor Selection and Docking Setup",
-      "attributes": "#model-docking-section-1 toc=\"1.1 Receptor Selection and Docking Setup\" unnumbered"
+      "level": 3,
+      "text": "1.1 Receptor selection and docking setup",
+      "attributes": "#model-docking-section-1 toc=\"Receptor selection and docking setup\" toc-unnumbered"
     },
     {
       "_template": "image",
       "src": "https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-1-fa6200a22b.webp",
       "alt": "Figure 1. Predicted full-length structure of Gpr2 WT",
-      "body": "**Figure 1. Predicted full-length structure of Gpr2 WT.** Overall structure of model_0 generated with AlphaFold 3 \\[3].",
+      "body": "Figure 1. Predicted full-length structure of Gpr2 WT. Overall structure of model_0 generated with AlphaFold 3 \\[3].",
       "layout": "right",
       "imageWidth": "wide",
       "openOriginal": true,
-      "accompanyingBody": "We initially examined three fungal G protein-coupled receptors (GPCRs) involved in ascaroside sensing: Gpr2 and Gpr3 \\[1], and GprC \\[2]. We prepared predicted receptor structures and ligands, using published pocket locations, key residues, and docking methods as references. We also considered their use in yeast. GprC has been reported at both the plasma membrane and mitochondria in its native fungal host \\[2]. We considered this a potential complication for localization and pathway integration in yeast, so we focused subsequent engineering on Gpr2, continued to investigate Gpr3 and its variants, and retained GprC as a structural reference."
+      "accompanyingBody": "We initially examined three fungal <strong>G protein-coupled receptors (GPCRs)</strong> involved in ascaroside sensing: Gpr2 and Gpr3 \\[1], and GprC \\[2]. We prepared predicted receptor structures and ligands, using published pocket locations, key residues, and docking methods as references. We also considered their use in yeast. GprC has been reported at both the plasma membrane and mitochondria in its native fungal host \\[2]. We considered this a potential complication for localization and pathway integration in yeast, so we focused subsequent engineering on Gpr2, continued to investigate Gpr3 and its variants, and retained GprC as a structural reference."
     },
     {
       "_template": "text",
@@ -59,7 +59,7 @@
     },
     {
       "_template": "text",
-      "body": "We used structural superposition to place receptors, ligands, and docking boxes in a common coordinate frame, then checked the search region against membrane orientation and the receptor segments retained for docking. Atom mapping was used to check atom identities and coordinate correspondence between the original ligand SDF files and the PDBQT files. When the required Meeko metadata were retained in the PDBQT output, we exported the docked poses to SDF while restoring the original bond orders and formal charges for contact analysis \\[4]."
+      "body": "We used structural superposition to place receptors, ligands, and docking boxes in a common coordinate frame, then checked the search region against membrane orientation and the receptor segments retained for docking. Atom mapping was used to check atom identities and coordinate correspondence between the original ligand <strong>structure-data format (SDF)</strong> files and the <strong>Protein Data Bank format with partial charges and atom types (PDBQT)</strong> files. When the required Meeko metadata were retained in the PDBQT output, we exported the docked poses to SDF while restoring the original bond orders and formal charges for contact analysis \\[4]."
     },
     {
       "_template": "text",
@@ -71,9 +71,9 @@
     },
     {
       "_template": "heading",
-      "level": 2,
-      "text": "1.2 Contact-Based Site Selection and Alanine Scanning",
-      "attributes": "#model-docking-section-2 toc=\"1.2 Contact-Based Site Selection and Alanine Scanning\" unnumbered"
+      "level": 3,
+      "text": "1.2 Contact-based site selection and alanine scanning",
+      "attributes": "#model-docking-section-2 toc=\"Contact-based site selection and alanine scanning\" toc-unnumbered"
     },
     {
       "_template": "text",
@@ -83,7 +83,7 @@
       "_template": "image",
       "src": "https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-2-7a7d9d242a.webp",
       "alt": "Figure 2. Predicted docking poses and pocket environments of Gpr2 WT",
-      "body": "**Figure 2. Predicted docking poses and pocket environments of Gpr2 WT.** (a, b) ascr#3; (c, d) ascr#18. Each pair shows a 3D pocket view and the corresponding Maestro 2D interaction diagram \\[6] for the lowest-scoring pose. In the 3D views, the receptor is shown as a purple cartoon, pocket residues as yellow sticks, and ascr#3 and ascr#18 in cyan and magenta, respectively. Original residue numbering is retained.",
+      "body": "Figure 2. Predicted docking poses and pocket environments of Gpr2 WT. (a, b) ascr#3; (c, d) ascr#18. Each pair shows a 3D pocket view and the corresponding Maestro 2D interaction diagram \\[6] for the lowest-scoring pose. In the 3D views, the receptor is shown as a purple cartoon, pocket residues as yellow sticks, and ascr#3 and ascr#18 in cyan and magenta, respectively. Original residue numbering is retained.",
       "layout": "full",
       "imageWidth": "wide",
       "openOriginal": true
@@ -96,11 +96,11 @@
       "_template": "image",
       "src": "https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-3-9b303eb053.webp",
       "alt": "Figure 3. Initial mutation sites in Gpr2",
-      "body": "**Figure 3. Initial mutation sites in Gpr2.** N84, L90, V110, R181, W338, R345, and V368 are highlighted on the predicted full-length structure.",
+      "body": "Figure 3. Initial mutation sites in Gpr2. N84, L90, V110, R181, W338, R345, and V368 are highlighted on the predicted full-length structure.",
       "layout": "right",
       "imageWidth": "wide",
       "openOriginal": true,
-      "accompanyingBody": "We then replaced candidate residues with alanine to examine how simplifying each side chain changed the scores and contacts for both ligands. The initial sites were N84, L90, V110, R181, W338, R345, and V368. For each substitution, we generated a mutant sequence, predicted its structure with AlphaFold 3 \\[3], and carried out structure preparation, docking, and contact comparisons with WT."
+      "accompanyingBody": "We then replaced candidate residues with Ala to examine how simplifying each side chain changed the scores and contacts for both ligands. The initial sites were N84, L90, V110, R181, W338, R345, and V368. For each substitution, we generated a mutant sequence, predicted its structure with AlphaFold 3 \\[3], and carried out structure preparation, docking, and contact comparisons with WT."
     },
     {
       "_template": "text",
@@ -112,17 +112,17 @@
     },
     {
       "_template": "heading",
-      "level": 2,
-      "text": "1.3 Saturation Scanning at Four Sites",
-      "attributes": "#model-docking-section-3 toc=\"1.3 Saturation Scanning at Four Sites\" unnumbered"
+      "level": 3,
+      "text": "1.3 Saturation scanning at four sites",
+      "attributes": "#model-docking-section-3 toc=\"Saturation scanning at four sites\" toc-unnumbered"
     },
     {
       "_template": "text",
-      "body": "The alanine scan narrowed the search and raised a further question: could different side chains at the same position shift the scores in different directions?"
+      "body": "The Ala scan narrowed the search and raised a further question: could different side chains at the same position shift the scores in different directions?"
     },
     {
       "_template": "text",
-      "body": "Based on the alanine scan, contact analysis, and additional side-chain substitutions, we selected N84, V110, V368, and W338 for saturation scanning. Testing all 19 alternatives at each site produced 76 single-mutant designs, allowing us to compare how side-chain identity affected scores and contact patterns for the two ligands."
+      "body": "Based on the Ala scan, contact analysis, and additional side-chain substitutions, we selected N84, V110, V368, and W338 for saturation scanning. Testing all 19 alternatives at each site produced 76 single-mutant designs, allowing us to compare how side-chain identity affected scores and contact patterns for the two ligands."
     },
     {
       "_template": "text",
@@ -134,9 +134,9 @@
     },
     {
       "_template": "heading",
-      "level": 2,
-      "text": "1.4 Comparing Score Changes for Both Ligands",
-      "attributes": "#model-docking-section-4 toc=\"1.4 Comparing Score Changes for Both Ligands\" unnumbered"
+      "level": 3,
+      "text": "1.4 Comparing score changes for both ligands",
+      "attributes": "#model-docking-section-4 toc=\"Comparing score changes for both ligands\" toc-unnumbered"
     },
     {
       "_template": "text",
@@ -196,9 +196,9 @@
     },
     {
       "_template": "heading",
-      "level": 2,
-      "text": "1.5 Testing Mutation Combinations",
-      "attributes": "#model-docking-section-5 toc=\"1.5 Testing Mutation Combinations\" unnumbered"
+      "level": 3,
+      "text": "1.5 Testing mutation combinations",
+      "attributes": "#model-docking-section-5 toc=\"Testing mutation combinations\" toc-unnumbered"
     },
     {
       "_template": "text",
@@ -226,13 +226,13 @@
     },
     {
       "_template": "heading",
-      "level": 2,
-      "text": "1.6 Selecting N84V and V368R for Molecular Dynamics",
-      "attributes": "#model-docking-section-6 toc=\"1.6 Selecting N84V and V368R for Molecular Dynamics\" unnumbered"
+      "level": 3,
+      "text": "1.6 Selecting N84V and V368R for molecular dynamics",
+      "attributes": "#model-docking-section-6 toc=\"Selecting N84V and V368R for molecular dynamics\" toc-unnumbered"
     },
     {
       "_template": "text",
-      "body": "Based on score separation and contact analysis, we selected N84V and V368R from the four prioritized variants for molecular dynamics (MD) simulations. Each lowered the score for one ligand and raised it for the other, with opposite directions of preference in the docking results. They provided two contrasting candidates for studying the structural behavior of ascr#18 and ascr#3."
+      "body": "Based on score separation and contact analysis, we selected N84V and V368R from the four prioritized variants for <strong>molecular dynamics (MD)</strong> simulations. Each lowered the score for one ligand and raised it for the other, with opposite directions of preference in the docking results. They provided two contrasting candidates for studying the structural behavior of ascr#18 and ascr#3."
     },
     {
       "_template": "text",
@@ -242,20 +242,20 @@
       "_template": "image",
       "src": "https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-4-0e18ad3b0f.webp",
       "alt": "Figure 4. Predicted docking poses and pocket environments of Gpr2 N84V",
-      "body": "**Figure 4. Predicted docking poses and pocket environments of Gpr2 N84V.** (a, b) ascr#3; (c, d) ascr#18. Each pair shows a 3D pocket view and the corresponding Maestro 2D interaction diagram for the lowest-scoring pose. Colors follow Figure 2, and residue numbering matches WT.",
+      "body": "Figure 4. Predicted docking poses and pocket environments of Gpr2 N84V. (a, b) ascr#3; (c, d) ascr#18. Each pair shows a 3D pocket view and the corresponding Maestro 2D interaction diagram for the lowest-scoring pose. Colors follow Figure 2, and residue numbering matches WT.",
       "layout": "full",
       "imageWidth": "wide",
       "openOriginal": true
     },
     {
       "_template": "text",
-      "body": "V368R raised a different question. Although the substitution introduced an arginine, R368 showed a close contact only with ascr#18 in the selected poses, and no ionic contact involving R368 was detected. Both ligands gained ionic and hydrogen-bond contacts involving K364. Interpreting V368R therefore required examining the local structure and contact network around the mutation, together with the scores for both ligands."
+      "body": "V368R raised a different question. Although the substitution introduced an <strong>arginine (Arg)</strong>, R368 showed a close contact only with ascr#18 in the selected poses, and no ionic contact involving R368 was detected. Both ligands gained ionic and hydrogen-bond contacts involving K364. Interpreting V368R therefore required examining the local structure and contact network around the mutation, together with the scores for both ligands."
     },
     {
       "_template": "image",
       "src": "https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-5-1e38205eaf.webp",
       "alt": "Figure 5. Predicted docking poses and pocket environments of Gpr2 V368R",
-      "body": "**Figure 5. Predicted docking poses and pocket environments of Gpr2 V368R.** (a, b) ascr#3; (c, d) ascr#18. Each pair shows a 3D pocket view and the corresponding Maestro 2D interaction diagram for the lowest-scoring pose. Colors follow Figure 2, and residue numbering matches WT.",
+      "body": "Figure 5. Predicted docking poses and pocket environments of Gpr2 V368R. (a, b) ascr#3; (c, d) ascr#18. Each pair shows a 3D pocket view and the corresponding Maestro 2D interaction diagram for the lowest-scoring pose. Colors follow Figure 2, and residue numbering matches WT.",
       "layout": "full",
       "imageWidth": "wide",
       "openOriginal": true
@@ -270,13 +270,13 @@
     },
     {
       "_template": "heading",
-      "level": 2,
-      "text": "1.7 Mapping Contact Sites Across Receptors",
-      "attributes": "#model-docking-section-7 toc=\"1.7 Mapping Contact Sites Across Receptors\" unnumbered"
+      "level": 3,
+      "text": "1.7 Mapping contact sites across receptors",
+      "attributes": "#model-docking-section-7 toc=\"Mapping contact sites across receptors\" toc-unnumbered"
     },
     {
       "_template": "text",
-      "body": "We extended the analysis to Gpr3, GprC, and the *Caenorhabditis elegans* receptors DAF-37 and SRBC-64 to identify corresponding contact positions for parallel testing. Hu et al.’s comparison of predicted ascaroside pockets across receptors provided a reference for this analysis \\[2]."
+      "body": "We extended the analysis to Gpr3, GprC, and the <strong><em>Caenorhabditis elegans</em> (<em>Ce</em>)</strong> receptors DAF-37 and SRBC-64 to identify corresponding contact positions for parallel testing. Hu et al.’s comparison of predicted ascaroside pockets across receptors provided a reference for this analysis \\[2]."
     },
     {
       "_template": "text",
@@ -286,11 +286,11 @@
       "_template": "image",
       "src": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-bbf52d6e8540-docking-source-15.avif",
       "alt": "Figure 6. Predicted ascaroside-binding pockets in GprC, SRBC-64, and DAF-37",
-      "body": "**Figure 6. Predicted ascaroside-binding pockets in GprC, SRBC-64, and DAF-37.** Each receptor shows five docking poses for each of five ascarosides. Cropped from Hu et al. (2024), Figure 5a–c \\[2], under the [Creative Commons Attribution 4.0 International license](https://creativecommons.org/licenses/by/4.0/).",
+      "body": "Figure 6. Predicted ascaroside-binding pockets in GprC, SRBC-64, and DAF-37. each receptor shows five docking poses for each of five ascarosides. Cropped from Hu et al. (2024), Figure 5a–c \\[2], under the [Creative Commons Attribution 4.0 International license](https://creativecommons.org/licenses/by/4.0/).",
       "layout": "right",
       "imageWidth": "wide",
       "openOriginal": true,
-      "accompanyingBody": "Three TM6 tryptophans—Gpr2 W338, Gpr3 W306, and GprC W388—showed contact differences favoring ascr#18 and corresponding positions supported by both sequence and structural comparisons. These residues became candidates for parallel substitutions across the fungal receptors, allowing future tests of whether they play similar roles."
+      "accompanyingBody": "Three <strong>transmembrane helix 6 (TM6)</strong> <strong>tryptophan residues (Trp)</strong>—Gpr2 W338, Gpr3 W306, and GprC W388—showed contact differences favoring ascr#18 and corresponding positions supported by both sequence and structural comparisons. These residues became candidates for parallel substitutions across the fungal receptors, allowing future tests of whether they play similar roles."
     },
     {
       "_template": "text",
@@ -304,7 +304,7 @@
       "_template": "heading",
       "level": 2,
       "text": "References",
-      "attributes": "#model-docking-section-8 toc=\"References\" unnumbered"
+      "attributes": "#model-docking-section-8 toc=\"References\""
     },
     {
       "_template": "text",

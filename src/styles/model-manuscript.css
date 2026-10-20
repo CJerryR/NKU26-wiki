@@ -1,6 +1,7 @@
 /* Author's October 20 Model layout: shared text/media edges and responsive figures. */
 .model-manuscript { min-width:0; }
-.doc .prose .model-manuscript p { max-width:74ch;text-align:start !important; }
+/* Running prose inherits the shared content rules; tables/captions retain
+   their own alignment below. */
 .model-manuscript .model-chapter-links { display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:28px 0 12px; }
 .model-manuscript .model-chapter-links a { display:flex;flex-direction:column;align-items:center;gap:10px;min-width:0;padding:12px 6px;border:1px solid var(--line);border-radius:16px;text-align:center;text-decoration:none;color:var(--ink);background:var(--paper-hi);transition:border-color .2s,transform .2s; }
 .model-manuscript .model-chapter-links a:hover { transform:translateY(-3px);border-color:var(--iris); }

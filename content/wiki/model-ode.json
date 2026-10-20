@@ -22,16 +22,16 @@
     {
       "_template": "heading",
       "level": 2,
-      "text": "ODE and Dual-Channel Sensing: From Signal Response to Target Density Estimation",
-      "attributes": "#model-ode-section-0 toc=\"ODE and Dual-Channel Sensing: From Signal Response to Target Density Estimation\" unnumbered"
+      "text": "ODE and dual-channel sensing: from signal response to target density estimation",
+      "attributes": "#model-ode-section-0 toc=\"ODE and dual-channel sensing: from signal response to target density estimation\""
     },
     {
       "_template": "text",
-      "body": "When *Meloidogyne incognita* and free-living nematodes occur together, a stronger color signal may reflect an increase in either the target population or the background population. This ambiguity motivates our dual-channel approach: two sensors with different response profiles may provide information that a single color reading cannot resolve."
+      "body": "When <strong><em>Meloidogyne incognita</em> (<em>Mi</em>)</strong> and free-living nematodes occur together, a stronger color signal may reflect an increase in either the target population or the background population. This ambiguity motivates our dual-channel approach: two sensors with different response profiles may provide information that a single color reading cannot resolve."
     },
     {
       "_template": "text",
-      "body": "We developed two connected models to examine this approach. An ordinary differential equation (ODE) model describes how effective receptor input passes through the yeast signaling pathway to produce color. A dual-channel regression model then uses the paired simulated color readings to estimate target nematode density without requiring the background density as an input. We first examined whether the signal-to-color model preserved differences between inputs, and then tested whether those differences supported target-density estimation under the assumed simulation conditions."
+      "body": "We developed two connected models to examine this approach. An <strong>ordinary differential equation (ODE)</strong> model describes how effective receptor input passes through the yeast signaling pathway to produce color. A dual-channel regression model then uses the paired simulated color readings to estimate target nematode density without requiring the background density as an input. We first examined whether the signal-to-color model preserved differences between inputs, and then tested whether those differences supported target-density estimation under the assumed simulation conditions."
     },
     {
       "_template": "text",
@@ -41,7 +41,7 @@
       "_template": "image",
       "src": "https://static.igem.wiki/teams/6303/wiki/release-20261020/model-ode-8b54481155b3.webp",
       "alt": "Figure 3-1. Sequential calibration workflow for the ODE and dual-channel models.\nThe upper panel shows mixed-sample design, ODE calibration, and dual-channel regression",
-      "body": "**Figure 3-1. Sequential calibration workflow for the ODE and dual-channel models.**\nThe upper panel shows mixed-sample design, ODE calibration, and dual-channel regression. The lower panel shows the intended workflow for estimating Mi density from paired smartphone readings. Prescribed pigment targets are used to calibrate the ODE, while regression uses color features calculated from the actual ODE outputs. Generated with OpenAI GPT Image 2.",
+      "body": "Figure 3-1. Sequential calibration workflow for the ODE and dual-channel models.\nThe upper panel shows mixed-sample design, ODE calibration, and dual-channel regression. The lower panel shows the intended workflow for estimating <em>Mi</em> density from paired smartphone readings. Prescribed pigment targets are used to calibrate the ODE, while regression uses color features calculated from the actual ODE outputs. Generated with OpenAI GPT Image 2.",
       "layout": "full",
       "imageWidth": "wide",
       "openOriginal": true
@@ -53,8 +53,8 @@
     {
       "_template": "heading",
       "level": 2,
-      "text": "3.1 Defining the signal-to-color model",
-      "attributes": "#model-ode-section-1 toc=\"3.1 Defining the signal-to-color model\" unnumbered"
+      "text": "Defining the signal-to-color model",
+      "attributes": "#model-ode-section-1 toc=\"Defining the signal-to-color model\""
     },
     {
       "_template": "text",
@@ -62,11 +62,11 @@
     },
     {
       "_template": "text",
-      "body": "**Ligand → receptor → G protein → MAPK → synthetic transcription factor (sTF) → GAL output → pigment accumulation**"
+      "body": "**Ligand → receptor → <strong>guanine nucleotide-binding protein (G protein)</strong> → <strong>mitogen-activated protein kinase (MAPK)</strong> → <strong>synthetic transcription factor (sTF)</strong> → GAL output → pigment accumulation**"
     },
     {
       "_template": "text",
-      "body": "The connection between yeast GPCR signaling and the GAL system was informed by Fan and Yuan \\[8], while the cascaded amplification and betaxanthin output design drew on Fan and colleagues \\[5]. Our initial formulation used three ODEs for G-protein activity, MAPK activity, and color accumulation, together with algebraic relationships for receptor response, sTF activity, and GAL output."
+      "body": "The connection between yeast <strong>G protein-coupled receptor (GPCR)</strong> signaling and the GAL system was informed by Fan and Yuan \\[8], while the cascaded amplification and betaxanthin output design drew on Fan and colleagues \\[5]. Our initial formulation used three ODEs for G protein activity, MAPK activity, and color accumulation, together with algebraic relationships for receptor response, sTF activity, and GAL output."
     },
     {
       "_template": "text",
@@ -79,16 +79,16 @@
     {
       "_template": "heading",
       "level": 2,
-      "text": "3.2 Connecting a literature-based signaling core to pigment production",
-      "attributes": "#model-ode-section-2 toc=\"3.2 Connecting a literature-based signaling core to pigment production\" unnumbered"
+      "text": "Connecting a literature-based signaling core to pigment production",
+      "attributes": "#model-ode-section-2 toc=\"Connecting a literature-based signaling core to pigment production\""
     },
     {
       "_template": "text",
-      "body": "The signaling core was reconstructed from Supady’s Model B and the TU Delft 2012 iGEM modeling materials \\[1,2]. We reused their reaction framework for the G-protein cycle, scaffold module, Fus3 activation, and feedback processes, together with the corresponding source-model parameters. We then connected this core to our project-specific effective ligand input and pigment-production equation. Conservation relationships reduce the core to five independent states; adding pigment accumulation gives the six-state model described below."
+      "body": "The signaling core was reconstructed from Supady’s Model B and the TU Delft 2012 iGEM modeling materials \\[1,2]. We reused their reaction framework for the G protein cycle, scaffold module, Fus3 activation, and feedback processes, together with the corresponding source-model parameters. We then connected this core to our project-specific effective ligand input and pigment-production equation. Conservation relationships reduce the core to five independent states; adding pigment accumulation gives the six-state model described below."
     },
     {
       "_template": "text",
-      "body": "The five independent core variables are the G-protein heterotrimer <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>H</mi></mrow><annotation encoding=\"application/x-tex\">H</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.6833em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.0813em;\">H</span></span></span></span>, active Gα <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi></mrow><annotation encoding=\"application/x-tex\">A</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.6833em;\"></span><span class=\"mord mathnormal\">A</span></span></span></span>, an effective scaffold complex <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>Q</mi></mrow><annotation encoding=\"application/x-tex\">Q</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8778em;vertical-align:-0.1944em;\"></span><span class=\"mord mathnormal\">Q</span></span></span></span>, active Fus3 <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>F</mi><mo>∗</mo></msup></mrow><annotation encoding=\"application/x-tex\">F^\\*</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.6887em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.1389em;\">F</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.6887em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mbin mtight\">∗</span></span></span></span></span></span></span></span></span></span></span>, and the activated feedback state <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>Z</mi><mo>∗</mo></msup></mrow><annotation encoding=\"application/x-tex\">Z^\\*</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.6887em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0715em;\">Z</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.6887em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mbin mtight\">∗</span></span></span></span></span></span></span></span></span></span></span>. The core equations reconstructed from the source reaction network are:"
+      "body": "The five independent core variables are the G protein heterotrimer <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>H</mi></mrow><annotation encoding=\"application/x-tex\">H</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.6833em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.0813em;\">H</span></span></span></span>, active Gα <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi></mrow><annotation encoding=\"application/x-tex\">A</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.6833em;\"></span><span class=\"mord mathnormal\">A</span></span></span></span>, an effective scaffold complex <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>Q</mi></mrow><annotation encoding=\"application/x-tex\">Q</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8778em;vertical-align:-0.1944em;\"></span><span class=\"mord mathnormal\">Q</span></span></span></span>, active Fus3 <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>F</mi><mo>∗</mo></msup></mrow><annotation encoding=\"application/x-tex\">F^\\*</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.6887em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.1389em;\">F</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.6887em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mbin mtight\">∗</span></span></span></span></span></span></span></span></span></span></span>, and the activated feedback state <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>Z</mi><mo>∗</mo></msup></mrow><annotation encoding=\"application/x-tex\">Z^\\*</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.6887em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0715em;\">Z</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.6887em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mbin mtight\">∗</span></span></span></span></span></span></span></span></span></span></span>. The core equations reconstructed from the source reaction network are:"
     },
     {
       "_template": "text",
@@ -96,7 +96,7 @@
     },
     {
       "_template": "text",
-      "body": "Here, <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>D</mi></mrow><annotation encoding=\"application/x-tex\">D</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.6833em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.0278em;\">D</span></span></span></span>, <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>B</mi></mrow><annotation encoding=\"application/x-tex\">B</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.6833em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.0502em;\">B</span></span></span></span>, <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>S</mi></mrow><annotation encoding=\"application/x-tex\">S</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.6833em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.0576em;\">S</span></span></span></span>, <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>F</mi></mrow><annotation encoding=\"application/x-tex\">F</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.6833em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.1389em;\">F</span></span></span></span>, and <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>Z</mi></mrow><annotation encoding=\"application/x-tex\">Z</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.6833em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.0715em;\">Z</span></span></span></span> represent Gα–GDP, free Gβγ, free scaffold, inactive Fus3, and the inactive Sst2 state, respectively. They are calculated from the conservation relationships:"
+      "body": "Here, <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>D</mi></mrow><annotation encoding=\"application/x-tex\">D</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.6833em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.0278em;\">D</span></span></span></span>, <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>B</mi></mrow><annotation encoding=\"application/x-tex\">B</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.6833em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.0502em;\">B</span></span></span></span>, <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>S</mi></mrow><annotation encoding=\"application/x-tex\">S</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.6833em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.0576em;\">S</span></span></span></span>, <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>F</mi></mrow><annotation encoding=\"application/x-tex\">F</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.6833em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.1389em;\">F</span></span></span></span>, and <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>Z</mi></mrow><annotation encoding=\"application/x-tex\">Z</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.6833em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.0715em;\">Z</span></span></span></span> represent Gα–<strong>guanosine diphosphate (GDP)</strong>, free Gβγ, free scaffold, inactive Fus3, and the inactive Sst2 state, respectively. They are calculated from the conservation relationships:"
     },
     {
       "_template": "text",
@@ -149,16 +149,16 @@
     {
       "_template": "heading",
       "level": 2,
-      "text": "3.3 Constructing dual-sensor inputs by varying target and background independently",
-      "attributes": "#model-ode-section-3 toc=\"3.3 Constructing dual-sensor inputs by varying target and background independently\" unnumbered"
+      "text": "Constructing dual-sensor inputs by varying target and background independently",
+      "attributes": "#model-ode-section-3 toc=\"Constructing dual-sensor inputs by varying target and background independently\""
     },
     {
       "_template": "text",
-      "body": "To apply the pathway model to mixed soil samples, we first defined how nematodes contribute to the ligand input. We used *Meloidogyne incognita* (Mi) as the target and *Caenorhabditis elegans* (Ce) as the background, retaining both ascr#3 and ascr#18 in the simulation."
+      "body": "To apply the pathway model to mixed soil samples, we first defined how nematodes contribute to the ligand input. We used <em>Mi</em> as the target and <strong><em>Caenorhabditis elegans</em> (<em>Ce</em>)</strong> as the background, retaining both <strong>ascaroside #3 (ascr#3)</strong> and <strong>ascaroside #18 (ascr#18)</strong> in the simulation."
     },
     {
       "_template": "text",
-      "body": "Previous studies show that Ce ascaroside secretion depends on culture conditions and developmental stage \\[3]. Manosalva and colleagues reported that ascr#18 predominated in the root-knot nematode samples they examined \\[4]. These findings provide qualitative support for exploring different secretion profiles."
+      "body": "Previous studies show that <em>Ce</em> ascaroside secretion depends on culture conditions and developmental stage \\[3]. Manosalva and colleagues reported that ascr#18 predominated in the root-knot nematode samples they examined \\[4]. These findings provide qualitative support for exploring different secretion profiles."
     },
     {
       "_template": "text",
@@ -170,7 +170,7 @@
     },
     {
       "_template": "text",
-      "body": "These ratios describe the composition of ascr#3 and ascr#18, rather than the complete ascaroside profile. The Mi contribution of ascr#3 and the exact release ratios of both species remain assumptions requiring paired quantitative measurements."
+      "body": "These ratios describe the composition of ascr#3 and ascr#18, rather than the complete ascaroside profile. The <em>Mi</em> contribution of ascr#3 and the exact release ratios of both species remain assumptions requiring paired quantitative measurements."
     },
     {
       "_template": "text",
@@ -191,8 +191,8 @@
     {
       "_template": "heading",
       "level": 2,
-      "text": "3.4 Adjusting the input and output interfaces using simulated pigment targets",
-      "attributes": "#model-ode-section-4 toc=\"3.4 Adjusting the input and output interfaces using simulated pigment targets\" unnumbered"
+      "text": "Adjusting the input and output interfaces using simulated pigment targets",
+      "attributes": "#model-ode-section-4 toc=\"Adjusting the input and output interfaces using simulated pigment targets\""
     },
     {
       "_template": "text",
@@ -204,11 +204,11 @@
     },
     {
       "_template": "text",
-      "body": "To cover low densities, illustrative classification thresholds, and higher densities, we crossed six Mi levels with three Ce backgrounds, giving 18 synthetic pigment targets:"
+      "body": "To cover low densities, illustrative classification thresholds, and higher densities, we crossed six <em>Mi</em> levels with three <em>Ce</em> backgrounds, giving 18 synthetic pigment targets:"
     },
     {
       "_template": "text",
-      "body": "* **Mi:** 0, 5, 10, 40, 80, and 120 individuals per 100 cm³ of soil.\n\n* **Ce:** 0, 80, and 200 individuals per 100 cm³ of soil."
+      "body": "* **<em>Mi</em>:** 0, 5, 10, 40, 80, and 120 individuals per 100 cm³ of soil.\n\n* **<em>Ce</em>:** 0, 80, and 200 individuals per 100 cm³ of soil."
     },
     {
       "_template": "text",
@@ -238,7 +238,7 @@
       "_template": "image",
       "src": "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-556696deeb745a5b-00.json",
       "alt": "Figure 3-2. ODE pigment calibration at different background densities.\nPanels A and B show P3 and P18, respectively",
-      "body": "**Figure 3-2. ODE pigment calibration at different background densities.**\nPanels A and B show P3 and P18, respectively. Colors distinguish Ce background densities. Dashed lines with crosses indicate prescribed pigment targets, solid lines with circles indicate simulated 8 h total pigment concentrations, and gray dotted lines indicate the blank.",
+      "body": "Figure 3-2. ODE pigment calibration at different background densities.\nPanels A and B show P3 and P18, respectively. Colors distinguish <em>Ce</em> background densities. Dashed lines with crosses indicate prescribed pigment targets, solid lines with circles indicate simulated 8 h total pigment concentrations, and gray dotted lines indicate the blank.",
       "layout": "full",
       "imageWidth": "wide",
       "openOriginal": true
@@ -263,7 +263,7 @@
       "_template": "image",
       "src": "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-06918bc66dedec7f-00.json",
       "alt": "Figure 3-3. Net pigment accumulation in representative mixed samples.\nPanels A and B show simulated time courses for blank, Mi-only, Ce-only, and mixed samples in P3 and P18",
-      "body": "**Figure 3-3. Net pigment accumulation in representative mixed samples.**\nPanels A and B show simulated time courses for blank, Mi-only, Ce-only, and mixed samples in P3 and P18. Net pigment is calculated by subtracting the matched channel blank at each time point.",
+      "body": "Figure 3-3. Net pigment accumulation in representative mixed samples.\nPanels A and B show simulated time courses for blank, <em>Mi</em>-only, <em>Ce</em>-only, and mixed samples in P3 and P18. Net pigment is calculated by subtracting the matched channel blank at each time point.",
       "layout": "full",
       "imageWidth": "wide",
       "openOriginal": true
@@ -275,12 +275,12 @@
     {
       "_template": "heading",
       "level": 2,
-      "text": "3.5 Converting pigment concentration into simulated smartphone color features",
-      "attributes": "#model-ode-section-5 toc=\"3.5 Converting pigment concentration into simulated smartphone color features\" unnumbered"
+      "text": "Converting pigment concentration into simulated smartphone color features",
+      "attributes": "#model-ode-section-5 toc=\"Converting pigment concentration into simulated smartphone color features\""
     },
     {
       "_template": "text",
-      "body": "The proposed readout uses smartphone images, so we introduced an observation relationship between pigment concentration and image features. Stücheli and colleagues quantified indicaxanthin using the RGB blue channel of smartphone images acquired with a light-shielding box, blue background, and cuvettes \\[7]."
+      "body": "The proposed readout uses smartphone images, so we introduced an observation relationship between pigment concentration and image features. Stücheli and colleagues quantified indicaxanthin using the <strong>red–green–blue (RGB)</strong> blue channel of smartphone images acquired with a light-shielding box, blue background, and cuvettes \\[7]."
     },
     {
       "_template": "text",
@@ -333,33 +333,33 @@
     {
       "_template": "heading",
       "level": 2,
-      "text": "3.6 Estimating target density from paired color readings",
-      "attributes": "#model-ode-section-6 toc=\"3.6 Estimating target density from paired color readings\" unnumbered"
+      "text": "Estimating target density from paired color readings",
+      "attributes": "#model-ode-section-6 toc=\"Estimating target density from paired color readings\""
     },
     {
       "_template": "text",
-      "body": "With the ODE and smartphone observation relationship fixed, we generated 45 paired readings by crossing different Mi and Ce densities:"
+      "body": "With the ODE and smartphone observation relationship fixed, we generated 45 paired readings by crossing different <em>Mi</em> and <em>Ce</em> densities:"
     },
     {
       "_template": "text",
-      "body": "* **Mi:** 0, 5, 10, 20, 40, 60, 80, 100, and 120 individuals per 100 cm³ of soil.\n\n* **Ce:** 0, 40, 80, 140, and 200 individuals per 100 cm³ of soil."
+      "body": "* **<em>Mi</em>:** 0, 5, 10, 20, 40, 60, 80, 100, and 120 individuals per 100 cm³ of soil.\n\n* **<em>Ce</em>:** 0, 40, 80, 140, and 200 individuals per 100 cm³ of soil."
     },
     {
       "_template": "text",
-      "body": "Each sample corresponds to a point in a two-dimensional color space, with the P3 feature <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>x</mi><mn>3</mn></msub></mrow><annotation encoding=\"application/x-tex\">x_3</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.5806em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\">x</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:0em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">3</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span> on the horizontal axis and the P18 feature <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>x</mi><mn>18</mn></msub></mrow><annotation encoding=\"application/x-tex\">x\\_{18}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.5806em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\">x</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:0em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">18</span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span> on the vertical axis. This space allows us to compare the effects of increasing Ce at fixed Mi and increasing Mi at fixed Ce. Differences between these directions provide a basis for using paired readings to distinguish target and background contributions."
+      "body": "Each sample corresponds to a point in a two-dimensional color space, with the P3 feature <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>x</mi><mn>3</mn></msub></mrow><annotation encoding=\"application/x-tex\">x_3</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.5806em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\">x</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:0em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">3</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span> on the horizontal axis and the P18 feature <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>x</mi><mn>18</mn></msub></mrow><annotation encoding=\"application/x-tex\">x\\_{18}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.5806em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\">x</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:0em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">18</span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span> on the vertical axis. This space allows us to compare the effects of increasing <em>Ce</em> at fixed <em>Mi</em> and increasing <em>Mi</em> at fixed <em>Ce</em>. Differences between these directions provide a basis for using paired readings to distinguish target and background contributions."
     },
     {
       "_template": "image",
       "src": "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-543f0d38ad341206-00.json",
       "alt": "Figure 3-4. Distribution of mixed samples in dual-channel color space.\nThe horizontal and vertical axes show the simulated P3 and P18 smartphone color indices",
-      "body": "**Figure 3-4. Distribution of mixed samples in dual-channel color space.**\nThe horizontal and vertical axes show the simulated P3 and P18 smartphone color indices. Point color indicates Mi density. Solid lines connect samples with fixed Mi density, while dashed lines connect samples with fixed Ce density. Arrows indicate the directions of increasing Mi or Ce density.",
+      "body": "Figure 3-4. Distribution of mixed samples in dual-channel color space.\nThe horizontal and vertical axes show the simulated P3 and P18 smartphone color indices. Point color indicates <em>Mi</em> density. Solid lines connect samples with fixed <em>Mi</em> density, while dashed lines connect samples with fixed <em>Ce</em> density. Arrows indicate the directions of increasing <em>Mi</em> or <em>Ce</em> density.",
       "layout": "full",
       "imageWidth": "wide",
       "openOriginal": true
     },
     {
       "_template": "text",
-      "body": "Using the two color features as predictors and known Mi density as the training label, we fitted:"
+      "body": "Using the two color features as predictors and known <em>Mi</em> density as the training label, we fitted:"
     },
     {
       "_template": "text",
@@ -367,11 +367,11 @@
     },
     {
       "_template": "text",
-      "body": "The intercept <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>β</mi><mn>0</mn></msub></mrow><annotation encoding=\"application/x-tex\">\\beta_0</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8889em;vertical-align:-0.1944em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0528em;\">β</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0528em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">0</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span> describes the overall offset, while <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>β</mi><mn>3</mn></msub></mrow><annotation encoding=\"application/x-tex\">\\beta_3</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8889em;vertical-align:-0.1944em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0528em;\">β</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0528em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">3</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span> and <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>β</mi><mn>18</mn></msub></mrow><annotation encoding=\"application/x-tex\">\\beta\\_{18}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8889em;vertical-align:-0.1944em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0528em;\">β</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0528em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">18</span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span> jointly determine the contribution of the two channels. Ordinary least squares was used to find one set of three coefficients that minimized the sum of squared differences between predicted and known Mi densities across the training samples."
+      "body": "The intercept <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>β</mi><mn>0</mn></msub></mrow><annotation encoding=\"application/x-tex\">\\beta_0</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8889em;vertical-align:-0.1944em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0528em;\">β</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0528em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">0</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span> describes the overall offset, while <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>β</mi><mn>3</mn></msub></mrow><annotation encoding=\"application/x-tex\">\\beta_3</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8889em;vertical-align:-0.1944em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0528em;\">β</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0528em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">3</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span> and <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>β</mi><mn>18</mn></msub></mrow><annotation encoding=\"application/x-tex\">\\beta\\_{18}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:0.8889em;vertical-align:-0.1944em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.0528em;\">β</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0528em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"katex-sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">18</span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span> jointly determine the contribution of the two channels. Ordinary least squares was used to find one set of three coefficients that minimized the sum of squared differences between predicted and known <em>Mi</em> densities across the training samples."
     },
     {
       "_template": "text",
-      "body": "Ce density was used to construct background variation during training. Prediction requires only the two color readings, allowing target density to be estimated without supplying the background count."
+      "body": "<em>Ce</em> density was used to construct background variation during training. Prediction requires only the two color readings, allowing target density to be estimated without supplying the background count."
     },
     {
       "_template": "text",
@@ -399,20 +399,20 @@
     },
     {
       "_template": "text",
-      "body": "*RMSE units: individuals per 100 cm³ of soil.*"
+      "body": "*<strong>root mean square error (RMSE)</strong> units: individuals per 100 cm³ of soil.*"
     },
     {
       "_template": "image",
       "src": "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-c5587156db2d0d1e-00.json",
       "alt": "Figure 3-5. Mi density predictions and comparison of single- and dual-channel models.\nPanel A compares known and predicted Mi densities for the dual-channel model; the dashed line indicates ideal agreement",
-      "body": "**Figure 3-5. Mi density predictions and comparison of single- and dual-channel models.**\nPanel A compares known and predicted Mi densities for the dual-channel model; the dashed line indicates ideal agreement. Panel B compares the RMSEs of P3-only, P18-only, and dual-channel models on the same simulated evaluation set.",
+      "body": "Figure 3-5. <em>Mi</em> Density predictions and comparison of single- and dual-channel models.\nPanel A compares known and predicted <em>Mi</em> densities for the dual-channel model; the dashed line indicates ideal agreement. Panel B compares the RMSEs of P3-only, P18-only, and dual-channel models on the same simulated evaluation set.",
       "layout": "full",
       "imageWidth": "wide",
       "openOriginal": true
     },
     {
       "_template": "text",
-      "body": "For example, a simulated sample with Mi = 40 and Ce = 80 produced blue-channel ratios relative to the respective blanks of approximately 0.854 and 0.879. The model estimated Mi density at approximately 39.72 individuals per 100 cm³ of soil. Ce density was not required as a prediction input. Under the Eco model’s illustrative rules, the estimate falls in the medium-risk category. This example connects the mixed sample, pathway-driven pigment production, smartphone color features, and target-density estimate."
+      "body": "For example, a simulated sample with <em>Mi</em> = 40 and <em>Ce</em> = 80 produced blue-channel ratios relative to the respective blanks of approximately 0.854 and 0.879. The model estimated <em>Mi</em> density at approximately 39.72 individuals per 100 cm³ of soil. <em>Ce</em> density was not required as a prediction input. Under the Eco model’s illustrative rules, the estimate falls in the medium-risk category. This example connects the mixed sample, pathway-driven pigment production, smartphone color features, and target-density estimate."
     },
     {
       "_template": "text",
@@ -424,7 +424,7 @@
     },
     {
       "_template": "text",
-      "body": "The ODE and dual-channel models therefore serve complementary roles: the ODE calculates how mixed inputs produce paired color outputs, and the regression uses those outputs to estimate Mi density. The code, parameter sources, fixed configurations, and example data support reproducibility and provide an interface for future paired experimental measurements. The Eco model then examines how density information may affect management choices and expected benefits."
+      "body": "The ODE and dual-channel models therefore serve complementary roles: the ODE calculates how mixed inputs produce paired color outputs, and the regression uses those outputs to estimate <em>Mi</em> density. The code, parameter sources, fixed configurations, and example data support reproducibility and provide an interface for future paired experimental measurements. The Eco model then examines how density information may affect management choices and expected benefits."
     },
     {
       "_template": "text",
@@ -433,8 +433,8 @@
     {
       "_template": "heading",
       "level": 2,
-      "text": "3.7 Parameter tables",
-      "attributes": "#model-ode-section-7 toc=\"3.7 Parameter tables\" unnumbered"
+      "text": "Parameter tables",
+      "attributes": "#model-ode-section-7 toc=\"Parameter tables\""
     },
     {
       "_template": "text",
@@ -447,8 +447,8 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "Table 3-1. Signaling-core parameters",
-      "attributes": "#model-ode-section-8 toc=\"Table 3-1. Signaling-core parameters\" unnumbered"
+      "text": "8.1 Table 3-1. signaling-core parameters",
+      "attributes": "#model-ode-section-8 toc=\"Table 3-1. signaling-core parameters\" toc-unnumbered"
     },
     {
       "_template": "text",
@@ -465,8 +465,8 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "Table 3-2. Input and pigment-module parameters",
-      "attributes": "#model-ode-section-9 toc=\"Table 3-2. Input and pigment-module parameters\" unnumbered"
+      "text": "8.2 Table 3-2. input and pigment-module parameters",
+      "attributes": "#model-ode-section-9 toc=\"Table 3-2. input and pigment-module parameters\" toc-unnumbered"
     },
     {
       "_template": "text",
@@ -483,8 +483,8 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "Table 3-3. Smartphone observation and dual-channel regression parameters",
-      "attributes": "#model-ode-section-10 toc=\"Table 3-3. Smartphone observation and dual-channel regression parameters\" unnumbered"
+      "text": "8.3 Table 3-3. smartphone observation and dual-channel regression parameters",
+      "attributes": "#model-ode-section-10 toc=\"Table 3-3. smartphone observation and dual-channel regression parameters\" toc-unnumbered"
     },
     {
       "_template": "text",
@@ -500,13 +500,13 @@
     },
     {
       "_template": "text",
-      "body": "The coefficients apply to this input definition and return Mi density. The published slope uncertainty is ±0.01 mL/mg; the current deterministic simulation uses the central value without propagating that uncertainty."
+      "body": "The coefficients apply to this input definition and return <em>Mi</em> density. The published slope uncertainty is ±0.01 mL/mg; the current deterministic simulation uses the central value without propagating that uncertainty."
     },
     {
       "_template": "heading",
       "level": 2,
       "text": "References and source materials",
-      "attributes": "#model-ode-section-11 toc=\"References and source materials\" unnumbered"
+      "attributes": "#model-ode-section-11 toc=\"References and source materials\""
     },
     {
       "_template": "text",

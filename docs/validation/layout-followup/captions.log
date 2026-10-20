@@ -1,0 +1,19 @@
+
+> nku26-wiki@10.2.15 test:captions
+> node --test tools/tests/caption-panels.test.mjs
+
+✔ Nature-style comma labels after the lead (Results Fig. 1, DBTL-1) (14.078041ms)
+✔ a title ending in a digit stops before the first panel label (KOGal80.) (4.643708ms)
+✔ "panel b," reference and labels around emphasis (1.144083ms)
+✔ parenthesised letters keep working, including inside a bold title (9.575875ms)
+✔ combined and alternative label forms (0.3535ms)
+✔ ordinary letters are never bolded (0.328084ms)
+✔ captions without a Figure label and title-only captions (0.168ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 340.263167

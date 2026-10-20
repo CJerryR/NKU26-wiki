@@ -41,7 +41,7 @@ Firstly, the GPR2‑sfGFP heterologous expression plasmid was successfully assem
 
 ![Figure 1. Construction of the plasmid for heterologous expression of GPR2-sfGFP. a, Plasmid map of the pRS315-GPR2-sfGFP construct for heterologous GPR2-sfGFP expression. b, Colony PCR results during plasmid construction. Sample T3 showed the expected positive band, and this colony was selected for plasmid extraction. c, Double restriction digestion verification of pRS315-GPR2-sfGFP, with band sizes consistent with theoretical expectations.](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-6a3e31c31a57-fig1-1.avif)
 
-<p><strong>Figure 1. Construction of the plasmid for heterologous expression of GPR2-sfGFP.</strong> <strong>a</strong>, Plasmid map of the pRS315-GPR2-sfGFP construct for heterologous GPR2-sfGFP expression. <strong>b</strong>, Colony <strong>polymerase chain reaction (PCR)</strong> results during plasmid construction. Sample T3 showed the expected positive band, and this colony was selected for plasmid extraction. <strong>c</strong>, Double restriction digestion verification of pRS315-GPR2-sfGFP, with band sizes consistent with theoretical expectations.</p>
+<p>Figure 1. Construction of the plasmid for heterologous expression of GPR2-sfGFP. a, Plasmid map of the pRS315-GPR2-sfGFP construct for heterologous GPR2-sfGFP expression. b, Colony polymerase chain reaction (PCR) results during plasmid construction. Sample T3 showed the expected positive band, and this colony was selected for plasmid extraction. c, Double restriction digestion verification of pRS315-GPR2-sfGFP, with band sizes consistent with theoretical expectations.</p>
 
 :::
 
@@ -139,7 +139,7 @@ Figure 1. Construction of Gal80 knockout cassette KOGal80. a, PCR amplification 
 
 ![Figure 2. Gal80 Gene Knockout. a, Schematic diagram of yeast homologous recombination (HR). b, Transformant verification results, confirming the successful knockout of the *Gal80* gene.](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-f79bf47f490c-fig2-1-2.avif)
 
-<p><strong>Figure 2. Gal80 gene knockout. a</strong>, Schematic diagram of yeast HR. <strong>b</strong>, Transformant verification results, confirming the successful knockout of the <em>Gal80</em> gene.</p>
+<p>Figure 2. Gal80 gene knockout. a, Schematic diagram of yeast HR. b, Transformant verification results, confirming the successful knockout of the <em>Gal80</em> gene.</p>
 
 :::
 
@@ -165,7 +165,7 @@ Details are as follows:
 
 ![Figure 1. Plasmid map of the homologous recombination plasmid pRS315-sTF.](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-e8d85e8ac64b-fig2-2-1.avif)
 
-<p><strong>Figure 1. Plasmid map of the HR plasmid pRS315-sTF.</strong></p>
+<p>Figure 1. Plasmid map of the HR plasmid pRS315-sTF.</p>
 
 :::
 
@@ -177,7 +177,7 @@ Details are as follows:
 
 ![Figure 2. Construction of the STE12 knockout cassette KOSTE12. a, PCR amplification results of the three fragments constituting KOSTE12. b, The KOSTE12 knockout cassette assembled by Double-joint PCR.](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-c9dd0c23eba9-fig2-2-2.avif)
 
-Figure 2. Construction of the STE12 knockout cassette KOSTE12. a, PCR amplification results of the three fragments constituting KOSTE12. b, The KOSTE12 knockout cassette assembled by DJ-PCR.
+Figure 2. Construction of the STE12 knockout cassette KOSTE12. a, PCR amplification results of the three fragments constituting KOSTE12. b, the KOSTE12 knockout cassette assembled by DJ-PCR.
 
 :::
 
@@ -187,7 +187,7 @@ Figure 2. Construction of the STE12 knockout cassette KOSTE12. a, PCR amplificat
 
 ![Figure 3. The first attempt to construct pRS315-sTF plasmid. a, Colony PCR result. The No.6 colony was selected for plasmid extraction and subsequent double digestion, shown in panel b, It was difficult to confirm the correctness of the plasmid from this result.](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-dd7eb6cbc85b-fig2-2-3.avif)
 
-<p><strong>Figure 3. The first attempt to construct pRS315-sTF plasmid.</strong> <strong>a</strong>, Colony PCR result. The No.6 colony was selected for plasmid extraction and subsequent double digestion, shown in panel <strong>b</strong>, It was difficult to confirm the correctness of the plasmid from this result.</p>
+<p>Figure 3. The first attempt to construct pRS315-sTF plasmid. a, Colony PCR result. The No.6 colony was selected for plasmid extraction and subsequent double digestion, shown in panel b, It was difficult to confirm the correctness of the plasmid from this result.</p>
 
 :::
 
@@ -197,7 +197,7 @@ Figure 2. Construction of the STE12 knockout cassette KOSTE12. a, PCR amplificat
 
 ![Figure 4. The second attempt to construct the pRS315-sTF plasmid. a, Sequencing result of the first trial, showing that the 3F fragment was not assembled. b, Fragment amplification for the second plasmid construction. The fragment sizes from left to right are 3363 bp, 1620 bp, 1076 bp and 4301 bp. c, Double digestion verification of pRS315-sTF, consistent with expectations. d, Whole-plasmid sequencing result, confirming correct base sequences in key regions.](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-ff3d00fb6194-fig2-2-4.avif)
 
-<p><strong>Figure 4. The second attempt to construct the pRS315-sTF plasmid.</strong> <strong>a</strong>, Sequencing result of the first trial, showing that the 3F fragment was not assembled. <strong>b</strong>, Fragment amplification for the second plasmid construction. The fragment sizes from left to right are 3363 bp, 1620 bp, 1076 bp and 4301 bp. <strong>c</strong>, Double digestion verification of pRS315-sTF, consistent with expectations. <strong>d</strong>, Whole-plasmid sequencing result, confirming correct base sequences in key regions.</p>
+<p>Figure 4. The second attempt to construct the pRS315-sTF plasmid. a, Sequencing result of the first trial, showing that the 3F fragment was not assembled. b, Fragment amplification for the second plasmid construction. The fragment sizes from left to right are 3363 bp, 1620 bp, 1076 bp and 4301 bp. c, Double digestion verification of pRS315-sTF, consistent with expectations. d, Whole-plasmid sequencing result, confirming correct base sequences in key regions.</p>
 
 :::
 
@@ -209,7 +209,7 @@ Figure 2. Construction of the STE12 knockout cassette KOSTE12. a, PCR amplificat
 
 ![Figure 5. Schematic diagram of *STE12* gene knockout and transformant verification results, indicating unsuccessful knockout.](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-3b0197d8eb0c-fig2-2-5.avif)
 
-<p><strong>Figure 5. Schematic diagram of </strong><strong><em>STE12</em></strong><strong> gene knockout and transformant verification results, indicating unsuccessful knockout.</strong></p>
+<p>Figure 5. Schematic diagram of <em>STE12</em> gene knockout and transformant verification results, indicating unsuccessful knockout.</p>
 
 :::
 
@@ -235,7 +235,7 @@ This cycle was actually carried out in parallel with Cycle 2. The Learn section 
 
 ![Figure 1. Construction of pRS315-MjDOD-BvCYP76AD5 plasmid. a, Plasmid map of pRS315-MjDOD-BvCYP76AD5. b, Colony PCR identification for plasmid construction. Colony T5 was selected for plasmid extraction. c, Double digestion verification of pRS315-MjDOD-BvCYP76AD5; the band sizes of digested products matched the theoretical expectation. d, Whole-plasmid sequencing result, confirming correct base sequences in key regions.](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-1e5da6928b73-fig2-3-1.avif)
 
-<p><strong>Figure 1. Construction of pRS315-MjDOD-BvCYP76AD5 plasmid.</strong> <strong>a</strong>, Plasmid map of pRS315-MjDOD-BvCYP76AD5. <strong>b</strong>, Colony PCR identification for plasmid construction. Colony T5 was selected for plasmid extraction. <strong>c</strong>, Double digestion verification of pRS315-MjDOD-BvCYP76AD5; the band sizes of digested products matched the theoretical expectation. <strong>d</strong>, Whole-plasmid sequencing result, confirming correct base sequences in key regions.</p>
+<p>Figure 1. Construction of pRS315-MjDOD-BvCYP76AD5 plasmid. a, Plasmid map of pRS315-MjDOD-BvCYP76AD5. b, Colony PCR identification for plasmid construction. Colony T5 was selected for plasmid extraction. c, Double digestion verification of pRS315-MjDOD-BvCYP76AD5; the band sizes of digested products matched the theoretical expectation. d, Whole-plasmid sequencing result, confirming correct base sequences in key regions.</p>
 
 :::
 
@@ -247,7 +247,7 @@ This cycle was actually carried out in parallel with Cycle 2. The Learn section 
 
 ![Figure 2. Schematic diagram of betaxanthin expression cassette transformation and transformant verification results, showing no insertion at the *Gal4* locus.](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-bad380137ce7-fig2-3-2.avif)
 
-<p><strong>Figure 2. Schematic diagram of betaxanthin expression cassette transformation and transformant verification results, showing no insertion at the </strong><strong><em>Gal4</em></strong><strong> locus.</strong></p>
+<p>Figure 2. Schematic diagram of betaxanthin expression cassette transformation and transformant verification results, showing no insertion at the <em>Gal4</em> locus.</p>
 
 :::
 
@@ -269,7 +269,7 @@ This result further demonstrated that HR had low efficiency and was not suitable
 
 ![Figure 1. Map of auxotrophic marker replacement for p414-Cas9 plasmid.](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-e034ba0dffbf-fig2-4-1.avif)
 
-<p><strong>Figure 1. Map of auxotrophic marker replacement for p414-Cas9 plasmid.</strong></p>
+<p>Figure 1. Map of auxotrophic marker replacement for p414-Cas9 plasmid.</p>
 
 :::
 
@@ -285,7 +285,7 @@ First, we constructed the Cas9 plasmid with replaced auxotrophic marker (Figure 
 
 ![Figure 2. Construction of p414-Cas9-Leu plasmid. a, Colony PCR identification for plasmid construction. Colony T6 was selected for plasmid extraction. b, Double digestion verification of p414-Cas9-Leu; the band sizes of digested products matched the theoretical expectation. c, Whole-plasmid sequencing result, confirming correct base sequences in key regions.](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-520027082450-fig2-4-2.avif)
 
-<p><strong>Figure 2. Construction of p414-Cas9-Leu plasmid.</strong> <strong>a</strong>, Colony PCR identification for plasmid construction. Colony T6 was selected for plasmid extraction. <strong>b</strong>, Double digestion verification of p414-Cas9-Leu; the band sizes of digested products matched the theoretical expectation. <strong>c</strong>, Whole-plasmid sequencing result, confirming correct base sequences in key regions.</p>
+<p>Figure 2. Construction of p414-Cas9-Leu plasmid. a, Colony PCR identification for plasmid construction. Colony T6 was selected for plasmid extraction. b, Double digestion verification of p414-Cas9-Leu; the band sizes of digested products matched the theoretical expectation. c, Whole-plasmid sequencing result, confirming correct base sequences in key regions.</p>
 
 :::
 
@@ -295,7 +295,7 @@ First, we constructed the Cas9 plasmid with replaced auxotrophic marker (Figure 
 
 ![Figure 3. sgRNA expression plasmids. a, Plasmid map of p426-SNR52p-gSTE12-SUP4t. b, Plasmid map of p426-SNR52p-gGal4-SUP4t. c, Plasmid map of p426-SNR52p-gSTE2-SUP4t.](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-35c2440a69e2-fig2-4-3.avif)
 
-<p><strong>Figure 3. sgRNA expression plasmids.</strong> <strong>a</strong>, Plasmid map of p426-SNR52p-gSTE12-SUP4t. <strong>b</strong>, Plasmid map of p426-SNR52p-gGal4-SUP4t. <strong>c</strong>, Plasmid map of p426-SNR52p-gSTE2-SUP4t.</p>
+<p>Figure 3. sgRNA expression plasmids. a, Plasmid map of p426-SNR52p-gSTE12-SUP4t. b, Plasmid map of p426-SNR52p-gGal4-SUP4t. c, Plasmid map of p426-SNR52p-gSTE2-SUP4t.</p>
 
 :::
 
@@ -305,7 +305,7 @@ First, we constructed the Cas9 plasmid with replaced auxotrophic marker (Figure 
 
 ![Figure 4. Construction of p426-SNR52p-gSTE12-SUP4t plasmid.](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-d982a8b520ff-fig2-4-4.avif)
 
-<p><strong>Figure 4. Construction of p426-SNR52p-gSTE12-SUP4t plasmid.</strong></p>
+<p>Figure 4. Construction of p426-SNR52p-gSTE12-SUP4t plasmid.</p>
 
 :::
 
@@ -313,7 +313,7 @@ First, we constructed the Cas9 plasmid with replaced auxotrophic marker (Figure 
 
 ![Figure 5. Construction of p426-SNR52p-gGal4-SUP4t plasmid.](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-69de44f60d1c-fig2-4-5.avif)
 
-<p><strong>Figure 5. Construction of p426-SNR52p-gGal4-SUP4t plasmid.</strong></p>
+<p>Figure 5. Construction of p426-SNR52p-gGal4-SUP4t plasmid.</p>
 
 :::
 
@@ -321,7 +321,7 @@ First, we constructed the Cas9 plasmid with replaced auxotrophic marker (Figure 
 
 ![Figure 6. Construction of p426-SNR52p-gSTE2-SUP4t plasmid.](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-d5131d0a322f-fig2-4-6.avif)
 
-<p><strong>Figure 6. Construction of p426-SNR52p-gSTE2-SUP4t plasmid.</strong></p>
+<p>Figure 6. Construction of p426-SNR52p-gSTE2-SUP4t plasmid.</p>
 
 :::
 
@@ -331,7 +331,7 @@ Finally, we constructed the corresponding donor DNA. The sTF fragment was amplif
 
 ![Figure 7. Fragment construction of Gal1/10bp-Betaxanthin Expression Cassette (a) and sTF Expression Cassette (b).](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-3fc8bdc1eede-fig2-4-7.avif)
 
-Figure 7. Fragment construction of Gal1/10bp-Betaxanthin Expression Cassette (a) and sTF Expression Cassette (b).
+Figure 7. Fragment construction of Gal1/10bp-betaxanthin expression cassette (a) and sTF expression cassette (b).
 
 :::
 
@@ -341,7 +341,7 @@ Figure 7. Fragment construction of Gal1/10bp-Betaxanthin Expression Cassette (a)
 
 ![Figure 8. Plasmid map of pRS315-TEF1p-GPR2.](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-b849be4108e2-fig2-4-8.avif)
 
-<p><strong>Figure 8. Plasmid map of pRS315-TEF1p-GPR2.</strong></p>
+<p>Figure 8. Plasmid map of pRS315-TEF1p-GPR2.</p>
 
 :::
 
@@ -349,7 +349,7 @@ Figure 7. Fragment construction of Gal1/10bp-Betaxanthin Expression Cassette (a)
 
 ![Figure 9. Construction of pRS315-TEF1p-GPR2 plasmid.](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-17c9afd1d0d7-fig2-4-9.avif)
 
-<p><strong>Figure 9. Construction of pRS315-TEF1p-GPR2 plasmid.</strong></p>
+<p>Figure 9. Construction of pRS315-TEF1p-GPR2 plasmid.</p>
 
 :::
 
@@ -363,7 +363,7 @@ With these components ready, we proceeded to yeast transformation.
 
 ![Figure 10. Transformant verification of p414-Cas9-Leu (a) and sTF transformant verification (b).](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-2e431ac99756-fig2-4-10.avif)
 
-<p><strong>Figure 10. Transformant verification of p414-Cas9-Leu (a) and sTF transformant verification (b).</strong></p>
+<p>Figure 10. Transformant verification of p414-Cas9-Leu (a) and sTF transformant verification (b).</p>
 
 :::
 
@@ -373,7 +373,7 @@ With these components ready, we proceeded to yeast transformation.
 
 ![Figure 11. Schematic diagram of sTF Expression Cassette transformation.](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-a4204d900f23-fig2-4-11.avif)
 
-Figure 11. Schematic diagram of sTF Expression Cassette transformation.
+Figure 11. Schematic diagram of sTF expression cassette transformation.
 
 :::
 
@@ -383,7 +383,7 @@ Figure 11. Schematic diagram of sTF Expression Cassette transformation.
 
 ![Figure 2. Schematic diagram of Gal1/10bp-Betaxanthin Expression Cassette transformation (a) and transformant validation (b).](https://static.igem.wiki/teams/6303/wiki/v8-0/v85-66c1379247d8-r2-66c1379247d8-fig2-4-12.avif)
 
-<p><strong>Figure 2</strong><strong>.</strong><strong> Schematic diagram of Gal1/10bp-Betaxanthin Expression Cassette transformation (a) and transformant validation (b).</strong></p>
+<p>Figure 2. Schematic diagram of Gal1/10bp-betaxanthin expression cassette transformation (a) and transformant validation (b).</p>
 
 :::
 
@@ -401,7 +401,7 @@ Based on the results from previous cycles and dry lab, we still used one-step cl
 
 ![Figure 1. Plasmid maps of pRS315-TEF1p-GPR2-N84V and pRS315-TEF1p-GPR2-V368R.](https://static.igem.wiki/teams/6303/wiki/v8-0/v85-5c10cfcd0e4c-r2-5c10cfcd0e4c-fig2-5-1.avif)
 
-<p><strong>Figure 1. Plasmid maps of pRS315-TEF1p-GPR2-N84V and pRS315-TEF1p-GPR2-V368R.</strong></p>
+<p>Figure 1. Plasmid maps of pRS315-TEF1p-GPR2-N84V and pRS315-TEF1p-GPR2-V368R.</p>
 
 :::
 
@@ -413,7 +413,7 @@ Based on the results from previous cycles and dry lab, we still used one-step cl
 
 ![Figure 2. Construction of pRS315-TEF1p-GPR2-N84V (a) and pRS315-TEF1p-GPR2-V368R (b). Whole-plasmid sequencing confirmed the correct base sequences in key regions.](https://static.igem.wiki/teams/6303/wiki/v8-0/v85-28480e6cf5ad-r2-28480e6cf5ad-fig2-5-2.avif)
 
-<p><strong>Figure 2. Construction of pRS315-TEF1p-GPR2-N84V (a) and pRS315-TEF1p-GPR2-V368R (b). </strong>Whole-plasmid sequencing confirmed the correct base sequences in key regions.</p>
+<p>Figure 2. Construction of pRS315-TEF1p-GPR2-N84V (a) and pRS315-TEF1p-GPR2-V368R (b). Whole-plasmid sequencing confirmed the correct base sequences in key regions.</p>
 
 :::
 
@@ -461,7 +461,7 @@ Mans R, Wijsman M, Daran-Lapujade P, Daran JM. A protocol for introduction of mu
 
 <figure><a href="https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-e772d8a4854f55e5-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-e772d8a4854f55e5-00.json" alt="" loading="lazy"></a></figure>
 
-<p style="text-align:center;"><strong>Figure 1. </strong><strong>Water absorption capacity evaluation of selected substrates</strong>（<strong> Insert image </strong><strong>“Fig3.1.1”</strong>）</p>
+<p style="text-align:center;" class="figure-caption">Figure 1. Water absorption capacity evaluation of selected substrates（ insert image “Fig3.1.1”）</p>
 
 <p style="text-align:left;">The results demonstrate that GF/B not only exhibits strong binding capacity with yeast cells but also possesses superior water absorption ability.Learn</p>
 
@@ -491,25 +491,25 @@ Mans R, Wijsman M, Daran-Lapujade P, Daran JM. A protocol for introduction of mu
 
 <figure><a href="https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-c90ad92ed801865f-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-c90ad92ed801865f-00.json" alt="" loading="lazy"></a></figure>
 
-<p style="text-align:justify;">Figure 2. Fumigation coating device (a), hydrophobic effect demonstration (b), circular hydrophilic zone demonstration (c). For (c), the surrounding experimental groups are created by placing the hydrophobic-treated test strips into solutions containing iron(III) chloride, cobalt(II) chloride, copper(II) sulfate, and manganese(II) chloride, respectively.</p>
+<p style="text-align:justify;" class="figure-caption">Figure 2. Fumigation coating device (a), hydrophobic effect demonstration (b), circular hydrophilic zone demonstration (c). For (c), the surrounding experimental groups are created by placing the hydrophobic-treated test strips into solutions containing iron(III) chloride, cobalt(II) chloride, copper(II) sulfate, and manganese(II) chloride, respectively.</p>
 
 <p style="text-align:justify;">Next, to verify the water-retaining performance of the protectant, we conduct dehydration kinetics and full-process lyophilization tests on it. The results show (Figure 3) that the new protectant forms a structurally intact film matrix after drying and effectively prevents collapse and powdering; furthermore, its smooth and uniform dehydration rate avoids physical damage to yeast cell membranes caused by severe water loss, thereby significantly enhancing cell structural integrity and survival rate during lyophilization.</p>
 
 <figure><a href="https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-eab5bea814fd5141-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-eab5bea814fd5141-00.json" alt="" loading="lazy"></a></figure>
 
-<p style="text-align:center;">Figure3. Water loss rate curve.</p>
+<p style="text-align:center;" class="figure-caption">Figure 3. Water loss rate curve.</p>
 
 <p style="text-align:justify;">Additionally, we self-fabricate a vacuum filtration spotting device (Figure 4). This device can rapidly draw the high-viscosity protectant suspension into the interior of the test strip substrate, which not only significantly improves spotting efficiency but also achieves standardized control over the cell-loading amount per individual test strip.</p>
 
 <figure><a href="https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-1020073bd61e1101-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-1020073bd61e1101-00.json" alt="" loading="lazy"></a></figure>
 
-<p style="text-align:center;">Figure 3.1.4. Schematic of the spotting process</p>
+<p style="text-align:center;" class="figure-caption">Figure 3.1.4. Schematic of the spotting process</p>
 
 <p style="text-align:justify;">Integrating all the above methods and approaches, we prepare and obtain a batch of cell-loaded freeze-dried test strips available for downstream engineering (Figure 5).</p>
 
 <figure><a href="https://static.igem.wiki/teams/6303/wiki/v8-6/v86-ea1a49677396-fig3-1-5.avif" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/v8-6/v86-ea1a49677396-fig3-1-5.avif" alt="" loading="lazy"></a></figure>
 
-<p style="text-align:center;">Figure 5. Overview of color-developing cell-loaded test strips.</p>
+<p style="text-align:center;" class="figure-caption">Figure 5. Overview of color-developing cell-loaded test strips.</p>
 
 <p style="text-align:left;">Learn</p>
 
@@ -531,7 +531,7 @@ Mans R, Wijsman M, Daran-Lapujade P, Daran JM. A protocol for introduction of mu
 
 <p style="text-align:justify;">Subsequently, we carry out multiple control experiments to further explore the optimal conditions for test strip color development, performing <strong>red–green–blue (RGB)</strong> blue-channel grayscale quantification using ImageJ (Figure 6).</p>
 
-<iframe class="author-screening-figure" title="Reactivation medium screening" src="/embeds/results-20261019/index.html" loading="lazy" sandbox="allow-scripts" style="width:100%;height:980px;border:0"></iframe><p style="text-align:center;"><strong>Figure 6. Control experiments for color development conditions.</strong> </p>
+<iframe class="author-screening-figure" title="Reactivation medium screening" src="/embeds/results-20261019/index.html" loading="lazy" sandbox="allow-scripts" style="width:100%;height:980px;border:0"></iframe><p style="text-align:center;" class="figure-caption">Figure 6. Control experiments for color development conditions. </p>
 
 <p style="text-align:left;">Learn</p>
 
@@ -543,7 +543,7 @@ Mans R, Wijsman M, Daran-Lapujade P, Daran JM. A protocol for introduction of mu
 
 <figure><a href="https://static.igem.wiki/teams/6303/wiki/v8-6/v86-b5b9b9256085-fig3-2-2.avif" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/v8-6/v86-b5b9b9256085-fig3-2-2.avif" alt="" loading="lazy"></a></figure>
 
-<p style="text-align:center;"><strong>Figure 7.</strong> <strong>3D-printed test strip cassette</strong><strong>（</strong><strong> Insert image </strong><strong>“Fig3.2.2”</strong><strong>）</strong></p>
+<p style="text-align:center;" class="figure-caption">Figure 7. 3D-printed test strip cassette（ insert image “Fig3.2.2”）</p>
 
 <p style="text-align:justify;">At this point, we have closed the loop on test strip fabrication and application, establishing a solid foundation for subsequent on-site rapid detection of soil samples.</p>
 
