@@ -30,8 +30,9 @@
     "source_decisions": "content/author-source-decisions.json"
   },
   "previous_release": {
-    "version": "10.2.15",
-    "commit": "c56e223f136804824dd9ba8cc11c24f8cdd03eb4"
+    "version": "10.2.16",
+    "commit": "02d032500ecf0d79a5efd63d454fee47d93109f3",
+    "publication_time_beijing": "2026-10-20 11:43:15"
   },
   "visual_stage": "AI-generated handcut illustrations; 16 sheets, 91 canonical props",
   "meeting_update": {
@@ -167,9 +168,8 @@
     "svg_bytes_preserved": true
   },
   "first_publication": {
-    "commit": "e58ffd3ee80c08bb31972bb9bbffb48777c2f520",
-    "pipeline_id": 775034,
-    "published_at_beijing": "2026-10-20 04:42:34"
+    "status": "pending",
+    "version": "10.2.17"
   },
   "recent_combined_release": {
     "task_commits": {
