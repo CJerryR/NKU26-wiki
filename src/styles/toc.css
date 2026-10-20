@@ -55,8 +55,10 @@
 .toc__item a:not(:has(.toc__num)) { grid-template-columns: minmax(0, 1fr); }
 .toc__text { min-width: 0; overflow-wrap: anywhere; }
 .toc__num { font-family: var(--font-mono); font-size: var(--toc-meta); color: var(--ink-2); }
-.toc__item--3 a, .toc__item--4 a { grid-template-columns: minmax(0, 1fr); padding: calc(var(--toc-row-pad) - 2px) 10px calc(var(--toc-row-pad) - 2px) calc(10px + var(--toc-num-width)); font-size: var(--toc-subtype); font-weight: 450; color: var(--ink-2); }
+.toc__item--3 a, .toc__item--4 a, .toc__item--5 a, .toc__item--6 a { grid-template-columns: minmax(0, 1fr); padding: calc(var(--toc-row-pad) - 2px) 10px calc(var(--toc-row-pad) - 2px) calc(10px + var(--toc-num-width)); font-size: var(--toc-subtype); font-weight: 450; color: var(--ink-2); }
 .toc__item--4 a { padding-left: calc(22px + var(--toc-num-width)); font-size: calc(var(--toc-subtype) - .0625rem); }
+.toc__item--5 a { padding-left: calc(34px + var(--toc-num-width)); font-size: calc(var(--toc-subtype) - .125rem); }
+.toc__item--6 a { padding-left: calc(46px + var(--toc-num-width)); font-size: calc(var(--toc-subtype) - .1875rem); }
 .toc__item--3 a:has(.toc__num) { grid-template-columns: 3.2ch minmax(0, 1fr); column-gap: .55em; padding-left: 10px; }
 .toc__item a:hover { background: rgba(110, 79, 184, .08); color: var(--ink); }
 .toc__item a.is-active { color: var(--iris-deep); font-weight: 600; }
@@ -131,8 +133,10 @@
   .toc__close { display: grid; place-items: center; position: absolute; top: -4px; right: 2px; width: 36px; height: 36px; border-radius: 99px; background: rgba(36, 28, 43, .06); }
   .toc__close svg { width: 16px; height: 16px; }
   .toc__item a { min-height: 44px; padding-block: 10px; font-size: 1rem; }
-  .toc__item--3 a, .toc__item--4 a { min-height: 44px; padding-block: 10px; font-size: .9375rem; }
+  .toc__item--3 a, .toc__item--4 a, .toc__item--5 a, .toc__item--6 a { min-height: 44px; padding-block: 10px; font-size: .9375rem; }
   .toc__item--4 a { font-size: .90625rem; }
+  .toc__item--5 a { font-size: .875rem; }
+  .toc__item--6 a { font-size: .84375rem; }
   .site-footer { padding-bottom: 92px; }
 }
 @media (max-width: 640px) {

@@ -1,10 +1,10 @@
 ---
-title: Economic benefit
-heading: Economic benefit
+title: Economic Benefit
+heading: Economic Benefit
 sub: ''
 crumbs:
   - Model
-  - Economic benefit
+  - Economic Benefit
 route: model-eco
 search: true
 description: ''
@@ -21,7 +21,7 @@ hidden: false
 
 :::lead
 
-Eco | from color readouts to management decisions
+Economic Benefit | from color readouts to management decisions
 
 :::
 

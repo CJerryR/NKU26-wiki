@@ -1,10 +1,10 @@
 ---
-title: Molecular docking
-heading: Molecular docking
+title: Molecular Docking
+heading: Molecular Docking
 sub: ''
 crumbs:
   - Model
-  - Molecular docking
+  - Molecular Docking
 route: model-docking
 search: true
 description: ''
@@ -21,7 +21,7 @@ hidden: false
 
 :::lead
 
-Docking: screening receptor variants for ascaroside discrimination
+Molecular Docking: screening receptor variants for ascaroside discrimination
 
 :::
 

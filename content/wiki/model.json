@@ -25,7 +25,7 @@
     },
     {
       "_template": "text",
-      "body": "<nav class=\"model-chapter-links\" aria-label=\"Model chapters\"><a href=\"/model-docking/\"><img src=\"https://static.igem.wiki/teams/6303/wiki/release-20261020/model-b9a0bc880ff5.webp\" width=\"1024\" height=\"1024\" alt=\"\" loading=\"lazy\" decoding=\"async\"><span>Docking</span></a><a href=\"/model-md/\"><img src=\"https://static.igem.wiki/teams/6303/wiki/release-20261020/model-924062c2f7ac.webp\" width=\"1024\" height=\"1024\" alt=\"\" loading=\"lazy\" decoding=\"async\"><span>Molecular dynamics</span></a><a href=\"/model-ode/\"><img src=\"https://static.igem.wiki/teams/6303/wiki/release-20261020/model-51cd59b3873b.webp\" width=\"1024\" height=\"1024\" alt=\"\" loading=\"lazy\" decoding=\"async\"><span>ODE and dual-channel model</span></a><a href=\"/model-eco/\"><img src=\"https://static.igem.wiki/teams/6303/wiki/release-20261020/model-5d23c4029c73.webp\" width=\"1024\" height=\"1024\" alt=\"\" loading=\"lazy\" decoding=\"async\"><span>Eco</span></a></nav>"
+      "body": "<nav class=\"model-chapter-links\" aria-label=\"Model chapters\"><a href=\"/model-docking/\"><img src=\"https://static.igem.wiki/teams/6303/wiki/release-20261020/model-b9a0bc880ff5.webp\" width=\"1024\" height=\"1024\" alt=\"\" loading=\"lazy\" decoding=\"async\"><span>Molecular Docking</span></a><a href=\"/model-md/\"><img src=\"https://static.igem.wiki/teams/6303/wiki/release-20261020/model-924062c2f7ac.webp\" width=\"1024\" height=\"1024\" alt=\"\" loading=\"lazy\" decoding=\"async\"><span>Molecular Dynamics</span></a><a href=\"/model-ode/\"><img src=\"https://static.igem.wiki/teams/6303/wiki/release-20261020/model-51cd59b3873b.webp\" width=\"1024\" height=\"1024\" alt=\"\" loading=\"lazy\" decoding=\"async\"><span>ODE &amp; dual-channel sensing</span></a><a href=\"/model-eco/\"><img src=\"https://static.igem.wiki/teams/6303/wiki/release-20261020/model-5d23c4029c73.webp\" width=\"1024\" height=\"1024\" alt=\"\" loading=\"lazy\" decoding=\"async\"><span>Economic Benefit</span></a></nav>"
     },
     {
       "_template": "text",
@@ -34,8 +34,8 @@
     {
       "_template": "heading",
       "level": 2,
-      "text": "Molecular docking | identifying receptor variants for differential recognition",
-      "attributes": "#model-section-1 toc=\"Molecular docking | identifying receptor variants for differential recognition\""
+      "text": "Molecular Docking | identifying receptor variants for differential recognition",
+      "attributes": "#model-section-1 toc=\"Molecular Docking | identifying receptor variants for differential recognition\""
     },
     {
       "_template": "text",
@@ -44,8 +44,8 @@
     {
       "_template": "heading",
       "level": 2,
-      "text": "Molecular dynamics | exploring receptor–ligand behavior in a membrane",
-      "attributes": "#model-section-2 toc=\"Molecular dynamics | exploring receptor–ligand behavior in a membrane\""
+      "text": "Molecular Dynamics | exploring receptor–ligand behavior in a membrane",
+      "attributes": "#model-section-2 toc=\"Molecular Dynamics | exploring receptor–ligand behavior in a membrane\""
     },
     {
       "_template": "text",
@@ -54,8 +54,8 @@
     {
       "_template": "heading",
       "level": 2,
-      "text": "ODE & dual-channel modeling | linking color readouts to nematode density",
-      "attributes": "#model-section-3 toc=\"ODE & dual-channel modeling | linking color readouts to nematode density\""
+      "text": "ODE & dual-channel sensing | linking color readouts to nematode density",
+      "attributes": "#model-section-3 toc=\"ODE & dual-channel sensing | linking color readouts to nematode density\""
     },
     {
       "_template": "text",
@@ -64,8 +64,8 @@
     {
       "_template": "heading",
       "level": 2,
-      "text": "Economic benefit | assessing when detection informs treatment",
-      "attributes": "#model-section-4 toc=\"Economic benefit | assessing when detection informs treatment\""
+      "text": "Economic Benefit | assessing when detection informs treatment",
+      "attributes": "#model-section-4 toc=\"Economic Benefit | assessing when detection informs treatment\""
     },
     {
       "_template": "text",

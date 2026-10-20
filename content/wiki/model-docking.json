@@ -1,10 +1,10 @@
 {
-  "title": "Molecular docking",
-  "heading": "Molecular docking",
+  "title": "Molecular Docking",
+  "heading": "Molecular Docking",
   "sub": "",
   "crumbs": [
     "Model",
-    "Molecular docking"
+    "Molecular Docking"
   ],
   "route": "model-docking",
   "search": true,
@@ -26,7 +26,7 @@
     {
       "_template": "layout",
       "kind": "lead",
-      "body": "Docking: screening receptor variants for ascaroside discrimination"
+      "body": "Molecular Docking: screening receptor variants for ascaroside discrimination"
     },
     {
       "_template": "text",

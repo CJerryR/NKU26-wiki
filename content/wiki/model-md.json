@@ -1,10 +1,10 @@
 {
-  "title": "Molecular dynamics",
-  "heading": "Molecular dynamics",
+  "title": "Molecular Dynamics",
+  "heading": "Molecular Dynamics",
   "sub": "",
   "crumbs": [
     "Model",
-    "Molecular dynamics"
+    "Molecular Dynamics"
   ],
   "route": "model-md",
   "search": true,
@@ -26,7 +26,7 @@
     {
       "_template": "layout",
       "kind": "lead",
-      "body": "Molecular dynamics: ligand positioning and contact changes in a membrane environment"
+      "body": "Molecular Dynamics: ligand positioning and contact changes in a membrane environment"
     },
     {
       "_template": "text",
