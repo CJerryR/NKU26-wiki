@@ -433,6 +433,8 @@
     "policy": "Allsource prose,6 scientificfigures,headings andProject comparison preserved",
     "display": "Existing Tina cycle gains optionalarc mode;wheel remainsdefault",
     "icon_fallback": "Iteration2.5 DBTL text;Iteration3.4 Figure5 remainsDesign",
-    "review": "Existing scientific/teamreview flags retained"
+    "review": "Existing scientific/teamreview flags retained",
+    "schema_followup": "e634ecbbd2bba3ba1d0419908b65c894176553f4",
+    "tina": "Actualgeneratedschema lock includes optionalcycle.display anditems.icon;all14arcinputs andoldwheelinput validated"
   }
 }
