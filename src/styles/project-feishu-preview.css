@@ -1,0 +1,178 @@
+/* Shared article rules. Load after local manuscript and mobile styles so all
+   content pages use one reading measure, including pages without submissions. */
+/* Set the shared measure on the actual grid as well as its parent. Local
+   declarations on .doc must never shrink the inherited article measure.
+   52rem keeps an 18px line near 90 characters (review 2026-10-21: 65rem read too wide). */
+body:has([data-project-preview]) main:has(.doc), body:has([data-project-preview]) .doc, body:has([data-project-preview]) .pager { --measure: 52rem; --bleed: 0px; }
+/* Person-card pages (Members, Attributions) are laid out for the earlier 65rem grid. */
+body:has([data-project-preview]) main:has(.member-grid, .credit-grid), body:has([data-project-preview]) .doc:has(.member-grid, .credit-grid), body:has([data-project-preview]) main:has(.member-grid, .credit-grid) .pager { --measure: 65rem; }
+body:has([data-project-preview]) .doc .prose {
+  min-width: 0;
+  width: 100%;
+  max-width: var(--measure, 52rem);
+  font-family: var(--font-body);
+  --article-font-size: 18px;
+  --article-line-height: 1.65;
+  font-size: var(--article-font-size);
+  font-weight: 380;
+  line-height: var(--article-line-height);
+  letter-spacing: .005em;
+}
+body:has([data-project-preview]) .doc .doc-section + .doc-section { margin-top: clamp(56px, 5vw, 76px); }
+
+/* Manuscript HTML contains inline typography. These important declarations
+   replace only its presentation; emphasis and scientific italics stay intact. */
+body:has([data-project-preview]) .doc .prose h2 {
+  font-family: var(--font-body) !important;
+  font-size: clamp(28px, 2.3vw, 34px) !important;
+  font-weight: 560 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -.012em !important;
+  margin-bottom: .65em !important;
+  text-align: start !important;
+}
+body:has([data-project-preview]) .doc .prose h3:not(.person-name > *) {
+  font-family: var(--font-body) !important;
+  font-size: 24px !important;
+  font-weight: 560 !important;
+  line-height: 1.3 !important;
+  letter-spacing: -.005em !important;
+  margin-top: 1.65em !important;
+  margin-bottom: .65em !important;
+  text-align: start !important;
+}
+body:has([data-project-preview]) .doc .prose :is(h2, h3):not(.person-name > *) :is(span, strong, b, em, i) {
+  font-family: inherit !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+  letter-spacing: inherit !important;
+}
+
+/* Ordinary text shares the outer boundary of its adjacent blocks. Special
+   component text keeps its own inset, type size and alignment. */
+body:has([data-project-preview]) .doc .prose p:not(:where(
+  figcaption *, table *, blockquote *, .callout *, .refs *, .hp-references *,
+  .figure__media *, .wiki-media *, .stat *, .person *,
+  .timeline__when, .hp-image-label, .hp-download-label, .table-caption,
+  .docking-caption-only *, .figure__credit, .figure__missing,
+  .person__role, .person-name__cn, .member-card__role, .credit-card__role, .author-source-link, .manuscript-title
+)) {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-inline: 0 !important;
+  padding-inline: 0 !important;
+  margin-block: 1.1em;
+  font-family: var(--font-body) !important;
+  font-size: var(--article-font-size) !important;
+  font-weight: 380 !important;
+  line-height: var(--article-line-height) !important;
+  letter-spacing: .005em !important;
+  white-space: normal !important;
+  text-align: justify !important;
+  text-align-last: start !important;
+  text-wrap: wrap;
+}
+
+/* Only typographic spans inside ordinary paragraphs inherit the article metrics.
+   Scientific emphasis, scripts, code and semantic annotations retain their styling. */
+body:has([data-project-preview]) .doc .prose p:not(:where(
+  figcaption *, table *, blockquote *, .callout *, .refs *, .hp-references *,
+  .figure__media *, .wiki-media *, .stat *, .person *,
+  .timeline__when, .hp-image-label, .hp-download-label, .table-caption,
+  .docking-caption-only *, .figure__credit, .figure__missing,
+  .person__role, .person-name__cn, .member-card__role, .credit-card__role, .author-source-link, .manuscript-title
+)) span[style]:not(:where(
+  sub *, sup *, code *, kbd *, mark *, [data-annotation], [data-annotation] *,
+  .katex, .katex *, .annotation, .annotation *
+)) {
+  font-family: inherit !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+  letter-spacing: inherit !important;
+  white-space: normal !important;
+  text-align: inherit !important;
+  text-align-last: inherit !important;
+}
+body:has([data-project-preview]) .doc .prose h2 + p { margin-top: 0; }
+/* The manuscript's own title (the unnumbered top level above the overview): larger than a
+   chapter heading, display face, never justified. */
+body:has([data-project-preview]) .doc .prose p.manuscript-title {
+  margin: 0 0 .75em !important;
+  font-family: var(--font-display) !important;
+  font-size: clamp(30px, 2.9vw, 42px) !important;
+  font-weight: 600 !important;
+  line-height: 1.18 !important;
+  letter-spacing: -.015em !important;
+  text-align: start !important;
+  text-wrap: balance !important;
+  color: var(--ink) !important;
+}
+body:has([data-project-preview]) .doc .prose p.manuscript-title :is(strong, b) { font-weight: inherit !important; }
+body:has([data-project-preview]) .doc .prose :is(figcaption, .table-caption, .docking-caption-only) { text-align-last: auto; }
+body:has([data-project-preview]) .doc .prose :is(.callout, .cards, .figure, .table-wrap, .wiki-media, wiki-toolkit) {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+/* Figure frames contain the complete image, including panel labels. */
+body:has([data-project-preview]) .doc .prose .figure > .figure__media:not(:has(> .table-wrap)) {
+  background: #fff !important;
+  border: 1px solid var(--line) !important;
+  border-radius: var(--figure-radius, 18px) !important;
+  padding: var(--figure-pad, clamp(14px, 2.2vw, 26px)) !important;
+}
+body:has([data-project-preview]) .doc .prose .figure__media img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin-inline: auto;
+}
+body:has([data-project-preview]) .doc .prose .hp-source-figure > a,
+body:has([data-project-preview]) .doc .prose .hp-photo-group,
+body:has([data-project-preview]) .doc .prose .docking-panel-scroll {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--figure-radius, 18px);
+  padding: clamp(14px, 2.2vw, 26px);
+}
+
+/* Labels printed within a white photographic panel keep dark ink in both themes. */
+body:has([data-project-preview]) .doc .prose .hp-photo-group .hp-image-label { color: #241c2b; }
+
+@media (max-width: 640px) {
+  body:has([data-project-preview]) .doc { width: min(100% - 40px, 52rem); }
+  body:has([data-project-preview]) .doc .prose { --article-font-size: 17.5px; --article-line-height: 1.7; }
+  body:has([data-project-preview]) .doc .prose h2 { font-size: 28px !important; }
+  body:has([data-project-preview]) .doc .prose h3:not(.person-name > *) { font-size: 21px !important; }
+}
+
+/* One figure-caption contract across authored and structured image blocks. */
+body:has([data-project-preview]) .doc .prose :is(figcaption, .figure-caption, .docking-caption-only) {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 12px 0 0 !important;
+  padding-inline: 0 !important;
+  font-family: var(--font-body) !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 1.55 !important;
+  text-align: left !important;
+  text-align-last: auto !important;
+  letter-spacing: normal !important;
+}
+body:has([data-project-preview]) .doc .prose :is(figcaption, .figure-caption, .docking-caption-only) :is(p, span, a, em, i, strong, b):not(:where(.katex *, math *)) {
+  font-family: inherit !important;
+  font-size: inherit !important;
+  font-weight: 400 !important;
+  line-height: inherit !important;
+  text-align: left !important;
+  text-align-last: auto !important;
+  letter-spacing: normal !important;
+}
+body:has([data-project-preview]) .doc .prose :is(figcaption, .figure-caption, .docking-caption-only) p { margin: 0 !important; }
+body:has([data-project-preview]) .doc .prose :is(figcaption, .figure-caption, .docking-caption-only) strong:first-child { margin-right: 0; }
+
+body:has([data-project-preview]) .project-preview-bar {position:relative;z-index:30;display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding:16px 24px;margin-top:100px;background:var(--paper);color:var(--ink);border-block:1px solid var(--line);}

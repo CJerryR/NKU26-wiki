@@ -12,17 +12,18 @@ import { site } from '../data/site';
 
 interface Props {
   title: string; description?: string; current?: string;
+  comparison?: boolean;
   /** Where "Skip to content" lands (an inner page's article, past its hero). */
   skipTo?: string;
   /** Images the first screen needs at once, each for its own media query. */
   preload?: { href: string; media: string }[];
 }
-const { title, description = site.description, current, skipTo = '#main', preload = [] } = Astro.props;
+const { title, description = site.description, current, skipTo = '#main', preload = [], comparison = false } = Astro.props;
 ---
 <!DOCTYPE html>
 <html lang="en" data-root="/">
   <head>
-    {SHOW_REVIEW_TOOLS && <ReviewPreferences />}
+    {SHOW_REVIEW_TOOLS && !comparison && <ReviewPreferences />}
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>{`${title} / ${site.title}`}</title>
@@ -50,13 +51,13 @@ const { title, description = site.description, current, skipTo = '#main', preloa
   </head>
   <body class="wiki" data-page-title={title}>
     <a class="skip-link" href={skipTo}>Skip to content</a>
-    <SiteNav current={current} />
+    <SiteNav current={current} showReviewTools={!comparison} />
     <main id="main" tabindex="-1" data-tone="light">
       <slot />
     </main>
     <SiteFooter />
     <SearchDialog />
-  {SHOW_REVIEW_TOOLS && <ChangeNotice />}
+  {SHOW_REVIEW_TOOLS && !comparison && <ChangeNotice />}
     <Mascot />
     <script>
       import '../scripts/site.ts';

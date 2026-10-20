@@ -1,0 +1,68 @@
+[
+  {
+    "figure": "description-figure-2",
+    "docx_media": "image40.png",
+    "file": "static/img/project-20261021/description-figure-2-f25a55a93d.png",
+    "sha256": "f25a55a93d29e2b4b9d034c403a39812c4ad69bb648f459c0fc1fd3ded3b23f0",
+    "bytes": 13373980,
+    "cdn_url": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-40-f25a55a93d29.webp",
+    "upload_sha256": "ad6e043ceefb900860e9beaa75b9158896bddcb6157306e41fb92ca70e23bbb6",
+    "transformation": "lossless WebP; native dimensions; original retained",
+    "pixel_identical": true
+  },
+  {
+    "figure": "description-figure-3",
+    "docx_media": "image41.png",
+    "file": "static/img/project-20261021/description-figure-3-5a3f3ece2c.png",
+    "sha256": "5a3f3ece2c070e669fe15b0f1ec1643b7199394f70991853a8897b874863caf6",
+    "bytes": 8073855,
+    "cdn_url": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-41-5a3f3ece2c07.webp",
+    "upload_sha256": "3667e40f4bdf8e1bb8afd653a3c44ae3d1cf54ef09a8bfc46a4cb1bec3bef0bf",
+    "transformation": "lossless WebP; native dimensions; original retained",
+    "pixel_identical": true
+  },
+  {
+    "figure": "description-figure-4",
+    "docx_media": "image42.png",
+    "file": "static/img/project-20261021/description-figure-4-5518554943.png",
+    "sha256": "55185549437d1e27265812c9bd093f8e1633f52220ef32dcf246c4315ffe0dd1",
+    "bytes": 1996280,
+    "cdn_url": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-42-55185549437d.webp",
+    "upload_sha256": "a7ed4e37f5e50be42d6bee5e11fa15062aa065e17c53d57db92e7d53a3d1cffe",
+    "transformation": "lossless WebP; native dimensions; original retained",
+    "pixel_identical": true
+  },
+  {
+    "figure": "engineering-figure-1",
+    "docx_media": "image20.png",
+    "file": "static/img/project-20261021/engineering-figure-1-55bd4422e3.png",
+    "sha256": "55bd4422e3098e0379f6578a66a91e72046a6f3938e366dab3856f43950a0f92",
+    "bytes": 1688130,
+    "cdn_url": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-20-55bd4422e309.webp",
+    "upload_sha256": "4ba423a471706246a8f0cce34251449a71fce387ed788e8e1a62c299698d9efc",
+    "transformation": "lossless WebP; native dimensions; original retained",
+    "pixel_identical": true
+  },
+  {
+    "figure": "engineering-figure-5",
+    "docx_media": "image55.png",
+    "file": "static/img/project-20261021/engineering-figure-5-4c447ce9cb.png",
+    "sha256": "4c447ce9cb96f1b170a84742f11af416081a1110c1e3a9e74a21eda069fcf355",
+    "bytes": 153679,
+    "cdn_url": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-55-4c447ce9cb96.webp",
+    "upload_sha256": "ed948544c4b2dcf8461faff8ae17ea50aabeeda0271cc147fb210d8095eefa16",
+    "transformation": "lossless WebP; native dimensions; original retained",
+    "pixel_identical": true
+  },
+  {
+    "figure": "contribution-figure-3",
+    "docx_media": "image64.png",
+    "file": "static/img/project-20261021/contribution-figure-3-b07ff15b95.png",
+    "sha256": "b07ff15b95486e9be8b63ff91a9e279c6ec4d5ee3237fa5614e2f552cbf8b0c6",
+    "bytes": 468794,
+    "cdn_url": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-64-b07ff15b9548.webp",
+    "upload_sha256": "81b3af1a91ada83ef1b37b7d40315649c5eae9c14aae58a233d583000b0be615",
+    "transformation": "Lossless visible RGBA pixels; RGB values under fully transparent pixels normalized by WebP encoder; original retained.",
+    "pixel_identical": false
+  }
+]

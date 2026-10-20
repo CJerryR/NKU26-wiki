@@ -1,6 +1,6 @@
 ---
 /** One inner page: hero, outline, Markdown body, previous / next. */
-import { render } from 'astro:content';
+import { render, type CollectionEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from './PageHero.astro';
 import SceneHero from './SceneHero.astro';
@@ -12,8 +12,8 @@ import { readingOrder } from '../../data/nav';
 import { getPages, byId, pageHref, submittedPages, type PageEntry } from '../../lib/pages';
 import { inlineMd, stripMd } from '../../lib/text';
 
-interface Props { entry: PageEntry }
-const { entry } = Astro.props;
+interface Props { entry: PageEntry | CollectionEntry<'projectPreviews'>; projectPreview?: boolean }
+const { entry, projectPreview = false } = Astro.props;
 const data = entry.data;
 
 const { Content, headings, remarkPluginFrontmatter } = await render(entry);
@@ -42,7 +42,13 @@ const preload = scene ? [
   { href: scene.sets.mobile.url, media: PORTRAIT_QUERY },
 ] : [];
 ---
-<BaseLayout title={data.title} description={description} current={pageHref(entry)} skipTo="#content" preload={preload}>
+<BaseLayout title={data.title} description={description} current={pageHref(entry)} skipTo="#content" preload={preload} comparison={projectPreview}>
+  {projectPreview && <nav class="project-preview-bar" data-project-preview aria-label="Project comparison">
+    <strong>Project.docx backup · temporary preview</strong>
+    <a href="/preview/project-feishu/">Compare versions</a>
+    <a href={pageHref(entry)}>View current version</a>
+    {['description', 'engineering', 'contribution'].map((slug) => <a href={`/preview/project-feishu/${slug}/`}>{slug}</a>)}
+  </nav>}
   {scene
     ? <SceneHero scene={scene} title={data.title} heading={data.heading} crumbs={data.crumbs} />
     : <PageHero title={data.title} heading={data.heading} sub={data.sub} crumbs={data.crumbs} meta={data.meta} />}

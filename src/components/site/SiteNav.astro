@@ -10,8 +10,8 @@ import { SHOW_REVIEW_TOOLS } from '../../data/review-tools';
 import { primaryNav, mobileNav, type NavLink } from '../../data/nav';
 import { getPages, byId, pageHref } from '../../lib/pages';
 
-interface Props { current?: string }
-const { current = '' } = Astro.props;
+interface Props { current?: string; showReviewTools?: boolean }
+const { current = '', showReviewTools = true } = Astro.props;
 
 const ids = byId(await getPages());
 const HOME = '/index.html';
@@ -46,7 +46,7 @@ const sheet = mobileNav.map((g) => ({ ...g, items: g.items.map(link).filter((l) 
       </a>
     </LiquidGlass>
     <div class="lnav__right">
-      {SHOW_REVIEW_TOOLS && <LiquidGlass as="button" type="button" class="lnav__island lnav__review-orb" preset="bar" data-notice-open aria-label="打开改动清单" title="改动清单" aria-haspopup="dialog" aria-controls="change-notice">
+      {SHOW_REVIEW_TOOLS && showReviewTools && <LiquidGlass as="button" type="button" class="lnav__island lnav__review-orb" preset="bar" data-notice-open aria-label="打开改动清单" title="改动清单" aria-haspopup="dialog" aria-controls="change-notice">
         <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4.5H6.5A2 2 0 0 0 4.5 6.5v13h13a2 2 0 0 0 2-2V16M8.5 10.5h5M8.5 14.5h3"/><path d="m17 3 .9 3.1L21 7l-3.1.9L17 11l-.9-3.1L13 7l3.1-.9L17 3Z"/></svg>
       </LiquidGlass>}
     <LiquidGlass class="lnav__island lnav__island--menu" preset="bar">
