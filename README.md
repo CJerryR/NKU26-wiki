@@ -2,7 +2,7 @@
 
 南开大学 NKU-China 团队参加 iGEM 2026 的项目网站，队伍编号 **6303**。网站围绕农业线虫与双通道检测方案，展示项目设计、实验结果、模型、人类实践和团队工作。
 
-当前版本为 **V10.2.28**，Attributions 更新为最新版飞书内容与人物顺序，使用 27 张正式成员照片，并优化姓名与贡献卡片排版。
+当前版本为 **V10.2.29**，Attributions 与 Members 按最新要求整理标题层级与编号，保留已发布的成员照片、内容和卡片排版。
 
 - [正式网站](https://2026.igem.wiki/nku-china/)
 - [GitLab 源码](https://gitlab.igem.org/2026/nku-china)
@@ -89,6 +89,15 @@ GitLab Pages 从默认分支 `main` 读取源码，执行部署回归、构建�
 Licensing 独立页当前没有正文，现有许可与 AI 使用说明位于页脚；Awards、Acknowledgements 等可选页面未启用。后续新增材料以实际交稿和团队确认结果更新，不使用空链接冒充可下载文件。
 
 ## 版本改动
+
+### V10.2.29 改动：
+
+发布状态：已准备，Pages 部署及线上核验时间见工作区发布回执。
+
+1. Attributions 总标题 Team member contributions 不编号、不进入目录，一级章节从 01 开始。
+2. 下级标题去掉 x.x 编号，Wet Lab、Dry Lab、HP 归于 Student team members 下一级。
+3. Members 的四个下级标题及目录去掉 x.x 编号，原有层级、对齐、内容和照片保持不变。
+4. 内容结构审计识别既有 toc-unnumbered 设置，保留其他页面的编号检查。
 
 ### V10.2.28 改动：
 

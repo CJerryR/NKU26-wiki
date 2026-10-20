@@ -1,7 +1,7 @@
 {
-  "version": "10.2.28",
-  "label": "Attributions portraits, Feishu content and order, compact card layout",
-  "prepared_at": "2026-10-21T00:51:03+08:00",
+  "version": "10.2.29",
+  "label": "Attributions and Members heading hierarchy and numbering",
+  "prepared_at": "2026-10-21T01:10:36+08:00",
   "media": "84 unchanged original images plus 4 user-authorized GPS-only cleaned images; all decoded frames unchanged; 12 complete historical source documents",
   "release_kind": "stage",
   "team_content_review": "Scientific final review pending; source-version choices authorized by user",
@@ -10,7 +10,7 @@
     "commit": "16770d5c28ddf7bc41f8d90445c44d80a28801d5",
     "published_at_local": "2026-10-18 05:04:34"
   },
-  "release_id": "attributions-20261021-v10.2.28",
+  "release_id": "team-outline-20261021-v10.2.29",
   "mobile_layout_check": "390px Members rendered without overflow; desktop Description, Parts/plasmid, Attributions/puzzle checked; 4 second delayed CDN uses inline preview then upgrades",
   "source_fidelity": {
     "original_source_files_verified": 80,
@@ -302,7 +302,7 @@
     "formatting": "Original scientific italics restored in all four tables",
     "source_commit": "4c5c5b8d1ed494db273a0c0e5a035d138751a007"
   },
-  "change_scope": "Attributions 27 portraits, 138 authored contribution items, latest Feishu names/order and English centered names with adaptive collapsed height",
+  "change_scope": "Attribution overview outside TOC; only top-level chapters numbered; nested Wet Lab, Dry Lab and HP; Members subsection numbers removed; alignment preserved",
   "dbtl3_figure_numbering": {
     "task_commit": "ea3836906fb18382a248845d234b82f848bb3cf8",
     "corrections": 2
@@ -335,5 +335,13 @@
     "photos": "existing verified official CDN",
     "layout": "English names only, 22px centered, no nameplates; complete rows fit portrait/name height",
     "publication_authorization": "User explicitly approved photos, content, order and layout publication in this chat"
+  },
+  "team_outline": {
+    "task_commit": "edabed27ff6d00d30e660ed2485f7f8634e8278b",
+    "attributions": "Team member contributions notoc; h3 unnumbered; h4 Wet Lab/Dry Lab/HP; member names h5 in subgroup cards",
+    "members": "Remove four x.x subsection prefixes and matching TOC numbers only",
+    "alignment": "unchanged",
+    "content_and_portraits": "V10.2.28 retained",
+    "publication_authorization": "User explicitly requested all recent Attribution and Members heading and related changes be merged and published"
   }
 }
