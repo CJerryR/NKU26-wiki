@@ -1,6 +1,8 @@
 /* Shared article rules. Load after local manuscript and mobile styles so all
    content pages use one reading measure, including pages without submissions. */
-main:has(.doc) { --measure: 65rem; --bleed: 0px; }
+/* Set the shared measure on the actual grid as well as its parent. Local
+   declarations on .doc must never shrink the inherited article measure. */
+main:has(.doc), .doc, .pager { --measure: 65rem; --bleed: 0px; }
 .doc .prose {
   min-width: 0;
   width: 100%;

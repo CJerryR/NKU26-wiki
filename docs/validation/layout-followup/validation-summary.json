@@ -1,0 +1,25 @@
+{
+  "build": "pass",
+  "technical_audit": "pass with existing content-readiness warnings retained",
+  "source_pages": 26,
+  "layout_cases": 52,
+  "project_model_typography_cases": 18,
+  "regression_tests": 14,
+  "project_model_scope": [
+    "description",
+    "background",
+    "engineering",
+    "contribution",
+    "model",
+    "model-docking",
+    "model-md",
+    "model-ode",
+    "model-eco"
+  ],
+  "definitions": 77,
+  "reference_entries": "byte exact in source fields",
+  "protected_math_code_tables_assets": "unchanged",
+  "hp_sources": "unchanged",
+  "baseline": "6143316",
+  "publication": "not-published-followup"
+}

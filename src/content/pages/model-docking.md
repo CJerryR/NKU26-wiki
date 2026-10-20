@@ -17,15 +17,15 @@ hidden: false
 
 <span id="src-Model-Docking-1" aria-hidden="true"></span>
 
-## Docking: Screening Receptor Variants for Ascaroside Discrimination {#model-docking-section-0 toc="Docking: Screening Receptor Variants for Ascaroside Discrimination" unnumbered}
+## Docking: screening receptor variants for ascaroside discrimination {#model-docking-section-0 toc="Docking: screening receptor variants for ascaroside discrimination"}
 
-To build a sensor that distinguishes ascr#18 from ascr#3, we sought receptor variants with different preferences for the two ligands. Molecular docking helped us identify starting points for receptor engineering: which residues contact each ligand, how side-chain substitutions affect docking scores and contacts, and which variants merit further study.
+To build a sensor that distinguishes <strong>ascaroside #18 (ascr#18)</strong> from <strong>ascaroside #3 (ascr#3)</strong>, we sought receptor variants with different preferences for the two ligands. Molecular docking helped us identify starting points for receptor engineering: which residues contact each ligand, how side-chain substitutions affect docking scores and contacts, and which variants merit further study.
 
-We began by establishing comparable docking conditions, then used contact differences in wild-type (WT) receptors to select mutation sites. Alanine substitutions, saturation scans, and combination tests guided successive rounds of design. Docking scores supported candidate comparisons, while contact analysis helped us develop structural explanations and plan the next round.
+We began by establishing comparable docking conditions, then used contact differences in <strong>wild type (WT)</strong> receptors to select mutation sites. <strong>Alanine (Ala)</strong> substitutions, saturation scans, and combination tests guided successive rounds of design. Docking scores supported candidate comparisons, while contact analysis helped us develop structural explanations and plan the next round.
 
 <span id="src-Model-Docking-5" aria-hidden="true"></span>
 
-## 1.1 Receptor Selection and Docking Setup {#model-docking-section-1 toc="1.1 Receptor Selection and Docking Setup" unnumbered}
+### 1.1 Receptor selection and docking setup {#model-docking-section-1 toc="Receptor selection and docking setup" toc-unnumbered}
 
 ::::figuretext{side=right width=wide}
 
@@ -37,19 +37,19 @@ We began by establishing comparable docking conditions, then used contact differ
 
 :::
 
-We initially examined three fungal G protein-coupled receptors (GPCRs) involved in ascaroside sensing: Gpr2 and Gpr3 \[1], and GprC \[2]. We prepared predicted receptor structures and ligands, using published pocket locations, key residues, and docking methods as references. We also considered their use in yeast. GprC has been reported at both the plasma membrane and mitochondria in its native fungal host \[2]. We considered this a potential complication for localization and pathway integration in yeast, so we focused subsequent engineering on Gpr2, continued to investigate Gpr3 and its variants, and retained GprC as a structural reference.
+We initially examined three fungal <strong>G protein-coupled receptors (GPCRs)</strong> involved in ascaroside sensing: Gpr2 and Gpr3 \[1], and GprC \[2]. We prepared predicted receptor structures and ligands, using published pocket locations, key residues, and docking methods as references. We also considered their use in yeast. GprC has been reported at both the plasma membrane and mitochondria in its native fungal host \[2]. We considered this a potential complication for localization and pathway integration in yeast, so we focused subsequent engineering on Gpr2, continued to investigate Gpr3 and its variants, and retained GprC as a structural reference.
 
 ::::
 
 Initial checks revealed two input problems. Inconsistent coordinate frames between receptor structures and docking boxes displaced the search region from the intended pocket. Loss of chemical information, including formal charges, during format conversion also affected the identification of charged contacts. These findings made input validation a routine part of the workflow.
 
-We used structural superposition to place receptors, ligands, and docking boxes in a common coordinate frame, then checked the search region against membrane orientation and the receptor segments retained for docking. Atom mapping was used to check atom identities and coordinate correspondence between the original ligand SDF files and the PDBQT files. When the required Meeko metadata were retained in the PDBQT output, we exported the docked poses to SDF while restoring the original bond orders and formal charges for contact analysis \[4].
+We used structural superposition to place receptors, ligands, and docking boxes in a common coordinate frame, then checked the search region against membrane orientation and the receptor segments retained for docking. Atom mapping was used to check atom identities and coordinate correspondence between the original ligand <strong>structure-data format (SDF)</strong> files and the <strong>Protein Data Bank format with partial charges and atom types (PDBQT)</strong> files. When the required Meeko metadata were retained in the PDBQT output, we exported the docked poses to SDF while restoring the original bond orders and formal charges for contact analysis \[4].
 
 Subsequent mutant comparisons used consistent ligand inputs and search settings. Original residue numbering was preserved so that docking scores could be traced to residue contacts. Published studies guided receptor selection and structural comparisons; input checks established consistent computational conditions; and docking with both ligands guided the design and screening of variants.
 
 <span id="src-Model-Docking-14" aria-hidden="true"></span>
 
-## 1.2 Contact-Based Site Selection and Alanine Scanning {#model-docking-section-2 toc="1.2 Contact-Based Site Selection and Alanine Scanning" unnumbered}
+### 1.2 Contact-based site selection and alanine scanning {#model-docking-section-2 toc="Contact-based site selection and alanine scanning" toc-unnumbered}
 
 We selected initial mutation sites at two levels. First, we measured residue contact frequencies across predicted receptor models and their docked poses, identifying recurring contacts and comparing their occurrence between the two ligands. Second, we examined the poses in model_0 to identify contacts detected for only one ligand and classify their interaction types.
 
@@ -73,7 +73,7 @@ These analyses provided complementary information. Contact frequencies showed ho
 
 :::
 
-We then replaced candidate residues with alanine to examine how simplifying each side chain changed the scores and contacts for both ligands. The initial sites were N84, L90, V110, R181, W338, R345, and V368. For each substitution, we generated a mutant sequence, predicted its structure with AlphaFold 3 \[3], and carried out structure preparation, docking, and contact comparisons with WT.
+We then replaced candidate residues with Ala to examine how simplifying each side chain changed the scores and contacts for both ligands. The initial sites were N84, L90, V110, R181, W338, R345, and V368. For each substitution, we generated a mutant sequence, predicted its structure with AlphaFold 3 \[3], and carried out structure preparation, docking, and contact comparisons with WT.
 
 ::::
 
@@ -81,17 +81,17 @@ Using the structures and WT reference from this initial round, N84A, V110A, and 
 
 <span id="src-Model-Docking-29" aria-hidden="true"></span>
 
-## 1.3 Saturation Scanning at Four Sites {#model-docking-section-3 toc="1.3 Saturation Scanning at Four Sites" unnumbered}
+### 1.3 Saturation scanning at four sites {#model-docking-section-3 toc="Saturation scanning at four sites" toc-unnumbered}
 
-The alanine scan narrowed the search and raised a further question: could different side chains at the same position shift the scores in different directions?
+The Ala scan narrowed the search and raised a further question: could different side chains at the same position shift the scores in different directions?
 
-Based on the alanine scan, contact analysis, and additional side-chain substitutions, we selected N84, V110, V368, and W338 for saturation scanning. Testing all 19 alternatives at each site produced 76 single-mutant designs, allowing us to compare how side-chain identity affected scores and contact patterns for the two ligands.
+Based on the Ala scan, contact analysis, and additional side-chain substitutions, we selected N84, V110, V368, and W338 for saturation scanning. Testing all 19 alternatives at each site produced 76 single-mutant designs, allowing us to compare how side-chain identity affected scores and contact patterns for the two ligands.
 
 Different substitutions at the same position produced distinct score shifts. For example, N84V lowered the score for ascr#18 and raised it for ascr#3, whereas N84Y showed the opposite pattern. Contact differences helped identify promising positions, but the results for both ligands were needed to select individual variants.
 
 <span id="src-Model-Docking-34" aria-hidden="true"></span>
 
-## 1.4 Comparing Score Changes for Both Ligands {#model-docking-section-4 toc="1.4 Comparing Score Changes for Both Ligands" unnumbered}
+### 1.4 Comparing score changes for both ligands {#model-docking-section-4 toc="Comparing score changes for both ligands" toc-unnumbered}
 
 We described each variant’s shift using the difference between its WT-relative score changes for the two ligands. Let (G) denote the AutoDock Vina docking score \[5]:
 
@@ -121,7 +121,7 @@ V110M and V368R both shifted toward ascr#3. For V110M, the ascr#3 score remained
 
 <span id="src-Model-Docking-48" aria-hidden="true"></span>
 
-## 1.5 Testing Mutation Combinations {#model-docking-section-5 toc="1.5 Testing Mutation Combinations" unnumbered}
+### 1.5 Testing mutation combinations {#model-docking-section-5 toc="Testing mutation combinations" toc-unnumbered}
 
 The single-mutant results led us to test whether substitutions with similar score shifts could be combined. Could a combination increase the difference between the ligands? Could a substitution that lowered one ligand’s score retain its effect alongside another that raised the other ligand’s score?
 
@@ -135,9 +135,9 @@ Most tested combinations failed to improve the target-ligand score of the better
 
 <span id="src-Model-Docking-55" aria-hidden="true"></span>
 
-## 1.6 Selecting N84V and V368R for Molecular Dynamics {#model-docking-section-6 toc="1.6 Selecting N84V and V368R for Molecular Dynamics" unnumbered}
+### 1.6 Selecting N84V and V368R for molecular dynamics {#model-docking-section-6 toc="Selecting N84V and V368R for molecular dynamics" toc-unnumbered}
 
-Based on score separation and contact analysis, we selected N84V and V368R from the four prioritized variants for molecular dynamics (MD) simulations. Each lowered the score for one ligand and raised it for the other, with opposite directions of preference in the docking results. They provided two contrasting candidates for studying the structural behavior of ascr#18 and ascr#3.
+Based on score separation and contact analysis, we selected N84V and V368R from the four prioritized variants for <strong>molecular dynamics (MD)</strong> simulations. Each lowered the score for one ligand and raised it for the other, with opposite directions of preference in the docking results. They provided two contrasting candidates for studying the structural behavior of ascr#18 and ascr#3.
 
 N84V highlighted the importance of the surrounding residue network. In the selected poses, residue 84 itself made no detected direct contact with either ligand. Compared with the WT reference from the same batch, the ascr#18 pose gained ionic and hydrogen-bond contacts involving R189, together with a hydrophobic contact involving W338. We therefore focused on changes in ligand position and neighboring contacts, and asked whether these contacts would persist during MD and help maintain the ligand’s position.
 
@@ -149,7 +149,7 @@ N84V highlighted the importance of the surrounding residue network. In the selec
 
 :::
 
-V368R raised a different question. Although the substitution introduced an arginine, R368 showed a close contact only with ascr#18 in the selected poses, and no ionic contact involving R368 was detected. Both ligands gained ionic and hydrogen-bond contacts involving K364. Interpreting V368R therefore required examining the local structure and contact network around the mutation, together with the scores for both ligands.
+V368R raised a different question. Although the substitution introduced an <strong>arginine (Arg)</strong>, R368 showed a close contact only with ascr#18 in the selected poses, and no ionic contact involving R368 was detected. Both ligands gained ionic and hydrogen-bond contacts involving K364. Interpreting V368R therefore required examining the local structure and contact network around the mutation, together with the scores for both ligands.
 
 :::figure
 
@@ -163,9 +163,9 @@ Docking thus led to questions about dynamics: would the ligands retain their ini
 
 <span id="src-Model-Docking-73" aria-hidden="true"></span>
 
-## 1.7 Mapping Contact Sites Across Receptors {#model-docking-section-7 toc="1.7 Mapping Contact Sites Across Receptors" unnumbered}
+### 1.7 Mapping contact sites across receptors {#model-docking-section-7 toc="Mapping contact sites across receptors" toc-unnumbered}
 
-We extended the analysis to Gpr3, GprC, and the *Caenorhabditis elegans* receptors DAF-37 and SRBC-64 to identify corresponding contact positions for parallel testing. Hu et al.’s comparison of predicted ascaroside pockets across receptors provided a reference for this analysis \[2].
+We extended the analysis to Gpr3, GprC, and the <strong><em>Caenorhabditis elegans</em> (<em>Ce</em>)</strong> receptors DAF-37 and SRBC-64 to identify corresponding contact positions for parallel testing. Hu et al.’s comparison of predicted ascaroside pockets across receptors provided a reference for this analysis \[2].
 
 For each receptor, we used five predicted models and compared contact frequencies for ascr#18 and ascr#3 within each model. Sequence alignment and structural mapping were then used to examine residue correspondence. We also recorded whether each residue was retained in the actual docking construct, linking contact analysis and positional mapping to the structures used.
 
@@ -179,7 +179,7 @@ For each receptor, we used five predicted models and compared contact frequencie
 
 :::
 
-Three TM6 tryptophans—Gpr2 W338, Gpr3 W306, and GprC W388—showed contact differences favoring ascr#18 and corresponding positions supported by both sequence and structural comparisons. These residues became candidates for parallel substitutions across the fungal receptors, allowing future tests of whether they play similar roles.
+Three <strong>transmembrane helix 6 (TM6)</strong> <strong>tryptophan residues (Trp)</strong>—Gpr2 W338, Gpr3 W306, and GprC W388—showed contact differences favoring ascr#18 and corresponding positions supported by both sequence and structural comparisons. These residues became candidates for parallel substitutions across the fungal receptors, allowing future tests of whether they play similar roles.
 
 ::::
 
@@ -187,7 +187,7 @@ This extension applied the site-selection approach across receptors. Contact dif
 
 <span id="src-Model-Docking-81" aria-hidden="true"></span>
 
-## References {#model-docking-section-8 toc="References" unnumbered}
+## References {#model-docking-section-8 toc="References"}
 
 \[1] Kuo, C.-Y., Tay, R. J., Lin, H.-C., et al. (2024). The nematode-trapping fungus *Arthrobotrys oligospora* detects prey pheromones via G protein-coupled receptors. *Nature Microbiology*, 9, 1738–1751. <https://doi.org/10.1038/s41564-024-01679-w>
 

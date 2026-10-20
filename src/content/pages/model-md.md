@@ -17,23 +17,23 @@ hidden: false
 
 <span id="src-Model-Molecular-Dynamics-1" aria-hidden="true"></span>
 
-## Molecular Dynamics: Ligand Positioning and Contact Changes in a Membrane Environment {#model-md-section-0 toc="Molecular Dynamics: Ligand Positioning and Contact Changes in a Membrane Environment" unnumbered}
+## Molecular dynamics: ligand positioning and contact changes in a membrane environment {#model-md-section-0 toc="Molecular dynamics: ligand positioning and contact changes in a membrane environment"}
 
-Molecular docking provided candidate binding poses for the Gpr2 variants N84V and V368R. We subsequently performed molecular dynamics (MD) simulations to examine how these poses adjusted in a membrane environment and which receptor–ligand contacts persisted.
+Molecular docking provided candidate binding poses for the Gpr2 variants N84V and V368R. We subsequently performed <strong>molecular dynamics (MD)</strong> simulations to examine how these poses adjusted in a membrane environment and which receptor–ligand contacts persisted.
 
 <span id="src-Model-Molecular-Dynamics-3" aria-hidden="true"></span>
 
-## 2.1 Constructing Six Membrane Systems from Docking Poses {#model-md-section-1 toc="2.1 Constructing Six Membrane Systems from Docking Poses" unnumbered}
+### 1.1 Constructing six membrane systems from docking poses {#model-md-section-1 toc="Constructing six membrane systems from docking poses" toc-unnumbered}
 
-We paired wild-type (WT) Gpr2, N84V, and V368R with ascr#18 and ascr#3 to generate six receptor–ligand complexes. Each complex was constructed from its own docking pose by placing the ligand in the corresponding full-length receptor and resolving steric clashes involving the restored receptor segments, the ligand, and neighboring structures. Each complex was then embedded in a POPC lipid bilayer, solvated, and supplemented with ions.
+We paired <strong>wild type (WT)</strong> Gpr2, N84V, and V368R with <strong>ascaroside #18 (ascr#18)</strong> and <strong>ascaroside #3 (ascr#3)</strong> to generate six receptor–ligand complexes. Each complex was constructed from its own docking pose by placing the ligand in the corresponding full-length receptor and resolving steric clashes involving the restored receptor segments, the ligand, and neighboring structures. Each complex was then embedded in a <strong>1-palmitoyl-2-oleoyl-sn-glycero-3-phosphocholine (POPC)</strong> lipid bilayer, solvated, and supplemented with ions.
 
 The systems underwent energy minimization, followed by gradual heating to 303.15 K at constant volume and a brief period at the target temperature. Pressure equilibration was then performed in successive stages at 1 bar, with positional and dihedral restraints progressively relaxed to allow the receptor, ligand, lipids, and solvent to relax together. Additional unrestrained preparatory simulations were then performed while monitoring temperature, density, membrane-plane area, and box height. Each of the six systems subsequently underwent a single 100 ns production simulation.
 
 <span id="src-Model-Molecular-Dynamics-6" aria-hidden="true"></span>
 
-## 2.2 Tracking Ligand Motion Relative to the Local Binding Pocket {#model-md-section-2 toc="2.2 Tracking Ligand Motion Relative to the Local Binding Pocket" unnumbered}
+### 1.2 Tracking ligand motion relative to the local binding pocket {#model-md-section-2 toc="Tracking ligand motion relative to the local binding pocket" toc-unnumbered}
 
-To distinguish overall receptor motion from ligand movement within the pocket, we aligned the trajectories using a common set of pocket backbone atoms across all six systems. We then calculated ligand heavy-atom root-mean-square deviation (RMSD) relative to the first production frame of each respective trajectory. Whole-receptor alignment and alignment to the transmembrane helical core were also used to compare the results obtained with different structural references.
+To distinguish overall receptor motion from ligand movement within the pocket, we aligned the trajectories using a common set of pocket backbone atoms across all six systems. We then calculated ligand heavy-atom <strong>root mean square deviation (RMSD)</strong> relative to the first production frame of each respective trajectory. Whole-receptor alignment and alignment to the transmembrane helical core were also used to compare the results obtained with different structural references.
 
 The 50–100 ns interval was used as the primary comparison window for all six systems to reduce the influence of early conformational relaxation. Full trajectories were also examined to track contact formation and loss and ligand repositioning. RMSD describes the extent to which a ligand deviates from its own starting pose, whereas contact occupancy is the fraction of sampled frames within the analysis window that satisfy the specified contact criterion.
 
@@ -49,7 +49,7 @@ The RMSD curves obtained after pocket alignment and transmembrane helical-core a
 
 <span id="src-Model-Molecular-Dynamics-12" aria-hidden="true"></span>
 
-## 2.3 N84V–ascr#18: Persistent Anchoring of the Ligand Carboxylate by Arg189 {#model-md-section-3 toc="2.3 N84V–ascr#18: Persistent Anchoring of the Ligand Carboxylate by Arg189" unnumbered}
+### 1.3 N84V–ascr#18: persistent anchoring of the ligand carboxylate by Arg189 {#model-md-section-3 toc="N84V–ascr#18: persistent anchoring of the ligand carboxylate by Arg189" toc-unnumbered}
 
 In N84V–ascr#18, Arg189 maintained persistent contact with the ligand’s terminal carboxylate. In the simulation model, the Arg189 guanidinium group was positively charged and the ligand carboxylate was negatively charged. Their close association was consistent with a salt bridge and included contacts meeting the geometric criteria for hydrogen bonding. The electrostatic and geometric properties of salt bridges provide a basis for interpreting the positioning of this charged ligand terminus \[1].
 
@@ -67,7 +67,7 @@ Persistent contact was accompanied by a smaller deviation from the initial ligan
 
 <span id="src-Model-Molecular-Dynamics-20" aria-hidden="true"></span>
 
-## 2.4 V368R–ascr#3: The Structural Basis for the Predicted Preference Remains Unresolved {#model-md-section-4 toc="2.4 V368R–ascr#3: The Structural Basis for the Predicted Preference Remains Unresolved" unnumbered}
+### 1.4 V368R–ascr#3: the structural basis for the predicted preference remains unresolved {#model-md-section-4 toc="V368R–ascr#3: the structural basis for the predicted preference remains unresolved" toc-unnumbered}
 
 In the original V368R–ascr#3 trajectory, the ligand moved away from its initial position, and its carboxylate subsequently became anchored by Arg345. At the same time, the charged end of the Arg368 side chain moved away from Asp70, prompting us to examine the relationship between local receptor rearrangements and ligand repositioning. However, persistent Arg345–ligand contacts were also observed in WT–ascr#3 and V368R–ascr#18. Arg345 therefore provides an anchoring site accessible to multiple systems, and this shared contact does not explain the enhanced preference of V368R for ascr#3 predicted by Vina.
 
@@ -87,7 +87,7 @@ A receptor-wide screen for direct salt bridges, hydrogen bonds, and combinations
 
 <span id="src-Model-Molecular-Dynamics-25" aria-hidden="true"></span>
 
-## 2.5 Mechanistic Interpretations of the Two Candidates {#model-md-section-5 toc="2.5 Mechanistic Interpretations of the Two Candidates" unnumbered}
+### 1.5 Mechanistic interpretations of the two candidates {#model-md-section-5 toc="Mechanistic interpretations of the two candidates" toc-unnumbered}
 
 The MD results for N84V provide a structural clue to the Vina-predicted preference for ascr#18. Arg189 persistently anchored the ligand carboxylate through a salt bridge with associated hydrogen bonding, while the ligand showed a smaller deviation from its initial pose within the local pocket. These observations provide a specific explanation for how ascr#18 maintained its binding pose.
 
@@ -95,7 +95,7 @@ A comparable mechanistic clue has not yet emerged for V368R. The two additional 
 
 <span id="src-Model-Molecular-Dynamics-28" aria-hidden="true"></span>
 
-## References {#model-md-section-6 toc="References" unnumbered}
+## References {#model-md-section-6 toc="References"}
 
 \[1] Donald, J. E., Kulp, D. W., & DeGrado, W. F. (2011). Salt bridges: Geometrically specific, designable interactions. *Proteins: Structure, Function, and Bioinformatics*, 79(3), 898–915. <https://doi.org/10.1002/prot.22927>
 

@@ -24,6 +24,7 @@ variables:
   script:
     - npm run test:deployment
     - npm run build
+    - python3 tools/audit-content-rules.py --structure-only --output /tmp/content-rules-audit.json
     - npm run audit
   artifacts:
     paths:

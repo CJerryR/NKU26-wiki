@@ -17,7 +17,7 @@ hidden: false
 
 <section class="author-manuscript" lang="en">
 
-## Eco | from color readouts to management decisions {#src-Model-Eco-1 toc="Eco | from color readouts to management decisions" unnumbered}
+## Eco | from color readouts to management decisions {#src-Model-Eco-1 toc="Eco | from color readouts to management decisions"}
 
 :::lead
 
