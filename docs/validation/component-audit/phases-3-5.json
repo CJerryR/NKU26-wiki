@@ -1,0 +1,86 @@
+[
+  {
+    "active": "Design",
+    "ci": 3,
+    "error": false,
+    "length": 159,
+    "stage": "Design"
+  },
+  {
+    "active": "Build",
+    "ci": 3,
+    "error": false,
+    "length": 204,
+    "stage": "Build"
+  },
+  {
+    "active": "Test",
+    "ci": 3,
+    "error": false,
+    "length": 326,
+    "stage": "Test"
+  },
+  {
+    "active": "Learn",
+    "ci": 3,
+    "error": false,
+    "length": 398,
+    "stage": "Learn"
+  },
+  {
+    "active": "Design",
+    "ci": 4,
+    "error": false,
+    "length": 129,
+    "stage": "Design"
+  },
+  {
+    "active": "Build",
+    "ci": 4,
+    "error": false,
+    "length": 195,
+    "stage": "Build"
+  },
+  {
+    "active": "Test",
+    "ci": 4,
+    "error": false,
+    "length": 211,
+    "stage": "Test"
+  },
+  {
+    "active": "Learn",
+    "ci": 4,
+    "error": false,
+    "length": 355,
+    "stage": "Learn"
+  },
+  {
+    "active": "Design",
+    "ci": 5,
+    "error": false,
+    "length": 147,
+    "stage": "Design"
+  },
+  {
+    "active": "Build",
+    "ci": 5,
+    "error": false,
+    "length": 174,
+    "stage": "Build"
+  },
+  {
+    "active": "Test",
+    "ci": 5,
+    "error": false,
+    "length": 340,
+    "stage": "Test"
+  },
+  {
+    "active": "Learn",
+    "ci": 5,
+    "error": false,
+    "length": 344,
+    "stage": "Learn"
+  }
+]

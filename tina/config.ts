@@ -119,6 +119,7 @@ export default defineConfig({
       { type: 'boolean', name: 'draft', label: '草稿（不发布）' },
       { type: 'boolean', name: 'hidden', label: '从搜索中隐藏' },
       { type: 'boolean', name: 'search', label: '允许搜索' },
+      { type: 'boolean', name: 'preserveAuthorFormatting', label: '保留原稿科学排版', description: '已导入的科研稿件请保留：避免自动改写作者强调、引用和科学符号。' },
       { type: 'object', name: 'blocks', label: '正文排版', list: true, templates,
         ui: { itemProps: (item) => ({ label: item.text || item.label || ({ text: '富文本', layout: item.kind, image: '图片', gallery: '双图' }[item._template] || '模块') }) } },
     ],

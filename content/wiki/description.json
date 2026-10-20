@@ -16,12 +16,6 @@
       "body": "<div class=\"reading-layout\" lang=\"en\">"
     },
     {
-      "_template": "heading",
-      "level": 2,
-      "text": "Project overview",
-      "attributes": "#description-project-overview toc=\"Project overview\""
-    },
-    {
       "_template": "text",
       "body": "<p class=\"manuscript-title\">NemaKlear: making nematode screening easier to use</p>"
     },
@@ -38,6 +32,12 @@
       "src": "https://static.igem.wiki/teams/6303/wiki/release-20261020/description-workflow-81434cea99.webp",
       "alt": "NemaKlear integrated workflow connecting Wet Lab, Dry Lab, Human Practices, two-channel interpretation and test-strip development.",
       "body": "Figure 1. NemaKlear’s integrated workflow. Wet Lab, Dry Lab, and Human Practices (HP) connect biosensor construction, two-channel interpretation, and test-strip development toward an easy-to-use nematode screening kit."
+    },
+    {
+      "_template": "heading",
+      "level": 2,
+      "text": "Project overview",
+      "attributes": "#description-project-overview toc=\"Project overview\""
     },
     {
       "_template": "heading",

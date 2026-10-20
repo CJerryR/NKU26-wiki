@@ -9,7 +9,24 @@ function isNumericColumn(rows, k) {
   const vals = rows.map((r) => r[k]).filter((v) => v.trim() !== '');
   return vals.length > 0 && vals.filter((v) => Number.isFinite(toNum(v))).length / vals.length >= 0.8;
 }
-function cell(value, header = '') {
+const inlineTags = /<(\/?)(strong|b|em|i|sub|sup|code)>/g;
+const cellText = value => String(value).replace(/<\/?(?:strong|b|em|i|sub|sup|code)>/g, '');
+function formattedCell(value) {
+  const root = h('span'); const stack = [root]; let at = 0;
+  for (const m of value.matchAll(inlineTags)) {
+    stack.at(-1).append(document.createTextNode(value.slice(at, m.index)));
+    if (m[1]) {
+      if (stack.length > 1 && stack.at(-1).tagName.toLowerCase() === m[2]) stack.pop();
+    } else {
+      const node = h(m[2]); stack.at(-1).append(node); stack.push(node);
+    }
+    at = m.index + m[0].length;
+  }
+  stack.at(-1).append(document.createTextNode(value.slice(at)));
+  return root;
+}
+function cell(value, header = '', inlineFormatting = false) {
+  if (inlineFormatting) return formattedCell(value);
   // Exact experimental identifiers and DNA/RNA sequences, never arbitrary English.
   // Keep the underlying values untouched for filter, sort, copy and CSV export.
   const identifier = /^(?:BBa_[A-Za-z0-9]+|NKU-Y\d+|CEN\.PK2-1C|pRS\d+[A-Za-z0-9-]*|p(?:414|426)-[A-Za-z0-9-]+)$/;
@@ -35,7 +52,7 @@ function sourceCell(value, runs) {
   });
   return h('span', { style: { fontWeight: 'normal', whiteSpace: 'pre-wrap' } }, nodes);
 }
-export function renderTable(target, headers, rows, { name = 'data', pageSize = 25, sourceCellRuns } = {}) {
+export function renderTable(target, headers, rows, { name = 'data', pageSize = 25, sourceCellRuns, inlineFormatting = false } = {}) {
   const originalRows = new Map(rows.map((row, index) => [row, sourceCellRuns?.[index + 1]]));
   const originalValues = cells => cells.map(runs => runs.map(r => r.text || '').join(''));
   const numeric = headers.map((_, k) => isNumericColumn(rows, k));
@@ -44,7 +61,7 @@ export function renderTable(target, headers, rows, { name = 'data', pageSize = 2
   const box = searchBox('Filter table', (v) => { query = v; page = 0; draw(); });
   const tbody = h('tbody');
   const ths = headers.map((label, k) => {
-    const b = h('button', { type: 'button', class: 'dt__sort' }, sourceCellRuns ? sourceCell(label, sourceCellRuns[0]?.[k]) : h('span', { text: label }), icon('down', 'i dt__arrow'));
+    const b = h('button', { type: 'button', class: 'dt__sort' }, sourceCellRuns ? sourceCell(label, sourceCellRuns[0]?.[k]) : inlineFormatting ? formattedCell(label) : h('span', { text: label }), icon('down', 'i dt__arrow'));
     const th = h('th', { scope: 'col', 'aria-sort': 'none', class: numeric[k] ? 'num' : '' }, b);
     b.addEventListener('click', () => { asc = sort === k ? !asc : true; sort = k; page = 0; draw(); });
     return th;
@@ -54,14 +71,15 @@ export function renderTable(target, headers, rows, { name = 'data', pageSize = 2
   const pageText = h('span', { class: 'muted small' });
   const pager = h('div', { class: 'dt__pager' }, prev, pageText, next);
   let current = rows;
-  const exportCsv = button('Download CSV', { cls: 'btn btn--quiet', icon: 'download', onClick: () => saveBlob(new Blob([`\uFEFF${toCSV(sourceCellRuns ? originalValues(sourceCellRuns[0]) : headers, sourceCellRuns ? current.map(row => originalValues(originalRows.get(row))) : current)}`], { type: 'text/csv;charset=utf-8' }), `${name}.csv`) });
+  const values = row => inlineFormatting ? row.map(cellText) : row;
+  const exportCsv = button('Download CSV', { cls: 'btn btn--quiet', icon: 'download', onClick: () => saveBlob(new Blob([`\uFEFF${toCSV(sourceCellRuns ? originalValues(sourceCellRuns[0]) : values(headers), sourceCellRuns ? current.map(row => originalValues(originalRows.get(row))) : current.map(values))}`], { type: 'text/csv;charset=utf-8' }), `${name}.csv`) });
   function draw() {
     const q = query.trim().toLowerCase();
-    let result = q ? rows.filter((r) => r.join(' ').toLowerCase().includes(q)) : rows;
+    let result = q ? rows.filter((r) => values(r).join(' ').toLowerCase().includes(q)) : rows;
     if (sort >= 0) {
       result = [...result].sort((a, b) => {
         const x = toNum(a[sort]); const y = toNum(b[sort]);
-        const c = Number.isFinite(x) && Number.isFinite(y) && x !== null && y !== null ? x - y : a[sort].localeCompare(b[sort], 'zh');
+        const c = Number.isFinite(x) && Number.isFinite(y) && x !== null && y !== null ? x - y : values(a)[sort].localeCompare(values(b)[sort], 'zh');
         return asc ? c : -c;
       });
     }
@@ -71,7 +89,7 @@ export function renderTable(target, headers, rows, { name = 'data', pageSize = 2
     page = Math.max(0, Math.min(page, pages - 1));
     const visibleRows = result.slice(page * pageSize, page * pageSize + pageSize);
     swap(tbody, ...visibleRows.map(r => h('tr', null,
-      r.map((v, k) => h('td', { class: numeric[k] ? 'num' : '' }, sourceCellRuns ? sourceCell(v, originalRows.get(r)?.[k]) : cell(v, headers[k]))))));
+      r.map((v, k) => h('td', { class: numeric[k] ? 'num' : '' }, sourceCellRuns ? sourceCell(v, originalRows.get(r)?.[k]) : cell(v, headers[k], inlineFormatting))))));
     if (!result.length) tbody.append(h('tr', null, h('td', { colspan: headers.length, class: 'dt__none', text: 'No matching rows.' })));
     status.textContent = q ? `${result.length} / ${rows.length} rows` : `${rows.length} rows`;
     pageText.textContent = `Page ${page + 1} / ${pages}`;
@@ -93,7 +111,7 @@ async function datatable(d, ctx) {
   const text = await csvText(d, ctx, '请选择 CSV 文件或粘贴数据，首行为列名。');
   if (text == null) return;
   const { headers, rows } = table(text);
-  renderTable(ctx.body, headers, rows, { name: d.title || 'table', sourceCellRuns: d.sourceCellRuns });
+  renderTable(ctx.body, headers, rows, { name: d.title || 'table', sourceCellRuns: d.sourceCellRuns, inlineFormatting: d.inlineFormatting });
 }
 
 /* ================================================================ charts */

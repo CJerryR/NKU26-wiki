@@ -1,0 +1,442 @@
+{
+  "base": "c56e223",
+  "component_base": "b2332d8",
+  "pages": [
+    {
+      "page": "attributions",
+      "sha256": "c2f542aaf8ac84db734fb6545a62d0d9ae7e3ed388de70c1fae30bf913860fb6",
+      "before": {
+        "heading": 23,
+        "creditgrid": 7,
+        "text": 13
+      },
+      "after": {
+        "heading": 23,
+        "creditgrid": 7,
+        "text": 14,
+        "datatable": 1
+      },
+      "scientific_images": 27,
+      "tex_expressions": 0,
+      "rich_tables": 0
+    },
+    {
+      "page": "background",
+      "sha256": "d4919452401930ef46006f619026b14a0772d919010fe4d1ac85bd40f96c7103",
+      "before": {
+        "text": 11,
+        "heading": 4,
+        "image": 4
+      },
+      "after": {
+        "text": 10,
+        "heading": 4,
+        "image": 4,
+        "layout": 1,
+        "datatable": 1
+      },
+      "scientific_images": 4,
+      "tex_expressions": 0,
+      "rich_tables": 0
+    },
+    {
+      "page": "contribution",
+      "sha256": "6c0e42e4fcaee9eb98efd798b29025c32dfeb7f2eaa621c5f7525a64add0adf6",
+      "before": {
+        "text": 38,
+        "heading": 14,
+        "image": 5
+      },
+      "after": {
+        "text": 38,
+        "heading": 14,
+        "image": 5
+      },
+      "scientific_images": 5,
+      "tex_expressions": 0,
+      "rich_tables": 0
+    },
+    {
+      "page": "description",
+      "sha256": "4c92b1a9805102766f4e421aa9d3f6ede0afa755110462038962d77411800b12",
+      "before": {
+        "text": 31,
+        "heading": 10,
+        "image": 1
+      },
+      "after": {
+        "text": 31,
+        "image": 1,
+        "heading": 10
+      },
+      "scientific_images": 1,
+      "tex_expressions": 0,
+      "rich_tables": 0
+    },
+    {
+      "page": "education",
+      "sha256": "860a8fc30a9421cdda9594243738a96842fb06b37dfe215ca5dd6f04d9b9f613",
+      "before": {
+        "text": 12,
+        "heading": 8,
+        "layout": 7
+      },
+      "after": {
+        "text": 12,
+        "heading": 8,
+        "layout": 7
+      },
+      "scientific_images": 0,
+      "tex_expressions": 0,
+      "rich_tables": 0
+    },
+    {
+      "page": "engineering",
+      "sha256": "c2cc108f2ba704955e65df68a2f9afe7f99a35a242edd42cceb7cb7a2949559f",
+      "before": {
+        "image": 6,
+        "text": 81,
+        "heading": 17
+      },
+      "after": {
+        "image": 2,
+        "text": 32,
+        "heading": 17,
+        "cycle": 12
+      },
+      "scientific_images": 6,
+      "tex_expressions": 0,
+      "rich_tables": 0
+    },
+    {
+      "page": "experiments",
+      "sha256": "e87e684fe32964e164729ae5eadb2e3d09d6c26544e9f34d6e84f0fb668cc32d",
+      "before": {
+        "heading": 23,
+        "text": 18,
+        "datatable": 4,
+        "pdf": 17,
+        "image": 1
+      },
+      "after": {
+        "heading": 23,
+        "text": 18,
+        "datatable": 4,
+        "pdf": 17,
+        "image": 1
+      },
+      "scientific_images": 1,
+      "tex_expressions": 0,
+      "rich_tables": 0
+    },
+    {
+      "page": "hp-industry",
+      "sha256": "b6f741813dc25dea95cb5c41bbac9d591071281429636c6d219e8ff3fccfe14e",
+      "before": {
+        "text": 9,
+        "layout": 4,
+        "heading": 5
+      },
+      "after": {
+        "text": 9,
+        "layout": 4,
+        "heading": 5
+      },
+      "scientific_images": 0,
+      "tex_expressions": 0,
+      "rich_tables": 0
+    },
+    {
+      "page": "hp-investigation",
+      "sha256": "a267a77adde80a354b66786cd88f3484890fc4fb43e280eddaf92925aa55b5c3",
+      "before": {
+        "text": 13,
+        "heading": 5,
+        "layout": 4
+      },
+      "after": {
+        "text": 13,
+        "heading": 5,
+        "layout": 4
+      },
+      "scientific_images": 0,
+      "tex_expressions": 0,
+      "rich_tables": 0
+    },
+    {
+      "page": "hp-overview",
+      "sha256": "b672b5acfa39bcff6532d8f053245fec13eabd02e0373f8486f8393be6d11bb2",
+      "before": {
+        "text": 7,
+        "layout": 3,
+        "heading": 4
+      },
+      "after": {
+        "text": 7,
+        "layout": 3,
+        "heading": 4
+      },
+      "scientific_images": 0,
+      "tex_expressions": 0,
+      "rich_tables": 0
+    },
+    {
+      "page": "human-practices",
+      "sha256": "b44241dbe927a7a206b81b9748437341347fe2e167e36f08359bf60d4e9125f7",
+      "before": {
+        "text": 18,
+        "heading": 7,
+        "layout": 10
+      },
+      "after": {
+        "text": 18,
+        "heading": 7,
+        "layout": 10
+      },
+      "scientific_images": 0,
+      "tex_expressions": 0,
+      "rich_tables": 0
+    },
+    {
+      "page": "licensing",
+      "sha256": "5a26739e60f59ef8a9ab410577c7eae32fff5af44e4a7900af5797f10de868c2",
+      "before": {},
+      "after": {},
+      "scientific_images": 0,
+      "tex_expressions": 0,
+      "rich_tables": 0
+    },
+    {
+      "page": "members",
+      "sha256": "8936a3105e52b03d6ac89043d1a0102ce2d4f9b4651963de9f6dcf14f7b41a94",
+      "before": {
+        "image": 1,
+        "heading": 10,
+        "membergrid": 7
+      },
+      "after": {
+        "image": 1,
+        "heading": 10,
+        "membergrid": 7
+      },
+      "scientific_images": 28,
+      "tex_expressions": 0,
+      "rich_tables": 0
+    },
+    {
+      "page": "model-1",
+      "sha256": "1095329f987225fb84776c49115d4adb016eefb3f2277c899c445f8b6a1c959c",
+      "before": {
+        "heading": 1,
+        "text": 1
+      },
+      "after": {
+        "heading": 1,
+        "text": 1
+      },
+      "scientific_images": 0,
+      "tex_expressions": 0,
+      "rich_tables": 0
+    },
+    {
+      "page": "model-2",
+      "sha256": "e525a59325efbbdf98fbc6dd16f91daf85d224647ce44d162dc9399a7755ba30",
+      "before": {
+        "heading": 1,
+        "text": 1
+      },
+      "after": {
+        "heading": 1,
+        "text": 1
+      },
+      "scientific_images": 0,
+      "tex_expressions": 0,
+      "rich_tables": 0
+    },
+    {
+      "page": "model-docking",
+      "sha256": "c35e90c82a11d261a8e8bb854a0b3d0d822ec7f0c075fa07016c58bb48dc6b61",
+      "before": {
+        "text": 53,
+        "heading": 9,
+        "image": 6
+      },
+      "after": {
+        "text": 54,
+        "layout": 1,
+        "heading": 8,
+        "image": 6
+      },
+      "scientific_images": 6,
+      "tex_expressions": 8,
+      "rich_tables": 1
+    },
+    {
+      "page": "model-eco",
+      "sha256": "f3a04b4415ab55503f2e3553d419e79ebcaefed7ab1c91ec7dd0188e65e7191d",
+      "before": {
+        "text": 50,
+        "heading": 8,
+        "layout": 2
+      },
+      "after": {
+        "text": 51,
+        "layout": 3,
+        "heading": 7
+      },
+      "scientific_images": 0,
+      "tex_expressions": 0,
+      "rich_tables": 0
+    },
+    {
+      "page": "model-md",
+      "sha256": "a376c617544aa88d7161a2e1cec2c0d484d01cf681e60e5f170a4a852c7d7c22",
+      "before": {
+        "text": 25,
+        "heading": 7,
+        "image": 3
+      },
+      "after": {
+        "text": 26,
+        "layout": 1,
+        "heading": 6,
+        "image": 3
+      },
+      "scientific_images": 3,
+      "tex_expressions": 0,
+      "rich_tables": 0
+    },
+    {
+      "page": "model-ode",
+      "sha256": "101f2b1a2d9d5d6c7b7dea71da3e75fd10a114da727d0730bc4bc010da4e82a7",
+      "before": {
+        "text": 97,
+        "heading": 12,
+        "image": 5
+      },
+      "after": {
+        "text": 85,
+        "layout": 1,
+        "image": 5,
+        "heading": 11,
+        "equation": 13
+      },
+      "scientific_images": 5,
+      "tex_expressions": 133,
+      "rich_tables": 5
+    },
+    {
+      "page": "model",
+      "sha256": "fd13e61781fcca89378080927a2cbec15a25a63d5d433f316352e376c73070af",
+      "before": {
+        "text": 10,
+        "heading": 5
+      },
+      "after": {
+        "text": 11,
+        "heading": 4
+      },
+      "scientific_images": 0,
+      "tex_expressions": 0,
+      "rich_tables": 0
+    },
+    {
+      "page": "part-collection",
+      "sha256": "0740607465c32db935b0fc556aada2f3edc0de4dd7fa8ba895d2e98e4c74a21e",
+      "before": {
+        "heading": 1,
+        "text": 1
+      },
+      "after": {
+        "heading": 1,
+        "text": 1
+      },
+      "scientific_images": 0,
+      "tex_expressions": 0,
+      "rich_tables": 0
+    },
+    {
+      "page": "parts",
+      "sha256": "78542cdb48c0eec2eddd1d0a26900c78628f6df2372afe2c3933f6fed0d9e8c6",
+      "before": {
+        "text": 1,
+        "heading": 4,
+        "datatable": 3
+      },
+      "after": {
+        "text": 1,
+        "heading": 4,
+        "datatable": 3
+      },
+      "scientific_images": 0,
+      "tex_expressions": 0,
+      "rich_tables": 0
+    },
+    {
+      "page": "protocols",
+      "sha256": "71944d26dbf241ecd6200fd975464c0eddcc7ed927092c80b8b833d0a2de21ee",
+      "before": {
+        "heading": 1,
+        "text": 1
+      },
+      "after": {
+        "heading": 1,
+        "text": 1
+      },
+      "scientific_images": 0,
+      "tex_expressions": 0,
+      "rich_tables": 0
+    },
+    {
+      "page": "results",
+      "sha256": "0688ef070e9160fc1acd20524712fbbc128d160b816745b44676fb3336923a2b",
+      "before": {
+        "text": 118,
+        "heading": 41,
+        "image": 29
+      },
+      "after": {
+        "text": 118,
+        "heading": 41,
+        "image": 29
+      },
+      "scientific_images": 29,
+      "tex_expressions": 0,
+      "rich_tables": 1
+    },
+    {
+      "page": "safety",
+      "sha256": "2638e84b4b938855e8092d6319d0e16a02b500409e117f71c7bb4a2361b59d0d",
+      "before": {
+        "heading": 8,
+        "text": 15,
+        "image": 6
+      },
+      "after": {
+        "heading": 8,
+        "text": 15,
+        "image": 6
+      },
+      "scientific_images": 6,
+      "tex_expressions": 0,
+      "rich_tables": 0
+    },
+    {
+      "page": "source-archive",
+      "sha256": "07d1336e601643b5323e4405be94e0243924a7b938ee5edc0967957333c32f01",
+      "before": {
+        "text": 28,
+        "heading": 8
+      },
+      "after": {
+        "text": 28,
+        "heading": 8
+      },
+      "scientific_images": 0,
+      "tex_expressions": 0,
+      "rich_tables": 0
+    }
+  ],
+  "failures": [],
+  "passed": true
+}

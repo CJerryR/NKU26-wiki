@@ -17,13 +17,19 @@ hidden: false
 
 <span id="src-Model-Molecular-Dynamics-1" aria-hidden="true"></span>
 
-## Molecular dynamics: ligand positioning and contact changes in a membrane environment {#model-md-section-0 toc="Molecular dynamics: ligand positioning and contact changes in a membrane environment"}
+<span id="model-md-section-0" class="legacy-section-anchor" aria-hidden="true"></span>
+
+:::lead
+
+Molecular dynamics: ligand positioning and contact changes in a membrane environment
+
+:::
 
 Molecular docking provided candidate binding poses for the Gpr2 variants N84V and V368R. We subsequently performed <strong>molecular dynamics (MD)</strong> simulations to examine how these poses adjusted in a membrane environment and which receptor–ligand contacts persisted.
 
 <span id="src-Model-Molecular-Dynamics-3" aria-hidden="true"></span>
 
-### 1.1 Constructing six membrane systems from docking poses {#model-md-section-1 toc="Constructing six membrane systems from docking poses" toc-unnumbered}
+## Constructing six membrane systems from docking poses {#model-md-section-1 toc="Constructing six membrane systems from docking poses"}
 
 We paired <strong>wild type (WT)</strong> Gpr2, N84V, and V368R with <strong>ascaroside #18 (ascr#18)</strong> and <strong>ascaroside #3 (ascr#3)</strong> to generate six receptor–ligand complexes. Each complex was constructed from its own docking pose by placing the ligand in the corresponding full-length receptor and resolving steric clashes involving the restored receptor segments, the ligand, and neighboring structures. Each complex was then embedded in a <strong>1-palmitoyl-2-oleoyl-sn-glycero-3-phosphocholine (POPC)</strong> lipid bilayer, solvated, and supplemented with ions.
 
@@ -31,7 +37,7 @@ The systems underwent energy minimization, followed by gradual heating to 303.15
 
 <span id="src-Model-Molecular-Dynamics-6" aria-hidden="true"></span>
 
-### 1.2 Tracking ligand motion relative to the local binding pocket {#model-md-section-2 toc="Tracking ligand motion relative to the local binding pocket" toc-unnumbered}
+## Tracking ligand motion relative to the local binding pocket {#model-md-section-2 toc="Tracking ligand motion relative to the local binding pocket"}
 
 To distinguish overall receptor motion from ligand movement within the pocket, we aligned the trajectories using a common set of pocket backbone atoms across all six systems. We then calculated ligand heavy-atom <strong>root mean square deviation (RMSD)</strong> relative to the first production frame of each respective trajectory. Whole-receptor alignment and alignment to the transmembrane helical core were also used to compare the results obtained with different structural references.
 
@@ -49,9 +55,9 @@ The RMSD curves obtained after pocket alignment and transmembrane helical-core a
 
 <span id="src-Model-Molecular-Dynamics-12" aria-hidden="true"></span>
 
-### 1.3 N84V–ascr#18: persistent anchoring of the ligand carboxylate by Arg189 {#model-md-section-3 toc="N84V–ascr#18: persistent anchoring of the ligand carboxylate by Arg189" toc-unnumbered}
+## N84V–ascr#18: persistent anchoring of the ligand carboxylate by Arg189 {#model-md-section-3 toc="N84V–ascr#18: persistent anchoring of the ligand carboxylate by Arg189"}
 
-In N84V–ascr#18, Arg189 maintained persistent contact with the ligand’s terminal carboxylate. In the simulation model, the Arg189 guanidinium group was positively charged and the ligand carboxylate was negatively charged. Their close association was consistent with a salt bridge and included contacts meeting the geometric criteria for hydrogen bonding. The electrostatic and geometric properties of salt bridges provide a basis for interpreting the positioning of this charged ligand terminus \[1].
+In N84V–ascr#18, Arg189 maintained persistent contact with the ligand’s terminal carboxylate. In the simulation model, the Arg189 guanidinium group was positively charged and the ligand carboxylate was negatively charged. Their close association was consistent with a salt bridge and included contacts meeting the geometric criteria for hydrogen bonding. The electrostatic and geometric properties of salt bridges provide a basis for interpreting the positioning of this charged ligand terminus <sup>[1]</sup>.
 
 During 50–100 ns, the minimum distance between an Arg189 guanidinium nitrogen and a ligand carboxylate oxygen was ≤4 Å in every sampled frame, corresponding to a contact occupancy of 100%. At least one hydrogen bond between these groups was present in 93.6% of sampled frames. Hydrogen bonds were defined by a donor–acceptor distance ≤3.0 Å and a donor–hydrogen–acceptor (D–H–A) angle ≥150°. Under the same criteria, no Arg189–carboxylate hydrogen bonds were detected in N84V–ascr#3 or WT–ascr#18 during this interval (Figure 2).
 
@@ -67,7 +73,7 @@ Persistent contact was accompanied by a smaller deviation from the initial ligan
 
 <span id="src-Model-Molecular-Dynamics-20" aria-hidden="true"></span>
 
-### 1.4 V368R–ascr#3: the structural basis for the predicted preference remains unresolved {#model-md-section-4 toc="V368R–ascr#3: the structural basis for the predicted preference remains unresolved" toc-unnumbered}
+## V368R–ascr#3: the structural basis for the predicted preference remains unresolved {#model-md-section-4 toc="V368R–ascr#3: the structural basis for the predicted preference remains unresolved"}
 
 In the original V368R–ascr#3 trajectory, the ligand moved away from its initial position, and its carboxylate subsequently became anchored by Arg345. At the same time, the charged end of the Arg368 side chain moved away from Asp70, prompting us to examine the relationship between local receptor rearrangements and ligand repositioning. However, persistent Arg345–ligand contacts were also observed in WT–ascr#3 and V368R–ascr#18. Arg345 therefore provides an anchoring site accessible to multiple systems, and this shared contact does not explain the enhanced preference of V368R for ascr#3 predicted by Vina.
 
@@ -87,7 +93,7 @@ A receptor-wide screen for direct salt bridges, hydrogen bonds, and combinations
 
 <span id="src-Model-Molecular-Dynamics-25" aria-hidden="true"></span>
 
-### 1.5 Mechanistic interpretations of the two candidates {#model-md-section-5 toc="Mechanistic interpretations of the two candidates" toc-unnumbered}
+## Mechanistic interpretations of the two candidates {#model-md-section-5 toc="Mechanistic interpretations of the two candidates"}
 
 The MD results for N84V provide a structural clue to the Vina-predicted preference for ascr#18. Arg189 persistently anchored the ligand carboxylate through a salt bridge with associated hydrogen bonding, while the ligand showed a smaller deviation from its initial pose within the local pocket. These observations provide a specific explanation for how ascr#18 maintained its binding pose.
 

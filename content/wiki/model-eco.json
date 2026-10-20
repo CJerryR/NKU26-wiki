@@ -20,10 +20,13 @@
       "body": "<section class=\"author-manuscript\" lang=\"en\">"
     },
     {
-      "_template": "heading",
-      "level": 2,
-      "text": "Eco | from color readouts to management decisions",
-      "attributes": "#src-Model-Eco-1 toc=\"Eco | from color readouts to management decisions\""
+      "_template": "text",
+      "body": "<span id=\"src-Model-Eco-1\" class=\"legacy-section-anchor\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "_template": "layout",
+      "kind": "lead",
+      "body": "Eco | from color readouts to management decisions"
     },
     {
       "_template": "layout",

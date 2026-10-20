@@ -1,0 +1,98 @@
+[
+  {
+    "active": "Design",
+    "ci": 6,
+    "error": false,
+    "length": 116,
+    "overflow": false,
+    "stage": "Design"
+  },
+  {
+    "active": "Build",
+    "ci": 6,
+    "error": false,
+    "length": 173,
+    "overflow": false,
+    "stage": "Build"
+  },
+  {
+    "active": "Test",
+    "ci": 6,
+    "error": false,
+    "length": 159,
+    "overflow": false,
+    "stage": "Test"
+  },
+  {
+    "active": "Learn",
+    "ci": 6,
+    "error": false,
+    "length": 276,
+    "overflow": false,
+    "stage": "Learn"
+  },
+  {
+    "active": "Design",
+    "ci": 7,
+    "error": false,
+    "length": 99,
+    "overflow": false,
+    "stage": "Design"
+  },
+  {
+    "active": "Build",
+    "ci": 7,
+    "error": false,
+    "length": 158,
+    "overflow": false,
+    "stage": "Build"
+  },
+  {
+    "active": "Test",
+    "ci": 7,
+    "error": false,
+    "length": 335,
+    "overflow": false,
+    "stage": "Test"
+  },
+  {
+    "active": "Learn",
+    "ci": 7,
+    "error": false,
+    "length": 296,
+    "overflow": false,
+    "stage": "Learn"
+  },
+  {
+    "active": "Design",
+    "ci": 8,
+    "error": false,
+    "length": 107,
+    "overflow": false,
+    "stage": "Design"
+  },
+  {
+    "active": "Build",
+    "ci": 8,
+    "error": false,
+    "length": 221,
+    "overflow": false,
+    "stage": "Build"
+  },
+  {
+    "active": "Test",
+    "ci": 8,
+    "error": false,
+    "length": 444,
+    "overflow": false,
+    "stage": "Test"
+  },
+  {
+    "active": "Learn",
+    "ci": 8,
+    "error": false,
+    "length": 288,
+    "overflow": false,
+    "stage": "Learn"
+  }
+]

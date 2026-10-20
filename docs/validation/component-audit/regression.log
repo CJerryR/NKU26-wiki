@@ -1,0 +1,24 @@
+✔ author pages retain the supplied emphasis and citation placement (6.299542ms)
+✔ raw author caption formatting stays inside the figure caption container (4.251209ms)
+✔ table fallback retains original per-character styles and exact cell text (2.395583ms)
+✔ Tina preview uses the author-format flag and keeps differently formatted caches separate (10.372958ms)
+✔ Nature-style comma labels after the lead (Results Fig. 1, DBTL-1) (6.675541ms)
+✔ a title ending in a digit stops before the first panel label (KOGal80.) (2.274167ms)
+✔ "panel b," reference and labels around emphasis (0.407459ms)
+✔ parenthesised letters keep working, including inside a bold title (3.74925ms)
+✔ combined and alternative label forms (0.332042ms)
+✔ ordinary letters are never bolded (0.278042ms)
+✔ captions without a Figure label and title-only captions (0.218792ms)
+✔ DBTL fallback retains all four stages, source media, captions and emphasis without JavaScript (1.552041ms)
+✔ every phase image and caption is a real editable Tina field (0.1705ms)
+✔ all migrated ODE formulas render as valid KaTeX and retain copyable TeX (21.42275ms)
+✔ editable table cells retain species italics while escaping unsupported HTML (1.793792ms)
+✔ a TOC numbering exception preserves its body number and following sequence (6.374959ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 377.707

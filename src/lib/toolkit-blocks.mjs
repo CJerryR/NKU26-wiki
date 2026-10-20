@@ -34,8 +34,8 @@ function lines(record, depth = 0) {
  * children below stay in the page for crawlers, site search and visitors without
  * JavaScript; once the shadow root is attached they are no longer displayed.
  */
-function sourceCellHtml(value, runs) {
-  if (!Array.isArray(runs)) return esc(value);
+function sourceCellHtml(value, runs, inlineFormatting = false) {
+  if (!Array.isArray(runs)) return inlineFormatting ? esc(value).replace(/&lt;(\/?(?:strong|b|em|i|sub|sup|code))&gt;/g, '<$1>') : esc(value);
   const original = runs.map(r => r.text || '').join('');
   if (original !== value) throw new Error('Original table cell text does not match CSV.');
   return '<span style="font-weight:400;white-space:pre-wrap">' + runs.map(run => {
@@ -47,13 +47,25 @@ function sourceCellHtml(value, runs) {
     return text;
   }).join('') + '</span>';
 }
+function cycleFallback(block) {
+  const inline = value => esc(value).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/`([^`]+)`/g, '<code>$1</code>');
+  return (block.items || []).map(round => ['design', 'build', 'test', 'learn'].map(phase => {
+    const title = phase[0].toUpperCase() + phase.slice(1);
+    const body = String(round[phase] || '').split(/\n{2,}/).map(p => `<p>${inline(p)}</p>`).join('');
+    const src = round[`${phase}Image`]; const caption = round[`${phase}Caption`];
+    const media = src || caption ? `<figure>${src ? `<img src="${esc(src)}" alt="${esc(round[`${phase}Alt`] || '')}" loading="lazy">` : ''}${caption ? `<figcaption>${inline(caption)}</figcaption>` : ''}</figure>` : '';
+    return `<div data-dbtl-stage="${phase}"><p><strong>${title}</strong></p>${body}${media}</div>`;
+  }).join('')).join('');
+}
 export function renderToolkit(block, type) {
   const props = esc(JSON.stringify({ ...block, _template: type }));
   const heading = block.title ? `<p><strong>${esc(block.title)}</strong></p>` : '';
   let body = lines(block).join('');
-  if (type === 'datatable' && block.csv) {
+  if (type === 'cycle') {
+    body = cycleFallback(block);
+  } else if (type === 'datatable' && block.csv) {
     const rows = Papa.parse(block.csv, { skipEmptyLines: true }).data;
-    body = `<div class="table-wrap"><table><thead><tr>${(rows[0] || []).map((cell, k) => `<th>${sourceCellHtml(cell, block.sourceCellRuns?.[0]?.[k])}</th>`).join('')}</tr></thead><tbody>${rows.slice(1).map((row, i) => `<tr>${row.map((cell, k) => `<td>${sourceCellHtml(cell, block.sourceCellRuns?.[i + 1]?.[k])}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+    body = `<div class="table-wrap"><table><thead><tr>${(rows[0] || []).map((cell, k) => `<th>${sourceCellHtml(cell, block.sourceCellRuns?.[0]?.[k], block.inlineFormatting)}</th>`).join('')}</tr></thead><tbody>${rows.slice(1).map((row, i) => `<tr>${row.map((cell, k) => `<td>${sourceCellHtml(cell, block.sourceCellRuns?.[i + 1]?.[k], block.inlineFormatting)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
   } else if (type === 'equation' && block.latex) {
     body = katex.renderToString(block.latex.replace(/(?<!\\)#/g, '\\#'), { displayMode: true, throwOnError: false, output: 'htmlAndMathml' });
   }

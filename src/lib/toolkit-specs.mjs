@@ -57,7 +57,7 @@ export const toolkitSpecs = [
   { name: 'downloads', label: '附件下载 / 可复用资源', fields: [f.title,
     list('items', '附件', '附件', [str('title', '附件名称'), file('file', '附件文件'), long('text', '说明 / 版本 / 文件大小'), str('audience', '适用对象 / 用途', '可选，例如「未来 iGEM 队伍」「中学教师」。'), str('license', '许可 / 版本', '可选，例如 CC BY 4.0 · v2。')]),
     f.caption] },
-  { name: 'datatable', label: '数据表 / Parts 表（搜索排序）', fields: [f.title, f.csvFile, long('csv', '或粘贴 CSV（首行为列名，文件优先）', '单元格中的 https 地址会显示为链接。'), f.caption] },
+  { name: 'datatable', label: '数据表 / Parts 表（搜索排序）', fields: [f.title, f.csvFile, long('csv', '或粘贴 CSV（首行为列名，文件优先）', '单元格中的 https 地址会显示为链接。'), { name: 'inlineFormatting', kind: 'bool', label: '保留单元格科学排版', hint: '支持 strong/em/sub/sup/code 标签；筛选、排序与 CSV 下载使用纯文字。' }, f.caption] },
   { name: 'chart', label: '实验数据图表', fields: [f.title, f.csvFile, long('csv', '或粘贴 CSV（首列 X，其余列 Y，文件优先）', '误差列命名为「列名 ±」或「列名_sd」，放在对应数据列右侧，即可显示误差棒。'),
     select('chartType', '图表类型', [
       { label: '折线图', value: 'line' }, { label: '柱状图', value: 'bar' }, { label: '散点图', value: 'scatter' },
@@ -70,7 +70,10 @@ export const toolkitSpecs = [
 
   /* ---------------------------------------------------------- iGEM narrative */
   { name: 'cycle', label: '工程循环 DBTL（多轮）', fields: [f.title,
-    list('items', '轮次', '轮次', [str('title', '轮次名称', '例如 Cycle 1 · 启动子筛选'), long('design', 'Design 设计', RICH), long('build', 'Build 构建', RICH), long('test', 'Test 测试', RICH), long('learn', 'Learn 学习 / 下一步', RICH), str('href', '详细数据链接')]),
+    select('language', '界面语言', [{ label: '中文（默认）', value: 'zh' }, { label: 'English', value: 'en' }]),
+    list('items', '轮次', '轮次', [str('title', '轮次名称', '例如 Cycle 1 · 启动子筛选'), long('design', 'Design 设计', RICH), long('build', 'Build 构建', RICH), long('test', 'Test 测试', RICH), long('learn', 'Learn 学习 / 下一步', RICH), str('href', '详细数据链接'),
+      ...['design', 'build', 'test', 'learn'].flatMap(phase => [file(`${phase}Image`, `${phase} 图片（可选）`), str(`${phase}Alt`, `${phase} 图片替代文字`), long(`${phase}Caption`, `${phase} 图注`, RICH)]),
+    ]),
     f.caption] },
   
   { name: 'stakeholders', label: '利益相关者矩阵', fields: [f.title,

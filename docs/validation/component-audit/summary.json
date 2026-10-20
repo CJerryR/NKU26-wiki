@@ -1,0 +1,17 @@
+{
+  "status": "verified-local-not-published",
+  "baseline": "c56e223",
+  "source_pages": 26,
+  "structure_pages": 26,
+  "dbtl_cycles": 12,
+  "dbtl_ui_phase_cases": 48,
+  "equation_components": 13,
+  "new_data_tables": 2,
+  "regression_tests": 16,
+  "source_protection_passed": true,
+  "preview_port": 54721,
+  "editor_port": 54722,
+  "api_port": 4119,
+  "existing_scientific_review_status_retained": true,
+  "updated_at": "2026-10-20T11:31:51.488097+08:00"
+}

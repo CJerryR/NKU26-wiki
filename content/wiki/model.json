@@ -16,10 +16,8 @@
       "body": "<div class=\"reading-layout model-manuscript\" lang=\"en\">"
     },
     {
-      "_template": "heading",
-      "level": 2,
-      "text": "Model overview",
-      "attributes": "#model-overview toc=\"Model overview\""
+      "_template": "text",
+      "body": "<span id=\"model-overview\" class=\"legacy-section-anchor\" aria-hidden=\"true\"></span>"
     },
     {
       "_template": "text",
@@ -35,9 +33,9 @@
     },
     {
       "_template": "heading",
-      "level": 3,
-      "text": "1.1 Molecular docking | identifying receptor variants for differential recognition",
-      "attributes": "#model-section-1 toc=\"Molecular docking | identifying receptor variants for differential recognition\" toc-unnumbered"
+      "level": 2,
+      "text": "Molecular docking | identifying receptor variants for differential recognition",
+      "attributes": "#model-section-1 toc=\"Molecular docking | identifying receptor variants for differential recognition\""
     },
     {
       "_template": "text",
@@ -45,9 +43,9 @@
     },
     {
       "_template": "heading",
-      "level": 3,
-      "text": "1.2 Molecular dynamics | exploring receptor–ligand behavior in a membrane",
-      "attributes": "#model-section-2 toc=\"Molecular dynamics | exploring receptor–ligand behavior in a membrane\" toc-unnumbered"
+      "level": 2,
+      "text": "Molecular dynamics | exploring receptor–ligand behavior in a membrane",
+      "attributes": "#model-section-2 toc=\"Molecular dynamics | exploring receptor–ligand behavior in a membrane\""
     },
     {
       "_template": "text",
@@ -55,9 +53,9 @@
     },
     {
       "_template": "heading",
-      "level": 3,
-      "text": "1.3 ODE & dual-channel modeling | linking color readouts to nematode density",
-      "attributes": "#model-section-3 toc=\"ODE & dual-channel modeling | linking color readouts to nematode density\" toc-unnumbered"
+      "level": 2,
+      "text": "ODE & dual-channel modeling | linking color readouts to nematode density",
+      "attributes": "#model-section-3 toc=\"ODE & dual-channel modeling | linking color readouts to nematode density\""
     },
     {
       "_template": "text",
@@ -65,9 +63,9 @@
     },
     {
       "_template": "heading",
-      "level": 3,
-      "text": "1.4 Economic benefit | assessing when detection informs treatment",
-      "attributes": "#model-section-4 toc=\"Economic benefit | assessing when detection informs treatment\" toc-unnumbered"
+      "level": 2,
+      "text": "Economic benefit | assessing when detection informs treatment",
+      "attributes": "#model-section-4 toc=\"Economic benefit | assessing when detection informs treatment\""
     },
     {
       "_template": "text",

@@ -1,0 +1,81 @@
+- button "Show editing panel":
+- button "Open navigation menu":
+- link "You are in local mode":
+  - /url: https://tina.io/docs/r/what-is-tinacloud/
+- button "Hide editing panel":
+- paragraph:
+  - text: TinaCMS form fields
+  - text: will appear here.
+- paragraph:
+  - link "📖 Visual Editing Docs":
+    - /url: https://tina.io/docs/r/visual-editing-setup
+    - generic: 📖
+    - text: Visual Editing Docs
+- button "Toggle navigation menu":
+- link "You are in local mode":
+  - /url: https://tina.io/docs/r/what-is-tinacloud/
+- navigation "breadcrumb":
+  - list:
+    - button "Back to Wiki 内页":
+      - generic: Wiki 内页
+    - listitem: /
+    - button "engineering"
+    - listitem: /
+    - button "工程循环 DBTL（多轮）"
+    - listitem: /
+    - link "轮次" [disabled]
+- text: 轮次名称
+- generic: 例如 Cycle 1 · 启动子筛选
+- textbox
+- text: Design 设计
+- generic: "支持 **加粗**、[链接文字](地址)、`代码`；以「- 」开头的行显示为列表；空行分段。"
+- textbox: We added staining references to examine the receptor’s position relative to the cell boundary and membrane structures.
+- text: Build 构建
+- generic: "支持 **加粗**、[链接文字](地址)、`代码`；以「- 」开头的行显示为列表；空行分段。"
+- textbox: We stained GPR2–sfGFP-expressing yeast with **Calcofluor White (CFW)** and FM4-64, then compared the fluorescence channels and merged images.
+- text: Test 测试
+- generic: "支持 **加粗**、[链接文字](地址)、`代码`；以「- 」开头的行显示为列表；空行分段。"
+- textbox: The staining comparisons provided spatial context for the green signal. They allowed us to examine its distribution more closely than receptor fluorescence alone.
+- text: Learn 学习 / 下一步
+- generic: "支持 **加粗**、[链接文字](地址)、`代码`；以「- 」开头的行显示为列表；空行分段。"
+- textbox: "**We established a clearer way to assess receptor localization.** Reference staining added spatial context to the expression images and strengthened our receptor-evaluation workflow. Further localization and response measurements will help connect receptor placement to sensing function."
+- generic: 详细数据链接
+- textbox
+- generic: design 图片（可选）
+- button "Drag 'n' drop a file here, or click to select a file":
+  - text: Drag 'n' drop a file here,
+  - text: or click to select a file
+- generic: design 图片替代文字
+- textbox
+- text: design 图注
+- generic: "支持 **加粗**、[链接文字](地址)、`代码`；以「- 」开头的行显示为列表；空行分段。"
+- textbox
+- generic: build 图片（可选）
+- button "Drag 'n' drop a file here, or click to select a file":
+  - text: Drag 'n' drop a file here,
+  - text: or click to select a file
+- generic: build 图片替代文字
+- textbox
+- text: build 图注
+- generic: "支持 **加粗**、[链接文字](地址)、`代码`；以「- 」开头的行显示为列表；空行分段。"
+- textbox
+- generic: test 图片（可选）
+- button:
+- button:
+- generic: test 图片替代文字
+- textbox: Figure 2. Examining receptor localization.
+- text: test 图注
+- generic: "支持 **加粗**、[链接文字](地址)、`代码`；以「- 」开头的行显示为列表；空行分段。"
+- textbox: "**Figure 2. Examining receptor localization.** GPR2–sfGFP fluorescence is compared with FM4-64 staining and merged images. Scale bars: 10 μm."
+- generic: learn 图片（可选）
+- button "Drag 'n' drop a file here, or click to select a file":
+  - text: Drag 'n' drop a file here,
+  - text: or click to select a file
+- generic: learn 图片替代文字
+- textbox
+- text: learn 图注
+- generic: "支持 **加粗**、[链接文字](地址)、`代码`；以「- 」开头的行显示为列表；空行分段。"
+- textbox
+- button "Reset" [disabled]
+- button "Save" [disabled]
+- status

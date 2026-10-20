@@ -56,8 +56,14 @@
       "_template": "text"
     },
     {
-      "body": "| Method                        | Cost     | Early-Warning Capacity | Portability | Professional Dependence |\n| ----------------------------- | -------- | ---------------------- | ----------- | ----------------------- |\n| Morphological Methods         | low      | poor                   | moderate    | high                    |\n| Biochemical Methods           | moderate | poor                   | low         | high                    |\n| PCR / qPCR                    | high     | poor                   | low         | high                    |\n| NGS and Metabarcoding         | high     | poor                   | low         | high                    |\n| LAMP / RPA                    | moderate | poor                   | high        | high                    |\n| Conventional Image Processing | moderate | poor                   | moderate    | high                    |\n| Deep Learning / CNN           | high     | poor                   | moderate    | high                    |\n| Hyperspectral Imaging         | high     | poor                   | low         | high                    |\n| Remote Sensing                | high     | poor                   | low         | high                    |\n",
-      "_template": "text"
+      "_template": "layout",
+      "kind": "note",
+      "label": "Detection method abbreviations",
+      "body": "- **polymerase chain reaction (PCR)**\n- **quantitative polymerase chain reaction (qPCR)**\n- **next-generation sequencing (NGS)**\n- **loop-mediated isothermal amplification (LAMP)**\n- **recombinase polymerase amplification (RPA)**\n- **convolutional neural network (CNN)**"
+    },
+    {
+      "_template": "datatable",
+      "csv": "Method,Cost,Early-Warning Capacity,Portability,Professional Dependence\nMorphological Methods,low,poor,moderate,high\nBiochemical Methods,moderate,poor,low,high\nPCR / qPCR,high,poor,low,high\nNGS and Metabarcoding,high,poor,low,high\nLAMP / RPA,moderate,poor,high,high\nConventional Image Processing,moderate,poor,moderate,high\nDeep Learning / CNN,high,poor,moderate,high\nHyperspectral Imaging,high,poor,low,high\nRemote Sensing,high,poor,low,high\n"
     },
     {
       "body": "Table 1. Comparison of detection methods for PPNs\n",

@@ -406,6 +406,12 @@ mark { border-radius: 3px; background: none; color: inherit; }
 .cyc__badge { padding: 3px 9px; border-radius: 999px; background: var(--pc); color: #fff; font-size: 12px; font-weight: 650; }
 .cyc__pbody { flex: 1; }
 .cyc__pbody > * { animation: tk-in .25s var(--k-ease); }
+.tk--cycle .cyc__pbody > .rt { font-size: var(--article-font-size, 18px); font-weight: 380; line-height: var(--article-line-height, 1.65); letter-spacing: .005em; text-align: justify; text-align-last: start; margin-bottom: 1.1em; }
+.cyc__figure { margin-top: 1.1em; min-width: 0; }
+.cyc__image { display: block; padding: 14px; border: 1px solid var(--k-line); border-radius: var(--k-r2); background: #fff; }
+.cyc__image img { display: block; width: 100%; height: auto; object-fit: contain; }
+.cyc__figure figcaption { margin-top: 12px; font-size: 14px; font-weight: 400; line-height: 1.55; text-align: left; }
+.cyc__figure figcaption .rt { text-align: left; text-wrap: wrap; }
 .cyc__pfoot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--k-line2); }
 .cyc__pfoot .go { margin: 0; }
 

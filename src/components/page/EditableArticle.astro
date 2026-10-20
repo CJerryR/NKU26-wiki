@@ -9,7 +9,7 @@ import { tinaField } from '@tinacms/astro';
 
 const { entry, document } = Astro.props;
 const data = entry.data;
-const rendered = await renderEditorMarkdown(entry.body || '');
+const rendered = await renderEditorMarkdown(entry.body || '', data.preserveAuthorFormatting === true);
 const toc = rendered.metadata.frontmatter.toc || [];
 const ids = byId(await getPages());
 const order = readingOrder().filter((item) => ids.has(item.page));

@@ -15,8 +15,6 @@ hidden: false
 ---
 <div class="reading-layout" lang="en">
 
-## Project overview {#description-project-overview toc="Project overview"}
-
 <p class="manuscript-title">NemaKlear: making nematode screening easier to use</p>
 
 NemaKlear is developing a yeast-based biosensing kit for preliminary screening of agricultural nematode risk. Our approach uses engineered yeast to sense ascarosides, small molecules released by nematodes, and turn these chemical signals into a visible yellow color. By combining readings from two sensors with computational models, we explore how these signals could help assess the risk posed by <strong>plant-parasitic nematodes (PPNs)</strong>.
@@ -30,6 +28,8 @@ NemaKlear is developing a yeast-based biosensing kit for preliminary screening o
 Figure 1. NemaKlear’s integrated workflow. Wet Lab, Dry Lab, and Human Practices (HP) connect biosensor construction, two-channel interpretation, and test-strip development toward an easy-to-use nematode screening kit.
 
 :::
+
+## Project overview {#description-project-overview toc="Project overview"}
 
 ### 1.1 Starting with the decision a grower needs to make {#description-starting-with-the-decision-a-grower-needs-to-make toc="Starting with the decision a grower needs to make" toc-unnumbered}
 

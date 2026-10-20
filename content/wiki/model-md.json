@@ -20,10 +20,13 @@
       "body": "<span id=\"src-Model-Molecular-Dynamics-1\" aria-hidden=\"true\"></span>"
     },
     {
-      "_template": "heading",
-      "level": 2,
-      "text": "Molecular dynamics: ligand positioning and contact changes in a membrane environment",
-      "attributes": "#model-md-section-0 toc=\"Molecular dynamics: ligand positioning and contact changes in a membrane environment\""
+      "_template": "text",
+      "body": "<span id=\"model-md-section-0\" class=\"legacy-section-anchor\" aria-hidden=\"true\"></span>"
+    },
+    {
+      "_template": "layout",
+      "kind": "lead",
+      "body": "Molecular dynamics: ligand positioning and contact changes in a membrane environment"
     },
     {
       "_template": "text",
@@ -35,9 +38,9 @@
     },
     {
       "_template": "heading",
-      "level": 3,
-      "text": "1.1 Constructing six membrane systems from docking poses",
-      "attributes": "#model-md-section-1 toc=\"Constructing six membrane systems from docking poses\" toc-unnumbered"
+      "level": 2,
+      "text": "Constructing six membrane systems from docking poses",
+      "attributes": "#model-md-section-1 toc=\"Constructing six membrane systems from docking poses\""
     },
     {
       "_template": "text",
@@ -53,9 +56,9 @@
     },
     {
       "_template": "heading",
-      "level": 3,
-      "text": "1.2 Tracking ligand motion relative to the local binding pocket",
-      "attributes": "#model-md-section-2 toc=\"Tracking ligand motion relative to the local binding pocket\" toc-unnumbered"
+      "level": 2,
+      "text": "Tracking ligand motion relative to the local binding pocket",
+      "attributes": "#model-md-section-2 toc=\"Tracking ligand motion relative to the local binding pocket\""
     },
     {
       "_template": "text",
@@ -84,13 +87,13 @@
     },
     {
       "_template": "heading",
-      "level": 3,
-      "text": "1.3 N84V–ascr#18: persistent anchoring of the ligand carboxylate by Arg189",
-      "attributes": "#model-md-section-3 toc=\"N84V–ascr#18: persistent anchoring of the ligand carboxylate by Arg189\" toc-unnumbered"
+      "level": 2,
+      "text": "N84V–ascr#18: persistent anchoring of the ligand carboxylate by Arg189",
+      "attributes": "#model-md-section-3 toc=\"N84V–ascr#18: persistent anchoring of the ligand carboxylate by Arg189\""
     },
     {
       "_template": "text",
-      "body": "In N84V–ascr#18, Arg189 maintained persistent contact with the ligand’s terminal carboxylate. In the simulation model, the Arg189 guanidinium group was positively charged and the ligand carboxylate was negatively charged. Their close association was consistent with a salt bridge and included contacts meeting the geometric criteria for hydrogen bonding. The electrostatic and geometric properties of salt bridges provide a basis for interpreting the positioning of this charged ligand terminus \\[1]."
+      "body": "In N84V–ascr#18, Arg189 maintained persistent contact with the ligand’s terminal carboxylate. In the simulation model, the Arg189 guanidinium group was positively charged and the ligand carboxylate was negatively charged. Their close association was consistent with a salt bridge and included contacts meeting the geometric criteria for hydrogen bonding. The electrostatic and geometric properties of salt bridges provide a basis for interpreting the positioning of this charged ligand terminus <sup>[1]</sup>."
     },
     {
       "_template": "text",
@@ -115,9 +118,9 @@
     },
     {
       "_template": "heading",
-      "level": 3,
-      "text": "1.4 V368R–ascr#3: the structural basis for the predicted preference remains unresolved",
-      "attributes": "#model-md-section-4 toc=\"V368R–ascr#3: the structural basis for the predicted preference remains unresolved\" toc-unnumbered"
+      "level": 2,
+      "text": "V368R–ascr#3: the structural basis for the predicted preference remains unresolved",
+      "attributes": "#model-md-section-4 toc=\"V368R–ascr#3: the structural basis for the predicted preference remains unresolved\""
     },
     {
       "_template": "text",
@@ -150,9 +153,9 @@
     },
     {
       "_template": "heading",
-      "level": 3,
-      "text": "1.5 Mechanistic interpretations of the two candidates",
-      "attributes": "#model-md-section-5 toc=\"Mechanistic interpretations of the two candidates\" toc-unnumbered"
+      "level": 2,
+      "text": "Mechanistic interpretations of the two candidates",
+      "attributes": "#model-md-section-5 toc=\"Mechanistic interpretations of the two candidates\""
     },
     {
       "_template": "text",

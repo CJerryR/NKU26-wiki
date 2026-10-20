@@ -5,6 +5,7 @@ import remarkParse from 'remark-parse';
 import remarkDirective from 'remark-directive';
 import remarkWiki from '../../src/lib/remark-wiki.mjs';
 import { renderToolkit } from '../../src/lib/toolkit-blocks.mjs';
+import { renderEditorMarkdown } from '../../src/lib/editor-markdown.mjs';
 function compile(value, preserveAuthorFormatting = true) {
   const processor = unified().use(remarkParse).use(remarkDirective).use(remarkWiki);
   return processor.runSync(processor.parse(value), { data: { astro: { frontmatter: { preserveAuthorFormatting } } } });
@@ -40,4 +41,14 @@ test('table fallback retains original per-character styles and exact cell text',
   assert.match(out,/<em>GPR2<\/em>/);
   assert.doesNotMatch(out,/<code>/);
   assert.throws(()=>renderToolkit({...block,csv:'Part,Description\npRS315,CHANGED\n'},'datatable'),/does not match CSV/);
+});
+
+test('Tina preview uses the author-format flag and keeps differently formatted caches separate', async () => {
+  const source='Saccharomyces cerevisiae [1]. **Author emphasis**.';
+  const authored=await renderEditorMarkdown(source,true);
+  const conventional=await renderEditorMarkdown(source,false);
+  assert.doesNotMatch(authored.code,/<sup/);
+  assert.match(conventional.code,/<sup/);
+  assert.match(authored.code,/<strong>Author emphasis<\/strong>/);
+  assert.equal((await renderEditorMarkdown(source,true)).code,authored.code);
 });

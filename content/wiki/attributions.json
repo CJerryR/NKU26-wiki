@@ -875,7 +875,16 @@
     },
     {
       "_template": "text",
-      "body": "The following table records our use of resources offered through iGEM and its partners, including how they supported the project or why they were not used.\n\n| Offer | Used | Details |\n| --- | --- | --- |\n| iGEM Distribution Kit | No | The kit did not contain materials suitable for the project’s wet-lab experiments. |\n| IDT Partner Offer | No | The offer was not relevant to the project’s needs. |\n| Twist Partner Offer | No | The offer was not relevant to the project’s needs. |\n| GenScript Partner Offer | Yes | We used GenScript’s FLASH Gene offer to order CYP76AD5 (1,506 bp) and DOD (804 bp), codon-optimized for expression in <strong><em>Saccharomyces cerevisiae</em> (<em>S.c</em>)</strong>, with free gene synthesis and subcloning into pUC57. The constructs were intended for downstream cloning and experimental evaluation. |\n| Anthropic Partner Offer | No | The offer/resource was unavailable in our region. |\n\nWe also used GenScript’s GenSmart™ Design tool to generate plasmid maps and visualize the arrangement of genetic elements in our constructs, supporting experimental planning and project documentation.\n\nThe Anthropic entry concerns access to the partner offer. Our use of Claude as an AI tool is documented separately under AI Tool Use."
+      "body": "The following table records our use of resources offered through iGEM and its partners, including how they supported the project or why they were not used."
+    },
+    {
+      "_template": "datatable",
+      "csv": "Offer,Used,Details\niGEM Distribution Kit,No,The kit did not contain materials suitable for the project’s wet-lab experiments.\nIDT Partner Offer,No,The offer was not relevant to the project’s needs.\nTwist Partner Offer,No,The offer was not relevant to the project’s needs.\nGenScript Partner Offer,Yes,\"We used GenScript’s FLASH Gene offer to order CYP76AD5 (1,506 bp) and DOD (804 bp), codon-optimized for expression in <strong><em>Saccharomyces cerevisiae</em> (<em>S.c</em>)</strong>, with free gene synthesis and subcloning into pUC57. The constructs were intended for downstream cloning and experimental evaluation.\"\nAnthropic Partner Offer,No,The offer/resource was unavailable in our region.\n",
+      "inlineFormatting": true
+    },
+    {
+      "_template": "text",
+      "body": "We also used GenScript’s GenSmart™ Design tool to generate plasmid maps and visualize the arrangement of genetic elements in our constructs, supporting experimental planning and project documentation.\n\nThe Anthropic entry concerns access to the partner offer. Our use of Claude as an AI tool is documented separately under AI Tool Use."
     },
     {
       "_template": "heading",

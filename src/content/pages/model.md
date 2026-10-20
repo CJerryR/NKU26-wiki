@@ -15,7 +15,7 @@ hidden: false
 ---
 <div class="reading-layout model-manuscript" lang="en">
 
-## Model overview {#model-overview toc="Model overview"}
+<span id="model-overview" class="legacy-section-anchor" aria-hidden="true"></span>
 
 How can nematode chemical signals in soil help guide agricultural management? Our modeling work explores this question from receptor recognition to color readout, target nematode density, and treatment decisions. Four complementary components support sensor design, experimental calibration, and assessment of the potential value of detection.
 
@@ -23,19 +23,19 @@ How can nematode chemical signals in soil help guide agricultural management? Ou
 
 > Generated with OpenAI GPT Image 2.
 
-### 1.1 Molecular docking | identifying receptor variants for differential recognition {#model-section-1 toc="Molecular docking | identifying receptor variants for differential recognition" toc-unnumbered}
+## Molecular docking | identifying receptor variants for differential recognition {#model-section-1 toc="Molecular docking | identifying receptor variants for differential recognition"}
 
 We compared how Gpr2 variants interact with two ascarosides, <strong>ascaroside #18 (ascr#18)</strong> and <strong>ascaroside #3 (ascr#3)</strong>, using docking scores and receptor–ligand contacts. These comparisons guided the selection of N84V and V368R for further study as candidates with contrasting predicted ligand preferences.
 
-### 1.2 Molecular dynamics | exploring receptor–ligand behavior in a membrane {#model-section-2 toc="Molecular dynamics | exploring receptor–ligand behavior in a membrane" toc-unnumbered}
+## Molecular dynamics | exploring receptor–ligand behavior in a membrane {#model-section-2 toc="Molecular dynamics | exploring receptor–ligand behavior in a membrane"}
 
 Starting from docked poses, we simulated receptor–ligand complexes in a membrane environment to examine receptor motion, ligand positioning, and changes in molecular contacts. These simulations provide structural clues for interpreting the candidates and formulating hypotheses for experimental testing.
 
-### 1.3 ODE & dual-channel modeling | linking color readouts to nematode density {#model-section-3 toc="ODE & dual-channel modeling | linking color readouts to nematode density" toc-unnumbered}
+## ODE & dual-channel modeling | linking color readouts to nematode density {#model-section-3 toc="ODE & dual-channel modeling | linking color readouts to nematode density"}
 
 Our <strong>ordinary differential equation (ODE)</strong> model connects receptor input to yeast signaling and pigment production, with simulated pigment outputs translated into smartphone color features. The dual-channel model combines two complementary sensor responses to explore density estimation for the southern root-knot nematode (<strong><em>Meloidogyne incognita</em> (<em>Mi</em>)</strong>) when background nematode abundance is unknown. Together, these models provide a framework for experimental calibration.
 
-### 1.4 Economic benefit | assessing when detection informs treatment {#model-section-4 toc="Economic benefit | assessing when detection informs treatment" toc-unnumbered}
+## Economic benefit | assessing when detection informs treatment {#model-section-4 toc="Economic benefit | assessing when detection informs treatment"}
 
 Using target nematode density as an input, we compare net returns from no treatment, uniform treatment, and treatment selected by density category after testing. By accounting for potential yield loss, testing costs, and treatment costs, the model examines when density information could improve management decisions under the modeled conditions.
 

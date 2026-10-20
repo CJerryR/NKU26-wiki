@@ -37,17 +37,18 @@ Co-infection by these two nematodes elevates the risk of complex soil-borne dise
 
 <p>Current major management strategies for nematode diseases include chemical fumigation, non-fumigant nematicides, novel nematicides, biological control, resistant cultivar breeding, and crop rotation. To maximize the efficacy of these control approaches while lowering their environmental risks, multiple detection technologies for PPNs have been developed<sup>[6]</sup>. Nevertheless, these methods generally suffer from delayed detection, high cost, poor portability, and heavy reliance on professional operators (Table 1).</p>
 
-| Method                        | Cost     | Early-Warning Capacity | Portability | Professional Dependence |
-| ----------------------------- | -------- | ---------------------- | ----------- | ----------------------- |
-| Morphological Methods         | low      | poor                   | moderate    | high                    |
-| Biochemical Methods           | moderate | poor                   | low         | high                    |
-| PCR / qPCR                    | high     | poor                   | low         | high                    |
-| NGS and Metabarcoding         | high     | poor                   | low         | high                    |
-| LAMP / RPA                    | moderate | poor                   | high        | high                    |
-| Conventional Image Processing | moderate | poor                   | moderate    | high                    |
-| Deep Learning / CNN           | high     | poor                   | moderate    | high                    |
-| Hyperspectral Imaging         | high     | poor                   | low         | high                    |
-| Remote Sensing                | high     | poor                   | low         | high                    |
+:::note[Detection method abbreviations]
+
+- **polymerase chain reaction (PCR)**
+- **quantitative polymerase chain reaction (qPCR)**
+- **next-generation sequencing (NGS)**
+- **loop-mediated isothermal amplification (LAMP)**
+- **recombinase polymerase amplification (RPA)**
+- **convolutional neural network (CNN)**
+
+:::
+
+<div class="wiki-toolkit-block"><wiki-toolkit data-type="datatable" data-props="{&quot;_template&quot;:&quot;datatable&quot;,&quot;csv&quot;:&quot;Method,Cost,Early-Warning Capacity,Portability,Professional Dependence\nMorphological Methods,low,poor,moderate,high\nBiochemical Methods,moderate,poor,low,high\nPCR / qPCR,high,poor,low,high\nNGS and Metabarcoding,high,poor,low,high\nLAMP / RPA,moderate,poor,high,high\nConventional Image Processing,moderate,poor,moderate,high\nDeep Learning / CNN,high,poor,moderate,high\nHyperspectral Imaging,high,poor,low,high\nRemote Sensing,high,poor,low,high\n&quot;}"><div class="wiki-toolkit-fallback"><div class="table-wrap"><table><thead><tr><th>Method</th><th>Cost</th><th>Early-Warning Capacity</th><th>Portability</th><th>Professional Dependence</th></tr></thead><tbody><tr><td>Morphological Methods</td><td>low</td><td>poor</td><td>moderate</td><td>high</td></tr><tr><td>Biochemical Methods</td><td>moderate</td><td>poor</td><td>low</td><td>high</td></tr><tr><td>PCR / qPCR</td><td>high</td><td>poor</td><td>low</td><td>high</td></tr><tr><td>NGS and Metabarcoding</td><td>high</td><td>poor</td><td>low</td><td>high</td></tr><tr><td>LAMP / RPA</td><td>moderate</td><td>poor</td><td>high</td><td>high</td></tr><tr><td>Conventional Image Processing</td><td>moderate</td><td>poor</td><td>moderate</td><td>high</td></tr><tr><td>Deep Learning / CNN</td><td>high</td><td>poor</td><td>moderate</td><td>high</td></tr><tr><td>Hyperspectral Imaging</td><td>high</td><td>poor</td><td>low</td><td>high</td></tr><tr><td>Remote Sensing</td><td>high</td><td>poor</td><td>low</td><td>high</td></tr></tbody></table></div></div><noscript><style>.wiki-toolkit-fallback{display:block!important}wiki-toolkit:not(:defined){min-height:0;border:0;background:none;animation:none}</style><p>Enable JavaScript to use the interactive controls.</p></noscript></wiki-toolkit></div>
 
 Table 1. Comparison of detection methods for PPNs
 

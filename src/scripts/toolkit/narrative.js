@@ -29,17 +29,18 @@ function sector(cx, cy, r0, r1, a0, a1) {
   return `M${p(r1, a0)}A${r1} ${r1} 0 0 1 ${p(r1, a1)}L${p(r0, a1)}A${r0} ${r0} 0 0 0 ${p(r0, a0)}Z`;
 }
 function cycle(d, { body }) {
+  const en = d.language === 'en';
   const rounds = d.items || [];
   if (!rounds.length) return body.append(empty('请添加至少一轮 Design–Build–Test–Learn。'));
   let r = 0; let p = 0;
   const C = 120; const R1 = 112; const R0 = 70; const gap = 0.075;
-  const ring = s('svg', { class: 'cyc__ring', viewBox: '0 0 240 240', role: 'group', 'aria-label': '工程循环阶段' });
+  const ring = s('svg', { class: 'cyc__ring', viewBox: '0 0 240 240', role: 'group', 'aria-label': en ? 'DBTL stages' : '工程循环阶段' });
   const arcs = PHASES.map((ph, i) => {
     const a0 = -Math.PI * 3 / 4 + (i * Math.PI) / 2 + gap; const a1 = a0 + Math.PI / 2 - gap * 2;
     const mid = (a0 + a1) / 2; const lr = (R0 + R1) / 2;
     const path = s('path', { d: sector(C, C, R0, R1, a0, a1) });
     const label = s('text', { x: C + lr * Math.cos(mid), y: C + lr * Math.sin(mid) + 1, 'text-anchor': 'middle', 'dominant-baseline': 'middle', class: 'cyc__en', text: ph.en });
-    const g = s('g', { class: 'cyc__arc', tabindex: '0', role: 'button', 'aria-label': `${ph.en} ${ph.zh}`, style: { '--pc': ph.c } }, path, label);
+    const g = s('g', { class: 'cyc__arc', tabindex: '0', role: 'button', 'aria-label': en ? ph.en : `${ph.en} ${ph.zh}`, style: { '--pc': ph.c } }, path, label);
     g.addEventListener('click', () => go(r, i));
     g.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(r, i); } });
     ring.append(g);
@@ -59,7 +60,7 @@ function cycle(d, { body }) {
   const panelBody = h('div', { class: 'cyc__pbody', 'aria-live': 'polite' });
   const panelFoot = h('div', { class: 'cyc__pfoot' });
   const panel = h('div', { class: 'cyc__panel' }, panelHead, panelBody, panelFoot);
-  const seg = rounds.length > 1 ? segmented(rounds.map((it, i) => it.title || `Cycle ${i + 1}`), { label: '选择轮次', onSelect: (i, user) => { if (user) go(i, 0); } }) : null;
+  const seg = rounds.length > 1 ? segmented(rounds.map((it, i) => it.title || `Cycle ${i + 1}`), { label: en ? 'Select iteration' : '选择轮次', onSelect: (i, user) => { if (user) go(i, 0); } }) : null;
 
   function go(ri, pi) {
     r = ri; p = pi;
@@ -69,19 +70,24 @@ function cycle(d, { body }) {
       g.setAttribute('aria-pressed', String(i === p));
       g.classList.toggle('is-empty', !has(round[PHASES[i].key]));
     });
-    centreTop.textContent = rounds.length > 1 ? `第 ${r + 1} / ${rounds.length} 轮` : '工程循环';
-    centreSub.textContent = `${ph.zh} · ${p + 1}/4`;
+    centreTop.textContent = rounds.length > 1 ? (en ? `${r + 1} / ${rounds.length}` : `第 ${r + 1} / ${rounds.length} 轮`) : (en ? 'DBTL cycle' : '工程循环');
+    centreSub.textContent = `${en ? ph.en : ph.zh} · ${p + 1}/4`;
     panel.style.setProperty('--pc', ph.c);
-    swap(panelHead, h('span', { class: 'cyc__badge', text: ph.en }), h('h4', { text: ph.zh }), rounds.length > 1 || round.title ? h('span', { class: 'muted small', text: round.title || `Cycle ${r + 1}` }) : null);
-    swap(panelBody, has(round[ph.key]) ? rich(round[ph.key]) : h('p', { class: 'muted', text: '这一阶段还没有填写内容。' }));
+    swap(panelHead, h('span', { class: 'cyc__badge', text: ph.en }), en ? null : h('h4', { text: ph.zh }), rounds.length > 1 || round.title ? h('span', { class: 'muted small', text: round.title || `Cycle ${r + 1}` }) : null);
+    swap(panelBody, has(round[ph.key]) ? rich(round[ph.key]) : h('p', { class: 'muted', text: en ? 'No content has been supplied for this stage.' : '这一阶段还没有填写内容。' }));
+    const src = round[`${ph.key}Image`]; const caption = round[`${ph.key}Caption`];
+    if (src || caption) panelBody.append(h('figure', { class: 'cyc__figure' },
+      src ? h('a', { class: 'cyc__image', href: asset(src), ...linkProps(asset(src)) }, h('img', { src: asset(src), alt: round[`${ph.key}Alt`] || '', loading: 'lazy', decoding: 'async' })) : null,
+      caption ? h('figcaption', null, rich(caption)) : null));
     const prevAt = p > 0 ? [r, p - 1] : r > 0 ? [r - 1, 3] : null;
     const nextAt = p < 3 ? [r, p + 1] : r < rounds.length - 1 ? [r + 1, 0] : null;
     swap(panelFoot, 
-      prevAt ? button('上一步', { cls: 'btn btn--quiet', icon: 'left', onClick: () => go(...prevAt) }) : h('span'),
-      goLink(round.href, '详细数据'),
-      nextAt ? button(nextAt[0] !== r ? `进入 ${rounds[nextAt[0]].title || `Cycle ${nextAt[0] + 1}`}` : `下一步：${PHASES[nextAt[1]].en}`, { cls: 'btn btn--next', icon: 'right', after: true, onClick: () => go(...nextAt) }) : h('span', { class: 'muted small', text: '循环结束' }));
+      prevAt ? button(en ? 'Previous stage' : '上一步', { cls: 'btn btn--quiet', icon: 'left', onClick: () => go(...prevAt) }) : h('span'),
+      goLink(round.href, en ? 'Detailed results' : '详细数据'),
+      nextAt ? button(nextAt[0] !== r ? `${en ? 'Next: ' : '进入 '}${rounds[nextAt[0]].title || `Cycle ${nextAt[0] + 1}`}` : `${en ? 'Next: ' : '下一步：'}${PHASES[nextAt[1]].en}`, { cls: 'btn btn--next', icon: 'right', after: true, onClick: () => go(...nextAt) }) : h('span', { class: 'muted small', text: en ? 'Iteration complete' : '循环结束' }));
   }
-  body.append(seg ? h('div', { class: 'seg-scroll' }, seg.el) : null, h('div', { class: 'cyc' }, ring, panel));
+  if (seg) body.append(h('div', { class: 'seg-scroll' }, seg.el));
+  body.append(h('div', { class: 'cyc' }, ring, panel));
   go(0, 0);
 }
 

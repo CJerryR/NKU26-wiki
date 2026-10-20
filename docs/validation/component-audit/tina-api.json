@@ -1,0 +1,17 @@
+{
+  "engineering": {
+    "count": 12,
+    "preserve_author_formatting": true,
+    "schema_readable": true
+  },
+  "ode": {
+    "count": 13,
+    "preserve_author_formatting": true,
+    "schema_readable": true
+  },
+  "attributions": {
+    "count": 1,
+    "preserve_author_formatting": null,
+    "schema_readable": true
+  }
+}

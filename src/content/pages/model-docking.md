@@ -17,7 +17,13 @@ hidden: false
 
 <span id="src-Model-Docking-1" aria-hidden="true"></span>
 
-## Docking: screening receptor variants for ascaroside discrimination {#model-docking-section-0 toc="Docking: screening receptor variants for ascaroside discrimination"}
+<span id="model-docking-section-0" class="legacy-section-anchor" aria-hidden="true"></span>
+
+:::lead
+
+Docking: screening receptor variants for ascaroside discrimination
+
+:::
 
 To build a sensor that distinguishes <strong>ascaroside #18 (ascr#18)</strong> from <strong>ascaroside #3 (ascr#3)</strong>, we sought receptor variants with different preferences for the two ligands. Molecular docking helped us identify starting points for receptor engineering: which residues contact each ligand, how side-chain substitutions affect docking scores and contacts, and which variants merit further study.
 
@@ -25,7 +31,7 @@ We began by establishing comparable docking conditions, then used contact differ
 
 <span id="src-Model-Docking-5" aria-hidden="true"></span>
 
-### 1.1 Receptor selection and docking setup {#model-docking-section-1 toc="Receptor selection and docking setup" toc-unnumbered}
+## Receptor selection and docking setup {#model-docking-section-1 toc="Receptor selection and docking setup"}
 
 ::::figuretext{side=right width=wide}
 
@@ -33,23 +39,23 @@ We began by establishing comparable docking conditions, then used contact differ
 
 [![Figure 1. Predicted full-length structure of Gpr2 WT](https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-1-fa6200a22b.webp)](https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-1-fa6200a22b.webp "Open full-resolution image")
 
-Figure 1. Predicted full-length structure of Gpr2 WT. Overall structure of model_0 generated with AlphaFold 3 \[3].
+Figure 1. Predicted full-length structure of Gpr2 WT. Overall structure of model_0 generated with AlphaFold 3 <sup>[3]</sup>.
 
 :::
 
-We initially examined three fungal <strong>G protein-coupled receptors (GPCRs)</strong> involved in ascaroside sensing: Gpr2 and Gpr3 \[1], and GprC \[2]. We prepared predicted receptor structures and ligands, using published pocket locations, key residues, and docking methods as references. We also considered their use in yeast. GprC has been reported at both the plasma membrane and mitochondria in its native fungal host \[2]. We considered this a potential complication for localization and pathway integration in yeast, so we focused subsequent engineering on Gpr2, continued to investigate Gpr3 and its variants, and retained GprC as a structural reference.
+We initially examined three fungal <strong>G protein-coupled receptors (GPCRs)</strong> involved in ascaroside sensing: Gpr2 and Gpr3 <sup>[1]</sup>, and GprC <sup>[2]</sup>. We prepared predicted receptor structures and ligands, using published pocket locations, key residues, and docking methods as references. We also considered their use in yeast. GprC has been reported at both the plasma membrane and mitochondria in its native fungal host <sup>[2]</sup>. We considered this a potential complication for localization and pathway integration in yeast, so we focused subsequent engineering on Gpr2, continued to investigate Gpr3 and its variants, and retained GprC as a structural reference.
 
 ::::
 
 Initial checks revealed two input problems. Inconsistent coordinate frames between receptor structures and docking boxes displaced the search region from the intended pocket. Loss of chemical information, including formal charges, during format conversion also affected the identification of charged contacts. These findings made input validation a routine part of the workflow.
 
-We used structural superposition to place receptors, ligands, and docking boxes in a common coordinate frame, then checked the search region against membrane orientation and the receptor segments retained for docking. Atom mapping was used to check atom identities and coordinate correspondence between the original ligand <strong>structure-data format (SDF)</strong> files and the <strong>Protein Data Bank format with partial charges and atom types (PDBQT)</strong> files. When the required Meeko metadata were retained in the PDBQT output, we exported the docked poses to SDF while restoring the original bond orders and formal charges for contact analysis \[4].
+We used structural superposition to place receptors, ligands, and docking boxes in a common coordinate frame, then checked the search region against membrane orientation and the receptor segments retained for docking. Atom mapping was used to check atom identities and coordinate correspondence between the original ligand <strong>structure-data format (SDF)</strong> files and the <strong>Protein Data Bank format with partial charges and atom types (PDBQT)</strong> files. When the required Meeko metadata were retained in the PDBQT output, we exported the docked poses to SDF while restoring the original bond orders and formal charges for contact analysis <sup>[4]</sup>.
 
 Subsequent mutant comparisons used consistent ligand inputs and search settings. Original residue numbering was preserved so that docking scores could be traced to residue contacts. Published studies guided receptor selection and structural comparisons; input checks established consistent computational conditions; and docking with both ligands guided the design and screening of variants.
 
 <span id="src-Model-Docking-14" aria-hidden="true"></span>
 
-### 1.2 Contact-based site selection and alanine scanning {#model-docking-section-2 toc="Contact-based site selection and alanine scanning" toc-unnumbered}
+## Contact-based site selection and alanine scanning {#model-docking-section-2 toc="Contact-based site selection and alanine scanning"}
 
 We selected initial mutation sites at two levels. First, we measured residue contact frequencies across predicted receptor models and their docked poses, identifying recurring contacts and comparing their occurrence between the two ligands. Second, we examined the poses in model_0 to identify contacts detected for only one ligand and classify their interaction types.
 
@@ -57,7 +63,7 @@ We selected initial mutation sites at two levels. First, we measured residue con
 
 [![Figure 2. Predicted docking poses and pocket environments of Gpr2 WT](https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-2-7a7d9d242a.webp)](https://static.igem.wiki/teams/6303/wiki/release-20261020/docking-figure-2-7a7d9d242a.webp "Open full-resolution image")
 
-Figure 2. Predicted docking poses and pocket environments of Gpr2 WT. (a, b) ascr#3; (c, d) ascr#18. Each pair shows a 3D pocket view and the corresponding Maestro 2D interaction diagram \[6] for the lowest-scoring pose. In the 3D views, the receptor is shown as a purple cartoon, pocket residues as yellow sticks, and ascr#3 and ascr#18 in cyan and magenta, respectively. Original residue numbering is retained.
+Figure 2. Predicted docking poses and pocket environments of Gpr2 WT. (a, b) ascr#3; (c, d) ascr#18. Each pair shows a 3D pocket view and the corresponding Maestro 2D interaction diagram <sup>[6]</sup> for the lowest-scoring pose. In the 3D views, the receptor is shown as a purple cartoon, pocket residues as yellow sticks, and ascr#3 and ascr#18 in cyan and magenta, respectively. Original residue numbering is retained.
 
 :::
 
@@ -73,7 +79,7 @@ Figure 3. Initial mutation sites in Gpr2. N84, L90, V110, R181, W338, R345, and 
 
 :::
 
-We then replaced candidate residues with Ala to examine how simplifying each side chain changed the scores and contacts for both ligands. The initial sites were N84, L90, V110, R181, W338, R345, and V368. For each substitution, we generated a mutant sequence, predicted its structure with AlphaFold 3 \[3], and carried out structure preparation, docking, and contact comparisons with WT.
+We then replaced candidate residues with Ala to examine how simplifying each side chain changed the scores and contacts for both ligands. The initial sites were N84, L90, V110, R181, W338, R345, and V368. For each substitution, we generated a mutant sequence, predicted its structure with AlphaFold 3 <sup>[3]</sup>, and carried out structure preparation, docking, and contact comparisons with WT.
 
 ::::
 
@@ -81,7 +87,7 @@ Using the structures and WT reference from this initial round, N84A, V110A, and 
 
 <span id="src-Model-Docking-29" aria-hidden="true"></span>
 
-### 1.3 Saturation scanning at four sites {#model-docking-section-3 toc="Saturation scanning at four sites" toc-unnumbered}
+## Saturation scanning at four sites {#model-docking-section-3 toc="Saturation scanning at four sites"}
 
 The Ala scan narrowed the search and raised a further question: could different side chains at the same position shift the scores in different directions?
 
@@ -91,9 +97,9 @@ Different substitutions at the same position produced distinct score shifts. For
 
 <span id="src-Model-Docking-34" aria-hidden="true"></span>
 
-### 1.4 Comparing score changes for both ligands {#model-docking-section-4 toc="Comparing score changes for both ligands" toc-unnumbered}
+## Comparing score changes for both ligands {#model-docking-section-4 toc="Comparing score changes for both ligands"}
 
-We described each variant’s shift using the difference between its WT-relative score changes for the two ligands. Let (G) denote the AutoDock Vina docking score \[5]:
+We described each variant’s shift using the difference between its WT-relative score changes for the two ligands. Let (G) denote the AutoDock Vina docking score <sup>[5]</sup>:
 
 <span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>G</mi><mn>18</mn></msub><mo>=</mo><msub><mi>G</mi><mrow><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi></mrow><mo separator="true">,</mo><mn>18</mn></mrow></msub><mo>−</mo><msub><mi>G</mi><mrow><mrow><mi mathvariant="normal">W</mi><mi mathvariant="normal">T</mi></mrow><mo separator="true">,</mo><mn>18</mn></mrow></msub></mrow><annotation encoding="application/x-tex">\Delta G\_{18}=G\_{\mathrm{mut},18}-G\_{\mathrm{WT},18}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord">Δ</span><span class="mord"><span class="mord mathnormal">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">18</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathrm mtight">mut</span></span><span class="mpunct mtight">,</span><span class="mord mtight">18</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathrm mtight">WT</span></span><span class="mpunct mtight">,</span><span class="mord mtight">18</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span></span>
 
@@ -121,7 +127,7 @@ V110M and V368R both shifted toward ascr#3. For V110M, the ascr#3 score remained
 
 <span id="src-Model-Docking-48" aria-hidden="true"></span>
 
-### 1.5 Testing mutation combinations {#model-docking-section-5 toc="Testing mutation combinations" toc-unnumbered}
+## Testing mutation combinations {#model-docking-section-5 toc="Testing mutation combinations"}
 
 The single-mutant results led us to test whether substitutions with similar score shifts could be combined. Could a combination increase the difference between the ligands? Could a substitution that lowered one ligand’s score retain its effect alongside another that raised the other ligand’s score?
 
@@ -135,7 +141,7 @@ Most tested combinations failed to improve the target-ligand score of the better
 
 <span id="src-Model-Docking-55" aria-hidden="true"></span>
 
-### 1.6 Selecting N84V and V368R for molecular dynamics {#model-docking-section-6 toc="Selecting N84V and V368R for molecular dynamics" toc-unnumbered}
+## Selecting N84V and V368R for molecular dynamics {#model-docking-section-6 toc="Selecting N84V and V368R for molecular dynamics"}
 
 Based on score separation and contact analysis, we selected N84V and V368R from the four prioritized variants for <strong>molecular dynamics (MD)</strong> simulations. Each lowered the score for one ligand and raised it for the other, with opposite directions of preference in the docking results. They provided two contrasting candidates for studying the structural behavior of ascr#18 and ascr#3.
 
@@ -163,9 +169,9 @@ Docking thus led to questions about dynamics: would the ligands retain their ini
 
 <span id="src-Model-Docking-73" aria-hidden="true"></span>
 
-### 1.7 Mapping contact sites across receptors {#model-docking-section-7 toc="Mapping contact sites across receptors" toc-unnumbered}
+## Mapping contact sites across receptors {#model-docking-section-7 toc="Mapping contact sites across receptors"}
 
-We extended the analysis to Gpr3, GprC, and the <strong><em>Caenorhabditis elegans</em> (<em>Ce</em>)</strong> receptors DAF-37 and SRBC-64 to identify corresponding contact positions for parallel testing. Hu et al.’s comparison of predicted ascaroside pockets across receptors provided a reference for this analysis \[2].
+We extended the analysis to Gpr3, GprC, and the <strong><em>Caenorhabditis elegans</em> (<em>Ce</em>)</strong> receptors DAF-37 and SRBC-64 to identify corresponding contact positions for parallel testing. Hu et al.’s comparison of predicted ascaroside pockets across receptors provided a reference for this analysis <sup>[2]</sup>.
 
 For each receptor, we used five predicted models and compared contact frequencies for ascr#18 and ascr#3 within each model. Sequence alignment and structural mapping were then used to examine residue correspondence. We also recorded whether each residue was retained in the actual docking construct, linking contact analysis and positional mapping to the structures used.
 
@@ -175,7 +181,7 @@ For each receptor, we used five predicted models and compared contact frequencie
 
 [![Figure 6. Predicted ascaroside-binding pockets in GprC, SRBC-64, and DAF-37](https://static.igem.wiki/teams/6303/wiki/v8-6/v86-bbf52d6e8540-docking-source-15.avif)](https://static.igem.wiki/teams/6303/wiki/v8-6/v86-bbf52d6e8540-docking-source-15.avif "Open full-resolution image")
 
-Figure 6. Predicted ascaroside-binding pockets in GprC, SRBC-64, and DAF-37. each receptor shows five docking poses for each of five ascarosides. Cropped from Hu et al. (2024), Figure 5a–c \[2], under the [Creative Commons Attribution 4.0 International license](https://creativecommons.org/licenses/by/4.0/).
+Figure 6. Predicted ascaroside-binding pockets in GprC, SRBC-64, and DAF-37. Each receptor shows five docking poses for each of five ascarosides. Cropped from Hu et al. (2024), Figure 5a–c <sup>[2]</sup>, under the [Creative Commons Attribution 4.0 International license](https://creativecommons.org/licenses/by/4.0/).
 
 :::
 
