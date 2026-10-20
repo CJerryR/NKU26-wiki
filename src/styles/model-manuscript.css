@@ -13,7 +13,6 @@
 .doc .prose .model-manuscript .figure-text--right { grid-template-columns:minmax(0,1fr) minmax(0,44%); }
 .doc .prose .model-manuscript .figure-text > .figure { margin:0; }
 .doc .prose .model-manuscript .figure-text__body > :first-child { margin-top:0; }
-.doc .prose .model-manuscript .figure__media { padding:0;border:0;background:none;box-shadow:none; }
 .doc .prose .model-manuscript .figure__media img { width:auto;max-width:100%;height:auto;max-height:none; }
 .doc .prose .model-manuscript figcaption { max-width:100%;margin-inline:0;text-align:left; }
 .model-table-scroll { max-width:100%;overflow-x:auto;margin:24px 0;overscroll-behavior-x:contain; }
@@ -51,10 +50,4 @@
 .model-manuscript .model-equation { width:100%;margin-block:24px;overflow-x:auto; }
 .model-manuscript .model-equation .katex-display { margin:0; }
 
-.doc .prose .model-manuscript .figure__media img { border-radius:0; }
-/* Later shared figure rules use important declarations; the source manuscript
-   has unframed scientific plates, so keep this override scoped to Model. */
-.doc[data-page^="model"] .prose .model-manuscript .figure__media {
- padding:0 !important;border:0 !important;border-radius:0 !important;
- background:none !important;box-shadow:none !important;
-}
+/* Scientific image blocks inherit the same framed Tina figure treatment as Project. */

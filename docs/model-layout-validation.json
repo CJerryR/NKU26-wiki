@@ -19,7 +19,7 @@
   "scope": [
     "Five Model pages relaid out as flat manuscripts, per final Project instructions",
     "Manuscript text and figure placement checked by three Luna subagents; unsolicited glossary expansions removed where source is supplied",
-    "Plain illustration row, unframed scientific figures, text first in mobile pairs",
+    "Plain illustration row, Project-style framed Tina scientific figures, text first in mobile pairs",
     "16 centered static formulas retain original editable Tina LaTeX; no Model wiki-toolkit cards",
     "Docking1.1 and figure1 caption, MD2.1 updated only per explicitly supplied source",
     "Eco source text and two verified Feishu tables restored; app follows introduction",
@@ -46,5 +46,10 @@
     "output_directory": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/tasks/model-layout/public"
   },
   "publication": "not published;handoff to unified releasebot required",
-  "shared_components": "Minimal relevant Project rendering/schema changes reused without importing Project page contents;releasebot should preserve its already-merged equivalents."
+  "shared_components": "Minimal relevant Project rendering/schema changes reused without importing Project page contents;releasebot should preserve its already-merged equivalents.",
+  "figure_frame_followup": {
+    "request": "Restore same Tina image frames as Project while retaining flat manuscript flow",
+    "change": "Removed Model-only frame suppression. Scientific figures now inherit Project shared figure media padding,border,roundedcorners and theme colors. Source imageblocks remain editable inTina.",
+    "validation": "30-page build PASS;MD3frames each show1pxborder/26pxdesktop padding/18pxradius;mobile390px uses14pxpadding with no horizontaloverflow;body andfigurepositions unchanged."
+  }
 }
