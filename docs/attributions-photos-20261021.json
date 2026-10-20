@@ -1,0 +1,199 @@
+{
+  "task": "attributions-photos",
+  "base_commit": "b4a4e6a81a7340865f242d69507b24993dd71e4f",
+  "scope": "27 creditgrid image fields only; content, order and review status preserved",
+  "source": "Existing verified Members portraits; docs/members-portraits-20261020.json",
+  "filled": 12,
+  "replaced": 15,
+  "items": [
+    {
+      "anchor": "jie-fan",
+      "name": "Jie Fan",
+      "chinese_name": "范洁",
+      "previous_image": "",
+      "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-51f36c46393e-jie-fan.avif"
+    },
+    {
+      "anchor": "peng-lin-wei",
+      "name": "Peng-Lin Wei",
+      "chinese_name": "魏鹏林",
+      "previous_image": "",
+      "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-e3d156de3188-peng-lin-wei.avif"
+    },
+    {
+      "anchor": "zhiyi-zhu",
+      "name": "Churchill Zhu",
+      "chinese_name": "朱至易",
+      "previous_image": "",
+      "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-55d47fb05e33-zhiyi-zhu.webp"
+    },
+    {
+      "anchor": "zhanning-zhang-advisor",
+      "name": "Roy Zhang",
+      "chinese_name": "张展宁",
+      "previous_image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-ddac5d034258-zhanning-zhang.avif",
+      "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-4df9d0d545a6-zhanning-zhang-advisor.avif"
+    },
+    {
+      "anchor": "fu-xinya",
+      "name": "Fu Xinya",
+      "chinese_name": "付欣雅",
+      "previous_image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-8fa16e16e7a4-fu-xinya.avif",
+      "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-ae3a88a3c4e4-fu-xinya.avif"
+    },
+    {
+      "anchor": "ruoxi-yang-student-leader",
+      "name": "Yang Ruoxi",
+      "chinese_name": "杨若希",
+      "previous_image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-5667764dc7f7-ruoxi-yang.avif",
+      "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-881c648ce453-ruoxi-yang-student-leader.avif"
+    },
+    {
+      "anchor": "chen-feiyue",
+      "name": "Chen Feiyue",
+      "chinese_name": "陈费月",
+      "previous_image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-e8eae705159b-chen-feiyue.avif",
+      "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-7b58a4e68b93-chen-feiyue.avif"
+    },
+    {
+      "anchor": "zhang-hongbo",
+      "name": "Zhang Hongbo",
+      "chinese_name": "张鸿波",
+      "previous_image": "",
+      "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-9d6558058ad8-zhang-hongbo.avif"
+    },
+    {
+      "anchor": "chang-wang",
+      "name": "Wang Chang",
+      "chinese_name": "王昶",
+      "previous_image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-322c60bc159e-chang-wang.avif",
+      "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-ae94ff6b24d4-chang-wang.avif"
+    },
+    {
+      "anchor": "ivy-liu",
+      "name": "Liu Yifei",
+      "chinese_name": "刘一菲",
+      "previous_image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-120e8273aa67-ivy-liu.avif",
+      "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-992aff1ba991-ivy-liu.avif"
+    },
+    {
+      "anchor": "kuang-yinzi",
+      "name": "Kuang Yinzi",
+      "chinese_name": "匡胤子",
+      "previous_image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-73eaaceee28d-kuang-yinzi.avif",
+      "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-ba9c6abb4187-kuang-yinzi.avif"
+    },
+    {
+      "anchor": "yuanwen-luo",
+      "name": "Luo Yuanwen",
+      "chinese_name": "罗苑汶",
+      "previous_image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-270ecf6f2522-yuanwen-luo.avif",
+      "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-1da0b9a76767-yuanwen-luo.avif"
+    },
+    {
+      "anchor": "wang-qinghua",
+      "name": "Wang Qinghua",
+      "chinese_name": "王清华",
+      "previous_image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-08d95b754ff3-wang-qinghua.avif",
+      "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-774958f356d4-wang-qinghua.avif"
+    },
+    {
+      "anchor": "shizhao-zheng",
+      "name": "Zheng Shizhao",
+      "chinese_name": "郑士钊",
+      "previous_image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-001ba276229e-shizhao-zheng.avif",
+      "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-f56ca1b7ea8f-shizhao-zheng.avif"
+    },
+    {
+      "anchor": "ziyi-peng",
+      "name": "Peng Ziyi",
+      "chinese_name": "彭梓懿",
+      "previous_image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-491794815e37-ziyi-peng.avif",
+      "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-247bfac32f74-ziyi-peng.avif"
+    },
+    {
+      "anchor": "huang-xinqi",
+      "name": "Huang Xinqi",
+      "chinese_name": "黄鑫琪",
+      "previous_image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-f0001fee5950-huang-xinqi.avif",
+      "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-6526de2fbc0d-huang-xinqi.avif"
+    },
+    {
+      "anchor": "yanmei-song-student",
+      "name": "Song Yanmei",
+      "chinese_name": "宋滟镁",
+      "previous_image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-456cf76f9557-yanmei-song.avif",
+      "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-a784ce285468-yanmei-song-student.avif"
+    },
+    {
+      "anchor": "shulan-ye-student",
+      "name": "Ye Shulan",
+      "chinese_name": "叶书兰",
+      "previous_image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-0f149e57e32b-shulan-ye.avif",
+      "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-6a5c4dd18fc6-shulan-ye-student.avif"
+    },
+    {
+      "anchor": "zhiyuan-guan-student",
+      "name": "Guan Zhiyuan",
+      "chinese_name": "关志远",
+      "previous_image": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-7db5eeb70e57-zhiyuan-guan.avif",
+      "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-52efbbeea4ff-zhiyuan-guan-student.avif"
+    },
+    {
+      "anchor": "ma-peisong",
+      "name": "Ma Peisong",
+      "chinese_name": "马培松",
+      "previous_image": "",
+      "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-d65119ebfc39-ma-peisong.avif"
+    },
+    {
+      "anchor": "song-xinying",
+      "name": "Song Xinying",
+      "chinese_name": "宋馨盈",
+      "previous_image": "",
+      "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-ec682215f511-song-xinying.avif"
+    },
+    {
+      "anchor": "chen-yuxin",
+      "name": "Chen Yuxin",
+      "chinese_name": "陈雨欣",
+      "previous_image": "",
+      "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-9e2514ef0ecf-chen-yuxin.avif"
+    },
+    {
+      "anchor": "chen-jiarui",
+      "name": "Chen Jiarui",
+      "chinese_name": "陈家锐",
+      "previous_image": "",
+      "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-dbfd4ebd1944-chen-jiarui.avif"
+    },
+    {
+      "anchor": "kaiben-zhang",
+      "name": "Kaiben Zhang",
+      "chinese_name": "张开奔",
+      "previous_image": "",
+      "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-8dd3dc2ff751-kaiben-zhang.avif"
+    },
+    {
+      "anchor": "han-xinyu",
+      "name": "Han Xinyu",
+      "chinese_name": "韩欣妤",
+      "previous_image": "",
+      "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-51693fa112fd-han-xinyu.avif"
+    },
+    {
+      "anchor": "ruitong-bai",
+      "name": "Bai Ruitong",
+      "chinese_name": "白芮桐",
+      "previous_image": "",
+      "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-98a8c11b1b6d-ruitong-bai.webp"
+    },
+    {
+      "anchor": "yiling-chen",
+      "name": "Chen Yiling",
+      "chinese_name": "陈奕伶",
+      "previous_image": "",
+      "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-adbd83b941a2-yiling-chen.webp"
+    }
+  ]
+}
