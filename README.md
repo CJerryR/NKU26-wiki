@@ -1,3 +1,7 @@
+## V10.2.37
+
+HP latest manuscripts, verified official CDN media and user-confirmed289/9;official Model code links. Existing Project/Model layout, DBTL andcomparison preserved.
+
 ## V10.2.36
 
 Project/Model share embedded figure wrapping;Model review fixes and compact Eco embed. Engineering DBTL and Project comparison retained.
