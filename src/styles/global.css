@@ -32,3 +32,5 @@
 /* Approved article typography and shared content boundaries. */
 @import './content-rules.css';
 @import './model-manuscript.css';
+
+@import './image-preview.css';
