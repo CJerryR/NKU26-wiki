@@ -34,7 +34,9 @@ const prev = at > 0 ? link(at - 1) : null;
 const next = at >= 0 && at < order.length - 1 ? link(at + 1) : null;
 const description = data.description ?? (data.sub ? stripMd(data.sub) : undefined);
 // Scroll-opened hero where this page has an enabled scene; the SVG title bar otherwise.
-const scene = getScene(entry.id);
+// Comparison pages reuse the manuscript renderer without repeating decorative
+// scene previews in the limited Pages artifact. Ordinary pages keep their scene.
+const scene = projectPreview ? null : getScene(entry.id);
 const preload = scene ? [
   { href: SKY_URL, media: 'all' },
   { href: GROUND_URL, media: 'all' },
