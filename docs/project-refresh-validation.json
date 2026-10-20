@@ -26,7 +26,15 @@
     "full_resolution_preview": "page1600x1200 preview opened4096x3072 original;overlay visibly loaded and closed retaining reading position",
     "new_media": "7 new originals and5 photo derivatives uploaded;8 exact-source original assets reused;all20 CDN resources HTTP200 and byte-identical to recorded upload hash",
     "figure4": "user relayed senior instruction to shorten caption to match supplied photo;implemented Figure4. Prototype test strips and colored solutions.",
-    "source_preservation": "Independent comparison against732f797:14 iterations,56 stage texts and bold signatures,6 figureURLs/alt/captions all preserved;source-matched Fig4/5DBTpairing,Fig6DesignBuildpairing."
+    "source_preservation": "Independent comparison against732f797:14 iterations,56 stage texts and bold signatures,6 figureURLs/alt/captions all preserved;source-matched Fig4/5DBTpairing,Fig6DesignBuildpairing.",
+    "description_contribution_recheck": "Compared Description and Contribution against Project.docx paragraphs and embedded layout screenshots; all 9 figure mappings/order/layouts retained; ordinary heading/text/image blocks only. Restored Description heading capitalization and Human Practices wording, removed unsupported S.c abbreviation, restored Contribution full Integrated Human Practices link label.",
+    "recheck_build": "npm run verify PASS after source corrections; 30 pages; existing team-review warnings retained; git diff --check PASS.",
+    "recheck_browser": "Both pages verified at desktop 1364px and mobile 390px: no horizontal overflow or interactive content widgets; mobile prose precedes paired images. Final built pages show corrected labels and wording.",
+    "recheck_evidence": [
+      "workspace/evidence/project-refresh/description-flat-review.json",
+      "workspace/evidence/project-refresh/contribution-flat-review.json",
+      "workspace/evidence/project-refresh/description-contribution-recheck-verify.log"
+    ]
   },
   "preview": {
     "port": 58068,

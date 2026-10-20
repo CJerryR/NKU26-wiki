@@ -155,7 +155,7 @@ Our documentation shows how project questions can guide questionnaires, expert d
 
 Other teams can adapt this approach to organize their own engagement and keep track of how it informs their work. Project-introduction and industry-communication materials provide additional examples of explaining a research idea and presenting a specific request for support.
 
-[Explore Integrated HP](/human-practices/) · [Explore Industry Engagement](/hp-industry/)
+[Explore Integrated Human Practices](/human-practices/) · [Explore Industry Engagement](/hp-industry/)
 
 ::::
 

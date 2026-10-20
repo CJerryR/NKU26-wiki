@@ -18,8 +18,8 @@
     {
       "_template": "heading",
       "level": 2,
-      "text": "Project overview",
-      "attributes": "#description-project-overview toc=\"Project overview\""
+      "text": "Project Overview",
+      "attributes": "#description-project-overview toc=\"Project Overview\""
     },
     {
       "_template": "manuscriptTitle",
@@ -44,8 +44,8 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "1.1 Starting with the decision a grower needs to make",
-      "attributes": "#description-starting-with-the-decision-a-grower-needs-to-make toc=\"Starting with the decision a grower needs to make\" toc-unnumbered"
+      "text": "1.1 Starting with the Decision a Grower Needs to Make",
+      "attributes": "#description-starting-with-the-decision-a-grower-needs-to-make toc=\"Starting with the Decision a Grower Needs to Make\" toc-unnumbered"
     },
     {
       "_template": "text",
@@ -82,8 +82,8 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "1.2 Looking for chemical clues in the soil",
-      "attributes": "#description-looking-for-chemical-clues-in-the-soil toc=\"Looking for chemical clues in the soil\" toc-unnumbered"
+      "text": "1.2 Looking for Chemical Clues in the Soil",
+      "attributes": "#description-looking-for-chemical-clues-in-the-soil toc=\"Looking for Chemical Clues in the Soil\" toc-unnumbered"
     },
     {
       "_template": "text",
@@ -104,12 +104,12 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "1.3 Turning chemical signals into readable color",
-      "attributes": "#description-turning-chemical-signals-into-readable-color toc=\"Turning chemical signals into readable color\" toc-unnumbered"
+      "text": "1.3 Turning Chemical Signals into Readable Color",
+      "attributes": "#description-turning-chemical-signals-into-readable-color toc=\"Turning Chemical Signals into Readable Color\" toc-unnumbered"
     },
     {
       "_template": "text",
-      "body": "To make recognition visible, we use baker’s yeast, <strong><em>Saccharomyces cerevisiae</em> (<em>S.c</em>)</strong>, as the host for a system connecting a foreign receptor, intracellular signaling, and production of the yellow pigment betaxanthin. In this design, a signal received by the receptor travels through the yeast signaling pathway. A <strong>synthetic transcription factor (sTF)</strong> links that pathway to pigment production, giving the system a visible output."
+      "body": "To make recognition visible, we use baker’s yeast, <em>Saccharomyces cerevisiae</em>, as the host for a system connecting a foreign receptor, intracellular signaling, and production of the yellow pigment betaxanthin. In this design, a signal received by the receptor travels through the yeast signaling pathway. A <strong>synthetic transcription factor (sTF)</strong> links that pathway to pigment production, giving the system a visible output."
     },
     {
       "_template": "text",
@@ -122,8 +122,8 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "1.4 Making the color useful",
-      "attributes": "#description-making-the-color-useful toc=\"Making the color useful\" toc-unnumbered"
+      "text": "1.4 Making the Color Useful",
+      "attributes": "#description-making-the-color-useful toc=\"Making the Color Useful\" toc-unnumbered"
     },
     {
       "_template": "text",
@@ -144,8 +144,8 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "1.5 Bringing the whole process back to the field",
-      "attributes": "#description-bringing-the-whole-process-back-to-the-field toc=\"Bringing the whole process back to the field\" toc-unnumbered"
+      "text": "1.5 Bringing the Whole Process Back to the Field",
+      "attributes": "#description-bringing-the-whole-process-back-to-the-field toc=\"Bringing the Whole Process Back to the Field\" toc-unnumbered"
     },
     {
       "_template": "text",
@@ -179,8 +179,8 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "2.1 Two responses to understand a mixed signal",
-      "attributes": "#description-two-responses-to-understand-a-mixed-signal toc=\"Two responses to understand a mixed signal\" toc-unnumbered"
+      "text": "2.1 Two Responses to Understand a Mixed Signal",
+      "attributes": "#description-two-responses-to-understand-a-mixed-signal toc=\"Two Responses to Understand a Mixed Signal\" toc-unnumbered"
     },
     {
       "_template": "text",
@@ -193,8 +193,8 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "2.2 A living sensor in an accessible test format",
-      "attributes": "#description-a-living-sensor-in-an-accessible-test-format toc=\"A living sensor in an accessible test format\" toc-unnumbered"
+      "text": "2.2 A Living Sensor in an Accessible Test Format",
+      "attributes": "#description-a-living-sensor-in-an-accessible-test-format toc=\"A Living Sensor in an Accessible Test Format\" toc-unnumbered"
     },
     {
       "_template": "text",
@@ -211,16 +211,16 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "2.3 Designing around the decision that follows",
-      "attributes": "#description-designing-around-the-decision-that-follows toc=\"Designing around the decision that follows\" toc-unnumbered"
+      "text": "2.3 Designing Around the Decision That Follows",
+      "attributes": "#description-designing-around-the-decision-that-follows toc=\"Designing Around the Decision That Follows\" toc-unnumbered"
     },
     {
       "_template": "text",
-      "body": "We connect the development of the test with the question of what a user could do with its result. HP identifies relevant settings and practical requirements. Modeling explores how paired readings might yield density information and when that information could change a management choice. These questions feed back into experimental calibration, readout design, and cost evaluation."
+      "body": "We connect the development of the test with the question of what a user could do with its result. Human Practices identifies relevant settings and practical requirements. Modeling explores how paired readings might yield density information and when that information could change a management choice. These questions feed back into experimental calibration, readout design, and cost evaluation."
     },
     {
       "_template": "text",
-      "body": "This approach gives us a concrete way to judge progress: can the proposed kit provide understandable information, at an accessible cost, at a time when it can help? By keeping that question central, we bring wet-lab engineering, computational modeling, and HP into the design of one usable screening approach. [Integrated HP →](/human-practices/) · [Economic evaluation →](/model-eco/)"
+      "body": "This approach gives us a concrete way to judge progress: can the proposed kit provide understandable information, at an accessible cost, at a time when it can help? By keeping that question central, we bring wet-lab engineering, computational modeling, and Human Practices into the design of one usable screening approach. [Integrated Human Practices →](/human-practices/) · [Economic evaluation →](/model-eco/)"
     },
     {
       "_template": "text",
