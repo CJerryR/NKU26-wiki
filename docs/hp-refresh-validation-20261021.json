@@ -1,0 +1,30 @@
+{
+  "task": "hp-refresh",
+  "base_commit": "fd9b5a6e3c5ff568966c81ac691db61046568a2f",
+  "build": "npm run verify PASS; 34 pages, existing content-review flags preserved",
+  "structure": "26 pages PASS",
+  "captions": "92 captions PASS",
+  "targeted_tests": "12 image wrap, manuscript title and navigation tests PASS",
+  "source_parity": {
+    "new_manuscripts": "73 source paragraphs and captions matched; 20 images correctly mapped",
+    "investigation": "23 baseline prose paragraphs and 13 baseline photo URLs identical; figure numbering 16–21 becomes 1–6",
+    "authorized_data_correction": "255/6 -> 289/9 by user confirmation matching latest supplied map"
+  },
+  "media": {
+    "originals_uploaded": 15,
+    "previews_uploaded": 3,
+    "existing_assets_reused": 4,
+    "http_resources_verified": 22,
+    "new_upload_bytes": "All 18 uploaded resources match recorded upload SHA256"
+  },
+  "browser": "All three pages at 1364x900 and 390x844: no horizontal page overflow; 16 figure groups; 14px normal-weight captions; all mobile wraps text-first; table scroll isolated; light/dark rendering and 2400px map original preview verified",
+  "preview": {
+    "task": "hp-refresh",
+    "source_path": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/tasks/hp-refresh",
+    "port": 58130,
+    "url": "http://127.0.0.1:58130/human-practices/#human-practices-source-6"
+  },
+  "evidence": "workspace/evidence/hp-refresh/",
+  "remaining": "Existing team final-review and activity-photo permission flags retained; no newly discovered unresolved source discrepancy",
+  "publication": "Task commit for unified release bot; not published by this chat"
+}

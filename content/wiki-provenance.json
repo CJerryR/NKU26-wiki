@@ -135,7 +135,13 @@
         "https://nankai.feishu.cn/docx/Z7xydvXMRoOYItxEfIpcULjsnDk"
       ],
       "hp_five_page_source_sha256": "a0d089057e88f3731991b2dfd981beb484235a3fc11c89701eeafb68daff39f6",
-      "hp_five_page_missing_images_record": "制作备注与缺图.json"
+      "hp_five_page_missing_images_record": "制作备注与缺图.json",
+      "latest_hp_source_20261021": {
+        "url": "https://nankai.feishu.cn/wiki/RJKWwSvUoivz4fkvLO1cJ7NDngd",
+        "sha256": "a58ef57cad062917f4393d3dbe8f276efed510ddbaccc480aadd89a86630dabe",
+        "export": "Word export through Feishu document UI",
+        "record": "docs/hp-refresh-sources-20261021.json"
+      }
     },
     {
       "slug": "engineering",
@@ -205,7 +211,13 @@
         "https://nankai.feishu.cn/docx/Z7xydvXMRoOYItxEfIpcULjsnDk"
       ],
       "hp_five_page_source_sha256": "a0d089057e88f3731991b2dfd981beb484235a3fc11c89701eeafb68daff39f6",
-      "hp_five_page_missing_images_record": "制作备注与缺图.json"
+      "hp_five_page_missing_images_record": "制作备注与缺图.json",
+      "latest_hp_source_20261021": {
+        "url": "https://nankai.feishu.cn/wiki/InOVwLs2SirfE0kKVBBcxfARnac",
+        "sha256": "2cbabbee89b8aa36eac73b100833e1d7613ad765c0fd607bd34a8de1ba6dd56e",
+        "export": "Word export through Feishu document UI",
+        "record": "docs/hp-refresh-sources-20261021.json"
+      }
     },
     {
       "slug": "licensing",

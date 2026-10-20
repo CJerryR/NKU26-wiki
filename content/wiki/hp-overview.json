@@ -7,7 +7,7 @@
     "Overview"
   ],
   "route": "hp-overview",
-  "search": true,
+  "search": false,
   "preserveAuthorFormatting": true,
   "description": "Connecting Our Research with Society",
   "meta": [],
@@ -80,5 +80,6 @@
       "_template": "text",
       "body": "</section>"
     }
-  ]
+  ],
+  "hidden": true
 }

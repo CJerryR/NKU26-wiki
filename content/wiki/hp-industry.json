@@ -7,7 +7,7 @@
     "Industry engagement and support"
   ],
   "route": "hp-industry",
-  "search": true,
+  "search": false,
   "preserveAuthorFormatting": true,
   "description": "Exploring Applications and Building Connections",
   "meta": [],
@@ -98,5 +98,6 @@
       "_template": "text",
       "body": "</section>"
     }
-  ]
+  ],
+  "hidden": true
 }

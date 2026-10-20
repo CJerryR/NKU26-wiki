@@ -6,12 +6,12 @@ crumbs:
   - Human practices
   - Overview
 route: hp-overview
-search: true
+search: false
 preserveAuthorFormatting: true
 description: Connecting Our Research with Society
+hidden: true
 meta: {}
 draft: false
-hidden: false
 ---
 <nav class="hp-chapter-nav" aria-label="Human Practices chapters"><a href="/hp-overview/">Overview</a><a href="/human-practices/">Integrated human practices</a><a href="/education/">Education</a><a href="/hp-investigation/">Investigation</a><a href="/hp-industry/">Industry engagement and support</a></nav><section class="hp-manuscript" lang="en">
 

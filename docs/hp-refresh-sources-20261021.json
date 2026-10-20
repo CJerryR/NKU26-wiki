@@ -1,0 +1,38 @@
+{
+  "task": "hp-refresh",
+  "base_commit": "fd9b5a6e3c5ff568966c81ac691db61046568a2f",
+  "sources": [
+    {
+      "page": "ihp",
+      "url": "https://nankai.feishu.cn/wiki/InOVwLs2SirfE0kKVBBcxfARnac",
+      "obtained_at": "2026-10-21T05:46:00+08:00",
+      "local_export": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/hp-refresh/sources/ihp.docx",
+      "sha256": "2cbabbee89b8aa36eac73b100833e1d7613ad765c0fd607bd34a8de1ba6dd56e"
+    },
+    {
+      "page": "education",
+      "url": "https://nankai.feishu.cn/wiki/RJKWwSvUoivz4fkvLO1cJ7NDngd",
+      "obtained_at": "2026-10-21T05:46:00+08:00",
+      "local_export": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/hp-refresh/sources/education.docx",
+      "sha256": "a58ef57cad062917f4393d3dbe8f276efed510ddbaccc480aadd89a86630dabe"
+    },
+    {
+      "page": "hp-investigation",
+      "source": "Existing Human Practice部分.docx integration at base commit; explicitly retained by user",
+      "source_sha256": "a0d089057e88f3731991b2dfd981beb484235a3fc11c89701eeafb68daff39f6"
+    }
+  ],
+  "user_decisions": [
+    "HP navigation: iHP -> Investigation -> Education",
+    "Investigation retains existing Human Practice source by user reply",
+    "Use 289 samples from nine provincial-level regions in iHP prose and summary table, matching supplied latest Figure 4 map"
+  ],
+  "presentation": [
+    "Reuse Project embedded wrapping; photograph and caption remain one unit",
+    "Multi-panel figures use lowercase panel labels; Investigation figures restart at 1",
+    "Single interview photos wrap; dense map and multi-panel resources remain full width",
+    "760px and below: prose then figures; preserve source photographs",
+    "Legacy Overview and Industry routes retained for compatibility, removed from normal navigation and search"
+  ],
+  "content_review": "Existing team_review_approved false flags retained"
+}

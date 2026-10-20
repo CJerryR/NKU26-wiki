@@ -13,134 +13,108 @@ meta: {}
 draft: false
 hidden: false
 ---
-<nav class="hp-chapter-nav" aria-label="Human Practices chapters"><a href="/hp-overview/">Overview</a><a href="/human-practices/">Integrated human practices</a><a href="/education/">Education</a><a href="/hp-investigation/">Investigation</a><a href="/hp-industry/">Industry engagement and support</a></nav><section class="hp-manuscript" lang="en">
+<nav class="hp-chapter-nav" aria-label="Human Practices chapters"><a href="/human-practices/">iHP</a><a href="/hp-investigation/">Investigation</a><a href="/education/">Education</a></nav><section class="reading-layout hp-manuscript" lang="en">
 
-<span id="education-from-soil-to-shared-scientific-questions" aria-hidden="true"></span><span id="education-designing-for-different-learners" aria-hidden="true"></span><span id="education-classroom-implementation-through-teaching-partnerships" aria-hidden="true"></span><span id="education-dialogue-and-learning-in-both-directions" aria-hidden="true"></span><span id="education-what-the-available-feedback-shows" aria-hidden="true"></span><span id="education-extending-learning-beyond-the-classroom" aria-hidden="true"></span><span id="education-industry-connections-and-future-educational-activities" aria-hidden="true"></span><span id="education-resources-others-can-adapt" aria-hidden="true"></span><span id="education-references" aria-hidden="true"></span><span id="education-source-135" aria-hidden="true"></span><span id="education-source-139" aria-hidden="true"></span><span id="education-source-145" aria-hidden="true"></span><span id="education-source-150" aria-hidden="true"></span><span id="education-source-155" aria-hidden="true"></span><span id="education-source-160" aria-hidden="true"></span><span id="education-source-164" aria-hidden="true"></span><span id="education-source-168" aria-hidden="true"></span>
+## Education overview
 
-<p data-hp-source-paragraph="114" class="hp-inpage-nav">On this page  <a href="#hp-source-115">Learning goals</a>  /  <a href="#hp-source-120">Three courses</a>  /  <a href="#hp-source-136">Age adaptation</a>  /  <a href="#hp-source-140">Teaching partnerships</a>  /  <a href="#hp-source-150">Feedback</a>  /  <a href="#hp-source-155">Outreach</a></p>
+:::manuscriptTitle
 
-## Connecting soil life with agriculture and synthetic biology {#hp-source-115}
-
-:::lead
-
-<p data-hp-source-paragraph="116"><strong>Nematodes are difficult to see directly, yet they connect agriculture, ecology, and synthetic biology.</strong><strong> </strong>Our educational work begins with everyday questions such as “Why do plants become ill?” and “What lives underground?” Learners explore nematode diversity, biological sensing, and visible outputs while practicing observation and asking scientific questions.</p>
-
-<p data-hp-source-paragraph="117">Education is also a way for our team to understand its audience. Explaining the project to learners of different ages requires us to reconsider terminology, choose suitable examples, and clarify what evidence connects an observation to a conclusion.</p>
+Starting with a handful of soil
 
 :::
 
-:::figure
+<div class="figure-text figure-text--wrap figure-text--right" style="--image-share:40%"><figure class="figure hp-source-figure"><div class="figure__media hp-photo-group"><div class="hp-photo-item"><a href="https://static.igem.wiki/teams/6303/wiki/project-20261021/project-42-55185549437d.webp"><img src="https://static.igem.wiki/teams/6303/wiki/project-20261021/project-42-55185549437d.webp" alt="A nematode-themed lesson in Lincheng, Hebei" loading="lazy"></a></div></div><figcaption>Figure 1. A nematode-themed lesson in Lincheng, Hebei. Using images of plant roots, a team member introduces plant-parasitic nematodes and their connection with crop disease, linking familiar plant observations with life below ground and agricultural problems.</figcaption></figure><div class="figure-text__body"><p>Why do plants become ill? What lives unseen in soil? How do living things sense changes around them? These questions are our starting point for introducing the project. Drawing on agricultural nematodes and early warning, we translated the idea of signal input, biological response, and visible output into courses, picture books, and outreach materials. Learners begin with familiar plants and soil before exploring the principles of synthetic biology.</p><p>Education also helps us examine how we explain our work. For learners of different ages, we need to make clear how nematodes relate to agriculture, how the sensor works, and what a color change can tell us. This encourages us to revisit our terminology, illustrations, and explanations, and consider how to make the testing process and the meaning of its results easier to understand.</p></div></div>
 
-<div class="hp-photo-item"><div data-hp-source-paragraph="118"><a href="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-13a73d34a9ecf8e5-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-13a73d34a9ecf8e5-00.json" alt="Team members deliver the interactive lecture &quot;The Great Nematode Hunt&quot; to students at Lincheng, Hebei, introducing plant-parasitic nematodes and crop diseases." loading="lazy" width="422" height="316"></a></div></div>
+## Three courses form a learning pathway {#education-source-4}
 
-<p class="figure-caption"><span data-hp-source-paragraph="119">Figure 9. Team members deliver the interactive lecture &quot;The great nematode hunt&quot; to students in Lincheng, Hebei, introducing plant-parasitic nematodes (PPNs) and crop diseases.</span></p>
+<p>We designed three courses around agricultural problems, biological signals, and scientific responsibility. Each connects nematodes, agriculture, and synthetic biology from a different angle, inviting learners to observe, propose explanations, and consider how science relates to everyday life.</p>
 
-:::
+### 2.1 Science course: the nematode hunt {#education-source-6}
 
-## Three courses form a learning pathway {#hp-source-120}
+<p>The Nematode Hunt introduces nematodes and their relationships with plants and agriculture. Beginning with familiar crops and signs of poor growth, the course helps learners connect above-ground observations with roots and soil, and understand why underground disease can be difficult to notice.</p>
 
-:::timeline
+<p>The course also introduces the diversity of soil life and the different ecological roles of nematodes. Alongside the damage caused by plant-parasitic nematodes, learners explore the different relationships between organisms and crops.</p>
 
-### Science course  the nematode hunt {#hp-source-122}
+<p>We want learners to move from noticing a problem to asking what might explain it: what could make a plant grow poorly, and what else would we need to observe or find out? These questions also reflect the agricultural problem behind our project: a test should provide clues that help people decide what to investigate next.</p>
 
-<p data-hp-source-paragraph="123">This course introduces nematodes and their relationships with plants and agriculture. Learners connect above-ground symptoms with roots and soil conditions. Alongside the problems caused by PPNs, the course introduces the diversity of soil life, avoiding the impression that all nematodes are pests to be eliminated.</p>
+### 2.2 Experimental science course: exploring biological signals {#education-source-10}
 
-<p data-hp-source-paragraph="124">The course helps learners recognize the problem. Starting with familiar crops and symptoms, they explore possible underground causes and learn to distinguish observation from explanation.</p>
+<p>Exploring Biological Signals follows the sequence of input, sensing, and output. Through age-appropriate activities, learners explore how living systems sense signals and how an invisible change can become something observable.</p>
 
-<figure class="hp-source-figure figure"><div class="figure__media hp-photo-group"><div class="hp-photo-item"><div data-hp-source-paragraph="125"><a href="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-5a52c4e610ccfab2-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-5a52c4e610ccfab2-00.json" alt="Science Literacy Lesson: “The Great Nematode Hunt”" loading="lazy" width="425" height="238"></a></div></div></div><figcaption data-hp-source-paragraph="126">Figure 10. Science literacy lesson: “The great nematode hunt”.</figcaption></figure>
+<p>The course connects with our engineered-yeast sensor concept by introducing the sensing element, signal transmission, and visible output step by step. As learners observe results and propose explanations, they also have opportunities to consider experimental conditions and controls: what comparisons would help us understand where a change came from?</p>
 
-### Experimental science course  exploring biological signals {#hp-source-127}
+<p>This course focuses on understanding the method. For our team, turning the sensor concept into a lesson requires us to explain what each part does and how the parts work together. Practical materials and procedures follow the lesson plan for each age group.</p>
 
-<p data-hp-source-paragraph="128">Organized around input, sensing, and output, this course uses age-appropriate activities to explore how living systems perceive signals and how an invisible change can become observable. It connects with our engineered-yeast concept and creates opportunities to discuss controls, conditions, and alternative explanations.</p>
+### 2.3 Values and responsibility course: small lives and everyday contributions {#education-source-14}
 
-<p data-hp-source-paragraph="129">The course helps learners understand the method: observe a result, propose an explanation, and consider which comparisons would support it. Materials and procedures follow the lesson plan for each age group.</p>
+<p>Small Lives and Everyday Contributions connects microscopic life with careful observation, cooperation, and everyday contributions. It invites learners to notice work in research and agricultural service that often goes unseen.</p>
 
-<figure class="hp-source-figure figure"><div class="figure__media hp-photo-group"><div class="hp-photo-item"><div data-hp-source-paragraph="130"><a href="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-dd2db285bf0e40b4-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-dd2db285bf0e40b4-00.json" alt="Hands-On Science Lesson: “The Signal Discovery Challenge”" loading="lazy" width="424" height="238"></a></div></div></div><figcaption data-hp-source-paragraph="131">Figure 11. Hands-on science lesson: “The signal discovery challenge”.</figcaption></figure>
+<p>The course extends scientific themes into discussions of responsibility and personal growth, including respect for life, persistence in inquiry, and contributing to shared needs. Familiar experiences provide a way to ask how a small observation or action can matter to someone else’s life.</p>
 
-### Values and responsibility course  small lives and everyday contributions {#hp-source-132}
+<p>This also reflects why we began the project: to study biological systems while understanding agricultural needs and the responsibilities involved in explaining and applying research.</p>
 
-<p data-hp-source-paragraph="133">This course connects microscopic life with careful observation, cooperation, and everyday contributions. It invites learners to recognize work in research and agricultural service that often goes unnoticed. Scientific themes lead into discussions of responsibility and personal growth, including respect for life, persistence in inquiry, and contributing to shared needs.</p>
+<figure class="figure hp-source-figure"><div class="figure__media hp-photo-group hp-photo-group--three"><div class="hp-photo-item"><p class="hp-image-label">a</p><a href="https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-502db315fe79.webp"><img src="https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-502db315fe79.webp" alt="Three courses on agricultural nematodes and synthetic biology (a)" loading="lazy"></a></div><div class="hp-photo-item"><p class="hp-image-label">b</p><a href="https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-7bda73ab5075.webp"><img src="https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-7bda73ab5075.webp" alt="Three courses on agricultural nematodes and synthetic biology (b)" loading="lazy"></a></div><div class="hp-photo-item"><p class="hp-image-label">c</p><a href="https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-c080b49d28b7.webp"><img src="https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-c080b49d28b7.webp" alt="Three courses on agricultural nematodes and synthetic biology (c)" loading="lazy"></a></div></div><figcaption>Figure 2. Three courses on agricultural nematodes and synthetic biology. (a) The Nematode Hunt introduces nematodes and agricultural problems. (b) Exploring Biological Signals explains the relationship between input, sensing, and output. (c) Small Lives and Everyday Contributions connects scientific themes with responsibility, cooperation, and personal growth.</figcaption></figure>
 
-<figure class="hp-source-figure figure"><div class="figure__media hp-photo-group"><div class="hp-photo-item"><div data-hp-source-paragraph="134"><a href="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-1514f1beb82cfb58-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-1514f1beb82cfb58-00.json" alt="Science and Social Responsibility Lesson: “Tiny Lives Shine, and We Grow through Everyday Dedication”" loading="lazy" width="424" height="238"></a></div></div></div><figcaption data-hp-source-paragraph="135">Figure 12. Science and social responsibility lesson: “Tiny lives shine, and we grow through everyday dedication”.</figcaption></figure>
+## Adapting the same theme for different ages {#education-source-21}
 
-:::
+<p>The science and experimental science courses each have primary-school and middle-school versions. The values and responsibility course is designed for primary-school learners. We adjust learning goals, depth of explanation, illustrations, and activities to suit learners’ existing knowledge and classroom conditions.</p>
 
-## Adapting the same theme for different ages {#hp-source-136}
+<div class="table-wrap" tabindex="0"><table><thead><tr><th scope="col">Course</th><th scope="col">Primary-school version</th><th scope="col">Middle-school version</th></tr></thead><tbody><tr><td>The Nematode Hunt</td><td>Introduces nematodes and life below ground through clear images, familiar plants, and simple stories</td><td>Builds on the same themes to discuss observation, possible causes, and interpretation</td></tr><tr><td>Exploring Biological Signals</td><td>Uses age-appropriate activities to introduce the relationship between input, sensing, and output</td><td>Explores biological signals, experimental comparisons, controls, and interpretation in greater depth</td></tr><tr><td>Small Lives and Everyday Contributions</td><td>Connects scientific themes with everyday experiences of responsibility, cooperation, and personal growth</td><td>—</td></tr></tbody></table></div>
 
-:::cols{cols="2"}
+<p>Primary-school materials use picture books to introduce scientific questions through familiar situations. Middle-school materials build on the same themes with further discussion of signals and experimental interpretation.</p>
 
-<p data-hp-source-paragraph="137"><strong>The science and experimental science courses each have primary-school and junior-secondary versions.</strong><strong> </strong>The primary-school versions use clear visuals, familiar plants, and simple storytelling, complemented by an engaging picture book. The middle-school versions build on the same themes to explore signals, experimental comparisons, and the interpretation of results in greater depth. The science and social responsibility lesson is designed for primary-school students, connecting scientific topics with everyday experiences they can relate to.</p>
+<p>Designing for different ages means deciding what we most want learners to take away from a lesson: discovering a form of life below ground, understanding how a signal can be sensed, or learning to ask another question about a result. It also helps us organize our project explanations, beginning with the problem and basic principles before introducing more complex conditions and interpretations.</p>
 
-<p data-hp-source-paragraph="138">This adaptation goes beyond adding or removing technical terms; it involves adjusting learning objectives and the depth of explanation. For each group of learners, we need to decide what we most want them to take away from an activity: discovering a form of life beneath the soil, understanding how a signal can be sensed, or learning to ask further questions about a result.</p>
+## Bringing the courses into classrooms through teaching partnerships {#education-source-27}
 
-:::
+<p>We delivered courses and outreach activities through Nankai University’s Xiangyang Program public-interest education service team, mainly in May, July, and late August 2026. Nematode-themed lessons and supporting materials reached classrooms or communities in Gansu, Hebei, Jiangxi, and Tianjin. Team members and teaching partners delivered sessions according to local arrangements.</p>
 
-## Bringing the courses into classrooms through teaching partnerships {#hp-source-140}
+<p>Our team designed the courses and supporting materials and worked with teaching partners on age suitability, preparation, and activity sequences. The existing education network brought the courses into different settings, while partners’ classroom experience offered input for future revisions.</p>
 
-<p data-hp-source-paragraph="141"><strong>We delivered courses and outreach activities through Nankai University’s Xiangyang Program public-interest education service team. </strong>Teaching took place mainly in May, throughout July, and in late August 2026. Our nematode-themed courses and supporting materials reached classrooms or communities in Gansu, Hebei, Jiangxi, and Tianjin, with team members and volunteer teaching partners delivering sessions according to local arrangements.</p>
+<figure class="figure hp-source-figure"><div class="figure__media hp-photo-group hp-photo-group--three"><div class="hp-photo-item"><p class="hp-image-label">a</p><a href="https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-3f095be6bfcb.webp"><img src="https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-3f095be6bfcb-preview.webp" alt="Classroom outreach through the Xiangyang Program teaching partnership (a)" loading="lazy"></a></div><div class="hp-photo-item"><p class="hp-image-label">b</p><a href="https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-44fcde0ec84c.webp"><img src="https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-44fcde0ec84c-preview.webp" alt="Classroom outreach through the Xiangyang Program teaching partnership (b)" loading="lazy"></a></div><div class="hp-photo-item"><p class="hp-image-label">c</p><a href="https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-7a2327254255.webp"><img src="https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-7a2327254255-preview.webp" alt="Classroom outreach through the Xiangyang Program teaching partnership (c)" loading="lazy"></a></div></div><figcaption>Figure 3. Classroom outreach through the Xiangyang Program teaching partnership. Team members and teaching partners bring the materials into classrooms to introduce nematodes and related scientific ideas.</figcaption></figure>
 
-<p data-hp-source-paragraph="142">Our team designed the courses and supporting materials and worked with Xiangyang Program teaching partners on age suitability, preparation, and activity sequences. This established educational network brought the materials into different learning settings, while partners’ classroom experience offered input for future revisions.</p>
+<p>The partnership also drew our attention to the practical conditions of teaching: were the materials suitable for the age group, was the explanation easy to follow, and could the activities be prepared readily? These questions helped us turn project knowledge into material that educators could understand and use.</p>
 
-<p data-hp-source-paragraph="143">The same network also helped distribute our questionnaire on agricultural nematodes. Education and investigation support each other through shared channels, while their objectives remain separately recorded: courses focus on learning and participation, and the questionnaire explores awareness and detection needs.</p>
+<p>The Xiangyang Program network also helped distribute our questionnaire on agricultural nematode awareness. Courses and questionnaires reached people with different backgrounds through shared channels, providing material about learning and public understanding respectively. We record course participation and questionnaire participation according to their separate objectives, so we can understand which questions each source can address.</p>
 
-<figure class="hp-source-figure figure"><div class="figure__media hp-photo-group"><div class="hp-photo-item"><div data-hp-source-paragraph="144"><a href="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-8614064ddef5885d-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-8614064ddef5885d-00.json" alt="Backed by the &quot;Xiangyang Program&quot; public welfare education service team, we have introduced nematode-themed courses into both school classrooms and local communities." loading="lazy" width="420" height="315"></a></div></div><div class="hp-photo-item"><div data-hp-source-paragraph="145"><a href="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-171c799fe043f752-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-171c799fe043f752-00.json" alt="Backed by the &quot;Xiangyang Program&quot; public welfare education service team, we have introduced nematode-themed courses into both school classrooms and local communities." loading="lazy" width="430" height="242"></a></div></div><div class="hp-photo-item"><div data-hp-source-paragraph="146"><a href="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-e418d1e629e3582c-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-e418d1e629e3582c-00.json" alt="Backed by the &quot;Xiangyang Program&quot; public welfare education service team, we have introduced nematode-themed courses into both school classrooms and local communities." loading="lazy" width="430" height="323"></a></div></div><div class="hp-photo-item"><div data-hp-source-paragraph="147"><a href="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-0c15d1e8a7365bb6-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-0c15d1e8a7365bb6-00.json" alt="Backed by the &quot;Xiangyang Program&quot; public welfare education service team, we have introduced nematode-themed courses into both school classrooms and local communities." loading="lazy" width="430" height="323"></a></div></div><div class="hp-photo-item"><div data-hp-source-paragraph="148"><a href="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-aab9ede81c148400-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-aab9ede81c148400-00.json" alt="Backed by the &quot;Xiangyang Program&quot; public welfare education service team, we have introduced nematode-themed courses into both school classrooms and local communities." loading="lazy" width="428" height="321"></a></div></div></div><figcaption data-hp-source-paragraph="149">Figure 13. Backed by the &quot;Xiangyang Program&quot; public welfare education service team, we have introduced nematode-themed courses into both school classrooms and local communities.</figcaption></figure>
+## Using feedback to improve future teaching {#education-source-35}
 
-## Using feedback to improve future teaching {#hp-source-150}
+<p>Educational feedback needs to return to specific learning goals. Naming a nematode and explaining why similar plant symptoms require further investigation reflect different levels of understanding. For the sensor topic, we also want to consider whether learners can describe the connections between input, sensing, and output.</p>
 
-:::note
+<p>When organizing our teaching materials, we use worksheets, classroom records, and learner work to understand the learning process, while paying attention to requests for experiments and interaction. These materials help us consider how to assess whether a lesson has explained its central ideas and what to focus on next time.</p>
 
-<p data-hp-source-paragraph="151"><strong>Course evaluation needs to address specific learning goals.</strong><strong> </strong>Recalling a nematode’s name and explaining why similar plant symptoms require further investigation represent different levels of understanding. In organizing our teaching materials, we use worksheets, classroom records, and learner outputs to understand the learning process and consider requests for more experiments or interactive activities.</p>
+### 5.1 What the available feedback suggests {#education-source-38}
 
-<p data-hp-source-paragraph="152">The Xiangyang Program’s summer teaching survey report provides broader feedback on the partnership, including interest in more experiments, interaction, and age-appropriate courses. These insights can inform teaching adjustments. Evidence about the nematode courses themselves needs to come from records of the relevant sessions.</p>
+<p>The Xiangyang Program’s summer teaching evaluation report described interest in more experiments, interaction, and age-appropriate courses. It provides input for teaching improvements across the partnership. Understanding learning in our nematode courses requires records and learner work from the relevant sessions.</p>
 
-<p data-hp-source-paragraph="153">For future delivery, feedback can focus on a small number of core tasks, such as explaining alternative causes of plant symptoms or describing how a sensor turns an input into an output. This can document both what learners understand and what the team should explain differently next time.</p>
+<p>This feedback reminds us to consider how learners participate alongside the scientific content: do the illustrations help, do activities give learners opportunities to observe and explain, and does the level suit what they already know? For our project, clearly explaining input, sensing, and output, while leaving room for questions and comparisons, remains a useful focus.</p>
 
-:::
+### 5.2 Gathering more specific feedback next time {#education-source-41}
 
-## Beyond the classroom  outreach and reusable resources {#hp-source-155}
+<p>Future sessions could collect feedback through a small number of tasks tied to the learning goals. Learners might explain several possible causes of a plant’s symptoms, draw how a sensor turns an input into an output, or suggest a comparison that would help explain an observation.</p>
 
-<p data-hp-source-paragraph="156"><strong>Picture books, posters, leaflets, postcards, fieldwork reports, and a sampling guidance video introduce agricultural nematodes and related research to audiences beyond the classroom. </strong>Questions encountered in the field and in interviews provide content, while visual materials and video make technical ideas more accessible.</p>
+<p>Such tasks could help us record what learners understand and decide how to adjust illustrations, terminology, or activities. In this way, education continues to address a communication question within our project: how can people with different backgrounds understand the sensing principle and the connection between an observation and a risk assessment?</p>
 
-<p data-hp-source-paragraph="157">For other educators, our three courses and age-adapted versions offer examples of learning goals, preparation, activity sequences, and feedback methods. Educators can adapt them to local crops and teaching conditions, using agricultural nematodes as a starting point for observing the surrounding environment and discussing synthetic biology.</p>
+## Beyond the classroom: outreach and reusable resources {#education-source-44}
 
-### 6.1 Download our teaching materials {#hp-source-158}
+### 6.1 Explaining the project through different materials {#education-source-45}
 
-:::note
+<div class="figure-text figure-text--wrap figure-text--right" style="--image-share:40%"><figure class="figure hp-source-figure"><div class="figure__media hp-photo-group"><div class="hp-photo-item"><p class="hp-image-label">a</p><a href="https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-e814e3ad8816.webp"><img src="https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-e814e3ad8816.webp" alt="Outreach materials that introduce the project through illustrations and stories (a)" loading="lazy"></a></div><div class="hp-photo-item"><p class="hp-image-label">b</p><a href="https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-03ee1133d4af.webp"><img src="https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-03ee1133d4af.webp" alt="Outreach materials that introduce the project through illustrations and stories (b)" loading="lazy"></a></div></div><figcaption>Figure 4. Outreach materials that introduce the project through illustrations and stories. (a) The Yeast Detective and the Secret Signals in Soil. (b) The Yeast Detective’s Three Steps to Helping Farmers. Characters, settings, and simple diagrams connect engineered yeast, soil signals, and agricultural applications, giving audiences a visual starting point for understanding the project. Generated with OpenAI GPT Image 2.</figcaption></figure><div class="figure-text__body"><p>Picture books, posters, leaflets, postcards, fieldwork reports, and a sampling guidance video present the project’s agricultural questions, biological sensing concept, and sampling requirements in different forms. Images and stories give people outside the classroom ways to encounter life below ground and understand why our team studies agricultural nematodes.</p><p>Illustrated materials such as The Yeast Detective and the Secret Signals in Soil provide a visual introduction to engineered yeast and soil signals. The Yeast Detective’s Three Steps to Helping Farmers connects the project with an agricultural setting. The sampling guidance video links field procedures with the background information contributors need to retain; the Investigation page explains this workflow in more details.</p><p>Preparing these materials requires us to choose a focus for each format: how can an image explain an invisible signal, how can a story introduce an agricultural problem, and how can guidance help someone understand what to do next? These choices help us examine our project explanations from the audience’s perspective.</p></div></div>
 
-<p data-hp-source-paragraph="159">Our three courses are available in Chinese, including primary-school and junior-secondary versions of the science and experimental science courses. Educators can use the materials as references and adapt them to their learners and local teaching conditions.</p>
+### 6.2 Helping other educators use the courses {#education-source-52}
 
-<p data-hp-source-paragraph="160" class="hp-download-label"><strong>Download The Nematode Hunt — Chinese materials</strong></p>
+<p>The three courses and their age-adapted versions provide examples of learning goals, preparation, activity sequences, and feedback methods. Educators can adapt them to learners’ ages, locally familiar crops, and classroom conditions, using agricultural nematodes as a starting point for observing the surrounding environment and discussing synthetic biology.</p>
 
-<p data-hp-source-paragraph="161" class="hp-download-label"><strong>Download Exploring Biological Signals — Chinese materials</strong></p>
+<p>When adapting a course, educators can first identify the central question they want learners to understand, then select a suitable version and supporting illustrations. Short tasks, questions, and learner work can help document learning and provide feedback for the next session.</p>
 
-<p data-hp-source-paragraph="162" class="hp-download-label"><strong>Download Small Lives and Everyday Contributions — Chinese materials</strong></p>
+### 6.3 Course resources {#education-source-55}
 
-:::
+<p>All three courses are in Chinese. The science and experimental science courses each have primary-school and middle-school versions; the values and responsibility course is for primary-school learners.</p>
 
-</section>
+<p><strong>The Nematode Hunt:</strong> primary-school and middle-school versions.</p>
 
-<section class="hp-references">
+<p><strong>Exploring Biological Signals:</strong> primary-school and middle-school versions.</p>
 
-## References and supporting evidence {#hp-original-references toc="References and supporting evidence"}
-
-:::refs
-
-[1] Conserved nematode signalling molecules elicit plant defenses and pathogen resistance. Nature Communications (2015).
-
-https://doi.org/10.1038/ncomms8795
-
-[2] Plant metabolism of nematode pheromones mediates plant-nematode interactions. Nature Communications (2020).
-
-https://doi.org/10.1038/s41467-019-14104-2
-
-[3] Nematode Signaling Molecules Are Extensively Metabolized by Animals, Plants, and Microorganisms.
-
-https://pmc.ncbi.nlm.nih.gov/articles/PMC8590397/
-
-[4] Nankai University Xiangyang Initiative, 2026 Summer Teaching-Support Program Evaluation Report. Internal project source.
-
-Team evidence supporting these pages includes questionnaire versions and response records; Tianjin agricultural visit records; anonymized expert and industry discussion summaries; inter-team exchange records; sampling guidance and sample records; course materials and teaching-partner records; and partnership planning documents. Technical performance claims should be read alongside the experimental and modeling evidence on the corresponding project pages.
-
-:::
+<p><strong>Small Lives and Everyday Contributions:</strong> primary-school version.</p>
 
 </section>

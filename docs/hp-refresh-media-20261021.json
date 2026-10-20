@@ -1,0 +1,407 @@
+[
+  {
+    "source": "workspace/evidence/hp-refresh/sources/education/image8.png",
+    "sha256": "7a23272542556736535c920d3d2e1f31b9d380ba683bfd0ca8c6ed1bb20ec482",
+    "urls": [],
+    "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/hp-refresh/upload/hp-7a2327254255.webp",
+    "upload_name": "hp-7a2327254255.webp",
+    "upload_sha256": "d60658e7baf1a9b12374fe520594e391e586d2163a3ce29646b94d61654c0784",
+    "dimensions": [
+      4096,
+      3072
+    ],
+    "preview_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/hp-refresh/upload/hp-7a2327254255-preview.webp",
+    "preview_sha256": "d696326309a1cede6cba6f67dfc9855ffdaaf0e1ce5e26cf181b2ce61e65a859",
+    "cdn_url": "https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-7a2327254255.webp",
+    "preview_url": "https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-7a2327254255-preview.webp",
+    "cdn_url_verification": {
+      "url": "https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-7a2327254255.webp",
+      "http": 200,
+      "bytes": 6249488,
+      "sha256": "d60658e7baf1a9b12374fe520594e391e586d2163a3ce29646b94d61654c0784",
+      "type": "image/webp"
+    },
+    "preview_url_verification": {
+      "url": "https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-7a2327254255-preview.webp",
+      "http": 200,
+      "bytes": 200344,
+      "sha256": "d696326309a1cede6cba6f67dfc9855ffdaaf0e1ce5e26cf181b2ce61e65a859",
+      "type": "image/webp"
+    }
+  },
+  {
+    "source": "workspace/evidence/hp-refresh/sources/education/image9.png",
+    "sha256": "e814e3ad881631179215ca492615ac14f4aabebe07c4d591fa417e48228b4044",
+    "urls": [],
+    "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/hp-refresh/upload/hp-e814e3ad8816.webp",
+    "upload_name": "hp-e814e3ad8816.webp",
+    "upload_sha256": "d8994321726034ffb9207cac01bed336740b8256556cbb8c35e5ba2e6de2a386",
+    "dimensions": [
+      920,
+      916
+    ],
+    "cdn_url": "https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-e814e3ad8816.webp",
+    "cdn_url_verification": {
+      "url": "https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-e814e3ad8816.webp",
+      "http": 200,
+      "bytes": 742980,
+      "sha256": "d8994321726034ffb9207cac01bed336740b8256556cbb8c35e5ba2e6de2a386",
+      "type": "image/webp"
+    }
+  },
+  {
+    "source": "workspace/evidence/hp-refresh/sources/education/image10.png",
+    "sha256": "03ee1133d4afd87f37fd07c4877223249c9f076f553c64e6105c3c760dedd2bb",
+    "urls": [],
+    "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/hp-refresh/upload/hp-03ee1133d4af.webp",
+    "upload_name": "hp-03ee1133d4af.webp",
+    "upload_sha256": "b120620db0801f88c9b6e09d636073421dae07619432c7e50efcb46c08b4d151",
+    "dimensions": [
+      738,
+      738
+    ],
+    "cdn_url": "https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-03ee1133d4af.webp",
+    "cdn_url_verification": {
+      "url": "https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-03ee1133d4af.webp",
+      "http": 200,
+      "bytes": 510486,
+      "sha256": "b120620db0801f88c9b6e09d636073421dae07619432c7e50efcb46c08b4d151",
+      "type": "image/webp"
+    }
+  },
+  {
+    "source": "workspace/evidence/hp-refresh/sources/education/image7.png",
+    "sha256": "44fcde0ec84c4e04043f6b0d36edb545f8b7485a4b295f9f0d16d08340e385f0",
+    "urls": [],
+    "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/hp-refresh/upload/hp-44fcde0ec84c.webp",
+    "upload_name": "hp-44fcde0ec84c.webp",
+    "upload_sha256": "2b205059cee5cba8e30980d27bdba42b6a6c1044e2b3c0842214869cf87cbf8f",
+    "dimensions": [
+      4096,
+      3072
+    ],
+    "preview_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/hp-refresh/upload/hp-44fcde0ec84c-preview.webp",
+    "preview_sha256": "e0de7f1af9455f849667ba4cc6676783cd07402f3074ad0af5199e81976bcd25",
+    "cdn_url": "https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-44fcde0ec84c.webp",
+    "preview_url": "https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-44fcde0ec84c-preview.webp",
+    "cdn_url_verification": {
+      "url": "https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-44fcde0ec84c.webp",
+      "http": 200,
+      "bytes": 6602794,
+      "sha256": "2b205059cee5cba8e30980d27bdba42b6a6c1044e2b3c0842214869cf87cbf8f",
+      "type": "image/webp"
+    },
+    "preview_url_verification": {
+      "url": "https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-44fcde0ec84c-preview.webp",
+      "http": 200,
+      "bytes": 246416,
+      "sha256": "e0de7f1af9455f849667ba4cc6676783cd07402f3074ad0af5199e81976bcd25",
+      "type": "image/webp"
+    }
+  },
+  {
+    "source": "workspace/evidence/hp-refresh/sources/education/image6.png",
+    "sha256": "3f095be6bfcb9ff73283216f72456eb8778062e4bb99b4c94889ee5d495f7657",
+    "urls": [],
+    "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/hp-refresh/upload/hp-3f095be6bfcb.webp",
+    "upload_name": "hp-3f095be6bfcb.webp",
+    "upload_sha256": "44d134d275ea595d9f6a5c9f488b939a402f66a40f2b098633d62c213358e106",
+    "dimensions": [
+      4096,
+      3072
+    ],
+    "preview_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/hp-refresh/upload/hp-3f095be6bfcb-preview.webp",
+    "preview_sha256": "7ffdf078e5ce15c799d35842445eaa56444cdc5b71c9266690daa7e1d24c0c05",
+    "cdn_url": "https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-3f095be6bfcb.webp",
+    "preview_url": "https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-3f095be6bfcb-preview.webp",
+    "cdn_url_verification": {
+      "url": "https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-3f095be6bfcb.webp",
+      "http": 200,
+      "bytes": 7813140,
+      "sha256": "44d134d275ea595d9f6a5c9f488b939a402f66a40f2b098633d62c213358e106",
+      "type": "image/webp"
+    },
+    "preview_url_verification": {
+      "url": "https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-3f095be6bfcb-preview.webp",
+      "http": 200,
+      "bytes": 143218,
+      "sha256": "7ffdf078e5ce15c799d35842445eaa56444cdc5b71c9266690daa7e1d24c0c05",
+      "type": "image/webp"
+    }
+  },
+  {
+    "source": "workspace/evidence/hp-refresh/sources/education/image4.png",
+    "sha256": "c080b49d28b77c87586987bd2232863022c75c9fc78371a1f3c8901917713db8",
+    "urls": [],
+    "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/hp-refresh/upload/hp-c080b49d28b7.webp",
+    "upload_name": "hp-c080b49d28b7.webp",
+    "upload_sha256": "49ae707654e53f1a8501a2773e4e6d11a67c66fc235f24302d71d292c9f4cf4d",
+    "dimensions": [
+      1384,
+      776
+    ],
+    "cdn_url": "https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-c080b49d28b7.webp",
+    "cdn_url_verification": {
+      "url": "https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-c080b49d28b7.webp",
+      "http": 200,
+      "bytes": 309022,
+      "sha256": "49ae707654e53f1a8501a2773e4e6d11a67c66fc235f24302d71d292c9f4cf4d",
+      "type": "image/webp"
+    }
+  },
+  {
+    "source": "workspace/evidence/hp-refresh/sources/education/image1.png",
+    "sha256": "55185549437d1e27265812c9bd093f8e1633f52220ef32dcf246c4315ffe0dd1",
+    "urls": [
+      "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-42-55185549437d.webp"
+    ],
+    "cdn_url": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-42-55185549437d.webp",
+    "cdn_url_verification": {
+      "url": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-42-55185549437d.webp",
+      "http": 200,
+      "bytes": 1142244,
+      "sha256": "a7ed4e37f5e50be42d6bee5e11fa15062aa065e17c53d57db92e7d53a3d1cffe",
+      "type": "image/webp"
+    }
+  },
+  {
+    "source": "workspace/evidence/hp-refresh/sources/education/image2.png",
+    "sha256": "502db315fe79ccb100065c36d0dbadb0920ec7e0065712754b60ee373ad442d2",
+    "urls": [],
+    "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/hp-refresh/upload/hp-502db315fe79.webp",
+    "upload_name": "hp-502db315fe79.webp",
+    "upload_sha256": "29eaf00836f43b010e2115501e9d63ec4f31230c2668c1624ad329d7a3db5e1a",
+    "dimensions": [
+      1385,
+      775
+    ],
+    "cdn_url": "https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-502db315fe79.webp",
+    "cdn_url_verification": {
+      "url": "https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-502db315fe79.webp",
+      "http": 200,
+      "bytes": 528982,
+      "sha256": "29eaf00836f43b010e2115501e9d63ec4f31230c2668c1624ad329d7a3db5e1a",
+      "type": "image/webp"
+    }
+  },
+  {
+    "source": "workspace/evidence/hp-refresh/sources/education/image3.png",
+    "sha256": "7bda73ab50754e2f1aaecedffc55484d86f78c28559ca9179d8e7c3dc67166f1",
+    "urls": [],
+    "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/hp-refresh/upload/hp-7bda73ab5075.webp",
+    "upload_name": "hp-7bda73ab5075.webp",
+    "upload_sha256": "abb4555816f2dc46d4dab7d353a01a1c143c8dd3ba3921d6307d5941ab9f1052",
+    "dimensions": [
+      1387,
+      776
+    ],
+    "cdn_url": "https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-7bda73ab5075.webp",
+    "cdn_url_verification": {
+      "url": "https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-7bda73ab5075.webp",
+      "http": 200,
+      "bytes": 342800,
+      "sha256": "abb4555816f2dc46d4dab7d353a01a1c143c8dd3ba3921d6307d5941ab9f1052",
+      "type": "image/webp"
+    }
+  },
+  {
+    "source": "workspace/evidence/hp-refresh/sources/ihp/image8.png",
+    "sha256": "3008173ef5a96cb30166c63b79ff9b856ecbc9b2ac40d037eeb06e8ee36cbc0a",
+    "urls": [],
+    "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/hp-refresh/upload/hp-3008173ef5a9.webp",
+    "upload_name": "hp-3008173ef5a9.webp",
+    "upload_sha256": "ea0bbe9acbabae8207f3251a70c43a035d1fa59aa80b14cdd4b2878d6826eb25",
+    "dimensions": [
+      632,
+      892
+    ],
+    "cdn_url": "https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-3008173ef5a9.webp",
+    "cdn_url_verification": {
+      "url": "https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-3008173ef5a9.webp",
+      "http": 200,
+      "bytes": 88888,
+      "sha256": "ea0bbe9acbabae8207f3251a70c43a035d1fa59aa80b14cdd4b2878d6826eb25",
+      "type": "image/webp"
+    }
+  },
+  {
+    "source": "workspace/evidence/hp-refresh/sources/ihp/image9.png",
+    "sha256": "6f3fee6b7ac49e31fc4de3e2d4abb2e36af1afcf31398eb57a741aeecfaf6236",
+    "urls": [],
+    "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/hp-refresh/upload/hp-6f3fee6b7ac4.webp",
+    "upload_name": "hp-6f3fee6b7ac4.webp",
+    "upload_sha256": "4eb0ddef08eaca65aadf42c1e76c9bfcc884618a8056b4ea9f788d66edfe62d1",
+    "dimensions": [
+      1006,
+      1424
+    ],
+    "cdn_url": "https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-6f3fee6b7ac4.webp",
+    "cdn_url_verification": {
+      "url": "https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-6f3fee6b7ac4.webp",
+      "http": 200,
+      "bytes": 217310,
+      "sha256": "4eb0ddef08eaca65aadf42c1e76c9bfcc884618a8056b4ea9f788d66edfe62d1",
+      "type": "image/webp"
+    }
+  },
+  {
+    "source": "workspace/evidence/hp-refresh/sources/ihp/image11.png",
+    "sha256": "e0608ed9f9de6b5c6707703a2b51d7b39c0b90d1e94fa9c2499ee6207312f461",
+    "urls": [],
+    "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/hp-refresh/upload/hp-e0608ed9f9de.webp",
+    "upload_name": "hp-e0608ed9f9de.webp",
+    "upload_sha256": "73bd6fc7aced89a32fa59f5e766dc65b2f93d68eebdc2d7f081da8ac784431d7",
+    "dimensions": [
+      430,
+      242
+    ],
+    "cdn_url": "https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-e0608ed9f9de.webp",
+    "cdn_url_verification": {
+      "url": "https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-e0608ed9f9de.webp",
+      "http": 200,
+      "bytes": 88306,
+      "sha256": "73bd6fc7aced89a32fa59f5e766dc65b2f93d68eebdc2d7f081da8ac784431d7",
+      "type": "image/webp"
+    }
+  },
+  {
+    "source": "workspace/evidence/hp-refresh/sources/ihp/image10.png",
+    "sha256": "55185549437d1e27265812c9bd093f8e1633f52220ef32dcf246c4315ffe0dd1",
+    "urls": [
+      "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-42-55185549437d.webp"
+    ],
+    "cdn_url": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-42-55185549437d.webp",
+    "cdn_url_verification": {
+      "url": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-42-55185549437d.webp",
+      "http": 200,
+      "bytes": 1142244,
+      "sha256": "a7ed4e37f5e50be42d6bee5e11fa15062aa065e17c53d57db92e7d53a3d1cffe",
+      "type": "image/webp"
+    }
+  },
+  {
+    "source": "workspace/evidence/hp-refresh/sources/ihp/image7.png",
+    "sha256": "202603cf2c82a9c5a439fece5e56b233b56a0eaa1a8a491734f6c3ebce8ce99d",
+    "urls": [],
+    "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/hp-refresh/upload/hp-202603cf2c82.webp",
+    "upload_name": "hp-202603cf2c82.webp",
+    "upload_sha256": "06292ce634134302ca1412342811dead8396f2aefad6f2fb22099ac10913b9bb",
+    "dimensions": [
+      2000,
+      1128
+    ],
+    "cdn_url": "https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-202603cf2c82.webp",
+    "cdn_url_verification": {
+      "url": "https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-202603cf2c82.webp",
+      "http": 200,
+      "bytes": 859894,
+      "sha256": "06292ce634134302ca1412342811dead8396f2aefad6f2fb22099ac10913b9bb",
+      "type": "image/webp"
+    }
+  },
+  {
+    "source": "workspace/evidence/hp-refresh/sources/ihp/image6.png",
+    "sha256": "14ed4e8aeca38480e79673060608fbc23ccb22a6803d921f1d59789a24f145a0",
+    "urls": [],
+    "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/hp-refresh/upload/hp-14ed4e8aeca3.webp",
+    "upload_name": "hp-14ed4e8aeca3.webp",
+    "upload_sha256": "6d341cad045ae7b3aa2451036b2a0b860390e7a2eabe6a31fb6a12b5b3724e8f",
+    "dimensions": [
+      2400,
+      1310
+    ],
+    "cdn_url": "https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-14ed4e8aeca3.webp",
+    "cdn_url_verification": {
+      "url": "https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-14ed4e8aeca3.webp",
+      "http": 200,
+      "bytes": 2383942,
+      "sha256": "6d341cad045ae7b3aa2451036b2a0b860390e7a2eabe6a31fb6a12b5b3724e8f",
+      "type": "image/webp"
+    }
+  },
+  {
+    "source": "workspace/evidence/hp-refresh/sources/ihp/image4.png",
+    "sha256": "7ad7d6afdd35f80576a49633b7dcf20ffc28dcbabee3f6ac11333a9ca0dc4519",
+    "urls": [],
+    "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/hp-refresh/upload/hp-7ad7d6afdd35.webp",
+    "upload_name": "hp-7ad7d6afdd35.webp",
+    "upload_sha256": "c44b450e180b85b34dde03816dcf88f4f4782f1b62e1b669d1e0095d9c2a6cea",
+    "dimensions": [
+      1394,
+      765
+    ],
+    "cdn_url": "https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-7ad7d6afdd35.webp",
+    "cdn_url_verification": {
+      "url": "https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-7ad7d6afdd35.webp",
+      "http": 200,
+      "bytes": 28790,
+      "sha256": "c44b450e180b85b34dde03816dcf88f4f4782f1b62e1b669d1e0095d9c2a6cea",
+      "type": "image/webp"
+    }
+  },
+  {
+    "source": "workspace/evidence/hp-refresh/sources/ihp/image5.png",
+    "sha256": "5a3f3ece2c070e669fe15b0f1ec1643b7199394f70991853a8897b874863caf6",
+    "urls": [
+      "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-41-5a3f3ece2c07.webp"
+    ],
+    "cdn_url": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-41-5a3f3ece2c07.webp",
+    "cdn_url_verification": {
+      "url": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-41-5a3f3ece2c07.webp",
+      "http": 200,
+      "bytes": 5383154,
+      "sha256": "3667e40f4bdf8e1bb8afd653a3c44ae3d1cf54ef09a8bfc46a4cb1bec3bef0bf",
+      "type": "image/webp"
+    }
+  },
+  {
+    "source": "workspace/evidence/hp-refresh/sources/ihp/image1.png",
+    "sha256": "7d72a4f737089d1cd0575c3c9f442329d04105bb10a96bc8832bceef4e4b7acc",
+    "urls": [
+      "https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-5-7d72a4f737.webp"
+    ],
+    "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-5-7d72a4f737.webp",
+    "cdn_url_verification": {
+      "url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-5-7d72a4f737.webp",
+      "http": 200,
+      "bytes": 6676888,
+      "sha256": "c7f49a5972c5e592e38ed9b0eb4fad1f7c9a1294216453a056ed117409914cd1",
+      "type": "image/webp"
+    }
+  },
+  {
+    "source": "workspace/evidence/hp-refresh/sources/ihp/image2.png",
+    "sha256": "f25a55a93d29e2b4b9d034c403a39812c4ad69bb648f459c0fc1fd3ded3b23f0",
+    "urls": [
+      "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-40-f25a55a93d29.webp"
+    ],
+    "cdn_url": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-40-f25a55a93d29.webp",
+    "cdn_url_verification": {
+      "url": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-40-f25a55a93d29.webp",
+      "http": 200,
+      "bytes": 6945710,
+      "sha256": "ad6e043ceefb900860e9beaa75b9158896bddcb6157306e41fb92ca70e23bbb6",
+      "type": "image/webp"
+    }
+  },
+  {
+    "source": "workspace/evidence/hp-refresh/sources/ihp/image3.png",
+    "sha256": "33352aab425d2def779d5724be7278f5ac7b307294fa3d0bfaba461862710f21",
+    "urls": [],
+    "upload_file": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/hp-refresh/upload/hp-33352aab425d.webp",
+    "upload_name": "hp-33352aab425d.webp",
+    "upload_sha256": "67f1870ed6fc8524ad9d96cf9feb85247ced6bdd172337ff00673b7283393a19",
+    "dimensions": [
+      1391,
+      692
+    ],
+    "cdn_url": "https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-33352aab425d.webp",
+    "cdn_url_verification": {
+      "url": "https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-33352aab425d.webp",
+      "http": 200,
+      "bytes": 22942,
+      "sha256": "67f1870ed6fc8524ad9d96cf9feb85247ced6bdd172337ff00673b7283393a19",
+      "type": "image/webp"
+    }
+  }
+]
