@@ -168,8 +168,9 @@
     "svg_bytes_preserved": true
   },
   "first_publication": {
-    "status": "pending",
-    "version": "10.2.17"
+    "commit": "d2078026d76f178be55040866c99548bef896fd2",
+    "pipeline_id": 776934,
+    "published_at_beijing": "2026-10-20 11:54:59"
   },
   "recent_combined_release": {
     "task_commits": {
@@ -249,6 +250,7 @@
     "home_test_strip": "0af0df777b218833f7df182b8ee275fffac1e991",
     "subpage_opening": "ada6fa15a370694a5611db0404ba2cbdb305d18c",
     "atlas_manifest": "docs/openings-cdn-20261020.json",
-    "atlas_count": 12
+    "atlas_count": 12,
+    "publication_time_beijing": "2026-10-20 11:54:59"
   }
 }
