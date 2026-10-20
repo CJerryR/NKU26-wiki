@@ -56,13 +56,20 @@
     "Eco original app near the beginning; reduce waiting"
   ],
   "pending_source_issues": {
-    "model-ode": "Latest author Feishu page, Markdown and Word all lack parts of several equations. Do not reconstruct without user disposition. Full old formulas saved separately for proposed restoration.",
-    "model-eco": "Treatment-tier rule table is empty in live Feishu page, exported Word, PNG preview and embedded Excel; old complete rule table can be preserved only once user disposition is known."
+    "model-eco": "Latest manuscript rule table is blank; previous published article also lacked the table. Application rules exist but user is contacting member for author table; hold latest Eco manuscript."
   },
   "public_scope": [
     "model",
     "model-docking",
-    "model-md"
+    "model-md",
+    "model-ode"
   ],
-  "science_text_policy": "verbatim latest English source; no new claims; final team-review status unchanged"
+  "science_text_policy": "verbatim latest English source; no new claims; final team-review status unchanged",
+  "ode_restoration": {
+    "user_authorized": true,
+    "formula_groups": 7,
+    "source": "ode-formula-restoration.json",
+    "other_latest_prose": "verbatim",
+    "table_cells": 249
+  }
 }

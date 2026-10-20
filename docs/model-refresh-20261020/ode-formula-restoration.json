@@ -1,0 +1,50 @@
+{
+  "source_sha256": "6eaa91202bcf400e074ad6f9b525570e3431286295b702d78af8f270ff2e96e9",
+  "old_source_commit": "5449c1e32ecdfb860ef9c77c5b60666f2d79c89a",
+  "authorization": "User: ODE缺的公式按旧版原样补回; Eco table awaiting member",
+  "changes": [
+    {
+      "label": "Five-state signaling system",
+      "old_formula_index": 6,
+      "original_fragment": "\\[\n\\\\begin\\{aligned\\}\n\\\\frac\\{dH\\}\\{d\\\\tau\\}\\&=\\-u\\(L\\)H\\+k\\_5DB,\\\\\n\\\\frac\\{dA\\}\\{d\\\\tau\\}\\&=u\\(L\\)H\\-\\(k\\_4\\+k\\_\\{41\\}Z^*\\)A,\\\\*\n*\\\\frac\\{dQ\\}\\{d\\\\tau\\}\\&=k\\_6SB\\-\\(k\\_7\\+k\\_\\{71\\}Z^*\\)Q,\\\\\n\\\\frac\\{dF^*\\}\\{d\\\\tau\\}\\&=k\\_8QF\\-\\(k\\_9\\+k\\_\\{91\\}Z\\)F^*,\\\\\n\\\\frac\\{dZ^\\*\\}\\{d\\\\tau\\}\\&=k\\_\\{10\\}F^*Z\\-k\\_\\{11\\}Z^*\\.\n\\\\end\\{aligned\\}\n\\]",
+      "restored_tex": "\\begin{aligned} \\frac{dH}{d\\tau}&=-u(L)H+k_5DB,\\\\ \\frac{dA}{d\\tau}&=u(L)H-(k_4+k_{41}Z^*)A,\\\\ \\frac{dQ}{d\\tau}&=k_6SB-(k_7+k_{71}Z^*)Q,\\\\ \\frac{dF^*}{d\\tau}&=k_8QF-(k_9+k_{91}Z)F^*,\\\\ \\frac{dZ^*}{d\\tau}&=k_{10}F^*Z-k_{11}Z^*. \\end{aligned}"
+    },
+    {
+      "label": "Conservation relationships",
+      "old_formula_index": 7,
+      "original_fragment": "\\[\n\\\\begin\\{aligned\\}\nD\\&=T\\_\\\\alpha\\-H\\-A, \\&\nB\\&=T\\_\\\\beta\\-H\\-Q,\\\\\nS\\&=T\\_S\\-Q, \\&\nF\\&=T\\_F\\-F^*,\\\\*\n*Z\\&=T\\_Z\\-Z^*\\.\n\\\\end\\{aligned\\}\n\\]",
+      "restored_tex": "\\begin{aligned} D&=T_\\alpha-H-A, & B&=T_\\beta-H-Q,\\\\ S&=T_S-Q, & F&=T_F-F^*,\\\\ Z&=T_Z-Z^*. \\end{aligned}"
+    },
+    {
+      "label": "Pigment accumulation",
+      "old_formula_index": 10,
+      "original_fragment": "\\\\frac\\{1\\}\\{3600\\}\n\n\\\\left\\(\n\nb\\+a\\\\frac\\{m^n\\}\\{K^n\\+m^n\\}\\-\\\\delta C\n\n\\\\right\\)\\.\n\n\\]",
+      "restored_tex": "\\frac{dC}{d\\tau} = \\frac{1}{3600} \\left( b+a\\frac{m^n}{K^n+m^n}-\\delta C \\right)."
+    },
+    {
+      "label": "Matched-blank subtraction",
+      "old_formula_index": 11,
+      "original_fragment": "## C\\_\\{\\\\mathrm\\{sample\\},j\\}\\(t\\)\n\nC\\_\\{\\\\mathrm\\{blank\\},j\\}\\(t\\)\\.\n\n\\]",
+      "restored_tex": "C_{\\mathrm{net},j}(t) = C_{\\mathrm{sample},j}(t)-C_{\\mathrm{blank},j}(t)."
+    },
+    {
+      "label": "Smartphone color feature",
+      "old_formula_index": 13,
+      "original_fragment": "c\\_\\{\\\\mathrm\\{blank\\},j\\}\n\n\\\\right\\)\\.\n\n\\]",
+      "restored_tex": "x_j=-\\log_{10}(r_j) = k_B\\left( c_{\\mathrm{sample},j}-c_{\\mathrm{blank},j} \\right)."
+    },
+    {
+      "label": "General dual-channel regression",
+      "old_formula_index": 16,
+      "original_fragment": "\\\\beta\\_0\\+\\\\beta\\_3x\\_3\\+\\\\beta\\_\\{18\\}x\\_\\{18\\}\\.\n\n\\]",
+      "restored_tex": "\\widehat d_{\\mathrm{Mi}} = \\beta_0+\\beta_3x_3+\\beta_{18}x_{18}."
+    },
+    {
+      "label": "Fitted dual-channel regression",
+      "old_formula_index": 17,
+      "original_fragment": "## 4\\.335\n\n1207\\.944x\\_3\n\n\\+\n\n2109\\.881x\\_\\{18\\},\n\n\\]",
+      "restored_tex": "\\widehat d_{\\mathrm{Mi}} = 4.335-1207.944x_3+2109.881x_{18},"
+    }
+  ],
+  "restored_sha256": "3fb13710953590628399652b104278cc44e37d5c417f925d11a600f3a4d307ec"
+}

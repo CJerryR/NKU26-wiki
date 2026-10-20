@@ -1,7 +1,7 @@
 {
-  "version": "10.2.14",
-  "label": "Compact footer and resource icons",
-  "prepared_at": "2026-10-20T09:55:48+08:00",
+  "version": "10.2.15",
+  "label": "Latest ODE manuscript with authorized original formula restoration",
+  "prepared_at": "2026-10-20T10:22:25+08:00",
   "media": "84 unchanged original images plus 4 user-authorized GPS-only cleaned images; all decoded frames unchanged; 12 complete historical source documents",
   "release_kind": "stage",
   "team_content_review": "Scientific final review pending; source-version choices authorized by user",
@@ -10,7 +10,7 @@
     "commit": "16770d5c28ddf7bc41f8d90445c44d80a28801d5",
     "published_at_local": "2026-10-18 05:04:34"
   },
-  "release_id": "footer-compact-20261020-v10.2.14",
+  "release_id": "model-ode-restoration-20261020-v10.2.15",
   "mobile_layout_check": "390px Members rendered without overflow; desktop Description, Parts/plasmid, Attributions/puzzle checked; 4 second delayed CDN uses inline preview then upgrades",
   "source_fidelity": {
     "original_source_files_verified": 80,
@@ -30,8 +30,8 @@
     "source_decisions": "content/author-source-decisions.json"
   },
   "previous_release": {
-    "version": "10.2.13",
-    "commit": "b26d36ddc89d823acfc4af29beda4d751f3f330d"
+    "version": "10.2.14",
+    "commit": "b5af87a3870744198fca9b8097322f2dff3d7393"
   },
   "visual_stage": "AI-generated handcut illustrations; 16 sheets, 91 canonical props",
   "meeting_update": {
@@ -211,15 +211,22 @@
     "updated_pages": [
       "model",
       "model-docking",
-      "model-md"
+      "model-md",
+      "model-ode"
     ],
     "latest_author_text_blocks_checked": 94,
     "pending_latest_manuscripts": [
-      "model-ode: incomplete equations in live source",
-      "model-eco: empty treatment-rules table in live source"
+      "model-eco: author rule table pending member confirmation"
     ],
-    "published_existing_complete_ode_eco_retained": true,
-    "runtime": "Earlier iframe loading and SHA256-verified package cache; unchanged author calculations; first startup and ODE solving still take time"
+    "runtime": "Earlier iframe loading and SHA256-verified package cache; unchanged author calculations; first startup and ODE solving still take time",
+    "ode_restoration": {
+      "formula_groups": 7,
+      "policy": "Exact old formulas authorized by user; remaining latest manuscript verbatim",
+      "tables": 5,
+      "table_cells": 249,
+      "prose_blocks": 80
+    },
+    "eco_status": "Published old article retained; its rule table is also absent. User contacting member for author table."
   },
   "footer_compact": {
     "resource_icons": [
