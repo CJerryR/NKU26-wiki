@@ -37,6 +37,12 @@ For plasmid construction (Figure 1.a), our design rationale was as follows:
 
 Firstly, the GPR2‑sfGFP heterologous expression plasmid was successfully assembled by one‑step cloning (Figure 1). The plasmid was then linearized and transformed into yeast. Positive transformants were validated to yield yeast strains carrying correctly knock‑in GPR2‑sfGFP (Figure 2).
 
+:::note[Note]
+
+A negative image of the stained gel is shown for better visualization of the PCR fragments.
+
+:::
+
 :::figure
 
 ![Figure 1. Construction of the plasmid for heterologous expression of GPR2-sfGFP. a, Plasmid map of the pRS315-GPR2-sfGFP construct for heterologous GPR2-sfGFP expression. b, Colony PCR results during plasmid construction. Sample T3 showed the expected positive band, and this colony was selected for plasmid extraction. c, Double restriction digestion verification of pRS315-GPR2-sfGFP, with band sizes consistent with theoretical expectations.](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-6a3e31c31a57-fig1-1.avif)
@@ -463,7 +469,7 @@ Mans R, Wijsman M, Daran-Lapujade P, Daran JM. A protocol for introduction of mu
 
 :::caption
 
-<p class="figure-caption">Figure 1. Water absorption capacity evaluation of selected substrates（ insert image “Fig3.1.1”）</p>
+<p class="figure-caption">Figure 1. Water absorption capacity evaluation of selected substrates.</p>
 
 :::
 
@@ -529,7 +535,7 @@ Mans R, Wijsman M, Daran-Lapujade P, Daran JM. A protocol for introduction of mu
 
 :::caption
 
-<p class="figure-caption">Figure 4. Schematic of the spotting process</p>
+<p class="figure-caption">Figure 4. Photograph of the vacuum filtration spotting device.</p>
 
 :::
 
@@ -565,7 +571,7 @@ Mans R, Wijsman M, Daran-Lapujade P, Daran JM. A protocol for introduction of mu
 
 <p>First, we complete a continuous observation and recording of freeze-dried test strip resuscitation via time-lapse photography (Video 1).</p>
 
-<figure class="results-timelapse"><iframe title="Video 1. Observation of test strip resuscitation over 113 h" src="https://video.igem.org/videos/embed/fFXuDzig2DWKhQPFLW2mnM" allow="fullscreen" loading="lazy" sandbox="allow-scripts allow-same-origin" style="width:100%;aspect-ratio:16/9;border:0"></iframe><p><strong>Video 1. Observation of test strip resuscitation over 113 h</strong>（<strong> Insert video </strong><strong>“Video3.2.1”</strong>）</p></figure>
+<figure class="results-timelapse"><iframe title="Video 1. Observation of test strip resuscitation over 113 h" src="https://video.igem.org/videos/embed/fFXuDzig2DWKhQPFLW2mnM" allow="fullscreen" loading="lazy" sandbox="allow-scripts allow-same-origin" style="width:100%;aspect-ratio:16/9;border:0"></iframe><figcaption>Video 1. Observation of test strip resuscitation over 113 h.</figcaption></figure>
 
 <p>Subsequently, we carry out multiple control experiments to further explore the optimal conditions for test strip color development, performing <strong>red–green–blue (RGB)</strong> blue-channel grayscale quantification using ImageJ (Figure 6).</p>
 
@@ -585,7 +591,7 @@ Mans R, Wijsman M, Daran-Lapujade P, Daran JM. A protocol for introduction of mu
 
 :::caption
 
-<p class="figure-caption">Figure 7. 3D-printed test strip cassette（ insert image “Fig3.2.2”）</p>
+<p class="figure-caption">Figure 7. 3D-printed test strip cassette.</p>
 
 :::
 

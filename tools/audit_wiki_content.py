@@ -94,6 +94,7 @@ EMPTY_PAGE_SLUGS = {
 FORBIDDEN_PATTERNS: tuple[tuple[str, re.Pattern[str]], ...] = (
     ("placeholder class", re.compile(r"placeholder-tag|content-slot|slot-chip", re.I)),
     ("placeholder wording", re.compile(r"figure placeholder|pending documentation|reference to add|content slot", re.I)),
+    ("media insertion instruction", re.compile(r"\binsert(?:\s|<[^>]+>)+(?:an?\s+)?(?:image|figure|photo|video)\b", re.I)),
     ("template token", re.compile(r"\{\{[^}]+\}\}")),
     ("draft marker", re.compile(r"\b(?:TODO|TBD)\b", re.I)),
     ("fake person", re.compile(r"\b(?:Member|Advisor|Instructor) name\b", re.I)),

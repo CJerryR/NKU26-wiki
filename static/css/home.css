@@ -409,8 +409,8 @@ html.is-paged .pager{display:flex}
 .pager__dot.is-next i{background:rgba(255,255,255,.62);transition:height .5s var(--ease-o),background .2s}
 @keyframes cueWheel{0%{transform:none;opacity:1}70%{transform:translateY(9px);opacity:0}100%{opacity:0}}
 html.is-paged .detective{transition:opacity .4s,transform .5s var(--ease-o)}
-html.is-paged[data-page="world"] .detective,html.is-paged[data-page="loop"] .detective,html.is-paged[data-page="explore"] .detective{opacity:0;transform:translateY(24px);pointer-events:none}
-html.is-paged[data-page="world"] .detective *,html.is-paged[data-page="loop"] .detective *,html.is-paged[data-page="explore"] .detective *{pointer-events:none}
+html.is-paged[data-page="world"] .detective,html.is-paged[data-page="explore"] .detective{opacity:0;transform:translateY(24px);pointer-events:none}
+html.is-paged[data-page="world"] .detective *,html.is-paged[data-page="explore"] .detective *{pointer-events:none}
 .co__field.is-merged .co__orb span{opacity:0;transition:opacity .3s}
 .co__orb span{transition:opacity .4s .3s}
 .co__field.is-merged .co__orb--3 b,.co__field.is-merged .co__orb--3 svg{transform:translateX(-18%)}

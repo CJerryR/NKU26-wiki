@@ -56,15 +56,21 @@ const turn = '<svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><pat
 export function renderMemberGrid(block) {
   return `<div class="member-grid">${(block.items || []).map(p => {
     const id = slug(p.anchor || p.name), intro = paragraphs(p.introduction);
-    const facts = [['University', p.university], ['Grade', p.cohort]].filter(([, v]) => String(v || '').trim());
-    const role = p.role ? `<p class="member-card__role">${esc(p.role)}</p>` : '';
-    const factList = rows => rows.length ? `<dl class="member-card__facts">${rows.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>` : '';
+    const facts = [
+      ['Academic Status', p.academicStatus], ['University', p.university],
+      ...(p.role ? [['Group', p.group]] : []), ['Tags', p.tags], ['Outside the Lab', p.outsideTheLab],
+      ...(!p.academicStatus ? [['Grade', p.cohort]] : []),
+    ].filter(([, v]) => String(v || '').trim());
+    const subtitle = p.role || p.group;
+    const role = subtitle ? `<p class="member-card__role">${esc(subtitle)}</p>` : '';
+    const factList = rows => rows.length ? `<dl class="member-card__facts">${rows.map(([k, v]) => `<div><dt>${k}</dt><dd>${String(v).split(/\s*·\s*/).map((part, i, parts) => `<span class="nb">${esc(part)}${i < parts.length - 1 ? '<span class="sep">&nbsp;·</span>' : ''}</span>`).join(' ')}</dd></div>`).join('')}</dl>` : '';
     const dl = factList(facts);
     const front = `<div class="member-card__face member-card__front"><div class="member-card__identity">${memberPhoto(p, p.name)}</div><div class="member-card__info">${nameBlock(p, `${id}-name`, Math.max(3, Math.min(5, block.headingLevel || 3)))}${role}${dl}</div></div>`;
     // Nothing to turn over to: a single face, no button.
     if (!intro) return `<article class="member-card" id="${id}" aria-labelledby="${id}-name"><div class="member-card__inner">${front}</div></article>`;
     const backName = `<div class="member-card__back-name">${esc(p.name)}${p.chineseName ? `<span lang="zh">${esc(p.chineseName)}</span>` : ''}</div>`;
-    const back = `<div class="member-card__face member-card__back" id="${id}-intro"><div class="member-card__identity">${memberPhoto(p, '')}${backName}</div><div class="member-card__back-content"><div class="member-card__bio">${intro}</div></div></div>`;
+    const avatar = photoSrc(p) ? `<img class="member-card__avatar" src="${esc(photoSrc(p))}" alt="" loading="lazy" decoding="async">` : '';
+    const back = `<div class="member-card__face member-card__back" id="${id}-intro"><div class="member-card__back-head">${avatar}${backName}</div><div class="member-card__bio">${intro}</div></div>`;
     const open = `Meet ${esc(p.name)}`, shut = `Back to ${esc(p.name)}’s profile`;
     return `<article class="member-card" id="${id}" data-member-card aria-labelledby="${id}-name"><div class="member-card__inner">${front}${back}</div>`
       + `<button type="button" class="member-card__flip" data-member-flip data-label-open="${open}" data-label-close="${shut}" aria-label="${open}" aria-expanded="false" aria-controls="${id}-intro">${turn}</button></article>`;

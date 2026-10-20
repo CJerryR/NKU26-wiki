@@ -47,7 +47,7 @@ const friends = site.friends.map((s) => ({ ...s, url: site.safeUrl(s.url) }));
   </div>
   <nav class="site-footer__resources" aria-label="Team and project resources">
     <a class="site-footer__social" data-resource="team" href={site.teamPage} aria-label="Official team page" title="Official team page" style="--social-color: #7e3f8f">
-      <span class="site-footer__social-mark" aria-hidden="true"></span>
+      <img class="site-footer__team-mark" src="https://static.igem.wiki/teams/6303/wiki/v8-0/v8-3439b58a1e73-nku-mark.svg" width="28" height="36" alt="" loading="lazy" />
     </a>
     <a href="https://www.nankai.edu.cn/">Nankai University</a>
     <a href="/licensing/">Licensing &amp; AI use</a>
@@ -58,7 +58,18 @@ const friends = site.friends.map((s) => ({ ...s, url: site.safeUrl(s.url) }));
       {socialIcons.map(({ key, label, color }) => {
         const configured = site.safeUrl(site.socialLinks[key]);
         const href = /^https:\/\//i.test(configured) ? configured : '';
-        return <a class="site-footer__social" data-platform={key} href={href || undefined} role="link"
+        if (key === 'wechat' && !href) return <details class="site-footer__wechat">
+          <summary class="site-footer__social" data-platform="wechat" aria-label="微信公众号 iGEM-NKU" title="微信公众号 iGEM-NKU" style={`--social-color: ${color}`}>
+            <span class="site-footer__social-mark" aria-hidden="true"></span>
+          </summary>
+          <div class="site-footer__wechat-card">
+            <b>WeChat · iGEM-NKU</b>
+            <img class="site-footer__wechat-qr" src="https://static.igem.wiki/teams/6303/wiki/release-20261020/wechat-qr-df1d76e9b601.avif" width="144" height="144" alt="QR code to follow iGEM-NKU on WeChat" loading="lazy" />
+            <p>Scan with WeChat, or search “iGEM-NKU” → Official Accounts.</p>
+            <p lang="zh-CN">使用微信扫码关注；也可在「搜一搜」中搜索「iGEM-NKU」。</p>
+          </div>
+        </details>;
+        return <a class="site-footer__social" data-platform={key} href={href || undefined} target="_blank" rel="noopener noreferrer" role="link"
           aria-label={label} aria-disabled={href ? undefined : 'true'}
           title={href ? label : `${label} · Coming soon`} style={`--social-color: ${color}`}>
           <span class="site-footer__social-mark" aria-hidden="true"></span>

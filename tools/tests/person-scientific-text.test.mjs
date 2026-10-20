@@ -21,8 +21,8 @@ test('credit task text gets scientific italics while names, roles, task chips an
   assert.ok(output.includes('<p class="credit-card__role">Ce</p>'));
   assert.ok(output.includes('<li>S.c</li>'));
   const member = renderMemberGrid({ items: [{ name: 'Example', introduction: 'Mi', university: 'Ce', cohort: 'S.c' }] });
-  assert.ok(member.includes('<dd>Ce</dd>'));
-  assert.ok(member.includes('<dd>S.c</dd>'));
+  assert.ok(member.includes('<dd><span class="nb">Ce</span></dd>'));
+  assert.ok(member.includes('<dd><span class="nb">S.c</span></dd>'));
 });
 
 test('species rendering escapes HTML and does not match chemical or identifier substrings', () => {

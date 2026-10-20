@@ -22,6 +22,10 @@ const memberCards: Template = {name:'membergrid',label:'成员翻转卡片',fiel
     {type:'string',name:'university',label:'学校（按原稿）'},
     {type:'string',name:'major',label:'专业 / 研究领域'},
     {type:'string',name:'cohort',label:'年级（按原稿）'},
+    {type:'string',name:'academicStatus',label:'Academic Status（学籍与入学年份）'},
+    {type:'string',name:'group',label:'Group（所属组别）'},
+    {type:'string',name:'tags',label:'Tags（工作标签）'},
+    {type:'string',name:'outsideTheLab',label:'Outside the Lab（课余兴趣）'},
     {type:'string',name:'introduction',label:'卡片背面介绍',ui:{component:'textarea'}},
   ],ui:{itemProps:item=>({label:item.name || '成员'})}},
 ]};

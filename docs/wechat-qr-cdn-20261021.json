@@ -1,0 +1,11 @@
+{
+  "source_path": "static/img/social/igem-nku-wechat-qr.png",
+  "source_sha256": "df1d76e9b60195858e1f3f9855bdf33c1ebfb7d0116d6dd05c4e3c62a809e4c0",
+  "cdn_url": "https://static.igem.wiki/teams/6303/wiki/release-20261020/wechat-qr-df1d76e9b601.avif",
+  "cdn_sha256": "ab613957dc7be36b24b8d253fa5a2beef572a18c123197433e37141d70347345",
+  "http_status": 200,
+  "content_type": "image/avif",
+  "checked_at": "2026-10-21T01:39:00+08:00",
+  "browser": "pending",
+  "scan_in_wechat": "not tested"
+}

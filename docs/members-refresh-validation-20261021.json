@@ -1,0 +1,15 @@
+{
+  "source": "https://nankai.feishu.cn/wiki/B1ekwYZdLiN6IDkkq8Cc6WMynKg",
+  "source_modified": "2026-10-19 16:43",
+  "members": 27,
+  "content_comparison": "all names, order, roles, academic status, universities, groups, tags, outside-the-lab fields and biographies match extracted Feishu source",
+  "build": "passed",
+  "audit": "passed technical checks; existing team review status retained",
+  "tests": "7 related Node tests passed",
+  "browser": "desktop front/back and 390x844 mobile light/back/dark front; no horizontal overflow",
+  "preview": "http://127.0.0.1:4391/team/#student-leaders",
+  "source_path": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/tasks/members-refresh",
+  "base_commit": "b4a4e6a81a7340865f242d69507b24993dd71e4f",
+  "publication": "not-published",
+  "attributions": "deferred per user priority"
+}

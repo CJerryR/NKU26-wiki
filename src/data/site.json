@@ -2,21 +2,23 @@
   "source_repository_url": "https://gitlab.igem.org/2026/nku-china",
   "social_links": {
     "wechat": "",
-    "xiaohongshu": "",
+    "xiaohongshu": "https://www.xiaohongshu.com/user/profile/69bb803b0000000034019b16?xsec_token=YBndxi_1w_xWK3IB03af6OJbJN_JFswvH9vmTSlLMAj_M=&xsec_source=app_share",
     "x": "",
     "youtube": "",
-    "bilibili": ""
+    "bilibili": "https://space.bilibili.com/3546665564768761"
   },
   "sponsors": [
     {
       "name": "ExCell",
       "logo": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-6b6833027f6c-excell.avif",
-      "logoAlt": "ExCell 依科赛"
+      "logoAlt": "ExCell 依科赛",
+      "url": "https://www.excellbio.com/home/index.aspx"
     },
     {
       "name": "Solarbio",
       "logo": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-add955af5966-solarbio.avif",
-      "logoAlt": "Solarbio Life Sciences"
+      "logoAlt": "Solarbio Life Sciences",
+      "url": "https://www.solarbio.com/"
     },
     {
       "name": "College of Life Sciences, Nankai University",
@@ -24,18 +26,21 @@
       "logo": "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/footer-9018a680d377-nku-life-sciences.avif",
       "logoAlt": "College of Life Sciences, Nankai University 南开大学生命科学学院",
       "logoBackground": "dark",
-      "logoWide": true
+      "logoWide": true,
+      "url": "https://sky.nankai.edu.cn/"
     },
     {
       "name": "SnapGene",
       "logo": "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/footer-df21c8dc8812-snapgene.svg",
-      "logoAlt": "SnapGene"
+      "logoAlt": "SnapGene",
+      "url": "https://www.snapgene.com/"
     },
     {
       "name": "GenScript",
       "logo": "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/footer-5e23fcad41c9-genscript.svg",
       "logoAlt": "GenScript 金斯瑞",
-      "logoBackground": "dark"
+      "logoBackground": "dark",
+      "url": "https://www.genscript.com/"
     }
   ],
   "friends": []

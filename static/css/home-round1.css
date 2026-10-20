@@ -352,7 +352,7 @@ html.is-paged .th3{--th-gr:max(64px,(100% - 1300px) / 2)}
 .ex--one .bt__card--wwb:focus-visible{outline:2px solid #c79bff;outline-offset:6px}
 .ex--one .bt__card--wwb b{display:block;font-size:inherit;font-weight:600;line-height:1.25;letter-spacing:0}
 .ex--one .bt__card--wwb .bt__art{position:relative;inset:auto;z-index:auto;display:block;margin-top:auto;padding-top:10px;width:100%;height:auto;opacity:1;overflow:visible;background:none}
-.ex--one .bt__card--wwb .bt__art img{display:block;width:100%;height:auto;max-height:var(--wwb-art-max,none);object-fit:contain;object-position:50% 0;transition:transform .35s var(--ease-o,ease),opacity .35s ease}
+.ex--one .bt__card--wwb .bt__art img{display:block;width:100%;height:auto;max-height:var(--wwb-art-max,none);object-fit:contain;object-position:0 0;transition:transform .35s var(--ease-o,ease),opacity .35s ease}
 .ex--one .bt__card--wwb:is(:hover,:focus-visible) .bt__art img{transform:translateY(-3px)}
 /* Fade in only while home-story.js reports the file is still on its way. */
 .bt__grid--wwb.is-loading-art .bt__art img:not(.is-ready){opacity:0}
@@ -380,11 +380,9 @@ html.is-paged .home .ex--one .ex__mascot{width:clamp(120px,11vw,170px)}
 /* home.css gives paged .bt__card a 1.75 aspect ratio on short screens; these cards size from content. */
 html.is-paged .home .ex--one .bt__card--wwb{aspect-ratio:auto}
 /* A paged screen is one viewport: keep this block about as tall as the old 29vh cards. */
-html.is-paged .home .ex--one .bt__grid--wwb{--wwb-art-max:max(104px,calc(29vh - 96px))}
+html.is-paged .home .ex--one .bt__grid--wwb{--wwb-art-max:max(147.2px,calc(41.1125vh - 136.62px))}
 /* Give the final navigation block breathing room, while retaining short-screen clearance. */
 html.is-paged .home .ex--one .ex__main{padding-top:clamp(12px,calc((100svh - 600px)*.24),40px)}
-/* The supplied Prediction panel may extend below its canvas without covering its neighbours. */
-html.is-paged .home .ex--one .bt__card--prediction .bt__art img{scale:1.15;transform-origin:50% 0}
 html:not(.is-paged) .home .ex--one{padding-top:max(96px,8vw)}
 /* Native scrolling already keeps the shared detective at the left edge. */
 html:not(.is-paged) .home .ex--one .ex__mascot{display:none}
@@ -407,7 +405,7 @@ html:not(.is-paged) .home .ex--one .ex__main{padding-left:0;padding-top:0}
   .ex--one .ex__path li b{font-size:14px}
   .ex--one .bt__card--wwb{font-size:13px}
   .ex--one .bt__card--wwb .bt__art{padding-top:6px}
-  html.is-paged .home .ex--one .bt__grid--wwb{--wwb-art-max:96px}
+  html.is-paged .home .ex--one .bt__grid--wwb{--wwb-art-max:136.85px}
   .ex--one .ex__grid a{min-height:54px;padding-block:9px;gap:5px}
 }
 @media (max-width:1100px){

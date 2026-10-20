@@ -1,0 +1,19 @@
+{
+  "scope": "Desktop member facts align with photo top and bottom",
+  "base_task_commit": "4770a6afe63d55d77f94a125b940c8c0dee8cf00",
+  "changes": [
+    "640px and above only: flex column with facts pushed to bottom",
+    "Photo-frame minimum height accounts for border-box 3px frame padding",
+    "43cqi photo column and smaller inter-column gap allow longest team-leader tags to fit",
+    "Narrow desktop cards <=479px use compact 14px values and 8px field gaps",
+    "Mobile display:contents unchanged; compact back avatar/full-width biography retained"
+  ],
+  "validation": {
+    "build": "passed",
+    "audit": "technical checks passed",
+    "desktop_27_cards": "top/bottom offset differences <=1px, measured without hover perspective distortion",
+    "desktop_1280": "27 cards checked; no fact overflow",
+    "mobile_390": "display:contents preserved; fact overflow 0",
+    "publication": "not-published"
+  }
+}

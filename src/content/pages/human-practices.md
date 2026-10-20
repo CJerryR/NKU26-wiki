@@ -53,7 +53,7 @@ hidden: false
 
 <div class="hp-photo-item"><div data-hp-source-paragraph="82"><a href="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-ad4e36ac9e1bffd1-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-ad4e36ac9e1bffd1-00.json" alt="Geographic distribution of 369 survey responses across 23 provincial-level regions in China" loading="lazy" width="552" height="387"></a></div></div>
 
-<p class="figure-caption"><span data-hp-source-paragraph="83">Figure 3. Geographic distribution of 369 survey responses across 23 provincial-level regions in china</span></p>
+<p class="figure-caption"><span data-hp-source-paragraph="83">Figure 3. Geographic distribution of 369 survey responses across 23 provincial-level regions in China.</span></p>
 
 :::
 

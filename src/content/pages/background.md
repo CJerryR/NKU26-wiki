@@ -60,7 +60,7 @@ Table 1. Comparison of detection methods for PPNs
 
 ![Figure 2. Ascaroside profiles in plant-parasitic nematodes.](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-4aaded62bc25-fig2.avif)
 
-<p>Figure 2. Ascaroside profiles in ppns. Source: Manosalva P, et al. (2015), <em>Nature Communications</em>, DOI:10.1038/ncomms8795.</p>
+<p>Figure 2. Ascaroside profiles in PPNs. Source: Manosalva P, et al. (2015), <em>Nature Communications</em>, DOI:10.1038/ncomms8795.</p>
 
 :::
 

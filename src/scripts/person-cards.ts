@@ -15,11 +15,6 @@ function wire(card: HTMLElement): void {
   const inner = card.querySelector<HTMLElement>('.member-card__inner');
   if (!front || !back || !button || !inner) return;
 
-  const fit = () => {
-    const face = card.classList.contains('is-flipped') ? back : front;
-    inner.style.height = `${face.offsetHeight}px`;
-  };
-
   const labels = {
     open: button.dataset.labelOpen || button.getAttribute('aria-label') || 'Turn card',
     close: button.dataset.labelClose || button.getAttribute('aria-label') || 'Turn card',
@@ -35,17 +30,11 @@ function wire(card: HTMLElement): void {
     front.inert = yes; back.inert = !yes;
     front.setAttribute('aria-hidden', String(yes));
     back.setAttribute('aria-hidden', String(!yes));
-    fit();
   };
 
   back.inert = true;
   back.setAttribute('aria-hidden', 'true');
   card.classList.add('is-ready');
-  fit();
-  // Natural face sizes update after responsive reflow, fonts and Tina content edits.
-  const resize = new ResizeObserver(fit);
-  resize.observe(front); resize.observe(back);
-  resizeCleanup.set(card, () => { resize.disconnect(); });
 
   button.addEventListener('click', () => turn(!card.classList.contains('is-flipped')));
   // The whole card turns, except when the reader is selecting text or using a control.

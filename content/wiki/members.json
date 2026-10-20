@@ -40,9 +40,12 @@
           "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-51f36c46393e-jie-fan.avif",
           "name": "Jie Fan",
           "role": "PI",
-          "cohort": "",
+          "academicStatus": "",
           "university": "",
-          "introduction": "Prof. Jie Fan of Nankai University serves as the principal investigator (PI) of our team, providing scientific vision and strategic guidance throughout the project. Her research centers on microbial secondary metabolism, chemical interactions between species, and synthetic biology-based construction of microbial chassis. She helps the team translate biological questions into feasible engineering strategies and keeps experimental design, data analysis, and project communication closely aligned."
+          "group": "",
+          "tags": "Research Guidance · Team Coordination",
+          "outsideTheLab": "",
+          "introduction": "Prof. Jie Fan is the team’s PI at Nankai University. Her research explores microbial secondary metabolism, interactions between species, and synthetic biology. She helps the team turn biological questions into workable engineering ideas, offering guidance from experimental design to the way the team shares its findings."
         }
       ]
     },
@@ -59,29 +62,38 @@
         {
           "anchor": "peng-lin-wei",
           "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-e3d156de3188-peng-lin-wei.avif",
-          "name": "Peng-Lin Wei",
+          "name": "Penglin Wei",
           "role": "Advisor",
-          "cohort": "",
+          "academicStatus": "Postdoctoral Researcher",
           "university": "",
-          "introduction": "Dr. Peng-Lin Wei is a postdoctoral researcher at Nankai University whose research focuses on engineering filamentous fungal cell factories for secondary metabolite production. As our team’s advisor, he provides guidance on both dry-lab and wet-lab research, helping us refine research ideas and strengthen experimental design."
+          "group": "",
+          "tags": "Research Guidance",
+          "outsideTheLab": "",
+          "introduction": "Dr. Penglin Wei is a postdoctoral researcher at Nankai University, working on filamentous fungal cell factories for secondary metabolite production. As an advisor, he supports both dry-lab and wet-lab research, helping the team sharpen its ideas and work through experimental design."
         },
         {
           "anchor": "zhiyi-zhu",
           "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-55d47fb05e33-zhiyi-zhu.webp",
-          "name": "Churchill Zhu",
+          "name": "Zhiyi Zhu",
           "role": "Advisor",
-          "cohort": "2023",
+          "academicStatus": "Undergraduate · 2023 Entry",
           "university": "",
-          "introduction": "Churchill Zhu led NKU-China 2025 through the full iGEM season last year. This year, he has returned as an advisor, standing one step behind the team instead of at the front. Still a Dionysus in human form—warm, open, always up for a genuine conversation, and forever ready to help. histidine (His) reverence for life hasn’t changed, nor has His belief that studying it pushes the frontier of human knowledge and feeds the flame of civilization. This year, he is helping a new crew push it a little further—passing on what last season taught him and learning from them in return."
+          "group": "",
+          "tags": "Team Mentoring",
+          "outsideTheLab": "",
+          "introduction": "Zhiyi, also known as Churchill, returns as an advisor after leading NKU-China 2025. Warm, open, and always ready for a conversation, he now shares lessons from the previous season while learning from the new team. His fascination with life and the possibilities of studying it remains unchanged."
         },
         {
           "anchor": "zhanning-zhang-advisor",
           "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-4df9d0d545a6-zhanning-zhang-advisor.avif",
-          "name": "Roy Zhang",
+          "name": "Zhanning Zhang",
           "role": "Advisor",
-          "cohort": "",
+          "academicStatus": "Master’s Student · 2024 Entry",
           "university": "",
-          "introduction": "Roy Zhang coordinates our team’s dry-lab work, with a particular focus on molecular dynamics (MD) simulations and molecular docking. He provides guidance on the overall direction of dry-lab research, helping us refine computational strategies and address challenges in modeling and analysis."
+          "group": "",
+          "tags": "Modeling · Research Guidance",
+          "outsideTheLab": "",
+          "introduction": "Zhanning, also known as Roy, helps coordinate the team’s dry-lab research, particularly molecular docking and molecular dynamics simulations. He works with members to refine computational approaches and tackle questions in modeling and analysis, helping the team make sense of what the calculations reveal."
         }
       ]
     },
@@ -102,22 +114,28 @@
       "headingLevel": 4,
       "items": [
         {
-          "anchor": "fu-xinya",
-          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-ae3a88a3c4e4-fu-xinya.avif",
-          "name": "Fu Xinya",
-          "role": "Project management/ part design",
-          "cohort": "2024",
-          "university": "",
-          "introduction": "Hello, I'm Fu Xinya. I enjoy hiking and reading, and I make time for both outdoor adventures and quiet moments with a book. I'm meticulous, resilient, and responsible in my approach to everyday challenges. My favourite snacks are yogurt and dried cranberries, and if I had to pick an animal to represent me, it would be the red panda."
-        },
-        {
           "anchor": "ruoxi-yang-student-leader",
           "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-881c648ce453-ruoxi-yang-student-leader.avif",
-          "name": "Yang Ruoxi",
-          "role": "Project management/ model development",
-          "cohort": "2024",
+          "name": "Ruoxi Yang",
+          "role": "Student Leader",
+          "academicStatus": "Undergraduate · 2024 Entry",
           "university": "",
-          "introduction": "I'm Yang Ruoxi. I love art, music, and film, and I enjoy exploring different forms of expression. I sometimes spend my free time analyzing lyrics and reading horoscopes, and I'm interested in astrology. These interests offer a glimpse into what catches my attention outside my academic work."
+          "group": "Dry Lab",
+          "tags": "Team Coordination · Modeling · Outreach",
+          "outsideTheLab": "Art · Music · Film",
+          "introduction": "Ruoxi mainly works on dry lab and, as team leader, helps connect people, coordinate work, and keep things moving. Outside iGEM, her interests span art, music, and film. She enjoys exploring different forms of expression, unpacking song lyrics, and occasionally taking a closer look at birth charts."
+        },
+        {
+          "anchor": "fu-xinya",
+          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-ae3a88a3c4e4-fu-xinya.avif",
+          "name": "Xinya Fu",
+          "role": "Team Leader",
+          "academicStatus": "Undergraduate · 2024 Entry",
+          "university": "",
+          "group": "Wet Lab",
+          "tags": "Team Coordination · Experimental Design · Wet Lab",
+          "outsideTheLab": "Hiking · Reading",
+          "introduction": "Xinya enjoys both a good hiking trail and a quiet afternoon with a book. Meticulous, resilient, and responsible, she brings a steady approach to everyday challenges. Yogurt and dried cranberries are her favorite treats, and the red panda is her animal of choice."
         }
       ]
     },
@@ -138,76 +156,112 @@
       "headingLevel": 5,
       "items": [
         {
-          "anchor": "zhang-hongbo",
-          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-9d6558058ad8-zhang-hongbo.avif",
-          "name": "Zhang Hongbo",
-          "role": "Part design",
-          "cohort": "2022",
+          "anchor": "chen-feiyue",
+          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-7b58a4e68b93-chen-feiyue.avif",
+          "name": "Feiyue Chen",
+          "role": "",
+          "academicStatus": "Undergraduate · 2024 Entry",
           "university": "",
-          "introduction": "I'm Zhang Hongbo, a first-year Ph.D. student. This is my second time participating in iGEM, which has given me valuable experience in early-stage project design and teamwork. I love playing volleyball and growing plants, hobbies that cultivate my patience and team spirit. I am highly collaborative and proactive. During the early stages of the competition, I actively engaged in multiple discussions to determine the project topic and specific experimental directions."
+          "group": "Wet Lab",
+          "tags": "Wet Lab · Modeling",
+          "outsideTheLab": "Basketball · Open-Source Tools",
+          "introduction": "Feiyue enjoys basketball, exploring open-source tools, and figuring out how things work. Patient and attentive to detail, Feiyue likes taking the time to work through a question properly. Dark chocolate and black coffee are favorite companions, with the owl as a personal mascot."
         },
         {
           "anchor": "chang-wang",
           "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-ae94ff6b24d4-chang-wang.avif",
-          "name": "Wang Chang",
-          "role": "Part design/ visual design",
-          "cohort": "2024",
+          "name": "Chang Wang",
+          "role": "",
+          "academicStatus": "Undergraduate · 2024 Entry",
           "university": "",
-          "introduction": "I’m Wang Chang, a nature enthusiast and an avid arthropod fan! My thoughts leap from one idea to another, and I’m full of unpredictable bursts of passion and a dash of good humour. I enjoy drawing, reading books, and rolling d20s down in the dungeons. Occasionally, I wish I could be a moth."
-        },
-        {
-          "anchor": "ivy-liu",
-          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-992aff1ba991-ivy-liu.avif",
-          "name": "Liu Yifei",
-          "role": "Part design",
-          "cohort": "2024",
-          "university": "",
-          "introduction": "Hello, I'm Liu Yifei, but you can also call me Ivy. I enjoy sports, travelling, and meeting new people. I'm open-minded and energetic, and I love exploring unfamiliar places and making new connections. An energy bar and orange juice are my go-to snacks."
-        },
-        {
-          "anchor": "kuang-yinzi",
-          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-ba9c6abb4187-kuang-yinzi.avif",
-          "name": "Kuang Yinzi",
-          "role": "Part design",
-          "cohort": "2025",
-          "university": "",
-          "introduction": "I'm Kuang Yinzi. I'm introverted and slow to warm up, but I become easygoing once I'm comfortable. My biggest hobby is playing video games. In sports, I like table tennis and badminton, enjoying the focused, back-and-forth rhythm of a match. When relaxing, I also listen to music and scroll through short videos. I'm also interested in synthetic biology, drawn to the combination of biology and engineering, and hope to learn more about it in the future."
-        },
-        {
-          "anchor": "yuanwen-luo",
-          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-1da0b9a76767-yuanwen-luo.avif",
-          "name": "Luo Yuanwen",
-          "role": "Part design",
-          "cohort": "2024",
-          "university": "",
-          "introduction": "I enjoy making crafts and trying different foods. Curious and attentive to detail, I like learning new things and working with others. My hobbies give me the chance to create something by hand and discover something new."
-        },
-        {
-          "anchor": "wang-qinghua",
-          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-774958f356d4-wang-qinghua.avif",
-          "name": "Wang Qinghua",
-          "role": "Part design",
-          "cohort": "2024",
-          "university": "",
-          "introduction": "I'm Wang Qinghua. I love wandering outdoors and observing tiny creatures that are easy to overlook. I find beauty in living things and am endlessly curious about the natural world. I'm warm and proactive, and I enjoy exploring my surroundings. Lemon candy and oolong tea are among my favourite treats."
+          "group": "Wet Lab",
+          "tags": "Wet Lab · Hardware · Visual Design",
+          "outsideTheLab": "Drawing · Reading · Tabletop RPGs",
+          "introduction": "Chang is a nature enthusiast with a particular fondness for arthropods. Full of wandering ideas, sudden bursts of enthusiasm, and good humor, Chang enjoys drawing, reading, and rolling d20s in dungeons. Occasionally, being a moth sounds like a perfectly reasonable alternative."
         },
         {
           "anchor": "shizhao-zheng",
           "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-f56ca1b7ea8f-shizhao-zheng.avif",
-          "name": "Zheng Shizhao",
-          "role": "Part design",
-          "cohort": "2024",
+          "name": "Shizhao Zheng",
+          "role": "",
+          "academicStatus": "Undergraduate · 2024 Entry",
           "university": "",
-          "introduction": "Zheng Shizhao is a well‑rounded cross‑discipline talent with Schrödinger‑like energy levels. He plays football, table tennis, roller skating and volleyball, a seasoned football veteran with decent skills. He enjoys erhu and diverse music styles, and is lately hooked on old Cantonese songs. An ambivert brimming with quirky ideas, he brings both surprises and occasional headaches to the team."
+          "group": "Wet Lab",
+          "tags": "Wet Lab · Hardware",
+          "outsideTheLab": "Football · Erhu · Cantonese Songs",
+          "introduction": "Shizhao has wide-ranging interests and self-described “Schrödinger-like” energy levels. A longtime football enthusiast, he also enjoys table tennis, roller skating, and volleyball. His musical tastes span erhu and, lately, old Cantonese songs. His quirky ideas bring the team plenty of surprises—and the occasional puzzled look."
+        },
+        {
+          "anchor": "ivy-liu",
+          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-992aff1ba991-ivy-liu.avif",
+          "name": "Yifei Liu",
+          "role": "",
+          "academicStatus": "Undergraduate · 2024 Entry",
+          "university": "",
+          "group": "Wet Lab",
+          "tags": "Wet Lab",
+          "outsideTheLab": "Sports · Travel",
+          "introduction": "Yifei, also known as Ivy, enjoys sports, traveling, and meeting new people. Open-minded and energetic, Ivy is always happy to explore an unfamiliar place or make a new connection. An energy bar and orange juice are the go-to combination."
+        },
+        {
+          "anchor": "kuang-yinzi",
+          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-ba9c6abb4187-kuang-yinzi.avif",
+          "name": "Yinzi Kuang",
+          "role": "",
+          "academicStatus": "Undergraduate · 2025 Entry",
+          "university": "",
+          "group": "Wet Lab",
+          "tags": "Wet Lab",
+          "outsideTheLab": "Gaming · Table Tennis · Badminton",
+          "introduction": "Yinzi may take a little time to warm up, but is easygoing once comfortable. Video games are a favorite pastime, alongside table tennis, badminton, and music. The meeting of biology and engineering sparked Yinzi’s interest in synthetic biology, with plenty more still to explore."
+        },
+        {
+          "anchor": "zhang-hongbo",
+          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-9d6558058ad8-zhang-hongbo.avif",
+          "name": "Hongbo Zhang",
+          "role": "",
+          "academicStatus": "PhD Student · 2025 Entry",
+          "university": "",
+          "group": "Wet Lab",
+          "tags": "Experimental Design",
+          "outsideTheLab": "Volleyball · Growing Plants",
+          "introduction": "Hongbo is a PhD student returning for a second iGEM season. Collaborative and proactive, Hongbo brings experience in early project design and a willingness to join the discussion. Away from research, volleyball and growing plants offer two different ways to practice patience and teamwork."
+        },
+        {
+          "anchor": "yuanwen-luo",
+          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-1da0b9a76767-yuanwen-luo.avif",
+          "name": "Yuanwen Luo",
+          "role": "",
+          "academicStatus": "Undergraduate · 2024 Entry",
+          "university": "",
+          "group": "Wet Lab",
+          "tags": "Wet Lab · Outreach",
+          "outsideTheLab": "Crafts · Food",
+          "introduction": "Yuanwen enjoys making crafts, trying different foods, and learning something new. Curious and attentive to detail, Yuanwen is equally happy creating something by hand or exchanging ideas with others. There is always another craft to try or a new dish to discover."
+        },
+        {
+          "anchor": "wang-qinghua",
+          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-774958f356d4-wang-qinghua.avif",
+          "name": "Qinghua Wang",
+          "role": "",
+          "academicStatus": "Undergraduate · 2024 Entry",
+          "university": "",
+          "group": "Wet Lab",
+          "tags": "Wet Lab · Outreach",
+          "outsideTheLab": "Nature Walks · Wildlife Watching",
+          "introduction": "Qinghua loves wandering outdoors and noticing the tiny creatures others might walk past. Warm, proactive, and curious about the natural world, Qinghua finds plenty to admire in living things. Lemon candy and oolong tea round out the list of favorites."
         },
         {
           "anchor": "ziyi-peng",
           "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-247bfac32f74-ziyi-peng.avif",
-          "name": "Peng Ziyi",
-          "role": "Part design",
-          "cohort": "2024",
+          "name": "Ziyi Peng",
+          "role": "",
+          "academicStatus": "Undergraduate · 2024 Entry",
           "university": "",
-          "introduction": "Hello, I'm Ziyi Peng, a 2024 Biological Sciences Boling Class student at Nankai University. Beyond my passion for biology, I'm a Minecraft enthusiast actively building our campus MC club, a sweet tooth, and a music lover who enjoys playing various instruments. Excited to join iGEM and connect with fellow science enthusiasts!"
+          "group": "Wet Lab",
+          "tags": "Wet Lab",
+          "outsideTheLab": "Minecraft · Music",
+          "introduction": "Ziyi studies Biological Sciences in Nankai’s Boling Class and is a keen Minecraft player helping build the campus MC club. Beyond biology, Ziyi enjoys sweets, music, and playing different instruments. iGEM offers another welcome opportunity to meet people who share that enthusiasm for science."
         }
       ]
     },
@@ -222,49 +276,52 @@
       "headingLevel": 5,
       "items": [
         {
-          "anchor": "chen-feiyue",
-          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-7b58a4e68b93-chen-feiyue.avif",
-          "name": "Chen Feiyue",
-          "role": "Model development/ part design",
-          "cohort": "2024",
+          "anchor": "zhiyuan-guan-student",
+          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-52efbbeea4ff-zhiyuan-guan-student.avif",
+          "name": "Zhiyuan Guan",
+          "role": "",
+          "academicStatus": "Undergraduate · 2024 Entry",
           "university": "",
-          "introduction": "I enjoy playing basketball and exploring open-source tools. Patient and attentive to detail, I like working through questions carefully and discovering how things work. Dark chocolate and black coffee are my favourite companions, and if I had to choose an animal to represent me, it would be the owl."
-        },
-        {
-          "anchor": "huang-xinqi",
-          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-6526de2fbc0d-huang-xinqi.avif",
-          "name": "Huang Xinqi",
-          "role": "Model development/ part design",
-          "cohort": "2024",
-          "university": "",
-          "introduction": "I enjoy reading novels and jogging, making time for both imagined worlds and the outdoors. Calm and thoughtful, I value the friendships I've formed with my teammates. Milk tea and mixed nuts are my go-to treats, and I identify with the sea turtle."
+          "group": "Dry Lab",
+          "tags": "Modeling",
+          "outsideTheLab": "Psychology · Novels",
+          "introduction": "Zhiyuan likes exploring unfamiliar subjects and giving new things a try. Psychology books and novels are particular favorites, alongside a growing collection of hobbies. Rather than claiming expertise in all of them, Zhiyuan is happy to be a curious beginner with another question to ask."
         },
         {
           "anchor": "yanmei-song-student",
           "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-a784ce285468-yanmei-song-student.avif",
-          "name": "Song Yanmei",
-          "role": "Model development",
-          "cohort": "2024",
+          "name": "Yanmei Song",
+          "role": "",
+          "academicStatus": "Undergraduate · 2024 Entry",
           "university": "",
-          "introduction": "I enjoy science-fiction films and expressing imaginative ideas through painting. My interest in science goes hand in hand with my love of art, giving me different ways to explore what intrigues me. I'm analytical and creative, and I enjoy working with others."
+          "group": "Dry Lab",
+          "tags": "Modeling",
+          "outsideTheLab": "Sci-Fi Films · Painting",
+          "introduction": "Yanmei enjoys science-fiction films and bringing imaginative ideas to life through painting. Science and art both offer room to explore whatever catches Yanmei’s curiosity. Analytical, creative, and fond of collaboration, Yanmei enjoys sharing ideas and working through them with others."
         },
         {
           "anchor": "shulan-ye-student",
           "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-6a5c4dd18fc6-shulan-ye-student.avif",
-          "name": "Ye Shulan",
-          "role": "Model development",
-          "cohort": "2024",
+          "name": "Shulan Ye",
+          "role": "",
+          "academicStatus": "Undergraduate · 2024 Entry",
           "university": "",
-          "introduction": "I've loved volleyball for a long time and wish I had more chances to get on the court. I'm also a big foodie and an avid city walker, always happy to discover a new street or something delicious. My favourite snack is potato chips, and I haven't decided on an animal to represent me yet."
+          "group": "Dry Lab",
+          "tags": "Modeling",
+          "outsideTheLab": "Volleyball · City Walks · Food",
+          "introduction": "Shulan is a longtime volleyball fan who would happily spend more time on the court. A food lover and enthusiastic city walker, Shulan also enjoys discovering unfamiliar streets and something delicious along the way. Potato chips remain a reliable favorite."
         },
         {
-          "anchor": "zhiyuan-guan-student",
-          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-52efbbeea4ff-zhiyuan-guan-student.avif",
-          "name": "Guan Zhiyuan",
-          "role": "Model development",
-          "cohort": "2024",
+          "anchor": "huang-xinqi",
+          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-6526de2fbc0d-huang-xinqi.avif",
+          "name": "Xinqi Huang",
+          "role": "",
+          "academicStatus": "Undergraduate · 2024 Entry",
           "university": "",
-          "introduction": "Hi everyone, I’m Guan Zhiyuan! I enjoy exploring unfamiliar things and trying something new. I also love a good book, especially psychology books and novels. I have plenty of hobbies, though I’m more of a curious beginner than an expert in any of them."
+          "group": "Dry Lab",
+          "tags": "Modeling · Wet Lab",
+          "outsideTheLab": "Novels · Jogging",
+          "introduction": "Xinqi enjoys novels and jogging, making room for both imagined worlds and time outdoors. Calm and thoughtful, Xinqi values the friendships formed with teammates. Milk tea and mixed nuts are favorite treats, and the sea turtle is the animal Xinqi identifies with most."
         }
       ]
     },
@@ -281,56 +338,74 @@
         {
           "anchor": "ma-peisong",
           "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-d65119ebfc39-ma-peisong.avif",
-          "name": "Ma Peisong",
-          "role": "Human practice",
-          "cohort": "",
+          "name": "Peisong Ma",
+          "role": "Human Practices Lead",
+          "academicStatus": "Master’s Student · 2024 Entry",
           "university": "",
-          "introduction": "I’m the Human Practices (HP) captain of NKU-iGEM and a master’s student in Biology and Medicine at Nankai University. Drawing on my academic background, I work to connect our research with societal needs and encourage dialogue between the team and the wider community."
-        },
-        {
-          "anchor": "song-xinying",
-          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-ec682215f511-song-xinying.avif",
-          "name": "Song Xinying",
-          "role": "Human practice",
-          "cohort": "2025",
-          "university": "",
-          "introduction": "I'm Song Xinying. I'm equally passionate about biology and art, and that passion is what brought me to this team. In my daily life, I enjoy a range of hobbies such as writing, photography, and listening to music. Though I may seem introverted at first, I have a rich inner world and look forward to meeting people from different backgrounds."
-        },
-        {
-          "anchor": "chen-yuxin",
-          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-9e2514ef0ecf-chen-yuxin.avif",
-          "name": "Chen Yuxin",
-          "role": "Human practice/ visual design",
-          "cohort": "2024",
-          "university": "",
-          "introduction": "For me, music and visuals are closely connected. I love anime music, enjoy singing, and often spend my free time creating MAD edits in Adobe After Effects. I'm gentle and optimistic, and I enjoy capturing moments and expressing my ideas through visual storytelling."
-        },
-        {
-          "anchor": "chen-jiarui",
-          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-dbfd4ebd1944-chen-jiarui.avif",
-          "name": "Chen Jiarui",
-          "role": "Human practice/wiki coding",
-          "cohort": "2025",
-          "university": "",
-          "introduction": "I'm Chen Jiarui, a computer science student and a self-described night owl. I enjoy experimenting with artificial intelligence (AI) tools and playing Valorant, and I joke that waking up is much harder than falling asleep. My favourite snack is salted chips, and if I had to choose an animal to represent me, it would be a dog."
+          "group": "Human Practices",
+          "tags": "Team Coordination · Outreach",
+          "outsideTheLab": "",
+          "introduction": "Peisong leads the Human Practices team and is a master’s student in Biology and Medicine at Nankai University. Bringing that background into conversations beyond the lab, Peisong works to connect the team’s research with societal needs and encourage dialogue with the wider community."
         },
         {
           "anchor": "kaiben-zhang",
           "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-8dd3dc2ff751-kaiben-zhang.avif",
           "name": "Kaiben Zhang",
-          "role": "Human practice",
-          "cohort": "2023",
+          "role": "",
+          "academicStatus": "Undergraduate · 2023 Entry",
           "university": "",
-          "introduction": "I'm Zhang Kaiben. I'm optimistic and enthusiastic about volunteering. I enjoy meeting people, bringing them together, and taking part in activities that connect me with the broader community. My curiosity and interest in sharing science draw me to conversations with people of different ages and backgrounds."
+          "group": "Human Practices",
+          "tags": "Team Coordination · Outreach · Partnerships",
+          "outsideTheLab": "Volunteering · Meeting People",
+          "introduction": "Kaiben is optimistic, enthusiastic about volunteering, and happiest to bring people together. A curiosity about others and an interest in sharing science make conversations with people of different ages and backgrounds especially rewarding. Community activities offer plenty of opportunities to do both."
         },
         {
           "anchor": "han-xinyu",
-          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-51693fa112fd-han-xinyu.avif",
-          "name": "Han Xinyu",
-          "role": "Human practice",
-          "cohort": "2025",
+          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/han-xinyu-20261021-c668c147530f.avif",
+          "name": "Xinyu Han",
+          "role": "",
+          "academicStatus": "Undergraduate · 2025 Entry",
           "university": "",
-          "introduction": "As a creative team member working on HP and visual design, I enjoy illustration, exploring nature, and crafting in my spare time. I specialize in turning complex scientific concepts into intuitive visuals and accessible science communication. Detail-oriented, I create engaging outreach materials that connect research with the public. Ultimately, I hope to make science more approachable to everyone."
+          "group": "Human Practices",
+          "tags": "Outreach · Visual Design",
+          "outsideTheLab": "Illustration · Nature · Crafts",
+          "introduction": "Xinyu enjoys illustration, nature, and making things by hand. Working across Human Practices and visual design, Xinyu turns complex scientific ideas into approachable images and outreach materials. Careful attention to detail supports a simple aim: making science easier for more people to connect with."
+        },
+        {
+          "anchor": "song-xinying",
+          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-ec682215f511-song-xinying.avif",
+          "name": "Xinying Song",
+          "role": "",
+          "academicStatus": "Undergraduate · 2025 Entry",
+          "university": "",
+          "group": "Human Practices",
+          "tags": "Outreach · Visual Design",
+          "outsideTheLab": "Writing · Photography · Music",
+          "introduction": "Xinying’s love of both biology and art brought them to the team. Writing, photography, and music fill much of their free time. They may seem quiet at first, but have a lively inner world and look forward to meeting people with different stories and perspectives."
+        },
+        {
+          "anchor": "chen-yuxin",
+          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-9e2514ef0ecf-chen-yuxin.avif",
+          "name": "Yuxin Chen",
+          "role": "",
+          "academicStatus": "Undergraduate · 2024 Entry",
+          "university": "",
+          "group": "Human Practices",
+          "tags": "Visual Design · Outreach",
+          "outsideTheLab": "Anime Music · Singing · Video Editing",
+          "introduction": "For Yuxin, music and images belong together. Anime music, singing, and making MAD edits in Adobe After Effects are favorite ways to spend free time. Gentle and optimistic, Yuxin enjoys capturing everyday moments and finding ways to tell stories through them."
+        },
+        {
+          "anchor": "chen-jiarui",
+          "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-dbfd4ebd1944-chen-jiarui.avif",
+          "name": "Jiarui Chen",
+          "role": "",
+          "academicStatus": "Undergraduate · 2025 Entry",
+          "university": "",
+          "group": "Human Practices",
+          "tags": "Wiki · Outreach",
+          "outsideTheLab": "AI Tools · Valorant",
+          "introduction": "Jiarui is a computer science student and self-described night owl who enjoys trying AI tools and playing Valorant. Waking up, Jiarui jokes, is much harder than falling asleep. Salted chips are a favorite snack, and a dog would be the chosen animal counterpart."
         }
       ]
     },
@@ -347,20 +422,26 @@
         {
           "anchor": "ruitong-bai",
           "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-98a8c11b1b6d-ruitong-bai.webp",
-          "name": "Bai Ruitong",
-          "role": "Visual design",
-          "cohort": "2024",
+          "name": "Ruitong Bai",
+          "role": "",
+          "academicStatus": "Undergraduate · 2024 Entry",
           "university": "Xiamen University",
-          "introduction": "I’m Blinda, an undergraduate student in Visual Communication Design. I enjoy getting lost in words and films—or simply letting my mind wander. Patient and approachable, I enjoy exchanging ideas with others and exploring different ways to express them. My imagination often takes me in unexpected directions, while my attention to detail helps me give those ideas a clear visual form."
+          "group": "Visual Design",
+          "tags": "Visual Design",
+          "outsideTheLab": "Reading · Films",
+          "introduction": "Ruitong studies Visual Communication Design at Xiamen University. She enjoys getting lost in words and films—or simply letting her mind wander. Patient and approachable, she likes exchanging ideas, then giving those unexpected turns of imagination a clear visual form."
         },
         {
           "anchor": "yiling-chen",
           "image": "https://static.igem.wiki/teams/6303/wiki/members-20261020/members-20261020-adbd83b941a2-yiling-chen.webp",
-          "name": "Chen Yiling",
-          "role": "Visual design",
-          "cohort": "2024",
+          "name": "Yiling Chen",
+          "role": "",
+          "academicStatus": "Undergraduate · 2024 Entry",
           "university": "China Academy of Art",
-          "introduction": "As a Digital Interaction major, I enjoy exploring how visuals and interactive experiences shape the way people connect with ideas. I am attentive to detail and thoughtful in my approach, while bringing enthusiasm and creative energy to collaborative work. Curious about fields beyond design, I welcome opportunities to learn from people with different backgrounds and explore new ways to express ideas."
+          "group": "Visual Design",
+          "tags": "Visual Design",
+          "outsideTheLab": "Reading · Films",
+          "introduction": "Yiling studies Digital Interaction at the China Academy of Art and enjoys exploring how visuals and interactive experiences communicate ideas. Thoughtful and attentive to detail, Yiling brings enthusiasm to collaborative work and welcomes the chance to learn from people beyond the design world."
         }
       ]
     }

@@ -3,7 +3,5 @@
 export const socialIcons = [
   {"key": "wechat", "label": "微信公众号", "color": "#07c160"},
   {"key": "xiaohongshu", "label": "小红书", "color": "#ff2442"},
-  {"key": "x", "label": "X", "color": "#000000"},
-  {"key": "youtube", "label": "YouTube", "color": "#ff0033"},
   {"key": "bilibili", "label": "bilibili", "color": "#00aeec"},
 ] as const;

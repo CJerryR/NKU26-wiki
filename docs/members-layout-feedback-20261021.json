@@ -1,0 +1,48 @@
+{
+  "scope": "Members layout feedback steps 1–6; optional subtitle/name alignment adopted",
+  "base_task_commit": "76a809e1543726d28af79d80b6873d4a5e39e176",
+  "source_content": "member source JSON unchanged, including Han Xinyu new portrait",
+  "changes": [
+    "CSS equal-height desktop rows and overlapping equal-height faces",
+    "Member flip JS no longer sets inline height or observes member face size; Credits resize logic preserved",
+    "Top-aligned 3:4 portraits",
+    "Left-aligned 16–18px biography and facts",
+    "Atomic fact segments with separators attached to following segment",
+    "52px reserved button band on both faces",
+    "Role or existing Group subtitle, no duplicated Group for fallback subtitle",
+    "Desktop back names in right column; mobile names below portrait; PI front exception retained"
+  ],
+  "validation": {
+    "build": "passed",
+    "audit": "passed technical checks; existing content-review status preserved",
+    "node_tests": 7,
+    "desktop_cards": 27,
+    "equal_row_heights": true,
+    "equal_front_back_heights": true,
+    "flip_before_after_height": [
+      445.7109375,
+      445.7109375
+    ],
+    "wet_lab_document_position_before_after": [
+      4389.1484375,
+      4389.1484375
+    ],
+    "biography_alignment": "start",
+    "viewports": [
+      {
+        "width": 390,
+        "fact_overflow": 0,
+        "button_facts_overlap": 0
+      },
+      {
+        "width": 360,
+        "fact_overflow": 0,
+        "unequal_faces": 0
+      }
+    ],
+    "dark_mobile": "visually checked"
+  },
+  "known_tradeoff": "Mobile front reserves enough height for back biography; bottom whitespace is intentional to prevent page jumps.",
+  "preview_port": 4391,
+  "publication": "not-published"
+}

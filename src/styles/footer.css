@@ -103,3 +103,15 @@
   .site-footer__credits summary { display: list-item; min-height: 44px; padding-block: 10px; }
   .site-footer__sponsors { justify-self: start; }
 }
+
+/* Team identity and the WeChat account card share the footer icon row. */
+.site-footer__resources .site-footer__social[data-resource="team"] { background: #fff8eb; }
+.site-footer__team-mark { display: block; width: 28px; height: 36px; object-fit: contain; }
+.site-footer__wechat { position: relative; }
+.site-footer__wechat summary { list-style: none; cursor: pointer; }
+.site-footer__wechat summary::-webkit-details-marker { display: none; }
+.site-footer__wechat-card { position: absolute; z-index: 10; bottom: calc(100% + 12px); right: 0; width: min(280px, calc(100vw - 60px)); box-sizing: border-box; padding: 16px; border-radius: 12px; background: var(--loam-3); color: var(--cream); border: 1px solid var(--line-loam); box-shadow: 0 8px 28px rgb(0 0 0 / .3); font-size: 14px; line-height: 1.6; }
+.site-footer__wechat-card p { margin-top: 8px; }
+@media (max-width: 760px) { .site-footer__wechat-card { right: auto; left: 0; } }
+
+.site-footer__wechat-qr { display: block; box-sizing: content-box; width: 144px; height: 144px; max-width: calc(100% - 24px); object-fit: contain; margin: 12px auto 0; padding: 12px; background: #fff; border-radius: 6px; }
