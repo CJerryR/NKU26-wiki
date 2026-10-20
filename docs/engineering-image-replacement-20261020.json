@@ -1,0 +1,17 @@
+{
+  "source": "User-supplied corrected Engineering circuit diagram PNG",
+  "source_sha256": "dd989066b80dd874a5529db3de79a5ad993a53bfa9469091bab2d30df9610f2e",
+  "source_dimensions": [
+    3011,
+    1862
+  ],
+  "source_bytes": 125698,
+  "upload_name": "engineering-circuit-border-dd989066b80d.png",
+  "cdn_url": "https://static.igem.wiki/teams/6303/wiki/engineering-20261020/engineering-circuit-border-dd989066b80d.avif",
+  "cdn_sha256": "1ba5b868f1989266ded949fd040ef639a7477a9fa8a604f45e0caafec1281fa6",
+  "cdn_bytes": 40372,
+  "previous_url": "https://static.igem.wiki/teams/6303/wiki/engineering-20261020/sobl-e530246a44cd.svg",
+  "verification": "Official Uploads table URL observed; HTTP image downloaded successfully; platform converted PNG to AVIF",
+  "authorization": "User explicitly requested replacement and direct upload/publication",
+  "local_original_archive": "workspace/evidence/engineering-image/engineering-circuit-border-dd989066b80d.png"
+}

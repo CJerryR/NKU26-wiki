@@ -15,7 +15,7 @@ hidden: false
 ---
 :::figure
 
-![Gene circuit overview showing GPR2 membrane-localization verification, GAL pathway engineering, and the synthetic transcription factor.](https://static.igem.wiki/teams/6303/wiki/engineering-20261020/sobl-e530246a44cd.svg)
+![Gene circuit overview showing GPR2 membrane-localization verification, GAL pathway engineering, and the synthetic transcription factor.](https://static.igem.wiki/teams/6303/wiki/engineering-20261020/engineering-circuit-border-dd989066b80d.avif)
 
 
 
