@@ -445,7 +445,7 @@ This cycle is hereby concluded. The strains constructed in this cycle can only f
 
 <p>We reason that an ideal test strip substrate should possess high cell-loading capacity, excellent mechanical stability, reliable batch-to-batch consistency, and favorable water-retaining properties. Therefore, we initiate this cycle.</p>
 
-#### Design {#results-3-1-design toc="Design"}
+#### Design {#results-3-1-design toc="Design | selecting candidate substrates"}
 
 <p>Based on the criteria, we select seven candidate substrates with representative properties: qualitative filter paper(Cellulose), weighing paper (sulfite paper), lens cleaning paper(Cotton fiber), laboratory wipes(Virgin wood pulp), thin glass fiber filter paper (Whatman™ GF/A), thick glass fiber filter paper (Whatman™ GF/B), and cellulose acetate filter paper.</p>
 
@@ -453,7 +453,7 @@ This cycle is hereby concluded. The strains constructed in this cycle can only f
 
 <p>Subsequently, for the substrates demonstrating superior properties, we conduct copper sulfate solution wicking experiments to evaluate their water absorption capacity.</p>
 
-#### Build and test {#results-3-1-build-test toc="Build & Test"}
+#### Build and test {#results-3-1-build-test toc="Build and test | comparing cell binding and water absorption"}
 
 <p>First, we evaluate the cell-binding capacity of each substrate. The results are summarized in Table 1 below:</p>
 
@@ -475,7 +475,7 @@ This cycle is hereby concluded. The strains constructed in this cycle can only f
 
 <p>The results demonstrate that GF/B not only exhibits strong binding capacity with yeast cells but also possesses superior water absorption ability.Learn</p>
 
-#### Learn {#results-3-1-learn toc="Learn"}
+#### Learn {#results-3-1-learn toc="Learn | selecting GF/B as the test-strip substrate"}
 
 <p>Based on the combined experimental results, Whatman™ GF/B thick glass fiber filter paper is selected as the final substrate for the test strip. GF/B demonstrates a liquid-loading capacity far exceeding other materials, allowing it to instantly absorb high-viscosity protectants without surface beading.</p>
 
@@ -487,7 +487,7 @@ This cycle is hereby concluded. The strains constructed in this cycle can only f
 
 <p>To address this, we optimize immobilization across two dimensions—physical spatial confinement and biochemical/hardware sample loading. By creating hydrophobic barrier masks, refining protectant formulations, and introducing a vacuum-assisted filtration device, we achieve high-efficiency, stable cell immobilization on the test strip.</p>
 
-#### Design {#results-3-2-design toc="Design"}
+#### Design {#results-3-2-design toc="Design | planning cell immobilization and loading"}
 
 <p>To refine the yeast cell immobilization process, we use adhesive masks to define the cell-immobilization zones and apply ergo.® 5300 instant adhesive vapor deposition to fabricate localized hydrophilic areas on the filter paper, thereby resolving issues such as lateral wicking and uneven cell distribution. </p>
 
@@ -495,7 +495,7 @@ This cycle is hereby concluded. The strains constructed in this cycle can only f
 
 <p>In addition, we design a vacuum-assisted filtration spotting device to resolve the issue of high-viscosity protectant residues.</p>
 
-#### Build and test {#results-3-2-build-test toc="Build & Test"}
+#### Build and test {#results-3-2-build-test toc="Build and test | evaluating coatings, protectants, and cell loading"}
 
 :::figure
 
@@ -545,7 +545,7 @@ This cycle is hereby concluded. The strains constructed in this cycle can only f
 
 <p>Integrating all the above methods and approaches, we prepare and obtain a batch of cell-loaded freeze-dried test strips available for downstream engineering (Figure 34).</p>
 
-#### Learn {#results-3-2-learn toc="Learn"}
+#### Learn {#results-3-2-learn toc="Learn | standardizing cell immobilization"}
 
 <p>In this cycle, combining gas-phase hydrophobic coating with the refined freeze-drying protectant successfully confines the cells within a uniform circular area; the vacuum-assisted spotting device eliminates liquid residue inside pipette tips, achieving controlled and quantitative cell-loading on the test strips; and we have successfully prepared freeze-dried live-cell test strips, as shown in Figure 34. Next, we officially proceed to optimize the color development rate of the test strips.</p>
 
@@ -553,11 +553,11 @@ This cycle is hereby concluded. The strains constructed in this cycle can only f
 
 <p>After completing the fabrication of the freeze-dried test strips, we require them to undergo rapid resuscitation and color development; therefore, we initiate this cycle.</p>
 
-#### Design {#results-3-3-design toc="Design"}
+#### Design {#results-3-3-design toc="Design | planning reactivation and color development tests"}
 
 <p>To meet the requirements of rapid detection, freeze-dried cells must quickly emerge from their dormant state upon contact with liquid. First, to evaluate the feasibility of resuscitation, we immerse the freeze-dried test strips into <strong>yeast nitrogen base</strong>-free <strong>synthetic complete (SC)</strong> medium and <strong>phosphate-buffered saline</strong> solution, respectively, and assess the impact of the amine donor <strong>tryptophan (Trp)</strong> on color development stability. Next, focusing on the key limiting factors of the betaxanthin biosynthesis pathway, we systematically evaluate the effects of <strong>tyrosine</strong> concentration (precursor), surfactants (precursor amino acid uptake), antioxidant protectants, and glucose concentration (carbon source).</p>
 
-#### Build and test {#results-3-3-build-test toc="Build & Test"}
+#### Build and test {#results-3-3-build-test toc="Build and test | comparing reactivation and color development conditions"}
 
 <p>First, we complete a continuous observation and recording of freeze-dried test strip resuscitation via time-lapse photography (Video 1).</p>
 
@@ -567,7 +567,7 @@ This cycle is hereby concluded. The strains constructed in this cycle can only f
 
 <iframe class="author-screening-figure" title="Reactivation medium screening" src="/embeds/results-20261019/index.html" loading="lazy" sandbox="allow-scripts" style="width:100%;height:980px;border:0"></iframe><p class="figure-caption">Figure 35. Control experiments for color development conditions. </p>
 
-#### Learn {#results-3-3-learn toc="Learn"}
+#### Learn {#results-3-3-learn toc="Learn | refining reactivation conditions and test-strip packaging"}
 
 <p>We observe that YNB-free SC medium as a resuscitation solution performs significantly better than phosphate-buffered saline solution, and the amine donor Trp stabilizes yeast color development.</p>
 
@@ -591,7 +591,15 @@ This cycle is hereby concluded. The strains constructed in this cycle can only f
 
 ### 3.4 References {#results-dbtl3-references toc="References"}
 
-<p>6. Miller, R. A., Brown, G., Barron, E., Luther, J. L., Lieberman, M., &amp; Goodson, H. V. (2020). Development of a paper-immobilized yeast biosensor for the detection of physiological concentrations of doxycycline in technology-limited settings. <em>Analytical Methods</em>, <em>12</em>(16), 2123–2132. https://doi.org/10.1039/d0ay00001a</p>
+<p>Rachel A. Miller, Galen Brown, Elsa Barron, Jamie L. Luther, Marya Lieberman, Holly V. Goodson; Development of a paper-immobilized yeast biosensor for the detection of physiological concentrations of doxycycline in technology-limited settings. <em>Anal. Methods</em> 2020; 12 (16): 2123–2132. <a href="https://doi.org/10.1039/d0ay00001a">https://doi.org/10.1039/d0ay00001a</a></p>
+
+<p>Parbir S. Grewal, Cyrus Modavi, Zachary N. Russ, Nicholas C. Harris, John E. Dueber, Bioproduction of a betalain color palette in Saccharomyces cerevisiae, Metabolic Engineering, Volume 45, 2018, Pages 180-188, ISSN 1096-7176, <a href="https://doi.org/10.1016/j.ymben.2017.12.008">https://doi.org/10.1016/j.ymben.2017.12.008</a>.</p>
+
+<p>Ostrov N, Jimenez M, Billerbeck S, et al. A modular yeast biosensor for low-cost point-of-care pathogen detection. Sci Adv. 2017;3(6):e1603221. doi:10.1126/sciadv.1603221.</p>
+
+<p>Shin HJ, Park HH, Lim WK. Freeze-dried recombinant bacteria for on-site detection of phenolic compounds by color change. J Biotechnol. 2005;119(1):36-43. doi:10.1016/j.jbiotec.2005.06.002.</p>
+
+<p>Poirier I, Marechal PA, Richard S, Gervais P. Saccharomyces cerevisiae viability is strongly dependant on rehydration kinetics and the temperature of dried cells. J Appl Microbiol. 1999;86(1):87-92. doi:10.1046/j.1365-2672.1999.00638.x.</p>
 
 ## Future work {#results-future-work toc="Future work"}
 

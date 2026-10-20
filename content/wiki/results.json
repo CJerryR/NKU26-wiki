@@ -716,7 +716,7 @@
       "_template": "heading",
       "level": 4,
       "text": "Design",
-      "attributes": "#results-3-1-design toc=\"Design\""
+      "attributes": "#results-3-1-design toc=\"Design | selecting candidate substrates\""
     },
     {
       "_template": "text",
@@ -734,7 +734,7 @@
       "_template": "heading",
       "level": 4,
       "text": "Build and test",
-      "attributes": "#results-3-1-build-test toc=\"Build & Test\""
+      "attributes": "#results-3-1-build-test toc=\"Build and test | comparing cell binding and water absorption\""
     },
     {
       "_template": "text",
@@ -925,7 +925,7 @@
       "_template": "heading",
       "level": 4,
       "text": "Learn",
-      "attributes": "#results-3-1-learn toc=\"Learn\""
+      "attributes": "#results-3-1-learn toc=\"Learn | selecting GF/B as the test-strip substrate\""
     },
     {
       "_template": "text",
@@ -953,7 +953,7 @@
       "_template": "heading",
       "level": 4,
       "text": "Design",
-      "attributes": "#results-3-2-design toc=\"Design\""
+      "attributes": "#results-3-2-design toc=\"Design | planning cell immobilization and loading\""
     },
     {
       "_template": "text",
@@ -971,7 +971,7 @@
       "_template": "heading",
       "level": 4,
       "text": "Build and test",
-      "attributes": "#results-3-2-build-test toc=\"Build & Test\""
+      "attributes": "#results-3-2-build-test toc=\"Build and test | evaluating coatings, protectants, and cell loading\""
     },
     {
       "_template": "image",
@@ -1017,7 +1017,7 @@
       "_template": "heading",
       "level": 4,
       "text": "Learn",
-      "attributes": "#results-3-2-learn toc=\"Learn\""
+      "attributes": "#results-3-2-learn toc=\"Learn | standardizing cell immobilization\""
     },
     {
       "_template": "text",
@@ -1037,7 +1037,7 @@
       "_template": "heading",
       "level": 4,
       "text": "Design",
-      "attributes": "#results-3-3-design toc=\"Design\""
+      "attributes": "#results-3-3-design toc=\"Design | planning reactivation and color development tests\""
     },
     {
       "_template": "text",
@@ -1047,7 +1047,7 @@
       "_template": "heading",
       "level": 4,
       "text": "Build and test",
-      "attributes": "#results-3-3-build-test toc=\"Build & Test\""
+      "attributes": "#results-3-3-build-test toc=\"Build and test | comparing reactivation and color development conditions\""
     },
     {
       "_template": "text",
@@ -1069,7 +1069,7 @@
       "_template": "heading",
       "level": 4,
       "text": "Learn",
-      "attributes": "#results-3-3-learn toc=\"Learn\""
+      "attributes": "#results-3-3-learn toc=\"Learn | refining reactivation conditions and test-strip packaging\""
     },
     {
       "_template": "text",
@@ -1101,7 +1101,23 @@
     },
     {
       "_template": "text",
-      "body": "<p>6. Miller, R. A., Brown, G., Barron, E., Luther, J. L., Lieberman, M., &amp; Goodson, H. V. (2020). Development of a paper-immobilized yeast biosensor for the detection of physiological concentrations of doxycycline in technology-limited settings. <em>Analytical Methods</em>, <em>12</em>(16), 2123–2132. https://doi.org/10.1039/d0ay00001a</p>"
+      "body": "<p>Rachel A. Miller, Galen Brown, Elsa Barron, Jamie L. Luther, Marya Lieberman, Holly V. Goodson; Development of a paper-immobilized yeast biosensor for the detection of physiological concentrations of doxycycline in technology-limited settings. <em>Anal. Methods</em> 2020; 12 (16): 2123–2132. <a href=\"https://doi.org/10.1039/d0ay00001a\">https://doi.org/10.1039/d0ay00001a</a></p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p>Parbir S. Grewal, Cyrus Modavi, Zachary N. Russ, Nicholas C. Harris, John E. Dueber, Bioproduction of a betalain color palette in Saccharomyces cerevisiae, Metabolic Engineering, Volume 45, 2018, Pages 180-188, ISSN 1096-7176, <a href=\"https://doi.org/10.1016/j.ymben.2017.12.008\">https://doi.org/10.1016/j.ymben.2017.12.008</a>.</p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p>Ostrov N, Jimenez M, Billerbeck S, et al. A modular yeast biosensor for low-cost point-of-care pathogen detection. Sci Adv. 2017;3(6):e1603221. doi:10.1126/sciadv.1603221.</p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p>Shin HJ, Park HH, Lim WK. Freeze-dried recombinant bacteria for on-site detection of phenolic compounds by color change. J Biotechnol. 2005;119(1):36-43. doi:10.1016/j.jbiotec.2005.06.002.</p>"
+    },
+    {
+      "_template": "text",
+      "body": "<p>Poirier I, Marechal PA, Richard S, Gervais P. Saccharomyces cerevisiae viability is strongly dependant on rehydration kinetics and the temperature of dried cells. J Appl Microbiol. 1999;86(1):87-92. doi:10.1046/j.1365-2672.1999.00638.x.</p>"
     },
     {
       "_template": "heading",
