@@ -98,7 +98,7 @@ function wireCredit(card: HTMLElement): void {
       rows.forEach(row => measure.append(row.cloneNode(true)));
       body.append(measure);
       const top = visible.getBoundingClientRect().top;
-      const available = bodyRect.top + tile.height - top - parseFloat(getComputedStyle(body).paddingBottom);
+      const available = tile.bottom - top - parseFloat(getComputedStyle(body).paddingBottom);
       if (measure.getBoundingClientRect().height <= available) {
         shown = rows.length;
       } else {

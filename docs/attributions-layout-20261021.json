@@ -1,0 +1,26 @@
+{
+  "scope": "Attribution cards only",
+  "names": "English only, centered, 22px, no inner nameplate",
+  "height": "Preserved portrait column and 41px name area; fit complete contribution rows under portrait/name height; reserve button space",
+  "spacing": "Tasks lower gap 22px to 16px; summary upper gap 14px to 10px",
+  "example": "Shizhao Zheng: 3 visible entries, previously 2, same standard height",
+  "validation": {
+    "build": "passed",
+    "audit": "passed technical checks",
+    "person_rendering_tests": "3 passed",
+    "cards": 27,
+    "contributions": 138,
+    "desktop_height_excess": 0,
+    "viewports": [
+      2504,
+      1440,
+      1024,
+      390
+    ],
+    "horizontal_overflow": false,
+    "names_centered": true,
+    "chinese_names_rendered": 0,
+    "name_frames_rendered": 0
+  },
+  "publication": "not published"
+}
