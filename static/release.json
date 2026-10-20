@@ -1,7 +1,7 @@
 {
-  "version": "10.2.20",
-  "label": "DBTL-3 evidence components, deep heading navigation, Model names, and AI credits",
-  "prepared_at": "2026-10-20T19:44:21+08:00",
+  "version": "10.2.21",
+  "label": "Wet lab table corrections and source scientific formatting",
+  "prepared_at": "2026-10-20T20:26:52+08:00",
   "media": "84 unchanged original images plus 4 user-authorized GPS-only cleaned images; all decoded frames unchanged; 12 complete historical source documents",
   "release_kind": "stage",
   "team_content_review": "Scientific final review pending; source-version choices authorized by user",
@@ -10,7 +10,7 @@
     "commit": "16770d5c28ddf7bc41f8d90445c44d80a28801d5",
     "published_at_local": "2026-10-18 05:04:34"
   },
-  "release_id": "combined-ai-credit-20261020-v10.2.20",
+  "release_id": "wetlab-tables-20261020-v10.2.21",
   "mobile_layout_check": "390px Members rendered without overflow; desktop Description, Parts/plasmid, Attributions/puzzle checked; 4 second delayed CDN uses inline preview then upgrades",
   "source_fidelity": {
     "original_source_files_verified": 80,
@@ -275,13 +275,8 @@
     "published_at_beijing": "2026-10-20 12:26:16"
   },
   "integration": {
-    "candidate_commit": "18cf3c63885cedb77cb5010e1fd99e5e786f33a5",
-    "source_commits": {
-      "afternoon-review-confirmed-labels-and-toc": "20e422291d9ae8988d9a4e43614c035948e38e70",
-      "afternoon-review-dbtl3-components": "f27abdb75c98b8ff46d93834bf8ba7e68b8aa997",
-      "ai-credit": "2aabd07022ac345625836801617df8b97ede2d97"
-    },
-    "baseline_commit": "8502ff5cb13ea3f626bf8d18a8dac96fb9e81e46"
+    "task_commit": "4c5c5b8d1ed494db273a0c0e5a035d138751a007",
+    "baseline_commit": "cf98239ed6b8a76a1970bcf19e2ab51c3e6c096b"
   },
   "ai_credit": {
     "source_task_commit": "2aabd07022ac345625836801617df8b97ede2d97",
@@ -299,5 +294,13 @@
     "stage_group_count": 9,
     "validation": "DBTL-3 source fidelity, rendered text/images/headings/TOC, Tina schema, 7 component tests, 30-page build, and content audit passed",
     "limits": "Screenshots use placeholder aspect-ratio illustrations in the attached checkpoint; final component layout has not received a separate scientific-content approval."
+  },
+  "wetlab_tables": {
+    "source": "Fu Xinya Feishu table revision list; user authorized all changes and publication",
+    "tables": 4,
+    "rows": 52,
+    "text_cells_corrected": 7,
+    "formatting": "Original scientific italics restored in all four tables",
+    "source_commit": "4c5c5b8d1ed494db273a0c0e5a035d138751a007"
   }
 }

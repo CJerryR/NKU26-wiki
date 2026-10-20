@@ -765,7 +765,7 @@
     },
     {
       "title": "Table 3 strains designed and constructed in this project",
-      "csv": "Number,Description\nNKU-Y01,\"Matα; ura3-52, trp1-289, leu2-3,112,his3Δ1; MAL2-8c; SUC2（Saccharomyces cerevisiae CEN.PK2-1C）\"\nNKU-Y02,Strain CEN.PK2-1C derivative with ΔGal80\nNKU-Y03,Strain NKU-Y02 derivative with -GPR2-sfGFP\nNKU-Y04,Strain NKU-Y02 transformed with pRS315-MjDOD-BvCYP76AD5\nNKU-Y05,Strain NKU-Y02 derivative with -sTF\nNKU-Y06,Strain NKU-Y05 derivative with -MjDOD :  -BvCYP76AD5\nNKU-Y07,Strain NKU-Y06 derivative with -GPR2\nNKU-Y08,Strain NKU-Y06 derivative with -GPR2-N84V\nNKU-Y09,Strain NKU-Y06 derivative with -GPR2-V368R\n",
+      "csv": "Number,Description\nNKU-Y01,\"Matα; ura3-52, trp1-289, leu2-3,112,his3Δ1; MAL2-8c; SUC2（Saccharomyces cerevisiae CEN.PK2-1C）\"\nNKU-Y02,Strain CEN.PK2-1C derivative with ΔGal80\nNKU-Y03,Strain NKU-Y02 derivative with TEF1p-GPR2-sfGFP\nNKU-Y04,Strain NKU-Y02 transformed with pRS315-MjDOD-BvCYP76AD5\nNKU-Y05,Strain NKU-Y02 derivative with STE12p-sTF\nNKU-Y06,Strain NKU-Y05 derivative with Gal1p-MjDOD : Gal10p-BvCYP76AD5\nNKU-Y07,Strain NKU-Y06 derivative with TEF1p-GPR2\nNKU-Y08,Strain NKU-Y06 derivative with TEF1p-GPR2-N84V\nNKU-Y09,Strain NKU-Y06 derivative with TEF1p-GPR2-V368R\n",
       "_template": "datatable",
       "sourceCellRuns": [
         [
@@ -791,11 +791,37 @@
           ],
           [
             {
-              "text": "Matα; ura3-52, trp1-289, leu2-3,112,his3Δ1; MAL2-8c; SUC2",
+              "text": "Matα; ",
               "format": []
             },
             {
-              "text": "（",
+              "text": "ura3-52",
+              "format": [
+                "i"
+              ]
+            },
+            {
+              "text": ", ",
+              "format": []
+            },
+            {
+              "text": "trp1-289",
+              "format": [
+                "i"
+              ]
+            },
+            {
+              "text": ", ",
+              "format": []
+            },
+            {
+              "text": "leu2-3,112,his3Δ1",
+              "format": [
+                "i"
+              ]
+            },
+            {
+              "text": "; MAL2-8c; SUC2（",
               "format": []
             },
             {
@@ -805,11 +831,7 @@
               ]
             },
             {
-              "text": " CEN.PK2-1C",
-              "format": []
-            },
-            {
-              "text": "）",
+              "text": " CEN.PK2-1C）",
               "format": []
             }
           ]
@@ -847,7 +869,7 @@
               "format": []
             },
             {
-              "text": "-GPR2-sfGFP",
+              "text": "TEF1p-GPR2-sfGFP",
               "format": [
                 "i"
               ]
@@ -881,7 +903,7 @@
               "format": []
             },
             {
-              "text": "-sTF",
+              "text": "STE12p-sTF",
               "format": [
                 "i"
               ]
@@ -901,13 +923,7 @@
               "format": []
             },
             {
-              "text": "-MjDOD :  ",
-              "format": [
-                "i"
-              ]
-            },
-            {
-              "text": "-BvCYP76AD5",
+              "text": "Gal1p-MjDOD : Gal10p-BvCYP76AD5",
               "format": [
                 "i"
               ]
@@ -927,7 +943,7 @@
               "format": []
             },
             {
-              "text": "-GPR2",
+              "text": "TEF1p-GPR2",
               "format": [
                 "i"
               ]
@@ -947,14 +963,10 @@
               "format": []
             },
             {
-              "text": "-GPR2-",
+              "text": "TEF1p-GPR2-N84V",
               "format": [
                 "i"
               ]
-            },
-            {
-              "text": "N84V",
-              "format": []
             }
           ]
         ],
@@ -971,14 +983,10 @@
               "format": []
             },
             {
-              "text": "-GPR2-",
+              "text": "TEF1p-GPR2-V368R",
               "format": [
                 "i"
               ]
-            },
-            {
-              "text": "V368R",
-              "format": []
             }
           ]
         ]

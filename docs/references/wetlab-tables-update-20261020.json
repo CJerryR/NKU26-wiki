@@ -1,0 +1,530 @@
+{
+  "task": "wetlab-tables",
+  "baseline": "cf98239ed6b8a76a1970bcf19e2ab51c3e6c096b",
+  "source_url": "https://nankai.feishu.cn/wiki/NTaOwfMYOiKZTSkWvWWcX3BSnWd",
+  "source_pdf_sha256": "f6612eb29395cc9a4edcfd876b13c623dd38057d1aeb32953d637a9e92644aef",
+  "authorization": "User: 那你全部改完",
+  "changes": [
+    {
+      "table": "Table 3 strains designed and constructed in this project",
+      "row": "NKU-Y03",
+      "kind": "content",
+      "before": "Strain NKU-Y02 derivative with -GPR2-sfGFP",
+      "after": "Strain NKU-Y02 derivative with TEF1p-GPR2-sfGFP"
+    },
+    {
+      "table": "Table 3 strains designed and constructed in this project",
+      "row": "NKU-Y05",
+      "kind": "content",
+      "before": "Strain NKU-Y02 derivative with -sTF",
+      "after": "Strain NKU-Y02 derivative with STE12p-sTF"
+    },
+    {
+      "table": "Table 3 strains designed and constructed in this project",
+      "row": "NKU-Y06",
+      "kind": "content",
+      "before": "Strain NKU-Y05 derivative with -MjDOD :  -BvCYP76AD5",
+      "after": "Strain NKU-Y05 derivative with Gal1p-MjDOD : Gal10p-BvCYP76AD5"
+    },
+    {
+      "table": "Table 3 strains designed and constructed in this project",
+      "row": "NKU-Y07",
+      "kind": "content",
+      "before": "Strain NKU-Y06 derivative with -GPR2",
+      "after": "Strain NKU-Y06 derivative with TEF1p-GPR2"
+    },
+    {
+      "table": "Table 3 strains designed and constructed in this project",
+      "row": "NKU-Y08",
+      "kind": "content",
+      "before": "Strain NKU-Y06 derivative with -GPR2-N84V",
+      "after": "Strain NKU-Y06 derivative with TEF1p-GPR2-N84V"
+    },
+    {
+      "table": "Table 3 strains designed and constructed in this project",
+      "row": "NKU-Y09",
+      "kind": "content",
+      "before": "Strain NKU-Y06 derivative with -GPR2-V368R",
+      "after": "Strain NKU-Y06 derivative with TEF1p-GPR2-V368R"
+    },
+    {
+      "table": "Table 3 strains designed and constructed in this project",
+      "row": "NKU-Y01",
+      "column": 1,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "ura3-52",
+        "trp1-289",
+        "leu2-3,112,his3Δ1"
+      ]
+    },
+    {
+      "table": "Composite parts",
+      "row": "BBa_260J9X0X",
+      "kind": "content",
+      "before": "",
+      "after": "This part contains the GPR2 cDNA sequence fused to sfGFP via a flexible linker, with homology arms for the knock-in of the constitutively expressed GPR2-sfGFP fusion gene."
+    },
+    {
+      "table": "Basic parts",
+      "row": "Gal80 5’ homology region",
+      "column": 0,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "Gal80"
+      ]
+    },
+    {
+      "table": "Basic parts",
+      "row": "Gal80 5’ homology region",
+      "column": 3,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "Gal80"
+      ]
+    },
+    {
+      "table": "Basic parts",
+      "row": "Gal80 3’ homology region",
+      "column": 0,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "Gal80"
+      ]
+    },
+    {
+      "table": "Basic parts",
+      "row": "Gal80 3’ homology region",
+      "column": 3,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "Gal80"
+      ]
+    },
+    {
+      "table": "Basic parts",
+      "row": "GPR2 cDNA",
+      "column": 0,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "GPR2"
+      ]
+    },
+    {
+      "table": "Basic parts",
+      "row": "GPR2 cDNA",
+      "column": 3,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "GPR2",
+        "Orbilia oligospora"
+      ]
+    },
+    {
+      "table": "Basic parts",
+      "row": "STE2 5’ homology region",
+      "column": 0,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "STE2"
+      ]
+    },
+    {
+      "table": "Basic parts",
+      "row": "STE2 5’ homology region",
+      "column": 3,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "STE2",
+        "GPR2-sfGFP"
+      ]
+    },
+    {
+      "table": "Basic parts",
+      "row": "STE2 3’ homology region",
+      "column": 0,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "STE2"
+      ]
+    },
+    {
+      "table": "Basic parts",
+      "row": "STE2 3’ homology region",
+      "column": 3,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "STE2",
+        "GPR2-sfGFP"
+      ]
+    },
+    {
+      "table": "Basic parts",
+      "row": "sfGFP",
+      "column": 0,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "sfGFP"
+      ]
+    },
+    {
+      "table": "Basic parts",
+      "row": "sfGFP",
+      "column": 3,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "GPR2"
+      ]
+    },
+    {
+      "table": "Basic parts",
+      "row": "pRS315 backbone",
+      "column": 3,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "E. coli"
+      ]
+    },
+    {
+      "table": "Basic parts",
+      "row": "Gal4 3‘ homology region",
+      "column": 0,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "Gal4"
+      ]
+    },
+    {
+      "table": "Basic parts",
+      "row": "Gal4 3‘ homology region",
+      "column": 3,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "Gal4",
+        "DOD-CYP76AD5"
+      ]
+    },
+    {
+      "table": "Basic parts",
+      "row": "Gal4 5‘ homology region",
+      "column": 0,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "Gal4"
+      ]
+    },
+    {
+      "table": "Basic parts",
+      "row": "Gal4 5‘ homology region",
+      "column": 3,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "Gal4",
+        "DOD-CYP76AD5"
+      ]
+    },
+    {
+      "table": "Basic parts",
+      "row": "MjDOD",
+      "column": 0,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "MjDOD"
+      ]
+    },
+    {
+      "table": "Basic parts",
+      "row": "BvCYP76AD5",
+      "column": 0,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "BvCYP76AD5"
+      ]
+    },
+    {
+      "table": "Basic parts",
+      "row": "p414-TEF1p-Cas9-CYC1t",
+      "column": 3,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "Cas9"
+      ]
+    },
+    {
+      "table": "Basic parts",
+      "row": "STE12 5' homology region",
+      "column": 0,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "STE12"
+      ]
+    },
+    {
+      "table": "Basic parts",
+      "row": "STE12 3' homology region",
+      "column": 0,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "STE12"
+      ]
+    },
+    {
+      "table": "Basic parts",
+      "row": "GPR2（N84V） cDNA",
+      "column": 0,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "GPR2（N84V）"
+      ]
+    },
+    {
+      "table": "Basic parts",
+      "row": "GPR2（N84V） cDNA",
+      "column": 3,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "GPR2"
+      ]
+    },
+    {
+      "table": "Basic parts",
+      "row": "GPR2（V368R） cDNA",
+      "column": 0,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "GPR2（V368R）"
+      ]
+    },
+    {
+      "table": "Basic parts",
+      "row": "GPR2（V368R） cDNA",
+      "column": 3,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "GPR2"
+      ]
+    },
+    {
+      "table": "Basic parts",
+      "row": "p426-SNR52p-gSTE2-SUP4t",
+      "column": 3,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "STE2"
+      ]
+    },
+    {
+      "table": "Basic parts",
+      "row": "p426-SNR52p-gSTE12-SUP4t",
+      "column": 3,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "STE12"
+      ]
+    },
+    {
+      "table": "Basic parts",
+      "row": "p426-SNR52p-gGal4-SUP4t",
+      "column": 3,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "Gal4"
+      ]
+    },
+    {
+      "table": "Basic parts",
+      "row": "pScCEN-ADH1-FMN(yeast)-Myc-6×His",
+      "column": 3,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "FMN"
+      ]
+    },
+    {
+      "table": "Composite parts",
+      "row": "KOGAL80",
+      "column": 0,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "GAL80"
+      ]
+    },
+    {
+      "table": "Composite parts",
+      "row": "KOGAL80",
+      "column": 3,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "Gal80"
+      ]
+    },
+    {
+      "table": "Composite parts",
+      "row": "TRP1 marker gene",
+      "column": 0,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "TRP1"
+      ]
+    },
+    {
+      "table": "Composite parts",
+      "row": "TRP1 marker gene",
+      "column": 3,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "Trp1"
+      ]
+    },
+    {
+      "table": "Composite parts",
+      "row": "LEU2 marker gene",
+      "column": 0,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "LEU2"
+      ]
+    },
+    {
+      "table": "Composite parts",
+      "row": "LEU2 marker gene",
+      "column": 3,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "LEU2"
+      ]
+    },
+    {
+      "table": "Composite parts",
+      "row": "pRS315-TEF1p-GPR2-sfGFP",
+      "column": 3,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "GPR2",
+        "sfGFP"
+      ]
+    },
+    {
+      "table": "Composite parts",
+      "row": "Ura3 marker gene",
+      "column": 0,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "Ura3"
+      ]
+    },
+    {
+      "table": "Composite parts",
+      "row": "Ura3 marker gene",
+      "column": 3,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "Ura3"
+      ]
+    },
+    {
+      "table": "Composite parts",
+      "row": "Gal1/10bp-Betaxanthin Expression Cassette",
+      "column": 3,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "MjDOD",
+        "BvCYP76AD5"
+      ]
+    },
+    {
+      "table": "Composite parts",
+      "row": "pRS315-TEF1p-GPR2",
+      "column": 3,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "GPR2"
+      ]
+    },
+    {
+      "table": "Composite parts",
+      "row": "pRS315-TEF1p-GPR2-N84V",
+      "column": 3,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "GPR2"
+      ]
+    },
+    {
+      "table": "Composite parts",
+      "row": "pRS315-TEF1p-GPR2-V368R",
+      "column": 3,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "GPR2"
+      ]
+    },
+    {
+      "table": "Collections",
+      "row": "GPR2 variant family",
+      "column": 1,
+      "kind": "source_italic_restoration",
+      "targets": [
+        "GPR2"
+      ]
+    }
+  ],
+  "validation": {
+    "reviewed_rows": {
+      "Table 3 strains designed and constructed in this project": 9,
+      "Basic parts": 27,
+      "Composite parts": 12,
+      "Collections": 4
+    },
+    "csv_sourceCellRuns_parity": "passed",
+    "source_pdf_pages_reviewed": "2–13",
+    "unresolved_content_items": 0,
+    "text_changes_vs_baseline": [
+      [
+        "experiments",
+        "Table 3 strains designed and constructed in this project",
+        "NKU-Y03",
+        1
+      ],
+      [
+        "experiments",
+        "Table 3 strains designed and constructed in this project",
+        "NKU-Y05",
+        1
+      ],
+      [
+        "experiments",
+        "Table 3 strains designed and constructed in this project",
+        "NKU-Y06",
+        1
+      ],
+      [
+        "experiments",
+        "Table 3 strains designed and constructed in this project",
+        "NKU-Y07",
+        1
+      ],
+      [
+        "experiments",
+        "Table 3 strains designed and constructed in this project",
+        "NKU-Y08",
+        1
+      ],
+      [
+        "experiments",
+        "Table 3 strains designed and constructed in this project",
+        "NKU-Y09",
+        1
+      ],
+      [
+        "parts",
+        "Composite parts",
+        "pRS315-TEF1p-GPR2-sfGFP",
+        3
+      ]
+    ],
+    "build_and_content_audit": "npm run verify passed; 30 pages; existing content-readiness warnings retained",
+    "browser": "Desktop interactive tables checked in Chrome; strain 9, Basic 27 with pagination, Composite 12, Collections 4; new construct labels and description present; italic markup verified",
+    "publication": "not-published"
+  }
+}
