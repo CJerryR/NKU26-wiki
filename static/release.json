@@ -1,7 +1,7 @@
 {
-  "version": "10.2.17",
-  "label": "Latest test-strip story and six redesigned subpage openings",
-  "prepared_at": "2026-10-20T11:37:09.350033+08:00",
+  "version": "10.2.18",
+  "label": "In-page image preview with theme-aware liquid glass and reviewed manuscript components",
+  "prepared_at": "2026-10-20T12:16:42+08:00",
   "media": "84 unchanged original images plus 4 user-authorized GPS-only cleaned images; all decoded frames unchanged; 12 complete historical source documents",
   "release_kind": "stage",
   "team_content_review": "Scientific final review pending; source-version choices authorized by user",
@@ -10,7 +10,7 @@
     "commit": "16770d5c28ddf7bc41f8d90445c44d80a28801d5",
     "published_at_local": "2026-10-18 05:04:34"
   },
-  "release_id": "recent-midday-20261020",
+  "release_id": "image-preview-components-20261020-v10.2.18",
   "mobile_layout_check": "390px Members rendered without overflow; desktop Description, Parts/plasmid, Attributions/puzzle checked; 4 second delayed CDN uses inline preview then upgrades",
   "source_fidelity": {
     "original_source_files_verified": 80,
@@ -30,9 +30,9 @@
     "source_decisions": "content/author-source-decisions.json"
   },
   "previous_release": {
-    "version": "10.2.16",
-    "commit": "02d032500ecf0d79a5efd63d454fee47d93109f3",
-    "publication_time_beijing": "2026-10-20 11:43:15"
+    "version": "10.2.17",
+    "commit": "0ef203161d80ead05ed37e3d79408899ad99d245",
+    "published_at_beijing": "2026-10-20 11:54:59"
   },
   "visual_stage": "AI-generated handcut illustrations; 16 sheets, 91 canonical props",
   "meeting_update": {
@@ -167,11 +167,6 @@
     "illustrations": 6,
     "svg_bytes_preserved": true
   },
-  "first_publication": {
-    "commit": "d2078026d76f178be55040866c99548bef896fd2",
-    "pipeline_id": 776934,
-    "published_at_beijing": "2026-10-20 11:54:59"
-  },
   "recent_combined_release": {
     "task_commits": {
       "content_rules": "62ca4bbf3a26e4b89aa9473ee4f590f2338ed652",
@@ -252,5 +247,26 @@
     "atlas_manifest": "docs/openings-cdn-20261020.json",
     "atlas_count": 12,
     "publication_time_beijing": "2026-10-20 11:54:59"
+  },
+  "image_preview": {
+    "task_commit": "3a4218f7eeb34d96d5dc51d504e538eeb01b4b34",
+    "features": [
+      "URL-preserving modal",
+      "search-matched 7px background blur",
+      "shared liquid glass",
+      "light and dark themes",
+      "zoom and fit",
+      "Escape and backdrop close",
+      "reading position and focus retained",
+      "dynamic article component images"
+    ],
+    "validation": "8 theme/viewport combinations plus navigation, original image, keyboard and long-image regressions"
+  },
+  "reviewed_components": {
+    "source_task_commit": "9af6fb1ddf0da4167105325424fbfd840f66c3a9",
+    "engineering_cycles": 12,
+    "ode_equations": 13,
+    "filterable_tables": 2,
+    "source_policy": "Scientific content and original-review flags retained; plain figure captions preserved from V10.2.16"
   }
 }
