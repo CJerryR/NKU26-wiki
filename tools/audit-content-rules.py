@@ -39,6 +39,28 @@ class DOM(HTMLParser):
             if self.stack[i].tag==tag:self.stack=self.stack[:i];break
     def handle_data(self,text):self.stack[-1].children.append(text)
 
+MODEL_MODULE_TITLES = {
+    '#model-section-1': 'Molecular Docking',
+    '#model-section-2': 'Molecular Dynamics',
+    '#model-section-3': 'ODE & dual-channel sensing',
+    '#model-section-4': 'Economic Benefit',
+}
+
+def heading_sentence_case_violation(slug, label, attributes, level, sentence_case):
+    """Preserve exact approved Model prefixes while still checking subtitles."""
+    if slug == 'model' and level == 2:
+        anchor = attributes.split()[0] if attributes.split() else ''
+        prefix = MODEL_MODULE_TITLES.get(anchor)
+        if prefix:
+            if not label.startswith(prefix + ' | '):
+                return True
+            normalized = sentence_case(label)
+            normalized_prefix = sentence_case(prefix)
+            if normalized.startswith(normalized_prefix):
+                normalized = prefix + normalized[len(normalized_prefix):]
+            return normalized != label
+    return sentence_case(label) != label
+
 def values(doc):
     out=[]
     protected={'src','left','right','csv','sourceCellRuns','pdbUrl','pdb','videoUrl','poster','sequence'}
@@ -76,7 +98,7 @@ def main():
             for block in doc['blocks']:
                 if block.get('_template')!='heading':continue
                 label=rules.unnumber(block['text'])
-                if rules.sentence_case(label)!=label:failures.append(f'{slug}: heading is not sentence case: {label}')
+                if heading_sentence_case_violation(slug, label, block.get('attributes', ''), block.get('level'), rules.sentence_case):failures.append(f'{slug}: heading is not sentence case: {label}')
                 if re.search(r'(?:^|\s)unnumbered(?:\s|$)',block.get('attributes','')):failures.append(f'{slug}: chapter bypasses agreed outline numbering: {label}')
         generated=Path('public')/(doc['route']+'/index.html' if doc.get('route') else f'pages/{slug}.html')
         if not generated.exists(): failures.append(f'{slug}: generated page missing');continue
