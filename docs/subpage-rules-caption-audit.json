@@ -1,5 +1,5 @@
 {
-  "caption_count": 94,
+  "caption_count": 96,
   "passed": true,
   "failures": [],
   "captions": [
@@ -57,23 +57,19 @@
     },
     {
       "page": "education",
-      "text": "Figure 1. Team members deliver the interactive lecture \"The great nematode hunt\" to students in Lincheng, Hebei, introducing plant-parasitic nematodes and crop diseases."
+      "text": "Figure 1. A nematode-themed lesson in Lincheng, Hebei. Using images of plant roots, a team member introduces plant-parasitic nematodes and their connection with crop disease, linking familiar plant observations with life below ground and agricultural problems."
     },
     {
       "page": "education",
-      "text": "Figure 2. Science literacy lesson: “The great nematode hunt”."
+      "text": "Figure 2. Three courses on agricultural nematodes and synthetic biology. (a) The Nematode Hunt introduces nematodes and agricultural problems. (b) Exploring biological signals explains the relationship between input, sensing, and output. (c) Small Lives and Everyday Contributions connects scientific themes with responsibility, cooperation, and personal growth."
     },
     {
       "page": "education",
-      "text": "Figure 3. Hands-on science lesson: “The signal discovery challenge”."
+      "text": "Figure 3. Classroom outreach through the Xiangyang Program teaching partnership. Team members and teaching partners bring the materials into classrooms to introduce nematodes and related scientific ideas."
     },
     {
       "page": "education",
-      "text": "Figure 4. Science and social responsibility lesson: “Tiny lives shine, and we grow through everyday dedication”."
-    },
-    {
-      "page": "education",
-      "text": "Figure 5. Backed by the \"Xiangyang Program\" public welfare education service team, we have introduced nematode-themed courses into both school classrooms and local communities."
+      "text": "Figure 4. Outreach materials that introduce the project through illustrations and stories. (a) The Yeast Detective and the secret signals in soil. (b) The Yeast Detective’s three steps to helping farmers. Characters, settings, and simple diagrams connect engineered yeast, soil signals, and agricultural applications, giving audiences a visual starting point for understanding the project. Generated with OpenAI GPT Image 2."
     },
     {
       "page": "engineering",
@@ -121,7 +117,7 @@
     },
     {
       "page": "hp-investigation",
-      "text": "Figure 3. Discussion with Associate Professor Qian Liu from China Agricultural University on the scientific premises and application conditions of the project."
+      "text": "Figure 3. Discussion with associate professor Qian Liu from China Agricultural University on the scientific premises and application conditions of the project."
     },
     {
       "page": "hp-investigation",
@@ -137,15 +133,27 @@
     },
     {
       "page": "human-practices",
-      "text": "Figure 1. Geographic distribution of 369 survey responses across 23 provincial-level regions in China."
+      "text": "Figure 1. Understanding testing needs through field conversations. The team visited growing sites in Tianjin and discussed crop management and disease concerns with local growers. (a) An outdoor conversation; (b) A greenhouse visit."
     },
     {
       "page": "human-practices",
-      "text": "Figure 2. Respondent awareness of plant-parasitic nematodes (e.g., root-knot and cyst nematodes): questionnaire data"
+      "text": "Figure 2. Public awareness and expectations of a nematode detection tool. (a) Respondents’ awareness of plant-parasitic nematodes; (b) Preferred features of an ideal test. The questionnaire received 369 responses. Respondents could select up to three tool features, with percentages calculated against all 369 responses; percentages in b therefore do not sum to 100%. “Within 15 minutes” describes a proposed testing scenario used to ask about preferences."
     },
     {
       "page": "human-practices",
-      "text": "Figure 3. Desired features of an ideal nematode detection tool as rated by participants: questionnaire data"
+      "text": "Figure 3. Examining the detection concept through expert interviews. Discussions with Yurong Yao addressed agricultural testing needs, signal interpretation, sample conditions, and practical handling."
+    },
+    {
+      "page": "human-practices",
+      "text": "Figure 4. Geographic origins of samples gathered through our soil collection initiative. Samples from different agricultural and environmental settings connect local conditions with future studies of soil backgrounds, sample preparation, and sensor responses. Markers indicate approximate source areas; samples from tibet are grouped at the regional level."
+    },
+    {
+      "page": "human-practices",
+      "text": "Figure 5. Materials prepared for corporate outreach. (a) The project presentation; (b), (c) The corporate partnership invitation. The materials brought together agricultural needs, the research concept, potential applications, and requests for support as a basis for discussion."
+    },
+    {
+      "page": "human-practices",
+      "text": "Figure 6. Explaining agricultural problems and biosensing through classroom teaching. (a) A lesson introducing plant-parasitic nematodes and crop disease; (b) The presentation cover for exploring biological signals, a course connecting biological sensing with the project’s input–response–output concept."
     },
     {
       "page": "members",

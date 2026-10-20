@@ -3,7 +3,7 @@ title: Investigation
 heading: Investigation
 sub: Exploring agriculture through visits and dialogue
 crumbs:
-  - Human practices
+  - Human Practices
   - Investigation
 route: hp-investigation
 search: true
@@ -21,17 +21,17 @@ hidden: false
 
 <p data-hp-source-paragraph="169"><strong>Summer fieldwork was an important part of our investigation into agricultural nematode challenges. </strong>We connected museum visits, expert consultations, university and iGEM team exchanges, agricultural visits in Tianjin, and soil collection to examine the project through scientific context, professional methods, and farming experience.</p>
 
-## Museum visits  learning how science reaches the public {#hp-source-171}
+## Museum visits: learning how science reaches the public {#hp-source-171}
 
-### 2.1 National Natural History Museum of China  soil life in context {#hp-source-172}
+### 2.1 National Natural History Museum of China: soil life in context {#hp-source-172}
 
-<p data-hp-source-paragraph="173">Our museum visit offered a reference for understanding biodiversity and organizing science communication. For a nematode project, audiences may first encounter these organisms through disease without knowing their different ecological roles. Placing <strong>plant-parasitic nematodes (PPNs)</strong> within the wider diversity of life helped us choose a more accurate starting point for education.</p>
+<p data-hp-source-paragraph="173">Our museum visit offered a reference for understanding biodiversity and organizing science communication. For a nematode project, audiences may first encounter these organisms through disease without knowing their different ecological roles. Placing <strong>plant-parasitic nematodes</strong> within the wider diversity of life helped us choose a more accurate starting point for education.</p>
 
-### 2.2 China Agricultural Museum  placing detection in agricultural practice {#hp-source-174}
+### 2.2 China Agricultural Museum: placing detection in agricultural practice {#hp-source-174}
 
 <p data-hp-source-paragraph="175">This visit brought our discussion from a single technology back to crops, farming practices, and agricultural development. We considered how to explain the relevance of underground disease to food and vegetable production and how to connect a testing concept with specific steps in crop management.</p>
 
-### 2.3 Beijing Academy of Agriculture and Forestry Sciences  communicating research {#hp-source-176}
+### 2.3 Beijing Academy of Agriculture and Forestry Sciences: communicating research {#hp-source-176}
 
 <p data-hp-source-paragraph="177">The science outreach facilities offered an opportunity to observe how agricultural research is displayed and explained. The visit helped us understand agricultural technology applications and consider how images, processes, and familiar settings could make our project accessible to people with different backgrounds.</p>
 
@@ -39,9 +39,9 @@ hidden: false
 
 <figure class="hp-source-figure figure"><div class="figure__media hp-photo-group hp-photo-group--three"><div class="hp-photo-item"><p class="hp-image-label">National Natural History Museum of China  soil life in context</p><div data-hp-source-paragraph="180"><a href="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-e608c19ef90ae4df-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-e608c19ef90ae4df-00.json" alt="Museum visits broadened our perspectives on life, agriculture, and science communication." loading="lazy" width="452" height="339"></a></div></div><div class="hp-photo-item"><p class="hp-image-label">China Agricultural Museum  placing detection in agricultural practice</p><div data-hp-source-paragraph="181"><a href="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-5821d3b6ec530706-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-5821d3b6ec530706-00.json" alt="Museum visits broadened our perspectives on life, agriculture, and science communication." loading="lazy" width="458" height="344"></a></div></div><div class="hp-photo-item"><p class="hp-image-label">Beijing Academy of Agriculture and Forestry Sciences  communicating research</p><div data-hp-source-paragraph="182"><a href="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-63cb9735f761ad04-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-63cb9735f761ad04-00.json" alt="Museum visits broadened our perspectives on life, agriculture, and science communication." loading="lazy" width="460" height="309"></a></div></div></div><figcaption data-hp-source-paragraph="183">Figure 1. Museum visits broadened our perspectives on life, agriculture, and science communication.</figcaption></figure>
 
-## Expert interviews  three professional perspectives {#hp-source-185}
+## Expert interviews: three professional perspectives {#hp-source-185}
 
-### 3.1 Yurong Yao  Institute of Plant Protection at Tianjin Academy of Agricultural Sciences {#hp-source-186}
+### 3.1 Yurong Yao: Institute of Plant Protection at Tianjin Academy of Agricultural Sciences {#hp-source-186}
 
 <div class="figure-text figure-text--wrap figure-text--right" style="--image-share:40%"><figure class="hp-source-figure figure"><div class="figure__media hp-photo-group"><div class="hp-photo-item"><div data-hp-source-paragraph="190"><a href="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-3062023d1c20e5dd-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-3062023d1c20e5dd-00.json" alt="An interview with Yurong Yao on nematode disease, sampling, and practical testing needs." loading="lazy" width="552" height="183"></a></div></div></div><figcaption data-hp-source-paragraph="191">Figure 2. An interview with Yurong Yao on nematode disease, sampling, and practical testing needs.</figcaption></figure><div class="figure-text__body"><p data-hp-source-paragraph="187">On June 6, 2026, we interviewed Yurong Yao in person at the Institute of Plant Protection, Tianjin Academy of Agricultural Sciences. Starting with nematode disease in protected vegetable production, we discussed hidden underground damage, symptoms that resemble other problems, continuous cropping, and the operational and cost barriers to testing in agricultural practice.</p>
 
@@ -49,23 +49,23 @@ hidden: false
 
 <p data-hp-source-paragraph="189">This discussion brought sampling and the user workflow into our project considerations. It also helped us ask more specific questions in later surveys and farm visits: who would use a test, which procedures would be acceptable, and how could results inform agricultural management?</p></div></div>
 
-### 3.2 Qian Liu  College of Plant Protection at China Agricultural University {#hp-source-192}
+### 3.2 Qian Liu: College of Plant Protection at China Agricultural University {#hp-source-192}
 
-<div class="figure-text figure-text--wrap figure-text--right" style="--image-share:40%"><figure class="hp-source-figure figure"><div class="figure__media hp-photo-group"><div class="hp-photo-item"><div data-hp-source-paragraph="196"><a href="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-9014a2be938d2ee8-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-9014a2be938d2ee8-00.json" alt="Discussion with Associate Professor Qian Liu from China Agricultural University on the Scientific Premises and Application Conditions of the Project" loading="lazy" width="504" height="378"></a></div></div></div><figcaption data-hp-source-paragraph="197">Figure 3. Discussion with Associate Professor Qian Liu from China Agricultural University on the scientific premises and application conditions of the project.</figcaption></figure><div class="figure-text__body"><p data-hp-source-paragraph="193">On August 18, Qian Liu discussed nematode identification, early detection, and validation with real samples. She explained the roles of morphological and molecular methods, stressed that identification claims must match their purpose and validation, and connected early detection with management decisions before planting.</p>
+<div class="figure-text figure-text--wrap figure-text--right" style="--image-share:40%"><figure class="hp-source-figure figure"><div class="figure__media hp-photo-group"><div class="hp-photo-item"><div data-hp-source-paragraph="196"><a href="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-9014a2be938d2ee8-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-9014a2be938d2ee8-00.json" alt="Discussion with Associate Professor Qian Liu from China Agricultural University on the Scientific Premises and Application Conditions of the Project" loading="lazy" width="504" height="378"></a></div></div></div><figcaption data-hp-source-paragraph="197">Figure 3. Discussion with associate professor Qian Liu from China Agricultural University on the scientific premises and application conditions of the project.</figcaption></figure><div class="figure-text__body"><p data-hp-source-paragraph="193">On August 18, Qian Liu discussed nematode identification, early detection, and validation with real samples. She explained the roles of morphological and molecular methods, stressed that identification claims must match their purpose and validation, and connected early detection with management decisions before planting.</p>
 
 <p data-hp-source-paragraph="194">For our ascaroside-based approach, she advised establishing whether signal differences could support the proposed inference and distinguishing compound detection from conclusions about nematode species or density. We also discussed sample representativeness, extraction losses, matrix interference, controls, and staged validation.</p>
 
 <p data-hp-source-paragraph="195">Liu also drew our attention to total testing cost, sample preparation, storage, and operational demands. Her advice helped us examine a field-oriented prototype from the perspective of diagnostic practice, beyond the speed of the final reaction.</p></div></div>
 
-### 3.3 Zhihao Pang  Beijing Forestry University {#hp-source-198}
+### 3.3 Zhihao Pang: Beijing Forestry University {#hp-source-198}
 
 <div class="figure-text figure-text--wrap figure-text--right" style="--image-share:40%"><figure class="hp-source-figure figure"><div class="figure__media hp-photo-group"><div class="hp-photo-item"><div data-hp-source-paragraph="202"><a href="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-4c131833840e8451-00.json" target="_blank" rel="noopener"><img src="https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-4c131833840e8451-00.json" alt="Discussion with Zhihao Pang on Soil Backgrounds, Signal Stability and Practical Application" loading="lazy" width="552" height="248"></a></div></div></div><figcaption data-hp-source-paragraph="203">Figure 4. Discussion with Zhihao Pang on soil backgrounds, signal stability, and practical application.</figcaption></figure><div class="figure-text__body"><p data-hp-source-paragraph="199">During our online discussion on August 18, Zhihao Pang examined the project through soil processes and potential use. He asked whether soil background color could affect interpretation and whether different degradation rates of <strong>ascaroside #3 (ascr#3)</strong> and <strong>ascaroside #18 (ascr#18)</strong> could change their measured relative composition.</p>
 
 <p data-hp-source-paragraph="200">He also suggested obtaining observations from genuinely affected fields, speaking with potential users, and comparing portability and simpler procedures with existing sample-submission services. For engineered yeast, he raised concerns about environmental release and post-test handling.</p>
 
-<p data-hp-source-paragraph="201">This exchange identified alternative explanations that we could examine: could the same color arise from different backgrounds, could degradation alter a measured ratio, and could a user complete the workflow? The connections between these questions and our wet-lab and dry-lab work are developed on the <strong>integrated Human Practices (iHP)</strong> page.</p></div></div>
+<p data-hp-source-paragraph="201">This exchange identified alternative explanations that we could examine: could the same color arise from different backgrounds, could degradation alter a measured ratio, and could a user complete the workflow? The connections between these questions and our wet-lab and dry-lab work are developed on the <strong>Integrated Human Practices</strong> page.</p></div></div>
 
-## iGEM team exchanges: sharing research and human practices experience {#hp-source-204}
+## iGEM team exchanges: sharing research and Human Practices experience {#hp-source-204}
 
 <p data-hp-source-paragraph="205"><strong>This season, we exchanged ideas with fellow iGEM teams to explore experimental approaches, discuss shared challenges, and learn from one another’s Human Practices (HP) experience.</strong> These exchanges connected us with teams from Zhengzhou University, Peking University, Tsinghua University, China Agricultural University, and the University of Science and Technology of China, as well as the PROFUTURE team.</p>
 

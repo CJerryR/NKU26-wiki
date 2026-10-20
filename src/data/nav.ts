@@ -1,6 +1,6 @@
 /**
  * The site map, in one place. It follows the team's wiki outline:
- * Project / Wet lab / Model / Human practices / Team.
+ * Project / Wet lab / Model / Human Practices / Team.
  * Links point at page ids (the Markdown file names in src/content/pages), so
  * a page's address lives only in its own frontmatter. The top bar, the phone
  * menu, the footer and the previous/next links are all built from here.
@@ -35,14 +35,14 @@ export const primaryNav: NavItem[] = [
   {
     kind: 'group', id: 'model', label: 'Model', narrow: true, items: [
       { page: 'model', label: 'Overview', blurb: 'How the models fit together' },
-      { page: 'model-docking', label: 'Molecular Docking', blurb: 'Two-ligand contacts and receptor candidates' },
-      { page: 'model-md', label: 'Molecular Dynamics', blurb: 'Ligand motion and persistent contacts' },
-      { page: 'model-ode', label: 'ODE & Dual-Channel Modeling', blurb: 'Signal dynamics and density estimation' },
-      { page: 'model-eco', label: 'Economic Benefit', blurb: 'When density information changes a decision' },
+      { page: 'model-docking', label: 'Molecular docking', blurb: 'Two-ligand contacts and receptor candidates' },
+      { page: 'model-md', label: 'Molecular dynamics', blurb: 'Ligand motion and persistent contacts' },
+      { page: 'model-ode', label: 'ODE and dual-channel model', blurb: 'Signal dynamics and density estimation' },
+      { page: 'model-eco', label: 'Economic benefit', blurb: 'When density information changes a decision' },
     ],
   },
   {
-    kind: 'group', id: 'hp', label: 'Human practices', narrow: true, items: [
+    kind: 'group', id: 'hp', label: 'Human Practices', narrow: true, items: [
       { page: 'human-practices', label: 'iHP', blurb: 'Bringing real-world perspectives into research' },
       { page: 'hp-investigation', label: 'Investigation', blurb: 'Exploring agriculture through visits and dialogue' },
       { page: 'education', label: 'Education', blurb: 'Making synthetic biology and our project accessible' },

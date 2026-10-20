@@ -1,6 +1,6 @@
 {
   "task": "subpage-rules",
-  "base_commit": "fd9b5a6e3c5ff568966c81ac691db61046568a2f",
+  "base_commit": "323aa9f3109f2081508b5c411a7d12c60e75250a",
   "source_path": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/tasks/subpage-rules",
   "modification_model": "gpt-6-luna",
   "final_review": "parent agent",
@@ -35,22 +35,22 @@
     "background.json": "b3f5c9b331c08c25061b156a52799f53ddbbe4f85be880ffdd4ee1701b010d87",
     "contribution.json": "1b5f5f126c1a3dba8135c82ef0f787e6442ad43d69715ede73f3c719f7e82ad0",
     "description.json": "dff45943b57bd1a297f0d97bf00e6d18fc60ea318ed1a69d81e5775135a9e3a7",
-    "education.json": "9f7b198f263e4c10065954b250149ba022dc3891fbbbec2ae20a11c507a6e147",
+    "education.json": "e4e75c9dd3d6fa8ebc94d5960ccf3cc1c2fdc6efd207c7d297208ebb4c34154c",
     "engineering.json": "ed270b16239721f986ab10b4d2361ae9b9126c061062a8992ec0f128a6dc5e3b",
     "experiments.json": "d6ef4cf63e443c8f175626befe0fedac833e74dc429983a43a902021ea2dc00c",
-    "hp-industry.json": "888bc6a31231496d43bc3e48c5bc5cc828339d616fb135690d6c754254c6ac1f",
-    "hp-investigation.json": "55f32fee39791e724885ef0d69812abc2b4bb9883275b132903278ef56ae96ca",
-    "hp-overview.json": "57701764df8b5e1c2c17eca10d5abb534997c79f7892ac242ac759f182407335",
-    "human-practices.json": "4df1bd08e119bd9b692335bd72e20b406f0bde24bb6253d443a3bb7271ce6817",
+    "hp-industry.json": "c7c92522c042f52f853bc69d0aa66fc25408e6dec502189eb99024062df17681",
+    "hp-investigation.json": "3f97330a697a81d11155e0eed67e09e7f025112cb44fa5432e7f47042eba04ca",
+    "hp-overview.json": "7ef352b3bb5e020668c80fa9b2070c7aff0970baacec7a8135b24a11b04e3316",
+    "human-practices.json": "3345601622778799460614074340879e1fed29d36e0de298bfb0aa2229057b8b",
     "licensing.json": "a2d3bf1551a40f6c93d988b7118459d9b8924b522a7195d9c9069f37555bd553",
     "members.json": "ddb1b664b29fa3350afd6079323cae9e376379107361ee7f48dbf59cafcc4713",
     "model-1.json": "1095329f987225fb84776c49115d4adb016eefb3f2277c899c445f8b6a1c959c",
     "model-2.json": "e525a59325efbbdf98fbc6dd16f91daf85d224647ce44d162dc9399a7755ba30",
-    "model-docking.json": "50d2259edd70656d56610c04c7fbff8a80b4330210afb54c37e751a983f53c67",
-    "model-eco.json": "1d16dcc54fb46f470430694c2d6a05ca056b39443e9d97ea920f5f58f420f10d",
-    "model-md.json": "cc04a5daf020459bfa76363a831411db95e7ba45fdf5c0548762e292de0ab964",
-    "model-ode.json": "453cda3cf7ae1bd75a30a07e821c44a6b8f3898844c4ee25af1a0eca93ad8150",
-    "model.json": "0a358f4e488a2f61cbc53967a72eff14ced48c84eb1450f74cb449cfed99271c",
+    "model-docking.json": "16a8818be36a1b87b9f178d670309fe413c8a562a9da9ae28bd7a3eb4c0a701b",
+    "model-eco.json": "eeb400819db248426af4776f40939f4dafba9d791fc7ee9403aec10a92d14930",
+    "model-md.json": "1e6ae5e237201cb3d4e89c240c76642e4bc1b46cef46d9d2d90f57130854fb84",
+    "model-ode.json": "18fc6c4393079576b398823d59ffd3c431e967eef1427fbb08cd2698939bf254",
+    "model.json": "090d0ceda25e15fa158f5acdec194563f12145743955d3b2144132b5a6495d7a",
     "part-collection.json": "0740607465c32db935b0fc556aada2f3edc0de4dd7fa8ba895d2e98e4c74a21e",
     "parts.json": "c7624674af32d5ff56e8c0e6f19ee5ecf6d7b3ab2d088a6a9ff68e18995fa68e",
     "protocols.json": "71944d26dbf241ecd6200fd975464c0eddcc7ed927092c80b8b833d0a2de21ee",
@@ -62,7 +62,7 @@
     "npm_run_verify": "PASS; existing final team content-review blockers preserved",
     "npm_run_audit": "PASS",
     "content_rules_pages": 26,
-    "figure_captions": 94,
+    "figure_captions": 96,
     "node_tests": 192,
     "python_tests": 27,
     "git_diff_check": "PASS",
@@ -78,7 +78,7 @@
   },
   "browser": {
     "port": 8986,
-    "source_head_before_commit": "fd9b5a6e3c5ff568966c81ac691db61046568a2f + this task working changes",
+    "source_head_before_commit": "fee49b514deb6feedfcd3ba2a32abf22d1a3acf5 + Luna final V10.2.37 corrections",
     "dimensions": [
       [
         1440,
@@ -112,13 +112,23 @@
     "formula_table_interaction": "Docking filtering to N84V and sorting Variant descending passed; all five header formulas remained rendered.",
     "economic_default_result": "Default sample completed without a manual Run action; Done and 124.22 observed.",
     "comparison_pages": "Three preserved Project comparison pages checked at both widths: 65rem desktop; no horizontal overflow.",
-    "evidence_root": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/subpage-rules/browser"
+    "evidence_root": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/subpage-rules/browser",
+    "additional_unchanged_component_checks": "Engineering frames, Docking sort/filter, Eco default calculation and Project comparison checks performed before rebase; relevant implementation unchanged in rebase.",
+    "evidence_before_rebase": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/subpage-rules/browser-before-v10.2.37"
   },
   "pending_source_owner_items": [
     "Parts original CSV uses Orbilia oligospora; no species-identity substitution performed.",
     "S.c. EasyComp™ is retained as an exact source product name pending owner confirmation.",
     "Existing photo/portrait and AI-source permission records are preserved; this formatting task does not certify new permissions.",
-    "Gene/protein identity and scientific claims were not reinterpreted; final team scientific review remains pending."
+    "Gene/protein identity and scientific claims were not reinterpreted; final team scientific review remains pending.",
+    "12 existing mixed-case italic Gal80/Gal4 occurrences retained; exact locations recorded in docs/subpage-rules-scientific-review.json."
   ],
-  "publication": "not-published; hand off committed result through release queue"
+  "publication": "not-published; hand off committed result through release queue",
+  "initial_base_commit": "fd9b5a6e3c5ff568966c81ac691db61046568a2f",
+  "latest_official_content_preserved": {
+    "version": "10.2.37",
+    "HP": "latest manuscripts, metadata, paragraph order, image URL streams, 289 samples / nine provincial-level regions retained",
+    "Model": "official modeling code links retained on five pages",
+    "navigation": "iHP -> Investigation -> Education; legacy Overview/Industry remain hidden"
+  }
 }

@@ -1,5 +1,5 @@
 {
-  "base": "fd9b5a6e3c5ff568966c81ac691db61046568a2f",
+  "base": "323aa9f3109f2081508b5c411a7d12c60e75250a",
   "page_count": 26,
   "passed": true,
   "failures": [],
@@ -704,63 +704,78 @@
     {
       "page": "education",
       "route": "public/education/index.html",
-      "h2": 7,
-      "h3": 4,
+      "h2": 6,
+      "h3": 8,
       "headings": [
         {
           "level": "h2",
-          "text": "Connecting soil life with agriculture and synthetic biology",
-          "id": "hp-source-115"
+          "text": "Education overview",
+          "id": "education-overview"
         },
         {
           "level": "h2",
           "text": "Three courses form a learning pathway",
-          "id": "hp-source-120"
+          "id": "education-source-4"
         },
         {
           "level": "h3",
-          "text": "Science course: the nematode hunt",
-          "id": "hp-source-122"
+          "text": "2.1 Science course: the nematode hunt",
+          "id": "education-source-6"
         },
         {
           "level": "h3",
-          "text": "Experimental science course: exploring biological signals",
-          "id": "hp-source-127"
+          "text": "2.2 Experimental science course: exploring biological signals",
+          "id": "education-source-10"
         },
         {
           "level": "h3",
-          "text": "Values and responsibility course: small lives and everyday contributions",
-          "id": "hp-source-132"
+          "text": "2.3 Values and responsibility course: small lives and everyday contributions",
+          "id": "education-source-14"
         },
         {
           "level": "h2",
           "text": "Adapting the same theme for different ages",
-          "id": "hp-source-136"
+          "id": "education-source-21"
         },
         {
           "level": "h2",
           "text": "Bringing the courses into classrooms through teaching partnerships",
-          "id": "hp-source-140"
+          "id": "education-source-27"
         },
         {
           "level": "h2",
           "text": "Using feedback to improve future teaching",
-          "id": "hp-source-150"
+          "id": "education-source-35"
+        },
+        {
+          "level": "h3",
+          "text": "5.1 What the available feedback suggests",
+          "id": "education-source-38"
+        },
+        {
+          "level": "h3",
+          "text": "5.2 Gathering more specific feedback next time",
+          "id": "education-source-41"
         },
         {
           "level": "h2",
           "text": "Beyond the classroom: outreach and reusable resources",
-          "id": "hp-source-155"
+          "id": "education-source-44"
         },
         {
           "level": "h3",
-          "text": "6.1 Download our teaching materials",
-          "id": "hp-source-158"
+          "text": "6.1 Explaining the project through different materials",
+          "id": "education-source-45"
         },
         {
-          "level": "h2",
-          "text": "Supporting evidence",
-          "id": "hp-original-references"
+          "level": "h3",
+          "text": "6.2 Helping other educators use the courses",
+          "id": "education-source-52"
+        },
+        {
+          "level": "h3",
+          "text": "6.3 Course resources",
+          "id": "education-source-55"
         }
       ]
     },
@@ -1041,17 +1056,17 @@
         },
         {
           "level": "h3",
-          "text": "National Natural History Museum of China: soil life in context",
+          "text": "2.1 National Natural History Museum of China: soil life in context",
           "id": "hp-source-172"
         },
         {
           "level": "h3",
-          "text": "China Agricultural Museum: placing detection in agricultural practice",
+          "text": "2.2 China Agricultural Museum: placing detection in agricultural practice",
           "id": "hp-source-174"
         },
         {
           "level": "h3",
-          "text": "Beijing Academy of Agriculture and Forestry Sciences: communicating research",
+          "text": "2.3 Beijing Academy of Agriculture and Forestry Sciences: communicating research",
           "id": "hp-source-176"
         },
         {
@@ -1061,17 +1076,17 @@
         },
         {
           "level": "h3",
-          "text": "Yurong Yao — Institute of Plant Protection at Tianjin Academy of Agricultural Sciences",
+          "text": "3.1 Yurong Yao: Institute of Plant Protection at Tianjin Academy of Agricultural Sciences",
           "id": "hp-source-186"
         },
         {
           "level": "h3",
-          "text": "Qian Liu — College of Plant Protection at China Agricultural University",
+          "text": "3.2 Qian Liu: College of Plant Protection at China Agricultural University",
           "id": "hp-source-192"
         },
         {
           "level": "h3",
-          "text": "Zhihao Pang — Beijing Forestry University",
+          "text": "3.3 Zhihao Pang: Beijing Forestry University",
           "id": "hp-source-198"
         },
         {
@@ -1137,53 +1152,48 @@
     {
       "page": "human-practices",
       "route": "public/human-practices/index.html",
-      "h2": 7,
-      "h3": 2,
+      "h2": 8,
+      "h3": 0,
       "headings": [
         {
           "level": "h2",
-          "text": "From a detectable response to a usable test",
-          "id": "hp-source-69"
+          "text": "Human Practices overview",
+          "id": "human-practices-overview"
         },
         {
           "level": "h2",
-          "text": "A two-way link between the questionnaire and research",
-          "id": "hp-source-73"
+          "text": "Field visits and agricultural advice: who needs a test, and when?",
+          "id": "human-practices-source-6"
         },
         {
           "level": "h2",
-          "text": "Question one: how early is early enough",
-          "id": "hp-source-88"
+          "text": "Public questionnaire: what do people know about nematodes, and what do they want from a test?",
+          "id": "human-practices-source-13"
         },
         {
           "level": "h2",
-          "text": "Question two: how does soil affect signals and color",
-          "id": "hp-source-92"
+          "text": "Expert interviews: what can a detected signal tell us?",
+          "id": "human-practices-source-21"
         },
         {
           "level": "h2",
-          "text": "Question three: what makes a sample meaningful and a test usable",
-          "id": "hp-source-97"
+          "text": "The soil collection initiative: how can field conditions enter our research?",
+          "id": "human-practices-source-28"
         },
         {
           "level": "h2",
-          "text": "Lessons for our research and other teams",
-          "id": "hp-source-102"
-        },
-        {
-          "level": "h3",
-          "text": "Inputs to our wet-lab and dry-lab work",
-          "id": "hp-source-103"
-        },
-        {
-          "level": "h3",
-          "text": "Practices other teams can adapt",
-          "id": "hp-source-105"
+          "text": "Corporate outreach: how do we explain the project’s value to potential users?",
+          "id": "human-practices-source-35"
         },
         {
           "level": "h2",
-          "text": "Supporting evidence",
-          "id": "hp-original-references"
+          "text": "Education and team exchanges: how do we explain and advance the project responsibly?",
+          "id": "human-practices-source-43"
+        },
+        {
+          "level": "h2",
+          "text": "Bringing feedback together: what can we build on next?",
+          "id": "human-practices-source-50"
         }
       ]
     },
@@ -2137,7 +2147,7 @@
     "model-ode": [
       {
         "page": "model-ode",
-        "block": 36,
+        "block": 37,
         "row": 3,
         "cell": 3,
         "kind": "citation-renumbering",
@@ -2146,7 +2156,7 @@
       },
       {
         "page": "model-ode",
-        "block": 102,
+        "block": 103,
         "row": 2,
         "cell": 5,
         "kind": "citation-renumbering",
@@ -2155,7 +2165,7 @@
       },
       {
         "page": "model-ode",
-        "block": 102,
+        "block": 103,
         "row": 3,
         "cell": 5,
         "kind": "citation-renumbering",
@@ -2164,7 +2174,7 @@
       },
       {
         "page": "model-ode",
-        "block": 102,
+        "block": 103,
         "row": 4,
         "cell": 5,
         "kind": "citation-renumbering",
@@ -2173,7 +2183,7 @@
       },
       {
         "page": "model-ode",
-        "block": 102,
+        "block": 103,
         "row": 5,
         "cell": 5,
         "kind": "citation-renumbering",
@@ -2182,7 +2192,7 @@
       },
       {
         "page": "model-ode",
-        "block": 102,
+        "block": 103,
         "row": 6,
         "cell": 5,
         "kind": "citation-renumbering",
@@ -2191,7 +2201,7 @@
       },
       {
         "page": "model-ode",
-        "block": 102,
+        "block": 103,
         "row": 7,
         "cell": 5,
         "kind": "citation-renumbering",
@@ -2200,7 +2210,7 @@
       },
       {
         "page": "model-ode",
-        "block": 102,
+        "block": 103,
         "row": 8,
         "cell": 5,
         "kind": "citation-renumbering",
@@ -2209,7 +2219,7 @@
       },
       {
         "page": "model-ode",
-        "block": 102,
+        "block": 103,
         "row": 9,
         "cell": 5,
         "kind": "citation-renumbering",
@@ -2218,7 +2228,7 @@
       },
       {
         "page": "model-ode",
-        "block": 102,
+        "block": 103,
         "row": 10,
         "cell": 5,
         "kind": "citation-renumbering",
@@ -2227,7 +2237,7 @@
       },
       {
         "page": "model-ode",
-        "block": 102,
+        "block": 103,
         "row": 11,
         "cell": 5,
         "kind": "citation-renumbering",
@@ -2236,7 +2246,7 @@
       },
       {
         "page": "model-ode",
-        "block": 102,
+        "block": 103,
         "row": 12,
         "cell": 5,
         "kind": "citation-renumbering",
@@ -2245,7 +2255,7 @@
       },
       {
         "page": "model-ode",
-        "block": 102,
+        "block": 103,
         "row": 13,
         "cell": 5,
         "kind": "citation-renumbering",
@@ -2254,7 +2264,7 @@
       },
       {
         "page": "model-ode",
-        "block": 102,
+        "block": 103,
         "row": 14,
         "cell": 5,
         "kind": "citation-renumbering",
@@ -2263,7 +2273,7 @@
       },
       {
         "page": "model-ode",
-        "block": 102,
+        "block": 103,
         "row": 15,
         "cell": 5,
         "kind": "citation-renumbering",
@@ -2272,7 +2282,7 @@
       },
       {
         "page": "model-ode",
-        "block": 102,
+        "block": 103,
         "row": 16,
         "cell": 5,
         "kind": "citation-renumbering",
@@ -2281,7 +2291,7 @@
       },
       {
         "page": "model-ode",
-        "block": 102,
+        "block": 103,
         "row": 17,
         "cell": 5,
         "kind": "citation-renumbering",
@@ -2290,7 +2300,7 @@
       },
       {
         "page": "model-ode",
-        "block": 102,
+        "block": 103,
         "row": 18,
         "cell": 5,
         "kind": "citation-renumbering",
@@ -2299,7 +2309,7 @@
       },
       {
         "page": "model-ode",
-        "block": 107,
+        "block": 108,
         "row": 3,
         "cell": 5,
         "kind": "citation-renumbering",
@@ -2308,7 +2318,7 @@
       },
       {
         "page": "model-ode",
-        "block": 107,
+        "block": 108,
         "row": 10,
         "cell": 5,
         "kind": "citation-renumbering",
@@ -2317,7 +2327,7 @@
       },
       {
         "page": "model-ode",
-        "block": 111,
+        "block": 112,
         "row": 2,
         "cell": 5,
         "kind": "citation-renumbering",
@@ -2364,12 +2374,5 @@
       }
     ]
   },
-  "raw_html_image_conversions": {
-    "education": [
-      {
-        "block": 4,
-        "src": "https://static.igem.wiki/teams/6303/wiki/hp-five-20261019/hp19-image-13a73d34a9ecf8e5-00.json"
-      }
-    ]
-  }
+  "raw_html_image_conversions": {}
 }

@@ -1,0 +1,107 @@
+{
+  "status": "source-owner-review-required; no scientific identity inferred",
+  "scope": "Specific existing mixed-case biological names in italics; not the closed ordinary-term abbreviation list",
+  "items": [
+    {
+      "page": "results",
+      "block": 38,
+      "field": "body",
+      "source_form": "Gal80",
+      "context": "the CEN.PK2-1C strain. Firstly, we designed the knockout of the response-interfering gene Gal80 (Figure 7a) to relieve the repression of Gal gene expression by Gal80. We knocked out the Gal80 gene ",
+      "action": "retained; wet-lab owner must confirm gene/protein identity before any case or italic change"
+    },
+    {
+      "page": "results",
+      "block": 38,
+      "field": "body",
+      "source_form": "Gal80",
+      "context": "ering gene Gal80 (Figure 7a) to relieve the repression of Gal gene expression by Gal80. We knocked out the Gal80 gene via yeast HR. Approximately 1 kb sequences flanking the upstream and downstream",
+      "action": "retained; wet-lab owner must confirm gene/protein identity before any case or italic change"
+    },
+    {
+      "page": "results",
+      "block": 38,
+      "field": "body",
+      "source_form": "Gal80",
+      "context": "a) to relieve the repression of Gal gene expression by Gal80. We knocked out the Gal80 gene via yeast HR. Approximately 1 kb sequences flanking the upstream and downstream regions of the Gal80 codi",
+      "action": "retained; wet-lab owner must confirm gene/protein identity before any case or italic change"
+    },
+    {
+      "page": "results",
+      "block": 38,
+      "field": "body",
+      "source_form": "Gal80",
+      "context": "east HR. Approximately 1 kb sequences flanking the upstream and downstream regions of the Gal80 coding sequence were used as homologous arms for the knockout cassette, and Trp was adopted as the auxotrophic marker f",
+      "action": "retained; wet-lab owner must confirm gene/protein identity before any case or italic change"
+    },
+    {
+      "page": "results",
+      "block": 40,
+      "field": "body",
+      "source_form": "Gal80",
+      "context": "plified the upstream and downstream homologous arms (5F is 1255 bp and 3F is 1406 bp.) of Gal80 from the genomic deoxyribonucleic acid (DNA) of CEN.PK2-1C strain and the Trp auxotrophic marker eleme",
+      "action": "retained; wet-lab owner must confirm gene/protein identity before any case or italic change"
+    },
+    {
+      "page": "results",
+      "block": 40,
+      "field": "body",
+      "source_form": "Gal80",
+      "context": "2-1C strain and the Trp auxotrophic marker element (1081 bp) from the pRS314 plasmid. The Gal80 knockout cassette was successfully assembled via double-joint PCR (DJ-PCR) (Figure 6).",
+      "action": "retained; wet-lab owner must confirm gene/protein identity before any case or italic change"
+    },
+    {
+      "page": "results",
+      "block": 43,
+      "field": "body",
+      "source_form": "Gal80",
+      "context": "After genomic DNA extraction and transformant verification, yeast strains with successful Gal80 knockout were obtained (Figure 7).",
+      "action": "retained; wet-lab owner must confirm gene/protein identity before any case or italic change"
+    },
+    {
+      "page": "results",
+      "block": 44,
+      "field": "body",
+      "source_form": "Gal80",
+      "context": "east HR. (b) Transformant verification results, confirming the successful knockout of the Gal80 gene.",
+      "action": "retained; wet-lab owner must confirm gene/protein identity before any case or italic change"
+    },
+    {
+      "page": "results",
+      "block": 77,
+      "field": "body",
+      "source_form": "Gal4",
+      "context": "assette transformation and transformant verification results, showing no insertion at the Gal4 locus.",
+      "action": "retained; wet-lab owner must confirm gene/protein identity before any case or italic change"
+    },
+    {
+      "page": "results",
+      "block": 81,
+      "field": "body",
+      "source_form": "Gal80",
+      "context": "uses Trp as its auxotrophic marker, which overlaps with the marker applied in our initial Gal80 knockout. Therefore, we first replaced the auxotrophic marker of this plasmid with leucine (Leu) (Figu",
+      "action": "retained; wet-lab owner must confirm gene/protein identity before any case or italic change"
+    },
+    {
+      "page": "results",
+      "block": 88,
+      "field": "body",
+      "source_form": "Gal4",
+      "context": "Next, we constructed sgRNA plasmids targeting three genes: STE12, Gal4 and STE2 (Figure 18).",
+      "action": "retained; wet-lab owner must confirm gene/protein identity before any case or italic change"
+    },
+    {
+      "page": "results",
+      "block": 105,
+      "field": "body",
+      "source_form": "Gal4",
+      "context": "R52p-gGal4-SUP4t plasmid together with the Gal1/10bp-Betaxanthin Expression Cassette. The Gal4 gene was successfully knocked out, and the betaxanthin synthase gene under the control of the Gal1/10 bidirectional pro",
+      "action": "retained; wet-lab owner must confirm gene/protein identity before any case or italic change"
+    }
+  ],
+  "other_items": [
+    "Original Parts CSV uses Orbilia oligospora; keep the source species wording pending owner decision.",
+    "S.c. EasyComp™ source product title retained exactly.",
+    "Existing recognizable-person and minor-photo permissions require source-owner records; technical image loading is not permission verification."
+  ]
+}
