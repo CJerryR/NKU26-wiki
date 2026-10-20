@@ -64,5 +64,11 @@
     "change": "Replaced raw placeholder/template mount with existing Tina HTML template. Author app direct iframe preserves same-origin Worker calculations;other HTML files retain existing isolated viewer. Template helper onlyresizes actual Tina frame;no duplicateiframe.",
     "validation": "8 media/contentregressiontests PASS;npmrunverify PASS;26page structure PASS;browser confirmed oneHTMLcomponent,editable sourcefields,relativeappurl,nooverflow,and successful defaultsample124.22 J2/100cm³ withstatusDone.",
     "editing_limit": "Contentfields andschema verified;Tina cloudsave not exercised."
+  },
+  "table_contrast_followup": {
+    "request": "Separate Model tables visually from the page background",
+    "change": "Theme-aware solid table surface,16pxroundedcontainer,clearouterborder,lavendertableheader,subtlealternatingrows andcolumnseparators. Table data andmath unchanged.",
+    "validation": "30-page buildPASS;desktoplight/darkcomputedtable/headercolorsdistinct;390pxmobilehorizontal scroll staysinsidetablewith no pageoverflow.",
+    "preview": "http://127.0.0.1:58106/model-ode/#model-ode-section-3"
   }
 }
