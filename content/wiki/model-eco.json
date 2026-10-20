@@ -28,8 +28,11 @@
       "body": "We developed the NemaKlear interactive web tool to explore this question. It connects ODE simulations of color development, dual-channel density estimation, and economic analysis. Users can select simulated soil samples or enter paired absorbance readings, estimate target nematode density, and compare net income across management strategies for a single growing season."
     },
     {
-      "_template": "text",
-      "body": "<div data-nemaklear-original></div>"
+      "_template": "html",
+      "title": "NemaKlear: ODE, Dual-channel modeling and economic analysis",
+      "file": "/widgets/nemaklear/index.html",
+      "scripts": true,
+      "height": 900
     },
     {
       "_template": "text",

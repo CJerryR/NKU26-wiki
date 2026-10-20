@@ -23,8 +23,13 @@ test('Model manuscript titles remain outside numbered section headings', () => {
  }
 });
 test('Eco app follows the source introduction and precedes the first section', () => {
- const blocks=load('model-eco').blocks,app=blocks.findIndex(b=>b.body?.includes('data-nemaklear-original'));
+ const blocks=load('model-eco').blocks,app=blocks.findIndex(b=>b._template==='html'&&b.file==='/widgets/nemaklear/index.html');
  assert.ok(app>0);assert.match(blocks[app-1].body,/We developed the NemaKlear/);
  assert.ok(app<blocks.findIndex(b=>b._template==='heading'));
- assert.equal(blocks.filter(b=>b.body?.includes('data-nemaklear-original')).length,1);
+ const apps=blocks.filter(b=>b._template==='html'&&b.file==='/widgets/nemaklear/index.html');
+ assert.equal(apps.length,1);
+ assert.equal(apps[0].title,'NemaKlear: ODE, Dual-channel modeling and economic analysis');
+ assert.equal(apps[0].scripts,true);
+ assert.equal(apps[0].height,900);
+ assert.ok(!blocks.some(b=>b.body?.includes('data-nemaklear-original')));
 });

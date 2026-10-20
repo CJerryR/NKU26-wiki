@@ -42,7 +42,7 @@
   "preview": {
     "task": "model-layout",
     "port": 58106,
-    "url": "http://127.0.0.1:58106/model/#content",
+    "url": "http://127.0.0.1:58106/model-eco/#content",
     "output_directory": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/tasks/model-layout/public"
   },
   "publication": "not published;handoff to unified releasebot required",
@@ -51,5 +51,18 @@
     "request": "Restore same Tina image frames as Project while retaining flat manuscript flow",
     "change": "Removed Model-only frame suppression. Scientific figures now inherit Project shared figure media padding,border,roundedcorners and theme colors. Source imageblocks remain editable inTina.",
     "validation": "30-page build PASS;MD3frames each show1pxborder/26pxdesktop padding/18pxradius;mobile390px uses14pxpadding with no horizontaloverflow;body andfigurepositions unchanged."
+  },
+  "html_component_followup": {
+    "request": "Restore actual editable Tina webpage component for the Eco application",
+    "source_block": {
+      "template": "html",
+      "file": "/widgets/nemaklear/index.html",
+      "scripts": true,
+      "height": 900
+    },
+    "position": "Immediately after the source introductory application paragraph",
+    "change": "Replaced raw placeholder/template mount with existing Tina HTML template. Author app direct iframe preserves same-origin Worker calculations;other HTML files retain existing isolated viewer. Template helper onlyresizes actual Tina frame;no duplicateiframe.",
+    "validation": "8 media/contentregressiontests PASS;npmrunverify PASS;26page structure PASS;browser confirmed oneHTMLcomponent,editable sourcefields,relativeappurl,nooverflow,and successful defaultsample124.22 J2/100cm³ withstatusDone.",
+    "editing_limit": "Contentfields andschema verified;Tina cloudsave not exercised."
   }
 }

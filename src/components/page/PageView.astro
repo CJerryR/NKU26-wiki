@@ -50,7 +50,7 @@ const preload = scene ? [
     <Toc items={toc} title={data.title} />
     <article class="doc__body prose" data-doc>
       {scene && data.sub && <p class="scene-intro" set:html={inlineMd(data.sub)} />}
-      {entry.id === 'model-eco' && <NemaKlearOriginal />}
+      {entry.body?.includes('data-nemaklear-app') && <NemaKlearOriginal />}
       <Content />
     </article>
   </div>

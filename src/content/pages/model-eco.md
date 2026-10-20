@@ -25,7 +25,7 @@ Eco: from color readouts to management decisions
 
 We developed the NemaKlear interactive web tool to explore this question. It connects ODE simulations of color development, dual-channel density estimation, and economic analysis. Users can select simulated soil samples or enter paired absorbance readings, estimate target nematode density, and compare net income across management strategies for a single growing season.
 
-<div data-nemaklear-original></div>
+<figure class="wiki-media wiki-media--html wiki-media--application"><div class="wiki-media__bar"><span class="wiki-media__kind">Model explorer</span><span class="wiki-media__title">NemaKlear: ODE, Dual-channel modeling and economic analysis</span><a class="wiki-media__action" href="/widgets/nemaklear/index.html" target="_blank" rel="noopener noreferrer">Open full page</a></div><iframe class="wiki-media__frame" data-nemaklear-app src="/widgets/nemaklear/index.html?embed=1" title="NemaKlear: ODE, Dual-channel modeling and economic analysis" loading="eager" allow="clipboard-write; fullscreen" style="height:900px" referrerpolicy="no-referrer"></iframe></figure>
 
 Eco links density to potential yield loss, treatment costs, and testing costs. It examines when density information changes a management decision and whether the resulting benefit covers the cost of testing and adjusting treatment.
 

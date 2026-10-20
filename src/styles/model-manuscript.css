@@ -35,7 +35,7 @@
 .doc .prose .model-manuscript .figure-text--right > .figure-text__body { grid-column:1;grid-row:1; }
 .doc .prose .model-manuscript .figure-text--right > .figure { grid-column:2;grid-row:1; }
 .model-manuscript .katex-display { display:block;text-align:center; }
-.model-manuscript [data-nemaklear-original] { margin-block:28px;min-width:0; }
+.model-manuscript .wiki-media--application { margin-block:28px;min-width:0; }
 @media(max-width:760px) {
  .doc .prose .model-manuscript .figure-text--right { grid-template-columns:minmax(0,1fr); }
  .doc .prose .model-manuscript .figure-text--right > .figure-text__body,
