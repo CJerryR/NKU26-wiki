@@ -465,7 +465,6 @@ mark { border-radius: 3px; background: none; color: inherit; }
   .arc__rail { position: sticky; top: calc(var(--nav-h, 88px) + 28px); flex-direction: column; align-items: stretch; gap: 10px; }
   .arc__ring { width: 100%; }
   .arc__step { display: block; text-align: center; }
-  .arc__stage { min-height: min(26vh, 220px); }
   .arc.is-live .arc__stage:not(.is-on) { opacity: .42; }
   .arc.is-live .arc__stage:not(.is-on) .arc__image { filter: saturate(.7); }
 }
