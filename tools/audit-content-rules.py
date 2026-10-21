@@ -322,6 +322,19 @@ def main():
         if article is None:failures.append(f'{slug}: article missing');continue
         heading_nodes=[n for n in article.walk() if n.tag in ('h2','h3','h4','h5','h6')]
         h2=[n for n in heading_nodes if n.tag=='h2'];h3=[n for n in heading_nodes if n.tag=='h3']
+        if slug=='members':
+            members_unnumbered={'pi':'PI','advisors':'Advisor','student-leaders':'Student leaders','student-team-members':'Student team members'}
+            source_headings={re.search(r'#([^ ]+)',b.get('attributes','')).group(1):b
+                for b in doc['blocks'] if b.get('_template')=='heading' and b.get('level')==3 and re.search(r'#([^ ]+)',b.get('attributes',''))}
+            for anchor,label in members_unnumbered.items():
+                block=source_headings.get(anchor)
+                if block is None or block.get('text')!=label or 'toc-unnumbered' not in block.get('attributes',''):
+                    failures.append(f'members: expected explicit unnumbered heading {anchor}: {label}')
+                rendered=[n for n in h3 if n.attrs.get('id')==anchor]
+                if len(rendered)!=1:
+                    failures.append(f'members: expected one rendered h3 #{anchor}, found {len(rendered)}')
+                elif re.match(r'^\s*(?:\d+(?:\.\d+)*[.)]?|[IVX]+[.)])\s+',rendered[0].text().strip()):
+                    failures.append(f'members: explicit unnumbered h3 gained a numeric prefix: {rendered[0].text().strip()}')
         for n in h2:
             label=n.text().strip()
             calendar_date=re.match(r'^\d{1,2}\s+(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{4}\b',label)
