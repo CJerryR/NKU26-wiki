@@ -8,4 +8,3 @@ for (const name of await fs.readdir('content/wiki')) {
   await fs.writeFile(`src/content/pages/${entry.id}.md`, matter.stringify(entry.body, entry.data).trimEnd() + '\n');
 }
 console.log('Exported Tina content to Markdown for static build and content audit.');
-
