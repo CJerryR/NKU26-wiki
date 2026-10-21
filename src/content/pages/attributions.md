@@ -53,7 +53,7 @@ hidden: false
 
 artificial intelligence (AI) tools supported our literature research, dry-lab software development, protein structure prediction, writing, and visual communication. Team members defined the research questions, reviewed AI-assisted outputs, and decided how to use them in the project.
 
-#### ChatGPT — OpenAI {#chatgpt-openai toc="ChatGPT — OpenAI"}
+#### ChatGPT — OpenAI {#chatgpt-openai}
 
 **Models:** GPT-5.6 Sol, GPT-5.6 Terra, GPT-5.6 Luna; GPT-6.1 Sol, GPT-6.1 Terra, GPT-6.1 Luna; GPT-6 Astra.
 
@@ -67,7 +67,7 @@ artificial intelligence (AI) tools supported our literature research, dry-lab so
 
 **Writing:** Team members supplied research text they had already written, together with outlines, experimental records, or notes. ChatGPT was used mainly to polish language, translate text, and organize the presentation of that content. The members responsible for each section checked the revised text against the underlying research and records to preserve scientific meaning and accurately describe the work performed.
 
-#### Claude — Anthropic {#claude-anthropic toc="Claude — Anthropic"}
+#### Claude — Anthropic {#claude-anthropic}
 
 **Models:** Claude Opus 4.7; Claude Opus 5; Claude Opus 5.5; Claude Fable 5.
 
@@ -77,7 +77,7 @@ artificial intelligence (AI) tools supported our literature research, dry-lab so
 
 **Writing:** Used Claude to translate text written by team members, standardize formatting, and improve grammar and readability. The relevant contributors reviewed the revised text to ensure that scientific terminology, meaning, and descriptions of the work remained accurate.
 
-#### DeepSeek — DeepSeek-AI {#deepseek-deepseek-ai toc="DeepSeek — DeepSeek-AI"}
+#### DeepSeek — DeepSeek-AI {#deepseek-deepseek-ai}
 
 **Models:** DeepSeek-V4; DeepSeek-V4.1.
 
@@ -85,7 +85,7 @@ artificial intelligence (AI) tools supported our literature research, dry-lab so
 
 Used DeepSeek to support the reading and interpretation of scientific literature and to develop background knowledge relevant to the project. Its explanations helped the team work through unfamiliar concepts, while original publications remained the basis for checking scientific statements and references.
 
-#### Doubao — ByteDance {#doubao-bytedance toc="Doubao — ByteDance"}
+#### Doubao — ByteDance {#doubao-bytedance}
 
 **Models:** Doubao-Seed-2.0; Doubao-Seed-2.1.
 
@@ -93,13 +93,13 @@ Used DeepSeek to support the reading and interpretation of scientific literature
 
 Used Doubao to assist with understanding scientific papers and reviewing project-related background information. Team members checked the resulting explanations against the source literature before using them in research discussions or written materials.
 
-#### AlphaFold 3 — Google DeepMind and Isomorphic Labs {#alphafold-3-google-deepmind-and-isomorphic-labs toc="AlphaFold 3 — Google DeepMind and Isomorphic Labs"}
+#### AlphaFold 3 — Google DeepMind and Isomorphic Labs {#alphafold-3-google-deepmind-and-isomorphic-labs}
 
 **Tasks:** Investigation, Analysis
 
 **Structure prediction:** The team locally deployed AlphaFold 3 using model parameters released by Google DeepMind and the reference databases provided through the official setup workflow for GPCR structure prediction. The predicted structures were used in downstream molecular docking with AutoDock Vina and molecular dynamics simulations with GROMACS. Team members configured and ran the workflow and reviewed its outputs as part of the project’s computational work. Detailed parameters and the computational workflow are documented on our Wiki Model page, in our public GitHub repository, and in our team repository on the official iGEM GitLab.
 
-#### Human review and responsibility {#human-review-responsibility toc="Human review and responsibility"}
+#### Human review and responsibility {#human-review-responsibility}
 
 Team leaders or advisors reviewed key interpretations and conclusions before inclusion in project materials. The team retained final responsibility for the methods, use of AI-assisted outputs, and accuracy and integrity of the submitted work.
 
@@ -117,7 +117,7 @@ The Anthropic entry concerns access to the partner offer. Our use of Claude as a
 
 External advisors contributed expertise on agricultural needs, nematode detection, and practical considerations for field use. Their feedback helped the team examine the project’s intended application and identify questions requiring further evaluation. Financial support is acknowledged separately below.
 
-#### Yurong Yao {#yurong-yao toc="Yurong Yao"}
+#### Yurong Yao {#yurong-yao}
 
 **Institution Type:** Academic
 **Relationship to the Team:** External Advisor
@@ -126,7 +126,7 @@ External advisors contributed expertise on agricultural needs, nematode detectio
 
 **Technical Consultation:** Explained the capabilities and limitations of existing nematode identification methods. Advised on soil sampling, sample transport and storage, separate sample handling, and treatment before disposal, helping the team consider the full workflow surrounding detection.
 
-#### Qian Liu {#qian-liu toc="Qian Liu"}
+#### Qian Liu {#qian-liu}
 
 **Institution Type:** Academic
 **Relationship to the Team:** External Advisor
@@ -135,7 +135,7 @@ External advisors contributed expertise on agricultural needs, nematode detectio
 
 **Technical Consultation:** Explained morphological and molecular identification approaches and highlighted sample representativeness, soil-matrix interference, negative controls, and cross-reactivity testing as important considerations for evaluating the proposed biosensor.
 
-#### Zhihao Pang {#zhihao-pang toc="Zhihao Pang"}
+#### Zhihao Pang {#zhihao-pang}
 
 **Institution Type:** Academic
 **Relationship to the Team:** External Advisor
@@ -144,7 +144,7 @@ External advisors contributed expertise on agricultural needs, nematode detectio
 
 **Technical Consultation:** Identified soil background color and potentially different degradation rates of ascr#3 and ascr#18 as factors requiring evaluation. Raised concerns about the environmental release of engineered yeast, prompting consideration of safety alongside practical usability.
 
-#### ExCell Bio {#excell-bio toc="ExCell Bio"}
+#### ExCell Bio {#excell-bio}
 
 **Institution Type:** Industry
 **Relationship to the Team:** Sponsor

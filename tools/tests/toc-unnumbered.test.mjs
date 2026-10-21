@@ -93,3 +93,23 @@ test('overview stays in the outline without consuming a chapter and dated labels
   const serialized = JSON.stringify(tree);
   assert.doesNotMatch(serialized, /"data-num":"03"/);
 });
+
+test('navigation-only exclusions preserve body numbering and cycle anchors', () => {
+  const processor = unified().use(remarkParse).use(remarkDirective).use(remarkWiki);
+  const markdown = [
+    '## DBTL-1: receptor localization {#dbtl-1 toc-hidden}',
+    '### 1.1 Cycle 1: expression {#cycle-1 toc="Cycle 1: expression"}',
+    '#### Design {#design}',
+    '## DBTL-2: chassis construction {#dbtl-2 toc-hidden}',
+    '### 2.1 Cycle 1: knockout {#cycle-2 toc="Cycle 1: knockout"}',
+    '## Future work {#future}',
+  ].join('\n\n');
+  const file = { data: {} };
+  const tree = processor.runSync(processor.parse(markdown), file);
+  assert.deepEqual(file.data.wikiToc.map(({ id, num }) => [id, num]), [
+    ['cycle-1', undefined], ['cycle-2', undefined], ['future', '01'],
+  ]);
+  const body = JSON.stringify(tree);
+  for (const num of ['01', '02', '03']) assert.ok(body.includes(`"data-num":"${num}"`));
+  for (const id of ['dbtl-1', 'cycle-1', 'design', 'dbtl-2', 'cycle-2']) assert.ok(body.includes(`"id":"${id}"`));
+});

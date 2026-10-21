@@ -817,7 +817,7 @@
       "_template": "heading",
       "text": "ChatGPT — OpenAI",
       "level": 4,
-      "attributes": "#chatgpt-openai toc=\"ChatGPT — OpenAI\""
+      "attributes": "#chatgpt-openai"
     },
     {
       "_template": "text",
@@ -827,7 +827,7 @@
       "_template": "heading",
       "text": "Claude — Anthropic",
       "level": 4,
-      "attributes": "#claude-anthropic toc=\"Claude — Anthropic\""
+      "attributes": "#claude-anthropic"
     },
     {
       "_template": "text",
@@ -837,7 +837,7 @@
       "_template": "heading",
       "text": "DeepSeek — DeepSeek-AI",
       "level": 4,
-      "attributes": "#deepseek-deepseek-ai toc=\"DeepSeek — DeepSeek-AI\""
+      "attributes": "#deepseek-deepseek-ai"
     },
     {
       "_template": "text",
@@ -847,7 +847,7 @@
       "_template": "heading",
       "text": "Doubao — ByteDance",
       "level": 4,
-      "attributes": "#doubao-bytedance toc=\"Doubao — ByteDance\""
+      "attributes": "#doubao-bytedance"
     },
     {
       "_template": "text",
@@ -857,7 +857,7 @@
       "_template": "heading",
       "text": "AlphaFold 3 — Google DeepMind and Isomorphic Labs",
       "level": 4,
-      "attributes": "#alphafold-3-google-deepmind-and-isomorphic-labs toc=\"AlphaFold 3 — Google DeepMind and Isomorphic Labs\""
+      "attributes": "#alphafold-3-google-deepmind-and-isomorphic-labs"
     },
     {
       "_template": "text",
@@ -867,7 +867,7 @@
       "_template": "heading",
       "text": "Human review and responsibility",
       "level": 4,
-      "attributes": "#human-review-responsibility toc=\"Human review and responsibility\""
+      "attributes": "#human-review-responsibility"
     },
     {
       "_template": "text",
@@ -906,7 +906,7 @@
       "_template": "heading",
       "text": "Yurong Yao",
       "level": 4,
-      "attributes": "#yurong-yao toc=\"Yurong Yao\""
+      "attributes": "#yurong-yao"
     },
     {
       "_template": "text",
@@ -916,7 +916,7 @@
       "_template": "heading",
       "text": "Qian Liu",
       "level": 4,
-      "attributes": "#qian-liu toc=\"Qian Liu\""
+      "attributes": "#qian-liu"
     },
     {
       "_template": "text",
@@ -926,7 +926,7 @@
       "_template": "heading",
       "text": "Zhihao Pang",
       "level": 4,
-      "attributes": "#zhihao-pang toc=\"Zhihao Pang\""
+      "attributes": "#zhihao-pang"
     },
     {
       "_template": "text",
@@ -936,7 +936,7 @@
       "_template": "heading",
       "text": "ExCell Bio",
       "level": 4,
-      "attributes": "#excell-bio toc=\"ExCell Bio\""
+      "attributes": "#excell-bio"
     },
     {
       "_template": "text",

@@ -645,10 +645,11 @@ function finalize(tree, file) {
     const id = h.data.hProperties.id;
     if (h.depth === 2 && rootH2.has(h) && !('notoc' in a)) {
       const overview = 'overview' in a;
-      const num = overview ? undefined : String(++tocSection).padStart(2, '0');
+      const num = overview || 'toc-hidden' in a ? undefined : String(++tocSection).padStart(2, '0');
       if (!overview && !('unnumbered' in a)) h.data.hProperties['data-num'] = String(++bodySection).padStart(2, '0');
       h.data.tocText = a.toc || toText(h);
-      toc.push({ depth: 2, id, text: cleanTocLabel(h.data.tocText), num });
+      // Hide navigation-only exclusions without changing body chapter numbering.
+      if (!('toc-hidden' in a)) toc.push({ depth: 2, id, text: cleanTocLabel(h.data.tocText), num });
     } else if (h.depth === 3 && 'toc' in a) {
       toc.push({ depth: h.depth, id, text: cleanTocLabel(a.toc || toText(h)) });
     } else if (h.depth >= 4 && h.depth <= 6 && 'toc' in a) {

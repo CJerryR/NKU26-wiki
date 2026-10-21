@@ -18,7 +18,7 @@
       "_template": "heading",
       "text": "DBTL-1: heterologous expression and transmembrane localization verification of GPR2",
       "level": 2,
-      "attributes": "#dbtl-1-heterologous-expression-and-transmembrane-localization-verification-of-gpr2 toc=\"DBTL-1: heterologous expression and transmembrane localization verification of GPR2\""
+      "attributes": "#dbtl-1-heterologous-expression-and-transmembrane-localization-verification-of-gpr2 toc=\"DBTL-1: heterologous expression and transmembrane localization verification of GPR2\" toc-hidden"
     },
     {
       "_template": "text",
@@ -34,7 +34,7 @@
       "_template": "heading",
       "text": "Design | planning GPR2 expression and localization tests",
       "level": 4,
-      "attributes": "#design toc=\"Design | planning GPR2 expression and localization tests\""
+      "attributes": "#design"
     },
     {
       "_template": "text",
@@ -60,7 +60,7 @@
       "_template": "heading",
       "text": "Build | integrating the GPR2-sfGFP expression cassette",
       "level": 4,
-      "attributes": "#build toc=\"Build | integrating the GPR2-sfGFP expression cassette\""
+      "attributes": "#build"
     },
     {
       "_template": "text",
@@ -92,7 +92,7 @@
       "_template": "heading",
       "text": "Test | observing GPR2-sfGFP fluorescence",
       "level": 4,
-      "attributes": "#test toc=\"Test | observing GPR2-sfGFP fluorescence\""
+      "attributes": "#test"
     },
     {
       "_template": "text",
@@ -110,7 +110,7 @@
       "_template": "heading",
       "text": "Learn | identifying the need for localization controls",
       "level": 4,
-      "attributes": "#learn toc=\"Learn | identifying the need for localization controls\""
+      "attributes": "#learn"
     },
     {
       "_template": "text",
@@ -126,7 +126,7 @@
       "_template": "heading",
       "text": "Design and build | preparing cell-wall and membrane staining controls",
       "level": 4,
-      "attributes": "#design-and-build toc=\"Design and build | preparing cell-wall and membrane staining controls\""
+      "attributes": "#design-and-build"
     },
     {
       "_template": "text",
@@ -144,7 +144,7 @@
       "_template": "heading",
       "text": "Test | comparing GFP with cell-wall and membrane signals",
       "level": 4,
-      "attributes": "#test-2 toc=\"Test | comparing GFP with cell-wall and membrane signals\""
+      "attributes": "#test-2"
     },
     {
       "_template": "text",
@@ -174,7 +174,7 @@
       "_template": "heading",
       "text": "Learn | assessing GPR2 plasma-membrane localization",
       "level": 4,
-      "attributes": "#learn-2 toc=\"Learn | assessing GPR2 plasma-membrane localization\""
+      "attributes": "#learn-2"
     },
     {
       "_template": "text",
@@ -184,7 +184,7 @@
       "_template": "heading",
       "text": "DBTL-2: engineering construction of ascaroside-responsive yeast chassis",
       "level": 2,
-      "attributes": "#dbtl-2-engineering-construction-of-ascaroside-responsive-yeast-chassis toc=\"DBTL-2: engineering construction of ascaroside-responsive yeast chassis\""
+      "attributes": "#dbtl-2-engineering-construction-of-ascaroside-responsive-yeast-chassis toc=\"DBTL-2: engineering construction of ascaroside-responsive yeast chassis\" toc-hidden"
     },
     {
       "_template": "text",
@@ -200,7 +200,7 @@
       "_template": "heading",
       "text": "Design | planning Gal80 knockout",
       "level": 4,
-      "attributes": "#design-2 toc=\"Design | planning Gal80 knockout\""
+      "attributes": "#design-2"
     },
     {
       "_template": "text",
@@ -210,7 +210,7 @@
       "_template": "heading",
       "text": "Build | assembling the Gal80 knockout cassette",
       "level": 4,
-      "attributes": "#build-2 toc=\"Build | assembling the Gal80 knockout cassette\""
+      "attributes": "#build-2"
     },
     {
       "_template": "text",
@@ -228,7 +228,7 @@
       "_template": "heading",
       "text": "Test | verifying Gal80 knockout transformants",
       "level": 4,
-      "attributes": "#test-3 toc=\"Test | verifying Gal80 knockout transformants\""
+      "attributes": "#test-3"
     },
     {
       "_template": "text",
@@ -246,7 +246,7 @@
       "_template": "heading",
       "text": "Learn | advancing to synthetic transcription factor construction",
       "level": 4,
-      "attributes": "#learn-3 toc=\"Learn | advancing to synthetic transcription factor construction\""
+      "attributes": "#learn-3"
     },
     {
       "_template": "text",
@@ -266,7 +266,7 @@
       "_template": "heading",
       "text": "Design | planning STE12 knockout and sTF integration",
       "level": 4,
-      "attributes": "#design-3 toc=\"Design | planning STE12 knockout and sTF integration\""
+      "attributes": "#design-3"
     },
     {
       "_template": "text",
@@ -294,7 +294,7 @@
       "_template": "heading",
       "text": "Build | assembling STE12 knockout and sTF constructs",
       "level": 4,
-      "attributes": "#build-3 toc=\"Build | assembling STE12 knockout and sTF constructs\""
+      "attributes": "#build-3"
     },
     {
       "_template": "text",
@@ -336,7 +336,7 @@
       "_template": "heading",
       "text": "Test | checking STE12 knockout transformants",
       "level": 4,
-      "attributes": "#test-4 toc=\"Test | checking STE12 knockout transformants\""
+      "attributes": "#test-4"
     },
     {
       "_template": "text",
@@ -354,7 +354,7 @@
       "_template": "heading",
       "text": "Learn | switching to CRISPR-Cas9 gene editing",
       "level": 4,
-      "attributes": "#learn-4 toc=\"Learn | switching to CRISPR-Cas9 gene editing\""
+      "attributes": "#learn-4"
     },
     {
       "_template": "text",
@@ -374,7 +374,7 @@
       "_template": "heading",
       "text": "Design | planning betaxanthin expression verification",
       "level": 4,
-      "attributes": "#design-4 toc=\"Design | planning betaxanthin expression verification\""
+      "attributes": "#design-4"
     },
     {
       "_template": "text",
@@ -384,7 +384,7 @@
       "_template": "heading",
       "text": "Build | troubleshooting the betaxanthin expression plasmid",
       "level": 4,
-      "attributes": "#build-4 toc=\"Build | troubleshooting the betaxanthin expression plasmid\""
+      "attributes": "#build-4"
     },
     {
       "_template": "text",
@@ -406,7 +406,7 @@
       "_template": "heading",
       "text": "Test | examining gene integration and yellow coloration",
       "level": 4,
-      "attributes": "#test-5 toc=\"Test | examining gene integration and yellow coloration\""
+      "attributes": "#test-5"
     },
     {
       "_template": "text",
@@ -454,7 +454,7 @@
       "_template": "heading",
       "text": "Design | planning Cas9, sgRNA and donor DNA constructs",
       "level": 4,
-      "attributes": "#design-5 toc=\"Design | planning Cas9, sgRNA and donor DNA constructs\""
+      "attributes": "#design-5"
     },
     {
       "_template": "text",
@@ -464,7 +464,7 @@
       "_template": "heading",
       "text": "Build | assembling CRISPR-Cas9 editing components",
       "level": 4,
-      "attributes": "#build-5 toc=\"Build | assembling CRISPR-Cas9 editing components\""
+      "attributes": "#build-5"
     },
     {
       "_template": "text",
@@ -553,7 +553,7 @@
       "_template": "heading",
       "text": "Test | verifying Cas9 transformation and genome editing",
       "level": 4,
-      "attributes": "#test-6 toc=\"Test | verifying Cas9 transformation and genome editing\""
+      "attributes": "#test-6"
     },
     {
       "_template": "text",
@@ -599,7 +599,7 @@
       "_template": "heading",
       "text": "Learn | advancing to GPR2 mutant characterization",
       "level": 4,
-      "attributes": "#learn-5 toc=\"Learn | advancing to GPR2 mutant characterization\""
+      "attributes": "#learn-5"
     },
     {
       "_template": "text",
@@ -615,7 +615,7 @@
       "_template": "heading",
       "text": "Design | planning GPR2 mutant strain construction",
       "level": 4,
-      "attributes": "#design-6 toc=\"Design | planning GPR2 mutant strain construction\""
+      "attributes": "#design-6"
     },
     {
       "_template": "text",
@@ -633,7 +633,7 @@
       "_template": "heading",
       "text": "Build and test | constructing and verifying GPR2 mutant plasmids",
       "level": 4,
-      "attributes": "#build-and-test toc=\"Build and test | constructing and verifying GPR2 mutant plasmids\""
+      "attributes": "#build-and-test"
     },
     {
       "_template": "text",
@@ -651,7 +651,7 @@
       "_template": "heading",
       "text": "Learn | identifying the need for test-strip productization",
       "level": 4,
-      "attributes": "#learn-6 toc=\"Learn | identifying the need for test-strip productization\""
+      "attributes": "#learn-6"
     },
     {
       "_template": "text",
@@ -661,7 +661,7 @@
       "_template": "heading",
       "level": 2,
       "text": "DBTL-3: test-strip development and productization",
-      "attributes": "#dbtl-3-test-strip-development-and-productization toc=\"DBTL-3: test-strip development and productization\""
+      "attributes": "#dbtl-3-test-strip-development-and-productization toc=\"DBTL-3: test-strip development and productization\" toc-hidden"
     },
     {
       "_template": "text",
@@ -681,7 +681,7 @@
       "_template": "heading",
       "level": 4,
       "text": "Design | selecting candidate substrates",
-      "attributes": "#results-3-1-design toc=\"Design | selecting candidate substrates\""
+      "attributes": "#results-3-1-design"
     },
     {
       "_template": "text",
@@ -699,7 +699,7 @@
       "_template": "heading",
       "level": 4,
       "text": "Build and test | comparing cell binding and water absorption",
-      "attributes": "#results-3-1-build-test toc=\"Build and test | comparing cell binding and water absorption\""
+      "attributes": "#results-3-1-build-test"
     },
     {
       "_template": "text",
@@ -887,7 +887,7 @@
       "_template": "heading",
       "level": 4,
       "text": "Learn | selecting GF/B as the test-strip substrate",
-      "attributes": "#results-3-1-learn toc=\"Learn | selecting GF/B as the test-strip substrate\""
+      "attributes": "#results-3-1-learn"
     },
     {
       "_template": "text",
@@ -915,7 +915,7 @@
       "_template": "heading",
       "level": 4,
       "text": "Design | planning cell immobilization and loading",
-      "attributes": "#results-3-2-design toc=\"Design | planning cell immobilization and loading\""
+      "attributes": "#results-3-2-design"
     },
     {
       "_template": "text",
@@ -933,7 +933,7 @@
       "_template": "heading",
       "level": 4,
       "text": "Build and test | evaluating coatings, protectants, and cell loading",
-      "attributes": "#results-3-2-build-test toc=\"Build and test | evaluating coatings, protectants, and cell loading\""
+      "attributes": "#results-3-2-build-test"
     },
     {
       "_template": "image",
@@ -980,7 +980,7 @@
       "_template": "heading",
       "level": 4,
       "text": "Learn | standardizing cell immobilization",
-      "attributes": "#results-3-2-learn toc=\"Learn | standardizing cell immobilization\""
+      "attributes": "#results-3-2-learn"
     },
     {
       "_template": "text",
@@ -1000,7 +1000,7 @@
       "_template": "heading",
       "level": 4,
       "text": "Design | planning reactivation and color development tests",
-      "attributes": "#results-3-3-design toc=\"Design | planning reactivation and color development tests\""
+      "attributes": "#results-3-3-design"
     },
     {
       "_template": "text",
@@ -1010,7 +1010,7 @@
       "_template": "heading",
       "level": 4,
       "text": "Build and test | comparing reactivation and color development conditions",
-      "attributes": "#results-3-3-build-test toc=\"Build and test | comparing reactivation and color development conditions\""
+      "attributes": "#results-3-3-build-test"
     },
     {
       "_template": "text",
@@ -1032,7 +1032,7 @@
       "_template": "heading",
       "level": 4,
       "text": "Learn | refining reactivation conditions and test-strip packaging",
-      "attributes": "#results-3-3-learn toc=\"Learn | refining reactivation conditions and test-strip packaging\""
+      "attributes": "#results-3-3-learn"
     },
     {
       "_template": "text",
@@ -1097,7 +1097,7 @@
       "_template": "heading",
       "level": 2,
       "text": "References",
-      "attributes": "#references toc=\"References\""
+      "attributes": "#references toc-hidden"
     },
     {
       "_template": "text",
