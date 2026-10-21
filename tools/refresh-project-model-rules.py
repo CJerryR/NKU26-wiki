@@ -24,7 +24,7 @@ spec.loader.exec_module(rules)
 # glossary. A named species alias is not treated as a generic ecological group.
 rules.TERMS.append(dict(full='guanosine diphosphate', abbreviation='GDP', aliases=[], species=False, plural=None, source='existing model glossary'))
 for term in rules.TERMS:
-    if term['abbreviation'] == 'Mi':
+    if term['abbreviation'] == 'M.i':
         term['aliases'] = [x for x in term['aliases'] if x != 'southern root-knot nematode']
 rules.PATTERN, rules.LOOKUP = rules.compile_terms()
 

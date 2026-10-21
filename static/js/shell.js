@@ -231,6 +231,19 @@
     btn.addEventListener('focus', function () { say(tips[ti++ % tips.length]); });
   }
 
-  function init() { detective(); }
+  /* 2026-10-21: fade the detective out while the footer is in view, so it
+     never covers the licence line (shared by the homepage and sub-pages) */
+  function detectiveVsFooter() {
+    var box = doc.querySelector('[data-detective]'), foot = doc.querySelector('.site-footer');
+    if (!box || !foot || !('IntersectionObserver' in window)) return;
+    new IntersectionObserver(function (es) {
+      var on = es[es.length - 1].isIntersecting;
+      box.classList.toggle('is-away', on);
+      var b = box.querySelector('.detective__btn'); if (b) b.tabIndex = on ? -1 : 0;
+      if (on) box.classList.remove('show-bubble');
+    }, { rootMargin: '0px 0px -60px 0px', threshold: 0 }).observe(foot);
+  }
+
+  function init() { detective(); detectiveVsFooter(); }
   if (doc.readyState === 'loading') doc.addEventListener('DOMContentLoaded', init); else init();
 })();

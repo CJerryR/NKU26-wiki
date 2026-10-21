@@ -173,7 +173,7 @@
     {
       "_template": "datatable",
       "title": "",
-      "csv": "Simulation setting,Value,Basis\nCombined per-individual release of the two ligands,q_3+q_{18}=1 fmol individual^{-1} h^{-1} for both Mi and Ce,Common simulation scale selected for this project\nLigand-release ratios,Mi: q_3:q_{18}=1:10; Ce: q_3:q_{18}=10:1,\"Literature provides qualitative context [5, 6]; exact ratios are project assumptions\"\nSensor-response weights,\"P3: (w_3,w_{18})=(2/3,1/3); P18: ((1/3,2/3))\",Complementary weights assigned according to the candidate preference directions",
+      "csv": "Simulation setting,Value,Basis\nCombined per-individual release of the two ligands,q_3+q_{18}=1 fmol individual^{-1} h^{-1} for both M.i and C.e,Common simulation scale selected for this project\nLigand-release ratios,M.i: q_3:q_{18}=1:10; C.e: q_3:q_{18}=10:1,\"Literature provides qualitative context [5, 6]; exact ratios are project assumptions\"\nSensor-response weights,\"P3: (w_3,w_{18})=(2/3,1/3); P18: ((1/3,2/3))\",Complementary weights assigned according to the candidate preference directions",
       "sourceCellRuns": [
         [
           [
@@ -227,7 +227,7 @@
               "latex": "^{-1}"
             },
             {
-              "text": " for both Mi and Ce",
+              "text": " for both M.i and C.e",
               "format": []
             }
           ],
@@ -247,7 +247,7 @@
           ],
           [
             {
-              "text": "Mi: ",
+              "text": "M.i: ",
               "format": []
             },
             {
@@ -256,7 +256,7 @@
               "latex": "q_3:q_{18}=1:10"
             },
             {
-              "text": "; Ce: ",
+              "text": "; C.e: ",
               "format": []
             },
             {
@@ -390,7 +390,7 @@
     },
     {
       "_template": "text",
-      "body": "In addition to endpoint comparisons, we examined pigment accumulation in blank, target-only, background-only, and mixed samples. The respective <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">(</mo><mrow><mi mathvariant=\"normal\">M</mi><mi mathvariant=\"normal\">i</mi></mrow><mo separator=\"true\">,</mo><mrow><mi mathvariant=\"normal\">C</mi><mi mathvariant=\"normal\">e</mi></mrow></mrow><annotation encoding=\"application/x-tex\">(\\mathrm{Mi},\\mathrm{Ce}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:1em;vertical-align:-0.25em;\"></span><span class=\"mopen\">(</span><span class=\"mord\"><span class=\"mord mathrm\">Mi</span></span><span class=\"mpunct\">,</span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mord\"><span class=\"mord mathrm\">Ce</span></span></span></span></span>) densities were ((0,0)), ((120,0)), ((0,200)), and ((120,200)), in individuals per 100 cm³ of soil."
+      "body": "In addition to endpoint comparisons, we examined pigment accumulation in blank, target-only, background-only, and mixed samples. The respective <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">(</mo><mrow><mi mathvariant=\"normal\">M</mi><mi mathvariant=\"normal\">.</mi><mi mathvariant=\"normal\">i</mi></mrow><mo separator=\"true\">,</mo><mrow><mi mathvariant=\"normal\">C</mi><mi mathvariant=\"normal\">.</mi><mi mathvariant=\"normal\">e</mi></mrow></mrow><annotation encoding=\"application/x-tex\">(\\mathrm{M.i},\\mathrm{C.e}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"katex-base\"><span class=\"katex-strut\" style=\"height:1em;vertical-align:-0.25em;\"></span><span class=\"mopen\">(</span><span class=\"mord\"><span class=\"mord mathrm\">M.i</span></span><span class=\"mpunct\">,</span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mord\"><span class=\"mord mathrm\">C.e</span></span></span></span></span>) densities were ((0,0)), ((120,0)), ((0,200)), and ((120,200)), in individuals per 100 cm³ of soil."
     },
     {
       "_template": "text",
@@ -508,7 +508,7 @@
     },
     {
       "_template": "equation",
-      "latex": "\\widehat d_{\\mathrm{Mi}} = \\beta_0+\\beta_3x_3+\\beta_{18}x_{18}."
+      "latex": "\\widehat d_{\\mathrm{M.i}} = \\beta_0+\\beta_3x_3+\\beta_{18}x_{18}."
     },
     {
       "_template": "text",
@@ -524,7 +524,7 @@
     },
     {
       "_template": "equation",
-      "latex": "\\widehat d_{\\mathrm{Mi}} = 4.335-1207.944x_3+2109.881x_{18},"
+      "latex": "\\widehat d_{\\mathrm{M.i}} = 4.335-1207.944x_3+2109.881x_{18},"
     },
     {
       "_template": "text",
@@ -1436,7 +1436,7 @@
     {
       "_template": "datatable",
       "title": "",
-      "csv": "Category,Parameter or condition,Value,Unit,Meaning and basis\nLigand release,q_3+q_{18},1 for both Mi and Ce,fmol individual^{-1} h^{-1},Combined release of the two ligands; project assumption\nLigand composition,q_3:q_{18},Mi: 1:10; Ce: 10:1,Dimensionless,\"Assumed ratios; literature provides qualitative context [5, 6]\"\nSampling,Soil volume,100,cm³,Project setting\nSampling,Collection time,1,h,Project setting\nSampling,Effective collection volume,1,mL,Project setting\nSampling,Recovery fraction and dilution factor,1 each,Dimensionless,Idealized simulation settings\nChannel input,\"(w_3,w_{18})\",\"P3: ((2/3,1/3)); P18: ((1/3,2/3))\",Dimensionless,Assumed complementary weights; docking provides directional design clues\nChannel input,Ligand normalization reference,1,nM,Project setting\nChannel input,u_{\\max},1.206908,s^{-1},\"Input scale constructed from source k_3=0.724\\ \\mu\\mathrm{M}^{-1}\\mathrm{s}^{-1} and initial receptor concentration 1.667\\ \\mu\\mathrm{M} [3, 4]\"\nChannel input,K_L,P3: 472207.031; P18: 417856.926,Dimensionless,Effective input scale fitted to synthetic endpoints\nPigment output,(a),P3: 1033.644509; P18: 905.278000,\"\\mu\\mathrm{M},\\mathrm{h}^{-1}\",Stimulus-associated production rate; synthetic fit followed by analytical rescaling\nPigment output,(b),44.152906,\"\\mu\\mathrm{M},\\mathrm{h}^{-1}\",Basal production rate derived from the assumed 8 h blank\nPigment output,(K),0.120994,Dimensionless,Effective half-response scale derived from the merged output relationship and assumed state mapping\nPigment output,(n),2,Dimensionless,\"Assumed Hill coefficient, held fixed during calibration\"\nPigment output,\\delta,0.12,h^{-1},\"Assumed effective pigment-loss rate, held fixed during calibration\"\nInitial condition,(C(0)),0,\\mu\\mathrm{M},Assumed initial pigment-equivalent concentration\nEndpoint setting,Readout time,8,h,Selected simulation endpoint\nEndpoint setting,Blank concentration at 8 h,0.07,mg/mL,Project assumption\nEndpoint setting,Common target-generation gain (G),9299.754376,\"\\mu\\mathrm{M},\\mathrm{nM}^{-1}\",\"Gain used to construct prescribed pigment endpoints, derived from the selected target range\"",
+      "csv": "Category,Parameter or condition,Value,Unit,Meaning and basis\nLigand release,q_3+q_{18},1 for both M.i and C.e,fmol individual^{-1} h^{-1},Combined release of the two ligands; project assumption\nLigand composition,q_3:q_{18},M.i: 1:10; C.e: 10:1,Dimensionless,\"Assumed ratios; literature provides qualitative context [5, 6]\"\nSampling,Soil volume,100,cm³,Project setting\nSampling,Collection time,1,h,Project setting\nSampling,Effective collection volume,1,mL,Project setting\nSampling,Recovery fraction and dilution factor,1 each,Dimensionless,Idealized simulation settings\nChannel input,\"(w_3,w_{18})\",\"P3: ((2/3,1/3)); P18: ((1/3,2/3))\",Dimensionless,Assumed complementary weights; docking provides directional design clues\nChannel input,Ligand normalization reference,1,nM,Project setting\nChannel input,u_{\\max},1.206908,s^{-1},\"Input scale constructed from source k_3=0.724\\ \\mu\\mathrm{M}^{-1}\\mathrm{s}^{-1} and initial receptor concentration 1.667\\ \\mu\\mathrm{M} [3, 4]\"\nChannel input,K_L,P3: 472207.031; P18: 417856.926,Dimensionless,Effective input scale fitted to synthetic endpoints\nPigment output,(a),P3: 1033.644509; P18: 905.278000,\"\\mu\\mathrm{M},\\mathrm{h}^{-1}\",Stimulus-associated production rate; synthetic fit followed by analytical rescaling\nPigment output,(b),44.152906,\"\\mu\\mathrm{M},\\mathrm{h}^{-1}\",Basal production rate derived from the assumed 8 h blank\nPigment output,(K),0.120994,Dimensionless,Effective half-response scale derived from the merged output relationship and assumed state mapping\nPigment output,(n),2,Dimensionless,\"Assumed Hill coefficient, held fixed during calibration\"\nPigment output,\\delta,0.12,h^{-1},\"Assumed effective pigment-loss rate, held fixed during calibration\"\nInitial condition,(C(0)),0,\\mu\\mathrm{M},Assumed initial pigment-equivalent concentration\nEndpoint setting,Readout time,8,h,Selected simulation endpoint\nEndpoint setting,Blank concentration at 8 h,0.07,mg/mL,Project assumption\nEndpoint setting,Common target-generation gain (G),9299.754376,\"\\mu\\mathrm{M},\\mathrm{nM}^{-1}\",\"Gain used to construct prescribed pigment endpoints, derived from the selected target range\"",
       "sourceCellRuns": [
         [
           [
@@ -1486,7 +1486,7 @@
           ],
           [
             {
-              "text": "1 for both Mi and Ce",
+              "text": "1 for both M.i and C.e",
               "format": []
             }
           ],
@@ -1533,7 +1533,7 @@
           ],
           [
             {
-              "text": "Mi: 1:10; Ce: 10:1",
+              "text": "M.i: 1:10; C.e: 10:1",
               "format": []
             }
           ],

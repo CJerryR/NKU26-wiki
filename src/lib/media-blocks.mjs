@@ -36,6 +36,11 @@ export function renderMediaBlock(block, type) {
     const file = String(block.file).trim();
     if (!SAFE_URL.test(file)) return '<p class="wiki-media__invalid">请选择有效的 PDF 文件地址（站内路径或 https 地址）。</p>';
     const url = escape(file);
+    // compact: a one-line file card; the reader opens on demand, so pages with
+    // many protocols stay short and only load the PDFs a visitor asks for.
+    if (block.compact === true) {
+      return `<figure class="wiki-media wiki-media--pdf wiki-media--compact"><details><summary class="wiki-media__bar"><span class="wiki-media__kind">PDF</span><span class="wiki-media__title">${escape(title)}</span><span class="wiki-media__toggle" aria-hidden="true"></span><a class="wiki-media__action" href="${url}" target="_blank" rel="noopener noreferrer">Open PDF / Download</a></summary><iframe class="wiki-media__frame" src="${url}" title="${escape(title)}" loading="lazy" style="height:${height}px" referrerpolicy="no-referrer"></iframe></details>${caption(block)}</figure>`;
+    }
     return `<figure class="wiki-media wiki-media--pdf"><div class="wiki-media__bar"><span class="wiki-media__kind">PDF</span><span class="wiki-media__title">${escape(title)}</span><a class="wiki-media__action" href="${url}" target="_blank" rel="noopener noreferrer">Open PDF / Download</a></div><iframe class="wiki-media__frame" src="${url}" title="${escape(title)}" loading="lazy" style="height:${height}px" referrerpolicy="no-referrer"></iframe>${caption(block)}</figure>`;
   }
 

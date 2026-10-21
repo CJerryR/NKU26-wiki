@@ -26,8 +26,14 @@
       "manuscript": "Starting with a handful of soil"
     },
     {
-      "_template": "text",
-      "body": "<div class=\"figure-text figure-text--wrap figure-text--right\" style=\"--image-share:40%\"><figure class=\"figure hp-source-figure\"><div class=\"figure__media hp-photo-group\"><div class=\"hp-photo-item\"><a href=\"https://static.igem.wiki/teams/6303/wiki/hp-20261021/classroom-85d0f4d1c7a8.avif\"><img src=\"https://static.igem.wiki/teams/6303/wiki/hp-20261021/classroom-85d0f4d1c7a8.avif\" alt=\"A nematode-themed lesson in Lincheng, Hebei\" loading=\"lazy\"></a></div></div><figcaption>Figure 1. A nematode-themed lesson in Lincheng, Hebei. Using images of plant roots, a team member introduces plant-parasitic nematodes and their connection with crop disease, linking familiar plant observations with life below ground and agricultural problems.</figcaption></figure><div class=\"figure-text__body\"><p>Why do plants become ill? What lives unseen in soil? How do living things sense changes around them? These questions are our starting point for introducing the project. Drawing on agricultural nematodes and early warning, we translated the idea of signal input, biological response, and visible output into courses, picture books, and outreach materials. Learners begin with familiar plants and soil before exploring the principles of synthetic biology.</p><p>Education also helps us examine how we explain our work. For learners of different ages, we need to make clear how nematodes relate to agriculture, how the sensor works, and what a color change can tell us. This encourages us to revisit our terminology, illustrations, and explanations, and consider how to make the testing process and the meaning of its results easier to understand.</p></div></div>"
+      "_template": "image",
+      "src": "https://static.igem.wiki/teams/6303/wiki/hp-20261021/classroom-85d0f4d1c7a8.avif",
+      "alt": "A nematode-themed lesson in Lincheng, Hebei",
+      "body": "Figure 1. A nematode-themed lesson in Lincheng, Hebei. Using images of plant roots, a team member introduces plant-parasitic nematodes and their connection with crop disease, linking familiar plant observations with life below ground and agricultural problems.",
+      "layout": "wrap-right",
+      "imageWidth": "medium",
+      "accompanyingBody": "<p>Why do plants become ill? What lives unseen in soil? How do living things sense changes around them? These questions are our starting point for introducing the project. Drawing on agricultural nematodes and early warning, we translated the idea of signal input, biological response, and visible output into courses, picture books, and outreach materials. Learners begin with familiar plants and soil before exploring the principles of synthetic biology.</p><p>Education also helps us examine how we explain our work. For learners of different ages, we need to make clear how nematodes relate to agriculture, how the sensor works, and what a color change can tell us. This encourages us to revisit our terminology, illustrations, and explanations, and consider how to make the testing process and the meaning of its results easier to understand.</p>",
+      "openOriginal": true
     },
     {
       "_template": "heading",
@@ -108,8 +114,90 @@
       "body": "<p>The science and experimental science courses each have primary-school and middle-school versions. The values and responsibility course is designed for primary-school learners. We adjust learning goals, depth of explanation, illustrations, and activities to suit learners’ existing knowledge and classroom conditions.</p>"
     },
     {
-      "_template": "text",
-      "body": "<div class=\"table-wrap\" tabindex=\"0\"><table><thead><tr><th scope=\"col\">Course</th><th scope=\"col\">Primary-school version</th><th scope=\"col\">Middle-school version</th></tr></thead><tbody><tr><td>The Nematode Hunt</td><td>Introduces nematodes and life below ground through clear images, familiar plants, and simple stories</td><td>Builds on the same themes to discuss observation, possible causes, and interpretation</td></tr><tr><td>Exploring Biological Signals</td><td>Uses age-appropriate activities to introduce the relationship between input, sensing, and output</td><td>Explores biological signals, experimental comparisons, controls, and interpretation in greater depth</td></tr><tr><td>Small Lives and Everyday Contributions</td><td>Connects scientific themes with everyday experiences of responsibility, cooperation, and personal growth</td><td>—</td></tr></tbody></table></div>"
+      "_template": "datatable",
+      "csv": "Course,Primary-school version,Middle-school version\nThe Nematode Hunt,\"Introduces nematodes and life below ground through clear images, familiar plants, and simple stories\",\"Builds on the same themes to discuss observation, possible causes, and interpretation\"\nExploring Biological Signals,\"Uses age-appropriate activities to introduce the relationship between input, sensing, and output\",\"Explores biological signals, experimental comparisons, controls, and interpretation in greater depth\"\nSmall Lives and Everyday Contributions,\"Connects scientific themes with everyday experiences of responsibility, cooperation, and personal growth\",—",
+      "sourceCellRuns": [
+        [
+          [
+            {
+              "text": "Course",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Primary-school version",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Middle-school version",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "The Nematode Hunt",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Introduces nematodes and life below ground through clear images, familiar plants, and simple stories",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Builds on the same themes to discuss observation, possible causes, and interpretation",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Exploring Biological Signals",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Uses age-appropriate activities to introduce the relationship between input, sensing, and output",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Explores biological signals, experimental comparisons, controls, and interpretation in greater depth",
+              "format": []
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Small Lives and Everyday Contributions",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "Connects scientific themes with everyday experiences of responsibility, cooperation, and personal growth",
+              "format": []
+            }
+          ],
+          [
+            {
+              "text": "—",
+              "format": []
+            }
+          ]
+        ]
+      ]
     },
     {
       "_template": "text",
@@ -201,7 +289,11 @@
     },
     {
       "_template": "text",
-      "body": "<div class=\"figure-text figure-text--wrap figure-text--right\" style=\"--image-share:40%\"><figure class=\"figure hp-source-figure\"><div class=\"figure__media hp-photo-group\"><div class=\"hp-photo-item\"><p class=\"hp-image-label\">a</p><a href=\"https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-e814e3ad8816.webp\"><img src=\"https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-e814e3ad8816.webp\" alt=\"Outreach materials that introduce the project through illustrations and stories (a)\" loading=\"lazy\"></a></div><div class=\"hp-photo-item\"><p class=\"hp-image-label\">b</p><a href=\"https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-03ee1133d4af.webp\"><img src=\"https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-03ee1133d4af.webp\" alt=\"Outreach materials that introduce the project through illustrations and stories (b)\" loading=\"lazy\"></a></div></div><figcaption>Figure 4. Outreach materials that introduce the project through illustrations and stories. (a) The Yeast Detective and the secret signals in soil. (b) The Yeast Detective’s three steps to helping farmers. Characters, settings, and simple diagrams connect engineered yeast, soil signals, and agricultural applications, giving audiences a visual starting point for understanding the project. Generated with OpenAI GPT Image 2.</figcaption></figure><div class=\"figure-text__body\"><p>Picture books, posters, leaflets, postcards, fieldwork reports, and a sampling guidance video present the project’s agricultural questions, biological sensing concept, and sampling requirements in different forms. Images and stories give people outside the classroom ways to encounter life below ground and understand why our team studies agricultural nematodes.</p><p>Illustrated materials such as The Yeast Detective and the Secret Signals in Soil provide a visual introduction to engineered yeast and soil signals. The Yeast Detective’s Three Steps to Helping Farmers connects the project with an agricultural setting. The sampling guidance video links field procedures with the background information contributors need to retain; the Investigation page explains this workflow in more details.</p><p>Preparing these materials requires us to choose a focus for each format: how can an image explain an invisible signal, how can a story introduce an agricultural problem, and how can guidance help someone understand what to do next? These choices help us examine our project explanations from the audience’s perspective.</p></div></div>"
+      "body": "<figure class=\"figure hp-source-figure\"><div class=\"figure__media hp-photo-group\"><div class=\"hp-photo-item\"><p class=\"hp-image-label\">a</p><a href=\"https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-e814e3ad8816.webp\"><img src=\"https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-e814e3ad8816.webp\" alt=\"Outreach materials that introduce the project through illustrations and stories (a)\" loading=\"lazy\"></a></div><div class=\"hp-photo-item\"><p class=\"hp-image-label\">b</p><a href=\"https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-03ee1133d4af.webp\"><img src=\"https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-03ee1133d4af.webp\" alt=\"Outreach materials that introduce the project through illustrations and stories (b)\" loading=\"lazy\"></a></div></div><figcaption>Figure 4. Outreach materials that introduce the project through illustrations and stories. (a) The Yeast Detective and the secret signals in soil. (b) The Yeast Detective’s three steps to helping farmers. Characters, settings, and simple diagrams connect engineered yeast, soil signals, and agricultural applications, giving audiences a visual starting point for understanding the project. Generated with OpenAI GPT Image 2.</figcaption></figure>"
+    },
+    {
+      "_template": "text",
+      "body": "<p>Picture books, posters, leaflets, postcards, fieldwork reports, and a sampling guidance video present the project’s agricultural questions, biological sensing concept, and sampling requirements in different forms. Images and stories give people outside the classroom ways to encounter life below ground and understand why our team studies agricultural nematodes.</p><p>Illustrated materials such as The Yeast Detective and the Secret Signals in Soil provide a visual introduction to engineered yeast and soil signals. The Yeast Detective’s Three Steps to Helping Farmers connects the project with an agricultural setting. The sampling guidance video links field procedures with the background information contributors need to retain; the Investigation page explains this workflow in more details.</p><p>Preparing these materials requires us to choose a focus for each format: how can an image explain an invisible signal, how can a story introduce an agricultural problem, and how can guidance help someone understand what to do next? These choices help us examine our project explanations from the audience’s perspective.</p>"
     },
     {
       "_template": "heading",

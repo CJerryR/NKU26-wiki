@@ -199,7 +199,7 @@
     });
     var NOTES = {
       1: ['Wet lab', 'A fungus that hunts nematodes', 'Arthrobotrys oligospora catches the nematodes around it.'],
-      2: ['Wet lab', 'A receptor for their signal', 'In this fungus we found a receptor that recognizes ascarosides, the chemicals nematodes release.'],
+      2: ['Wet lab', 'A receptor for their signal', 'Researchers identified a receptor in this fungus that recognizes ascarosides, the chemicals nematodes release.'],
       3: ['Dry lab', 'Redesigning the receptor', 'We took the receptor out and designed variants of it.'],
       4: ['Dry lab', 'Screening on the computer', 'Molecular docking and molecular dynamics keep the variants that recognize ascr#3 and ascr#18.'],
       5: ['Wet lab', 'Into yeast', 'The modified gene goes into yeast, so the yeast carries the receptor and can recognize ascarosides.'],
@@ -331,7 +331,7 @@
     var v0 = svg.getAttribute('viewBox').split(/[\s,]+/).map(Number), FULL = { x: v0[0], y: v0[1], w: v0[2], h: v0[3] };
     var cur = { x: FULL.x, y: FULL.y, w: FULL.w, h: FULL.h }, active = 0, raf = 0, hovered = 0;
     var wide = window.matchMedia('(min-width: 960px)'), GAP = 28, PAD = 14;
-    var KIND = { dry: ['Dry Lab', '#53509d'], wet: ['Wet Lab', '#c57925'], hp: ['Human Practices', '#ab3045'] };
+    var KIND = { dry: ['Dry lab', '#53509d'], wet: ['Wet lab', '#c57925'], hp: ['Human practices', '#ab3045'] };
     var texts = {}; H.$$('[data-lp-text]', sec).forEach(function (t) { texts[t.getAttribute('data-lp-text')] = t; });
 
     function frame(c) {

@@ -71,8 +71,8 @@ term('principal investigator', 'PI', plural='PIs')
 term('artificial intelligence', 'AI')
 term('Microsoft PowerPoint presentations', 'PPTs')
 term('Saccharomyces cerevisiae', 'S.c', 'S. cerevisiae', 'S.cerevisiae', species=True, source='https://www.yeastgenome.org/; project-approved S.c abbreviation')
-term('Meloidogyne incognita', 'Mi', 'M. incognita', 'southern root-knot nematode', species=True, source='project ODE model notation Mi')
-term('Caenorhabditis elegans', 'Ce', 'C. elegans', species=True, source='project ODE model notation Ce')
+term('Meloidogyne incognita', 'M.i', 'M. incognita', 'southern root-knot nematode', species=True, source='project ODE model notation M.i')
+term('Caenorhabditis elegans', 'C.e', 'C. elegans', species=True, source='project ODE model notation C.e')
 term('Heterodera glycines', 'H. glycines', species=True)
 term('Arthrobotrys oligospora', 'A. oligospora', species=True)
 term('Arthrobotrys flagrans', 'A. flagrans', species=True)
@@ -365,11 +365,11 @@ def apply(regenerate=False):
         state = {}
         for obj, key, path, text_only in visible_fields(data):
             obj[key] = transform_prose(obj[key], state, path, text_only)
-        # Source templates sometimes redundantly say '(Mi)' after an organism's
+        # Source templates sometimes redundantly say '(M.i)' after an organism's
         # model name. Only remove same-symbol duplication introduced by aliases.
         for obj,key,_,_ in visible_fields(data):
-            obj[key] = re.sub(r'(<em>(Mi|Ce)</em>)\s*\(\2\)', r'\1', obj[key])
-            obj[key] = re.sub(r'(<strong><em>[^<]+</em> \(<em>(Mi|Ce)</em>\)</strong>)\s*\(\2\)', r'\1', obj[key])
+            obj[key] = re.sub(r'(<em>(M\.i|C\.e)</em>)\s*\(\2\)', r'\1', obj[key])
+            obj[key] = re.sub(r'(<strong><em>[^<]+</em> \(<em>(M\.i|C\.e)</em>\)</strong>)\s*\(\2\)', r'\1', obj[key])
             for t in TERMS:
                 abbr=t['abbreviation']
                 obj[key], removed_duplicates = re.subn(r'(\('+re.escape(abbr)+r'\))\s*\('+re.escape(abbr)+r'\)',r'\1',obj[key])

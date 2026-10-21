@@ -15,11 +15,11 @@
 const esc = (s) => String(s ?? '').replace(/\s*\n\s*/g, ' ').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 // The agreed species names/aliases are plain Tina text, not author-supplied HTML.
 // Escape first and add only our own <em> tags. Identifier/path boundaries keep
-// chemical formulae (CeCl3), filenames and material IDs (pRS315-Mi) untouched.
+// chemical formulae (CeCl3), filenames and material IDs (pRS315-M.i) untouched.
 const speciesNames = [
   'Saccharomyces cerevisiae', 'S.c',
-  'Meloidogyne incognita', 'Mi',
-  'Caenorhabditis elegans', 'Ce',
+  'Meloidogyne incognita', 'M.i',
+  'Caenorhabditis elegans', 'C.e',
   'Heterodera glycines', 'H. glycines',
   'Arthrobotrys oligospora', 'A. oligospora',
 ];

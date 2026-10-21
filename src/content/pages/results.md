@@ -165,7 +165,7 @@ Details are as follows:
 
 <p>a. Sequences of approximately 1 kb upstream and downstream of the <em>STE12 </em>gene were selected as the homologous arms of the knockout cassette, and His was used as the auxotrophic marker for subsequent transformant screening and validation (Figure 12a).</p>
 
-<p> b. The upstream and downstream sequences of the <em>STE12</em> gene were used as the 5′ homologous arm (identical to the 5′ homologous arm of KOSTE12) and 3′ homologous arm, respectively. Between the two homologous arms, the sTF fused by Gal4-DNA-binding domain and STE12-pheromone-responsive domain<sup>[2]</sup>, together with the Leu auxotrophic marker, was inserted to generate the HR plasmid pRS315-sTF (Figure 8).</p>
+::::figuretext{side=right width=medium flow=wrap}
 
 :::figure
 
@@ -174,6 +174,10 @@ Details are as follows:
 <p>Figure 8. Plasmid map of the HR plasmid pRS315-sTF.</p>
 
 :::
+
+<p> b. The upstream and downstream sequences of the <em>STE12</em> gene were used as the 5′ homologous arm (identical to the 5′ homologous arm of KOSTE12) and 3′ homologous arm, respectively. Between the two homologous arms, the sTF fused by Gal4-DNA-binding domain and STE12-pheromone-responsive domain<sup>[2]</sup>, together with the Leu auxotrophic marker, was inserted to generate the HR plasmid pRS315-sTF (Figure 8).</p>
+
+::::
 
 #### Build {#build-3 toc="Build | assembling STE12 knockout and sTF constructs"}
 
@@ -341,7 +345,7 @@ Figure 22. Fragment construction of Gal1/10bp-betaxanthin expression cassette (a
 
 :::
 
-<p>For GPR2, since GPR2 in the previously constructed plasmid pRS315-TEF1p-GPR2-sfGFP is fused to sfGFP via a flexible linker, direct construction of the donor fragment was complicated. We therefore continued to use one-step cloning to assemble the plasmid (Figure 23), and finally successfully obtained pRS315-TEF1p-GPR2 for GPR2 knock-in (Figure 24).</p>
+::::figuretext{side=right width=medium flow=wrap}
 
 :::figure
 
@@ -350,6 +354,10 @@ Figure 22. Fragment construction of Gal1/10bp-betaxanthin expression cassette (a
 <p>Figure 23. Plasmid map of pRS315-TEF1p-GPR2.</p>
 
 :::
+
+<p>For GPR2, since GPR2 in the previously constructed plasmid pRS315-TEF1p-GPR2-sfGFP is fused to sfGFP via a flexible linker, direct construction of the donor fragment was complicated. We therefore continued to use one-step cloning to assemble the plasmid (Figure 23), and finally successfully obtained pRS315-TEF1p-GPR2 for GPR2 knock-in (Figure 24).</p>
+
+::::
 
 :::figure
 
@@ -507,8 +515,6 @@ This cycle is hereby concluded. The strains constructed in this cycle can only f
 
 <p>First, we develop a hydrophobic coating fumigation device. Through mask shielding and cyanoacrylate vapor fumigation processes, we successfully fabricate test strips with a hydrophilic immobilization zone of 5 mm in diameter. The results demonstrate that the hydrophobic test strips exhibit good hydrophobic effects across different metal salt solutions (Figure 31), ensuring that our engineered bacteria are target-immobilized within the intended hydrophilic area.</p>
 
-::::figuretext{side=right width=medium flow=wrap}
-
 :::figure
 
 [![Water loss rate curve.](https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-eab5bea814fd5141-00.json)](https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-eab5bea814fd5141-00.json "Open full-resolution image")
@@ -518,8 +524,6 @@ This cycle is hereby concluded. The strains constructed in this cycle can only f
 :::
 
 <p>Next, to verify the water-retaining performance of the protectant, we conduct dehydration kinetics and full-process freeze-drying tests on it. The results show (Figure 32) that the new protectant forms a structurally intact film matrix after drying and effectively prevents collapse and powdering; furthermore, its smooth and uniform dehydration rate avoids physical damage to yeast cell membranes caused by severe water loss, thereby significantly enhancing cell structural integrity and survival rate during freeze-drying.</p>
-
-::::
 
 ::::figuretext{side=left width=narrow flow=wrap}
 
@@ -535,6 +539,8 @@ This cycle is hereby concluded. The strains constructed in this cycle can only f
 
 ::::
 
+::::figuretext{side=right width=medium flow=wrap}
+
 :::figure
 
 [![Overview of color-developing cell-loaded test strips.](https://static.igem.wiki/teams/6303/wiki/v8-6/v86-ea1a49677396-fig3-1-5.avif)](https://static.igem.wiki/teams/6303/wiki/v8-6/v86-ea1a49677396-fig3-1-5.avif "Open full-resolution image")
@@ -544,6 +550,8 @@ This cycle is hereby concluded. The strains constructed in this cycle can only f
 :::
 
 <p>Integrating all the above methods and approaches, we prepare and obtain a batch of cell-loaded freeze-dried test strips available for downstream engineering (Figure 34).</p>
+
+::::
 
 #### Learn {#results-3-2-learn toc="Learn | standardizing cell immobilization"}
 

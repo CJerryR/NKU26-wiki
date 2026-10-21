@@ -6,6 +6,6 @@ import { homeBody, homeData, HOME_DESCRIPTION } from '../lib/home';
 const pages = await getPages();
 const payload = JSON.stringify(homeData(pages)).replace(/</g, '\\u003c');
 ---
-<HomeLayout title="NKU iGEM 2026" description={HOME_DESCRIPTION} homeData={payload}>
+<HomeLayout title="NemaKlear | NKU-China iGEM 2026" description={HOME_DESCRIPTION} homeData={payload}>
   <Fragment set:html={homeBody(pages)} />
 </HomeLayout>

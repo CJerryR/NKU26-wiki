@@ -81,8 +81,8 @@ TERMS = [
     ('Human Practices', 'HP', r'Human Practices|HP', False, False),
     ('integrated Human Practices', 'iHP', r'integrated Human Practices|iHP', False, False),
     ('plant-parasitic nematode', 'PPN', r'[Pp]lant[ -]parasitic nematode|PPN', True, False),
-    ('Meloidogyne incognita', 'Mi', r'Meloidogyne incognita|M\.\s*incognita|Mi', False, True),
-    ('Caenorhabditis elegans', 'Ce', r'Caenorhabditis elegans|C\.\s*elegans|Ce', False, True),
+    ('Meloidogyne incognita', 'M.i', r'Meloidogyne incognita|M\.\s*incognita|M\.i', False, True),
+    ('Caenorhabditis elegans', 'C.e', r'Caenorhabditis elegans|C\.\s*elegans|C\.e', False, True),
     ('Saccharomyces cerevisiae', 'S.c', r'Saccharomyces cerevisiae|Saccaromyces cerevisiae|S\.\s*cerevisiae|S\.c', False, True),
     ('ascaroside #3', 'ascr#3', r'ascaroside\s*#?3|ascr#3', False, False),
     ('ascaroside #18', 'ascr#18', r'ascaroside\s*#?18|ascr#18', False, False),
@@ -118,8 +118,8 @@ PENDING = [
     ('lipid bilayer', r'lipid bilayers?', ''),
     ('mutant/substitution', r'\bmutants?\b|\bsubstitutions?\b', ''),
     ('nematode', r'\bnematodes?\b', ''),
-    ('southern root-knot nematode', r'southern root-knot nematode', 'use Mi only when species identity is explicitly established'),
-    ('free-living nematode', r'free-living nematode', 'ecological group, not necessarily Ce'),
+    ('southern root-knot nematode', r'southern root-knot nematode', 'use M.i only when species identity is explicitly established'),
+    ('free-living nematode', r'free-living nematode', 'ecological group, not necessarily C.e'),
     ('engineered yeast', r'engineered yeast', 'yeast is not necessarily the named species S.c'),
     ('GAL system/output', r'\bGAL\b', 'gene/regulon label; no unambiguous prose expansion in source'),
     ('Hill equation/exponent', r'\bHill\b', ''),
@@ -145,7 +145,7 @@ PENDING = [
     ('morphological identification', r'morphological', ''),
     ('molecular identification', r'molecular methods', ''),
     ('plant defenses', r'plant defen[cs]es', ''),
-    ('root-knot nematode', r'root-knot nematode', 'group broader than Mi'),
+    ('root-knot nematode', r'root-knot nematode', 'group broader than M.i'),
     ('cyst nematode', r'cyst nematode', ''),
     ('soil life/biodiversity', r'biodiversity|soil life', ''),
     ('early-warning detection', r'early[ -]warning|early detection', ''),
@@ -264,7 +264,7 @@ def apply_page(name, source):
         if name in ('model-1', 'model-2'):
             body = body.replace('Continue to Molecular Docking', 'Continue to molecular docking').replace('Continue to Molecular Dynamics', 'Continue to molecular dynamics').replace('open the Model overview', 'open the model overview')
         if name == 'model-ode':
-            body = body.replace('Caenorhabditis elegans <em>Caenorhabditis elegans</em> (Ce)', '<em>Caenorhabditis elegans</em> (Ce)')
+            body = body.replace('Caenorhabditis elegans <em>Caenorhabditis elegans</em> (C.e)', '<em>Caenorhabditis elegans</em> (C.e)')
         if not references:
             raw_prose = visible_prose(body)
             for full, pattern, note in PENDING:
@@ -378,8 +378,8 @@ def write_markdown_reports(rows, report):
              '- 删除 h2 的编号和空格；h3 按每页实际章节连续编号。model-ode 的实际二级标题从 h4 提升为 h3，参考文献提升为独立 h2。稳定 anchor 保持不变。',
              '- 删除 5 个正文原稿下载入口、5 个 Back/Next 段落和行业页重复总览入口；保留章节导航、科研交叉链接和教学资源下载。',
              '- 去掉普通 p 元素的 text-align:left 局部覆盖，由公共样式提供两端对齐。',
-             '- 逐页定义已确认通用缩写，与另一内容代理统一 Mi/Ce、SDF/PDBQT、PPN 和 G protein。未确定缩写按用户决定保留全称并逐项记录。',
-             '- 修正 model-ode 原有 Caenorhabditis elegans 双写；正文 Mi/Ce 使用斜体。公式、表格、模型数字和参考文献原题原样保留。', '',
+             '- 逐页定义已确认通用缩写，与另一内容代理统一 M.i/C.e、SDF/PDBQT、PPN 和 G protein。未确定缩写按用户决定保留全称并逐项记录。',
+             '- 修正 model-ode 原有 Caenorhabditis elegans 双写；正文 M.i/C.e 使用斜体。公式、表格、模型数字和参考文献原题原样保留。', '',
              '## 验证', '',
              '`python3 tools/apply-rules-model-hp.py --apply --verify` 逐页通过：JSON、MathML/表格/代码逐字比较、图片 URL、HTML/标题 anchor、引用原文、审核及路由元数据、h2/h3 编号、历史入口与重复导航。重复执行结果字节一致。', '',
              '| 页面 | 原 block 数 | 现 block 数 | 已定义通用缩写 | 保留全称待确认 |', '| --- | ---: | ---: | ---: | ---: |']

@@ -53,6 +53,7 @@ const templates: Template[] = [
   { name: 'pdf', label: 'PDF 阅读器', fields: [
     ...mediaFields,
     { type: 'image', name: 'file', label: 'PDF 文件', accept: ['.pdf'] },
+    { type: 'boolean', name: 'compact', label: '折叠为文件卡片', description: '默认只显示一行文件名和打开按钮，点击后展开阅读器；适合一页有多个 PDF。' },
   ] },
   { name: 'html', label: 'HTML 阅读 / 交互演示', fields: [
     ...mediaFields,

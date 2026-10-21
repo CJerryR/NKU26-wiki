@@ -291,16 +291,13 @@
       "body": "<p>a. Sequences of approximately 1 kb upstream and downstream of the <em>STE12 </em>gene were selected as the homologous arms of the knockout cassette, and His was used as the auxotrophic marker for subsequent transformant screening and validation (Figure 12a).</p>"
     },
     {
-      "_template": "text",
-      "body": "<p> b. The upstream and downstream sequences of the <em>STE12</em> gene were used as the 5′ homologous arm (identical to the 5′ homologous arm of KOSTE12) and 3′ homologous arm, respectively. Between the two homologous arms, the sTF fused by Gal4-DNA-binding domain and STE12-pheromone-responsive domain<sup>[2]</sup>, together with the Leu auxotrophic marker, was inserted to generate the HR plasmid pRS315-sTF (Figure 8).</p>"
-    },
-    {
       "_template": "image",
       "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-e8d85e8ac64b-fig2-2-1.avif",
       "alt": "Plasmid map of the homologous recombination plasmid pRS315-sTF.",
       "body": "<p>Figure 8. Plasmid map of the HR plasmid pRS315-sTF.</p>",
-      "layout": "full",
-      "imageWidth": "medium"
+      "layout": "wrap-right",
+      "imageWidth": "medium",
+      "accompanyingBody": "<p> b. The upstream and downstream sequences of the <em>STE12</em> gene were used as the 5′ homologous arm (identical to the 5′ homologous arm of KOSTE12) and 3′ homologous arm, respectively. Between the two homologous arms, the sTF fused by Gal4-DNA-binding domain and STE12-pheromone-responsive domain<sup>[2]</sup>, together with the Leu auxotrophic marker, was inserted to generate the HR plasmid pRS315-sTF (Figure 8).</p>"
     },
     {
       "_template": "heading",
@@ -543,16 +540,13 @@
       "imageWidth": "medium"
     },
     {
-      "_template": "text",
-      "body": "<p>For GPR2, since GPR2 in the previously constructed plasmid pRS315-TEF1p-GPR2-sfGFP is fused to sfGFP via a flexible linker, direct construction of the donor fragment was complicated. We therefore continued to use one-step cloning to assemble the plasmid (Figure 23), and finally successfully obtained pRS315-TEF1p-GPR2 for GPR2 knock-in (Figure 24).</p>"
-    },
-    {
       "_template": "image",
       "src": "https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-b849be4108e2-fig2-4-8.avif",
       "alt": "Plasmid map of pRS315-TEF1p-GPR2.",
       "body": "<p>Figure 23. Plasmid map of pRS315-TEF1p-GPR2.</p>",
-      "layout": "full",
-      "imageWidth": "medium"
+      "layout": "wrap-right",
+      "imageWidth": "medium",
+      "accompanyingBody": "<p>For GPR2, since GPR2 in the previously constructed plasmid pRS315-TEF1p-GPR2-sfGFP is fused to sfGFP via a flexible linker, direct construction of the donor fragment was complicated. We therefore continued to use one-step cloning to assemble the plasmid (Figure 23), and finally successfully obtained pRS315-TEF1p-GPR2 for GPR2 knock-in (Figure 24).</p>"
     },
     {
       "_template": "image",
@@ -989,8 +983,8 @@
       "alt": "Water loss rate curve.",
       "body": "<p class=\"figure-caption\">Figure 32. Water loss rate curve.</p>",
       "accompanyingBody": "<p>Next, to verify the water-retaining performance of the protectant, we conduct dehydration kinetics and full-process freeze-drying tests on it. The results show (Figure 32) that the new protectant forms a structurally intact film matrix after drying and effectively prevents collapse and powdering; furthermore, its smooth and uniform dehydration rate avoids physical damage to yeast cell membranes caused by severe water loss, thereby significantly enhancing cell structural integrity and survival rate during freeze-drying.</p>",
-      "layout": "wrap-right",
-      "imageWidth": "medium",
+      "layout": "full",
+      "imageWidth": "wide",
       "openOriginal": true
     },
     {
@@ -1009,7 +1003,7 @@
       "alt": "Overview of color-developing cell-loaded test strips.",
       "body": "<p class=\"figure-caption\">Figure 34. Overview of color-developing cell-loaded test strips.</p>",
       "accompanyingBody": "<p>Integrating all the above methods and approaches, we prepare and obtain a batch of cell-loaded freeze-dried test strips available for downstream engineering (Figure 34).</p>",
-      "layout": "full",
+      "layout": "wrap-right",
       "imageWidth": "medium",
       "openOriginal": true
     },
