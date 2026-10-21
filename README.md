@@ -70,13 +70,11 @@ npm run dev
 | 作者原始模型程序 | `vendor/nemaklear-original/` |
 | 浏览器模型适配 | `src/nemaklear/`、`tools/prepare-nemaklear.mjs` |
 | 素材地址与供稿来源 | `content/cdn-assets.json`、`content/wiki-provenance.json` |
-| 首页成果配图的原件与 CDN 映射 | `assets/source-images/home-built-20261020/`、`docs/what-we-built-approved-cdn-20261020.json` |
-| 最新正文配图的 CDN 映射与原件记录 | `docs/recent-assets-cdn-20261020.json`；PNG 原件保存在本地发布归档 |
 | 版本历史 | `README.md`（发布记录；审阅界面已按用户要求移除） |
 
 `content/wiki/*.json` 是正式正文源，`src/content/pages/*.md` 由导出工具生成。不要只改生成的 Markdown；Tina 保存后可运行 `node tools/export-tina.mjs` 同步，构建时也会自动导出。
 
-正文写法见 [内容编辑说明](src/content/README.md)和[正文语义标注规范](docs/正文语义标注规范.md)。图表、公式、原始图片和作者模型按交稿维护，科学内容与许可由团队审核。
+图表、公式、原始图片和作者模型按交稿维护，科学内容与许可由团队审核。
 
 ## 检查与部署
 
@@ -86,7 +84,6 @@ npm run test:deployment
 npm run test:captions
 npm run test:media
 npm run test:theme
-node --test tools/tests/scenes.test.mjs
 npm run verify
 ```
 
@@ -94,11 +91,11 @@ npm run verify
 
 GitLab Pages 从默认分支 `main` 读取源码，执行部署回归、构建和技术审计后发布 `public/`。构建会校验资源依赖、裁剪未引用素材并处理站内相对地址。
 
-本地协作遵循工作区根目录的 `AGENTS.md`、`WORKSPACE.json` 和聊天任务登记：任务目录修改，integration 合并验收，release 构建发布；历史副本保留原位。正式源码和版本以官方 GitLab `main` 及发布回执为准。
+正式源码和版本以官方 GitLab `main` 为准。
 
 ## 素材、许可与发布记录
 
-图片、字体和开场图集使用官方 iGEM 素材地址，视频使用 iGEM Video Universe。作者原件、素材哈希、图集和来源记录分别见 `content/`、[素材登记表](docs/素材登记表.csv)及[开场图集清单](docs/待上传图集清单.csv)。
+图片、字体和开场图集使用官方 iGEM 素材地址，视频使用 iGEM Video Universe。作者原件、素材哈希、图集和来源记录见 `content/`。
 
 页脚保留 CC BY 4.0、源码链接、素材署名和 AI 使用说明；校徽、机构与企业标志按各自权利使用。AI 插画用于页面装饰，不作为实验图像或模型结果。
 
@@ -870,7 +867,6 @@ Licensing 独立页当前没有正文，现有许可与 AI 使用说明位于页
 
 依据：[源码快照](https://github.com/CJerryR/NKU26-wiki/blob/053928a17005faa66aee55784f626a6843d8315c/README.md)。
 
-本地时间依据：[本地对话补证](docs/版本历史考据.md#本地对话补证)。
 
 ### V7.0 改动：
 
@@ -886,7 +882,6 @@ Licensing 独立页当前没有正文，现有许可与 AI 使用说明位于页
 
 依据：[源码快照](https://github.com/CJerryR/NKU26-wiki/blob/934905a6ec2768212cb5975957f081614d8d954c/README.md)。
 
-本地时间依据：[本地对话补证](docs/版本历史考据.md#本地对话补证)。
 
 ### V6.7 改动：
 
@@ -981,7 +976,6 @@ Licensing 独立页当前没有正文，现有许可与 AI 使用说明位于页
 
 依据：[GitHub 版本记录](https://github.com/CJerryR/NKU26-wiki/blob/6f63def837ffa7c115a0e7e4fead0905b80694e9/README.md)。
 
-本地时间依据：[本地对话补证](docs/版本历史考据.md#本地对话补证)。
 
 ### V5.0 改动：
 
@@ -997,7 +991,6 @@ Licensing 独立页当前没有正文，现有许可与 AI 使用说明位于页
 
 依据：[GitHub 版本记录](https://github.com/CJerryR/NKU26-wiki/blob/78de572e140d3eccedb598f5c6dd0f1a165def01/README.md)。
 
-本地时间依据：[本地对话补证](docs/版本历史考据.md#本地对话补证)。
 
 ### V4.0 改动：
 
@@ -1014,7 +1007,6 @@ Licensing 独立页当前没有正文，现有许可与 AI 使用说明位于页
 
 依据：[GitHub 版本记录](https://github.com/CJerryR/NKU26-wiki/blob/b248a0c7a0b1671f041e3f9eb6209066160c2f2d/README.md)。
 
-本地时间依据：[本地对话补证](docs/版本历史考据.md#本地对话补证)。
 
 ### V3.0 改动：
 

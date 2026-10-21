@@ -6,7 +6,7 @@ signature moves (legacy-signatures.json).
     python3 tools/scene-art/pages.py docking     # one page
 then: python3 tools/pack_scene_atlas.py <page>
 
-Composition rules (see docs/页面开场-使用说明.md): islands sit in slots around
+Composition rules: islands sit in slots around
 the title (bottom-left / bottom-right / under the title, two smaller ones at
 the back near the top corners, two big foreground ones cut by the frame);
 sizes follow one world-to-canvas scale per depth band, so a pipette is the
