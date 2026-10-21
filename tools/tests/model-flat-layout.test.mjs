@@ -17,7 +17,11 @@ test('Other pages retain their existing equation controls', () => {
  assert.match(blocksToMarkdown([{_template:'equation',latex:'x=1'}]),/data-type="equation"/);
 });
 test('Model manuscript titles remain outside numbered section headings', () => {
- for(const name of ['model','model-docking','model-md','model-ode','model-eco']) {
+ const overview=load('model').blocks.filter(b=>b._template==='heading'&&b.attributes?.includes('#model-overview'));
+ assert.equal(overview.length,1);
+ assert.match(overview[0].attributes,/\boverview\b/);
+ assert.equal(overview[0].text,'Model overview');
+ for(const name of ['model-docking','model-md','model-ode','model-eco']) {
   const doc=load(name);assert.equal(doc.blocks.filter(b=>b._template==='manuscriptTitle').length,1,name);
   assert.match(toEntry(name,doc).body,/:::manuscriptTitle/);
  }
