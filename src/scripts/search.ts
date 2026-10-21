@@ -4,7 +4,7 @@ import { panelTone, setTone, toneAt } from './tone';
 /** Site search: loads js/search-data.js on first use (same index as v6). */
 type Section = { id: string; title: string; text: string; url: string };
 type Entry = { title: string; url: string; crumbs?: string[]; desc?: string; text?: string; sections?: Section[] };
-type Doc = { title: string; url: string; crumbs: string; text: string; titleN: string; hay: string; page: boolean };
+type Doc = { title: string; url: string; crumbs: string; text: string; titleN: string; hay: string; page: boolean; sections?: Doc[] };
 
 declare global { interface Window { NKU_SEARCH_INDEX?: Entry[] } }
 
@@ -16,9 +16,12 @@ function flatten(raw: Entry[]): Doc[] {
   const out: Doc[] = [];
   for (const p of raw) {
     const crumbs = (p.crumbs || []).filter((c) => c !== 'Home').join(' / ');
-    out.push({ title: p.title, url: p.url, crumbs: crumbs || 'Home', text: p.desc || p.text || '', titleN: norm(p.title), hay: norm(`${p.title} ${p.desc || ''} ${p.text || ''}`), page: true });
+    const page: Doc = { title: p.title, url: p.url, crumbs: crumbs || 'Home', text: p.desc || p.text || '', titleN: norm(p.title), hay: norm(`${p.title} ${p.desc || ''} ${p.text || ''}`), page: true, sections: [] };
+    out.push(page);
     for (const s of p.sections || []) {
-      out.push({ title: s.title, url: s.url, crumbs: [crumbs, p.title].filter(Boolean).join(' / ') || p.title, text: s.text, titleN: norm(s.title), hay: norm(`${s.title} ${s.text}`), page: false });
+      const section: Doc = { title: s.title, url: s.url, crumbs: [crumbs, p.title].filter(Boolean).join(' / ') || p.title, text: s.text, titleN: norm(s.title), hay: norm(`${s.title} ${s.text}`), page: false };
+      page.sections!.push(section);
+      out.push(section);
     }
   }
   return out;
@@ -35,6 +38,17 @@ function score(d: Doc, terms: string[], phrase: string): number {
   }
   if (terms.length > 1 && d.hay.includes(phrase)) s += 8;
   return s * (d.page ? 1.1 : 1);
+}
+
+/** Body matches should enter the matching chapter, including page-level hits. */
+function destination(d: Doc, terms: string[], phrase: string): Doc {
+  if (!d.page || terms.every((term) => d.titleN.includes(term))) return d;
+  let best = d, bestScore = 0;
+  for (const section of d.sections || []) {
+    const value = score(section, terms, phrase);
+    if (value > bestScore) { best = section; bestScore = value; }
+  }
+  return best;
 }
 
 function snippet(text: string, terms: string[]): string {
@@ -120,10 +134,12 @@ export function initSearch(): void {
     const hits = docs.map((d) => ({ d, s: score(d, terms, phrase) })).filter((h) => h.s > 0).sort((a, b) => b.s - a.s).slice(0, 24);
     meta.textContent = hits.length ? `${hits.length}${hits.length === 24 ? '+' : ''} result${hits.length === 1 ? '' : 's'} for “${q}”` : '';
     if (!hits.length) { results.innerHTML = `<p class="site-search__empty">Nothing found for “${esc(q)}”. Try a shorter or different word.</p>`; return; }
-    results.innerHTML = hits.map(({ d }) =>
-      `<a class="site-search__result" href="${esc(root + d.url)}"><span class="site-search__crumbs">${esc(d.crumbs)}</span>` +
+    results.innerHTML = hits.map(({ d }) => {
+      const target = destination(d, terms, phrase);
+      return `<a class="site-search__result" href="${esc(root + target.url)}"><span class="site-search__crumbs">${esc(d.crumbs)}</span>` +
       `<span class="site-search__title">${highlight(d.title, terms)}</span>` +
-      `<span class="site-search__snippet">${highlight(snippet(d.text, terms), terms)}</span></a>`).join('');
+      `<span class="site-search__snippet">${highlight(snippet(target.text, terms), terms)}</span></a>`;
+    }).join('');
   };
 
   const open = () => {
