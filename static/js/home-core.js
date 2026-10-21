@@ -9,6 +9,22 @@
   H.$$ = function (s, r) { return Array.prototype.slice.call((r || doc).querySelectorAll(s)); };
   H.clamp = function (v, a, b) { return v < a ? a : v > b ? b : v; };
   H.lerp = function (a, b, t) { return a + (b - a) * t; };
+  /* 2026-10-21: on screens past 1920x1080 CSS px (4K at 100 %, 1440p) the pages
+     and panels drawn at a fixed size are scaled by --home-k, so they look as they
+     do at 1080p instead of shrinking into the middle (home-r2.css). Paged mode only,
+     where every section is one screen and a scaled box cannot push into the next. */
+  H.k = 1;
+  (function () {
+    var mq = win.matchMedia && matchMedia('(pointer: fine) and (min-width: 960px) and (min-height: 560px)');
+    function fit() {
+      var k = mq && mq.matches && !H.reduced ? Math.round(H.clamp(Math.min(innerWidth / 1920, innerHeight / 1080), 1, 2.25) * 100) / 100 : 1;
+      if (k < 1.04) k = 1;
+      H.k = k;
+      doc.documentElement.classList.toggle('home-big', k > 1);
+      doc.documentElement.style.setProperty('--home-k', String(k));
+    }
+    fit(); addEventListener('resize', fit, { passive: true });
+  })();
   H.ease = function (t) { return t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; };
   H.smooth = function (a, b, v) { var t = H.clamp((v - a) / (b - a), 0, 1); return t * t * (3 - 2 * t); };
   H.rand = function (seed) { var s = seed || 1; return function () { s = (s * 16807) % 2147483647; return (s - 1) / 2147483646; }; };

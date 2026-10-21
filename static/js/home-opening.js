@@ -1369,6 +1369,9 @@
     var r = stageRect();
     W = Math.max(1, Math.round(r.width));
     H = Math.max(1, Math.round(r.height));
+    // 2026-10-21: the same pixel budget as home-zoom3d.js (a 4K screen at DPR 1.8 drew 27 M pixels)
+    var want = Math.round(Math.max(0.8, Math.min(DPR, Math.sqrt(4.2e6 / (W * H)))) * 100) / 100;
+    if (want !== DPR) { DPR = want; renderer.setPixelRatio(DPR); if (foregroundRenderer) foregroundRenderer.setPixelRatio(DPR); }
     renderer.setSize(W, H, false);
     if (foregroundRenderer) foregroundRenderer.setSize(W, H, false);
     fctx = H0.fit(fxCv, W, H, 1.5);

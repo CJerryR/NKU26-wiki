@@ -1448,6 +1448,10 @@
     var r = stage.getBoundingClientRect();
     W = Math.max(1, Math.round(r.width));
     H = Math.max(1, Math.round(r.height));
+    /* 2026-10-21: keep the drawn pixels near a 1440p budget. A 4K screen at
+       DPR 1.5 drew 18.7 M pixels per frame, with shadows and 4x MSAA targets. */
+    var want = Math.round(Math.max(0.8, Math.min(DPR, Math.sqrt(4.2e6 / (W * H)))) * 100) / 100;
+    if (want !== DPR) { DPR = want; renderer.setPixelRatio(DPR); }
     renderer.setSize(W, H, false);
     LV.forEach(function (l) { l.cam.aspect = W / H; l.fit(W / H); l.cam.updateProjectionMatrix(); });
     fitFieldStop();

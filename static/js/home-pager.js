@@ -301,22 +301,27 @@
 
     // Estimate hand intent over a short window, not from a single wheel tick.
     // Momentum can finish a movement, but cannot enqueue another page.
-    var acc = 0, used = false, boosted = false, lastWheel = 0, lastDelta = 0;
+    var acc = 0, used = false, boosted = false, lastWheel = 0, lastDelta = 0, lone = false, lastTs = -Infinity;
     var samples = [], lastAction = 0;
     function onWheel(e) {
       if (!paged || e.ctrlKey || e.metaKey || e.shiftKey || Math.abs(e.deltaX) > Math.abs(e.deltaY) || blocked(e.target, e.deltaY)) return;
-      var now = performance.now(), d = e.deltaY * (e.deltaMode === 1 ? 16 : e.deltaMode === 2 ? innerHeight : 1), a = Math.abs(d);
+      var now = performance.now(), d = e.deltaY * (e.deltaMode === 1 ? 40 : e.deltaMode === 2 ? innerHeight : 1), a = Math.abs(d);
       if (!a) return;
       e.preventDefault(); touched();
       // Input time, not handler time: events queued behind a long 3D frame keep
       // the time the hand made them (old engines use another clock: ignore it).
       var ts = e.timeStamp > 0 && Math.abs(e.timeStamp - now) < 5000 ? e.timeStamp : now;
       var g = gate(d, ts);
-      if (GATED[pages[cur].id]) { gatedWheel(d, ts, g); return; }
+      /* 2026-10-21: a wheel notch after a quiet moment is a whole request, however
+         few pixels the browser reports for it (a slow notch is about 4 px on macOS,
+         3 lines in Firefox). Before, slow notches reset the sum and never turned. */
+      lone = ts - lastTs > 140 && a >= 3; lastTs = ts;
+      var dd = lone ? (d > 0 ? 1 : -1) * Math.max(a, 60) : d;
+      if (GATED[pages[cur].id]) { gatedWheel(dd, ts, g); return; }
       // The gesture that left the gated stretch cannot also drive the next page.
-      if (g.id === spent && ts < holdUntil + 600) return;
+      if (g.id === spent && !lone && ts < holdUntil + 600) return;
       if (pages[cur].id === 'traces' || pages[cur].sp.pacedWheel) {
-        var intent = storyWheel(d, e.deltaMode, now);
+        var intent = storyWheel(dd, e.deltaMode, now);
         if (!intent) return;
         if (busy) {
           // Keep one deliberate request, not every inertia event. Let the current
@@ -339,7 +344,8 @@
         return;
       }
       var gap = now - lastWheel, reverse = d * lastDelta < 0 && a > 12;
-      var fresh = gap > 180 || reverse || (now - lastAction > 380 && a > 45 && a > Math.abs(lastDelta) * 2.4 + 12);
+      var fresh = gap > 180 || reverse || (now - lastAction > 380 && a > 45 && a > Math.abs(lastDelta) * 2.4 + 12) ||
+        (lone && now >= holdUntil && lastAction < releasedAt);   // the last move has finished: a new notch acts
       if (fresh) { used = false; boosted = false; acc = 0; samples = []; }
       lastWheel = now; lastDelta = d;
       samples.push([now, a]);
@@ -374,7 +380,7 @@
         return;
       }
       if (used) return;
-      acc += d;
+      acc += dd;
       var pg = pages[cur], internal = d > 0 ? st < pg.steps : st > 0;
       var need = internal ? 24 : Math.max(56, pg.sp.leaveDelta || 0);
       if (Math.abs(acc) >= need) {
@@ -408,7 +414,8 @@
         return;
       }
       // (a push begun just before the scene settled still counts)
-      var fresh = g.id !== spent && g.start >= releasedAt - 150;
+      // (a lone wheel notch once the scene has rested is a new request too)
+      var fresh = (g.id !== spent && g.start >= releasedAt - 150) || (lone && now - releasedAt > 450);
       // Momentum stays spent even when it outlasts the camera hold.
       // Only a new gesture may advance another shot.
       if (now < holdUntil || !fresh) return;
