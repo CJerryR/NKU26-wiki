@@ -23,8 +23,4 @@ const pages = defineCollection({
   }),
 });
 
-const projectPreviews = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/project-previews' }),
-  schema: pages.schema,
-});
-export const collections = { pages, projectPreviews };
+export const collections = { pages };
