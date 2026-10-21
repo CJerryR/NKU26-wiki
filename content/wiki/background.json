@@ -56,12 +56,6 @@
       "_template": "text"
     },
     {
-      "_template": "layout",
-      "kind": "note",
-      "label": "Detection method abbreviations",
-      "body": "- polymerase chain reaction\n- quantitative polymerase chain reaction\n- next-generation sequencing (NGS)\n- loop-mediated isothermal amplification (LAMP)\n- recombinase polymerase amplification (RPA)\n- convolutional neural network (CNN)"
-    },
-    {
       "_template": "datatable",
       "csv": "Method,Cost,Early-Warning Capacity,Portability,Professional Dependence\nMorphological Methods,low,poor,moderate,high\nBiochemical Methods,moderate,poor,low,high\nPCR / qPCR,high,poor,low,high\nNGS and Metabarcoding,high,poor,low,high\nLAMP / RPA,moderate,poor,high,high\nConventional Image Processing,moderate,poor,moderate,high\nDeep Learning / CNN,high,poor,moderate,high\nHyperspectral Imaging,high,poor,low,high\nRemote Sensing,high,poor,low,high\n",
       "title": "Table 1. Comparison of detection methods for PPNs"
