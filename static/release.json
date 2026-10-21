@@ -1,11 +1,11 @@
 {
-  "version": "10.2.45",
-  "label": "Homepage DBTL, outlines, team portraits and final cleanup",
-  "prepared_at": "2026-10-21T20:10:14.025036+08:00",
-  "release_id": "takeover-v10.2.45",
+  "version": "10.2.46",
+  "label": "Tibet source map, full HP links, homepage input and copy formatting",
+  "prepared_at": "2026-10-21T21:04:22.149718+08:00",
+  "release_id": "all-handoffs-v10.2.46",
   "previous_release": {
-    "version": "10.2.44",
-    "commit": "7c3bfa4e65e0f86434d7a9b0393a61d19debf4b2"
+    "version": "10.2.45",
+    "commit": "c6bc6c80571ca45d768ae373da4989bfcd0c3c08"
   },
   "published_baseline": {
     "version": "8.6.0",

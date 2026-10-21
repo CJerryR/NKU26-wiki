@@ -18,7 +18,7 @@ Project/Model share embedded figure wrapping;Model review fixes and compact Eco 
 
 南开大学 NKU-China 团队参加 iGEM 2026 的项目网站，队伍编号 **6303**。网站围绕农业线虫与双通道检测方案，展示项目设计、实验结果、模型、人类实践和团队工作。
 
-当前版本为 **V10.2.45**，更新首页四目标 DBTL 总览、大纲与 Results 标题、学院标志和学姐照片，完成最终界面与仓库清理。
+当前版本为 **V10.2.46**，更新西藏土样地图与 Figure 4、HP 全称、首页文案、滚轮与大屏布局，并纳入文案格式修正。
 
 - [正式网站](https://2026.igem.wiki/nku-china/)
 - [GitLab 源码](https://gitlab.igem.org/2026/nku-china)
@@ -106,9 +106,20 @@ Licensing 独立页当前没有正文，现有许可与 AI 使用说明位于页
 
 ## 版本改动
 
+### V10.2.46 改动：
+
+改动时间：2026-10-21 21:04:22（北京时间）
+
+1. 首页西藏土样改为 18 个近似来源点，31 点合计 289 份、西藏合计 232 份；柱高改为平方根映射，补齐图号、三张采样照片及中科大交流原稿补句。
+2. iHP Figure 4 换用最新官方 CDN 地图截图，与首页来源点保持一致。
+3. 跨页链接统一 Integrated human practices 全称；首页 Survey 和 Human practices 两个入口按用户要求保留。
+4. 首页使用 Redesign on the computer 与 Engineer the pathway；优化慢速滚轮、3D 像素预算和 4K 固定页面布局。
+5. 整理 Results 参考文献、链接及全站文案格式；保留科研审核状态与交接中的未解决事项。
+6. 补记 V10.2.45 官方 Pages 实际发布时间。
+
 ### V10.2.45 改动：
 
-改动时间：2026-10-21 20:10:14（北京时间）
+发布时间：2026-10-21 20:18:15（北京时间）
 
 1. 首页 DBTL 总览采用团队新设计的四个 GOAL 和 14 个模块，保留展开与缩放交互。
 2. Overview 保留在大纲且不编号，补齐子条目；Results 的 34 个阶段标题与大纲一致，保留 Engineering 组件标签。
