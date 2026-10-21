@@ -523,7 +523,7 @@ This cycle is hereby concluded. The strains constructed in this cycle can only f
 
 <p>Next, to verify the water-retaining performance of the protectant, we conduct dehydration kinetics and full-process freeze-drying tests on it. The results show (Figure 32) that the new protectant forms a structurally intact film matrix after drying and effectively prevents collapse and powdering; furthermore, its smooth and uniform dehydration rate avoids physical damage to yeast cell membranes caused by severe water loss, thereby significantly enhancing cell structural integrity and survival rate during freeze-drying.</p>
 
-::::figuretext{side=left width=narrow flow=wrap}
+::::figuretext{side=left width=narrow flow=continue}
 
 :::figure
 
@@ -537,7 +537,7 @@ This cycle is hereby concluded. The strains constructed in this cycle can only f
 
 ::::
 
-::::figuretext{side=right width=medium flow=wrap}
+::::figuretext{side=right width=narrow flow=continue}
 
 :::figure
 
