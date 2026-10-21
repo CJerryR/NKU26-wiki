@@ -1,30 +1,105 @@
 {
   "task": "hp-refresh",
-  "base_commit": "fd9b5a6e3c5ff568966c81ac691db61046568a2f",
-  "build": "npm run verify PASS; 34 pages, existing content-review flags preserved",
+  "baseline": "64173b935014ed8acc913f9ea12e22a85eb8022e",
+  "build": "npm run verify PASS after final 289/9 correction; includes npm run audit",
   "structure": "26 pages PASS",
-  "captions": "92 captions PASS",
-  "targeted_tests": "12 image wrap, manuscript title and navigation tests PASS",
+  "captions": "98 captions PASS",
+  "targeted_tests": "12/12 image wrap, manuscript title, media block tests PASS",
   "source_parity": {
-    "new_manuscripts": "73 source paragraphs and captions matched; 20 images correctly mapped",
-    "investigation": "23 baseline prose paragraphs and 13 baseline photo URLs identical; figure numbering 16–21 becomes 1–6",
-    "authorized_data_correction": "255/6 -> 289/9 by user confirmation matching latest supplied map"
+    "human-practices": {
+      "paragraphs": 29,
+      "ordered_exact_match_after_documented_formal_and_user_approved_changes": true,
+      "figures": 6,
+      "source_image_occurrences": 11,
+      "tables": 1,
+      "wraps": [],
+      "old_navigation_absent": true,
+      "source_sha256": "bbc5d5ccc65d527188f7c24b8247f05a1e075f0ab236289d1f66150e30ba560f"
+    },
+    "education": {
+      "paragraphs": 34,
+      "ordered_exact_match_after_documented_formal_and_user_approved_changes": true,
+      "figures": 4,
+      "source_image_occurrences": 9,
+      "tables": 1,
+      "wraps": [
+        {
+          "figure": "Figure 1",
+          "source_paragraph_ids": [
+            2,
+            6
+          ],
+          "layout": "wrap-right",
+          "aspect_ratio": 1.337620578778135
+        }
+      ],
+      "old_navigation_absent": true,
+      "source_sha256": "3f0ea17b82b62417941745743ebf22b17b94d890e2c0caac69cc2955d4ec49fa"
+    },
+    "hp-investigation": {
+      "paragraphs": 30,
+      "ordered_exact_match_after_documented_formal_and_user_approved_changes": true,
+      "figures": 8,
+      "source_image_occurrences": 17,
+      "tables": 1,
+      "wraps": [
+        {
+          "figure": "Figure 2",
+          "source_paragraph_ids": [
+            23,
+            24
+          ],
+          "layout": "wrap-right",
+          "aspect_ratio": 1.2584973166368516
+        },
+        {
+          "figure": "Figure 4",
+          "source_paragraph_ids": [
+            36,
+            40,
+            41
+          ],
+          "layout": "wrap-right",
+          "aspect_ratio": 1.3333333333333333
+        }
+      ],
+      "old_navigation_absent": true,
+      "source_sha256": "b9563362f8fcb185c5bdd79f9facfaa964a08e8fb5180f2043f5ac83d4581773"
+    }
   },
-  "media": {
-    "originals_uploaded": 15,
-    "previews_uploaded": 3,
-    "existing_assets_reused": 4,
-    "http_resources_verified": 22,
-    "new_upload_bytes": "All 18 uploaded resources match recorded upload SHA256"
+  "content_rule_audit": {
+    "passed": false,
+    "failures": [
+      "education: scientific asset/data fields changed",
+      "hp-investigation: raw HTML image conversion block 18: new Tina image src has no matching baseline raw HTML image",
+      "hp-investigation: raw HTML image conversion block 24: new Tina image src has no matching baseline raw HTML image",
+      "hp-investigation: raw HTML image conversion block 42: new Tina image src has no matching baseline raw HTML image",
+      "hp-investigation: scientific asset/data fields changed",
+      "human-practices: scientific asset/data fields changed"
+    ],
+    "explanation": "Baseline-preservation checks intentionally flag replacement of source images/tables and conversion of new source single images. All flagged changes are limited to the three HP pages and backed by fresh Feishu source hashes, image map and approved 289/9 correction. Structure-only audit passes. No audit rules disabled."
   },
-  "browser": "All three pages at 1364x900 and 390x844: no horizontal page overflow; 16 figure groups; 14px normal-weight captions; all mobile wraps text-first; table scroll isolated; light/dark rendering and 2400px map original preview verified",
-  "preview": {
-    "task": "hp-refresh",
-    "source_path": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/tasks/hp-refresh",
-    "port": 58130,
-    "url": "http://127.0.0.1:58130/human-practices/#human-practices-source-6"
+  "browser": {
+    "dimensions": [
+      "1440x900",
+      "390x844"
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "pages": [
+      "human-practices",
+      "education",
+      "hp-investigation"
+    ],
+    "overflow": "No whole-page horizontal overflow observed",
+    "wraps": "INV flowchart 520/1040 px; INV interview and Education photo 416/1040 px. 14px/400 captions. Mobile prose precedes image. Multi-panel groups full width.",
+    "original_preview": "New INV flowchart 1407x1118 displayed in preview dialog",
+    "data_correction": "INV 289/nine paragraph and 255 selected-example subtotal verified after reload",
+    "evidence": "workspace/evidence/hp-refresh/replacement-20261021/"
   },
-  "evidence": "workspace/evidence/hp-refresh/",
-  "remaining": "Existing team final-review and activity-photo permission flags retained; no newly discovered unresolved source discrepancy",
-  "publication": "Task commit for unified release bot; not published by this chat"
+  "data_decisions": "User approved both pages 289/nine; six-region table preserved as selected examples with 255 subtotal. No missing locations or sample backgrounds invented.",
+  "unresolved": "Existing team final-review/photo-permission flags retained. No unresolved sample-count decision.",
+  "publication": "Preview for user review; release-queue status held, no new publication"
 }

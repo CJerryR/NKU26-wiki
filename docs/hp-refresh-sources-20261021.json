@@ -1,38 +1,45 @@
 {
   "task": "hp-refresh",
-  "base_commit": "fd9b5a6e3c5ff568966c81ac691db61046568a2f",
+  "updated_at": "2026-10-21T13:35:39.939595+08:00",
+  "base_commit": "64173b935014ed8acc913f9ea12e22a85eb8022e",
+  "replacement_policy": "Complete replacement of all three HP manuscript bodies from fresh Feishu exports, never a union with prior text. Retained only metadata and invisible incoming anchor aliases from baseline.",
   "sources": [
     {
-      "page": "ihp",
+      "page": "human-practices",
       "url": "https://nankai.feishu.cn/wiki/InOVwLs2SirfE0kKVBBcxfARnac",
-      "obtained_at": "2026-10-21T05:46:00+08:00",
-      "local_export": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/hp-refresh/sources/ihp.docx",
-      "sha256": "2cbabbee89b8aa36eac73b100833e1d7613ad765c0fd607bd34a8de1ba6dd56e"
+      "source_sha256": "bbc5d5ccc65d527188f7c24b8247f05a1e075f0ab236289d1f66150e30ba560f",
+      "prose_paragraphs": 29,
+      "image_occurrences": 11,
+      "figure_groups": 6,
+      "tables": 1
     },
     {
       "page": "education",
       "url": "https://nankai.feishu.cn/wiki/RJKWwSvUoivz4fkvLO1cJ7NDngd",
-      "obtained_at": "2026-10-21T05:46:00+08:00",
-      "local_export": "/Users/cjrmacbook/Documents/ChatGPT/NKU26-wiki-进度总揽/workspace/evidence/hp-refresh/sources/education.docx",
-      "sha256": "a58ef57cad062917f4393d3dbe8f276efed510ddbaccc480aadd89a86630dabe"
+      "source_sha256": "3f0ea17b82b62417941745743ebf22b17b94d890e2c0caac69cc2955d4ec49fa",
+      "prose_paragraphs": 34,
+      "image_occurrences": 9,
+      "figure_groups": 4,
+      "tables": 1
     },
     {
       "page": "hp-investigation",
-      "source": "Existing Human Practice部分.docx integration at base commit; explicitly retained by user",
-      "source_sha256": "a0d089057e88f3731991b2dfd981beb484235a3fc11c89701eeafb68daff39f6"
+      "url": "https://nankai.feishu.cn/wiki/Mgk8wVVvgiyRACkXFzocHDONnOg",
+      "source_sha256": "b9563362f8fcb185c5bdd79f9facfaa964a08e8fb5180f2043f5ac83d4581773",
+      "prose_paragraphs": 30,
+      "image_occurrences": 17,
+      "figure_groups": 8,
+      "tables": 1
     }
   ],
   "user_decisions": [
-    "HP navigation: iHP -> Investigation -> Education",
-    "Investigation retains existing Human Practice source by user reply",
-    "Use 289 samples from nine provincial-level regions in iHP prose and summary table, matching supplied latest Figure 4 map"
+    "Replace legacy Investigation with its standalone latest Feishu draft; prior permission to retain old draft is superseded.",
+    "Use 289 samples / nine provincial-level regions on both iHP and Investigation.",
+    "Keep the six-region table as selected examples: 255-sample subtotal, not the full inventory.",
+    "Remove added three-page body navigation and invented overview heading.",
+    "Follow supplied 2026-10-20 content standard, including embedded image wrapping."
   ],
-  "presentation": [
-    "Reuse Project embedded wrapping; photograph and caption remain one unit",
-    "Multi-panel figures use lowercase panel labels; Investigation figures restart at 1",
-    "Single interview photos wrap; dense map and multi-panel resources remain full width",
-    "760px and below: prose then figures; preserve source photographs",
-    "Legacy Overview and Industry routes retained for compatibility, removed from normal navigation and search"
-  ],
-  "content_review": "Existing team_review_approved false flags retained"
+  "explicit_media_exception": "Preserve the newer classroom photo selected by user and documented in docs/classroom-photo-replacement-20261021.json, superseding the older bitmap still in Feishu.",
+  "evidence": "workspace/evidence/hp-refresh/replacement-20261021/",
+  "publication": "Awaiting user preview approval; release queue held"
 }
