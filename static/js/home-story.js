@@ -318,7 +318,7 @@
   }
 
   /* ================= 08 LOOP ================= */
-  /* 08 loop: the four DBTL cycles of dbtl.svg. A click zooms a cycle into the left
+  /* 08 loop: the four goals of dbtlv2.svg. A click zooms a goal into the left
      of the board and opens its text beside it (requested by the wet-lab team). On wide
      screens the board grows a little, the cycle takes all the height it can and the
      text card sits next to it, top-aligned with the cycle's frame. */
@@ -355,7 +355,7 @@
       var hOver = W * FULL.h / FULL.w;
       if (!active) return { h: hOver, vb: { x: FULL.x, y: FULL.y, w: FULL.w, h: FULL.h } };
       var paged = document.documentElement.classList.contains('is-paged');
-      var Hb = Math.max(hOver, Math.min(W * 255 / 476, window.innerHeight - (paged ? 236 : 110)));
+      var Hb = Math.max(hOver, Math.min(hOver * 255 / 210, window.innerHeight - (paged ? 236 : 110)));
       var F = frame(active), pMin = H.clamp(W * .33, 340, 440);
       var s = Math.min((W - pMin - GAP - 2 * PAD) / F.w, (Hb - 2 * PAD) / F.h);
       var fw = F.w * s, fh = F.h * s, pw = Math.min(540, W - PAD - fw - GAP);

@@ -252,21 +252,21 @@
 .lp{background:var(--pp-warm);color:var(--ink);padding:clamp(80px,9vw,120px) 0;position:relative}
 .lp__head{display:flex;justify-content:space-between;align-items:end;gap:18px 30px;flex-wrap:wrap}
 .lp__head .h-display{font-size:clamp(30px,3vw,46px);max-width:20ch}
-/* the four DBTL cycles (dbtl.svg): click a cycle and it slides to the left, its text opens on the right */
+/* the four goals (dbtlv2.svg): click a goal and it slides to the left, its text opens on the right */
 .lp__tabs{display:flex;flex-wrap:wrap;gap:4px;padding:4px;border-radius:999px;background:rgba(255,255,255,.62);box-shadow:inset 0 0 0 1px rgba(35,24,41,.08)}
 .lp__tabs button{padding:8px 15px;border-radius:999px;font-size:14px;font-weight:500;color:var(--ink-2);transition:background .2s,color .2s}
 .lp__tabs button:hover{color:var(--plum)}
 .lp__tabs button[aria-pressed="true"]{background:var(--ink);color:#fff}
 .lp :is(.lp__tabs button,.lp__panel a,.lp__panel button):focus-visible{outline:2px solid var(--plum);outline-offset:2px}
-.lp__board{position:relative;width:min(100%,calc((100vh - 250px) * 2.267));aspect-ratio:476/210;margin:24px auto 0}
+.lp__board{position:relative;width:min(100%,calc((100vh - 250px) * 2.022));aspect-ratio:456.58/225.86;margin:24px auto 0}
 .lp__stage{position:absolute;inset:0}
 .lp__stage .dbtl{display:block;width:100%;height:100%;overflow:hidden;-webkit-user-select:none;user-select:none}
 .dbtl [data-c],.dbtl [data-bridge],.dbtl-legend{transition:opacity .45s var(--ease-o)}
 .dbtl-node,.dbtl-label,.dbtl-cycle{cursor:pointer}
 .dbtl-cycle{outline:none}
-.dbtl-cycle__frame{transition:fill-opacity .3s,stroke .3s,stroke-width .3s}
-.dbtl-cycle.is-hover .dbtl-cycle__frame,.dbtl-cycle.is-on .dbtl-cycle__frame{fill-opacity:.92;stroke:var(--plum);stroke-width:1.1}
-.dbtl-cycle:focus-visible .dbtl-cycle__frame{stroke:var(--plum);stroke-width:1.8}
+.dbtl-cycle__frame{transition:fill-opacity .3s,stroke .3s,stroke-opacity .3s,stroke-width .3s}
+.dbtl-cycle.is-hover .dbtl-cycle__frame,.dbtl-cycle.is-on .dbtl-cycle__frame{fill-opacity:.92;stroke-opacity:.85}
+.dbtl-cycle:focus-visible .dbtl-cycle__frame{stroke:var(--plum);stroke-opacity:1;stroke-width:3.2}
 .lp__board:not(.is-focus) .dbtl .is-dim{opacity:.42}
 .lp__board.is-focus .dbtl .is-dim{opacity:.08}
 .lp__board.is-focus .dbtl .is-half{opacity:.55}
@@ -298,7 +298,7 @@
   .lp__tabs{width:100%;display:grid;grid-template-columns:repeat(5,minmax(0,1fr))}
   .lp__tabs button{padding:8px 0;font-size:13px;white-space:nowrap}
   .lp__board{width:100%;aspect-ratio:auto}
-  .lp__stage{position:relative;aspect-ratio:476/210;transition:aspect-ratio .5s var(--ease-o)}
+  .lp__stage{position:relative;aspect-ratio:456.58/225.86;transition:aspect-ratio .5s var(--ease-o)}
   .lp__board.is-focus .lp__stage{aspect-ratio:1.15}
   .lp__panel{position:relative;left:auto;top:auto;width:auto;max-height:none;display:none;margin-top:14px;transform:none}
   .lp__board.is-focus .lp__panel{display:flex}
