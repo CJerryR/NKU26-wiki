@@ -43,7 +43,7 @@ export const primaryNav: NavItem[] = [
   },
   {
     kind: 'group', id: 'hp', label: 'Human Practices', narrow: true, items: [
-      { page: 'human-practices', label: 'iHP', blurb: 'Bringing real-world perspectives into research' },
+      { page: 'human-practices', label: 'Integrated human practices', blurb: 'Bringing real-world perspectives into research' },
       { page: 'hp-investigation', label: 'Investigation', blurb: 'Exploring agriculture through visits and dialogue' },
       { page: 'education', label: 'Education', blurb: 'Making synthetic biology and our project accessible' },
     ],

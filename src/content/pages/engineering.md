@@ -148,7 +148,7 @@ A low barrier to use depends on what happens before and after the sensing reacti
 
 Industry engagement also helped us prepare for that next stage. Project presentations and discussions with companies secured research support, including sponsorship from ExCell Bio. Building on these contacts, we plan to seek partners for sample access, prototype evaluation, and testing in relevant agricultural settings.
 
-Further stakeholder discussions and engagement activities are described on our [HP pages](/human-practices/).
+Further stakeholder discussions and engagement activities are described on our [Integrated human practices](/human-practices/).
 
 ## The next DBTL cycle — bringing the system together {#engineering-the-next-dbtl-cycle-bringing-the-system-together toc="The next DBTL cycle — bringing the system together"}
 

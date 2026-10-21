@@ -53,7 +53,7 @@ Established detection methods provide valuable information about nematodes, but 
 
 Questionnaires, conversations with growers, and interviews with plant-protection experts helped us make this goal more concrete. Respondents valued straightforward operation, reliable results, and affordability. Experts also connected the timing of detection with decisions made before planting.
 
-These perspectives gave “early warning” a specific purpose: could information about nematode risk help growers plan planting and consider soil treatment? This question shapes what our sensors need to measure, how results should be presented, and how the testing process should work. [Explore the needs and feedback behind our design →](/human-practices/)
+These perspectives gave “early warning” a specific purpose: could information about nematode risk help growers plan planting and consider soil treatment? This question shapes what our sensors need to measure, how results should be presented, and how the testing process should work. [Explore Integrated human practices →](/human-practices/)
 
 ::::
 
@@ -129,12 +129,12 @@ We bring fungal signal recognition, yeast signaling, and visible pigment product
 
 Work on cell immobilization, freeze-drying, revival, and the strip holder addresses how this biological system can be handled as a practical test. **The intended advantage is a kit with a lower barrier to use:** a portable format, a visible readout, and procedures designed around the people who would collect samples and use the results.
 
-This goal guides both the development of the test strip and the evaluation of the complete workflow, including preparation, reading, cost, and disposal. [Test strip development →](/results/) · [User needs and workflow →](/human-practices/)
+This goal guides both the development of the test strip and the evaluation of the complete workflow, including preparation, reading, cost, and disposal. [Test strip development →](/results/) · [Integrated human practices →](/human-practices/)
 
 ### 1.3 Designing around the decision that follows {#description-designing-around-the-decision-that-follows toc="Designing around the decision that follows" toc-unnumbered}
 
 We connect the development of the test with the question of what a user could do with its result. Human Practices identifies relevant settings and practical requirements. Modeling explores how paired readings might yield density information and when that information could change a management choice. These questions feed back into experimental calibration, readout design, and cost evaluation.
 
-This approach gives us a concrete way to judge progress: can the proposed kit provide understandable information, at an accessible cost, at a time when it can help? By keeping that question central, we bring wet-lab engineering, computational modeling, and Human Practices into the design of one usable screening approach. [Integrated Human Practices →](/human-practices/) · [Economic evaluation →](/model-eco/)
+This approach gives us a concrete way to judge progress: can the proposed kit provide understandable information, at an accessible cost, at a time when it can help? By keeping that question central, we bring wet-lab engineering, computational modeling, and Human Practices into the design of one usable screening approach. [Integrated human practices →](/human-practices/) · [Economic evaluation →](/model-eco/)
 
 </div>

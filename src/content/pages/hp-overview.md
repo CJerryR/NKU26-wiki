@@ -13,7 +13,7 @@ hidden: true
 meta: {}
 draft: false
 ---
-<nav class="hp-chapter-nav" aria-label="Human Practices chapters"><a href="/hp-overview/">Overview</a><a href="/human-practices/">Integrated Human Practices</a><a href="/education/">Education</a><a href="/hp-investigation/">Investigation</a><a href="/hp-industry/">Industry engagement and support</a></nav><section class="hp-manuscript" lang="en">
+<nav class="hp-chapter-nav" aria-label="Human Practices chapters"><a href="/hp-overview/">Overview</a><a href="/human-practices/">Integrated human practices</a><a href="/education/">Education</a><a href="/hp-investigation/">Investigation</a><a href="/hp-industry/">Industry engagement and support</a></nav><section class="hp-manuscript" lang="en">
 
 ## Human Practices overview {#hp-overview-introduction overview toc="Human Practices overview"}
 
@@ -33,7 +33,7 @@ draft: false
 
 <p>Insights from our wet-lab and dry-lab work shaped the initial questionnaire, while responses informed discussions about research priorities. Expert interviews and university exchanges raised further questions about soil interference, signal stability, controls, and sampling. This page explains how these inputs relate to our research and how other teams can adapt our approach.</p>
 
-<p><a href="/human-practices/"><strong>Explore feedback and research →</strong></a></p>
+<p><a href="/human-practices/"><strong>Explore Integrated human practices →</strong></a></p>
 
 ### Education: from classrooms to the public {#hp-source-48 toc="Education: from classrooms to the public"}
 

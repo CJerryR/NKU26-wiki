@@ -54,7 +54,7 @@
       "alt": "Team members speaking with growers at an agricultural site.",
       "layout": "wrap-right",
       "imageWidth": "medium",
-      "accompanyingBody": "PPNs live in soil and roots. Symptoms above ground often give little indication of what is happening below. For growers, a test is useful when it provides information in time to help with the next management decision.\n\nEstablished detection methods provide valuable information about nematodes, but their practical requirements can make routine testing difficult outside specialist settings. Microscopic identification relies on trained operators, while laboratory molecular testing often requires specialized equipment and sample preparation. NemaKlear focuses on making initial screening more accessible through a test-strip format supported by clear sampling, reading, and handling instructions. Our intended place is an accessible first step in a workflow that includes professional confirmation when needed. [Explore the scientific background →](/background/)\n\nQuestionnaires, conversations with growers, and interviews with plant-protection experts helped us make this goal more concrete. Respondents valued straightforward operation, reliable results, and affordability. Experts also connected the timing of detection with decisions made before planting.\n\nThese perspectives gave “early warning” a specific purpose: could information about nematode risk help growers plan planting and consider soil treatment? This question shapes what our sensors need to measure, how results should be presented, and how the testing process should work. [Explore the needs and feedback behind our design →](/human-practices/)",
+      "accompanyingBody": "PPNs live in soil and roots. Symptoms above ground often give little indication of what is happening below. For growers, a test is useful when it provides information in time to help with the next management decision.\n\nEstablished detection methods provide valuable information about nematodes, but their practical requirements can make routine testing difficult outside specialist settings. Microscopic identification relies on trained operators, while laboratory molecular testing often requires specialized equipment and sample preparation. NemaKlear focuses on making initial screening more accessible through a test-strip format supported by clear sampling, reading, and handling instructions. Our intended place is an accessible first step in a workflow that includes professional confirmation when needed. [Explore the scientific background →](/background/)\n\nQuestionnaires, conversations with growers, and interviews with plant-protection experts helped us make this goal more concrete. Respondents valued straightforward operation, reliable results, and affordability. Experts also connected the timing of detection with decisions made before planting.\n\nThese perspectives gave “early warning” a specific purpose: could information about nematode risk help growers plan planting and consider soil treatment? This question shapes what our sensors need to measure, how results should be presented, and how the testing process should work. [Explore Integrated human practices →](/human-practices/)",
       "originalSrc": "https://static.igem.wiki/teams/6303/wiki/project-20261021/project-40-f25a55a93d29.webp",
       "openOriginal": true
     },
@@ -182,7 +182,7 @@
     },
     {
       "_template": "text",
-      "body": "This goal guides both the development of the test strip and the evaluation of the complete workflow, including preparation, reading, cost, and disposal. [Test strip development →](/results/) · [User needs and workflow →](/human-practices/)"
+      "body": "This goal guides both the development of the test strip and the evaluation of the complete workflow, including preparation, reading, cost, and disposal. [Test strip development →](/results/) · [Integrated human practices →](/human-practices/)"
     },
     {
       "_template": "heading",
@@ -196,7 +196,7 @@
     },
     {
       "_template": "text",
-      "body": "This approach gives us a concrete way to judge progress: can the proposed kit provide understandable information, at an accessible cost, at a time when it can help? By keeping that question central, we bring wet-lab engineering, computational modeling, and Human Practices into the design of one usable screening approach. [Integrated Human Practices →](/human-practices/) · [Economic evaluation →](/model-eco/)"
+      "body": "This approach gives us a concrete way to judge progress: can the proposed kit provide understandable information, at an accessible cost, at a time when it can help? By keeping that question central, we bring wet-lab engineering, computational modeling, and Human Practices into the design of one usable screening approach. [Integrated human practices →](/human-practices/) · [Economic evaluation →](/model-eco/)"
     },
     {
       "_template": "text",

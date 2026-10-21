@@ -125,7 +125,7 @@ Figure 6. An online discussion with Zhihao Pang from Beijing Forestry University
 
 <p>He also suggested gathering observations from affected fields, speaking with potential users, and comparing the portability and operating steps of our proposed test with existing sample-submission services. For engineered yeast, he raised concerns about environmental release and post-test handling.</p>
 
-<p>These comments gave us questions to investigate: could similar colors arise from different backgrounds, could degradation change a measured ratio, and could a user complete the whole workflow? The iHP page explores how these questions relate to our wet-lab and dry-lab work.</p>
+<p>These comments gave us questions to investigate: could similar colors arise from different backgrounds, could degradation change a measured ratio, and could a user complete the whole workflow? The Integrated human practices page explores how these questions relate to our wet-lab and dry-lab work.</p>
 
 ## iGEM team exchanges: sharing research and HP experience {#hp-investigation-draft-49}
 
