@@ -18,7 +18,7 @@ Project/Model share embedded figure wrapping;Model review fixes and compact Eco 
 
 南开大学 NKU-China 团队参加 iGEM 2026 的项目网站，队伍编号 **6303**。网站围绕农业线虫与双通道检测方案，展示项目设计、实验结果、模型、人类实践和团队工作。
 
-当前版本为 **V10.2.43**，Results 相关图片采用并排图组与正文环绕；保留 Engineering 14 轮 DBTL、最新 Model、Project 标准 URL 版本、Members 和高清公众号二维码。
+当前版本为 **V10.2.44**，科研页面优化图文环绕并恢复首页四行标题；保留 Engineering 14 轮 DBTL、最新 Model、Project 标准 URL 版本、Members 和高清公众号二维码。
 
 - [正式网站](https://2026.igem.wiki/nku-china/)
 - [GitLab 源码](https://gitlab.igem.org/2026/nku-china)
@@ -106,9 +106,17 @@ Licensing 独立页当前没有正文，现有许可与 AI 使用说明位于页
 
 ## 版本改动
 
+### V10.2.44 改动：
+
+改动时间：2026-10-21 19:05:54（北京时间）
+
+1. Description、Contribution、Docking 与 Results 调整部分图片的左右环绕节奏；窄正文区域改用正文在前、图片在后的顺序，保留复杂科研图通栏。
+2. 恢复首页已确认的四行标题 What / secrets / lie / beneath the soil?，保留当前草叶前景遮挡及其他首页修改。
+3. 保留正文、图注、公式、素材来源、锚点及审核状态；补记 V10.2.43 实际发布时间。
+
 ### V10.2.43 改动：
 
-改动时间：2026-10-21 17:52:37（北京时间）
+发布时间：2026-10-21 18:01:23（北京时间）
 
 1. Results 的 Figure 33/34 合并为同一右侧并排图组，正文自然环绕；Figure 23/24 同类区域一并调整。
 2. 修正 Figure 8、30 的后续正文环绕及 Figure 36 的显示比例，减少图片旁的大块空白；手机保持正文、图片、后续标题的阅读顺序。
