@@ -18,7 +18,7 @@ Project/Model share embedded figure wrapping;Model review fixes and compact Eco 
 
 南开大学 NKU-China 团队参加 iGEM 2026 的项目网站，队伍编号 **6303**。网站围绕农业线虫与双通道检测方案，展示项目设计、实验结果、模型、人类实践和团队工作。
 
-当前版本为 **V10.2.47**，首页中国页与结尾总览垂直居中，页脚两个图标前置并排；保留 V10.2.46 全部内容修正。
+当前版本为 **V10.2.47**，首页中国页与结尾总览垂直居中，页脚两个图标前置并排，5 组并列照片统一 4:3；保留 V10.2.46 全部内容修正。
 
 - [正式网站](https://2026.igem.wiki/nku-china/)
 - [GitLab 源码](https://gitlab.igem.org/2026/nku-china)
@@ -110,7 +110,8 @@ Licensing 独立页当前没有正文，现有许可与 AI 使用说明位于页
 1. Closer to home 的标题、切换与数据列在桌面可用区域垂直居中，3D 与 2D 备用共用测量，手机布局保持自然滚动。
 2. What we built 与 Explore 作为整组垂直居中，大屏缩放改用中心原点。
 3. 页脚南开与 GitLab 图标并排放在最左侧，文字链接随后；保留科研正文、素材与审核状态。
-4. 保留已发布的新版目录、sfGFP、地图与图组；不纳入已撤回的 china-map-align 水平位移方案。补记 V10.2.46 实际发布时间。
+4. Investigation Figures 1/2/9、Integrated HP Figure 1、Education Figure 3 的照片统一为 4:3 裁剪框，保留原图链接，海报与图表不裁剪。
+5. 保留已发布的新版目录、sfGFP、地图与图组；不纳入已撤回的 china-map-align 水平位移方案。补记 V10.2.46 实际发布时间。
 
 ### V10.2.46 改动：
 
