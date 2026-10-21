@@ -81,3 +81,15 @@ test('explicit TOC attributes include heading levels 3 through 6 and preserve ex
   assert.deepEqual(new Set(file.data.wikiToc.map((item) => item.id)).size, file.data.wikiToc.length);
   assert.match(JSON.stringify(tree), /"depth":6/);
 });
+
+test('overview stays in the outline without consuming a chapter and dated labels retain the day', () => {
+  const processor = unified().use(remarkParse).use(remarkDirective).use(remarkWiki);
+  const markdown = '## Project overview {#intro overview}\n\n## Innovation {#innovation}\n\n## 19 October 2026 meeting update {#meeting}\n\n### 2.1 Wild-type reference trajectories {#video-group toc="Wild-type reference trajectories"}\n';
+  const file = { data: {} };
+  const tree = processor.runSync(processor.parse(markdown), file);
+  assert.deepEqual(file.data.wikiToc.map(({id,num}) => [id,num]), [['intro',undefined],['innovation','01'],['meeting','02'],['video-group',undefined]]);
+  assert.equal(file.data.wikiToc[2].text, '19 October 2026 meeting update');
+  assert.equal(file.data.wikiToc[3].text, 'Wild-type reference trajectories');
+  const serialized = JSON.stringify(tree);
+  assert.doesNotMatch(serialized, /"data-num":"03"/);
+});

@@ -19,7 +19,7 @@
       "_template": "heading",
       "level": 2,
       "text": "Project overview",
-      "attributes": "#description-project-overview toc=\"Project overview\""
+      "attributes": "#description-project-overview toc=\"Project overview\" overview"
     },
     {
       "_template": "manuscriptTitle",
@@ -44,7 +44,7 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "1.1 Starting with the decision a grower needs to make",
+      "text": "Starting with the decision a grower needs to make",
       "attributes": "#description-starting-with-the-decision-a-grower-needs-to-make toc=\"Starting with the decision a grower needs to make\" toc-unnumbered"
     },
     {
@@ -70,7 +70,7 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "1.2 Looking for chemical clues in the soil",
+      "text": "Looking for chemical clues in the soil",
       "attributes": "#description-looking-for-chemical-clues-in-the-soil toc=\"Looking for chemical clues in the soil\" toc-unnumbered"
     },
     {
@@ -92,7 +92,7 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "1.3 Turning chemical signals into readable color",
+      "text": "Turning chemical signals into readable color",
       "attributes": "#description-turning-chemical-signals-into-readable-color toc=\"Turning chemical signals into readable color\" toc-unnumbered"
     },
     {
@@ -110,7 +110,7 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "1.4 Making the color useful",
+      "text": "Making the color useful",
       "attributes": "#description-making-the-color-useful toc=\"Making the color useful\" toc-unnumbered"
     },
     {
@@ -132,7 +132,7 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "1.5 Bringing the whole process back to the field",
+      "text": "Bringing the whole process back to the field",
       "attributes": "#description-bringing-the-whole-process-back-to-the-field toc=\"Bringing the whole process back to the field\" toc-unnumbered"
     },
     {
@@ -155,7 +155,7 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "2.1 Two responses to understand a mixed signal",
+      "text": "1.1 Two responses to understand a mixed signal",
       "attributes": "#description-two-responses-to-understand-a-mixed-signal toc=\"Two responses to understand a mixed signal\" toc-unnumbered"
     },
     {
@@ -169,7 +169,7 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "2.2 A living sensor in an accessible test format",
+      "text": "1.2 A living sensor in an accessible test format",
       "attributes": "#description-a-living-sensor-in-an-accessible-test-format toc=\"A living sensor in an accessible test format\" toc-unnumbered"
     },
     {
@@ -187,7 +187,7 @@
     {
       "_template": "heading",
       "level": 3,
-      "text": "2.3 Designing around the decision that follows",
+      "text": "1.3 Designing around the decision that follows",
       "attributes": "#description-designing-around-the-decision-that-follows toc=\"Designing around the decision that follows\" toc-unnumbered"
     },
     {

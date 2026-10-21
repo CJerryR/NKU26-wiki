@@ -52,7 +52,7 @@ Figure 3. Laboratory work with personal protective equipment.
 
 :::
 
-### 1.3 Productization and application safety {#productization-application-safety toc="Productization & application safety"}
+### 1.3 Productization and application safety {#productization-application-safety toc="Productization and application safety"}
 
 For productization and field application safety, our final product is a kit equipped with freeze-dried yeast test strips. Freeze-dried yeast powder can be transported at room temperature without losing activity. Besides, the risk of leakage and contamination from this type of yeast is relatively low.
 

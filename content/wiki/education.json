@@ -17,6 +17,12 @@
       "body": "<div class=\"reading-layout hp-manuscript\" lang=\"en\">"
     },
     {
+      "_template": "heading",
+      "level": 2,
+      "text": "Education overview",
+      "attributes": "#education-overview overview toc=\"Education overview\""
+    },
+    {
       "_template": "manuscriptTitle",
       "manuscript": "Starting with a handful of soil"
     },
@@ -45,7 +51,7 @@
       "_template": "heading",
       "level": 3,
       "text": "1.1 Science course: The Nematode Hunt",
-      "attributes": "#education-source-6"
+      "attributes": "#education-source-6 toc=\"Science course: The Nematode Hunt\""
     },
     {
       "_template": "text",
@@ -63,7 +69,7 @@
       "_template": "heading",
       "level": 3,
       "text": "1.2 Experimental science course: Exploring Biological Signals",
-      "attributes": "#education-source-10"
+      "attributes": "#education-source-10 toc=\"Experimental science course: Exploring Biological Signals\""
     },
     {
       "_template": "text",
@@ -81,7 +87,7 @@
       "_template": "heading",
       "level": 3,
       "text": "1.3 Values and responsibility course: Small Lives and Everyday Contributions",
-      "attributes": "#education-source-14"
+      "attributes": "#education-source-14 toc=\"Values and responsibility course: Small Lives and Everyday Contributions\""
     },
     {
       "_template": "text",
@@ -166,7 +172,7 @@
       "_template": "heading",
       "level": 3,
       "text": "4.1 What the available feedback suggests",
-      "attributes": "#education-source-38"
+      "attributes": "#education-source-38 toc=\"What the available feedback suggests\""
     },
     {
       "_template": "text",
@@ -180,7 +186,7 @@
       "_template": "heading",
       "level": 3,
       "text": "4.2 Gathering more specific feedback next time",
-      "attributes": "#education-source-41"
+      "attributes": "#education-source-41 toc=\"Gathering more specific feedback next time\""
     },
     {
       "_template": "text",
@@ -200,7 +206,7 @@
       "_template": "heading",
       "level": 3,
       "text": "5.1 Explaining the project through different materials",
-      "attributes": "#education-source-45"
+      "attributes": "#education-source-45 toc=\"Explaining the project through different materials\""
     },
     {
       "_template": "text",
@@ -222,7 +228,7 @@
       "_template": "heading",
       "level": 3,
       "text": "5.2 Helping other educators use the courses",
-      "attributes": "#education-source-52"
+      "attributes": "#education-source-52 toc=\"Helping other educators use the courses\""
     },
     {
       "_template": "text",
@@ -236,7 +242,7 @@
       "_template": "heading",
       "level": 3,
       "text": "5.3 Course resources",
-      "attributes": "#education-source-55"
+      "attributes": "#education-source-55 toc=\"Course resources\""
     },
     {
       "_template": "text",

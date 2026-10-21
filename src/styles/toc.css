@@ -157,3 +157,8 @@
   .toc { right: max(12px, env(safe-area-inset-right, 0px)); }
   .toc__panel { left: max(12px, env(safe-area-inset-left, 0px)); right: max(12px, env(safe-area-inset-right, 0px)); }
 }
+
+/* A light mobile outline must remain legible over the dark scene opening. */
+@media (max-width:1099px) {
+  html:not([data-theme="dark"]) .toc.is-open .toc__panel.lg { --lg-tint-bg: rgb(251 248 241 / .97); background: rgb(251 248 241 / .97); }
+}

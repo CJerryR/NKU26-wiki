@@ -17,6 +17,12 @@
       "body": "<div class=\"reading-layout hp-manuscript\" lang=\"en\">"
     },
     {
+      "_template": "heading",
+      "level": 2,
+      "text": "Investigation overview",
+      "attributes": "#hp-investigation-overview overview toc=\"Investigation overview\""
+    },
+    {
       "_template": "manuscriptTitle",
       "manuscript": "Taking project questions into the field"
     },
@@ -60,7 +66,7 @@
       "_template": "heading",
       "level": 3,
       "text": "2.1 Sample sources and backgrounds",
-      "attributes": "#hp-investigation-draft-14"
+      "attributes": "#hp-investigation-draft-14 toc=\"Sample sources and backgrounds\""
     },
     {
       "_template": "text",
@@ -79,7 +85,7 @@
       "_template": "heading",
       "level": 3,
       "text": "2.2 Keeping each sample connected to its background",
-      "attributes": "#hp-investigation-draft-19"
+      "attributes": "#hp-investigation-draft-19 toc=\"Keeping each sample connected to its background\""
     },
     {
       "_template": "text",
@@ -93,7 +99,7 @@
       "_template": "heading",
       "level": 3,
       "text": "2.3 Making sampling traceable and safe",
-      "attributes": "#hp-investigation-draft-22"
+      "attributes": "#hp-investigation-draft-22 toc=\"Making sampling traceable and safe\""
     },
     {
       "_template": "image",
@@ -116,7 +122,7 @@
       "_template": "heading",
       "level": 3,
       "text": "3.1 Yurong Yao: growing conditions, sampling, and the user workflow",
-      "attributes": "#hp-investigation-draft-29"
+      "attributes": "#hp-investigation-draft-29 toc=\"Yurong Yao: growing conditions, sampling, and the user workflow\""
     },
     {
       "_template": "text",
@@ -143,7 +149,7 @@
       "_template": "heading",
       "level": 3,
       "text": "3.2 Qian Liu: testing goals, interpretation, and real-sample validation",
-      "attributes": "#hp-investigation-draft-35"
+      "attributes": "#hp-investigation-draft-35 toc=\"Qian Liu: testing goals, interpretation, and real-sample validation\""
     },
     {
       "_template": "image",
@@ -160,7 +166,7 @@
       "_template": "heading",
       "level": 3,
       "text": "3.3 Zhihao Pang: soil processes, signal stability, and conditions of use",
-      "attributes": "#hp-investigation-draft-42"
+      "attributes": "#hp-investigation-draft-42 toc=\"Zhihao Pang: soil processes, signal stability, and conditions of use\""
     },
     {
       "_template": "text",
@@ -197,7 +203,7 @@
       "_template": "heading",
       "level": 3,
       "text": "4.1 Exchanges on research and HP",
-      "attributes": "#hp-investigation-draft-51"
+      "attributes": "#hp-investigation-draft-51 toc=\"Exchanges on research and HP\""
     },
     {
       "_template": "text",
@@ -219,7 +225,7 @@
       "_template": "heading",
       "level": 3,
       "text": "4.2 The US-China Human Practices Summit",
-      "attributes": "#hp-investigation-draft-63"
+      "attributes": "#hp-investigation-draft-63 toc=\"The US-China Human Practices Summit\""
     },
     {
       "_template": "text",
@@ -248,7 +254,7 @@
       "_template": "heading",
       "level": 3,
       "text": "5.1 National Natural History Museum of China: soil life in a wider context",
-      "attributes": "#hp-investigation-draft-69"
+      "attributes": "#hp-investigation-draft-69 toc=\"National Natural History Museum of China: soil life in a wider context\""
     },
     {
       "_template": "text",
@@ -258,7 +264,7 @@
       "_template": "heading",
       "level": 3,
       "text": "5.2 China Agricultural Museum: connecting testing with farming",
-      "attributes": "#hp-investigation-draft-71"
+      "attributes": "#hp-investigation-draft-71 toc=\"China Agricultural Museum: connecting testing with farming\""
     },
     {
       "_template": "text",
@@ -268,7 +274,7 @@
       "_template": "heading",
       "level": 3,
       "text": "5.3 Beijing Academy of Agriculture and Forestry Sciences: observing research communication",
-      "attributes": "#hp-investigation-draft-73"
+      "attributes": "#hp-investigation-draft-73 toc=\"Beijing Academy of Agriculture and Forestry Sciences: observing research communication\""
     },
     {
       "_template": "text",

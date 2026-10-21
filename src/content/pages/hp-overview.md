@@ -15,6 +15,8 @@ draft: false
 ---
 <nav class="hp-chapter-nav" aria-label="Human Practices chapters"><a href="/hp-overview/">Overview</a><a href="/human-practices/">Integrated Human Practices</a><a href="/education/">Education</a><a href="/hp-investigation/">Investigation</a><a href="/hp-industry/">Industry engagement and support</a></nav><section class="hp-manuscript" lang="en">
 
+## Human Practices overview {#hp-overview-introduction overview toc="Human Practices overview"}
+
 <p data-hp-source-paragraph="42" class="hp-inpage-nav">On this page  <a href="#hp-source-44">Explore Human Practices</a>  /  <a href="#hp-source-57">Agricultural challenge</a>  /  <a href="#hp-source-61">Our network</a>  /  <a href="#hp-source-64">Resources</a></p>
 
 :::lead
@@ -27,25 +29,25 @@ draft: false
 
 :::cards{cols="2"}
 
-### Integrated Human Practices: bringing feedback into research {#hp-source-45}
+### Integrated Human Practices: bringing feedback into research {#hp-source-45 toc="Integrated Human Practices: bringing feedback into research"}
 
 <p data-hp-source-paragraph="46">Insights from our wet-lab and dry-lab work shaped the initial questionnaire, while responses informed discussions about research priorities. Expert interviews and university exchanges raised further questions about soil interference, signal stability, controls, and sampling. This page explains how these inputs relate to our research and how other teams can adapt our approach.</p>
 
 <p data-hp-source-paragraph="47"><a href="/human-practices/"><strong>Explore feedback and research →</strong></a></p>
 
-### Education: from classrooms to the public {#hp-source-48}
+### Education: from classrooms to the public {#hp-source-48 toc="Education: from classrooms to the public"}
 
 <p data-hp-source-paragraph="49">We developed three courses on agricultural nematodes, biological signals, and scientific responsibility. Working through teaching partnerships, including Nankai University’s Xiangyang Program, we brought these topics to learners and created picture books, posters, leaflets, postcards, and a sampling guidance video. Age-appropriate versions connect unfamiliar life below ground with everyday experiences of agriculture.</p>
 
 <p data-hp-source-paragraph="50"><a href="/education/"><strong>Explore courses and outreach →</strong></a></p>
 
-### Investigation: exploring real-world use {#hp-source-51}
+### Investigation: exploring real-world use {#hp-source-51 toc="Investigation: exploring real-world use"}
 
 <p data-hp-source-paragraph="52">Our summer fieldwork connected museum visits, interviews with three experts, university and iGEM team exchanges, farm visits in Tianjin, and soil collection. This page introduces the people we met, the questions we discussed, and what we learned as we moved from published information to real settings.</p>
 
 <p data-hp-source-paragraph="53"><a href="/hp-investigation/"><strong>Explore interviews and fieldwork →</strong></a></p>
 
-### Industry engagement and support {#hp-source-54}
+### Industry engagement and support {#hp-source-54 toc="Industry engagement and support"}
 
 <p data-hp-source-paragraph="55">We reached out to companies and alumni, prepared partnership materials, and held meetings to seek advice on potential applications and commercialization. This process brought sponsorship support and helped us develop a reusable approach to industry outreach.</p>
 

@@ -15,6 +15,8 @@ hidden: false
 ---
 <div class="reading-layout hp-manuscript" lang="en">
 
+## Investigation overview {#hp-investigation-overview overview toc="Investigation overview"}
+
 :::manuscriptTitle
 
 Taking project questions into the field
@@ -37,7 +39,7 @@ Taking project questions into the field
 
 <p data-hp-draft-paragraph="13">Responses observed under controlled laboratory conditions need to be examined in real soil conditions. We launched the Soil Project to bring these conditions into our research. We gathered soils from different regions, cropping histories, and environments, recorded their backgrounds, and prepared sampling guidance and biosafety procedures.</p>
 
-### 2.1 Sample sources and backgrounds {#hp-investigation-draft-14}
+### 2.1 Sample sources and backgrounds {#hp-investigation-draft-14 toc="Sample sources and backgrounds"}
 
 <p data-hp-draft-paragraph="15">Our sample inventory records <strong>289 soil samples from nine provincial-level regions</strong>. The selected examples below document sources from six of these regions: Jilin, Heilongjiang, Yunnan, Sichuan, Guangxi, and Tibet. They include soils from soybean monoculture and continuous cropping, tobacco fields with different continuous-cropping histories, vegetable gardens, and environments such as meadows, wetlands, and saline–alkali land. Recording these differences gives us specific sample conditions to compare when considering how the sensor might work with soil.</p>
 
@@ -45,13 +47,13 @@ Taking project questions into the field
 
 <p data-hp-draft-paragraph="18">These background descriptions support sample traceability. The nematodes and signaling molecules present in each sample still need to be established through identification and measurement.</p>
 
-### 2.2 Keeping each sample connected to its background {#hp-investigation-draft-19}
+### 2.2 Keeping each sample connected to its background {#hp-investigation-draft-19 toc="Keeping each sample connected to its background"}
 
 <p data-hp-draft-paragraph="20">We link sample identifiers with photographs of the sampling site, location, crop, collection date, and management history. These records help us understand where a sample came from when discussing results. Soybean and tobacco samples draw attention to crops and management histories, while samples from other environments provide a wider range of soil backgrounds. The geographical distribution describes the sources of our materials; broader interpretation depends on the sampling design and subsequent analysis.</p>
 
 <p data-hp-draft-paragraph="21">For sensor research, these materials provide a basis for future comparisons of soil-extract backgrounds, color interference, and sample preparation. They also give the wet-lab and modeling teams concrete sample conditions to discuss. Whether a sample contains nematodes, which signals are present, and whether engineered yeast can produce an interpretable response all require appropriate identification, controls, and measurements.</p>
 
-### 2.3 Making sampling traceable and safe {#hp-investigation-draft-22}
+### 2.3 Making sampling traceable and safe {#hp-investigation-draft-22 toc="Making sampling traceable and safe"}
 
 ::::figuretext{side=right width=wide flow=wrap}
 
@@ -71,7 +73,7 @@ Figure 2. Overview of soil sample collection and handling. The workflow connects
 
 ## Expert interviews: three perspectives on the project {#hp-investigation-draft-28}
 
-### 3.1 Yurong Yao: growing conditions, sampling, and the user workflow {#hp-investigation-draft-29}
+### 3.1 Yurong Yao: growing conditions, sampling, and the user workflow {#hp-investigation-draft-29 toc="Yurong Yao: growing conditions, sampling, and the user workflow"}
 
 <p data-hp-draft-paragraph="30">On June 6, 2026, we met Yurong Yao at the Institute of Plant Protection, Tianjin Academy of Agricultural Sciences. Starting with nematode disease in protected vegetable production, we discussed hidden root damage, symptoms that can resemble other problems, continuous cropping, and the cost and practical demands of professional testing.</p>
 
@@ -87,7 +89,7 @@ Figure 3. An interview with Yurong Yao. The discussion covered nematode disease 
 
 :::
 
-### 3.2 Qian Liu: testing goals, interpretation, and real-sample validation {#hp-investigation-draft-35}
+### 3.2 Qian Liu: testing goals, interpretation, and real-sample validation {#hp-investigation-draft-35 toc="Qian Liu: testing goals, interpretation, and real-sample validation"}
 
 ::::figuretext{side=right width=medium flow=wrap}
 
@@ -107,7 +109,7 @@ Figure 4. A group photograph following our discussion with Qian Liu at China Agr
 
 ::::
 
-### 3.3 Zhihao Pang: soil processes, signal stability, and conditions of use {#hp-investigation-draft-42}
+### 3.3 Zhihao Pang: soil processes, signal stability, and conditions of use {#hp-investigation-draft-42 toc="Zhihao Pang: soil processes, signal stability, and conditions of use"}
 
 <p data-hp-draft-paragraph="43">During our online discussion on August 18, Zhihao Pang from Beijing Forestry University examined the project through soil processes and potential use. He asked whether soil background color could affect interpretation and whether differences in the degradation rates of ascaroside #3 and ascaroside #18 could change their measured relative proportions.</p>
 
@@ -127,7 +129,7 @@ Figure 5. An online discussion with Zhihao Pang from Beijing Forestry University
 
 <p data-hp-draft-paragraph="50">This season, we exchanged ideas with teams from Zhengzhou University, Peking University, Tsinghua University, China Agricultural University, and the University of Science and Technology of China, as well as PROFUTURE. Conversations about biological system design, experimental and modeling challenges, education, and project communication gave us other perspectives on our nematode early-warning sensor.</p>
 
-### 4.1 Exchanges on research and HP {#hp-investigation-draft-51}
+### 4.1 Exchanges on research and HP {#hp-investigation-draft-51 toc="Exchanges on research and HP"}
 
 <p data-hp-draft-paragraph="52">Our online meeting with Zhengzhou University on July 10 focused on expert interviews, reaching questionnaire respondents, and public communication. On August 6, we discussed teaching partnerships and public engagement with PROFUTURE. We shared our experience of developing courses and outreach through the Xiangyang Program and learned how other teams organized their investigation and educational work.</p>
 
@@ -137,7 +139,7 @@ Figure 5. An online discussion with Zhihao Pang from Beijing Forestry University
 
 <p data-hp-draft-paragraph="62">In our online exchange with the University of Science and Technology of China, we compared the modular design of their timed engineered-bacteria system with our nematode early-warning sensor. We discussed construct verification, sources of model parameters, and experimental bottlenecks. We also exchanged ideas about HP narratives and Wiki communication, considering how to present the links between agricultural needs, engineering choices, and validation evidence clearly.</p>
 
-### 4.2 The US-China Human Practices Summit {#hp-investigation-draft-63}
+### 4.2 The US-China Human Practices Summit {#hp-investigation-draft-63 toc="The US-China Human Practices Summit"}
 
 <p data-hp-draft-paragraph="64">On August 30, we joined the 2026 US-China iGEM Human Practices Summit, jointly organized by Peking University and Rice University under the theme “People in the World of SynBio.” We presented our nematode early-warning project, explaining how needs assessment, expert consultation, and education relate to the potential use of the engineered-yeast sensor, and heard about other teams’ HP experiences.</p>
 
@@ -153,15 +155,15 @@ Figure 7. Participation certificate of NKU-China in the 2026 US-China iGEM Human
 
 ## Museum and outreach visits: learning how science reaches the public {#hp-investigation-draft-68}
 
-### 5.1 National Natural History Museum of China: soil life in a wider context {#hp-investigation-draft-69}
+### 5.1 National Natural History Museum of China: soil life in a wider context {#hp-investigation-draft-69 toc="National Natural History Museum of China: soil life in a wider context"}
 
 <p data-hp-draft-paragraph="70">Our visit offered a reference for understanding biodiversity and organizing science communication. People may first encounter nematodes through accounts of disease, with little opportunity to learn about their different ecological roles. Placing plant-parasitic nematodes within this wider diversity helped us choose a more accurate starting point for education.</p>
 
-### 5.2 China Agricultural Museum: connecting testing with farming {#hp-investigation-draft-71}
+### 5.2 China Agricultural Museum: connecting testing with farming {#hp-investigation-draft-71 toc="China Agricultural Museum: connecting testing with farming"}
 
 <p data-hp-draft-paragraph="72">The visit brought our attention back to crops, farming practices, and agricultural development. It prompted us to consider how to explain the relationship between underground disease and food production, and how to connect our testing concept with specific crop-management decisions.</p>
 
-### 5.3 Beijing Academy of Agriculture and Forestry Sciences: observing research communication {#hp-investigation-draft-73}
+### 5.3 Beijing Academy of Agriculture and Forestry Sciences: observing research communication {#hp-investigation-draft-73 toc="Beijing Academy of Agriculture and Forestry Sciences: observing research communication"}
 
 <p data-hp-draft-paragraph="74">The science outreach facilities gave us an opportunity to see how agricultural research is displayed and explained. The visit helped us understand agricultural technology applications and consider how images, processes, and familiar settings could make our project accessible to people with different backgrounds.</p>
 

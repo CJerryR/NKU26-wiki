@@ -12,6 +12,6 @@ hidden: true
 meta: {}
 draft: false
 ---
-## Now part of parts and collections {#moved toc="Moved"}
+## Now part of parts and collections {#moved toc="Now part of parts and collections"}
 
 The Part Collection has moved into one page with the parts: see [Parts and Collections](/parts/#collections).

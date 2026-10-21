@@ -15,6 +15,8 @@ hidden: false
 ---
 <div class="reading-layout hp-manuscript" lang="en">
 
+## Human Practices overview {#human-practices-overview overview toc="Human Practices overview"}
+
 :::manuscriptTitle
 
 Bringing agricultural needs into our project

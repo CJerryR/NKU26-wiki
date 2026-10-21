@@ -617,6 +617,7 @@ export function slugify(value, used) {
 function cleanTocLabel(value) {
   // Remove short authored chapter prefixes from outline labels only. The 1–2
   // digit boundary keeps names such as "3D", "24-hour" and "2026 field work" intact.
+  if (/^\d{1,2}\s+(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{4}\b/.test(String(value))) return String(value).trim();
   return String(value).replace(/^\s*\d{1,2}(?:\.\d+)*[.)]?\s+/, '').trim();
 }
 
@@ -643,8 +644,9 @@ function finalize(tree, file) {
     const a = attrsOf(h);
     const id = h.data.hProperties.id;
     if (h.depth === 2 && rootH2.has(h) && !('notoc' in a)) {
-      const num = String(++tocSection).padStart(2, '0');
-      if (!('unnumbered' in a)) h.data.hProperties['data-num'] = String(++bodySection).padStart(2, '0');
+      const overview = 'overview' in a;
+      const num = overview ? undefined : String(++tocSection).padStart(2, '0');
+      if (!overview && !('unnumbered' in a)) h.data.hProperties['data-num'] = String(++bodySection).padStart(2, '0');
       h.data.tocText = a.toc || toText(h);
       toc.push({ depth: 2, id, text: cleanTocLabel(h.data.tocText), num });
     } else if (h.depth === 3 && 'toc' in a) {

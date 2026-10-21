@@ -15,7 +15,7 @@ hidden: false
 ---
 <div class="reading-layout" lang="en">
 
-## Silent killers underground: the urgent threat of plant-parasitic nematodes {#11-silent-killers-underground-the-urgent-threat-of-plant-parasitic-nematodes toc="Plant-parasitic nematodes"}
+## Silent killers underground: the urgent threat of plant-parasitic nematodes {#11-silent-killers-underground-the-urgent-threat-of-plant-parasitic-nematodes toc="Silent killers underground: the urgent threat of plant-parasitic nematodes"}
 
 <p>Plant-parasitic nematodes (PPNs) are among the most destructive pathogens in global agricultural production. Widely distributed in cultivated soils, they parasitize plant roots, disrupt nutrient uptake pathways and trigger secondary diseases, posing severe threats to crop yield and quality. Statistically, PPNs cause up to 157 billion dollars in annual crop losses worldwide across more than 20 major cash crops<sup>[1]</sup>. Among them, sedentary endoparasitic nematodes represent the most harmful group due to their unique parasitic lifestyle, strong dispersal capacity and difficult control<sup>[2]</sup>. As two representative species, <em>Heterodera glycines</em> and <em>Meloidogyne incognita</em> exhibit typical taxonomic and biological features. They continuously endanger the production of globally critical crops and serve as core model organisms for research on soil nematode management (Figure 1).</p>
 
@@ -52,7 +52,7 @@ Co-infection by these two nematodes elevates the risk of complex soil-borne dise
 
 
 
-## Dawn breaks: nematophagous fungi fuel innovation in nematode detection {#nematophagous-fungi toc="Nematophagous fungi"}
+## Dawn breaks: nematophagous fungi fuel innovation in nematode detection {#nematophagous-fungi toc="Dawn breaks: nematophagous fungi fuel innovation in nematode detection"}
 
 <p>Previous studies revealed that ascaroside #18 (ascr#18) acts as the dominant ascaroside across multiple genera of PPNs (Figure 2)<sup>[6]</sup>. In contrast, larvae of free-living nematodes such as <em>Caenorhabditis elegans</em> mainly produce ascaroside #3 (ascr#3) and ascaroside #5 (ascr#5) (Figure 3)<sup>[7]</sup>.</p>
 

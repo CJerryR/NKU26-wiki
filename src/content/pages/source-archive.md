@@ -33,19 +33,19 @@ These earlier submissions are retained in full, in their original file formats. 
 
 <section id="dry-project-en-earlier"><h3>2.4 Drylab wiki｜project - eg</h3><p>Drylab Wiki｜Project - eg.docx · DOCX</p><p><a href="https://static.igem.wiki/teams/6303/wiki/v8-7/history-2420e6f5ce76-00.json" data-source-document="dry-project-en-earlier" download="Drylab Wiki｜Project - eg.docx">Download complete original / 下载完整原件</a> <span role="status" aria-live="polite"></span></p></section>
 
-## Human practices / education {#human-practices-education}
+## Human Practices / education {#human-practices-education}
 
 <section id="education-earlier"><h3>3.1 Best education 页面修订稿 — 旧版</h3><p>Best-Education-page-revised-draft(1).docx · DOCX</p><p><a href="https://static.igem.wiki/teams/6303/wiki/v8-7/history-413399393cd2-00.json" data-source-document="education-earlier" download="Best-Education-page-revised-draft(1).docx">Download complete original / 下载完整原件</a> <span role="status" aria-live="polite"></span></p></section>
 
-## Human practices {#human-practices}
+## Human Practices {#human-practices}
 
 <section id="hp-earlier"><h3>4.1 HP wiki 语料库整合版 — 旧版</h3><p>HP wiki 语料库整合版.docx · DOCX</p><p><a href="https://static.igem.wiki/teams/6303/wiki/v8-7/history-d51793eaaa17-00.json" data-source-document="hp-earlier" download="HP wiki 语料库整合版.docx">Download complete original / 下载完整原件</a> <span role="status" aria-live="polite"></span></p></section>
 
-## Human practices / sponsorship {#human-practices-sponsorship}
+## Human Practices / sponsorship {#human-practices-sponsorship}
 
 <section id="sponsorship-earlier"><h3>5.1 赞助语料库 — 旧版</h3><p>赞助语料库.docx · DOCX</p><p><a href="https://static.igem.wiki/teams/6303/wiki/v8-7/history-d98a33e8c911-00.json" data-source-document="sponsorship-earlier" download="赞助语料库.docx">Download complete original / 下载完整原件</a> <span role="status" aria-live="polite"></span></p></section>
 
-## Human practices / research {#human-practices-research}
+## Human Practices / research {#human-practices-research}
 
 <section id="hp-research-earlier"><h3>6.1 HP调研 — 旧版</h3><p>HP调研.docx · DOCX</p><p><a href="https://static.igem.wiki/teams/6303/wiki/v8-7/history-e2f9fdd383b7-00.json" data-source-document="hp-research-earlier" download="HP调研.docx">Download complete original / 下载完整原件</a> <span role="status" aria-live="polite"></span></p></section>
 

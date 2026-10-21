@@ -15,6 +15,8 @@ hidden: false
 ---
 <div class="reading-layout hp-manuscript" lang="en">
 
+## Education overview {#education-overview overview toc="Education overview"}
+
 :::manuscriptTitle
 
 Starting with a handful of soil
@@ -41,7 +43,7 @@ Figure 1. A nematode-themed lesson in Lincheng, Hebei. Using images of plant roo
 
 <p data-hp-draft-paragraph="8">We designed three courses around agricultural problems, biological signals, and scientific responsibility. Each connects nematodes, agriculture, and synthetic biology from a different angle, inviting learners to observe, propose explanations, and consider how science relates to everyday life.</p>
 
-### 1.1 Science course: The Nematode Hunt {#education-source-6}
+### 1.1 Science course: The Nematode Hunt {#education-source-6 toc="Science course: The Nematode Hunt"}
 
 <p data-hp-draft-paragraph="10">The Nematode Hunt introduces nematodes and their relationships with plants and agriculture. Beginning with familiar crops and signs of poor growth, the course helps learners connect above-ground observations with roots and soil, and understand why underground disease can be difficult to notice.</p>
 
@@ -49,7 +51,7 @@ Figure 1. A nematode-themed lesson in Lincheng, Hebei. Using images of plant roo
 
 <p data-hp-draft-paragraph="12">We want learners to move from noticing a problem to asking what might explain it: what could make a plant grow poorly, and what else would we need to observe or find out? These questions also reflect the agricultural problem behind our project: a test should provide clues that help people decide what to investigate next.</p>
 
-### 1.2 Experimental science course: Exploring Biological Signals {#education-source-10}
+### 1.2 Experimental science course: Exploring Biological Signals {#education-source-10 toc="Experimental science course: Exploring Biological Signals"}
 
 <p data-hp-draft-paragraph="14">Exploring Biological Signals follows the sequence of input, sensing, and output. Through age-appropriate activities, learners explore how living systems sense signals and how an invisible change can become something observable.</p>
 
@@ -57,7 +59,7 @@ Figure 1. A nematode-themed lesson in Lincheng, Hebei. Using images of plant roo
 
 <p data-hp-draft-paragraph="16">This course focuses on understanding the method. For our team, turning the sensor concept into a lesson requires us to explain what each part does and how the parts work together. Practical materials and procedures follow the lesson plan for each age group.</p>
 
-### 1.3 Values and responsibility course: Small Lives and Everyday Contributions {#education-source-14}
+### 1.3 Values and responsibility course: Small Lives and Everyday Contributions {#education-source-14 toc="Values and responsibility course: Small Lives and Everyday Contributions"}
 
 <p data-hp-draft-paragraph="18">Small Lives and Everyday Contributions connects microscopic life with careful observation, cooperation, and everyday contributions. It invites learners to notice work in research and agricultural service that often goes unseen.</p>
 
@@ -95,13 +97,13 @@ Figure 1. A nematode-themed lesson in Lincheng, Hebei. Using images of plant roo
 
 <p data-hp-draft-paragraph="44">When organizing our teaching materials, we use worksheets, classroom records, and learner work to understand the learning process, while paying attention to requests for experiments and interaction. These materials help us consider how to assess whether a lesson has explained its central ideas and what to focus on next time.</p>
 
-### 4.1 What the available feedback suggests {#education-source-38}
+### 4.1 What the available feedback suggests {#education-source-38 toc="What the available feedback suggests"}
 
 <p data-hp-draft-paragraph="46">The Xiangyang Program’s summer teaching evaluation report described interest in more experiments, interaction, and age-appropriate courses. It provides input for teaching improvements across the partnership. Understanding learning in our nematode courses requires records and learner work from the relevant sessions.</p>
 
 <p data-hp-draft-paragraph="47">This feedback reminds us to consider how learners participate alongside the scientific content: do the illustrations help, do activities give learners opportunities to observe and explain, and does the level suit what they already know? For our project, clearly explaining input, sensing, and output, while leaving room for questions and comparisons, remains a useful focus.</p>
 
-### 4.2 Gathering more specific feedback next time {#education-source-41}
+### 4.2 Gathering more specific feedback next time {#education-source-41 toc="Gathering more specific feedback next time"}
 
 <p data-hp-draft-paragraph="49">Future sessions could collect feedback through a small number of tasks tied to the learning goals. Learners might explain several possible causes of a plant’s symptoms, draw how a sensor turns an input into an output, or suggest a comparison that would help explain an observation.</p>
 
@@ -109,7 +111,7 @@ Figure 1. A nematode-themed lesson in Lincheng, Hebei. Using images of plant roo
 
 ## Beyond the classroom: outreach and reusable resources {#education-source-44}
 
-### 5.1 Explaining the project through different materials {#education-source-45}
+### 5.1 Explaining the project through different materials {#education-source-45 toc="Explaining the project through different materials"}
 
 <p data-hp-draft-paragraph="53">Picture books, posters, leaflets, postcards, fieldwork reports, and a sampling guidance video present the project’s agricultural questions, biological sensing concept, and sampling requirements in different forms. Images and stories give people outside the classroom ways to encounter life below ground and understand why our team studies agricultural nematodes.</p>
 
@@ -119,13 +121,13 @@ Figure 1. A nematode-themed lesson in Lincheng, Hebei. Using images of plant roo
 
 <p data-hp-draft-paragraph="61">Preparing these materials requires us to choose a focus for each format: how can an image explain an invisible signal, how can a story introduce an agricultural problem, and how can guidance help someone understand what to do next? These choices help us examine our project explanations from the audience’s perspective.</p>
 
-### 5.2 Helping other educators use the courses {#education-source-52}
+### 5.2 Helping other educators use the courses {#education-source-52 toc="Helping other educators use the courses"}
 
 <p data-hp-draft-paragraph="63">The three courses and their age-adapted versions provide examples of learning goals, preparation, activity sequences, and feedback methods. Educators can adapt them to learners’ ages, locally familiar crops, and classroom conditions, using agricultural nematodes as a starting point for observing the surrounding environment and discussing synthetic biology.</p>
 
 <p data-hp-draft-paragraph="64">When adapting a course, educators can first identify the central question they want learners to understand, then select a suitable version and supporting illustrations. Short tasks, questions, and learner work can help document learning and provide feedback for the next session.</p>
 
-### 5.3 Course resources {#education-source-55}
+### 5.3 Course resources {#education-source-55 toc="Course resources"}
 
 <p data-hp-draft-paragraph="66">All three courses are in Chinese. The science and experimental science courses each have primary-school and middle-school versions; the values and responsibility course is for primary-school learners.</p>
 

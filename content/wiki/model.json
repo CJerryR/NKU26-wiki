@@ -16,12 +16,10 @@
       "body": "<div class=\"reading-layout model-manuscript\" lang=\"en\">"
     },
     {
-      "_template": "text",
-      "body": "<span id=\"model-overview\" class=\"legacy-section-anchor\" aria-hidden=\"true\"></span>"
-    },
-    {
-      "_template": "manuscriptTitle",
-      "manuscript": "Model overview"
+      "_template": "heading",
+      "level": 2,
+      "text": "Model overview",
+      "attributes": "#model-overview overview toc=\"Model overview\""
     },
     {
       "_template": "text",

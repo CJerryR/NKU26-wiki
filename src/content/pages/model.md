@@ -15,13 +15,7 @@ hidden: false
 ---
 <div class="reading-layout model-manuscript" lang="en">
 
-<span id="model-overview" class="legacy-section-anchor" aria-hidden="true"></span>
-
-:::manuscriptTitle
-
-Model overview
-
-:::
+## Model overview {#model-overview overview toc="Model overview"}
 
 How can nematode chemical signals in soil help guide agricultural management? Our modeling work explores this question from receptor recognition to color readout, target nematode density, and treatment decisions. Four complementary components support sensor design, experimental calibration, and assessment of the potential value of detection.
 

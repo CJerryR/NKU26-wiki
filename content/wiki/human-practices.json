@@ -17,6 +17,12 @@
       "body": "<div class=\"reading-layout hp-manuscript\" lang=\"en\">"
     },
     {
+      "_template": "heading",
+      "level": 2,
+      "text": "Human Practices overview",
+      "attributes": "#human-practices-overview overview toc=\"Human Practices overview\""
+    },
+    {
       "_template": "manuscriptTitle",
       "manuscript": "Bringing agricultural needs into our project"
     },
