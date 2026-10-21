@@ -49,11 +49,11 @@ const friends = site.friends.map((s) => ({ ...s, url: site.safeUrl(s.url) }));
     <a class="site-footer__social" data-resource="team" href={site.teamPage} aria-label="Official team page" title="Official team page" style="--social-color: #7e3f8f">
       <img class="site-footer__team-mark" src="https://static.igem.wiki/teams/6303/wiki/v8-0/v8-3439b58a1e73-nku-mark.svg" width="28" height="36" alt="" loading="lazy" />
     </a>
-    <a href="https://www.nankai.edu.cn/">Nankai University</a>
-    <a href="/licensing/">Licensing and AI use</a>
     {site.repository && <a class="site-footer__social" data-resource="gitlab" href={site.repository} aria-label="GitLab source code" title="GitLab source code" style="--social-color: #fc6d26">
       <span class="site-footer__social-mark" aria-hidden="true"></span>
     </a>}
+    <a href="https://www.nankai.edu.cn/">Nankai University</a>
+    <a href="/licensing/">Licensing and AI use</a>
     <span class="site-footer__socials" role="group" aria-label="Team social media">
       {socialIcons.map(({ key, label, color }) => {
         const configured = site.safeUrl(site.socialLinks[key]);
