@@ -60,7 +60,7 @@ const gateBody = src.slice(src.indexOf('    function gatedWheel('), src.indexOf(
 function sceneGate(overrides = {}) {
   const state = {
     pages: [{ id: 'china', steps: 3, sp: { gateDelta: 40 } }], cur: 0, st: 1,
-    busy: false, leaving: false, A: { mode: '' }, spent: 1, actedAt: 100,
+    busy: false, leaving: false, lone: false, A: { mode: '' }, spent: 1, actedAt: 100,
     activeDir: 1, eligId: 0, gacc: 0, releasedAt: 1000, holdUntil: 1700,
     busyTimer: 0, inputSpeed: 1, turns: 0, actions: [], clearTimeout() {},
     lean() {}, pullBy() {}, ...overrides,
@@ -81,6 +81,16 @@ test('a new gesture advances once after the camera stop', () => {
   state.send(60, 2300, { id: 2, start: 2300, dir: 1 });
   state.send(60, 2350, { id: 2, start: 2300, dir: 1 });
   assert.deepEqual(state.actions, [1]);
+});
+test('a lone slow wheel notch advances after the camera has settled', () => {
+  const state = sceneGate({ lone: true });
+  state.send(60, 2300, { id: 1, start: 100, dir: 1 });
+  assert.deepEqual(state.actions, [1]);
+});
+test('a lone slow wheel notch cannot bypass the camera hold', () => {
+  const state = sceneGate({ lone: true });
+  state.send(60, 1600, { id: 1, start: 100, dir: 1 });
+  assert.deepEqual(state.actions, []);
 });
 test('a fresh reverse gesture can reverse an internal camera shot', () => {
   const state = sceneGate({ busy: true });
