@@ -1,76 +1,76 @@
-# NKU-iGEM 地图区段底图来源
+# NKU-iGEM homepage basemap sources
 
-生成日期：2026-09-22。全部文件是地理底图，不含线虫观测、丰度、发病或分布数据。
+Generated on 2026-09-22. All files here are geographic basemaps. They contain no nematode observations, abundance, disease or distribution data.
 
-## 已集成的文件
+## Included files
 
-- `world-base.svg`：`viewBox="0 0 1000 450"`，米白背景、深紫陆地，无行政国界。
-- `china-base.svg`：`viewBox="0 0 600 500"`，深紫背景、浅色陆地，保留所用原始数据的全部岛屿多边形和 9 条海上指示线。
-- `world-china-entry.svg`（可选生成，不随首轮页面分发）：与 `world-base.svg` 使用完全相同的坐标系；透明背景、中国地理范围填色，可作世界图入口的叠加层。真正的焦点、点击和可访问名称应由父页面提供。
-- `manifest.json`：版本、原始 SHA-256、投影、范围、几何计数、生成文件 SHA-256。
-- `generate_maps.py`：只需 Python 3 标准库的可复现生成脚本。
-- `map-geometry.json`：可选生成，不随首轮页面分发。含预编译 SVG path 字符串及投影参数，供构建时读取并嵌入父页面 SVG。不是科学数据接口；不必部署它，也不必在页面运行时请求它。
+- `world-base.svg`: `viewBox="0 0 1000 450"`, off-white background, dark purple land, no national boundaries.
+- `china-base.svg`: `viewBox="0 0 600 500"`, dark purple background, light land; keeps every island polygon and all 9 maritime indicator lines from the source data.
+- `world-china-entry.svg` (optional, not shipped with the first release of the page): uses exactly the same coordinate system as `world-base.svg`; transparent background with China's geographic extent filled, for use as an overlay on the world map entry point. Focus, click handling and accessible names must be provided by the parent page.
+- `manifest.json`: version, source SHA-256 hashes, projection, extent, geometry counts and SHA-256 hashes of the generated files.
+- `generate_maps.py`: reproducible generator that needs only the Python 3 standard library.
+- `map-geometry.json` (optional, not shipped): precompiled SVG path strings and projection parameters, read at build time and embedded into the parent page's SVG. It is not a scientific data interface and does not need to be deployed or requested at runtime.
 
-预览图与上游原始大文件均不随网页分发。生成脚本默认将源文件缓存于系统临时目录的 `nku-home-map-originals/`，可用 `--cache-dir` 指定；只有静态 SVG 由页面加载。
+Previews and the large upstream source files are not shipped with the site. By default the generator caches source files in `nku-home-map-originals/` under the system temporary directory; use `--cache-dir` to change this. Only the static SVG files are loaded by the page.
 
-## 上游来源与许可
+## Upstream sources and license
 
-来源是 Natural Earth 维护者仓库的固定 `v5.1.2` release。该 release 各主题有各自的版本号，因此 release 号与单主题版本号不同是正常情况。
+The source is the pinned `v5.1.2` release of the Natural Earth maintainer repository. Each theme in that release has its own version number, so release and theme versions differ by design.
 
-| 文件 | 主题版本 | 固定原始下载地址 |
+| Layer | Theme version | Pinned download URL |
 | --- | --- | --- |
-| 世界陆地，1:50,000,000 | 4.0.0 | https://raw.githubusercontent.com/nvkelso/natural-earth-vector/v5.1.2/geojson/ne_50m_land.geojson |
-| 中国视角行政区范围，1:10,000,000 | 5.1.1 | https://raw.githubusercontent.com/nvkelso/natural-earth-vector/v5.1.2/geojson/ne_10m_admin_0_countries_chn.geojson |
-| 中国海上指示线，1:10,000,000 | 5.1.0 | https://raw.githubusercontent.com/nvkelso/natural-earth-vector/v5.1.2/geojson/ne_10m_admin_0_boundary_lines_maritime_indicator_chn.geojson |
+| World land, 1:50,000,000 | 4.0.0 | https://raw.githubusercontent.com/nvkelso/natural-earth-vector/v5.1.2/geojson/ne_50m_land.geojson |
+| Admin 0 countries, China point of view, 1:10,000,000 | 5.1.1 | https://raw.githubusercontent.com/nvkelso/natural-earth-vector/v5.1.2/geojson/ne_10m_admin_0_countries_chn.geojson |
+| Maritime indicator lines, China supplement, 1:10,000,000 | 5.1.0 | https://raw.githubusercontent.com/nvkelso/natural-earth-vector/v5.1.2/geojson/ne_10m_admin_0_boundary_lines_maritime_indicator_chn.geojson |
 
-官方网站的 [Terms of Use](https://www.naturalearthdata.com/about/terms-of-use/) 明确将网站发布的栅格和矢量地图数据置于公共领域，允许修改和电子传播，无须另行许可。建议页面注明：**底图：Natural Earth（Public domain）**。
+The Natural Earth [Terms of Use](https://www.naturalearthdata.com/about/terms-of-use/) place all raster and vector map data published on the site in the public domain; modification and electronic distribution are allowed without further permission. Suggested credit: **Basemap: Natural Earth (public domain)**.
 
-相应官方介绍页：
+Official reference pages:
 
-- [50m Land](https://www.naturalearthdata.com/downloads/50m-physical-vectors/50m-land/)：陆地面，含主要岛屿。
-- [Admin 0 – Countries point-of-views](https://www.naturalearthdata.com/blog/admin-0-countries-point-of-views/)：包含 China POV 下载；按相应国家的 de jure 视角组织几何。
-- [10m Cultural Vectors](https://www.naturalearthdata.com/downloads/10m-cultural-vectors/)：包含 maritime indicators China supplement。
-- [Disputed boundaries policy](https://www.naturalearthdata.com/about/disputed-boundaries-policy/)：解释默认边界与 POV 版本的区别。
+- [50m Land](https://www.naturalearthdata.com/downloads/50m-physical-vectors/50m-land/): land polygons including major islands.
+- [Admin 0 – Countries point-of-views](https://www.naturalearthdata.com/blog/admin-0-countries-point-of-views/): includes the China POV download; geometry follows each country's de jure view.
+- [10m Cultural Vectors](https://www.naturalearthdata.com/downloads/10m-cultural-vectors/): includes the maritime indicators China supplement.
+- [Disputed boundaries policy](https://www.naturalearthdata.com/about/disputed-boundaries-policy/): explains the difference between default and POV boundaries.
 
-## 几何选择与边界
+## Geometry selection and boundaries
 
-中国底图筛选 China POV 文件内的 `ADM0_A3 ∈ {CHN, HKG, MAC}`，全部统一填色；台湾已经包含在这一版 `CHN` 几何内，不能再叠加默认版 `TWN`。最终保留 99 个陆地多边形、99 个 ring、15,185 个陆地顶点；另有 9 条海上指示线、135 个线顶点。可见小点是源数据中的岛屿几何，不是装饰或观测点。
+The China basemap selects `ADM0_A3 ∈ {CHN, HKG, MAC}` from the China POV file and fills them uniformly. Taiwan is already part of the `CHN` geometry in this edition, so the default `TWN` geometry must not be added on top. The result has 99 land polygons, 99 rings and 15,185 land vertices, plus 9 maritime indicator lines with 135 vertices. The small visible dots are island geometry from the source data, not decoration or observation points.
 
-世界底图保留 1,421 个多边形、1,422 个 ring、60,669 个顶点。未做轮廓平滑或删岛；SVG 仅把投影后的坐标量化到 0.001 viewBox 单位，使用相对 path 命令减少文本体积。
+The world basemap keeps 1,421 polygons, 1,422 rings and 60,669 vertices. No outline smoothing or island removal was applied; the SVG only quantizes projected coordinates to 0.001 viewBox units and uses relative path commands to reduce file size.
 
-中国陆地源范围：经度 `[73.602256, 134.772579]`、纬度 `[9.679511, 53.569444]`。海上指示线延伸至 `3.401132°N`。中国画布包含整个源范围，没有把南海部分裁掉或移入与主图不同坐标系的插图。
+China land extent in the source: longitude `[73.602256, 134.772579]`, latitude `[9.679511, 53.569444]`. The maritime indicator lines extend to `3.401132°N`. The China canvas covers the full source extent; the South China Sea is neither cropped nor moved into an inset with a different coordinate system.
 
-“保留完整源范围”不等于重新核定每一座岛礁或声明此图是官方标准地图。Natural Earth 是概化地理底图，不替代统筹后续选定的标准地图；官网也说明其精度和内容有局限。若后续更换底图，须同时替换投影参数与入口几何。
+Keeping the full source extent does not mean every island and reef has been re-surveyed, nor that this is an official standard map. Natural Earth is a generalized basemap and does not replace the standard map chosen later (see `DATA_SOURCES.md`); its website also documents limits in accuracy and content. If the basemap is replaced, the projection parameters and entry geometry must be replaced with it.
 
-## 投影与前端数据点映射
+## Projection and data point mapping
 
-两张底图都是等距圆柱 / equirectangular，标准纬线 0°。输入顺序为 `[longitude, latitude]`（地理经纬度），不是屏幕坐标。它不是等面积投影，不能按屏幕面积推断丰度。
+Both basemaps use an equirectangular projection with the standard parallel at 0°. Input order is `[longitude, latitude]` (geographic coordinates), not screen coordinates. The projection is not equal-area, so screen area must not be used to infer abundance.
 
-世界图（1000 × 450）：
+World map (1000 × 450):
 
 ```js
 const x = (longitude + 180) * 2.5 + 50;
 const y = (90 - latitude) * 2.5;
 ```
 
-世界图两侧各留 50 个 viewBox 单位。中国底图（600 × 500）：
+The world map has a 50-unit margin on each side. China basemap (600 × 500):
 
 ```js
 const x = (longitude - 72) * 8.5 + 19.5;
 const y = (56 - latitude) * 8.5 + 12;
 ```
 
-HTML `<svg>` 应保持相同 `viewBox`，叠加的数据点使用相同公式，随 SVG 一起缩放。不要在 CSS 中对底图额外单独裁切、拉伸或使用 `object-fit: cover`。GCJ-02 数据不能未经转换就作为 WGS84 经度纬度与此底图叠加。
+An HTML `<svg>` must keep the same `viewBox`, and overlaid data points must use the same formulas so they scale with the SVG. Do not crop or stretch the basemap separately in CSS or use `object-fit: cover`. GCJ-02 coordinates must be converted before being overlaid as WGS84 longitude and latitude.
 
-默认颜色与共享首页样式对齐：世界背景 #f5eedc、无数据陆地 #d7c4b8；中国背景 #170e23、无数据陆地 #c6afd8。颜色只表示底图形状，不表示科学指标。默认颜色可直接使用；父页面若**内联** SVG，可通过 `--map-ocean`、`--map-land`、`--map-outline` 或 `--map-china-entry` 调整。`<img src>` 加载的 SVG 不继承父页面的 CSS 自定义属性，因此已提供可直接显示的固定颜色 fallback。
+Default colors match the shared homepage styles: world background #f5eedc, land without data #d7c4b8; China background #170e23, land without data #c6afd8. Colors only show the basemap shape and do not encode any scientific value. When the SVG is **inlined**, the parent page can override `--map-ocean`, `--map-land`, `--map-outline` or `--map-china-entry`. An SVG loaded through `<img src>` does not inherit CSS custom properties from the parent page, so fixed fallback colors are included.
 
-## 复现与验证
+## Reproduction and verification
 
 ```sh
 python3 img/home-maps/generate_maps.py --download
-# 可选输出中国入口层和构建用 SVG paths：添加 --extras
+# Add --extras to also output the China entry layer and the build-time SVG paths
 ```
 
-此命令重新下载固定版本数据，逐一核对脚本内置 SHA-256，再生成相同文件；无 `--download` 则复用并核对源文件缓存。运行网页不需要网络、Python、地图库或 CDN。
+This command downloads the pinned data again, checks every file against the SHA-256 hashes built into the script, and regenerates identical files. Without `--download` it reuses and checks the cached source files. The running site needs no network access, Python, map library or CDN for the basemaps.
 
-已核对原始数据的 feature、polygon、ring 和顶点计数，渲染检查世界轮廓、中国大陆、海南、台湾、岛屿和南海指示线均可见；所有投影后坐标落在对应 viewBox 内。中国入口叠加层与世界图共用投影。没有生成任何科学标记或示例热区。
+Feature, polygon, ring and vertex counts were checked against the source data. A render check confirmed that world outlines, mainland China, Hainan, Taiwan, the islands and the South China Sea indicator lines are all visible, and that every projected coordinate falls inside its viewBox. The China entry overlay shares the world map projection. No scientific markers or sample hotspots were generated.

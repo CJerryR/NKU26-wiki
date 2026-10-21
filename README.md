@@ -1,82 +1,77 @@
-## V10.2.39
-
-DBTL stages followcontentheight;latestuserclassroomphoto acrossallreferences;sharedwarmfigureday/night surfaces andcaptioncolors. Scientifictext andMemberscontent retained.
-
-## V10.2.38
-
-Subpage copy andtable normalization;Results Future work andlatestinteractiveattachment;term-only unbolding,chapterspacing andMembers title. V37 HP/Modellinks,EngineeringDBTL andProjectcomparisonpreserved.
-
-## V10.2.37
-
-HP latest manuscripts, verified official CDN media and user-confirmed289/9;official Model code links. Existing Project/Model layout, DBTL andcomparison preserved.
-
-## V10.2.36
-
-Project/Model share embedded figure wrapping;Model review fixes and compact Eco embed. Engineering DBTL and Project comparison retained.
-
 # NKU-China 2026 Wiki — NemaKlear
 
-南开大学 NKU-China 团队参加 iGEM 2026 的项目网站，队伍编号 **6303**。网站围绕农业线虫与双通道检测方案，展示项目设计、实验结果、模型、人类实践和团队工作。
+Source code for the wiki of **NKU-China** (Nankai University, Tianjin, China), iGEM 2026 team **#6303**. NemaKlear is a dual-channel detection system for plant-parasitic nematodes in agricultural soil. The wiki presents the project design, wet-lab results, models, human practices and the team behind them.
 
-当前版本为 **V10.2.47**，首页中国页与结尾总览垂直居中，页脚两个图标前置并排，5 组并列照片统一 4:3；保留 V10.2.46 全部内容修正。
+- **Live wiki:** <https://2026.igem.wiki/nku-china/>
+- **Source (official):** <https://gitlab.igem.org/2026/nku-china>
+- **Development mirror:** <https://github.com/CJerryR/NKU26-wiki>
 
-- [正式网站](https://2026.igem.wiki/nku-china/)
-- [GitLab 源码](https://gitlab.igem.org/2026/nku-china)
-- [GitHub 历史版本](https://github.com/CJerryR/NKU26-wiki)
+Current release: **V10.2.47**. The official GitLab `main` branch is the authoritative source.
 
-## 页面与功能
+## Site map
 
-| 栏目 | 内容 |
+| Section | Pages |
 | --- | --- |
-| Home | 土壤与线虫故事、世界与中国地图、检测流程、HP 数据地图、四组 DBTL 交互和六张成果卡片 |
-| Project | Description、Background、Engineering、Contribution |
-| Wet Lab | Parts and Collections、Experiments、Results、Safety |
-| Model | Overview、Molecular Docking、Molecular Dynamics、ODE & Dual-Channel Modeling、Economic Benefit |
-| Human Practices | Overview、Integrated Human Practices、Education、Investigation、Industry Engagement and Support |
-| Team | Members、Attributions |
+| Home | Soil and nematode story, world and China maps, detection workflow, Human Practices data map, four interactive DBTL cycles, six result cards |
+| Project | Description, Background, Engineering, Contribution |
+| Wet Lab | Parts and Collections, Experiments, Results, Safety |
+| Model | Overview, Molecular Docking, Molecular Dynamics, ODE & Dual-Channel Modeling, Economic Benefit |
+| Human Practices | Overview, Integrated Human Practices, Education, Investigation, Industry Engagement and Support |
+| Team | Members, Attributions |
 
-首页采用分段交互叙事，内页使用剪纸插画开场。网站提供全站搜索、浮动目录、昼夜模式、桌面与手机布局；横屏和矮屏单独适配。
+The homepage is a scroll-driven interactive narrative; inner pages open with paper-cut illustrations. The site provides full-text search, a floating table of contents, light and dark themes, and layouts for desktop, mobile, landscape and short screens.
 
-模型页面接入作者完整程序，支持原始读数输入、ODE 曲线、双通道估计、经济策略比较及报告下载。Python 计算在浏览器中运行，无需部署 Python 后端。
+The Model pages embed the model authors' complete program. Visitors can enter raw readings, view ODE curves, run dual-channel estimation, compare economic strategies and download a report. The Python code runs in the browser through Pyodide, so no Python backend is required.
 
-Members 与 Attributions 各收录 27 位成员；Members 展示新版个人照片与完整团队合照，贡献页收录 138 条个人贡献，并补齐合作方支持表。页脚集中展示团队导航、南开校徽、支持单位、许可与 AI 使用说明。未启用的可选页面不生成导航入口。
+Members and Attributions cover all 27 team members, including 138 individual contribution entries and a table of partner support. The footer holds team navigation, the Nankai University emblem, supporting organizations, licensing and the AI-use statement. Optional pages that are not in use generate no navigation entries.
 
-## 本地运行
+## Tech stack
 
-使用 **Node.js 22** 和 **Python 3**。网站基于 Astro 5 与 Tina，依赖版本由 `package-lock.json` 锁定。
+- [Astro](https://astro.build/) 5 static site generator
+- [TinaCMS](https://tina.io/) for structured content editing
+- Three.js and plain JavaScript for homepage interaction
+- Pyodide for the in-browser model
+- GitLab CI/CD and GitLab Pages for build and deployment
+
+## Getting started
+
+Requirements: **Node.js 22** (see `.nvmrc`) and **Python 3**. Dependency versions are locked in `package-lock.json`.
 
 ```bash
 npm ci --no-audit --no-fund
 npm run dev
 ```
 
-- 页面预览：<http://127.0.0.1:3000/>
-- Tina 编辑器：<http://127.0.0.1:3000/admin/index.html>
-- Tina 服务还会使用 4101、9101 端口。
+- Site preview: <http://127.0.0.1:3000/>
+- Tina editor: <http://127.0.0.1:3000/admin/index.html>
+- The Tina server also uses ports 4101 and 9101.
 
-## 内容与源码
+To use TinaCloud, copy `.env.example` to `.env` and fill in the read-only token. Never commit `.env`.
 
-| 修改内容 | 位置 |
+## Repository layout
+
+| What to change | Where |
 | --- | --- |
-| 正文、图注、表格、成员与贡献 | `content/wiki/*.json` |
-| Tina 字段与组件模板 | `tina/config.ts`、`tina/toolkit.ts` |
-| 首页分区 | `src/home/sections/` |
-| 首页交互与样式 | `static/js/`、`static/css/` |
-| 导航、页脚链接与阅读顺序 | `src/data/nav.ts` |
-| 页脚与支持单位 | `src/components/site/SiteFooter.astro`、`src/data/site.json` |
-| 内页布局与公共组件 | `src/layouts/`、`src/components/` |
-| 开场场景与图集 | `src/data/scenes/`、`src/data/scenes.ts` |
-| 正文、主题与手机样式 | `src/styles/` |
-| 作者原始模型程序 | `vendor/nemaklear-original/` |
-| 浏览器模型适配 | `src/nemaklear/`、`tools/prepare-nemaklear.mjs` |
-| 素材地址与供稿来源 | `content/cdn-assets.json`、`content/wiki-provenance.json` |
-| 版本历史 | `README.md`（发布记录；审阅界面已按用户要求移除） |
+| Page text, captions, tables, members and contributions | `content/wiki/*.json` |
+| Tina fields and component templates | `tina/config.ts`, `tina/toolkit.ts` |
+| Homepage sections | `src/home/sections/` |
+| Homepage scripts and styles | `static/js/`, `static/css/` |
+| Navigation, footer links and reading order | `src/data/nav.ts` |
+| Footer and supporting organizations | `src/components/site/SiteFooter.astro`, `src/data/site.json` |
+| Page layouts and shared components | `src/layouts/`, `src/components/` |
+| Opening scenes and sprite atlases | `src/data/scenes/`, `src/data/scenes.ts` |
+| Typography, themes and mobile styles | `src/styles/` |
+| Model authors' original program | `vendor/nemaklear-original/` |
+| In-browser model adapter | `src/nemaklear/`, `tools/prepare-nemaklear.mjs` |
+| Asset URLs and content provenance | `content/cdn-assets.json`, `content/wiki-provenance.json` |
+| Homepage map data sources | `DATA_SOURCES.md` |
+| Build, test and audit scripts | `tools/` |
 
-`content/wiki/*.json` 是正式正文源，`src/content/pages/*.md` 由导出工具生成。不要只改生成的 Markdown；Tina 保存后可运行 `node tools/export-tina.mjs` 同步，构建时也会自动导出。
+`content/wiki/*.json` is the single source of page content. The Markdown files in `src/content/pages/` are generated from it, so do not edit them by hand. After saving in Tina, run `node tools/export-tina.mjs` to sync; the build also exports automatically.
 
-图表、公式、原始图片和作者模型按交稿维护，科学内容与许可由团队审核。
+Files in `vendor/nemaklear-original/` are checked against `MANIFEST-SHA256.json` at build time and must stay byte-identical to the authors' delivery.
 
-## 检查与部署
+## Testing and building
 
 ```bash
 npm run test:homepage
@@ -87,990 +82,56 @@ npm run test:theme
 npm run verify
 ```
 
-`npm run verify` 导出正文、构建静态页面并执行技术审计，产物位于 `public/`。`npm run preview` 可预览构建结果，地址以终端输出为准。团队内容验收检查单独使用 `npm run audit:publication`；技术检查通过不代替内容审定。
+`npm run verify` exports content, builds the static site into `public/` and runs the technical audit. `npm run preview` serves the built site; the address is printed in the terminal.
 
-GitLab Pages 从默认分支 `main` 读取源码，执行部署回归、构建和技术审计后发布 `public/`。构建会校验资源依赖、裁剪未引用素材并处理站内相对地址。
+## Deployment
 
-正式源码和版本以官方 GitLab `main` 为准。
+GitLab Pages builds from the default branch `main`. The pipeline in `.gitlab-ci.yml` runs the deployment tests, builds the site, runs the content-structure, caption and preview audits, and publishes `public/`. The build verifies asset dependencies, removes unreferenced assets and rewrites in-site links to relative paths.
 
-## 素材、许可与发布记录
+Before every build, `tools/check-release-history.py` checks that the version in `static/release.json` has an entry in the changelog below, with a numbered list of changes and a timestamp, and that the previous release records its publication time.
 
-图片、字体和开场图集使用官方 iGEM 素材地址，视频使用 iGEM Video Universe。作者原件、素材哈希、图集和来源记录见 `content/`。
+## Assets and licensing
 
-页脚保留 CC BY 4.0、源码链接、素材署名和 AI 使用说明；校徽、机构与企业标志按各自权利使用。AI 插画用于页面装饰，不作为实验图像或模型结果。
+Images, fonts and scene atlases are served from the official iGEM asset host (`static.igem.wiki`); videos are hosted on iGEM Video Universe. Original files, asset hashes, atlases and provenance records are kept in `content/`.
 
-Licensing 独立页当前没有正文，现有许可与 AI 使用说明位于页脚；Awards、Acknowledgements 等可选页面未启用。后续新增材料以实际交稿和团队确认结果更新，不使用空链接冒充可下载文件。
+Unless stated otherwise, wiki content is released under [CC BY 4.0](LICENSE), as required by iGEM. University emblems and the logos of institutions and companies belong to their owners and are used for identification only. Third-party licenses are listed in `docs/licenses/` and next to the bundled files they cover. AI-generated illustrations are decorative only and are never presented as experimental images or model results.
 
-## 版本改动
+## Changelog
 
-### V10.2.47 改动：
+Times are Beijing time (UTC+8). Earlier releases are recorded in the Git history.
 
-改动时间：2026-10-21 22:23:10（北京时间）
+### V10.2.47
 
-1. Closer to home 的标题、切换与数据列在桌面可用区域垂直居中，3D 与 2D 备用共用测量，手机布局保持自然滚动。
-2. What we built 与 Explore 作为整组垂直居中，大屏缩放改用中心原点。
-3. 页脚南开与 GitLab 图标并排放在最左侧，文字链接随后；保留科研正文、素材与审核状态。
-4. Investigation Figures 1/2/9、Integrated HP Figure 1、Education Figure 3 的照片统一为 4:3 裁剪框，保留原图链接，海报与图表不裁剪。
-5. 保留已发布的新版目录、sfGFP、地图与图组；不纳入已撤回的 china-map-align 水平位移方案。补记 V10.2.46 实际发布时间。
+Prepared: 2026-10-21 22:36:40 (UTC+8)
 
-### V10.2.46 改动：
+1. Center the China introduction, species switch and readout vertically on desktop in both 3D and fallback views; retain natural mobile flow.
+2. Center What we built and Explore together, including large-screen scaling. Place the team and GitLab footer icons together before text links.
+3. Use consistent 4:3 frames for five photo groups in Investigation, Integrated Human Practices and Education, retaining original image links.
+4. Body search results open the matching chapter and display its relevant excerpt.
+5. Rewrite the repository README and supporting source documents in English, retaining the current and previous release records.
+6. Exclude the horizontal map-shift experiment withdrawn by the user; preserve scientific text and review status.
 
-发布时间：2026-10-21 22:02:43（北京时间）
+### V10.2.46
 
-1. 首页西藏土样改为 18 个近似来源点，31 点合计 289 份、西藏合计 232 份；柱高改为平方根映射，补齐图号、三张采样照片及中科大交流原稿补句。
-2. iHP Figure 4 换用最新官方 CDN 地图截图，与首页来源点保持一致。
-3. 跨页链接统一 Integrated human practices 全称；首页 Survey 和 Human practices 两个入口按用户要求保留。
-4. 首页使用 Redesign on the computer 与 Engineer the pathway；优化慢速滚轮、3D 像素预算和 4K 固定页面布局。
-5. 整理 Results 参考文献、链接及全站文案格式，修复 HTML 段内站内链接的实际渲染；保留科研审核状态与交接中的未解决事项。
-6. 精简 Results 与 Attributions 大纲，保留正文和统一 References；补回 sfGFP 缩写，并恢复 Results 全宽图组与合适的图文环绕。
-7. 清理团队内部文档和未使用文件，证据保留本地；补记 V10.2.45 官方 Pages 实际发布时间。
+Published: 2026-10-21 22:02:43 (UTC+8)
 
-### V10.2.45 改动：
+1. Homepage Tibet soil map: 18 approximate source points; 289 samples across 31 sites, 232 of them from Tibet. Bar heights use square-root scaling. Added figure numbers, three sampling photos and the full text of the USTC exchange.
+2. Integrated Human Practices Figure 4 uses the latest map screenshot, consistent with the homepage source points.
+3. Cross-page links use the full name "Integrated Human Practices"; the homepage Survey and Human Practices entries are kept as they are.
+4. Homepage copy now reads "Redesign on the computer" and "Engineer the pathway". Improved slow mouse-wheel input, the 3D pixel budget and the fixed layout on 4K screens.
+5. Results references merged into a single numbered list, with fixed links and site-wide copy formatting. In-paragraph links inside HTML blocks now render correctly.
+6. Shorter tables of contents for Results and Attributions with unified References. Restored the sfGFP abbreviation, full-width Results figure pairs and correct text wrapping around figures.
+7. Removed internal team documents and unused files from the repository.
 
-发布时间：2026-10-21 20:18:15（北京时间）
+### V10.2.45
 
-1. 首页 DBTL 总览采用团队新设计的四个 GOAL 和 14 个模块，保留展开与缩放交互。
-2. Overview 保留在大纲且不编号，补齐子条目；Results 的 34 个阶段标题与大纲一致，保留 Engineering 组件标签。
-3. 页脚加入计算机学院官方 CDN 标志，更新 Credits 文案；Members 与 Attributions 仅替换马培松照片。
-4. 按最新授权移除审阅界面、孤立页面和未使用仓库文件，保留本地备份、科研正文与真实内部审核状态。
-5. 补记 V10.2.44 官方 Pages 实际发布时间；西藏地图替代方案待完成交接，未混入旧柱状图稿。
+Published: 2026-10-21 20:18:15 (UTC+8)
 
-### V10.2.44 改动：
+1. Homepage DBTL overview uses the team's new design with four goals and 14 modules, keeping expand and zoom interaction.
+2. Overview stays in the table of contents without a number; the 34 Results stage headings match the table of contents.
+3. Footer adds the official logo of the Nankai University College of Computer Science; updated footer credits; replaced one member photo in Members and Attributions.
+4. Removed the review interface, orphaned pages and unused repository files.
 
-发布时间：2026-10-21 19:16:00（北京时间）
+## Team
 
-1. Description、Contribution、Docking 与 Results 调整部分图片的左右环绕节奏；窄正文区域改用正文在前、图片在后的顺序，保留复杂科研图通栏。
-2. 恢复首页已确认的四行标题 What / secrets / lie / beneath the soil?，保留当前草叶前景遮挡及其他首页修改。
-3. 保留正文、图注、公式、素材来源、锚点及审核状态；补记 V10.2.43 实际发布时间。
-
-### V10.2.43 改动：
-
-发布时间：2026-10-21 18:01:23（北京时间）
-
-1. Results 的 Figure 33/34 合并为同一右侧并排图组，正文自然环绕；Figure 23/24 同类区域一并调整。
-2. 修正 Figure 8、30 的后续正文环绕及 Figure 36 的显示比例，减少图片旁的大块空白；手机保持正文、图片、后续标题的阅读顺序。
-3. 保留全部正文、35 张图片的来源与图注、标题锚点及审核状态；补记 V10.2.42 实际发布时间。
-
-### V10.2.42 改动：
-
-发布时间：2026-10-21 16:20:14（北京时间）
-
-1. 补齐近期网站改动清单，按官方 Pages 成功记录标注已发布版本的北京时间。
-2. 修复旧版标题格式漏读，增加发布清单完整性检查。
-3. 合并已交接的首页、Wet Lab、Model 和 Results 修复，包括六段 MD 视频、图片排版、文献格式、PDF 交互及页脚吉祥物。
-4. iHP、Investigation、Education 按获批的最新飞书稿完整替换，统一 289 份样本、九个省级地区；INV 的六地区表明确为 255 份部分来源示例。
-5. 全站大纲一级标题显示 01、02 等序号，下级标题递进缩进且不显示序号；正文编号和既有例外保持原样。
-
-### V10.2.41 改动：
-
-发布时间：2026-10-21 15:16:15（北京时间）
-
-1. Members 的 PI、Advisor、Student leaders、Student team members 四个小标题恢复无编号，保留人物、照片、顺序及锚点。
-2. 修正隐藏 HP Overview 一处重复全称，并增加 Members 编号例外检查。
-
-### V10.2.40 改动：
-
-发布时间：2026-10-21 13:22:57（北京时间）
-
-1. Project 只保留标准 URL 版本，撤下四个临时对比页面。
-
-### V10.2.39 改动：
-
-发布时间：2026-10-21 13:03:54（北京时间）
-
-1. Engineering DBTL 阶段按内容自然高度展示。
-2. 四处课堂照片替换为最新附件，统一日夜图框和图注颜色。
-
-### V10.2.38 改动：
-
-发布时间：2026-10-21 07:56:06（北京时间）
-
-1. 统一子页正文、图注、表格和章节间距。
-2. Results 更新 Future work 五单元交互内容，保留参考文献，修正 DBTL 标题、图片环绕及首次术语强调。
-3. Members 恢复页面标题 Our team: NKU-China 2026。
-
-### V10.2.37 改动：
-
-发布时间：2026-10-21 06:57:01（北京时间）
-
-1. iHP、Education 更新最新来源，Investigation 保留当轮确认的正文和图片；样本汇总使用已确认的 289 份、九个省级地区。
-2. Model 五页加入七个官方代码仓库入口。
-
-### V10.2.36 改动：
-
-发布时间：2026-10-21 05:40:14（北京时间）
-
-1. Project 和 Model 单图按原稿嵌入正文，统一图文环绕、图注与经济分析面板。
-
-### V10.2.35 改动：
-
-发布时间：2026-10-21 05:13:00（北京时间）
-
-1. 在现有 Tina cycle 组件追加半环展示和中心图标字段，旧环形轮盘仍为默认模式。
-2. Engineering 14 轮、56 阶段均使用半环，桌面滚动同步高亮并支持点击及键盘跳转；手机按顺序显示完整内容。
-3. 11 个图标使用已核验官方 CDN，所有正文、标题、6 张科学原图和 Project 对照页保留。2.5 使用 DBTL 文字占位，3.4 图 5 位于 Design。
-
-### V10.2.34 改动：
-
-发布时间：2026-10-21 04:45:01（北京时间）
-
-1. Model 五页按最新原稿平铺重排，16 个公式居中静态显示，保留可编辑 LaTeX。
-2. 科学配图沿用 Project 的 Tina 图框，四张最新文档科学图使用已核验官方 CDN。
-3. 经济分析应用使用真实 Tina HTML 网页组件，放在引言后；表格增加独立底色、边框、表头和隔行底色，手机横向滚动限制在表内。
-4. 经济分析规则表原稿仍空缺，保留待补状态；现版和备份 Project 均保留。
-
-### V10.2.33 改动：
-
-发布时间：2026-10-21 04:31:23（北京时间）
-
-1. 新增 Project 两版对比入口及三个独立备份页面；现有 Description、Engineering、Contribution 正文与全局版式保留。
-2. 备份内容、样式和生成目录独立，页面提供回到现版和对照入口的链接；待用户选择后再保留一版。
-3. 六张素材复用已核验官方 CDN，保留 ΔB 配图缺失和课堂照片授权待确认状态。
-
-### V10.2.32 改动：
-
-发布时间：2026-10-21 03:52:16（北京时间）
-
-1. 按最新 Project.docx 更新 Description、Engineering、Contribution，修正 Background 引文；Engineering 14 轮、56 段阶段正文全部展开，配图按原稿位置与顺序呈现。
-2. 新配图使用已核验的官方 CDN，优化图可打开完整原图；保留正文格式、Tina 编辑能力和现有科研审核状态。
-3. 首页合并 checkpoint04：阶段手势门控、地图分步引导、响应式标题和手机中国地图顺序；Start exploring 独立放在开屏舞台右下，保留前景遮字与最新二维码。
-
-### V10.2.31 改动：
-
-发布时间：2026-10-21 02:36:09（北京时间）
-
-1. 仅删除开屏标题内的 Explore the wiki 快捷按钮，恢复标题位置与草、幼苗前景遮字效果。
-2. 页面末尾 Explore the wiki 区域、后续探索提示、成果插画尺寸、DBTL 返回顶部及高清公众号二维码保持现行版本。
-
-### V10.2.30 改动：
-
-发布时间：2026-10-21 02:01:11（北京时间）
-
-1. Members 更新最新版 27 位成员内容、分组与顺序，优化正反面卡片对齐；保留已发布的章节层级与无编号小标题。
-2. Members 和 Attributions 更新韩欣妤照片；贡献页其余内容与顺序保持现行版本。
-3. 首页六张成果插画统一尺寸与左对齐，恢复 DBTL 页返回顶部入口；页脚更新社交入口、支持单位链接和官方 CDN 公众号二维码。
-4. 清理正文中的素材插入指令、统一图注，补上 Results 第一次 Build 的凝胶可视化 Note；保留最新版菌株表。
-5. 上线前逐项比对任务清单与官方 main，排除已发布或被新版原稿替代的历史候选；新增整个待推历史的媒体检查，使用本次最新高清公众号二维码。
-
-### V10.2.29 改动：
-
-发布时间：2026-10-21 01:28:50（北京时间）
-
-1. Attributions 总标题 Team member contributions 不编号、不进入目录，一级章节从 01 开始。
-2. 下级标题去掉 x.x 编号，Wet Lab、Dry Lab、HP 归于 Student team members 下一级。
-3. Members 的四个下级标题及目录去掉 x.x 编号，原有层级、对齐、内容和照片保持不变。
-4. 内容结构审计识别既有 toc-unnumbered 设置，保留其他页面的编号检查。
-
-### V10.2.28 改动：
-
-发布时间：2026-10-21 00:59:13（北京时间）
-
-1. Attributions 的 27 张个人照片统一使用已核验的官方 CDN 新版照片。
-2. 按飞书最新版更新 27 位成员、138 条具体贡献及 AI 使用、外部贡献，并同步人物分组与顺序。
-3. 移除卡片中文名与姓名框，英文名居中放大至 22px。
-4. 默认显示更多能完整放下的贡献条目，收起高度不超过照片与姓名区域。
-
-### V10.2.27 改动：
-
-发布时间：2026-10-21 00:05:49（北京时间）
-
-1. Engineering 顶部通路总览换为用户提供的完整边框原图。
-
-### V10.2.26 改动：
-
-发布时间：2026-10-20 23:49:11（北京时间）
-
-1. 更新 Results Cycle 4 正文、交互插图和用户提供的原图，调整 References 位置。
-
-### V10.2.25 改动：
-
-发布时间：2026-10-20 22:54:54（北京时间）
-
-1. Results DBTL-3 的九个阶段标记改为普通四级标题，保留原文、图注与图片。
-
-### V10.2.24 改动：
-
-发布时间：2026-10-20 22:41:17（北京时间）
-
-1. 首页受体章节的金色线条示意替换为 Hsueh et al. (2013) Figure 1A，保留两组显微照片对照与英文来源、DOI。
-2. 文献图以像素一致的无损 WebP 托管于官方 CDN；桌面与手机保留原受体和滚动转场。
-
-### V10.2.23 改动：
-
-发布时间：2026-10-20 22:25:32（北京时间）
-
-1. 修正 Results DBTL-3 点样装置与成品试纸的图号引用。
-
-### V10.2.22 改动：
-
-改动时间：2026-10-20（北京时间）
-
-1. Results 的 DBTL-3 周期 3.1、3.2、3.3 增加目录入口，原标题、锚点与科学内容不变。
-2. 首页首屏增加 “Explore the wiki” 快捷链接，直达原有八项页面入口；故事顺序和 What We Built 区域保持不变。
-
-### V10.2.21 改动：
-
-发布时间：2026-10-20 20:33:03（北京时间）
-
-改动时间：2026-10-20（北京时间）
-
-1. Experiments 菌株表补齐 Y03、Y05–Y09 的启动子和构建名称。
-2. Parts Composite 表补齐 BBa_260J9X0X 的原稿描述。
-3. 按飞书清单核对四张表共 52 行，恢复基因名、物种名和构建描述的原稿斜体。
-
-### V10.2.19 改动：
-
-发布时间：2026-10-20（北京时间）
-
-1. Results 的 DBTL-3 使用阶段标记与图文对照组件，保持原稿顺序、文字、图注、图片地址、标题锚点和目录不变。
-2. 图文组件支持三种排版、图片尺寸选项与桌面高度上限；手机按原阅读顺序排列。
-3. 修正深层章节目录编号，并统一 Model 子页面名称。
-
-### V10.2.18 改动：
-
-发布时间：2026-10-20 12:30:36（北京时间）
-
-1. 正文图片改为页内预览，支持缩放、适应屏幕和多种关闭方式，保留阅读位置。
-2. 图片预览采用背景虚化和液态玻璃按钮，适配浅色、深色、手机及横屏。
-3. Engineering 十二轮 DBTL 改为可切换阶段的组件，并保留各阶段图片和图注。
-4. ODE 十三处公式及两张正文表格改为可复制公式、筛选、排序和下载组件。
-5. 完善 Model 引用上标及 Tina 原稿排版，保留原始公式、数据和科研审核状态。
-
-### V10.2.17 改动：
-
-发布时间：2026-10-20 11:54:59（北京时间）
-
-1. 首页试纸动画增加复苏、预警和显色过程。
-2. 更新试纸动画的步骤说明和转场。
-3. 调整试纸动画的手机布局。
-4. 重做 Description、Engineering 和 Contribution 的剪纸开场。
-5. 重做 HP Overview、Investigation 和 Industry 的剪纸开场。
-6. 调整六个开场的桌面、手机和横屏构图。
-7. 十二张新版开场图集迁移至官方 CDN。
-
-### V10.2.16 改动：
-
-发布时间：2026-10-20 11:43:15（北京时间）
-
-1. 统一 Project、Model 九页的标题大小写、章节编号和术语释义。
-2. 全站正文宽度恢复至 65rem。
-3. 统一 85 处图注的字号、字重、行距和对齐方式。
-4. 增加正文结构和图注构建检查。
-
-### V10.2.15 改动：
-
-改动时间：2026-10-20 10:22:25（北京时间）
-
-1. ODE 正文更新为若希最新英文稿，保留原文、5 张图及 5 张表。
-2. 按用户授权，将 7 组缺损公式按旧版原样补回。
-3. 用 Tina 内容块整理公式、图注与参数表，检查桌面、手机及昼夜模式。
-4. Eco 最新规则表等待成员提供，现有页面保留。
-
-### V10.2.14 改动：
-
-改动时间：2026-10-20 09:55:48（北京时间）
-
-1. Official team page 与 GitLab source code 改为圆角方形图标，移除单独的 iGEM 链接，并压缩页脚留白及合作方标志布局。
-
-### V10.2.13 改动：
-
-改动时间：2026-10-20 05:16:30（北京时间）
-
-1. 按若希最新英文原稿更新 Model Overview、Docking 和 Molecular Dynamics，保留正文、图注、数据及参考文献。
-2. Overview 四枚原图标链接至对应模型章节；桌面并排、手机四宫格。
-3. 竖图与对应段落并排，手机自动上下排列；横图完整显示并统一图注边界。
-4. 补回 Docking 原始数据表，新增 MD 分析图迁移至官方 CDN。
-5. Eco 模型提前加载并缓存已校验运行资源；计算源文件保持原样。
-
-本轮 ODE 最新稿的公式缺项与 Eco 空白规则表等待来源确认；两页正文保留现有完整版本，未用猜测补写。
-
-### V10.2.12 改动：
-
-改动时间：2026-10-20 04:48:32（北京时间）
-
-1. 页脚链接行增加微信公众号、小红书、X、YouTube、bilibili 的圆角方形图标，五个入口并排。
-
-### V10.2.11 改动：
-
-发布时间：2026-10-20 04:42:34（北京时间）
-
-1. 按最新英文稿更新 Description、Engineering 和 Contribution。
-2. 更新 Model 总览流程图和 Docking 高清图。
-3. 更新 Attributions 的 138 条个人贡献。
-4. 补齐合作方支持、外部贡献和 AI 使用说明。
-5. 统一正文宽度、字号、行距及段落对齐。
-6. 统一标题大小写、章节编号和目录层级。
-7. 统一术语首次释义、缩写和物种斜体。
-8. 图片完整等比显示，统一图片框和图注排版。
-9. 移除正文、导航、搜索和弹窗中的历史原稿入口。
-10. 首页找到线虫后固定照明，并提示继续下滚。
-11. 世界地图增加紫色案例点的点击提示。
-12. 调整中国地图和 HP 地图的标题及定位提示。
-13. 统一信号动画的标题字号，修正说明文字越界。
-14. 首页侦探按钮增加返回顶部提示。
-15. 修正实验菌株表述，补充 Parts Registry 链接。
-16. 移除 Results 中尚未完成的两段验证结果。
-17. 新增正文配图迁移至官方 CDN，保留原件与像素核对记录。
-
-### V10.2.10 改动：
-
-发布时间：2026-10-20 03:57:51（北京时间）
-
-1. 恢复用户明确确认的三组双卡布局；保留完整伸出画框的插图，去掉六段说明文字。
-2. 六张原版 SVG 上传官方 CDN，保持矢量文件字节一致；恢复 Modeling 标题。
-3. 仅修正 What we built 区域，保留最新 DBTL、成员与其他已合并修改。
-
-### V10.2.9 改动：
-
-发布时间：2026-10-20 03:17:31（北京时间）
-
-1. 移除首页六张成果卡片的说明小字，保留标题和团队配图。
-2. 调整卡片图片占用空间，保留最新官方 CDN 地址与页面链接。
-
-### V10.2.8 改动：
-
-改动时间：2026-10-20（北京时间）
-
-发布时间：2026-10-20 02:55:50（北京时间）
-
-1. 首页 DBTL 总览更新为四组循环。
-2. 点击循环可放大框图，显示模块列表和详情入口。
-3. 增加循环前后切换、总览和 Escape 返回。
-4. 调整 DBTL 框图与说明卡片的对齐和间距。
-5. 手机端将 DBTL 框图与说明卡片改为上下排列。
-6. What We Built 换用六张新版配图。
-7. 成果卡片链接至对应实验、模型和人类实践正文。
-8. 六张新版配图改由官方 iGEM CDN 加载。
-
-### V10.2.7 改动：
-
-改动时间：2026-10-20（北京时间）
-
-发布时间：2026-10-20 02:49:22（北京时间）
-
-1. 更新 Members 的 27 张个人照片，补齐照片空位。
-2. 在 Members 顶部加入完整团队合照，按原比例显示。
-3. 将 28 张照片迁移至官方 iGEM CDN，保留原件与来源记录。
-
-### V10.2.6 改动：
-
-改动时间：2026-10-19 至 2026-10-20（北京时间）
-
-发布时间：2026-10-20 02:14:48（北京时间）
-
-1. 首页草丛与幼苗改为前景，显示在标题前方。
-2. 下潜时淡出标题与前景，返回地面时恢复。
-3. 进入土壤后立即标出最左侧的青色信号起点。
-4. 后续线索按探索进度依次高亮并显示提示。
-5. 补齐开场前景的回退显示。
-6. 删除页脚项目介绍，保留队名与口号。
-7. 移除 HP 正文新增的土样统计说明和明细表。
-8. 增加网站标题、编号、排版和术语规范文档。
-
-版本按新到旧排列，每项只记一件改动。发布时间均为北京时间，取 Pages 流水线成功完成时间，精确到秒；无发布记录的版本注明未记录。
-
-### V10.2.5 改动：
-
-改动时间：2026-10-19（北京时间）
-
-发布时间：2026-10-19 22:00:18（北京时间）
-
-1. 完善手机触控导航、搜索、大纲和正文布局。
-2. 首页增加手机、矮屏和横屏适配。
-3. 修复流程图横滑后提示卡的位置。
-4. 贡献卡片按头像高度容纳默认条目，并保留展开阅读。
-5. 统一贡献卡片的内边距和间距。
-6. 页脚补齐南开大学生命科学学院、SnapGene 和 GenScript 标志。
-7. 页脚标志迁移至官方 iGEM 素材地址。
-8. 修复顶部菜单跨栏目切换。
-9. 移除首页动画的原生悬浮提示。
-
-### V10.2.4 改动：
-
-改动时间：2026-10-19（北京时间）
-
-发布时间：2026-10-19 17:33:07（北京时间）
-
-1. Overview、Investigation 和 Industry Engagement and Support 三页共用 iHP 开场。
-
-### V10.2.3 改动：
-
-改动时间：2026-10-19（北京时间）
-
-发布时间：2026-10-19 17:23:08（北京时间）
-
-1. 将 Project 和 Model 中的中文正文译为英文。
-2. 用 Tina 图文、表格和公式组件整理英文正文。
-3. 内页开场按完整道具边界取景，避免旋转和视差时越出屏幕。
-4. 调整开场安全区，避让导航、面包屑和底部大纲按钮。
-5. 矮屏和手机横屏改为标题与道具左右分栏。
-6. 压缩普通标题页在矮屏上的顶部留白。
-7. 横竖屏分别加载图集，切屏时保留低清预览直到高清图就绪。
-
-### V10.2.2 改动：
-
-改动时间：2026-10-19（北京时间）
-
-发布时间：2026-10-19 14:58:39（北京时间）
-
-1. 修复首页页脚无法向上翻回上一屏的问题。
-2. 地图信息面板滚到边界后可继续翻页。
-3. 中国地图下潜改为两段连续镜头。
-4. 移除“How do nematodes infect plants?”过渡页。
-5. “Guide my light”改为连续路径，沿途依次点亮信号点。
-6. 页脚校徽动画中的中文手写句换为英文，并迁移至官方 CDN。
-7. 左上角与页脚队名改为 NKU-China。
-8. 首屏和页脚补上 iGEM 2026 与队伍编号 6303。
-9. 页脚增加生命科学学院、SnapGene 和 GenScript 名称入口。
-10. 关系图换为作者修改版，移除彩色渐变背景。
-11. 关系图筛选改为 Design、Build、Test、Learn。
-12. 关系图播放按钮沿循环演示各节点。
-13. 重画带手柄和反应区的试纸动画。
-14. 试剂盒落到地图后显示涟漪，并保留定位点。
-
-### V10.2.1 改动：
-
-改动时间：2026-10-19（北京时间）
-
-发布时间：2026-10-19 14:12:34（北京时间）
-
-1. 开场标题滚动后保留至少 98% 的大小。
-2. 标题终点下移至画面上方约三分之一处，并避让导航和面包屑。
-3. 土壤以正文约 28% 的速度上移。
-4. 开场解除固定后保持运动连续，由正文上移盖过土壤。
-
-### V10.2.0 改动：
-
-改动时间：2026-10-19（北京时间）
-
-发布时间：2026-10-19 12:55:45；成员卡后续修订：2026-10-19 13:15:11（北京时间）
-
-1. HP 拆为 Overview、Integrated Human Practices、Education、Investigation 和 Industry Engagement and Support 五页。
-2. 补齐 HP 主导航、章节跳转和前后页链接。
-3. 按完整原稿排版 28 张原图，保留正文、作者强调和原图号。
-4. 统一 HP 图注和参考文献排版。
-5. 原图改用官方 CDN 传输，增加并发限制和失败重试。
-6. 将 10 处缺图和 3 套待补课件记入清单。
-7. Members 照片的左、上、下留白统一，保持 3:4 竖幅。
-8. Members 卡片取消强制等高，学校和专业保留在背面。
-
-### V10.1.7 改动：
-
-改动时间：2026-10-19（北京时间）
-
-发布时间：2026-10-19 12:03:49（北京时间）
-
-1. 土壤计划新增 255 份土样，总数更新为 289 份，覆盖 9 个省级地区。
-2. HP 补充采集地区、数量、分离基物和采集人明细。
-3. 土样地图柱高改用 log₂(数量＋1)，标签保留实际数量。
-
-### V10.1.6 改动：
-
-改动时间：2026-10-19（北京时间）
-
-发布时间：2026-10-19 12:01:04（北京时间）
-
-1. 成员正面照片固定为 3:4，避免随卡片高度拉长。
-
-### V10.1.5 改动：
-
-改动时间：2026-10-19（北京时间）
-
-发布时间：2026-10-19 11:53:47（北京时间）
-
-1. 按指定英文原文更新范洁老师简介。
-
-### V10.1.4 改动：
-
-改动时间：2026-10-19（北京时间）
-
-发布时间：2026-10-19 11:35:12（北京时间）
-
-1. 按两份修订稿更新 Members 和 Attributions，共 27 人。
-2. 更新成员姓名、角色、年级、学校和个人简介。
-3. 同步 137 条个人贡献。
-4. 调整 PI、Advisor、学生组和其他成员的层级与顺序。
-5. 保留已有照片、人物锚点和翻卡交互。
-
-### V10.1.3 改动：
-
-改动时间：2026-10-19（北京时间）
-
-发布时间：2026-10-19 11:32:52；下载提示后续修订：2026-10-19 11:40:32（北京时间）
-
-1. 历史资料区补上 HP_Project Word 的公开下载。
-2. 公开副本仅清除图片 GPS，保留文字、排版和图片像素。
-3. 调整下载链接与核验状态之间的间距。
-
-### V10.1.2 改动：
-
-改动时间：2026-10-19（北京时间）
-
-发布时间：2026-10-19 05:34:39（北京时间）
-
-1. 归档 15 份会后 Word 原稿，并在历史资料区提供下载。
-2. 按新稿更新 Project、Model 和 HP 正文，保留原语言、公式、表格和参考文献。
-3. Results 第三轮更新为作者 3.0 英文稿，保留前两轮内容。
-4. Results 补入 6 张原图和原交互 HTML。
-5. 接入 Results 完整 70 秒视频，页面注明待平台审核。
-6. 将 Eco 原程序移到页面顶部。
-7. 同步交稿台账和各页上稿状态。
-
-### V10.1.1 改动：
-
-改动时间：2026-10-19（北京时间）
-
-发布时间：2026-10-19 00:18:41（北京时间）
-
-1. 移除内页开场主标题上方的栏目小字。
-2. 移除开场标题下方的黄色短横线。
-
-### V10.1 改动：
-
-改动时间：2026-10-18（北京时间）
-
-发布时间：2026-10-18 22:22:06（北京时间）
-
-1. 按首页手绘风格接入 91 个 AI 绘制的开场道具。
-2. 重新生成 40 张桌面和手机图集，保留构图及滚动动画。
-3. 增加内嵌低清预览，高清图加载后替换。
-4. 页脚补充本轮 AI 插画来源说明。
-
-### V10.0.2 改动：
-
-改动时间：2026-10-18（北京时间）
-
-发布时间：2026-10-18 19:07:33（北京时间）
-
-1. 移除内页开场底部的 Skip intro 按钮。
-2. 移除 Scroll to open 文案和滚动箭头。
-
-### V10.0.1 改动：
-
-改动时间：2026-10-18（北京时间）
-
-发布时间：2026-10-18 19:01:51（北京时间）
-
-1. 优先加载当前屏幕的图集、夜空和地面。
-2. 开场图片解码后与标题一起显示。
-3. 图片加载失败或超过 2.5 秒时显示简化开场。
-
-### V10 改动：
-
-改动时间：2026-10-18（北京时间）
-
-发布时间：2026-10-18 18:36:49（北京时间）
-
-1. 内页开场换为程序生成的剪纸风格道具。
-2. 接入首页夜空和土层地面。
-3. 开场标题改为奶油色，正文顶部增加剪纸边。
-4. 随源码保存 16 张 AI 重绘底图和导入工具。
-
-### V8.7 改动：
-
-改动时间：2026-10-18（北京时间，含原稿恢复与模型接入）
-
-发布时间：2026-10-18 12:59:34；手机修订：2026-10-18 13:18:07；原稿恢复：2026-10-18 18:29:22（北京时间）
-
-1. 补齐手机搜索按钮的可访问名称，文字隐藏后仍可识别。
-2. 放大开场滚动终态的标题，桌面至少保留原字号的 86%，手机至少保留 88%。
-3. 修复根系等开场组团在源图边缘被截断的问题。
-4. 修复深色模式下开场投影出现矩形断边的问题。
-5. 修复信封装饰线越出画布的问题。
-6. 接入 checkpoint 08 的 20 套开场组团，重新生成 40 张横竖版图集。
-7. Awards 移入可选目录，缺稿期间不生成页面、导航或搜索入口。
-8. Acknowledgements 移入可选目录，缺稿期间不生成页面、导航或搜索入口。
-9. 为 Results 的 43 个 DBTL 小标题补上对应实验主题。
-10. 为 Engineering 的 6 个 DBTL 小标题补上对应工程任务。
-11. 修复 HP 地图返回 ascaroside 故事时的转场，使正反方向连续衔接。
-12. 将 Results 图 3.1.3 换为两张高清原图，保留分图图注和总图注。
-13. 恢复 Description、Contribution、HP 和 Results 的作者原文。
-14. 撤销 Results、Engineering 中自行扩写的 DBTL 标题。
-15. 撤销 39 处自动添加的加粗。
-16. 补回 ODE 三张原表的 42 条参数及六列内容。
-17. 移除简化 Eco 比较器，接入作者完整模型程序。
-18. 完整模型支持原始读数、ODE 曲线、双通道估计和经济策略比较。
-19. 恢复作者程序的报告、图件和结果下载。
-20. 新增历史资料区，提供 12 份完整旧稿。
-21. 恢复 84 张原图，另 4 张公开副本仅清理 GPS。
-22. 保留文稿之间的原有差异，按授权统一当前正文项目名。
-23. 原稿、模型运行库和下载文件完成官方 CDN 迁移。
-24. 更新构建缓存，解决发布机磁盘不足导致的部署失败。
-
-### V8.6 改动：
-
-改动时间：2026-10-17 至 2026-10-18（北京时间，含后续调整）
-
-发布时间：2026-10-18 05:04:34（北京时间）
-
-1. 页脚加入 ExCell（依科赛）和 Solarbio 的原版标志。
-2. 增加从 README 读取版本记录的液态玻璃改动清单弹窗。
-3. 改动清单显示各版实际记录日期，版本按新到旧排列。
-4. 导航旁增加圆形按钮，可随时重新打开改动清单。
-5. 记住改动提醒的阅读状态，刷新或跨页后不再重复自动弹出。
-6. 增加隐藏本轮评审工具的选项，同时隐藏弹窗和圆形入口。
-7. 为临时评审工具增加统一开关，正式发布前可整体关闭。
-8. 修复导航收起后在左边缘悬停时反复伸缩抖动的问题。
-9. 换用团队绘制的分子、受体和细胞插画，调整出场顺序。
-10. 调整首页故事的触控板和滚轮操作。
-11. 合并首页末页的时间线、成果卡片和页面入口。
-12. 将十步工作流加入 Description。
-13. Model 拆为 Docking、MD、ODE、Eco 四章。
-14. 加入 Eco 收益比较器。
-15. 按新稿更新 Docking 图文。
-16. 更新 Results 第三轮结果、表格和延时录像。
-17. 更新 Description、Contribution、IHP 和 Education 的 HP 正文。
-18. 九个内页增加滚动开场，修复正文跳转。
-19. 修复 iGEM 子路径下的模块加载路径。
-20. 增加昼夜模式，支持主题记忆和侦探按钮切换。
-21. 增加正文语义标注样式。
-22. 按屏幕宽度调整大纲尺寸与字号。
-23. 将公式复制按钮移入公式框，增加复制反馈。
-24. 放大成员卡片背面的介绍字号。
-25. 将个人贡献卡片的姓名牌移至照片下方，调整底板与对齐。
-26. 调整地图案例照片的比例和焦点。
-27. 将地图案例翻转按钮移至独立操作区。
-28. 修正地图案例的物种、样本范围和损失来源说明。
-29. 完成正文逐页术语与关键句标注。
-30. 将 Model 各章、IHP 和 Education 的主标题改为正式页面名称。
-31. 为 Docking 增加受体、膜与配体的 3D 示意开场。
-32. 新增 Awards 页面和奖杯开场，正文留空待供稿。
-33. 新增 Acknowledgements 页面和信封开场，正文留空待供稿。
-34. 修复开场图集裁边导致的部件错位。
-35. 首页与内页统一页脚，链接随顶栏导航同步。
-36. 恢复南开校徽动画及署名。
-37. 调整页脚分层波浪边缘，消除接缝。
-38. 调整页脚介绍行、导航分栏和字号。
-
-### V8.5 改动：
-
-改动时间：2026-10-17（北京时间）
-
-发布时间：未记录
-
-1. HP 三张地图改用问卷、支教和土样记录，补充图例与来源。
-2. 首屏换用树木根系插画。
-3. 调整农田下潜镜头。
-4. 修复手机横竖屏切换时的章节保持。
-5. 更新四阶段土壤插图与动画。
-6. 恢复 Contribution 筛选公式。
-7. 放大正文。
-
-### V8.4 改动：
-
-改动时间：2026-10-17（北京时间）
-
-发布时间：未记录
-
-1. 中国地图改用液态玻璃物种切换钮。
-2. 中国地图数据区改为固定读数板，精简省份列表与说明框。
-3. 调整地图标记提示。
-4. 修复矮屏布局。
-
-### V8.3 改动：
-
-改动时间：2026-10-17（北京时间）
-
-发布时间：未记录
-
-1. 首页中国地图统一采用标准地图，补齐南海诸岛、十段线与审图号。
-2. 补充台湾分布记录，同步更新地图卡片。
-
-### V8.2 改动：
-
-改动时间：2026-10-17（北京时间）
-
-发布时间：未记录
-
-1. 核对中国地图分布记录，补充文献年份与调查范围。
-2. 调整地图卡片标签页。
-3. 调整手机地图布局，修复遮挡与溢出。
-
-### V8.1 改动：
-
-改动时间：2026-10-17 本地合入（北京时间）；原始改动日期未记录
-
-发布时间：未记录
-
-1. 世界地图七个案例增加物种配图、图注和署名。
-2. 中国地图增加物种切换。
-3. 调整中国地图标记。
-4. 更新中国地图记录卡和来源说明。
-
-### V8.0 改动：
-
-改动时间：2026-10-09 至 2026-10-16（北京时间，含各轮正文及首页更新）
-
-发布时间：未记录
-
-1. 清理内页占位正文。
-2. 分批填入各组供稿，记录来源与审核状态。
-3. 完善 Tina 图文、表格和公式排版。
-4. 发布 iGEM 阶段站。
-5. 将使用中的素材迁移到官方 CDN。
-6. 更新 ascaroside 首页故事及手机构图。
-7. 修复地图卡片翻转。
-8. 接入第二轮七页正文。
-9. 成员卡片扩展为 25 张。
-10. 个人贡献卡片扩展为 25 张。
-
-### V7.8 改动：
-
-改动时间：2026-10-01（北京时间）
-
-发布时间：未记录
-
-1. 更新液态玻璃导航。
-2. 更新液态玻璃大纲。
-3. 更新标题栏。
-4. 增加 38 项组件展厅，供各组选择排版模块。
-
-### V7.7 改动：
-
-改动时间：2026-09-30（北京时间；Tina 接入由同日 Git 提交确认）
-
-发布时间：未记录
-
-1. 接入 Tina 编辑器。
-2. 增加蛋白质结构、PDF、图表等内容组件。
-3. 调整滚轮惯性和翻页回弹，修复连续跨页与停靠偏移。
-4. 修复田地被地图板遮挡。
-
-### V7.6 改动：
-
-改动时间：2026-09-29（北京时间）
-
-发布时间：未记录
-
-1. HP 三层地图改为正俯视，土样柱从对应省份升起。
-2. 增加 WebGL 出错重试，避免画面因单帧错误冻结。
-
-### V7.5 改动：
-
-改动时间：2026-09-29（北京时间）
-
-发布时间：未记录
-
-1. 干湿实验思路图改为十步 SVG 动画，支持分章播放和步骤说明。
-
-### V7.4 改动：
-
-改动时间：2026-09-29（北京时间）
-
-发布时间：未记录
-
-1. 恢复四块土壤与放大镜的首页叙事。
-2. 调整 HP 地图图层切换。
-3. 调整首页翻页动画。
-4. 调整导航布局。
-5. 减少玻璃贴图和颗粒的重复绘制。
-
-### V7.1 改动：
-
-改动时间：2026-09-28（北京时间；18:14 收到版本，18:18 完成本地构建）
-
-发布时间：未记录
-
-1. 按五个栏目重排页面，统一页面地址。
-2. 统一液态玻璃样式。
-3. 修复手机菜单显示。
-4. 修复搜索框显示。
-
-依据：[源码快照](https://github.com/CJerryR/NKU26-wiki/blob/053928a17005faa66aee55784f626a6843d8315c/README.md)。
-
-
-### V7.0 改动：
-
-改动时间：2026-09-28（北京时间；16:20 收到版本，16:29 完成本地构建）
-
-发布时间：未记录
-
-1. 内页迁移到 Astro，正文改用 Markdown。
-2. 统一导航组件。
-3. 统一内页目录。
-4. 统一全站搜索。
-5. 增加链接与内容检查。
-
-依据：[源码快照](https://github.com/CJerryR/NKU26-wiki/blob/934905a6ec2768212cb5975957f081614d8d954c/README.md)。
-
-
-### V6.7 改动：
-
-改动时间：2026-09-26（北京时间，原版 README 记录）
-
-发布时间：未记录
-
-1. 中国地图改为危害背景页，增加大豆胞囊线虫损失数字与文献说明。
-2. 关闭三层地图测试布局，恢复单张地图到农田的飞行。
-
-依据：[GitHub 版本记录](https://github.com/CJerryR/NKU26-wiki/blob/dea9db3018acfeb5355c45c9c156ede87e2c434e/README.md)。
-
-### V6.6 改动：
-
-改动时间：2026-09-26（北京时间，后续 README 保留的版本记录）
-
-发布时间：未记录
-
-1. 侵染四场景增加上浮入场、箭头绘制和根系、虫卵等细节。
-2. 放大镜改为放大同一处场景，并叠加近看细节。
-3. 试做丰度、胞囊线虫和根结线虫三层中国地图，逐层查看后飞向农田。
-
-依据：[GitHub 版本记录](https://github.com/CJerryR/NKU26-wiki/blob/dea9db3018acfeb5355c45c9c156ede87e2c434e/README.md)。
-
-### V6.5 改动：
-
-改动时间：2026-09-26（北京时间，原版 README 记录）
-
-发布时间：未记录
-
-1. 修复地图交接结束时误停 WebGL 渲染循环的问题。
-
-依据：[GitHub 版本记录](https://github.com/CJerryR/NKU26-wiki/blob/483e1670a2e797a6acb0b68560f85e5ab746b62a/README.md)。
-
-### V6.4 改动：
-
-改动时间：2026-09-26（北京时间，原版 README 记录）
-
-发布时间：未记录
-
-1. 世界地图与中国 3D 地图按经纬度锚点对齐并交叉淡入。
-2. 中国地图标题和图例改为从模糊到清晰依次出现。
-
-依据：[GitHub 版本记录](https://github.com/CJerryR/NKU26-wiki/blob/e783606ddca1216b9241c048dd4542947582813b/README.md)。
-
-### V6.3 改动：
-
-改动时间：2026-09-26（北京时间，原版 README 记录）
-
-发布时间：未记录
-
-1. 中国 3D 舞台提前接住世界地图的放大，切页后再倾斜镜头。
-2. HP 改为一张中国地图切换问卷、支教和土壤计划三层数据。
-
-依据：[GitHub 版本记录](https://github.com/CJerryR/NKU26-wiki/blob/5330451c6a8ee072e571d8441b15a23afd703c59/README.md)。
-
-### V6.2 改动：
-
-改动时间：2026-09-26（北京时间，后续 README 保留的版本记录）
-
-发布时间：未记录
-
-1. 侵染段恢复 3D 试验版的四场景布局、放大和平移。
-2. 补充土层、石子、根系和植株的光影细节。
-
-依据：[GitHub 版本记录](https://github.com/CJerryR/NKU26-wiki/blob/5330451c6a8ee072e571d8441b15a23afd703c59/README.md)。
-
-### V6.1 改动：
-
-改动时间：2026-09-26（北京时间，V6.3 README 补记）
-
-发布时间：未记录
-
-1. 恢复首屏大标题与吉祥物尺寸，调整手电筒提示语切换。
-2. 手电筒光斑连续移动到世界地图标题后展开。
-3. 中国地图下潜收为地图到田地、田地到根部两次停顿。
-4. 调整触控板阈值，动画期间不再连续跳步。
-5. 侵染段恢复四个土块总览和逐场景放大。
-
-依据：[GitHub 版本记录](https://github.com/CJerryR/NKU26-wiki/blob/5330451c6a8ee072e571d8441b15a23afd703c59/README.md)。
-
-### V6.0 改动：
-
-改动时间：2026-09-26（北京时间；03:18 收到版本，03:31 完成本地构建与发布）
-
-发布时间：未记录
-
-1. 以经典 V3 首页为底版，合入 3D 试验版的土壤、中国地图和飞行场景。
-2. 首屏增加手电筒找线虫，找到后才能继续翻页。
-3. 世界地图接入丰度像元与案例卡，中国地图增加物种记录标记。
-4. 干湿实验、HP、成果和页面入口串成完整首页。
-
-依据：[GitHub 版本记录](https://github.com/CJerryR/NKU26-wiki/blob/6f63def837ffa7c115a0e7e4fead0905b80694e9/README.md)。
-
-
-### V5.0 改动：
-
-改动时间：2026-09-23（北京时间；23:07 收到版本，23:10 打开本地预览）
-
-发布时间：未记录
-
-1. 全球丰度改用实测像元，增加数据生成脚本和来源清单。
-2. 世界危害案例增加文献出处。
-3. 中国地图改为丰度、胞囊线虫和根结线虫三类资料。
-4. 删除示意潜力柱图、虚构 RGB 读数和随机信号比例。
-5. 内容检查增加示意数据拦截。
-
-依据：[GitHub 版本记录](https://github.com/CJerryR/NKU26-wiki/blob/78de572e140d3eccedb598f5c6dd0f1a165def01/README.md)。
-
-
-### V4.0 改动：
-
-改动时间：2026-09-23（北京时间；23:16 收到版本并打开本地预览）
-
-发布时间：未记录
-
-1. 标准页改用目录式地址，统一 Description、Experiments、Team 等路由。
-2. 页脚补充 CC BY 4.0 和 GitLab 源码链接。
-3. Attributions 接入官方表格。
-4. 构建增加官方素材地址替换及上传清单。
-5. 默认恢复原生滚动，分页模式改为可选。
-6. 无实测数据时隐藏地图示意色块，并增加发布检查。
-
-依据：[GitHub 版本记录](https://github.com/CJerryR/NKU26-wiki/blob/b248a0c7a0b1671f041e3f9eb6209066160c2f2d/README.md)。
-
-
-### V3.0 改动：
-
-改动时间：2026-09-22 至 2026-09-23（北京时间，原型说明与 Git 记录）
-
-发布时间：未记录
-
-1. 首页重做为找线虫、地图、侵染、信号链、成果和页面入口的分段故事。
-2. 增加桌面分页与分步动画，手机保留原生滚动。
-3. 手电筒光圈延续到世界地图，形成连续转场。
-4. 世界和中国地图增加悬停、案例卡及图层交互。
-5. 导航改为液态玻璃双岛，并增加全站搜索。
-6. 加入信号组合、显色链路和项目闭环动画。
-
-依据：[GitHub 版本记录](https://github.com/CJerryR/NKU26-wiki/blob/8bd30a6b291339620de537b2989e4a9e6d3ed936/README.md)。
-
-### V2.1 改动：
-
-改动时间：2026-06-10（北京时间，开发日志与 Git 记录）
-
-发布时间：未记录
-
-1. 导航加大 Logo，品牌文字改为队名与 Subsurface。
-2. 首屏增加跟随光点和背景圆环动画。
-3. 整理本地工作区、收发材料与逐轮开发记录。
-
-依据：[GitHub 版本记录](https://github.com/CJerryR/NKU26-wiki/blob/5baf107a37655e8d9266380fd07367ccb63a47f9/docs/development-log.md)。
-
-### V2.0 改动：
-
-改动时间：2026-06-10（北京时间，Git 重构记录；更早制作时间未记录）
-
-发布时间：未记录
-
-1. 全站重做为 Subsurface 土壤侦探主题。
-2. 引入 Python 构建，将页面内容、模板、导航和页脚分开维护。
-3. 内页自动生成浮动大纲、滚动高亮和阅读进度。
-4. 字体改为本地文件，统一配色与排版。
-5. 首屏增加探测放大镜和游动线虫。
-6. 生成各栏目页面骨架，并补充开发日志和技术手册。
-
-依据：[GitHub 版本记录](https://github.com/CJerryR/NKU26-wiki/blob/e283a5595ccd69dfd9e9222c0961215b2eb7667b/docs/development-log.md)。
-
-### V1.0 改动：
-
-改动时间：未记录（GitHub 最早导入于 2026-04-14，北京时间）
-
-发布时间：未记录
-
-仓库未标注 V1.0，这里将最早的原始站点归入此节。
-
-1. 建立首页及项目、实验、模型、HP 和团队等静态页面。
-2. 将网站文件从 wiki 子目录移到仓库根目录。
-3. 补充 Team、Engineering、Attributions 页面入口。
-
-依据：[GitHub 版本记录](https://github.com/CJerryR/NKU26-wiki/commit/699f3f881d42c88ba567d3c52644002383fee9c6)。
+NKU-China 2026, Nankai University, Tianjin, China. See the [Members](https://2026.igem.wiki/nku-china/team/) and [Attributions](https://2026.igem.wiki/nku-china/attributions) pages for everyone who contributed.

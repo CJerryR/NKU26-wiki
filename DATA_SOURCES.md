@@ -67,7 +67,7 @@ Seven representative species photos, see `img/home-cases/CREDITS.md`. They are n
 
 ## China base map (v8.2)
 
-Every China map on the homepage (the 3D China map and its 2D stand-in, the world map's China shape, the dot-grid China maps) now uses the **Standard Map of China** (中国地图, English edition, 1:14 000 000, vertical layout with the South China Sea), Ministry of Natural Resources of the PRC, standard map service, **review no. GS(2022)4308** (自然资源部 监制). The review number is printed under the China map, in the world map caption and in the homepage footer.
+Every China map on the homepage (the 3D China map and its 2D stand-in, the world map's China shape, the dot-grid China maps) now uses the **Standard Map of China** (English edition, 1:14 000 000, vertical layout with the South China Sea), Ministry of Natural Resources of the PRC, standard map service, **review no. GS(2022)4308** (supervised by the Ministry of Natural Resources). The review number is printed under the China map, in the world map caption and in the homepage footer.
 
 How it was taken from the sheet (`tools/china_standard_map.py`, output `data/china-standard-map.json`): the CorelDRAW EPS paths were read directly; the province and island fills (plus the South China Sea island symbols) were merged into one land mask at about 1 km per pixel and traced; the ten dashes of the national boundary in the South China Sea were taken from the boundary symbol. The sheet was georeferenced by fitting a projection (oblique Lambert azimuthal equal-area, centre about 103.9°E 34.7°N, plus a similarity transform; median error about 3.5 km) and converted to lon/lat, then drawn in the site's existing China frame. Boundaries, islands and the dash line come from the sheet; they were not redrawn. The world map outside China is still Natural Earth.
 
@@ -78,8 +78,8 @@ Generated file: `js/home-hp-data.js`; generator: `tools/build_hp_maps.py`
 
 **Base map.** Outline, islands and the ten-dash line: Standard Map of China
 GS(2022)4308 (section G / `data/china-standard-map.json`, unchanged).
-Province boundaries: 中国地图（分省设色）1:1100万，界线版，无邻国，有河流,
-review no. **GS(2022)4303**, Ministry of Natural Resources (自然资源部 监制),
+Province boundaries: Map of China (provinces in colour), 1:11 000 000, boundary edition, without neighbouring countries, with rivers,
+review no. **GS(2022)4303**, supervised by the Ministry of Natural Resources,
 standard map service. EPS SHA-256 `e7346083eed8c7df24c4a5edae5690ad932d6b46d674105e4c2bf6a9224ff4cb` (not stored in the repo).
 33 province fills read from the EPS (Macao has no separate fill at this scale and
 is not drawn as a polygon); each is identified by the provincial capital it
@@ -91,8 +91,8 @@ the GS(2022)4308 outline, median distance ≈1 pt (≈4 km), 90th percentile ≈
 Output: `data/china-provinces-standard.json` (lon/lat), simplified for the page
 to 7,088 vertices (Douglas–Peucker 0.025°, small rings 0.01°).
 
-**Survey layer.** 农业线虫问题认知与需求调查（中文版）, 369 records, submitted
-2026-04-14 to 2026-08-06; field Q1 “您的所在地” (province-city chosen by the
+**Survey layer.** Survey on Awareness and Needs Regarding Agricultural Nematode Problems (Chinese-language edition), 369 records, submitted
+2026-04-14 to 2026-08-06; field Q1 “Your location” (province-city chosen by the
 respondent). Workbook SHA-256 `561935ebd3b5bee224b3c477890b88e518095751eded004ab002669b4509cd7b` (not stored in the repo; it holds IP
 addresses and contact details). Only counts per province and per city are kept:
 `data/hp/survey-locations.json`. Counts match the team's PDF summary exactly
@@ -104,8 +104,8 @@ Caveat shown on the page: 72.4 % of respondents are students or researchers and
 73.2 % are from Shandong or Tianjin, so the map shows the survey's reach, not
 nematode occurrence.
 
-**Teaching layer.** Team sign-up table (分队 / 服务地点 / 报名学生人数), 8 sites,
-about 397 students (Tianjin Shangyouli “约10”). `data/hp/teaching-sites.json`.
+**Teaching layer.** Team sign-up table (team / service site / number of registered students), 8 sites,
+about 397 students (Tianjin Shangyouli “about 10”). `data/hp/teaching-sites.json`.
 Markers at the county/district seat (≈10–20 km); circle area ∝ students.
 Nanjiangxili community: district not confirmed, marker in central Tianjin.
 
