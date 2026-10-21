@@ -341,7 +341,7 @@ Figure 22. Fragment construction of Gal1/10bp-betaxanthin expression cassette (a
 
 :::
 
-:::::figuretext{side=right width=wide flow=continue}
+<p>For GPR2, since GPR2 in the previously constructed plasmid pRS315-TEF1p-GPR2-sfGFP is fused to sfGFP via a flexible linker, direct construction of the donor fragment was complicated. We therefore continued to use one-step cloning to assemble the plasmid (Figure 23), and finally successfully obtained pRS315-TEF1p-GPR2 for GPR2 knock-in (Figure 24).</p>
 
 ::::figures
 
@@ -362,10 +362,6 @@ Figure 22. Fragment construction of Gal1/10bp-betaxanthin expression cassette (a
 :::
 
 ::::
-
-<p>For GPR2, since GPR2 in the previously constructed plasmid pRS315-TEF1p-GPR2-sfGFP is fused to sfGFP via a flexible linker, direct construction of the donor fragment was complicated. We therefore continued to use one-step cloning to assemble the plasmid (Figure 23), and finally successfully obtained pRS315-TEF1p-GPR2 for GPR2 knock-in (Figure 24).</p>
-
-:::::
 
 #### Test | verifying Cas9 transformation and genome editing {#test-6 toc="Test | verifying Cas9 transformation and genome editing"}
 
@@ -513,7 +509,7 @@ This cycle is hereby concluded. The strains constructed in this cycle can only f
 
 <p>Next, to verify the water-retaining performance of the protectant, we conduct dehydration kinetics and full-process freeze-drying tests on it. The results show (Figure 32) that the new protectant forms a structurally intact film matrix after drying and effectively prevents collapse and powdering; furthermore, its smooth and uniform dehydration rate avoids physical damage to yeast cell membranes caused by severe water loss, thereby significantly enhancing cell structural integrity and survival rate during freeze-drying.</p>
 
-:::::figuretext{side=right width=wide flow=continue}
+<p>Additionally, we self-fabricate a vacuum filtration spotting device (Figure 33). This device can rapidly draw the high-viscosity protectant suspension into the interior of the test-strip substrate, which not only significantly improves spotting efficiency but also achieves standardized control over the cell-loading amount per individual test strip.</p><p>Integrating all the above methods and approaches, we prepare and obtain a batch of cell-loaded freeze-dried test strips available for downstream engineering (Figure 34).</p>
 
 ::::figures
 
@@ -534,10 +530,6 @@ This cycle is hereby concluded. The strains constructed in this cycle can only f
 :::
 
 ::::
-
-<p>Additionally, we self-fabricate a vacuum filtration spotting device (Figure 33). This device can rapidly draw the high-viscosity protectant suspension into the interior of the test-strip substrate, which not only significantly improves spotting efficiency but also achieves standardized control over the cell-loading amount per individual test strip.</p><p>Integrating all the above methods and approaches, we prepare and obtain a batch of cell-loaded freeze-dried test strips available for downstream engineering (Figure 34).</p>
-
-:::::
 
 #### Learn | standardizing cell immobilization {#results-3-2-learn toc="Learn | standardizing cell immobilization"}
 
@@ -565,11 +557,9 @@ This cycle is hereby concluded. The strains constructed in this cycle can only f
 
 <p>We observe that YNB-free SC medium as a resuscitation solution performs significantly better than phosphate-buffered saline solution, and the amine donor Trp stabilizes yeast color development.</p>
 
-<p>The results of the color development condition control experiments further indicate that based on YNB-free SC selective medium, adding 2% glucose provides energy and a carbon source, tyrosine promotes precursor uptake and resuscitation, the surfactant (Tween 80) improves wettability and cell membrane permeability, and antioxidants protect betaxanthin stability. This optimized formulation overcomes the bottleneck of slow resuscitation in earlier stages and significantly accelerates the test strip color development rate.</p>
+::::figuretext{side=left width=medium flow=wrap}
 
-::::figuretext{side=left width=narrow flow=wrap}
-
-:::figure{scale=70}
+:::figure
 
 [![3D-printed test-strip cassette.](https://static.igem.wiki/teams/6303/wiki/v8-6/v86-b5b9b9256085-fig3-2-2.avif)](https://static.igem.wiki/teams/6303/wiki/v8-6/v86-b5b9b9256085-fig3-2-2.avif "Open full-resolution image")
 
@@ -577,7 +567,7 @@ This cycle is hereby concluded. The strains constructed in this cycle can only f
 
 :::
 
-<p>Meanwhile, considering the field application scenarios of our product, we design a 3D-printed test-strip cassette to hold the test strip (Figure 36), making the detection workflow simpler and more convenient.</p><p>At this point, we have closed the loop on test strip fabrication and application, establishing a solid foundation for subsequent on-site rapid detection of soil samples.</p>
+<p>The results of the color development condition control experiments further indicate that based on YNB-free SC selective medium, adding 2% glucose provides energy and a carbon source, tyrosine promotes precursor uptake and resuscitation, the surfactant (Tween 80) improves wettability and cell membrane permeability, and antioxidants protect betaxanthin stability. This optimized formulation overcomes the bottleneck of slow resuscitation in earlier stages and significantly accelerates the test strip color development rate.</p><p>Meanwhile, considering the field application scenarios of our product, we design a 3D-printed test-strip cassette to hold the test strip (Figure 36), making the detection workflow simpler and more convenient.</p><p>At this point, we have closed the loop on test strip fabrication and application, establishing a solid foundation for subsequent on-site rapid detection of soil samples.</p>
 
 ::::
 

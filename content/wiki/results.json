@@ -531,6 +531,10 @@
       "imageWidth": "medium"
     },
     {
+      "_template": "text",
+      "body": "<p>For GPR2, since GPR2 in the previously constructed plasmid pRS315-TEF1p-GPR2-sfGFP is fused to sfGFP via a flexible linker, direct construction of the donor fragment was complicated. We therefore continued to use one-step cloning to assemble the plasmid (Figure 23), and finally successfully obtained pRS315-TEF1p-GPR2 for GPR2 knock-in (Figure 24).</p>"
+    },
+    {
       "_template": "imagegroup",
       "items": [
         {
@@ -543,11 +547,7 @@
           "alt": "Construction of pRS315-TEF1p-GPR2 plasmid.",
           "body": "<p>Figure 24. Construction of pRS315-TEF1p-GPR2 plasmid.</p>"
         }
-      ],
-      "layout": "wrap-right",
-      "imageWidth": "wide",
-      "accompanyingBody": "<p>For GPR2, since GPR2 in the previously constructed plasmid pRS315-TEF1p-GPR2-sfGFP is fused to sfGFP via a flexible linker, direct construction of the donor fragment was complicated. We therefore continued to use one-step cloning to assemble the plasmid (Figure 23), and finally successfully obtained pRS315-TEF1p-GPR2 for GPR2 knock-in (Figure 24).</p>",
-      "continueWrap": true
+      ]
     },
     {
       "_template": "heading",
@@ -956,6 +956,10 @@
       "openOriginal": true
     },
     {
+      "_template": "text",
+      "body": "<p>Additionally, we self-fabricate a vacuum filtration spotting device (Figure 33). This device can rapidly draw the high-viscosity protectant suspension into the interior of the test-strip substrate, which not only significantly improves spotting efficiency but also achieves standardized control over the cell-loading amount per individual test strip.</p><p>Integrating all the above methods and approaches, we prepare and obtain a batch of cell-loaded freeze-dried test strips available for downstream engineering (Figure 34).</p>"
+    },
+    {
       "_template": "imagegroup",
       "items": [
         {
@@ -970,11 +974,7 @@
           "body": "<p class=\"figure-caption\">Figure 34. Overview of color-developing cell-loaded test strips.</p>",
           "openOriginal": true
         }
-      ],
-      "layout": "wrap-right",
-      "imageWidth": "wide",
-      "accompanyingBody": "<p>Additionally, we self-fabricate a vacuum filtration spotting device (Figure 33). This device can rapidly draw the high-viscosity protectant suspension into the interior of the test-strip substrate, which not only significantly improves spotting efficiency but also achieves standardized control over the cell-loading amount per individual test strip.</p><p>Integrating all the above methods and approaches, we prepare and obtain a batch of cell-loaded freeze-dried test strips available for downstream engineering (Figure 34).</p>",
-      "continueWrap": true
+      ]
     },
     {
       "_template": "heading",
@@ -1039,19 +1039,14 @@
       "body": "<p>We observe that YNB-free SC medium as a resuscitation solution performs significantly better than phosphate-buffered saline solution, and the amine donor Trp stabilizes yeast color development.</p>"
     },
     {
-      "_template": "text",
-      "body": "<p>The results of the color development condition control experiments further indicate that based on YNB-free SC selective medium, adding 2% glucose provides energy and a carbon source, tyrosine promotes precursor uptake and resuscitation, the surfactant (Tween 80) improves wettability and cell membrane permeability, and antioxidants protect betaxanthin stability. This optimized formulation overcomes the bottleneck of slow resuscitation in earlier stages and significantly accelerates the test strip color development rate.</p>"
-    },
-    {
       "_template": "image",
       "src": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-b5b9b9256085-fig3-2-2.avif",
       "alt": "3D-printed test-strip cassette.",
       "body": "<p class=\"figure-caption\">Figure 36. 3D-printed test-strip cassette.</p>",
-      "accompanyingBody": "<p>Meanwhile, considering the field application scenarios of our product, we design a 3D-printed test-strip cassette to hold the test strip (Figure 36), making the detection workflow simpler and more convenient.</p><p>At this point, we have closed the loop on test strip fabrication and application, establishing a solid foundation for subsequent on-site rapid detection of soil samples.</p>",
+      "accompanyingBody": "<p>The results of the color development condition control experiments further indicate that based on YNB-free SC selective medium, adding 2% glucose provides energy and a carbon source, tyrosine promotes precursor uptake and resuscitation, the surfactant (Tween 80) improves wettability and cell membrane permeability, and antioxidants protect betaxanthin stability. This optimized formulation overcomes the bottleneck of slow resuscitation in earlier stages and significantly accelerates the test strip color development rate.</p><p>Meanwhile, considering the field application scenarios of our product, we design a 3D-printed test-strip cassette to hold the test strip (Figure 36), making the detection workflow simpler and more convenient.</p><p>At this point, we have closed the loop on test strip fabrication and application, establishing a solid foundation for subsequent on-site rapid detection of soil samples.</p>",
       "layout": "wrap-left",
-      "imageWidth": "narrow",
-      "openOriginal": true,
-      "scale": "70"
+      "imageWidth": "medium",
+      "openOriginal": true
     },
     {
       "_template": "heading",

@@ -1,7 +1,7 @@
 /* Distill-inspired figure flow, adapted to the existing Astro/Tina components.
    Keep the site's 65rem measure, type, captions and theme. No Distill runtime.
    Research pages only: people cards and the homepage retain their own layouts. */
-.doc:is([data-page="description"], [data-page="background"], [data-page="contribution"], [data-page="engineering"], [data-page="results"], [data-page="model"], [data-page="model-docking"], [data-page="model-md"], [data-page="model-ode"], [data-page="model-eco"]) > .prose {
+.doc:is([data-page="description"], [data-page="background"], [data-page="contribution"], [data-page="engineering"], [data-page="results"], [data-page="model"], [data-page="model-docking"], [data-page="model-md"], [data-page="model-ode"], [data-page="model-eco"], [data-page="education"], [data-page="hp-investigation"]) > .prose {
   container: research-article / inline-size;
 }
 
@@ -10,7 +10,8 @@
 @container research-article (min-width: 0px) {
   .figure-text__body:lang(en) { hyphens: auto; overflow-wrap: break-word; }
   .figure-text__body :is(code, kbd, .katex) { hyphens: none; }
-  .doc .prose .figure-text__body > :first-child { margin-top: 0 !important; }
+  /* A continued wrap starts 28px below the preceding block, level with its float. */
+  .doc .prose .figure-text:not(.figure-text--continue) > .figure-text__body > :first-child { margin-top: 0 !important; }
   .doc .prose .figure-text__body > :last-child { margin-bottom: 0 !important; }
 }
 
