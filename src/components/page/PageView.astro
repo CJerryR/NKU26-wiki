@@ -52,6 +52,33 @@ const preload = scene ? [
       {scene && data.sub && <p class="scene-intro" set:html={inlineMd(data.sub)} />}
       {entry.body?.includes('data-nemaklear-app') && <NemaKlearOriginal />}
       <Content />
+      {entry.id === 'results' && <script is:inline>
+        const siteBase = new URL('../', location.href);
+        const expectedWidget = new URL('widgets/html.html', siteBase);
+        const expectedEmbed = new URL('embeds/results-future-work-20261021/index.html', siteBase);
+        const futureWorkFrame = Array.from(document.querySelectorAll('iframe.wiki-media__frame')).find(frame => {
+          try {
+            const viewer = new URL(frame.src, location.href);
+            const rawEmbedSource = viewer.searchParams.get('src') || '';
+            const embedSource = rawEmbedSource.startsWith('/embeds/')
+              ? new URL(rawEmbedSource.slice(1), siteBase)
+              : rawEmbedSource.startsWith('/')
+                ? new URL(rawEmbedSource, location.origin)
+                : new URL(rawEmbedSource, siteBase);
+            return viewer.origin === location.origin
+              && viewer.href.split('?')[0] === expectedWidget.href
+              && embedSource.href === expectedEmbed.href
+              && viewer.searchParams.get('scripts') === '1';
+          } catch { return false; }
+        });
+        if (futureWorkFrame) window.addEventListener('message', event => {
+          const height = Number(event.data?.height);
+          if (event.source !== futureWorkFrame.contentWindow || event.origin !== location.origin
+            || event.data?.type !== 'nku-results-future-work:height'
+            || !Number.isFinite(height) || height < 300 || height > 2800) return;
+          futureWorkFrame.style.height = `${Math.ceil(height)}px`;
+        });
+      </script>}
     </article>
   </div>
   <PagePager prev={prev} next={next} />

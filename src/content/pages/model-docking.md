@@ -193,16 +193,16 @@ This extension applied the site-selection approach across receptors. Contact dif
 
 ## References {#model-docking-section-8 toc="References"}
 
-\[1] Abramson, J., et al. (2024). Accurate structure prediction of biomolecular interactions with AlphaFold 3. *Nature*, 630, 493–500. <https://doi.org/10.1038/s41586-024-07487-w>
+\[1] Abramson, J., Adler, J., Dunger, J., Evans, R., Green, T., Pritzel, A., Ronneberger, O., Willmore, L., Ballard, A. J., Bambrick, J., Bodenstein, S. W., Evans, D. A., Hung, C.-C., O'Neill, M., Reiman, D., Tunyasuvunakool, K., Wu, Z., Žemgulytė, A., Arvaniti, E., … Jumper, J. M. (2024). Accurate structure prediction of biomolecular interactions with AlphaFold 3. *Nature, 630*(8016), 493–500. https://doi.org/10.1038/s41586-024-07487-w
 
-\[2] Kuo, C.-Y., Tay, R. J., Lin, H.-C., et al. (2024). The nematode-trapping fungus *Arthrobotrys oligospora* detects prey pheromones via G protein-coupled receptors. *Nature Microbiology*, 9, 1738–1751. <https://doi.org/10.1038/s41564-024-01679-w>
+\[2] Kuo, C.-Y., Tay, R. J., Lin, H.-C., Juan, S.-C., Vidal-Diez de Ulzurrun, G., Chang, Y.-C., Hoki, J., Schroeder, F. C., & Hsueh, Y.-P. (2024). The nematode-trapping fungus *Arthrobotrys oligospora* detects prey pheromones via G protein-coupled receptors. *Nature Microbiology, 9*(7), 1738–1751. https://doi.org/10.1038/s41564-024-01679-w
 
-\[3] Hu, X., Hoffmann, D. S., Wang, M., et al. (2024). GprC of the nematode-trapping fungus *Arthrobotrys flagrans* activates mitochondria and reprograms fungal cells for nematode hunting. *Nature Microbiology*, 9, 1752–1763. <https://doi.org/10.1038/s41564-024-01731-9>
+\[3] Hu, X., Hoffmann, D. S., Wang, M., Schuhmacher, L., Stroe, M. C., Schreckenberger, B., Elstner, M., & Fischer, R. (2024). GprC of the nematode-trapping fungus *Arthrobotrys flagrans* activates mitochondria and reprograms fungal cells for nematode hunting. *Nature Microbiology, 9*(7), 1752–1763. https://doi.org/10.1038/s41564-024-01731-9
 
-\[4] AutoDock Vina developers. *AutoDock Vina documentation: Basic docking*, Section 4.c, “Exporting results to SDF.” <https://autodock-vina.readthedocs.io/en/latest/docking_basic.html>. Accessed 20 October 2026.
+\[4] AutoDock Vina developers. (n.d.). *AutoDock Vina documentation: Basic docking* (Section 4.c, “Exporting results to SDF”). Retrieved October 20, 2026, from https://autodock-vina.readthedocs.io/en/latest/docking_basic.html
 
-\[5] Schrödinger. *Maestro*. <https://www.schrodinger.com/platform/products/maestro/>. Accessed 20 October 2026.
+\[5] Schrödinger. (n.d.). *Maestro*. Retrieved October 20, 2026, from https://www.schrodinger.com/platform/products/maestro/
 
-\[6] Trott, O., & Olson, A. J. (2010). AutoDock Vina: Improving the speed and accuracy of docking with a new scoring function, efficient optimization, and multithreading. *Journal of Computational Chemistry*, 31, 455–461. <https://doi.org/10.1002/jcc.21334>
+\[6] Trott, O., & Olson, A. J. (2010). AutoDock Vina: Improving the speed and accuracy of docking with a new scoring function, efficient optimization, and multithreading. *Journal of Computational Chemistry, 31*(2), 455–461. https://doi.org/10.1002/jcc.21334
 
 </div>

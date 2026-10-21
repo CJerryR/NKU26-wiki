@@ -15,7 +15,7 @@
   #nk-bt .bt-ghost{fill:none;stroke:#C9B48A;stroke-width:1.3;stroke-dasharray:6 6}
   #nk-bt .bt-sec{margin-top:28px}
 
-  #nk-bt .bt-list{max-width:960px; margin:0 auto}
+  #nk-bt .bt-list{max-width:960px; margin:0 auto; overflow-x:auto; -webkit-overflow-scrolling:touch}
   #nk-bt .bt-hint{text-align:right; font-size:9px; font-weight:600; letter-spacing:.16em;
     text-transform:uppercase; color:#B6A688; margin:0 0 4px}
 
@@ -83,6 +83,10 @@
   @keyframes btDust{0%,100%{opacity:.95}50%{opacity:.2}}
   #nk-bt .bt-brush path{stroke-dasharray:4 4; animation:btBrush 1.8s linear infinite}
   @keyframes btBrush{to{stroke-dashoffset:-16}}
+  @media(max-width:600px){
+    #nk-bt{padding:18px 14px 22px}
+    #nk-bt table.bt-tbl{min-width:720px}
+  }
 </style>
 
 <div id="nk-bt">
@@ -423,6 +427,18 @@
 (function(){
   var root = document.getElementById('nk-bt');
   if(!root) return;
+
+  var reportHeight = function(){
+    var rootBottom = root.getBoundingClientRect().bottom + window.scrollY;
+    var bottomMargin = parseFloat(getComputedStyle(document.body).marginBottom) || 0;
+    var height = Math.ceil(rootBottom + bottomMargin);
+    parent.postMessage({type:'nku-results-future-work:resize',height:height}, '*');
+  };
+  var heightObserver;
+  if('ResizeObserver' in window){ heightObserver = new ResizeObserver(reportHeight); heightObserver.observe(root); }
+  window.addEventListener('load', reportHeight);
+  window.addEventListener('resize', reportHeight);
+  reportHeight();
 
   var rows = root.querySelectorAll('tr[data-bt-row]');
   rows.forEach(function(row){

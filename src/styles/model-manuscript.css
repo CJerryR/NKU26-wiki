@@ -1,3 +1,4 @@
+@import './model-md-videos.css';
 /* Author's October 20 Model layout: shared text/media edges and responsive figures. */
 .model-manuscript { min-width:0; }
 /* Running prose inherits the shared content rules; tables/captions retain
@@ -56,7 +57,6 @@
 .model-manuscript .model-chapter-links a { padding:0;border:0;border-radius:0;background:none; }
 .model-manuscript .model-chapter-links a:hover { transform:none; }
 .model-manuscript .model-chapter-links img { max-width:190px;border-radius:0; }
-.model-manuscript .model-chapter-links span { position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap; }
 .model-manuscript .model-equation { width:100%;margin-block:24px;overflow-x:auto; }
 .model-manuscript .model-equation .katex-display { margin:0; }
 

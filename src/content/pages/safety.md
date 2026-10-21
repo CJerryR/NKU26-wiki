@@ -36,7 +36,7 @@ Secondly, we adopted the previously designed engineered yeast suicide switch, wh
 
 ![Tet-On and Bax suicide-system design](https://static.igem.wiki/teams/6303/wiki/v8-0/v85-cfa8f763f0dd-r2-cfa8f763f0dd-fig2.avif)
 
-Figure 2. Tet-On and Bax suicide-system design.
+Figure 2. Schematic diagram of Tet-On-based apoptotic suicide switch in yeast. Adapted from <a href="https://2025.igem.wiki/nku-china/safety-and-security#countermeasure">2025 NKU-China safety page</a>.
 
 :::
 

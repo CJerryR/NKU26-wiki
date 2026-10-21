@@ -906,14 +906,10 @@
       "src": "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/meeting-image-e772d8a4854f55e5-00.json",
       "alt": "Water absorption capacity evaluation of selected substrates.",
       "body": "<p class=\"figure-caption\">Figure 30. Water absorption capacity evaluation of selected substrates.</p>",
-      "accompanyingBody": "<p>Considering both the cell-binding capacity and the physical properties of each material, we select three substrates—GF/B, GF/A, and cellulose acetate—for the copper sulfate solution wicking experiment (Figure 30).</p>",
+      "accompanyingBody": "<p>Considering both the cell-binding capacity and the physical properties of each material, we select three substrates—GF/B, GF/A, and cellulose acetate—for the copper sulfate solution wicking experiment (Figure 30).</p><p>The results demonstrate that GF/B not only exhibits strong binding capacity with yeast cells but also possesses superior water absorption ability.</p>",
       "layout": "wrap-right",
       "imageWidth": "medium",
       "openOriginal": true
-    },
-    {
-      "_template": "text",
-      "body": "<p>The results demonstrate that GF/B not only exhibits strong binding capacity with yeast cells but also possesses superior water absorption ability.Learn</p>"
     },
     {
       "_template": "heading",
@@ -1078,14 +1074,10 @@
       "src": "https://static.igem.wiki/teams/6303/wiki/v8-6/v86-b5b9b9256085-fig3-2-2.avif",
       "alt": "3D-printed test strip cassette.",
       "body": "<p class=\"figure-caption\">Figure 36. 3D-printed test strip cassette.</p>",
-      "accompanyingBody": "<p>Meanwhile, considering the field application scenarios of our product, we design a 3D-printed test strip cassette to hold the test strip (Figure 36), making the detection workflow simpler and more convenient.</p>",
+      "accompanyingBody": "<p>Meanwhile, considering the field application scenarios of our product, we design a 3D-printed test strip cassette to hold the test strip (Figure 36), making the detection workflow simpler and more convenient.</p><p>At this point, we have closed the loop on test strip fabrication and application, establishing a solid foundation for subsequent on-site rapid detection of soil samples.</p>",
       "layout": "wrap-right",
       "imageWidth": "narrow",
       "openOriginal": true
-    },
-    {
-      "_template": "text",
-      "body": "<p>At this point, we have closed the loop on test strip fabrication and application, establishing a solid foundation for subsequent on-site rapid detection of soil samples.</p>"
     },
     {
       "_template": "heading",
@@ -1095,23 +1087,23 @@
     },
     {
       "_template": "text",
-      "body": "<p>Rachel A. Miller, Galen Brown, Elsa Barron, Jamie L. Luther, Marya Lieberman, Holly V. Goodson; Development of a paper-immobilized yeast biosensor for the detection of physiological concentrations of doxycycline in technology-limited settings. <em>Anal. Methods</em> 2020; 12 (16): 2123–2132. <a href=\"https://doi.org/10.1039/d0ay00001a\">https://doi.org/10.1039/d0ay00001a</a></p>"
+      "body": "<p>Miller, R. A., Brown, G., Barron, E., Luther, J. L., Lieberman, M., &amp; Goodson, H. V. (2020). Development of a paper-immobilized yeast biosensor for the detection of physiological concentrations of doxycycline in technology-limited settings. <em>Analytical Methods, 12</em>(16), 2123–2132. <a href=\"https://doi.org/10.1039/d0ay00001a\">https://doi.org/10.1039/d0ay00001a</a></p>"
     },
     {
       "_template": "text",
-      "body": "<p>Parbir S. Grewal, Cyrus Modavi, Zachary N. Russ, Nicholas C. Harris, John E. Dueber, Bioproduction of a betalain color palette in Saccharomyces cerevisiae, Metabolic Engineering, Volume 45, 2018, Pages 180-188, ISSN 1096-7176, <a href=\"https://doi.org/10.1016/j.ymben.2017.12.008\">https://doi.org/10.1016/j.ymben.2017.12.008</a>.</p>"
+      "body": "<p>Grewal, P. S., Modavi, C., Russ, Z. N., Harris, N. C., &amp; Dueber, J. E. (2018). Bioproduction of a betalain color palette in <em>Saccharomyces cerevisiae</em>. <em>Metabolic Engineering, 45</em>, 180–188. <a href=\"https://doi.org/10.1016/j.ymben.2017.12.008\">https://doi.org/10.1016/j.ymben.2017.12.008</a></p>"
     },
     {
       "_template": "text",
-      "body": "<p>Ostrov N, Jimenez M, Billerbeck S, et al. A modular yeast biosensor for low-cost point-of-care pathogen detection. Sci Adv. 2017;3(6):e1603221. doi:10.1126/sciadv.1603221.</p>"
+      "body": "<p>Ostrov, N., Jimenez, M., Billerbeck, S., Brisbois, J., Matragrano, J., Ager, A., &amp; Cornish, V. W. (2017). A modular yeast biosensor for low-cost point-of-care pathogen detection. <em>Science Advances, 3</em>(6), e1603221. <a href=\"https://doi.org/10.1126/sciadv.1603221\">https://doi.org/10.1126/sciadv.1603221</a></p>"
     },
     {
       "_template": "text",
-      "body": "<p>Shin HJ, Park HH, Lim WK. Freeze-dried recombinant bacteria for on-site detection of phenolic compounds by color change. J Biotechnol. 2005;119(1):36-43. doi:10.1016/j.jbiotec.2005.06.002.</p>"
+      "body": "<p>Shin, H. J., Park, H. H., &amp; Lim, W. K. (2005). Freeze-dried recombinant bacteria for on-site detection of phenolic compounds by color change. <em>Journal of Biotechnology, 119</em>(1), 36–43. <a href=\"https://doi.org/10.1016/j.jbiotec.2005.06.002\">https://doi.org/10.1016/j.jbiotec.2005.06.002</a></p>"
     },
     {
       "_template": "text",
-      "body": "<p>Poirier I, Marechal PA, Richard S, Gervais P. Saccharomyces cerevisiae viability is strongly dependant on rehydration kinetics and the temperature of dried cells. J Appl Microbiol. 1999;86(1):87-92. doi:10.1046/j.1365-2672.1999.00638.x.</p>"
+      "body": "<p>Poirier, I., Maréchal, P. A., Richard, S., &amp; Gervais, P. (1999). Saccharomyces cerevisiae viability is strongly dependant on rehydration kinetics and the temperature of dried cells. <em>Journal of Applied Microbiology, 86</em>(1), 87–92. <a href=\"https://doi.org/10.1046/j.1365-2672.1999.00638.x\">https://doi.org/10.1046/j.1365-2672.1999.00638.x</a></p>"
     },
     {
       "_template": "heading",
@@ -1152,7 +1144,7 @@
       "title": "Five-unit test card design and reading guide",
       "file": "/embeds/results-future-work-20261021/index.html",
       "scripts": true,
-      "height": 1050
+      "height": 900
     },
     {
       "_template": "text",

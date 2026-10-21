@@ -114,7 +114,7 @@
     },
     {
       "_template": "text",
-      "body": "We describe the relationship between density and relative yield using a Seinhorst model, with parameters from the spring experiment on ungrafted tomato reported by Expósito et al. (2020) <sup>[1]</sup>. Below the tolerance density, predicted relative yield remains at its baseline level. Above this density, relative yield declines toward a lower limit. In our example, the converted tolerance density is <strong>6 J2/100 cm³</strong> and the minimum relative yield is <strong>0.34</strong>."
+      "body": "We describe the relationship between density and relative yield using a Seinhorst model, with parameters from the spring experiment on ungrafted tomato reported by Expósito et al. (2020) <sup>[1]</sup>. Below the tolerance density, predicted relative yield remains at its baseline level. Above this density, relative yield declines toward a lower limit. In our example, the converted tolerance density is 6 J2/100 cm³ and the minimum relative yield is 0.34."
     },
     {
       "_template": "text",
@@ -126,11 +126,11 @@
     },
     {
       "_template": "text",
-      "body": "Economic and treatment inputs draw on Talavera-Rubia et al. (2022) <sup>[2]</sup>. To represent treatment effects, we first apply the reported population-reduction rates at a reference density of <strong>100 J2/100 cm³</strong>. We then use the density–yield relationship to calculate the fraction of yield loss avoided. This fraction is held constant across density scenarios, a simplifying assumption of the demonstration."
+      "body": "Economic and treatment inputs draw on Talavera-Rubia et al. (2022) <sup>[2]</sup>. To represent treatment effects, we first apply the reported population-reduction rates at a reference density of 100 J2/100 cm³. We then use the density–yield relationship to calculate the fraction of yield loss avoided. This fraction is held constant across density scenarios, a simplifying assumption of the demonstration."
     },
     {
       "_template": "text",
-      "body": "The model combines yield relationships and economic parameters from different studies into a reproducible literature-based scenario. Testing costs are set at <strong>EUR 5/ha</strong> as a team assumption. Sources for prices, treatment costs, and derived treatment effects are retained so that these inputs can be updated for a specific application."
+      "body": "The model combines yield relationships and economic parameters from different studies into a reproducible literature-based scenario. Testing costs are set at EUR 5/ha as a team assumption. Sources for prices, treatment costs, and derived treatment effects are retained so that these inputs can be updated for a specific application."
     },
     {
       "_template": "heading",
@@ -211,7 +211,7 @@
     },
     {
       "_template": "text",
-      "body": "The management thresholds of <strong>10 and 80 J2/100 cm³</strong> are preset decision rules. They serve a different purpose from the yield model’s tolerance density of <strong>6 J2/100 cm³</strong>. The model separately compares the net income of all candidate treatments to check whether the preset choice matches the highest-income option under the current parameters."
+      "body": "The management thresholds of 10 and 80 J2/100 cm³ are preset decision rules. They serve a different purpose from the yield model’s tolerance density of 6 J2/100 cm³. The model separately compares the net income of all candidate treatments to check whether the preset choice matches the highest-income option under the current parameters."
     },
     {
       "_template": "text",
@@ -237,7 +237,7 @@
     },
     {
       "_template": "text",
-      "body": "At <strong>100 J2/100 cm³</strong>, with all other inputs held at their example values, the model gives:"
+      "body": "At 100 J2/100 cm³, with all other inputs held at their example values, the model gives:"
     },
     {
       "_template": "datatable",
@@ -290,7 +290,7 @@
     },
     {
       "_template": "text",
-      "body": "The <strong>EUR 17,028.48/ha</strong> increase represents the benefit of the combined program relative to leaving nematodes untreated. The <strong>EUR 496.26/ha</strong> increase represents the additional benefit of changing treatment relative to the uniform-treatment baseline. In this scenario, the extra losses avoided by the high-tier treatment cover both the additional treatment expense and the testing cost."
+      "body": "The EUR 17,028.48/ha increase represents the benefit of the combined program relative to leaving nematodes untreated. The EUR 496.26/ha increase represents the additional benefit of changing treatment relative to the uniform-treatment baseline. In this scenario, the extra losses avoided by the high-tier treatment cover both the additional treatment expense and the testing cost."
     },
     {
       "_template": "text",
@@ -302,7 +302,7 @@
     },
     {
       "_template": "text",
-      "body": "<strong>At intermediate densities,</strong> test-guided and uniform management use the same treatment. Their net-income difference is <strong>−EUR 5/ha</strong>, equal to the added testing cost."
+      "body": "<strong>At intermediate densities,</strong> test-guided and uniform management use the same treatment. Their net-income difference is −EUR 5/ha, equal to the added testing cost."
     },
     {
       "_template": "text",

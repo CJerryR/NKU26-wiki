@@ -292,20 +292,20 @@ The coefficients apply to this input definition and return <em>M. incognita</em>
 
 ## References and source materials {#model-ode-section-11 toc="References and source materials"}
 
-1. Fan, C., & Yuan, J. (2023). Reshaping the yeast galactose regulon via GPCR signaling cascade. *Cell Reports Methods*, 3(12), 100647. This work informs the sTF composed of a Ste12-responsive domain and a Gal4 DNA-binding domain, and its connection to the GAL system. [doi:10.1016/j.crmeth.2023.100647](https://doi.org/10.1016/j.crmeth.2023.100647).
+1. Fan, C., & Yuan, J. (2023). Reshaping the yeast galactose regulon via GPCR signaling cascade. *Cell Reports Methods, 3*(12), 100647. https://doi.org/10.1016/j.crmeth.2023.100647. This work informs the sTF composed of a Ste12-responsive domain and a Gal4 DNA-binding domain, and its connection to the GAL system.
 
-2. Fan, C., He, N., & Yuan, J. (2024). Cascaded amplifying circuit enables sensitive detection of fungal pathogens. *Biosensors and Bioelectronics*, 250, 116058. This work informs the cascaded amplification and betaxanthin output design. Supplementary Figure S4 presents EGFP time courses. [doi:10.1016/j.bios.2024.116058](https://doi.org/10.1016/j.bios.2024.116058).
+2. Fan, C., He, N., & Yuan, J. (2024). Cascaded amplifying circuit enables sensitive detection of fungal pathogens. *Biosensors and Bioelectronics, 250*, 116058. https://doi.org/10.1016/j.bios.2024.116058. This work informs the cascaded amplification and betaxanthin output design. Supplementary Figure S4 presents EGFP time courses.
 
-3. Supady, A. (2009). *Theoretical and computational analysis of negative feedback mechanisms and the dose-response alignment in the pheromone signalling pathway of the yeast Saccharomyces cerevisiae*. Bachelor’s thesis, Humboldt-Universität zu Berlin. Model B reactions, parameters, and initial conditions are given on PDF pages 48–49. [Original thesis](https://rumo.biologie.hu-berlin.de/tbp/images/Theses/bsc_supady.pdf).
+3. Supady, A. (2009). *Theoretical and computational analysis of negative feedback mechanisms and the dose-response alignment in the pheromone signalling pathway of the yeast Saccharomyces cerevisiae* [Bachelor’s thesis, Humboldt-Universität zu Berlin]. [Original thesis](https://rumo.biologie.hu-berlin.de/tbp/images/Theses/bsc_supady.pdf). Model B reactions, parameters, and initial conditions are given on PDF pages 48–49.
 
 4. TU Delft iGEM Team. (2012). *Single Cell Model; Reduced Model Details*. Relevant source material: Tables 4.1–4.3 of the model supplement.
 
-5. Kaplan, F., Srinivasan, J., Mahanti, P., et al. (2011). Ascaroside Expression in *Caenorhabditis elegans* Is Strongly Dependent on Diet and Developmental Stage. *PLOS ONE*, 6(3), e17804. [doi:10.1371/journal.pone.0017804](https://doi.org/10.1371/journal.pone.0017804).
+5. Kaplan, F., Srinivasan, J., Mahanti, P., Ajredini, R., Durak, O., Nimalendran, R., Sternberg, P. W., Teal, P. E. A., Schroeder, F. C., Edison, A. S., & Alborn, H. T. (2011). Ascaroside Expression in *Caenorhabditis elegans* Is Strongly Dependent on Diet and Developmental Stage. *PLOS ONE, 6*(3), e17804. https://doi.org/10.1371/journal.pone.0017804
 
-6. Manosalva, P., Manohar, M., von Reuss, S. H., et al. (2015). Conserved nematode signalling molecules elicit plant defenses and pathogen resistance. *Nature Communications*, 6, 7795. Secretion-profile evidence is discussed in the first Results section, Supplementary Figure 1, and Supplementary Table 1. [doi:10.1038/ncomms8795](https://doi.org/10.1038/ncomms8795).
+6. Manosalva, P., Manohar, M., von Reuss, S. H., Chen, S., Koch, A., Kaplan, F., Choe, A., Micikas, R. J., Wang, X., Kogel, K.-H., Sternberg, P. W., Williamson, V. M., Schroeder, F. C., & Klessig, D. F. (2015). Conserved nematode signalling molecules elicit plant defenses and pathogen resistance. *Nature Communications, 6*, 7795. https://doi.org/10.1038/ncomms8795. Secretion-profile evidence is discussed in the first Results section, Supplementary Figure 1, and Supplementary Table 1.
 
-7. Stücheli, P., Sieber, S., Fuchs, D. W., et al. (2020). Genetically encoded betaxanthin-based small-molecular fluorescent reporter for mammalian cells. *Nucleic Acids Research*, 48(12), e67. Smartphone quantification is described in “Smartphone-based betaxanthin quantification” and Figure 4. [doi:10.1093/nar/gkaa342](https://doi.org/10.1093/nar/gkaa342).
+7. Stücheli, P., Sieber, S., Fuchs, D. W., Scheller, L., Strittmatter, T., Saxena, P., Gademann, K., & Fussenegger, M. (2020). Genetically encoded betaxanthin-based small-molecular fluorescent reporter for mammalian cells. *Nucleic Acids Research, 48*(12), e67. https://doi.org/10.1093/nar/gkaa342. Smartphone quantification is described in “Smartphone-based betaxanthin quantification” and Figure 4.
 
-8. National Center for Biotechnology Information. *PubChem Compound Summary for CID 6096870, Indicaxanthin*. The molar mass used here is 308.29 g/mol. [Compound record](https://pubchem.ncbi.nlm.nih.gov/compound/Indicaxanthin).
+8. National Center for Biotechnology Information. (n.d.). *PubChem compound summary for CID 6096870: Indicaxanthin*. [Compound record](https://pubchem.ncbi.nlm.nih.gov/compound/Indicaxanthin). The molar mass used here is 308.29 g/mol.
 
 </div>

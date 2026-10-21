@@ -63,15 +63,15 @@ The interface retains both the density point estimate and its regression predict
 
 Our demonstration considers protected tomato production in Spain affected by <em>M. incognita</em>. It uses pre-plant nematode density and calculates net income per hectare for one growing season.
 
-We describe the relationship between density and relative yield using a Seinhorst model, with parameters from the spring experiment on ungrafted tomato reported by Expósito et al. (2020) <sup>[1]</sup>. Below the tolerance density, predicted relative yield remains at its baseline level. Above this density, relative yield declines toward a lower limit. In our example, the converted tolerance density is <strong>6 J2/100 cm³</strong> and the minimum relative yield is <strong>0.34</strong>.
+We describe the relationship between density and relative yield using a Seinhorst model, with parameters from the spring experiment on ungrafted tomato reported by Expósito et al. (2020) <sup>[1]</sup>. Below the tolerance density, predicted relative yield remains at its baseline level. Above this density, relative yield declines toward a lower limit. In our example, the converted tolerance density is 6 J2/100 cm³ and the minimum relative yield is 0.34.
 
 The economic calculation is:
 
 <strong>Seasonal net income = Revenue after residual nematode damage − Base production cost − Treatment cost − Testing cost</strong>
 
-Economic and treatment inputs draw on Talavera-Rubia et al. (2022) <sup>[2]</sup>. To represent treatment effects, we first apply the reported population-reduction rates at a reference density of <strong>100 J2/100 cm³</strong>. We then use the density–yield relationship to calculate the fraction of yield loss avoided. This fraction is held constant across density scenarios, a simplifying assumption of the demonstration.
+Economic and treatment inputs draw on Talavera-Rubia et al. (2022) <sup>[2]</sup>. To represent treatment effects, we first apply the reported population-reduction rates at a reference density of 100 J2/100 cm³. We then use the density–yield relationship to calculate the fraction of yield loss avoided. This fraction is held constant across density scenarios, a simplifying assumption of the demonstration.
 
-The model combines yield relationships and economic parameters from different studies into a reproducible literature-based scenario. Testing costs are set at <strong>EUR 5/ha</strong> as a team assumption. Sources for prices, treatment costs, and derived treatment effects are retained so that these inputs can be updated for a specific application.
+The model combines yield relationships and economic parameters from different studies into a reproducible literature-based scenario. Testing costs are set at EUR 5/ha as a team assumption. Sources for prices, treatment costs, and derived treatment effects are retained so that these inputs can be updated for a specific application.
 
 ## Comparing test-guided treatment with two baselines {#src-Model-Eco-28 toc="Comparing test-guided treatment with two baselines"}
 
@@ -81,7 +81,7 @@ An increase in income after testing can reflect both the benefit of nematode con
 
 The test-guided scenario follows the preset rules below. Treatment options are drawn from the literature <sup>[2]</sup>.
 
-The management thresholds of <strong>10 and 80 J2/100 cm³</strong> are preset decision rules. They serve a different purpose from the yield model’s tolerance density of <strong>6 J2/100 cm³</strong>. The model separately compares the net income of all candidate treatments to check whether the preset choice matches the highest-income option under the current parameters.
+The management thresholds of 10 and 80 J2/100 cm³ are preset decision rules. They serve a different purpose from the yield model’s tolerance density of 6 J2/100 cm³. The model separately compares the net income of all candidate treatments to check whether the preset choice matches the highest-income option under the current parameters.
 
 We calculate two net-income differences:
 
@@ -93,17 +93,17 @@ The first comparison evaluates the combined testing-and-control program. The sec
 
 ## When is density information worth obtaining? {#src-Model-Eco-40 toc="When is density information worth obtaining?"}
 
-At <strong>100 J2/100 cm³</strong>, with all other inputs held at their example values, the model gives:
+At 100 J2/100 cm³, with all other inputs held at their example values, the model gives:
 
 <div class="wiki-toolkit-block"><wiki-toolkit data-type="datatable" data-props="{&quot;_template&quot;:&quot;datatable&quot;,&quot;title&quot;:&quot;&quot;,&quot;csv&quot;:&quot;Comparison baseline,Increase in seasonal net income with test-guided treatment\n\&quot;No testing, no control\&quot;,\&quot;EUR 17,028.48/ha\&quot;\n\&quot;No testing, uniform treatment\&quot;,EUR 496.26/ha&quot;,&quot;sourceCellRuns&quot;:[[[{&quot;text&quot;:&quot;Comparison baseline&quot;,&quot;format&quot;:[]}],[{&quot;text&quot;:&quot;Increase in seasonal net income with test-guided treatment&quot;,&quot;format&quot;:[]}]],[[{&quot;text&quot;:&quot;No testing, no control&quot;,&quot;format&quot;:[]}],[{&quot;text&quot;:&quot;EUR 17,028.48/ha&quot;,&quot;format&quot;:[]}]],[[{&quot;text&quot;:&quot;No testing, uniform treatment&quot;,&quot;format&quot;:[]}],[{&quot;text&quot;:&quot;EUR 496.26/ha&quot;,&quot;format&quot;:[]}]]]}"><div class="wiki-toolkit-fallback"><div class="table-wrap"><table><thead><tr><th><span style="font-weight:400;white-space:pre-wrap">Comparison baseline</span></th><th><span style="font-weight:400;white-space:pre-wrap">Increase in seasonal net income with test-guided treatment</span></th></tr></thead><tbody><tr><td><span style="font-weight:400;white-space:pre-wrap">No testing, no control</span></td><td><span style="font-weight:400;white-space:pre-wrap">EUR 17,028.48/ha</span></td></tr><tr><td><span style="font-weight:400;white-space:pre-wrap">No testing, uniform treatment</span></td><td><span style="font-weight:400;white-space:pre-wrap">EUR 496.26/ha</span></td></tr></tbody></table></div></div><noscript><style>.wiki-toolkit-fallback{display:block!important}wiki-toolkit:not(:defined){min-height:0;border:0;background:none;animation:none}</style><p>Enable JavaScript to use the interactive controls.</p></noscript></wiki-toolkit></div>
 
-The <strong>EUR 17,028.48/ha</strong> increase represents the benefit of the combined program relative to leaving nematodes untreated. The <strong>EUR 496.26/ha</strong> increase represents the additional benefit of changing treatment relative to the uniform-treatment baseline. In this scenario, the extra losses avoided by the high-tier treatment cover both the additional treatment expense and the testing cost.
+The EUR 17,028.48/ha increase represents the benefit of the combined program relative to leaving nematodes untreated. The EUR 496.26/ha increase represents the additional benefit of changing treatment relative to the uniform-treatment baseline. In this scenario, the extra losses avoided by the high-tier treatment cover both the additional treatment expense and the testing cost.
 
 The role of density information changes across the density range:
 
 <strong>At low densities,</strong> testing may help avoid unnecessary treatment.
 
-<strong>At intermediate densities,</strong> test-guided and uniform management use the same treatment. Their net-income difference is <strong>−EUR 5/ha</strong>, equal to the added testing cost.
+<strong>At intermediate densities,</strong> test-guided and uniform management use the same treatment. Their net-income difference is −EUR 5/ha, equal to the added testing cost.
 
 <strong>At high densities,</strong> a more effective treatment is worthwhile when the additional losses avoided exceed its additional cost, including testing.
 

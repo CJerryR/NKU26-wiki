@@ -1,0 +1,10 @@
+/* Dedicated layout for the six MD trajectory embeds. */
+.model-manuscript .model-md-video-group { margin-block: 32px; }
+.model-manuscript .model-md-video-group h3 { margin: 0 0 16px; }
+.model-manuscript .model-md-video-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.model-manuscript .model-md-video { min-width: 0; margin: 0; }
+.model-manuscript .model-md-video iframe { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: 12px; background: #18131f; }
+.doc .prose .model-manuscript .model-md-video figcaption { margin: 10px 0 0; font-size: 14px; line-height: 1.55; font-weight: 400; text-align: left; }
+@media (max-width: 640px) {
+  .model-manuscript .model-md-video-grid { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+}

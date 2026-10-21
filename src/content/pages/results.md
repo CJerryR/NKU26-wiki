@@ -477,11 +477,9 @@ This cycle is hereby concluded. The strains constructed in this cycle can only f
 
 :::
 
-<p>Considering both the cell-binding capacity and the physical properties of each material, we select three substrates—GF/B, GF/A, and cellulose acetate—for the copper sulfate solution wicking experiment (Figure 30).</p>
+<p>Considering both the cell-binding capacity and the physical properties of each material, we select three substrates—GF/B, GF/A, and cellulose acetate—for the copper sulfate solution wicking experiment (Figure 30).</p><p>The results demonstrate that GF/B not only exhibits strong binding capacity with yeast cells but also possesses superior water absorption ability.</p>
 
 ::::
-
-<p>The results demonstrate that GF/B not only exhibits strong binding capacity with yeast cells but also possesses superior water absorption ability.Learn</p>
 
 #### Learn {#results-3-1-learn toc="Learn | selecting GF/B as the test-strip substrate"}
 
@@ -591,23 +589,21 @@ This cycle is hereby concluded. The strains constructed in this cycle can only f
 
 :::
 
-<p>Meanwhile, considering the field application scenarios of our product, we design a 3D-printed test strip cassette to hold the test strip (Figure 36), making the detection workflow simpler and more convenient.</p>
+<p>Meanwhile, considering the field application scenarios of our product, we design a 3D-printed test strip cassette to hold the test strip (Figure 36), making the detection workflow simpler and more convenient.</p><p>At this point, we have closed the loop on test strip fabrication and application, establishing a solid foundation for subsequent on-site rapid detection of soil samples.</p>
 
 ::::
 
-<p>At this point, we have closed the loop on test strip fabrication and application, establishing a solid foundation for subsequent on-site rapid detection of soil samples.</p>
-
 ### 3.4 References {#results-dbtl3-references toc="References"}
 
-<p>Rachel A. Miller, Galen Brown, Elsa Barron, Jamie L. Luther, Marya Lieberman, Holly V. Goodson; Development of a paper-immobilized yeast biosensor for the detection of physiological concentrations of doxycycline in technology-limited settings. <em>Anal. Methods</em> 2020; 12 (16): 2123–2132. <a href="https://doi.org/10.1039/d0ay00001a">https://doi.org/10.1039/d0ay00001a</a></p>
+<p>Miller, R. A., Brown, G., Barron, E., Luther, J. L., Lieberman, M., &amp; Goodson, H. V. (2020). Development of a paper-immobilized yeast biosensor for the detection of physiological concentrations of doxycycline in technology-limited settings. <em>Analytical Methods, 12</em>(16), 2123–2132. <a href="https://doi.org/10.1039/d0ay00001a">https://doi.org/10.1039/d0ay00001a</a></p>
 
-<p>Parbir S. Grewal, Cyrus Modavi, Zachary N. Russ, Nicholas C. Harris, John E. Dueber, Bioproduction of a betalain color palette in Saccharomyces cerevisiae, Metabolic Engineering, Volume 45, 2018, Pages 180-188, ISSN 1096-7176, <a href="https://doi.org/10.1016/j.ymben.2017.12.008">https://doi.org/10.1016/j.ymben.2017.12.008</a>.</p>
+<p>Grewal, P. S., Modavi, C., Russ, Z. N., Harris, N. C., &amp; Dueber, J. E. (2018). Bioproduction of a betalain color palette in <em>Saccharomyces cerevisiae</em>. <em>Metabolic Engineering, 45</em>, 180–188. <a href="https://doi.org/10.1016/j.ymben.2017.12.008">https://doi.org/10.1016/j.ymben.2017.12.008</a></p>
 
-<p>Ostrov N, Jimenez M, Billerbeck S, et al. A modular yeast biosensor for low-cost point-of-care pathogen detection. Sci Adv. 2017;3(6):e1603221. doi:10.1126/sciadv.1603221.</p>
+<p>Ostrov, N., Jimenez, M., Billerbeck, S., Brisbois, J., Matragrano, J., Ager, A., &amp; Cornish, V. W. (2017). A modular yeast biosensor for low-cost point-of-care pathogen detection. <em>Science Advances, 3</em>(6), e1603221. <a href="https://doi.org/10.1126/sciadv.1603221">https://doi.org/10.1126/sciadv.1603221</a></p>
 
-<p>Shin HJ, Park HH, Lim WK. Freeze-dried recombinant bacteria for on-site detection of phenolic compounds by color change. J Biotechnol. 2005;119(1):36-43. doi:10.1016/j.jbiotec.2005.06.002.</p>
+<p>Shin, H. J., Park, H. H., &amp; Lim, W. K. (2005). Freeze-dried recombinant bacteria for on-site detection of phenolic compounds by color change. <em>Journal of Biotechnology, 119</em>(1), 36–43. <a href="https://doi.org/10.1016/j.jbiotec.2005.06.002">https://doi.org/10.1016/j.jbiotec.2005.06.002</a></p>
 
-<p>Poirier I, Marechal PA, Richard S, Gervais P. Saccharomyces cerevisiae viability is strongly dependant on rehydration kinetics and the temperature of dried cells. J Appl Microbiol. 1999;86(1):87-92. doi:10.1046/j.1365-2672.1999.00638.x.</p>
+<p>Poirier, I., Maréchal, P. A., Richard, S., &amp; Gervais, P. (1999). Saccharomyces cerevisiae viability is strongly dependant on rehydration kinetics and the temperature of dried cells. <em>Journal of Applied Microbiology, 86</em>(1), 87–92. <a href="https://doi.org/10.1046/j.1365-2672.1999.00638.x">https://doi.org/10.1046/j.1365-2672.1999.00638.x</a></p>
 
 ## Future work {#results-future-work toc="Future work"}
 
@@ -625,7 +621,7 @@ This cycle is hereby concluded. The strains constructed in this cycle can only f
 
 <p>Samples 1 and 2: Express distinct GPR2 receptor variants to provide paired readings for profiling specific soil ascarosides.</p>
 
-<figure class="wiki-media wiki-media--html"><iframe class="wiki-media__frame" src="/widgets/html.html?title=Five-unit+test+card+design+and+reading+guide&amp;src=%2Fembeds%2Fresults-future-work-20261021%2Findex.html&amp;scripts=1" title="Five-unit test card design and reading guide" loading="lazy" allow="fullscreen" style="height:1050px" referrerpolicy="no-referrer"></iframe></figure>
+<figure class="wiki-media wiki-media--html"><iframe class="wiki-media__frame" src="/widgets/html.html?title=Five-unit+test+card+design+and+reading+guide&amp;src=%2Fembeds%2Fresults-future-work-20261021%2Findex.html&amp;scripts=1" title="Five-unit test card design and reading guide" loading="lazy" allow="fullscreen" style="height:900px" referrerpolicy="no-referrer"></iframe></figure>
 
 <p>Ultimately, our vision is to empower growers with an intuitive testing tool—requiring nothing more than a simple pour, an observation, and a photograph to bring reliable, real-time soil diagnostics directly to where it is needed most.</p>
 

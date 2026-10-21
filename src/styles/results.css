@@ -3,3 +3,16 @@
 .results-timelapse figcaption { margin-top:10px; font-size:13px; line-height:1.5; color:var(--ink-2); }
 
 .results-timelapse iframe { border:0; height:auto; }
+
+/* Keep the tall spotting-device photo compact as a whole card on desktop. */
+.doc[data-page="results"] .figure-text--wrap > .figure:has(> .figure__media img[data-author-original="https://static.igem.wiki/teams/6303/wiki/release-20261020/results-spotting-device-20751c382bee.json"]) {
+  max-width:240px;
+}
+.doc[data-page="results"] .figure-text--wrap > .figure figcaption {
+  color:var(--figure-panel-ink) !important;
+}
+@media (max-width:760px) {
+  .doc[data-page="results"] .figure-text--wrap > .figure:has(> .figure__media img[data-author-original="https://static.igem.wiki/teams/6303/wiki/release-20261020/results-spotting-device-20751c382bee.json"]) {
+    max-width:none;
+  }
+}
