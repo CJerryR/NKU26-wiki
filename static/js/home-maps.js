@@ -425,6 +425,23 @@
     function rng(b) { return b[1] == null ? '\u2265 ' + b[0] : b[0] === b[1] ? String(b[0]) : b[0] + '\u2013' + b[1]; }
     var nSites = function (a) { return a.reduce(function (s, x) { return s + x.n; }, 0); };
     var soilProv = {}; SS.forEach(function (s) { soilProv[s.province] = 1; });
+    var tibet = SS.filter(function (s) { return s.id === 'lab-tibet'; })[0];
+    var soilViews = H.$('[data-soil-views]', sec), soilChart = H.$('[data-soil-chart]', sec);
+    var soilButtons = H.$$('[data-soil-view]', sec), soilView = 'tibet';
+    var soilRows = H.$('[data-soil-rows]', sec);
+    if (soilRows && tibet && tibet.entries) soilRows.innerHTML = tibet.entries.slice().sort(function (a, b) { return b.n - a.n; }).map(function (s) {
+      return '<li title="' + s.place + ' · ' + s.soil + '"><span class="hp2__soil-label">' + s.short + '<small>' + s.soil + '</small></span><span class="hp2__soil-track"><i style="width:' + (s.n / 40 * 100) + '%"></i></span><b>' + s.n + '</b></li>';
+    }).join('');
+    function updateSoilView() {
+      var active = sec.getAttribute('data-hp-active') === 'soil';
+      if (soilViews) soilViews.hidden = !active;
+      if (soilChart) soilChart.hidden = !active || soilView !== 'tibet';
+      fig.classList.toggle('is-soil-chart', active && soilView === 'tibet');
+      var legend = H.$('[data-hp-legend="2"]', sec);
+      if (active && legend) legend.innerHTML = soilView === 'tibet' ? '<span class="hp2__lgt">Tibet breakdown: linear sample counts</span><span>18 source entries · 4–38 samples per entry</span>' : LEG[2];
+      soilButtons.forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-soil-view') === soilView ? 'true' : 'false'); });
+    }
+    soilButtons.forEach(function (b) { b.addEventListener('click', function () { soilView = b.getAttribute('data-soil-view'); updateSoilView(); H.tip(null); }); });
 
     /* ---------- the copy column: figures, legends, sources ---------- */
     var STAT = [
@@ -447,7 +464,7 @@
     var NOTE = [
       'Questionnaire, ' + SV.first + ' to ' + SV.last + ' (n = ' + SV.responses + '), self-reported province',
       'Team sign-up sheet; markers at county or district seats',
-      'Soil collection records updated 19 Oct 2026. Tibet is a regional aggregate; markers indicate approximate source areas.'
+      'Soil collection records; Tibet details updated 21 Oct 2026. Compare 18 recorded sources in the Tibet breakdown. Map markers indicate approximate source areas.'
     ];
     var noteEl = H.$('[data-hp-note]', sec);
     /* the same records as text, for screen readers */
@@ -723,6 +740,7 @@
     function show(i) {
       if (i === cur) return;
       var was = cur; cur = i;
+      sec.setAttribute('data-hp-active', KINDS[i]); updateSoilView();
       layers.forEach(function (L, j) { L.cv.classList.toggle('is-on', j === i); if (j === was) L.fadeUntil = performance.now() + 850; });
       tabs.forEach(function (t, j) { t.setAttribute('aria-selected', j === i ? 'true' : 'false'); t.tabIndex = j === i ? 0 : -1; });
       sec.style.setProperty('--hpc', COL[i]);
@@ -741,6 +759,7 @@
     });
     var tipT = 0;
     function move(e) {
+      if (fig.classList.contains('is-soil-chart') || e.target.closest('[data-soil-views]')) return;
       var r = fig.getBoundingClientRect(); mouse = [e.clientX - r.left, e.clientY - r.top];
       kick();
       clearTimeout(tipT);
