@@ -1,3 +1,7 @@
+## V10.2.39
+
+DBTL stages followcontentheight;latestuserclassroomphoto acrossallreferences;sharedwarmfigureday/night surfaces andcaptioncolors. Scientifictext andMemberscontent retained.
+
 ## V10.2.38
 
 Subpage copy andtable normalization;Results Future work andlatestinteractiveattachment;term-only unbolding,chapterspacing andMembers title. V37 HP/Modellinks,EngineeringDBTL andProjectcomparisonpreserved.

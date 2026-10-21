@@ -1,5 +1,5 @@
 {
-  "version": "10.2.38",
+  "version": "10.2.39",
   "label": "Engineering scroll-linked half-ring DBTL cycles",
   "prepared_at": "2026-10-21T05:02:59.579051+08:00",
   "media": "84 unchanged original images plus 4 user-authorized GPS-only cleaned images; all decoded frames unchanged; 12 complete historical source documents",
@@ -465,5 +465,14 @@
     ],
     "scope": "Subpage normalization;latestResultsFuturework andinteraction;term-onlyunbold;chapterspacing;Members title;newestHPpreserved",
     "previous": "323aa9f3109f2081508b5c411a7d12c60e75250a"
+  },
+  "dbtl_spacing_and_figure_theme": {
+    "source_commits": [
+      "4685639276abf9d5b985837e596dae28dbf0eee0",
+      "199f1b248824641dc8d28cbdcd7528e859e974a6",
+      "561dbf2ce5d18b21121bdcfb6b20306e7b30c094"
+    ],
+    "scope": "Content-sizedDBTLstages;latest classroomphoto;uniformwarmfigureday/night backgrounds anddarkcaptions",
+    "previous": "34357bfd8ecc4e3bab109c98fb26beece81376fe"
   }
 }
