@@ -98,9 +98,13 @@ html[data-page="opening"] .detective__action{opacity:0;transform:translate(-50%,
    pages and panels are scaled as a whole, so they keep their 1080p layout
    instead of shrinking into the middle of a 4K screen. The 3D scenes and the
    traces story already size themselves to the screen. */
-html.home-big #explore > .wrap{scale:var(--home-k);transform-origin:50% 0}
+html.home-big #explore > .wrap{scale:var(--home-k);transform-origin:50% 50%}
 html.home-big #loop > .wrap,html.home-big #hp .hp2__inner{scale:var(--home-k);transform-origin:50% 50%}
 html.home-big .cz__head,html.home-big .cz__bar,html.home-big .cz__card.cz__read{scale:var(--home-k);transform-origin:0 0}
 /* --readTop is measured on screen (scaled); the gap under the switch is not */
 html.home-big .cz__card.cz__read{top:calc(var(--readTop,360px) + 58px * var(--home-k))}
 html.home-big .cz__read-body{max-height:calc((100svh - var(--readTop,360px) - 110px * var(--home-k)) / var(--home-k))}
+
+/* Center the closing overview as one group below the navigation. The scaled
+   wrapper uses its center too, so 4K scaling preserves the vertical balance. */
+html.is-paged .home .ex--one{justify-content:center;padding:78px 0 30px}
