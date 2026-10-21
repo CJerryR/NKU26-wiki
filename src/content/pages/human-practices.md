@@ -83,7 +83,7 @@ Figure 3. Examining the detection concept through expert interviews. Discussions
 
 [![Geographic origins of samples gathered through our soil collection initiative.](https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-14ed4e8aeca3.webp)](https://static.igem.wiki/teams/6303/wiki/hp-20261021/hp-14ed4e8aeca3.webp "Open full-resolution image")
 
-Figure 4. Geographic origins of samples gathered through our soil collection initiative. Samples from different agricultural and environmental settings connect local conditions with future studies of soil backgrounds, sample preparation, and sensor responses. Markers indicate approximate source areas; samples from Tibet are grouped at the regional level. Source: the interactive soil programme map on our [Wiki home page](/#hp).
+Figure 4. Geographic origins of samples gathered through our soil collection initiative. Samples from different agricultural and environmental settings connect local conditions with future studies of soil backgrounds, sample preparation, and sensor responses. Markers indicate approximate source areas; in this snapshot, samples from Tibet are grouped at the regional level, while the home page map shows all 18 Tibet source locations. Source: the interactive soil programme map on our [Wiki home page](/#hp).
 
 :::
 

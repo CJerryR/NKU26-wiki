@@ -656,26 +656,3 @@ html.is-paged .home .lf{padding:76px 0 22px}
 .cz .nk-zoom__label small{display:block;margin-top:3px;color:#f5ecdc;font-size:11px;font-weight:400}
 .cz .nk-zoom__label::after{content:"";position:absolute;left:50%;top:100%;height:22px;border-left:2px solid #ffe3a3}
 @media(max-width:859px){.cz__head .h-display{font-size:30px}.cz__subtitle{margin-top:6px;font-size:15px}}
-
-/* Tibet source counts share a zero-based linear scale; the national map remains available. */
-.hp2__soil-views[hidden],.hp2__soil-chart[hidden]{display:none}
-.hp2__soil-views{position:absolute;top:0;left:0;right:0;z-index:3;display:flex;justify-content:center;flex-wrap:wrap;gap:8px}
-.hp2__soil-views button{border:1px solid #9aa7ff66;border-radius:20px;padding:8px 14px;color:#e4e8ff;background:#21152f;font:inherit;font-size:13px;cursor:pointer}
-.hp2__soil-views button[aria-pressed="true"]{background:#9aa7ff;color:#170c1f}
-.hp2__soil-views button:focus-visible{outline:2px solid #ffd66b;outline-offset:3px}
-.hp2__soil-chart{position:absolute;inset:48px 0 0;z-index:2;padding:16px 20px;overflow:auto;border:1px solid #9aa7ff44;border-radius:18px;background:#1c1229;color:#e4e8ff;overscroll-behavior:contain;scrollbar-width:thin}
-.hp2__soil-chart h3{margin:0;font-size:22px;font-weight:560;color:#fff}
-.hp2__soil-chart>p{margin:6px 0 12px;font-size:12px;line-height:1.5;color:#c2bed0}
-.hp2__soil-axis{margin:0 32px 4px 154px;display:flex;justify-content:space-between;font-size:11px;color:#c2bed0}
-.hp2__soil-chart ol{margin:0;padding:0;list-style:none}
-.hp2__soil-chart li{display:grid;grid-template-columns:144px minmax(0,1fr) 22px;align-items:center;gap:10px;min-height:38px;border-bottom:1px solid #ffffff0c;font-size:12px}
-.hp2__soil-label{line-height:1.25}.hp2__soil-label small{display:block;margin-top:2px;color:#c2bed0;font-size:10px}
-.hp2__soil-track{height:22px;background:repeating-linear-gradient(90deg,#ffffff15 0 1px,transparent 1px 25%)}
-.hp2__soil-track i{display:block;height:100%;background:#9aa7ff;border-radius:0 4px 4px 0}
-.hp2__soil-chart li b{font-size:13px;font-variant-numeric:tabular-nums;color:#fff;text-align:right}
-.hp2__soil-chart>a{display:block;margin-top:14px;font-size:12px;color:#c6ceff}
-.hp2__map.is-soil-chart canvas{visibility:hidden}
-@media(max-width:700px){.hp2__soil-chart{padding:14px 12px}.hp2__soil-chart li{grid-template-columns:104px minmax(0,1fr) 22px;gap:7px;min-height:42px}.hp2__soil-axis{margin-left:111px;margin-right:29px}.hp2__soil-views button{font-size:11px;padding:8px 10px}.hp2__soil-chart h3{font-size:20px}}
-.hp2:has(.is-soil-chart) .hp2__copy{transform:none}
-.hp2__soil-chart li{min-height:32px}
-@media(max-width:700px){.hp2__soil-chart li{min-height:42px}}

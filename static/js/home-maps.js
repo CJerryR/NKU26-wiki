@@ -395,7 +395,7 @@
    * Survey   = province choropleth, 5 classes, boundaries from the Standard
    *            Map of China GS(2022)4303; outline + South China Sea GS(2022)4308.
    * Teaching = 8 sites, circle AREA proportional to students signed up.
-   * Soil     = logged source areas, bar HEIGHT mapped to log2(samples + 1).
+   * Soil     = logged source areas, bar HEIGHT mapped to sqrt(samples).
    * Projection is unchanged (the ascaroside story hands its outline over). */
   var HP = window.NKU_HP;
   var CLS = ['#6b2a8f', '#b03a86', '#e65a62', '#fb9b5f', '#fde6a3'];   // magma-like, dark -> light = few -> many
@@ -418,30 +418,13 @@
     var tabs = H.$$('[data-hp-tab]', sec);
     var SV = HP.survey, TS = HP.teach.sites, SS = HP.soil.sites;
     var SMAX = Math.max.apply(null, SS.map(function (s) { return s.n; }));
-    function soilHeightFraction(n) { return Math.log1p(n) / Math.log1p(SMAX); }
+    function soilHeightFraction(n) { return Math.sqrt(n / SMAX); }
     var BY = {}; SV.byProvince.forEach(function (p) { BY[p.en] = p; });
     var BR = SV.breaks;
     function cls(n) { if (!n) return -1; for (var i = 0; i < BR.length; i++) if (n >= BR[i][0] && (BR[i][1] == null || n <= BR[i][1])) return i; return BR.length - 1; }
     function rng(b) { return b[1] == null ? '\u2265 ' + b[0] : b[0] === b[1] ? String(b[0]) : b[0] + '\u2013' + b[1]; }
     var nSites = function (a) { return a.reduce(function (s, x) { return s + x.n; }, 0); };
     var soilProv = {}; SS.forEach(function (s) { soilProv[s.province] = 1; });
-    var tibet = SS.filter(function (s) { return s.id === 'lab-tibet'; })[0];
-    var soilViews = H.$('[data-soil-views]', sec), soilChart = H.$('[data-soil-chart]', sec);
-    var soilButtons = H.$$('[data-soil-view]', sec), soilView = 'tibet';
-    var soilRows = H.$('[data-soil-rows]', sec);
-    if (soilRows && tibet && tibet.entries) soilRows.innerHTML = tibet.entries.slice().sort(function (a, b) { return b.n - a.n; }).map(function (s) {
-      return '<li title="' + s.place + ' · ' + s.soil + '"><span class="hp2__soil-label">' + s.short + '<small>' + s.soil + '</small></span><span class="hp2__soil-track"><i style="width:' + (s.n / 40 * 100) + '%"></i></span><b>' + s.n + '</b></li>';
-    }).join('');
-    function updateSoilView() {
-      var active = sec.getAttribute('data-hp-active') === 'soil';
-      if (soilViews) soilViews.hidden = !active;
-      if (soilChart) soilChart.hidden = !active || soilView !== 'tibet';
-      fig.classList.toggle('is-soil-chart', active && soilView === 'tibet');
-      var legend = H.$('[data-hp-legend="2"]', sec);
-      if (active && legend) legend.innerHTML = soilView === 'tibet' ? '<span class="hp2__lgt">Tibet breakdown: linear sample counts</span><span>18 source entries · 4–38 samples per entry</span>' : LEG[2];
-      soilButtons.forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-soil-view') === soilView ? 'true' : 'false'); });
-    }
-    soilButtons.forEach(function (b) { b.addEventListener('click', function () { soilView = b.getAttribute('data-soil-view'); updateSoilView(); H.tip(null); }); });
 
     /* ---------- the copy column: figures, legends, sources ---------- */
     var STAT = [
@@ -457,14 +440,14 @@
         '<span class="hp2__chip"><i class="is-none"></i>none</span></span>',
       '<span class="hp2__lgt">Circle area = students signed up</span><span class="hp2__sizes">' +
         [10, 50, 130].map(function (n) { var d = Math.round(26 * Math.sqrt(n / 130)); return '<span><i style="width:' + d + 'px;height:' + d + 'px"></i>' + n + '</span>'; }).join('') + '</span>',
-      '<span class="hp2__lgt">Bar height: log<sub>2</sub>(samples + 1)</span><span class="hp2__bars">' +
-        [1, 3, 5, 25, SMAX].map(function (n) { return '<span><i style="height:' + (26 * soilHeightFraction(n)).toFixed(1) + 'px"></i>' + n + '</span>'; }).join('') + '</span>'
+      '<span class="hp2__lgt">Bar height \u221d \u221asamples</span><span class="hp2__bars">' +
+        [1, 5, 10, 25, SMAX].map(function (n) { return '<span><i style="height:' + (26 * soilHeightFraction(n)).toFixed(1) + 'px"></i>' + n + '</span>'; }).join('') + '</span>'
     ];
     LEG.forEach(function (h, i) { var el = H.$('[data-hp-legend="' + i + '"]', sec); if (el) el.innerHTML = h; });
     var NOTE = [
       'Questionnaire, ' + SV.first + ' to ' + SV.last + ' (n = ' + SV.responses + '), self-reported province',
       'Team sign-up sheet; markers at county or district seats',
-      'Soil collection records; Tibet details updated 21 Oct 2026. Compare 18 recorded sources in the Tibet breakdown. Map markers indicate approximate source areas.'
+      'Soil collection records; Tibet source locations updated 21 Oct 2026. Markers indicate approximate source areas.'
     ];
     var noteEl = H.$('[data-hp-note]', sec);
     /* the same records as text, for screen readers */
@@ -588,7 +571,7 @@
       items.slice().sort(function (a, b) { return b.r - a.r; }).forEach(function (L) {
         var w = c.measureText(L.t).width + 4, g = L.r + 4, best = null;
         var cand = [];
-        [g, g + 16].forEach(function (d) { cand.push([d, -H2 / 2], [-d - w, -H2 / 2], [-w / 2, -d - H2], [-w / 2, d], [d * .7, -d * .7 - H2], [d * .7, d * .7], [-d * .7 - w, -d * .7 - H2], [-d * .7 - w, d * .7]); });
+        [g, g + 16, g + 32].forEach(function (d) { cand.push([d, -H2 / 2], [-d - w, -H2 / 2], [-w / 2, -d - H2], [-w / 2, d], [d * .7, -d * .7 - H2], [d * .7, d * .7], [-d * .7 - w, -d * .7 - H2], [-d * .7 - w, d * .7]); });
         for (var k = 0; k < cand.length && !best; k++) {
           var bx = { x: L.x + cand[k][0], y: L.y + cand[k][1], w: w, h: H2 }, ok = bx.x > 2 && bx.x + w < V.w - 2;
           boxes.forEach(function (b) { if (bx.x < b.x + b.w && bx.x + bx.w > b.x && bx.y < b.y + b.h && bx.y + bx.h > b.y) ok = false; });
@@ -598,6 +581,7 @@
           });
           if (ok) { best = bx; best.far = k >= 8; }
         }
+        if (!best && L.optional) return;   // dense clusters (Tibet): the tooltip carries labels that do not fit
         best = best || { x: L.x + g, y: L.y - H2 / 2, w: w, h: H2 };
         boxes.push(best);
         if (best.far) {   // moved out to the second ring: tie it back to its marker
@@ -607,7 +591,7 @@
         label(c, L.t, best.x + 2, best.y + H2 / 2, 'left', 12, col);
       });
     }
-    /* ---------- soil: one bar per source area; log2(n + 1) keeps small counts visible ---------- */
+    /* ---------- soil: one bar per source area; sqrt(n) keeps small counts visible without flattening large ones ---------- */
 
     function makeLayer(kind, cv) {
       var ctx = null, introT = -1, m = { kind: kind, cv: cv, hot: null, fadeUntil: 0 }, tpts = [], mesh = [];
@@ -687,16 +671,17 @@
           c.beginPath();
           mesh.forEach(function (e, i) { if (i / mesh.length > it * 1.3) return; var a = P3(e[0][0], e[0][1]), b = P3(e[1][0], e[1][1]); c.moveTo(a[0], a[1]); c.lineTo(b[0], b[1]); });
           c.stroke();
-          var HB = V.hmax * 0.9, col = '#9aa7ff', tops = [];
+          var HB = V.hmax * 0.9, col = '#9aa7ff', tops = [], stag = Math.min(0.08, 1.04 / Math.max(1, SS.length - 1));   // the whole cascade still ends with the intro
           SS.slice().sort(function (a, b) { return b.ll[1] - a.ll[1]; }).forEach(function (s, i) {
-            var k = H.ease(H.clamp((it * 1.8 - i * 0.08) * 2, 0, 1)), q = P3(s.ll[0], s.ll[1]), hh = Math.max(3, soilHeightFraction(s.n) * HB) * k;
+            var k = H.ease(H.clamp((it * 1.8 - i * stag) * 2, 0, 1)), q = P3(s.ll[0], s.ll[1]), hh = Math.max(3, soilHeightFraction(s.n) * HB) * k;
             var near = mouse && Math.abs(mouse[0] - q[0]) < 9 && mouse[1] < q[1] + 7 && mouse[1] > q[1] - hh - 18; if (near) hot = { s: s };
             c.fillStyle = 'rgba(255,255,255,.55)'; c.beginPath(); c.ellipse(q[0], q[1], 5, 2.2, 0, 0, 6.29); c.fill();
             var g = c.createLinearGradient(0, q[1], 0, q[1] - hh); g.addColorStop(0, col + '55'); g.addColorStop(1, col);
             c.fillStyle = near ? '#c9d0ff' : g; c.fillRect(q[0] - (near ? 4 : 3), q[1] - hh, near ? 8 : 6, hh);
             c.fillStyle = '#e4e8ff'; c.shadowColor = col; c.shadowBlur = near ? 16 : 8; c.beginPath(); c.arc(q[0], q[1] - hh, near ? 3.6 : 2.6, 0, 6.29); c.fill(); c.shadowBlur = 0;
-            if (k > 0.9) tops.push({ x: q[0], y: q[1] - hh, r: 5, t: s.short + ' ' + s.n, bar: [q[0] - 4, q[1] - hh, 8, hh] });
+            if (k > 0.9) tops.push({ x: q[0], y: q[1] - hh, r: 5, t: s.short + ' ' + s.n, n: s.n, optional: s.prec === 'town' && s.n < 30, bar: [q[0] - 4, q[1] - hh, 8, hh] });
           });
+          tops.sort(function (a, b) { return (a.optional - b.optional) || b.n - a.n; });
           if (tops.length) placeLabels(c, tops, tops.map(function (t) { return { rx: t.bar[0], ry: t.bar[1], rw: t.bar[2], rh: t.bar[3] + 3 }; }).concat(tops), '#e4e8ff');
         }
         m.hot = hot;
@@ -740,7 +725,6 @@
     function show(i) {
       if (i === cur) return;
       var was = cur; cur = i;
-      sec.setAttribute('data-hp-active', KINDS[i]); updateSoilView();
       layers.forEach(function (L, j) { L.cv.classList.toggle('is-on', j === i); if (j === was) L.fadeUntil = performance.now() + 850; });
       tabs.forEach(function (t, j) { t.setAttribute('aria-selected', j === i ? 'true' : 'false'); t.tabIndex = j === i ? 0 : -1; });
       sec.style.setProperty('--hpc', COL[i]);
@@ -759,7 +743,6 @@
     });
     var tipT = 0;
     function move(e) {
-      if (fig.classList.contains('is-soil-chart') || e.target.closest('[data-soil-views]')) return;
       var r = fig.getBoundingClientRect(); mouse = [e.clientX - r.left, e.clientY - r.top];
       kick();
       clearTimeout(tipT);
