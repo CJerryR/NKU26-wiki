@@ -614,6 +614,12 @@ export function slugify(value, used) {
   return slug;
 }
 
+function cleanTocLabel(value) {
+  // Remove short authored chapter prefixes from outline labels only. The 1–2
+  // digit boundary keeps names such as "3D", "24-hour" and "2026 field work" intact.
+  return String(value).replace(/^\s*\d{1,2}(?:\.\d+)*[.)]?\s+/, '').trim();
+}
+
 function finalize(tree, file) {
   const headings = [];
   eachNode(tree, (n) => { if (n.type === 'heading') headings.push(n); });
@@ -631,25 +637,20 @@ function finalize(tree, file) {
 
   const rootH2 = new Set(tree.children.filter((c) => c.type === 'heading' && c.depth === 2));
   const toc = [];
-  let n = 0;
-  let sub = 0;
-  let numberedSection = false;
+  let tocSection = 0;
+  let bodySection = 0;
   for (const h of headings) {
     const a = attrsOf(h);
     const id = h.data.hProperties.id;
     if (h.depth === 2 && rootH2.has(h) && !('notoc' in a)) {
-      sub = 0;
-      numberedSection = !('unnumbered' in a);
-      const num = numberedSection ? String(++n).padStart(2, '0') : undefined;
-      if (num) h.data.hProperties['data-num'] = num;
+      const num = String(++tocSection).padStart(2, '0');
+      if (!('unnumbered' in a)) h.data.hProperties['data-num'] = String(++bodySection).padStart(2, '0');
       h.data.tocText = a.toc || toText(h);
-      toc.push({ depth: 2, id, text: h.data.tocText, num });
+      toc.push({ depth: 2, id, text: cleanTocLabel(h.data.tocText), num });
     } else if (h.depth === 3 && 'toc' in a) {
-      const sectionNum = numberedSection ? `${n}.${++sub}` : undefined;
-      const num = 'toc-unnumbered' in a ? undefined : sectionNum;
-      toc.push({ depth: h.depth, id, text: a.toc || toText(h), num });
+      toc.push({ depth: h.depth, id, text: cleanTocLabel(a.toc || toText(h)) });
     } else if (h.depth >= 4 && h.depth <= 6 && 'toc' in a) {
-      toc.push({ depth: h.depth, id, text: a.toc || toText(h) });
+      toc.push({ depth: h.depth, id, text: cleanTocLabel(a.toc || toText(h)) });
     }
   }
 

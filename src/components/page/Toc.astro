@@ -25,7 +25,7 @@ const { items, title } = Astro.props;
         <li class="toc__film" data-toc-film aria-hidden="true"></li>
         {items.map((item) => (
           <li class:list={['toc__item', `toc__item--${item.depth}`]}>
-            <a href={`#${item.id}`} data-toc-link>{item.num && <span class="toc__num">{item.num}</span>}<span class="toc__text">{item.text}</span></a>
+            <a href={`#${item.id}`} data-toc-link>{item.depth === 2 && item.num && <span class="toc__num">{item.num}</span>}<span class="toc__text">{item.text}</span></a>
           </li>
         ))}
       </ol>
