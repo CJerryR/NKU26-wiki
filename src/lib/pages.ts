@@ -4,8 +4,8 @@ export type PageEntry = CollectionEntry<'pages'>;
 
 /** Pages filled from the team's supplied material use the approved reading layout. */
 export const submittedPages = new Set([
-  'description', 'attributions', 'members', 'experiments', 'protocols',
-  'contribution', 'engineering', 'results', 'parts', 'part-collection', 'model', 'background',
+  'description', 'attributions', 'members', 'experiments',
+  'contribution', 'engineering', 'results', 'parts', 'model', 'background',
   'model-docking', 'model-md', 'model-ode', 'model-eco',
   'hp-overview', 'hp-investigation', 'hp-industry', 'human-practices', 'education', 'safety',
   'education', 'safety',

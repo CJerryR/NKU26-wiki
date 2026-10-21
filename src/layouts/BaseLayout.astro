@@ -4,26 +4,21 @@ import '../styles/global.css';
 import SiteNav from '../components/site/SiteNav.astro';
 import SiteFooter from '../components/site/SiteFooter.astro';
 import SearchDialog from '../components/site/SearchDialog.astro';
-import ChangeNotice from '../components/site/ChangeNotice.astro';
-import ReviewPreferences from '../components/site/ReviewPreferences.astro';
-import { SHOW_REVIEW_TOOLS } from '../data/review-tools';
 import Mascot from '../components/site/Mascot.astro';
 import { site } from '../data/site';
 
 interface Props {
   title: string; description?: string; current?: string;
-  comparison?: boolean;
   /** Where "Skip to content" lands (an inner page's article, past its hero). */
   skipTo?: string;
   /** Images the first screen needs at once, each for its own media query. */
   preload?: { href: string; media: string }[];
 }
-const { title, description = site.description, current, skipTo = '#main', preload = [], comparison = false } = Astro.props;
+const { title, description = site.description, current, skipTo = '#main', preload = [] } = Astro.props;
 ---
 <!DOCTYPE html>
 <html lang="en" data-root="/">
   <head>
-    {SHOW_REVIEW_TOOLS && !comparison && <ReviewPreferences />}
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>{`${title} / ${site.title}`}</title>
@@ -51,13 +46,12 @@ const { title, description = site.description, current, skipTo = '#main', preloa
   </head>
   <body class="wiki" data-page-title={title}>
     <a class="skip-link" href={skipTo}>Skip to content</a>
-    <SiteNav current={current} showReviewTools={!comparison} />
+    <SiteNav current={current} />
     <main id="main" tabindex="-1" data-tone="light">
       <slot />
     </main>
     <SiteFooter />
     <SearchDialog />
-  {SHOW_REVIEW_TOOLS && !comparison && <ChangeNotice />}
     <Mascot />
     <script>
       import '../scripts/site.ts';

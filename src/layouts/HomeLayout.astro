@@ -11,9 +11,6 @@ import SiteNav from '../components/site/SiteNav.astro';
 import SiteFooter from '../components/site/SiteFooter.astro';
 import '../styles/footer.css';
 import SearchDialog from '../components/site/SearchDialog.astro';
-import ChangeNotice from '../components/site/ChangeNotice.astro';
-import ReviewPreferences from '../components/site/ReviewPreferences.astro';
-import { SHOW_REVIEW_TOOLS } from '../data/review-tools';
 import '../styles/glass.css';
 import '../styles/search.css';
 /* the top bar is shared with the inner pages: its material and styles */
@@ -33,7 +30,6 @@ const scripts = ['vendor/three.min', 'home-geo', 'home-land', 'home-geo3d', 'hom
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {SHOW_REVIEW_TOOLS && <ReviewPreferences />}
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>{title}</title>
@@ -52,7 +48,6 @@ const scripts = ['vendor/three.min', 'home-geo', 'home-land', 'home-geo3d', 'hom
   </main>
   <SiteFooter />
   <SearchDialog />
-  {SHOW_REVIEW_TOOLS && <ChangeNotice />}
   <Fragment set:html={mascotHtml()} />
   <!-- Shared search loads the manuscript-versioned index when opened. -->
   <script is:inline src={staticAsset('js/main.js')} defer></script>

@@ -28,7 +28,7 @@
     },
     {
       "_template": "text",
-      "body": "<p data-hp-draft-paragraph=\"2\">Farm visits and soil collection are central to how we explore agricultural nematode problems. By working in the field, talking with growers, and collecting samples, we learn about growing conditions and practical needs. Expert advice, exchanges with other iGEM teams, and visits to museums and outreach facilities help us examine these experiences and ask what our engineered-yeast sensor would need to do in practice.</p>"
+      "body": "<p>Farm visits and soil collection are central to how we explore agricultural nematode problems. By working in the field, talking with growers, and collecting samples, we learn about growing conditions and practical needs. Expert advice, exchanges with other iGEM teams, and visits to museums and outreach facilities help us examine these experiences and ask what our engineered-yeast sensor would need to do in practice.</p>"
     },
     {
       "_template": "heading",
@@ -38,11 +38,11 @@
     },
     {
       "_template": "text",
-      "body": "<p data-hp-draft-paragraph=\"4\">We visited Xiangyu Fruit and Vegetable Farm and the vegetable demonstration farm in Diliubu Village, Xiqing District, Tianjin. Guided by Professor Qilin Yu, team members took part in farm work and learned about disease prevention, soil microbial products, and crop management in their everyday setting.</p>"
+      "body": "<p>We visited Xiangyu Fruit and Vegetable Farm and the vegetable demonstration farm in Diliubu Village, Xiqing District, Tianjin. Guided by Professor Qilin Yu, team members took part in farm work and learned about disease prevention, soil microbial products, and crop management in their everyday setting.</p>"
     },
     {
       "_template": "text",
-      "body": "<p data-hp-draft-paragraph=\"5\">At Diliubu Village, our conversation with a grower moved from visible insect damage on leaves to roots and disease below ground. The discussion showed us how much local conditions matter. Nematodes were not the main concern in every field, but when problems occurred, management could involve soil disinfection followed by efforts to restore soil microbial communities.</p>"
+      "body": "<p>At Diliubu Village, our conversation with a grower moved from visible insect damage on leaves to roots and disease below ground. The discussion showed us how much local conditions matter. Nematodes were not the main concern in every field, but when problems occurred, management could involve soil disinfection followed by efforts to restore soil microbial communities.</p>"
     },
     {
       "_template": "text",
@@ -50,7 +50,7 @@
     },
     {
       "_template": "text",
-      "body": "<p data-hp-draft-paragraph=\"11\">This feedback encouraged us to discuss testing needs in relation to specific crops and places. Growers’ experiences help us understand when a test might be useful, while professional identification is needed to establish the cause of a problem. Bringing these perspectives together keeps our project grounded in agricultural needs.</p>"
+      "body": "<p>This feedback encouraged us to discuss testing needs in relation to specific crops and places. Growers’ experiences help us understand when a test might be useful, while professional identification is needed to establish the cause of a problem. Bringing these perspectives together keeps our project grounded in agricultural needs.</p>"
     },
     {
       "_template": "heading",
@@ -60,7 +60,7 @@
     },
     {
       "_template": "text",
-      "body": "<p data-hp-draft-paragraph=\"13\">Responses observed under controlled laboratory conditions need to be examined in real soil conditions. We launched the Soil Project to bring these conditions into our research. We gathered soils from different regions, cropping histories, and environments, recorded their backgrounds, and prepared sampling guidance and biosafety procedures.</p>"
+      "body": "<p>Responses observed under controlled laboratory conditions need to be examined in real soil conditions. We launched the Soil Project to bring these conditions into our research. We gathered soils from different regions, cropping histories, and environments, recorded their backgrounds, and prepared sampling guidance and biosafety procedures.</p>"
     },
     {
       "_template": "heading",
@@ -70,7 +70,7 @@
     },
     {
       "_template": "text",
-      "body": "<p data-hp-draft-paragraph=\"15\">Our sample inventory records <strong>289 soil samples from nine provincial-level regions</strong>. The selected examples below document sources from six of these regions: Jilin, Heilongjiang, Yunnan, Sichuan, Guangxi, and Tibet. They include soils from soybean monoculture and continuous cropping, tobacco fields with different continuous-cropping histories, vegetable gardens, and environments such as meadows, wetlands, and saline–alkali land. Recording these differences gives us specific sample conditions to compare when considering how the sensor might work with soil.</p>"
+      "body": "<p>Our sample inventory records <strong>289 soil samples from nine provincial-level regions</strong>. The selected examples below document sources from six of these regions: Jilin, Heilongjiang, Yunnan, Sichuan, Guangxi, and Tibet. They include soils from soybean monoculture and continuous cropping, tobacco fields with different continuous-cropping histories, vegetable gardens, and environments such as meadows, wetlands, and saline–alkali land. Recording these differences gives us specific sample conditions to compare when considering how the sensor might work with soil.</p>"
     },
     {
       "_template": "datatable",
@@ -79,7 +79,7 @@
     },
     {
       "_template": "text",
-      "body": "<p data-hp-draft-paragraph=\"18\">These background descriptions support sample traceability. The nematodes and signaling molecules present in each sample still need to be established through identification and measurement.</p>"
+      "body": "<p>These background descriptions support sample traceability. The nematodes and signaling molecules present in each sample still need to be established through identification and measurement.</p>"
     },
     {
       "_template": "heading",
@@ -89,11 +89,11 @@
     },
     {
       "_template": "text",
-      "body": "<p data-hp-draft-paragraph=\"20\">We link sample identifiers with photographs of the sampling site, location, crop, collection date, and management history. These records help us understand where a sample came from when discussing results. Soybean and tobacco samples draw attention to crops and management histories, while samples from other environments provide a wider range of soil backgrounds. The geographical distribution describes the sources of our materials; broader interpretation depends on the sampling design and subsequent analysis.</p>"
+      "body": "<p>We link sample identifiers with photographs of the sampling site, location, crop, collection date, and management history. These records help us understand where a sample came from when discussing results. Soybean and tobacco samples draw attention to crops and management histories, while samples from other environments provide a wider range of soil backgrounds. The geographical distribution describes the sources of our materials; broader interpretation depends on the sampling design and subsequent analysis.</p>"
     },
     {
       "_template": "text",
-      "body": "<p data-hp-draft-paragraph=\"21\">For sensor research, these materials provide a basis for future comparisons of soil-extract backgrounds, color interference, and sample preparation. They also give the wet-lab and modeling teams concrete sample conditions to discuss. Whether a sample contains nematodes, which signals are present, and whether engineered yeast can produce an interpretable response all require appropriate identification, controls, and measurements.</p>"
+      "body": "<p>For sensor research, these materials provide a basis for future comparisons of soil-extract backgrounds, color interference, and sample preparation. They also give the wet-lab and modeling teams concrete sample conditions to discuss. Whether a sample contains nematodes, which signals are present, and whether engineered yeast can produce an interpretable response all require appropriate identification, controls, and measurements.</p>"
     },
     {
       "_template": "heading",
@@ -109,7 +109,7 @@
       "alt": "Overview of soil sample collection and handling.",
       "body": "Figure 2. Overview of soil sample collection and handling. The workflow connects preparation, background records, sampling, double sealing, leak checks, storage and transport, laboratory handling, and sterilization and disposal. It brings traceability and safe handling into the process from collection to subsequent research. Generated with OpenAI GPT Image 2.",
       "layout": "wrap-right",
-      "accompanyingBody": "<p data-hp-draft-paragraph=\"23\">We prepared a standard operating procedure for soil collection, packaging, transport, and biosafety, together with a sampling guidance video and a flowchart. The guidance covers personal protection, background records, composite sampling from multiple points, double sealing, checks for leaks, temporary storage and transport, laboratory receipt, and sterilization and disposal. It helps contributors understand which information to retain and how to reduce leakage and cross-contamination.</p>\n\n<p data-hp-draft-paragraph=\"24\">The Soil Project connects <strong>Human Practices (HP)</strong> with wet-lab and dry-lab research through samples and their context. Information supplied by contributors stays with each sample, helping the team understand its origin and discuss suitable validation conditions. This provides a starting point for moving from a laboratory concept to studies with real samples.</p>",
+      "accompanyingBody": "<p>We prepared a standard operating procedure for soil collection, packaging, transport, and biosafety, together with a sampling guidance video and a flowchart. The guidance covers personal protection, background records, composite sampling from multiple points, double sealing, checks for leaks, temporary storage and transport, laboratory receipt, and sterilization and disposal. It helps contributors understand which information to retain and how to reduce leakage and cross-contamination.</p>\n\n<p>The Soil Project connects <strong>Human Practices (HP)</strong> with wet-lab and dry-lab research through samples and their context. Information supplied by contributors stays with each sample, helping the team understand its origin and discuss suitable validation conditions. This provides a starting point for moving from a laboratory concept to studies with real samples.</p>",
       "imageWidth": "wide"
     },
     {
@@ -126,15 +126,15 @@
     },
     {
       "_template": "text",
-      "body": "<p data-hp-draft-paragraph=\"30\">On June 6, 2026, we met Yurong Yao at the Institute of Plant Protection, Tianjin Academy of Agricultural Sciences. Starting with nematode disease in protected vegetable production, we discussed hidden root damage, symptoms that can resemble other problems, continuous cropping, and the cost and practical demands of professional testing.</p>"
+      "body": "<p>On June 6, 2026, we met Yurong Yao at the Institute of Plant Protection, Tianjin Academy of Agricultural Sciences. Starting with nematode disease in protected vegetable production, we discussed hidden root damage, symptoms that can resemble other problems, continuous cropping, and the cost and practical demands of professional testing.</p>"
     },
     {
       "_template": "text",
-      "body": "<p data-hp-draft-paragraph=\"31\">Yao described differences between sampling locations and greenhouses and explained the importance of transport, storage, separate handling, and post-test disposal. For a potential testing tool, she emphasized affordability, ease of operation, and an intuitive readout.</p>"
+      "body": "<p>Yao described differences between sampling locations and greenhouses and explained the importance of transport, storage, separate handling, and post-test disposal. For a potential testing tool, she emphasized affordability, ease of operation, and an intuitive readout.</p>"
     },
     {
       "_template": "text",
-      "body": "<p data-hp-draft-paragraph=\"32\">Her advice brought sampling and the complete user workflow into our discussions. It also helped us ask more specific questions in later surveys and farm visits: who would use the test, which steps could they manage, and how could the result inform crop management?</p>"
+      "body": "<p>Her advice brought sampling and the complete user workflow into our discussions. It also helped us ask more specific questions in later surveys and farm visits: who would use the test, which steps could they manage, and how could the result inform crop management?</p>"
     },
     {
       "_template": "image",
@@ -159,7 +159,7 @@
       "alt": "A group photograph following our discussion with Qian Liu at China Agricultural University.",
       "body": "Figure 4. A group photograph following our discussion with Qian Liu at China Agricultural University. Topics included nematode identification, pre-planting testing, ascaroside signal interpretation, and real-sample validation.",
       "layout": "wrap-right",
-      "accompanyingBody": "<p data-hp-draft-paragraph=\"36\">On August 18, Qian Liu from the College of Plant Protection at China Agricultural University discussed nematode identification, early detection, and validation with real samples with our team. She explained the uses of morphological and molecular methods, emphasized matching identification claims to their purpose and validation, and suggested connecting early detection with management decisions before planting.</p>\n\n<p data-hp-draft-paragraph=\"40\">For our ascaroside-based approach, she encouraged us to first establish whether differences in the signals could support the proposed interpretation. Detecting a compound, identifying a nematode species, and estimating density each require their own evidence. We also discussed sample representativeness, extraction losses, matrix interference, controls, and stepwise validation.</p>\n\n<p data-hp-draft-paragraph=\"41\">Liu drew our attention to the cost of the complete test, sample preparation, storage, and the demands placed on users. Her advice helped us examine the proposed field test from sampling through to interpretation, using the perspective of professional diagnostic practice.</p>",
+      "accompanyingBody": "<p>On August 18, Qian Liu from the College of Plant Protection at China Agricultural University discussed nematode identification, early detection, and validation with real samples with our team. She explained the uses of morphological and molecular methods, emphasized matching identification claims to their purpose and validation, and suggested connecting early detection with management decisions before planting.</p>\n\n<p>For our ascaroside-based approach, she encouraged us to first establish whether differences in the signals could support the proposed interpretation. Detecting a compound, identifying a nematode species, and estimating density each require their own evidence. We also discussed sample representativeness, extraction losses, matrix interference, controls, and stepwise validation.</p>\n\n<p>Liu drew our attention to the cost of the complete test, sample preparation, storage, and the demands placed on users. Her advice helped us examine the proposed field test from sampling through to interpretation, using the perspective of professional diagnostic practice.</p>",
       "imageWidth": "medium"
     },
     {
@@ -170,7 +170,7 @@
     },
     {
       "_template": "text",
-      "body": "<p data-hp-draft-paragraph=\"43\">During our online discussion on August 18, Zhihao Pang from Beijing Forestry University examined the project through soil processes and potential use. He asked whether soil background color could affect interpretation and whether differences in the degradation rates of ascaroside #3 and ascaroside #18 could change their measured relative proportions.</p>"
+      "body": "<p>During our online discussion on August 18, Zhihao Pang from Beijing Forestry University examined the project through soil processes and potential use. He asked whether soil background color could affect interpretation and whether differences in the degradation rates of ascaroside #3 and ascaroside #18 could change their measured relative proportions.</p>"
     },
     {
       "_template": "image",
@@ -183,11 +183,11 @@
     },
     {
       "_template": "text",
-      "body": "<p data-hp-draft-paragraph=\"47\">He also suggested gathering observations from affected fields, speaking with potential users, and comparing the portability and operating steps of our proposed test with existing sample-submission services. For engineered yeast, he raised concerns about environmental release and post-test handling.</p>"
+      "body": "<p>He also suggested gathering observations from affected fields, speaking with potential users, and comparing the portability and operating steps of our proposed test with existing sample-submission services. For engineered yeast, he raised concerns about environmental release and post-test handling.</p>"
     },
     {
       "_template": "text",
-      "body": "<p data-hp-draft-paragraph=\"48\">These comments gave us questions to investigate: could similar colors arise from different backgrounds, could degradation change a measured ratio, and could a user complete the whole workflow? The iHP page explores how these questions relate to our wet-lab and dry-lab work.</p>"
+      "body": "<p>These comments gave us questions to investigate: could similar colors arise from different backgrounds, could degradation change a measured ratio, and could a user complete the whole workflow? The iHP page explores how these questions relate to our wet-lab and dry-lab work.</p>"
     },
     {
       "_template": "heading",
@@ -197,7 +197,7 @@
     },
     {
       "_template": "text",
-      "body": "<p data-hp-draft-paragraph=\"50\">This season, we exchanged ideas with teams from Zhengzhou University, Peking University, Tsinghua University, China Agricultural University, and the University of Science and Technology of China, as well as PROFUTURE. Conversations about biological system design, experimental and modeling challenges, education, and project communication gave us other perspectives on our nematode early-warning sensor.</p>"
+      "body": "<p>This season, we exchanged ideas with teams from Zhengzhou University, Peking University, Tsinghua University, China Agricultural University, and the University of Science and Technology of China, as well as PROFUTURE. Conversations about biological system design, experimental and modeling challenges, education, and project communication gave us other perspectives on our nematode early-warning sensor.</p>"
     },
     {
       "_template": "heading",
@@ -207,11 +207,11 @@
     },
     {
       "_template": "text",
-      "body": "<p data-hp-draft-paragraph=\"52\">Our online meeting with Zhengzhou University on July 10 focused on expert interviews, reaching questionnaire respondents, and public communication. On August 6, we discussed teaching partnerships and public engagement with PROFUTURE. We shared our experience of developing courses and outreach through the Xiangyang Program and learned how other teams organized their investigation and educational work.</p>"
+      "body": "<p>Our online meeting with Zhengzhou University on July 10 focused on expert interviews, reaching questionnaire respondents, and public communication. On August 6, we discussed teaching partnerships and public engagement with PROFUTURE. We shared our experience of developing courses and outreach through the Xiangyang Program and learned how other teams organized their investigation and educational work.</p>"
     },
     {
       "_template": "text",
-      "body": "<p data-hp-draft-paragraph=\"53\">On August 17, we discussed application settings, receptor engineering, wet-lab and dry-lab coordination, and HP organization with Peking University and Tsinghua University. On August 18, we compared yeast-based sensing approaches, experimental challenges, and user needs with China Agricultural University. Comparing projects helped us revisit our technical assumptions and consider how to explain the connections between the modules in our system.</p>"
+      "body": "<p>On August 17, we discussed application settings, receptor engineering, wet-lab and dry-lab coordination, and HP organization with Peking University and Tsinghua University. On August 18, we compared yeast-based sensing approaches, experimental challenges, and user needs with China Agricultural University. Comparing projects helped us revisit our technical assumptions and consider how to explain the connections between the modules in our system.</p>"
     },
     {
       "_template": "text",
@@ -219,7 +219,7 @@
     },
     {
       "_template": "text",
-      "body": "<p data-hp-draft-paragraph=\"62\">In our online exchange with the University of Science and Technology of China, we compared the modular design of their timed engineered-bacteria system with our nematode early-warning sensor. We discussed construct verification, sources of model parameters, and experimental bottlenecks. We also exchanged ideas about HP narratives and Wiki communication, considering how to present the links between agricultural needs, engineering choices, and validation evidence clearly.</p>"
+      "body": "<p>In our online exchange with the University of Science and Technology of China, we compared the modular design of their timed engineered-bacteria system with our nematode early-warning sensor. We discussed construct verification, sources of model parameters, and experimental bottlenecks. We also exchanged ideas about HP narratives and Wiki communication, considering how to present the links between agricultural needs, engineering choices, and validation evidence clearly.</p>"
     },
     {
       "_template": "heading",
@@ -229,11 +229,11 @@
     },
     {
       "_template": "text",
-      "body": "<p data-hp-draft-paragraph=\"64\">On August 30, we joined the 2026 US-China iGEM Human Practices Summit, jointly organized by Peking University and Rice University under the theme “People in the World of SynBio.” We presented our nematode early-warning project, explaining how needs assessment, expert consultation, and education relate to the potential use of the engineered-yeast sensor, and heard about other teams’ HP experiences.</p>"
+      "body": "<p>On August 30, we joined the 2026 US-China iGEM Human Practices Summit, jointly organized by Peking University and Rice University under the theme “People in the World of SynBio.” We presented our nematode early-warning project, explaining how needs assessment, expert consultation, and education relate to the potential use of the engineered-yeast sensor, and heard about other teams’ HP experiences.</p>"
     },
     {
       "_template": "text",
-      "body": "<p data-hp-draft-paragraph=\"65\">During the question-and-answer session, a participant from UC Davis raised the issue of ethics review for the questionnaire, while a participant from Rice asked how the project could continue after the season. We responded by discussing our vision for an affordable, easy-to-use testing tool. These questions encouraged us to give further attention to participants’ rights, interpretation of results, and the project’s future use, bringing social responsibility into discussions of the technology’s value.</p>"
+      "body": "<p>During the question-and-answer session, a participant from UC Davis raised the issue of ethics review for the questionnaire, while a participant from Rice asked how the project could continue after the season. We responded by discussing our vision for an affordable, easy-to-use testing tool. These questions encouraged us to give further attention to participants’ rights, interpretation of results, and the project’s future use, bringing social responsibility into discussions of the technology’s value.</p>"
     },
     {
       "_template": "image",
@@ -258,7 +258,7 @@
     },
     {
       "_template": "text",
-      "body": "<p data-hp-draft-paragraph=\"70\">Our visit offered a reference for understanding biodiversity and organizing science communication. People may first encounter nematodes through accounts of disease, with little opportunity to learn about their different ecological roles. Placing plant-parasitic nematodes within this wider diversity helped us choose a more accurate starting point for education.</p>"
+      "body": "<p>Our visit offered a reference for understanding biodiversity and organizing science communication. People may first encounter nematodes through accounts of disease, with little opportunity to learn about their different ecological roles. Placing plant-parasitic nematodes within this wider diversity helped us choose a more accurate starting point for education.</p>"
     },
     {
       "_template": "heading",
@@ -268,7 +268,7 @@
     },
     {
       "_template": "text",
-      "body": "<p data-hp-draft-paragraph=\"72\">The visit brought our attention back to crops, farming practices, and agricultural development. It prompted us to consider how to explain the relationship between underground disease and food production, and how to connect our testing concept with specific crop-management decisions.</p>"
+      "body": "<p>The visit brought our attention back to crops, farming practices, and agricultural development. It prompted us to consider how to explain the relationship between underground disease and food production, and how to connect our testing concept with specific crop-management decisions.</p>"
     },
     {
       "_template": "heading",
@@ -278,7 +278,7 @@
     },
     {
       "_template": "text",
-      "body": "<p data-hp-draft-paragraph=\"74\">The science outreach facilities gave us an opportunity to see how agricultural research is displayed and explained. The visit helped us understand agricultural technology applications and consider how images, processes, and familiar settings could make our project accessible to people with different backgrounds.</p>"
+      "body": "<p>The science outreach facilities gave us an opportunity to see how agricultural research is displayed and explained. The visit helped us understand agricultural technology applications and consider how images, processes, and familiar settings could make our project accessible to people with different backgrounds.</p>"
     },
     {
       "_template": "text",
@@ -286,7 +286,7 @@
     },
     {
       "_template": "text",
-      "body": "<p data-hp-draft-paragraph=\"80\">These visits provided ideas for the narratives and explanations used in our educational work. The Education page presents our course design, delivery, and supporting outreach materials.</p>"
+      "body": "<p>These visits provided ideas for the narratives and explanations used in our educational work. The Education page presents our course design, delivery, and supporting outreach materials.</p>"
     },
     {
       "_template": "text",
