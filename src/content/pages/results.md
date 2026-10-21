@@ -235,7 +235,7 @@ This cycle was actually carried out in parallel with Cycle 2. The Learn section 
 
 <p>After successfully amplifying the required fragments via PCR, we encountered a problem that plagued us for nearly one month: 11 attempts of plasmid construction using one-step cloning all failed. We faced a variety of issues, including no colony growth after transformation, fully negative bands in colony PCR, incorrect plasmid double digestion results, and erroneous sequencing data. Each time one problem was solved, another emerged, severely delaying our experimental progress.</p>
 
-<p>Nevertheless, our team did not give up. Together with our instructors, we analyzed potential causes and proposed multiple solutions (see [Protocols and troubleshooting](/contribution/#contribution-1-3-protocols-and-troubleshooting) for details). Finally, we obtained correct results after replacing with fresh one-step cloning enzyme (Figure 13).</p>
+<p>Nevertheless, our team did not give up. Together with our instructors, we analyzed potential causes and proposed multiple solutions (see <a href="/contribution/#contribution-1-3-protocols-and-troubleshooting">Protocols and troubleshooting</a> for details). Finally, we obtained correct results after replacing with fresh one-step cloning enzyme (Figure 13).</p>
 
 :::figure
 
