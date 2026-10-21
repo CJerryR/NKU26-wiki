@@ -96,7 +96,7 @@
     },
     {
       "_template": "text",
-      "body": "Density is expressed as **second-stage juveniles (J2)** per 100 cm³ of soil (J2/100 cm³). Both readings undergo the same processing used for calibration. Unit and applicability checks are performed before the regression output enters Eco. Economic parameters come independently from literature and scenario assumptions; density connects the color readout to the economic calculation."
+      "body": "Density is expressed as second-stage juveniles (J2) per 100 cm³ of soil (J2/100 cm³). Both readings undergo the same processing used for calibration. Unit and applicability checks are performed before the regression output enters Eco. Economic parameters come independently from literature and scenario assumptions; density connects the color readout to the economic calculation."
     },
     {
       "_template": "text",

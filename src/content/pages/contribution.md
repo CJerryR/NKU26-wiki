@@ -33,7 +33,7 @@ We submitted 39 Parts and four Collections to the iGEM Registry, covering yeast 
 
 The collections bring together sequence and design information that teams can use when planning their own constructs. Detailed part descriptions and identifiers are listed on our Parts page.
 
-[Browse Parts and Collections](/parts/) · [Visit Our Registry Entries](https://registry.igem.org/organisations/igem/6303)
+[Browse Parts and Collections](/parts/) · [Explore our Registry entries →](https://registry.igem.org/organisations/igem/6303)
 
 ### 1.2 Documented strain construction {#contribution-1-2-documented-strain-construction toc="Documented strain construction" toc-unnumbered}
 
@@ -41,7 +41,7 @@ We documented the construction of our engineered yeast through successive geneti
 
 Teams developing similar biosensors can use this documentation to plan an assembly strategy, identify relevant intermediate constructs, and choose verification steps for their own strains.
 
-[Explore the Construction Results](/results/)
+[Explore the construction results →](/results/)
 
 :::figure
 
@@ -57,7 +57,7 @@ Our experimental resources include the main protocols used in the project and a 
 
 Together, these materials give future teams both an experimental starting point and practical examples of what to check when a procedure does not work as expected.
 
-[View Experimental Protocols](/experiments/) · [Read the Troubleshooting Guide](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-cbf9a8013583-troubleshooting.pdf)
+[Explore the experimental protocols →](/experiments/) · [Explore the troubleshooting guide →](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-cbf9a8013583-troubleshooting.pdf)
 
 ## Computational methods and modeling tools {#contribution-2-computational-methods-and-modeling-tools toc="Computational methods and modeling tools"}
 
@@ -79,7 +79,7 @@ We organized a receptor-design workflow around comparisons between two ligands. 
 
 We also documented input checks and pose-export procedures for keeping coordinate references, atom mappings, and chemical information consistent. These methods can help other teams develop testable receptor-engineering hypotheses and prepare docking outputs for further analysis.
 
-[Explore the Docking Workflow](/model-docking/)
+[Explore the molecular docking workflow →](/model-docking/)
 
 ::::
 
@@ -89,7 +89,7 @@ We combined ligand-position measurements with contact analysis to examine recept
 
 Other teams can apply this approach to identify persistent contacts, periods of ligand relocation, and interactions worth investigating further. The analysis connects motion curves with the molecular structures behind them.
 
-[Explore the Molecular dynamics analysis](/model-md/#src-Model-Molecular-Dynamics-6)
+[Explore the molecular dynamics analysis →](/model-md/#src-Model-Molecular-Dynamics-6)
 
 ### 2.3 Signal-to-color and dual-channel modeling {#contribution-2-3-signal-to-color-and-two-channel-modeling toc="Signal-to-color and dual-channel modeling" toc-unnumbered}
 
@@ -105,7 +105,7 @@ Figure 3. From signal response to density estimation. The workflow connects path
 
 :::
 
-[Explore the ordinary differential equation and dual-channel models](/model-ode/#src-Model-ODE-1)
+[Explore the ODE and dual-channel model →](/model-ode/#src-Model-ODE-1)
 
 ### 2.4 Economic evaluation of screening {#contribution-2-4-economic-evaluation-of-screening toc="Economic evaluation of screening" toc-unnumbered}
 
@@ -113,7 +113,7 @@ Our economic model connects target density, crop losses, and management costs to
 
 The framework separates parameters from calculations, allowing users to substitute crop-specific loss relationships, local prices, testing costs, and treatment assumptions. A worked example provides a starting point for evaluating another agricultural screening project with suitable local data.
 
-[Explore the Economic Model](/model-eco/)
+[Explore the economic benefit model →](/model-eco/)
 
 ## Educational and engagement resources {#contribution-3-educational-and-engagement-resources toc="Educational and engagement resources"}
 
@@ -135,7 +135,7 @@ We developed three courses linking nematodes, agriculture, biological signals, a
 
 Teams and educators can draw on the learning goals, activity sequences, and visual materials, adapting them to local crops, classroom conditions, and learners’ ages.
 
-[Explore Educational Materials](/education/)
+[Explore the educational materials →](/education/)
 
 ::::
 
@@ -155,7 +155,7 @@ Our documentation shows how project questions can guide questionnaires, expert d
 
 Other teams can adapt this approach to organize their own engagement and keep track of how it informs their work. Project-introduction and industry-communication materials provide additional examples of explaining a research idea and presenting a specific request for support.
 
-[Explore Integrated human practices](/human-practices/) · [Explore Industry Engagement](/hp-industry/)
+[Explore Integrated human practices →](/human-practices/) · [Explore industry engagement →](/hp-industry/)
 
 ::::
 
@@ -165,7 +165,7 @@ Our soil-collection work combined a sampling guidance video with sample identifi
 
 Teams organizing environmental sampling can use this as a reference for coordinating instructions, labeling, background records, and handover checks, then adapt the sampling conditions to their research questions.
 
-[Explore Field Investigation](/hp-investigation/)
+[Explore the field investigation →](/hp-investigation/)
 
 ## Building on these resources {#contribution-building-on-these-resources toc="Building on these resources"}
 

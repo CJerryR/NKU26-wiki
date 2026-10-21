@@ -23,7 +23,7 @@ hidden: false
 
 #### Design | planning GPR2 expression and localization tests {#design toc="Design | planning GPR2 expression and localization tests"}
 
-<p>Based on the dry-lab screening results, we selected GPR2 as the receptor for display. To confirm that GPR2 can be heterologously expressed and correctly localized to the plasma membrane in our desired strain CEN.PK2-1C, we devised an experimental workflow consisting of "construction of the GPR2-sfGFP heterologous-expression plasmid — gene knock-in via yeast endogenous homologous recombination (HR) — assessment of expression and localization using fluorescence microscopy".</p>
+<p>Based on the dry-lab screening results, we selected GPR2 as the receptor for display. To confirm that GPR2 can be heterologously expressed and correctly localized to the plasma membrane in our desired strain CEN.PK2-1C, we devised an experimental workflow consisting of "construction of the GPR2-sfGFP heterologous-expression plasmid—gene knock-in via yeast endogenous homologous recombination (HR)—assessment of expression and localization using fluorescence microscopy".</p>
 
 For plasmid construction (Figure 1a), our design rationale was as follows:
 
@@ -110,10 +110,6 @@ Figure 5. FM4-64 staining of yeast cells
 #### Learn | assessing GPR2 plasma-membrane localization {#learn-2 toc="Learn | assessing GPR2 plasma-membrane localization"}
 
 <p>Taken together, these results confirm that CEN.PK2-1C can achieve heterologous expression and proper plasma-membrane localization of GPR2, which is an essential prerequisite for chassis-strain construction based on this host.</p>
-
-### 1.3 Reference {#reference toc="Reference"}
-
-<p>1. Vida, T. A., & Emr, S. D. (1995). A new vital stain for visualizing vacuolar membrane dynamics and endocytosis in yeast. <em>Journal of Cell Biology</em>, <em>128</em>(5), 779–792. https://doi.org/10.1083/jcb.128.5.779</p>
 
 ## DBTL-2: engineering construction of ascaroside-responsive yeast chassis {#dbtl-2-engineering-construction-of-ascaroside-responsive-yeast-chassis toc="DBTL-2: engineering construction of ascaroside-responsive yeast chassis"}
 
@@ -239,7 +235,7 @@ This cycle was actually carried out in parallel with Cycle 2. The Learn section 
 
 <p>After successfully amplifying the required fragments via PCR, we encountered a problem that plagued us for nearly one month: 11 attempts of plasmid construction using one-step cloning all failed. We faced a variety of issues, including no colony growth after transformation, fully negative bands in colony PCR, incorrect plasmid double digestion results, and erroneous sequencing data. Each time one problem was solved, another emerged, severely delaying our experimental progress.</p>
 
-<p>Nevertheless, our team did not give up. Together with our instructors, we analyzed potential causes and proposed multiple solutions (see Contribution-Experimental Methods and Practical Experience for details). Finally, we obtained correct results after replacing with fresh one-step cloning enzyme (Figure 13).</p>
+<p>Nevertheless, our team did not give up. Together with our instructors, we analyzed potential causes and proposed multiple solutions (see [Protocols and troubleshooting](/contribution/#contribution-1-3-protocols-and-troubleshooting) for details). Finally, we obtained correct results after replacing with fresh one-step cloning enzyme (Figure 13).</p>
 
 :::figure
 
@@ -335,7 +331,7 @@ First, we constructed the Cas9 plasmid with replaced auxotrophic marker (Figure 
 
 :::
 
-Finally, we constructed the corresponding donor DNA. The sTF fragment was amplified from plasmid pRS315-sTF (https://registry.igem.org/parts/bba-26iotmof). The gene fragment of betaxanthin synthase induced by the bidirectional Gal1/10 promoter (https://registry.igem.org/parts/bba-2697laqw) was first amplified from plasmid pRS315-MjDOD-BvCYP76AD5, followed by DJ-PCR amplification, using the same method as our previous fragment construction (Figure 22).
+Finally, we constructed the corresponding donor DNA. The sTF fragment was amplified from plasmid [pRS315-sTF](https://registry.igem.org/parts/bba-26iotmof). The gene fragment of betaxanthin synthase induced by the [bidirectional Gal1/10 promoter](https://registry.igem.org/parts/bba-2697laqw) was first amplified from plasmid pRS315-MjDOD-BvCYP76AD5, followed by DJ-PCR amplification, using the same method as our previous fragment construction (Figure 22).
 
 :::figure
 
@@ -439,23 +435,13 @@ Based on the results from previous cycles and dry lab, we still used one-step cl
 
 This cycle is hereby concluded. The strains constructed in this cycle can only function under laboratory conditions. For field applications, product formulation and packaging of the strains are required. Therefore, we proceeded to the third major DBTL cycle.
 
-### 2.6 References {#references toc="References"}
-
-<p>2. Fan, C., & Yuan, J. (2023). Reshaping the yeast galactose regulon via GPCR signaling cascade. <em>Cell Reports Methods</em>, <em>3</em>(12), 100647. https://doi.org/10.1016/j.crmeth.2023.100647</p>
-
-<p>3. Fan, C., He, N., & Yuan, J. (2024). Cascaded amplifying circuit enables sensitive detection of fungal pathogens. <em>Biosensors and Bioelectronics</em>, <em>250</em>, 116058. https://doi.org/10.1016/j.bios.2024.116058</p>
-
-<p>4. DiCarlo, J. E., Norville, J. E., Mali, P., Rios, X., Aach, J., & Church, G. M. (2013). Genome engineering in Saccharomyces cerevisiae using CRISPR-Cas systems. <em>Nucleic Acids Research</em>, <em>41</em>(7), 4336–4343. https://doi.org/10.1093/nar/gkt135</p>
-
-<p>5. Mans, R., Wijsman, M., Daran-Lapujade, P., & Daran, J. M. (2018). A protocol for introduction of multiple genetic modifications in Saccharomyces cerevisiae using CRISPR/Cas9. <em>FEMS Yeast Research</em>, <em>18</em>(7), foy063. https://doi.org/10.1093/femsyr/foy063</p>
-
-## DBTL-3: test strip development and productization {#dbtl-3-test-strip-development-and-productization toc="DBTL-3: test strip development and productization"}
+## DBTL-3: test-strip development and productization {#dbtl-3-test-strip-development-and-productization toc="DBTL-3: test-strip development and productization"}
 
 <p>Building upon the successful construction of engineered chassis strains through previous DBTL cycles, and integrating feedback from Human Practices surveys alongside practical application scenarios, we shifted our focus to another core objective of the project: developing a low-cost, user-friendly, and intuitive colorimetric detection platform. Therefore, this section focuses on the fabrication process and color development workflow of the engineered yeast-based test strips, encompassing three sub-cycles: substrate determination, immobilization optimization, and color development rate optimization. </p>
 
 ### 3.1 Cycle 1: substrate determination {#results-3-1 toc="Cycle 1: substrate determination"}
 
-<p>We reason that an ideal test strip substrate should possess high cell-loading capacity, excellent mechanical stability, reliable batch-to-batch consistency, and favorable water-retaining properties. Therefore, we initiate this cycle.</p>
+<p>We reason that an ideal test-strip substrate should possess high cell-loading capacity, excellent mechanical stability, reliable batch-to-batch consistency, and favorable water-retaining properties. Therefore, we initiate this cycle.</p>
 
 #### Design | selecting candidate substrates {#results-3-1-design toc="Design | selecting candidate substrates"}
 
@@ -493,7 +479,7 @@ This cycle is hereby concluded. The strains constructed in this cycle can only f
 
 ### 3.2 Cycle 2: immobilization optimization {#results-3-2 toc="Cycle 2: immobilization optimization"}
 
-<p>Following the selection of the test strip substrate, efficiently, uniformly, and precisely immobilizing yeast cells onto the strip becomes critical to ensuring detection reproducibility. Traditional direct spotting often leads to lateral leakage, while high-viscosity cell suspensions are difficult to disperse evenly and quantify accurately. </p>
+<p>Following the selection of the test-strip substrate, efficiently, uniformly, and precisely immobilizing yeast cells onto the strip becomes critical to ensuring detection reproducibility. Traditional direct spotting often leads to lateral leakage, while high-viscosity cell suspensions are difficult to disperse evenly and quantify accurately. </p>
 
 <p>To address this, we optimize immobilization across two dimensions—physical spatial confinement and biochemical/hardware sample loading. By creating hydrophobic barrier masks, refining protectant formulations, and introducing a vacuum-assisted filtration device, we achieve high-efficiency, stable cell immobilization on the test strip.</p>
 
@@ -549,7 +535,7 @@ This cycle is hereby concluded. The strains constructed in this cycle can only f
 
 ::::
 
-<p>Additionally, we self-fabricate a vacuum filtration spotting device (Figure 33). This device can rapidly draw the high-viscosity protectant suspension into the interior of the test strip substrate, which not only significantly improves spotting efficiency but also achieves standardized control over the cell-loading amount per individual test strip.</p><p>Integrating all the above methods and approaches, we prepare and obtain a batch of cell-loaded freeze-dried test strips available for downstream engineering (Figure 34).</p>
+<p>Additionally, we self-fabricate a vacuum filtration spotting device (Figure 33). This device can rapidly draw the high-viscosity protectant suspension into the interior of the test-strip substrate, which not only significantly improves spotting efficiency but also achieves standardized control over the cell-loading amount per individual test strip.</p><p>Integrating all the above methods and approaches, we prepare and obtain a batch of cell-loaded freeze-dried test strips available for downstream engineering (Figure 34).</p>
 
 :::::
 
@@ -585,27 +571,15 @@ This cycle is hereby concluded. The strains constructed in this cycle can only f
 
 :::figure{scale=70}
 
-[![3D-printed test strip cassette.](https://static.igem.wiki/teams/6303/wiki/v8-6/v86-b5b9b9256085-fig3-2-2.avif)](https://static.igem.wiki/teams/6303/wiki/v8-6/v86-b5b9b9256085-fig3-2-2.avif "Open full-resolution image")
+[![3D-printed test-strip cassette.](https://static.igem.wiki/teams/6303/wiki/v8-6/v86-b5b9b9256085-fig3-2-2.avif)](https://static.igem.wiki/teams/6303/wiki/v8-6/v86-b5b9b9256085-fig3-2-2.avif "Open full-resolution image")
 
-<p class="figure-caption">Figure 36. 3D-printed test strip cassette.</p>
+<p class="figure-caption">Figure 36. 3D-printed test-strip cassette.</p>
 
 :::
 
-<p>Meanwhile, considering the field application scenarios of our product, we design a 3D-printed test strip cassette to hold the test strip (Figure 36), making the detection workflow simpler and more convenient.</p><p>At this point, we have closed the loop on test strip fabrication and application, establishing a solid foundation for subsequent on-site rapid detection of soil samples.</p>
+<p>Meanwhile, considering the field application scenarios of our product, we design a 3D-printed test-strip cassette to hold the test strip (Figure 36), making the detection workflow simpler and more convenient.</p><p>At this point, we have closed the loop on test strip fabrication and application, establishing a solid foundation for subsequent on-site rapid detection of soil samples.</p>
 
 ::::
-
-### 3.4 References {#results-dbtl3-references toc="References"}
-
-<p>Miller, R. A., Brown, G., Barron, E., Luther, J. L., Lieberman, M., &amp; Goodson, H. V. (2020). Development of a paper-immobilized yeast biosensor for the detection of physiological concentrations of doxycycline in technology-limited settings. <em>Analytical Methods, 12</em>(16), 2123–2132. <a href="https://doi.org/10.1039/d0ay00001a">https://doi.org/10.1039/d0ay00001a</a></p>
-
-<p>Grewal, P. S., Modavi, C., Russ, Z. N., Harris, N. C., &amp; Dueber, J. E. (2018). Bioproduction of a betalain color palette in <em>Saccharomyces cerevisiae</em>. <em>Metabolic Engineering, 45</em>, 180–188. <a href="https://doi.org/10.1016/j.ymben.2017.12.008">https://doi.org/10.1016/j.ymben.2017.12.008</a></p>
-
-<p>Ostrov, N., Jimenez, M., Billerbeck, S., Brisbois, J., Matragrano, J., Ager, A., &amp; Cornish, V. W. (2017). A modular yeast biosensor for low-cost point-of-care pathogen detection. <em>Science Advances, 3</em>(6), e1603221. <a href="https://doi.org/10.1126/sciadv.1603221">https://doi.org/10.1126/sciadv.1603221</a></p>
-
-<p>Shin, H. J., Park, H. H., &amp; Lim, W. K. (2005). Freeze-dried recombinant bacteria for on-site detection of phenolic compounds by color change. <em>Journal of Biotechnology, 119</em>(1), 36–43. <a href="https://doi.org/10.1016/j.jbiotec.2005.06.002">https://doi.org/10.1016/j.jbiotec.2005.06.002</a></p>
-
-<p>Poirier, I., Maréchal, P. A., Richard, S., &amp; Gervais, P. (1999). Saccharomyces cerevisiae viability is strongly dependant on rehydration kinetics and the temperature of dried cells. <em>Journal of Applied Microbiology, 86</em>(1), 87–92. <a href="https://doi.org/10.1046/j.1365-2672.1999.00638.x">https://doi.org/10.1046/j.1365-2672.1999.00638.x</a></p>
 
 ## Future work {#results-future-work toc="Future work"}
 
@@ -626,5 +600,27 @@ This cycle is hereby concluded. The strains constructed in this cycle can only f
 <figure class="wiki-media wiki-media--html"><iframe class="wiki-media__frame" src="/widgets/html.html?title=Five-unit+test+card+design+and+reading+guide&amp;src=%2Fembeds%2Fresults-future-work-20261021%2Findex.html&amp;scripts=1" title="Five-unit test card design and reading guide" loading="lazy" allow="fullscreen" style="height:900px" referrerpolicy="no-referrer"></iframe></figure>
 
 <p>Ultimately, our vision is to empower growers with an intuitive testing tool—requiring nothing more than a simple pour, an observation, and a photograph to bring reliable, real-time soil diagnostics directly to where it is needed most.</p>
+
+## References {#references toc="References"}
+
+1. Vida, T. A., & Emr, S. D. (1995). A new vital stain for visualizing vacuolar membrane dynamics and endocytosis in yeast. <em>Journal of Cell Biology</em>, <em>128</em>(5), 779–792. [https://doi.org/10.1083/jcb.128.5.779](https://doi.org/10.1083/jcb.128.5.779)
+
+2. Fan, C., & Yuan, J. (2023). Reshaping the yeast galactose regulon via GPCR signaling cascade. <em>Cell Reports Methods</em>, <em>3</em>(12), 100647. [https://doi.org/10.1016/j.crmeth.2023.100647](https://doi.org/10.1016/j.crmeth.2023.100647)
+
+3. Fan, C., He, N., & Yuan, J. (2024). Cascaded amplifying circuit enables sensitive detection of fungal pathogens. <em>Biosensors and Bioelectronics</em>, <em>250</em>, 116058. [https://doi.org/10.1016/j.bios.2024.116058](https://doi.org/10.1016/j.bios.2024.116058)
+
+4. DiCarlo, J. E., Norville, J. E., Mali, P., Rios, X., Aach, J., & Church, G. M. (2013). Genome engineering in <em>Saccharomyces cerevisiae</em> using CRISPR-Cas systems. <em>Nucleic Acids Research</em>, <em>41</em>(7), 4336–4343. [https://doi.org/10.1093/nar/gkt135](https://doi.org/10.1093/nar/gkt135)
+
+5. Mans, R., Wijsman, M., Daran-Lapujade, P., & Daran, J. M. (2018). A protocol for introduction of multiple genetic modifications in <em>Saccharomyces cerevisiae</em> using CRISPR/Cas9. <em>FEMS Yeast Research</em>, <em>18</em>(7), foy063. [https://doi.org/10.1093/femsyr/foy063](https://doi.org/10.1093/femsyr/foy063)
+
+6. Miller, R. A., Brown, G., Barron, E., Luther, J. L., Lieberman, M., & Goodson, H. V. (2020). Development of a paper-immobilized yeast biosensor for the detection of physiological concentrations of doxycycline in technology-limited settings. <em>Analytical Methods, 12</em>(16), 2123–2132. [https://doi.org/10.1039/d0ay00001a](https://doi.org/10.1039/d0ay00001a)
+
+7. Grewal, P. S., Modavi, C., Russ, Z. N., Harris, N. C., & Dueber, J. E. (2018). Bioproduction of a betalain color palette in <em>Saccharomyces cerevisiae</em>. <em>Metabolic Engineering, 45</em>, 180–188. [https://doi.org/10.1016/j.ymben.2017.12.008](https://doi.org/10.1016/j.ymben.2017.12.008)
+
+8. Ostrov, N., Jimenez, M., Billerbeck, S., Brisbois, J., Matragrano, J., Ager, A., & Cornish, V. W. (2017). A modular yeast biosensor for low-cost point-of-care pathogen detection. <em>Science Advances, 3</em>(6), e1603221. [https://doi.org/10.1126/sciadv.1603221](https://doi.org/10.1126/sciadv.1603221)
+
+9. Shin, H. J., Park, H. H., & Lim, W. K. (2005). Freeze-dried recombinant bacteria for on-site detection of phenolic compounds by color change. <em>Journal of Biotechnology, 119</em>(1), 36–43. [https://doi.org/10.1016/j.jbiotec.2005.06.002](https://doi.org/10.1016/j.jbiotec.2005.06.002)
+
+10. Poirier, I., Maréchal, P. A., Richard, S., & Gervais, P. (1999). <em>Saccharomyces cerevisiae</em> viability is strongly dependant on rehydration kinetics and the temperature of dried cells. <em>Journal of Applied Microbiology, 86</em>(1), 87–92. [https://doi.org/10.1046/j.1365-2672.1999.00638.x](https://doi.org/10.1046/j.1365-2672.1999.00638.x)
 
 </div>

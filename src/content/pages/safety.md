@@ -30,7 +30,7 @@ Figure 1. CEN.PK2-1C strain with four auxotrophies.
 
 :::
 
-Secondly, we adopted the previously designed engineered yeast suicide switch, where the doxycycline-inducible Tet-On system drives Bax-mediated mitochondrial apoptosis (https://2025.igem.wiki/nku-china/safety-and-security). It achieves strict and precise control of cell survival time and has the characteristics of "leak-free, high-sensitivity" (Figure 2).
+Secondly, we adopted the previously designed engineered yeast suicide switch, where the doxycycline-inducible Tet-On system drives Bax-mediated mitochondrial apoptosis, as described on the [2025 NKU-China safety page](https://2025.igem.wiki/nku-china/safety-and-security). It achieves strict and precise control of cell survival time and has the characteristics of “leak-free, high-sensitivity” (Figure 2).
 
 :::figure{scale=85}
 
@@ -56,7 +56,7 @@ Figure 3. Laboratory work with personal protective equipment.
 
 For productization and field application safety, our final product is a kit equipped with freeze-dried yeast test strips. Freeze-dried yeast powder can be transported at room temperature without losing activity. Besides, the risk of leakage and contamination from this type of yeast is relatively low.
 
-<p>The kit features an easy operation workflow, so field users can operate following instructions without professional microbiology training. The test strip substrate physically immobilizes yeast cells, further limiting the spread of engineered yeast. </p>
+<p>The kit features an easy operation workflow, so field users can operate following instructions without professional microbiology training. The test-strip substrate physically immobilizes yeast cells, further limiting the spread of engineered yeast. </p>
 
 <p>After use, test strips and supporting consumables can be collected and inactivated uniformly, minimizing the risk of engineered yeast escaping into the natural environment.<strong> </strong></p>
 

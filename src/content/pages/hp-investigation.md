@@ -69,7 +69,7 @@ Figure 3. Overview of soil sample collection and handling. The workflow connects
 
 <p>We prepared a standard operating procedure for soil collection, packaging, transport, and biosafety, together with a sampling guidance video and a flowchart. The guidance covers personal protection, background records, composite sampling from multiple points, double sealing, checks for leaks, temporary storage and transport, laboratory receipt, and sterilization and disposal. It helps contributors understand which information to retain and how to reduce leakage and cross-contamination.</p>
 
-<p>The Soil Project connects <strong>Human Practices (HP)</strong> with wet-lab and dry-lab research through samples and their context. Information supplied by contributors stays with each sample, helping the team understand its origin and discuss suitable validation conditions. This provides a starting point for moving from a laboratory concept to studies with real samples.</p>
+<p>The Soil Project connects Human Practices (HP) with wet-lab and dry-lab research through samples and their context. Information supplied by contributors stays with each sample, helping the team understand its origin and discuss suitable validation conditions. This provides a starting point for moving from a laboratory concept to studies with real samples.</p>
 
 ::::
 

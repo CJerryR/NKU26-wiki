@@ -163,8 +163,8 @@
       "items": [
         {
           "design": "We compared wild type GPR2, N84V, and V368R with both ligands to look for persistent interactions that could help explain their docking-score differences.",
-          "build": "We prepared six receptor–ligand systems and ran molecular dynamics simulations. Observations from the initial V368R–ascr#3 trajectory then guided two additional starting poses near Arg368 and Arg189.",
-          "test": "In the N84V–ascr#18 simulation, Arg189 maintained contact with the ligand’s carboxylate group throughout the main comparison window, providing a persistent anchoring interaction. In contrast, the additional V368R simulations lost their preset contacts and mainly adopted Arg345 anchoring, which also occurred in other systems.",
+          "build": "We prepared six receptor–ligand systems and ran molecular dynamics simulations. Observations from the initial V368R–ascr#3 trajectory then guided two additional starting poses near R368 and R189.",
+          "test": "In the N84V–ascr#18 simulation, R189 maintained contact with the ligand’s carboxylate group throughout the main comparison window, providing a persistent anchoring interaction. In contrast, the additional V368R simulations lost their preset contacts and mainly adopted R345 anchoring, which also occurred in other systems.",
           "learn": "**We identified a persistent ligand-anchoring interaction in the N84V–ascr#18 simulation.** This provided a specific structural hypothesis for follow-up testing and helped distinguish the evidence available for the two candidates. Further simulations and ligand-response measurements will test how reproducible this N84V interaction is and investigate the mechanism behind V368R’s predicted preference.",
           "icon": "https://static.igem.wiki/teams/6303/wiki/dbtl-arc-20261021/dbtl-icon-2-2-e779dfc58c.svg"
         }
@@ -243,7 +243,7 @@
     },
     {
       "_template": "text",
-      "body": "[Explore the Economic Model](/model-eco/)"
+      "body": "[Explore the economic benefit model →](/model-eco/)"
     },
     {
       "_template": "text",

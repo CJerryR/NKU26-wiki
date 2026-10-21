@@ -55,7 +55,7 @@ For simulated soil samples, the calculation proceeds as follows:
 
 <strong>ODE color output → Endpoint absorbance and blank correction → Dual-channel density regression → Economic comparison of management scenarios</strong>
 
-Density is expressed as **second-stage juveniles (J2)** per 100 cm³ of soil (J2/100 cm³). Both readings undergo the same processing used for calibration. Unit and applicability checks are performed before the regression output enters Eco. Economic parameters come independently from literature and scenario assumptions; density connects the color readout to the economic calculation.
+Density is expressed as second-stage juveniles (J2) per 100 cm³ of soil (J2/100 cm³). Both readings undergo the same processing used for calibration. Unit and applicability checks are performed before the regression output enters Eco. Economic parameters come independently from literature and scenario assumptions; density connects the color readout to the economic calculation.
 
 The interface retains both the density point estimate and its regression prediction interval. If the interval crosses a management threshold, the tool evaluates scenarios on both sides to show how treatment choice and net income may change. Negative estimates and values outside the calibration or economic model range are blocked from further calculation. The interface also displays the calibration status and applicable conditions.
 

@@ -48,7 +48,7 @@
     },
     {
       "_template": "text",
-      "body": "[Browse Parts and Collections](/parts/) · [Visit Our Registry Entries](https://registry.igem.org/organisations/igem/6303)"
+      "body": "[Browse Parts and Collections](/parts/) · [Explore our Registry entries →](https://registry.igem.org/organisations/igem/6303)"
     },
     {
       "_template": "heading",
@@ -66,7 +66,7 @@
     },
     {
       "_template": "text",
-      "body": "[Explore the Construction Results](/results/)"
+      "body": "[Explore the construction results →](/results/)"
     },
     {
       "_template": "image",
@@ -91,7 +91,7 @@
     },
     {
       "_template": "text",
-      "body": "[View Experimental Protocols](/experiments/) · [Read the Troubleshooting Guide](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-cbf9a8013583-troubleshooting.pdf)"
+      "body": "[Explore the experimental protocols →](/experiments/) · [Explore the troubleshooting guide →](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-cbf9a8013583-troubleshooting.pdf)"
     },
     {
       "_template": "heading",
@@ -116,7 +116,7 @@
       "body": "Figure 2. Mapping candidate sites for receptor engineering. Highlighted residues were selected for further substitution studies through comparisons of predicted ligand contacts.",
       "layout": "wrap-right",
       "imageWidth": "medium",
-      "accompanyingBody": "We organized a receptor-design workflow around comparisons between two ligands. It combines contact-guided site selection, side-chain scanning, separate inspection of each ligand’s score, and comparisons between combined mutants and their single-mutant parents. Cross-receptor analysis adds sequence and structural correspondence to the assessment of candidate positions.\n\nWe also documented input checks and pose-export procedures for keeping coordinate references, atom mappings, and chemical information consistent. These methods can help other teams develop testable receptor-engineering hypotheses and prepare docking outputs for further analysis.\n\n[Explore the Docking Workflow](/model-docking/)",
+      "accompanyingBody": "We organized a receptor-design workflow around comparisons between two ligands. It combines contact-guided site selection, side-chain scanning, separate inspection of each ligand’s score, and comparisons between combined mutants and their single-mutant parents. Cross-receptor analysis adds sequence and structural correspondence to the assessment of candidate positions.\n\nWe also documented input checks and pose-export procedures for keeping coordinate references, atom mappings, and chemical information consistent. These methods can help other teams develop testable receptor-engineering hypotheses and prepare docking outputs for further analysis.\n\n[Explore the molecular docking workflow →](/model-docking/)",
       "openOriginal": true
     },
     {
@@ -135,7 +135,7 @@
     },
     {
       "_template": "text",
-      "body": "[Explore the Molecular dynamics analysis](/model-md/#src-Model-Molecular-Dynamics-6)"
+      "body": "[Explore the molecular dynamics analysis →](/model-md/#src-Model-Molecular-Dynamics-6)"
     },
     {
       "_template": "heading",
@@ -160,7 +160,7 @@
     },
     {
       "_template": "text",
-      "body": "[Explore the ordinary differential equation and dual-channel models](/model-ode/#src-Model-ODE-1)"
+      "body": "[Explore the ODE and dual-channel model →](/model-ode/#src-Model-ODE-1)"
     },
     {
       "_template": "heading",
@@ -178,7 +178,7 @@
     },
     {
       "_template": "text",
-      "body": "[Explore the Economic Model](/model-eco/)"
+      "body": "[Explore the economic benefit model →](/model-eco/)"
     },
     {
       "_template": "heading",
@@ -203,7 +203,7 @@
       "body": "Figure 4. Bringing nematode science into the classroom. Our teaching materials support classroom activities through the Xiangyang Program partnership.",
       "layout": "wrap-left",
       "imageWidth": "medium",
-      "accompanyingBody": "We developed three courses linking nematodes, agriculture, biological signals, and scientific responsibility. Age-adapted materials, picture books, and other outreach resources offer different ways to introduce these ideas to younger audiences.\n\nTeams and educators can draw on the learning goals, activity sequences, and visual materials, adapting them to local crops, classroom conditions, and learners’ ages.\n\n[Explore Educational Materials](/education/)",
+      "accompanyingBody": "We developed three courses linking nematodes, agriculture, biological signals, and scientific responsibility. Age-adapted materials, picture books, and other outreach resources offer different ways to introduce these ideas to younger audiences.\n\nTeams and educators can draw on the learning goals, activity sequences, and visual materials, adapting them to local crops, classroom conditions, and learners’ ages.\n\n[Explore the educational materials →](/education/)",
       "originalSrc": "https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-4-2b6f00755b.webp",
       "openOriginal": true
     },
@@ -220,7 +220,7 @@
       "body": "Figure 5. Learning from growers’ experience. Conversations during farm visits helped us relate testing needs to local crops and management practices.",
       "layout": "wrap-right",
       "imageWidth": "medium",
-      "accompanyingBody": "Our documentation shows how project questions can guide questionnaires, expert discussions, and conversations with growers. It also describes a way to trace feedback from its source through team discussion to subsequent design decisions.\n\nOther teams can adapt this approach to organize their own engagement and keep track of how it informs their work. Project-introduction and industry-communication materials provide additional examples of explaining a research idea and presenting a specific request for support.\n\n[Explore Integrated human practices](/human-practices/) · [Explore Industry Engagement](/hp-industry/)",
+      "accompanyingBody": "Our documentation shows how project questions can guide questionnaires, expert discussions, and conversations with growers. It also describes a way to trace feedback from its source through team discussion to subsequent design decisions.\n\nOther teams can adapt this approach to organize their own engagement and keep track of how it informs their work. Project-introduction and industry-communication materials provide additional examples of explaining a research idea and presenting a specific request for support.\n\n[Explore Integrated human practices →](/human-practices/) · [Explore industry engagement →](/hp-industry/)",
       "originalSrc": "https://static.igem.wiki/teams/6303/wiki/release-20261020/contribution-figure-5-7d72a4f737.webp",
       "openOriginal": true
     },
@@ -240,7 +240,7 @@
     },
     {
       "_template": "text",
-      "body": "[Explore Field Investigation](/hp-investigation/)"
+      "body": "[Explore the field investigation →](/hp-investigation/)"
     },
     {
       "_template": "heading",

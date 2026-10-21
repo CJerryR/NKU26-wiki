@@ -63,7 +63,7 @@ artificial intelligence (AI) tools supported our literature research, dry-lab so
 
 **Software:** Used ChatGPT extensively during dry-lab software development, with substantial portions of the code developed through AI assistance. Team members guided the intended methods, ran and tested the code, and reviewed relevant sections to assess whether the implementation matched the research objectives.
 
-**Visualization:** Used ChatGPT to refine Wiki layouts, assist with writing and revising plotting code, and directly generate visual assets for Wiki presentation. Team members reviewed and tested the plotting code and ran it on real project data or outputs from the team’s computational workflows. They reviewed the resulting plots and adapted visual materials to the project’s scientific content and design. Directly AI-generated visual assets are labelled on the Wiki.
+**Visualization:** Used ChatGPT to refine Wiki layouts, assist with writing and revising plotting code, and directly generate visual assets for Wiki presentation. Team members reviewed and tested the plotting code and ran it on real project data or outputs from the team’s computational workflows. They reviewed the resulting plots and adapted visual materials to the project’s scientific content and design. Directly AI-generated visual assets are labeled on the Wiki.
 
 **Writing:** Team members supplied research text they had already written, together with outlines, experimental records, or notes. ChatGPT was used mainly to polish language, translate text, and organize the presentation of that content. The members responsible for each section checked the revised text against the underlying research and records to preserve scientific meaning and accurately describe the work performed.
 

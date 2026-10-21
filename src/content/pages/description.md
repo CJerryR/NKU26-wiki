@@ -81,7 +81,7 @@ To make recognition visible, we use baker’s yeast, <em>Saccharomyces cerevisia
 
 We have worked along this chain by examining receptor expression and localization, engineering the yeast host, and constructing the pigment-production module. Alongside these experiments, an ordinary differential equation model describes how an input signal develops into color over time. It helps us examine whether different inputs can produce distinguishable outputs and identify the dose-response measurements, blanks, and time courses needed for calibration. [Explore our experimental work →](/results/) · [Explore our signaling model →](/model-ode/)
 
-To move toward a portable kit, we have also tested strip materials, cell immobilization, freeze-drying protection, and conditions for yeast revival and color development. We have made a holder for the strips. Each step addresses the same practical need: enabling biological sensing on a carrier that is easy to handle and read. [Explore our test strip development →](/engineering/)
+To move toward a portable kit, we have also tested strip materials, cell immobilization, freeze-drying protection, and conditions for yeast revival and color development. We have made a holder for the strips. Each step addresses the same practical need: enabling biological sensing on a carrier that is easy to handle and read. [Explore our test-strip development →](/engineering/)
 
 ### Making the color useful {#description-making-the-color-useful toc="Making the color useful" toc-unnumbered}
 
