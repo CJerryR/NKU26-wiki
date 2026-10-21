@@ -1,7 +1,7 @@
 {
-  "version": "10.2.42",
-  "label": "Visible release history and approved combined page updates",
-  "prepared_at": "2026-10-21T15:58:45.667383+08:00",
+  "version": "10.2.43",
+  "label": "Results grouped figures and continuous text wrapping",
+  "prepared_at": "2026-10-21T17:52:37.424411+08:00",
   "media": "84 unchanged original images plus 4 user-authorized GPS-only cleaned images; all decoded frames unchanged; 12 complete historical source documents",
   "release_kind": "stage",
   "team_content_review": "Scientific final review pending; source-version choices authorized by user",
@@ -10,7 +10,7 @@
     "commit": "16770d5c28ddf7bc41f8d90445c44d80a28801d5",
     "published_at_local": "2026-10-18 05:04:34"
   },
-  "release_id": "combined-history-hp-v10.2.42",
+  "release_id": "results-groups-v10.2.43",
   "mobile_layout_check": "390px Members rendered without overflow; desktop Description, Parts/plasmid, Attributions/puzzle checked; 4 second delayed CDN uses inline preview then upgrades",
   "source_fidelity": {
     "original_source_files_verified": 80,
@@ -30,8 +30,8 @@
     "source_decisions": "content/author-source-decisions.json"
   },
   "previous_release": {
-    "version": "10.2.41",
-    "commit": "168a4f02748ea1e0bb5e707f6f799d4d19f100bb"
+    "version": "10.2.42",
+    "commit": "218e79dbd62c59d3e92554b6f57b95e86427c617"
   },
   "visual_stage": "AI-generated handcut illustrations; 16 sheets, 91 canonical props",
   "meeting_update": {
@@ -489,5 +489,14 @@
     ],
     "numbering": "None by explicit user request; exact audit protection added",
     "portraits_order_anchors": "unchanged"
+  },
+  "results_grouped_figures": {
+    "source_commits": [
+      "d72efdf31cd01c3459d32c5f9fae76558c6dddad",
+      "a9d76d4bf9bf672bfc33a37167b514b91e6b9bd9",
+      "aba5be8c760c4a09f15b3829c6c98f623893af85"
+    ],
+    "scope": "23/24 and33/34 pairedrightframes;8/30continuation;36scale;mobileorderpreserved",
+    "scientific_content": "unchanged;team review status retained"
   }
 }
