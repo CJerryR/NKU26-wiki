@@ -1,0 +1,46 @@
+/* Distill-inspired figure flow, adapted to the existing Astro/Tina components.
+   Keep the site's 65rem measure, type, captions and theme. No Distill runtime.
+   Research pages only: people cards and the homepage retain their own layouts. */
+.doc:is([data-page="description"], [data-page="background"], [data-page="contribution"], [data-page="engineering"], [data-page="results"], [data-page="model"], [data-page="model-docking"], [data-page="model-md"], [data-page="model-ode"], [data-page="model-eco"]) > .prose {
+  container: research-article / inline-size;
+}
+
+/* Narrow justified text needs word breaks, rather than widely spaced words.
+   The rich-text wrapper inherits the manuscript's language. */
+@container research-article (min-width: 0px) {
+  .figure-text__body:lang(en) { hyphens: auto; overflow-wrap: break-word; }
+  .figure-text__body :is(code, kbd, .katex) { hyphens: none; }
+  .doc .prose .figure-text__body > :first-child { margin-top: 0 !important; }
+  .doc .prose .figure-text__body > :last-child { margin-bottom: 0 !important; }
+}
+
+/* Judge space by the article, not the screen: the desktop outline consumes part
+   of the viewport. Below 48rem, a half-width figure leaves too little text room.
+   Preserve the same body → image/caption reading order as the phone layout. */
+@container research-article (max-width: 47.999rem) {
+  .figure-text__body:lang(en) { hyphens: manual; }
+  .doc .prose .figure-text--wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .doc .prose .figure-text--wrap > .figure-text__body { display: block; order: 0; }
+  .doc .prose .figure-text--wrap > :is(.figure, .figure-pair),
+  .doc .prose .figure-text--wrap.figure-text--right > :is(.figure, .figure-pair) {
+    float: none;
+    width: 100%;
+    /* Also release the spotting-device's desktop-only size cap. */
+    max-width: none !important;
+    margin: 0;
+    order: 1;
+  }
+  /* A tall structure must not grow to several screens when its float becomes a
+     full-width frame. Use the same complete-image cap as ordinary full figures. */
+  .doc .prose .figure-text--wrap > .figure > .figure__media img {
+    width: auto;
+    max-height: min(78vh, 760px);
+  }
+  .doc .prose .figure-text--wrap > .figure > .figure__media img[style*="--figure-ratio"] {
+    width: min(var(--figure-natural-width), 100%, calc(min(78vh, 760px) * var(--figure-ratio)));
+  }
+}

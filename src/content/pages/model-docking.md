@@ -35,7 +35,7 @@ The public code includes cross-receptor docking and pose-contact analysis, plus 
 
 ## Receptor selection and docking setup {#model-docking-section-1 toc="Receptor selection and docking setup"}
 
-::::figuretext{side=right width=medium flow=wrap}
+::::figuretext{side=right width=narrow flow=wrap}
 
 :::figure
 
@@ -71,7 +71,7 @@ Figure 2. Predicted docking poses and pocket environments of Gpr2 WT. (a, b) asc
 
 These analyses provided complementary information. Contact frequencies showed how often a residue contacted a ligand within the sampled conformations, while individual poses helped locate differences and identify side chains to test.
 
-::::figuretext{side=right width=medium flow=wrap}
+::::figuretext{side=left width=medium flow=wrap}
 
 :::figure
 

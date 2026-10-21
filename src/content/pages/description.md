@@ -95,7 +95,7 @@ These comparisons feed back into the design of the test: which density ranges ma
 
 ### 1.5 Bringing the whole process back to the field {#description-bringing-the-whole-process-back-to-the-field toc="Bringing the whole process back to the field" toc-unnumbered}
 
-::::figuretext{side=right width=medium flow=wrap}
+::::figuretext{side=left width=medium flow=wrap}
 
 :::figure
 

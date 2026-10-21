@@ -910,7 +910,7 @@
       "alt": "Water absorption capacity evaluation of selected substrates.",
       "body": "<p class=\"figure-caption\">Figure 30. Water absorption capacity evaluation of selected substrates.</p>",
       "accompanyingBody": "<p>Considering both the cell-binding capacity and the physical properties of each material, we select three substrates—GF/B, GF/A, and cellulose acetate—for the copper sulfate solution wicking experiment (Figure 30).</p><p>The results demonstrate that GF/B not only exhibits strong binding capacity with yeast cells but also possesses superior water absorption ability.</p>",
-      "layout": "wrap-right",
+      "layout": "wrap-left",
       "imageWidth": "wide",
       "openOriginal": true,
       "continueWrap": true
@@ -1080,7 +1080,7 @@
       "alt": "3D-printed test strip cassette.",
       "body": "<p class=\"figure-caption\">Figure 36. 3D-printed test strip cassette.</p>",
       "accompanyingBody": "<p>Meanwhile, considering the field application scenarios of our product, we design a 3D-printed test strip cassette to hold the test strip (Figure 36), making the detection workflow simpler and more convenient.</p><p>At this point, we have closed the loop on test strip fabrication and application, establishing a solid foundation for subsequent on-site rapid detection of soil samples.</p>",
-      "layout": "wrap-right",
+      "layout": "wrap-left",
       "imageWidth": "narrow",
       "openOriginal": true,
       "scale": "70"

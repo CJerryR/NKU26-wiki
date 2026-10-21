@@ -121,7 +121,7 @@ Our Human Practices work produced materials and organizational approaches that c
 
 ### 3.1 Age-adapted educational materials {#contribution-3-1-age-adapted-educational-materials toc="Age-adapted educational materials" toc-unnumbered}
 
-::::figuretext{side=right width=medium flow=wrap}
+::::figuretext{side=left width=medium flow=wrap}
 
 :::figure
 
