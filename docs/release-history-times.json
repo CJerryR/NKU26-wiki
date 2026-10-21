@@ -1,0 +1,134 @@
+{
+  "26": {
+    "pipeline": 782323,
+    "published_at_beijing": "2026-10-20 23:49:11",
+    "sha": "83130f2fa08ac6bed22df739fc3845553aa75602",
+    "receipt": "workspace/evidence/results-cycle4-photo-v10.2.26-20261020/发布回执.json"
+  },
+  "20": {
+    "pipeline": 779992,
+    "published_at_beijing": "2026-10-20 19:55:01",
+    "sha": "cf98239ed6b8a76a1970bcf19e2ab51c3e6c096b",
+    "receipt": "workspace/evidence/afternoon-review-release-20261020/发布回执.json"
+  },
+  "27": {
+    "pipeline": 782512,
+    "published_at_beijing": "2026-10-21 00:05:49",
+    "sha": "b4a4e6a81a7340865f242d69507b24993dd71e4f",
+    "receipt": "workspace/evidence/engineering-image/发布回执.json"
+  },
+  "18": {
+    "pipeline": 777158,
+    "published_at_beijing": "2026-10-20 12:30:36",
+    "sha": "5bb0322ced0703d2a8469ea24a60bde8209ff7ad",
+    "receipt": "workspace/evidence/ruoxi-engineering-components-publication-20261020/发布回执.json"
+  },
+  "23": {
+    "pipeline": 781480,
+    "published_at_beijing": "2026-10-20 22:25:32",
+    "sha": "2fd2312229302c6b6e65d6aba8945902bdd82dae",
+    "receipt": "workspace/evidence/dbtl3-figure-numbering-v10.2.23-20261020/发布回执.json"
+  },
+  "28": {
+    "pipeline": 783075,
+    "published_at_beijing": "2026-10-21 00:59:13",
+    "sha": "528e1947074d94b8005652fb33e45a81dc05c8f0",
+    "receipt": "workspace/evidence/attributions-photos/release/发布回执.json"
+  },
+  "29": {
+    "pipeline": 783386,
+    "published_at_beijing": "2026-10-21 01:28:50",
+    "sha": "b4307bfb211324f212bb83104fdba55f27eaf995",
+    "receipt": "workspace/evidence/team-outline-v10.2.29/发布回执.json"
+  },
+  "24": {
+    "pipeline": 781649,
+    "published_at_beijing": "2026-10-20 22:41:17",
+    "sha": "125f5c195d498f50c2b11506e496d86c461d59ee",
+    "receipt": "workspace/evidence/home-literature/发布回执.json"
+  },
+  "25": {
+    "pipeline": 781781,
+    "published_at_beijing": "2026-10-20 22:54:54",
+    "sha": "80a736eaf8cb35abc00e07e943d49b25d5b93f2d",
+    "receipt": "workspace/evidence/dbtl3-layout-v10.2.25-20261020/发布回执.json"
+  },
+  "38": {
+    "pipeline": 786161,
+    "published_at_beijing": "2026-10-21 07:56:06",
+    "sha": "34357bfd8ecc4e3bab109c98fb26beece81376fe",
+    "receipt": "workspace/evidence/release-bot/20261021-hourly-0742/发布回执.json"
+  },
+  "35": {
+    "pipeline": 785050,
+    "published_at_beijing": "2026-10-21 05:13:00",
+    "sha": "8a523c317650d115d5db006f4e75ed127dcb02f9",
+    "receipt": "workspace/evidence/release-bot/20261021-dbtl-arc-urgent/发布回执.json"
+  },
+  "40": {
+    "pipeline": 789248,
+    "published_at_beijing": "2026-10-21 13:22:57",
+    "sha": "1e4ff0bc94ac9b5da0e34f62f5a8c2c7cbf62d3f",
+    "receipt": "workspace/evidence/release-bot/20261021-project-single/发布回执.json"
+  },
+  "30": {
+    "pipeline": 783580,
+    "published_at_beijing": "2026-10-21 02:01:11",
+    "sha": "0032325593fed433c3b92c1bb0256ed7c51efc42",
+    "receipt": "workspace/evidence/release-bot/20261021-initial/发布回执.json"
+  },
+  "34": {
+    "pipeline": 784832,
+    "published_at_beijing": "2026-10-21 04:45:01",
+    "sha": "780f037ed0980634fb193d16b1120296221c8e7b",
+    "receipt": "workspace/evidence/release-bot/20261021-hourly-0435/发布回执.json"
+  },
+  "37": {
+    "pipeline": 785723,
+    "published_at_beijing": "2026-10-21 06:57:01",
+    "sha": "323aa9f3109f2081508b5c411a7d12c60e75250a",
+    "receipt": "workspace/evidence/release-bot/20261021-hourly-0646/发布回执.json"
+  },
+  "39": {
+    "pipeline": 789063,
+    "published_at_beijing": "2026-10-21 13:03:54",
+    "sha": "64173b935014ed8acc913f9ea12e22a85eb8022e",
+    "receipt": "workspace/evidence/release-bot/20261021-hourly-1249/发布回执.json"
+  },
+  "36": {
+    "pipeline": 785223,
+    "published_at_beijing": "2026-10-21 05:40:14",
+    "sha": "fd9b5a6e3c5ff568966c81ac691db61046568a2f",
+    "receipt": "workspace/evidence/release-bot/20261021-wrap-combined/发布回执.json"
+  },
+  "32": {
+    "pipeline": 784453,
+    "published_at_beijing": "2026-10-21 03:52:16",
+    "sha": "774aad6ab7872a230a7734db87e1414b6f9f709e",
+    "receipt": "workspace/evidence/release-bot/20261021-hourly-0332/发布回执.json"
+  },
+  "41": {
+    "pipeline": 790396,
+    "published_at_beijing": "2026-10-21 15:16:15",
+    "sha": "168a4f02748ea1e0bb5e707f6f799d4d19f100bb",
+    "receipt": "workspace/evidence/release-bot/20261021-members-followup/发布回执.json"
+  },
+  "33": {
+    "pipeline": 784733,
+    "published_at_beijing": "2026-10-21 04:31:23",
+    "sha": "88b4566cfbed21ea96d5ebdb0dddc615d738cf42",
+    "receipt": "workspace/evidence/release-bot/20261021-project-compare-0409/发布回执.json"
+  },
+  "31": {
+    "pipeline": 783891,
+    "published_at_beijing": "2026-10-21 02:36:09",
+    "sha": "9e9fa070857d872d29a4759c53c9e362ed9c70ab",
+    "receipt": "workspace/evidence/release-bot/20261021-hourly-0226/发布回执.json"
+  },
+  "21": {
+    "pipeline": 780274,
+    "published_at_beijing": "2026-10-20 20:33:03",
+    "sha": "f1194f1ecc2ef547bb6a169df71ced3cdededb6f",
+    "receipt": "workspace/evidence/wetlab-tables-20261020/发布回执.json"
+  }
+}

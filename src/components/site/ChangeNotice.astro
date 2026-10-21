@@ -6,7 +6,7 @@ import { visibleHistory } from '../../lib/history-visibility.mjs';
 const readmePath = `${process.cwd()}/README.md`;
 const readme = readFileSync(readmePath, 'utf8');
 const history = readme.split('## 版本改动')[1] ?? '';
-const versions = visibleHistory([...history.matchAll(/### (V[\d.]+) 改动：\s*([\s\S]*?)(?=### |$)/g)]
+const versions = visibleHistory([...history.matchAll(/### (V[\d.]+)(?: 改动)?[：:]?\s*([\s\S]*?)(?=### |$)/g)]
   .map(([, version, body]) => ({
     version,
     publishedAt: body.match(/^发布时间[：:]\s*(.+)$/m)?.[1] ?? '',

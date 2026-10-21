@@ -1,6 +1,6 @@
 {
   "name": "nku26-wiki",
-  "version": "10.2.41",
+  "version": "10.2.42",
   "private": true,
   "type": "module",
   "description": "NKU-China 2026 Wiki (NemaKlear): Astro and Tina, interactive homepage, model chapters, scroll-opened pages and day/night reading.",
@@ -15,7 +15,7 @@
     "verify": "npm run build && npm run audit",
     "predev": "node tools/prepare-viewers.mjs",
     "predev:cloud": "node tools/prepare-viewers.mjs",
-    "prebuild": "node tools/prepare-viewers.mjs && node tools/apply-cdn-fonts.mjs && node tools/prepare-nemaklear.mjs",
+    "prebuild": "python3 tools/check-release-history.py && node tools/prepare-viewers.mjs && node tools/apply-cdn-fonts.mjs && node tools/prepare-nemaklear.mjs",
     "test:captions": "node --test tools/tests/caption-panels.test.mjs",
     "test:media": "node --test tools/tests/media-blocks.test.mjs",
     "test:theme": "node --test tools/tests/theme.test.mjs",
