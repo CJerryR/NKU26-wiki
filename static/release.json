@@ -1,6 +1,6 @@
 {
   "version": "10.2.42",
-  "label": "Restore website changelog and publication times",
+  "label": "Visible release history and approved combined page updates",
   "prepared_at": "2026-10-21T15:58:45.667383+08:00",
   "media": "84 unchanged original images plus 4 user-authorized GPS-only cleaned images; all decoded frames unchanged; 12 complete historical source documents",
   "release_kind": "stage",
@@ -10,7 +10,7 @@
     "commit": "16770d5c28ddf7bc41f8d90445c44d80a28801d5",
     "published_at_local": "2026-10-18 05:04:34"
   },
-  "release_id": "release-history-v10.2.42",
+  "release_id": "combined-history-hp-v10.2.42",
   "mobile_layout_check": "390px Members rendered without overflow; desktop Description, Parts/plasmid, Attributions/puzzle checked; 4 second delayed CDN uses inline preview then upgrades",
   "source_fidelity": {
     "original_source_files_verified": 80,
