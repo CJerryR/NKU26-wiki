@@ -29,7 +29,7 @@ For plasmid construction (Figure 1a), our design rationale was as follows:
 
 <p>a. The upstream and downstream sequences of the <em>STE2</em> coding sequence were utilized as the 5′-homology arm and 3′-homology arm to facilitate gene knock-in via yeast endogenous HR.</p>
 
-<p>b. The constitutive TEF1 promoter was employed to drive gene expression. The complementary DNA sequence of <em>GPR2</em> was fused to the <em>superfolder green fluorescent protein</em> sequence via a flexible linker for observation under fluorescence microscopy, followed by the CYC1 terminator.</p>
+<p>b. The constitutive TEF1 promoter was employed to drive gene expression. The complementary DNA sequence of <em>GPR2</em> was fused to the <em>superfolder green fluorescent protein</em> (sfGFP) sequence via a flexible linker for observation under fluorescence microscopy, followed by the CYC1 terminator.</p>
 
 <p>c. The <em>Leu2</em> auxotrophic marker was used for transformant selection.</p>
 

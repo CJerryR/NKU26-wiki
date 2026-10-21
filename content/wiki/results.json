@@ -50,7 +50,7 @@
     },
     {
       "_template": "text",
-      "body": "<p>b. The constitutive TEF1 promoter was employed to drive gene expression. The complementary DNA sequence of <em>GPR2</em> was fused to the <em>superfolder green fluorescent protein</em> sequence via a flexible linker for observation under fluorescence microscopy, followed by the CYC1 terminator.</p>"
+      "body": "<p>b. The constitutive TEF1 promoter was employed to drive gene expression. The complementary DNA sequence of <em>GPR2</em> was fused to the <em>superfolder green fluorescent protein</em> (sfGFP) sequence via a flexible linker for observation under fluorescence microscopy, followed by the CYC1 terminator.</p>"
     },
     {
       "_template": "text",
