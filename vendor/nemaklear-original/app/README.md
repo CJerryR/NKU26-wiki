@@ -1,19 +1,19 @@
-# NemaKlear 本地交互原型
+# NemaKlear local interactive prototype
 
-2026-10-15。把冻结的 ODE r04、双通道 r01 和现有 Eco HTML 报告包装成一个本地实验台。所有校准仍为模拟；没有重新拟合模型。当前界面为 2026-10-16 第四版。
+2026-10-15. Wraps the frozen ODE r04, dual-channel r01 and the existing Eco HTML report into a local workbench. All calibration is still simulated; no model was refitted. The current interface is version 4 (2026-10-16).
 
-## 启动
+## Start
 
-在当前电脑双击 `start.command`，或在终端运行：
+On this computer, double-click `start.command`, or run in a terminal:
 
 ```sh
 cd /Users/yangruoxi/Documents/ChatGPT/ODE-Research-Lab
 ./ode-v1/web-demo/start.command
 ```
 
-浏览器打开 <http://127.0.0.1:8765>。服务只监听本机。按 Control+C 停止；端口被占用时用 `./ode-v1/web-demo/start.command --port 8766`，然后访问对应端口。
+Open <http://127.0.0.1:8765> in a browser. The service listens on this machine only. Press Control+C to stop. If the port is taken, use `./ode-v1/web-demo/start.command --port 8766` and open that port.
 
-搬到另一台电脑时，整个 `web-demo` 文件夹可以独立运行（本机验证版本 Python 3.14；其他版本需匹配依赖要求）：
+To move it to another computer, the whole `web-demo` folder runs on its own (verified with Python 3.14; other versions need matching dependencies):
 
 ```sh
 cd web-demo
@@ -22,91 +22,91 @@ python3 -m venv .venv
 .venv/bin/python -B server.py
 ```
 
-## 怎么用
+## How to use
 
-- **ODE 模拟样本**：从九种已保存组合中选一组，实时求解两个传感器的六状态 ODE，展示 Fus3 和色素轨迹。8 h 色素等效浓度乘 0.048 换为 A480，分别扣去对应 ODE 空白，再调用已有回归。
-- **手动吸光度**：输入已扣空白的两路 A480，或原始值加两路匹配空白。手动模式直接进入双通道模型；两路终点读数不能唯一反推出 ODE 轨迹，因此这里只展示明确标注的参考曲线。
-- **Eco 同页结果**：计算完成后自动显示收益与曲线。点估计等级和校准覆盖范围分开显示。可切换点估计、区间端点；跨阈值时还提供阈值两侧情景。超过密度校准上限时，带有明确标记的条件模拟报告仍可查看。每份 Eco 报告是在该给定密度下的计算，收益变化不是置信区间。饱和、颜色组合超域、负密度或超过 Eco 支持范围的结果仍阻止报告。
-- **下载**：当前结果 JSON、三张科学图的 PNG/SVG/PDF，以及图片套装。
+- **ODE simulated samples:** choose one of nine saved combinations. The six-state ODE of both sensors is solved live, showing Fus3 and pigment trajectories. The 8 h pigment-equivalent concentration is multiplied by 0.048 to give A480, the matching ODE blank is subtracted for each channel, and the existing regression is called.
+- **Manual absorbance:** enter blank-corrected A480 for both channels, or raw values plus two matching blanks. Manual mode goes straight into the dual-channel model. Two endpoint readings cannot uniquely determine an ODE trajectory, so only a clearly labeled reference curve is shown here.
+- **Eco results on the same page:** benefits and curves appear automatically after computation. The point-estimate class and calibration coverage are shown separately. You can switch between the point estimate and the interval ends; when the interval crosses a threshold, scenarios on both sides are offered. Above the calibrated density limit, a clearly labeled conditional-simulation report is still available. Each Eco report is computed at the given density; benefit changes are not confidence intervals. Saturation, out-of-domain color combinations, negative density or results beyond the Eco supported range still block the report.
+- **Downloads:** the current result as JSON, the three scientific figures as PNG/SVG/PDF, and a figure bundle.
 
-默认打开 Mi 120 + Ce 80，并自动计算。
+Opens with Mi 120 + Ce 80 by default and computes automatically.
 
-对照例子 Mi 40 + Ce 80：校正 A480 分别约 0.01857307356、0.00267167879；预测 Mi 40.8723 J2/100 cm³，形式区间 17.5990–64.1455，中档。
+Reference example Mi 40 + Ce 80: corrected A480 about 0.01857307356 and 0.00267167879; predicted Mi 40.8723 J2/100 cm³, formal interval 17.5990–64.1455, medium class.
 
-## 冻结条件及解释
+## Frozen conditions and interpretation
 
-Mi J2、Ce L4 是本次模拟标签。假设两者每条虫每小时 #3＋#18 合计释放量相同，Q=1 fmol；Mi 比例 1:10，Ce 10:1。采集 1 h、有效体积 1 mL，传感器读取 8 h；这些比例和绝对释放量不是文献实测值。吸光度换算采用工作近似 ε=48000 L/(mol·cm)、有效光程 1 cm。
+Mi J2 and Ce L4 are the simulation labels used here. Both are assumed to release the same combined amount of #3 + #18 per worm per hour, Q = 1 fmol; Mi ratio 1:10, Ce 10:1. Collection 1 h, effective volume 1 mL, sensor readout at 8 h; these ratios and absolute release amounts are not measured literature values. Absorbance conversion uses the working approximation ε = 48000 L/(mol·cm) and an effective path length of 1 cm.
 
-输入端交叉响应权重及显色方程其余参数固定；每通道沿用已拟合的 KL、a。九个混合组合的 ODE 终点用于既有三系数回归，Ce 数量不进入预测器。模型卡在 `data/calibration.json`，配对矩阵在 `data/matrix.json`。
+Input cross-response weights and the remaining color equation parameters are fixed; each channel keeps its fitted KL and a. The ODE endpoints of nine mixed combinations feed the existing three-coefficient regression; Ce count does not enter the predictor. The model card is in `data/calibration.json` and the pairing matrix in `data/matrix.json`.
 
-OLS 形式预测区间来自确定性模拟残差，没有真实样本的 95% 覆盖率保证。当前经验校准为 Mi 0–120 J2/100 cm³，并检查两路颜色的联合校准域。Eco 使用西班牙设施番茄示例的 10、80 分界，不能解释成通用农业阈值。报告在进程内暂存最近 32 次计算，重启或被淘汰后需重新计算。
+The OLS formal prediction interval comes from deterministic simulation residuals and has no guaranteed 95% coverage for real samples. The current empirical calibration covers Mi 0–120 J2/100 cm³, and the joint calibration domain of both colors is checked. Eco uses the 10 and 80 thresholds of the Spanish greenhouse tomato example, which must not be read as general agricultural thresholds. Reports keep the last 32 computations in memory; after a restart or eviction they must be recomputed.
 
-## 图的使用
+## Figures
 
-1. `public/figures/01-signal-to-color.*`：主图，四种代表土样的两路 Fus3 / 色素时间响应。选用空白、Mi40、Ce80、Mi40+Ce80，分别用灰、蓝、橙、绿。两个通道同类状态共用纵轴尺度。当前轨迹的变化贯穿数小时，故上下排均保留 0–8 h。
-2. `02-pathway-and-interfaces.*`：方法图，固定公共核心，突出入口 KL 与出口 a；有效显色方程的时间以小时计，核心内部求解时间为秒。
-3. `03-endpoint-calibration.*`：模拟标定图，横轴为预设显色、纵轴为 ODE 输出，九点均参与拟合。不是独立验证，也不是实测与预测比较。
+1. `public/figures/01-signal-to-color.*`: main figure, two-channel Fus3 / pigment time response of four representative soil samples: blank, Mi40, Ce80 and Mi40+Ce80 in gray, blue, orange and green. Matching states of both channels share a y-axis scale. The trajectories change over several hours, so both rows keep 0–8 h.
+2. `02-pathway-and-interfaces.*`: methods figure with the fixed shared core, highlighting the input KL and output a; the effective color equation is in hours, while the core is solved in seconds.
+3. `03-endpoint-calibration.*`: simulated calibration figure, preset color on the x-axis and ODE output on the y-axis, with all nine points used in fitting. It is not an independent validation or a comparison of measured and predicted values.
 
-PNG 为 300 dpi；SVG 保留文本、PDF 可用于矢量排版。推荐答辩主页用时间图，方法页用通路图，标定图放结果页或备份页。图注可用：**“在固定公共通路和假定混合分泌谱下，两路传感器呈现不同的动态显色响应；8 h 端点用于模拟双通道密度校准。”**
+PNGs are 300 dpi; SVGs keep text and PDFs suit vector layout. Recommended: the time-response figure for the main presentation page, the pathway figure for methods, and the calibration figure for results or backup slides. Suggested caption: **"Under a fixed shared pathway and an assumed mixed secretion profile, the two sensors show different dynamic color responses; 8 h endpoints are used for simulated dual-channel density calibration."**
 
-重绘：从工作区运行 `.venv/bin/python -B ode-v1/web-demo/export_figures.py`。数据直接读取冻结 r04 副本，不重新训练。
+To redraw, run `.venv/bin/python -B ode-v1/web-demo/export_figures.py` from the workspace. Data are read directly from the frozen r04 copy; nothing is retrained.
 
-## 文件与回滚
+## Files and rollback
 
-- `server.py`：仅本地 HTTP 接口、ODE 调用及条件报告包装。
-- `public/`：无需构建的网页与导出图片。
-- `vendor/`：既有核心、双通道和 Eco 实现的隔离副本。
-- `data/`：冻结参数、模型卡、矩阵和轨迹。
-- `bridge.py`：既有 `predict_risk.py` 的路径适配副本，分级规则不变。
-- `SOURCE_MANIFEST.json`：原文件位置及 SHA256。
-- `tests/test_chain.py`：端到端数值一致性、原始/校正读数一致性、阻断、跨档和非法输入检查。
+- `server.py`: local-only HTTP interface, ODE calls and conditional report wrapping.
+- `public/`: build-free web page and exported figures.
+- `vendor/`: isolated copies of the existing core, dual-channel and Eco implementations.
+- `data/`: frozen parameters, model card, matrix and trajectories.
+- `bridge.py`: path-adapted copy of the existing `predict_risk.py`; classification rules unchanged.
+- `SOURCE_MANIFEST.json`: original file locations and SHA256 hashes.
+- `tests/test_chain.py`: end-to-end numeric consistency, raw/corrected reading consistency, blocking, cross-class and invalid-input checks.
 
-旧的 ODE、回归、Eco 文件均独立保留。回滚只需停止本原型；删除本文件夹不会影响原程序。本轮没有 commit/push。
+The original ODE, regression and Eco files are kept separately. To roll back, stop this prototype; deleting this folder does not affect the original programs. Nothing was committed or pushed in this round.
 
-检查命令：`.venv/bin/python -B -m unittest discover -s ode-v1/web-demo/tests -v`。
+Test command: `.venv/bin/python -B -m unittest discover -s ode-v1/web-demo/tests -v`.
 
-## 2026-10-15 第二版：边界展示与 Wiki 风格
+## 2026-10-15 version 2: boundary display and wiki style
 
-界面参考 [NKU-China Wiki](https://2026.igem.wiki/nku-china/) 的 [公开样式表](https://2026.igem.wiki/nku-china/css/style.css)：纸色 #f7f2e8、深紫 #191222、鸢尾紫 #6e4fb8、琥珀黄 #e2a23c。说明收进折叠区，首页保留输入、密度、点估计等级及相关的一条边界说明。品牌名随项目统一为 NemaKlear。既有下载图件保持原版。
+The interface follows the [public stylesheet](https://2026.igem.wiki/nku-china/css/style.css) of the [NKU-China Wiki](https://2026.igem.wiki/nku-china/): paper #f7f2e8, deep purple #191222, iris #6e4fb8, amber #e2a23c. Explanations moved into collapsible sections; the first screen keeps the inputs, density, point-estimate class and one related boundary note. The brand name follows the project as NemaKlear. Downloaded figures keep their original versions.
 
-本地 `server.py` 新增 `classify_demo` 展示策略，不改 `bridge.py` 或 vendor 校准与 Eco 源码：
-- `risk` 是网页的条件演示分级；`strict_risk` 保留原严格分级结果。
-- 124.22 的输入颜色可在校准域内，但密度及区间超过 120；显示“条件模拟高档”，报告内保留超范围说明。
-- 8.74 显示“点估计低档”，同时注明区间涉及低/中。负的区间下限在主界面按 0 展示，原始未截断值在 `prediction.prediction_interval_95` 中保留。
-- 负点估计、饱和及颜色组合超域继续阻止报告；不截断负点估计来掩盖回归误差。
-- 手动模式切换原始/校正读数时同步加减匹配空白；切换后必须重新计算。修改输入会清除旧结果和报告。
+The local `server.py` adds a `classify_demo` display policy without changing `bridge.py`, the vendor calibration or the Eco source:
+- `risk` is the page's conditional demo classification; `strict_risk` keeps the original strict result.
+- An input color of 124.22 can be inside the calibration domain while the density and interval exceed 120; this shows "conditional simulation, high", and the report keeps the out-of-range note.
+- 8.74 shows "point estimate low" and notes that the interval spans low/medium. A negative interval lower bound is shown as 0 in the main interface; the raw untruncated value is kept in `prediction.prediction_interval_95`.
+- Negative point estimates, saturation and out-of-domain color combinations still block the report; negative point estimates are not truncated to hide regression error.
+- In manual mode, switching between raw and corrected readings adds or subtracts the matching blank; recompute after switching. Changing any input clears the old result and report.
 
-后端有版本检查。已运行的旧服务需在原终端按 Control+C，再运行 `start.command`，然后刷新浏览器。
+The back end checks its version. Stop an old running service with Control+C in its terminal, run `start.command` again and refresh the browser.
 
-回滚快照：上级目录的 `web-demo-before-wiki-style-2026-10-15.zip`。停止服务后，可将当前目录另存，再解压快照恢复。科学模型与参数未改。
+Rollback snapshot: `web-demo-before-wiki-style-2026-10-15.zip` in the parent directory. Stop the service, save the current directory elsewhere and unzip the snapshot to restore. Scientific model and parameters unchanged.
 
-## 2026-10-15 第三版：ODE 与 Eco 同页呈现
+## 2026-10-15 version 3: ODE and Eco on one page
 
-移除 iframe。主页面顺序为输入与密度、ODE 时间响应、Eco 收益与比较；同一配色与页面滚动。Eco 自动随预测加载，切换密度情景或语言会重新载入该情景，旧请求不会覆盖新选择。
+The iframe was removed. The main page now runs inputs and density, ODE time response, then Eco benefits and comparison, with one color scheme and page scroll. Eco loads automatically with the prediction; switching density scenario or language reloads that scenario, and stale requests cannot overwrite a newer choice.
 
-`GET /api/eco/<prediction_id>/<scenario_index>?lang=en` 返回既有 Eco 的结构化报告、原有收益曲线（仅替换颜色）和上游校准说明。`public/eco.js` 负责同页排版，不重新实现经济学公式。原独立 HTML 报告继续由 `/report/…` 提供，可从“独立报告”打开。
+`GET /api/eco/<prediction_id>/<scenario_index>?lang=en` returns the existing Eco structured report, the original benefit curve (colors replaced only) and the upstream calibration notes. `public/eco.js` lays it out on the page without reimplementing the economic formulas. The original standalone HTML report is still served at `/report/…` and opens from "Standalone report".
 
-默认展示：当前密度/预设方案、未防治产量损失、两种基线下的收益、三情景利润表、净收益曲线。成本/ROI/盈亏平衡、敏感性、检测成本和方案、参数假设及文献放在折叠区。单独的 Eco JSON 下载与总结果 JSON 都保留当前选中情景的数据。
+Shown by default: current density/preset strategy, untreated yield loss, benefits under two baselines, the three-scenario profit table and the net benefit curve. Costs/ROI/break-even, sensitivity, detection costs and strategies, parameter assumptions and references are in collapsible sections. The separate Eco JSON download and the full result JSON both keep the selected scenario's data.
 
-新增测试：同页与原报告核心数值/曲线一致、中英文数值一致、情景密度正确、超校准范围说明保留、受阻预测不能通过 Eco 数据接口绕过限制。
+New tests: in-page and original report core values and curves match, values match across Chinese and English, scenario densities are correct, the out-of-calibration note is kept, and blocked predictions cannot bypass restrictions through the Eco data API.
 
-回滚快照：`../web-demo-before-unified-eco-2026-10-15.zip`。本次仍需重启原本地服务再刷新页面（接口版本 3）。
+Rollback snapshot: `../web-demo-before-unified-eco-2026-10-15.zip`. Restart the original local service and refresh the page (API version 3).
 
-## 2026-10-16 第四版：面向非专业读者
+## 2026-10-16 version 4: for non-specialist readers
 
-- 样本说明显示拉丁名与中文名，移除该句的虫龄标签；冻结模型的 Mi J2 / Ce L4 假设及密度单位仍保留在数据与本文档中。
-- “如何理解结果”仅保留两路读数、区间含义、模拟状态和示例场景。公式、OLS 细节与协议编号不再占用该说明区。
-- ODE 默认在同一坐标轴比较两通道净显色：每个时间点的总色素减去同通道无刺激空白轨迹。空白不是 Ce 背景；Ce 诱导的响应仍保留。可切换总显色，Fus3 对比收进折叠区。
-- 8 h 回归输入、模型参数、密度预测及 Eco 数值未变。默认样本的净显色为 0.3869 / 0.0557 μM，总显色为 0.8869 / 0.5557 μM。
-- Eco 保留关键收益、三方案利润比较与原收益曲线；检测费用改为横条图。ROI、盈亏平衡、敏感性与方案细节可在原独立报告查看。
-- 已下载的科学图件维持原版，总色素时间曲线没有改成净值；网页的显示切换只作用于当前交互曲线。
+- The sample description shows Latin and Chinese names and drops the life-stage label from that sentence; the frozen model's Mi J2 / Ce L4 assumptions and density units remain in the data and in this document.
+- "How to read the result" keeps only the two readings, interval meaning, simulation status and example scenario. Formulas, OLS details and protocol numbers no longer take up that section.
+- By default the ODE plot compares the net color of both channels on one axis: total pigment at each time point minus the same channel's unstimulated blank trajectory. The blank is not a Ce background; the Ce-induced response is kept. Total color can be toggled, and the Fus3 comparison is in a collapsible section.
+- The 8 h regression inputs, model parameters, density prediction and Eco values are unchanged. The default sample's net color is 0.3869 / 0.0557 μM and total color 0.8869 / 0.5557 μM.
+- Eco keeps the key benefits, the three-strategy profit comparison and the original benefit curve; detection costs are now a horizontal bar chart. ROI, break-even, sensitivity and strategy details are in the original standalone report.
+- Downloaded scientific figures keep their original versions; the total pigment time curves were not changed to net values. The display toggle only affects the current interactive curves.
 
-界面版本 4，需重启原服务后刷新。回滚快照为 `../web-demo-before-reader-update-2026-10-16.zip`；新版可携带包为 `../nemaklear-local-demo-v4-2026-10-16.zip`。
+Interface version 4; restart the original service and refresh. Rollback snapshot: `../web-demo-before-reader-update-2026-10-16.zip`; the new portable package is `../nemaklear-local-demo-v4-2026-10-16.zip`.
 
-## 2026-10-17 图件替换
+## 2026-10-17 figure replacement
 
-移除页面的 Fus3 折叠图，保留模型计算与返回数据。底部换为桌面 `ode figures` 指定的四张 v7 图（图3-2至3-5），两列布局，提供 PNG/SVG/PDF 与新版套装。PNG 与桌面文件逐字节一致，矢量版取自其说明所指向的生成目录。图件使用 ODE r07 / 双通道 r04，独立于本页原有交互模型；本次未更换预测器。旧图仍保存在 public/figures 根目录，回滚包为 ../web-demo-before-gallery-2026-10-17.zip。
+The Fus3 collapsible figure was removed from the page; model computation and returned data are kept. The bottom section now shows the four v7 figures specified in the desktop `ode figures` folder (Figures 3-2 to 3-5) in two columns, with PNG/SVG/PDF and a new bundle. The PNGs are byte-identical to the desktop files; vector versions come from the generation directory their notes point to. The figures use ODE r07 / dual-channel r04, independent of the page's interactive model; the predictor was not replaced. The old figures remain in the root of public/figures; rollback package: ../web-demo-before-gallery-2026-10-17.zip.
 
-## 2026-10-17 全站语言切换
+## 2026-10-17 site-wide language switch
 
-页头 English / 中文 控制主界面、预测提示、ODE 曲线、图件标题及 Eco 报告。首次默认英文；浏览器本地保存后续语言选择。切换只重绘界面和载入对应语言的 Eco 报告，保留输入、预测结果与选中的密度情景。`public/i18n.js` 集中管理翻译；静态文案保留中文源文本，动态文案经 `tr()` 渲染。图内英文及结果 JSON 科学数据不因界面语言变化而改写。刷新即可使用。回滚包：`../web-demo-before-language-2026-10-17.zip`。
+The English / Chinese switch in the header controls the main interface, prediction notices, ODE curves, figure titles and the Eco report. English is the default on first load; later choices are saved in the browser. Switching only redraws the interface and loads the Eco report in that language, keeping inputs, prediction results and the selected density scenario. `public/i18n.js` manages translations centrally; static text keeps the Chinese source strings and dynamic text is rendered through `tr()`. English text inside figures and the scientific data in result JSON do not change with the interface language. Refresh to use it. Rollback package: `../web-demo-before-language-2026-10-17.zip`.

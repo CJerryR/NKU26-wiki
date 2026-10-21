@@ -1,35 +1,35 @@
-# 原型验证 · 2026-10-15
+# Prototype verification · 2026-10-15
 
-- 5 项自动检查通过：冻结 ODE 端点一致性、原始/空白校正读数一致性、饱和/超域阻断、跨档情景、非法输入。
-- 浏览器确认：默认 Mi40/Ce80 得到 40.87；手动读数复现结果且不显示伪反演曲线；饱和阻止报告；零信号显示低/中不确定性；中文与英文 Eco 报告可展开。
-- 桌面及 390 px 窄屏已检查；三张 PNG 逐张查看，无文字遮挡。预览见 preview.jpg。
-- SOURCE_MANIFEST 中所有原文件与冻结副本校验通过，bridge 仅适配路径。
-- 本轮为程序与接口验证，不是生物学有效性或实测预测精度验证。
+- 5 automated checks passed: frozen ODE endpoint consistency, raw/blank-corrected reading consistency, saturation/out-of-domain blocking, cross-class scenarios and invalid input.
+- Browser checks: default Mi40/Ce80 gives 40.87; manual readings reproduce the result without showing a fake inverted curve; saturation blocks the report; zero signal shows low/medium uncertainty; Chinese and English Eco reports expand.
+- Desktop and 390 px narrow screens checked; each of the three PNGs inspected with no overlapping text. Preview: preview.jpg.
+- All original files listed in SOURCE_MANIFEST match their frozen copies; bridge only adapts paths.
+- This round verifies the program and interface, not biological validity or measured prediction accuracy.
 
-## 第二版检查
+## Version 2 checks
 
-- 8 项自动检查通过，新增两张用户截图的数值案例及“仅区间超过上限”的情况。
-- 浏览器复现 Mi0/Ce200：8.74，点估计低档，非负区间 0–34.60，提示低/中档；原始负下限仍可导出。
-- 浏览器复现 Mi120/Ce80：124.22，条件模拟高档，报告保留超校准范围说明。
-- 原始 A480 模式自动加上空白，后端扣除后仍得到 124.22；手动模式不伪造 ODE 轨迹。
-- 原严格分级保留在 strict_risk；科学模型、参数与来源副本哈希不变。
-- 预览使用独立端口 8766，不中断原 8765 服务；使用新版前需要重启原服务。
-- 新版桌面及 390 px 窄屏检查通过；截图见 preview-v2.jpg。
+- 8 automated checks passed, adding the numeric cases from two user screenshots and the "only the interval exceeds the upper limit" case.
+- Browser reproduces Mi0/Ce200: 8.74, point estimate low, non-negative interval 0–34.60, low/medium notice; the raw negative lower bound can still be exported.
+- Browser reproduces Mi120/Ce80: 124.22, conditional simulation high; the report keeps the out-of-calibration notice.
+- Raw A480 mode adds the blank automatically, and after back-end subtraction still gives 124.22; manual mode does not fabricate ODE trajectories.
+- The original strict classification is kept in strict_risk; scientific model, parameters and source-copy hashes are unchanged.
+- Previews use a separate port 8766 without interrupting the original 8765 service; restart the original service before using the new version.
+- Desktop and 390 px narrow screen checks passed; screenshot: preview-v2.jpg.
 
-## 第三版检查
+## Version 3 checks
 
-- 11 项自动检查通过，包括同页 Eco 与原 HTML 报告使用相同数值和曲线数据、中英文数值不变、场景选择与阻断检查。
-- 页面已无 iframe；收益卡片、利润比较、曲线与折叠详情直接存在于主页面 DOM。
-- 浏览器验证中文点估计 40.87 与英文区间下端 17.60 的报告更新；页面 iframe 数为 0；桌面与 390 px 窄屏可用。
-- 来源代码与冻结参数哈希不变。
+- 11 automated checks passed, including identical values and curve data between the in-page Eco view and the original HTML report, unchanged values across Chinese and English, scenario selection and blocking.
+- The page has no iframe; benefit cards, profit comparison, curves and collapsible details are part of the main page DOM.
+- Browser checks: report updates for the Chinese point estimate 40.87 and the English interval lower bound 17.60; iframe count 0; desktop and 390 px narrow screens usable.
+- Source code and frozen parameter hashes unchanged.
 
-## 第四版检查 · 2026-10-16
+## Version 4 checks · 2026-10-16
 
-- 12 项自动检查通过；新增逐时刻净显色等于总显色减空白、终点对应原回归输入、空白样本净轨迹为零的检查。
-- 浏览器确认同轴两通道、净值/总值切换、Eco 费用横条图；未发现浏览器控制台错误。预览见 preview-v4-reader.jpg。
-- 原模型与参数、分级和经济计算不变，仅补充空白轨迹输出与读者界面。
-- 本次在独立端口 8766 验证，保留用户原 8765 服务；完成后停止测试服务。
+- 12 automated checks passed, adding checks that net color equals total color minus blank at every time point, that endpoints match the original regression inputs, and that the blank sample's net trajectory is zero.
+- Browser checks: both channels on one axis, net/total toggle, horizontal bar chart of Eco costs; no browser console errors. Preview: preview-v4-reader.jpg.
+- Original model, parameters, classification and economic calculations unchanged; only blank trajectory output and the reader interface were added.
+- Verified on a separate port 8766, keeping the user's original 8765 service; the test service was stopped afterwards.
 
-## 2026-10-17 语言检查
+## 2026-10-17 language checks
 
-浏览器确认首次英文、中英往返、刷新保留语言、40.87 预测与区间不变、Eco 区间下端情景保留且独立报告链接切换到 lang=en；手动输入与饱和阻断提示为英文。390 px 页头语言开关可用，无横向溢出；控制台无错误。未改数值计算，未重复拟合。截图：preview-english-2026-10-17.jpg。
+Browser checks: English on first load, round-trip switching between Chinese and English, language kept after refresh, the 40.87 prediction and interval unchanged, the Eco lower-bound scenario kept, and the standalone report link switching to lang=en; manual input and saturation-blocking messages appear in English. The header language switch works at 390 px with no horizontal overflow; no console errors. Numerical computation unchanged; no refitting. Screenshot: preview-english-2026-10-17.jpg.

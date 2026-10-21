@@ -1,12 +1,12 @@
-# ODE图3-2至图3-5：生成指令与图片解读
+# ODE Figures 3-2 to 3-5: generation commands and interpretation
 
-图片解读逐字保留自本次对话。图3-2使用已去掉标题下方和图片最底部灰色说明文字的版本；图3-3至图3-5沿用这一排版风格。
+The interpretations are kept from the original discussion, translated into English. Figure 3-2 uses the version without the gray notes under the title and at the bottom of the image; Figures 3-3 to 3-5 follow the same layout.
 
-模型版本：v7／ODE r07／双通道 r04。脚本使用已保存并经过哈希核验的数据，生成PNG、SVG、PDF及数据检查记录。
+Model version: v7 / ODE r07 / dual-channel r04. The scripts use saved, hash-verified data and generate PNG, SVG and PDF files plus data check records.
 
-## 图3-2：不同背景密度下的ODE显色拟合
+## Figure 3-2: ODE color fit at different background densities
 
-### 生成指令
+### Command
 
 ```bash
 cd "/Users/yangruoxi/Documents/ChatGPT/ODE-Research-Lab"
@@ -15,36 +15,36 @@ cd "/Users/yangruoxi/Documents/ChatGPT/ODE-Research-Lab"
   ode-v1/figures/2026-10-17-wiki-refinement/plot_fig2_density_response.py
 ```
 
-[输出目录](/Users/yangruoxi/Documents/ChatGPT/ODE-Research-Lab/ode-v1/figures/2026-10-17-wiki-refinement/fig2-density-response)
+[Output directory](/Users/yangruoxi/Documents/ChatGPT/ODE-Research-Lab/ode-v1/figures/2026-10-17-wiki-refinement/fig2-density-response)
 
-![图3-2](/Users/yangruoxi/Documents/ChatGPT/ODE-Research-Lab/ode-v1/figures/2026-10-17-wiki-refinement/fig2-density-response/fig-3-2-density-response.png)
+![Figure 3-2](/Users/yangruoxi/Documents/ChatGPT/ODE-Research-Lab/ode-v1/figures/2026-10-17-wiki-refinement/fig2-density-response/fig-3-2-density-response.png)
 
-### 图片解读（对话原文）
+### Interpretation
 
-**这张图怎么读**
+**How to read this figure**
 
-- **左右面板**分别是P3与P18，共用坐标范围。
-- **横轴**是Mi目标密度；**纵轴**是8小时总色素浓度，包含基础产色。
-- **绿、蓝、紫色**分别表示Ce背景密度为0、80、200。
-- **虚线叉号**是预设显色目标；**实线圆点**是ODE实际输出。比较同色的两条线，就能看出拟合偏差。
-- 灰色水平点线表示 **0.07 mg/mL空白**。每条线连接六个Mi设计点：0、5、10、40、80、120。
+- The **left and right panels** are P3 and P18 and share the same axis ranges.
+- The **x-axis** is the target Mi density; the **y-axis** is total pigment concentration at 8 hours, including basal color production.
+- **Green, blue and purple** mark Ce background densities of 0, 80 and 200.
+- **Dashed lines with crosses** are the preset color targets; **solid lines with dots** are the actual ODE outputs. Comparing the two lines of the same color shows the fitting deviation.
+- The gray horizontal dotted line marks the **0.07 mg/mL blank**. Each line connects six Mi design points: 0, 5, 10, 40, 80 and 120.
 
-**重点看三个现象**
+**Three things to look for**
 
-1. **整体趋势能跟随目标，但仍保留偏差。**  
-   P3与P18的18点RMSE分别为 **0.009688、0.009656 mg/mL**。这是相对预设模拟目标的拟合误差。
+1. **The overall trend follows the targets, with some deviation.**  
+   The 18-point RMSE is **0.009688 mg/mL for P3 and 0.009656 mg/mL for P18**. This is the fitting error relative to the preset simulated targets.
 
-2. **低背景、低Mi时，模型响应偏弱。**  
-   例如Ce=0、Mi=10时，P3的目标为0.0804，实际输出为0.0718 mg/mL，已接近0.0700的空白。说明低值区保留下来的刺激信号较小，整体RMSE不能代替对这一局部的检查。
+2. **At low background and low Mi, the model response is weaker.**  
+   For example, at Ce = 0 and Mi = 10, P3 has a target of 0.0804 and an output of 0.0718 mg/mL, close to the 0.0700 blank. Little stimulus signal remains in the low range, so the overall RMSE cannot replace a check of this region.
 
-3. **Ce背景本身也会显著增加颜色。**  
-   即使Mi=0、Ce=200，P3和P18也分别达到约0.443、0.285 mg/mL。因此，单看颜色深浅无法直接判断Mi多少；两路响应差异是后续双通道解读的依据。
+3. **The Ce background itself also increases color markedly.**  
+   Even at Mi = 0 and Ce = 200, P3 and P18 reach about 0.443 and 0.285 mg/mL. Color intensity alone therefore cannot show how much Mi is present; the difference between the two channel responses is the basis for the dual-channel reading that follows.
 
-这张图支持的结论是：**校准后的ODE总体跟随预设显色变化，同时保留低刺激区的偏差和背景干扰。** 后续图4、图5再检查这些实际输出能否支持Mi密度估计。
+Conclusion supported by this figure: **the calibrated ODE broadly follows the preset color changes, while keeping the deviation in the low-stimulus region and the background interference.** Figures 4 and 5 then test whether these outputs can support Mi density estimation.
 
-## 图3-3：净色素积累
+## Figure 3-3: net pigment accumulation
 
-### 生成指令
+### Command
 
 ```bash
 cd "/Users/yangruoxi/Documents/ChatGPT/ODE-Research-Lab"
@@ -53,41 +53,41 @@ cd "/Users/yangruoxi/Documents/ChatGPT/ODE-Research-Lab"
   ode-v1/figures/2026-10-17-wiki-refinement/plot_fig3_net_timecourse.py
 ```
 
-[输出目录](/Users/yangruoxi/Documents/ChatGPT/ODE-Research-Lab/ode-v1/figures/2026-10-17-wiki-refinement/fig3-net-timecourse)
+[Output directory](/Users/yangruoxi/Documents/ChatGPT/ODE-Research-Lab/ode-v1/figures/2026-10-17-wiki-refinement/fig3-net-timecourse)
 
-![图3-3](/Users/yangruoxi/Documents/ChatGPT/ODE-Research-Lab/ode-v1/figures/2026-10-17-wiki-refinement/fig3-net-timecourse/fig-3-3-net-timecourse.png)
+![Figure 3-3](/Users/yangruoxi/Documents/ChatGPT/ODE-Research-Lab/ode-v1/figures/2026-10-17-wiki-refinement/fig3-net-timecourse/fig-3-3-net-timecourse.png)
 
-### 图片解读（对话原文）
+### Interpretation
 
-**这张图怎么读**
+**How to read this figure**
 
-横轴是刺激后的时间，纵轴是**净色素浓度**：
+The x-axis is time after stimulation and the y-axis is **net pigment concentration**:
 
 \[
 C_{\mathrm{net},j}(t)=C_{\mathrm{sample},j}(t)-C_{\mathrm{blank},j}(t)
 \]
 
-因此空白虚线始终为零；其他曲线表示刺激带来的额外色素。这里扣除的是**每个时刻对应的空白**，不是全程减去8小时空白0.07。
+The dashed blank line is therefore always zero; the other curves show the extra pigment caused by stimulation. The blank subtracted is the **blank at each time point**, not the 8-hour blank of 0.07 applied to the whole run.
 
-8小时的净色素如下，单位为mg/mL：
+Net pigment at 8 hours, in mg/mL:
 
-| 样本 | P3 | P18 |
+| Sample | P3 | P18 |
 |---|---:|---:|
-| 仅Mi：Mi=120、Ce=0 | 0.116 | 0.226 |
-| 仅Ce：Mi=0、Ce=200 | 0.373 | 0.215 |
-| 混合：Mi=120、Ce=200 | 0.473 | 0.410 |
+| Mi only: Mi = 120, Ce = 0 | 0.116 | 0.226 |
+| Ce only: Mi = 0, Ce = 200 | 0.373 | 0.215 |
+| Mixed: Mi = 120, Ce = 200 | 0.473 | 0.410 |
 
-**重点看三点：**
+**Three things to look for:**
 
-1. **色素随时间逐渐积累。** 早期增长较慢，随后曲线逐渐拉开；到8小时仍在上升，图中尚未出现平台。
-2. **两个通道对同一样本的响应不同。** 仅Mi样本在P18中的净输出更高，仅Ce样本在P3中更高。这种配对响应差异为后续区分目标与背景提供信息。
-3. **P18中的两条单物种曲线很接近。** 这说明不同组成的样本可能产生相近的单通道读数；结合P3后，这两个样本才更容易区分。
+1. **Pigment accumulates over time.** Growth is slow at first, then the curves separate; they are still rising at 8 hours with no plateau yet.
+2. **The two channels respond differently to the same sample.** The Mi-only sample gives a higher net output in P18, while the Ce-only sample is higher in P3. This paired difference provides the information used later to separate target from background.
+3. **In P18 the two single-species curves are very close.** Samples of different composition can give similar single-channel readings; adding P3 makes them easier to tell apart.
 
-注意：纯Mi和纯Ce的密度分别是120和200，不能直接用曲线高度比较“单条线虫”的产色能力。**本轮校准依据是8小时终点，早期曲线属于模型推演**；这张图展示动态过程，并未确定最佳检测时间。
+Note: pure Mi and pure Ce are at densities of 120 and 200, so curve height cannot be used to compare color production per worm. **This calibration is based on the 8-hour endpoint; the early curves are model extrapolation.** The figure shows the dynamics and does not determine the best detection time.
 
-## 图3-4：双通道颜色空间
+## Figure 3-4: dual-channel color space
 
-### 生成指令
+### Command
 
 ```bash
 cd "/Users/yangruoxi/Documents/ChatGPT/ODE-Research-Lab"
@@ -96,40 +96,40 @@ cd "/Users/yangruoxi/Documents/ChatGPT/ODE-Research-Lab"
   ode-v1/figures/2026-10-17-wiki-refinement/plot_fig4_signal_space.py
 ```
 
-[输出目录](/Users/yangruoxi/Documents/ChatGPT/ODE-Research-Lab/ode-v1/figures/2026-10-17-wiki-refinement/fig4-signal-space)
+[Output directory](/Users/yangruoxi/Documents/ChatGPT/ODE-Research-Lab/ode-v1/figures/2026-10-17-wiki-refinement/fig4-signal-space)
 
-![图3-4](/Users/yangruoxi/Documents/ChatGPT/ODE-Research-Lab/ode-v1/figures/2026-10-17-wiki-refinement/fig4-signal-space/fig-3-4-signal-space.png)
+![Figure 3-4](/Users/yangruoxi/Documents/ChatGPT/ODE-Research-Lab/ode-v1/figures/2026-10-17-wiki-refinement/fig4-signal-space/fig-3-4-signal-space.png)
 
-### 图片解读（对话原文）
+### Interpretation
 
-**这张图怎么读**
+**How to read this figure**
 
-每个点代表一份模拟混合样本，共 **9档Mi × 5档Ce＝45组**。
+Each point is one simulated mixed sample: **9 Mi levels × 5 Ce levels = 45 groups**.
 
-- **横轴、纵轴**分别是P3、P18的手机颜色指数：\(x_j=-\log_{10}(B_{\mathrm{sample},j}/B_{\mathrm{blank},j})\)。
-- **点的颜色**表示已知Mi密度，由紫到黄逐渐升高。
-- **彩色实线**连接固定Mi、改变Ce的样本。
-- **灰色虚线**连接固定Ce、改变Mi的样本。
+- The **x- and y-axes** are the phone color indices of P3 and P18: \(x_j=-\log_{10}(B_{\mathrm{sample},j}/B_{\mathrm{blank},j})\).
+- **Point color** shows the known Mi density, rising from purple to yellow.
+- **Colored solid lines** connect samples with fixed Mi and varying Ce.
+- **Gray dashed lines** connect samples with fixed Ce and varying Mi.
 
-**核心看两支箭头。** 它们都从 **Mi=40、Ce=80** 出发：
+**The key is the two arrows.** Both start from **Mi = 40, Ce = 80**:
 
-| 改变方式 | P3指数增加量 | P18指数增加量 |
+| Change | Increase in P3 index | Increase in P18 index |
 |---|---:|---:|
-| Mi从40增加到80，Ce保持80 | 0.0171 | 0.0292 |
-| Ce从80增加到140，Mi保持40 | 0.0428 | 0.0253 |
+| Mi from 40 to 80, Ce kept at 80 | 0.0171 | 0.0292 |
+| Ce from 80 to 140, Mi kept at 40 | 0.0428 | 0.0253 |
 
-增加Mi时，P18的变化更突出，箭头更陡；增加Ce时，P3的变化更突出，箭头更平。这里比较的是**变化方向**，两支箭头对应的密度增量不同，不能直接用长度比较灵敏度。
+Increasing Mi changes P18 more, so the arrow is steeper; increasing Ce changes P3 more, so the arrow is flatter. What is compared here is the **direction of change**. The two arrows correspond to different density increments, so their lengths cannot be used to compare sensitivity.
 
-**为什么这能解释双通道的价值？**  
-目标增加和背景增加都会使颜色增强，但它们在二维空间中的移动方向不同。保留两路读数，就有机会利用这种差异区分两种贡献；单看一个通道，会丢失另一方向的信息。
+**Why this explains the value of two channels**  
+Both a higher target and a higher background make the color stronger, but they move in different directions in the two-dimensional space. Keeping both readings makes it possible to use this difference to separate the two contributions; a single channel loses the information along the other direction.
 
-这张图展示的是模拟条件下的可区分结构。具体能把Mi估计得多准，要看下一张图3-5的留出样本检验。
+This figure shows a separable structure under simulated conditions. How accurately Mi can be estimated depends on the held-out test in Figure 3-5.
 
-## 图3-5：Mi密度预测与模型比较
+## Figure 3-5: Mi density prediction and model comparison
 
-### 生成指令
+### Command
 
-运行一次即可生成Wiki三面板版和PPT两面板版：
+One run generates both the three-panel wiki version and the two-panel slide version:
 
 ```bash
 cd "/Users/yangruoxi/Documents/ChatGPT/ODE-Research-Lab"
@@ -138,30 +138,30 @@ cd "/Users/yangruoxi/Documents/ChatGPT/ODE-Research-Lab"
   ode-v1/figures/2026-10-17-wiki-refinement/plot_fig5_prediction_comparison.py
 ```
 
-[输出目录](/Users/yangruoxi/Documents/ChatGPT/ODE-Research-Lab/ode-v1/figures/2026-10-17-wiki-refinement/fig5-prediction-comparison)
+[Output directory](/Users/yangruoxi/Documents/ChatGPT/ODE-Research-Lab/ode-v1/figures/2026-10-17-wiki-refinement/fig5-prediction-comparison)
 
-**Wiki版**
+**Wiki version**
 
-![图3-5 Wiki版](/Users/yangruoxi/Documents/ChatGPT/ODE-Research-Lab/ode-v1/figures/2026-10-17-wiki-refinement/fig5-prediction-comparison/fig-3-5-prediction-comparison-wiki.png)
+![Figure 3-5, wiki version](/Users/yangruoxi/Documents/ChatGPT/ODE-Research-Lab/ode-v1/figures/2026-10-17-wiki-refinement/fig5-prediction-comparison/fig-3-5-prediction-comparison-wiki.png)
 
-### 图片解读（对话原文）
+### Interpretation
 
-**这张图怎么读**
+**How to read this figure**
 
-- **A：双通道预测的整体表现。** 横轴是已知Mi密度，纵轴是预测密度；点越接近虚线，预测越准确。颜色和形状区分Ce背景。全部19组检验样本均保留。
-- **B：低密度区域放大。** 展示同一检验集中的11个点。可以看出，整体图中看似接近对角线的点，在低值区仍可能有明显偏差。例如Mi=0、Ce=110时预测约为−4.70，原始负值没有截断。
-- **C：相同检验集上的模型比较。** RMSE越小，整体预测误差越小：
+- **A: overall dual-channel prediction.** The x-axis is known Mi density and the y-axis predicted density; the closer a point is to the dashed line, the more accurate the prediction. Color and shape distinguish the Ce background. All 19 test samples are shown.
+- **B: zoom on the low-density region.** Shows 11 points from the same test set. Points that look close to the diagonal in the overall plot can still deviate clearly at low values. For example, at Mi = 0 and Ce = 110 the prediction is about −4.70; the raw negative value is not truncated.
+- **C: model comparison on the same test set.** A smaller RMSE means a smaller overall prediction error:
 
-| 模型 | RMSE（J2/100 cm³土样） |
+| Model | RMSE (J2/100 cm³ soil) |
 |---|---:|
-| 仅P3 | 36.59 |
-| 仅P18 | 28.43 |
-| 双通道 | **3.01** |
+| P3 only | 36.59 |
+| P18 only | 28.43 |
+| Dual-channel | **3.01** |
 
-**这张图支持的结论是：在当前模拟条件下，双通道明显改善了Mi密度估计，但低密度处仍保留偏差。**
+**Conclusion supported by this figure: under the current simulated conditions, the dual-channel model clearly improves Mi density estimation, but some bias remains at low density.**
 
-这些检验组合没有参与回归拟合，但仍来自同一个无噪声ODE生成器。检验点主要集中在零目标及10、80附近，因此不能将结果直接解释为整个密度范围的实测准确度。
+These test combinations were not used in fitting the regression, but they come from the same noise-free ODE generator. Test points cluster around zero target and near 10 and 80, so the result cannot be read as measured accuracy across the full density range.
 
-**PPT版**保留整体预测和RMSE比较，适合集中讲“双通道带来了多少改善”：
+The **slide version** keeps the overall prediction and the RMSE comparison, for a focused talk on how much the dual-channel approach improves:
 
-![图3-5 PPT版](/Users/yangruoxi/Documents/ChatGPT/ODE-Research-Lab/ode-v1/figures/2026-10-17-wiki-refinement/fig5-prediction-comparison/fig-3-5-prediction-comparison-ppt.png)
+![Figure 3-5, slide version](/Users/yangruoxi/Documents/ChatGPT/ODE-Research-Lab/ode-v1/figures/2026-10-17-wiki-refinement/fig5-prediction-comparison/fig-3-5-prediction-comparison-ppt.png)

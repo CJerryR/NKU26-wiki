@@ -1,8 +1,8 @@
-# 交付检查 · 2026-10-17
+# Delivery checks · 2026-10-17
 
-- 打包副本 12 项 unittest 通过。
-- 独立本地端口加载包内应用；另一端口嵌入页面，验证跨来源高度消息生效（4273 px）。
-- 默认 Mi120/Ce80，预测 124.22，区间 98.75–149.68；英文条件模拟高档提示正常。
-- app/public 中新增 embed.js 与嵌入样式；当前工作网页原目录未改动。
-- 依赖使用当前工作区已安装环境验证。新电脑仍需按 START-HERE.md 安装 requirements。
-- 公网部署与 Wiki 域名嵌入由接收方按说明完成。
+- 12 unittest checks passed on the packaged copy.
+- The packaged app was loaded on its own local port and embedded from another port; cross-origin height messages worked (4273 px).
+- Default Mi120/Ce80 predicts 124.22, interval 98.75–149.68; the English "conditional simulation, high" notice displays correctly.
+- `embed.js` and embed styles were added to `app/public`; the original working directory was not changed.
+- Dependencies were verified with the environment already installed in the workspace. A new computer still needs the requirements installed as described in `START-HERE.md`.
+- Public deployment and embedding in the wiki domain are left to the recipient, following the instructions.
