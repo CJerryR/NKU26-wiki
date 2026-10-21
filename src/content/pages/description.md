@@ -99,7 +99,7 @@ These comparisons feed back into the design of the test: which density ranges ma
 
 :::figure
 
-[![A classroom lesson about soil nematodes and crop diseases.](https://static.igem.wiki/teams/6303/wiki/project-20261021/project-42-55185549437d-preview.webp)](https://static.igem.wiki/teams/6303/wiki/project-20261021/project-42-55185549437d.webp "Open full-resolution image")
+[![A classroom lesson about soil nematodes and crop diseases.](https://static.igem.wiki/teams/6303/wiki/hp-20261021/classroom-85d0f4d1c7a8.avif)](https://static.igem.wiki/teams/6303/wiki/hp-20261021/classroom-85d0f4d1c7a8.avif "Open full-resolution image")
 
 Figure 4. Students explore soil nematodes and crop diseases through an interactive lesson.
 

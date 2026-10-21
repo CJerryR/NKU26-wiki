@@ -99,7 +99,7 @@ Expert discussions raised questions about representative sampling, soil backgrou
 
 Through age-adapted lessons, picture books, and outreach activities, we also explain soil nematodes, biological signals, and the principles behind our test. These activities help audiences understand what evidence is needed to interpret an observation. Industry discussions let us explore potential users, application conditions, and partnerships needed for further development. The project continues to take shape through feedback from laboratory research, agricultural practice, and public engagement. [Explore our education activities →](/education/) · [Explore our industry engagement →](/hp-industry/)
 
-[![Figure 4. A classroom lesson about soil nematodes and crop diseases.](https://static.igem.wiki/teams/6303/wiki/project-20261021/project-42-55185549437d.webp)](https://static.igem.wiki/teams/6303/wiki/project-20261021/project-42-55185549437d.webp "Open full-resolution image")
+[![Figure 4. A classroom lesson about soil nematodes and crop diseases.](https://static.igem.wiki/teams/6303/wiki/hp-20261021/classroom-85d0f4d1c7a8.avif)](https://static.igem.wiki/teams/6303/wiki/hp-20261021/classroom-85d0f4d1c7a8.avif "Open full-resolution image")
 
 :::caption
 
