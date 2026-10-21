@@ -11,6 +11,9 @@
 .doc[data-page="results"] .figure-text--wrap > .figure figcaption {
   color:var(--figure-panel-ink) !important;
 }
+.doc[data-page="results"] .figure__media .figure-caption {
+  color:var(--figure-panel-ink) !important;
+}
 @media (max-width:760px) {
   .doc[data-page="results"] .figure-text--wrap > .figure:has(> .figure__media img[data-author-original="https://static.igem.wiki/teams/6303/wiki/release-20261020/results-spotting-device-20751c382bee.json"]) {
     max-width:none;

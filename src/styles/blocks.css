@@ -209,13 +209,13 @@ a[data-page-off] { cursor: auto; color: inherit !important; text-decoration: non
   display: flow-root;
   margin-block: 28px;
 }
-.doc .prose .figure-text--wrap > .figure {
+.doc .prose .figure-text--wrap > :is(.figure, .figure-pair) {
   float: left;
   width: var(--image-share);
   margin: 0 28px 16px 0;
   break-inside: avoid;
 }
-.doc .prose .figure-text--wrap.figure-text--right > .figure {
+.doc .prose .figure-text--wrap.figure-text--right > :is(.figure, .figure-pair) {
   float: right;
   margin: 0 0 16px 28px;
 }
@@ -226,20 +226,43 @@ a[data-page-off] { cursor: auto; color: inherit !important; text-decoration: non
    Keep the original heading/paragraph blocks and stop at the next cycle. */
 @media (min-width: 761px) {
   .doc .prose .figure-text--continue { display: contents; }
-  .doc .prose .figure-text--continue > .figure,
+  .doc .prose .figure-text--continue > :is(.figure, .figure-pair),
   .doc .prose .figure-text--continue > .figure-text__body > :first-child { margin-top: 28px; }
-  .doc .prose .figure-text--continue ~ :is(h2, h3) { clear: both; }
+  .doc .prose .figure-text--continue ~ :is(h2, h3, .figure, .figure-pair) { clear: both; }
 }
 @media (min-width: 761px) and (max-width: 1100px) {
-  .doc .prose .figure-text--continue + .figure-text--continue > .figure { clear: both; }
+  .doc .prose .figure-text--continue + .figure-text--continue > :is(.figure, .figure-pair) { clear: both; }
+}
+.doc .prose .figure-text > .figure-pair {
+  grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px;
+  padding: 26px; border: 1px solid var(--line); border-radius: 18px;
+  background: var(--figure-surface); box-sizing: border-box;
+}
+.doc .prose .figure-text > .figure-pair > .figure { margin: 0; }
+.doc .prose .figure-text > .figure-pair > .figure > .figure__media {
+  display: block; padding: 0 !important; border: 0 !important; border-radius: 0 !important;
+  background: none !important; box-shadow: none;
+}
+.doc .prose .figure-text > .figure-pair .figure__media > p:has(img) {
+  height: 240px; display: flex; align-items: center; justify-content: center;
+}
+.doc .prose .figure-text > .figure-pair .figure__media img {
+  width: auto; height: auto; max-width: 100%; max-height: 240px; object-fit: contain;
+}
+.doc .prose .figure-text > .figure-pair .figure-caption,
+.doc .prose .figure-text > .figure-pair figcaption {
+  margin-top: 12px; color: var(--figure-panel-ink) !important;
 }
 @media (max-width: 760px) {
   .doc .prose .figure-text--wrap { display: flex; flex-direction: column; gap: 20px; }
   .doc .prose .figure-text--wrap > .figure-text__body { display: block; order: 0; }
-  .doc .prose .figure-text--wrap > .figure,
-  .doc .prose .figure-text--wrap.figure-text--right > .figure {
+  .doc .prose .figure-text--wrap > :is(.figure, .figure-pair),
+  .doc .prose .figure-text--wrap.figure-text--right > :is(.figure, .figure-pair) {
     float: none; width: 100%; margin: 0; order: 1;
   }
+  .doc .prose .figure-text > .figure-pair { padding: 14px; gap: 12px; }
+  .doc .prose .figure-text > .figure-pair .figure__media > p:has(img) { height: 180px; }
+  .doc .prose .figure-text > .figure-pair .figure__media img { max-height: 180px; }
 }
 
 /* Submitted pages: a wider, quieter reading surface within the V8.0 shell. */

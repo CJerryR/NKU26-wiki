@@ -47,6 +47,18 @@ export function blocksToMarkdown(blocks = [], { plainEquations = false } = {}) {
         const side = wrap ? block.layout.replace('wrap-', '') : block.layout;
         return `::::figuretext{side=${side} width=${width}${wrap ? ` flow=${block.continueWrap === true ? 'continue' : 'wrap'}` : ''}}\n\n${figure}\n\n${accompanying}\n\n::::`;
       }
+      case 'imagegroup': {
+        const figures = (block.items || []).map((item) => {
+          const media = item.openOriginal ? `[${img(item.src, item.alt)}](${item.originalSrc || item.src} "Open full-resolution image")` : img(item.src, item.alt);
+          return `:::figure\n\n${media}\n\n${markdown(item.body).trim()}\n\n:::`;
+        }).join('\n\n');
+        const pair = `::::figures\n\n${figures}\n\n::::`;
+        const accompanying = markdown(block.accompanyingBody).trim();
+        if (!accompanying) return pair;
+        const width = ['narrow', 'medium', 'wide'].includes(block.imageWidth) ? block.imageWidth : 'wide';
+        const side = block.layout === 'wrap-left' ? 'left' : 'right';
+        return `:::::figuretext{side=${side} width=${width} flow=${block.continueWrap === true ? 'continue' : 'wrap'}}\n\n${pair}\n\n${accompanying}\n\n:::::`;
+      }
       // R1-I04: two framed figures side by side, each with its own caption (stacked on phones)
       case 'gallery': {
         const one = (src, alt, cap) => `:::figure\n\n${img(src, alt)}\n\n${markdown(cap).trim() || alt || ''}\n\n:::`;

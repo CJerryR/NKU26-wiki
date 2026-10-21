@@ -44,3 +44,21 @@ test('existing column layouts keep their established order and empty prose remai
   assert.equal(empty.filter(n => n.data?.hName === 'figure').length, 1);
   assert.equal(empty.some(n => n.data?.hProperties?.className?.includes('figure-text')), false);
 });
+
+test('a floating image group keeps both figures, captions and original links in one wrapping unit', () => {
+  const nodes = compile({
+    _template: 'imagegroup', layout: 'wrap-right', imageWidth: 'wide', continueWrap: true,
+    items: [sample, { ...sample, src: 'https://static.igem.wiki/second.webp', originalSrc: 'https://static.igem.wiki/second-original.webp', body: 'Figure 2. Second caption.' }],
+    accompanyingBody: sample.accompanyingBody,
+  });
+  const wrap = nodes.find(n => n.data?.hProperties?.className?.includes('figure-text--continue'));
+  assert.ok(wrap);
+  assert.ok(wrap.data.hProperties.className.includes('figure-text--right'));
+  const group = wrap.children[0];
+  assert.ok(group.data.hProperties.className.includes('figure-pair'));
+  assert.equal(group.children.filter(n => n.data?.hName === 'figure').length, 2);
+  assert.equal(nodes.filter(n => n.data?.hName === 'figcaption').length, 2);
+  assert.equal(wrap.children[1].children.length, 2);
+  assert.ok(nodes.some(n => n.url === sample.originalSrc));
+  assert.ok(nodes.some(n => n.url === 'https://static.igem.wiki/second-original.webp'));
+});

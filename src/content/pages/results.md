@@ -165,7 +165,7 @@ Details are as follows:
 
 <p>a. Sequences of approximately 1 kb upstream and downstream of the <em>STE12 </em>gene were selected as the homologous arms of the knockout cassette, and His was used as the auxotrophic marker for subsequent transformant screening and validation (Figure 12a).</p>
 
-::::figuretext{side=right width=medium flow=wrap}
+::::figuretext{side=right width=medium flow=continue}
 
 :::figure
 
@@ -345,7 +345,9 @@ Figure 22. Fragment construction of Gal1/10bp-betaxanthin expression cassette (a
 
 :::
 
-::::figuretext{side=right width=medium flow=wrap}
+:::::figuretext{side=right width=wide flow=continue}
+
+::::figures
 
 :::figure
 
@@ -355,10 +357,6 @@ Figure 22. Fragment construction of Gal1/10bp-betaxanthin expression cassette (a
 
 :::
 
-<p>For GPR2, since GPR2 in the previously constructed plasmid pRS315-TEF1p-GPR2-sfGFP is fused to sfGFP via a flexible linker, direct construction of the donor fragment was complicated. We therefore continued to use one-step cloning to assemble the plasmid (Figure 23), and finally successfully obtained pRS315-TEF1p-GPR2 for GPR2 knock-in (Figure 24).</p>
-
-::::
-
 :::figure
 
 ![Construction of pRS315-TEF1p-GPR2 plasmid.](https://static.igem.wiki/teams/6303/wiki/v8-0/v8c-17c9afd1d0d7-fig2-4-9.avif)
@@ -366,6 +364,12 @@ Figure 22. Fragment construction of Gal1/10bp-betaxanthin expression cassette (a
 <p>Figure 24. Construction of pRS315-TEF1p-GPR2 plasmid.</p>
 
 :::
+
+::::
+
+<p>For GPR2, since GPR2 in the previously constructed plasmid pRS315-TEF1p-GPR2-sfGFP is fused to sfGFP via a flexible linker, direct construction of the donor fragment was complicated. We therefore continued to use one-step cloning to assemble the plasmid (Figure 23), and finally successfully obtained pRS315-TEF1p-GPR2 for GPR2 knock-in (Figure 24).</p>
+
+:::::
 
 #### Test {#test-6 toc="Test | verifying Cas9 transformation and genome editing"}
 
@@ -523,7 +527,9 @@ This cycle is hereby concluded. The strains constructed in this cycle can only f
 
 <p>Next, to verify the water-retaining performance of the protectant, we conduct dehydration kinetics and full-process freeze-drying tests on it. The results show (Figure 32) that the new protectant forms a structurally intact film matrix after drying and effectively prevents collapse and powdering; furthermore, its smooth and uniform dehydration rate avoids physical damage to yeast cell membranes caused by severe water loss, thereby significantly enhancing cell structural integrity and survival rate during freeze-drying.</p>
 
-::::figuretext{side=left width=narrow flow=continue}
+:::::figuretext{side=right width=wide flow=continue}
+
+::::figures
 
 :::figure
 
@@ -533,12 +539,6 @@ This cycle is hereby concluded. The strains constructed in this cycle can only f
 
 :::
 
-<p>Additionally, we self-fabricate a vacuum filtration spotting device (Figure 33). This device can rapidly draw the high-viscosity protectant suspension into the interior of the test strip substrate, which not only significantly improves spotting efficiency but also achieves standardized control over the cell-loading amount per individual test strip.</p>
-
-::::
-
-::::figuretext{side=right width=narrow flow=continue}
-
 :::figure
 
 [![Overview of color-developing cell-loaded test strips.](https://static.igem.wiki/teams/6303/wiki/v8-6/v86-ea1a49677396-fig3-1-5.avif)](https://static.igem.wiki/teams/6303/wiki/v8-6/v86-ea1a49677396-fig3-1-5.avif "Open full-resolution image")
@@ -547,9 +547,11 @@ This cycle is hereby concluded. The strains constructed in this cycle can only f
 
 :::
 
-<p>Integrating all the above methods and approaches, we prepare and obtain a batch of cell-loaded freeze-dried test strips available for downstream engineering (Figure 34).</p>
-
 ::::
+
+<p>Additionally, we self-fabricate a vacuum filtration spotting device (Figure 33). This device can rapidly draw the high-viscosity protectant suspension into the interior of the test strip substrate, which not only significantly improves spotting efficiency but also achieves standardized control over the cell-loading amount per individual test strip.</p><p>Integrating all the above methods and approaches, we prepare and obtain a batch of cell-loaded freeze-dried test strips available for downstream engineering (Figure 34).</p>
+
+:::::
 
 #### Learn {#results-3-2-learn toc="Learn | standardizing cell immobilization"}
 
@@ -581,7 +583,7 @@ This cycle is hereby concluded. The strains constructed in this cycle can only f
 
 ::::figuretext{side=right width=narrow flow=wrap}
 
-:::figure
+:::figure{scale=70}
 
 [![3D-printed test strip cassette.](https://static.igem.wiki/teams/6303/wiki/v8-6/v86-b5b9b9256085-fig3-2-2.avif)](https://static.igem.wiki/teams/6303/wiki/v8-6/v86-b5b9b9256085-fig3-2-2.avif "Open full-resolution image")
 

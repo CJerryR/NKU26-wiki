@@ -350,7 +350,7 @@ function figureText(node) {
   const side = attrs.side === 'right' ? 'right' : 'left';
   const width = ['narrow', 'medium', 'wide'].includes(attrs.width) ? attrs.width : 'medium';
   const children = takeLabel(node).rest;
-  const imageAt = children.findIndex((child) => child.data?.hName === 'figure');
+  const imageAt = children.findIndex((child) => child.data?.hName === 'figure' || child.data?.hProperties?.className?.includes('figure-pair'));
   if (imageAt === -1) return children;
   const figure = children[imageAt];
   const body = children.filter((_, i) => i !== imageAt);

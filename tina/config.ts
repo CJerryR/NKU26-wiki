@@ -87,6 +87,19 @@ const templates: Template[] = [
     { ...body, name: 'accompanyingBody', label: '配套正文', description: '嵌入式请放入相关的完整段落，可包含图片前后的正文；不要拆开 DBTL、表格等组件。' },
     { type: 'boolean', name: 'continueWrap', label: '让后续正文继续环绕', description: '仅用于配套正文较短的图片；桌面后续正文延续环绕，下一二级标题处结束，手机保持原有顺序。' },
   ] },
+  { name: 'imagegroup', label: '并排图片组 · 正文环绕', fields: [
+    { type: 'object', name: 'items', label: '图片与原图注', list: true, fields: [
+      { type: 'image', name: 'src', label: '图片', required: true },
+      { type: 'image', name: 'originalSrc', label: '原图链接' },
+      { type: 'string', name: 'alt', label: '图片说明' },
+      { ...body, label: '原图注' },
+      { type: 'boolean', name: 'openOriginal', label: '点击查看原图' },
+    ] },
+    { type: 'string', name: 'layout', label: '环绕方向', options: ['wrap-left', 'wrap-right'] },
+    { type: 'string', name: 'imageWidth', label: '图组宽度', options: ['narrow', 'medium', 'wide'] },
+    { ...body, name: 'accompanyingBody', label: '配套正文' },
+    { type: 'boolean', name: 'continueWrap', label: '让后续正文继续环绕' },
+  ] },
   // C01 (component-design checkpoint-01): a figure kept beside the paragraphs that lead to it and read it.
   // Text is stored exactly as authored; order on the page is always 图前正文 → 图 → 图注 → 图后正文.
   { name: 'evidence', label: '图文对照（实验图 + 相关正文）',
