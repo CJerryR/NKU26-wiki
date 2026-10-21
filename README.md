@@ -6,7 +6,7 @@ Source code for the wiki of **NKU-China** (Nankai University, Tianjin, China), i
 - **Source (official):** <https://gitlab.igem.org/2026/nku-china>
 - **Development mirror:** <https://github.com/CJerryR/NKU26-wiki>
 
-Current release: **V10.2.47**. The official GitLab `main` branch is the authoritative source.
+Final edition: **10.27**. The official GitLab `main` branch is the authoritative source.
 
 ## Site map
 
