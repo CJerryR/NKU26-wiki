@@ -222,6 +222,14 @@ a[data-page-off] { cursor: auto; color: inherit !important; text-decoration: non
 .doc .prose .figure-text--wrap > .figure-text__body { display: contents; }
 .doc .prose .figure-text--wrap > .figure-text__body > :first-child { margin-top: 0; }
 .doc .prose .figure-text--wrap > .figure-text__body > :last-child { margin-bottom: 0; }
+/* Short figure explanations may continue into the following DBTL stage.
+   Keep the original heading/paragraph blocks and stop at the next cycle. */
+@media (min-width: 761px) {
+  .doc .prose .figure-text--continue { display: contents; }
+  .doc .prose .figure-text--continue > .figure,
+  .doc .prose .figure-text--continue > .figure-text__body > :first-child { margin-top: 28px; }
+  .doc .prose .figure-text--continue ~ :is(h2, h3) { clear: both; }
+}
 @media (max-width: 760px) {
   .doc .prose .figure-text--wrap { display: flex; flex-direction: column; gap: 20px; }
   .doc .prose .figure-text--wrap > .figure-text__body { display: block; order: 0; }

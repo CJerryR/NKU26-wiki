@@ -908,8 +908,9 @@
       "body": "<p class=\"figure-caption\">Figure 30. Water absorption capacity evaluation of selected substrates.</p>",
       "accompanyingBody": "<p>Considering both the cell-binding capacity and the physical properties of each material, we select three substrates—GF/B, GF/A, and cellulose acetate—for the copper sulfate solution wicking experiment (Figure 30).</p><p>The results demonstrate that GF/B not only exhibits strong binding capacity with yeast cells but also possesses superior water absorption ability.</p>",
       "layout": "wrap-right",
-      "imageWidth": "medium",
-      "openOriginal": true
+      "imageWidth": "wide",
+      "openOriginal": true,
+      "continueWrap": true
     },
     {
       "_template": "heading",

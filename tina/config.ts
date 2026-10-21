@@ -85,6 +85,7 @@ const templates: Template[] = [
     { type: 'string', name: 'scale', label: '图片显示比例', options: [{ label: '100%（默认）', value: '' }, { label: '85%', value: '85' }, { label: '70%', value: '70' }, { label: '55%', value: '55' }], description: '图片在白色图框中按此比例居中显示，左右留白。' },
     { type: 'string', name: 'imageWidth', label: '图片宽度', options: [{ label: '窄（约 32%）', value: 'narrow' }, { label: '中（约 40%）', value: 'medium' }, { label: '宽（约 50%）', value: 'wide' }], description: '用于左右并排和嵌入式环绕；手机自动上下排列。' },
     { ...body, name: 'accompanyingBody', label: '配套正文', description: '嵌入式请放入相关的完整段落，可包含图片前后的正文；不要拆开 DBTL、表格等组件。' },
+    { type: 'boolean', name: 'continueWrap', label: '让后续正文继续环绕', description: '仅用于配套正文较短的图片；桌面后续正文延续环绕，下一二级标题处结束，手机保持原有顺序。' },
   ] },
   // C01 (component-design checkpoint-01): a figure kept beside the paragraphs that lead to it and read it.
   // Text is stored exactly as authored; order on the page is always 图前正文 → 图 → 图注 → 图后正文.

@@ -45,7 +45,7 @@ export function blocksToMarkdown(blocks = [], { plainEquations = false } = {}) {
         if (!wrap && !['left', 'right'].includes(block.layout)) return `${figure}\n\n${accompanying}`;
         const width = ['narrow', 'medium', 'wide'].includes(block.imageWidth) ? block.imageWidth : 'medium';
         const side = wrap ? block.layout.replace('wrap-', '') : block.layout;
-        return `::::figuretext{side=${side} width=${width}${wrap ? ' flow=wrap' : ''}}\n\n${figure}\n\n${accompanying}\n\n::::`;
+        return `::::figuretext{side=${side} width=${width}${wrap ? ` flow=${block.continueWrap === true ? 'continue' : 'wrap'}` : ''}}\n\n${figure}\n\n${accompanying}\n\n::::`;
       }
       // R1-I04: two framed figures side by side, each with its own caption (stacked on phones)
       case 'gallery': {
