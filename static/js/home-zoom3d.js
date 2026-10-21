@@ -12,6 +12,21 @@
   if (!NK || !H0 || !sec || !geo) return;
   var stage = sec.querySelector('[data-zoom-stage]');
   var tip = sec.querySelector('[data-china-tip]');
+  /* Center the entire desktop readout below the navigation, including the
+     active species card. Measure rendered sizes so 4K scaling stays accurate. */
+  NK.centerChinaReadout = function (stage, head, card) {
+    if (!head || !card) return;
+    var sr = stage.getBoundingClientRect();
+    if (sr.width < 860) { head.style.removeProperty('top'); return; }
+    head.style.top = '94px';
+    var hr = head.getBoundingClientRect();
+    stage.style.setProperty('--readTop', Math.round(hr.bottom - sr.top + 24) + 'px');
+    var cr = card.getBoundingClientRect();
+    var height = cr.bottom - hr.top;
+    var top = Math.max(94, (sr.height + 76 - height) / 2);
+    head.style.top = Math.round(top) + 'px';
+  };
+
   var P = geo.provinces, CP = geo.china;
   var byName = {};
   Object.keys(P).forEach(function (c) { byName[P[c].en] = c; });
@@ -140,6 +155,7 @@
     function fit2d() {
       var sr = stage.getBoundingClientRect(), W = sr.width, H = sr.height;
       if (!W || !H) return;
+      NK.centerChinaReadout(stage, head, card);
       var narrow = W < 860, x0 = 12, x1 = W - 12;
       if (!narrow && head) {
         var hr = head.getBoundingClientRect();
@@ -1467,6 +1483,7 @@
   function freeRect() {
     var navH = 76;
     if (!panelEl || !panelEl.offsetWidth) return { x0: W * 0.08, x1: W * 0.92, y0: navH + 20, y1: H - 40 };
+    NK.centerChinaReadout(stage, panelEl, cardEl);
     var sr = stage.getBoundingClientRect(), pr = panelEl.getBoundingClientRect();
     var x0 = W >= 860 ? pr.right - sr.left + 20 : 12, x1 = W >= 860 ? W - 54 : W - 12;
     stage.style.setProperty('--fx0', Math.round(x0) + 'px');
