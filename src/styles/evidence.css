@@ -2,7 +2,7 @@
    Markup: src/lib/remark-wiki.mjs (evidence(), phase(), groupStages()); Tina: tina/config.ts.
    Loaded after content-rules.css and model-manuscript.css so the shared article rules stay the
    baseline: body text keeps its size, measure and justification; captions keep the one caption
-   contract; experimental figures keep their white card (dimmed at night by theme-night.css).
+   contract; experimental figures use the shared theme-aware paper surface.
    Only what this component adds lives here: the size caps, the image/text grid, the stage rail. */
 
 /* ------------------------------------------------------------ evidence */

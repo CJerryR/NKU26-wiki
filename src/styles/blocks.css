@@ -75,7 +75,7 @@
 
 /* figures and tables */
 .figure { margin: 0; }
-.figure__media { padding: 22px; border-radius: 20px; background: var(--paper-hi); border: 1px solid var(--line); overflow-x: auto; }
+.figure__media { padding: 22px; border-radius: 20px; background: var(--figure-surface); border: 1px solid var(--line); overflow-x: auto; }
 .figure__media > svg { display: block; width: 100%; height: auto; margin: 0 auto; }
 .figure__media > img { margin: 0 auto; border-radius: 10px; }
 .figure__media:has(> .table-wrap) { padding: 0; border: 0; background: none; overflow: visible; }

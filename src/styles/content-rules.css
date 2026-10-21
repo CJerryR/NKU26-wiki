@@ -125,7 +125,7 @@ main:has(.doc), .doc, .pager { --measure: 65rem; --bleed: 0px; }
 
 /* Figure frames contain the complete image, including panel labels. */
 .doc .prose .figure > .figure__media:not(:has(> .table-wrap)) {
-  background: #fff !important;
+  background: var(--figure-surface) !important;
   border: 1px solid var(--line) !important;
   border-radius: var(--figure-radius, 18px) !important;
   padding: 26px !important;
@@ -139,14 +139,14 @@ main:has(.doc), .doc, .pager { --measure: 65rem; --bleed: 0px; }
 .doc .prose .hp-source-figure > a,
 .doc .prose .hp-photo-group,
 .doc .prose .docking-panel-scroll {
-  background: #fff;
+  background: var(--figure-surface);
   border: 1px solid var(--line);
   border-radius: var(--figure-radius, 18px);
   padding: 26px;
 }
 
-/* Labels printed within a white photographic panel keep dark ink in both themes. */
-.doc .prose .hp-photo-group .hp-image-label { color: #241c2b; }
+/* Panel labels sit on warm light paper in both themes. */
+.doc .prose .hp-photo-group .hp-image-label { color: var(--figure-panel-ink); }
 
 @media (max-width: 640px) {
   .doc { width: min(100% - 40px, 65rem); }
@@ -180,6 +180,7 @@ main:has(.doc), .doc, .pager { --measure: 65rem; --bleed: 0px; }
   text-align: left !important;
   text-align-last: auto !important;
   letter-spacing: normal !important;
+  color: var(--ink-2) !important;
 }
 .doc .prose :is(figcaption, .figure-caption, .docking-caption-only) :is(p, span, a, em, i, strong, b):not(:where(.katex *, math *)) {
   font-family: inherit !important;
@@ -189,6 +190,7 @@ main:has(.doc), .doc, .pager { --measure: 65rem; --bleed: 0px; }
   text-align: left !important;
   text-align-last: auto !important;
   letter-spacing: normal !important;
+  color: inherit !important;
 }
 .doc .prose :is(figcaption, .figure-caption, .docking-caption-only) p { margin: 0 !important; }
 .doc .prose :is(figcaption, .figure-caption, .docking-caption-only) strong:first-child { margin-right: 0; }
@@ -220,6 +222,4 @@ main:has(.doc), .doc, .pager { --measure: 65rem; --bleed: 0px; }
 .doc .prose :is(ul, ol), .doc .prose li,
 .doc .prose li :is(p, ul, ol) { text-align: left !important; }
 
-/* figuretext keeps its white image panel in dark mode, so its caption must use matching dark ink. */
-.doc .prose .figure-text > .figure :is(figcaption, .figure-caption),
-.doc .prose .figure-text > .figure :is(figcaption, .figure-caption) :is(p, span, a, em, i, strong, b) { color: #241c2b; }
+/* Captions sit outside the image panel and follow the page ink in both themes. */

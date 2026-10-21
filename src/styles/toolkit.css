@@ -416,10 +416,10 @@ mark { border-radius: 3px; background: none; color: inherit; }
 .cyc__pbody > * { animation: tk-in .25s var(--k-ease); }
 .tk--cycle .cyc__pbody > .rt { font-size: var(--article-font-size, 18px); font-weight: 380; line-height: var(--article-line-height, 1.65); letter-spacing: .005em; text-align: justify; text-align-last: start; margin-bottom: 1.1em; }
 .cyc__figure { margin-top: 1.1em; min-width: 0; }
-.cyc__image { display: block; padding: 26px; border: 1px solid var(--k-line); border-radius: 18px; background: #fff; }
+.cyc__image { display: block; padding: 26px; border: 1px solid var(--k-line); border-radius: 18px; background: var(--figure-surface); }
 .cyc__image img { display: block; width: 100%; height: auto; object-fit: contain; }
-.cyc__figure figcaption { margin-top: 12px; font-size: 14px; font-weight: 400; line-height: 1.55; text-align: left; }
-.cyc__figure figcaption .rt { text-align: left; text-wrap: wrap; }
+.cyc__figure figcaption { color: var(--k-ink2); margin-top: 12px; font-size: 14px; font-weight: 400; line-height: 1.55; text-align: left; }
+.cyc__figure figcaption .rt { color: inherit; text-align: left; text-wrap: wrap; }
 .cyc__pfoot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--k-line2); }
 .cyc__pfoot .go { margin: 0; }
 
@@ -453,9 +453,9 @@ mark { border-radius: 3px; background: none; color: inherit; }
 }
 .tk--cycle .arc__stage > .rt:last-of-type { margin-bottom: 0; }
 .arc__figure { margin-top: 1em; min-width: 0; }
-.arc__image { display: grid; place-items: center; padding: 26px; border: 1px solid var(--k-line); border-radius: 18px; background: #fff; }
+.arc__image { display: grid; place-items: center; padding: 26px; border: 1px solid var(--k-line); border-radius: 18px; background: var(--figure-surface); }
 .arc__image img { display: block; width: auto; max-width: 100%; height: auto; max-height: min(62vh, 520px); object-fit: contain; }
-.arc__figure figcaption { margin-top: 10px; font-size: 14px; font-weight: 400; line-height: 1.55; text-align: left; color: var(--k-ink3); }
+.arc__figure figcaption { margin-top: 10px; font-size: 14px; font-weight: 400; line-height: 1.55; text-align: left; color: var(--k-ink2); }
 .arc__figure figcaption .rt { text-align: left; color: inherit; }
 .arc__stages > .go { margin: 6px 0 0 21px; }
 
@@ -465,8 +465,7 @@ mark { border-radius: 3px; background: none; color: inherit; }
   .arc__rail { position: sticky; top: calc(var(--nav-h, 88px) + 28px); flex-direction: column; align-items: stretch; gap: 10px; }
   .arc__ring { width: 100%; }
   .arc__step { display: block; text-align: center; }
-  .arc.is-live .arc__stage:not(.is-on) { opacity: .42; }
-  .arc.is-live .arc__stage:not(.is-on) .arc__image { filter: saturate(.7); }
+  /* The ring marks the active stage; figures and captions keep consistent colour and contrast. */
 }
 @media (max-width: 760px) {
   .cyc__image, .arc__image { padding: 14px; }

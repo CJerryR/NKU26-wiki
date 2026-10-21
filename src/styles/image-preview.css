@@ -47,8 +47,8 @@ html[data-theme='dark'] .image-preview::backdrop { background: rgb(8 5 12 / .45)
 .image-preview__image {
   display: block; max-width: none; max-height: none; object-fit: contain;
   align-self: center; justify-self: center; margin: auto; user-select: none;
-  /* Transparent scientific diagrams retain their original white reading surface in both themes. */
-  background: #fff; box-shadow: var(--preview-image-shadow);
+  /* Use the same paper as inline figures without altering the image pixels. */
+  background: var(--figure-surface); box-shadow: var(--preview-image-shadow);
 }
 .image-preview__image[hidden], .image-preview__status[hidden] { display: none; }
 .image-preview__status {

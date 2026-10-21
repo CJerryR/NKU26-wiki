@@ -6,7 +6,7 @@
 .docking-panel-scroll { overflow-x:auto; max-width:100%; }
 .docking-panel-row { display:grid; grid-template-columns:var(--source-columns); align-items:start; gap:6px; }
 .docking-panel-row > a { display:block; min-width:0; }
-.docking-panel-row img { display:block; width:100%; height:auto; margin:0; background:#fff; }
+.docking-panel-row img { display:block; width:100%; height:auto; margin:0; background:var(--figure-surface); }
 .docking-source-figure figcaption, .docking-caption-only { margin-top:10px; font-size:13px; line-height:1.5; color:var(--ink-2); }
 .docking-source-figure figcaption strong, .docking-caption-only strong { color:var(--ink); }
 .docking-caption-only p + p { margin-top:.5em; }

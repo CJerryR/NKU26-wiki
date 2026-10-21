@@ -1,4 +1,7 @@
 :root {
+  /* Shared image-component surfaces, inherited by toolkit shadow roots. */
+  --figure-surface: #fffbf2;
+  --figure-panel-ink: #241c2b;
   /* soil + paper, from the v6 palette */
   --paper: #f7f2e8; --paper-2: #efe6d6; --paper-3: #e7dcc8; --paper-hi: #fbf8f1;
   --loam: #191222; --loam-2: #241830; --loam-3: #180f1e;

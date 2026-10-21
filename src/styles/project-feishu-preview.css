@@ -118,7 +118,7 @@ body:has([data-project-preview]) .doc .prose :is(.callout, .cards, .figure, .tab
 
 /* Figure frames contain the complete image, including panel labels. */
 body:has([data-project-preview]) .doc .prose .figure > .figure__media:not(:has(> .table-wrap)) {
-  background: #fff !important;
+  background: var(--figure-surface) !important;
   border: 1px solid var(--line) !important;
   border-radius: var(--figure-radius, 18px) !important;
   padding: 26px !important;
@@ -132,14 +132,14 @@ body:has([data-project-preview]) .doc .prose .figure__media img {
 body:has([data-project-preview]) .doc .prose .hp-source-figure > a,
 body:has([data-project-preview]) .doc .prose .hp-photo-group,
 body:has([data-project-preview]) .doc .prose .docking-panel-scroll {
-  background: #fff;
+  background: var(--figure-surface);
   border: 1px solid var(--line);
   border-radius: var(--figure-radius, 18px);
   padding: 26px;
 }
 
-/* Labels printed within a white photographic panel keep dark ink in both themes. */
-body:has([data-project-preview]) .doc .prose .hp-photo-group .hp-image-label { color: #241c2b; }
+/* Panel labels sit on warm light paper in both themes. */
+body:has([data-project-preview]) .doc .prose .hp-photo-group .hp-image-label { color: var(--figure-panel-ink); }
 
 @media (max-width: 640px) {
   body:has([data-project-preview]) .doc { width: min(100% - 40px, 65rem); }

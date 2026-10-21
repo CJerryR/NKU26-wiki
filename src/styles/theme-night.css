@@ -15,8 +15,8 @@
               film with light ink and the same frost, so body text still
               cannot be read through the bar; the dark tone (over the hero
               and footer) is unchanged;
-     figures – experimental figures keep their white card, dimmed, because
-              their artwork is drawn for white.
+     figures – image components share a warm paper surface; original
+              artwork retains its own pixels and colours.
    Interactive blocks live in shadow roots: they inherit these tokens, and
    their own hard-coded colours are handled by toolkit-night.css through the
    --tk-* tokens defined below. */
@@ -30,6 +30,7 @@ html.theme-switching::view-transition-old(root), html.theme-switching::view-tran
 @media screen {
   /* ------------------------------------------------------------ tokens */
   html[data-theme='dark'] {
+    --figure-surface: #e8d9b7;
     color-scheme: dark;
     --paper: #16121c; --paper-2: #241e2d; --paper-3: #2d2638; --paper-hi: #1e1926;
     --ink: #e9e2ef; --ink-2: #c4bbcf; --ink-3: #9c92a8;
@@ -184,9 +185,9 @@ html.theme-switching::view-transition-old(root), html.theme-switching::view-tran
   html[data-theme='dark'] .pager__link:hover { box-shadow: 0 16px 32px -22px rgb(0 0 0 / .85); }
   html[data-theme='dark'] .feature--link:hover .feature__go { background: var(--accent-fill); border-color: var(--accent-fill); }
 
-  /* experimental figures: their artwork is drawn for white, so the white card stays, dimmed */
+  /* Keep a night shadow without filtering the shared surface or original artwork. */
   html[data-theme='dark'] .prose .figure:not(.figure-text > *) > .figure__media {
-    border-color: transparent; box-shadow: 0 14px 30px -22px rgb(0 0 0 / .9); filter: brightness(.88);
+    border-color: transparent; box-shadow: 0 14px 30px -22px rgb(0 0 0 / .9);
   }
 
   /* ---------------------------------------------------- member / credit cards */

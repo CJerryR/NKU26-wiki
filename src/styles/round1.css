@@ -7,7 +7,7 @@
    and tables placed in a figure (reset below). Specificity (0,4,0) is deliberate: it must beat the base card
    in blocks.css and must not depend on file order. Tune the card with --figure-pad / --figure-radius. */
 .prose .figure:not(.figure-text > *) > .figure__media {
-  background: #fff; border: 1px solid var(--line); border-radius: var(--figure-radius, 18px);
+  background: var(--figure-surface); border: 1px solid var(--line); border-radius: var(--figure-radius, 18px);
   padding: var(--figure-pad, clamp(14px, 2.2vw, 26px)); box-shadow: 0 14px 30px -26px rgba(40, 20, 60, .35);
 }
 /* images keep square corners inside the card (panel letters often sit in the very corner) and never distort */
