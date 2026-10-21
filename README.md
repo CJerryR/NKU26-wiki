@@ -109,7 +109,8 @@ Prepared: 2026-10-21 22:36:40 (UTC+8)
 3. Use consistent 4:3 frames for five photo groups in Investigation, Integrated Human Practices and Education, retaining original image links.
 4. Body search results open the matching chapter and display its relevant excerpt.
 5. Rewrite the repository README and supporting source documents in English, retaining the current and previous release records.
-6. Exclude the horizontal map-shift experiment withdrawn by the user; preserve scientific text and review status.
+6. Align scene breadcrumbs and illustration credits; rename the GOAL-2 module to Molecular dynamics with dynamics emphasized.
+7. Exclude the horizontal map-shift experiment withdrawn by the user; preserve scientific text and review status.
 
 ### V10.2.46
 
