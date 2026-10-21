@@ -130,7 +130,7 @@ NODES = [
     ('g16',  1, 'Pathway construction',  [('Pathway', 1), ('construction', 0)]),
     ('g11',  2, 'Molecular screening',   [('Molecular', 1), ('screening', 0)]),
     ('g10',  2, 'Mutation design',       [('Mutation', 1), ('design', 0)]),
-    ('g8',   2, 'Strengthen docking',    [('Strengthen', 0), ('docking', 1)]),
+    ('g8',   2, 'Molecular dynamics',    [('Molecular', 0), ('dynamics', 1)]),
     ('g9',   2, 'ODE modeling',          [('ODE', 1), ('modeling', 0)]),
     ('g6',   3, 'Soil tracking',         [('Soil', 1), ('tracking', 0)]),
     ('g5',   3, 'Education and outreach',[('Education', 1), ('&amp;', 0), ('outreach', 1)]),
