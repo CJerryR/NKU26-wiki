@@ -63,12 +63,15 @@ const stageVars = [
     <div class="scene__floor" aria-hidden="true" data-scene-floor></div>
     <div class="scene__ground" aria-hidden="true"></div>
     <div class="scene__composition">
+    <div class="scene__meta">
     <nav class="crumbs scene__crumbs" aria-label="Breadcrumb">
       <ol>
         <li><a href="/index.html">Home</a></li>
         {trail.map((c, i) => <li aria-current={i === trail.length - 1 ? 'page' : undefined}>{c}</li>)}
       </ol>
     </nav>
+    <p class="scene__credit">Illustration generated with OpenAI gpt-image-2.5 &middot; CC BY 4.0</p>
+    </div>
     <div class="scene__art">
     {kinds.map((kind) => {
       const { set, atlas, url } = scene.sets[kind];
@@ -88,7 +91,6 @@ const stageVars = [
     <div class="scene__title" data-scene-title>
       <h1 id="page-title" class="scene__h1" style={h1Cap ? `--h1-cap:${h1Cap}` : undefined} set:html={inlineMd(heading ?? title)} />
     </div>
-    <p class="scene__credit">Illustration generated with OpenAI gpt-image-2.5 &middot; CC BY 4.0</p>
   </div>
   <noscript><style>.scene { height: auto !important; } .scene__stage { position: relative !important; } .scene-tear { --tear: 0px !important; } .scene[data-scene-preview] .scene__layer { background-image: var(--atlas) !important; }</style></noscript>
 </section>

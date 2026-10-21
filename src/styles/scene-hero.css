@@ -173,3 +173,31 @@
   .scene__title { width: calc(44% - 36px); }
   .scene__h1 { font-size: min(var(--title-size-d, clamp(30px, 6vw, 48px)), var(--h1-cap, 48px), 14svh); line-height: 1.04; overflow-wrap: anywhere; }
 }
+
+/* A shared row gives the opening metadata matching outer margins and baseline. */
+.scene__meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px 32px;
+  margin-inline: clamp(20px, 3.5vw, 72px);
+  position: relative;
+  z-index: 3;
+  flex: none;
+}
+.scene__meta .scene__crumbs {
+  margin: 0;
+  min-width: 0;
+  max-width: none;
+  align-self: auto;
+}
+.scene__meta .scene__credit {
+  position: static;
+  margin: 0;
+  text-align: right;
+  flex-shrink: 0;
+}
+@media (max-width: 700px) {
+  .scene__meta { flex-wrap: wrap; gap: 6px 20px; }
+  .scene__meta .scene__credit { margin-left: auto; max-width: 100%; flex-shrink: 1; }
+}
