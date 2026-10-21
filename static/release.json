@@ -1,7 +1,7 @@
 {
   "version": "10.2.47",
-  "label": "Centered homepage and footer icons; consistent 4:3 parallel photo frames",
-  "prepared_at": "2026-10-21T22:29:47.185762+08:00",
+  "label": "Homepage layout, parallel photo alignment, search chapter navigation and English repository docs",
+  "prepared_at": "2026-10-21T22:36:19.068169+08:00",
   "release_id": "layout-v10.2.47",
   "previous_release": {
     "version": "10.2.46",
