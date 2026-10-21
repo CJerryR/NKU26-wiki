@@ -1,4 +1,4 @@
-/* Source photographs remain uncropped; editorial notes stay in the local record. */
+/* Photo-only groups use a shared crop; source links retain complete originals. */
 .hp-chapter-nav{display:flex;flex-wrap:wrap;gap:.6rem 1.1rem;margin:0 0 2rem;padding-block:1rem;border-block:1px solid var(--line, currentColor);font-size:.88rem}
 .hp-chapter-nav a{overflow-wrap:anywhere}
 .hp-manuscript{min-width:0;overflow-wrap:anywhere}
@@ -30,3 +30,15 @@
 /* Unnumbered, non-link feature rows have one content column, not the optional index slot. */
 .hp-manuscript .feature:not(:has(>.feature__idx,>.feature__go)){grid-template-columns:minmax(0,1fr)}
 .hp-manuscript .feature__main{min-width:0}
+
+/* Photo-only groups: equal widths and 4:3 crops, including stacked mobile cards.
+   Keep this more specific than the shared figure and mobile image defaults. */
+.doc .prose .hp-manuscript .hp-photo-group--crop .hp-photo-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center;
+}
