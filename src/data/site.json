@@ -30,6 +30,15 @@
       "url": "https://sky.nankai.edu.cn/"
     },
     {
+      "name": "College of Computer Science, Nankai University",
+      "short": "Nankai University · College of Computer Science",
+      "logo": "https://static.igem.wiki/teams/6303/wiki/footer-54bec985098a-nku-computer-science.avif",
+      "logoAlt": "College of Computer Science, Nankai University 南开大学计算机学院",
+      "logoBackground": "dark",
+      "logoWide": true,
+      "url": "https://cc.nankai.edu.cn/"
+    },
+    {
       "name": "SnapGene",
       "logo": "https://static.igem.wiki/teams/6303/wiki/meeting-20261019/footer-df21c8dc8812-snapgene.svg",
       "logoAlt": "SnapGene",
