@@ -155,7 +155,7 @@ EDGES = {  # path id -> cycle or bridge
 # design; they start just under the label instead
 TRIM = {'path130': 147.2, 'path64': 147.2}
 CYCLES = [  # frame rect, no, title, aria
-    ('rect1', 1, 'Engineering the pathway'),
+    ('rect1', 1, 'Engineer the pathway'),
     ('rect1-3', 2, 'Clarify the readout'),
     ('rect1-3-2', 3, 'Into the society'),
     ('rect1-4', 4, 'Forge the artifact'),
