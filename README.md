@@ -18,7 +18,7 @@ Project/Model share embedded figure wrapping;Model review fixes and compact Eco 
 
 南开大学 NKU-China 团队参加 iGEM 2026 的项目网站，队伍编号 **6303**。网站围绕农业线虫与双通道检测方案，展示项目设计、实验结果、模型、人类实践和团队工作。
 
-当前版本为 **V10.2.44**，科研页面优化图文环绕并恢复首页四行标题；保留 Engineering 14 轮 DBTL、最新 Model、Project 标准 URL 版本、Members 和高清公众号二维码。
+当前版本为 **V10.2.45**，更新首页四目标 DBTL 总览、大纲与 Results 标题、学院标志和学姐照片，完成最终界面与仓库清理。
 
 - [正式网站](https://2026.igem.wiki/nku-china/)
 - [GitLab 源码](https://gitlab.igem.org/2026/nku-china)
@@ -72,7 +72,7 @@ npm run dev
 | 素材地址与供稿来源 | `content/cdn-assets.json`、`content/wiki-provenance.json` |
 | 首页成果配图的原件与 CDN 映射 | `assets/source-images/home-built-20261020/`、`docs/what-we-built-approved-cdn-20261020.json` |
 | 最新正文配图的 CDN 映射与原件记录 | `docs/recent-assets-cdn-20261020.json`；PNG 原件保存在本地发布归档 |
-| 版本清单与弹窗 | `README.md`、`src/components/site/ChangeNotice.astro` |
+| 版本历史 | `README.md`（发布记录；审阅界面已按用户要求移除） |
 
 `content/wiki/*.json` 是正式正文源，`src/content/pages/*.md` 由导出工具生成。不要只改生成的 Markdown；Tina 保存后可运行 `node tools/export-tina.mjs` 同步，构建时也会自动导出。
 
@@ -106,9 +106,19 @@ Licensing 独立页当前没有正文，现有许可与 AI 使用说明位于页
 
 ## 版本改动
 
+### V10.2.45 改动：
+
+改动时间：2026-10-21 20:10:14（北京时间）
+
+1. 首页 DBTL 总览采用团队新设计的四个 GOAL 和 14 个模块，保留展开与缩放交互。
+2. Overview 保留在大纲且不编号，补齐子条目；Results 的 34 个阶段标题与大纲一致，保留 Engineering 组件标签。
+3. 页脚加入计算机学院官方 CDN 标志，更新 Credits 文案；Members 与 Attributions 仅替换马培松照片。
+4. 按最新授权移除审阅界面、孤立页面和未使用仓库文件，保留本地备份、科研正文与真实内部审核状态。
+5. 补记 V10.2.44 官方 Pages 实际发布时间；西藏地图替代方案待完成交接，未混入旧柱状图稿。
+
 ### V10.2.44 改动：
 
-改动时间：2026-10-21 19:05:54（北京时间）
+发布时间：2026-10-21 19:16:00（北京时间）
 
 1. Description、Contribution、Docking 与 Results 调整部分图片的左右环绕节奏；窄正文区域改用正文在前、图片在后的顺序，保留复杂科研图通栏。
 2. 恢复首页已确认的四行标题 What / secrets / lie / beneath the soil?，保留当前草叶前景遮挡及其他首页修改。

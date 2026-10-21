@@ -1,11 +1,11 @@
 {
-  "version": "10.2.44",
-  "label": "Research figure flow and approved four-line opening restoration",
-  "prepared_at": "2026-10-21T19:05:54.487085+08:00",
-  "release_id": "research-opening-v10.2.44",
+  "version": "10.2.45",
+  "label": "Homepage DBTL, outlines, team portraits and final cleanup",
+  "prepared_at": "2026-10-21T20:10:14.025036+08:00",
+  "release_id": "takeover-v10.2.45",
   "previous_release": {
-    "version": "10.2.43",
-    "commit": "4b4056b3adf76cfcd15f69aafa9025500a51206b"
+    "version": "10.2.44",
+    "commit": "7c3bfa4e65e0f86434d7a9b0393a61d19debf4b2"
   },
   "published_baseline": {
     "version": "8.6.0",
