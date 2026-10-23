@@ -8,6 +8,27 @@ Source code for the wiki of **NKU-China** (Nankai University, Tianjin, China), i
 
 Final edition: **10.27**. The official GitLab `main` branch is the authoritative source.
 
+## GitLab → GitHub migration / 从 GitLab 迁移的更新
+
+2026-10-23（北京时间），本仓库的 **`main` 分支接入官方 GitLab 已发布源码和原始 Git 提交历史**，便于在 GitHub 继续维护 Wiki 的版本与开发记录。
+
+| 项目 | 来源与范围 |
+| --- | --- |
+| 迁移来源 | [iGEM GitLab · 2026/nku-china · main](https://gitlab.igem.org/2026/nku-china/-/tree/main) |
+| 迁移目标 | [GitHub · CJerryR/NKU26-wiki · main](https://github.com/CJerryR/NKU26-wiki/tree/main) |
+| GitHub main 迁移前 | [`57cd5f8`](https://github.com/CJerryR/NKU26-wiki/commit/57cd5f83800c0c931fca5f8d2076e2d3e749cd94)，2026-07-05 的早期站点；后续版本原先保存在其他分支 |
+| GitHub 已有版本线 | [`v8.0` / `94ef011`](https://github.com/CJerryR/NKU26-wiki/tree/94ef011418de03723a3bfb8ba0564140b7f5cf14)，2026-10-17 留存的源码；原版本分支保留 |
+| 本次采用的官方最终源码 | [`b685d59`](https://gitlab.igem.org/2026/nku-china/-/commit/b685d5992627bd82ebf6c16d2d55e44d4499ae26)，2026-10-21 的官方 main，网站运行版本 **V10.2.47**，README 最终版次 **10.27** |
+| 相对 V8.0 共同祖先补入的历史 | [`8e7b156..b685d59`](https://gitlab.igem.org/2026/nku-china/-/compare/8e7b1565f277539745d92fff6d826f10350ec124...b685d5992627bd82ebf6c16d2d55e44d4499ae26)，349 个官方提交，覆盖 2026-10-17 至 2026-10-21 的后续更新 |
+
+此次把 V8 阶段之后的官方更新带回 GitHub main，包括 V8.6 / V8.7、V10.0、V10.1 及 V10.2.0—V10.2.47 的源码演进：Astro / Tina 内容维护、首页交互与开屏、科研页面与 Model 程序、成员与贡献、官方 CDN 素材、手机与大屏适配、搜索定位和最终排版。具体改动以原提交及下方 Changelog 为准；提交次数不等于发布次数。
+
+官方 GitLab 的完整可达历史随源码一并保留，原始提交 SHA、作者和时间不改写。它还包含更早的官方模板历史及 [2026-10-11 的 V8.0 导入](https://gitlab.igem.org/2026/nku-china/-/commit/eece0793db08cfbef83b3a27afb133da77ca018d)；上述 349 个提交描述的是共同祖先之后补入的范围，并非项目最早起点。GitHub 原 main 的历史通过合并保留，当前文件树采用官方最终源码并补充迁移与开发记录文档。
+
+本次是 **GitLab → GitHub 的源码与历史同步**；iGEM 官网仍由官方 GitLab 发布。本次没有重新发布官网，也没有更新旧 GitHub Pages 预览。运行版本 `10.2.47` 与文档版次 `10.27` 分别保留，不另造版本号。后续 GitHub main 的同步记录应继续注明对应的 GitLab 提交及版本。
+
+开发资料盘点见 [开发历史与来源清单](docs/development-history/README.md)。本次接入已发布源码和 Git 历史，原始聊天、内部收稿与未发布小样尚未全量整理，不代表全部过程附件已公开。
+
 ## Site map
 
 | Section | Pages |
