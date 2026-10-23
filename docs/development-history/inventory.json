@@ -1,0 +1,2982 @@
+{
+  "summary": {
+    "checked_at": "2026-10-23T14:39:28+08:00",
+    "thread": "01a16244-6177-79e1-9675-5a22bd243511",
+    "github": "https://github.com/CJerryR/NKU26-wiki",
+    "github_main": "57cd5f83800c0c931fca5f8d2076e2d3e749cd94",
+    "official_main": "b685d5992627bd82ebf6c16d2d55e44d4499ae26",
+    "github_source_v8": "94ef011418de03723a3bfb8ba0564140b7f5cf14",
+    "github_main_commit_count": 10,
+    "github_all_branch_commit_count": 99,
+    "official_commit_count": 377,
+    "shared_commits": 28,
+    "official_commits_absent_from_github_branches": 349,
+    "github_branch_count": 31,
+    "github_tag_count": 0,
+    "github_public_release_count": 0,
+    "main_merge_base": null,
+    "v8_merge_base": "8e7b1565f277539745d92fff6d826f10350ec124",
+    "v8_divergence": {
+      "github_only": 5,
+      "official_only": 349
+    },
+    "file_differences": {
+      "v8": {
+        "changed_paths": 513,
+        "by_status": {
+          "D": 71,
+          "M": 123,
+          "A": 319
+        }
+      },
+      "main": {
+        "changed_paths": 658,
+        "by_status": {
+          "A": 573,
+          "D": 84,
+          "M": 1
+        }
+      }
+    },
+    "runtime_version_count": 61,
+    "receipt_file_count": 73,
+    "receipt_parse_errors": [],
+    "inventoried_task_count": 80,
+    "git_metadata_note": "Commit timestamps are preserved; they are not automatically creation or publication dates.",
+    "scope": "Read-only remote inspection, isolated local audit and documentation. No remote push or deployment."
+  },
+  "github_branches": [
+    {
+      "name": "3Dv2",
+      "commit": "c0593e321ff8920080042a28915e503a070d246d",
+      "authored_at": "2026-09-24T14:51:34+08:00",
+      "title": "docs: document 3D v2 review build",
+      "url": "https://github.com/CJerryR/NKU26-wiki/tree/3Dv2",
+      "common_ancestor_with_official": null
+    },
+    {
+      "name": "3Dv3",
+      "commit": "536771af00fb39894f7dda458be29aef81ba68d2",
+      "authored_at": "2026-09-24T14:54:11+08:00",
+      "title": "feat: publish 3D homepage v3 source",
+      "url": "https://github.com/CJerryR/NKU26-wiki/tree/3Dv3",
+      "common_ancestor_with_official": null
+    },
+    {
+      "name": "3d-version",
+      "commit": "97adb83bc368875f13380dcf77001d021aff8190",
+      "authored_at": "2026-09-24T01:51:25+08:00",
+      "title": "feat: add 3d homepage version",
+      "url": "https://github.com/CJerryR/NKU26-wiki/tree/3d-version",
+      "common_ancestor_with_official": null
+    },
+    {
+      "name": "ClaudeBuild",
+      "commit": "577359579e61459ce5720b124dc0427c66f49739",
+      "authored_at": "2026-09-23T16:11:26+08:00",
+      "title": "ci: drop GitHub Pages workflow, site deploys from gh-pages branch",
+      "url": "https://github.com/CJerryR/NKU26-wiki/tree/ClaudeBuild",
+      "common_ancestor_with_official": null
+    },
+    {
+      "name": "HomePage",
+      "commit": "e7abcea0360aad288d7e31cbcba6e66139450509",
+      "authored_at": "2026-09-23T16:11:20+08:00",
+      "title": "ci: drop GitHub Pages workflow, site deploys from gh-pages branch",
+      "url": "https://github.com/CJerryR/NKU26-wiki/tree/HomePage",
+      "common_ancestor_with_official": null
+    },
+    {
+      "name": "claude-py-innerpage",
+      "commit": "fd1599ad95353179a7837d4d1624585abeab5cd4",
+      "authored_at": "2026-09-23T23:12:18+08:00",
+      "title": "feat: add Python article system to GPT homepage base",
+      "url": "https://github.com/CJerryR/NKU26-wiki/tree/claude-py-innerpage",
+      "common_ancestor_with_official": null
+    },
+    {
+      "name": "codex/local-latest-2026-09-22",
+      "commit": "a0e3f89ff41b67757397ec8043b8e2a5d3b840ca",
+      "authored_at": "2026-09-22T09:31:15+08:00",
+      "title": "Save latest local wiki source and build workflow",
+      "url": "https://github.com/CJerryR/NKU26-wiki/tree/codex/local-latest-2026-09-22",
+      "common_ancestor_with_official": null
+    },
+    {
+      "name": "codex/wiki-progress-2026-07-17",
+      "commit": "2c77d6143fc070f0c1df0cd0a83ce6ed7e017603",
+      "authored_at": "2026-07-18T00:09:02+08:00",
+      "title": "feat: add private Feishu archive workflow",
+      "url": "https://github.com/CJerryR/NKU26-wiki/tree/codex/wiki-progress-2026-07-17",
+      "common_ancestor_with_official": null
+    },
+    {
+      "name": "codex/workspace-20260731",
+      "commit": "96b1941cd9c2cc809a10c27e2d8c579c1f2aef59",
+      "authored_at": "2026-07-14T06:22:18+08:00",
+      "title": "feat: add reagent glass fluid homepage",
+      "url": "https://github.com/CJerryR/NKU26-wiki/tree/codex/workspace-20260731",
+      "common_ancestor_with_official": null
+    },
+    {
+      "name": "develop",
+      "commit": "99715f64ac403122d2de9062d12cd0a59a6a39cb",
+      "authored_at": "2026-07-14T04:27:56+08:00",
+      "title": "chore: establish workspace development branch",
+      "url": "https://github.com/CJerryR/NKU26-wiki/tree/develop",
+      "common_ancestor_with_official": null
+    },
+    {
+      "name": "gh-pages",
+      "commit": "84751ef5f80eb1d8f438a75e0f26c458da65af32",
+      "authored_at": "2026-10-17T04:58:33+08:00",
+      "title": "Publish opening reset and cache-consistent v8.0 preview",
+      "url": "https://github.com/CJerryR/NKU26-wiki/tree/gh-pages",
+      "common_ancestor_with_official": null
+    },
+    {
+      "name": "main",
+      "commit": "57cd5f83800c0c931fca5f8d2076e2d3e749cd94",
+      "authored_at": "2026-07-05T20:46:00+08:00",
+      "title": "Publish homepage evidence map",
+      "url": "https://github.com/CJerryR/NKU26-wiki/tree/main",
+      "common_ancestor_with_official": null
+    },
+    {
+      "name": "tina-v7.6",
+      "commit": "aa019e3dc84f2f2adf39fe609425131b995ba403",
+      "authored_at": "2026-09-30T01:33:15+08:00",
+      "title": "Use form editing on Pages and live preview on localhost",
+      "url": "https://github.com/CJerryR/NKU26-wiki/tree/tina-v7.6",
+      "common_ancestor_with_official": null
+    },
+    {
+      "name": "v4-compliance",
+      "commit": "b248a0c7a0b1671f041e3f9eb6209066160c2f2d",
+      "authored_at": "2026-09-23T23:32:02+08:00",
+      "title": "feat: import v4 compliance snapshot",
+      "url": "https://github.com/CJerryR/NKU26-wiki/tree/v4-compliance",
+      "common_ancestor_with_official": null
+    },
+    {
+      "name": "v5-data-sources",
+      "commit": "78de572e140d3eccedb598f5c6dd0f1a165def01",
+      "authored_at": "2026-09-23T23:32:17+08:00",
+      "title": "feat: add v5 homepage data sources",
+      "url": "https://github.com/CJerryR/NKU26-wiki/tree/v5-data-sources",
+      "common_ancestor_with_official": null
+    },
+    {
+      "name": "v6",
+      "commit": "6f63def837ffa7c115a0e7e4fead0905b80694e9",
+      "authored_at": "2026-09-26T16:22:54+08:00",
+      "title": "Add v6 homepage source snapshot",
+      "url": "https://github.com/CJerryR/NKU26-wiki/tree/v6",
+      "common_ancestor_with_official": null
+    },
+    {
+      "name": "v6.1",
+      "commit": "3dfba33e9a1ce3f4cc8b0c90e657385cab496678",
+      "authored_at": "2026-09-26T16:22:55+08:00",
+      "title": "Add v6.1 homepage source snapshot",
+      "url": "https://github.com/CJerryR/NKU26-wiki/tree/v6.1",
+      "common_ancestor_with_official": null
+    },
+    {
+      "name": "v6.3",
+      "commit": "5330451c6a8ee072e571d8441b15a23afd703c59",
+      "authored_at": "2026-09-26T16:22:56+08:00",
+      "title": "Add v6.3 homepage source snapshot",
+      "url": "https://github.com/CJerryR/NKU26-wiki/tree/v6.3",
+      "common_ancestor_with_official": null
+    },
+    {
+      "name": "v6.4",
+      "commit": "e783606ddca1216b9241c048dd4542947582813b",
+      "authored_at": "2026-09-26T16:22:57+08:00",
+      "title": "Add v6.4 homepage source snapshot",
+      "url": "https://github.com/CJerryR/NKU26-wiki/tree/v6.4",
+      "common_ancestor_with_official": null
+    },
+    {
+      "name": "v6.5",
+      "commit": "483e1670a2e797a6acb0b68560f85e5ab746b62a",
+      "authored_at": "2026-09-26T16:22:58+08:00",
+      "title": "Add v6.5 homepage source snapshot",
+      "url": "https://github.com/CJerryR/NKU26-wiki/tree/v6.5",
+      "common_ancestor_with_official": null
+    },
+    {
+      "name": "v6.7",
+      "commit": "dea9db3018acfeb5355c45c9c156ede87e2c434e",
+      "authored_at": "2026-09-26T16:22:59+08:00",
+      "title": "Add v6.7 homepage source snapshot",
+      "url": "https://github.com/CJerryR/NKU26-wiki/tree/v6.7",
+      "common_ancestor_with_official": null
+    },
+    {
+      "name": "v7",
+      "commit": "934905a6ec2768212cb5975957f081614d8d954c",
+      "authored_at": "2026-09-29T09:06:12+08:00",
+      "title": "Add v7 source snapshot",
+      "url": "https://github.com/CJerryR/NKU26-wiki/tree/v7",
+      "common_ancestor_with_official": null
+    },
+    {
+      "name": "v7-checkpoint-1",
+      "commit": "0c641aaca3c8b66c52764c569c6c9b555c25747f",
+      "authored_at": "2026-09-29T09:06:20+08:00",
+      "title": "Add v7 checkpoint 1 source snapshot",
+      "url": "https://github.com/CJerryR/NKU26-wiki/tree/v7-checkpoint-1",
+      "common_ancestor_with_official": null
+    },
+    {
+      "name": "v7-checkpoint-2",
+      "commit": "63c598eb949ac7f01f45fd487b20db6e4dc631f6",
+      "authored_at": "2026-09-29T09:06:29+08:00",
+      "title": "Add v7 checkpoint 2 source snapshot",
+      "url": "https://github.com/CJerryR/NKU26-wiki/tree/v7-checkpoint-2",
+      "common_ancestor_with_official": null
+    },
+    {
+      "name": "v7.1",
+      "commit": "053928a17005faa66aee55784f626a6843d8315c",
+      "authored_at": "2026-09-29T09:06:38+08:00",
+      "title": "Add v7.1 source snapshot",
+      "url": "https://github.com/CJerryR/NKU26-wiki/tree/v7.1",
+      "common_ancestor_with_official": null
+    },
+    {
+      "name": "v7.2-checkpoint",
+      "commit": "54c441e5264ee68667ab5d534189e49ecf836a3b",
+      "authored_at": "2026-09-29T09:06:46+08:00",
+      "title": "Add v7.2 checkpoint source snapshot",
+      "url": "https://github.com/CJerryR/NKU26-wiki/tree/v7.2-checkpoint",
+      "common_ancestor_with_official": null
+    },
+    {
+      "name": "v7.4",
+      "commit": "847ab9f018f48d5bf4ebc695baf843a5ed81cdd0",
+      "authored_at": "2026-09-29T09:06:54+08:00",
+      "title": "Add v7.4 source snapshot",
+      "url": "https://github.com/CJerryR/NKU26-wiki/tree/v7.4",
+      "common_ancestor_with_official": null
+    },
+    {
+      "name": "v7.5",
+      "commit": "1221f37887fdebbcec6a821d39fff1cf9d37a372",
+      "authored_at": "2026-09-29T09:19:03+08:00",
+      "title": "Add v7.5 source snapshot",
+      "url": "https://github.com/CJerryR/NKU26-wiki/tree/v7.5",
+      "common_ancestor_with_official": null
+    },
+    {
+      "name": "v7.6",
+      "commit": "46a9b97549f6dd7be4693d5948cfc7a867781191",
+      "authored_at": "2026-09-29T10:00:56+08:00",
+      "title": "Add v7.6 source snapshot",
+      "url": "https://github.com/CJerryR/NKU26-wiki/tree/v7.6",
+      "common_ancestor_with_official": null
+    },
+    {
+      "name": "v7.8",
+      "commit": "210e78febadf16e02e884082476118fe085f7f50",
+      "authored_at": "2026-10-01T15:03:56+08:00",
+      "title": "Use Claude 38-component catalogue",
+      "url": "https://github.com/CJerryR/NKU26-wiki/tree/v7.8",
+      "common_ancestor_with_official": null
+    },
+    {
+      "name": "v8.0",
+      "commit": "94ef011418de03723a3bfb8ba0564140b7f5cf14",
+      "authored_at": "2026-10-17T04:58:01+08:00",
+      "title": "Version homepage assets and complete search index by content",
+      "url": "https://github.com/CJerryR/NKU26-wiki/tree/v8.0",
+      "common_ancestor_with_official": "8e7b1565f277539745d92fff6d826f10350ec124"
+    }
+  ],
+  "release_versions": [
+    {
+      "version": "10.2.47",
+      "metadata_last_changed": {
+        "commit": "26cf74fdaade6b4ad96a366935d3f6bef3068c2f",
+        "authored_at": "2026-10-21T22:36:19+08:00",
+        "title": "Finalize V10.2.47 scope with search navigation and English docs"
+      },
+      "metadata": {
+        "version": "10.2.47",
+        "label": "Homepage layout, parallel photo alignment, search chapter navigation and English repository docs",
+        "release_id": "layout-v10.2.47",
+        "prepared_at": "2026-10-21T22:36:19.068169+08:00",
+        "previous_release": {
+          "version": "10.2.46",
+          "commit": "06c313c4b4a220f6ec2362b3107f12a4cfc5fa97"
+        }
+      },
+      "metadata_source_sha256": "66dab916489c867c7c61de440a7aedef879fa08ca6fc2f16f2f0e9acd19df6b2",
+      "metadata_change_commits": [
+        "26cf74fdaade6b4ad96a366935d3f6bef3068c2f",
+        "929eba3ed6cdf8164900ef533f3f7c17d9449827",
+        "6041d847821ffc6ff883f81a84a53c9c9f632a67"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/release-bot/20261021-final-label/发布回执.json",
+          "sha256": "a6610ea1d628609638a00be0540fd2b5fdee22e134a64cd9030688ec4d6789e1",
+          "claimed_version": "10.2.47",
+          "claimed_status": "success",
+          "claimed_published_commit": "b685d5992627bd82ebf6c16d2d55e44d4499ae26",
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/799038",
+          "note": "Historical evidence index; not a new deployment verification."
+        },
+        {
+          "path": "workspace/evidence/release-bot/20261021-layout-v1047/发布回执.json",
+          "sha256": "97734ed73d0160da2fbfb82c23ab0553dfc3ab13efde8342f73b49280deffd2a",
+          "claimed_version": "10.2.47",
+          "claimed_status": "published-and-verified",
+          "claimed_published_commit": "26f60268153107fd192654402417c89a1c8e32de",
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/798738",
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.46",
+      "metadata_last_changed": {
+        "commit": "06c313c4b4a220f6ec2362b3107f12a4cfc5fa97",
+        "authored_at": "2026-10-21T21:54:00+08:00",
+        "title": "Finalize V10.2.46 nine-handoff release scope"
+      },
+      "metadata": {
+        "version": "10.2.46",
+        "label": "Final map, outlines, homepage, scientific formatting and figure flow",
+        "release_id": "all-handoffs-v10.2.46",
+        "prepared_at": "2026-10-21T21:54:00.513788+08:00",
+        "previous_release": {
+          "version": "10.2.45",
+          "commit": "c6bc6c80571ca45d768ae373da4989bfcd0c3c08"
+        }
+      },
+      "metadata_source_sha256": "e770ceea06811d4c63e21024608bc2b24639527a37627306c34d1e51d7d004bd",
+      "metadata_change_commits": [
+        "06c313c4b4a220f6ec2362b3107f12a4cfc5fa97",
+        "b9dc193ad047befc13a4b4e4e109ccba1f25046d",
+        "19e7c5b600d23c1333f60c6bce292a2c36008ca2",
+        "cd19cac1d8e06b569277dc7410afd686868156aa"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/release-bot/20261021-final-v1046/发布回执.json",
+          "sha256": "0efeb6f05e9a6fa13080b99628361e8616440c811c59dd141549e050442a3086",
+          "claimed_version": "10.2.46",
+          "claimed_status": "published-and-verified",
+          "claimed_published_commit": "06c313c4b4a220f6ec2362b3107f12a4cfc5fa97",
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/797325",
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.45",
+      "metadata_last_changed": {
+        "commit": "3ea28a1082ce3a35671540d384ec025161d27192",
+        "authored_at": "2026-10-21T20:10:19+08:00",
+        "title": "Prepare V10.2.45 combined takeover release"
+      },
+      "metadata": {
+        "version": "10.2.45",
+        "label": "Homepage DBTL, outlines, team portraits and final cleanup",
+        "release_id": "takeover-v10.2.45",
+        "prepared_at": "2026-10-21T20:10:14.025036+08:00",
+        "previous_release": {
+          "version": "10.2.44",
+          "commit": "7c3bfa4e65e0f86434d7a9b0393a61d19debf4b2"
+        }
+      },
+      "metadata_source_sha256": "9cd0e7beed5373d951986156fba39ab66a76292472afe3b98403f29ea05b5678",
+      "metadata_change_commits": [
+        "3ea28a1082ce3a35671540d384ec025161d27192"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/release-bot/20261021-takeover-v1045/发布回执.json",
+          "sha256": "21c198fb46b4ac29283bf9749f11b9f2ed1e89f8150ca775e82cebad576232ec",
+          "claimed_version": "10.2.45",
+          "claimed_status": "published-and-verified",
+          "claimed_published_commit": "c6bc6c80571ca45d768ae373da4989bfcd0c3c08",
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/794806",
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.44",
+      "metadata_last_changed": {
+        "commit": "c682af35128911609966ec4bcffc251f93a5d83f",
+        "authored_at": "2026-10-21T20:01:03+08:00",
+        "title": "Remove review UI, obsolete routes, and unused repository files"
+      },
+      "metadata": {
+        "version": "10.2.44",
+        "label": "Research figure flow and approved four-line opening restoration",
+        "release_id": "research-opening-v10.2.44",
+        "prepared_at": "2026-10-21T19:05:54.487085+08:00",
+        "previous_release": {
+          "version": "10.2.43",
+          "commit": "4b4056b3adf76cfcd15f69aafa9025500a51206b"
+        }
+      },
+      "metadata_source_sha256": "17bb47ba7bb2607a4634d52c625cb4020fa15bf74a07377f10576cee74ee17b4",
+      "metadata_change_commits": [
+        "c682af35128911609966ec4bcffc251f93a5d83f",
+        "7c3bfa4e65e0f86434d7a9b0393a61d19debf4b2"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/release-bot/20261021-hourly-1904/发布回执.json",
+          "sha256": "5c235575279d107401a27827072a51255e0c67d9bfdadc7e58e99d8f172f1c3a",
+          "claimed_version": "10.2.44",
+          "claimed_status": "published-and-verified",
+          "claimed_published_commit": "7c3bfa4e65e0f86434d7a9b0393a61d19debf4b2",
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/793673",
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.43",
+      "metadata_last_changed": {
+        "commit": "4b4056b3adf76cfcd15f69aafa9025500a51206b",
+        "authored_at": "2026-10-21T17:52:37+08:00",
+        "title": "Prepare V10.2.43 Results grouped figure release and visible history"
+      },
+      "metadata": {
+        "version": "10.2.43",
+        "label": "Results grouped figures and continuous text wrapping",
+        "release_id": "results-groups-v10.2.43",
+        "prepared_at": "2026-10-21T17:52:37.424411+08:00",
+        "previous_release": {
+          "version": "10.2.42",
+          "commit": "218e79dbd62c59d3e92554b6f57b95e86427c617"
+        }
+      },
+      "metadata_source_sha256": "60c1c5f4f1af985291d83782533564018351a4e9bf0e4508a730c6b168309f3d",
+      "metadata_change_commits": [
+        "4b4056b3adf76cfcd15f69aafa9025500a51206b"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/release-bot/20261021-results-groups/发布回执.json",
+          "sha256": "c8feabca9884d648c13ae7beec2321a89c231da1810855202ea4a8b6be5cc71b",
+          "claimed_version": "10.2.43",
+          "claimed_status": "published-and-verified",
+          "claimed_published_commit": "4b4056b3adf76cfcd15f69aafa9025500a51206b",
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/792628",
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.42",
+      "metadata_last_changed": {
+        "commit": "346f05f42de7e255c9adcd3780ee743ea63442cc",
+        "authored_at": "2026-10-21T16:04:24+08:00",
+        "title": "Record approved joint handoffs in current website changelog"
+      },
+      "metadata": {
+        "version": "10.2.42",
+        "label": "Visible release history and approved combined page updates",
+        "release_id": "combined-history-hp-v10.2.42",
+        "prepared_at": "2026-10-21T15:58:45.667383+08:00",
+        "previous_release": {
+          "version": "10.2.41",
+          "commit": "168a4f02748ea1e0bb5e707f6f799d4d19f100bb"
+        }
+      },
+      "metadata_source_sha256": "1f26bc5951c37b04a661d2b4e681ed55555abaddf24a67154a708b56dd0a2b13",
+      "metadata_change_commits": [
+        "346f05f42de7e255c9adcd3780ee743ea63442cc",
+        "b6567f07cb47c7dd820394b7885548edbd8d97d3"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/release-bot/20261021-release-history/发布回执.json",
+          "sha256": "8bc0d29b659284f295c2601cdcd9f58fa48d300c94b43d162c7d171e7cb3e806",
+          "claimed_version": "10.2.42",
+          "claimed_status": "published-and-verified",
+          "claimed_published_commit": "218e79dbd62c59d3e92554b6f57b95e86427c617",
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/791138",
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.41",
+      "metadata_last_changed": {
+        "commit": "168a4f02748ea1e0bb5e707f6f799d4d19f100bb",
+        "authored_at": "2026-10-21T14:43:29+08:00",
+        "title": "Release V10.2.41 restore Members unnumbered headings"
+      },
+      "metadata": {
+        "version": "10.2.41",
+        "label": "Members unnumbered section headings and HP Overview typo",
+        "release_id": "members-followup-v10.2.41",
+        "prepared_at": "2026-10-21T14:43:28.843656+08:00",
+        "previous_release": {
+          "version": "10.2.40",
+          "commit": "1e4ff0bc94ac9b5da0e34f62f5a8c2c7cbf62d3f"
+        }
+      },
+      "metadata_source_sha256": "5959f3d51f049619b5a78ddd00804de12460d7c7994c43fe9a9891de3ad07398",
+      "metadata_change_commits": [
+        "168a4f02748ea1e0bb5e707f6f799d4d19f100bb"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/release-bot/20261021-members-followup/发布回执.json",
+          "sha256": "892e3754eb9559266eaf0f52691ca602a3e6b3d6f25d166067b4214e5e3f4439",
+          "claimed_version": "10.2.41",
+          "claimed_status": "published-and-verified",
+          "claimed_published_commit": "168a4f02748ea1e0bb5e707f6f799d4d19f100bb",
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/790396",
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.40",
+      "metadata_last_changed": {
+        "commit": "1e4ff0bc94ac9b5da0e34f62f5a8c2c7cbf62d3f",
+        "authored_at": "2026-10-21T13:13:14+08:00",
+        "title": "Release V10.2.40 select standard Project version"
+      },
+      "metadata": {
+        "version": "10.2.40",
+        "label": "Project standard version selected",
+        "release_id": "project-single-v10.2.40",
+        "prepared_at": "2026-10-21T13:13:14.353755+08:00",
+        "previous_release": {
+          "version": "10.2.39",
+          "commit": "64173b935014ed8acc913f9ea12e22a85eb8022e"
+        }
+      },
+      "metadata_source_sha256": "8d7d05f950ca7fdd20bed3c350dece8a1d4a011cd50bd33bc04d1b0da0c9e732",
+      "metadata_change_commits": [
+        "1e4ff0bc94ac9b5da0e34f62f5a8c2c7cbf62d3f"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/release-bot/20261021-project-single/发布回执.json",
+          "sha256": "dd1124d97ba14e33d81b82113e8d4a32931087afc0cb5374d008c385982024ee",
+          "claimed_version": "10.2.40",
+          "claimed_status": "published-and-verified",
+          "claimed_published_commit": "1e4ff0bc94ac9b5da0e34f62f5a8c2c7cbf62d3f",
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/789248",
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.39",
+      "metadata_last_changed": {
+        "commit": "64173b935014ed8acc913f9ea12e22a85eb8022e",
+        "authored_at": "2026-10-21T12:53:23+08:00",
+        "title": "Release V10.2.39 DBTL spacing and unified figure theme"
+      },
+      "metadata": {
+        "version": "10.2.39",
+        "label": "Engineering scroll-linked half-ring DBTL cycles",
+        "release_id": "dbtl-arc-20261021-v10.2.35",
+        "prepared_at": "2026-10-21T05:02:59.579051+08:00",
+        "previous_release": {
+          "version": "10.2.34",
+          "commit": "780f037ed0980634fb193d16b1120296221c8e7b"
+        }
+      },
+      "metadata_source_sha256": "73e753b859d16f147ec8b6101f87785d9c546bb209996164c755bb27da1ed2b8",
+      "metadata_change_commits": [
+        "64173b935014ed8acc913f9ea12e22a85eb8022e"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/release-bot/20261021-hourly-1249/发布回执.json",
+          "sha256": "b99521410bfc002d4ec4e52870c011bbdcbf1221aaa1921fa68a5b04a71f5a93",
+          "claimed_version": "10.2.39",
+          "claimed_status": "published-and-verified",
+          "claimed_published_commit": "64173b935014ed8acc913f9ea12e22a85eb8022e",
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/789063",
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.38",
+      "metadata_last_changed": {
+        "commit": "1e9cf16e23321af2e27dbdc11591fa69ab0285b7",
+        "authored_at": "2026-10-21T07:45:29+08:00",
+        "title": "Release V10.2.38 normalized subpages and reviewed Results updates"
+      },
+      "metadata": {
+        "version": "10.2.38",
+        "label": "Engineering scroll-linked half-ring DBTL cycles",
+        "release_id": "dbtl-arc-20261021-v10.2.35",
+        "prepared_at": "2026-10-21T05:02:59.579051+08:00",
+        "previous_release": {
+          "version": "10.2.34",
+          "commit": "780f037ed0980634fb193d16b1120296221c8e7b"
+        }
+      },
+      "metadata_source_sha256": "980dd30ca79c758892891f237a84f90a3b09419a2d7207dccafbab660b01c144",
+      "metadata_change_commits": [
+        "1e9cf16e23321af2e27dbdc11591fa69ab0285b7"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/release-bot/20261021-hourly-0742/发布回执.json",
+          "sha256": "4c70a76ce70e3014ed5ec33fb32189db77dcda54a88c28565da8104190a57284",
+          "claimed_version": "10.2.38",
+          "claimed_status": "published-and-verified",
+          "claimed_published_commit": "34357bfd8ecc4e3bab109c98fb26beece81376fe",
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/786161",
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.37",
+      "metadata_last_changed": {
+        "commit": "323aa9f3109f2081508b5c411a7d12c60e75250a",
+        "authored_at": "2026-10-21T06:47:30+08:00",
+        "title": "Release V10.2.37 HP refresh and official Model code links"
+      },
+      "metadata": {
+        "version": "10.2.37",
+        "label": "Engineering scroll-linked half-ring DBTL cycles",
+        "release_id": "dbtl-arc-20261021-v10.2.35",
+        "prepared_at": "2026-10-21T05:02:59.579051+08:00",
+        "previous_release": {
+          "version": "10.2.34",
+          "commit": "780f037ed0980634fb193d16b1120296221c8e7b"
+        }
+      },
+      "metadata_source_sha256": "5fda4289cb61c35985930ef98d5113533bda27f5440c887ef145189319dc48a9",
+      "metadata_change_commits": [
+        "323aa9f3109f2081508b5c411a7d12c60e75250a"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/release-bot/20261021-hourly-0646/发布回执.json",
+          "sha256": "3f2efde3a484c759d43b7fc1d79ddbc91042ac5421028a83e0dbc4e50826abb4",
+          "claimed_version": "10.2.37",
+          "claimed_status": "published-and-verified",
+          "claimed_published_commit": "323aa9f3109f2081508b5c411a7d12c60e75250a",
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/785723",
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.36",
+      "metadata_last_changed": {
+        "commit": "fd9b5a6e3c5ff568966c81ac691db61046568a2f",
+        "authored_at": "2026-10-21T05:31:57+08:00",
+        "title": "Release V10.2.36 Project and Model embedded figures"
+      },
+      "metadata": {
+        "version": "10.2.36",
+        "label": "Engineering scroll-linked half-ring DBTL cycles",
+        "release_id": "dbtl-arc-20261021-v10.2.35",
+        "prepared_at": "2026-10-21T05:02:59.579051+08:00",
+        "previous_release": {
+          "version": "10.2.34",
+          "commit": "780f037ed0980634fb193d16b1120296221c8e7b"
+        }
+      },
+      "metadata_source_sha256": "ea0f5540463834afd6c291da59afbc3fadb7f9d79037295e22987d20b64e880d",
+      "metadata_change_commits": [
+        "fd9b5a6e3c5ff568966c81ac691db61046568a2f"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/release-bot/20261021-wrap-combined/发布回执.json",
+          "sha256": "70023faee3a3794eb7a1db103af53d8effba3d356f1488488c5ebe22d7675d74",
+          "claimed_version": "10.2.36",
+          "claimed_status": "published-and-verified",
+          "claimed_published_commit": "fd9b5a6e3c5ff568966c81ac691db61046568a2f",
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/785223",
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.35",
+      "metadata_last_changed": {
+        "commit": "8a523c317650d115d5db006f4e75ed127dcb02f9",
+        "authored_at": "2026-10-21T05:05:10+08:00",
+        "title": "Record generated Tina schema verification for half-ring fields"
+      },
+      "metadata": {
+        "version": "10.2.35",
+        "label": "Engineering scroll-linked half-ring DBTL cycles",
+        "release_id": "dbtl-arc-20261021-v10.2.35",
+        "prepared_at": "2026-10-21T05:02:59.579051+08:00",
+        "previous_release": {
+          "version": "10.2.34",
+          "commit": "780f037ed0980634fb193d16b1120296221c8e7b"
+        }
+      },
+      "metadata_source_sha256": "1f6e9110e665c18f4a87b04c8692759f7913da1313b67781619d85e72b5de470",
+      "metadata_change_commits": [
+        "8a523c317650d115d5db006f4e75ed127dcb02f9",
+        "ee740bb2608f14c13239f9a50a3ae700e514469d"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/release-bot/20261021-dbtl-arc-urgent/发布回执.json",
+          "sha256": "8c80f481c3713681573d04550f1fe59203854082cc4050e18439c148bc722ea5",
+          "claimed_version": "10.2.35",
+          "claimed_status": "published-and-verified",
+          "claimed_published_commit": "8a523c317650d115d5db006f4e75ed127dcb02f9",
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/785050",
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.34",
+      "metadata_last_changed": {
+        "commit": "780f037ed0980634fb193d16b1120296221c8e7b",
+        "authored_at": "2026-10-21T04:36:34+08:00",
+        "title": "Prepare V10.2.34 final Model manuscript release"
+      },
+      "metadata": {
+        "version": "10.2.34",
+        "label": "Model flat manuscripts, editable Tina app and distinct tables",
+        "release_id": "model-flat-20261021-v10.2.34",
+        "prepared_at": "2026-10-21T04:36:34.164593+08:00",
+        "previous_release": {
+          "version": "10.2.33",
+          "commit": "88b4566cfbed21ea96d5ebdb0dddc615d738cf42"
+        }
+      },
+      "metadata_source_sha256": "1daa4e8e396d890fcdcd953963af791e72d35b381c91c0cada3aae61564f5846",
+      "metadata_change_commits": [
+        "780f037ed0980634fb193d16b1120296221c8e7b"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/release-bot/20261021-hourly-0435/发布回执.json",
+          "sha256": "6b92a2c4c47ee5c8b8d519406a19a590b870e9cb31cd81efd8d91dca047a7e09",
+          "claimed_version": "10.2.34",
+          "claimed_status": "published-and-verified",
+          "claimed_published_commit": "780f037ed0980634fb193d16b1120296221c8e7b",
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/784832",
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.33",
+      "metadata_last_changed": {
+        "commit": "f8c87a73dd34464ed29173d9411c67bdd14982f7",
+        "authored_at": "2026-10-21T04:10:40+08:00",
+        "title": "Prepare V10.2.33 parallel Project comparison release"
+      },
+      "metadata": {
+        "version": "10.2.33",
+        "label": "Temporary Project version comparison; both versions retained",
+        "release_id": "project-comparison-20261021-v10.2.33",
+        "prepared_at": "2026-10-21T04:10:40.582798+08:00",
+        "previous_release": {
+          "version": "10.2.32",
+          "commit": "774aad6ab7872a230a7734db87e1414b6f9f709e"
+        }
+      },
+      "metadata_source_sha256": "8eb67c268c30c446e0db6a1f6e41fba66dbbfa21f88907ae107e5e864be2aa73",
+      "metadata_change_commits": [
+        "f8c87a73dd34464ed29173d9411c67bdd14982f7"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/release-bot/20261021-project-compare-0409/发布回执.json",
+          "sha256": "285e75bc65a15598b045649a5e7482bc3d2c46119f855102018b181abf75ee59",
+          "claimed_version": "10.2.33",
+          "claimed_status": "published-and-verified",
+          "claimed_published_commit": "88b4566cfbed21ea96d5ebdb0dddc615d738cf42",
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/784733",
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.32",
+      "metadata_last_changed": {
+        "commit": "774aad6ab7872a230a7734db87e1414b6f9f709e",
+        "authored_at": "2026-10-21T03:41:25+08:00",
+        "title": "Record validated Description heading followup"
+      },
+      "metadata": {
+        "version": "10.2.32",
+        "label": "Latest flat Project manuscripts and homepage checkpoint04",
+        "release_id": "project-home-20261021-v10.2.32",
+        "prepared_at": "2026-10-21T03:36:00.805003+08:00",
+        "previous_release": {
+          "version": "10.2.31",
+          "commit": "9e9fa070857d872d29a4759c53c9e362ed9c70ab"
+        }
+      },
+      "metadata_source_sha256": "057cde80ace2665d020c97113a4216b54694b35d6fd0a5a3b2298db9b59b3e86",
+      "metadata_change_commits": [
+        "774aad6ab7872a230a7734db87e1414b6f9f709e",
+        "26fe4255369150d16b62ad0d665db5e44609ae99"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/release-bot/20261021-hourly-0332/发布回执.json",
+          "sha256": "9719652dda59b2e6a4ebf1fc7df022ed9fd5c6b4a13904747bb3de3b27e18e4c",
+          "claimed_version": "10.2.32",
+          "claimed_status": "published-and-verified",
+          "claimed_published_commit": "774aad6ab7872a230a7734db87e1414b6f9f709e",
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/784453",
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.31",
+      "metadata_last_changed": {
+        "commit": "9e9fa070857d872d29a4759c53c9e362ed9c70ab",
+        "authored_at": "2026-10-21T02:27:14+08:00",
+        "title": "Prepare V10.2.31 opening title occlusion restoration"
+      },
+      "metadata": {
+        "version": "10.2.31",
+        "label": "Restore opening grass and sprout title occlusion",
+        "release_id": "opening-occlusion-20261021-v10.2.31",
+        "prepared_at": "2026-10-21T02:27:14.663086+08:00",
+        "previous_release": {
+          "version": "10.2.30",
+          "commit": "0032325593fed433c3b92c1bb0256ed7c51efc42"
+        }
+      },
+      "metadata_source_sha256": "0eaa1bb2e95f82dc535c6ce2d323257f3f22d8acd9ba0ad3a02a70a3ade5b385",
+      "metadata_change_commits": [
+        "9e9fa070857d872d29a4759c53c9e362ed9c70ab"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/release-bot/20261021-hourly-0226/发布回执.json",
+          "sha256": "63ae8eea7bc23fe1d56f6fe7b425f29235b97e00fedba06e9f28dc3c869338aa",
+          "claimed_version": "10.2.31",
+          "claimed_status": "published-and-verified",
+          "claimed_published_commit": "9e9fa070857d872d29a4759c53c9e362ed9c70ab",
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/783891",
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.30",
+      "metadata_last_changed": {
+        "commit": "0032325593fed433c3b92c1bb0256ed7c51efc42",
+        "authored_at": "2026-10-21T01:47:16+08:00",
+        "title": "Record independent Members source audit and latest user QR for V10.2.30"
+      },
+      "metadata": {
+        "version": "10.2.30",
+        "label": "Members refresh, homepage and footer improvements, caption cleanup and Results note",
+        "release_id": "unified-backlog-20261021-v10.2.30",
+        "prepared_at": "2026-10-21T01:47:16.101040+08:00",
+        "previous_release": {
+          "version": "10.2.29",
+          "commit": "b4307bfb211324f212bb83104fdba55f27eaf995"
+        }
+      },
+      "metadata_source_sha256": "c942cbe482104f5022c4dd7fa530cc57acfbd40f53ab26d568910433958694c2",
+      "metadata_change_commits": [
+        "0032325593fed433c3b92c1bb0256ed7c51efc42",
+        "4a1ed5d4ad504972ef5764bd8f478937edc15783"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/release-bot/20261021-initial/发布回执.json",
+          "sha256": "aaef084f56ce53189f91d2210d791b446d4dc56605986bd7652bafeab53eadd6",
+          "claimed_version": "10.2.30",
+          "claimed_status": "published-and-verified",
+          "claimed_published_commit": "0032325593fed433c3b92c1bb0256ed7c51efc42",
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/783580",
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.29",
+      "metadata_last_changed": {
+        "commit": "da1af98d4e129eeb76db71692c0d628774af0fbe",
+        "authored_at": "2026-10-21T01:10:36+08:00",
+        "title": "Prepare V10.2.29 team heading publication"
+      },
+      "metadata": {
+        "version": "10.2.29",
+        "label": "Attributions and Members heading hierarchy and numbering",
+        "release_id": "team-outline-20261021-v10.2.29",
+        "prepared_at": "2026-10-21T01:10:36+08:00",
+        "previous_release": {
+          "version": "10.2.26",
+          "commit": "83130f2fa08ac6bed22df739fc3845553aa75602"
+        }
+      },
+      "metadata_source_sha256": "8e054028eeeb080b254f2a172670122d1666d60b0e0ea1cbebb64be77775a17f",
+      "metadata_change_commits": [
+        "da1af98d4e129eeb76db71692c0d628774af0fbe"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/team-outline-v10.2.29/发布回执.json",
+          "sha256": "40fcea43914c2536c1903a66a83ac777195b9d50afb7dafa0b03a8d30f581453",
+          "claimed_version": "10.2.29",
+          "claimed_status": "published-and-verified",
+          "claimed_published_commit": "b4307bfb211324f212bb83104fdba55f27eaf995",
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/783386",
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.28",
+      "metadata_last_changed": {
+        "commit": "a04377371b482f1e61ec6e18d09724fc901277b4",
+        "authored_at": "2026-10-21T00:51:03+08:00",
+        "title": "Prepare V10.2.28 Attribution publication"
+      },
+      "metadata": {
+        "version": "10.2.28",
+        "label": "Attributions portraits, Feishu content and order, compact card layout",
+        "release_id": "attributions-20261021-v10.2.28",
+        "prepared_at": "2026-10-21T00:51:03+08:00",
+        "previous_release": {
+          "version": "10.2.26",
+          "commit": "83130f2fa08ac6bed22df739fc3845553aa75602"
+        }
+      },
+      "metadata_source_sha256": "5688b6094de4407136a41004f663b60db7c293454174d31215e00a1fd20a38c4",
+      "metadata_change_commits": [
+        "a04377371b482f1e61ec6e18d09724fc901277b4"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/attributions-photos/release/发布回执.json",
+          "sha256": "991daabf6e65b1d14b8fba47b588deb8a749cd394d214d013859dadab4253232",
+          "claimed_version": "10.2.28",
+          "claimed_status": "published-and-verified",
+          "claimed_published_commit": "528e1947074d94b8005652fb33e45a81dc05c8f0",
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/783075",
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.27",
+      "metadata_last_changed": {
+        "commit": "b4a4e6a81a7340865f242d69507b24993dd71e4f",
+        "authored_at": "2026-10-20T23:58:16+08:00",
+        "title": "Replace Engineering circuit overview with complete lower border"
+      },
+      "metadata": {
+        "version": "10.2.27",
+        "label": "Engineering circuit overview border correction",
+        "release_id": "engineering-image-v10.2.27",
+        "prepared_at": "2026-10-20T23:57:54+08:00",
+        "previous_release": {
+          "version": "10.2.26",
+          "commit": "83130f2fa08ac6bed22df739fc3845553aa75602"
+        }
+      },
+      "metadata_source_sha256": "e5cc192339a94c12958fd2e3eaf1385df788d277a897e17faf630ac30aba5ce7",
+      "metadata_change_commits": [
+        "b4a4e6a81a7340865f242d69507b24993dd71e4f"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/engineering-image/发布回执.json",
+          "sha256": "349e0209a9dcea910f7fb3f3c322a31873dd6fe52f5dd01921d71a09fba7d545",
+          "claimed_version": "10.2.27",
+          "claimed_status": "published-and-verified",
+          "claimed_published_commit": "b4a4e6a81a7340865f242d69507b24993dd71e4f",
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/782512",
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.26",
+      "metadata_last_changed": {
+        "commit": "7af1548e6dd204491d207863760ae7017959db50",
+        "authored_at": "2026-10-20T23:32:24+08:00",
+        "title": "Publish V10.2.26 Results Cycle 4 and official-CDN replacement photograph"
+      },
+      "metadata": {
+        "version": "10.2.26",
+        "label": "Results Cycle 4 and replacement spotting-device photo",
+        "release_id": "results-cycle4-photo-20261020-v10.2.26",
+        "prepared_at": "2026-10-20T23:31:07+08:00",
+        "previous_release": {
+          "version": "10.2.25",
+          "commit": "80a736eaf8cb35abc00e07e943d49b25d5b93f2d"
+        }
+      },
+      "metadata_source_sha256": "da60ddf5af9b6fe730900e97ce775c88c9d8dbfa844fe55eaf737115f6ee012e",
+      "metadata_change_commits": [
+        "7af1548e6dd204491d207863760ae7017959db50"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/results-cycle4-photo-v10.2.26-20261020/发布回执.json",
+          "sha256": "6ee3a1d975cd5025d0f8b64bc1ea0cf8fe6ac49d6c818fb793866b3267e14c4b",
+          "claimed_version": "10.2.26",
+          "claimed_status": "published-and-verified",
+          "claimed_published_commit": "83130f2fa08ac6bed22df739fc3845553aa75602",
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/782323",
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.25",
+      "metadata_last_changed": {
+        "commit": "80a736eaf8cb35abc00e07e943d49b25d5b93f2d",
+        "authored_at": "2026-10-20T22:48:18+08:00",
+        "title": "Prepare V10.2.25 complete DBTL-3 typography release"
+      },
+      "metadata": {
+        "version": "10.2.25",
+        "label": "DBTL-3 ordinary stage headings",
+        "release_id": "wetlab-dbtl3-layout-20261020-v10.2.25",
+        "prepared_at": "2026-10-20T22:48:17+08:00",
+        "previous_release": {
+          "version": "10.2.24",
+          "commit": "125f5c195d498f50c2b11506e496d86c461d59ee"
+        }
+      },
+      "metadata_source_sha256": "3df3fc8a77fe357f74881169434337d2a0d662f5c0ed4aaaab649ed682db7e5a",
+      "metadata_change_commits": [
+        "80a736eaf8cb35abc00e07e943d49b25d5b93f2d"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/dbtl3-layout-v10.2.25-20261020/发布回执.json",
+          "sha256": "cdc7ee8605ed4ab1272fb653a343294a5d1e5ad44823d7846bab0ddd1f104bff",
+          "claimed_version": "10.2.25",
+          "claimed_status": "published-and-verified",
+          "claimed_published_commit": "80a736eaf8cb35abc00e07e943d49b25d5b93f2d",
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/781781",
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.24",
+      "metadata_last_changed": {
+        "commit": "125f5c195d498f50c2b11506e496d86c461d59ee",
+        "authored_at": "2026-10-20T22:35:23+08:00",
+        "title": "Publish V10.2.24 homepage microscopy with official CDN source"
+      },
+      "metadata": {
+        "version": "10.2.24",
+        "label": "Homepage cited fungus microscopy",
+        "release_id": "home-literature-20261020-v10.2.24",
+        "prepared_at": "2026-10-20T22:29:16+08:00",
+        "previous_release": {
+          "version": "10.2.23",
+          "commit": "2fd2312229302c6b6e65d6aba8945902bdd82dae"
+        }
+      },
+      "metadata_source_sha256": "2897387aa33b383a163c3ab488468933a0a902ae0b345f3c838ceba8edb33961",
+      "metadata_change_commits": [
+        "125f5c195d498f50c2b11506e496d86c461d59ee"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/home-literature/发布回执.json",
+          "sha256": "d6a651a231561f244c8fd14fd879a5afa17a8efd44a1a01aa7238fef58f542b1",
+          "claimed_version": "10.2.24",
+          "claimed_status": "published-and-verified",
+          "claimed_published_commit": "125f5c195d498f50c2b11506e496d86c461d59ee",
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/781649",
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.23",
+      "metadata_last_changed": {
+        "commit": "2fd2312229302c6b6e65d6aba8945902bdd82dae",
+        "authored_at": "2026-10-20T22:09:59+08:00",
+        "title": "Prepare V10.2.23 DBTL-3 figure numbering release"
+      },
+      "metadata": {
+        "version": "10.2.23",
+        "label": "DBTL-3 figure numbering corrections",
+        "release_id": "wetlab-dbtl3-figure-numbering-20261020-v10.2.23",
+        "prepared_at": "2026-10-20T22:09:59+08:00",
+        "previous_release": {
+          "version": "10.2.22",
+          "commit": "4a365dc03512cc5730e304eaa62314ac026c7b78"
+        }
+      },
+      "metadata_source_sha256": "f282f8c8602c7af2a79f7b326ee9d64fcfed8bcfb71348ea994322dcb460fc38",
+      "metadata_change_commits": [
+        "2fd2312229302c6b6e65d6aba8945902bdd82dae"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/dbtl3-figure-numbering-v10.2.23-20261020/发布回执.json",
+          "sha256": "8635236fceff236b73fa1a50c7e36d380e80fb5937405df81d9a00aeb2984bf4",
+          "claimed_version": "10.2.23",
+          "claimed_status": "published-and-verified",
+          "claimed_published_commit": "2fd2312229302c6b6e65d6aba8945902bdd82dae",
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/781480",
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.22",
+      "metadata_last_changed": {
+        "commit": "4a365dc03512cc5730e304eaa62314ac026c7b78",
+        "authored_at": "2026-10-20T21:50:36+08:00",
+        "title": "Add homepage shortcut to V10.2.22"
+      },
+      "metadata": {
+        "version": "10.2.22",
+        "label": "Results cycle outline and homepage wiki shortcut",
+        "release_id": "afternoon-review-results-cycle-toc-20261020-v10.2.22",
+        "prepared_at": "2026-10-20T21:27:54+08:00",
+        "previous_release": {
+          "version": "10.2.21",
+          "commit": "f1194f1ecc2ef547bb6a169df71ced3cdededb6f"
+        }
+      },
+      "metadata_source_sha256": "1bb7f3183c803e9a655fc1eb9b2e430d2eff3132c17cd9d60bd1e1f89616bd94",
+      "metadata_change_commits": [
+        "4a365dc03512cc5730e304eaa62314ac026c7b78",
+        "71bbde5fdd56bad58f317d0236c0419e7142cdb9"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": []
+    },
+    {
+      "version": "10.2.21",
+      "metadata_last_changed": {
+        "commit": "701044f5b8f71fd1594a43c9a76ea3d37c98465a",
+        "authored_at": "2026-10-20T20:26:52+08:00",
+        "title": "Prepare V10.2.21 wet lab tables release"
+      },
+      "metadata": {
+        "version": "10.2.21",
+        "label": "Wet lab table corrections and source scientific formatting",
+        "release_id": "wetlab-tables-20261020-v10.2.21",
+        "prepared_at": "2026-10-20T20:26:52+08:00",
+        "previous_release": {
+          "version": "10.2.18",
+          "commit": "5bb0322ced0703d2a8469ea24a60bde8209ff7ad",
+          "published_at_beijing": "2026-10-20 12:26:16"
+        }
+      },
+      "metadata_source_sha256": "eceab9c80005a0dbdc1209536b320d8b68fa2198c9f79c3ed4599e2d78abf7b3",
+      "metadata_change_commits": [
+        "701044f5b8f71fd1594a43c9a76ea3d37c98465a"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/wetlab-tables-20261020/发布回执.json",
+          "sha256": "8054d8bb4d93ce15715e0beb82bc495c27a35ddd4faedbd7c625842b3fe9299e",
+          "claimed_version": "10.2.21",
+          "claimed_status": "published-and-verified",
+          "claimed_published_commit": "f1194f1ecc2ef547bb6a169df71ced3cdededb6f",
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/780274",
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.20",
+      "metadata_last_changed": {
+        "commit": "cf98239ed6b8a76a1970bcf19e2ab51c3e6c096b",
+        "authored_at": "2026-10-20T19:47:32+08:00",
+        "title": "Record V10.2.20 integration candidate"
+      },
+      "metadata": {
+        "version": "10.2.20",
+        "label": "DBTL-3 evidence components, deep heading navigation, Model names, and AI credits",
+        "release_id": "combined-ai-credit-20261020-v10.2.20",
+        "prepared_at": "2026-10-20T19:44:21+08:00",
+        "previous_release": {
+          "version": "10.2.18",
+          "commit": "5bb0322ced0703d2a8469ea24a60bde8209ff7ad",
+          "published_at_beijing": "2026-10-20 12:26:16"
+        }
+      },
+      "metadata_source_sha256": "3a5d39d1a80ab6c6066d4b5ec3bbdaa9b82c65bc6a049921f0ba62585ff926fe",
+      "metadata_change_commits": [
+        "cf98239ed6b8a76a1970bcf19e2ab51c3e6c096b"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/afternoon-review-release-20261020/发布回执.json",
+          "sha256": "70c549b6cdcd00637903b676578910c1a81d76378a9b1d2e8f2990c0f23ac368",
+          "claimed_version": "10.2.20",
+          "claimed_status": "published-and-verified",
+          "claimed_published_commit": "cf98239ed6b8a76a1970bcf19e2ab51c3e6c096b",
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/779992",
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.19",
+      "metadata_last_changed": {
+        "commit": "8502ff5cb13ea3f626bf8d18a8dac96fb9e81e46",
+        "authored_at": "2026-10-20T19:36:54+08:00",
+        "title": "Prepare V10.2.19 DBTL-3 component release"
+      },
+      "metadata": {
+        "version": "10.2.19",
+        "label": "DBTL-3 evidence components, phase markers, and verified heading labels",
+        "release_id": "dbtl3-components-20261020-v10.2.19",
+        "prepared_at": "2026-10-20T19:35:56+08:00",
+        "previous_release": {
+          "version": "10.2.18",
+          "commit": "5bb0322ced0703d2a8469ea24a60bde8209ff7ad",
+          "published_at_beijing": "2026-10-20 12:26:16"
+        }
+      },
+      "metadata_source_sha256": "6a8b9071970630d2504bf1d24f9d842bfb901792cb14fe327148525ff8ed235b",
+      "metadata_change_commits": [
+        "8502ff5cb13ea3f626bf8d18a8dac96fb9e81e46"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": []
+    },
+    {
+      "version": "10.2.18",
+      "metadata_last_changed": {
+        "commit": "5bb0322ced0703d2a8469ea24a60bde8209ff7ad",
+        "authored_at": "2026-10-20T12:27:15+08:00",
+        "title": "Record verified V10.2.18 publication time"
+      },
+      "metadata": {
+        "version": "10.2.18",
+        "label": "In-page image preview with theme-aware liquid glass and reviewed manuscript components",
+        "release_id": "image-preview-components-20261020-v10.2.18",
+        "prepared_at": "2026-10-20T12:16:42+08:00",
+        "previous_release": {
+          "version": "10.2.17",
+          "commit": "0ef203161d80ead05ed37e3d79408899ad99d245",
+          "published_at_beijing": "2026-10-20 11:54:59"
+        }
+      },
+      "metadata_source_sha256": "71d28dc4acaabf452c79ad7ebd0b76faead3d9fc031a9664a48f60f68759a6f8",
+      "metadata_change_commits": [
+        "5bb0322ced0703d2a8469ea24a60bde8209ff7ad",
+        "837d21b402b81241df96c82c18d7e9e243feb501"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/image-preview/release/发布回执.json",
+          "sha256": "9444757469701ca461b14321c7ad49004bd4aa79671b127b227670f3b2fa2699",
+          "claimed_version": "10.2.18",
+          "claimed_status": "published-and-verified",
+          "claimed_published_commit": "5bb0322ced0703d2a8469ea24a60bde8209ff7ad",
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/777158",
+          "note": "Historical evidence index; not a new deployment verification."
+        },
+        {
+          "path": "workspace/evidence/ruoxi-engineering-components-publication-20261020/发布回执.json",
+          "sha256": "fe5227d8a1fe56d2f1aa4c3e6e92b31d37a7d7785da23a746b42037a228c407b",
+          "claimed_version": "10.2.18",
+          "claimed_status": "published-and-verified",
+          "claimed_published_commit": "5bb0322ced0703d2a8469ea24a60bde8209ff7ad",
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/777158",
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.17",
+      "metadata_last_changed": {
+        "commit": "7a525f7306802ec0b9b376ad8b2499ae1ae21abb",
+        "authored_at": "2026-10-20T11:55:58+08:00",
+        "title": "Record V10.2.17 publication time and concise release notes"
+      },
+      "metadata": {
+        "version": "10.2.17",
+        "label": "Latest test-strip story and six redesigned subpage openings",
+        "release_id": "recent-midday-20261020",
+        "prepared_at": "2026-10-20T11:37:09.350033+08:00",
+        "previous_release": {
+          "version": "10.2.16",
+          "commit": "02d032500ecf0d79a5efd63d454fee47d93109f3",
+          "publication_time_beijing": "2026-10-20 11:43:15"
+        }
+      },
+      "metadata_source_sha256": "f4c8fe8e8386b72b96ff461a319d2dfad447dd4df00aecd1cd98bca93a5fd466",
+      "metadata_change_commits": [
+        "7a525f7306802ec0b9b376ad8b2499ae1ae21abb",
+        "d2078026d76f178be55040866c99548bef896fd2",
+        "ff4c75a7523945653eb4a1df8e01836885bcc007"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/home-test-strip-20261020/publication/发布回执.json",
+          "sha256": "de9b682ab2eef9a3f7ddc44e20358c05c0227f3b8795c4feeaddc3fa57c5f80c",
+          "claimed_version": "10.2.17",
+          "claimed_status": "published-and-reverified",
+          "claimed_published_commit": "0ef203161d80ead05ed37e3d79408899ad99d245",
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/776979",
+          "note": "Historical evidence index; not a new deployment verification."
+        },
+        {
+          "path": "workspace/evidence/recent-midday-20261020/发布回执.json",
+          "sha256": "d9a0557f2cd0e6394135b6b5b4922033fc66628f861d3ba4e4ab5586c66bd0fd",
+          "claimed_version": "10.2.17",
+          "claimed_status": "published-and-verified",
+          "claimed_published_commit": "0ef203161d80ead05ed37e3d79408899ad99d245",
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/776979",
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.16",
+      "metadata_last_changed": {
+        "commit": "16f9d02bf5a5296a768d208643d7924f00ce838d",
+        "authored_at": "2026-10-20T11:37:09+08:00",
+        "title": "Prepare V10.2.16 content rules and caption release"
+      },
+      "metadata": {
+        "version": "10.2.16",
+        "label": "Consistent Project and Model typography, restored reading width and plain figure captions",
+        "release_id": "content-rules-captions-20261020-v10.2.16",
+        "prepared_at": "2026-10-20T11:37:09.350033+08:00",
+        "previous_release": {
+          "version": "10.2.15",
+          "commit": "c56e223f136804824dd9ba8cc11c24f8cdd03eb4"
+        }
+      },
+      "metadata_source_sha256": "816f485ed00941f77edae1dd6f2f68f79f596170159211753572ee921decbfda",
+      "metadata_change_commits": [
+        "16f9d02bf5a5296a768d208643d7924f00ce838d"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/bug-rules-v10.2.16-20261020/发布回执.json",
+          "sha256": "2f45a76c994774eb73f3fe0770e346fa9f4cfc448a25b2ba807a2851826a999c",
+          "claimed_version": "10.2.16",
+          "claimed_status": "published-and-verified",
+          "claimed_published_commit": "02d032500ecf0d79a5efd63d454fee47d93109f3",
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/776860",
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.15",
+      "metadata_last_changed": {
+        "commit": "614331622af88276f5e16942f69c497066574059",
+        "authored_at": "2026-10-20T10:23:35+08:00",
+        "title": "Publish latest ODE manuscript with original formulas restored by user instruction"
+      },
+      "metadata": {
+        "version": "10.2.15",
+        "label": "Latest ODE manuscript with authorized original formula restoration",
+        "release_id": "model-ode-restoration-20261020-v10.2.15",
+        "prepared_at": "2026-10-20T10:22:25+08:00",
+        "previous_release": {
+          "version": "10.2.14",
+          "commit": "b5af87a3870744198fca9b8097322f2dff3d7393"
+        }
+      },
+      "metadata_source_sha256": "c9bbc1fdcb7b8921a40218f890088395ccb6f4015e956140fbf3fbcee860fba4",
+      "metadata_change_commits": [
+        "614331622af88276f5e16942f69c497066574059"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/model-ode-restoration-20261020/发布回执.json",
+          "sha256": "b5620df460148bd7d1ff7e1c100b7f5e0c18c23ad428574ee9bf095da109caf9",
+          "claimed_version": "10.2.15",
+          "claimed_status": null,
+          "claimed_published_commit": null,
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/776496",
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.14",
+      "metadata_last_changed": {
+        "commit": "b5af87a3870744198fca9b8097322f2dff3d7393",
+        "authored_at": "2026-10-20T09:56:26+08:00",
+        "title": "Compact the shared footer and replace resource labels with icons"
+      },
+      "metadata": {
+        "version": "10.2.14",
+        "label": "Compact footer and resource icons",
+        "release_id": "footer-compact-20261020-v10.2.14",
+        "prepared_at": "2026-10-20T09:55:48+08:00",
+        "previous_release": {
+          "version": "10.2.13",
+          "commit": "b26d36ddc89d823acfc4af29beda4d751f3f330d"
+        }
+      },
+      "metadata_source_sha256": "c6e1ed149428b54d9ebc92bf11410489165392f439e506786791f2b141a18573",
+      "metadata_change_commits": [
+        "b5af87a3870744198fca9b8097322f2dff3d7393"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/footer-compact-20261020/发布回执.json",
+          "sha256": "87325cd1c4b1f72f41b5a94d2e48e3d7e782712a46bc25fd95f2b003eef1f325",
+          "claimed_version": "10.2.14",
+          "claimed_status": "published-and-verified",
+          "claimed_published_commit": null,
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/776352",
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.13",
+      "metadata_last_changed": {
+        "commit": "3f30e7c365e8386b224abf92b4600386a820828a",
+        "authored_at": "2026-10-20T05:18:08+08:00",
+        "title": "Finalize Model typography original-image links and publication scope"
+      },
+      "metadata": {
+        "version": "10.2.13",
+        "label": "Latest author Model overview docking and molecular dynamics",
+        "release_id": "model-refresh-20261020-v10.2.13",
+        "prepared_at": "2026-10-20T05:16:30+08:00",
+        "previous_release": {
+          "version": "10.2.11",
+          "commit": "5449c1e32ecdfb860ef9c77c5b60666f2d79c89a"
+        }
+      },
+      "metadata_source_sha256": "967f6b5d74e89209b3c6c0978d801eb73e78a7e7547fd36f44ad5a4b24b8538b",
+      "metadata_change_commits": [
+        "3f30e7c365e8386b224abf92b4600386a820828a"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/model-refresh-20261020/发布回执.json",
+          "sha256": "0adf713dba280d3ca1bc2359b2278c124a71338e3a8f023c00ff3cc0b57792b1",
+          "claimed_version": "10.2.13",
+          "claimed_status": "published-three-pages-awaiting-two-source-decisions",
+          "claimed_published_commit": null,
+          "pipeline_url": null,
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.12",
+      "metadata_last_changed": {
+        "commit": "7d167cb0b956b7f9637b7629996211ceb4882a3d",
+        "authored_at": "2026-10-20T05:04:38+08:00",
+        "title": "Merge remote-tracking branch 'origin/main' into codex/integration"
+      },
+      "metadata": {
+        "version": "10.2.12",
+        "label": "Footer social media entry placeholders",
+        "release_id": "footer-socials-20261020-v10.2.12",
+        "prepared_at": "2026-10-20T04:48:32+08:00",
+        "previous_release": {
+          "version": "10.2.11",
+          "commit": "5449c1e32ecdfb860ef9c77c5b60666f2d79c89a"
+        }
+      },
+      "metadata_source_sha256": "9e9cef98f60c8a43bad9cc0701e5e95d26ad340497e8ab321f159210058a26ec",
+      "metadata_change_commits": [
+        "7d167cb0b956b7f9637b7629996211ceb4882a3d",
+        "d88be810652443e55ee6db962bb039adc3bc5215",
+        "8ba852176548ec659fb004c7085df0797d850d09",
+        "f79badc6c1855592a56e4b36ff601b556fb9050a",
+        "10022ef0c149674f96bc0f28a9449dbea86453d9"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/footer-socials/发布回执.json",
+          "sha256": "83dc95066ebb73e73bc2ead20cfc98823c6d9a055da265702a3ca03206133fbc",
+          "claimed_version": "10.2.12",
+          "claimed_status": "published-and-verified",
+          "claimed_published_commit": null,
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/775131",
+          "note": "Historical evidence index; not a new deployment verification."
+        },
+        {
+          "path": "workspace/evidence/ruoxi-requirements-20261020/release-confirmation/publication-receipt.json",
+          "sha256": "28b1b0f12b5082c279eaa715b263dd3ade9b77476e1bd7abb0ac41a377973bd4",
+          "claimed_version": "10.2.12",
+          "claimed_status": "published-and-verified",
+          "claimed_published_commit": null,
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/775158",
+          "note": "Historical evidence index; not a new deployment verification."
+        },
+        {
+          "path": "workspace/evidence/senior-feedback-20261020/publication/发布回执.json",
+          "sha256": "f87bf4eaa8072c276ab5e616d800f27f8fa5f49025baf5ba5d321c5d84bc3bd7",
+          "claimed_version": "10.2.12",
+          "claimed_status": "published-and-independently-verified",
+          "claimed_published_commit": "7d167cb0b956b7f9637b7629996211ceb4882a3d",
+          "pipeline_url": null,
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.11",
+      "metadata_last_changed": {
+        "commit": "c853c78543c2541cea0dea6ec8b4dc2929e659d5",
+        "authored_at": "2026-10-20T04:43:44+08:00",
+        "title": "Record verified V10.2.11 publication time"
+      },
+      "metadata": {
+        "version": "10.2.11",
+        "label": "Latest manuscripts, contributions, content rules and homepage guidance",
+        "release_id": "recent-all-20261020-v10.2.11",
+        "prepared_at": "2026-10-20T04:24:59.216124+08:00",
+        "previous_release": {
+          "version": "10.2.10",
+          "commit": "96c2653f2fd716e1e1576728e8e7d87a6841f921"
+        }
+      },
+      "metadata_source_sha256": "d31e323b6bcaee5ce9f536172ea5eeee424c91b87230b8b9089bc7a87d7ec372",
+      "metadata_change_commits": [
+        "c853c78543c2541cea0dea6ec8b4dc2929e659d5",
+        "e58ffd3ee80c08bb31972bb9bbffb48777c2f520"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/bug-rules-release-20261020/发布回执.json",
+          "sha256": "548b7a37c896b16d946ffae710b8e9272437ed6ea5bf69504e60fe2fa6b29a69",
+          "claimed_version": "10.2.11",
+          "claimed_status": "published-and-verified",
+          "claimed_published_commit": "5449c1e32ecdfb860ef9c77c5b60666f2d79c89a",
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/775052",
+          "note": "Historical evidence index; not a new deployment verification."
+        },
+        {
+          "path": "workspace/evidence/recent-combined-release-20261020/发布回执.json",
+          "sha256": "c6b9b7b09fd1190f2d4ccfe9928e525cbae725c958a53b60c618ae1a1f3e2f26",
+          "claimed_version": "10.2.11",
+          "claimed_status": "published-and-verified",
+          "claimed_published_commit": "e58ffd3ee80c08bb31972bb9bbffb48777c2f520",
+          "pipeline_url": null,
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.10",
+      "metadata_last_changed": {
+        "commit": "8776551f747215ce3bdfd23a243955b93947f98a",
+        "authored_at": "2026-10-20T03:59:00+08:00",
+        "title": "Record verified publication of the approved What we built restoration"
+      },
+      "metadata": {
+        "version": "10.2.10",
+        "label": "Restore exact approved What we built illustration layout",
+        "release_id": "what-we-built-approved-20261020-v10.2.10",
+        "prepared_at": "2026-10-20T03:41:46.975577+08:00",
+        "previous_release": {
+          "version": "10.2.9",
+          "commit": "95bb4e144428707e49c4f91062596b3410e804c0"
+        }
+      },
+      "metadata_source_sha256": "94b56196568ecfa72d22d1765edb7c9de7ba3f9ff16304b5dff3f71997c8095f",
+      "metadata_change_commits": [
+        "8776551f747215ce3bdfd23a243955b93947f98a",
+        "6c25e6b128934d54a3b0c6614b2b2a9c676332e9"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/what-we-built-approved-restore-20261020/发布回执.json",
+          "sha256": "9f270616a2753d43e8488ceb9206b39ce8b0b5612d03b34b39eb4128e4a30468",
+          "claimed_version": "10.2.10",
+          "claimed_status": "published-and-verified",
+          "claimed_published_commit": null,
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/774870",
+          "note": "Historical evidence index; not a new deployment verification."
+        },
+        {
+          "path": "workspace/evidence/what-we-built-spacing-20261020/发布回执.json",
+          "sha256": "0a96c1a7e4e58aca3539830ea220b4c25752c13f30d7eaffa85badc141074207",
+          "claimed_version": "10.2.10",
+          "claimed_status": "published-and-verified",
+          "claimed_published_commit": null,
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/774911",
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.9",
+      "metadata_last_changed": {
+        "commit": "95bb4e144428707e49c4f91062596b3410e804c0",
+        "authored_at": "2026-10-20T03:17:57+08:00",
+        "title": "Record verified V10.2.9 publication time"
+      },
+      "metadata": {
+        "version": "10.2.9",
+        "label": "Simplify six What we built cards to emphasize team illustrations",
+        "release_id": "what-we-built-20261020-v10.2.9",
+        "prepared_at": "2026-10-20T03:10:49.533083+08:00",
+        "previous_release": {
+          "version": "10.2.8",
+          "commit": "dfb40ad2e124cffa123538d6ceae5e71f5ea0b3d"
+        }
+      },
+      "metadata_source_sha256": "c633dbc101daf7620807128881cdcd1eb758c1273ddff33e049cae2ea299d2e7",
+      "metadata_change_commits": [
+        "95bb4e144428707e49c4f91062596b3410e804c0",
+        "e205f4a5c5ade14f1c38e6836a2b41521b20bf5e"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/what-we-built-release-20261020/发布回执.json",
+          "sha256": "b6c86bc7fac7db4af2867b77594d35d2c4ebd4051c8083665e00ceb5831d8b31",
+          "claimed_version": "10.2.9",
+          "claimed_status": "published-and-verified",
+          "claimed_published_commit": null,
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/774696",
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.8",
+      "metadata_last_changed": {
+        "commit": "dfb40ad2e124cffa123538d6ceae5e71f5ea0b3d",
+        "authored_at": "2026-10-20T03:05:48+08:00",
+        "title": "Restore original Results video link and remove temporary issue notes"
+      },
+      "metadata": {
+        "version": "10.2.8",
+        "label": "Four interactive DBTL cycles and six official CDN homepage illustrations",
+        "release_id": "recent-all-20261020-v10.2.8",
+        "prepared_at": "2026-10-20T02:50:43.394202+08:00",
+        "previous_release": {
+          "version": "10.2.7",
+          "commit": "109a1bbd23d29b83a40081c0031fddfe24f6cd08"
+        }
+      },
+      "metadata_source_sha256": "ec7a6a2404cdc1941173a9c08af2c67b64f6f9cac472df32c9b1a515a81630fc",
+      "metadata_change_commits": [
+        "dfb40ad2e124cffa123538d6ceae5e71f5ea0b3d",
+        "fa4484d5eb8a6deb366fe70f8e2a386093caa9a4",
+        "ed046211ba54abe707140200ee701c47457d1d22"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/recent-all-release-20261020/发布回执.json",
+          "sha256": "1da3fadc7632d30e12b2bc65033355f2dfcab4ff33a2b0cd7e52d46a2e74d664",
+          "claimed_version": "10.2.8",
+          "claimed_status": "published-and-verified",
+          "claimed_published_commit": "ed046211ba54abe707140200ee701c47457d1d22",
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/774563",
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.7",
+      "metadata_last_changed": {
+        "commit": "cad0eb9df1c6211eec7f438307591f8ba91208cc",
+        "authored_at": "2026-10-20T02:46:25+08:00",
+        "title": "Publish member portraits and group photo using official CDN references"
+      },
+      "metadata": {
+        "version": "10.2.7",
+        "label": "Members portraits and full team group photo",
+        "release_id": "members-20261020-v10.2.7",
+        "prepared_at": "2026-10-20T02:43:35.904829+08:00",
+        "previous_release": {
+          "version": "10.2.5",
+          "release_id": "v10.2.5-pending-four-20261019",
+          "commit": "2dd2e28c990c2ceb2ce63c22d923247c4297295f"
+        }
+      },
+      "metadata_source_sha256": "b6e3629c36e27d676513b225fd05a2c40388fd7cb4f4a60d6f8aac1902895efd",
+      "metadata_change_commits": [
+        "cad0eb9df1c6211eec7f438307591f8ba91208cc"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/ruoxi-members-review/release-20261020/delivery-receipt.json",
+          "sha256": "cc4998f222c12c7d2808c05739b116bc881b3c911b9ed78626301fbee9c45f7d",
+          "claimed_version": "10.2.7",
+          "claimed_status": null,
+          "claimed_published_commit": "109a1bbd23d29b83a40081c0031fddfe24f6cd08",
+          "pipeline_url": null,
+          "note": "Historical evidence index; not a new deployment verification."
+        },
+        {
+          "path": "workspace/evidence/ruoxi-members-review/release-20261020/发布回执.json",
+          "sha256": "cc4998f222c12c7d2808c05739b116bc881b3c911b9ed78626301fbee9c45f7d",
+          "claimed_version": "10.2.7",
+          "claimed_status": null,
+          "claimed_published_commit": "109a1bbd23d29b83a40081c0031fddfe24f6cd08",
+          "pipeline_url": null,
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.6",
+      "metadata_last_changed": {
+        "commit": "20668c14ddbbff93abf7c3ccf3087818bf21c80d",
+        "authored_at": "2026-10-20T02:05:26+08:00",
+        "title": "Record V10.2.6 recent-change release scope"
+      },
+      "metadata": {
+        "version": "10.2.6",
+        "label": "Opening exploration, foreground layering, footer and HP cleanup",
+        "release_id": "recent-changes-20261020-v10.2.6",
+        "prepared_at": "2026-10-20T02:05:26.230894+08:00",
+        "previous_release": {
+          "version": "10.2.5",
+          "release_id": "v10.2.5-pending-four-20261019",
+          "commit": "2dd2e28c990c2ceb2ce63c22d923247c4297295f"
+        }
+      },
+      "metadata_source_sha256": "f8c85f7a8983a3f529e0035b40bf9279c9b6101af6753eea155d63c03bb8408e",
+      "metadata_change_commits": [
+        "20668c14ddbbff93abf7c3ccf3087818bf21c80d"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/recent-release-20261020/发布回执.json",
+          "sha256": "a6a5e2204756fb97a3d917028d6d874e8b9f9f0aec2c6d3ff84594d92d6be863",
+          "claimed_version": "10.2.6",
+          "claimed_status": "published-and-verified",
+          "claimed_published_commit": "5c8febe605603fe888c48db607dc41dd1515c771",
+          "pipeline_url": null,
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.5",
+      "metadata_last_changed": {
+        "commit": "8b2000b4e5d421ac4ae81bdc8b2c3447915efa01",
+        "authored_at": "2026-10-19T21:37:00+08:00",
+        "title": "Prepare v10.2.5 combined release with official footer CDN assets"
+      },
+      "metadata": {
+        "version": "10.2.5",
+        "label": "Integrated mobile layouts, attribution cards, footer logos and navigation fixes",
+        "release_id": "v10.2.5-pending-four-20261019",
+        "prepared_at": "2026-10-19T21:30:00+08:00",
+        "previous_release": {
+          "commit": "936ad5046969b2e8de30b5d03813af330023a920",
+          "version": "10.2.4"
+        }
+      },
+      "metadata_source_sha256": "4ecc7e164c5d80ef17401b5d4d2df6255ac9f3308bf9e7dfffc769293bb4c31c",
+      "metadata_change_commits": [
+        "8b2000b4e5d421ac4ae81bdc8b2c3447915efa01"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/pending-four-release-20261019/发布回执.json",
+          "sha256": "507d2037e9388fe397fb77bb4457c2a0fe1f3a09605441dd8b2c841cb26d76eb",
+          "claimed_version": "10.2.5",
+          "claimed_status": "success",
+          "claimed_published_commit": null,
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/772641",
+          "note": "Historical evidence index; not a new deployment verification."
+        },
+        {
+          "path": "workspace/evidence/readme-final-release-20261019/发布回执.json",
+          "sha256": "528c60a86bc7c8703d43edeae0469a5a2786bcb74588b44225c97730293acd14",
+          "claimed_version": "10.2.5",
+          "claimed_status": null,
+          "claimed_published_commit": null,
+          "pipeline_url": null,
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.4",
+      "metadata_last_changed": {
+        "commit": "7242b2ea9f601957df5ea3ec1e31919fd6df962c",
+        "authored_at": "2026-10-19T17:23:24+08:00",
+        "title": "Retain responsive opening verification in release metadata"
+      },
+      "metadata": {
+        "version": "10.2.4",
+        "label": "Shared iHP openings for three HP chapters",
+        "release_id": "v10.2.4-hp-shared-opening-20261019",
+        "prepared_at": "2026-10-19T17:23:03.174983+08:00",
+        "previous_release": {
+          "commit": "1c82245e06796c10fb36ab13cd89e75600beddd9",
+          "version": "10.2.3"
+        }
+      },
+      "metadata_source_sha256": "e434cdff354bd712d256e6c300d588e3807d463102099da9c384dc5f1ea08f69",
+      "metadata_change_commits": [
+        "7242b2ea9f601957df5ea3ec1e31919fd6df962c",
+        "0ce5d029b01d3cb00c99e102356a18a9bb85f442"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/ihp-shared-opening-release-20261019/发布回执.json",
+          "sha256": "c0c963812f5422f5f1b12c50cdae290a891ec11a01691a15a0505920155aaf97",
+          "claimed_version": "10.2.4",
+          "claimed_status": null,
+          "claimed_published_commit": "936ad5046969b2e8de30b5d03813af330023a920",
+          "pipeline_url": null,
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.3",
+      "metadata_last_changed": {
+        "commit": "1c82245e06796c10fb36ab13cd89e75600beddd9",
+        "authored_at": "2026-10-19T17:18:04+08:00",
+        "title": "Improve English chapter reading with Tina layout modules"
+      },
+      "metadata": {
+        "version": "10.2.3",
+        "label": "English scientific chapters and Tina reading layouts",
+        "release_id": "v10.2.3-english-tina-reading-20261019",
+        "prepared_at": "2026-10-19T17:15:52.246311+08:00",
+        "previous_release": {
+          "commit": "9b93514da7a32ce840becdbae89a764df9b65e91",
+          "version": "10.2.2"
+        }
+      },
+      "metadata_source_sha256": "402b5f23a091c0efed6aadf6d31397a920fc53e0bb7d0753963aa11c07aeebbf",
+      "metadata_change_commits": [
+        "1c82245e06796c10fb36ab13cd89e75600beddd9"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/body-translation-20261019/发布回执.json",
+          "sha256": "a279b93080d0cddb81ef0a236ea40da3dca9a6fef1ef374c2ed5c2ed8888d379",
+          "claimed_version": "10.2.3",
+          "claimed_status": "success",
+          "claimed_published_commit": null,
+          "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/771039",
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.2",
+      "metadata_last_changed": {
+        "commit": "57eef5b31c39ff050d8b4eb754af66612f737c2e",
+        "authored_at": "2026-10-19T14:56:21+08:00",
+        "title": "Merge homepage review fixes and NKU-China identity with official seal CDN"
+      },
+      "metadata": {
+        "version": "10.2.2",
+        "label": "Homepage review fixes and NKU-China identity",
+        "release_id": "v10.2.2-homepage-review-20261019",
+        "prepared_at": "2026-10-19T14:54:48.417241+08:00",
+        "previous_release": {
+          "commit": "4a8da89912081238617af3cf8296616bcdf3ded8",
+          "version": "10.2.1"
+        }
+      },
+      "metadata_source_sha256": "99508e5369fb6bc7d06163e1c9e9625e6469ac164bb61090c89b5c0ec192ccea",
+      "metadata_change_commits": [
+        "57eef5b31c39ff050d8b4eb754af66612f737c2e"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": [
+        {
+          "path": "workspace/evidence/homepage-release-20261019/发布回执.json",
+          "sha256": "9eed81d79c4b5edc698627abc07ed94ff7accc6518b6805a7ff2a5dfd24ab779",
+          "claimed_version": "10.2.2",
+          "claimed_status": null,
+          "claimed_published_commit": null,
+          "pipeline_url": null,
+          "note": "Historical evidence index; not a new deployment verification."
+        }
+      ]
+    },
+    {
+      "version": "10.2.1",
+      "metadata_last_changed": {
+        "commit": "4a8da89912081238617af3cf8296616bcdf3ded8",
+        "authored_at": "2026-10-19T14:07:39+08:00",
+        "title": "Keep opened scene titles larger and raise soil behind the paper"
+      },
+      "metadata": {
+        "version": "10.2.1",
+        "label": "Larger scene headings and slower rising soil",
+        "release_id": "v10.2.1-scene-scroll-depth-20261019",
+        "prepared_at": "2026-10-19T14:07:03.033549+08:00",
+        "previous_release": {
+          "commit": "7dea2d1f32ce90432412c2acd2bfeb9ae24c4671",
+          "version": "10.2.0"
+        }
+      },
+      "metadata_source_sha256": "b24cff09576597ac89ed395d7c16acc1b310f20525bebed7895b1aa66d6ef986",
+      "metadata_change_commits": [
+        "4a8da89912081238617af3cf8296616bcdf3ded8"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": []
+    },
+    {
+      "version": "10.2.0",
+      "metadata_last_changed": {
+        "commit": "b5226a815807da0fed1ae6c1ef7336ddc6baaf74",
+        "authored_at": "2026-10-19T12:51:04+08:00",
+        "title": "Publish five HP chapters from preserved team manuscript"
+      },
+      "metadata": {
+        "version": "10.2.0",
+        "label": "Five Human Practices pages from complete Feishu source",
+        "release_id": "hp-five-pages-original-source-20261019",
+        "prepared_at": "2026-10-19T12:29:31+08:00",
+        "previous_release": {
+          "version": "10.1.7",
+          "release_id": "soil-programme-20261019"
+        }
+      },
+      "metadata_source_sha256": "3b18fb024b2fc9257e9c9c451c0bbeb973521438b740cff7b18a512daa64cbab",
+      "metadata_change_commits": [
+        "b5226a815807da0fed1ae6c1ef7336ddc6baaf74"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": []
+    },
+    {
+      "version": "10.1.7",
+      "metadata_last_changed": {
+        "commit": "f343b7780ff3664acf5efb20b1576cfad6ec9d4b",
+        "authored_at": "2026-10-19T11:59:43+08:00",
+        "title": "Update collected soil inventory and use logarithmic map bars"
+      },
+      "metadata": {
+        "version": "10.1.7",
+        "label": "Soil collection update and logarithmic map bars",
+        "release_id": "soil-programme-20261019",
+        "prepared_at": "2026-10-19T11:59:30+08:00",
+        "previous_release": {
+          "version": "10.1.6",
+          "release_id": "member-portrait-ratio-20261019",
+          "commit": "a4106cbeac9f0cee6f262a018f09ea02eca34f59"
+        }
+      },
+      "metadata_source_sha256": "10e43bfce1bec30bff86e8d923321da0afdd6737a8b1809738ab56b3f9976bb0",
+      "metadata_change_commits": [
+        "f343b7780ff3664acf5efb20b1576cfad6ec9d4b"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": []
+    },
+    {
+      "version": "10.1.6",
+      "metadata_last_changed": {
+        "commit": "a4106cbeac9f0cee6f262a018f09ea02eca34f59",
+        "authored_at": "2026-10-19T11:57:06+08:00",
+        "title": "Keep member portraits at 3:4 instead of stretching with card height"
+      },
+      "metadata": {
+        "version": "10.1.6",
+        "label": "Natural 3:4 member portraits",
+        "release_id": "member-portrait-ratio-20261019",
+        "prepared_at": "2026-10-19T11:51:16+08:00",
+        "previous_release": {
+          "version": "10.1.3",
+          "release_id": "hp-word-public-gps-only-20261019",
+          "commit": "f5ca89ba5f637e7adc76d333c04ace29b58b64ab"
+        }
+      },
+      "metadata_source_sha256": "a76429d4f16daf614c0d1c49b0098d59593525e25fd62367f46990c2ebe900a7",
+      "metadata_change_commits": [
+        "a4106cbeac9f0cee6f262a018f09ea02eca34f59"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": []
+    },
+    {
+      "version": "10.1.5",
+      "metadata_last_changed": {
+        "commit": "8a89bc79874ee9ee1efc1901d9a15ce7e62cbb1b",
+        "authored_at": "2026-10-19T11:51:47+08:00",
+        "title": "Use user-provided biography for Prof. Jie Fan"
+      },
+      "metadata": {
+        "version": "10.1.5",
+        "label": "Jie Fan biography revision supplied by user",
+        "release_id": "jie-fan-biography-20261019",
+        "prepared_at": "2026-10-19T11:51:16+08:00",
+        "previous_release": {
+          "version": "10.1.3",
+          "release_id": "hp-word-public-gps-only-20261019",
+          "commit": "f5ca89ba5f637e7adc76d333c04ace29b58b64ab"
+        }
+      },
+      "metadata_source_sha256": "09141de7ef7663b1084ba179558b8f6d75844281183d5db348066dd7e499e453",
+      "metadata_change_commits": [
+        "8a89bc79874ee9ee1efc1901d9a15ce7e62cbb1b"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": []
+    },
+    {
+      "version": "10.1.4",
+      "metadata_last_changed": {
+        "commit": "8b3608ed86ac7e8b688f21354b04ab2b20102165",
+        "authored_at": "2026-10-19T11:32:12+08:00",
+        "title": "Update 27 member profiles and attributions from revised source documents"
+      },
+      "metadata": {
+        "version": "10.1.4",
+        "label": "Team members and attributions — 19 October source revision",
+        "release_id": "team-members-attributions-20261019",
+        "prepared_at": "2026-10-19T11:32:04+08:00",
+        "previous_release": {
+          "version": "10.1.3",
+          "release_id": "hp-word-public-gps-only-20261019",
+          "commit": "f5ca89ba5f637e7adc76d333c04ace29b58b64ab"
+        }
+      },
+      "metadata_source_sha256": "bd8efecad1cdf88ea3a881eee8924bacb21da9e132f47d36c762bb4f8b498a39",
+      "metadata_change_commits": [
+        "8b3608ed86ac7e8b688f21354b04ab2b20102165"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": []
+    },
+    {
+      "version": "10.1.3",
+      "metadata_last_changed": {
+        "commit": "f5ca89ba5f637e7adc76d333c04ace29b58b64ab",
+        "authored_at": "2026-10-19T11:31:12+08:00",
+        "title": "Publish HP Word copy with authorized GPS-only removal"
+      },
+      "metadata": {
+        "version": "10.1.3",
+        "label": "HP Word public copy — user-authorized GPS-only removal",
+        "release_id": "hp-word-public-gps-only-20261019",
+        "prepared_at": "2026-10-19T11:30:45+08:00",
+        "previous_release": {
+          "release_id": "meeting-update-20261019-original-manuscripts",
+          "version": "10.1.2",
+          "commit": "d34940af4513504020c330d32424cf96b554bedd"
+        }
+      },
+      "metadata_source_sha256": "76c18bac0e267320f04f6384b78bf17e0f190c09cbe647910a7b205c8de51b4d",
+      "metadata_change_commits": [
+        "f5ca89ba5f637e7adc76d333c04ace29b58b64ab"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": []
+    },
+    {
+      "version": "10.1.2",
+      "metadata_last_changed": {
+        "commit": "d34940af4513504020c330d32424cf96b554bedd",
+        "authored_at": "2026-10-19T05:31:58+08:00",
+        "title": "Integrate 19 October original Project, Model, HP and Results manuscripts"
+      },
+      "metadata": {
+        "version": "10.1.2",
+        "label": "19 October meeting update — original manuscripts",
+        "release_id": "meeting-update-20261019-original-manuscripts",
+        "prepared_at": "2026-10-19T05:29:14+08:00",
+        "previous_release": {
+          "release_id": "v10.1.1-clean-scene-headings-20261019",
+          "version": "10.1.1",
+          "commit": "7f51f5dd45a67cc8f5dcafdeb7eeef734e32a2c3"
+        }
+      },
+      "metadata_source_sha256": "44ac602145637d3c8c897b096152a8d42eaeb927202c9184d4441b9ca1ffa504",
+      "metadata_change_commits": [
+        "d34940af4513504020c330d32424cf96b554bedd"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": []
+    },
+    {
+      "version": "10.1.1",
+      "metadata_last_changed": {
+        "commit": "7f51f5dd45a67cc8f5dcafdeb7eeef734e32a2c3",
+        "authored_at": "2026-10-19T00:15:19+08:00",
+        "title": "Remove section labels and accent bars from inner page scenes"
+      },
+      "metadata": {
+        "version": "10.1.1",
+        "label": "V10.1.1 - Simplified AI scene headings",
+        "release_id": "v10.1.1-clean-scene-headings-20261019",
+        "prepared_at": "2026-10-19T00:14:53.011445+08:00",
+        "previous_release": {
+          "commit": "afe5f5405e0ec511977116422800b98c0c853ca9",
+          "version": "10.1.0"
+        }
+      },
+      "metadata_source_sha256": "292cdf84c04b74a240ac17bbc9d876fd659e1a71289105b2f0ec7ec21e11f522",
+      "metadata_change_commits": [
+        "7f51f5dd45a67cc8f5dcafdeb7eeef734e32a2c3"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": []
+    },
+    {
+      "version": "10.1.0",
+      "metadata_last_changed": {
+        "commit": "afe5f5405e0ec511977116422800b98c0c853ca9",
+        "authored_at": "2026-10-18T22:18:02+08:00",
+        "title": "Keep AI opening compositions visible immediately with inline atlas previews"
+      },
+      "metadata": {
+        "version": "10.1.0",
+        "label": "V10.1 - AI illustrated opening scenes",
+        "release_id": "v10.1-ai-scenes-20261018",
+        "prepared_at": "2026-10-18T22:18:02.731680+08:00",
+        "previous_release": {
+          "commit": "e9c018019c29c537a7d67b3f0ed7fe2f7240e518",
+          "version": "10.0.2"
+        }
+      },
+      "metadata_source_sha256": "866cf0cd8aec6bcaba2adff12283b78d85acb2abf5efef4a387c9558616fb31b",
+      "metadata_change_commits": [
+        "afe5f5405e0ec511977116422800b98c0c853ca9",
+        "f8bdc37ffd8768413a11f53c3fa5264bd63fdc2e"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": []
+    },
+    {
+      "version": "10.0.2",
+      "metadata_last_changed": {
+        "commit": "e9c018019c29c537a7d67b3f0ed7fe2f7240e518",
+        "authored_at": "2026-10-18T19:03:30+08:00",
+        "title": "Remove skip and scroll prompts from inner-page scene openings"
+      },
+      "metadata": {
+        "version": "10.0.2",
+        "label": "V10.0.2 - simplified scene opening",
+        "release_id": "v10.0.2-no-opening-cues-20261018",
+        "prepared_at": "2026-10-18T19:03:08.756785+08:00",
+        "previous_release": {
+          "commit": "00bbf80",
+          "source_release_id": "v8.7-author-decisions-20261018-181204"
+        }
+      },
+      "metadata_source_sha256": "7817bb578e09d11e65980c96377fad2d3001e524ede6ce613a7cec53a0c78bfb",
+      "metadata_change_commits": [
+        "e9c018019c29c537a7d67b3f0ed7fe2f7240e518"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": []
+    },
+    {
+      "version": "10.0.1",
+      "metadata_last_changed": {
+        "commit": "d85b23e469c420bde6575583ab67e458c51575e5",
+        "authored_at": "2026-10-18T19:00:18+08:00",
+        "title": "Reveal scene titles and artwork together after prioritized image decoding"
+      },
+      "metadata": {
+        "version": "10.0.1",
+        "label": "V10.0.1 - synchronized scene loading",
+        "release_id": "v10.0.1-scene-loading-20261018",
+        "prepared_at": "2026-10-18T18:58:23.316368+08:00",
+        "previous_release": {
+          "commit": "00bbf80",
+          "source_release_id": "v8.7-author-decisions-20261018-181204"
+        }
+      },
+      "metadata_source_sha256": "9667c6a09b45c08690dae8a5220aeae36c35274a711571a2b384ffa53b037164",
+      "metadata_change_commits": [
+        "d85b23e469c420bde6575583ab67e458c51575e5"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": []
+    },
+    {
+      "version": "10.0.0",
+      "metadata_last_changed": {
+        "commit": "f160e69bbfd7d42458f1e279aa3f2aac824bf739",
+        "authored_at": "2026-10-18T18:34:47+08:00",
+        "title": "Publish V10 handcut second edition on latest restored manuscripts"
+      },
+      "metadata": {
+        "version": "10.0.0",
+        "label": "V10 — 剪纸第二版（程序素材）",
+        "release_id": "v10-handcut-second-20261018-183145",
+        "prepared_at": "2026-10-18T18:31:45.762024+08:00",
+        "previous_release": {
+          "commit": "00bbf80",
+          "source_release_id": "v8.7-author-decisions-20261018-181204"
+        }
+      },
+      "metadata_source_sha256": "8997302802baf819ce9ed2aae75b5cdf24af22fd1586a68df41cc4216ae6ae68",
+      "metadata_change_commits": [
+        "f160e69bbfd7d42458f1e279aa3f2aac824bf739"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": []
+    },
+    {
+      "version": "8.7.0",
+      "metadata_last_changed": {
+        "commit": "00bbf809cdba8d6a2ed2556e131e0fef2dab9df5",
+        "authored_at": "2026-10-18T18:25:18+08:00",
+        "title": "Use a fresh dependency cache after repeated runner disk exhaustion"
+      },
+      "metadata": {
+        "version": "8.7.0",
+        "label": "V8.7 — authorized original-source restoration",
+        "release_id": "v8.7-author-decisions-20261018-181204",
+        "prepared_at": "2026-10-18T18:12:04.047553+08:00",
+        "previous_release": {
+          "commit": "3ae1d9dba0210d2b43d3b79a383aa0f13cca87de",
+          "pipeline": 765407
+        }
+      },
+      "metadata_source_sha256": "202b59abcdcd2e143e511c7fc1d665062536072d58906f1d4292908f5d006d6f",
+      "metadata_change_commits": [
+        "00bbf809cdba8d6a2ed2556e131e0fef2dab9df5",
+        "1080823d657a7919aaa7e5f6b4e1cfff632c8999",
+        "3ae1d9dba0210d2b43d3b79a383aa0f13cca87de",
+        "ba6ede9effdc1fc5bdba592246e1a627236678c4",
+        "3618d3e82c05f1c1bb91319db2c896529c07c8ca",
+        "efe54c685573563bb1cbcf15b7812d2384e7cd34"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": []
+    },
+    {
+      "version": "8.6.0",
+      "metadata_last_changed": {
+        "commit": "16770d5c28ddf7bc41f8d90445c44d80a28801d5",
+        "authored_at": "2026-10-18T04:58:12+08:00",
+        "title": "Publish V8.6 wiki with model chapters, updated results and official media hosting"
+      },
+      "metadata": {
+        "version": "8.6.0",
+        "label": "V8.6",
+        "prepared_at": "2026-10-18T04:57:21.677231+08:00"
+      },
+      "metadata_source_sha256": "e813c8b1a57edc3135cab9dd1bb20b453670bd3ffa4c0466f879a78a9994a107",
+      "metadata_change_commits": [
+        "16770d5c28ddf7bc41f8d90445c44d80a28801d5"
+      ],
+      "evidence_level": "Version exists in official Git history; metadata changes alone do not prove deployment.",
+      "matching_receipts": []
+    }
+  ],
+  "receipt_index": [
+    {
+      "path": "workspace/evidence/afternoon-review-release-20261020/发布回执.json",
+      "sha256": "70c549b6cdcd00637903b676578910c1a81d76378a9b1d2e8f2990c0f23ac368",
+      "claimed_version": "10.2.20",
+      "claimed_status": "published-and-verified",
+      "claimed_published_commit": "cf98239ed6b8a76a1970bcf19e2ab51c3e6c096b",
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/779992",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/attributions-photos/release/发布回执.json",
+      "sha256": "991daabf6e65b1d14b8fba47b588deb8a749cd394d214d013859dadab4253232",
+      "claimed_version": "10.2.28",
+      "claimed_status": "published-and-verified",
+      "claimed_published_commit": "528e1947074d94b8005652fb33e45a81dc05c8f0",
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/783075",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/body-translation-20261019/发布回执.json",
+      "sha256": "a279b93080d0cddb81ef0a236ea40da3dca9a6fef1ef374c2ed5c2ed8888d379",
+      "claimed_version": "10.2.3",
+      "claimed_status": "success",
+      "claimed_published_commit": null,
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/771039",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/bug-rules-release-20261020/发布回执.json",
+      "sha256": "548b7a37c896b16d946ffae710b8e9272437ed6ea5bf69504e60fe2fa6b29a69",
+      "claimed_version": "10.2.11",
+      "claimed_status": "published-and-verified",
+      "claimed_published_commit": "5449c1e32ecdfb860ef9c77c5b60666f2d79c89a",
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/775052",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/bug-rules-v10.2.16-20261020/发布回执.json",
+      "sha256": "2f45a76c994774eb73f3fe0770e346fa9f4cfc448a25b2ba807a2851826a999c",
+      "claimed_version": "10.2.16",
+      "claimed_status": "published-and-verified",
+      "claimed_published_commit": "02d032500ecf0d79a5efd63d454fee47d93109f3",
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/776860",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/dbtl3-figure-numbering-v10.2.23-20261020/发布回执.json",
+      "sha256": "8635236fceff236b73fa1a50c7e36d380e80fb5937405df81d9a00aeb2984bf4",
+      "claimed_version": "10.2.23",
+      "claimed_status": "published-and-verified",
+      "claimed_published_commit": "2fd2312229302c6b6e65d6aba8945902bdd82dae",
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/781480",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/dbtl3-layout-v10.2.25-20261020/发布回执.json",
+      "sha256": "cdc7ee8605ed4ab1272fb653a343294a5d1e5ad44823d7846bab0ddd1f104bff",
+      "claimed_version": "10.2.25",
+      "claimed_status": "published-and-verified",
+      "claimed_published_commit": "80a736eaf8cb35abc00e07e943d49b25d5b93f2d",
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/781781",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/engineering-image/发布回执.json",
+      "sha256": "349e0209a9dcea910f7fb3f3c322a31873dd6fe52f5dd01921d71a09fba7d545",
+      "claimed_version": "10.2.27",
+      "claimed_status": "published-and-verified",
+      "claimed_published_commit": "b4a4e6a81a7340865f242d69507b24993dd71e4f",
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/782512",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/footer-compact-20261020/发布回执.json",
+      "sha256": "87325cd1c4b1f72f41b5a94d2e48e3d7e782712a46bc25fd95f2b003eef1f325",
+      "claimed_version": "10.2.14",
+      "claimed_status": "published-and-verified",
+      "claimed_published_commit": null,
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/776352",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/footer-socials/发布回执.json",
+      "sha256": "83dc95066ebb73e73bc2ead20cfc98823c6d9a055da265702a3ca03206133fbc",
+      "claimed_version": "10.2.12",
+      "claimed_status": "published-and-verified",
+      "claimed_published_commit": null,
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/775131",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/home-literature/receipt.json",
+      "sha256": "e89a92d14283f6bd13da5699dce9d64c9cca185a0b9689a937ff205635dd7bf1",
+      "claimed_version": null,
+      "claimed_status": "completed-local-preview-awaiting-review",
+      "claimed_published_commit": null,
+      "pipeline_url": null,
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/home-literature/transport-receipt.json",
+      "sha256": "509e498dbfebfa18b3f3ece69ca4dac849a9d54454830ae824bf7d36e11fc469",
+      "claimed_version": null,
+      "claimed_status": null,
+      "claimed_published_commit": "125f5c195d498f50c2b11506e496d86c461d59ee",
+      "pipeline_url": null,
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/home-literature/发布回执.json",
+      "sha256": "d6a651a231561f244c8fd14fd879a5afa17a8efd44a1a01aa7238fef58f542b1",
+      "claimed_version": "10.2.24",
+      "claimed_status": "published-and-verified",
+      "claimed_published_commit": "125f5c195d498f50c2b11506e496d86c461d59ee",
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/781649",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/home-test-strip-20261020/publication/发布回执.json",
+      "sha256": "de9b682ab2eef9a3f7ddc44e20358c05c0227f3b8795c4feeaddc3fa57c5f80c",
+      "claimed_version": "10.2.17",
+      "claimed_status": "published-and-reverified",
+      "claimed_published_commit": "0ef203161d80ead05ed37e3d79408899ad99d245",
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/776979",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/homepage-release-20261019/发布回执.json",
+      "sha256": "9eed81d79c4b5edc698627abc07ed94ff7accc6518b6805a7ff2a5dfd24ab779",
+      "claimed_version": "10.2.2",
+      "claimed_status": null,
+      "claimed_published_commit": null,
+      "pipeline_url": null,
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/hp-component-layout-20261019/发布回执.json",
+      "sha256": "5f2b6139c0925b68a59c6cb41b0565345852a6604808a9a42f78502c368b9a81",
+      "claimed_version": null,
+      "claimed_status": "success",
+      "claimed_published_commit": null,
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/770868",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/hp-component-width-fix-20261019/发布回执.json",
+      "sha256": "66e413a21c019b3f439a3866b30a38ca85e39d9bed1c754de18394232fcb04f0",
+      "claimed_version": null,
+      "claimed_status": "success",
+      "claimed_published_commit": null,
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/770981",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/ihp-shared-opening-release-20261019/发布回执.json",
+      "sha256": "c0c963812f5422f5f1b12c50cdae290a891ec11a01691a15a0505920155aaf97",
+      "claimed_version": "10.2.4",
+      "claimed_status": null,
+      "claimed_published_commit": "936ad5046969b2e8de30b5d03813af330023a920",
+      "pipeline_url": null,
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/image-preview/release/发布回执.json",
+      "sha256": "9444757469701ca461b14321c7ad49004bd4aa79671b127b227670f3b2fa2699",
+      "claimed_version": "10.2.18",
+      "claimed_status": "published-and-verified",
+      "claimed_published_commit": "5bb0322ced0703d2a8469ea24a60bde8209ff7ad",
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/777158",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/members-refresh-20261021/han-xinyu/receipt.json",
+      "sha256": "c91b513487dc3eaf3f8ff9462f09f3784b66432e1e5adcf654057a4b5baf593e",
+      "claimed_version": null,
+      "claimed_status": null,
+      "claimed_published_commit": null,
+      "pipeline_url": null,
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/model-ode-restoration-20261020/发布回执.json",
+      "sha256": "b5620df460148bd7d1ff7e1c100b7f5e0c18c23ad428574ee9bf095da109caf9",
+      "claimed_version": "10.2.15",
+      "claimed_status": null,
+      "claimed_published_commit": null,
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/776496",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/model-refresh-20261020/发布回执.json",
+      "sha256": "0adf713dba280d3ca1bc2359b2278c124a71338e3a8f023c00ff3cc0b57792b1",
+      "claimed_version": "10.2.13",
+      "claimed_status": "published-three-pages-awaiting-two-source-decisions",
+      "claimed_published_commit": null,
+      "pipeline_url": null,
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/pending-four-release-20261019/发布回执.json",
+      "sha256": "507d2037e9388fe397fb77bb4457c2a0fe1f3a09605441dd8b2c841cb26d76eb",
+      "claimed_version": "10.2.5",
+      "claimed_status": "success",
+      "claimed_published_commit": null,
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/772641",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/readme-final-release-20261019/发布回执.json",
+      "sha256": "528c60a86bc7c8703d43edeae0469a5a2786bcb74588b44225c97730293acd14",
+      "claimed_version": "10.2.5",
+      "claimed_status": null,
+      "claimed_published_commit": null,
+      "pipeline_url": null,
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/recent-all-release-20261020/发布回执.json",
+      "sha256": "1da3fadc7632d30e12b2bc65033355f2dfcab4ff33a2b0cd7e52d46a2e74d664",
+      "claimed_version": "10.2.8",
+      "claimed_status": "published-and-verified",
+      "claimed_published_commit": "ed046211ba54abe707140200ee701c47457d1d22",
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/774563",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/recent-combined-release-20261020/发布回执.json",
+      "sha256": "c6b9b7b09fd1190f2d4ccfe9928e525cbae725c958a53b60c618ae1a1f3e2f26",
+      "claimed_version": "10.2.11",
+      "claimed_status": "published-and-verified",
+      "claimed_published_commit": "e58ffd3ee80c08bb31972bb9bbffb48777c2f520",
+      "pipeline_url": null,
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/recent-midday-20261020/发布回执.json",
+      "sha256": "d9a0557f2cd0e6394135b6b5b4922033fc66628f861d3ba4e4ab5586c66bd0fd",
+      "claimed_version": "10.2.17",
+      "claimed_status": "published-and-verified",
+      "claimed_published_commit": "0ef203161d80ead05ed37e3d79408899ad99d245",
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/776979",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/recent-release-20261020/发布回执.json",
+      "sha256": "a6a5e2204756fb97a3d917028d6d874e8b9f9f0aec2c6d3ff84594d92d6be863",
+      "claimed_version": "10.2.6",
+      "claimed_status": "published-and-verified",
+      "claimed_published_commit": "5c8febe605603fe888c48db607dc41dd1515c771",
+      "pipeline_url": null,
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/release-bot/20261021-dbtl-arc-urgent/发布回执.json",
+      "sha256": "8c80f481c3713681573d04550f1fe59203854082cc4050e18439c148bc722ea5",
+      "claimed_version": "10.2.35",
+      "claimed_status": "published-and-verified",
+      "claimed_published_commit": "8a523c317650d115d5db006f4e75ed127dcb02f9",
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/785050",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/release-bot/20261021-final-label/发布回执.json",
+      "sha256": "a6610ea1d628609638a00be0540fd2b5fdee22e134a64cd9030688ec4d6789e1",
+      "claimed_version": "10.2.47",
+      "claimed_status": "success",
+      "claimed_published_commit": "b685d5992627bd82ebf6c16d2d55e44d4499ae26",
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/799038",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/release-bot/20261021-final-v1046/发布回执.json",
+      "sha256": "0efeb6f05e9a6fa13080b99628361e8616440c811c59dd141549e050442a3086",
+      "claimed_version": "10.2.46",
+      "claimed_status": "published-and-verified",
+      "claimed_published_commit": "06c313c4b4a220f6ec2362b3107f12a4cfc5fa97",
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/797325",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/release-bot/20261021-hourly-0226/发布回执.json",
+      "sha256": "63ae8eea7bc23fe1d56f6fe7b425f29235b97e00fedba06e9f28dc3c869338aa",
+      "claimed_version": "10.2.31",
+      "claimed_status": "published-and-verified",
+      "claimed_published_commit": "9e9fa070857d872d29a4759c53c9e362ed9c70ab",
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/783891",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/release-bot/20261021-hourly-0332/发布回执.json",
+      "sha256": "9719652dda59b2e6a4ebf1fc7df022ed9fd5c6b4a13904747bb3de3b27e18e4c",
+      "claimed_version": "10.2.32",
+      "claimed_status": "published-and-verified",
+      "claimed_published_commit": "774aad6ab7872a230a7734db87e1414b6f9f709e",
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/784453",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/release-bot/20261021-hourly-0435/发布回执.json",
+      "sha256": "6b92a2c4c47ee5c8b8d519406a19a590b870e9cb31cd81efd8d91dca047a7e09",
+      "claimed_version": "10.2.34",
+      "claimed_status": "published-and-verified",
+      "claimed_published_commit": "780f037ed0980634fb193d16b1120296221c8e7b",
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/784832",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/release-bot/20261021-hourly-0646/发布回执.json",
+      "sha256": "3f2efde3a484c759d43b7fc1d79ddbc91042ac5421028a83e0dbc4e50826abb4",
+      "claimed_version": "10.2.37",
+      "claimed_status": "published-and-verified",
+      "claimed_published_commit": "323aa9f3109f2081508b5c411a7d12c60e75250a",
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/785723",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/release-bot/20261021-hourly-0742/发布回执.json",
+      "sha256": "4c70a76ce70e3014ed5ec33fb32189db77dcda54a88c28565da8104190a57284",
+      "claimed_version": "10.2.38",
+      "claimed_status": "published-and-verified",
+      "claimed_published_commit": "34357bfd8ecc4e3bab109c98fb26beece81376fe",
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/786161",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/release-bot/20261021-hourly-1249/发布回执.json",
+      "sha256": "b99521410bfc002d4ec4e52870c011bbdcbf1221aaa1921fa68a5b04a71f5a93",
+      "claimed_version": "10.2.39",
+      "claimed_status": "published-and-verified",
+      "claimed_published_commit": "64173b935014ed8acc913f9ea12e22a85eb8022e",
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/789063",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/release-bot/20261021-hourly-1904/发布回执.json",
+      "sha256": "5c235575279d107401a27827072a51255e0c67d9bfdadc7e58e99d8f172f1c3a",
+      "claimed_version": "10.2.44",
+      "claimed_status": "published-and-verified",
+      "claimed_published_commit": "7c3bfa4e65e0f86434d7a9b0393a61d19debf4b2",
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/793673",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/release-bot/20261021-initial/发布回执.json",
+      "sha256": "aaef084f56ce53189f91d2210d791b446d4dc56605986bd7652bafeab53eadd6",
+      "claimed_version": "10.2.30",
+      "claimed_status": "published-and-verified",
+      "claimed_published_commit": "0032325593fed433c3b92c1bb0256ed7c51efc42",
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/783580",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/release-bot/20261021-layout-v1047/push-receipt.json",
+      "sha256": "10b78881012a4a082604699b806bea5e8e91e525b7229becc2ff6edc026cf302",
+      "claimed_version": null,
+      "claimed_status": null,
+      "claimed_published_commit": null,
+      "pipeline_url": null,
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/release-bot/20261021-layout-v1047/发布回执.json",
+      "sha256": "97734ed73d0160da2fbfb82c23ab0553dfc3ab13efde8342f73b49280deffd2a",
+      "claimed_version": "10.2.47",
+      "claimed_status": "published-and-verified",
+      "claimed_published_commit": "26f60268153107fd192654402417c89a1c8e32de",
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/798738",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/release-bot/20261021-members-followup/发布回执.json",
+      "sha256": "892e3754eb9559266eaf0f52691ca602a3e6b3d6f25d166067b4214e5e3f4439",
+      "claimed_version": "10.2.41",
+      "claimed_status": "published-and-verified",
+      "claimed_published_commit": "168a4f02748ea1e0bb5e707f6f799d4d19f100bb",
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/790396",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/release-bot/20261021-project-compare-0409/发布回执.json",
+      "sha256": "285e75bc65a15598b045649a5e7482bc3d2c46119f855102018b181abf75ee59",
+      "claimed_version": "10.2.33",
+      "claimed_status": "published-and-verified",
+      "claimed_published_commit": "88b4566cfbed21ea96d5ebdb0dddc615d738cf42",
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/784733",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/release-bot/20261021-project-single/发布回执.json",
+      "sha256": "dd1124d97ba14e33d81b82113e8d4a32931087afc0cb5374d008c385982024ee",
+      "claimed_version": "10.2.40",
+      "claimed_status": "published-and-verified",
+      "claimed_published_commit": "1e4ff0bc94ac9b5da0e34f62f5a8c2c7cbf62d3f",
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/789248",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/release-bot/20261021-release-history/发布回执.json",
+      "sha256": "8bc0d29b659284f295c2601cdcd9f58fa48d300c94b43d162c7d171e7cb3e806",
+      "claimed_version": "10.2.42",
+      "claimed_status": "published-and-verified",
+      "claimed_published_commit": "218e79dbd62c59d3e92554b6f57b95e86427c617",
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/791138",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/release-bot/20261021-results-groups/发布回执.json",
+      "sha256": "c8feabca9884d648c13ae7beec2321a89c231da1810855202ea4a8b6be5cc71b",
+      "claimed_version": "10.2.43",
+      "claimed_status": "published-and-verified",
+      "claimed_published_commit": "4b4056b3adf76cfcd15f69aafa9025500a51206b",
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/792628",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/release-bot/20261021-takeover-v1045/发布回执.json",
+      "sha256": "21c198fb46b4ac29283bf9749f11b9f2ed1e89f8150ca775e82cebad576232ec",
+      "claimed_version": "10.2.45",
+      "claimed_status": "published-and-verified",
+      "claimed_published_commit": "c6bc6c80571ca45d768ae373da4989bfcd0c3c08",
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/794806",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/release-bot/20261021-wrap-combined/发布回执.json",
+      "sha256": "70023faee3a3794eb7a1db103af53d8effba3d356f1488488c5ebe22d7675d74",
+      "claimed_version": "10.2.36",
+      "claimed_status": "published-and-verified",
+      "claimed_published_commit": "fd9b5a6e3c5ff568966c81ac691db61046568a2f",
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/785223",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/repo-tidy/uploads-cleanup-receipt.json",
+      "sha256": "3470655d4bae67dbd4215d771ce9bbb1d754c495dce83052db799486b42ca949",
+      "claimed_version": null,
+      "claimed_status": "conservative-retention-no-deletions; full-dynamic-audit-incomplete",
+      "claimed_published_commit": null,
+      "pipeline_url": null,
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/results-cycle4-photo-pending-20261020/待发布回执.json",
+      "sha256": "477e289e2d590bbb7f12e1844595b8385619e130864131478f3698e36c7c1b81",
+      "claimed_version": null,
+      "claimed_status": "integrated-awaiting-publication",
+      "claimed_published_commit": null,
+      "pipeline_url": null,
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/results-cycle4-photo-v10.2.26-20261020/发布回执.json",
+      "sha256": "6ee3a1d975cd5025d0f8b64bc1ea0cf8fe6ac49d6c818fb793866b3267e14c4b",
+      "claimed_version": "10.2.26",
+      "claimed_status": "published-and-verified",
+      "claimed_published_commit": "83130f2fa08ac6bed22df739fc3845553aa75602",
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/782323",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/ruoxi-engineering-components-publication-20261020/发布回执.json",
+      "sha256": "fe5227d8a1fe56d2f1aa4c3e6e92b31d37a7d7785da23a746b42037a228c407b",
+      "claimed_version": "10.2.18",
+      "claimed_status": "published-and-verified",
+      "claimed_published_commit": "5bb0322ced0703d2a8469ea24a60bde8209ff7ad",
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/777158",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/ruoxi-members-review/delivery-receipt.json",
+      "sha256": "09bccbd19dbf2303655a31465a70334d271fdfd254ea281b24798c7afc774d71",
+      "claimed_version": null,
+      "claimed_status": null,
+      "claimed_published_commit": null,
+      "pipeline_url": null,
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/ruoxi-members-review/received-20261020/delivery-receipt.json",
+      "sha256": "54e94416af4f7d9ec33ab447c2da9f603c6623580a0a006b5abc63b14a431437",
+      "claimed_version": null,
+      "claimed_status": null,
+      "claimed_published_commit": null,
+      "pipeline_url": null,
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/ruoxi-members-review/release-20261020/delivery-receipt.json",
+      "sha256": "cc4998f222c12c7d2808c05739b116bc881b3c911b9ed78626301fbee9c45f7d",
+      "claimed_version": "10.2.7",
+      "claimed_status": null,
+      "claimed_published_commit": "109a1bbd23d29b83a40081c0031fddfe24f6cd08",
+      "pipeline_url": null,
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/ruoxi-members-review/release-20261020/发布回执.json",
+      "sha256": "cc4998f222c12c7d2808c05739b116bc881b3c911b9ed78626301fbee9c45f7d",
+      "claimed_version": "10.2.7",
+      "claimed_status": null,
+      "claimed_published_commit": "109a1bbd23d29b83a40081c0031fddfe24f6cd08",
+      "pipeline_url": null,
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/ruoxi-model-figure-20261020/implementation-receipt.json",
+      "sha256": "5a5d334e3c72ceb6e6a9c482e46e5da78657690069fe8358930c5ec8d4e68823",
+      "claimed_version": null,
+      "claimed_status": null,
+      "claimed_published_commit": null,
+      "pipeline_url": null,
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/ruoxi-requirements-20261020/release-confirmation/publication-receipt.json",
+      "sha256": "28b1b0f12b5082c279eaa715b263dd3ade9b77476e1bd7abb0ac41a377973bd4",
+      "claimed_version": "10.2.12",
+      "claimed_status": "published-and-verified",
+      "claimed_published_commit": null,
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/775158",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/ruoxi-video-review/followup-20261020/followup-receipt.json",
+      "sha256": "99fd2d2fc31fed897271a7f1ccc2313e789a230ce300b70c11c41b8373ae4f3c",
+      "claimed_version": null,
+      "claimed_status": null,
+      "claimed_published_commit": null,
+      "pipeline_url": null,
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/ruoxi-video-review/receipt.json",
+      "sha256": "1c77e6756c1446ed3712a42bb93d8e67b90918037462fdb2eb2a3a557bf7d8a0",
+      "claimed_version": null,
+      "claimed_status": null,
+      "claimed_published_commit": null,
+      "pipeline_url": null,
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/ruoxi-video-review/upload-20261020/md-upload-receipts.json",
+      "sha256": "f4365d8089b678c312ecfa0772081cf7dbaccbd45105639426d3652d55bf9f25",
+      "claimed_version": null,
+      "claimed_status": null,
+      "claimed_published_commit": null,
+      "pipeline_url": null,
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/ruoxi-video-review/upload-20261020/upload-receipt.json",
+      "sha256": "df3a5bc0f943d443caad2c548d55e2a5fa65442f0d8923125f6aab4e16c36c79",
+      "claimed_version": null,
+      "claimed_status": null,
+      "claimed_published_commit": null,
+      "pipeline_url": null,
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/section-number-layout-20261019/发布回执.json",
+      "sha256": "43757b413dd60043c1a9232a6117f8fb38d36dd803adb25085187e0694788374",
+      "claimed_version": null,
+      "claimed_status": "success",
+      "claimed_published_commit": null,
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/770681",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/section-number-restore-20261019/发布回执.json",
+      "sha256": "6cd0022024975133234f550d6213a05e55dbe6159796de29b7fc8caae2b7d1d2",
+      "claimed_version": null,
+      "claimed_status": "success",
+      "claimed_published_commit": null,
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/770746",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/senior-feedback-20261020/publication/发布回执.json",
+      "sha256": "f87bf4eaa8072c276ab5e616d800f27f8fa5f49025baf5ba5d321c5d84bc3bd7",
+      "claimed_version": "10.2.12",
+      "claimed_status": "published-and-independently-verified",
+      "claimed_published_commit": "7d167cb0b956b7f9637b7629996211ceb4882a3d",
+      "pipeline_url": null,
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/senior-feedback-20261020/restore-217/发布回执.json",
+      "sha256": "42af2e13babb3f2df316812982efb643a5cb0de3727266a73bdbc4875a9e7294",
+      "claimed_version": null,
+      "claimed_status": "published-and-verified",
+      "claimed_published_commit": "c56e223f136804824dd9ba8cc11c24f8cdd03eb4",
+      "pipeline_url": null,
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/senior-feedback-20261020/svg/asset-receipt.json",
+      "sha256": "337fef3765aaf5d3fe12fa30314d74c2c45c2c07a21cd78e525fcd059b43a67e",
+      "claimed_version": null,
+      "claimed_status": null,
+      "claimed_published_commit": null,
+      "pipeline_url": null,
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/team-outline-v10.2.29/发布回执.json",
+      "sha256": "40fcea43914c2536c1903a66a83ac777195b9d50afb7dafa0b03a8d30f581453",
+      "claimed_version": "10.2.29",
+      "claimed_status": "published-and-verified",
+      "claimed_published_commit": "b4307bfb211324f212bb83104fdba55f27eaf995",
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/783386",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/video-moderation-fix-20261019/保存回执.json",
+      "sha256": "a942c76613558f3ae31c15086d8da70292574af92366bb2342016fe45f321f93",
+      "claimed_version": null,
+      "claimed_status": null,
+      "claimed_published_commit": null,
+      "pipeline_url": null,
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/wetlab-tables-20261020/发布回执.json",
+      "sha256": "8054d8bb4d93ce15715e0beb82bc495c27a35ddd4faedbd7c625842b3fe9299e",
+      "claimed_version": "10.2.21",
+      "claimed_status": "published-and-verified",
+      "claimed_published_commit": "f1194f1ecc2ef547bb6a169df71ced3cdededb6f",
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/780274",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/what-we-built-approved-restore-20261020/发布回执.json",
+      "sha256": "9f270616a2753d43e8488ceb9206b39ce8b0b5612d03b34b39eb4128e4a30468",
+      "claimed_version": "10.2.10",
+      "claimed_status": "published-and-verified",
+      "claimed_published_commit": null,
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/774870",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/what-we-built-release-20261020/发布回执.json",
+      "sha256": "b6c86bc7fac7db4af2867b77594d35d2c4ebd4051c8083665e00ceb5831d8b31",
+      "claimed_version": "10.2.9",
+      "claimed_status": "published-and-verified",
+      "claimed_published_commit": null,
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/774696",
+      "note": "Historical evidence index; not a new deployment verification."
+    },
+    {
+      "path": "workspace/evidence/what-we-built-spacing-20261020/发布回执.json",
+      "sha256": "0a96c1a7e4e58aca3539830ea220b4c25752c13f30d7eaffa85badc141074207",
+      "claimed_version": "10.2.10",
+      "claimed_status": "published-and-verified",
+      "claimed_published_commit": null,
+      "pipeline_url": "https://gitlab.igem.org/2026/nku-china/-/pipelines/774911",
+      "note": "Historical evidence index; not a new deployment verification."
+    }
+  ]
+}
